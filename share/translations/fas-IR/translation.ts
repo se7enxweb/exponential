@@ -24468,7 +24468,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>به ترتیب بارگیری، با نسخه‌ای که extension.xml، ezinfo.php یا composer.json آن‌ها اعلام می‌کند</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>نویسندگان، مجوزهای انتشار و وب‌سایت‌های آن‌ها را ببینید در</translation>
     </message>
     <message>
@@ -26540,7 +26540,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>گردانندهٔ خروجی متن XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>رفتار گردآوری اطلاعات</translation>
     </message>
     <message>
@@ -27052,7 +27052,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>قالبی در یک طراحی که از طریق زنجیرهٔ طراحی پیدا می‌شود، نه با نام بردن از آن در جایی.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>فقط تنظیمات. چیزی جز INI نوشته نمی‌شود و رفتار تغییر می‌کند.</translation>
     </message>
     <message>
@@ -27843,7 +27843,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -27959,7 +27959,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>آنچه در آن است، چگونگی اجرای اسکریپت کلاس، و کارهایی که باید پیش از اجرای آن روی سایتی دارای محتوا انجام دهید.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -27975,7 +27975,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده است. به‌طور پیش‌فرض فعال: افزونه‌ای بدون فایل مجوز چیزی دربارهٔ نحوهٔ استفاده از آن نمی‌گوید.</translation>
     </message>
     <message>
@@ -28146,7 +28146,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -28518,7 +28518,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>کدام ستون چه چیزی را نگه می‌دارد، و اگر ستون‌ها کافی نباشند، جدولی اختصاصی باید چه شکلی داشته باشد.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -28538,7 +28538,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده است. به‌طور پیش‌فرض فعال: افزونه‌ای بدون فایل مجوز چیزی دربارهٔ نحوهٔ استفاده از آن نمی‌گوید.</translation>
     </message>
     <message>
@@ -28594,7 +28594,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>یک سطر کوتاه متن ساده. در عنوان صفحه‌ها، در فهرست‌ها، در پنل مدیریت و در URL هر شیئی که با آن نام‌گذاری شده قرار می‌گیرد، پس باید متن باشد و نه نشانه‌گذاری (markup).</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>اینکه آیا این نوع داده اصلاً ارزش نمایه‌سازی دارد یا نه. برای هر چیزی که مقدارش به‌صورت واژه معنایی ندارد - یک رنگ، یک شناسه، یک پرچم - false.</translation>
     </message>
     <message>
@@ -28697,7 +28697,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -28885,7 +28885,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>یک پوشهٔ autoloads با یک عملگر ثبت‌شده، آمادهٔ گسترش.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -28905,7 +28905,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده است. به‌طور پیش‌فرض فعال: افزونه‌ای بدون فایل مجوز چیزی دربارهٔ نحوهٔ استفاده از آن نمی‌گوید.</translation>
     </message>
     <message>
@@ -28992,7 +28992,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -29524,7 +29524,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>فایل ini که این کلاس را به‌جای کلاس پیش‌فرض معرفی می‌کند.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -29548,7 +29548,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده است. به‌طور پیش‌فرض فعال: افزونه‌ای بدون فایل مجوز چیزی دربارهٔ نحوهٔ استفاده از آن نمی‌گوید.</translation>
     </message>
     <message>
@@ -30407,7 +30407,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -30527,7 +30527,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>یک نما چگونه قابل دسترسی است، چه چیزی در $Params است، $Result چه چیزی می‌تواند داشته باشد، و چگونه از درون آن یک خط‌مشی را بررسی کنید.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -30547,7 +30547,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده است. به‌طور پیش‌فرض فعال: افزونه‌ای بدون فایل مجوز چیزی دربارهٔ نحوهٔ استفاده از آن نمی‌گوید.</translation>
     </message>
     <message>
@@ -30730,7 +30730,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -30906,7 +30906,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>share/db_schema.dba که جدول‌ها را توصیف می‌کند، تا نصب‌کننده و بررسی سازگاری از آن‌ها آگاه باشند.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -30926,7 +30926,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده است. به‌طور پیش‌فرض فعال: افزونه‌ای بدون فایل مجوز چیزی دربارهٔ نحوهٔ استفاده از آن نمی‌گوید.</translation>
     </message>
     <message>
@@ -31037,7 +31037,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -31145,7 +31145,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>چه چیزی جایگزین شد، چرا جایگزینی و نه چیزی سبک‌تر، و در هر ارتقا چه کاری باید انجام شود.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -31161,7 +31161,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده. جایگزینی حاوی کد هسته است، پس مجوز نشر آن موضوعی فرعی نیست.</translation>
     </message>
     <message>
@@ -31360,7 +31360,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -31452,7 +31452,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>هر ویژگی تصویر یک بار ذخیره می‌شود و به تعداد نام‌های مستعار، در اندازه‌های مختلف ارائه می‌شود. یک قالب یکی از آن‌ها را با نام درخواست می‌کند؛ فایل نخستین باری که درخواست شود ساخته و نگه داشته می‌شود. افزودن یک نام مستعار تا زمانی که چیزی آن را درخواست نکند هزینه‌ای ندارد، و برداشتن نام مستعاری که محتوا هنوز آن را درخواست می‌کند، تصاویر خراب بر جای می‌گذارد.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>هسته چند ده رویداد را هنگام وقوع اعلام می‌کند - پاک شدن یک حافظهٔ پنهان، رسیدن یک درخواست، پاسخی که در آستانهٔ ارسال است - و هر چیزی که گوش می‌دهد فراخوانی می‌شود. این سبک‌ترین راه افزودن رفتار است: نه ماژولی، نه گرداننده‌ای، نه کلاسی برای جایگزینی، فقط یک روش ایستا که هنگام وقوع چیزی اجرا می‌شود.</translation>
     </message>
     <message>
@@ -31512,7 +31512,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>یک مستطیل را برش می‌دهد. همراه با تغییر مقیاس، این همان راه ساختن تصویر بندانگشتی با اندازهٔ ثابت و بدون اعوجاج است.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>رنگ را حذف می‌کند.</translation>
     </message>
     <message>
@@ -31524,7 +31524,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>تصویر را می‌پیچاند. به درد هیچ‌کس نمی‌خورد، و در هر مثالی که تاکنون نوشته شده هست.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>یک حاشیه با رنگی نام‌دار یا هگزادسیمال.</translation>
     </message>
     <message>
@@ -31648,7 +31648,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>هر تنظیم چه کاری انجام می‌دهد، چرا در جایی است که هست، و پیش از اثر کردن چه چیزی باید پاک شود.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -31664,7 +31664,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده است. به‌طور پیش‌فرض فعال: افزونه‌ای بدون فایل مجوز چیزی دربارهٔ نحوهٔ استفاده از آن نمی‌گوید.</translation>
     </message>
     <message>
@@ -31907,7 +31907,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>آنچه هسته اعلام می‌کند تا کس دیگری آن را پیاده‌سازی کند، با تعداد روش‌هایی که هر کدام می‌خواهد و آنچه از قبل آن را پیاده‌سازی می‌کند. آن‌هایی که روش‌های زیاد و یک پیاده‌سازی دارند، آب‌های عمیق هستند.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>هر نقطه‌ای که هسته هنگام کار اعلام می‌کند، از کد منبع گردآوری شده نه فهرست شده. رویداد filter از آنچه یک شنونده برمی‌گرداند استفاده می‌کند، پس شنونده‌ای که فراموش کند مقدار را برگرداند آن را از بین می‌برد؛ رویداد notify آن را نادیده می‌گیرد. سبک‌ترین راه موجود برای افزودن رفتار: نه ماژولی، نه گرداننده‌ای، نه کلاسی برای جایگزینی.</translation>
     </message>
     <message>
@@ -31995,7 +31995,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>کاری لازم نیست. این مورد فهرست شده تا صفحه تصویری کامل باشد و نه فقط فهرستی از خطاها.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>اگر به دنبال جایی برای تغییر رفتار هستید، این‌ها جاهایی هستند که هنوز کسی آن‌ها را به کار نگرفته است.</translation>
     </message>
     <message>
@@ -32182,7 +32182,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -32330,7 +32330,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>هر چیز در یک قالب چگونه به نظر می‌رسد، چه چیزی به آن تحویل داده می‌شود، و چگونه آن را از یک اسکریپت امتحان کنید بی‌آنکه صفحه‌ای در کار باشد.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -32350,7 +32350,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده است. به‌طور پیش‌فرض فعال: افزونه‌ای بدون فایل مجوز چیزی دربارهٔ نحوهٔ استفاده از آن نمی‌گوید.</translation>
     </message>
     <message>
@@ -32548,7 +32548,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>مجوز نشر</translation>
     </message>
     <message>
@@ -32848,7 +32848,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>یادداشتی در readme دربارهٔ workflow_cron، که رویدادی را که خود را به تعویق انداخته اجرا می‌کند.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>آنچه رابط مدیریت می‌خواند تا نام، نسخه و مجوز نشر افزونه را نمایش دهد.</translation>
     </message>
     <message>
@@ -32868,7 +32868,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>باقی‌ماندهٔ ویرایشگرها و خروجی ساخت را بیرون از مخزن نگه می‌دارد.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>متن مجوز نشری که در زیر نام برده شده است. به‌طور پیش‌فرض فعال: افزونه‌ای بدون فایل مجوز چیزی دربارهٔ نحوهٔ استفاده از آن نمی‌گوید.</translation>
     </message>
     <message>
@@ -48755,7 +48755,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation>آنچه هسته اعلام می‌کند تا کس دیگری آن را پیاده‌سازی کند، با تعداد روش‌هایی که هر کدام می‌خواهد و آنچه از قبل آن را پیاده‌سازی می‌کند. آن‌هایی که روش‌های زیاد و یک پیاده‌سازی دارند، آب‌های عمیق هستند.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>هر نقطه‌ای که هسته هنگام کار اعلام می‌کند، از کد منبع گردآوری شده نه فهرست شده. رویداد filter از آنچه یک شنونده برمی‌گرداند استفاده می‌کند، پس شنونده‌ای که فراموش کند مقدار را برگرداند آن را از بین می‌برد؛ رویداد notify آن را نادیده می‌گیرد. سبک‌ترین راه موجود برای افزودن رفتار: نه ماژولی، نه گرداننده‌ای، نه کلاسی برای جایگزینی.</translation>
     </message>
     <message>
@@ -50573,7 +50573,7 @@ See the requirements page for more information.</source>
         <translation>هیچ‌کدام.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>نام سازمان</translation>
     </message>
     <message>
@@ -58447,7 +58447,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>کاری لازم نیست. این مورد فهرست شده تا صفحه تصویری کامل باشد و نه فقط فهرستی از خطاها.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>اگر به دنبال جایی برای تغییر رفتار هستید، این‌ها جاهایی هستند که هنوز کسی آن‌ها را به کار نگرفته است.</translation>
     </message>
     <message>
@@ -58867,11 +58867,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>تنظیم «%setting» یک فهرست است، اما هیچ مقداری برای آن داده نشده است.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>هیچ مجوز نشری برای انتخاب پیکربندی نشده است. یکی را به package.ini [LicenseSettings] LicenseList اضافه کنید.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>مجوز نشر «%licence» جزو مجوزهای پیکربندی‌شده در package.ini [LicenseSettings] نیست. یکی را از فهرست انتخاب کنید.</translation>
     </message>
     <message>
@@ -68596,7 +68596,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>تنظیمات در حال استفاده</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>تنظیمات در mailpreferences.ini هستند؛ سازمان، نشانی پستی، صندوق پستی برگشتی‌ها و رمز سایت باید در یک جایگزینی تنظیمات (override) قرار گیرند.</translation>
     </message>
     <message>
@@ -68788,7 +68788,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>خاموش</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>سازمان در پانویس</translation>
     </message>
     <message>
@@ -68924,11 +68924,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>مشخصات فرستنده</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>هر ایمیل اختیاری، همان‌طور که قانون الزام می‌کند، فرستنده و نشانی پستی او را ذکر می‌کند. اگر نام سازمان وارد نشده باشد، از نام سایت استفاده می‌شود.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>نام سازمان</translation>
     </message>
     <message>
@@ -69664,7 +69664,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>جدول %table وجود ندارد: به‌روزرسانی پایگاه داده را اجرا کنید.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>نشانی پستی پانویس ایمیل خالی است: آن را در بخش «مشخصات فرستنده» در همین صفحه (mailpreferences/admin/status) وارد کنید. قانون، ذکر سازمان و نشانی پستی آن را در هر ایمیل اختیاری الزامی می‌داند؛ تا آن زمان ایمیل‌ها بدون آن ارسال می‌شوند.</translation>
     </message>
     <message>

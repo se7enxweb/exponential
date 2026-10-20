@@ -25282,7 +25282,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>i innlastingsrekkefølge, med versjonen som extension.xml, ezinfo.php eller composer.json oppgir</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Forfatterne, lisensene og nettstedene deres står på</translation>
     </message>
     <message>
@@ -27354,7 +27354,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Utdatabehandler for XML-tekst</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Virkemåte for informasjonsinnsamling</translation>
     </message>
     <message>
@@ -27866,7 +27866,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>En mal i et design, funnet via designkjeden i stedet for ved å være angitt noe sted.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Bare innstillinger. Ingenting annet enn INI skrives, og virkemåten endres.</translation>
     </message>
     <message>
@@ -28657,7 +28657,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -28773,7 +28773,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Hva den inneholder, hvordan klasseskriptet kjøres, og hva som må gjøres før det kjøres på et nettsted med innhold.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -28789,7 +28789,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Lisensteksten som er angitt nedenfor. På som standard: en utvidelse uten lisensfil sier ingenting om hvordan den kan brukes.</translation>
     </message>
     <message>
@@ -28960,7 +28960,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -29332,7 +29332,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Hvilken kolonne som inneholder hva, og hvordan en egen tabell måtte se ut hvis kolonnene ikke er nok.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -29352,7 +29352,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Lisensteksten som er angitt nedenfor. På som standard: en utvidelse uten lisensfil sier ingenting om hvordan den kan brukes.</translation>
     </message>
     <message>
@@ -29408,7 +29408,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>En kort linje med ren tekst. Den havner i sidetitler, i lister, i administrasjonen og i URL-en til hvert objekt som får navn av den, så den må være tekst og ikke markering.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Om denne datatypen i det hele tatt er verdt å indeksere. False for alt der verdien ikke betyr noe som ord – en farge, en ID, et flagg.</translation>
     </message>
     <message>
@@ -29511,7 +29511,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -29699,7 +29699,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>En autoloads-katalog med en registrert operator, klar til å utvides.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -29719,7 +29719,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Lisensteksten som er angitt nedenfor. På som standard: en utvidelse uten lisensfil sier ingenting om hvordan den kan brukes.</translation>
     </message>
     <message>
@@ -29806,7 +29806,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -30338,7 +30338,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>INI-en som angir denne klassen i stedet for standarden.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -30362,7 +30362,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Lisensteksten som er angitt nedenfor. På som standard: en utvidelse uten lisensfil sier ingenting om hvordan den kan brukes.</translation>
     </message>
     <message>
@@ -31221,7 +31221,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -31341,7 +31341,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Hvordan en visning nås, hva som er i $Params, hva $Result kan inneholde, og hvordan en tilgangsregel kontrolleres fra innsiden av en.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -31361,7 +31361,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Lisensteksten som er angitt nedenfor. På som standard: en utvidelse uten lisensfil sier ingenting om hvordan den kan brukes.</translation>
     </message>
     <message>
@@ -31544,7 +31544,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -31720,7 +31720,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>share/db_schema.dba som beskriver tabellene, slik at installasjonsprogrammet og konsistenskontrollen kjenner til dem.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -31740,7 +31740,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Lisensteksten som er angitt nedenfor. På som standard: en utvidelse uten lisensfil sier ingenting om hvordan den kan brukes.</translation>
     </message>
     <message>
@@ -31851,7 +31851,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -31959,7 +31959,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Hva som ble overstyrt, hvorfor en overstyring i stedet for noe lettere, og hva som må gjøres ved hver oppgradering.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -31975,7 +31975,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Lisensteksten som er angitt nedenfor. En overstyring inneholder kjernekode, så hva den er lisensiert under, er ikke en ettertanke.</translation>
     </message>
     <message>
@@ -32174,7 +32174,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -32266,7 +32266,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Hvert bildeattributt lagres én gang og leveres i så mange størrelser som det finnes aliaser. En mal ber om ett ved navn; filen lages første gang det blir bedt om den, og beholdes. Å legge til et alias koster ingenting før noe ber om det, og å fjerne et som innhold fortsatt ber om, gir ødelagte bilder.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Kjernen kunngjør noen dusin ting når de skjer – en cache som tømmes, en forespørsel som kommer inn, et svar som skal sendes – og alt som lytter, kalles. Det er den letteste måten å legge til virkemåte på: ingen modul, ingen behandler, ingen klasse å erstatte, bare en statisk metode som kjører når noe skjer.</translation>
     </message>
     <message>
@@ -32326,7 +32326,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Klipper ut et rektangel. Kombinert med en skalering er dette slik et miniatyrbilde med fast størrelse lages uten forvrengning.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Fjerner fargen.</translation>
     </message>
     <message>
@@ -32338,7 +32338,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Vrir bildet. Til ingen nytte for noen, og med i alle eksempler som noen gang er skrevet.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>En kantlinje i en navngitt eller heksadesimal farge.</translation>
     </message>
     <message>
@@ -32462,7 +32462,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Hva hver innstilling gjør, hvorfor den er der den er, og hva som må tømmes før den får virkning.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -32478,7 +32478,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Lisensteksten som er angitt nedenfor. På som standard: en utvidelse uten lisensfil sier ingenting om hvordan den kan brukes.</translation>
     </message>
     <message>
@@ -32721,7 +32721,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Det kjernen deklarerer for at noen andre skal implementere det, med hvor mange metoder hver ber om og hva som allerede implementerer det. De med mange metoder og én implementasjon er det dype vannet.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Hvert punkt kjernen kunngjør mens den arbeider, hentet ut av kildekoden i stedet for oppført. En filterhendelse bruker det en lytter returnerer, så en som glemmer å returnere verdien, ødelegger den; en varslingshendelse ignorerer den. Den letteste måten som finnes å legge til virkemåte på: ingen modul, ingen behandler, ingen klasse å erstatte.</translation>
     </message>
     <message>
@@ -32809,7 +32809,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Ingenting å gjøre. Den er oppført slik at siden gir et fullstendig bilde i stedet for bare en liste over feil.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Hvis du leter etter et sted å endre virkemåten, er dette stedene ingen har tatt i bruk ennå.</translation>
     </message>
     <message>
@@ -32996,7 +32996,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -33144,7 +33144,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Hvordan hver ting ser ut i en mal, hva den får, og hvordan du prøver den fra et skript uten en side i nærheten.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -33164,7 +33164,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Lisensteksten som er angitt nedenfor. På som standard: en utvidelse uten lisensfil sier ingenting om hvordan den kan brukes.</translation>
     </message>
     <message>
@@ -33362,7 +33362,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Versjon</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisens</translation>
     </message>
     <message>
@@ -33662,7 +33662,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>En merknad i README-filen om workflow_cron, som er det som kjører en hendelse som har utsatt seg selv.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det administrasjonsgrensesnittet leser for å vise navnet, versjonen og lisensen til utvidelsen.</translation>
     </message>
     <message>
@@ -33682,7 +33682,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <translation>Holder rester fra redigeringsprogrammer og byggeutdata utenfor depotet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Lisensteksten som er angitt nedenfor. På som standard: en utvidelse uten lisensfil sier ingenting om hvordan den kan brukes.</translation>
     </message>
     <message>
@@ -49934,7 +49934,7 @@ Standardkoden ble laget på grunnlag av parameterne du valgte.</translation>
         <translation>Det kjernen deklarerer for at noen andre skal implementere det, med hvor mange metoder hver ber om og hva som allerede implementerer det. De med mange metoder og én implementasjon er det dype vannet.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Hvert punkt kjernen kunngjør mens den arbeider, hentet ut av kildekoden i stedet for oppført. En filterhendelse bruker det en lytter returnerer, så en som glemmer å returnere verdien, ødelegger den; en varslingshendelse ignorerer den. Den letteste måten som finnes å legge til virkemåte på: ingen modul, ingen behandler, ingen klasse å erstatte.</translation>
     </message>
     <message>
@@ -51764,7 +51764,7 @@ Se siden med krav for mer informasjon.</translation>
         <translation>Ingen.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Organisasjonsnavn</translation>
     </message>
     <message>
@@ -59700,7 +59700,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Ingenting å gjøre. Den er oppført slik at siden gir et fullstendig bilde i stedet for bare en liste over feil.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Hvis du leter etter et sted å endre virkemåten, er dette stedene ingen har tatt i bruk ennå.</translation>
     </message>
     <message>
@@ -60120,11 +60120,11 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Innstillingen &quot;%setting&quot; er en liste, men ingen verdier ble oppgitt for den.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Ingen lisens er konfigurert å velge mellom. Legg til en i package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Lisensen &quot;%licence&quot; er ikke en av lisensene som er konfigurert i package.ini [LicenseSettings]. Velg en fra listen.</translation>
     </message>
     <message>
@@ -69849,7 +69849,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Innstillinger i bruk</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Innstillingene ligger i mailpreferences.ini; organisasjonen, postadressen, postkassen for returmeldinger og nettstedshemmeligheten hører hjemme i en innstillingsoverstyring.</translation>
     </message>
     <message>
@@ -70041,7 +70041,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Av</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organisasjon i bunnteksten</translation>
     </message>
     <message>
@@ -70177,11 +70177,11 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Avsenderopplysninger</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Hver valgfri e-post oppgir hvem som sender den og postadressen deres, slik loven krever. Uten organisasjonsnavn brukes navnet på nettstedet.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Organisasjonsnavn</translation>
     </message>
     <message>
@@ -70917,7 +70917,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Tabellen %table mangler: kjør databaseoppdateringen.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>Postadressen i bunnteksten i e-postene er tom: skriv den inn under &quot;Avsenderopplysninger&quot; på denne siden (mailpreferences/admin/status). Loven krever organisasjonen og postadressen dens i hver valgfrie e-post; inntil da sendes e-post uten den.</translation>
     </message>
     <message>

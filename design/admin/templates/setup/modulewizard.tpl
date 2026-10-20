@@ -147,7 +147,7 @@
 </div>
 
 <div class="a4-field">
-    <label for="mwLicence">{'Licence'|i18n( 'design/admin/setup/rad/module' )}</label>
+    <label for="mwLicence">{'License'|i18n( 'design/admin/setup/rad/module' )}</label>
     {include uri='design:setup/rad_licence_select.tpl' select_id='mwLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 </div>

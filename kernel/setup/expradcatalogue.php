@@ -73,7 +73,7 @@ class expRADCatalogue
             'autoload'  => 'A class reached through the extension autoload path, registered once in an ini and then available everywhere.',
             'file'      => 'A file in a place the kernel looks by name. Nothing registers it; being there is the registration.',
             'design'    => 'A template in a design, found through the design chain rather than by being named anywhere.',
-            'ini'       => 'Settings only. Nothing is written but ini, and the behaviour changes.',
+            'ini'       => 'Settings only. Nothing is written but ini, and the behavior changes.',
             'override'  => 'A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.',
             'runnable'  => 'A subclass of a command, cronjob part or view class, named in site.ini [RunnableSettings] Implementation[]. The file of the command, part or view stays as it is; Runnable::create() makes the subclass instead, and an entry that is not a subclass is ignored. A command reads it from settings/site.ini and settings/override only, because it starts before its siteaccess and extensions are loaded.',
             'registry'  => 'An entry of a registry that rad.ini declares: the kernel or an extension says which ini blocks, or which class list, hold the entries and what each must be, and the extension point survey counts and checks every entry without the kernel naming the extension.',
@@ -161,7 +161,7 @@ class expRADCatalogue
 
         'infocollector' => array(
             'group' => 'content',
-            'title' => 'Information collection behaviour',
+            'title' => 'Information collection behavior',
             'what'  => 'What happens when a visitor fills in a form built out of content: what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. Matched per content class, so a poll and a contact form built the same way behave differently.',
             'where' => ezpI18n::tr( 'design/admin/setup/rad', 'settings/override/collect.ini.append.php, and templates under content/collectedinfo/' ),
             'register' => 'collect.ini [InfoSettings] TypeList[<class>], [EmailSettings] SendEmailList[<class>], [CollectionSettings] CollectAnonymousDataList[<class>], [DisplaySettings] DisplayList[<class>]',

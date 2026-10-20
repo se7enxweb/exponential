@@ -45,7 +45,7 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
             'callables'    => array( 'title' => 'What a template can call',
                                      'what'  => 'Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.' ),
             'events'       => array( 'title' => 'Events something can listen to',
-                                     'what'  => 'Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.' ),
+                                     'what'  => 'Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.' ),
             'overrides'    => array( 'title' => 'Templates already replaced',
                                      'what'  => 'Every override registered here. Each is a place a template has already been replaced - which is both something to learn from and something to collide with, since two overrides matching the same thing are decided by load order rather than by intent.' ),
             'problems'     => array( 'title' => 'What is configured and cannot work',

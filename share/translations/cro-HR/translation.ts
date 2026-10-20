@@ -23630,7 +23630,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>redoslijedom učitavanja, s verzijom koju navodi njihov extension.xml, ezinfo.php ili composer.json</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Njihovi autori, licence i web-stranice nalaze se na stranici</translation>
     </message>
     <message>
@@ -24832,7 +24832,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>Rukovatelj ispisom XML teksta</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Ponašanje prikupljanja informacija</translation>
     </message>
     <message>
@@ -25344,7 +25344,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>Predložak u dizajnu, pronađen putem lanca dizajna, a ne tako što je negdje naveden.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Samo postavke. Ne zapisuje se ništa osim INI-ja, a ponašanje se mijenja.</translation>
     </message>
     <message>
@@ -26139,7 +26139,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -26511,7 +26511,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>Koji stupac sadrži što i kako bi morala izgledati vlastita tablica ako stupci nisu dovoljni.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -26531,7 +26531,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licence naveden u nastavku. Zadano uključeno: proširenje bez datoteke licence ne govori ništa o tome kako se smije koristiti.</translation>
     </message>
     <message>
@@ -26587,7 +26587,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>Kratak redak običnog teksta. Završava u naslovima stranica, u popisima, u administraciji i u URL-u svakog objekta koji je prema njemu nazvan, pa mora biti tekst, a ne oznake.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Isplati li se ovu vrstu podataka uopće indeksirati. False za sve čija vrijednost kao riječi ništa ne znači - boja, ID, zastavica.</translation>
     </message>
     <message>
@@ -41628,7 +41628,7 @@ Zadani kôd izrađen je iz osnovnih parametara koje ste odabrali.</translation>
         <translation>Što jezgra deklarira da bi to netko drugi implementirao, s brojem metoda koje svako traži i onim što ga već implementira. Ona s mnogo metoda i jednom implementacijom duboka su voda.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Svaka točka koju jezgra najavljuje dok radi, prikupljena iz izvornog koda, a ne s popisa. Događaj filtra koristi ono što slušatelj vrati, pa slušatelj koji zaboravi vratiti vrijednost tu vrijednost uništava; događaj obavijesti to zanemaruje. Najlakši način dodavanja ponašanja: bez modula, bez rukovatelja, bez klase koju treba zamijeniti.</translation>
     </message>
     <message>
@@ -43498,7 +43498,7 @@ Više podataka potražite na stranici sa zahtjevima.</translation>
         <translation>Nema.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Naziv organizacije</translation>
     </message>
     <message>
@@ -53227,7 +53227,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -53343,7 +53343,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Što sadrži, kako pokrenuti skriptu klase i što učiniti prije nego što se pokrene na web-mjestu koje već ima sadržaj.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -53359,7 +53359,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licence naveden u nastavku. Zadano uključeno: proširenje bez datoteke licence ne govori ništa o tome kako se smije koristiti.</translation>
     </message>
     <message>
@@ -53446,7 +53446,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -53634,7 +53634,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Direktorij autoloads s registriranim operatorom, spreman za proširivanje.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -53654,7 +53654,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licence naveden u nastavku. Zadano uključeno: proširenje bez datoteke licence ne govori ništa o tome kako se smije koristiti.</translation>
     </message>
     <message>
@@ -53741,7 +53741,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -54273,7 +54273,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>INI datoteka koja navodi ovu klasu umjesto zadane.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -54297,7 +54297,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licence naveden u nastavku. Zadano uključeno: proširenje bez datoteke licence ne govori ništa o tome kako se smije koristiti.</translation>
     </message>
     <message>
@@ -55156,7 +55156,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -55276,7 +55276,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Kako se dolazi do prikaza, što je u $Params, što $Result smije sadržavati i kako unutar prikaza provjeriti pravilo.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -55296,7 +55296,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licence naveden u nastavku. Zadano uključeno: proširenje bez datoteke licence ne govori ništa o tome kako se smije koristiti.</translation>
     </message>
     <message>
@@ -55479,7 +55479,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -55655,7 +55655,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>share/db_schema.dba koji opisuje tablice, kako bi ih instalacijski program i provjera dosljednosti poznavali.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -55675,7 +55675,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licence naveden u nastavku. Zadano uključeno: proširenje bez datoteke licence ne govori ništa o tome kako se smije koristiti.</translation>
     </message>
     <message>
@@ -55786,7 +55786,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -55894,7 +55894,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Što je nadjačano, zašto nadjačavanje, a ne nešto lakše, i što treba učiniti pri svakoj nadogradnji.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -55910,7 +55910,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Tekst licence naveden u nastavku. Nadjačavanje sadrži kod jezgre, pa licenca pod kojom je izdano nije sporedna stvar.</translation>
     </message>
     <message>
@@ -56109,7 +56109,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -56201,7 +56201,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Svaki atribut slike sprema se jednom i poslužuje u onoliko veličina koliko ima zamjenskih naziva. Predložak traži jednu po nazivu; datoteka se stvara prvi put kada se zatraži i čuva se. Dodavanje zamjenskog naziva ne stoji ništa dok ga nešto ne zatraži, a uklanjanje onoga koji sadržaj još traži ostavlja neispravne slike.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Jezgra najavljuje nekoliko desetaka stvari dok se događaju – čišćenje predmemorije, dolazak zahtjeva, odgovor koji se upravo šalje – i poziva se sve što sluša. To je najlakši način dodavanja ponašanja: bez modula, bez rukovatelja, bez klase koju treba zamijeniti, samo statična metoda koja se izvodi kada se nešto dogodi.</translation>
     </message>
     <message>
@@ -56261,7 +56261,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Izrezuje pravokutnik. U kombinaciji sa skaliranjem tako se stvara minijatura fiksne veličine bez izobličenja.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Uklanja boju.</translation>
     </message>
     <message>
@@ -56273,7 +56273,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Uvija sliku. Nikome ne koristi, a nalazi se u svakom ikad napisanom primjeru.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Obrub u imenovanoj ili heksadecimalnoj boji.</translation>
     </message>
     <message>
@@ -56397,7 +56397,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Što koja postavka radi, zašto je tamo gdje jest i što treba očistiti prije nego što stupi na snagu.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -56413,7 +56413,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licence naveden u nastavku. Zadano uključeno: proširenje bez datoteke licence ne govori ništa o tome kako se smije koristiti.</translation>
     </message>
     <message>
@@ -56656,7 +56656,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Što jezgra deklarira da bi to netko drugi implementirao, s brojem metoda koje svako traži i onim što ga već implementira. Ona s mnogo metoda i jednom implementacijom duboka su voda.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Svaka točka koju jezgra najavljuje dok radi, prikupljena iz izvornog koda, a ne s popisa. Događaj filtra koristi ono što slušatelj vrati, pa slušatelj koji zaboravi vratiti vrijednost tu vrijednost uništava; događaj obavijesti to zanemaruje. Najlakši način dodavanja ponašanja: bez modula, bez rukovatelja, bez klase koju treba zamijeniti.</translation>
     </message>
     <message>
@@ -56744,7 +56744,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Ništa ne treba učiniti. Navodi se kako bi stranica dala potpunu sliku, a ne samo popis pogrešaka.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Ako tražite mjesto za promjenu ponašanja, ovo su mjesta koja još nitko nije zauzeo.</translation>
     </message>
     <message>
@@ -56931,7 +56931,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -57079,7 +57079,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Kako svaka stvar izgleda u predlošku, što joj se predaje i kako je isprobati iz skripte, bez ikakve stranice.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -57099,7 +57099,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licence naveden u nastavku. Zadano uključeno: proširenje bez datoteke licence ne govori ništa o tome kako se smije koristiti.</translation>
     </message>
     <message>
@@ -57214,7 +57214,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Verzija</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
@@ -57514,7 +57514,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Napomena u datoteci readme o workflow_cron, koji izvodi događaj koji se sam odgodio.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ono što administracijsko sučelje čita kako bi prikazalo naziv, verziju i licencu proširenja.</translation>
     </message>
     <message>
@@ -57534,7 +57534,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Drži ostatke uređivača i izlaz izrade izvan repozitorija.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licence naveden u nastavku. Zadano uključeno: proširenje bez datoteke licence ne govori ništa o tome kako se smije koristiti.</translation>
     </message>
     <message>
@@ -59495,7 +59495,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Ništa ne treba učiniti. Navodi se kako bi stranica dala potpunu sliku, a ne samo popis pogrešaka.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Ako tražite mjesto za promjenu ponašanja, ovo su mjesta koja još nitko nije zauzeo.</translation>
     </message>
     <message>
@@ -59915,11 +59915,11 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Postavka &quot;%setting&quot; je popis, ali za nju nisu navedene vrijednosti.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Nije konfigurirana nijedna licenca za odabir. Dodajte je u package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Licenca &quot;%licence&quot; nije među licencama konfiguriranima u package.ini [LicenseSettings]. Odaberite jednu s popisa.</translation>
     </message>
     <message>
@@ -69644,7 +69644,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Postavke u upotrebi</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Postavke se nalaze u mailpreferences.ini; organizacija, poštanska adresa, poštanski sandučić za odbijene poruke i tajni ključ web-mjesta pripadaju u nadjačavanje postavki (override).</translation>
     </message>
     <message>
@@ -69836,7 +69836,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Isključeno</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organizacija u podnožju</translation>
     </message>
     <message>
@@ -69972,11 +69972,11 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Podaci o pošiljatelju</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Svaka neobavezna poruka e-pošte navodi tko je šalje i njegovu poštansku adresu, kako to zakon nalaže. Bez naziva organizacije upotrebljava se naziv web-mjesta.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Naziv organizacije</translation>
     </message>
     <message>
@@ -70712,7 +70712,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Tablica %table nedostaje: pokrenite ažuriranje baze podataka.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>Poštanska adresa u podnožju e-pošte je prazna: unesite je pod „Podaci o pošiljatelju“ na ovoj stranici (mailpreferences/admin/status). Zakon zahtijeva organizaciju i njezinu poštansku adresu u svakoj neobaveznoj poruci e-pošte; do tada se e-pošta šalje bez njih.</translation>
     </message>
     <message>

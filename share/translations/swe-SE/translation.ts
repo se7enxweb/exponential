@@ -23728,7 +23728,7 @@ Obs: Paketen avinstalleras inte.</translation>
         <translation>i inläsningsordning, med den version som deras extension.xml, ezinfo.php eller composer.json anger</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Deras upphovspersoner, licenser och webbplatser finns under</translation>
     </message>
     <message>
@@ -24930,7 +24930,7 @@ Obs: Paketen avinstalleras inte.</translation>
         <translation>Utdatahanterare för XML-text</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Beteende för informationsinsamling</translation>
     </message>
     <message>
@@ -25442,7 +25442,7 @@ Obs: Paketen avinstalleras inte.</translation>
         <translation>En mall i en design, som hittas via designkedjan i stället för genom att anges någonstans.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Bara inställningar. Inget skrivs utom ini, och beteendet ändras.</translation>
     </message>
     <message>
@@ -26237,7 +26237,7 @@ Obs: Paketen avinstalleras inte.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -26609,7 +26609,7 @@ Obs: Paketen avinstalleras inte.</translation>
         <translation>Vilken kolumn som innehåller vad, och hur en egen tabell skulle behöva se ut om kolumnerna inte räcker.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -26629,7 +26629,7 @@ Obs: Paketen avinstalleras inte.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licenstexten som anges nedan. På som standard: ett tillägg utan licensfil säger ingenting om hur det får användas.</translation>
     </message>
     <message>
@@ -26685,7 +26685,7 @@ Obs: Paketen avinstalleras inte.</translation>
         <translation>En kort rad oformaterad text. Den hamnar i sidrubriker, i listor, i administrationen och i url:en för varje objekt som namnges av den, så den måste vara text och inte märkning.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Om den här datatypen över huvud taget är värd att indexera. False för allt vars värde inte betyder något som ord – en färg, ett id, en flagga.</translation>
     </message>
     <message>
@@ -41801,7 +41801,7 @@ Standardkoden skapades från de grundläggande som du valde.</translation>
         <translation>Det som kärnan deklarerar för någon annan att implementera, med hur många metoder var och en kräver och vad som redan implementerar den. De med många metoder och en implementation är det djupa vattnet.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Varje punkt som kärnan meddelar när den arbetar, insamlad ur källkoden i stället för listad. En filterhändelse använder det som en lyssnare returnerar, så en som glömmer att returnera värdet förstör det; en notifieringshändelse ignorerar det. Det lättaste sättet som finns att lägga till beteende: ingen modul, ingen hanterare, ingen klass att ersätta.</translation>
     </message>
     <message>
@@ -43695,7 +43695,7 @@ Se sidan med krav för mer information.</translation>
         <translation>Inga.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Organisationens namn</translation>
     </message>
     <message>
@@ -53477,7 +53477,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -53593,7 +53593,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Vad som ingår, hur klasskriptet körs och vad som ska göras innan det körs på en webbplats med innehåll.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -53609,7 +53609,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licenstexten som anges nedan. På som standard: ett tillägg utan licensfil säger ingenting om hur det får användas.</translation>
     </message>
     <message>
@@ -53696,7 +53696,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -53884,7 +53884,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>En autoloads-katalog med en registrerad operator, redo att byggas ut.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -53904,7 +53904,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licenstexten som anges nedan. På som standard: ett tillägg utan licensfil säger ingenting om hur det får användas.</translation>
     </message>
     <message>
@@ -53991,7 +53991,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -54523,7 +54523,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Den ini som anger den här klassen i stället för standardklassen.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -54547,7 +54547,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licenstexten som anges nedan. På som standard: ett tillägg utan licensfil säger ingenting om hur det får användas.</translation>
     </message>
     <message>
@@ -55406,7 +55406,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -55526,7 +55526,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Hur en vy nås, vad som finns i $Params, vad $Result får innehålla och hur en policy kontrolleras inifrån en vy.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -55546,7 +55546,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licenstexten som anges nedan. På som standard: ett tillägg utan licensfil säger ingenting om hur det får användas.</translation>
     </message>
     <message>
@@ -55729,7 +55729,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -55905,7 +55905,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>share/db_schema.dba som beskriver tabellerna, så att installationsprogrammet och konsistenskontrollen känner till dem.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -55925,7 +55925,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licenstexten som anges nedan. På som standard: ett tillägg utan licensfil säger ingenting om hur det får användas.</translation>
     </message>
     <message>
@@ -56036,7 +56036,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -56144,7 +56144,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Vad som åsidosattes, varför en åsidosättning i stället för något lättare och vad som måste göras vid varje uppgradering.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -56160,7 +56160,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Licenstexten som anges nedan. En åsidosättning bär kärnkod, så vad den är licensierad under är ingen eftertanke.</translation>
     </message>
     <message>
@@ -56359,7 +56359,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -56451,7 +56451,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Varje bildattribut sparas en gång och tillhandahålls i lika många storlekar som det finns alias. En mall ber om en med namn; filen skapas första gången den efterfrågas och sparas. Att lägga till ett alias kostar ingenting förrän något ber om det, och att ta bort ett som innehåll fortfarande ber om lämnar trasiga bilder.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Kärnan meddelar ett par dussin saker när de händer – en cache som töms, en förfrågan som kommer in, ett svar som ska skickas – och allt som lyssnar anropas. Det är det lättaste sättet att lägga till beteende: ingen modul, ingen hanterare, ingen klass att ersätta, bara en statisk metod som körs när något händer.</translation>
     </message>
     <message>
@@ -56511,7 +56511,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Skär ut en rektangel. I kombination med en skalning är det så en miniatyr med fast storlek skapas utan förvrängning.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Tar bort färgen.</translation>
     </message>
     <message>
@@ -56523,7 +56523,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Vrider bilden. Till ingen nytta för någon, och med i varje exempel som någonsin skrivits.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>En ram i en namngiven färg eller hexfärg.</translation>
     </message>
     <message>
@@ -56647,7 +56647,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Vad varje inställning gör, varför den är där den är och vad som måste tömmas innan den får effekt.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -56663,7 +56663,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licenstexten som anges nedan. På som standard: ett tillägg utan licensfil säger ingenting om hur det får användas.</translation>
     </message>
     <message>
@@ -56906,7 +56906,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Det som kärnan deklarerar för någon annan att implementera, med hur många metoder var och en kräver och vad som redan implementerar den. De med många metoder och en implementation är det djupa vattnet.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Varje punkt som kärnan meddelar när den arbetar, insamlad ur källkoden i stället för listad. En filterhändelse använder det som en lyssnare returnerar, så en som glömmer att returnera värdet förstör det; en notifieringshändelse ignorerar det. Det lättaste sättet som finns att lägga till beteende: ingen modul, ingen hanterare, ingen klass att ersätta.</translation>
     </message>
     <message>
@@ -56994,7 +56994,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Inget att göra. Den listas för att sidan ska ge en fullständig bild i stället för bara en lista med fel.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Om du letar efter ett ställe att ändra beteende är det här ställena som ingen har gjort anspråk på än.</translation>
     </message>
     <message>
@@ -57181,7 +57181,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -57329,7 +57329,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Hur varje sak ser ut i en mall, vad den får och hur du provar den från ett skript utan en sida i närheten.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -57349,7 +57349,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licenstexten som anges nedan. På som standard: ett tillägg utan licensfil säger ingenting om hur det får användas.</translation>
     </message>
     <message>
@@ -57464,7 +57464,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -57764,7 +57764,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>En anteckning i readme om workflow_cron, som är det som kör en händelse som skjutit upp sig själv.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det som administrationsgränssnittet läser för att visa tilläggets namn, version och licens.</translation>
     </message>
     <message>
@@ -57784,7 +57784,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Håller rester från redigerare och byggresultat utanför förrådet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licenstexten som anges nedan. På som standard: ett tillägg utan licensfil säger ingenting om hur det får användas.</translation>
     </message>
     <message>
@@ -59745,7 +59745,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Inget att göra. Den listas för att sidan ska ge en fullständig bild i stället för bara en lista med fel.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Om du letar efter ett ställe att ändra beteende är det här ställena som ingen har gjort anspråk på än.</translation>
     </message>
     <message>
@@ -60165,11 +60165,11 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Inställningen &quot;%setting&quot; är en lista, men inga värden angavs för den.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Ingen licens är konfigurerad att välja bland. Lägg till en i package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Licensen &quot;%licence&quot; är inte en av de licenser som konfigurerats i package.ini [LicenseSettings]. Välj en från listan.</translation>
     </message>
     <message>
@@ -69894,7 +69894,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Inställningar som används</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Inställningarna finns i mailpreferences.ini; organisationen, postadressen, postlådan för studsar och webbplatsens hemlighet hör hemma i en inställningsåsidosättning.</translation>
     </message>
     <message>
@@ -70086,7 +70086,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Av</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organisation i sidfoten</translation>
     </message>
     <message>
@@ -70222,11 +70222,11 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Avsändaruppgifter</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Varje valfritt e-postmeddelande anger vem som skickar det och avsändarens postadress, som lagen kräver. Utan organisationsnamn används webbplatsens namn.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Organisationens namn</translation>
     </message>
     <message>
@@ -70962,7 +70962,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Tabellen %table saknas: kör databasuppdateringen.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>Postadressen i e-postens sidfot är tom: ange den under &quot;Avsändaruppgifter&quot; på den här sidan (mailpreferences/admin/status). Lagen kräver organisationen och dess postadress i varje valfritt e-postmeddelande; e-post skickas utan den tills dess.</translation>
     </message>
     <message>

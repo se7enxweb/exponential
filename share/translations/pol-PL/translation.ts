@@ -23708,7 +23708,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>w kolejności ładowania, z wersją podaną w extension.xml, ezinfo.php lub composer.json</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Ich autorzy, licencje i strony internetowe znajdują się na stronie</translation>
     </message>
     <message>
@@ -24910,7 +24910,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>Procedura obsługi wyjścia tekstu XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Zachowanie zbierania informacji</translation>
     </message>
     <message>
@@ -25422,7 +25422,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>Szablon w projekcie graficznym, znajdowany przez łańcuch projektów graficznych, a nie przez wskazanie gdziekolwiek.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Tylko ustawienia. Zapisywany jest jedynie plik INI, a zachowanie się zmienia.</translation>
     </message>
     <message>
@@ -26217,7 +26217,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -26589,7 +26589,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>Która kolumna co przechowuje i jak musiałaby wyglądać własna tabela, jeśli kolumny nie wystarczą.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -26609,7 +26609,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licencji wskazanej poniżej. Domyślnie włączone: rozszerzenie bez pliku licencji nie mówi nic o tym, jak można go używać.</translation>
     </message>
     <message>
@@ -26665,7 +26665,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>Krótki wiersz zwykłego tekstu. Trafia do tytułów stron, list, administracji i adresu URL każdego obiektu nazwanego według niego, więc musi być tekstem, a nie znacznikami.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Czy ten typ danych w ogóle warto indeksować. False dla wszystkiego, czego wartość nic nie znaczy jako słowa — kolor, ID, flaga.</translation>
     </message>
     <message>
@@ -41745,7 +41745,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
         <translation>Co jądro deklaruje do zaimplementowania przez kogoś innego, z liczbą metod wymaganych przez każdy element i tym, co już go implementuje. Te z wieloma metodami i jedną implementacją to głęboka woda.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Każdy punkt, który jądro ogłasza podczas pracy, wyszukany w kodzie źródłowym, a nie wymieniony ręcznie. Zdarzenie filtrujące używa tego, co zwraca odbiornik, więc odbiornik, który zapomni zwrócić wartość, niszczy ją; zdarzenie powiadamiające to ignoruje. Najlżejszy istniejący sposób dodawania zachowania: bez modułu, bez procedury obsługi, bez klasy do zastąpienia.</translation>
     </message>
     <message>
@@ -43611,7 +43611,7 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
         <translation>Brak.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Nazwa organizacji</translation>
     </message>
     <message>
@@ -53386,7 +53386,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -53502,7 +53502,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Co zawiera, jak uruchomić skrypt klasy i co zrobić przed uruchomieniem go na witrynie z treścią.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -53518,7 +53518,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licencji wskazanej poniżej. Domyślnie włączone: rozszerzenie bez pliku licencji nie mówi nic o tym, jak można go używać.</translation>
     </message>
     <message>
@@ -53605,7 +53605,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -53793,7 +53793,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Katalog autoloads z zarejestrowanym operatorem, gotowy do rozbudowy.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -53813,7 +53813,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licencji wskazanej poniżej. Domyślnie włączone: rozszerzenie bez pliku licencji nie mówi nic o tym, jak można go używać.</translation>
     </message>
     <message>
@@ -53900,7 +53900,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -54432,7 +54432,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Plik INI wskazujący tę klasę zamiast domyślnej.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -54456,7 +54456,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licencji wskazanej poniżej. Domyślnie włączone: rozszerzenie bez pliku licencji nie mówi nic o tym, jak można go używać.</translation>
     </message>
     <message>
@@ -55315,7 +55315,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -55435,7 +55435,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Jak dociera się do widoku, co jest w $Params, co może zawierać $Result i jak sprawdzić zasadę z wnętrza widoku.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -55455,7 +55455,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licencji wskazanej poniżej. Domyślnie włączone: rozszerzenie bez pliku licencji nie mówi nic o tym, jak można go używać.</translation>
     </message>
     <message>
@@ -55638,7 +55638,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -55814,7 +55814,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>share/db_schema.dba opisujący tabele, aby wiedziały o nich instalator i sprawdzanie spójności.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -55834,7 +55834,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licencji wskazanej poniżej. Domyślnie włączone: rozszerzenie bez pliku licencji nie mówi nic o tym, jak można go używać.</translation>
     </message>
     <message>
@@ -55945,7 +55945,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -56053,7 +56053,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Co zostało nadpisane, dlaczego nadpisanie zamiast czegoś lżejszego i co trzeba zrobić przy każdej aktualizacji.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -56069,7 +56069,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Tekst licencji wskazanej poniżej. Nadpisanie zawiera kod jądra, więc licencja nie jest sprawą drugorzędną.</translation>
     </message>
     <message>
@@ -56268,7 +56268,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -56360,7 +56360,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Każdy atrybut obrazu jest przechowywany raz i dostarczany w tylu rozmiarach, ile jest aliasów. Szablon prosi o jeden z nich po nazwie; plik jest tworzony przy pierwszym żądaniu i przechowywany. Dodanie aliasu nic nie kosztuje, dopóki ktoś o niego nie poprosi, a usunięcie aliasu, o który treść nadal prosi, powoduje uszkodzone obrazy.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Jądro ogłasza kilkadziesiąt zdarzeń w chwili, gdy następują — czyszczenie pamięci podręcznej, nadejście żądania, wysyłanie odpowiedzi — i wywołuje wszystko, co nasłuchuje. To najlżejszy sposób dodawania zachowania: bez modułu, bez procedury obsługi, bez klasy do zastąpienia, tylko metoda statyczna uruchamiana, gdy coś się dzieje.</translation>
     </message>
     <message>
@@ -56420,7 +56420,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wycina prostokąt. W połączeniu ze skalowaniem pozwala utworzyć miniaturę o stałym rozmiarze bez zniekształceń.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Usuwa kolor.</translation>
     </message>
     <message>
@@ -56432,7 +56432,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Skręca obraz. Nikomu nieprzydatne, ale obecne w każdym przykładzie, jaki kiedykolwiek napisano.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Obramowanie w kolorze podanym nazwą lub kodem szesnastkowym.</translation>
     </message>
     <message>
@@ -56556,7 +56556,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Co robi każde ustawienie, dlaczego jest tam, gdzie jest, i co trzeba wyczyścić, aby zaczęło działać.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -56572,7 +56572,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licencji wskazanej poniżej. Domyślnie włączone: rozszerzenie bez pliku licencji nie mówi nic o tym, jak można go używać.</translation>
     </message>
     <message>
@@ -56815,7 +56815,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Co jądro deklaruje do zaimplementowania przez kogoś innego, z liczbą metod wymaganych przez każdy element i tym, co już go implementuje. Te z wieloma metodami i jedną implementacją to głęboka woda.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Każdy punkt, który jądro ogłasza podczas pracy, wyszukany w kodzie źródłowym, a nie wymieniony ręcznie. Zdarzenie filtrujące używa tego, co zwraca odbiornik, więc odbiornik, który zapomni zwrócić wartość, niszczy ją; zdarzenie powiadamiające to ignoruje. Najlżejszy istniejący sposób dodawania zachowania: bez modułu, bez procedury obsługi, bez klasy do zastąpienia.</translation>
     </message>
     <message>
@@ -56903,7 +56903,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Nic do zrobienia. Jest wymienione, aby strona dawała pełny obraz, a nie tylko listę błędów.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Przy poszukiwaniu miejsca na zmianę zachowania: to są miejsca, których nikt jeszcze nie zajął.</translation>
     </message>
     <message>
@@ -57090,7 +57090,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -57238,7 +57238,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Jak każdy element wygląda w szablonie, co otrzymuje i jak go wypróbować ze skryptu bez żadnej strony.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -57258,7 +57258,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licencji wskazanej poniżej. Domyślnie włączone: rozszerzenie bez pliku licencji nie mówi nic o tym, jak można go używać.</translation>
     </message>
     <message>
@@ -57373,7 +57373,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wersja</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
@@ -57673,7 +57673,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Uwaga w pliku readme o workflow_cron, który uruchamia zdarzenie, które samo się odroczyło.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co odczytuje interfejs administracyjny, aby pokazać nazwę, wersję i licencję rozszerzenia.</translation>
     </message>
     <message>
@@ -57693,7 +57693,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Utrzymuje pozostałości edytora i wyniki kompilacji poza repozytorium.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Tekst licencji wskazanej poniżej. Domyślnie włączone: rozszerzenie bez pliku licencji nie mówi nic o tym, jak można go używać.</translation>
     </message>
     <message>
@@ -59654,7 +59654,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Nic do zrobienia. Jest wymienione, aby strona dawała pełny obraz, a nie tylko listę błędów.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Przy poszukiwaniu miejsca na zmianę zachowania: to są miejsca, których nikt jeszcze nie zajął.</translation>
     </message>
     <message>
@@ -60074,11 +60074,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Ustawienie „%setting” jest listą, ale nie podano dla niego żadnych wartości.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Nie skonfigurowano żadnej licencji do wyboru. Należy dodać licencję w package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Licencja „%licence” nie należy do licencji skonfigurowanych w package.ini [LicenseSettings]. Należy wybrać licencję z listy.</translation>
     </message>
     <message>
@@ -69803,7 +69803,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Używane ustawienia</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Ustawienia znajdują się w mailpreferences.ini; organizacja, adres pocztowy, skrzynka odbić i sekret witryny należą do nadpisania ustawień.</translation>
     </message>
     <message>
@@ -69995,7 +69995,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Wyłączone</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organizacja w stopce</translation>
     </message>
     <message>
@@ -70131,11 +70131,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Dane nadawcy</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Każdy opcjonalny e-mail podaje, kto go wysyła, oraz adres pocztowy nadawcy, zgodnie z wymogami prawa. Bez nazwy organizacji używana jest nazwa witryny.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Nazwa organizacji</translation>
     </message>
     <message>
@@ -70871,7 +70871,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Brak tabeli %table: należy uruchomić aktualizację bazy danych.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>Adres pocztowy w stopce wiadomości jest pusty: należy wprowadzić go w sekcji „Dane nadawcy” na tej stronie (mailpreferences/admin/status). Prawo wymaga podania organizacji i jej adresu pocztowego w każdej opcjonalnej wiadomości; do tego czasu wiadomości są wysyłane bez niego.</translation>
     </message>
     <message>

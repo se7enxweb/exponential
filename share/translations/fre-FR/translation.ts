@@ -23795,7 +23795,7 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <translation>dans l&apos;ordre de chargement, avec la version indiquée par leur extension.xml, ezinfo.php ou composer.json</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Leurs auteurs, licences et sites web se trouvent sur</translation>
     </message>
     <message>
@@ -24997,7 +24997,7 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <translation>Gestionnaire de sortie du texte XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Comportement de la collecte d&apos;informations</translation>
     </message>
     <message>
@@ -25509,7 +25509,7 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <translation>Un template dans un design, trouvé via la chaîne de designs plutôt qu&apos;en étant nommé quelque part.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Paramètres uniquement. Rien n&apos;est écrit à part de l&apos;INI, et le comportement change.</translation>
     </message>
     <message>
@@ -26304,7 +26304,7 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -26676,7 +26676,7 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <translation>Quelle colonne contient quoi, et à quoi devrait ressembler une table dédiée si les colonnes ne suffisent pas.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -26696,7 +26696,7 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Le texte de la licence nommée ci-dessous. Activé par défaut : une extension sans fichier de licence ne dit rien de la manière dont elle peut être utilisée.</translation>
     </message>
     <message>
@@ -26752,7 +26752,7 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <translation>Une courte ligne de texte brut. Elle se retrouve dans les titres de page, les listes, l&apos;administration et l&apos;url de chaque objet qu&apos;elle nomme ; ce doit donc être du texte et non du balisage.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Si ce type de données vaut la peine d&apos;être indexé. Faux pour tout ce dont la valeur ne signifie rien en tant que mots - une couleur, un id, un indicateur.</translation>
     </message>
     <message>
@@ -41880,7 +41880,7 @@ Le code par défaut a été généré à partir des paramètres de base que vous
         <translation>Ce que le noyau déclare pour que quelqu&apos;un d&apos;autre l&apos;implémente, avec le nombre de méthodes que chacun demande et ce qui l&apos;implémente déjà. Ceux qui ont beaucoup de méthodes et une seule implémentation sont les eaux profondes.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Chaque point que le noyau annonce au fil de son travail, extrait du code source plutôt que listé. Un événement de filtre utilise ce que renvoie un écouteur, donc un écouteur qui oublie de renvoyer la valeur la détruit ; un événement de notification l&apos;ignore. La façon la plus légère d&apos;ajouter un comportement : pas de module, pas de gestionnaire, pas de classe à remplacer.</translation>
     </message>
     <message>
@@ -43814,7 +43814,7 @@ Consultez la page des prérequis pour plus d&apos;informations.</translation>
         <translation>Aucun.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Nom de l&apos;organisation</translation>
     </message>
     <message>
@@ -53573,7 +53573,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -53689,7 +53689,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Ce qu&apos;il contient, comment exécuter le script de classe, et ce qu&apos;il faut faire avant de l&apos;exécuter sur un site qui contient déjà du contenu.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -53705,7 +53705,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Le texte de la licence nommée ci-dessous. Activé par défaut : une extension sans fichier de licence ne dit rien de la manière dont elle peut être utilisée.</translation>
     </message>
     <message>
@@ -53792,7 +53792,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -53980,7 +53980,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Un répertoire autoloads avec un opérateur enregistré, prêt à être étendu.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -54000,7 +54000,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Le texte de la licence nommée ci-dessous. Activé par défaut : une extension sans fichier de licence ne dit rien de la manière dont elle peut être utilisée.</translation>
     </message>
     <message>
@@ -54087,7 +54087,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -54619,7 +54619,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Le fichier ini qui désigne cette classe à la place de celle par défaut.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -54643,7 +54643,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Le texte de la licence nommée ci-dessous. Activé par défaut : une extension sans fichier de licence ne dit rien de la manière dont elle peut être utilisée.</translation>
     </message>
     <message>
@@ -55502,7 +55502,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -55622,7 +55622,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Comment on atteint une vue, ce que contient $Params, ce que $Result peut transporter, et comment vérifier une règle depuis l&apos;intérieur d&apos;une vue.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -55642,7 +55642,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Le texte de la licence nommée ci-dessous. Activé par défaut : une extension sans fichier de licence ne dit rien de la manière dont elle peut être utilisée.</translation>
     </message>
     <message>
@@ -55825,7 +55825,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -56001,7 +56001,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>share/db_schema.dba décrivant les tables, pour que l&apos;installateur et le contrôle de cohérence les connaissent.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -56021,7 +56021,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Le texte de la licence nommée ci-dessous. Activé par défaut : une extension sans fichier de licence ne dit rien de la manière dont elle peut être utilisée.</translation>
     </message>
     <message>
@@ -56132,7 +56132,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -56240,7 +56240,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Ce qui a été surchargé, pourquoi une surcharge plutôt qu&apos;un moyen plus léger, et ce qu&apos;il faut faire à chaque mise à niveau.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -56256,7 +56256,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Le texte de licence nommé ci-dessous. Une surcharge contient du code du noyau ; sa licence n&apos;est donc pas un détail secondaire.</translation>
     </message>
     <message>
@@ -56455,7 +56455,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -56547,7 +56547,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Chaque attribut image est stocké une seule fois et servi en autant de tailles qu&apos;il y a d&apos;alias. Un template en demande un par son nom ; le fichier est créé la première fois qu&apos;il est demandé, puis conservé. Ajouter un alias ne coûte rien tant que rien ne le demande, et en supprimer un que du contenu demande encore laisse des images cassées.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Le noyau annonce quelques dizaines de choses au moment où elles se produisent - un cache vidé, une requête qui arrive, une réponse sur le point d&apos;être envoyée - et tout ce qui écoute est appelé. C&apos;est la façon la plus légère d&apos;ajouter un comportement : pas de module, pas de gestionnaire, pas de classe à remplacer, juste une méthode statique qui s&apos;exécute quand quelque chose se produit.</translation>
     </message>
     <message>
@@ -56607,7 +56607,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Découpe un rectangle. Combiné à une mise à l&apos;échelle, c&apos;est ainsi qu&apos;on obtient une miniature de taille fixe sans déformation.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Retire la couleur.</translation>
     </message>
     <message>
@@ -56619,7 +56619,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tord l&apos;image. Utile à personne, et présent dans tous les exemples jamais écrits.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Une bordure dans une couleur nommée ou hexadécimale.</translation>
     </message>
     <message>
@@ -56743,7 +56743,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Ce que fait chaque paramètre, pourquoi il est là où il est, et ce qui doit être vidé avant qu&apos;il prenne effet.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -56759,7 +56759,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Le texte de la licence nommée ci-dessous. Activé par défaut : une extension sans fichier de licence ne dit rien de la manière dont elle peut être utilisée.</translation>
     </message>
     <message>
@@ -57002,7 +57002,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Ce que le noyau déclare pour que quelqu&apos;un d&apos;autre l&apos;implémente, avec le nombre de méthodes que chacun demande et ce qui l&apos;implémente déjà. Ceux qui ont beaucoup de méthodes et une seule implémentation sont les eaux profondes.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Chaque point que le noyau annonce au fil de son travail, extrait du code source plutôt que listé. Un événement de filtre utilise ce que renvoie un écouteur, donc un écouteur qui oublie de renvoyer la valeur la détruit ; un événement de notification l&apos;ignore. La façon la plus légère d&apos;ajouter un comportement : pas de module, pas de gestionnaire, pas de classe à remplacer.</translation>
     </message>
     <message>
@@ -57090,7 +57090,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Rien à faire. C&apos;est listé pour que la page offre une image complète plutôt qu&apos;une simple liste d&apos;erreurs.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Si vous cherchez un endroit où modifier le comportement, voici les points que personne n&apos;a encore revendiqués.</translation>
     </message>
     <message>
@@ -57277,7 +57277,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -57425,7 +57425,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>À quoi ressemble chaque élément dans un template, ce qui lui est transmis, et comment l&apos;essayer depuis un script sans aucune page à proximité.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -57445,7 +57445,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Le texte de la licence nommée ci-dessous. Activé par défaut : une extension sans fichier de licence ne dit rien de la manière dont elle peut être utilisée.</translation>
     </message>
     <message>
@@ -57560,7 +57560,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -57860,7 +57860,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Une note dans le readme sur workflow_cron, qui est ce qui exécute un événement qui s&apos;est différé.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ce que lit l&apos;interface d&apos;administration pour afficher le nom, la version et la licence de l&apos;extension.</translation>
     </message>
     <message>
@@ -57880,7 +57880,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Tient les restes d&apos;éditeur et les produits de build hors du dépôt.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Le texte de la licence nommée ci-dessous. Activé par défaut : une extension sans fichier de licence ne dit rien de la manière dont elle peut être utilisée.</translation>
     </message>
     <message>
@@ -59841,7 +59841,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Rien à faire. C&apos;est listé pour que la page offre une image complète plutôt qu&apos;une simple liste d&apos;erreurs.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Si vous cherchez un endroit où modifier le comportement, voici les points que personne n&apos;a encore revendiqués.</translation>
     </message>
     <message>
@@ -60261,11 +60261,11 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Le paramètre « %setting » est une liste, mais aucune valeur n&apos;a été indiquée.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Aucune licence n&apos;est configurée parmi lesquelles choisir. Ajoutez-en une dans package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>La licence « %licence » ne fait pas partie des licences configurées dans package.ini [LicenseSettings]. Choisissez-en une dans la liste.</translation>
     </message>
     <message>
@@ -69978,7 +69978,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Paramètres utilisés</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Les paramètres se trouvent dans mailpreferences.ini ; l&apos;organisation, l&apos;adresse postale, la boîte de retour (bounce) et le secret du site doivent figurer dans une surcharge des paramètres.</translation>
     </message>
     <message>
@@ -70170,7 +70170,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Désactivée</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organisation dans le pied de page</translation>
     </message>
     <message>
@@ -70306,11 +70306,11 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Coordonnées de l&apos;expéditeur</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Chaque e-mail facultatif indique qui l&apos;envoie et son adresse postale, comme l&apos;exige la loi. Sans nom d&apos;organisation, le nom du site est utilisé.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Nom de l&apos;organisation</translation>
     </message>
     <message>
@@ -71046,7 +71046,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>La table %table est manquante : exécutez la mise à jour de la base de données.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>L&apos;adresse postale du pied des e-mails est vide : saisissez-la sous « Coordonnées de l&apos;expéditeur » sur cette page (mailpreferences/admin/status). La loi exige l&apos;organisation et son adresse postale dans chaque e-mail facultatif ; d&apos;ici là, les e-mails sont envoyés sans elle.</translation>
     </message>
     <message>

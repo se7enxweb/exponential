@@ -88,7 +88,7 @@
 </div>
 
 <div class="a4-field">
-    <label for="wfeLicence">{'Licence'|i18n( 'design/admin/setup/rad/workflowevent' )}</label>
+    <label for="wfeLicence">{'License'|i18n( 'design/admin/setup/rad/workflowevent' )}</label>
     {include uri='design:setup/rad_licence_select.tpl' select_id='wfeLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 </div>

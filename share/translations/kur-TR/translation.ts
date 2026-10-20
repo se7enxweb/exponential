@@ -24468,7 +24468,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>bi rêza barkirinê, bi wê guhertoyê ku extension.xml, ezinfo.php an composer.json ya wan diyar dike</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Nivîskar, lîsans û malperên wan li vir in:</translation>
     </message>
     <message>
@@ -26540,7 +26540,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Birêvebirê derketina nivîsa XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Tevgera berhevkirina agahiyan</translation>
     </message>
     <message>
@@ -27052,7 +27052,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Şablonek di sêwiranekê de, ku bi zincîra sêwiranê tê dîtin, ne bi wê yekê ku li cihekî bê binavkirin.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Tenê mîheng. Ji bilî INI tiştek nayê nivîsandin, û tevger diguhere.</translation>
     </message>
     <message>
@@ -27843,7 +27843,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -27959,7 +27959,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Çi tê de ye, skrîpta çînê çawa tê xebitandin, û berî ku li ser malpereke bi naverok were xebitandin çi divê were kirin.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -27975,7 +27975,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Nivîsa lîsansê ya ku li jêr hatiye binavkirin. Bi standard çalak e: pêvekeke bê pelê lîsansê tiştekî li ser ka çawa dikare were bikaranîn nabêje.</translation>
     </message>
     <message>
@@ -28146,7 +28146,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -28518,7 +28518,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Kîjan stûn çi digire, û heke stûn têr nekin tabloyeke taybet divê çawa be.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -28538,7 +28538,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Nivîsa lîsansê ya ku li jêr hatiye binavkirin. Bi standard çalak e: pêvekeke bê pelê lîsansê tiştekî li ser ka çawa dikare were bikaranîn nabêje.</translation>
     </message>
     <message>
@@ -28594,7 +28594,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Rêzeke kurt a nivîsa sade. Ew dikeve sernavên rûpelan, lîsteyan, panela rêveberiyê û URLya her heybera ku pê tê binavkirin, ji ber vê yekê divê nivîs be ne nîşankirin (markup).</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Ka ev cureyê daneyê qet hêjayî îndekskirinê ye an na. False ji bo her tiştê ku nirxa wê wek peyv tu wateyê nade - reng, ID, ala.</translation>
     </message>
     <message>
@@ -28697,7 +28697,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -28885,7 +28885,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Peldankeke autoloads bi operatoreke tomarkirî, amade ji bo berfirehkirinê.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -28905,7 +28905,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Nivîsa lîsansê ya ku li jêr hatiye binavkirin. Bi standard çalak e: pêvekeke bê pelê lîsansê tiştekî li ser ka çawa dikare were bikaranîn nabêje.</translation>
     </message>
     <message>
@@ -28992,7 +28992,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -29524,7 +29524,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Pelê INI ku vê çînê li şûna ya standard bi nav dike.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -29548,7 +29548,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Nivîsa lîsansê ya ku li jêr hatiye binavkirin. Bi standard çalak e: pêvekeke bê pelê lîsansê tiştekî li ser ka çawa dikare were bikaranîn nabêje.</translation>
     </message>
     <message>
@@ -30407,7 +30407,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -30527,7 +30527,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Dîtinek çawa tê gihîştin, çi di $Params de ye, $Result dikare çi bigire, û meriv çawa ji hundirê wê polîtîkayekê kontrol dike.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -30547,7 +30547,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Nivîsa lîsansê ya ku li jêr hatiye binavkirin. Bi standard çalak e: pêvekeke bê pelê lîsansê tiştekî li ser ka çawa dikare were bikaranîn nabêje.</translation>
     </message>
     <message>
@@ -30730,7 +30730,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -30906,7 +30906,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>share/db_schema.dba ku tabloyan dide nasîn, da ku sazker û kontrola hevgirtinê wan bizanibin.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -30926,7 +30926,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Nivîsa lîsansê ya ku li jêr hatiye binavkirin. Bi standard çalak e: pêvekeke bê pelê lîsansê tiştekî li ser ka çawa dikare were bikaranîn nabêje.</translation>
     </message>
     <message>
@@ -31037,7 +31037,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -31145,7 +31145,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Çi hate şûnguhertin, çima şûnguhertinek ne tiştekî siviktir, û di her nûjenkirinê de çi divê bê kirin.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -31161,7 +31161,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Nivîsa lîsansê ya ku li jêr navê wê hatiye dayîn. Şûnguhertinek koda kernel digire, loma lîsansa wê ne tiştekî duyemîn e.</translation>
     </message>
     <message>
@@ -31360,7 +31360,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -31452,7 +31452,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Her taybetmendiyeke wêneyê carekê tê tomarkirin û bi qasî nasnavan bi mezinahiyan tê pêşkêşkirin. Şablonek yekê bi navê wê dixwaze; pel cara yekem ku tê xwestin tê çêkirin û tê hilanîn. Lêzêdekirina nasnavekê heta ku tiştek wê nexwaze tu biha nade, û rakirina yekê ku naverok hêj wê dixwaze wêneyên şikestî dihêle.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Kernel çend dehan tiştan radigihîne dema ku ew diqewimin - cacheyek tê paqijkirin, daxwazek tê, bersivek li ber şandinê ye - û her tiştê ku guhdarî dike tê bangkirin. Ew rêya herî sivik e ji bo lêzêdekirina tevgerê: ne modul, ne birêvebir, ne çînek ku bê guhertin, tenê rêbazeke statîk ku dema tiştek diqewime dixebite.</translation>
     </message>
     <message>
@@ -31512,7 +31512,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Çarçikeyekê jê dike. Bi pîvankirinekê re, bi vî awayî wêneyekî biçûk bi mezinahiya sabît bê xirbûn tê çêkirin.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Rengê jê dike.</translation>
     </message>
     <message>
@@ -31524,7 +31524,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Wêneyê ba dide. Ji kesî re ne bi kêr e, û di her mînaka ku heta niha hatiye nivîsandin de heye.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Kenarek bi rengekî binavkirî an hex.</translation>
     </message>
     <message>
@@ -31648,7 +31648,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Her mîheng çi dike, çima li cihê xwe ye, û berî ku bandor bike çi divê bê paqijkirin.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -31664,7 +31664,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Nivîsa lîsansê ya ku li jêr hatiye binavkirin. Bi standard çalak e: pêvekeke bê pelê lîsansê tiştekî li ser ka çawa dikare were bikaranîn nabêje.</translation>
     </message>
     <message>
@@ -31907,7 +31907,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Tiştê ku kernel daxuyan dike da ku kesekî din pêk bîne, bi wê yekê ka her yek çend rêbazan dixwaze û çi jixwe wê pêk tîne. Yên bi gelek rêbazan û yek pêkanînê ava kûr in.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Her xala ku kernel dema dixebite radigihîne, ji koda çavkaniyê hatiye berhevkirin ne ku hatiye rêzkirin. Bûyereke parzûnê (filter) tiştê ku guhdarek vedigerîne bikar tîne, loma guhdarek ku vegerandina nirxê ji bîr bike wî tune dike; bûyereke agahdariyê (notify) wî paşguh dike. Rêya herî sivik a heyî ji bo lêzêdekirina tevgerê: ne modul, ne birêvebir, ne çînek ku bê guhertin.</translation>
     </message>
     <message>
@@ -31995,7 +31995,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Tiştek ji bo kirinê tune. Ew tê rêzkirin da ku rûpel wêneyekî temam bide, ne tenê lîsteyeke çewtiyan.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Ger hûn li cihekî digerin ku tevgerê biguherînin, ev ew cih in ku hîn kesî xwe lê xwedî dernexistiye.</translation>
     </message>
     <message>
@@ -32182,7 +32182,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -32330,7 +32330,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Her tişt di şablonekê de çawa xuya dike, çi jê re tê radestkirin, û meriv çawa wê ji skrîptekê biceribîne bêyî ku rûpelek nêzî wê be.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -32350,7 +32350,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Nivîsa lîsansê ya ku li jêr hatiye binavkirin. Bi standard çalak e: pêvekeke bê pelê lîsansê tiştekî li ser ka çawa dikare were bikaranîn nabêje.</translation>
     </message>
     <message>
@@ -32548,7 +32548,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guherto</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lîsans</translation>
     </message>
     <message>
@@ -32848,7 +32848,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Nîşeyek di readme de li ser workflow_cron, ku ew e ya ku bûyereke ku xwe paşxistiye dixebitîne.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Tiştê ku panela rêveberiyê dixwîne da ku nav, guherto û lîsansa pêvekê nîşan bide.</translation>
     </message>
     <message>
@@ -32868,7 +32868,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Bermahiyên edîtorê û encamên avakirinê ji depoyê dûr digire.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Nivîsa lîsansê ya ku li jêr hatiye binavkirin. Bi standard çalak e: pêvekeke bê pelê lîsansê tiştekî li ser ka çawa dikare were bikaranîn nabêje.</translation>
     </message>
     <message>
@@ -48755,7 +48755,7 @@ Koda standard ji parametreyên bingehîn ên ku we hilbijartin hate çêkirin.</
         <translation>Tiştê ku kernel daxuyan dike da ku kesekî din pêk bîne, bi wê yekê ka her yek çend rêbazan dixwaze û çi jixwe wê pêk tîne. Yên bi gelek rêbazan û yek pêkanînê ava kûr in.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Her xala ku kernel dema dixebite radigihîne, ji koda çavkaniyê hatiye berhevkirin ne ku hatiye rêzkirin. Bûyereke parzûnê (filter) tiştê ku guhdarek vedigerîne bikar tîne, loma guhdarek ku vegerandina nirxê ji bîr bike wî tune dike; bûyereke agahdariyê (notify) wî paşguh dike. Rêya herî sivik a heyî ji bo lêzêdekirina tevgerê: ne modul, ne birêvebir, ne çînek ku bê guhertin.</translation>
     </message>
     <message>
@@ -50573,7 +50573,7 @@ Ji bo bêtir agahiyan li rûpela pêdiviyan binêrin.</translation>
         <translation>Tune.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Navê rêxistinê</translation>
     </message>
     <message>
@@ -58447,7 +58447,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Tiştek ji bo kirinê tune. Ew tê rêzkirin da ku rûpel wêneyekî temam bide, ne tenê lîsteyeke çewtiyan.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Ger hûn li cihekî digerin ku tevgerê biguherînin, ev ew cih in ku hîn kesî xwe lê xwedî dernexistiye.</translation>
     </message>
     <message>
@@ -58867,11 +58867,11 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Mîhenga &quot;%setting&quot; lîsteyek e, lê ji bo wê tu nirx nehatin dayîn.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Tu lîsans ji bo hilbijartinê nehatiye mîhengkirin. Yekê li package.ini [LicenseSettings] LicenseList zêde bikin.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Lîsansa &quot;%licence&quot; ne yek ji lîsansên ku di package.ini [LicenseSettings] de hatine mîhengkirin e. Yekê ji lîsteyê hilbijêrin.</translation>
     </message>
     <message>
@@ -68596,7 +68596,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Mîhengên di bikaranînê de</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Mîheng di mailpreferences.ini de ne; rêxistin, navnîşana postayê, qutiya posteyê ya vegerê (bounce) û nepeniya malperê divê di şûnguhertineke mîhengan (override) de bin.</translation>
     </message>
     <message>
@@ -68788,7 +68788,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Neçalak</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Rêxistin di binnivîsê de</translation>
     </message>
     <message>
@@ -68924,11 +68924,11 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Agahiyên şander</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Her e-nameya bijarte nav dide ka kî wê dişîne û navnîşana wî ya postayê, wekî ku qanûn dixwaze. Bê navê rêxistinê, navê malperê tê bikaranîn.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Navê rêxistinê</translation>
     </message>
     <message>
@@ -69664,7 +69664,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Tabloya %table tune ye: nûkirina danegehê bixebitînin.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>Navnîşana postayê ya binnivîsa e-nameyê vala ye: wê di bin &quot;Agahiyên şander&quot; de li ser vê rûpelê binivîsin (mailpreferences/admin/status). Qanûn di her e-nameya bijarte de rêxistin û navnîşana wê ya postayê dixwaze; heta wê demê e-name bê wê tê şandin.</translation>
     </message>
     <message>

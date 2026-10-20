@@ -23709,7 +23709,7 @@ Exponential verze</translation>
         <translation>v pořadí načítání, s verzí uvedenou v jejich extension.xml, ezinfo.php nebo composer.json</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Jejich autoři, licence a weby jsou uvedeny na stránce</translation>
     </message>
     <message>
@@ -24911,7 +24911,7 @@ Exponential verze</translation>
         <translation>Obsluha výstupu textu XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Chování sběru informací</translation>
     </message>
     <message>
@@ -25423,7 +25423,7 @@ Exponential verze</translation>
         <translation>Šablona v designu, nalezená přes řetězec designů místo toho, aby byla někde uvedena.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Pouze nastavení. Nezapisuje se nic než INI a chování se změní.</translation>
     </message>
     <message>
@@ -26218,7 +26218,7 @@ Exponential verze</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -26590,7 +26590,7 @@ Exponential verze</translation>
         <translation>Který sloupec obsahuje co a jak by musela vypadat vlastní tabulka, pokud sloupce nestačí.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -26610,7 +26610,7 @@ Exponential verze</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Text licence uvedené níže. Ve výchozím nastavení zapnuto: rozšíření bez souboru licence neříká nic o tom, jak ho lze používat.</translation>
     </message>
     <message>
@@ -26666,7 +26666,7 @@ Exponential verze</translation>
         <translation>Krátký řádek prostého textu. Skončí v titulcích stránek, ve výpisech, v administraci a v URL každého objektu, který je jím pojmenován, takže musí být text, ne značky.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Zda vůbec stojí za to tento datový typ indexovat. False pro cokoli, jehož hodnota jako slova nic neznamená – barva, ID, příznak.</translation>
     </message>
     <message>
@@ -41780,7 +41780,7 @@ Výchozí kód byl vytvořen ze základních parametrů, které jste zvolili.</t
         <translation>Co jádro deklaruje, aby to implementoval někdo jiný, s počtem metod, které každé vyžaduje, a s tím, co ho již implementuje. Ta s mnoha metodami a jednou implementací jsou hluboká voda.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Každý bod, který jádro během práce oznamuje, vyhledaný ve zdrojovém kódu místo vypsání. Filtrační událost používá, co posluchač vrátí, takže posluchač, který zapomene hodnotu vrátit, ji zničí; oznamovací událost to ignoruje. Nejlehčí způsob, jak přidat chování: žádný modul, žádná obsluha, žádná třída k nahrazení.</translation>
     </message>
     <message>
@@ -43674,7 +43674,7 @@ Další informace najdete na stránce požadavků.</translation>
         <translation>Žádné.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Název organizace</translation>
     </message>
     <message>
@@ -53456,7 +53456,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -53572,7 +53572,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Co obsahuje, jak spustit skript třídy a co udělat, než se spustí na webu s obsahem.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -53588,7 +53588,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Text licence uvedené níže. Ve výchozím nastavení zapnuto: rozšíření bez souboru licence neříká nic o tom, jak ho lze používat.</translation>
     </message>
     <message>
@@ -53675,7 +53675,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -53863,7 +53863,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Adresář autoloads s registrovaným operátorem, připravený k rozšíření.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -53883,7 +53883,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Text licence uvedené níže. Ve výchozím nastavení zapnuto: rozšíření bez souboru licence neříká nic o tom, jak ho lze používat.</translation>
     </message>
     <message>
@@ -53970,7 +53970,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -54502,7 +54502,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>INI, které uvádí tuto třídu místo výchozí.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -54526,7 +54526,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Text licence uvedené níže. Ve výchozím nastavení zapnuto: rozšíření bez souboru licence neříká nic o tom, jak ho lze používat.</translation>
     </message>
     <message>
@@ -55385,7 +55385,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -55505,7 +55505,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Jak se k zobrazení dostat, co je v $Params, co smí nést $Result a jak zevnitř zkontrolovat zásadu.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -55525,7 +55525,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Text licence uvedené níže. Ve výchozím nastavení zapnuto: rozšíření bez souboru licence neříká nic o tom, jak ho lze používat.</translation>
     </message>
     <message>
@@ -55708,7 +55708,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -55884,7 +55884,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>share/db_schema.dba popisující tabulky, aby o nich věděl instalátor i kontrola konzistence.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -55904,7 +55904,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Text licence uvedené níže. Ve výchozím nastavení zapnuto: rozšíření bez souboru licence neříká nic o tom, jak ho lze používat.</translation>
     </message>
     <message>
@@ -56015,7 +56015,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -56123,7 +56123,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Co bylo přepsáno, proč přepsání místo čehokoli lehčího a co je třeba udělat při každé aktualizaci.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -56139,7 +56139,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Text licence uvedené níže. Přepsání obsahuje kód jádra, takže licence, pod kterou je, není vedlejší věc.</translation>
     </message>
     <message>
@@ -56338,7 +56338,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -56430,7 +56430,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Každý atribut obrázku se ukládá jednou a poskytuje v tolika velikostech, kolik je aliasů. Šablona o jeden požádá podle názvu; soubor se vytvoří při prvním požadavku a uchová. Přidání aliasu nic nestojí, dokud o něj něco nepožádá, a odstranění aliasu, o který obsah stále žádá, zanechá nefunkční obrázky.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Jádro oznamuje několik desítek událostí, jak se dějí – mazání mezipaměti, příchod požadavku, odpověď před odesláním – a volá se vše, co naslouchá. Je to nejlehčí způsob, jak přidat chování: žádný modul, žádná obsluha, žádná třída k nahrazení, jen statická metoda, která se spustí, když se něco stane.</translation>
     </message>
     <message>
@@ -56490,7 +56490,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Vyřízne obdélník. V kombinaci se změnou velikosti tak vzniká miniatura pevné velikosti bez zkreslení.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Odstraní barvy.</translation>
     </message>
     <message>
@@ -56502,7 +56502,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Zakroutí obrázek. Nikomu k ničemu a v každém příkladu, který kdy byl napsán.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Okraj v pojmenované nebo hexadecimální barvě.</translation>
     </message>
     <message>
@@ -56626,7 +56626,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Co každé nastavení dělá, proč je tam, kde je, a co je třeba vymazat, aby se projevilo.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -56642,7 +56642,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Text licence uvedené níže. Ve výchozím nastavení zapnuto: rozšíření bez souboru licence neříká nic o tom, jak ho lze používat.</translation>
     </message>
     <message>
@@ -56885,7 +56885,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Co jádro deklaruje, aby to implementoval někdo jiný, s počtem metod, které každé vyžaduje, a s tím, co ho již implementuje. Ta s mnoha metodami a jednou implementací jsou hluboká voda.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Každý bod, který jádro během práce oznamuje, vyhledaný ve zdrojovém kódu místo vypsání. Filtrační událost používá, co posluchač vrátí, takže posluchač, který zapomene hodnotu vrátit, ji zničí; oznamovací událost to ignoruje. Nejlehčí způsob, jak přidat chování: žádný modul, žádná obsluha, žádná třída k nahrazení.</translation>
     </message>
     <message>
@@ -56973,7 +56973,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Není co dělat. Je uvedeno proto, aby stránka byla úplným obrazem, a ne jen seznamem chyb.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Pokud hledáte místo, kde změnit chování, toto jsou místa, která si zatím nikdo nenárokoval.</translation>
     </message>
     <message>
@@ -57160,7 +57160,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -57308,7 +57308,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Jak každá věc vypadá v šabloně, co dostává a jak ji vyzkoušet ze skriptu bez jakékoli stránky.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -57328,7 +57328,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Text licence uvedené níže. Ve výchozím nastavení zapnuto: rozšíření bez souboru licence neříká nic o tom, jak ho lze používat.</translation>
     </message>
     <message>
@@ -57443,7 +57443,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Verze</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
@@ -57743,7 +57743,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Poznámka v readme o workflow_cron, který spouští událost, která se sama odložila.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Co čte administrační rozhraní, aby zobrazilo název, verzi a licenci rozšíření.</translation>
     </message>
     <message>
@@ -57763,7 +57763,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Udržuje zbytky editorů a výstup sestavení mimo repozitář.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Text licence uvedené níže. Ve výchozím nastavení zapnuto: rozšíření bez souboru licence neříká nic o tom, jak ho lze používat.</translation>
     </message>
     <message>
@@ -59724,7 +59724,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Není co dělat. Je uvedeno proto, aby stránka byla úplným obrazem, a ne jen seznamem chyb.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Pokud hledáte místo, kde změnit chování, toto jsou místa, která si zatím nikdo nenárokoval.</translation>
     </message>
     <message>
@@ -60144,11 +60144,11 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Nastavení „%setting“ je seznam, ale nebyly pro něj zadány žádné hodnoty.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Není nakonfigurována žádná licence k výběru. Přidejte ji do package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Licence „%licence“ nepatří mezi licence nakonfigurované v package.ini [LicenseSettings]. Vyberte jednu ze seznamu.</translation>
     </message>
     <message>
@@ -69873,7 +69873,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Používaná nastavení</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Nastavení jsou v souboru mailpreferences.ini; organizace, poštovní adresa, schránka pro nedoručitelné zprávy a tajný klíč webu patří do přepsání nastavení.</translation>
     </message>
     <message>
@@ -70065,7 +70065,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Vypnuto</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organizace v zápatí</translation>
     </message>
     <message>
@@ -70201,11 +70201,11 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Údaje odesílatele</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Každý volitelný e-mail uvádí, kdo jej odesílá, a jeho poštovní adresu, jak vyžaduje zákon. Bez názvu organizace se použije název webu.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Název organizace</translation>
     </message>
     <message>

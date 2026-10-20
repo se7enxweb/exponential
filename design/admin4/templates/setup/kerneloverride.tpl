@@ -127,7 +127,7 @@
 </div>
 
 <div class="a4-field">
-    <label for="koLicence">{'Licence'|i18n( 'design/admin/setup/rad/override' )}</label>
+    <label for="koLicence">{'License'|i18n( 'design/admin/setup/rad/override' )}</label>
     {include uri='design:setup/rad_licence_select.tpl' select_id='koLicence' selected=$wizard_settings.licence groups=$wizard_licences}
     <span class="a4-help">{'This carries kernel code, so what it is licensed under is not an afterthought.'|i18n( 'design/admin/setup/rad/override' )}</span>
 </div>

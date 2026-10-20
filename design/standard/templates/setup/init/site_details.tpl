@@ -128,7 +128,7 @@ The setup can continue with the initialization but may damage the present data."
             <p class="setup_field_note">{"The editor siteaccess: the administration interface for content editing only, without setup, design and developer tools. Editors sign in here to write, edit and publish content and to manage media, users, orders, tags and newsletters. Layouts, Setup, Design, the Git, Export and CIE tools and the developer toolbar stay in the admin siteaccess, so editors cannot change how the site is built."|i18n("design/standard/setup/init")}</p></td>
     </tr>
     <tr>
-        <td><label class="textfield">{"Organisation name"|i18n("design/standard/setup/init")}:</label>&nbsp;</td>
+        <td><label class="textfield">{"Organization name"|i18n("design/standard/setup/init")}:</label>&nbsp;</td>
         <td><input type="text" size="30" name="eZSetup_site_templates_organisation_name" value="{first_set( $site_type.organisation_name, $site_type.title )|wash}" /></td>
     </tr>
     <tr>

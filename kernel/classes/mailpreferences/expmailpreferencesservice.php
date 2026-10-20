@@ -375,7 +375,7 @@ class expMailPreferencesService
             case 'table_missing':
                 return ezpI18n::tr( 'kernel/mailpreferences/status', 'The table %table is missing: run the database update.', null, array( '%table' => $problem[2] ) );
             case 'footer_missing':
-                return ezpI18n::tr( 'kernel/mailpreferences/status', 'The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.' );
+                return ezpI18n::tr( 'kernel/mailpreferences/status', 'The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.' );
             case 'default_on_refused':
                 return ezpI18n::tr( 'kernel/mailpreferences/status', 'The optional category "%category" is set to be on for everybody (DefaultOn=true). That is opt-out, which the law does not allow for most optional mail: it is treated as off until a person turns it on. Set DefaultOn=false, or [CategorySettings] AllowDefaultOn=enabled in mailpreferences.ini where opt-out is lawful.', null, array( '%category' => $problem[2] ) );
             case 'default_on_allowed':

@@ -24801,7 +24801,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>in load order, with the version their extension.xml, ezinfo.php or composer.json states</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Their authors, licences and websites are on</translation>
     </message>
     <message>
@@ -26881,7 +26881,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>XML text output handler</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Information collection behaviour</translation>
     </message>
     <message>
@@ -27393,7 +27393,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>A template in a design, found through the design chain rather than by being named anywhere.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Settings only. Nothing is written but ini, and the behaviour changes.</translation>
     </message>
     <message>
@@ -28176,7 +28176,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -28292,7 +28292,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>What is in it, how to run the class script, and what to do before it is run on a site with content on it.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -28308,7 +28308,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
     <message>
@@ -28479,7 +28479,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -28851,7 +28851,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Which column holds what, and what a table of its own would have to look like if the columns are not enough.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -28871,7 +28871,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
     <message>
@@ -28927,7 +28927,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>A short line of plain text. It ends up in page titles, in listings, in the admin and in the url of every object named by it, so it must be text and not markup.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</translation>
     </message>
     <message>
@@ -29030,7 +29030,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -29218,7 +29218,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>An autoloads directory with a registered operator, ready to extend.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -29238,7 +29238,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
     <message>
@@ -29325,7 +29325,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -29857,7 +29857,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>The ini that names this class in place of the default.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -29881,7 +29881,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
     <message>
@@ -30740,7 +30740,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -30860,7 +30860,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>How a view is reached, what is in $Params, what $Result may carry, and how to check a policy from inside one.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -30880,7 +30880,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
     <message>
@@ -31063,7 +31063,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -31239,7 +31239,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>share/db_schema.dba describing the tables, so the installer and the consistency check know about them.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -31259,7 +31259,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
     <message>
@@ -31370,7 +31370,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -31478,7 +31478,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>What was overridden, why an override rather than anything lighter, and what has to be done at every upgrade.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -31494,7 +31494,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</translation>
     </message>
     <message>
@@ -31693,7 +31693,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -31785,7 +31785,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Every image attribute is stored once and served in as many sizes as there are aliases. A template asks for one by name; the file is made the first time it is asked for and kept. Adding an alias costs nothing until something asks for it, and removing one that content still asks for leaves broken images.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</translation>
     </message>
     <message>
@@ -31845,7 +31845,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Cuts a rectangle out. Combined with a scale this is how a fixed size thumbnail is made without distortion.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Takes the colour out.</translation>
     </message>
     <message>
@@ -31857,7 +31857,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Twists the image. Of no use to anybody, and in every example ever written.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>A border in a named or hex colour.</translation>
     </message>
     <message>
@@ -31981,7 +31981,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>What each setting does, why it is where it is, and what has to be cleared before it takes effect.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -31997,7 +31997,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
     <message>
@@ -32240,7 +32240,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</translation>
     </message>
     <message>
@@ -32328,7 +32328,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Nothing to do. It is listed so that the page is a complete picture rather than only a list of faults.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</translation>
     </message>
     <message>
@@ -32515,7 +32515,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -32663,7 +32663,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>What each thing looks like in a template, what it is handed, and how to try it from a script without a page anywhere near it.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -32683,7 +32683,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
     <message>
@@ -32881,7 +32881,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>License</translation>
     </message>
     <message>
@@ -33181,7 +33181,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>A note in the readme about workflow_cron, which is what runs an event that deferred itself.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>What the admin interface reads to show the extension name, version and licence.</translation>
     </message>
     <message>
@@ -33201,7 +33201,7 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Keeps editor leftovers and build output out of the repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
     <message>
@@ -49753,7 +49753,7 @@ The default code was made from the basic parameters you chose.</translation>
         <translation>What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</translation>
     </message>
     <message>
@@ -51571,7 +51571,7 @@ See the requirements page for more information.</translation>
         <translation>None.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Organisation name</translation>
     </message>
     <message>
@@ -59362,7 +59362,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Nothing to do. It is listed so that the page is a complete picture rather than only a list of faults.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</translation>
     </message>
     <message>
@@ -59782,11 +59782,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>The setting "%setting" is a list, but no values were given for it.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</translation>
     </message>
     <message>
@@ -65704,7 +65704,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Settings in use</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</translation>
     </message>
     <message>
@@ -65896,7 +65896,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Off</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organisation in the footer</translation>
     </message>
     <message>
@@ -66032,11 +66032,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Sender details</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Organisation name</translation>
     </message>
     <message>
@@ -66772,7 +66772,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>The table %table is missing: run the database update.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</translation>
     </message>
     <message>

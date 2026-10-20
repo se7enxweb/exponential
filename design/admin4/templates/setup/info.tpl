@@ -136,7 +136,7 @@
             <li><span>{$extension.extension|wash}</span><span>{if $extension.version}{$extension.version|wash}{else}&ndash;{/if}</span></li>
         {/foreach}
         </ul>
-        <p class="a4-help">{'Their authors, licences and websites are on'|i18n( 'design/admin/setup/info' )} <a href={'/ezinfo/about'|ezurl}>{'About'|i18n( 'design/admin/setup/info' )}</a>.</p>
+        <p class="a4-help">{'Their authors, licenses and websites are on'|i18n( 'design/admin/setup/info' )} <a href={'/ezinfo/about'|ezurl}>{'About'|i18n( 'design/admin/setup/info' )}</a>.</p>
     </div>
 </details>
 

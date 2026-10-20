@@ -24478,7 +24478,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>לפי סדר הטעינה, עם הגרסה שמציינים extension.xml, ezinfo.php או composer.json שלהן</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>המחברים, הרישיונות ואתרי האינטרנט שלהן מופיעים בעמוד</translation>
     </message>
     <message>
@@ -26550,7 +26550,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מטפל פלט טקסט XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>התנהגות איסוף מידע</translation>
     </message>
     <message>
@@ -27062,7 +27062,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>תבנית בעיצוב, שנמצאת דרך שרשרת העיצובים ולא בכך ששמה מופיע במקום כלשהו.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>הגדרות בלבד. דבר אינו נכתב מלבד ini, וההתנהגות משתנה.</translation>
     </message>
     <message>
@@ -27853,7 +27853,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -27969,7 +27969,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מה יש בה, איך להריץ את סקריפט המחלקה, ומה לעשות לפני שמריצים אותו באתר שיש בו תוכן.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -27985,7 +27985,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>טקסט הרישיון שמצוין להלן. מופעל כברירת מחדל: הרחבה ללא קובץ רישיון אינה אומרת דבר על האופן שבו מותר להשתמש בה.</translation>
     </message>
     <message>
@@ -28156,7 +28156,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -28528,7 +28528,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>איזו עמודה מכילה מה, ואיך הייתה צריכה להיראות טבלה משלו אם העמודות אינן מספיקות.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -28548,7 +28548,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>טקסט הרישיון שמצוין להלן. מופעל כברירת מחדל: הרחבה ללא קובץ רישיון אינה אומרת דבר על האופן שבו מותר להשתמש בה.</translation>
     </message>
     <message>
@@ -28604,7 +28604,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>שורה קצרה של טקסט פשוט. היא מגיעה לכותרות עמודים, לרשימות, לממשק הניהול ולכתובת ה־URL של כל אובייקט שנקרא על שמה, ולכן היא חייבת להיות טקסט ולא סימון.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>האם כדאי בכלל לאנדקס את סוג הנתונים הזה. false עבור כל דבר שלערך שלו אין משמעות כמילים - צבע, מזהה, דגל.</translation>
     </message>
     <message>
@@ -28707,7 +28707,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -28895,7 +28895,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>תיקיית autoloads עם אופרטור רשום, מוכנה להרחבה.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -28915,7 +28915,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>טקסט הרישיון שמצוין להלן. מופעל כברירת מחדל: הרחבה ללא קובץ רישיון אינה אומרת דבר על האופן שבו מותר להשתמש בה.</translation>
     </message>
     <message>
@@ -29002,7 +29002,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -29534,7 +29534,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>ה־ini שנוקב במחלקה זו במקום ברירת המחדל.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -29558,7 +29558,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>טקסט הרישיון שמצוין להלן. מופעל כברירת מחדל: הרחבה ללא קובץ רישיון אינה אומרת דבר על האופן שבו מותר להשתמש בה.</translation>
     </message>
     <message>
@@ -30417,7 +30417,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -30537,7 +30537,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>איך מגיעים לתצוגה, מה יש ב־$Params, מה $Result יכול לשאת, ואיך בודקים מדיניות מתוך תצוגה.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -30557,7 +30557,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>טקסט הרישיון שמצוין להלן. מופעל כברירת מחדל: הרחבה ללא קובץ רישיון אינה אומרת דבר על האופן שבו מותר להשתמש בה.</translation>
     </message>
     <message>
@@ -30740,7 +30740,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -30916,7 +30916,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>share/db_schema.dba שמתאר את הטבלאות, כדי שתוכנית ההתקנה ובדיקת העקביות יכירו אותן.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -30936,7 +30936,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>טקסט הרישיון שמצוין להלן. מופעל כברירת מחדל: הרחבה ללא קובץ רישיון אינה אומרת דבר על האופן שבו מותר להשתמש בה.</translation>
     </message>
     <message>
@@ -31047,7 +31047,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -31155,7 +31155,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מה נדרס, למה דריסה ולא משהו קל יותר, ומה צריך לעשות בכל שדרוג.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -31171,7 +31171,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>טקסט הרישיון שמצוין להלן. דריסה נושאת קוד ליבה, ולכן הרישיון שתחתיו היא מופצת אינו עניין שולי.</translation>
     </message>
     <message>
@@ -31370,7 +31370,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -31462,7 +31462,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>כל מאפיין תמונה נשמר פעם אחת ומוגש בכמה גדלים שיש כינויים. תבנית מבקשת גודל לפי שם; הקובץ נוצר בפעם הראשונה שמבקשים אותו ונשמר. הוספת כינוי אינה עולה דבר עד שמשהו מבקש אותו, והסרת כינוי שתוכן עדיין מבקש משאירה תמונות שבורות.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>הליבה מכריזה על כמה עשרות דברים בזמן שהם קורים - מטמון שמנוקה, בקשה שמגיעה, תגובה שעומדת להישלח - וכל מי שמאזין נקרא. זו הדרך הקלה ביותר להוסיף התנהגות: ללא מודול, ללא מטפל, ללא מחלקה להחלפה, רק מתודה סטטית שרצה כשמשהו קורה.</translation>
     </message>
     <message>
@@ -31522,7 +31522,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>חותך מלבן. בשילוב עם שינוי קנה מידה, כך יוצרים תמונה ממוזערת בגודל קבוע ללא עיוות.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>מסיר את הצבע.</translation>
     </message>
     <message>
@@ -31534,7 +31534,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מסובב את התמונה בסחרור. חסר תועלת לכל אדם, ומופיע בכל דוגמה שנכתבה אי פעם.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>מסגרת בצבע בעל שם או בקוד הקסדצימלי.</translation>
     </message>
     <message>
@@ -31658,7 +31658,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מה כל הגדרה עושה, למה היא נמצאת היכן שהיא נמצאת, ומה צריך לנקות לפני שהיא נכנסת לתוקף.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -31674,7 +31674,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>טקסט הרישיון שמצוין להלן. מופעל כברירת מחדל: הרחבה ללא קובץ רישיון אינה אומרת דבר על האופן שבו מותר להשתמש בה.</translation>
     </message>
     <message>
@@ -31917,7 +31917,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מה שהליבה מצהירה עליו כדי שמישהו אחר יממש, עם מספר המתודות שכל אחד דורש ומה כבר מממש אותו. אלה עם מתודות רבות ומימוש אחד הם המים העמוקים.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>כל נקודה שהליבה מכריזה עליה בזמן עבודתה, כפי שנאספה מקוד המקור ולא מרשימה. אירוע סינון משתמש במה שמאזין מחזיר, כך שמאזין ששוכח להחזיר את הערך הורס אותו; אירוע הודעה מתעלם ממנו. הדרך הקלה ביותר שיש להוסיף התנהגות: ללא מודול, ללא מטפל, ללא מחלקה להחלפה.</translation>
     </message>
     <message>
@@ -32005,7 +32005,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>אין מה לעשות. הוא מופיע כדי שהעמוד יהיה תמונה מלאה ולא רק רשימת תקלות.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>למי שמחפש מקום לשנות התנהגות, אלה המקומות שאיש עוד לא תפס.</translation>
     </message>
     <message>
@@ -32192,7 +32192,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -32340,7 +32340,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>איך כל דבר נראה בתבנית, מה מועבר אליו, ואיך לנסות אותו מסקריפט בלי שום עמוד בסביבה.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -32360,7 +32360,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>טקסט הרישיון שמצוין להלן. מופעל כברירת מחדל: הרחבה ללא קובץ רישיון אינה אומרת דבר על האופן שבו מותר להשתמש בה.</translation>
     </message>
     <message>
@@ -32558,7 +32558,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>גרסה</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>רישיון</translation>
     </message>
     <message>
@@ -32858,7 +32858,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>הערה בקובץ readme על workflow_cron, שהוא מה שמריץ אירוע שדחה את עצמו.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>מה שממשק הניהול קורא כדי להציג את שם ההרחבה, הגרסה והרישיון.</translation>
     </message>
     <message>
@@ -32878,7 +32878,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>מרחיק שאריות של עורכים ותוצרי בנייה מהמאגר.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>טקסט הרישיון שמצוין להלן. מופעל כברירת מחדל: הרחבה ללא קובץ רישיון אינה אומרת דבר על האופן שבו מותר להשתמש בה.</translation>
     </message>
     <message>
@@ -48765,7 +48765,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation>מה שהליבה מצהירה עליו כדי שמישהו אחר יממש, עם מספר המתודות שכל אחד דורש ומה כבר מממש אותו. אלה עם מתודות רבות ומימוש אחד הם המים העמוקים.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>כל נקודה שהליבה מכריזה עליה בזמן עבודתה, כפי שנאספה מקוד המקור ולא מרשימה. אירוע סינון משתמש במה שמאזין מחזיר, כך שמאזין ששוכח להחזיר את הערך הורס אותו; אירוע הודעה מתעלם ממנו. הדרך הקלה ביותר שיש להוסיף התנהגות: ללא מודול, ללא מטפל, ללא מחלקה להחלפה.</translation>
     </message>
     <message>
@@ -50583,7 +50583,7 @@ See the requirements page for more information.</source>
         <translation>ללא.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>שם הארגון</translation>
     </message>
     <message>
@@ -58465,7 +58465,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אין מה לעשות. הוא מופיע כדי שהעמוד יהיה תמונה מלאה ולא רק רשימת תקלות.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>למי שמחפש מקום לשנות התנהגות, אלה המקומות שאיש עוד לא תפס.</translation>
     </message>
     <message>
@@ -58885,11 +58885,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ההגדרה &quot;%setting&quot; היא רשימה, אך לא ניתנו לה ערכים.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>לא הוגדר אף רישיון לבחירה. יש להוסיף רישיון ב־package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>הרישיון &quot;%licence&quot; אינו אחד מהרישיונות המוגדרים ב־package.ini [LicenseSettings]. יש לבחור רישיון מהרשימה.</translation>
     </message>
     <message>
@@ -68614,7 +68614,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הגדרות בשימוש</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>ההגדרות נמצאות ב־mailpreferences.ini; הארגון, הכתובת למשלוח דואר, תיבת הדואר להחזרות וסוד האתר שייכים לדריסת הגדרות.</translation>
     </message>
     <message>
@@ -68806,7 +68806,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>כבוי</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>הארגון בכותרת התחתונה</translation>
     </message>
     <message>
@@ -68942,11 +68942,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>פרטי השולח</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>כל הודעת דוא&quot;ל רשות מציינת מי שולח אותה ואת הכתובת למשלוח דואר שלו, כנדרש בחוק. ללא שם ארגון נעשה שימוש בשם האתר.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>שם הארגון</translation>
     </message>
     <message>
@@ -69682,7 +69682,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הטבלה %table חסרה: יש להריץ את עדכון מסד הנתונים.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>המען בכותרת התחתונה של הדואר ריק: יש להזין אותו תחת &quot;פרטי השולח&quot; בעמוד זה (mailpreferences/admin/status). החוק מחייב לציין את הארגון ואת המען שלו בכל הודעה שאינה חיונית; עד אז הדואר נשלח בלעדיו.</translation>
     </message>
     <message>
