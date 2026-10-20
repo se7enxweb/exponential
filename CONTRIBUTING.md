@@ -2,12 +2,24 @@
 
 Thank you for considering contributing to Exponential CMS! We appreciate the time and effort you invest in making this project better.
 
-## Copyright assignment (CLA)
+## Copyright and control of your contribution (CLA)
 
-**7x and the Exponential Foundation require a signed Contributor Licensing Agreement (CLA) for every code
-contribution to the core kernel of Exponential, before that contribution can be merged.** The core kernel is the
-repository [se7enxweb/exponential](https://github.com/se7enxweb/exponential): `kernel/`, `lib/`, `bin/`, `design/`,
-`settings/`, `doc/`, the extensions shipped inside it, and everything else in this repository.
+> **By signing the CLA and submitting a contribution, you give up control over that contribution.**
+>
+> The license you grant to 7x is **perpetual, worldwide, irrevocable and royalty-free, and covers patents too**.
+> 7x and the recipients of its software may use, change, sublicense, relicense and distribute your contribution in
+> any way, including under other licenses and in commercial products, **without asking you and without paying
+> you**. You **cannot withdraw it, restrict it, or set conditions on it later**. In practice, control of the
+> contributed code passes to 7x and the project. (Formally the CLA is a license, not a transfer: §4 of the
+> [agreement](https://share.se7enx.com/content/download/118895/572198/file/7x%20Contributor%20Licensing%20Agreement%202025v1.0.1.pdf).)
+
+Read the whole agreement before you sign it; this summary does not replace it and is not legal advice.
+
+**Who requires it, and for what.** 7x and the Exponential Foundation require a signed Contributor Licensing
+Agreement (CLA) for every code contribution to the core kernel of Exponential, before that contribution can be
+merged. The core kernel is the repository [se7enxweb/exponential](https://github.com/se7enxweb/exponential):
+`kernel/`, `lib/`, `bin/`, `design/`, `settings/`, `doc/`, the extensions shipped inside it, and everything else in
+this repository. The agreement itself is made with 7x.
 
 - **Every form of submission counts**: a GitHub pull request, a patch, code attached to or pasted into an issue, and
   code sent by mail or any other way. The agreement defines a submission as "any form of electronic, verbal, or
@@ -17,13 +29,7 @@ repository [se7enxweb/exponential](https://github.com/se7enxweb/exponential): `k
   not merged until the CLA has been received.
 - **Once is enough.** "The CLA will be signed once for all your future contributions". You sign again only "in the
   case where you would represent a new legal entity".
-
-What the agreement does: the project calls this requirement the copyright assignment, but legally the agreement is
-a **license, not a transfer**. You keep the copyright of your code. You grant 7x "and to recipients of software
-distributed by 7x a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to
-reproduce, prepare derivative works of, publicly display, publicly perform, sub-license, and distribute Your
-Contributions" (§4), and a matching patent license (§5). The agreement itself is made with 7x. Read the whole
-agreement before you sign it; this summary does not replace it and is not legal advice.
+- **Your own custom extensions are not affected** (see [What it does not cover](#what-it-does-not-cover)).
 
 ### How to sign
 
@@ -62,8 +68,16 @@ yourself is not.
 
 ### FAQ
 
-**Do I give away my copyright?** No. You keep it and grant 7x a non-exclusive license (§4), so you may still use
-and license your own code yourself.
+**Do I give up control of my code?** Yes. Once you sign the CLA and submit a contribution, you give up control of it:
+the license to 7x is perpetual and irrevocable, and 7x may use, change, relicense and distribute your contribution as
+it decides, without asking or paying you. You cannot withdraw it or set conditions. (Formally the CLA is a license,
+not a transfer: §4.)
+
+**Can I take my contribution back?** No. The license is "perpetual" and "irrevocable" (§4); you cannot withdraw it,
+restrict it, or add conditions later.
+
+**Can 7x relicense my contribution?** Yes. The license lets 7x "sub-license, and distribute Your Contributions,
+including derivative works", so 7x may distribute it under other licenses and in commercial products.
 
 **Why is it needed?** "Before we can consider the contributions you provide to us, we must agree on what rights you
 are offering to us" (preamble of the agreement), and "We cannot accept your contributions unless we have a signed
@@ -90,7 +104,7 @@ Exponential is licensed under the GPLv2 or later license, commonly known as the 
 
 ## Code of Conduct
 
-Please make sure to review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing. All contributors are expected to adhere to it.
+Please make sure to review the project's conduct page, [Conduct and ethics](doc/en/us/help/advocates/advocate-conduct-and-ethics.md), before contributing. All contributors are expected to adhere to it.
 
 ## Getting Started
 
@@ -149,11 +163,27 @@ git checkout -b feature/your-feature
 git push origin feature/your-feature
 ```
 
-5. Make sure your signed CLA is on file with 7x ([Copyright assignment (CLA)](#copyright-assignment-cla)).
+5. Make sure your signed CLA is on file with 7x ([Copyright and control of your contribution (CLA)](#copyright-and-control-of-your-contribution-cla)).
 
 6. Submit a pull request to the main repository and tick the CLA checkbox of the pull request template.
 
 ## Code Reviews
+
+> **Be prepared for many review rounds.** 7x does a much larger than usual number of review rounds before it accepts
+> a commit or pull request, sometimes hundreds of revisions. Expect to revise your code, perhaps many times, until
+> accepting it is simple and easy. This is how the kernel stays maintainable; it is not a judgment of you.
+
+To get through review faster:
+
+- **Keep pull requests small and focused**: one change per pull request. A fix and a refactoring are two pull
+  requests.
+- **Follow the [coding standards](doc/en/us/standards/coding-standards.md)** and the style of the files around your
+  change, so review can focus on what the change does.
+- **Add tests** that fail without your change and pass with it.
+- **Answer every review comment in the pull request**, with a change or a reason, so the discussion stays in one
+  place.
+- **Keep your branch current**: rebase it on `main` when `main` has moved, before asking for the next round.
+- **Don't take many rounds personally.** Each round makes the change easier to accept.
 
 All contributions will be reviewed before merging. Be open to feedback and be willing to make changes if requested. Code reviews are essential to maintain code quality. A contribution to the kernel is merged only once its author's signed CLA has been received.
 
@@ -163,7 +193,7 @@ Feel free to open an issue for bug reports, feature requests, or general discuss
 
 ## Licensing
 
-By contributing, you agree that your contributions will be licensed under the [GNU General Public License, version 2.0 or later](LICENSE). Make sure that your contributions comply with this license. In addition, a contribution to the core kernel needs your signed Contributor Licensing Agreement ([Copyright assignment (CLA)](#copyright-assignment-cla)).
+By contributing, you agree that your contributions will be licensed under the [GNU General Public License, version 2.0 or later](LICENSE). Make sure that your contributions comply with this license. In addition, a contribution to the core kernel needs your signed Contributor Licensing Agreement ([Copyright and control of your contribution (CLA)](#copyright-and-control-of-your-contribution-cla)).
 
 Thank you for contributing to Exponential CMS!
 

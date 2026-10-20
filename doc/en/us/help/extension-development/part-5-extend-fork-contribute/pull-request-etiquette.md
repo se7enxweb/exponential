@@ -25,9 +25,13 @@ habits make that time count, for them and for you.
 - **Say thank you.** For the review, for the merge, for the project.
 - **Mention what is not yours.** A test that already fails on main, a warning that was there before. Name it, so
   nobody thinks you caused it.
-- **Sign the CLA before a kernel pull request.** The kernel (`se7enxweb/exponential`) merges a code contribution only
-  once its author's signed Contributor Licensing Agreement has been received; tick the checkbox in the pull request
-  template ([Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)).
+- **Expect many review rounds on the kernel.** 7x reviews a commit or pull request in many more rounds than usual,
+  sometimes hundreds of revisions; be ready to revise your change until it is simple to accept
+  ([Code reviews](../../../../../../CONTRIBUTING.md#code-reviews)).
+- **Know what the CLA gives away before a kernel pull request.** The kernel (`se7enxweb/exponential`) merges a code
+  contribution only once its author's signed Contributor Licensing Agreement has been received. By signing and
+  submitting, you give up control over your contribution: 7x may use, change, sublicense, relicense and distribute
+  it in any way, perpetually and irrevocably, without asking or paying you; formally the CLA is a license (§4). Tick the checkbox in the pull request template ([Copyright and control of your contribution (CLA)](../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)).
 
 ## Do not
 

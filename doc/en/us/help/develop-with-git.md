@@ -218,12 +218,20 @@ instead, so you need no write access to the project. For the kernel itself, read
 installation first: it explains the commit hook (`make hooks`) and the file manifest (`make manifest-fix`) that every
 kernel pull request keeps current.
 
-**Before a kernel pull request can be merged, sign the CLA.** 7x and the Exponential Foundation require a signed
-Contributor Licensing Agreement for every code contribution to the core kernel (`se7enxweb/exponential`), whether it
-is sent as a pull request, a patch, an issue or by mail. You sign once, and you keep your copyright: the agreement
-grants 7x a non-exclusive license. See [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)
-and the [CLA page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla). Your own custom
-extensions, and the branch of your own site, are not affected.
+**Expect many review rounds.** 7x reviews a commit or pull request in many more rounds than usual, sometimes hundreds
+of revisions; be ready to revise your change until it is simple to accept
+([Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews)).
+
+**Copyright and control of your contribution (CLA).** 7x and the Exponential Foundation merge a code contribution to
+the core kernel (`se7enxweb/exponential`), sent in any form (pull request, patch, issue or mail), only after you have
+signed the Contributor Licensing Agreement. **By signing and submitting, you give up control over your
+contribution:** 7x and the recipients of its software receive a perpetual, worldwide, irrevocable, royalty-free
+license, patents included, to use, change, sublicense, relicense and distribute it in any way, also under other
+licenses and in commercial products, without asking or paying you, and you cannot withdraw or restrict it later.
+Formally the CLA is a license, not a transfer (§4).
+Your own custom extensions, and the branch of your own site, are not affected. See
+[Copyright and control of your contribution (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)
+and the [CLA page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla).
 
 Built an extension of your own? [Contribute extensions back](contribute-extensions-back.md) shows how to publish it on
 GitHub and Packagist so every site can install it, and what the GPL requires when you hand an extension to others.

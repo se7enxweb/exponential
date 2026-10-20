@@ -24,10 +24,17 @@ This page is for designers sending a change to another maintainer's theme or to 
    - how you tested it;
    - before and after screenshots for visual changes;
    - the issue it closes.
-8. **Respond to review** promptly and kindly; push follow-up commits to the same branch.
+8. **Respond to review** promptly and kindly; push follow-up commits to the same branch. On the Exponential kernel,
+   expect many rounds: 7x reviews a commit or pull request in many more rounds than usual, sometimes hundreds of
+   revisions, so be ready to revise your change until it is simple to accept
+   ([Code reviews](../../../../../../CONTRIBUTING.md#code-reviews)).
 9. **For the Exponential kernel** (`se7enxweb/exponential`), have your signed Contributor Licensing Agreement on file:
-   7x and the Exponential Foundation merge a kernel contribution only after it has been received
-   ([Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Other maintainers'
+   7x and the Exponential Foundation merge a kernel contribution only after it has been received. **By signing and
+   submitting, you give up control over your contribution:** 7x and the recipients of its software receive a
+   perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change, sublicense, relicense
+   and distribute it in any way, also under other licenses and in commercial products, without asking or paying you,
+   and you cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4)
+   ([Copyright and control of your contribution (CLA)](../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)). Other maintainers'
    themes and your own themes are not affected.
 
 ## Never include

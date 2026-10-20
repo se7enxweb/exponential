@@ -47,10 +47,14 @@ request to 7x's repository, where it is reviewed and, when merged, released to e
    commit. Run the tests and update the documentation when your change needs it.
 6. **Open the pull request** and describe what you changed, why, and how you tested it. Mention the issue it fixes
    (`Fixes #123`).
-7. **Sign the CLA once.** 7x and the Exponential Foundation require a signed Contributor Licensing Agreement for
-   every code contribution to the core kernel (`se7enxweb/exponential`), in any form: pull request, patch, code in an
-   issue, or mail. A kernel contribution is merged only once the signed CLA has been received. See
-   [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla) and the
+7. **Copyright and control of your contribution (CLA).** 7x and the Exponential Foundation merge a code
+   contribution to the core kernel (`se7enxweb/exponential`), sent in any form (pull request, patch, code in an
+   issue, or mail), only after you have signed the Contributor Licensing Agreement. **By signing and submitting, you
+   give up control over your contribution:** 7x and the recipients of its software receive a perpetual, worldwide,
+   irrevocable, royalty-free license, patents included, to use, change, sublicense, relicense and distribute it in
+   any way, also under other licenses and in commercial products, without asking or paying you, and you cannot
+   withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). See
+   [Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla) and the
    [CLA page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla). Your own custom
    extensions, site packages and themes are not affected.
 
@@ -62,8 +66,9 @@ pull request and keeps the contributor's commits as written, fixing on top whate
 
 Contribute under the same terms as everyone else: the GNU GPL version 2 or later. The website's FAQ asks for this so
 that contributions stay compatible with the rest of the code and the project can move to later versions of the GPL as
-a whole; `CONTRIBUTING.md` says the same. You keep the copyright of your code; for the kernel, the CLA additionally
-grants 7x a "perpetual, worldwide, non-exclusive" license to it. If you cannot license a contribution
+a whole; `CONTRIBUTING.md` says the same. For the kernel, the CLA additionally gives
+control of your contribution to 7x: a perpetual, irrevocable, royalty-free license that lets 7x use, change,
+sublicense and relicense it without asking or paying you. If you cannot license a contribution
 that way, do not submit it ([Licensing questions](licensing-faq.md#may-i-contribute-code-under-gpl-version-3-only-or-gpl-version-2-only)).
 
 ## Test changes before they are released

@@ -67,8 +67,12 @@ git push -u fork fix-<short-name>
 For the kernel, read CONTRIBUTING.md together: the commit hook (`make hooks`) and the file manifest
 (`make manifest-fix`) ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 Tell them early that a code contribution to the kernel is merged only once they have signed the Contributor
-Licensing Agreement that 7x and the Exponential Foundation require; they sign once and keep their copyright
-([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Their own extensions are
+Licensing Agreement that 7x and the Exponential Foundation require, and explain plainly what it means: **by signing
+and submitting, they give up control over the contribution.** 7x and the recipients of its software receive a
+perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change, sublicense, relicense and
+distribute it in any way, also under other licenses and in commercial products, without asking or paying them, and
+they cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4)
+([Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)). Their own extensions are
 not affected.
 
 ## The pull request
@@ -82,7 +86,10 @@ How I tested: <steps, version>
 Fixes #<issue number> (if there is one)
 ```
 
-Explain that reviewers may fix things in commits on top; that is normal and not a rejection.
+Explain that reviewers may fix things in commits on top; that is normal and not a rejection. For the kernel, prepare
+them for many review rounds: 7x reviews a commit or pull request in many more rounds than usual, sometimes hundreds of
+revisions, until the change is simple to accept
+([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
 
 ## After it is merged
 
@@ -97,7 +104,7 @@ Explain that reviewers may fix things in commits on top; that is normal and not 
 [ ] They have a GitHub account (with two-factor authentication)
 [ ] They chose the path (docs, translation, code) and read the page for it
 [ ] Commit message starts with Added:/Updated:/Fixed:/Removed:/Renamed:
-[ ] For a kernel code change: their signed CLA is on file with 7x
+[ ] For a kernel code change: they know the CLA gives control of it to 7x, and their signed CLA is on file
 [ ] No secrets or personal data in the change
 [ ] Pull request text: what, why, how tested
 [ ] They know reviews may add commits on top

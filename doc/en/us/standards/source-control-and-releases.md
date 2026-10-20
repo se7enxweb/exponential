@@ -20,7 +20,7 @@ published. If you are new to Git, start with [Develop with Git](../help/develop-
 |---|---|---|
 | One development branch, `main` | **Complies** | default branch `main`; CI runs on `main`/`master` |
 | Pull requests merged with merge commits, contributor commits kept | **Complies** (by policy) | [Continuous integration](../bc/6.0/ci.md), "The commit message policy"; merge commits in `git log` |
-| Signed CLA before a kernel contribution is merged | **Complies** (by policy) | `CONTRIBUTING.md`, "Copyright assignment (CLA)"; CLA checkbox in `.github/PULL_REQUEST_TEMPLATE.md`; no automated check |
+| Signed CLA before a kernel contribution is merged | **Complies** (by policy) | `CONTRIBUTING.md`, "Copyright and control of your contribution (CLA)"; CLA checkbox in `.github/PULL_REQUEST_TEMPLATE.md`; no automated check |
 | No force push, no rewriting of published history | **Partly complies** | a policy; `main` has no branch protection rule (GitHub API, 2026-10-18) |
 | Commit subject prefixes | **Complies** | `.githooks/commit-msg`, `.githooks/check-commit-range`, `quality.yml` |
 | Other commit message rules (product name, no tool attribution, no private paths) | **Unverified** | policy only, no automated check |
@@ -45,8 +45,10 @@ published. If you are new to Git, start with [Develop with Git](../help/develop-
   merged pull request never turns `main` red. `git log --merges` on `main` shows merge commits.
 - **A kernel contribution is merged once its author's CLA is on file.** 7x and the Exponential Foundation require a
   signed Contributor Licensing Agreement for every code contribution to the core kernel, whether it arrives as a
-  pull request, a patch, an issue or by mail ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)).
-  The pull request template has a checkbox for it. Users' own custom extensions are not affected.
+  pull request, a patch, an issue or by mail ([Copyright and control of your contribution (CLA)](../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)).
+  By signing and submitting, the contributor gives up control over the contribution: 7x receives a perpetual,
+  irrevocable license to use, change, sublicense, relicense and distribute it in any way; formally the CLA is a license (§4). The pull request template has a checkbox for it. Users' own custom extensions
+  are not affected.
 - **No force push and no rewriting of published history.** A commit on `main` is public; a rewrite would move every
   later commit and strand any tag that points into the range.
 
