@@ -216,7 +216,7 @@ response commitment in the project's own files is in `SECURITY.md`: a first answ
 | Is there a warranty? | Not from the license; get one by contract. | `LICENSE.md` sections 1, 11, 12 |
 | Can we copy the help into our manual? | Yes, under the GNU FDL 1.3 conditions. | [Free documentation](../free-documentation.md) |
 | Who holds the copyright? | 7x & Exponential Foundation, with eZ Systems AS for 1999 to 2014. | `COPYRIGHT.md` |
-| Does a contribution we make stay ours? | Not under your control. A contribution to the kernel needs a signed CLA, and with it you give up control: 7x may use, change, relicense and distribute it without asking or paying you, and you cannot withdraw it (formally a license, §4). It is also released under GPL v2 or later. | [CONTRIBUTING.md](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla) |
+| Does a contribution we make stay ours? | Not under your control. A contribution to the kernel needs a signed CLA, and with it you give up control: 7x may use, change, relicense and distribute it without asking or paying you, and you cannot withdraw it (formally a license, §4). It is also released under GPL v2 or later. | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla) |
 | Is every part GPL? | The kernel is; check extensions and related products on Info > About. Velocity is MIT. | [About and Copyright pages](../../features/6.0/about-and-package-pages.md) |
 
 ## A license summary to hand to procurement
