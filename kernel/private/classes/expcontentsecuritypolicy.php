@@ -131,6 +131,94 @@ class expContentSecurityPolicy
     }
 
     /**
+     * The sources an image may come from under the policy of the current siteaccess: the img-src sources (default-src
+     * without img-src) after AdditionalSources[], as a list. A report-only policy counts too: the browser still makes
+     * the request and logs every image it would block. Null: no policy, or none that names images (any image loads).
+     *
+     * @param eZINI|null $ini site.ini; null: the current siteaccess's
+     * @return array|null
+     */
+    public static function imageSources( $ini = null )
+    {
+        $settings = self::settings( $ini );
+        if ( $settings['mode'] === self::MODE_DISABLED )
+            return null;
+        $directives = self::withSources( $settings['directives'], $settings['additionalSources'] );
+        if ( isset( $directives['img-src'] ) )
+            return self::sourceList( $directives['img-src'] );
+        if ( isset( $directives['default-src'] ) )
+            return self::sourceList( $directives['default-src'] );
+        return null;
+    }
+
+    /**
+     * Whether a list of sources (imageSources()) allows an absolute http(s) address from another site: *, a scheme
+     * source (https:), or a host source (example.com, *.example.com, https://example.com:443/path/). Keywords ('self',
+     * 'none' ...), nonces, hashes, data: and blob: never allow it; 'self' is left out on purpose, as the help shows
+     * absolute addresses of other sites only.
+     *
+     * @param array $sources
+     * @param string $url
+     * @return bool
+     */
+    public static function sourcesAllowUrl( array $sources, $url )
+    {
+        $parts = parse_url( (string)$url );
+        if ( !is_array( $parts ) || empty( $parts['scheme'] ) || empty( $parts['host'] ) )
+            return false;
+        $scheme = strtolower( $parts['scheme'] );
+        if ( $scheme !== 'http' && $scheme !== 'https' )
+            return false;
+        $host = strtolower( $parts['host'] );
+        $port = isset( $parts['port'] ) ? (int)$parts['port'] : ( $scheme === 'https' ? 443 : 80 );
+        $path = isset( $parts['path'] ) ? $parts['path'] : '/';
+        foreach ( $sources as $source )
+        {
+            $source = (string)$source;
+            if ( $source === '*' )
+                return true;
+            if ( $source === '' || $source[0] === "'" )
+                continue;
+            if ( preg_match( '/^([a-z][a-z0-9+.-]*):$/i', $source, $m ) === 1 )
+            {
+                // a scheme source; http: also allows https
+                $allowed = strtolower( $m[1] );
+                if ( $allowed === $scheme || ( $allowed === 'http' && $scheme === 'https' ) )
+                    return true;
+                continue;
+            }
+            if ( preg_match( '#^(?:([a-z][a-z0-9+.-]*)://)?(\*\.)?([a-z0-9.-]+|\*)(?::(\d+|\*))?(/[^?\#]*)?$#i', $source, $m ) !== 1 )
+                continue;
+            $sourceScheme = strtolower( $m[1] );
+            if ( $sourceScheme !== '' && $sourceScheme !== $scheme && !( $sourceScheme === 'http' && $scheme === 'https' ) )
+                continue;
+            if ( $sourceScheme === '' && $scheme !== 'https' )
+                continue;
+            $sourceHost = strtolower( $m[3] );
+            if ( $sourceHost !== '*' )
+            {
+                if ( $m[2] !== '' ? substr( $host, -strlen( '.' . $sourceHost ) ) !== '.' . $sourceHost : $host !== $sourceHost )
+                    continue;
+            }
+            elseif ( $m[2] !== '' )
+                continue;
+            if ( isset( $m[4] ) && $m[4] !== '' && $m[4] !== '*' && (int)$m[4] !== $port )
+                continue;
+            if ( ( !isset( $m[4] ) || $m[4] === '' ) && $port !== ( $scheme === 'https' ? 443 : 80 ) )
+                continue;
+            if ( isset( $m[5] ) && $m[5] !== '' && $m[5] !== '/' )
+            {
+                $sourcePath = rawurldecode( $m[5] );
+                $urlPath = rawurldecode( $path );
+                if ( substr( $sourcePath, -1 ) === '/' ? strpos( $urlPath, $sourcePath ) !== 0 : $urlPath !== $sourcePath )
+                    continue;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * The nonce of the current request: 22 characters of base64url from 16 random bytes, the same for every call within
      * one request. A long-running process (Velocity) gets a new one per request: reset() is called at the start of
      * every request, and the nonce is also bound to the request's start time, address and process.

@@ -35,6 +35,10 @@
  *                  relative link or image must then stay inside the installation from that file, as GitHub resolves
  *                  it (a translation links ../../eng-us/help/images/x.webp), instead of inside the documentation
  *                  root from the page id. The resolvers still decide which files may be shown. Default '': the id.
+ *   image_sources  the sources the page's Content Security Policy allows images from (expContentSecurityPolicy::
+ *                  imageSources()): an https image of another site they do not allow is shown as a link,
+ *                  a.a4-help-ext.a4-help-imglink "Image on <host>: <alt>" (target _blank), so the page makes no
+ *                  request the policy blocks. Null (the default): every https image is an <img>.
  *
  * The markup (styled by help.css; the class contract with the viewer and exphelp.js): div.a4-help-body around the
  * page; h1-h6.a4-help-h[id] with a.a4-help-anchor; div.a4-help-code[data-lang][data-label] > pre.a4-help-pre >
@@ -129,6 +133,7 @@ class expHelpMarkdownRenderer
             'translate' => null,
             'id_prefix' => '',
             'source_path' => '',
+            'image_sources' => null,
         );
     }
 
@@ -1546,12 +1551,30 @@ class expHelpMarkdownRenderer
         $target = $this->resolveUrl( $url, true );
         if ( $target === null )
             return '<span class="a4-help-deadlink">' . self::escape( $altText ) . '</span>';
+        if ( $target['external'] && is_array( $this->options['image_sources'] )
+             && !expContentSecurityPolicy::sourcesAllowUrl( $this->options['image_sources'], $target['href'] ) )
+            return $this->renderImageLink( $altText, $target['href'], $title );
         $html = '<img class="a4-help-img" src="' . self::escape( $target['href'] ) . '" alt="' . self::escape( $altText ) . '"';
         if ( $title !== '' )
             $html .= ' title="' . self::escape( html_entity_decode( $title, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ) . '"';
         if ( $target['width'] && $target['height'] )
             $html .= ' width="' . (int)$target['width'] . '" height="' . (int)$target['height'] . '"';
         return $html . ' loading="lazy" decoding="async">';
+    }
+
+    /**
+     * An image of another site that the page's policy would block, as a link that opens it: "Image on <host>: <alt>".
+     */
+    protected function renderImageLink( $altText, $href, $title )
+    {
+        $host = preg_replace( '/^www\./', '', strtolower( (string)parse_url( $href, PHP_URL_HOST ) ) );
+        if ( $host === 'github.com' || substr( $host, -11 ) === '.github.com' || substr( $host, -22 ) === '.githubusercontent.com' )
+            $host = 'GitHub';
+        $label = strtr( $this->t( 'Image on %host' ), array( '%host' => $host ) );
+        $html = '<a class="a4-help-ext a4-help-imglink" href="' . self::escape( $href ) . '" target="_blank" rel="noopener noreferrer"';
+        if ( $title !== '' )
+            $html .= ' title="' . self::escape( html_entity_decode( $title, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ) . '"';
+        return $html . '>' . self::escape( $altText === '' ? $label : $label . ': ' . $altText ) . '</a>';
     }
 
     protected function renderFootnoteRef( $label )
