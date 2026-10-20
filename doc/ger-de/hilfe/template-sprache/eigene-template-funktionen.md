@@ -28,8 +28,8 @@ erwartet, aus `lib/eztemplate/classes/eztemplate.php` und `lib/eztemplate/classe
 
 Schreiben Sie eine Funktion, wenn das Tag einen Rumpf braucht (das Markup zwischen öffnendem und End-Tag umschließen, wiederholen oder
 auffangen), Variablen im Namensraum des Aufrufers setzen muss oder steuert, was gerendert wird. Für Wert hinein, Wert heraus schreiben Sie einen
-[Operator](../../../eng-us/help/template-operators/creating-an-operator-step-by-step.md); zum Lesen von Daten eine
-[Fetch-Funktion](../../../eng-us/help/template-operators/fetch-functions-how-they-work.md). Für wiederverwendbares Markup ohne PHP ist ein `{include}` eines
+[Operator](../template-operatoren/einen-operator-schritt-fuer-schritt-anlegen.md); zum Lesen von Daten eine
+[Fetch-Funktion](../template-operatoren/wie-fetch-funktionen-arbeiten.md). Für wiederverwendbares Markup ohne PHP ist ein `{include}` eines
 Template-Teils einfacher als beides.
 
 ## Die Beispielfunktion
@@ -115,7 +115,7 @@ $eZTemplateFunctionArray[] = array( 'script' => 'extension/myextension/autoloads
 Schlüssel: `class` oder `function` (eine PHP-Funktion, die das Objekt zurückgibt), `script`, `function_names` oder `function_names_function`
 und `function_attributes` (die Namen der Unter-Tags, damit der Parser sie kennt, bevor die Klasse geladen ist; die Bibliothek registriert
 `elseif` und `else` von `if` auf diese Weise). Die Erweiterung braucht außerdem `[TemplateSettings] ExtensionAutoloadPath[]=myextension` in
-ihrer `settings/site.ini.append.php`; siehe [Operatoren registrieren](../../../eng-us/help/template-operators/registering-operators.md), das beide Arrays
+ihrer `settings/site.ini.append.php`; siehe [Operatoren registrieren](../template-operatoren/operatoren-registrieren.md), das beide Arrays
 behandelt.
 
 ## Sie nutzen
@@ -179,13 +179,13 @@ eigenen Knoten zur Kompilierzeit über `templateNodeTransformation()` um, wie `e
 zugehörigen Einstellungen zur Transformation, die die Funktionen der Bibliothek nutzen. Eine Funktion ohne Hinweise, wie das Beispiel, wird zu
 einem Laufzeitaufruf ihres `process()` kompiliert, was dasselbe Ergebnis ergibt und die sichere Wahl ist. Fügen Sie Hinweise nur mit einem Test
 hinzu, der interpretierte und kompilierte Ausgabe vergleicht; die Gründe sind dieselben wie bei Operatoren
-([operatorTemplateHints](../../../eng-us/help/template-operators/operator-class-reference.md#operatortemplatehints)).
+([operatorTemplateHints](../template-operatoren/referenz-der-operatorklassen.md#operatortemplatehints)).
 
 ## Funktionen des Kernels erweitern und überschreiben
 
 Funktionsnamen folgen genau den Regeln für Operatoren: Der letzte Eintrag in einer `eztemplateautoload.php` für einen Namen gewinnt, und eine
 Klasse registriert beim Laden alle Namen ihres `functionList()`
-([Reihenfolge der Registrierung und Overrides](../../../eng-us/help/template-operators/registration-order-and-overrides.md)). Auf alpha ist kein Funktionsname
+([Reihenfolge der Registrierung und Overrides](../template-operatoren/registrierungsreihenfolge-und-ueberschreibungen.md)). Auf alpha ist kein Funktionsname
 doppelt registriert. Um eine Funktion des Kernels oder der Bibliothek aus einer Erweiterung zu ändern:
 
 - leiten Sie von der Klasse ab, der der Name gehört (zum Beispiel `eZTemplateBlockFunction`, der `set-block`, `append-block` und `run-once`
@@ -193,10 +193,10 @@ doppelt registriert. Um eine Funktion des Kernels oder der Bibliothek aus einer 
 - registrieren Sie die Unterklasse für **alle** Namen der Elternklasse, und halten Sie `function_attributes` und `hasChildren()` mit der
   Elternklasse übereinstimmend;
 - entfernen Sie den Eintrag in `functionTemplateHints()` der Elternklasse für den Namen, den Sie ändern, sonst behalten kompilierte Templates
-  den Code der Elternklasse ([der Fall bei Operatoren, auf alpha gezeigt](../../../eng-us/help/template-operators/overriding-kernel-operators.md#drop-the-compile-time-code-you-change)).
+  den Code der Elternklasse ([der Fall bei Operatoren, auf alpha gezeigt](../template-operatoren/kernel-operatoren-ueberschreiben.md#den-code-zur-übersetzungszeit-entfernen-den-sie-ändern)).
 
 Nicht mit einer Funktion auf alpha vorgeführt: Das Überschreiben eines Funktionsnamens nutzt denselben Codepfad wie bei Operatoren
-(`registerAutoloadFunctions()`, `registerFunctionsInternal()`), den [Operatoren des Kernels überschreiben](../../../eng-us/help/template-operators/overriding-kernel-operators.md)
+(`registerAutoloadFunctions()`, `registerFunctionsInternal()`), den [Operatoren des Kernels überschreiben](../template-operatoren/kernel-operatoren-ueberschreiben.md)
 gerendert zeigt. Das Überschreiben der eigenen Kontrollfunktionen der Sprache (`if`, `foreach`, `def`, `include`) ändert jedes Template auf dem
 Siteaccess; ziehen Sie einen neuen Funktionsnamen vor.
 
@@ -204,6 +204,6 @@ Siteaccess; ziehen Sie einen neuen Funktionsnamen vor.
 
 - [Funktionen und Operatoren](funktionen-und-operatoren.md)
 - [Referenz der Funktionen](../../../eng-us/help/designers/templates/function-reference.md): jede Funktion der Bibliothek und des Kernels
-- [Operatoren registrieren](../../../eng-us/help/template-operators/registering-operators.md)
-- [Die Schnittstelle der Operatorklasse](../../../eng-us/help/template-operators/operator-class-reference.md)
+- [Operatoren registrieren](../template-operatoren/operatoren-registrieren.md)
+- [Die Schnittstelle der Operatorklasse](../template-operatoren/referenz-der-operatorklassen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

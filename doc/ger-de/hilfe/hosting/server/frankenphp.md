@@ -42,7 +42,7 @@ Kernel den Zustand einer Anfrage in globalen Variablen hält und eine Anfrage in
 | | `qbix` (Velocity) | `frankenphp` |
 |---|---|---|
 | Rolle | für jede Phase empfohlen | produktionsreife Alternative |
-| PHP | das der Maschine, 8.1 oder neuer | das eigene der Binärdatei (PHP 8.5 in den offiziellen Releases 1.12) |
+| PHP | das der Maschine, 8.0 oder neuer (ab Velocity 0.0.4.54) | das eigene der Binärdatei (PHP 8.5 in den offiziellen Releases 1.12) |
 | Anfragen | persistente Worker | klassischer Modus, sauberer Zustand pro Anfrage |
 | Antwort-Cache | ja | noch nicht (`[CacheSettings]` wird ignoriert) |
 | TLS und HTTP/2 | ja | ja |

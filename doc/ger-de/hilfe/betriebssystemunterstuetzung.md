@@ -46,7 +46,7 @@ das dabei.
 | Bedarf | Minimum | Warum |
 |---|---|---|
 | PHP | **8.0** (`composer.json`: `"php": "^8.0 || ^8.1 || ... || ^8.8"`; der Einrichtungsassistent: `[phpversion] MinimumVersion=8.0.0`) | der Kernel; 8.0 ist das Standard-PHP von RHEL 9 und seinen Nachbauten |
-| PHP für Velocity | **8.1**, mit `sockets` (`pcntl` und `openssl` empfohlen) | Velocity, der empfohlene Webserver, ist ein PHP-Programm |
+| PHP für Velocity | **8.0**, mit `sockets` (`pcntl` und `openssl` empfohlen); 8.1 vor Velocity 0.0.4.54 | Velocity, der empfohlene Webserver, ist ein PHP-Programm |
 | PHP-Erweiterungen | `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick | die kritischen Tests des Einrichtungsassistenten und `composer.json` |
 | Eine Datenbank | SQLite 3 braucht nur die Erweiterung `sqlite3`; die anderen brauchen ihren Server irgendwo im Netzwerk | siehe [Unterstützte Datenbanken](datenbankunterstuetzung.md) |
 | Ein Webserver | keiner, wenn Velocity oder der eingebaute Server von PHP die Site ausliefert; sonst alles, was eine URL an `index.php` weiterreichen kann | siehe [Webserver](#webserver) |
@@ -82,7 +82,7 @@ eine Stufe auf.
 
 | Distribution | PHP 8 aus | Hinweise |
 |---|---|---|
-| **Red Hat Enterprise Linux 9 und 10**, **Rocky Linux**, **AlmaLinux**, **Oracle Linux**, **CentOS Stream 9 und 10** | AppStream (PHP 8.0 als Standard in EL 9; Modul-Streams `php:8.1` bis `php:8.3`), Remi (8.0 bis 8.5) | die dokumentierte Referenzplattform ([Kapitel 2](../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen)); Velocity liefert `.rpm`-Pakete für EL 9 und EL 10 |
+| **Red Hat Enterprise Linux 9 und 10**, **Rocky Linux**, **AlmaLinux**, **Oracle Linux**, **CentOS Stream 9 und 10** | AppStream (PHP 8.0 als Standard in EL 9; Modul-Streams `php:8.1` bis `php:8.3`), Remi (8.0 bis 8.5) | die dokumentierte Referenzplattform ([Kapitel 2](../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen)); Velocity liefert `.rpm`-Pakete für EL 9 und EL 10; das Paket für EL 9 lässt sich auf dem Standard-PHP 8.0 installieren |
 | **Debian 12 und 13** | die Distribution (8.2, 8.4) oder das Repository von Ondřej Surý | Velocity liefert `.deb`-Pakete für beide |
 | **Ubuntu 22.04 und 24.04** | die Distribution (8.1, 8.3) oder das PPA `ondrej/php` | Velocity liefert `.deb`-Pakete für beide; die CI läuft auf Ubuntu |
 | **Alpine Linux** (musl) | `apk` (`php83-*` und andere) | Velocitys CI weist den Server auf Alpine x86_64, aarch64 und i386 nach; Velocitys Erweiterungsmanifest kennt seine Pakete |
@@ -186,7 +186,7 @@ aus. Die Einrichtung der einzelnen Server ist Thema von [Kapitel 8, Die Site aus
 
 | Server | Status | Hinweise |
 |---|---|---|
-| **Exponential Velocity** (die `qbix`-Engine) | für jede Phase empfohlen; Stufe 1 | ein PHP-Programm, das HTTP und HTTPS selbst ausliefert, mit einem Pool persistenter Worker; PHP 8.1+; kein anderer Webserver nötig |
+| **Exponential Velocity** (die `qbix`-Engine) | für jede Phase empfohlen; Stufe 1 | ein PHP-Programm, das HTTP und HTTPS selbst ausliefert, mit einem Pool persistenter Worker; PHP 8.0+ (ab dem Release 0.0.4.54); kein anderer Webserver nötig |
 | **Apache httpd 2.4** mit PHP-FPM (oder mod_php) | Stufe 1 | die klassische Einrichtung und Shared Hosting; Rewrite-Regeln in `.htaccess_root` |
 | **FrankenPHP** (über `exp:velocity`, `Engine=frankenphp`) | produktionsreife Alternative | Caddy mit eingebautem PHP, ein einziges Binary |
 | **nginx** mit PHP-FPM | Stufe 2 | Regeln im Server-Block, siehe [8.6](../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm) |
@@ -219,6 +219,19 @@ Die Referenzplattform. Die Paketnamen je Familie stehen in
 [Kapitel 2](../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen), und
 `php bin/php/console exp:velocity ext install-hint <extension>` gibt den Installationsbefehl für das System aus, auf dem
 es läuft.
+
+### PHP 8.0 und Red Hat Enterprise Linux
+
+Exponential Velocity läuft ab seinem Release 0.0.4.54 (20. Oktober 2026) unter PHP 8.0 bis 8.5, ohne Zusätze auf 8.0.
+Auf RHEL 9 und seinen Nachbauten funktioniert das Standard-PHP 8.0 aus AppStream, mit dem el9-RPM (es hängt von
+`php-cli >= 8.0` ab, kein Modul-Stream ist zu aktivieren) oder mit Composer. Auf RHEL 8, dessen Standard-PHP 7.2 ist,
+aktivieren Sie den Stream 8.0 (`dnf module enable php:8.0`) und verwenden das Phar oder Composer; ein el8-RPM gibt es
+nicht. Unter PHP 8.0 stehen die Bildausgabe als AVIF (braucht 8.1) und die Spitze des Speicherverbrauchs je Anfrage im
+Dashboard (braucht 8.2) nicht zur Verfügung, `$_FILES` hat kein `full_path`, und eine mit `eval()` deklarierte Klasse
+mit statischen Eigenschaften führt dazu, dass ihr Worker nach dieser Anfrage ersetzt wird. Einzelheiten:
+[Kapitel 2](../installation/02-voraussetzungen.md#php-80-und-red-hat-enterprise-linux) und die Seite
+[PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md) der
+Engine (Erweiterungen, systemd, SELinux, Überprüfung).
 
 ### BSD
 
@@ -253,7 +266,7 @@ Siehe [Container, Cloud und Hosting-Panels](#container-cloud-und-hosting-panels)
 ## Einen Rechner in zwei Minuten prüfen
 
 ```bash
-php -v                 # 8.0 or later (8.1 or later for Velocity)
+php -v                 # 8.0 or later, for Velocity too
 php -m                 # the extensions listed above
 php -i | grep "Integer Size"   # 64 bits recommended
 ```

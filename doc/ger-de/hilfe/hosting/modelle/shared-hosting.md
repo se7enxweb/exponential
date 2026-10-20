@@ -153,7 +153,7 @@ des Kunden), als dieser eine Benutzer laufen
 
 ## Checkliste
 
-- [ ] PHP 8.0 oder später mit den erforderlichen Erweiterungen in der PHP-Version des Kontos (8.1+ zählt nur für Velocity).
+- [ ] PHP 8.0 oder später mit den erforderlichen Erweiterungen in der PHP-Version des Kontos (auch Velocity läuft unter 8.0).
 - [ ] Document Root = Wurzelverzeichnis der Installation; `.htaccess` aus `.htaccess_root` kopiert; `mod_rewrite` an.
 - [ ] Die `php.ini`-Werte oben pro Konto gesetzt; Entscheidung zu `open_basedir` dokumentiert.
 - [ ] `vendor/` vorhanden, bevor der Assistent startet.

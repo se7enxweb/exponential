@@ -54,7 +54,7 @@ Part 8, reference 34, the last page of the book. The terms of Exponential develo
 | tag (Git) | a name for one commit, used as a release version; permanent once pushed | [Tags and releases are permanent](../part-7-releasing/tags-are-permanent.md) |
 | template operator, template function | `{$x\|operator}` and `{function}...{/function}` | [Built-in template operators](template-operators-reference.md) |
 | trigger | the link between an operation (publish) and a workflow | [Triggers and workflows for developers](../part-3-extension-developer/triggers-and-workflows-for-developers.md) |
-| Velocity | the optional application server of Exponential | |
+| Velocity | the application server of Exponential, required by `composer.json` since 6.0.15 | |
 | view mode | how content is shown: full, line, embed and your own | [View modes for builders](../part-2-builder/view-modes-for-builders.md) |
 | view parameter | a `(name)/value` pair in a URL | [View parameters](../part-3-extension-developer/view-parameters.md) |
 | workflow, workflow event | a list of steps run by a trigger, and one step | [The eZWorkflowType API](ezworkflowtype-api.md) |

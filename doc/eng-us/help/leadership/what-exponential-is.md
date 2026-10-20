@@ -39,6 +39,23 @@ It is open source under the GNU General Public License, version 2 or later, it i
 Packagist, and its current line is **Exponential 6.0.x**. A content management system, an application framework
 (CMF) and a built-in shop come in one package ([Who is 7x?](../who-is-7x.md#a-cms-a-cmf-and-a-shop-in-one)).
 
+### For decision makers: one stack, and the server is in it
+
+As of 6.0.15 the Velocity Internet / Web Application Server is part of Exponential: the root `composer.json` requires
+`se7enxweb/exponential-velocity ~0.0.4.54`, so every installation has it, on PHP 8.0 and later. The project calls this
+a turning point, a cornerstone and a capstone: a new level of application system integration that provides even
+greater features out of the box in the core product, by default. What that means when you decide:
+
+- **One product, not a framework plus parts.** Exponential is a whole working unit: a rapid application development
+  (RAD) stack for Internet applications that is a CMS, a digital experience platform and an e-commerce system, with its
+  own server, from one source, one installer and one set of documentation.
+- **Less integration risk.** There is no server to choose and integrate before the first page, and no PHP version on
+  which part of the stack is missing. That removes a usual obstacle to adopting Exponential anywhere in the world.
+- **Freedom stays.** Velocity is the recommended engine for every stage and FrankenPHP is a production-ready
+  alternative, but Apache and nginx with PHP-FPM keep working as before, so hosting choices stay open.
+
+The whole story: [Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md).
+
 ## Where it comes from
 
 - **Nearly thirty years of one code base.** The copyright notice reads "Copyright (C) 1998 - 2026 7x & Exponential
@@ -138,7 +155,7 @@ leadership pages are written for Exponential 6, the kernel this help belongs to.
 | PHP | 8.0 to 8.5, Velocity included (from its release 0.0.4.54); 7.4 only up to 6.0.7 | [The support commitment](../who-is-the-exponential-foundation.md#php-versions) |
 | Database | In order of preference: SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Database support](../database-support.md) |
 | Operating system | "almost any that runs PHP 8.0 or later", sorted into four tiers | [Operating system support](../os-support.md) |
-| Web server | Exponential Velocity (recommended), FrankenPHP (production-ready alternative), Apache or nginx with PHP-FPM, and others | [Chapter 8: Serving the site](../../install/08-serving-the-site.md) |
+| Web server | Exponential Velocity (recommended; part of Exponential and installed with it as of 6.0.15), FrankenPHP (production-ready alternative), Apache or nginx with PHP-FPM, and others | [Chapter 8: Serving the site](../../install/08-serving-the-site.md) |
 | Installation | Composer packages, or Git clones with full history (the recommended way to build websites) | [Develop with Git](../develop-with-git.md) |
 
 The decision between them is the subject of

@@ -56,7 +56,7 @@ benötigt, weist darauf hin.
 | | Exponential Velocity (`qbix`) | FrankenPHP (über Velocity) | Apache + PHP-FPM | nginx + PHP-FPM |
 |---|---|---|---|---|
 | Rolle | **empfohlen** für jede Phase | produktionsreife Alternative | klassisch | klassisch |
-| PHP-Version | 8.1 oder neuer (vom Engine-Paket vorausgesetzt) | das in die Binärdatei eingebaute PHP (8.5 in den Releases 1.12) | 8.0 oder neuer | 8.0 oder neuer |
+| PHP-Version | 8.0 oder neuer (vom Engine-Paket vorausgesetzt, ab dem Release 0.0.4.54; bis dahin 8.1) | das in die Binärdatei eingebaute PHP (8.5 in den Releases 1.12) | 8.0 oder neuer | 8.0 oder neuer |
 | Separater Webserver nötig | **nein** | nein (Caddy ist in die Binärdatei eingebaut) | ja | ja |
 | Separates HTTPS-/Zertifikatswerkzeug nötig | **nein**: eigene Zertifikate, selbstsignierter Ersatz, ACME | nein: Ihr Zertifikat oder ein selbstsigniertes | ja (`mod_ssl` plus certbot oder ein Hosting-Panel) | ja |
 | Herkunft des Codes | Composer-Paket `se7enxweb/exponential-velocity` | Binärdatei, von `exp:velocity install` heruntergeladen und per SHA-256 geprüft | das Betriebssystem | das Betriebssystem |
@@ -72,11 +72,11 @@ Voreinstellung, weil er keine zusätzliche Installation braucht; er ist für die
 ist nicht für Besucher bestimmt.
 
 Verwenden Sie einen klassischen Server, wenn Ihr Hosting keine dauerhaft laufenden Prozesse erlaubt, wenn Sie bereits
-ein abgestimmtes Apache oder nginx betreiben, das Sie behalten möchten, wenn auf dem Rechner nur PHP 8.0 vorhanden ist
-(das Standard-PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten; Velocity braucht 8.1, siehe
-[Kapitel 2](02-voraussetzungen.md)), oder wenn mehrere Kunden auf einem Rechner auf Betriebssystemebene voneinander
-isoliert sein müssen (betreiben Sie dann ein Velocity je Website, jedes unter einem eigenen Benutzer, oder einen
-klassischen Server mit einem PHP-FPM-Pool je Website).
+ein abgestimmtes Apache oder nginx betreiben, das Sie behalten möchten, oder wenn mehrere Kunden auf einem Rechner auf
+Betriebssystemebene voneinander isoliert sein müssen (betreiben Sie dann ein Velocity je Website, jedes unter einem
+eigenen Benutzer, oder einen klassischen Server mit einem PHP-FPM-Pool je Website). Ein Rechner mit nur PHP 8.0 (dem
+Standard-PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten) führt Velocity ebenfalls aus, ab dem Release
+0.0.4.54 der Engine (siehe [Kapitel 2](02-voraussetzungen.md#php-80-und-red-hat-enterprise-linux)).
 
 Die Möglichkeiten schließen sich nicht gegenseitig aus. Eine verbreitete Form ist, dass Velocity die Website ausliefert
 und Apache oder nginx während einer Migration auf denselben Dateien bestehen bleibt; Abschnitt 8.7.2 erklärt, was das
@@ -170,21 +170,23 @@ Engines mit denselben Verben: `qbix` (der eigene Server von Velocity, Thema dies
 
 ### 8.3.1 Das Engine-Paket installieren
 
-Die Engine wird von der `composer.json` von Exponential vorgeschlagen, aber nicht standardmäßig installiert, weil sie
-PHP 8.1 oder neuer braucht. Fügen Sie sie der Installation mit Composer hinzu:
+Die `composer.json` von Exponential verlangt die Engine als `~0.0.4.54`, sodass `composer install` sie unter jedem
+unterstützten PHP installiert, 8.0 eingeschlossen. Bis zu ihrem Release 0.0.4.54 brauchte die Engine PHP 8.1 und wurde
+nur vorgeschlagen; eine Installation aus dieser Zeit fügt sie mit Composer hinzu:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.44
+composer require se7enxweb/exponential-velocity:~0.0.4.54
 ```
 
 Sie landet in `vendor/se7enxweb/exponential-velocity` (der frühere Paketname `se7enxweb/qbix-webserver` wird weiterhin
-gefunden). Die Tilde-Einschränkung folgt der letzten Versionsstelle der Engine, sodass `~0.0.4.44` spätere
+gefunden). Die Tilde-Einschränkung folgt der letzten Versionsstelle der Engine, sodass `~0.0.4.54` spätere
 `0.0.4.x`-Releases akzeptiert.
 
-Die `composer.json` des Pakets setzt PHP 8.1 (`"php": ">=8.1"`) und die Extension `sockets` voraus (TCP-Optionen für
-Client-Verbindungen und die Zygote aus Abschnitt 8.3.6), daher lehnt Composer das Paket unter PHP 8.0 oder ohne
-`sockets` ab. Diese Ablehnung ist harmlos: Die Engine wird nur vorgeschlagen, und Exponential selbst läuft unter Apache
-oder nginx weiter. Die Engine möchte außerdem `pcntl` und `posix`, um Worker zu forken und deren Benutzer zu wechseln,
+Die `composer.json` des Pakets setzt PHP 8.0 (`"php": ">=8.0"`, ab dem Release 0.0.4.54; zuvor `>=8.1`) und die
+Extension `sockets` voraus (TCP-Optionen für Client-Verbindungen und die Zygote aus Abschnitt 8.3.6), daher lehnt
+Composer das Paket ohne `sockets` ab. Unter PHP 8.0 unterscheiden sich einige Dinge (die Ausgabe als AVIF, die Spalte
+mit der Speicherspitze im Dashboard, `full_path` in `$_FILES`);
+[Kapitel 2](02-voraussetzungen.md#php-80-und-red-hat-enterprise-linux) führt sie auf. Die Engine möchte außerdem `pcntl` und `posix`, um Worker zu forken und deren Benutzer zu wechseln,
 sowie `openssl` für HTTPS. Beim Start verweigert sie den Betrieb ohne Prozessisolation (`pcntl` oder eine
 php-cgi-Binärdatei) und, wenn HTTPS konfiguriert ist, ohne `openssl`, und gibt dabei den Installationsbefehl aus; für
 den Rest ihres Standardumfangs warnt sie einmal und startet. Um zu sehen, was diesem PHP fehlt, zusammen mit dem
@@ -381,7 +383,7 @@ Persistente Worker behalten Datenbankverbindungen, Stat-Caches und alles, was de
 an einer Seite der Administration mit angemeldetem Benutzer: 256 bis 284 ms mit einem frischen Worker je Anfrage, 73
 bis 80 ms mit persistenten Workern. Sie brauchen eine Engine, die `REQUEST_TIME_FLOAT` je Anfrage setzt und in diesem
 Modus Header und Shutdown-Funktionen mitführt (Header und Shutdown-Funktionen ab qbix-webserver 0.0.4.25, das
-`REQUEST_TIME_FLOAT` je Anfrage ab Exponential Velocity 0.0.4.42; Exponential schlägt 0.0.4.44 vor).
+`REQUEST_TIME_FLOAT` je Anfrage ab Exponential Velocity 0.0.4.42; Exponential verlangt 0.0.4.54).
 
 Zwischen den Anfragen setzt der Worker statische Klasseneigenschaften, Superglobals, eigene Globals, Ausgabepuffer,
 Handler und Antwort-Header auf den Zustand zurück, mit dem er geforkt wurde. Einige Registries im Kernel werden mit
