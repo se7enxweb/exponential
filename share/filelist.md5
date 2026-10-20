@@ -12071,7 +12071,7 @@ cd2fe14e4eaec5d6c152ec03dc0b9c9a  kernel/classes/help/content/exphelpcontentprov
 ac511aa456e80d00093d0b638a2c7e3a  kernel/classes/help/content/exphelpcontentrepository.php
 60fa6d3c472776e164c73d5a0f8229ee  kernel/classes/help/content/exphelpcontentschema.php
 731dacfbc9e210d26a6115321f360d89  kernel/classes/help/content/exphelpcontentseeder.php
-92736b98f18ed22a31fa5a971a5507b2  kernel/classes/help/content/exphelpcontentvalidator.php
+9a23a6871245c88c42a7226c7ba7b0b9  kernel/classes/help/content/exphelpcontentvalidator.php
 943987aa498d04fce98c75e16ad1fb16  kernel/classes/help/exphelp.php
 8d3dac8ffca477d5f880274a01c5edb5  kernel/classes/help/exphelpallowlist.php
 c3d666a7f47657b5c796b83b28a96696  kernel/classes/help/exphelpaudience.php
@@ -12090,7 +12090,7 @@ ec7e813ca5c4d3ff8d37fffcb745d34f  kernel/classes/help/exphelplanding.php
 84d5dc11b775cc8a860c185b0e73a851  kernel/classes/help/exphelplicense.php
 c7bea0c0b12fa71ef53983e1e0fbb7b7  kernel/classes/help/exphelplinkcheck.php
 cfd4f687ec86fd8d12a6d8a572ed39bb  kernel/classes/help/exphelplinks.php
-c8fa3c73d723f36b125a079433796e1a  kernel/classes/help/exphelpmarkdownrenderer.php
+bdc1012d9a66dc5dc17a8e3f8e9dc10e  kernel/classes/help/exphelpmarkdownrenderer.php
 055260b7b7c1bf7bb215a2a9fa6a3d34  kernel/classes/help/exphelpnavigation.php
 d189eaefa6ff92f313236877991d8e6a  kernel/classes/help/exphelppdf.php
 e217b6f378ad261b116de9097ea44f2a  kernel/classes/help/exphelppdfcanvas.php
@@ -15133,7 +15133,7 @@ fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthenticatio
 a28e8c07d690b44276a468248e76076c  tests/tests/kernel/classes/help/expHelpCachePruneTest.php
 15868da7bf53822056cd7499844b9c12  tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php
 302d1c97c5b85627647fa52fce670371  tests/tests/kernel/classes/help/expHelpContentExportTest.php
-c98a3ab117e6df5ae2e19f71311140ff  tests/tests/kernel/classes/help/expHelpContentTest.php
+2f878b98ce8ced15d7369c1e3518c9a9  tests/tests/kernel/classes/help/expHelpContentTest.php
 7a232b6261dbd79b53bc7e2051513b9c  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 a27bf2c2f2ab96f839caaa6eaf82f7c8  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 34170aa6637be50c4b1a7603b2f4abfc  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
@@ -15145,7 +15145,7 @@ ed0f741ed8e65f178f9e10f791c9d273  tests/tests/kernel/classes/help/expHelpLanding
 9b37b0d405ba40952d3128e77c51a470  tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php
 8447f8a4ef329ea5a39b078983b6a385  tests/tests/kernel/classes/help/expHelpLicenseTest.php
 1f1b5f1b633987c7fe3574d2d9db014a  tests/tests/kernel/classes/help/expHelpLinksTest.php
-c3b6ffe9d612841ae30a89509a5380d2  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
+3c9ba84b105d2dbfb8fdcec081d2e2b0  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
 1d48ec23bbd15435ac5ab0caf8277486  tests/tests/kernel/classes/help/expHelpMigrationHubTest.php
 b7ea6a76f564ff8879a419b79295a4f8  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
 2886dc808c3b719d6133f184b04d1839  tests/tests/kernel/classes/help/expHelpNavigationTest.php

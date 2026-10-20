@@ -322,6 +322,7 @@ class expHelpContentValidator
                 $this->add( self::WARNING, 'notice.signal-word', $topic, $field,
                             "The signal word {$m[1]} is for hazards to persons; use Attention, Data protection or Note" );
         }
+        $this->checkNotices( $topic, $class, $fields );
 
         // the glossary decides (Terminology)
         $this->checkTerminology( $topic, $fields + array( 'title' => (string)$value( 'title' ), 'shortdesc' => $shortdesc ), $glossary );
@@ -360,6 +361,114 @@ class expHelpContentValidator
         if ( isset( $topic['section'] ) && $topic['section'] !== $expected )
             $this->add( self::ERROR, 'section.mismatch', $topic, 'section',
                         "The section is \"{$topic['section']}\", the audience requires \"$expected\" (--fix sets it)", $expected );
+    }
+
+    /**
+     * The notice levels of the style guide (section 5, IEC/IEEE 82079-1): what can be checked without reading the text.
+     *
+     * - notice.position: an Attention or Data protection notice of a task stands in the step, not in context, prereq,
+     *   result or postreq;
+     * - notice.per-step: one notice per step;
+     * - notice.before-action: in a step, an Attention or Data protection notice comes first, before the action;
+     * - notice.too-long: a notice outside the steps (a paragraph or quote of its own) has at most three sentences.
+     *   In a step the notice and the action share the text, so its length is left to the review.
+     *
+     * @param array $topic
+     * @param string $class
+     * @param array $fields field => Markdown
+     */
+    protected function checkNotices( array $topic, $class, array $fields )
+    {
+        foreach ( $fields as $field => $text )
+        {
+            $text = (string)$text;
+            if ( $class === 'help_task' && $field === 'steps' )
+            {
+                foreach ( self::stepItems( $text ) as $n => $item )
+                {
+                    $notices = self::notices( $item );
+                    if ( count( $notices ) > 1 )
+                        $this->add( self::WARNING, 'notice.per-step', $topic, $field,
+                                    'Step ' . ( $n + 1 ) . ' has ' . count( $notices ) . ' notices; one notice per step, or split the step' );
+                    foreach ( $notices as $notice )
+                        if ( $notice['level'] !== 'note' && $notice['offset'] > 0 )
+                            $this->add( self::WARNING, 'notice.before-action', $topic, $field,
+                                        'Step ' . ( $n + 1 ) . ': the ' . $notice['label'] . ' notice stands after the action; it comes first in the step' );
+                }
+                continue;
+            }
+            foreach ( self::notices( $text ) as $notice )
+            {
+                if ( $class === 'help_task' && $notice['level'] !== 'note' && in_array( $field, array( 'context', 'prereq', 'result', 'postreq' ), true ) )
+                    $this->add( self::WARNING, 'notice.position', $topic, $field,
+                                "The {$notice['label']} notice is in \"$field\"; it stands in the step where the action happens" );
+                if ( self::sentenceCount( $notice['paragraph'] ) > 3 )
+                    $this->add( self::WARNING, 'notice.too-long', $topic, $field,
+                                "The {$notice['label']} notice has more than three sentences" );
+            }
+        }
+    }
+
+    /**
+     * The notices of a Markdown text: a bold label Attention, Data protection or Note with a colon (**Attention:**,
+     * **Attention**:), outside code. Each: level (attention|data-protection|note), label (as written), offset (of the
+     * label in the text without leading blanks and quote markers), paragraph (the notice's text after the label, up
+     * to the end of its paragraph).
+     *
+     * @param string $markdown
+     * @return array
+     */
+    public static function notices( $markdown )
+    {
+        $text = preg_replace( '/```.*?```/s', ' ', (string)$markdown );
+        $text = preg_replace( '/`[^`]*`/', ' ', $text );
+        $text = preg_replace( '/^[ \t]*>[ \t]?/m', '', $text );
+        $text = ltrim( $text );
+        $notices = array();
+        if ( !preg_match_all( '/(?:\*\*|__)[ \t]*(Attention|Data protection|Note)[ \t]*(?::[ \t]*(?:\*\*|__)|(?:\*\*|__)[ \t]*:)/i',
+                              $text, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE ) )
+            return $notices;
+        foreach ( $matches as $m )
+        {
+            $start = $m[0][1] + strlen( $m[0][0] );
+            $rest = substr( $text, $start );
+            $paragraph = preg_split( '/\n[ \t]*\n/', $rest, 2 )[0];
+            $label = ucfirst( strtolower( $m[1][0] ) );
+            $notices[] = array( 'level' => str_replace( ' ', '-', strtolower( $m[1][0] ) ), 'label' => $label,
+                                'offset' => $m[0][1], 'paragraph' => trim( preg_replace( '/\s+/', ' ', $paragraph ) ) );
+        }
+        return $notices;
+    }
+
+    /**
+     * The items of the numbered lists of a Markdown text (the steps), each with its continuation lines, in order.
+     *
+     * @param string $markdown
+     * @return string[]
+     */
+    public static function stepItems( $markdown )
+    {
+        $items = array();
+        $current = null;
+        $inFence = false;
+        foreach ( preg_split( '/\r\n|\r|\n/', (string)$markdown ) as $line )
+        {
+            if ( preg_match( '/^\s*(```|~~~)/', $line ) )
+                $inFence = !$inFence;
+            if ( !$inFence && preg_match( '/^(\d{1,3})[.)]\s+(.*)$/', $line, $m ) )
+            {
+                $items[] = $m[2];
+                $current = count( $items ) - 1;
+                continue;
+            }
+            if ( $current !== null && ( $inFence || trim( $line ) === '' || preg_match( '/^\s{2,}\S/', $line ) ) )
+            {
+                $items[$current] .= "\n" . trim( $line );
+                continue;
+            }
+            $current = null;
+        }
+        return array_map( 'trim', $items );
     }
 
     protected function checkTerminology( array $topic, array $texts, array $glossary )

@@ -374,6 +374,19 @@ class expHelpMarkdownRendererTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'Page', $r['title'] );
     }
 
+    /** The notice levels of the help style guide (section 5): Attention, Data protection and Note are callouts */
+    public function testNoticeLevelsOfTheStyleGuideAreCallouts()
+    {
+        $html = $this->html( "> **Attention:** The objects are deleted at once.\n\n> **Data protection:** The section becomes public.\n\n"
+                             . ":::data-protection\nExternal media load from a third party.\n:::\n\n> **Note:** A draft is kept." )['html'];
+        $this->assertSame( 4, substr_count( $html, 'class="a4-help-callout ' ) );
+        $this->assertSame( 3, substr_count( $html, 'a4-help-callout--important' ) );
+        $this->assertSame( 1, substr_count( $html, 'a4-help-callout--note' ) );
+        $this->assertSame( 2, substr_count( $html, 'a4-bi-person-lock' ), 'data protection has its own icon' );
+        $this->assertStringContainsString( 'Data protection</p>', $html, 'the container keeps the level as its title' );
+        $this->assertStringNotContainsString( 'Important</p>', $html );
+    }
+
     /** HR-08 */
     public function testHelpers()
     {

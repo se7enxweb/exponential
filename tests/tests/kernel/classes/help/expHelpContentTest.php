@@ -157,6 +157,31 @@ class expHelpContentTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 2, count( expHelpContentValidator::numberedLists( "1. a\n2. b\n\ntext\n\n1. c\n```\n1. code\n```" )['lists'] ) );
     }
 
+    /** HCT-04b: the notice levels of the style guide (section 5) */
+    public function testNotices()
+    {
+        $task = function ( array $fields ) {
+            return self::codes( $this->validator()->validate( array( self::topic( array( 'class' => 'help_task', 'fields' => $fields + array( 'steps' => '1. A.' ) ) ) ) ) );
+        };
+        // the style guide's own example passes
+        $ok = $task( array( 'steps' => "1. Select the objects.\n2. Click **Remove**.\n3. **Attention:** Without \"Move to trash\" the objects are deleted at once and\n   cannot be restored.\n   Click **OK**." ) );
+        foreach ( array( 'notice.position', 'notice.per-step', 'notice.before-action', 'notice.too-long' ) as $code )
+            $this->assertNotContains( $code, $ok );
+        $this->assertContains( 'notice.position', $task( array( 'context' => '**Attention:** Removed objects cannot be restored.' ) ) );
+        $this->assertContains( 'notice.position', $task( array( 'result' => '**Data protection**: The page is now public.' ) ) );
+        $this->assertNotContains( 'notice.position', $task( array( 'context' => '**Note:** A draft is kept until you discard it.' ) ) );
+        $this->assertContains( 'notice.per-step', $task( array( 'steps' => "1. **Attention:** It is deleted. **Note:** Drafts stay.\n   Click **OK**." ) ) );
+        $this->assertContains( 'notice.before-action', $task( array( 'steps' => "1. Click **OK**.\n   **Attention:** The object is deleted at once." ) ) );
+        $this->assertNotContains( 'notice.before-action', $task( array( 'steps' => "1. Click **OK**.\n   **Note:** The trash keeps it." ) ) );
+        $long = self::codes( $this->validator()->validate( array( self::topic( array( 'fields' => array(
+            'body' => "> **Attention:** One. Two. Three. Four.\n\nNext paragraph. More. More. More." ) ) ) ) ) );
+        $this->assertContains( 'notice.too-long', $long );
+        $this->assertNotContains( 'notice.too-long', self::codes( $this->validator()->validate( array( self::topic( array( 'fields' => array(
+            'body' => "**Data protection:** Visitors see the name. Remove it first.\n\nOne. Two. Three. Four." ) ) ) ) ) ) );
+        $this->assertSame( array(), expHelpContentValidator::notices( "Text `**Attention:**` and\n```\n**Note:** x\n```" ) );
+        $this->assertSame( array( "Open.\nIt opens.", 'Close.' ), expHelpContentValidator::stepItems( "1. Open.\n   It opens.\n2. Close.\n\nAfter." ) );
+    }
+
     /** HCT-05 */
     public function testShortdesc()
     {

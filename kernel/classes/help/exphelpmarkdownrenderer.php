@@ -66,6 +66,16 @@ class expHelpMarkdownRenderer
         'important' => 'important', 'action required' => 'important', 'attention' => 'important', 'remember' => 'important',
         'warning' => 'warning', 'deprecated' => 'warning', 'heads up' => 'warning', 'breaking' => 'warning', 'breaking change' => 'warning',
         'caution' => 'caution', 'danger' => 'caution', 'critical' => 'caution', 'security' => 'caution',
+        // the notice levels of the help style guide (IEC/IEEE 82079-1): Attention, Data protection, Note
+        'data protection' => 'important', 'data-protection' => 'important', 'privacy' => 'important',
+    );
+
+    /** @var array words whose callout keeps its own title and icon instead of the kind's: word => array( title, icon ) */
+    protected static $calloutLevels = array(
+        'attention' => array( 'Attention', 'a4-bi-exclamation-diamond' ),
+        'data protection' => array( 'Data protection', 'a4-bi-person-lock' ),
+        'data-protection' => array( 'Data protection', 'a4-bi-person-lock' ),
+        'privacy' => array( 'Data protection', 'a4-bi-person-lock' ),
     );
 
     /** @var array callout kind => array( icon, default title ) */
@@ -548,7 +558,7 @@ class expHelpMarkdownRenderer
                 $word = strtolower( $m[2] );
                 $kind = isset( self::$calloutWords[$word] ) ? self::$calloutWords[$word] : ( isset( self::$callouts[$word] ) ? $word : 'note' );
                 $title = trim( $m[3] );
-                $html .= $this->renderCallout( $kind, $title === '' ? null : $this->renderInline( $title ), $this->renderBlocks( $inner ) );
+                $html .= $this->renderCallout( $kind, $title === '' ? null : $this->renderInline( $title ), $this->renderBlocks( $inner ), $word );
                 continue;
             }
 
@@ -895,18 +905,21 @@ class expHelpMarkdownRenderer
                     array_shift( $lines );
                 else
                     $lines[0] = $m[5];
-                return $this->renderCallout( self::$calloutWords[$word], $this->renderInline( trim( $m[2] ) ), $this->renderBlocks( $lines ) );
+                return $this->renderCallout( self::$calloutWords[$word], $this->renderInline( trim( $m[2] ) ), $this->renderBlocks( $lines ), $word );
             }
         }
         return '<blockquote class="a4-help-quote">' . $this->renderBlocks( $lines ) . '</blockquote>';
     }
 
     /**
-     * A callout box. $title is HTML (already rendered) or null for the kind's own word.
+     * A callout box. $title is HTML (already rendered) or null for the kind's own word. $level is the word that named
+     * it: a notice level of the style guide (Attention, Data protection) keeps its own title and icon.
      */
-    protected function renderCallout( $kind, $title, $body )
+    protected function renderCallout( $kind, $title, $body, $level = '' )
     {
         list( $icon, $word ) = self::$callouts[$kind];
+        if ( isset( self::$calloutLevels[$level] ) )
+            list( $word, $icon ) = self::$calloutLevels[$level];
         if ( $title === null )
             $title = self::escape( $this->t( $word ) );
         return '<div class="a4-help-callout a4-help-callout--' . $kind . '" role="note">'
