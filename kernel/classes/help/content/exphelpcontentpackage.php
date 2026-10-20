@@ -185,26 +185,81 @@ class expHelpContentPackage
     {
         if ( !is_file( $file ) )
             return array( "No file $file" );
-        try
-        {
-            $phar = new PharData( $file );
-        }
-        catch ( Exception $e )
-        {
-            return array( 'Not a package archive: ' . $e->getMessage() );
-        }
+        $entries = self::readArchive( $file );
+        if ( $entries === null )
+            return array( 'Not a package archive (a gzip compressed tar file)' );
         $files = array();
-        foreach ( new RecursiveIteratorIterator( $phar ) as $entry )
+        foreach ( $entries as $path => $content )
         {
-            $path = str_replace( '\\', '/', substr( $entry->getPathname(), strlen( 'phar://' . $phar->getPath() ) + 1 ) );
             // an export puts the files below a directory named after the package, or at the top
-            $path = preg_replace( '#^' . preg_quote( self::NAME, '#' ) . '/#', '', $path );
-            $files[$path] = $entry->getPathname();
+            $files[preg_replace( '#^(\./)?(' . preg_quote( self::NAME, '#' ) . '/)?#', '', $path )] = $content;
         }
         $read = function ( $relative ) use ( $files ) {
-            return isset( $files[$relative] ) ? (string)file_get_contents( $files[$relative] ) : null;
+            return isset( $files[$relative] ) ? $files[$relative] : null;
         };
         return self::verify( $read );
+    }
+
+    /** The largest archive verifyArchive() reads, unpacked */
+    const MAX_ARCHIVE_SIZE = 33554432;
+
+    /**
+     * The regular files of a gzip compressed tar file (ustar, with GNU long names and pax paths), read in PHP: the
+     * phar stream wrapper is switched off in Exponential (expPhar), and no program is started.
+     *
+     * @param string $file
+     * @return array|null path => contents; null when the file is no such archive
+     */
+    public static function readArchive( $file )
+    {
+        $data = @file_get_contents( (string)$file, false, null, 0, self::MAX_ARCHIVE_SIZE );
+        if ( !is_string( $data ) || strlen( $data ) < 2 )
+            return null;
+        if ( substr( $data, 0, 2 ) === "\x1f\x8b" )
+        {
+            $data = @gzdecode( $data, self::MAX_ARCHIVE_SIZE );
+            if ( !is_string( $data ) )
+                return null;
+        }
+        $files = array();
+        $length = strlen( $data );
+        $offset = 0;
+        $longName = null;
+        while ( $offset + 512 <= $length )
+        {
+            $header = substr( $data, $offset, 512 );
+            if ( trim( $header, "\0" ) === '' )
+                break;
+            if ( substr( $header, 257, 5 ) !== 'ustar' && $offset === 0 )
+                return null;
+            $size = octdec( trim( substr( $header, 124, 12 ), " \0" ) );
+            $type = $header[156];
+            $name = rtrim( substr( $header, 0, 100 ), "\0" );
+            $prefix = rtrim( substr( $header, 345, 155 ), "\0" );
+            if ( $prefix !== '' )
+                $name = $prefix . '/' . $name;
+            $body = substr( $data, $offset + 512, $size );
+            $offset += 512 + (int)ceil( $size / 512 ) * 512;
+            if ( $type === 'L' )
+            {
+                $longName = rtrim( $body, "\0" );
+                continue;
+            }
+            if ( $type === 'x' )
+            {
+                if ( preg_match( '/^\d+ path=(.*)$/m', $body, $m ) )
+                    $longName = $m[1];
+                continue;
+            }
+            if ( $longName !== null )
+            {
+                $name = $longName;
+                $longName = null;
+            }
+            if ( $type === '0' || $type === "\0" )
+                $files[$name] = $body;
+        }
+        return $files;
     }
 
     /**

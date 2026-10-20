@@ -132,16 +132,41 @@ class expHelpContentPackageTest extends TestCase
 
     public function testTheArchiveIsReadWithoutUnpacking()
     {
-        if ( !class_exists( 'PharData' ) )
-            $this->markTestSkipped( 'phar extension missing' );
         $dir = $this->writePackage();
-        $tar = $this->dir . '/exp_help_classes.tar';
-        $phar = new PharData( $tar );
-        $phar->buildFromDirectory( $this->dir, '#/' . preg_quote( expHelpContentPackage::NAME, '#' ) . '/#' );
-        $phar->compress( Phar::GZ );
-        unset( $phar );
-        $this->assertFileExists( $tar . '.gz' );
-        $this->assertSame( array(), expHelpContentPackage::verifyArchive( $tar . '.gz' ) );
-        $this->assertNotSame( array(), expHelpContentPackage::verifyArchive( $dir . '/package.xml' ) );
+        // a ustar archive as an export writes it: the files below a directory named after the package; one name
+        // longer than 100 bytes takes the GNU long name entry
+        $tar = '';
+        $entry = function ( $name, $content, $type = '0' ) {
+            $header = str_pad( substr( $name, 0, 100 ), 100, "\0" ) . str_pad( '0000644', 8, "\0" ) . str_pad( '0000000', 8, "\0" )
+                    . str_pad( '0000000', 8, "\0" ) . str_pad( sprintf( '%011o', strlen( $content ) ), 12, "\0" )
+                    . str_pad( sprintf( '%011o', 0 ), 12, "\0" ) . '        ' . $type . str_repeat( "\0", 100 ) . "ustar\0" . '00';
+            $header = str_pad( $header, 512, "\0" );
+            $sum = 0;
+            for ( $i = 0; $i < 512; $i++ )
+                $sum += ord( $header[$i] );
+            $header = substr_replace( $header, sprintf( "%06o\0 ", $sum ), 148, 8 );
+            return $header . str_pad( $content, (int)ceil( strlen( $content ) / 512 ) * 512, "\0" );
+        };
+        $tar .= $entry( expHelpContentPackage::NAME . '/package.xml', file_get_contents( $dir . '/package.xml' ) );
+        foreach ( glob( $dir . '/ezcontentclass/*.xml' ) as $file )
+        {
+            $name = expHelpContentPackage::NAME . '/ezcontentclass/' . basename( $file );
+            if ( basename( $file ) === 'class-help_glossary_entry.xml' )
+            {
+                // the name from a GNU long name entry wins over the (here shortened) name of the header
+                $tar .= $entry( '././@LongLink', $name . "\0", 'L' );
+                $tar .= $entry( 'shortened', file_get_contents( $file ) );
+                continue;
+            }
+            $tar .= $entry( $name, file_get_contents( $file ) );
+        }
+        $tar .= str_repeat( "\0", 1024 );
+        file_put_contents( $this->dir . '/exp_help_classes-6.0.15.ezpkg', gzencode( $tar ) );
+
+        $files = expHelpContentPackage::readArchive( $this->dir . '/exp_help_classes-6.0.15.ezpkg' );
+        $this->assertCount( 9, $files );
+        $this->assertSame( array(), expHelpContentPackage::verifyArchive( $this->dir . '/exp_help_classes-6.0.15.ezpkg' ) );
+        $this->assertSame( array( 'Not a package archive (a gzip compressed tar file)' ), expHelpContentPackage::verifyArchive( $dir . '/package.xml' ) );
+        $this->assertSame( array( 'No file ' . $this->dir . '/none.ezpkg' ), expHelpContentPackage::verifyArchive( $this->dir . '/none.ezpkg' ) );
     }
 }

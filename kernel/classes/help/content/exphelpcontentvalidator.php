@@ -49,7 +49,8 @@ class expHelpContentValidator
     protected $publicAudiences;
 
     /**
-     * @param array $options now (timestamp), areas (string[]), public_audiences (string[])
+     * @param array $options now (timestamp), areas (string[]), public_audiences (string[]), used_help_ids (where =>
+     *                       help_id, default usedHelpIdsFromSettings())
      */
     public function __construct( array $options = array() )
     {
@@ -57,7 +58,11 @@ class expHelpContentValidator
         $this->areas = isset( $options['areas'] ) ? array_values( (array)$options['areas'] )
                                                   : expHelpContentSchema::setting( 'Areas', self::DEFAULT_AREAS );
         $this->publicAudiences = isset( $options['public_audiences'] ) ? (array)$options['public_audiences'] : null;
+        $this->usedHelpIds = isset( $options['used_help_ids'] ) ? (array)$options['used_help_ids'] : self::usedHelpIdsFromSettings();
     }
+
+    /** @var array where => help_id: the help_ids called from outside (usedHelpIdsFromSettings()) */
+    protected $usedHelpIds = array();
 
     /**
      * Whether a help_id has the form of the style guide
@@ -197,6 +202,7 @@ class expHelpContentValidator
         foreach ( $figures as $figure )
             $this->checkFigure( $figure, isset( $figureSections[(int)$figure['object_id']] ) ? $figureSections[(int)$figure['object_id']] : null );
         $this->checkMaps( $maps, $byObject, $mapIds );
+        $this->checkUsedHelpIds( $topics );
         foreach ( $glossary as $entry )
         {
             if ( isset( $entry['section'] ) && $entry['section'] !== expHelpContentSchema::SECTION_INTERNAL )
@@ -361,6 +367,48 @@ class expHelpContentValidator
         if ( isset( $topic['section'] ) && $topic['section'] !== $expected )
             $this->add( self::ERROR, 'section.mismatch', $topic, 'section',
                         "The section is \"{$topic['section']}\", the audience requires \"$expected\" (--fix sets it)", $expected );
+    }
+
+    /**
+     * The help_ids that are called from outside (plan, "Checks": clients keep a list of the IDs they use, and a test
+     * checks that each exists): exphelp.ini [ContentSettings] ContextHelpIds[] (the "?" of the admin pages) and
+     * ClientHelpIds[] (the help_ids a mobile app or another client opens). An id no topic has is an ERROR (the client
+     * gets a 404); one whose topic is not Released yet is a WARNING.
+     *
+     * @param array $topics
+     */
+    protected function checkUsedHelpIds( array $topics )
+    {
+        $byId = array();
+        foreach ( $topics as $topic )
+            if ( isset( $topic['help_id'] ) && (string)$topic['help_id'] !== '' )
+                $byId[(string)$topic['help_id']] = $topic;
+        foreach ( $this->usedHelpIds as $where => $helpId )
+        {
+            $item = array( 'object_id' => 0, 'help_id' => $helpId );
+            if ( !isset( $byId[$helpId] ) )
+                $this->add( self::ERROR, 'client.help-id-unknown', $item, $where, "No topic has the help_id \"$helpId\" that $where names" );
+            elseif ( isset( $byId[$helpId]['state'] ) && $byId[$helpId]['state'] !== expHelpContentSchema::STATE_RELEASED )
+                $this->add( self::WARNING, 'client.help-id-not-released', $byId[$helpId], $where,
+                            "The topic \"$helpId\" that $where names is not Released; clients get a 404 until it is" );
+        }
+    }
+
+    /**
+     * The help_ids called from outside: "ContextHelpIds[<key>]" or "ClientHelpIds[]" => help_id
+     *
+     * @return array
+     */
+    public static function usedHelpIdsFromSettings()
+    {
+        $used = array();
+        foreach ( (array)expHelpContentSchema::setting( 'ContextHelpIds', array() ) as $key => $helpId )
+            if ( is_scalar( $helpId ) && trim( (string)$helpId ) !== '' )
+                $used["ContextHelpIds[$key]"] = trim( (string)$helpId );
+        foreach ( array_values( (array)expHelpContentSchema::setting( 'ClientHelpIds', array() ) ) as $n => $helpId )
+            if ( is_scalar( $helpId ) && trim( (string)$helpId ) !== '' )
+                $used["ClientHelpIds[$n]"] = trim( (string)$helpId );
+        return $used;
     }
 
     /**

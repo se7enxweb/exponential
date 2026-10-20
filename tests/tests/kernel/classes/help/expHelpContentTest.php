@@ -157,6 +157,24 @@ class expHelpContentTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 2, count( expHelpContentValidator::numberedLists( "1. a\n2. b\n\ntext\n\n1. c\n```\n1. code\n```" )['lists'] ) );
     }
 
+    /** HCT-04c: the help_ids clients call (plan, "Checks") must exist, and be Released */
+    public function testUsedHelpIds()
+    {
+        $v = new expHelpContentValidator( array( 'now' => self::NOW, 'areas' => expHelpContentValidator::DEFAULT_AREAS,
+                                                 'public_audiences' => array( 'Visitors' ),
+                                                 'used_help_ids' => array( 'ContextHelpIds[content/edit]' => 'content.versions',
+                                                                           'ClientHelpIds[0]' => 'account.log-in',
+                                                                           'ClientHelpIds[1]' => 'content.draft' ) ) );
+        $topics = array( self::topic(), self::topic( array( 'object_id' => 11, 'help_id' => 'content.draft', 'state' => 'review' ) ) );
+        $findings = $v->validate( $topics );
+        $unknown = array_values( array_filter( $findings, function ( $f ) { return $f['code'] === 'client.help-id-unknown'; } ) );
+        $this->assertCount( 1, $unknown );
+        $this->assertSame( array( 'ERROR', 'account.log-in', 'ClientHelpIds[0]' ), array( $unknown[0]['level'], $unknown[0]['help_id'], $unknown[0]['field'] ) );
+        $this->assertContains( 'client.help-id-not-released', self::codes( $findings, 'WARNING' ) );
+        // the Released content.versions is fine
+        $this->assertCount( 2, array_filter( $findings, function ( $f ) { return strpos( $f['code'], 'client.' ) === 0; } ) );
+    }
+
     /** HCT-04b: the notice levels of the style guide (section 5) */
     public function testNotices()
     {
