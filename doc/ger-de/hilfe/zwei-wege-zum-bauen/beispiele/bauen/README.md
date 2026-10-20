@@ -30,7 +30,7 @@ Die Blöcke, Listen, Galerien, Spalten und Templates der Seiten anlegen.
 17. [Ein externes Video](externes-video.md): Der Block External video (Video URL or embed src, Width, Height, Autoplay) oder ein Video-Inhaltsobjekt.
 18. [Eine Liste der neuesten Artikel eines Bereichs](neueste-artikel-eines-bereichs.md): Ein List-Block mit einer dynamischen Sammlung (übergeordneter Ort, Sortierung nach Veröffentlichung, Limit) oder fetch() in einem Template.
 19. [Handverlesene Teaser](handverlesene-teaser.md): Ein List-Block mit einer manuellen Sammlung, die Einträge im Content Browser ausgewählt und durch Ziehen geordnet.
-20. [Ein Raster von Artikeln in vier Spalten](raster-in-vier-spalten.md): Der List-Block in der Ansicht grid mit Number of columns 4 (oder der Grid-Block), Ansichtstyp der Einträge Card.
+20. [Ein Raster von Artikeln in vier Spalten](raster-in-vier-spalten.md): Der List-Block in der Ansicht grid mit Number of columns 4 (oder der Grid-Block), Ansichtstyp der Elemente Card.
 21. [Abwechselnde Zeilen aus Bild und Text](abwechselnde-zeilen-bild-und-text.md): Der Block Zig-Zag (List) oder der List-Block in der Ansicht list_zigzag.
 22. [Eine nummerierte Top-Fünf-Liste](nummerierte-top-fuenf-liste.md): Der List-Block in der Ansicht list_numbered.
 23. [Ein Raster mit einem hervorgehobenen Eintrag](raster-mit-hervorgehobenem-eintrag.md): Der List-Block in der Ansicht grid_featured: der erste Eintrag groß, der Rest in einem Raster.

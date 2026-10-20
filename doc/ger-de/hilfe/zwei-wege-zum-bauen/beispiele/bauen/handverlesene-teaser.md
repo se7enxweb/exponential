@@ -25,7 +25,7 @@ Drei Artikel, die ein Redakteur für diese Woche auswählt.
 1. Öffnen Sie **Layouts > Layouts** und das Layout *Landing Page / Home*; der Editor öffnet es in einem Entwurf.
 2. Öffnen Sie die Blockpalette (**+** oben links) und ziehen Sie **List** (Gruppe *Listing*) in die Zone `main`.
 3. Klicken Sie im Reiter **Inhalt** auf **+ Elemente hinzufügen**, öffnen Sie die Zweige, haken Sie die Artikel an und klicken Sie auf **Auswahl hinzufügen**.
-4. Ziehen Sie die Einträge in ihre Reihenfolge; wählen Sie im Reiter **Design** den Ansichtstyp und den Ansichtstyp der Einträge.
+4. Ziehen Sie die Einträge in ihre Reihenfolge; wählen Sie im Reiter **Design** den Ansichtstyp und den Ansichtstyp der Elemente.
 5. **Layout veröffentlichen**. Die Seiten, die das Layout verwenden, zeigen den Block beim nächsten Aufruf.
 
 Der Prefooter wurde auf diese Weise geändert: [Den Prefooter im Layout-Editor ändern](../../../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md).

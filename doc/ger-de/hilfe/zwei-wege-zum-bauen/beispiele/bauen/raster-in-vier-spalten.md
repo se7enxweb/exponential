@@ -3,8 +3,8 @@ title: "Ein Raster von Artikeln in vier Spalten"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1119
-summary: Der List-Block in der Ansicht grid mit Number of columns 4 (oder der Grid-Block), Ansichtstyp der Einträge Card.
-keywords: Raster, Spalten, Karten, Anzahl der Spalten, Ansichtstyp der Einträge, Grid-Block, grid, columns, cards, number of columns, item view type, Grid block
+summary: Der List-Block in der Ansicht grid mit Number of columns 4 (oder der Grid-Block), Ansichtstyp der Elemente Card.
+keywords: Raster, Spalten, Karten, Anzahl der Spalten, Ansichtstyp der Elemente, Grid-Block, grid, columns, cards, number of columns, item view type, Grid block
 type: help
 ---
 # Ein Raster von Artikeln in vier Spalten
@@ -25,7 +25,7 @@ Acht Artikel als Karten, vier pro Zeile.
 1. Öffnen Sie **Layouts > Layouts** und das Layout *Landing Page / Home*; der Editor öffnet es in einem Entwurf.
 2. Öffnen Sie die Blockpalette (**+** oben links) und ziehen Sie **List** (Gruppe *Listing*) in die Zone `main` (oder **Grid**).
 3. Füllen Sie die Sammlung (manuell oder dynamisch).
-4. Wählen Sie den Block aus, öffnen Sie den Reiter **Design** und setzen Sie **Ansichtstyp** `grid`, **Number of columns** 4 und **Item view type** Card.
+4. Wählen Sie den Block aus, öffnen Sie den Reiter **Design** und setzen Sie **Ansichtstyp** `grid`, **Number of columns** 4 und **Ansichtstyp der Elemente** Card.
 5. **Layout veröffentlichen**. Die Seiten, die das Layout verwenden, zeigen den Block beim nächsten Aufruf.
 
 Das Media-Design zeichnet das Raster mit `explayouts/block/list/grid.tpl` und `list/grid/4_columns.tpl`.
