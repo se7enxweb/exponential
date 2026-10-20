@@ -98,7 +98,7 @@ platform's managed database, **2. PostgreSQL** first if it offers several
   `.htaccess_root` translated to that server: "only a fixed list of asset paths is served as files; everything else
   is passed to `index.php`" ([13.2](../../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)).
   A generic "serve the file if it exists" configuration would hand out `settings/*.ini`.
-- **Velocity** needs a long-running process and PHP 8.1 with `sockets`. A platform that runs one process per
+- **Velocity** needs a long-running process and PHP 8.0 or later with `sockets`. A platform that runs one process per
   container and routes HTTP to a port can run it; one that only runs PHP per request cannot.
 - **Cron.** `runcronjobs.php` must run on a schedule, once per site, with the same code and settings
   ([Cron jobs](../operations/cron-jobs.md)). Ask whether the platform has a scheduler.

@@ -29,7 +29,7 @@ figures are documented with their conditions, and those conditions belong in you
 | "It began as a fork of the Qbix web server engine, and the two projects have since drifted far apart" | The package's README, quoted in [Who is 7x?, Exponential Velocity](../who-is-7x.md#exponential-velocity) |
 | The PHP application server "that Exponential recommends for every stage from development to production" | [Velocity chronicle](../../history/velocity/README.md) |
 | MIT licensed | Its `composer.json`, per [Who is 7x?](../who-is-7x.md#open-source-licenses) |
-| A separate Composer package that the kernel "suggests it rather than requires it", because it needs PHP 8.1 and the `sockets` extension | [Getting the code](../../install/03-getting-the-code.md#34-the-optional-velocity-package) |
+| A separate Composer package that the kernel's `composer.json` "requires it at `~0.0.4.54`"; from that release it runs on PHP 8.0 to 8.5 (until then it needed 8.1 and was only suggested) | [Getting the code](../../install/03-getting-the-code.md#34-the-velocity-package) |
 | First commits 20 July 2026, first release `v0.0.1` in September 2026, part of Exponential since 22 September 2026 | [Who is 7x?](../who-is-7x.md#exponential-velocity) |
 
 ## Releases and version numbers
@@ -37,8 +37,9 @@ figures are documented with their conditions, and those conditions belong in you
 Velocity versions have four positions and the last one keeps counting: "`0.0.4.9` is followed by `0.0.4.10`, never
 `0.0.5.0`" ([Velocity release notes](../../../changelogs/extensions/exponential-velocity.md)). On 18 October 2026 the
 latest release in the release notes was `v0.0.4.50` of 12 October 2026; GitHub showed `v0.0.4.53` as the newest tag on
-19 October 2026, and the kernel's `composer.json` suggests `~0.0.4.52`, which accepts every later 0.0.4.x (the README and
-Getting the code still name 0.0.4.50; [Getting the code](../../install/03-getting-the-code.md#34-the-optional-velocity-package)). Check the tags
+19 October 2026. `v0.0.4.54` of 20 October 2026 is the first release that runs on PHP 8.0, and the kernel's
+`composer.json` requires `~0.0.4.54`, which accepts every later 0.0.4.x
+([Getting the code](../../install/03-getting-the-code.md#34-the-velocity-package)). Check the tags
 on the day you write ([Verifying a release yourself](verifying-a-release-yourself.md)).
 
 Many releases can fall on one day: the chronicle lists `v0.0.2.1` to `v0.0.4.14` on 22 September 2026 alone

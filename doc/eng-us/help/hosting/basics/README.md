@@ -59,8 +59,8 @@ Back to the start of the hosting help: [Hosting companies: start here](../hostin
 
 ## The short version
 
-- **PHP 8.0 or later** for the kernel; **PHP 8.1 or later** with `sockets` for Exponential Velocity, the recommended
-  web server ([chapter 2](../../../install/02-requirements.md#22-php)).
+- **PHP 8.0 or later** for the kernel, and for Exponential Velocity, the recommended web server, with `sockets`
+  (from Velocity 0.0.4.54; [chapter 2](../../../install/02-requirements.md#22-php)).
 - **Databases, in the official order:** 1. SQLite 3 (default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
   5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at this time (no driver in
   6.0.x). See [Database support](../../database-support.md).

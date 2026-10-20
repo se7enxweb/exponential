@@ -41,7 +41,7 @@ terms ([Who is 7x?](../../who-is-7x.md#services-and-hosting)); partners and host
 
 ## What does a server need?
 
-PHP 8.0 or later (8.1 or later for Velocity; 8.5 is the newest tested), Composer 2, a supported database or SQLite,
+PHP 8.0 or later (Velocity included; 8.5 is the newest tested), Composer 2, a supported database or SQLite,
 and GD or ImageMagick; a web server is optional with Velocity ([2. Requirements](../../../install/02-requirements.md#21-the-checklist),
 [Requirements at a glance](../../hosting/basics/requirements-at-a-glance.md)). Sizing is covered in
 [Sizing memory, CPU and disk](../../hosting/basics/sizing-memory-cpu-and-disk.md).

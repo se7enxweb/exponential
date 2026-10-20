@@ -38,7 +38,7 @@ PHP-FPM in front, though it works behind them ([Velocity web server](../../../fe
 ## Do we have to use Velocity?
 
 No. Apache or nginx with PHP-FPM and FrankenPHP are supported too ([8. Serving the site](../../../install/08-serving-the-site.md)).
-The project recommends Velocity ([the Exponential glossary](../../../glossary.md#v)). Velocity needs PHP 8.1 or later.
+The project recommends Velocity ([the Exponential glossary](../../../glossary.md#v)). Velocity runs on PHP 8.0 or later (from its release 0.0.4.54; until then 8.1).
 
 ## How does caching work?
 

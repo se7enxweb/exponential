@@ -25,7 +25,7 @@ with a runbook.
 
 | PHP | Exponential 6.0 | Source |
 |---|---|---|
-| 8.0 | the oldest supported; Velocity does not run on it | [Chapter 2](../../../install/02-requirements.md) |
+| 8.0 | the oldest supported; Velocity runs on it from its release 0.0.4.54 | [Chapter 2](../../../install/02-requirements.md) |
 | 8.1 to 8.4 | supported, Velocity included | Chapter 2 |
 | 8.5 | supported | Chapter 2 |
 

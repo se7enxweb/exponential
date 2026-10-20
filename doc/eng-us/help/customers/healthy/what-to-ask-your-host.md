@@ -19,7 +19,7 @@ for a new host before you sign are also in [Choosing hosting](../../businesses/c
 
 | Ask | A good answer |
 |---|---|
-| Which PHP version runs our site, and until when is it supported? | A version from 8.0 up (8.1 or later for Velocity), with a date; the README recommends "the latest version of PHP available on your OS" ([Release line and support policy](../../businesses/reliability/release-line-and-support-policy.md)) |
+| Which PHP version runs our site, and until when is it supported? | A version from 8.0 up (Velocity included), with a date; the README recommends "the latest version of PHP available on your OS" ([Release line and support policy](../../businesses/reliability/release-line-and-support-policy.md)) |
 | Which database engine and version? | A named engine; the project lists them in an official order ([Database choice for reliability](../../businesses/reliability/database-choice-for-reliability.md)) |
 | Which web server or engine serves the site? | Exponential Velocity, FrankenPHP, Apache or nginx with PHP-FPM, or another named one |
 | Does cron run for our site, how often? | Yes, with the cronjob parts named; background work fails quietly without it ([Cronjobs and background jobs](../../businesses/reliability/cronjobs-and-background-jobs.md)) |

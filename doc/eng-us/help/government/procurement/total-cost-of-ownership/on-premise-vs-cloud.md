@@ -40,7 +40,7 @@ tier 3, "a reasoned expectation, not a test result". Plan a test before you comm
 
 ## What the software needs in every model
 
-- PHP 8.0 or newer (8.1 or newer for Velocity) and a supported database ([Requirements](../../../../install/02-requirements.md)).
+- PHP 8.0 or newer (Velocity included) and a supported database ([Requirements](../../../../install/02-requirements.md)).
 - Persistent storage for `var/` (uploads, logs, audit) - important on platforms with ephemeral file systems.
 - Cron jobs for background work ([Cron jobs](../../../hosting/operations/cron-jobs.md)).
 - For several web nodes: a database server and shared `var/storage`; SQLite fits one writing machine only.
