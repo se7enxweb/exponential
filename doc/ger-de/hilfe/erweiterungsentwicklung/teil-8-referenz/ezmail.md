@@ -83,7 +83,7 @@ dasselbe.
 
 - Versenden Sie nur E-Mails, die der Empfänger erwartet (er hat bestellt, abonniert oder angefragt).
 - Beachten Sie die Mail-Einstellungen des Benutzers, wenn Ihre E-Mail eine Benachrichtigung ist
-  ([Mail-Einstellungen](../../../../eng-us/bc/6.0/mail-preferences.md)).
+  ([Mail-Einstellungen](../../../bc/6.0/e-mail-einstellungen.md)).
 - Setzen Sie nie eine vollständige Adressliste in An oder Cc; eine E-Mail je Empfänger oder Bcc.
 - Protokollieren Sie weder Mail-Texte noch Adressen.
 

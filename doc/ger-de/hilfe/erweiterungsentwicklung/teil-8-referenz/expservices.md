@@ -92,7 +92,7 @@ für einen Administrator keinen Schlüssel. Ein eigener Dienst, der Passwörter 
 - Zurück: [Das Hilfesystem für Erweiterungen](hilfesystem-fuer-erweiterungen.md)
 - Weiter: [Glossar für Erweiterungsentwickler](glossar-fuer-erweiterungsentwickler.md)
 - [Backend-Dienste über ezjscore](../../../bc/6.0/backend-dienste-ueber-ezjscore.md)
-- [API-Schlüssel](../../../../eng-us/bc/6.0/api-keys.md)
+- [API-Schlüssel](../../../bc/6.0/api-schluessel.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -5,8 +5,8 @@ die eine Installation betreffen können, in der Reihenfolge, in der Sie ihnen be
 begegnen. Jeder Abschnitt sagt, wer betroffen ist, wie Sie es prüfen und wie Sie es beheben. Wie Sie eine Engine aus
 Exponential heraus auswählen und betreiben, beschreibt [Velocity-Engines](velocity-engines.md); den Verzeichnisbaum
 auf der Festplatte [Die Verzeichnisstruktur von Velocity](velocity-verzeichnisstruktur.md); das Engine-Archiv
-[phar](../../../eng-us/bc/6.0/phar.md); was Exponential selbst geändert hat,
-[Verhaltensänderungen vom Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md). Die Release Notes stehen
+[phar](phar.md); was Exponential selbst geändert hat,
+[Verhaltensänderungen vom Oktober 2026](verhaltensaenderungen-2026-10.md). Die Release Notes stehen
 im [Changelog](../../../changelogs/extensions/exponential-velocity.md), die Geschichte in der
 [Velocity-Chronik](../../../eng-us/history/velocity/README.md).
 

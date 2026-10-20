@@ -25,7 +25,7 @@ php bin/php/ezcache.php --list-tags
 ```
 
 `exp:cache` tut dasselbe wie die Cache-Seite der Administration und deckt zusätzlich den statischen Cache, den
-HTTP-Cache, den SQL-Abfrage-Cache und Velocity ab ([Cache-Steuerung von der Konsole](../../../../eng-us/bc/6.0/cache-console.md)).
+HTTP-Cache, den SQL-Abfrage-Cache und Velocity ab ([Cache-Steuerung von der Konsole](../../../bc/6.0/cache-konsole.md)).
 Geben Sie `--allow-root-user` an, wenn Sie als root arbeiten, führen Sie die Befehle aber besser als Benutzer des
 Webservers aus.
 

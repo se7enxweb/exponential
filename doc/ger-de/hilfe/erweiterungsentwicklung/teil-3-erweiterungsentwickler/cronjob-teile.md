@@ -73,7 +73,7 @@ return \Exponential\Cronjob\Extension\MysiteHello\HelloDigest::main( __FILE__, g
 
 `$scope` enthält die Variablen, die `runcronjobs.php` für jedes Skript definiert, darunter `cli` (ein `eZCLI`) und
 `isQuiet` (die Option `-q`). Die Basisklasse ist `kernel/private/classes/runnable/cronjobpart.php`; das Muster ist in
-[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
+[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../bc/6.0/cli-cronjob-und-view-abstraktionen.md)
 beschrieben.
 
 ## Das Skript als einfache Datei

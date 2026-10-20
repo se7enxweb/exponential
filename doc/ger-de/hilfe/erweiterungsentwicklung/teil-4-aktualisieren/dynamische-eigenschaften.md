@@ -32,7 +32,7 @@ Drei Kernel-Klassen erlauben dynamische Eigenschaften bewusst, mit dem PHP-Attri
 `eZPersistentObject` geht noch weiter: Es hat die Methoden `__get()`, `__set()`, `__isset()` und `__unset()`, die
 nicht deklarierte Felder in einem geschützten Array halten, sodass eine Unterklasse, die sich auf dynamische Felder
 verlässt, die Deprecation nicht auslöst. Der Kernel hat das in 6.0.4 eingeführt
-([PHP-8-Unterstützung](../../../../eng-us/bc/6.0/php8.md)).
+([PHP-8-Unterstützung](../../../bc/6.0/php8.md)).
 
 Eine Ihrer Klassen, die `eZPersistentObject` erweitert, braucht also meist nichts. Jede andere Klasse schon.
 

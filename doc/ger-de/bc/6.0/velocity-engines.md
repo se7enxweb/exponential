@@ -765,7 +765,7 @@ geschützte statische Eigenschaften auf und leert den Stat-Cache für das Log-En
 Engine, ihre Mindestanforderungen in den
 [Anforderungen](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/requirements.md), das Release in
 ihrem [Changelog](https://github.com/se7enxweb/exponential-velocity/blob/main/CHANGELOG.md). Für den Kernel unter
-PHP 8.0 siehe [Unterstützung für PHP 8.0](../../../eng-us/bc/6.0/php-8.0-support.md).
+PHP 8.0 siehe [Unterstützung für PHP 8.0](php-8.0-unterstuetzung.md).
 
 ## Die Engine selbst: Releases, Hinweise zum Upgrade und Funktionsseiten
 
@@ -797,8 +797,8 @@ Datei. Die Datei kann `PATH`, `LD_*`, `PHPRC` und die anderen Variablen des Load
 - [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
 - [Hinweise zum Upgrade der Velocity-Engine](velocity-engine-upgrade-hinweise.md)
 - [Die Verzeichnisstruktur von Velocity](velocity-verzeichnisstruktur.md)
-- [HTTP/2 und das Vorwärmen von Caches](../../../eng-us/bc/6.0/http2-and-cache-warming.md)
+- [HTTP/2 und das Vorwärmen von Caches](http2-und-cache-vorwaermen.md)
 - [FrankenPHP](../../../eng-us/bc/6.0/frankenphp.md)
-- [Engine-Archiv (phar)](../../../eng-us/bc/6.0/phar.md)
+- [Engine-Archiv (phar)](phar.md)
 - [Anleitung zum Bereitstellen](../../anleitungen/bereitstellung.md)
 - [Anleitung zum Benchmarking](../../anleitungen/benchmarking.md): die Engines gegeneinander messen

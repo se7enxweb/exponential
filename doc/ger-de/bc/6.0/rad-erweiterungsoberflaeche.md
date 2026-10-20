@@ -2586,5 +2586,5 @@ nicht nur über `ezpEvent::getInstance()`.
 
 - [Erweiterungspunkte](rad-erweiterungspunkte.md)
 - [Sicherheit der RAD-Werkzeuge](rad-sicherheit.md)
-- [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
+- [Befehle, Cronjob-Teile und Modul-Views als Klassen](cli-cronjob-und-view-abstraktionen.md)
 - [Anleitung zu Erweiterungen](../../anleitungen/extensions.md)

@@ -169,7 +169,7 @@ Lizenz. Halten Sie im Changelog der Erweiterung fest, auf welche Version Sie gew
 
 - Zurück: [Veraltetes in PHP 8.1 bis 8.5](php-8-1-bis-8-5-veraltete-funktionen.md)
 - Weiter: [Konstruktoren alten Stils und statische Aufrufe](alte-konstruktoren-und-statische-aufrufe.md)
-- [PHP-8.0-Unterstützung](../../../../eng-us/bc/6.0/php-8.0-support.md)
+- [PHP-8.0-Unterstützung](../../../bc/6.0/php-8.0-unterstuetzung.md)
 - [Entfernte Erweiterungen und SAPIs](https://www.php.net/manual/en/migration70.removed-exts-sapis.php) im PHP-Handbuch
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

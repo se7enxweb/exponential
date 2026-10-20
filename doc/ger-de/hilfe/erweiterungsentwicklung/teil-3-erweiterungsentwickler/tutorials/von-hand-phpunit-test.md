@@ -111,7 +111,7 @@ php ../../vendor/bin/phpunit
 
 Nehmen Sie denselben Befehl in die CI des Repositorys der Erweiterung auf (zum Beispiel ein GitHub-Actions-Workflow,
 der die Erweiterung auscheckt, PHP und PHPUnit mit Composer installiert und ihn ausführt). Die eigene CI des Kernels
-führt PHPUnit auf PHP 8.1 bis 8.5 aus ([Continuous Integration](../../../../../eng-us/bc/6.0/ci.md)); tun Sie dasselbe
+führt PHPUnit auf PHP 8.1 bis 8.5 aus ([Continuous Integration](../../../../bc/6.0/ci.md)); tun Sie dasselbe
 für die Versionen, die Ihre `composer.json` angibt.
 
 ## Verwandte Seiten

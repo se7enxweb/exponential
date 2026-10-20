@@ -20,7 +20,7 @@ mit vielen Erweiterungen); `./console help <command>` zeigt die Optionen eines B
 | Befehl | Tut |
 |---|---|
 | `exp:ini` | Einstellungen in jedem Geltungsbereich lesen und ändern: `get`, `set`, `add`, `rem`, `clear`, `toggle` ([Der Befehl exp:ini](../teil-2-builder/der-befehl-exp-ini.md)) |
-| `exp:cache` | Caches nach Tag, ID oder vollständig leeren und untersuchen ([Cache-Steuerung von der Konsole](../../../../eng-us/bc/6.0/cache-console.md)) |
+| `exp:cache` | Caches nach Tag, ID oder vollständig leeren und untersuchen ([Cache-Steuerung von der Konsole](../../../bc/6.0/cache-konsole.md)) |
 | `exp:ezcache` | das klassische Cache-Skript: `--clear-tag`, `--clear-id`, `--clear-all`, `--list-tags` |
 | `exp:ezpgenerateautoloads` | die Autoload-Arrays neu erzeugen; `-e` für Erweiterungen, nachdem Sie eine Klasse hinzugefügt oder umbenannt haben |
 | `exp:checkclasses` | jede deklarierte Klasse laden und die melden, die PHP nicht laden will: findet Signaturfehler sofort |

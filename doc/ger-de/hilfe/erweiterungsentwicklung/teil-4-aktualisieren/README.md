@@ -64,7 +64,7 @@ sofort anfangen wollen:
 
 - Zurück: [Teil 3: Der Erweiterungsentwickler](../teil-3-erweiterungsentwickler/README.md)
 - Weiter: [Warum die meisten Änderungen klein sind](warum-die-meisten-aenderungen-klein-sind.md)
-- [PHP-8-Unterstützung](../../../../eng-us/bc/6.0/php8.md) und [PHP-8.0-Unterstützung](../../../../eng-us/bc/6.0/php-8.0-support.md)
+- [PHP-8-Unterstützung](../../../bc/6.0/php8.md) und [PHP-8.0-Unterstützung](../../../bc/6.0/php-8.0-unterstuetzung.md)
 - [Verhaltensänderungen für Erweiterungen](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
 - [Erweiterungsentwicklung: das Buch](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

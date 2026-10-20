@@ -194,7 +194,7 @@ Das `(! grep ...)` macht aus „grep hat eine Zeile gefunden“ einen Fehlschlag
 
 Wenn Sie sicher sein wollen, dass keine Funktion hineingerutscht ist, die neuer als Ihr ältestes PHP ist, prüft
 PHPCompatibility den Code gegen einen Bereich von PHP-Versionen. Der Kernel selbst führt es mit `testVersion` `8.0-`
-aus ([PHP-8.0-Unterstützung](../../../../eng-us/bc/6.0/php-8.0-support.md)). Installieren Sie es als
+aus ([PHP-8.0-Unterstützung](../../../bc/6.0/php-8.0-unterstuetzung.md)). Installieren Sie es als
 Entwicklungsabhängigkeit der Erweiterung und führen Sie es im Workflow wie den Lint aus. Der Commit, der
 expchangeclass auf PHP 8.0 erweitert hat (32196f0), nennt es unter den Prüfungen, die die Änderung begründet haben.
 

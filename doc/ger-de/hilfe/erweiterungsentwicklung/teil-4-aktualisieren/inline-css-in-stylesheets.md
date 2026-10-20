@@ -145,7 +145,7 @@ Für ein paar Zeilen ist das in Ordnung, und es ist der Grund, die Selektoren sp
 - Zurück: [CSP: javascript:-Links, eval und String-Timer](csp-javascript-links-und-eval.md)
 - Weiter: [Von YUI zu expui](yui-zu-expui.md)
 - [admin4-Styling für Erweiterungsseiten](admin4-styling-fuer-erweiterungsseiten.md)
-- [Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md)
+- [Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md)
 - [CSS und JavaScript in einer Erweiterung](../teil-3-erweiterungsentwickler/css-und-javascript-in-einer-erweiterung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

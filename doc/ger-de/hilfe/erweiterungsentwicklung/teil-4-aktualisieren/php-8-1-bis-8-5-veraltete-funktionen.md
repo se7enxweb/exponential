@@ -47,7 +47,7 @@ gehalten, eine Zeile, die `extension/myoldext/` nennt, gehört also Ihnen.
 | Implizite verlustbehaftete Umwandlung einer Gleitkommazahl in einen ganzzahligen Schlüssel oder ein Argument | `$array[ $total / 2 ]` | `(int)( $total / 2 )` |
 
 Der Kernel selbst hat in 6.0.11 `#[ReturnTypeWillChange]` an seinen SPL-Methoden erhalten
-([PHP-8-Unterstützung](../../../../eng-us/bc/6.0/php8.md)). Ein Attribut ist für PHP 7 ein Kommentar und für 8.0
+([PHP-8-Unterstützung](../../../bc/6.0/php8.md)). Ein Attribut ist für PHP 7 ein Kommentar und für 8.0
 wirkungslos, daher ist es die sicherste Lösung:
 
 ```php
@@ -171,13 +171,13 @@ Zeile funktioniert weiterhin auf PHP 8.0 bis 8.4.
 3. Rufen Sie eine Funktion, die neuer als diese Version ist, nur hinter `function_exists()` auf, mit einem Fallback.
 4. Beheben Sie Deprecations jeder neueren Version, sobald sie auftreten: Zu diesem Zeitpunkt sind sie immer billig.
 
-Der Kernel folgt denselben Regeln ([PHP-8.0-Unterstützung](../../../../eng-us/bc/6.0/php-8.0-support.md)).
+Der Kernel folgt denselben Regeln ([PHP-8.0-Unterstützung](../../../bc/6.0/php-8.0-unterstuetzung.md)).
 
 ## Verwandte Seiten
 
 - Zurück: [PHP-8-Fehler, die alten Code stoppen](php-8-fehler-die-alten-code-stoppen.md)
 - Weiter: [Entfernte PHP-Funktionen und ihr Ersatz](entfernte-php-funktionen.md)
-- [PHP-8-Unterstützung](../../../../eng-us/bc/6.0/php8.md)
+- [PHP-8-Unterstützung](../../../bc/6.0/php8.md)
 - Die Migrationsleitfäden des PHP-Handbuchs: [8.1](https://www.php.net/manual/en/migration81.deprecated.php),
   [8.2](https://www.php.net/manual/en/migration82.deprecated.php),
   [8.3](https://www.php.net/manual/en/migration83.deprecated.php),

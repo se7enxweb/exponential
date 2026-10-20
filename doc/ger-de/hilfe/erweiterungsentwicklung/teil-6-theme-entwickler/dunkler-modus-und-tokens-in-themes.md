@@ -64,7 +64,7 @@ So funktioniert es:
 
 Das Design admin4 funktioniert genauso: Seine Tokens sind `--a4-*` in `components.css`, und sein Modus ist das Attribut
 `html[data-a4-theme="light"|"dark"]`. Seine Regel lautet, dass „eine Komponenten- oder Modulregel nie eine eigene
-Regel `html[data-a4-theme="dark"]` braucht: die Tokens schalten um“ ([Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md)).
+Regel `html[data-a4-theme="dark"]` braucht: die Tokens schalten um“ ([Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md)).
 
 ## Regeln für Tokens
 

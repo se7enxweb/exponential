@@ -12,7 +12,7 @@ type: help
 Teil 8, Referenz 31. Die Administration gestaltet jede Seite mit einem Satz gemeinsamer Komponentenklassen (`.a4-*`)
 und einem Satz Design-Tokens (`--a4-*`), die in der `components.css` der Administrationsdesigns definiert sind. Die
 Administrationsseiten einer Erweiterung verwenden sie ebenfalls. Die vollständige Referenz mit jeder Klasse, jedem
-Zustand und jedem Token ist [Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md); wie Sie die Seiten
+Zustand und jedem Token ist [Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md); wie Sie die Seiten
 einer alten Erweiterung umstellen, beschreibt
 [admin4-Styling für Erweiterungsseiten](../teil-4-aktualisieren/admin4-styling-fuer-erweiterungsseiten.md).
 

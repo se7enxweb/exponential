@@ -1071,7 +1071,7 @@ und Benutzer kosten nichts; Bedingungen zum Knoten laden den Knoten einmal.
 ## Verwandte Seiten
 
 - [Anfrageregeln (Funktion)](../../../eng-us/features/6.0/request-rules.md)
-- [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
-- [HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md)
+- [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)
+- [HTTP-Cache](httpcache.md)
 - [Sicherheitshärtung](../../../eng-us/bc/6.0/hardening.md)
 - [Anleitung zu Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md)

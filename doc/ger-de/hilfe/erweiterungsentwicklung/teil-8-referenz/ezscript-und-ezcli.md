@@ -85,7 +85,7 @@ laufenden Zähler um.
 - Zurück: [eZModule und Modulergebnisse](ezmodule.md)
 - Weiter: [eZFile, eZDir und Cluster-Datei-Handler](ezfile-ezdir-und-cluster-dateien.md)
 - [Konsolenbefehle für Entwickler](konsolenbefehle-fuer-entwickler.md)
-- [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
+- [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../bc/6.0/cli-cronjob-und-view-abstraktionen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

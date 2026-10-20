@@ -104,7 +104,7 @@ $itemViewTypes = is_object( $handler ) && method_exists( $handler, 'getItemViewT
 ```
 
 `implode()` mit den Argumenten in der alten Reihenfolge wurde bei der Prüfung für PHP 8.0 im OAuth-Modul des Kernels,
-in ezstarrating und in swark gefunden ([PHP-8.0-Unterstützung](../../../../eng-us/bc/6.0/php-8.0-support.md)).
+in ezstarrating und in swark gefunden ([PHP-8.0-Unterstützung](../../../bc/6.0/php-8.0-unterstuetzung.md)).
 
 ## 4. Zu wenige Argumente
 
@@ -197,7 +197,7 @@ Methode je aufgerufen wird oder nicht.
 
 - Zurück: [Bestandsaufnahme einer alten Erweiterung](bestandsaufnahme-einer-alten-erweiterung.md)
 - Weiter: [Veraltetes in PHP 8.1 bis 8.5](php-8-1-bis-8-5-veraltete-funktionen.md)
-- [PHP-8.0-Unterstützung](../../../../eng-us/bc/6.0/php-8.0-support.md)
+- [PHP-8.0-Unterstützung](../../../bc/6.0/php-8.0-unterstuetzung.md)
 - [Inkompatible Änderungen in PHP 8.0](https://www.php.net/manual/en/migration80.incompatible.php) im PHP-Handbuch
 - [Erweiterungen debuggen](../teil-3-erweiterungsentwickler/erweiterungen-debuggen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

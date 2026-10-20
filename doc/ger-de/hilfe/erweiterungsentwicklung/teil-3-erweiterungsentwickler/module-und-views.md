@@ -128,7 +128,7 @@ return \Exponential\View\Extension\MysiteHello\Hello\World::main( __FILE__, get_
 ```
 
 Klassen lassen sich ohne Request testen und teilen sich Code mit Befehlen und Cronjob-Teilen; siehe
-[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md).
+[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../bc/6.0/cli-cronjob-und-view-abstraktionen.md).
 
 ## Formulare und Aktionen
 

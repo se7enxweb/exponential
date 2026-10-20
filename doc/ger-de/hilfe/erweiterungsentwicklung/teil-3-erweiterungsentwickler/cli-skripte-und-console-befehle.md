@@ -118,7 +118,7 @@ require_once 'autoload.php';
 ```
 
 Die Hilfsmethoden (`script()`, `startup()`, `output()`, `error()`, `isQuiet()`, `log()`, `shutdown()`) sind in
-[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
+[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../bc/6.0/cli-cronjob-und-view-abstraktionen.md)
 aufgeführt.
 
 ## Regeln für Befehle

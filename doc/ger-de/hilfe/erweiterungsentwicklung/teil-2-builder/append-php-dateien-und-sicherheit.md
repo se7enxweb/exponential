@@ -12,7 +12,7 @@ type: help
 Teil 2, Kapitel 7. Einstellungsdateien sind Konfiguration, und manche von ihnen sind Geheimnisse. Dieses Kapitel
 erklärt, wie das System sie schützt und was Sie tun müssen, damit Ihre Erweiterungen und Ihre Repositories sie nie
 preisgeben. Die Fakten stammen aus [Sicherheitshärtung](../../../installation/13-sicherheitshaertung.md) und
-[INI-Dateien behalten ihre Berechtigungen](../../../../eng-us/bc/6.0/ini-save-file-permissions.md).
+[INI-Dateien behalten ihre Berechtigungen](../../../bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md).
 
 ## Warum der PHP-Rahmen
 

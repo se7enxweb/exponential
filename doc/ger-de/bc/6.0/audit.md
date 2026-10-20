@@ -2646,6 +2646,6 @@ Beim Schreiben dieses Handbuchs gefunden. Jedes wurde auf der Referenzinstallati
 ## Verwandte Seiten
 
 - [Audit-Protokoll (Funktion)](../../../eng-us/features/6.0/audit-trail.md)
-- [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
-- [exp:ini](../../../eng-us/bc/6.0/console-exp-ini.md), verwendet zum Ändern der Audit-Einstellungen
+- [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)
+- [exp:ini](console-exp-ini.md), verwendet zum Ändern der Audit-Einstellungen
 - [Handbuch zu Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md)

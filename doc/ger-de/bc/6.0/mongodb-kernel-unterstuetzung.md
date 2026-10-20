@@ -4723,6 +4723,6 @@ Der Installer akzeptiert jetzt außerdem `mongodb` als `--db` für `php bin/php/
 - [MongoDB als Datenbank (Funktion)](../../../eng-us/features/6.0/mongodb-database-support.md)
 - [Datenbanktreiber und Installer, September 2026](../../spezifikationen/6.0/datenbanktreiber-2026-09.md) (SQLite, PostgreSQL, MySQL und Oracle)
 - [Exponential mit einem einzigen Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)
-- [Verhaltensänderungen vom 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen vom 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)
 - [Chronik vom 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md) und [Juni 2026, erste Hälfte](../../../eng-us/history/2026/2026-06a.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

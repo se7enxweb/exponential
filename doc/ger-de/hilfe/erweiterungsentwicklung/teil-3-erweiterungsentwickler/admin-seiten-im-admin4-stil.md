@@ -12,7 +12,7 @@ type: help
 Teil 3, Kapitel 33. Die meisten Erweiterungen fügen der Administration eine Seite hinzu. Sie sollte wie der Rest der
 Administration aussehen, im Dunkelmodus und bei starker Vergrößerung funktionieren und der Administration kein
 zusätzliches CSS bescheren, das mit der Zeit auseinanderläuft. Die Regeln und die vollständige API der Komponenten und
-Tokens stehen in [Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md); dieses Kapitel ist die
+Tokens stehen in [Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md); dieses Kapitel ist die
 Zusammenfassung für Autoren von Erweiterungen.
 
 ## Die Regeln
@@ -131,7 +131,7 @@ Content Security Policy).
 
 - Zurück: [Content Security Policy für Autoren von Erweiterungen](content-security-policy-fuer-erweiterungen.md)
 - Weiter: [Tests für Erweiterungen](tests-fuer-erweiterungen.md)
-- [Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md)
+- [Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md)
 - [admin4-Komponenten und -Tokens](../teil-8-referenz/admin4-komponenten-und-tokens.md)
 - [admin4-Stil für Seiten von Erweiterungen](../teil-4-aktualisieren/admin4-styling-fuer-erweiterungsseiten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

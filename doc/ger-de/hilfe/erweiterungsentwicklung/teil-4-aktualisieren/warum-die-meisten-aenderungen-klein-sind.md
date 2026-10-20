@@ -134,7 +134,7 @@ hat eine längere Checkliste.
 
 - Zurück: [Teil 4: Eine alte Erweiterung auf Exponential 6 aktualisieren](README.md)
 - Weiter: [Die Upgrade-Checkliste](die-upgrade-checkliste.md)
-- [PHP-8-Unterstützung](../../../../eng-us/bc/6.0/php8.md)
+- [PHP-8-Unterstützung](../../../bc/6.0/php8.md)
 - [Verhaltensänderungen für Erweiterungen](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

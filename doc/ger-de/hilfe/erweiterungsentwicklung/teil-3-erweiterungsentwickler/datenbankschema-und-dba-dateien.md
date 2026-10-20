@@ -98,7 +98,7 @@ Primärschlüssel), statt den Diff zu lesen.
 Der schnellste echte Test ist eine frische SQLite-Installation (`./console exp:install`) mit eingeschalteter
 Erweiterung und installiertem Schema. Wenn Ihre Erweiterung die Unterstützung weiterer Datenbanken verspricht, testen
 Sie auch dort; die CI des Kernels lässt aus diesem Grund MySQL und PostgreSQL laufen
-([Kontinuierliche Integration](../../../../eng-us/bc/6.0/ci.md)).
+([Kontinuierliche Integration](../../../bc/6.0/ci.md)).
 
 ## Verwandte Seiten
 

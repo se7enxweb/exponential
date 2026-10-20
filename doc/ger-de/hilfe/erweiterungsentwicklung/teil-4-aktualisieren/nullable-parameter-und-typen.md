@@ -81,7 +81,7 @@ selben Commit geändert. PHP akzeptiert ein Kind, das großzügiger ist als die 
 
 Wenn die Elternklasse eine Kernel-Klasse ist, sehen Sie sich die aktuelle Signatur im Kernel an und übernehmen Sie
 sie. Die Methoden des Kernels selbst wurden zwischen 6.0.8 und 6.0.11 für PHP 8.4 und 8.5 geändert
-([PHP-8-Unterstützung](../../../../eng-us/bc/6.0/php8.md)), daher kann ein Override, der gegen einen älteren Kernel
+([PHP-8-Unterstützung](../../../bc/6.0/php8.md)), daher kann ein Override, der gegen einen älteren Kernel
 geschrieben wurde, heute von seiner Elternklasse abweichen.
 
 ## Optionale Parameter vor erforderlichen

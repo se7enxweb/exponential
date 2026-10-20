@@ -126,7 +126,7 @@ fehlenden Übersetzungen fehl.
 
 Das Repository des Kernels testet auch einige Erweiterungen in `tests/tests/extension/<name>/` (zum Beispiel
 `git_manager`, `ezjscore`, `ezoe`, `ezupdate`). Die CI des Kernels führt PHPUnit auf PHP 8.1 bis 8.5 ohne Datenbank aus,
-dazu Datenbanktests auf MySQL und PostgreSQL ([Continuous Integration](../../../../eng-us/bc/6.0/ci.md)). Eine
+dazu Datenbanktests auf MySQL und PostgreSQL ([Continuous Integration](../../../bc/6.0/ci.md)). Eine
 Erweiterung, die ihre eigene `phpunit.xml.dist` mitbringt, kann auf dieselbe Weise in der CI ihres eigenen
 Repositorys laufen.
 

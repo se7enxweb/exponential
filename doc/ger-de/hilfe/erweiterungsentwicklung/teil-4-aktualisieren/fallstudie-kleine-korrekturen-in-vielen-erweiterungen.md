@@ -78,7 +78,7 @@ Erweiterung einer Sammlung ausführen sollten:
 4. Ausliefern der Seiten der Erweiterung mit diesem PHP auf einer vollständigen Installation.
 
 Die eigene Prüfung des Kernels für PHP 8.0 hat dieselben vier Prüfungen auf „den Kernel und 63 Erweiterungen“
-angewendet ([PHP-8.0-Unterstützung](../../../../eng-us/bc/6.0/php-8.0-support.md)).
+angewendet ([PHP-8.0-Unterstützung](../../../bc/6.0/php-8.0-unterstuetzung.md)).
 
 ### Releases im Gleichschritt mit dem Kernel
 
@@ -113,7 +113,7 @@ Original.
 - Zurück: [Fallstudie: Zwei-Faktor-Authentifizierung ohne Inline-Skripte](fallstudie-zwei-faktor-authentifizierung.md)
 - Weiter: [Teil 5: Erweitern, ethisch forken und zurückgeben](../teil-5-erweitern-forken-zurueckgeben/README.md)
 - [Die Upgrade-Checkliste](die-upgrade-checkliste.md)
-- [PHP-8-Unterstützung](../../../../eng-us/bc/6.0/php8.md)
+- [PHP-8-Unterstützung](../../../bc/6.0/php8.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

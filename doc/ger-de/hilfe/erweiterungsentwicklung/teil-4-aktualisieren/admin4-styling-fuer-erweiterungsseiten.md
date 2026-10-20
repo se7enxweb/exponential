@@ -13,7 +13,7 @@ Teil 4, Kapitel 19. Die Administrationsseiten einer alten Erweiterung bringen me
 Tabelle mit Rahmen aus dem Jahr 2010, graue Schaltflächen, fest ins Stylesheet geschriebene Farben und nichts für den
 dunklen Modus. Im Design admin4 fallen sie auf, und im dunklen Modus zeigen sie einen weißen Kasten auf einer dunklen
 Seite. Dieses Kapitel gibt Ihren Seiten das Aussehen der Administration mit dem, was sie bereits hat. Die vollständige
-Referenz ist [Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md); Teil 3 behandelt neue
+Referenz ist [Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md); Teil 3 behandelt neue
 Seiten in [Administrationsseiten im admin4-Stil](../teil-3-erweiterungsentwickler/admin-seiten-im-admin4-stil.md).
 
 ## Die Regeln in Kürze
@@ -144,7 +144,7 @@ Ein solcher Test ist kurz und braucht keine Datenbank; siehe
 
 - Zurück: [Vom alten jQuery zu jQuery 4](altes-jquery-zu-jquery-4.md)
 - Weiter: [Kontextmenüs und Integration in die Administration](kontextmenues-und-admin-integration.md)
-- [Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md)
+- [Die Administration gestalten](../../../bc/6.0/admin4-gestaltung.md)
 - [Administrationsseiten im admin4-Stil](../teil-3-erweiterungsentwickler/admin-seiten-im-admin4-stil.md)
 - [Dunkler Modus und Design-Tokens in Themes](../teil-6-theme-entwickler/dunkler-modus-und-tokens-in-themes.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
