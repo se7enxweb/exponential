@@ -828,17 +828,13 @@ class expHelpContentDita
     protected static function put( $file, $data )
     {
         $dir = dirname( $file );
+        // the site's directory and file modes (eZDir::mkdir, eZFile::fileMode)
         if ( !is_dir( $dir ) )
-        {
-            if ( class_exists( 'eZDir' ) )
-                eZDir::mkdir( $dir, false, true );
-            else
-                @mkdir( $dir, 0755, true );
-        }
+            eZDir::mkdir( $dir, false, true );
         $tmp = $file . '.' . getmypid() . '.tmp';
         if ( @file_put_contents( $tmp, $data ) === false || !@rename( $tmp, $file ) )
             throw new RuntimeException( "Cannot write $file" );
-        @chmod( $file, class_exists( 'eZFile' ) ? eZFile::fileMode( 0644 ) : 0644 );
+        @chmod( $file, eZFile::fileMode( 0644 ) );
     }
 
     /**

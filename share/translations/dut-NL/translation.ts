@@ -74504,7 +74504,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>E-books</source>
-        <translation>E-books</translation>
+        <translation>E-boeken</translation>
     </message>
     <message>
         <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>

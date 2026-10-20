@@ -12198,7 +12198,7 @@ ce0bb66240c7036cda2021294a47d14f  kernel/classes/ezworkflowgrouplink.php
 08af60f44b4c8d91729d951cbbf01ac5  kernel/classes/ezworkflowgrouptype.php
 b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 4ff841d8b07c17168f3063c415ba91b6  kernel/classes/ezworkflowtype.php
-b060963b33e266b25af577eb22dd4612  kernel/classes/help/content/exphelpcontentdita.php
+83da5f4dc807b32d5700c8d7214e203b  kernel/classes/help/content/exphelpcontentdita.php
 9381d24c6e355a0905627bf3bf74ffa5  kernel/classes/help/content/exphelpcontentebooks.php
 55413d93f88a3bc7acc6f3dd8368de64  kernel/classes/help/content/exphelpcontenteditionprovider.php
 7972bd2c7a9fda50b21f8d5d84d5f369  kernel/classes/help/content/exphelpcontentexport.php
@@ -14571,7 +14571,7 @@ dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
 071444006ffdb4338dd5b9f890b36ad7  share/translations/cro-HR/translation.ts
 e3037cc936ecdffa2b5ee697718af71c  share/translations/cze-CZ/translation.ts
 f79d3697cacf250c0f6a54f9e824c9f8  share/translations/dan-DK/translation.ts
-d454ef77cde7fa64eea70dd05d69c4b4  share/translations/dut-NL/translation.ts
+5902d9dcd92f2e152ccb78832ff58655  share/translations/dut-NL/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
@@ -14580,7 +14580,7 @@ f7fb42ad256ff29e27581a5d0bab52a2  share/translations/esl-ES/translation.ts
 d698a0578f427afa95e4958cacb7e71d  share/translations/esl-MX/translation.ts
 3dac8c02dd90f83702b06650f9d3d0c8  share/translations/fas-IR/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
-908d366b6905faff3e966232a2c0aea4  share/translations/fre-FR/translation.ts
+ae7f6cd8f5b71137d03f1b06b9e0a231  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
 6e393230162b6fe28ac91da6cb1fd7d4  share/translations/ger-DE/translation.ts
@@ -14593,7 +14593,7 @@ ce48c1925f151dd33cb36748869ae6eb  share/translations/lat-VA/translation.ts
 8bbbf764eeb595adc4615cdca139f3ad  share/translations/nor-NO/readme.txt
 be0e7a6e158a73f45290e902567ca270  share/translations/nor-NO/translation.ts
 f9e6338a026295f38736d67e472dafb5  share/translations/pol-PL/translation.ts
-f3576470fc848ab7fe763da73555b369  share/translations/por-BR/translation.ts
+598810f0d3ae5e1ec7572189785b2977  share/translations/por-BR/translation.ts
 c6e52259e9e7b8d3f69544336f3ce874  share/translations/pus-AF/translation.ts
 d5ee9f6f41a1629151b2c95729988fd1  share/translations/rus-RU/translation.ts
 8d3885ecf29b1a456cefc940ade7f02c  share/translations/ser-SR/translation.ts

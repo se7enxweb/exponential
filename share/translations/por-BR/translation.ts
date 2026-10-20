@@ -75271,7 +75271,7 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>E-books</source>
-        <translation>E-books</translation>
+        <translation>Livros digitais</translation>
     </message>
     <message>
         <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>

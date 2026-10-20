@@ -74520,11 +74520,11 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Condition</source>
-        <translation>Condition</translation>
+        <translation>Situation</translation>
     </message>
     <message>
         <source>Cause</source>
-        <translation>Cause</translation>
+        <translation>Origine</translation>
     </message>
     <message>
         <source>Remedy</source>
