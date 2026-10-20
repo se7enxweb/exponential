@@ -83,7 +83,7 @@ Aus [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../en/us/h
 
 1. Informieren Sie sofort Ihren Zahlungsanbieter; er sagt Ihnen, was als Nächstes zu tun ist.
 2. Bitten Sie Ihren Hoster, seinem Runbook für eine kompromittierte Website zu folgen
-   ([Kompromittierte Website](../../../../en/us/help/hosting/runbooks/compromised-site.md)).
+   ([Kompromittierte Website](../../hosting/runbooks/kompromittierte-website.md)).
 3. Melden Sie eine vermutete Sicherheitslücke in Exponential vertraulich an security@se7enx.com, wie es `SECURITY.md`
    verlangt, nie in einem öffentlichen Issue.
 4. Notieren Sie, was wann passiert ist.

@@ -62,7 +62,7 @@ STORE (if you sell)
 | Upgrade-Prüfung | **Setup > Upgrade-Prüfung**; beide Prüfungen lesen nur | [Upgrade-Prüfung](../../../../../en/us/guides/upgrade-check.md) |
 | Backups und Wiederherstellungstests | Hoster | [Backups, die sich wiederherstellen lassen](../../../../../en/us/help/businesses/reliability/backups-that-restore.md) |
 | Alarme des Prüfprotokolls | Das Dashboard des Prüfprotokolls, Richtlinie `audit/read` | [Das Prüfprotokoll](../../../../../en/us/features/6.0/audit-trail.md) |
-| HTTPS | Hoster | [TLS und HTTPS](../../../../../en/us/help/hosting/security/tls-and-https.md) |
+| HTTPS | Hoster | [TLS und HTTPS](../../../hosting/sicherheit/tls-und-https.md) |
 | Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../../en/us/features/6.0/user-hygiene.md) |
 | Formulareinsendungen | **Setup > Gesammelte Informationen** | [Gesammelte Informationen](../../../../../en/us/guides/collected-information.md) |
 | Datenschutzanfragen | Ihr Anfragenprotokoll | [DSGVO-Anfragen](../../handel/dsgvo-anfragen.md) |

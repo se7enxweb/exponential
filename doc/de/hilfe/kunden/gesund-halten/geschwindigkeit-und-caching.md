@@ -52,7 +52,7 @@ Melden Sie es so, dass es sich messen lässt:
 | Wie langsam, ungefähr | „Zehn Sekunden für die Startseite“ lässt sich später vergleichen |
 
 Das Runbook für eine langsame Website beginnt mit „zuerst messen“ und trennt kalte von warmen Seiten, vor jeder
-Änderung ([Langsame Website](../../../../en/us/help/hosting/runbooks/slow-site.md)). Nach einem Leeren oder einem Deployment „bezahlt der
+Änderung ([Langsame Website](../../hosting/runbooks/langsame-website.md)). Nach einem Leeren oder einem Deployment „bezahlt der
 erste Besucher für das Rendern“; der Administrator kann die Seiten mit **Seiten vorladen** vorwärmen
 ([Caches vorladen](../../../../en/us/guides/preloading-caches.md)).
 
@@ -78,5 +78,5 @@ Ihren Hoster, Wochen im Voraus ([Planung für Lastspitzen](../../../../en/us/hel
 
 - [Statischer Cache und Response-Cache](../../../../en/us/help/businesses/reliability/static-and-response-cache.md)
 - [Velocity für Unternehmen](../../../../en/us/help/businesses/reliability/velocity-for-businesses.md)
-- [Caching-Schichten (für Hoster)](../../../../en/us/help/hosting/performance/caching-layers.md)
+- [Caching-Schichten (für Hoster)](../../hosting/leistung/cache-schichten.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

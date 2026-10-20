@@ -58,8 +58,8 @@ NOTES
 | Die Fehler des letzten Tages | **Setup > Logdateien > Fehlerübersicht** | [Der Log-Viewer](../../../../../en/us/features/6.0/log-viewer.md) |
 | Wer was getan hat | Das Prüfprotokoll; es hält Anmeldungen, Inhaltsänderungen, Schreibvorgänge in Einstellungen, das Leeren von Caches, Deployments, Bestellungen und Änderungen der Mehrwertsteuer fest | [Das Prüfprotokoll](../../../../../en/us/features/6.0/audit-trail.md) |
 | Inhalte verloren oder geändert | Versionen und der Papierkorb | [Veröffentlichen und Versionen](../../../../../en/us/help/publishing-and-versions.md) |
-| Eine Wiederherstellung | Hoster | [Aus einem Backup wiederherstellen](../../../../../en/us/help/hosting/runbooks/restore-from-backup.md) |
-| Eine kompromittierte Website | Hoster | [Kompromittierte Website](../../../../../en/us/help/hosting/runbooks/compromised-site.md) |
+| Eine Wiederherstellung | Hoster | [Aus einem Backup wiederherstellen](../../../hosting/runbooks/aus-einem-backup-wiederherstellen.md) |
+| Eine kompromittierte Website | Hoster | [Kompromittierte Website](../../../hosting/runbooks/kompromittierte-website.md) |
 
 ## An das Projekt melden
 

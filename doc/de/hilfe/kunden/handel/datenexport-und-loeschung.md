@@ -23,14 +23,14 @@ des Shops darauf.
 
 | Daten | Export | Löschung | Quelle |
 |---|---|---|---|
-| E-Mail-Einstellungen und Einwilligung | Der eigene Download der Person; `./console exp:mail:preferences export --email=<address>` | `./console exp:mail:preferences erase --email=<address> --yes` (Einwilligungsprotokoll anonymisiert, Widerruf als Nachweis aufbewahrt) | [Compliance und DSGVO](../../../../en/us/help/hosting/security/compliance-and-gdpr.md) |
+| E-Mail-Einstellungen und Einwilligung | Der eigene Download der Person; `./console exp:mail:preferences export --email=<address>` | `./console exp:mail:preferences erase --email=<address> --yes` (Einwilligungsprotokoll anonymisiert, Widerruf als Nachweis aufbewahrt) | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md) |
 | Benutzerkonto | Unter **Benutzer** einsehen | Den Benutzer entfernen: endgültig, kein Papierkorb, löscht die E-Mail-Einstellungen | [Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md) |
 | Bestellungen | Die Bestellungen eines Kunden in der Bestellansicht des Kunden; jeder Beleg als heruntergeladene Datei | Archivieren (`shop/archiveorder`) oder entfernen (`shop/removeorder`) | `kernel/shop/module.php`, [Dauerhafte Bestellbelege](../../../../en/us/features/6.0/order-receipts.md) |
 | Formulareinsendungen | **Setup > Gesammelte Informationen**, CSV-Export | Dieselbe Seite: Sammlungen entfernen | [Gesammelte Informationen](../../../../en/us/guides/collected-information.md) |
 | Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | Die Benutzerliste von `cjw_newsletter` | [cjw_newsletter](../../../../en/us/features/6.0/extensions/cjw_newsletter.md) |
 | Prüfprotokoll-Einträge | `exp:audit export --subject-user=<id>` | Nicht einzeln; für die Aufbewahrungsfrist aufbewahrt, personenbezogene Felder pseudonymisiert | [Datenaufbewahrung und Löschung](../../../../en/us/help/businesses/security/data-retention-and-deletion.md) |
 | Warenkörbe | Nicht nötig | Vom Cronjob `basket_cleanup.php` entfernt | `settings/cronjob.ini` |
-| Backups | Ihr Hoster | Verfallen gemäß Ihrer Backup-Aufbewahrung | [Backups: was gesichert werden muss](../../../../en/us/help/hosting/operations/backups-what-to-back-up.md) |
+| Backups | Ihr Hoster | Verfallen gemäß Ihrer Backup-Aufbewahrung | [Backups: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
 
 > **Hinweis**
 > Der Shop hat keinen Export aller Bestellungen in eine Tabellenkalkulation und unter seinen Ansichten keinen Befehl,
@@ -85,5 +85,5 @@ Mehrere Arten von Daten werden von Cronjobs entfernt, mit Fristen, die Sie ände
 - [Datenaufbewahrung und Löschung](../../../../en/us/help/businesses/security/data-retention-and-deletion.md)
 - [DSGVO-Anfragen](dsgvo-anfragen.md)
 - [Personenbezogene Daten in Exponential](../../../../en/us/help/businesses/security/personal-data-in-exponential.md)
-- [Aufbewahrung von Logs und Daten für Hoster](../../../../en/us/help/hosting/security/log-and-data-retention.md)
+- [Aufbewahrung von Logs und Daten für Hoster](../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

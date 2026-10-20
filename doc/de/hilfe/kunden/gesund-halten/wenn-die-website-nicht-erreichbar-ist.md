@@ -12,7 +12,7 @@ type: help
 Bewahren Sie diese Seite dort auf, wo Sie sie ohne die Website finden: Drucken Sie sie aus, oder legen Sie sie zu Ihren
 [Eskalationskontakten](../partner-und-hoster/vorlage-eskalationskontakte.md). Sie ist der Teil des Betreibers an einem
 schlechten Tag. Die technische Arbeit erledigt Ihr Hoster oder Partner nach Runbooks wie
-[Website nicht erreichbar](../../../../en/us/help/hosting/runbooks/site-down.md); der Plan für ein kleines Team ist
+[Website nicht erreichbar](../../hosting/runbooks/website-nicht-erreichbar.md); der Plan für ein kleines Team ist
 [Vorfallreaktion für kleine Teams](../../../../en/us/help/businesses/reliability/incident-response-for-small-teams.md).
 
 ## Die ersten fünf Minuten
@@ -22,13 +22,13 @@ schlechten Tag. Die technische Arbeit erledigt Ihr Hoster oder Partner nach Runb
    was die Seite anzeigt.
 3. **Wurde etwas geändert?** Ein Upgrade, ein Deployment, eine Einstellungsänderung oder ein großer Import heute?
    „Fehler, die direkt nach einem Deployment oder einem Update begonnen haben: Die Ursache liegt fast immer in dieser
-   Änderung“ ([Website nicht erreichbar](../../../../en/us/help/hosting/runbooks/site-down.md)).
+   Änderung“ ([Website nicht erreichbar](../../hosting/runbooks/website-nicht-erreichbar.md)).
 4. **Rufen Sie die richtige Person an**, mit dem, was Sie gesehen haben ([Wann Sie wen anrufen](../partner-und-hoster/wann-sie-wen-anrufen.md)).
 5. **Benennen Sie eine leitende Person.** Eine Person entscheidet; die anderen ändern nicht parallel etwas.
 
 ## Was die Seite Ihnen sagt
 
-Aus [Website nicht erreichbar](../../../../en/us/help/hosting/runbooks/site-down.md):
+Aus [Website nicht erreichbar](../../hosting/runbooks/website-nicht-erreichbar.md):
 
 | Besucher sehen | Wahrscheinliche Ursache | Wen Sie anrufen |
 |---|---|---|
@@ -37,7 +37,7 @@ Aus [Website nicht erreichbar](../../../../en/us/help/hosting/runbooks/site-down
 | „The site is missing the software libraries it needs“ (503) | Ein Teil der Installation fehlt | Hoster oder Partner, wer zuletzt ein Deployment gemacht hat |
 | „Something went wrong on our side“ (500) mit `ERR-...` | Ein Fehler in der Anwendung | Partner oder Hoster; geben Sie die Referenz weiter |
 | Eine leere Seite, oder ein Fehler ohne Referenz | PHP ist fehlgeschlagen, bevor Exponential protokollieren konnte | Hoster |
-| Eine Verbindungs- oder Zertifikatswarnung im Browser | Server, Netzwerk oder Zertifikat | Hoster ([Ablaufendes Zertifikat](../../../../en/us/help/hosting/runbooks/certificate-expiry.md)) |
+| Eine Verbindungs- oder Zertifikatswarnung im Browser | Server, Netzwerk oder Zertifikat | Hoster ([Ablaufendes Zertifikat](../../hosting/runbooks/ablauf-von-zertifikaten.md)) |
 
 Wenn nur eine Seite fehlschlägt, ist es kein Ausfall; melden Sie es auf normalem Weg ([Probleme melden](probleme-melden.md)).
 
@@ -65,7 +65,7 @@ Eine Wiederherstellung aus dem Backup ist der letzte Ausweg, weil alles seit dem
 
 Unbekannte Administratorkonten, geänderte Dateien oder Seiten, die Sie nicht veröffentlicht haben, ändern die Priorität
 von „schnell wieder online“ zu „eindämmen und Beweise sichern“. Sagen Sie Ihrem Hoster, dass es sich um einen
-vermuteten Einbruch handelt; löschen Sie selbst nichts ([Kompromittierte Website](../../../../en/us/help/hosting/runbooks/compromised-site.md),
+vermuteten Einbruch handelt; löschen Sie selbst nichts ([Kompromittierte Website](../../hosting/runbooks/kompromittierte-website.md),
 [Vertrauliche Sicherheitsmeldungen](vertrauliche-sicherheitsmeldungen.md)).
 
 ## Danach
@@ -79,5 +79,5 @@ vermuteten Einbruch handelt; löschen Sie selbst nichts ([Kompromittierte Websit
 
 - [Überwachung](ueberwachung.md)
 - [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)
-- [Runbooks für Hoster](../../../../en/us/help/hosting/runbooks/README.md)
+- [Runbooks für Hoster](../../hosting/runbooks/README.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -109,7 +109,7 @@ Beiträge) und wo die veröffentlichten Quellen aufhören und die Exponential Fo
 | Technische Fragen | Foren <https://share.exponential.earth/forums>, Telegram <https://t.me/exponentialcms> | <https://exponential.earth/about/project> |
 | Ein Sicherheitsproblem | security@se7enx.com, vertraulich | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
 
-**Öffentliche Demos für Interessenten.** Eine Demo mit veröffentlichter Anmeldung läuft im Demomodus (`EXP_DEMO_MODE=1`), damit die Anmeldung weiter funktioniert. [Demomodus für Hoster](../../../en/us/help/hosting/security/demo-mode-for-hosts.md), [FAQ zum Demomodus](../../../en/us/help/demo-mode-faq.md).
+**Öffentliche Demos für Interessenten.** Eine Demo mit veröffentlichter Anmeldung läuft im Demomodus (`EXP_DEMO_MODE=1`), damit die Anmeldung weiter funktioniert. [Demomodus für Hoster](../hosting/sicherheit/demomodus-fuer-hoster.md), [FAQ zum Demomodus](../../../en/us/help/demo-mode-faq.md).
 
 ## Verwandte Seiten
 

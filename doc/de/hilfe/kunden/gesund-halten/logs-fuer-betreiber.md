@@ -75,5 +75,5 @@ beantworten.
 
 - [Logs und Fehlerreferenzen (für Unternehmen)](../../../../en/us/help/businesses/reliability/logs-and-error-references.md)
 - [Prüfprotokoll für den Betrieb](../../../../en/us/help/businesses/reliability/audit-trail-for-operations.md)
-- [Log-Viewer und Rotation (für Hoster)](../../../../en/us/help/hosting/operations/log-viewer-and-rotation.md)
+- [Log-Viewer und Rotation (für Hoster)](../../hosting/betrieb/log-viewer-und-log-rotation.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

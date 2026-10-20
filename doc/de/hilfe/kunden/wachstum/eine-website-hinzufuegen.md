@@ -85,6 +85,6 @@ bearbeitet, wer freigibt.
 ## Verwandte Seiten
 
 - [Planung mehrerer Marken](../../../../en/us/help/businesses/multisite/multi-brand-planning.md)
-- [Multisite in einer Installation für Hoster](../../../../en/us/help/hosting/provisioning/multisite-on-one-installation.md)
+- [Multisite in einer Installation für Hoster](../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md)
 - [Multisite- und mehrsprachige Projekte planen](../../../../en/us/help/leadership/multisite-and-multilingual-planning.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

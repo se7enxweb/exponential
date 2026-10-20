@@ -52,7 +52,7 @@ PLAN
 
 | Punkt | Lesen Sie |
 |---|---|
-| Wiederherstellungstest | [Wiederherstellungsübungen](../../../../../en/us/help/businesses/reliability/restore-drills.md), [Wiederherstellung und Wiederherstellungstests](../../../../../en/us/help/hosting/operations/restore-and-restore-tests.md) |
+| Wiederherstellungstest | [Wiederherstellungsübungen](../../../../../en/us/help/businesses/reliability/restore-drills.md), [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
 | Zugriffsüberprüfung | [Zugriffsüberprüfungen](../../../../../en/us/help/businesses/security/access-reviews.md), [Rollen und Richtlinien](../../../../../en/us/guides/roles-and-policies.md) |
 | Zweistufige Anmeldung | [Zwei-Faktor-Anmeldung](../../../../../en/us/guides/two-factor-login.md) |
 | Updates der Erweiterungen | [Budget für Upgrades und Wartung](../../../../../en/us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md) |

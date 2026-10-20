@@ -80,7 +80,7 @@ Quelle: [Sicherheitshärtung](../../../en/us/help/security-hardening.md), `doc/e
 
 **Demomodus.**
 
-- [ ] Öffentliche Demos laufen im Demomodus (`EXP_DEMO_MODE=1` im eigenen Pool, virtuellen Host, Unit und Crontab der Demo); keine Kunden-Website hat die Variable, und Zeilen `demo/mode` im `security.log` eines Kunden lösen einen Alarm aus ([Demomodus für Hoster](../../../en/us/help/hosting/security/demo-mode-for-hosts.md)).
+- [ ] Öffentliche Demos laufen im Demomodus (`EXP_DEMO_MODE=1` im eigenen Pool, virtuellen Host, Unit und Crontab der Demo); keine Kunden-Website hat die Variable, und Zeilen `demo/mode` im `security.log` eines Kunden lösen einen Alarm aus ([Demomodus für Hoster](../hosting/sicherheit/demomodus-fuer-hoster.md)).
 
 ## Verwandte Seiten
 

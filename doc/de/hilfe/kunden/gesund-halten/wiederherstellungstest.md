@@ -13,7 +13,7 @@ type: help
 Diese Seite ist für den Betreiber, der einen Beweis statt einer Hoffnung möchte: was er verlangen soll, was ein guter
 Wiederherstellungstest prüft und was als Protokoll aufzubewahren ist. Die Übung Schritt für Schritt steht unter
 [Wiederherstellungsübungen](../../../../en/us/help/businesses/reliability/restore-drills.md) und, für Hoster, unter
-[Wiederherstellung und Wiederherstellungstests](../../../../en/us/help/hosting/operations/restore-and-restore-tests.md).
+[Wiederherstellung und Wiederherstellungstests](../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md).
 
 ## Wie oft
 
@@ -100,5 +100,5 @@ Ursache, aktualisieren Sie das schriftliche Verfahren und testen Sie erneut.
 
 - [Backups](backups.md)
 - [Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md)
-- [Aus einem Backup wiederherstellen (Runbook)](../../../../en/us/help/hosting/runbooks/restore-from-backup.md)
+- [Aus einem Backup wiederherstellen (Runbook)](../../hosting/runbooks/aus-einem-backup-wiederherstellen.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

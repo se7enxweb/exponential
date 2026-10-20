@@ -116,6 +116,6 @@ Veröffentlichen ([Workflows](../../../en/us/guides/workflows.md)).
 ## Verwandte Seiten
 
 - [FAQ für Kunden](faq-fuer-kunden.md)
-- [Glossar für Hoster](../../../en/us/help/hosting/glossary-for-hosts.md)
+- [Glossar für Hoster](../hosting/glossar-fuer-hoster.md)
 - [Glossar für Unternehmen](../../../en/us/help/businesses/businesses-glossary.md)
 - [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

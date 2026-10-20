@@ -77,7 +77,7 @@ Eine Website aus Git-Klonen kann sich mit Cron oder einem systemd-Timer nach Pla
 ([Mit Git aktualisieren](../../../../en/us/help/update-with-git.md)). Ob das zu Ihnen passt, ist eine Entscheidung, die Sie mit Ihrem
 Anbieter treffen: Es spart Arbeit, aber jemand muss trotzdem das Ergebnis lesen und die Website prüfen. Der
 Hosting-Leitfaden rät, den prüfenden Teil über viele Websites hinweg zu automatisieren, „ohne etwas unbeaufsichtigt zu
-aktualisieren“ ([Automatische Updates mit ezupdate](../../../../en/us/help/hosting/operations/automated-updates-with-ezupdate.md)).
+aktualisieren“ ([Automatische Updates mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md)).
 
 ## Verwandte Seiten
 

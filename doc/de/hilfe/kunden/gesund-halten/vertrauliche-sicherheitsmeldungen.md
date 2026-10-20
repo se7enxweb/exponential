@@ -19,7 +19,7 @@ Installation.
 | Situation | Was es ist | Was zu tun ist |
 |---|---|---|
 | Eine Schwachstelle in Exponential selbst | Jeder, der dieselbe Version betreibt, könnte betroffen sein | Vertraulich an das Projekt melden (diese Seite) |
-| Ein Einbruch oder Missbrauch Ihrer Website | Auf Ihrer Website ist etwas geschehen: unbekannte Konten, geänderte Dateien, Seiten, die Sie nicht veröffentlicht haben | Rufen Sie sofort Ihren Hoster an; es ist ein Vorfall der Schwere 1 ([Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md), [Kompromittierte Website](../../../../en/us/help/hosting/runbooks/compromised-site.md)) |
+| Ein Einbruch oder Missbrauch Ihrer Website | Auf Ihrer Website ist etwas geschehen: unbekannte Konten, geänderte Dateien, Seiten, die Sie nicht veröffentlicht haben | Rufen Sie sofort Ihren Hoster an; es ist ein Vorfall der Schwere 1 ([Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md), [Kompromittierte Website](../../hosting/runbooks/kompromittierte-website.md)) |
 
 Manchmal führt das Zweite zum Ersten: Die Untersuchung ergibt, dass die Ursache eine Schwachstelle in der Software ist.
 Dann gilt beides.

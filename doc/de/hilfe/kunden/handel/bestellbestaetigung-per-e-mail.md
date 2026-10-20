@@ -40,7 +40,7 @@ ist leer. Ihr Partner setzt beide in einem Override.
 | Liest jeden Tag die Kopien des Shops | Shop-Leitung |
 | Entscheidet über Wortlaut, Kontaktdaten und Bedingungen der E-Mail | Eigentümer |
 | Ändert das Template `shop/orderemail.tpl` im Design der Website | Partner oder Designer |
-| E-Mail-Versand vom Server, DNS-Einträge der Absenderdomain, Zustellung | Hoster ([E-Mail-Zustellung](../../../../en/us/help/hosting/operations/mail-delivery.md)) |
+| E-Mail-Versand vom Server, DNS-Einträge der Absenderdomain, Zustellung | Hoster ([E-Mail-Zustellung](../../hosting/betrieb/mailzustellung.md)) |
 
 ## Eine monatliche Zustellprüfung
 
@@ -67,7 +67,7 @@ ist leer. Ihr Partner setzt beide in einem Override.
 | Anzeichen | Wahrscheinliche Ursache | Fragen Sie |
 |---|---|---|
 | Seit einem bestimmten Tag keine Kopien an der Adresse `AdminEmail` | E-Mail-Versand auf dem Server, oder die Adresse wurde geändert | Hoster |
-| Kunden finden die E-Mail im Spam | DNS-Einträge der Absenderdomain, oder die Absenderadresse | Hoster ([E-Mail-Zustellung](../../../../en/us/help/hosting/operations/mail-delivery.md)) |
+| Kunden finden die E-Mail im Spam | DNS-Einträge der Absenderdomain, oder die Absenderadresse | Hoster ([E-Mail-Zustellung](../../hosting/betrieb/mailzustellung.md)) |
 | Nur die Kunden eines E-Mail-Anbieters vermissen sie | Dieser Anbieter weist die E-Mail ab oder filtert sie | Hoster, mit einer Beispielbestellung |
 | Überhaupt keine E-Mails, weder an Kunden noch an den Shop | `SendOrderEmail` ausgeschaltet, oder der E-Mail-Transport | Partner |
 
@@ -78,6 +78,6 @@ Postfach des Shops.
 
 - [Rechnungen und Belege](rechnungen-und-belege.md)
 - [Bestellbelege und Bestellbestätigung für Unternehmen](../../../../en/us/help/businesses/stores/order-receipts-and-confirmation-mail.md)
-- [E-Mail-Zustellung](../../../../en/us/help/hosting/operations/mail-delivery.md)
+- [E-Mail-Zustellung](../../hosting/betrieb/mailzustellung.md)
 - [E-Mail-Einstellungen](../../../../en/us/features/6.0/mail-preferences.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

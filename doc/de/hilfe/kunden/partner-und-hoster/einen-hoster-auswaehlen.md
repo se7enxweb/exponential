@@ -61,7 +61,7 @@ entscheiden am häufigsten:
 - [ ] Wo die Server und Backups stehen (für den Datenschutz).
 - [ ] Hat der Hoster schon Exponential-Websites betrieben? Hosting-Partner werden vom Projekt aufgelistet
       ([Hosting-Partner](../../partner/hosting-partner.md)).
-- [ ] Wie Sie wieder gehen: Exportformat, Dauer, Löschung ([Ausscheiden eines Kunden](../../../../en/us/help/hosting/checklists/customer-offboarding.md)).
+- [ ] Wie Sie wieder gehen: Exportformat, Dauer, Löschung ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)).
 
 ## Angebote fair vergleichen
 
@@ -76,7 +76,7 @@ Die Kostenseite steht unter [Kostentreiber beim Hosting](../../../../en/us/help/
 
 ## Der Umzug
 
-Ein Umzug ohne Versionswechsel folgt [Eine Website zwischen Hostern umziehen](../../../../en/us/help/hosting/migrations/moving-a-site-between-hosts.md):
+Ein Umzug ohne Versionswechsel folgt [Eine Website zwischen Hostern umziehen](../../hosting/migrationen/eine-website-zwischen-hostern-umziehen.md):
 was zu kopieren ist, was neu zu holen ist, die Einstellungen, die den alten Server nennen, und die Prüfungen danach.
 Ihr Teil:
 
@@ -85,7 +85,7 @@ Ihr Teil:
 - [ ] Bitten Sie den alten Hoster um einen vollständigen Export (Datenbank, Dateien, Einstellungen, Versionen) und
       bewahren Sie selbst eine Kopie auf.
 - [ ] Lassen Sie das Datenbankpasswort beim neuen Hoster ändern; die Einstellungen, die es enthalten, reisen mit dem
-      Export ([Ausscheiden eines Kunden](../../../../en/us/help/hosting/checklists/customer-offboarding.md)).
+      Export ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)).
 - [ ] Gehen Sie nach dem Umzug Ihre Testliste durch ([Checkliste für den Upgrade-Tag](../gesund-halten/checkliste-upgrade-tag.md)).
 - [ ] Behalten Sie die alte Website, bis die neue bestätigt ist, und bitten Sie dann um Löschung und Bestätigung.
 
@@ -93,5 +93,5 @@ Ihr Teil:
 
 - [Einen Partner auswählen](einen-partner-auswaehlen.md)
 - [Verträge und SLAs](vertraege-und-slas.md)
-- [Kunden auf Ihr Hosting umziehen (für Hoster)](../../../../en/us/help/hosting/migrations/migrating-customers-to-your-hosting.md)
+- [Kunden auf Ihr Hosting umziehen (für Hoster)](../../hosting/migrationen/kunden-zu-ihrem-hosting-migrieren.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

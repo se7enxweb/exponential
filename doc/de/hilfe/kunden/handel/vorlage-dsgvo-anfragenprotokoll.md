@@ -54,7 +54,7 @@ No. | Answer sent on | Export files deleted on | Kept, and why (e.g. bookkeeping
 ## Die Spalte für die Werkzeuge
 
 Nennen Sie das Werkzeug im Protokoll, damit die nächste Person den Schritt wiederholen kann. Die Werkzeuge, die die
-Software bietet, aus [DSGVO-Anfragen](dsgvo-anfragen.md) und [Compliance und DSGVO](../../../../en/us/help/hosting/security/compliance-and-gdpr.md):
+Software bietet, aus [DSGVO-Anfragen](dsgvo-anfragen.md) und [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md):
 
 | Daten | Im Protokoll zu nennendes Werkzeug |
 |---|---|

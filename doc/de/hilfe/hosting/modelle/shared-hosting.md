@@ -1,0 +1,171 @@
+---
+title: Shared Hosting
+audience: hosting
+category: hosting
+order: 30
+summary: Wie Sie Exponential auf Shared Hosting anbieten - was laut den Quellen dort funktioniert (Apache oder LiteSpeed mit .htaccess, der Setup-Assistent, SQLite oder die Datenbank des Panels), was meist nicht funktioniert (Velocity), und die Fragen zu Einstellungen, Abschottung und Cron, die ein Hoster beantworten muss.
+keywords: Shared Hosting, Apache, LiteSpeed, .htaccess, .htaccess_root, PHP-FPM-Pool, Setup-Assistent, FTP, keine Shell, open_basedir, SQLite, MariaDB, MySQL, Cron, Abschottung, Velocity, shared hosting, PHP-FPM pool, setup wizard, no shell, isolation
+type: help
+---
+# Shared Hosting
+
+Diese Seite ist für Hosting-Anbieter, die Exponential auf Shared Hosting anbieten möchten: viele Kundenkonten auf einer
+Maschine, über ein Panel verwaltet, meist mit FTP und ohne Shell für den Kunden. Sie beantwortet, was dort laut den Quellen
+des Projekts funktioniert, was meist nicht, wie eine Website ohne Shell installiert wird und was pro Konto zu konfigurieren ist.
+
+## Inhalt
+
+1. [Was die Quellen sagen](#was-die-quellen-sagen)
+2. [Auslieferung: Apache oder LiteSpeed mit .htaccess](#auslieferung-apache-oder-litespeed-mit-htaccess)
+3. [Installation ohne Shell](#installation-ohne-shell)
+4. [PHP-Einstellungen pro Konto](#php-einstellungen-pro-konto)
+5. [Datenbanken auf Shared Hosting](#datenbanken-auf-shared-hosting)
+6. [Cronjobs](#cronjobs)
+7. [Abschottung zwischen Konten](#abschottung-zwischen-konten)
+8. [Checkliste](#checkliste)
+
+## Was die Quellen sagen
+
+- Ihr Hosting lässt Sie keinen lang laufenden Prozess ausführen. Shared Hosting tut das meist nicht. Apache oder LiteSpeed
+  mit `.htaccess` ist dort die Antwort (`README.md` im Wurzelverzeichnis, Abschnitt dazu, wann ein klassischer Server noch
+  die richtige Antwort ist).
+- Velocity passt meist nicht zu Shared Hosting, weil es einen lang laufenden Prozess braucht; Apache mit PHP-FPM passt
+  ([Kapitel 8](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table)).
+- Shared Hosting ohne Shell-Zugang: der Assistent. Er braucht nur einen Browser und FTP-Zugang
+  ([Kapitel 4](../../../../en/us/install/04-choosing-an-install-method.md#45-which-method-for-which-situation)).
+- Hosts mit cPanel und DirectAdmin sind Stufe 3: Shared Hosting kann lang laufende Prozesse verbieten, sodass Velocity
+  womöglich nicht erlaubt ist; nutzen Sie Apache oder LiteSpeed mit `.htaccess` ([Stufe 3](../../../../en/us/help/os-support.md#tier-3-expected-to-work)).
+- Seit 6.0.15 arbeitet der Setup-Assistent nur mit Ihrer eigenen Datenbank: Er führt kein `SHOW DATABASES` mehr aus und
+  öffnet die Systemdatenbank `mysql` nicht mehr, was Rechte bräuchte, die ein Shared Host nicht vergibt
+  ([Eine saubere Installation, die zu Shared Hosting passt](../../../../en/us/features/6.0/clean-install-defaults.md)).
+
+## Auslieferung: Apache oder LiteSpeed mit .htaccess
+
+Die Rewrite-Regeln liegen im Wurzelverzeichnis der Installation als `.htaccess_root`. Der Kunde (oder Ihre Bereitstellung)
+kopiert sie, sodass ein Update eine neue Version bringen kann:
+
+```bash
+cp .htaccess_root .htaccess
+```
+
+Nutzen Sie stattdessen `.htaccess_root_static` nur, wenn die Website einen erzeugten statischen Cache ausliefert. Für Apache
+muss der virtuelle Host `.htaccess` wirken lassen (`AllowOverride All` auf dem Document Root), und `mod_rewrite` muss an
+sein; ein 404 für jede Seite bedeutet, dass `.htaccess` nicht gelesen wird (`AllowOverride`) oder `mod_rewrite` aus ist
+([8.5 Apache mit PHP-FPM](../../../../en/us/install/08-serving-the-site.md#85-apache-with-php-fpm)). LiteSpeed liest die
+Rewrite-Regeln von Apache in den meisten Fällen und ist Stufe 3 ([Webserver](../../../../en/us/help/os-support.md#web-servers)).
+
+> **Hinweis**
+> Der Document Root des Kontos muss das Wurzelverzeichnis der Installation sein, das Verzeichnis, das `index.php` enthält.
+> Die Sicherheit kommt vom Routing, nicht vom Verzeichnisaufbau: Nur eine feste Liste von Asset-Pfaden wird als Dateien
+> ausgeliefert; alles andere geht an `index.php`
+> ([13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)). Eine allgemeine
+> Konfiguration eines Panels „Datei ausliefern, wenn sie existiert“ würde `settings/*.ini` und die SQLite-Datenbank
+> ausliefern; prüfen Sie einmal pro Server-Image, dass eine Anfrage nach `/settings/site.ini` eine HTML-Seite liefert, nie
+> INI-Text.
+
+Mehr: [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md), [LiteSpeed](../server/litespeed-und-openlitespeed.md).
+
+## Installation ohne Shell
+
+Ohne Shell kann der Kunde Composer nicht ausführen, und ohne Composer, oder ohne dass es ausgeführt wird, fehlt `vendor/`,
+und die Website kann nicht starten ([2.7 Composer](../../../../en/us/install/02-requirements.md#27-composer)). Daraus ergeben sich zwei
+praktische Wege:
+
+1. **Der Hoster stellt den Code bereit.** Ihre Bereitstellung (ein Ein-Klick-Installer, ein Vorlagenkonto) legt einen Baum an,
+   in dem `composer install` bereits gelaufen ist, und dann öffnet der Kunde den Setup-Assistenten im Browser. Siehe
+   [Ein-Klick-Installer](../bereitstellung/ein-klick-installer-fuer-exponential.md).
+2. **Der Kunde bereitet den Code anderswo vor.** Der Kunde führt Composer auf einer anderen Maschine mit derselben
+   PHP-Version wie das Konto aus und lädt den ganzen Baum, einschließlich `vendor/`, per FTP hoch.
+
+Dann erledigt der Setup-Assistent den Rest im Browser: Seine Seite **Systemtest** prüft PHP, die Erweiterungen, die
+beschreibbaren Verzeichnisse und die `php.ini`-Werte und gibt für jeden Fehler die Abhilfe aus
+([Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md),
+[Kapitel 5](../../../../en/us/install/05-setup-wizard.md)).
+
+> **Warnung**
+> Ein langer Schritt des Assistenten kann an die Zeitgrenze für Anfragen von PHP-FPM des Kontos stoßen. Die Notizen zur
+> MongoDB-Portierung beschreiben, wie der Assistent durch das `request_terminate_timeout` des Pools abgebrochen wird, das
+> `set_time_limit()` von PHP selbst nicht überschreiben kann
+> ([MongoDB-Unterstützung im Kernel](../../../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)). Wenn die Installationen auf
+> Ihrer Plattform lange laufen, erhöhen Sie die Grenze für die Installation und senken Sie sie danach wieder.
+
+## PHP-Einstellungen pro Konto
+
+Der Setup-Assistent prüft diese ([2.5 php.ini-Einstellungen](../../../../en/us/install/02-requirements.md#25-phpini-settings)):
+
+| Einstellung | Wert, den der Assistent prüft | Hinweis für Shared Hosting |
+|---|---|---|
+| `memory_limit` | mindestens `64M` | eine Untergrenze; Importe und Bildarbeit brauchen mehr |
+| `max_execution_time` | mindestens `30` | |
+| `date.timezone` | gesetzt | |
+| `file_uploads` | `On` | mit einem beschreibbaren Upload-Verzeichnis |
+| `allow_url_fopen` | `On` | |
+| `variables_order` | enthält `E` | optionaler Test |
+| `open_basedir` | leer | optionaler Test; er warnt nur, dass `open_basedir` in Gebrauch ist und wegen Fehlern in manchen PHP-Versionen Probleme beim Betrieb von Exponential verursachen kann |
+| `upload_max_filesize`, `post_max_size` | nicht getestet | so groß wie die Dateien, die Redakteure hochladen |
+
+Panels setzen `open_basedir` und `disable_functions` oft pro Konto. Der Assistent warnt nur bei `open_basedir`. Die Seite
+Cronjobs in der Administration braucht `proc_open`, um einen Job zu starten, `exec`, um die Crontab zu lesen, und
+`posix_kill`, um einen Job anzuhalten; ist eine davon deaktiviert, öffnet sich die Seite trotzdem und sagt, welche Funktion
+fehlt ([Cronjobs, Bevor Sie beginnen](../../../../en/us/guides/cronjobs.md#2-before-you-start)).
+
+Details: [PHP-Einstellungen für Exponential](../grundlagen/php-einstellungen-fuer-exponential.md),
+[PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md).
+
+## Datenbanken auf Shared Hosting
+
+In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL.
+Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich.
+
+- **1. SQLite 3** braucht keinen Datenbankserver und kein Datenbankkonto: Die Datenbank ist eine Datei unter
+  `var/storage/sqlite3/`. Auf Shared Hosting entfällt damit ein ganzer Bereitstellungsschritt. Es passt zu einer Website,
+  die von einer Maschine ausgeliefert wird, was ein Shared-Konto ist.
+- **Ein Datenbankserver aus dem Panel** (meist 4. MariaDB oder 6. MySQL, manchmal 2. PostgreSQL): Legen Sie Datenbank und
+  Benutzer vor der Installation an; die Installer legen weder Datenbanken noch Benutzer an
+  ([2.6 Datenbanken](../../../../en/us/install/02-requirements.md#26-databases)). Legen Sie die Datenbank für MariaDB und MySQL in
+  `utf8mb4` an. Der Benutzer braucht nur Rechte auf die eine Datenbank
+  ([9.3 MySQL und MariaDB](../../../../en/us/install/09-databases.md#93-mysql-and-mariadb)).
+
+Siehe [Datenbanken und Benutzer in Control Panels](../control-panels/datenbanken-und-benutzer.md).
+
+## Cronjobs
+
+Geplantes Veröffentlichen, Benachrichtigungen und Bereinigung hängen von `runcronjobs.php` ab. Auf Shared Hosting plant der
+Kunde es meist über die Cron-Seite des Panels. Der Befehl muss dieselbe PHP-Version wie die Website nutzen; auf Maschinen mit
+mehreren PHP-Versionen heißt das den vollständigen Pfad zur richtigen Binärdatei
+([Kapitel 10, Cronjobs](../../../../en/us/install/10-after-installing.md#103-cronjobs)):
+
+```text
+*/5 * * * * cd /var/www/vhosts/<domain>/<docroot> && /path/to/php runcronjobs.php -q -s site frequent >/dev/null 2>&1
+```
+
+Siehe [Cron und Shell-Zugang](../control-panels/cron-und-shell-zugang.md).
+
+## Abschottung zwischen Konten
+
+Die Warnung aus dem README gilt auch für Shared Hosting: Ein Prozess, der mehrere Websites ausliefert, kann jede Datei lesen,
+die die anderen enthalten. Geben Sie jedem Konto einen eigenen Benutzer des Betriebssystems und einen eigenen PHP-FPM-Pool, der
+als dieser Benutzer läuft; das empfiehlt Kapitel 8, wenn mehrere Kunden auf einer Maschine voneinander auf Ebene des
+Betriebssystems abgeschottet sein müssen. Innerhalb des Kontos sollte alles, was `var/` schreibt (der Pool, Cron, die Skripte
+des Kunden), als dieser eine Benutzer laufen
+([8.7.2 Ein Benutzer oder eine Gruppe](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)). Siehe
+[Trennung von Mandanten](../sicherheit/trennung-von-mandanten.md).
+
+## Checkliste
+
+- [ ] PHP 8.0 oder später mit den erforderlichen Erweiterungen in der PHP-Version des Kontos (8.1+ zählt nur für Velocity).
+- [ ] Document Root = Wurzelverzeichnis der Installation; `.htaccess` aus `.htaccess_root` kopiert; `mod_rewrite` an.
+- [ ] Die `php.ini`-Werte oben pro Konto gesetzt; Entscheidung zu `open_basedir` dokumentiert.
+- [ ] `vendor/` vorhanden, bevor der Assistent startet.
+- [ ] Eine Datenbank bereit (SQLite braucht nichts), in UTF-8 angelegt.
+- [ ] Eine Cron-Zeile für `runcronjobs.php` mit dem PHP des Kontos.
+- [ ] Ein Benutzer und ein PHP-FPM-Pool pro Konto.
+- [ ] Backups der Datenbank und von `var/storage`, `settings/override`, `settings/siteaccess`.
+
+## Verwandte Seiten
+
+- [Ein Hosting-Modell wählen](ein-hosting-modell-waehlen.md)
+- [Control Panels: Überblick](../control-panels/README.md)
+- [Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md)
+- [Kapitel 8: Die Website ausliefern](../../../../en/us/install/08-serving-the-site.md)
+- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

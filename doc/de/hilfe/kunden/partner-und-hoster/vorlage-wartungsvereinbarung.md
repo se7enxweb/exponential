@@ -12,7 +12,7 @@ type: help
 **Vorlage. Keine Rechtsberatung.** Korrekturen erreichen eine Exponential-Website nur als nächstes Release
 (`SECURITY.md`), die Pflege der Website ist also eine Aufgabe, die nie endet. Diese Vorlage hält diese Aufgabe
 schriftlich fest. Sie folgt der Upgrade-Praxis, die unter [Upgrades mit Ihrem Anbieter](../gesund-halten/upgrades-mit-ihrem-anbieter.md),
-[Kunden-Websites aktualisieren](../../../../en/us/help/hosting/operations/upgrading-customer-sites.md) und
+[Kunden-Websites aktualisieren](../../hosting/betrieb/kunden-websites-aktualisieren.md) und
 [Kunden aktuell halten](../../partner/kunden-websites-aktuell-halten.md) beschrieben ist. Werte in eckigen Klammern sind
 Felder, die zu vereinbaren sind. Lassen Sie das Ergebnis von Ihrer Rechtsberatung prüfen.
 
@@ -33,7 +33,7 @@ Felder, die zu vereinbaren sind. Lassen Sie das Ergebnis von Ihrer Rechtsberatun
 | Der gepflegten Linie folgen | Upgrade auf das neueste Release 6.0.x innerhalb von [agreed time] nach seinem Erscheinen |
 | Releases mit Sicherheitskorrekturen | Eingespielt innerhalb von [agreed time] nach dem Release |
 | Erweiterungen | Mit jedem Upgrade aktualisiert; Erweiterungen ohne gepflegtes Release werden dem Kunden gemeldet |
-| PHP-Version | Auf einem PHP-Zweig mit Sicherheitsunterstützung gehalten; Umstellungen [time] im Voraus geplant ([PHP-Upgrade](../../../../en/us/help/hosting/runbooks/php-upgrade.md)) |
+| PHP-Version | Auf einem PHP-Zweig mit Sicherheitsunterstützung gehalten; Umstellungen [time] im Voraus geplant ([PHP-Upgrade](../../hosting/runbooks/php-upgrade.md)) |
 | Betriebssystem und Datenbankserver | [who, how often] |
 | Zuerst auf einer Kopie ausprobiert | [always / for releases that change the database / never] |
 | Backup direkt vor jedem Update | Datenbank und Dateien ([Backups](../gesund-halten/backups.md)) |

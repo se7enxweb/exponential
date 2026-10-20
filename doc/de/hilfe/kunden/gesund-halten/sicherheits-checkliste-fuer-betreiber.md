@@ -47,7 +47,7 @@ mit dem Datum auf; sie zeigen einem Prüfer, einem Versicherer oder einem Kunden
 - [ ] Ist die Debug-Ausgabe für alle ausgeschaltet, außer höchstens für eine Adresse mit Ablaufdatum?
 - [ ] Läuft die ganze Website über HTTPS?
 - [ ] Ist die Administration eingeschränkt, zum Beispiel auf einem eigenen Hostnamen oder hinter einer Netzwerkregel
-      ([Die Administration einschränken](../../../../en/us/help/hosting/security/restricting-the-administration.md))?
+      ([Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md))?
 
 ## Beobachten
 
@@ -85,6 +85,6 @@ Open actions: ____ (who, by when)
 ## Verwandte Seiten
 
 - [Sicherheitsgrundlagen](sicherheitsgrundlagen.md)
-- [Sicherheitsüberprüfung (für Hoster)](../../../../en/us/help/hosting/checklists/security-review.md)
+- [Sicherheitsüberprüfung (für Hoster)](../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md)
 - [Zugriffsüberprüfungen](../../../../en/us/help/businesses/security/access-reviews.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

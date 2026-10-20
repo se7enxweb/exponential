@@ -46,7 +46,7 @@ Aus [Grundlagen zu Verträgen und SLAs](../../../../en/us/help/businesses/choosi
 | Sicherheitsupdates | Seinem Update-Verfahren | Die Version der Website und die Deployment-Einträge des Prüfprotokolls |
 
 Quelle: [Grundlagen zu Verträgen und SLAs](../../../../en/us/help/businesses/choosing/contracts-and-slas-basics.md), aus
-[SLA-Optionen](../../../../en/us/help/hosting/business/sla-options.md).
+[SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md).
 
 > **Tipp**
 > Verlangen Sie „Eine veröffentlichte Korrektur wird innerhalb einer bestimmten Zeit eingespielt“, nicht „Eine
@@ -87,7 +87,7 @@ vereinbaren Sie.
 - [ ] Umfang und Rollen als Tabelle festgehalten.
 - [ ] Jedes Service-Level hat eine Messung und einen Bericht.
 - [ ] Ausschlüsse gelesen und akzeptiert: meist Ihr eigener Code, Erweiterungen, die er nicht geliefert hat, Ausfälle
-      durch Ihre Inhalte und angekündigte Wartung ([SLA-Optionen](../../../../en/us/help/hosting/business/sla-options.md)).
+      durch Ihre Inhalte und angekündigte Wartung ([SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)).
 - [ ] Zeit für Sicherheitsupdates angegeben.
 - [ ] Datenschutzbedingungen vereinbart ([DSGVO-Grundlagen](../../../../en/us/help/businesses/security/gdpr-basics.md), keine Rechtsberatung).
 - [ ] Ausstieg und Übergabe beschrieben ([Checkliste für die Übergabe](checkliste-uebergabe.md)).
@@ -96,6 +96,6 @@ vereinbaren Sie.
 ## Verwandte Seiten
 
 - [Ihren Anbieter jedes Jahr überprüfen](anbieter-jedes-jahr-ueberpruefen.md)
-- [Support-Stufen (für Hoster)](../../../../en/us/help/hosting/business/support-tiers.md)
+- [Support-Stufen (für Hoster)](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)
 - [Die Partnerschaftsvereinbarung (für Partner)](../../partner/die-partnerschaftsvereinbarung.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

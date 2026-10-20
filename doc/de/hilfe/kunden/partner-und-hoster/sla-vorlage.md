@@ -11,7 +11,7 @@ type: help
 
 **Vorlage. Keine Rechtsberatung.** Dies ist eine Struktur für ein Service Level Agreement (SLA) für eine
 Exponential-Website, aus Sicht des Betreibers geschrieben. Sie folgt den Zusagen, die unter
-[SLA-Optionen](../../../../en/us/help/hosting/business/sla-options.md) und
+[SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md) und
 [Grundlagen zu Verträgen und SLAs](../../../../en/us/help/businesses/choosing/contracts-and-slas-basics.md) beschrieben sind. Jeder Wert
 in eckigen Klammern ist ein Feld, das Sie mit Ihrem Anbieter vereinbaren; diese Seite nennt keine Zahlen, weil die
 richtigen von Ihrer Website, Ihrem Budget und dem abhängen, was Ihr Anbieter personell leisten kann. Lassen Sie das
@@ -56,7 +56,7 @@ Ergebnis von Ihrer Rechtsberatung prüfen.
 
 ## Ausschlüsse
 
-Lieferanten schließen üblicherweise Folgendes aus ([SLA-Optionen](../../../../en/us/help/hosting/business/sla-options.md)). Lesen Sie
+Lieferanten schließen üblicherweise Folgendes aus ([SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)). Lesen Sie
 sie so sorgfältig wie die Versprechen.
 
 | Ausschluss | Vereinbart |

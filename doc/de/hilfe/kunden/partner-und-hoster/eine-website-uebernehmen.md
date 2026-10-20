@@ -73,7 +73,7 @@ Entscheiden Sie dann, ob der derzeitige Hoster und Partner bleiben; [Einen Partn
 
 Unbekannte Administratorkonten, ohne Erklärung geänderte Dateien oder Seiten, die niemand veröffentlicht hat, können
 Anzeichen eines Einbruchs sein. Löschen Sie nichts; rufen Sie den Hoster an und behandeln Sie es als Schweregrad 1
-([Wenn die Website nicht erreichbar ist](../gesund-halten/wenn-die-website-nicht-erreichbar-ist.md), [Kompromittierte Website](../../../../en/us/help/hosting/runbooks/compromised-site.md)).
+([Wenn die Website nicht erreichbar ist](../gesund-halten/wenn-die-website-nicht-erreichbar-ist.md), [Kompromittierte Website](../../hosting/runbooks/kompromittierte-website.md)).
 
 ## Verwandte Seiten
 

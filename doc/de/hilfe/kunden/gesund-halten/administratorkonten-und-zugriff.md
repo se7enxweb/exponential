@@ -48,7 +48,7 @@ Ihr Hoster und Ihr Partner haben möglicherweise Administratorkonten auf Ihrer W
 - [ ] Ihre Konten verwenden die zweistufige Anmeldung.
 - [ ] Sie erhalten die Liste ihrer Konten und werden informiert, wenn sie sich ändert.
 - [ ] Wenn der Vertrag endet, werden ihre Konten deaktiviert; die Checkliste für das Ausscheiden von Kunden für Hoster
-      sagt, „dem Kunden mitzuteilen, welche Konten die eigenen waren“ ([Ausscheiden eines Kunden](../../../../en/us/help/hosting/checklists/customer-offboarding.md)).
+      sagt, „dem Kunden mitzuteilen, welche Konten die eigenen waren“ ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)).
 - [ ] Hosting-Konten, die Domain und der Administratorzugang gehören Ihnen oder werden auf Anfrage übergeben
       ([Grundlagen zu Verträgen und SLAs](../../../../en/us/help/businesses/choosing/contracts-and-slas-basics.md)).
 

@@ -38,7 +38,7 @@ oder in einem Ticket weiter.
 
 ## Der Schweregrad sagt, wie schnell
 
-Nennen Sie beim Anruf den Schweregrad. Eine gängige Skala ([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)):
+Nennen Sie beim Anruf den Schweregrad. Eine gängige Skala ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)):
 
 | Schweregrad | Bedeutung |
 |---|---|
@@ -66,5 +66,5 @@ Hilfe der Community in den Foren und Chats ist kostenlos, und „niemand verspri
 
 - [Vorlage für Eskalationskontakte](vorlage-eskalationskontakte.md)
 - [Probleme melden](../gesund-halten/probleme-melden.md)
-- [Support-Stufen (für Hoster)](../../../../en/us/help/hosting/business/support-tiers.md)
+- [Support-Stufen (für Hoster)](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

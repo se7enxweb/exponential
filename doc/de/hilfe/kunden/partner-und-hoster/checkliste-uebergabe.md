@@ -11,7 +11,7 @@ type: help
 
 Eine Übergabe findet statt, wenn ein Projekt endet und die Website in Ihre Obhut übergeht, wenn ein Vertrag endet oder
 wenn ein Anbieter einen anderen ersetzt. Diese Checkliste nennt, was Sie aus Sicht des Betreibers erhalten müssen.
-Hoster arbeiten ihre eigene Liste ab ([Ausscheiden eines Kunden](../../../../en/us/help/hosting/checklists/customer-offboarding.md)) und
+Hoster arbeiten ihre eigene Liste ab ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)) und
 Partner die Übergabephase ihres Leitfadens ([Leitfaden für Implementierungsprojekte](../../partner/leitfaden-fuer-implementierungsprojekte.md)).
 
 ## Zuerst den Plan vereinbaren
@@ -27,12 +27,12 @@ Partner die Übergabephase ihres Leitfadens ([Leitfaden für Implementierungspro
 - [ ] Die Konten für Hosting und Panel, oder die Bestätigung, dass sie zum vereinbarten Datum geschlossen werden.
 - [ ] Die Domain und das DNS, auf Ihren Namen, oder zum vereinbarten Datum übertragen.
 - [ ] Die Liste der Konten, die der alte Anbieter in Ihrer Administration hatte, damit sie deaktiviert werden können;
-      ein gut geführter Hoster wird „dem Kunden mitteilen, welche Konten die eigenen waren“ ([Ausscheiden eines Kunden](../../../../en/us/help/hosting/checklists/customer-offboarding.md)).
+      ein gut geführter Hoster wird „dem Kunden mitteilen, welche Konten die eigenen waren“ ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)).
 - [ ] Das Notfallverfahren, schriftlich festgehalten ([Das Administratorpasswort ändern](../../../../en/us/help/change-the-admin-password.md)).
 
 ## Ein vollständiger Export
 
-Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheiden eines Kunden](../../../../en/us/help/hosting/checklists/customer-offboarding.md)):
+Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)):
 
 - [ ] Ein Datenbank-Dump, erstellt mit dem eigenen Werkzeug der Engine.
 - [ ] `var/storage` (und der Speicher jeder Website, wo er getrennt ist).
@@ -83,5 +83,5 @@ Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheid
 
 - [Eine Website übernehmen](eine-website-uebernehmen.md)
 - [Einen Hoster auswählen](einen-hoster-auswaehlen.md)
-- [Eine Website zwischen Hostern umziehen](../../../../en/us/help/hosting/migrations/moving-a-site-between-hosts.md)
+- [Eine Website zwischen Hostern umziehen](../../hosting/migrationen/eine-website-zwischen-hostern-umziehen.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

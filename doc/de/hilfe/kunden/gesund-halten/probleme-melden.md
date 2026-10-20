@@ -36,13 +36,13 @@ verhindert, dass dasselbe Problem dreimal gemeldet wird, und gibt Ihrem Anbieter
 | Alle, oder ein Konto? | „Nur mein Konto“, „jeder Redakteur“ |
 | Jüngste Änderungen | Ein Update, eine neue Erweiterung, eine Einstellungsänderung |
 
-Das ist die Liste, die das Support-Personal eines Hosters sammeln soll ([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md));
+Das ist die Liste, die das Support-Personal eines Hosters sammeln soll ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md));
 wenn Sie sie gleich mitschicken, spart das eine Rückfrage. Ein Screenshot hilft, „solange er keine Passwörter und keine
 personenbezogenen Daten anderer zeigt“ ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
 
 ## Wie dringend ist es?
 
-Eine gängige Skala für den Schweregrad aus dem Bereich für Hosting ([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)):
+Eine gängige Skala für den Schweregrad aus dem Bereich für Hosting ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)):
 
 | Schweregrad | Definition | Beispiel |
 |---|---|---|
@@ -69,7 +69,7 @@ Verwenden Sie die Skala, die Ihr Vertrag festlegt, falls er eine hat; andernfall
 „Schreiben Sie nie Passwörter, Schlüssel, Sitzungs-Cookies, Datenbankadressen oder die personenbezogenen Daten von
 Kunden oder Benutzern in ein öffentliches Issue“ ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
 Dieselbe Regel ist für Tickets und E-Mails an Ihre Anbieter klug: Ein Anbieter sollte nie nach einem Passwort fragen;
-„Verwenden Sie ein Wegwerf-Testkonto, wenn Sie etwas im angemeldeten Zustand nachstellen müssen“ ([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)).
+„Verwenden Sie ein Wegwerf-Testkonto, wenn Sie etwas im angemeldeten Zustand nachstellen müssen“ ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)).
 
 ## Eine Meldung zum Kopieren
 

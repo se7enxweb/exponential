@@ -12,7 +12,7 @@ type: help
 Die meisten Website-Betreiber führen Upgrades nicht selbst durch: Ein Hoster, ein Implementierungspartner oder ein
 freiberuflicher Entwickler erledigt das. Diese Seite behandelt Ihre Seite dieser Vereinbarung: was einmal zu vereinbaren
 ist, was jedes Mal zu fragen ist und welche Nachweise zu erwarten sind. Das eigene Verfahren des Anbieters steht unter
-[Kunden-Websites aktualisieren](../../../../en/us/help/hosting/operations/upgrading-customer-sites.md) und, für Partner, unter
+[Kunden-Websites aktualisieren](../../hosting/betrieb/kunden-websites-aktualisieren.md) und, für Partner, unter
 [Kunden aktuell halten](../../partner/kunden-websites-aktuell-halten.md).
 
 ## Einmal vereinbaren
@@ -25,7 +25,7 @@ Schreiben Sie diese Punkte in den Vertrag oder die Support-Vereinbarung (siehe
 | Wer aktualisiert | Ihr Anbieter, Ihr eigener Entwickler oder beide, mit einer klaren Grenze |
 | Wie oft | Mindestens so oft, wie neue Releases 6.0.x erscheinen ([Release-Linie und Support](release-linie-und-support.md)) |
 | Sicherheits-Releases | Innerhalb welcher Zeit nach dem Release eine Sicherheitskorrektur eingespielt wird; fordern Sie, dass „eine veröffentlichte Korrektur innerhalb einer bestimmten Zeit eingespielt wird“ ([Grundlagen zu Verträgen und SLAs](../../../../en/us/help/businesses/choosing/contracts-and-slas-basics.md)) |
-| PHP-Updates | Wer die Website auf eine neuere PHP-Version umstellt, und wann ([Runbook für PHP-Upgrades](../../../../en/us/help/hosting/runbooks/php-upgrade.md)) |
+| PHP-Updates | Wer die Website auf eine neuere PHP-Version umstellt, und wann ([Runbook für PHP-Upgrades](../../hosting/runbooks/php-upgrade.md)) |
 | Staging | Ob jedes Upgrade zuerst auf einer Kopie ausprobiert wird |
 | Zeitfenster | Wann geplante Arbeiten stattfinden dürfen und wie weit im Voraus Sie informiert werden |
 | Nachweise | Was Sie nach jedem Upgrade erhalten (siehe unten) |
@@ -38,7 +38,7 @@ Schreiben Sie diese Punkte in den Vertrag oder die Support-Vereinbarung (siehe
 - [ ] Wurde es zuerst auf einer Kopie der Website ausprobiert?
 - [ ] Wann ist das Zeitfenster, und werden Besucher eine Wartungsseite sehen?
 - [ ] Wird direkt davor ein Backup der Datenbank **und** der Dateien erstellt? „Zuerst sichern, jedes Mal“
-      ([Backup-Pläne und Aufbewahrung](../../../../en/us/help/hosting/operations/backup-schedules-and-retention.md)).
+      ([Backup-Pläne und Aufbewahrung](../../hosting/betrieb/backup-zeitplaene-und-aufbewahrung.md)).
 - [ ] Wie ist der Weg zurück, wenn etwas fehlschlägt?
 - [ ] Welche unserer eigenen Erweiterungen oder angepassten Templates könnten betroffen sein?
 

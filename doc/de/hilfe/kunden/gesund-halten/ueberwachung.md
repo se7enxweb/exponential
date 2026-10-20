@@ -13,7 +13,7 @@ type: help
 eine gute Überwachung einer Exponential-Website aus Sicht des Betreibers aussieht und was Sie den Hoster oder Betreiber
 fragen sollten, der sie einrichtet. Die technischen Einzelheiten stehen unter
 [Statusprüfungen und Überwachung](../../../../en/us/help/businesses/reliability/health-checks-and-monitoring.md) und, für Hoster, unter
-[Überblick über die Überwachung](../../../../en/us/help/hosting/operations/monitoring-overview.md).
+[Überblick über die Überwachung](../../hosting/betrieb/ueberblick-ueber-die-ueberwachung.md).
 
 ## Keine einzelne Statusadresse
 
@@ -53,7 +53,7 @@ selbst ausführen; bitten Sie darum, dass sie eingeplant sind und dass ein Fehls
 
 Quelle: [Statusprüfungen und Überwachung](../../../../en/us/help/businesses/reliability/health-checks-and-monitoring.md). Wenn niemand in
 Ihrem Team sie liest, bitten Sie Ihren Hoster oder Partner stattdessen um eine kurze wöchentliche oder monatliche
-Zusammenfassung ([Monatlicher Betrieb](../../../../en/us/help/hosting/checklists/monthly-operations.md) enthält einen Bericht an den Kunden).
+Zusammenfassung ([Monatlicher Betrieb](../../hosting/checklisten/checkliste-fuer-den-monatlichen-betrieb.md) enthält einen Bericht an den Kunden).
 
 ## Wer geweckt wird
 
@@ -80,6 +80,6 @@ Zusammenfassung ([Monatlicher Betrieb](../../../../en/us/help/hosting/checklists
 
 - [Logs für Betreiber](logs-fuer-betreiber.md)
 - [Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md)
-- [Statusprüfungen und Verfügbarkeit (für Hoster)](../../../../en/us/help/hosting/operations/health-checks-and-uptime.md)
+- [Statusprüfungen und Verfügbarkeit (für Hoster)](../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md)
 - [Verfügbarkeit in der Praxis](../../../../en/us/help/businesses/reliability/uptime-practice.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

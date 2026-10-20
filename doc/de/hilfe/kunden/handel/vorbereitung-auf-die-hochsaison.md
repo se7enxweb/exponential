@@ -62,8 +62,8 @@ Aus [Shop-Leistung zu Spitzenzeiten](../../../../en/us/help/businesses/stores/st
 | Start | Rabatte und Preise gehen live; ein Produkt im Warenkorb prüfen | Shop-Leitung |
 | Jede Stunde | Dashboard: Bestellungen, Payment failed, offene Bestellungen | Shop-Leitung |
 | Alle paar Stunden | Zahlungen im Konto des Anbieters stimmen mit den Bestellungen überein | Eigentümer oder Shop-Leitung |
-| Wenn Seiten langsam sind | Den Hoster anrufen; er folgt seinem Runbook für eine langsame Website ([Langsame Website](../../../../en/us/help/hosting/runbooks/slow-site.md)) | Shop-Leitung |
-| Wenn die Website nicht erreichbar ist | [Website nicht erreichbar](../../../../en/us/help/hosting/runbooks/site-down.md) | Hoster |
+| Wenn Seiten langsam sind | Den Hoster anrufen; er folgt seinem Runbook für eine langsame Website ([Langsame Website](../../hosting/runbooks/langsame-website.md)) | Shop-Leitung |
+| Wenn die Website nicht erreichbar ist | [Website nicht erreichbar](../../hosting/runbooks/website-nicht-erreichbar.md) | Hoster |
 | Ende | Rabatte und Aktionspreise zurückgesetzt | Shop-Leitung |
 
 > **Warnung**

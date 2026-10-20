@@ -11,7 +11,7 @@ type: help
 
 **Vorlage. Keine Rechtsberatung.** Eine Struktur für die Support-Bedingungen einer Exponential-Website, aus Sicht des
 Betreibers. Sie baut auf dem Stufenblatt und den Schweregraden aus dem Bereich für Hosting auf
-([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)) und auf dem, was Partnern für ihre eigenen Support-Aussagen
+([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)) und auf dem, was Partnern für ihre eigenen Support-Aussagen
 geraten wird ([Support-Stufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md)). Werte in
 eckigen Klammern sind Felder, die zu vereinbaren sind; es werden keine Zahlen vorgeschlagen. Lassen Sie das Ergebnis
 von Ihrer Rechtsberatung prüfen.
@@ -37,7 +37,7 @@ von Ihrer Rechtsberatung prüfen.
 
 ## Schweregrade
 
-Die Definitionen folgen [Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md); passen Sie die Beispiele an Ihre Website an.
+Die Definitionen folgen [Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md); passen Sie die Beispiele an Ihre Website an.
 
 | Schweregrad | Definition | Beispiel | Erste Reaktion | Updates, solange offen |
 |---|---|---|---|---|
@@ -72,7 +72,7 @@ Punkte in Ihrer eigenen Vereinbarung.
 | Fehler in Exponential an das Projekt melden und verfolgen | [yes / no] |
 
 Die Grenze zwischen den beiden Arten von Support ist die häufigste Quelle von Reibung
-([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)).
+([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)).
 
 ## Was der Kunde liefert
 
@@ -80,7 +80,7 @@ Die Grenze zwischen den beiden Arten von Support ist die häufigste Quelle von R
   was erwartet wurde und ob es alle oder ein Konto betrifft ([Probleme melden](../gesund-halten/probleme-melden.md)).
 - Aktuelle Kontakte ([Vorlage für Eskalationskontakte](vorlage-eskalationskontakte.md)).
 - Keine Passwörter: „Bitten Sie einen Kunden nie, ein Passwort zu schicken“; stattdessen wird ein Wegwerf-Testkonto
-  verwendet ([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)).
+  verwendet ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)).
 
 ## Eskalation
 

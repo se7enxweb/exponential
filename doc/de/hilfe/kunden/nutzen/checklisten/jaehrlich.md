@@ -66,7 +66,7 @@ NEXT YEAR
 | Teil | Lesen Sie |
 |---|---|
 | Überprüfungen | [Jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md), [Checkliste für die Jahresüberprüfung](../../../../../en/us/help/businesses/templates/annual-review-checklist.md) |
-| Release-Linie und PHP | `SECURITY.md`, [Release-Linie und Support-Richtlinie](../../../../../en/us/help/businesses/reliability/release-line-and-support-policy.md), [Runbook für PHP-Upgrades](../../../../../en/us/help/hosting/runbooks/php-upgrade.md) |
+| Release-Linie und PHP | `SECURITY.md`, [Release-Linie und Support-Richtlinie](../../../../../en/us/help/businesses/reliability/release-line-and-support-policy.md), [Runbook für PHP-Upgrades](../../../hosting/runbooks/php-upgrade.md) |
 | Upgrade-Prüfung | [Upgrade-Prüfung](../../../../../en/us/guides/upgrade-check.md) |
 | Verträge | [Grundlagen zu Verträgen und SLAs](../../../../../en/us/help/businesses/choosing/contracts-and-slas-basics.md), [Scorecard zur Bewertung von Anbietern](../../../../../en/us/help/businesses/templates/vendor-evaluation-scorecard.md) |
 | Zugriff | [Zugriffsüberprüfungen](../../../../../en/us/help/businesses/security/access-reviews.md) |

@@ -35,7 +35,7 @@ bauen sich von selbst neu auf und brauchen kein Backup.
 ## Die Entscheidungen, die nur Sie treffen können
 
 Schreiben Sie die Antworten auf und geben Sie sie Ihrem Hoster; er macht daraus einen Plan
-([Backup-Pläne und Aufbewahrung](../../../../en/us/help/hosting/operations/backup-schedules-and-retention.md)).
+([Backup-Pläne und Aufbewahrung](../../hosting/betrieb/backup-zeitplaene-und-aufbewahrung.md)).
 
 | Entscheidung | Frage |
 |---|---|
@@ -64,7 +64,7 @@ Schreiben Sie die Antworten auf und geben Sie sie Ihrem Hoster; er macht daraus 
 
 Die letzte Frage ist wichtig: Der Hosting-Leitfaden verlangt ein Backup „vor einem Upgrade“, „vor einem
 Composer-Update“, „vor einem Wechsel der Datenbank-Engine“ und „vor einer Wiederherstellung“
-([Backup-Pläne und Aufbewahrung](../../../../en/us/help/hosting/operations/backup-schedules-and-retention.md)).
+([Backup-Pläne und Aufbewahrung](../../hosting/betrieb/backup-zeitplaene-und-aufbewahrung.md)).
 
 ## Kleine Fehler brauchen keine Wiederherstellung
 
@@ -91,6 +91,6 @@ nutzen ([Backups, die sich wiederherstellen lassen](../../../../en/us/help/busin
 
 - [Wiederherstellungstest](wiederherstellungstest.md)
 - [Backups, die sich wiederherstellen lassen](../../../../en/us/help/businesses/reliability/backups-that-restore.md)
-- [Was gesichert werden muss (für Hoster)](../../../../en/us/help/hosting/operations/backups-what-to-back-up.md)
+- [Was gesichert werden muss (für Hoster)](../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
 - [Datenaufbewahrung und Löschung](../../../../en/us/help/businesses/security/data-retention-and-deletion.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

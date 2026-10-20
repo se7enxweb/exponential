@@ -9,7 +9,7 @@ type: help
 ---
 # Wer was macht
 
-„Die meiste Reibung im Hosting-Support entsteht durch eine unklare Grenze“ ([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)).
+„Die meiste Reibung im Hosting-Support entsteht durch eine unklare Grenze“ ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)).
 Diese Seite gibt Ihnen eine Tabelle, die Sie einmal mit Ihrem Hoster und Partner vereinbaren und in jeden Vertrag
 aufnehmen. Passen Sie sie an Ihre Vereinbarung an; wichtig ist, dass jede Zeile einen Namen hat.
 
@@ -24,7 +24,7 @@ aufnehmen. Passen Sie sie an Ihre Vereinbarung an; wichtig ist, dass jede Zeile 
 
 ## Die Grenze zwischen Hosting und Anwendung
 
-Aus [Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md):
+Aus [Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md):
 
 | Hosting-Support | Anwendungs-Support |
 |---|---|

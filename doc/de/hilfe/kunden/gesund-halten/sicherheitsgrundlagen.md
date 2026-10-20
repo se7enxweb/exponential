@@ -69,8 +69,8 @@ Schreiben Sie Ihre eigene Fassung dieser Tabelle in Ihre Vereinbarungen; siehe [
 ## Wenn Sie einen Einbruch vermuten
 
 Behandeln Sie es als dringendste Art von Vorfall: Der Support-Leitfaden für Hoster sagt: „Ein vermuteter
-Sicherheitsvorfall hat immer den Schweregrad 1“ ([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)). Rufen Sie
-sofort Ihren Hoster an, löschen Sie nichts, und lassen Sie ihn dem Runbook [Kompromittierte Website](../../../../en/us/help/hosting/runbooks/compromised-site.md)
+Sicherheitsvorfall hat immer den Schweregrad 1“ ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)). Rufen Sie
+sofort Ihren Hoster an, löschen Sie nichts, und lassen Sie ihn dem Runbook [Kompromittierte Website](../../hosting/runbooks/kompromittierte-website.md)
 folgen, das damit beginnt, den Schaden einzudämmen, ohne Beweise zu vernichten. Notieren Sie, was Sie wann gesehen
 haben, in der [Vorlage für Vorfallnotizen](vorlage-vorfallnotizen.md).
 

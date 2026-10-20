@@ -35,7 +35,7 @@ Verwenden Sie für jede Anfrage die [Vorlage für ein DSGVO-Anfragenprotokoll](v
 
 | Anfrage | Was die Software bietet | Quelle |
 |---|---|---|
-| Ihre Daten einsehen | Für E-Mail-Daten: der eigene Download der Person, oder `./console exp:mail:preferences export`; Prüfprotokoll-Einträge zu einem Benutzer: `exp:audit export --subject-user=<id>`; Bestellungen: **Shop > Kunden** und die Bestellansicht des Kunden; Belege können als Datei heruntergeladen werden | [Compliance und DSGVO](../../../../en/us/help/hosting/security/compliance-and-gdpr.md), `kernel/shop/module.php` |
+| Ihre Daten einsehen | Für E-Mail-Daten: der eigene Download der Person, oder `./console exp:mail:preferences export`; Prüfprotokoll-Einträge zu einem Benutzer: `exp:audit export --subject-user=<id>`; Bestellungen: **Shop > Kunden** und die Bestellansicht des Kunden; Belege können als Datei heruntergeladen werden | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md), `kernel/shop/module.php` |
 | Ihre Daten berichtigen | Der Kunde bearbeitet sein eigenes Konto; Mitarbeitende bearbeiten den Benutzer unter **Benutzer** | [Konten und Anmeldung](../../../../en/us/help/accounts-and-sign-in.md) |
 | Ihre Daten mitnehmen | „Meine E-Mail-Daten herunterladen“ in JSON und CSV für E-Mail-Daten | [DSGVO-Grundlagen](../../../../en/us/help/businesses/security/gdpr-basics.md) |
 | Ihre Daten löschen | E-Mail-Daten: `exp:mail:preferences erase`; das Konto: den Benutzer entfernen (endgültig, löscht auch die E-Mail-Einstellungen); Formulardaten: **Setup > Gesammelte Informationen**; Bestellungen: archivieren oder entfernen | [Datenexport und Löschung](datenexport-und-loeschung.md) |
@@ -72,7 +72,7 @@ Löschung verlangt:
 
 > **Tipp**
 > Geben Sie die Berechtigungen für Exporte und das Lesen des Prüfprotokolls, `mailpreferences/export` und
-> `audit/read`, nur wenigen Personen, wie es die Compliance-Seite für Hoster empfiehlt ([Compliance und DSGVO](../../../../en/us/help/hosting/security/compliance-and-gdpr.md)).
+> `audit/read`, nur wenigen Personen, wie es die Compliance-Seite für Hoster empfiehlt ([Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md)).
 
 ## Das Prüfprotokoll
 

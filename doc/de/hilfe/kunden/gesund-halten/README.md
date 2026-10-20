@@ -69,7 +69,7 @@ solange alle wissen, wer.
 
 > **Tipp**
 > Hosting-Anbieter und Partner haben eigene Bereiche in dieser Hilfe. Wenn Sie sehen möchten, was ein gut geführter
-> Hoster jeden Monat tut, lesen Sie [Monatlicher Betrieb](../../../../en/us/help/hosting/checklists/monthly-operations.md).
+> Hoster jeden Monat tut, lesen Sie [Monatlicher Betrieb](../../hosting/checklisten/checkliste-fuer-den-monatlichen-betrieb.md).
 
 ## Verwandte Seiten
 

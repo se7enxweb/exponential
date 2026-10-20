@@ -57,7 +57,7 @@ IF SOMETHING LOOKS WRONG
 |---|---|
 | Eine Seite mit einer Fehlerreferenz | Schicken Sie die Referenz, die Adresse und die Uhrzeit an Ihren Administrator; er findet die Einzelheiten unter **Setup > Logdateien** |
 | „This form has expired“ | Meist eine zu lange offen gelassene Seite; neu laden und erneut senden ([Seite für abgelaufene Formulare](../../../../../en/us/features/6.0/form-expired-page.md)) |
-| Die ganze Website ist nicht erreichbar, oder eine unerwartete Wartungsseite | Rufen Sie den Hoster an ([Website nicht erreichbar](../../../../../en/us/help/hosting/runbooks/site-down.md)) |
+| Die ganze Website ist nicht erreichbar, oder eine unerwartete Wartungsseite | Rufen Sie den Hoster an ([Website nicht erreichbar](../../../hosting/runbooks/website-nicht-erreichbar.md)) |
 | Eine Seite, die Sie nicht geändert haben, sieht verändert aus | Prüfen Sie ihre Versionen; das Prüfprotokoll zeigt, wer was getan hat ([Das Prüfprotokoll](../../../../../en/us/features/6.0/audit-trail.md)) |
 
 Weitere erste Schritte stehen unter [Wenn etwas schiefgeht](../../../../../en/us/help/when-something-goes-wrong.md).

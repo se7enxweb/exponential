@@ -24,7 +24,7 @@ neuen Hoster vor der Unterschrift stehen auch unter [Hosting auswählen](../../.
 | Welcher Webserver oder welche Engine liefert die Website aus? | Exponential Velocity, FrankenPHP, Apache oder nginx mit PHP-FPM, oder ein anderer benannter |
 | Läuft Cron für unsere Website, wie oft? | Ja, mit benannten Cronjob-Teilen; ohne Cron schlägt Hintergrundarbeit unbemerkt fehl ([Cronjobs und Hintergrundaufträge](../../../../en/us/help/businesses/reliability/cronjobs-and-background-jobs.md)) |
 | Funktioniert ausgehende E-Mail, mit welchem Absender? | Ja; Formulare, Belege, Passwort-Zurücksetzungen und Newsletter hängen davon ab |
-| Läuft jeder Name über HTTPS, und wer erneuert die Zertifikate? | Ja; die Erneuerung wird überwacht ([Runbook für ablaufende Zertifikate](../../../../en/us/help/hosting/runbooks/certificate-expiry.md)) |
+| Läuft jeder Name über HTTPS, und wer erneuert die Zertifikate? | Ja; die Erneuerung wird überwacht ([Runbook für ablaufende Zertifikate](../../hosting/runbooks/ablauf-von-zertifikaten.md)) |
 
 ## Updates
 
@@ -50,29 +50,29 @@ neuen Hoster vor der Unterschrift stehen auch unter [Hosting auswählen](../../.
 ## Sicherheit
 
 - Ist die Administration eingeschränkt (eigener Hostname, Netzwerkregel oder Ähnliches)
-  ([Die Administration einschränken](../../../../en/us/help/hosting/security/restricting-the-administration.md))?
-- Ist die Website jedes Kunden von den anderen isoliert ([Mandantentrennung](../../../../en/us/help/hosting/security/multi-tenant-isolation.md))?
-- Führen Sie vor dem Go-live und regelmäßig eine Sicherheitsüberprüfung durch ([Sicherheitsüberprüfung](../../../../en/us/help/hosting/checklists/security-review.md))?
+  ([Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md))?
+- Ist die Website jedes Kunden von den anderen isoliert ([Mandantentrennung](../../hosting/sicherheit/trennung-von-mandanten.md))?
+- Führen Sie vor dem Go-live und regelmäßig eine Sicherheitsüberprüfung durch ([Sicherheitsüberprüfung](../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md))?
 - Welche Ihrer Mitarbeitenden haben Konten in unserer Administration?
 
 ## Support
 
 - Welche Kanäle, welche Zeiten, welche Zeitzone?
 - Wo verläuft die Grenze zwischen Hosting-Support und Anwendungs-Support? Der Support-Leitfaden für Hoster empfiehlt,
-  diese Grenze in die Bedingungen zu schreiben ([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)).
+  diese Grenze in die Bedingungen zu schreiben ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)).
 - Was brauchen Sie von uns in einer Meldung? (Ein guter Hoster fragt nach Seite, Uhrzeit und Fehlerreferenz.)
 
 ## Ausstieg
 
 - In welchem Format und wie schnell erhalten wir einen vollständigen Export: Datenbank, Dateien, Einstellungen, Versionen
-  ([Ausscheiden eines Kunden](../../../../en/us/help/hosting/checklists/customer-offboarding.md))?
+  ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md))?
 - Sind Domain und DNS auf unseren Namen eingetragen?
 - Was wird gelöscht, nachdem wir gegangen sind, und erhalten wir eine Bestätigung?
 
 ## Die Antworten aufbewahren
 
 Bewahren Sie die Antworten schriftlich und datiert neben dem Vertrag auf. Ein guter Hoster beantwortet die meisten
-davon innerhalb weniger Tage aus seinen eigenen Unterlagen; die [monatliche Checkliste für den Betrieb](../../../../en/us/help/hosting/checklists/monthly-operations.md)
+davon innerhalb weniger Tage aus seinen eigenen Unterlagen; die [monatliche Checkliste für den Betrieb](../../hosting/checklisten/checkliste-fuer-den-monatlichen-betrieb.md)
 im Bereich für Hosting zeigt, was ein solcher Hoster jeden Monat prüft.
 
 ## Verwandte Seiten
