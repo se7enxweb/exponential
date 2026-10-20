@@ -76,7 +76,7 @@ Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheid
 
 > **Hinweis**
 > Exponential steht unter der GPL. Ein Partner, der eine Website baut und Ihnen den Code übergibt, verbreitet ihn an Sie,
-> und Sie erhalten die Rechte der GPL, einschließlich des Quellcodes ([Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md)).
+> und Sie erhalten die Rechte der GPL, einschließlich des Quellcodes ([Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md)).
 > Das Eigentum an Designs und Inhalten, die für Sie erstellt wurden, ist eine Vertragsfrage: Vereinbaren Sie es schriftlich.
 
 ## Verwandte Seiten

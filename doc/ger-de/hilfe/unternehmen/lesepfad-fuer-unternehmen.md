@@ -1,0 +1,131 @@
+---
+title: Lesepfad für Unternehmen
+audience: businesses, project-manager
+category: business-solutions
+order: 2
+summary: Die Reihenfolge, in der Sie den Bereich Unternehmen lesen, in vier Stufen (verstehen, entscheiden, planen, betreiben), mit einem kurzen Pfad für vielbeschäftigte Inhaber und längeren Pfaden für jede Art von Organisation.
+keywords: Lesepfad, Reihenfolge, Lernpfad, wo anfangen, Stufen, entscheiden, planen, betreiben, Inhaber, Führungskraft, Shop, Intranet, Extranet, Mitgliederwebsite, gemeinnützige Organisation, Bibliothek, reading path, order, learning path, where to begin, stages, decide, plan, run, owner, manager, store, member site, non-profit, library
+type: help
+---
+# Lesepfad für Unternehmen
+
+Der Bereich Unternehmen hat viele Seiten, weil Organisationen sich unterscheiden. Sie brauchen nicht alle. Diese Seite
+gibt die Reihenfolge an, die für die meisten Leser funktioniert: einen kurzen Pfad für einen vielbeschäftigten
+Inhaber, die vier Stufen, die alle durchlaufen, und die zusätzlichen Seiten für jede Art von Organisation.
+
+## Inhalt
+
+1. [Der Einstundenpfad für vielbeschäftigte Inhaber](#der-einstundenpfad-für-vielbeschäftigte-inhaber)
+2. [Stufe 1: verstehen](#stufe-1-verstehen)
+3. [Stufe 2: entscheiden](#stufe-2-entscheiden)
+4. [Stufe 3: planen](#stufe-3-planen)
+5. [Stufe 4: betreiben](#stufe-4-betreiben)
+6. [Zusätzliche Seiten für jede Art von Organisation](#zusätzliche-seiten-für-jede-art-von-organisation)
+7. [Wer was lesen sollte](#wer-was-lesen-sollte)
+
+## Der Einstundenpfad für vielbeschäftigte Inhaber
+
+Sechs Seiten, jeweils etwa zehn Minuten:
+
+1. [Unternehmen: hier beginnen](unternehmen-hier-beginnen.md)
+2. [Warum Unternehmen sich auf Exponential verlassen](warum-unternehmen-sich-auf-exponential-verlassen.md)
+3. [Wie Unternehmen mit Exponential online verkaufen](wie-unternehmen-online-verkaufen.md)
+4. Die README Ihres eigenen Bereichs, gefunden mit [Welcher Bereich passt zu Ihrer Organisation?](welcher-bereich-zu-ihrer-organisation-passt.md)
+5. [Die Rendite der Stabilität](kosten/rendite-der-stabilitaet.md)
+6. [Hosting auswählen](auswahl/hosting-auswaehlen.md)
+
+Nach dieser Stunde wissen Sie, ob Sie weitermachen, und können die Planungsstufe an einen Projektleiter übergeben.
+
+## Stufe 1: verstehen
+
+Ziel: wissen, was Exponential ist und was es für Ihre Art von Organisation leistet.
+
+| Lesen | Warum |
+|---|---|
+| [Warum Unternehmen sich auf Exponential verlassen](warum-unternehmen-sich-auf-exponential-verlassen.md) | Die Gründe, jeder mit seiner Quelle |
+| [Welcher Bereich passt zu Ihrer Organisation?](welcher-bereich-zu-ihrer-organisation-passt.md) | Ihre Bereiche finden |
+| [Wie Unternehmen online verkaufen](wie-unternehmen-online-verkaufen.md) | Website, Apps und Netzwerke |
+| [Glossar für Unternehmen](glossar-fuer-unternehmen.md) | Die Begriffe, die im Rest des Bereichs verwendet werden |
+| [Warum Stabilität wichtig ist](../../../eng-us/help/businesses/reliability/why-stability-matters.md) | Was Stabilität wert ist |
+
+## Stufe 2: entscheiden
+
+Ziel: eine Entscheidung für ein Pilotprojekt, mit verstandenen Kosten und Risiken.
+
+| Lesen | Warum |
+|---|---|
+| [Gesamtbetriebskosten](kosten/gesamtbetriebskosten.md) | Alle Kosten über Jahre, nicht nur der Aufbau |
+| [Wofür Sie nicht bezahlen](kosten/wofuer-sie-nicht-bezahlen.md) | Die Lizenz und ihre Folgen |
+| [Rendite der Stabilität](kosten/rendite-der-stabilitaet.md) und ein durchgerechnetes Beispiel: [Shop](kosten/durchgerechnetes-beispiel-kleiner-shop.md), [Intranet](kosten/durchgerechnetes-beispiel-intranet.md) oder [gemeinnützige Organisation](kosten/durchgerechnetes-beispiel-gemeinnuetzige-organisation.md) | Die Rechnung mit Ihren Zahlen |
+| [Sicherheitsgrundlagen für Unternehmen](../../../eng-us/help/businesses/security/security-basics-for-businesses.md) | Worum Sie sich kümmern müssen |
+| [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md) | Personenbezogene Daten (Grundlagen, keine Rechtsberatung) |
+| [Bewertungsbogen für Anbieter](../../../eng-us/help/businesses/templates/vendor-evaluation-scorecard.md) | Optionen auf dem Papier vergleichen |
+
+## Stufe 3: planen
+
+Ziel: eine Projektbeschreibung, ein Hoster und ein Partner.
+
+| Lesen | Warum |
+|---|---|
+| [Vorlage für Projektbeschreibungen](../../../eng-us/help/businesses/templates/project-brief-template.md) | Aufschreiben, was Sie brauchen |
+| [Checkliste Anforderungen](../../../eng-us/help/businesses/templates/requirements-checklist.md) | Nichts vergessen |
+| [Hosting auswählen](auswahl/hosting-auswaehlen.md) und [Hosting-Modelle im Vergleich](auswahl/hosting-modelle-im-vergleich.md) | Wo es läuft |
+| [Einen Partner auswählen](auswahl/einen-partner-auswaehlen.md) und [Fragen an einen Partner](auswahl/fragen-an-einen-partner.md) | Wer es baut und pflegt |
+| [Grundlagen zu Verträgen und SLAs](auswahl/grundlagen-zu-vertraegen-und-slas.md) | Was Sie vereinbaren |
+| [Ein Exponential-Projekt planen](../fuehrung/ein-exponential-projekt-planen.md) | An den Projektleiter übergeben |
+
+## Stufe 4: betreiben
+
+Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
+
+| Lesen | Warum |
+|---|---|
+| [Checkliste Go-live](../../../eng-us/help/businesses/templates/go-live-checklist.md) | Der Tag des Starts |
+| [Verfügbarkeit in der Praxis](../../../eng-us/help/businesses/reliability/uptime-practice.md) | Tägliche Gewohnheiten |
+| [Backups, die sich wiederherstellen lassen](../../../eng-us/help/businesses/reliability/backups-that-restore.md) und [Wiederherstellungsübungen](../../../eng-us/help/businesses/reliability/restore-drills.md) | Das eine, was Sie rettet |
+| [Health Checks und Monitoring](../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md) | Es wissen, bevor die Kunden es merken |
+| [Störungsbehandlung für kleine Teams](../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md) | Wenn es trotzdem passiert |
+| [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) | Jedes Release |
+| [Monatliche Betriebscheckliste](../../../eng-us/help/businesses/templates/monthly-operations-checklist.md) und [Checkliste für den Jahresrückblick](../../../eng-us/help/businesses/templates/annual-review-checklist.md) | Die Routine |
+
+## Zusätzliche Seiten für jede Art von Organisation
+
+| Organisation | In dieser Reihenfolge lesen |
+|---|---|
+| Online-Shop | [README Shops](../../../eng-us/help/businesses/stores/README.md), [Shop-Planung](../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md), [was der eingebaute Shop kann](../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md), [Zahlungsanbieter](../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md), [Checkliste für den Shop-Start](../../../eng-us/help/businesses/stores/store-launch-checklist.md) |
+| Intranet | [README Intranets](intranets/README.md), [Intranet planen](../../../eng-us/help/businesses/intranets/intranet-planning.md), [Abteilungen, Rollen und Sektionen](intranets/abteilungen-rollen-und-sektionen.md), [Checkliste für die Einführung](../../../eng-us/help/businesses/intranets/intranet-rollout-checklist.md) |
+| Extranet oder Partnerportal | [README Extranets](extranets/README.md), [Partnerportal planen](extranets/partnerportal-planen.md), [Registrierung und Freigabe](extranets/registrierung-und-kontofreigabe.md), [Checkliste für den Start](extranets/checkliste-fuer-den-extranet-start.md) |
+| Mitgliederorganisation | [README Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md), [Mitgliederwebsite planen](../../../eng-us/help/businesses/members/member-site-planning.md), [Checkliste für Mitgliederwebsites](../../../eng-us/help/businesses/members/member-site-checklist.md) |
+| Herausgeber eines Newsletters | [README Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Einen Newsletter planen](../../../eng-us/help/businesses/newsletters/newsletter-planning.md), [Opt-in und Einwilligung](../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md) |
+| Bibliothek oder Katalog | [README Bibliotheken](../../../eng-us/help/businesses/libraries/README.md), [Katalog planen](../../../eng-us/help/businesses/libraries/catalog-planning.md), [Katalogsuche](../../../eng-us/help/businesses/libraries/catalog-search.md) |
+| Gemeinnützige Organisation | [README Gemeinnützige](../../../eng-us/help/businesses/nonprofits/README.md), [Website-Planung für gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md), [Betrieb mit kleinem Budget](../../../eng-us/help/businesses/nonprofits/low-budget-operations.md) |
+| Kleine Gruppe oder Verein | [README Vereine](vereine/README.md), [Übergabe bei Wechsel der Ehrenamtlichen](vereine/uebergabe-bei-wechsel-der-ehrenamtlichen.md) |
+| Mehrere Marken | [README Multisite](../../../eng-us/help/businesses/multisite/README.md), [Mehrere Marken planen](../../../eng-us/help/businesses/multisite/multi-brand-planning.md) |
+| Mehrere Sprachen | [README Mehrsprachig](../../../eng-us/help/businesses/multilingual/README.md), [Übersetzungsablauf](../../../eng-us/help/businesses/multilingual/translation-workflow.md) |
+| Mobile App oder andere Systeme | [README Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md), [Mobile Strategie](../../../eng-us/help/businesses/mobile-and-headless/mobile-strategy.md), [Zuverlässigkeit des App-Backends](../../../eng-us/help/businesses/mobile-and-headless/app-backend-reliability.md) |
+| Behörde | Der eigene Bereich [Behörden](../../../eng-us/help/government/government-start-here.md) |
+
+## Wer was lesen sollte
+
+| Person | Stufen | Danach |
+|---|---|---|
+| Inhaber oder Geschäftsführer | 1 und 2 | Der Einstundenpfad reicht für die Entscheidung |
+| Projektleiter | 2 und 3 | [Projektleiter: hier beginnen](../fuehrung/projektleiter-hier-beginnen.md) |
+| Person, die die Website betreiben wird | 4 | [Hosting-Anbieter: hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md) enthält die technischen Einzelheiten |
+| Entwickler oder Website-Ersteller | 3 und 4 | [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md), [Anwendungsentwickler](../../../eng-us/help/creators/app-creators/app-creators-start-here.md) |
+| Redakteure | Nach dem Start | [Erste Schritte](../erste-schritte.md), [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md) |
+
+## Verwandte Seiten
+
+- [Unternehmen: hier beginnen](unternehmen-hier-beginnen.md)
+- [FAQ für Unternehmen](faq-fuer-unternehmen.md)
+- [Der Lesepfad für Führungskräfte](../fuehrung/lesepfad-fuer-fuehrungskraefte.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
+Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
+Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

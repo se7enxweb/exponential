@@ -50,7 +50,7 @@ Ihr Hoster und Ihr Partner haben möglicherweise Administratorkonten auf Ihrer W
 - [ ] Wenn der Vertrag endet, werden ihre Konten deaktiviert; die Checkliste für das Ausscheiden von Kunden für Hoster
       sagt, „dem Kunden mitzuteilen, welche Konten die eigenen waren“ ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)).
 - [ ] Hosting-Konten, die Domain und der Administratorzugang gehören Ihnen oder werden auf Anfrage übergeben
-      ([Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md)).
+      ([Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md)).
 
 ## Wenn Personal kommt oder geht
 

@@ -19,7 +19,7 @@ Die Reihenfolge, in der ein Intranet-Team seine Website kennenlernt. Jeder Schri
 | 2 | [Konten und Anmeldung](../../konten-und-anmeldung.md) | Alle | Anmeldung und Ihr Konto |
 | 3 | [Konten, Passwörter und zweistufige Anmeldung](../alltag/konten-passwoerter-und-zweistufige-anmeldung.md) | Intranet-Verantwortliche | Sichere Konten für jeden Redakteur |
 | 4 | [Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md) | Intranet-Verantwortliche | Redakteure und Leser der Abteilungen |
-| 5 | [Abteilungen, Rollen und Sektionen](../../../../eng-us/help/businesses/intranets/departments-roles-and-sections.md) | Intranet-Verantwortliche, IT | Wie Abteilungen getrennt werden |
+| 5 | [Abteilungen, Rollen und Sektionen](../../unternehmen/intranets/abteilungen-rollen-und-sektionen.md) | Intranet-Verantwortliche, IT | Wie Abteilungen getrennt werden |
 | 6 | [Inhalte bearbeiten](../../inhalte-bearbeiten.md) und [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) | Redakteure der Abteilungen | Seiten aktuell halten |
 | 7 | [Medien und Uploads](../../medien-und-uploads.md) | Redakteure der Abteilungen | Dokumente und Bilder |
 
@@ -29,7 +29,7 @@ Die Reihenfolge, in der ein Intranet-Team seine Website kennenlernt. Jeder Schri
 |---|---|---|---|
 | 8 | [Neuigkeiten und Ankündigungen](../../../../eng-us/help/businesses/intranets/news-and-announcements.md) | Kommunikation | Neuigkeiten für Mitarbeitende |
 | 9 | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md) | Intranet-Verantwortliche | Geprüft, bevor es erscheint |
-| 10 | [Dokumente und Dateibibliotheken](../../../../eng-us/help/businesses/intranets/documents-and-file-libraries.md) | Redakteure der Abteilungen | Dokumente, die Menschen finden |
+| 10 | [Dokumente und Dateibibliotheken](../../unternehmen/intranets/dokumente-und-dateibibliotheken.md) | Redakteure der Abteilungen | Dokumente, die Menschen finden |
 | 11 | [Suchen](../../suchen.md) und [Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md) | Alle | Dinge finden |
 | 12 | [Neue Mitarbeitende einarbeiten](../alltag/neue-mitarbeitende-einarbeiten.md) | Intranet-Verantwortliche, Personalabteilung | Neue Mitarbeitende am ersten Tag startklar |
 | 13 | [Ausscheiden von Mitarbeitenden](../alltag/ausscheiden-von-mitarbeitenden.md) | Intranet-Verantwortliche, Personalabteilung | Ausscheidende an ihrem letzten Tag deaktiviert |

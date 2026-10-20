@@ -90,7 +90,7 @@ Bitten Sie Ihren Administrator oder Hoster nach dem Vorfall um diese Fakten; Sie
 
 Übernehmen Sie die Maßnahmen in Ihre regelmäßige Routine: die [Zuverlässigkeits-Scorecard](../../../../eng-us/help/businesses/reliability/reliability-scorecard.md)
 und das [Risikoregister](../../fuehrung/risikomanagement.md). Wenn der Vorfall Sie Geld gekostet hat, hilft Ihnen das
-[Arbeitsblatt zu den Kosten von Ausfällen](../../../../eng-us/help/businesses/costs/cost-of-downtime-worksheet.md), für die nächste
+[Arbeitsblatt zu den Kosten von Ausfällen](../../unternehmen/kosten/arbeitsblatt-kosten-eines-ausfalls.md), für die nächste
 Vertragsverhandlung eine Zahl zu nennen.
 
 ## Verwandte Seiten

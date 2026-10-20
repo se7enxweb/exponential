@@ -68,12 +68,12 @@ NEXT YEAR
 | Überprüfungen | [Jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md), [Checkliste für die Jahresüberprüfung](../../../../../eng-us/help/businesses/templates/annual-review-checklist.md) |
 | Release-Linie und PHP | `SECURITY.md`, [Release-Linie und Support-Richtlinie](../../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md), [Runbook für PHP-Upgrades](../../../hosting/runbooks/php-upgrade.md) |
 | Upgrade-Prüfung | [Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) |
-| Verträge | [Grundlagen zu Verträgen und SLAs](../../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md), [Scorecard zur Bewertung von Anbietern](../../../../../eng-us/help/businesses/templates/vendor-evaluation-scorecard.md) |
+| Verträge | [Grundlagen zu Verträgen und SLAs](../../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md), [Scorecard zur Bewertung von Anbietern](../../../../../eng-us/help/businesses/templates/vendor-evaluation-scorecard.md) |
 | Zugriff | [Zugriffsüberprüfungen](../../../../../eng-us/help/businesses/security/access-reviews.md) |
 | Datenschutz | [DSGVO-Grundlagen](../../../../../eng-us/help/businesses/security/gdpr-basics.md), [Datenaufbewahrung und Löschung](../../../../../eng-us/help/businesses/security/data-retention-and-deletion.md) |
 | Barrierefreiheit | [Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
 | Shop | [Mehrwertsteuer-Checkliste](../../handel/mehrwertsteuer-checkliste.md), [Kartenzahlungen und PCI](../../handel/kartenzahlungen-und-pci.md), [Ländergruppen und Regionen](../../../../../eng-us/help/businesses/stores/country-groups-and-regions.md) |
-| Budget | [Budget für Upgrades und Wartung](../../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md) |
+| Budget | [Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md) |
 
 > **Hinweis**
 > Die Zeilen zu Datenschutz und Verträgen sind Erinnerungen, keine Rechtsberatung. Bringen Sie sie zu Ihrem Anwalt oder

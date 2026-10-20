@@ -11,7 +11,7 @@ type: help
 
 Diese Seite hilft einem Betreiber, einen Vertrag mit einem Hoster oder Partner vorzubereiten und zu lesen. Sie ersetzt
 keine Rechtsberatung: Lassen Sie jeden Vertrag von Ihrer Rechtsberatung prüfen. Die ausführliche Referenz für
-Unternehmen ist [Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md); diese Seite
+Unternehmen ist [Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md); diese Seite
 ist die Arbeitszusammenfassung des Betreibers und verweist auf die Vorlagen in diesem Ordner.
 
 > **Warnung**
@@ -21,7 +21,7 @@ ist die Arbeitszusammenfassung des Betreibers und verweist auf die Vorlagen in d
 
 ## Was abzudecken ist
 
-Aus [Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md):
+Aus [Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md):
 
 | Thema | Die Frage, die es beantwortet |
 |---|---|
@@ -45,7 +45,7 @@ Aus [Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choos
 | Wiederherstellungszeit (RTO) | Backup-Verfahren, Datenmenge, getestete Wiederherstellungen | Die Dauer des letzten Wiederherstellungstests |
 | Sicherheitsupdates | Seinem Update-Verfahren | Die Version der Website und die Deployment-Einträge des Prüfprotokolls |
 
-Quelle: [Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md), aus
+Quelle: [Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md), aus
 [SLA-Optionen](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md).
 
 > **Tipp**
@@ -56,7 +56,7 @@ Quelle: [Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/c
 ## Die Level wählen
 
 Strengere Level kosten mehr. Passen Sie sie an das an, was Ausfallzeit Ihre Organisation kostet; das
-[Arbeitsblatt zu den Kosten von Ausfällen](../../../../eng-us/help/businesses/costs/cost-of-downtime-worksheet.md) hilft dabei. Ein Level,
+[Arbeitsblatt zu den Kosten von Ausfällen](../../unternehmen/kosten/arbeitsblatt-kosten-eines-ausfalls.md) hilft dabei. Ein Level,
 das Sie nie brauchen, ist verschwendetes Geld, und ein Level, für das Ihr Anbieter kein Personal hat, ist nur ein
 Versprechen auf Papier. Partnern wird geraten, einem Kunden nie „eine kürzere Reaktion zu versprechen, als Sie mit
 Ihrem eigenen Personal leisten können“ ([Support-Stufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md));
@@ -66,7 +66,7 @@ es ist fair zu fragen, wie sie das Versprochene personell abdecken.
 
 - **Keine Lizenzgebühr** für Exponential selbst; ein Vertrag sollte dafür keine berechnen.
 - **Die GPL enthält keine Gewährleistung**; eine Gewährleistung, eine garantierte Reaktion oder eine Haftungsabdeckung
-  kommt nur aus Ihrem Vertrag (`LICENSE.md`; [Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md)).
+  kommt nur aus Ihrem Vertrag (`LICENSE.md`; [Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md)).
 - **Vereinbaren Sie das Eigentum an individueller Arbeit schriftlich**, und fragen Sie Ihre Beratung, was die GPL für
   Ihre Pläne bedeutet.
 - **Erweiterungen** haben jeweils ihre eigene Lizenz, angezeigt unter **Info > Über**.

@@ -74,9 +74,9 @@ Signed: ______________________
 - Für welche Funktion haben wir beim Bau bezahlt und nutzen sie nicht?
 - Welche Kosten sind gestiegen, ohne dass es eine Entscheidung gab?
 - Wenn die Website einen Tag ausfiele, was würde uns das kosten
-  ([Arbeitsblatt zu den Kosten von Ausfällen](../../../../eng-us/help/businesses/costs/cost-of-downtime-worksheet.md))?
+  ([Arbeitsblatt zu den Kosten von Ausfällen](../../unternehmen/kosten/arbeitsblatt-kosten-eines-ausfalls.md))?
 - Sind wir noch auf einem unterstützten Release, und ist die Update-Arbeit des nächsten Jahres im Budget
-  ([Budget für Upgrades und Wartung](../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md))?
+  ([Budget für Upgrades und Wartung](../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md))?
 
 > **Tipp**
 > Bewahren Sie die ausgefüllte Überprüfung zusammen mit der des Vorjahres auf. Drei Jahre nebeneinander zeigen mehr als

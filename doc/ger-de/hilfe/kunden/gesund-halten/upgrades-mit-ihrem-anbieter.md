@@ -24,7 +24,7 @@ Schreiben Sie diese Punkte in den Vertrag oder die Support-Vereinbarung (siehe
 |---|---|
 | Wer aktualisiert | Ihr Anbieter, Ihr eigener Entwickler oder beide, mit einer klaren Grenze |
 | Wie oft | Mindestens so oft, wie neue Releases 6.0.x erscheinen ([Release-Linie und Support](release-linie-und-support.md)) |
-| Sicherheits-Releases | Innerhalb welcher Zeit nach dem Release eine Sicherheitskorrektur eingespielt wird; fordern Sie, dass „eine veröffentlichte Korrektur innerhalb einer bestimmten Zeit eingespielt wird“ ([Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md)) |
+| Sicherheits-Releases | Innerhalb welcher Zeit nach dem Release eine Sicherheitskorrektur eingespielt wird; fordern Sie, dass „eine veröffentlichte Korrektur innerhalb einer bestimmten Zeit eingespielt wird“ ([Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md)) |
 | PHP-Updates | Wer die Website auf eine neuere PHP-Version umstellt, und wann ([Runbook für PHP-Upgrades](../../hosting/runbooks/php-upgrade.md)) |
 | Staging | Ob jedes Upgrade zuerst auf einer Kopie ausprobiert wird |
 | Zeitfenster | Wann geplante Arbeiten stattfinden dürfen und wie weit im Voraus Sie informiert werden |
@@ -78,5 +78,5 @@ warum ([Upgrade-Prüfung und Dateikonsistenz](../../../../eng-us/help/businesses
 - [Wie Updates funktionieren](wie-updates-funktionieren.md)
 - [Was Sie Ihren Hoster fragen sollten](was-sie-ihren-hoster-fragen-sollten.md)
 - [Was Sie Ihren Partner fragen sollten](was-sie-ihren-partner-fragen-sollten.md)
-- [Budget für Upgrades und Wartung](../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)
+- [Budget für Upgrades und Wartung](../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

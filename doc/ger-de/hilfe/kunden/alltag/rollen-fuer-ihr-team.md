@@ -68,7 +68,7 @@ Das [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md) macht aus dieser 
 Eine Rolle kann **mit einer Einschränkung** zugewiesen werden: nur in einem Teilbaum oder nur in einer Sektion. Eine
 gemeinsame Rolle Editor, die der Gruppe jeder Abteilung mit einer Einschränkung auf die Sektion zugewiesen wird,
 bedeutet eine einzige Rolle zu pflegen statt einer pro Team
-([Abteilungen, Rollen und Sektionen](../../../../eng-us/help/businesses/intranets/departments-roles-and-sections.md)). Die Richtlinien
+([Abteilungen, Rollen und Sektionen](../../unternehmen/intranets/abteilungen-rollen-und-sektionen.md)). Die Richtlinien
 zum Bearbeiten, Übersetzen und Anlegen von Inhalten lassen sich außerdem nach Sprache einschränken
 ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)).
 

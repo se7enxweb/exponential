@@ -31,7 +31,7 @@ technische, aber die Entscheidungen auf dieser Seite treffen Sie.
 | RSS-, Atom- und Podcast-Feeds | andere Websites, Aggregatoren und Verzeichnisse, die Ihre Neuigkeiten lesen | [RSS- und Podcast-Feeds](rss-und-podcast-feeds.md) |
 | RSS-Import | den Feed einer anderen Website als Inhalt übernehmen | [RSS-Feeds](../../../anleitungen/rss-feeds.md) |
 | Die Erweiterung `syndication` | Inhalte zwischen Installationen teilen, in eine Richtung oder in beide | [Feeds und Syndikation](../../../../eng-us/help/businesses/mobile-and-headless/feeds-and-syndication.md) |
-| Anmeldung über ein Verzeichnis (LDAP und andere) | Mitarbeitende melden sich mit ihrem Firmenkonto an | [Anmeldung über Verzeichnisse und LDAP](../../../../eng-us/help/businesses/intranets/directory-sign-in-and-ldap.md) |
+| Anmeldung über ein Verzeichnis (LDAP und andere) | Mitarbeitende melden sich mit ihrem Firmenkonto an | [Anmeldung über Verzeichnisse und LDAP](../../unternehmen/intranets/verzeichnisanmeldung-und-ldap.md) |
 | Payment-Gateways | die Zahlungen des Shops | [Zahlungsanbieter für Unternehmen](../../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md) |
 | CSV-Export | Formulareinsendungen, Kontenlisten, Listen von Unterelementen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 

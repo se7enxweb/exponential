@@ -107,6 +107,6 @@ oft die günstigste Verbesserung, die Sie vornehmen können.
 
 - [Funktionen, die Kunden oft übersehen](oft-uebersehene-funktionen.md)
 - [Was der eingebaute Shop leistet](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md)
-- [Wofür Sie nicht bezahlen](../../../../eng-us/help/businesses/costs/what-you-do-not-pay-for.md)
+- [Wofür Sie nicht bezahlen](../../unternehmen/kosten/wofuer-sie-nicht-bezahlen.md)
 - [Jährliche Überprüfung des Nutzens](jaehrliche-ueberpruefung-des-nutzens.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

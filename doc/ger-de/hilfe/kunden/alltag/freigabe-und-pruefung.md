@@ -94,6 +94,6 @@ Veröffentlichungsvorgang aus, sodass die Freigabe sie zurückhält ([Exponentia
 ## Verwandte Seiten
 
 - [Workflows](../../../anleitungen/workflows.md)
-- [Freigabe-Workflows für Intranets](../../../../eng-us/help/businesses/intranets/approval-workflows.md)
+- [Freigabe-Workflows für Intranets](../../unternehmen/intranets/freigabe-workflows.md)
 - [Entwürfe, Versionen und Rückgängigmachen](entwuerfe-versionen-und-rueckgaengig.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

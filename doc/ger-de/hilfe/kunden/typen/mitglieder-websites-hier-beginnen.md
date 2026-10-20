@@ -67,5 +67,5 @@ Folgen Sie dem [Lesepfad für Mitglieder-Websites](lesepfad-mitglieder-websites.
 - [Lesepfad für Mitglieder-Websites](lesepfad-mitglieder-websites.md)
 - [Checkliste für Mitglieder-Websites (Unternehmen)](../../../../eng-us/help/businesses/members/member-site-checklist.md)
 - [Kommunikation mit Mitgliedern](../../../../eng-us/help/businesses/members/member-communications.md)
-- [Vereine](../../../../eng-us/help/businesses/associations/README.md)
+- [Vereine](../../unternehmen/vereine/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

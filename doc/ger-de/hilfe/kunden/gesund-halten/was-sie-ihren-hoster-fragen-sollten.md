@@ -13,7 +13,7 @@ Ihr Hoster betreibt den Server, PHP, die Datenbank und oft auch die Updates. Die
 auf, mit dem, wie eine gute Antwort aussieht. Verwenden Sie sie, wenn Sie einen Hoster auswählen (siehe auch
 [Einen Hoster auswählen](../partner-und-hoster/einen-hoster-auswaehlen.md)), und einmal im Jahr für den Hoster, den Sie haben
 ([Ihren Anbieter jedes Jahr überprüfen](../partner-und-hoster/anbieter-jedes-jahr-ueberpruefen.md)). Die Fragen an einen
-neuen Hoster vor der Unterschrift stehen auch unter [Hosting auswählen](../../../../eng-us/help/businesses/choosing/choosing-hosting.md).
+neuen Hoster vor der Unterschrift stehen auch unter [Hosting auswählen](../../unternehmen/auswahl/hosting-auswaehlen.md).
 
 ## Die Plattform
 

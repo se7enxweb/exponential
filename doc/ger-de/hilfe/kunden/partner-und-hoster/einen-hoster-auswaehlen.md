@@ -11,13 +11,13 @@ type: help
 
 Diese Seite ist für einen Betreiber, der bereits eine Exponential-Website betreibt und sie umziehen möchte, oder der
 einen Hoster für eine Website braucht, die ein Partner gerade baut. Der vollständige Leitfaden für Unternehmen ist
-[Hosting auswählen](../../../../eng-us/help/businesses/choosing/choosing-hosting.md), und die Hosting-Modelle werden unter
-[Hosting-Modelle im Vergleich](../../../../eng-us/help/businesses/choosing/hosting-models-compared.md) verglichen. Diese Seite ergänzt,
+[Hosting auswählen](../../unternehmen/auswahl/hosting-auswaehlen.md), und die Hosting-Modelle werden unter
+[Hosting-Modelle im Vergleich](../../unternehmen/auswahl/hosting-modelle-im-vergleich.md) verglichen. Diese Seite ergänzt,
 was zählt, wenn eine Website, ihre Daten und ihre Geschichte bereits existieren.
 
 ## Was die Website braucht
 
-Aus [Hosting auswählen](../../../../eng-us/help/businesses/choosing/choosing-hosting.md):
+Aus [Hosting auswählen](../../unternehmen/auswahl/hosting-auswaehlen.md):
 
 | Bedarf | Mindestens |
 |---|---|
@@ -36,7 +36,7 @@ Hoster sollte mindestens dasselbe bieten, oder einen geplanten Upgrade-Pfad.
 
 ## Die Fragen, die über das Modell entscheiden
 
-Aus [Hosting auswählen](../../../../eng-us/help/businesses/choosing/choosing-hosting.md):
+Aus [Hosting auswählen](../../unternehmen/auswahl/hosting-auswaehlen.md):
 
 | Frage | Wenn ja |
 |---|---|
@@ -47,7 +47,7 @@ Aus [Hosting auswählen](../../../../eng-us/help/businesses/choosing/choosing-ho
 
 > **Tipp**
 > „Die richtige Frage ist nicht nur ‚Welche Technik ist die beste‘, sondern ‚Wer kann sie betreiben, sichern und
-> wiederherstellen‘“ ([Hosting auswählen](../../../../eng-us/help/businesses/choosing/choosing-hosting.md)).
+> wiederherstellen‘“ ([Hosting auswählen](../../unternehmen/auswahl/hosting-auswaehlen.md)).
 
 ## Über die Technik hinaus
 
@@ -72,7 +72,7 @@ entscheiden am häufigsten:
 | Die Ausstiegsbedingungen | Nur die Startbedingungen |
 | Ihre Antwort auf „Wer stellt wieder her, und wie lange hat es beim letzten Mal gedauert?“ | Eine Liste von Funktionen |
 
-Die Kostenseite steht unter [Kostentreiber beim Hosting](../../../../eng-us/help/businesses/costs/hosting-cost-drivers.md).
+Die Kostenseite steht unter [Kostentreiber beim Hosting](../../unternehmen/kosten/kostentreiber-beim-hosting.md).
 
 ## Der Umzug
 

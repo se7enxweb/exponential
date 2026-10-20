@@ -57,7 +57,7 @@ Aus `SECURITY.md`:
 3. „Ein angenommenes Problem wird auf `main` behoben und mit der nächsten Version 6.0.x veröffentlicht.“
 
 Diese erste Antwort ist die einzige Zusage zur Reaktionszeit in den eigenen Dateien des Projekts
-([Grundlagen zu Verträgen und SLAs](../../../../eng-us/help/businesses/choosing/contracts-and-slas-basics.md)).
+([Grundlagen zu Verträgen und SLAs](../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md)).
 
 ## Während Sie auf die Korrektur warten
 

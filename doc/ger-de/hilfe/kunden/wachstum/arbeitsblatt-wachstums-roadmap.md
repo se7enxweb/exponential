@@ -89,7 +89,7 @@ Vor jedem Schritt:
       ([Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md)).
 - [ ] Die Kosten sind mit den Arbeitsblättern aus dem Bereich für Unternehmen geschätzt
       ([Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md),
-      [Gesamtbetriebskosten](../../../../eng-us/help/businesses/costs/total-cost-of-ownership.md)).
+      [Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md)).
 
 ## Teil 5: Auswertung
 

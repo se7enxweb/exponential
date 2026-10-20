@@ -97,5 +97,5 @@ Eine monatliche Routine:
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
 - [Formulareinsendungen lesen und exportieren](../../../../eng-us/help/creators/website-creators/form-submissions.md)
-- [Formulare und Feedback von Mitgliedern](../../../../eng-us/help/businesses/associations/forms-and-member-feedback.md)
+- [Formulare und Feedback von Mitgliedern](../../unternehmen/vereine/formulare-und-rueckmeldungen-von-mitgliedern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

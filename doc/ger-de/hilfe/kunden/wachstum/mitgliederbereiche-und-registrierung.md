@@ -27,7 +27,7 @@ entscheiden und was Ihr Team jeden Monat tut.
 
 | Frage | Optionen | Lesen Sie |
 |---|---|---|
-| Wer darf sich registrieren? | jeder, oder nur Personen, die Sie genehmigen | [Registrierung und Genehmigung von Konten](../../../../eng-us/help/businesses/extranets/registration-and-account-approval.md) |
+| Wer darf sich registrieren? | jeder, oder nur Personen, die Sie genehmigen | [Registrierung und Genehmigung von Konten](../../unternehmen/extranets/registrierung-und-kontofreigabe.md) |
 | Wie wird ein Konto bestätigt? | ein Link in einer E-Mail (`VerifyUserType=email`) | [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md) |
 | Was sehen Mitglieder, was Besucher nicht sehen? | eine Sektion nur für Mitglieder | [Inhalte nur für Mitglieder](../../../../eng-us/help/businesses/members/members-only-content.md) |
 | Welche E-Mails erhalten Mitglieder? | notwendige Konto-E-Mails immer; optionale E-Mails nur, wenn sie sie einschalten | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
@@ -90,5 +90,5 @@ Diese Liste folgt der Checkliste für Website-Ersteller
 
 - [Mitglieder-Websites](../../../../eng-us/help/businesses/members/README.md)
 - [Registrierung von Mitgliedern](../../../../eng-us/help/businesses/members/member-registration.md)
-- [Kunden- und Partnerbereiche](../../../../eng-us/help/businesses/extranets/customer-and-partner-areas.md)
+- [Kunden- und Partnerbereiche](../../unternehmen/extranets/kunden-und-partnerbereiche.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

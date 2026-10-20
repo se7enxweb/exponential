@@ -11,8 +11,8 @@ type: help
 
 Sie brauchen vielleicht einen Partner, weil die Website wächst, weil der bisherige geht oder weil Sie eine zweite
 Meinung möchten. Diese Seite ist die kurze Fassung für Betreiber einer bereits bestehenden Website. Der vollständige
-Auswahlprozess für Unternehmen steht unter [Einen Partner auswählen](../../../../eng-us/help/businesses/choosing/choosing-a-partner.md),
-die Gesprächsfragen unter [Fragen an einen Partner](../../../../eng-us/help/businesses/choosing/questions-to-ask-a-partner.md).
+Auswahlprozess für Unternehmen steht unter [Einen Partner auswählen](../../unternehmen/auswahl/einen-partner-auswaehlen.md),
+die Gesprächsfragen unter [Fragen an einen Partner](../../unternehmen/auswahl/fragen-an-einen-partner.md).
 
 ## Was eine bestehende Website von einem Partner braucht
 
@@ -29,7 +29,7 @@ Ein neuer Partner muss mit dem arbeiten können, was schon da ist:
 
 ## Wo Sie suchen
 
-Aus [Einen Partner auswählen](../../../../eng-us/help/businesses/choosing/choosing-a-partner.md):
+Aus [Einen Partner auswählen](../../unternehmen/auswahl/einen-partner-auswaehlen.md):
 
 - die Seiten des Partnerprogramms auf <https://exponential.earth> und sein Verzeichnis auf share.exponential.earth
   ([Partnerverzeichnisse](../../partner/partnerverzeichnisse.md));
@@ -49,7 +49,7 @@ Sie zeigt, wie der Partner kommuniziert, schätzt und liefert, bevor Sie sich st
 
 ## Warnzeichen
 
-Aus [Einen Partner auswählen](../../../../eng-us/help/businesses/choosing/choosing-a-partner.md):
+Aus [Einen Partner auswählen](../../unternehmen/auswahl/einen-partner-auswaehlen.md):
 
 - Behauptungen über Exponential, die Sie in dessen Dokumentation nicht finden, oder erfundene Kunden und Zahlen.
 - Die Weigerung, Ihnen als Eigentümer den Code, die Datenbank oder den Administratorzugang zu übergeben.

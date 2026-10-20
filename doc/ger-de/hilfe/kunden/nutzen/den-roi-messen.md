@@ -66,7 +66,7 @@ die nun die Website beantwortet.
 - **Gesparte Zeit ist kein gespartes Geld**, es sei denn, die Zeit wird für etwas anderes genutzt. Verwenden Sie einen
   Realisierungsfaktor und sagen Sie, welchen ([Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)).
 - **Fehlende Kosten.** Die Arbeitszeit für Inhalte ist meist der größte Kostenposten und der, der am häufigsten
-  weggelassen wird ([Gesamtbetriebskosten](../../../../eng-us/help/businesses/costs/total-cost-of-ownership.md)).
+  weggelassen wird ([Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md)).
 - **Testdaten.** Testbestellungen und Testeinsendungen blähen die Zahlen auf; entfernen Sie sie.
 
 ## Zusammenfassen
@@ -78,6 +78,6 @@ werden. Bringen Sie sie zur [jährlichen Überprüfung des Nutzens](jaehrliche-u
 
 - [ROI-Beispielannahmen](roi-beispielannahmen.md)
 - [ROI-Arbeitsblatt](roi-arbeitsblatt.md)
-- [Return on Investment von Stabilität](../../../../eng-us/help/businesses/costs/roi-of-stability.md)
+- [Return on Investment von Stabilität](../../unternehmen/kosten/rendite-der-stabilitaet.md)
 - [Betriebskosten für Betreiber](betriebskosten-fuer-betreiber.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -84,7 +84,7 @@ Eine Antwort „Ich glaube schon“ auf eine dieser Fragen ist ein Grund, nächs
 > **Hinweis**
 > Ein veröffentlichtes Release wird nie geändert: Eine Korrektur erreicht Sie als nächstes Release (`SECURITY.md`).
 > Aktuell zu bleiben ist daher der einzige Weg, Korrekturen zu erhalten; planen Sie lieber mehrere kleine Updates im
-> Jahr als ein großes ([Budget für Upgrades und Wartung](../../../../../eng-us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)).
+> Jahr als ein großes ([Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md)).
 
 ## Verwandte Seiten
 
