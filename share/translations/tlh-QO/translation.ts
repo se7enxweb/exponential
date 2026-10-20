@@ -73028,6 +73028,18 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>Exponential Daq tu&apos;Daj Qorghbogh ghommey nuvpu&apos; je: ghom, ghItlh, Suy&apos;, Qorghghach, Sach, boqpu&apos; je.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>jInmol teywI'mey</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>jInmol teywI'</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>teywI'vam Exponential Hal ngoq bID 'oH; %license tIn tlhej.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>DITA yIlI'</translation>
     </message>

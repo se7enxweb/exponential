@@ -74487,6 +74487,18 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Voor organisaties en mensen die hun eigen site op Exponential beheren: team, publiceren, commerce, onderhoud, groei en partners.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>Projectbestanden</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projectbestand</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Dit bestand maakt deel uit van de broncode van Exponential en wordt ermee verspreid onder de %license.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>DITA downloaden</translation>
     </message>

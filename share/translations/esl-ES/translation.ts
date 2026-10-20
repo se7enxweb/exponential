@@ -74696,6 +74696,18 @@ Gracias por tu feedback</translation>
         <translation>Para organizaciones y personas que gestionan su propio sitio en Exponential: equipo, publicación, comercio, mantenimiento, crecimiento y socios.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>Archivos del proyecto</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Archivo del proyecto</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Este archivo forma parte del código fuente de Exponential y se distribuye con él bajo la %license.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>Descargar DITA</translation>
     </message>

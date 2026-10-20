@@ -117,8 +117,13 @@ class expIniEngineTestFixtures
             {
                 if ( !$f->isFile() || $f->isLink() )
                     continue;
+                $rel = substr( $f->getPathname(), strlen( $root ) );
+                // a siteaccess another test is writing at the same time (tests name their temporary ones x1...):
+                // it may be gone before it is read
+                if ( preg_match( '#^settings/siteaccess/x1#', $rel ) )
+                    continue;
                 if ( preg_match( '#\.ini(\.append)?(\.php)?$#', $f->getFilename() ) && strpos( $f->getFilename(), '#' ) === false )
-                    $files[] = substr( $f->getPathname(), strlen( $root ) );
+                    $files[] = $rel;
             }
         }
         sort( $files );

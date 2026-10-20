@@ -80264,6 +80264,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Für Organisationen und Menschen, die ihre eigene Site mit Exponential betreiben: Team, Veröffentlichen, Commerce, Pflege, Wachstum und Partner.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>Projektdateien</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projektdatei</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Diese Datei ist Teil des Quellcodes von Exponential und wird mit ihm unter der %license verbreitet.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>DITA herunterladen</translation>
     </message>

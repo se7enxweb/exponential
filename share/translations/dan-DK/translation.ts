@@ -73938,6 +73938,18 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Til organisationer og personer, der driver deres eget website på Exponential: team, publicering, handel, vedligeholdelse, vækst og partnere.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>Projektfiler</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projektfil</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Denne fil er en del af kildekoden til Exponential og distribueres sammen med den under %license.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>Hent DITA</translation>
     </message>

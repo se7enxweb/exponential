@@ -74544,6 +74544,18 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Pro organizace a lidi, kteří provozují vlastní web na Exponential: tým, publikování, obchod, údržba, růst a partneři.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>Soubory projektu</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Soubor projektu</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Tento soubor je součástí zdrojového kódu Exponential a šíří se s ním pod licencí %license.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>Stáhnout DITA</translation>
     </message>

@@ -74669,6 +74669,18 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Per organizzazioni e persone che gestiscono il proprio sito su Exponential: team, pubblicazione, commercio, manutenzione, crescita e partner.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>File del progetto</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>File del progetto</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Questo file fa parte del codice sorgente di Exponential ed è distribuito con esso secondo la %license.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>Scarica DITA</translation>
     </message>

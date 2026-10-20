@@ -73260,6 +73260,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>برای سازمان‌ها و افرادی که سایت خود را روی Exponential اجرا می‌کنند: تیم، انتشار، تجارت، نگهداری، رشد و شرکا.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>پرونده‌های پروژه</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>پروندهٔ پروژه</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>این پرونده بخشی از کد منبع Exponential است و همراه با آن تحت %license توزیع می‌شود.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>دانلود DITA</translation>
     </message>

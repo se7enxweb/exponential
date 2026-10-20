@@ -73028,6 +73028,18 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Societatibus et hominibus qui situm suum in Exponential regunt: turma, editio, commercium, cura, incrementum et socii.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>Fasciculi operis</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Fasciculus operis</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Hic fasciculus pars est codicis fontis Exponential et cum eo sub %license distribuitur.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>DITA depromere</translation>
     </message>

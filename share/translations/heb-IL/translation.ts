@@ -73059,6 +73059,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>לארגונים ולאנשים המפעילים אתר משלהם ב-Exponential: צוות, פרסום, מסחר, תחזוקה, צמיחה ושותפים.</translation>
     </message>
     <message>
+        <source>Project files</source>
+        <translation>קובצי הפרויקט</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>קובץ פרויקט</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>קובץ זה הוא חלק מקוד המקור של Exponential ומופץ איתו תחת %license.</translation>
+    </message>
+    <message>
         <source>Download DITA</source>
         <translation>הורדת DITA</translation>
     </message>
