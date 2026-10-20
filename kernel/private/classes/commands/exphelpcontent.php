@@ -74,7 +74,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             $this->shutdown( 2 );
             return;
         }
-        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export', 'dita' );
+        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export', 'dita', 'ebooks' );
         if ( !in_array( $action, $known, true ) )
         {
             $cli->error( "Unknown action \"$action\": " . implode( ', ', $known ) . ' (./console exp:help:content --help)' );
@@ -130,13 +130,32 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 case 'dita':
                     $code = $this->dita( $options, $dryRun, $json );
                     break;
+                case 'ebooks':
+                    if ( !\expHelpContentRepository::isInstalled() )
+                    {
+                        $cli->error( 'FAIL: help as content is not installed (./console exp:help:content install -s <siteaccess>)' );
+                        $code = 2;
+                        break;
+                    }
+                    $books = new \expHelpContentEbooks( $common );
+                    $books->build( !empty( $options['manual'] ) ? (string)$options['manual'] : null );
+                    $code = $this->printChanges( array_values( array_filter( $books->changes(), function ( $c ) use ( $json ) {
+                        // skipped manuals are reported, but are no change
+                        return $json || $c['action'] !== 'skip';
+                    } ) ), $json );
+                    foreach ( $json ? array() : $books->changes() as $change )
+                    {
+                        if ( $change['action'] === 'skip' )
+                            $cli->output( sprintf( '%-8s %-8s %s', $change['step'], $change['action'], $change['what'] ) );
+                    }
+                    break;
                 case 'uninstall':
                     $installer = new \expHelpContentInstaller( $common );
                     $installer->uninstall( !empty( $options['with-content'] ) );
                     $code = $this->printChanges( $installer->changes(), $json );
                     break;
             }
-            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita' ), true ) )
+            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita', 'ebooks' ), true ) )
                 \expHelpContentProvider::clearCache();
         }
         catch ( \Exception $e )

@@ -4,7 +4,8 @@
 
    Variables (kernel/private/classes/views/exphelp/manual.php): help_manual (false for the list; else title, subtitle,
    shortdesc, edition, license, authors[], preview), help_manual_toc (nested: kind chapter|topic, title, shortdesc,
-   url, preview, children), help_manuals (title, subtitle, shortdesc, remote_id, edition, preview), help_ebook_formats (epub, pdf), help_dita (the DITA download), help_json_url,
+   url, preview, children), help_manuals (title, subtitle, shortdesc, remote_id, edition, preview), help_ebook_formats (epub, pdf), help_dita (the DITA download), help_ebooks_stored (format, name, url, size, modified,
+   version, node_url: the e-books stored as file objects), help_json_url,
    help_i18n_json.
 
    The same file is in design/admin and design/admin4. *}
@@ -40,6 +41,28 @@
         </ul>
         {if $help_manual.shortdesc|ne( '' )}<p dir="auto">{$help_manual.shortdesc|wash}</p>{/if}
     </header>
+
+    {if $help_ebooks_stored|count}
+    <section class="a4-card" aria-labelledby="exphelp-manual-ebooks">
+        <h2 class="a4-help-section-head" id="exphelp-manual-ebooks">{'E-books'|i18n( 'kernel/exphelp' )}</h2>
+        <p class="a4-meta">{'Built from the released topics each time one of them is released, and kept with their earlier versions.'|i18n( 'kernel/exphelp' )}</p>
+        <div class="a4-table-wrap" role="region" aria-labelledby="exphelp-manual-ebooks" tabindex="0">
+        <table class="a4-table">
+            <thead><tr><th scope="col">{'File'|i18n( 'kernel/exphelp' )}</th><th scope="col">{'Version'|i18n( 'kernel/exphelp' )}</th><th scope="col">{'Size'|i18n( 'kernel/exphelp' )}</th><th scope="col">{'Updated'|i18n( 'kernel/exphelp' )}</th></tr></thead>
+            <tbody>
+            {foreach $help_ebooks_stored as $help_book}
+            <tr>
+                <td><a href={$help_book.url|ezurl}><span class="a4-icon {cond( eq( $help_book.format, 'pdf' ), 'a4-bi-file-earmark-pdf', 'a4-bi-file-earmark' )}" aria-hidden="true"></span> {$help_book.name|wash}</a></td>
+                <td>{if $help_book.node_url|ne( '' )}<a href={$help_book.node_url|ezurl}>{$help_book.version|wash}</a>{else}{$help_book.version|wash}{/if}</td>
+                <td>{$help_book.size|si( byte )}</td>
+                <td>{$help_book.modified|l10n( shortdatetime )}</td>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+        </div>
+    </section>
+    {/if}
 
     <section class="a4-card" aria-labelledby="exphelp-manual-toc">
         <h2 class="a4-help-section-head" id="exphelp-manual-toc">{'Contents'|i18n( 'kernel/exphelp' )}</h2>

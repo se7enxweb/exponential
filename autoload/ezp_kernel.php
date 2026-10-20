@@ -1124,6 +1124,8 @@ return array(
       'expHelpAudience'                                              => 'kernel/classes/help/exphelpaudience.php',
       'expHelpCommitFeed'                                            => 'kernel/classes/help/exphelpcommitfeed.php',
       'expHelpContentDita'                                           => 'kernel/classes/help/content/exphelpcontentdita.php',
+      'expHelpContentEbooks'                                         => 'kernel/classes/help/content/exphelpcontentebooks.php',
+      'expHelpContentEditionProvider'                                => 'kernel/classes/help/content/exphelpcontenteditionprovider.php',
       'expHelpContentExport'                                         => 'kernel/classes/help/content/exphelpcontentexport.php',
       'expHelpContentInstaller'                                      => 'kernel/classes/help/content/exphelpcontentinstaller.php',
       'expHelpContentProvider'                                       => 'kernel/classes/help/content/exphelpcontentprovider.php',

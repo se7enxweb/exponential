@@ -55,6 +55,8 @@ class Manual extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_ebook_formats', $manual ? \expHelpContentExport::formats() : array() );
         // the DITA 1.3 export as a zip: of this manual, or (on the list) of every manual, the topic pool and the glossary
         $tpl->setVariable( 'help_dita', class_exists( 'expHelpContentDita' ) && \expHelpContentDita::canZip() );
+        // the e-books stored as file objects below E-books (rebuilt on release), those the user may read
+        $tpl->setVariable( 'help_ebooks_stored', $manual && class_exists( 'expHelpContentEbooks' ) ? \expHelpContentEbooks::stored( $manual['remote_id'] ) : array() );
         $tpl->setVariable( 'help_json_url', $manual ? ltrim( \expHelp::url( 'context', 'manual/' . $manual['remote_id'] ), '/' ) : '' );
 
         $path = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ),

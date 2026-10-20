@@ -19,6 +19,7 @@ administration like any other content, and delivered into the help of the admini
 | What is installed, uninstall | `./console exp:help:content report`, `uninstall` |
 | An e-book (EPUB, PDF) of a manual | `./console exp:help:content export`, **Download EPUB/PDF** on the manual's page |
 | The DITA 1.3 export (bookmaps, DITAVAL, topics, glossary), checked after writing | `./console exp:help:content dita`, **Download DITA** on the manual's page and the list of manuals |
+| The e-books stored as file objects under E-books, versioned, rebuilt on release | `./console exp:help:content ebooks`, and each release of a topic |
 | A topic in the help: `exphelp/topic/<help_id>`; a manual: `exphelp/manual/<remote_id>`; the list of manuals: `exphelp/manual` | admin, policy `exphelp/read` |
 | Context help as JSON: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>` | policy `exphelp/context` |
 
@@ -177,6 +178,7 @@ can never name `content/...`, and a provider that does not implement the interfa
 | `AudienceMap[<name>]` | visitors, members: user; editors: editor; administrators: admin | the help's audience of an audience option |
 | `ContextHelpIds[<key>]` | none | `module/view` (or `module`, `design:module/view`) = help_id |
 | `AnonymousContextHelp` | `disabled` | `enabled`: the roles step gives Anonymous `exphelp/context` |
+| `EbooksOnRelease` | `enabled` | a release builds the stored e-books of the manuals again; `disabled`: only `exp:help:content ebooks` does |
 
 ## E-books
 
@@ -201,7 +203,38 @@ default `admin`); a preview never goes into a book. The default file of the comm
 - **PDF** (`writePdf()`) uses the help's PDF writer (`expHelpPdfWriter`, the print and PDF download of help pages):
   one document with the manual's title block, chapters and topics as headings, internal links and the figures. The
   format is offered only where that writer is installed (`expHelpContentExport::formats()`).
-- Not yet: the e-book stored as a file object under "E-books" (`help-ebooks`).
+
+### Stored e-books
+
+The plan stores the built books as content (delivery path 3): each format of each Released manual is one object of
+the class **file** below the folder E-books (remote_id `help-ebooks`), found by its remote_id
+`help-ebook-<manual remote_id>-<format>` (`help-ebook-help-manual-editors-epub`).
+
+```
+./console exp:help:content ebooks -s admin [--manual=help-manual-editors] [--dry-run] [--json]
+```
+
+- **Rebuilt on release.** When an object of the help is set to Released (the state assignment of the
+  administration, or any code that assigns states through `eZContentOperationCollection::updateObjectState()`), the
+  books of every Released manual that contains it (the manual itself, its chapters, their topics, the figures of
+  those topics) are built again (`expHelpContentEbooks::onStateAssign()`). `exphelp.ini [ContentSettings]
+  EbooksOnRelease=disabled` leaves that to the command. Setting Draft or Review changes no book. A book that cannot
+  be made is written to the debug log; the release stands.
+- **Versions.** A new build is published as a new version of the same object, so the version history of the object
+  keeps the earlier editions (`content.ini [VersionManagement]` decides how many). A build whose file is the same as
+  the stored one changes nothing: the files are dated by their content, not by the clock, so a second run of the
+  command prints `No change.`.
+- **State.** Released, like everything the help delivers.
+- **Section and permissions.** `help_public` for a manual whose audience is public, else `help_internal`, set on the
+  object only. So the policies of the plan decide who may download a book: Anonymous reads `help_public` and
+  Released, help editors the subtree `help-root`. The book of a public manual carries only public objects: Released
+  topics in `help_public` with a public audience, chapters and figures in `help_public`; an internal manual's book
+  carries every Released object it lists. The person whose release starts a build does not change what goes in.
+- **Linked from the manual.** The manual's page in the help lists its stored books that the reader may read: the
+  file (a `content/download` link), its version (a link to the object), size and date.
+
+The download buttons above still make a book on request with the reader's own rights; the stored books are the
+editions for everyone.
 
 ## DITA export
 
@@ -261,6 +294,9 @@ The dashboard's list of topics with a past review date, "Was this helpful?", edi
 section fixes), `expHelpContentRepository` (reads the help objects into arrays), `expHelpContentValidator` (the
 rules, no database), `expHelpContentSeeder`, `expHelpContentProvider` (what the current user may see, rendering,
 JSON, search, context), `expHelpContextPageInterface`, `expHelpContentExport` (EPUB, PDF), `expHelpContentDita`
-(the DITA export, its check, writing and zip) and `expHelpDitaMarkup` (the help's HTML as DITA elements). Views:
+(the DITA export, its check, writing and zip), `expHelpDitaMarkup` (the help's HTML as DITA elements),
+`expHelpContentEbooks` (the stored e-books, rebuilt on release) and `expHelpContentEditionProvider` (what goes into a
+stored edition). Views:
 `Exponential\View\Kernel\Exphelp\Topic`, `Manual`, `Context`. Tests (no database):
-`tests/tests/kernel/classes/help/expHelpContentTest.php`, `expHelpContentExportTest.php`, `expHelpContentDitaTest.php`.
+`tests/tests/kernel/classes/help/expHelpContentTest.php`, `expHelpContentExportTest.php`, `expHelpContentDitaTest.php`,
+`expHelpContentEbooksTest.php`.
