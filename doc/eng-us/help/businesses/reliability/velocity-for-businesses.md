@@ -93,7 +93,7 @@ So the choice of Velocity is about raising the ceiling, not about whether the si
 
 ## What it needs from your hosting
 
-- **PHP 8.1 or later** ([README, "What version of PHP is required"](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required)).
+- **PHP 8.0 or later** (from Velocity 0.0.4.54; until then 8.1) ([README, "What version of PHP is required"](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required)).
 - **A long-lived process.** "Shared hosting usually will not" allow one
   ([README](https://github.com/se7enxweb/exponential/blob/main/README.md#when-a-traditional-server-is-still-the-right-answer)). A VPS, a dedicated server,
   a container or managed hosting that supports it is needed

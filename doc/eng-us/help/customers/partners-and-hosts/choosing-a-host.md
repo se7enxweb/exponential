@@ -20,7 +20,7 @@ From [Choosing hosting](../../businesses/choosing/choosing-hosting.md):
 
 | Need | Minimum |
 |---|---|
-| PHP | 8.0; the newest 8.x the system offers is recommended; Velocity needs 8.1 |
+| PHP | 8.0; the newest 8.x the system offers is recommended; Velocity runs on 8.0 too (from release 0.0.4.54) |
 | Database | One of the supported engines; the project lists them in an official order |
 | Web server | None if Velocity serves the site; or Apache, nginx and others |
 | Composer | 2.x |
@@ -41,7 +41,7 @@ From [Choosing hosting](../../businesses/choosing/choosing-hosting.md):
 |---|---|
 | Must more than one machine write the database? | A database server; not SQLite |
 | Is the hosting without long-running processes (typical shared hosting)? | Apache or nginx with PHP-FPM; Velocity usually not |
-| Is the machine's PHP older than 8.1? | A traditional web server; Velocity needs 8.1 |
+| Is the machine's PHP 8.0? | Any web server; Velocity runs on 8.0 from its release 0.0.4.54 |
 | Is there no shell access? | The setup wizard in the browser, and fewer options for updates |
 
 > **Tip**

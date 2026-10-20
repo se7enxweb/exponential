@@ -1,7 +1,7 @@
 # 2. Requirements
 
 This chapter lists what a machine needs before Exponential can be installed on it, and why each item is needed: the
-PHP version (8.0 to 8.5; Velocity needs 8.1 or later), every PHP extension with the place in the code that asks for
+PHP version (8.0 to 8.5, for Velocity too), every PHP extension with the place in the code that asks for
 it, the `php.ini` settings the setup wizard checks, the database servers and their minimum versions, Composer, a web
 server, and notes for Red Hat Enterprise Linux 9 and its rebuilds, Debian and Ubuntu, and Plesk. It ends with what
 the documentation says about memory and disk. Everything here is taken from `composer.json`, `settings/setup.ini`,
@@ -16,7 +16,7 @@ package install, found half-way through an install it costs a restart of the ins
 | Need | Minimum | Recommended | Checked by |
 |---|---|---|---|
 | PHP | 8.0 | the newest 8.x your system offers (8.5 is supported) | Composer (`composer.json`, `require.php`); the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0`) |
-| PHP for Exponential Velocity | 8.1, with `sockets` | as above, with `pcntl` and `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.1"`, `"ext-sockets": "*"`) |
+| PHP for Exponential Velocity | 8.0, with `sockets` (from release 0.0.4.54; until then 8.1) | as above, with `pcntl` and `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.0"`, `"ext-sockets": "*"`) |
 | PHP extensions | see [2.3](#23-php-extensions) | plus the recommended ones | Composer (`ext-*`), the setup wizard's system check |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | | the setup wizard's system check |
 | Database | SQLite 3 (no server) | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([2.6](#26-databases)) | the setup wizard's database step |
@@ -36,7 +36,7 @@ good check (for the command line PHP).
 
 | PHP | Status |
 |---|---|
-| 8.0 | The oldest supported version. The kernel and the shipped extensions run on it under Apache with mod_php or PHP-FPM. It is the stock PHP of Red Hat Enterprise Linux 9, AlmaLinux 9 and Rocky Linux 9. Velocity does not run on it. |
+| 8.0 | The oldest supported version. The kernel and the shipped extensions run on it under Apache with mod_php or PHP-FPM. It is the stock PHP of Red Hat Enterprise Linux 9, AlmaLinux 9 and Rocky Linux 9. Velocity runs on it from its release 0.0.4.54 (see [2.9](#php-80-and-red-hat-enterprise-linux) for what differs). |
 | 8.1 to 8.4 | Supported, Velocity included. |
 | 8.5 | Supported; the newest version tested. |
 | 7.4 and older | Not supported by 6.0.8 and later. A site that must stay on PHP 7.4 stays on 6.0.7. |
@@ -177,7 +177,7 @@ PHP 8.5 on linux-x86_64: provides the 'lite' set; checked against 'standard'
 and `exp:velocity ext install-hint <extension> ...` prints the package install command for your system, for example
 `php bin/php/console exp:velocity ext install-hint intl xsl`. (`exp:velocity ext list|check|plan|install-hint|build`
 hands over to the engine's `qbixctl ext:<action>`, so it needs the Velocity package, see
-[chapter 3](03-getting-the-code.md#34-the-optional-velocity-package); as `root` add `--allow-root-user`.)
+[chapter 3](03-getting-the-code.md#34-the-velocity-package); as `root` add `--allow-root-user`.)
 
 ## 2.4 The setup wizard's system check
 
@@ -327,7 +327,7 @@ extensions `composer.json` requires and, when you ask for it, Velocity. Without 
 
 | Option | PHP | When |
 |---|---|---|
-| **Exponential Velocity** (`qbix` engine) | 8.1+ | Recommended for every stage. Serves HTTP and HTTPS itself; no other web server needed. |
+| **Exponential Velocity** (`qbix` engine) | 8.0+ | Recommended for every stage. Serves HTTP and HTTPS itself; no other web server needed. |
 | Apache with `mod_rewrite` and PHP-FPM (or mod_php) | 8.0+ | The classic setup; shared hosting. The rewrite rules ship in `.htaccess_root`. |
 | nginx, LiteSpeed, Caddy and others with PHP-FPM | 8.0+ | Any server that can rewrite a URL to `index.php`; listed in the [README](../../../README.md#the-traditional-options). |
 | FrankenPHP (through `exp:velocity`) | the binary's own | Production-ready alternative engine. |
@@ -346,7 +346,7 @@ prints.
 
 ### Red Hat Enterprise Linux 9, AlmaLinux 9, Rocky Linux 9
 
-- The stock PHP of the AppStream repository is **8.0**, which runs Exponential under Apache or PHP-FPM. The command
+- The stock PHP of the AppStream repository is **8.0**, which runs Exponential under Apache, PHP-FPM or Velocity. The command
   from [PHP 8.0 support](../bc/6.0/php-8.0-support.md):
 
   ```bash
@@ -355,13 +355,35 @@ prints.
 
   `php-xml` brings `dom`, `simplexml`, `xsl` and `libxml`; `php-pdo` brings `sqlite3`; `php-common` (a dependency)
   brings `iconv`, `zlib`, `session` and `openssl`; `php-process` brings `pcntl`; `php-pgsql` adds PostgreSQL.
-- For Velocity (PHP 8.1+), switch to a newer AppStream module stream: `dnf module list php`, then
-  `dnf module reset php`, `dnf module enable php:8.3` and `dnf distro-sync`. The streams `php:8.1`, `php:8.2` and
-  `php:8.3` run both Exponential and Velocity.
+- Velocity needs no newer stream: it runs on the stock 8.0 from its release 0.0.4.54 (see
+  [PHP 8.0 and Red Hat Enterprise Linux](#php-80-and-red-hat-enterprise-linux) below). For a newer PHP, switch to
+  another AppStream module stream: `dnf module list php`, then `dnf module reset php`, `dnf module enable php:8.3`
+  and `dnf distro-sync`. The streams `php:8.1`, `php:8.2` and `php:8.3` run both Exponential and Velocity.
 - The Remi repository (`php:remi-8.x` module streams, or the parallel `php<XY>` packages under `/opt/remi`) provides
   every version from 8.0 to 8.5. PECL extensions (`php-pecl-redis`, `php-pecl-apcu`, `php-pecl-mongodb`) and `oci8`
   come from EPEL, Remi or the vendor.
 - The service of the stock PHP-FPM is `php-fpm`; a Remi parallel install is `php<XY>-php-fpm`.
+
+### PHP 8.0 and Red Hat Enterprise Linux
+
+From release 0.0.4.54 (20 October 2026) Exponential Velocity runs on PHP 8.0 to 8.5: the engine's `composer.json`
+requires `"php": ">=8.0"` (it was `>=8.1`), and nothing extra is needed on 8.0, no polyfill package and no
+extension. Exponential's `composer.json` requires the engine at `~0.0.4.54`, so `composer install` on PHP 8.0
+installs it too.
+
+- **RHEL 9 and its rebuilds**: the default AppStream PHP 8.0 runs Velocity. The el9 rpm
+  (`exponential-velocity-<release>-1.el9.noarch.rpm`) depends on `php-cli >= 8.0` and installs without enabling a
+  module stream; a newer stream still works. Composer works the same way.
+- **RHEL 8**: the default PHP there is 7.2. Enable the 8.0 stream (`dnf module enable php:8.0`) and use the phar or
+  Composer; there is no el8 rpm.
+
+What differs on PHP 8.0, and only this: AVIF image output needs PHP 8.1 (the image negotiation stops at WebP); the
+dashboard's per-request memory peak needs PHP 8.2 (the column is empty); `$_FILES` has no `full_path`, as in PHP 8.0
+itself; and a class declared with `eval()` that has static properties makes its worker get replaced after that
+request (correct, and it costs one fork). The engine handles the rest itself, and its zygote runs on 8.0.
+Extensions, systemd, SELinux and how to verify the installation: the engine's
+[PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md) page
+and its [requirements](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/requirements.md).
 
 ### Debian and Ubuntu
 

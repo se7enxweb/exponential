@@ -53,13 +53,13 @@ Velocity in Exponential belongs to the 6.0.15 development line, which is not rel
 |---|---|
 | Velocity is a web server written in PHP that keeps the application loaded between requests. | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#how-exponential-is-served) |
 | It is MIT licensed (Exponential itself is GPL). | [Who is 7x?, Open source licenses](../who-is-7x.md#open-source-licenses) |
-| It needs PHP 8.1 or later. | [README, What version of PHP is required](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
+| It runs on PHP 8.0 or later, from its release 0.0.4.54 (until then 8.1). | [README, What version of PHP is required](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
 | HTTPS from the first start with a self-signed certificate; your own certificates or Let's Encrypt are possible. | [Velocity](../../features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it), [README](https://github.com/se7enxweb/exponential/blob/main/README.md#how-exponential-is-served) |
 | HTTP/2 is built into the bundled server. | [Velocity](../../features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
 | One command deploys a PHP change: `./console exp:velocity deploy`. | [Velocity, Deploy a PHP change](../../features/6.0/velocity-persistent-worker-server.md#deploy-a-php-change-in-one-command) |
 | Keeping workers between requests cut signed-in admin pages from 256 to 284 ms to 73 to 80 ms "in the measurement that led to the change". | [Velocity, Settings to know first](../../features/6.0/velocity-persistent-worker-server.md#settings-to-know-first) |
 | A dashboard (`/Q/dashboard`) and a password-protected control panel (`/Q/panel`) are built in. | [Velocity control panel](../../features/6.0/velocity-control-panel.md) |
-| The README suggests version 0.0.4.50. | [Exponential Velocity](../who-is-the-exponential-foundation.md#exponential-velocity) |
+| The README names it as required at `~0.0.4.54`. | [Exponential Velocity](../who-is-the-exponential-foundation.md#exponential-velocity) |
 
 ## What not to claim
 

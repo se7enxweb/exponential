@@ -32,7 +32,7 @@ summary for hosts.
 | Need | Minimum | Recommended | Checked by |
 |---|---|---|---|
 | PHP | 8.0 | the newest 8.x the system offers; 8.5 is the newest tested | Composer (`composer.json` `require.php`) and the setup wizard (`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0`) |
-| PHP for Exponential Velocity | 8.1 with `sockets` | with `pcntl` and `openssl` as well | Composer (the Velocity package requires `"php": ">=8.1"` and `ext-sockets`) |
+| PHP for Exponential Velocity | 8.0 with `sockets` (8.1 before release 0.0.4.54) | with `pcntl` and `openssl` as well | Composer (the Velocity package requires `"php": ">=8.0"` and `ext-sockets`) |
 | PHP extensions | see [below](#required-php-extensions) | plus `curl`, `gd`, `openssl`, `pcntl`, `opcache` | Composer (`ext-*`) and the setup wizard's critical tests |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | more memory for imports and image work; upload limits sized for your customers | the setup wizard's critical tests |
 | Database | one of the six, SQLite 3 needs no server | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | the installer's database step |
@@ -120,7 +120,7 @@ their `SystemCheck` step. A failure stops the install and prints the cause and t
 ## Check a server in two minutes
 
 ```bash
-php -v                          # 8.0 or later (8.1 or later for Velocity)
+php -v                          # 8.0 or later, for Velocity too
 php -m                          # the extensions listed above
 php -i | grep "Integer Size"    # 64 bits recommended
 composer --version              # Composer 2, and the PHP it runs with
@@ -133,7 +133,7 @@ command for the system ([chapter 2.3](../../../install/02-requirements.md#findin
 
 ## Checklist
 
-- [ ] `php -v` shows 8.0 or later for both the web and the command line PHP (8.1 or later for Velocity).
+- [ ] `php -v` shows 8.0 or later for both the web and the command line PHP (Velocity included).
 - [ ] Every required extension is loaded in both.
 - [ ] `memory_limit`, `max_execution_time`, `date.timezone`, `file_uploads` and `allow_url_fopen` set.
 - [ ] One database extension for the database the plan offers.

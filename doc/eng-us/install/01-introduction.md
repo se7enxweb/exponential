@@ -248,7 +248,7 @@ database does not change anything else in the install.
 ### Velocity
 
 Exponential Velocity is the application server developed together with Exponential (package
-`se7enxweb/exponential-velocity`, which requires PHP 8.1 or later and the `sockets` extension). It loads the
+`se7enxweb/exponential-velocity`, which requires PHP 8.0 or later, from release 0.0.4.54, and the `sockets` extension). It loads the
 application once, keeps it in persistent workers, has its own response cache and serves HTTP and HTTPS itself, with
 its own certificates. It is driven by the console command `exp:velocity`, which also runs two other engines: PHP's
 built-in server (`php`, for development) and FrankenPHP (`frankenphp`, a production-ready alternative). Velocity is

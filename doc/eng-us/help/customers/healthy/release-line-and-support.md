@@ -50,8 +50,8 @@ that is (see [Contracts and SLAs](../partners-and-hosts/contracts-and-slas.md)).
 ## PHP matters too
 
 Exponential runs on PHP, and PHP versions have their own support periods. From the release line page for businesses:
-PHP 7.4 only up to 6.0.7; PHP 8.0 is the oldest supported; 8.1 to 8.5 are supported, and Exponential Velocity needs
-8.1 or later. **Setup > System information** warns when the security support of the running PHP branch has ended
+PHP 7.4 only up to 6.0.7; PHP 8.0 is the oldest supported; 8.1 to 8.5 are supported, and Exponential Velocity runs
+on 8.0 to 8.5 from its release 0.0.4.54. **Setup > System information** warns when the security support of the running PHP branch has ended
 ([System information](../../../guides/system-information.md)). Ask your host which PHP versions they offer and when
 they retire one.
 

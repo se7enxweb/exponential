@@ -191,7 +191,7 @@ The development server runs Velocity next to Plesk's Apache on the same installa
 
 ## Checklist
 
-- [ ] Domain's PHP version 8.0 or later (8.1+ for Velocity); "FPM application served by Apache".
+- [ ] Domain's PHP version 8.0 or later (Velocity included); "FPM application served by Apache".
 - [ ] Document root = installation root; `.htaccess` copied from `.htaccess_root`.
 - [ ] Composer, console and cron use `/opt/plesk/php/<version>/bin/php`.
 - [ ] `PhpCliPath` set; cron lines in the domain user's crontab.

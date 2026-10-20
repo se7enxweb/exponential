@@ -53,7 +53,7 @@ command as `root`, add `--allow-root-user`; a script that needs it says so.
 | | Exponential Velocity (`qbix`) | FrankenPHP (through Velocity) | Apache + PHP-FPM | nginx + PHP-FPM |
 |---|---|---|---|---|
 | Role | **recommended** for every stage | production-ready alternative | traditional | traditional |
-| PHP version | 8.1 or later (the engine package requires it) | the PHP built into the binary (8.5 in the 1.12 releases) | 8.0 or later | 8.0 or later |
+| PHP version | 8.0 or later (the engine package requires it, from release 0.0.4.54; until then 8.1) | the PHP built into the binary (8.5 in the 1.12 releases) | 8.0 or later | 8.0 or later |
 | Separate web server needed | **no** | no (Caddy is built into the binary) | yes | yes |
 | Separate HTTPS / certificate tool needed | **no**: own certificates, self-signed fallback, ACME | no: your certificate or a self-signed one | yes (`mod_ssl` plus certbot or a hosting panel) | yes |
 | Where the code comes from | Composer package `se7enxweb/exponential-velocity` | binary downloaded and SHA-256 checked by `exp:velocity install` | the operating system | the operating system |
@@ -68,10 +68,11 @@ PHP's built-in server (`php -S`) is a third Velocity engine. It is the shipped d
 installed; it is for development, has no TLS and is not for visitors.
 
 Use a traditional server when your hosting does not allow long-running processes, when you already run a tuned Apache
-or nginx you want to keep, when the machine only has PHP 8.0 (the stock PHP of Red Hat Enterprise Linux 9 and its
-rebuilds; Velocity needs 8.1, see [chapter 2](02-requirements.md)), or when several customers on one machine need
+or nginx you want to keep, or when several customers on one machine need
 operating-system isolation from each other (run one Velocity per site, each as its own user, or a traditional server
-with one PHP-FPM pool per site).
+with one PHP-FPM pool per site). A machine with only PHP 8.0 (the stock PHP of Red Hat Enterprise Linux 9 and its
+rebuilds) runs Velocity as well, from the engine's release 0.0.4.54 (see
+[chapter 2](02-requirements.md#php-80-and-red-hat-enterprise-linux)).
 
 The choices are not exclusive. A common shape is Velocity serving the site and Apache or nginx left in place on the
 same files during a migration; section 8.7.2 explains what that means for file ownership, and section 8.3.14 how one
@@ -161,20 +162,22 @@ and `php` (PHP's built-in development server).
 
 ### 8.3.1 Install the engine package
 
-The engine is suggested by Exponential's `composer.json` but not installed by default, because it needs PHP 8.1 or
-later. Add it to the installation with Composer:
+Exponential's `composer.json` requires the engine at `~0.0.4.54`, so `composer install` installs it on every
+supported PHP, 8.0 included. Until its release 0.0.4.54 the engine needed PHP 8.1 and was only suggested; an
+installation made in that time adds it with Composer:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.44
+composer require se7enxweb/exponential-velocity:~0.0.4.54
 ```
 
 It lands in `vendor/se7enxweb/exponential-velocity` (the former package name `se7enxweb/qbix-webserver` is still
-found). The tilde constraint follows the engine's last version position, so `~0.0.4.44` accepts later `0.0.4.x`
+found). The tilde constraint follows the engine's last version position, so `~0.0.4.54` accepts later `0.0.4.x`
 releases.
 
-The package's `composer.json` requires PHP 8.1 (`"php": ">=8.1"`) and the `sockets` extension (TCP options on client
-connections, and the zygote of section 8.3.6), so Composer refuses the package on PHP 8.0 or without `sockets`. That
-refusal is harmless: the engine is only suggested, and Exponential itself keeps running under Apache or nginx. The
+The package's `composer.json` requires PHP 8.0 (`"php": ">=8.0"`, from release 0.0.4.54; it was `>=8.1`) and the
+`sockets` extension (TCP options on client connections, and the zygote of section 8.3.6), so Composer refuses the
+package without `sockets`. On PHP 8.0 a few things differ (AVIF output, the dashboard's memory peak column,
+`$_FILES` `full_path`); [chapter 2](02-requirements.md#php-80-and-red-hat-enterprise-linux) lists them. The
 engine also wants `pcntl` and `posix` to fork workers and change their user, and `openssl` for HTTPS. At start-up it
 refuses to run without process isolation (`pcntl`, or a php-cgi binary) and without `openssl` when HTTPS is
 configured, printing the install command; for the rest of its standard set it warns once and starts. To see what this
@@ -363,7 +366,7 @@ engine settings under `Q.webserver`, described in the [worker pool specification
 Persistent workers keep database connections, stat caches and everything the kernel keeps per process. Measured on a
 signed-in administration page: 256 to 284 ms with a fresh worker per request, 73 to 80 ms with persistent workers.
 They need an engine that sets `REQUEST_TIME_FLOAT` per request and carries headers and shutdown functions in this mode
-(headers and shutdown functions from qbix-webserver 0.0.4.25, the per-request `REQUEST_TIME_FLOAT` from Exponential Velocity 0.0.4.42; Exponential suggests 0.0.4.44).
+(headers and shutdown functions from qbix-webserver 0.0.4.25, the per-request `REQUEST_TIME_FLOAT` from Exponential Velocity 0.0.4.42; Exponential requires 0.0.4.54).
 
 Between requests the worker restores static class properties, superglobals, custom globals, output buffers, handlers
 and response headers to the state it was forked with. A few registries in the kernel are filled with `include_once`

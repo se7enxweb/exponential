@@ -50,7 +50,7 @@ class expSysCardPhpProvider extends expSysCardBaseProvider
             {
                 $severity = expSysCardFact::WARN;
                 $support = 'security support ends ' . $ends[$branch];
-                $hint = sprintf( 'PHP %s gets security fixes only until %s (%d days): plan the upgrade to a newer branch.', $branch, $ends[$branch], $days );
+                $hint = sprintf( 'PHP %s gets security fixes only until %s (%s): plan the upgrade to a newer branch.', $branch, $ends[$branch], self::counted( $days, 'day' ) );
             }
             else
             {
@@ -101,7 +101,7 @@ class expSysCardPhpProvider extends expSysCardBaseProvider
                                 empty( $missing ) ? expSysCardFact::INFO : expSysCardFact::WARN,
                                 empty( $missing ) ? '' : 'Recommended PHP extensions are missing: ' . implode( ', ', $missing ) . '. Install them for full functionality (translations, image handling, the caches).' );
         if ( $context->mode === expSysCardContext::MODE_INFO )
-            $facts[] = $this->fact( 'loaded', 'Loaded', count( $extensions ) . ' extensions' );
+            $facts[] = $this->fact( 'loaded', 'Loaded', self::counted( count( $extensions ), 'extension' ) );
 
         // memory_limit
         $limit = (string)$ini( 'memory_limit' );

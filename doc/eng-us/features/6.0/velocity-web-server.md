@@ -112,7 +112,11 @@ The engine ships a migration page for each. The main steps:
 
 ## Limits
 
-- PHP 8.1 or later; the static binaries and images are built for 8.2, 8.3, 8.4 and 8.5.
+- PHP 8.0 or later (from release 0.0.4.54; until then 8.1); the static binaries and images are built for 8.2, 8.3,
+  8.4 and 8.5. On PHP 8.0, AVIF image output (needs 8.1) and the dashboard's per-request memory peak (needs 8.2) are
+  not available, and `$_FILES` has no `full_path`; RHEL 9's stock PHP 8.0 runs the engine. Details:
+  [packages and binaries](velocity-packages-and-binaries.md#php-80-and-red-hat-enterprise-linux) and the engine's
+  [PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md).
 - Windows has no `fork()`, so there is no pool of forked workers there; use the binary builds for Windows
   ([packages and binaries](velocity-packages-and-binaries.md)).
 - The default event loop (`stream_select`) stops a pool below about 1,000 workers. Use more servers on one port

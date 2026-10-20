@@ -27,7 +27,7 @@ class expSysCardComposerProvider extends expSysCardBaseProvider
         if ( $packages === null && !$context->isFile( 'composer.json' ) )
             return array( $this->fact( 'packages', 'Composer', 'no composer.json' ) );
         $count = is_array( $packages ) ? count( $packages ) : 0;
-        $text = $packages === null ? 'not installed (run composer install)' : $count . ' packages';
+        $text = $packages === null ? 'not installed (run composer install)' : self::counted( $count, 'package' );
         $severity = $packages === null ? expSysCardFact::ERROR : expSysCardFact::INFO;
         $hint = $packages === null ? 'vendor/ is missing: run composer install in the installation root before anything else (README.md).' : '';
 
@@ -38,7 +38,7 @@ class expSysCardComposerProvider extends expSysCardBaseProvider
             if ( $issues > 0 )
             {
                 $severity = expSysCardFact::WARN;
-                $hint = $issues . ' Composer packages or extensions do not agree between composer.json, composer.lock and vendor/: see Setup > Updates (ezupdate) before the next update.';
+                $hint = ( $issues === 1 ? '1 Composer package or extension does not agree' : $issues . ' Composer packages or extensions do not agree' ) . ' between composer.json, composer.lock and vendor/: see Setup > Updates (ezupdate) before the next update.';
             }
         }
         return array( $this->fact( 'packages', 'Composer', $text, $severity, $hint ) );

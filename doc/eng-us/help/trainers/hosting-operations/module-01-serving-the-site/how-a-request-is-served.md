@@ -53,8 +53,9 @@ Source: [Chapter 8: Serving the site](../../../../install/08-serving-the-site.md
    recommended way at every stage; FrankenPHP is a production-ready alternative; Apache and nginx with PHP-FPM are the
    traditional setups.
 2. **When to choose a traditional server** (4 minutes). From section 8.1: hosting that forbids long-running
-   processes, a tuned Apache or nginx the customer wants to keep, a machine with only PHP 8.0 (Velocity needs 8.1),
-   or customers that need operating-system isolation from each other.
+   processes, a tuned Apache or nginx the customer wants to keep, or customers that need operating-system isolation
+   from each other. (A machine with only PHP 8.0 is no longer on the list: Velocity runs on 8.0 from its release
+   0.0.4.54.)
 3. **One routing list** (6 minutes). Draw the diagram of section 8.2. The rules are written down once in
    `.htaccess_root`; Velocity's engines and the generated FrankenPHP configuration implement the same list. Stress
    the two security consequences: no PHP file runs because its path was asked for (except the front controllers at
@@ -144,8 +145,8 @@ Use your own training installation, served on your machine (for example with
 1. **C.** Chapter 8 calls Velocity's `qbix` engine the recommended way at every stage.
 2. The installation root, the directory that holds `index.php` (section 8.2).
 3. The routing rules are not active; fix the server before the site is reachable from outside.
-4. Any two of: hosting that forbids long-running processes, an existing tuned server, only PHP 8.0 available,
-   operating-system isolation between customers (section 8.1).
+4. Any two of: hosting that forbids long-running processes, an existing tuned server, operating-system isolation
+   between customers (section 8.1).
 5. **False.** Scripts and dot paths are never served or run below the root, even in a listed asset directory.
 
 </details>

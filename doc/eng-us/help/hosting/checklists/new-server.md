@@ -28,7 +28,7 @@ Server: <name>          Built by: <name>          Date: <date>          Plan(s):
 
 ## PHP
 
-- [ ] PHP 8.0 or later; 8.1 or later if Velocity will serve sites; the newest 8.x the system offers is the
+- [ ] PHP 8.0 or later, also if Velocity will serve sites; the newest 8.x the system offers is the
       recommendation ([PHP versions and extensions](../basics/php-versions-and-extensions.md)).
 - [ ] The required extensions installed; the setup wizard's system check or `exp:install`'s `SystemCheck` step
       reports none missing ([Chapter 2](../../../install/02-requirements.md#23-php-extensions)).
