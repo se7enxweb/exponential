@@ -73267,5 +73267,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>یک پرسش در هر صفحه: چه کسی می‌تواند انجام دهد، گام‌ها، چه چیزی ممکن است اشتباه شود و کجا بیشتر بخوانید.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>پرونده‌های پروژه</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>پروندهٔ پروژه</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>این پرونده بخشی از کد منبع Exponential است و همراه با آن تحت %license توزیع می‌شود.</translation>
+    </message>
 </context>
 </TS>

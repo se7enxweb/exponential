@@ -74551,5 +74551,17 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Jedna otázka na stránku: kdo to smí udělat, kroky, co se může pokazit a kde si přečíst víc.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Soubory projektu</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Soubor projektu</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Tento soubor je součástí zdrojového kódu Exponential a šíří se s ním pod licencí %license.</translation>
+    </message>
 </context>
 </TS>

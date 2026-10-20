@@ -60,6 +60,7 @@ allowed to use is shown grayed out or not at all.
 | [Keyboard shortcuts](keyboard-shortcuts.md) | Work with the keyboard alone, in the administration and in these help pages |
 | [When something goes wrong](when-something-goes-wrong.md) | Tell the right people about an error, with what they need to fix it |
 | [Getting support](project/getting-support.md) | Get free help from the community (forums, Telegram, Discord, Slack) or paid help from 7x |
+| [Project files](project-files.md) | Read the README, the security policy, the contributors' guidelines and the license of the repository in the help |
 
 ## Grow from user to developer
 

@@ -320,6 +320,9 @@ class expHelpDocumentIndex
         if ( preg_match( '#^extension/([^/]+)/([^/]+)$#', $path, $m ) && in_array( $m[1], $this->allowlist->extensions(), true )
              && $this->allowlist->isExtensionTopFile( $m[2] ) )
             return 'ext/' . $m[1] . '/' . $m[2];
+        // a project file outside the roots (README.md -> project/README.md); whether it is listed is the allowlist's
+        if ( $this->allowlist->isProjectPath( $path ) )
+            return expHelpProjectFiles::idOf( $path );
         return null;
     }
 
@@ -338,6 +341,10 @@ class expHelpDocumentIndex
         if ( $id === null )
             return null;
         $roots = $this->allowlist->roots();
+        // project/<path>: the project file, when that path is one by its name (else a page of doc/en/us/project/)
+        $projectPath = class_exists( 'expHelpProjectFiles' ) ? expHelpProjectFiles::pathOfId( $id ) : null;
+        if ( $projectPath !== null && $this->allowlist->isProjectPath( $projectPath ) )
+            return $projectPath;
         if ( preg_match( '#^ext/([^/]+)/(.+)$#', $id, $m ) && in_array( 'extension/' . $m[1] . '/doc', $roots, true ) )
         {
             // a top file (ext/foo/README.md) when its doc/ has no file of that name
@@ -398,6 +405,8 @@ class expHelpDocumentIndex
         // the code that builds the entries: a deploy of a changed parser or slugger builds the index again
         foreach ( array( __FILE__, ( new ReflectionClass( 'expHelpFrontMatter' ) )->getFileName(),
                          ( new ReflectionClass( 'expHelpAudience' ) )->getFileName(),
+                         ( new ReflectionClass( 'expHelpAllowlist' ) )->getFileName(),
+                         class_exists( 'expHelpProjectFiles' ) ? ( new ReflectionClass( 'expHelpProjectFiles' ) )->getFileName() : '',
                          class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '',
                          class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
             if ( is_string( $code ) && $code !== '' )
@@ -1157,6 +1166,9 @@ class expHelpDocumentIndex
         $split = $this->languages->split( $path );
         if ( $split !== null )
             return $split[0];
+        // a project file is English only and never translated, like doc/changelogs/: in no language directory
+        if ( $this->allowlist->isProjectPath( (string)$path ) )
+            return '';
         return strncmp( (string)$path, expHelpLanguage::DOC_ROOT . '/', strlen( expHelpLanguage::DOC_ROOT ) + 1 ) === 0 ? '' : null;
     }
 
@@ -1192,6 +1204,10 @@ class expHelpDocumentIndex
         $language = $this->languageOfPath( $path );
         $text = self::toUtf8( $text );
         list( $meta, $body ) = $format === 'markdown' ? expHelpFrontMatter::split( $text ) : array( array(), $text );
+        // a project file (README.md, SECURITY.md ...) is classified by [ProjectFiles] unless its front matter says otherwise
+        $projectFiles = $this->allowlist->projectFiles();
+        if ( $projectFiles !== null && $projectFiles->isCandidate( $path ) )
+            $meta += $projectFiles->classification( $path );
         $headings = $format === 'markdown' ? self::headings( $body ) : array();
 
         $title = isset( $meta['title'] ) && is_string( $meta['title'] ) && trim( $meta['title'] ) !== '' ? trim( $meta['title'] ) : '';

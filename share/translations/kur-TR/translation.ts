@@ -73267,5 +73267,17 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Her rûpel pirsek: kî dikare bike, gav, çi dikare xelet biçe û li ku derê bêtir bixwîne.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Pelên projeyê</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Pela projeyê</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Ev pel beşek ji koda çavkaniyê ya Exponential e û bi wê re di bin %license de tê belavkirin.</translation>
+    </message>
 </context>
 </TS>

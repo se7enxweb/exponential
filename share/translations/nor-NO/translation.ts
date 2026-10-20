@@ -74527,5 +74527,17 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Ett spørsmål per side: hvem som kan gjøre det, trinnene, hva som kan gå galt og hvor du kan lese mer.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Prosjektfiler</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Prosjektfil</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Denne filen er en del av kildekoden til Exponential og distribueres sammen med den under %license.</translation>
+    </message>
 </context>
 </TS>

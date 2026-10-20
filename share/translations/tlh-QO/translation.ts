@@ -73035,6 +73035,18 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>One question per page: who may do it, the steps, what can go wrong and where to read more.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>jInmol teywI'mey</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>jInmol teywI'</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>teywI'vam Exponential Hal ngoq bID 'oH; %license tIn tlhej.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

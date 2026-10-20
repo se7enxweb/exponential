@@ -75261,5 +75261,17 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Uma pergunta por página: quem pode fazer, os passos, o que pode dar errado e onde ler mais.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Arquivos do projeto</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Arquivo do projeto</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Este arquivo faz parte do código-fonte do Exponential e é distribuído com ele sob a %license.</translation>
+    </message>
 </context>
 </TS>

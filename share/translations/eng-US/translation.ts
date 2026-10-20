@@ -73315,6 +73315,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>One question per page: who may do it, the steps, what can go wrong and where to read more.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Project files</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Project file</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>This file is part of the source code of Exponential and is distributed with it under the %license.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

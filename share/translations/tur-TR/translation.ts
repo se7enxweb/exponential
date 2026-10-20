@@ -73274,5 +73274,17 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Sayfa başına bir soru: kimin yapabileceği, adımlar, neyin ters gidebileceği ve daha fazlasını nerede okuyabileceğiniz.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Proje dosyaları</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Proje dosyası</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Bu dosya Exponential kaynak kodunun bir parçasıdır ve onunla birlikte %license kapsamında dağıtılır.</translation>
+    </message>
 </context>
 </TS>

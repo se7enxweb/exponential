@@ -73945,5 +73945,17 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Ét spørgsmål pr. side: hvem må gøre det, trinene, hvad der kan gå galt, og hvor du kan læse mere.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Projektfiler</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projektfil</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Denne fil er en del af kildekoden til Exponential og distribueres sammen med den under %license.</translation>
+    </message>
 </context>
 </TS>

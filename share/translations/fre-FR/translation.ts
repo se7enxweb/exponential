@@ -74430,6 +74430,18 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Une question par page : qui peut le faire, les étapes, ce qui peut mal tourner et où en lire davantage.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Fichiers du projet</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Fichier du projet</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Ce fichier fait partie du code source d'Exponential et est distribué avec lui sous la %license.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

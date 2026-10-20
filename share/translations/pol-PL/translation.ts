@@ -74481,5 +74481,17 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Jedno pytanie na stronę: kto może to zrobić, kroki, co może pójść nie tak i gdzie przeczytać więcej.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Pliki projektu</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Plik projektu</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Ten plik jest częścią kodu źródłowego Exponential i jest z nim rozpowszechniany na warunkach %license.</translation>
+    </message>
 </context>
 </TS>

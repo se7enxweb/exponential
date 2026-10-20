@@ -74676,5 +74676,17 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Una domanda per pagina: chi può farlo, i passaggi, cosa può andare storto e dove leggere di più.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>File del progetto</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>File del progetto</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Questo file fa parte del codice sorgente di Exponential ed è distribuito con esso secondo la %license.</translation>
+    </message>
 </context>
 </TS>

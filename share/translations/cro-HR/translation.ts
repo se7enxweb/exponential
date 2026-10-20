@@ -74322,5 +74322,17 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Jedno pitanje po stranici: tko to smije učiniti, koraci, što može poći po zlu i gdje pročitati više.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Datoteke projekta</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Datoteka projekta</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Ova je datoteka dio izvornog koda Exponentiala i distribuira se s njim pod licencom %license.</translation>
+    </message>
 </context>
 </TS>

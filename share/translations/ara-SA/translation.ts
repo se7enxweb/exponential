@@ -73064,6 +73064,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>سؤال واحد في كل صفحة: من يمكنه القيام بذلك، والخطوات، وما الذي قد يحدث خطأ، وأين تقرأ المزيد.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>ملفات المشروع</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>ملف المشروع</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>هذا الملف جزء من الشيفرة المصدرية لـ Exponential ويُوزَّع معها بموجب %license.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

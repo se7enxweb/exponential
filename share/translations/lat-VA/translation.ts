@@ -73035,6 +73035,18 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Una quaestio in singulis paginis: quis facere possit, gradus, quid errare possit et ubi plura legas.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Fasciculi operis</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Fasciculus operis</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Hic fasciculus pars est codicis fontis Exponential et cum eo sub %license distribuitur.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

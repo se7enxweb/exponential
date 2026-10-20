@@ -74494,5 +74494,17 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
         <translation>Eén vraag per pagina: wie het mag doen, de stappen, wat er mis kan gaan en waar u meer leest.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Projectbestanden</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projectbestand</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Dit bestand maakt deel uit van de broncode van Exponential en wordt ermee verspreid onder de %license.</translation>
+    </message>
 </context>
 </TS>
