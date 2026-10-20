@@ -241,6 +241,22 @@ class expHelpExtensionDocsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'ext/foo/usage/editors.md' ), array_column( $folders[1]['pages'], 'id' ) );
     }
 
+    /** HE-04: the viewer's breadcrumb goes through Extensions; no "Edit on GitHub" of the installation's repository */
+    public function testViewerBreadcrumbAndEditLink()
+    {
+        $index = self::index();
+        $path = \Exponential\View\Kernel\Exphelp\Viewer::breadcrumb( $index, 'ext/foo/usage/editors.md', 'Using foo' );
+        $this->assertSame( 'exphelp/extensions', $path[1]['url'] );
+        $this->assertStringContainsString( 'ext/foo/index.md', (string)$path[2]['url'], 'the extension\'s overview' );
+        $this->assertSame( 'Using foo', end( $path )['text'] );
+        $path = \Exponential\View\Kernel\Exphelp\Viewer::breadcrumb( $index, 'ext/baz/README.md', 'Baz' );
+        $this->assertSame( 'exphelp/extensions/baz', $path[2]['url'], 'without an overview: the extension\'s index' );
+        $base = 'https://github.com/se7enxweb/exponential/blob/main/';
+        $this->assertSame( '', \Exponential\View\Kernel\Exphelp\Viewer::editUrl( $base, $index->document( 'ext/foo/index.md' ) ) );
+        $this->assertSame( $base . 'doc/en/us/help/start.md', \Exponential\View\Kernel\Exphelp\Viewer::editUrl( $base, array( 'path' => 'doc/en/us/help/start.md' ) ) );
+        $this->assertSame( '', \Exponential\View\Kernel\Exphelp\Viewer::editUrl( '', array( 'path' => 'doc/en/us/help/start.md' ) ) );
+    }
+
     /** HE-05 */
     public function testWithoutActiveExtensionsOnlyTheNamedOnes()
     {

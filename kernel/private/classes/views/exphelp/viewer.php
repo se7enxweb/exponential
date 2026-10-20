@@ -63,7 +63,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_nav_html', class_exists( 'expHelpNavigation' ) ? ( new \expHelpNavigation( $index ) )->html( $id ) : '' );
         $tpl->setVariable( 'help_prev', $neighbours['prev'] );
         $tpl->setVariable( 'help_next', $neighbours['next'] );
-        $tpl->setVariable( 'help_edit_url', $editBase !== '' && isset( $document['path'] ) ? $editBase . $document['path'] : '' );
+        $tpl->setVariable( 'help_edit_url', self::editUrl( $editBase, $document ) );
         // Print and PDF (expHelpPdf): the download is offered when [PdfSettings] Enabled is not false
         $tpl->setVariable( 'help_pdf_enabled', class_exists( 'expHelpPdf' ) && \expHelpPdf::isEnabled() );
         $tpl->setVariable( 'help_category', isset( $document['category'], $categories[$document['category']] ) ? $categories[$document['category']] : false );
@@ -120,7 +120,25 @@ class Viewer extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Help > each folder of the page (linked to its README.md or index.md when the help has one) > the page.
+     * The "Edit on GitHub" address of a page: EditBaseURL followed by its path. None for an extension's page (it is
+     * in the extension's own repository, not the one EditBaseURL names), and none without EditBaseURL.
+     *
+     * @param string $editBase
+     * @param array $document
+     * @return string
+     */
+    public static function editUrl( $editBase, array $document )
+    {
+        $path = isset( $document['path'] ) ? (string)$document['path'] : '';
+        if ( $editBase === '' || $path === '' || strncmp( $path, 'extension/', 10 ) === 0 )
+            return '';
+        return $editBase . $path;
+    }
+
+    /**
+     * Help > each folder of the page (linked to its README.md or index.md when the help has one) > the page. The
+     * pages of an extension: Help > Extensions (exphelp/extensions) > the extension's overview, or its index
+     * (exphelp/extensions/<name>) > ... > the page.
      *
      * @param \expHelpDocumentIndex $index
      * @param string $id
@@ -136,21 +154,34 @@ class Viewer extends \Exponential\Runnable\ModuleView
         foreach ( $dirs as $segment )
         {
             $dir = $dir === '' ? $segment : $dir . '/' . $segment;
+            if ( $dir === 'ext' )
+            {
+                $path[] = array( 'url' => 'exphelp/extensions', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Extensions' ) );
+                continue;
+            }
             $landing = null;
             foreach ( array( 'README.md', 'readme.md', 'index.md' ) as $file )
             {
                 $candidate = $index->document( $dir . '/' . $file );
                 if ( $candidate !== null && $dir . '/' . $file !== $id )
                 {
+                    // an extension's doc/README.md or doc/index.md before the README at its top
+                    $top = (bool)preg_match( '#^extension/[^/]+/[^/]+$#', isset( $candidate['path'] ) ? (string)$candidate['path'] : '' );
+                    if ( $landing !== null && $top )
+                        continue;
                     $landing = $candidate;
                     $landing['id'] = $dir . '/' . $file;
-                    break;
+                    if ( !$top )
+                        break;
                 }
             }
-            $path[] = $landing !== null
-                ? array( 'url' => ltrim( \expHelp::url( 'viewer', $landing['id'] ), '/' ),
-                         'text' => isset( $landing['title'] ) && $landing['title'] !== '' ? $landing['title'] : $segment )
-                : array( 'url' => false, 'text' => ucfirst( str_replace( array( '-', '_' ), ' ', $segment ) ) );
+            if ( $landing === null && preg_match( '#^ext/([^/]+)$#', $dir, $m ) )
+                $path[] = array( 'url' => 'exphelp/extensions/' . rawurlencode( $m[1] ), 'text' => $m[1] );
+            else
+                $path[] = $landing !== null
+                    ? array( 'url' => ltrim( \expHelp::url( 'viewer', $landing['id'] ), '/' ),
+                             'text' => isset( $landing['title'] ) && $landing['title'] !== '' ? $landing['title'] : $segment )
+                    : array( 'url' => false, 'text' => ucfirst( str_replace( array( '-', '_' ), ' ', $segment ) ) );
         }
         $path[] = array( 'url' => false, 'text' => $title );
         return $path;
