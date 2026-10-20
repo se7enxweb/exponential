@@ -204,8 +204,9 @@ To stay honest, this page does not invent rules the project has not written down
   if you want to take on such a role.
 - The sources name no conferences or meetups ("No events (conferences, meetups) are documented", [Who is the
   Exponential Foundation?](../who-is-the-exponential-foundation.md#community-places)).
-- `CONTRIBUTING.md` asks contributors to read a Code of Conduct, but that file is not in the repository today. Until
-  it is, follow the habits above and ask in the community tracker.
+- The project's code of conduct is `CODE_OF_CONDUCT.md`
+  ([The Exponential code of conduct](../project/code-of-conduct.md)); leaders apply it in the spaces they run, and
+  reports go to <community@se7enx.com>, where the Exponential Foundation decides.
 
 ## A personal tracking sheet
 

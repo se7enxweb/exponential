@@ -233,9 +233,12 @@ Report trends over quarters, not one-off numbers, and always with the date of th
 - **Keep security private.** Security problems go to the private address of `SECURITY.md`, never to a forum.
 - **Credit others.** Name the people and companies whose work you build on ([Who is 7x?](../who-is-7x.md#contributors-and-friends-of-the-project)).
 - **Follow the contribution rules.** Read `CONTRIBUTING.md` before you send code: branches, focused pull requests,
-  the commit message prefixes and the review. It also says all contributors are expected to adhere to a code of
-  conduct; the file it links (`CODE_OF_CONDUCT.md`) is not in the repository at the time of writing. Until it is,
-  follow [Advocate conduct and ethics](../advocates/advocate-conduct-and-ethics.md), the help's conduct page.
+  the commit message prefixes and the review.
+- **Follow the code of conduct.** All contributors, partners, trainers and advocates are expected to adhere to
+  `CODE_OF_CONDUCT.md`, the Contributor Covenant 2.1 with Exponential additions
+  ([The Exponential code of conduct](../project/code-of-conduct.md)). Report problems to <community@se7enx.com>; the
+  Exponential Foundation decides. For advocates, [Advocate conduct and ethics](../advocates/advocate-conduct-and-ethics.md)
+  applies it day to day.
 - **Do not speak for the project.** Unless 7x or the Foundation asked you to, speak as yourself or your organization.
 
 ## Related pages

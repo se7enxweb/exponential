@@ -105,7 +105,7 @@ Exponential is licensed under the GPLv2 or later license, commonly known as the 
 
 ## Code of Conduct
 
-Please make sure to review the project's conduct page, [Conduct and ethics](doc/en/us/help/advocates/advocate-conduct-and-ethics.md), before contributing. All contributors are expected to adhere to it.
+Please make sure to review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing. All contributors are expected to adhere to it. It is the Contributor Covenant 2.1 with Exponential additions for partners and commercial conduct, AI-generated contributions, the CLA, and trainers and advocates. Report a problem to community@se7enx.com; the Exponential Foundation decides.
 
 ## Getting Started
 

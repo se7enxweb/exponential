@@ -16,7 +16,8 @@ f669c30e35503fffb2eb184e4da101b6  .github/workflows/quality.yml
 9ae9da440bdbe3c882b160ce651bbbca  .htaccess_root
 03ef382542df17941aa891033089b79c  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
-e2d9bc5773b562ba154b605b41202892  CONTRIBUTING.md
+b7034e90e1a71f18582da6f6945a14d0  CODE_OF_CONDUCT.md
+e21ad622262e506c400c730b7dffcb4f  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
@@ -3464,7 +3465,7 @@ d7cde8b3eadc9c1a0b3a00d897c6817b  doc/de/hilfe/fuersprecher/sicherheit-bei-live-
 165d6a195f2bf9d95c8d2e3bcf19021a  doc/de/hilfe/fuersprecher/sicherheitsmeldungen-bleiben-vertraulich.md
 553436091bd0a890f1a452675b816e6a  doc/de/hilfe/fuersprecher/skript-lightning-talk.md
 b44128fe3622a5d4c6654bd0cbf435cf  doc/de/hilfe/fuersprecher/ueber-ein-release-schreiben.md
-3b43a98f6b9b14fb484328341af32ac8  doc/de/hilfe/fuersprecher/verhalten-und-ethik.md
+eebc05ae7bdc215b52f2ffc2db0dea37  doc/de/hilfe/fuersprecher/verhalten-und-ethik.md
 b96dc0f76032d42259c05bc4e6157799  doc/de/hilfe/fuersprecher/vor-benutzergruppe-oder-klasse-praesentieren.md
 61df5d1b17abec4875146ff01fe32be0  doc/de/hilfe/fuersprecher/vorlagen-fuer-soziale-medien.md
 be77ef3bcd373f40df51e0bffd8253c5  doc/de/hilfe/fuersprecher/was-ein-fuersprecher-ist.md
@@ -3474,7 +3475,7 @@ be77ef3bcd373f40df51e0bffd8253c5  doc/de/hilfe/fuersprecher/was-ein-fuersprecher
 659dbe15b55607fcaa2fc829252c3f34  doc/de/hilfe/fuersprecher/zu-ezpedia-beitragen.md
 3e6171e45376bfa63f29b322cbe01b53  doc/de/hilfe/geschaeft/community-und-oekosystem.md
 dcbc922aaa9f35cbea337fa83ab3c04c  doc/de/hilfe/geschaeft/demo-drehbuecher.md
-1dba40f3de58e755378bbc53e73fcf97  doc/de/hilfe/geschaeft/die-community-wachsen-lassen.md
+523ad9b41281c3f0848f0b5b4765f423  doc/de/hilfe/geschaeft/die-community-wachsen-lassen.md
 029f9f1847cc5c511b05537d3a30f9ca  doc/de/hilfe/geschaeft/einwandbehandlung.md
 c8bd0abb3e4cace5cafd0946df4ed9b9  doc/de/hilfe/geschaeft/exponential-sachlich-vergleichen.md
 90e49adef4de84f60e1758c23d1ec1d4  doc/de/hilfe/geschaeft/fallstudien-und-content-marketing.md
@@ -3844,7 +3845,7 @@ cb0bef6fcd6063dba09c286208476ee5  doc/de/hilfe/partner/sicherheitspflichten.md
 443906ed617dff0fb5bd8a7fcfd08bcb  doc/de/hilfe/partner/support-stufen-und-reaktionszeiten.md
 8f4d330d8433f3ff4bd9829f4870d3e7  doc/de/hilfe/partner/support-ticket-eroeffnen.md
 7ac7580733c080e80778cc8fc48690c8  doc/de/hilfe/partner/technische-checkliste-fuer-hosting-partner.md
-f57f617ccb516348b98d6fb181e224d9  doc/de/hilfe/partner/verhaltenskodex.md
+f3edc225a9a797a12b90056f3d320b55  doc/de/hilfe/partner/verhaltenskodex.md
 37eaaadff808c239e614eaff4cf924bc  doc/de/hilfe/partner/verlaengerungen-auf-und-abstufungen.md
 cd5da857654f7be6bff1c6cf4d9b5c90  doc/de/hilfe/partner/vertriebspartner.md
 cec7f3e369b6b858772a32015a9d4c07  doc/de/hilfe/partner/vorlage-fuer-fallstudien.md
@@ -6942,7 +6943,7 @@ c5545530f53d980f227c9e2cad67d78c  doc/en/us/features/6.0/extensions/swark.md
 b8686ed08b041700382d969f251b7a73  doc/en/us/features/6.0/file-consistency-check.md
 59921235369f40f7789e0b09d13b8f05  doc/en/us/features/6.0/form-expired-page.md
 8c5c33dddc81c5e6f444b9029806c644  doc/en/us/features/6.0/help-content.md
-cb75abd4c10bc42868f9856c54250741  doc/en/us/features/6.0/help-system.md
+e4edc2100a481de1c8200c46fc9c81a1  doc/en/us/features/6.0/help-system.md
 b0d4d73922efa2d3bd00e0c098ea0176  doc/en/us/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/en/us/features/6.0/icon-themes-in-extensions.md
 43b1dad028eb5a42a24b626adf88ae81  doc/en/us/features/6.0/install-in-one-command.md
@@ -7115,8 +7116,8 @@ c0a1b603923fa958f5b144705bd89967  doc/en/us/help/accounts-and-sign-in.md
 5641c6cce3e2f47e85d534ec79c85e36  doc/en/us/help/advocates/a-table-at-someone-elses-event.md
 10b4b9083e35d15fe649d7b72f1a51ba  doc/en/us/help/advocates/accessible-slides-and-visuals.md
 c687cdc70159c340b84df7eae755bd15  doc/en/us/help/advocates/advocate-checklists.md
-0ffcc23ffe07c4f6c0bb90c8cf16ae5b  doc/en/us/help/advocates/advocate-conduct-and-ethics.md
-9c453cad2247f8e888a1e8c03ecb8809  doc/en/us/help/advocates/advocate-faq.md
+b790036c32b03ebcdeeeaa722fbbb88a  doc/en/us/help/advocates/advocate-conduct-and-ethics.md
+c708190891e38393d71c2f508cf7ae30  doc/en/us/help/advocates/advocate-faq.md
 1c6bcc13b96d4f00ad5dd027a98d75b2  doc/en/us/help/advocates/advocate-reading-path.md
 8beaea413997cc1e4e705829b26046af  doc/en/us/help/advocates/advocate-toolkit.md
 17e0eb72e658930db6fe1c03809bdcc8  doc/en/us/help/advocates/advocates-start-here.md
@@ -7158,7 +7159,7 @@ a074e5153f4bd93a030ecb226d9abb76  doc/en/us/help/advocates/objection-why-not-ano
 adfb836826c3960feed09a600351db52  doc/en/us/help/advocates/pointing-to-the-right-help-page.md
 ec58ee61a7e47c4e8f022dc0ac85a035  doc/en/us/help/advocates/presenting-at-a-user-group-or-class.md
 8a88cc74efa45a8c2ce0c21bc0252408  doc/en/us/help/advocates/proposing-a-contribution-sprint.md
-c8a6b38ccba15e8f6d0555a22916f5d5  doc/en/us/help/advocates/proposing-a-meetup.md
+1fa6e0f55a9b52d1a1b37e84f05282df  doc/en/us/help/advocates/proposing-a-meetup.md
 3866988bf52deb18324754177459e8ac  doc/en/us/help/advocates/protecting-peoples-privacy.md
 3ce3b50cf2dc3fc8a6e1ed0dc3af55fe  doc/en/us/help/advocates/publishing-on-share-and-projects.md
 f0a77dcd00c578bf2d534a8ecdee2751  doc/en/us/help/advocates/recognition-ideas.md
@@ -7510,7 +7511,7 @@ d8b425606ff1f01373c5ec0268df8fd5  doc/en/us/help/business/case-studies-and-conte
 5a9e0c4e01737d383c968f4e20fe20b0  doc/en/us/help/business/comparing-exponential-factually.md
 fa724e9846a6875b069efc550e14121b  doc/en/us/help/business/demo-scripts.md
 f57e9b922ba3574d71221048bc0cf726  doc/en/us/help/business/feature-highlights-for-customers.md
-a7d8d048bdaa6f60b57abb1bee2226fb  doc/en/us/help/business/growing-the-community.md
+4d3bf606f045a78e0eaa0532a1d5e67c  doc/en/us/help/business/growing-the-community.md
 9af2920a7d600fb9b52a60511b82a640  doc/en/us/help/business/licensing-for-buyers.md
 af83f860bde9a67a0a5fdcf05a4e9d2b  doc/en/us/help/business/objection-handling.md
 7eec51ca1ecd820fd9d7caa87c058f49  doc/en/us/help/business/positioning-and-value-proposition.md
@@ -10050,7 +10051,7 @@ c40ed3f1049e03983f00f681815ff9e9  doc/en/us/help/keyboard-shortcuts.md
 3d276c574e0db037679fce9bd21a4505  doc/en/us/help/languages.md
 cd3c188fde7075cf619962007497f173  doc/en/us/help/layouts-editor.md
 d0272d37decd315ef839369b8afcbeb1  doc/en/us/help/leadership/accessibility-security-and-compliance-checklists.md
-e8a8759c605c9c29d6d15e26a8c26197  doc/en/us/help/leadership/becoming-a-community-leader.md
+70de7999b1131dbdeba90137b6d0574e  doc/en/us/help/leadership/becoming-a-community-leader.md
 af6a3dbea55da692cbb34adb45fdadc8  doc/en/us/help/leadership/choosing-hosting-database-and-os.md
 bffcbdbfdbbf51d06f1293e54814899a  doc/en/us/help/leadership/content-modeling-workshops.md
 cbb87f959d6619902616628a39be4fb5  doc/en/us/help/leadership/estimating-and-scoping-with-extensions.md
@@ -10185,16 +10186,16 @@ b80aac0139a3d1bcc92383b0af6cedfb  doc/en/us/help/partners/onboarding-checklist.m
 2efeeaea497c24bdbecfe57f4fe837f3  doc/en/us/help/partners/open-source-values-for-partners.md
 703ae4c872ade7cb7ac8c3f21b8625d2  doc/en/us/help/partners/opening-a-partner-support-ticket.md
 1073454ea0a555fa3eccef2d18f32481  doc/en/us/help/partners/partner-benefits.md
-25e4d202940dbd2234ea1ebbcced608f  doc/en/us/help/partners/partner-code-of-conduct.md
+e2b29fb470d14b49831cd81dde50be5f  doc/en/us/help/partners/partner-code-of-conduct.md
 a0f6381ecfc0d24d315b0311a8987be8  doc/en/us/help/partners/partner-directories.md
-2ca14f7b2f821a634225517c7b45cacd  doc/en/us/help/partners/partner-faq.md
+d0492c0c0c82e9d89fdfa471d34237a3  doc/en/us/help/partners/partner-faq.md
 3b9e81e8efd21cc996c79c6689b4c364  doc/en/us/help/partners/partner-glossary.md
 ade48f6423fcb57542c8d6e40cb05d19  doc/en/us/help/partners/partner-levels.md
 902797cf8377225a86f741dbbd99ac82  doc/en/us/help/partners/partner-logos-and-marks.md
 d69c4e46b6f1db8338ca26c46089c876  doc/en/us/help/partners/partner-meetings-and-briefings.md
 b14018a315f289976fa277a9e3c65dcc  doc/en/us/help/partners/partner-plans-and-prices.md
 93b4186b47e730fa8a6506933b248ca8  doc/en/us/help/partners/partner-profiles.md
-34863c505ace49427bbfdbc3334f25f3  doc/en/us/help/partners/partner-program-at-a-glance.md
+f102763958261f6c926527d9219bbd06  doc/en/us/help/partners/partner-program-at-a-glance.md
 8915204385436671824d2fa5bc95fe69  doc/en/us/help/partners/partner-reading-path.md
 67d54cdbb4daf26b2a1add7272819c75  doc/en/us/help/partners/partner-requirements.md
 a1403f2b244dd077a0f407096e068c42  doc/en/us/help/partners/partners-start-here.md
@@ -10377,11 +10378,12 @@ fb6969d9a2ef91367e2a8ced182d8d80  doc/en/us/help/press/where-the-facts-live-for-
 e2d428da5755dda8a628932599aee3e2  doc/en/us/help/press/writing-about-the-community.md
 0c4d2324d6b37db33a5baec9d5facf25  doc/en/us/help/press/writing-about-the-ez-publish-years.md
 9985e07b9b654667dee34cd1ffe495ef  doc/en/us/help/project-files.md
-e31b7b5ddb78deb0c3980797f66968e9  doc/en/us/help/project/README.md
+7eb0e9eb3feca6c122b0dc9e83a6c212  doc/en/us/help/project/README.md
 87a8f80812f6de1b57e4916be3a31310  doc/en/us/help/project/about-the-project.md
 bacd2f52b8a79b0e93905ddf1009c011  doc/en/us/help/project/build-with-exponential.md
+f5ee8bf34d83a9557821fe3081ae4179  doc/en/us/help/project/code-of-conduct.md
 25346d4ee1c1e941f85943802a0a31c6  doc/en/us/help/project/community-channels.md
-f2d0fc2870dc6310789784712ee4b881  doc/en/us/help/project/contribute-to-the-project.md
+38ca5c0b343f9fc888a7454190971e2e  doc/en/us/help/project/contribute-to-the-project.md
 832afee6a850a997cf6e2bd3be6021e9  doc/en/us/help/project/documentation-sources.md
 390503ee01df85c241ba157c2369e0c2  doc/en/us/help/project/faq.md
 2086cc65c5dca19085a957bb1d7a4f6b  doc/en/us/help/project/getting-support.md
@@ -12961,7 +12963,7 @@ b564cbe98b10f2cebf0a6239f6b3493e  kernel/classes/help/content/exphelpcontentvali
 95d8b04fab5b21cd9a0bce3222083632  kernel/classes/help/content/exphelpditamarkup.php
 407bcb5babc99f3b3d04f7c1f92f2e01  kernel/classes/help/exphelp.php
 ecd686481ac982dc50a41e4025d6434e  kernel/classes/help/exphelpallowlist.php
-b181304f32ce3f57b0b6bbfe30d5e71e  kernel/classes/help/exphelpaudience.php
+9e973b39b9803b4f5419fdca0a7a1e12  kernel/classes/help/exphelpaudience.php
 8575966cb7b4f6f102207d46a4873706  kernel/classes/help/exphelpcommitfeed.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
@@ -12983,7 +12985,7 @@ ec7e813ca5c4d3ff8d37fffcb745d34f  kernel/classes/help/exphelplanding.php
 e217b6f378ad261b116de9097ea44f2a  kernel/classes/help/exphelppdfcanvas.php
 16c4c7f20aac7fa06b02550259ce44be  kernel/classes/help/exphelppdffontsubset.php
 b0722d9a3329ba779dcf07c7ce7b5b90  kernel/classes/help/exphelppdfwriter.php
-00ce995e03e676fadc6f0e9f4fcfea81  kernel/classes/help/exphelpprojectfiles.php
+c81a8b545341e728b1bbd72c675e3a6a  kernel/classes/help/exphelpprojectfiles.php
 9edb0c9790614c231f16228f2fdbba2b  kernel/classes/help/exphelpreadpolicygrant.php
 cc26112067d5d9cc27e6499bded16d5b  kernel/classes/help/exphelprecordrenderer.php
 c2d235379e1590a5049b9dbab54ad68b  kernel/classes/help/exphelpsearch.php
@@ -14464,7 +14466,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c46d815e90f7a7046868a7aad05f6f5f  settings/debugbar.ini
 d3a8dbd3dd47da9a1e9c49ce3c0926fb  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-9742dd676c4b072477cce26e743f1cd6  settings/exphelp.ini
+cea79798ea32f888718c35caa06b3d4e  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini

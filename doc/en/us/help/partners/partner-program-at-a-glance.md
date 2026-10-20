@@ -57,7 +57,7 @@ section of the help covers the Exponential Partner Program; for the managed serv
 
 ## What is not decided yet
 
-Several parts are not described in the published sources: the Foundation's role, a formal code of conduct, exam
+Several parts are not described in the published sources: the Foundation's role, exam
 dates for certifications, how partner meetings are scheduled. See
 [Governance: who decides what](governance-and-decisions.md).
 

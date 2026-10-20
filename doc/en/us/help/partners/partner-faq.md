@@ -79,7 +79,9 @@ Yes, under the GFDL 1.3 or later. [Free documentation](../free-documentation.md)
 ## Open points
 
 **Is there a code of conduct?**
-Not a formal one yet; the expected conduct is collected here: [Partner code of conduct](partner-code-of-conduct.md).
+Yes: the project's code of conduct, the Contributor Covenant 2.1 with Exponential additions for partners and
+commercial conduct ([The Exponential code of conduct](../project/code-of-conduct.md)). How it applies to partner work:
+[Partner code of conduct](partner-code-of-conduct.md).
 
 ## Related pages
 

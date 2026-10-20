@@ -143,6 +143,7 @@ PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
 PageOrder[project/SECURITY.md]=50
 PageOrder[project/CONTRIBUTING.md]=100
+PageOrder[project/CODE_OF_CONDUCT.md]=105
 PageOrder[project/COPYRIGHT.md]=110
 PageOrder[README-LICENSE.md]=120
 PageOrder[LICENSE-GFDL-1.3.txt]=130

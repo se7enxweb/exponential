@@ -31,6 +31,7 @@ software and say so.
 | [Community channels](community-channels.md) | Forums, Telegram, Discord, Slack, GitHub, social media, the status page | [/about/community](https://exponential.earth/about/community) |
 | [Build with Exponential](build-with-exponential.md) | Why build on it, the product family, the first five steps, the console commands | [/build](https://exponential.earth/build) |
 | [Contribute to the project](contribute-to-the-project.md) | Code, translations, documentation, testing, extensions and site packages | [/faq/support](https://exponential.earth/faq/support) |
+| [The Exponential code of conduct](code-of-conduct.md) | How everyone in the community is expected to behave, and where to report a problem | `CODE_OF_CONDUCT.md` in the repository |
 | [Give and donate](give-and-donate.md) | Partnership, donations, sponsorship subscriptions, sponsored development | [/give](https://exponential.earth/give) |
 | [About the project and its websites](about-the-project.md) | Who runs it, the portals, the demo, the translation project, the package server | [/about](https://exponential.earth/about) |
 | [Documentation sources](documentation-sources.md) | Every place documentation lives, from this help to the free books and the older manuals | [/doc](https://exponential.earth/doc/) |

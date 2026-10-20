@@ -34,7 +34,8 @@ the first step for each.
 The website describes the path: get a GitHub account, fork the repository, make your fix on a branch, and send a pull
 request to 7x's repository, where it is reviewed and, when merged, released to everyone. In detail:
 
-1. **Read the rules.** `CONTRIBUTING.md` in the root of the installation, and the code of conduct it links to.
+1. **Read the rules.** `CONTRIBUTING.md` in the root of the installation, and the code of conduct it links to
+   ([The Exponential code of conduct](code-of-conduct.md)).
 2. **Work on a clone.** Fork [se7enxweb/exponential](https://github.com/se7enxweb/exponential) (or the extension's
    repository), clone your fork and create a branch for one change. [Develop with Git](../develop-with-git.md) shows
    how to turn an installation into clones you can work in.

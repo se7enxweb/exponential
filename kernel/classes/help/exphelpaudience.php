@@ -240,6 +240,7 @@ class expHelpAudience
         'release-overview' => 40,
         'project/SECURITY.md' => 50,
         'project/CONTRIBUTING.md' => 100,
+        'project/CODE_OF_CONDUCT.md' => 105,
         'project/COPYRIGHT.md' => 110,
         'README-LICENSE.md' => 120,
         'LICENSE-GFDL-1.3.txt' => 130,

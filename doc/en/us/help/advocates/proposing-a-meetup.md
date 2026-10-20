@@ -76,8 +76,9 @@ Ground rules: be kind; no recording without asking; no sales pitches.
 
 ## Ground rules
 
-- **Conduct**: state simple rules and who to talk to if something goes wrong
-  ([Advocate conduct and ethics](advocate-conduct-and-ethics.md)).
+- **Conduct**: the project's code of conduct applies; state who to talk to if something goes wrong
+  ([The Exponential code of conduct](../project/code-of-conduct.md),
+  [Advocate conduct and ethics](advocate-conduct-and-ethics.md)).
 - **Privacy**: minimal sign-up data, deleted afterwards; photos only with consent
   ([Protecting people's privacy](protecting-peoples-privacy.md)).
 - **No secrets**: speakers follow [Live demo safety](live-demo-safety.md).

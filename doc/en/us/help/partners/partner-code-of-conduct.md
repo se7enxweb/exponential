@@ -3,7 +3,7 @@ title: Partner code of conduct
 audience: partner
 category: partnership
 order: 240
-summary: The conduct expected of Exponential Partners, built only from what the program, the contract and the project already say - values, honesty with customers, fair competition, community behavior, security, data and brand - while a formal code of conduct is still to be defined by the Foundation.
+summary: The conduct expected of Exponential Partners, built only from what the program, the contract and the project already say - values, honesty with customers, fair competition, community behavior, security, data and brand - applying the project's code of conduct (CODE_OF_CONDUCT.md) to partner work.
 keywords: code of conduct, conduct, ethics, behavior, honesty, competition, community, values, quality, security, data protection, brand
 type: help
 ---
@@ -12,12 +12,11 @@ type: help
 This page is for everyone who works for a partner company. It states the conduct the program expects.
 
 > **Note**
-> There is no published, formal code of conduct for partners yet. CONTRIBUTING.md asks contributors to "review our
-> Code of Conduct (CODE_OF_CONDUCT.md)", but that file does not exist in the repository today. A formal code of
-> conduct for partners and contributors is **to be defined by the Foundation**. Until then, the help's conduct page is
-> [Advocate conduct and ethics](../advocates/advocate-conduct-and-ethics.md), which is where a link to
-> `CODE_OF_CONDUCT.md` should lead, and the rules below collect what the program, the contract and the project's own
-> documents already require, with their sources.
+> Partners follow the project's code of conduct, [CODE_OF_CONDUCT.md](../../../../../CODE_OF_CONDUCT.md): the
+> Contributor Covenant 2.1 with Exponential additions, one of them for partners and commercial conduct
+> ([The Exponential code of conduct](../project/code-of-conduct.md)). Report a problem to <community@se7enx.com>; the
+> Exponential Foundation decides. The rules below apply that code to partner work and collect what the program and
+> the contract add, with their sources.
 
 ## 1. Live the program's values
 
