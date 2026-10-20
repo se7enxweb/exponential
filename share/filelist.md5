@@ -13014,7 +13014,7 @@ aee83b97ef10c018a999fc83feb68f39  kernel/classes/help/exphelppdfwriter.php
 f39fffdf514c3ecc1411486e28d5c62f  kernel/classes/help/exphelpprojectfiles.php
 7040601f170d784b39ec006f577da0a4  kernel/classes/help/exphelpreadpolicygrant.php
 d2f0e7555803b18f5d0730de851c5980  kernel/classes/help/exphelprecordrenderer.php
-166a0b8a54d3a70ed08c1a9c3bdf1bd4  kernel/classes/help/exphelpsearch.php
+d72ed70b575b9bbf50a994556d5b6abf  kernel/classes/help/exphelpsearch.php
 9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
 6d83d4078ed5276344500f0f0dec4da5  kernel/classes/ini/actions/expiniaction.php
 203479e7dccaed76ef07b8e33efa41a9  kernel/classes/ini/actions/expiniactionactions.php
@@ -16081,6 +16081,7 @@ c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPol
 4f25918ec9e72e0507962b20d24233b6  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
 c6e73304dfc317b383e271cdd00cab68  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php
 41726599964dc05529c6180acaeef567  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
+66f45986e6d0a6db9811c5310289cbc2  tests/tests/kernel/classes/help/expHelpSearchHrefTest.php
 bf3e47cda09dad6dc65dc0b36bea9130  tests/tests/kernel/classes/help/expHelpSearchTest.php
 ba64538c8a7a1eed1f1fcd737948cc80  tests/tests/kernel/classes/help/expHelpSearchViewParametersTest.php
 0ed9fad014542ebd48d24b160d592ea4  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
