@@ -37,7 +37,7 @@
 
 {if $nothing_selected}
 <div class="a4-notice is-warn" role="alert">{'No file was ticked. Tick the files first.'|i18n( 'kernel/contentcheck' )}</div>
-<p><a class="a4-btn" href={concat( '/contentcheck/storage/', $node_id, '?Show=', $show )|ezurl}>{'Back to the list'|i18n( 'kernel/contentcheck' )}</a></p>
+<p><a class="a4-btn" href={concat( '/contentcheck/storage/', $node_id, '/(show)/', $show )|ezurl}>{'Back to the list'|i18n( 'kernel/contentcheck' )}</a></p>
 {else}
 
 <div class="a4-notice is-info" role="status">{'Dry run: nothing has been changed yet.'|i18n( 'kernel/contentcheck' )}</div>
