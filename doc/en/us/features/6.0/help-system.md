@@ -85,6 +85,7 @@ Security Policy.
 | `[PdfSettings] PageSize` | `A4` | `A4` or `Letter` |
 | `[PdfSettings] FontFiles[]` and the others | DejaVu Sans, Droid Sans Fallback | TrueType fonts of the PDF, first readable file of each list (see below) |
 | `[TitleSettings] Titles[]`, `Summaries[]`, `TitleRules[]` | about 50 inherited pages | a clearer title and summary for a page whose own is unclear (see below) |
+| `[TreeSettings] PageOrder[]` | the top-level pages | `PageOrder[<page id>]=<integer>`: the place of a page in the page tree, the folder lists and the category lists; wins over the front matter `order` (see "Order of the pages") |
 
 ### Front matter
 
@@ -123,6 +124,38 @@ TitleRules[]=doc/en/us/features/*/event.*;{title} ({dirversion})
 `{dirversion}` (the nearest version directory). A front matter `title:` or `summary:` always wins. To find unclear
 titles, list every page with `./console exp:help index --list` and look for file names, `README`, versions and
 duplicates.
+
+### Order of the pages
+
+The page tree (`/exphelp/contents` and the sidebar of every page), the folder lists and the category lists sort pages by
+their order, then by title. A page's order is its front matter `order:`, else 0 for a folder's `README.md` or
+`index.md` and 1000 for any other page. The project files (`README.md`, `CONTRIBUTING.md` ...) and the plain text pages
+(`release-overview`, `LICENSE-GFDL-1.3.txt`) cannot carry front matter, so `[TreeSettings] PageOrder[]` places a page by
+its id, and wins over its front matter:
+
+```ini
+[TreeSettings]
+PageOrder[]
+PageOrder[project/README.md]=0
+PageOrder[INSTALL.md]=10
+PageOrder[languages.md]=20
+PageOrder[branch-overview.md]=30
+PageOrder[release-overview]=40
+PageOrder[project/CONTRIBUTING.md]=100
+PageOrder[project/COPYRIGHT.md]=110
+PageOrder[README-LICENSE.md]=120
+PageOrder[LICENSE-GFDL-1.3.txt]=130
+PageOrder[project/LICENSE.md]=140
+PageOrder[project/SECURITY.md]=150
+PageOrder[glossary.md]=9999
+```
+
+The key is the page id: the path below the language directory (`INSTALL.md`, `release-overview`), `project/<path>`
+for a project file, `ext/<extension>/<path>` for a page of an extension. The id is the same in every language, so one
+entry places a page and its translations. The list above is what Exponential ships, and also the built-in default
+(`expHelpAudience::PAGE_ORDER`); `PageOrder[]` alone in an override clears it, and an override can add entries for
+its own pages. The top-level pages are placed here only (`glossary.md` keeps its front matter `order: 9999`, the same
+value). Folders still come before the pages of their level. Check the result on `/exphelp/contents`.
 
 ## Help from extensions
 

@@ -1,6 +1,6 @@
 # Exponential Contributors Guidelines
 
-Thank you for considering contributing to Exponential CMS! We appreciate the time and effort you invest in making this project better.
+Thank you for considering contributing to Exponential! We appreciate the time and effort you invest in making this project better.
 
 <a name="copyright-and-control-of-your-contribution-cla"></a>
 
@@ -211,6 +211,6 @@ Feel free to open an issue for bug reports, feature requests, or general discuss
 
 By contributing, you agree that your contributions will be licensed under the [GNU General Public License, version 2.0 or later](LICENSE). Make sure that your contributions comply with this license. In addition, a contribution to the core kernel needs your signed Contributor Licensing Agreement ([Copyright assignment (CLA)](#copyright-assignment-cla)).
 
-Thank you for contributing to Exponential CMS!
+Thank you for contributing to Exponential!
 
 ---

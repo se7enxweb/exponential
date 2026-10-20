@@ -2,7 +2,6 @@
 title: Branch history
 audience: developer, admin
 category: development
-order: 40
 summary: How the Exponential repositories use branches and tags today, which release lines are maintained, which branch or tag to build a site on, and the branches of the original SVN repository from 2003 to 2006.
 keywords: branch, branches, main, master, tag, release, release line, 6.0, pull request, merge, CI, Velocity, Nexus, Platform, DXP, extension, SVN, history
 type: guide

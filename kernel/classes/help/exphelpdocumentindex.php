@@ -1352,9 +1352,12 @@ class expHelpDocumentIndex
         $dot = strrpos( $base, '.' );
         $suffix = $dot === false || $dot === 0 ? '' : strtolower( substr( $base, $dot + 1 ) );
         $mtime = isset( $file['mtime'] ) ? (int)$file['mtime'] : 0;
+        $id = $this->idOf( $path );
+        // exphelp.ini [TreeSettings] PageOrder[<page id>] wins over the front matter order
+        $order = $this->audience->pageOrder( $id, isset( $meta['order'] ) && is_int( $meta['order'] ) ? $meta['order'] : ( $isIndex ? 0 : 1000 ) );
 
         return array(
-            'id'       => $this->idOf( $path ),
+            'id'       => $id,
             'path'     => $path,
             'suffix'   => $format === 'text' && !in_array( $suffix, array( 'txt', 'rst' ), true ) ? '' : $suffix,
             'format'   => $format,
@@ -1364,7 +1367,7 @@ class expHelpDocumentIndex
             'audience' => $class['audience'],
             'category' => $class['category'],
             'type'     => $class['type'],
-            'order'    => isset( $meta['order'] ) && is_int( $meta['order'] ) ? $meta['order'] : ( $isIndex ? 0 : 1000 ),
+            'order'    => $order,
             'keywords' => array_values( array_unique( $keywords ) ),
             'featured' => isset( $meta['featured'] ) && $meta['featured'] === true,
             'hidden'   => isset( $meta['hidden'] ) && $meta['hidden'] === true,

@@ -16,7 +16,7 @@ f669c30e35503fffb2eb184e4da101b6  .github/workflows/quality.yml
 9ae9da440bdbe3c882b160ce651bbbca  .htaccess_root
 03ef382542df17941aa891033089b79c  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
-1a5120ea8621559699a74e9498e16186  CONTRIBUTING.md
+9a600b7adaf024eb11a6cfc05fec15d8  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
@@ -3199,7 +3199,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 f4a6fd7fba388894640420c210f94f94  doc/changelogs/6.0/6.0.12.md
 878882418c7ffe32fd4d202a2d889e95  doc/changelogs/6.0/6.0.13.md
 fb8589325fc127b61d43ce5d7cc188d0  doc/changelogs/6.0/6.0.14.md
-b28d5ca17cef8eefd5a343608e306260  doc/changelogs/6.0/6.0.15.md
+4fcc31f920501ff9f7162fbb58609b26  doc/changelogs/6.0/6.0.15.md
 dc6c1e6747014d6f9b8be9e724b1b763  doc/changelogs/6.0/6.0.2.md
 831f582bbb230b4566621e2b9c913153  doc/changelogs/6.0/6.0.3.md
 4a9ce240f3051c96fce5a2b61580ff2a  doc/changelogs/6.0/6.0.4.md
@@ -3519,7 +3519,7 @@ cf908d21ba6ae7901106a2951c3005da  doc/de/spezifikationen/6.0/platform-paketzuord
 88121c23f46a3bc33da912196cf8030e  doc/de/spezifikationen/6.0/xrowextract.md
 591f1544818b6a4dbbb25bd0b77442be  doc/en/us/INSTALL.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/en/us/LICENSE-GFDL-1.3.txt
-40970f00683ecc284b56a8aebd446b32  doc/en/us/README-LICENSE.md
+33f0f269ce41ba0802cd9d676ede0b8b  doc/en/us/README-LICENSE.md
 18eb180621655795c488a99d85dd26f0  doc/en/us/bc/4.1/changes-4.1.0.txt
 23d0e20abd1918e03ad0770ee403ff66  doc/en/us/bc/4.2/changes-4.2.0.txt
 21caf491f15ecab82c5915c46c526f3c  doc/en/us/bc/4.3/changes-4.3.0.txt
@@ -3635,7 +3635,7 @@ bd1cd88ecdff9dd1dba0ce963c6e5b5f  doc/en/us/bc/6.0/velocity-ondisk-layout.md
 e45848cf4009e8515ef6ed6775a40b07  doc/en/us/bc/6.0/view_full_security.md
 47fd2bff5c237dc0a50c3deb40ab5f34  doc/en/us/bc/6.0/weak-passwords-and-reset-key-lifetime.md
 8fd6c3094d810e78dbd152f24c450ec9  doc/en/us/bc/6.0/yui-removal.md
-6c5e05ff6a66fc0d4330fe2da5469a6e  doc/en/us/branch-overview.md
+f6d02bcd45bb371938f563e10ca8296f  doc/en/us/branch-overview.md
 1ccae6e1edbc50e6dd2e1150ac2a57fe  doc/en/us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/en/us/doxygen/empty.html
 39620c79842c7228e6e7b0bff4f8bdf1  doc/en/us/examples/README.md
@@ -6375,7 +6375,7 @@ c5545530f53d980f227c9e2cad67d78c  doc/en/us/features/6.0/extensions/swark.md
 b8686ed08b041700382d969f251b7a73  doc/en/us/features/6.0/file-consistency-check.md
 59921235369f40f7789e0b09d13b8f05  doc/en/us/features/6.0/form-expired-page.md
 8c5c33dddc81c5e6f444b9029806c644  doc/en/us/features/6.0/help-content.md
-ddda229c2b5c578ba1e2c311c66778a8  doc/en/us/features/6.0/help-system.md
+8a655c145424a7498e8d566a649c0ac9  doc/en/us/features/6.0/help-system.md
 b0d4d73922efa2d3bd00e0c098ea0176  doc/en/us/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/en/us/features/6.0/icon-themes-in-extensions.md
 43b1dad028eb5a42a24b626adf88ae81  doc/en/us/features/6.0/install-in-one-command.md
@@ -12393,12 +12393,12 @@ b564cbe98b10f2cebf0a6239f6b3493e  kernel/classes/help/content/exphelpcontentvali
 95d8b04fab5b21cd9a0bce3222083632  kernel/classes/help/content/exphelpditamarkup.php
 407bcb5babc99f3b3d04f7c1f92f2e01  kernel/classes/help/exphelp.php
 ecd686481ac982dc50a41e4025d6434e  kernel/classes/help/exphelpallowlist.php
-80c94d540fa39c959733da59d483d97a  kernel/classes/help/exphelpaudience.php
+ff7aeef1462ba5b13533044d8f730a36  kernel/classes/help/exphelpaudience.php
 8575966cb7b4f6f102207d46a4873706  kernel/classes/help/exphelpcommitfeed.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 42ab51793d77884c165f21168803692b  kernel/classes/help/exphelpcontextregistry.php
-1232951da779e124495b2dd3219c11b9  kernel/classes/help/exphelpdocumentindex.php
+20d7eeb30815f5e6c2d21ace4aeba8ae  kernel/classes/help/exphelpdocumentindex.php
 0445ada0b9c7263416fd213589055e6a  kernel/classes/help/exphelpexamplesgenerator.php
 b1125a343d75f5a64ec2c95166c27898  kernel/classes/help/exphelpfrontmatter.php
 2b4f170525630a0acb5287c535570570  kernel/classes/help/exphelpfunctioncollection.php
@@ -13896,7 +13896,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c46d815e90f7a7046868a7aad05f6f5f  settings/debugbar.ini
 d3a8dbd3dd47da9a1e9c49ce3c0926fb  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-0d9a2cf95135e0226497a2bba01cdaa9  settings/exphelp.ini
+6ba03c6619fe1016669ded05bb8f85d4  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -15477,6 +15477,7 @@ ed0f741ed8e65f178f9e10f791c9d273  tests/tests/kernel/classes/help/expHelpLanding
 1d48ec23bbd15435ac5ab0caf8277486  tests/tests/kernel/classes/help/expHelpMigrationHubTest.php
 b7ea6a76f564ff8879a419b79295a4f8  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
 2886dc808c3b719d6133f184b04d1839  tests/tests/kernel/classes/help/expHelpNavigationTest.php
+17994a84a76428289bef9156723d0037  tests/tests/kernel/classes/help/expHelpPageOrderTest.php
 5acd99993419fc2806d6505301e4f4d6  tests/tests/kernel/classes/help/expHelpPageTitlesTest.php
 e2db608ad1c2d2d62ccd5fd8575c27f9  tests/tests/kernel/classes/help/expHelpPdfTest.php
 23893af1b2f3e0f504d20178bad61843  tests/tests/kernel/classes/help/expHelpProjectFilesTest.php
