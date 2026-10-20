@@ -73259,5 +73259,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>د هغو سازمانونو او کسانو لپاره چې خپل سایټ په Exponential چلوي: ټیم، خپرونه، سوداګري، ساتنه، وده او شریکان.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>د پروژې فایلونه</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>د پروژې فایل</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>دا فایل د Exponential د سرچینې کوډ برخه ده او ورسره د %license لاندې وېشل کېږي.</translation>
+    </message>
 </context>
 </TS>

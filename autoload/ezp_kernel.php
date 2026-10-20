@@ -1150,6 +1150,7 @@ return array(
       'expHelpPdfCanvas'                                             => 'kernel/classes/help/exphelppdfcanvas.php',
       'expHelpPdfFontSubset'                                         => 'kernel/classes/help/exphelppdffontsubset.php',
       'expHelpPdfWriter'                                             => 'kernel/classes/help/exphelppdfwriter.php',
+      'expHelpProjectFiles'                                          => 'kernel/classes/help/exphelpprojectfiles.php',
       'expHelpReadPolicyGrant'                                       => 'kernel/classes/help/exphelpreadpolicygrant.php',
       'expHelpRecordRenderer'                                        => 'kernel/classes/help/exphelprecordrenderer.php',
       'expHelpSearch'                                                => 'kernel/classes/help/exphelpsearch.php',

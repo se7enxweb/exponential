@@ -74314,5 +74314,17 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Za organizacije i osobe koje vode vlastito web-mjesto na Exponentialu: tim, objavljivanje, trgovina, održavanje, rast i partneri.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Datoteke projekta</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Datoteka projekta</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Ova je datoteka dio izvornog koda Exponentiala i distribuira se s njim pod licencom %license.</translation>
+    </message>
 </context>
 </TS>

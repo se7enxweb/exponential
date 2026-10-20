@@ -116,7 +116,11 @@ class expHelpLicense
         $info['id'] = (string)$id;
         // an extension's own documentation (ext/<name>/...) has the extension's license, not the kernel's
         $info['extension'] = preg_match( '#^ext/([^/]+)/#', (string)$id, $m ) ? $m[1] : '';
-        $info['free'] = $info['extension'] === '' && !self::isOtherLicense( (string)$id );
+        // a project file (project/README.md ...) is part of the software and has its license ([ProjectFiles])
+        $info['project'] = class_exists( 'expHelpProjectFiles' ) && expHelpProjectFiles::isProjectId( (string)$id );
+        $info['project_license_name'] = (string)expHelp::setting( 'ProjectFiles', 'LicenseName', 'GNU General Public License, version 2 (or any later version)' );
+        $info['project_license_page'] = (string)expHelp::setting( 'ProjectFiles', 'LicensePage', 'project/LICENSE.md' );
+        $info['free'] = $info['extension'] === '' && !$info['project'] && !self::isOtherLicense( (string)$id );
         $info['other_copyright'] = (string)self::setting( 'OtherCopyright' );
         $info['other_name'] = (string)self::setting( 'OtherLicenseName' );
         $info['other_url'] = self::safeUrl( self::setting( 'OtherLicenseURL' ) );
@@ -165,6 +169,9 @@ class expHelpLicense
         if ( $license['extension'] !== '' )
             return 'This page is part of the documentation of the extension ' . $license['extension']
                  . ' and is distributed under the license of that extension.';
+        if ( $license['project'] )
+            return 'This file is part of the source code of Exponential and is distributed with it under the '
+                 . $license['project_license_name'] . '.';
         if ( !$license['free'] )
             return trim( $license['other_copyright'] . "\n"
                  . 'This page was inherited from the documentation of the original software and is not covered by the '
