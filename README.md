@@ -603,6 +603,10 @@ Share Exponential! Telegram Community Support Chat
 
 Everyone is encouraged to [contribute](CONTRIBUTING.md) to the development of new features and bugfixes for Exponential 6.
 
+Code contributions to the core kernel (this repository), whether by pull request, patch, issue or mail, are merged
+only once the author has signed the 7x Contributor Licensing Agreement: see
+[Copyright assignment (CLA)](CONTRIBUTING.md#copyright-assignment-cla). Your own custom extensions are not affected.
+
 # Donate and make a support subscription. 
 ## Help fund Exponential!
 

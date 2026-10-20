@@ -44,6 +44,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **chronicle**: the month by month story of the history. [History](history/README.md).
 - **CI (continuous integration)**: the GitHub Actions workflows: `phpunit.yml` runs the PHPUnit suites on PHP 8.1 to 8.5, `quality.yml` checks syntax (also on PHP 8.0), the file manifest, commit messages, code style and PHPStan for every change. [Quality checks](features/6.0/quality-checks.md), [Continuous integration](specifications/6.0/continuous-integration.md).
 - **cjw_newsletter**: a complete newsletter system. [cjw_newsletter](features/6.0/extensions/cjw_newsletter.md).
+- **CLA (Contributor Licensing Agreement)**: the agreement with 7x that 7x and the Exponential Foundation require, signed once, before a code contribution to the core kernel (`se7enxweb/exponential`) is merged, however it is submitted (pull request, patch, issue, mail). The project calls it the copyright assignment; the contributor keeps the copyright and grants 7x a non-exclusive license. Users' own custom extensions are not affected. [Copyright assignment (CLA)](../../../CONTRIBUTING.md#copyright-assignment-cla).
 - **class**: see **content class**.
 - **classic**: see **admin**.
 - **cluster (file cluster)**: file storage in the database or a shared store so several servers see the same files. [Operating a site](guides/operating-a-site.md).

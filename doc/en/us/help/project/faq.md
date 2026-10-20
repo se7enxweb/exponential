@@ -168,6 +168,14 @@ The website's FAQ names donations and memberships, and also the many ways that c
 documentation, accessibility advice and testing. See [Contribute to the project](contribute-to-the-project.md),
 [Contribute extensions back](../contribute-extensions-back.md) and [Give and donate](give-and-donate.md).
 
+### Do I have to sign anything to contribute code?
+
+For the core kernel, yes. 7x and the Exponential Foundation require a signed Contributor Licensing Agreement (CLA)
+for every code contribution to the kernel, whether it is sent as a pull request, a patch, an issue or by mail, before
+it can be merged. You sign it once for all future contributions and keep your copyright: the agreement grants 7x a
+non-exclusive license. Your own custom extensions, site packages and themes are not affected. See
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+
 ### Is it really free?
 
 Yes. Exponential is free software under the GNU GPL version 2 or later: you may use it for any purpose, including

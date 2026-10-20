@@ -66,6 +66,10 @@ git push -u fork fix-<short-name>
 
 For the kernel, read CONTRIBUTING.md together: the commit hook (`make hooks`) and the file manifest
 (`make manifest-fix`) ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
+Tell them early that a code contribution to the kernel is merged only once they have signed the Contributor
+Licensing Agreement that 7x and the Exponential Foundation require; they sign once and keep their copyright
+([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Their own extensions are
+not affected.
 
 ## The pull request
 
@@ -93,6 +97,7 @@ Explain that reviewers may fix things in commits on top; that is normal and not 
 [ ] They have a GitHub account (with two-factor authentication)
 [ ] They chose the path (docs, translation, code) and read the page for it
 [ ] Commit message starts with Added:/Updated:/Fixed:/Removed:/Renamed:
+[ ] For a kernel code change: their signed CLA is on file with 7x
 [ ] No secrets or personal data in the change
 [ ] Pull request text: what, why, how tested
 [ ] They know reviews may add commits on top

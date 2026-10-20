@@ -18,6 +18,11 @@ start to end. It applies to the kernel (`se7enxweb/exponential`) and to any exte
 1. **Read the project's rules.** The kernel's are in `CONTRIBUTING.md` at the root of the repository: the license
    your contribution goes under (GPL 2 or later), the commit message format, the file manifest, the admin styling
    rules. An extension may have its own `CONTRIBUTING.md`, or none; then look at how its recent commits are written.
+   **For the kernel, sign the CLA once.** 7x and the Exponential Foundation require a signed Contributor Licensing
+   Agreement for every code contribution to the core kernel, whether by pull request, patch, issue or mail, before
+   it can be merged; you keep your copyright, the agreement grants 7x a non-exclusive license. How to sign:
+   [Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla). It does not apply to the
+   extensions you write and keep for yourself.
 2. **Look for an existing issue or pull request** about the same thing. If there is one, comment there instead of
    starting a second.
 3. **For a large change, ask first.** Open an issue that describes what you want to do and why. A maintainer may
