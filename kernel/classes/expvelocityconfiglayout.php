@@ -572,6 +572,80 @@ class expVelocityConfigLayout
     }
 
     /**
+     * Names envvars never puts into the server's environment, and name prefixes refused the same way. The same list
+     * as the engine's Q_WebServer_Layout::$envDenied and $envDeniedPrefixes (the server applies it again itself when
+     * it reads envvars): the dynamic loader, the shell, PHP's ini search, glibc's files, other interpreters' start-up
+     * code, who the process is, and the names request headers have in $_SERVER.
+     */
+    const ENV_DENIED = array(
+        'PATH', 'IFS', 'PS4', 'ENV', 'BASH_ENV', 'SHELLOPTS', 'BASHOPTS', 'CDPATH', 'GLOBIGNORE',
+        'SHELL', 'HOME', 'USER', 'LOGNAME', 'PWD', 'OLDPWD',
+        'PHPRC', 'PHP_INI_SCAN_DIR',
+        'GCONV_PATH', 'GETCONF_DIR', 'GLIBC_TUNABLES', 'HOSTALIASES', 'LOCALDOMAIN', 'LOCPATH',
+        'NIS_PATH', 'NLSPATH', 'RESOLV_HOST_CONF', 'RES_OPTIONS', 'TZDIR',
+        'PERL5LIB', 'PERL5OPT', 'PYTHONPATH', 'PYTHONHOME', 'PYTHONSTARTUP', 'NODE_OPTIONS', 'RUBYOPT',
+    );
+    const ENV_DENIED_PREFIXES = array( 'LD_', 'DYLD_', 'MALLOC_', 'HTTP_' );
+
+    /**
+     * What envvars may put into the server's environment when exp:velocity starts it: envvars() without the refused
+     * names and without values only a shell could work out ($X, `cmd`, a backslash, or a bare value with a space;
+     * single-quoted values are literal). A bare value ends at an unquoted " #", as in a shell. The same rules the
+     * engine applies (Q_WebServer_Layout::exportEnvvars()), so a value passed here is one the server would take too.
+     *
+     * @param string|null $dir
+     * @return array name => value
+     */
+    public function exportable( $dir )
+    {
+        $vars = array();
+        if ( $dir === null || !is_file( "$dir/envvars" ) )
+            return $vars;
+        foreach ( file( "$dir/envvars", FILE_IGNORE_NEW_LINES ) ?: array() as $line )
+        {
+            $line = trim( $line );
+            if ( $line === '' || $line[0] === '#' )
+                continue;
+            if ( !preg_match( '/^(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)=(.*)$/', $line, $m ) )
+                continue;
+            $value = trim( $m[2] );
+            $quote = '';
+            if ( strlen( $value ) >= 2 && ( $value[0] === '"' || $value[0] === "'" ) && substr( $value, -1 ) === $value[0] )
+            {
+                $quote = $value[0];
+                $value = substr( $value, 1, -1 );
+            }
+            else
+                $value = (string)preg_replace( '/\s+#.*$/', '', $value );
+            $vars[$m[1]] = $this->envRefusal( $m[1], $value, $quote ) === null ? $value : null;
+        }
+        return array_filter( $vars, function ( $v ) { return $v !== null; } );
+    }
+
+    /**
+     * @param string $name
+     * @param string $value
+     * @param string $quote "'", '"' or '' (bare)
+     * @return string|null why envvars may not set it, or null when it may
+     */
+    public function envRefusal( $name, $value, $quote = "'" )
+    {
+        $upper = strtoupper( (string)$name );
+        if ( in_array( $upper, self::ENV_DENIED, true ) )
+            return 'never taken from envvars';
+        foreach ( self::ENV_DENIED_PREFIXES as $prefix )
+            if ( strncmp( $upper, $prefix, strlen( $prefix ) ) === 0 )
+                return $prefix . '* is never taken from envvars';
+        if ( strpos( (string)$value, "\0" ) !== false )
+            return 'holds a NUL byte';
+        if ( $quote !== "'" && preg_match( '/[$`\\\\]/', (string)$value ) )
+            return 'needs a shell to expand';
+        if ( $quote === '' && preg_match( '/\s/', (string)$value ) )
+            return 'has an unquoted space';
+        return null;
+    }
+
+    /**
      * What `exp:velocity layout` shows: the directory, every pair's available
      * and enabled files, and every asset path.
      *
