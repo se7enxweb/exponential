@@ -77,7 +77,7 @@ verantwortungsvoll.
 | [Betrieb](../../../eng-us/help/government/operations/README.md) | Hosting im eigenen Haus und in der Verwaltungscloud, Verfügbarkeit, Datensicherungen, Überwachung, Vorfälle, Aktualisierungen, Änderungsmanagement, Rollen der Mitarbeitenden, redaktionelle Abläufe |
 | [Beschaffung und Lebenszyklus](../../../eng-us/help/government/procurement/README.md) | Anforderungen, Ausschreibungsvorlagen, Bewertung, Gesamtbetriebskosten, Ausstiegspläne, Schulung, der Produktlebenszyklus |
 | [Aufgaben](../../../eng-us/help/government/tasks/README.md) | Hunderte Schritt-für-Schritt-Anleitungen: die Tagesordnung einer Ratssitzung veröffentlichen, eine Leistungsseite mit barrierefreiem Formular anlegen, eine Unterseite für eine Abteilung einrichten, eine Seite übersetzen, die Bekanntmachungen des Vorjahres archivieren ... |
-| [Checklisten](../../../eng-us/help/government/checklists/README.md), [FAQ](../../../eng-us/help/government/faq/README.md) und [Glossar](glossar/README.md) | Checklisten für Livegang, Barrierefreiheit, Sicherheit, Datenschutz und Bereitschaft; Antworten auf häufige Fragen; Begriffe |
+| [Checklisten](checklisten/README.md), [FAQ](faq/README.md) und [Glossar](glossar/README.md) | Checklisten für Livegang, Barrierefreiheit, Sicherheit, Datenschutz und Bereitschaft; Antworten auf häufige Fragen; Begriffe |
 
 ## Was Exponential mitbringt und was bei Ihnen bleibt
 
