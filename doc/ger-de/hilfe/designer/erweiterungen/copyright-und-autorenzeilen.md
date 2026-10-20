@@ -40,7 +40,7 @@ Copyright-Zeile behält die ursprünglichen Rechteinhaber und fügt den hinzu, d
 ## Was Sie nicht tun
 
 - Entfernen Sie frühere Rechteinhaber nicht aus einem Design, das Sie geforkt haben. Die GPL verlangt, dass die Hinweise
-  bleiben ([Danksagungen und Namensnennung](../../../../eng-us/help/designers/lifecycle/credits-and-attribution.md)).
+  bleiben ([Danksagungen und Namensnennung](../lebenszyklus/danksagungen-und-namensnennung.md)).
 - Nennen Sie keine Firma und keine Person als Autor, die das Werk nicht geschrieben hat.
 - Setzen Sie keine Kundennamen in die Dateien eines öffentlichen Themes, außer der Kunde hat zugestimmt, genannt zu werden.
 
@@ -48,5 +48,5 @@ Copyright-Zeile behält die ursprünglichen Rechteinhaber und fügt den hinzu, d
 
 - [Die LICENSE-Datei eines Themes](die-license-datei.md)
 - [Copyright-Hinweise in Dateien](../veroeffentlichung/copyright-hinweise-in-dateien.md)
-- [Einen Fork fair umbenennen](../../../../eng-us/help/designers/lifecycle/rebranding-a-fork.md)
+- [Einen Fork fair umbenennen](../lebenszyklus/einen-fork-umbenennen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

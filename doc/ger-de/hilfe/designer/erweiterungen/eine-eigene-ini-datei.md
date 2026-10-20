@@ -65,7 +65,7 @@ die für Open Graph als Artikel gelten, aus `cjw_jumper.ini [OpenGraph] ArticleC
 - Lesen Sie nie Geheimnisse aus der Einstellungsdatei eines Themes; Geheimnisse gehören in den Override-Ordner der
   Installation.
 - Wenn Sie eine Einstellung umbenennen oder entfernen, lesen Sie eine Zeit lang weiter den alten Namen
-  ([Eine Einstellung oder ein Template abkündigen](../../../../eng-us/help/designers/lifecycle/deprecating-a-setting-or-template.md)).
+  ([Eine Einstellung oder ein Template abkündigen](../lebenszyklus/eine-einstellung-oder-ein-template-abkuendigen.md)).
 
 ## Verwandte Seiten
 

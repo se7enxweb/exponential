@@ -77,7 +77,7 @@ dieser Hilfe steht.
 | Theme-Erweiterungen | Metadaten, Einstellungen, Paketierung, die RAD-Assistenten für Designs und Pakete | [Theme-Erweiterungen: hier beginnen](erweiterungen/theme-erweiterungen-hier-beginnen.md) |
 | Veröffentlichung | Repositories, Versionen, Releases, Packagist, Lizenzen, Veröffentlichen | [Ein Theme veröffentlichen: hier beginnen](veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md) |
 | Verkauf | Themes und Dienstleistungen verkaufen | [Themes und Dienstleistungen verkaufen: hier beginnen](../../../eng-us/help/designers/sales/selling-start-here.md) |
-| Lebenszyklus der Wartung | Kompatibilität, Upgrades, Sicherheit, Abkündigung, Lebensende, Forks | [Der Lebenszyklus der Wartung: hier beginnen](../../../eng-us/help/designers/lifecycle/lifecycle-start-here.md) |
+| Lebenszyklus der Wartung | Kompatibilität, Upgrades, Sicherheit, Abkündigung, Lebensende, Forks | [Der Lebenszyklus der Wartung: hier beginnen](lebenszyklus/lebenszyklus-hier-beginnen.md) |
 
 ## Tutorials
 

@@ -51,7 +51,7 @@ Wie auch immer Sie es halten, jedes Release ist ein Tag auf `main` ([GitHub-Rele
 ## Verwandte Seiten
 
 - [Das GitHub-Repository anlegen](das-github-repository-anlegen.md)
-- [Pull-Requests an fremde Themes](../../../../eng-us/help/designers/lifecycle/pull-request-etiquette.md)
+- [Pull-Requests an fremde Themes](../lebenszyklus/pull-requests-an-fremde-themes.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

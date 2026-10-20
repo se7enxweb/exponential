@@ -35,7 +35,7 @@ sehen.
 2. Geben Sie der anonymen Rolle nur Lesezugriff; halten Sie die Administration auf einem eigenen Siteaccess, der nicht
    verlinkt ist.
 3. Installieren Sie jedes Release des Themes zuerst dort; das ist zugleich Ihr Upgrade-Test
-   ([Upgrade-Test Schritt für Schritt](../../../../eng-us/help/designers/lifecycle/upgrade-test-step-by-step.md)).
+   ([Upgrade-Test Schritt für Schritt](../lebenszyklus/upgrade-test-schritt-fuer-schritt.md)).
 4. Verlinken Sie die Demo aus dem README, dem Projekteintrag und Ihrer Produktseite.
 
 ## Schritt für Schritt: eine Demo, die sich zurücksetzt

@@ -45,7 +45,7 @@ Policy; die Richtlinie der Administration von Exponential erlaubt standardmäßi
    `CREDITS.md`) fest.
 3. Legen Sie jeden Lizenztext neben seine Dateien (`design/mytheme/fonts/LICENSE-OFL.txt`).
 4. Entfernen Sie alles, was Sie nicht eindeutig lizenzieren können.
-5. Wiederholen Sie diese Prüfung, wann immer Sie eine Bibliothek aktualisieren ([Abhängigkeiten aktuell halten](../../../../eng-us/help/designers/lifecycle/dependency-updates.md)).
+5. Wiederholen Sie diese Prüfung, wann immer Sie eine Bibliothek aktualisieren ([Abhängigkeiten aktuell halten](../lebenszyklus/abhaengigkeiten-aktualisieren.md)).
 
 ## Verwandte Seiten
 

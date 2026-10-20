@@ -52,7 +52,7 @@ einem Release zum nächsten nur die letzte Stelle.
 ## Verwandte Seiten
 
 - [Die Version vor dem Tag erhöhen](version-vor-dem-tag-erhoehen.md)
-- [Inkompatible Änderungen und die nächste Major-Version](../../../../eng-us/help/designers/lifecycle/breaking-changes.md)
+- [Inkompatible Änderungen und die nächste Major-Version](../lebenszyklus/inkompatible-aenderungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

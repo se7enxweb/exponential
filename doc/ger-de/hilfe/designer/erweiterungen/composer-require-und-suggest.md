@@ -56,7 +56,7 @@ Die Tilde lässt die zuletzt angegebene Stelle frei, sodass eine Reihe, die `.9`
 
 - [composer.json für ein Theme](composer-json-fuer-ein-theme.md)
 - [Versionsbedingungen Ihrer Nutzer](../veroeffentlichung/versionsbedingungen-fuer-nutzer.md)
-- [PHP-Versionskompatibilität](../../../../eng-us/help/designers/lifecycle/php-version-compatibility.md)
+- [PHP-Versionskompatibilität](../lebenszyklus/php-versionskompatibilitaet.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

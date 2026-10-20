@@ -54,8 +54,8 @@ Sie endet damit, was der Meldende wann erfährt.
 
 ## Verwandte Seiten
 
-- [Sicherheitsmeldungen bearbeiten](../../../../eng-us/help/designers/lifecycle/handling-security-reports.md)
-- [Ein Sicherheitsrelease veröffentlichen](../../../../eng-us/help/designers/lifecycle/publishing-a-security-release.md)
+- [Sicherheitsmeldungen bearbeiten](../lebenszyklus/sicherheitsmeldungen-bearbeiten.md)
+- [Ein Sicherheitsrelease veröffentlichen](../lebenszyklus/ein-sicherheitsrelease-veroeffentlichen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

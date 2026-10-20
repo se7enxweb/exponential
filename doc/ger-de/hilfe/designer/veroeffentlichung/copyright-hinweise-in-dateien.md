@@ -57,6 +57,6 @@ Halten Sie Köpfe in CSS und JavaScript kurz: ein Kommentar wie `/* My Theme (C)
 
 ## Verwandte Seiten
 
-- [Danksagungen und Namensnennung](../../../../eng-us/help/designers/lifecycle/credits-and-attribution.md)
+- [Danksagungen und Namensnennung](../lebenszyklus/danksagungen-und-namensnennung.md)
 - [Die GPL für Theme-Code](gpl-fuer-theme-code.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

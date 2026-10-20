@@ -92,7 +92,7 @@ Fahren Sie dann mit [Ein Theme veröffentlichen](../veroeffentlichung/ein-theme-
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../../anleitungen/extensions.md)
 - [Pakete](../../../anleitungen/pakete.md)
 - [Ein Theme veröffentlichen: hier beginnen](../veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md)
-- [Der Lebenszyklus der Wartung: hier beginnen](../../../../eng-us/help/designers/lifecycle/lifecycle-start-here.md)
+- [Der Lebenszyklus der Wartung: hier beginnen](../lebenszyklus/lebenszyklus-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

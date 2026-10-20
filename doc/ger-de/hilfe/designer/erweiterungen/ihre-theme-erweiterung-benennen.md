@@ -64,7 +64,7 @@ Name der Erweiterung und Design-Name dürfen sich unterscheiden. `cjw_themes_jum
 
 - [Die Ordnerstruktur einer Theme-Erweiterung](ordnerstruktur-einer-theme-erweiterung.md)
 - [composer.json für ein Theme](composer-json-fuer-ein-theme.md)
-- [Einen Fork fair umbenennen](../../../../eng-us/help/designers/lifecycle/rebranding-a-fork.md)
+- [Einen Fork fair umbenennen](../lebenszyklus/einen-fork-umbenennen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

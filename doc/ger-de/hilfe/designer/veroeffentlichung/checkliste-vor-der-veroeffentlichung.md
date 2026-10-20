@@ -50,7 +50,7 @@ Diese Seite ist für Designer, die gleich ein Release veröffentlichen. Das Them
 ## Verwandte Seiten
 
 - [Ein Theme veröffentlichen: hier beginnen](ein-theme-veroeffentlichen-hier-beginnen.md)
-- [Checkliste: ein Wartungszyklus](../../../../eng-us/help/designers/lifecycle/lifecycle-checklist.md)
+- [Checkliste: ein Wartungszyklus](../lebenszyklus/checkliste-ein-wartungszyklus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

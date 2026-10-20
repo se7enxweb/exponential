@@ -52,7 +52,7 @@ php ezpm.php install mytheme_classes
 
 - [Pakete, Abschnitt 7](../../../anleitungen/pakete.md#7-installieren-und-deinstallieren)
 - [Exportieren und importieren mit ezpm](exportieren-mit-ezpm.md)
-- [Eine Upgrade-Testumgebung](../../../../eng-us/help/designers/lifecycle/upgrade-test-environment.md)
+- [Eine Upgrade-Testumgebung](../lebenszyklus/upgrade-testumgebung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

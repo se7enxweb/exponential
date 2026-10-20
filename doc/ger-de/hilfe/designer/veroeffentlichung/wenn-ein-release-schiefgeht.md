@@ -43,7 +43,7 @@ Jedes davon lässt manche Nutzer mit dem einen Inhalt und andere mit einem ander
 
 ## Wenn der Fehler ein Sicherheitsproblem ist
 
-Folgen Sie [Ein Sicherheitsrelease veröffentlichen](../../../../eng-us/help/designers/lifecycle/publishing-a-security-release.md): beheben,
+Folgen Sie [Ein Sicherheitsrelease veröffentlichen](../lebenszyklus/ein-sicherheitsrelease-veroeffentlichen.md): beheben,
 veröffentlichen, dann beschreiben.
 
 ## Nutzer, die die fehlerhafte Version fest eingetragen haben
