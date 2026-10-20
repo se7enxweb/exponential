@@ -25,7 +25,7 @@ class Manual extends \Exponential\Runnable\ModuleView
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
 
         $provider = \expHelpContentProvider::instance();
-        $remoteId = \expHelp::requestedId( $Params, $_GET );
+        $remoteId = \expHelp::requestedId( $Params );
         $manual = false;
         $toc = array();
         if ( $remoteId !== '' )
@@ -34,13 +34,13 @@ class Manual extends \Exponential\Runnable\ModuleView
             if ( $manual === null )
                 return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
             $toc = $provider->toc( $manual );
-            $format = isset( $_GET['format'] ) && is_string( $_GET['format'] ) ? $_GET['format'] : '';
+            $format = self::requestedFormat( $Params );
             if ( $format === 'dita' )
                 return self::downloadDita( $Module, $provider, $manual['remote_id'] );
             if ( $format !== '' )
                 return self::download( $Module, $provider, $manual, $format );
         }
-        elseif ( isset( $_GET['format'] ) && $_GET['format'] === 'dita' )
+        elseif ( self::requestedFormat( $Params ) === 'dita' )
             return self::downloadDita( $Module, $provider, null );
         $manuals = array();
         foreach ( $provider->manuals() as $item )
@@ -70,7 +70,7 @@ class Manual extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Sends the e-book of a manual (?format=epub|pdf): the Released topics the user may read, made on request into
+     * Sends the e-book of a manual (/(format)/epub|pdf): the Released topics the user may read, made on request into
      * the help cache. A format this installation cannot write, or a manual without such topics, is a 404.
      *
      * @param \eZModule $Module
@@ -112,7 +112,7 @@ class Manual extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Sends the DITA 1.3 export as a zip (?format=dita): of one manual, or with $remoteId null of every manual, the
+     * Sends the DITA 1.3 export as a zip (/(format)/dita): of one manual, or with $remoteId null of every manual, the
      * topic pool and the glossary. Only Released objects the user may read are in it. An export that does not pass
      * its own check, or one without topics, is a 404 (the reason is in the debug output).
      *
@@ -155,6 +155,20 @@ class Manual extends \Exponential\Runnable\ModuleView
         echo $data;
         \eZExecution::cleanExit();
         return null;
+    }
+
+    /**
+     * The download a manual is asked for with the view parameter /(format)/<epub|pdf|dita>; '' for the page. A GET
+     * ?format= is not read.
+     *
+     * @param array $params the view's $Params
+     * @return string
+     */
+    public static function requestedFormat( array $params )
+    {
+        $user = isset( $params['UserParameters'] ) && is_array( $params['UserParameters'] ) ? $params['UserParameters'] : array();
+        $format = isset( $user['format'] ) && is_string( $user['format'] ) ? $user['format'] : '';
+        return preg_match( '/^[a-z0-9]{1,16}$/', $format ) ? $format : '';
     }
 
     /**

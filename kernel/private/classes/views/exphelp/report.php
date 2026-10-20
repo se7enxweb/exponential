@@ -28,9 +28,11 @@ class Report extends \Exponential\Runnable\ModuleView
         $extensionTrackers = $report->extensionTrackers();
         $all = $trackers + $extensionTrackers;
         // the report form is sent with POST (its text stays out of addresses, the history and the access log; the
-        // form token is checked by ezformtoken), the tracker can also come from the address (?tracker=<key>)
+        // form token is checked by ezformtoken), the tracker can also come from the address as the view parameter
+        // /(tracker)/<key> (never ?tracker=)
         $posted = isset( $_SERVER['REQUEST_METHOD'] ) && $_SERVER['REQUEST_METHOD'] === 'POST' ? $_POST : array();
-        $requested = isset( $posted['tracker'] ) ? $posted['tracker'] : ( isset( $_GET['tracker'] ) ? $_GET['tracker'] : '' );
+        $user = isset( $scope['Params']['UserParameters'] ) && is_array( $scope['Params']['UserParameters'] ) ? $scope['Params']['UserParameters'] : array();
+        $requested = isset( $posted['tracker'] ) ? $posted['tracker'] : ( isset( $user['tracker'] ) ? $user['tracker'] : '' );
         $chosen = is_string( $requested ) && isset( $all[$requested] ) ? $requested : '';
         $draft = $report->draft( $posted );
         $drafted = implode( '', $draft ) !== '';

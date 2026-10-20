@@ -72971,10 +72971,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Centre d&apos;aide</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Accueil de l&apos;aide</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Comment pouvons-nous vous aider ?</translation>
     </message>

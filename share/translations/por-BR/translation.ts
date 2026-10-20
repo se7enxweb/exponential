@@ -73802,10 +73802,6 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <translation>Central de ajuda</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Início da ajuda</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Como podemos ajudar?</translation>
     </message>

@@ -2,8 +2,8 @@
 /**
  * The help's addresses and link rewriting (doc/eng-us/features/6.0/help-system.md, "Security"), without a database.
  *
- *  HL-01  expHelp::url(): module-relative, each segment encoded, the anchor encoded, the query RFC 3986
- *  HL-02  expHelp::requestedId(): the rest of the address or ?p=, decoded, backslashes as slashes, no array tricks
+ *  HL-01  expHelp::url(): module-relative, each segment encoded, the anchor encoded, options as view parameters
+ *  HL-02  expHelp::requestedId(): the rest of the address (never ?p=), decoded, backslashes as slashes
  *  HL-03  expHelpLinks::resolvePath(): relative to the current page, never above the root (null), no NUL
  *  HL-04  expHelpLinks::link(): javascript:, data:, vbscript:, file: and every other scheme dropped; http(s) and
  *         mailto kept; protocol-relative made https; a relative link to a page that is not served dropped
@@ -27,22 +27,34 @@ class expHelpLinksTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '/exphelp/viewer/help/a%20b.md#first-step', expHelp::url( 'viewer', '/help/a b.md', 'first-step' ) );
         $this->assertSame( '/exphelp/viewer/x.md#%22%3E%3Cscript%3E', expHelp::url( 'viewer', 'x.md', '"><script>' ) );
         $this->assertSame( '/exphelp/viewer/%22%3E%3Cimg%3E.md', expHelp::url( 'viewer', '"><img>.md' ) );
-        $this->assertSame( '/exphelp/search?q=a%20b&format=json', expHelp::url( 'search', '', '', array( 'q' => 'a b', 'format' => 'json' ) ) );
+        $this->assertSame( '/exphelp/search/(q)/a%20b/(format)/json', expHelp::url( 'search', '', '', array( 'q' => 'a b', 'format' => 'json' ) ) );
+        $this->assertSame( '/exphelp/viewer/x.md/(lang)/eng-us#top', expHelp::url( 'viewer', 'x.md', 'top', array( 'lang' => 'eng-us' ) ) );
+        $this->assertSame( '/exphelp/viewer/x.md', expHelp::url( 'viewer', 'x.md', '', array( 'lang' => '', 'Bad Name' => 'x', 'a' => array( 'b' ) ) ),
+                           'empty values, names that are no view parameter and arrays are left out' );
+        $this->assertStringNotContainsString( '?', expHelp::url( 'search', '', '', array( 'q' => 'x', 'format' => 'json' ) ) );
     }
 
     /** HL-02 */
     public function testRequestedId()
     {
         $this->assertSame( 'features/6.0/help-system.md',
-                           expHelp::requestedId( array( 'Parameters' => array( 'features', '6.0', 'help-system.md' ) ), array() ) );
-        $this->assertSame( 'help/start.md', expHelp::requestedId( array(), array( 'p' => '/help/start.md/' ) ) );
-        $this->assertSame( 'a/b.md', expHelp::requestedId( array(), array( 'p' => 'a\\b.md' ) ) );
-        $this->assertSame( '', expHelp::requestedId( array(), array( 'p' => array( 'x' ) ) ), 'an array p is ignored' );
-        $this->assertSame( '', expHelp::requestedId( array(), array() ) );
-        // the address wins over ?p=
-        $this->assertSame( 'one.md', expHelp::requestedId( array( 'Parameters' => array( 'one.md' ) ), array( 'p' => 'two.md' ) ) );
+                           expHelp::requestedId( array( 'Parameters' => array( 'features', '6.0', 'help-system.md' ) ) ) );
+        $this->assertSame( 'help/start.md', expHelp::requestedId( array( 'Parameters' => array( '', 'help', 'start.md', '' ) ) ) );
+        $this->assertSame( 'a/b.md', expHelp::requestedId( array( 'Parameters' => array( 'a\\b.md' ) ) ) );
+        $this->assertSame( '', expHelp::requestedId( array() ) );
+        // ?p= is not read: a GET parameter never names the page
+        $_GET['p'] = 'two.md';
+        try
+        {
+            $this->assertSame( '', expHelp::requestedId( array() ) );
+            $this->assertSame( 'one.md', expHelp::requestedId( array( 'Parameters' => array( 'one.md' ) ) ) );
+        }
+        finally
+        {
+            unset( $_GET['p'] );
+        }
         // decoded here; the index refuses the result (see expHelpDocumentIndexTest)
-        $this->assertSame( '../settings/site.ini', expHelp::requestedId( array(), array( 'p' => '%2e%2e/settings/site.ini' ) ) );
+        $this->assertSame( '../settings/site.ini', expHelp::requestedId( array( 'Parameters' => array( '%2e%2e', 'settings', 'site.ini' ) ) ) );
     }
 
     public static function escapingPaths()

@@ -72486,10 +72486,6 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Hjælpecenter</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Hjælpens start</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Hvordan kan vi hjælpe?</translation>
     </message>

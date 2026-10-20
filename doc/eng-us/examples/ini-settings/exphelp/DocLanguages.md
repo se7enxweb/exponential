@@ -96,7 +96,7 @@ Names[ger-de]=German
 ## Legacy
 
 > The directories of 6.0.14 and before => today's: an old address (exphelp/viewer/en/us/<id>, exphelp/viewer/doc/en/us/<id>,  
-> exphelp/viewer/de/<translated path>, ?lang=en-us) still finds its page. No file is read from an old directory.  
+> exphelp/viewer/de/<translated path>, /(lang)/en-us) still finds its page. No file is read from an old directory.  
 
 Default: a hash of 2: `en/us=eng-us`, `de=ger-de`.
 

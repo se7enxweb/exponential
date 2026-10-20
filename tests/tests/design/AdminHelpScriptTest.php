@@ -4,7 +4,7 @@
  * against a small stand-in for the DOM (js/mini_dom.js, harness js/exphelp.js); no database.
  *
  * - HELPJS-01: the instant search asks the JSON view named by data-exphelp-endpoint (q trimmed, the checked filters,
- *   limit, format=json, Accept: application/json), builds the results as text (a <b> or <img> in a title or snippet
+ *   limit, (format)/json as view parameters, never a query string, Accept: application/json), builds the results as text (a <b> or <img> in a title or snippet
  *   stays text, only the matches become <mark>), drops a result whose link is not this site's or https (javascript:),
  *   reads the snippet from snippet_parts or, without them, from the escaped snippet, shows the count in the page's
  *   language (data-exphelp-i18n) and fills the facet counts.
@@ -97,7 +97,7 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
     {
         $c = $this->cases()['search'];
         $this->assertSame( 1, $c['requests'], 'one request after the pause in typing' );
-        $this->assertSame( '/admin/exphelp/search?q=cache&audience=editor&limit=20&format=json', $c['url'] );
+        $this->assertSame( '/admin/exphelp/search/(q)/cache/(audience)/editor/(limit)/20/(format)/json', $c['url'] );
         $this->assertSame( 'application/json', $c['accept'] );
         $this->assertFalse( $c['hidden'] );
         $this->assertSame( array( '/admin/exphelp/viewer/(path)/doc/a.md#clear', '/admin/exphelp/viewer/(path)/doc/c.md' ), $c['links'],
@@ -126,7 +126,7 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'not available', $c['error']['status'] );
         $this->assertStringContainsString( 'not available', $c['no fetch']['status'] );
         $this->assertSame( 2, $c['filter change']['requests'] );
-        $this->assertSame( '/admin/exphelp/search?q=cache&category=x&limit=20&format=json', $c['filter change']['url'] );
+        $this->assertSame( '/admin/exphelp/search/(q)/cache/(category)/x/(limit)/20/(format)/json', $c['filter change']['url'] );
     }
 
     /** HELPJS-03 */
@@ -226,7 +226,7 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
                            "the form goes to the canonical address: q, category, audience, type; '/', '(' and ')' become spaces, a space '+'" );
         $this->assertFalse( $c['plainPrevented'], 'without data-exphelp-canonical-base the form is sent as it is' );
         $this->assertSame( array( '/admin/exphelp/search' ), $c['emptyAssigned'] );
-        $this->assertSame( '/admin/exphelp/search?q=&audience=editor&limit=20&format=json', $c['browseUrl'],
+        $this->assertSame( '/admin/exphelp/search/(audience)/editor/(limit)/20/(format)/json', $c['browseUrl'],
                            'an empty field with a filter set asks for the browse list' );
         $this->assertSame( array( '/admin/exphelp/viewer/x.md' ), $c['browseLinks'] );
         $this->assertSame( '2 Treffer', $c['browseStatus'] );

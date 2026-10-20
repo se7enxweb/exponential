@@ -71808,10 +71808,6 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Navenda alîkariyê</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Destpêka alîkariyê</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Em çawa dikarin alîkariya we bikin?</translation>
     </message>
