@@ -3194,7 +3194,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 f4a6fd7fba388894640420c210f94f94  doc/changelogs/6.0/6.0.12.md
 878882418c7ffe32fd4d202a2d889e95  doc/changelogs/6.0/6.0.13.md
 fb8589325fc127b61d43ce5d7cc188d0  doc/changelogs/6.0/6.0.14.md
-4c998932bb3d00393e9292e73a80577a  doc/changelogs/6.0/6.0.15.md
+dc352ef3ea8de4b4c3a811c53ca59a26  doc/changelogs/6.0/6.0.15.md
 dc6c1e6747014d6f9b8be9e724b1b763  doc/changelogs/6.0/6.0.2.md
 831f582bbb230b4566621e2b9c913153  doc/changelogs/6.0/6.0.3.md
 4a9ce240f3051c96fce5a2b61580ff2a  doc/changelogs/6.0/6.0.4.md
@@ -5172,7 +5172,7 @@ e382faef5f0033033e77a80c0bea361e  doc/en/us/examples/ini-settings/workflow/Event
 a87fd3d13133b875bb6551c2746d8239  doc/en/us/examples/ini-settings/workflow/OperationSettings.md
 3f2e8c97033a93b8aa8a263d7661854d  doc/en/us/examples/ini-settings/workflow/README.md
 2f1f3dc779ac748ecce62b5f261aad3e  doc/en/us/examples/ini-settings/workflow/SimpleShippingWorkflow.md
-0c18e430e7e888623d418fd4b41c30c7  doc/en/us/examples/module-views/README.md
+69ffe40f62c718d515cbffcebfe306c4  doc/en/us/examples/module-views/README.md
 d47ea617a5a6ef7957b8ab9f59d987fc  doc/en/us/examples/module-views/apikey/README.md
 ffa53e72494d43ac42b742210fb45311  doc/en/us/examples/module-views/apikey/list.md
 2805e18cdf0c9a1e3a48b7131199e9c1  doc/en/us/examples/module-views/audit/README.md
@@ -5262,15 +5262,17 @@ b165b0a7de4b9678acf89273ee81eb6c  doc/en/us/examples/module-views/contentfinder/
 ba7ecedb269aa199970babd26857f3e1  doc/en/us/examples/module-views/csp/report.md
 724f156c26f551cd9e68c5bc86671772  doc/en/us/examples/module-views/error/README.md
 2c9c41bd7791f1899fe320ae1eaad0ee  doc/en/us/examples/module-views/error/view.md
-261f7c3e7d37711704b9e55f5d932c67  doc/en/us/examples/module-views/exphelp/README.md
+8a71d14d173bda1919a1d3df3cf07c7c  doc/en/us/examples/module-views/exphelp/README.md
 b4e008e2988fd3d42c909ffe8507c376  doc/en/us/examples/module-views/exphelp/asset.md
+6c7a084ad6ee8d1b21da992d0c3f7cd4  doc/en/us/examples/module-views/exphelp/audience.md
 1b2a72340534b1f860f54288b8e6a500  doc/en/us/examples/module-views/exphelp/contents.md
 9d0b859f8e265471a876c78a8bbd3c6a  doc/en/us/examples/module-views/exphelp/context.md
 cbaa312ce0ee5737233179134dc8ac54  doc/en/us/examples/module-views/exphelp/dashboard.md
+197e7cfb8006283c8babb1719033be3f  doc/en/us/examples/module-views/exphelp/extensions.md
 7909dd939394892d63088455f40abf2b  doc/en/us/examples/module-views/exphelp/manual.md
 bb8036054a0b8802398419b33f85c3cf  doc/en/us/examples/module-views/exphelp/pdf.md
 a38b94afbe852fbaab205d538b27eb46  doc/en/us/examples/module-views/exphelp/report.md
-7b5292b4b92bfadfb036f64f286bfe8b  doc/en/us/examples/module-views/exphelp/search.md
+b1a71092e3ac0ae7f17988ed19358d6f  doc/en/us/examples/module-views/exphelp/search.md
 eb0af48f60174430a13fece2bb1361b9  doc/en/us/examples/module-views/exphelp/topic.md
 502be8dbf61001596beb83fde3068946  doc/en/us/examples/module-views/exphelp/viewer.md
 034dc955f41ce8e105d5ee537bd10df8  doc/en/us/examples/module-views/ezinfo/README.md
@@ -6146,8 +6148,8 @@ c5545530f53d980f227c9e2cad67d78c  doc/en/us/features/6.0/extensions/swark.md
 51f765f021c4cd9059b382a8da0350d4  doc/en/us/features/6.0/ezpm-package-manager-cli.md
 b8686ed08b041700382d969f251b7a73  doc/en/us/features/6.0/file-consistency-check.md
 59921235369f40f7789e0b09d13b8f05  doc/en/us/features/6.0/form-expired-page.md
-143c624ef5f5f2cd43ba423afcb4f740  doc/en/us/features/6.0/help-content.md
-9f1c612dd532594726d9990dcaf46980  doc/en/us/features/6.0/help-system.md
+e0e183b81f4550d127fc7e0816014dd7  doc/en/us/features/6.0/help-content.md
+37b964dc18d807a0b1bcf43b625b58e9  doc/en/us/features/6.0/help-system.md
 b0d4d73922efa2d3bd00e0c098ea0176  doc/en/us/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/en/us/features/6.0/icon-themes-in-extensions.md
 43b1dad028eb5a42a24b626adf88ae81  doc/en/us/features/6.0/install-in-one-command.md
@@ -12123,7 +12125,7 @@ f7c950fe8b2e6b7db6122f93fe24334a  kernel/classes/help/exphelpaudience.php
 8575966cb7b4f6f102207d46a4873706  kernel/classes/help/exphelpcommitfeed.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
-1c274d6581759cf5b09935aaf53e0152  kernel/classes/help/exphelpcontextregistry.php
+42ab51793d77884c165f21168803692b  kernel/classes/help/exphelpcontextregistry.php
 af40dcb479982f1dc8420c5c03b041d2  kernel/classes/help/exphelpdocumentindex.php
 0445ada0b9c7263416fd213589055e6a  kernel/classes/help/exphelpexamplesgenerator.php
 b1125a343d75f5a64ec2c95166c27898  kernel/classes/help/exphelpfrontmatter.php
@@ -13621,7 +13623,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c46d815e90f7a7046868a7aad05f6f5f  settings/debugbar.ini
 d3a8dbd3dd47da9a1e9c49ce3c0926fb  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-55e055a2354d7ffcb5781cb26b3c30e3  settings/exphelp.ini
+46604bccad3dbe1b7d0778809f70cfc0  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini

@@ -186,7 +186,7 @@ can never name `content/...`, and a provider that does not implement the interfa
 | `AudienceMap[<name>]` | visitors, members: user; editors: editor; administrators: admin | the help's audience of an audience option |
 | `ContextHelpIds[<key>]` | none | `module/view` (or `module`, `design:module/view`) = help_id |
 | `AnonymousContextHelp` | `disabled` | `enabled`: the roles step gives Anonymous `exphelp/context` |
-| `ClientHelpIds[]` | none (not in the shipped file; add it in an override) | the help_ids other clients open (a mobile app, a site's JavaScript); `check` reports one no topic has, or whose topic is not Released |
+| `ClientHelpIds[]` | none (a commented example in the shipped file; set it in an override) | the help_ids other clients open (a mobile app, a site's JavaScript); `check` reports one no topic has, or whose topic is not Released |
 
 ## E-books
 
