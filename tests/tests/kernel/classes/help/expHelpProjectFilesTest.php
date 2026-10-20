@@ -5,9 +5,9 @@
  * repositories made in a temporary directory (skipped without git).
  *
  *  PF-01  the patterns: "*" stays in a directory, "**" crosses directories, "**\/" matches no directory too
- *  PF-02  by name: the shipped Include[] takes the root *.md and the README.md of bin/, tests/, design/, kernel/;
- *         never doc/, var/, vendor/, settings/override/, a hidden directory other than .github/, nor anything but
- *         Markdown, even when Include[] asks for everything
+ *  PF-02  by name: the shipped Include[] takes the root *.md and the README.md of bin/, design/, kernel/; never
+ *         doc/, extension/, a tests/ directory, var/, vendor/, settings/override/, a hidden file or directory
+ *         (.github/ included), nor anything but Markdown, even when Include[] asks for everything
  *  PF-03  an untracked root .md (qbix.md, AGENTS.md, 6015.md ...) is never listed, indexed, searched or linked, from
  *         the git index, from "git ls-files" and from the release manifest alike, even when Include[] names it
  *  PF-04  a tracked file in a place .gitignore or .git/info/exclude ignores is refused (forced in with git add -f),
@@ -18,12 +18,16 @@
  *  PF-07  links both ways: ../../../README.md from doc/en/us/... opens the project file in the help, a link of
  *         README.md into doc/en/us/... opens the help page; the link check finds no "not served" link
  *  PF-08  English only: a German reader gets them with the fallback note, like the changelogs
- *  PF-09  navigation: the folder "project" is called Project files, the root README.md is its overview
+ *  PF-09  navigation: the project files are pages at the top of the tree, next to the folders; there is no folder
+ *         "project" (nor any folder of theirs), a title that is only "README" gets its directory in front, and the
+ *         breadcrumb of a project file is Help > the page
  *  PF-10  this installation: every tracked root *.md is a project file, nothing untracked is, and the shipped
  *         [ProjectFiles] settings are the built-in defaults
  *  PF-11  license: a project file has the license of the software, not the documentation license
  *  PF-12  Enabled=disabled: no project files at all
  *  PF-13  the new strings are in the translation catalogues (context kernel/exphelp)
+ *  PF-14  .github/, tests/ and extension/ are never listed, even when an Include[] names them (tracked files in the
+ *         fixture); this installation lists none of them either
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -60,6 +64,10 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
             'tests/README.md' => "# Tests\n\nText.\n",
             'tests/fixtures/README.md' => "# A fixture\n",
             'kernel/classes/README.md' => "# Kernel classes\n",
+            'kernel/private/README.md' => "# README\n\nOnly the name.\n",
+            'kernel/classes/tests/README.md' => "# Tests of the kernel classes\n",
+            'extension/someext/README.md' => "# Some extension\n",
+            '.github/PULL_REQUEST_TEMPLATE.md' => "# Pull request\n",
             'design/admin4/README.md' => "# The admin4 design\n",
             'extension/someext/tests/browser/README.md' => "# Browser tests\n",
             'extension/someext/design/standard/javascript/lib/README.md' => "# A JavaScript library\n",
@@ -194,11 +202,12 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
     public function testCandidatesByName()
     {
         $files = new expHelpProjectFiles();
-        foreach ( array( 'README.md', 'SECURITY.md', 'CONTRIBUTING.md', 'LICENSE.md', 'COPYRIGHT.md', 'CHANGELOG.md', '.github/SUPPORT.md',
-                         'bin/php/README.md', 'tests/README.md', 'design/admin4/README.md', 'kernel/classes/README.md',
-                         'extension/ezoe/tests/tinymce8/README.md' ) as $path )
+        foreach ( array( 'README.md', 'SECURITY.md', 'CONTRIBUTING.md', 'LICENSE.md', 'COPYRIGHT.md', 'CHANGELOG.md',
+                         'bin/php/README.md', 'design/admin4/README.md', 'kernel/classes/README.md' ) as $path )
             $this->assertTrue( $files->isCandidate( $path ), $path );
-        foreach ( array( 'doc/README.md', 'doc/en/us/guides/caches.md', 'bin/php/notes.md', 'tests/fixtures/README.md',
+        foreach ( array( '.github/SUPPORT.md', '.github/PULL_REQUEST_TEMPLATE.md', 'tests/README.md', 'tests/browser/README.md',
+                         'kernel/classes/tests/README.md', 'extension/ezoe/tests/tinymce8/README.md', 'extension/ezoe/README.md',
+                         'doc/README.md', 'doc/en/us/guides/caches.md', 'bin/php/notes.md', 'tests/fixtures/README.md',
                          'extension/ezoe/design/standard/javascript/tinymce8/README.md', 'extension/x/doc/README.md',
                          'settings/override/README.md', 'var/README.md', 'vendor/a/README.md', '.hidden/README.md',
                          'README.txt', 'README', 'x.php', '../README.md', 'a/../README.md', '/README.md/..', '', '.md' ) as $path )
@@ -207,7 +216,10 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
         $greedy = new expHelpProjectFiles( array( 'include' => array( '**', '*', '**/*' ), 'exclude' => array() ) );
         foreach ( array( 'doc/en/us/x.md', 'var/site/x.md', 'vendor/x/README.md', 'settings/override/x.md',
                          'settings/siteaccess/admin/x.md', 'a/node_modules/x/README.md', '.git/x.md', '.claude/x.md',
-                         '.github/../x.md', 'extension/x/doc/README.md', 'x.php', 'x.txt', 'settings/site.ini' ) as $path )
+                         '.github/../x.md', 'extension/x/doc/README.md', 'x.php', 'x.txt', 'settings/site.ini',
+                         '.github/SUPPORT.md', '.github/ISSUE_TEMPLATE/bug.md', '.hidden.md', 'bin/.notes.md',
+                         'tests/README.md', 'kernel/classes/tests/README.md', 'extension/x/README.md',
+                         'extension/x/tests/y/README.md' ) as $path )
             $this->assertFalse( $greedy->isCandidate( $path ), $path );
         $this->assertTrue( $greedy->isCandidate( 'some/where/notes.md' ), 'Include[] does widen the names' );
         $this->assertFalse( ( new expHelpProjectFiles( array( 'enabled' => false ) ) )->isCandidate( 'README.md' ) );
@@ -331,9 +343,9 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'changelogs/6.0.md', $index->idOf( 'doc/changelogs/6.0.md' ) );
         $this->assertNull( $index->idOf( 'kernel/classes/notes.php' ) );
         $this->assertNotNull( $index->document( 'project/README.md' ) );
-        $this->assertNotNull( $index->document( 'project/.github/SUPPORT.md' ) );
-        $this->assertNotNull( $index->document( 'project/extension/someext/tests/browser/README.md' ) );
-        foreach ( array( 'project/tests/fixtures/README.md', 'project/extension/someext/design/standard/javascript/lib/README.md',
+        foreach ( array( 'project/.github/SUPPORT.md', 'project/.github/PULL_REQUEST_TEMPLATE.md', 'project/tests/README.md',
+                         'project/extension/someext/tests/browser/README.md', 'project/extension/someext/README.md',
+                         'project/kernel/classes/tests/README.md', 'project/tests/fixtures/README.md', 'project/extension/someext/design/standard/javascript/lib/README.md',
                          'project/settings/override/README.md', 'project/var/README.md', 'project/vendor/foo/README.md',
                          'project/.hidden/README.md', 'project/extension/someext/doc/guide.md', 'project/../README.md' ) as $id )
             $this->assertNull( $index->document( $id ), $id );
@@ -414,20 +426,47 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
     /** PF-09 */
     public function testNavigation()
     {
-        $tree = self::index()->tree();
-        $project = null;
-        foreach ( $tree['children'] as $child )
-            if ( $child['name'] === 'project' )
-                $project = $child;
-        $this->assertNotNull( $project );
-        $this->assertSame( 'project/README.md', $project['index_id'], 'the root README.md is the overview' );
-        $this->assertSame( 'Project files', expHelpNavigation::folderTitle( $project, array() ) );
-        $this->assertSame( 'Own name', expHelpNavigation::folderTitle( $project, array( 'project' => 'Own name' ) ), 'FolderNames[] wins' );
-        $names = array();
-        foreach ( $project['children'] as $child )
-            $names[] = $child['name'];
-        $this->assertContains( 'bin', $names );
-        $this->assertContains( 'tests', $names );
+        $index = self::index();
+        $tree = $index->tree();
+        // no folder of the project files at all: not "project", not one below it
+        $folders = array();
+        $walk = function ( array $node ) use ( &$walk, &$folders ) {
+            foreach ( $node['children'] as $child )
+            {
+                $folders[] = (string)$child['path'];
+                $walk( $child );
+            }
+        };
+        $walk( $tree );
+        foreach ( $folders as $folder )
+            $this->assertStringStartsNotWith( 'project', $folder, 'the project files have no folder: ' . $folder );
+        // every project file is a page at the top, next to the folders
+        $top = array();
+        foreach ( $tree['documents'] as $document )
+            $top[$document['id']] = $document['title'];
+        foreach ( array( 'project/README.md' => 'Exponential', 'project/SECURITY.md' => 'Security Policy',
+                         'project/CONTRIBUTING.md' => 'How to contribute', 'project/LICENSE.md' => 'GNU GENERAL PUBLIC LICENSE',
+                         'project/bin/php/README.md' => 'Command line scripts', 'project/kernel/classes/README.md' => 'Kernel classes',
+                         'project/design/admin4/README.md' => 'The admin4 design',
+                         'project/kernel/private/README.md' => 'kernel/private README' ) as $id => $title )
+        {
+            $this->assertArrayHasKey( $id, $top, $id . ' is at the top of the tree' );
+            $this->assertSame( $title, $top[$id], $id );
+        }
+        foreach ( array_keys( $top ) as $id )
+            $this->assertTrue( expHelpProjectFiles::isProjectId( $id ), $id );
+        $this->assertSame( 'kernel/private README', expHelpProjectFiles::treeTitle( 'kernel/private/README.md', 'README' ) );
+        $this->assertSame( 'README', expHelpProjectFiles::treeTitle( 'README.md', 'README' ), 'the root one has no directory' );
+        $this->assertSame( 'Kernel classes', expHelpProjectFiles::treeTitle( 'kernel/classes/README.md', 'Kernel classes' ) );
+        // the side tree: no folder of theirs, each page a link at the top level
+        $html = ( new expHelpNavigation( $index ) )->build( $tree );
+        $this->assertStringNotContainsString( 'data-nav-path="project', $html );
+        $this->assertStringContainsString( '/project/bin/php/README.md"', $html );
+        // the breadcrumb: Help > the page
+        $crumbs = Exponential\View\Kernel\Exphelp\Viewer::breadcrumb( $index, 'project/bin/php/README.md', 'Command line scripts' );
+        $this->assertCount( 2, $crumbs );
+        $this->assertSame( 'exphelp/dashboard', $crumbs[0]['url'] );
+        $this->assertSame( array( 'url' => false, 'text' => 'Command line scripts' ), $crumbs[1] );
     }
 
     /** PF-10 */
@@ -455,6 +494,15 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
         foreach ( self::PRIVATE_NOTES as $note )
             $this->assertNotContains( $note, $paths, $note );
         $this->assertNotContains( 'extension/ezoe/design/standard/javascript/tinymce8/README.md', $paths, 'a copy of another project' );
+        // PF-14: no .github/, no tests, nothing of extension/
+        $this->assertNotContains( '.github/PULL_REQUEST_TEMPLATE.md', $paths );
+        $this->assertNotContains( 'extension/ezoe/tests/tinymce8/README.md', $paths );
+        foreach ( $paths as $path )
+        {
+            $this->assertDoesNotMatchRegularExpression( '#(^|/)\.#', $path, 'never hidden' );
+            $this->assertDoesNotMatchRegularExpression( '#(^|/)tests/#', $path, 'never tests' );
+            $this->assertStringStartsNotWith( 'extension/', $path );
+        }
 
         // the links of the project files, and of the help page about them, all land on help pages
         $index = new expHelpDocumentIndex( $allowlist, array( 'cache_dir' => false, 'git_history' => false, 'audience' => new expHelpAudience(),
@@ -530,6 +578,31 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
                 $this->assertTrue( strpos( $ts, '<source>' . htmlspecialchars( $source, ENT_QUOTES | ENT_XML1 ) . '</source>' ) !== false,
                                    basename( dirname( $file ) ) . ': ' . $source );
         }
+    }
+
+    /** PF-14 */
+    public function testHiddenTestsAndExtensionsAreNeverListed()
+    {
+        $never = array( '.github/SUPPORT.md', '.github/PULL_REQUEST_TEMPLATE.md', 'tests/README.md', 'kernel/classes/tests/README.md',
+                        'extension/someext/README.md', 'extension/someext/tests/browser/README.md' );
+        $shipped = self::projectPaths( self::allowlist() );
+        foreach ( $never as $path )
+            $this->assertNotContains( $path, $shipped, $path );
+        // an Include[] that names them, and one that takes everything, change nothing
+        foreach ( array( array( '.github/*.md', '.github/**/*.md', 'tests/**/README.md', 'tests/README.md', 'kernel/**/README.md',
+                                'extension/**/README.md', 'extension/*/tests/**/README.md' ),
+                         array( '**', '*', '**/*' ) ) as $include )
+        {
+            $allowlist = self::allowlist( array( 'project_files' => array( 'include' => $include, 'exclude' => array() ) ) );
+            $paths = self::projectPaths( $allowlist );
+            foreach ( $never as $path )
+                $this->assertNotContains( $path, $paths, $path . ' (' . implode( ' ', $include ) . ')' );
+            $index = self::index( 'en/us', $allowlist );
+            foreach ( $never as $path )
+                $this->assertNull( $index->document( 'project/' . $path ), $path );
+        }
+        $this->assertContains( 'kernel/classes/README.md', $shipped );
+        $this->assertContains( 'kernel/private/README.md', $shipped );
     }
 
     /**

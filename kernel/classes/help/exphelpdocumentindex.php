@@ -730,7 +730,8 @@ class expHelpDocumentIndex
      *   else the humanized name), index and index_id (the id of that README.md/index.md, or null), order,
      *   children (list of nodes), documents (list of array( 'id', 'path', 'title', 'order', 'type', 'audience' ))
      * Children and documents are in order, then natural title order; a folder's README.md/index.md is its index, not
-     * one of its documents.
+     * one of its documents. The project files (project/...) are documents of the top node, with
+     * expHelpProjectFiles::treeTitle(), not a folder.
      *
      * @param string|null $below only this folder (id space, e.g. 'guides')
      * @return array the top node (or the folder's node; an empty node for an unknown folder)
@@ -741,6 +742,16 @@ class expHelpDocumentIndex
         $below = $below === null ? null : trim( (string)$below, '/' );
         foreach ( $this->visibleDocuments() as $id => $document )
         {
+            // the project files (project/README.md, project/bin/php/README.md ...) are pages at the top of the tree,
+            // next to the folders, never a folder of their own
+            if ( class_exists( 'expHelpProjectFiles' ) && expHelpProjectFiles::isProjectId( $id ) )
+            {
+                $root['documents'][] = array( 'id' => $id, 'path' => $document['path'],
+                                              'title' => expHelpProjectFiles::treeTitle( $document['path'], $document['title'] ),
+                                              'order' => $document['order'], 'type' => $document['type'],
+                                              'audience' => $document['audience'] );
+                continue;
+            }
             $segments = explode( '/', $id );
             $file = array_pop( $segments );
             $node = &$root;

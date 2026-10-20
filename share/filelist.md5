@@ -3199,7 +3199,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 f4a6fd7fba388894640420c210f94f94  doc/changelogs/6.0/6.0.12.md
 878882418c7ffe32fd4d202a2d889e95  doc/changelogs/6.0/6.0.13.md
 fb8589325fc127b61d43ce5d7cc188d0  doc/changelogs/6.0/6.0.14.md
-ad6fac5fc32002010753bbee30ac290d  doc/changelogs/6.0/6.0.15.md
+652085f9055b8d5b88482757bb059b65  doc/changelogs/6.0/6.0.15.md
 dc6c1e6747014d6f9b8be9e724b1b763  doc/changelogs/6.0/6.0.2.md
 831f582bbb230b4566621e2b9c913153  doc/changelogs/6.0/6.0.3.md
 4a9ce240f3051c96fce5a2b61580ff2a  doc/changelogs/6.0/6.0.4.md
@@ -6375,7 +6375,7 @@ c5545530f53d980f227c9e2cad67d78c  doc/en/us/features/6.0/extensions/swark.md
 b8686ed08b041700382d969f251b7a73  doc/en/us/features/6.0/file-consistency-check.md
 59921235369f40f7789e0b09d13b8f05  doc/en/us/features/6.0/form-expired-page.md
 8c5c33dddc81c5e6f444b9029806c644  doc/en/us/features/6.0/help-content.md
-78c0b39a8b386ce8a9a7202924a7cc2e  doc/en/us/features/6.0/help-system.md
+ddda229c2b5c578ba1e2c311c66778a8  doc/en/us/features/6.0/help-system.md
 b0d4d73922efa2d3bd00e0c098ea0176  doc/en/us/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/en/us/features/6.0/icon-themes-in-extensions.md
 43b1dad028eb5a42a24b626adf88ae81  doc/en/us/features/6.0/install-in-one-command.md
@@ -9809,7 +9809,7 @@ fb6969d9a2ef91367e2a8ced182d8d80  doc/en/us/help/press/where-the-facts-live-for-
 87ca5381983c74f441619764040c3ae7  doc/en/us/help/press/writing-about-funding-and-sponsors.md
 b94c56a16d6c683c9128212366407719  doc/en/us/help/press/writing-about-the-community.md
 0c4d2324d6b37db33a5baec9d5facf25  doc/en/us/help/press/writing-about-the-ez-publish-years.md
-9d91ce9e7f5e03bec08884caf611042b  doc/en/us/help/project-files.md
+9985e07b9b654667dee34cd1ffe495ef  doc/en/us/help/project-files.md
 e31b7b5ddb78deb0c3980797f66968e9  doc/en/us/help/project/README.md
 87a8f80812f6de1b57e4916be3a31310  doc/en/us/help/project/about-the-project.md
 bacd2f52b8a79b0e93905ddf1009c011  doc/en/us/help/project/build-with-exponential.md
@@ -12398,7 +12398,7 @@ ecd686481ac982dc50a41e4025d6434e  kernel/classes/help/exphelpallowlist.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 42ab51793d77884c165f21168803692b  kernel/classes/help/exphelpcontextregistry.php
-60b242767e6c6c4eb15fc41378644baf  kernel/classes/help/exphelpdocumentindex.php
+1232951da779e124495b2dd3219c11b9  kernel/classes/help/exphelpdocumentindex.php
 0445ada0b9c7263416fd213589055e6a  kernel/classes/help/exphelpexamplesgenerator.php
 b1125a343d75f5a64ec2c95166c27898  kernel/classes/help/exphelpfrontmatter.php
 2b4f170525630a0acb5287c535570570  kernel/classes/help/exphelpfunctioncollection.php
@@ -12410,12 +12410,12 @@ ec7e813ca5c4d3ff8d37fffcb745d34f  kernel/classes/help/exphelplanding.php
 1b159eadfba438127f2d1b794937dcd8  kernel/classes/help/exphelplinkcheck.php
 1f1e68ba455383f6957be68a93e05e71  kernel/classes/help/exphelplinks.php
 4a2607bc2ebbf7bbd0e40575ce0bec96  kernel/classes/help/exphelpmarkdownrenderer.php
-027cb0181cf5c30b5d23c53ab43519f7  kernel/classes/help/exphelpnavigation.php
+6de7a68cd0d09a46cbfc4f6932973b99  kernel/classes/help/exphelpnavigation.php
 323d5281459accab9035a37a3e0669a0  kernel/classes/help/exphelppdf.php
 e217b6f378ad261b116de9097ea44f2a  kernel/classes/help/exphelppdfcanvas.php
 16c4c7f20aac7fa06b02550259ce44be  kernel/classes/help/exphelppdffontsubset.php
 b0722d9a3329ba779dcf07c7ce7b5b90  kernel/classes/help/exphelppdfwriter.php
-bd7f65602a9443c24a355d7704f9b7de  kernel/classes/help/exphelpprojectfiles.php
+00ce995e03e676fadc6f0e9f4fcfea81  kernel/classes/help/exphelpprojectfiles.php
 9edb0c9790614c231f16228f2fdbba2b  kernel/classes/help/exphelpreadpolicygrant.php
 cc26112067d5d9cc27e6499bded16d5b  kernel/classes/help/exphelprecordrenderer.php
 c2d235379e1590a5049b9dbab54ad68b  kernel/classes/help/exphelpsearch.php
@@ -13086,7 +13086,7 @@ c72baf554d2c11eef3f8e54a5df22f20  kernel/private/classes/views/exphelp/dashboard
 2e2c1d825fd4a0dc8a5f80ee8e10b854  kernel/private/classes/views/exphelp/report.php
 f2aa1120e8b1ec82deb556000adf8525  kernel/private/classes/views/exphelp/search.php
 254910eeb56424d4db14fbce5625bfeb  kernel/private/classes/views/exphelp/topic.php
-facf7df8bf415c5d8707a4a4ead90e1f  kernel/private/classes/views/exphelp/viewer.php
+a24cc84eea04ff9656de47a9dd6203ce  kernel/private/classes/views/exphelp/viewer.php
 b41d7e46fe9581f4a9fb38abfd945abc  kernel/private/classes/views/ezinfo/about.php
 804ca78e978dd8bb3715c4df81118929  kernel/private/classes/views/ezinfo/copyright.php
 be890412eb2229b14270ff5ee45d525d  kernel/private/classes/views/ezinfo/isalive.php
@@ -13896,7 +13896,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c46d815e90f7a7046868a7aad05f6f5f  settings/debugbar.ini
 d3a8dbd3dd47da9a1e9c49ce3c0926fb  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-a418aba6f8c2ac31b66aa3698d48d47c  settings/exphelp.ini
+0d9a2cf95135e0226497a2bba01cdaa9  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -15479,7 +15479,7 @@ b7ea6a76f564ff8879a419b79295a4f8  tests/tests/kernel/classes/help/expHelpModuleP
 2886dc808c3b719d6133f184b04d1839  tests/tests/kernel/classes/help/expHelpNavigationTest.php
 5acd99993419fc2806d6505301e4f4d6  tests/tests/kernel/classes/help/expHelpPageTitlesTest.php
 e2db608ad1c2d2d62ccd5fd8575c27f9  tests/tests/kernel/classes/help/expHelpPdfTest.php
-69d91992ee84739a77e47fd0f83268b3  tests/tests/kernel/classes/help/expHelpProjectFilesTest.php
+23893af1b2f3e0f504d20178bad61843  tests/tests/kernel/classes/help/expHelpProjectFilesTest.php
 c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 1d976eb49a2d9c008a558467439da84a  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
 c705cb190c311b8df40826aaa8a7cfd9  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php

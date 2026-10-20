@@ -4,7 +4,7 @@
  *
  * The project files of the help (doc/en/us/features/6.0/help-system.md, "Project files"): the Markdown files of the
  * repository outside doc/ that document the project itself, README.md, INSTALL.md, SECURITY.md, CONTRIBUTING.md,
- * COPYRIGHT.md, LICENSE.md and the README.md files of bin/, tests/, design/ and kernel/. They are English only, like
+ * COPYRIGHT.md, LICENSE.md and the README.md files of bin/, design/ and kernel/. They are English only, like
  * doc/changelogs/, and each has the id "project/<path in the repository>" ("project/README.md").
  *
  * Which files: exphelp.ini [ProjectFiles] Include[] and Exclude[] (shell patterns on the path in the repository; "*"
@@ -15,8 +15,9 @@
  *   or linked, whatever Include[] says;
  * - a tracked file in a place .gitignore (or .git/info/exclude) ignores is refused too (isIgnored());
  * - only Markdown (.md, .markdown);
- * - never below doc/ (the documentation itself), an extension's doc/, var/, vendor/, settings/override/,
- *   settings/siteaccess/, node_modules/, nor in a hidden directory other than .github/ (NEVER);
+ * - never below doc/ (the documentation itself), extension/ (the extensions have their own category, Extensions),
+ *   a tests/ directory anywhere, var/, vendor/, settings/override/, settings/siteaccess/, node_modules/, and never a
+ *   hidden file or a file in a hidden directory, .github/ included (NEVER, isNever());
  * - the file checks of expHelpAllowlist (regular file, no symbolic link on the way, inside the installation root,
  *   at most MaxFileSize).
  *
@@ -33,9 +34,7 @@ class expHelpProjectFiles
     /** The defaults of exphelp.ini [ProjectFiles] */
     const DEFAULTS = array(
         'enabled'       => true,
-        'include'       => array( '*.md', '.github/*.md', '.github/**/*.md', 'bin/**/README.md', 'tests/README.md',
-                                  'tests/**/README.md', 'design/*/README.md', 'kernel/**/README.md',
-                                  'extension/*/tests/**/README.md' ),
+        'include'       => array( '*.md', 'bin/**/README.md', 'design/*/README.md', 'kernel/**/README.md' ),
         // test fixtures and the copies of other projects (a JavaScript library's own README.md)
         'exclude'       => array( '**/fixtures/**', '**/_fixtures/**', '**/javascript/**', '**/third-party/**', '**/thirdparty/**' ),
         'category'      => 'project-files',
@@ -51,9 +50,10 @@ class expHelpProjectFiles
 
     /**
      * Never a project file, whatever the settings say: shell patterns on the path in the repository (FNM_PATHNAME
-     * off, so "*" crosses directories).
+     * off, so "*" crosses directories). extension/: the extensions' documentation is the category Extensions;
+     * tests/ anywhere (the shell pattern **\/tests/**): the tests and their fixtures are not documentation.
      */
-    const NEVER = array( 'doc/*', 'extension/*/doc/*', 'var/*', 'vendor/*', 'settings/override/*',
+    const NEVER = array( 'doc/*', 'extension/*', 'tests/*', '*/tests/*', 'var/*', 'vendor/*', 'settings/override/*',
                          'settings/siteaccess/*', '*/node_modules/*', 'node_modules/*', '*/vendor/*' );
 
     /** The only suffixes a project file may have */
@@ -134,7 +134,7 @@ class expHelpProjectFiles
 
     /**
      * Whether a path in the repository may be a project file by its name: enabled, Markdown, matched by Include[] and
-     * by no Exclude[], and none of the paths that are never project files (NEVER, hidden directories but .github/).
+     * by no Exclude[], and none of the paths that are never project files (NEVER, hidden files and directories).
      * Whether git tracks it, and what .gitignore says, is the allowlist's question (expHelpAllowlist::entries()).
      *
      * @param string $path relative to the installation root
@@ -167,8 +167,8 @@ class expHelpProjectFiles
     }
 
     /**
-     * Whether a path is one that is never a project file: NEVER, a hidden file or directory (other than the .github/
-     * directory at the top), and anything that is not a clean relative path.
+     * Whether a path is one that is never a project file: NEVER, a hidden file or a file in a hidden directory
+     * (.github/ included), and anything that is not a clean relative path. Not a setting.
      *
      * @param string $path
      * @return bool
@@ -181,9 +181,8 @@ class expHelpProjectFiles
         foreach ( self::NEVER as $pattern )
             if ( fnmatch( $pattern, $path ) )
                 return true;
-        $segments = explode( '/', $path );
-        foreach ( $segments as $n => $segment )
-            if ( $segment[0] === '.' && !( $n === 0 && $segment === '.github' && count( $segments ) > 1 ) )
+        foreach ( explode( '/', $path ) as $segment )
+            if ( $segment[0] === '.' )
                 return true;
         return false;
     }
@@ -402,6 +401,26 @@ class expHelpProjectFiles
         if ( $id === null || strncmp( $id, self::ID_PREFIX . '/', strlen( self::ID_PREFIX ) + 1 ) !== 0 )
             return null;
         return substr( $id, strlen( self::ID_PREFIX ) + 1 );
+    }
+
+    /**
+     * A project file's title in the page tree, where it stands at the top next to the folders: its own title (the
+     * first heading or the front matter's), with the directory in front when that title says nothing more than
+     * "README" ("bin/php README"), so no two entries read the same.
+     *
+     * @param string $path the path in the repository
+     * @param string $title the page's title
+     * @return string
+     */
+    public static function treeTitle( $path, $title )
+    {
+        $title = trim( (string)$title );
+        $dir = dirname( (string)$path );
+        if ( $title === '' )
+            $title = basename( (string)$path );
+        if ( preg_match( '/^readme(\.(md|markdown))?$/i', $title ) && $dir !== '.' && $dir !== '' )
+            return $dir . ' ' . $title;
+        return $title;
     }
 
     /**

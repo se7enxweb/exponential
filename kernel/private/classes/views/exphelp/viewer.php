@@ -182,7 +182,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
     /**
      * Help > each folder of the page (linked to its README.md or index.md when the help has one) > the page. The
      * pages of an extension: Help > Extensions (exphelp/extensions) > the extension's overview, or its index
-     * (exphelp/extensions/<name>) > ... > the page.
+     * (exphelp/extensions/<name>) > ... > the page. A project file (project/...): Help > the page.
      *
      * @param \expHelpDocumentIndex $index
      * @param string $id
@@ -192,6 +192,12 @@ class Viewer extends \Exponential\Runnable\ModuleView
     public static function breadcrumb( $index, $id, $title )
     {
         $path = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ) );
+        // the project files (project/...) stand at the top of the page tree, in no folder: Help > the page
+        if ( class_exists( 'expHelpProjectFiles' ) && \expHelpProjectFiles::isProjectId( (string)$id ) )
+        {
+            $path[] = array( 'url' => false, 'text' => $title );
+            return $path;
+        }
         $dirs = explode( '/', (string)$id );
         array_pop( $dirs );
         $dir = '';
@@ -201,13 +207,6 @@ class Viewer extends \Exponential\Runnable\ModuleView
             if ( $dir === 'ext' )
             {
                 $path[] = array( 'url' => 'exphelp/extensions', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Extensions' ) );
-                continue;
-            }
-            // the project files (project/...): their folder in the list of every page
-            if ( class_exists( 'expHelpProjectFiles' ) && $dir === \expHelpProjectFiles::ID_PREFIX )
-            {
-                $path[] = array( 'url' => ltrim( \expHelp::url( 'contents' ), '/' ) . '#exphelp-folder-' . \expHelpProjectFiles::ID_PREFIX,
-                                 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Project files' ) );
                 continue;
             }
             $landing = null;

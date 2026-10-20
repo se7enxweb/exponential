@@ -18,16 +18,20 @@ administration without going to GitHub.
 
 ## Where to find them
 
-- **All help pages** (the contents page): the folder **Project files**, with the README first.
+- **All help pages** (the contents page) and **the page tree** next to every help page: each of them is a page at
+  the top of the tree, next to the main folders, under its own title (the README's is the name of the project).
+  They are not in a folder, and the breadcrumb above one reads Help > its title.
 - **The dashboard**: the category **Project files**.
 - **The search**: they are found like every page; choose the category "Project files" or the type "Project file"
   to see only them.
-- **The page tree** next to every help page has the same folder.
 
 Their addresses start with `project/`, followed by the path of the file in the repository:
-`/exphelp/viewer/project/README.md`, `/exphelp/viewer/project/SECURITY.md`. The `README.md` files of the directories
-are there too: the command line scripts (`project/bin/...`), the tests (`project/tests/...`), the designs and the
-kernel, when those directories have one.
+`/exphelp/viewer/project/README.md`, `/exphelp/viewer/project/SECURITY.md`. The `README.md` files of the command line
+scripts (`project/bin/...`), the designs and the kernel are shown too, when those directories have one.
+
+The documentation of the extensions is not among them: it has its own category, **Extensions**. Tests, the files
+of hidden directories such as `.github/` (the pull request template) and anything else that is not meant to be read
+as documentation are never shown here.
 
 ## Links between them and the documentation
 
@@ -51,8 +55,9 @@ links the license. The documentation pages themselves are free documentation (se
 
 Only files that are committed to the repository are shown. A file someone put in the installation directory without
 committing it (a private note, a local copy of a page) is never shown, never found by the search and never linked,
-whatever the settings say. Files in places git ignores, files outside the installation directory, and anything that
-is not Markdown are never shown either.
+whatever the settings say. Files in places git ignores, files outside the installation directory, hidden files and
+directories (`.github/`), tests, anything below `extension/`, and anything that is not Markdown are never shown
+either.
 
 For administrators who want to change which files are shown, and for the full list of rules, see
 [The help system](../features/6.0/help-system.md#project-files) (`exphelp.ini [ProjectFiles]`).

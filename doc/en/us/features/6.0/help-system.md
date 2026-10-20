@@ -69,7 +69,7 @@ Security Policy.
 | `[IndexSettings] ExtensionTopFiles[]` | `README*`, `CHANGELOG*`, `LICENSE*`, `INSTALL*`, `USAGE*`, `COPYING*` | the files at the top of an extension's directory shown besides its `doc/` |
 | `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose documentation is shown whether they are active or not |
 | `[IndexSettings] ExcludePatterns[]` | doxygen, HTML, SVG | never shown, even when tracked |
-| `[ProjectFiles] Enabled`, `Include[]`, `Exclude[]` | `enabled`, the root `*.md` and the README.md of `bin/`, `tests/`, `design/`, `kernel/` | the tracked Markdown files outside `doc/` that are shown as project files (see "Project files") |
+| `[ProjectFiles] Enabled`, `Include[]`, `Exclude[]` | `enabled`, the root `*.md` and the README.md of `bin/`, `design/`, `kernel/` | the tracked Markdown files outside `doc/` that are shown as project files (see "Project files") |
 | `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor`, `trainer`, `press`, `businesses`, `government`, `customer` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
 | `[AudienceSettings] PathRules[]` | per directory | `<glob>;<audience,...>`, first match wins |
 | `[CategorySettings]` | eight categories | names, icons and path rules |
@@ -190,12 +190,14 @@ without a suffix, untracked files and traversal refused; ids, overview, list, se
 
 The Markdown files of the repository that document the project itself, outside `doc/`, are help pages too: the
 root's `README.md`, `SECURITY.md`, `CONTRIBUTING.md`, `COPYRIGHT.md`, `LICENSE.md` (and `INSTALL.md`, `CHANGELOG.md`
-or any other root `*.md` once one is committed), the `README.md` files of `bin/`, `tests/`, `design/<design>/` and
-`kernel/`, the Markdown of `.github/`, and the `README.md` of an extension's tests (`extension/ezoe/tests/tinymce8/`).
-They are in the category **Project files** (`project-files`, type `project`), in the folder of the same name in the
-page tree of the contents page and of every help page, in the search (filter by the category or the type) and on the
-dashboard. Their audiences are developers and administrators, and more for some (`[ProjectFiles] AudienceRules[]`:
-`README.md` is also for editors, users, partners and hosting companies); the title is the first heading.
+or any other root `*.md` once one is committed), and the `README.md` files of `bin/`, `design/<design>/` and
+`kernel/` when there are any. They are in the category **Project files** (`project-files`, type `project`) in the
+search (filter by the category or the type) and on the dashboard. In the page tree of the contents page
+(`/exphelp/contents`) and of every help page they are not in a folder: each is a page at the top of the tree, next to
+the main folders, and the breadcrumb of one is Help > the page. Their audiences are developers and administrators, and
+more for some (`[ProjectFiles] AudienceRules[]`: `README.md` is also for editors, users, partners and hosting
+companies); the title is the first heading. In the tree, a title that says no more than "README" gets the directory in
+front (`kernel/private README`), so no two entries read the same.
 
 - **Ids**: `project/<path in the repository>`: `/exphelp/viewer/project/README.md`,
   `/exphelp/viewer/project/bin/php/README.md`. An address with the path alone (`/exphelp/viewer/README.md`)
@@ -217,9 +219,13 @@ What can never be shown, whatever `Include[]` says and in an override too:
   the directory, so a private note in the root that is not committed (an untracked `notes.md`) is never shown,
   searched, linked or redirected to;
 - a tracked file in a place `.gitignore` or `.git/info/exclude` ignores (added with `git add -f`);
-- anything but Markdown (`.md`, `.markdown`), and any path below `doc/` (the documentation itself), an extension's
-  `doc/`, `var/`, `vendor/`, `settings/override/`, `settings/siteaccess/`, `node_modules/`, or in a hidden
-  directory other than `.github/`;
+- anything but Markdown (`.md`, `.markdown`), and any path below `doc/` (the documentation itself), `var/`,
+  `vendor/`, `settings/override/`, `settings/siteaccess/` or `node_modules/`;
+- a hidden file or a file in a hidden directory, `.github/` included (the pull request template is not a page);
+- anything below `extension/`: the documentation of the extensions is the category **Extensions**
+  (`exphelp/extensions`), not project files;
+- anything below a `tests/` directory, wherever it is (`tests/`, `kernel/classes/tests/`,
+  `extension/ezoe/tests/tinymce8/`): tests and their fixtures are not documentation;
 - symbolic links, files outside the installation root and files over `MaxFileSize`, as for every help file.
 
 ```ini
