@@ -26,6 +26,14 @@ class Exphelpexamples extends \Exponential\Runnable\Command
                                  "./console exp:help:examples --area=datatypes     only this area (repeat with a comma: --area=datatypes,cronjobs)\n" .
                                  "./console exp:help:examples --check              compare only: exit 1 when a page is missing, different or stale\n" .
                                  "./console exp:help:examples --list               the areas and how many pages each has\n" .
+                                 "./console exp:help:examples --language=ger-de    the same pages in a translation (doc/ger-de/beispiele/), with\n" .
+                                 "                                                 their entries in doc/ger-de/.paths.json\n" .
+                                 "./console exp:help:examples --language=ger-de --worklist=var/tmp/todo.json\n" .
+                                 "                                                 also write the source texts that have no translation yet\n" .
+                                 "\n" .
+                                 "A translation reads its text from doc/<language>/.examples/: strings.json (the fixed text of the pages) and\n" .
+                                 "descriptions/*.json (the comments and descriptions quoted from the sources, by item). A text without a\n" .
+                                 "translation is written in English and counted as untranslated.\n" .
                                  "\n" .
                                  "The pages are read from the git-tracked sources of this installation (the template autoload files,\n" .
                                  "function_definition.php, module.php, operation_definition.php, the shipped INI files, the datatype and\n" .
@@ -38,16 +46,35 @@ class Exphelpexamples extends \Exponential\Runnable\Command
                 'use-extensions' => false
             )
         );
-        $options = $this->startup( '[area:][check][list][out:]', '', array(
-            'area'  => 'Only these areas, comma separated (template-operators, template-functions, fetch-functions, module-views, policies, ini-settings, datatypes, workflow-events, cronjobs, commands, extension-points)',
-            'check' => 'Compare the generated pages with the files and change nothing; exit 1 on a difference',
-            'list'  => 'List the areas with their page counts',
-            'out'   => 'The output directory relative to the installation root (default doc/eng-us/examples)',
+        $options = $this->startup( '[area:][check][list][out:][language:][worklist:]', '', array(
+            'area'     => 'Only these areas, comma separated (template-operators, template-functions, fetch-functions, module-views, policies, ini-settings, datatypes, workflow-events, cronjobs, commands, extension-points)',
+            'check'    => 'Compare the generated pages with the files and change nothing; exit 1 on a difference',
+            'list'     => 'List the areas with their page counts',
+            'out'      => 'The output directory relative to the installation root (default doc/eng-us/examples, or the translation\'s directory)',
+            'language' => 'Write the pages in a translation: a language directory below doc/ (ger-de); default the English original',
+            'worklist' => 'With --language: write the source texts without a translation to this file, as a description catalogue to fill in',
         ) );
 
         $root = defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : getcwd();
-        $out = !empty( $options['out'] ) ? trim( (string)$options['out'], '/' ) : 'doc/eng-us/examples';
-        if ( strpos( $out, '..' ) !== false || $out === '' || $out[0] === '/' )
+        $translation = null;
+        if ( !empty( $options['language'] ) )
+        {
+            $language = strtolower( trim( (string)$options['language'], '/' ) );
+            if ( class_exists( '\\expHelpLanguage' ) )
+            {
+                $resolved = \expHelpLanguage::fromIni( $root )->resolveDirectory( $language );
+                if ( is_string( $resolved ) && $resolved !== '' )
+                    $language = $resolved;
+            }
+            if ( !preg_match( '/^[a-z]{2,3}-[a-z]{2,3}$/', $language ) || $language === 'eng-us' || !is_dir( "$root/doc/$language" ) )
+            {
+                $cli->error( "--language must name the directory of a translation below doc/ (ger-de)" );
+                $this->shutdown( 2 );
+            }
+            $translation = \expHelpExamplesTranslation::load( $root, $language );
+        }
+        $out = !empty( $options['out'] ) ? trim( (string)$options['out'], '/' ) : null;
+        if ( $out !== null && ( strpos( $out, '..' ) !== false || $out === '' || $out[0] === '/' ) )
         {
             $cli->error( "--out must be a directory below the installation root" );
             $this->shutdown( 2 );
@@ -65,13 +92,26 @@ class Exphelpexamples extends \Exponential\Runnable\Command
         }
 
         $start = microtime( true );
-        $generator = new \expHelpExamplesGenerator( $root, $out );
+        $generator = new \expHelpExamplesGenerator( $root, $out, null, $translation );
         $pages = $generator->build( $areas );
         $counts = $generator->counts();
         $seconds = round( microtime( true ) - $start, 2 );
 
         foreach ( $generator->warnings() as $warning )
             $cli->warning( $warning );
+
+        if ( $translation !== null )
+        {
+            $missingStrings = $translation->missingStrings();
+            foreach ( array_slice( $missingStrings, 0, 20 ) as $text )
+                $cli->warning( 'untranslated text: ' . $text );
+            $cli->output( $generator->outputDirectory() . ': ' . count( $missingStrings ) . ' fixed texts and ' . count( $translation->missingDescriptions() ) . ' source descriptions without a translation (shown in English)' );
+            if ( !empty( $options['worklist'] ) )
+            {
+                file_put_contents( (string)$options['worklist'], $translation->worklist() );
+                $cli->output( 'worklist: ' . $options['worklist'] );
+            }
+        }
 
         if ( !empty( $options['list'] ) )
         {
@@ -84,15 +124,17 @@ class Exphelpexamples extends \Exponential\Runnable\Command
         if ( !empty( $options['check'] ) )
         {
             $diff = $generator->compare( $pages, $areas );
-            $problems = count( $diff['missing'] ) + count( $diff['different'] ) + count( $diff['stale'] );
-            foreach ( array( 'missing', 'different', 'stale' ) as $kind )
-                foreach ( array_slice( $diff[$kind], 0, 20 ) as $path )
-                    $cli->output( "$kind: $path" );
+            $problems = count( $diff['missing'] ) + count( $diff['different'] ) + count( $diff['stale'] ) + ( isset( $diff['map'] ) ? count( $diff['map'] ) : 0 );
+            foreach ( array( 'missing', 'different', 'stale', 'map' ) as $kind )
+                foreach ( array_slice( isset( $diff[$kind] ) ? $diff[$kind] : array(), 0, 20 ) as $path )
+                    $cli->output( $kind === 'map' ? "path map not current: $path" : "$kind: $path" );
             $cli->output( count( $pages ) . " pages generated in {$seconds} s; " . count( $diff['missing'] ) . ' missing, ' . count( $diff['different'] ) . ' different, ' . count( $diff['stale'] ) . ' stale' );
             $this->shutdown( $problems > 0 ? 1 : 0 );
         }
 
         $stats = $generator->write( $pages, $areas );
+        if ( $generator->writePathMap( $areas ) )
+            $cli->output( 'path map updated: doc/' . $translation->directory() . '/.paths.json' );
         foreach ( $counts as $area => $count )
             $cli->output( sprintf( '%-20s %5d items', $area, $count ) );
         $cli->output( count( $pages ) . " pages in {$seconds} s: {$stats['written']} written, {$stats['unchanged']} unchanged, {$stats['removed']} removed" );

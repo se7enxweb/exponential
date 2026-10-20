@@ -1143,6 +1143,7 @@ return array(
       'expHelpDitaMarkup'                                            => 'kernel/classes/help/content/exphelpditamarkup.php',
       'expHelpDocumentIndex'                                         => 'kernel/classes/help/exphelpdocumentindex.php',
       'expHelpExamplesGenerator'                                     => 'kernel/classes/help/exphelpexamplesgenerator.php',
+      'expHelpExamplesTranslation'                                   => 'kernel/classes/help/exphelpexamplestranslation.php',
       'expHelpFrontMatter'                                           => 'kernel/classes/help/exphelpfrontmatter.php',
       'expHelpFunctionCollection'                                    => 'kernel/classes/help/exphelpfunctioncollection.php',
       'expHelpHighlighter'                                           => 'kernel/classes/help/exphelphighlighter.php',

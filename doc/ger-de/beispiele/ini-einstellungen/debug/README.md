@@ -1,0 +1,34 @@
+---
+title: debug.ini
+audience: developer, admin
+category: examples
+order: 10
+summary: Die Blöcke und Einstellungen von debug.ini.
+keywords: Beispiele, Referenz, debug.ini, examples, reference
+type: generated
+generated: exp:help:examples
+---
+# debug.ini
+
+Die ausgelieferten Einstellungen von `settings/debug.ini`: 2 Blöcke, 43 Einstellungen.
+
+> Exponential configuration file for debug  
+>
+> NOTE: It is not recommended to edit this files directly, instead  
+>       a file in override should be created for setting the  
+>       values that is required for your site. Either create  
+>       a file called settings/override/debug.ini.append or  
+>       settings/override/debug.ini.append.php for more security  
+>       in non-virtualhost modes (the .php file may already be present  
+>       and can be used for this purpose).  
+
+| Block | Einstellungen |
+|---|---|
+| [DebugSettings](DebugSettings.md) | 1 |
+| [GeneralCondition](GeneralCondition.md) | 42 |
+
+- [Alle Beispiele](../../README.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/debug.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

@@ -1,0 +1,84 @@
+---
+title: content.ini [EditSettings]
+audience: developer, admin
+category: examples
+summary: "Die Einstellungen von [EditSettings] in content.ini: ExtensionDirectories, AdditionalTemplates, AttributeTemplates"
+keywords: Einstellung, content.ini, EditSettings, INI, setting, ExtensionDirectories, AdditionalTemplates, AttributeTemplates
+type: generated
+generated: exp:help:examples
+---
+# content.ini [EditSettings]
+
+Der Block `[EditSettings]` von `settings/content.ini`, mit 3 Einstellung(en).
+
+Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
+
+- `settings/override/content.ini.append.php` für jeden Siteaccess,
+- `settings/siteaccess/<siteaccess>/content.ini.append.php` für einen Siteaccess,
+- `extension/<extension>/settings/content.ini.append.php` in einer Erweiterung (gelesen, wenn die Erweiterung aktiv ist).
+
+## ExtensionDirectories
+
+> A list of extensions containing custom content edit handlers.  
+> These handler must be placed in : <extensions>/<extension-name>/content/<extension-name>handler.php  
+> And contain a class called : <extension-name>Handler, with the function : fetchInput  
+> This class must implement eZContentObjectEditHandler ( kernel/classes/ezcontentobjectedithandler.php )  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/content.ini.append.php
+[EditSettings]
+# ein leeres "ExtensionDirectories[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+ExtensionDirectories[]
+*/ ?>
+```
+
+## AdditionalTemplates
+
+> A list of additional templates to include from content/edit.tpl template  
+> For instance  
+> AdditionalTemplates\[\]=content/edit/autosave.tpl  
+> will trigger the inclusion of design:content/edit/autosave.tpl  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/content.ini.append.php
+[EditSettings]
+# ein leeres "AdditionalTemplates[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+AdditionalTemplates[]
+*/ ?>
+```
+
+## AttributeTemplates
+
+> A list of templates to include in every field of the content edit form of the admin designs  
+> (content/edit\_attribute.tpl), with the field as $attribute and the variables of the edit form: right after the  
+> field's label, or first in its block when the field has its own fieldset or is being translated. For the tools an  
+> extension adds to a field (expai: content/edit/expai\_attribute.tpl), so they are drawn with the page and the form  
+> does not move when the scripts start.  
+> AttributeTemplates\[\]=content/edit/myextension\_attribute.tpl  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/content.ini.append.php
+[EditSettings]
+# ein leeres "AttributeTemplates[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+AttributeTemplates[]
+*/ ?>
+```
+
+## Siehe auch
+
+- [Alle Blöcke von content.ini](README.md)
+- [Alle INI-Dateien](../README.md)
+- [Die Einstellungsseite](../../../anleitungen/einstellungsseite.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/content.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

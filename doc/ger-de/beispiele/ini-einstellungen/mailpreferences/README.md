@@ -1,0 +1,59 @@
+---
+title: mailpreferences.ini
+audience: developer, admin
+category: examples
+order: 10
+summary: Die Blöcke und Einstellungen von mailpreferences.ini.
+keywords: Beispiele, Referenz, mailpreferences.ini, examples, reference
+type: generated
+generated: exp:help:examples
+---
+# mailpreferences.ini
+
+Die ausgelieferten Einstellungen von `settings/mailpreferences.ini`: 19 Blöcke, 95 Einstellungen.
+
+> Exponential configuration file for the e-mail preferences and consent system.  
+>
+> Every person can switch e-mail on and off per category on one page  
+> (mailpreferences/settings, mailpreferences/manage/<token> without login).  
+> The mail gate in eZMailTransport::send() checks every mail that declares a  
+> category (eZMail::setCategory() or the X-Exp-Mail-Category header) against  
+> the master switch, the category, the suppression list and a pending double  
+> opt-in; optional mail gets a footer, a one-click unsubscribe link and the  
+> RFC 8058 List-Unsubscribe and List-Unsubscribe-Post headers.  
+>
+> NOTE: It is not recommended to edit this file directly, instead a file in  
+>       override should be created for the values the site needs:  
+>       settings/override/mailpreferences.ini.append.php  
+>
+> The site secret for the links and the address hashes (\[SecretSettings\]) is  
+> generated on first use into settings/override/mailpreferences.ini.append.php.  
+> That file is never committed.  
+
+| Block | Einstellungen |
+|---|---|
+| [GateSettings](GateSettings.md) | 5 |
+| [CategorySettings](CategorySettings.md) | 2 |
+| [Category_content](Category_content.md) | 7 |
+| [Category_collaboration](Category_collaboration.md) | 7 |
+| [Category_newsletter](Category_newsletter.md) | 7 |
+| [Category_marketing](Category_marketing.md) | 7 |
+| [Category_system](Category_system.md) | 7 |
+| [Category_security](Category_security.md) | 6 |
+| [Category_orders](Category_orders.md) | 6 |
+| [Category_legal](Category_legal.md) | 6 |
+| [Category_admin](Category_admin.md) | 6 |
+| [FooterSettings](FooterSettings.md) | 4 |
+| [LinkSettings](LinkSettings.md) | 1 |
+| [TokenSettings](TokenSettings.md) | 3 |
+| [ConsentSettings](ConsentSettings.md) | 2 |
+| [SuppressionSettings](SuppressionSettings.md) | 3 |
+| [EmailChangeSettings](EmailChangeSettings.md) | 2 |
+| [BounceSettings](BounceSettings.md) | 13 |
+| [SecretSettings](SecretSettings.md) | 1 |
+
+- [Alle Beispiele](../../README.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/mailpreferences.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

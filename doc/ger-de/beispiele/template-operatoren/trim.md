@@ -1,0 +1,47 @@
+---
+title: Template-Operator trim
+audience: developer, admin
+category: examples
+summary: "Der Template-Operator trim: 1 Parameter, registriert von eZTemplateStringOperator."
+keywords: Template-Operator, Operator, trim, template operator, operator, tpl, eZTemplateStringOperator
+type: generated
+generated: exp:help:examples
+---
+# Der Template-Operator trim
+
+Registriert in `lib/eztemplate/classes/eztemplateautoload.php` von der Klasse `eZTemplateStringOperator` (`lib/eztemplate/classes/eztemplatestringoperator.php`).
+Dieselbe Klasse registriert auch: [upcase](upcase.md), [downcase](downcase.md), [count_words](count_words.md), [count_chars](count_chars.md), [break](break.md), [wrap](wrap.md), [upfirst](upfirst.md), [upword](upword.md), [simplify](simplify.md), [wash](wash.md), [chr](chr.md), [ord](ord.md), [shorten](shorten.md), [pad](pad.md).
+
+## Parameter
+
+| Parameter | Typ | Erforderlich | Standard |
+|---|---|---|---|
+| `chars_to_remove` | string | nein | `false` |
+
+Der Operator arbeitet mit seiner Eingabe: dem Wert vor `|`.
+
+## Beispiel
+
+Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-Hinweise des Operators entscheiden, ob er eine Eingabe nimmt).
+
+```tpl
+{$value|trim( 'chars_to_remove' )}
+```
+
+## In einem ausgelieferten Template
+
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/content/datatype/view/ezxmltags/literal.tpl` Zeile 1:
+
+```tpl
+{* Do not output literal HTML in the Administration Interface *}<pre{if ne($classification|trim,'')} class="{$classification|wash}"{/if}>{$content|wash(xhtml)}</pre>
+```
+
+## Siehe auch
+
+- [Alle Template-Operatoren](README.md)
+- [Templates und Design](../../anleitungen/templates-und-design.md)
+- [Ein eigener Template-Operator](../../../eng-us/examples/cookbook/custom-template-operator.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `lib/eztemplate/classes/eztemplateautoload.php`, `lib/eztemplate/classes/eztemplatestringoperator.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

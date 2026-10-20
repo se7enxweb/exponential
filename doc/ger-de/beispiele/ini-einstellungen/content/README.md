@@ -1,0 +1,85 @@
+---
+title: content.ini
+audience: developer, admin
+category: examples
+order: 10
+summary: Die Blöcke und Einstellungen von content.ini.
+keywords: Beispiele, Referenz, content.ini, examples, reference
+type: generated
+generated: exp:help:examples
+---
+# content.ini
+
+Die ausgelieferten Einstellungen von `settings/content.ini`: 53 Blöcke, 141 Einstellungen.
+
+> Exponential configuration file for content module  
+>
+> NOTE: It is not recommended to edit this files directly, instead  
+>       a file in override should be created for setting the  
+>       values that is required for your site. Either create  
+>       a file called settings/override/content.ini.append or  
+>       settings/override/content.ini.append.php for more security  
+>       in non-virtualhost modes (the .php file may already be present  
+>       and can be used for this purpose).  
+
+| Block | Einstellungen |
+|---|---|
+| [VersionView](VersionView.md) | 2 |
+| [VersionManagement](VersionManagement.md) | 7 |
+| [EditSettings](EditSettings.md) | 3 |
+| [DataTypeSettings](DataTypeSettings.md) | 4 |
+| [ActionSettings](ActionSettings.md) | 1 |
+| [CustomTagSettings](CustomTagSettings.md) | 3 |
+| [factbox](factbox.md) | 1 |
+| [header](header.md) | 3 |
+| [paragraph](paragraph.md) | 3 |
+| [table](table.md) | 2 |
+| [tr](tr.md) | 2 |
+| [td](td.md) | 2 |
+| [th](th.md) | 2 |
+| [literal](literal.md) | 2 |
+| [strong](strong.md) | 2 |
+| [emphasize](emphasize.md) | 2 |
+| [ol](ol.md) | 2 |
+| [ul](ul.md) | 2 |
+| [link](link.md) | 3 |
+| [object](object.md) | 2 |
+| [embed](embed.md) | 3 |
+| [embed-inline](embed-inline.md) | 3 |
+| [NodeSettings](NodeSettings.md) | 5 |
+| [ClassSettings](ClassSettings.md) | 2 |
+| [ClassAttributeSettings](ClassAttributeSettings.md) | 2 |
+| [RelationAssignmentSettings](RelationAssignmentSettings.md) | 2 |
+| [RelationGroupSettings](RelationGroupSettings.md) | 4 |
+| [ObjectRelationDataTypeSettings](ObjectRelationDataTypeSettings.md) | 1 |
+| [UnpublishSettings](UnpublishSettings.md) | 2 |
+| [HideSettings](HideSettings.md) | 3 |
+| [ImageSettings](ImageSettings.md) | 2 |
+| [MatrixComponentSettings](MatrixComponentSettings.md) | 3 |
+| [ContentOverrideSettings](ContentOverrideSettings.md) | 1 |
+| [ClassGroupIDs](ClassGroupIDs.md) | 4 |
+| [FetchFunctionSettings](FetchFunctionSettings.md) | 1 |
+| [FetchSettings](FetchSettings.md) | 1 |
+| [NamePatternSettings](NamePatternSettings.md) | 1 |
+| [TrashSettings](TrashSettings.md) | 1 |
+| [RemoveSettings](RemoveSettings.md) | 5 |
+| [ReverseRelationSettings](ReverseRelationSettings.md) | 1 |
+| [CopySettings](CopySettings.md) | 6 |
+| [ContentJobSettings](ContentJobSettings.md) | 10 |
+| [RSSImportSettings](RSSImportSettings.md) | 1 |
+| [RSSImportCleanupSettings](RSSImportCleanupSettings.md) | 6 |
+| [RSSExportSettings](RSSExportSettings.md) | 1 |
+| [RSSListSettings](RSSListSettings.md) | 1 |
+| [PDFExportSettings](PDFExportSettings.md) | 1 |
+| [ContentVersionDiffSettings](ContentVersionDiffSettings.md) | 1 |
+| [AlphabeticalFilterSettings](AlphabeticalFilterSettings.md) | 3 |
+| [ISBNSettings](ISBNSettings.md) | 1 |
+| [PublishingSettings](PublishingSettings.md) | 9 |
+| [TestingSettings](TestingSettings.md) | 3 |
+| [LocationsSettings](LocationsSettings.md) | 1 |
+
+- [Alle Beispiele](../../README.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/content.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

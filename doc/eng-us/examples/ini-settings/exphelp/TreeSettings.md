@@ -32,7 +32,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > (expHelpAudience::PAGE\_ORDER).  
 > PageOrder\[<page id>\]=<integer>  
 
-Default: a hash of 12: `project/README.md=0`, `INSTALL.md=10`, `languages.md=20`, `branch-overview.md=30`, `release-overview=40`, `project/SECURITY.md=50`, `project/CONTRIBUTING.md=100`, `project/COPYRIGHT.md=110`, `README-LICENSE.md=120`, `LICENSE-GFDL-1.3.txt=130`, `project/LICENSE.md=140`, `glossary.md=9999`.
+Default: a hash of 13: `project/README.md=0`, `INSTALL.md=10`, `languages.md=20`, `branch-overview.md=30`, `release-overview=40`, `project/SECURITY.md=50`, `project/CONTRIBUTING.md=100`, `project/CODE_OF_CONDUCT.md=105`, `project/COPYRIGHT.md=110`, `README-LICENSE.md=120`, `LICENSE-GFDL-1.3.txt=130`, `project/LICENSE.md=140` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -47,6 +47,7 @@ PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
 PageOrder[project/SECURITY.md]=50
 PageOrder[project/CONTRIBUTING.md]=100
+PageOrder[project/CODE_OF_CONDUCT.md]=105
 PageOrder[project/COPYRIGHT.md]=110
 PageOrder[README-LICENSE.md]=120
 PageOrder[LICENSE-GFDL-1.3.txt]=130

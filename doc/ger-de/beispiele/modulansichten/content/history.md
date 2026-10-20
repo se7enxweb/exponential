@@ -1,0 +1,64 @@
+---
+title: /content/history
+audience: developer, admin
+category: examples
+summary: "Die Ansicht content/history: ihre Adresse, Parameter und die Richtlinienfunktionen, die sie braucht."
+keywords: Modul, Ansicht, content, history, content/history, module, view, URL
+type: generated
+generated: exp:help:examples
+---
+# /content/history
+
+Eine Ansicht des Moduls `content`, definiert in `kernel/content/module.php` und ausgeführt von `kernel/content/history.php`.
+
+## Adresse
+
+```text
+/content/history/<ObjectID>/<EditVersion>/(offset)/<Offset>
+```
+
+Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `ObjectID`, `EditVersion`.
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`.
+
+## Wer sie öffnen darf
+
+Der Benutzer braucht diese Richtlinienfunktion:
+
+- [`content/read`](../../richtlinien/content.md#read) oder [`content/edit`](../../richtlinien/content.md#edit)
+
+Eine Richtlinie auf `content/*` (jede Funktion) erlaubt sie ebenfalls; Einschränkungen der Richtlinie (Sektion, Teilbaum, Klasse ...) gelten weiterhin, wo die Ansicht sie prüft.
+
+## Details
+
+| Schlüssel | Wert |
+|---|---|
+| Navigationsbereich | `ezcontentnavigationpart` |
+| UI-Kontext | `edit` |
+| Einzelne POST-Aktionen | HistoryCopyVersionButton: CopyVersion, HistoryEditButton: Edit |
+| Parameter der POST-Aktionen | CopyVersion (VersionID: RevertToVersionID, VersionKeyArray: HistoryCopyVersionButton, LanguageArray: CopyVersionLanguage), Edit (VersionID: RevertToVersionID, VersionKeyArray: HistoryEditButton) |
+
+## Beispiel
+
+Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adresse in Anführungszeichen); die Parameterwerte sind Platzhalter:
+
+```tpl
+<a href={'/content/history/1/1'|ezurl}>content/history</a>
+<a href={concat( '/content/history/1/1/(offset)/', 1 )|ezurl}>content/history</a>
+```
+
+Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:
+
+```php
+return $Module->redirectTo( '/content/history/1/1' );
+```
+
+## Siehe auch
+
+- [Alle Ansichten von content](README.md)
+- [Die Richtlinien von content](../../richtlinien/content.md)
+- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/content/module.php`, `kernel/content/history.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).
