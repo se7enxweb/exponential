@@ -1,0 +1,83 @@
+# Template-Pfad-Kommentare: sehen, welches Template welches Markup geschrieben hat
+
+Diese Seite ist für Template-Entwickler, die die `.tpl`-Datei hinter einem Stück HTML finden müssen. Mit eingeschalteten
+Template-Pfad-Kommentaren wird jedes ausgegebene Template von zwei HTML-Kommentaren umschlossen, die es nennen: dieselbe
+Hilfe, die die Debug-Ausgabe von Symfony und Twig gibt. Hinzugefügt am 30. Juli 2026 (`58cc4bd4af`); verbessert am
+5. und 6. August (`d2f4e1830d`, `da9ef35eff`, `8b31fd9801`, `08dfef7659`).
+
+```html
+<!-- START design/media/templates/pagelayout/footer.tpl -->
+...the footer markup...
+<!-- STOP design/media/templates/pagelayout/footer.tpl -->
+```
+
+## Einschalten
+
+1. Setzen Sie in `settings/override/site.ini.append.php` oder in dem Siteaccess, den Sie untersuchen:
+
+   ```ini
+   [TemplateSettings]
+   ShowTemplatePathComments=enabled
+   ```
+
+   Oder schalten Sie es in der [Exp-Debug-Leiste](../../../eng-us/features/6.0/exp-debug-bar.md) in der Gruppe Templates um (Einstellung „Template
+   path comments“, `settings/debugbar.ini [Setting_template_path_comments]`), die denselben Schlüssel schreibt.
+
+2. Leeren Sie den Template-Cache, denn kompilierte Templates enthalten die Prüfung:
+
+   ```bash
+   php bin/php/ezcache.php --clear-tag=template --allow-root-user
+   ```
+
+3. Öffnen Sie den Seitenquelltext im Browser, suchen Sie das Markup, das Sie interessiert, und lesen Sie das nächste
+   `START` darüber.
+
+Es funktioniert mit ein- oder ausgeschaltetem Template-Compiler und für `{include}` ebenso wie für das Haupttemplate der
+Seite.
+
+| Datei | Block | Schlüssel | Standard | Geltungsbereich | Bedeutung |
+|---|---|---|---|---|---|
+| `settings/site.ini` | `TemplateSettings` | `ShowTemplatePathComments` | `disabled` | global oder Siteaccess | `enabled` umschließt jedes ausgegebene Template mit START- und STOP-Kommentaren. Jeder andere Wert bedeutet aus. |
+
+## Die Quelle der Überschreibung lesen
+
+Exponential löst einen Template-Namen wie `node/view/full.tpl` nach den Regeln von `override.ini` zu einer Datei auf.
+Der Kommentar nennt die Datei, die wirklich lief, und, wenn sie sich vom angefragten Namen unterscheidet, das Original in
+Klammern:
+
+```html
+<!-- START design/media/templates/node/view/full/article.tpl (node/view/full.tpl) -->
+```
+
+Lesen Sie es als „die Datei `article.tpl` hat die Anfrage `node/view/full.tpl` beantwortet“. Seit dem 6. August
+(`8b31fd9801`) ist der Text in Klammern die `Source` des passenden Blocks in `override.ini`. Eine passende
+Überschreibung, die sich nicht zurückverfolgen lässt, fällt auf den Template-Namen zurück.
+
+Dieselbe Ortsangabe wird den Warnungen des Template-Compilers hinzugefügt (`08dfef7659`): Eine Warnung sagt jetzt, in
+welchem Template und in welcher Zeile das Problem steckt, nicht nur, dass es eines gibt.
+
+## Grenzen und Vorsicht
+
+- **Nur für die Entwicklung.** Die Kommentare fügen der Ausgabe jedes Templates Markup hinzu. Sie zerstören JSON-, XML-
+  und RSS-Ausgaben und alles, was das HTML streng parst. Lassen Sie den Schlüssel in der Produktion und auf jedem
+  Siteaccess, der Feeds ausliefert, auf `disabled`.
+- Der Kommentartext ersetzt `--` durch `- -` und entfernt `>`, sodass ein Pfad den Kommentar nie vorzeitig beenden
+  kann.
+- Zwischengespeicherte Ausgabe behält die Kommentare, mit denen sie ausgegeben wurde. Leeren Sie die Inhalts- und
+  Template-Caches, wenn Sie den Schlüssel umschalten.
+- Eine Anfrage an einen Siteaccess liest nicht mehr die Überschreibungsliste eines anderen Siteaccess (eine spätere
+  Korrektur, siehe den [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
+
+## Verwandte Seiten
+
+- [Exp-Debug-Leiste](../../../eng-us/features/6.0/exp-debug-bar.md), [Referenz der Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md)
+- [Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](../../../eng-us/features/6.0/template-editor-overrides.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
+- Chronik: [Juli 2026](../../../eng-us/history/2026/2026-07.md), [August 2026](../../../eng-us/history/2026/2026-08.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
+bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
+sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
+früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

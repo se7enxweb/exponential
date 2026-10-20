@@ -1,4 +1,8 @@
 {
+    "4.7": "4.7",
+    "5.2": "5.2",
+    "5.4": "5.4",
+    "5.90": "5.90",
     "6.0": "6.0",
     "admin-gui": "admin-oberflaeche",
     "advocates": "fuersprecher",
@@ -9,6 +13,8 @@
     "commerce": "handel",
     "customers": "kunden",
     "day-to-day": "alltag",
+    "extensions": "extensions",
+    "features": "funktionen",
     "growth": "wachstum",
     "guides": "anleitungen",
     "healthy": "gesund-halten",
