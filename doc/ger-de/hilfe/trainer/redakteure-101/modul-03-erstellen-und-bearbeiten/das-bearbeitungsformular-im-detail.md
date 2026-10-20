@@ -150,7 +150,7 @@ Verwenden Sie die Schulungsinstallation und den Artikel aus Lektion 3.2.
 - [Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#das-bearbeitungsformular): jeder Teil des Formulars.
 - [Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md): wann die
   Schaltfläche erscheint.
-- [Meine Entwürfe und meine ausstehenden Elemente](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md): einen gespeicherten
+- [Meine Entwürfe und meine Warteliste](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md): einen gespeicherten
   Entwurf finden.
 
 ## Verwandte Seiten

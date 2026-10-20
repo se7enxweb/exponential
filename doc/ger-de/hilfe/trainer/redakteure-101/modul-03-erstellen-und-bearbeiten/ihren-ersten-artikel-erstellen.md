@@ -140,7 +140,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
   Verknüpfungen.
 - [Veröffentlichen, Versionen und der Papierkorb](../../../veroeffentlichen-und-versionen.md): was beim Veröffentlichen
   passiert.
-- [Meine Entwürfe und meine ausstehenden Elemente](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md): wo unfertige Entwürfe
+- [Meine Entwürfe und meine Warteliste](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md): wo unfertige Entwürfe
   warten.
 
 ## Verwandte Seiten

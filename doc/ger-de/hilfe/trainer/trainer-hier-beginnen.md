@@ -66,7 +66,7 @@ erklärt den Aufbau im Detail.
 | Menschen, die Exponential unterrichten werden | [Train the Trainer](../../../eng-us/help/trainers/train-the-trainer/README.md) |
 | Menschen, die Inhalte schreiben und veröffentlichen | [Redakteure 101](redakteure-101/README.md), danach [Redakteure 201](../../../eng-us/help/trainers/editors-201/README.md) |
 | Menschen, die eine Website betreiben | [Website-Administration](../../../eng-us/help/trainers/site-administrators/README.md) |
-| Menschen, die auf Exponential aufbauen | [Entwickler](../../../eng-us/help/trainers/developers/README.md) |
+| Menschen, die auf Exponential aufbauen | [Entwickler](entwickler/README.md) |
 | Menschen, die Themes gestalten | [Theme-Design](../../../eng-us/help/trainers/theme-designers/README.md) |
 | Menschen, die Seiten aus Blöcken bauen | [Exponential Layouts](../../../eng-us/help/trainers/layouts/README.md) |
 | Menschen, die Server betreiben | [Hosting und Betrieb](../../../eng-us/help/trainers/hosting-operations/README.md) |

@@ -67,11 +67,11 @@ Elemente verbergen und den Papierkorb nutzen, suchen, Lesezeichen pflegen, ihr K
 | [Modul 2: Der Inhaltsbaum und die Navigation](modul-02-der-inhaltsbaum/README.md) | 3 | 2 Std. 10 Min. | Der Baum, die Seite eines Elements, Reiter, Unterelemente, Inhaltsfinder, Tastatur |
 | [Modul 3: Inhalte erstellen und bearbeiten](modul-03-erstellen-und-bearbeiten/README.md) | 4 | 3 Std. 35 Min. | Ordner, Artikel, das Bearbeitungsformular, viele Elemente auf einmal |
 | [Modul 4: Der Online-Editor](modul-04-der-online-editor/README.md) | 3 | 2 Std. 40 Min. | Rich Text, Links und Anker, Einbettungen, Tabellen, die Wahl des Editors |
-| [Modul 5: Bilder und Medien](../../../../eng-us/help/trainers/editors-101/module-05-images-and-media/README.md) | 3 | 2 Std. 25 Min. | Die Medienbibliothek, die Upload-Seite, Bilder in Artikeln, Alternativtext |
-| [Modul 6: Veröffentlichen, Versionen und Entwürfe](../../../../eng-us/help/trainers/editors-101/module-06-publishing-and-versions/README.md) | 4 | 3 Std. 10 Min. | Versionsstatus, Vorschau, Vergleichen, Zurückgehen, Verbergen, der Papierkorb |
-| [Modul 7: Inhalte finden](../../../../eng-us/help/trainers/editors-101/module-07-finding-content/README.md) | 2 | 1 Std. | Schnellsuche, Suchbereich, erweiterte Suche |
-| [Modul 8: Dashboard, Lesezeichen und Ihr Konto](../../../../eng-us/help/trainers/editors-101/module-08-dashboard-bookmarks-account/README.md) | 3 | 2 Std. 10 Min. | Das Dashboard, Lesezeichen, Passwort, zweistufige Anmeldung, Benachrichtigungen |
-| [Modul 9: Der Siteaccess des Editors](../../../../eng-us/help/trainers/editors-101/module-09-the-editor-siteaccess/README.md) | 2 | 1 Std. 30 Min. | Der Editor, die Abschlussübung |
+| [Modul 5: Bilder und Medien](modul-05-bilder-und-medien/README.md) | 3 | 2 Std. 25 Min. | Die Medienbibliothek, die Upload-Seite, Bilder in Artikeln, Alternativtext |
+| [Modul 6: Veröffentlichen, Versionen und Entwürfe](modul-06-veroeffentlichen-und-versionen/README.md) | 4 | 3 Std. 10 Min. | Versionsstatus, Vorschau, Vergleichen, Zurückgehen, Verbergen, der Papierkorb |
+| [Modul 7: Inhalte finden](modul-07-inhalte-finden/README.md) | 2 | 1 Std. | Schnellsuche, Suchbereich, erweiterte Suche |
+| [Modul 8: Dashboard, Lesezeichen und Ihr Konto](modul-08-dashboard-lesezeichen-konto/README.md) | 3 | 2 Std. 10 Min. | Das Dashboard, Lesezeichen, Passwort, zweistufige Anmeldung, Benachrichtigungen |
+| [Modul 9: Der Siteaccess des Editors](modul-09-der-editor-siteaccess/README.md) | 2 | 1 Std. 30 Min. | Der Editor, die Abschlussübung |
 
 ## Lesepfad
 
@@ -87,7 +87,7 @@ Für einen Trainer, der den Kurs vorbereitet, in dieser Reihenfolge:
    [Tastenkürzel](../../tastenkuerzel.md).
 5. [Der Online-Editor auf Basis von TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md) und
    [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../anleitungen/inhaltsmodell-und-bearbeitung.md).
-6. [Meine Entwürfe und meine ausstehenden Elemente](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md),
+6. [Meine Entwürfe und meine Warteliste](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md),
    [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md) und [Lesezeichen](../../../anleitungen/lesezeichen.md).
 7. [Das neue Aussehen des Setup-Assistenten und der Siteaccess des Editors](../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md).
 8. Danach die Module der Reihe nach: zuerst jeweils der Überblick des Moduls (seine Vorbereitungsliste und sein
