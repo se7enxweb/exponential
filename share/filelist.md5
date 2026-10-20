@@ -154,7 +154,7 @@ b7612412723b1ade08489b7bd3691479  bin/shell/checkdbupdate.sh
 8044e093a0dac8324274f33637270c7a  bin/shell/checkforeach.sh
 246641c9db784487fbd08ca9358a1077  bin/shell/checkini.sh
 458087def6d6f7ded4d2f4147e60034f  bin/shell/checkprint.sh
-200c25273ff195809050aed7009ca925  bin/shell/checkversionnumbers.sh
+8a6543f440a176ea1977e4d03f50347c  bin/shell/checkversionnumbers.sh
 152fb920ef946d858b3c9608e5969e33  bin/shell/clearcache.sh
 3334c0ed9bb6c1a629998601af95aec5  bin/shell/common.sh
 48d78d5f19c345081dd5e5c25f645c1c  bin/shell/creatediff.sh
