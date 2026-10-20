@@ -73033,7 +73033,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
-        <translation>One question per page: who may do it, the steps, what can go wrong and where to read more.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Project files</source>
