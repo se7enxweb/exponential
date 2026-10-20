@@ -226,10 +226,24 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'var areaTop = screenData.ScrollY + _fixedHeaderHeight();', $body );
     }
 
-    /** A template with its {* ... *} comments removed, so a commented-out load line does not count */
+    /** Template source without its {* ... *} and <!-- ... --> comments: a load line inside one loads nothing */
+    private static function withoutComments( $source )
+    {
+        return preg_replace( array( '/\{\*.*?\*\}/s', '/<!--.*?-->/s' ), '', $source );
+    }
+
     private static function templateCode( $path )
     {
-        return preg_replace( '/\{\*.*?\*\}/s', '', AdminFiles::read( $path ) );
+        return self::withoutComments( AdminFiles::read( $path ) );
+    }
+
+    public function testALoadLineInsideACommentIsNotALoadLine()
+    {
+        $line = "{ezscript_load( array( 'a4_url.js' ) )}";
+        $this->assertStringContainsString( $line, self::withoutComments( "x $line y" ) );
+        $this->assertStringNotContainsString( 'a4_url.js', self::withoutComments( "{* $line *}" ) );
+        $this->assertStringNotContainsString( 'a4_url.js', self::withoutComments( "<!-- $line -->" ) );
+        $this->assertStringNotContainsString( 'a4_url.js', self::withoutComments( "<!--\n{ezscript( array( 'a4_url.js', 'page/setup_logs.js' ) )}\n-->" ) );
     }
 
     /**
