@@ -61,7 +61,7 @@ class Cronjobsstream extends \Exponential\Runnable\ModuleView
         // Where in the log to start. The page sends the size it already has, so a
         // reconnect does not reprint what the operator has already read. A view
         // parameter (/(offset)/<bytes>), never a query string.
-        $offset = (int)\expViewParameters::get( $Params, 'offset', 'Offset' );
+        $offset = (int)\expViewParameters::get( $scope['Params'], 'offset', 'Offset' );
         if ( $offset < 0 )
             $offset = 0;
 

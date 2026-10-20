@@ -46,12 +46,12 @@ class Unactivated extends \Exponential\Runnable\ModuleView
         // The search form without scripts is posted (q): answered with 303 to its /(q)/... address
         if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
         {
-            $sortField = \expUnactivatedUsers::normaliseSort( isset( $Params['SortField'] ) ? $Params['SortField'] : '' );
-            $sortOrder = \expUnactivatedUsers::normaliseOrder( isset( $Params['SortOrder'] ) ? $Params['SortOrder'] : '' );
+            $sortField = \expUnactivatedUsers::normaliseSort( isset( $scope['Params']['SortField'] ) ? $scope['Params']['SortField'] : '' );
+            $sortOrder = \expUnactivatedUsers::normaliseOrder( isset( $scope['Params']['SortOrder'] ) ? $scope['Params']['SortOrder'] : '' );
             \expViewParameters::redirect( 'user/unactivated/' . rawurlencode( $sortField ) . '/' . rawurlencode( $sortOrder )
                                           . \expViewParameters::suffix( array( 'q' => \expUnactivatedUsers::normaliseSearch( \expViewParameters::posted( $_POST, 'q' ) ) ) ) );
         }
-        $search = \expUnactivatedUsers::normaliseSearch( \expViewParameters::text( $Params, 'q', 'Query' ) );
+        $search = \expUnactivatedUsers::normaliseSearch( \expViewParameters::text( $scope['Params'], 'q', 'Query' ) );
 
         $success = array();
         $errors = array();

@@ -59,7 +59,7 @@ class Stats extends \Exponential\Runnable\ModuleView
                 'show' => $show !== self::SHOWS[0] ? $show : '',
                 'q' => \Exponential\View\Kernel\Url\ListView::searchText( \expViewParameters::posted( $_POST, 'q' ) ) ) ) );
         }
-        $search = \Exponential\View\Kernel\Url\ListView::searchText( \expViewParameters::text( $Params, 'q', 'Query' ) );
+        $search = \Exponential\View\Kernel\Url\ListView::searchText( \expViewParameters::text( $scope['Params'], 'q', 'Query' ) );
 
         $wasReset = false;
         if ( $module->isCurrentAction( 'ResetSearchStats' ) )

@@ -42,14 +42,14 @@ class Staticcachestream extends \Exponential\Runnable\ModuleView
         // bad parameter to except the stream itself. The options are view parameters
         // (/(siteaccess)/<name>/(maxpages)/<n>/(maxdepth)/<n>/(purge)/0), never a query string:
         // EventSource can only GET, and the address is the request.
-        $siteaccess = (string)\expViewParameters::get( $Params, 'siteaccess', 'SiteAccess' );
-        $maxPages = \expViewParameters::get( $Params, 'maxpages', 'MaxPages' );
-        $maxDepth = \expViewParameters::get( $Params, 'maxdepth', 'MaxDepth' );
+        $siteaccess = (string)\expViewParameters::get( $scope['Params'], 'siteaccess', 'SiteAccess' );
+        $maxPages = \expViewParameters::get( $scope['Params'], 'maxpages', 'MaxPages' );
+        $maxDepth = \expViewParameters::get( $scope['Params'], 'maxdepth', 'MaxDepth' );
         $maxPages = max( 1, min( 10000, $maxPages === false ? 2500 : (int)$maxPages ) );
         $maxDepth = max( 0, min( 30, $maxDepth === false ? 12 : (int)$maxDepth ) );
         // A regeneration replaces what is there. Passing (purge)/0 adds to it instead,
         // which is what a second, deeper pass over the same site wants.
-        $purge = \expViewParameters::get( $Params, 'purge', 'Purge' );
+        $purge = \expViewParameters::get( $scope['Params'], 'purge', 'Purge' );
         $purge = $purge === false ? true : (bool)(int)$purge;
 
         // Only a siteaccess this installation can actually cache may be named, so the

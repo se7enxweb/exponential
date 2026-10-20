@@ -47,7 +47,7 @@ class Templatelist extends \Exponential\Runnable\ModuleView
             $posted = trim( \expViewParameters::posted( $_POST, 'filterString' ) );
             \expViewParameters::redirect( 'visual/templatelist' . ( $posted !== '' ? '/(filter)/' . \expLogPermalink::encode( substr( $posted, 0, 200 ) ) : '' ) );
         }
-        $filterParameter = \expViewParameters::get( $Params, 'filter', 'Filter' );
+        $filterParameter = \expViewParameters::get( $scope['Params'], 'filter', 'Filter' );
         if ( $filterParameter !== false )
         {
             $filterString = trim( \expLogPermalink::decode( $filterParameter ) );

@@ -38,7 +38,7 @@ class ListView extends \Exponential\Runnable\ModuleView
         // The search form without scripts is posted (q): answered with 303 to its /(q)/... address
         if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
         {
-            $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+            $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
             $search = \expRolePage::normaliseSearch( \expViewParameters::posted( $_POST, 'q' ) );
             \expViewParameters::redirect( 'role/list' . \expViewParameters::suffix( array(
                 'sort' => isset( $userParameters['sort'] ) ? $userParameters['sort'] : '',
@@ -107,7 +107,7 @@ class ListView extends \Exponential\Runnable\ModuleView
         // comes off the address as (sort)/(dir) - name, id, policies or assigned - and the
         // search as /(q)/, by name or id (expRolePage::listPage()); never a ?q= query string.
         $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
-        $search = \expRolePage::normaliseSearch( \expViewParameters::text( $Params, 'q', 'Query' ) );
+        $search = \expRolePage::normaliseSearch( \expViewParameters::text( $scope['Params'], 'q', 'Query' ) );
 
         $listPage = \expRolePage::listPage( $search,
                                             isset( $userParameters['sort'] ) ? $userParameters['sort'] : 'name',

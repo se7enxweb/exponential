@@ -94,7 +94,12 @@ class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
     protected static function files( $kind, array $patterns )
     {
         $files = array();
-        foreach ( array_merge( glob( self::root() . '/design/*', GLOB_ONLYDIR ), glob( self::root() . '/extension/*/design/*', GLOB_ONLYDIR ) ) as $design )
+        // the designs of this repository: an extension that is a git repository of its own (a checkout such as
+        // exp_adminui on a site) is not part of it and has its own release
+        $extensionDesigns = array_filter( glob( self::root() . '/extension/*/design/*', GLOB_ONLYDIR ) ?: array(), function ( $dir ) {
+            return !file_exists( dirname( $dir, 2 ) . '/.git' );
+        } );
+        foreach ( array_merge( glob( self::root() . '/design/*', GLOB_ONLYDIR ), $extensionDesigns ) as $design )
             foreach ( $patterns as $pattern )
                 foreach ( glob( $design . '/' . $kind . '/' . $pattern ) ?: array() as $file )
                     $files[$file] = $file;
