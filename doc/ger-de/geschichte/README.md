@@ -97,11 +97,11 @@ Hinweise stehen im [Changelog von 6.0.15](../../changelogs/6.0/6.0.15.md).
 | [Mai 2026](2026/2026-05.md) | Ein ruhiger Monat: eine Typkorrektur in PHP für die Diff-Engine der Inhalte und eine neu erzeugte Dateiliste des Releases. | [Plattform](oekosystem/monate/2026-05.md) |
 | [Juni 2026, erste Hälfte](2026/2026-06a.md) | MongoDB 8 kam am 1. Juni 2026 als Datenbank hinzu. | [Plattform](oekosystem/monate/2026-06.md) [Erweiterungen](erweiterungen/monate/2026-06.md) |
 | [Juni 2026, zweite Hälfte](2026/2026-06b.md) | 6.0.15 war in Entwicklung. | [Plattform](oekosystem/monate/2026-06.md) [Erweiterungen](erweiterungen/monate/2026-06.md) |
-| [Juli 2026](2026/2026-07.md) | Die Kommandozeile wurde erwachsen: `ezpm` kam in die Konsole, ein Installer mit einem Befehl und der Kickstarter erschienen, dazu ein Werkzeug zum Zurücksetzen von Passwörtern. | [Plattform](oekosystem/monate/2026-07.md) [Erweiterungen](erweiterungen/monate/2026-07.md) [Velocity](../../eng-us/history/velocity/2026-07.md) |
-| [August 2026](2026/2026-08.md) | Template-Debugging sagt die Wahrheit: Pfadkommentare nennen das Template, das wirklich lief, und die Erweiterungsliste sortiert und lädt herunter. | [Erweiterungen](erweiterungen/monate/2026-08.md) [Velocity](../../eng-us/history/velocity/2026-08.md) |
-| [September 2026, erste Hälfte](2026/2026-09a.md) | Lange Listen in der Administrationsoberfläche werden seitenweise angezeigt, sind sortierbar und in der Größe einstellbar, sodass Installationen mit Tausenden von Rollen oder Orten wieder funktionieren. | [Plattform](oekosystem/monate/2026-09.md) [Erweiterungen](erweiterungen/monate/2026-09.md) [Velocity](../../eng-us/history/velocity/2026-09a.md) |
-| [September 2026, zweite Hälfte](2026/2026-09b.md) | Velocity, ein Webserver mit dauerhaft laufenden Workern für Exponential, kam am 22. September und wurde innerhalb von zwei Tagen der empfohlene Weg zu hoher Geschwindigkeit. | [Plattform](oekosystem/monate/2026-09.md) [Erweiterungen](erweiterungen/monate/2026-09.md) [Velocity](../../eng-us/history/velocity/2026-09b.md) |
-| [Oktober 2026](2026/2026-10.md) | 354 Änderungen in zwei Tagen (1. und 2. Oktober), kein Release-Tag; sie gehören zur Linie 6.0.15. | [Erweiterungen](erweiterungen/monate/2026-10.md) [Velocity](../../eng-us/history/velocity/2026-10.md) |
+| [Juli 2026](2026/2026-07.md) | Die Kommandozeile wurde erwachsen: `ezpm` kam in die Konsole, ein Installer mit einem Befehl und der Kickstarter erschienen, dazu ein Werkzeug zum Zurücksetzen von Passwörtern. | [Plattform](oekosystem/monate/2026-07.md) [Erweiterungen](erweiterungen/monate/2026-07.md) [Velocity](velocity/2026-07.md) |
+| [August 2026](2026/2026-08.md) | Template-Debugging sagt die Wahrheit: Pfadkommentare nennen das Template, das wirklich lief, und die Erweiterungsliste sortiert und lädt herunter. | [Erweiterungen](erweiterungen/monate/2026-08.md) [Velocity](velocity/2026-08.md) |
+| [September 2026, erste Hälfte](2026/2026-09a.md) | Lange Listen in der Administrationsoberfläche werden seitenweise angezeigt, sind sortierbar und in der Größe einstellbar, sodass Installationen mit Tausenden von Rollen oder Orten wieder funktionieren. | [Plattform](oekosystem/monate/2026-09.md) [Erweiterungen](erweiterungen/monate/2026-09.md) [Velocity](velocity/2026-09a.md) |
+| [September 2026, zweite Hälfte](2026/2026-09b.md) | Velocity, ein Webserver mit dauerhaft laufenden Workern für Exponential, kam am 22. September und wurde innerhalb von zwei Tagen der empfohlene Weg zu hoher Geschwindigkeit. | [Plattform](oekosystem/monate/2026-09.md) [Erweiterungen](erweiterungen/monate/2026-09.md) [Velocity](velocity/2026-09b.md) |
+| [Oktober 2026](2026/2026-10.md) | 354 Änderungen in zwei Tagen (1. und 2. Oktober), kein Release-Tag; sie gehören zur Linie 6.0.15. | [Erweiterungen](erweiterungen/monate/2026-10.md) [Velocity](velocity/2026-10.md) |
 
 ## Die anderen Chroniken
 
@@ -109,7 +109,7 @@ Hinweise stehen im [Changelog von 6.0.15](../../changelogs/6.0/6.0.15.md).
 |---|---|---|
 | Plattform-Ökosystem | Die Symfony-basierten Repositorys rund um Exponential: Administrationsoberfläche, Layouts, Starter, Bridges, Forks | [Übersicht des Ökosystems](oekosystem.md) |
 | Erweiterungen | Die Legacy-Erweiterungen, Themes und Pakete, eine Chronik je Repository | [Erweiterungen](erweiterungen/README.md) |
-| Velocity | Die Webserver-Engine, vom ersten Commit im Juli 2026 an | [Velocity-Chronik](../../eng-us/history/velocity/README.md), [Installer und Pakete](../../eng-us/history/velocity/installers-and-packages.md) |
+| Velocity | Die Webserver-Engine, vom ersten Commit im Juli 2026 an | [Velocity-Chronik](velocity/README.md), [Installer und Pakete](velocity/installer-und-pakete.md) |
 | Release Notes | Eine Seite je Release und je Erweiterung | [6.0.15](../../changelogs/6.0/6.0.15.md), [Erweiterungen](../../changelogs/extensions/README.md) |
 
 ## Mit der Geschichte lernen

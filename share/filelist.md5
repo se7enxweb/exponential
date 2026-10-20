@@ -11052,7 +11052,7 @@ dd8219b03d60ce0dbee6e5abe1289f20  doc/eng-us/standards/patterns/workflow-event.m
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 ec95bf0961470a4b35438d04b039205a  doc/ger-de/.dirnames.json
-7fd24424899b93b97c3e133be74a44d0  doc/ger-de/.paths.json
+1f26e77f5149aeda371b724b03d8455e  doc/ger-de/.paths.json
 2ba7d4102f729a5fa7d53ff750a2cf06  doc/ger-de/anleitungen/README.md
 7751add00ddf65f0ea2d8e6510460828  doc/ger-de/anleitungen/aktualisieren.md
 88e9d7a7e41c216d27d0d009da451c34  doc/ger-de/anleitungen/api-schluessel.md
@@ -11140,7 +11140,7 @@ a6fe2e3b19646ec974f42d617547d9e9  doc/ger-de/geschichte/2026/2026-07.md
 98370ba72178e1caf79d0f38d4a167c9  doc/ger-de/geschichte/2026/2026-09a.md
 5ef50128969d252aeb0cb3e78c454a3c  doc/ger-de/geschichte/2026/2026-09b.md
 f45a21ac35bbd44db81d3a21c8c89691  doc/ger-de/geschichte/2026/2026-10.md
-752c2dc5857b9519c37a2324cc3cee0d  doc/ger-de/geschichte/README.md
+8a32c758fe5e4b8cd180d36e8d7738f9  doc/ger-de/geschichte/README.md
 c4e7bc456b8f458cb84ea8aea45eb564  doc/ger-de/geschichte/abdeckung.md
 9840fec868601cf27213f9723db558de  doc/ger-de/geschichte/aenderungsverzeichnis/AdminAid.md
 422c8e49bfcf7b302132277c12daf679  doc/ger-de/geschichte/aenderungsverzeichnis/DoctrineBundle.md
@@ -11427,6 +11427,16 @@ c7eb7a70c4fd7941ebc70df60c28b925  doc/ger-de/geschichte/oekosystem/site-bundle.m
 d6dcdc3b8912a8b54931778cf2f09077  doc/ger-de/geschichte/oekosystem/site-legacy-bundle.md
 d4b6b29e492aa9b70e11a77890fbb9d1  doc/ger-de/geschichte/oekosystem/symfony.md
 e3e8eef5dfe147de685c902867d3bd11  doc/ger-de/geschichte/oekosystem/twig.md
+e563069e222fa42ade90172c5d036ac9  doc/ger-de/geschichte/velocity/2026-07.md
+01ae488b13e1c87308ae512c910a0a31  doc/ger-de/geschichte/velocity/2026-08.md
+bee3458539b67108bca518b38749a8af  doc/ger-de/geschichte/velocity/2026-09a.md
+2dcea616d53bda015f61e1d7c63bd31f  doc/ger-de/geschichte/velocity/2026-09b.md
+9999ccde84ad5bc46c033836e1f8a72e  doc/ger-de/geschichte/velocity/2026-09c.md
+3d0ee6c8b97636485fc4d95daf5eecb1  doc/ger-de/geschichte/velocity/2026-09d.md
+6c68aadee3d8747713052e4e99b59349  doc/ger-de/geschichte/velocity/2026-09e.md
+e960a53c633d68755ca25a6d1c2f6ab2  doc/ger-de/geschichte/velocity/2026-10.md
+5e2f898d7139234a55ee5053120206bb  doc/ger-de/geschichte/velocity/README.md
+15389060e7a7bc67b3f284b527e52764  doc/ger-de/geschichte/velocity/installer-und-pakete.md
 2378b5c11d403b8ebc8cfc09c31d6e08  doc/ger-de/hilfe/README.md
 17181371b1ec62d72304b5801035eda9  doc/ger-de/hilfe/administratorpasswort-aendern.md
 0b573ee6fbadb5b2bd5e57e7cc1a94e1  doc/ger-de/hilfe/anmelden-im-editor.md
