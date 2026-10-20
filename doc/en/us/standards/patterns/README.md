@@ -3,7 +3,7 @@ title: Design pattern catalogue
 audience: developer
 category: standards
 order: 300
-summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 5067 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
+summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 5066 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
 keywords: design patterns, pattern catalogue, abstractions, architecture, factory, singleton, registry, strategy, handler, template method, observer, adapter, facade, active record, eZPersistentObject, datatype, template operator, fetch function, module view, policy function, workflow event, extension point, plugin, INI
 type: reference
 ---
@@ -19,7 +19,7 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 
 | | |
 |---|---|
-| Instances (all categories) | 5067 |
+| Instances (all categories) | 5066 |
 | Classes, interfaces, traits and enums | 2877 (2804 classes, 72 interfaces, 1 trait) |
 | ... with at least one pattern | 2297 |
 | Module views | 491 |
@@ -27,9 +27,9 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | Fetch functions | 290 |
 | Template operators | 243 |
 | Cronjob parts | 36 |
-| Event hooks | 97 |
+| Event hooks | 96 |
 | INI plugin points | 574 |
-| Source files read | 3747 PHP, 509 INI |
+| Source files read | 3744 PHP, 509 INI |
 | Areas | 142 |
 
 ## The patterns
@@ -54,7 +54,7 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | [Template Method / abstract base class](template-method.md) | Behavior | 53 | An abstract class with both abstract and concrete methods. |
 | [Interface (contract)](interface.md) | Structure | 72 | Every interface. |
 | [Observer / listener / event](observer.md) | Behavior | 8 | Class name contains Listener, Observer or Subscriber, or has attach()/notify()/addListener() methods; every ezpEvent notify()/filter() call (see the hooks page). |
-| [Event hook (ezpEvent)](event-hook.md) | Behavior | 97 | A call of ezpEvent::getInstance()-›notify( 'EVENT' ) or -›filter( 'EVENT' ). |
+| [Event hook (ezpEvent)](event-hook.md) | Behavior | 96 | A call of ezpEvent::getInstance()-›notify( 'EVENT' ) or -›filter( 'EVENT' ). |
 | [Adapter / bridge / wrapper](adapter.md) | Structure | 4 | Class name contains Adapter, Bridge, Wrapper or Proxy. |
 | [Facade / service](facade.md) | Structure | 37 | Class name ends in Facade, Service, Manager, API or Api. |
 | [Decorator / filter](decorator.md) | Structure | 62 | Class name contains Decorator or Filter. |

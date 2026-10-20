@@ -3606,7 +3606,7 @@ b5409d7272f8f2302d04c60f5229e570  doc/en/us/bc/6.0/php8.md
 22f738d1557cf951ed0cee79e4926287  doc/en/us/bc/6.0/platform-package-forks-and-command-renames.md
 6ecbedb530c5c3804b8be217a7b1ad12  doc/en/us/bc/6.0/preload.md
 db67d1c19318298fd11271af7de4a9c1  doc/en/us/bc/6.0/rad-extension-points.md
-a8a0ddaf9c6c49eb8bd8b74c0f33aacd  doc/en/us/bc/6.0/rad-extension-surface.md
+0be7fcd531857ff7726b254443c29bd2  doc/en/us/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/en/us/bc/6.0/rad-security.md
 4a8181eadee679b8558fe125d10df9c1  doc/en/us/bc/6.0/redirect-query-and-image-alias-guards.md
 8a57888953e9313fb76f11928b7e86e3  doc/en/us/bc/6.0/repair.md
@@ -10948,7 +10948,7 @@ d355246fd0485dd8399e0aeb99a66299  doc/en/us/standards/databases-and-sql.md
 63ada14b4518010393719a510aa17ddc  doc/en/us/standards/documentation-and-publishing.md
 449ebadd494411a6149712074de173e8  doc/en/us/standards/header.txt
 06e9a6bdc8881cea34b7256f8dfbeed3  doc/en/us/standards/internationalization.md
-73bbf269aea828616adc12da39610149  doc/en/us/standards/patterns/README.md
+adabb33954933d51a44a3197dca12e93  doc/en/us/standards/patterns/README.md
 f16859ab18fda5a162ab032c0fda109e  doc/en/us/standards/patterns/active-record.md
 443ecede52754ad2e72434e03aa69396  doc/en/us/standards/patterns/adapter.md
 89593d8fb0713684734145a635f89276  doc/en/us/standards/patterns/area-extension-adminaid.md
@@ -11064,7 +11064,7 @@ a50251cf0426435d3e65a330a3a4e94a  doc/en/us/standards/patterns/area-kernel-class
 89e9bd9044391f638ca1f117e7de8cb8  doc/en/us/standards/patterns/area-kernel-classes-workflowtypes.md
 ae589afc849052e9a7172acc188c027a  doc/en/us/standards/patterns/area-kernel-classes.md
 c7a2cb260ea15945d8ea75689953ce30  doc/en/us/standards/patterns/area-kernel-common.md
-ec97d765daa13307ce48d20030973e60  doc/en/us/standards/patterns/area-kernel-modules.md
+4d5ddfdad8859fd731ffd4145243a98c  doc/en/us/standards/patterns/area-kernel-modules.md
 c1e31d9c69b0d57ee90a107bdc7fed08  doc/en/us/standards/patterns/area-kernel-private-classes-asynchronouspublisheroutput.md
 6019001e2a5eb740ec0e279936f51191  doc/en/us/standards/patterns/area-kernel-private-classes-clusterfilehandlers.md
 f10533cd9f10fadb1667f70e12742882  doc/en/us/standards/patterns/area-kernel-private-classes-commands.md
@@ -11098,7 +11098,7 @@ f56f52be9dcadf413e89bfbb6eefe733  doc/en/us/standards/patterns/area-lib.md
 77752d0373c51f948d495b846a0fd580  doc/en/us/standards/patterns/command.md
 d5b3a21962fe14afa5bd0e3d881ddf7d  doc/en/us/standards/patterns/datatype.md
 62dd73cbd0f3b0129044dc4c43d511e9  doc/en/us/standards/patterns/decorator.md
-eab86aa2ce51b587e9a3edd334b13868  doc/en/us/standards/patterns/event-hook.md
+38325bfd69341d27c993a9a37ae7d032  doc/en/us/standards/patterns/event-hook.md
 ff3211f52b95a7a94afe0ced3a0e81e4  doc/en/us/standards/patterns/exception.md
 f422e3557ecf8ce6dcfbbd536b947a6c  doc/en/us/standards/patterns/facade.md
 dba23f30ef2395c5ff75d935db690ff9  doc/en/us/standards/patterns/factory.md
@@ -11880,7 +11880,6 @@ f21ee9e5ff715515ebde237f5fc6bcda  kernel/audit/module.php
 3fb78e940ff2bed23ef814acdc997855  kernel/audit/settings.php
 4d8dc6de64cb0d6798dd9dd328975a43  kernel/class/classlist.php
 c20d3635d2ab8581598a690dbe5fb57c  kernel/class/copy.php
-911d584170ef17c9a0e1bf75ec5ab9b5  kernel/class/delete.php
 7d2ea7e2fc66bcb500592f8101b5a3dc  kernel/class/edit.php
 ab7b791d643e8f86aac8d5e09e80b257  kernel/class/ezclassfunctioncollection.php
 80ca3977f118bea447c1b8122e37af35  kernel/class/ezclassfunctions.php
@@ -12545,7 +12544,6 @@ f54eb157a578eb51ecc25bbcebcfbcdc  kernel/content/copy.php
 b7959d6a47645a1610274283d404c746  kernel/content/download.php
 3f03566dd39083dfddaa39a51a78ee37  kernel/content/draft.php
 753c6fb6e051f80440937bda433446df  kernel/content/edit.php
-c3727d36c3ba8cfee7f93cb050539b20  kernel/content/error.php
 7242a2aa8933416bead5698c501827b4  kernel/content/ezcontentfunctioncollection.php
 14f142648f28af6a97a708f07731c7bd  kernel/content/ezcontentoperationcollection.php
 6547d1af2360fb0c8cd643815945d308  kernel/content/ezcontentpublishingbehaviour.php
@@ -13532,7 +13530,6 @@ e1de962f73fe9c177999fda8ab67868d  kernel/workflow/ezworkflowfunctioncollection.p
 f2c4babc754d7570bfbf6f9ae3665b8b  kernel/workflow/function_definition.php
 bc34b3c1a48726787cd59b445285c028  kernel/workflow/groupedit.php
 50a830f19330d01fefc16b1d6d18f56d  kernel/workflow/grouplist.php
-bcc1f54bdf00120a11c4428b692fc592  kernel/workflow/list.php
 bd88c41cc62b684db05cbded834a97c2  kernel/workflow/module.php
 1485846d4757f2cdf846158364af66ad  kernel/workflow/process.php
 51ce95a4523f233c12016b5638d543e5  kernel/workflow/processlist.php
@@ -14739,7 +14736,7 @@ a08f3fc912ea0e876de1c21aabc43b5f  tests/bin/ezp_lint_patched.php
 7636ab3999de06bdbef27557f2a060fa  tests/bin/ezptestrunner.php
 88c4286f77c95330396db2199b7e9253  tests/bin/ezptestrunner_all_tests.php
 5975adb866ddf89068a885fcc068ee32  tests/bin/issue_report_2026-02-21.txt
-d01b9528e554acb15438d8db3918cd3a  tests/bin/lint_manifest.txt
+73d2fc2713b7397d800f491f5599462c  tests/bin/lint_manifest.txt
 1066ba94c6d2a1daaadb51527778b2cf  tests/bin/test_report_2026-02-21.txt
 5f0e6422e18bece875206a606cfe8003  tests/bin/tests/functional_tests.php
 f6fafb7be7aacccc80cd557f75d26bb9  tests/bootstrap.php

@@ -3,7 +3,7 @@ title: Event hook (ezpEvent)
 audience: developer
 category: standards
 order: 328
-summary: A named point where the kernel calls ezpEvent::getInstance()-›notify() or filter(), so that listeners can react or change a value. 97 instances in Exponential.
+summary: A named point where the kernel calls ezpEvent::getInstance()-›notify() or filter(), so that listeners can react or change a value. 96 instances in Exponential.
 keywords: design pattern, event-hook, behavior, pattern catalogue
 type: catalogue
 ---
@@ -18,11 +18,11 @@ A named point where the kernel calls ezpEvent::getInstance()->notify() or filter
 | | |
 |---|---|
 | Group | Behavior |
-| Instances | 97 |
+| Instances | 96 |
 | Recognized by | A call of ezpEvent::getInstance()-›notify( 'EVENT' ) or -›filter( 'EVENT' ). |
 | Extension point | event.ini [Event] Listeners[]=EVENT@CALLBACK. |
 
-## Event hooks (97)
+## Event hooks (96)
 
 ### extension/expservices (12)
 
@@ -116,11 +116,10 @@ A named point where the kernel calls ezpEvent::getInstance()->notify() or filter
 | `image/removeAliases` | notify | `kernel/classes/datatypes/ezimage/ezimagealiashandler.php:811` |
 | `image/trashAliases` | notify | `kernel/classes/datatypes/ezimage/ezimagetype.php:120` |
 
-### kernel/modules (7)
+### kernel/modules (6)
 
 | Event | Kind | Called in |
 |---|---|---|
-| `content/class/cache` | notify | `kernel/class/delete.php:32` |
 | `content/cache/version` | notify | `kernel/content/attribute_edit.php:325` |
 | `content/notification/create` | filter | `kernel/content/ezcontentoperationcollection.php:920` |
 | `content/cache` | filter | `kernel/content/ezcontentoperationcollection.php:1414` |
