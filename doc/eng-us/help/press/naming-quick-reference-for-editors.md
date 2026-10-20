@@ -63,6 +63,7 @@ license                American spelling in the project's own texts
 | eZ Publish 6, eZ Exponential, Exponential Publish | Exponential 6 |
 | The Exponential, the Exponential CMS software | Exponential |
 | 7X, SevenX, Se7enX | 7x |
+| `7x_...` as a code prefix | `sevenx_...` or `exp...` ([Naming prefixes](../../standards/naming-prefixes-sevenx-and-exp.md)) |
 | 7x Foundation, Exponential Inc. | the Exponential Foundation |
 | Exponential AI, ExpAI | Exponential Intelligence |
 | Exponential Qbix | Exponential Velocity |

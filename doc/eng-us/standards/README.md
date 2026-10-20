@@ -41,6 +41,7 @@ make compliance possible, but a site has to keep it.
 | Languages | [Internationalization](internationalization.md) | Unicode and UTF-8, CLDR and ICU, BCP 47 and ISO language codes, right-to-left and bidi, time zones |
 | PHP | [PHP and Composer](php-and-composer.md) | Supported PHP versions, PHP-FIG PSRs, Composer, Semantic Versioning |
 | Code style | [Coding standards](coding-standards.md) | The phpcs ruleset, PHPStan, file headers, naming, CSS and JavaScript rules |
+| Code prefixes | [Naming prefixes: sevenx and exp](naming-prefixes-sevenx-and-exp.md) | `sevenx` as 7x's official public PHP code prefix, `exp` for work assigned to the Exponential project and the Exponential Foundation |
 | Tests | [Testing and continuous integration](testing-and-ci.md) | PHPUnit, the test map, the CI workflows and the gates before a push |
 | History | [Source control and releases](source-control-and-releases.md) | Git conventions, commit messages, changelogs, tags and version numbers |
 | Documentation | [Documentation and publishing](documentation-and-publishing.md) | DITA 1.3, CommonMark and GFM, GNU FDL 1.3, PDF, EPUB 3 and EPUB Accessibility |

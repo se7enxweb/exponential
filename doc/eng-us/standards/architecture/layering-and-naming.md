@@ -168,6 +168,10 @@ The product is Exponential; the code base inherited its identifiers from eZ Publ
   setting names **must never be renamed**: extensions and sites depend on them. The 2026 rebranding changed only text
   that people read ([The product is called Exponential](../../features/6.0/rebranding-to-exponential.md)).
 - Text for people (UI strings, documentation, commit messages) uses the name Exponential.
+- **`sevenx` and `exp` are both 7x prefixes.** `sevenx` is 7x's official public PHP code prefix (an identifier cannot
+  start with a digit, so "7x" cannot be one); extensions and classes from 7x use `sevenx` or `exp` as 7x needs; `exp`
+  is used with intent to build the Exponential brand and to assign ownership to the Exponential project and the
+  Exponential Foundation. The full rule: [Naming prefixes: sevenx and exp](../naming-prefixes-sevenx-and-exp.md).
 
 **Exceptions (added before the rule was applied consistently).** Kernel modules added in 2026 without the prefix:
 `apikey`, `audit`, `contentcheck`, `contentfinder`, `csp`, `mailpreferences`, `uiswitch` (only `exphelp` has it).

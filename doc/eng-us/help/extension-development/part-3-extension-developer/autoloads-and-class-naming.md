@@ -58,10 +58,15 @@ Class names are global: two extensions with a class `Helper` break each other. T
 |---|---|---|
 | Your classes | a prefix of your extension or organization, camel case | `mysiteHelloGreeter`, `acmeShopExporter` |
 | New classes of this project | the `exp` prefix | `expInfo`, `expExtensionCatalogue` |
+| Extensions and classes from 7x | `sevenx` or `exp`, as 7x needs | `sevenx_dse`, `explayouts` |
 | The kernel's historical classes | `eZ...`, `ezp...` | `eZINI`, `ezpExtension` (never reuse the prefix for new code) |
 | File name | the class name in lower case | `classes/mysitehellogreeter.php` |
 | Datatypes | `<datatype>type.php`, class `<Name>Type` | `datatypes/mysiterating/mysiteratingtype.php` |
 | Metadata | `<extension>Info` in `ezinfo.php` | `mysite_helloInfo` |
+
+Why 7x has two prefixes: `sevenx` is 7x's official public PHP code prefix, because a class name cannot start with a
+digit and "7x" therefore cannot be one; `exp` is used with intent to build the Exponential brand and to assign
+ownership to the Exponential project and the Exponential Foundation. See [Naming prefixes: sevenx and exp](../../../standards/naming-prefixes-sevenx-and-exp.md).
 
 One class per file. Do not declare functions or constants at file level in a class file: autoloading only works for
 classes.

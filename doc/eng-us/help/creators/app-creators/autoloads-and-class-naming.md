@@ -44,8 +44,12 @@ deployed before the setting that uses it goes live.
 
 ## Naming
 
-- New classes start with `exp` and the extension's name: `expDemoList`, `expDemoListService`.
-- One class per file; file name in lower case: `classes/expdemolist.php`.
+- New classes start with a prefix of your organization or your extension: `acmeDemoList`, `acmeDemoListService`.
+  `sevenx` and `exp` are the prefixes of 7x and the Exponential project: `sevenx` is 7x's official public PHP code
+  prefix (a class name cannot start with a digit, so "7x" cannot be one), and 7x uses `exp` with intent for work it
+  assigns to the Exponential project and the Exponential Foundation. Use `exp` only for code you contribute to the
+  project. See [Naming prefixes: sevenx and exp](../../../standards/naming-prefixes-sevenx-and-exp.md).
+- One class per file; file name in lower case: `classes/acmedemolist.php`.
 - Never reuse a kernel name (`eZ...`) for a new class; never rename an existing kernel identifier.
 
 See [Layering and naming](../../../standards/architecture/layering-and-naming.md) and

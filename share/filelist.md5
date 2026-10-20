@@ -16,7 +16,7 @@ f669c30e35503fffb2eb184e4da101b6  .github/workflows/quality.yml
 9ae9da440bdbe3c882b160ce651bbbca  .htaccess_root
 03ef382542df17941aa891033089b79c  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
-9a600b7adaf024eb11a6cfc05fec15d8  CONTRIBUTING.md
+e2d9bc5773b562ba154b605b41202892  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
@@ -3525,7 +3525,7 @@ c6af0afd2f3ccc7478f5bcfb90ae4a48  doc/eng-us/examples/cookbook/cronjob.md
 2b03c49944092838de82bc6499332d48  doc/eng-us/examples/cookbook/custom-datatype.md
 d9d5725508198b58ed98478d08845f8d  doc/eng-us/examples/cookbook/custom-module-view.md
 b305522be865436b7a3a275f3de09f66  doc/eng-us/examples/cookbook/custom-template-operator.md
-007d1653f170b1433bbba9fecf173b80  doc/eng-us/examples/cookbook/extension-skeleton.md
+3769c798324a31b74655bfb8f0815ea0  doc/eng-us/examples/cookbook/extension-skeleton.md
 68ad6c0539e95b5871749a291ae36f89  doc/eng-us/examples/cookbook/multisite-siteaccess.md
 246a86cb5f69756376a93cdf52c24fd4  doc/eng-us/examples/cookbook/rest-json-fetch.md
 c8c41d1148b16a4d3a7be547a85db9fb  doc/eng-us/examples/cookbook/template-override.md
@@ -6245,7 +6245,7 @@ fea90865726b731c5aeb5c2a13f27e55  doc/eng-us/features/6.0/velocity-web-server.md
 830603ffdab645c466d90997dfbd4fc6  doc/eng-us/features/6.0/velocity-websockets-and-events.md
 f9c3f344c473869cfb55845caedce10f  doc/eng-us/features/6.0/version-preview-view-modes.md
 48c88a13a12cbbe550d830bb7ca3d987  doc/eng-us/features/6.0/web-server-and-solr-commands.md
-684f1a02b7d4cc33db0e6a2bdbe6b3ef  doc/eng-us/glossary.md
+9afbf186d3bc9d1ea16cf5d3b488a4ea  doc/eng-us/glossary.md
 13020aac108160e4ae980cd95a4e69d9  doc/eng-us/guides/README.md
 46f9f5e92e9ba38a49736a77a86f559a  doc/eng-us/guides/api-keys.md
 e6788c036282afd665d79ed6bb9c4d6d  doc/eng-us/guides/benchmarking.md
@@ -6348,7 +6348,7 @@ d550eba4c3c3e2e0f96b610f65aaaf2d  doc/eng-us/help/advocates/answering-objections
 da241d03e5fb6008bf335d688c509373  doc/eng-us/help/advocates/event-checklists.md
 291d6916a3fa31f80aa2335833f3a23e  doc/eng-us/help/advocates/github-for-advocates.md
 85480c0a7314405ff60f940f91dd62d4  doc/eng-us/help/advocates/giving-demos-as-an-advocate.md
-88854a7ddb794f8a4566bb8b99c1fd5b  doc/eng-us/help/advocates/glossary-for-advocates.md
+81e339422c85d1e6f7eabe55ef22b55c  doc/eng-us/help/advocates/glossary-for-advocates.md
 3416523d5c1fa80651f01e2d8166ff8f  doc/eng-us/help/advocates/handling-hostile-threads.md
 f7df23dbaf0629c1f91026de4d49cc89  doc/eng-us/help/advocates/hands-on-workshop-outline.md
 491089e77f437b14eac28b34032a5a54  doc/eng-us/help/advocates/helping-with-translations.md
@@ -6359,7 +6359,7 @@ f2547af5d216516d67f79047cdba7c26  doc/eng-us/help/advocates/lightning-talk-scrip
 b168d912559c44a9ef214cf191a328e0  doc/eng-us/help/advocates/live-demo-safety.md
 dd5093cd08ba3a776be553c70f4438f0  doc/eng-us/help/advocates/measuring-advocacy-honestly.md
 83bcde1b14bbb5bcddaecc8236181769  doc/eng-us/help/advocates/mentoring-a-first-contribution.md
-e3107ac113b2190a0c7cd7b3cad14199  doc/eng-us/help/advocates/naming-rules-quick-card.md
+389033a39b4a6a123d99d279536c8fe2  doc/eng-us/help/advocates/naming-rules-quick-card.md
 b84581166b19d5e8b511673d376e777f  doc/eng-us/help/advocates/newcomer-faq.md
 99b03de9354913395280393bf2f26a62  doc/eng-us/help/advocates/objection-ai-features.md
 81c88f59e9e26332579a66ccfa6bd7a9  doc/eng-us/help/advocates/objection-can-we-find-people.md
@@ -6717,7 +6717,7 @@ a28821c66f98fd49eed1f73de6cd4b64  doc/eng-us/help/build-two-ways/styling-your-bl
 497084728b031820deb5457d5d524048  doc/eng-us/help/build-two-ways/two-ways-to-build.md
 b840bac4c5f77b5b44f4ed3fdd77748a  doc/eng-us/help/build-two-ways/why-doesnt-my-change-appear.md
 a26b1225c5a9f00f8929870799f13150  doc/eng-us/help/build-two-ways/your-own-design-extension.md
-da3b182c6664e5d10dac43ca4ec11166  doc/eng-us/help/business/brand-and-naming-rules.md
+e5a59aee1b3a32bae9d73b8ff4a1d795  doc/eng-us/help/business/brand-and-naming-rules.md
 d8b425606ff1f01373c5ec0268df8fd5  doc/eng-us/help/business/case-studies-and-content-marketing.md
 6494db19f249cdd41c320d9141c925c6  doc/eng-us/help/business/community-and-ecosystem.md
 5a9e0c4e01737d383c968f4e20fe20b0  doc/eng-us/help/business/comparing-exponential-factually.md
@@ -6921,7 +6921,7 @@ b0ebb923632b52684f3690896fc09313  doc/eng-us/help/creators/app-creators/access-c
 186d7ec435ba67f2f24dda9fcd5a3514  doc/eng-us/help/creators/app-creators/app-creators-reading-path.md
 cbcae204ef44ad450ebd4f9445cf801e  doc/eng-us/help/creators/app-creators/app-creators-start-here.md
 aed74bf59e80f2c2a55430ef8a86327b  doc/eng-us/help/creators/app-creators/architecture-for-app-creators.md
-09b9a1867ceb7dd6c59e0a1728824485  doc/eng-us/help/creators/app-creators/autoloads-and-class-naming.md
+a7cfc8547f7ffb8fef12efead33e626b  doc/eng-us/help/creators/app-creators/autoloads-and-class-naming.md
 e2139e63e183dcadcd21b8a856039356  doc/eng-us/help/creators/app-creators/background-work-patterns.md
 f3bfa7613677b8fc39bea0b61c753984  doc/eng-us/help/creators/app-creators/caching-in-applications.md
 a9789522cc636925e1c4c503b89d360e  doc/eng-us/help/creators/app-creators/ci-for-extensions.md
@@ -7278,7 +7278,7 @@ f8b8072d3e0ed039a23f287c809ce4be  doc/eng-us/help/designers/extensions/installin
 935815cbc274de7b1db16136cbf9869c  doc/eng-us/help/designers/extensions/keeping-version-fields-in-sync.md
 192b06853ecfeff487d96c07bca70f6d  doc/eng-us/help/designers/extensions/license-file.md
 2a44d6ac29c688a8148f55cd4a2cfcfb  doc/eng-us/help/designers/extensions/loading-order-for-themes.md
-8ea68d7d08c8808c01838a05ef560190  doc/eng-us/help/designers/extensions/naming-your-theme-extension.md
+83ff263afc5e01d4de04cd4b8fc44d86  doc/eng-us/help/designers/extensions/naming-your-theme-extension.md
 93d5b54f874875cf2fc0f770ada06336  doc/eng-us/help/designers/extensions/package-creator-wizard-step-by-step.md
 cc28f45496884ed4e05d73fa494e39b6  doc/eng-us/help/designers/extensions/package-licenses-in-the-wizard.md
 855c6ac070b124867f08ab0c67b4cb94  doc/eng-us/help/designers/extensions/package-secret-check.md
@@ -7577,7 +7577,7 @@ fb9bdd24116ed69989cd46979e58a380  doc/eng-us/help/extension-development/part-2-b
 e4322c94f149a753adc3d7cb1f39409c  doc/eng-us/help/extension-development/part-3-extension-developer/activating-an-extension.md
 8fe7b84c3208986371b78ae261d6fd84  doc/eng-us/help/extension-development/part-3-extension-developer/admin-pages-in-admin4-style.md
 7b46050611bad0fa1dd5fdcee132c5fd  doc/eng-us/help/extension-development/part-3-extension-developer/ajax-with-ezjscore-server-functions.md
-9862d6933cd0fdfb08329a9ceda16cdf  doc/eng-us/help/extension-development/part-3-extension-developer/autoloads-and-class-naming.md
+b8f6beea69a6acf8750b94ff55e9167f  doc/eng-us/help/extension-development/part-3-extension-developer/autoloads-and-class-naming.md
 8220a7662e6b925af3e3e2f93fb07930  doc/eng-us/help/extension-development/part-3-extension-developer/cli-scripts-and-console-commands.md
 f02d058e0b2b3acd6386bd00fc1914e3  doc/eng-us/help/extension-development/part-3-extension-developer/composer-json-for-extensions.md
 807db078b1d95d087b5820fb51734c57  doc/eng-us/help/extension-development/part-3-extension-developer/content-security-policy-for-extensions.md
@@ -7590,7 +7590,7 @@ fe257f70c21a5584165d8404212d3f4d  doc/eng-us/help/extension-development/part-3-e
 cd9c3b3e1533cde1e8089f802e5620a7  doc/eng-us/help/extension-development/part-3-extension-developer/design-in-an-extension.md
 2c5697635c109d04b05f676202f81348  doc/eng-us/help/extension-development/part-3-extension-developer/documenting-your-extension.md
 6636b6171c392baac35ca7c3356f1929  doc/eng-us/help/extension-development/part-3-extension-developer/events-and-filters.md
-06a5e49c14e4d5daeb43e079803f5548  doc/eng-us/help/extension-development/part-3-extension-developer/extension-directory-layout.md
+f9494bec62de3a4613774d14afa1c4ec  doc/eng-us/help/extension-development/part-3-extension-developer/extension-directory-layout.md
 d276dd565bd1c705728482441919b1a3  doc/eng-us/help/extension-development/part-3-extension-developer/extension-load-order.md
 c00c23d73f67af878b652b38989bb8d8  doc/eng-us/help/extension-development/part-3-extension-developer/extension-xml.md
 08e381c818552a0971aa4221da23a768  doc/eng-us/help/extension-development/part-3-extension-developer/ezinfo-php.md
@@ -7651,7 +7651,7 @@ d44326faf12d9f7d02f1e0ff9b1dd4e8  doc/eng-us/help/extension-development/part-4-u
 449c36a71dddaeef09a06556c178c6f5  doc/eng-us/help/extension-development/part-4-upgrading/inventory-an-old-extension.md
 706a0127b94a5f3f4c9d76b3ea000432  doc/eng-us/help/extension-development/part-4-upgrading/modernizing-composer-json.md
 20cd412b49ce5678716c8fa0dcf875c0  doc/eng-us/help/extension-development/part-4-upgrading/modernizing-ezinfo-and-extension-xml.md
-5ccc0f0dd69d27b2124ac4464b74fed5  doc/eng-us/help/extension-development/part-4-upgrading/naming-and-branding-during-an-upgrade.md
+3131e6071ae5cad50280614e59ed654f  doc/eng-us/help/extension-development/part-4-upgrading/naming-and-branding-during-an-upgrade.md
 c39bd803c540f9b52be28dd6be32f672  doc/eng-us/help/extension-development/part-4-upgrading/nullable-parameters-and-types.md
 ce95d91eb4c8588f3143aac322a7d152  doc/eng-us/help/extension-development/part-4-upgrading/old-constructors-and-static-calls.md
 234d62d2a7121ed83196d4ac64626d84  doc/eng-us/help/extension-development/part-4-upgrading/old-jquery-to-jquery-4.md
@@ -9392,7 +9392,7 @@ d626e848cdaf4a8fe80d910f1c543927  doc/eng-us/help/partners/implementation-projec
 ceb774231a21caa4614836d1a666eafc  doc/eng-us/help/partners/lead-handoffs.md
 db39a08886b9021fdfd0b45860f2e5fc  doc/eng-us/help/partners/licensing-for-partners.md
 e554077f8a8987e467df11bf5e929e48  doc/eng-us/help/partners/logging-partner-activity.md
-d561da0a351333b808d9d8968c1a1abc  doc/eng-us/help/partners/naming-and-brand-for-partners.md
+bb52a34266ba4c31370ffba7689b2afb  doc/eng-us/help/partners/naming-and-brand-for-partners.md
 5afb66941308f1751676d9f66f6def78  doc/eng-us/help/partners/oem-and-reselling.md
 b80aac0139a3d1bcc92383b0af6cedfb  doc/eng-us/help/partners/onboarding-checklist.md
 2efeeaea497c24bdbecfe57f4fe837f3  doc/eng-us/help/partners/open-source-values-for-partners.md
@@ -9442,7 +9442,7 @@ a9183a7583474c8fa6563874a16aeea6  doc/eng-us/help/partners/your-partner-page.md
 35370fad4905dc823489d0e0e46ad518  doc/eng-us/help/press/7x-in-three-stages.md
 420adf59ce2ad8970d28ae2205410dc3  doc/eng-us/help/press/attributing-statements.md
 1dfc4ca2112c708f505e91d20e718c53  doc/eng-us/help/press/boilerplate-descriptions.md
-d08d8ed508b018aaa67f0485da58c92f  doc/eng-us/help/press/brand-and-naming-for-media.md
+e7f4cc78f1976c880c8874bc66f2c79a  doc/eng-us/help/press/brand-and-naming-for-media.md
 da5b247586219d15e67440e57fef78f4  doc/eng-us/help/press/briefing-for-business-press.md
 9c207d3bcf3bf5a36987cc83e266afcf  doc/eng-us/help/press/briefing-for-education-and-student-media.md
 11c2cb36337c76e8b4bd662fe1a84a85  doc/eng-us/help/press/briefing-for-local-and-regional-press.md
@@ -9491,7 +9491,7 @@ fc26ca84e7e99151b1ad33960f396495  doc/eng-us/help/press/feature-stories-index.md
 762b99cedce00f9c3f29d25714161d20  doc/eng-us/help/press/logos-and-brand-assets.md
 de48e5169809a987129969a98233719d  doc/eng-us/help/press/making-your-coverage-accessible.md
 335024835275ff2905be71f97b8620ab  doc/eng-us/help/press/myths-and-corrections.md
-c28e2dc478434dcc1e513f3056171db7  doc/eng-us/help/press/naming-quick-reference-for-editors.md
+adffa526cfb677367123b052ac13b85f  doc/eng-us/help/press/naming-quick-reference-for-editors.md
 ef85fc8ac65201436c06f1eff1045343  doc/eng-us/help/press/newsletters-and-blogs-for-creators.md
 f3ae56e2238d62643e37ace7433a97f9  doc/eng-us/help/press/not-associated-with-ez-systems-or-ibexa.md
 889b4189a535a36c4deb2ef988b95d49  doc/eng-us/help/press/official-channels-and-social-accounts.md
@@ -10351,7 +10351,7 @@ df8aafff28c4bb0be5e5535aec81f028  doc/eng-us/help/trainers/workshops/module-05-c
 d9ba715ff69a95223caafc139e72c44e  doc/eng-us/help/trainers/workshops/module-05-capstone-projects/multilingual-event-site.md
 229ea5861825d26d7951d974facd4e1a  doc/eng-us/help/update-with-git.md
 c3dd809f812dd3a2f0ccf7b03f056a73  doc/eng-us/help/when-something-goes-wrong.md
-0e59a538a4b007ec6a31170f88e195d5  doc/eng-us/help/who-is-7x.md
+64f49f9f5b0955e45a74bf46f0b13268  doc/eng-us/help/who-is-7x.md
 e28ab16d4678ccc93c4732740211b057  doc/eng-us/help/who-is-the-exponential-foundation.md
 ef64cf1fa291c6ab3f41ca59c651bc2a  doc/eng-us/history/2023/2023-12.md
 ae24dd9db82f56f69e73ad8ff965e44d  doc/eng-us/history/2024/2024-01a.md
@@ -10806,17 +10806,18 @@ f14404070f007379a58298d1f27c194a  doc/eng-us/specifications/6.0/syndication.md
 f215c05198661b115822ecf85b049791  doc/eng-us/specifications/trunk/webdav/design.txt
 231361c745f55c967dbdc6a9e6428c90  doc/eng-us/specifications/trunk/webdav/readme.txt
 5437549b02cb05d98a6c0e9faa2a9d6e  doc/eng-us/specifications/trunk/webdav/testing.txt
-df75d4f91455dbd534622d59abe81320  doc/eng-us/standards/README.md
+063ce552bc878f747754fe24aeba8d5b  doc/eng-us/standards/README.md
 acbed652f939f6a502dde55ca89991c2  doc/eng-us/standards/accessibility.md
 fb2402e3c93e41eda0d80873896f36fc  doc/eng-us/standards/apis-and-protocols.md
 66c877ddf2dfc63f88438cd9ea387d1b  doc/eng-us/standards/architecture/compatibility-releases-deployment.md
 0ddceb8d256796c6e6944fc21d5e17b1  doc/eng-us/standards/architecture/kernel-architecture.md
-fed80176c926823a211d5f78a7a66b01  doc/eng-us/standards/architecture/layering-and-naming.md
-f53ca847af70c87945a9e20099ae750b  doc/eng-us/standards/coding-standards.md
+c82ccb5029181dda770339fe7005bf37  doc/eng-us/standards/architecture/layering-and-naming.md
+07b816e960351eda7772e822edbe9619  doc/eng-us/standards/coding-standards.md
 d355246fd0485dd8399e0aeb99a66299  doc/eng-us/standards/databases-and-sql.md
 63ada14b4518010393719a510aa17ddc  doc/eng-us/standards/documentation-and-publishing.md
 449ebadd494411a6149712074de173e8  doc/eng-us/standards/header.txt
 06e9a6bdc8881cea34b7256f8dfbeed3  doc/eng-us/standards/internationalization.md
+df30e0abdf09efe4bac499ce1ecf8d54  doc/eng-us/standards/naming-prefixes-sevenx-and-exp.md
 73bbf269aea828616adc12da39610149  doc/eng-us/standards/patterns/README.md
 f16859ab18fda5a162ab032c0fda109e  doc/eng-us/standards/patterns/active-record.md
 443ecede52754ad2e72434e03aa69396  doc/eng-us/standards/patterns/adapter.md

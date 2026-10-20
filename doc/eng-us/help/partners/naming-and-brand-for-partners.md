@@ -21,6 +21,7 @@ job ads, social media and case studies. The sales team has the full rule set in
 | **Exponential 6**, **Exponential 6.0.x** | The current major line | "eZ Publish 6" |
 | **7x** | The company that leads development, support and hosting | "7X", "SevenX" in running text (the domain and accounts are spelled se7enx and se7enxweb) |
 | **the Exponential Foundation** | The nonprofit that operates the project | "the Exponential company" |
+| `sevenx`, `exp` (in code) | 7x's code prefixes: `sevenx` is 7x's official public PHP code prefix, because a code name cannot start with a digit; `exp` is used with intent to assign an extension or solution to the Exponential project and the Exponential Foundation ([Naming prefixes](../../standards/naming-prefixes-sevenx-and-exp.md)) | `7x_...` as a code prefix; `exp` on your own extension |
 | **Exponential Platform**, **Legacy**, **Nexus**, **DXP**, **Basic** | The product family ([Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#the-product-family-at-a-glance)) | Invented product names |
 | **Exponential Partner (Level)** | Your status, e.g. "Exponential Partner (Silver)" | "Official Exponential vendor", "Exponential reseller" unless you have the Distribution profile |
 

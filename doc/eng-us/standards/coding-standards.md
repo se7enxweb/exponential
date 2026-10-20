@@ -4,7 +4,7 @@ audience: developer, admin
 category: standards
 order: 80
 summary: The code style of Exponential and how it is checked - the phpcs ruleset, PHPCompatibility for PHP 8.0, PHPStan with a baseline, PHP 8.0 lint, file headers, naming, and the template, CSS and JavaScript rules.
-keywords: coding standards, code style, phpcs, PHP_CodeSniffer, phpcs.xml.dist, PHPCompatibility, PHPStan, baseline, lint, php -l, lint80, docblock, file header, copyright, naming conventions, exp prefix, templates, INI, CSS, JavaScript, CSP, nonce, EditorConfig
+keywords: coding standards, code style, phpcs, PHP_CodeSniffer, phpcs.xml.dist, PHPCompatibility, PHPStan, baseline, lint, php -l, lint80, docblock, file header, copyright, naming conventions, exp prefix, sevenx prefix, templates, INI, CSS, JavaScript, CSP, nonce, EditorConfig
 type: reference
 ---
 # Coding standards
@@ -23,7 +23,7 @@ and which rules apply to templates, stylesheets and scripts. The day-to-day use 
 | Static analysis (PHPStan) | PHPStan 2.1, level 1 | **Partly complies** | `phpstan.neon.dist`, baseline of about 3,000 findings, blocking in CI |
 | PHP syntax (`php -l`) | PHP 8.3 and 8.0 | **Complies** | `.githooks/pre-commit`, `quality.yml`, `make lint80-all` |
 | File header docblock | project header | **Partly complies** | 1,454 of 1,862 PHP files in `kernel/` and `lib/` carry the current copyright line |
-| Naming (exp prefix, file = lower-case class name) | project convention | **Complies** for new code | 375 `exp*.php` files in `kernel/` and `lib/` |
+| Naming (sevenx and exp prefixes, file = lower-case class name) | [written rule](naming-prefixes-sevenx-and-exp.md) | **Complies** for new code | 375 `exp*.php` files in `kernel/` and `lib/` |
 | No inline CSS in admin templates | project rule | **Partly complies** | `tests/tests/design/AdminStylingRulesTest.php` with a shrinking allowlist |
 | No inline script (Content Security Policy) | CSP Level 3 (W3C) | **Partly complies** | `AdminContentSecurityPolicyTest.php`, `ExtensionInlineScriptsTest.php` |
 | JavaScript syntax | ECMAScript, Node.js 22 `--check` | **Complies** for syntax | `quality.yml` step "JavaScript syntax of changed files" |
@@ -169,6 +169,11 @@ for new files**; use the docblock above. Old files that still have this form kee
 
 ## Naming conventions
 
+The prefix rule is stated in full in [Naming prefixes: sevenx and exp](naming-prefixes-sevenx-and-exp.md):
+`sevenx` is 7x's official public PHP code prefix (an identifier cannot start with a digit, so "7x" cannot be one),
+extensions and classes from 7x use `sevenx` or `exp` as 7x needs, and `exp` is used with intent to build the
+Exponential brand and to assign ownership to the Exponential project and the Exponential Foundation.
+
 - **New code uses the `exp` prefix**: classes `expFoo` (`expHelpAudience`, `expContentSecurityPolicy`), template
   operators (`kernel/common/expcontentsecuritypolicyoperator.php`), templates (`design/standard/templates/parts/exp_content_direction.tpl`),
   modules and settings. 375 files in `kernel/` and `lib/` are named `exp*.php`.
@@ -183,8 +188,8 @@ for new files**; use the docblock above. Old files that still have this form kee
   `settings/siteaccess/<siteaccess>/` or an extension's `settings/`. Sections are `[CamelCase]`, settings `CamelCase`,
   lists `Name[]`.
 
-**Status: Complies** for new code. The `exp` rule is a project convention visible in the code; a written rule for it
-in `doc/` was not found (**Unverified** as a documented policy).
+**Status: Complies** for new code. The rule is written down in
+[Naming prefixes: sevenx and exp](naming-prefixes-sevenx-and-exp.md).
 
 ## Templates, stylesheets and scripts
 
@@ -241,13 +246,13 @@ Unix line endings and UTF-8 by hand; phpcs checks the first two for PHP.
 1. Code style is a warning in CI, not a failure.
 2. PHPStan runs at level 1 with about 3,000 accepted findings.
 3. File headers are mixed (old `@license` wording, `@version //autogentag//`, the 4.x `//` header in old files).
-4. The `exp` naming convention is not written down in `doc/`.
-5. `CONTRIBUTING.md` links a `CODING_STYLE.md` that does not exist.
-6. No JavaScript or CSS linter; no `.editorconfig`.
-7. The inline CSS and inline script rules still have allowlists.
+4. `CONTRIBUTING.md` links a `CODING_STYLE.md` that does not exist.
+5. No JavaScript or CSS linter; no `.editorconfig`.
+6. The inline CSS and inline script rules still have allowlists.
 
 ## Related pages
 
+- [Naming prefixes: sevenx and exp](naming-prefixes-sevenx-and-exp.md)
 - [Quality checks](../features/6.0/quality-checks.md)
 - [Styling the administration](../bc/6.0/admin4-styling.md)
 - [Content Security Policy](../features/6.0/content-security-policy.md)

@@ -60,6 +60,9 @@ SPELLING
    "Learning eZ Publish").
 4. **Rename the product, never a symbol.** `eZ` alone is a code prefix
    ([Code identifiers stay as they are](../business/brand-and-naming-rules.md#code-identifiers-stay-as-they-are)).
+   In code 7x is `sevenx` (its official public PHP code prefix, since a name cannot start with a digit) or `exp`,
+   which 7x uses with intent for work it assigns to the Exponential project and the Exponential Foundation
+   ([Naming prefixes](../../standards/naming-prefixes-sevenx-and-exp.md)).
 5. **Credit others by their names.** Netgen, Mugo Web, CJW Network
    ([Other companies and products](../business/brand-and-naming-rules.md#other-companies-and-products)).
 
