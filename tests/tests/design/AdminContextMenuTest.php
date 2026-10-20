@@ -225,4 +225,29 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "menuElement.style.maxHeight = '';", $body );
         $this->assertStringContainsString( 'var areaTop = screenData.ScrollY + _fixedHeaderHeight();', $body );
     }
+
+    /**
+     * ezpopupmenu.js and setup_logs.js call window.a4SafeURL. admin3 had its own page_head_script.tpl without
+     * a4_url.js, so its menu links became '#', redirects were refused and the log selection did nothing. Every
+     * head template that loads BackendJavaScriptList loads a4_url.js before it.
+     */
+    public function testEveryPageHeadScriptLoadsTheUrlCheckBeforeTheScriptList()
+    {
+        $templates = AdminFiles::files( self::root() . '/design/*/templates/page_head_script.tpl' );
+        $checked = 0;
+        foreach ( $templates as $template )
+        {
+            $tpl = AdminFiles::read( $template );
+            $list = strpos( $tpl, 'BackendJavaScriptList' );
+            if ( $list === false )
+                continue;
+            ++$checked;
+            $load = strpos( $tpl, "ezscript_load( array( 'a4_url.js' ) )" );
+            $this->assertNotFalse( $load, "$template loads BackendJavaScriptList but not a4_url.js" );
+            $this->assertLessThan( $list, $load, "$template loads a4_url.js after BackendJavaScriptList" );
+        }
+        $this->assertGreaterThanOrEqual( 3, $checked, 'admin, admin3 and admin4 each load the list' );
+        // admin3 and admin2 take the script from design/admin through the design chain
+        $this->assertFileExists( self::root() . '/design/admin/javascript/a4_url.js' );
+    }
 }

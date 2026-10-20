@@ -288,6 +288,7 @@ a54e5021b1c597539a60da86ef766f0c  design/admin/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
+046f940bb01a41b60bda5fe726d882b9  design/admin/javascript/a4_url.js
 ef7f6fea7e99dce0a2ce186ff578dba4  design/admin/javascript/contentcheck_select.js
 efd012f32021bbe38b8ec6ca36bf2cbd  design/admin/javascript/contentcheck_storage.js
 5a019676ff348d334898575db057ca56  design/admin/javascript/contentstructuremenu_dynamic.js
@@ -905,7 +906,7 @@ baf13e6175651449381af85f8ae7b1c4  design/admin3/templates/content/edit_draft.tpl
 e169658aea9f1679ce40fcde530cfd83  design/admin3/templates/content/history.tpl
 3d1c7e6f28404ca56bb4b01ea9248f5e  design/admin3/templates/content/view/versionview.tpl
 7f8ecb7c83deb1129284631b7de16cac  design/admin3/templates/loginpagelayout.tpl
-870244c1a24f9eb612d6ea5f97d243d0  design/admin3/templates/page_head_script.tpl
+7e88931c34a0c2bf01dee03465027f81  design/admin3/templates/page_head_script.tpl
 b2eb690cdc87ce43c243e5d764bddd39  design/admin3/templates/page_head_style.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 0cc20dc6c8574f20b41e26a7833d57bf  design/admin3/templates/page_leftmenu.tpl
@@ -952,6 +953,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 fdef872574a66b97aca8d36bdf3ddc15  design/admin4/javascript/a4_actions.js
 7b9db27978447ca00bd30b742c037e52  design/admin4/javascript/a4_head.js
 01ea871f6ca6124d661784a91fd73c98  design/admin4/javascript/a4_mega_menu.js
+046f940bb01a41b60bda5fe726d882b9  design/admin4/javascript/a4_url.js
 1302557ad668c54a60df9d132d734f2f  design/admin4/javascript/admin4.js
 ef7f6fea7e99dce0a2ce186ff578dba4  design/admin4/javascript/contentcheck_select.js
 efd012f32021bbe38b8ec6ca36bf2cbd  design/admin4/javascript/contentcheck_storage.js
@@ -14764,7 +14766,7 @@ b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 cb34401be4cee0b728449535cc448c34  tests/tests/design/AdminContentJobScriptsTest.php
 84c58e20f1464627fbbf381c7bb56bac  tests/tests/design/AdminContentSecurityPolicyTest.php
 98b9cecd8a6f9763c8420e981193033a  tests/tests/design/AdminContextMenuNestedSubmenuTest.php
-0f8220872850414a3a5e817a229df39c  tests/tests/design/AdminContextMenuTest.php
+5e6d06fe5af7c118ddb3fdcc87dcf467  tests/tests/design/AdminContextMenuTest.php
 1031b7f22212518a4180603bafaf72d7  tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php
 39edc8217670a84ba9f44cfc301e7bd2  tests/tests/design/AdminCreateLanguagesTitleTest.php
 9811db047be7881e1faebb56b853e491  tests/tests/design/AdminCssReviewFixesTest.php
@@ -14852,9 +14854,9 @@ e5afb96904ddba6129f583e0eb0f3bd6  tests/tests/design/StandardContentEditAccessib
 1f2baeab4e97de344ff2a905bdb76154  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
 f3b5318282b84e8fa64775c32a4684de  tests/tests/design/TranslationFilesValidTest.php
 5582056a45ff633ad8831432b6074f3c  tests/tests/design/js/asynchronous_publishing.js
-2a8929569939f458f12dc199e3fb5064  tests/tests/design/js/content_job.js
+140af47c50fbc11731fc37aec3c28531  tests/tests/design/js/content_job.js
 4035ddc391f38efc6f344dc1ce78c73e  tests/tests/design/js/content_job_mode_choice.js
-7704072071103fbb2ff780f5e9da51dd  tests/tests/design/js/csp_actions.js
+810ebc93b455c2d60f62f709366e9dfd  tests/tests/design/js/csp_actions.js
 2ccb84fe64e1b1963a2b1fc43eab8f52  tests/tests/design/js/csp_popupmenu.js
 b24983c34e0ac1bf2b048fd6feb0a26a  tests/tests/design/js/csp_tinymce8.js
 e75cdee3134002eb94b3b2b9c3f68d1b  tests/tests/design/js/csp_tree.js

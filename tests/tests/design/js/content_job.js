@@ -14,7 +14,8 @@ const PAGE = 'https://admin.example/index.php/admin/content/job/abc';
 // the shared address check the script finds in the page head (a4_url.js, loaded before the page scripts)
 function loadUrlHelper(sandbox, scriptPath) {
     const helper = path.join(path.dirname(scriptPath), '../a4_url.js');
-    if (fs.existsSync(helper)) { vm.runInContext(fs.readFileSync(helper, 'utf8'), sandbox); }
+    // a missing helper must fail the run, not leave a4SafeURL undefined and the case passing for the wrong reason
+    vm.runInContext(fs.readFileSync(helper, 'utf8'), sandbox);
 }
 
 const BOX = '<div id="exp-contentjob" data-status-url="/content/job/abc?json=1" data-state="running"'
