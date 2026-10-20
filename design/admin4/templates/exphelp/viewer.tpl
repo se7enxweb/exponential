@@ -16,7 +16,7 @@
    help_next (documents or null), help_edit_url (GitHub, may be empty), help_category (id, name, icon, or not set),
    help_i18n_json, help_page_lang, help_page_dir, help_fallback, help_reader_language, help_page_language; help_reading
    (the "Reading in" control, parts/reading_language.tpl), help_original_url, help_original_language, help_original_view
-   (the English original of a page for a reader of another language: ?lang=eng-us).
+   (the English original of a page for a reader of another language: /(lang)/eng-us).
 
    The same file is in design/admin and design/admin4. *}
 {def $help_title = cond( and( is_set( $help_page.title ), $help_page.title|ne( '' ) ), $help_page.title, $help_page.id )
@@ -28,7 +28,7 @@
     <div class="a4-help-viewer-bar">
         <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help start'|i18n( 'kernel/exphelp' )}</a>
         <a class="a4-btn a4-btn-ghost a4-btn-small a4-help-viewer-tonav" href="#exphelp-nav"><span class="a4-icon a4-bi-list-ul" aria-hidden="true"></span> {'All help pages'|i18n( 'kernel/exphelp' )}</a>
-        <form class="a4-help-viewer-search a4-help-search-box" data-exphelp-search action={'exphelp/search'|ezurl} method="get" role="search" data-exphelp-endpoint={'exphelp/search'|ezurl}>
+        <form class="a4-help-viewer-search a4-help-search-box" data-exphelp-search action={'exphelp/search'|ezurl} method="post" role="search" data-exphelp-endpoint={'exphelp/search'|ezurl}>
             <label class="a4-sr-only" for="exphelp-viewer-q">{'Search the help'|i18n( 'kernel/exphelp' )}</label>
             <input class="a4-input" type="search" id="exphelp-viewer-q" name="q" value="" autocomplete="off" placeholder="{'Search the help'|i18n( 'kernel/exphelp' )|wash}" aria-controls="exphelp-viewer-results" aria-keyshortcuts="/" data-exphelp-search-input />
             <button type="submit" class="a4-btn a4-btn-small"><span class="a4-icon a4-bi-search" aria-hidden="true"></span> {'Search'|i18n( 'kernel/exphelp' )}</button>

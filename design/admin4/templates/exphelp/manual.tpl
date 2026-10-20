@@ -32,10 +32,10 @@
             {if $help_manual.edition|ne( '' )}<li class="a4-help-meta-item"><span class="a4-icon a4-bi-tag" aria-hidden="true"></span>{'Edition %edition'|i18n( 'kernel/exphelp',, hash( '%edition', $help_manual.edition ) )|wash}</li>{/if}
             {if $help_manual.license|ne( '' )}<li class="a4-help-meta-item">{$help_manual.license|wash}</li>{/if}
             {foreach $help_ebook_formats as $help_fmt}
-            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small" href={concat( 'exphelp/manual/', $help_manual.remote_id, '?format=', $help_fmt )|ezurl} download><span class="a4-icon a4-bi-download" aria-hidden="true"></span> {cond( eq( $help_fmt, 'pdf' ), 'Download PDF'|i18n( 'kernel/exphelp' ), 'Download EPUB'|i18n( 'kernel/exphelp' ) )}</a></li>
+            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small" href={concat( 'exphelp/manual/', $help_manual.remote_id, '/(format)/', $help_fmt )|ezurl} download><span class="a4-icon a4-bi-download" aria-hidden="true"></span> {cond( eq( $help_fmt, 'pdf' ), 'Download PDF'|i18n( 'kernel/exphelp' ), 'Download EPUB'|i18n( 'kernel/exphelp' ) )}</a></li>
             {/foreach}
             {if $help_dita}
-            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={concat( 'exphelp/manual/', $help_manual.remote_id, '?format=dita' )|ezurl} download><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> {'Download DITA'|i18n( 'kernel/exphelp' )}</a></li>
+            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={concat( 'exphelp/manual/', $help_manual.remote_id, '/(format)/dita' )|ezurl} download><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> {'Download DITA'|i18n( 'kernel/exphelp' )}</a></li>
             {/if}
             <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={$help_json_url|ezurl}><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> JSON</a></li>
         </ul>
@@ -97,7 +97,7 @@
         <h1 class="a4-help-title">{'Manuals'|i18n( 'kernel/exphelp' )}</h1>
         {if and( $help_dita, $help_manuals|count )}
         <ul class="a4-help-meta" role="list">
-            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={'exphelp/manual?format=dita'|ezurl} download><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> {'Download all as DITA'|i18n( 'kernel/exphelp' )}</a></li>
+            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={'exphelp/manual/(format)/dita'|ezurl} download><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> {'Download all as DITA'|i18n( 'kernel/exphelp' )}</a></li>
         </ul>
         {/if}
     </header>

@@ -39,7 +39,8 @@ Hilfe die Sprache, in der Sie lesen, ohne die Auswahl.
 ## Das englische Original
 
 Eine übersetzte Seite hat über dem Text einen Link auf ihr englisches Original („Original auf Englisch lesen“). Das
-Original öffnet sich unter derselben Adresse mit `?lang=eng-us`; es wird für diesen einen Aufruf auf Englisch
+Original öffnet sich unter derselben Adresse, gefolgt von `/(lang)/eng-us` (ein `?lang=` in der Adresse wird nicht
+gelesen); es wird für diesen einen Aufruf auf Englisch
 angezeigt, mit einem Link zurück zur Seite in Ihrer Sprache. Die Sprache Ihrer Oberfläche ändert sich dabei nicht.
 
 ## Eine Seite, die noch nicht übersetzt ist
