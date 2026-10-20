@@ -31,9 +31,9 @@ RouteSettingImpl=ezpRestIniRouteFilter
 
 ## SkipFilter
 
-> Pattern for the skip filter  
+> Muster für den Überspring-Filter  
 > SkipFilter\[\]=controller\_action;version  
-> If the version component is not listed version "1" is assumed.  
+> Ist der Versionsteil nicht angegeben, wird Version "1" angenommen.  
 
 Standard: eine Liste mit 4: `ezpRestErrorController_show`, `ezpRestAuthController_basicAuth`, `ezpRestAuthController_oauthRequired`, `ezpRestOauthTokenController_handleRequest`.
 

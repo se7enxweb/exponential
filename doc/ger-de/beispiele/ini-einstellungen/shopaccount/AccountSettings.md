@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[AccountSettings]` von `settings/shopaccount.ini`, mit 2 Einstellung(en).
 
-> Settings for how user accounts should be handled in the shop/checkout  
-> default is to use internal user accounts in the system  
-> simple is for handling account information without user registration  
+> Einstellungen dazu, wie Benutzerkonten im Shop/Bezahlvorgang behandelt werden  
+> default verwendet die internen Benutzerkonten des Systems  
+> simple behandelt Kontoinformationen ohne Benutzerregistrierung  
 
 Bearbeiten Sie `settings/shopaccount.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -36,7 +36,7 @@ Handler=ezuser
 ## Alias
 
 > Handler=ezdefault  
-> Allows for overriding a handler with another  
+> Erlaubt, einen Handler durch einen anderen zu ersetzen  
 
 Standard: eine leere Liste.
 

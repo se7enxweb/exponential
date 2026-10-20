@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/requestclassifier.ini` nie selbst: Ein Update ersetzt d
 
 ## Class
 
-> The limits are in \[ThresholdSettings\] above. Rule: 404-rate.  
+> Die Grenzen stehen oben in \[ThresholdSettings\]. Regel: 404-rate.  
 
 Standard: leer.
 

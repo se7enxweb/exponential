@@ -19,21 +19,21 @@ Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## BasketViewName
 
-> The view name the shop uses for the basket page, and for every redirect,  
-> form action and breadcrumb that targets it. Any simple token works - letters,  
-> digits, dash and underscore - and the shop is then served at /shop/<name>/:  
+> Der Ansichtsname, den der Shop für die Warenkorbseite verwendet, und für jede Weiterleitung,  
+> jede Formularaktion und jeden Brotkrumenpfad, der darauf zielt. Jedes einfache Token funktioniert (Buchstaben,  
+> Ziffern, Bindestrich und Unterstrich), und der Shop ist dann unter /shop/<name>/ erreichbar:  
 >
->   BasketViewName=basket   -> /shop/basket/   (default)  
+>   BasketViewName=basket   -> /shop/basket/   (Standard)  
 >   BasketViewName=cart     -> /shop/cart/  
 >   BasketViewName=buyer    -> /shop/buyer/  
 >
-> /shop/basket/ stays registered whatever the setting, so existing links and  
-> bookmarks keep resolving; the setting decides where the shop sends people.  
+> /shop/basket/ bleibt unabhängig von der Einstellung registriert, vorhandene Links und  
+> Lesezeichen funktionieren also weiter; die Einstellung entscheidet, wohin der Shop die Leute schickt.  
 >
-> A design may theme a name by adding shop/<name>.tpl - shop/cart.tpl ships as  
-> an example. Without one, the ordinary shop/basket.tpl is used, so a new name  
-> needs no template of its own. Anything outside the allowed characters falls  
-> back to basket rather than producing a URL that routes nowhere.  
+> Ein Design kann einen Namen gestalten, indem es shop/<name>.tpl hinzufügt; shop/cart.tpl wird als  
+> Beispiel mitgeliefert. Ohne eines wird das gewöhnliche shop/basket.tpl verwendet, ein neuer Name  
+> braucht also kein eigenes Template. Alles außerhalb der erlaubten Zeichen fällt  
+> auf basket zurück, statt eine URL zu erzeugen, die nirgendwohin führt.  
 
 Standard: `basket`.
 

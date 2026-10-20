@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[License_LicenseRef-Proprietary]` von `settings/package.ini`, mit 2 Einstellung(en).
 
-> All rights reserved: the package may be used only as its owner allows. There is  
-> no SPDX identifier for this; the terms are the owner's, stated in the package.  
+> Alle Rechte vorbehalten: Das Paket darf nur so verwendet werden, wie sein Eigentümer es erlaubt. Dafür gibt es  
+> keinen SPDX-Bezeichner; die Bedingungen sind die des Eigentümers, im Paket angegeben.  
 
 Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

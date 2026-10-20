@@ -12,11 +12,11 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/querycache.ini`: 2 Blöcke, 7 Einstellungen.
 
-> The SQL query cache: the rows a SELECT returned, answered again until a write  
-> to one of the tables it read makes them stale. For the SQL engines (MySQL,  
-> MariaDB, PostgreSQL, SQLite, and Oracle through the ezoracle extension's  
-> driver); the MongoDB driver does not use it.  
-> See doc/eng-us/bc/6.0/sql-query-cache.md.  
+> Der SQL-Abfrage-Cache: die Zeilen, die ein SELECT zurückgegeben hat, erneut geliefert, bis ein Schreibzugriff  
+> auf eine der gelesenen Tabellen sie veraltet macht. Für die SQL-Engines (MySQL,  
+> MariaDB, PostgreSQL, SQLite und Oracle über den Treiber der Erweiterung  
+> ezoracle); der MongoDB-Treiber verwendet ihn nicht.  
+> Siehe doc/eng-us/bc/6.0/sql-query-cache.md.  
 
 | Block | Einstellungen |
 |---|---|

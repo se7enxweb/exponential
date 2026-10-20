@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Handler
 
-> Specifies basketinfo handler class/file name. For example, if the value is  
-> "ezcustom", then the handler class should be named  
-> eZCustomBasketInfoHandler (case does not matter) and placed to file  
-> ezcustombasketinfohandler.php residing in a directory specified by  
-> "RepositoryDirectories" and "ExtensionDirectories" settings.  
-> ezdefault is the default basket info handler, that provides basic  
-> calculated information about basket items.  
+> Gibt den Klassen-/Dateinamen des Basketinfo-Handlers an. Ist der Wert zum Beispiel  
+> "ezcustom", muss die Handler-Klasse  
+> eZCustomBasketInfoHandler heißen (Groß-/Kleinschreibung egal) und in der Datei  
+> ezcustombasketinfohandler.php in einem Verzeichnis liegen, das die Einstellungen  
+> "RepositoryDirectories" und "ExtensionDirectories" angeben.  
+> ezdefault ist der Standard-Handler für Warenkorbinformationen, der grundlegende  
+> berechnete Informationen über die Einträge im Warenkorb liefert.  
 
 Standard: `ezdefault`.
 
@@ -39,7 +39,7 @@ Handler=ezdefault
 
 ## RepositoryDirectories
 
-> Directories where basketinfo handlers should be searched for.  
+> Verzeichnisse, in denen nach Basketinfo-Handlern gesucht wird.  
 
 Standard: eine Liste mit 1: `kernel/classes/basketinfohandlers`.
 
@@ -55,12 +55,12 @@ RepositoryDirectories[]=kernel/classes/basketinfohandlers
 
 ## ExtensionDirectories
 
-> If you are going to implement your basketinfo handler in an extension  
-> then you should add the extension name to the list below.  
-> In that case basketinfo handlers will be searched for  
-> in the following (hardcoded) directory:  
+> Wenn Sie Ihren Basketinfo-Handler in einer Erweiterung umsetzen wollen,  
+> fügen Sie den Namen der Erweiterung der Liste unten hinzu.  
+> Dann werden Basketinfo-Handler im folgenden  
+> (fest eingestellten) Verzeichnis gesucht:  
 > extension/<your\_extension>/basketinfohandlers  
-> beside directories specified in 'RepositoryDirectories' setting.  
+> neben den Verzeichnissen aus der Einstellung 'RepositoryDirectories'.  
 
 Standard: eine leere Liste.
 

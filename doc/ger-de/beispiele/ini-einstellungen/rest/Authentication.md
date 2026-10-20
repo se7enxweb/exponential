@@ -57,8 +57,8 @@ RequireHTTPS=disabled
 
 ## DefaultUserID
 
-> Default user to authenticate when authentication is disabled or the route used doesn't need authentication  
-> If left empty, site.ini/\[UserSettings\].AnonymousUserID will be used  
+> Standardbenutzer, der authentifiziert wird, wenn die Authentifizierung deaktiviert ist oder die verwendete Route keine Authentifizierung braucht  
+> Wenn leer, wird site.ini/\[UserSettings\].AnonymousUserID verwendet  
 
 Standard: leer.
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## PreferredCurrency
 
-> Default currency for shopping.  
+> Standardwährung für den Einkauf.  
 
 Standard: `USD`.
 

@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## MathHandler
 
-> eZPHPMath   - using php floating point calculations  
-> eZBCMath    - using bcmath extension.  
+> eZPHPMath   - mit Gleitkommaberechnungen von PHP  
+> eZBCMath    - mit der Erweiterung bcmath.  
 
 Standard: `eZPHPMath`.
 
@@ -34,8 +34,8 @@ MathHandler=eZPHPMath
 
 ## MathScale
 
-> MathScale defines significant digits after the decimal point  
-> Note: applyes for eZBCMath handler only.  
+> MathScale legt die signifikanten Stellen nach dem Dezimalpunkt fest  
+> Hinweis: gilt nur für den Handler eZBCMath.  
 
 Standard: `10`.
 
@@ -49,8 +49,8 @@ MathScale=10
 
 ## RoundingType
 
-> RoundingType defines rounding method for autoconversions.  
-> Possible values: none, round, ceil, floor  
+> RoundingType legt die Rundungsmethode für automatische Umrechnungen fest.  
+> Mögliche Werte: none, round, ceil, floor  
 
 Standard: `round`.
 
@@ -64,10 +64,10 @@ RoundingType=round
 
 ## RoundingPrecision
 
-> RoundingPrecision defines significant digits after the decimal point  
-> which should be kept.  
-> values:  
->   numeric, e.g. 0, 1, 2, ...  
+> RoundingPrecision legt die signifikanten Stellen nach dem Dezimalpunkt fest,  
+> die erhalten bleiben sollen.  
+> Werte:  
+>   numerisch, z. B. 0, 1, 2, ...  
 
 Standard: `2`.
 
@@ -81,17 +81,17 @@ RoundingPrecision=2
 
 ## RoundingTarget
 
-> RoundingTarget forces rounding for specified target.  
-> Example:  
+> RoundingTarget erzwingt das Runden auf ein angegebenes Ziel.  
+> Beispiel:  
 > input: number = 89.468543  
 >        precision = 2  
 >        target\_1 = 5  
 >        target\_2 = 99  
-> usual rounding: round( number, precision ) = 89.47  
-> apply target\_1: round( number, precision, target ) = 89.45  
-> apply target\_2: round( number, precision, target ) = 89.99  
-> values:  
->   numeric, e.g. 1,2,...  
+> übliches Runden: round( number, precision ) = 89.47  
+> mit target\_1: round( number, precision, target ) = 89.45  
+> mit target\_2: round( number, precision, target ) = 89.99  
+> Werte:  
+>   numerisch, z. B. 1,2,...  
 >   false  
 
 Standard: `false`.

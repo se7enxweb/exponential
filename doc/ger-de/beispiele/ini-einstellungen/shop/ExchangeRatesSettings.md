@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ExchangeRatesUpdateHandler
 
-> eZECB - european central bank  
+> eZECB - Europäische Zentralbank  
 
 Standard: `eZECB`.
 
@@ -47,13 +47,13 @@ RepositoryDirectories[]=kernel/shop/classes/exchangeratehandlers
 
 ## ExtensionDirectories
 
-> A list of extensions containing exchange rates update handlers  
-> These handlers must be placed in : <extension>/<your\_extension>/exchangeratehandlers/<handler\_name>/<handler\_name>handler.php  
-> And contain a class called : <handler\_name>Handler  
-> This class must implement eZExchangeRatesUpdateHandler ( kernel/shop/classes/exchangeratehandlers/ezexchangeratesupdatehandler.php )  
-> It's common to create a settings/shop.ini.append file  
-> in your extension and define 'ExtensionDirectories' in it to automatically  
-> get handler from the extension when it's turned on.  
+> Eine Liste der Erweiterungen mit Handlern zum Aktualisieren der Wechselkurse  
+> Diese Handler müssen hier liegen: <extension>/<your\_extension>/exchangeratehandlers/<handler\_name>/<handler\_name>handler.php  
+> Und eine Klasse namens <handler\_name>Handler enthalten  
+> Diese Klasse muss eZExchangeRatesUpdateHandler implementieren ( kernel/shop/classes/exchangeratehandlers/ezexchangeratesupdatehandler.php )  
+> Üblicherweise legt man in der Erweiterung eine Datei settings/shop.ini.append  
+> an und definiert darin 'ExtensionDirectories', um automatisch  
+> den Handler der Erweiterung zu erhalten, wenn sie eingeschaltet ist.  
 
 Standard: eine Liste mit 1: ``.
 
@@ -69,7 +69,7 @@ ExtensionDirectories[]=
 
 ## BaseCurrency
 
-> Base currency for rates: USD/<base>, NOK/<base>, UAH/<base>, ...  
+> Basiswährung für die Kurse: USD/<base>, NOK/<base>, UAH/<base>, ...  
 
 Standard: `EUR`.
 

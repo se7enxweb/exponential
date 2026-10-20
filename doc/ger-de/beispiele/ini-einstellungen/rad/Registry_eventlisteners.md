@@ -12,34 +12,34 @@ generated: exp:help:examples
 Der Block `[Registry_eventlisteners]` von `settings/rad.ini`, mit 6 Einstellung(en).
 
 > \[Registry\_<key>\]  
-> Title=<what the entries are>                 shown on setup/rad and setup/radsurvey (required)  
-> Description=<one sentence>                    shown when the pointer rests on the registry on setup/rad  
+> Title=<what the entries are>                 auf setup/rad und setup/radsurvey angezeigt (erforderlich)  
+> Description=<one sentence>                    angezeigt, wenn der Zeiger auf setup/rad über dem Register ruht  
 > Doc=<path to the documentation>  
-> TranslationContext=<context>                  of Title and Description; default kernel/setup/rad  
+> TranslationContext=<context>                  von Title und Description; Standard kernel/setup/rad  
 >
-> Entries read from an ini file:  
->   Ini=<file>.ini                              the kernel's, the override's and every extension's copy are read  
->   Section=<name> | <prefix>\* | /<pattern>/    one block, a family of blocks (the rest of the name, or the first  
->   Sections\[\]=...                                group of the pattern, is the entry's name), or several of them  
->   Entries\[<variable>\]=<check>                 every value of <variable> in those blocks is one entry  
->   Skip=<variable>                             a block in which this is true is no point (a built-in one)  
-> Entries a class gives (a registry that lives in code rather than in settings):  
->   List=<class>::<CONSTANT> | <class>::<method>   name => class, name => array( 'class' => ... ), or a list of names  
->   Implements=<class or interface>             what each class must extend or implement  
-> InTotal=enabled | disabled                    disabled: listed and checked, not added to the total (a list that  
->                                               only refers to points counted somewhere else)  
+> Aus einer INI-Datei gelesene Einträge:  
+>   Ini=<file>.ini                              die Kopie des Kernels, des Overrides und jeder Erweiterung wird gelesen  
+>   Section=<name> | <prefix>\* | /<pattern>/    ein Block, eine Familie von Blöcken (der Rest des Namens oder die erste  
+>   Sections\[\]=...                                Gruppe des Musters ist der Name des Eintrags) oder mehrere davon  
+>   Entries\[<variable>\]=<check>                 jeder Wert von <variable> in diesen Blöcken ist ein Eintrag  
+>   Skip=<variable>                             ein Block, in dem dies true ist, ist kein Punkt (ein eingebauter)  
+> Einträge, die eine Klasse liefert (ein Register, das im Code statt in den Einstellungen lebt):  
+>   List=<class>::<CONSTANT> | <class>::<method>   name => class, name => array( 'class' => ... ) oder eine Liste von Namen  
+>   Implements=<class or interface>             was jede Klasse erweitern oder implementieren muss  
+> InTotal=enabled | disabled                    disabled: aufgeführt und geprüft, nicht zur Summe gezählt (eine Liste, die  
+>                                               nur auf Punkte verweist, die anderswo gezählt werden)  
 >
-> A check is one of:  
->   <class or interface>    the value is a class that extends or implements it  
->   class                   the value is any class (an empty check means the same)  
+> Eine Prüfung ist eine von:  
+>   <class or interface>    der Wert ist eine Klasse, die sie erweitert oder implementiert  
+>   class                   der Wert ist eine beliebige Klasse (eine leere Prüfung bedeutet dasselbe)  
 >   callable                <class>::<method>  
->   listener                <event>@<class>::<method> or <event>@<function>, as \[Event\] Listeners\[\]  
->   template                a template some design has (design:<path> or <path>)  
->   section:<prefix>        the same ini file has a block \[<prefix><value>\]  
->   in:<class>::<NAME>      the value is a key or a value of that class constant or public static method  
->   one-of:<a>,<b>,...      the value is one of these words  
->   name                    any value: the entry is counted, nothing is checked  
-> An entry that fails its check is shown as broken.  
+>   listener                <event>@<class>::<method> oder <event>@<function>, wie \[Event\] Listeners\[\]  
+>   template                ein Template, das ein Design hat (design:<path> oder <path>)  
+>   section:<prefix>        dieselbe INI-Datei hat einen Block \[<prefix><value>\]  
+>   in:<class>::<NAME>      der Wert ist ein Schlüssel oder Wert dieser Klassenkonstante oder öffentlichen statischen Methode  
+>   one-of:<a>,<b>,...      der Wert ist eines dieser Wörter  
+>   name                    jeder Wert: der Eintrag wird gezählt, nichts geprüft  
+> Ein Eintrag, der seine Prüfung nicht besteht, wird als defekt angezeigt.  
 
 Bearbeiten Sie `settings/rad.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

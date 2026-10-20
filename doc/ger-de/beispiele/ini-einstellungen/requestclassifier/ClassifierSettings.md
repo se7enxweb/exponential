@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/requestclassifier.ini` nie selbst: Ein Update ersetzt d
 
 ## Classification
 
-> enabled | disabled. With disabled no request is classified: probes are logged as the not-found answers they  
-> are (404.log) and security.log stays empty.  
+> enabled | disabled. Mit disabled wird keine Anfrage eingeordnet: Sondierungen werden als die Nicht-gefunden-Antworten protokolliert, die sie  
+> sind (404.log), und security.log bleibt leer.  
 
 Standard: `enabled`.
 
@@ -34,8 +34,8 @@ Classification=enabled
 
 ## LogFile
 
-> The file the lines are written to, in the log directory of the installation (var/log, or var/<site>/log with  
-> site.ini \[FileSettings\] UseGlobalLogDir=disabled). It is rotated like the other logs (site.ini \[FileSettings\]  
+> Die Datei, in die die Zeilen geschrieben werden, im Log-Verzeichnis der Installation (var/log, oder var/<site>/log mit  
+> site.ini \[FileSettings\] UseGlobalLogDir=disabled). Sie wird wie die anderen Logs rotiert (site.ini \[FileSettings\]  
 > LogMaxSize, LogMaxCount).  
 
 Standard: `security.log`.
@@ -50,18 +50,18 @@ LogFile=security.log
 
 ## RuleSets
 
-> The rule sets, in the order they are tried; the first one that has a verdict wins, so a request is in one line  
-> with one rule. Each entry is an identifier; its class and its settings are in the group \[RuleSet-<identifier>\]  
-> below. Built in:  
->   probes      category probe: things an Exponential site does not have and scanners look for  
->   traversal   category traversal: ../ and its encodings, null bytes  
->   injection   category injection: SQL, command, template and script injection in the URL  
->   scanner     category scanner: the user agents of known attack tools  
->   threshold   category threshold: more than \[ThresholdSettings\] Max404PerMinute not-found answers a minute  
-> An extension adds its own set with RuleSets\[\]=<identifier> and a group \[RuleSet-<identifier>\] with  
-> Class=<its class>, a class that implements expRequestRuleSetInterface (or extends expRequestPatternRuleSet) and  
-> is in the extension's autoload. A class that does not exist or does not implement the interface is skipped with  
-> a warning in the debug output. Leave a built-in set out of the list to switch it off.  
+> Die Regelsätze, in der Reihenfolge, in der sie versucht werden; der erste mit einem Urteil gewinnt, eine Anfrage steht also in einer Zeile  
+> mit einer Regel. Jeder Eintrag ist ein Bezeichner; seine Klasse und seine Einstellungen stehen in der Gruppe \[RuleSet-<identifier>\]  
+> unten. Eingebaut:  
+>   probes      Kategorie probe: Dinge, die eine Exponential-Website nicht hat und nach denen Scanner suchen  
+>   traversal   Kategorie traversal: ../ und seine Kodierungen, Null-Bytes  
+>   injection   Kategorie injection: SQL-, Befehls-, Template- und Skript-Injektion in der URL  
+>   scanner     Kategorie scanner: die User-Agents bekannter Angriffswerkzeuge  
+>   threshold   Kategorie threshold: mehr als \[ThresholdSettings\] Max404PerMinute Nicht-gefunden-Antworten pro Minute  
+> Eine Erweiterung fügt ihren eigenen Satz mit RuleSets\[\]=<identifier> und einer Gruppe \[RuleSet-<identifier>\] mit  
+> Class=<its class> hinzu, einer Klasse, die expRequestRuleSetInterface implementiert (oder expRequestPatternRuleSet erweitert) und  
+> im Autoload der Erweiterung steht. Eine Klasse, die nicht existiert oder die Schnittstelle nicht implementiert, wird mit  
+> einer Warnung in der Debug-Ausgabe übersprungen. Lassen Sie einen eingebauten Satz aus der Liste weg, um ihn abzuschalten.  
 
 Standard: eine Liste mit 5: `probes`, `traversal`, `injection`, `scanner`, `threshold`.
 
@@ -81,9 +81,9 @@ RuleSets[]=threshold
 
 ## Listeners
 
-> Classes told about every verdict after its line is written: classes that implement  
-> expRequestVerdictListenerInterface (onVerdict( $verdict, $context )), for example to feed a ban list or a  
-> notification. None by default. A listener runs at the end of the request; one that fails is skipped.  
+> Klassen, die nach dem Schreiben der Zeile über jedes Urteil informiert werden: Klassen, die  
+> expRequestVerdictListenerInterface implementieren (onVerdict( $verdict, $context )), zum Beispiel um eine Sperrliste oder eine  
+> Benachrichtigung zu speisen. Standardmäßig keine. Ein Listener läuft am Ende der Anfrage; einer, der scheitert, wird übersprungen.  
 
 Standard: eine leere Liste.
 
@@ -98,9 +98,9 @@ Listeners[]
 
 ## CompileCache
 
-> enabled | disabled. With enabled the compiled patterns are kept in a PHP file in the cache directory (and in  
-> APCu where it is available), so a worker that starts fresh (Velocity resets its state between requests) does not  
-> compile them again. With disabled they are compiled once per request.  
+> enabled | disabled. Mit enabled werden die kompilierten Muster in einer PHP-Datei im Cache-Verzeichnis gehalten (und in  
+> APCu, wo es verfügbar ist), sodass ein frisch startender Worker (Velocity setzt seinen Zustand zwischen Anfragen zurück) sie  
+> nicht neu kompiliert. Mit disabled werden sie einmal pro Anfrage kompiliert.  
 
 Standard: `enabled`.
 

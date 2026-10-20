@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[PreRoutingFilters]` von `settings/rest.ini`, mit 1 Einstellung(en).
 
-> Skip (auth) filter for every action in 'myController' which is of API version 2  
+> (Auth-)Filter für jede Aktion in 'myController' der API-Version 2 überspringen  
 > SkipFilter\[\]=myController\_\*;2  
-> For future use  
+> Für künftige Verwendung  
 > RunFilter\[\]  
 
 Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
@@ -24,8 +24,8 @@ Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Filters
 
-> Custom filters implementing ezpRestPreRoutingFilterInterface to be executed,  
-> before routes are created.  
+> Eigene Filter, die ezpRestPreRoutingFilterInterface implementieren und ausgeführt werden,  
+> bevor die Routen erzeugt werden.  
 
 Standard: eine leere Liste.
 

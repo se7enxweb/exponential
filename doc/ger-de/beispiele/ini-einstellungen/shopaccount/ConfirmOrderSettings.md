@@ -12,8 +12,8 @@ generated: exp:help:examples
 Der Block `[ConfirmOrderSettings]` von `settings/shopaccount.ini`, mit 2 Einstellung(en).
 
 > Alias\[ezdefault\]=eztest  
-> Settings for how order emails should be handled in the shop/checkout  
-> default is to send confirmation emails to both customer and admin.  
+> Einstellungen dazu, wie Bestellmails im Shop/Bezahlvorgang behandelt werden  
+> Standard ist, Bestätigungsmails an Kunde und Administrator zu senden.  
 
 Bearbeiten Sie `settings/shopaccount.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

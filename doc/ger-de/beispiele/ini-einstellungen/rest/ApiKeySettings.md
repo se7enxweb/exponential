@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[ApiKeySettings]` von `settings/rest.ini`, mit 13 Einstellung(en).
 
-> Personal API keys (publishing keys): doc/eng-us/guides/api-keys.md.  
-> A signed in user with the apikey/create policy makes keys on the API access page (apikey/list) and  
-> sends one as "Authorization: Bearer expk\_<id>\_<secret>". The request runs as the key's owner, limited  
-> to the key's scopes. Administrators see and revoke every key at oauthadmin/keys.  
+> Persönliche API-Schlüssel (Veröffentlichungsschlüssel): doc/eng-us/guides/api-keys.md.  
+> Ein angemeldeter Benutzer mit der Richtlinie apikey/create erstellt Schlüssel auf der Seite API-Zugang (apikey/list) und  
+> sendet einen als "Authorization: Bearer expk\_<id>\_<secret>". Die Anfrage läuft als Eigentümer des Schlüssels, beschränkt  
+> auf die Bereiche des Schlüssels. Administratoren sehen und widerrufen jeden Schlüssel unter oauthadmin/keys.  
 
 Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -24,7 +24,7 @@ Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ApiKeys
 
-> enabled or disabled. Disabled: no key is accepted and none can be made; the pages say so.  
+> enabled oder disabled. Disabled: Kein Schlüssel wird akzeptiert, und keiner lässt sich erstellen; die Seiten sagen das.  
 
 Standard: `enabled`.
 
@@ -38,8 +38,8 @@ ApiKeys=enabled
 
 ## ExpiryChoices
 
-> The lifetimes offered when a key is made, in days. 0 = does not expire, offered only when  
-> MaxExpiryDays is 0.  
+> Die beim Erstellen eines Schlüssels angebotenen Lebensdauern, in Tagen. 0 = läuft nicht ab, nur angeboten, wenn  
+> MaxExpiryDays 0 ist.  
 
 Standard: eine Liste mit 5: `7`, `30`, `90`, `365`, `0`.
 
@@ -59,7 +59,7 @@ ExpiryChoices[]=0
 
 ## DefaultExpiryDays
 
-> The lifetime chosen when the form opens.  
+> Die Lebensdauer, die beim Öffnen des Formulars gewählt ist.  
 
 Standard: `90`.
 
@@ -73,7 +73,7 @@ DefaultExpiryDays=90
 
 ## MaxExpiryDays
 
-> The longest lifetime a key may have, in days; 0 = no limit (keys that never expire are allowed).  
+> Die längste Lebensdauer, die ein Schlüssel haben darf, in Tagen; 0 = keine Grenze (Schlüssel, die nie ablaufen, sind erlaubt).  
 
 Standard: `365`.
 
@@ -87,7 +87,7 @@ MaxExpiryDays=365
 
 ## MaxKeysPerUser
 
-> How many keys that are not revoked or expired one user may have; 0 = no limit.  
+> Wie viele nicht widerrufene oder abgelaufene Schlüssel ein Benutzer haben darf; 0 = keine Grenze.  
 
 Standard: `10`.
 
@@ -101,8 +101,8 @@ MaxKeysPerUser=10
 
 ## LastUsedInterval
 
-> last\_used and last\_ip of a key are written at most once in this many seconds, so a busy key does  
-> not write the database on every request.  
+> last\_used und last\_ip eines Schlüssels werden höchstens einmal in so vielen Sekunden geschrieben, damit ein viel genutzter Schlüssel  
+> nicht bei jeder Anfrage in die Datenbank schreibt.  
 
 Standard: `60`.
 
@@ -116,8 +116,8 @@ LastUsedInterval=60
 
 ## RateLimitPerMinute
 
-> Requests per minute one key may send; 0 = no limit. Counted in APCu (per PHP-FPM pool or per  
-> application server); without APCu the limit is not enforced and oauthadmin/keys says so.  
+> Anfragen pro Minute, die ein Schlüssel senden darf; 0 = keine Grenze. In APCu gezählt (pro PHP-FPM-Pool oder pro  
+> Anwendungsserver); ohne APCu wird die Grenze nicht durchgesetzt, und oauthadmin/keys sagt das.  
 
 Standard: `120`.
 
@@ -131,8 +131,8 @@ RateLimitPerMinute=120
 
 ## Scopes
 
-> The scopes a key can be given: <scope>=<module>/<function> of the policy the owner needs for it,  
-> checked when the key is made and again on every request.  
+> Die Bereiche, die ein Schlüssel erhalten kann: <scope>=<module>/<function> der Richtlinie, die der Eigentümer dafür braucht,  
+> geprüft beim Erstellen des Schlüssels und erneut bei jeder Anfrage.  
 
 Standard: ein Hash mit 4: `read=content/read`, `publish=content/create`, `edit=content/edit`, `remove=content/remove`.
 
@@ -168,8 +168,8 @@ ScopeNames[remove]=Remove content
 
 ## DefaultReadScope
 
-> The scope a route needs: <controller class>\_<action>=<scope>. A GET or HEAD route that is not  
-> listed needs DefaultReadScope; any other route that is not listed is refused for a key.  
+> Der Bereich, den eine Route braucht: <controller class>\_<action>=<scope>. Eine GET- oder HEAD-Route, die nicht  
+> aufgeführt ist, braucht DefaultReadScope; jede andere nicht aufgeführte Route wird für einen Schlüssel abgelehnt.  
 
 Standard: `read`.
 
@@ -199,8 +199,8 @@ RouteScopes[ezp7xRestContentController_DeleteContentNode]=remove
 
 ## RouteGuards
 
-> The owner's rights checked on the node a write route acts on: create (content/create of the posted  
-> classIdentifier under the posted parentNodeID), edit or remove (the route's nodeId).  
+> Die Rechte des Eigentümers, die am Knoten geprüft werden, auf den eine schreibende Route wirkt: create (content/create der abgeschickten  
+> classIdentifier unter dem abgeschickten parentNodeID), edit oder remove (die nodeId der Route).  
 
 Standard: ein Hash mit 3: `ezp7xRestContentController_CreateContentNode=create`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`.
 
@@ -218,8 +218,8 @@ RouteGuards[ezp7xRestContentController_DeleteContentNode]=remove
 
 ## ExamplePath
 
-> The REST path the API access page shows in its curl examples, after ApiPrefix. Empty: a node read  
-> of the ezp provider, /ezp/v2/... with the ezprestapi extension, /ezp/v1/... otherwise.  
+> Der REST-Pfad, den die Seite API-Zugang in ihren curl-Beispielen nach ApiPrefix zeigt. Leer: ein Lesezugriff auf einen Knoten  
+> des Providers ezp, /ezp/v2/... mit der Erweiterung ezprestapi, sonst /ezp/v1/....  
 
 Standard: leer.
 

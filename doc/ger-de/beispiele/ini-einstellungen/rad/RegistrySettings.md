@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/rad.ini` nie selbst: Ein Update ersetzt die Datei. Schr
 
 ## Registries
 
-> The keys of the registries: \[Registry\_<key>\] for each. A key listed without its block is shown as broken.  
+> Die Schlüssel der Register: \[Registry\_<key>\] für jeden. Ein aufgeführter Schlüssel ohne seinen Block wird als defekt angezeigt.  
 
 Standard: eine Liste mit 3: `eventlisteners`, `cronjobparts`, `auditsources`.
 

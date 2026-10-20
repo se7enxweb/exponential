@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[UploadSettings]` von `settings/package.ini`, mit 4 Einstellung(en).
 
-> The limits of a package archive uploaded on package/upload, the setup wizard or ezpm import  
-> (eZPackageUploadInspector). An archive is also refused, whatever these say, when an entry points outside the  
-> package ("..", an absolute path), is a link or a device, or its package.xml is not a well formed definition.  
-> Guide: doc/eng-us/guides/packages.md  
+> Die Grenzen eines Paketarchivs, das über package/upload, den Setup-Assistenten oder ezpm import hochgeladen wird  
+> (eZPackageUploadInspector). Ein Archiv wird außerdem abgelehnt, egal was diese sagen, wenn ein Eintrag aus dem  
+> Paket hinauszeigt ("..", ein absoluter Pfad), ein Link oder ein Gerät ist oder seine package.xml keine wohlgeformte Definition ist.  
+> Anleitung: doc/eng-us/guides/packages.md  
 
 Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -24,7 +24,7 @@ Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## MaxArchiveSize
 
-> The largest archive accepted, in bytes (256 MiB). PHP's upload\_max\_filesize and post\_max\_size apply first.  
+> Das größte akzeptierte Archiv, in Bytes (256 MiB). Zuerst gelten upload\_max\_filesize und post\_max\_size von PHP.  
 
 Standard: `268435456`.
 
@@ -38,7 +38,7 @@ MaxArchiveSize=268435456
 
 ## MaxUnpackedSize
 
-> The most its entries may unpack to, in bytes (2 GiB)  
+> Wie viel seine Einträge entpackt höchstens ergeben dürfen, in Bytes (2 GiB)  
 
 Standard: `2147483648`.
 
@@ -52,7 +52,7 @@ MaxUnpackedSize=2147483648
 
 ## MaxEntries
 
-> The most entries (files and directories) an archive may have  
+> Die meisten Einträge (Dateien und Verzeichnisse), die ein Archiv haben darf  
 
 Standard: `50000`.
 
@@ -66,7 +66,7 @@ MaxEntries=50000
 
 ## AllowedSuffixes
 
-> The endings an uploaded file's name may have  
+> Die Endungen, die der Name einer hochgeladenen Datei haben darf  
 
 Standard: eine Liste mit 3: `ezpkg`, `tar.gz`, `tgz`.
 

@@ -31,9 +31,9 @@ RepositoryDirectory=packages
 
 ## RemotePackagesIndexURL
 
-> URL where Exponential setup wizard will fetch packages from  
-> If you want to use the old packages which were available in  
-> versions prior to 3.9 use the following URL instead:  
+> URL, von der der Setup-Assistent von Exponential Pakete holt  
+> Wenn Sie die alten Pakete verwenden wollen, die in  
+> Versionen vor 3.9 verfügbar waren, verwenden Sie stattdessen diese URL:  
 > http://packages.ez.no/exponential/3.9legacypackages  
 
 Standard: `https://exponential.packages.exponential.earth/exponential/6.0/6.0.15`.
@@ -48,10 +48,10 @@ RemotePackagesIndexURL=https://exponential.packages.exponential.earth/exponentia
 
 ## RemotePackagesIndexURLBase
 
-> If RemotePackagesIndexURL is empty, the RemotePackagesIndexURLBase setting  
-> will be used, appended with the Exponential version numbers, like  
-> RemotePackagesIndexURLBase/x.y/x.y.z for a stable release (6.0/6.0.15) and  
-> RemotePackagesIndexURLBase/x.y/x.y.zalpha1 for any other  
+> Ist RemotePackagesIndexURL leer, wird die Einstellung RemotePackagesIndexURLBase  
+> verwendet, ergänzt um die Versionsnummern von Exponential, etwa  
+> RemotePackagesIndexURLBase/x.y/x.y.z für ein stabiles Release (6.0/6.0.15) und  
+> RemotePackagesIndexURLBase/x.y/x.y.zalpha1 für jedes andere  
 > (ExponentialSDK::packageServerPath())  
 
 Standard: `https://exponential.packages.exponential.earth/exponential`.
@@ -66,11 +66,11 @@ RemotePackagesIndexURLBase=https://exponential.packages.exponential.earth/expone
 
 ## AdditionalRemotePackagesIndexURLs
 
-> More package servers for the setup wizard, the kickstarter and exp:install (all three  
-> read the index the same way, eZStepSiteTypes). Each is a folder with an index.xml, an  
-> http:// or https:// address. They are read after RemotePackagesIndexURL: a package an  
-> earlier index lists is kept as it is, a further server only adds the packages the  
-> earlier ones do not have, and a server that cannot be read is skipped.  
+> Weitere Paketserver für den Setup-Assistenten, den Kickstarter und exp:install (alle drei  
+> lesen den Index gleich, eZStepSiteTypes). Jeder ist ein Ordner mit einer index.xml, eine  
+> http://- oder https://-Adresse. Sie werden nach RemotePackagesIndexURL gelesen: Ein Paket, das ein  
+> früherer Index aufführt, bleibt, wie es ist, ein weiterer Server fügt nur die Pakete hinzu, die die  
+> früheren nicht haben, und ein Server, der sich nicht lesen lässt, wird übersprungen.  
 
 Standard: eine leere Liste.
 
@@ -85,11 +85,11 @@ AdditionalRemotePackagesIndexURLs[]
 
 ## RemotePackagesIndexSources
 
-> Lists of further package servers kept in other settings files, as  
-> <file>.ini;<block>;<setting>, the setting an array of <name>=<URL>. The default reads  
-> the servers added on ezupdate's Package servers page (Setup > Updates and packages),  
-> which it keeps in settings/override/ezupdate.ini.append.php. Empty the list to read  
-> only the servers named above.  
+> Listen weiterer Paketserver, die in anderen Einstellungsdateien gehalten werden, als  
+> <file>.ini;<block>;<setting>, die Einstellung ein Array aus <name>=<URL>. Der Standard liest  
+> die Server, die auf der Seite Paketserver von ezupdate hinzugefügt wurden (Setup > Updates und Pakete),  
+> die es in settings/override/ezupdate.ini.append.php hält. Leeren Sie die Liste, um  
+> nur die oben genannten Server zu lesen.  
 
 Standard: eine Liste mit 1: `ezupdate.ini;PackageServerSettings;Servers`.
 
@@ -105,7 +105,7 @@ RemotePackagesIndexSources[]=ezupdate.ini;PackageServerSettings;Servers
 
 ## Vendor
 
-> Vendor name of the Exponential package directory  
+> Herstellername des Paketverzeichnisses von Exponential  
 
 Standard: `7x`.
 
@@ -119,10 +119,10 @@ Vendor=7x
 
 ## DownloadAttempts
 
-> Downloading a package (and the index): how many times the setup tries before  
-> it gives up, and how many seconds it waits before each further attempt (the  
-> last value is used for the attempts after it). A package server that is being  
-> republished answers with errors for a few minutes.  
+> Herunterladen eines Pakets (und des Index): wie oft das Setup es versucht, bevor  
+> es aufgibt, und wie viele Sekunden es vor jedem weiteren Versuch wartet (der  
+> letzte Wert gilt für die Versuche danach). Ein Paketserver, der gerade  
+> neu veröffentlicht wird, antwortet einige Minuten lang mit Fehlern.  
 
 Standard: `3`.
 
@@ -152,7 +152,7 @@ DownloadRetryDelays[]=10
 
 ## DownloadTimeout
 
-> Seconds a whole download may take, and seconds to wait for the connection  
+> Sekunden, die ein ganzer Download dauern darf, und Sekunden Wartezeit auf die Verbindung  
 
 Standard: `300`.
 

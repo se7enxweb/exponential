@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Secret
 
-> The secret that signs receipt addresses. Leave empty to have one generated  
-> for this installation on first use and kept in <VarDir>/secrets/orderreceipt.key  
-> (mode 0600, outside the web root's served paths). Set it (32 characters or  
-> more) to share receipts between installations that share a database. Set it  
-> in an override file, never here. Changing it changes every receipt address.  
+> Das Geheimnis, das die Adressen der Belege signiert. Lassen Sie es leer, damit bei der ersten Verwendung eines  
+> für diese Installation erzeugt und in <VarDir>/secrets/orderreceipt.key gehalten wird  
+> (Modus 0600, außerhalb der vom Webserver ausgelieferten Pfade). Setzen Sie es (32 Zeichen oder  
+> mehr), um Belege zwischen Installationen zu teilen, die sich eine Datenbank teilen. Setzen Sie es  
+> in einer Override-Datei, nie hier. Eine Änderung ändert jede Belegadresse.  
 
 Standard: leer.
 
@@ -37,9 +37,9 @@ Secret=
 
 ## BcryptCost
 
-> bcrypt cost for the receipt signature, 4 to 6: enough work to make guessing  
-> expensive, little enough that a receipt opens instantly. Receipts made at an  
-> earlier cost keep working.  
+> bcrypt-Aufwand für die Signatur des Belegs, 4 bis 6: genug Arbeit, um Raten  
+> teuer zu machen, wenig genug, dass sich ein Beleg sofort öffnet. Belege, die mit einem  
+> früheren Aufwand erstellt wurden, funktionieren weiter.  
 
 Standard: `5`.
 

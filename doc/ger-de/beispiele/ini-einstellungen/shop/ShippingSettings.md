@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## RepositoryDirectories
 
-> Specifies shipping handler class/file name. For example, if the value is  
-> "ezcustom", then the handler class should be named  
-> eZCustomShippingHandler (case does not matter) and placed to file  
-> ezcustomshippinghandler.php residing in a directory specified by  
-> "RepositoryDirectories" and "ExtensionDirectories" settings.  
+> Gibt den Klassen-/Dateinamen des Versand-Handlers an. Ist der Wert zum Beispiel  
+> "ezcustom", muss die Handler-Klasse  
+> eZCustomShippingHandler heißen (Groß-/Kleinschreibung egal) und in der Datei  
+> ezcustomshippinghandler.php in einem Verzeichnis liegen, das die Einstellungen  
+> "RepositoryDirectories" und "ExtensionDirectories" angeben.  
 > Handler=ezdefault  
-> Directories where shippping handlers should be searched for.  
+> Verzeichnisse, in denen nach Versand-Handlern gesucht wird.  
 
 Standard: eine Liste mit 1: `kernel/classes/shippinghandlers`.
 
@@ -41,12 +41,12 @@ RepositoryDirectories[]=kernel/classes/shippinghandlers
 
 ## ExtensionDirectories
 
-> If you are going to implement your shipping handler in an extension  
-> then you should add the extension name to the list below.  
-> In that case shipping handlers will be searched for  
-> in the following (hardcoded) directory:  
+> Wenn Sie Ihren Versand-Handler in einer Erweiterung umsetzen wollen,  
+> fügen Sie den Namen der Erweiterung der Liste unten hinzu.  
+> Dann werden Versand-Handler im folgenden  
+> (fest eingestellten) Verzeichnis gesucht:  
 > extension/<your\_extension>/shippinghandlers  
-> beside directories specified in 'RepositoryDirectories' setting.  
+> neben den Verzeichnissen aus der Einstellung 'RepositoryDirectories'.  
 
 Standard: eine leere Liste.
 

@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/setup.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## DefaultType
 
-> The database system the setup wizard lists first and preselects.  
-> One of sqlite3, mysqli, pgsql, mongodb. SQLite needs no database server;  
-> when the PHP sqlite3 extension is missing the wizard falls back to the  
-> first available system and says so.  
+> Das Datenbanksystem, das der Setup-Assistent zuerst aufführt und vorauswählt.  
+> Eines von sqlite3, mysqli, pgsql, mongodb. SQLite braucht keinen Datenbankserver;  
+> fehlt die PHP-Erweiterung sqlite3, weicht der Assistent auf das  
+> erste verfügbare System aus und sagt das.  
 
 Standard: `sqlite3`.
 
@@ -96,8 +96,8 @@ DefaultPassword=
 
 ## DefaultPort_pgsql
 
-> Default<Setting>\_<type> replaces the value above on the database page for  
-> that system: a PostgreSQL server has no user root and listens on 5432.  
+> Default<Setting>\_<type> ersetzt auf der Datenbankseite den Wert oben für  
+> dieses System: Ein PostgreSQL-Server hat keinen Benutzer root und lauscht auf 5432.  
 
 Standard: `5432`.
 

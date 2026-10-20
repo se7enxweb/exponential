@@ -19,14 +19,14 @@ Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ProductCategoryAttribute
 
-> Specifies VAT handler class/file name. For example, if the value is  
-> "ezdefault", then the handler class should be named  
-> eZDefaultVATHandler (case does not matter) and placed to file  
-> ezdefaultvathandler.php residing in a directory specified by  
-> "RepositoryDirectories" and "ExtensionDirectories" settings.  
+> Gibt den Klassen-/Dateinamen des Mehrwertsteuer-Handlers an. Ist der Wert zum Beispiel  
+> "ezdefault", muss die Handler-Klasse  
+> eZDefaultVATHandler heißen (Groß-/Kleinschreibung egal) und in der Datei  
+> ezdefaultvathandler.php in einem Verzeichnis liegen, das die Einstellungen  
+> "RepositoryDirectories" und "ExtensionDirectories" angeben.  
 > Handler=ezdefault  
-> Identifier of the product category content attribute.  
-> E.g. "ProductCategoryAttribute=category".  
+> Bezeichner des Inhaltsattributs für die Produktkategorie.  
+> Z. B. "ProductCategoryAttribute=category".  
 
 Standard: leer.
 
@@ -40,8 +40,8 @@ ProductCategoryAttribute=
 
 ## UserCountryAttribute
 
-> Identifier of the user country content attribute.  
-> E.g. "UserCountryAttribute=country".  
+> Bezeichner des Inhaltsattributs für das Land des Benutzers.  
+> Z. B. "UserCountryAttribute=country".  
 
 Standard: leer.
 
@@ -55,8 +55,8 @@ UserCountryAttribute=
 
 ## RequireUserCountry
 
-> If set to false, no errors will be displayed in case if user country  
-> is not specified. One might want this when using a custom VAT handler.  
+> Wenn false, werden keine Fehler angezeigt, falls das Land des Benutzers  
+> nicht angegeben ist. Das kann man bei einem eigenen Mehrwertsteuer-Handler wollen.  
 
 Standard: `true`.
 
@@ -70,7 +70,7 @@ RequireUserCountry=true
 
 ## DynamicVatTypeName
 
-> Name of the dynamic VAT type displayed in class/object view/edit GUI.  
+> Name des dynamischen Mehrwertsteuertyps, der in der Oberfläche zum Anzeigen/Bearbeiten von Klassen und Objekten angezeigt wird.  
 
 Standard: `Determined by VAT charging rules`.
 
@@ -84,7 +84,7 @@ DynamicVatTypeName=Determined by VAT charging rules
 
 ## RepositoryDirectories
 
-> Directories where VAT handlers should be searched for.  
+> Verzeichnisse, in denen nach Mehrwertsteuer-Handlern gesucht wird.  
 
 Standard: eine Liste mit 1: `kernel/classes/vathandlers`.
 
@@ -100,9 +100,9 @@ RepositoryDirectories[]=kernel/classes/vathandlers
 
 ## ExtensionDirectories
 
-> If you are going to implement your VAT handler in an extension  
-> then you should add the extension name to the list below.  
-> In that case VAT handlers will be searched for in the following directory:  
+> Wenn Sie Ihren Mehrwertsteuer-Handler in einer Erweiterung umsetzen wollen,  
+> fügen Sie den Namen der Erweiterung der Liste unten hinzu.  
+> Dann werden Mehrwertsteuer-Handler im folgenden Verzeichnis gesucht:  
 > extension/<your\_extension>/vathandlers  
 
 Standard: eine leere Liste.

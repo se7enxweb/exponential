@@ -19,16 +19,16 @@ Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## DefaultLicense
 
-> The licenses a package can be given in the package creation wizards  
-> (Setup > Packages > Create new package, every creator's "Package information"  
-> step). The license is a strict choice from this list: the step shows a  
-> drop-down and refuses any value that is not listed here.  
+> Die Lizenzen, die ein Paket in den Assistenten zum Erstellen von Paketen erhalten kann  
+> (Setup > Pakete > Neues Paket erstellen, der Schritt „Paketinformationen“ jedes Erstellers). Die Lizenz ist  
+> eine feste Auswahl aus dieser Liste: Der Schritt zeigt ein  
+> Auswahlfeld und lehnt jeden Wert ab, der hier nicht steht.  
 >
-> The value stored in a package's package.xml (<licence>) is the license's  
-> identifier. Use the SPDX identifier where one exists (https://spdx.org/licenses/),  
-> otherwise an SPDX style "LicenseRef-<name>" identifier.  
+> Der in der package.xml eines Pakets gespeicherte Wert (<licence>) ist der  
+> Bezeichner der Lizenz. Verwenden Sie den SPDX-Bezeichner, wo es einen gibt (https://spdx.org/licenses/),  
+> sonst einen Bezeichner im SPDX-Stil "LicenseRef-<name>".  
 >
-> The identifier chosen when the step opens. Must be one of LicenseList.  
+> Der Bezeichner, der beim Öffnen des Schritts gewählt ist. Muss einer aus LicenseList sein.  
 
 Standard: `GPL-2.0-or-later`.
 
@@ -42,9 +42,9 @@ DefaultLicense=GPL-2.0-or-later
 
 ## GroupList
 
-> The drop-down's groups (<optgroup>), in the order shown. Each group has a  
-> \[LicenseGroup\_<group>\] block with Name=, the group's heading. A license whose  
-> Group= is not listed here is shown under "Other licenses" at the end.  
+> Die Gruppen des Auswahlfelds (<optgroup>), in der angezeigten Reihenfolge. Jede Gruppe hat einen  
+> Block \[LicenseGroup\_<group>\] mit Name=, der Überschrift der Gruppe. Eine Lizenz, deren  
+> Group= hier nicht steht, erscheint am Ende unter „Andere Lizenzen“.  
 
 Standard: eine Liste mit 9: `software`, `documentation`, `cc-4.0`, `cc-3.0`, `cc-2.5`, `cc-2.0`, `cc-1.0`, `public-domain`, `proprietary`.
 
@@ -68,14 +68,14 @@ GroupList[]=proprietary
 
 ## LicenseList
 
-> The licenses that can be chosen, in the order shown within their group. Each  
-> one has a \[License\_<identifier>\] block:  
->   Name=         the license's official name (shown as it is, not translated)  
->   URL=          the official page of the license  
->   Group=        the group it is listed under (see GroupList)  
->   Description=  optional, a short text shown below the drop-down  
+> Die wählbaren Lizenzen, in der Reihenfolge, in der sie innerhalb ihrer Gruppe angezeigt werden. Jede  
+> hat einen Block \[License\_<identifier>\]:  
+>   Name=         der offizielle Name der Lizenz (so angezeigt, wie er ist, nicht übersetzt)  
+>   URL=          die offizielle Seite der Lizenz  
+>   Group=        die Gruppe, unter der sie aufgeführt wird (siehe GroupList)  
+>   Description=  optional, ein kurzer Text unter dem Auswahlfeld  
 >
-> To add a license, in settings/override/package.ini.append.php:  
+> Um eine Lizenz hinzuzufügen, in settings/override/package.ini.append.php:  
 >   \[LicenseSettings\]  
 >   LicenseList\[\]=Apache-2.0  
 >   \[License\_Apache-2.0\]  
@@ -83,9 +83,9 @@ GroupList[]=proprietary
 >   URL=https://www.apache.org/licenses/LICENSE-2.0  
 >   Group=software  
 >
-> To replace the whole list, start with an empty LicenseList\[\] line in the  
-> override and list only the licenses you want (and set DefaultLicense to one  
-> of them).  
+> Um die ganze Liste zu ersetzen, beginnen Sie im Override mit einer leeren Zeile LicenseList\[\]  
+> und führen nur die gewünschten Lizenzen auf (und setzen DefaultLicense auf eine  
+> davon).  
 
 Standard: eine Liste mit 46: `GPL-2.0-or-later`, `GPL-2.0-only`, `GPL-3.0-or-later`, `GPL-3.0-only`, `LGPL-2.1-or-later`, `LGPL-2.1-only`, `LGPL-3.0-or-later`, `LGPL-3.0-only`, `AGPL-3.0-or-later`, `AGPL-3.0-only`, `MIT`, `GFDL-1.3-or-later` ....
 
@@ -121,11 +121,11 @@ LicenseList[]=CC-BY-3.0
 
 ## AliasList
 
-> Other names a stored license is known by, mapped to a LicenseList identifier.  
-> Packages made before the license became a choice store "GPL", which always  
-> meant the GNU GPL version 2 or (at your option) any later version, the license  
-> of Exponential itself. An alias is shown as the license it stands for, and a  
-> posted alias is stored as that license's identifier.  
+> Andere Namen, unter denen eine gespeicherte Lizenz bekannt ist, einem Bezeichner aus LicenseList zugeordnet.  
+> Pakete, die erstellt wurden, bevor die Lizenz wählbar wurde, speichern "GPL", was immer  
+> die GNU GPL Version 2 oder (nach Ihrer Wahl) jede spätere Version bedeutete, die Lizenz  
+> von Exponential selbst. Ein Alias wird als die Lizenz angezeigt, für die er steht, und ein  
+> abgeschickter Alias wird als Bezeichner dieser Lizenz gespeichert.  
 
 Standard: ein Hash mit 1: `GPL=GPL-2.0-or-later`.
 

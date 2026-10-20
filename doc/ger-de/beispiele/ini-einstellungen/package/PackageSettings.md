@@ -33,9 +33,9 @@ RepositoryDirectories[]=kernel/classes
 
 ## ExtensionDirectories
 
-> A list of extensions which have package handlers support  
-> The extension must place package handlers in the  
-> subdirectory packagehandlers.  
+> Eine Liste der Erweiterungen, die Paket-Handler unterstützen  
+> Die Erweiterung muss die Paket-Handler im  
+> Unterverzeichnis packagehandlers ablegen.  
 
 Standard: eine leere Liste.
 
@@ -50,8 +50,8 @@ ExtensionDirectories[]
 
 ## HandlerAlias
 
-> Aliases for handlers, this allows handlers to have  
-> nicer names and also shortcuts for doing specific items.  
+> Aliase für Handler; damit können Handler  
+> schönere Namen und auch Kürzel für bestimmte Einträge haben.  
 
 Standard: ein Hash mit 11: `ezcontentclass=eZContentClassPackageHandler`, `ezcontentobject=eZContentObjectPackageHandler`, `eziniaddon=eZINIAddonPackageHandler`, `ezfile=eZFilePackageHandler`, `ezini=eZFilePackageHandler`, `ezdesign=eZFilePackageHandler`, `eztemplate=eZFilePackageHandler`, `ezthumbnail=eZFilePackageHandler`, `ezsql=eZDBPackageHandler`, `ezextension=eZExtensionPackageHandler`, `ezinstallscript=eZInstallScriptPackageHandler`.
 
@@ -77,9 +77,9 @@ HandlerAlias[ezinstallscript]=eZInstallScriptPackageHandler
 
 ## TypeList
 
-> Packages of extensions: the extension export wizard makes them, and the package server has  
-> several (ezwebin\_extension ...). Listed since 6.0.15, so the Type limitation of the package  
-> policies can name them.  
+> Pakete von Erweiterungen: Der Assistent zum Exportieren von Erweiterungen erstellt sie, und der Paketserver hat  
+> mehrere (ezwebin\_extension ...). Seit 6.0.15 aufgeführt, damit die Einschränkung Type der Paket-  
+> richtlinien sie nennen kann.  
 
 Standard: ein Hash mit 5: `contentobject=Content object`, `contentclass=Content class`, `sitestyle=Site style`, `site=Site`, `extension=Extension`.
 

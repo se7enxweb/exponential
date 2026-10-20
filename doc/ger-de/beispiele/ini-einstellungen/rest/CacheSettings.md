@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ApplicationCache
 
-> Global switch to enable/disable REST application cache  
+> Globaler Schalter zum Aktivieren/Deaktivieren des REST-Anwendungs-Caches  
 
 Standard: `enabled`.
 
@@ -33,15 +33,15 @@ ApplicationCache=enabled
 
 ## ApplicationCacheDefault
 
-> Default value if no specific value has been defined for your controller/action  
-> If enabled, result of each service call will be cached  
-> You can refine this with setting specific to your controller/action  
-> The system will look for a \[<controllerClass>\_<action>\_CacheSettings\] block to check  
-> if cache can be used, and if so, which TTL to use  
-> If this block cannot be found, the system will search at the controller level,  
-> and so look for a \[<controllerClass>\_CacheSettings\] block.  
-> See example block below for more information  
-> Basically this setting allow you to activate the cache to your controllers/actions individually  
+> Standardwert, wenn für Ihren Controller/Ihre Aktion kein eigener Wert definiert ist  
+> Wenn aktiviert, wird das Ergebnis jedes Dienstaufrufs gecacht  
+> Sie können das mit Einstellungen für Ihren Controller/Ihre Aktion verfeinern  
+> Das System sucht einen Block \[<controllerClass>\_<action>\_CacheSettings\], um zu prüfen,  
+> ob der Cache verwendet werden darf und, wenn ja, welche TTL  
+> Wird dieser Block nicht gefunden, sucht das System auf Ebene des Controllers,  
+> also nach einem Block \[<controllerClass>\_CacheSettings\].  
+> Weitere Informationen im Beispielblock unten  
+> Im Grunde erlaubt diese Einstellung, den Cache für Ihre Controller/Aktionen einzeln zu aktivieren  
 
 Standard: `enabled`.
 
@@ -55,7 +55,7 @@ ApplicationCacheDefault=enabled
 
 ## DefaultCacheTTL
 
-> Set default TTL to 10min, in seconds  
+> Standard-TTL auf 10 Minuten setzen, in Sekunden  
 
 Standard: `600`.
 
@@ -69,15 +69,15 @@ DefaultCacheTTL=600
 
 ## RouteApcCache
 
-> Example for action "viewContent", in "ezpRestContentController" controller class  
+> Beispiel für die Aktion "viewContent" in der Controller-Klasse "ezpRestContentController"  
 > \[ezpRestContentController\_viewContent\_CacheSettings\]  
 > ApplicationCache=enabled  
 > CacheTTL=3600  
-> Below an example for every actions contained in "ezpRestContentController" controller class  
+> Unten ein Beispiel für alle Aktionen der Controller-Klasse "ezpRestContentController"  
 > \[ezpRestContentController\_CacheSettings\]  
 > ApplicationCache=enabled  
 > CacheTTL=1200  
-> Switch to enable/disable Routes cache with APC  
+> Schalter zum Aktivieren/Deaktivieren des Routen-Caches mit APC  
 
 Standard: `enabled`.
 
@@ -91,7 +91,7 @@ RouteApcCache=enabled
 
 ## RouteApcCacheTTL
 
-> TTL for Route APC cache, in seconds  
+> TTL des APC-Routen-Caches, in Sekunden  
 
 Standard: `3600`.
 

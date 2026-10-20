@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Filters
 
-> Custom filters implementing ezpRestRequestFilterInterface, to be executed,  
-> after the request object has been created.  
+> Eigene Filter, die ezpRestRequestFilterInterface implementieren und ausgeführt werden,  
+> nachdem das Anfrageobjekt erzeugt wurde.  
 
 Standard: eine leere Liste.
 

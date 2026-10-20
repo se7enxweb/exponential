@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/shopaccount.ini` nie selbst: Ein Update ersetzt die Dat
 
 ## Repositories
 
-> A list of directories to search for shopaccount handlers  
+> Eine Liste der Verzeichnisse, in denen nach Handlern für Shop-Konten gesucht wird  
 
 Standard: eine Liste mit 1: `kernel/classes`.
 
@@ -35,10 +35,10 @@ Repositories[]=kernel/classes
 
 ## ExtensionRepositories
 
-> A list of extensions which have shop account handlers  
-> It's common to create a settings/shopaccount.ini.append file  
-> in your extension and add the extension name to automatically  
-> get handlers from the extension when it's turned on.  
+> Eine Liste der Erweiterungen, die Handler für Shop-Konten haben  
+> Üblicherweise legt man in der Erweiterung eine Datei settings/shopaccount.ini.append  
+> an und trägt den Namen der Erweiterung ein, um automatisch  
+> die Handler der Erweiterung zu erhalten, wenn sie eingeschaltet ist.  
 
 Standard: eine leere Liste.
 

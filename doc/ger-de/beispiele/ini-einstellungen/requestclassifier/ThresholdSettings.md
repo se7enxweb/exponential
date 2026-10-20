@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/requestclassifier.ini` nie selbst: Ein Update ersetzt d
 
 ## Max404PerMinute
 
-> More than this many not-found answers (Statuses\[\]) to one client within WindowSeconds makes every further one in  
-> that window a verdict threshold/404-rate (medium; high above twice the limit). 0 switches the rule off. The client  
-> is counted by a salted hash of its address in var/<site>/cache/requestclassifier/counter/, shared by every PHP  
-> process of the installation (the web server's and Velocity's); the address itself is never stored.  
+> Mehr als so viele Nicht-gefunden-Antworten (Statuses\[\]) an einen Client innerhalb von WindowSeconds machen jede weitere in  
+> diesem Zeitfenster zu einem Urteil threshold/404-rate (medium; high über dem Doppelten der Grenze). 0 schaltet die Regel ab. Der Client  
+> wird über einen gesalzenen Hash seiner Adresse in var/<site>/cache/requestclassifier/counter/ gezählt, gemeinsam für jeden PHP-  
+> Prozess der Installation (den des Webservers und den von Velocity); die Adresse selbst wird nie gespeichert.  
 
 Standard: `30`.
 

@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## RawXMLDatatypes
 
-> The JSON package format (doc/eng-us/bc/6.0/package-json-format.md).  
-> Datatypes whose attribute value is kept as an XML string in a JSON document (\["#xml", "..."\])  
+> Das JSON-Paketformat (doc/eng-us/bc/6.0/package-json-format.md).  
+> Datentypen, deren Attributwert in einem JSON-Dokument als XML-Zeichenkette gehalten wird (\["#xml", "..."\])  
 
 Standard: eine Liste mit 1: `ezxmltext`.
 
@@ -36,7 +36,7 @@ RawXMLDatatypes[]=ezxmltext
 
 ## MaxDocumentBytes
 
-> The largest JSON document of a package that is read, in bytes  
+> Das größte JSON-Dokument eines Pakets, das gelesen wird, in Bytes  
 
 Standard: `67108864`.
 

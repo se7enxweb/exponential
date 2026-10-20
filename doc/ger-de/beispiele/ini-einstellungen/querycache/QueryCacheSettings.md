@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/querycache.ini` nie selbst: Ein Update ersetzt die Date
 
 ## Mode
 
-> off      nothing is kept (the default)  
-> request  a memo for the length of one request: an identical SELECT is not  
->          run twice in the same request  
-> shared   the memo, and results kept across requests (see Storage); any  
->          other process (scripts, the admin host, Velocity) invalidates  
->          through the shared state file in var/<site>/cache/querycache/  
+> off      nichts wird behalten (der Standard)  
+> request  ein Merkzettel für die Dauer einer Anfrage: Ein identisches SELECT wird  
+>          in derselben Anfrage nicht zweimal ausgeführt  
+> shared   der Merkzettel und über Anfragen hinweg behaltene Ergebnisse (siehe Storage); jeder  
+>          andere Prozess (Skripte, der Administrations-Host, Velocity) macht sie  
+>          über die gemeinsame Zustandsdatei in var/<site>/cache/querycache/ ungültig  
 
 Standard: `off`.
 
@@ -38,15 +38,15 @@ Mode=off
 
 ## Storage
 
-> Where shared mode keeps results across requests:  
-> auto  APCu where this PHP process has it, else files (the default); on the  
->       command line (cronjobs, scripts) without APCu only the request's memo  
-> apcu  APCu only; without APCu shared works as request  
-> file  files in var/<site>/cache/querycache/entries/, one per result, even  
->       with APCu: every web server that mounts var/ (a cluster on NFS or a  
->       SAN) shares them. The cronjob part cache\_cleanup  
->       (cronjobs/querycache\_cleanup.php) removes the files older than MaxAge;  
->       clearing the cache removes them too.  
+> Wo der gemeinsame Modus Ergebnisse über Anfragen hinweg behält:  
+> auto  APCu, wo dieser PHP-Prozess es hat, sonst Dateien (der Standard); auf der  
+>       Kommandozeile (Cronjobs, Skripte) ohne APCu nur der Merkzettel der Anfrage  
+> apcu  nur APCu; ohne APCu arbeitet shared wie request  
+> file  Dateien in var/<site>/cache/querycache/entries/, eine pro Ergebnis, auch  
+>       mit APCu: Jeder Webserver, der var/ einhängt (ein Cluster auf NFS oder einem  
+>       SAN), teilt sie. Der Cronjob-Teil cache\_cleanup  
+>       (cronjobs/querycache\_cleanup.php) entfernt die Dateien, die älter als MaxAge sind;  
+>       das Leeren des Caches entfernt sie ebenfalls.  
 
 Standard: `auto`.
 
@@ -60,12 +60,12 @@ Storage=auto
 
 ## ApcuReserve
 
-> APCu is one memory for every site of the PHP-FPM pool. Full with valid  
-> entries, it empties itself completely: every other cache and counter in it  
-> is lost. With less than this share of APCu free (percent), shared mode stops  
-> adding results to APCu and keeps them for the request only, until entries  
-> expire (below the reserve the cache deletes its expired entries from APCu,  
-> once a minute for the pool). 0 never stops. Only with the APCu storage.  
+> APCu ist ein Speicher für jede Website des PHP-FPM-Pools. Voll mit gültigen  
+> Einträgen leert es sich vollständig: Jeder andere Cache und Zähler darin  
+> geht verloren. Ist weniger als dieser Anteil von APCu frei (Prozent), fügt der gemeinsame Modus  
+> APCu keine Ergebnisse mehr hinzu und behält sie nur für die Anfrage, bis Einträge  
+> ablaufen (unter der Reserve löscht der Cache seine abgelaufenen Einträge aus APCu,  
+> einmal pro Minute für den Pool). 0 hört nie auf. Nur mit dem Speicher APCu.  
 
 Standard: `25`.
 
@@ -79,9 +79,9 @@ ApcuReserve=25
 
 ## MaxAge
 
-> Longest life of a result even when no write touched its tables, in seconds:  
-> the bound for a write made outside Exponential (another program, a hand-run  
-> statement), which the cache cannot see.  
+> Längste Lebensdauer eines Ergebnisses, auch wenn kein Schreibzugriff seine Tabellen berührt hat, in Sekunden:  
+> die Grenze für einen Schreibzugriff außerhalb von Exponential (ein anderes Programm, eine von Hand ausgeführte  
+> Anweisung), den der Cache nicht sehen kann.  
 
 Standard: `300`.
 
@@ -95,7 +95,7 @@ MaxAge=300
 
 ## MaxRows
 
-> Results with more rows are not kept.  
+> Ergebnisse mit mehr Zeilen werden nicht behalten.  
 
 Standard: `5000`.
 
@@ -109,7 +109,7 @@ MaxRows=5000
 
 ## ExcludeTables
 
-> Tables whose SELECTs are never cached.  
+> Tabellen, deren SELECTs nie gecacht werden.  
 
 Standard: eine Liste mit 3: `ezsession`, `ezpending_actions`, `ezcollab_notification_rule`.
 

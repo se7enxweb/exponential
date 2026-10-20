@@ -11,18 +11,18 @@ generated: exp:help:examples
 
 Der Block `[RuleSet-probes]` von `settings/requestclassifier.ini`, mit 4 Einstellung(en).
 
-> The groups of the rule sets: \[RuleSet-<identifier>\]. For a set built on expRequestPatternRuleSet (the built-in  
-> sets but threshold) these settings add to its built-in rules:  
->   Class=<class>               the class of the set (needed for an extension's set; empty: the built-in class)  
->   Patterns\[<rule>\]=<regex>    a rule of your own (or a built-in rule replaced: same name). PCRE without  
->                               delimiters, matched case-insensitively; no back references (\\1) or named groups.  
->                               A pattern that does not compile is left out with a warning. Avoid ## (the INI  
->                               comment marker) in a pattern.  
->   Disabled\[\]=<rule>           a built-in rule switched off  
->   Excludes\[<name>\]=<regex>    a request whose path matches is never flagged by this set (probes: the decoded  
->                               namespace path); Excludes\[<built-in name>\]= (empty) removes a built-in exclude  
+> Die Gruppen der Regelsätze: \[RuleSet-<identifier>\]. Für einen auf expRequestPatternRuleSet aufbauenden Satz (die eingebauten  
+> Sätze außer threshold) ergänzen diese Einstellungen seine eingebauten Regeln:  
+>   Class=<class>               die Klasse des Satzes (nötig für den Satz einer Erweiterung; leer: die eingebaute Klasse)  
+>   Patterns\[<rule>\]=<regex>    eine eigene Regel (oder eine ersetzte eingebaute: gleicher Name). PCRE ohne  
+>                               Begrenzer, ohne Beachtung der Groß-/Kleinschreibung geprüft; keine Rückverweise (\\1) oder benannten Gruppen.  
+>                               Ein Muster, das sich nicht kompilieren lässt, wird mit einer Warnung ausgelassen. Vermeiden Sie ## (das  
+>                               Kommentarzeichen der INI) in einem Muster.  
+>   Disabled\[\]=<rule>           eine abgeschaltete eingebaute Regel  
+>   Excludes\[<name>\]=<regex>    eine Anfrage, deren Pfad passt, wird von diesem Satz nie markiert (probes: der dekodierte  
+>                               Namespace-Pfad); Excludes\[<built-in name>\]= (leer) entfernt einen eingebauten Ausschluss  
 >   Confidence\[<rule>\]=low|medium|high, DefaultConfidence=high  
-> The rule names below are the built-in ones (the second part of the first token of a line).  
+> Die Regelnamen unten sind die eingebauten (der zweite Teil des ersten Tokens einer Zeile).  
 
 Bearbeiten Sie `settings/requestclassifier.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -32,15 +32,15 @@ Bearbeiten Sie `settings/requestclassifier.ini` nie selbst: Ein Update ersetzt d
 
 ## Class
 
-> Matched against the decoded namespace path. Rules: wp-login, wp-admin, wp-content, wp-includes, wp-config,  
+> Gegen den dekodierten Namespace-Pfad geprüft. Regeln: wp-login, wp-admin, wp-content, wp-includes, wp-config,  
 > xmlrpc, env, git, vcs (.svn .hg .bzr), ds-store, hidden (.htpasswd .htaccess .aws .ssh ...), dbtool (phpMyAdmin,  
 > pma, adminer ...), phpunit, cgi-bin, server-status, actuator, phpinfo, config-file (composer.json, \*.ini ...),  
-> exploit (hnap1, boaform ...), backup (an archive or dump at the namespace root, or with a backup-like name),  
+> exploit (hnap1, boaform ...), backup (ein Archiv oder Dump in der Wurzel des Namespace oder mit einem nach Sicherung klingenden Namen),  
 > backup-copy (\*.bak, \*.old, \*~).  
-> Built-in excludes, never a probe: download (/content/download/...), storage (var/storage, var/<site>/storage),  
-> public-cache (var/<site>/cache/public: packed scripts and styles), assets (stylesheets, scripts, images and fonts  
-> under design/, extension/ and share/).  
-> Example, a path of your own:  
+> Eingebaute Ausschlüsse, nie eine Sondierung: download (/content/download/...), storage (var/storage, var/<site>/storage),  
+> public-cache (var/<site>/cache/public: gepackte Skripte und Styles), assets (Stylesheets, Skripte, Bilder und Schriften  
+> unter design/, extension/ und share/).  
+> Beispiel, ein eigener Pfad:  
 > Patterns\[old-admin\]=^/administrator(/|$)  
 
 Standard: leer.

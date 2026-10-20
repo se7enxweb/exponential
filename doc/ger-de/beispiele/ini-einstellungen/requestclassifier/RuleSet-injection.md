@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/requestclassifier.ini` nie selbst: Ein Update ersetzt d
 
 ## Class
 
-> Matched against the query and the path, decoded once; a posted body is never looked at. Rules: sql-union,  
+> Gegen die Query und den einmal dekodierten Pfad geprüft; ein abgeschickter Inhalt wird nie angesehen. Regeln: sql-union,  
 > sql-tautology (' or '1'='1), sql-boolean (or 1=1--), sql-time (sleep(, benchmark(), sql-schema  
 > (information\_schema), sql-stacked (;drop table), sql-function, cmd-file (/etc/passwd), cmd-chain (;id, |cat, $(...),  
-> backticks), jndi, ssti ({{7\*7}}, ${7\*7}, #{...}, <%= %>), xss-script (<script, %3Cscript), xss-event (onerror=,  
+> Backticks), jndi, ssti ({{7\*7}}, ${7\*7}, #{...}, <%= %>), xss-script (<script, %3Cscript), xss-event (onerror=,  
 > <svg/on...), xss-url (javascript:), php-code.  
-> A search for "union station", O'Reilly, "select or drop" or <b> is no injection.  
+> Eine Suche nach "union station", O'Reilly, "select or drop" oder <b> ist keine Injektion.  
 
 Standard: leer.
 

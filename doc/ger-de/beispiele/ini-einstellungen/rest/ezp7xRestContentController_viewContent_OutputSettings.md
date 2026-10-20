@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[ezp7xRestContentController_viewContent_OutputSettings]` von `settings/rest.ini`, mit 1 Einstellung(en).
 
-> The same template for the content controller of the ezprestapi extension, which serves the node reads of  
-> REST API v1 and v2 (the XHTML renderer looks the section up by controller class and action)  
+> Dasselbe Template für den Inhalts-Controller der Erweiterung ezprestapi, der die Lesezugriffe auf Knoten der  
+> REST API v1 und v2 bedient (der XHTML-Renderer sucht den Abschnitt nach Controller-Klasse und Aktion)  
 
 Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

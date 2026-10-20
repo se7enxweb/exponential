@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/querycache.ini` nie selbst: Ein Update ersetzt die Date
 
 ## Report
 
-> With the debug output on: accumulators of the group "Query cache" (hits,  
-> misses, stores, statements not cached), a timing point when the state is  
-> read, and a report at the bottom with this request's counters, the database  
-> time the hits saved, why statements were not cached and which writes made  
-> everything stale. enabled | disabled  
+> Mit eingeschalteter Debug-Ausgabe: Akkumulatoren der Gruppe „Query cache“ (Treffer,  
+> Fehltreffer, Speicherungen, nicht gecachte Anweisungen), ein Zeitpunkt, wenn der Zustand  
+> gelesen wird, und ein Bericht unten mit den Zählern dieser Anfrage, der Datenbank-  
+> zeit, die die Treffer gespart haben, warum Anweisungen nicht gecacht wurden und welche Schreibzugriffe  
+> alles veraltet gemacht haben. enabled | disabled  
 
 Standard: `enabled`.
 

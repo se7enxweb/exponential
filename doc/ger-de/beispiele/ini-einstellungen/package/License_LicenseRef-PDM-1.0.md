@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[License_LicenseRef-PDM-1.0]` von `settings/package.ini`, mit 3 Einstellung(en).
 
-> The Public Domain Mark labels a work that is already free of known copyright  
-> restrictions; it has no SPDX identifier.  
+> Die Public Domain Mark kennzeichnet ein Werk, das bereits frei von bekannten urheberrechtlichen  
+> Beschränkungen ist; sie hat keinen SPDX-Bezeichner.  
 
 Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

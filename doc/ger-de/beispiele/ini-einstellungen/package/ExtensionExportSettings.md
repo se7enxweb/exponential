@@ -19,22 +19,22 @@ Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## AllowedExtensions
 
-> Exporting an extension as a package (Setup > Extensions, the package wizard, ezpm.php add) is switched off by  
-> default. Every way also refuses an extension that holds secret values or key material  
+> Das Exportieren einer Erweiterung als Paket (Setup > Erweiterungen, der Paketassistent, ezpm.php add) ist standardmäßig  
+> abgeschaltet. Jeder Weg lehnt außerdem eine Erweiterung ab, die geheime Werte oder Schlüsselmaterial enthält  
 > (eZExtensionPackageHandler::packRefusal()).  
 >
-> An extension's maintainer can name findings of the check that are known not to be secrets (a documentation  
-> example the check cannot tell from a real value) in a file package\_check.ini at the root of the extension, one  
-> per line: AllowedFindings\[\]=<path below the extension>:<setting name or (kind)>, for example  
-> AllowedFindings\[\]=settings/recaptcha.ini.append.php:PrivateKey. It can only leave out what it names: key files, a  
-> private key block, a copy of a settings file and a link are always refused. Guide:  
+> Der Maintainer einer Erweiterung kann Befunde der Prüfung nennen, von denen bekannt ist, dass sie keine Geheimnisse sind (ein Dokumentations-  
+> beispiel, das die Prüfung nicht von einem echten Wert unterscheiden kann), in einer Datei package\_check.ini im Wurzelverzeichnis der Erweiterung, einer  
+> pro Zeile: AllowedFindings\[\]=<path below the extension>:<setting name or (kind)>, zum Beispiel  
+> AllowedFindings\[\]=settings/recaptcha.ini.append.php:PrivateKey. Sie kann nur auslassen, was sie nennt: Schlüsseldateien, ein  
+> Block mit privatem Schlüssel, eine Kopie einer Einstellungsdatei und ein Link werden immer abgelehnt. Anleitung:  
 > doc/eng-us/bc/6.0/extension-package-secret-check.md  
 >
-> ACTION REQUIRED to export: list the extension here AND grant the policy package/export\_extension to the role.  
+> HANDLUNG ERFORDERLICH zum Exportieren: Tragen Sie die Erweiterung hier ein UND gewähren Sie der Rolle die Richtlinie package/export\_extension.  
 >
-> The extensions that may be exported. Empty (the default): none. "\*": every extension the check lets through.  
-> Applies to every way, the command line included.  
-> Example:  
+> Die Erweiterungen, die exportiert werden dürfen. Leer (der Standard): keine. "\*": jede Erweiterung, die die Prüfung durchlässt.  
+> Gilt für jeden Weg, die Kommandozeile eingeschlossen.  
+> Beispiel:  
 > AllowedExtensions\[\]=myextension  
 > AllowedExtensions\[\]=\*  
 
@@ -51,9 +51,9 @@ AllowedExtensions[]
 
 ## RequirePolicy
 
-> enabled (the default): exporting an extension in the administration also needs the policy  
-> package/export\_extension (the Administrator role with all functions has it). disabled: the access to  
-> Setup > Extensions or to the package wizard is enough. The command line runs as no user and is not asked.  
+> enabled (der Standard): Das Exportieren einer Erweiterung in der Administration braucht außerdem die Richtlinie  
+> package/export\_extension (die Rolle Administrator mit allen Funktionen hat sie). disabled: Der Zugriff auf  
+> Setup > Erweiterungen oder auf den Paketassistenten genügt. Die Kommandozeile läuft als kein Benutzer und wird nicht gefragt.  
 
 Standard: `enabled`.
 

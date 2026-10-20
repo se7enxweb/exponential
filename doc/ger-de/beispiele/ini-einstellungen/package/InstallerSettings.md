@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## HandlerList
 
-> A list of extensions which have package installation handlers support  
-> The extension must place package creation handlers in the  
-> subdirectory packageinstallers.  
+> Eine Liste der Erweiterungen, die Handler zum Installieren von Paketen unterstützen  
+> Die Erweiterung muss die Handler zum Erstellen von Paketen im  
+> Unterverzeichnis packageinstallers ablegen.  
 
 Standard: eine Liste mit 2: `ezcontentobject`, `ezinstallscript`.
 
@@ -53,7 +53,7 @@ HandlerAlias[ezinstallscript]=eZInstallScriptPackageInstaller
 
 ## InstallBatchMaxItems
 
-> Maximum number of non-interactive install items processed per request.  
+> Höchstzahl nicht interaktiver Installationseinträge, die pro Anfrage verarbeitet werden.  
 
 Standard: `12`.
 
@@ -67,7 +67,7 @@ InstallBatchMaxItems=12
 
 ## InstallBatchTimeBudgetSeconds
 
-> Maximum wall-clock seconds spent processing install items per request.  
+> Höchstzahl der Sekunden Echtzeit, die pro Anfrage für die Verarbeitung von Installationseinträgen verwendet werden.  
 
 Standard: `6`.
 

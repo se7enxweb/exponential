@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/requestrules.ini` nie selbst: Ein Update ersetzt die Da
 
 ## Enabled
 
-> true or false. With false no rule is asked; the kernel behaves as before  
-> this feature existed.  
+> true oder false. Mit false wird keine Regel gefragt; der Kernel verhält sich wie vor  
+> dieser Funktion.  
 
 Standard: `true`.
 
@@ -34,8 +34,8 @@ Enabled=true
 
 ## RuleList
 
-> The rules asked, in order. Empty: no rule (and no cost). A siteaccess  
-> override that starts with RuleList\[\] (empty) replaces the list.  
+> Die gefragten Regeln, in Reihenfolge. Leer: keine Regel (und keine Kosten). Ein Siteaccess-  
+> Override, das mit RuleList\[\] (leer) beginnt, ersetzt die Liste.  
 
 Standard: eine leere Liste.
 
@@ -50,8 +50,8 @@ RuleList[]
 
 ## RuleProviders
 
-> Rules computed in PHP: classes implementing ezpRequestRuleProvider. Their  
-> rules come after the RuleList rules.  
+> In PHP berechnete Regeln: Klassen, die ezpRequestRuleProvider implementieren. Ihre  
+> Regeln kommen nach den Regeln aus RuleList.  
 
 Standard: eine leere Liste.
 
@@ -66,8 +66,8 @@ RuleProviders[]
 
 ## FactProviders
 
-> Facts added to every request, for conditions such as Conditions\[fact:<name>\]:  
-> classes implementing ezpRequestFactProvider.  
+> Tatsachen, die jeder Anfrage hinzugefügt werden, für Bedingungen wie Conditions\[fact:<name>\]:  
+> Klassen, die ezpRequestFactProvider implementieren.  
 
 Standard: eine leere Liste.
 
@@ -82,8 +82,8 @@ FactProviders[]
 
 ## MaxRewrites
 
-> How many times one request may be rewritten (Action=rewrite) before it is  
-> answered with "not found". Stops a rewrite loop.  
+> Wie oft eine Anfrage umgeschrieben werden darf (Action=rewrite), bevor sie mit  
+> „nicht gefunden“ beantwortet wird. Beendet eine Umschreibschleife.  
 
 Standard: `3`.
 
@@ -97,8 +97,8 @@ MaxRewrites=3
 
 ## ConditionHandlers
 
-> Conditions and actions by name, added to the built-in ones (listed in the  
-> guide). An extension adds its own:  
+> Bedingungen und Aktionen nach Namen, zusätzlich zu den eingebauten (in der  
+> Anleitung aufgeführt). Eine Erweiterung fügt ihre eigenen hinzu:  
 >   ConditionHandlers\[customer\_tier\]=myCustomerTierCondition  
 >   ActionHandlers\[paywall\]=myPaywallAction  
 

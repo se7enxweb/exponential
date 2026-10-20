@@ -91,23 +91,22 @@ RightMargin=80
 
 ## OutputCharset
 
-> The charset the pdf text is written in.  
+> Der Zeichensatz, in dem der PDF-Text geschrieben wird.  
 >
-> Ignored when Font below names a .ttf file, because a composite font needs no  
-> conversion at all - see Font.  
+> Ignoriert, wenn Font unten eine .ttf-Datei nennt, weil eine zusammengesetzte Schrift gar keine  
+> Umwandlung braucht, siehe Font.  
 >
-> Otherwise it has to be a single byte charset. The bundled fonts have a 256  
-> entry encoding, so a multi byte charset would be drawn one byte at a time and  
-> read as mojibake - "cafÃ©" rather than "café". Setting utf-8 here while using  
-> one of those fonts is refused, with an error in the debug log, and  
-> windows-1252 used instead. Point Font at a .ttf to get real utf-8.  
+> Sonst muss es ein Ein-Byte-Zeichensatz sein. Die mitgelieferten Schriften haben eine Kodierung mit 256  
+> Einträgen, ein Mehrbyte-Zeichensatz würde also Byte für Byte gezeichnet und  
+> als Zeichensalat gelesen: "cafÃ©" statt "café". utf-8 hier zu setzen, während eine  
+> dieser Schriften verwendet wird, wird abgelehnt, mit einem Fehler im Debug-Log, und  
+> stattdessen windows-1252 verwendet. Zeigen Sie mit Font auf eine .ttf, um echtes utf-8 zu erhalten.  
 >
-> This shipped as iso-8859-1, which was the wrong choice: the fonts are written  
-> with /Encoding /WinAnsiEncoding, and WinAnsi and iso-8859-1 disagree over  
-> 0x80-0x9F. That range holds the em dash, the euro sign, the bullet and the  
-> curly quotes, so the font could draw them and the conversion threw them away  
-> and wrote a question mark. windows-1252 is what WinAnsiEncoding is, so it  
-> keeps them. Change this only together with FontEncoding below.  
+> Ausgeliefert wurde dies als iso-8859-1, was die falsche Wahl war: Die Schriften werden  
+> mit /Encoding /WinAnsiEncoding geschrieben, und WinAnsi und iso-8859-1 unterscheiden sich bei  
+> 0x80-0x9F. Dieser Bereich enthält den Geviertstrich, das Eurozeichen, den Aufzählungspunkt und die  
+> typografischen Anführungszeichen; die Schrift konnte sie also zeichnen, die Umwandlung warf sie aber weg  
+> und schrieb ein Fragezeichen. windows-1252 ist das, was WinAnsiEncoding ist, es behält sie also. Ändern Sie dies nur zusammen mit FontEncoding unten.  
 
 Standard: `windows-1252`.
 
@@ -121,12 +120,12 @@ OutputCharset=windows-1252
 
 ## Transliterate
 
-> Ignored when Font names a .ttf file, where nothing needs degrading.  
+> Ignoriert, wenn Font eine .ttf-Datei nennt, wo nichts vereinfacht werden muss.  
 >
-> Degrade a character the charset above cannot hold to its closest ascii rather  
-> than to a question mark, so a name in Polish or Czech comes out readable:  
-> Lódz rather than ód. Characters with no ascii likeness at all, Japanese for  
-> instance, still cannot be drawn by these fonts.  
+> Ein Zeichen, das der Zeichensatz oben nicht aufnehmen kann, zum nächstliegenden ASCII-Zeichen vereinfachen  
+> statt zu einem Fragezeichen, sodass ein polnischer oder tschechischer Name lesbar bleibt:  
+> Lódz statt ód. Zeichen ohne jede Ähnlichkeit mit ASCII, zum Beispiel Japanisch,  
+> können diese Schriften weiterhin nicht zeichnen.  
 
 Standard: `enabled`.
 
@@ -140,12 +139,12 @@ Transliterate=enabled
 
 ## LinkUnderline
 
-> Draw a rule under a link as well as colouring it blue.  
+> Unter einem Link zusätzlich zur blauen Farbe eine Linie zeichnen.  
 >
-> The rule used to be drawn far too short, because the end of a link was  
-> measured from the start of the line rather than from the start of the link.  
-> That is fixed, so this is on. Set it to disabled for links that are coloured  
-> and clickable but not underlined.  
+> Die Linie wurde früher viel zu kurz gezeichnet, weil das Ende eines Links vom  
+> Zeilenanfang statt vom Anfang des Links aus gemessen wurde.  
+> Das ist behoben, daher ist dies an. Setzen Sie es auf disabled für Links, die farbig  
+> und anklickbar, aber nicht unterstrichen sind.  
 
 Standard: `enabled`.
 
@@ -159,17 +158,17 @@ LinkUnderline=enabled
 
 ## MaxImageWidth
 
-> How large an image may be drawn, in points, 72 to the inch.  
+> Wie groß ein Bild gezeichnet werden darf, in Punkt, 72 pro Zoll.  
 >
-> The templates hand images over at their pixel size and that size is then used  
-> as points, so a photograph 1600 pixels wide asked for 1600 points on a page  
-> 595 points wide and ran off the paper in every direction. Images are now  
-> scaled down to fit, keeping their proportions. Only down: something already  
-> small enough is left as it is.  
+> Die Templates übergeben Bilder in ihrer Pixelgröße, und diese Größe wird dann  
+> als Punkt verwendet, ein Foto mit 1600 Pixeln Breite verlangte also 1600 Punkt auf einer Seite  
+> mit 595 Punkt Breite und lief in jede Richtung über das Papier. Bilder werden jetzt  
+> unter Beibehaltung ihrer Proportionen passend verkleinert. Nur verkleinert: Was schon  
+> klein genug ist, bleibt, wie es ist.  
 >
-> Left empty each falls back to what the page has room for - the paper less its  
-> margins - which is the sensible ceiling. Set them to hold images well inside  
-> the text, for instance 360 for a half page width on A4.  
+> Leer gelassen fällt jeder Wert auf den Platz zurück, den die Seite hat (das Papier abzüglich seiner  
+> Ränder), was die sinnvolle Obergrenze ist. Setzen Sie sie, um Bilder deutlich innerhalb  
+> des Textes zu halten, zum Beispiel 360 für eine halbe Seitenbreite auf A4.  
 
 Standard: leer.
 
@@ -195,8 +194,8 @@ MaxImageHeight=
 
 ## ImageScaling
 
-> Set to disabled to draw images at whatever size they are handed over at,  
-> which is what happened before, overflowing page and all.  
+> Auf disabled setzen, um Bilder in der Größe zu zeichnen, in der sie übergeben werden,  
+> wie früher, samt Überlauf über die Seite.  
 
 Standard: `enabled`.
 
@@ -210,24 +209,24 @@ ImageScaling=enabled
 
 ## Font
 
-> The font used unless a template selects another.  
+> Die verwendete Schrift, sofern ein Template keine andere wählt.  
 >
-> A name without an extension is one of the faces bundled beside the library -  
-> Helvetica, Times-Roman, Courier. Those are simple fonts: 256 slots, one byte  
-> per character, so the text has to be squeezed into OutputCharset first and  
-> anything that does not fit is transliterated or lost.  
+> Ein Name ohne Endung ist eine der Schriften, die neben der Bibliothek mitgeliefert werden:  
+> Helvetica, Times-Roman, Courier. Das sind einfache Schriften: 256 Plätze, ein Byte  
+> pro Zeichen, der Text muss also zuerst in OutputCharset gepresst werden, und  
+> was nicht passt, wird transliteriert oder geht verloren.  
 >
-> Give the full path of a .ttf file instead and the font is embedded as a  
-> composite font, which addresses its glyphs by number rather than through a  
-> 256 entry table. Then there is nothing to squeeze text into: utf-8 goes  
-> through as it is, OutputCharset and Transliterate stop applying, and every  
-> character the font actually has is drawn. The text stays selectable and  
-> searchable, because the map back to unicode is written with it.  
+> Geben Sie stattdessen den vollen Pfad einer .ttf-Datei an, wird die Schrift als  
+> zusammengesetzte Schrift eingebettet, die ihre Glyphen über Nummern statt über eine  
+> Tabelle mit 256 Einträgen anspricht. Dann muss nichts gepresst werden: utf-8 geht  
+> unverändert durch, OutputCharset und Transliterate gelten nicht mehr, und jedes  
+> Zeichen, das die Schrift tatsächlich hat, wird gezeichnet. Der Text bleibt markierbar und  
+> durchsuchbar, weil die Rückzuordnung zu Unicode mitgeschrieben wird.  
 >
-> What you get is then decided by the font rather than by this software.  
-> DejaVuSans covers latin, latin extended, greek, cyrillic, hebrew, armenian  
-> and georgian. For chinese, japanese or korean point this at a font that has  
-> them - DroidSansFallback, or one of the Noto CJK faces.  
+> Was Sie erhalten, entscheidet dann die Schrift und nicht diese Software.  
+> DejaVuSans deckt Lateinisch, erweitertes Lateinisch, Griechisch, Kyrillisch, Hebräisch, Armenisch  
+> und Georgisch ab. Für Chinesisch, Japanisch oder Koreanisch zeigen Sie auf eine Schrift, die sie  
+> hat: DroidSansFallback oder eine der Noto-CJK-Schriften.  
 >
 > Font=/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf  
 
@@ -243,10 +242,10 @@ Font=lib/ezpdf/classes/fonts/Helvetica
 
 ## FontEncoding
 
-> Which glyph each of the font's 256 slots holds. Must agree with OutputCharset  
-> or accents land on the wrong characters. WinAnsiEncoding is windows-1252,  
-> MacRomanEncoding is mac-roman, and StandardEncoding is the fonts' own layout,  
-> which is neither.  
+> Welche Glyphe jeder der 256 Plätze der Schrift enthält. Muss zu OutputCharset passen,  
+> sonst landen Akzente auf den falschen Zeichen. WinAnsiEncoding ist windows-1252,  
+> MacRomanEncoding ist mac-roman, und StandardEncoding ist die eigene Belegung der Schriften,  
+> die keines von beiden ist.  
 
 Standard: `WinAnsiEncoding`.
 

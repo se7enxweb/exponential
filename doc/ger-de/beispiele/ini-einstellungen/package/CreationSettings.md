@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## HandlerList
 
-> A list of extensions which have package creation handlers support  
-> The extension must place package creation handlers in the  
-> subdirectory packagecreators.  
-> The order here is the order the Create package page lists the wizards in:  
-> content first, then its classes, then extensions, then site styles.  
+> Eine Liste der Erweiterungen, die Handler zum Erstellen von Paketen unterstützen  
+> Die Erweiterung muss die Handler zum Erstellen von Paketen im  
+> Unterverzeichnis packagecreators ablegen.  
+> Die Reihenfolge hier ist die, in der die Seite Paket erstellen die Assistenten auflistet:  
+> zuerst Inhalte, dann ihre Klassen, dann Erweiterungen, dann Website-Styles.  
 
 Standard: eine Liste mit 4: `ezcontentobject`, `ezcontentclass`, `ezextension`, `ezstyle`.
 

@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Filters
 
-> Custom filters implementing ezpRestResponseFilterInterface, to be executed,  
-> after the view has generated a response.  
+> Eigene Filter, die ezpRestResponseFilterInterface implementieren und ausgeführt werden,  
+> nachdem die View eine Antwort erzeugt hat.  
 
 Standard: eine leere Liste.
 

@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[Rule-system_url_full_view_to_alias]` von `settings/requestrules.ini`, mit 5 Einstellung(en).
 
-> --- Rules shipped ready to use -----------------------------------------------  
-> Defined here and off. Switch one on for a siteaccess by adding its name to  
-> RuleList\[\] there, e.g. in settings/siteaccess/site/requestrules.ini.append.php:  
+> --- Fertig mitgelieferte Regeln -----------------------------------------------  
+> Hier definiert und aus. Schalten Sie eine für einen Siteaccess ein, indem Sie ihren Namen dort  
+> RuleList\[\] hinzufügen, z. B. in settings/siteaccess/site/requestrules.ini.append.php:  
 >
 >   \[RequestRuleSettings\]  
 >   RuleList\[\]=system\_url\_full\_view\_to\_alias  

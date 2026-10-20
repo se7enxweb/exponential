@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[License_CC-BY-1.0]` von `settings/package.ini`, mit 3 Einstellung(en).
 
-> Version 1.0 had the same six Attribution licenses as the later versions; its  
-> NonCommercial-NoDerivs one was named "NoDerivs-NonCommercial" (by-nd-nc in its URL).  
+> Version 1.0 hatte dieselben sechs Attribution-Lizenzen wie die späteren Versionen; ihre  
+> NonCommercial-NoDerivs hieß "NoDerivs-NonCommercial" (by-nd-nc in ihrer URL).  
 
 Bearbeiten Sie `settings/package.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

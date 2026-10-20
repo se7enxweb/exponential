@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/requestclassifier.ini` nie selbst: Ein Update ersetzt d
 
 ## Class
 
-> Matched against the raw URI and the URI decoded once. Rules: double-encoded (%252e), null-byte (%00),  
-> encoded-dot-dot (%2e%2e, ..%2f in any case), dot-dot (../ and ..\\).  
+> Gegen die rohe URI und die einmal dekodierte URI geprüft. Regeln: double-encoded (%252e), null-byte (%00),  
+> encoded-dot-dot (%2e%2e, ..%2f in jeder Schreibweise), dot-dot (../ und ..\\).  
 
 Standard: leer.
 

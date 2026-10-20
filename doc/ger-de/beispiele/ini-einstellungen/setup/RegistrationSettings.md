@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/setup.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Receiver
 
-> Where the setup's registration step mails its report when kickstart.ini  
-> \[registration\] Send=true (the default is false). Empty: nothing is sent.  
-> The old upstream registration address no longer exists and is never used.  
+> Wohin der Registrierungsschritt des Setups seinen Bericht mailt, wenn kickstart.ini  
+> \[registration\] Send=true (der Standard ist false). Leer: Es wird nichts gesendet.  
+> Die alte Registrierungsadresse des Upstream-Projekts existiert nicht mehr und wird nie verwendet.  
 
 Standard: leer.
 

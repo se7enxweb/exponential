@@ -19,21 +19,21 @@ Bearbeiten Sie `settings/shop.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## OrderLinkView
 
-> Where the system links a placed order: after checkout, in the customer's  
-> order list and history, and in the order confirmation e-mail.  
->   orderview    - shop/orderview/<id>: the classic order view. For an order  
->                  placed without an account it works only in the session that  
->                  placed it, and stops working once that session expires.  
->   orderreceipt - shop/orderreceipt/<token>: the order's permanent receipt.  
->                  It never expires, can be bookmarked, printed and downloaded,  
->                  and opens for whoever holds the link -- from any browser or  
->                  device, with or without an account, no sign-in needed. The  
->                  signed token is the key, so the link is as private as the  
->                  receipt. Shop administrators, and a signed-in customer for  
->                  their own orders, can open it without the link.  
-> shop/orderreceipt/<token> works either way; this only picks what is linked.  
-> The administration interface keeps linking orders to shop/orderview, where  
-> they are managed. shop/orderreciept/<token> redirects to shop/orderreceipt.  
+> Wohin das System eine aufgegebene Bestellung verlinkt: nach dem Bezahlvorgang, in der Bestellliste und dem  
+> Verlauf des Kunden und in der Bestätigungsmail der Bestellung.  
+>   orderview    - shop/orderview/<id>: die klassische Bestellansicht. Für eine Bestellung,  
+>                  die ohne Konto aufgegeben wurde, funktioniert sie nur in der Sitzung, die  
+>                  sie aufgegeben hat, und nicht mehr, sobald diese Sitzung abläuft.  
+>   orderreceipt - shop/orderreceipt/<token>: der dauerhafte Beleg der Bestellung.  
+>                  Er läuft nie ab, lässt sich als Lesezeichen speichern, drucken und herunterladen  
+>                  und öffnet sich für jeden, der den Link hat, von jedem Browser oder  
+>                  Gerät, mit oder ohne Konto, ohne Anmeldung. Das  
+>                  signierte Token ist der Schlüssel, der Link ist also so privat wie der  
+>                  Beleg. Shop-Administratoren und ein angemeldeter Kunde für seine  
+>                  eigenen Bestellungen können ihn ohne den Link öffnen.  
+> shop/orderreceipt/<token> funktioniert in beiden Fällen; dies wählt nur, was verlinkt wird.  
+> Die Administrationsoberfläche verlinkt Bestellungen weiterhin auf shop/orderview, wo  
+> sie verwaltet werden. shop/orderreciept/<token> leitet auf shop/orderreceipt weiter.  
 
 Standard: `orderview`.
 

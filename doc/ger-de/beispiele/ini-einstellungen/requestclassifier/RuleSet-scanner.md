@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/requestclassifier.ini` nie selbst: Ein Update ersetzt d
 
 ## Class
 
-> Matched against the user agent; the rule is the tool's name: sqlmap, nikto, nuclei, masscan, zgrab, wpscan,  
+> Gegen den User-Agent geprüft; die Regel ist der Name des Werkzeugs: sqlmap, nikto, nuclei, masscan, zgrab, wpscan,  
 > dirbuster, dirb, gobuster, feroxbuster, ffuf (Fuzz Faster U Fool), wfuzz, nmap, acunetix, netsparker, nessus,  
-> openvas, w3af, arachni, skipfish, jaeles, hydra, zmeu, jorgee. General clients are no tools and are never flagged  
-> here: curl, wget, python-requests, headless browsers (Playwright, HeadlessChrome), search engines.  
+> openvas, w3af, arachni, skipfish, jaeles, hydra, zmeu, jorgee. Allgemeine Clients sind keine Werkzeuge und werden hier nie  
+> markiert: curl, wget, python-requests, Headless-Browser (Playwright, HeadlessChrome), Suchmaschinen.  
 
 Standard: leer.
 

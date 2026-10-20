@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/setup.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## TestClass
 
-> Check for correct eZ Components version by existence of  
-> class and function since there are no way of getting version information atm  
+> Die richtige Version der eZ Components anhand vorhandener  
+> Klasse und Funktion prüfen, da es derzeit keine Möglichkeit gibt, Versionsinformationen zu erhalten  
 
 Standard: `ezcBaseFile`.
 

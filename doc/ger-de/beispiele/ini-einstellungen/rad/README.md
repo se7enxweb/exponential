@@ -12,18 +12,18 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/rad.ini`: 4 Blöcke, 20 Einstellungen.
 
-> The registries the extension point survey reads entry by entry (Setup > RAD tools > Extension point survey,  
+> Die Register, die die Übersicht der Erweiterungspunkte Eintrag für Eintrag liest (Setup > RAD-Werkzeuge > Übersicht der Erweiterungspunkte,  
 > setup/radsurvey/(show)/registries; doc/eng-us/bc/6.0/rad-extension-surface.md "Registries declared in rad.ini").  
 >
-> A registry is a list of implementations that something reads from its settings or from its code: AI providers,  
-> MCP tools, queue job types, event listeners. Each one is declared here by the kernel, or by an extension in  
-> extension/<name>/settings/rad.ini.append.php, so that the survey counts its entries, checks each of them, and  
-> adds them to the headline numbers of setup/rad, without the kernel having to know the extension.  
+> Ein Register ist eine Liste von Implementierungen, die etwas aus seinen Einstellungen oder aus seinem Code liest: KI-Provider,  
+> MCP-Werkzeuge, Auftragstypen der Warteschlange, Event-Listener. Jedes wird hier vom Kernel deklariert oder von einer Erweiterung in  
+> extension/<name>/settings/rad.ini.append.php, damit die Übersicht seine Einträge zählt, jeden prüft und  
+> sie zu den Kopfzahlen von setup/rad hinzufügt, ohne dass der Kernel die Erweiterung kennen muss.  
 >
-> Declarations are read from settings/rad.ini, settings/override/rad.ini.append.php and the rad.ini.append.php of  
-> every active extension. A later file replaces a single value of an earlier one and adds to an array; a line  
-> "Registries\[\]" without a value empties the list first, as everywhere in the settings (so an extension never starts  
-> its own list with one: it would drop the kernel's registries and every other extension's before it).  
+> Deklarationen werden aus settings/rad.ini, settings/override/rad.ini.append.php und der rad.ini.append.php  
+> jeder aktiven Erweiterung gelesen. Eine spätere Datei ersetzt einen einzelnen Wert einer früheren und ergänzt ein Array; eine Zeile  
+> "Registries\[\]" ohne Wert leert die Liste zuerst, wie überall in den Einstellungen (eine Erweiterung beginnt ihre  
+> eigene Liste also nie damit: Sie würde die Register des Kernels und jeder Erweiterung davor verwerfen).  
 
 | Block | Einstellungen |
 |---|---|
