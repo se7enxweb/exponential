@@ -15417,7 +15417,7 @@ a100cbcd88a1d18b00ff94d468cb8e95  share/translations/cro-HR/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-6c589022fb9e7c2504a9474f06b1716a  share/translations/eng-US/translation.ts
+13a4df195bff2b85edbdc0d3a971e87e  share/translations/eng-US/translation.ts
 e572ae579e36b2b39f95e8490a2f543b  share/translations/esl-ES/translation.ts
 698f5f312664012c1854e5e2c0b37462  share/translations/esl-MX/translation.ts
 58b5eef7f9831d5f8d9b55546512e8db  share/translations/fas-IR/translation.ts
@@ -15445,7 +15445,7 @@ c0bb0e5ef4ff758c9e505585337f7d2a  share/translations/srp-RS/translation.ts
 9b5c429ad622ba10d1e59cbcca352580  share/translations/tur-TR/translation.ts
 1567e6a1a17d11a6705b0427bc3ff81c  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-370124782b0bda234352d1cd755a9127  share/translations/untranslated/translation.ts
+7787e5f2ced7972f7e33a07cf12a1715  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
