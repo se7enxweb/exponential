@@ -34,6 +34,16 @@ Help maintained as content (topics, manuals, glossary in the content tree)
 ./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state
 ./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file]
                                               an e-book of the Released topics of a manual (export_manual.php)
+./console exp:help:content dita -s ... [--manual=<remote_id>] [--output=dir] [--dry-run]
+                                              the DITA 1.3 export (bookmaps, DITAVAL, topics, glossary) into a
+                                              directory, checked after writing (also: export --format=dita)
+./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--dry-run]   build the e-books of the
+                                              Released manuals and store them as file objects under E-books
+./console exp:help:content review -s ... [--json]   the topics whose review is overdue
+./console exp:help:content package -s ... [--output=dir] [--version=6.0.15]   the eight classes as the content
+                                              class package exp_help_classes (a directory and an .ezpkg)
+./console exp:help:content verify-package -s ... --file=<.ezpkg or directory>   compare a package with the
+                                              classes of this release (no database)
 ./console exp:help:content uninstall -s ... [--with-content] [--dry-run]   take the roles away (and the tree, classes,
                                               state group and sections with --with-content)
 
@@ -54,9 +64,10 @@ Exit code: 0 fine, 1 check found an ERROR (or a step could not be done), 2 error
 | `--with-content` |  | uninstall: also the help tree (into the trash), the classes, the state group and the sections |
 | `--login` | required | The user who creates the classes and objects (default admin) |
 | `--json` |  | Print one JSON document instead of the text |
-| `--manual` | required | export: the remote_id of the manual (help-manual-...) |
-| `--format` | required | export: epub or pdf |
-| `--output` | required | export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>) |
+| `--manual` | required | export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual |
+| `--format` | required | export: epub, pdf or dita |
+| `--output` | required | export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); dita: the directory (default <cache>/exphelp/dita/all or /<remote_id>); package: the directory (default <cache>/exphelp/packages) |
+| `--version` | required | package: the release, MAJOR.MINOR.PATCH (default: the version of this installation) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

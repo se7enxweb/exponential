@@ -56,7 +56,7 @@ TopMenuIcons=enabled
 > .a4-bi-<name> in a stylesheet of BackendCSSFileList\[\] and IconList\[\]=<name> in its design.ini.append.php  
 > (doc/en/us/features/6.0/admin4-design.md, "Setup overview").  
 
-Default: a list of 133: `123`, `archive`, `arrow-90deg-up`, `arrow-bar-down`, `arrow-bar-up`, `arrow-clockwise`, `arrow-counterclockwise`, `arrow-down`, `arrow-down-up`, `arrow-down-right`, `arrow-up`, `arrow-up-circle` ....
+Default: a list of 137: `123`, `archive`, `arrow-90deg-up`, `arrow-bar-down`, `arrow-bar-up`, `arrow-clockwise`, `arrow-counterclockwise`, `arrow-down`, `arrow-down-up`, `arrow-down-right`, `arrow-up`, `arrow-up-circle` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -81,10 +81,10 @@ IconList[]=arrows-collapse-vertical
 IconList[]=arrows-expand-vertical
 IconList[]=arrows-move
 IconList[]=asterisk
+IconList[]=bank
 IconList[]=bar-chart-line
 IconList[]=bell
-IconList[]=bookmark
-# ... 113 more in the shipped file
+# ... 117 more in the shipped file
 */ ?>
 ```
 

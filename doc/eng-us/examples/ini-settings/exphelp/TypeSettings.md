@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > What kind of page a file is: its front matter (type: guide), else the first rule that matches.  
 > <pattern>;<type>, first match wins  
 
-Default: a list of 14: `doc/en/us/help/*;help`, `doc/en/us/guides/*;guide`, `doc/en/us/features/*;feature`, `doc/en/us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/en/us/install/*;install`, `doc/en/us/INSTALL.md;install`, `doc/en/us/specifications/*;specification`, `doc/en/us/history/*;history`, `doc/en/us/release-overview;history`, `doc/branch-overview;history`, `doc/en/us/examples/*;example` ....
+Default: a list of 14: `doc/eng-us/help/*;help`, `doc/eng-us/guides/*;guide`, `doc/eng-us/features/*;feature`, `doc/eng-us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/eng-us/install/*;install`, `doc/eng-us/INSTALL.md;install`, `doc/eng-us/specifications/*;specification`, `doc/eng-us/history/*;history`, `doc/eng-us/release-overview;history`, `doc/eng-us/examples/*;example`, `doc/eng-us/standards/patterns/*;catalogue` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -30,26 +30,26 @@ Default: a list of 14: `doc/en/us/help/*;help`, `doc/en/us/guides/*;guide`, `doc
 [TypeSettings]
 # an empty "PathRules[]" first replaces the shipped list; without it the items are added
 PathRules[]
-PathRules[]=doc/en/us/help/*;help
-PathRules[]=doc/en/us/guides/*;guide
-PathRules[]=doc/en/us/features/*;feature
-PathRules[]=doc/en/us/bc/*;bc
+PathRules[]=doc/eng-us/help/*;help
+PathRules[]=doc/eng-us/guides/*;guide
+PathRules[]=doc/eng-us/features/*;feature
+PathRules[]=doc/eng-us/bc/*;bc
 PathRules[]=doc/changelogs/*;changelog
-PathRules[]=doc/en/us/install/*;install
-PathRules[]=doc/en/us/INSTALL.md;install
-PathRules[]=doc/en/us/specifications/*;specification
-PathRules[]=doc/en/us/history/*;history
-PathRules[]=doc/en/us/release-overview;history
-PathRules[]=doc/branch-overview;history
-PathRules[]=doc/en/us/examples/*;example
-PathRules[]=doc/en/us/standards/patterns/*;catalogue
+PathRules[]=doc/eng-us/install/*;install
+PathRules[]=doc/eng-us/INSTALL.md;install
+PathRules[]=doc/eng-us/specifications/*;specification
+PathRules[]=doc/eng-us/history/*;history
+PathRules[]=doc/eng-us/release-overview;history
+PathRules[]=doc/eng-us/examples/*;example
+PathRules[]=doc/eng-us/standards/patterns/*;catalogue
+PathRules[]=extension/*;extension
 PathRules[]=*;reference
 */ ?>
 ```
 
 ## TypeNames
 
-Default: a hash of 12: `help=Help`, `guide=Guide`, `feature=Feature`, `bc=Upgrade note`, `install=Installation`, `changelog=Changelog`, `specification=Specification`, `history=History`, `example=Example`, `generated=Generated reference`, `reference=Reference`, `catalogue=Generated catalogue`.
+Default: a hash of 14: `help=Help`, `guide=Guide`, `feature=Feature`, `bc=Upgrade note`, `install=Installation`, `changelog=Changelog`, `specification=Specification`, `history=History`, `example=Example`, `generated=Generated reference`, `reference=Reference`, `catalogue=Generated catalogue` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -69,6 +69,8 @@ TypeNames[example]=Example
 TypeNames[generated]=Generated reference
 TypeNames[reference]=Reference
 TypeNames[catalogue]=Generated catalogue
+TypeNames[extension]=Extension documentation
+TypeNames[project]=Project file
 */ ?>
 ```
 

@@ -25,7 +25,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > because other files refer to them. Keys are paths relative to the installation root.  
 > Titles\[<path>\]=<title>  
 
-Default: a hash of 46: `doc/en/us/standards/header.txt=Source file header template (inherited, 4.1)`, `doc/en/us/bc/5.90/README.md=Upgrade notes for the 5.90 series (2017.08 and later)`, `doc/en/us/features/5.90/README.md=Features of the 5.90 series (2017.08 and later)`, `doc/en/us/bc/6.0/love/CHANGELOG.md=LoveStack features: changelog`, `doc/en/us/bc/6.0/love/FEATURES.md=LoveStack features: the feature list`, `doc/en/us/bc/6.0/love/GETTING_STARTED.md=LoveStack features: getting started`, `doc/en/us/bc/6.0/love/TESTING.md=LoveStack features: testing`, `doc/en/us/bc/6.0/content-jobs.md=Content jobs: upgrade notes`, `doc/en/us/bc/6.0/debug-bar.md=The Exp Debug bar: upgrade notes`, `doc/en/us/bc/4.4/changes-4.4.0.txt=Changes to BC and behavior in version 4.4.0`, `doc/changelogs/2.9/CHANGELOG-2.9-1=Changes in 2.9-1 (first release)`, `doc/changelogs/2.9/CHANGELOG-2.9-2=Changes from 2.9-1 to 2.9-2` ....
+Default: a hash of 46: `doc/eng-us/standards/header.txt=Source file header template (inherited, 4.1)`, `doc/eng-us/bc/5.90/README.md=Upgrade notes for the 5.90 series (2017.08 and later)`, `doc/eng-us/features/5.90/README.md=Features of the 5.90 series (2017.08 and later)`, `doc/eng-us/bc/6.0/love/CHANGELOG.md=LoveStack features: changelog`, `doc/eng-us/bc/6.0/love/FEATURES.md=LoveStack features: the feature list`, `doc/eng-us/bc/6.0/love/GETTING_STARTED.md=LoveStack features: getting started`, `doc/eng-us/bc/6.0/love/TESTING.md=LoveStack features: testing`, `doc/eng-us/bc/6.0/content-jobs.md=Content jobs: upgrade notes`, `doc/eng-us/bc/6.0/debug-bar.md=The Exp Debug bar: upgrade notes`, `doc/eng-us/bc/4.4/changes-4.4.0.txt=Changes to BC and behavior in version 4.4.0`, `doc/changelogs/2.9/CHANGELOG-2.9-1=Changes in 2.9-1 (first release)`, `doc/changelogs/2.9/CHANGELOG-2.9-2=Changes from 2.9-1 to 2.9-2` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -33,16 +33,16 @@ Default: a hash of 46: `doc/en/us/standards/header.txt=Source file header templa
 [TitleSettings]
 # an empty "Titles[]" first replaces the shipped list; without it the items are added
 Titles[]
-Titles[doc/en/us/standards/header.txt]=Source file header template (inherited, 4.1)
-Titles[doc/en/us/bc/5.90/README.md]=Upgrade notes for the 5.90 series (2017.08 and later)
-Titles[doc/en/us/features/5.90/README.md]=Features of the 5.90 series (2017.08 and later)
-Titles[doc/en/us/bc/6.0/love/CHANGELOG.md]=LoveStack features: changelog
-Titles[doc/en/us/bc/6.0/love/FEATURES.md]=LoveStack features: the feature list
-Titles[doc/en/us/bc/6.0/love/GETTING_STARTED.md]=LoveStack features: getting started
-Titles[doc/en/us/bc/6.0/love/TESTING.md]=LoveStack features: testing
-Titles[doc/en/us/bc/6.0/content-jobs.md]=Content jobs: upgrade notes
-Titles[doc/en/us/bc/6.0/debug-bar.md]=The Exp Debug bar: upgrade notes
-Titles[doc/en/us/bc/4.4/changes-4.4.0.txt]=Changes to BC and behavior in version 4.4.0
+Titles[doc/eng-us/standards/header.txt]=Source file header template (inherited, 4.1)
+Titles[doc/eng-us/bc/5.90/README.md]=Upgrade notes for the 5.90 series (2017.08 and later)
+Titles[doc/eng-us/features/5.90/README.md]=Features of the 5.90 series (2017.08 and later)
+Titles[doc/eng-us/bc/6.0/love/CHANGELOG.md]=LoveStack features: changelog
+Titles[doc/eng-us/bc/6.0/love/FEATURES.md]=LoveStack features: the feature list
+Titles[doc/eng-us/bc/6.0/love/GETTING_STARTED.md]=LoveStack features: getting started
+Titles[doc/eng-us/bc/6.0/love/TESTING.md]=LoveStack features: testing
+Titles[doc/eng-us/bc/6.0/content-jobs.md]=Content jobs: upgrade notes
+Titles[doc/eng-us/bc/6.0/debug-bar.md]=The Exp Debug bar: upgrade notes
+Titles[doc/eng-us/bc/4.4/changes-4.4.0.txt]=Changes to BC and behavior in version 4.4.0
 Titles[doc/changelogs/2.9/CHANGELOG-2.9-1]=Changes in 2.9-1 (first release)
 Titles[doc/changelogs/2.9/CHANGELOG-2.9-2]=Changes from 2.9-1 to 2.9-2
 Titles[doc/changelogs/2.9/CHANGELOG-2.9-3]=Changes from 2.9-2 to 2.9-3
@@ -61,7 +61,7 @@ Titles[doc/changelogs/4.7/CHANGELOG-4.6.0-to-4.7.0.txt]=Changes from 4.6.0 to 4.
 
 > Summaries\[<path>\]=<one sentence for the cards and the search results>  
 
-Default: a hash of 3: `doc/en/us/standards/header.txt=The copyright and license header that every PHP file of the inherited 4.x code base started with, kept as the historical template; new files use the docblock header described in the coding standards.`, `doc/en/us/specifications/trunk/personal_trashcan/functional_requirements.txt=Why restoring folders from the shared trash is hard, and the requirements for a trash can per user.`, `doc/changelogs/3.3/unstable/CHANGELOG-desc-3.3.0-2=This release summary file is empty in the original distribution.`.
+Default: a hash of 3: `doc/eng-us/standards/header.txt=The copyright and license header that every PHP file of the inherited 4.x code base started with, kept as the historical template; new files use the docblock header described in the coding standards.`, `doc/eng-us/specifications/trunk/personal_trashcan/functional_requirements.txt=Why restoring folders from the shared trash is hard, and the requirements for a trash can per user.`, `doc/changelogs/3.3/unstable/CHANGELOG-desc-3.3.0-2=This release summary file is empty in the original distribution.`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -69,8 +69,8 @@ Default: a hash of 3: `doc/en/us/standards/header.txt=The copyright and license 
 [TitleSettings]
 # an empty "Summaries[]" first replaces the shipped list; without it the items are added
 Summaries[]
-Summaries[doc/en/us/standards/header.txt]=The copyright and license header that every PHP file of the inherited 4.x code base started with, kept as the historical template; new files use the docblock header described in the coding standards.
-Summaries[doc/en/us/specifications/trunk/personal_trashcan/functional_requirements.txt]=Why restoring folders from the shared trash is hard, and the requirements for a trash can per user.
+Summaries[doc/eng-us/standards/header.txt]=The copyright and license header that every PHP file of the inherited 4.x code base started with, kept as the historical template; new files use the docblock header described in the coding standards.
+Summaries[doc/eng-us/specifications/trunk/personal_trashcan/functional_requirements.txt]=Why restoring folders from the shared trash is hard, and the requirements for a trash can per user.
 Summaries[doc/changelogs/3.3/unstable/CHANGELOG-desc-3.3.0-2]=This release summary file is empty in the original distribution.
 */ ?>
 ```
@@ -81,7 +81,7 @@ Summaries[doc/changelogs/3.3/unstable/CHANGELOG-desc-3.3.0-2]=This release summa
 > title), {name} (its file name, humanized), {fileversion} (the version at the end of the file name) and {dirversion}  
 > (the nearest version directory)  
 
-Default: a list of 2: `doc/changelogs/*/CHANGELOG-desc-*;Release {fileversion} summary: {title}`, `doc/en/us/features/*/event.*;{title} ({dirversion})`.
+Default: a list of 2: `doc/changelogs/*/CHANGELOG-desc-*;Release {fileversion} summary: {title}`, `doc/eng-us/features/*/event.*;{title} ({dirversion})`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -90,7 +90,7 @@ Default: a list of 2: `doc/changelogs/*/CHANGELOG-desc-*;Release {fileversion} s
 # an empty "TitleRules[]" first replaces the shipped list; without it the items are added
 TitleRules[]
 TitleRules[]=doc/changelogs/*/CHANGELOG-desc-*;Release {fileversion} summary: {title}
-TitleRules[]=doc/en/us/features/*/event.*;{title} ({dirversion})
+TitleRules[]=doc/eng-us/features/*/event.*;{title} ({dirversion})
 */ ?>
 ```
 

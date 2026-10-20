@@ -10,10 +10,10 @@ generated: exp:help:examples
 ---
 # exphelp.ini
 
-The shipped settings of `settings/exphelp.ini`: 19 blocks, 102 settings.
+The shipped settings of `settings/exphelp.ini`: 46 blocks, 199 settings.
 
 > The help system of the administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset and  
-> exphelp/report (doc/en/us/features/6.0/help-system.md). It shows the git-tracked text and Markdown files under doc/,  
+> exphelp/report (doc/eng-us/features/6.0/help-system.md). It shows the git-tracked text and Markdown files under doc/,  
 > rendered safely, searchable and filtered by audience. Policy exphelp/read; Anonymous does not have it.  
 >
 > Extensions add their own settings in extension/<ext>/settings/exphelp.ini.append.php: context help entries  
@@ -22,13 +22,40 @@ The shipped settings of `settings/exphelp.ini`: 19 blocks, 102 settings.
 | Block | Settings |
 |---|---|
 | [HelpSettings](HelpSettings.md) | 3 |
-| [IndexSettings](IndexSettings.md) | 11 |
+| [IndexSettings](IndexSettings.md) | 13 |
+| [ProjectFiles](ProjectFiles.md) | 9 |
+| [DocLanguages](DocLanguages.md) | 5 |
 | [AudienceSettings](AudienceSettings.md) | 5 |
 | [CategorySettings](CategorySettings.md) | 5 |
 | [TypeSettings](TypeSettings.md) | 2 |
 | [TitleSettings](TitleSettings.md) | 3 |
-| [SearchSettings](SearchSettings.md) | 10 |
+| [TreeSettings](TreeSettings.md) | 1 |
+| [SearchSettings](SearchSettings.md) | 11 |
 | [DashboardSettings](DashboardSettings.md) | 3 |
+| [LandingSettings](LandingSettings.md) | 7 |
+| [Landing_editor](Landing_editor.md) | 2 |
+| [Landing_admin](Landing_admin.md) | 2 |
+| [Landing_developer](Landing_developer.md) | 3 |
+| [Landing_user](Landing_user.md) | 2 |
+| [Landing_project-manager](Landing_project-manager.md) | 3 |
+| [Landing_sales-marketing](Landing_sales-marketing.md) | 2 |
+| [Landing_partner](Landing_partner.md) | 2 |
+| [Landing_advocate](Landing_advocate.md) | 2 |
+| [Landing_designer](Landing_designer.md) | 2 |
+| [Landing_hosting](Landing_hosting.md) | 2 |
+| [Landing_app-creator](Landing_app-creator.md) | 2 |
+| [Landing_website-creator](Landing_website-creator.md) | 2 |
+| [Landing_supporter](Landing_supporter.md) | 3 |
+| [Landing_sponsor](Landing_sponsor.md) | 3 |
+| [Landing_trainer](Landing_trainer.md) | 2 |
+| [Landing_press](Landing_press.md) | 2 |
+| [Landing_businesses](Landing_businesses.md) | 2 |
+| [Landing_government](Landing_government.md) | 2 |
+| [Landing_customer](Landing_customer.md) | 2 |
+| [CommitFeedSettings](CommitFeedSettings.md) | 9 |
+| [SupportSettings](SupportSettings.md) | 5 |
+| [SupportOrganization_7x](SupportOrganization_7x.md) | 6 |
+| [SupportOrganization_foundation](SupportOrganization_foundation.md) | 6 |
 | [NavigationSettings](NavigationSettings.md) | 1 |
 | [FeaturedSettings](FeaturedSettings.md) | 1 |
 | [ContextHelp](ContextHelp.md) | 5 |
@@ -39,7 +66,7 @@ The shipped settings of `settings/exphelp.ini`: 19 blocks, 102 settings.
 | [SecuritySettings](SecuritySettings.md) | 3 |
 | [License](License.md) | 17 |
 | [PdfSettings](PdfSettings.md) | 8 |
-| [ContentSettings](ContentSettings.md) | 9 |
+| [ContentSettings](ContentSettings.md) | 12 |
 
 - [All examples](../../README.md)
 

@@ -3,13 +3,13 @@ title: exphelp.ini [ContentSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [ContentSettings] in exphelp.ini: Enabled, ParentNode, Audiences, PublicAudiences, Platforms, Areas, AudienceMap, ContextHelpIds ..."
-keywords: exphelp.ini, ContentSettings, INI, setting, Enabled, ParentNode, Audiences, PublicAudiences, Platforms, Areas, AudienceMap, ContextHelpIds, AnonymousContextHelp
+keywords: exphelp.ini, ContentSettings, INI, setting, Enabled, ParentNode, Audiences, PublicAudiences, Platforms, Areas, AudienceMap, ContextHelpIds, AnonymousContextHelp, EbooksOnRelease, ReviewMaxDays, ReviewListLimit
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [ContentSettings]
 
-The block `[ContentSettings]` of `settings/exphelp.ini`, with 9 setting(s).
+The block `[ContentSettings]` of `settings/exphelp.ini`, with 12 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -19,7 +19,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 
 ## Enabled
 
-> Help maintained as content (doc/en/us/features/6.0/help-content.md): topics, manuals, figures and the glossary as content  
+> Help maintained as content (doc/eng-us/features/6.0/help-content.md): topics, manuals, figures and the glossary as content  
 > of the site, created by ./console exp:help:content. Nothing here matters until that command ran.  
 > disabled: exphelp/topic, exphelp/manual and exphelp/context are 404 and the help shows no topics  
 
@@ -163,6 +163,10 @@ ContextHelpIds[content/history]=content.versions
 
 ## AnonymousContextHelp
 
+> The help\_ids other clients open (a mobile app, a site's JavaScript), so "exp:help:content check" reports one that no  
+> topic has or whose topic is not Released (client.help-id-unknown, client.help-id-not-released). None by default.  
+> ClientHelpIds\[\]  
+> ClientHelpIds\[\]=account.log-in  
 > enabled: the roles step of exp:help:content also gives Anonymous exphelp/context, so the JSON of public, Released  
 > topics can be read without login. Off by default: a security-relevant choice of each site.  
 
@@ -173,6 +177,53 @@ Default: `disabled`.
 # settings/override/exphelp.ini.append.php
 [ContentSettings]
 AnonymousContextHelp=disabled
+*/ ?>
+```
+
+## EbooksOnRelease
+
+> enabled: when an object of the help is set to Released, the e-books (EPUB, PDF) of every Released manual that  
+> contains it are built again and stored as file objects below E-books (remote\_id help-ebooks), a new version when  
+> the book changed (expHelpContentEbooks::onStateAssign(), called when states are assigned).  
+> disabled: only ./console exp:help:content ebooks stores them.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+EbooksOnRelease=enabled
+*/ ?>
+```
+
+## ReviewMaxDays
+
+> Overdue reviews, listed on the help's dashboard to who can edit the topic or assign its state, and by  
+> ./console exp:help:content review: a topic whose review date has passed, or that has been in Review longer than  
+> ReviewMaxDays days since it last changed (the kernel keeps no date of a state change).  
+
+Default: `14`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+ReviewMaxDays=14
+*/ ?>
+```
+
+## ReviewListLimit
+
+> At most this many overdue topics on the dashboard (the rest are counted)  
+
+Default: `10`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+ReviewListLimit=10
 */ ?>
 ```
 

@@ -3,13 +3,13 @@ title: exphelp.ini [SearchSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [SearchSettings] in exphelp.ini: ResultLimit, TitleBoost, HeadingBoost, BodyBoost, PathBoost, KeywordBoost, TitleMatchBoost, TypeBoost ..."
-keywords: exphelp.ini, SearchSettings, INI, setting, ResultLimit, TitleBoost, HeadingBoost, BodyBoost, PathBoost, KeywordBoost, TitleMatchBoost, TypeBoost, VersionBoost, StopWords
+keywords: exphelp.ini, SearchSettings, INI, setting, ResultLimit, TitleBoost, HeadingBoost, BodyBoost, PathBoost, KeywordBoost, TitleMatchBoost, TypeBoost, VersionBoost, AudienceBoost, StopWords
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [SearchSettings]
 
-The block `[SearchSettings]` of `settings/exphelp.ini`, with 10 setting(s).
+The block `[SearchSettings]` of `settings/exphelp.ini`, with 11 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -113,9 +113,9 @@ TitleMatchBoost=1.4
 
 > Factor per page type (expHelpDocumentIndex types): help pages and guides rank above reference material with the  
 > same words, changelogs and history below it  
-> The generated reference examples (doc/en/us/examples/, ./console exp:help:examples): thousands of short pages that  
+> The generated reference examples (doc/eng-us/examples/, ./console exp:help:examples): thousands of short pages that  
 > repeat setting, operator and view names; below the written pages that explain the same words  
-> the generated pattern catalogue (doc/en/us/standards/patterns/) lists thousands of class names: below the written pages  
+> the generated pattern catalogue (doc/eng-us/standards/patterns/) lists thousands of class names: below the written pages  
 
 Default: a hash of 7: `help=1.5`, `guide=1.3`, `specification=0.8`, `changelog=0.45`, `history=0.6`, `generated=0.5`, `catalogue=0.5`.
 
@@ -150,6 +150,24 @@ VersionBoost[]
 VersionBoost[3]=0.5
 VersionBoost[4]=0.6
 VersionBoost[5]=0.75
+*/ ?>
+```
+
+## AudienceBoost
+
+> Factor per audience for the pages that are for it (the lowest when a page has several); not applied while the  
+> search is filtered to that audience. The trainers' lessons repeat the subjects of the editor and administrator pages,  
+> so they rank below them in a general search and on their own under the Trainers filter.  
+
+Default: a hash of 1: `trainer=0.6`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+# an empty "AudienceBoost[]" first replaces the shipped list; without it the items are added
+AudienceBoost[]
+AudienceBoost[trainer]=0.6
 */ ?>
 ```
 

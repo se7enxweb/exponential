@@ -2,14 +2,14 @@
 title: exp:exphelpexamples
 audience: developer, admin
 category: examples
-summary: "Generate the reference examples of the help below doc/en/us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points."
+summary: "Generate the reference examples of the help below doc/eng-us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points."
 keywords: exp:exphelpexamples, exphelpexamples, console, command, CLI, exphelpexamples.php, exp:help:examples
 type: generated
 generated: exp:help:examples
 ---
 # exp:exphelpexamples
 
-Generate the reference examples of the help below doc/en/us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points.
+Generate the reference examples of the help below doc/eng-us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points.
 
 Script `bin/php/exphelpexamples.php`, code in `kernel/private/classes/commands/exphelpexamples.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -22,7 +22,7 @@ php bin/php/exphelpexamples.php --help
 ## Help text
 
 ```text
-The generated reference examples of the help (doc/en/us/examples/)
+The generated reference examples of the help (doc/eng-us/examples/)
 
 ./console exp:help:examples                      write the pages of every area (only changed files are written)
 ./console exp:help:examples --area=datatypes     only this area (repeat with a comma: --area=datatypes,cronjobs)
@@ -44,7 +44,7 @@ Exit code: 0 fine, 1 --check found differences, 2 error.
 | `--area` | required | Only these areas, comma separated (template-operators, template-functions, fetch-functions, module-views, policies, ini-settings, datatypes, workflow-events, cronjobs, commands, extension-points) |
 | `--check` |  | Compare the generated pages with the files and change nothing; exit 1 on a difference |
 | `--list` |  | List the areas with their page counts |
-| `--out` | required | The output directory relative to the installation root (default doc/en/us/examples) |
+| `--out` | required | The output directory relative to the installation root (default doc/eng-us/examples) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

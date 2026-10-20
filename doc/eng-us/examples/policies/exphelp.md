@@ -31,7 +31,7 @@ $role->appendPolicy( 'exphelp', 'context' );
 
 ## read
 
-Checked by the views: [asset](../module-views/exphelp/asset.md), [contents](../module-views/exphelp/contents.md), [dashboard](../module-views/exphelp/dashboard.md), [manual](../module-views/exphelp/manual.md), [pdf](../module-views/exphelp/pdf.md), [report](../module-views/exphelp/report.md), [search](../module-views/exphelp/search.md), [topic](../module-views/exphelp/topic.md), [viewer](../module-views/exphelp/viewer.md).
+Checked by the views: [asset](../module-views/exphelp/asset.md), [audience](../module-views/exphelp/audience.md), [contents](../module-views/exphelp/contents.md), [dashboard](../module-views/exphelp/dashboard.md), [extensions](../module-views/exphelp/extensions.md), [manual](../module-views/exphelp/manual.md), [pdf](../module-views/exphelp/pdf.md), [report](../module-views/exphelp/report.md), [search](../module-views/exphelp/search.md), [topic](../module-views/exphelp/topic.md), [viewer](../module-views/exphelp/viewer.md).
 
 No limitations: the policy is all or nothing.
 

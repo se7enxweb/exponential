@@ -2,14 +2,14 @@
 title: package.ini [RepositorySettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [RepositorySettings] in package.ini: RepositoryDirectory, RemotePackagesIndexURL, RemotePackagesIndexURLBase, Vendor, DownloadAttempts, DownloadRetryDelays, DownloadTimeout, DownloadConnectTimeout"
-keywords: package.ini, RepositorySettings, INI, setting, RepositoryDirectory, RemotePackagesIndexURL, RemotePackagesIndexURLBase, Vendor, DownloadAttempts, DownloadRetryDelays, DownloadTimeout, DownloadConnectTimeout
+summary: "The settings of [RepositorySettings] in package.ini: RepositoryDirectory, RemotePackagesIndexURL, RemotePackagesIndexURLBase, AdditionalRemotePackagesIndexURLs, RemotePackagesIndexSources, Vendor, DownloadAttempts, DownloadRetryDelays ..."
+keywords: package.ini, RepositorySettings, INI, setting, RepositoryDirectory, RemotePackagesIndexURL, RemotePackagesIndexURLBase, AdditionalRemotePackagesIndexURLs, RemotePackagesIndexSources, Vendor, DownloadAttempts, DownloadRetryDelays, DownloadTimeout, DownloadConnectTimeout
 type: generated
 generated: exp:help:examples
 ---
 # package.ini [RepositorySettings]
 
-The block `[RepositorySettings]` of `settings/package.ini`, with 8 setting(s).
+The block `[RepositorySettings]` of `settings/package.ini`, with 10 setting(s).
 
 Never edit `settings/package.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -50,7 +50,9 @@ RemotePackagesIndexURL=https://exponential.packages.exponential.earth/exponentia
 
 > If RemotePackagesIndexURL is empty, the RemotePackagesIndexURLBase setting  
 > will be used, appended with the Exponential version numbers, like  
-> RemotePackagesIndexURLBase/x.y/x.y.zalpha1  
+> RemotePackagesIndexURLBase/x.y/x.y.z for a stable release (6.0/6.0.15) and  
+> RemotePackagesIndexURLBase/x.y/x.y.zalpha1 for any other  
+> (ExponentialSDK::packageServerPath())  
 
 Default: `https://exponential.packages.exponential.earth/exponential`.
 
@@ -59,6 +61,45 @@ Default: `https://exponential.packages.exponential.earth/exponential`.
 # settings/override/package.ini.append.php
 [RepositorySettings]
 RemotePackagesIndexURLBase=https://exponential.packages.exponential.earth/exponential
+*/ ?>
+```
+
+## AdditionalRemotePackagesIndexURLs
+
+> More package servers for the setup wizard, the kickstarter and exp:install (all three  
+> read the index the same way, eZStepSiteTypes). Each is a folder with an index.xml, an  
+> http:// or https:// address. They are read after RemotePackagesIndexURL: a package an  
+> earlier index lists is kept as it is, a further server only adds the packages the  
+> earlier ones do not have, and a server that cannot be read is skipped.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/package.ini.append.php
+[RepositorySettings]
+# an empty "AdditionalRemotePackagesIndexURLs[]" first replaces the shipped list; without it the items are added
+AdditionalRemotePackagesIndexURLs[]
+*/ ?>
+```
+
+## RemotePackagesIndexSources
+
+> Lists of further package servers kept in other settings files, as  
+> <file>.ini;<block>;<setting>, the setting an array of <name>=<URL>. The default reads  
+> the servers added on ezupdate's Package servers page (Setup > Updates and packages),  
+> which it keeps in settings/override/ezupdate.ini.append.php. Empty the list to read  
+> only the servers named above.  
+
+Default: a list of 1: `ezupdate.ini;PackageServerSettings;Servers`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/package.ini.append.php
+[RepositorySettings]
+# an empty "RemotePackagesIndexSources[]" first replaces the shipped list; without it the items are added
+RemotePackagesIndexSources[]
+RemotePackagesIndexSources[]=ezupdate.ini;PackageServerSettings;Servers
 */ ?>
 ```
 

@@ -31,9 +31,13 @@ The help system: the index of the documentation, its search and its link check
 ./console exp:help show guides/caches.md     the metadata and headings of one page
 ./console exp:help check                     check the links and images of every page (--below=guides/)
 ./console exp:help pdf help/searching.md      the page as a PDF file (--out=file.pdf, --base-url=https://host)
+./console exp:help maps --language=ger-de    check doc/ger-de/.paths.json and .dirnames.json; --fix writes the
+                                             union of both sides of a git conflict (and of --paths=, --dirnames=)
 
 Only git-tracked files below doc/ (and the doc/ of the extensions in exphelp.ini ExtensionDocDirs[]) are
 pages; nothing is changed except the cache in var/<site>/cache/exphelp. --json prints one JSON document.
+index builds the index of every language of exphelp.ini [DocLanguages] (doc/eng-us/, doc/ger-de/ ...);
+--language=ger-de limits it to one, and makes search, show, check and pdf read that language.
 Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing was found, 2 error.
 ```
 
@@ -53,6 +57,10 @@ Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing
 | `--strict` |  | check: exit 1 on warnings too |
 | `--out` | required | pdf: the file to write (default: the page title as file name, in the current directory) |
 | `--base-url` | required | pdf: scheme and host for the links and the page address (https://www.example.com) |
+| `--language` | required | the documentation language: a directory of exphelp.ini [DocLanguages] Directories[] (eng-us, ger-de; the old en/us and de are accepted) |
+| `--fix` |  | maps: write .paths.json and .dirnames.json as the union of their entries, sorted |
+| `--paths` | required | maps --fix: also merge the entries of this JSON file into .paths.json |
+| `--dirnames` | required | maps --fix: also merge the entries of this JSON file into .dirnames.json |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

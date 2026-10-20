@@ -20,12 +20,12 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 ## Providers
 
 > Context help: the "?" link in the header of the administration opens the page that answers "help for this page"  
-> (expHelpContextRegistry; doc/en/us/features/6.0/help-system.md, "Context help"). One entry per key:  
+> (expHelpContextRegistry; doc/eng-us/features/6.0/help-system.md, "Context help"). One entry per key:  
 >   Map\[<module>/<view>\]=<page id>\[#<heading anchor>\]  
 >   Map\[<module>\]=...                     every view of the module without an entry of its own  
 >   Map\[<design>:<module>/<view>\]=...     only in that design (admin4l, editor, admin, adminui ...); wins over the  
 >   Map\[<design>:<module>\]=...            same key without a design  
-> A page id is the path below doc/ (ext/<extension>/<path> for an extension's doc directory, \[IndexSettings\]  
+> A page id is the path below doc/eng-us/, the same in every language (ext/<extension>/<path> for an extension's doc directory, \[IndexSettings\]  
 > ExtensionDocDirs\[\]); the anchor is the heading's anchor as the viewer makes it. The lookup: Providers\[\], then  
 > design:module/view, module/view, design:module, module, then the help dashboard. An entry whose page the help does  
 > not serve (not written yet, not git-tracked, outside doc/) is skipped, so the next key answers.  

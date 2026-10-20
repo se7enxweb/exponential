@@ -77,7 +77,11 @@ HandlerAlias[ezinstallscript]=eZInstallScriptPackageHandler
 
 ## TypeList
 
-Default: a hash of 4: `contentobject=Content object`, `contentclass=Content class`, `sitestyle=Site style`, `site=Site`.
+> Packages of extensions: the extension export wizard makes them, and the package server has  
+> several (ezwebin\_extension ...). Listed since 6.0.15, so the Type limitation of the package  
+> policies can name them.  
+
+Default: a hash of 5: `contentobject=Content object`, `contentclass=Content class`, `sitestyle=Site style`, `site=Site`, `extension=Extension`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -89,6 +93,7 @@ TypeList[contentobject]=Content object
 TypeList[contentclass]=Content class
 TypeList[sitestyle]=Site style
 TypeList[site]=Site
+TypeList[extension]=Extension
 */ ?>
 ```
 
