@@ -31,7 +31,7 @@ Oft besser: **Use vertical whitespace** im Reiter **Design** der Blöcke selbst 
 
 ## Mit Templates
 
-1. Fügen Sie die Abstände im Stylesheet Ihrer Design-Erweiterung hinzu, an den Klassen der Blöcke ([Ihre Blöcke gestalten](../../../../../eng-us/help/build-two-ways/styling-your-blocks.md)).
+1. Fügen Sie die Abstände im Stylesheet Ihrer Design-Erweiterung hinzu, an den Klassen der Blöcke ([Ihre Blöcke gestalten](../../bloecke-gestalten.md)).
 
 ## Welchen Weg Sie wählen
 
@@ -43,8 +43,8 @@ Abstände sind Design: Ziehen Sie die Leerraum-Option oder CSS vor; den Spacer-B
 
 ## Verwandte Seiten
 
-- [Der Reiter Design](../../../../../eng-us/help/build-two-ways/design-tab-options.md)
-- [Ihre Blöcke gestalten](../../../../../eng-us/help/build-two-ways/styling-your-blocks.md)
+- [Der Reiter Design](../../der-reiter-design.md)
+- [Ihre Blöcke gestalten](../../bloecke-gestalten.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

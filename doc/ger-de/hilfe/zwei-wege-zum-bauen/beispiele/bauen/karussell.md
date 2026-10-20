@@ -43,7 +43,7 @@ Lassen Sie Autoplay auf 0, solange es keine Pausensteuerung gibt.
 ## Verwandte Seiten
 
 - [Manuelle und dynamische Sammlungen](../../../../../eng-us/help/build-two-ways/manual-and-dynamic-collections.md)
-- [Der Reiter Design](../../../../../eng-us/help/build-two-ways/design-tab-options.md)
+- [Der Reiter Design](../../der-reiter-design.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

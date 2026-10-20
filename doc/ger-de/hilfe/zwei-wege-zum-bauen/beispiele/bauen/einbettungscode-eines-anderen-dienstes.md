@@ -43,7 +43,7 @@ Einmalige Einbettungen durch vertrauenswürdige Redakteure: der Block. Alles, wa
 
 ## Verwandte Seiten
 
-- [Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)
+- [Eigene Template-Blöcke](../../eigene-template-bloecke.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

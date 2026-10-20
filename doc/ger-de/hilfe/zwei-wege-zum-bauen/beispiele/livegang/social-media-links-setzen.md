@@ -38,7 +38,7 @@ Inhalte für die Adressen; ein Template nur für ein neues Netzwerk.
 
 ## Verwandte Seiten
 
-- [Wie die Fußzeile aufgebaut ist](../../../../../eng-us/help/build-two-ways/how-the-footer-is-built.md)
+- [Wie die Fußzeile aufgebaut ist](../../wie-die-fusszeile-aufgebaut-ist.md)
 - [Beispiele zum Livegang, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

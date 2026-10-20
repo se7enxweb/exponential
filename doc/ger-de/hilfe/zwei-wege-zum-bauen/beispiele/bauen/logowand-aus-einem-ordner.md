@@ -31,7 +31,7 @@ Die Medien-Bibliothek der Site hat für solche Bilder einen Ordner **Clients & P
 
 ## Mit Templates
 
-1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/partner_logos.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `partner_logos` ist ([Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)).
+1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/partner_logos.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `partner_logos` ist ([Eigene Template-Blöcke](../../eigene-template-bloecke.md)).
 
 ```smarty
 {def $logos = fetch( 'content', 'list', hash( 'parent_node_id', <folder node id>, 'class_filter_type', 'include', 'class_filter_array', array( 'image' ), 'limit', 12 ) )}
@@ -53,7 +53,7 @@ Beide lesen den Ordner, Redakteure fügen also ein Logo hinzu, indem sie dort ei
 
 ## Verwandte Seiten
 
-- [Der Reiter Design](../../../../../eng-us/help/build-two-ways/design-tab-options.md)
+- [Der Reiter Design](../../der-reiter-design.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

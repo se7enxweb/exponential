@@ -31,7 +31,7 @@ About, Hero, Features und Lead teilen sich einen Handler (`expLayoutsComponentBl
 
 ## Mit Templates
 
-1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/about_us.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `about_us` ist ([Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)).
+1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/about_us.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `about_us` ist ([Eigene Template-Blöcke](../../eigene-template-bloecke.md)).
 2. Lesen Sie den Text aus einer Inhaltsseite, damit er dort bearbeitet wird, wo er hingehört, zum Beispiel aus einer `ng_landing_page` „About us“ mit `title`, `full_intro` und `image`.
 
 ```smarty
@@ -55,8 +55,8 @@ Ein fester Text, der sich selten ändert, passt auf beide Arten; der Block hält
 
 ## Verwandte Seiten
 
-- [Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)
-- [Der Reiter Design](../../../../../eng-us/help/build-two-ways/design-tab-options.md)
+- [Eigene Template-Blöcke](../../eigene-template-bloecke.md)
+- [Der Reiter Design](../../der-reiter-design.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -39,7 +39,7 @@ Teil der Migration.
 ## Verwandte Seiten
 
 - [Layouts exportieren und importieren](../../../../../eng-us/help/build-two-ways/export-and-import-layouts.md)
-- [exp:ini für Site-Entwickler](../../../../../eng-us/help/build-two-ways/exp-ini-for-site-builders.md)
+- [exp:ini für Site-Entwickler](../../exp-ini-fuer-site-entwickler.md)
 - [Beispiele zur Migration, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

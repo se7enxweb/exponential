@@ -38,7 +38,7 @@ Gehen Sie sie direkt nach der Migration und am nächsten Tag noch einmal durch.
 
 ## Verwandte Seiten
 
-- [Warum erscheint meine Änderung nicht?](../../../../../eng-us/help/build-two-ways/why-doesnt-my-change-appear.md)
+- [Warum erscheint meine Änderung nicht?](../../warum-erscheint-meine-aenderung-nicht.md)
 - [Beispiele zur Migration, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

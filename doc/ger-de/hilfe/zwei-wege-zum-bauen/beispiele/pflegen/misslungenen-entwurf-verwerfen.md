@@ -30,7 +30,7 @@ Nach einer verunglückten Bearbeitung von vorn beginnen.
 
 ## Welchen Weg Sie wählen
 
-Vor dem Veröffentlichen verwerfen; nach dem Veröffentlichen [ein Layout zurücksetzen](../../../../../eng-us/help/build-two-ways/roll-back-a-layout.md).
+Vor dem Veröffentlichen verwerfen; nach dem Veröffentlichen [ein Layout zurücksetzen](../../layout-zuruecksetzen.md).
 
 ## Prüfen
 
@@ -39,7 +39,7 @@ Vor dem Veröffentlichen verwerfen; nach dem Veröffentlichen [ein Layout zurüc
 ## Verwandte Seiten
 
 - [Der Layout-Editor, ein Rundgang](../../../../../eng-us/help/build-two-ways/layouts-editor-tour.md)
-- [Ein Layout zurücksetzen](../../../../../eng-us/help/build-two-ways/roll-back-a-layout.md)
+- [Ein Layout zurücksetzen](../../layout-zuruecksetzen.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

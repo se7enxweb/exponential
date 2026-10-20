@@ -30,7 +30,7 @@ Ein Layout lässt sich immer zurücksetzen.
 
 ## Welchen Weg Sie wählen
 
-Der Export ist der einzige Weg zurück zu einer veröffentlichten Version; siehe [Ein Layout zurücksetzen](../../../../../eng-us/help/build-two-ways/roll-back-a-layout.md).
+Der Export ist der einzige Weg zurück zu einer veröffentlichten Version; siehe [Ein Layout zurücksetzen](../../layout-zuruecksetzen.md).
 
 ## Prüfen
 

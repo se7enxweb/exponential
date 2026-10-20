@@ -26,7 +26,7 @@ Neue Farben, Abstände und Schrift, keine Änderungen an Templates.
 
 ## Mit Templates
 
-1. Nehmen Sie Ihr Stylesheet in die Liste des Media-Designs auf, indem Sie `pagelayout/head/style.tpl` überschreiben ([Ihre Blöcke gestalten](../../../../../eng-us/help/build-two-ways/styling-your-blocks.md)), und gestalten Sie die Klassen, die der Wrapper bereits hat.
+1. Nehmen Sie Ihr Stylesheet in die Liste des Media-Designs auf, indem Sie `pagelayout/head/style.tpl` überschreiben ([Ihre Blöcke gestalten](../../bloecke-gestalten.md)), und gestalten Sie die Klassen, die der Wrapper bereits hat.
 
 ## Welchen Weg Sie wählen
 
@@ -38,7 +38,7 @@ Zuerst CSS; überschreiben Sie Templates nur dort, wo sich die Struktur ändern 
 
 ## Verwandte Seiten
 
-- [Ihre Blöcke gestalten](../../../../../eng-us/help/build-two-ways/styling-your-blocks.md)
+- [Ihre Blöcke gestalten](../../bloecke-gestalten.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

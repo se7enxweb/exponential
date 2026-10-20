@@ -31,7 +31,7 @@ Der Hero wird mit `explayouts/block/hero.tpl` des Standard-Designs von Layouts d
 
 ## Mit Templates
 
-1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/hero_spring.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `hero_spring` ist ([Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)).
+1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/hero_spring.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `hero_spring` ist ([Eigene Template-Blöcke](../../eigene-template-bloecke.md)).
 2. Verbinden Sie Bild und Text mit Inhalten, statt sie einzutippen: Holen Sie den Knoten und geben Sie seine Felder aus.
 
 ```smarty
@@ -56,7 +56,7 @@ Redakteure ändern Kampagnen-Heros oft: Verwenden Sie den Hero-Block. Verwenden 
 ## Verwandte Seiten
 
 - [Eine Kampagnenseite bauen, von Anfang bis Ende](../../../../../eng-us/help/build-two-ways/build-a-campaign-page.md)
-- [Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)
+- [Eigene Template-Blöcke](../../eigene-template-bloecke.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

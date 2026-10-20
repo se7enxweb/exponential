@@ -41,7 +41,7 @@ Der Block für einen Teaser, den ein Redakteur auf ein anderes Ziel richten kann
 
 ## Verwandte Seiten
 
-- [Eine Knoten-ID finden](../../../../../eng-us/help/build-two-ways/find-a-node-id.md)
+- [Eine Knoten-ID finden](../../knoten-id-finden.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

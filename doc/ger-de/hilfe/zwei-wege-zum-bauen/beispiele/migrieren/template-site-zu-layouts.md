@@ -38,7 +38,7 @@ So ist das Theme von Fit & Healthy gebaut: Template-Blöcke tragen den alten Rah
 
 ## Verwandte Seiten
 
-- [Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)
+- [Eigene Template-Blöcke](../../eigene-template-bloecke.md)
 - [Gemeinsame Layouts und Zonenverknüpfung](../../../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md)
 - [Beispiele zur Migration, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

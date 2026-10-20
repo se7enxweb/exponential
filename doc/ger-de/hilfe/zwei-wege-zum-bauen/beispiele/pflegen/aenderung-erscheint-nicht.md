@@ -22,7 +22,7 @@ Finden Sie heraus, warum eine Bearbeitung nicht auf der Site steht.
 
 ## Im Layout-Editor
 
-1. Entwurf? Verknüpfte Zone? Ein anderes Layout? ([Warum erscheint meine Änderung nicht?](../../../../../eng-us/help/build-two-ways/why-doesnt-my-change-appear.md))
+1. Entwurf? Verknüpfte Zone? Ein anderes Layout? ([Warum erscheint meine Änderung nicht?](../../warum-erscheint-meine-aenderung-nicht.md))
 
 ## Einstellungen und Templates
 
@@ -38,7 +38,7 @@ Arbeiten Sie die Liste von oben nach unten ab.
 
 ## Verwandte Seiten
 
-- [Warum erscheint meine Änderung nicht?](../../../../../eng-us/help/build-two-ways/why-doesnt-my-change-appear.md)
+- [Warum erscheint meine Änderung nicht?](../../warum-erscheint-meine-aenderung-nicht.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

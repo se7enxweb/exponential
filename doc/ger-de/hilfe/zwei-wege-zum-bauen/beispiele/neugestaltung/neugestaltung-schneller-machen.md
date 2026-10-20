@@ -26,7 +26,7 @@ Die neue Startseite wird nicht langsamer dargestellt als die alte.
 
 ## Messen
 
-1. Messen Sie die erste Darstellung nach dem Leeren der Templates und die Antwort aus dem Cache, wie unter [Gemessene Schritte und Zeiten](../../../../../eng-us/help/build-two-ways/measured-steps-and-times.md).
+1. Messen Sie die erste Darstellung nach dem Leeren der Templates und die Antwort aus dem Cache, wie unter [Gemessene Schritte und Zeiten](../../gemessene-schritte-und-zeiten.md).
 
 ## Welchen Weg Sie wählen
 
@@ -38,7 +38,7 @@ Messen, nicht raten.
 
 ## Verwandte Seiten
 
-- [Gemessene Schritte und Zeiten](../../../../../eng-us/help/build-two-ways/measured-steps-and-times.md)
+- [Gemessene Schritte und Zeiten](../../gemessene-schritte-und-zeiten.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

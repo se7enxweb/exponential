@@ -26,7 +26,7 @@ Redakteure können eine kompakte Liste wählen, wo sie wollen; die alten Ansicht
 
 ## Mit Templates
 
-1. `[BlockDefinition_list] ViewTypes[]=list_compact` in der `explayouts.ini.append.php` Ihrer Erweiterung; `explayouts/block/list/list_compact.tpl` in Ihrem Design ([Einen Ansichtstyp hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-view-type.md)).
+1. `[BlockDefinition_list] ViewTypes[]=list_compact` in der `explayouts.ini.append.php` Ihrer Erweiterung; `explayouts/block/list/list_compact.tpl` in Ihrem Design ([Einen Ansichtstyp hinzufügen](../../ansichtstyp-hinzufuegen.md)).
 
 ## Welchen Weg Sie wählen
 
@@ -38,7 +38,7 @@ Neugestaltungen, die nur hinzufügen, lassen vorhandene Seiten unverändert.
 
 ## Verwandte Seiten
 
-- [Einen Ansichtstyp hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-view-type.md)
+- [Einen Ansichtstyp hinzufügen](../../ansichtstyp-hinzufuegen.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -31,7 +31,7 @@ Das Standard-Template schreibt `<div class="slb slb-alert alert alert-<type>">`.
 
 ## Mit Templates
 
-1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/closure_notice.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `closure_notice` ist ([Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)).
+1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/closure_notice.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `closure_notice` ist ([Eigene Template-Blöcke](../../eigene-template-bloecke.md)).
 
 ## Welchen Weg Sie wählen
 
@@ -44,7 +44,7 @@ Ein Hinweis, den Redakteure ein- und ausschalten: der Block. Ein Hinweis, der vo
 ## Verwandte Seiten
 
 - [Gemeinsame Layouts und Zonenverknüpfung](../../../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md)
-- [Der Reiter Design](../../../../../eng-us/help/build-two-ways/design-tab-options.md)
+- [Der Reiter Design](../../der-reiter-design.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

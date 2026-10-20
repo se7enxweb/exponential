@@ -30,7 +30,7 @@ Entscheidungen zwischen den beiden Wegen auf Grundlage Ihrer eigenen Zahlen.
 
 ## Welchen Weg Sie wählen
 
-Wiederholen Sie jede Messung dreimal, wie in [Gemessene Schritte und Zeiten](../../../../../eng-us/help/build-two-ways/measured-steps-and-times.md).
+Wiederholen Sie jede Messung dreimal, wie in [Gemessene Schritte und Zeiten](../../gemessene-schritte-und-zeiten.md).
 
 ## Prüfen
 
@@ -38,7 +38,7 @@ Wiederholen Sie jede Messung dreimal, wie in [Gemessene Schritte und Zeiten](../
 
 ## Verwandte Seiten
 
-- [Gemessene Schritte und Zeiten](../../../../../eng-us/help/build-two-ways/measured-steps-and-times.md)
+- [Gemessene Schritte und Zeiten](../../gemessene-schritte-und-zeiten.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

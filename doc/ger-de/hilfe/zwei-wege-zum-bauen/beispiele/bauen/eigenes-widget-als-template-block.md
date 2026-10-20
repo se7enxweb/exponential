@@ -22,7 +22,7 @@ Eine Tabelle „Kalorien pro Training“, aus Inhalten berechnet und von Redakte
 
 ## Mit Templates
 
-1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/calories_table.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `calories_table` ist ([Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)).
+1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/calories_table.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `calories_table` ist ([Eigene Template-Blöcke](../../eigene-template-bloecke.md)).
 2. Holen Sie die Daten und rechnen Sie im Template, oder fügen Sie für echte Logik einen Template-Operator in Ihrer Erweiterung hinzu.
 
 ## Dann im Layout-Editor
@@ -42,7 +42,7 @@ Hier treffen sich die beiden Wege: der Code vom Entwickler, die Platzierung vom 
 
 ## Verwandte Seiten
 
-- [Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)
+- [Eigene Template-Blöcke](../../eigene-template-bloecke.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

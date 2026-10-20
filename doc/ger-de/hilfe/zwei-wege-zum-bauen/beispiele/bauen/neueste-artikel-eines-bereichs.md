@@ -32,7 +32,7 @@ Schritt für Schritt mit Bildschirmfotos: [Manuelle und dynamische Sammlungen](.
 
 ## Mit Templates
 
-1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/latest_fitness.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `latest_fitness` ist ([Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)). Das getestete Template steht auf jener Seite.
+1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/latest_fitness.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `latest_fitness` ist ([Eigene Template-Blöcke](../../eigene-template-bloecke.md)). Das getestete Template steht auf jener Seite.
 
 ## Welchen Weg Sie wählen
 
@@ -45,7 +45,7 @@ Redakteure können die dynamische Liste selbst auf ein neues Ziel richten; das T
 ## Verwandte Seiten
 
 - [Manuelle und dynamische Sammlungen](../../../../../eng-us/help/build-two-ways/manual-and-dynamic-collections.md)
-- [Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)
+- [Eigene Template-Blöcke](../../eigene-template-bloecke.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

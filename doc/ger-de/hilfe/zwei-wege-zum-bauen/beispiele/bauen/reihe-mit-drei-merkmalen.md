@@ -32,7 +32,7 @@ Der Block **Features** (Gruppe *Components*) ist die Alternative aus einem einzi
 
 ## Mit Templates
 
-1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/features_three.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `features_three` ist ([Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)).
+1. Schreiben Sie `extension/mysite/design/media/templates/explayouts/tpl_block/features_three.tpl` in Ihrer Design-Erweiterung, leeren Sie den Template-Cache und platzieren Sie es mit einem **Template block**, dessen **Template name** `features_three` ist ([Eigene Template-Blöcke](../../eigene-template-bloecke.md)).
 2. Gehen Sie in einer Schleife über drei Inhaltsobjekte (zum Beispiel die Kinder eines Ordners „Features“).
 
 ```smarty
@@ -55,8 +55,8 @@ Mit Spalten und Cards kann ein Redakteur eine Card ändern, ohne die anderen anz
 
 ## Verwandte Seiten
 
-- [Der Reiter Design](../../../../../eng-us/help/build-two-ways/design-tab-options.md)
-- [Eigene Template-Blöcke](../../../../../eng-us/help/build-two-ways/template-blocks.md)
+- [Der Reiter Design](../../der-reiter-design.md)
+- [Eigene Template-Blöcke](../../eigene-template-bloecke.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -38,7 +38,7 @@ Ein Stylesheet, kein Inline-CSS.
 
 ## Verwandte Seiten
 
-- [Ihre Blöcke gestalten](../../../../../eng-us/help/build-two-ways/styling-your-blocks.md)
+- [Ihre Blöcke gestalten](../../bloecke-gestalten.md)
 - [Beispiele zur Migration, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

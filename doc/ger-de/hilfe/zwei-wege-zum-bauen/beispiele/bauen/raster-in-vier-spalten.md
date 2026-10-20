@@ -44,7 +44,7 @@ Die Spalten sind eine Design-Option; ändern Sie das Markup aller vierspaltigen 
 
 ## Verwandte Seiten
 
-- [Der Reiter Design](../../../../../eng-us/help/build-two-ways/design-tab-options.md)
+- [Der Reiter Design](../../der-reiter-design.md)
 - [Wie ein Block seinen Templates zugeordnet wird](../../../../../eng-us/help/build-two-ways/block-to-template-map.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
