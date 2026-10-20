@@ -43,7 +43,15 @@ class Unactivated extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
 
         $tpl = \eZTemplate::factory();
-        $search = \expUnactivatedUsers::normaliseSearch( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
+        // The search form without scripts is posted (q): answered with 303 to its /(q)/... address
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
+        {
+            $sortField = \expUnactivatedUsers::normaliseSort( isset( $Params['SortField'] ) ? $Params['SortField'] : '' );
+            $sortOrder = \expUnactivatedUsers::normaliseOrder( isset( $Params['SortOrder'] ) ? $Params['SortOrder'] : '' );
+            \expViewParameters::redirect( 'user/unactivated/' . rawurlencode( $sortField ) . '/' . rawurlencode( $sortOrder )
+                                          . \expViewParameters::suffix( array( 'q' => \expUnactivatedUsers::normaliseSearch( \expViewParameters::posted( $_POST, 'q' ) ) ) ) );
+        }
+        $search = \expUnactivatedUsers::normaliseSearch( \expViewParameters::text( $Params, 'q', 'Query' ) );
 
         $success = array();
         $errors = array();
@@ -121,7 +129,7 @@ class Unactivated extends \Exponential\Runnable\ModuleView
         }
         else if ( $Module->isCurrentAction( 'RemoveAllUsers' ) )
         {
-            // Every unactivated user, or every one the search of the page matches (?q= in the form's address),
+            // Every unactivated user, or every one the search of the page matches (/(q)/ in the form's address),
             // in batches, each checked again just before; never the anonymous user, "admin" or the user removing
             $tpl->setVariable( 'remove_all_result', \expUnactivatedUsers::removeAll( $search, \eZUser::currentUserID() ) );
         }
@@ -170,7 +178,7 @@ class Unactivated extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'unactivated_users', $unactivated );
         $tpl->setVariable( 'unactivated_rows', $rows );
         $tpl->setVariable( 'unactivated_search', $search );
-        $tpl->setVariable( 'unactivated_search_suffix', $search === '' ? '' : '?q=' . rawurlencode( $search ) );
+        $tpl->setVariable( 'unactivated_search_suffix', \expViewParameters::suffix( array( 'q' => $search ) ) );
         $tpl->setVariable( 'unactivated_old_days', \expUnactivatedUsers::OLD_DAYS );
         $tpl->setVariable( 'unactivated_mail_transport', (string)\eZINI::instance()->variable( 'MailSettings', 'Transport' ) );
         $tpl->setVariable( 'sort_field', $SortField );

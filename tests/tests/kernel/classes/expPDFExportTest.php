@@ -264,7 +264,8 @@ class expPDFExportTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 100, mb_strlen( PdfList::searchOf( str_repeat( 'ä', 300 ) ) ) );
 
         $this->assertSame( '/pdf/list', PdfList::listURI( array( 'offset' => 0, 'filter' => '', 'search' => '' ) ) );
-        $this->assertSame( '/pdf/list/(sort)/size/(dir)/desc/(offset)/25?search=a%20%26%22b%2F',
+        // the search is a view parameter, never ?search=; "/" cannot travel in it and becomes a space (trimmed)
+        $this->assertSame( '/pdf/list/(sort)/size/(dir)/desc/(offset)/25/(search)/a%20%26%22b',
                            PdfList::listURI( array( 'sort' => 'size', 'dir' => 'desc', 'offset' => 25, 'search' => 'a &"b/' ) ) );
     }
 }
