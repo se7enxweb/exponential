@@ -74589,5 +74589,9 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Remedy</source>
         <translation>Rozwiązanie</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Start pomocy</translation>
+    </message>
 </context>
 </TS>

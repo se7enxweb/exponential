@@ -1264,10 +1264,22 @@
     grid-template-areas: "nav main";
   }
   .a4-help-viewer-tonav { display: none; }
+  /* The sidebar stays in the window; only its tree scrolls, so the filter and the Browse all help and Help Start
+     buttons above it are always in reach, however far the reader has scrolled the page or the tree */
   .a4-help-nav {
     position: sticky;
     top: calc(var(--header-height, 6.25rem) + var(--a4-space-3));
+    display: flex;
+    flex-direction: column;
     max-height: calc(100vh - var(--header-height, 6.25rem) - var(--a4-space-6));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  .a4-help-nav > * { flex: none; }
+  .a4-help-nav > .a4-help-nav-list.is-top {
+    flex: 1 1 auto;
+    min-height: 0;
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: thin;
@@ -1544,7 +1556,10 @@
    until the filter is applied, so nothing moves when the script narrows the tree and shows the button */
 .exp-help-nav-pending [data-exphelp-nav] .a4-help-nav-list.is-top { visibility: hidden; }
 .exp-help-nav-pending [data-exphelp-nav] .a4-help-nav-clear[hidden] { display: inline-flex; visibility: hidden; }
-.a4-help-nav-all { font-size: var(--a4-text-xs); }
+/* Browse all help and Help Start (viewer sidebar): a row of their own under the filter, side by side in two equal
+   halves; in the narrow sidebar a label wraps inside its button rather than pushing the other one to a new row */
+.a4-help-nav-go { display: flex; flex: 1 1 100%; flex-wrap: wrap; gap: var(--a4-space-2); }
+.a4-help-nav-go > .a4-btn { flex: 1 1 0; white-space: normal; text-align: center; }
 .a4-help-section-more { display: inline-flex; align-items: center; gap: var(--a4-space-1); font-size: var(--a4-text-s); }
 
 /* The contents page (exphelp/contents): the whole tree, its top folders in columns on wide pages */

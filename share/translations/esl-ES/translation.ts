@@ -74811,6 +74811,10 @@ Gracias por tu feedback</translation>
         <source>Remedy</source>
         <translation>Solución</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Inicio de la ayuda</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

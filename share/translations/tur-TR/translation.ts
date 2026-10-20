@@ -73382,5 +73382,9 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Remedy</source>
         <translation>Çözüm</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Yardım başlangıcı</translation>
+    </message>
 </context>
 </TS>

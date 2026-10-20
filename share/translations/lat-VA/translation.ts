@@ -73143,6 +73143,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Remedy</source>
         <translation>Remedium</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Initium auxilii</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

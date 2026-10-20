@@ -74538,6 +74538,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Remedy</source>
         <translation>Solution</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Accueil de l&apos;aide</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

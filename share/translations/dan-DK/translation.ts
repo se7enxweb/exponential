@@ -74053,5 +74053,9 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Remedy</source>
         <translation>Løsning</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Hjælpens start</translation>
+    </message>
 </context>
 </TS>

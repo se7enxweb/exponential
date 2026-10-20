@@ -73375,5 +73375,9 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Remedy</source>
         <translation>راه‌حل</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>صفحهٔ آغاز راهنما</translation>
+    </message>
 </context>
 </TS>

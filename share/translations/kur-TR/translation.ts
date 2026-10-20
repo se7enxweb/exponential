@@ -73375,5 +73375,9 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Remedy</source>
         <translation>Çareserî</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Destpêka alîkariyê</translation>
+    </message>
 </context>
 </TS>

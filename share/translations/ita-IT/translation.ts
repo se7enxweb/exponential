@@ -74784,5 +74784,9 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>Remedy</source>
         <translation>Soluzione</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Inizio della guida</translation>
+    </message>
 </context>
 </TS>

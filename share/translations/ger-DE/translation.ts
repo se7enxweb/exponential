@@ -80415,6 +80415,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Remedy</source>
         <translation>Abhilfe</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Hilfe-Startseite</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -75369,5 +75369,9 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>Remedy</source>
         <translation>Solução</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Início da ajuda</translation>
+    </message>
 </context>
 </TS>

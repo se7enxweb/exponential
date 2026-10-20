@@ -74602,5 +74602,9 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Remedy</source>
         <translation>Oplossing</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Help-start</translation>
+    </message>
 </context>
 </TS>

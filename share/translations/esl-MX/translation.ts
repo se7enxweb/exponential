@@ -77369,6 +77369,10 @@ Gracias por la retroalimentación</translation>
         <source>Remedy</source>
         <translation>Solución</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Inicio de la ayuda</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

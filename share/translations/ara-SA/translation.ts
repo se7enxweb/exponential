@@ -73172,6 +73172,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Remedy</source>
         <translation>الحل</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>بداية المساعدة</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

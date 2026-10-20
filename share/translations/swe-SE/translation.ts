@@ -74680,5 +74680,9 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Remedy</source>
         <translation>Åtgärd</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Hjälpstart</translation>
+    </message>
 </context>
 </TS>

@@ -95,7 +95,10 @@
                 <label class="a4-sr-only" for="exphelp-nav-filter">{'Filter the help pages'|i18n( 'kernel/exphelp' )}</label>
                 <input class="a4-input a4-help-nav-filter exp-js-only" type="search" id="exphelp-nav-filter" autocomplete="off" placeholder="{'Filter pages'|i18n( 'kernel/exphelp' )|wash}" data-exphelp-navfilter hidden />
                 <button type="button" class="a4-btn a4-btn-ghost a4-btn-small a4-help-nav-clear" aria-controls="exphelp-nav-filter" data-exphelp-navfilter-clear hidden><span class="a4-icon a4-bi-x-lg" aria-hidden="true"></span> {'Clear filter'|i18n( 'kernel/exphelp' )}</button>
-                <a class="a4-help-nav-all" href={'exphelp/contents'|ezurl}>{'Browse all help'|i18n( 'kernel/exphelp' )}</a>
+                <div class="a4-help-nav-go">
+                    <a class="a4-btn a4-btn-small" href={'exphelp/contents'|ezurl}><span class="a4-icon a4-bi-list-ul" aria-hidden="true"></span> {'Browse all help'|i18n( 'kernel/exphelp' )}</a>
+                    <a class="a4-btn a4-btn-small" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help Start'|i18n( 'kernel/exphelp' )}</a>
+                </div>
             </div>
             <p class="a4-sr-only" data-exphelp-navfilter-status aria-live="polite"></p>
             {$help_nav_html}

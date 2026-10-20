@@ -74430,5 +74430,9 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Remedy</source>
         <translation>Rješenje</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Početak pomoći</translation>
+    </message>
 </context>
 </TS>

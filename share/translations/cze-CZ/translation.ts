@@ -74659,5 +74659,9 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Remedy</source>
         <translation>Náprava</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Úvod nápovědy</translation>
+    </message>
 </context>
 </TS>

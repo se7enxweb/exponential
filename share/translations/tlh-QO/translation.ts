@@ -73143,6 +73143,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Remedy</source>
         <translation>QaH</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>QaH tagh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

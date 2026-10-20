@@ -74635,5 +74635,9 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>Remedy</source>
         <translation>Løsning</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Hjelpestart</translation>
+    </message>
 </context>
 </TS>

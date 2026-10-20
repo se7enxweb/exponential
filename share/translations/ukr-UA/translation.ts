@@ -73128,6 +73128,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Remedy</source>
         <translation>Усунення</translation>
     </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Початок довідки</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
