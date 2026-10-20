@@ -311,7 +311,7 @@ or later".
 
 | Layer | What Exponential uses | Source |
 |---|---|---|
-| Language | PHP 8.0 to 8.5 (the `php` requirement in `composer.json` allows up to 8.8); Velocity needs 8.1 or later | README, "What version of PHP is required"; [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) |
+| Language | PHP 8.0 to 8.5 (the `php` requirement in `composer.json` allows up to 8.8); Velocity runs on 8.0 and later too | README, "What version of PHP is required"; [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) |
 | Packages | Composer: the kernel `se7enxweb/exponential` and its extensions are Composer packages on Packagist | README, "Important Notice" |
 | Libraries | Zeta Components (archive, cache, database, feed, image conversion and more) | composer.json |
 | Installer | `se7enxweb/exponential-legacy-installer`, a Composer plugin that places extensions in `extension/` | [Ecosystem](../history/ecosystem.md) |

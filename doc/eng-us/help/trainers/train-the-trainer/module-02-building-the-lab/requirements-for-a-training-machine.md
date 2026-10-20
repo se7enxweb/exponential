@@ -38,7 +38,7 @@ After this lesson, learners can:
 ### How to present it
 
 1. Show the checklist table of [Requirements, 2.1](../../../../install/02-requirements.md#21-the-checklist)
-   (5 minutes). The key numbers: PHP 8.0 minimum for Exponential; PHP 8.1 with `sockets` for Exponential Velocity;
+   (5 minutes). The key numbers: PHP 8.0 minimum for Exponential; PHP 8.0 with `sockets` for Exponential Velocity;
    SQLite 3 needs no database server; Composer 2.x.
 2. Go through the required extensions (5 minutes): `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`,
    `pcre`, `json`, `reflection`, `spl`, `session`, `zlib`, one database extension (for a lab: `sqlite3`), and `gd` or
@@ -53,7 +53,7 @@ After this lesson, learners can:
 provide. If you are unsure, prepare a fallback: a pre-installed copy per learner on a machine you control.
 
 **Do learners need Velocity?** No. PHP's built-in server, which Velocity drives as its `php` engine, is enough for a
-lab. Velocity's `qbix` engine needs PHP 8.1 and `sockets`.
+lab. Velocity's `qbix` engine needs PHP 8.0 or later and `sockets`.
 
 **Which `php.ini` values matter?** `memory_limit` 64M or more, `max_execution_time` 30, `date.timezone` set,
 `file_uploads` on, `allow_url_fopen` on.
@@ -97,7 +97,7 @@ Check one machine: your laptop, a learner's laptop or the training server.
 <details>
 <summary>Answers</summary>
 
-1. PHP 8.0 for Exponential; PHP 8.1 with `sockets` for Velocity
+1. PHP 8.0 for Exponential; PHP 8.0 with `sockets` for Velocity
    ([Requirements](../../../../install/02-requirements.md#21-the-checklist)).
 2. Any four of `dom`, `xsl`, `mbstring`, `iconv`, `intl`, `session`, `zlib`, a database extension, `gd` (or
    ImageMagick).

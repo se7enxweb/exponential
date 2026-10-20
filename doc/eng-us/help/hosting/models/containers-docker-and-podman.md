@@ -150,7 +150,7 @@ What the chapter explains about it:
 
 ## Checklist
 
-- [ ] Image with PHP 8.1+ and every required extension; `exp:velocity ext check` passes in the pipeline.
+- [ ] Image with PHP 8.0+ and every required extension; `exp:velocity ext check` passes in the pipeline.
 - [ ] Fixed image tags in production.
 - [ ] `var/`, `settings/override`, `settings/siteaccess` on persistent volumes, owned by the container's PHP user.
 - [ ] One writing container for SQLite, or a database server for more.

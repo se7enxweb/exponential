@@ -47,13 +47,13 @@ php bin/php/console exp:velocity config get ServerSettings Engine --allow-root-u
 
 | Message or symptom | Cause | Fix |
 |---|---|---|
-| `velocity: no server script at ...` | the `qbix` engine needs the Velocity package, which is not installed | install the `se7enxweb/exponential-velocity` package (PHP 8.1 or later), as [12.11](../../../install/12-troubleshooting.md#1211-velocity-and-the-web-server) describes |
+| `velocity: no server script at ...` | the `qbix` engine needs the Velocity package, which is not installed | install the `se7enxweb/exponential-velocity` package (`composer install` brings it, since `composer.json` requires it), as [12.11](../../../install/12-troubleshooting.md#1211-velocity-and-the-web-server) describes |
 | `velocity: already running` | a server of that engine runs already | `exp:velocity status`; `restart` to apply changes |
 | `velocity: port ... is already in use by another process` | another program or engine holds the port | stop the other engine (`exp:velocity stop --engine=...`), or change `Port`/`HTTPSPort` with `exp:velocity config set` |
 | `velocity: EnginePhar names an archive that does not exist` | `[ServerSettings] EnginePhar` points at an archive that was never built or was removed | `php bin/php/console exp:phar build`, or `exp:velocity config set ServerSettings EnginePhar disabled` |
 | ports 80 and 443 cannot be bound | ports below 1024 need root | start Velocity as root (the workers drop to `[ServerSettings] User`), or use ports above 1024 behind a proxy |
 | a missing PHP extension in `console.log` | the command-line PHP lacks `sockets`, `pcntl` or `openssl` | `php bin/php/console exp:velocity ext check --allow-root-user` shows what is missing, `ext install-hint <ext>` the install command |
-| the machine's PHP is 8.0 | Velocity needs PHP 8.1 or later | start it with a newer PHP binary, or serve the site with PHP-FPM ([Choosing a web server](../servers/choosing-a-web-server.md)) |
+| the PHP lacks the `sockets` extension | Velocity needs `sockets` (and `pcntl` for the worker pool) | install and enable the extension (`exp:velocity ext check`), or serve the site with PHP-FPM meanwhile ([Choosing a web server](../servers/choosing-a-web-server.md)) |
 | HTTPS shows a self-signed certificate | the configured certificate is missing, expired or does not match its key | `exp:velocity ssl show`; fix `[HTTPSSettings] Certificate` and `Key` ([Certificate expiry](certificate-expiry.md)) |
 | workers cannot write | workers run as `[ServerSettings] User` and `Group` | set them, or fix ownership; workers never run as root unless `AllowRootWorkers=enabled` ([12.3](../../../install/12-troubleshooting.md#123-permissions-and-ownership)) |
 | it stopped and the watchdog does not start it | `exp:velocity stop` or `kill` leaves `stopped.json`; the watchdog then leaves it alone on purpose | `exp:velocity start`; `exp:velocity watchdog status` and `var/log/velocity-watchdog.log` say what the watchdog did |

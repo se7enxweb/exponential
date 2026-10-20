@@ -43,7 +43,7 @@ guide](../install/02-requirements.md); where an item is a recommendation rather 
 | Need | Minimum | Why |
 |---|---|---|
 | PHP | **8.0** (`composer.json`: `"php": "^8.0 || ^8.1 || ... || ^8.8"`; the setup wizard: `[phpversion] MinimumVersion=8.0.0`) | the kernel; 8.0 is the stock PHP of RHEL 9 and its rebuilds |
-| PHP for Velocity | **8.1**, with `sockets` (`pcntl` and `openssl` recommended) | Velocity, the recommended web server, is a PHP program |
+| PHP for Velocity | **8.0**, with `sockets` (`pcntl` and `openssl` recommended) | Velocity, the recommended web server and part of Exponential as of 6.0.15, is a PHP program (0.0.4.54 and later run on 8.0) |
 | PHP extensions | `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, one database extension, `gd` or ImageMagick | the setup wizard's critical tests and `composer.json` |
 | A database | SQLite 3 needs only the `sqlite3` extension; the others need their server somewhere on the network | see [Database support](database-support.md) |
 | A web server | none, if Velocity or PHP's built-in server serves the site; otherwise anything that can send a URL to `index.php` | see [Web servers](#web-servers) |
@@ -241,7 +241,7 @@ See [Containers, cloud and hosting panels](#containers-cloud-and-hosting-panels)
 ## Check a machine in two minutes
 
 ```bash
-php -v                 # 8.0 or later (8.1 or later for Velocity)
+php -v                 # 8.0 or later, for Velocity too
 php -m                 # the extensions listed above
 php -i | grep "Integer Size"   # 64 bits recommended
 ```

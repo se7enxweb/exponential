@@ -44,6 +44,7 @@ It is also very young, which is part of the story.
 | Workers kept between requests (`ForkPerRequest=disabled`) | 30 September 2026 | [Velocity, Settings to know first](../../features/6.0/velocity-persistent-worker-server.md#settings-to-know-first) |
 | Streams, deploys without a needless reload, each worker started clean | 11 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#11-october-2026-exponential-velocity-streams-deploys-without-a-needless-reload-and-starts-each-worker-clean) |
 | A cut-off restart or deploy no longer leaves Velocity down | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-a-restart-or-deploy-that-is-cut-off-no-longer-leaves-velocity-down) |
+| Velocity becomes part of Exponential: `composer.json` requires it at `~0.0.4.54`, which runs on PHP 8.0 | 20 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#20-october-2026-exponential-velocity-is-part-of-exponential) |
 
 Velocity in Exponential belongs to the 6.0.15 development line, which is not released.
 
@@ -53,13 +54,15 @@ Velocity in Exponential belongs to the 6.0.15 development line, which is not rel
 |---|---|
 | Velocity is a web server written in PHP that keeps the application loaded between requests. | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#how-exponential-is-served) |
 | It is MIT licensed (Exponential itself is GPL). | [Who is 7x?, Open source licenses](../who-is-7x.md#open-source-licenses) |
-| It needs PHP 8.1 or later. | [README, What version of PHP is required](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
+| It runs on PHP 8.0 or later (from 0.0.4.54; it needed 8.1 before). | [README, What version of PHP is required](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
 | HTTPS from the first start with a self-signed certificate; your own certificates or Let's Encrypt are possible. | [Velocity](../../features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it), [README](https://github.com/se7enxweb/exponential/blob/main/README.md#how-exponential-is-served) |
 | HTTP/2 is built into the bundled server. | [Velocity](../../features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
 | One command deploys a PHP change: `./console exp:velocity deploy`. | [Velocity, Deploy a PHP change](../../features/6.0/velocity-persistent-worker-server.md#deploy-a-php-change-in-one-command) |
 | Keeping workers between requests cut signed-in admin pages from 256 to 284 ms to 73 to 80 ms "in the measurement that led to the change". | [Velocity, Settings to know first](../../features/6.0/velocity-persistent-worker-server.md#settings-to-know-first) |
 | A dashboard (`/Q/dashboard`) and a password-protected control panel (`/Q/panel`) are built in. | [Velocity control panel](../../features/6.0/velocity-control-panel.md) |
-| The README suggests version 0.0.4.50. | [Exponential Velocity](../who-is-the-exponential-foundation.md#exponential-velocity) |
+| As of 6.0.15 Velocity is part of Exponential: `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.54`, so every installation has it. | [Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md) |
+| The project calls this a turning point, a cornerstone and a capstone: a new level of application system integration, with Exponential one working stack (server, RAD platform, CMS, digital experience, e-commerce) rather than just a framework. | [Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md#why-it-is-a-turning-point) |
+| Velocity is the recommended engine for every stage; FrankenPHP is the production-ready alternative. Neither is "experimental". | [Velocity engines](../../bc/6.0/velocity-engines.md) |
 
 ## What not to claim
 

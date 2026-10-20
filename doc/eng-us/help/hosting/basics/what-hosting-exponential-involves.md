@@ -49,7 +49,7 @@ It has no compiled code of its own, so it runs wherever a supported PHP runs
 
 | Part | What Exponential needs | Page |
 |---|---|---|
-| PHP for the web | 8.0 or later (8.1 or later for Velocity), with the required extensions | [PHP versions and extensions](php-versions-and-extensions.md) |
+| PHP for the web | 8.0 or later (for Velocity too), with the required extensions | [PHP versions and extensions](php-versions-and-extensions.md) |
 | PHP on the command line | the same version and extensions as the web PHP | [PHP versions and extensions](php-versions-and-extensions.md) |
 | `php.ini` | the values the installer checks, sized for uploads and imports | [PHP settings for Exponential](php-settings-for-exponential.md) |
 | A web server | Exponential Velocity (recommended), or Apache, nginx or another server with PHP-FPM | [Choosing a web server](../servers/choosing-a-web-server.md) |
@@ -125,7 +125,7 @@ per plan, and write the choice into the plan's description.
 ## Checklist
 
 - [ ] PHP 8.0 or later for the web and the command line, the same version and extensions in both.
-- [ ] PHP 8.1 or later with `sockets`, `pcntl` and `openssl` where Velocity is offered.
+- [ ] PHP 8.0 or later with `sockets`, `pcntl` and `openssl` where Velocity is offered.
 - [ ] A database offer chosen from the official order.
 - [ ] `var/` and `settings/` writable by the site's user; one user or one group for every process.
 - [ ] Cron available to run `runcronjobs.php`.

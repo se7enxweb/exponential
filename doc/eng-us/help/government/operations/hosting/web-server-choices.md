@@ -56,7 +56,7 @@ PHP's built-in server is for development only: it has no TLS and must never face
 | Question | If the answer is | Then |
 |---|---|---|
 | Does your organization allow a long-lived application process on its servers? | no | Apache or nginx with PHP-FPM |
-| Is the machine's PHP 8.0 (for example the stock PHP of RHEL 9)? | yes | a traditional server; Velocity needs 8.1 |
+| Is the machine's PHP 8.0 (for example the stock PHP of RHEL 9)? | yes | either engine: Velocity runs on PHP 8.0 too |
 | Must the web tier be on your approved software list? | yes | see the next section |
 | Does a central team terminate TLS on a load balancer or reverse proxy? | yes | any engine behind it, with trusted proxies set ([Several web servers behind a load balancer](../availability/several-web-servers-behind-a-load-balancer.md)) |
 | Do anonymous visitors make most of the traffic? | yes | Velocity's response cache answers them without PHP ([Velocity response cache and HTTP cache](../availability/velocity-response-cache-and-http-cache.md)) |
@@ -95,7 +95,7 @@ reload the right PHP-FPM and restart Velocity; `exp:velocity deploy` does both i
 
 - [ ] The setup is chosen and recorded in your hosting decision record.
 - [ ] It is on your approved software list, or an assessment is under way.
-- [ ] PHP version matches the engine (8.1 or later for Velocity).
+- [ ] PHP version matches the engine (8.0 or later, for Velocity too).
 - [ ] HTTPS is handled by the engine, the web server or a central proxy, and documented.
 - [ ] The deploy procedure names the right PHP-FPM service or Velocity.
 

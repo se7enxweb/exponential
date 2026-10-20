@@ -151,7 +151,7 @@ On machines with several PHP versions, call the right binary by its path, for ex
 
 ## Checklist
 
-- [ ] The plan's PHP versions are 8.0 or later; 8.1 or later wherever Velocity is offered.
+- [ ] The plan's PHP versions are 8.0 or later, also wherever Velocity is offered.
 - [ ] 64-bit PHP builds.
 - [ ] Every required extension in both the web and the command line PHP.
 - [ ] Exactly the database extension(s) the plan offers.

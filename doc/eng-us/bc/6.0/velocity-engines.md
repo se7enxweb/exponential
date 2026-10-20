@@ -5,6 +5,24 @@ PHP changes to a site that Velocity serves. Velocity drives one of three web ser
 `stop`, `graceful`, `restart`, `kill`, `status`, `deploy`, `command`, `config`, `install`) and the same
 `velocity.ini`.
 
+## Velocity is part of Exponential as of 6.0.15
+
+As of 6.0.15 the root `composer.json` **requires** `se7enxweb/exponential-velocity ~0.0.4.54`; before, it only
+suggested it. What that changes for an existing installation:
+
+| | |
+|---|---|
+| What changed | `composer install` installs the Velocity package with the rest of Exponential, so the `qbix` engine is always available; `exp:velocity start --engine=qbix` no longer stops with `velocity: no server script at ...` on a fresh install. |
+| PHP | Velocity 0.0.4.54 runs on PHP 8.0 to 8.5, the same range as the kernel; it needs `ext-sockets` (`pcntl` and `openssl` recommended). |
+| What does not change | The shipped default engine stays `php`; a site served by Apache, nginx or FrankenPHP keeps being served that way. Nothing starts a server on its own. |
+| How to check | `php bin/php/console exp:velocity status` reports the engine package and its version. |
+| What to do | Nothing beyond `composer install`. To use the server, set `Engine=qbix` and deploy with `exp:velocity deploy`. |
+
+This is the turning point of the 6.0 line: the Internet / Web Application Server is a cornerstone of the core product,
+and the whole path from a request to a rendered page belongs to one product. Velocity's own server is the recommended
+engine for every stage; FrankenPHP is the production-ready alternative. The story for every reader:
+[Velocity is part of Exponential 6.0.15](../../help/velocity-is-part-of-exponential-6-0-15.md).
+
 ## In short
 
 | | |

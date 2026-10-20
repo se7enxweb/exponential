@@ -5,7 +5,7 @@ This chapter puts the Exponential code on your machine. There are three ways: a 
 for anyone who builds websites**), `composer create-project` (the quickest way to a site you only run) and
 `composer require` into an empty directory (when the installation should be a project of your own). All three end
 with the same files. The chapter explains which version each way gives you and how to choose one, how
-the extensions arrive as Composer packages, how to add the optional Exponential Velocity package, what is different
+the extensions arrive as Composer packages, how the Exponential Velocity package arrives with it, what is different
 on PHP 8.0 to 8.3, and closes with a tour of every top-level entry of the installation root and the permissions to
 set before you install.
 
@@ -260,19 +260,23 @@ afterwards.
 
 On a production server, `--no-dev` is right on every PHP version: the test tools are not needed to run a site.
 
-## 3.4 The optional Velocity package
+## 3.4 The Velocity package
 
-Exponential Velocity, the recommended application server, is a separate package,
-[`se7enxweb/exponential-velocity`](https://packagist.org/packages/se7enxweb/exponential-velocity). `composer.json`
-suggests it rather than requires it, because it needs PHP 8.1 (`"php": ">=8.1"`) and the `sockets` extension
-(`"ext-sockets": "*"`), while the kernel runs on 8.0. On PHP 8.1 or later, add it with the version the suggestion
-names:
+As of 6.0.15 Exponential Velocity, the Internet / Web Application Server and the recommended engine for every
+stage, is part of Exponential. It is the package
+[`se7enxweb/exponential-velocity`](https://packagist.org/packages/se7enxweb/exponential-velocity), and the root
+`composer.json` **requires** it (it was only suggested before 6.0.15):
 
-```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.50
+```json
+"se7enxweb/exponential-velocity": "~0.0.4.54"
 ```
 
-`~0.0.4.50` accepts every later `0.0.4.x` release (`>=0.0.4.50 <0.0.5.0`), so Composer installs the newest of them.
+Velocity 0.0.4.54 runs on PHP 8.0 and later (`"php": ">=8.0"`) and needs the `sockets` extension
+(`"ext-sockets": "*"`), so the same PHP that runs the kernel runs the server, the stock PHP 8.0 of Red Hat Enterprise
+Linux 9 included. A plain `composer install` installs it; nothing more is needed. An installation of an earlier line
+that never had it gets it with `composer update se7enxweb/exponential-velocity` after updating `composer.json`.
+
+`~0.0.4.54` accepts every later `0.0.4.x` release (`>=0.0.4.54 <0.0.5.0`), so Composer installs the newest of them.
 The last position of a Velocity version counts on past 9 (`0.0.4.9`, `0.0.4.10`, ...), so a version sort, not a name
 sort, finds the newest.
 

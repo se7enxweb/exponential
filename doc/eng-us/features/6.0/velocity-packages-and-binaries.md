@@ -14,7 +14,7 @@ Every Velocity release is published in the forms people actually install:
 | **deb and rpm packages** | A system service on Debian 12 and 13, Ubuntu 22.04 and 24.04, Enterprise Linux 9 and 10, using the distribution's own PHP |
 | **Docker images** on `ghcr.io/se7enxweb/exponential-velocity` | Containers, amd64 and arm64, one image per PHP version and variant |
 | **Static binaries** | One file with PHP built in: Linux x86-64 and aarch64, macOS arm64, Windows x64 |
-| **The phar** `sbin/qbixserver.phar` | The server as one PHP archive, run by any PHP 8.1+ |
+| **The phar** `sbin/qbixserver.phar` | The server as one PHP archive, run by any PHP 8.0+ (8.1+ before 0.0.4.54) |
 | **A source kit** | A build kit for a platform, architecture or PHP version no release covers |
 
 All files of a release carry checksums in `SHA256SUMS`.
@@ -141,7 +141,7 @@ Exponential's `exp:velocity` uses the Composer copy of the engine; the package i
 
 ## Limits
 
-- The packages need PHP 8.1 or later; EL 9 needs the PHP stream enabled first.
+- The packages need PHP 8.0 or later. From 0.0.4.54 on, the EL 9 package installs on the distribution's default PHP 8.0 (AppStream) with no module stream to enable first.
 - Some recommended extensions (`mongodb`, `redis`, `memcached`) come from EPEL or Remi on EL; `qbixctl ext:check` names them.
 - Release assets exist only for tags that have a section in the engine's changelog; three early tags (`v0.0.4.21`, `v0.0.4.22`, `v0.0.4.26`) have no release.
 

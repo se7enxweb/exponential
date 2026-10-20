@@ -29,7 +29,7 @@ listed here with where this chapter covers it.
 | The vendor's point | For Exponential | Section |
 |---|---|---|
 | Upgrade in stages: 5.4 or 2014.11 to eZ Platform 1.7, then 1.13, then 2.x | One path: the 5.4 database to 6.0.0 to 6.0.15, in place | [15.7](#157-the-database-step-by-step) |
-| Requirements: PHP 7.1, MySQL 5.5 or MariaDB, a 2017 browser | PHP 8.0 to 8.5 (Velocity needs 8.1); MySQL, MariaDB, PostgreSQL, SQLite, Oracle, MongoDB | [15.4](#154-plan-and-timeline) |
+| Requirements: PHP 7.1, MySQL 5.5 or MariaDB, a 2017 browser | PHP 8.0 to 8.5 (Velocity included); MySQL, MariaDB, PostgreSQL, SQLite, Oracle, MongoDB | [15.4](#154-plan-and-timeline) |
 | Back up; take the site offline | Same, with `maintenance.php` | [15.7](#157-the-database-step-by-step) |
 | Content of the 4th and 5th generation stays compatible | Yes, and without conversion: it is the same schema | [15.3](#153-what-carries-over-the-shared-database) |
 | XmlText is replaced by RichText; convert with `ezxmltext:convert-to-richtext` (dry run, export of the failing fields, fix by hand, `ezxmltext:import-xml`), after registering the XmlText field type bundle | **Contradicted.** XmlText (`ezxmltext`) is the kernel's rich text datatype. Nothing is converted. | [15.8](#158-field-types-against-datatypes) |
@@ -136,7 +136,7 @@ Platform or Ibexa is covered by [chapter 16](16-migrating-from-ez-platform-and-i
 
 ## 15.4 Plan and timeline
 
-**Requirements of the target.** PHP 8.0 to 8.5 (`composer.json`: `^8.0`), Velocity 8.1 or later; the old site ran on
+**Requirements of the target.** PHP 8.0 to 8.5 (`composer.json`: `^8.0`), Velocity included; the old site ran on
 PHP 5.3.17 or later (the community project's minimum), so every PHP file of your own extensions crosses PHP 7 and 8.
 See [chapter 2](02-requirements.md), [PHP 8 support](../bc/6.0/php8.md) and the PHP migration guides in the
 references. Databases: [chapter 9](09-databases.md).

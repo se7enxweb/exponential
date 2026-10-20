@@ -149,7 +149,7 @@ See [Multi-tenant isolation](../security/multi-tenant-isolation.md).
 
 ## Checklist
 
-- [ ] PHP 8.0 or later with the required extensions in the account's PHP version (8.1+ only matters for Velocity).
+- [ ] PHP 8.0 or later with the required extensions in the account's PHP version (Velocity needs the same).
 - [ ] Document root = installation root; `.htaccess` copied from `.htaccess_root`; `mod_rewrite` on.
 - [ ] The `php.ini` values above set per account; `open_basedir` decision documented.
 - [ ] `vendor/` present before the wizard starts.

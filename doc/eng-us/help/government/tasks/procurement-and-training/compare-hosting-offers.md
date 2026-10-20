@@ -30,7 +30,7 @@ describes what hosts can offer ([Hosting companies: start here](../../../hosting
 
 1. **Check the basics**: supported PHP version, the database you chose, image tools, Composer, shell access for
    cronjobs ([Requirements at a glance](../../../hosting/basics/requirements-at-a-glance.md)).
-2. **Check the engine**: Velocity, Apache or nginx with PHP-FPM, or FrankenPHP; Velocity needs PHP 8.1 or later
+2. **Check the engine**: Velocity, Apache or nginx with PHP-FPM, or FrankenPHP; Velocity runs on PHP 8.0 or later
    ([Choosing a web server](../../../hosting/servers/choosing-a-web-server.md)).
 3. **Check backups**: database and files together, keys included, off-site, retention, and a tested restore time
    ([Backups: what to back up](../../../hosting/operations/backups-what-to-back-up.md)).

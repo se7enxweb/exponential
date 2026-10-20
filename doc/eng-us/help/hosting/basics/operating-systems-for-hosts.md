@@ -118,7 +118,7 @@ is not run there by the project. OpenBSD and NetBSD are tier 3.
 ## Check a machine
 
 ```bash
-php -v                          # 8.0 or later (8.1 or later for Velocity)
+php -v                          # 8.0 or later (for Velocity too)
 php -m                          # the required extensions
 php -i | grep "Integer Size"    # 64 bits recommended
 ```

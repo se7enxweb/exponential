@@ -44,7 +44,7 @@ site current. The main sources are [Source control and releases](../../../../sta
 - A published tag is never changed; a fix reaches you as the next release (`SECURITY.md`).
 - 6.0.x is the maintained line; 5.x, 4.x, 3.x and older are not supported (`SECURITY.md`).
 - A private security report gets a first answer within one business day; no time to fix is promised (`SECURITY.md`).
-- PHP 8.0 to 8.5 are supported; Velocity needs 8.1 or later ([2. Requirements](../../../../install/02-requirements.md)).
+- PHP 8.0 to 8.5 are supported, for Velocity too ([2. Requirements](../../../../install/02-requirements.md)).
 - The project publishes no SLA and no end-of-life dates ([SLA options for Exponential hosting](../../../hosting/business/sla-options.md)).
 
 ## Related pages

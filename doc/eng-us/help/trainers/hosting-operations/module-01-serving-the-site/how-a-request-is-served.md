@@ -53,8 +53,8 @@ Source: [Chapter 8: Serving the site](../../../../install/08-serving-the-site.md
    recommended way at every stage; FrankenPHP is a production-ready alternative; Apache and nginx with PHP-FPM are the
    traditional setups.
 2. **When to choose a traditional server** (4 minutes). From section 8.1: hosting that forbids long-running
-   processes, a tuned Apache or nginx the customer wants to keep, a machine with only PHP 8.0 (Velocity needs 8.1),
-   or customers that need operating-system isolation from each other.
+   processes, a tuned Apache or nginx the customer wants to keep, or customers that need operating-system isolation
+   from each other.
 3. **One routing list** (6 minutes). Draw the diagram of section 8.2. The rules are written down once in
    `.htaccess_root`; Velocity's engines and the generated FrankenPHP configuration implement the same list. Stress
    the two security consequences: no PHP file runs because its path was asked for (except the front controllers at

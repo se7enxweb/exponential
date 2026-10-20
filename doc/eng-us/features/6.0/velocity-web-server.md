@@ -11,6 +11,24 @@ The engine comes from the Qbix web server and ships as the Composer package `se7
 `se7enxweb/qbix-webserver`). Exponential drives it with `exp:velocity`; the engine's own programs are `qbixserver`,
 `qbixctl` and `qbixconsole`.
 
+## Part of Exponential as of 6.0.15
+
+As of Exponential 6.0.15 the Velocity Internet / Web Application Server is part of Exponential. The root
+`composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.54` (it was a suggestion before), so every
+installation made with `composer install` has the server, on PHP 8.0 and later, the stock PHP 8.0 of Red Hat
+Enterprise Linux 9 included. It runs next to Apache with PHP-FPM, nginx and FrankenPHP: its own server is the
+recommended engine for every stage, FrankenPHP is the production-ready alternative, and the traditional servers keep
+working as before.
+
+That marks a turning point for the project, a cornerstone and a capstone: a new level of application system
+integration in which the core product provides even greater features out of the box, by default. With the server in
+the box, Exponential is one working stack (server, rapid application development platform, CMS, digital experience
+and e-commerce) rather than a framework to complete. The whole story, for every reader:
+[Velocity is part of Exponential 6.0.15](../../help/velocity-is-part-of-exponential-6-0-15.md). Every other
+feature page: [Exponential 6.0 features](README.md).
+
+The commands of daily work are `./console exp:velocity deploy`, `start`, `restart` and `cache clear`.
+
 ## Start it in two minutes
 
 From an Exponential installation, use the console command (see [Velocity engines](../../bc/6.0/velocity-engines.md)
@@ -112,7 +130,7 @@ The engine ships a migration page for each. The main steps:
 
 ## Limits
 
-- PHP 8.1 or later; the static binaries and images are built for 8.2, 8.3, 8.4 and 8.5.
+- PHP 8.0 or later (from 0.0.4.54; 8.1 before); the static binaries and images are built for 8.2, 8.3, 8.4 and 8.5.
 - Windows has no `fork()`, so there is no pool of forked workers there; use the binary builds for Windows
   ([packages and binaries](velocity-packages-and-binaries.md)).
 - The default event loop (`stream_select`) stops a pool below about 1,000 workers. Use more servers on one port

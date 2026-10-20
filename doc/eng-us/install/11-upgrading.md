@@ -275,7 +275,7 @@ running Exponential 6 inside a Symfony platform, see [Legacy bridge](../features
    Oracle client, and add `trashed` (`ALTER TABLE ezcontentobject_trash ADD ( trashed INTEGER DEFAULT 0 NOT NULL );`)
    if the table lacks it. The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes
    above). Details: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md).
-3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`); Velocity needs 8.1. Releases 6.0.8 to
+3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`), Velocity included. Releases 6.0.8 to
    6.0.14 required 8.1. A site that must stay on PHP 7.4 stays on 6.0.7. Check your own extensions for PHP 8
    problems: classes that extend `eZPersistentObject` or `eZDataType` are the usual cases. See
    [PHP 8 support](../bc/6.0/php8.md) and [PHP 8.0 support](../bc/6.0/php-8.0-support.md).

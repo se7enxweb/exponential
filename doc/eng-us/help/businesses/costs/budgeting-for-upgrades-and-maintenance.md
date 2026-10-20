@@ -65,7 +65,7 @@ Use maintenance mode for the minutes the site must be offline
 
 ## PHP and server updates
 
-- Exponential supports PHP 8.0 to 8.5; Velocity needs 8.1 or later (`README.md`, "What version of PHP is required").
+- Exponential supports PHP 8.0 to 8.5, Velocity included (`README.md`, "What version of PHP is required").
 - The test suite runs on PHP 8.1 to 8.5 and checks that 8.0 boots, on every push
   ([Who is the Exponential Foundation?](../../who-is-the-exponential-foundation.md#the-support-commitment)).
 - The README recommends using "the latest version of PHP available on your OS".

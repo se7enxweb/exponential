@@ -40,7 +40,7 @@ integration runs the test suite on PHP 8.1 to 8.5 and checks that PHP 8.0 still 
 
 | Fact | Source |
 |---|---|
-| PHP 8.0 to 8.5 supported; Velocity needs 8.1 or later | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
+| PHP 8.0 to 8.5 supported, for Velocity too | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 | `composer.json` allows up to PHP 8.8 | same |
 | CI on PHP 8.1 to 8.5, PHP 8.0 boot check | [CI](../../bc/6.0/ci.md) |
 | 7x maintains patched forks of Zeta Components and submitted security pull requests upstream | [The PHP stack it stands on](../who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to) |

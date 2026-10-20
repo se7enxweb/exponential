@@ -34,7 +34,7 @@ them as decisions.
 |---|---|---|
 | Does more than one machine have to write the database? | yes | A database server, PostgreSQL first; not SQLite |
 | Does the hosting allow long-running processes? | no (typical shared hosting) | Apache or nginx with PHP-FPM; Velocity usually not |
-| Is the machine's PHP older than 8.1? | yes (for example the stock PHP 8.0 of RHEL 9) | A traditional web server; Velocity needs 8.1 |
+| Is the machine's PHP 8.0? | yes (for example the stock PHP of RHEL 9) | Either engine: Velocity runs on PHP 8.0 too |
 | Is the organization standardized on one database? | yes | That database, if it is among the six; read its limits |
 | Is there shell access on the server? | no | The setup wizard in the browser |
 
@@ -99,7 +99,7 @@ For a production project, prefer tier 1 or tier 2. A tier 3 system is "a reasone
 installation early.
 
 What every system has to provide is on [Operating system support](../os-support.md) and in
-[chapter 2](../../install/02-requirements.md): PHP 8.0 or later (8.1 for Velocity), the required PHP extensions, a
+[chapter 2](../../install/02-requirements.md): PHP 8.0 or later (for Velocity too), the required PHP extensions, a
 database, Composer 2, writable directories, and 64-bit PHP recommended "for support of more than 30 languages".
 
 ## Web server and engine

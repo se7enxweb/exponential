@@ -41,7 +41,7 @@ php -v
 grep -n '"php"' composer.json
 ```
 
-The first line of `php -v` must show 8.0 or newer (8.1 or newer if the site runs on Exponential Velocity, see
+The first line of `php -v` must show 8.0 or newer, for a site on Exponential Velocity too (see
 [PHP 8.0 support](php-8.0-support.md)). The `composer.json` line shows the PHP versions the current release accepts.
 
 ## What this means for your own code

@@ -55,7 +55,7 @@ and the root `README.md` ("When a traditional server is still the right answer")
 |---|---|---|
 | May customers run a long-running process? | no | Apache or LiteSpeed with `.htaccess`, or nginx with PHP-FPM; Velocity is usually not possible ([Shared hosting](shared-hosting.md)) |
 | Does the site need more than one machine to write the database? | yes | a database server, PostgreSQL first; not SQLite ([Database support](../../database-support.md#the-supported-databases-in-order)) |
-| Is the machine's PHP older than 8.1? | yes, for example the stock PHP 8.0 of Red Hat Enterprise Linux 9 | a traditional web server; Velocity needs 8.1 ([Chapter 2](../../../install/02-requirements.md#22-php)) |
+| Is the machine's PHP older than 8.1? | yes, for example the stock PHP 8.0 of Red Hat Enterprise Linux 9 | either engine: Velocity runs on PHP 8.0 too ([Chapter 2](../../../install/02-requirements.md#22-php)) |
 | Must customers be isolated at the operating-system level? | yes | one PHP-FPM pool or one Velocity instance per site, each as its own user ([Isolation](#isolation-between-customers)) |
 | Will the customer have shell access? | no | the setup wizard in the browser installs the site ([Chapter 4](../../../install/04-choosing-an-install-method.md#45-which-method-for-which-situation)) |
 

@@ -29,7 +29,7 @@ and `README.md`, "Requirements":
 
 | Need | Minimum | Notes |
 |---|---|---|
-| PHP | 8.0 | the newest 8.x the system offers is recommended; Velocity needs 8.1 |
+| PHP | 8.0 | the newest 8.x the system offers is recommended; Velocity runs on 8.0 too |
 | Database | SQLite 3, no server | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | Web server | none if Velocity serves the site | or Apache, nginx, LiteSpeed, Caddy, IIS and others |
 | Composer | 2.x | installs the software and its extensions |
@@ -46,7 +46,7 @@ From [Choosing hosting, database and operating system](../../leadership/choosing
 |---|---|---|
 | Does more than one machine have to write the database? | yes | a database server, PostgreSQL first; not SQLite |
 | Does the hosting allow long-running processes? | no (typical shared hosting) | Apache or nginx with PHP-FPM; Velocity usually not |
-| Is the machine's PHP older than 8.1? | yes | a traditional web server; Velocity needs 8.1 |
+| Is the machine's PHP 8.0? | yes | either engine: Velocity runs on PHP 8.0 too |
 | Is the organization standardized on one database? | yes | that database, if it is among the six |
 | Is there shell access on the server? | no | the setup wizard in the browser |
 

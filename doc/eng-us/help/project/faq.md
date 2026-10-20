@@ -57,6 +57,28 @@ points, which this help can confirm from the software:
 - **Free software.** Under the GPL you may run, study, change and share it; nobody can take it away from you. See
   [Licensing questions](licensing-faq.md).
 
+### Is Exponential a framework, or a complete product?
+
+A complete product. Exponential is a whole working unit, not just a framework you have to finish before it does
+anything: one `composer install` gives you a rapid application development (RAD) stack for Internet applications
+that is at the same time a content management system, a digital experience platform (the Exponential Layouts page
+builder, multisite and multilingual sites, the Exponential Intelligence writing assistant) and an e-commerce system
+(basket, orders, payment gateways, order receipts and the store dashboard). As of 6.0.15 that includes its own
+Internet and web application server, Exponential Velocity. Because every layer comes from one source, with one
+installer, one console and one set of documentation, adopting Exponential anywhere in the world comes without the
+usual integration work. See [Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md).
+
+### Does Exponential include a web server?
+
+Yes, as of 6.0.15. The Velocity Internet / Web Application Server is part of Exponential: the root `composer.json`
+requires `se7enxweb/exponential-velocity ~0.0.4.54`, so every installation has it, on PHP 8.0 and later. The project
+calls this a turning point, a cornerstone and a capstone: a new level of application system integration that puts
+even greater features in the core product, out of the box, by default. Velocity is the recommended engine for every
+stage and FrankenPHP is a production-ready alternative; Apache and nginx with PHP-FPM keep working as before. The
+commands are `./console exp:velocity deploy`, `start`, `restart` and `cache clear`. See
+[Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md) and
+[Serving the site](../../install/08-serving-the-site.md).
+
 ### Who makes it?
 
 7x develops and maintains it, and the Exponential Foundation, a nonprofit, operates the project (footer of
@@ -140,7 +162,7 @@ To follow releases, or every change as it is made, see [Update with Git](../upda
 
 ### Which PHP versions does it support?
 
-Exponential 6.0.15 runs on PHP 8.0 to 8.5; the Velocity application server needs 8.1 or later
+Exponential 6.0.15 runs on PHP 8.0 to 8.5, and so does the Velocity application server that is part of it
 ([Requirements](../../install/02-requirements.md)). The website's community page says "PHP 8.1 through PHP 8.5" for
 the 6.0.14 release; the repository's requirements, which also cover PHP 8.0, are the reference.
 

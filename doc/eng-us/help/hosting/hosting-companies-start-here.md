@@ -48,12 +48,23 @@ they show you how to measure and decide.
 - **It brings its own engine.** Exponential Velocity is a persistent-worker web server written in PHP, recommended
   for every stage; FrankenPHP is a production-ready alternative; Apache or nginx with PHP-FPM remain fully supported
   and are what shared hosting usually offers ([Chapter 8](../../install/08-serving-the-site.md)).
+- **As of 6.0.15 that engine is part of Exponential.** The root `composer.json` requires
+  `se7enxweb/exponential-velocity ~0.0.4.54`, so every site you install with Composer has the Velocity Internet /
+  Web Application Server, on the same PHP as the site (8.0 and later, the stock PHP 8.0 of Red Hat Enterprise Linux 9
+  included). It needs the `sockets` extension, with `pcntl` and `openssl` recommended. Nothing switches engines on its
+  own, so an Apache or nginx offer keeps working unchanged; offering Velocity is a setting
+  (`[ServerSettings] Engine=qbix`) and a long-running process, not a second product to install.
+- **One stack for your customers.** With the server in the core, Exponential is one working unit: a rapid
+  application development stack, a CMS, digital experience features and e-commerce from one installation, one console
+  (`./console exp:velocity deploy`, `start`, `restart`, `cache clear`) and one set of documentation. For a host that
+  means fewer moving parts to support per site. The story:
+  [Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md).
 
 ## What a server must provide
 
 | Need | Minimum | Notes |
 |---|---|---|
-| PHP | 8.0 (8.1 for Velocity) | the newest 8.x your system offers; 8.5 is supported |
+| PHP | 8.0, for the site and for Velocity | the newest 8.x your system offers; 8.5 is supported |
 | Database | one of the six | in the official order: 1. SQLite 3 (default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at this time. |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on | checked by the setup wizard |
 | Web server | none required | Velocity serves HTTP and HTTPS itself; or Apache/nginx with PHP-FPM |

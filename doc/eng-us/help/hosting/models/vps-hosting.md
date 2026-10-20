@@ -48,7 +48,7 @@ through PHP and the database: x86_64 is tier 1, aarch64 tier 2
 
 A VPS image for Exponential carries:
 
-- **PHP 8.1 or later**, so that Velocity can run (8.0 runs Exponential under Apache or PHP-FPM, not Velocity). The
+- **PHP 8.0 or later**, for Velocity as for Apache or PHP-FPM. The
   newest 8.x your distribution offers is the recommendation; 8.5 is supported
   ([2.2 PHP](../../../install/02-requirements.md#22-php)).
 - **The required extensions**: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`,

@@ -52,7 +52,7 @@ The database is part of the platform: plan its own upgrades, and its backup meth
 ## Web servers and engines
 
 A site can be served by Exponential Velocity, by Apache or nginx with PHP-FPM, or by FrankenPHP
-([8. Serving the site](../../../../install/08-serving-the-site.md)). Velocity needs PHP 8.1 or later with the `sockets`
+([8. Serving the site](../../../../install/08-serving-the-site.md)). Velocity needs PHP 8.0 or later with the `sockets`
 extension ([2. Requirements](../../../../install/02-requirements.md)). Velocity is a separate package with its own
 versions and changelog ([Velocity changelog](../../../../../changelogs/extensions/exponential-velocity.md)).
 

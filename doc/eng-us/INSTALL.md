@@ -76,7 +76,7 @@ every extension a clone you can follow, change and contribute back from.
 | | |
 |---|---|
 | Version | **PHP 8.0 to 8.5**. `composer.json` declares `^8.0` (and accepts later 8.x). PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux 9, Rocky Linux 9) runs Exponential under Apache or PHP-FPM. Use the newest PHP your system offers. See [PHP 8.0 support](bc/6.0/php-8.0-support.md). |
-| Exponential Velocity | needs **PHP 8.1** or later and the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). |
+| Exponential Velocity | part of Exponential as of 6.0.15: `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.54`, so `composer install` installs it. Runs on **PHP 8.0** or later, like the kernel, and needs the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). See [Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md). |
 | Release tags | `v6.0.8` to `v6.0.14` require PHP 8.1; on PHP 8.0 install the 6.0.15 line (`dev-main`, which Composer also knows as `6.0.x-dev`) until its tag is published. |
 | 64-bit PHP | needed for more than 30 languages (`composer.json`, `suggest`). |
 | `memory_limit` | at least `64M` (setup check `memory_limit`). Restart the web server or PHP-FPM after editing `php.ini`. |
@@ -180,12 +180,16 @@ php bin/php/console --version
 
 The first line names the version, for example `console (Exponential) 6.0.15stable`.
 
-**Optional: Exponential Velocity.** It is suggested, not installed by default, because it needs PHP 8.1. On PHP 8.1
-or later add it with:
+**Exponential Velocity is installed with it.** As of 6.0.15 the Velocity Internet / Web Application Server is part
+of Exponential: `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.54`, which runs on PHP 8.0 and
+later, so the `composer install` above has already placed it in `vendor/se7enxweb/exponential-velocity/`. Check it
+with:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.50
+php bin/php/console exp:velocity status
 ```
+
+Why this matters, and what it brings: [Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md).
 
 ## 4. Choose an install method
 

@@ -85,7 +85,7 @@ From the [README, "What version of PHP is required"](https://github.com/se7enxwe
 |---|---|
 | 7.4 | Only up to 6.0.7, deprecated |
 | 8.0 | The oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 runs it under Apache or PHP-FPM |
-| 8.1 to 8.5 | Supported; Exponential Velocity needs 8.1 or later |
+| 8.1 to 8.5 | Supported; Exponential Velocity runs on 8.0 and later too |
 | 8.6 and later | Allowed by the `php` requirement of `composer.json`; the README names "PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9" as the aim |
 
 The README's advice: "please use the latest version of PHP available on your OS". The continuous integration runs

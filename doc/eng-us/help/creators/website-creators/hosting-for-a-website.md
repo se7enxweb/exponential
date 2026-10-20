@@ -28,7 +28,7 @@ From [2.1 The checklist](../../../install/02-requirements.md#21-the-checklist):
 | Need | Minimum | Recommended |
 |---|---|---|
 | PHP | 8.0 | the newest 8.x the system offers (8.5 is supported) |
-| PHP for Velocity | 8.1 with `sockets` | plus `pcntl` and `openssl` |
+| PHP for Velocity | 8.0 with `sockets` | plus `pcntl` and `openssl` |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | |
 | Database | SQLite 3 (no server) | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | Composer | 2.x | the current 2.x |
@@ -56,7 +56,7 @@ So:
 - **Shared hosting:** Apache with PHP-FPM and the shipped `.htaccess_root` rules
   ([8.5 Apache with PHP-FPM](../../../install/08-serving-the-site.md#85-apache-with-php-fpm)).
 - **An nginx you already run:** [8.6 nginx with PHP-FPM](../../../install/08-serving-the-site.md#86-nginx-with-php-fpm).
-- **Only PHP 8.0 available:** Apache or nginx; Velocity needs 8.1.
+- **Only PHP 8.0 available:** Velocity runs on it too, as do Apache and nginx.
 
 ## Choosing the database
 

@@ -33,7 +33,7 @@ Every Exponential hosting plan is a combination of these blocks. Write down, for
 | Block | The question it answers | Options |
 |---|---|---|
 | Engine | What serves the site? | Exponential Velocity, FrankenPHP through Velocity, Apache or nginx with PHP-FPM |
-| PHP | Which versions, who chooses? | the supported range 8.0 to 8.5 (8.1 or later for Velocity) |
+| PHP | Which versions, who chooses? | the supported range 8.0 to 8.5 (for Velocity too) |
 | Database | Which engine, shared or dedicated? | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | Storage | How much space for `var/storage` (uploads and image variations), caches and logs? | a quota per plan |
 | Isolation | What separates this customer from others? | a system user and PHP-FPM pool per site, a VPS, a container, a dedicated machine |
