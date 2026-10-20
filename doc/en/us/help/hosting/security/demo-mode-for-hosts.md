@@ -44,16 +44,18 @@ installers accept the published demo password, and the administration shows a **
 | PHP-FPM | in the demo's own pool file: `env[EXP_DEMO_MODE] = 1`, then reload the pool's master |
 | Apache (mod_php, or PHP-FPM through mod_proxy_fcgi) | in the demo's virtual host: `SetEnv EXP_DEMO_MODE 1` |
 | LiteSpeed / OpenLiteSpeed (lsphp) | the demo's virtual host or external application environment: `EXP_DEMO_MODE=1` |
-| Exponential Velocity | the environment of the process that starts the server: `Environment=EXP_DEMO_MODE=1` in its systemd unit or a drop-in, `/etc/default/exponential-velocity` for the packaged unit, or `export EXP_DEMO_MODE=1` before `./console exp:velocity start`. The workers inherit it |
+| Exponential Velocity | `export EXP_DEMO_MODE=1` in `/etc/vc/envvars`: the server reads the file at every start and exports what it sets to the workers. The environment of the process that starts the server works too (`Environment=EXP_DEMO_MODE=1` in its systemd unit or a drop-in, `/etc/default/exponential-velocity` for the packaged unit) and wins over the file |
 | FrankenPHP or another application server | the environment of the server process |
 | Cron | a line `EXP_DEMO_MODE=1` at the top of the demo user's crontab |
 | Console | `export EXP_DEMO_MODE=1` in the demo user's shell profile, or before each command |
 | Containers | `ENV EXP_DEMO_MODE=1` in the demo image, or `-e EXP_DEMO_MODE=1` / `environment:` for the demo service only |
 
-**Velocity restarts.** `exp:velocity restart` and `exp:velocity deploy` start the new server with the environment of
-the shell they run in. Set the variable where the service manager keeps it (the unit), or a restart from another shell
-silently drops demo mode. Velocity's own `/etc/vc/envvars` file is read for the server's own settings, not exported to
-the PHP workers, so it is not the place for `EXP_DEMO_MODE`.
+**Velocity restarts.** With `export EXP_DEMO_MODE=1` in `/etc/vc/envvars`, `exp:velocity restart` and
+`exp:velocity deploy` keep demo mode whichever shell runs them: the server reads the file at every start. The file is
+read, never run, and refuses `PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`, `PHPRC`, `PHP_INI_SCAN_DIR`, `HOME`,
+`USER` and the other loader and shell variables ([on-disk layout](../../../bc/6.0/velocity-ondisk-layout.md)). It
+applies to every site the Velocity server serves, so use it only on a server that serves nothing but demos. It needs
+an engine with the envvars export (after v0.0.4.53); with an older one `exp:velocity start` passes the values itself.
 
 ## Installing a demo
 

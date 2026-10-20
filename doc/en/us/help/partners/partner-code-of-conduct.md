@@ -14,8 +14,10 @@ This page is for everyone who works for a partner company. It states the conduct
 > **Note**
 > There is no published, formal code of conduct for partners yet. CONTRIBUTING.md asks contributors to "review our
 > Code of Conduct (CODE_OF_CONDUCT.md)", but that file does not exist in the repository today. A formal code of
-> conduct for partners and contributors is **to be defined by the Foundation**. Until then, the rules below collect
-> what the program, the contract and the project's own documents already require, with their sources.
+> conduct for partners and contributors is **to be defined by the Foundation**. Until then, the help's conduct page is
+> [Advocate conduct and ethics](../advocates/advocate-conduct-and-ethics.md), which is where a link to
+> `CODE_OF_CONDUCT.md` should lead, and the rules below collect what the program, the contract and the project's own
+> documents already require, with their sources.
 
 ## 1. Live the program's values
 

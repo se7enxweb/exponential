@@ -4078,7 +4078,7 @@
     </message>
     <message>
         <source>Block changes</source>
-        <translation>Spärra ändringar</translation>
+        <translation>Ändringar i block</translation>
     </message>
     <message>
         <source>New version</source>
@@ -20283,7 +20283,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Block</source>
-        <translation>Blockera</translation>
+        <translation>Block</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -33774,7 +33774,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>You are not allowed to create comments.</source>
-        <translation>Du är har inte rätt att skriva kommentarer.</translation>
+        <translation>Du har inte rätt att skriva kommentarer.</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -37259,7 +37259,7 @@ Om du vill skicka kommentarer till personen som godkänner eller visa statusen, 
     </message>
     <message>
         <source>Block changes</source>
-        <translation>Spärra ändringar</translation>
+        <translation>Ändringar i block</translation>
     </message>
     <message>
         <source>New version</source>
@@ -45960,7 +45960,7 @@ För att göra detta måste du ändra %chown kommandona under Alternativa shell-
     </message>
     <message>
         <source>You are not allowed to access %1.</source>
-        <translation>Du har åtkomst till %1.</translation>
+        <translation>Du har inte åtkomst till %1.</translation>
     </message>
     <message>
         <source>Password</source>

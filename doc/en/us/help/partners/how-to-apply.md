@@ -52,6 +52,9 @@ Go straight to the [Onboarding checklist](onboarding-checklist.md) and [Your fir
 ## Contacts
 
 - The contact form <https://exponential.earth/partner/contact-us>.
+- The program pages name two different e-mail addresses for the partner team and for the signed contract; which one
+  is right is [to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed). Until then use the form,
+  or ask through it where to send the contract.
 
 ## Related pages
 
