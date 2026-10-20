@@ -238,12 +238,12 @@ class expHelpAudience
         'languages.md' => 20,
         'branch-overview.md' => 30,
         'release-overview' => 40,
+        'project/SECURITY.md' => 50,
         'project/CONTRIBUTING.md' => 100,
         'project/COPYRIGHT.md' => 110,
         'README-LICENSE.md' => 120,
         'LICENSE-GFDL-1.3.txt' => 130,
         'project/LICENSE.md' => 140,
-        'project/SECURITY.md' => 150,
         'glossary.md' => 9999,
     );
 

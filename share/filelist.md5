@@ -6375,7 +6375,7 @@ c5545530f53d980f227c9e2cad67d78c  doc/en/us/features/6.0/extensions/swark.md
 b8686ed08b041700382d969f251b7a73  doc/en/us/features/6.0/file-consistency-check.md
 59921235369f40f7789e0b09d13b8f05  doc/en/us/features/6.0/form-expired-page.md
 8c5c33dddc81c5e6f444b9029806c644  doc/en/us/features/6.0/help-content.md
-8a655c145424a7498e8d566a649c0ac9  doc/en/us/features/6.0/help-system.md
+cb75abd4c10bc42868f9856c54250741  doc/en/us/features/6.0/help-system.md
 b0d4d73922efa2d3bd00e0c098ea0176  doc/en/us/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/en/us/features/6.0/icon-themes-in-extensions.md
 43b1dad028eb5a42a24b626adf88ae81  doc/en/us/features/6.0/install-in-one-command.md
@@ -12393,7 +12393,7 @@ b564cbe98b10f2cebf0a6239f6b3493e  kernel/classes/help/content/exphelpcontentvali
 95d8b04fab5b21cd9a0bce3222083632  kernel/classes/help/content/exphelpditamarkup.php
 407bcb5babc99f3b3d04f7c1f92f2e01  kernel/classes/help/exphelp.php
 ecd686481ac982dc50a41e4025d6434e  kernel/classes/help/exphelpallowlist.php
-ff7aeef1462ba5b13533044d8f730a36  kernel/classes/help/exphelpaudience.php
+b181304f32ce3f57b0b6bbfe30d5e71e  kernel/classes/help/exphelpaudience.php
 8575966cb7b4f6f102207d46a4873706  kernel/classes/help/exphelpcommitfeed.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
@@ -13896,7 +13896,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c46d815e90f7a7046868a7aad05f6f5f  settings/debugbar.ini
 d3a8dbd3dd47da9a1e9c49ce3c0926fb  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-6ba03c6619fe1016669ded05bb8f85d4  settings/exphelp.ini
+9742dd676c4b072477cce26e743f1cd6  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
