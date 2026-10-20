@@ -236,5 +236,5 @@ und [Ladereihenfolge der Extensions](../../en/us/features/6.0/extension-loading-
 | Änderungen in der Administration im Blick behalten | [Audit-Protokoll](../../en/us/features/6.0/audit-trail.md) |
 | Wiederkehrende Aufgaben ausführen | [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md) |
 | Sehen, was sich wann geändert hat | [Chronik nach Monaten](../../en/us/history/README.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |
-| Wissen, was eine Installation standardmäßig tut | [Standardwerte einer Neuinstallation](../../en/us/features/6.0/clean-install-defaults.md), [Protokolle und Startdaten des Installationsprogramms](../../en/us/specifications/6.0/installer-logs-and-seed-data.md) |
+| Wissen, was eine Installation standardmäßig tut | [Standardwerte einer Neuinstallation](../../en/us/features/6.0/clean-install-defaults.md), [Protokolle und Startdaten des Installationsprogramms](../spezifikationen/6.0/installer-protokolle-und-startdaten.md) |
 | Einen Begriff nachschlagen | [Glossar](../../en/us/glossary.md) |

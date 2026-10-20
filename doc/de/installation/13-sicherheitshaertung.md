@@ -865,9 +865,9 @@ Vollständige Anleitung: [Audit](../../en/us/bc/6.0/audit.md).
 
 In diesem Repository:
 
-- [Sicherheitsstandards vom September 2026](../../en/us/specifications/6.0/security-defaults-2026-09.md): Header,
+- [Sicherheitsstandards vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md): Header,
   Session-Cookie, Anmeldung, ausgelieferte Dateien, Caching persönlicher Seiten
-- [Sicherheitshärtung von 6.0.13](../../en/us/bc/6.0/hardening.md), [Härtung von Datentypen und Eingaben](../../en/us/specifications/6.0/datatype-input-hardening.md),
+- [Sicherheitshärtung von 6.0.13](../../en/us/bc/6.0/hardening.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md),
   [RAD-Werkzeuge: Sicherheit](../../en/us/bc/6.0/rad-security.md)
 - [Request-Regeln](../../en/us/bc/6.0/view_full_security.md)
 - [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../en/us/bc/6.0/trusted-proxies.md); Code in
@@ -879,7 +879,7 @@ In diesem Repository:
 - [E-Mail-Einstellungen: Anleitung für Administratoren](../anleitungen/mail-einstellungen-administrator.md),
   [Upgrade-Hinweise](../../en/us/bc/6.0/mail-preferences.md)
 - [HTTP-Cache](../../en/us/bc/6.0/httpcache.md)
-- Velocity: [HTTP/2 und Sicherheit](../../en/us/specifications/6.0/velocity-http2-and-security.md),
+- Velocity: [HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md),
   [HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md),
   [Kontrollpanel](../../en/us/features/6.0/velocity-control-panel.md), [Engines](../../en/us/bc/6.0/velocity-engines.md)
 - [Installation mit einem Befehl](../../en/us/features/6.0/install-in-one-command.md) (das erzeugte Administratorpasswort)

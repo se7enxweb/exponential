@@ -241,7 +241,7 @@ In effect:
 Einstellungen werden in `var/cache/ini/` zwischengespeichert; leeren Sie nach dem Bearbeiten einer Datei von Hand
 diesen Cache mit `php bin/php/ezcache.php --clear-tag=ini`, und starten Sie Velocity neu, falls es die Site
 ausliefert, denn seine Worker halten die Einstellungen im Speicher. Die Platzierungsregeln sind in
-[Platzierung von INI-Overrides](../../en/us/specifications/6.0/ini-override-placements.md) spezifiziert; der Befehl, der
+[Platzierung von INI-Overrides](../spezifikationen/6.0/ini-override-platzierungen.md) spezifiziert; der Befehl, der
 Einstellungen in jedem Geltungsbereich liest und schreibt, ist [exp:ini](../../en/us/features/6.0/exp-ini-command.md).
 
 ### Das Site-Paket und die Datenbank
@@ -428,7 +428,7 @@ In diesem Repository:
 - [Standardwerte einer sauberen Installation](../../en/us/features/6.0/clean-install-defaults.md).
 - [Extensions](../../en/us/features/6.0/extensions/README.md) und die [Anleitung zu Extensions](../anleitungen/extensions.md).
 - [Templates und Design](../anleitungen/templates-und-design.md).
-- [Platzierung von INI-Overrides](../../en/us/specifications/6.0/ini-override-placements.md) und
+- [Platzierung von INI-Overrides](../spezifikationen/6.0/ini-override-platzierungen.md) und
   [exp:ini](../../en/us/features/6.0/exp-ini-command.md).
 - [Konsole](../../en/us/bc/6.0/console.md).
 - [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md).

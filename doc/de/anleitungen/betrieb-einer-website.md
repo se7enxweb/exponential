@@ -120,7 +120,7 @@ Der Cronjob-Teil für Benachrichtigungen hat eine eigene Anleitung: [Benachricht
 
 Der Teil `mailpreferences` (ebenfalls in `infrequent`) hält das Protokoll der E-Mail-Einwilligungen und die Bestätigungen innerhalb ihrer Aufbewahrungsfrist: [E-Mail-Einstellungen: einrichten und ausführen](mail-einstellungen-administrator.md).
 
-Vertiefung: [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md), [Befehle, Cronjob-Teile und Views als Klassen](../../en/us/specifications/6.0/runnable-commands-cronjobs-views.md), [Inhaltsjobs](../../en/us/features/6.0/content-jobs.md) (große Lösch- und Kopiervorgänge laufen in Stapeln und werden von `cron:contentjobs` fortgesetzt).
+Vertiefung: [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md), [Befehle, Cronjob-Teile und Views als Klassen](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md), [Inhaltsjobs](../../en/us/features/6.0/content-jobs.md) (große Lösch- und Kopiervorgänge laufen in Stapeln und werden von `cron:contentjobs` fortgesetzt).
 
 ## 4. Den statischen Cache einschalten
 
@@ -266,7 +266,7 @@ dieses verknüpften Objekts bleiben außen vor, sodass die Indizierung nie einer
 seit 2018 so (siehe [Indizierung von Beziehungen](../../en/us/bc/5.90/relation_indexing.md)); LoveStacks Commit `5c089f6250`
 macht dasselbe, sodass eine Site, die von LoveStack kommt, hier dieselben Suchergebnisse findet.
 
-Vertiefung: [SQLite-Datenbankunterstützung](../../en/us/features/6.0/sqlite-database.md), [SQLite-3-Treiber](../../en/us/specifications/6.0/sqlite3-database-driver.md), [Datenbanktreiber vom 16. bis 30. September 2026](../../en/us/specifications/6.0/database-drivers-2026-09.md), [Verhalten der SQLite- und Oracle-Treiber](../../en/us/specifications/6.0/database-drivers-sqlite-oracle.md), [MongoDB-Unterstützung](../../en/us/features/6.0/mongodb-database-support.md).
+Vertiefung: [SQLite-Datenbankunterstützung](../../en/us/features/6.0/sqlite-database.md), [SQLite-3-Treiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md), [Datenbanktreiber vom 16. bis 30. September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md), [Verhalten der SQLite- und Oracle-Treiber](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md), [MongoDB-Unterstützung](../../en/us/features/6.0/mongodb-database-support.md).
 
 ## 8. Die Logs lesen
 
@@ -288,7 +288,7 @@ php bin/php/audit.php tail --channel=access --lines=20 --allow-root-user
 php bin/php/audit.php verify --allow-root-user
 ```
 
-Erwartete Ausgabe von `status`: `Audit: enabled` und eine Zeile je Kanal (`content`, `access`, `system`, ...), die auf `intact` endet. Um bei der Untersuchung mehr auf der Seite selbst zu sehen, setzen Sie `DebugOutput=enabled` in `settings/override/site.ini.append.php` im Block `[DebugSettings]`, laden die Seite neu und schalten es danach wieder aus; lassen Sie es im Produktivbetrieb nie eingeschaltet. Vertiefung: [Audit-Protokoll](../../en/us/features/6.0/audit-trail.md), [Ereignismodell des Audit-Protokolls](../../en/us/specifications/6.0/audit-event-model.md), [Verbesserungen der Debug-Ausgabe](../../en/us/features/6.0/debug-output-improvements.md).
+Erwartete Ausgabe von `status`: `Audit: enabled` und eine Zeile je Kanal (`content`, `access`, `system`, ...), die auf `intact` endet. Um bei der Untersuchung mehr auf der Seite selbst zu sehen, setzen Sie `DebugOutput=enabled` in `settings/override/site.ini.append.php` im Block `[DebugSettings]`, laden die Seite neu und schalten es danach wieder aus; lassen Sie es im Produktivbetrieb nie eingeschaltet. Vertiefung: [Audit-Protokoll](../../en/us/features/6.0/audit-trail.md), [Ereignismodell des Audit-Protokolls](../spezifikationen/6.0/audit-ereignismodell.md), [Verbesserungen der Debug-Ausgabe](../../en/us/features/6.0/debug-output-improvements.md).
 
 ### PHP-Deprecations und Größe der Logdateien
 

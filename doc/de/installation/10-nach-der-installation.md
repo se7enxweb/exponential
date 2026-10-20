@@ -385,7 +385,7 @@ in `var/log/mail/`, sodass Sie Abonnement, Double-Opt-in, Versand und Abmeldung 
 Empfänger testen können. Um wirklich zu versenden, setzen Sie die Methoden auf `smtp` (mit den Schlüsseln
 `SmtpTransport*`) oder `sendmail`. Das Verzeichnis muss für den Benutzer des Webservers und für den Cron-Benutzer
 beschreibbar sein. Zustellbarkeit, Drosselung und Bounce-Behandlung sind bei der Extension und in
-[der Spezifikation von cjw_newsletter](../../en/us/specifications/6.0/cjw_newsletter.md) dokumentiert.
+[der Spezifikation von cjw_newsletter](../spezifikationen/6.0/cjw_newsletter.md) dokumentiert.
 
 ## 10.6 Caches
 
@@ -993,11 +993,11 @@ In diesem Repository:
   [Sicherheit und Audit](../anleitungen/sicherheit-und-audit.md), [Extensions](../anleitungen/extensions.md),
   [Upgrades](../anleitungen/aktualisieren.md), [der Lernpfad](../anleitungen/README.md).
 - [Benachrichtigungen: Betrieb und Fehlerbehebung](../anleitungen/benachrichtigungen-administrator.md),
-  [Spezifikation der Benachrichtigungen](../../en/us/specifications/6.0/notifications.md),
+  [Spezifikation der Benachrichtigungen](../spezifikationen/6.0/benachrichtigungen.md),
   [E-Mail-Präferenzen für Administratoren](../anleitungen/mail-einstellungen-administrator.md),
-  [Spezifikation von cjw_newsletter](../../en/us/specifications/6.0/cjw_newsletter.md).
+  [Spezifikation von cjw_newsletter](../spezifikationen/6.0/cjw_newsletter.md).
 - [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md),
-  [Befehle, Cronjob-Teile und Views als Klassen](../../en/us/specifications/6.0/runnable-commands-cronjobs-views.md),
+  [Befehle, Cronjob-Teile und Views als Klassen](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md),
   [Inhaltsjobs](../../en/us/features/6.0/content-jobs.md), [Velocity-Scheduler](../../en/us/features/6.0/velocity-scheduler.md).
 - [Cache-Konsole](../../en/us/bc/6.0/cache-console.md), [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../en/us/features/6.0/cache-clear-rename-aside.md),
   [HTTP-Cache](../../en/us/bc/6.0/http-caching.md), [SQL-Abfrage-Cache](../../en/us/bc/6.0/sql-query-cache.md),
@@ -1005,7 +1005,7 @@ In diesem Repository:
   [Voreinstellungen des statischen Caches](../../en/us/bc/6.0/static-cache-defaults.md), [View „Preload Sites“](../../en/us/features/6.0/preload-sites-view.md).
 - [Velocity-Engines und exp:velocity deploy](../../en/us/bc/6.0/velocity-engines.md),
   [Velocity-Server mit persistenten Workern](../../en/us/features/6.0/velocity-persistent-worker-server.md),
-  [Einstellungen der Velocity-Engine](../../en/us/specifications/6.0/velocity-engine-settings.md),
+  [Einstellungen der Velocity-Engine](../spezifikationen/6.0/velocity-engine-einstellungen.md),
   [Velocity und der Opcode-Cache](../../en/us/features/6.0/velocity-opcode-cache-and-profile.md).
 - [Benchmark](../../en/us/features/6.0/benchmark.md), [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md),
   [Ein Benutzerpasswort zurücksetzen](../../en/us/features/6.0/reset-user-password.md), [Ihr Passwort ändern](../../en/us/features/6.0/modern-password-change.md),

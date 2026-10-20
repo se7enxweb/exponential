@@ -727,7 +727,7 @@ neuen vom Typ `HashType`. Was Sie übernehmen und prüfen sollten:
 - **Konten ohne `ezuser_setting`-Zeile** können sich seit August 2026 nicht anmelden: Eine fehlende Zeile gilt jetzt
   als deaktiviert. Die alte Kette löscht zwar verwaiste Zeilen (Dateien 4.0 und 5.4), legt aber niemals fehlende an.
   Finden Sie sie mit der Vorabprüfungsabfrage aus 14.5.3 oder mit den Abfragen der
-  [Sicherheitsspezifikation vom August 2026](../../en/us/specifications/6.0/security-hardening-2026-08.md#f-06-find-accounts-that-cannot-sign-in).
+  [Sicherheitsspezifikation vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md#f-06-konten-finden-die-sich-nicht-anmelden-können).
 - **Die Hash-Spalte muss breit genug sein, bevor sich jemand anmeldet.** Eine 4.x-Datenbank hat
   `ezuser.password_hash varchar(50)`; die erste Anmeldung schreibt den Hash in einen bcrypt-Hash mit 60 Zeichen um.
   Die Datei von 5.4 auf 6.0.0 erweitert die Spalte auf 255 (und die Datei von 6.0.0 auf 6.0.15 noch einmal, für ältere
@@ -962,7 +962,7 @@ In diesem Repository:
   [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md),
   [Dateikonsistenzprüfung](../../en/us/features/6.0/file-consistency-check.md), [Audit](../../en/us/bc/6.0/audit.md),
   [Legacy Bridge](../../en/us/features/6.0/legacy-bridge.md),
-  [Sicherheitshärtung August 2026](../../en/us/specifications/6.0/security-hardening-2026-08.md).
+  [Sicherheitshärtung August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md).
 - Code: `update/database/`, `update/common/scripts/`, `bin/php/ezconvertdbcharset.php`,
   `bin/php/ezconvertmysqltabletype.php`, `bin/php/ezsqldiff.php`, `bin/php/updateniceurls.php`,
   `bin/php/verify_aliases.php`, `bin/php/ezpgenerateautoloads.php`, `bin/php/eztemplatecheck.php`,

@@ -238,7 +238,7 @@ werden auf 1 angehoben). Halten Sie den Wert unter dem Anfrage-Timeout Ihres Web
 mit einer klaren Meldung scheitert, statt abgebrochen zu werden. Der Standardwert ist auf Velocity abgestimmt:
 Velocity ersetzt einen Worker, dessen Anfrage länger läuft als seine Engine-Einstellung `requestTimeout`
 (`Q.webserver.requestTimeout`), die **30 Sekunden** beträgt, sofern Sie sie nicht ändern (der Client erhält einen
-504; siehe die [Spezifikation des Worker-Pools](../../en/us/specifications/6.0/velocity-worker-pool.md)). 25 Sekunden lassen dem
+504; siehe die [Spezifikation des Worker-Pools](../spezifikationen/6.0/velocity-worker-pool.md)). 25 Sekunden lassen dem
 Treiber Zeit, vorher aufzugeben und den Fehler zu melden. Releases vor dieser lieferten `60` aus, wodurch der Server
 eine wartende Veröffentlichung zuerst abbrechen konnte; setzt Ihr Override noch `60`, senken Sie den Wert auf `25`.
 Um länger zu warten, erhöhen Sie `requestTimeout` und `SQLiteTransactionWait` gemeinsam, die Wartezeit immer einige
@@ -365,7 +365,7 @@ Seiten-Cache und die kompilierten Templates bleiben im Worker warm. Was das für
 - **Nach einer Änderung der Einstellungen** starten Sie die Worker neu: Sie lesen `site.ini` beim Start.
 
 Lesen Sie [Velocity-Server mit persistenten Workern](../../en/us/features/6.0/velocity-persistent-worker-server.md) und
-[Velocity-Worker-Pool](../../en/us/specifications/6.0/velocity-worker-pool.md) zum Pool selbst.
+[Velocity-Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md) zum Pool selbst.
 
 ### Wie er sich unter Last verhält
 
@@ -1104,14 +1104,14 @@ In diesem Repository:
   Reihenfolge, die gegen den Code geprüften Versionen, die Unterstützung durch die Installer pro Weg und die
   CI-Abdeckung.
 - [SQLite-Datenbankunterstützung](../../en/us/features/6.0/sqlite-database.md): die aufgabenorientierte Einführung.
-- [Spezifikation: der SQLite3-Datenbanktreiber](../../en/us/specifications/6.0/sqlite3-database-driver.md): Verbindung,
+- [Spezifikation: der SQLite3-Datenbanktreiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md): Verbindung,
   PRAGMAs, Transaktionen und Schreiber, die SQL-Kompatibilitätsschicht.
 - [SQLite: Transaktionen warten in einer Schlange auf die Schreibsperre](../../en/us/bc/6.0/sqlite-transactions.md): die
   Änderung in 6.0.15 und Upgrade-Hinweise.
-- [Datenbanktreiber und Installer, 16. bis 30. September 2026](../../en/us/specifications/6.0/database-drivers-2026-09.md):
+- [Datenbanktreiber und Installer, 16. bis 30. September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md):
   Änderungen an SQLite, PostgreSQL, MySQL und Oracle, der Setup-Assistent.
 - [SQLite für Exponential Platform](../../en/us/features/6.0/platform-sqlite-install.md) und
-  [SQLite-Installer für Platform](../../en/us/specifications/6.0/platform-sqlite-installer.md).
+  [SQLite-Installer für Platform](../spezifikationen/6.0/platform-sqlite-installer.md).
 - [SQL-Abfrage-Cache](../../en/us/bc/6.0/sql-query-cache.md).
 - [MongoDB als Datenbank](../../en/us/features/6.0/mongodb-database-support.md) und die
   [Portierungsreferenz zur MongoDB-Unterstützung im Kernel](../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
@@ -1119,7 +1119,7 @@ In diesem Repository:
 - [Installation mit einem Befehl](../../en/us/features/6.0/install-in-one-command.md), [Kickstarter](../../en/us/features/6.0/kickstarter-cli.md).
 - [Velocity-Server mit persistenten Workern](../../en/us/features/6.0/velocity-persistent-worker-server.md),
   [Velocity-Antwort-Cache](../../en/us/features/6.0/velocity-response-cache.md),
-  [Velocity-Worker-Pool](../../en/us/specifications/6.0/velocity-worker-pool.md).
+  [Velocity-Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md).
 - [Ladereihenfolge der Extensions](../../en/us/features/6.0/extension-loading-order.md).
 - [Eine Site betreiben](../anleitungen/betrieb-einer-website.md), Abschnitt 7 (Datenbanktreiber) und Abschnitt 6
   (Sicherungen).

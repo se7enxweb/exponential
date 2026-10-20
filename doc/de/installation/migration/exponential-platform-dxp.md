@@ -22,7 +22,7 @@ Beide setzen das Metapaket `se7enxweb/exponential-platform-dxp` voraus (Releases
 sofort lauffähige Variante ist `se7enxweb/exponential-platform-dxp-starter` (`1.0.0.0`).
 
 [Übersicht Migration](README.md) · [Checkliste](checkliste.md) · [DXP-Skeleton](../../../en/us/features/6.0/platform-dxp-skeleton.md) ·
-[Paketübersicht der Plattform](../../../en/us/specifications/6.0/platform-package-map.md)
+[Paketübersicht der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md)
 
 ## Inhalt
 

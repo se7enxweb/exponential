@@ -82,7 +82,7 @@ Exponential Platform kernel on Symfony 5.1/5.4 LTS (full-stack, single kernel �
 `se7enxweb/oss` (das 3.3-Metapaket, `replace: ibexa/oss`), `se7enxweb/exponential-platform-v4x-dxp-skeleton`
 (4.6.x, PHP 7.4 bis 8.5, Symfony 5.4) und `se7enxweb/exponential-platform-dxp-skeleton` mit dem Metapaket
 `se7enxweb/exponential-platform-dxp` (Platform v5, PHP 8.3 oder neuer, Symfony 7.4). Die vollständige Paketliste steht in
-der [Paketübersicht der Plattform](../../en/us/specifications/6.0/platform-package-map.md); die Nexus-Linien werden in
+der [Paketübersicht der Plattform](../spezifikationen/6.0/platform-paketzuordnung.md); die Nexus-Linien werden in
 [Exponential Platform Nexus](../../en/us/features/6.0/platform-nexus-starter.md) vorgestellt und die Skeletons auf der Seite
 [DXP-Skeleton](../../en/us/features/6.0/platform-dxp-skeleton.md).
 
@@ -380,7 +380,7 @@ für Ihren eigenen Code wie überall.
 ### 16.5.4 Namen der Konsolenbefehle
 
 Die Exponential-Forks gaben den Befehlen am 2026-04-07 einen primären Namen mit `exponential:`
-([Befehlsnamen](../../en/us/specifications/6.0/platform-console-commands.md)).
+([Befehlsnamen](../spezifikationen/6.0/platform-konsolenbefehle.md)).
 
 | Generation | Primärer Name | Alte Namen |
 |---|---|---|
@@ -435,7 +435,7 @@ Für die 4.x-Umbenennungen bietet der Hersteller `ibexa/compatibility-layer` an 
 `config/bundles.php`), das die alten Klassen-, Service-, Routen-, Twig- und Konfigurationsnamen zur Laufzeit abbildet;
 unter 5.0 wird es nicht unterstützt, dort verwendet der Hersteller `ibexa/rector` (`composer require --dev ibexa/rector`,
 `IbexaSetList::IBEXA_46` setzen, dann `php vendor/bin/rector --dry-run`), um den Code umzuschreiben. Keines von beiden
-hat einen Exponential-Fork in der [Paketübersicht](../../en/us/specifications/6.0/platform-package-map.md); beide sind
+hat einen Exponential-Fork in der [Paketübersicht](../spezifikationen/6.0/platform-paketzuordnung.md); beide sind
 Entwicklungswerkzeuge, die Sie während der Migration ausführen und danach entfernen.
 
 Umbenennungen von Konfigurationsschlüsseln in 4.0, denen die meisten Projekte begegnen (vollständige Liste auf der
@@ -690,7 +690,7 @@ Eine Checkliste für jedes Bundle unter `src/` oder in Ihren eigenen Paketen:
 - [ ] JavaScript: `ez-`-Ereignisse und -Klassen zu `ibexa-` (4.0); CKEditor-5-Plugins statt AlloyEditor (4.0).
 - [ ] REST-Clients: `/api/ibexa/v2`, `application/vnd.ibexa.api.*` (4.0).
 - [ ] Bundles Dritter: Es gibt eine Release für die Ziel-Version von Symfony oder einen se7enxweb-Fork
-      ([Paketübersicht](../../en/us/specifications/6.0/platform-package-map.md)).
+      ([Paketübersicht](../spezifikationen/6.0/platform-paketzuordnung.md)).
 
 Vorher und nachher, ein Signal Slot aus 2.5, aus dem ein Event-Subscriber für 4.x wurde:
 
@@ -1160,7 +1160,7 @@ den Legacy-Kernel 6.0 portiert. Das Vorgehen, in der Reihenfolge, in der es durc
    aufgebaut, auf deren Zonen andere Layouts verweisen ([Exponential Layouts](../../en/us/bc/6.0/LAYOUTS.md#shared-layouts-and-linked-zones)).
 
 Lesen Sie [Exponential Layouts](../../en/us/bc/6.0/LAYOUTS.md) zum Datenmodell und zum Editor, die
-[API des Layout-Editors](../../en/us/specifications/6.0/explayouts-ui-api.md) zur JSON-Schnittstelle und den
+[API des Layout-Editors](../spezifikationen/6.0/explayouts-ui-api.md) zur JSON-Schnittstelle und den
 [Fork von layouts-core](../../en/us/features/6.0/platform-layouts-core-fork.md) zur Symfony-Seite.
 
 ### 16.6.8 Einen Symfony-Stack neben dem Legacy-Kernel behalten
@@ -1181,7 +1181,7 @@ Die Wurzel der Konfiguration ist `ez_publish_legacy:` (`enabled`, `root_dir`, `l
 `clear_all_spi_cache_from_legacy`, `clear_all_spi_cache_on_symfony_clear_cache` und je Siteaccess `legacy_mode` sowie
 `templating.view_layout` / `module_layout`), die Befehle stehen in [16.5.4](#1654-namen-der-konsolenbefehle), Installation
 und Caching auf der Seite zur [Legacy Bridge](../../en/us/features/6.0/legacy-bridge.md) und in ihrer
-[Spezifikation](../../en/us/specifications/6.0/legacy-bridge-bundle.md). Auf einer 5.0-Datenbank braucht die Legacy-Hälfte die
+[Spezifikation](../spezifikationen/6.0/legacy-bridge-bundle.md). Auf einer 5.0-Datenbank braucht die Legacy-Hälfte die
 Tabellennamen aus Schritt 2 von [16.6.4](#1664-die-datenbank-schritt-für-schritt).
 
 Das ist zugleich die sanfteste Form von Weg B: Lassen Sie die Symfony-Site live, geben Sie den Redakteuren die
@@ -1318,9 +1318,9 @@ In diesem Repository:
 - [11. Upgrade](11-aktualisieren.md) (die Update-Dateien von 6.0), [9. Datenbanken](09-datenbanken.md), [8. Die Site ausliefern](08-die-website-ausliefern.md), [1. Einführung](01-einfuehrung.md).
 - Kapitel dieses Teils: [14. Migration von der 4.x-Linie](14-migration-von-4x.md), [15. Migration vom 5.x-Legacy-Stack](15-migration-von-5x-legacy.md), [17. Migrationsreferenz](17-migrationsreferenz.md).
 - Plattform: [Paket-Forks und Umbenennungen von Befehlen](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md),
-  [Paketübersicht der Plattform](../../en/us/specifications/6.0/platform-package-map.md),
-  [Namen der Konsolenbefehle der Plattform](../../en/us/specifications/6.0/platform-console-commands.md),
-  [SQLite-Installer der Plattform](../../en/us/specifications/6.0/platform-sqlite-installer.md),
+  [Paketübersicht der Plattform](../spezifikationen/6.0/platform-paketzuordnung.md),
+  [Namen der Konsolenbefehle der Plattform](../spezifikationen/6.0/platform-konsolenbefehle.md),
+  [SQLite-Installer der Plattform](../spezifikationen/6.0/platform-sqlite-installer.md),
   [Exponential Platform Nexus](../../en/us/features/6.0/platform-nexus-starter.md),
   [DXP-Skeleton](../../en/us/features/6.0/platform-dxp-skeleton.md),
   [Administrationsoberfläche der Plattform](../../en/us/features/6.0/platform-admin-ui-fork.md),
@@ -1328,8 +1328,8 @@ In diesem Repository:
   [Framework-Forks für PHP 8.4 / 8.5](../../en/us/features/6.0/platform-php85-framework-forks.md),
   [Site-Bundles](../../en/us/features/6.0/platform-site-bundles.md),
   [SQLite für Exponential Platform](../../en/us/features/6.0/platform-sqlite-install.md).
-- Legacy Bridge: [Legacy Bridge](../../en/us/features/6.0/legacy-bridge.md), [Spezifikation des Bundles](../../en/us/specifications/6.0/legacy-bridge-bundle.md), [ngsymfonytools](../../en/us/features/6.0/extensions/ngsymfonytools.md).
-- Layouts: [Exponential Layouts](../../en/us/bc/6.0/LAYOUTS.md), [API des Layout-Editors](../../en/us/specifications/6.0/explayouts-ui-api.md).
+- Legacy Bridge: [Legacy Bridge](../../en/us/features/6.0/legacy-bridge.md), [Spezifikation des Bundles](../spezifikationen/6.0/legacy-bridge-bundle.md), [ngsymfonytools](../../en/us/features/6.0/extensions/ngsymfonytools.md).
+- Layouts: [Exponential Layouts](../../en/us/bc/6.0/LAYOUTS.md), [API des Layout-Editors](../spezifikationen/6.0/explayouts-ui-api.md).
 - [Anleitung zu Templates und Design](../anleitungen/templates-und-design.md).
 - Changelogs und Geschichte: [Exponential Platform Nexus](../../changelogs/extensions/exponential-platform-nexus.md),
   [Exponential Platform Legacy](../../changelogs/extensions/exponential-platform-legacy.md),

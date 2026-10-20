@@ -361,5 +361,5 @@ Datei, und leeren Sie dann den INI-Cache: `php bin/php/ezcache.php --clear-tag=i
 
 - Ändern, wie Inhalte angezeigt werden: [Templates und Design](templates-und-design.md).
 - Was wann geschah: [Chronik Oktober 2026](../../en/us/history/2026/2026-10.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
-- Härtung dessen, was Redakteure eingeben können: [Härtung der Datentyp-Eingaben](../../en/us/specifications/6.0/datatype-input-hardening.md).
+- Härtung dessen, was Redakteure eingeben können: [Härtung der Datentyp-Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md).
 - Hintergrund- und geplante Arbeiten ausführen: [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md).

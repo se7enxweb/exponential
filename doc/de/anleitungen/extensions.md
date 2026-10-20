@@ -16,8 +16,8 @@ sind dieselben Programme wie `php bin/php/<name>.php`.
 | Sie bewirkt nichts, bis sie eingeschaltet wird. | `[ExtensionSettings] ActiveExtensions[]` in `settings/site.ini` (für die ganze Installation) oder `ActiveAccessExtensions[]` (für einen Siteaccess) |
 | Die Reihenfolge der Liste ist die Rangfolge: Eine früher geladene Extension setzt sich bei Einstellungen und Design-Templates gegen eine spätere durch. Mit `ExtensionOrdering=enabled` bestimmen zuerst die in `extension.xml` deklarierten Abhängigkeiten die Ladereihenfolge. | [Die Seite „Extensions“](extensions-seite.md), [Ladereihenfolge](../../en/us/features/6.0/extension-loading-order.md) |
 | Klassen in ihrem Ordner `classes/` werden über ein Autoload-Array gefunden, das Sie neu erzeugen. | `php bin/php/ezpgenerateautoloads.php -e` |
-| Ihre Einstellungen sind `.ini.append.php`-Dateien in `extension/<name>/settings/`. | [Ablageorte für Einstellungs-Overrides](../../en/us/specifications/6.0/ini-override-placements.md) |
-| Sie beschreibt sich selbst in `ezinfo.php` und `extension.xml`. | [Extension-Metadaten](../../en/us/specifications/6.0/extension-metadata.md) |
+| Ihre Einstellungen sind `.ini.append.php`-Dateien in `extension/<name>/settings/`. | [Ablageorte für Einstellungs-Overrides](../spezifikationen/6.0/ini-override-platzierungen.md) |
+| Sie beschreibt sich selbst in `ezinfo.php` und `extension.xml`. | [Extension-Metadaten](../spezifikationen/6.0/extension-metadaten.md) |
 
 So sehen Sie, welche Extensions in dieser Installation eingeschaltet sind:
 
@@ -370,7 +370,7 @@ aufgeführt (andernfalls würde sie beim ersten Zugriff eine ganze Anfrage zum A
 
 Die klassenbasierten Formen eines Befehls, eines Cronjob-Teils und einer View finden Sie unter
 [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md) und
-[deren Spezifikation](../../en/us/specifications/6.0/runnable-commands-cronjobs-views.md). Um ein ganzes Kernel-Modul durch ein
+[deren Spezifikation](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md). Um ein ganzes Kernel-Modul durch ein
 eigenes zu ersetzen, siehe [Eine Extension kann ein Kernel-Modul ersetzen](../../en/us/features/6.0/extension-module-override.md).
 
 ## 7. Die Extension veröffentlichen
@@ -435,7 +435,7 @@ erklärt, wie ein Maintainer ein bekanntes Beispiel kennzeichnet.
 
 ## Siehe auch
 
-- Vertiefung zu jedem Schritt: [Ladereihenfolge der Extensions](../../en/us/features/6.0/extension-loading-order.md), [Extension-Metadaten](../../en/us/specifications/6.0/extension-metadata.md),
+- Vertiefung zu jedem Schritt: [Ladereihenfolge der Extensions](../../en/us/features/6.0/extension-loading-order.md), [Extension-Metadaten](../spezifikationen/6.0/extension-metadaten.md),
   [Extensions in mehr als einem Ordner](../../en/us/features/6.0/additional-extension-directories.md), [RAD-Werkzeuge](../../en/us/features/6.0/rad-tools.md),
   [Erweiterungspunkte](../../en/us/bc/6.0/rad-extension-points.md), [Die Extension-Oberfläche](../../en/us/bc/6.0/rad-extension-surface.md).
 - Die Extensions, die mit der Distribution ausgeliefert werden, und was jede tut: [Katalog](../../en/us/features/6.0/extensions/README.md),

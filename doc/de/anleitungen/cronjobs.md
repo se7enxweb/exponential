@@ -706,7 +706,7 @@ ErrorFile=cronjobs/error.log
   [E-Mail-Einstellungen: einrichten und ausführen](mail-einstellungen-administrator.md)
 - Die Konsole: [Exponential-Konsole](../../en/us/bc/6.0/console.md#cronjob-parts-and-the-crontab-added-june-2026)
 - Für Entwickler: [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md),
-  [die Spezifikation](../../en/us/specifications/6.0/runnable-commands-cronjobs-views.md)
+  [die Spezifikation](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
 - Verwandte Funktionen: [Inhaltsjobs](../../en/us/features/6.0/content-jobs.md), [Velocity-Scheduler](../../en/us/features/6.0/velocity-scheduler.md),
   [Audit-Protokoll](../../en/us/features/6.0/audit-trail.md), [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md),
   [Seitengrößen](../../en/us/bc/6.0/pagination-settings.md)

@@ -297,7 +297,7 @@ führt die Versionen auf, die auf dem Entwicklungsserver und in der CI nachweisl
   sie anzulegen; wenn er das nicht kann, sagt er es und bittet darum, dass der Eigentümer der Datenbank oder ein
   Superuser `CREATE EXTENSION pgcrypto;` ausführt.
 - **MongoDB** und **Oracle**: siehe ihre Seiten, [MongoDB](../../en/us/features/6.0/mongodb-database-support.md) und
-  [Treiber für SQLite und Oracle](../../en/us/specifications/6.0/database-drivers-sqlite-oracle.md).
+  [Treiber für SQLite und Oracle](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md).
 - **MariaDB oder MySQL**: Die Datenbank muss UTF-8 verwenden. Wenn der Zeichensatz der Datenbank von dem abweicht, den
   der Assistent möchte, hält der Assistent mit „The database [...] cannot be used, the setup wizard wants to create the
   site in [...] but the database has been created using character set [...]“ an. Legen Sie die Datenbank mit
@@ -441,14 +441,14 @@ In diesem Repository:
 - [Datenbankunterstützung](../../en/us/help/database-support.md) und [Unterstützung von Betriebssystemen](../../en/us/help/os-support.md).
 - [PHP-8.0-Unterstützung](../../en/us/bc/6.0/php-8.0-support.md) und [PHP-8-Unterstützung](../../en/us/bc/6.0/php8.md).
 - [SQLite-Datenbankunterstützung](../../en/us/features/6.0/sqlite-database.md),
-  [SQLite-3-Treiber](../../en/us/specifications/6.0/sqlite3-database-driver.md),
+  [SQLite-3-Treiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md),
   [MongoDB](../../en/us/features/6.0/mongodb-database-support.md),
-  [Treiber für SQLite und Oracle](../../en/us/specifications/6.0/database-drivers-sqlite-oracle.md),
-  [Datenbanktreiber, September 2026](../../en/us/specifications/6.0/database-drivers-2026-09.md).
+  [Treiber für SQLite und Oracle](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md),
+  [Datenbanktreiber, September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md).
 - [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md),
   [Velocity-Pakete und -Programmdateien](../../en/us/features/6.0/velocity-packages-and-binaries.md).
 - [Bereitstellung](../anleitungen/bereitstellung.md).
-- [Qualitätsprüfungen](../../en/us/features/6.0/quality-checks.md) und [Continuous Integration](../../en/us/specifications/6.0/continuous-integration.md):
+- [Qualitätsprüfungen](../../en/us/features/6.0/quality-checks.md) und [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md):
   wie PHP 8.0 getestet wird.
 - Code: `composer.json`, `settings/setup.ini`, `settings/site.ini` (`[SetupSettings]`), `kernel/setup/ezsetuptests.php`,
   `kernel/setup/ezsetupcommon.php`, `design/standard/templates/setup/tests/`,

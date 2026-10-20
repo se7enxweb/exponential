@@ -9,7 +9,7 @@ einer Testinstallation, deren Mail-Transport auf Dateien gezwungen war, mit Test
 Namen, IDs und Zeiten weichen auf Ihrer Installation ab.
 
 Was Benutzer sehen, steht in [der Anleitung für Benutzer](../../en/us/features/6.0/notifications.md); die Befehle vollständig in
-[der Befehlsreferenz](../../en/us/specifications/6.0/notifications-cli.md).
+[der Befehlsreferenz](../spezifikationen/6.0/benachrichtigungen-cli.md).
 
 ## 1. Wie es funktioniert, in einer Minute
 
@@ -206,7 +206,7 @@ Testen Sie nie auf einer Live-Site mit dem echten Transport und echten Abonnente
 
 `[MailSettings] Transport` in `site.ini` entscheidet: `sendmail`, `smtp` oder `file`. Mit `file` wird die E-Mail nach
 `var/log/mail` (oder in das Verzeichnis aus `FileTransportDirectory`) als `<time>-<number>.mail` geschrieben, eine Datei je Nachricht, und keine
-E-Mail verlässt den Server. Siehe [die INI-Referenz](../../en/us/specifications/6.0/notifications-ini.md). Der Absender ist `EmailSender` aus
+E-Mail verlässt den Server. Siehe [die INI-Referenz](../spezifikationen/6.0/benachrichtigungen-ini.md). Der Absender ist `EmailSender` aus
 `notification.ini`, sonst aus `site.ini`, sonst `AdminEmail`.
 
 ## 6. Velocity und Apache
@@ -296,6 +296,6 @@ Die ganze Geschichte: [Ohne Benachrichtigung veröffentlichen](../../en/us/featu
 ## Verwandte Seiten
 
 - [Die Anleitung für Benutzer](../../en/us/features/6.0/notifications.md), [die Anleitung für Entwickler](benachrichtigungen-entwickler.md)
-- [Die Befehlsreferenz](../../en/us/specifications/6.0/notifications-cli.md), [die INI-Referenz](../../en/us/specifications/6.0/notifications-ini.md), [die Spezifikation](../../en/us/specifications/6.0/notifications.md)
+- [Die Befehlsreferenz](../spezifikationen/6.0/benachrichtigungen-cli.md), [die INI-Referenz](../spezifikationen/6.0/benachrichtigungen-ini.md), [die Spezifikation](../spezifikationen/6.0/benachrichtigungen.md)
 - [Betrieb einer Site](betrieb-einer-website.md), [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md), [das Audit-Protokoll](../../en/us/features/6.0/audit-trail.md)
 - [Upgrade-Hinweise](../../en/us/bc/6.0/notification-ui-and-commands.md)

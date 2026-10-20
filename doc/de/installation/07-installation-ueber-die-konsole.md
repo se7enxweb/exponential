@@ -659,9 +659,9 @@ In diesem Repository:
 - [Die Konsole](../../en/us/bc/6.0/console.md), [exp:ini](../../en/us/bc/6.0/console-exp-ini.md), [Cache-Konsole](../../en/us/bc/6.0/cache-console.md)
 - [Kickstarter-CLI](../../en/us/bc/6.0/kickstartercli.md)
 - [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md)
-- [Installer-Protokolle und Startdaten](../../en/us/specifications/6.0/installer-logs-and-seed-data.md)
-- [Datenbanktreiber: SQLite und Oracle](../../en/us/specifications/6.0/database-drivers-sqlite-oracle.md),
-  [Datenbanktreiber, September 2026](../../en/us/specifications/6.0/database-drivers-2026-09.md),
+- [Installer-Protokolle und Startdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
+- [Datenbanktreiber: SQLite und Oracle](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md),
+  [Datenbanktreiber, September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md),
   [SQLite-Datenbank](../../en/us/features/6.0/sqlite-database.md)
 - [Abstraktionen für CLI, Cronjobs und Views](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md)
 - [Erste Schritte](../anleitungen/erste-schritte.md)

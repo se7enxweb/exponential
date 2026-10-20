@@ -756,9 +756,9 @@ In diesem Repository:
 - [Das neue Aussehen des Setup-Assistenten und der Redaktions-Siteaccess](../../en/us/features/6.0/setup-wizard-and-editor-siteaccess.md)
 - [Standardwerte einer sauberen Installation](../../en/us/features/6.0/clean-install-defaults.md)
 - [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md)
-- [Installer-Logs und Startdaten](../../en/us/specifications/6.0/installer-logs-and-seed-data.md)
+- [Installer-Logs und Startdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [SQLite-Datenbank](../../en/us/features/6.0/sqlite-database.md), [SQLite-Installation](../../en/us/features/6.0/platform-sqlite-install.md),
-  [Datenbanktreiber](../../en/us/specifications/6.0/database-drivers-sqlite-oracle.md)
+  [Datenbanktreiber](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md)
 - [Übersetzungen und Sprachen](../../en/us/features/6.0/translations-and-languages.md)
 - [Die Konsole: `exp:ini`](../../en/us/bc/6.0/console-exp-ini.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../en/us/bc/6.0/behaviour-changes-2026-09b.md)

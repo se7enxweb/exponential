@@ -295,9 +295,9 @@ funktioniert. Mehr dazu in [Cache-Konsole](../../en/us/bc/6.0/cache-console.md) 
 |---|---|---|
 | Das Administratorpasswort ist verloren | | `php bin/php/resetuserpassword.php -u admin -g --allow-root-user` als root (die root-Umgehung), oder mit der Anmeldung eines Administrators (`-a <login> -ap <password>`); `-p <password>` setzt ein vorgegebenes Passwort. Siehe [Ein Benutzerpasswort zurücksetzen](../../en/us/features/6.0/reset-user-password.md). |
 | Das erzeugte Passwort ist unbekannt | Es wurde einmal am Ende der Installation ausgegeben | `var/log/initial-admin-password` (nur für den Eigentümer lesbar); löschen Sie die Datei nach der ersten Anmeldung. |
-| Ein per SQL oder Migration angelegtes Konto kann sich nicht anmelden | Seit dem 16. August 2026 gilt ein Benutzer ohne Zeile in `ezuser_setting` als deaktiviert | Legen Sie die Zeile an; die Abfragen stehen in der [Sicherheitsspezifikation vom August 2026](../../en/us/specifications/6.0/security-hardening-2026-08.md#f-06-find-accounts-that-cannot-sign-in). |
+| Ein per SQL oder Migration angelegtes Konto kann sich nicht anmelden | Seit dem 16. August 2026 gilt ein Benutzer ohne Zeile in `ezuser_setting` als deaktiviert | Legen Sie die Zeile an; die Abfragen stehen in der [Sicherheitsspezifikation vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md#f-06-konten-finden-die-sich-nicht-anmelden-können). |
 | Hinter einem Proxy oder Load Balancer: HTTPS-Seiten verlinken oder leiten auf `http://` weiter, eine Weiterleitungsschleife, oder jeder Besucher hat die Adresse des Proxys | Weitergeleitete Header (`X-Forwarded-Proto`, `X-Forwarded-Host`, `X-Forwarded-For`) zählen nur von Adressen in `site.ini [HTTPHeaderSettings] TrustedProxies[]`, ausgeliefert nur mit `127.0.0.1` und `::1` | Tragen Sie die Adresse des Proxys in `TrustedProxies[]` ein; für die Adresse des Besuchers setzen Sie außerdem `ClientIpByCustomHTTPHeader=X-Forwarded-For`. Siehe [Kapitel 8](08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy) und [Vertrauenswürdige Proxys](../../en/us/bc/6.0/trusted-proxies.md). |
-| Angemeldet, aber auf der nächsten Seite abgemeldet (hinter einem Proxy oder bei gemischtem HTTP und HTTPS) | Attribute des Sitzungscookies: `[Session] CookieSecure=auto` markiert das Cookie als `Secure`, wenn die Anfrage über HTTPS kam; `CookieSameSite=Lax` | Liefern Sie die gesamte Site über ein einziges Schema aus; wenn die Administration von einer anderen Site in einen Frame eingebettet oder Formulare von dort an sie gesendet werden, setzen Sie `CookieSameSite=None` zusammen mit `CookieSecure=true`. Siehe [Sicherheitsvorgaben](../../en/us/specifications/6.0/security-defaults-2026-09.md). |
+| Angemeldet, aber auf der nächsten Seite abgemeldet (hinter einem Proxy oder bei gemischtem HTTP und HTTPS) | Attribute des Sitzungscookies: `[Session] CookieSecure=auto` markiert das Cookie als `Secure`, wenn die Anfrage über HTTPS kam; `CookieSameSite=Lax` | Liefern Sie die gesamte Site über ein einziges Schema aus; wenn die Administration von einer anderen Site in einen Frame eingebettet oder Formulare von dort an sie gesendet werden, setzen Sie `CookieSameSite=None` zusammen mit `CookieSecure=true`. Siehe [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md). |
 
 ## 12.14 Hilfe erhalten
 
@@ -332,9 +332,9 @@ In diesem Repository:
   [MongoDB](../../en/us/features/6.0/mongodb-database-support.md).
 - [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [Velocity: HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md),
   [Velocity: Verzeichnisstruktur auf der Festplatte](../../en/us/bc/6.0/velocity-ondisk-layout.md).
-- [Audit](../../en/us/bc/6.0/audit.md), [Sicherheitsvorgaben](../../en/us/specifications/6.0/security-defaults-2026-09.md),
+- [Audit](../../en/us/bc/6.0/audit.md), [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md),
   [Anleitung zu Sicherheit und Audit](../anleitungen/sicherheit-und-audit.md).
-- [Installer-Logs und Startdaten](../../en/us/specifications/6.0/installer-logs-and-seed-data.md).
+- [Installer-Logs und Startdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md).
 - Code: `kernel/setup/ezsetuptests.php`, `kernel/setup/steps/ezstep_installer.php`,
   `kernel/setup/steps/ezstep_create_sites.php`, `kernel/classes/expkickstarter.php`, `bin/php/install.php`,
   `lib/ezutils/classes/ezexecution.php`, `lib/ezutils/classes/ezdebug.php`, `lib/ezfile/classes/ezlog.php`,

@@ -179,7 +179,7 @@ Richten Sie die Portale in `extension/expservices/settings/expportal.ini`, Block
 
 ## Siehe auch
 
-- Einen eigenen Dienst schreiben: eine Klasse, die `expServiceBase` erweitert, ein Block `[ezjscServer_exp<domain>]`, und er erscheint im Katalog und unter Setup > RAD. Siehe [Remote-Dienste (Funktionsseite)](../../en/us/features/6.0/remote-services-expservices.md) und [die Spezifikation der Dienste](../../en/us/specifications/6.0/expservices.md).
+- Einen eigenen Dienst schreiben: eine Klasse, die `expServiceBase` erweitert, ein Block `[ezjscServer_exp<domain>]`, und er erscheint im Katalog und unter Setup > RAD. Siehe [Remote-Dienste (Funktionsseite)](../../en/us/features/6.0/remote-services-expservices.md) und [die Spezifikation der Dienste](../spezifikationen/6.0/expservices.md).
 - Absichern, was Sie freigeben: Rollen, Richtlinien, Audit und Debugging: [Sicherheit und Audit](sicherheit-und-audit.md).
 - Alles über die Aufrufschnittstelle, Bereich für Bereich: [Backend-Dienste über ezjscore](../../en/us/bc/6.0/backend_ezjscore_services.md); die Extension, die sie trägt: [ezjscore](../../en/us/features/6.0/extensions/ezjscore.md).
 - Wie es entstanden ist: [Chronik Oktober 2026](../../en/us/history/2026/2026-10.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).

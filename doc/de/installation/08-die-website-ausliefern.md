@@ -366,7 +366,7 @@ Worker wie bisher vom Server geforkt, und das Log meldet dies.
 
 Worker werden außerdem von selbst ersetzt: nach `maxRequests` Anfragen (1000), wenn der Heap `workerMemoryCeiling`
 überschreitet oder wenn eine Anfrage länger als `requestTimeout` läuft (30 Sekunden; der Client erhält 504). Dies sind
-Engine-Einstellungen unter `Q.webserver`, beschrieben in der [Spezifikation des Worker-Pools](../../en/us/specifications/6.0/velocity-worker-pool.md).
+Engine-Einstellungen unter `Q.webserver`, beschrieben in der [Spezifikation des Worker-Pools](../spezifikationen/6.0/velocity-worker-pool.md).
 
 ### 8.3.7 Persistente Worker und KeepGlobals
 
@@ -1397,10 +1397,10 @@ In diesem Repository:
 - [Velocity-Antwort-Cache](../../en/us/features/6.0/velocity-response-cache.md),
   [Control Panel](../../en/us/features/6.0/velocity-control-panel.md), [Webserver](../../en/us/features/6.0/velocity-web-server.md),
   [Pakete und Binärdateien](../../en/us/features/6.0/velocity-packages-and-binaries.md)
-- Spezifikationen: [Worker-Pool](../../en/us/specifications/6.0/velocity-worker-pool.md),
-  [Engine-Einstellungen](../../en/us/specifications/6.0/velocity-engine-settings.md),
-  [HTTP/2 und Sicherheit](../../en/us/specifications/6.0/velocity-http2-and-security.md),
-  [Sicherheitsvoreinstellungen](../../en/us/specifications/6.0/security-defaults-2026-09.md)
+- Spezifikationen: [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md),
+  [Engine-Einstellungen](../spezifikationen/6.0/velocity-engine-einstellungen.md),
+  [HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md),
+  [Sicherheitsvoreinstellungen](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Upgrade-Hinweise zur Velocity-Engine](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md), [FrankenPHP](../../en/us/bc/6.0/frankenphp.md),
   [Engine-Archiv (phar)](../../en/us/bc/6.0/phar.md)
 - [Anleitung zur Bereitstellung](../anleitungen/bereitstellung.md)

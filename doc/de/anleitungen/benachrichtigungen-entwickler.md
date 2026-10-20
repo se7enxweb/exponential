@@ -3,8 +3,8 @@
 Diese Anleitung richtet sich an Entwickler. Sie erklärt, wie das Benachrichtigungssystem aufgebaut ist, wie Sie einen eigenen Ereignistyp und Handler hinzufügen
 (mit einem vollständigen Beispiel, das ausgeführt wurde), wie die Mails erzeugt und überschrieben werden, welche Einstellungen und Hooks Sie nutzen können und
 wie Sie testen, ohne Mails zu versenden. Etwa 45 Minuten; Sie benötigen eine laufende Installation, eine Shell und PHP-Kenntnisse. Das
-genaue Datenmodell und die Einstellungen stehen in [der Spezifikation](../../en/us/specifications/6.0/notifications.md) und
-[der INI-Referenz](../../en/us/specifications/6.0/notifications-ini.md). Jeder Befehl und jede Ausgabe unten wurde auf einer Test-Installation
+genaue Datenmodell und die Einstellungen stehen in [der Spezifikation](../spezifikationen/6.0/benachrichtigungen.md) und
+[der INI-Referenz](../spezifikationen/6.0/benachrichtigungen-ini.md). Jeder Befehl und jede Ausgabe unten wurde auf einer Test-Installation
 ausgeführt, deren Mail-Transport auf Dateien erzwungen war.
 
 ## 1. Architektur
@@ -38,7 +38,7 @@ ausgeführt, deren Mail-Transport auf Dateien erzwungen war.
 | Der Dienst | `kernel/classes/expnotificationservice.php`, `expnotificationjob.php` | Lauf, Plan (Probelauf), Status, Sperre, Laufprotokoll, Audit, Hintergrundjob |
 | Einstiegspunkte | `cronjobs/notification.php`, `bin/php/notification*.php`, `kernel/notification/*.php` | Schlanke Stubs; der Code liegt in `kernel/private/classes/{cronjobs,commands,views}/` |
 
-Die Laufsperre, das Laufprotokoll und das Audit-Ereignis sind in [der Spezifikation](../../en/us/specifications/6.0/notifications.md#expnotificationservice) beschrieben.
+Die Laufsperre, das Laufprotokoll und das Audit-Ereignis sind in [der Spezifikation](../spezifikationen/6.0/benachrichtigungen.md#expnotificationservice) beschrieben.
 
 ## 2. Ein Ereignistyp und ein Handler: ein vollständiges Beispiel
 
@@ -265,9 +265,9 @@ Konsolenoption `--mail-file-dir` und jeder Test. Die Dateien heißen `<time>-<nu
 | Ein neuer Transport | eine Klasse `<name>notificationtransport` in `<path><name>notificationtransport.php`, `[TransportSettings] TransportPluginPath[]=<path>` (der Pfad endet mit einem `/`), und rufen Sie `eZNotificationTransport::instance( '<name>' )` auf |
 | Ein anderer Weg, Mails zu senden | `[MailSettings] TransportAlias[<name>]=<class>`, das `eZMailTransport` erweitert, und `Transport=<name>` |
 | Die Mail beobachten oder unterdrücken | `eZMailNotificationTransport::observe( $callback, $suppress )`; der Callback erhält `( $addresses, $subject, $body, $parameters, $sent )`; `$sent` gibt an, ob der Transport die Nachricht angenommen hat (fehlt, wenn unterdrückt) |
-| In die Befehle, den Cronjob-Teil und die Ansichten eingreifen | `site.ini [RunnableSettings] Listeners[]` und `Implementation[<class>]`, siehe [die ausführbaren Klassen](../../en/us/specifications/6.0/runnable-commands-cronjobs-views.md) |
+| In die Befehle, den Cronjob-Teil und die Ansichten eingreifen | `site.ini [RunnableSettings] Listeners[]` und `Implementation[<class>]`, siehe [die ausführbaren Klassen](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md) |
 | Das Verhalten des Dienstes ersetzen | erweitern Sie `expNotificationService` und die Befehle über `Implementation[]` für die Befehlsklassen; der Dienst selbst ist statisch |
-| Das Audit-Protokoll | Läufe über die Konsole und das Web erzeugen `system.command.run`; der Cronjob-Lauf `system.cronjob.run` ([Audit-Ereignismodell](../../en/us/specifications/6.0/audit-event-model.md)) |
+| Das Audit-Protokoll | Läufe über die Konsole und das Web erzeugen `system.command.run`; der Cronjob-Lauf `system.cronjob.run` ([Audit-Ereignismodell](../spezifikationen/6.0/audit-ereignismodell.md)) |
 
 ## 6. Tests
 
@@ -298,6 +298,6 @@ Ein Test der Zusammenfassung erfordert kein Warten: Legen Sie das Ereignis mit e
 
 ## Verwandte Seiten
 
-- [Die Spezifikation](../../en/us/specifications/6.0/notifications.md), [die INI-Referenz](../../en/us/specifications/6.0/notifications-ini.md), [die Befehlsreferenz](../../en/us/specifications/6.0/notifications-cli.md)
+- [Die Spezifikation](../spezifikationen/6.0/benachrichtigungen.md), [die INI-Referenz](../spezifikationen/6.0/benachrichtigungen-ini.md), [die Befehlsreferenz](../spezifikationen/6.0/benachrichtigungen-cli.md)
 - [Die Anleitung für Administratoren](benachrichtigungen-administrator.md), [die Anleitung für Benutzer](../../en/us/features/6.0/notifications.md)
-- [Extensions](extensions.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../en/us/specifications/6.0/runnable-commands-cronjobs-views.md)
+- [Extensions](extensions.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)

@@ -3,7 +3,7 @@
 Diese Anleitung richtet sich an Entwickler, die Mails aus einer Extension oder aus Kernel-Code versenden. Am Ende hat Ihre Extension eine
 eigene Kategorie, die Personen auf ihrer Einstellungsseite ein- und ausschalten, einen Handler, der Ihre älteren Abonnementdaten
 als Zustand dieser Kategorie liest, Mails, die mit der Fußzeile und den Headern für die Abmeldung mit einem Klick durch das Gate gehen,
-und einen Test, der jede Mail in Dateien festhält. Die Einstellungen und Tabellen stehen in [der Spezifikation](../../en/us/specifications/6.0/mail-preferences.md);
+und einen Test, der jede Mail in Dateien festhält. Die Einstellungen und Tabellen stehen in [der Spezifikation](../spezifikationen/6.0/mail-einstellungen.md);
 der Betrieb des Systems steht in [der Anleitung für Administratoren](mail-einstellungen-administrator.md).
 
 Das Beispiel dieser Anleitung wurde am 2026-10-04 auf einer Test-Installation ausgeführt, mit dem Datei-Transport und Adressen unter
@@ -279,13 +279,13 @@ OK (45 tests, 660 assertions)
 ```
 
 `MailPreferencesCoreTest` (MP-01 bis MP-20) deckt den Kern und das Gate ab, `MailPreferencesComplianceTest` (LAW-01 bis
-LAW-24) die [rechtliche Checkliste](../../en/us/specifications/6.0/mail-preferences-compliance.md). Auf der Konsole
+LAW-24) die [rechtliche Checkliste](../spezifikationen/6.0/mail-einstellungen-compliance.md). Auf der Konsole
 schickt `./console exp:mail:gate --category=events --to=a@docs.invalid --write` eine Testmail durch das Gate in Dateien.
 
 ## Verwandte Seiten
 
-- [Die Spezifikation](../../en/us/specifications/6.0/mail-preferences.md), [die Befehle](../../en/us/specifications/6.0/mail-preferences-cli.md)
-- [Die rechtliche Checkliste](../../en/us/specifications/6.0/mail-preferences-compliance.md)
+- [Die Spezifikation](../spezifikationen/6.0/mail-einstellungen.md), [die Befehle](../spezifikationen/6.0/mail-einstellungen-cli.md)
+- [Die rechtliche Checkliste](../spezifikationen/6.0/mail-einstellungen-compliance.md)
 - [Die Anleitung für Administratoren](mail-einstellungen-administrator.md)
 - [Benachrichtigungen: Architektur, Erweiterung und Tests](benachrichtigungen-entwickler.md)
 - [Upgrade-Hinweise](../../en/us/bc/6.0/mail-preferences.md)

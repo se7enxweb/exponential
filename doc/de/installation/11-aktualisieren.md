@@ -263,7 +263,7 @@ Installer-Plugin installiert ihn weiterhin dort, wenn das `composer.json` des Pr
 Die Datenbank sowie die Legacy-Einstellungen, -Extensions und -Designs sind die der Legacy-Installation, und der oben
 beschriebene Weg gilt für sie. Um Exponential 6 weiterhin innerhalb einer Symfony-Plattform zu betreiben, siehe
 [Legacy Bridge](../../en/us/features/6.0/legacy-bridge.md) und die
-[Spezifikation des Legacy-Bridge-Bundles](../../en/us/specifications/6.0/legacy-bridge-bundle.md).
+[Spezifikation des Legacy-Bridge-Bundles](../spezifikationen/6.0/legacy-bridge-bundle.md).
 
 ## 11.5 Von 5.4 (oder 5.90) auf 6.0.0
 
@@ -414,9 +414,9 @@ Lesen Sie jede Release Note zwischen Ihrer Version und dem heutigen Stand; jede 
 | 6.0.9 | [6.0.10](../../changelogs/6.0/6.0.10.md): der Produktname in Templates, Übersetzungen und Overrides; [Das Produkt heißt Exponential](../../en/us/features/6.0/rebranding-to-exponential.md) |
 | 6.0.10 | [6.0.11](../../changelogs/6.0/6.0.11.md): PHP 8.5, Benachrichtigungs-E-Mails, Zählen von Seitenaufrufen |
 | 6.0.11 | [6.0.12](../../changelogs/6.0/6.0.12.md): rollenbasierte Template-Operatoren, mehrere Sites in einer Installation |
-| 6.0.12 | [6.0.13](../../changelogs/6.0/6.0.13.md): **Sicherheitskorrekturen**, Prüfungen der Sortierspalten; [Sicherheitshärtung 6.0.13](../../en/us/specifications/6.0/security-hardening-6.0.13.md), [Härtung](../../en/us/bc/6.0/hardening.md) |
+| 6.0.12 | [6.0.13](../../changelogs/6.0/6.0.13.md): **Sicherheitskorrekturen**, Prüfungen der Sortierspalten; [Sicherheitshärtung 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md), [Härtung](../../en/us/bc/6.0/hardening.md) |
 | 6.0.13 | [6.0.14](../../changelogs/6.0/6.0.14.md): MongoDB, die Prüfung der Upgrade-Dateien |
-| 6.0.14 | [6.0.15](../../changelogs/6.0/6.0.15.md), dann der Reihe nach: [Juli und August 2026](../../en/us/bc/6.0/behaviour-changes-2026-07-08.md), [16. bis 30. September 2026](../../en/us/bc/6.0/behaviour-changes-2026-09b.md) mit [Sicherheitsvorgaben](../../en/us/specifications/6.0/security-defaults-2026-09.md), [1. und 2. Oktober 2026](../../en/us/bc/6.0/behaviour-changes-2026-10.md), [E-Mail-Einstellungen und die Mail-Sperre](../../en/us/bc/6.0/mail-preferences.md) |
+| 6.0.14 | [6.0.15](../../changelogs/6.0/6.0.15.md), dann der Reihe nach: [Juli und August 2026](../../en/us/bc/6.0/behaviour-changes-2026-07-08.md), [16. bis 30. September 2026](../../en/us/bc/6.0/behaviour-changes-2026-09b.md) mit [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [1. und 2. Oktober 2026](../../en/us/bc/6.0/behaviour-changes-2026-10.md), [E-Mail-Einstellungen und die Mail-Sperre](../../en/us/bc/6.0/mail-preferences.md) |
 
 Die Änderungen, auf die man beim Erreichen von 6.0.15 am häufigsten stößt:
 
@@ -424,7 +424,7 @@ Die Änderungen, auf die man beim Erreichen von 6.0.15 am häufigsten stößt:
   Einstellungszeile galt früher als aktiviert und gilt jetzt als deaktiviert. In der Administration angelegte Konten
   haben die Zeile immer; per SQL, Paket oder Migration angelegte Konten möglicherweise nicht. Die Abfragen, die sie
   finden, stehen in der
-  [Sicherheitsspezifikation vom August 2026](../../en/us/specifications/6.0/security-hardening-2026-08.md#f-06-find-accounts-that-cannot-sign-in).
+  [Sicherheitsspezifikation vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md#f-06-konten-finden-die-sich-nicht-anmelden-können).
 - **Overrides folgen `Priority`** (12. Juli 2026): Die Override-Blöcke von `override.ini` werden nach `Priority`
   sortiert, die niedrigste zuerst, und ein Block ohne diese Angabe kommt zuletzt. Überprüfen Sie jede `override.ini`, in
   der nur einige Blöcke ein `Priority` haben.
@@ -540,9 +540,9 @@ In diesem Repository:
 - PHP: [PHP-8-Unterstützung](../../en/us/bc/6.0/php8.md), [PHP-8.0-Unterstützung](../../en/us/bc/6.0/php-8.0-support.md),
   [5.90 und PHP 7](../../en/us/bc/5.90/php7.md).
 - Sicherheit: [Härtung in 6.0.13](../../en/us/bc/6.0/hardening.md),
-  [Sicherheitshärtung 6.0.13](../../en/us/specifications/6.0/security-hardening-6.0.13.md),
-  [Sicherheitshärtung August 2026](../../en/us/specifications/6.0/security-hardening-2026-08.md),
-  [Sicherheitsvorgaben](../../en/us/specifications/6.0/security-defaults-2026-09.md).
+  [Sicherheitshärtung 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md),
+  [Sicherheitshärtung August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md),
+  [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md).
 - [Audit](../../en/us/bc/6.0/audit.md), [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md),
   [Prüfung der Dateikonsistenz](../../en/us/features/6.0/file-consistency-check.md),
   [Eine Installation reparieren](../../en/us/bc/6.0/repair.md), [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md).

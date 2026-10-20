@@ -64,7 +64,7 @@ php bin/php/resetuserpassword.php --allow-root-user -u admin -g
 
 `-g` erzeugt ein zufälliges Passwort und gibt es aus. Details: [ein Benutzerpasswort zurücksetzen](../../en/us/features/6.0/reset-user-password.md).
 
-Vertiefung: [Sicherheitsvoreinstellungen vom September 2026](../../en/us/specifications/6.0/security-defaults-2026-09.md), [Härtung von Datentypen und Eingaben](../../en/us/specifications/6.0/datatype-input-hardening.md), [Härtung in 6.0.13](../../en/us/specifications/6.0/security-hardening-6.0.13.md).
+Vertiefung: [Sicherheitsvoreinstellungen vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md), [Härtung in 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md).
 
 ## 2. Nur den Zugriff vergeben, den Personen brauchen (10 Minuten)
 
@@ -152,7 +152,7 @@ Entfernen des Hauptorts wird außerdem aufgezeichnet, welcher Ort zum Hauptort w
 (mugoweb/ezpublish-legacy, Commit `9c931192e0`), mit Dank an Mugo Web; siehe die
 [Audit-Referenz](../../en/us/bc/6.0/audit.md), „Location changes“.
 
-Vertiefung: [das Audit-Protokoll](../../en/us/features/6.0/audit-trail.md), [Ereignismodell des Audits](../../en/us/specifications/6.0/audit-event-model.md), [Audit-Referenz (bc)](../../en/us/bc/6.0/audit.md).
+Vertiefung: [das Audit-Protokoll](../../en/us/features/6.0/audit-trail.md), [Ereignismodell des Audits](../spezifikationen/6.0/audit-ereignismodell.md), [Audit-Referenz (bc)](../../en/us/bc/6.0/audit.md).
 
 ## 4. Debug-Ausgabe nur für Ihre Adresse (5 Minuten)
 
@@ -298,6 +298,6 @@ Die Idee und die Behandlung der Entwürfe stammen aus LoveStack (Mugo Web, Commi
 
 - Die Bedrohungen einzeln, und request-shield davor: [Sicherheitshärtung](../../en/us/help/security-hardening.md); das Administratorkonto: [Das Administrator-Passwort ändern](../../en/us/help/change-the-admin-password.md), [Das Standard-Administrator-Passwort](../../en/us/help/default-administrator-password.md).
 - Eine Site mit Tokens aus Skripten und Apps steuern: [Remote-Dienste und Apps](entfernte-dienste-und-apps.md).
-- Auswirkungen der Sicherheitsänderungen auf ein Upgrade: [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../en/us/bc/6.0/behaviour-changes-2026-10.md), [Sicherheitshärtung vom August 2026](../../en/us/specifications/6.0/security-hardening-2026-08.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
+- Auswirkungen der Sicherheitsänderungen auf ein Upgrade: [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../en/us/bc/6.0/behaviour-changes-2026-10.md), [Sicherheitshärtung vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
 - Wie es dazu kam: [Chronik Oktober 2026](../../en/us/history/2026/2026-10.md), [September 2026, zweite Hälfte](../../en/us/history/2026/2026-09b.md).
 - Weitere Anleitungen: [Betrieb einer Site](betrieb-einer-website.md) (Logs, Sicherungen, Reparaturen), [Extensions](extensions.md) (Zwei-Faktor-Anmeldung und andere Extensions), [Glossar](../../en/us/glossary.md).

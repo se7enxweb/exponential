@@ -249,9 +249,9 @@ mit einer kurzen Checkliste und einer Spalte „Was zu tun ist“.
 |---|---|
 | 6.0.8 | [Changelog 6.0.8](../../changelogs/6.0/6.0.8.md) und [Unterstützung für PHP 8](../../en/us/bc/6.0/php8.md) |
 | 6.0.10 | [Changelog 6.0.10](../../changelogs/6.0/6.0.10.md), [Das Produkt heißt Exponential](../../en/us/features/6.0/rebranding-to-exponential.md) |
-| 6.0.13 | [Changelog 6.0.13](../../changelogs/6.0/6.0.13.md), [Sicherheitshärtung 6.0.13](../../en/us/specifications/6.0/security-hardening-6.0.13.md) |
+| 6.0.13 | [Changelog 6.0.13](../../changelogs/6.0/6.0.13.md), [Sicherheitshärtung 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md) |
 | Juli 2026 | [Verhaltensänderungen von Juli und August 2026](../../en/us/bc/6.0/behaviour-changes-2026-07-08.md) |
-| 16. September 2026 | [Verhaltensänderungen vom 16. bis 30. September 2026](../../en/us/bc/6.0/behaviour-changes-2026-09b.md) und [Sicherheitsvorgaben](../../en/us/specifications/6.0/security-defaults-2026-09.md) |
+| 16. September 2026 | [Verhaltensänderungen vom 16. bis 30. September 2026](../../en/us/bc/6.0/behaviour-changes-2026-09b.md) und [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md) |
 | 1. Oktober 2026 | [Verhaltensänderungen vom 1. bis 2. Oktober 2026](../../en/us/bc/6.0/behaviour-changes-2026-10.md) |
 
 Die drei Änderungen, auf die man am häufigsten stößt:

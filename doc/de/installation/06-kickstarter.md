@@ -925,10 +925,10 @@ In diesem Repository:
 - [Kickstarter CLI](../../en/us/bc/6.0/kickstartercli.md) und [Kickstarter: eine ganze Site aus einer Datei installieren](../../en/us/features/6.0/kickstarter-cli.md)
 - [Exponential mit einem Befehl installieren](../../en/us/features/6.0/install-in-one-command.md)
 - [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md)
-- [Installer-Logs und Startdaten](../../en/us/specifications/6.0/installer-logs-and-seed-data.md)
+- [Installer-Logs und Startdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Standardwerte einer sauberen Installation](../../en/us/features/6.0/clean-install-defaults.md)
-- [SQLite-Datenbank](../../en/us/features/6.0/sqlite-database.md), [SQLite-Installer](../../en/us/specifications/6.0/platform-sqlite-installer.md),
-  [Datenbanktreiber, September 2026](../../en/us/specifications/6.0/database-drivers-2026-09.md)
+- [SQLite-Datenbank](../../en/us/features/6.0/sqlite-database.md), [SQLite-Installer](../spezifikationen/6.0/platform-sqlite-installer.md),
+  [Datenbanktreiber, September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md)
 - [Die Konsole](../../en/us/bc/6.0/console.md) und [Abstraktionen für CLI, Cronjobs und Views](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md)
   (warum `bin/php/kickstarter.php` ein einziger Aufruf von `kernel/private/classes/commands/kickstarter.php` ist)
 - [Bereitstellung](../anleitungen/bereitstellung.md)

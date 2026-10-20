@@ -770,8 +770,8 @@ In diesem Repository:
 - [11. Upgrade](11-aktualisieren.md): die Reihenfolge, in der die Update-Dateien und Skripte auszuführen sind.
 - [Upgrade](../anleitungen/aktualisieren.md), [Inhaltsmodell und Bearbeitung](../anleitungen/inhaltsmodell-und-bearbeitung.md),
   [Templates und Design](../anleitungen/templates-und-design.md), [Betrieb einer Website](../anleitungen/betrieb-einer-website.md).
-- [Legacy-Bridge](../../en/us/features/6.0/legacy-bridge.md), [Spezifikation des Legacy-Bridge-Bundles](../../en/us/specifications/6.0/legacy-bridge-bundle.md),
-  [Übersicht der Plattformpakete](../../en/us/specifications/6.0/platform-package-map.md),
+- [Legacy-Bridge](../../en/us/features/6.0/legacy-bridge.md), [Spezifikation des Legacy-Bridge-Bundles](../spezifikationen/6.0/legacy-bridge-bundle.md),
+  [Übersicht der Plattformpakete](../spezifikationen/6.0/platform-paketzuordnung.md),
   [Site-Bundles der Plattform](../../en/us/features/6.0/platform-site-bundles.md),
   [Forks von Plattformpaketen und umbenannte Befehle](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md).
 - [HTTP-Caching](../../en/us/bc/6.0/http-caching.md), [Prüfung der Dateikonsistenz](../../en/us/features/6.0/file-consistency-check.md),

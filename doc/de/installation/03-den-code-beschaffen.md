@@ -449,11 +449,11 @@ In diesem Repository:
 - [Installationsüberblick](../../en/us/INSTALL.md), Abschnitt 3.
 - [Aktualisieren](../anleitungen/aktualisieren.md): eine bestehende Website auf neuen Code umstellen.
 - [Unterstützung für PHP 8.0](../../en/us/bc/6.0/php-8.0-support.md): Installation mit Composer unter PHP 8.0.
-- [Continuous Integration](../../en/us/specifications/6.0/continuous-integration.md) und [Qualitätsprüfungen](../../en/us/features/6.0/quality-checks.md).
+- [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md) und [Qualitätsprüfungen](../../en/us/features/6.0/quality-checks.md).
 - [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [Velocity-Pakete und -Binärdateien](../../en/us/features/6.0/velocity-packages-and-binaries.md),
   [Upgrade-Hinweise zur Velocity-Engine](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md).
 - [Anleitung zu Extensions](../anleitungen/extensions.md), [Extensions](../../en/us/features/6.0/extensions/README.md),
-  [Extension-Metadaten](../../en/us/specifications/6.0/extension-metadata.md).
+  [Extension-Metadaten](../spezifikationen/6.0/extension-metadaten.md).
 - [Eine Installation reparieren](../../en/us/bc/6.0/repair.md): wenn `vendor/` fehlt.
 - [Konsole](../../en/us/bc/6.0/console.md).
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) und die [Release Notes der Extensions](../../changelogs/extensions/README.md).

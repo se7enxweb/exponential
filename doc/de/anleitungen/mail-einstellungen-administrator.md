@@ -393,13 +393,13 @@ Sitzung.
 5. Die Cronjob-Gruppe `infrequent` (oder der Teil `mailpreferences`) läuft.
 6. Ihr Mailserver signiert `List-Unsubscribe` und `List-Unsubscribe-Post` mit DKIM.
 7. Keine Werbe-E-Mails in der Liste „ohne Kategorie“ der Statusseite.
-8. Lesen Sie [die rechtliche Checkliste](../../en/us/specifications/6.0/mail-preferences-compliance.md), einschließlich ihrer Lücken.
+8. Lesen Sie [die rechtliche Checkliste](../spezifikationen/6.0/mail-einstellungen-compliance.md), einschließlich ihrer Lücken.
 
 ## Siehe auch
 
 - [E-Mail-Einstellungen: die Anleitung für Benutzer](../../en/us/features/6.0/mail-preferences.md)
 - [E-Mail-Einstellungen: die Anleitung für Entwickler](mail-einstellungen-entwickler.md)
-- [Die Spezifikation](../../en/us/specifications/6.0/mail-preferences.md) und [die Befehle](../../en/us/specifications/6.0/mail-preferences-cli.md)
+- [Die Spezifikation](../spezifikationen/6.0/mail-einstellungen.md) und [die Befehle](../spezifikationen/6.0/mail-einstellungen-cli.md)
 - [Upgrade-Hinweise](../../en/us/bc/6.0/mail-preferences.md)
 - [Benachrichtigungen: betreiben und Probleme beheben](benachrichtigungen-administrator.md)
 - [Betrieb einer Site](betrieb-einer-website.md)

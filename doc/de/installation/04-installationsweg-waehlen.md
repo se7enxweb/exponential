@@ -402,7 +402,7 @@ In diesem Repository:
 - [Das neue Aussehen des Setup-Assistenten und der Editor-Siteaccess](../../en/us/features/6.0/setup-wizard-and-editor-siteaccess.md)
 - [Standardwerte einer sauberen Installation](../../en/us/features/6.0/clean-install-defaults.md)
 - [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md)
-- [Installer-Protokolle und Ausgangsdaten](../../en/us/specifications/6.0/installer-logs-and-seed-data.md)
+- [Installer-Protokolle und Ausgangsdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Stapelverarbeitung im Paket-Installer](../../en/us/features/6.0/package-installer-batching.md)
 - [INI-Overrides für mehrere Websites](../../en/us/features/6.0/multi-site-ini-overrides.md)
 - [Exponential-Konsole](../../en/us/bc/6.0/console.md)

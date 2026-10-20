@@ -37,7 +37,7 @@ Das Document Root ist das Installationsverzeichnis selbst. Exponential führt se
 cp .htaccess_root .htaccess
 ```
 
-Die Kopie schaltet den auf `.htaccess` basierenden Virtual-Host-Modus ein: Punktdateien, `.git` und Skripte unterhalb der Front-Controller antworten mit 404, `/api/` geht an `index_rest.php`, statische Design-Dateien werden direkt ausgeliefert und alles andere geht an `index.php`. Entfernen Sie keine Sicherheitsregeln daraus, um etwas zum Laufen zu bringen ([Sicherheitsvorgaben](../../en/us/specifications/6.0/security-defaults-2026-09.md)).
+Die Kopie schaltet den auf `.htaccess` basierenden Virtual-Host-Modus ein: Punktdateien, `.git` und Skripte unterhalb der Front-Controller antworten mit 404, `/api/` geht an `index_rest.php`, statische Design-Dateien werden direkt ausgeliefert und alles andere geht an `index.php`. Entfernen Sie keine Sicherheitsregeln daraus, um etwas zum Laufen zu bringen ([Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)).
 
 Ein minimaler Apache-Virtual-Host für PHP-FPM (passen Sie die Pfade und den Socket an Ihr System an):
 
@@ -135,7 +135,7 @@ Ports unter 1024 erfordern root; die übliche Konfiguration ist Velocity auf eig
 
 `layout` zeigt den Konfigurationsbaum im Stil von Apache unter Debian (`/etc/vc` mit `sites-available`, `sites-enabled`, `conf-available` und so weiter). Sites, Snippets und Module werden wie mit `a2ensite` ein- und ausgeschaltet: `./console exp:velocity site enable <name> --allow-root-user` ([Aufbau auf der Festplatte](../../en/us/bc/6.0/velocity-ondisk-layout.md)). Der Server hat außerdem ein Control Panel ([Velocity Control Panel](../../en/us/features/6.0/velocity-control-panel.md)).
 
-Vertiefung: [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md), [persistente Worker](../../en/us/features/6.0/velocity-persistent-worker-server.md), [Worker-Pool](../../en/us/specifications/6.0/velocity-worker-pool.md), [Engine-Einstellungen](../../en/us/specifications/6.0/velocity-engine-settings.md).
+Vertiefung: [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md), [persistente Worker](../../en/us/features/6.0/velocity-persistent-worker-server.md), [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md), [Engine-Einstellungen](../spezifikationen/6.0/velocity-engine-einstellungen.md).
 
 ## 5. Option C: FrankenPHP
 
@@ -178,7 +178,7 @@ curl -skI https://127.0.0.1:8080/ | head -1
 
 Erwarten Sie `HTTP/2 200` (oder eine Weiterleitung). Der Velocity-Server kann außerdem selbst ein selbstsigniertes Zertifikat erzeugen, Let's-Encrypt-Zertifikate beziehen und erneuern und ein erneuertes Zertifikat ohne Neustart einwechseln: [Velocity HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md).
 
-Strict-Transport-Security wird bei HTTPS-Antworten mit `[HTTPSSettings] HSTSMaxAge` gesendet (ausgeliefert 300 Sekunden). Erhöhen Sie den Wert erst dann auf ein Jahr (`31536000`), wenn jeder Name der Site dauerhaft über HTTPS ausgeliefert wird: Ein Browser merkt sich den Wert auch dann, wenn Sie ihn später senken ([HTTP/2 und Sicherheit](../../en/us/specifications/6.0/velocity-http2-and-security.md)).
+Strict-Transport-Security wird bei HTTPS-Antworten mit `[HTTPSSettings] HSTSMaxAge` gesendet (ausgeliefert 300 Sekunden). Erhöhen Sie den Wert erst dann auf ein Jahr (`31536000`), wenn jeder Name der Site dauerhaft über HTTPS ausgeliefert wird: Ein Browser merkt sich den Wert auch dann, wenn Sie ihn später senken ([HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md)).
 
 ## 7. Eine PHP-Änderung mit einem Befehl ausliefern
 
@@ -273,7 +273,7 @@ Alle stehen in `settings/velocity.ini` (ausgelieferte Standardwerte). `exp:veloc
 ## Verwandte Seiten
 
 - Funktionen: [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md), [Velocity HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md), [Installation mit einem Befehl](../../en/us/features/6.0/install-in-one-command.md).
-- Spezifikationen: [Engine-Einstellungen von Velocity](../../en/us/specifications/6.0/velocity-engine-settings.md), [Worker-Pool](../../en/us/specifications/6.0/velocity-worker-pool.md), [HTTP/2 und Sicherheit](../../en/us/specifications/6.0/velocity-http2-and-security.md).
+- Spezifikationen: [Engine-Einstellungen von Velocity](../spezifikationen/6.0/velocity-engine-einstellungen.md), [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md), [HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md).
 - Das Ergebnis messen: [Benchmarks für Exponential](benchmarking.md) (Apache gegen Velocity, eine Bereitstellung auf Regressionen geprüft).
 - Upgrade-Hinweise: [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [FrankenPHP](../../en/us/bc/6.0/frankenphp.md), [Upgrade-Hinweise zur Velocity-Engine](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md), [Cache-Konsole](../../en/us/bc/6.0/cache-console.md).
 - Geschichte: [Velocity-Chronik](../../en/us/history/velocity/2026-09a.md), [Oktober 2026](../../en/us/history/2026/2026-10.md).

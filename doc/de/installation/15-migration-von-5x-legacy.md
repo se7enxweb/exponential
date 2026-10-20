@@ -225,7 +225,7 @@ davon aus, dass Exponential eigenständig läuft.
 **Unter dem Stack mit zwei Kerneln hat Legacy mehrere seiner eigenen Einstellungen nicht gelesen.** Bevor der
 Legacy-Kernel für jede Anfrage aufgebaut wurde, überschrieb der Konfigurations-Mapper des Legacy-Bundles
 (`LegacyMapper\Configuration`, geprüft am Tag `v2014.11.0`; die se7enxweb-Bridge macht heute dasselbe, siehe die
-[Bridge-Spezifikation](../../en/us/specifications/6.0/legacy-bridge-bundle.md)) sie mit Werten aus der Symfony-Konfiguration.
+[Bridge-Spezifikation](../spezifikationen/6.0/legacy-bridge-bundle.md)) sie mit Werten aus der Symfony-Konfiguration.
 Nach der Herauslösung überschreibt sie nichts mehr; was in den Legacy-INI-Dateien steht, ist also das, was läuft, und in
 einem 5.x-Projekt waren diese oft leer oder veraltet. Tragen Sie jede davon ein:
 
@@ -400,7 +400,7 @@ php update/common/scripts/5.3/updatenodeassignmentparentremoteids.php --help
 
 **8. Konten ohne Einstellungszeile.** Seit 6.0.15 kann sich ein Benutzer ohne `ezuser_setting`-Zeile nicht anmelden.
 Benutzern, die über die Public API oder einen Import angelegt wurden, kann sie fehlen; finden Sie sie mit der Abfrage in
-der [Sicherheitsspezifikation vom August 2026](../../en/us/specifications/6.0/security-hardening-2026-08.md#f-06-find-accounts-that-cannot-sign-in).
+der [Sicherheitsspezifikation vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md#f-06-konten-finden-die-sich-nicht-anmelden-können).
 
 **9. Die Version prüfen** ([11.2](11-aktualisieren.md#112-welche-version-betreiben-sie)): `6.0.15stable`.
 
@@ -868,7 +868,7 @@ In diesem Repository:
   [Extensions](../anleitungen/extensions.md), [Remote-Dienste und Apps](../anleitungen/entfernte-dienste-und-apps.md),
   [Betrieb einer Site](../anleitungen/betrieb-einer-website.md).
 - Die Legacy-Bridge: [Legacy-Bridge](../../en/us/features/6.0/legacy-bridge.md),
-  [Bridge-Spezifikation](../../en/us/specifications/6.0/legacy-bridge-bundle.md),
+  [Bridge-Spezifikation](../spezifikationen/6.0/legacy-bridge-bundle.md),
   [Paket-Forks und Umbenennungen von Befehlen](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md).
 - Hinweise zu 5.x: [Änderungen in 5.1](../../en/us/bc/5.1/changes-5.1.txt), [5.2](../../en/us/bc/5.2/changes-5.2.txt),
   [5.4](../../en/us/bc/5.4/changes-5.4.txt), [5.90](../../en/us/bc/5.90/README.md),
@@ -882,7 +882,7 @@ In diesem Repository:
   [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md);
   [Solr-Befehle](../../en/us/features/6.0/web-server-and-solr-commands.md);
   [Standardverteilung der Extensions](../../en/us/features/6.0/default-extension-distribution.md);
-  [Sicherheitsspezifikation vom August 2026](../../en/us/specifications/6.0/security-hardening-2026-08.md);
+  [Sicherheitsspezifikation vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md);
   [Dateikonsistenzprüfung](../../en/us/features/6.0/file-consistency-check.md);
   [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md).
 - Cluster: [konfigurierbares DFS-Backend](../../en/us/features/5.4/configurable_dfs_cluster_backend.md),
