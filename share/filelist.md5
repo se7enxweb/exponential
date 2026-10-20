@@ -707,7 +707,7 @@ e7c49888f84d392e3d9c0fac2a8ed395  design/admin/templates/setup/handlerextension.
 4902042eb7c6d2ee7c4ad049627cac97  design/admin/templates/setup/info.tpl
 b6cd17ce32f4503e4efa3de4023ae532  design/admin/templates/setup/kerneloverride.tpl
 87fb6bf3b1f5ed6d423ce4a1fcb247a1  design/admin/templates/setup/languages.tpl
-19b2a68380807e5a4e6875a8d1baa776  design/admin/templates/setup/logs.tpl
+d9e8633af5910917b0bfd2eac97a8a06  design/admin/templates/setup/logs.tpl
 66b98f77d81b03b983f3ad4579fa3a40  design/admin/templates/setup/logs_confirm.tpl
 b4ba419f4c81ecb6a9664201ed6e2fed  design/admin/templates/setup/logs_digest.tpl
 5928c9e7db074652d9fba73392aba3fc  design/admin/templates/setup/logs_health.tpl
@@ -1193,7 +1193,7 @@ e904c0d07d6b015c76058d8ea077e2a0  design/admin4/templates/content/edit_relations
 2984bbaf1ee118312c67ba3cb70df964  design/admin4/templates/content/edit_validation.tpl
 2b3f9a1e3cd81b06149ff91eaa386ab8  design/admin4/templates/content/history.tpl
 3e2ea82620dde80976ff83646fbf469d  design/admin4/templates/content/history_access_messages.tpl
-ece55e80e5e03b92c3e1486b675a7175  design/admin4/templates/content/job.tpl
+26b5ce6c8c7564c14a9c1af98309c272  design/admin4/templates/content/job.tpl
 4b3ee7e61152f67d41cdb954bf253096  design/admin4/templates/content/job_confirm.tpl
 b607bb880d80978b17d8129eba2160de  design/admin4/templates/content/job_mode_choice.tpl
 ff64aa893b27cf505350040604db29ff  design/admin4/templates/content/job_refused.tpl
@@ -1485,7 +1485,7 @@ dddca14898250d79c04a924be8a93168  design/admin4/templates/setup/designextension.
 f9c8cc5af68fe948e9d4e86be89092e2  design/admin4/templates/setup/info.tpl
 3c64396c201ce7fc624bac2464b38930  design/admin4/templates/setup/kerneloverride.tpl
 87fb6bf3b1f5ed6d423ce4a1fcb247a1  design/admin4/templates/setup/languages.tpl
-19b2a68380807e5a4e6875a8d1baa776  design/admin4/templates/setup/logs.tpl
+d9e8633af5910917b0bfd2eac97a8a06  design/admin4/templates/setup/logs.tpl
 66b98f77d81b03b983f3ad4579fa3a40  design/admin4/templates/setup/logs_confirm.tpl
 b4ba419f4c81ecb6a9664201ed6e2fed  design/admin4/templates/setup/logs_digest.tpl
 5928c9e7db074652d9fba73392aba3fc  design/admin4/templates/setup/logs_health.tpl
@@ -14766,7 +14766,7 @@ b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 ac506b51131ad202029dff2fd1b76284  tests/tests/design/AdminContentJobScriptsTest.php
 54e753194f664126c4004301c8fc4e5c  tests/tests/design/AdminContentSecurityPolicyTest.php
 98b9cecd8a6f9763c8420e981193033a  tests/tests/design/AdminContextMenuNestedSubmenuTest.php
-5e6d06fe5af7c118ddb3fdcc87dcf467  tests/tests/design/AdminContextMenuTest.php
+fc229c0890231675d181a8b0b8d4cc53  tests/tests/design/AdminContextMenuTest.php
 1031b7f22212518a4180603bafaf72d7  tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php
 39edc8217670a84ba9f44cfc301e7bd2  tests/tests/design/AdminCreateLanguagesTitleTest.php
 9811db047be7881e1faebb56b853e491  tests/tests/design/AdminCssReviewFixesTest.php
@@ -14848,7 +14848,7 @@ f0f50ee05d633e889c584fbc962ea814  tests/tests/design/AsynchronousPublishingLinkT
 3bd0dcd9b098c9ccf33f05727ecf0f8a  tests/tests/design/DemoModeUserTemplatesTest.php
 db7a7b5ccb5aeb7ccb4b14b9d61fc434  tests/tests/design/ExtensionInlineScriptsTest.php
 6e105b5c448762ee4581368f59aff5cf  tests/tests/design/FormSubmitButtonDisableTest.php
-fa48d21641d246963571e30b2670c7ad  tests/tests/design/LogViewerCopyMessagesTest.php
+d887d23e345232f0439201ff386facc4  tests/tests/design/LogViewerCopyMessagesTest.php
 3ded02ca57016d193d7c9df51a8dbe84  tests/tests/design/LogViewerNavTest.php
 e5afb96904ddba6129f583e0eb0f3bd6  tests/tests/design/StandardContentEditAccessibleNamesTest.php
 1f2baeab4e97de344ff2a905bdb76154  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
