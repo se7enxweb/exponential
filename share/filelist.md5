@@ -1622,7 +1622,7 @@ f1bb365da04942b2a7c6e659a681a87d  design/admin4l/templates/explayouts/block/admi
 00dc6fc9a64cbb17ffcdd7be6133b9a8  design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl
 435fa478e336ab853226197df0b70fc2  design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
-7236adc9a4d796c38946f72e09f8fe53  design/admin4l/templates/pagelayout.tpl
+6de529b8873135665ea6f8dd1644be8a  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -15330,7 +15330,7 @@ fd13f368d0002af718e950c81b7708d1  tests/tests/kernel/classes/urlalias/eZURLAlias
 bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regression.php
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 57f51350ebeed6595fdf7dc68bf7d310  tests/tests/kernel/classes/user/eZForgotPasswordExpiryTest.php
-99ff66d9f3fa7a4504f97ff2918e33dd  tests/tests/kernel/classes/user/expDemoModeTest.php
+96fdbd6685775cf63421827d5634c60f  tests/tests/kernel/classes/user/expDemoModeTest.php
 bdf55aac98851f4511909927950cf960  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 972ceff89325d374430b9f9d976d4f69  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
 f673ec91908450c171ed3372b6fe86b5  tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php
