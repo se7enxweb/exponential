@@ -45,7 +45,7 @@ runs the program):
 - the syllabus and learning objectives of each certification;
 - the exam format, the pass mark and the language(s);
 - the price, outside the Kick-Off Package, which "includes program fee, book, online training, certification, and 8h
-  support";
+  support" (its own price is [to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed));
 - the dates and places, online or in person;
 - how long a certification stays valid and how it is renewed;
 - who may examine, and whether the Foundation endorses the certificates.
