@@ -73013,6 +73013,14 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Для організацій і людей, які ведуть власний сайт на Exponential: команда, публікації, торгівля, супровід, зростання й партнери.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>Посібник користувача</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Одне питання на сторінку: хто може це зробити, кроки, що може піти не так і де прочитати більше.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>Файли проєкту</translation>
     </message>

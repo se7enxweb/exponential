@@ -123,8 +123,8 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
             }
             $parts = explode( '#', $href, 2 );
             $target = $parts[0] === '' ? $page : self::normalize( dirname( $page ) . '/' . $parts[0] );
-            // a help page, or a project file of the root that the help shows too (CONTRIBUTING.md)
-            $this->assertMatchesRegularExpression( '#^(doc/|[A-Za-z0-9_-]+\.md$)#', $target, $href );
+            // a page of doc/, or a project file at the top of the repository (CONTRIBUTING.md), which the help shows too
+            $this->assertMatchesRegularExpression( '#^(doc/|[A-Za-z0-9_.-]+\.md$)#', $target, $href );
             $this->assertFileExists( self::root() . '/' . $target, $href );
             if ( isset( $parts[1] ) && $parts[1] !== '' )
                 $this->assertContains( $parts[1], self::anchors( self::read( $target ) ), $href . ': no such heading' );

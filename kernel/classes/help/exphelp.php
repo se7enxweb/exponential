@@ -107,7 +107,7 @@ class expHelp
     }
 
     /** The view parameters of exphelp/search, in the order of the canonical address. */
-    const SEARCH_PARAMS = array( 'q', 'category', 'audience', 'type', 'offset', 'limit' );
+    const SEARCH_PARAMS = array( 'q', 'category', 'audience', 'type', 'extension', 'offset', 'limit' );
 
     /**
      * The canonical address of a search or browse state: view parameters, never GET, only the ones that are set,

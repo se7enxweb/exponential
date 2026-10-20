@@ -73260,6 +73260,14 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Ji bo rêxistin û kesên ku malpera xwe li ser Exponential dimeşînin: tîm, weşandin, bazirganî, lênêrîn, mezinbûn û hevkar.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>Rêbera bikarhêner</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Her rûpel pirsek: kî dikare bike, gav, çi dikare xelet biçe û li ku derê bêtir bixwîne.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>Pelên projeyê</translation>
     </message>

@@ -74669,6 +74669,14 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Per organizzazioni e persone che gestiscono il proprio sito su Exponential: team, pubblicazione, commercio, manutenzione, crescita e partner.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>Manuale utente</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Una domanda per pagina: chi può farlo, i passaggi, cosa può andare storto e dove leggere di più.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>File del progetto</translation>
     </message>

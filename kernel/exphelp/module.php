@@ -2,13 +2,15 @@
 /**
  * The exphelp module: the help system of the administration (doc/en/us/features/6.0/help-system.md).
  *
- * It reads the git-tracked text and Markdown files under doc/ (and, opt-in, extension doc directories named in
- * exphelp.ini [HelpSettings] ExtensionDocDirs[]) and shows them rendered, searchable and filtered by audience.
+ * It reads the git-tracked text and Markdown files under doc/ and the documentation of the active extensions
+ * (exphelp.ini [IndexSettings] ActiveExtensionDocs, ExtensionDocDirs[]) and shows them rendered, searchable and
+ * filtered by audience.
  *
  *   exphelp/dashboard              the help start page: search, audiences, featured pages, recent changes, trackers
  *   exphelp/audience/<audience>    the landing page of an audience (expHelpLanding)
  *   exphelp/viewer/<page id>       one page; <page id> is its path below doc/ (features/6.0/help-system.md); ?p= too
  *   exphelp/contents               every help page as one tree (all folders open), with a filter box
+ *   exphelp/extensions[/<name>]    the documentation of the active extensions: the list, or one extension's pages
  *   exphelp/search/(q)/<words>/(category)/<id>/...  search, or browse without (q); format=json: the client's JSON
  *   exphelp/asset/<path>           an image below doc/, with its content type (only git-tracked files)
  *   exphelp/pdf/<page id>          the page as a PDF file to download (expHelpPdf)
@@ -56,7 +58,8 @@ $ViewList['contents'] = array(
     'functions' => array( 'read' ),
     'params' => array() );
 
-// View parameters (q)/(category)/(audience)/(type)/(offset)/(limit)/(format), canonical order: expHelp::searchUrl().
+// View parameters (q)/(category)/(audience)/(type)/(extension)/(offset)/(limit)/(format), canonical order:
+// expHelp::searchUrl(). (extension)/<name> limits it to the documentation of one extension.
 // Without (q) it browses the pages the filters allow. A GET ?q=... is redirected to the canonical address; JSON
 // (format=json or Accept: application/json) takes both forms and is never redirected.
 $ViewList['search'] = array(
@@ -68,9 +71,18 @@ $ViewList['search'] = array(
                                  'category' => 'Category',
                                  'audience' => 'Audience',
                                  'type' => 'Type',
+                                 'extension' => 'Extension',
                                  'offset' => 'Offset',
                                  'limit' => 'Limit',
                                  'format' => 'Format' ) );
+
+// The documentation of the active extensions (ext/<name>/...): the list (exphelp/extensions), and one extension's
+// pages with a search limited to them (exphelp/extensions/<name>)
+$ViewList['extensions'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'extensions.php',
+    'functions' => array( 'read' ),
+    'params' => array( 'Extension' ) );
 
 // The file is the rest of the address (exphelp/asset/images/foo.png) or GET p
 $ViewList['asset'] = array(

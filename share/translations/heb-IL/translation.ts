@@ -73059,6 +73059,14 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>לארגונים ולאנשים המפעילים אתר משלהם ב-Exponential: צוות, פרסום, מסחר, תחזוקה, צמיחה ושותפים.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>מדריך למשתמש</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>שאלה אחת בכל דף: מי רשאי לבצע, השלבים, מה עלול להשתבש והיכן לקרוא עוד.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>קובצי הפרויקט</translation>
     </message>

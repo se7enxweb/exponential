@@ -174,7 +174,8 @@ class expHelpSearch
      * Searches.
      *
      * @param string $query the text typed; "quoted words" are kept together in the snippet, -word excludes
-     * @param array $filters audience (string|list), category (string|list), type (string|list)
+     * @param array $filters audience (string|list), category (string|list), type (string|list), extension (string|list:
+     *                       only the pages of these extensions' documentation)
      * @return array query, terms, total, offset, limit, took_ms, relaxed, results, facets, suggest
      */
     public function search( $query, array $filters = array(), $limit = self::DEFAULT_LIMIT, $offset = 0 )
@@ -510,6 +511,8 @@ class expHelpSearch
                 return $doc[3] !== '' ? array( $doc[3] ) : array();
             case 'type':
                 return $doc[4] !== '' ? array( $doc[4] ) : array();
+            case 'extension':
+                return preg_match( '#^ext/([^/]+)/#', (string)$doc[0], $m ) ? array( strtolower( $m[1] ) ) : array();
         }
         return array();
     }
@@ -1055,7 +1058,8 @@ class expHelpSearch
     public static function cleanFilters( array $filters )
     {
         $out = array();
-        foreach ( array( 'audience', 'category', 'type' ) as $facet )
+        // extension: the pages of one active extension's documentation (ext/<name>/...), not a counted facet
+        foreach ( array( 'audience', 'category', 'type', 'extension' ) as $facet )
         {
             $values = isset( $filters[$facet] ) ? $filters[$facet] : array();
             if ( is_string( $values ) )

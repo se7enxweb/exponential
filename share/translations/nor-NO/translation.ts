@@ -74520,6 +74520,14 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>For organisasjoner og personer som driver sitt eget nettsted på Exponential: team, publisering, handel, vedlikehold, vekst og partnere.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>Brukerhåndbok</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Ett spørsmål per side: hvem som kan gjøre det, trinnene, hva som kan gå galt og hvor du kan lese mer.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>Prosjektfiler</translation>
     </message>

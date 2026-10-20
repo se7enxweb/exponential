@@ -75254,6 +75254,14 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <translation>Para organizações e pessoas que mantêm o próprio site no Exponential: equipe, publicação, comércio, manutenção, crescimento e parceiros.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>Manual do usuário</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Uma pergunta por página: quem pode fazer, os passos, o que pode dar errado e onde ler mais.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>Arquivos do projeto</translation>
     </message>

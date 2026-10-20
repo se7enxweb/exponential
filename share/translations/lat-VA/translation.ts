@@ -73028,6 +73028,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Societatibus et hominibus qui situm suum in Exponential regunt: turma, editio, commercium, cura, incrementum et socii.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>Enchiridion usoris</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Una quaestio in singulis paginis: quis facere possit, gradus, quid errare possit et ubi plura legas.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>Fasciculi operis</translation>
     </message>

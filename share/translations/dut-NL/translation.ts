@@ -74487,6 +74487,14 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Voor organisaties en mensen die hun eigen site op Exponential beheren: team, publiceren, commerce, onderhoud, groei en partners.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>Gebruikershandleiding</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Eén vraag per pagina: wie het mag doen, de stappen, wat er mis kan gaan en waar u meer leest.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>Projectbestanden</translation>
     </message>

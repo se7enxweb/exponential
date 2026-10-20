@@ -15,6 +15,13 @@ if you write documentation (in `doc/` or in an extension) that should show up in
   (`/exphelp/viewer/features/6.0/help-system.md`).
 - **Search** (`/exphelp/search/(q)/<words>`, see "Finding a page"): finds pages by title, headings and text, with filters for audience, category
   and type. The search field of the help pages shows results while you type; press `/` to focus it.
+- **User manual** (`/exphelp/viewer/help/manual/README.md`, the category **User manual**): one page per question about
+  the work in the Admin 4 administration (the tabs, the daily tasks, the tasks of administrators and site managers),
+  each with who may do it, the steps, what can go wrong and the related pages. Exponential Intelligence has its own
+  manual in the same form among the extension documentation (`/exphelp/viewer/ext/expai/manual/README.md`).
+- **Extensions** (`/exphelp/extensions`, see "Documentation of the extensions"): the documentation every active
+  extension brings with it (its `doc/` directory, README, CHANGELOG, LICENSE ...), in the same viewer and search, with
+  an index per extension.
 - **Context help**: the **Help** button in the header of the administration opens the help page that belongs to the
   page you are on (the module and view), or the dashboard when there is none.
 - **Report an error** (`/exphelp/report`): which tracker to use, what to write, a prefilled issue and the
@@ -58,7 +65,9 @@ Security Policy.
 | `[HelpSettings] Enabled` | `true` | `false` turns every help view into a 404 and hides the Help button |
 | `[HelpSettings] EditBaseURL` | GitHub, `main` | the "Edit on GitHub" link of a page; empty for none |
 | `[IndexSettings] Roots[]` | `doc` | the directories whose tracked files are shown |
-| `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose `doc/` directory is shown too (opt-in) |
+| `[IndexSettings] ActiveExtensionDocs` | `enabled` | the documentation of every active extension is shown too ("Documentation of the extensions") |
+| `[IndexSettings] ExtensionTopFiles[]` | `README*`, `CHANGELOG*`, `LICENSE*`, `INSTALL*`, `USAGE*`, `COPYING*` | the files at the top of an extension's directory shown besides its `doc/` |
+| `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose documentation is shown whether they are active or not |
 | `[IndexSettings] ExcludePatterns[]` | doxygen, HTML, SVG | never shown, even when tracked |
 | `[ProjectFiles] Enabled`, `Include[]`, `Exclude[]` | `enabled`, the root `*.md` and the README.md of `bin/`, `tests/`, `design/`, `kernel/` | the tracked Markdown files outside `doc/` that are shown as project files (see "Project files") |
 | `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor`, `trainer`, `press`, `businesses`, `government`, `customer` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
@@ -125,8 +134,57 @@ Map[mymodule]=ext/myextension/usage.md
 Map[mymodule/edit]=ext/myextension/usage.md#editing
 ```
 
-and, to show its own `doc/` directory, an administrator adds it to `[IndexSettings] ExtensionDocDirs[]`. Its pages
-then have the ids `ext/<extension>/<path>`.
+Its own documentation is shown on its own while the extension is active (next section); its pages have the ids
+`ext/<extension>/<path>`, which the context help map can name.
+
+## Documentation of the extensions
+
+The help center finds the documentation of every **active** extension when it looks
+(`[IndexSettings] ActiveExtensionDocs=enabled`, the default; `eZExtension::activeExtensions()` of the request): an
+extension switched on shows up at once, one switched off is gone at once. Of each such extension it shows
+
+- the files below `extension/<name>/doc/` that the extension's repository tracks (its own `.git`, or the
+  installation's when the extension is part of it), or that its release lists in its `share/filelist.md5`;
+- the files at the top of `extension/<name>/` whose names match `[IndexSettings] ExtensionTopFiles[]`: `README*`,
+  `CHANGELOG*`, `LICENSE*`, `INSTALL*`, `USAGE*`, `COPYING*` (compared without case), tracked or listed the same way.
+
+and nothing else of the extension. The rules of "What it shows, and what never" apply, plus:
+
+- only page suffixes (`md`, `markdown`, `txt`, `rst`) and images; PHP, templates, scripts, styles, settings and every
+  other source file are never shown, whatever their place (`ExcludePatterns[]` has `*.php`, and other suffixes are no
+  page suffix);
+- a text file without a suffix (`LICENSE`, `CHANGELOG`) is left out when it starts like a program (`#!` or `<?`);
+- nothing of an inactive extension (unless it is named in `ExtensionDocDirs[]`), no untracked file, nothing outside
+  the extension's `doc/` directory but the top files, no symbolic link, no path with `..`;
+- a file of `doc/` wins over the top file of the same name (`doc/README.md` over `README.md`).
+
+An extension installed without its repository and without a `share/filelist.md5` (a copy) shows nothing: the help
+cannot tell its own files from files someone put there.
+
+| | |
+|---|---|
+| Page id | `ext/<name>/<path below doc/>` (`ext/expai/vector.md`); a top file `ext/<name>/README.md` |
+| Address | `/exphelp/viewer/ext/expai/vector.md`, like every page |
+| Type, category | "Extension documentation" (`extension`), category and navigation folder **Extensions** |
+| Audience | editors, administrators and developers, unless the page's front matter or the path rules say otherwise |
+| Overview | the extension's `doc/README.md` or `doc/index.md`, else its top `README` |
+| Links | resolved against the file, as GitHub does: `../README.md` in `doc/index.md` opens the top README |
+| Edit on GitHub | none: `EditBaseURL` names the installation's repository, not the extension's |
+| Breadcrumb | Help > Extensions > the extension's overview (or its index) > ... > the page |
+
+**The Extensions index** (`/exphelp/extensions`) lists every extension that has pages, with the title of its overview
+and its number of pages; `/exphelp/extensions/<name>` is one extension's index: its pages by folder, and a search
+field limited to them. The **search** takes `(extension)/<name>` as a view parameter
+(`/exphelp/search/(q)/vector/(extension)/expai`, in the form as a hidden field and in the JSON request as
+`extension=expai`); its page says which extension it is limited to and links to the whole help. The contents page
+links to the index, and the dashboard shows the category **Extensions** with the others.
+
+An extension that had its own documentation view can send its old addresses there; expai does
+(`expai/help` redirects to `exphelp/extensions/expai`, `expai/help/(page)/<name>` to the page).
+
+Tests: `tests/tests/kernel/classes/help/expHelpExtensionDocsTest.php` (no database: a fixture installation with
+extensions in their own repositories and in the installation's, active and inactive; source files, settings, scripts
+without a suffix, untracked files and traversal refused; ids, overview, list, search filter, breadcrumb).
 
 ## Project files
 
@@ -249,7 +307,7 @@ help, its mission and `Funds[]`. `Enabled=disabled` removes the block.
   on every page of the help.
 - **Search and browse addresses** use view parameters, so they can be bookmarked and linked:
   `/exphelp/search/(q)/publish`, `/exphelp/search/(category)/layouts/(audience)/editor`, with `(type)`,
-  `(offset)` and `(limit)` as well. Without `(q)` the page lists every page the filters allow (browse mode); with no
+  `(extension)` (the documentation of one extension), `(offset)` and `(limit)` as well. Without `(q)` the page lists every page the filters allow (browse mode); with no
   parameter at all it lists all pages. The dashboard's audience cards, topics and chips, the category and audience
   of a page and the search forms all link to these addresses. An old address with `?q=...&category=...` is
   redirected to its canonical form; the JSON answer for the instant search (`format=json` or

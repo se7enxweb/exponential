@@ -73057,6 +73057,14 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>للمؤسسات والأفراد الذين يديرون موقعهم الخاص على Exponential: الفريق والنشر والتجارة والصيانة والنمو والشركاء.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>دليل المستخدم</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>سؤال واحد في كل صفحة: من يمكنه القيام بذلك، والخطوات، وما الذي قد يحدث خطأ، وأين تقرأ المزيد.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>ملفات المشروع</translation>
     </message>

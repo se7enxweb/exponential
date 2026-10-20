@@ -10,7 +10,8 @@
    HTML with <mark>), audience[], category, type; facets of audience/category/type => value => count; suggest),
    help_filters (audience, category, type), help_facet_urls (facet => value => address; '' clears), help_pager (prev,
    next, from, to, total, pages of number, url, current), help_category (id, name, icon, count, intro) or false,
-   help_audiences, help_categories, help_types (id => name, count), help_i18n_json. *}
+   help_audiences, help_categories, help_types (id => name, count), help_extension (the extension the search is limited
+   to, (extension)/<name>, or false; help_facet_urls.extension[''] searches the whole help again), help_i18n_json. *}
 {def $help_ctx = 'kernel/exphelp'
      $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing', 'partner', 'advocate', 'designer', 'hosting', 'app-creator', 'website-creator', 'supporter', 'sponsor', 'trainer', 'press', 'businesses', 'government', 'customer' )
      $help_audience_names = hash( 'editor', 'Editors'|i18n( 'kernel/exphelp' ), 'admin', 'Administrators'|i18n( 'kernel/exphelp' ),
@@ -41,6 +42,7 @@
      $help_facets = cond( and( is_set( $help_search ), is_set( $help_search.facets ) ), $help_search.facets, hash() )
      $help_links = cond( is_set( $help_facet_urls ), $help_facet_urls, hash() )
      $help_cat = cond( and( is_set( $help_category ), $help_category ), $help_category, false() )
+     $help_ext = cond( and( is_set( $help_extension ), $help_extension ), $help_extension, false() )
      $help_i18n = cond( is_set( $help_i18n_json ), $help_i18n_json, '' )
      $help_url = ''
      $help_count = 0}
@@ -51,6 +53,7 @@
             <p class="a4-pagehead-pre"><a href={'/exphelp/dashboard'|ezurl}>{'Help center'|i18n( $help_ctx )}</a>{if and( $help_cat, $help_q|ne( '' ) )} · <a href={$help_links.category[$help_cat.id]|ezurl}>{$help_cat.name|wash}</a>{/if}</p>
             <h1 class="a4-pagehead-title">{if $help_q|ne( '' )}{'Results for “%query”'|i18n( $help_ctx,, hash( '%query', $help_q ) )|wash}{elseif $help_cat}{if is_set( $help_cat.icon )}<span class="a4-icon a4-bi-{$help_cat.icon|wash}" aria-hidden="true"></span> {/if}{$help_cat.name|wash}{else}{'Browse the help'|i18n( $help_ctx )}{/if}</h1>
             {if and( $help_cat, $help_q|eq( '' ), is_set( $help_cat.intro ), $help_cat.intro|ne( '' ) )}<p class="a4-pagehead-sub a4-help-catintro">{$help_cat.intro|wash}</p>{/if}
+            {if $help_ext}<p class="a4-pagehead-sub">{'Only the documentation of the extension %extension.'|i18n( $help_ctx,, hash( '%extension', $help_ext ) )|wash} <a href={concat( 'exphelp/extensions/', $help_ext )|ezurl}>{'Its pages'|i18n( $help_ctx )}</a> · {if is_set( $help_links.extension )}<a href={$help_links.extension['']|ezurl}>{'Search the whole help'|i18n( $help_ctx )}</a>{/if}</p>{/if}
             <p class="a4-pagehead-sub">{if eq( $help_total, 1 )}{'1 page'|i18n( $help_ctx )}{else}{'%count pages'|i18n( $help_ctx,, hash( '%count', $help_total ) )|wash}{/if}</p>
         </div>
     </header>
@@ -63,6 +66,7 @@
             <kbd class="a4-kbd" aria-hidden="true">/</kbd>
             <button type="submit" class="a4-btn a4-btn-primary">{'Search'|i18n( $help_ctx )}</button>
         </div>
+        {if $help_ext}<input type="hidden" name="extension" value="{$help_ext|wash}" data-exphelp-filter />{/if}
 
         <div class="a4-help-facets">
             <fieldset class="a4-help-filters">
