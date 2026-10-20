@@ -16004,6 +16004,38 @@ keywords=exponential, community, content management, open source, cms, platforms
         3 => '0',
         4 => '1',
       ),
+      8 =>
+      array (
+        0 => 'language',
+        1 => '332',
+        2 => 'uiswitch',
+        3 => '0',
+        4 => '3',
+      ),
+      9 =>
+      array (
+        0 => 'design',
+        1 => '333',
+        2 => 'uiswitch',
+        3 => '0',
+        4 => '3',
+      ),
+      10 =>
+      array (
+        0 => 'authorize',
+        1 => '334',
+        2 => 'oauth',
+        3 => '0',
+        4 => '3',
+      ),
+      11 =>
+      array (
+        0 => 'read',
+        1 => '335',
+        2 => 'exphelp',
+        3 => '0',
+        4 => '3',
+      ),
     ),
   ),
   'ezpolicy_limitation' => 

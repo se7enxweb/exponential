@@ -3305,7 +3305,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-dc9d295e455165f080d45bc9c883518a  doc/changelogs/6.0/6.0.15.md
+0fbcdc92e2b980fbf19b4587e0259a91  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -13652,7 +13652,7 @@ f18e6605875590291f90885a0343ee7e  share/codepages/windows-1255
 eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
-3d7a95e2a6a5e29acf0bf607c1b0841a  share/db_data.dba
+69e457a984101365ed200849f350d599  share/db_data.dba
 2f401f8da6b03bb3f6badf20964a4e87  share/db_schema.dba
 2239955eb5ad31e0f5861a038dba021f  share/help/seed-glossary.json
 44106c7d89ded6e0d66c7085e5d0ce0e  share/help/seed-topics.json
