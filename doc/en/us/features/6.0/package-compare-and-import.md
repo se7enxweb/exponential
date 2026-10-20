@@ -151,5 +151,5 @@ extensions, site styles).
 - [Kickstarter: install a whole site from one file](kickstarter-cli.md), [installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
 - [About and copyright pages](about-and-package-pages.md), [translations and languages](translations-and-languages.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - History: [16 to 30 September 2026](../../history/2026/2026-09b.md), [June 2026, second half](../../history/2026/2026-06b.md)

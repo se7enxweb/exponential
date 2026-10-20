@@ -36,7 +36,7 @@ them to the provider or charges them directly, and marks the order paid when the
 3. At checkout, the customer pays; the order is placed when the workflow finishes.
 
 The kernel provides the building blocks: `eZPaymentGateway`, `eZRedirectGateway`, `eZPaymentObject` and
-`eZPaymentCallbackChecker` in `kernel/shop/classes/`, documented in `doc/en/us/shop/`.
+`eZPaymentCallbackChecker` in `kernel/shop/classes/`, documented in `doc/eng-us/shop/`.
 
 If no payment step is on checkout, orders are placed without payment. The Store dashboard warns about that in its
 "Next steps" ([Store dashboard and reports](store-dashboard-and-reports.md#next-steps)). Some businesses want exactly
@@ -69,7 +69,7 @@ More detail: [PayPal payments](paypal-payments.md) and [Card payments and PCI ba
 
 Many businesses already have a bank or payment provider. If the project has no extension for it, a gateway can be
 written: a class extending `eZPaymentGateway` or, for redirect providers, `eZRedirectGateway`, registered in
-`paymentgateways.ini` of an extension, plus a view for the provider's callback. The `doc/en/us/shop/examples/paypal/` pages
+`paymentgateways.ini` of an extension, plus a view for the provider's callback. The `doc/eng-us/shop/examples/paypal/` pages
 walk through one ([Payment gateways](../../creators/website-creators/payment-gateways.md#a-gateway-of-your-own)).
 
 This is application creator work ([Writing a workflow event type](../../creators/app-creators/writing-a-workflow-event-type.md)).

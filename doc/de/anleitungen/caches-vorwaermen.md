@@ -9,7 +9,7 @@ Sie richtet sich an Administratoren und Betreiber. Jede Seite, jedes Feld, jede 
 6. Oktober 2026 am Code dieses Repositorys geprüft; die Dateien sind unter [Quellen](#quellen) genannt.
 
 [Anleitungen](README.md) · Siehe auch: [Betrieb einer Site](betrieb-einer-website.md) · [Cronjobs](cronjobs.md) ·
-[Bereitstellung](bereitstellung.md) · [Vorladen des Site-Caches (Upgrade-Hinweise)](../../en/us/bc/6.0/preload.md)
+[Bereitstellung](bereitstellung.md) · [Vorladen des Site-Caches (Upgrade-Hinweise)](../../eng-us/bc/6.0/preload.md)
 
 ## Kurz gesagt
 

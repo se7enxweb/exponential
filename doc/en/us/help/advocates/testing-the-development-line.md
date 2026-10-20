@@ -44,7 +44,7 @@ is released, [Use a fix before it is released](../develop-with-git.md#use-a-fix-
 | Area | How |
 |---|---|
 | Your everyday tasks | Edit, publish, upload, translate, layouts |
-| New features in the changelog | Follow their feature pages ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)) |
+| New features in the changelog | Follow their feature pages ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)) |
 | Your language | The administration in your language ([Reviewing a machine-assisted translation](reviewing-a-machine-assisted-translation.md)) |
 | Your setup | Your database, engine, operating system |
 | Accessibility | Your assistive technology ([Advocating for accessibility](advocating-for-accessibility.md)) |

@@ -1062,11 +1062,11 @@ In this repository:
 - [Extension loading order](../features/6.0/extension-loading-order.md).
 - [Operating a site](../guides/operating-a-site.md), section 7 (database driver) and section 6 (backups).
 - [Chapter 11, the update files](11-upgrading.md#113-the-update-files), for schema updates per engine.
-- The code: [`ezsqlite3db.php`](../../../../lib/ezdb/classes/ezsqlite3db.php), [`ezmysqlidb.php`](../../../../lib/ezdb/classes/ezmysqlidb.php),
-  [`ezpostgresqldb.php`](../../../../lib/ezdb/classes/ezpostgresqldb.php), [`expmongodb.php`](../../../../lib/ezdb/classes/expmongodb.php),
-  [`settings/site.ini`](../../../../settings/site.ini) (`[DatabaseSettings]`), [`settings/setup.ini`](../../../../settings/setup.ini),
-  [`settings/dbschema.ini`](../../../../settings/dbschema.ini), [`bin/modfix.sh`](../../../../bin/modfix.sh),
-  [`bin/mongodb/create_indexes.js`](../../../../bin/mongodb/create_indexes.js).
+- The code: [`ezsqlite3db.php`](../../../lib/ezdb/classes/ezsqlite3db.php), [`ezmysqlidb.php`](../../../lib/ezdb/classes/ezmysqlidb.php),
+  [`ezpostgresqldb.php`](../../../lib/ezdb/classes/ezpostgresqldb.php), [`expmongodb.php`](../../../lib/ezdb/classes/expmongodb.php),
+  [`settings/site.ini`](../../../settings/site.ini) (`[DatabaseSettings]`), [`settings/setup.ini`](../../../settings/setup.ini),
+  [`settings/dbschema.ini`](../../../settings/dbschema.ini), [`bin/modfix.sh`](../../../bin/modfix.sh),
+  [`bin/mongodb/create_indexes.js`](../../../bin/mongodb/create_indexes.js).
 - The Oracle extension: `extension/ezoracle/README.md` and `extension/ezoracle/INSTALL` in an installation, and
   [se7enxweb/ezoracle](https://github.com/se7enxweb/ezoracle).
 

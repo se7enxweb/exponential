@@ -28,7 +28,7 @@ Never edit `settings/package.ini` itself: an update replaces it. Put the setting
 > per line: AllowedFindings\[\]=<path below the extension>:<setting name or (kind)>, for example  
 > AllowedFindings\[\]=settings/recaptcha.ini.append.php:PrivateKey. It can only leave out what it names: key files, a  
 > private key block, a copy of a settings file and a link are always refused. Guide:  
-> doc/en/us/bc/6.0/extension-package-secret-check.md  
+> doc/eng-us/bc/6.0/extension-package-secret-check.md  
 >
 > ACTION REQUIRED to export: list the extension here AND grant the policy package/export\_extension to the role.  
 >

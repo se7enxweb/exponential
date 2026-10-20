@@ -20,7 +20,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 ## Providers
 
 > Context help: the "?" link in the header of the administration opens the page that answers "help for this page"  
-> (expHelpContextRegistry; doc/en/us/features/6.0/help-system.md, "Context help"). One entry per key:  
+> (expHelpContextRegistry; doc/eng-us/features/6.0/help-system.md, "Context help"). One entry per key:  
 >   Map\[<module>/<view>\]=<page id>\[#<heading anchor>\]  
 >   Map\[<module>\]=...                     every view of the module without an entry of its own  
 >   Map\[<design>:<module>/<view>\]=...     only in that design (admin4l, editor, admin, adminui ...); wins over the  

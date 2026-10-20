@@ -104,5 +104,5 @@ Check with `grep -n -B1 -A3 "Links\[rad\]" settings/menu.ini`.
 - [Extension points](../../bc/6.0/rad-extension-points.md), [the extension surface](../../bc/6.0/rad-extension-surface.md), [RAD tools security](../../bc/6.0/rad-security.md)
 - [Runnable commands, cronjobs and views (specification)](../../specifications/6.0/runnable-commands-cronjobs-views.md), [extension metadata (specification)](../../specifications/6.0/extension-metadata.md)
 - [Extension module override](extension-module-override.md), [additional extension directories](additional-extension-directories.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Chronicle: September 2026, first half, 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)

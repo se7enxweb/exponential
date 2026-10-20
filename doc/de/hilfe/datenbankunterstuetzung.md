@@ -111,7 +111,7 @@ Für jede Datenbank gibt es drei verschiedene Zahlen, die man leicht verwechselt
 |---|---|---|---|
 | SQLite 3 | 3.0.1 | **3.33** (der Treiber schreibt MySQLs `UPDATE ... JOIN` in `UPDATE ... FROM` um, das SQLite ab 3.33 kennt; `eZSQLite3DB::rewriteJoinedUpdate()`) | Bibliothek 3.34.1 in PHP 8.5 auf dem Entwicklungsserver; die SQLite-Bibliothek der CI-Images (Version nicht festgelegt) |
 | PostgreSQL | 8.0 | **13** (der Installer legt `pgcrypto` an, ab PostgreSQL 13 eine vertrauenswürdige Erweiterung); ab 15 muss der Benutzer der Site Eigentümer der Datenbank sein | 13.23 auf dem Entwicklungsserver; 15 in der CI |
-| MongoDB | 4.0 | Server **6.0**, PHP **8.2** oder neuer, PHP-Erweiterung `mongodb` **1.18** oder neuer ([MongoDB als Datenbank](../../en/us/features/6.0/mongodb-database-support.md)) | Server 8.3.13 mit Erweiterung 2.3.3 auf PHP 8.5 auf dem Entwicklungsserver |
+| MongoDB | 4.0 | Server **6.0**, PHP **8.2** oder neuer, PHP-Erweiterung `mongodb` **1.18** oder neuer ([MongoDB als Datenbank](../../eng-us/features/6.0/mongodb-database-support.md)) | Server 8.3.13 mit Erweiterung 2.3.3 auf PHP 8.5 auf dem Entwicklungsserver |
 | MariaDB | 4.1.1 (die MySQL-Nummer) | ein Release, das Ihr Anbieter noch unterstützt; `utf8mb4` und InnoDB | 10.5.29 auf dem Entwicklungsserver |
 | Oracle | 19.0 | **19c** (der Treiber verwendet `STANDARD_HASH` und `OFFSET`/`FETCH`; 11g und älter werden nicht unterstützt) | Oracle AI Database 26ai Free (23.26) mit oci8 3.4.1 und Instant Client 23.26 auf PHP 8.5 |
 | MySQL | 4.1.1 | ein Release, das Ihr Anbieter noch unterstützt; `utf8mb4` und InnoDB | 8.0 in der CI |
@@ -269,7 +269,7 @@ Exponential hat drei Installer im Kernel. Alle drei unterstützen alle sechs Dat
 - **Demo-Installationen.** Dieses Repository hat keinen eigenen Demo-Installer; Demonstrations-Sites werden mit
   denselben Befehlen installiert (`exp:install` oder der Kickstarter), meist auf SQLite.
 - **Exponential Platform** (das auf Symfony basierende Schwesterprodukt, nicht der 6.0.x-Kernel) hat einen eigenen
-  SQLite-Installer, der `pdo_sqlite` verwendet; siehe [SQLite für Exponential Platform](../../en/us/features/6.0/platform-sqlite-install.md).
+  SQLite-Installer, der `pdo_sqlite` verwendet; siehe [SQLite für Exponential Platform](../../eng-us/features/6.0/platform-sqlite-install.md).
 
 Die Installer sind in [Kapitel 5, der Setup-Assistent](../installation/05-setup-assistent.md),
 [Kapitel 6, der Kickstarter](../installation/06-kickstarter.md) und [Kapitel 7, die Installation über die Konsole](../installation/07-installation-ueber-die-konsole.md) beschrieben.
@@ -307,7 +307,7 @@ Zugriffskontrolle ist die des Dateisystems.
 
 Die vollständige Behandlung mit jedem PRAGMA, dem Verhalten der Warteschlange unter Last, Überwachung und Wartung
 (`ANALYZE`, `VACUUM`, die WAL-Datei) finden Sie in [9.2 SQLite 3: eine Produktionsdatenbank in einer Datei](../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei).
-Die aufgabenorientierte Einführung ist [SQLite-Datenbankunterstützung](../../en/us/features/6.0/sqlite-database.md), die
+Die aufgabenorientierte Einführung ist [SQLite-Datenbankunterstützung](../../eng-us/features/6.0/sqlite-database.md), die
 Treiberspezifikation [Der SQLite3-Datenbanktreiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md).
 
 ## 2. PostgreSQL
@@ -363,8 +363,8 @@ die Cronjobs einmal aus, um den Suchindex aufzubauen.
 
 ### Grenzen von MongoDB
 
-Aus [MongoDB als Datenbank](../../en/us/features/6.0/mongodb-database-support.md) und Abschnitt 26 der
-[Portierungsreferenz](../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md):
+Aus [MongoDB als Datenbank](../../eng-us/features/6.0/mongodb-database-support.md) und Abschnitt 26 der
+[Portierungsreferenz](../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md):
 
 - Der Adapter führt nie echtes SQL aus. Handgeschriebenes SQL, das er nicht übersetzen kann, liefert ein leeres
   Ergebnis und protokolliert eine Warnung (suchen Sie in den Logs nach `MONGO TODO`). Erweiterungen mit eigenem SQL
@@ -474,7 +474,7 @@ und nichts auf dieser Seite ist als Versprechen eines Releases zu verstehen, das
   extension“.
 - **Werkzeuge, die SQL Server bereits lesen.** Der Datenbankmanager der Erweiterung `sevenx_dse` (AdminNeo, ein Fork
   von Adminer) bringt einen MS-SQL-Treiber zum Durchsehen und Bearbeiten von Tabellen mit, und der generische
-  SQLAlchemy-Exporter in Abschnitt 18.6 der [MongoDB-Portierungsreferenz](../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
+  SQLAlchemy-Exporter in Abschnitt 18.6 der [MongoDB-Portierungsreferenz](../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
   kann SQL Server über `pyodbc` lesen. Keines von beiden ist ein Weg, eine Site auf SQL Server zu betreiben.
 - **PHP-Treiber.** Microsoft veröffentlicht die Erweiterungen `sqlsrv` und `pdo_sqlsrv` für PHP unter Linux und
   Windows. Prüfen Sie in Microsofts Support-Matrix, welche PHP-Versionen ein Release abdeckt; mit Exponential wurde das
@@ -684,13 +684,13 @@ Boot-Smoke-Test ohne Datenbank. Die Testsuiten und wie man sie lokal ausführt, 
 
 - [Kapitel 9, Datenbanken](../installation/09-datenbanken.md): die Referenz für den Betrieb jeder Engine.
 - [Kapitel 2, Anforderungen](../installation/02-voraussetzungen.md#26-datenbanken) und [Unterstützte Betriebssysteme](betriebssystemunterstuetzung.md).
-- [SQLite-Datenbankunterstützung](../../en/us/features/6.0/sqlite-database.md),
-  [SQLite: Transaktionen warten in einer Warteschlange auf die Schreibsperre](../../en/us/bc/6.0/sqlite-transactions.md),
+- [SQLite-Datenbankunterstützung](../../eng-us/features/6.0/sqlite-database.md),
+  [SQLite: Transaktionen warten in einer Warteschlange auf die Schreibsperre](../../eng-us/bc/6.0/sqlite-transactions.md),
   [Der SQLite3-Datenbanktreiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md).
-- [MongoDB als Datenbank](../../en/us/features/6.0/mongodb-database-support.md) und die
-  [Portierungsreferenz zur MongoDB-Unterstützung im Kernel](../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md).
+- [MongoDB als Datenbank](../../eng-us/features/6.0/mongodb-database-support.md) und die
+  [Portierungsreferenz zur MongoDB-Unterstützung im Kernel](../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md).
 - [Die Treiber für SQLite und Oracle](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md),
   [Datenbanktreiber und Installer, September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md).
-- [SQL-Abfrage-Cache](../../en/us/bc/6.0/sql-query-cache.md), [Installation mit einem Befehl](../../en/us/features/6.0/install-in-one-command.md),
-  [Kickstarter](../../en/us/features/6.0/kickstarter-cli.md), [Systeminformationen](../anleitungen/systeminformationen.md).
+- [SQL-Abfrage-Cache](../../eng-us/bc/6.0/sql-query-cache.md), [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md),
+  [Kickstarter](../../eng-us/features/6.0/kickstarter-cli.md), [Systeminformationen](../anleitungen/systeminformationen.md).
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seiten dürfen frei kopiert, übersetzt und verbessert werden.

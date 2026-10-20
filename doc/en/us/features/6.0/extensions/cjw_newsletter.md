@@ -226,7 +226,7 @@ approved or denied.
 - [File consistency check](../file-consistency-check.md)
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
-- [Chronicle](../../../history/extensions/cjw_newsletter.md) and [release notes](../../../../../changelogs/extensions/cjw_newsletter.md)
+- [Chronicle](../../../history/extensions/cjw_newsletter.md) and [release notes](../../../../changelogs/extensions/cjw_newsletter.md)
 - [Change ledger](../../../history/ledger/cjw_newsletter.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

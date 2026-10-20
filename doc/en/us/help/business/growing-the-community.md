@@ -125,7 +125,7 @@ A plan your organization can adopt and adapt. Every item uses a documented chann
 
 ### Every release
 
-- [ ] Read the changelog of the new release ([changelogs](../../../../changelogs/README.md)) and the
+- [ ] Read the changelog of the new release ([changelogs](../../../changelogs/README.md)) and the
       [history](../../history/README.md) month pages.
 - [ ] Write a short "what is new for editors" post from the changelog, linking the feature pages.
 - [ ] Tell your customers which help pages changed.
@@ -188,8 +188,8 @@ Owner: <role>                                            Review: monthly
 | 1    | Getting started          | "Install Exponential in one command"   | blog, forum post        | <role> | help: getting-started.md    | idea   |
 | 2    | Help the helpers         | Answer 5 forum questions               | forums                  | <role> | -                           | plan   |
 | 3    | Editors                  | "Build a page with the layouts editor" | blog, newsletter        | <role> | help: layouts-editor.md     | draft  |
-| 4    | Languages                | Call for translation reviewers         | forum, Telegram         | <role> | doc/en/us/languages.md section 8  | plan   |
-| 5    | History                  | "This month in Exponential history"    | blog                    | <role> | doc/en/us/history/<month>.md      | idea   |
+| 4    | Languages                | Call for translation reviewers         | forum, Telegram         | <role> | doc/eng-us/languages.md section 8  | plan   |
+| 5    | History                  | "This month in Exponential history"    | blog                    | <role> | doc/eng-us/history/<month>.md      | idea   |
 | 6    | Release                  | "What is new in <version>"             | blog, forum, newsletter | <role> | doc/changelogs/6.0/<v>.md   | wait   |
 | 8    | Case study (with consent)| <customer story>                       | site, newsletter        | <role> | approved text               | consent|
 | 10   | Contribute               | "Your first pull request"              | blog, forum             | <role> | help: develop-with-git.md   | idea   |

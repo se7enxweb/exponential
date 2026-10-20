@@ -4,7 +4,7 @@ Diese Seite ist die Referenz für den SQLite-Treiber des Legacy-Kernels, `eZSQLi
 `eZSQLiteSchema`: wie sie registriert werden, wie eine Verbindung geöffnet und abgestimmt wird, wie Transaktionen auf den
 einzigen Schreiber warten und welches SQL der Treiber übersetzt. Lesen Sie sie, wenn Sie eine Installation unter SQLite
 betreiben oder abstimmen oder SQL schreiben, das auf jeder Engine laufen muss. Die aufgabenorientierte Einführung ist
-[SQLite-Datenbankunterstützung](../../../en/us/features/6.0/sqlite-database.md).
+[SQLite-Datenbankunterstützung](../../../eng-us/features/6.0/sqlite-database.md).
 
 ## Einstellungen
 
@@ -84,7 +84,7 @@ SQLite hat einen einzigen Schreiber. Seit 6.0.15 (1. bis 2. Oktober 2026) beginn
 | Gemessen | Im Testlauf der Änderung mit 64 gleichzeitig veröffentlichenden Prozessen: vorher schlugen 6 von 192 fehl, danach wurden 192 von 192 vollständig abgeschlossen (für diese Seite nicht wiederholt). |
 
 Die Wartezeit wird über `[DatabaseSettings] SQLiteTransactionWait` gesetzt (siehe [Einstellungen](#einstellungen)). Upgrade-Hinweise:
-[SQLite-Transaktionen](../../../en/us/bc/6.0/sqlite-transactions.md).
+[SQLite-Transaktionen](../../../eng-us/bc/6.0/sqlite-transactions.md).
 
 Weitere Korrekturen aus denselben Tagen:
 
@@ -112,7 +112,7 @@ Weitere Korrekturen aus denselben Tagen:
 Der Code von `eZPersistentObject` und das SQL des Kernels wurden im Januar 2024 angepasst, damit
 dieselben Anweisungen auf beiden Engines laufen; die Testläufe fanden außerdem fehlende
 Absicherungen mit `is_countable()`, die im selben Zeitraum behoben wurden (siehe
-[PHP-8-Unterstützung](../../../en/us/bc/6.0/php8.md)).
+[PHP-8-Unterstützung](../../../eng-us/bc/6.0/php8.md)).
 
 ## Bekannte Grenzen
 
@@ -123,8 +123,8 @@ Absicherungen mit `is_countable()`, die im selben Zeitraum behoben wurden (siehe
 
 ## Verwandte Seiten
 
-- [SQLite-Datenbankunterstützung](../../../en/us/features/6.0/sqlite-database.md), [SQLite für Exponential Platform](../../../en/us/features/6.0/platform-sqlite-install.md)
+- [SQLite-Datenbankunterstützung](../../../eng-us/features/6.0/sqlite-database.md), [SQLite für Exponential Platform](../../../eng-us/features/6.0/platform-sqlite-install.md)
 - [SQLite-Installer der Plattform](platform-sqlite-installer.md), [Datenbanktreiber und Installer](datenbanktreiber-2026-09.md)
-- [SQLite-Transaktionen](../../../en/us/bc/6.0/sqlite-transactions.md), [MongoDB-Unterstützung im Kernel](../../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md) (die andere Engine außer MySQL), [SQL-Abfrage-Cache](../../../en/us/bc/6.0/sql-query-cache.md) (Abfrageergebnisse auf jeder Engine)
+- [SQLite-Transaktionen](../../../eng-us/bc/6.0/sqlite-transactions.md), [MongoDB-Unterstützung im Kernel](../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md) (die andere Engine außer MySQL), [SQL-Abfrage-Cache](../../../eng-us/bc/6.0/sql-query-cache.md) (Abfrageergebnisse auf jeder Engine)
 - Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md), [6.0.13](../../../changelogs/6.0/6.0.13.md), [6.0.14](../../../changelogs/6.0/6.0.14.md), [6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chroniken: [Januar 2024, erste Hälfte](../../../en/us/history/2024/2024-01a.md), [Januar 2024, zweite Hälfte](../../../en/us/history/2024/2024-01b.md), [April 2026](../../../en/us/history/2026/2026-04.md), [Juni 2026, zweite Hälfte](../../../en/us/history/2026/2026-06b.md)
+- Chroniken: [Januar 2024, erste Hälfte](../../../eng-us/history/2024/2024-01a.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [April 2026](../../../eng-us/history/2026/2026-04.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)

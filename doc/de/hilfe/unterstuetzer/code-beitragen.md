@@ -42,9 +42,9 @@ ist die Standarddatenbank, eine Entwicklungsinstallation braucht also keinen Dat
 ## Was mit Ihrem Pull-Request geschieht
 
 - Die CI prüft Syntax, Manifest, Commit-Nachricht, Programmierstil, PHPStan und Tests auf den unterstützten
-  PHP-Versionen (`doc/en/us/bc/6.0/ci.md`).
+  PHP-Versionen (`doc/eng-us/bc/6.0/ci.md`).
 - Er wird begutachtet. „Jeder Pull-Request wird gemergt, und seine Commits bleiben so erhalten, wie der Mitwirkende
-  sie geschrieben hat, und werden niemals umgeschrieben“ (`doc/en/us/bc/6.0/ci.md`); was geändert werden muss, wird in
+  sie geschrieben hat, und werden niemals umgeschrieben“ (`doc/eng-us/bc/6.0/ci.md`); was geändert werden muss, wird in
   Commits darüber geändert.
 
 ## Lizenz
@@ -62,6 +62,6 @@ Version 2.0 oder höher, lizenziert werden“ (CONTRIBUTING.md).
 
 - [Mit Git entwickeln](../mit-git-entwickeln.md)
 - [Testen und Fehler melden](testen-und-fehler-melden.md)
-- [Code zurückgeben (für Partner)](../../../en/us/help/partners/contributing-code-back.md)
+- [Code zurückgeben (für Partner)](../../../eng-us/help/partners/contributing-code-back.md)
 - [Zum Projekt beitragen](../projekt/zum-projekt-beitragen.md): alle Wege, beim Aufbau von Exponential zu helfen
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

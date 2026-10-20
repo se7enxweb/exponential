@@ -14,7 +14,7 @@ Clean up subtree expiry entries from the URL cache tables.
 Entry point `cronjobs/subtreeexpirycleanup.php`, code in `kernel/private/classes/cronjobs/subtreeexpirycleanup.php`.
 
 > The code of cronjobs/subtreeexpirycleanup.php, moved into a class (#207 stage 1). The file cronjobs/subtreeexpirycleanup.php is one call to it.  
-> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## When it runs
 

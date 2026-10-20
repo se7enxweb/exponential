@@ -23,7 +23,7 @@ into plain language without adding anything the page does not say.
 
 ## The parts of a changelog page
 
-Take [the 6.0.14 changelog](../../../../changelogs/6.0/6.0.14.md) as the model. Every released 6.0.x page has the same parts.
+Take [the 6.0.14 changelog](../../../changelogs/6.0/6.0.14.md) as the model. Every released 6.0.x page has the same parts.
 
 | Part | Example from 6.0.14 | What it tells you |
 |---|---|---|
@@ -39,7 +39,7 @@ Take [the 6.0.14 changelog](../../../../changelogs/6.0/6.0.14.md) as the model. 
 
 The four kinds Added, Updated, Removed and Renamed come from the commit message rules in
 [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md), which also lists `Fixed:`; the changelogs fold fixes into Updated
-(see the index of [extension release notes](../../../../changelogs/extensions/README.md): "Updated (fixes included)").
+(see the index of [extension release notes](../../../changelogs/extensions/README.md): "Updated (fixes included)").
 
 ## Commit hashes
 
@@ -79,11 +79,11 @@ Rules of thumb:
 | Removed | Gone from this version on |
 | Hardening | Security improvements; describe them as the changelog does, never as "now secure" ([Covering security fixes](covering-security-fixes.md)) |
 | Required packages | The versions of other packages the kernel needs; changes there may be news for developers |
-| Behavior change notes | Pages under `doc/en/us/bc/6.0/` that explain what to check when upgrading |
+| Behavior change notes | Pages under `doc/eng-us/bc/6.0/` that explain what to check when upgrading |
 
 ## Reading the development line
 
-The [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) is different: it begins "Not released yet", is organized by
+The [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) is different: it begins "Not released yet", is organized by
 period instead of by kind, and is long ("four months of work"). Read the "How this page is organised" list at its top
 and pick one period. Everything on it must be reported as "in development"
 ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).

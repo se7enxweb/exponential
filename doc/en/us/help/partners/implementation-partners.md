@@ -17,24 +17,24 @@ Exponential ecosystem" (<https://exponential.earth/partner/program>, read 18 Oct
 
 | Skill | What it covers | Learn from |
 |---|---|---|
-| Installation and environments | Requirements, install methods, engines (Velocity, PHP-FPM, FrankenPHP) | `doc/en/us/install/` (chapters 1 to 13), [Getting started](../getting-started.md) |
+| Installation and environments | Requirements, install methods, engines (Velocity, PHP-FPM, FrankenPHP) | `doc/eng-us/install/` (chapters 1 to 13), [Getting started](../getting-started.md) |
 | Content modeling | Content classes, attributes, sections, languages | [Content modeling workshops](../leadership/content-modeling-workshops.md), [Editing content](../editing-content.md) |
 | Templates and designs | Template language, overrides, layouts | [The layouts editor](../layouts-editor.md) |
 | Extensions | Modules, settings, the RAD tools, releases | [Extensions](../../guides/extensions.md) |
 | Databases | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Database support](../database-support.md) |
 | Git workflow | Clones with history, branches, pull requests | [Develop with Git](../develop-with-git.md) |
 | Security | Hardening, CSP, updates | [Security hardening](../security-hardening.md) |
-| Upgrades and migrations | From older lines and other platforms | `doc/en/us/install/11-upgrading.md`, `doc/en/us/install/14-migrating-from-4x.md` to `17-migration-reference.md` |
+| Upgrades and migrations | From older lines and other platforms | `doc/eng-us/install/11-upgrading.md`, `doc/eng-us/install/14-migrating-from-4x.md` to `17-migration-reference.md` |
 
 ## Services to offer
 
 | Service | What the customer gets | Page |
 |---|---|---|
 | New site or application | A site built on current Exponential | [An implementation project playbook](implementation-project-playbook.md) |
-| Migration | Move from an old eZ Publish era install or another platform | `doc/en/us/install/` migration chapters |
+| Migration | Move from an old eZ Publish era install or another platform | `doc/eng-us/install/` migration chapters |
 | Upgrade and maintenance | Current releases, security fixes, PHP upgrades | [Keeping customer sites current](keeping-customers-current.md) |
 | Custom extensions | Features the kernel does not have | [Publishing an extension](publishing-an-extension.md) |
-| Integration | REST, search, single sign-on, shop | The feature documentation in `doc/en/us/features/` |
+| Integration | REST, search, single sign-on, shop | The feature documentation in `doc/eng-us/features/` |
 | Audits | Security, performance, accessibility | [Accessibility, security and compliance checklists](../leadership/accessibility-security-and-compliance-checklists.md) |
 
 ## Working the program as an implementation partner

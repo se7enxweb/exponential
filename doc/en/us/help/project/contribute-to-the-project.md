@@ -52,7 +52,7 @@ request to 7x's repository, where it is reviewed and, when merged, released to e
    issue, or mail), only after you have signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in
    any way, also under other licenses and in commercial products, without asking or paying you, and you cannot
    withdraw it or set conditions on it. See
-   [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla) and the
+   [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) and the
    [CLA page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla). Your own custom
    extensions, site packages and themes are not affected.
 

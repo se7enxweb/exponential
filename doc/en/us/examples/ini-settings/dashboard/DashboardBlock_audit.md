@@ -12,7 +12,7 @@ generated: exp:help:examples
 The block `[DashboardBlock_audit]` of `settings/dashboard.ini`, with 4 setting(s).
 
 > The latest security events (notice or worse, access and system channels), the alerts of the last  
-> day and, for audit/manage, the "audit is off" and "chain broken" warnings (doc/en/us/bc/6.0/audit.md).  
+> day and, for audit/manage, the "audit is off" and "chain broken" warnings (doc/eng-us/bc/6.0/audit.md).  
 
 Never edit `settings/dashboard.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 

@@ -87,7 +87,7 @@ customer can verify it.
   [the history](../../history/README.md).
 - Tests: Quality and PHPUnit run on every push and pull request, and a weekly CI health report runs on Mondays
   ([Continuous integration](../../bc/6.0/ci.md)).
-- The change log of the current line: [the 6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md).
+- The change log of the current line: [the 6.0.15 changelog](../../../changelogs/6.0/6.0.15.md).
 
 **Let the buyer check.**
 
@@ -189,7 +189,7 @@ market. Turn it into a planning step instead: put onboarding and training into t
 |---|---|---|
 | "Upgrades break sites." | The upgrade chapter starts with one rule: back up, and never run an installer over an existing site. Update files exist per database engine. | [Upgrading](../../install/11-upgrading.md) |
 | "How do we know the upgrade is complete?" | **Setup > Upgrade check** compares the files with the release manifest and the database with the release schema. | [The upgrade check](../../guides/upgrade-check.md) |
-| "We need to know what changes." | Changelogs per version and notes on backward compatibility for 6.0. | [Changelogs](../../../../changelogs/README.md), [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| "We need to know what changes." | Changelogs per version and notes on backward compatibility for 6.0. | [Changelogs](../../../changelogs/README.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 | "Our old site is from the 4.x or 5.x days." | Documented migrations from 3.10 and 4.x, from the 5.x legacy stack, and from eZ Platform and Ibexa. | [Chapter 14](../../install/14-migrating-from-4x.md), [chapter 15](../../install/15-migrating-from-5x-legacy.md), [chapter 16](../../install/16-migrating-from-ez-platform-and-ibexa.md) |
 | "Migration is expensive." | The effort depends on the site; the chapters list what to take stock of. 7x offers migration as a service. | [Chapter 14, Take stock of the old site](../../install/14-migrating-from-4x.md), [Services](../who-is-7x.md#services-and-hosting) |
 

@@ -31,7 +31,7 @@ directly. Every edit is a draft, a copy of the published version, and the site k
 until the editor presses **Send for publishing**; older versions are kept and can be restored
 ([Publishing, versions and the trash](../publishing-and-versions.md)). The 6.0.15 development line adds a preview at
 phone, tablet and desktop width, background jobs for very large moves and removals, bookmark folders and a redesigned
-administration ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
+administration ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
 
 ## What is new, and when
 
@@ -40,12 +40,12 @@ development line", never "released on".
 
 | What | When it was added | Source |
 |---|---|---|
-| Bookmark folders, in the bookmark page, the browse dialog and the online editor | 1 and 2 October 2026 | [6.0.15 changelog, 1 and 2 October](../../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026), [Bookmark folders](../../features/6.0/bookmark-folders.md) |
+| Bookmark folders, in the bookmark page, the browse dialog and the online editor | 1 and 2 October 2026 | [6.0.15 changelog, 1 and 2 October](../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026), [Bookmark folders](../../features/6.0/bookmark-folders.md) |
 | Content jobs: large removes, copies and moves in the background, resumable | 2 October 2026 | [Content jobs](../../features/6.0/content-jobs.md) |
 | The sub-items list with 129 registered columns, presets and CSV export | 1 and 2 October 2026 | [The sub-items list](../../features/6.0/subitems-table-options.md) |
 | The admin4 design, light and dark | 2 October 2026 | [The admin4 design](../../features/6.0/admin4-design.md) |
-| The version preview in the width of a device | 15 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#15-october-2026-the-version-preview-in-the-width-of-a-device) |
-| Sub items reordered by drag and drop | 15 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#15-october-2026-sub-items-reordered-by-drag-and-drop) |
+| The version preview in the width of a device | 15 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#15-october-2026-the-version-preview-in-the-width-of-a-device) |
+| Sub items reordered by drag and drop | 15 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#15-october-2026-sub-items-reordered-by-drag-and-drop) |
 
 ## Facts you can print
 

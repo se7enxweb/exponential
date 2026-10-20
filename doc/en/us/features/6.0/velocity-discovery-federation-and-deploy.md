@@ -100,5 +100,5 @@ sessions. It is **off**: with `Q.webserver.mesh` unset or `false`, no identity i
 
 - [Velocity web server](velocity-web-server.md), [WebSockets and events](velocity-websockets-and-events.md), [Velocity scheduler](velocity-scheduler.md), [HTTPS certificates](velocity-https-certificates.md)
 - [Velocity engines (upgrade notes)](../../bc/6.0/velocity-engines.md)
-- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [July 2026](../../history/velocity/2026-07.md) (API discovery from comments, federated apps), [September 2026](../../history/velocity/2026-09d.md) (signing)

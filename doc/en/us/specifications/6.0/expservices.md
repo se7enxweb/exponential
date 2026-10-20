@@ -102,4 +102,4 @@ Helpers of the base class: `arg()`, `post()`, `paging()`, `pageOf()`, `ok()`, `p
 
 - [Remote services](../../features/6.0/remote-services-expservices.md), [ezjscore backend services](../../bc/6.0/backend_ezjscore_services.md), [ezjscore](../../features/6.0/extensions/ezjscore.md)
 - [Audit event model](audit-event-model.md), [RAD tools](../../features/6.0/rad-tools.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md), [October 2026 chronicle](../../history/2026/2026-10.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), [October 2026 chronicle](../../history/2026/2026-10.md)

@@ -20,13 +20,13 @@ start to end. It applies to the kernel (`se7enxweb/exponential`) and to any exte
    rules. An extension may have its own `CONTRIBUTING.md`, or none; then look at how its recent commits are written.
    **For the kernel: expect many review rounds.** 7x reviews a commit or pull request in many more rounds than
    usual, sometimes hundreds of revisions; be ready to revise your change until it is simple to accept
-   ([Code reviews](../../../../../../CONTRIBUTING.md#code-reviews)).
+   ([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
    **For the kernel: copyright assignment (CLA).** 7x and the Exponential Foundation merge a
    code contribution to the core kernel, sent in any form (pull request, patch, issue or mail), only after you have
    signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other
    licenses and in commercial products, without asking or paying you, and you cannot withdraw it or set conditions on it.
    How to sign:
-   [Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla). It does not apply to the
+   [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla). It does not apply to the
    extensions you write and keep for yourself.
 2. **Look for an existing issue or pull request** about the same thing. If there is one, comment there instead of
    starting a second.
@@ -94,7 +94,7 @@ if you still want to change things.
   (usually one) and rebase it onto `main` while it is open, so the merge is clean:
   `git fetch origin`, `git rebase -i origin/main`, then `git push --force-with-lease` to your pull request branch
   only. Once it is merged, `main`'s history is never rewritten; a later fix is a new pull request
-  ([Code reviews](../../../../../../CONTRIBUTING.md#code-reviews)).
+  ([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
 - **Be patient.** Volunteer maintainers answer when they can. A friendly reminder after two or three weeks is fine.
 
 ## 7. After it is merged

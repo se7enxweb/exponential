@@ -69,7 +69,7 @@ belongs to the **datatype** attribute, not to these overrides.
 ## Related pages
 
 - [hcaptcha](hcaptcha.md)
-- [Chronicle](../../../history/extensions/recaptcha.md) and [release notes](../../../../../changelogs/extensions/recaptcha.md)
+- [Chronicle](../../../history/extensions/recaptcha.md) and [release notes](../../../../changelogs/extensions/recaptcha.md)
 - [Change ledger](../../../history/ledger/recaptcha.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-08](../../../history/extensions/months/2024-08.md), [2024-09](../../../history/extensions/months/2024-09.md), [2026-09](../../../history/extensions/months/2026-09.md) (all extensions)

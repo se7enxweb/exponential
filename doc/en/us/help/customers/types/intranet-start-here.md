@@ -46,7 +46,7 @@ Planning an intranet is covered in [Intranets for businesses](../../businesses/i
 - **Leavers**: when someone leaves, their account is disabled on their last day
   ([Offboarding staff](../day-to-day/offboarding-staff.md)). If sign-in uses the company directory, check with IT
   what disabling the directory account does to the intranet account.
-- **Every quarter**: open **Users > Check user accounts** (`user/hygiene`, `doc/en/us/features/6.0/user-hygiene.md`) and
+- **Every quarter**: open **Users > Check user accounts** (`user/hygiene`, `doc/eng-us/features/6.0/user-hygiene.md`) and
   review accounts that never signed in or have not been seen for a long time; and ask each department editor to
   review their pages ([Content audits](../day-to-day/content-audits.md)).
 

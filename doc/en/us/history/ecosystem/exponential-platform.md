@@ -61,7 +61,7 @@ Also: 3 merge or funding-metadata commits by the team (no user benefit; see the 
 
 ## Related pages
 
-- [Release changelog](../../../../changelogs/extensions/exponential-platform.md)
+- [Release changelog](../../../changelogs/extensions/exponential-platform.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

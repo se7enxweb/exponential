@@ -173,7 +173,7 @@ Sources: [Who is 7x?](../who-is-7x.md#contributors-and-friends-of-the-project),
   The administration translation `eng-US` is written in American English ([Languages in Exponential](../../languages.md#8-adding-or-completing-an-administration-translation)).
 - **Use the word the reader sees on screen.** The help style guide sets the rule "Use the product name the reader
   sees on screen, not an internal project or code name", and prefers interface terms such as "object", "content
-  class", "draft", "trash" (`doc/en/us/specifications/6.0/help-style-guide.md`, a proposal of 18 October 2026).
+  class", "draft", "trash" (`doc/eng-us/specifications/6.0/help-style-guide.md`, a proposal of 18 October 2026).
 - Write names of menus and buttons as they appear: **Setup**, **Send for publishing**.
 
 ## Do and Don't

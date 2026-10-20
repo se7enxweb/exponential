@@ -62,7 +62,7 @@ down. What the figures do **not** say:
 - They are not a promise for your server, your pages or your traffic. Hardware, page weight, database and how much
   of your traffic is cacheable all change the result.
 - A signed-in customer (a shop customer with a basket, a member, an editor) is never served from the response cache
-  ([settings/velocity.ini](../../../../../../settings/velocity.ini), `[CacheSettings]`: "Signed-in visitors are never served
+  ([settings/velocity.ini](../../../../../settings/velocity.ini), `[CacheSettings]`: "Signed-in visitors are never served
   from the cache"). Their pages are rendered, though by workers that keep the application loaded.
 
 To measure your own site, your operator can use `exp:benchmark`, which compares two servers back to back

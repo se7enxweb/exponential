@@ -21,7 +21,7 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 
 > Commands (bin/), cronjob parts (cronjobs/) and module views are classes that extend  
 > Exponential\\Runnable\\Command, CronjobPart or ModuleView.  
-> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 >
 > Re-implementation: the class to create instead of a runnable class. It must extend  
 > the class it replaces; an entry naming anything else is ignored.  
@@ -64,7 +64,7 @@ Implementation[]
 >                            is '' for \[CronjobSettings\] and for --script; $single is  
 >                            true for --script, whose one file name is in $scripts  
 > Listeners\[\]=cronjob/part/run@myCronjobStop::partRun  
-> Guide: doc/en/us/features/6.0/cronjob-part-filter.md  
+> Guide: doc/eng-us/features/6.0/cronjob-part-filter.md  
 
 Default: an empty list.
 

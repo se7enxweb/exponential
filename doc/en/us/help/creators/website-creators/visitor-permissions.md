@@ -61,7 +61,7 @@ Keep the role small. Each addition is something every visitor on the internet ma
 - Use a private browser window, not your admin session.
 - Check a page in each section, a hidden page (must be gone), a members page (must ask to log in) and a draft (must be
   invisible).
-- The **access check** console command shows what a user may do: see `doc/en/us/examples/commands/accesscheck.md` when the
+- The **access check** console command shows what a user may do: see `doc/eng-us/examples/commands/accesscheck.md` when the
   examples are installed, or the role pages in the administration.
 
 ## Common mistakes

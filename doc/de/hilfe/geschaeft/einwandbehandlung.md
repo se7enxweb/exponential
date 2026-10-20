@@ -50,14 +50,14 @@ Antwort. Ein Käufer, der Ihre Antwort prüft und sie zutreffend findet, vertrau
 | Einwand | Kurze Antwort aus den Quellen | Nachweis |
 |---|---|---|
 | „Open Source ist weniger sicher.“ | Vertrauliche Meldung von Sicherheitslücken mit einer ersten Antwort innerhalb eines Werktags; Korrekturen im nächsten 6.0.x-Release; eine CSP, ein Audit-Protokoll, Anmeldung in zwei Schritten und ein Leitfaden zur Sicherheitshärtung | `SECURITY.md`, [Sicherheitshärtung](../sicherheitshaertung.md) |
-| „Wird es noch gepflegt?“ | Fünfzehn 6.0.x-Releases vom 1. Januar 2024 bis zum 7. Juni 2026, 6.0.15 in Entwicklung; CI bei jedem Push | [Wer ist 7x?, Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x), [CI](../../../en/us/bc/6.0/ci.md) |
+| „Wird es noch gepflegt?“ | Fünfzehn 6.0.x-Releases vom 1. Januar 2024 bis zum 7. Juni 2026, 6.0.15 in Entwicklung; CI bei jedem Push | [Wer ist 7x?, Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x), [CI](../../../eng-us/bc/6.0/ci.md) |
 | „Wird es Bestand haben?“ | Eine seit 1999 gepflegte Codebasis, ein Unternehmen und eine gemeinnützige Organisation dahinter und eine GPL-Lizenz, die den Code für alle verfügbar hält | `COPYRIGHT.md`, [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 | „Wer unterstützt uns?“ | Dokumentierte Zusagen zu PHP, Sicherheitskorrekturen, Releases und Dokumentation; Serviceverträge von 7x oder jedem anderen Anbieter; Orte der Community | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
 | „Welche PHP-Versionen?“ | PHP 8.0 bis 8.5; Velocity benötigt 8.1 oder später | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | „Wir werden gebunden sein.“ | GPL-Code, sechs Datenbanken, fast jedes Betriebssystem, dokumentierte Umzüge zwischen Datenbanken | [Exponential sachlich vergleichen](exponential-sachlich-vergleichen.md#keine-herstellerbindung-punkt-für-punkt) |
 | „Niemand kennt dieses System.“ | Die Quellen zählen keine Entwickler; sie dokumentieren den Technologie-Stack und viel freies Lernmaterial | [Fachkräfte](#fachkräfte-finden-wir-leute-die-es-kennen) |
 | „Upgrades sind riskant.“ | Veröffentlichte Versionen ändern sich nie; Update-Dateien je Datenbank; eine Upgrade-Prüfung in der Administration | [Upgrade](../../installation/11-aktualisieren.md), [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
-| „KI veröffentlicht Unsinn oder lässt Daten abfließen.“ | Nur Entwürfe, eine Region je Anbieter, Regeln je Sektion und Klasse, ein einziger Schalter zum Abschalten | [Exponential Intelligence](../../../en/us/features/6.0/extensions/expai.md) |
+| „KI veröffentlicht Unsinn oder lässt Daten abfließen.“ | Nur Entwürfe, eine Region je Anbieter, Regeln je Sektion und Klasse, ein einziger Schalter zum Abschalten | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
 | „Ist das nicht das alte, eingestellte Produkt?“ | Exponential führt die Codebasis von eZ Publish fort, einem Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat; seit dem 1. Januar 2024 sind fünfzehn 6.0.x-Releases gefolgt | [Wer ist 7x?](../wer-ist-7x.md#verantwortung-von-einer-ruhenden-codebasis-zu-exponential-6) |
 
 ## Sicherheit
@@ -67,10 +67,10 @@ Antwort. Ein Käufer, der Ihre Antwort prüft und sie zutreffend findet, vertrau
 | „Wie wird mit Sicherheitslücken umgegangen?“ | „Bitte melden Sie Sicherheitsprobleme vertraulich per E-Mail ... Sie können eine erste Antwort innerhalb eines Werktags erwarten.“ Ein anerkanntes Problem wird auf `main` behoben und mit der nächsten 6.0.x-Version veröffentlicht. | `SECURITY.md` |
 | „Welche Versionen erhalten Korrekturen?“ | 6.0.x ist die gepflegte Linie. Veröffentlichte Tags werden „durch ein Upgrade auf die neueste 6.0.x behoben“; 5.x, 4.x, 3.x und älter werden nicht unterstützt. | `SECURITY.md` |
 | „Kann eine Korrektur die Version ändern, die wir abgenommen haben?“ | Nein. „Ein veröffentlichter Tag wird nie geändert“: Eine Korrektur erreicht Sie als nächstes Release. | `SECURITY.md` |
-| „Was ist mit Cross-Site-Scripting?“ | Eine Content Security Policy aus `site.ini [ContentSecurityPolicy]`; standardmäßig in der Administration nur im Berichtsmodus und auf den Sites ausgeschaltet, mit Schritten, um sie durchzusetzen. Neue Templates der Administration enthalten keine Inline-Styles oder -Skripte, damit sich eine strikte Richtlinie durchsetzen lässt. | [Content Security Policy](../../../en/us/features/6.0/content-security-policy.md), `CONTRIBUTING.md` |
-| „Können wir sehen, wer was getan hat?“ | Ein manipulationssicheres Audit-Protokoll, standardmäßig eingeschaltet; jeder Eintrag trägt den Hash des vorherigen; `verify` meldet Änderungen oder Lücken. | [Das Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md) |
+| „Was ist mit Cross-Site-Scripting?“ | Eine Content Security Policy aus `site.ini [ContentSecurityPolicy]`; standardmäßig in der Administration nur im Berichtsmodus und auf den Sites ausgeschaltet, mit Schritten, um sie durchzusetzen. Neue Templates der Administration enthalten keine Inline-Styles oder -Skripte, damit sich eine strikte Richtlinie durchsetzen lässt. | [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md), `CONTRIBUTING.md` |
+| „Können wir sehen, wer was getan hat?“ | Ein manipulationssicheres Audit-Protokoll, standardmäßig eingeschaltet; jeder Eintrag trägt den Hash des vorherigen; `verify` meldet Änderungen oder Lücken. | [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
 | „Passwörter werden gestohlen.“ | Anmeldung in zwei Schritten mit einer Authenticator-App oder einem Code per E-Mail. | [Anmeldung in zwei Schritten](../../anleitungen/zwei-faktor-anmeldung.md) |
-| „Bemerken Sie Angriffe?“ | Sondierungen und Angriffe werden klassifiziert und in `security.log` geschrieben, mit maskierten Adressen; der Klassifizierer selbst blockiert nichts, Listener können reagieren. | [Anfrageprotokolle](../../../en/us/features/6.0/request-logs.md) |
+| „Bemerken Sie Angriffe?“ | Sondierungen und Angriffe werden klassifiziert und in `security.log` geschrieben, mit maskierten Adressen; der Klassifizierer selbst blockiert nichts, Listener können reagieren. | [Anfrageprotokolle](../../../eng-us/features/6.0/request-logs.md) |
 | „Standardpasswörter sind ein Risiko.“ | Neue Installationen erzeugen ein zufälliges Administratorpasswort, wenn keines oder ein allgemein bekanntes angegeben wird. | [Das Standardpasswort des Administrators](../standard-administratorpasswort.md) |
 | „Was sollen unsere Administratoren tun?“ | Ein Leitfaden zur Sicherheitshärtung, Bedrohung für Bedrohung, und eine Checkliste. | [Sicherheitshärtung](../sicherheitshaertung.md#checkliste), [Kapitel 13](../../installation/13-sicherheitshaertung.md) |
 | „Kümmern Sie sich um Ihre Abhängigkeiten?“ | Die Profil-README von se7enxweb nennt 14 Sicherheits-Pull-Requests an die Zeta Components im April 2026. | [Der PHP-Stack, auf dem es steht](../wer-ist-die-exponential-foundation.md#der-php-stack-auf-dem-es-steht-und-dem-es-etwas-zurückgibt) |
@@ -85,10 +85,10 @@ Sagen Sie, wie der Prozess aussieht und wie der Kunde ihn nachprüfen kann.
 - Releases: 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, mit 6.0.15 in Entwicklung
   ([Wer ist 7x?, Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x)).
 - Änderungen: „6556 Änderungen im Verzeichnis in 53 Repositories seit Dezember 2023. 1037 davon stammen vom
-  se7enxweb-Team“ ([Das Ökosystem der Exponential-Plattform](../../../en/us/history/ecosystem.md)); jeder Monat wird in
-  [der Geschichte](../../../en/us/history/README.md) erzählt.
+  se7enxweb-Team“ ([Das Ökosystem der Exponential-Plattform](../../../eng-us/history/ecosystem.md)); jeder Monat wird in
+  [der Geschichte](../../../eng-us/history/README.md) erzählt.
 - Tests: Qualitätsprüfungen und PHPUnit laufen bei jedem Push und jedem Pull-Request, und montags läuft ein
-  wöchentlicher Bericht zum Zustand der CI ([Continuous Integration](../../../en/us/bc/6.0/ci.md)).
+  wöchentlicher Bericht zum Zustand der CI ([Continuous Integration](../../../eng-us/bc/6.0/ci.md)).
 - Das Änderungsprotokoll der aktuellen Linie: [das Changelog zu 6.0.15](../../../changelogs/6.0/6.0.15.md).
 
 **Lassen Sie den Käufer prüfen.**
@@ -136,7 +136,7 @@ Stellen Sie sie als Tabelle dar:
 | Sicherheitskorrekturen | Auf `main`, veröffentlicht mit der nächsten 6.0.x | [Sicherheitskorrekturen](../wer-ist-die-exponential-foundation.md#sicherheitskorrekturen) |
 | PHP-Kompatibilität | 8.0 bis 8.5, mit CI unter 8.1 bis 8.5 und einer Startprüfung unter 8.0 | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Disziplin bei Releases | Veröffentlichte Versionen ändern sich nie; die letzte Stelle zählt weiter | [Releases und Versionsnummern](../wer-ist-die-exponential-foundation.md#releases-und-versionsnummern) |
-| Dokumentation | Im Repository, frei unter der GNU FDL, in der Administration angezeigt | [Hilfesystem](../../../en/us/features/6.0/help-system.md) |
+| Dokumentation | Im Repository, frei unter der GNU FDL, in der Administration angezeigt | [Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
 | Fehlermeldungen | Der Issue-Tracker von Exponential und die Seite **Fehler melden** der Hilfe (`/exphelp/report`) | [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md) |
 | Fragen | Die Community-Foren auf [share.exponential.earth](https://share.exponential.earth/forums) und der in `README.md` genannte Telegram-Chat der Community | [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |
 | Kostenpflichtige Dienstleistungen | 7x führt Support- und Wartungsverträge, Entwicklung, Schulung, Migration und Managed Hosting auf; Preise und Bedingungen stehen auf der eigenen Website von 7x | [Wer ist 7x?, Dienstleistungen und Hosting](../wer-ist-7x.md#dienstleistungen-und-hosting) |
@@ -150,9 +150,9 @@ mit einem Anbieter.
 | Einwand | Antwort | Quelle |
 |---|---|---|
 | „Es braucht ein altes PHP.“ | PHP 8.0 ist die älteste unterstützte Version; 8.1 bis 8.5 werden unterstützt; `composer.json` erlaubt bis 8.8. | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
-| „Wir betreiben Red Hat Enterprise Linux 9 mit seinem mitgelieferten PHP.“ | PHP 8.0, das mitgelieferte PHP von RHEL 9 und seinen Nachbauten, betreibt es unter Apache oder PHP-FPM. | `README.md`, [Unterstützung für PHP 8.0](../../../en/us/bc/6.0/php-8.0-support.md) |
+| „Wir betreiben Red Hat Enterprise Linux 9 mit seinem mitgelieferten PHP.“ | PHP 8.0, das mitgelieferte PHP von RHEL 9 und seinen Nachbauten, betreibt es unter Apache oder PHP-FPM. | `README.md`, [Unterstützung für PHP 8.0](../../../eng-us/bc/6.0/php-8.0-support.md) |
 | „Wir sind noch auf PHP 7.4.“ | 6.0.7 ist das letzte Release für PHP 7.4; 7x „empfiehlt dringend ein Upgrade“. | `README.md` |
-| „Die Oberfläche wirkt veraltet.“ | admin4 mit hellem und dunklem Modus; jQuery 4 und TinyMCE 8 in der 6.0.15-Linie; AdminUI als alternatives Erscheinungsbild. | [Das Design admin4](../../../en/us/features/6.0/admin4-design.md), [Oktober 2026](../../../en/us/history/2026/2026-10.md), [AdminUI](../../../en/us/features/6.0/exp-adminui.md) |
+| „Die Oberfläche wirkt veraltet.“ | admin4 mit hellem und dunklem Modus; jQuery 4 und TinyMCE 8 in der 6.0.15-Linie; AdminUI als alternatives Erscheinungsbild. | [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md), [Oktober 2026](../../../eng-us/history/2026/2026-10.md), [AdminUI](../../../eng-us/features/6.0/exp-adminui.md) |
 | „Wir brauchen eine Headless-Auslieferung.“ | Eine REST-API in den Versionen 1 und 2. Für ein Symfony-Projekt mit GraphQL bietet die Familie Exponential Platform DXP. | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md), [Welches Produkt zu Ihnen passt](../wer-ist-die-exponential-foundation.md#welches-produkt-zu-ihnen-passt) |
 
 ## Hosting und Herstellerbindung
@@ -203,7 +203,7 @@ Projektplan auf ([Ein Exponential-Projekt planen](../fuehrung/ein-exponential-pr
 
 | Einwand | Antwort | Quelle |
 |---|---|---|
-| „KI wird falsche Inhalte veröffentlichen.“ | Sie schreibt nur Entwürfe und veröffentlicht nie von sich aus; **Send for approval** führt den normalen Veröffentlichungsvorgang aus, sodass ein Freigabe-Workflow die Version zurückhält. | [Exponential Intelligence](../../../en/us/features/6.0/extensions/expai.md) |
+| „KI wird falsche Inhalte veröffentlichen.“ | Sie schreibt nur Entwürfe und veröffentlicht nie von sich aus; **Send for approval** führt den normalen Veröffentlichungsvorgang aus, sodass ein Freigabe-Workflow die Version zurückhält. | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
 | „Unsere Inhalte dürfen die EU (oder das Gebäude) nicht verlassen.“ | Jeder Anbieter gibt seine Region an: `us`, `eu` oder `local`; Regeln je Sektion und Klasse entscheiden, welche Inhalte wohin gehen dürfen; ein lokales Open-Weight-Modell hält die Daten auf dem Server. | ebenda, `README.md` |
 | „Wir können die Kosten nicht kontrollieren.“ | Jede Anfrage wird mit ihren geschätzten Kosten protokolliert; Limits je Benutzer, Tag, Monat, Site und Anbieter; Budgets für Arbeit in der Warteschlange. | ebenda |
 | „Unser Datenschutzbeauftragter muss es freigeben.“ | **EI: Summary** ist eine druckbare Seite für Datenschutzbeauftragte. | ebenda |
@@ -216,9 +216,9 @@ Fakten zum Audit; leisten Sie keine Rechtsberatung.
 
 | Einwand | Antwort | Quelle |
 |---|---|---|
-| „Unsere Sprache wird nicht unterstützt.“ | Es gibt 268 Locale-Dateien; prüfen Sie die Sprache des Kunden in der Liste. Die Administration ist in zehn Übersetzungen vollständig; die übrigen sind teilweise vorhanden oder gelten nur für Inhalte. | [Sprachen in Exponential](../../../en/us/languages.md) |
-| „Wir brauchen Arabisch oder Hebräisch.“ | Schreibrichtung von rechts nach links in Inhalten und in der Administration; die hebräische und die arabische Übersetzung der Administration sind vollständig. | [Von rechts nach links](../../../en/us/features/6.0/right-to-left.md), [Unterstützungsstufen](../../../en/us/languages.md#2-support-levels) |
-| „Ist die Administration barrierefrei?“ | Sprunglink, Landmarks, Tastaturmuster, beschriftete Felder, Tests für Kontrast und Zielgröße in admin4. | [Das Design admin4](../../../en/us/features/6.0/admin4-design.md#landmarks-and-names) |
+| „Unsere Sprache wird nicht unterstützt.“ | Es gibt 268 Locale-Dateien; prüfen Sie die Sprache des Kunden in der Liste. Die Administration ist in zehn Übersetzungen vollständig; die übrigen sind teilweise vorhanden oder gelten nur für Inhalte. | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| „Wir brauchen Arabisch oder Hebräisch.“ | Schreibrichtung von rechts nach links in Inhalten und in der Administration; die hebräische und die arabische Übersetzung der Administration sind vollständig. | [Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md), [Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels) |
+| „Ist die Administration barrierefrei?“ | Sprunglink, Landmarks, Tastaturmuster, beschriftete Felder, Tests für Kontrast und Zielgröße in admin4. | [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md#landmarks-and-names) |
 | „PHP ist langsam.“ | `README.md` dokumentiert 0,36 ms je gecachter Seite und 8.941 Anfragen pro Sekunde auf einer Maschine mit 12 Kernen mit Velocity und hält fest, dass der größte Teil der Geschwindigkeit aus Korrekturen stammt, die auch unter Apache oder Nginx wirken. Bieten Sie eine Messung auf der Hardware des Kunden an. | `README.md`, [Benchmarks](../../anleitungen/benchmarking.md) |
 
 ## Wenn die ehrliche Antwort Nein lautet
@@ -230,7 +230,7 @@ Manche Einwände treffen zu. Sagen Sie das, und bieten Sie die Alternative an, d
 | Microsoft SQL Server | Kein Treiber in 6.0.x | „Mit zusätzlichem Aufwand möglich“, dokumentiert ([Unterstützte Datenbanken](../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)) |
 | Einen reinen Symfony-Stack | Das ist Exponential 6 nicht | Exponential Platform DXP ([Welches Produkt zu Ihnen passt](../wer-ist-die-exponential-foundation.md#welches-produkt-zu-ihnen-passt)) |
 | Ein veröffentlichtes SLA des Projekts | Es gibt keines | Ein Servicevertrag mit einem Anbieter |
-| Mehr als 62 Inhaltssprachen in einer Installation | Nicht möglich | Auf mehrere Installationen aufteilen oder den tatsächlichen Bedarf prüfen ([Die Grenze von 62](../../../en/us/languages.md#11-the-limit-of-62-content-languages)) |
+| Mehr als 62 Inhaltssprachen in einer Installation | Nicht möglich | Auf mehrere Installationen aufteilen oder den tatsächlichen Bedarf prüfen ([Die Grenze von 62](../../../eng-us/languages.md#11-the-limit-of-62-content-languages)) |
 | Velocity auf Shared Hosting | Meist nicht möglich | Apache oder LiteSpeed mit `.htaccess` (`README.md`) |
 | PHP 7.4 mit neuen Funktionen | Nein; für PHP 7.4 endet es bei 6.0.7 | PHP aktualisieren ([PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen)) |
 

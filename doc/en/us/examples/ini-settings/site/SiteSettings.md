@@ -297,7 +297,7 @@ AllowedRedirectHosts[]
 > user/password, user/setting, section/edit, state edits, role/edit, class/edit and class/groupedit, which go to  
 > the page the form names (RedirectIfDiscarded) or the page viewed last. These views act on a POST, end the  
 > session or start a download, so a GET there shows nothing or does something. The running view itself is  
-> always skipped. See doc/en/us/features/6.0/safe-redirects.md  
+> always skipped. See doc/eng-us/features/6.0/safe-redirects.md  
 
 Default: a list of 14: `content/action`, `content/removeobject`, `content/removenode`, `content/removeassignment`, `content/removeeditversion`, `content/download`, `user/logout`, `user/login`, `user/activate`, `user/success`, `user/forgotpassword`, `user/register` ....
 

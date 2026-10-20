@@ -167,11 +167,11 @@ You run the installation: servers, caches, backups, upgrades, security.
 4. Caches and speed: [cache control](../bc/6.0/cache-console.md), [HTTP caching](../bc/6.0/http-caching.md), [SQL query cache](../bc/6.0/sql-query-cache.md), [static cache](../features/6.0/static-cache-generator.md), [preload](../features/6.0/preload-sites-view.md), [benchmark](../features/6.0/benchmark.md) and the guide [Benchmarking](benchmarking.md).
 5. Keep it healthy: [notifications](notifications-administrator.md) (the cronjob, the status page, troubleshooting), [e-mail preferences](mail-preferences-administrator.md) (the footer, consent, suppression, retention), [maintenance mode](../features/6.0/maintenance-mode.md), [repair from the browser](../features/6.0/repair-from-the-browser.md), [file consistency check](../features/6.0/file-consistency-check.md), [missing files and image aliases](missing-files.md), [cronjobs](../features/6.0/cronjobs-console.md), [the log viewer](../features/6.0/log-viewer.md) and [finding an error by its reference](finding-an-error-by-its-reference.md), [workflows and their waiting processes](workflows.md), [audit trail](../features/6.0/audit-trail.md).
 6. Security: [Security and audit](security-and-audit.md) (the guide), [Two-step sign-in](two-factor-login.md), [Security defaults of September 2026](../specifications/6.0/security-defaults-2026-09.md), [the August 2026 patches](../specifications/6.0/security-hardening-2026-08.md), [the 6.0.13 hardening](../specifications/6.0/security-hardening-6.0.13.md).
-7. Upgrading: follow [Upgrading](upgrading.md); read the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), then the behaviour changes of [July and August](../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September](../bc/6.0/behaviour-changes-2026-09b.md) and [October](../bc/6.0/behaviour-changes-2026-10.md), in that order.
+7. Upgrading: follow [Upgrading](upgrading.md); read the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), then the behaviour changes of [July and August](../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September](../bc/6.0/behaviour-changes-2026-09b.md) and [October](../bc/6.0/behaviour-changes-2026-10.md), in that order.
 
 ## Related pages
 
 - A word you do not know: [Glossary](../glossary.md).
 - What changed and why: [History](../history/README.md); proof that nothing is missing: [Coverage](../history/coverage.md).
-- Release notes: [changelogs of 6.0](../../../changelogs/6.0/6.0.15.md) and [of the extensions](../../../changelogs/extensions/README.md).
+- Release notes: [changelogs of 6.0](../../changelogs/6.0/6.0.15.md) and [of the extensions](../../changelogs/extensions/README.md).
 - The installation text in one place: [INSTALL](../INSTALL.md).

@@ -957,10 +957,10 @@ In this repository:
   [Per-site settings inside extensions](../features/6.0/multi-site-ini-overrides.md),
   [Translations and languages](../features/6.0/translations-and-languages.md).
 - [Repairing an installation](../bc/6.0/repair.md), [Glossary](../glossary.md).
-- The settings themselves: [`settings/site.ini`](../../../../settings/site.ini), [`settings/cronjob.ini`](../../../../settings/cronjob.ini),
-  [`settings/image.ini`](../../../../settings/image.ini), [`settings/velocity.ini`](../../../../settings/velocity.ini),
-  [`settings/querycache.ini`](../../../../settings/querycache.ini), [`.autoloadignore`](../../../../.autoloadignore),
-  [`config.php-RECOMMENDED`](../../../../config.php-RECOMMENDED).
+- The settings themselves: [`settings/site.ini`](../../../settings/site.ini), [`settings/cronjob.ini`](../../../settings/cronjob.ini),
+  [`settings/image.ini`](../../../settings/image.ini), [`settings/velocity.ini`](../../../settings/velocity.ini),
+  [`settings/querycache.ini`](../../../settings/querycache.ini), [`.autoloadignore`](../../../.autoloadignore),
+  [`config.php-RECOMMENDED`](../../../config.php-RECOMMENDED).
 
 External:
 

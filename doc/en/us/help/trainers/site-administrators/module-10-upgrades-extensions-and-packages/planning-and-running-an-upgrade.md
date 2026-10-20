@@ -153,7 +153,7 @@ version you already run; nothing is upgraded.
 - [Upgrading](../../../../guides/upgrading.md): every part, the checks and the troubleshooting table.
 - [Chapter 11: Upgrading](../../../../install/11-upgrading.md): the update files per engine.
 - [Upgrading customer sites](../../../hosting/operations/upgrading-customer-sites.md): upgrades at a host.
-- [Changelog 6.0.15](../../../../../../changelogs/6.0/6.0.15.md): what the current line changes.
+- [Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md): what the current line changes.
 
 ## Related pages
 

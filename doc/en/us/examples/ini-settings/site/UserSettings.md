@@ -321,7 +321,7 @@ ActivationByAdministratorSendsApprovalMail=enabled
 > user/registrationfeedback.tpl) carries signed links to the administration:  
 > view the account, approve (activate) it, reject (remove) it, and the approval  
 > item when a workflow holds it. Each opens user/registration, which asks the  
-> signed-in administrator to confirm. Guide: doc/en/us/features/6.0/registration-admin-links.md  
+> signed-in administrator to confirm. Guide: doc/eng-us/features/6.0/registration-admin-links.md  
 > enabled or disabled (the mail then has no links)  
 
 Default: `enabled`.
@@ -454,7 +454,7 @@ UserCreatorID=14
 
 ## DeactivateAndMove
 
-> "Deactivate and move" (doc/en/us/features/6.0/user-hygiene.md): enabled offers, on a user's page, in the context menu  
+> "Deactivate and move" (doc/eng-us/features/6.0/user-hygiene.md): enabled offers, on a user's page, in the context menu  
 > and on Users > Check user accounts, to disable accounts and bring all their locations together in one hidden  
 > user group without roles, remembering where they were, and to move them back on reactivation; a way to retire  
 > accounts without removing them (users never go to the trash). disabled (the default) shows nothing and creates  

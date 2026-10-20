@@ -9,7 +9,7 @@ type: example
 ---
 # Apache virtual host
 
-[`doc/en/us/examples/ezpublish.conf`](../ezpublish.conf) is a complete virtual host for one installation: port 80 redirects
+[`doc/eng-us/examples/ezpublish.conf`](../ezpublish.conf) is a complete virtual host for one installation: port 80 redirects
 to HTTPS (and serves certificate challenge files), port 443 serves the site over HTTP/2 with PHP-FPM, and the routing
 rules of `.htaccess_root` sit in the virtual host itself. Apache then reads no `.htaccess` at all
 (`AllowOverride None`), which saves a file lookup per directory on every request. The file keeps its historical name.
@@ -50,7 +50,7 @@ them is free documentation (GFDL 1.3 or later), like this page.
 # Apache needs no .htaccess (AllowOverride None saves a file lookup per
 # directory on every request). The rules are the ones of .htaccess_root of
 # this release: compare them with .htaccess_root after every upgrade and
-# merge new rules. Explained in doc/en/us/examples/web-servers/apache-virtual-host.md.
+# merge new rules. Explained in doc/eng-us/examples/web-servers/apache-virtual-host.md.
 #
 # Replace before use:
 #   example.com, www.example.com      the names of the site
@@ -73,7 +73,7 @@ them is free documentation (GFDL 1.3 or later), like this page.
 # .htaccess_root, part of the software (GNU General Public License version 2
 # or later, like the rest of the code). This documented example, its comments
 # and optional sections, is free documentation under the GNU Free
-# Documentation License 1.3 or later (doc/en/us/README-LICENSE.md).
+# Documentation License 1.3 or later (doc/eng-us/README-LICENSE.md).
 
 # Plain HTTP: only the redirect to HTTPS, and the ACME challenge files a
 # certificate client (certbot --webroot) places below .well-known.
@@ -113,7 +113,7 @@ them is free documentation (GFDL 1.3 or later), like this page.
     CustomLog logs/example.com-ssl-access.log combined
 
     # Uploads: Apache's own limit (0 = none); PHP's upload_max_filesize and
-    # post_max_size in the pool decide (doc/en/us/examples/web-servers/php-fpm-pool.conf)
+    # post_max_size in the pool decide (doc/eng-us/examples/web-servers/php-fpm-pool.conf)
     LimitRequestBody 0
 
     <Directory /var/www/example.com>
@@ -187,7 +187,7 @@ them is free documentation (GFDL 1.3 or later), like this page.
         Header setifempty Referrer-Policy "strict-origin-when-cross-origin"
         Header setifempty Permissions-Policy "camera=(), microphone=(), payment=(), usb=()"
         # HSTS once every name is served over HTTPS for good; start short
-        # (doc/en/us/install/13-security-hardening.md, 13.9). Here or in site.ini
+        # (doc/eng-us/install/13-security-hardening.md, 13.9). Here or in site.ini
         # SecurityHeaders[Strict-Transport-Security], not both.
         #Header always set Strict-Transport-Security "max-age=300"
     </IfModule>
@@ -218,7 +218,7 @@ them is free documentation (GFDL 1.3 or later), like this page.
 
     # A generated static cache (Setup > Cache > Static content cache) can be
     # served without starting PHP: add the rules of
-    # doc/en/us/examples/staticcache_offload.conf, translated to server context,
+    # doc/eng-us/examples/staticcache_offload.conf, translated to server context,
     # BEFORE the RewriteRule .* /index.php line.
 </VirtualHost>
 ```

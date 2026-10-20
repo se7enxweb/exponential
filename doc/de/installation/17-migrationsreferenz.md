@@ -293,7 +293,7 @@ In dieser Installation gefundene Datentypen aus Extensions:
 Aufgeführt sind nur Paare, für die sich zeigen lässt, dass sie dasselbe beschreiben. Die YAML-Schlüssel wurden an der
 generierten Konfigurationsreferenz und an den `ibexa.yaml`-Dateien der Ibexa-5-Referenzinstallation überprüft; die Paare
 für Datenbank und Dateien sind außerdem diejenigen, die die Legacy-Bridge automatisch zuordnet
-(`doc/en/us/specifications/6.0/legacy-bridge-bundle.md`). `<scope>` ist ein Siteaccess, eine Siteaccess-Gruppe oder
+(`doc/eng-us/specifications/6.0/legacy-bridge-bundle.md`). `<scope>` ist ein Siteaccess, eine Siteaccess-Gruppe oder
 `default`, unterhalb von `ibexa.system`.
 
 ### Siteaccesses, Sprachen und Design
@@ -338,7 +338,7 @@ für Datenbank und Dateien sind außerdem diejenigen, die die Legacy-Bridge auto
 | `site.ini [SearchSettings] SearchEngine` | `ibexa.repositories.default.search.engine` (`legacy` oder `solr`) | |
 | `content.ini [VersionManagement] DefaultVersionHistoryLimit` | `ibexa.repositories.default.options.default_version_archive_limit` | |
 | `site.ini [ContentSettings] ViewCaching` | `ibexa.system.<scope>.content.view_cache` | |
-| `httpcache.ini [HttpCacheSettings] MaxAge` | `ibexa.system.<scope>.content.default_ttl` | Der rollenbewusste HTTP-Cache von Exponential ist eine Eigenentwicklung; siehe [HTTP-Caching](../../en/us/bc/6.0/http-caching.md) |
+| `httpcache.ini [HttpCacheSettings] MaxAge` | `ibexa.system.<scope>.content.default_ttl` | Der rollenbewusste HTTP-Cache von Exponential ist eine Eigenentwicklung; siehe [HTTP-Caching](../../eng-us/bc/6.0/http-caching.md) |
 | `httpcache.ini [HttpCacheSettings] TagHeader` (`xkey`, `Surrogate-Key`, `Cache-Tag`) | `ibexa.http_cache.purge_type` und `ibexa.system.<scope>.http_cache.purge_servers` | Unterschiedliche Mechanismen: Exponential versieht Seiten mit Tags im Ibexa-Stil (`c<object>`, `l<node>`, `pl<parent>`, `p<path node>`, `ct<class>`, `s<section>`, `ez-all`) und leert seinen eigenen Speicher; die Plattform sendet Purge-Anfragen an Varnish oder ihren lokalen Proxy |
 | `site.ini [MailSettings] Transport`, `TransportServer` | `framework.mailer.dsn` (`MAILER_DSN`) | |
 | `site.ini [DebugSettings] DebugOutput` | `APP_DEBUG` / `kernel.debug` | |
@@ -707,7 +707,7 @@ und `updateenhancedselection.php` aktualisieren den Speicher von Enhanced Select
 | `ezcache.php` | Leert Caches | `--clear-all`, `--clear-tag`, `--clear-id`, `--list-tags`, `--list-ids`, `--purge`, `--expiry`, `--iteration-sleep`, `--iteration-max` |
 | `eztemplatecheck.php` | Prüft die Syntax von Templates | Dateien |
 | `maintenance.php` | Schaltet den Wartungsmodus ein oder aus | `on`, `off`, `status`, `--message`, `--until`, `--allow-ip`, `--allow-admin` |
-| `audit.php` | Zeigt und verifiziert das Audit-Protokoll | viele; siehe [das Audit-Protokoll](../../en/us/features/6.0/audit-trail.md) |
+| `audit.php` | Zeigt und verifiziert das Audit-Protokoll | viele; siehe [das Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md) |
 
 Shell-Hilfsskripte in `bin/shell/`: `checkdbschema.sh`, `checkdbupdate.sh` (`--check-stable`, `--check-previous`),
 `verifyfiles.sh` (`--quiet`) und `generatefilelist.sh`. In der Administration führt **Setup > Upgrade-Prüfung** dieselbe
@@ -716,7 +716,7 @@ mit den Schemas der aktiven Extensions (`kernel/private/classes/views/setup/syst
 
 ### Umzug auf die Plattform oder von ihr weg
 
-Dieses Repository enthält keinen Datenkonverter zu oder von eZ Platform oder Ibexa. Die [Legacy-Bridge](../../en/us/features/6.0/legacy-bridge.md)
+Dieses Repository enthält keinen Datenkonverter zu oder von eZ Platform oder Ibexa. Die [Legacy-Bridge](../../eng-us/features/6.0/legacy-bridge.md)
 führt den Kernel von Exponential innerhalb einer Plattform-Installation auf einer gemeinsamen Datenbank aus (Branches für
 eZ Platform 2.5, Platform 3.3, Ibexa 4.6 und Platform 5), mit den Konsolenbefehlen `exponential:legacy:init`, `configure`,
 `install-extensions`, `symlink`, `assets-install` und `script` auf der Linie `3.x` ab `v3.0.0.30`, der Linie `4.x` ab
@@ -770,12 +770,12 @@ In diesem Repository:
 - [11. Upgrade](11-aktualisieren.md): die Reihenfolge, in der die Update-Dateien und Skripte auszuführen sind.
 - [Upgrade](../anleitungen/aktualisieren.md), [Inhaltsmodell und Bearbeitung](../anleitungen/inhaltsmodell-und-bearbeitung.md),
   [Templates und Design](../anleitungen/templates-und-design.md), [Betrieb einer Website](../anleitungen/betrieb-einer-website.md).
-- [Legacy-Bridge](../../en/us/features/6.0/legacy-bridge.md), [Spezifikation des Legacy-Bridge-Bundles](../spezifikationen/6.0/legacy-bridge-bundle.md),
+- [Legacy-Bridge](../../eng-us/features/6.0/legacy-bridge.md), [Spezifikation des Legacy-Bridge-Bundles](../spezifikationen/6.0/legacy-bridge-bundle.md),
   [Übersicht der Plattformpakete](../spezifikationen/6.0/platform-paketzuordnung.md),
-  [Site-Bundles der Plattform](../../en/us/features/6.0/platform-site-bundles.md),
-  [Forks von Plattformpaketen und umbenannte Befehle](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md).
-- [HTTP-Caching](../../en/us/bc/6.0/http-caching.md), [Prüfung der Dateikonsistenz](../../en/us/features/6.0/file-consistency-check.md),
-  [Audit-Protokoll](../../en/us/features/6.0/audit-trail.md), [Glossar](../../en/us/glossary.md).
+  [Site-Bundles der Plattform](../../eng-us/features/6.0/platform-site-bundles.md),
+  [Forks von Plattformpaketen und umbenannte Befehle](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md).
+- [HTTP-Caching](../../eng-us/bc/6.0/http-caching.md), [Prüfung der Dateikonsistenz](../../eng-us/features/6.0/file-consistency-check.md),
+  [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md), [Glossar](../../eng-us/glossary.md).
 - Code: `share/db_schema.dba`, `kernel/sql/`, `kernel/classes/datatypes/`, `kernel/classes/datatypes/ezuser/ezuser.php`,
   `kernel/classes/ezcontentobjecttreenode.php`, `kernel/classes/datatypes/ezimage/ezimagealiashandler.php`,
   `lib/eztemplate/classes/eztemplateautoload.php`, `kernel/common/eztemplateautoload.php`, `settings/site.ini`,

@@ -140,5 +140,5 @@ What the installer does differently since July:
 - [Look inside a package, compare it with your site, import single items](package-compare-and-import.md), [package licenses and versions](package-licenses-and-versions.md)
 - [Kickstarter CLI](kickstarter-cli.md) (installs a whole site from `kickstart.ini`), [install in one command](install-in-one-command.md), [clean install defaults](clean-install-defaults.md)
 - [Console](../../bc/6.0/console.md), [behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - History: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md) (export fixes)

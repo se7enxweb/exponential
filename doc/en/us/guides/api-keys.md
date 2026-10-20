@@ -17,7 +17,7 @@ addresses and host names are shortened or replaced by documentation values (`exa
 [Guides](README.md) · Related: [Remote services and apps](remote-services-and-apps.md) (the `expservices` tokens) ·
 [ezprestapi](../features/6.0/extensions/ezprestapi.md) (the REST content routes) ·
 [REST API v1 and v2](rest-api-v1-and-v2.md) ·
-[Security and audit](security-and-audit.md) · Change note: [doc/en/us/bc/6.0/api-keys.md](../bc/6.0/api-keys.md)
+[Security and audit](security-and-audit.md) · Change note: [doc/eng-us/bc/6.0/api-keys.md](../bc/6.0/api-keys.md)
 
 ## In short
 

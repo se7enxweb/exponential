@@ -98,5 +98,5 @@ Do not give a task of your own a name with a leading underscore.
 - [Velocity web server](velocity-web-server.md), [Engine settings](../../specifications/6.0/velocity-engine-settings.md)
 - [Cronjobs console](cronjobs-console.md), [commands, cronjob parts and module views as classes](../../specifications/6.0/runnable-commands-cronjobs-views.md)
 - [Velocity engine upgrade notes (0.0.4.27 to 0.0.4.42)](../../bc/6.0/velocity-engine-upgrade-notes.md)
-- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [July 2026](../../history/velocity/2026-07.md) (the scheduler arrives), [25 to 30 September](../../history/velocity/2026-09e.md) (tasks give up root)

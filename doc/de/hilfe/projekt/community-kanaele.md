@@ -44,7 +44,7 @@ aufbewahren:
 [ezpublishlegacy](https://github.com/ezpublishlegacy?tab=repositories) (ein Spiegelprojekt) und
 [ezecosystem](https://github.com/ezecosystem?tab=repositories) (Bundles für die Symfony-Plattform). Betrachten Sie,
 was Sie dort finden, als Anregung: Prüfen Sie die Lizenz, das Alter und ob es einen gepflegten Fork gibt
-([Eine alte Erweiterung bewerten](../../../en/us/help/extension-development/part-1-from-user-to-developer/evaluating-an-old-extension.md)).
+([Eine alte Erweiterung bewerten](../../../eng-us/help/extension-development/part-1-from-user-to-developer/evaluating-an-old-extension.md)).
 
 ## Lernen: Wiki, Blog, Dokumentation, Videos
 
@@ -98,7 +98,7 @@ ganzen Web.
 
 Wo Sie auch sind, es gelten die üblichen Umgangsformen: Seien Sie geduldig, seien Sie freundlich, und veröffentlichen
 Sie nie Passwörter oder personenbezogene Daten anderer. Fürsprecher, die das Projekt in diesen Kanälen vertreten,
-finden eigene Hinweise im [Bereich für Fürsprecher](../../../en/us/help/advocates/advocate-toolkit.md).
+finden eigene Hinweise im [Bereich für Fürsprecher](../../../eng-us/help/advocates/advocate-toolkit.md).
 
 ## Verwandte Seiten
 

@@ -43,7 +43,7 @@ migrate  records a LoveStack database as Exponential's: the version row
 
 Exit code: check 0 nothing to do, 1 something needs attention (status found);
 migrate 0 done or nothing to do, 1 refused; 2 usage error.
-Guide: doc/en/us/guides/upgrading.md (Coming from LoveStack)
+Guide: doc/eng-us/guides/upgrading.md (Coming from LoveStack)
 ```
 
 ## Options

@@ -58,7 +58,7 @@ called from a template.
 - [swark](swark.md): ready-made operators in the same spirit
 - [String template operators](../string-template-operators.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/owsimpleoperator.md) and [release notes](../../../../../changelogs/extensions/owsimpleoperator.md)
+- [Chronicle](../../../history/extensions/owsimpleoperator.md) and [release notes](../../../../changelogs/extensions/owsimpleoperator.md)
 - [Change ledger](../../../history/ledger/owsimpleoperator.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-01](../../../history/extensions/months/2024-01.md), [2026-09](../../../history/extensions/months/2026-09.md) (all extensions)

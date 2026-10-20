@@ -61,8 +61,8 @@ Die Unterstützung für PHP 8.0 ist neu in 6.0.15. Die veröffentlichten Release
 Unter PHP 8.0 lädt `autoload.php` die Datei `lib/phpcompat.php`, die die wenigen Funktionen definiert, die PHP 8.0
 fehlen (darunter `array_is_list()`); unter 8.1 und neuer wird diese Datei nicht einmal geöffnet. Die Einzelheiten und die
 Stellen, die PHP 8.1 benötigten und in 6.0.15 für 8.0 lauffähig gemacht wurden, stehen in
-[PHP-8.0-Unterstützung](../../en/us/bc/6.0/php-8.0-support.md). Die Geschichte der Arbeit an PHP 8 seit 6.0.0 steht in
-[PHP-8-Unterstützung](../../en/us/bc/6.0/php8.md).
+[PHP-8.0-Unterstützung](../../eng-us/bc/6.0/php-8.0-support.md). Die Geschichte der Arbeit an PHP 8 seit 6.0.0 steht in
+[PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md).
 
 **So prüfen Sie es.** Die erste Zeile von `php -v` nennt die Version:
 
@@ -134,7 +134,7 @@ produktives Velocity alle drei nötig.
 |---|---|---|
 | 1. SQLite 3 | `sqlite3` | Der Standard; sonst wird nichts benötigt. |
 | 2. PostgreSQL | `pgsql` | |
-| 3. MongoDB | `mongodb` (PECL) | Der Treiber (`lib/ezdb/classes/expmongodb.php`) benötigt außerdem die PHP-Bibliothek `mongodb/mongodb` (`MongoDB\Client`), die `composer.json` vorschlägt, aber nicht verlangt: Fügen Sie sie mit `composer require mongodb/mongodb` hinzu. Die [MongoDB-Seite](../../en/us/features/6.0/mongodb-database-support.md) nennt PHP 8.2 oder neuer als Voraussetzung. |
+| 3. MongoDB | `mongodb` (PECL) | Der Treiber (`lib/ezdb/classes/expmongodb.php`) benötigt außerdem die PHP-Bibliothek `mongodb/mongodb` (`MongoDB\Client`), die `composer.json` vorschlägt, aber nicht verlangt: Fügen Sie sie mit `composer require mongodb/mongodb` hinzu. Die [MongoDB-Seite](../../eng-us/features/6.0/mongodb-database-support.md) nennt PHP 8.2 oder neuer als Voraussetzung. |
 | 4. MariaDB | `mysqli` | Derselbe Treiber wie für MySQL. |
 | 5. Oracle | `oci8` | Über die Extension `ezoracle`, die `composer.json` verlangt; `oci8` selbst kommt von Ihrem Anbieter, aus EPEL oder von Remi. |
 | 6. MySQL | `mysqli` | `composer.json` schlägt `ext-mysqli` vor (seine Beschreibung nennt mysqli noch den Standard-Handler, aus der Zeit, bevor SQLite der Standard wurde). |
@@ -150,7 +150,7 @@ ist nur eine Information. Installieren Sie nur die Extension der Datenbank, die 
 | `gd` | `composer.json` suggest; optionaler Test `imagegd_extension` | Bildbearbeitung, sofern ImageMagick nicht installiert ist |
 | `openssl` | `composer.json` suggest | „cryptographically secure random bytes“; HTTPS in Velocity |
 | `pcntl` | `composer.json` suggest | asynchrones Veröffentlichen (`bin/php/ezasynchronouspublisher.php` forkt mit `pcntl_fork()`); der Worker-Pool von Velocity |
-| `opcache` | (Performance) | der Cache für kompilierten Code von PHP; ab PHP 8.5 immer einkompiliert. Siehe [Velocity-Opcode-Cache](../../en/us/features/6.0/velocity-opcode-cache-and-profile.md) |
+| `opcache` | (Performance) | der Cache für kompilierten Code von PHP; ab PHP 8.5 immer einkompiliert. Siehe [Velocity-Opcode-Cache](../../eng-us/features/6.0/velocity-opcode-cache-and-profile.md) |
 | `redis` | `composer.json` suggest (`se7enxweb/sevenx_valkey`, `sevenx_valkey_cache`) | nur für die Valkey/Redis-Cache-Extensions |
 
 Der optionale Test `texttoimage_functions` prüft `imagettftext()` und `imagettfbbox()` (GD mit FreeType), die der
@@ -273,7 +273,7 @@ liest; das Web-PHP liest unter Umständen andere (PHP-FPM-Pools haben ihre eigen
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), nach Präferenz geordnet:** 1. SQLite 3 (Standard) · 2. PostgreSQL ·
 > 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlichem
-> Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../../en/us/help/database-support.md).
+> Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../../eng-us/help/database-support.md).
 
 | Datenbank | `DatabaseImplementation` und Aliase (`settings/site.ini`, `[DatabaseSettings] ImplementationAlias[]`) | Vom Assistenten geprüfte Mindestversion des Servers | Praktisches Minimum |
 |---|---|---|---|
@@ -287,23 +287,23 @@ liest; das Web-PHP liest unter Umständen andere (PHP-FPM-Pools haben ihre eigen
 Die Mindestversionen, die der Assistent prüft, sind die aus `eZSetupDatabaseMap()` in `kernel/setup/ezsetupcommon.php`.
 Sie sind Untergrenzen, keine Empfehlungen: Betreiben Sie eine Version, die Ihr Anbieter noch unterstützt. Die
 praktischen Mindestwerte ergeben sich aus den Treibern;
-[Datenbankunterstützung](../../en/us/help/database-support.md#versions-checked-against-the-code) erläutert jeden einzelnen und
+[Datenbankunterstützung](../../eng-us/help/database-support.md#versions-checked-against-the-code) erläutert jeden einzelnen und
 führt die Versionen auf, die auf dem Entwicklungsserver und in der CI nachweislich funktionieren.
 
 - **SQLite** ist der Standard (`settings/setup.ini`, `[DatabaseSettings] DefaultType=sqlite3`) und benötigt keinen
   Server: Die Datenbank ist eine einzelne Datei unter `var/storage/sqlite3/`. Sie ist eine vollwertige
-  Produktionsdatenbank; siehe die [Funktionsseite zu SQLite](../../en/us/features/6.0/sqlite-database.md).
+  Produktionsdatenbank; siehe die [Funktionsseite zu SQLite](../../eng-us/features/6.0/sqlite-database.md).
 - **PostgreSQL** benötigt die Extension `pgcrypto` in der Datenbank (ihre Funktion `digest`). Der Assistent versucht,
   sie anzulegen; wenn er das nicht kann, sagt er es und bittet darum, dass der Eigentümer der Datenbank oder ein
   Superuser `CREATE EXTENSION pgcrypto;` ausführt.
-- **MongoDB** und **Oracle**: siehe ihre Seiten, [MongoDB](../../en/us/features/6.0/mongodb-database-support.md) und
+- **MongoDB** und **Oracle**: siehe ihre Seiten, [MongoDB](../../eng-us/features/6.0/mongodb-database-support.md) und
   [Treiber für SQLite und Oracle](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md).
 - **MariaDB oder MySQL**: Die Datenbank muss UTF-8 verwenden. Wenn der Zeichensatz der Datenbank von dem abweicht, den
   der Assistent möchte, hält der Assistent mit „The database [...] cannot be used, the setup wizard wants to create the
   site in [...] but the database has been created using character set [...]“ an. Legen Sie die Datenbank mit
   `CHARACTER SET utf8mb4` an, dann kann das nicht passieren.
 - **Microsoft SQL Server** hat in 6.0.x keinen Treiber; was dafür nötig wäre, steht in
-  [Datenbankunterstützung](../../en/us/help/database-support.md#microsoft-sql-server-possible-with-additional-work).
+  [Datenbankunterstützung](../../eng-us/help/database-support.md#microsoft-sql-server-possible-with-additional-work).
 
 Legen Sie bei einem Datenbankserver vor der Installation die Datenbank und einen Benutzer an, der darin Tabellen anlegen
 darf; die Installer legen weder Datenbanken noch Benutzer an. Die Auswahl und das Tuning einer Datenbank sind Thema von
@@ -358,7 +358,7 @@ Extension-Manifest von Velocity (`vendor/se7enxweb/exponential-velocity/build/ex
 ### Red Hat Enterprise Linux 9, AlmaLinux 9, Rocky Linux 9
 
 - Das Standard-PHP des AppStream-Repositorys ist **8.0**, mit dem Exponential unter Apache oder PHP-FPM läuft. Der
-  Befehl aus [PHP-8.0-Unterstützung](../../en/us/bc/6.0/php-8.0-support.md):
+  Befehl aus [PHP-8.0-Unterstützung](../../eng-us/bc/6.0/php-8.0-support.md):
 
   ```bash
   dnf install php php-fpm php-mysqlnd php-gd php-intl php-mbstring php-xml php-pdo php-opcache
@@ -385,7 +385,7 @@ Extension-Manifest von Velocity (`vendor/se7enxweb/exponential-velocity/build/ex
 - Ersetzen Sie `8.3` durch die Version, die Ihre Distributionsversion mitliefert.
 - Der PHP-FPM-Dienst heißt `php<version>-fpm`, mit seinen Pools in `/etc/php/<version>/fpm/pool.d/`.
 - Das Velocity-Paket wird auch als `.deb` veröffentlicht; siehe
-  [Velocity-Pakete und -Programmdateien](../../en/us/features/6.0/velocity-packages-and-binaries.md).
+  [Velocity-Pakete und -Programmdateien](../../eng-us/features/6.0/velocity-packages-and-binaries.md).
 
 ### Plesk
 
@@ -408,7 +408,7 @@ Kernels haben Windows-Pfade für ImageMagick (`convertim.exe`, `convert.exe`), d
 geschrieben.
 
 Exponential läuft auf fast jedem Betriebssystem mit PHP 8.0 oder neuer und einem Webserver. [Unterstützung von
-Betriebssystemen](../../en/us/help/os-support.md) teilt sie in Stufen ein (hier getestet, bekanntermaßen
+Betriebssystemen](../../eng-us/help/os-support.md) teilt sie in Stufen ein (hier getestet, bekanntermaßen
 funktionierend, voraussichtlich funktionierend, derzeit nicht möglich), von den Linux-Distributionen, den BSDs, macOS
 und Windows bis zu IBM i, Haiku und den 8-Bit-Rechnern, und führt die Webserver und PHP-SAPIs auf.
 
@@ -419,36 +419,36 @@ Die Dokumentation nennt nur wenige feste Zahlen, und dieses Handbuch erfindet ke
 | Punkt | Wert | Quelle |
 |---|---|---|
 | PHP `memory_limit` | mindestens 64M | `settings/setup.ini`, `[memory_limit] MinMemoryLimit` |
-| Ein Velocity-Worker | etwa 10 MB privater Speicher (gemessen) | [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md) |
-| Velocity-Pool | `Workers=4` ausgeliefert (`settings/velocity.ini`); der eigene Standard der Engine ist, was in den RAM passt, höchstens 8 pro Kern und 64, nie weniger als 4 | `settings/velocity.ini`, [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md) |
-| Eine MongoDB-Installation | RAM mindestens 512 MB, empfohlen 2 GB; Festplatte mindestens 2 GB, empfohlen 10 GB | [MongoDB-Unterstützung im Kernel](../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md), Abschnitt 24.1 |
+| Ein Velocity-Worker | etwa 10 MB privater Speicher (gemessen) | [Velocity-Webserver](../../eng-us/features/6.0/velocity-web-server.md) |
+| Velocity-Pool | `Workers=4` ausgeliefert (`settings/velocity.ini`); der eigene Standard der Engine ist, was in den RAM passt, höchstens 8 pro Kern und 64, nie weniger als 4 | `settings/velocity.ini`, [Velocity-Webserver](../../eng-us/features/6.0/velocity-web-server.md) |
+| Eine MongoDB-Installation | RAM mindestens 512 MB, empfohlen 2 GB; Festplatte mindestens 2 GB, empfohlen 10 GB | [MongoDB-Unterstützung im Kernel](../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md), Abschnitt 24.1 |
 
 Der Platzbedarf auf der Festplatte wächst mit `var/storage` (hochgeladene Dateien und Bildvarianten), `var/cache` und
 `var/log`; die Datenbank wächst mit den Inhalten. Messen Sie eine laufende Site, statt zu raten: Der Befehl
-[Benchmark](../../en/us/features/6.0/benchmark.md) misst die Zeiten von Seiten, und das [Kontrollzentrum](../../en/us/features/6.0/velocity-control-panel.md)
+[Benchmark](../../eng-us/features/6.0/benchmark.md) misst die Zeiten von Seiten, und das [Kontrollzentrum](../../eng-us/features/6.0/velocity-control-panel.md)
 von Velocity zeigt den Speicherverbrauch. Lesen Sie den Speicher von Velocity so, wie das Kontrollzentrum ihn zeigt, als
 Proportional Set Size (PSS) des Elternprozesses und seiner Worker: Die Resident Set Size jedes geforkten Workers zählt
 den gemeinsam genutzten Speicher immer wieder mit und summiert sich auf weit mehr, als der Rechner tatsächlich
 verbraucht.
 
-**Umgebungsvariablen.** Exponential liest einige Umgebungsvariablen, aufgeführt unter [Umgebungsvariablen](../anleitungen/umgebungsvariablen.md). Eine davon, `EXP_DEMO_MODE=1`, kennzeichnet eine Installation als öffentliche Demo ([Demo-Modus](../../en/us/bc/6.0/demo-mode.md)); ein Produktionsserver darf sie für keinen Prozess einer echten Site setzen.
+**Umgebungsvariablen.** Exponential liest einige Umgebungsvariablen, aufgeführt unter [Umgebungsvariablen](../anleitungen/umgebungsvariablen.md). Eine davon, `EXP_DEMO_MODE=1`, kennzeichnet eine Installation als öffentliche Demo ([Demo-Modus](../../eng-us/bc/6.0/demo-mode.md)); ein Produktionsserver darf sie für keinen Prozess einer echten Site setzen.
 
 ## Quellen
 
 In diesem Repository:
 
-- [Installationsübersicht](../../en/us/INSTALL.md), Abschnitt 2.
-- [Datenbankunterstützung](../../en/us/help/database-support.md) und [Unterstützung von Betriebssystemen](../../en/us/help/os-support.md).
-- [PHP-8.0-Unterstützung](../../en/us/bc/6.0/php-8.0-support.md) und [PHP-8-Unterstützung](../../en/us/bc/6.0/php8.md).
-- [SQLite-Datenbankunterstützung](../../en/us/features/6.0/sqlite-database.md),
+- [Installationsübersicht](../../eng-us/INSTALL.md), Abschnitt 2.
+- [Datenbankunterstützung](../../eng-us/help/database-support.md) und [Unterstützung von Betriebssystemen](../../eng-us/help/os-support.md).
+- [PHP-8.0-Unterstützung](../../eng-us/bc/6.0/php-8.0-support.md) und [PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md).
+- [SQLite-Datenbankunterstützung](../../eng-us/features/6.0/sqlite-database.md),
   [SQLite-3-Treiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md),
-  [MongoDB](../../en/us/features/6.0/mongodb-database-support.md),
+  [MongoDB](../../eng-us/features/6.0/mongodb-database-support.md),
   [Treiber für SQLite und Oracle](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md),
   [Datenbanktreiber, September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md).
-- [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md),
-  [Velocity-Pakete und -Programmdateien](../../en/us/features/6.0/velocity-packages-and-binaries.md).
+- [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md), [Velocity-Webserver](../../eng-us/features/6.0/velocity-web-server.md),
+  [Velocity-Pakete und -Programmdateien](../../eng-us/features/6.0/velocity-packages-and-binaries.md).
 - [Bereitstellung](../anleitungen/bereitstellung.md).
-- [Qualitätsprüfungen](../../en/us/features/6.0/quality-checks.md) und [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md):
+- [Qualitätsprüfungen](../../eng-us/features/6.0/quality-checks.md) und [Continuous Integration](../spezifikationen/6.0/kontinuierliche-integration.md):
   wie PHP 8.0 getestet wird.
 - Code: `composer.json`, `settings/setup.ini`, `settings/site.ini` (`[SetupSettings]`), `kernel/setup/ezsetuptests.php`,
   `kernel/setup/ezsetupcommon.php`, `design/standard/templates/setup/tests/`,

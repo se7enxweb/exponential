@@ -368,4 +368,4 @@ Deliberately left undone:
 - [Velocity engines — Qbix, FrankenPHP, PHP's built-in server](velocity-engines.md)
 - [Velocity engine upgrade notes](velocity-engine-upgrade-notes.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

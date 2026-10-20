@@ -77,7 +77,7 @@ TemporaryDir=/tmp/
 ## TemporaryPermissions
 
 > The permissions below are limited by EZP\_DIR\_MODE\_MAX / EZP\_FILE\_MODE\_MAX in  
-> config.php where set (doc/en/us/bc/6.0/file-modes.md): a mode here is never wider  
+> config.php where set (doc/eng-us/bc/6.0/file-modes.md): a mode here is never wider  
 > than those.  
 > Permission for temporary files, setting it to 0777 means that anyone  
 > can read and write the files and can be considered a security risk.  
@@ -214,7 +214,7 @@ LogFileCompress=disabled
 > The age in days after which "./console exp:logs --prune" (and the log  
 > viewer's prune action) removes a rotated file, whatever its number. 0: no  
 > age limit, only LogFileRotateCount counts. A rotation never removes by age.  
-> doc/en/us/features/6.0/log-rotation.md  
+> doc/eng-us/features/6.0/log-rotation.md  
 
 Default: `0`.
 

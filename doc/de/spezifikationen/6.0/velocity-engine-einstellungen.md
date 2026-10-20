@@ -6,9 +6,9 @@ beim Start. Lesen Sie sie, wenn Sie Velocity außerhalb der `settings/velocity.i
 oder den Standardwert eines Engine-Schlüssels brauchen. Sie gilt für Exponential Velocity 0.0.4.42.
 
 Aus Exponential heraus wird die Engine normalerweise über `settings/velocity.ini` konfiguriert; siehe
-[Velocity-Engines](../../../en/us/bc/6.0/velocity-engines.md). Die Einstellungen größerer Teilsysteme haben eigene Seiten:
-[Antwort-Cache](../../../en/us/features/6.0/velocity-response-cache.md), [HTTPS](../../../en/us/features/6.0/velocity-https-certificates.md),
-[Control Panel](../../../en/us/features/6.0/velocity-control-panel.md), [Q-Shell](../../../en/us/features/6.0/velocity-q-shell.md),
+[Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md). Die Einstellungen größerer Teilsysteme haben eigene Seiten:
+[Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md), [HTTPS](../../../eng-us/features/6.0/velocity-https-certificates.md),
+[Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md), [Q-Shell](../../../eng-us/features/6.0/velocity-q-shell.md),
 [Worker-Pool](velocity-worker-pool.md), [Header und Grenzen](velocity-http2-und-sicherheit.md).
 
 In den Tabellen unten ist ein Schlüssel ohne das Präfix `Q.` relativ zu `Q` (`webserver.keepAlive.max` ist
@@ -32,7 +32,7 @@ php sbin/qbixserver.php --root=web -t --config=/etc/qbix/sites-enabled/default.c
 | `--distribution=NAME` | Die Ergänzungen von `Q_WebServer_Distribution_NAME` laden (Standard: `QBIX_DISTRIBUTION`, dann die Datei `DISTRIBUTION`). Die Distribution von Velocity ist `vc`, die `/etc/vc` über `/etc/qbix` legt |
 | `--layout` | Die Konfigurationsdateien ausgeben, die geladen würden, und beenden |
 
-Der Baum: `qbix.conf` (Basis, wie `apache2.conf`), `ports.conf` (Ports, auf denen gelauscht wird), `envvars` (Umgebung des Serverprozesses, einschließlich `QBIX_RUN_USER` und `QBIX_RUN_GROUP`), `conf-available/` und `conf-enabled/`, `mods-available/` und `mods-enabled/`, `sites-available/` und `sites-enabled/` (aktiviert per symbolischem Link), `designs/`, `ssl/`, `acl/`. Der Zustand liegt in `/var/lib/qbix` (`/var/lib/vc`), die Protokolle in `/var/log/qbix` (`/var/log/vc`). Einzelheiten und die Migration einer bestehenden Installation: [Velocity-Verzeichnisstruktur auf der Festplatte](../../../en/us/bc/6.0/velocity-ondisk-layout.md).
+Der Baum: `qbix.conf` (Basis, wie `apache2.conf`), `ports.conf` (Ports, auf denen gelauscht wird), `envvars` (Umgebung des Serverprozesses, einschließlich `QBIX_RUN_USER` und `QBIX_RUN_GROUP`), `conf-available/` und `conf-enabled/`, `mods-available/` und `mods-enabled/`, `sites-available/` und `sites-enabled/` (aktiviert per symbolischem Link), `designs/`, `ssl/`, `acl/`. Der Zustand liegt in `/var/lib/qbix` (`/var/lib/vc`), die Protokolle in `/var/log/qbix` (`/var/log/vc`). Einzelheiten und die Migration einer bestehenden Installation: [Velocity-Verzeichnisstruktur auf der Festplatte](../../../eng-us/bc/6.0/velocity-ondisk-layout.md).
 
 ## Programme
 
@@ -41,8 +41,8 @@ Der Baum: `qbix.conf` (Basis, wie `apache2.conf`), `ports.conf` (Ports, auf dene
 | `sbin/qbixserver.php` (Phar: `sbin/qbixserver.phar`) | Der Server |
 | `sbin/qbixctl.php` | `start`, `stop`, `restart`, `graceful`, `status`, `-t`, `-S`, `ensite`, `dissite`, `enconf`, `disconf`, `enmod`, `dismod`, `panel:password`, `panel:check`, `panel:2fa`, `ext:*`, `ssl:*` |
 | `sbin/qbixconsole.php` | Jeder Konsolenbefehl; `qbixconsole list`, `qbixconsole help <command>` |
-| `bin/qshell.php` (`vc-qshell`, wenn aus einem Paket installiert) | Die [Q-Shell](../../../en/us/features/6.0/velocity-q-shell.md) in einem Terminal |
-| `sbin/uwebserver` | Der kleine [Server für statische Dateien](../../../en/us/features/6.0/velocity-uwebserver.md) in C |
+| `bin/qshell.php` (`vc-qshell`, wenn aus einem Paket installiert) | Die [Q-Shell](../../../eng-us/features/6.0/velocity-q-shell.md) in einem Terminal |
+| `sbin/uwebserver` | Der kleine [Server für statische Dateien](../../../eng-us/features/6.0/velocity-uwebserver.md) in C |
 
 Seit 0.0.4.41 liegen der Daemon und seine Administrationsbefehle in `sbin/` und die Benutzerbefehle in `bin/`. Jeder frühere Pfad (`qbixserver.php`, `qbixctl.php`, `qbixconsole.php`, `qshell.php` oben im Baum, `bin/qbixserver.phar`, `bin/uwebserver`) ist eine Weiterleitung, die die neue Datei im selben Prozess ausführt (gleiche Kommandozeile, Prozess-ID und Prozesstitel, Standardströme und Exit-Status). Eine Weiterleitung gibt nur dann einen Hinweis auf der Standardfehlerausgabe aus, wenn diese ein Terminal ist; `QBIX_MOVED_QUIET=1` unterdrückt ihn. Das `bin` von Composer listet die vier PHP-Programme in `sbin/` und `bin/` auf.
 
@@ -140,7 +140,7 @@ Die Namen und Zeichen, die in den eigenen Ansichten des Servers (`/Q/dashboard`,
 | `brandColor`, `brandAccent`, `brandBackground` | `#7c8aff`, `#22d3ee`, `#0f1117` | Farben des generierten Symbols |
 | `brandFont` | Suche in gängigen Systemschriften | Schriftdatei für das generierte Rastersymbol |
 
-Mit der Standardmarke und ohne weitere Einstellungen wird das eigene Logo des Servers verwendet. Die Seiten tragen außerdem Symbole, ein Web-App-Manifest und Linkvorschauen (24. September 2026); jede Markup-Datei ist ein Design auf der Festplatte ([Designs](../../../en/us/features/6.0/velocity-control-panel.md#restyle-the-servers-pages-designs)).
+Mit der Standardmarke und ohne weitere Einstellungen wird das eigene Logo des Servers verwendet. Die Seiten tragen außerdem Symbole, ein Web-App-Manifest und Linkvorschauen (24. September 2026); jede Markup-Datei ist ein Design auf der Festplatte ([Designs](../../../eng-us/features/6.0/velocity-control-panel.md#restyle-the-servers-pages-designs)).
 
 ## Event-Loop und TLS
 
@@ -165,11 +165,11 @@ Ohne `--user` und eine Konfiguration behält ein als root gestarteter Server roo
 
 ## Scheduler
 
-Der Server führt Handler nach einem Zeitplan aus, wie cron, gesteuert über `Q.scheduler` (eingeführt am 21. Juli 2026): Jede Aufgabe nennt einen Handler, der mit `Q::event()` in einem geforkten Kindprozess aufgerufen wird, mit `every` Sekunden oder mit `times` (`HH:MM`), eingeschränkt durch `weekdays` und `monthdays`. Es ist kein Weg, ein PHP-Skript für die Kommandozeile auszuführen. Geplante Aufgaben geben root-Rechte ab, wie es die Worker tun. Felder, Beispiele und Grenzen: [Velocity-Scheduler](../../../en/us/features/6.0/velocity-scheduler.md); die eigene `docs/configuration.md` der Engine, Abschnitt „Scheduler“.
+Der Server führt Handler nach einem Zeitplan aus, wie cron, gesteuert über `Q.scheduler` (eingeführt am 21. Juli 2026): Jede Aufgabe nennt einen Handler, der mit `Q::event()` in einem geforkten Kindprozess aufgerufen wird, mit `every` Sekunden oder mit `times` (`HH:MM`), eingeschränkt durch `weekdays` und `monthdays`. Es ist kein Weg, ein PHP-Skript für die Kommandozeile auszuführen. Geplante Aufgaben geben root-Rechte ab, wie es die Worker tun. Felder, Beispiele und Grenzen: [Velocity-Scheduler](../../../eng-us/features/6.0/velocity-scheduler.md); die eigene `docs/configuration.md` der Engine, Abschnitt „Scheduler“.
 
 ## Siehe auch
 
-- Funktionen: [Velocity-Webserver](../../../en/us/features/6.0/velocity-web-server.md), [Server mit persistenten Workern](../../../en/us/features/6.0/velocity-persistent-worker-server.md), [Scheduler](../../../en/us/features/6.0/velocity-scheduler.md), [Statische Dateien und Bilder](../../../en/us/features/6.0/velocity-static-files-and-images.md), [WebSockets und Ereignisse](../../../en/us/features/6.0/velocity-websockets-and-events.md), [Discovery, Föderation und Bereitstellung](../../../en/us/features/6.0/velocity-discovery-federation-and-deploy.md), [Pakete und Binärdateien](../../../en/us/features/6.0/velocity-packages-and-binaries.md)
+- Funktionen: [Velocity-Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md), [Scheduler](../../../eng-us/features/6.0/velocity-scheduler.md), [Statische Dateien und Bilder](../../../eng-us/features/6.0/velocity-static-files-and-images.md), [WebSockets und Ereignisse](../../../eng-us/features/6.0/velocity-websockets-and-events.md), [Discovery, Föderation und Bereitstellung](../../../eng-us/features/6.0/velocity-discovery-federation-and-deploy.md), [Pakete und Binärdateien](../../../eng-us/features/6.0/velocity-packages-and-binaries.md)
 - Spezifikationen: [Worker-Pool](velocity-worker-pool.md), [HTTP/2 und Sicherheit](velocity-http2-und-sicherheit.md)
-- Upgrade-Hinweise: [Upgrade-Hinweise zur Velocity-Engine](../../../en/us/bc/6.0/velocity-engine-upgrade-notes.md), [Velocity-Engines](../../../en/us/bc/6.0/velocity-engines.md), [Velocity-Verzeichnisstruktur auf der Festplatte](../../../en/us/bc/6.0/velocity-ondisk-layout.md)
-- Geschichte: [Velocity-Chronik](../../../en/us/history/velocity/README.md), [Velocity-Changelog](../../../changelogs/extensions/exponential-velocity.md)
+- Upgrade-Hinweise: [Upgrade-Hinweise zur Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md), [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md), [Velocity-Verzeichnisstruktur auf der Festplatte](../../../eng-us/bc/6.0/velocity-ondisk-layout.md)
+- Geschichte: [Velocity-Chronik](../../../eng-us/history/velocity/README.md), [Velocity-Changelog](../../../changelogs/extensions/exponential-velocity.md)

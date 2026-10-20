@@ -32,7 +32,7 @@ business day." Fixes are made on `main` and "published with the next 6.0.x relea
 changed" ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). Around that process the 6.0.15 development line adds protections an
 administrator can see: a Content Security Policy, a tamper-evident audit trail, two-step sign-in, refusal of
 well-known passwords and an administration without inline scripts
-([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
+([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
 
 ## What is new, and when
 
@@ -40,13 +40,13 @@ All in the 6.0.15 line, which is in development and not released.
 
 | What | When | Source |
 |---|---|---|
-| Security defaults: headers on every page, the session cookie, uniform login answers | 16 to 30 September 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
+| Security defaults: headers on every page, the session cookie, uniform login answers | 16 to 30 September 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
 | The audit trail, on by default | 2 October 2026 | [The audit trail](../../features/6.0/audit-trail.md) |
-| Two-step sign-in in the changelog | 6 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
-| Administration hardening | 14 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-administration-hardening) |
-| SVG images sanitized on upload | 15 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#15-october-2026-svg-images-sanitized-on-upload) |
-| A Content Security Policy, report-only on the administration | 16 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-october-2026-a-content-security-policy-report-only-on-the-administration) |
-| Well-known passwords refused; forgot-password links expire | 18 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#18-october-2026-well-known-passwords-refused-everywhere-and-forgot-password-links-expire) |
+| Two-step sign-in in the changelog | 6 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
+| Administration hardening | 14 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#14-october-2026-administration-hardening) |
+| SVG images sanitized on upload | 15 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#15-october-2026-svg-images-sanitized-on-upload) |
+| A Content Security Policy, report-only on the administration | 16 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-october-2026-a-content-security-policy-report-only-on-the-administration) |
+| Well-known passwords refused; forgot-password links expire | 18 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#18-october-2026-well-known-passwords-refused-everywhere-and-forgot-password-links-expire) |
 
 ## Facts you can print
 
@@ -56,7 +56,7 @@ All in the 6.0.15 line, which is in development and not released.
 | 6.0.x is the maintained line; 5.x, 4.x, 3.x and older are not supported. | same |
 | A fix never changes a published version; it arrives as the next release. | same |
 | A new installation generates a random administrator password when none or a well-known one is given. | [The default administrator password](../default-administrator-password.md) |
-| A forgot-password link works for one hour (`ForgotPasswordKeyLifetime`). | [6.0.15 changelog, Upgrading](../../../../changelogs/6.0/6.0.15.md#upgrading) |
+| A forgot-password link works for one hour (`ForgotPasswordKeyLifetime`). | [6.0.15 changelog, Upgrading](../../../changelogs/6.0/6.0.15.md#upgrading) |
 | Probes and attacks are classified into a security log, with masked addresses. | [Talking points: security](../advocates/talking-points-security.md#the-points) |
 | The se7enxweb profile reports 14 security pull requests to Zeta Components in April 2026. | [The PHP stack it stands on](../who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to) |
 | Administrators get a threat-by-threat hardening guide with a checklist. | [Security hardening](../security-hardening.md) |

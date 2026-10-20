@@ -69,7 +69,7 @@ from the tag (`git describe --tags` in the clone) until the metadata is brought 
 
 - [admin3: the responsive admin](../admin3-responsive-admin.md)
 - [Sub items table options](../../../bc/6.0/subitems-table-options.md)
-- [Chronicle](../../../history/extensions/sevenx_themes_admin_classic.md) and [release notes](../../../../../changelogs/extensions/sevenx_themes_admin_classic.md)
+- [Chronicle](../../../history/extensions/sevenx_themes_admin_classic.md) and [release notes](../../../../changelogs/extensions/sevenx_themes_admin_classic.md)
 - [Change ledger](../../../history/ledger/sevenx_themes_admin_classic.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - [Month: 2026-06 (all extensions)](../../../history/extensions/months/2026-06.md)

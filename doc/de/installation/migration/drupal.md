@@ -112,4 +112,4 @@ Medien, Autoren) und dem Pfad-Alias, in einem dokumentierten Format, ohne dass S
 - Views Data Export: <https://www.drupal.org/project/views_data_export>
 
 Diese Seite ist Teil der Exponential-Dokumentation und freie Dokumentation unter der GNU Free Documentation License
-1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md)).
+1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).

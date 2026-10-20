@@ -217,7 +217,7 @@ Neuinstallation ersetzt und was gesichert werden muss.
 | `settings/siteaccess/site/` | `CreateSites` | der öffentliche Siteaccess: `site.ini.append.php` mit `[DatabaseSettings]` (`DatabaseImplementation`, `Server`, `Port`, `Database`, `User`, `Password`, `Socket`, `Charset`), `[SiteSettings] SiteName` und `SiteURL`, `[RegionalSettings]`, `[FileSettings] VarDir`, `[DesignSettings] SiteDesign`, dazu die Siteaccess-Einstellungen des Pakets |
 | `settings/siteaccess/admin/` | `CreateSites` | der Administrations-Siteaccess, mit denselben `[DatabaseSettings]` |
 | `settings/siteaccess/editor/` | `CreateSites` (`createEditorSiteAccess()`) | eine Kopie der `*.ini.append.php`-Dateien des Administrations-Siteaccess mit `SiteDesign=editor`, `AdditionalSiteDesignList[]` `admin4l`, `admin4`, `admin3`, `admin2`, `admin`, `ExtensionSettingsSiteAccess=admin`, `SiteName=Editor`, einer eigenen `SiteURL` und `[SiteAccessRules]`, die die Module `setup`, `visual`, `explayouts_ui`, `explayouts_ui_api`, `git_manager`, `xrowextract` und `bccie` abschalten; dazu Appends für `menu.ini`, `toolbar.ini` und `admininterface.ini` |
-| `settings/siteaccess/adminui/` | `CreateSites` (`createAdminUISiteAccess()`) oder die Nachinstallation des Multisite-Pakets mit derselben Funktion; nur wenn `extension/exp_adminui` vorhanden ist | eine Kopie der `*.ini.append.php`-Dateien des Administrations-Siteaccess mit `SiteDesign=adminui`, `AdditionalSiteDesignList[]` `admin4l`, `admin4`, `admin3`, `admin2`, `admin`, `ActiveAccessExtensions[]=exp_adminui`, `SiteName=Admin UI`, als `SiteURL` die Adresse der Administration mit dem Pfad `/adminui`, sowie eine `icon.ini` und eine `ezoe.ini` ohne Einstellungen. Aufgeführt in `AvailableSiteAccessList[]` und `SiteList[]`, zugeordnet nur über die URI (keine Host-Zuordnungszeile, kein Port; `uri` wird zu `MatchOrder` hinzugefügt). Siehe [Exponential Admin UI](../../en/us/features/6.0/exp-adminui.md) |
+| `settings/siteaccess/adminui/` | `CreateSites` (`createAdminUISiteAccess()`) oder die Nachinstallation des Multisite-Pakets mit derselben Funktion; nur wenn `extension/exp_adminui` vorhanden ist | eine Kopie der `*.ini.append.php`-Dateien des Administrations-Siteaccess mit `SiteDesign=adminui`, `AdditionalSiteDesignList[]` `admin4l`, `admin4`, `admin3`, `admin2`, `admin`, `ActiveAccessExtensions[]=exp_adminui`, `SiteName=Admin UI`, als `SiteURL` die Adresse der Administration mit dem Pfad `/adminui`, sowie eine `icon.ini` und eine `ezoe.ini` ohne Einstellungen. Aufgeführt in `AvailableSiteAccessList[]` und `SiteList[]`, zugeordnet nur über die URI (keine Host-Zuordnungszeile, kein Port; `uri` wird zu `MatchOrder` hinzugefügt). Siehe [Exponential Admin UI](../../eng-us/features/6.0/exp-adminui.md) |
 
 Die **Verzeichnisnamen der Siteaccesses lauten immer `site`, `admin` und `editor`**, dazu `adminui`, wenn die
 Extension `exp_adminui` in der Installation vorhanden ist. Was Sie im Assistenten, in `kickstart.ini` oder mit
@@ -390,24 +390,24 @@ tail -n 20 var/log/setup.log
 
 ---
 
-**Eine öffentliche Demo installieren.** Jede Methode eignet sich für eine öffentliche Demo, deren Administratorpasswort veröffentlicht ist: Führen Sie sie mit der Umgebungsvariablen `EXP_DEMO_MODE=1` aus und geben Sie das veröffentlichte Passwort an; die Installer installieren es dann wie angegeben, auch `publish` oder `publishing`. Für eine Demo, die nach Zeitplan neu aufgebaut wird, ist `exp:install` auf SQLite die übliche Wahl ([Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../../en/us/help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md), [Demo-Modus](../../en/us/bc/6.0/demo-mode.md)).
+**Eine öffentliche Demo installieren.** Jede Methode eignet sich für eine öffentliche Demo, deren Administratorpasswort veröffentlicht ist: Führen Sie sie mit der Umgebungsvariablen `EXP_DEMO_MODE=1` aus und geben Sie das veröffentlichte Passwort an; die Installer installieren es dann wie angegeben, auch `publish` oder `publishing`. Für eine Demo, die nach Zeitplan neu aufgebaut wird, ist `exp:install` auf SQLite die übliche Wahl ([Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../../eng-us/help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md), [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md)).
 
 ## Referenzen
 
 In diesem Repository:
 
-- [Exponential 6.0 installieren](../../en/us/INSTALL.md): die einseitige Installationsanleitung, die dieses Handbuch erweitert
-- [Kickstarter CLI](../../en/us/bc/6.0/kickstartercli.md) und [Kickstarter: eine ganze Website aus einer Datei installieren](../../en/us/features/6.0/kickstarter-cli.md)
-- [Exponential mit einem Befehl installieren](../../en/us/features/6.0/install-in-one-command.md)
-- [Das neue Aussehen des Setup-Assistenten und der Editor-Siteaccess](../../en/us/features/6.0/setup-wizard-and-editor-siteaccess.md)
-- [Standardwerte einer sauberen Installation](../../en/us/features/6.0/clean-install-defaults.md)
-- [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md)
+- [Exponential 6.0 installieren](../../eng-us/INSTALL.md): die einseitige Installationsanleitung, die dieses Handbuch erweitert
+- [Kickstarter CLI](../../eng-us/bc/6.0/kickstartercli.md) und [Kickstarter: eine ganze Website aus einer Datei installieren](../../eng-us/features/6.0/kickstarter-cli.md)
+- [Exponential mit einem Befehl installieren](../../eng-us/features/6.0/install-in-one-command.md)
+- [Das neue Aussehen des Setup-Assistenten und der Editor-Siteaccess](../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md)
+- [Standardwerte einer sauberen Installation](../../eng-us/features/6.0/clean-install-defaults.md)
+- [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md)
 - [Installer-Protokolle und Ausgangsdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
-- [Stapelverarbeitung im Paket-Installer](../../en/us/features/6.0/package-installer-batching.md)
-- [INI-Overrides für mehrere Websites](../../en/us/features/6.0/multi-site-ini-overrides.md)
-- [Exponential-Konsole](../../en/us/bc/6.0/console.md)
-- [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md)
-- [Audit-Protokoll](../../en/us/bc/6.0/audit.md) (das Ereignis `system.install.run` protokolliert jede Installation)
+- [Stapelverarbeitung im Paket-Installer](../../eng-us/features/6.0/package-installer-batching.md)
+- [INI-Overrides für mehrere Websites](../../eng-us/features/6.0/multi-site-ini-overrides.md)
+- [Exponential-Konsole](../../eng-us/bc/6.0/console.md)
+- [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md)
+- [Audit-Protokoll](../../eng-us/bc/6.0/audit.md) (das Ereignis `system.install.run` protokolliert jede Installation)
 - [Erste Schritte](../anleitungen/erste-schritte.md) und [Bereitstellung](../anleitungen/bereitstellung.md)
 - Code: `kernel/setup/steps/ezstep_data.php`, `kernel/setup/steps/ezstep_create_sites.php`,
   `kernel/classes/expkickstarter.php`, `bin/php/install.php`, `kernel/classes/expmaintenance.php`,

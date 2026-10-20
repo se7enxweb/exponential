@@ -75,12 +75,12 @@ Die Schlüssel, wie sie am 16. August standen:
 
 jQuery UI blieb damals bei 1.10.3. Alle drei wurden später mit der Arbeit an jQuery 4 weiterentwickelt: Die Schlüssel zeigen
 jetzt auf jQuery 4.0.0, Migrate 4.0.2 und jQuery UI 1.14.2. Siehe
-[jQuery 4 und die Entfernung von YUI](../../../en/us/features/6.0/jquery4-and-yui-removal.md).
+[jQuery 4 und die Entfernung von YUI](../../../eng-us/features/6.0/jquery4-and-yui-removal.md).
 
 ## Dateiintegrität
 
 Commit `d889a8abc6` frischte `share/filelist.md5` auf, sodass die
-[Prüfung der Dateikonsistenz](../../../en/us/features/6.0/file-consistency-check.md) die gepatchten Dateien nicht als
+[Prüfung der Dateikonsistenz](../../../eng-us/features/6.0/file-consistency-check.md) die gepatchten Dateien nicht als
 geändert auflistet.
 
 ## Für Extension-Entwickler
@@ -93,7 +93,7 @@ geändert auflistet.
 
 ## Verwandte Seiten
 
-- [Release-Notes zur Sicherheitshärtung](../../../en/us/bc/6.0/hardening.md), [Verhaltensänderungen von Juli und August 2026](../../../en/us/bc/6.0/behaviour-changes-2026-07-08.md), [RAD-Werkzeuge – Sicherheit](../../../en/us/bc/6.0/rad-security.md), [content/view/full absichern](../../../en/us/bc/6.0/view_full_security.md)
+- [Release-Notes zur Sicherheitshärtung](../../../eng-us/bc/6.0/hardening.md), [Verhaltensänderungen von Juli und August 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md), [RAD-Werkzeuge – Sicherheit](../../../eng-us/bc/6.0/rad-security.md), [content/view/full absichern](../../../eng-us/bc/6.0/view_full_security.md)
 - [Spezifikation: die Härtung von 6.0.13](sicherheitshaertung-6.0.13.md), [Sicherheitsvorgaben vom September 2026](sicherheitsvorgaben-2026-09.md), [Härtung der Datentypen und Eingaben](datentyp-eingabehaertung.md)
-- [jQuery 4 und die Entfernung von YUI](../../../en/us/features/6.0/jquery4-and-yui-removal.md), [Ein Benutzerpasswort zurücksetzen](../../../en/us/features/6.0/reset-user-password.md), [Anfrageregeln](../../../en/us/features/6.0/request-rules.md)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Monatsseiten [August 2026](../../../en/us/history/2026/2026-08.md) und [Februar 2026](../../../en/us/history/2026/2026-02.md)
+- [jQuery 4 und die Entfernung von YUI](../../../eng-us/features/6.0/jquery4-and-yui-removal.md), [Ein Benutzerpasswort zurücksetzen](../../../eng-us/features/6.0/reset-user-password.md), [Anfrageregeln](../../../eng-us/features/6.0/request-rules.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Monatsseiten [August 2026](../../../eng-us/history/2026/2026-08.md) und [Februar 2026](../../../eng-us/history/2026/2026-02.md)

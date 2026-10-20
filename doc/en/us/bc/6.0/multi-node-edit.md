@@ -394,5 +394,5 @@ Private browser scripts covered: the view renders, groups, carries drafts and em
 - [Sub items table options](../../features/6.0/subitems-table-options.md) and [Sub items: copy selected](../../features/6.0/subitems-copy-selected.md)
 - [Content jobs](../../features/6.0/content-jobs.md)
 - [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Content model and editing guide](../../guides/content-model-and-editing.md)

@@ -565,4 +565,4 @@ line means none reached the database.
 - [Velocity](../../features/6.0/velocity-persistent-worker-server.md) and the [Velocity response cache](../../features/6.0/velocity-response-cache.md)
 - [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

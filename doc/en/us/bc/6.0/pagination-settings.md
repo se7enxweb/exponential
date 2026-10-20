@@ -206,4 +206,4 @@ Read the shipped values with `grep -n -A40 "^\[PaginationSettings\]" settings/ad
 - [Paging, sorting and page sizes in the administration interface](../../features/6.0/admin-list-paging.md)
 - [Role and policy paging](role-policy-paging.md) and [Locations tab paging and sorting](locations-tab-paging-and-sorting.md)
 - [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

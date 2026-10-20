@@ -38,7 +38,7 @@ current node.
 - [ezwt](ezwt.md)
 - [jQuery 4 and YUI removal](../jquery4-and-yui-removal.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
-- [Chronicle](../../../history/extensions/ezmultiupload.md) and [release notes](../../../../../changelogs/extensions/ezmultiupload.md)
+- [Chronicle](../../../history/extensions/ezmultiupload.md) and [release notes](../../../../changelogs/extensions/ezmultiupload.md)
 - [Change ledger](../../../history/ledger/ezmultiupload.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

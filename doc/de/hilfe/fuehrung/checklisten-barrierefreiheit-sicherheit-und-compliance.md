@@ -48,14 +48,14 @@ Fragen Sie selbst beantworten müssen. Verwenden Sie die Checklisten in Reviews 
 
 | Bereich | Was die Quellen sagen | Quelle |
 |---|---|---|
-| Administration (Design admin4) | Durch Tests geprüfte WCAG-Regeln: Kontrast der Farb-Tokens im hellen und im dunklen Modus (Text 4,5:1), Zielgrößen von mindestens 24 mal 24 Pixeln (WCAG 2.5.8), jedes Formularfeld hat einen Namen, Landmarks und Namen für Screenreader | [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md) |
-| Tastatur und Screenreader | Ein Sprunglink als erster Tab-Stopp, Landmarks für Kopfbereich, Menüs, Brotkrumenpfad und Hauptinhalt, die aktuelle Seite mit `aria-current` gekennzeichnet, Menüs mit Rollen und Tastaturbedienung | [Das Design Admin 4](../../../en/us/features/6.0/admin4-design.md) |
-| Vom Browser angeforderte Modi | Helles und dunkles Theme, Windows-Kontrastmodus (forced colors), reduzierte Bewegung | [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md) |
+| Administration (Design admin4) | Durch Tests geprüfte WCAG-Regeln: Kontrast der Farb-Tokens im hellen und im dunklen Modus (Text 4,5:1), Zielgrößen von mindestens 24 mal 24 Pixeln (WCAG 2.5.8), jedes Formularfeld hat einen Namen, Landmarks und Namen für Screenreader | [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md) |
+| Tastatur und Screenreader | Ein Sprunglink als erster Tab-Stopp, Landmarks für Kopfbereich, Menüs, Brotkrumenpfad und Hauptinhalt, die aktuelle Seite mit `aria-current` gekennzeichnet, Menüs mit Rollen und Tastaturbedienung | [Das Design Admin 4](../../../eng-us/features/6.0/admin4-design.md) |
+| Vom Browser angeforderte Modi | Helles und dunkles Theme, Windows-Kontrastmodus (forced colors), reduzierte Bewegung | [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md) |
 | Tastenkürzel | Die Administration und die Hilfe lassen sich allein mit der Tastatur bedienen | [Tastenkürzel](../tastenkuerzel.md) |
-| Rechts-nach-links-Sprachen | `dir="rtl"` in der Administration und in Inhalten, die in einer Rechts-nach-links-Sprache verfasst sind | [Rechts nach links](../../../en/us/features/6.0/right-to-left.md) |
+| Rechts-nach-links-Sprachen | `dir="rtl"` in der Administration und in Inhalten, die in einer Rechts-nach-links-Sprache verfasst sind | [Rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
 | Alternativtext | Bildfelder können pro Klasse einen Alternativtext verlangen; ausgeschaltet, bis es eingeschaltet wird | [Inhaltsmodell, Abschnitt 9](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
-| Fehlender Alternativtext | Exponential Intelligence hat einen Bericht „Missing alt text“, der Vorschläge für einen Teilbaum in eine Warteschlange stellt | [expai](../../../en/us/features/6.0/extensions/expai.md) |
-| Die Hilfe | Sofort-Suchergebnisse werden Screenreadern angesagt | [Das Hilfesystem](../../../en/us/features/6.0/help-system.md) |
+| Fehlender Alternativtext | Exponential Intelligence hat einen Bericht „Missing alt text“, der Vorschläge für einen Teilbaum in eine Warteschlange stellt | [expai](../../../eng-us/features/6.0/extensions/expai.md) |
+| Die Hilfe | Sofort-Suchergebnisse werden Screenreadern angesagt | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
 
 > **Hinweis**
 > Die Quellen beschreiben Tests für die **Administration**. Sie sagen nicht, dass irgendein Design einer öffentlichen
@@ -67,12 +67,12 @@ Fragen Sie selbst beantworten müssen. Verwenden Sie die Checklisten in Reviews 
 - [ ] Redakteure verwenden das Design admin4 (oder ein anderes Administrationsdesign, dessen Barrierefreiheit Sie
       geprüft haben).
 - [ ] Die Sprache der Oberfläche jedes Redakteurs ist in der Stufe verfügbar, die er braucht
-      ([Sprachen, Unterstützungsstufen](../../../en/us/languages.md#2-support-levels)).
+      ([Sprachen, Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels)).
 - [ ] Erweiterungen, die Sie der Administration hinzufügen, folgen den Gestaltungsregeln (keine Inline-Styles,
       gemeinsame Komponenten, Tokens mit Werten für den dunklen Modus): `CONTRIBUTING.md`,
-      [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md).
+      [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md).
 - [ ] Seiten Ihrer eigenen Erweiterungen wurden im hellen und im dunklen Modus geprüft, in normaler Größe und bei 200 %
-      Zoom, wie es die Gestaltungsregeln verlangen ([Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md)).
+      Zoom, wie es die Gestaltungsregeln verlangen ([Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md)).
 
 ### Checkliste: öffentliche Sites
 
@@ -93,7 +93,7 @@ Fragen Sie selbst beantworten müssen. Verwenden Sie die Checklisten in Reviews 
 
 Eine Content Security Policy „teilt dem Browser mit, welche Skripte, Stylesheets, Bilder und Verbindungen eine Seite
 verwenden darf“; mit einer strengen Richtlinie läuft ein eingeschleustes Skript nicht, „selbst wenn ein Template
-vergisst, es zu maskieren“ ([Content Security Policy](../../../en/us/features/6.0/content-security-policy.md)).
+vergisst, es zu maskieren“ ([Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md)).
 
 **Die Voreinstellung**: `Mode=auto` sendet auf Administrations-Siteaccesses eine Richtlinie im Nur-Bericht-Modus und auf
 den Sites keine. Das Erzwingen ist eine Entscheidung pro Siteaccess, die nach einem Audit getroffen wird.
@@ -112,7 +112,7 @@ den Sites keine. Das Erzwingen ist eine Entscheidung pro Siteaccess, die nach ei
 - [ ] Sites zuerst mit `report-only` gestartet, dann `enforce`; Rich Text und eingebettete Player geprüft.
 - [ ] Der Rückweg ist bekannt: `Mode=report-only` und Leeren des INI-Caches.
 
-Alle Schritte: [Schritt für Schritt zum Erzwingen](../../../en/us/features/6.0/content-security-policy.md#switching-to-enforce-step-by-step).
+Alle Schritte: [Schritt für Schritt zum Erzwingen](../../../eng-us/features/6.0/content-security-policy.md#switching-to-enforce-step-by-step).
 
 ## Sicherheitshärtung und Go-live
 
@@ -162,7 +162,7 @@ Beobachtungsmodus, dann erzwungen ([Sicherheitshärtung](../sicherheitshaertung.
       `user/register` ([Rollen und Richtlinien, Abschnitt 8](../../anleitungen/rollen-und-richtlinien.md)).
 - [ ] Konten regelmäßig unter **Benutzer > Benutzerkonten prüfen** überprüft: nie angemeldet, lange nicht gesehen,
       deaktiviert, gesperrt, verwaist, gemeinsam genutzte E-Mail-Adresse
-      ([Benutzerkonten prüfen](../../../en/us/features/6.0/user-hygiene.md)).
+      ([Benutzerkonten prüfen](../../../eng-us/features/6.0/user-hygiene.md)).
 - [ ] `exp:user-login-check` meldet, dass jeder Anmeldename zu genau einem Konto gehört
       ([Sicherheit und Audit, Abschnitt 7](../../anleitungen/sicherheit-und-audit.md)).
 - [ ] Sitzungen: Abmelden beendet die Sitzung endgültig ([Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md),
@@ -173,7 +173,7 @@ Beobachtungsmodus, dann erzwungen ([Sicherheitshärtung](../sicherheitshaertung.
 Exponential 6.0.15 zeichnet sicherheitsrelevante Ereignisse in einem manipulationssicheren Protokoll auf, ab Werk
 eingeschaltet: Anmeldungen und Ablehnungen, Inhaltsänderungen, geschriebene Einstellungen, geleerte Caches, Deployments,
 Bestellungen und Änderungen der Mehrwertsteuer. Jeder Eintrag trägt den Hash des vorherigen; `verify` sagt Ihnen, ob
-etwas bearbeitet oder abgeschnitten wurde ([Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md)).
+etwas bearbeitet oder abgeschnitten wurde ([Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)).
 
 ### Checkliste
 
@@ -220,11 +220,11 @@ einem Review mit Ihrem Datenschutzbeauftragten.
 
 | Bereich | Was die Quellen sagen | Quelle |
 |---|---|---|
-| Audit-Protokoll | Adressen gekürzt, Sitzungen gehasht, User-Agents verkürzt, Werte von Abfrageparametern entfernt; Passwörter, Tokens, Reparaturschlüssel und Geheimnisse werden nie aufgezeichnet | [Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md) |
-| Log-Viewer | E-Mail-Adressen, IP-Adressen, Passwörter, Tokens, Schlüssel, Sitzungs-IDs und Cookies maskiert; das Aufheben der Maskierung erfordert `setup/unmasklogs` | [Log-Viewer](../../../en/us/features/6.0/log-viewer.md#privacy-what-is-masked) |
-| Request-Logs | Maskierte Client-Adressen, ein Hash und ein kurzer Teil des User-Agents, Werte von Abfrageparametern ersetzt | [Request-Logs](../../../en/us/features/6.0/request-logs.md) |
+| Audit-Protokoll | Adressen gekürzt, Sitzungen gehasht, User-Agents verkürzt, Werte von Abfrageparametern entfernt; Passwörter, Tokens, Reparaturschlüssel und Geheimnisse werden nie aufgezeichnet | [Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
+| Log-Viewer | E-Mail-Adressen, IP-Adressen, Passwörter, Tokens, Schlüssel, Sitzungs-IDs und Cookies maskiert; das Aufheben der Maskierung erfordert `setup/unmasklogs` | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md#privacy-what-is-masked) |
+| Request-Logs | Maskierte Client-Adressen, ein Hash und ein kurzer Teil des User-Agents, Werte von Abfrageparametern ersetzt | [Request-Logs](../../../eng-us/features/6.0/request-logs.md) |
 | E-Mail | Notwendige E-Mails gehen immer hinaus; optionale E-Mails nur an Personen, die sie eingeschaltet haben, mit Abmeldung per Klick; ein Einwilligungsprotokoll; eine Sperrliste, als gesalzene Hashes gespeichert; Export und Löschung pro Adresse | [13.13 E-Mail: Einwilligung und Sperrliste](../../installation/13-sicherheitshaertung.md#1313-mail-einwilligung-und-sperrliste), [E-Mail-Einstellungen](../../anleitungen/mail-einstellungen-administrator.md) |
-| Schreibassistent | Eine Region (`us`, `eu`, `local`) und eine Aufbewahrungsdauer pro Anbieter; Regeln pro Sektion und Klasse; eine druckbare Seite „EI: Summary“ für einen Datenschutzbeauftragten; Prompts, Antworten und Schlüssel werden nie im Audit aufgezeichnet | [expai](../../../en/us/features/6.0/extensions/expai.md) |
+| Schreibassistent | Eine Region (`us`, `eu`, `local`) und eine Aufbewahrungsdauer pro Anbieter; Regeln pro Sektion und Klasse; eine druckbare Seite „EI: Summary“ für einen Datenschutzbeauftragten; Prompts, Antworten und Schlüssel werden nie im Audit aufgezeichnet | [expai](../../../eng-us/features/6.0/extensions/expai.md) |
 | Gesammelte Informationen | Formularexporte enthalten, was Besucher eingegeben haben, oft Namen und E-Mail-Adressen | [Gesammelte Informationen](../../anleitungen/gesammelte-informationen.md) |
 | Suchstatistiken | Suchbegriffe, die Besucher eingegeben haben, können personenbezogene Daten enthalten | [URLs und Aliase, Abschnitt 5](../../anleitungen/urls-und-aliase.md) |
 
@@ -255,7 +255,7 @@ einem Review mit Ihrem Datenschutzbeauftragten.
 |---|---|---|
 | Wöchentlich | Die Fehlerübersicht des Log-Viewers und `security.log` lesen; ein plötzlicher Anstieg einer Regel ist einen Blick wert | [Sicherheitshärtung](../sicherheitshaertung.md) |
 | Wöchentlich | Die wöchentliche Checkliste für den Betrieb einer Site | [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md) |
-| Regelmäßig | `exp:audit verify`; Kontenprüfung unter Benutzerkonten prüfen | [Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md), [Benutzerkonten prüfen](../../../en/us/features/6.0/user-hygiene.md) |
+| Regelmäßig | `exp:audit verify`; Kontenprüfung unter Benutzerkonten prüfen | [Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md), [Benutzerkonten prüfen](../../../eng-us/features/6.0/user-hygiene.md) |
 | Bei jedem Update | Prüfung der Dateikonsistenz unter **Setup > Upgrade-Prüfung**; Changelog und Upgrade-Hinweise gelesen | [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md), [13.15](../../installation/13-sicherheitshaertung.md#1315-auf-dem-neuesten-stand-bleiben) |
 | Bei jeder Änderung eines Templates oder einer Erweiterung | Berichte der Content Security Policy und Barrierefreiheitsprüfungen der geänderten Seiten | diese Seite |
 
@@ -282,7 +282,7 @@ Next review: <date>        Open items moved to the risk register: <ids>
 - [Sicherheitshärtung](../sicherheitshaertung.md)
 - [Kapitel 13: Sicherheitshärtung für den Produktivbetrieb](../../installation/13-sicherheitshaertung.md)
 - [Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md)
-- [Content Security Policy](../../../en/us/features/6.0/content-security-policy.md)
-- [Das Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md)
+- [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md)
+- [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md)
 - [Qualitätsschranken und Abnahme](qualitaetsschranken-und-abnahme.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

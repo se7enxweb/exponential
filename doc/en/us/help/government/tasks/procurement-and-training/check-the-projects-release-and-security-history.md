@@ -37,7 +37,7 @@ You need a clone of the repository or a browser on GitHub ([3. Getting the code]
    ([Source control and releases](../../../../standards/source-control-and-releases.md#the-kernels-versions)).
 2. **Note the dates** of recent releases; the roadmap page records `v6.0.11` to `v6.0.14` between December 2025 and
    June 2026 ([The roadmap](../../../project/roadmap.md#what-has-already-been-delivered)).
-3. **Read the changelog** of the current line and skim what changed ([6.0.15 changelog](../../../../../../changelogs/6.0/6.0.15.md);
+3. **Read the changelog** of the current line and skim what changed ([6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md);
    [Reading a changelog](../../../press/reading-a-changelog.md)).
 4. **Read `SECURITY.md`**: supported versions, private reporting, first answer within one business day, fixes as the next
    release.

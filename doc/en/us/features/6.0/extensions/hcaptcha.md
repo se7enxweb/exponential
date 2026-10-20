@@ -74,7 +74,7 @@ To use hCaptcha on those forms, remove the overrides from your design, or overri
 
 - [recaptcha](recaptcha.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/hcaptcha.md) and [release notes](../../../../../changelogs/extensions/hcaptcha.md)
+- [Chronicle](../../../history/extensions/hcaptcha.md) and [release notes](../../../../changelogs/extensions/hcaptcha.md)
 - [Change ledger](../../../history/ledger/hcaptcha.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-08](../../../history/extensions/months/2024-08.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

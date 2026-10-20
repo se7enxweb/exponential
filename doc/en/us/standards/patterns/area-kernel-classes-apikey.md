@@ -19,6 +19,6 @@ Every class, interface and trait of `kernel/classes/apikey` with the patterns it
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
-| `expApiKey` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md) | `kernel/classes/apikey/expapikey.php:31` | A personal API key (publishing key) of a user: one row of expapikey (doc/en/us/guides/api-keys.md). |
+| `expApiKey` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md) | `kernel/classes/apikey/expapikey.php:31` | A personal API key (publishing key) of a user: one row of expapikey (doc/eng-us/guides/api-keys.md). |
 | `expApiKeyFunctionCollection` | class | [Fetch function (Query Object, Facade)](fetch-function.md), [Utility (static helper)](utility.md) | `kernel/classes/apikey/expapikeyfunctioncollection.php:13` | The fetch functions of the apikey module (kernel/apikey/function_definition.php). |
 | `expApiKeySchema` | class | [Utility (static helper)](utility.md) | `kernel/classes/apikey/expapikeyschema.php:16` | The expapikey table on any engine: whether it exists, and creating it from its definition in share/db_schema.dba through the engine's schema handler… |

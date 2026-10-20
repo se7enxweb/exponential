@@ -49,7 +49,7 @@ Beispiel zur Verwendung des Logos), sagt die Seite das.
 
 Ab Version 6.0.10 (August 2025) nennt sich die Software **Exponential**. Der Installer, die Administration, die
 Skripte für die Kommandozeile, die Übersetzungen, die Dokumentation und der Paketserver verwenden alle diesen Namen
-([Das Produkt heißt Exponential](../../../en/us/features/6.0/rebranding-to-exponential.md)).
+([Das Produkt heißt Exponential](../../../eng-us/features/6.0/rebranding-to-exponential.md)).
 
 Regeln:
 
@@ -62,7 +62,7 @@ Regeln:
   ([Wer ist 7x?](../wer-ist-7x.md#warum-das-produkt-exponential-heißt)). „Exponential CMS“ wird zum Beispiel in
   `CONTRIBUTING.md` verwendet. Verwenden Sie es dort, wo „Content-Management-System“ der Klarheit halber gesagt werden
   muss, etwa bei der ersten Erwähnung für ein externes Publikum.
-- Die Konstante `EDITION` in `lib/version.php` lautet `Exponential` ([Das Produkt heißt Exponential](../../../en/us/features/6.0/rebranding-to-exponential.md#what-changed)).
+- Die Konstante `EDITION` in `lib/version.php` lautet `Exponential` ([Das Produkt heißt Exponential](../../../eng-us/features/6.0/rebranding-to-exponential.md#what-changed)).
 
 ## Die Produktfamilie
 
@@ -85,7 +85,7 @@ Verwenden Sie die Namen genau so, wie die Seite der Foundation sie schreibt ([Di
 Hinweise:
 
 - **Velocity** heißt in Befehlen auch `vc`, und **qbix** ist der Name der Engine in den Einstellungen von
-  Exponential und der Name des Upstream-Projekts, von dem es abgespalten wurde ([Glossar](../../../en/us/glossary.md)). In
+  Exponential und der Name des Upstream-Projekts, von dem es abgespalten wurde ([Glossar](../../../eng-us/glossary.md)). In
   Marketingtexten schreiben Sie **Exponential Velocity** oder **Velocity**.
 - Schreiben Sie Paketnamen in Code-Formatierung und klein (`expai`, `explayouts`, `cjw_newsletter`), genau wie in
   `composer.json`.
@@ -112,7 +112,7 @@ Hinweise:
   dass die Foundation Dienstleistungen verkauft: 7x ist das Unternehmen, die Foundation betreibt und finanziert das
   Projekt ([Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x)).
 - Der Copyright-Inhaber der Software wird **7x & Exponential Foundation** geschrieben (`COPYRIGHT.md`); der Vermerk
-  der Dokumentation ergänzt „and the Exponential contributors“ ([Die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md)).
+  der Dokumentation ergänzt „and the Exponential contributors“ ([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).
   Übernehmen Sie diese Vermerke genau, kürzen Sie sie nie.
 
 ## Der alte Name: eZ Publish, nur als Geschichte
@@ -136,7 +136,7 @@ Regeln:
 
 ## Bezeichner im Code bleiben, wie sie sind
 
-Die Umbenennung „touched text, not identifiers“, betraf also Texte, nicht Bezeichner ([Was absichtlich nicht geändert wurde](../../../en/us/features/6.0/rebranding-to-exponential.md#what-did-not-change-on-purpose)).
+Die Umbenennung „touched text, not identifiers“, betraf also Texte, nicht Bezeichner ([Was absichtlich nicht geändert wurde](../../../eng-us/features/6.0/rebranding-to-exponential.md#what-did-not-change-on-purpose)).
 „Korrigieren“ Sie Folgendes nie, weder im Code noch in der Dokumentation von Code noch im technischen Marketing:
 
 - PHP-Klassen mit dem Präfix `eZ`: `eZContentObject`, `eZINI`, `eZDB`, `eZPersistentObject`;
@@ -153,7 +153,7 @@ nie ein Symbol oder eine Datei.
 Die Hilfe legt keine schriftliche Regel für die Benennung neuer Module oder Klassen fest. Was Sie in den Quellen
 beobachten können: Neue Produkte und Pakete der Linie 6.0.x verwenden `Exponential` oder `exp` (Exponential Velocity,
 Exponential Intelligence als `expai`, Exponential Layouts als `explayouts`, `expqueue`, `exp_adminui`,
-Konsolenbefehle mit dem Präfix `exp:`, siehe das [Glossar](../../../en/us/glossary.md)), und die eigenen Erweiterungen von 7x
+Konsolenbefehle mit dem Präfix `exp:`, siehe das [Glossar](../../../eng-us/glossary.md)), und die eigenen Erweiterungen von 7x
 verwenden `sevenx_` (`sevenx_authentication_2fa`, `sevenx_dse`). Folgen Sie diesem Muster und fragen Sie im
 Zweifel die Maintainer.
 
@@ -176,12 +176,12 @@ Quellen: [Wer ist 7x?](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts),
 
 - **Amerikanisches Englisch** in der englischen Oberfläche und Dokumentation: license (nicht licence), color,
   behavior, organization. Die Übersetzung der Administration `eng-US` ist in amerikanischem Englisch geschrieben
-  ([Sprachen in Exponential](../../../en/us/languages.md#8-adding-or-completing-an-administration-translation)).
+  ([Sprachen in Exponential](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)).
 - **Verwenden Sie das Wort, das der Leser auf dem Bildschirm sieht.** Der Stilleitfaden der Hilfe legt die Regel fest
   „Use the product name the reader sees on screen, not an internal project or code name“ - den Produktnamen, den der
   Leser auf dem Bildschirm sieht, nicht einen internen Projekt- oder Codenamen - und bevorzugt Begriffe der
   Oberfläche wie „Objekt“, „Inhaltsklasse“, „Entwurf“, „Papierkorb“
-  (`doc/en/us/specifications/6.0/help-style-guide.md`, ein Vorschlag vom 18. Oktober 2026).
+  (`doc/eng-us/specifications/6.0/help-style-guide.md`, ein Vorschlag vom 18. Oktober 2026).
 - Schreiben Sie die Namen von Menüs und Schaltflächen so, wie sie erscheinen: **Setup**, **Zur Veröffentlichung
   schicken**.
 
@@ -235,6 +235,6 @@ keine Markenrichtlinie.
 - [Fallstudien und Content-Marketing schreiben](fallstudien-und-content-marketing.md)
 - [Lizenzen für Käufer erklärt](lizenzen-fuer-kaeufer.md)
 - [Was Exponential ist: die Produktfamilie](../fuehrung/was-exponential-ist.md)
-- [Das Produkt heißt Exponential](../../../en/us/features/6.0/rebranding-to-exponential.md)
+- [Das Produkt heißt Exponential](../../../eng-us/features/6.0/rebranding-to-exponential.md)
 - [Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

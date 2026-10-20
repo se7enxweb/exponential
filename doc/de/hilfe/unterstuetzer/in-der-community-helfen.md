@@ -57,5 +57,5 @@ ohne fragen zu müssen.
 
 - [Fürsprache](fuersprache.md)
 - [Testen und Fehler melden](testen-und-fehler-melden.md)
-- [Kommunikationskanäle für Partner](../../../en/us/help/partners/communication-channels.md)
+- [Kommunikationskanäle für Partner](../../../eng-us/help/partners/communication-channels.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

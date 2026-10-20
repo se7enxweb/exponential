@@ -4,7 +4,7 @@ Diese Seite ist die Referenz für die Extension `bccie` (1.1.12), „BC CIE“, 
 **gesammelten Informationen** von Inhaltsobjekten (die Antworten, die über ein Kontaktformular, eine Umfrage oder eine Bewerbung gesendet wurden) in
 CSV- oder SYLK-Dateien (Excel): aus der Administration, im Hintergrund, über die Konsole und per Cron. Die Seite führt die Modul-Views
 und Richtlinien, die Exportoptionen und den Inhalt der Dateien, die Konsolenbefehle, die Cronjob-Teile und jede
-Einstellung auf. Die kurze Anleitung für Site-Betreiber ist die [Funktionsseite](../../../en/us/features/6.0/extensions/bccie.md).
+Einstellung auf. Die kurze Anleitung für Site-Betreiber ist die [Funktionsseite](../../../eng-us/features/6.0/extensions/bccie.md).
 
 ## Kurz gesagt
 
@@ -119,6 +119,6 @@ Geltungsbereich: Extension (`extension/bccie/settings/`). Überschreiben Sie sie
 
 ## Siehe auch
 
-- [Funktionsseite](../../../en/us/features/6.0/extensions/bccie.md), [Verhaltensänderungen der Extensions](../../../en/us/bc/6.0/extensions-behaviour-changes.md)
-- [Abstraktionen für CLI, Cronjobs und Views](../../../en/us/bc/6.0/cli_cronjob_view_abstractions.md), [Cronjobs in der Konsole](../../../en/us/features/6.0/cronjobs-console.md)
-- [Chronik](../../../en/us/history/extensions/bccie.md) und [Release Notes](../../../changelogs/extensions/bccie.md)
+- [Funktionsseite](../../../eng-us/features/6.0/extensions/bccie.md), [Verhaltensänderungen der Extensions](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Abstraktionen für CLI, Cronjobs und Views](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md), [Cronjobs in der Konsole](../../../eng-us/features/6.0/cronjobs-console.md)
+- [Chronik](../../../eng-us/history/extensions/bccie.md) und [Release Notes](../../../changelogs/extensions/bccie.md)

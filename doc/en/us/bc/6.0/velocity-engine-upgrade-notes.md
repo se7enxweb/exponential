@@ -6,7 +6,7 @@ how to check and how to fix. Choosing and running an engine from Exponential is 
 [Velocity engines](velocity-engines.md); the on-disk tree in [Velocity on-disk layout](velocity-ondisk-layout.md);
 the engine archive in [phar](phar.md); what Exponential itself changed in
 [behaviour changes of October 2026](behaviour-changes-2026-10.md). Release notes are in the
-[changelog](../../../../changelogs/extensions/exponential-velocity.md), the story in the
+[changelog](../../../changelogs/extensions/exponential-velocity.md), the story in the
 [Velocity chronicle](../../history/velocity/README.md).
 
 ## In short

@@ -12,7 +12,7 @@ Jede Aussage unten wurde am 15. Oktober 2026 auf dem Demonstrationsserver (Apach
 Hostnamen, Kennungen und Geheimnisse sind durch Dokumentationswerte ersetzt (`example.com`, `<client id>`, `expk_...`).
 
 [Anleitungen](README.md) · Siehe auch: [API-Schlüssel](api-schluessel.md) ·
-[ezprestapi](../../en/us/features/6.0/extensions/ezprestapi.md) · [ezprestapiprovider](../../en/us/features/6.0/extensions/ezprestapiprovider.md) (veraltet) ·
+[ezprestapi](../../eng-us/features/6.0/extensions/ezprestapi.md) · [ezprestapiprovider](../../eng-us/features/6.0/extensions/ezprestapiprovider.md) (veraltet) ·
 [Remote-Dienste und Apps](entfernte-dienste-und-apps.md)
 
 ## Kurz gesagt
@@ -53,7 +53,7 @@ Hostnamen, Kennungen und Geheimnisse sind durch Dokumentationswerte ersetzt (`ex
 | Auth-Provider `ezpRestAuthProvider` | der Kernel, Präfix `auth` | der OAuth2-Token-Endpunkt und die Authentifizierungsrouten |
 | Inhalts-Provider `ezp7xRestApiProvider` | `ezprestapi`, Präfixe `ezp` und `ezpl` | die Inhaltsrouten von v1 und v2 |
 | Inhalts-Controller `ezp7xRestContentController` | `ezprestapi` | jeder Lese- und Schreibzugriff auf Inhalte, mit den Berechtigungsprüfungen |
-| Backend für Anlegen und Löschen | [nxc_powercontent](../../en/us/features/6.0/extensions/nxc_powercontent.md) | legt Inhalte für den Controller an und entfernt sie |
+| Backend für Anlegen und Löschen | [nxc_powercontent](../../eng-us/features/6.0/extensions/nxc_powercontent.md) | legt Inhalte für den Controller an und entfernt sie |
 | Berechtigungshelfer `expRestContentPermission` | der Kernel (6.0.15) | fragt die Richtlinien des Benutzers so ab, wie es das Modul content tut |
 | `ezprestapiprovider` 6.0.4 | veraltete Kompatibilitätsschicht | `ezpRestApiProvider` und `ezpRestContentController` erweitern die Klassen von `ezprestapi`; ordnet `ezp` und `ezpl` `ezp7xRestApiProvider` zu |
 
@@ -100,7 +100,7 @@ Für eine Anwendung, bei der sich *andere* Benutzer anmelden und für die sie in
    `https://example.com/oauth/authorize?client_id=<client id>&redirect_uri=<redirect uri>&response_type=code`.
    Der Benutzer meldet sich an und erlaubt der Anwendung den Zugriff; die Site leitet mit `code=<code>` zurück. Der Benutzer benötigt die
    Richtlinie *OAuth / Authorize* (`oauth/authorize`); ohne sie leitet die Site mit `error=access_denied` zurück
-   ([Upgrade-Hinweis](../../en/us/bc/6.0/oauth-authorize-policy.md)).
+   ([Upgrade-Hinweis](../../eng-us/bc/6.0/oauth-authorize-policy.md)).
 3. Die Anwendung tauscht den Code am Token-Endpunkt gegen ein Token,
    `POST /api/auth/v1/oauth/token`, mit `grant_type=authorization_code`, `client_id`, `client_secret`, `code` und
    `redirect_uri`.
@@ -289,13 +289,13 @@ die URL-Erzeugung der Route und der Feed-View-Handler der MVC-Feed-Anbindung der
 (`ezcMvcFeedViewHandler`), den die Distribution nicht installiert. Verwenden Sie die Route `list` oder den RSS-Export der Site,
 bis das behoben ist.
 
-**Demo-Modus.** Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) weigern sich die Webdienste, das Passwort eines Administrators zu ändern oder zurückzusetzen: `expaccount.reset`, `expaccount.changePassword` und `expuser.setPassword` antworten mit HTTP 403 und dem Grund, und `expaccount.forgotRequest` sendet keinen Schlüssel und gibt dieselbe Antwort wie für jede andere Adresse. [Demo-Modus](../../en/us/bc/6.0/demo-mode.md).
+**Demo-Modus.** Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) weigern sich die Webdienste, das Passwort eines Administrators zu ändern oder zurückzusetzen: `expaccount.reset`, `expaccount.changePassword` und `expuser.setPassword` antworten mit HTTP 403 und dem Grund, und `expaccount.forgotRequest` sendet keinen Schlüssel und gibt dieselbe Antwort wie für jede andere Adresse. [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
 
 ## Verwandte Seiten
 
 - [API-Schlüssel](api-schluessel.md): einen Schlüssel erstellen, verwenden und widerrufen; die Berechtigungstabelle der REST-Schnittstelle
-- [ezprestapi](../../en/us/features/6.0/extensions/ezprestapi.md) und seine [Release Notes](../../changelogs/extensions/ezprestapi.md)
-- [ezprestapiprovider](../../en/us/features/6.0/extensions/ezprestapiprovider.md) und seine [Release Notes](../../changelogs/extensions/ezprestapiprovider.md)
-- [nxc_powercontent](../../en/us/features/6.0/extensions/nxc_powercontent.md)
-- [Verhaltensänderungen der Extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- [ezprestapi](../../eng-us/features/6.0/extensions/ezprestapi.md) und seine [Release Notes](../../changelogs/extensions/ezprestapi.md)
+- [ezprestapiprovider](../../eng-us/features/6.0/extensions/ezprestapiprovider.md) und seine [Release Notes](../../changelogs/extensions/ezprestapiprovider.md)
+- [nxc_powercontent](../../eng-us/features/6.0/extensions/nxc_powercontent.md)
+- [Verhaltensänderungen der Extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md)
 - [Remote-Dienste und Apps](entfernte-dienste-und-apps.md)

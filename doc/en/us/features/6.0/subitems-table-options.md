@@ -112,5 +112,5 @@ The sub-items table itself is `exp::datatable`. Its loader is `ezajaxsubitems_ex
 - [The responsive admin design (admin3)](admin3-responsive-admin.md), [the admin4 design](admin4-design.md), [left sidebar width and font size](admin3-sidebar-width-and-font-size.md)
 - [Audit trail](audit-trail.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)
 - History: [October 2026](../../history/2026/2026-10.md), [June 2026, second half](../../history/2026/2026-06b.md), [June 2025](../../history/2025/2025-06.md), [January 2025](../../history/2025/2025-01.md), [November 2024](../../history/2024/2024-11.md), [October 2024](../../history/2024/2024-10.md), [August 2024](../../history/2024/2024-08.md)

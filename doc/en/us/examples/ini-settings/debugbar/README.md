@@ -13,7 +13,7 @@ generated: exp:help:examples
 The shipped settings of `settings/debugbar.ini`: 42 blocks, 288 settings.
 
 > The registry of the Exp Debug bar (the pinned bar at the bottom of a page with debug output).  
-> Guide: doc/en/us/bc/6.0/debug-bar.md  
+> Guide: doc/eng-us/bc/6.0/debug-bar.md  
 >
 > Every setting the bar shows and changes is one \[Setting\_<id>\] block:  
 >

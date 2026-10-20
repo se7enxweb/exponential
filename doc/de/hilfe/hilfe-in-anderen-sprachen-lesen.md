@@ -39,7 +39,7 @@ Hilfe die Sprache, in der Sie lesen, ohne die Auswahl.
 ## Das englische Original
 
 Eine übersetzte Seite hat über dem Text einen Link auf ihr englisches Original („Original auf Englisch lesen“). Das
-Original öffnet sich unter derselben Adresse mit `?lang=en-us`; es wird für diesen einen Aufruf auf Englisch
+Original öffnet sich unter derselben Adresse mit `?lang=eng-us`; es wird für diesen einen Aufruf auf Englisch
 angezeigt, mit einem Link zurück zur Seite in Ihrer Sprache. Die Sprache Ihrer Oberfläche ändert sich dabei nicht.
 
 ## Eine Seite, die noch nicht übersetzt ist
@@ -62,7 +62,7 @@ die es für Sie gibt.
 
 Englisch ist das Original. Deutsch wird gerade übersetzt. Ihr Administrator kann in den Einstellungen eine Sprache
 hinzufügen (`exphelp.ini`, `[DocLanguages]`); Entwickler und Übersetzer finden unter
-[Übersetzte Dokumentation](../../en/us/bc/6.0/translated-documentation.md), wie das geht.
+[Übersetzte Dokumentation](../../eng-us/bc/6.0/translated-documentation.md), wie das geht.
 
 ## Siehe auch
 

@@ -38,7 +38,7 @@ for editors, administrators and developers. Here are the pages behind each topic
 
 | Topic | Pages |
 |---|---|
-| Everything, dated | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| Everything, dated | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 | Velocity | [The persistent-worker server](../../features/6.0/velocity-persistent-worker-server.md) |
 | Exponential Layouts | [The layouts editor](../layouts-editor.md) |
 | Exponential Intelligence | [Exponential Intelligence](../../features/6.0/extensions/expai.md) |

@@ -37,7 +37,7 @@ source wins when two disagree.
 |---|---|
 | What Exponential is | [README.md](https://github.com/se7enxweb/exponential/blob/main/README.md), "What is Exponential?" |
 | Release numbers and dates | Git tags (`git tag -l 'v6.0.*' --sort=version:refname`); [release overview](../../release-overview) |
-| What changed in a release | [Changelogs](../../../../changelogs/README.md); the 6.0.15 changelog for the line in development |
+| What changed in a release | [Changelogs](../../../changelogs/README.md); the 6.0.15 changelog for the line in development |
 | The month-by-month story | [The history](../../history/README.md) |
 | Copyright holders | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | License | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE); [The license of this documentation](../../README-LICENSE.md) |
@@ -45,7 +45,7 @@ source wins when two disagree.
 | How to contribute | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 | PHP versions, packages | [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json); README, "Requirements" |
 | Databases, operating systems | [Database support](../database-support.md); [Operating system support](../os-support.md) |
-| A feature's behavior | The feature page in `doc/en/us/features/6.0/`, for example [Content Security Policy](../../features/6.0/content-security-policy.md) |
+| A feature's behavior | The feature page in `doc/eng-us/features/6.0/`, for example [Content Security Policy](../../features/6.0/content-security-policy.md) |
 | Terms | [The glossary](../../glossary.md) |
 | 7x | <https://se7enx.com/about>; [Who is 7x?](../who-is-7x.md) |
 | The Foundation | <https://foundation.exponential.earth/>; [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md) |

@@ -36,7 +36,7 @@ Web; 1,039 merged pull requests appear in the whole history ([Exponential by the
 | While a pull request is open, its author squashes and rebases it onto `main` as the reviews ask; after the merge, `main` is never rewritten and later fixes come as new pull requests | same; [Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews) |
 | The test suite runs on every pull request | [CI](../../bc/6.0/ci.md) |
 | Contributions under GPL v2 or later | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| Code contributions to the kernel need a signed Contributor Licensing Agreement (CLA) before they are merged; by signing and submitting, contributors assign the copyright to 7x and give up control: 7x may use, change, relicense and distribute a contribution in any way, without asking or paying them, and they cannot withdraw it; users' own extensions are not affected | [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla) |
+| Code contributions to the kernel need a signed Contributor Licensing Agreement (CLA) before they are merged; by signing and submitting, contributors assign the copyright to 7x and give up control: 7x may use, change, relicense and distribute a contribution in any way, without asking or paying them, and they cannot withdraw it; users' own extensions are not affected | [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
 | 1,039 merged pull requests in the history (18 October 2026) | [Exponential by the numbers](exponential-by-the-numbers.md) |
 
 ## What not to claim

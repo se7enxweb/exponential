@@ -29,12 +29,12 @@ This page is for designers sending a change to another maintainer's theme or to 
    ready to revise your change until it is simple to accept. 7x also requires you to squash the pull request and
    rebase it onto `main` while it is open (`git fetch origin`, `git rebase -i origin/main`,
    `git push --force-with-lease` to your pull request branch only); after the merge, `main` is never rewritten
-   ([Code reviews](../../../../../../CONTRIBUTING.md#code-reviews)).
+   ([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
 9. **For the Exponential kernel** (`se7enxweb/exponential`), have your signed Contributor Licensing Agreement on file:
    7x and the Exponential Foundation merge a kernel contribution only after it has been received. **By signing and
    submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying you,
    and you cannot withdraw it or set conditions on it
-   ([Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Other maintainers'
+   ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Other maintainers'
    themes and your own themes are not affected.
 
 ## Never include

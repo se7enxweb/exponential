@@ -59,7 +59,7 @@ Diese Regeln schützen den Kunden, Ihr Unternehmen und das Projekt. Nach denselb
    sagen dazu nichts, wir finden es heraus.“
 2. **Keine erfundenen Zahlen.** Keine Preise, Kundenzahlen, Marktanteile, Reaktionszeiten oder Leistungswerte, die
    nicht in einer Quelle stehen. Nennt eine Quelle eine Zahl (zum Beispiel 268 Locale-Dateien in
-   [Sprachen in Exponential](../../../en/us/languages.md)), zitieren Sie sie mit Datum und Quelle.
+   [Sprachen in Exponential](../../../eng-us/languages.md)), zitieren Sie sie mit Datum und Quelle.
 3. **Keine erfundenen Kunden oder Zitate.** Eine Kundengeschichte braucht die schriftliche Erlaubnis des Kunden
    ([Fallstudien und Content-Marketing schreiben](fallstudien-und-content-marketing.md)).
 4. **Nennen Sie die Dinge richtig.** Das Produkt heißt **Exponential** (Versionslinie **Exponential 6.0.x**), das
@@ -92,7 +92,7 @@ Diese Regeln schützen den Kunden, Ihr Unternehmen und das Projekt. Nach denselb
 | 110 | [Lizenzen für Käufer erklärt: GPL-Code, GFDL-Dokumentation](lizenzen-fuer-kaeufer.md) | Was ein Käufer mit dem Code und der Dokumentation tun darf | 2 |
 | 120 | [Die Community wachsen lassen](die-community-wachsen-lassen.md) | Dokumentierte Kanäle, ein Redaktionskalender, ein Trichter für Mitwirkende | 4 |
 
-Der Bereich **Führung** (`doc/en/us/help/leadership/`) ist für Projektleiter geschrieben, doch mehrere Seiten sind
+Der Bereich **Führung** (`doc/eng-us/help/leadership/`) ist für Projektleiter geschrieben, doch mehrere Seiten sind
 auch für Sie gedacht: [Was Exponential ist: die Produktfamilie](../fuehrung/was-exponential-ist.md),
 [Zusammenarbeiten](../fuehrung/zusammenarbeiten.md),
 [Zur Führungskraft in der Exponential-Community werden](../fuehrung/community-leiter-werden.md) und
@@ -150,18 +150,18 @@ Installation, über die Sie selbst verfügen.
 | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) | Die gemeinnützige Organisation, die Produktfamilie und [die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) erklären |
 | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) | Wissen, wie jeder Bildschirm einer Demo heißt |
 | [Der Layout-Editor](../layout-editor.md) | Zeigen, wie Redakteure Seiten aufbauen |
-| [Sprachen](../sprachen.md) und [Sprachen in Exponential](../../../en/us/languages.md) | Mit den echten Zahlen über mehrsprachige Sites sprechen |
+| [Sprachen](../sprachen.md) und [Sprachen in Exponential](../../../eng-us/languages.md) | Mit den echten Zahlen über mehrsprachige Sites sprechen |
 | [Datenbankunterstützung](../datenbankunterstuetzung.md) | „Welche Datenbank?“ beantworten |
 | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) | „Worauf läuft es?“ beantworten |
 | [Sicherheitshärtung](../sicherheitshaertung.md) | Sicherheitsfragen mit den eigenen Worten des Projekts beantworten |
-| [Das Hilfesystem](../../../en/us/features/6.0/help-system.md) | Zeigen, dass die Dokumentation ins Produkt eingebaut, durchsuchbar und als PDF herunterladbar ist |
+| [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) | Zeigen, dass die Dokumentation ins Produkt eingebaut, durchsuchbar und als PDF herunterladbar ist |
 | [Freie Dokumentation](../freie-dokumentation.md) | Erklären, dass Kunden diese Hilfe kopieren und anpassen dürfen |
 | [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md) | Erklären, wie Fehler und Sicherheitsprobleme gemeldet werden |
 | [Das Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md) | Wissen, was neu ist |
-| [Das Glossar](../../../en/us/glossary.md) | Einen Begriff nachschlagen, bevor Sie ihn verwenden |
+| [Das Glossar](../../../eng-us/glossary.md) | Einen Begriff nachschlagen, bevor Sie ihn verwenden |
 
 > **Tipp**
-> Jede Hilfeseite lässt sich auf der Seite selbst als PDF herunterladen („Als PDF herunterladen“, [Das Hilfesystem](../../../en/us/features/6.0/help-system.md)).
+> Jede Hilfeseite lässt sich auf der Seite selbst als PDF herunterladen („Als PDF herunterladen“, [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)).
 > Da die Hilfe freie Dokumentation unter der GNU FDL 1.3 ist, dürfen Sie diese PDFs an Interessenten weitergeben.
 > Lassen Sie bei jeder Kopie die Copyright-Vermerke und den Lizenzhinweis stehen und legen Sie eine Kopie der Lizenz
 > bei; das PDF endet mit dem Lizenzhinweis der Seite. Die vollständigen Bedingungen stehen unter

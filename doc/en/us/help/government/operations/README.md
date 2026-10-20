@@ -13,7 +13,7 @@ This part of the Governments section is for the people who keep a public-sector 
 the in-house IT team, the web team, the service owner and the project manager who answers to a change board or an
 auditor. It explains how Exponential is hosted, kept available, backed up, monitored, upgraded and governed, and how
 staff permissions and editorial approvals are set up. Every page is built on the installation's own documentation:
-the guides in `doc/en/us/guides/`, the feature pages in `doc/en/us/features/6.0/`, the installation book in `doc/en/us/install/` and the
+the guides in `doc/eng-us/guides/`, the feature pages in `doc/eng-us/features/6.0/`, the installation book in `doc/eng-us/install/` and the
 pages written for hosting companies in [Hosting](../../hosting/hosting-companies-start-here.md). Those pages are
 linked, not repeated; the pages here add what changes when the operator is a public body: change boards, procurement
 rules, continuity duties, audits and the expectation that everything is recorded.

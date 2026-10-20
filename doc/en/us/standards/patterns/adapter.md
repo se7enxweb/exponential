@@ -37,7 +37,7 @@ Makes one interface usable through another: wrappers around libraries, bridges b
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expAuditBridge` | class | `kernel/classes/audit/bridge/expauditbridge.php:24` | The ezpEvent bridge of the audit (doc/en/us/bc/6.0/audit.md, "The ezpEvent bridge", Z3): kernel and extension events that already exist (ezpEvent::getInsta… | – |
+| `expAuditBridge` | class | `kernel/classes/audit/bridge/expauditbridge.php:24` | The ezpEvent bridge of the audit (doc/eng-us/bc/6.0/audit.md, "The ezpEvent bridge", Z3): kernel and extension events that already exist (ezpEvent::getInsta… | – |
 
 ### lib/ezsession (1)
 

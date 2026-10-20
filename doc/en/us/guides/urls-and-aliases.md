@@ -370,4 +370,4 @@ already strip `!`, dots and separators at the end, so for them the setting chang
 - `design/admin4/templates/url/list.tpl`, `search/stats.tpl`, `content/urlalias_global.tpl`,
   `content/urlalias_wildcard.tpl` and their copies in `design/admin`
 - `settings/site.ini [SearchSettings] LogSearchStats`, `settings/admininterface.ini [PaginationSettings]`
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#6-october-2026-links-url-aliases-wildcards-and-search-statistics)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md#6-october-2026-links-url-aliases-wildcards-and-search-statistics)

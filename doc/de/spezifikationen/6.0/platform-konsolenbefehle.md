@@ -4,7 +4,7 @@ Diese Seite führt die Namen der Konsolenbefehle der auf Symfony basierenden Exp
 Hauptnamen mit `exponential:`, die alten Namen, die als Aliase erhalten bleiben, und die Optionen der Befehle, die Sie am
 häufigsten verwenden. Lesen Sie sie, wenn Sie Cron-Einträge, Bereitstellungsskripte oder Betriebshandbücher für ein
 Plattformprojekt schreiben. Sie behandelt nicht `./console` und die Skripte `bin/php/*` des Legacy-Kernels; diese sind unter
-[Konsole](../../../en/us/bc/6.0/console.md) beschrieben.
+[Konsole](../../../eng-us/bc/6.0/console.md) beschrieben.
 
 Eingeführt am 2026-04-07 (Kernel, Legacy-Bridge) und im Skeleton am 2026-04-10 dokumentiert.
 
@@ -37,7 +37,7 @@ mit `setName()` und behält den alten über den Mechanismus für veraltete Alias
 In Platform v5 kommen dieselben Namen aus dem Kernel-Paket `se7enxweb/exponential-platform-dxp-core`, der Version, die
 der Nexus-Starter und das DXP-Skeleton installieren. Dieses Paket fügt außerdem `exponential:check-urls`,
 `exponential:content-type-group:set-system` und den Installationstyp `exponential-media` hinzu
-([Nexus-Starter](../../../en/us/features/6.0/platform-nexus-starter.md)). Sein Repository ist nicht Teil des Änderungsverzeichnisses,
+([Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md)). Sein Repository ist nicht Teil des Änderungsverzeichnisses,
 daher stammen die beiden mit „v5“ markierten Zeilen aus der Anleitung des Skeletons und dem installierten Paket.
 
 | Hauptname | Alter Name | Zweck |
@@ -118,8 +118,8 @@ wurde `assets-install`. Die alten Schreibweisen mit Unterstrich sind die Aliase.
 
 ## Verwandte Seiten
 
-- Upgrade-Hinweise: [Paket-Forks und umbenannte Befehle](../../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)
+- Upgrade-Hinweise: [Paket-Forks und umbenannte Befehle](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
 - Spezifikationen: [Paketübersicht der Plattform](platform-paketzuordnung.md), [SQLite-Installer der Plattform](platform-sqlite-installer.md), [Legacy-Bridge-Bundle](legacy-bridge-bundle.md)
-- Funktionen: [Legacy-Bridge](../../../en/us/features/6.0/legacy-bridge.md), [DXP-Skeleton](../../../en/us/features/6.0/platform-dxp-skeleton.md), [Nexus-Starter](../../../en/us/features/6.0/platform-nexus-starter.md), [Administrationsoberfläche der Plattform](../../../en/us/features/6.0/platform-admin-ui-fork.md), [Layouts auf der Plattform](../../../en/us/features/6.0/platform-layouts-core-fork.md), [Framework-Forks für PHP 8.5](../../../en/us/features/6.0/platform-php85-framework-forks.md), [Site-Bundles](../../../en/us/features/6.0/platform-site-bundles.md), [SQLite für Exponential Platform](../../../en/us/features/6.0/platform-sqlite-install.md), [Datenbankverwaltung AdminNeo](../../../en/us/features/6.0/adminneo-database-manager.md)
+- Funktionen: [Legacy-Bridge](../../../eng-us/features/6.0/legacy-bridge.md), [DXP-Skeleton](../../../eng-us/features/6.0/platform-dxp-skeleton.md), [Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md), [Administrationsoberfläche der Plattform](../../../eng-us/features/6.0/platform-admin-ui-fork.md), [Layouts auf der Plattform](../../../eng-us/features/6.0/platform-layouts-core-fork.md), [Framework-Forks für PHP 8.5](../../../eng-us/features/6.0/platform-php85-framework-forks.md), [Site-Bundles](../../../eng-us/features/6.0/platform-site-bundles.md), [SQLite für Exponential Platform](../../../eng-us/features/6.0/platform-sqlite-install.md), [Datenbankverwaltung AdminNeo](../../../eng-us/features/6.0/adminneo-database-manager.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)
-- Geschichte: [Überblick über das Ökosystem](../../../en/us/history/ecosystem.md), [Monate des Ökosystems](../../../en/us/history/ecosystem/months/2026-04.md), [Änderungsverzeichnis](../../../en/us/history/ledger/README.md); Repositorys [ezplatform-kernel](../../../en/us/history/ecosystem/ezplatform-kernel.md), [legacyBridge](../../../en/us/history/ecosystem/legacyBridge.md), [ibexa-legacy-bridge---7x](../../../en/us/history/ecosystem/ibexa-legacy-bridge---7x.md), [exponential-platform-dxp-skeleton](../../../en/us/history/ecosystem/exponential-platform-dxp-skeleton.md)
+- Geschichte: [Überblick über das Ökosystem](../../../eng-us/history/ecosystem.md), [Monate des Ökosystems](../../../eng-us/history/ecosystem/months/2026-04.md), [Änderungsverzeichnis](../../../eng-us/history/ledger/README.md); Repositorys [ezplatform-kernel](../../../eng-us/history/ecosystem/ezplatform-kernel.md), [legacyBridge](../../../eng-us/history/ecosystem/legacyBridge.md), [ibexa-legacy-bridge---7x](../../../eng-us/history/ecosystem/ibexa-legacy-bridge---7x.md), [exponential-platform-dxp-skeleton](../../../eng-us/history/ecosystem/exponential-platform-dxp-skeleton.md)

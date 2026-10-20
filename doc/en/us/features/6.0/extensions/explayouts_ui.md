@@ -150,7 +150,7 @@ the real reference counts.
 - [Exponential Layouts (bc note)](../../../bc/6.0/LAYOUTS.md)
 - [Specification](../../../specifications/6.0/explayouts-ui-api.md)
 - [Template editor: create, order and edit overrides](../template-editor-overrides.md)
-- [Chronicle](../../../history/extensions/explayouts_ui.md) and [release notes](../../../../../changelogs/extensions/explayouts_ui.md)
+- [Chronicle](../../../history/extensions/explayouts_ui.md) and [release notes](../../../../changelogs/extensions/explayouts_ui.md)
 - [Change ledger](../../../history/ledger/explayouts_ui.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-07](../../../history/extensions/months/2026-07.md), [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md) (all extensions)

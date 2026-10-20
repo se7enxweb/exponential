@@ -31,8 +31,8 @@ words what the license lets you do.
 ## What the notice covers
 
 The notice covers the documentation the Exponential project wrote and maintains in the `doc/` directory of the
-repository: the help pages (`doc/en/us/help/`), the guides, the installation chapters, the feature, upgrade and
-specification documents of the 6.x line (`doc/en/us/features/6.0/`, `doc/en/us/bc/6.0/`, `doc/en/us/specifications/6.0/`), the
+repository: the help pages (`doc/eng-us/help/`), the guides, the installation chapters, the feature, upgrade and
+specification documents of the 6.x line (`doc/eng-us/features/6.0/`, `doc/eng-us/bc/6.0/`, `doc/eng-us/specifications/6.0/`), the
 changelogs of 6.x and of the extensions, the history, and the other pages at the top of `doc/`. This includes
 every 6.x page contributed through pull requests by the Exponential contributors.
 
@@ -49,16 +49,16 @@ repository (the GNU General Public License, version 2), and the copyright notice
 The help shows a different notice on these pages. They are:
 
 - the feature, upgrade, specification and changelog documents of the versions before 6.0
-  (`doc/en/us/features/2.x` to `doc/en/us/features/5.x`, `doc/en/us/bc/4.x` and `doc/en/us/bc/5.x`, `doc/en/us/specifications/3.x`,
-  `doc/en/us/specifications/4.x` and `doc/en/us/specifications/trunk`, `doc/changelogs/2.9` to `doc/changelogs/5.x`, and
+  (`doc/eng-us/features/2.x` to `doc/eng-us/features/5.x`, `doc/eng-us/bc/4.x` and `doc/eng-us/bc/5.x`, `doc/eng-us/specifications/3.x`,
+  `doc/eng-us/specifications/4.x` and `doc/eng-us/specifications/trunk`, `doc/changelogs/2.9` to `doc/changelogs/5.x`, and
   `doc/changelogs/README.md`);
-- `doc/en/us/shop/`, `doc/en/us/release-overview` and `doc/en/us/standards/header.txt`.
+- `doc/eng-us/shop/`, `doc/eng-us/release-overview` and `doc/eng-us/standards/header.txt`.
 
-The example configuration files `doc/en/us/examples/htaccess` and `doc/en/us/examples/ezpublish.conf` were rewritten for
+The example configuration files `doc/eng-us/examples/htaccess` and `doc/eng-us/examples/ezpublish.conf` were rewritten for
 Exponential 6 and are free documentation like the rest; the rewrite rules in them are those of `.htaccess_root`, part
 of the software and under its license.
 
-`doc/en/us/branch-overview.md` is new documentation under the GNU Free Documentation License, except its section "Historical branches
+`doc/eng-us/branch-overview.md` is new documentation under the GNU Free Documentation License, except its section "Historical branches
 (original SVN, 3.x)", which keeps the branch records of the original SVN repository under the terms they came with and
 says so in the page.
 

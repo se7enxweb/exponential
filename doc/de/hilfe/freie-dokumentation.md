@@ -10,15 +10,15 @@ type: help
 # Freie Dokumentation: Nutzen Sie sie, um sich selbst und anderen zu helfen
 
 Die Hilfe, die Sie gerade lesen, ist **freie Dokumentation**. Sie steht unter der
-[GNU Free Documentation License](../../en/us/LICENSE-GFDL-1.3.txt), Version 1.3 oder jeder späteren Version, der Lizenz, die
+[GNU Free Documentation License](../../eng-us/LICENSE-GFDL-1.3.txt), Version 1.3 oder jeder späteren Version, der Lizenz, die
 die Free Software Foundation für Handbücher und Anleitungen geschrieben hat. „Frei“ bezieht sich hier auf Freiheit,
 nicht auf den Preis: Sie dürfen diese Seiten nutzen, weitergeben und verbessern, und das dürfen auch alle, an die
 Sie sie weitergeben.
 
 Diese Seite erklärt in einfachen Worten, was Ihnen das erlaubt. Sie ist eine Zusammenfassung, keine Rechtsberatung:
-Maßgeblich ist der Text der Lizenz. Lesen Sie ihn in der Hilfe ([GNU Free Documentation License 1.3](../../en/us/LICENSE-GFDL-1.3.txt))
+Maßgeblich ist der Text der Lizenz. Lesen Sie ihn in der Hilfe ([GNU Free Documentation License 1.3](../../eng-us/LICENSE-GFDL-1.3.txt))
 oder im Web unter <https://www.gnu.org/licenses/fdl-1.3.html>. Wer das Urheberrecht hält und welche älteren Seiten
-andere Bedingungen behalten, steht unter [Die Lizenz dieser Dokumentation](../../en/us/README-LICENSE.md).
+andere Bedingungen behalten, steht unter [Die Lizenz dieser Dokumentation](../../eng-us/README-LICENSE.md).
 
 ## Was Sie tun dürfen
 
@@ -37,7 +37,7 @@ Teams einen ausgedruckten Satz. Geben Sie dabei mit jeder Kopie weiter:
 
 - die **Urheberrechtsvermerke** der Seiten,
 - den **Lizenzhinweis**, den Absatz, der besagt, dass die GNU Free Documentation License gilt, und
-- eine **Kopie der Lizenz** selbst (die Datei `doc/en/us/LICENSE-GFDL-1.3.txt` oder den Text der Lizenz im selben
+- eine **Kopie der Lizenz** selbst (die Datei `doc/eng-us/LICENSE-GFDL-1.3.txt` oder den Text der Lizenz im selben
   Dokument).
 
 Fügen Sie keine eigenen Bedingungen hinzu und verwenden Sie keine technischen Maßnahmen (zum Beispiel einen
@@ -80,7 +80,7 @@ daraus erstellte Fassungen.
 ### Zitieren
 
 Verweisen Sie auf eine Seite mit ihrem Titel und ihrer Adresse in der Hilfe oder mit ihrer Datei im Repository
-(zum Beispiel `doc/en/us/help/getting-started.md`). Ein kurzes Zitat mit Quellenangabe ist nach dem Urheberrecht in
+(zum Beispiel `doc/eng-us/help/getting-started.md`). Ein kurzes Zitat mit Quellenangabe ist nach dem Urheberrecht in
 der Regel ohnehin zulässig; wenn Sie ganze Seiten oder große Teile kopieren, beachten Sie die oben genannten
 Bedingungen.
 
@@ -109,4 +109,4 @@ erklärt, wie diese Rechte zurückkehren, sobald das Problem behoben ist.
 
 Einige ältere Dateien in `doc/`, übernommen aus der Dokumentation der ursprünglichen Software von eZ Systems, stehen
 nicht unter dieser Lizenz; die Hilfe zeigt auf diesen Seiten ihren eigenen Hinweis.
-[Die Lizenz dieser Dokumentation](../../en/us/README-LICENSE.md) listet sie auf.
+[Die Lizenz dieser Dokumentation](../../eng-us/README-LICENSE.md) listet sie auf.

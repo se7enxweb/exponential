@@ -122,4 +122,4 @@ block `[SolrSettings]`, scope: the installation:
 - [Velocity engines](../../bc/6.0/velocity-engines.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

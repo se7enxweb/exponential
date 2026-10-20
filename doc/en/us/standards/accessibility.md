@@ -55,7 +55,7 @@ the `design` test suite of `phpunit.xml` (`tests/tests/design/`), which the PHPU
 | 1.4.13 Content on hover or focus | Tooltips are hoverable, persistent and dismissible with Escape | [admin4 design](../features/6.0/admin4-design.md) |
 | 2.1.1 Keyboard, 2.4.3 Focus order | Node tabs follow the APG tabs pattern (arrow keys, Home, End); the content tree toggle is a named button with `aria-expanded`; context menus work from the keyboard; the header has the same Tab order in admin4 and admin4l | `tests/tests/design/AdminKeyboardTest.php`, `AdminContextMenuTest.php`, `AdminHeaderTabOrderTest.php`; [Keyboard shortcuts](../help/keyboard-shortcuts.md) |
 | 2.4.7 Focus visible | One shared focus ring: `.a4-page :focus-visible`, `.a4-focus:focus-visible` and `.a4-btn:focus-visible` in `components.css` (3 px outline in `--a4-ring`) | `design/admin4/stylesheets/components.css` |
-| 2.5.8 Target size (minimum) | Targets are at least 24 x 24 px; where the drawn control is smaller an invisible `::after` enlarges the target | [admin4 styling](../bc/6.0/admin4-styling.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
+| 2.5.8 Target size (minimum) | Targets are at least 24 x 24 px; where the drawn control is smaller an invisible `::after` enlarges the target | [admin4 styling](../bc/6.0/admin4-styling.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md) |
 | 3.1.1 Language of page | `<html lang="...">` from the siteaccess locale in every admin pagelayout | `design/admin4/templates/pagelayout.tpl` |
 | 1.3.2 Meaningful sequence (bidirectional text) | Right-to-left interface languages set `dir="rtl"` on `<html>`; names are isolated with `<bdi>`; values read left to right keep their order | [Right-to-left languages](../features/6.0/right-to-left.md), `tests/tests/design/AdminRightToLeftTest.php` |
 | User preferences (not a WCAG criterion, but supports 1.4.3 and 2.3.3) | Light, dark and "system" mode (`prefers-color-scheme`, `design/admin4/javascript/a4_head.js`); `@media (forced-colors: active)` and `@media (prefers-reduced-motion: reduce)` rules in `design/admin4/stylesheets/admin4.css` | `tests/tests/design/AdminThemeSwitchTest.php` |
@@ -69,7 +69,7 @@ about 400 `aria-labelledby`, 390 `aria-hidden`, 380 `aria-label`, 215 `aria-desc
 65 `aria-live` uses.
 
 Automated checks with the axe engine are run by hand during reviews, not in CI. Their results are recorded in the
-[6.0.15 changelog](../../../changelogs/6.0/6.0.15.md): for example "axe reports no serious finding in the page frame on 10
+[6.0.15 changelog](../../changelogs/6.0/6.0.15.md): for example "axe reports no serious finding in the page frame on 10
 classic pages at 1440 px and at 960 px with 200 % zoom" (classic admin, #522), 13 serious findings on the standard
 content edit form fixed, a target-size failure and a forced-colors contrast failure fixed.
 

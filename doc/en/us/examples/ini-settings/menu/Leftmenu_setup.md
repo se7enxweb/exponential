@@ -37,7 +37,7 @@ Name=setup
 > link as before.  
 > The groups ai and updates hold the links of extensions: a key listed there whose extension is not active shows  
 > nothing, and a group without a link the user may open is not drawn. An extension puts its own link in a group with  
-> GroupLinks\_<group>\[\]=<key> in its menu.ini.append.php (doc/en/us/features/6.0/admin4-design.md, "Setup overview").  
+> GroupLinks\_<group>\[\]=<key> in its menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md, "Setup overview").  
 
 Default: a list of 9: `content_model`, `site`, `design`, `workflow`, `users`, `audit`, `system`, `ai`, `updates`.
 
@@ -345,7 +345,7 @@ MegaMenuLinks[]=git_manager
 >                                   (design/admin/parts/setup/menu) like LinkNames\[\]  
 >   LinkFigureTemplates\[<key>\]=design:<path>.tpl  a template that draws the tile's figure, included with  
 >                                   figure\_key=<key> for a shown tile only; empty or not design: draws none  
-> An extension sets them for its own link in its menu.ini.append.php (doc/en/us/features/6.0/admin4-design.md).  
+> An extension sets them for its own link in its menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
 Default: a hash of 53: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
 
@@ -436,19 +436,19 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 
 > No PolicyList\_overview\[\]: the view opens with any one of the setup module's functions (kernel/setup/module.php),  
 > which one PolicyList entry cannot say; CheckViewAccess asks the view itself.  
-> The audit settings and archives (doc/en/us/bc/6.0/audit.md, "Placement"), only with audit/manage  
-> The content finder (doc/en/us/features/6.0/content-finder.md): find content by id or path, only with contentfinder/search  
-> The content checks (doc/en/us/features/6.0/content-checks.md): unreferenced objects and broken relations, each only  
+> The audit settings and archives (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/manage  
+> The content finder (doc/eng-us/features/6.0/content-finder.md): find content by id or path, only with contentfinder/search  
+> The content checks (doc/eng-us/features/6.0/content-checks.md): unreferenced objects and broken relations, each only  
 > with its policy  
 > The cronjobs console. LinkNames is what the entry reads as: without it the  
 > menu falls back to the key, and "cronjobs" is not a label.  
-> The log viewer (doc/en/us/features/6.0/log-viewer.md): follow, search and cross-reference the log files, only with setup/logs  
+> The log viewer (doc/eng-us/features/6.0/log-viewer.md): follow, search and cross-reference the log files, only with setup/logs  
 > The Design tab's page (its URL\[default\]), in the group that stands for the tab (GroupTabs\[design\]): shown only  
 > while the tab is not in the top menu  
 > Removed from 4.3. Enable if you have special requirements.  
 > Links\[global\_setting\]=content/edit/52  
 > PolicyList\_global\_setting\[\]=54  
-> The translation fallbacks of every interface language (doc/en/us/languages.md), read only  
+> The translation fallbacks of every interface language (doc/eng-us/languages.md), read only  
 > The e-mail preferences for administrators: status, categories, suppression list, consent log  
 > Removed from 4.3. Enable if you have special requirements.  
 > Links\[look\_and\_feel\]=content/edit/54  
@@ -460,7 +460,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > Disabled by default in 4.3 as it is also present in user account tab.  
 > Links\[roles\_and\_policies\]=role/list  
 > PolicyList\_roles\_and\_policies\[\]=role/\*  
-> Check user accounts (doc/en/us/features/6.0/user-hygiene.md): never signed in, not seen for long, disabled, locked,  
+> Check user accounts (doc/eng-us/features/6.0/user-hygiene.md): never signed in, not seen for long, disabled, locked,  
 > orphaned, a shared e-mail address; only with user/hygiene. The same key is in \[Leftmenu\_user\].  
 > The rows of ezsite\_data, read only (Setup > Site data)  
 > The Help center, the start page of the help (exphelp/dashboard)  

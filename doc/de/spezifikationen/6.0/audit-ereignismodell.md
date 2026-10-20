@@ -3,8 +3,8 @@
 Diese Seite ist die technische Zusammenfassung des am 2026-10-02 eingeführten Audit-Protokolls: Ereignisnamen, das
 Datensatzformat, Kanäle, Dateien, Checkpoints, Archive, der Datenbankindex, die Klassen, die Einstellungen und die
 Erweiterungspunkte. Lesen Sie sie, wenn Sie das Audit-Protokoll betreiben, es an ein Log-System anbinden oder Ereignisse
-aus Ihrer eigenen Extension aufzeichnen. Der maßgebliche, deutlich längere Text ist [Audit](../../../en/us/bc/6.0/audit.md); die
-Einführung für Anwender ist [das Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md).
+aus Ihrer eigenen Extension aufzeichnen. Der maßgebliche, deutlich längere Text ist [Audit](../../../eng-us/bc/6.0/audit.md); die
+Einführung für Anwender ist [das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md).
 
 ## Kurz gesagt
 
@@ -121,6 +121,6 @@ dahin geschriebenen Dateien werden indiziert.
 
 ## Verwandte Seiten
 
-- [Audit](../../../en/us/bc/6.0/audit.md), [das Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md), [Remote-Dienste](../../../en/us/features/6.0/remote-services-expservices.md)
+- [Audit](../../../eng-us/bc/6.0/audit.md), [das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md), [Remote-Dienste](../../../eng-us/features/6.0/remote-services-expservices.md)
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](ausfuehrbare-befehle-cronjobs-ansichten.md), [Spezifikation von expservices](expservices.md)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik Oktober 2026](../../../en/us/history/2026/2026-10.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)

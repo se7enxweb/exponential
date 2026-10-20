@@ -137,7 +137,7 @@ Erweiterungen fügen weitere hinzu. Ordnen Sie ihnen die Worte der Redakteure zu
 
 Erweiterungen fügen weitere hinzu, zum Beispiel Tags (`eztags`), Kartenstandorte (`ezgmaplocation`), Sternebewertungen
 (`ezstarrating`) und Spamschutz für Formulare (`recaptcha`, `hcaptcha`)
-([Erweiterungen, Themes und Pakete](../../../en/us/features/6.0/extensions/README.md)).
+([Erweiterungen, Themes und Pakete](../../../eng-us/features/6.0/extensions/README.md)).
 
 Entscheiden Sie für jedes Attribut:
 
@@ -163,9 +163,9 @@ Fragen:
 2. **Beziehungen.** Welche Objekte verweisen auf welche (ein Artikel auf seinen Autor, eine Veranstaltung auf ihren
    Veranstaltungsort)? Jede davon ist ein Attribut für eine Objektbeziehung. Entscheiden Sie, was geschieht, wenn das
    Ziel entfernt wird; die Inhaltsprüfungen listen danach „defekte Beziehungen“ auf
-   ([Inhaltsprüfungen](../../../en/us/features/6.0/content-checks.md)).
+   ([Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md)).
 3. **Taxonomie.** Ist die Klassifizierung frei (Schlagwörter) oder kontrolliert (Tags, die jemand verwaltet)?
-   Kontrollierte Tags sind `eztags` ([eztags](../../../en/us/features/6.0/extensions/eztags.md)); prüfen Sie zuerst die
+   Kontrollierte Tags sind `eztags` ([eztags](../../../eng-us/features/6.0/extensions/eztags.md)); prüfen Sie zuerst die
    Datenbank, denn `eztags` ist unter MongoDB nicht nutzbar ([Grenzen von MongoDB](../datenbankunterstuetzung.md#grenzen-von-mongodb)).
 4. **Medien.** Wo liegen Bilder und Dateien: in der Medienbibliothek, unter den Inhalten, die sie verwenden, oder an
    beiden Stellen?

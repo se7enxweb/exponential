@@ -34,7 +34,7 @@ This repository received only funding metadata in the Exponential 6 period.
 
 ## Related pages
 
-- [Chronicle](../../../history/extensions/AdminAid.md) and [release notes](../../../../../changelogs/extensions/AdminAid.md)
+- [Chronicle](../../../history/extensions/AdminAid.md) and [release notes](../../../../changelogs/extensions/AdminAid.md)
 - [Change ledger](../../../history/ledger/AdminAid.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-01](../../../history/extensions/months/2024-01.md), [2026-03](../../../history/extensions/months/2026-03.md)

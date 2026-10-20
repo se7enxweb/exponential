@@ -84,5 +84,5 @@ In the first release the script was called `main.js` and had to be enabled by ha
 - [Copy selected sub-items](subitems-copy-selected.md), [hide and unhide selected sub-items](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md), [sub-items list: columns, presets and CSV export](subitems-table-options.md)
 - [Paging and page sizes](admin-list-paging.md)
 - [The YUI removal](../../bc/6.0/yui-removal.md), which moved all admin designs to jQuery
-- Changelogs: [6.0.4](../../../../changelogs/6.0/6.0.4.md), [6.0.6](../../../../changelogs/6.0/6.0.6.md), [6.0.10](../../../../changelogs/6.0/6.0.10.md)
+- Changelogs: [6.0.4](../../../changelogs/6.0/6.0.4.md), [6.0.6](../../../changelogs/6.0/6.0.6.md), [6.0.10](../../../changelogs/6.0/6.0.10.md)
 - History: [August 2024](../../history/2024/2024-08.md), [October 2024](../../history/2024/2024-10.md), [November 2024](../../history/2024/2024-11.md), [January 2025](../../history/2025/2025-01.md), [June 2025](../../history/2025/2025-06.md), [June 2026, second half](../../history/2026/2026-06b.md)

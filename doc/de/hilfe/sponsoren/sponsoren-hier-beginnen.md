@@ -72,6 +72,6 @@ Kein GitHub-Konto, oder lieber ein anderer Weg? Siehe [Weitere Wege, Geld zu geb
 ## Verwandte Seiten
 
 - [Unterstützer: Hier beginnen](../unterstuetzer/unterstuetzer-hier-beginnen.md)
-- [Partner: Hier beginnen](../../../en/us/help/partners/partners-start-here.md)
+- [Partner: Hier beginnen](../../../eng-us/help/partners/partners-start-here.md)
 - [Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

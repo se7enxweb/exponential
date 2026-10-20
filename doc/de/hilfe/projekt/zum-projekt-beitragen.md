@@ -54,7 +54,7 @@ veröffentlicht wird. Im Einzelnen:
 6. **Eröffnen Sie den Pull-Request** und beschreiben Sie, was Sie geändert haben, warum und wie Sie es getestet
    haben. Nennen Sie das Issue, das er behebt (`Fixes #123`).
 
-Die Continuous Integration des Projekts läuft bei jedem Pull-Request ([CI](../../../en/us/bc/6.0/ci.md)). Das Projekt mergt
+Die Continuous Integration des Projekts läuft bei jedem Pull-Request ([CI](../../../eng-us/bc/6.0/ci.md)). Das Projekt mergt
 jeden Pull-Request und behält die Commits der Mitwirkenden so, wie sie geschrieben wurden; was zu korrigieren ist,
 wird darauf aufbauend korrigiert
 ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#mitwirkende-und-pull-requests)).
@@ -83,7 +83,7 @@ Das [Exponential Translation Project](https://exponential.earth/about/etp) (ETP)
 fertige Übersetzung hat.
 
 In diesem Repository sind die Übersetzungen die Dateien `share/translations/<locale>/translation.ts`; den Stand jeder
-Sprache und welche vollständig sind, finden Sie unter [Sprachen](../../../en/us/languages.md). Wie Sie übersetzen und testen:
+Sprache und welche vollständig sind, finden Sie unter [Sprachen](../../../eng-us/languages.md). Wie Sie übersetzen und testen:
 [Übersetzungen beitragen](../unterstuetzer/uebersetzungen-beitragen.md).
 
 ## Dokumentation
@@ -102,7 +102,7 @@ Die offizielle Roadmap sucht Freiwillige für zwei Aufgaben ([Die Roadmap](roadm
   auf Packagist. Sie hinzuzufügen ist pro Erweiterung ein kleiner, klar umrissener Pull-Request
   ([Erweiterungen zurückgeben](../erweiterungen-zurueckgeben.md#4-composerjson-schreiben)).
 - **Site-Pakete**: Das Projekt möchte Site-Pakete aus der Community in der Liste des Setup-Assistenten
-  ([Ihr Site-Paket beitragen](../../../en/us/help/site-packages/contribute-your-site-package.md)).
+  ([Ihr Site-Paket beitragen](../../../eng-us/help/site-packages/contribute-your-site-package.md)).
 
 ## In der Community helfen
 
@@ -110,7 +110,7 @@ Beantworten Sie Fragen in den Foren und Chats, schreiben Sie einen Artikel auf S
 defekten Link auf einer Website des Projekts im [Projekt-Tracker](https://github.com/se7enxweb/exponential-community/issues)
 oder erzählen Sie anderen von Exponential. Das kostet kein Geld und hält die Community lebendig. Weitere Ideen:
 [In der Community helfen](../unterstuetzer/in-der-community-helfen.md) und der
-[Bereich für Fürsprecher](../../../en/us/help/advocates/advocate-toolkit.md).
+[Bereich für Fürsprecher](../../../eng-us/help/advocates/advocate-toolkit.md).
 
 ## Verwandte Seiten
 

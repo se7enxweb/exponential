@@ -4,7 +4,7 @@ Diese Seite ist die Referenz für die Extension `xrowextract` (Export und Import
 Zustellung), Release-Linie 2.5 (2.5.0 bis 2.5.6, September bis Oktober 2026). Sie führt jede View, jede Richtlinie, jede Einstellung,
 jedes Feld einer Vorlage, jede Tabelle, jede Klasse und jede Kommandozeilenoption auf. Lesen Sie sie, wenn Sie Exporte für eine Site einrichten,
 Berechtigungen vergeben oder Exporte per Skript ausführen. Wie Sie die Extension benutzen, steht auf der
-[Funktionsseite](../../../en/us/features/6.0/extensions/xrowextract.md).
+[Funktionsseite](../../../eng-us/features/6.0/extensions/xrowextract.md).
 
 ## Beispiel: Artikel über die Kommandozeile exportieren
 
@@ -152,7 +152,7 @@ Bei der ersten Verwendung aus `share/db_schema.dba` angelegt (dem engine-neutral
 
 Seit 2.5.5 sind die Kommandozeilenskripte, der Cronjob-Teil und die Modul-Views
 Klassen, die von den Dateien aufgerufen werden (`Exponential\Command\Extension\Xrowextract\...`); siehe
-[Abstraktionen für CLI, Cronjobs und Views](../../../en/us/bc/6.0/cli_cronjob_view_abstractions.md).
+[Abstraktionen für CLI, Cronjobs und Views](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md).
 Das Verhalten hat sich nicht geändert.
 
 ## Kommandozeilenoptionen
@@ -179,6 +179,6 @@ Quellen, PHPStan Level 8, Unit-Tests, Voraussetzungen, CLI-, View- und POST-Test
 
 ## Siehe auch
 
-- [Funktionsseite](../../../en/us/features/6.0/extensions/xrowextract.md), [Verhaltensänderungen der Extensions](../../../en/us/bc/6.0/extensions-behaviour-changes.md), [Abstraktionen für CLI, Cronjobs und Views](../../../en/us/bc/6.0/cli_cronjob_view_abstractions.md)
-- [Chronik](../../../en/us/history/extensions/xrowextract.md), [Release Notes](../../../changelogs/extensions/xrowextract.md)
-- Monate: [2024-01](../../../en/us/history/extensions/months/2024-01.md), [2024-02](../../../en/us/history/extensions/months/2024-02.md), [2024-03](../../../en/us/history/extensions/months/2024-03.md), [2024-04](../../../en/us/history/extensions/months/2024-04.md), [2024-07](../../../en/us/history/extensions/months/2024-07.md), [2024-08](../../../en/us/history/extensions/months/2024-08.md), [2026-03](../../../en/us/history/extensions/months/2026-03.md), [2026-09](../../../en/us/history/extensions/months/2026-09.md), [2026-10](../../../en/us/history/extensions/months/2026-10.md)
+- [Funktionsseite](../../../eng-us/features/6.0/extensions/xrowextract.md), [Verhaltensänderungen der Extensions](../../../eng-us/bc/6.0/extensions-behaviour-changes.md), [Abstraktionen für CLI, Cronjobs und Views](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
+- [Chronik](../../../eng-us/history/extensions/xrowextract.md), [Release Notes](../../../changelogs/extensions/xrowextract.md)
+- Monate: [2024-01](../../../eng-us/history/extensions/months/2024-01.md), [2024-02](../../../eng-us/history/extensions/months/2024-02.md), [2024-03](../../../eng-us/history/extensions/months/2024-03.md), [2024-04](../../../eng-us/history/extensions/months/2024-04.md), [2024-07](../../../eng-us/history/extensions/months/2024-07.md), [2024-08](../../../eng-us/history/extensions/months/2024-08.md), [2026-03](../../../eng-us/history/extensions/months/2026-03.md), [2026-09](../../../eng-us/history/extensions/months/2026-09.md), [2026-10](../../../eng-us/history/extensions/months/2026-10.md)

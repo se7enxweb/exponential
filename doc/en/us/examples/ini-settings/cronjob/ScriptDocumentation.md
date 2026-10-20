@@ -21,9 +21,9 @@ Never edit `settings/cronjob.ini` itself: an update replaces it. Put the setting
 
 > A "Docs" link beside a script at Setup > Cronjobs. A script names its documentation  
 > with the @link tag of its header (or of its class file), a URL or a path such as  
-> doc/en/us/guides/sessions.md. An installation can give or replace one per script, by the  
+> doc/eng-us/guides/sessions.md. An installation can give or replace one per script, by the  
 > file name as Scripts\[\] has it; none removes the link the header gives.  
-> Guide: doc/en/us/features/6.0/cronjobs-console.md  
+> Guide: doc/eng-us/features/6.0/cronjobs-console.md  
 > Link\[session\_gc.php\]=https://intranet.example.com/operations/sessions  
 > Link\[sitemap.php\]=none  
 

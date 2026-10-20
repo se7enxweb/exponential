@@ -50,7 +50,7 @@ See [YUI removal](../../../bc/6.0/yui-removal.md).
 
 - [jQuery 4 and YUI removal](../jquery4-and-yui-removal.md)
 - [Online editor on TinyMCE 8](../online-editor-tinymce8.md)
-- [Chronicle](../../../history/extensions/ezautosave.md) and [release notes](../../../../../changelogs/extensions/ezautosave.md)
+- [Chronicle](../../../history/extensions/ezautosave.md) and [release notes](../../../../changelogs/extensions/ezautosave.md)
 - [Change ledger](../../../history/ledger/ezautosave.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

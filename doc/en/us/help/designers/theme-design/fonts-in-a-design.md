@@ -39,7 +39,7 @@ design/mytheme/stylesheets/fonts.css
 ```
 
 The shipped rewrite rules serve `fonts/` of a design, in the kernel and in extensions, as static files
-(`.htaccess_root`; the Apache example `doc/en/us/examples/ezpublish.conf` has the same list). WOFF2 is enough for every current
+(`.htaccess_root`; the Apache example `doc/eng-us/examples/ezpublish.conf` has the same list). WOFF2 is enough for every current
 browser.
 
 ## Declaring the font

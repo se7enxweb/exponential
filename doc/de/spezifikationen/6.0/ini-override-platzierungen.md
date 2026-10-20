@@ -5,7 +5,7 @@ Geltungsbereiche, die Verzeichnisse je Siteaccess innerhalb von Extensions (hinz
 `124186d096` und `fc1a2f0a91`), die Platzierungsnamen, die angeben, woher ein Wert stammt, und die Konstanten, die die
 Suche verändern. Lesen Sie sie, wenn eine Einstellung nicht den erwarteten Wert annimmt oder wenn Sie Einstellungen je Site
 innerhalb einer Extension ablegen. Die aufgabenorientierte Seite ist
-[Einstellungen je Site innerhalb von Extensions](../../../en/us/features/6.0/multi-site-ini-overrides.md).
+[Einstellungen je Site innerhalb von Extensions](../../../eng-us/features/6.0/multi-site-ini-overrides.md).
 
 ## Kurz gesagt
 
@@ -75,6 +75,6 @@ Geltungsbereichen.
 
 ## Verwandte Seiten
 
-- [Einstellungen je Site innerhalb von Extensions](../../../en/us/features/6.0/multi-site-ini-overrides.md), [Extensions in mehr als einem Ordner](../../../en/us/features/6.0/additional-extension-directories.md)
-- [Konsole: exp:ini](../../../en/us/features/6.0/exp-ini-command.md) (liest und schreibt Einstellungen in denselben Dateien), [INI behält Kommentare bei](../../../en/us/bc/6.0/eZINI_PRESERVES_COMMENTS.md)
-- [Changelog 6.0.12](../../../changelogs/6.0/6.0.12.md), [Chronik: Januar 2026](../../../en/us/history/2026/2026-01.md)
+- [Einstellungen je Site innerhalb von Extensions](../../../eng-us/features/6.0/multi-site-ini-overrides.md), [Extensions in mehr als einem Ordner](../../../eng-us/features/6.0/additional-extension-directories.md)
+- [Konsole: exp:ini](../../../eng-us/features/6.0/exp-ini-command.md) (liest und schreibt Einstellungen in denselben Dateien), [INI behält Kommentare bei](../../../eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md)
+- [Changelog 6.0.12](../../../changelogs/6.0/6.0.12.md), [Chronik: Januar 2026](../../../eng-us/history/2026/2026-01.md)

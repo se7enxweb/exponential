@@ -32,8 +32,8 @@ leistet, was vereinbart wurde.
 ## Was das Projekt bei jeder Änderung prüft
 
 Das Kernel-Repository `se7enxweb/exponential` führt vier GitHub-Actions-Workflows aus `.github/workflows/` aus. Den
-Überblick über sie gibt [Kontinuierliche Integration](../../../en/us/bc/6.0/ci.md); die Prüfungen beschreibt
-[Qualitätsprüfungen](../../../en/us/features/6.0/quality-checks.md).
+Überblick über sie gibt [Kontinuierliche Integration](../../../eng-us/bc/6.0/ci.md); die Prüfungen beschreibt
+[Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md).
 
 | Workflow | Läuft bei | Was er prüft | Blockiert eine Änderung |
 |---|---|---|---|
@@ -45,20 +45,20 @@ Das Kernel-Repository `se7enxweb/exponential` führt vier GitHub-Actions-Workflo
 Was Sie als Führungskraft wissen sollten:
 
 - **Ein Pull-Request wird so getestet, als wäre er in `main` gemergt.** Ein Branch, der grün war, kann rot werden,
-  wenn sich `main` weiterbewegt ([CI](../../../en/us/bc/6.0/ci.md)).
+  wenn sich `main` weiterbewegt ([CI](../../../eng-us/bc/6.0/ci.md)).
 - **Kein Pfadfilter für PHPUnit.** Die Tests lesen auch Templates, Stylesheets, Skripte, Übersetzungen, Einstellungen
-  und Dokumentation, daher startet eine Änderung an jeder dieser Dateien die Suite ([Qualitätsprüfungen](../../../en/us/features/6.0/quality-checks.md#pull-requests)).
+  und Dokumentation, daher startet eine Änderung an jeder dieser Dateien die Suite ([Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md#pull-requests)).
 - **Mitwirkende werden nicht durch den Stil der Commit-Nachricht blockiert.** Ein Betreff außerhalb des Formats
   `Added:` / `Updated:` / `Fixed:` / `Removed:` / `Renamed:` ist bei Mitwirkenden eine Warnung; ein Fehler ist er nur
   für die eigenen Autoren des Projekts.
 - **Dieselben Prüfungen laufen lokal.** `make hooks` installiert Git-Hooks, die Syntax, Manifest, Codestil und
   Commit-Nachricht bei `git commit` prüfen und PHPStan bei `git push`; `make check` führt Lint, Manifest, phpcs und
-  phpstan so aus wie die CI ([Qualitätsprüfungen](../../../en/us/features/6.0/quality-checks.md)).
+  phpstan so aus wie die CI ([Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md)).
 
 ### Die Ausgangswerte der CI-Gesundheit
 
 Das Projekt hat am 17.10.2026 seine eigene CI für den Zeitraum vom 03.10.2026 bis zum 17.10.2026 gemessen, vor den
-Reparaturen jener Woche: 1.540 abgeschlossene Läufe, 61,7 % davon erfolgreich ([CI, „The baseline“](../../../en/us/bc/6.0/ci.md)).
+Reparaturen jener Woche: 1.540 abgeschlossene Läufe, 61,7 % davon erfolgreich ([CI, „The baseline“](../../../eng-us/bc/6.0/ci.md)).
 Die Seite empfiehlt, spätere Berichte mit diesen Zahlen zu vergleichen. Den Bericht selbst erzeugt
 `python3 .github/scripts/ci_health_report.py --days 14`. Verwenden Sie denselben Bericht für Ihre eigenen
 Repositorys, wenn sie auf GitHub Actions laufen: Er ist eine Möglichkeit, die Frage „Wie zuverlässig ist unsere
@@ -79,7 +79,7 @@ Pipeline?“ mit einer Zahl zu beantworten.
 | `quality` | die eigenen Codestil-Sniffs des Projekts |
 | `design` | die Designs der Administration: Gestaltungsregeln, Barrierefreiheit, Tastatur, CSP |
 
-Fakten aus [Qualitätsprüfungen](../../../en/us/features/6.0/quality-checks.md#run-only-the-tests-of-a-change):
+Fakten aus [Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md#run-only-the-tests-of-a-change):
 
 - Der vollständige Lauf umfasst „mehr als 10.000 Tests“ und dauert auf einem ausgelasteten Rechner lange.
 - Für eine alltägliche Änderung genügt es, die Testdateien auszuführen, die die berührten Dateien abdecken; man findet
@@ -100,11 +100,11 @@ Diese Tests liegen in `tests/tests/design/` und laufen bei jeder Änderung in de
 | Test | Was er prüft | Quelle |
 |---|---|---|
 | `AdminTokenContrastTest` | Kontrast der Farb-Tokens nach der WCAG-2-Formel, hell und dunkel: Text 4,5:1, Fokusring und Feldränder 3:1 | die Testdatei |
-| `AdminLandmarksTest` | Sprunglink, Landmarks, genau ein Hauptbereich (main landmark) | [Design admin4](../../../en/us/features/6.0/admin4-design.md) |
-| `AdminKeyboardTest` | Das Markup und die Hooks, auf die die Tastaturbedienung angewiesen ist | [Design admin4](../../../en/us/features/6.0/admin4-design.md) |
-| `AdminFormLabelsTest`, `AdminFormErrorsTest` | Jedes Formularfeld hat einen Namen; Fehler werden angesagt | [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md#code-review-checklist) |
+| `AdminLandmarksTest` | Sprunglink, Landmarks, genau ein Hauptbereich (main landmark) | [Design admin4](../../../eng-us/features/6.0/admin4-design.md) |
+| `AdminKeyboardTest` | Das Markup und die Hooks, auf die die Tastaturbedienung angewiesen ist | [Design admin4](../../../eng-us/features/6.0/admin4-design.md) |
+| `AdminFormLabelsTest`, `AdminFormErrorsTest` | Jedes Formularfeld hat einen Namen; Fehler werden angesagt | [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md#code-review-checklist) |
 | `StandardContentEditAccessibleNamesTest` | Jedes Bedienelement des öffentlichen Bearbeitungsformulars hat einen zugänglichen Namen | die Testdatei |
-| `AdminStylingRulesTest` | Kein Inline-CSS in Templates der Administration; Tokens mit Werten für den dunklen Modus | [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md) |
+| `AdminStylingRulesTest` | Kein Inline-CSS in Templates der Administration; Tokens mit Werten für den dunklen Modus | [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md) |
 
 **axe.** Das Changelog verzeichnet manuelle Prüfungen mit der Barrierefreiheits-Engine axe, zum Beispiel „axe meldet
 keinen schwerwiegenden Befund im Seitenrahmen auf 10 klassischen Seiten bei 1440 px und bei 960 px mit 200 % Zoom,
@@ -112,31 +112,31 @@ auf beiden Webservern“ ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md))
 CI-Workflows. Wenn Ihre Abnahme ein automatisiertes Audit Ihrer eigenen Seiten erfordert, planen Sie es als eigene
 Aufgabe mit eigenem Werkzeug und eigenem Verantwortlichen.
 
-Die [Checkliste für Code-Reviews](../../../en/us/bc/6.0/admin4-styling.md#code-review-checklist) für Templates der
+Die [Checkliste für Code-Reviews](../../../eng-us/bc/6.0/admin4-styling.md#code-review-checklist) für Templates der
 Administration verlangt eine Prüfung „im hellen und dunklen Modus bei 1440 px und bei 960 px mit Skalierung 2: keine
 helle Karte auf der dunklen Seite, Textkontrast mindestens 4,5:1, kein horizontaler Überlauf, keine Konsolenfehler“.
 Sie ist ein gutes Vorbild für Ihre eigene Frontend-Schranke.
 
 Sprachen mit Schreibrichtung von rechts nach links gehören für viele Zielgruppen zur Barrierefreiheit: siehe
-[Von rechts nach links](../../../en/us/features/6.0/right-to-left.md) und
+[Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md) und
 [Checklisten zu Barrierefreiheit, Sicherheit und Compliance](checklisten-barrierefreiheit-sicherheit-und-compliance.md).
 
 ## Sicherheitsprüfungen: die Content Security Policy und ihre Berichte
 
 Exponential sendet eine Content Security Policy aus `site.ini [ContentSecurityPolicy]`; standardmäßig ist sie in der
 Administration im Modus „nur berichten“ (report-only) und auf den Sites ausgeschaltet
-([Content Security Policy](../../../en/us/features/6.0/content-security-policy.md)). Der Kernel sammelt die Berichte des
+([Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md)). Der Kernel sammelt die Berichte des
 Browsers selbst: Die View `csp/report` schreibt je Verstoß eine Zeile in `var/log/csp.log`, die der Log-Viewer als
-**Berichte der Content Security Policy** auflistet ([Berichte](../../../en/us/features/6.0/content-security-policy.md#reports)).
+**Berichte der Content Security Policy** auflistet ([Berichte](../../../eng-us/features/6.0/content-security-policy.md#reports)).
 
 So erhalten Sie eine messbare Schranke, bevor Sie eine Richtlinie auf `enforce` umstellen:
 
 1. Lassen Sie die Richtlinie im Modus `report-only` laufen, während die Redakteure für einen vereinbarten Zeitraum
    normal arbeiten.
 2. Lesen Sie die Fehlerübersicht des Logs `csp` (**Setup > Logdateien > Fehlerübersicht**), gruppiert nach Direktive
-   und blockierter Quelle ([Log-Viewer](../../../en/us/features/6.0/log-viewer.md#error-digest)).
+   und blockierter Quelle ([Log-Viewer](../../../eng-us/features/6.0/log-viewer.md#error-digest)).
 3. Die Schranke ist bestanden, wenn kein unerklärter Verstoß mehr übrig ist. Folgen Sie dann „Schrittweise auf
-   enforce umstellen“ auf der Seite [Content Security Policy](../../../en/us/features/6.0/content-security-policy.md).
+   enforce umstellen“ auf der Seite [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md).
 
 Der Test `AdminContentSecurityPolicyTest` in der Suite `design` hält die Templates der Administration mit einer
 strengen Richtlinie verträglich.
@@ -150,9 +150,9 @@ Diese Prüfungen brauchen keinen Entwickler und können ab der Schranke „Stagi
 | Gesundheitsprüfungen | **Setup > Systeminformationen** | Kein Fehlschlag; Warnungen erklärt | [Systeminformationen](../../anleitungen/systeminformationen.md#3-zustandsprüfungen) |
 | Dateikonsistenz | **Setup > Upgrade-Prüfung** | Nur absichtlich geänderte Dateien werden aufgeführt | [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
 | Datenbankkonsistenz | **Setup > Upgrade-Prüfung** | Kein Unterschied oder nur Hinweise zur Datenbank-Engine | ebenda |
-| Defekte Relationen, fehlende Dateien | **Setup**, Inhaltsprüfungen | Nichts Unerklärtes | [Inhaltsprüfungen](../../../en/us/features/6.0/content-checks.md) |
-| Fehler | **Setup > Logdateien > Fehlerübersicht** | Keine neue Gruppe, die Sie nicht erklären können | [Log-Viewer](../../../en/us/features/6.0/log-viewer.md#error-digest) |
-| Audit-Kette | Tab **Audit** oder `./console exp:audit verify` | Jeder Kanal intakt | [Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md) |
+| Defekte Relationen, fehlende Dateien | **Setup**, Inhaltsprüfungen | Nichts Unerklärtes | [Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md) |
+| Fehler | **Setup > Logdateien > Fehlerübersicht** | Keine neue Gruppe, die Sie nicht erklären können | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md#error-digest) |
+| Audit-Kette | Tab **Audit** oder `./console exp:audit verify` | Jeder Kanal intakt | [Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
 | Cronjobs | **Setup > Cronjobs**, Letzte Läufe | Läufe sind OK; Probleme erklärt | [Cronjobs](../../anleitungen/cronjobs.md#10-letzte-ausführungen-und-wie-probleme-gezählt-werden) |
 | Performance | `./console exp:benchmark --baseline=<file>` | Exit-Status 0, keine Verschlechterung | [Benchmarking](../../anleitungen/benchmarking.md#9-läufe-vergleichen-baselines-und-regressionen) |
 | Sicherheitshärtung | Die Checkliste der Hilfeseite | Jede Zeile abgehakt oder bewusst ausgenommen | [Sicherheitshärtung](../sicherheitshaertung.md#checkliste) |
@@ -233,7 +233,7 @@ Sign-off: <product owner role>   Result: accepted / accepted with listed defects
 
 ## Eine rote Prüfung lesen
 
-Wenn ein Workflow des Projekts rot ist, erklärt [CI](../../../en/us/bc/6.0/ci.md) den Entwicklern, wie sie den
+Wenn ein Workflow des Projekts rot ist, erklärt [CI](../../../eng-us/bc/6.0/ci.md) den Entwicklern, wie sie den
 fehlgeschlagenen Schritt finden (`gh run view <id> --log-failed`) und denselben Befehl auf ihrem Rechner ausführen. Was
 Sie als Führungskraft wissen sollten:
 
@@ -247,8 +247,8 @@ Sie als Führungskraft wissen sollten:
 
 ## Verwandte Seiten
 
-- [Kontinuierliche Integration](../../../en/us/bc/6.0/ci.md) und [Qualitätsprüfungen](../../../en/us/features/6.0/quality-checks.md)
-- [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md), [Content Security Policy](../../../en/us/features/6.0/content-security-policy.md)
+- [Kontinuierliche Integration](../../../eng-us/bc/6.0/ci.md) und [Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md)
+- [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md), [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md)
 - [Benchmarking](../../anleitungen/benchmarking.md), [Systeminformationen](../../anleitungen/systeminformationen.md)
 - [Release- und Upgrade-Planung](release-und-upgrade-planung.md), [Risikomanagement](risikomanagement.md)
 - [Checklisten zu Barrierefreiheit, Sicherheit und Compliance](checklisten-barrierefreiheit-sicherheit-und-compliance.md)

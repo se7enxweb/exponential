@@ -71,7 +71,7 @@ Video description:
 
 Some files in `doc/` came from the documentation of the original software, written by eZ Systems AS between 1999 and
 2014. They keep their original terms (the GPL v2) and eZ Systems' copyright: the pre-6.0 feature, upgrade,
-specification and changelog documents, `doc/en/us/shop/`, `doc/en/us/release-overview` and a few others
+specification and changelog documents, `doc/eng-us/shop/`, `doc/eng-us/release-overview` and a few others
 ([Older pages with their own terms](../../README-LICENSE.md#older-pages-with-their-own-terms)). The help shows a
 different notice on them. Check the notice at the bottom of the page you quote.
 

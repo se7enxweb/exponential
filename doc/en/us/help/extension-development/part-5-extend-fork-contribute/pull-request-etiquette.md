@@ -27,7 +27,7 @@ habits make that time count, for them and for you.
   nobody thinks you caused it.
 - **Expect many review rounds on the kernel.** 7x reviews a commit or pull request in many more rounds than usual,
   sometimes hundreds of revisions; be ready to revise your change until it is simple to accept
-  ([Code reviews](../../../../../../CONTRIBUTING.md#code-reviews)).
+  ([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
 - **Squash and rebase while the pull request is open.** 7x requires a kernel pull request to be squashed into
   logical commits (usually one) and rebased onto `main` before the merge: `git fetch origin`,
   `git rebase -i origin/main`, `git push --force-with-lease` to your pull request branch only. After the merge,
@@ -35,7 +35,7 @@ habits make that time count, for them and for you.
 - **Know what the CLA gives away before a kernel pull request.** The kernel (`se7enxweb/exponential`) merges a code
   contribution only once its author's signed Contributor Licensing Agreement has been received. By signing and
   submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it: 7x may use, change, relicense and distribute
-  it in any way, without asking or paying you, and you cannot withdraw it. Your own extensions are not affected. Tick the checkbox in the pull request template ([Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)).
+  it in any way, without asking or paying you, and you cannot withdraw it. Your own extensions are not affected. Tick the checkbox in the pull request template ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)).
 
 ## Do not
 

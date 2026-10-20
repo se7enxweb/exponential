@@ -14,7 +14,7 @@ eZINI has gotten a few changes in this version:
     during execution.
 
 This has caused it to use a new cache format, get several API additions and
-some features have been deprecated(see doc/en/us/bc/4.4/).
+some features have been deprecated(see doc/eng-us/bc/4.4/).
 
 
 =====================

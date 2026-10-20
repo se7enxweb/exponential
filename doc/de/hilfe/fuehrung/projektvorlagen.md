@@ -242,21 +242,21 @@ Die Pfade sind relativ zu `doc/` im Repository; in dieser Hilfe ist jeder davon 
 öffnen können. Die Links: [Inhaltsmodell und Bearbeiten](../../anleitungen/inhaltsmodell-und-bearbeitung.md),
 [Veröffentlichen und Versionen](../veroeffentlichen-und-versionen.md), [Workflows](../../anleitungen/workflows.md),
 [Layout-Editor](../layout-editor.md), [Inhalte bearbeiten](../inhalte-bearbeiten.md),
-[Medien und Uploads](../medien-und-uploads.md), [eztags](../../../en/us/features/6.0/extensions/eztags.md),
+[Medien und Uploads](../medien-und-uploads.md), [eztags](../../../eng-us/features/6.0/extensions/eztags.md),
 [Suchen](../suchen.md), [RSS-Feeds](../../anleitungen/rss-feeds.md), [PDF-Exporte](../../anleitungen/pdf-exporte.md),
-[expai](../../../en/us/features/6.0/extensions/expai.md), [Multisite- und mehrsprachige Projekte planen](multisite-und-mehrsprachigkeit-planen.md),
-[Inhaltssprachen](../../anleitungen/inhaltssprachen.md), [Sprachen](../../../en/us/languages.md),
-[Von rechts nach links](../../../en/us/features/6.0/right-to-left.md), [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md),
-[Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md), [Shop-Dashboard](../../../en/us/features/6.0/store-dashboard.md),
-[cjw_newsletter](../../../en/us/features/6.0/extensions/cjw_newsletter.md),
-[Benachrichtigungen](../../anleitungen/benachrichtigungen-administrator.md), [E-Mail-Einstellungen](../../../en/us/features/6.0/mail-preferences.md),
+[expai](../../../eng-us/features/6.0/extensions/expai.md), [Multisite- und mehrsprachige Projekte planen](multisite-und-mehrsprachigkeit-planen.md),
+[Inhaltssprachen](../../anleitungen/inhaltssprachen.md), [Sprachen](../../../eng-us/languages.md),
+[Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md), [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md),
+[Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md), [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md),
+[cjw_newsletter](../../../eng-us/features/6.0/extensions/cjw_newsletter.md),
+[Benachrichtigungen](../../anleitungen/benachrichtigungen-administrator.md), [E-Mail-Einstellungen](../../../eng-us/features/6.0/mail-preferences.md),
 [REST API](../../anleitungen/rest-api-v1-und-v2.md), [API-Schlüssel](../../anleitungen/api-schluessel.md),
 [Remote-Dienste](../../anleitungen/entfernte-dienste-und-apps.md), [Datenbankunterstützung](../datenbankunterstuetzung.md),
 [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Deployment](../../anleitungen/bereitstellung.md),
-[ManagedByDeployment](../../../en/us/features/6.0/managed-by-deployment.md), [Wartungsmodus](../../../en/us/features/6.0/maintenance-mode.md),
+[ManagedByDeployment](../../../eng-us/features/6.0/managed-by-deployment.md), [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md),
 [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md), [Systeminformationen](../../anleitungen/systeminformationen.md),
 [Compliance-Checklisten](checklisten-barrierefreiheit-sicherheit-und-compliance.md),
-[Content Security Policy](../../../en/us/features/6.0/content-security-policy.md), [Sicherheitshärtung](../sicherheitshaertung.md),
+[Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md), [Sicherheitshärtung](../sicherheitshaertung.md),
 [Benchmarking](../../anleitungen/benchmarking.md).
 
 ## Livegang-Checkliste
@@ -305,19 +305,19 @@ First week
 ```
 
 Seiten: [Qualitätsschranken und Abnahme](qualitaetsschranken-und-abnahme.md), [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md),
-[Inhaltsprüfungen](../../../en/us/features/6.0/content-checks.md), [Sicherheitshärtung](../sicherheitshaertung.md#checkliste),
+[Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md), [Sicherheitshärtung](../sicherheitshaertung.md#checkliste),
 [13.16 Go-live-Checkliste](../../installation/13-sicherheitshaertung.md#1316-checkliste-für-den-livegang),
-[Content Security Policy](../../../en/us/features/6.0/content-security-policy.md), [Benchmarking](../../anleitungen/benchmarking.md),
+[Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md), [Benchmarking](../../anleitungen/benchmarking.md),
 [10.15 Eine Checkliste für die erste Woche](../../installation/10-nach-der-installation.md#1015-eine-checkliste-für-die-erste-woche),
 [Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md),
 [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md#6-sichern-und-wiederherstellen), [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md),
 [Systeminformationen](../../anleitungen/systeminformationen.md#3-zustandsprüfungen), [Cronjobs](../../anleitungen/cronjobs.md),
-[Wartungsmodus](../../../en/us/features/6.0/maintenance-mode.md), [Deployment](../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern),
+[Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md), [Deployment](../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern),
 [13.4](../../installation/13-sicherheitshaertung.md#134-debug-ausgabe-und-fehleranzeige),
 [10.4](../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand),
 [10.8](../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung),
-[Das Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md), [Log-Viewer](../../../en/us/features/6.0/log-viewer.md),
-[Request-Logs](../../../en/us/features/6.0/request-logs.md).
+[Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md), [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md),
+[Request-Logs](../../../eng-us/features/6.0/request-logs.md).
 
 ## Übergabedokument
 
@@ -395,7 +395,7 @@ Sign-off:  Handed over by <role, date>   Received by <role, date>
 
 Seiten zu den Abschnitten: [Systeminformationen](../../anleitungen/systeminformationen.md),
 [Die Seite Extensions](../../anleitungen/extensions-seite.md), [Ein Team mit Git führen](ein-team-mit-git-fuehren.md),
-[ManagedByDeployment](../../../en/us/features/6.0/managed-by-deployment.md), [Das Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md),
+[ManagedByDeployment](../../../eng-us/features/6.0/managed-by-deployment.md), [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md),
 [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md), [Cronjobs](../../anleitungen/cronjobs.md),
 [Eine Site betreiben](../../anleitungen/betrieb-einer-website.md), [Release- und Upgrade-Planung](release-und-upgrade-planung.md),
 [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md).

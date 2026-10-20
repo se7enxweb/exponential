@@ -10,10 +10,10 @@ type: help
 # Project files: README, security policy and contributing in the help
 
 The repository of Exponential has a few files outside the documentation directory that every administrator and
-developer should know: the [README](../../../../README.md) that introduces the project, the
-[security policy](../../../../SECURITY.md) that says how to report a vulnerability, the
-[contributors' guidelines](../../../../CONTRIBUTING.md), the [copyright notice](../../../../COPYRIGHT.md) and the
-[license](../../../../LICENSE.md). The help shows them as pages of their own, so you can read them in the
+developer should know: the [README](../../../README.md) that introduces the project, the
+[security policy](../../../SECURITY.md) that says how to report a vulnerability, the
+[contributors' guidelines](../../../CONTRIBUTING.md), the [copyright notice](../../../COPYRIGHT.md) and the
+[license](../../../LICENSE.md). The help shows them as pages of their own, so you can read them in the
 administration without going to GitHub.
 
 ## Where to find them

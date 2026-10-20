@@ -91,5 +91,5 @@ Python examples.
 - [The audit trail](audit-trail.md), [audit event model](../../specifications/6.0/audit-event-model.md)
 - [Sub-items list columns](subitems-table-options.md) (`expsubitems_svc`), [online editor on TinyMCE 8](online-editor-tinymce8.md) (`expeditor`), [ezjscore](extensions/ezjscore.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)
 - [October 2026 chronicle](../../history/2026/2026-10.md)

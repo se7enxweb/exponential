@@ -49,7 +49,7 @@ Mehr dazu: [Was Sponsoring finanziert](../sponsoren/was-sponsoring-finanziert.md
 | Monatliches oder einmaliges Sponsoring über GitHub | [7x sponsern](../sponsoren/7x-sponsern.md), [Die Foundation sponsern](../sponsoren/die-foundation-sponsern.md) |
 | PayPal, Patreon, Venmo, Cash App, die Website der Foundation | [Weitere Wege, Geld zu geben](../sponsoren/weitere-wege-zu-geben.md) |
 | Support-Leistungen bei 7x kaufen | <https://sponsor.se7enx.com/> |
-| Eine bestimmte Funktion finanzieren | [Funktionswünsche und gesponserte Funktionen](../../../en/us/help/partners/feature-requests-and-sponsored-features.md) |
+| Eine bestimmte Funktion finanzieren | [Funktionswünsche und gesponserte Funktionen](../../../eng-us/help/partners/feature-requests-and-sponsored-features.md) |
 
 ## Wenn Sie kein Geld geben können
 

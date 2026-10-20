@@ -14,8 +14,8 @@ public-sector organization. Public bodies differ a great deal in what they publi
 publish it: a court is not a library, and a parliament is not a fire service. Each folder below answers the same
 questions for one kind of organization, so you can read only the one that fits you, or compare two.
 
-The facts about Exponential in these pages come from the documentation in this repository (the guides in `doc/en/us/guides/`,
-the standards in `doc/en/us/standards/` and the feature pages in `doc/en/us/features/6.0/`), from the content classes and datatypes
+The facts about Exponential in these pages come from the documentation in this repository (the guides in `doc/eng-us/guides/`,
+the standards in `doc/eng-us/standards/` and the feature pages in `doc/eng-us/features/6.0/`), from the content classes and datatypes
 that ship with the kernel and the default site package, and from the administration screens of the demonstration
 server. Descriptions of what public bodies publish are general public-sector practice, not reports about any
 particular government.

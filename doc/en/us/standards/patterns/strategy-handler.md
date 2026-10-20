@@ -422,7 +422,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expAuditBzip2Format` | class extends expAuditFormatBase | `kernel/classes/audit/format/expauditbzip2format.php:11` | The bzip2 archive format (PHP extension bz2): .jsonl.bz2. | settings/audit.ini [AuditArchiveSettings] FormatHandlers[bzip2] |
-| `expAuditFormatBase` | abstract class | `kernel/classes/audit/format/expauditformatbase.php:14` | Shared code of the archive format handlers (doc/en/us/bc/6.0/audit.md, "Rotation, archives and retention"): streaming compression through a PHP stream wrap… | – |
+| `expAuditFormatBase` | abstract class | `kernel/classes/audit/format/expauditformatbase.php:14` | Shared code of the archive format handlers (doc/eng-us/bc/6.0/audit.md, "Rotation, archives and retention"): streaming compression through a PHP stream wrap… | – |
 | `expAuditFormatHandler` | interface | `kernel/classes/audit/expauditformathandler.php:14` | An archive format (gzip, bzip2, xz, zstd, zip), registered in audit.ini: [AuditArchiveSettings] FormatHandlers[]= Counted by the RAD survey (registry… | – |
 | `expAuditGzipFormat` | class extends expAuditFormatBase | `kernel/classes/audit/format/expauditgzipformat.php:11` | The gzip archive format (zlib, always available): .jsonl.gz. | settings/audit.ini [AuditArchiveSettings] FormatHandlers[gzip] |
 | `expAuditXzFormat` | class extends expAuditFormatBase | `kernel/classes/audit/format/expauditxzformat.php:11` | The xz archive format: .jsonl.xz, through the xz binary (no PHP extension is commonly available). | settings/audit.ini [AuditArchiveSettings] FormatHandlers[xz] |
@@ -475,8 +475,8 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expContentCheckFileHandler` | interface | `kernel/classes/contentcheck/expcontentcheckfilehandler.php:15` | Says which storage files a file-backed field stands for (doc/en/us/features/6.0/content-checks.md, "Missing files"). | – |
-| `expContentCheckFileImage` | class | `kernel/classes/contentcheck/expcontentcheckfileimage.php:13` | The files of an image field (ezimage): the original and the aliases its stored XML names (doc/en/us/features/6.0/content-checks.md, "Missing files"). | settings/contentcheck.ini [MissingFileSettings] Handlers[ezimage] |
+| `expContentCheckFileHandler` | interface | `kernel/classes/contentcheck/expcontentcheckfilehandler.php:15` | Says which storage files a file-backed field stands for (doc/eng-us/features/6.0/content-checks.md, "Missing files"). | – |
+| `expContentCheckFileImage` | class | `kernel/classes/contentcheck/expcontentcheckfileimage.php:13` | The files of an image field (ezimage): the original and the aliases its stored XML names (doc/eng-us/features/6.0/content-checks.md, "Missing files"). | settings/contentcheck.ini [MissingFileSettings] Handlers[ezimage] |
 | `expContentCheckFileTable` | class | `kernel/classes/contentcheck/expcontentcheckfiletable.php:16` | The file of a field whose datatype keeps it in a table with the columns of ezbinaryfile: contentobject_attribute_id, version, filename, original_file… | settings/contentcheck.ini [MissingFileSettings] Handlers[ezbinaryfile]; settings/contentcheck.ini [MissingFileSettings] Handlers[ezmedia] |
 
 ### kernel/classes/datatypes (5)

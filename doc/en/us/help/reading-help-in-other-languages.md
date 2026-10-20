@@ -38,7 +38,7 @@ the language you are reading in without the switch.
 ## The English original
 
 A translated page has a link to its English original ("Read the English original") above the text. The original
-opens at the same address with `?lang=en-us`; it is shown in English for that one visit, with a link back to the
+opens at the same address with `?lang=eng-us`; it is shown in English for that one visit, with a link back to the
 page in your language. Your interface language does not change.
 
 ## A page that is not translated yet

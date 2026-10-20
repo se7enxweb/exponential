@@ -57,5 +57,5 @@ To take a tab out for everybody on one siteaccess, whatever the policies say, us
 - [The admin4 design](admin4-design.md)
 - [Setup wizard and editor siteaccess](setup-wizard-and-editor-siteaccess.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)
 - [October 2026 chronicle](../../history/2026/2026-10.md)

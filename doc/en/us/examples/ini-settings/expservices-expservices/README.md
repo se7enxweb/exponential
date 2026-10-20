@@ -13,7 +13,7 @@ generated: exp:help:examples
 The shipped settings of `extension/expservices/settings/expservices.ini` (extension expservices): 4 blocks, 13 settings.
 
 > expservices: remote services over ezjscore/call/exp<domain>::<method>\[::arg...\]  
-> Guide: doc/en/us/bc/6.0/backend\_ezjscore\_services.md  
+> Guide: doc/eng-us/bc/6.0/backend\_ezjscore\_services.md  
 
 | Block | Settings |
 |---|---|

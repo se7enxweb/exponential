@@ -53,5 +53,5 @@ grep -n "sort" kernel/private/classes/views/shop/orderlist.php
 - [The admin4 design](admin4-design.md)
 - [Store dashboard](store-dashboard.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)
 - [October 2026 chronicle](../../history/2026/2026-10.md)

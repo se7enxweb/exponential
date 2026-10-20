@@ -28,7 +28,7 @@ help, not in every public site. This page tells you what is documented and how t
 
 In October 2026 the new administration design of Exponential, admin4, went through an accessibility series: landmarks
 and names, keyboard use of tabs and the content tree, a name for every form field, contrast of the colors, focus
-indicators and the modes a browser asks for ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-the-admin4-accessibility-series-merged-and-refined)).
+indicators and the modes a browser asks for ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#14-october-2026-the-admin4-accessibility-series-merged-and-refined)).
 "The admin4 design follows WCAG rules that tests check: a contrast test of the color tokens in light and dark mode and
 target sizes of at least 24 by 24 pixels" ([Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility)).
 The rules bind contributors too: no inline styles, shared components, color tokens with dark values, and a test that
@@ -40,11 +40,11 @@ All in the 6.0.15 development line, which is not released.
 
 | What | When | Source |
 |---|---|---|
-| Landmarks and names in admin4 | 14 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-landmarks-and-names-in-admin4) |
-| The content tree is a tree for screen readers and keyboards | 14 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-the-content-tree-is-a-tree-for-screen-readers-and-keyboards) |
-| Focus indicators in admin4 | 14 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-admin4-focus-indicators) |
-| The remaining serious accessibility findings of the admin pages | 17 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-the-remaining-serious-accessibility-findings-of-the-admin-pages) |
-| The layout editor page and its zoom | 17 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-the-layout-editor-page-can-be-zoomed) |
+| Landmarks and names in admin4 | 14 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#14-october-2026-landmarks-and-names-in-admin4) |
+| The content tree is a tree for screen readers and keyboards | 14 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#14-october-2026-the-content-tree-is-a-tree-for-screen-readers-and-keyboards) |
+| Focus indicators in admin4 | 14 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#14-october-2026-admin4-focus-indicators) |
+| The remaining serious accessibility findings of the admin pages | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-the-remaining-serious-accessibility-findings-of-the-admin-pages) |
+| The layout editor page and its zoom | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-the-layout-editor-page-can-be-zoomed) |
 
 ## Facts you can print
 

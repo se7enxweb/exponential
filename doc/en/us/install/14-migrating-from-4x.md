@@ -895,11 +895,11 @@ In this repository:
 - Release notes of the 4.x line: [4.1](../bc/4.1/changes-4.1.0.txt), [4.2](../bc/4.2/changes-4.2.0.txt),
   [4.3](../bc/4.3/changes-4.3.0.txt), [4.4](../bc/4.4/changes-4.4.0.txt), [4.5](../bc/4.5/changes-4.5.0.txt),
   [4.6](../bc/4.6/changes-4.6.0.txt), [4.7](../bc/4.7/changes-4.7.0.txt).
-- Changelogs of the old line: [3.9 to 3.10](../../../changelogs/3.10/CHANGELOG-3.9.0-to-3.10.0),
-  [3.10 to 4.0](../../../changelogs/4.0/CHANGELOG-3.10.0-to-4.0.0), [4.0 to 4.1](../../../changelogs/4.1/CHANGELOG-4.0.0-to-4.1.0),
-  [4.1 to 4.2](../../../changelogs/4.2/CHANGELOG-4.1.0-to-4.2.0), [4.2 to 4.3](../../../changelogs/4.3/CHANGELOG-4.2.0-to-4.3.0),
-  [4.3 to 4.4](../../../changelogs/4.4/CHANGELOG-4.3.0-to-4.4.0), [4.5 to 4.6](../../../changelogs/4.6/CHANGELOG-4.5.0-to-4.6.0.txt),
-  [4.6 to 4.7](../../../changelogs/4.7/CHANGELOG-4.6.0-to-4.7.0.txt).
+- Changelogs of the old line: [3.9 to 3.10](../../changelogs/3.10/CHANGELOG-3.9.0-to-3.10.0),
+  [3.10 to 4.0](../../changelogs/4.0/CHANGELOG-3.10.0-to-4.0.0), [4.0 to 4.1](../../changelogs/4.1/CHANGELOG-4.0.0-to-4.1.0),
+  [4.1 to 4.2](../../changelogs/4.2/CHANGELOG-4.1.0-to-4.2.0), [4.2 to 4.3](../../changelogs/4.3/CHANGELOG-4.2.0-to-4.3.0),
+  [4.3 to 4.4](../../changelogs/4.4/CHANGELOG-4.3.0-to-4.4.0), [4.5 to 4.6](../../changelogs/4.6/CHANGELOG-4.5.0-to-4.6.0.txt),
+  [4.6 to 4.7](../../changelogs/4.7/CHANGELOG-4.6.0-to-4.7.0.txt).
 - 5.90 line: [overview](../bc/5.90/README.md), [PHP 7](../bc/5.90/php7.md),
   [password length](../bc/5.90/password_length.md), [relation indexing](../bc/5.90/relation_indexing.md).
 - PHP 8: [PHP 8 support](../bc/6.0/php8.md), [PHP 8.0 support](../bc/6.0/php-8.0-support.md).

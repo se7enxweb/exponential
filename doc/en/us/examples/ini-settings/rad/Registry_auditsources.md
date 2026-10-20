@@ -43,13 +43,13 @@ Description=What shows an extension's own audit records in the audit console (au
 
 ## Doc
 
-Default: `doc/en/us/bc/6.0/audit.md`.
+Default: `doc/eng-us/bc/6.0/audit.md`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/rad.ini.append.php
 [Registry_auditsources]
-Doc=doc/en/us/bc/6.0/audit.md
+Doc=doc/eng-us/bc/6.0/audit.md
 */ ?>
 ```
 

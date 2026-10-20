@@ -51,7 +51,7 @@ in the [procurement overview](../README.md).
 
 ## Principles of this section
 
-- **Documented facts only.** The product's status against each standard comes from `doc/en/us/standards/`, whose status
+- **Documented facts only.** The product's status against each standard comes from `doc/eng-us/standards/`, whose status
   words are explained in [Standards: how to read the status](../../../../standards/README.md#how-to-read-the-status).
 - **No invented references, customers or numbers.** Where a weight or score is needed, the template leaves a blank.
 - **Software and service are evaluated separately.** The free software has no license fee; the supplier's work,

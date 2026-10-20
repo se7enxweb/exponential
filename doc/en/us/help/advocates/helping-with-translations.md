@@ -45,7 +45,7 @@ the levels are in [section 2](../../languages.md#2-support-levels).
 |---|---|
 | The administration interface | `share/translations/<code>/translation.ts` |
 | Extensions' interfaces | Each extension's own translation files |
-| Help pages | `doc/en/us/help/...` as new files or translated copies, under the GNU FDL ([Free documentation](../free-documentation.md#translate-it)) |
+| Help pages | `doc/eng-us/help/...` as new files or translated copies, under the GNU FDL ([Free documentation](../free-documentation.md#translate-it)) |
 
 ## Translating the administration, step by step
 

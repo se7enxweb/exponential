@@ -265,4 +265,4 @@ Read-only check that the API is in place: `grep -n "function assignedNodeCount\|
 - [Paging, sorting and page sizes](../../features/6.0/admin-list-paging.md) and [Where the page sizes live](pagination-settings.md)
 - [RSS: the feed list sorts with the same headings](../../features/6.0/rss-podcast-and-feed-list.md)
 - [September 2026, first half: 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

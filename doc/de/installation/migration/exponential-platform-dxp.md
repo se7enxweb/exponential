@@ -21,7 +21,7 @@ Beide setzen das Metapaket `se7enxweb/exponential-platform-dxp` voraus (Releases
 `se7enxweb/exponential-platform-dxp-core` ist (`v5.0.9` als neuestes Release; `v4.6.x`-Tags für die Linie 4.6). Eine
 sofort lauffähige Variante ist `se7enxweb/exponential-platform-dxp-starter` (`1.0.0.0`).
 
-[Übersicht Migration](README.md) · [Checkliste](checkliste.md) · [DXP-Skeleton](../../../en/us/features/6.0/platform-dxp-skeleton.md) ·
+[Übersicht Migration](README.md) · [Checkliste](checkliste.md) · [DXP-Skeleton](../../../eng-us/features/6.0/platform-dxp-skeleton.md) ·
 [Paketübersicht der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md)
 
 ## Inhalt
@@ -147,4 +147,4 @@ Exponential Platform Legacy derselben Generation (16.6.8).
 - [ ] Reine Legacy-Tabellen archiviert; Weiterleitungen für Adressen, die sich ändern.
 
 Diese Seite ist Teil der Exponential-Dokumentation und freie Dokumentation unter der GNU Free Documentation License
-1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md)).
+1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).

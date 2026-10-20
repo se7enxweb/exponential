@@ -96,7 +96,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - [Layouts core fork](../../features/6.0/platform-layouts-core-fork.md)
 - [Exponential Layouts](../../bc/6.0/LAYOUTS.md)
-- [Release changelog](../../../../changelogs/extensions/layouts-core.md)
+- [Release changelog](../../../changelogs/extensions/layouts-core.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

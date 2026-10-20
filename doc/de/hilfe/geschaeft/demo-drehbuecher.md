@@ -33,7 +33,7 @@ auf einer gemeinsam genutzten Installation, deren Einstellungen jemand anderem g
 ### Die Demo-Installation aufbauen
 
 Ein einziger Befehl installiert eine vollständige Site auf SQLite, ohne Datenbankserver, in `eng-US`, mit den
-Siteaccesses `site` und `admin` ([Exponential mit einem Befehl installieren](../../../en/us/features/6.0/install-in-one-command.md)):
+Siteaccesses `site` und `admin` ([Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)):
 
 ```bash
 ./console exp:install --dry-run    # checks the configuration and installs nothing
@@ -94,7 +94,7 @@ und dass die Hilfe eingebaut ist.
 | 2:30 | Tab **Layouts**, **Layouts**, **Öffnen** bei einem Layout | „Hier ordnen Redakteure Seiten an: Zonen und darin Blöcke. Exponential Layouts bringt das Konzept von Netgen Layouts zu Exponential.“ (`README.md`) |
 | 3:10 | Einen Block anklicken | „Seine Einstellungen stehen rechts: was er zeigt und wie er aussieht.“ |
 | 3:40 | **Discard**, bestätigen | „Das war ein Entwurf. Wenn Sie ihn verwerfen, bleibt die veröffentlichte Seite genau so, wie sie war.“ |
-| 4:10 | Die Schaltfläche **Hilfe** in der Kopfzeile drücken | „Die Hilfe ist eingebaut. Die Schaltfläche Hilfe öffnet die Seite, die zu dem Bildschirm gehört, auf dem Sie gerade sind.“ ([Hilfesystem](../../../en/us/features/6.0/help-system.md)) |
+| 4:10 | Die Schaltfläche **Hilfe** in der Kopfzeile drücken | „Die Hilfe ist eingebaut. Die Schaltfläche Hilfe öffnet die Seite, die zu dem Bildschirm gehört, auf dem Sie gerade sind.“ ([Hilfesystem](../../../eng-us/features/6.0/help-system.md)) |
 | 4:40 | Schließen | „Es ist Open Source unter der GPL, und Sie können es selbst hosten.“ ([Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen)) |
 
 **Verzichten Sie** in fünf Minuten auf Installieren, Konfigurieren, das Öffnen von Einstellungen und das Zeigen von mehr als
@@ -151,20 +151,20 @@ Inhaltstyp oder ein Siteaccess.“ ([Welche Seiten ein Layout verwenden](../layo
    eigene Sprache der Administration dieses Redakteurs; die Inhalte ändern sich nicht.“
 4. Wählen Sie Hebräisch oder Arabisch und drücken Sie **Anwenden**. Sagen Sie: „In einer Sprache mit Schreibrichtung von
    rechts nach links dreht sich die Administration um: Die Seitenspalten tauschen die Plätze, und der Text beginnt
-   rechts.“ ([Von rechts nach links](../../../en/us/features/6.0/right-to-left.md))
+   rechts.“ ([Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md))
 5. Wechseln Sie zurück zu Englisch.
 
 Gesprächsleitfaden: „268 Locale-Dateien lassen sich als Inhaltssprachen verwenden; es gibt 32 Übersetzungen der
-Administration, zehn davon vollständig.“ ([Sprachen in Exponential](../../../en/us/languages.md))
+Administration, zehn davon vollständig.“ ([Sprachen in Exponential](../../../eng-us/languages.md))
 
 ### Teil 4: Hilfe und Nachweis (4 Minuten)
 
 1. Drücken Sie **Hilfe**. Drücken Sie `/`, tippen Sie `publish` ein und öffnen Sie ein Ergebnis.
 2. Drücken Sie **Als PDF herunterladen**. Sagen Sie: „Jede Hilfeseite lässt sich sauber drucken oder als PDF
-   herunterladen, erzeugt auf dem Server, ohne externen Dienst.“ ([Hilfesystem, Drucken und PDF](../../../en/us/features/6.0/help-system.md#print-and-pdf))
+   herunterladen, erzeugt auf dem Server, ohne externen Dienst.“ ([Hilfesystem, Drucken und PDF](../../../eng-us/features/6.0/help-system.md#print-and-pdf))
 3. Wenn Sie als Administrator angemeldet sind: Öffnen Sie den Tab **Audit** (`/audit/dashboard`) und dann **Konsole**.
    Sagen Sie: „Ihre Anmeldung ist bereits festgehalten. Jeder Eintrag trägt den Hash des vorherigen, sodass eine
-   Änderung am Protokoll auffällt.“ ([Das Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md))
+   Änderung am Protokoll auffällt.“ ([Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md))
 
 ## Die 45-Minuten-Demo
 
@@ -179,9 +179,9 @@ bis 8 das Administratorkonto.
 | 3 | 4 | Das Inhaltsmodell: eine Inhaltsklasse und ihre Attribute | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
 | 4 | 6 | Der Layout-Editor, einschließlich der Zuordnungen | [Der Layout-Editor](../layout-editor.md) |
 | 5 | 4 | Sprachen, Schreibrichtung von rechts nach links, Barrierefreiheit per Tastatur | [Sprachen](../sprachen.md), [Tastenkürzel](../tastenkuerzel.md) |
-| 6 | 4 | Exponential Intelligence (nur mit einem Anbieterschlüssel auf der Demo) | [Exponential Intelligence](../../../en/us/features/6.0/extensions/expai.md) |
+| 6 | 4 | Exponential Intelligence (nur mit einem Anbieterschlüssel auf der Demo) | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
 | 7 | 4 | Sicherheit: Audit-Protokoll, Anmeldung in zwei Schritten, CSP, Sicherheitshärtung | [Sicherheitshärtung](../sicherheitshaertung.md) |
-| 8 | 4 | Betrieb: Logs, Upgrade-Prüfung, Geschwindigkeit | [Log-Viewer](../../../en/us/features/6.0/log-viewer.md), [Velocity](../../../en/us/features/6.0/velocity-persistent-worker-server.md) |
+| 8 | 4 | Betrieb: Logs, Upgrade-Prüfung, Geschwindigkeit | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md), [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
 | 9 | 10 | Fragen | [Einwandbehandlung](einwandbehandlung.md) |
 
 ### Teil 1: wer und was (3 Minuten)
@@ -241,7 +241,7 @@ Nur, wenn die Demo-Installation einen Anbieterschlüssel hat und Sie den Prompt 
 3. Sagen Sie: „Es schreibt nur Entwürfe, als der angemeldete Redakteur und mit dessen Berechtigungen. Es veröffentlicht
    nie von sich aus. Jeder Anbieter hat eine Region, USA, EU oder lokal, und jede Anfrage hält fest, wohin sie ging.“
 
-Ohne Schlüssel: Zeigen Sie stattdessen die Seite [Exponential Intelligence](../../../en/us/features/6.0/extensions/expai.md) und
+Ohne Schlüssel: Zeigen Sie stattdessen die Seite [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) und
 sagen Sie, dass es nichts irgendwohin sendet, solange kein Anbieterschlüssel hinterlegt ist (`README.md`).
 
 ### Teil 7: Sicherheit (4 Minuten)
@@ -249,7 +249,7 @@ sagen Sie, dass es nichts irgendwohin sendet, solange kein Anbieterschlüssel hi
 1. Tab **Audit**, **Konsole**: Zeigen Sie das neueste `access.session.login`.
 2. `/user2fa/setup` mit dem Demo-Konto: Zeigen Sie die Wahl zwischen Authenticator-App und Code per E-Mail; schließen
    Sie die Einrichtung auf einem geteilten Bildschirm nicht ab ([Anmeldung in zwei Schritten](../../anleitungen/zwei-faktor-anmeldung.md)).
-3. Öffnen Sie [Content Security Policy](../../../en/us/features/6.0/content-security-policy.md) in der Hilfe: „Standardmäßig
+3. Öffnen Sie [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) in der Hilfe: „Standardmäßig
    läuft sie in der Administration nur im Berichtsmodus und ist auf den Sites ausgeschaltet; die Seite erklärt, wie Sie
    sie durchsetzen.“
 4. Öffnen Sie die [Checkliste der Sicherheitshärtung](../sicherheitshaertung.md#checkliste).
@@ -283,9 +283,9 @@ sagen Sie, dass es nichts irgendwohin sendet, solange kein Anbieterschlüssel hi
 | Der Layout-Editor fragt nach einer Veröffentlichung, ob Caches geleert werden sollen | Die Site leert ihre Caches nicht von selbst | Wählen Sie **Clear caches** ([Der Layout-Editor](../layout-editor.md)) |
 | *Möglicher Bearbeitungs-Konflikt* | Es gibt einen Entwurf aus einer früheren Demo | Öffnen Sie **Versionen verwalten** und verwerfen Sie den alten Entwurf; räumen Sie die Entwürfe vor jeder Demo auf |
 | Kein Kasten **Oberfläche** in der rechten Spalte | Sie sind im Bearbeitungsformular, oder der Rolle fehlt die Berechtigung | Verlassen Sie das Bearbeitungsformular; verwenden Sie das Administratorkonto |
-| Eine Sprache zeigt englische Texte | Sie hat keine vollständige Übersetzung der Administration | Sagen Sie es offen: Zehn Übersetzungen sind vollständig ([Unterstützungsstufen](../../../en/us/languages.md#2-support-levels)) |
+| Eine Sprache zeigt englische Texte | Sie hat keine vollständige Übersetzung der Administration | Sagen Sie es offen: Zehn Übersetzungen sind vollständig ([Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels)) |
 | Kein Tab **Intelligence** | Für diesen Siteaccess nicht aktiviert, keine Richtlinie `expai/write` oder kein Schlüssel | Zeigen Sie stattdessen die Dokumentationsseite |
-| Keine Schaltfläche **Hilfe** | Der Rolle fehlt `exphelp/read` | Erteilen Sie die Berechtigung ([Hilfesystem, Wer sie lesen darf](../../../en/us/features/6.0/help-system.md#who-may-read-it)) oder verwenden Sie den Administrator |
+| Keine Schaltfläche **Hilfe** | Der Rolle fehlt `exphelp/read` | Erteilen Sie die Berechtigung ([Hilfesystem, Wer sie lesen darf](../../../eng-us/features/6.0/help-system.md#who-may-read-it)) oder verwenden Sie den Administrator |
 | Eine Seite meldet *Something went wrong on our side* mit einer Referenz | Ein echter Fehler | Notieren Sie die Referenz; sagen Sie, dass er protokolliert und auffindbar ist ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md)); machen Sie weiter |
 | Eine Änderung erscheint auf einem Velocity-Server nicht | Die Worker halten die Anwendung im Speicher | `./console exp:velocity restart` nach der Demo, nicht währenddessen (`README.md`) |
 | Der Projektor lässt den dunklen Modus verblassen | Das liegt am Kontrast des Raums, nicht an der Seite | Drücken Sie die Sonnen-Schaltfläche, um auf hell umzuschalten |

@@ -18,7 +18,7 @@ das Design **Admin 4**. Was Sie sehen, hängt von Ihrer Rolle ab: Ein Redakteur 
 Noch nicht angemeldet? Siehe [An der Administration anmelden](anmelden-in-der-administration.md) oder, für Redakteure,
 [Am Editor anmelden](anmelden-im-editor.md).
 
-![Das Dashboard der Administration](../../en/us/help/images/admin-dashboard.webp)
+![Das Dashboard der Administration](../../eng-us/help/images/admin-dashboard.webp)
 
 ## Die Kopfzeile
 
@@ -37,7 +37,7 @@ Von links nach rechts:
 Auf einem schmalen Bildschirm (einem Telefon oder einem verkleinerten Fenster) wandern die Reiter und die Suche in ein
 Menü hinter der Schaltfläche mit drei Linien.
 
-![Die Kopfzeile der Administration im dunklen Modus](../../en/us/help/images/accounts/admin-tour-header-dark.webp)
+![Die Kopfzeile der Administration im dunklen Modus](../../eng-us/help/images/accounts/admin-tour-header-dark.webp)
 
 ## Die linke Spalte
 
@@ -53,7 +53,7 @@ Die linke Spalte ändert sich mit dem Reiter:
   **Meine E-Mail-Einstellungen**, **Meine Benachrichtigungseinstellungen**, **Passwort ändern**, **Profil bearbeiten**
   und mehr.
 
-![Das Menü eines Objekts im Baum](../../en/us/help/images/context-menu.webp)
+![Das Menü eines Objekts im Baum](../../eng-us/help/images/context-menu.webp)
 
 ## Die rechte Spalte
 
@@ -68,7 +68,7 @@ Die rechte Spalte enthält kleine Werkzeuge für Sie:
 - **Benutzereinstellungen** und **Kurzeinstellungen**: Schalter, die ändern, wie Ihnen Seiten angezeigt werden. Nur
   manche Rollen sehen sie.
 
-![Die rechte Spalte](../../en/us/help/images/right-column.webp)
+![Die rechte Spalte](../../eng-us/help/images/right-column.webp)
 
 ## Die Spalten ausblenden und in der Breite ändern
 
@@ -91,7 +91,7 @@ Das Dashboard ist die erste Seite nach der Anmeldung. Von oben:
 
 Administratoren sehen außerdem Blöcke zum System, zu Updates und zu Sicherheitsereignissen.
 
-![Meine Lesezeichen: die Objekte, die Sie mit „Lesezeichen setzen“ markiert haben, um sie mit einem Klick wieder zu öffnen](../../en/us/help/images/accounts/my-bookmarks.webp)
+![Meine Lesezeichen: die Objekte, die Sie mit „Lesezeichen setzen“ markiert haben, um sie mit einem Klick wieder zu öffnen](../../eng-us/help/images/accounts/my-bookmarks.webp)
 
 ## Die Seite eines Objekts
 
@@ -107,9 +107,9 @@ Wenn Sie ein Objekt öffnen, zeigt seine Seite:
 - **Unterelemente**: die Objekte darunter, mit Schaltflächen zum **Neu erstellen**, Auswählen, Sortieren und zum
   Bearbeiten mehrerer auf einmal.
 
-![Die Seite eines Ordners](../../en/us/help/images/content-view.webp)
+![Die Seite eines Ordners](../../eng-us/help/images/content-view.webp)
 
-![Der Reiter Details eines Objekts: Ersteller, Erstellungsdatum, Sektion, Versionen, Übersetzungen und die Knoten- und Objekt-IDs](../../en/us/help/images/editing/item-details-tab.webp)
+![Der Reiter Details eines Objekts: Ersteller, Erstellungsdatum, Sektion, Versionen, Übersetzungen und die Knoten- und Objekt-IDs](../../eng-us/help/images/editing/item-details-tab.webp)
 
 ## In der Praxis: einen Ordner bearbeiten
 
@@ -122,14 +122,14 @@ Felder unterscheiden sich. [Inhalte erstellen und bearbeiten](inhalte-bearbeiten
 Öffnen Sie den Ordner (aus dem Baum, einer Liste oder einer Suche) und klicken Sie auf **Bearbeiten** neben der
 Sprachliste. Gibt es den Ordner in mehreren Sprachen, wählen Sie zuerst die Sprache in dieser Liste.
 
-![Die Seite eines Ordners mit der Schaltfläche Bearbeiten neben der Sprachliste](../../en/us/help/images/tour-folder-view.webp)
+![Die Seite eines Ordners mit der Schaltfläche Bearbeiten neben der Sprachliste](../../eng-us/help/images/tour-folder-view.webp)
 
 ### 2. Das Bearbeitungsformular
 
 Das Formular öffnet sich mit einem neuen **Entwurf**, einer Kopie der veröffentlichten Version. Die Site zeigt weiter
 die veröffentlichte Version, bis Sie veröffentlichen.
 
-![Das Bearbeitungsformular eines Ordners mit den Schaltflächen oben, der Feldleiste und den Karten Name und Short name](../../en/us/help/images/tour-edit-form.webp)
+![Das Bearbeitungsformular eines Ordners mit den Schaltflächen oben, der Feldleiste und den Karten Name und Short name](../../eng-us/help/images/tour-edit-form.webp)
 
 Von oben:
 
@@ -160,7 +160,7 @@ Schaltflächen für die Hilfe und den HTML-Quelltext. Unter dem Feld wechselt **
 Site anbietet; auf dieser Installation ist **TinyMCE 8** der Standard und **Tiptap** die Alternative. Beim Wechsel
 bleibt erhalten, was Sie eingegeben haben.
 
-![Die Karte Description mit der Werkzeugleiste für formatierten Text und dem Schalter Editor darunter](../../en/us/help/images/tour-edit-richtext.webp)
+![Die Karte Description mit der Werkzeugleiste für formatierten Text und dem Schalter Editor darunter](../../eng-us/help/images/tour-edit-richtext.webp)
 
 ### 4. Als Entwurf behalten
 
@@ -169,12 +169,12 @@ und er wartet unter **Meine Entwürfe**. Das Formular speichert den Entwurf auß
 linke Spalte des Formulars zeigt die veröffentlichte Version und **Derzeitiger Entwurf**, die Version, an der Sie
 arbeiten.
 
-![Die linke Spalte des Bearbeitungsformulars: Objekt-Information, Derzeitiger Entwurf mit seiner Versionsnummer und die Schaltfläche Vorschau](../../en/us/help/images/tour-edit-draft-info.webp)
+![Die linke Spalte des Bearbeitungsformulars: Objekt-Information, Derzeitiger Entwurf mit seiner Versionsnummer und die Schaltfläche Vorschau](../../eng-us/help/images/tour-edit-draft-info.webp)
 
 Um später weiterzumachen, öffnen Sie **Meine Entwürfe** auf dem Dashboard oder **Versionen verwalten** am Objekt und
 klicken bei Ihrem Entwurf auf **Bearbeiten**.
 
-![Die Versionsseite mit Version 2 als Ihrem Entwurf und Version 1 als veröffentlichter Version](../../en/us/help/images/tour-versions-draft.webp)
+![Die Versionsseite mit Version 2 als Ihrem Entwurf und Version 1 als veröffentlichter Version](../../eng-us/help/images/tour-versions-draft.webp)
 
 ### 5. Vorschau
 
@@ -183,7 +183,7 @@ Entwurf so, wie die Site ihn zeigen wird. Die Schaltflächen oben zeigen ihn in 
 Tablets, eines Desktops oder eines großen Desktops; **Zurück zur Bearbeitung** kehrt zum Formular zurück, und
 **Veröffentlichen** veröffentlicht von dort aus.
 
-![Der obere Teil der Vorschau mit den Schaltflächen iPhone, iPad, Desktop und Large Desktop](../../en/us/help/images/tour-preview.webp)
+![Der obere Teil der Vorschau mit den Schaltflächen iPhone, iPad, Desktop und Large Desktop](../../eng-us/help/images/tour-preview.webp)
 
 ### 6. Veröffentlichen
 
@@ -191,7 +191,7 @@ Klicken Sie auf **Zur Veröffentlichung schicken**. Der Entwurf wird zur veröff
 Version bleibt als archivierte Version erhalten. Die Seite des Objekts zeigt die neue Versionsnummer; hier heißt der
 Ordner jetzt nach seinem Kurznamen.
 
-![Der Ordner nach dem Veröffentlichen: sein Kurzname als Titel und Version 2](../../en/us/help/images/tour-folder-published.webp)
+![Der Ordner nach dem Veröffentlichen: sein Kurzname als Titel und Version 2](../../eng-us/help/images/tour-folder-published.webp)
 
 Verwendet Ihre Site eine Freigabe, wartet die Version unter **Meine Warteliste**, bis jemand sie freigibt.
 
@@ -219,7 +219,7 @@ ausführlicher.
 sich mit einem **Entwurf** davon: Was Sie ändern, bleibt im Entwurf und wird laufend gespeichert, bis Sie
 veröffentlichen.
 
-![Der Layout-Editor mit den Zonen HEADER, POST_HEADER, MAIN und PRE_FOOTER eines Layouts und ihren Blöcken](../../en/us/help/images/tour-layout-open.webp)
+![Der Layout-Editor mit den Zonen HEADER, POST_HEADER, MAIN und PRE_FOOTER eines Layouts und ihren Blöcken](../../eng-us/help/images/tour-layout-open.webp)
 
 ### 2. Zonen und Blöcke
 
@@ -233,7 +233,7 @@ schraffierten Blöcken ist mit einer Zone eines gemeinsamen Layouts **verknüpft
 Klicken Sie auf einen Block, um ihn auszuwählen. Er wird blau umrandet, und seine Einstellungen erscheinen rechts in
 zwei Reitern: **Content** (was er zeigt) und **Design** (wie er aussieht). Änderungen erscheinen sofort im Block.
 
-![Ein ausgewählter Block Full view, blau umrandet, mit seinen Reitern Content und Design rechts](../../en/us/help/images/tour-layout-block-selected.webp)
+![Ein ausgewählter Block Full view, blau umrandet, mit seinen Reitern Content und Design rechts](../../eng-us/help/images/tour-layout-block-selected.webp)
 
 ### 4. Einen Block hinzufügen
 
@@ -242,18 +242,18 @@ Klicken Sie oben links auf die Plus-Schaltfläche (**Add a block**), suchen Sie 
 Hier wurde ein Block **Title** in die leere Zone *POST_HEADER* gezogen; er ist ausgewählt und bereit für seine
 Einstellungen.
 
-![Ein neuer Block Title in der Zone POST_HEADER, ausgewählt](../../en/us/help/images/tour-layout-block-added-zone.webp)
+![Ein neuer Block Title in der Zone POST_HEADER, ausgewählt](../../eng-us/help/images/tour-layout-block-added-zone.webp)
 
 Das Menü mit drei Punkten an einem Block enthält **Duplicate block** und **Delete block**.
 
-![Das Blockmenü mit Duplicate block und Delete block](../../en/us/help/images/tour-layout-block-menu.webp)
+![Das Blockmenü mit Duplicate block und Delete block](../../eng-us/help/images/tour-layout-block-menu.webp)
 
 ### 5. Einen Block verschieben
 
 Ziehen Sie einen Block an seiner Kopfleiste an eine andere Stelle, in derselben oder einer anderen Zone. Hier wurde der
 Block Title nach *MAIN* verschoben, über den Block Full view.
 
-![Der Block Title, in die Zone MAIN verschoben, über dem Block Full view](../../en/us/help/images/tour-layout-block-moved.webp)
+![Der Block Title, in die Zone MAIN verschoben, über dem Block Full view](../../eng-us/help/images/tour-layout-block-moved.webp)
 
 ### 6. Verknüpfte und gemeinsame Zonen
 
@@ -266,7 +266,7 @@ Die Schaltfläche unten links (**Link zone with shared layout zone**) öffnet de
 der Zone, die Sie verknüpfen möchten (**Link zone** an jeder Zone; eine verknüpfte Zone zeigt eine rote
 Verknüpfungsschaltfläche), Schritt 2 nach dem gemeinsamen Layout und seiner Zone. **Back** kehrt zum Editor zurück.
 
-![Der Modus zum Verknüpfen von Zonen: HEADER ist verknüpft, POST_HEADER und MAIN haben eine Schaltfläche Link zone](../../en/us/help/images/tour-layout-link-zone.webp)
+![Der Modus zum Verknüpfen von Zonen: HEADER ist verknüpft, POST_HEADER und MAIN haben eine Schaltfläche Link zone](../../eng-us/help/images/tour-layout-link-zone.webp)
 
 ### 7. Entwurf oder veröffentlichen
 
@@ -277,7 +277,7 @@ Verknüpfungsschaltfläche), Schritt 2 nach dem gemeinsamen Layout und seiner Zo
 | **Save draft and close** (Menü mit drei Punkten) | Behält den Entwurf für später; die Site behält das veröffentlichte Layout. |
 | **Discard** | Wirft den Entwurf weg, nachdem Sie im Dialog **Discard changes** bestätigt haben; **Cancel** im Dialog behält ihn. |
 
-![Der Dialog Discard changes, der fragt, ob die Änderungen am Layout-Entwurf verworfen werden sollen](../../en/us/help/images/tour-layout-discard.webp)
+![Der Dialog Discard changes, der fragt, ob die Änderungen am Layout-Entwurf verworfen werden sollen](../../eng-us/help/images/tour-layout-discard.webp)
 
 Welche Seiten ein Layout verwenden, bestimmen seine **Zuordnungen**; siehe
 [Welche Seiten ein Layout verwenden](layout-editor.md#welche-seiten-ein-layout-verwenden).

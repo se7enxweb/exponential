@@ -38,7 +38,7 @@ has a part for each starting version.
   ([Keeping customers current](../../partners/keeping-customers-current.md)).
 
 Write the version down with the date. Compare it with the newest release in the changelog
-([Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md)).
+([Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)).
 
 ## How security fixes reach you
 

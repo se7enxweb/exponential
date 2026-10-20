@@ -14,8 +14,8 @@ in dieser Anleitung wurde durch Hinzufügen oder Entfernen einer Sprache auf die
 Entfernen einer Sprache übt man nicht an Inhalten, die Menschen nutzen; Abschnitt 9 zeigt, wie Sie es gefahrlos
 ausprobieren.
 
-[Anleitungen](README.md) · Alle Sprachen im Überblick: [Sprachen](../../en/us/languages.md) · Funktionsreferenz:
-[Übersetzungen und Sprachen](../../en/us/features/6.0/translations-and-languages.md)
+[Anleitungen](README.md) · Alle Sprachen im Überblick: [Sprachen](../../eng-us/languages.md) · Funktionsreferenz:
+[Übersetzungen und Sprachen](../../eng-us/features/6.0/translations-and-languages.md)
 · Im Installationshandbuch: [10.14 Mehrsprachige Sites](../installation/10-nach-der-installation.md#1014-mehrsprachige-sites)
 
 ## Kurz gesagt
@@ -73,7 +73,7 @@ umgekehrt. Auf dem Demonstrationsserver tut der Test-Siteaccess `admintest_ger` 
 auflistet, also die englischen sind.
 
 Diese Anleitung behandelt Inhaltssprachen. Zur Oberfläche siehe
-[Übersetzungen und Sprachen](../../en/us/features/6.0/translations-and-languages.md).
+[Übersetzungen und Sprachen](../../eng-us/features/6.0/translations-and-languages.md).
 
 ## 2. Wie Sprachen gespeichert werden
 
@@ -204,7 +204,7 @@ waren, zeigte die Karte *Unbenutzt*, und die Sprache wurde entfernt.
    wählt den ersten Treffer. Ohne JavaScript ist die Liste ein einfaches Listenfeld, nach Namen sortiert. Die Liste
    enthält die Locales aus `share/locale` ohne ihre Varianten (132 bei einer Standardinstallation seit 6.0.15; die
    vollständige Liste mit Namen in der Landessprache, Regionen und Unterstützungsgrad steht unter
-   [Sprachen](../../en/us/languages.md)); bereits hinzugefügte Sprachen werden angezeigt, können aber nicht gewählt werden.
+   [Sprachen](../../eng-us/languages.md)); bereits hinzugefügte Sprachen werden angezeigt, können aber nicht gewählt werden.
    Jeder Eintrag lautet englischer Name · Name in der Landessprache · Land · Code, zum Beispiel
    `Persian · فارسی · Iran · fas-IR`; das Land entfällt, wo der Name es bereits nennt
    (`German (Austria) · Deutsch (Österreich) · ger-AT`), und die Suche findet es trotzdem.
@@ -247,7 +247,7 @@ Gruppe `[RegionalSettings]`:
 | `SiteLanguageList[]` | Die Inhaltssprachen, die dieser Siteaccess zeigt, die bevorzugte zuerst. Ein Objekt wird in der ersten davon gezeigt, die es hat. |
 | `ShowUntranslatedObjects` | `disabled` (Auslieferungszustand): Objekte in keiner dieser Sprachen sind verborgen, außer sie sind immer verfügbar. `enabled`: Sie werden in ihrer Hauptsprache gezeigt. |
 | `ContentObjectLocale` | Die Standardsprache für neue Inhalte und der Rückfall, wenn `SiteLanguageList` leer ist; ausgeliefert als `eng-US`. Ändern Sie sie auf einer Site mit Inhalten nicht, ohne die Warnung in `settings/site.ini` gelesen zu haben. |
-| `ContentObjectFallbackLocale` | Der letzte Ausweg, wenn keine Inhaltssprache priorisiert und keine `ContentObjectLocale` gesetzt ist, zum Beispiel während der Setup-Assistent oder ein Skript Klassen anlegt, bevor die Site Sprachen hat; ausgeliefert als `eng-US` (früher war es fest kodiert `eng-GB`). Siehe [Rückfallsprache für Inhalte](../../en/us/bc/6.0/content-object-fallback-locale.md). |
+| `ContentObjectFallbackLocale` | Der letzte Ausweg, wenn keine Inhaltssprache priorisiert und keine `ContentObjectLocale` gesetzt ist, zum Beispiel während der Setup-Assistent oder ein Skript Klassen anlegt, bevor die Site Sprachen hat; ausgeliefert als `eng-US` (früher war es fest kodiert `eng-GB`). Siehe [Rückfallsprache für Inhalte](../../eng-us/bc/6.0/content-object-fallback-locale.md). |
 | `Locale` | Die Oberflächensprache und die Locale für Datum und Zahlen. |
 | `TextTranslation` | `enabled`, um Oberflächentexte in die `Locale` zu übersetzen. |
 
@@ -388,7 +388,7 @@ Was der Kernel **nicht** zählt, was aber trotzdem das Bit oder die Locale der S
 
 Konvertieren oder bereinigen Sie diese, bevor Sie eine Sprache entfernen, sonst erbt eine später mit derselben ID
 hinzugefügte Sprache sie. Wie das geht, samt der Liste der danach zu leerenden Caches, steht unter
-[Rückfallsprache für Inhalte](../../en/us/bc/6.0/content-object-fallback-locale.md#removing-eng-gb-from-an-existing-site).
+[Rückfallsprache für Inhalte](../../eng-us/bc/6.0/content-object-fallback-locale.md#removing-eng-gb-from-an-existing-site).
 
 Wovor die Seite warnt, was sie aber zulässt:
 
@@ -523,7 +523,7 @@ sind belegt. Entfernen Sie zuerst eine Sprache, die nichts nutzt.
 einer Extension oder **Setup > Pakete**) legt jede Sprache an, die seine Klassendefinitionen nennen. So kam `eng-GB`
 auf den Demonstrationsserver: Die Klassenpakete von `cjw_newsletter` vor Version 4.2.1 nannten sie. Eine alte
 `kickstart.ini` mit `Languages[]=eng-GB` oder eine Site, die angelegt wurde, bevor der Rückfall `eng-US` wurde
-([Rückfallsprache für Inhalte](../../en/us/bc/6.0/content-object-fallback-locale.md)), bewirkt dasselbe. Die Karte der Sprache
+([Rückfallsprache für Inhalte](../../eng-us/bc/6.0/content-object-fallback-locale.md)), bewirkt dasselbe. Die Karte der Sprache
 zeigt, was sie nutzt; verschieben Sie diese Inhalte (Abschnitt 8) und entfernen Sie die Sprache (Abschnitt 9).
 
 **Nach dem Hinzufügen einer Sprache bietet der Editor sie nicht an.** Der Editor bietet nur Sprachen an, die der
@@ -539,16 +539,16 @@ PHP-Klassen geladen: Führen Sie `./console exp:velocity cache clear` aus und na
 
 ## Quellen
 
-- [Sprachen](../../en/us/languages.md): jede Locale und jede Übersetzung der Administration, Unterstützungsgrade, Hinzufügen
+- [Sprachen](../../eng-us/languages.md): jede Locale und jede Übersetzung der Administration, Unterstützungsgrade, Hinzufügen
   einer Locale oder einer Übersetzung, Stand der Rechts-nach-links-Unterstützung.
-- [Übersetzungen und Sprachen](../../en/us/features/6.0/translations-and-languages.md): Oberflächenübersetzungen,
+- [Übersetzungen und Sprachen](../../eng-us/features/6.0/translations-and-languages.md): Oberflächenübersetzungen,
   HTML-Sprachauszeichnungen, Sprachen in einer neuen Installation.
 - [10.14 Mehrsprachige Sites](../installation/10-nach-der-installation.md#1014-mehrsprachige-sites) und
   [10.2 Siteaccesses und Site-Adressen](../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site) im
   Installationshandbuch.
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](inhaltsmodell-und-bearbeitung.md): Objekte, Versionen und der Editor.
 - [Betrieb einer Site](betrieb-einer-website.md): welche Caches wann zu leeren sind.
-- [Blättern in Admin-Listen](../../en/us/features/6.0/admin-list-paging.md): die Seitengröße der Sprachenliste.
+- [Blättern in Admin-Listen](../../eng-us/features/6.0/admin-list-paging.md): die Seitengröße der Sprachenliste.
 - Einstellungen: `settings/site.ini [RegionalSettings]` (jede Einstellung mit ihrem Kommentar), `[SiteAccessSettings]
   AvailableSiteAccessList` und `RelatedSiteAccessList`.
 - Code: `kernel/classes/ezcontentlanguage.php` (Hinzufügen, Entfernen, die Zählungen, die Masken, `maxCount()`),

@@ -45,7 +45,7 @@ Das Passwort, mit dem eine neue Installation beginnt, beschreibt
 Die Seite ist `user/password`: `/admin/user/password` beim standardmäßigen URL-Zugriff (der Teil vor `/user/password`
 ist der Siteaccess Ihrer Administration). Es ist in jedem Design dieselbe Seite; nur der Weg dorthin unterscheidet sich.
 
-![Das Formular „Passwort ändern“ der Administration mit hervorgehobenem Feld für das neue Passwort](../../en/us/help/images/accounts/user-password-admin.webp)
+![Das Formular „Passwort ändern“ der Administration mit hervorgehobenem Feld für das neue Passwort](../../eng-us/help/images/accounts/user-password-admin.webp)
 
 | Design | Wo Sie es finden |
 |---|---|
@@ -67,7 +67,7 @@ Seite nennt, wie viele andere Sitzungen beendet wurden.
 Der Link ist ausgegraut oder fehlt, wenn Ihrer Rolle die Richtlinie **user/password** fehlt. Die Rolle Administrator
 hat sie.
 
-Einzelheiten der Seite: [Das Passwort ändern](../../en/us/features/6.0/modern-password-change.md).
+Einzelheiten der Seite: [Das Passwort ändern](../../eng-us/features/6.0/modern-password-change.md).
 
 ## Das Passwort eines anderen Benutzers als Administrator ändern
 
@@ -164,7 +164,7 @@ nicht mehr, der gespeicherte Hash hat den konfigurierten Typ, ein Passwort kürz
 abgelehnt, `-q` gibt das erzeugte Passwort trotzdem aus, und ein autorisierendes Konto ohne die Rolle Administrator
 wird abgelehnt.
 
-Mehr: [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../en/us/features/6.0/reset-user-password.md).
+Mehr: [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../eng-us/features/6.0/reset-user-password.md).
 
 ## Wie Passwörter gespeichert werden: HashType
 
@@ -250,7 +250,7 @@ Sie das Büro- oder VPN-Netz in `TrustedIPList[]` ein, damit Ihre eigenen Admini
 
 Festgelegt in `site.ini [PasswordSettings]`, beide standardmäßig eingeschaltet:
 
-![Setup, Sitzungen: wer angemeldet ist, mit den Schaltflächen zum Beenden von Sitzungen](../../en/us/help/images/accounts/users-sessions.webp)
+![Setup, Sitzungen: wer angemeldet ist, mit den Schaltflächen zum Beenden von Sitzungen](../../eng-us/help/images/accounts/users-sessions.webp)
 
 - **`EndOtherSessions=enabled`**: Eine Anmeldung speichert einen Stempel des Passworts in der Sitzung; ändert sich das
   Passwort, passt keine andere Sitzung dieses Benutzers mehr, und jede wird bei ihrer nächsten Anfrage abgemeldet, mit
@@ -360,7 +360,7 @@ Die Wiederherstellungsdetails der Erweiterung selbst stehen in ihrer `README.md`
 Das Konto `admin` gibt es in jeder Installation, daher ist sein Login-Name der erste, den ein Angreifer versucht.
 Verwenden Sie es nicht für die tägliche Arbeit:
 
-![Benutzerkonten prüfen: Konten, die niemand verwendet oder die einen Blick brauchen, zum Deaktivieren, Entsperren oder Exportieren](../../en/us/help/images/accounts/user-hygiene.webp)
+![Benutzerkonten prüfen: Konten, die niemand verwendet oder die einen Blick brauchen, zum Deaktivieren, Entsperren oder Exportieren](../../eng-us/help/images/accounts/user-hygiene.webp)
 
 1. **Legen Sie ein persönliches Administratorkonto an.** Erstellen Sie unter **Benutzer** > **Administrator users**
    einen **Benutzer** mit einem eigenen Login (nicht `admin`, nicht `administrator`, möglichst nicht Ihre öffentliche
@@ -385,7 +385,7 @@ Verwenden Sie es nicht für die tägliche Arbeit:
      `UserCreatorID` nicht ändern können.
 
    Die Aktion **Deaktivieren und verschieben** von **Benutzerkonten prüfen** (`user/deactivate`, siehe
-   [Benutzerkonten prüfen](../../en/us/features/6.0/user-hygiene.md)) ist für gewöhnliche Konten gedacht: Sie lehnt den anonymen
+   [Benutzerkonten prüfen](../../eng-us/features/6.0/user-hygiene.md)) ist für gewöhnliche Konten gedacht: Sie lehnt den anonymen
    Benutzer, `UserCreatorID`, das Konto `admin` und Sie selbst absichtlich ab und ist daher nicht der Weg, `admin`
    stillzulegen.
 5. **Halten Sie ein Notfallverfahren bereit, schriftlich und getestet.** Zum Beispiel: die root-Shell des Servers plus
@@ -439,7 +439,7 @@ auf eZpedia entnommen, seit 2006 verfasst von kracker, xavier, Graham Brookins u
 unter der GNU Free Documentation License. Der übernommene Text wurde für Exponential 6 neu geschrieben und korrigiert
 und wird wie die übrige Dokumentation unter der GNU Free Documentation License 1.3 oder einer späteren Version
 verbreitet (<https://www.gnu.org/licenses/fdl-1.3.html>; der Copyright- und Erlaubnisvermerk ist
-`doc/en/us/README-LICENSE.md`). Alles andere auf dieser Seite wurde anhand des Quellcodes von Exponential 6 geschrieben.
+`doc/eng-us/README-LICENSE.md`). Alles andere auf dieser Seite wurde anhand des Quellcodes von Exponential 6 geschrieben.
 
 **Demo-Modus.** Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`, ein Banner **Demo-Modus** in der Administration) funktioniert keiner der Wege auf dieser Seite für einen Administrator: Die Seite, der Link „Passwort vergessen?“, das Bearbeitungsformular, `exp:resetuserpassword` und die Webdienste lehnen alle ab mit „Diese Installation ist eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.“ Um es zu ändern, entfernt der Betreiber des Servers zuerst die Variable. [Demo-Modus](demomodus.md).
 
@@ -448,9 +448,9 @@ verbreitet (<https://www.gnu.org/licenses/fdl-1.3.html>; der Copyright- und Erla
 - [Das Standard-Administratorpasswort](standard-administratorpasswort.md)
 - [Sicherheitshärtung](sicherheitshaertung.md)
 - [Ihr Konto und die Anmeldung](konten-und-anmeldung.md)
-- [Das Passwort ändern](../../en/us/features/6.0/modern-password-change.md),
-  [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../en/us/features/6.0/reset-user-password.md)
+- [Das Passwort ändern](../../eng-us/features/6.0/modern-password-change.md),
+  [Ein Benutzerpasswort auf der Kommandozeile zurücksetzen](../../eng-us/features/6.0/reset-user-password.md)
 - [Kapitel 10.1: Erste Anmeldung und das Administratorpasswort](../installation/10-nach-der-installation.md#101-erste-anmeldung-und-das-administratorpasswort),
   [Kapitel 13: Sicherheitshärtung für die Produktion](../installation/13-sicherheitshaertung.md)
 - [Zweistufige Anmeldung](../anleitungen/zwei-faktor-anmeldung.md), [Sitzungen](../anleitungen/sitzungen.md),
-  [Benutzerkonten prüfen](../../en/us/features/6.0/user-hygiene.md), [Audit](../../en/us/bc/6.0/audit.md)
+  [Benutzerkonten prüfen](../../eng-us/features/6.0/user-hygiene.md), [Audit](../../eng-us/bc/6.0/audit.md)

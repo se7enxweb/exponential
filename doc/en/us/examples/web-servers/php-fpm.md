@@ -36,9 +36,9 @@ and FrankenPHP do not need it: they run PHP themselves.
 ```ini
 ; Exponential 6: a PHP-FPM pool for one installation
 ;
-; Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md.
+; Free documentation: GFDL 1.3 or later, see doc/eng-us/README-LICENSE.md.
 ;
-; Derived from doc/en/us/install/08-serving-the-site.md (8.5.2) and 13 (security
+; Derived from doc/eng-us/install/08-serving-the-site.md (8.5.2) and 13 (security
 ; hardening); not shipped by the kernel. Explained in php-fpm.md next to this
 ; file. One pool per site, running as the user the installation's files
 ; belong to, listening on a socket only the web server can open.

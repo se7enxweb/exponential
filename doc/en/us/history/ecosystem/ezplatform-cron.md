@@ -40,7 +40,7 @@ composer require se7enxweb/ezplatform-cron
 
 ## Related pages
 
-- [Release changelog](../../../../changelogs/extensions/ezplatform-cron.md)
+- [Release changelog](../../../changelogs/extensions/ezplatform-cron.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

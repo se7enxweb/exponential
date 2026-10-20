@@ -339,7 +339,7 @@ sodass keine E-Mail entstehen konnte; auf einer Installation mit Abonnenten verw
 
 ## Verwandte Seiten
 
-- [Die Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md), [die Anleitung für Benutzer](../../../en/us/features/6.0/notifications.md), [die Anleitung für Entwickler](../../anleitungen/benachrichtigungen-entwickler.md)
+- [Die Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md), [die Anleitung für Benutzer](../../../eng-us/features/6.0/notifications.md), [die Anleitung für Entwickler](../../anleitungen/benachrichtigungen-entwickler.md)
 - [Die Spezifikation der Benachrichtigungen](benachrichtigungen.md), [die INI-Referenz](benachrichtigungen-ini.md)
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](ausfuehrbare-befehle-cronjobs-ansichten.md)
-- [Hinweise zum Upgrade](../../../en/us/bc/6.0/notification-ui-and-commands.md)
+- [Hinweise zum Upgrade](../../../eng-us/bc/6.0/notification-ui-and-commands.md)

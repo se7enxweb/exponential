@@ -54,7 +54,7 @@ TopMenuIcons=enabled
 > has a mask rule .a4-bi-<name> in components.css (a Bootstrap Icons 1.13.2 SVG in share/icons/bootstrap-icons/svg/);  
 > a name not listed here draws the plug icon. An extension that ships an icon of its own adds its SVG, a rule  
 > .a4-bi-<name> in a stylesheet of BackendCSSFileList\[\] and IconList\[\]=<name> in its design.ini.append.php  
-> (doc/en/us/features/6.0/admin4-design.md, "Setup overview").  
+> (doc/eng-us/features/6.0/admin4-design.md, "Setup overview").  
 
 Default: a list of 133: `123`, `archive`, `arrow-90deg-up`, `arrow-bar-down`, `arrow-bar-up`, `arrow-clockwise`, `arrow-counterclockwise`, `arrow-down`, `arrow-down-up`, `arrow-down-right`, `arrow-up`, `arrow-up-circle` ....
 

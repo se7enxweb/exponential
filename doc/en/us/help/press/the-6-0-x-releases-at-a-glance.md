@@ -10,7 +10,7 @@ type: help
 # The 6.0.x releases at a glance
 
 This page is for reporters who need the release history of Exponential 6. It lists every 6.0.x release with its date,
-from [doc/en/us/release-overview](../../release-overview) and the Git tags, as of **18 October 2026**.
+from [doc/eng-us/release-overview](../../release-overview) and the Git tags, as of **18 October 2026**.
 
 ## Contents
 
@@ -50,11 +50,11 @@ releases in the past tense, for example "6.0.0, released on 1 January 2024" ([Ve
 
 | Release | Changelog |
 |---|---|
-| 6.0.0 | [6.0.0](../../../../changelogs/6.0/6.0.0.md) |
-| 6.0.10 | [6.0.10](../../../../changelogs/6.0/6.0.10.md) |
-| 6.0.14 | [6.0.14](../../../../changelogs/6.0/6.0.14.md) |
-| 6.0.15 (in development) | [6.0.15](../../../../changelogs/6.0/6.0.15.md) |
-| Every release | [Changelogs](../../../../changelogs/README.md) |
+| 6.0.0 | [6.0.0](../../../changelogs/6.0/6.0.0.md) |
+| 6.0.10 | [6.0.10](../../../changelogs/6.0/6.0.10.md) |
+| 6.0.14 | [6.0.14](../../../changelogs/6.0/6.0.14.md) |
+| 6.0.15 (in development) | [6.0.15](../../../changelogs/6.0/6.0.15.md) |
+| Every release | [Changelogs](../../../changelogs/README.md) |
 
 How to read them: [Where changelogs and release notes live](where-changelogs-and-release-notes-live.md) and
 [Reading a changelog](reading-a-changelog.md).

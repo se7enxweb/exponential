@@ -19,7 +19,7 @@ Every class, interface and trait of `lib/ezfile` with the patterns it was recogn
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
-| `expLogRotator` | class | [Utility (static helper)](utility.md) | `lib/ezfile/classes/explogrotator.php:28` | The one implementation of log rotation in the kernel (doc/en/us/features/6.0/log-rotation.md). |
+| `expLogRotator` | class | [Utility (static helper)](utility.md) | `lib/ezfile/classes/explogrotator.php:28` | The one implementation of log rotation in the kernel (doc/eng-us/features/6.0/log-rotation.md). |
 | `eZBZIP2Handler` | class extends eZCompressionHandler | [Strategy / handler](strategy-handler.md) | `lib/ezfile/classes/ezbzip2compressionhandler.php:20` | – |
 | `eZCompressionHandler` | class extends eZFileHandler | [Strategy / handler](strategy-handler.md) | `lib/ezfile/classes/ezcompressionhandler.php:34` | – |
 | `eZDir` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `lib/ezfile/classes/ezdir.php:17` | – |

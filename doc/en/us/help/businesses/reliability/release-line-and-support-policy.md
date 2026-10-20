@@ -42,7 +42,7 @@ receive a fix is to upgrade within the line. If you run 5.x or older, plan an up
 
 Exponential 6.0.0 was released on 1 January 2024 and 6.0.14 on 7 June 2026; the 6.0.15 line is in development, and
 its changelog says "Not released yet" ([Who is 7x?, the 6.0.x releases](../../who-is-7x.md#the-60x-releases),
-[6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md)).
+[6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
 
 Releases that matter for planning, from
 [Release and upgrade planning](../../leadership/release-and-upgrade-planning.md#the-versions-so-far):
@@ -110,9 +110,9 @@ From [Who is the Exponential Foundation?, releases and version numbers](../../wh
 
 | Document | Use it for |
 |---|---|
-| [Changelogs per release](../../../../../changelogs/6.0/6.0.15.md) | What a version holds, with an "Upgrading" section |
+| [Changelogs per release](../../../../changelogs/6.0/6.0.15.md) | What a version holds, with an "Upgrading" section |
 | [Behavior change notes](../../../bc/6.0/behaviour-changes-2026-10.md) | What behaves differently and what to check, per period |
-| [Extensions' release notes](../../../../../changelogs/extensions/README.md) | What an extension release changed |
+| [Extensions' release notes](../../../../changelogs/extensions/README.md) | What an extension release changed |
 | [The history](../../../history/README.md) | The story of every change since December 2023, by month |
 
 Give one person on your team the job of reading these before each upgrade.

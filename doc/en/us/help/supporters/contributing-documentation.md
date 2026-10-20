@@ -18,7 +18,7 @@ pull request. Typos, outdated steps, unclear sentences: all welcome.
 
 ## Write a new help page
 
-The help shows the git-tracked files in `doc/`. A help page is a Markdown file under `doc/en/us/help/` that starts with
+The help shows the git-tracked files in `doc/`. A help page is a Markdown file under `doc/eng-us/help/` that starts with
 front matter:
 
 ```text

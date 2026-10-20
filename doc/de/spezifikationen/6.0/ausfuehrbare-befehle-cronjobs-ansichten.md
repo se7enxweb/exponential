@@ -5,7 +5,7 @@ Cronjob-Teils und jeder Modul-View in einer Klasse, und die alten Dateien bleibe
 denselben Pfaden erhalten. Lesen Sie sie, wenn Sie den Code hinter einem Skript oder einer View suchen, einen davon ersetzen
 oder darauf hören möchten, ohne den Kernel zu bearbeiten, oder einen eigenen schreiben. Nichts, was ein Skript oder eine View
 benennt, ändert sich. Die vollständige Anleitung mit Vorher-Nachher-Beispielen und einer Beschreibung, wie Sie einen
-eigenen schreiben, ist [CLI-, Cronjob- und View-Abstraktionen](../../../en/us/bc/6.0/cli_cronjob_view_abstractions.md).
+eigenen schreiben, ist [CLI-, Cronjob- und View-Abstraktionen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md).
 
 ## Kurz gesagt
 
@@ -127,7 +127,7 @@ Tests: Unit-Tests für die Basisklassen und jeden verschobenen Einstiegspunkt.
 
 ## Verwandte Seiten
 
-- [CLI-, Cronjob- und View-Abstraktionen](../../../en/us/bc/6.0/cli_cronjob_view_abstractions.md), [RAD-Erweiterungspunkte](../../../en/us/bc/6.0/rad-extension-points.md), [Upgrade-Checkliste vom 1. bis 2. Oktober 2026](../../../en/us/bc/6.0/behaviour-changes-2026-10.md)
-- [Cronjob-Konsole](../../../en/us/features/6.0/cronjobs-console.md), [Inhalts-Jobs](../../../en/us/features/6.0/content-jobs.md), [Exp-Debug-Leiste](../../../en/us/features/6.0/exp-debug-bar.md)
+- [CLI-, Cronjob- und View-Abstraktionen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md), [RAD-Erweiterungspunkte](../../../eng-us/bc/6.0/rad-extension-points.md), [Upgrade-Checkliste vom 1. bis 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Cronjob-Konsole](../../../eng-us/features/6.0/cronjobs-console.md), [Inhalts-Jobs](../../../eng-us/features/6.0/content-jobs.md), [Exp-Debug-Leiste](../../../eng-us/features/6.0/exp-debug-bar.md)
 - [Audit-Ereignismodell](audit-ereignismodell.md)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik Oktober 2026](../../../en/us/history/2026/2026-10.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)

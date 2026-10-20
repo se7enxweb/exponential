@@ -42,7 +42,7 @@ This page is for designers who draw layouts of the layouts editor in a design. T
 {undef $page_layout}
 ```
 
-The `else` branch keeps pages without a matching rule working (`doc/en/us/bc/6.0/LAYOUTS.md`, "How rendering actually
+The `else` branch keeps pages without a matching rule working (`doc/eng-us/bc/6.0/LAYOUTS.md`, "How rendering actually
 works").
 
 ## For a node

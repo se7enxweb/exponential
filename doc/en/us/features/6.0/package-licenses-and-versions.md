@@ -118,5 +118,5 @@ offered only when `package.ini` lists them.
 - [Extension metadata specification](../../specifications/6.0/extension-metadata.md), [About and Copyright pages](about-and-package-pages.md), [file consistency check and the release file list](file-consistency-check.md)
 - [The product is called Exponential](rebranding-to-exponential.md), [a clean installation that fits shared hosting](clean-install-defaults.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - History: [16 to 30 September 2026](../../history/2026/2026-09b.md), [June 2026, second half](../../history/2026/2026-06b.md), [June 2026, first half](../../history/2026/2026-06a.md), [May 2026](../../history/2026/2026-05.md), [April 2026](../../history/2026/2026-04.md), [August 2025](../../history/2025/2025-08.md), [July 2025](../../history/2025/2025-07.md), [January 2025](../../history/2025/2025-01.md)

@@ -136,4 +136,4 @@ The history covers 6556 ledger changes in 53 repositories since December 2023. 1
 - [Platform package map](../specifications/6.0/platform-package-map.md) and [console commands](../specifications/6.0/platform-console-commands.md)
 - [Package forks and command renames](../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Admin interface](../features/6.0/platform-admin-ui-fork.md), [Nexus starter](../features/6.0/platform-nexus-starter.md), [layouts core](../features/6.0/platform-layouts-core-fork.md), [framework forks](../features/6.0/platform-php85-framework-forks.md), [site bundles](../features/6.0/platform-site-bundles.md)
-- [Release changelogs of the packages](../../../changelogs/extensions/README.md)
+- [Release changelogs of the packages](../../changelogs/extensions/README.md)

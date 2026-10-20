@@ -24,7 +24,7 @@ Exponential is published as the Composer package
 | Release branches | `6.0.7` to `6.0.14` | the state of each release line |
 
 The newest release tag at the time of writing is `v6.0.14`; the `main` branch identifies itself as `6.0.15stable`
-(`lib/version.php`) and carries the changes described in [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md). To see what
+(`lib/version.php`) and carries the changes described in [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md). To see what
 is published now:
 
 ```bash
@@ -439,7 +439,7 @@ In this repository:
   [Extension metadata](../specifications/6.0/extension-metadata.md).
 - [Repairing an installation](../bc/6.0/repair.md): when `vendor/` is missing.
 - [Console](../bc/6.0/console.md).
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) and the [extensions' release notes](../../../changelogs/extensions/README.md).
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) and the [extensions' release notes](../../changelogs/extensions/README.md).
 - Code: `composer.json`, `lib/version.php`, `.github/workflows/quality.yml` (job `php80`),
   `vendor/se7enxweb/exponential-legacy-installer/src/eZ/Publish/Composer/` (`LegacyKernelInstaller`,
   `LegacyExtensionInstaller`).

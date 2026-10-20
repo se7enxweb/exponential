@@ -102,7 +102,7 @@ You should now see: <checkpoint>.
 ## Keep it alive
 
 - After each release, re-run the tutorial or at least check the changelog for changed screens
-  ([changelogs](../../../../changelogs/README.md)).
+  ([changelogs](../../../changelogs/README.md)).
 - Update the version line when you re-test.
 - If a step no longer works, put a visible note at the top until you fix it.
 - If your tutorial would help every user, propose it for the help itself ([Improving the help](improving-the-help.md)).

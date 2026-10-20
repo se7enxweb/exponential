@@ -49,7 +49,7 @@ bereits in `error.log.1` oder `.2` stehen, durchsuchen Sie deshalb alle Dateien
 | `var/log/storage.log` | die Dateiablage | Dateien, die nach `var/storage` geschrieben wurden (unter `[FileSettings] VarDir`/`LogDir`) |
 | `var/log/async.log` | asynchrones Veröffentlichen | die Veröffentlichungswarteschlange |
 | `var/log/requestrules.log` | Anfrageregeln | abgewiesene und protokollierte Anfragen |
-| `var/log/audit/` | das Audit-Protokoll (`settings/audit.ini`, `[AuditSettings] LogDir=log/audit`, relativ zu `[FileSettings] VarDir`) | hashverkettete Audit-Dateien; siehe [Audit](../../en/us/bc/6.0/audit.md) |
+| `var/log/audit/` | das Audit-Protokoll (`settings/audit.ini`, `[AuditSettings] LogDir=log/audit`, relativ zu `[FileSettings] VarDir`) | hashverkettete Audit-Dateien; siehe [Audit](../../eng-us/bc/6.0/audit.md) |
 | `var/vc/qbix/log/` | Velocity (`settings/velocity.ini`, `[LogSettings] Dir`) | `<siteaccess>-access.log` und `<siteaccess>-error.log`, benannt nach `[SiteSettings] DefaultAccess`; beim Rotieren mit Datum versehen |
 | `var/vc/qbix/run/console.log` | Velocity (`[ServerSettings] LogFile`) | was der Serverprozess ausgibt: Start, Aufwärmphase und Fehler beim Starten |
 | `var/vc/frankenphp/log/` | die FrankenPHP-Engine | ihre `access.log` und `error.log` |
@@ -91,7 +91,7 @@ Die Platzhalter `%directory`, `%file` und `%user` werden auf der Seite ausgefül
 ## 12.4 Debug-Ausgabe
 
 Die Debug-Ausgabe zeigt Warnungen, Fehler, Zeitmessungen, SQL und die verwendeten Templates am Ende jeder Seite an (seit
-dem 2. Oktober 2026 als angeheftete [Exp Debug bar](../../en/us/features/6.0/exp-debug-bar.md)). Sie ist standardmäßig
+dem 2. Oktober 2026 als angeheftete [Exp Debug bar](../../eng-us/features/6.0/exp-debug-bar.md)). Sie ist standardmäßig
 ausgeschaltet (`settings/site.ini`, `[DebugSettings] DebugOutput=disabled`). Schalten Sie sie **nur für Ihre eigene
 Adresse** ein, in `settings/override/site.ini.append.php`:
 
@@ -109,7 +109,7 @@ php bin/php/ezcache.php --clear-tag=ini
 ```
 
 Unter Velocity starten Sie es zusätzlich neu (`php bin/php/console exp:velocity restart`), weil die Worker die
-Einstellungen im Speicher halten. Dasselbe lässt sich mit [exp:ini](../../en/us/features/6.0/exp-ini-command.md) erreichen, das
+Einstellungen im Speicher halten. Dasselbe lässt sich mit [exp:ini](../../eng-us/features/6.0/exp-ini-command.md) erreichen, das
 den Override schreibt und protokolliert:
 
 ```bash
@@ -134,7 +134,7 @@ Die Schalter (`settings/site.ini`, `[DebugSettings]`, sofern nicht anders angege
 
 **Lassen Sie die Debug-Ausgabe auf einer öffentlichen Site nie für alle eingeschaltet.** Sie zeigt Pfade, Abfragen und
 Einstellungen. Bei mehreren Rechnern legen Sie die Debug-Einstellungen nur in die Einstellungen des
-Entwicklungsrechners; siehe [Einstellungen je Umgebung (EXP_ENV)](../../en/us/features/6.0/environment-settings.md).
+Entwicklungsrechners; siehe [Einstellungen je Umgebung (EXP_ENV)](../../eng-us/features/6.0/environment-settings.md).
 
 ## 12.5 Den Code beschaffen und Composer
 
@@ -220,14 +220,14 @@ Alle Meldungen dieser Tabelle stehen in `kernel/setup/steps/ezstep_installer.php
 
 | Was der Besucher sieht | Ursache | Abhilfe |
 |---|---|---|
-| „The site is missing the software libraries it needs“ (HTTP 503) | `vendor/` fehlt, wurde verschoben oder umbenannt (`lib/ezutils/classes/ezexecution.php`, `errorCase()`) | Stellen Sie `vendor/` wieder her, oder führen Sie `composer install` aus (`--no-dev` im Produktivbetrieb); dann `php bin/php/ezcache.php --clear-all` und, unter Velocity, ein Neustart. Siehe [Eine Installation reparieren](../../en/us/bc/6.0/repair.md). |
+| „The site is missing the software libraries it needs“ (HTTP 503) | `vendor/` fehlt, wurde verschoben oder umbenannt (`lib/ezutils/classes/ezexecution.php`, `errorCase()`) | Stellen Sie `vendor/` wieder her, oder führen Sie `composer install` aus (`--no-dev` im Produktivbetrieb); dann `php bin/php/ezcache.php --clear-all` und, unter Velocity, ein Neustart. Siehe [Eine Installation reparieren](../../eng-us/bc/6.0/repair.md). |
 | „Something went wrong on our side“ (HTTP 500) mit einer Referenz `ERR-...` | Ein nicht abgefangener Fehler | Suchen Sie die Referenz in `var/log/error.log`; die Zeile nennt Meldung, Datei und Zeile. Bei eingeschalteter Debug-Ausgabe zeigt die Seite die Details selbst. |
 | „We'll be right back“ (HTTP 503, `Retry-After: 30`) | Die Datenbank war nicht erreichbar: abgelehnt, unbekannter Host, falsches Passwort, zu viele Verbindungen, Verbindung abgebrochen (`eZExecution::isDatabaseUnavailable()`) | Prüfen Sie, ob der Datenbankserver läuft, und die Zugangsdaten in `settings/override/site.ini.append.php`; die Logzeile enthält die Meldung des Treibers, bei PostgreSQL „Unable to connect to the database server '<host>'“. |
 | „Down for maintenance“ (HTTP 503) | Der Wartungsmodus ist eingeschaltet | `php bin/php/maintenance.php status`; `php bin/php/maintenance.php off`, wenn die Arbeiten erledigt sind. |
-| „Dieses Formular ist abgelaufen“ (HTTP 403) | Das Token des Formulars fehlte oder war falsch: Die Seite war lange geöffnet, die Sitzung ist abgelaufen, oder das Formular kam von einer anderen Seite | Laden Sie das Formular neu und senden Sie es erneut ab. Es wurde nichts gespeichert. Siehe [Seite „Formular abgelaufen“](../../en/us/features/6.0/form-expired-page.md). |
+| „Dieses Formular ist abgelaufen“ (HTTP 403) | Das Token des Formulars fehlte oder war falsch: Die Seite war lange geöffnet, die Sitzung ist abgelaufen, oder das Formular kam von einer anderen Seite | Laden Sie das Formular neu und senden Sie es erneut ab. Es wurde nichts gespeichert. Siehe [Seite „Formular abgelaufen“](../../eng-us/features/6.0/form-expired-page.md). |
 | Eine leere Seite, oder 500 ohne Eintrag in `error.log` | PHP ist gescheitert, bevor Exponential protokollieren konnte: ein Syntaxfehler, eine fehlende PHP-Erweiterung, erschöpfter Speicher | Lesen Sie das Fehlerlog des Webservers oder von PHP-FPM; führen Sie `php -l` für eine geänderte Datei aus; prüfen Sie `php -v` und `vendor/`. |
 | 404 für jede Seite unter Apache | `.htaccess` wird nicht gelesen (`AllowOverride All` fehlt), oder `mod_rewrite` ist ausgeschaltet | `cp .htaccess_root .htaccess`; Overrides erlauben; `mod_rewrite` aktivieren. |
-| Alle paar Neuladevorgänge erscheint eine alte Seite | Der Service Worker des Browsers spielt eine Seite ab, die er zwischengespeichert hat (der Worker der Site ist `/index.js`, geladen von `/sw.js`) | Lassen Sie `/sw.js` an seinem Platz; ein Neuladen, nachdem der neue Worker aktiv geworden ist (Cache-Version `exp-nav-v4`), behebt es, oder löschen Sie die Website-Daten im Browser. Siehe [Verhaltensänderungen vom 16. bis 30. September 2026](../../en/us/bc/6.0/behaviour-changes-2026-09b.md). |
+| Alle paar Neuladevorgänge erscheint eine alte Seite | Der Service Worker des Browsers spielt eine Seite ab, die er zwischengespeichert hat (der Worker der Site ist `/index.js`, geladen von `/sw.js`) | Lassen Sie `/sw.js` an seinem Platz; ein Neuladen, nachdem der neue Worker aktiv geworden ist (Cache-Version `exp-nav-v4`), behebt es, oder löschen Sie die Website-Daten im Browser. Siehe [Verhaltensänderungen vom 16. bis 30. September 2026](../../eng-us/bc/6.0/behaviour-changes-2026-09b.md). |
 | Die Kommandozeile gibt „An unexpected error has occurred. Please contact the webmaster.“ aus | Ein nicht abgefangener Fehler in einem Skript | Führen Sie es erneut mit `-d all` aus; lesen Sie `var/log/error.log`. |
 
 ## 12.10 Datenbanken
@@ -240,7 +240,7 @@ Alle Meldungen dieser Tabelle stehen in `kernel/setup/steps/ezstep_installer.php
 | Nach dem Wechsel der Datenbank-Engine lädt keine Seite | `DatabaseImplementation` nennt noch die alte Engine | Setzen Sie es in `settings/override/site.ini.append.php`, dann `php bin/php/ezcache.php --clear-tag=ini`. |
 | MySQL: `SET storage_engine=InnoDB;` schlägt in einer Update-Datei fehl | Eine Update-Datei von vor Oktober 2026: Diese Schreibweise wurde in MySQL 5.7.5 und MariaDB 12.0 entfernt | Nehmen Sie die aktuelle Datei, in der `SET default_storage_engine=InnoDB;` steht; siehe [Kapitel 11](11-aktualisieren.md#113-die-update-dateien). |
 | PostgreSQL: Fehler zu `digest` | `pgcrypto` fehlt | `CREATE EXTENSION pgcrypto;` als Eigentümer oder Superuser. |
-| MongoDB: Abfragen auf Teilbäume und URL-Aliase sind langsam | Die Indizes wurden nicht angelegt | `mongosh "mongodb://<user>:<password>@localhost:27017/<database>" --file bin/mongodb/create_indexes.js`; siehe [MongoDB](../../en/us/features/6.0/mongodb-database-support.md). |
+| MongoDB: Abfragen auf Teilbäume und URL-Aliase sind langsam | Die Indizes wurden nicht angelegt | `mongosh "mongodb://<user>:<password>@localhost:27017/<database>" --file bin/mongodb/create_indexes.js`; siehe [MongoDB](../../eng-us/features/6.0/mongodb-database-support.md). |
 | MongoDB: „Failed to parse MongoDB URI: 'mongodb://:@...'. 'default' authentication mechanism requires a username.“ | Es wurde kein Datenbankbenutzer angegeben: Der Adapter (`lib/ezdb/classes/expmongodb.php`) schreibt immer `<user>:<password>@` in seine Verbindungszeichenkette | Legen Sie in der Datenbank der Site einen Benutzer an und geben Sie ihn als `User` und `Password` an (`--db-user` bei `exp:install`); siehe [Kapitel 9](09-datenbanken.md#95-mongodb). |
 | MongoDB: `Class "MongoDB\Client" not found` | Die PHP-Bibliothek `mongodb/mongodb` ist nicht installiert | `composer require mongodb/mongodb`; außerdem muss die PHP-Erweiterung `mongodb` geladen sein. |
 | Oracle: Der Treiber wird nicht gefunden | Die Extension `ezoracle` ist nicht in `extension/` oder nicht aktiv | Sie wird von `composer.json` verlangt; prüfen Sie `extension/ezoracle` und ob `oci8` geladen ist. |
@@ -258,7 +258,7 @@ Alle Meldungen dieser Tabelle stehen in `kernel/setup/steps/ezstep_installer.php
 | `velocity deploy: FAIL after Ns; the steps after the failed one were not run` | Ein Schritt von `exp:velocity deploy` ist fehlgeschlagen | Die Ausgabe nennt den Schritt; beheben Sie das Problem und führen Sie `deploy` erneut aus (`--dry-run` listet die Schritte auf). |
 | Eine Änderung an PHP, Templates oder Einstellungen wird unter Velocity nicht sichtbar | Die Worker halten die Anwendung im Speicher | `exp:velocity restart` (oder `deploy`), dann `exp:velocity cache clear`. |
 | Die Ports 80 und 443 lassen sich nicht binden | Ports unter 1024 erfordern root | Starten Sie Velocity als root (die Worker wechseln zu `[ServerSettings] User`), oder verwenden Sie Ports über 1024 hinter einem Proxy. |
-| HTTPS zeigt ein selbstsigniertes Zertifikat | Das konfigurierte Zertifikat fehlt, ist abgelaufen oder passt nicht zu seinem Schlüssel; Velocity weicht auf ein selbstsigniertes aus | `php bin/php/console exp:velocity ssl show`; korrigieren Sie `[HTTPSSettings] Certificate` und `Key`. Siehe [Velocity: HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md). |
+| HTTPS zeigt ein selbstsigniertes Zertifikat | Das konfigurierte Zertifikat fehlt, ist abgelaufen oder passt nicht zu seinem Schlüssel; Velocity weicht auf ein selbstsigniertes aus | `php bin/php/console exp:velocity ssl show`; korrigieren Sie `[HTTPSSettings] Certificate` und `Key`. Siehe [Velocity: HTTPS und Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md). |
 | Eine PHP-Änderung wird unter Apache oder nginx nicht sichtbar | Das PHP-FPM, das die Site ausliefert, wurde nicht neu geladen; auf Servern mit mehreren PHP-Versionen ist es nicht immer `php-fpm` (Plesk: `plesk-php<XY>-fpm`) | Laden Sie den richtigen Dienst neu; `exp:velocity deploy` findet ihn mit `[DeploySettings] PhpFpmService=auto`. |
 | Nur mit Velocity versucht `deploy`, PHP-FPM neu zu laden | `PhpFpmService=auto` | Setzen Sie `[DeploySettings] PhpFpmService=disabled`. |
 
@@ -280,7 +280,7 @@ listen sie auf):
 Leeren Sie unter Velocity außerdem dessen Antwort-Cache, und zwar **nach** dem Neustart:
 `php bin/php/console exp:velocity cache clear`. Eine Seite, die zwischen dem Leeren eines Caches und dem Neustart noch
 vom alten Code dargestellt wird, landet erneut im Cache und wird ausgeliefert, als hätte die Änderung nicht
-funktioniert. Mehr dazu in [Cache-Konsole](../../en/us/bc/6.0/cache-console.md) und [Eine Site betreiben](../anleitungen/betrieb-einer-website.md).
+funktioniert. Mehr dazu in [Cache-Konsole](../../eng-us/bc/6.0/cache-console.md) und [Eine Site betreiben](../anleitungen/betrieb-einer-website.md).
 
 | Symptom | Ursache | Abhilfe |
 |---|---|---|
@@ -293,16 +293,16 @@ funktioniert. Mehr dazu in [Cache-Konsole](../../en/us/bc/6.0/cache-console.md) 
 
 | Symptom | Ursache | Abhilfe |
 |---|---|---|
-| Das Administratorpasswort ist verloren | | `php bin/php/resetuserpassword.php -u admin -g --allow-root-user` als root (die root-Umgehung), oder mit der Anmeldung eines Administrators (`-a <login> -ap <password>`); `-p <password>` setzt ein vorgegebenes Passwort. Siehe [Ein Benutzerpasswort zurücksetzen](../../en/us/features/6.0/reset-user-password.md). |
+| Das Administratorpasswort ist verloren | | `php bin/php/resetuserpassword.php -u admin -g --allow-root-user` als root (die root-Umgehung), oder mit der Anmeldung eines Administrators (`-a <login> -ap <password>`); `-p <password>` setzt ein vorgegebenes Passwort. Siehe [Ein Benutzerpasswort zurücksetzen](../../eng-us/features/6.0/reset-user-password.md). |
 | Das erzeugte Passwort ist unbekannt | Es wurde einmal am Ende der Installation ausgegeben | `var/log/initial-admin-password` (nur für den Eigentümer lesbar); löschen Sie die Datei nach der ersten Anmeldung. |
 | Ein per SQL oder Migration angelegtes Konto kann sich nicht anmelden | Seit dem 16. August 2026 gilt ein Benutzer ohne Zeile in `ezuser_setting` als deaktiviert | Legen Sie die Zeile an; die Abfragen stehen in der [Sicherheitsspezifikation vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md#f-06-konten-finden-die-sich-nicht-anmelden-können). |
-| Hinter einem Proxy oder Load Balancer: HTTPS-Seiten verlinken oder leiten auf `http://` weiter, eine Weiterleitungsschleife, oder jeder Besucher hat die Adresse des Proxys | Weitergeleitete Header (`X-Forwarded-Proto`, `X-Forwarded-Host`, `X-Forwarded-For`) zählen nur von Adressen in `site.ini [HTTPHeaderSettings] TrustedProxies[]`, ausgeliefert nur mit `127.0.0.1` und `::1` | Tragen Sie die Adresse des Proxys in `TrustedProxies[]` ein; für die Adresse des Besuchers setzen Sie außerdem `ClientIpByCustomHTTPHeader=X-Forwarded-For`. Siehe [Kapitel 8](08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy) und [Vertrauenswürdige Proxys](../../en/us/bc/6.0/trusted-proxies.md). |
+| Hinter einem Proxy oder Load Balancer: HTTPS-Seiten verlinken oder leiten auf `http://` weiter, eine Weiterleitungsschleife, oder jeder Besucher hat die Adresse des Proxys | Weitergeleitete Header (`X-Forwarded-Proto`, `X-Forwarded-Host`, `X-Forwarded-For`) zählen nur von Adressen in `site.ini [HTTPHeaderSettings] TrustedProxies[]`, ausgeliefert nur mit `127.0.0.1` und `::1` | Tragen Sie die Adresse des Proxys in `TrustedProxies[]` ein; für die Adresse des Besuchers setzen Sie außerdem `ClientIpByCustomHTTPHeader=X-Forwarded-For`. Siehe [Kapitel 8](08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy) und [Vertrauenswürdige Proxys](../../eng-us/bc/6.0/trusted-proxies.md). |
 | Angemeldet, aber auf der nächsten Seite abgemeldet (hinter einem Proxy oder bei gemischtem HTTP und HTTPS) | Attribute des Sitzungscookies: `[Session] CookieSecure=auto` markiert das Cookie als `Secure`, wenn die Anfrage über HTTPS kam; `CookieSameSite=Lax` | Liefern Sie die gesamte Site über ein einziges Schema aus; wenn die Administration von einer anderen Site in einen Frame eingebettet oder Formulare von dort an sie gesendet werden, setzen Sie `CookieSameSite=None` zusammen mit `CookieSecure=true`. Siehe [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md). |
 
 ## 12.14 Hilfe erhalten
 
-- Durchsuchen Sie diese Dokumentation: die [Anleitungen](../anleitungen/README.md), die [Funktionsseiten](../../en/us/features/6.0/),
-  die [Hinweise zu Verhaltensänderungen](../../en/us/bc/6.0/) und das [Glossar](../../en/us/glossary.md).
+- Durchsuchen Sie diese Dokumentation: die [Anleitungen](../anleitungen/README.md), die [Funktionsseiten](../../eng-us/features/6.0/),
+  die [Hinweise zu Verhaltensänderungen](../../eng-us/bc/6.0/) und das [Glossar](../../eng-us/glossary.md).
 - Das Online-Handbuch: [https://exponential.doc.exponential.earth/](https://exponential.doc.exponential.earth/).
 - Einen Fehler melden: im [Issue-Tracker von Exponential](https://github.com/se7enxweb/exponential/issues) oder im
   [Issue-Tracker der Community](https://github.com/se7enxweb/exponential-community/issues).
@@ -314,25 +314,25 @@ Wenn Sie ein Problem melden, geben Sie die Version (`php bin/php/console --versi
 Version, die Engine, die die Site ausliefert, die genaue Meldung und die passenden Zeilen aus `var/log/error.log` an.
 Entfernen Sie Passwörter und personenbezogene Daten aus Logs, bevor Sie sie weitergeben.
 
-**Demo-Modus.** Ein Banner **Demo-Modus**, ein Administratorpasswort, das sich nicht ändern lässt („Diese Installation ist eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.“), oder ein Installationsprogramm, das ein allgemein bekanntes Passwort beibehält: Der Prozess hat die Umgebungsvariable `EXP_DEMO_MODE=1`. Bei einer Demo ist das so gewollt; auf einer echten Site entfernen Sie die Variable. Eine Demo, deren Banner fehlt oder deren Build fehlschlägt, weil das Installationsprogramm ein Passwort erzeugt hat: [Probleme mit dem Demo-Modus](../../en/us/help/hosting/runbooks/demo-mode-problems.md).
+**Demo-Modus.** Ein Banner **Demo-Modus**, ein Administratorpasswort, das sich nicht ändern lässt („Diese Installation ist eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.“), oder ein Installationsprogramm, das ein allgemein bekanntes Passwort beibehält: Der Prozess hat die Umgebungsvariable `EXP_DEMO_MODE=1`. Bei einer Demo ist das so gewollt; auf einer echten Site entfernen Sie die Variable. Eine Demo, deren Banner fehlt oder deren Build fehlschlägt, weil das Installationsprogramm ein Passwort erzeugt hat: [Probleme mit dem Demo-Modus](../../eng-us/help/hosting/runbooks/demo-mode-problems.md).
 
 ## Referenzen
 
 In diesem Repository:
 
-- [Installationsübersicht](../../en/us/INSTALL.md), Abschnitt 12.
-- [Eine Installation reparieren](../../en/us/bc/6.0/repair.md) und [Reparatur aus dem Browser](../../en/us/features/6.0/repair-from-the-browser.md).
-- [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md), [Seite „Formular abgelaufen“](../../en/us/features/6.0/form-expired-page.md),
-  [Ein Benutzerpasswort zurücksetzen](../../en/us/features/6.0/reset-user-password.md).
-- [Die Exp Debug bar](../../en/us/features/6.0/exp-debug-bar.md), [Referenz der Debug-Leiste](../../en/us/bc/6.0/debug-bar.md),
-  [Einstellungen je Umgebung](../../en/us/features/6.0/environment-settings.md), [exp:ini](../../en/us/features/6.0/exp-ini-command.md).
-- [Cache-Konsole](../../en/us/bc/6.0/cache-console.md), [Eine Site betreiben](../anleitungen/betrieb-einer-website.md),
+- [Installationsübersicht](../../eng-us/INSTALL.md), Abschnitt 12.
+- [Eine Installation reparieren](../../eng-us/bc/6.0/repair.md) und [Reparatur aus dem Browser](../../eng-us/features/6.0/repair-from-the-browser.md).
+- [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md), [Seite „Formular abgelaufen“](../../eng-us/features/6.0/form-expired-page.md),
+  [Ein Benutzerpasswort zurücksetzen](../../eng-us/features/6.0/reset-user-password.md).
+- [Die Exp Debug bar](../../eng-us/features/6.0/exp-debug-bar.md), [Referenz der Debug-Leiste](../../eng-us/bc/6.0/debug-bar.md),
+  [Einstellungen je Umgebung](../../eng-us/features/6.0/environment-settings.md), [exp:ini](../../eng-us/features/6.0/exp-ini-command.md).
+- [Cache-Konsole](../../eng-us/bc/6.0/cache-console.md), [Eine Site betreiben](../anleitungen/betrieb-einer-website.md),
   [Bereitstellung](../anleitungen/bereitstellung.md).
-- [SQLite-Datenbankunterstützung](../../en/us/features/6.0/sqlite-database.md), [SQLite-Transaktionen](../../en/us/bc/6.0/sqlite-transactions.md),
-  [MongoDB](../../en/us/features/6.0/mongodb-database-support.md).
-- [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [Velocity: HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md),
-  [Velocity: Verzeichnisstruktur auf der Festplatte](../../en/us/bc/6.0/velocity-ondisk-layout.md).
-- [Audit](../../en/us/bc/6.0/audit.md), [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md),
+- [SQLite-Datenbankunterstützung](../../eng-us/features/6.0/sqlite-database.md), [SQLite-Transaktionen](../../eng-us/bc/6.0/sqlite-transactions.md),
+  [MongoDB](../../eng-us/features/6.0/mongodb-database-support.md).
+- [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md), [Velocity: HTTPS und Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md),
+  [Velocity: Verzeichnisstruktur auf der Festplatte](../../eng-us/bc/6.0/velocity-ondisk-layout.md).
+- [Audit](../../eng-us/bc/6.0/audit.md), [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md),
   [Anleitung zu Sicherheit und Audit](../anleitungen/sicherheit-und-audit.md).
 - [Installer-Logs und Startdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md).
 - Code: `kernel/setup/ezsetuptests.php`, `kernel/setup/steps/ezstep_installer.php`,

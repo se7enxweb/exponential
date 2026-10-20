@@ -2,7 +2,7 @@
 
 The simple theme is the default design of a new Exponential installation. It was imported in January 2024 with the ezwebin-based packages, rebranded to Exponential in August 2025, reworked in July 2026 (multi-level menu, toolbar spacing, HTML5 markup) and finished in the September and October 2026 sweep (error page titles, translations, jQuery 4, YUI removed). See the [feature page](../../features/6.0/extensions/sevenx_themes_simple.md).
 
-This page lists **every one of the 72 changes** of the repository `sevenx_themes_simple` between 2024-01-25 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_themes_simple.md); what each release contains is in the [release notes](../../../../changelogs/extensions/sevenx_themes_simple.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_themes_simple.md).
+This page lists **every one of the 72 changes** of the repository `sevenx_themes_simple` between 2024-01-25 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_themes_simple.md); what each release contains is in the [release notes](../../../changelogs/extensions/sevenx_themes_simple.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_themes_simple.md).
 
 | Kind | Changes |
 |---|---|
@@ -174,6 +174,6 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/sevenx_themes_simple.md)
-- [Release notes](../../../../changelogs/extensions/sevenx_themes_simple.md)
+- [Release notes](../../../changelogs/extensions/sevenx_themes_simple.md)
 - [Change ledger](../ledger/sevenx_themes_simple.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

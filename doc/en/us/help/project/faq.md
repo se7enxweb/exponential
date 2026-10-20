@@ -69,7 +69,7 @@ The website's [About Exponential FAQ](https://exponential.earth/faq/about-expone
 balances new features against stability: every change to the core is reviewed carefully, and the core is kept to
 essential functions while extensions add the rest. In this repository you can see the same rule at work: new
 features usually arrive as extensions or as settings that are off by default, and every change is recorded in the
-[6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md).
+[6.0.15 changelog](../../../changelogs/6.0/6.0.15.md).
 
 ## Working with Exponential
 
@@ -180,7 +180,7 @@ for every code contribution to the kernel, whether it is sent as a pull request,
 it can be merged. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without
 asking or paying you, and you cannot withdraw it or set conditions on it. You sign once for all future contributions. Your
 own custom extensions, site packages and themes are not affected. See
-[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+[Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ### Is it really free?
 

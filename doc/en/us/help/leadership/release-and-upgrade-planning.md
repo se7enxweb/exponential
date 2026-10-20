@@ -36,7 +36,7 @@ tells you which parts to read and who does what.
 ### The versions so far
 
 Exponential 6.0.0 was released on 1 January 2024, and 6.0.14 on 7 June 2026. The 6.0.15 line is in development: the
-[6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) says "Not released yet" and lists what the line contains. The full
+[6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) says "Not released yet" and lists what the line contains. The full
 list of dates is on [Who is 7x?](../who-is-7x.md#the-60x-releases), taken from the release overview and the Git
 tags.
 
@@ -48,8 +48,8 @@ Facts a planner needs from that table:
 | 6.0.8 | Needs PHP 8.1 | same |
 | 6.0.10 | The first release named Exponential: the product name in templates, translations and overrides | same, [The product is called Exponential](../../features/6.0/rebranding-to-exponential.md) |
 | 6.0.13 | Security fixes and sort column checks | same |
-| 6.0.14 | MongoDB as a database, and the upgrade file check (`share/filelist.md5`) | [6.0.14 changelog](../../../../changelogs/6.0/6.0.14.md) |
-| 6.0.15 line | Velocity, the admin4 design, the audit trail, Exponential Layouts, Exponential Intelligence, the help system and much more | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| 6.0.14 | MongoDB as a database, and the upgrade file check (`share/filelist.md5`) | [6.0.14 changelog](../../../changelogs/6.0/6.0.14.md) |
+| 6.0.15 line | Velocity, the admin4 design, the audit trail, Exponential Layouts, Exponential Intelligence, the help system and much more | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 
 > **Note**
 > The sources do not publish a fixed release calendar. The 6.0.x tags came at intervals of about one to five months.
@@ -102,9 +102,9 @@ Two planning consequences:
 
 | Document | Use it for | Where |
 |---|---|---|
-| Changelog per release | What a version holds, with an "Upgrading" section at the top | `doc/changelogs/6.0/` ([6.0.14](../../../../changelogs/6.0/6.0.14.md), [6.0.15](../../../../changelogs/6.0/6.0.15.md)) |
-| Behavior change notes | What behaves differently and what to check, per period | `doc/en/us/bc/6.0/`, for example [July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md), [1 and 2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md) |
-| Extensions' release notes | What an extension release changed | [Extensions' release notes](../../../../changelogs/extensions/README.md) |
+| Changelog per release | What a version holds, with an "Upgrading" section at the top | `doc/changelogs/6.0/` ([6.0.14](../../../changelogs/6.0/6.0.14.md), [6.0.15](../../../changelogs/6.0/6.0.15.md)) |
+| Behavior change notes | What behaves differently and what to check, per period | `doc/eng-us/bc/6.0/`, for example [July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md), [1 and 2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md) |
+| Extensions' release notes | What an extension release changed | [Extensions' release notes](../../../changelogs/extensions/README.md) |
 | The history | The story of every change since December 2023, by month | [The history](../../history/README.md) |
 | The upgrade chapter | The table "From ... Read ..." that lists the notes of each period you pass | [11.6 step 3](../../install/11-upgrading.md#step-3-read-the-checklist-of-each-period-you-pass) |
 

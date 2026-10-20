@@ -28,7 +28,7 @@ with SFTP, FTPS, S3, WebDAV and HTTP delivery.
 ## Related pages
 
 - [xrowextract](xrowextract.md)
-- [Chronicle](../../../history/extensions/ezxmlexport.md) and [release notes](../../../../../changelogs/extensions/ezxmlexport.md)
+- [Chronicle](../../../history/extensions/ezxmlexport.md) and [release notes](../../../../changelogs/extensions/ezxmlexport.md)
 - [Change ledger](../../../history/ledger/ezxmlexport.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2023-12](../../../history/extensions/months/2023-12.md), [2024-01](../../../history/extensions/months/2024-01.md), [2026-03](../../../history/extensions/months/2026-03.md)

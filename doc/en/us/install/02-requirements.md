@@ -329,7 +329,7 @@ extensions `composer.json` requires and, when you ask for it, Velocity. Without 
 |---|---|---|
 | **Exponential Velocity** (`qbix` engine) | 8.1+ | Recommended for every stage. Serves HTTP and HTTPS itself; no other web server needed. |
 | Apache with `mod_rewrite` and PHP-FPM (or mod_php) | 8.0+ | The classic setup; shared hosting. The rewrite rules ship in `.htaccess_root`. |
-| nginx, LiteSpeed, Caddy and others with PHP-FPM | 8.0+ | Any server that can rewrite a URL to `index.php`; listed in the [README](../../../../README.md#the-traditional-options). |
+| nginx, LiteSpeed, Caddy and others with PHP-FPM | 8.0+ | Any server that can rewrite a URL to `index.php`; listed in the [README](../../../README.md#the-traditional-options). |
 | FrankenPHP (through `exp:velocity`) | the binary's own | Production-ready alternative engine. |
 | PHP's built-in server (`exp:velocity start --engine=php`) | 8.0+ | Development only. |
 

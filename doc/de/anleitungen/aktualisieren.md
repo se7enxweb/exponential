@@ -139,16 +139,16 @@ Regeln, die dies sicher machen:
   Sie sie mit `ls update/common/scripts/*` auf, und lesen Sie die ersten Zeilen eines Skripts (`--help`, wo es das
   anbietet), bevor Sie es ausführen.
   Was sich in jeder Release geändert hat und warum, steht in ihren Hinweisen:
-  [4.1](../../en/us/bc/4.1/changes-4.1.0.txt), [4.2](../../en/us/bc/4.2/changes-4.2.0.txt), [4.3](../../en/us/bc/4.3/changes-4.3.0.txt),
-  [4.4](../../en/us/bc/4.4/changes-4.4.0.txt), [4.5](../../en/us/bc/4.5/changes-4.5.0.txt), [4.6](../../en/us/bc/4.6/changes-4.6.0.txt),
-  [4.7](../../en/us/bc/4.7/changes-4.7.0.txt), [5.0](../../en/us/bc/5.0/changes-5.0.txt), [5.1](../../en/us/bc/5.1/changes-5.1.txt),
-  [5.2](../../en/us/bc/5.2/changes-5.2.txt), [5.3](../../en/us/bc/5.3/changes-5.3.txt), [5.4](../../en/us/bc/5.4/changes-5.4.txt).
+  [4.1](../../eng-us/bc/4.1/changes-4.1.0.txt), [4.2](../../eng-us/bc/4.2/changes-4.2.0.txt), [4.3](../../eng-us/bc/4.3/changes-4.3.0.txt),
+  [4.4](../../eng-us/bc/4.4/changes-4.4.0.txt), [4.5](../../eng-us/bc/4.5/changes-4.5.0.txt), [4.6](../../eng-us/bc/4.6/changes-4.6.0.txt),
+  [4.7](../../eng-us/bc/4.7/changes-4.7.0.txt), [5.0](../../eng-us/bc/5.0/changes-5.0.txt), [5.1](../../eng-us/bc/5.1/changes-5.1.txt),
+  [5.2](../../eng-us/bc/5.2/changes-5.2.txt), [5.3](../../eng-us/bc/5.3/changes-5.3.txt), [5.4](../../eng-us/bc/5.4/changes-5.4.txt).
 - Die Update-Kette wird von `./console exp:checkdbfiles --allow-root-user` geprüft, das fehlende oder überzählige
   Dateien des Upgrade-Wegs auflistet.
 
 Lesen Sie dann die Hinweise der Linie 5.90, die den Wechsel zu PHP 7 und eine längere Passwortregel vorbereitet hat:
-[Übersicht 5.90](../../en/us/bc/5.90/README.md), [PHP 7](../../en/us/bc/5.90/php7.md), [Passwortlänge](../../en/us/bc/5.90/password_length.md),
-[Indizierung von Relationen](../../en/us/bc/5.90/relation_indexing.md).
+[Übersicht 5.90](../../eng-us/bc/5.90/README.md), [PHP 7](../../eng-us/bc/5.90/php7.md), [Passwortlänge](../../eng-us/bc/5.90/password_length.md),
+[Indizierung von Relationen](../../eng-us/bc/5.90/relation_indexing.md).
 
 ## Teil B: von 5.4 (oder 5.90) auf Exponential 6.0.0
 
@@ -174,7 +174,7 @@ Lesen Sie dann die Hinweise der Linie 5.90, die den Wechsel zu PHP 7 und eine l�
    aus. Kopien der Datei von vor Oktober 2026 begannen mit `SET storage_engine=InnoDB;`, was MySQL ab 5.7.5 und
    MariaDB ab 12.0 ablehnen; nehmen Sie die aktuelle Datei. Details: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md).
 3. PHP: Exponential 6.0 benötigt auf der aktuellen Linie PHP 8.0 oder neuer (8.1 oder neuer für Exponential Velocity;
-   siehe [Unterstützung für PHP 8.0](../../en/us/bc/6.0/php-8.0-support.md)). Eine Site, die bei PHP 7.4 bleiben muss, bleibt bei 6.0.7; lesen Sie [Unterstützung für PHP 8](../../en/us/bc/6.0/php8.md) für die Reihenfolge der Upgrade-Schritte, und prüfen Sie Ihre eigenen Extensions
+   siehe [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md)). Eine Site, die bei PHP 7.4 bleiben muss, bleibt bei 6.0.7; lesen Sie [Unterstützung für PHP 8](../../eng-us/bc/6.0/php8.md) für die Reihenfolge der Upgrade-Schritte, und prüfen Sie Ihre eigenen Extensions
    auf PHP-8-Warnungen (Klassen, die `eZPersistentObject` oder `eZDataType` erweitern, sind die üblichen Fälle).
 4. Fahren Sie mit Teil C fort, der für jeden 6.0.x-Schritt dasselbe Verfahren ist.
 
@@ -225,7 +225,7 @@ php update/common/scripts/6.0/movetrashrecords.php --remove-file
 ```
 
 Solange `trashed_by` und `trashed_via` nicht existieren, schreibt der Kernel weiterhin `trashed.json`; siehe
-[die Papierkorbansicht](../../en/us/bc/6.0/trash.md#where-trashed-by-is-kept).
+[die Papierkorbansicht](../../eng-us/bc/6.0/trash.md#where-trashed-by-is-kept).
 
 Prüfen Sie die Versionszeile (dieselbe Abfrage wie oben; erwartet wird nach dieser Datei `6.0.15stable`).
 
@@ -247,12 +247,12 @@ mit einer kurzen Checkliste und einer Spalte „Was zu tun ist“.
 
 | Ihre Version ist älter als | Lesen Sie |
 |---|---|
-| 6.0.8 | [Changelog 6.0.8](../../changelogs/6.0/6.0.8.md) und [Unterstützung für PHP 8](../../en/us/bc/6.0/php8.md) |
-| 6.0.10 | [Changelog 6.0.10](../../changelogs/6.0/6.0.10.md), [Das Produkt heißt Exponential](../../en/us/features/6.0/rebranding-to-exponential.md) |
+| 6.0.8 | [Changelog 6.0.8](../../changelogs/6.0/6.0.8.md) und [Unterstützung für PHP 8](../../eng-us/bc/6.0/php8.md) |
+| 6.0.10 | [Changelog 6.0.10](../../changelogs/6.0/6.0.10.md), [Das Produkt heißt Exponential](../../eng-us/features/6.0/rebranding-to-exponential.md) |
 | 6.0.13 | [Changelog 6.0.13](../../changelogs/6.0/6.0.13.md), [Sicherheitshärtung 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md) |
-| Juli 2026 | [Verhaltensänderungen von Juli und August 2026](../../en/us/bc/6.0/behaviour-changes-2026-07-08.md) |
-| 16. September 2026 | [Verhaltensänderungen vom 16. bis 30. September 2026](../../en/us/bc/6.0/behaviour-changes-2026-09b.md) und [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md) |
-| 1. Oktober 2026 | [Verhaltensänderungen vom 1. bis 2. Oktober 2026](../../en/us/bc/6.0/behaviour-changes-2026-10.md) |
+| Juli 2026 | [Verhaltensänderungen von Juli und August 2026](../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md) |
+| 16. September 2026 | [Verhaltensänderungen vom 16. bis 30. September 2026](../../eng-us/bc/6.0/behaviour-changes-2026-09b.md) und [Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md) |
+| 1. Oktober 2026 | [Verhaltensänderungen vom 1. bis 2. Oktober 2026](../../eng-us/bc/6.0/behaviour-changes-2026-10.md) |
 
 Die drei Änderungen, auf die man am häufigsten stößt:
 
@@ -264,8 +264,8 @@ Die drei Änderungen, auf die man am häufigsten stößt:
   eingeschaltet (September und Oktober 2026): Wenn ein Host Ihre Administration in einem Frame einbettet, setzen Sie den
   Header bewusst.
 
-Was sich Monat für Monat geändert hat, erzählt die [Chronik](../../en/us/history/2026/); jede einzelne Änderung steht im
-[Verzeichnis des Root-Repositorys](../../en/us/history/ledger/exponential-root.md).
+Was sich Monat für Monat geändert hat, erzählt die [Chronik](../../eng-us/history/2026/); jede einzelne Änderung steht im
+[Verzeichnis des Root-Repositorys](../../eng-us/history/ledger/exponential-root.md).
 
 ### C4. Ihre eigenen Extensions prüfen
 
@@ -277,8 +277,8 @@ php bin/php/ezpgenerateautoloads.php -e
 `exp:checkclasses` lädt jede deklarierte Klasse und meldet diejenigen, die PHP nicht laden will; so zeigt sich eine
 PHP-8-Inkompatibilität in einer Extension. Extensions tragen ihre eigene Version in `ezinfo.php` und `extension.xml`;
 die Extension-Liste der Administration (**Setup** > **Extensions**) zeigt jede an, siehe
-[Extension-Liste](../../en/us/features/6.0/extension-list-and-downloads.md). Die Reihenfolge, in der Extensions geladen werden,
-hat sich 2026 geändert: [Ladereihenfolge der Extensions](../../en/us/features/6.0/extension-loading-order.md).
+[Extension-Liste](../../eng-us/features/6.0/extension-list-and-downloads.md). Die Reihenfolge, in der Extensions geladen werden,
+hat sich 2026 geändert: [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md).
 
 ## Das Upgrade überprüfen
 
@@ -293,7 +293,7 @@ Dann im Browser: Die Startseite lädt; melden Sie sich in der Administration an;
 **Systeminformationen** und lesen Sie die Version ab; veröffentlichen Sie ein Testelement und sehen Sie es auf der Site.
 In der Administration listen **Setup** > **Upgrade-Prüfung** und
 **Überprüfe Dateikonsistenz** Dateien des Codes auf, die von der Release abweichen
-([Prüfung der Dateikonsistenz](../../en/us/features/6.0/file-consistency-check.md)). Dateien, die Sie absichtlich geändert
+([Prüfung der Dateikonsistenz](../../eng-us/features/6.0/file-consistency-check.md)). Dateien, die Sie absichtlich geändert
 haben, werden dort erwartungsgemäß aufgeführt.
 [Die Upgrade-Prüfung](upgrade-pruefung.md) erklärt jeden Befund und die Datenbankprüfung auf derselben Seite.
 
@@ -306,19 +306,19 @@ PHP-FPM, damit eine von altem Code gerenderte Seite nicht erneut ausgeliefert wi
 |---|---|
 | Eine weiße Seite nach dem Codewechsel | `var/log/error.log`; führen Sie C1 erneut aus; `vendor/` muss zur neuen `composer.json` passen |
 | `Class ... not found` | `php bin/php/ezpgenerateautoloads.php -e`, dann die Caches leeren |
-| Bibliotheken fehlen nach einem fehlgeschlagenen Composer-Lauf | [Eine Installation reparieren](../../en/us/bc/6.0/repair.md) |
+| Bibliotheken fehlen nach einem fehlgeschlagenen Composer-Lauf | [Eine Installation reparieren](../../eng-us/bc/6.0/repair.md) |
 | Eine SQL-Datei ist auf halbem Weg fehlgeschlagen | Stellen Sie die Datensicherung aus Schritt 1 wieder her und wenden Sie die Datei erneut von Anfang an an; reparieren Sie nie von Hand, um sie dann erneut auszuführen |
-| Jemand kann sich nicht anmelden | [Verhaltensänderungen von Juli und August 2026](../../en/us/bc/6.0/behaviour-changes-2026-07-08.md), der Punkt zu `ezuser_setting` |
+| Jemand kann sich nicht anmelden | [Verhaltensänderungen von Juli und August 2026](../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md), der Punkt zu `ezuser_setting` |
 
 Eine veröffentlichte Release kann nicht geändert werden; der Weg zu einer Korrektur ist die nächste Version. Um zu
 sehen, was eine Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](../../changelogs/6.0/6.0.15.md).
 
-**Demo-Modus (6.0.15).** Die Umgebungsvariable `EXP_DEMO_MODE=1` kennzeichnet eine öffentliche Demo; ohne sie ändert sich nichts. Upgrade einer Demo: Behalten Sie die Variable für den Webserver, Cron und die Konsole bei, und prüfen Sie danach das Banner. Upgrade einer echten Site: Stellen Sie sicher, dass die Variable für keinen ihrer Prozesse gesetzt ist. [Demo-Modus](../../en/us/bc/6.0/demo-mode.md).
+**Demo-Modus (6.0.15).** Die Umgebungsvariable `EXP_DEMO_MODE=1` kennzeichnet eine öffentliche Demo; ohne sie ändert sich nichts. Upgrade einer Demo: Behalten Sie die Variable für den Webserver, Cron und die Konsole bei, und prüfen Sie danach das Banner. Upgrade einer echten Site: Stellen Sie sicher, dass die Variable für keinen ihrer Prozesse gesetzt ist. [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
 
 ## Siehe auch
 
 - [Erste Schritte](erste-schritte.md): eine saubere Installation derselben Version, für eine Testkopie.
 - [Betrieb einer Site](betrieb-einer-website.md): Datensicherungen, Caches und Reparaturen nach dem Upgrade.
-- [Bereitstellung](bereitstellung.md) und [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md): das richtige PHP-FPM neu laden oder auf einen schnelleren Server wechseln.
+- [Bereitstellung](bereitstellung.md) und [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md): das richtige PHP-FPM neu laden oder auf einen schnelleren Server wechseln.
 - [Extensions](extensions.md): Versionen, Ladereihenfolge und Releases Ihrer eigenen Extensions.
 - Release-Hinweise: [Changelogs von Exponential 6.0](../../changelogs/6.0/6.0.15.md) und [die Release-Hinweise der Extensions](../../changelogs/extensions/README.md).

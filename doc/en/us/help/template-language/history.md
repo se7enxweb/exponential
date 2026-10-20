@@ -10,7 +10,7 @@ type: help
 # History of the template language
 
 The template language is older than most of the code around it. This page tells its story from what the repository
-itself records: the git history, the changelogs in `doc/changelogs/`, the feature notes in `doc/en/us/features/` and comments
+itself records: the git history, the changelogs in `doc/changelogs/`, the feature notes in `doc/eng-us/features/` and comments
 in the source. Nothing here comes from memory or from outside sources.
 
 ## Contents
@@ -36,8 +36,8 @@ history, and 7x has carried it forward since taking over the project in 2023 ([W
 | Source | What it covers | Where |
 |---|---|---|
 | git history | from the first commit, 2 September 2002 ("Moved all files in root to trunk") | `git log -- lib/eztemplate` |
-| Changelogs | from version 2.9 to 5.2, then 6.0.x | [doc/changelogs](../../../../changelogs/README.md) |
-| Feature notes | from version 3.5 | `doc/en/us/features/<version>/` |
+| Changelogs | from version 2.9 to 5.2, then 6.0.x | [doc/changelogs](../../../changelogs/README.md) |
+| Feature notes | from version 3.5 | `doc/eng-us/features/<version>/` |
 | Source comments | operators kept for compatibility | `lib/eztemplate/classes/eztemplateautoload.php` |
 
 ## From process cache to compiler (2003)
@@ -58,7 +58,7 @@ added parameters to `eztc.php` (the command that compiles templates ahead of tim
 The biggest change to the language itself came with commit `7460c738b2` of 18 March 2005: "Initial implementation of
 the new template functions: {def}, {undef}, {if}, {elseif}, {else}, {while}, {do}, {for}, {foreach}, {break},
 {continue}, {skip}". Its design note is still in the repository,
-[doc/en/us/features/3.6/improved_template_syntax.txt](../../features/3.6/improved_template_syntax.txt). Its stated incentive:
+[doc/eng-us/features/3.6/improved_template_syntax.txt](../../features/3.6/improved_template_syntax.txt). Its stated incentive:
 "To make template syntax clearer and more similar to syntax of widespread procedural programming languages."
 
 What it changed:
@@ -113,7 +113,7 @@ templates of existing designs working. Examples of what the 6.0 line added in th
 `ShowTemplatePathComments` setting that wraps each rendered template in HTML comments naming its file
 (`eZTemplate::showTemplatePathComments()`), a warning written once per operator and parameter for a missing default value
 (`eZTemplate`), and the `csp_nonce` and `exp_environment` operators of the kernel. The changelog of each release lists
-the changes: [doc/changelogs](../../../../changelogs/README.md).
+the changes: [doc/changelogs](../../../changelogs/README.md).
 
 ## Related pages
 

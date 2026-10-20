@@ -39,7 +39,7 @@ story, a video script or a social post.
 | A count | The method given with it, or recount | [Verifying numbers](verifying-numbers.md) |
 | A quote | The original text or your recording | [Verifying quotes](verifying-quotes.md) |
 | A product name | The naming rules | [Naming quick reference for news editors](naming-quick-reference-for-editors.md) |
-| What a feature does | Its feature page in `doc/en/us/features/6.0/` and the changelog | [Feature stories: index](feature-stories-index.md) |
+| What a feature does | Its feature page in `doc/eng-us/features/6.0/` and the changelog | [Feature stories: index](feature-stories-index.md) |
 | A history fact | The history pages and the timelines | [Timeline for reporters](timeline-for-reporters.md) |
 | An organization fact | The organization's own website and the two profile pages | [7x for reporters](7x-for-reporters.md), [The Exponential Foundation for reporters](the-foundation-for-reporters.md) |
 | A license | LICENSE, COPYRIGHT.md, the package's composer.json | [Licenses explained for reporters](licenses-explained-for-reporters.md) |
@@ -85,7 +85,7 @@ Keep a simple log per story; it makes corrections easy ([Corrections and updates
 CLAIM                                SOURCE                                   CHECKED      RESULT
 6.0.14 released 7 June 2026          git tag v6.0.14                          2026-10-18   ok
 Foundation founded 19 March 2026     foundation.exponential.earth             2026-10-18   ok
-"writes drafts only"                 doc/en/us/features/6.0/extensions/expai.md     2026-10-18   ok, attributed
+"writes drafts only"                 doc/eng-us/features/6.0/extensions/expai.md     2026-10-18   ok, attributed
 ```
 
 ## Related pages

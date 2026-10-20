@@ -16,13 +16,13 @@ language, often people who would never read an English manual.
 
 - The administration's messages are in `share/translations/<locale>/translation.ts`, one file per language
   (for example `ger-DE`, `fre-FR`, `esl-ES`, `ukr-UA`, `heb-IL`).
-- `doc/en/us/languages.md` lists the locales, the administration translations and how complete each one is; the help page
+- `doc/eng-us/languages.md` lists the locales, the administration translations and how complete each one is; the help page
   [Languages](../languages.md) explains languages for editors and administrators.
 - Extensions carry their own translations in their own `translations/` directories.
 
 ## How to translate
 
-1. Pick a language and check its completeness in `doc/en/us/languages.md`.
+1. Pick a language and check its completeness in `doc/eng-us/languages.md`.
 2. Fork the repository and open the language's `translation.ts`.
 3. Translate the messages that are untranslated or marked unfinished. Keep placeholders such as `%1` exactly as they
    are.

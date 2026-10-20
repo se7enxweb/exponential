@@ -199,7 +199,7 @@ Beides sind die engine-eigenen Befehle `qbixctl ext:check` und `ext:install-hint
 dieser Installation; `ext check` ohne Argumente ist die Standardaktion.
 
 Das Engine-Paket gibt es auch als Betriebssystempaket (`exponential-velocity`, deb und rpm, mit einer systemd-Unit) und
-als Docker-Image; siehe [Velocity-Pakete, Docker-Images und Binärdateien](../../en/us/features/6.0/velocity-packages-and-binaries.md).
+als Docker-Image; siehe [Velocity-Pakete, Docker-Images und Binärdateien](../../eng-us/features/6.0/velocity-packages-and-binaries.md).
 Für eine Exponential-Installation ist das Composer-Paket dasjenige, das `exp:velocity` steuert.
 
 ### 8.3.2 Die Engine wählen
@@ -436,7 +436,7 @@ Prüfen Sie einen Treffer mit zwei Anfragen: Die zweite trägt `X-Cache: HIT` un
 
 Die eigenen Caches des Kernels (View-Cache für Inhalte, Template-Blöcke, der rollenbewusste HTTP-Cache in
 `settings/httpcache.ini`, der SQL-Abfrage-Cache in `settings/querycache.ini`) funktionieren unter jedem Server; sie
-werden mit `bin/php/ezcache.php` oder `exp:cache` geleert. Siehe [die Seite zum Antwort-Cache](../../en/us/features/6.0/velocity-response-cache.md).
+werden mit `bin/php/ezcache.php` oder `exp:cache` geleert. Siehe [die Seite zum Antwort-Cache](../../eng-us/features/6.0/velocity-response-cache.md).
 
 ### 8.3.9 HTTPS direkt von Velocity
 
@@ -553,7 +553,7 @@ Anmerkungen:
   `exp:velocity ssl renew [host...]` fordert sie sofort an.
 - `keyType` (standardmäßig `ec256`), `challenge: dns-01` mit einem `dnsHook`-Programm (für Wildcards nötig), `webroot`
   (wenn ein anderer Server Port 80 belegt), `eab` (External Account Binding) und die übrigen Schlüssel sind in
-  [Velocity: HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md) und in der `docs/https.md` der
+  [Velocity: HTTPS und Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md) und in der `docs/https.md` der
   Engine aufgeführt.
 - `start` meldet, dass sich die Konfiguration wegen des aktivierten Snippets von `velocity.ini` unterscheidet; das ist
   zu erwarten.
@@ -756,7 +756,7 @@ Der erste Besuch von `/Q/panel` legt das Panel-Passwort fest (mindestens 16 Zeic
 bcrypt; fehlgeschlagene Anmeldungen sperren die Adresse mit wachsenden Pausen). Auf einem Rechner, der aus dem
 Internet erreichbar ist, legen Sie es sofort fest. Sein Speicher darf weder für die Gruppe noch für andere beschreibbar
 sein, sonst sperrt sich das Panel selbst; `qbixctl panel:check` der Engine zeigt den Grund. Einzelheiten:
-[Velocity-Control-Panel](../../en/us/features/6.0/velocity-control-panel.md).
+[Velocity-Control-Panel](../../eng-us/features/6.0/velocity-control-panel.md).
 
 ### 8.3.14 Eine Änderung bereitstellen: exp:velocity deploy
 
@@ -842,7 +842,7 @@ deshalb zuerst, ob das Archiv aktuell ist, und startet sich, wenn es schreiben m
 zurückzufallen. Ist ein Archiv in Gebrauch, bauen `start`, `restart` und `graceful` es zuerst neu, wenn eine Datei in
 `kernel/`, `lib/` oder `autoload/` hinzugefügt, entfernt oder geändert wurde (andernfalls
 `engine.phar is current, not rebuilt`); `--rebuild-phar` erzwingt es. Siehe
-[Engine-Archiv (phar)](../../en/us/bc/6.0/phar.md).
+[Engine-Archiv (phar)](../../eng-us/bc/6.0/phar.md).
 
 ### 8.3.16 Befehlsreferenz
 
@@ -913,7 +913,7 @@ php bin/php/console exp:velocity start --allow-root-user
   Socket `var/vc/frankenphp/run/admin.sock`; `graceful` lädt die Konfiguration neu, ohne eine Verbindung abzubrechen.
 - **Logs.** `var/vc/frankenphp/log/access.log` und `error.log`, im JSON-Format von Caddy.
 
-Einzelheiten: [FrankenPHP](../../en/us/bc/6.0/frankenphp.md) und [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md).
+Einzelheiten: [FrankenPHP](../../eng-us/bc/6.0/frankenphp.md) und [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md).
 
 ---
 
@@ -964,9 +964,9 @@ dauerhaft laufenden Prozess.
    Wenn Sie lieber auf `.htaccess` verzichten (`AllowOverride None` spart einen Dateizugriff je Verzeichnis), kopieren
    Sie die Regeln von `.htaccess_root` in den `<Directory>`-Block; innerhalb von `<Directory>` behalten sie ihre Form.
    Im Serverkontext (außerhalb von `<Directory>`) braucht jedes Muster einen führenden Schrägstrich, wie in
-   `doc/en/us/examples/ezpublish.conf`, einem vollständigen virtuellen Host (HTTP-Weiterleitung, HTTPS, HTTP/2,
+   `doc/eng-us/examples/ezpublish.conf`, einem vollständigen virtuellen Host (HTTP-Weiterleitung, HTTPS, HTTP/2,
    PHP-FPM, Header) mit den Regeln der `.htaccess_root` dieser Release im Serverkontext
-   ([Virtueller Host für Apache](../../en/us/examples/web-servers/apache-virtual-host.md)). Vergleichen Sie Ihre Kopie nach
+   ([Virtueller Host für Apache](../../eng-us/examples/web-servers/apache-virtual-host.md)). Vergleichen Sie Ihre Kopie nach
    jedem Upgrade mit `.htaccess_root` und übernehmen Sie neue Regeln.
 
 4. **HTTPS.** Fügen Sie einen virtuellen Host `*:443` mit demselben Inhalt hinzu, ergänzt um:
@@ -1088,7 +1088,7 @@ server {
     location ~ ^/var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$                      { try_files $uri =404; }
     location ~ ^/var/([^/]+/)?cache/(texttoimage|public)/                                       { try_files $uri =404; }
     # With site.ini [FileSettings] CacheVarDir=var_cache (multi-site hosting, see
-    # doc/en/us/features/6.0/multi-site-log-and-cache-paths.md):
+    # doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md):
     #location ~ ^/var_cache/([^/]+/)?cache/(texttoimage|public)/                               { try_files $uri =404; }
     location ~ ^/design/[^/]+/(stylesheets|images|javascript|fonts)/                            { try_files $uri =404; }
     location ~ ^/share/icons/                                                                   { try_files $uri =404; }
@@ -1240,7 +1240,7 @@ ist genau dafür gemacht: Der Server ist nur vom Rechner selbst aus erreichbar, 
   IPv4 und IPv6, standardmäßig `127.0.0.1` und `::1`, also ein Proxy auf demselben Rechner. Ein Proxy unter einer
   anderen Adresse muss hinzugefügt werden, zum Beispiel `TrustedProxies[]=192.0.2.10` oder
   `TrustedProxies[]=10.0.0.0/8`. Siehe
-  [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../en/us/bc/6.0/trusted-proxies.md).
+  [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../eng-us/bc/6.0/trusted-proxies.md).
 - **HTTPS.** `eZSys::isSSLNow()` prüft zuerst `$_SERVER['HTTPS']`, dann den Port gegen `site.ini [SiteSettings]
   SSLPort` (443), dann, von einem vertrauenswürdigen Proxy, `X-Forwarded-Proto: https`, dann `X-Forwarded-Port`, dann
   `X-Forwarded-Server` gegen `SSLProxyServerName`. Ein Proxy, der TLS terminiert, muss `X-Forwarded-Proto` setzen; dann
@@ -1381,30 +1381,30 @@ Was hinter einem Proxy schiefgehen kann:
 
 ---
 
-**Eine öffentliche Demo.** Eine Demo, deren Administratoranmeldung veröffentlicht ist, braucht die Umgebungsvariable `EXP_DEMO_MODE=1` im PHP jedes Servers, der sie ausliefert: `SetEnv EXP_DEMO_MODE 1` (Apache, LiteSpeed), `env[EXP_DEMO_MODE] = 1` (PHP-FPM-Pool), `fastcgi_param EXP_DEMO_MODE 1` (nginx) oder die Umgebung der Unit, die Velocity startet. Fertige Dateien: [Beispiele für den Demo-Modus](../../en/us/examples/demo-mode/README.md); Hintergrund: [Demo-Modus](../../en/us/bc/6.0/demo-mode.md).
+**Eine öffentliche Demo.** Eine Demo, deren Administratoranmeldung veröffentlicht ist, braucht die Umgebungsvariable `EXP_DEMO_MODE=1` im PHP jedes Servers, der sie ausliefert: `SetEnv EXP_DEMO_MODE 1` (Apache, LiteSpeed), `env[EXP_DEMO_MODE] = 1` (PHP-FPM-Pool), `fastcgi_param EXP_DEMO_MODE 1` (nginx) oder die Umgebung der Unit, die Velocity startet. Fertige Dateien: [Beispiele für den Demo-Modus](../../eng-us/examples/demo-mode/README.md); Hintergrund: [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
 
 ## 8.10 Referenzen
 
 In diesem Repository:
 
-- [Unterstützte Betriebssysteme](../../en/us/help/os-support.md): die Betriebssysteme, Webserver und PHP-SAPIs, in Stufen
+- [Unterstützte Betriebssysteme](../../eng-us/help/os-support.md): die Betriebssysteme, Webserver und PHP-SAPIs, in Stufen
   eingeteilt (hier getestet, bekanntermaßen funktionsfähig, voraussichtlich funktionsfähig, derzeit nicht möglich)
-- [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md): Engines, `deploy`, `Instances`, FrankenPHP, Logs, die Dateien,
+- [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md): Engines, `deploy`, `Instances`, FrankenPHP, Logs, die Dateien,
   die jede Engine ausliefert, die `/Q/`-Ansichten
-- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../en/us/features/6.0/velocity-persistent-worker-server.md)
-- [Velocity-Verzeichnisstruktur auf der Platte (im Stil von Debians Apache)](../../en/us/bc/6.0/velocity-ondisk-layout.md)
-- [Velocity: HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md)
-- [Velocity-Antwort-Cache](../../en/us/features/6.0/velocity-response-cache.md),
-  [Control Panel](../../en/us/features/6.0/velocity-control-panel.md), [Webserver](../../en/us/features/6.0/velocity-web-server.md),
-  [Pakete und Binärdateien](../../en/us/features/6.0/velocity-packages-and-binaries.md)
+- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity-Verzeichnisstruktur auf der Platte (im Stil von Debians Apache)](../../eng-us/bc/6.0/velocity-ondisk-layout.md)
+- [Velocity: HTTPS und Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md)
+- [Velocity-Antwort-Cache](../../eng-us/features/6.0/velocity-response-cache.md),
+  [Control Panel](../../eng-us/features/6.0/velocity-control-panel.md), [Webserver](../../eng-us/features/6.0/velocity-web-server.md),
+  [Pakete und Binärdateien](../../eng-us/features/6.0/velocity-packages-and-binaries.md)
 - Spezifikationen: [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md),
   [Engine-Einstellungen](../spezifikationen/6.0/velocity-engine-einstellungen.md),
   [HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md),
   [Sicherheitsvoreinstellungen](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
-- [Upgrade-Hinweise zur Velocity-Engine](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md), [FrankenPHP](../../en/us/bc/6.0/frankenphp.md),
-  [Engine-Archiv (phar)](../../en/us/bc/6.0/phar.md)
+- [Upgrade-Hinweise zur Velocity-Engine](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md), [FrankenPHP](../../eng-us/bc/6.0/frankenphp.md),
+  [Engine-Archiv (phar)](../../eng-us/bc/6.0/phar.md)
 - [Anleitung zur Bereitstellung](../anleitungen/bereitstellung.md)
-- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../en/us/bc/6.0/trusted-proxies.md)
+- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../eng-us/bc/6.0/trusted-proxies.md)
   (`TrustedProxies[]`, Beispiele für Apache, nginx, Velocity, Load Balancer und CDNs)
 - [Voraussetzungen](02-voraussetzungen.md) (PHP-Versionen je Server) und [Sicherheitshärtung](13-sicherheitshaertung.md)
 - Code: `kernel/classes/expvelocity.php`, `expvelocitydeploy.php`, `expvelocityconfiglayout.php`,
@@ -1414,7 +1414,7 @@ In diesem Repository:
 - Die Einstellungen: [`settings/velocity.ini`](../../../settings/velocity.ini); die Rewrite-Regeln:
   [`.htaccess_root`](../../../.htaccess_root), [`.htaccess_root_static`](../../../.htaccess_root_static); der
   PHP-Router der Entwicklungs-Engine: [`bin/php/velocity-router.php`](../../../bin/php/velocity-router.php)
-- Die frühere einseitige Anleitung: [doc/en/us/INSTALL.md, Abschnitt 8](../../en/us/INSTALL.md#8-serve-the-site-web-server-https-and-permissions)
+- Die frühere einseitige Anleitung: [doc/eng-us/INSTALL.md, Abschnitt 8](../../eng-us/INSTALL.md#8-serve-the-site-web-server-https-and-permissions)
 
 Extern:
 

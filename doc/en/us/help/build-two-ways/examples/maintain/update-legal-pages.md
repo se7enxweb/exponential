@@ -38,6 +38,6 @@ Content.
 
 ## Related pages
 
-- [A plain layout for the legal pages](../../examples/launch/map-legal-pages.md)
+- [A plain layout for the legal pages](../launch/map-legal-pages.md)
 - [Maintain examples, every page](README.md)
 - [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -13,7 +13,7 @@ generated: exp:help:examples
 The shipped settings of `settings/exphelp.ini`: 19 blocks, 102 settings.
 
 > The help system of the administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset and  
-> exphelp/report (doc/en/us/features/6.0/help-system.md). It shows the git-tracked text and Markdown files under doc/,  
+> exphelp/report (doc/eng-us/features/6.0/help-system.md). It shows the git-tracked text and Markdown files under doc/,  
 > rendered safely, searchable and filtered by audience. Policy exphelp/read; Anonymous does not have it.  
 >
 > Extensions add their own settings in extension/<ext>/settings/exphelp.ini.append.php: context help entries  

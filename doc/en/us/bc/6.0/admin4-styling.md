@@ -565,4 +565,4 @@ For every template or stylesheet change in an administration design or an extens
 
 - [The admin4 design](../../features/6.0/admin4-design.md)
 - [admin4l: the admin page built from layouts](admin4l.md)
-- [Contributors guidelines](../../../../../CONTRIBUTING.md)
+- [Contributors guidelines](../../../../CONTRIBUTING.md)

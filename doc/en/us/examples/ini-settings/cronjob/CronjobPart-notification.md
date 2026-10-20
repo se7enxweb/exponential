@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 The block `[CronjobPart-notification]` of `settings/cronjob.ini`, with 1 setting(s).
 
-> The notification filter on its own: php runcronjobs.php notification (doc/en/us/features/6.0/notifications.md)  
+> The notification filter on its own: php runcronjobs.php notification (doc/eng-us/features/6.0/notifications.md)  
 
 Never edit `settings/cronjob.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 

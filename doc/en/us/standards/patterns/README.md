@@ -308,7 +308,7 @@ Run in the installation root (no database, nothing is loaded or executed; PHP's 
 
 ```bash
 php bin/php/exppatterncatalogue.php            # report which pages would change
-php bin/php/exppatterncatalogue.php --write    # write doc/en/us/standards/patterns/
+php bin/php/exppatterncatalogue.php --write    # write doc/eng-us/standards/patterns/
 php bin/php/exppatterncatalogue.php --check    # exit 1 when the pages are out of date
 ```
 

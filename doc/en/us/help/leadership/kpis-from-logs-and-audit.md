@@ -193,7 +193,7 @@ Be honest in your reports about these:
 - **Visitor traffic.** The sources used here describe no built-in visitor analytics report. What exists: the audit
   `read` channel records sampled node views, searches and downloads, but only when reads are switched on
   ([The audit trail](../../features/6.0/audit-trail.md)); the `updateviewcount` cronjob (named in the
-  [6.0.11 changelog](../../../../changelogs/6.0/6.0.11.md)); and the [bcwebsitestatistics](../../features/6.0/extensions/bcwebsitestatistics.md)
+  [6.0.11 changelog](../../../changelogs/6.0/6.0.11.md)); and the [bcwebsitestatistics](../../features/6.0/extensions/bcwebsitestatistics.md)
   extension, which adds an external analytics service's script. Choose deliberately, with privacy in mind.
 - **Editor satisfaction, time saved, conversions.** Measure them with your own surveys or tools, and say so.
 - **Uptime from the outside.** System information reads the server it runs on; check from outside too

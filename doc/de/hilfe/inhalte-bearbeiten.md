@@ -26,7 +26,7 @@ Veröffentlichen, Entwürfe und Versionen haben eine eigene Seite:
    leeren Entwurf.
 4. Füllen Sie die Felder aus und klicken Sie auf **Zur Veröffentlichung schicken**.
 
-![Die Liste Neu erstellen eines Ordners](../../en/us/help/images/create-new.webp)
+![Die Liste Neu erstellen eines Ordners](../../eng-us/help/images/create-new.webp)
 
 Andere Wege zum selben Ergebnis:
 
@@ -35,7 +35,7 @@ Andere Wege zum selben Ergebnis:
 - **Mehrere neu anlegen** öffnet ein Formular, in dem Sie mehrere neue Objekte unterhalb derselben Stelle auf
   einmal ausfüllen.
 
-![Das Menü des Ordners Fitness im Baum mit geöffnetem Hier erstellen und den Inhaltstypen, die dort erstellt werden können](../../en/us/help/images/editing/tree-menu-create-here.webp)
+![Das Menü des Ordners Fitness im Baum mit geöffnetem Hier erstellen und den Inhaltstypen, die dort erstellt werden können](../../eng-us/help/images/editing/tree-menu-create-here.webp)
 
 Verlassen Sie das Formular mit **Entwurf verwerfen**, wird das neue Objekt gar nicht erst angelegt.
 
@@ -47,7 +47,7 @@ Verlassen Sie das Formular mit **Entwurf verwerfen**, wird das neue Objekt gar n
    veröffentlichten Version.
 4. Ändern Sie, was nötig ist, und klicken Sie auf **Zur Veröffentlichung schicken**.
 
-![Die Seite eines Artikels, mit der Sprachliste und der Schaltfläche Bearbeiten daneben umrandet](../../en/us/help/images/editing/edit-language-choice.webp)
+![Die Seite eines Artikels, mit der Sprachliste und der Schaltfläche Bearbeiten daneben umrandet](../../eng-us/help/images/editing/edit-language-choice.webp)
 
 Sie können auch im Menü des Objekts im Baum **Bearbeiten in** wählen oder Objekte in einer Liste ankreuzen und
 **Ausgewählte bearbeiten** wählen (siehe [Viele Objekte auf einmal](#viele-objekte-auf-einmal)).
@@ -60,11 +60,11 @@ Entwürfe fortsetzen (markieren Sie ihn und klicken Sie auf **Ausgewählte bearb
 der veröffentlichten Version beginnen oder **Abbrechen**. Den Entwurf einer anderen Person können Sie nicht
 bearbeiten; sprechen Sie mit ihr, oder legen Sie einen neuen Entwurf an.
 
-![Die Seite Möglicher Bearbeitungs-Konflikt mit einem vorhandenen Entwurf, seinem Ersteller und der Uhrzeit sowie den Schaltflächen Ausgewählte bearbeiten, Neuer Entwurf und Abbrechen](../../en/us/help/images/editing/edit-conflict.webp)
+![Die Seite Möglicher Bearbeitungs-Konflikt mit einem vorhandenen Entwurf, seinem Ersteller und der Uhrzeit sowie den Schaltflächen Ausgewählte bearbeiten, Neuer Entwurf und Abbrechen](../../eng-us/help/images/editing/edit-conflict.webp)
 
 ## Das Bearbeitungsformular
 
-![Das Bearbeitungsformular eines Artikels](../../en/us/help/images/edit-form.webp)
+![Das Bearbeitungsformular eines Artikels](../../eng-us/help/images/edit-form.webp)
 
 - **Die Schaltflächen oben**: **Zur Veröffentlichung schicken** veröffentlicht den Entwurf; **Entwurf speichern und
   beenden** behält den Entwurf und verlässt das Formular; **Entwurf verwerfen** wirft den Entwurf weg (nach Ihrer
@@ -82,7 +82,7 @@ bearbeiten; sprechen Sie mit ihr, oder legen Sie einen neuen Entwurf an.
   verwalten** und **Vorschau** (der Entwurf so, wie er aussehen wird), die vorhandenen Übersetzungen und die
   **Sektion**, zu der das Objekt gehört.
 
-![Das Bearbeitungsformular eines Artikels mit umrandeter Feldleiste: eine Schaltfläche pro Feld, ein roter Stern kennzeichnet den Pflicht-Titel](../../en/us/help/images/editing/edit-field-bar.webp)
+![Das Bearbeitungsformular eines Artikels mit umrandeter Feldleiste: eine Schaltfläche pro Feld, ein roter Stern kennzeichnet den Pflicht-Titel](../../eng-us/help/images/editing/edit-field-bar.webp)
 
 Der Entwurf wird während der Arbeit alle paar Minuten automatisch gespeichert, ein geschlossener Browser-Tab kostet
 also wenig. Die Eingabetaste in einem einzeiligen Feld wirkt wie ein Klick auf **Zur Veröffentlichung schicken**.
@@ -94,7 +94,7 @@ Listen, Links, Tabellen, Sonderzeichen, **Objekt einbetten** (ein Bild oder ein 
 **Vollbild** und **Quellcode**. Unter dem Feld können Sie zwischen den Editoren wechseln, die Ihre Site anbietet, zum
 Beispiel **TinyMCE 8** und **Tiptap**. Die Schaltfläche **Hilfe** von TinyMCE listet seine Tastenkürzel auf.
 
-![Das Feld Body eines Artikels mit der Rich-Text-Werkzeugleiste und dem Editorwechsel unter dem Text](../../en/us/help/images/editing/edit-richtext-field.webp)
+![Das Feld Body eines Artikels mit der Rich-Text-Werkzeugleiste und dem Editorwechsel unter dem Text](../../eng-us/help/images/editing/edit-richtext-field.webp)
 
 ### Verknüpfungen und Bilder
 
@@ -105,7 +105,7 @@ Ein Feld vom Typ *Verknüpfung* (wie *Image* eines Artikels) verweist auf andere
 - **Neu hochladen** (oder **Datei hochladen**) lädt eine Datei von Ihrem Computer hoch, erstellt daraus ein Objekt
   und verknüpft es.
 
-![Ein Verknüpfungsfeld im Bearbeitungsformular mit den umrandeten Schaltflächen Vorhandene Objekte hinzufügen und Datei hochladen](../../en/us/help/images/editing/edit-relation-field.webp)
+![Ein Verknüpfungsfeld im Bearbeitungsformular mit den umrandeten Schaltflächen Vorhandene Objekte hinzufügen und Datei hochladen](../../eng-us/help/images/editing/edit-relation-field.webp)
 
 Bilder brauchen einen **Alternativtext**, eine kurze Beschreibung für Menschen, die das Bild nicht sehen können. Wo
 die Site ihn verlangt, ist das Bildfeld mit **Alternativer Bildtext (Pflichtfeld)** gekennzeichnet, und die Dialoge
@@ -118,7 +118,7 @@ Schaltflächen wie **Schreiben**, **Umschreiben**, **Übersetzen**, **Vorschlage
 Vorschläge ändern nichts, bis Sie sie übernehmen und den Entwurf speichern. Der Kasten oben im Formular nennt den
 verwendeten Dienst und was ein Klick kostet.
 
-![Der Kasten Exponential Intelligence oben im Bearbeitungsformular und die Schaltflächen Schreiben, Umschreiben, Übersetzen, Vorschlagen und Verbessern des Feldes Title](../../en/us/help/images/editing/edit-intelligence-box.webp)
+![Der Kasten Exponential Intelligence oben im Bearbeitungsformular und die Schaltflächen Schreiben, Umschreiben, Übersetzen, Vorschlagen und Verbessern des Feldes Title](../../eng-us/help/images/editing/edit-intelligence-box.webp)
 
 ## Verschieben, kopieren und entfernen
 
@@ -131,9 +131,9 @@ Auf der Seite des Objekts:
 - **Entfernen** verschiebt das Objekt nach einer Bestätigung in den Papierkorb. Siehe
   [Veröffentlichen, Versionen und der Papierkorb](veroeffentlichen-und-versionen.md#entfernen-und-wiederherstellen).
 
-![Einen Artikel verschieben: Die Seite zur Wahl eines neuen Orts listet die möglichen Stellen mit je einem Optionsfeld auf](../../en/us/help/images/editing/move-choose-location.webp)
+![Einen Artikel verschieben: Die Seite zur Wahl eines neuen Orts listet die möglichen Stellen mit je einem Optionsfeld auf](../../eng-us/help/images/editing/move-choose-location.webp)
 
-![Die Bestätigung des Entfernens: was das Entfernen betrifft, andere Objekte, die dieses verwenden, und die umrandete Option In den Papierkorb](../../en/us/help/images/editing/remove-confirm.webp)
+![Die Bestätigung des Entfernens: was das Entfernen betrifft, andere Objekte, die dieses verwenden, und die umrandete Option In den Papierkorb](../../eng-us/help/images/editing/remove-confirm.webp)
 
 Eine Schaltfläche, die Sie nicht verwenden dürfen, ist ausgegraut; wenn Sie mit dem Mauszeiger darauf zeigen,
 erfahren Sie den Grund.
@@ -143,14 +143,14 @@ erfahren Sie den Grund.
 Kreuzen Sie in der Liste **Unterelemente** eines Ordners die Objekte mit den Kontrollkästchen an (oder wählen Sie
 mit **Auswählen** alle, keine oder die umgekehrte Auswahl) und öffnen Sie dann **Weitere Aktionen**:
 
-![Zwei angekreuzte Objekte in einer Liste Unterelemente und das geöffnete Menü Weitere Aktionen mit Entfernen, Verschieben, Kopieren, Verstecken, Einblenden, Ausgewählte bearbeiten und Position hinzufügen](../../en/us/help/images/editing/subitems-more-actions.webp)
+![Zwei angekreuzte Objekte in einer Liste Unterelemente und das geöffnete Menü Weitere Aktionen mit Entfernen, Verschieben, Kopieren, Verstecken, Einblenden, Ausgewählte bearbeiten und Position hinzufügen](../../eng-us/help/images/editing/subitems-more-actions.webp)
 
 - **Ausgewählte bearbeiten**: ein Formular mit allen ausgewählten Objekten, die Sie gemeinsam veröffentlichen;
 - **Ausgewählte entfernen**, **Auswahl verschieben**, **Auswahl kopieren**;
 - **Auswahl verstecken** und **Auswahl einblenden**;
 - **Position hinzufügen**: Die Objekte erscheinen zusätzlich an einer anderen Stelle, ohne kopiert zu werden.
 
-![Die Tabelleneinstellungen einer Liste Unterelemente: Einträge pro Seite, Spaltenvorlagen, die sichtbaren Spalten und CSV exportieren](../../en/us/help/images/editing/subitems-table-options.webp)
+![Die Tabelleneinstellungen einer Liste Unterelemente: Einträge pro Seite, Spaltenvorlagen, die sichtbaren Spalten und CSV exportieren](../../eng-us/help/images/editing/subitems-table-options.webp)
 
 Unter **Einstellungen** der Tabelle wählen, ordnen und speichern Sie die Spalten der Liste, legen fest, wie viele
 Zeilen eine Seite zeigt (10, 25, 50 oder 100), und exportieren die sichtbaren Spalten als CSV-Datei. Ist die Liste nach

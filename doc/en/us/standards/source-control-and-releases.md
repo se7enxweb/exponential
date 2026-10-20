@@ -25,7 +25,7 @@ published. If you are new to Git, start with [Develop with Git](../help/develop-
 | Commit subject prefixes | **Complies** | `.githooks/commit-msg`, `.githooks/check-commit-range`, `quality.yml` |
 | Other commit message rules (product name, no tool attribution, no private paths) | **Unverified** | policy only, no automated check |
 | Changelogs per version | **Complies** | `doc/changelogs/<series>/<version>.md`, `doc/changelogs/extensions/` |
-| Permanent tags and releases | **Complies** (by policy) | [Extensions guide](../guides/extensions.md), "Release it"; [Velocity changelog](../../../changelogs/extensions/exponential-velocity.md) |
+| Permanent tags and releases | **Complies** (by policy) | [Extensions guide](../guides/extensions.md), "Release it"; [Velocity changelog](../../changelogs/extensions/exponential-velocity.md) |
 | Version numbering: last position counts on | **Complies** | `0.0.4.9` followed by `0.0.4.10` in the Velocity history |
 | Extension metadata matches the release | **Complies** (by policy) | `ezinfo.php` `'Version'` and `extension.xml` `<version>` |
 | Packagist publication | **Complies** | Packagist webhook on the repository; push gate checks constraints |
@@ -41,14 +41,14 @@ published. If you are new to Git, start with [Develop with Git](../help/develop-
 - **Pull requests are squashed and rebased by their authors while open, then merged with a merge commit.** 7x
   strongly requests and requires contributors to squash their pull request into logical commits (usually one) and
   rebase it onto `main` while it is open (`git rebase -i origin/main`, `git push --force-with-lease` to the pull
-  request branch only), so the merge is clean ([Code reviews](../../../../CONTRIBUTING.md#code-reviews)). Once merged,
+  request branch only), so the merge is clean ([Code reviews](../../../CONTRIBUTING.md#code-reviews)). Once merged,
   `main`'s history is never rewritten, and later fixes come as new pull requests
   ([Continuous integration](../bc/6.0/ci.md), "The commit message policy"). A contributor's commit with a
   non-standard subject is only a warning, so a merged pull request never turns `main` red. `git log --merges` on
   `main` shows merge commits.
 - **A kernel contribution is merged once its author's CLA is on file.** 7x and the Exponential Foundation require a
   signed Contributor Licensing Agreement for every code contribution to the core kernel, whether it arrives as a
-  pull request, a patch, an issue or by mail ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)).
+  pull request, a patch, an issue or by mail ([Copyright assignment (CLA)](../../../CONTRIBUTING.md#copyright-assignment-cla)).
   By signing and submitting, the contributor assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it: 7x may use, change, relicense and distribute it in any way, and the contributor cannot withdraw it or set conditions on it. The pull request template has a checkbox for it. Users' own custom extensions
   are not affected.
 - **No force push and no rewriting of published history.** A commit on `main` is public; a rewrite would move every
@@ -97,13 +97,13 @@ Further rules of the project, not checked by any tool:
 ## Changelogs
 
 - Kernel changelogs: `doc/changelogs/<series>/<version>.md`, for example
-  [6.0.15](../../../changelogs/6.0/6.0.15.md) (in development; "Not released yet" on its first line). Older series back to
+  [6.0.15](../../changelogs/6.0/6.0.15.md) (in development; "Not released yet" on its first line). Older series back to
   2.9 are kept in `doc/changelogs/`.
 - Extension changelogs: `doc/changelogs/extensions/<name>.md`, for example
-  [exponential-velocity.md](../../../changelogs/extensions/exponential-velocity.md).
+  [exponential-velocity.md](../../changelogs/extensions/exponential-velocity.md).
 - Entries are assembled from the commit history and grouped by the same prefixes (Added, Updated, Removed, Renamed;
   fixes are listed under Updated in the Velocity changelog).
-- Upgrade-relevant changes get a page in `doc/en/us/bc/6.0/` linked from the changelog.
+- Upgrade-relevant changes get a page in `doc/eng-us/bc/6.0/` linked from the changelog.
 
 ## Releases
 
@@ -117,7 +117,7 @@ cache the version they found; a moved tag would give two different packages unde
 - **Check before you push**: a clean working tree, passing tests, and build artifacts that match their sources.
 
 This is written down in the [Extensions guide](../guides/extensions.md), "Release it" ("A published tag can never be
-corrected") and in the [Velocity changelog](../../../changelogs/extensions/exponential-velocity.md) ("A tag is
+corrected") and in the [Velocity changelog](../../changelogs/extensions/exponential-velocity.md) ("A tag is
 permanent: a bad release is corrected by the next one, never re-cut").
 
 ### Choosing the next version number

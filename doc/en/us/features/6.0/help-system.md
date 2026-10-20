@@ -50,7 +50,7 @@ The help shows only files that are **tracked by git** below the directories of `
 (`doc/` by default), with a page suffix (`md`, `markdown`, `txt`, `rst`, or none) or an image suffix (`png`, `jpg`,
 `jpeg`, `gif`, `webp`), and the tracked project files outside `doc/` (`README.md`, `SECURITY.md` ..., see "Project
 files"). Everything else is a 404: other files outside `doc/`, untracked files, paths with `..`, symbolic
-links, generated HTML (`doc/en/us/doxygen/`), SVG files and files over `MaxFileSize`. An installation without `.git` uses
+links, generated HTML (`doc/eng-us/doxygen/`), SVG files and files over `MaxFileSize`. An installation without `.git` uses
 the file manifest `share/filelist.md5` as the list of tracked files.
 
 Markdown is rendered safely: raw HTML is escaped, links with `javascript:` and similar schemes are dropped, links to
@@ -106,16 +106,16 @@ Without it, `[AudienceSettings] PathRules[]` and `[CategorySettings] PathRules[]
 ### Titles of unclear pages
 
 Plain text files have no front matter, and many of the inherited ones begin with a line that makes a poor title: a
-source code comment (`doc/en/us/standards/header.txt` began with `//`), a bare version (`5.90`), the word `CHANGELOG`, or
+source code comment (`doc/eng-us/standards/header.txt` began with `//`), a bare version (`5.90`), the word `CHANGELOG`, or
 the same title as another page. Such files keep their names, because other files refer to them; the help gives them a
 clearer title in `[TitleSettings]` instead:
 
 ```ini
 [TitleSettings]
-Titles[doc/en/us/standards/header.txt]=Source file header template (inherited, 4.1)
-Summaries[doc/en/us/standards/header.txt]=The copyright and license header that every PHP file of the inherited 4.x code base started with ...
+Titles[doc/eng-us/standards/header.txt]=Source file header template (inherited, 4.1)
+Summaries[doc/eng-us/standards/header.txt]=The copyright and license header that every PHP file of the inherited 4.x code base started with ...
 TitleRules[]=doc/changelogs/*/CHANGELOG-desc-*;Release {fileversion} summary: {title}
-TitleRules[]=doc/en/us/features/*/event.*;{title} ({dirversion})
+TitleRules[]=doc/eng-us/features/*/event.*;{title} ({dirversion})
 ```
 
 `Titles[]` and `Summaries[]` are keyed by the path relative to the installation root. A `TitleRules[]` entry is
@@ -235,9 +235,9 @@ front (`kernel/private README`), so no two entries read the same.
 - **Ids**: `project/<path in the repository>`: `/exphelp/viewer/project/README.md`,
   `/exphelp/viewer/project/bin/php/README.md`. An address with the path alone (`/exphelp/viewer/README.md`)
   redirects to the id. The prefix `project/` is reserved for them.
-- **Links**: a link of a documentation page to a project file (`[README](../../../../../README.md)` from
-  `doc/en/us/features/6.0/`) opens it in the help, not on GitHub; a link of `README.md` into the documentation
-  (`doc/en/us/guides/caches.md`) opens the help page. Links are resolved against the file, as GitHub resolves them,
+- **Links**: a link of a documentation page to a project file (`[README](../../../../README.md)` from
+  `doc/eng-us/features/6.0/`) opens it in the help, not on GitHub; a link of `README.md` into the documentation
+  (`doc/eng-us/guides/caches.md`) opens the help page. Links are resolved against the file, as GitHub resolves them,
   so the same Markdown works in both places.
 - **Language**: the project files are English only and not translated, like `doc/changelogs/`. A reader of another
   language sees them in English with the note that the page is not translated.
@@ -335,13 +335,13 @@ help, its mission and `Funds[]`. `Enabled=disabled` removes the block.
   `--exp-debug-clearance` that `expdebugbar.css` sets (the room the bar keeps free at the bottom of the window; unset
   without the bar); another fixed control at the bottom of a page can use it the same way:
   `bottom: calc(var(--exp-debug-clearance, 0px) + <gap>)`. Each folder has an id from its path, so
-  `/exphelp/contents#exphelp-folder-help-editors` opens the folder `doc/en/us/help/editors`. The viewer shows the same tree at the
+  `/exphelp/contents#exphelp-folder-help-editors` opens the folder `doc/eng-us/help/editors`. The viewer shows the same tree at the
   side of each page, with the folders on the way to the page open. Folders are native disclosure elements, so the
   tree works without JavaScript; a folder's `README.md` or `index.md` is its "Overview" link. A folder is named by
   `exphelp.ini [NavigationSettings] FolderNames[<path>]`, else by the title of its README, else by its directory
   name. The tree is cached per index, siteaccess and language, so a page with 1 200 entries costs one file read.
   Folders listed in `[NavigationSettings] FoldedFolders[]` (shipped: the generated reference examples below
-  `doc/en/us/examples/`) show only their "Overview" link and page count; their pages, and those of the folders below them,
+  `doc/eng-us/examples/`) show only their "Overview" link and page count; their pages, and those of the folders below them,
   are listed while a page inside is open. Without folding, the 2 400 generated pages would put about 2 400 more links
   on every page of the help.
 - **Search and browse addresses** use view parameters, so they can be bookmarked and linked:
@@ -358,7 +358,7 @@ help, its mission and `Funds[]`. `Enabled=disabled` removes the block.
 
 ## Record pages
 
-The release history (`doc/en/us/release-overview`) and any other plain text list of version records
+The release history (`doc/eng-us/release-overview`) and any other plain text list of version records
 are shown as tables per series by `expHelpRecordRenderer`: version, name, date, revisions,
 addresses and notes, with a filter field over all rows and sort buttons in the column headers (without the script
 the tables are complete and in date order). Any plain text file written in the same "name line, then `- Key=value`
@@ -368,7 +368,7 @@ links. These pages rank in the search like the pages of the old versions they de
 ## The documentation license
 
 The documentation in `doc/` is free documentation under the GNU Free Documentation License 1.3 or later
-(`doc/en/us/LICENSE-GFDL-1.3.txt`, `doc/en/us/README-LICENSE.md`, and for readers `doc/en/us/help/free-documentation.md`). Every help
+(`doc/eng-us/LICENSE-GFDL-1.3.txt`, `doc/eng-us/README-LICENSE.md`, and for readers `doc/eng-us/help/free-documentation.md`). Every help
 page, its print view and its PDF end with the license notice, and the dashboard has a "Free documentation" block.
 This covers all 6.x documentation, including pages contributed through pull requests; the pages inherited from
 earlier versions keep their own notice (`exphelp.ini [License] OtherLicensePathRules[]`). `[License] Enabled=false`
@@ -376,8 +376,8 @@ hides the notices.
 
 ## Related
 
-- `doc/en/us/help/develop-with-git.md`: working from a Git clone with its history, and growing from a user to a developer.
-- `doc/en/us/specifications/6.0/help-system.md` and `doc/en/us/specifications/6.0/help-style-guide.md`: the specification of the
+- `doc/eng-us/help/develop-with-git.md`: working from a Git clone with its history, and growing from a user to a developer.
+- `doc/eng-us/specifications/6.0/help-system.md` and `doc/eng-us/specifications/6.0/help-style-guide.md`: the specification of the
   help as content (help pages edited in the content tree) and the style guide for writing help pages.
 ## Print and PDF
 
@@ -415,7 +415,7 @@ page or the settings makes a new file.
 ./console exp:help pdf help/searching.md --out=searching.pdf --base-url=https://www.example.com
 ```
 
-The examples below `doc/en/us/examples/` that are generated from the code (template operators, fetch functions, module
+The examples below `doc/eng-us/examples/` that are generated from the code (template operators, fetch functions, module
 views, policies, INI settings, datatypes, workflow events, cronjobs, console commands, extension points) are written
 by `./console exp:help:examples`; `--check` reports pages that are not current. See
 [Examples](../../examples/README.md#how-the-generated-pages-are-made). They have the page type `generated`, which ranks
@@ -438,16 +438,18 @@ prepares stay in English on purpose, because the maintainers read them.
 
 ### The pages in the reader's language
 
-The help pages themselves are the documentation, one directory per language below `doc/`: `doc/en/us/` is the
-original, a translation is `doc/<language>/` (`doc/de/`), and `doc/changelogs/` is not translated
+The help pages themselves are the documentation, one directory per language below `doc/`: `doc/eng-us/` is the
+original, a translation is `doc/<language>/` (`doc/ger-de/`), and `doc/changelogs/` is not translated
 (`expHelpLanguage`; [Translated documentation](../../bc/6.0/translated-documentation.md)). The reader's language is
 the interface language (`site.ini [RegionalSettings] Locale`, which the language switch sets), mapped by
-`exphelp.ini [DocLanguages] Map[]` (`eng-US`, `eng-GB` to `en/us`, `ger-DE` to `de`). A page id is the path below
-`doc/en/us/` in every language, so an address shows the same page in each; a translation may translate its file
+the locale in lower case (`eng-US` to `eng-us`, `ger-DE` to `ger-de`; `exphelp.ini [DocLanguages] Map[]` adds
+aliases such as `eng-GB` to `eng-us`). A page id is the path below
+`doc/eng-us/` in every language, so an address shows the same page in each; a translation may translate its file
 names and list them in `doc/<language>/.paths.json`. A page the language does not have yet is shown in English with a
 note ("This page is not translated into German yet"); the index, the search, the navigation and the rendered pages
-are kept per language (`lang-<language>/` in the help cache), and `./console exp:help index` builds them all. An
-address that names a file (`/exphelp/viewer/en/us/guides/caches.md`, `/exphelp/viewer/de/<translated path>`) is
+are kept per language (`lang-<directory>/` in the help cache), and `./console exp:help index` builds them all. An
+address that names a file (`/exphelp/viewer/eng-us/guides/caches.md`, `/exphelp/viewer/ger-de/<translated path>`, and the old
+`/exphelp/viewer/en/us/...` and `/exphelp/viewer/de/...`) is
 redirected to the page id.
 
 The start page and every page show the reader's language next to the search: "Reading in: English / Deutsch"
@@ -457,7 +459,7 @@ Directories[]` that has pages and that the interface language switch can choose 
 administration, and comes back to the same page. Below it, how much of the help each translation has ("German: 120
 of 7,265 pages", `expHelpDocumentIndex::languageCoverage()`, counted from the file list without reading a page). A
 translated page links to its English original, and so does the note of a page that is not translated yet: the
-original is the same address with `?lang=en-us`, which shows the page in that language for the one request, with a
+original is the same address with `?lang=eng-us` (`?lang=en-us` still works), which shows the page in that language for the one request, with a
 link back to the reader's language.
 
 In a right-to-left interface language (Hebrew, Arabic) the pages are mirrored: the navigation tree, the contents

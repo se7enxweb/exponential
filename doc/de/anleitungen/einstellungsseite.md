@@ -247,5 +247,5 @@ Prüfungen der Anfrage ab.
 
 - [Betrieb einer Site](betrieb-einer-website.md)
 - [Upgrade](aktualisieren.md)
-- [Sichere Weiterleitungen](../../en/us/features/6.0/safe-redirects.md)
-- [Dateiberechtigungen beim Speichern von INI-Dateien](../../en/us/bc/6.0/ini-save-file-permissions.md)
+- [Sichere Weiterleitungen](../../eng-us/features/6.0/safe-redirects.md)
+- [Dateiberechtigungen beim Speichern von INI-Dateien](../../eng-us/bc/6.0/ini-save-file-permissions.md)

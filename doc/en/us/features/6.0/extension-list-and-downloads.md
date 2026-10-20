@@ -83,5 +83,5 @@ The design proposal that led to it, with the open questions, is kept in [EXT_SOR
 - [Setup > Extensions: loading order](extension-loading-order.md), [additional extension directories](additional-extension-directories.md)
 - [Extension metadata](../../specifications/6.0/extension-metadata.md), [About and Copyright pages](about-and-package-pages.md)
 - [Default extension distribution](default-extension-distribution.md), [package compare and import](package-compare-and-import.md), [extensions, themes and packages](extensions/README.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)
 - History: [August 2026](../../history/2026/2026-08.md), [June 2024](../../history/2024/2024-06.md), [March 2024](../../history/2024/2024-03.md), [February 2024](../../history/2024/2024-02.md), [January 2024, second half](../../history/2024/2024-01b.md), [January 2024, first half](../../history/2024/2024-01a.md)

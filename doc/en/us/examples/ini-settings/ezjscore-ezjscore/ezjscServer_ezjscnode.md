@@ -42,7 +42,7 @@ Class=ezjscServerFunctionsNode
 > RequirePolicy=enabled: then a user also needs ezjscore/call with the function list ezjscnode  
 > (FunctionList limitation). New installations write RequirePolicy=enabled in  
 > settings/override/ezjscore.ini.append.php and grant the Editor role that policy; an upgraded  
-> site keeps disabled until it switches. Guide: doc/en/us/bc/6.0/backend\_ezjscore\_services.md  
+> site keeps disabled until it switches. Guide: doc/eng-us/bc/6.0/backend\_ezjscore\_services.md  
 
 Default: a list of 1: `ezjscnode`.
 

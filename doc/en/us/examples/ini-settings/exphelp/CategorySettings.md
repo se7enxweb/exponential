@@ -128,7 +128,7 @@ CategoryIcons[theme-sales]=tag
 
 > <pattern>;<category>, first match wins  
 
-Default: a list of 72: `doc/en/us/help/leadership/*;leadership`, `doc/en/us/help/business/*;business`, `doc/en/us/help/partners/*;partnership`, `doc/en/us/help/advocates/*;advocacy`, `doc/en/us/help/designers/templates/*;templates`, `doc/en/us/help/designers/*;theme-design`, `doc/en/us/help/hosting/*;hosting`, `doc/en/us/help/creators/app-creators/*;app-creation`, `doc/en/us/help/creators/website-creators/*;website-creation`, `doc/en/us/help/creators/*;website-creation`, `doc/en/us/help/supporters/*;supporting`, `doc/en/us/help/sponsors/*;sponsorship` ....
+Default: a list of 72: `doc/eng-us/help/leadership/*;leadership`, `doc/eng-us/help/business/*;business`, `doc/eng-us/help/partners/*;partnership`, `doc/eng-us/help/advocates/*;advocacy`, `doc/eng-us/help/designers/templates/*;templates`, `doc/eng-us/help/designers/*;theme-design`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creation`, `doc/eng-us/help/creators/website-creators/*;website-creation`, `doc/eng-us/help/creators/*;website-creation`, `doc/eng-us/help/supporters/*;supporting`, `doc/eng-us/help/sponsors/*;sponsorship` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -136,26 +136,26 @@ Default: a list of 72: `doc/en/us/help/leadership/*;leadership`, `doc/en/us/help
 [CategorySettings]
 # an empty "PathRules[]" first replaces the shipped list; without it the items are added
 PathRules[]
-PathRules[]=doc/en/us/help/leadership/*;leadership
-PathRules[]=doc/en/us/help/business/*;business
-PathRules[]=doc/en/us/help/partners/*;partnership
-PathRules[]=doc/en/us/help/advocates/*;advocacy
-PathRules[]=doc/en/us/help/designers/templates/*;templates
-PathRules[]=doc/en/us/help/designers/*;theme-design
-PathRules[]=doc/en/us/help/hosting/*;hosting
-PathRules[]=doc/en/us/help/creators/app-creators/*;app-creation
-PathRules[]=doc/en/us/help/creators/website-creators/*;website-creation
-PathRules[]=doc/en/us/help/creators/*;website-creation
-PathRules[]=doc/en/us/help/supporters/*;supporting
-PathRules[]=doc/en/us/help/sponsors/*;sponsorship
-PathRules[]=doc/en/us/help/extension-development/*;extension-development
-PathRules[]=doc/en/us/LICENSE-GFDL-1.3.txt;reference
-PathRules[]=doc/en/us/glossary.md;reference
-PathRules[]=doc/en/us/languages.md;languages
-PathRules[]=doc/en/us/guides/README.md;getting-started
-PathRules[]=doc/en/us/guides/getting-started.md;getting-started
-PathRules[]=doc/en/us/guides/content-model-and-editing.md;editing
-PathRules[]=doc/en/us/guides/bookmarks.md;editing
+PathRules[]=doc/eng-us/help/leadership/*;leadership
+PathRules[]=doc/eng-us/help/business/*;business
+PathRules[]=doc/eng-us/help/partners/*;partnership
+PathRules[]=doc/eng-us/help/advocates/*;advocacy
+PathRules[]=doc/eng-us/help/designers/templates/*;templates
+PathRules[]=doc/eng-us/help/designers/*;theme-design
+PathRules[]=doc/eng-us/help/hosting/*;hosting
+PathRules[]=doc/eng-us/help/creators/app-creators/*;app-creation
+PathRules[]=doc/eng-us/help/creators/website-creators/*;website-creation
+PathRules[]=doc/eng-us/help/creators/*;website-creation
+PathRules[]=doc/eng-us/help/supporters/*;supporting
+PathRules[]=doc/eng-us/help/sponsors/*;sponsorship
+PathRules[]=doc/eng-us/help/extension-development/*;extension-development
+PathRules[]=doc/eng-us/LICENSE-GFDL-1.3.txt;reference
+PathRules[]=doc/eng-us/glossary.md;reference
+PathRules[]=doc/eng-us/languages.md;languages
+PathRules[]=doc/eng-us/guides/README.md;getting-started
+PathRules[]=doc/eng-us/guides/getting-started.md;getting-started
+PathRules[]=doc/eng-us/guides/content-model-and-editing.md;editing
+PathRules[]=doc/eng-us/guides/bookmarks.md;editing
 # ... 52 more in the shipped file
 */ ?>
 ```

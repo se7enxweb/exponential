@@ -11,9 +11,9 @@ Installation. Es ist als Checkliste geschrieben, die Sie von oben nach unten aba
 Zusammenfassung steht am Ende.
 
 Für die Sicht des Angreifers, Bedrohung für Bedrohung, mit dem vorgeschalteten Request-Shield und dem, was Sie
-beobachten sollten, lesen Sie [Sicherheitshärtung](../../en/us/help/security-hardening.md) in der Hilfe; für das
-Administratorkonto [Das Administratorpasswort ändern](../../en/us/help/change-the-admin-password.md) und
-[Das Standard-Administratorpasswort](../../en/us/help/default-administrator-password.md).
+beobachten sollten, lesen Sie [Sicherheitshärtung](../../eng-us/help/security-hardening.md) in der Hilfe; für das
+Administratorkonto [Das Administratorpasswort ändern](../../eng-us/help/change-the-admin-password.md) und
+[Das Standard-Administratorpasswort](../../eng-us/help/default-administrator-password.md).
 
 [Inhalt](README.md) · Zurück: [12. Fehlerbehebung](12-fehlerbehebung.md) · Weiter: [14. Migration von der 4.x-Linie](14-migration-von-4x.md)
 
@@ -93,7 +93,7 @@ Verzeichnisstruktur: **Nur eine feste Liste von Asset-Pfaden wird als Datei ausg
 (Kapitel 8, Abschnitt 8.2).
 
 Was die mitgelieferten Regeln garantieren (`.htaccess_root` und
-`doc/en/us/specifications/6.0/security-defaults-2026-09.md`, Abschnitt 4):
+`doc/eng-us/specifications/6.0/security-defaults-2026-09.md`, Abschnitt 4):
 
 | Anfrage | Antwort | Regel |
 |---|---|---|
@@ -200,7 +200,7 @@ DebugIPList[]=2001:db8::/48
 ```
 
 Einträge können einzelne Adressen oder CIDR-Bereiche beider Adressfamilien sein; eine einfache IPv6-Adresse bedeutet
-genau diese Adresse (siehe [die Debug-Leiste](../../en/us/bc/6.0/debug-bar.md), wo auch Bezeichnungen und Ablaufdaten von
+genau diese Adresse (siehe [die Debug-Leiste](../../eng-us/bc/6.0/debug-bar.md), wo auch Bezeichnungen und Ablaufdaten von
 Einträgen dokumentiert sind). Der Reiter **Einstellungen** der Debug-Leiste kann diese Werte ändern; er benötigt die
 Richtlinie `setup/setup`.
 
@@ -257,11 +257,11 @@ Härtung darüber hinaus, von der stärksten zur einfachsten:
 3. **Request-Regeln** (`settings/requestrules.ini`) entscheiden, bevor eine Modulansicht läuft: anonyme Besucher von
    System-URLs wie `/content/view/full/123` fernhalten, für eine Sektion eine Anmeldung verlangen, Anfragen aus einem
    Netzwerk ablehnen. Sie sind an Rollenrichtlinien gebunden, sodass Ausnahmen im Rolleneditor festgelegt werden.
-   Siehe [Request-Regeln](../../en/us/bc/6.0/view_full_security.md).
+   Siehe [Request-Regeln](../../eng-us/bc/6.0/view_full_security.md).
 4. **Minimale Rechte.** Geben Sie Redakteuren die Rollen, die sie brauchen, nicht Administrator. Richtlinien, die für
    die Sicherheit wichtig sind: `setup/setup` (Einstellungen), `setup/managecache`, `audit/read` und `audit/manage`,
    `mailpreferences/administrate` und `mailpreferences/export`, `contentfinder/search` und `contentfinder/delete`
-   (der [Content Finder](../../en/us/features/6.0/content-finder.md): Inhalte nach ID oder Pfad finden und von dort in den
+   (der [Content Finder](../../eng-us/features/6.0/content-finder.md): Inhalte nach ID oder Pfad finden und von dort in den
    Papierkorb verschieben oder löschen), `user/login` je Siteaccess.
 5. **Der Setup-Assistent muss geschlossen bleiben.** Nach der Installation enthält
    `settings/override/site.ini.append.php` den Eintrag `[SiteAccessSettings] CheckValidity=false`. Solange er `true`
@@ -350,9 +350,9 @@ funktioniert es:
   `settings/override/mailpreferences.ini.append.php`) ändert jeden Stempel, sodass alle einmal abgemeldet werden.
   `EndOtherSessions=disabled` schaltet den Stempel und die Prüfung zusammen ab.
 
-Lassen Sie es eingeschaltet. Einzelheiten: [Das eigene Passwort ändern](../../en/us/features/6.0/modern-password-change.md);
+Lassen Sie es eingeschaltet. Einzelheiten: [Das eigene Passwort ändern](../../eng-us/features/6.0/modern-password-change.md);
 jeder Weg, ein Administratorpasswort zu ändern oder zurückzusetzen, und was zu tun ist, wenn sich niemand anmelden
-kann: [Das Administratorpasswort ändern](../../en/us/help/change-the-admin-password.md).
+kann: [Das Administratorpasswort ändern](../../eng-us/help/change-the-admin-password.md).
 
 **`ChangeNotificationMail=enabled`** schickt dem Konto die Mail „Ihr Passwort wurde geändert“ (Kategorie
 „Kontosicherheit“, die niemand abschalten kann; die Mail enthält nie das Passwort). So erfährt ein Benutzer von einer
@@ -372,7 +372,7 @@ niemand ändern kann, deshalb:
   damit startet, schreibt eine Zeile `demo/mode` in `var/log/security.log` und das Audit-Ereignis `system.demo.mode`.
   Lösen Sie bei beidem eine Warnung aus.
 - Er kann nicht aus Einstellungen kommen: Es gibt weder eine INI-Einstellung noch einen Anfrageparameter dafür, und
-  nur der exakte Wert `1` zählt. Einzelheiten und Risiken: [Demo-Modus](../../en/us/bc/6.0/demo-mode.md).
+  nur der exakte Wert `1` zählt. Einzelheiten und Risiken: [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
 
 ### Fehlgeschlagene Anmeldungen
 
@@ -467,7 +467,7 @@ Installation.
 - **Eigener AJAX-Code**, der POST-Anfragen sendet, muss das Token ebenfalls senden; die Skripte des Kernels und
   ezjscore tun das. Die `README.rst` der Extension zeigt, wie.
 - Ein abgelehntes Token wird mit 403 und der Seite „Formular abgelaufen“ beantwortet, und es wird kein Token ins Log
-  geschrieben ([Seite „Formular abgelaufen“](../../en/us/features/6.0/form-expired-page.md)).
+  geschrieben ([Seite „Formular abgelaufen“](../../eng-us/features/6.0/form-expired-page.md)).
 - Eine Seite, die ein Token trägt, wird mit `Cache-Control: private` gesendet, sodass kein gemeinsam genutzter Cache
   eine angemeldete Seite mit ihrem Token speichert. Ein Reverse Proxy darf das nicht überschreiben (Abschnitt 13.10).
 
@@ -509,7 +509,7 @@ zusätzlich; fügen Sie sie dort hinzu, wenn Sie sie haben möchten (Apache `mod
 Eine vollständige Content Security Policy (`script-src`, `style-src`) wird aus `site.ini [ContentSecurityPolicy]`
 gesendet: standardmäßig nur als Bericht (report-only) in der Administration, ausgeschaltet auf den Sites, deren
 Designs und Extensions Inline-Skripte verwenden können. Beobachten Sie die Berichte (Browserkonsole, `ReportURI`),
-bevor Sie sie durchsetzen, siehe [Content Security Policy](../../en/us/features/6.0/content-security-policy.md).
+bevor Sie sie durchsetzen, siehe [Content Security Policy](../../eng-us/features/6.0/content-security-policy.md).
 
 ### Überall HTTPS
 
@@ -654,7 +654,7 @@ curl -s -o /dev/null -w '%{redirect_url}\n' -H 'X-Forwarded-Proto: https' http:/
 Hinter einem Proxy zeigt die Prüfung „Ist meine Adresse eingetragen?“ der Debug-Leiste `REMOTE_ADDR`, die Adresse, die der
 Kernel verwendet, und ob der Proxy-Header gelesen wurde. Einzelheiten und weitere Beispiele (Apache `mod_proxy`,
 nginx, Cloud-Load-Balancer, Cloudflare):
-[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../en/us/bc/6.0/trusted-proxies.md).
+[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../eng-us/bc/6.0/trusted-proxies.md).
 
 ### Cachende Proxys
 
@@ -701,7 +701,7 @@ Grundsätze (die Vorgehensweise steht in
   Einstellungsdatei mit `0640` an (`EZP_INI_SAVE_FILE_PERMISSION` in `config.php`); vorher machte jedes Speichern die
   Datei zu `0666`. Prüfen Sie einmal, dass keine Einstellungsdatei für alle beschreibbar geblieben ist:
   `find settings extension/*/settings -perm -o+w` darf nichts ausgeben
-  ([Upgrade-Hinweis](../../en/us/bc/6.0/ini-save-file-permissions.md)). INI-Cache-Dateien haben `0644`
+  ([Upgrade-Hinweis](../../eng-us/bc/6.0/ini-save-file-permissions.md)). INI-Cache-Dateien haben `0644`
   (`EZP_INI_FILE_PERMISSION`).
 - **Logs** nennen Besucher: Velocity schreibt seine eigenen mit `0640` in ein Verzeichnis mit `0750`
   (`[LogSettings] FileMode`, `DirMode`), der Antwort-Cache mit denselben Modi.
@@ -802,7 +802,7 @@ Für den Produktivbetrieb:
    `[AuditSink_webhook]`), damit ein kompromittierter Rechner seine eigene Geschichte nicht unbemerkt umschreiben
    kann. Führen Sie `exp:audit verify` regelmäßig aus.
 
-Vollständige Anleitung: [Audit](../../en/us/bc/6.0/audit.md).
+Vollständige Anleitung: [Audit](../../eng-us/bc/6.0/audit.md).
 
 ---
 
@@ -822,8 +822,8 @@ Vollständige Anleitung: [Audit](../../en/us/bc/6.0/audit.md).
   festgelegt; ändern Sie sie gemeinsam.
 - **Überprüfen Sie Ihre eigenen Extensions** auf die Muster, die im Kernel behoben wurden (SQL, das aus Anfragedaten
   ohne `escapeString()` oder Integer-Casts gebaut wird, Shell-Befehle ohne `escapeshellarg()`, Ausgaben ohne
-  Escaping); siehe [die Härtungshinweise zu 6.0.13](../../en/us/bc/6.0/hardening.md). Extensions, die von den RAD-Assistenten
-  vor deren Korrektur erzeugt wurden, sollten neu erzeugt werden ([RAD-Werkzeuge: Sicherheit](../../en/us/bc/6.0/rad-security.md)).
+  Escaping); siehe [die Härtungshinweise zu 6.0.13](../../eng-us/bc/6.0/hardening.md). Extensions, die von den RAD-Assistenten
+  vor deren Korrektur erzeugt wurden, sollten neu erzeugt werden ([RAD-Werkzeuge: Sicherheit](../../eng-us/bc/6.0/rad-security.md)).
 - **Melden Sie eine Sicherheitslücke** an `security@se7enx.com`, nicht im öffentlichen Issue-Tracker
   ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
 
@@ -836,7 +836,7 @@ Vollständige Anleitung: [Audit](../../en/us/bc/6.0/audit.md).
 - [ ] `settings/override/` nicht in der Versionsverwaltung, als Geheimnis gesichert, Modus `0640` oder strenger.
 - [ ] Das erzeugte Administratorpasswort geändert; `var/log/initial-admin-password` gelöscht.
 - [ ] Ein persönliches Administratorkonto pro Person; `admin` als Anmeldung stillgelegt; ein getestetes
-      Notfallverfahren ([Kontohygiene](../../en/us/help/change-the-admin-password.md#account-hygiene)).
+      Notfallverfahren ([Kontohygiene](../../eng-us/help/change-the-admin-password.md#account-hygiene)).
 - [ ] `[DebugSettings] DebugOutput=disabled`; PHP `display_errors=Off`.
 - [ ] `[SiteAccessSettings] CheckValidity=false`; die Administration auf einem eigenen Host, beschränkt per Netzwerk
       oder durch eine zweite Authentifizierung; Rollen nach dem Prinzip minimaler Rechte.
@@ -867,22 +867,22 @@ In diesem Repository:
 
 - [Sicherheitsstandards vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md): Header,
   Session-Cookie, Anmeldung, ausgelieferte Dateien, Caching persönlicher Seiten
-- [Sicherheitshärtung von 6.0.13](../../en/us/bc/6.0/hardening.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md),
-  [RAD-Werkzeuge: Sicherheit](../../en/us/bc/6.0/rad-security.md)
-- [Request-Regeln](../../en/us/bc/6.0/view_full_security.md)
-- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../en/us/bc/6.0/trusted-proxies.md); Code in
+- [Sicherheitshärtung von 6.0.13](../../eng-us/bc/6.0/hardening.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md),
+  [RAD-Werkzeuge: Sicherheit](../../eng-us/bc/6.0/rad-security.md)
+- [Request-Regeln](../../eng-us/bc/6.0/view_full_security.md)
+- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../eng-us/bc/6.0/trusted-proxies.md); Code in
   `lib/ezutils/classes/eztrustedproxy.php` und `lib/ezutils/classes/ezsys.php`
-- [Das eigene Passwort ändern](../../en/us/features/6.0/modern-password-change.md), [Hinweise zur Passwortänderung von Benutzern](../../en/us/bc/6.0/user-password-change.md),
-  [Seite „Formular abgelaufen“](../../en/us/features/6.0/form-expired-page.md)
-- [Die Exp-Debug-Leiste](../../en/us/bc/6.0/debug-bar.md)
-- [Audit](../../en/us/bc/6.0/audit.md)
+- [Das eigene Passwort ändern](../../eng-us/features/6.0/modern-password-change.md), [Hinweise zur Passwortänderung von Benutzern](../../eng-us/bc/6.0/user-password-change.md),
+  [Seite „Formular abgelaufen“](../../eng-us/features/6.0/form-expired-page.md)
+- [Die Exp-Debug-Leiste](../../eng-us/bc/6.0/debug-bar.md)
+- [Audit](../../eng-us/bc/6.0/audit.md)
 - [E-Mail-Einstellungen: Anleitung für Administratoren](../anleitungen/mail-einstellungen-administrator.md),
-  [Upgrade-Hinweise](../../en/us/bc/6.0/mail-preferences.md)
-- [HTTP-Cache](../../en/us/bc/6.0/httpcache.md)
+  [Upgrade-Hinweise](../../eng-us/bc/6.0/mail-preferences.md)
+- [HTTP-Cache](../../eng-us/bc/6.0/httpcache.md)
 - Velocity: [HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md),
-  [HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md),
-  [Kontrollpanel](../../en/us/features/6.0/velocity-control-panel.md), [Engines](../../en/us/bc/6.0/velocity-engines.md)
-- [Installation mit einem Befehl](../../en/us/features/6.0/install-in-one-command.md) (das erzeugte Administratorpasswort)
+  [HTTPS und Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md),
+  [Kontrollpanel](../../eng-us/features/6.0/velocity-control-panel.md), [Engines](../../eng-us/bc/6.0/velocity-engines.md)
+- [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md) (das erzeugte Administratorpasswort)
 - Die Einstellungen: [`settings/site.ini`](../../../settings/site.ini), [`settings/velocity.ini`](../../../settings/velocity.ini),
   [`settings/audit.ini`](../../../settings/audit.ini), [`settings/requestrules.ini`](../../../settings/requestrules.ini);
   die Regeln: [`.htaccess_root`](../../../.htaccess_root)

@@ -127,7 +127,7 @@ AssetSuffixes[]=webp
 > Never served, even when tracked (shell patterns on the path relative to the installation root; a pattern without  
 > "/" also matches the file name): generated documentation, HTML, SVG (it can carry scripts) and PHP  
 
-Default: a list of 5: `doc/en/us/doxygen/*`, `*.html`, `*.htm`, `*.svg`, `*.php`.
+Default: a list of 5: `doc/eng-us/doxygen/*`, `*.html`, `*.htm`, `*.svg`, `*.php`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -135,7 +135,7 @@ Default: a list of 5: `doc/en/us/doxygen/*`, `*.html`, `*.htm`, `*.svg`, `*.php`
 [IndexSettings]
 # an empty "ExcludePatterns[]" first replaces the shipped list; without it the items are added
 ExcludePatterns[]
-ExcludePatterns[]=doc/en/us/doxygen/*
+ExcludePatterns[]=doc/eng-us/doxygen/*
 ExcludePatterns[]=*.html
 ExcludePatterns[]=*.htm
 ExcludePatterns[]=*.svg

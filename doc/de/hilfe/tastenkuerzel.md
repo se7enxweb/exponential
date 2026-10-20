@@ -55,7 +55,7 @@ Gehen Sie mit `Tab` in den Baum; dann:
 
 Mit dem Fokus auf einer Registerkarte (**Ansicht**, **Details**, **Übersetzungen** ...):
 
-![Die Registerkarten der Seite eines Objekts: View, Details, Translations, Locations, Relations, Audit, Intelligence, Tags, Authors, Layouts und Ordering](../../en/us/help/images/shortcuts/item-tabs.webp)
+![Die Registerkarten der Seite eines Objekts: View, Details, Translations, Locations, Relations, Audit, Intelligence, Tags, Authors, Layouts und Ordering](../../eng-us/help/images/shortcuts/item-tabs.webp)
 
 | Taste | Was sie bewirkt |
 |---|---|
@@ -79,7 +79,7 @@ Ist eine Liste **Unterelemente** nach Priorität sortiert, ändert der Griff am 
 
 Setzen Sie den Fokus auf den Griff mit den drei Punkten am Rand der linken Spalte:
 
-![Die drei Schaltflächen unten in der linken Spalte, die ihre Breite festlegen](../../en/us/help/images/shortcuts/left-column-size-buttons.webp)
+![Die drei Schaltflächen unten in der linken Spalte, die ihre Breite festlegen](../../eng-us/help/images/shortcuts/left-column-size-buttons.webp)
 
 | Taste | Was sie bewirkt |
 |---|---|
@@ -112,7 +112,7 @@ bis Sie auf **Anwenden** klicken.
 | `j` / `k` | Nächste / vorherige Überschrift der Seite, die Sie lesen. |
 | `]` / `[` | Nächste / vorherige Hilfeseite. |
 
-![Eine Seite der Hilfe: das Inhaltsverzeichnis der Hilfe links, die Seite in der Mitte und ihre Überschriften rechts](../../en/us/help/images/help/help-viewer.webp)
+![Eine Seite der Hilfe: das Inhaltsverzeichnis der Hilfe links, die Seite in der Mitte und ihre Überschriften rechts](../../eng-us/help/images/help/help-viewer.webp)
 
 Diese Tasten werden ignoriert, während Sie in einem Feld tippen.
 

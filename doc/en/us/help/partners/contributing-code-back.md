@@ -34,7 +34,7 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
 6. Make sure the tests pass, update the documentation, push to your fork and open a pull request.
 7. Make sure a signed Contributor Licensing Agreement is on file with 7x, knowing that it gives control of the
    contribution to 7x (see below)
-   ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). When the partner company
+   ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)). When the partner company
    has the rights to its developers' work, the company signs it or gives its permission (CLA, section 6); one
    signature covers all future contributions.
 
@@ -49,9 +49,9 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
 - Every pull request is merged. While it is open, you squash it and rebase it onto `main` as the reviews ask
   (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` to your pull request branch only);
   once it is merged, `main`'s history is never rewritten, and later fixes come as new pull requests
-  (`doc/en/us/bc/6.0/ci.md`).
+  (`doc/eng-us/bc/6.0/ci.md`).
 - CI checks syntax, the manifest, commit messages, code style, PHPStan and the tests on supported PHP versions
-  (`doc/en/us/bc/6.0/ci.md`).
+  (`doc/eng-us/bc/6.0/ci.md`).
 - "By contributing, you agree that your contributions will be licensed under the GNU General Public License, version
   2.0 or later" (CONTRIBUTING.md).
 

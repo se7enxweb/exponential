@@ -48,7 +48,7 @@ Enabled=true
 
 > The languages a user may choose, shown grouped: first the groups of GroupList\[\] in their order (each  
 > GroupValues\_<group>\[\] in the order given, ranked by how many administrators worldwide need them; why the  
-> defaults are what they are: doc/en/us/features/6.0/ui-switch-languages.md), then every offered language A-Z by its  
+> defaults are what they are: doc/eng-us/features/6.0/ui-switch-languages.md), then every offered language A-Z by its  
 > name. A locale is offered only when share/locale/<locale>.ini exists; the siteaccess's own Locale is always  
 > offered and choosing it clears the switch. A language without a translation of the interface keeps English  
 > texts with its own date and number formats, and says so in the list ("no translation yet").  

@@ -30,7 +30,7 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 > for PHP-FPM, Apache and the application servers that run PHP on the command  
 > line (Velocity, the built-in server). Read-only views stay available. Command  
 > line scripts are not affected. Set it in a versioned settings file, never  
-> from the admin. See doc/en/us/features/6.0/managed-by-deployment.md.  
+> from the admin. See doc/eng-us/features/6.0/managed-by-deployment.md.  
 
 Default: `disabled`.
 

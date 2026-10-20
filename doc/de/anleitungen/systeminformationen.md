@@ -288,8 +288,8 @@ Setup > Cronjobs schreiben, werden nicht gesehen. Leiten Sie ihre Ausgabe nach `
 
 ## Siehe auch
 
-- [Datenbankunterstützung](../../en/us/help/database-support.md): was Engine und Version auf der Datenbank-Karte bedeuten, die
+- [Datenbankunterstützung](../../eng-us/help/database-support.md): was Engine und Version auf der Datenbank-Karte bedeuten, die
   unterstützten Datenbanken in ihrer offiziellen Reihenfolge (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL)
   und die Versionen, die jede braucht.
-- [Unterstützte Betriebssysteme](../../en/us/help/os-support.md): die Betriebssysteme, Prozessoren, Webserver und PHP-SAPIs, die
+- [Unterstützte Betriebssysteme](../../eng-us/help/os-support.md): die Betriebssysteme, Prozessoren, Webserver und PHP-SAPIs, die
   die Karten Server und PHP anzeigen können, in Stufen eingeteilt.

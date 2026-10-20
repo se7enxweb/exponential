@@ -98,7 +98,7 @@ views are classes the files call (2.4.10, 2.4.11); see
 - [xrowextract](xrowextract.md): exports tags through its keyword and tags handlers and an eztags extended filter
 - [MongoDB database support](../mongodb-database-support.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/eztags.md) and [release notes](../../../../../changelogs/extensions/eztags.md)
+- [Chronicle](../../../history/extensions/eztags.md) and [release notes](../../../../changelogs/extensions/eztags.md)
 - [Change ledger](../../../history/ledger/eztags.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-04](../../../history/extensions/months/2026-04.md), [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

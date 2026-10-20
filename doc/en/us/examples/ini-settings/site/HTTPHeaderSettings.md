@@ -172,7 +172,7 @@ ClientIpByCustomHTTPHeader=false
 > these headers itself, not pass on what the visitor sent.  
 > An override that starts with "TrustedProxies\[\]" alone replaces the list;  
 > leave it empty to trust no proxy at all.  
-> See doc/en/us/bc/6.0/trusted-proxies.md.  
+> See doc/eng-us/bc/6.0/trusted-proxies.md.  
 
 Default: a list of 2: `127.0.0.1`, `::1`.
 

@@ -103,7 +103,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 ## Related pages
 
 - [DXP skeleton and metapackage](../../features/6.0/platform-dxp-skeleton.md)
-- [Release changelog](../../../../changelogs/extensions/exponential-platform-dxp.md)
+- [Release changelog](../../../changelogs/extensions/exponential-platform-dxp.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

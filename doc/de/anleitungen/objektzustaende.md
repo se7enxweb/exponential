@@ -12,9 +12,9 @@ Abschnitt für sich. Jede Seite, jedes Feld, jede Einstellung und jeder Befehl u
 Code von Exponential 6.0 geprüft; die Bildschirme sind die des Designs admin4, und das ältere Administrationsdesign
 zeigt dieselbe Seite.
 
-[Anleitungen](README.md) · Vertiefung: [Rollen und Richtlinien in Reihenfolge](../../en/us/features/6.0/role-policy-order.md),
-[Große Operationen als Inhaltsaufträge](../../en/us/features/6.0/content-jobs.md),
-[Backend-Dienste: Objektzustände](../../en/us/bc/6.0/backend_ezjscore_services.md#object-states-expstate-23-services-9-writes)
+[Anleitungen](README.md) · Vertiefung: [Rollen und Richtlinien in Reihenfolge](../../eng-us/features/6.0/role-policy-order.md),
+[Große Operationen als Inhaltsaufträge](../../eng-us/features/6.0/content-jobs.md),
+[Backend-Dienste: Objektzustände](../../eng-us/bc/6.0/backend_ezjscore_services.md#object-states-expstate-23-services-9-writes)
 
 ## Kurz gesagt
 
@@ -105,7 +105,7 @@ Aus dem Code folgen drei Regeln, die das meiste erklären, was Sie sehen werden:
 
 Öffnen Sie **Setup > Zustände** oder gehen Sie auf `/state/groups`. Sie brauchen die Richtlinie `state/administrate`.
 
-![Die Seite der Objektzustandsgruppen: eine kurze Erklärung, fünf Kennzahlen, dann eine Karte je Gruppe mit ihren Zuständen in Reihenfolge, den Objekten in jedem, der Limitierung der Richtlinie, den Sprachen und den Rollen, die sie verwenden](../../en/us/guides/images/object-states/groups.png)
+![Die Seite der Objektzustandsgruppen: eine kurze Erklärung, fünf Kennzahlen, dann eine Karte je Gruppe mit ihren Zuständen in Reihenfolge, den Objekten in jedem, der Limitierung der Richtlinie, den Sprachen und den Rollen, die sie verwenden](../../eng-us/guides/images/object-states/groups.png)
 
 Die Seite enthält:
 
@@ -123,7 +123,7 @@ Die Seite enthält:
 
 Das Öffnen einer Gruppe (`/state/group/<identifier>`) zeigt:
 
-![Eine Zustandsgruppe: der Standardzustand, die Objekte mit einem Zustand der Gruppe und die Limitierung der Richtlinie, dann die Zustände in Reihenfolge mit ihrer Position, Objekten, Sprachen und Beschreibung, Nach oben und Nach unten, Bearbeiten und Auswählen](../../en/us/guides/images/object-states/group.png)
+![Eine Zustandsgruppe: der Standardzustand, die Objekte mit einem Zustand der Gruppe und die Limitierung der Richtlinie, dann die Zustände in Reihenfolge mit ihrer Position, Objekten, Sprachen und Beschreibung, Nach oben und Nach unten, Bearbeiten und Auswählen](../../eng-us/guides/images/object-states/group.png)
 
 - Die Beschreibung der Gruppe, ihren Standardzustand, wie viele Objekte einen Zustand der Gruppe haben, die
   Limitierung der Richtlinie und ihre ID.
@@ -160,7 +160,7 @@ Das Beispiel baut die Gruppe `review` auf, die in Abschnitt 9 verwendet wird.
    hat. Sie muss einen Namen haben.
 5. **Erstellen**. Sie landen auf der neuen Gruppe, die noch keine Zustände hat.
 
-![Das Formular für einen neuen Zustand: der Bezeichner mit dem, was er enthalten darf und wie Templates ihn schreiben, die Hauptsprache sowie ein Name und eine Beschreibung je Sprache](../../en/us/guides/images/object-states/edit.png)
+![Das Formular für einen neuen Zustand: der Bezeichner mit dem, was er enthalten darf und wie Templates ihn schreiben, die Hauptsprache sowie ein Name und eine Beschreibung je Sprache](../../eng-us/guides/images/object-states/edit.png)
 
 Nun die Zustände, in der gewünschten Reihenfolge:
 
@@ -244,7 +244,7 @@ und überspringt Objekte, denen Sie den Zustand nicht geben dürfen:
   **Inhaltsauftrag**. Ein Hintergrundauftrag setzt einen Zustand, ändern Sie also eine Gruppe nach der anderen.
 - Ein Teilbaum, an dem ein laufender Auftrag arbeitet, wird abgelehnt, bis der Auftrag fertig ist.
 
-[Große Operationen als Inhaltsaufträge](../../en/us/features/6.0/content-jobs.md) erklärt die Seite der Aufträge und die
+[Große Operationen als Inhaltsaufträge](../../eng-us/features/6.0/content-jobs.md) erklärt die Seite der Aufträge und die
 Befehle.
 
 ### 7.3 Von einer Shell oder einem Remote-Client aus
@@ -262,7 +262,7 @@ curl -b jar https://www.example.com/ezjscore/call/expstate::ofObject::123
 curl -b jar -X POST -H "X-CSRF-Token: $TOKEN" https://www.example.com/ezjscore/call/expstate::assign::123::74
 ```
 
-[Backend-Dienste: Objektzustände](../../en/us/bc/6.0/backend_ezjscore_services.md#object-states-expstate-23-services-9-writes)
+[Backend-Dienste: Objektzustände](../../eng-us/bc/6.0/backend_ezjscore_services.md#object-states-expstate-23-services-9-writes)
 listet alle 23 Aufrufe mit dem Zugriff auf, den jeder braucht; [Remote-Dienste und Apps](entfernte-dienste-und-apps.md)
 zeigt, wie Sie sich von einer Shell oder aus Python anmelden.
 
@@ -302,7 +302,7 @@ wählen Sie Modul und Funktion, dann **Eingeschränkten Zugriff gewähren**; die
 `StateGroup_<identifier>` mit ihren Zuständen, `NewState` mit jedem `group/state`. Die Seite der Gruppe listet danach
 die Rollen auf, die sie verwenden, und die Seite der Gruppen zählt sie.
 
-Rollen können nicht nach `ez_lock` oder einer anderen `ez...`-Gruppe einschränken; [die eigene Anleitung des Rolleneditors](../../en/us/features/6.0/role-policy-order.md)
+Rollen können nicht nach `ez_lock` oder einer anderen `ez...`-Gruppe einschränken; [die eigene Anleitung des Rolleneditors](../../eng-us/features/6.0/role-policy-order.md)
 erklärt, wie Richtlinien geordnet und kombiniert werden.
 
 ## 9. Ein durchgearbeitetes Beispiel: ein Prüf-Workflow
@@ -373,10 +373,10 @@ Fetches beachten bereits `content/read`: Ein Benutzer, dessen Lesen nach Zustand
 anderen Objekte nie, was auch immer das Template verlangt.
 
 **Request-Regeln** können auf den Zustand des angezeigten Knotens passen: `Conditions[state]=review/draft`, mit `*`
-als Platzhalter (`ez_lock/*`). Siehe [Request-Regeln](../../en/us/features/6.0/request-rules.md).
+als Platzhalter (`ez_lock/*`). Siehe [Request-Regeln](../../eng-us/features/6.0/request-rules.md).
 
 **Die Tabelle der Unterelemente** hat eine Spalte mit den Zuständen des Objekts und eine Spalte „Gesperrt“; siehe
-[Die Tabelle der Unterelemente](../../en/us/features/6.0/subitems-table-options.md).
+[Die Tabelle der Unterelemente](../../eng-us/features/6.0/subitems-table-options.md).
 
 ## 11. Die System-Sperrgruppe ez_lock
 
@@ -411,7 +411,7 @@ als gesperrt auf).
   vor oder nach jeder Zustandsänderung laufen.
 - **Audit**: Jede Zustandsänderung an einem Objekt ist das Audit-Ereignis `content.object.state` mit den Zuständen
   vorher und nachher; das Anlegen, Ändern und Entfernen von Gruppen und Zuständen sind `content.state.change` und
-  `content.state.remove`. Siehe [Audit-Protokoll](../../en/us/features/6.0/audit-trail.md).
+  `content.state.remove`. Siehe [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md).
 - **Suche**: Die Suchmaschine erfährt vom neuen Zustand, sodass eine Suchmaschine, die Zustände indexiert, auf dem
   aktuellen Stand bleibt.
 
@@ -504,16 +504,16 @@ entfernt es, wie es die eigene Schaltfläche der Bestätigung tut.
 
 ## Quellen
 
-- [Rollen und Richtlinien in Reihenfolge](../../en/us/features/6.0/role-policy-order.md): wie der Rolleneditor Richtlinien
+- [Rollen und Richtlinien in Reihenfolge](../../eng-us/features/6.0/role-policy-order.md): wie der Rolleneditor Richtlinien
   ordnet und kombiniert.
-- [Große Operationen als Inhaltsaufträge](../../en/us/features/6.0/content-jobs.md): einen Zustand an einem großen Teilbaum
+- [Große Operationen als Inhaltsaufträge](../../eng-us/features/6.0/content-jobs.md): einen Zustand an einem großen Teilbaum
   setzen.
-- [Backend-Dienste: Objektzustände](../../en/us/bc/6.0/backend_ezjscore_services.md#object-states-expstate-23-services-9-writes)
+- [Backend-Dienste: Objektzustände](../../eng-us/bc/6.0/backend_ezjscore_services.md#object-states-expstate-23-services-9-writes)
   und [Remote-Dienste und Apps](entfernte-dienste-und-apps.md): die `expstate`-Aufrufe.
-- [Request-Regeln](../../en/us/features/6.0/request-rules.md): `Conditions[state]`.
-- [Die Tabelle der Unterelemente](../../en/us/features/6.0/subitems-table-options.md): die Spalten für den Zustand und
+- [Request-Regeln](../../eng-us/features/6.0/request-rules.md): `Conditions[state]`.
+- [Die Tabelle der Unterelemente](../../eng-us/features/6.0/subitems-table-options.md): die Spalten für den Zustand und
   „Gesperrt“.
-- [Audit-Protokoll](../../en/us/features/6.0/audit-trail.md): das Ereignis `content.object.state`.
+- [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md): das Ereignis `content.object.state`.
 - [Cronjobs](cronjobs.md): der Unlock-Teil.
 - [Sicherheit und Audit](sicherheit-und-audit.md): Rollen, die nur geben, was nötig ist.
 - Code: `kernel/state/module.php` (Views, Funktionen, Limitierungen), `kernel/private/classes/views/state/*.php` (die

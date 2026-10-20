@@ -57,7 +57,7 @@ Review: yearly, owner <role>
 ## Mehr als Geld
 
 - Stellen Sie Arbeitszeit für Fehlerberichte und Korrekturen bereit ([Exponential als Unternehmen unterstützen](../unterstuetzer/als-unternehmen-unterstuetzen.md)).
-- Wenn Sie Leistungen auf Basis von Exponential verkaufen, ziehen Sie das Partnerprogramm in Betracht ([Partner: Hier beginnen](../../../en/us/help/partners/partners-start-here.md)).
+- Wenn Sie Leistungen auf Basis von Exponential verkaufen, ziehen Sie das Partnerprogramm in Betracht ([Partner: Hier beginnen](../../../eng-us/help/partners/partners-start-here.md)).
 
 ## Verwandte Seiten
 

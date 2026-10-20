@@ -36,7 +36,7 @@ read 18 October 2026).
 
 - **Every pull request is merged.** Contributors are not turned away. While a pull request is open, its author
   squashes it and rebases it onto `main` as the reviews ask; once it is merged, `main`'s history is never rewritten,
-  and later fixes come as new pull requests (`doc/en/us/bc/6.0/ci.md`).
+  and later fixes come as new pull requests (`doc/eng-us/bc/6.0/ci.md`).
 - **Credit for others' work.** The LoveStack improvements of Mugo Web were rebuilt "with full credit to Mugo Web"
   (README).
 - **Upstream contributions.** The se7enxweb profile README reports "14 security PRs submitted upstream to

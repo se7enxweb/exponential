@@ -145,4 +145,4 @@ placeholders (`%kind`, `%language`, `%name`, `%count`) and have singular and plu
 
 - Features: [explayouts_ui_api](../../features/6.0/extensions/explayouts_ui_api.md), [explayouts_ui](../../features/6.0/extensions/explayouts_ui.md), [Exponential Layouts](../../bc/6.0/LAYOUTS.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- [Chronicle](../../history/extensions/explayouts_ui_api.md), [release notes](../../../../changelogs/extensions/explayouts_ui_api.md); months [2026-07](../../history/extensions/months/2026-07.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Chronicle](../../history/extensions/explayouts_ui_api.md), [release notes](../../../changelogs/extensions/explayouts_ui_api.md); months [2026-07](../../history/extensions/months/2026-07.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)

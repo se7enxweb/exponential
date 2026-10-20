@@ -42,7 +42,7 @@ under the same license ([Free documentation](../free-documentation.md)).
 | Audience | Course idea | Built on |
 |---|---|---|
 | Editors | Editing, media, publishing, languages in one day | [Getting started](../getting-started.md), [Editing content](../editing-content.md) |
-| Administrators | Install, secure, back up, update | `doc/en/us/install/`, [Security hardening](../security-hardening.md) |
+| Administrators | Install, secure, back up, update | `doc/eng-us/install/`, [Security hardening](../security-hardening.md) |
 | Developers | Extensions, templates, Git workflow | [Extensions](../../guides/extensions.md), [Develop with Git](../develop-with-git.md) |
 | Project managers | Planning and running projects | [Project managers: start here](../leadership/project-managers-start-here.md) |
 | Sales | Telling the story truthfully | [Sales and marketing: start here](../business/sales-and-marketing-start-here.md) |

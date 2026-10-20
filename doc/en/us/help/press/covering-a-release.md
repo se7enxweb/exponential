@@ -40,10 +40,10 @@ number will not change after you write about them ([Published versions never cha
 
 | Fact | Value | Source |
 |---|---|---|
-| Newest released version of Exponential | 6.0.14, tag `v6.0.14`, 7 June 2026 | [6.0.14 changelog](../../../../changelogs/6.0/6.0.14.md), [release overview](../../release-overview) |
-| First release of the 6.0 line | 6.0.0, 1 January 2024 | [6.0.0 changelog](../../../../changelogs/6.0/6.0.0.md) |
+| Newest released version of Exponential | 6.0.14, tag `v6.0.14`, 7 June 2026 | [6.0.14 changelog](../../../changelogs/6.0/6.0.14.md), [release overview](../../release-overview) |
+| First release of the 6.0 line | 6.0.0, 1 January 2024 | [6.0.0 changelog](../../../changelogs/6.0/6.0.0.md) |
 | Number of 6.0.x releases | 15 (6.0.0 to 6.0.14) | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases) |
-| The development line | 6.0.15, not released, no date | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| The development line | 6.0.15, not released, no date | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 
 Check these again on the day you publish; a newer tag may exist by then
 ([Verifying a release yourself](verifying-a-release-yourself.md)).
@@ -53,7 +53,7 @@ Check these again on the day you publish; a newer tag may exist by then
 1. **Confirm the tag.** Look at [GitHub Releases](https://github.com/se7enxweb/exponential/releases) or run the
    commands on [Verifying a release yourself](verifying-a-release-yourself.md). No tag, no release.
 2. **Read the changelog of that version.** Each 6.0.x version has a page in `doc/changelogs/6.0/`, for example
-   [6.0.14](../../../../changelogs/6.0/6.0.14.md). Read "In short" first, then "Upgrading"
+   [6.0.14](../../../changelogs/6.0/6.0.14.md). Read "In short" first, then "Upgrading"
    ([Reading a changelog](reading-a-changelog.md)).
 3. **Read the history for context.** The [history](../../history/README.md) tells month by month what each change
    makes possible, with the commit behind it ([The history pages as a source](the-history-pages-as-a-source.md)).
@@ -70,7 +70,7 @@ Check these again on the day you publish; a newer tag may exist by then
 | Site owners and administrators | The "Upgrading" section | "No action needed for MySQL, PostgreSQL and SQLite sites" |
 | Developers | Added files, scripts, template operators | `bin/shell/generatefilelist.sh` and `share/filelist.md5` |
 
-All four examples are quoted from the [6.0.14 changelog](../../../../changelogs/6.0/6.0.14.md). Templates for each kind of
+All four examples are quoted from the [6.0.14 changelog](../../../changelogs/6.0/6.0.14.md). Templates for each kind of
 story are on [Release story templates](release-story-templates.md).
 
 ## What a release story must not say

@@ -113,9 +113,9 @@ TitleMatchBoost=1.4
 
 > Factor per page type (expHelpDocumentIndex types): help pages and guides rank above reference material with the  
 > same words, changelogs and history below it  
-> The generated reference examples (doc/en/us/examples/, ./console exp:help:examples): thousands of short pages that  
+> The generated reference examples (doc/eng-us/examples/, ./console exp:help:examples): thousands of short pages that  
 > repeat setting, operator and view names; below the written pages that explain the same words  
-> the generated pattern catalogue (doc/en/us/standards/patterns/) lists thousands of class names: below the written pages  
+> the generated pattern catalogue (doc/eng-us/standards/patterns/) lists thousands of class names: below the written pages  
 
 Default: a hash of 7: `help=1.5`, `guide=1.3`, `specification=0.8`, `changelog=0.45`, `history=0.6`, `generated=0.5`, `catalogue=0.5`.
 

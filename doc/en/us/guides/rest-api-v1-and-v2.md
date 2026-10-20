@@ -294,8 +294,8 @@ until it is fixed.
 ## Related pages
 
 - [Personal API keys](api-keys.md): making, using and revoking a key; the permission table of the REST interface
-- [ezprestapi](../features/6.0/extensions/ezprestapi.md) and its [release notes](../../../changelogs/extensions/ezprestapi.md)
-- [ezprestapiprovider](../features/6.0/extensions/ezprestapiprovider.md) and its [release notes](../../../changelogs/extensions/ezprestapiprovider.md)
+- [ezprestapi](../features/6.0/extensions/ezprestapi.md) and its [release notes](../../changelogs/extensions/ezprestapi.md)
+- [ezprestapiprovider](../features/6.0/extensions/ezprestapiprovider.md) and its [release notes](../../changelogs/extensions/ezprestapiprovider.md)
 - [nxc_powercontent](../features/6.0/extensions/nxc_powercontent.md)
 - [Behavior changes of the extensions](../bc/6.0/extensions-behaviour-changes.md)
 - [Remote services and apps](remote-services-and-apps.md)

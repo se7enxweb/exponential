@@ -37,7 +37,7 @@ site owner requires it.
 | What | When | Source |
 |---|---|---|
 | The extension imported (version 1.0.0) | 21 July 2026 | [sevenx_authentication_2fa](../../features/6.0/extensions/sevenx_authentication_2fa.md) |
-| The guide, social login buttons on the admin4 login page, codes accepted once and counted as failed logins, secrets encryptable at rest | 6 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
+| The guide, social login buttons on the admin4 login page, codes accepted once and counted as failed logins, secrets encryptable at rest | 6 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
 
 The kernel changes are part of the 6.0.15 development line, which is not released; the extension is released on its
 own.

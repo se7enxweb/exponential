@@ -69,7 +69,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 ## Related pages
 
 - [Site bundles](../../features/6.0/platform-site-bundles.md)
-- [Release changelog](../../../../changelogs/extensions/site-bundle.md)
+- [Release changelog](../../../changelogs/extensions/site-bundle.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

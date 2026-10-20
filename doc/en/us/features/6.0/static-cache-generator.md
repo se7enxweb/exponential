@@ -71,7 +71,7 @@ use them.
   `[FileSettings] VarDir` without the leading `var/`; a default installation
   (`var/site`) needs no change.
 - **Apache or other virtual host**: a vhost does not read `.htaccess`; use the
-  same rules from `doc/en/us/examples/staticcache_offload.conf`.
+  same rules from `doc/eng-us/examples/staticcache_offload.conf`.
 
 A request is answered from a file only when it is a plain `GET` or `HEAD`, has
 no query string and carries no session. Forms, searches and anyone logged in
@@ -124,5 +124,5 @@ The defaults changed; see [bc: static cache defaults](../../bc/6.0/static-cache-
 - [Cache from the console](../../bc/6.0/cache-console.md) (`exp:cache` static cache group), [HTTP caching](../../bc/6.0/http-caching.md)
 - [Velocity and the opcode cache](velocity-opcode-cache-and-profile.md), [cache clears that move directories aside](cache-clear-rename-aside.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - History: [September 2026, first half: caches you can see](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [October 2026](../../history/2026/2026-10.md)

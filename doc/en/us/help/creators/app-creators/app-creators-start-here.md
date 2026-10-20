@@ -141,7 +141,7 @@ The [reading path](app-creators-reading-path.md) puts every page below in order.
 | Site building (templates, layouts, SEO) | [Website creators: start here](../website-creators/website-creators-start-here.md) |
 | Working with Git and contributing | [Develop with Git](../../develop-with-git.md) |
 | Installing and serving | [Installation book](../../../install/README.md) |
-| The extension developer book | `doc/en/us/help/extension-development/`, when it is in your installation |
+| The extension developer book | `doc/eng-us/help/extension-development/`, when it is in your installation |
 
 > **Tip**
 > The help's search finds every page of this section: filter it by the audience **Application creators**.

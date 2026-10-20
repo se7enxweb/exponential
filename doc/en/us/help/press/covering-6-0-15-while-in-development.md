@@ -25,7 +25,7 @@ development and to give no release date, because no source gives one.
 
 | Fact | Source |
 |---|---|
-| "Not released yet. The 6.0.15 line follows v6.0.14 (2026-06-07); no tag `v6.0.15` existed on 2026-10-12." | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| "Not released yet. The 6.0.15 line follows v6.0.14 (2026-06-07); no tag `v6.0.15` existed on 2026-10-12." | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 | "Date not released yet" | [release overview](../../release-overview) |
 | The `main` branch is "the current development of the 6.0 line, today 6.0.15" and identifies itself as `6.0.15stable` in `lib/version.php` | [Getting the code](../../install/03-getting-the-code.md#31-versions-tags-and-branches) |
 | "Security fixes are made on the `main` branch (the 6.0.15 line, `dev-main`) and published with the next 6.0.x release." | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
@@ -48,7 +48,7 @@ Layouts, Exponential Intelligence, the help system and much more". The history a
 | October 2026 | "jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs and TinyMCE 8" | [October 2026](../../history/2026/2026-10.md) |
 
 Exponential Intelligence and the job queue arrive in the distribution "inactive" and are switched on by the site
-owner ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)).
+owner ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)).
 Mention that if you describe them.
 
 ## Labeling it correctly

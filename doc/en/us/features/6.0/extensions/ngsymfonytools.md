@@ -45,6 +45,6 @@ objects before they reach the Twig template.
 ## Related pages
 
 - [Legacy bridge](../legacy-bridge.md)
-- [Chronicle of the repository](../../../history/ecosystem/ngsymfonytools.md) and [release notes](../../../../../changelogs/extensions/ngsymfonytools.md) (covered with the platform repositories)
+- [Chronicle of the repository](../../../history/ecosystem/ngsymfonytools.md) and [release notes](../../../../changelogs/extensions/ngsymfonytools.md) (covered with the platform repositories)
 - [Change ledger](../../../history/ledger/ngsymfonytools.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)

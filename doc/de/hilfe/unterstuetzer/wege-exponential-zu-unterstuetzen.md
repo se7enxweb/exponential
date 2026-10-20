@@ -26,7 +26,7 @@ passt; alles zählt.
 | Fürsprache | Beliebig | Die Wahrheit gut erzählen | Mehr Anwender, mehr Mitwirkende | [Fürsprache](fuersprache.md) |
 | Einmalige Spende | Beliebiger Betrag | Keine | Bezahlt ein Stück Arbeit | [Die Arbeit finanzieren](die-arbeit-finanzieren.md) |
 | Monatliches Sponsoring | Ab wenigen Dollar im Monat | Keine | Verlässliche Zeit für die Wartung | [Sponsoren: Hier beginnen](../sponsoren/sponsoren-hier-beginnen.md) |
-| Partnerschaft | Ein Abonnement und Verbindlichkeit | Ein Geschäft mit Exponential | Dauerhaftes Geschäft rund um das Projekt | [Partner: Hier beginnen](../../../en/us/help/partners/partners-start-here.md) |
+| Partnerschaft | Ein Abonnement und Verbindlichkeit | Ein Geschäft mit Exponential | Dauerhaftes Geschäft rund um das Projekt | [Partner: Hier beginnen](../../../eng-us/help/partners/partners-start-here.md) |
 
 ## Wie Sie wählen
 

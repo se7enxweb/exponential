@@ -68,5 +68,5 @@ different type no longer ends in a fatal error while the page is assembled.
 - [Extensions in more than one folder](additional-extension-directories.md)
 - [Extension loading order](extension-loading-order.md)
 - [Behaviour changes of the legacy extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- Changelogs: [6.0.1](../../../../changelogs/6.0/6.0.1.md) (module order), [6.0.5](../../../../changelogs/6.0/6.0.5.md) (robustness fix)
+- Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md) (module order), [6.0.5](../../../changelogs/6.0/6.0.5.md) (robustness fix)
 - History: [January 2024, second half](../../history/2024/2024-01b.md), [September 2024](../../history/2024/2024-09.md), [October 2024](../../history/2024/2024-10.md)

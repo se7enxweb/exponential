@@ -43,7 +43,7 @@ Alle Einzelheiten finden Sie in der Dokumentation von GitHub, beginnend bei <htt
 ## Rechnungen für Leistungen
 
 Partner-Abonnements und Leistungen, die Sie bei 7x kaufen, sind Käufe mit Rechnungen aus dem Shop von 7x
-([Partnerpläne und Preise](../../../en/us/help/partners/partner-plans-and-prices.md#invoices-and-taxes)).
+([Partnerpläne und Preise](../../../eng-us/help/partners/partner-plans-and-prices.md#invoices-and-taxes)).
 
 ## Verwandte Seiten
 

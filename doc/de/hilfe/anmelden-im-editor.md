@@ -21,7 +21,7 @@ Teile derselben Installation und arbeiten mit denselben Inhalten.
 Der Editor hat eine eigene Adresse. Welche das ist, hängt von der Einrichtung Ihrer Site ab; Ihr Administrator nennt
 sie Ihnen. Die üblichen Formen sind:
 
-![Die Anmeldeseite der Administration für Redakteure](../../en/us/help/images/accounts/editor-sign-in.webp)
+![Die Anmeldeseite der Administration für Redakteure](../../eng-us/help/images/accounts/editor-sign-in.webp)
 
 | Form | Beispiel |
 |---|---|
@@ -35,7 +35,7 @@ Legen Sie die Adresse als Lesezeichen in Ihrem Browser ab, dann müssen Sie nie 
 
 ## Anmelden
 
-![Die Anmeldeseite des Editors mit den Feldern Benutzername und Passwort und der Schaltfläche Anmelden](../../en/us/help/images/login-editor-form.webp)
+![Die Anmeldeseite des Editors mit den Feldern Benutzername und Passwort und der Schaltfläche Anmelden](../../eng-us/help/images/login-editor-form.webp)
 
 1. Geben Sie Ihren **Benutzernamen** ein. Die meisten Sites akzeptieren in diesem Feld auch die **E-Mail-Adresse**
    Ihres Kontos.
@@ -59,7 +59,7 @@ Der Editor öffnet sich mit seinem **Dashboard**: einer Begrüßung mit Ihrem Na
 **Inhaltsstruktur** und zur **Medienbibliothek**, Ihren Zahlen (Entwürfe, wartende Objekte) und den neuesten
 Inhalten.
 
-![Das Dashboard des Editors nach der Anmeldung, mit den Reitern Dashboard, Inhaltsstruktur und Medien](../../en/us/help/images/login-editor-dashboard.webp)
+![Das Dashboard des Editors nach der Anmeldung, mit den Reitern Dashboard, Inhaltsstruktur und Medien](../../eng-us/help/images/login-editor-dashboard.webp)
 
 Von hier an gilt alles aus [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md): der Baum, die Seiten der Objekte,
 das Bearbeitungsformular. Was Sie öffnen und ändern dürfen, entscheidet Ihre **Rolle** (meist *Redakteur*): Ein
@@ -79,7 +79,7 @@ selbst; siehe [Sprachen](sprachen.md#die-sprache-der-administration).
 | Die Seite fragt in einem kleinen Browserfenster nach Benutzername und Passwort, bevor die Site erscheint | Manche Test- und Staging-Server sind durch ein zusätzliches Browserpasswort geschützt. Es ist nicht Ihr Exponential-Konto; fragen Sie die Person, die Ihnen die Adresse gegeben hat. |
 | Nach der Anmeldung landen Sie wieder beim Anmeldeformular | Ihr Browser blockiert Cookies für die Site. Erlauben Sie Cookies für sie (die Anmeldung braucht eines), oder versuchen Sie es in einem privaten Fenster, um eine Browsererweiterung als Ursache auszuschließen. |
 
-![Die Anmeldeseite mit der Meldung, dass das System Sie nicht anmelden konnte](../../en/us/help/images/login-wrong-password.webp)
+![Die Anmeldeseite mit der Meldung, dass das System Sie nicht anmelden konnte](../../eng-us/help/images/login-wrong-password.webp)
 
 ## Passwort vergessen?
 

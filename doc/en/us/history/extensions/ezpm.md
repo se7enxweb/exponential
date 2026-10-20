@@ -2,7 +2,7 @@
 
 Private messages changed vendor in early 2024 and was made safe for persistent workers in September 2026 (0.10.0). See the [feature page](../../features/6.0/extensions/ezpm.md).
 
-This page lists **every one of the 4 changes** of the repository `ezpm` between 2023-12-24 and 2026-09-22, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezpm.md); what each release contains is in the [release notes](../../../../changelogs/extensions/ezpm.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezpm.md).
+This page lists **every one of the 4 changes** of the repository `ezpm` between 2023-12-24 and 2026-09-22, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezpm.md); what each release contains is in the [release notes](../../../changelogs/extensions/ezpm.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezpm.md).
 
 | Kind | Changes |
 |---|---|
@@ -46,6 +46,6 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/ezpm.md)
-- [Release notes](../../../../changelogs/extensions/ezpm.md)
+- [Release notes](../../../changelogs/extensions/ezpm.md)
 - [Change ledger](../ledger/ezpm.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

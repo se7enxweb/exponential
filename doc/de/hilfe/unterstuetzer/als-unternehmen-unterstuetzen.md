@@ -48,7 +48,7 @@ Die beiden Sponsorenseiten: <https://github.com/sponsors/se7enxweb> (7x) und <ht
 ## Partnerschaft
 
 Wenn Sie anderen Leistungen auf Basis von Exponential anbieten, passt das Partnerprogramm möglicherweise besser als ein
-Sponsoring ([Partner: Hier beginnen](../../../en/us/help/partners/partners-start-here.md)).
+Sponsoring ([Partner: Hier beginnen](../../../eng-us/help/partners/partners-start-here.md)).
 
 ## Intern dafür argumentieren
 

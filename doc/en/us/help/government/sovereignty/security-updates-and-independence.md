@@ -32,7 +32,7 @@ released in their own repositories.
 
 - Watch the GitHub releases of the kernel and of the extensions you use.
 - **Setup > Updates and packages** shows which installed packages have newer versions ([ezupdate](../../../features/6.0/extensions/ezupdate.md)).
-- Read the changelogs before updating ([6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md) for the current line).
+- Read the changelogs before updating ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) for the current line).
 
 ## Applying updates
 

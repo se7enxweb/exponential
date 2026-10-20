@@ -21,7 +21,7 @@ to your contracts. The project managers' section of the help has the planning de
 | 2. Content model | Classes, attributes, sections, roles, workflows | [Content modeling workshops](../leadership/content-modeling-workshops.md) |
 | 3. Environment | Hosting, PHP, database, engine; Git repository | [Choosing hosting, database and OS](../leadership/choosing-hosting-database-and-os.md), [Develop with Git](../develop-with-git.md) |
 | 4. Build | Designs, templates, layouts, extensions | [The layouts editor](../layouts-editor.md), [Extensions](../../guides/extensions.md), [Estimating and scoping with extensions](../leadership/estimating-and-scoping-with-extensions.md) |
-| 5. Content migration | Import scripts or manual entry, redirects | `doc/en/us/install/` migration chapters |
+| 5. Content migration | Import scripts or manual entry, redirects | `doc/eng-us/install/` migration chapters |
 | 6. Quality gates | Accessibility, security, performance, browsers, languages | [Quality gates and acceptance](../leadership/quality-gates-and-acceptance.md), [Accessibility, security and compliance checklists](../leadership/accessibility-security-and-compliance-checklists.md) |
 | 7. Launch | DNS, TLS, caches, monitoring, backups | [Security hardening](../security-hardening.md) |
 | 8. Handover | Editor training, documentation, credentials handed over securely | [Getting started](../getting-started.md), [Editing content](../editing-content.md) |
@@ -32,7 +32,7 @@ to your contracts. The project managers' section of the help has the planning de
 - **Discovery:** Is there an existing extension for each requirement? Search before you estimate
   ([Extensions](../../guides/extensions.md#2-find-an-extension)).
 - **Environment:** Use a currently supported PHP (8.0 to 8.5 for 6.0.15; Velocity needs 8.1 or later,
-  `doc/en/us/install/02-requirements.md`).
+  `doc/eng-us/install/02-requirements.md`).
 - **Build:** Keep generic improvements separate from customer code, so they can go upstream
   ([Contributing code back](contributing-code-back.md)).
 - **Quality:** Run the customer's site in light and dark mode and at high zoom if you changed the administration.

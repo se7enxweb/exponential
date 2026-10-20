@@ -16,13 +16,13 @@ Anwender dieser Sprache, oft Menschen, die nie ein englisches Handbuch lesen wü
 
 - Die Meldungen der Administration stehen in `share/translations/<locale>/translation.ts`, eine Datei pro Sprache
   (zum Beispiel `ger-DE`, `fre-FR`, `esl-ES`, `ukr-UA`, `heb-IL`).
-- `doc/en/us/languages.md` führt die Gebietsschemas, die Übersetzungen der Administration und deren Vollständigkeit
+- `doc/eng-us/languages.md` führt die Gebietsschemas, die Übersetzungen der Administration und deren Vollständigkeit
   auf; die Hilfeseite [Sprachen](../sprachen.md) erklärt Sprachen für Redakteure und Administratoren.
 - Erweiterungen bringen ihre eigenen Übersetzungen in ihren eigenen Verzeichnissen `translations/` mit.
 
 ## Wie Sie übersetzen
 
-1. Wählen Sie eine Sprache und prüfen Sie ihre Vollständigkeit in `doc/en/us/languages.md`.
+1. Wählen Sie eine Sprache und prüfen Sie ihre Vollständigkeit in `doc/eng-us/languages.md`.
 2. Erstellen Sie einen Fork des Repositorys und öffnen Sie die Datei `translation.ts` der Sprache.
 3. Übersetzen Sie die Meldungen, die noch nicht übersetzt oder als unfertig markiert sind. Lassen Sie Platzhalter wie
    `%1` genau so, wie sie sind.

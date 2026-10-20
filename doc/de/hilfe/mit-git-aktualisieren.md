@@ -80,7 +80,7 @@ php bin/php/maintenance.php on --message="Updating, back at 06:00" --until=1h
 php bin/php/maintenance.php status
 ```
 
-![Terminal: maintenance.php on gibt „Maintenance is ON: page requests get the maintenance page (503)“ aus, und status zeigt Beginn, Ende, die Nachricht und die ausgelieferte Seite](../../en/us/help/images/update-cli-a1-maintenance.webp)
+![Terminal: maintenance.php on gibt „Maintenance is ON: page requests get the maintenance page (503)“ aus, und status zeigt Beginn, Ende, die Nachricht und die ausgelieferte Seite](../../eng-us/help/images/update-cli-a1-maintenance.webp)
 
 `maintenance.php` ist Teil von 6.0.15 (`main`); bei einem älteren Release überspringen Sie diesen Schritt oder
 schalten die Wartung in der Administration ein ([B1](#b1-sichern-und-das-wartungsfenster-beginnen)), was
@@ -96,7 +96,7 @@ git log --oneline HEAD..origin/main | wc -l
 git tag -l 'v6.*' --sort=version:refname | tail -3
 ```
 
-![Terminal: git status gibt nichts aus (keine nicht committeten Änderungen), git fetch, die fünf neuesten Commits auf origin/main, die der Site fehlen, ihre Anzahl (5651 ab v6.0.13) und die drei neuesten Release-Tags v6.0.12, v6.0.13, v6.0.14](../../en/us/help/images/update-cli-a2-waiting.webp)
+![Terminal: git status gibt nichts aus (keine nicht committeten Änderungen), git fetch, die fünf neuesten Commits auf origin/main, die der Site fehlen, ihre Anzahl (5651 ab v6.0.13) und die drei neuesten Release-Tags v6.0.12, v6.0.13, v6.0.14](../../eng-us/help/images/update-cli-a2-waiting.webp)
 
 `git status` darf nichts ausgeben: Änderungen, die Sie nicht committet haben, können den Merge verhindern.
 `HEAD..origin/main` listet auf, was die Entwicklungslinie bringen würde; für ein Release leistet `HEAD..v6.0.14`
@@ -117,7 +117,7 @@ Wenn Sie nur Releases folgen, der neueste Release-Tag:
 git merge --no-edit "$(git tag -l 'v6.*' --sort=version:refname | tail -1)"
 ```
 
-![Terminal: das Ende von git merge origin/main mit neuen Dateien wie den Datenbank-Update-Dateien von 6.0.15, und git log -1 mit dem gemergten Commit](../../en/us/help/images/update-cli-a3-kernel.webp)
+![Terminal: das Ende von git merge origin/main mit neuen Dateien wie den Datenbank-Update-Dateien von 6.0.15, und git log -1 mit dem gemergten Commit](../../eng-us/help/images/update-cli-a3-kernel.webp)
 
 `git merge` behält Ihre eigenen Commits auf `my-site` und fügt die neuen hinzu. Wenn einer Ihrer Commits und das
 Update dieselben Zeilen ändern, hält Git mit `CONFLICT` an; `git merge --abort` stellt alles wieder her.
@@ -132,7 +132,7 @@ composer update
 composer status -v
 ```
 
-![Terminal: composer update meldet „Lock file operations: 39 installs, 11 updates, 1 removal“, Upgrades wie se7enxweb/ezflow v6.0.2 auf v6.1.10, neue Erweiterungen aus dem Cache geklont, danach meldet composer status „No local changes“, und 66 Erweiterungen sind Git-Klone](../../en/us/help/images/update-cli-a4-composer.webp)
+![Terminal: composer update meldet „Lock file operations: 39 installs, 11 updates, 1 removal“, Upgrades wie se7enxweb/ezflow v6.0.2 auf v6.1.10, neue Erweiterungen aus dem Cache geklont, danach meldet composer status „No local changes“, und 66 Erweiterungen sind Git-Klone](../../eng-us/help/images/update-cli-a4-composer.webp)
 
 `composer update`, nicht `composer install`: Die `composer.json` des Kernels hat sich geändert, und Ihre Lock-Datei
 (sie gehört nicht zum Repository des Kernels) muss ihr folgen. Von `v6.0.13` nach `main` kamen dabei 39 Pakete hinzu
@@ -156,7 +156,7 @@ php bin/php/checkmanifest.php --all
 ls update/database/mysql/6.0/
 ```
 
-![Terminal: checkmanifest.php --all gibt „share/filelist.md5 matches“ aus, dazu die Datenbank-Update-Dateien von 6.0 dbupdate-5.4.0-6.0.0.sql und dbupdate-6.0.0-6.0.15.sql](../../en/us/help/images/update-cli-a5-check.webp)
+![Terminal: checkmanifest.php --all gibt „share/filelist.md5 matches“ aus, dazu die Datenbank-Update-Dateien von 6.0 dbupdate-5.4.0-6.0.0.sql und dbupdate-6.0.0-6.0.15.sql](../../eng-us/help/images/update-cli-a5-check.webp)
 
 `checkmanifest.php --all` vergleicht jede Datei mit den Prüfsummen des Release; nach einem sauberen Git-Update meldet
 es, dass sie übereinstimmen. Ein Release kann ein **Datenbank-Update** brauchen:
@@ -176,12 +176,12 @@ mysql -u USER -p DATABASE < update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 php bin/php/ezcache.php --clear-all
 ```
 
-![Terminal: ezcache.php --clear-all leert alle Caches, beginnend mit dem Cache der Inhaltsansichten, dem HTTP-Cache und den INI-Caches](../../en/us/help/images/update-cli-a6-caches.webp)
+![Terminal: ezcache.php --clear-all leert alle Caches, beginnend mit dem Cache der Inhaltsansichten, dem HTTP-Cache und den INI-Caches](../../eng-us/help/images/update-cli-a6-caches.webp)
 
 Auf einer Site, die von Exponential Velocity ausgeliefert wird, führen Sie stattdessen
 `php bin/php/console exp:velocity deploy` aus: Es erzeugt die Klassen-Maps neu, leert die Caches, macht PHP-FPM den
 neuen Code bekannt und startet Velocity neu, in der richtigen Reihenfolge
-([Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md)).
+([Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md)).
 
 ### A7. Die Site prüfen und das Wartungsfenster beenden
 
@@ -191,7 +191,7 @@ php bin/php/console --version
 php bin/php/maintenance.php off
 ```
 
-![Terminal: 5651 Commits kamen mit dem Update, die Konsole meldet Exponential 6.0.15stable, und maintenance.php off gibt „Maintenance is OFF: the site answers again“ aus](../../en/us/help/images/update-cli-a7-leave.webp)
+![Terminal: 5651 Commits kamen mit dem Update, die Konsole meldet Exponential 6.0.15stable, und maintenance.php off gibt „Maintenance is OFF: the site answers again“ aus](../../eng-us/help/images/update-cli-a7-leave.webp)
 
 Nach einem Merge zeigt `ORIG_HEAD` auf den Stand davor: `git log --oneline ORIG_HEAD..HEAD` listet auf, was das
 Update gebracht hat. Öffnen Sie die Titelseite und die Administration und lesen Sie die Logs (`var/log/error.log` oder
@@ -235,7 +235,7 @@ Kreuzen Sie **Mir ist bewusst, dass die öffentliche Website für jeden oben nic
 bis ich den Wartungsmodus wieder ausschalte.** an und klicken Sie auf **Website offline nehmen**. Die **Vorschau** zeigt
 die Seite, die Besucher erhalten.
 
-![Setup > Wartung bei laufender Site: das grüne Banner, die drei Schritte des Plans (Nachricht, voraussichtliche Dauer, wer weiterhin Zugang hat) und die Vorschau der 503-Seite, die Besucher sehen werden](../../en/us/help/images/update-maintenance.webp)
+![Setup > Wartung bei laufender Site: das grüne Banner, die drei Schritte des Plans (Nachricht, voraussichtliche Dauer, wer weiterhin Zugang hat) und die Vorschau der 503-Seite, die Besucher sehen werden](../../eng-us/help/images/update-maintenance.webp)
 
 ### B2. Sehen, was ansteht
 
@@ -246,7 +246,7 @@ die Seite, die Besucher erhalten.
 geändert und nicht committet haben, können den nächsten Schritt scheitern lassen; committen Sie sie vorher in einer
 Shell.
 
-![Setup > Git-Verwaltung: die Karte Upstream mit Jetzt holen, dem Remote, dem verglichenen Branch, Voraus und zurück, den Commits, die in dieser Installation fehlen, und darunter die Felder Lokaler Branch und Entfernter Branch mit Autoloads neu erzeugen und Auschecken](../../en/us/help/images/update-git-manager.webp)
+![Setup > Git-Verwaltung: die Karte Upstream mit Jetzt holen, dem Remote, dem verglichenen Branch, Voraus und zurück, den Commits, die in dieser Installation fehlen, und darunter die Felder Lokaler Branch und Entfernter Branch mit Autoloads neu erzeugen und Auschecken](../../eng-us/help/images/update-git-manager.webp)
 
 **Aktualisierungen und Pakete** > **Übersicht** > **Nach Aktualisierungen suchen** zeigt, welche Erweiterungen ein neueres Release haben;
 es ändert nichts.
@@ -285,9 +285,9 @@ schreibt.
    INI-, Template- und Inhalts-Caches geleert. Ein Hinweis meldet *The installation is up to date!* oder was sich
    geändert hat. Schalten Sie das Aktualisieren wieder aus.
 
-![Aktualisierungen und Pakete > Übersicht: die Zähler, die Karte Composer mit den Schaltern für Aktualisieren und Installieren neuer Pakete und das Feld Updates mit Updates einschalten, Nach Aktualisierungen suchen, Holen als, Vorschau (Probelauf) und Updates installieren](../../en/us/help/images/update-ezupdate-overview.webp)
+![Aktualisierungen und Pakete > Übersicht: die Zähler, die Karte Composer mit den Schaltern für Aktualisieren und Installieren neuer Pakete und das Feld Updates mit Updates einschalten, Nach Aktualisierungen suchen, Holen als, Vorschau (Probelauf) und Updates installieren](../../eng-us/help/images/update-ezupdate-overview.webp)
 
-![Die Seite eines Probelaufs in Aktualisierungen und Pakete: „Probelauf beendet. Er würde ändern: 2 installed, 63 updated. Es wurde nichts geändert.“, der Composer-Befehl und seine Ausgabe sowie Erneut ausführen](../../en/us/help/images/update-ezupdate-run.webp)
+![Die Seite eines Probelaufs in Aktualisierungen und Pakete: „Probelauf beendet. Er würde ändern: 2 installed, 63 updated. Es wurde nichts geändert.“, der Composer-Befehl und seine Ausgabe sowie Erneut ausführen](../../eng-us/help/images/update-ezupdate-run.webp)
 
 Die anderen Reiter helfen Ihnen beim Prüfen vorher und nachher:
 
@@ -298,13 +298,13 @@ Die anderen Reiter helfen Ihnen beim Prüfen vorher und nachher:
 - **Paketserver** listet die Composer-Server (packagist.org lässt sich ausschalten) und die `.ezpkg`-Paketserver auf.
 - **Förderung** zeigt, wer hinter den installierten Paketen steht und wie Sie sie unterstützen können.
 
-![Aktualisierungen und Pakete > Installierte Pakete: die Datumsangaben von composer.json, composer.lock und installed.json, die Zähler, die Filter (Git-Klone, Braucht Aufmerksamkeit und andere) und die Tabelle der Pakete mit ihren Versionen und ihrem Status](../../en/us/help/images/update-ezupdate-installed.webp)
+![Aktualisierungen und Pakete > Installierte Pakete: die Datumsangaben von composer.json, composer.lock und installed.json, die Zähler, die Filter (Git-Klone, Braucht Aufmerksamkeit und andere) und die Tabelle der Pakete mit ihren Versionen und ihrem Status](../../eng-us/help/images/update-ezupdate-installed.webp)
 
-![Aktualisierungen und Pakete > Pakete finden: das Suchformular mit Wo und Typ sowie Pakete mit Downloads, Sternen und der installierten Version](../../en/us/help/images/update-ezupdate-browse.webp)
+![Aktualisierungen und Pakete > Pakete finden: das Suchformular mit Wo und Typ sowie Pakete mit Downloads, Sternen und der installierten Version](../../eng-us/help/images/update-ezupdate-browse.webp)
 
-![Aktualisierungen und Pakete > Paketserver: die Composer-Server mit eingeschaltetem packagist.org und die Exponential-Paketserver mit dem eingebauten Server](../../en/us/help/images/update-ezupdate-servers.webp)
+![Aktualisierungen und Pakete > Paketserver: die Composer-Server mit eingeschaltetem packagist.org und die Exponential-Paketserver mit dem eingebauten Server](../../eng-us/help/images/update-ezupdate-servers.webp)
 
-![Aktualisierungen und Pakete > Förderung: wie viele Pakete um Finanzierung bitten, von wie vielen Anbietern, und die Finanzierungslinks nach Anbieter gruppiert](../../en/us/help/images/update-ezupdate-funding.webp)
+![Aktualisierungen und Pakete > Förderung: wie viele Pakete um Finanzierung bitten, von wie vielen Anbietern, und die Finanzierungslinks nach Anbieter gruppiert](../../eng-us/help/images/update-ezupdate-funding.webp)
 
 ### B5. Die Datenbank prüfen und aktualisieren
 
@@ -313,7 +313,7 @@ mit den Prüfsummen des Release (nach einem sauberen Git-Update stimmt jede Date
 Datenbankkonsistenz** vergleicht die Tabellen mit dem Schema des neuen Codes und zeigt das SQL, das die Datenbank
 angleichen würde; **SQL herunterladen** speichert es.
 
-![Setup > Upgrade-Prüfung: die Version, die Dateien im Manifest, die Datenbank-Engine und die beiden Prüfungen mit Überprüfe Dateikonsistenz und Überprüfe Datenbankkonsistenz](../../en/us/help/images/update-upgrade-check.webp)
+![Setup > Upgrade-Prüfung: die Version, die Dateien im Manifest, die Datenbank-Engine und die beiden Prüfungen mit Überprüfe Dateikonsistenz und Überprüfe Datenbankkonsistenz](../../eng-us/help/images/update-upgrade-check.webp)
 
 Ein Release kann ein **Datenbank-Update** brauchen: [Upgrade](../installation/11-aktualisieren.md#schritt-2-das-datenbank-update-anwenden)
 nennt die Datei. Ohne Shell öffnet **Setup** > **DS-Editor** die Datenbank der Site in AdminNeo, nachdem Sie eine
@@ -321,7 +321,7 @@ Warnseite bestätigt haben (**Ich habe eine vollständige Sicherung erstellt und
 Datenbank**); dort können Sie SQL ausführen oder die Datei des Release importieren. Das wirkt auf die Live-Daten, an
 allen Prüfungen der Administration vorbei. Führen Sie danach **Überprüfe Datenbankkonsistenz** erneut aus.
 
-![Setup > DS-Editor: die Warnung „Direkter Datenbankzugriff: Halten Sie an und lesen Sie dies“, der Datenbanktyp und die Tabellen, was der Editor kann, und die Bestätigung vor Weiter zur Datenbank](../../en/us/help/images/update-dse.webp)
+![Setup > DS-Editor: die Warnung „Direkter Datenbankzugriff: Halten Sie an und lesen Sie dies“, der Datenbanktyp und die Tabellen, was der Editor kann, und die Bestätigung vor Weiter zur Datenbank](../../eng-us/help/images/update-dse.webp)
 
 ### B6. Die Caches leeren
 
@@ -332,7 +332,7 @@ Velocity die alten Klassen, bis `php bin/php/console exp:velocity restart` (oder
 Kommandozeile läuft; die Seite weist an den entscheidenden Stellen darauf hin. Eine Site, die von Apache oder nginx mit
 PHP-FPM ausgeliefert wird, übernimmt den neuen Code normalerweise von selbst (OPcache prüft die Dateien erneut).
 
-![Setup > Cache-Verwaltung: Alle Caches leeren, Cache des Inhalts leeren, Template-Cache leeren, INI-Caches leeren, Größen messen und die Caches nach ihrem Inhalt gruppiert](../../en/us/help/images/update-caches.webp)
+![Setup > Cache-Verwaltung: Alle Caches leeren, Cache des Inhalts leeren, Template-Cache leeren, INI-Caches leeren, Größen messen und die Caches nach ihrem Inhalt gruppiert](../../eng-us/help/images/update-caches.webp)
 
 ### B7. Die Site prüfen und das Wartungsfenster beenden
 
@@ -342,9 +342,9 @@ weiterhin** sehen Sie die Site, alle anderen die Wartungsseite) sowie ein Objekt
 auf, die häufigsten zuerst; **Zustand der Logs** zeigt die am schnellsten wachsenden Logs und die Dateien, die der
 Webserver nicht schreiben kann. Entscheidend sind die Fehler, die seit dem Update neu sind.
 
-![Setup > Logdateien > Fehlerübersicht: die Fehler der letzten 24 Stunden nach Meldung gruppiert, mit Anzahl, Stufe, letztem Auftreten, Anzeigen und Als bekannt markieren](../../en/us/help/images/update-logs-digest.webp)
+![Setup > Logdateien > Fehlerübersicht: die Fehler der letzten 24 Stunden nach Meldung gruppiert, mit Anzahl, Stufe, letztem Auftreten, Anzeigen und Als bekannt markieren](../../eng-us/help/images/update-logs-digest.webp)
 
-![Setup > Logdateien > Zustand der Logs: Speicherbelegung im Verhältnis zum Budget, die am schnellsten wachsenden Logs, Logs über ihrer Größengrenze und Dateien, die der Webserver nicht schreiben kann](../../en/us/help/images/update-logs.webp)
+![Setup > Logdateien > Zustand der Logs: Speicherbelegung im Verhältnis zum Budget, die am schnellsten wachsenden Logs, Logs über ihrer Größengrenze und Dateien, die der Webserver nicht schreiben kann](../../eng-us/help/images/update-logs.webp)
 
 Erst wenn alles in Ordnung ist: **Setup** > **Wartung** > **Website wieder online bringen**. Wenn etwas nicht in
 Ordnung ist, gehen Sie zuerst zurück: Checken Sie in der Git-Verwaltung im **Commit-Verlauf** den Commit aus, auf dem die Site
@@ -517,6 +517,6 @@ Die letzten beiden Befehle zeigen, wann er das nächste Mal läuft und was er be
 - [Mit Git entwickeln](mit-git-entwickeln.md): als Klone installieren, auf einem Branch arbeiten, Korrekturen zurückschicken.
 - [Erweiterungen zurückgeben](erweiterungen-zurueckgeben.md): Ihre eigenen Erweiterungen veröffentlichen, damit alle sie nutzen können, und was die GPL verlangt, wenn Sie eine weitergeben.
 - [Upgrade](../installation/11-aktualisieren.md): die Schritte für Datenbank und Einstellungen bei jedem Release.
-- [Die Upgrade-Prüfung](../anleitungen/upgrade-pruefung.md) und [git_manager](../../en/us/features/6.0/extensions/git_manager.md).
+- [Die Upgrade-Prüfung](../anleitungen/upgrade-pruefung.md) und [git_manager](../../eng-us/features/6.0/extensions/git_manager.md).
 - Das Projekt auf GitHub: [se7enxweb/exponential](https://github.com/se7enxweb/exponential) und seine
   [Releases](https://github.com/se7enxweb/exponential/releases).

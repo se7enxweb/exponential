@@ -45,7 +45,7 @@ After this lesson, learners can:
 
 1. Start with the problem these pages solve (3 minutes). A course about a content management system goes out of date
    when the software changes. The courses here live in the same repository as Exponential's code and the rest of the
-   documentation (`doc/en/us/help/trainers/`), so they change with it and can be corrected by anyone with **Edit on
+   documentation (`doc/eng-us/help/trainers/`), so they change with it and can be corrected by anyone with **Edit on
    GitHub**.
 2. Draw the structure on a board (5 minutes):
 

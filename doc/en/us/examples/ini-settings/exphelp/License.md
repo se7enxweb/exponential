@@ -19,7 +19,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 
 ## Enabled
 
-> The license of the documentation the help shows (doc/en/us/README-LICENSE.md, doc/en/us/help/free-documentation.md).  
+> The license of the documentation the help shows (doc/eng-us/README-LICENSE.md, doc/eng-us/help/free-documentation.md).  
 > Every help page, the dashboard, the print view and the PDF carry its notice; the name stays untranslated.  
 
 Default: `true`.
@@ -187,7 +187,7 @@ CopyrightHolder=7x & Exponential Foundation and the Exponential contributors
 > from the original software (eZ Systems AS, 1999 - 2014). They keep the terms of the repository's  
 > LICENSE and show the notice below instead. <pattern> on the doc/ path, "\*" also matches "/".  
 
-Default: a list of 10: `doc/en/us/features/[2-5].*`, `doc/en/us/bc/[2-5].*`, `doc/en/us/specifications/[2-5].*`, `doc/en/us/specifications/trunk/*`, `doc/changelogs/[2-5].*`, `doc/changelogs/README.md`, `doc/en/us/shop/*`, `doc/branch-overview`, `doc/en/us/release-overview`, `doc/en/us/standards/header.txt`.
+Default: a list of 10: `doc/eng-us/features/[2-5].*`, `doc/eng-us/bc/[2-5].*`, `doc/eng-us/specifications/[2-5].*`, `doc/eng-us/specifications/trunk/*`, `doc/changelogs/[2-5].*`, `doc/changelogs/README.md`, `doc/eng-us/shop/*`, `doc/branch-overview`, `doc/eng-us/release-overview`, `doc/eng-us/standards/header.txt`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -195,16 +195,16 @@ Default: a list of 10: `doc/en/us/features/[2-5].*`, `doc/en/us/bc/[2-5].*`, `do
 [License]
 # an empty "OtherLicensePathRules[]" first replaces the shipped list; without it the items are added
 OtherLicensePathRules[]
-OtherLicensePathRules[]=doc/en/us/features/[2-5].*
-OtherLicensePathRules[]=doc/en/us/bc/[2-5].*
-OtherLicensePathRules[]=doc/en/us/specifications/[2-5].*
-OtherLicensePathRules[]=doc/en/us/specifications/trunk/*
+OtherLicensePathRules[]=doc/eng-us/features/[2-5].*
+OtherLicensePathRules[]=doc/eng-us/bc/[2-5].*
+OtherLicensePathRules[]=doc/eng-us/specifications/[2-5].*
+OtherLicensePathRules[]=doc/eng-us/specifications/trunk/*
 OtherLicensePathRules[]=doc/changelogs/[2-5].*
 OtherLicensePathRules[]=doc/changelogs/README.md
-OtherLicensePathRules[]=doc/en/us/shop/*
+OtherLicensePathRules[]=doc/eng-us/shop/*
 OtherLicensePathRules[]=doc/branch-overview
-OtherLicensePathRules[]=doc/en/us/release-overview
-OtherLicensePathRules[]=doc/en/us/standards/header.txt
+OtherLicensePathRules[]=doc/eng-us/release-overview
+OtherLicensePathRules[]=doc/eng-us/standards/header.txt
 */ ?>
 ```
 

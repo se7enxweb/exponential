@@ -34,7 +34,7 @@ Setup > Languages; the command never adds one.
   ./console exp:loremipsum <object id> --language=qlo-ZZ --from=eng-GB
 
 Exit code: 0 done (or a dry run), 1 refused or failed, 2 usage error.
-Guide: doc/en/us/guides/test-language-lorem-ipsum.md
+Guide: doc/eng-us/guides/test-language-lorem-ipsum.md
 ```
 
 ## Options

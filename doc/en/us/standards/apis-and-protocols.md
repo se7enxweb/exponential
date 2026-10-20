@@ -203,7 +203,7 @@ PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK and UNLOCK. Class 1 is the basic se
 - Request and response recordings for COPY, DELETE, GET, HEAD, MKCOL, MOVE, OPTIONS, PROPFIND, PROPPATCH and PUT are in
   `tests/tests/kernel/private/webdav/regression/`.
 - History: [the WebDAV engine of 4.1](../features/4.1/webdav_readme.txt) and the design notes in
-  [doc/en/us/specifications/trunk/webdav](../specifications/trunk/webdav/readme.txt).
+  [doc/eng-us/specifications/trunk/webdav](../specifications/trunk/webdav/readme.txt).
 
 ### Status
 

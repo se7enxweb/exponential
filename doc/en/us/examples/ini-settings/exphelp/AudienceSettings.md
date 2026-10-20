@@ -24,7 +24,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > and grows its community; partner: a company that builds, hosts or sells with Exponential; advocate: a community  
 > advocate (street team); designer: designs themes and templates, builds, ships and maintains extensions;  
 > hosting: a hosting company; app-creator / website-creator: builds applications / websites with it; supporter:  
-> helps the project grow; sponsor: funds it (doc/en/us/help/<folder>/ of each in PathRules\[\] below). Who a page is for:  
+> helps the project grow; sponsor: funds it (doc/eng-us/help/<folder>/ of each in PathRules\[\] below). Who a page is for:  
 > its front matter (audience: editor, admin), else the first PathRules\[\]  
 > that matches, else its file name (...-developer.md) or opening lines ("for editors"), else TypeDefaults\[<type>\].  
 > The order here is the order of the dashboard's audience cards and the search filters.  
@@ -114,7 +114,7 @@ AudienceIcons[sponsor]=piggy-bank
 
 > <pattern>;<audience,audience>, first match wins ("\*" also matches "/")  
 
-Default: a list of 70: `doc/en/us/help/leadership/*;project-manager`, `doc/en/us/help/business/*;sales-marketing`, `doc/en/us/help/partners/*;partner`, `doc/en/us/help/advocates/*;advocate`, `doc/en/us/help/designers/*;designer`, `doc/en/us/help/hosting/*;hosting`, `doc/en/us/help/creators/app-creators/*;app-creator`, `doc/en/us/help/creators/website-creators/*;website-creator`, `doc/en/us/help/creators/*;app-creator,website-creator`, `doc/en/us/help/supporters/*;supporter`, `doc/en/us/help/sponsors/*;sponsor`, `doc/en/us/help/extension-development/*;developer,designer` ....
+Default: a list of 70: `doc/eng-us/help/leadership/*;project-manager`, `doc/eng-us/help/business/*;sales-marketing`, `doc/eng-us/help/partners/*;partner`, `doc/eng-us/help/advocates/*;advocate`, `doc/eng-us/help/designers/*;designer`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creator`, `doc/eng-us/help/creators/website-creators/*;website-creator`, `doc/eng-us/help/creators/*;app-creator,website-creator`, `doc/eng-us/help/supporters/*;supporter`, `doc/eng-us/help/sponsors/*;sponsor`, `doc/eng-us/help/extension-development/*;developer,designer` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -122,26 +122,26 @@ Default: a list of 70: `doc/en/us/help/leadership/*;project-manager`, `doc/en/us
 [AudienceSettings]
 # an empty "PathRules[]" first replaces the shipped list; without it the items are added
 PathRules[]
-PathRules[]=doc/en/us/help/leadership/*;project-manager
-PathRules[]=doc/en/us/help/business/*;sales-marketing
-PathRules[]=doc/en/us/help/partners/*;partner
-PathRules[]=doc/en/us/help/advocates/*;advocate
-PathRules[]=doc/en/us/help/designers/*;designer
-PathRules[]=doc/en/us/help/hosting/*;hosting
-PathRules[]=doc/en/us/help/creators/app-creators/*;app-creator
-PathRules[]=doc/en/us/help/creators/website-creators/*;website-creator
-PathRules[]=doc/en/us/help/creators/*;app-creator,website-creator
-PathRules[]=doc/en/us/help/supporters/*;supporter
-PathRules[]=doc/en/us/help/sponsors/*;sponsor
-PathRules[]=doc/en/us/help/extension-development/*;developer,designer
-PathRules[]=doc/en/us/LICENSE-GFDL-1.3.txt;editor,admin,developer,user
-PathRules[]=doc/en/us/glossary.md;editor,admin,developer,user
-PathRules[]=doc/en/us/languages.md;admin,developer
-PathRules[]=doc/en/us/guides/README.md;editor,admin,developer
-PathRules[]=doc/en/us/guides/getting-started.md;admin,developer
-PathRules[]=doc/en/us/guides/content-model-and-editing.md;editor,developer
-PathRules[]=doc/en/us/guides/bookmarks.md;editor
-PathRules[]=doc/en/us/guides/collected-information.md;editor,admin
+PathRules[]=doc/eng-us/help/leadership/*;project-manager
+PathRules[]=doc/eng-us/help/business/*;sales-marketing
+PathRules[]=doc/eng-us/help/partners/*;partner
+PathRules[]=doc/eng-us/help/advocates/*;advocate
+PathRules[]=doc/eng-us/help/designers/*;designer
+PathRules[]=doc/eng-us/help/hosting/*;hosting
+PathRules[]=doc/eng-us/help/creators/app-creators/*;app-creator
+PathRules[]=doc/eng-us/help/creators/website-creators/*;website-creator
+PathRules[]=doc/eng-us/help/creators/*;app-creator,website-creator
+PathRules[]=doc/eng-us/help/supporters/*;supporter
+PathRules[]=doc/eng-us/help/sponsors/*;sponsor
+PathRules[]=doc/eng-us/help/extension-development/*;developer,designer
+PathRules[]=doc/eng-us/LICENSE-GFDL-1.3.txt;editor,admin,developer,user
+PathRules[]=doc/eng-us/glossary.md;editor,admin,developer,user
+PathRules[]=doc/eng-us/languages.md;admin,developer
+PathRules[]=doc/eng-us/guides/README.md;editor,admin,developer
+PathRules[]=doc/eng-us/guides/getting-started.md;admin,developer
+PathRules[]=doc/eng-us/guides/content-model-and-editing.md;editor,developer
+PathRules[]=doc/eng-us/guides/bookmarks.md;editor
+PathRules[]=doc/eng-us/guides/collected-information.md;editor,admin
 # ... 50 more in the shipped file
 */ ?>
 ```

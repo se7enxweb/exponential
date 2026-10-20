@@ -94,5 +94,5 @@ at `expai/help`.
 
 - [expqueue](expqueue.md), the job queue
 - [Installing Exponential, section 10](../../../INSTALL.md#10-after-installing)
-- [6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)
 - [Extensions index](README.md)

@@ -44,7 +44,7 @@ repositories.
 
 | Source | What it tells you |
 |---|---|
-| The changelog of the line ([6.0.15](../../../../../../changelogs/6.0/6.0.15.md)) | every change, including security changes |
+| The changelog of the line ([6.0.15](../../../../../changelogs/6.0/6.0.15.md)) | every change, including security changes |
 | [Security standard](../../../../standards/security.md) | the OWASP mapping and the known gaps |
 | **Setup > Updates and packages** (ezupdate), **Check for updates** | which installed packages have newer versions (`composer outdated`); changes nothing |
 | **Setup > Upgrade check** | whether files differ from the release you run |

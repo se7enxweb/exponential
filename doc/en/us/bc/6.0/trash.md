@@ -321,5 +321,5 @@ at scale 2) passes with the new page.
 - [Content jobs](../../features/6.0/content-jobs.md) and the [content jobs upgrade](content-jobs.md)
 - [Upgrade checklist of 1 and 2 October 2026](behaviour-changes-2026-10.md)
 - [Audit event model](../../specifications/6.0/audit-event-model.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)
 - History: [October 2026](../../history/2026/2026-10.md), [January 2024](../../history/2024/2024-01a.md) (sorting)

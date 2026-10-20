@@ -49,8 +49,8 @@ command installs a site on five of them ([Install in one command](../../features
 |---|---|---|
 | SQLite arrives as a database that needs no server | January 2024 | [January 2024](../../history/2024/2024-01a.md) |
 | MongoDB 8 as a database, in 6.0.14 | June 2026 (6.0.14 on 7 June) | [June 2026](../../history/2026/2026-06a.md) |
-| Driver and installer fixes for all engines; SQLite is the setup wizard's default | 16 to 30 September 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
-| Oracle 11g and 12.1 (ezoracle 2.3.7) | 14 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-oracle-11g-and-121-ezoracle-237) |
+| Driver and installer fixes for all engines; SQLite is the setup wizard's default | 16 to 30 September 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
+| Oracle 11g and 12.1 (ezoracle 2.3.7) | 14 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#14-october-2026-oracle-11g-and-121-ezoracle-237) |
 
 The September and October changes belong to the 6.0.15 line, which is in development and not released.
 

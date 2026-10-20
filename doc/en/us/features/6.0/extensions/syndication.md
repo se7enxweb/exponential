@@ -97,7 +97,7 @@ not as a manual kernel edit.
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/syndication.md) and [release notes](../../../../../changelogs/extensions/syndication.md)
+- [Chronicle](../../../history/extensions/syndication.md) and [release notes](../../../../changelogs/extensions/syndication.md)
 - [Change ledger](../../../history/ledger/syndication.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2025-09](../../../history/extensions/months/2025-09.md), [2026-07](../../../history/extensions/months/2026-07.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

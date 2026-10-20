@@ -78,7 +78,7 @@ site's user so the files stay writable for the web server.
 | Setup | What to use |
 |---|---|
 | Apache with `.htaccess` | copy `.htaccess_root_static` to `.htaccess` instead of `.htaccess_root`; it is `.htaccess_root` plus the offload rules |
-| Apache virtual host | the rules of [doc/en/us/examples/staticcache_offload.conf](../../../examples/staticcache_offload.conf) in the `<Directory>` section of the **public** site's vhost |
+| Apache virtual host | the rules of [doc/eng-us/examples/staticcache_offload.conf](../../../examples/staticcache_offload.conf) in the `<Directory>` section of the **public** site's vhost |
 | other servers | reproduce the same conditions (method, empty query string, no session cookie, file exists) |
 
 Check the line `RewriteRule ^ - [E=EZ_VAR_SITE:site]`: the value is `site.ini [FileSettings] VarDir` without the
@@ -87,7 +87,7 @@ leading `var/`; a default installation (`var/site`) needs no change.
 > **Warning**
 > Never add the offload rules to the administration vhost: "nothing there is cached, and the rules must never be given
 > a chance to answer an editor's request from a file generated for an anonymous visitor"
-> (`doc/en/us/examples/staticcache_offload.conf`).
+> (`doc/eng-us/examples/staticcache_offload.conf`).
 
 ## Settings
 

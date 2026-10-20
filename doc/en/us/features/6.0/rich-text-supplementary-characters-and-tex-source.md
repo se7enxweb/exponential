@@ -58,4 +58,4 @@ without a database.
 ## Related pages
 
 - [ezoe](extensions/ezoe.md), [Online editor on TinyMCE 8](online-editor-tinymce8.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)

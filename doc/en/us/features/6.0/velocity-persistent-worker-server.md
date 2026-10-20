@@ -260,5 +260,5 @@ the request, as under PHP-FPM.
 - Features: [Velocity web server](velocity-web-server.md), [Velocity response cache](velocity-response-cache.md), [opcode cache and profile](velocity-opcode-cache-and-profile.md), [server control commands](web-server-and-solr-commands.md), [maintenance mode](maintenance-mode.md) (Velocity pauses its caches while it is on)
 - Specifications: [Velocity worker pool](../../specifications/6.0/velocity-worker-pool.md), [Velocity engine settings](../../specifications/6.0/velocity-engine-settings.md), [security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- Changelogs: [6.0.15](../../../../changelogs/6.0/6.0.15.md), [Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
+- Changelogs: [6.0.15](../../../changelogs/6.0/6.0.15.md), [Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)

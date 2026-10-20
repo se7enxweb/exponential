@@ -42,8 +42,8 @@ It is also very young, which is part of the story.
 | First release, `v0.0.1` | September 2026 (7 to 21 September period) | same |
 | Velocity arrives in Exponential and becomes the recommended engine within two days | 22 September 2026 | [Who is 7x?, timeline](../who-is-7x.md#nearly-thirty-years-the-timeline) |
 | Workers kept between requests (`ForkPerRequest=disabled`) | 30 September 2026 | [Velocity, Settings to know first](../../features/6.0/velocity-persistent-worker-server.md#settings-to-know-first) |
-| Streams, deploys without a needless reload, each worker started clean | 11 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#11-october-2026-exponential-velocity-streams-deploys-without-a-needless-reload-and-starts-each-worker-clean) |
-| A cut-off restart or deploy no longer leaves Velocity down | 17 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-a-restart-or-deploy-that-is-cut-off-no-longer-leaves-velocity-down) |
+| Streams, deploys without a needless reload, each worker started clean | 11 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#11-october-2026-exponential-velocity-streams-deploys-without-a-needless-reload-and-starts-each-worker-clean) |
+| A cut-off restart or deploy no longer leaves Velocity down | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-a-restart-or-deploy-that-is-cut-off-no-longer-leaves-velocity-down) |
 
 Velocity in Exponential belongs to the 6.0.15 development line, which is not released.
 

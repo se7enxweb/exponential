@@ -59,7 +59,7 @@ In the administration, the help can also be searched: press `/` in the Help cent
 | "How do I change templates?" | [Templates and design](../../guides/templates-and-design.md) |
 | "Is there an API?" | [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md) |
 | "What does this term mean?" | [The glossary](../../glossary.md) |
-| "What changed in a release?" | [Changelogs](../../../../changelogs/README.md), [The history](../../history/README.md) |
+| "What changed in a release?" | [Changelogs](../../../changelogs/README.md), [The history](../../history/README.md) |
 
 ## About the project
 

@@ -79,5 +79,5 @@ behaved the same. The new way works behind any web server and proxy.
 
 - [Site cache preloader](../../bc/6.0/preload.md) (reading the output, cron use, troubleshooting)
 - [HTTP/2 and cache warming](../../bc/6.0/http2-and-cache-warming.md), [static cache generator](static-cache-generator.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - History: [September 2026, first half: Preload Sites](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [the 15 September fixes](../../history/2026/2026-09a.md#15-september-paging-everywhere)

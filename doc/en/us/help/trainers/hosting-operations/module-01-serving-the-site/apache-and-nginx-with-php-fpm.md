@@ -65,7 +65,7 @@ Source: [Chapter 8, Apache with PHP-FPM](../../../../install/08-serving-the-site
 
 **Can I avoid `.htaccess` for speed?** Yes: copy the rules into the `<Directory>` block and set `AllowOverride None`.
 In server context every pattern needs a leading slash; take the rules from `.htaccess_root`, not from the older
-`doc/en/us/examples/ezpublish.conf`.
+`doc/eng-us/examples/ezpublish.conf`.
 
 **Every page is a 404. Why?** `.htaccess` is not read (`AllowOverride`) or `mod_rewrite` is off.
 

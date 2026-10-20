@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 The block `[ApiKeySettings]` of `settings/rest.ini`, with 13 setting(s).
 
-> Personal API keys (publishing keys): doc/en/us/guides/api-keys.md.  
+> Personal API keys (publishing keys): doc/eng-us/guides/api-keys.md.  
 > A signed in user with the apikey/create policy makes keys on the API access page (apikey/list) and  
 > sends one as "Authorization: Bearer expk\_<id>\_<secret>". The request runs as the key's owner, limited  
 > to the key's scopes. Administrators see and revoke every key at oauthadmin/keys.  

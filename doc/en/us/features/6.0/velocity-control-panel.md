@@ -174,5 +174,5 @@ HTTP/2. An uncaught exception's message is never sent to the client unless `Q.we
 - [Q shell](velocity-q-shell.md), [HTTPS and certificates](velocity-https-certificates.md), [response cache](velocity-response-cache.md), [Velocity web server](velocity-web-server.md)
 - Specifications: [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md) (the admin surface), [engine settings](../../specifications/6.0/velocity-engine-settings.md) (`Q.dashboard`, brand, logging)
 - Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (credential store, trust rule), [Velocity engines](../../bc/6.0/velocity-engines.md) (views and who may open them from Exponential)
-- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [July 2026](../../history/velocity/2026-07.md) (first panel), [24 September](../../history/velocity/2026-09d.md) (passwords, domains), [25 to 30 September](../../history/velocity/2026-09e.md) (SSL, cache, two-factor)

@@ -48,9 +48,9 @@ Erwartet: dreimal `404`. Wenn Sie eine eigene Kopie von `.htaccess` pflegen, üb
 
 **Abmelden.** Das Abmelden beendet die Session endgültig: Was die Session enthielt, wird gelöscht, der Browser wird angewiesen, das Session-Cookie zu verwerfen (es wird abgelaufen gesendet, mit demselben Pfad, derselben Domain, `Secure`, `HttpOnly` und `SameSite`, mit denen es gesetzt wurde, sodass der Browser genau dieses Cookie entfernt), und die Session-ID, die der Browser hatte, meldet niemanden mehr an, auch wenn sie vorher kopiert wurde. Eine Session, die die Site später in derselben Anfrage startet, erhält eine neue ID. Das gilt für jeden Session-Handler (den eigenen von PHP, `ezpSessionHandlerDB`, einen eigenen Handler, den von Symfony) und unter Velocity. Frühere Versionen gaben der Session eine neue ID und behielten ihren Inhalt. Es muss nichts eingeschaltet werden. Zur Prüfung: Melden Sie sich in der Administration an und notieren Sie den Wert des Session-Cookies, melden Sie sich ab und senden Sie dann eine Anfrage mit dem alten Wert, z. B. `curl -s -b '<cookie name>=<old value>' https://<site>/admin/content/dashboard`: Die Antwort ist das Anmeldeformular, nicht das Dashboard. Mit `[UserSettings] RedirectOnLogoutWithLastAccessURI=enabled` führt das Abmelden weiterhin zurück zur zuletzt besuchten Seite.
 
-**Dateien und Verzeichnisse, die die Site schreibt.** Logs, Caches und Speicher werden so offen angelegt, wie es `site.ini [FileSettings]` und der Code verlangen (standardmäßig 0777/0666). Setzen Sie auf einem Live-Server die Grenzen in `config.php`, `define( 'EZP_DIR_MODE_MAX', 0750 );` und `define( 'EZP_FILE_MODE_MAX', 0640 );`, damit nichts Neues für andere Konten lesbar oder schreibbar ist, und schränken Sie das Bestehende einmalig ein: [Grenzen für die Modi neuer Dateien und Verzeichnisse](../../en/us/bc/6.0/file-modes.md).
+**Dateien und Verzeichnisse, die die Site schreibt.** Logs, Caches und Speicher werden so offen angelegt, wie es `site.ini [FileSettings]` und der Code verlangen (standardmäßig 0777/0666). Setzen Sie auf einem Live-Server die Grenzen in `config.php`, `define( 'EZP_DIR_MODE_MAX', 0750 );` und `define( 'EZP_FILE_MODE_MAX', 0640 );`, damit nichts Neues für andere Konten lesbar oder schreibbar ist, und schränken Sie das Bestehende einmalig ein: [Grenzen für die Modi neuer Dateien und Verzeichnisse](../../eng-us/bc/6.0/file-modes.md).
 
-**Hochgeladene Bilder.** Ein Bild wird anhand dessen akzeptiert, was die Datei enthält, nicht anhand ihres Namens: fileinfo von PHP liest den Typ, und er muss in `image.ini [ImageUploadSettings] AllowedMIMETypes[]` stehen (im Auslieferungszustand JPEG, PNG, GIF, WebP, AVIF, TIFF, BMP und SVG; ein SVG wird nur bereinigt gespeichert, siehe [SVG-Bilder](../../en/us/bc/6.0/svg-images.md)). Das gilt für das Bearbeitungsformular, die Upload-Dialoge, den AJAX-Uploader und die Vorschaubilder des Paket-Assistenten, und eine abgelehnte Datei wird nicht gespeichert. Prüfen Sie, ob fileinfo im PHP des Webservers wie auch auf der Kommandozeile geladen ist (`php -m | grep fileinfo`); ohne fileinfo gilt die ältere Prüfung mit getimagesize(), und das Log weist einmal darauf hin. Lesen Sie die Liste mit:
+**Hochgeladene Bilder.** Ein Bild wird anhand dessen akzeptiert, was die Datei enthält, nicht anhand ihres Namens: fileinfo von PHP liest den Typ, und er muss in `image.ini [ImageUploadSettings] AllowedMIMETypes[]` stehen (im Auslieferungszustand JPEG, PNG, GIF, WebP, AVIF, TIFF, BMP und SVG; ein SVG wird nur bereinigt gespeichert, siehe [SVG-Bilder](../../eng-us/bc/6.0/svg-images.md)). Das gilt für das Bearbeitungsformular, die Upload-Dialoge, den AJAX-Uploader und die Vorschaubilder des Paket-Assistenten, und eine abgelehnte Datei wird nicht gespeichert. Prüfen Sie, ob fileinfo im PHP des Webservers wie auch auf der Kommandozeile geladen ist (`php -m | grep fileinfo`); ohne fileinfo gilt die ältere Prüfung mit getimagesize(), und das Log weist einmal darauf hin. Lesen Sie die Liste mit:
 
 ```bash
 ./console exp:ini get 'image.ini/ImageUploadSettings/AllowedMIMETypes' --allow-root-user
@@ -62,7 +62,7 @@ Erwartet: dreimal `404`. Wenn Sie eine eigene Kopie von `.htaccess` pflegen, üb
 php bin/php/resetuserpassword.php --allow-root-user -u admin -g
 ```
 
-`-g` erzeugt ein zufälliges Passwort und gibt es aus. Details: [ein Benutzerpasswort zurücksetzen](../../en/us/features/6.0/reset-user-password.md).
+`-g` erzeugt ein zufälliges Passwort und gibt es aus. Details: [ein Benutzerpasswort zurücksetzen](../../eng-us/features/6.0/reset-user-password.md).
 
 Vertiefung: [Sicherheitsvoreinstellungen vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md), [Härtung in 6.0.13](../spezifikationen/6.0/sicherheitshaertung-6.0.13.md).
 
@@ -76,14 +76,14 @@ Vertiefung: [Sicherheitsvoreinstellungen vom September 2026](../spezifikationen/
 4. Öffnen Sie die Rolle, klicken Sie auf **Zuweisen** und wählen Sie den Benutzer oder die Gruppe.
 5. Melden Sie sich in einem privaten Fenster als dieser Benutzer an: Nur die erlaubten Inhalte lassen sich bearbeiten.
 
-Rollen können Dutzende von Richtlinien enthalten; jede Richtlinie zeigt ihre ID, die Spaltenköpfe sortieren die Liste, und der Editor hat Schaltflächen zum Hoch- und Herunterschieben (sie ordnen nur die Liste, die Reihenfolge ändert nie, wer was darf): [Reihenfolge der Richtlinien einer Rolle](../../en/us/features/6.0/role-policy-order.md). Eine Rolle, die vielen Benutzern zugewiesen ist, listet sie seitenweise auf, nach Namen sortiert, mit einem Namensfilter, und zeigt Zuweisungen, deren Benutzer oder Gruppe nicht mehr existiert: [seitenweise Anzeige der Rollenzuweisungen](../../en/us/features/6.0/role-assignment-paging.md). Links in der Administration richten sich bereits nach den Berechtigungen, sodass ein Benutzer nie einen Link auf etwas sieht, das abgelehnt würde: [Links in der Administration folgen den Berechtigungen](../../en/us/features/6.0/admin-links-follow-permissions.md).
+Rollen können Dutzende von Richtlinien enthalten; jede Richtlinie zeigt ihre ID, die Spaltenköpfe sortieren die Liste, und der Editor hat Schaltflächen zum Hoch- und Herunterschieben (sie ordnen nur die Liste, die Reihenfolge ändert nie, wer was darf): [Reihenfolge der Richtlinien einer Rolle](../../eng-us/features/6.0/role-policy-order.md). Eine Rolle, die vielen Benutzern zugewiesen ist, listet sie seitenweise auf, nach Namen sortiert, mit einem Namensfilter, und zeigt Zuweisungen, deren Benutzer oder Gruppe nicht mehr existiert: [seitenweise Anzeige der Rollenzuweisungen](../../eng-us/features/6.0/role-assignment-paging.md). Links in der Administration richten sich bereits nach den Berechtigungen, sodass ein Benutzer nie einen Link auf etwas sieht, das abgelehnt würde: [Links in der Administration folgen den Berechtigungen](../../eng-us/features/6.0/admin-links-follow-permissions.md).
 
 Eine Bearbeitungsrichtlinie öffnet mehr als den Editor: Wer ein Objekt bearbeiten darf, darf auch dessen Versionen öffnen
 (`content/history`), ohne eine Leserichtlinie dafür zu haben, und sieht dort Nummer, Status, Übersetzung, Ersteller und
 Daten jeder Version und kann deren veröffentlichte, archivierte und abgelehnte Versionen vergleichen und kopieren. Der
 Entwurf oder die ausstehende Version einer anderen Person bleibt ohne `content/versionread` verschlossen. Beschränken Sie eine
 Bearbeitungsrichtlinie daher so, wie Sie die Leserichtlinie derselben Rolle beschränken: [die Versionen
-eines Entwurfs](../../en/us/bc/6.0/draft-edit-access.md#the-versions-of-such-an-object-contenthistory).
+eines Entwurfs](../../eng-us/bc/6.0/draft-edit-access.md#the-versions-of-such-an-object-contenthistory).
 
 Verwenden Sie dieselben Regeln in Templates:
 
@@ -92,7 +92,7 @@ Verwenden Sie dieselben Regeln in Templates:
 {if $current_user|has_policy( 'content', 'edit' )} ... {/if}
 ```
 
-Alle sieben Operatoren finden Sie unter [Rollen- und Richtlinienprüfungen in Templates](../../en/us/features/6.0/role-and-policy-template-operators.md).
+Alle sieben Operatoren finden Sie unter [Rollen- und Richtlinienprüfungen in Templates](../../eng-us/features/6.0/role-and-policy-template-operators.md).
 
 Zwei Faustregeln: Bearbeiten Sie nie die Rolle Administrator, um einem Kollegen etwas mehr zu geben; legen Sie eine neue Rolle an. Und halten Sie die Zahl der Administratoren klein, denn die Vergabe dieser Rolle löst einen Alarm aus (Schritt 3).
 
@@ -150,9 +150,9 @@ Enabled[]=content.node.main
 Sie erscheinen dann in der Konsole wie jedes Inhaltsereignis, mit dem Objekt, dem Knoten und seinem Elternknoten; beim
 Entfernen des Hauptorts wird außerdem aufgezeichnet, welcher Ort zum Hauptort wurde. Die Idee stammt aus LoveStack
 (mugoweb/ezpublish-legacy, Commit `9c931192e0`), mit Dank an Mugo Web; siehe die
-[Audit-Referenz](../../en/us/bc/6.0/audit.md), „Location changes“.
+[Audit-Referenz](../../eng-us/bc/6.0/audit.md), „Location changes“.
 
-Vertiefung: [das Audit-Protokoll](../../en/us/features/6.0/audit-trail.md), [Ereignismodell des Audits](../spezifikationen/6.0/audit-ereignismodell.md), [Audit-Referenz (bc)](../../en/us/bc/6.0/audit.md).
+Vertiefung: [das Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md), [Ereignismodell des Audits](../spezifikationen/6.0/audit-ereignismodell.md), [Audit-Referenz (bc)](../../eng-us/bc/6.0/audit.md).
 
 ## 4. Debug-Ausgabe nur für Ihre Adresse (5 Minuten)
 
@@ -180,7 +180,7 @@ Die Debug-Ausgabe zeigt Dateipfade, SQL und Einstellungen; sie darf daher nie f�
 
 Die Leiste verweigert Schreibvorgänge, die Sie aussperren würden (die Liste enthielte Ihre Adresse nicht) oder Debug für alle öffnen würden (`/0`, oder `DebugByIP` aus bei eingeschaltetem `DebugOutput`), und sie protokolliert jede Änderung und kann sie rückgängig machen; Voreinstellungen (Template-Arbeit, SQL-Tuning, Alles, Aus) schalten ein ganzes Bündel von Einstellungen auf einmal. Schalten Sie auf **Aus**, wenn Sie fertig sind.
 
-Vertiefung: [die Exp-Debug-Leiste](../../en/us/features/6.0/exp-debug-bar.md), [Debug-Leiste (bc)](../../en/us/bc/6.0/debug-bar.md), [lesbare Debug-Ausgabe](../../en/us/features/6.0/debug-output-improvements.md).
+Vertiefung: [die Exp-Debug-Leiste](../../eng-us/features/6.0/exp-debug-bar.md), [Debug-Leiste (bc)](../../eng-us/bc/6.0/debug-bar.md), [lesbare Debug-Ausgabe](../../eng-us/features/6.0/debug-output-improvements.md).
 
 ## 5. Zwei-Faktor-Anmeldung (optional, 10 Minuten)
 
@@ -210,7 +210,7 @@ Die Extension `sevenx_authentication_2fa` ergänzt die Anmeldung um TOTP (Google
 
 Erwartet: Mit einem falschen Code wird die Anmeldung abgelehnt, und das Audit zeigt den fehlgeschlagenen Versuch. Telefon verloren: Der Benutzer kann den E-Mail-Code verwenden, solange `AllowEmailFallback` auf `enabled` steht (die Voreinstellung); die Extension hat außerdem eine Oberfläche zum Zurücksetzen der 2FA, die auf ihrer Funktionsseite beschrieben ist. Entfernen Sie abgelaufene Challenges mit `php extension/sevenx_authentication_2fa/bin/php/sevenx2facleanup.php` (auch ein Cronjob-Skript).
 
-Vertiefung: [Zwei-Faktor- und Social-Login](../../en/us/features/6.0/extensions/sevenx_authentication_2fa.md) (jede Einstellung, Social Login, einen Anbieter hinzufügen).
+Vertiefung: [Zwei-Faktor- und Social-Login](../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md) (jede Einstellung, Social Login, einen Anbieter hinzufügen).
 
 ## 6. Ein Konto auf seiner Kontoseite prüfen (2 Minuten)
 
@@ -239,7 +239,7 @@ Erwartet: Ein Administrator sieht auf seiner eigenen Seite jede Karte; ein Redak
 
 Für alle Konten auf einmal listet **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) diejenigen auf, die sich nie angemeldet haben, seit
 N Tagen nicht gesehen wurden, deaktiviert, gesperrt oder verwaist sind oder eine E-Mail-Adresse teilen, deaktiviert, aktiviert oder entsperrt die angehakten
-und exportiert die Liste als CSV: [Benutzerkonten prüfen](../../en/us/features/6.0/user-hygiene.md).
+und exportiert die Liste als CSV: [Benutzerkonten prüfen](../../eng-us/features/6.0/user-hygiene.md).
 
 ## 7. Ein Konto pro Login (2 Minuten)
 
@@ -292,12 +292,12 @@ Die Idee und die Behandlung der Entwürfe stammen aus LoveStack (Mugo Web, Commi
 - [ ] Zwei-Faktor-Anmeldung für Administratoren eingeschaltet
 - [ ] `exp:user-login-check` meldet, dass jedes Login zu einem Konto gehört, und der Login-Index ist eindeutig
 
-**Demo-Modus im Audit und in den Logs.** Solange die Umgebungsvariable `EXP_DEMO_MODE=1` gesetzt ist, zeichnet jeder Prozess einmal das Audit-Ereignis `system.demo.mode` (Warnung, immer eingeschaltet) und eine Zeile `demo/mode` in `var/log/security.log` auf, und jede abgelehnte Änderung oder Zurücksetzung eines Administrator-Passworts ist `access.user.password.change.failed` bzw. `access.user.password.reset.failed` mit dem Grund `demo_mode`. Auf einer Site im Produktivbetrieb bedeutet jedes davon, dass die Variable dorthin gelangt ist. [Demo-Modus](../../en/us/bc/6.0/demo-mode.md).
+**Demo-Modus im Audit und in den Logs.** Solange die Umgebungsvariable `EXP_DEMO_MODE=1` gesetzt ist, zeichnet jeder Prozess einmal das Audit-Ereignis `system.demo.mode` (Warnung, immer eingeschaltet) und eine Zeile `demo/mode` in `var/log/security.log` auf, und jede abgelehnte Änderung oder Zurücksetzung eines Administrator-Passworts ist `access.user.password.change.failed` bzw. `access.user.password.reset.failed` mit dem Grund `demo_mode`. Auf einer Site im Produktivbetrieb bedeutet jedes davon, dass die Variable dorthin gelangt ist. [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
 
 ## Siehe auch
 
-- Die Bedrohungen einzeln, und request-shield davor: [Sicherheitshärtung](../../en/us/help/security-hardening.md); das Administratorkonto: [Das Administrator-Passwort ändern](../../en/us/help/change-the-admin-password.md), [Das Standard-Administrator-Passwort](../../en/us/help/default-administrator-password.md).
+- Die Bedrohungen einzeln, und request-shield davor: [Sicherheitshärtung](../../eng-us/help/security-hardening.md); das Administratorkonto: [Das Administrator-Passwort ändern](../../eng-us/help/change-the-admin-password.md), [Das Standard-Administrator-Passwort](../../eng-us/help/default-administrator-password.md).
 - Eine Site mit Tokens aus Skripten und Apps steuern: [Remote-Dienste und Apps](entfernte-dienste-und-apps.md).
-- Auswirkungen der Sicherheitsänderungen auf ein Upgrade: [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../en/us/bc/6.0/behaviour-changes-2026-10.md), [Sicherheitshärtung vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
-- Wie es dazu kam: [Chronik Oktober 2026](../../en/us/history/2026/2026-10.md), [September 2026, zweite Hälfte](../../en/us/history/2026/2026-09b.md).
-- Weitere Anleitungen: [Betrieb einer Site](betrieb-einer-website.md) (Logs, Sicherungen, Reparaturen), [Extensions](extensions.md) (Zwei-Faktor-Anmeldung und andere Extensions), [Glossar](../../en/us/glossary.md).
+- Auswirkungen der Sicherheitsänderungen auf ein Upgrade: [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../eng-us/bc/6.0/behaviour-changes-2026-10.md), [Sicherheitshärtung vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
+- Wie es dazu kam: [Chronik Oktober 2026](../../eng-us/history/2026/2026-10.md), [September 2026, zweite Hälfte](../../eng-us/history/2026/2026-09b.md).
+- Weitere Anleitungen: [Betrieb einer Site](betrieb-einer-website.md) (Logs, Sicherungen, Reparaturen), [Extensions](extensions.md) (Zwei-Faktor-Anmeldung und andere Extensions), [Glossar](../../eng-us/glossary.md).

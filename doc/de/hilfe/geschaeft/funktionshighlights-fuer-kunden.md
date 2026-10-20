@@ -61,28 +61,28 @@ eine Seite sagt, lautet die ehrliche Antwort „Die Dokumentation macht dazu kei
 | Der Kunde braucht | Funktion, die darauf antwortet | Wo zeigen | Nachweis zum Schicken |
 |---|---|---|---|
 | Redakteure, die Seiten ohne Entwickler anordnen | Exponential Layouts: Layouts, Zonen, Blöcke und Regeln | Tab **Layouts**, ein Layout **öffnen** | [Der Layout-Editor](../layout-editor.md) |
-| Mehrere Sites, Marken oder Länder aus einer Installation | Siteaccesses (einer je Site, Sprache oder für die Administration), Einstellungen je Site, Links zwischen Sites | Die Globus-Schaltfläche in der Kopfzeile, **Website oder einen anderen Siteaccess öffnen** | [Siteaccess-Zuordnung nach Host und Sprache](../../../en/us/features/6.0/siteaccess-host-and-language-matching.md), [Einstellungen je Site](../../../en/us/features/6.0/multi-site-ini-overrides.md), [Links zwischen Sites](../../../en/us/features/6.0/multisite-cross-site-links.md) |
-| Inhalte in vielen Sprachen | 268 Locale-Dateien (261 Sprachen und Länder) als Inhaltssprachen; Übersetzungen je Objekt | Die Sprachabzeichen eines Objekts und der Tab **Übersetzungen** | [Sprachen in Exponential](../../../en/us/languages.md), [Sprachen](../sprachen.md) |
-| Eine Administration in der eigenen Sprache der Redakteure | 32 Übersetzungen der Administration, zehn davon vollständig | Rechte Spalte, Kasten **Oberfläche**, **Sprache der Oberfläche** | [Sprachen in Exponential, Unterstützungsstufen](../../../en/us/languages.md#2-support-levels) |
-| Hebräisch, Arabisch, Persisch oder Urdu | Schreibrichtung von rechts nach links in Inhalten und Administration (`dir="rtl"`) | Eine Sprache der Oberfläche mit Schreibrichtung von rechts nach links wählen | [Von rechts nach links](../../../en/us/features/6.0/right-to-left.md) |
-| Schneller schreiben, mit einem Menschen am Steuer | Exponential Intelligence (`expai`): schreibt nur Entwürfe | Der Tab **Intelligence** eines Objekts; das Bearbeitungsformular | [Exponential Intelligence](../../../en/us/features/6.0/extensions/expai.md) |
-| Eine barrierefreie Administration | admin4: Sprunglink, Landmarks, Tastaturmuster, Tests für Kontrast und Zielgröße | Auf einer beliebigen Seite einmal `Tab` drücken; den Baum mit den Pfeiltasten bedienen | [Tastenkürzel](../tastenkuerzel.md), [Das Design admin4](../../../en/us/features/6.0/admin4-design.md) |
-| Nachweis, wer was getan hat | Manipulationssicheres Audit-Protokoll | Tab **Audit** (`/audit/dashboard`) | [Das Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md) |
-| Schutz vor eingeschleusten Skripten | Content Security Policy, in der Administration standardmäßig nur im Berichtsmodus | `site.ini [ContentSecurityPolicy]` (die Dokumentationsseite zeigen) | [Content Security Policy](../../../en/us/features/6.0/content-security-policy.md) |
+| Mehrere Sites, Marken oder Länder aus einer Installation | Siteaccesses (einer je Site, Sprache oder für die Administration), Einstellungen je Site, Links zwischen Sites | Die Globus-Schaltfläche in der Kopfzeile, **Website oder einen anderen Siteaccess öffnen** | [Siteaccess-Zuordnung nach Host und Sprache](../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md), [Einstellungen je Site](../../../eng-us/features/6.0/multi-site-ini-overrides.md), [Links zwischen Sites](../../../eng-us/features/6.0/multisite-cross-site-links.md) |
+| Inhalte in vielen Sprachen | 268 Locale-Dateien (261 Sprachen und Länder) als Inhaltssprachen; Übersetzungen je Objekt | Die Sprachabzeichen eines Objekts und der Tab **Übersetzungen** | [Sprachen in Exponential](../../../eng-us/languages.md), [Sprachen](../sprachen.md) |
+| Eine Administration in der eigenen Sprache der Redakteure | 32 Übersetzungen der Administration, zehn davon vollständig | Rechte Spalte, Kasten **Oberfläche**, **Sprache der Oberfläche** | [Sprachen in Exponential, Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels) |
+| Hebräisch, Arabisch, Persisch oder Urdu | Schreibrichtung von rechts nach links in Inhalten und Administration (`dir="rtl"`) | Eine Sprache der Oberfläche mit Schreibrichtung von rechts nach links wählen | [Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
+| Schneller schreiben, mit einem Menschen am Steuer | Exponential Intelligence (`expai`): schreibt nur Entwürfe | Der Tab **Intelligence** eines Objekts; das Bearbeitungsformular | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
+| Eine barrierefreie Administration | admin4: Sprunglink, Landmarks, Tastaturmuster, Tests für Kontrast und Zielgröße | Auf einer beliebigen Seite einmal `Tab` drücken; den Baum mit den Pfeiltasten bedienen | [Tastenkürzel](../tastenkuerzel.md), [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md) |
+| Nachweis, wer was getan hat | Manipulationssicheres Audit-Protokoll | Tab **Audit** (`/audit/dashboard`) | [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
+| Schutz vor eingeschleusten Skripten | Content Security Policy, in der Administration standardmäßig nur im Berichtsmodus | `site.ini [ContentSecurityPolicy]` (die Dokumentationsseite zeigen) | [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) |
 | Eine stärkere Anmeldung | Anmeldung in zwei Schritten mit einer Authenticator-App oder einem Code per E-Mail | `/user2fa/setup` | [Anmeldung in zwei Schritten](../../anleitungen/zwei-faktor-anmeldung.md) |
 | Ein Härtungsplan für den Produktivbetrieb | Leitfaden und Checkliste zur Sicherheitshärtung | (ein Dokument, kein Bildschirm) | [Sicherheitshärtung](../sicherheitshaertung.md) |
-| Eine schnelle Site | Exponential Velocity und die Cache-Korrekturen von 6.0.15 | `./console exp:velocity status`; `exp:benchmark` | [Velocity](../../../en/us/features/6.0/velocity-persistent-worker-server.md), [Benchmarks](../../anleitungen/benchmarking.md) |
-| Hilfe für die Mitarbeiter im Werkzeug selbst | Das Hilfesystem: Dashboard, Suche, kontextbezogene Hilfe, Drucken und PDF | Die Schaltfläche **Hilfe** in der Kopfzeile | [Hilfesystem](../../../en/us/features/6.0/help-system.md) |
-| PDF-Ausgabe von Inhalten | PDF-Export mit eigener Fußzeile und TrueType-Schriften | **Setup > PDF-Export** | [PDF-Export](../../../en/us/features/6.0/pdf-export.md) |
-| Handbücher als E-Books | EPUB 3 und PDF von Hilfehandbüchern, die als Inhalte gepflegt werden | Die Seite eines Handbuchs in der Hilfe, **EPUB herunterladen** | [Hilfe als Inhalt gepflegt](../../../en/us/features/6.0/help-content.md) |
+| Eine schnelle Site | Exponential Velocity und die Cache-Korrekturen von 6.0.15 | `./console exp:velocity status`; `exp:benchmark` | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md), [Benchmarks](../../anleitungen/benchmarking.md) |
+| Hilfe für die Mitarbeiter im Werkzeug selbst | Das Hilfesystem: Dashboard, Suche, kontextbezogene Hilfe, Drucken und PDF | Die Schaltfläche **Hilfe** in der Kopfzeile | [Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| PDF-Ausgabe von Inhalten | PDF-Export mit eigener Fußzeile und TrueType-Schriften | **Setup > PDF-Export** | [PDF-Export](../../../eng-us/features/6.0/pdf-export.md) |
+| Handbücher als E-Books | EPUB 3 und PDF von Hilfehandbüchern, die als Inhalte gepflegt werden | Die Seite eines Handbuchs in der Hilfe, **EPUB herunterladen** | [Hilfe als Inhalt gepflegt](../../../eng-us/features/6.0/help-content.md) |
 | Eigene Inhaltstypen | Inhaltsklassen mit Attributen | **Setup > Klassen** | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
 | Prüfung vor dem Veröffentlichen | Entwürfe, Versionen, Freigabe-Workflows | **Versionen verwalten** bei einem Objekt; **Meine Warteliste** | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md), [Workflows](../../anleitungen/workflows.md) |
-| Ein Onlineshop | Der eingebaute Shop mit Dashboard und Bestellstatus | Tab **Shop** | [Shop-Dashboard](../../../en/us/features/6.0/store-dashboard.md) |
+| Ein Onlineshop | Der eingebaute Shop mit Dashboard und Bestellstatus | Tab **Shop** | [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md) |
 | Inhalte für Apps und andere Systeme | REST-API v1 und v2 | (eine Anfrage im Terminal zeigen) | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
 | Die bevorzugte Datenbank | SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | **Setup > Systeminformationen**, Karte „Datenbank“ | [Unterstützte Datenbanken](../datenbankunterstuetzung.md) |
 | Das bevorzugte Hosting | Fast jedes Betriebssystem mit PHP 8.0 oder später; viele Webserver | (ein Dokument) | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
-| Weniger Überraschungen im Betrieb | Log-Viewer, Fehlerreferenzen, Inhaltsprüfungen, Upgrade-Prüfung | **Setup > Logdateien**, **Setup > Upgrade-Prüfung** | [Log-Viewer](../../../en/us/features/6.0/log-viewer.md), [Inhaltsprüfungen](../../../en/us/features/6.0/content-checks.md), [Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
-| Große Änderungen ohne Zeitüberschreitung | Inhaltsaufträge im Hintergrund | Einen großen Teilbaum entfernen oder verschieben | [Inhaltsaufträge](../../../en/us/features/6.0/content-jobs.md) |
+| Weniger Überraschungen im Betrieb | Log-Viewer, Fehlerreferenzen, Inhaltsprüfungen, Upgrade-Prüfung | **Setup > Logdateien**, **Setup > Upgrade-Prüfung** | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md), [Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md), [Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
+| Große Änderungen ohne Zeitüberschreitung | Inhaltsaufträge im Hintergrund | Einen großen Teilbaum entfernen oder verschieben | [Inhaltsaufträge](../../../eng-us/features/6.0/content-jobs.md) |
 
 ## Redakteure bauen Seiten selbst
 
@@ -117,15 +117,15 @@ wenn sie veröffentlichen ([Der Layout-Editor](../layout-editor.md)).
 **Was Sie sagen.** Multisite steht in der Liste der Hauptfunktionen in der README. Jede Site ist ein *Siteaccess* mit
 eigenem Host, Pfad, eigener Sprache und eigenem Design ([Wer ist 7x?, Das Produkt](../wer-ist-7x.md#das-produkt-was-exponential-ist)).
 Eine Site, die in einer eigenen Erweiterung liegt, kann Einstellungen mitbringen, die nur für ihre Siteaccesses gelten
-([Einstellungen je Site in Erweiterungen](../../../en/us/features/6.0/multi-site-ini-overrides.md)). Hostnamen lassen sich nach
+([Einstellungen je Site in Erweiterungen](../../../eng-us/features/6.0/multi-site-ini-overrides.md)). Hostnamen lassen sich nach
 ihrem Anfang zuordnen, sodass Test- und Live-Hosts dieselbe Site erreichen, und die Startseite kann Besucher zu ihrer
-Sprache weiterleiten ([Siteaccess nach Host-Präfix](../../../en/us/features/6.0/siteaccess-host-and-language-matching.md)). Links
+Sprache weiterleiten ([Siteaccess nach Host-Präfix](../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)). Links
 zwischen Sites eines Inhaltsbaums führen mit der Erweiterung `ezurlmultisite` zur richtigen Site
-([Links zwischen Sites](../../../en/us/features/6.0/multisite-cross-site-links.md)).
+([Links zwischen Sites](../../../eng-us/features/6.0/multisite-cross-site-links.md)).
 
 **Was Sie zeigen.** Die Globus-Schaltfläche in der Kopfzeile (**Website oder einen anderen Siteaccess öffnen**) und, auf
 einer mit `./console exp:install` angelegten Installation, die Sites des Multisite-Pakets
-([Exponential mit einem Befehl installieren](../../../en/us/features/6.0/install-in-one-command.md)).
+([Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)).
 
 **Grenzen, die Sie nennen sollten.**
 
@@ -133,16 +133,16 @@ einer mit `./console exp:install` angelegten Installation, die Sites des Multisi
   Sicherheitsgrenze“; für eine Trennung auf Ebene des Betriebssystems betreiben Sie eine Instanz je Site (`README.md`,
   „When a traditional server is still the right answer“).
 - Eine Installation kann höchstens 62 Inhaltssprachen haben (30 unter 32-Bit-PHP)
-  ([Abschnitt 11 von Sprachen](../../../en/us/languages.md#11-the-limit-of-62-content-languages)).
+  ([Abschnitt 11 von Sprachen](../../../eng-us/languages.md#11-the-limit-of-62-content-languages)).
 
 ## Viele Sprachen, einschließlich Schreibrichtung von rechts nach links
 
 **Was Sie sagen.** „268 Locale-Dateien (261 Sprachen und Länder ...) können als Inhaltssprachen und als Locales von
-Siteaccesses gewählt werden; es gibt 32 Übersetzungen der Administration, zehn davon vollständig“ ([Sprachen in Exponential](../../../en/us/languages.md)).
+Siteaccesses gewählt werden; es gibt 32 Übersetzungen der Administration, zehn davon vollständig“ ([Sprachen in Exponential](../../../eng-us/languages.md)).
 Jede Übersetzung eines Objekts wird für sich veröffentlicht ([Sprachen](../sprachen.md#ein-objekt-übersetzen)). Wenn die
 Sprache der Oberfläche von rechts nach links geschrieben wird, „dreht sich die Administration um“, und Inhalte in einer
 Sprache mit Schreibrichtung von rechts nach links werden überall, wo sie angezeigt und bearbeitet werden, ebenso
-gekennzeichnet ([Von rechts nach links](../../../en/us/features/6.0/right-to-left.md)).
+gekennzeichnet ([Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md)).
 
 **Was Sie zeigen.** Übersetzen Sie ein Objekt über sein gestricheltes Sprachabzeichen; stellen Sie die **Sprache der
 Oberfläche** in der rechten Spalte auf Deutsch um, dann auf Hebräisch oder Arabisch und wieder zurück.
@@ -151,20 +151,20 @@ Oberfläche** in der rechten Spalte auf Deutsch um, dann auf Hebräisch oder Ara
 
 | Stufe | Was der Kunde erhält | Quelle |
 |---|---|---|
-| Vollständig | Administration und Inhalte in der Sprache: `eng-US`, `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA` (acht davon maschinell unterstützt) | [Unterstützungsstufen](../../../en/us/languages.md#2-support-levels) |
+| Vollständig | Administration und Inhalte in der Sprache: `eng-US`, `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA` (acht davon maschinell unterstützt) | [Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels) |
 | Teilweise Oberfläche | 21 ältere Übersetzungen decken 16 bis 39 % der heutigen Texte ab; der Rest erscheint auf Englisch | ebenda |
 | Nur Inhalte | Jede andere Locale: Inhalte, Datumsangaben, Zahlen und Währung, mit einer englischen Administration | ebenda |
 
 > **Tipp**
 > Wenn die Sprache eines Kunden nur „Nur Inhalte“ erreicht, ist das ehrliche Angebot ein Übersetzungsprojekt. Wie Sie
 > eine Übersetzung der Administration hinzufügen oder vervollständigen, ist in
-> [Abschnitt 8 von Sprachen](../../../en/us/languages.md#8-adding-or-completing-an-administration-translation) dokumentiert.
+> [Abschnitt 8 von Sprachen](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation) dokumentiert.
 
 ## Hilfe beim Schreiben, unter menschlicher Kontrolle
 
 **Was Sie sagen.** Exponential Intelligence „schreibt Entwürfe, als der angemeldete Redakteur und mit dessen eigenen
 Berechtigungen“, veröffentlicht nie von sich aus und arbeitet mit gehosteten Anbietern in den USA oder der EU oder mit
-einem lokalen Open-Weight-Modell ([Exponential Intelligence](../../../en/us/features/6.0/extensions/expai.md); `README.md`).
+einem lokalen Open-Weight-Modell ([Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md); `README.md`).
 
 | Anliegen des Kunden | Dokumentierte Antwort |
 |---|---|
@@ -183,11 +183,11 @@ nicht des Projekts.
 
 **Was Sie sagen.** admin4 bietet Screenreadern und Tastaturen einen Sprunglink, benannte Landmarks, die WAI-ARIA-Muster
 für Tabs und Bäume, benannte Formularfelder und Kalenderschaltflächen, und Tests in `tests/tests/design/` prüfen jedes
-davon ([Das Design admin4, Landmarks und Namen](../../../en/us/features/6.0/admin4-design.md#landmarks-and-names)). Die
+davon ([Das Design admin4, Landmarks und Namen](../../../eng-us/features/6.0/admin4-design.md#landmarks-and-names)). Die
 Farb-Tokens bestehen einen Kontrasttest im hellen und im dunklen Modus, und Zielflächen sind mindestens 24 mal 24 Pixel
 groß ([Wer ist die Exponential Foundation?, Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit)).
 Die Hilfeseiten haben genau ein `h1`, benannte Landmarks und einen sichtbaren Fokusrahmen
-([Hilfesystem](../../../en/us/features/6.0/help-system.md)).
+([Hilfesystem](../../../eng-us/features/6.0/help-system.md)).
 
 **Was Sie zeigen.** Drücken Sie einmal `Tab` (der Link **Zum Hauptinhalt springen**), drücken Sie `/`, um in die Suche
 zu springen, öffnen Sie den Inhaltsbaum mit den Pfeiltasten und wechseln Sie den Farbmodus mit der Sonnen-Schaltfläche
@@ -201,11 +201,11 @@ Behandeln Sie sie als Projektanforderung und planen Sie die Tests dafür ein.
 
 | Frage des Kunden | Funktion | Nachweis |
 |---|---|---|
-| „Wer hat das geändert oder entfernt?“ | Das Audit-Protokoll zeichnet Anmeldungen, Änderungen an Inhalten, geschriebene Einstellungen, Cache-Leerungen, Deployments, Bestellungen und Änderungen der Mehrwertsteuer auf; standardmäßig eingeschaltet | [Das Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md) |
+| „Wer hat das geändert oder entfernt?“ | Das Audit-Protokoll zeichnet Anmeldungen, Änderungen an Inhalten, geschriebene Einstellungen, Cache-Leerungen, Deployments, Bestellungen und Änderungen der Mehrwertsteuer auf; standardmäßig eingeschaltet | [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
 | „Lässt sich das Protokoll manipulieren?“ | Jeder Eintrag trägt den Hash des vorherigen; `verify` zeigt, ob etwas geändert oder herausgeschnitten wurde | ebenda |
-| „Wie schützen Sie vor eingeschleusten Skripten?“ | Eine Content Security Policy; standardmäßig in der Administration nur im Berichtsmodus, auf den Sites ausgeschaltet, mit dokumentierten Schritten zur Durchsetzung | [Content Security Policy](../../../en/us/features/6.0/content-security-policy.md) |
+| „Wie schützen Sie vor eingeschleusten Skripten?“ | Eine Content Security Policy; standardmäßig in der Administration nur im Berichtsmodus, auf den Sites ausgeschaltet, mit dokumentierten Schritten zur Durchsetzung | [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) |
 | „Können wir einen zweiten Faktor verlangen?“ | TOTP-Apps oder Codes per E-Mail | [Anmeldung in zwei Schritten](../../anleitungen/zwei-faktor-anmeldung.md) |
-| „Sehen Sie Angriffe?“ | `security.log` klassifiziert Sondierungen und Angriffe; der Klassifizierer selbst blockiert nichts | [Anfrageprotokolle](../../../en/us/features/6.0/request-logs.md) |
+| „Sehen Sie Angriffe?“ | `security.log` klassifiziert Sondierungen und Angriffe; der Klassifizierer selbst blockiert nichts | [Anfrageprotokolle](../../../eng-us/features/6.0/request-logs.md) |
 | „Welche Empfehlungen zur Härtung geben Sie?“ | Ein Leitfaden, „standardmäßig sicher im Sinne von OpenBSD“, mit einer Checkliste | [Sicherheitshärtung](../sicherheitshaertung.md), [Kapitel 13](../../installation/13-sicherheitshaertung.md) |
 | „Wie gehen Sie mit Sicherheitslücken um?“ | Vertrauliche Meldung mit einer ersten Antwort „innerhalb eines Werktags“; Korrekturen auf `main` und im nächsten 6.0.x-Release | `SECURITY.md` |
 
@@ -217,7 +217,7 @@ Sie daraus Fragen an die eigenen Rechtsberater des Kunden.
 
 **Was Sie sagen.** Velocity ist „ein in PHP geschriebener Webserver, der mit Exponential ausgeliefert wird und die
 Anwendung zwischen den Anfragen geladen hält“, und er ist die empfohlene Engine für jede Phase; FrankenPHP ist die
-produktionsreife Alternative ([Velocity](../../../en/us/features/6.0/velocity-persistent-worker-server.md)). Ebenso wichtig: „Der
+produktionsreife Alternative ([Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)). Ebenso wichtig: „Der
 größte Teil der Geschwindigkeit kam von Korrekturen an Exponential und am Cache, nicht vom Prozessmodell des Servers“,
 deshalb ist 6.0.15 „auch unter Apache oder Nginx unter Last schnell“ (`README.md`, „The part that matters even if you
 never run Velocity“).
@@ -235,7 +235,7 @@ ein Velocity-Server neu gestartet werden (`README.md`).
 
 **Was Sie sagen.** Die Hilfe ist die eigene Dokumentation des Repositorys, angezeigt in der Administration: ein
 Dashboard, eine Suche, Seiten nach Zielgruppen, eine Schaltfläche **Hilfe**, die die Seite zum aktuellen Bildschirm
-öffnet, und eine Seite **Fehler melden**, die ein Issue vorbereitet ([Hilfesystem](../../../en/us/features/6.0/help-system.md)).
+öffnet, und eine Seite **Fehler melden**, die ein Issue vorbereitet ([Hilfesystem](../../../eng-us/features/6.0/help-system.md)).
 Die Dokumentation ist freie Dokumentation unter der GNU FDL 1.3, sodass ein Kunde sie für seine eigenen Mitarbeiter
 kopieren, übersetzen und anpassen darf ([Freie Dokumentation](../freie-dokumentation.md)).
 
@@ -246,13 +246,13 @@ drücken Sie **Als PDF herunterladen**.
 
 | Ausgabe | Was sie leistet | Quelle |
 |---|---|---|
-| PDF-Export von Inhalten | **Setup > PDF-Export**: Dateien, die sich öffnen lassen, Text, der korrekt lesbar ist, Bilder, die passen, UTF-8 mit einer TrueType-Schrift, Ihre eigene Fußzeile | [PDF-Export](../../../en/us/features/6.0/pdf-export.md) |
-| Eine Hilfeseite als PDF | **Als PDF herunterladen** auf jeder Hilfeseite, erzeugt auf dem Server mit der eigenen PDF-Bibliothek des Kernels, ohne externen Dienst | [Hilfesystem, Drucken und PDF](../../../en/us/features/6.0/help-system.md#print-and-pdf) |
-| Ein Hilfehandbuch als EPUB 3 oder PDF | Handbücher, die als Inhalte gepflegt werden (Phase 1 in 6.0.15), **EPUB herunterladen** und **PDF herunterladen** auf der Seite des Handbuchs | [Hilfe als Inhalt gepflegt](../../../en/us/features/6.0/help-content.md) |
+| PDF-Export von Inhalten | **Setup > PDF-Export**: Dateien, die sich öffnen lassen, Text, der korrekt lesbar ist, Bilder, die passen, UTF-8 mit einer TrueType-Schrift, Ihre eigene Fußzeile | [PDF-Export](../../../eng-us/features/6.0/pdf-export.md) |
+| Eine Hilfeseite als PDF | **Als PDF herunterladen** auf jeder Hilfeseite, erzeugt auf dem Server mit der eigenen PDF-Bibliothek des Kernels, ohne externen Dienst | [Hilfesystem, Drucken und PDF](../../../eng-us/features/6.0/help-system.md#print-and-pdf) |
+| Ein Hilfehandbuch als EPUB 3 oder PDF | Handbücher, die als Inhalte gepflegt werden (Phase 1 in 6.0.15), **EPUB herunterladen** und **PDF herunterladen** auf der Seite des Handbuchs | [Hilfe als Inhalt gepflegt](../../../eng-us/features/6.0/help-content.md) |
 
 **Grenzen, die Sie nennen sollten.** EPUB ist für Hilfehandbücher dokumentiert, die als Inhalte gepflegt werden, nicht
 als allgemeiner Export von Site-Inhalten. Arabische Buchstaben werden in PDFs der Hilfe in ihren Grundformen gezeichnet,
-ohne Verbindung ([Hilfesystem](../../../en/us/features/6.0/help-system.md#print-and-pdf)).
+ohne Verbindung ([Hilfesystem](../../../eng-us/features/6.0/help-system.md#print-and-pdf)).
 
 ## Strukturierte Inhalte, Freigabe und Versionen
 
@@ -269,12 +269,12 @@ speichern, die Vorschau in Telefonbreite ansehen, veröffentlichen, Versionen ve
 ## Shop, API und Integration
 
 - **Shop.** „Advanced e-Commerce Stores (Built in)“ steht in der Funktionsliste der README; der Tab **Shop** öffnet ein
-  Dashboard mit Bestellstatus ([Shop-Dashboard](../../../en/us/features/6.0/store-dashboard.md)); PayPal ist eine Erweiterung
+  Dashboard mit Bestellstatus ([Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md)); PayPal ist eine Erweiterung
   ([Wer ist 7x?, Erweiterungen](../wer-ist-7x.md#das-ökosystem-der-erweiterungen)).
 - **API.** REST v1 und v2 kommen aus einer Erweiterung, mit OAuth2-Tokens und persönlichen API-Schlüsseln
   ([REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md)).
 - **Erweiterungen.** `composer.json` fordert 66 `se7enxweb/*`-Pakete an; viele sind inaktiv, bis sie eingeschaltet
-  werden ([Die Standardauswahl an Erweiterungen](../../../en/us/features/6.0/default-extension-distribution.md)).
+  werden ([Die Standardauswahl an Erweiterungen](../../../eng-us/features/6.0/default-extension-distribution.md)).
 
 **Grenzen, die Sie nennen sollten.** Die Quellen führen außer der PayPal-Erweiterung keine zertifizierten
 Zahlungsanbieter auf und nennen keine Integrationen von Drittanbietern. Behandeln Sie jede Integration als Frage zum
@@ -296,11 +296,11 @@ Für Microsoft SQL Server gibt es in 6.0.x keinen Treiber.
 
 | Bedarf | Funktion | Nachweis |
 |---|---|---|
-| Den Fehler hinter einer Meldung finden | Eine Fehlerseite zeigt eine Referenz; der Log-Viewer findet die zugehörige Anfrage | [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md), [Log-Viewer](../../../en/us/features/6.0/log-viewer.md) |
-| Ungenutzte Dateien aufräumen | Nicht referenzierte Objekte, defekte Beziehungen, Speicherdateien | [Inhaltsprüfungen](../../../en/us/features/6.0/content-checks.md) |
+| Den Fehler hinter einer Meldung finden | Eine Fehlerseite zeigt eine Referenz; der Log-Viewer findet die zugehörige Anfrage | [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md), [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md) |
+| Ungenutzte Dateien aufräumen | Nicht referenzierte Objekte, defekte Beziehungen, Speicherdateien | [Inhaltsprüfungen](../../../eng-us/features/6.0/content-checks.md) |
 | Vor einem Upgrade wissen, ob Dateien abweichen | **Setup > Upgrade-Prüfung** | [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
-| Die Site für Arbeiten vom Netz nehmen | Wartungsmodus | [Wartungsmodus](../../../en/us/features/6.0/maintenance-mode.md) |
-| Inhalte über eine ID oder einen Pfad finden | **Setup > Inhaltsfinder** | [Der Inhaltsfinder](../../../en/us/features/6.0/content-finder.md) |
+| Die Site für Arbeiten vom Netz nehmen | Wartungsmodus | [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md) |
+| Inhalte über eine ID oder einen Pfad finden | **Setup > Inhaltsfinder** | [Der Inhaltsfinder](../../../eng-us/features/6.0/content-finder.md) |
 
 ## Ein Arbeitsblatt zur Bedarfsanalyse
 
@@ -329,7 +329,7 @@ Open questions the documentation does not answer: <list>
   Quellen. Preise und Bedingungen der Dienstleistungen von 7x stehen auf der eigenen Website von 7x, nicht hier
   ([Wer ist 7x?, Dienstleistungen und Hosting](../wer-ist-7x.md#dienstleistungen-und-hosting)).
 - Keine Funktion, die keine Seite hier beschreibt. „Auf der Roadmap“ stimmt nur, wenn eine Seite das sagt (zum Beispiel
-  die späteren Phasen in [Hilfe als Inhalt gepflegt](../../../en/us/features/6.0/help-content.md)).
+  die späteren Phasen in [Hilfe als Inhalt gepflegt](../../../eng-us/features/6.0/help-content.md)).
 - Kein Vergleich mit einem namentlich genannten Wettbewerber; siehe [Exponential sachlich vergleichen](exponential-sachlich-vergleichen.md).
 - Keine heutige Verwendung des alten Produktnamens: Exponential führt die Codebasis von eZ Publish fort, einem Produkt,
   das sein Hersteller nach fast 18 Jahren eingestellt hat ([Wer ist 7x?](../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021)).

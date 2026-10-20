@@ -448,7 +448,7 @@ A class or static method that creates objects for the caller, so the caller does
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expApiKey` | class extends eZPersistentObject | `kernel/classes/apikey/expapikey.php:31` | A personal API key (publishing key) of a user: one row of expapikey (doc/en/us/guides/api-keys.md). | – |
+| `expApiKey` | class extends eZPersistentObject | `kernel/classes/apikey/expapikey.php:31` | A personal API key (publishing key) of a user: one row of expapikey (doc/eng-us/guides/api-keys.md). | – |
 
 ### kernel/classes/audit (6)
 
@@ -456,11 +456,11 @@ A class or static method that creates objects for the caller, so the caller does
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expAudit` | class | `kernel/classes/audit/expaudit.php:26` | The audit: what happens in Exponential, recorded as hash-chained JSON lines per channel (doc/en/us/bc/6.0/audit.md, "The developer API (Z3)"). | – |
-| `expAuditAlertState` | class | `kernel/classes/audit/alerts/expauditalertstate.php:19` | The window state of one alert rule (doc/en/us/bc/6.0/audit.md, "Alerts (F5)"): /alerts/.json, read and written under flock() only when a matching record wa… | – |
-| `expAuditConfig` | class | `kernel/classes/audit/expauditconfig.php:21` | The audit settings (settings/audit.ini, doc/en/us/bc/6.0/audit.md "The settings reference") read once into one array. | – |
+| `expAudit` | class | `kernel/classes/audit/expaudit.php:26` | The audit: what happens in Exponential, recorded as hash-chained JSON lines per channel (doc/eng-us/bc/6.0/audit.md, "The developer API (Z3)"). | – |
+| `expAuditAlertState` | class | `kernel/classes/audit/alerts/expauditalertstate.php:19` | The window state of one alert rule (doc/eng-us/bc/6.0/audit.md, "Alerts (F5)"): /alerts/.json, read and written under flock() only when a matching record wa… | – |
+| `expAuditConfig` | class | `kernel/classes/audit/expauditconfig.php:21` | The audit settings (settings/audit.ini, doc/eng-us/bc/6.0/audit.md "The settings reference") read once into one array. | – |
 | `expAuditExportStream` | class | `kernel/classes/audit/console/expauditexportstream.php:28` | The audit records of a filter as CSV, JSON lines or JSON, newest first, written piece by piece to a callback as they are read: the download of audit/… | – |
-| `expAuditIndexRow` | class | `kernel/classes/audit/index/expauditindexrow.php:12` | One audit record as a row of expaudit_event (doc/en/us/bc/6.0/audit.md, "Tables"): the columns the console filters on, the record itself (as written, so th… | – |
+| `expAuditIndexRow` | class | `kernel/classes/audit/index/expauditindexrow.php:12` | One audit record as a row of expaudit_event (doc/eng-us/bc/6.0/audit.md, "Tables"): the columns the console filters on, the record itself (as written, so th… | – |
 | `expAuditSourceRegistry` | class | `kernel/classes/audit/console/expauditsourceregistry.php:16` | The registry of the audit console's sources (expAuditSource), from audit.ini [AuditSourceSettings] Sources[]: which are registered, which work here,… | – |
 
 ### kernel/classes/collaborationhandlers (1)
@@ -477,7 +477,7 @@ A class or static method that creates objects for the caller, so the caller does
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expContentCheckReferences` | class | `kernel/classes/contentcheck/expcontentcheckreferences.php:37` | The reference index of the unreferenced list (doc/en/us/features/6.0/content-checks.md, "What counts as a reference"): every object id, node id, remote id… | – |
+| `expContentCheckReferences` | class | `kernel/classes/contentcheck/expcontentcheckreferences.php:37` | The reference index of the unreferenced list (doc/eng-us/features/6.0/content-checks.md, "What counts as a reference"): every object id, node id, remote id… | – |
 
 ### kernel/classes/contentjob (2)
 
@@ -518,13 +518,13 @@ A class or static method that creates objects for the caller, so the caller does
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expHelpAllowlist` | class | `kernel/classes/help/exphelpallowlist.php:29` | The files the help system may show (doc/en/us/features/6.0/help-system.md, "Which files are shown"). | – |
-| `expHelpAudience` | class | `kernel/classes/help/exphelpaudience.php:29` | Who a help page is for, which section of the help it belongs to and what kind of page it is (doc/en/us/features/6.0/help-system.md, "Audiences, categories… | – |
+| `expHelpAllowlist` | class | `kernel/classes/help/exphelpallowlist.php:29` | The files the help system may show (doc/eng-us/features/6.0/help-system.md, "Which files are shown"). | – |
+| `expHelpAudience` | class | `kernel/classes/help/exphelpaudience.php:29` | Who a help page is for, which section of the help it belongs to and what kind of page it is (doc/eng-us/features/6.0/help-system.md, "Audiences, categories… | – |
 | `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:44` | Context help: which help page answers "help for this page", for a module, view and design. | – |
-| `expHelpMarkdownRenderer` | class | `kernel/classes/help/exphelpmarkdownrenderer.php:50` | Renders the Markdown of the documentation (doc/**.md) to the HTML of the help viewer (exphelp/viewer, doc/en/us/features/6.0/help-system.md): CommonMark bl… | – |
-| `expHelpPdf` | class | `kernel/classes/help/exphelppdf.php:18` | A help page as a PDF file (doc/en/us/features/6.0/help-system.md, "Print and PDF"): the view exphelp/pdf/ and `./console exp:help pdf ` ask here. | – |
-| `expHelpPdfFontSubset` | class | `kernel/classes/help/exphelppdffontsubset.php:17` | Cuts a TrueType font down to the glyphs a PDF uses (doc/en/us/features/6.0/help-system.md, "Print and PDF"). | – |
-| `expHelpSearch` | class | `kernel/classes/help/exphelpsearch.php:34` | expHelpSearch: the full-text search of the help system (doc/en/us/features/6.0/help-system.md, "Search"). | – |
+| `expHelpMarkdownRenderer` | class | `kernel/classes/help/exphelpmarkdownrenderer.php:50` | Renders the Markdown of the documentation (doc/**.md) to the HTML of the help viewer (exphelp/viewer, doc/eng-us/features/6.0/help-system.md): CommonMark bl… | – |
+| `expHelpPdf` | class | `kernel/classes/help/exphelppdf.php:18` | A help page as a PDF file (doc/eng-us/features/6.0/help-system.md, "Print and PDF"): the view exphelp/pdf/ and `./console exp:help pdf ` ask here. | – |
+| `expHelpPdfFontSubset` | class | `kernel/classes/help/exphelppdffontsubset.php:17` | Cuts a TrueType font down to the glyphs a PDF uses (doc/eng-us/features/6.0/help-system.md, "Print and PDF"). | – |
+| `expHelpSearch` | class | `kernel/classes/help/exphelpsearch.php:34` | expHelpSearch: the full-text search of the help system (doc/eng-us/features/6.0/help-system.md, "Search"). | – |
 
 ### kernel/classes/ini (6)
 
@@ -545,13 +545,13 @@ A class or static method that creates objects for the caller, so the caller does
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expLogBundle` | class | `kernel/classes/logviewer/explogbundle.php:17` | "Download all logs" (Setup › Manage logs; doc/en/us/features/6.0/log-viewer.md, "Downloading every log"): one archive of every log the viewer lists, option… | – |
-| `expLogManagerFactory` | class | `kernel/classes/logviewer/explogmanagerfactory.php:12` | The log manager the views of the log viewer use (doc/en/us/features/6.0/log-viewer.md, "Managing logs"): the kernel's service expLogManager when it is ther… | – |
-| `expLogPermalink` | class | `kernel/classes/logviewer/explogpermalink.php:23` | The permalinks of the log viewer (doc/en/us/features/6.0/log-viewer.md, "Permalinks"): every view of a log as a path without a query string, short enough t… | – |
-| `expLogRateLimit` | class | `kernel/classes/logviewer/explogratelimit.php:16` | The request limit of the log viewer's feed, per session ([RateLimitSettings], doc/en/us/features/6.0/log-viewer.md, "Cost"), and the memory of which files… | – |
-| `expLogRedactor` | class | `kernel/classes/logviewer/explogredactor.php:16` | What the log viewer masks before a line leaves the server (doc/en/us/features/6.0/log-viewer.md, "Privacy"). | – |
-| `expLogViewer` | class | `kernel/classes/logviewer/explogviewer.php:16` | The log viewer (Setup › Log files, setup/logs; doc/en/us/features/6.0/log-viewer.md): what its page, its feed and its command line use. | – |
-| `expLogViewerConfig` | class | `kernel/classes/logviewer/explogviewerconfig.php:11` | The settings of the log viewer (settings/logviewer.ini, doc/en/us/features/6.0/log-viewer.md, "Settings"), read once per request with safe bounds. | – |
+| `expLogBundle` | class | `kernel/classes/logviewer/explogbundle.php:17` | "Download all logs" (Setup › Manage logs; doc/eng-us/features/6.0/log-viewer.md, "Downloading every log"): one archive of every log the viewer lists, option… | – |
+| `expLogManagerFactory` | class | `kernel/classes/logviewer/explogmanagerfactory.php:12` | The log manager the views of the log viewer use (doc/eng-us/features/6.0/log-viewer.md, "Managing logs"): the kernel's service expLogManager when it is ther… | – |
+| `expLogPermalink` | class | `kernel/classes/logviewer/explogpermalink.php:23` | The permalinks of the log viewer (doc/eng-us/features/6.0/log-viewer.md, "Permalinks"): every view of a log as a path without a query string, short enough t… | – |
+| `expLogRateLimit` | class | `kernel/classes/logviewer/explogratelimit.php:16` | The request limit of the log viewer's feed, per session ([RateLimitSettings], doc/eng-us/features/6.0/log-viewer.md, "Cost"), and the memory of which files… | – |
+| `expLogRedactor` | class | `kernel/classes/logviewer/explogredactor.php:16` | What the log viewer masks before a line leaves the server (doc/eng-us/features/6.0/log-viewer.md, "Privacy"). | – |
+| `expLogViewer` | class | `kernel/classes/logviewer/explogviewer.php:16` | The log viewer (Setup › Log files, setup/logs; doc/eng-us/features/6.0/log-viewer.md): what its page, its feed and its command line use. | – |
+| `expLogViewerConfig` | class | `kernel/classes/logviewer/explogviewerconfig.php:11` | The settings of the log viewer (settings/logviewer.ini, doc/eng-us/features/6.0/log-viewer.md, "Settings"), read once per request with safe bounds. | – |
 
 ### kernel/classes/mailpreferences (6)
 
@@ -662,7 +662,7 @@ A class or static method that creates objects for the caller, so the caller does
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expFileConsistencyReport` | class | `kernel/private/classes/expfileconsistencyreport.php:36` | Compares the files of an installation with the checksum lists that ship with it: share/filelist.md5 of Exponential and the share/filelist.md5 an exte… | – |
-| `expRestContentPermission` | class | `kernel/private/rest/classes/auth/content_permission.php:36` | The current user's rights on the content a REST call reads or writes, checked the way the content module checks them (doc/en/us/guides/api-keys.md, "Permis… | – |
+| `expRestContentPermission` | class | `kernel/private/rest/classes/auth/content_permission.php:36` | The current user's rights on the content a REST call reads or writes, checked the way the content module checks them (doc/eng-us/guides/api-keys.md, "Permis… | – |
 | `expSchemaConsistencyReport` | class | `kernel/private/classes/expschemaconsistencyreport.php:36` | Compares the database with the schema that ships with Exponential and its active extensions (share/db_schema.dba of the root and of each extension),… | – |
 | `eZAutoloadGenerator` | class | `kernel/private/classes/ezautoloadgenerator.php:19` | Utility class for generating autoload arrays for Exponential. | – |
 | `ezpActiveExtensions` | class | `kernel/private/classes/ezpactiveextensions.php:26` | Changes [ExtensionSettings] ActiveExtensions in settings/override/site.ini.append.php, for Setup › Extensions, without touching anything else in that… | – |

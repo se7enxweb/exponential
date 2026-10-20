@@ -16,7 +16,7 @@ The shipped settings of `settings/querycache.ini`: 2 blocks, 7 settings.
 > to one of the tables it read makes them stale. For the SQL engines (MySQL,  
 > MariaDB, PostgreSQL, SQLite, and Oracle through the ezoracle extension's  
 > driver); the MongoDB driver does not use it.  
-> See doc/en/us/bc/6.0/sql-query-cache.md.  
+> See doc/eng-us/bc/6.0/sql-query-cache.md.  
 
 | Block | Settings |
 |---|---|

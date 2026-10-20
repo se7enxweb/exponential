@@ -153,7 +153,7 @@ Schreiben Sie nur auf Grundlage des Faktenblatts. Regeln:
 - Exponential Intelligence kann helfen, aus Ihrem Faktenblatt einen ersten Entwurf zu schreiben: Es „writes drafts,
   as the signed-in editor and with that editor's permissions“, schreibt also Entwürfe als der angemeldete Redakteur
   und mit dessen Rechten, und „never publishes on its own“, veröffentlicht nie von sich aus
-  ([Exponential Intelligence](../../../en/us/features/6.0/extensions/expai.md)). Faktenprüfung und Freigabe gelten trotzdem für
+  ([Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md)). Faktenprüfung und Freigabe gelten trotzdem für
   jedes Wort, das es vorschlägt.
 
 ## Schritt 5: jeden Fakt prüfen
@@ -199,9 +199,9 @@ Exponential gibt Ihnen die Mittel, den Freigabeschritt nicht nur organisatorisch
 | Auf Wunsch sofort entfernen | Das Objekt verbergen oder in den Papierkorb verschieben | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md#ein-objekt-verstecken) |
 | Nur das Marketing darf Fallstudien bearbeiten | Eine Sektion mit eigenen Richtlinien | [Sektionen](../../anleitungen/sektionen.md), [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md) |
 | Ein Prüfstatus | Objektzustände | [Objektzustände](../../anleitungen/objektzustaende.md) |
-| Suchmaschinen und Linkvorschauen | `xrowmetadata`: Seitentitel, Beschreibung, kanonischer Link, Open-Graph-Bild, XML-Sitemaps | [xrowmetadata](../../../en/us/features/6.0/extensions/xrowmetadata.md) |
+| Suchmaschinen und Linkvorschauen | `xrowmetadata`: Seitentitel, Beschreibung, kanonischer Link, Open-Graph-Bild, XML-Sitemaps | [xrowmetadata](../../../eng-us/features/6.0/extensions/xrowmetadata.md) |
 | Mehrere Sprachen | Übersetzungen desselben Objekts | [Sprachen](../sprachen.md), [Inhaltssprachen](../../anleitungen/inhaltssprachen.md) |
-| Wer was geändert hat | Das Audit-Protokoll | [Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md) |
+| Wer was geändert hat | Das Audit-Protokoll | [Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md) |
 | Ein herunterladbares PDF | PDF-Export eines Knotens oder eines Baums | [PDF-Exporte](../../anleitungen/pdf-exporte.md) |
 
 ## Schritt 8: pflegen und zurückziehen
@@ -263,26 +263,26 @@ selben System wie die Website betreiben kann.
 | Aufgabe im Marketing | Funktion von Exponential | Lesen |
 |---|---|---|
 | Artikel schreiben und bearbeiten | Das Bearbeitungsformular, Rich Text, Beziehungen und Bilder | [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md) |
-| Ein Assistent für Entwürfe | Exponential Intelligence: nur Entwürfe, Voreinstellungen für Titel, Zusammenfassung, Meta-Beschreibung und Schlüsselwörter | [Exponential Intelligence](../../../en/us/features/6.0/extensions/expai.md) |
+| Ein Assistent für Entwürfe | Exponential Intelligence: nur Entwürfe, Voreinstellungen für Titel, Zusammenfassung, Meta-Beschreibung und Schlüsselwörter | [Exponential Intelligence](../../../eng-us/features/6.0/extensions/expai.md) |
 | Seiten ohne Template-Arbeit | Exponential Layouts | [Der Layout-Editor](../layout-editor.md) |
 | Eine Freigabe, bevor etwas live geht | Workflows | [Workflows](../../anleitungen/workflows.md) |
 | Feeds für Leser und Partner | Feeds in RSS 1.0, RSS 2.0, Atom, OPML und für Apple Podcasts | [RSS-Feeds](../../anleitungen/rss-feeds.md) |
-| Ein Newsletter mit Double-Opt-in | `cjw_newsletter` | [cjw_newsletter](../../../en/us/features/6.0/extensions/cjw_newsletter.md) |
-| Respekt vor E-Mail-Entscheidungen | E-Mail-Einstellungen: optionale E-Mails sind aus, bis sie eingeschaltet werden, Abmelden mit einem Klick | [E-Mail-Einstellungen](../../../en/us/features/6.0/mail-preferences.md), [Leitfaden für Administratoren](../../anleitungen/mail-einstellungen-administrator.md) |
-| Schlagwörter und Themen | `eztags` | [eztags](../../../en/us/features/6.0/extensions/eztags.md) |
-| Suchmaschinen | `xrowmetadata`, `bcgooglesitemaps` | [xrowmetadata](../../../en/us/features/6.0/extensions/xrowmetadata.md), [bcgooglesitemaps](../../../en/us/features/6.0/extensions/bcgooglesitemaps.md) |
-| Viele Sprachen | 268 Locale-Dateien als Inhaltssprachen | [Sprachen in Exponential](../../../en/us/languages.md) |
+| Ein Newsletter mit Double-Opt-in | `cjw_newsletter` | [cjw_newsletter](../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
+| Respekt vor E-Mail-Entscheidungen | E-Mail-Einstellungen: optionale E-Mails sind aus, bis sie eingeschaltet werden, Abmelden mit einem Klick | [E-Mail-Einstellungen](../../../eng-us/features/6.0/mail-preferences.md), [Leitfaden für Administratoren](../../anleitungen/mail-einstellungen-administrator.md) |
+| Schlagwörter und Themen | `eztags` | [eztags](../../../eng-us/features/6.0/extensions/eztags.md) |
+| Suchmaschinen | `xrowmetadata`, `bcgooglesitemaps` | [xrowmetadata](../../../eng-us/features/6.0/extensions/xrowmetadata.md), [bcgooglesitemaps](../../../eng-us/features/6.0/extensions/bcgooglesitemaps.md) |
+| Viele Sprachen | 268 Locale-Dateien als Inhaltssprachen | [Sprachen in Exponential](../../../eng-us/languages.md) |
 
 ### Themen, die wahr bleiben
 
 Gute Themen für ein Content-Programm rund um Exponential sind die, die die Dokumentation belegen kann:
 
-- „Wie wir aus einer Installation in <n> Sprachen veröffentlichen“ (mehrsprachig, [Sprachen in Exponential](../../../en/us/languages.md));
+- „Wie wir aus einer Installation in <n> Sprachen veröffentlichen“ (mehrsprachig, [Sprachen in Exponential](../../../eng-us/languages.md));
 - „Unsere redaktionelle Freigabe, Schritt für Schritt“ ([Workflows](../../anleitungen/workflows.md));
 - „Seiten bauen ohne Entwickler“ ([Der Layout-Editor](../layout-editor.md));
 - „Was sich in Exponential <version> geändert hat“ (aus den [Changelogs](../../../changelogs/README.md));
 - „Warum wir unsere Site in Git halten“ ([Mit Git entwickeln](../mit-git-entwickeln.md));
-- „Wie die Hilfe im Produkt funktioniert“ ([Das Hilfesystem](../../../en/us/features/6.0/help-system.md)).
+- „Wie die Hilfe im Produkt funktioniert“ ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)).
 
 Wenn Sie über das Produkt schreiben, dürfen Sie die Hilfeseiten selbst wiederverwenden: Sie sind freie Dokumentation
 unter der GNU FDL 1.3, sofern Sie deren Bedingungen einhalten ([Freie Dokumentation](../freie-dokumentation.md)). Eine

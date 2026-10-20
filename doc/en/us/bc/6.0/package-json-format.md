@@ -19,7 +19,7 @@ review tools, diffs in a pull request), and the classic format everywhere else.
 | Checksums | MD5 of design files only | SHA-256 of every file, in `package.json` |
 | Archive | `<name>-<version>-<release>.ezpkg` (gzip compressed tar) | `<name>-<version>-<release>.json.ezpkg` (gzip compressed tar) |
 | Detection | by content: `package.xml` or `package.json` at the top of the archive or directory | |
-| Schema | the kernel's reader | [`share/package/schema/package-v1.json`](../../../../../share/package/schema/package-v1.json) (JSON Schema 2020-12) |
+| Schema | the kernel's reader | [`share/package/schema/package-v1.json`](../../../../share/package/schema/package-v1.json) (JSON Schema 2020-12) |
 
 ## Why this design
 

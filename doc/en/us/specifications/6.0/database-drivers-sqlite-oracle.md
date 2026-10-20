@@ -10,4 +10,4 @@ This page has moved. Its content was merged into two pages, so each fact lives i
 ## Related pages
 
 - [SQLite database support](../../features/6.0/sqlite-database.md), [SQLite transactions](../../bc/6.0/sqlite-transactions.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md), [October 2026 chronicle](../../history/2026/2026-10.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), [October 2026 chronicle](../../history/2026/2026-10.md)

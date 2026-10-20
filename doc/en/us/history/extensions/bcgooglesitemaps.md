@@ -2,7 +2,7 @@
 
 Google sitemaps was repackaged in January 2024 (a new exclusion setting, license and funding), and in September and October 2026 received the Exponential name and class based commands. See the [feature page](../../features/6.0/extensions/bcgooglesitemaps.md).
 
-This page lists **every one of the 18 changes** of the repository `bcgooglesitemaps` between 2024-01-07 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/bcgooglesitemaps.md); what each release contains is in the [release notes](../../../../changelogs/extensions/bcgooglesitemaps.md); how to use the extension is on its [feature page](../../features/6.0/extensions/bcgooglesitemaps.md).
+This page lists **every one of the 18 changes** of the repository `bcgooglesitemaps` between 2024-01-07 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/bcgooglesitemaps.md); what each release contains is in the [release notes](../../../changelogs/extensions/bcgooglesitemaps.md); how to use the extension is on its [feature page](../../features/6.0/extensions/bcgooglesitemaps.md).
 
 | Kind | Changes |
 |---|---|
@@ -65,6 +65,6 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/bcgooglesitemaps.md)
-- [Release notes](../../../../changelogs/extensions/bcgooglesitemaps.md)
+- [Release notes](../../../changelogs/extensions/bcgooglesitemaps.md)
 - [Change ledger](../ledger/bcgooglesitemaps.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

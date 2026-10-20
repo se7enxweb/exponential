@@ -848,8 +848,8 @@ In this repository:
 - 5.x notes: [changes in 5.1](../bc/5.1/changes-5.1.txt), [5.2](../bc/5.2/changes-5.2.txt),
   [5.4](../bc/5.4/changes-5.4.txt), [5.90](../bc/5.90/README.md),
   [password length](../bc/5.90/password_length.md), [PHP 7](../bc/5.90/php7.md).
-- 6.0: [Changelog 6.0.0](../../../changelogs/6.0/6.0.0.md), [6.0.9](../../../changelogs/6.0/6.0.9.md),
-  [6.0.15](../../../changelogs/6.0/6.0.15.md); [PHP 8 support](../bc/6.0/php8.md),
+- 6.0: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md), [6.0.9](../../changelogs/6.0/6.0.9.md),
+  [6.0.15](../../changelogs/6.0/6.0.15.md); [PHP 8 support](../bc/6.0/php8.md),
   [PHP 8.0 support](../bc/6.0/php-8.0-support.md); [HTTP cache](../bc/6.0/httpcache.md),
   [HTTP caching for anonymous visitors](../bc/6.0/http-caching.md),
   [Velocity response cache](../features/6.0/velocity-response-cache.md),

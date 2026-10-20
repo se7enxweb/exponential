@@ -72,7 +72,7 @@ Entwickler innerhalb und außerhalb des Exponential-Teams beauftragen lassen; 7x
 über 7x: [Wer ist 7x?](../wer-ist-7x.md).
 
 Unternehmen, die Dienstleistungen rund um Exponential anbieten, können auch Partner des Projekts werden, und Partner
-haben eigene Support-Stufen ([Partner: Support-Stufen und Antwortzeiten](../../../en/us/help/partners/support-levels-and-response-times.md)).
+haben eigene Support-Stufen ([Partner: Support-Stufen und Antwortzeiten](../../../eng-us/help/partners/support-levels-and-response-times.md)).
 
 ## Was kostenloser Support nicht versprechen kann
 

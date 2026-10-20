@@ -14,7 +14,7 @@ Remove expired and stale entries from the static page cache.
 Entry point `cronjobs/staticcache_cleanup.php`, code in `kernel/private/classes/cronjobs/staticcache_cleanup.php`.
 
 > The code of cronjobs/staticcache\_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/staticcache\_cleanup.php is one call to it.  
-> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## When it runs
 

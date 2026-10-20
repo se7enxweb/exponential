@@ -46,7 +46,7 @@ ValidateMIMEType=enabled
 > elements and attributes known to be safe are stored, without script, event  
 > attributes, foreignObject or external references. Every alias of an SVG is  
 > the sanitized file itself; it is never scaled. Serve the files with the  
-> headers in doc/en/us/bc/6.0/svg-images.md. Remove the line to refuse SVG.  
+> headers in doc/eng-us/bc/6.0/svg-images.md. Remove the line to refuse SVG.  
 
 Default: a list of 8: `image/jpeg`, `image/png`, `image/gif`, `image/webp`, `image/avif`, `image/tiff`, `image/bmp`, `image/svg+xml`.
 

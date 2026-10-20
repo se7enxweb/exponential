@@ -41,7 +41,7 @@ HiddenTabs[]
 
 > List of additional tab identifiers  
 > AdditionalTabs\[\]=customtab  
-> The audit trail of a node (doc/en/us/bc/6.0/audit.md, "Placement"), only with audit/read  
+> The audit trail of a node (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/read  
 
 Default: a list of 3: `roles`, `policies`, `audit`.
 

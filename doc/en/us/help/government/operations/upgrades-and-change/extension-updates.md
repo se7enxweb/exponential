@@ -39,7 +39,7 @@ php extension/ezupdate/bin/php/ezupdate.php --help
 ```
 
 Read each extension's changelog between your version and the new one
-([Extension changelogs](../../../../../../changelogs/extensions/README.md)).
+([Extension changelogs](../../../../../changelogs/extensions/README.md)).
 
 ## Update under change control
 

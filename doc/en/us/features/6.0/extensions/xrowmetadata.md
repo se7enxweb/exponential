@@ -79,6 +79,6 @@ Since 1.3.6 and 1.3.7 the meta data carries `og_image`, width, height, alt and t
 - [bcgooglesitemaps](bcgooglesitemaps.md): plain sitemaps
 - [robots.txt](../robots-txt.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
-- [Chronicle](../../../history/extensions/xrowmetadata.md) and [release notes](../../../../../changelogs/extensions/xrowmetadata.md)
+- [Chronicle](../../../history/extensions/xrowmetadata.md) and [release notes](../../../../changelogs/extensions/xrowmetadata.md)
 - [Change ledger](../../../history/ledger/xrowmetadata.md)
 - Months: [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

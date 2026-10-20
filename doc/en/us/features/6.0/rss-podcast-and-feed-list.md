@@ -104,5 +104,5 @@ Check: `grep -n "AvailableVersionList\|OPMLMaxOutlines" settings/site.ini` and `
 
 - [OPML exports](../../bc/6.0/opml.md), [RSS import cleanup](../../bc/6.0/cleanuprss.md), [syndication specification](../../specifications/6.0/syndication.md)
 - [Cronjobs console](cronjobs-console.md) (the import cleanup part), [paging, sorting and page sizes](admin-list-paging.md) (the RSS list is paged)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Chronicle: September 2026, first half, 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)

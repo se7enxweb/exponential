@@ -98,5 +98,5 @@ socket.emit('chat/message', { text: 'hello' }, (res) => console.log('saved', res
 
 - [Velocity web server](velocity-web-server.md), [Velocity scheduler](velocity-scheduler.md), [control panel and dashboard](velocity-control-panel.md), [discovery, federation and deploy](velocity-discovery-federation-and-deploy.md)
 - [Velocity worker pool and compatibility layer](../../specifications/6.0/velocity-worker-pool.md)
-- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [July 2026](../../history/velocity/2026-07.md) (long-lived processes, socket.io), [August 2026](../../history/velocity/2026-08.md) (socket.io in all browsers, Server-Sent Events)

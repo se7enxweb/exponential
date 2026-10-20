@@ -30,7 +30,7 @@ Never edit `settings/i18n.ini` itself: an update replaces it. Put the settings y
 > FallbackLanguages\[esl-MX\]=esl-ES makes the chain esl-AR, esl-MX, esl-ES, tried in  
 > that order for each translation root. eng-GB and untranslated mean the source  
 > texts and end a chain. ./console exp:i18n fallbacks shows every chain, and  
-> ./console exp:i18n check finds cycles and missing targets (doc/en/us/languages.md).  
+> ./console exp:i18n check finds cycles and missing targets (doc/eng-us/languages.md).  
 >
 > FallbackLanguages\[\] always decides first. Then the classes of FallbackRules\[\]  
 > (implementing expI18nFallbackRuleInterface, for extensions), then, when enabled,  

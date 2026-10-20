@@ -25,9 +25,9 @@ is where each kind of record lives and what it is good for.
 
 | Record | Where | What it gives you |
 |---|---|---|
-| Changelog of one version | `doc/changelogs/6.0/<version>.md`, for example [6.0.14](../../../../changelogs/6.0/6.0.14.md) | The release date, the tag, "In short", "Upgrading", and the changes grouped as Added, Updated, Removed, Renamed, each with its commit |
-| The development line | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) | "Not released yet"; what the line contains on the date the page names |
-| Release overview | [doc/en/us/release-overview](../../release-overview) | One entry per version since 2002, with tag, date, release URL and changelog URL; for 6.0.x it also gives the GitHub "Release date" where it differs |
+| Changelog of one version | `doc/changelogs/6.0/<version>.md`, for example [6.0.14](../../../changelogs/6.0/6.0.14.md) | The release date, the tag, "In short", "Upgrading", and the changes grouped as Added, Updated, Removed, Renamed, each with its commit |
+| The development line | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) | "Not released yet"; what the line contains on the date the page names |
+| Release overview | [doc/eng-us/release-overview](../../release-overview) | One entry per version since 2002, with tag, date, release URL and changelog URL; for 6.0.x it also gives the GitHub "Release date" where it differs |
 | GitHub Releases | [github.com/se7enxweb/exponential/releases](https://github.com/se7enxweb/exponential/releases) | The published release with its notes, one per tag |
 | Older lines | Folders such as `doc/changelogs/4.7/` and `doc/changelogs/5.2/` in the repository | Text changelogs of the eZ Publish years, kept as history |
 
@@ -37,14 +37,14 @@ history that tell the same period as a story.
 ## Extensions, Velocity and the platform packages
 
 Every repository that ships next to Exponential has its own release notes, collected in one index:
-[Release notes of the extensions, themes, the web server and the platform packages](../../../../changelogs/extensions/README.md).
+[Release notes of the extensions, themes, the web server and the platform packages](../../../changelogs/extensions/README.md).
 
 | Group | Example | Note |
 |---|---|---|
-| Extensions and themes | [eztags](../../../../changelogs/extensions/eztags.md), [cjw_newsletter](../../../../changelogs/extensions/cjw_newsletter.md) | Each lists its tagged releases newest first |
+| Extensions and themes | [eztags](../../../changelogs/extensions/eztags.md), [cjw_newsletter](../../../changelogs/extensions/cjw_newsletter.md) | Each lists its tagged releases newest first |
 | Two extensions keep notes in their own repository | expai (Exponential Intelligence) and expqueue | The index links their `doc/changelog` folders |
-| The web server | [exponential-velocity](../../../../changelogs/extensions/exponential-velocity.md) | From v0.0.4.43 on, the full notes are on [GitHub Releases](https://github.com/se7enxweb/exponential-velocity/releases) |
-| Platform packages | [exponential-platform-nexus](../../../../changelogs/extensions/exponential-platform-nexus.md), [exponential-platform-dxp](../../../../changelogs/extensions/exponential-platform-dxp.md) | Only the se7enxweb team's changes; upstream history is told elsewhere |
+| The web server | [exponential-velocity](../../../changelogs/extensions/exponential-velocity.md) | From v0.0.4.43 on, the full notes are on [GitHub Releases](https://github.com/se7enxweb/exponential-velocity/releases) |
+| Platform packages | [exponential-platform-nexus](../../../changelogs/extensions/exponential-platform-nexus.md), [exponential-platform-dxp](../../../changelogs/extensions/exponential-platform-dxp.md) | Only the se7enxweb team's changes; upstream history is told elsewhere |
 
 More on these: [Covering an extension release](covering-an-extension-release.md),
 [Covering Velocity releases](covering-velocity-releases.md),
@@ -79,7 +79,7 @@ It happens. Two real examples from the repository:
   "Release date" 20 April 2026 ([release overview](../../release-overview)). Say which one you mean
   ([Verifying dates](verifying-dates.md)).
 - On 18 October 2026 the index of extension release notes named 4.1.15 as the latest cjw_newsletter release, while
-  the [cjw_newsletter page](../../../../changelogs/extensions/cjw_newsletter.md) itself already listed 4.1.16. The page of
+  the [cjw_newsletter page](../../../changelogs/extensions/cjw_newsletter.md) itself already listed 4.1.16. The page of
   the package and its tags are the more specific source.
 
 When in doubt, the Git tags decide, because they are the release ([Verifying a release yourself](verifying-a-release-yourself.md)).

@@ -126,5 +126,5 @@ the same statements run on both engines; the test runs also found missing
 - [SQLite database support](../../features/6.0/sqlite-database.md), [SQLite for Exponential Platform](../../features/6.0/platform-sqlite-install.md)
 - [Platform SQLite installer](platform-sqlite-installer.md), [Database drivers and installers](database-drivers-2026-09.md)
 - [SQLite transactions](../../bc/6.0/sqlite-transactions.md), [MongoDB kernel support](../../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md) (the other non-MySQL engine), [SQL query cache](../../bc/6.0/sql-query-cache.md) (query results on every engine)
-- Changelogs: [6.0.1](../../../../changelogs/6.0/6.0.1.md), [6.0.13](../../../../changelogs/6.0/6.0.13.md), [6.0.14](../../../../changelogs/6.0/6.0.14.md), [6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md), [6.0.13](../../../changelogs/6.0/6.0.13.md), [6.0.14](../../../changelogs/6.0/6.0.14.md), [6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronicles: [January 2024, first half](../../history/2024/2024-01a.md), [January 2024, second half](../../history/2024/2024-01b.md), [April 2026](../../history/2026/2026-04.md), [June 2026, second half](../../history/2026/2026-06b.md)

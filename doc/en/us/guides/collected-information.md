@@ -83,4 +83,4 @@ carries the form token.
   `infocollector/exp_style.tpl`.
 - CSV cells: `kernel/classes/subitems/expsubitemscsvexport.php` (`cell()`, `writeLine()`).
 - Settings: `admininterface.ini [PaginationSettings] ItemsPerPageList_infocollector_overview[]`.
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

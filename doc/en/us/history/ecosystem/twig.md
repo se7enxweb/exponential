@@ -77,7 +77,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 ## Related pages
 
 - [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [Release changelog](../../../../changelogs/extensions/twig.md)
+- [Release changelog](../../../changelogs/extensions/twig.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

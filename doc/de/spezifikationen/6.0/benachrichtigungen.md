@@ -4,7 +4,7 @@ Die Referenz dafür, wie Benachrichtigungen entstehen und verarbeitet werden: di
 veröffentlichten Element bis zur Mail, die Handler und ihre Regeln, der Digest, die Serviceklasse mit ihrer Sperre, ihrem
 Laufprotokoll und ihrem Audit-Ereignis, die Modulansichten, die Templates, die Richtlinien und das Audit. Lesen Sie sie,
 wenn Sie das System ändern, einen Handler schreiben oder eine genaue Antwort brauchen.
-Für einen ersten Rundgang beginnen Sie mit [der Anleitung für Benutzer](../../../en/us/features/6.0/notifications.md) oder
+Für einen ersten Rundgang beginnen Sie mit [der Anleitung für Benutzer](../../../eng-us/features/6.0/notifications.md) oder
 [der Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md); Einstellungen stehen in [der INI-Referenz](benachrichtigungen-ini.md),
 Befehle in [der Befehlsreferenz](benachrichtigungen-cli.md) und Erweiterungen in [der Anleitung für Entwickler](../../anleitungen/benachrichtigungen-entwickler.md).
 
@@ -90,7 +90,7 @@ deren Ereignis verarbeitet ist (sie können nur nach einem Fehlschlag dort sein)
 Elemente bei Erfolg (`retried`) und gibt diejenigen auf (`dropped`), deren Ereignis älter als `RetryHours` ist oder deren
 Adresse sich nicht anschreiben lässt. Die Digest-Elemente werden vom nächsten Zeitereignis erneut versucht, weil sie noch
 fällig sind. `process()` gibt neben seinen anderen Zahlen `send_failed`, `dropped`, `retried` und `notes` zurück. Siehe
-[die Upgrade-Hinweise](../../../en/us/bc/6.0/notification-ui-and-commands.md#mail-the-transport-refuses-is-kept-and-tried-again).
+[die Upgrade-Hinweise](../../../eng-us/bc/6.0/notification-ui-and-commands.md#mail-the-transport-refuses-is-kept-and-tried-again).
 
 ## Zeitfenster des Digests
 
@@ -182,7 +182,7 @@ admin4 und admin4l haben die überarbeiteten Seiten; `design/admin` und `design/
 
 ## Verwandte Seiten
 
-- [Anleitung für Benutzer](../../../en/us/features/6.0/notifications.md), [Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md), [Anleitung für Entwickler](../../anleitungen/benachrichtigungen-entwickler.md)
+- [Anleitung für Benutzer](../../../eng-us/features/6.0/notifications.md), [Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md), [Anleitung für Entwickler](../../anleitungen/benachrichtigungen-entwickler.md)
 - [INI-Referenz](benachrichtigungen-ini.md), [Befehlsreferenz](benachrichtigungen-cli.md)
-- [Upgrade-Hinweise](../../../en/us/bc/6.0/notification-ui-and-commands.md)
+- [Upgrade-Hinweise](../../../eng-us/bc/6.0/notification-ui-and-commands.md)
 - [Modell der Audit-Ereignisse](audit-ereignismodell.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](ausfuehrbare-befehle-cronjobs-ansichten.md)

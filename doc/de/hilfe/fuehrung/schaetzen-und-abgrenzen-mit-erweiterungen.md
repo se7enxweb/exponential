@@ -35,15 +35,15 @@ für die Abgrenzung zählen:
 | Fakt | Folge für den Plan | Quelle |
 |---|---|---|
 | Eine Erweiterung tut nichts, bis sie eingeschaltet ist (`ActiveExtensions[]`) | Viele Erweiterungen liegen bereits auf der Festplatte; eine einzuschalten ist Konfiguration, keine Entwicklung | [Erweiterungen, Abschnitt 1](../../anleitungen/extensions.md) |
-| `composer.json` verlangt 66 Pakete `se7enxweb/*`, sodass jede Installation sie mitbringt; viele sind inaktiv, bis sie eingeschaltet werden | Prüfen Sie die Inventur, bevor Sie planen, etwas zu bauen | [Wer ist 7x?](../wer-ist-7x.md#das-ökosystem-der-erweiterungen), [Die Standardauswahl an Erweiterungen](../../../en/us/features/6.0/default-extension-distribution.md) |
-| Die Reihenfolge von `ActiveExtensions[]` ist die Rangfolge für Einstellungen und Templates | Wenn mehrere Erweiterungen dasselbe ändern, muss über die Reihenfolge entschieden werden | [Ladereihenfolge](../../../en/us/features/6.0/extension-loading-order.md) |
+| `composer.json` verlangt 66 Pakete `se7enxweb/*`, sodass jede Installation sie mitbringt; viele sind inaktiv, bis sie eingeschaltet werden | Prüfen Sie die Inventur, bevor Sie planen, etwas zu bauen | [Wer ist 7x?](../wer-ist-7x.md#das-ökosystem-der-erweiterungen), [Die Standardauswahl an Erweiterungen](../../../eng-us/features/6.0/default-extension-distribution.md) |
+| Die Reihenfolge von `ActiveExtensions[]` ist die Rangfolge für Einstellungen und Templates | Wenn mehrere Erweiterungen dasselbe ändern, muss über die Reihenfolge entschieden werden | [Ladereihenfolge](../../../eng-us/features/6.0/extension-loading-order.md) |
 | Jede Erweiterung hat ihr eigenes Repository, eigene Releases und einen eigenen Changelog | Planen Sie Updates pro Erweiterung, nicht nur pro Kernel-Release | [Wer ist 7x?](../wer-ist-7x.md#das-ökosystem-der-erweiterungen) |
-| Jede ausgelieferte Erweiterung hat eine Seite, die sagt, wofür sie gedacht ist, wie sie eingerichtet wird und welche Einstellungen sie hat | Lesen Sie die Seite, bevor Sie schätzen | [Erweiterungen, Themes und Pakete](../../../en/us/features/6.0/extensions/README.md) |
+| Jede ausgelieferte Erweiterung hat eine Seite, die sagt, wofür sie gedacht ist, wie sie eingerichtet wird und welche Einstellungen sie hat | Lesen Sie die Seite, bevor Sie schätzen | [Erweiterungen, Themes und Pakete](../../../eng-us/features/6.0/extensions/README.md) |
 
 ## Die Inventur: was mit Exponential ausgeliefert wird
 
 Der Erweiterungskatalog gruppiert die Erweiterungen, die eine eigene Seite haben
-([Erweiterungen, Themes und Pakete](../../../en/us/features/6.0/extensions/README.md)). Markieren Sie mit dieser Tabelle für jede
+([Erweiterungen, Themes und Pakete](../../../eng-us/features/6.0/extensions/README.md)). Markieren Sie mit dieser Tabelle für jede
 Anforderung, ob eine Erweiterung sie abdeckt.
 
 | Bereich | Erweiterungen mit eigener Seite | Was sie abdecken |
@@ -66,7 +66,7 @@ Erweiterungen, und bauen Sie erst dann.
 > `ezflow` (Seiten, Zonen und Blöcke) als auch Exponential Layouts. Unter MongoDB „ist `eztags` nicht nutzbar“, und die
 > Planung von `ezflow` ist ungetestet ([Grenzen von MongoDB](../datenbankunterstuetzung.md#grenzen-von-mongodb)). Unter einer
 > erzwungenen Content Security Policy tun Menüpunkte von Erweiterungen mit Inline-Skripten nichts, bis sie umgebaut
-> sind ([Content Security Policy](../../../en/us/features/6.0/content-security-policy.md)). Jeder dieser Punkte ist eine Frage
+> sind ([Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md)). Jeder dieser Punkte ist eine Frage
 > der Abgrenzung.
 
 ## Herausfinden, was auf Ihrer Installation vorhanden ist
@@ -74,11 +74,11 @@ Erweiterungen, und bauen Sie erst dann.
 - **In der Administration**: **Setup > Extensions** (`/setup/extensions`) listet jede Erweiterung auf der Festplatte
   auf, die aktiven zuerst, mit Beschreibung, Lizenz, Projektseite und Abhängigkeiten; **Details** ergänzt Autor, Designs
   und Downloads ([Die Seite Extensions](../../anleitungen/extensions-seite.md),
-  [Erweiterungsliste](../../../en/us/features/6.0/extension-list-and-downloads.md)).
+  [Erweiterungsliste](../../../eng-us/features/6.0/extension-list-and-downloads.md)).
 - **In einem Terminal**: `./console exp:ini list site.ini/ExtensionSettings --allow-root-user` zeigt die aktiven in
   ihrer Ladereihenfolge ([Erweiterungen, Abschnitt 1](../../anleitungen/extensions.md)).
 - **In `composer.json`**: `grep -n '"se7enxweb/' composer.json` listet `suggest` und `require` auf
-  ([Die Standardauswahl an Erweiterungen](../../../en/us/features/6.0/default-extension-distribution.md)).
+  ([Die Standardauswahl an Erweiterungen](../../../eng-us/features/6.0/default-extension-distribution.md)).
 - **Über Ihre Festplatte hinaus**: die Composer-Pakete `se7enxweb/<name>` auf Packagist; der Anbieter se7enxweb hat dort
   219 Pakete ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#das-ökosystem-der-erweiterungen)).
 
@@ -141,7 +141,7 @@ Zeile gesondert schätzen“.
 
 - Wer betreibt die Site nach dem Start, und wer spielt Updates ein?
 - Wie lange müssen Logs und das Audit-Protokoll aufbewahrt werden? (Die ausgelieferte Aufbewahrung des Audit-Protokolls
-  beträgt für die Hauptkanäle 90 Tage live und 730 Tage im Archiv: [Audit-Protokoll](../../../en/us/features/6.0/audit-trail.md).)
+  beträgt für die Hauptkanäle 90 Tage live und 730 Tage im Archiv: [Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md).)
 - Gibt es einen Supportvertrag, und mit wem?
 
 ## Eine eigene Erweiterung bauen
@@ -152,12 +152,12 @@ können:
 - Eine kleinste funktionierende Erweiterung von Hand, und generierte: **Setup > RAD** (`/setup/rad`) listet die
   Erweiterungspunkte auf, bietet Assistenten an, die eine funktionierende Erweiterung schreiben, und „listet jede Datei
   auf, die er unter `extension/<name>` schreiben würde, bevor er auch nur eine davon schreibt“
-  ([RAD-Werkzeuge](../../../en/us/features/6.0/rad-tools.md), [Erweiterungen, Abschnitt 6](../../anleitungen/extensions.md)).
+  ([RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md), [Erweiterungen, Abschnitt 6](../../anleitungen/extensions.md)).
 - Eigene Einstellungen, Inhalte und Cronjobs ([Erweiterungen, Abschnitt 6.4](../../anleitungen/extensions.md)).
 - Die Veröffentlichung mit einer Versionsnummer in `ezinfo.php` und `extension.xml` und einem Tag, der nie verschoben
   wird ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
 - Templates der Administration folgen den Gestaltungsregeln: kein `<style>`-Block und kein `style=""`-Attribut
-  (`CONTRIBUTING.md`, [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md)).
+  (`CONTRIBUTING.md`, [Die Administration gestalten](../../../eng-us/bc/6.0/admin4-styling.md)).
 
 Posten, die Sie für jede eigene Erweiterung aufnehmen sollten:
 
@@ -167,7 +167,7 @@ Posten, die Sie für jede eigene Erweiterung aufnehmen sollten:
 - [ ] Übersetzungstexte
 - [ ] Tests
 - [ ] Release- und Update-Routine
-- [ ] Dokumentation für Redakteure und Administratoren (sie kann in der Hilfe stehen: [Das Hilfesystem](../../../en/us/features/6.0/help-system.md), „Help from extensions“)
+- [ ] Dokumentation für Redakteure und Administratoren (sie kann in der Hilfe stehen: [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md), „Help from extensions“)
 
 ## Das Arbeitsblatt zur Abgrenzung
 
@@ -225,8 +225,8 @@ Fügen Sie unter der Tabelle drei zusammenfassende Zeilen hinzu:
 ## Verwandte Seiten
 
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../anleitungen/extensions.md)
-- [Erweiterungen, Themes und Pakete](../../../en/us/features/6.0/extensions/README.md)
-- [Die Standardauswahl an Erweiterungen](../../../en/us/features/6.0/default-extension-distribution.md)
+- [Erweiterungen, Themes und Pakete](../../../eng-us/features/6.0/extensions/README.md)
+- [Die Standardauswahl an Erweiterungen](../../../eng-us/features/6.0/default-extension-distribution.md)
 - [Ein Exponential-Projekt planen](ein-exponential-projekt-planen.md)
 - [Risikomanagement für Exponential-Projekte](risikomanagement.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

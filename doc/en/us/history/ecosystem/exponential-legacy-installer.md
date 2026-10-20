@@ -52,7 +52,7 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 ## Related pages
 
 - [Legacy bridge](../../features/6.0/legacy-bridge.md)
-- [Release changelog](../../../../changelogs/extensions/exponential-legacy-installer.md)
+- [Release changelog](../../../changelogs/extensions/exponential-legacy-installer.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

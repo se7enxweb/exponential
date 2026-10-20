@@ -19,7 +19,7 @@ Never edit `settings/audit.ini` itself: an update replaces it. Put the settings 
 
 ## Sources
 
-> Optional sources of the audit console (doc/en/us/bc/6.0/audit.md, "An extension's source in the  
+> Optional sources of the audit console (doc/eng-us/bc/6.0/audit.md, "An extension's source in the  
 > console"): an extension that records events of its own tells the console how to show them,  
 > with a class that implements expAuditSource (best: extends expAuditSourceBase). The dashboard  
 > shows its panel, the console, recent, charts, alerts and export views its links, the charts  

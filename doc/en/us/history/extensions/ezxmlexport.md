@@ -2,7 +2,7 @@
 
 XML export received only package metadata and funding information between December 2023 and March 2026. See the [feature page](../../features/6.0/extensions/ezxmlexport.md).
 
-This page lists **every one of the 4 changes** of the repository `ezxmlexport` between 2023-12-25 and 2026-03-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezxmlexport.md); what each release contains is in the [release notes](../../../../changelogs/extensions/ezxmlexport.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezxmlexport.md).
+This page lists **every one of the 4 changes** of the repository `ezxmlexport` between 2023-12-25 and 2026-03-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezxmlexport.md); what each release contains is in the [release notes](../../../changelogs/extensions/ezxmlexport.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezxmlexport.md).
 
 | Kind | Changes |
 |---|---|
@@ -33,6 +33,6 @@ The month across all extensions: [March 2026](months/2026-03.md). [Ledger of thi
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/ezxmlexport.md)
-- [Release notes](../../../../changelogs/extensions/ezxmlexport.md)
+- [Release notes](../../../changelogs/extensions/ezxmlexport.md)
 - [Change ledger](../ledger/ezxmlexport.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

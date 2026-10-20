@@ -64,7 +64,7 @@ See [Subitems "More actions" menu](../../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_ME
 - [ezprestapi](ezprestapi.md) and [REST API v1 and v2](../../../guides/rest-api-v1-and-v2.md)
 - [Copy selected sub-items](../subitems-copy-selected.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
-- [Chronicle](../../../history/extensions/nxc_powercontent.md) and [release notes](../../../../../changelogs/extensions/nxc_powercontent.md)
+- [Chronicle](../../../history/extensions/nxc_powercontent.md) and [release notes](../../../../changelogs/extensions/nxc_powercontent.md)
 - [Change ledger](../../../history/ledger/nxc_powercontent.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-10](../../../history/extensions/months/2024-10.md), [2025-12](../../../history/extensions/months/2025-12.md), [2026-06](../../../history/extensions/months/2026-06.md), [2026-07](../../../history/extensions/months/2026-07.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

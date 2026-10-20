@@ -36,16 +36,16 @@ the Nexus lines from [Exponential Platform Nexus: a finished site in minutes](..
 
 ## Latest tagged releases
 
-From the [release notes index](../../../../changelogs/extensions/README.md#platform-packages) and each package's page, as of
+From the [release notes index](../../../changelogs/extensions/README.md#platform-packages) and each package's page, as of
 18 October 2026:
 
 | Package | Latest release | Date | Notes |
 |---|---|---|---|
-| exponential-platform | v3.2.9 | 2025-09-28 | [release notes](../../../../changelogs/extensions/exponential-platform.md) |
-| exponential-platform-legacy | v2.5.0.3 | 2026-04-21 | [release notes](../../../../changelogs/extensions/exponential-platform-legacy.md) |
-| exponential-platform-nexus | 1.0.0.6 | 2026-04-21 | [release notes](../../../../changelogs/extensions/exponential-platform-nexus.md) |
-| exponential-platform-nexus-starter | 1.0.0.0 | 2026-04-26 | [release notes](../../../../changelogs/extensions/exponential-platform-nexus-starter.md) |
-| exponential-platform-dxp | v0.0.0.2 | 2026-03-21 | [release notes](../../../../changelogs/extensions/exponential-platform-dxp.md) |
+| exponential-platform | v3.2.9 | 2025-09-28 | [release notes](../../../changelogs/extensions/exponential-platform.md) |
+| exponential-platform-legacy | v2.5.0.3 | 2026-04-21 | [release notes](../../../changelogs/extensions/exponential-platform-legacy.md) |
+| exponential-platform-nexus | 1.0.0.6 | 2026-04-21 | [release notes](../../../changelogs/extensions/exponential-platform-nexus.md) |
+| exponential-platform-nexus-starter | 1.0.0.0 | 2026-04-26 | [release notes](../../../changelogs/extensions/exponential-platform-nexus-starter.md) |
+| exponential-platform-dxp | v0.0.0.2 | 2026-03-21 | [release notes](../../../changelogs/extensions/exponential-platform-dxp.md) |
 
 Some tags carry a `v`, some do not (`1.0.0.6`); print the number without it in running text
 ([How version numbers work](how-version-numbers-work.md)). Check the tags again before you publish
@@ -54,7 +54,7 @@ Some tags carry a `v`, some do not (`1.0.0.6`); print the number without it in r
 ## Where the notes live
 
 - The platform release notes list "Releases made by the se7enxweb team"; "Upstream history carried by the fork is
-  not repeated here" (for example the [Nexus release notes](../../../../changelogs/extensions/exponential-platform-nexus.md)).
+  not repeated here" (for example the [Nexus release notes](../../../changelogs/extensions/exponential-platform-nexus.md)).
   The upstream story is told on the repository pages of the [platform ecosystem](../../history/ecosystem.md).
 - How the platform repositories relate to Exponential: [The platform ecosystem](../../history/ecosystem.md).
 - How to start a project: [Nexus starter](../../features/6.0/platform-nexus-starter.md),

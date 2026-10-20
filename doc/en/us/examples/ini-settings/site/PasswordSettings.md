@@ -23,7 +23,7 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 > content/edit, bin/php/resetuserpassword.php), besides the length  
 > (\[UserSettings\] MinPasswordLength), and what happens after a change.  
 > Every rule is off by default: a site keeps the rules it had.  
-> Guide: doc/en/us/features/6.0/modern-password-change.md  
+> Guide: doc/eng-us/features/6.0/modern-password-change.md  
 >
 > At least one lowercase letter (any script, not only a-z)  
 

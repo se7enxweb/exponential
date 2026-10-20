@@ -289,7 +289,7 @@ A class whose objects are rows of one database table: it describes the table in 
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expApiKey` | class extends eZPersistentObject | `kernel/classes/apikey/expapikey.php:31` | A personal API key (publishing key) of a user: one row of expapikey (doc/en/us/guides/api-keys.md). | – |
+| `expApiKey` | class extends eZPersistentObject | `kernel/classes/apikey/expapikey.php:31` | A personal API key (publishing key) of a user: one row of expapikey (doc/eng-us/guides/api-keys.md). | – |
 
 ### kernel/classes/datatypes (16)
 

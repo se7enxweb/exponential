@@ -132,7 +132,7 @@ extends this extension's provider and controller. See the
 - [Remote services (expservices)](../remote-services-expservices.md)
 - [Personal API keys](../../../guides/api-keys.md): REST requests with a key of the user
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
-- [Chronicle](../../../history/extensions/ezprestapi.md) and [release notes](../../../../../changelogs/extensions/ezprestapi.md)
+- [Chronicle](../../../history/extensions/ezprestapi.md) and [release notes](../../../../changelogs/extensions/ezprestapi.md)
 - [Change ledger](../../../history/ledger/ezprestapi.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-10](../../../history/extensions/months/2024-10.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

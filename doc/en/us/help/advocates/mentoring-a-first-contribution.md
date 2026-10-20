@@ -71,7 +71,7 @@ Tell them early that a code contribution to the kernel is merged only once they 
 Licensing Agreement that 7x and the Exponential Foundation require, and explain plainly what it means: **by signing
 and submitting, they assign the copyright in the contribution to 7x, which becomes its owner, and give up control over it.** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying them, and
 they cannot withdraw it or set conditions on it
-([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Their own extensions are
+([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)). Their own extensions are
 not affected.
 
 ## The pull request
@@ -90,7 +90,7 @@ review rounds: 7x reviews a commit or pull request in many more rounds than usua
 until the change is simple to accept. While the pull request is open, they squash it and rebase it onto `main` as the
 reviews ask (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` to their pull request
 branch only); after the merge, `main` is never rewritten
-([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
+([Code reviews](../../../../CONTRIBUTING.md#code-reviews)).
 
 ## After it is merged
 

@@ -2,7 +2,7 @@
 
 Diese Anleitung richtet sich an die Person, die eine Site auf einen Server bringt: einen Betreiber oder einen Entwickler, der seinen eigenen Server betreibt. Sie führt eine frisch installierte Exponential-Site auf einen Server, den Besucher über HTTPS erreichen. Danach zeigt sie, wie Sie eine Codeänderung sicher ausliefern und die Site schnell halten. Lesen Sie sie von oben nach unten. Jeder Befehl ist in der Installation vorhanden; wo ein Ergebnis gezeigt wird, ist es das, was der Befehl ausgibt.
 
-Sie benötigen einen Linux-Server, Shell-Zugang im Installationsverzeichnis (dem Ordner, der `index.php` und `console` enthält) und eine Site, die bereits läuft. Wenn Sie noch keine Site haben, führen Sie zuerst `./console exp:install` aus ([Erste Schritte](erste-schritte.md), [Installation mit einem Befehl](../../en/us/features/6.0/install-in-one-command.md)).
+Sie benötigen einen Linux-Server, Shell-Zugang im Installationsverzeichnis (dem Ordner, der `index.php` und `console` enthält) und eine Site, die bereits läuft. Wenn Sie noch keine Site haben, führen Sie zuerst `./console exp:install` aus ([Erste Schritte](erste-schritte.md), [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md)).
 
 Die Befehle verwenden `./console`, die Kurzform für `bin/php/console`. Die Beispiele fügen `--allow-root-user` an, weil sie als root ausgeführt werden; lassen Sie es weg, wenn Sie als Benutzer der Site arbeiten.
 
@@ -16,7 +16,7 @@ Exponential läuft hinter einer von drei Konfigurationen. Wählen Sie vorerst ei
 | Exponential Velocity (die Engine `qbix`) | Sie die schnellste Engine, persistente Worker, einen eingebauten Antwort-Cache und keinen zu konfigurierenden Webserver wünschen | 2 Minuten |
 | FrankenPHP | Sie eine einzige geprüfte Binärdatei mit TLS und HTTP/2 und kein PHP auf der Maschine pflegen möchten | 5 Minuten |
 
-Velocity ist die empfohlene Engine für jede Phase. Die drei können nebeneinander auf verschiedenen Ports laufen, sodass das Ausprobieren der einen die anderen nie stilllegt ([Engines im Vergleich](../../en/us/bc/6.0/velocity-engines.md)).
+Velocity ist die empfohlene Engine für jede Phase. Die drei können nebeneinander auf verschiedenen Ports laufen, sodass das Ausprobieren der einen die anderen nie stilllegt ([Engines im Vergleich](../../eng-us/bc/6.0/velocity-engines.md)).
 
 ## 2. Prüfen Sie die Maschine, bevor Sie beginnen
 
@@ -133,9 +133,9 @@ Ports unter 1024 erfordern root; die übliche Konfiguration ist Velocity auf eig
 ./console exp:velocity config list ServerSettings --allow-root-user
 ```
 
-`layout` zeigt den Konfigurationsbaum im Stil von Apache unter Debian (`/etc/vc` mit `sites-available`, `sites-enabled`, `conf-available` und so weiter). Sites, Snippets und Module werden wie mit `a2ensite` ein- und ausgeschaltet: `./console exp:velocity site enable <name> --allow-root-user` ([Aufbau auf der Festplatte](../../en/us/bc/6.0/velocity-ondisk-layout.md)). Der Server hat außerdem ein Control Panel ([Velocity Control Panel](../../en/us/features/6.0/velocity-control-panel.md)).
+`layout` zeigt den Konfigurationsbaum im Stil von Apache unter Debian (`/etc/vc` mit `sites-available`, `sites-enabled`, `conf-available` und so weiter). Sites, Snippets und Module werden wie mit `a2ensite` ein- und ausgeschaltet: `./console exp:velocity site enable <name> --allow-root-user` ([Aufbau auf der Festplatte](../../eng-us/bc/6.0/velocity-ondisk-layout.md)). Der Server hat außerdem ein Control Panel ([Velocity Control Panel](../../eng-us/features/6.0/velocity-control-panel.md)).
 
-Vertiefung: [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md), [persistente Worker](../../en/us/features/6.0/velocity-persistent-worker-server.md), [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md), [Engine-Einstellungen](../spezifikationen/6.0/velocity-engine-einstellungen.md).
+Vertiefung: [Velocity-Webserver](../../eng-us/features/6.0/velocity-web-server.md), [persistente Worker](../../eng-us/features/6.0/velocity-persistent-worker-server.md), [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md), [Engine-Einstellungen](../spezifikationen/6.0/velocity-engine-einstellungen.md).
 
 ## 5. Option C: FrankenPHP
 
@@ -154,7 +154,7 @@ Standardmäßig liefert er einfaches HTTP auf Port 8089 und HTTPS auf 8444 aus, 
 ./console exp:velocity install --engine=frankenphp --check --allow-root-user    # re-hash the installed binary
 ```
 
-PHP läuft im klassischen Modus (sauberer Zustand pro Anfrage, wie unter PHP-FPM). Die Engine hat noch keinen Antwort-Cache; wenn Sie auf einen angewiesen sind, verwenden Sie Velocity. Zwei Dinge machen bei einer Erstinstallation Ärger: Das eingebettete PHP hat keine `php.ini` der Maschine, setzen Sie also den Datenbank-Socket unter `[PHPSettings] IniOptions[]`, wenn Ihre Datenbank über einen Socket erreicht wird, und eine neu veröffentlichte Release kann die festgelegte Prüfsumme veralten lassen. Die vollständige, getestete Schritt-für-Schritt-Anleitung mit beiden Korrekturen ist [FrankenPHP als Web-Engine von Exponential](../../en/us/bc/6.0/frankenphp.md).
+PHP läuft im klassischen Modus (sauberer Zustand pro Anfrage, wie unter PHP-FPM). Die Engine hat noch keinen Antwort-Cache; wenn Sie auf einen angewiesen sind, verwenden Sie Velocity. Zwei Dinge machen bei einer Erstinstallation Ärger: Das eingebettete PHP hat keine `php.ini` der Maschine, setzen Sie also den Datenbank-Socket unter `[PHPSettings] IniOptions[]`, wenn Ihre Datenbank über einen Socket erreicht wird, und eine neu veröffentlichte Release kann die festgelegte Prüfsumme veralten lassen. Die vollständige, getestete Schritt-für-Schritt-Anleitung mit beiden Korrekturen ist [FrankenPHP als Web-Engine von Exponential](../../eng-us/bc/6.0/frankenphp.md).
 
 Um alle drei Engines nebeneinander zu betreiben, geben Sie jeder ihren eigenen Port und verwenden Sie `--engine=<name>` oder `--all` bei den Steuerbefehlen.
 
@@ -176,7 +176,7 @@ Für Velocity mit einem Zertifikat, das Sie bereits haben (eine PEM-Datei mit Ze
 curl -skI https://127.0.0.1:8080/ | head -1
 ```
 
-Erwarten Sie `HTTP/2 200` (oder eine Weiterleitung). Der Velocity-Server kann außerdem selbst ein selbstsigniertes Zertifikat erzeugen, Let's-Encrypt-Zertifikate beziehen und erneuern und ein erneuertes Zertifikat ohne Neustart einwechseln: [Velocity HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md).
+Erwarten Sie `HTTP/2 200` (oder eine Weiterleitung). Der Velocity-Server kann außerdem selbst ein selbstsigniertes Zertifikat erzeugen, Let's-Encrypt-Zertifikate beziehen und erneuern und ein erneuertes Zertifikat ohne Neustart einwechseln: [Velocity HTTPS und Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md).
 
 Strict-Transport-Security wird bei HTTPS-Antworten mit `[HTTPSSettings] HSTSMaxAge` gesendet (ausgeliefert 300 Sekunden). Erhöhen Sie den Wert erst dann auf ein Jahr (`31536000`), wenn jeder Name der Site dauerhaft über HTTPS ausgeliefert wird: Ein Browser merkt sich den Wert auch dann, wenn Sie ihn später senken ([HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md)).
 
@@ -203,7 +203,7 @@ Der Probelauf gibt die vierzehn Schritte aus, jeder mit `DRY` markiert:
 [14/14] DRY   warm-up requests: curl 2 URLs in the background
 ```
 
-Ein echter Lauf gibt für jeden Schritt PASS, FAIL oder SKIP und die Dauer aus und hält beim ersten Fehler mit dem Exit-Status 1 an. Die Reihenfolge ist wichtig: Die Caches mit fertigen Seiten werden zuletzt geleert, nachdem PHP-FPM und Velocity den neuen Code ausführen, sodass eine vom alten Code gerenderte Seite nie wieder in den Cache gelangt. PHP-FPM wird nur dann neu geladen, wenn sein OPcache Dateien nicht selbst neu validiert: Ein Neuladen hält jeden Pool dieser PHP-Version an, bis seine längste Anfrage endet, daher wartet der Schritt stattdessen auf OPcache (`[DeploySettings] PhpFpmReload`). Der letzte Schritt ruft `[DeploySettings] WarmUpURL[]` im Hintergrund ab, damit der erste Besucher die Caches bereits aufgebaut vorfindet. Optionen: `--no-fpm` (nur Velocity), `--fpm-reload` (trotzdem neu laden: php.ini oder Pool geändert, Dateien umbenannt), `--no-velocity` (nur Apache), `--no-autoload`, `--rebuild-phar`, `--packer` (auch gepackte Skripte und Stylesheets leeren, wenn sich eine `ezjscServer_*`-Funktion geändert hat). Einzelheiten und jeder Schritt: [Eine PHP-Änderung bereitstellen](../../en/us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
+Ein echter Lauf gibt für jeden Schritt PASS, FAIL oder SKIP und die Dauer aus und hält beim ersten Fehler mit dem Exit-Status 1 an. Die Reihenfolge ist wichtig: Die Caches mit fertigen Seiten werden zuletzt geleert, nachdem PHP-FPM und Velocity den neuen Code ausführen, sodass eine vom alten Code gerenderte Seite nie wieder in den Cache gelangt. PHP-FPM wird nur dann neu geladen, wenn sein OPcache Dateien nicht selbst neu validiert: Ein Neuladen hält jeden Pool dieser PHP-Version an, bis seine längste Anfrage endet, daher wartet der Schritt stattdessen auf OPcache (`[DeploySettings] PhpFpmReload`). Der letzte Schritt ruft `[DeploySettings] WarmUpURL[]` im Hintergrund ab, damit der erste Besucher die Caches bereits aufgebaut vorfindet. Optionen: `--no-fpm` (nur Velocity), `--fpm-reload` (trotzdem neu laden: php.ini oder Pool geändert, Dateien umbenannt), `--no-velocity` (nur Apache), `--no-autoload`, `--rebuild-phar`, `--packer` (auch gepackte Skripte und Stylesheets leeren, wenn sich eine `ezjscServer_*`-Funktion geändert hat). Einzelheiten und jeder Schritt: [Eine PHP-Änderung bereitstellen](../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
 
 Änderungen an einem Template oder einem Stylesheet erfordern weniger: Leeren Sie die Caches ohne Neustart.
 
@@ -224,12 +224,12 @@ Arbeiten Sie diese Liste von oben nach unten ab; jeder Punkt ist ein Schalter od
 
 Er gibt eine Zeile pro Ebene aus, zum Beispiel `httpcache  the HTTP cache is on: ... entries`, `querycache  the SQL query cache is on`, `velocity  response cache ...: N files` und `php  OPcache not enabled for this server`, wenn der Opcode-Cache für die Kommandozeile ausgeschaltet ist (normal; entscheidend ist er für den Webprozess).
 
-1. **Opcode-Cache.** Lassen Sie unter PHP-FPM `opcache.enable=1` in der PHP-Konfiguration des Pools. Velocity übergibt dem Serverprozess eigene Optionen für den Opcode-Cache; die ausgelieferten Werte stehen in `[PHPSettings]` von `settings/velocity.ini`. Gemessene Wirkung und wie Sie ein Profil erstellen: [Velocity und der Opcode-Cache](../../en/us/features/6.0/velocity-opcode-cache-and-profile.md).
-2. **Antwort-Cache (Velocity).** `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` Sekunden. Eine daraus ausgelieferte Seite erreicht PHP nie. Leeren Sie ihn nach einer Template-Änderung mit `./console exp:velocity cache clear --allow-root-user`. Siehe [Antwort-Cache von Velocity](../../en/us/features/6.0/velocity-response-cache.md).
-3. **HTTP-Cache.** Der rollenbewusste Seiten-Cache für jede Engine: `./console exp:cache httpcache status --allow-root-user` ([HTTP-Cache](../../en/us/bc/6.0/httpcache.md)).
-4. **SQL-Abfrage-Cache.** Standardmäßig eingeschaltet; `./console exp:cache querycache status --allow-root-user` ([SQL-Abfrage-Cache](../../en/us/bc/6.0/sql-query-cache.md)).
-5. **Statische Dateien.** Velocity liefert sie mit einem langen `StaticMaxAge` aus und kann sie vorab komprimieren (`[ServerSettings] StaticMaxAge`, `PrecompressStatic`) ([statische Dateien und Bilder](../../en/us/features/6.0/velocity-static-files-and-images.md)).
-6. **Statischer Cache.** Ganze Seiten, als Dateien geschrieben, die Apache ausliefert; im Installer ausgeschaltet ausgeliefert. `exp:cache static status` sagt, ob er eingeschaltet ist ([Generator für den statischen Cache](../../en/us/features/6.0/static-cache-generator.md), [Standardwerte](../../en/us/bc/6.0/static-cache-defaults.md)).
+1. **Opcode-Cache.** Lassen Sie unter PHP-FPM `opcache.enable=1` in der PHP-Konfiguration des Pools. Velocity übergibt dem Serverprozess eigene Optionen für den Opcode-Cache; die ausgelieferten Werte stehen in `[PHPSettings]` von `settings/velocity.ini`. Gemessene Wirkung und wie Sie ein Profil erstellen: [Velocity und der Opcode-Cache](../../eng-us/features/6.0/velocity-opcode-cache-and-profile.md).
+2. **Antwort-Cache (Velocity).** `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` Sekunden. Eine daraus ausgelieferte Seite erreicht PHP nie. Leeren Sie ihn nach einer Template-Änderung mit `./console exp:velocity cache clear --allow-root-user`. Siehe [Antwort-Cache von Velocity](../../eng-us/features/6.0/velocity-response-cache.md).
+3. **HTTP-Cache.** Der rollenbewusste Seiten-Cache für jede Engine: `./console exp:cache httpcache status --allow-root-user` ([HTTP-Cache](../../eng-us/bc/6.0/httpcache.md)).
+4. **SQL-Abfrage-Cache.** Standardmäßig eingeschaltet; `./console exp:cache querycache status --allow-root-user` ([SQL-Abfrage-Cache](../../eng-us/bc/6.0/sql-query-cache.md)).
+5. **Statische Dateien.** Velocity liefert sie mit einem langen `StaticMaxAge` aus und kann sie vorab komprimieren (`[ServerSettings] StaticMaxAge`, `PrecompressStatic`) ([statische Dateien und Bilder](../../eng-us/features/6.0/velocity-static-files-and-images.md)).
+6. **Statischer Cache.** Ganze Seiten, als Dateien geschrieben, die Apache ausliefert; im Installer ausgeschaltet ausgeliefert. `exp:cache static status` sagt, ob er eingeschaltet ist ([Generator für den statischen Cache](../../eng-us/features/6.0/static-cache-generator.md), [Standardwerte](../../eng-us/bc/6.0/static-cache-defaults.md)).
 7. **Worker.** `[ServerSettings] Workers` (ausgeliefert 4) ist die Anzahl der Velocity-Prozesse; erhöhen Sie sie mit der Anzahl der CPU-Kerne und messen Sie nach jeder Änderung erneut.
 
 Messen Sie mit derselben Anfrage vorher und nachher; ein einzelner Seitenaufruf beweist nichts:
@@ -272,8 +272,8 @@ Alle stehen in `settings/velocity.ini` (ausgelieferte Standardwerte). `exp:veloc
 
 ## Verwandte Seiten
 
-- Funktionen: [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md), [Velocity HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md), [Installation mit einem Befehl](../../en/us/features/6.0/install-in-one-command.md).
+- Funktionen: [Velocity-Webserver](../../eng-us/features/6.0/velocity-web-server.md), [Velocity HTTPS und Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md), [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md).
 - Spezifikationen: [Engine-Einstellungen von Velocity](../spezifikationen/6.0/velocity-engine-einstellungen.md), [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md), [HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md).
 - Das Ergebnis messen: [Benchmarks für Exponential](benchmarking.md) (Apache gegen Velocity, eine Bereitstellung auf Regressionen geprüft).
-- Upgrade-Hinweise: [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [FrankenPHP](../../en/us/bc/6.0/frankenphp.md), [Upgrade-Hinweise zur Velocity-Engine](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md), [Cache-Konsole](../../en/us/bc/6.0/cache-console.md).
-- Geschichte: [Velocity-Chronik](../../en/us/history/velocity/2026-09a.md), [Oktober 2026](../../en/us/history/2026/2026-10.md).
+- Upgrade-Hinweise: [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md), [FrankenPHP](../../eng-us/bc/6.0/frankenphp.md), [Upgrade-Hinweise zur Velocity-Engine](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md), [Cache-Konsole](../../eng-us/bc/6.0/cache-console.md).
+- Geschichte: [Velocity-Chronik](../../eng-us/history/velocity/2026-09a.md), [Oktober 2026](../../eng-us/history/2026/2026-10.md).

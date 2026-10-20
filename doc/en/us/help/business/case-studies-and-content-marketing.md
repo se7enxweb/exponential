@@ -153,7 +153,7 @@ Write only from the facts sheet. Rules:
 
 | Check | Who | How |
 |---|---|---|
-| Every product statement is true for the version used | Developer or administrator | Compare with the feature page and the [changelogs](../../../../changelogs/README.md) |
+| Every product statement is true for the version used | Developer or administrator | Compare with the feature page and the [changelogs](../../../changelogs/README.md) |
 | Every number is on the facts sheet with a source | Writer | Line by line |
 | No personal data beyond what was agreed | Writer and sales | Names, photos, e-mail addresses removed unless approved |
 | No security details | Administrator | No host names, versions of server software, internal addresses or screenshots of settings |
@@ -271,7 +271,7 @@ Good topics for an Exponential content program are the ones the documentation ca
 - "How we publish in <n> languages from one installation" (multilingual, [Languages in Exponential](../../languages.md));
 - "Our editorial approval, step by step" ([Workflows](../../guides/workflows.md));
 - "Building pages without a developer" ([The layouts editor](../layouts-editor.md));
-- "What changed in Exponential <version>" (from the [changelogs](../../../../changelogs/README.md));
+- "What changed in Exponential <version>" (from the [changelogs](../../../changelogs/README.md));
 - "Why we keep our site in Git" ([Develop with Git](../develop-with-git.md));
 - "How the help inside the product works" ([The help system](../../features/6.0/help-system.md)).
 

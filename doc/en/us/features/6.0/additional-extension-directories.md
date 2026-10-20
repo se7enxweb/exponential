@@ -89,5 +89,5 @@ The complete reference, with the load order of settings and the site extension p
 - [Per-site settings inside extensions](multi-site-ini-overrides.md), [INI override directories and placements](../../specifications/6.0/ini-override-placements.md)
 - [Icon themes in extensions](icon-themes-in-extensions.md), [extension metadata](../../specifications/6.0/extension-metadata.md)
 - [Behaviour changes of the legacy extensions (September and October 2026)](../../bc/6.0/extensions-behaviour-changes.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)
 - History: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md), [January 2026](../../history/2026/2026-01.md), [October 2024](../../history/2024/2024-10.md), [September 2024](../../history/2024/2024-09.md), [January 2024, second half](../../history/2024/2024-01b.md)

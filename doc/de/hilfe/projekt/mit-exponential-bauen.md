@@ -41,7 +41,7 @@ Upgrade aus neuem Code, einer Datenbank-Update-Datei für Ihre Datenbank-Engine 
 ### Langfristig upgradefähig
 
 Jedes Release ist mit einem Tag versehen, und jede Änderung ist im [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md)
-und in den Hinweisen zur Abwärtskompatibilität unter `doc/en/us/bc/` festgehalten. Weil die Lizenz die GNU GPL
+und in den Hinweisen zur Abwärtskompatibilität unter `doc/eng-us/bc/` festgehalten. Weil die Lizenz die GNU GPL
 Version 2 oder später ist, können Sie forken, selbst hosten und nach Ihrem eigenen Zeitplan upgraden; kein Anbieter
 kann Sie an sich binden.
 

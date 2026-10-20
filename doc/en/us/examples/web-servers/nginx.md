@@ -32,7 +32,7 @@ redirect and the security headers. Compare it with `.htaccess_root` after every 
 ```nginx
 # Exponential 6: nginx with PHP-FPM, HTTPS and HTTP/2
 #
-# Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
+# Free documentation: GFDL 1.3 or later, see doc/eng-us/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
 #
 # Derived, not shipped by the kernel: a translation of .htaccess_root (this
 # release) into nginx directives, rule for rule. Compare it with

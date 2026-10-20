@@ -139,12 +139,12 @@ geben oder sie zu veröffentlichen, ist Verbreitung, mit allem, was daraus folgt
 Die Website bittet Sie, zuerst ein Issue im Tracker dieses Projekts zu eröffnen und, falls der Maintainer nicht
 antwortet, es im [Issue-Tracker von Exponential](https://github.com/se7enxweb/exponential/issues) zu melden. Bevor
 Sie Code aus einer solchen Erweiterung in Ihren eigenen übernehmen, lesen Sie
-[Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../en/us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md).
+[Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md).
 
 ### Welche Lizenz hat die Dokumentation?
 
 Diese Hilfe und die Dokumentation in `doc/` stehen unter der GNU Free Documentation License 1.3 oder später
-([Die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md), [Freie Dokumentation](../freie-dokumentation.md)). Die
+([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md), [Freie Dokumentation](../freie-dokumentation.md)). Die
 Lizenz-FAQ der Website sagt, ihre eigenen Inhalte stünden unter Creative Commons Attribution-ShareAlike 2.0, während
 die Fußzeile von exponential.earth „All rights reserved“ lautet; solange beides nicht übereinstimmt, verlinken Sie auf
 die Website, statt sie zu kopieren.
@@ -157,7 +157,7 @@ eigenen Fall fragen Sie einen Anwalt: Das Projekt leistet keine Rechtsberatung.
 ## Verwandte Seiten
 
 - [Erweiterungen zurückgeben](../erweiterungen-zurueckgeben.md)
-- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../en/us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)
+- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)
 - [Exponential: Häufige Fragen](faq.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt
   und verbessert werden.

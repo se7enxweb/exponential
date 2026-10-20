@@ -59,7 +59,7 @@ Whatever the final syllabus, these parts of the documentation cover what each pr
 | Certification | Prepare with |
 |---|---|
 | Developer | [Develop with Git](../develop-with-git.md), [Extensions](../../guides/extensions.md), [Database support](../database-support.md), [Security hardening](../security-hardening.md) |
-| Design | [The layouts editor](../layouts-editor.md), [Languages](../languages.md), the administration styling rules in `doc/en/us/bc/6.0/admin4-styling.md` |
+| Design | [The layouts editor](../layouts-editor.md), [Languages](../languages.md), the administration styling rules in `doc/eng-us/bc/6.0/admin4-styling.md` |
 | Solution (WCMS) | [Getting started](../getting-started.md), [Editing content](../editing-content.md), [Publishing and versions](../publishing-and-versions.md), [Searching](../searching.md) |
 | Sales | [Sales and marketing: start here](../business/sales-and-marketing-start-here.md), [Licensing explained for buyers](../business/licensing-for-buyers.md) |
 

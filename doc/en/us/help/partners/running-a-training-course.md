@@ -43,11 +43,11 @@ from it. Keep audiences separate: editors, administrators and developers need di
 
 | Topic | Source |
 |---|---|
-| Requirements and installation methods | `doc/en/us/install/02-requirements.md` to `07-console-install.md` |
-| Serving the site, engines | `doc/en/us/install/08-serving-the-site.md` |
+| Requirements and installation methods | `doc/eng-us/install/02-requirements.md` to `07-console-install.md` |
+| Serving the site, engines | `doc/eng-us/install/08-serving-the-site.md` |
 | Security hardening | [Security hardening](../security-hardening.md) |
 | Passwords and accounts | [Change the admin password](../change-the-admin-password.md) |
-| Upgrading | `doc/en/us/install/11-upgrading.md` |
+| Upgrading | `doc/eng-us/install/11-upgrading.md` |
 | When something goes wrong | [When something goes wrong](../when-something-goes-wrong.md) |
 
 ### Developers, two days

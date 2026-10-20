@@ -35,7 +35,7 @@ figures are documented with their conditions, and those conditions belong in you
 ## Releases and version numbers
 
 Velocity versions have four positions and the last one keeps counting: "`0.0.4.9` is followed by `0.0.4.10`, never
-`0.0.5.0`" ([Velocity release notes](../../../../changelogs/extensions/exponential-velocity.md)). On 18 October 2026 the
+`0.0.5.0`" ([Velocity release notes](../../../changelogs/extensions/exponential-velocity.md)). On 18 October 2026 the
 latest release in the release notes was `v0.0.4.50` of 12 October 2026; GitHub showed `v0.0.4.53` as the newest tag on
 19 October 2026, and the kernel's `composer.json` suggests `~0.0.4.52`, which accepts every later 0.0.4.x (the README and
 Getting the code still name 0.0.4.50; [Getting the code](../../install/03-getting-the-code.md#34-the-optional-velocity-package)). Check the tags
@@ -52,7 +52,7 @@ these are identifiers and stay as they are. The product is called Velocity" ([Ve
 
 | What | Where |
 |---|---|
-| Releases up to v0.0.4.42, in full | [Velocity release notes](../../../../changelogs/extensions/exponential-velocity.md) |
+| Releases up to v0.0.4.42, in full | [Velocity release notes](../../../changelogs/extensions/exponential-velocity.md) |
 | Releases from v0.0.4.43 on | A summary table on the same page, full notes on [GitHub Releases](https://github.com/se7enxweb/exponential-velocity/releases) |
 | The story, month by month | [Velocity chronicle](../../history/velocity/README.md) |
 | How to upgrade | [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) |

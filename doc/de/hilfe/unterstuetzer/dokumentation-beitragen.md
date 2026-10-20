@@ -20,7 +20,7 @@ Jede Hilfeseite hat einen Link „Edit on GitHub“. Öffnen Sie ihn, ändern Si
 ## Eine neue Hilfeseite schreiben
 
 Die Hilfe zeigt die von Git verwalteten Dateien in `doc/`. Eine Hilfeseite ist eine Markdown-Datei unter
-`doc/en/us/help/`, die mit Front Matter beginnt:
+`doc/eng-us/help/`, die mit Front Matter beginnt:
 
 ```text
 ---
@@ -51,7 +51,7 @@ Die Werte für Zielgruppe (`audience`) und Kategorie (`category`), die die Hilfe
 ## Lizenz
 
 Die Dokumentation ist freie Dokumentation unter der GNU Free Documentation License 1.3 oder höher
-([Die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md)). Ihr Beitrag wird unter derselben Lizenz veröffentlicht,
+([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)). Ihr Beitrag wird unter derselben Lizenz veröffentlicht,
 damit andere ihn kopieren, übersetzen und verbessern dürfen ([Freie Dokumentation](../freie-dokumentation.md)).
 
 ## Weitere Orte zum Schreiben

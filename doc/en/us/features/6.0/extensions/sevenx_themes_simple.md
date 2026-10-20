@@ -77,6 +77,6 @@ Stylesheets and scripts come from `design.ini` of the extension:
 - [ezwebin](ezwebin.md), [ezwt](ezwt.md), [ezstarrating](ezstarrating.md)
 - [YUI removal](../../../bc/6.0/yui-removal.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/sevenx_themes_simple.md) and [release notes](../../../../../changelogs/extensions/sevenx_themes_simple.md)
+- [Chronicle](../../../history/extensions/sevenx_themes_simple.md) and [release notes](../../../../changelogs/extensions/sevenx_themes_simple.md)
 - [Change ledger](../../../history/ledger/sevenx_themes_simple.md)
 - Months: [2025-01](../../../history/extensions/months/2025-01.md), [2025-08](../../../history/extensions/months/2025-08.md), [2026-04](../../../history/extensions/months/2026-04.md), [2026-07](../../../history/extensions/months/2026-07.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

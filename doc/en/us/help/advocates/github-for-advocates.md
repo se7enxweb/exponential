@@ -61,7 +61,7 @@ How to write a good issue: [Reporting bugs well](reporting-bugs-well.md). Which 
   (`se7enxweb/exponential`), in any form, is merged only once its author's signed Contributor Licensing Agreement
   has been received. By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it: 7x may use, change,
   relicense and distribute it in any way, without asking or paying you, and you cannot withdraw it
-  ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Your own extensions are
+  ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)). Your own extensions are
   not affected.
 - **Commit messages** start with `Added:`, `Updated:`, `Fixed:`, `Removed:` or `Renamed:`
   ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).

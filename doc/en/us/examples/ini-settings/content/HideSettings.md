@@ -59,7 +59,7 @@ HideDateAttributeList[]
 
 > What content/hide and "Hide selected" of the sub items list do before hiding a node that other objects  
 > point at (what the hide takes away entirely, counted as for \[RemoveSettings\] ReverseRelationCheck), or whose  
-> object has further locations. The hidecron cronjob is not affected. doc/en/us/features/6.0/reverse-relation-check.md  
+> object has further locations. The hidecron cronjob is not affected. doc/eng-us/features/6.0/reverse-relation-check.md  
 >  disabled - no check: the hide is done at once, as before  
 >  warn     - (default) a confirmation page lists the references and the further locations first; a hide  
 >             without either is done as before  

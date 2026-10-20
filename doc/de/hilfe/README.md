@@ -61,7 +61,7 @@ ausgegraut oder gar nicht angezeigt.
 | [Tastenkürzel](tastenkuerzel.md) | Nur mit der Tastatur arbeiten, in der Administration und auf diesen Hilfeseiten |
 | [Wenn etwas schiefgeht](wenn-etwas-schiefgeht.md) | Die richtigen Leute über einen Fehler informieren, mit allem, was sie zur Behebung brauchen |
 | [Unterstützung erhalten](projekt/unterstuetzung-erhalten.md) | Kostenlose Hilfe von der Community (Foren, Telegram, Discord, Slack) oder bezahlte Hilfe von 7x bekommen |
-| [Projektdateien](../../en/us/help/project-files.md) | Die README, die Sicherheitsrichtlinie, die Richtlinien für Mitwirkende und die Lizenz des Repositorys in der Hilfe lesen |
+| [Projektdateien](../../eng-us/help/project-files.md) | Die README, die Sicherheitsrichtlinie, die Richtlinien für Mitwirkende und die Lizenz des Repositorys in der Hilfe lesen |
 
 ## Vom Benutzer zum Entwickler
 
@@ -80,7 +80,7 @@ am häufigsten verwenden:
 [Versionen eines Objekts](../anleitungen/inhaltsverlauf.md), [Lesezeichen](../anleitungen/lesezeichen.md),
 [Inhaltssprachen](../anleitungen/inhaltssprachen.md), [Anmeldung in zwei Schritten](../anleitungen/zwei-faktor-anmeldung.md) und
 [Das Inhaltsmodell und das Bearbeiten von Inhalten](../anleitungen/inhaltsmodell-und-bearbeitung.md). Alle Anleitungen stehen im
-[Inhaltsverzeichnis der Anleitungen](../anleitungen/README.md), und jeder Begriff wird im [Glossar](../../en/us/glossary.md)
+[Inhaltsverzeichnis der Anleitungen](../anleitungen/README.md), und jeder Begriff wird im [Glossar](../../eng-us/glossary.md)
 erklärt.
 
 ## Wählen, wo Exponential läuft

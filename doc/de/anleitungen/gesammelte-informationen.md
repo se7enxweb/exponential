@@ -10,7 +10,7 @@ unten wurde am 6. Oktober 2026 am Code dieses Repositorys geprüft; die Dateien 
 genannt.
 
 [Anleitungen](README.md) · Siehe auch: [Das Inhaltsmodell und das Bearbeiten von Inhalten](inhaltsmodell-und-bearbeitung.md) ·
-[Sicherheit und Audit](sicherheit-und-audit.md) · [Blättern in Listen](../../en/us/features/6.0/admin-list-paging.md)
+[Sicherheit und Audit](sicherheit-und-audit.md) · [Blättern in Listen](../../eng-us/features/6.0/admin-list-paging.md)
 
 ## Kurz gesagt
 

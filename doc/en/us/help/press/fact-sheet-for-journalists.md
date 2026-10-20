@@ -67,7 +67,7 @@ PRESS          info@se7enx.com   press kit: exponential.earth/about/press-kit
 | Releases | [The 6.0.x releases](../who-is-7x.md#the-60x-releases); `git tag -l 'v6.0.*' --sort=version:refname` |
 | License | README, "License"; [Open source licenses](../who-is-7x.md#open-source-licenses) |
 | Runs on | [PHP versions](../who-is-the-exponential-foundation.md#php-versions); [Database support](../database-support.md); [Operating system support](../os-support.md) |
-| New in 6.0.15 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| New in 6.0.15 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 | Security | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md); [Security fixes](../who-is-the-exponential-foundation.md#security-fixes) |
 | Languages | [Languages in Exponential](../../languages.md) |
 | Not associated | README, "Exponential Project Notice : 2025.08.12" |

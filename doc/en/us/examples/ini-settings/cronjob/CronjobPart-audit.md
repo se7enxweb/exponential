@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 The block `[CronjobPart-audit]` of `settings/cronjob.ini`, with 1 setting(s).
 
-> The audit on its own: php runcronjobs.php audit (doc/en/us/bc/6.0/audit.md)  
+> The audit on its own: php runcronjobs.php audit (doc/eng-us/bc/6.0/audit.md)  
 
 Never edit `settings/cronjob.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 

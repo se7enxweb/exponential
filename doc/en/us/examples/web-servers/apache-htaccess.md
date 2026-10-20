@@ -10,7 +10,7 @@ type: example
 # Apache .htaccess
 
 The shipped way to serve Exponential with Apache is a `.htaccess` file in the installation root. The file ships as
-`.htaccess_root`; the example below, [`doc/en/us/examples/htaccess`](../htaccess), is the same rules verbatim, with a header
+`.htaccess_root`; the example below, [`doc/eng-us/examples/htaccess`](../htaccess), is the same rules verbatim, with a header
 that explains them and three optional blocks after them. Use it where you cannot (or do not want to) edit the virtual
 host. With access to the virtual host, the [Apache virtual host](apache-virtual-host.md) example puts the same rules in
 server context and saves Apache a file lookup per directory on every request.
@@ -37,7 +37,7 @@ Apache needs `mod_rewrite` (Debian: `a2enmod rewrite`), and the virtual host mus
 `AllowOverride FileInfo` is enough for the rewrite rules. The optional header block needs `FileInfo` too, the optional
 caching block `Indexes`; with neither allowed, Apache answers 500 for every request, and its error log names the line.
 
-To use the optional blocks, copy `doc/en/us/examples/htaccess` instead of `.htaccess_root` and enable what you need. After
+To use the optional blocks, copy `doc/eng-us/examples/htaccess` instead of `.htaccess_root` and enable what you need. After
 every upgrade, compare your `.htaccess` with the new `.htaccess_root` and take over new rules.
 
 ## The file
@@ -67,22 +67,22 @@ them is free documentation (GFDL 1.3 or later), like this page.
 # "Optional" after it is not in .htaccess_root: HTTPS redirect, headers on
 # static files and browser caching, each switched off or guarded until you
 # turn it on. Never delete a rule of the "Rules" section to make something
-# work; find the cause instead (doc/en/us/install/13-security-hardening.md, 13.2).
+# work; find the cause instead (doc/eng-us/install/13-security-hardening.md, 13.2).
 #
 # Needs: mod_rewrite, and AllowOverride All (or at least FileInfo) for the
 # directory. Check with "apachectl configtest", then these requests:
 #   /.git/config, /.env, /kernel/classes/ezini.php  -> 404
 #   /settings/site.ini, /composer.json               -> a page from index.php, never the file
 #
-# Explained rule by rule: doc/en/us/examples/web-servers/apache-htaccess.md
-# The same rules for a virtual host (server context): doc/en/us/examples/ezpublish.conf
+# Explained rule by rule: doc/eng-us/examples/web-servers/apache-htaccess.md
+# The same rules for a virtual host (server context): doc/eng-us/examples/ezpublish.conf
 #
 # License: the first versions of this file came with the software Exponential
 # grew out of, eZ Publish, 1999 - 2014. The rewrite rules are those of
 # .htaccess_root, part of the software (GNU General Public License version 2
 # or later, like the rest of the code). This documented example, its comments
 # and optional sections, is free documentation under the GNU Free
-# Documentation License 1.3 or later (doc/en/us/README-LICENSE.md).
+# Documentation License 1.3 or later (doc/eng-us/README-LICENSE.md).
 
 # ===========================================================================
 # Rules (verbatim .htaccess_root)
@@ -171,7 +171,7 @@ RewriteRule .* index.php
 
 # --- 1. Redirect plain HTTP to HTTPS -----------------------------------------
 # Off by default. Better done in the port 80 virtual host
-# (doc/en/us/examples/ezpublish.conf). If you can only use .htaccess, move these two
+# (doc/eng-us/examples/ezpublish.conf). If you can only use .htaccess, move these two
 # lines directly below "RewriteEngine On" above and remove the "#".
 # Behind a proxy or load balancer that terminates TLS, %{HTTPS} is always
 # "off" here: test X-Forwarded-Proto instead, and only if the proxy always
@@ -192,7 +192,7 @@ RewriteRule .* index.php
     Header setifempty Permissions-Policy "camera=(), microphone=(), payment=(), usb=()"
     # HSTS: only once every name of the site is served over HTTPS for good.
     # Start short (300) and raise it to a year later; a browser remembers it
-    # for the whole period (doc/en/us/install/13-security-hardening.md, 13.9).
+    # for the whole period (doc/eng-us/install/13-security-hardening.md, 13.9).
     # Set it here or in site.ini SecurityHeaders[Strict-Transport-Security],
     # not in both places.
     #Header always set Strict-Transport-Security "max-age=300" "expr=%{HTTPS} == 'on'"

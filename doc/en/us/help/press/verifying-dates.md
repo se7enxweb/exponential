@@ -25,7 +25,7 @@ easy to confuse. This page shows where each kind of date lives and how to check 
 |---|---|
 | A release | Its Git tag; [release overview](../../release-overview) |
 | A change | The commit; the month page in [the history](../../history/README.md) |
-| A feature in 6.0.15 | The dated sections of the [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| A feature in 6.0.15 | The dated sections of the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 | The rename | <https://exponential.earth/about/project> (11 August 2025); [August 2025](../../history/2025/2025-08.md) (12 August 2025) |
 | The Foundation | <https://foundation.exponential.earth/> (19 March 2026) |
 | 7x's stages | [7x in three stages: 2014, 2022, 2023](7x-in-three-stages.md) |

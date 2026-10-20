@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Exponential 6: rebuild a public demo from the current code (SQLite), in demo mode
 #
-# Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md.
+# Free documentation: GFDL 1.3 or later, see doc/eng-us/README-LICENSE.md.
 #
 # The generic shape of the script a public demo runs from cron every few hours
 # (crontab-demo in this folder): build a fresh installation next to the live
@@ -9,11 +9,11 @@
 # check that the password went in as given, give the new site demo mode for
 # its web requests, swap it in, warm it. A failed build is kept for reading and
 # the live site stays untouched. Explained in README.md here and in
-# doc/en/us/help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md.
+# doc/eng-us/help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md.
 #
 # Replace the paths, the URL and the repository; run it as the demo's own
 # system user, never as root. It holds no secret: the demo password is public
-# by design. Guide: doc/en/us/bc/6.0/demo-mode.md.
+# by design. Guide: doc/eng-us/bc/6.0/demo-mode.md.
 
 set -euo pipefail
 
@@ -59,7 +59,7 @@ fi
 # demo mode for the web requests: LiteSpeed (lsphp) and Apache read it from .htaccess
 cat >> .htaccess <<'EOF'
 
-# public demo: demo mode (doc/en/us/bc/6.0/demo-mode.md)
+# public demo: demo mode (doc/eng-us/bc/6.0/demo-mode.md)
 <IfModule mod_env.c>
     SetEnv EXP_DEMO_MODE 1
 </IfModule>

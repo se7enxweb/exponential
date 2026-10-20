@@ -18,12 +18,12 @@ investing in an extension, before planning a business on the program. It uses on
 |---|---|---|
 | The project as a whole | "This project is operated by the Exponential Foundation" | <https://exponential.earth/about/project> |
 | Development, support, adoption, community growth | "7x took over leadership of the project and it's development, support, adoption and community growth in 2023" | README.md |
-| What gets merged | Pull requests are reviewed; every pull request is merged, once its author has squashed and rebased it onto `main` as the reviews ask; after the merge `main` is never rewritten and later fixes come as new pull requests | CONTRIBUTING.md, `doc/en/us/bc/6.0/ci.md` |
+| What gets merged | Pull requests are reviewed; every pull request is merged, once its author has squashed and rebased it onto `main` as the reviews ask; after the merge `main` is never rewritten and later fixes come as new pull requests | CONTRIBUTING.md, `doc/eng-us/bc/6.0/ci.md` |
 | Releases and versions | Maintainers tag releases; "A published tag is never changed" | SECURITY.md |
 | Security fixes | Made on `main` and "published with the next 6.0.x release"; reports privately to security@se7enx.com | SECURITY.md |
 | The partner program | 7x: "7x reserves full rights to change or administer this program" | <https://exponential.earth/partner/program> |
 | The Foundation's funding and direction | The Foundation: its mission covers "Funding, Adoption, Support, Direction, Education, Development, Promotion and Documentation" | <https://foundation.exponential.earth/> |
-| The software license | Fixed: GPL v2 or later for code, GFDL 1.3 or later for documentation | LICENSE, `doc/en/us/README-LICENSE.md` |
+| The software license | Fixed: GPL v2 or later for code, GFDL 1.3 or later for documentation | LICENSE, `doc/eng-us/README-LICENSE.md` |
 
 ## What is not published
 

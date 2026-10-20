@@ -115,7 +115,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - [SQLite installer specification](../../specifications/6.0/platform-sqlite-installer.md)
 - [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [Release changelog](../../../../changelogs/extensions/ezpublish-kernel.md)
+- [Release changelog](../../../changelogs/extensions/ezpublish-kernel.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

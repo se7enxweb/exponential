@@ -255,7 +255,7 @@ built-in server (`php`, for development) and FrankenPHP (`frankenphp`, a product
 optional to install but recommended to use; the site runs without it behind Apache or nginx. Because the workers keep
 the code and the settings in memory, a change to a PHP class or an INI file reaches a Velocity-served site only after
 `exp:velocity restart` (or `exp:velocity deploy`). See [Velocity engines](../bc/6.0/velocity-engines.md) and the
-project [README](../../../../README.md#exponential-velocity--the-fast-option).
+project [README](../../../README.md#exponential-velocity--the-fast-option).
 
 ## 1.3 The three install methods in one paragraph each
 
@@ -361,7 +361,7 @@ meant to be found by searching the page.
 **Versions.** The book describes the 6.0 line as of 6.0.15. The newest published release tag is `v6.0.14`; 6.0.15
 is the `main` branch until its tag is published, even though `lib/version.php` already names it `6.0.15` with the
 state `stable`. Where an earlier 6.0.x behaves differently, the text says so; the full history is in the
-[changelogs](../../../changelogs/6.0/6.0.15.md). [Chapter 3](03-getting-the-code.md#31-versions-tags-and-branches) shows
+[changelogs](../../changelogs/6.0/6.0.15.md). [Chapter 3](03-getting-the-code.md#31-versions-tags-and-branches) shows
 how to see which tags exist.
 
 ## 1.6 Glossary
@@ -401,7 +401,7 @@ documentation.
 In this repository:
 
 - [Installation overview](../INSTALL.md): the whole install on one page.
-- [Project README](../../../../README.md): what Exponential is and how it is served.
+- [Project README](../../../README.md): what Exponential is and how it is served.
 - [Glossary](../glossary.md): every term of the documentation.
 - [Getting started](../guides/getting-started.md): the first hour after an install.
 - [The setup wizard and the editor siteaccess](../features/6.0/setup-wizard-and-editor-siteaccess.md).
@@ -413,7 +413,7 @@ In this repository:
 - [Console](../bc/6.0/console.md).
 - [Velocity engines](../bc/6.0/velocity-engines.md).
 - [Rebranding to Exponential](../features/6.0/rebranding-to-exponential.md).
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md).
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
 - Code: `lib/version.php`, `settings/site.ini` (`[SiteAccessSettings]`, `[ExtensionSettings]`),
   `kernel/setup/steps/ezstep_site_access.php`, `kernel/setup/steps/ezstep_site_details.php`,
   `kernel/setup/steps/ezstep_create_sites.php` (`createEditorSiteAccess()`), `settings/package.ini`.

@@ -203,4 +203,4 @@ StaticErrorPage[dependencies]=design/standard/errors/dependencies.html
 - [Repair from the browser](../../features/6.0/repair-from-the-browser.md)
 - [Behaviour changes of 1 and 2 October 2026](behaviour-changes-2026-10.md)
 - [Velocity engines](velocity-engines.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

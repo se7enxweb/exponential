@@ -121,5 +121,5 @@ The full detail of the options is the script's own help: `bash bin/shell/generat
 ## Related pages
 
 - [Package licenses and Semantic Versioning](package-licenses-and-versions.md), [the product is called Exponential](rebranding-to-exponential.md)
-- [Changelog 6.0.14](../../../../changelogs/6.0/6.0.14.md)
+- [Changelog 6.0.14](../../../changelogs/6.0/6.0.14.md)
 - History: [April 2026](../../history/2026/2026-04.md), [May 2026](../../history/2026/2026-05.md), [June 2026, first half](../../history/2026/2026-06a.md), [June 2026, second half](../../history/2026/2026-06b.md)

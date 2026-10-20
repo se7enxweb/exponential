@@ -61,7 +61,7 @@ notices changed `.ts` files by their time.
 
 A locale can fall back to another for missing texts (for example a regional variant to the main language);
 `./console exp:i18n fallbacks` shows each locale's chain and how much of the kernel and of each extension it shows
-translated (`doc/en/us/languages.md`, "Translation fallbacks").
+translated (`doc/eng-us/languages.md`, "Translation fallbacks").
 
 ## Related pages
 

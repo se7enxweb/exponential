@@ -14,7 +14,7 @@ The block `[UploadSettings]` of `settings/package.ini`, with 4 setting(s).
 > The limits of a package archive uploaded on package/upload, the setup wizard or ezpm import  
 > (eZPackageUploadInspector). An archive is also refused, whatever these say, when an entry points outside the  
 > package ("..", an absolute path), is a link or a device, or its package.xml is not a well formed definition.  
-> Guide: doc/en/us/guides/packages.md  
+> Guide: doc/eng-us/guides/packages.md  
 
 Never edit `settings/package.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 

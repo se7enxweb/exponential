@@ -16,7 +16,7 @@ Diese Seite ist für Redakteure, die ein Objekt schnell finden müssen, und für
 
 Das Feld **Suchen...** in der Kopfzeile der Administration durchsucht alle Inhalte, die Sie lesen dürfen.
 
-![Die Ergebnisse einer Schnellsuche nach running: jedes Objekt mit seinem Platz im Baum und seinem Typ](../../en/us/help/images/search/search-results.webp)
+![Die Ergebnisse einer Schnellsuche nach running: jedes Objekt mit seinem Platz im Baum und seinem Typ](../../eng-us/help/images/search/search-results.webp)
 
 1. Klicken Sie in das Feld, oder drücken Sie irgendwo auf der Seite `/` (nicht, während Sie in einem anderen Feld
    tippen).
@@ -26,13 +26,13 @@ Die Ergebnisseite listet jeden Treffer mit seinem Namen, seinem Pfad im Baum und
 Namen, um das Objekt zu öffnen. Markieren Sie Ergebnisse und klicken Sie auf **Ausgewählte bearbeiten**, um mehrere
 davon in einem Formular zu bearbeiten.
 
-![Die Suchseite mit einem Treffer](../../en/us/help/images/search.webp)
+![Die Suchseite mit einem Treffer](../../eng-us/help/images/search.webp)
 
 ### Die Suche eingrenzen
 
 Die Trichter-Schaltfläche im Suchfeld öffnet den **Suchbereich**:
 
-![Die Suchseite mit der Liste In, die die Suche auf eine Sektion eingrenzt, hervorgehoben](../../en/us/help/images/search/search-section-filter.webp)
+![Die Suchseite mit der Liste In, die die Suche auf eine Sektion eingrenzt, hervorgehoben](../../eng-us/help/images/search/search-section-filter.webp)
 
 - **Sektion**: nur in einer Sektion der Site suchen, etwa *Media* oder *Users*.
 - **Wo**: überall suchen oder nur unterhalb des Orts, den Sie gerade ansehen (**Aktueller Ort**).
@@ -44,7 +44,7 @@ Auf der Ergebnisseite grenzt auch die Liste **In:** die Suche auf eine Sektion e
 
 Die **Erweiterte Suche** (im Suchbereich oder über den Link unter dem Suchformular) bietet weitere Felder:
 
-![Die erweiterte Suche: alle folgenden Wörter, ein genauer Ausdruck, Klasse und Klassenattribut, Sektion und Veröffentlichungszeitraum](../../en/us/help/images/search/advanced-search.webp)
+![Die erweiterte Suche: alle folgenden Wörter, ein genauer Ausdruck, Klasse und Klassenattribut, Sektion und Veröffentlichungszeitraum](../../eng-us/help/images/search/advanced-search.webp)
 
 - **Nach allen folgenden Worten suchen** und **Genau nach einem Ausdruck suchen**;
 - **Klasse**: nur Objekte eines Typs, etwa *Article* oder *Image*; mit **Klassen Attribut** nur ein Feld dieses Typs
@@ -58,7 +58,7 @@ Die **Erweiterte Suche** (im Suchbereich oder über den Link unter dem Suchformu
 Wenn Sie die Nummer oder die Adresse eines Objekts kennen, müssen Sie nicht suchen. Der **Inhaltsfinder** unter dem
 Baum in der linken Spalte nimmt Folgendes entgegen:
 
-![Der Inhaltsfinder in der linken Spalte, der ein Objekt über seine ID, seinen Pfad oder seine Adresse öffnet](../../en/us/help/images/search/content-finder.webp)
+![Der Inhaltsfinder in der linken Spalte, der ein Objekt über seine ID, seinen Pfad oder seine Adresse öffnet](../../eng-us/help/images/search/content-finder.webp)
 
 - die Nummer des **Knotens** (auf der Seite des Objekts als *Knoten* angezeigt),
 - einen Pfad wie `media/images`,
@@ -80,7 +80,7 @@ Besucher durchsuchen die öffentliche Site mit deren eigenem Suchfeld, meist in 
 Titel, Datum, Typ und die ersten Zeilen jedes Treffers, einige pro Seite, mit Links zu den nächsten Seiten. Gefunden
 werden nur veröffentlichte, sichtbare Objekte, die der Besucher lesen darf.
 
-![Die Suche der öffentlichen Site mit den Ergebnissen für healthy](../../en/us/help/images/search/site-search-box.webp)
+![Die Suche der öffentlichen Site mit den Ergebnissen für healthy](../../eng-us/help/images/search/site-search-box.webp)
 
 ## Tipps
 
@@ -96,4 +96,4 @@ Die Hilfe hat eine eigene Suche: Tippen Sie auf dem Dashboard der Hilfe und auf 
 Hilfe (oder drücken Sie `/`), und die passenden Seiten erscheinen schon während der Eingabe. Filter grenzen sie auf
 eine Zielgruppe oder ein Thema ein. Siehe [Tastenkürzel](tastenkuerzel.md#auf-den-hilfeseiten).
 
-![Die Suchergebnisse des Hilfe-Centers für upload, mit einem Auszug jeder Seite](../../en/us/help/images/search/help-search.webp)
+![Die Suchergebnisse des Hilfe-Centers für upload, mit einem Auszug jeder Seite](../../eng-us/help/images/search/help-search.webp)

@@ -14,7 +14,7 @@ Process pending workflow events and advance stalled workflows.
 Entry point `cronjobs/workflow.php`, code in `kernel/private/classes/cronjobs/workflow.php`.
 
 > The code of cronjobs/workflow.php, moved into a class (#207 stage 1). The file cronjobs/workflow.php is one call to it.  
-> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## When it runs
 

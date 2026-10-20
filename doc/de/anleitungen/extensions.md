@@ -14,7 +14,7 @@ sind dieselben Programme wie `php bin/php/<name>.php`.
 |---|---|
 | Eine Extension ist ein Ordner, der nach der Extension benannt ist, zum Beispiel `extension/ezflow`. | `[ExtensionSettings] ExtensionDirectory` in `settings/site.ini` (Voreinstellung `extension`) |
 | Sie bewirkt nichts, bis sie eingeschaltet wird. | `[ExtensionSettings] ActiveExtensions[]` in `settings/site.ini` (für die ganze Installation) oder `ActiveAccessExtensions[]` (für einen Siteaccess) |
-| Die Reihenfolge der Liste ist die Rangfolge: Eine früher geladene Extension setzt sich bei Einstellungen und Design-Templates gegen eine spätere durch. Mit `ExtensionOrdering=enabled` bestimmen zuerst die in `extension.xml` deklarierten Abhängigkeiten die Ladereihenfolge. | [Die Seite „Extensions“](extensions-seite.md), [Ladereihenfolge](../../en/us/features/6.0/extension-loading-order.md) |
+| Die Reihenfolge der Liste ist die Rangfolge: Eine früher geladene Extension setzt sich bei Einstellungen und Design-Templates gegen eine spätere durch. Mit `ExtensionOrdering=enabled` bestimmen zuerst die in `extension.xml` deklarierten Abhängigkeiten die Ladereihenfolge. | [Die Seite „Extensions“](extensions-seite.md), [Ladereihenfolge](../../eng-us/features/6.0/extension-loading-order.md) |
 | Klassen in ihrem Ordner `classes/` werden über ein Autoload-Array gefunden, das Sie neu erzeugen. | `php bin/php/ezpgenerateautoloads.php -e` |
 | Ihre Einstellungen sind `.ini.append.php`-Dateien in `extension/<name>/settings/`. | [Ablageorte für Einstellungs-Overrides](../spezifikationen/6.0/ini-override-platzierungen.md) |
 | Sie beschreibt sich selbst in `ezinfo.php` und `extension.xml`. | [Extension-Metadaten](../spezifikationen/6.0/extension-metadaten.md) |
@@ -48,9 +48,9 @@ Erwartet: eine Zeile je Extension, zum Beispiel
 
 Wo Sie nach Extensions suchen, die noch nicht auf Ihrer Festplatte liegen: die Composer-Pakete `se7enxweb/<name>` auf
 Packagist (zum Beispiel `se7enxweb/ezflow`) und die Projektseiten, die im
-[Extension-Katalog](../../en/us/features/6.0/extensions/README.md) genannt sind, der für jede mitgelieferte Extension eine Seite hat.
+[Extension-Katalog](../../eng-us/features/6.0/extensions/README.md) genannt sind, der für jede mitgelieferte Extension eine Seite hat.
 
-Referenz: [Extension-Liste: sortieren, untersuchen und herunterladen](../../en/us/features/6.0/extension-list-and-downloads.md).
+Referenz: [Extension-Liste: sortieren, untersuchen und herunterladen](../../eng-us/features/6.0/extension-list-and-downloads.md).
 
 ## 3. Eine Extension installieren
 
@@ -75,7 +75,7 @@ Klonen Sie nur dann eine Extension von Hand, wenn `composer.json` sie nicht verl
 Sie Composer den Klon anlegen (`composer config --global 'preferred-install.se7enxweb/*' source`, dann
 `composer require` oder `composer reinstall`): Ein von Hand angelegter Klon anstelle eines Pakets, das Composer als
 Archiv installiert hat, wird beim nächsten Update des Pakets ersetzt, samt Historie und Commits. Siehe
-[Mit Git entwickeln](../../en/us/help/develop-with-git.md).
+[Mit Git entwickeln](../../eng-us/help/develop-with-git.md).
 
 **Aus einem Paket** (`.ezpkg`, zum Beispiel eines, das Sie in Abschnitt 7 heruntergeladen haben):
 
@@ -83,7 +83,7 @@ Archiv installiert hat, wird beim nächsten Update des Pakets ersetzt, samt Hist
 php ezpm.php import /path/to/ezflow.ezpkg
 ```
 
-`php ezpm.php help` listet die Paketbefehle auf; [ezpm: der Paketmanager auf der Kommandozeile](../../en/us/features/6.0/ezpm-package-manager-cli.md)
+`php ezpm.php help` listet die Paketbefehle auf; [ezpm: der Paketmanager auf der Kommandozeile](../../eng-us/features/6.0/ezpm-package-manager-cli.md)
 erklärt jeden davon. Installieren Sie zuerst in eine Kopie der Site: Der Paketinstaller schreibt Inhalte.
 
 Prüfen Sie, ob der Ordner dort liegt, wo der Kernel sucht:
@@ -93,7 +93,7 @@ ls extension/ezflow/ezinfo.php extension/ezflow/extension.xml
 ```
 
 Erwartet: Beide Dateinamen werden ausgegeben. Wenn Sie Ihre eigenen Extensions getrennt von den installierten halten,
-fügen Sie einen zweiten Ordner hinzu, wie in [Extensions in mehr als einem Ordner](../../en/us/features/6.0/additional-extension-directories.md) beschrieben.
+fügen Sie einen zweiten Ordner hinzu, wie in [Extensions in mehr als einem Ordner](../../eng-us/features/6.0/additional-extension-directories.md) beschrieben.
 
 ## 4. Die Extension einschalten
 
@@ -127,7 +127,7 @@ Sie diesen Dienst danach neu, damit seine Worker die Änderung sehen: siehe [Ber
 [Betrieb einer Site](betrieb-einer-website.md).
 
 Viele Extensions brauchen mehr als das Einschalten: eine Datenbanktabelle, eine Inhaltsklasse, einen Cronjob. Lesen
-Sie für diese Schritte die Seite der Extension im [Katalog](../../en/us/features/6.0/extensions/README.md). Denken Sie daran,
+Sie für diese Schritte die Seite der Extension im [Katalog](../../eng-us/features/6.0/extensions/README.md). Denken Sie daran,
 dass eine neue `.tpl`-Datei einen geleerten Template-Override-Cache braucht, was `--clear-all` erledigt.
 
 ## 5. Die Extension konfigurieren
@@ -156,8 +156,8 @@ Sie überschreiben sie an einer Stelle, die Vorrang vor ihnen hat und ein Upgrad
 3. Leeren Sie den INI-Cache, damit die Änderung gelesen wird: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`.
 
 Committen Sie `settings/override/` nie; das Verzeichnis kann Passwörter enthalten. Mehr zum Befehl:
-[Einstellungen über die Kommandozeile ändern](../../en/us/features/6.0/exp-ini-command.md). Einstellungen, die nur gelten, während ein
-Siteaccess läuft, und die in einer Extension mitgeliefert werden: [Site-spezifische Einstellungen in Extensions](../../en/us/features/6.0/multi-site-ini-overrides.md).
+[Einstellungen über die Kommandozeile ändern](../../eng-us/features/6.0/exp-ini-command.md). Einstellungen, die nur gelten, während ein
+Siteaccess läuft, und die in einer Extension mitgeliefert werden: [Site-spezifische Einstellungen in Extensions](../../eng-us/features/6.0/multi-site-ini-overrides.md).
 
 ## 6. Eine eigene Extension bauen
 
@@ -283,14 +283,14 @@ Zwei Dinge sollten Sie wissen, bevor Sie darauf aufbauen:
 - Eine View ohne Eintrag `'functions'` hat keine Zugriffskontrolle: Jeder, der die Site erreicht, kann sie öffnen.
   Bevor sie etwas Privates zeigt, deklarieren Sie eine Funktion und eine Richtlinie: `$FunctionList['read'] = array();`
   in `module.php` und `'functions' => array( 'read' )` an der View; erteilen Sie sie dann unter **Benutzer > Rollen und
-  Richtlinien**. Siehe [Anfrageregeln](../../en/us/features/6.0/request-rules.md) und [Sicherheit und Audit](sicherheit-und-audit.md).
+  Richtlinien**. Siehe [Anfrageregeln](../../eng-us/features/6.0/request-rules.md) und [Sicherheit und Audit](sicherheit-und-audit.md).
 - Eine Seite, die von einem persistenten Worker (Velocity) ausgeliefert wird, braucht Worker, die die neuen Klassen
   sehen: Laden Sie neu, wie in [Bereitstellung](bereitstellung.md) beschrieben.
 
 Neuer Code wird als Klassen geschrieben: Ab 6.0.15 sind die eigenen Befehle, Cronjob-Teile und Views des Produkts
 Klassen, und die einfachen Dateien, die Sie oben geschrieben haben, funktionieren weiterhin. Wie Sie die View als
 Klasse schreiben, lesen Sie in
-[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md#a-module-view).
+[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md#a-module-view).
 
 ### 6.2 Die RAD-Werkzeuge schreiben lassen
 
@@ -323,8 +323,8 @@ Die Assistenten und ihre Adressen:
 | Ein Modul mit Views oder ein Modul über bestehenden Datenbanktabellen | `/setup/moduleextension`, `/setup/modulewizard` |
 | Eine ersetzte Kernel-Klasse (der letzte Ausweg) | `/setup/kerneloverride` |
 
-Referenz: [RAD-Werkzeuge](../../en/us/features/6.0/rad-tools.md), die kuratierten [Erweiterungspunkte](../../en/us/bc/6.0/rad-extension-points.md),
-[RAD-Sicherheit](../../en/us/bc/6.0/rad-security.md).
+Referenz: [RAD-Werkzeuge](../../eng-us/features/6.0/rad-tools.md), die kuratierten [Erweiterungspunkte](../../eng-us/bc/6.0/rad-extension-points.md),
+[RAD-Sicherheit](../../eng-us/bc/6.0/rad-security.md).
 
 ### 6.3 Der Handler-Assistent, Schritt für Schritt
 
@@ -363,15 +363,15 @@ aufgeführt (andernfalls würde sie beim ersten Zugriff eine ganze Anfrage zum A
 | Einen Befehl | `bin/php/<name>.php` | `php extension/<name>/bin/php/<name>.php --help` |
 | Eine Übersetzung | `translations/<locale>/translation.ts` | fügen Sie `TranslationExtensions[]=<name>` in `[RegionalSettings]` hinzu |
 | Eine Datenbanktabelle | `share/db_schema.dba` (die Assistenten schreiben sie auf Wunsch) | installieren Sie sie mit dem Paketinstaller |
-| Mitsprache bei Downloads, beim Bearbeitungszugriff auf Entwürfe, bei Kollaborationseinträgen, Benachrichtigungen oder View-Cache-Schlüsseln | einen Listener für `content/download/access`, `content/edit/access`, `collaboration/item/access`, `content/notification/create` oder `content/view/cachekeys` in `[Event] Listeners[]` (der Assistent für Einstellungs-Extensions schreibt einen mit Beispiel) | siehe [Zugriffs- und View-Cache-Filter](../../en/us/features/6.0/access-and-cache-filters.md) |
-| Mitsprache darüber, ob ein Cronjob-Teil läuft (ein Stoppschalter während einer Release) | einen Listener für `cronjob/part/run` in `[RunnableSettings] Listeners[]` | siehe [Einen Cronjob-Teil auslassen](../../en/us/features/6.0/cronjob-part-filter.md) |
-| Ein Druck- oder PDF-Layout eines Entwurfs in der Versionsvorschau | einen View-Modus in `content.ini [VersionView] ViewModes[]` und sein `node/view/<mode>.tpl` | siehe [Versionsvorschau in anderen View-Modi](../../en/us/features/6.0/version-preview-view-modes.md) |
-| Eine eigene Richtlinien-Beschränkung für `content/read` und die anderen Inhaltsfunktionen | einen Listener für `module/functionlist` und eine Klasse, die `ezpContentLimitationHandler` implementiert, registriert in `settings/site.ini.append.php` (der Assistent für Einstellungs-Extensions schreibt beides, mit dem Ereignis module/functionlist) | siehe [Inhalts-Richtlinienbeschränkungen von Extensions](../../en/us/features/6.0/content-limitation-handlers.md); prüfen Sie einen Benutzer mit `./console exp:access:check` |
+| Mitsprache bei Downloads, beim Bearbeitungszugriff auf Entwürfe, bei Kollaborationseinträgen, Benachrichtigungen oder View-Cache-Schlüsseln | einen Listener für `content/download/access`, `content/edit/access`, `collaboration/item/access`, `content/notification/create` oder `content/view/cachekeys` in `[Event] Listeners[]` (der Assistent für Einstellungs-Extensions schreibt einen mit Beispiel) | siehe [Zugriffs- und View-Cache-Filter](../../eng-us/features/6.0/access-and-cache-filters.md) |
+| Mitsprache darüber, ob ein Cronjob-Teil läuft (ein Stoppschalter während einer Release) | einen Listener für `cronjob/part/run` in `[RunnableSettings] Listeners[]` | siehe [Einen Cronjob-Teil auslassen](../../eng-us/features/6.0/cronjob-part-filter.md) |
+| Ein Druck- oder PDF-Layout eines Entwurfs in der Versionsvorschau | einen View-Modus in `content.ini [VersionView] ViewModes[]` und sein `node/view/<mode>.tpl` | siehe [Versionsvorschau in anderen View-Modi](../../eng-us/features/6.0/version-preview-view-modes.md) |
+| Eine eigene Richtlinien-Beschränkung für `content/read` und die anderen Inhaltsfunktionen | einen Listener für `module/functionlist` und eine Klasse, die `ezpContentLimitationHandler` implementiert, registriert in `settings/site.ini.append.php` (der Assistent für Einstellungs-Extensions schreibt beides, mit dem Ereignis module/functionlist) | siehe [Inhalts-Richtlinienbeschränkungen von Extensions](../../eng-us/features/6.0/content-limitation-handlers.md); prüfen Sie einen Benutzer mit `./console exp:access:check` |
 
 Die klassenbasierten Formen eines Befehls, eines Cronjob-Teils und einer View finden Sie unter
-[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md) und
+[Befehle, Cronjob-Teile und Modul-Views als Klassen](../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md) und
 [deren Spezifikation](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md). Um ein ganzes Kernel-Modul durch ein
-eigenes zu ersetzen, siehe [Eine Extension kann ein Kernel-Modul ersetzen](../../en/us/features/6.0/extension-module-override.md).
+eigenes zu ersetzen, siehe [Eine Extension kann ein Kernel-Modul ersetzen](../../eng-us/features/6.0/extension-module-override.md).
 
 ## 7. Die Extension veröffentlichen
 
@@ -400,7 +400,7 @@ veröffentlichter Tag lässt sich nie korrigieren; prüfen Sie also, bevor Sie p
    Upgrade-Prüfung nicht jede geänderte Datei als modifiziert auflistet. Das Wartungsskript der Installation erledigt
    das für Extensions, die bereits eine solche Datei mitliefern, wenn es mit `--extensions` aufgerufen wird (lesen Sie
    zuerst `bash bin/shell/generatefilelist.sh --help` und verwenden Sie `--dry-run`); die Erklärung steht in
-   [Prüfung der Dateikonsistenz](../../en/us/features/6.0/file-consistency-check.md).
+   [Prüfung der Dateikonsistenz](../../eng-us/features/6.0/file-consistency-check.md).
 4. **Erst committen, dann diesen Commit taggen.** Taggen Sie nie zuerst, um danach die Nummer zu erhöhen: Der Tag
    trüge sonst die alte Nummer.
 
@@ -419,7 +419,7 @@ veröffentlichter Tag lässt sich nie korrigieren; prüfen Sie also, bevor Sie p
 Um eine Extension ohne Repository weiterzugeben, laden Sie sie unter **Setup > Extensions** als Paket herunter: Öffnen
 Sie **Details** in der Zeile und klicken Sie auf `.ezpkg`, `.zip`, `.tar.gz` oder `.tar.bz2`. Der Empfänger installiert
 sie wie in Abschnitt 3. Eine Extension, die einen geheimen Wert oder Schlüsselmaterial enthält, wird nicht gepackt; die
-Seite nennt die Dateien und Einstellungen, und [die Geheimnisprüfung](../../en/us/bc/6.0/extension-package-secret-check.md)
+Seite nennt die Dateien und Einstellungen, und [die Geheimnisprüfung](../../eng-us/bc/6.0/extension-package-secret-check.md)
 erklärt, wie ein Maintainer ein bekanntes Beispiel kennzeichnet.
 
 ## 8. Wenn es nicht funktioniert
@@ -435,12 +435,12 @@ erklärt, wie ein Maintainer ein bekanntes Beispiel kennzeichnet.
 
 ## Siehe auch
 
-- Vertiefung zu jedem Schritt: [Ladereihenfolge der Extensions](../../en/us/features/6.0/extension-loading-order.md), [Extension-Metadaten](../spezifikationen/6.0/extension-metadaten.md),
-  [Extensions in mehr als einem Ordner](../../en/us/features/6.0/additional-extension-directories.md), [RAD-Werkzeuge](../../en/us/features/6.0/rad-tools.md),
-  [Erweiterungspunkte](../../en/us/bc/6.0/rad-extension-points.md), [Die Extension-Oberfläche](../../en/us/bc/6.0/rad-extension-surface.md).
-- Die Extensions, die mit der Distribution ausgeliefert werden, und was jede tut: [Katalog](../../en/us/features/6.0/extensions/README.md),
-  [was eine neue Installation mitbringt](../../en/us/features/6.0/default-extension-distribution.md).
+- Vertiefung zu jedem Schritt: [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md), [Extension-Metadaten](../spezifikationen/6.0/extension-metadaten.md),
+  [Extensions in mehr als einem Ordner](../../eng-us/features/6.0/additional-extension-directories.md), [RAD-Werkzeuge](../../eng-us/features/6.0/rad-tools.md),
+  [Erweiterungspunkte](../../eng-us/bc/6.0/rad-extension-points.md), [Die Extension-Oberfläche](../../eng-us/bc/6.0/rad-extension-surface.md).
+- Die Extensions, die mit der Distribution ausgeliefert werden, und was jede tut: [Katalog](../../eng-us/features/6.0/extensions/README.md),
+  [was eine neue Installation mitbringt](../../eng-us/features/6.0/default-extension-distribution.md).
 - Weitere Anleitungen: [Erste Schritte](erste-schritte.md), [Das Inhaltsmodell und die Bearbeitung](inhaltsmodell-und-bearbeitung.md),
   [Betrieb einer Site](betrieb-einer-website.md), [Bereitstellung](bereitstellung.md), [Sicherheit und Audit](sicherheit-und-audit.md).
-- Wie sich das Thema Extensions entwickelt hat: [Januar 2024](../../en/us/history/2024/2024-01b.md) (Module aus Extensions),
-  [August 2026](../../en/us/history/2026/2026-08.md) (die Extension-Liste), [September 2026, zweite Hälfte](../../en/us/history/2026/2026-09b.md) (Ladereihenfolge, Metadaten).
+- Wie sich das Thema Extensions entwickelt hat: [Januar 2024](../../eng-us/history/2024/2024-01b.md) (Module aus Extensions),
+  [August 2026](../../eng-us/history/2026/2026-08.md) (die Extension-Liste), [September 2026, zweite Hälfte](../../eng-us/history/2026/2026-09b.md) (Ladereihenfolge, Metadaten).

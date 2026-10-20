@@ -24,8 +24,8 @@ manage each one. Planning such a setup is covered in [Several brands for busines
 | The Exponential version and its upgrades | The design and templates (each site its own design) |
 | The database and the content tree (or parts of it) | The part of the content tree a site shows |
 | User accounts, roles and the administration | Languages and addresses (siteaccesses by host or path) |
-| Extensions installed in the installation | Settings, including those carried in a site's own extension (`doc/en/us/features/6.0/multi-site-ini-overrides.md`) |
-| Backups, unless your host separates them | Logs and caches, with a VarDir per site (`doc/en/us/features/6.0/multi-site-log-and-cache-paths.md`) |
+| Extensions installed in the installation | Settings, including those carried in a site's own extension (`doc/eng-us/features/6.0/multi-site-ini-overrides.md`) |
+| Backups, unless your host separates them | Logs and caches, with a VarDir per site (`doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md`) |
 
 Ask your partner to fill in this table for your installation and keep it with your contracts. It answers most of
 the questions a new manager will ask.
@@ -34,7 +34,7 @@ the questions a new manager will ask.
 
 The demonstration installation at <https://alpha.se7enx.com> serves several sites from one content tree: the "Fit &
 Healthy" site on `/site` or `/` and the "Bold Agency" site on `/bold`, with their translations
-(`doc/en/us/features/6.0/multisite-cross-site-links.md`). When a page of one site lists content of another (a tag page, a
+(`doc/eng-us/features/6.0/multisite-cross-site-links.md`). When a page of one site lists content of another (a tag page, a
 search result, a related item), the links have to point into the right site; the `ezurlmultisite` extension does
 that. If you see links of one site that open in another or answer "not found", mention that page to your partner.
 
@@ -48,7 +48,7 @@ Keep the few people who may change all sites, or the shared parts, small and nam
 
 Groups of sites usually have a test copy next to the live installation. The installation name feature puts the
 name of the installation in front of the page title on every installation that is not production, so nobody
-changes the wrong one (`doc/en/us/features/6.0/installation-name-in-pages.md`). Ask your partner to switch it on if your
+changes the wrong one (`doc/eng-us/features/6.0/installation-name-in-pages.md`). Ask your partner to switch it on if your
 tabs look the same.
 
 ## Decisions that keep many sites manageable

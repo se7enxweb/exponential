@@ -134,8 +134,8 @@ On a miss or when disabled, the kernel falls back to the cluster file handler an
 
 - [Cache clear: rename aside](../cache-clear-rename-aside.md)
 - [HTTP caching](../../../bc/6.0/http-caching.md), [SQL query cache](../../../bc/6.0/sql-query-cache.md)
-- [6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md), [July 2026](../../../history/2026/2026-07.md)
-- [Chronicle](../../../history/extensions/sevenx_valkey_cache.md) and [release notes](../../../../../changelogs/extensions/sevenx_valkey_cache.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md), [July 2026](../../../history/2026/2026-07.md)
+- [Chronicle](../../../history/extensions/sevenx_valkey_cache.md) and [release notes](../../../../changelogs/extensions/sevenx_valkey_cache.md)
 - [Change ledger](../../../history/ledger/sevenx_valkey_cache.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)

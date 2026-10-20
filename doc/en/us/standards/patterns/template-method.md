@@ -122,8 +122,8 @@ An abstract class that fixes the steps of an algorithm and leaves some of them t
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expAuditAlertRuleBase` | abstract class | `kernel/classes/audit/alerts/expauditalertrulebase.php:13` | Shared code of the built-in alert rule classes: the record fields a rule groups by, the time of a record, and the de-duplication (doc/en/us/bc/6.0/audit.md… | – |
-| `expAuditFormatBase` | abstract class | `kernel/classes/audit/format/expauditformatbase.php:14` | Shared code of the archive format handlers (doc/en/us/bc/6.0/audit.md, "Rotation, archives and retention"): streaming compression through a PHP stream wrap… | – |
+| `expAuditAlertRuleBase` | abstract class | `kernel/classes/audit/alerts/expauditalertrulebase.php:13` | Shared code of the built-in alert rule classes: the record fields a rule groups by, the time of a record, and the de-duplication (doc/eng-us/bc/6.0/audit.md… | – |
+| `expAuditFormatBase` | abstract class | `kernel/classes/audit/format/expauditformatbase.php:14` | Shared code of the archive format handlers (doc/eng-us/bc/6.0/audit.md, "Rotation, archives and retention"): streaming compression through a PHP stream wrap… | – |
 | `expAuditSinkBase` | abstract class | `kernel/classes/audit/sinks/expauditsinkbase.php:14` | Shared code of the audit sinks: the sink's settings block ([AuditSink_]), which records it wants (Events[] patterns and MinSeverity) and whether it d… | – |
 | `expAuditSourceBase` | abstract class | `kernel/classes/audit/console/expauditsourcebase.php:11` | The base of an audit console source (expAuditSource): every method answers "nothing", so a source implements only what it shows. | – |
 

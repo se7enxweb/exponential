@@ -2,7 +2,7 @@
 
 The git dashboard and backup manager was published in 2024 (documentation, composer) and became a full backup manager in June 2026 (2.0.1). In September 2026 it gained push, remotes, submodules and hardening of backups; on 2 October the Upstream card showed where an installation stands against its branch. See the [feature page](../../features/6.0/extensions/git_manager.md).
 
-This page lists **every one of the 40 changes** of the repository `git_manager` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/git_manager.md); what each release contains is in the [release notes](../../../../changelogs/extensions/git_manager.md); how to use the extension is on its [feature page](../../features/6.0/extensions/git_manager.md).
+This page lists **every one of the 40 changes** of the repository `git_manager` between 2024-01-28 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/git_manager.md); what each release contains is in the [release notes](../../../changelogs/extensions/git_manager.md); how to use the extension is on its [feature page](../../features/6.0/extensions/git_manager.md).
 
 | Kind | Changes |
 |---|---|
@@ -108,6 +108,6 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/git_manager.md)
-- [Release notes](../../../../changelogs/extensions/git_manager.md)
+- [Release notes](../../../changelogs/extensions/git_manager.md)
 - [Change ledger](../ledger/git_manager.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -77,7 +77,7 @@ Builds a complex object or text step by step.
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expHelpExamplesGenerator` | class | `kernel/classes/help/exphelpexamplesgenerator.php:25` | Writes the generated reference examples below doc/en/us/examples/ (doc/en/us/examples/README.md, "How the generated pages are made"): one Markdown page per templ… | – |
+| `expHelpExamplesGenerator` | class | `kernel/classes/help/exphelpexamplesgenerator.php:25` | Writes the generated reference examples below doc/eng-us/examples/ (doc/eng-us/examples/README.md, "How the generated pages are made"): one Markdown page per templ… | – |
 
 ### kernel/classes/pdfexport (1)
 

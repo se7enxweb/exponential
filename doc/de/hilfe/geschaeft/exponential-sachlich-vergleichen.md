@@ -49,7 +49,7 @@ Wahl ist.
 |---|---|---|
 | Lizenz | GNU General Public License, Version 2 oder jede spätere Version. „Die Nutzung von Exponential unter den Bedingungen der GNU GPL ist kostenlos. Die Professional License ist nicht mehr erhältlich.“ | `README.md`, „License“; `LICENSE`; [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen) |
 | Beiträge bleiben frei | „Alle Änderungen am Projekt werden ebenfalls unter derselben Lizenz GPLv2 oder später veröffentlicht“ | `CONTRIBUTING.md` |
-| Lizenz der Dokumentation | GNU Free Documentation License 1.3 oder später | [Die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md), [Freie Dokumentation](../freie-dokumentation.md) |
+| Lizenz der Dokumentation | GNU Free Documentation License 1.3 oder später | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md), [Freie Dokumentation](../freie-dokumentation.md) |
 | Quellcode und Historie | Die vollständige Historie ist erhalten, zurück bis zum ältesten Commit vom 2. September 2002; 27.242 Commits auf `main` am 18. Oktober 2026 | [Wer ist 7x?, Die Jahre von eZ Publish](../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021) |
 | Herkunft | Urheberrechtsvermerk „1998 - 2026 7x & Exponential Foundation“ neben „1999 - 2014 eZ Systems AS“ | `COPYRIGHT.md` |
 | Selbst-Hosting | Läuft auf „fast jedem [Betriebssystem], auf dem PHP 8.0 oder später läuft“, in vier dokumentierten Stufen | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
@@ -58,7 +58,7 @@ Wahl ist.
 | PHP-Versionen | PHP 8.0 bis 8.5; Velocity benötigt 8.1 oder später; PHP 7.4 nur bis 6.0.7 | [Wer ist die Exponential Foundation?, PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Unveränderliche Releases | „Ein veröffentlichter Tag wird nie geändert“: Eine Korrektur kommt mit dem nächsten Release | `SECURITY.md` |
 | Sicherheitsprozess | Vertrauliche Meldung, eine erste Antwort „innerhalb eines Werktags“, Korrekturen auf `main` und im nächsten 6.0.x-Release | `SECURITY.md` |
-| Continuous Integration | Qualitätsprüfungen und PHPUnit bei jedem Push und jedem Pull-Request; PHPUnit unter PHP 8.1 bis 8.5; Datenbanktests mit MySQL 8.0 und PostgreSQL 15; Startprüfung unter PHP 8.0 | [Continuous Integration](../../../en/us/bc/6.0/ci.md) |
+| Continuous Integration | Qualitätsprüfungen und PHPUnit bei jedem Push und jedem Pull-Request; PHPUnit unter PHP 8.1 bis 8.5; Datenbanktests mit MySQL 8.0 und PostgreSQL 15; Startprüfung unter PHP 8.0 | [Continuous Integration](../../../eng-us/bc/6.0/ci.md) |
 | Vertrieb | Composer-Pakete auf Packagist und Git-Repositories auf GitHub unter `se7enxweb` | [Den Code beziehen](../../installation/03-den-code-beschaffen.md), [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | Verantwortung | Ein Unternehmen (7x) und eine gemeinnützige Organisation (die Exponential Foundation) stehen hinter dem Projekt | [Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 
@@ -89,7 +89,7 @@ In einer laufenden Installation kann ein Administrator die Datenbank-Engine unte
 
 > **Tipp**
 > Bieten Sie dem Käufer eine Testinstallation an, über die er selbst verfügt. Ein einziger Befehl installiert eine
-> funktionierende Site auf SQLite, ohne Datenbankserver: `./console exp:install` ([Exponential mit einem Befehl installieren](../../../en/us/features/6.0/install-in-one-command.md)).
+> funktionierende Site auf SQLite, ohne Datenbankserver: `./console exp:install` ([Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)).
 
 ## Keine Herstellerbindung, Punkt für Punkt
 
@@ -134,7 +134,7 @@ ausgefüllt; die anderen Spalten überlassen Sie dem Käufer.
 | Criterion                         | Exponential 6.0.x                                   | Option B | Option C | How verified |
 |-----------------------------------|-----------------------------------------------------|----------|----------|--------------|
 | License of the code               | GPL v2 or later, free of charge                     |          |          | LICENSE      |
-| License of the documentation      | GNU FDL 1.3 or later                                |          |          | doc/en/us/README-LICENSE.md |
+| License of the documentation      | GNU FDL 1.3 or later                                |          |          | doc/eng-us/README-LICENSE.md |
 | Source and full history public    | Yes, since 2002                                     |          |          | git log      |
 | Self-hosting                      | Yes, any OS with PHP 8.0+ (tiers)                   |          |          | os-support   |
 | Databases                         | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |          |          | database-support |
@@ -143,8 +143,8 @@ ausgefüllt; die anderen Spalten überlassen Sie dem Käufer.
 | Published releases immutable      | Yes                                                 |          |          | SECURITY.md  |
 | Security reporting                | Private, first answer within one business day       |          |          | SECURITY.md  |
 | Multisite from one installation   | Yes (siteaccesses)                                  |          |          | README.md    |
-| Content languages                 | 268 locale files; at most 62 per installation       |          |          | doc/en/us/languages.md |
-| Administration translations       | 32, ten complete                                    |          |          | doc/en/us/languages.md |
+| Content languages                 | 268 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
+| Administration translations       | 32, ten complete                                    |          |          | doc/eng-us/languages.md |
 | Visual page builder               | Exponential Layouts                                 |          |          | layouts-editor |
 | Audit trail                       | Tamper-evident, on by default                       |          |          | audit-trail  |
 | Writing assistant                 | Drafts only, region per provider                    |          |          | expai        |
@@ -162,8 +162,8 @@ Sprechen Sie diese Punkte selbst an. Jeder ist dokumentiert.
 | Mehrere Replikate, die sich eine SQLite-Datei teilen | Nicht möglich; mehrere Replikate brauchen einen Datenbankserver, vorrangig PostgreSQL | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
 | Shared Hosting, das lang laufende Prozesse verbietet | Velocity kann dort meist nicht laufen; Apache oder LiteSpeed mit `.htaccess` liefern die Site trotzdem aus | `README.md`, „When a traditional server is still the right answer“ |
 | Strikte Trennung mehrerer Kunden auf einem Server | Betreiben Sie je Site eine eigene Velocity-Instanz unter einem eigenen Systembenutzer | ebenda |
-| Mehr als 62 Inhaltssprachen in einer Installation | Die Grenze liegt bei 62 (30 unter 32-Bit-PHP) | [Sprachen in Exponential](../../../en/us/languages.md#11-the-limit-of-62-content-languages) |
-| Eine vollständig übersetzte Administration in einer Sprache, die heute nicht vollständig ist | Nur zehn Übersetzungen der Administration sind vollständig; die übrigen sind teilweise vorhanden oder gelten nur für Inhalte | [Unterstützungsstufen](../../../en/us/languages.md#2-support-levels) |
+| Mehr als 62 Inhaltssprachen in einer Installation | Die Grenze liegt bei 62 (30 unter 32-Bit-PHP) | [Sprachen in Exponential](../../../eng-us/languages.md#11-the-limit-of-62-content-languages) |
+| Eine vollständig übersetzte Administration in einer Sprache, die heute nicht vollständig ist | Nur zehn Übersetzungen der Administration sind vollständig; die übrigen sind teilweise vorhanden oder gelten nur für Inhalte | [Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels) |
 | Die Anforderung, MariaDB oder Oracle in der CI zu testen | Beide werden unterstützt, keine von beiden läuft in der CI des Projekts | [Testabdeckung](../datenbankunterstuetzung.md#testabdeckung-ci) |
 | Die Forderung nach einer veröffentlichten Support-Richtlinie oder einem SLA-Dokument | Das Projekt veröffentlicht keine einzelne Support-Richtlinie; die Zusagen stehen an den Stellen, die auf der Seite der Foundation aufgeführt sind; Vertragsbedingungen kommen von einem Dienstleister | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
 
@@ -209,12 +209,12 @@ charge (LICENSE, README.md). The complete source code and its history since 2002
 without a license contract, and any supplier may provide services for it.
 
 Content is stored in a standard database chosen by the authority: SQLite 3, PostgreSQL, MongoDB, MariaDB,
-Oracle or MySQL (doc/en/us/help/database-support.md), and is backed up with that database's own tools. Documented
+Oracle or MySQL (doc/eng-us/help/database-support.md), and is backed up with that database's own tools. Documented
 tools move a site from one database engine to another.
 
 Releases are published as Composer packages and Git tags; a published version is never changed afterwards
 (SECURITY.md). The documentation is part of the repository and is free documentation under the GNU Free
-Documentation License 1.3 (doc/en/us/README-LICENSE.md), so it can be handed to a new supplier unchanged.
+Documentation License 1.3 (doc/eng-us/README-LICENSE.md), so it can be handed to a new supplier unchanged.
 ```
 
 Jeder Satz dieser Antwort verweist auf eine Datei, die der Prüfer öffnen kann. Das ist der Maßstab für jeden Vergleich.

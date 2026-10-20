@@ -23,7 +23,7 @@ im Jahr 2021 hinter sich gelassen und überlebt“ (README). Es überlebt, weil 
 - **Die Exponential Foundation**, eine 2026 gegründete gemeinnützige Organisation, betreibt das Projekt und finanziert
   seine Open-Source-Arbeit ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)).
 - **Mitwirkende** schicken Pull-Requests, Übersetzungen und Dokumentation; „Jeder Pull-Request wird gemergt“
-  (`doc/en/us/bc/6.0/ci.md`).
+  (`doc/eng-us/bc/6.0/ci.md`).
 - **Sponsoren** bezahlen die Zeit, die all das kostet.
 
 „Das Exponential-Open-Source-Projekt wird durch Spenden von Zeit und Ressourcen von 7x (und Exponential-Sponsoren) finanziert“
@@ -74,6 +74,6 @@ die das Projekt betreibt). Lesen Sie
 ## Verwandte Seiten
 
 - [Sponsoren: Hier beginnen](../sponsoren/sponsoren-hier-beginnen.md)
-- [Partner: Hier beginnen](../../../en/us/help/partners/partners-start-here.md)
+- [Partner: Hier beginnen](../../../eng-us/help/partners/partners-start-here.md)
 - [Mit Git entwickeln](../mit-git-entwickeln.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

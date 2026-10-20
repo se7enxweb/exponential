@@ -16,7 +16,7 @@ GitHub-Release ist `v3.2.9` (2025-09-28). Ihre `composer.json` setzt die Forks d
 (`se7enxweb/ezplatform-kernel ~1.3.42`, `se7enxweb/ezplatform-admin-ui ~2.3.39`, REST, GraphQL, die Feldtypen RichText, Matrix und
 Query, Solr), dazu Symfony 5 und PHP `^7.3 || ^8.1` bis `^8.4`.
 
-[Übersicht Migration](README.md) · [Checkliste](checkliste.md) · Installationshinweise im Repository des Produkts: `doc/en/us/INSTALL.md`
+[Übersicht Migration](README.md) · [Checkliste](checkliste.md) · Installationshinweise im Repository des Produkts: `doc/eng-us/INSTALL.md`
 
 ## Inhalt
 
@@ -89,4 +89,4 @@ neue im Produktivbetrieb gelaufen ist.
 - [ ] Weiterleitungen für jede Adresse, die sich geändert hat.
 
 Diese Seite ist Teil der Exponential-Dokumentation und freie Dokumentation unter der GNU Free Documentation License
-1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md)).
+1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).

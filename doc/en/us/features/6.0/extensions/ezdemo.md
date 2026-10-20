@@ -48,6 +48,6 @@ markup: options and markup are the same, only the script behind them is jQuery. 
 
 - [ezwebin](ezwebin.md), [ezflow](ezflow.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/ezdemo.md) and [release notes](../../../../../changelogs/extensions/ezdemo.md)
+- [Chronicle](../../../history/extensions/ezdemo.md) and [release notes](../../../../changelogs/extensions/ezdemo.md)
 - [Change ledger](../../../history/ledger/ezdemo.md)
 - Months: [2024-01](../../../history/extensions/months/2024-01.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

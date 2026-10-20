@@ -51,7 +51,7 @@ From [Languages in Exponential](../../../languages.md), the reference page for e
 
 > **Note**
 > The project README's feature summary still names an earlier figure of 219 locales. The counts above come from
-> `doc/en/us/languages.md`, which is kept up to date with the files in `share/locale/`. Quote that page.
+> `doc/eng-us/languages.md`, which is kept up to date with the files in `share/locale/`. Quote that page.
 
 ## Pages in this section
 

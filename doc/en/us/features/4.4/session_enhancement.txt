@@ -32,7 +32,7 @@ This has caused several changes in the kernel, things to look out for:
  - If you want to avoid losing sessions when you upgrade you should setup DB handler in site.ini\[Session]\
    Handler=ezpSessionHandlerDB in advance.
 
- - Additional BC-related breaks are listed in doc/en/us/bc/4.4/
+ - Additional BC-related breaks are listed in doc/eng-us/bc/4.4/
 
 
 ===================

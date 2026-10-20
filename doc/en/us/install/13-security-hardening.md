@@ -88,7 +88,7 @@ the SQLite database lie inside it. Safety comes from the routing, not from the d
 of asset paths is served as files; everything else is passed to `index.php`.** The list is `.htaccess_root`, and
 Velocity's three engines implement the same list (chapter 8, section 8.2).
 
-What the shipped rules guarantee (`.htaccess_root` and `doc/en/us/specifications/6.0/security-defaults-2026-09.md`,
+What the shipped rules guarantee (`.htaccess_root` and `doc/eng-us/specifications/6.0/security-defaults-2026-09.md`,
 section 4):
 
 | Request | Answer | Rule |
@@ -822,9 +822,9 @@ In this repository:
   [HTTPS and certificates](../features/6.0/velocity-https-certificates.md),
   [control panel](../features/6.0/velocity-control-panel.md), [engines](../bc/6.0/velocity-engines.md)
 - [Installing in one command](../features/6.0/install-in-one-command.md) (the generated administrator password)
-- The settings: [`settings/site.ini`](../../../../settings/site.ini), [`settings/velocity.ini`](../../../../settings/velocity.ini),
-  [`settings/audit.ini`](../../../../settings/audit.ini), [`settings/requestrules.ini`](../../../../settings/requestrules.ini);
-  the rules: [`.htaccess_root`](../../../../.htaccess_root)
+- The settings: [`settings/site.ini`](../../../settings/site.ini), [`settings/velocity.ini`](../../../settings/velocity.ini),
+  [`settings/audit.ini`](../../../settings/audit.ini), [`settings/requestrules.ini`](../../../settings/requestrules.ini);
+  the rules: [`.htaccess_root`](../../../.htaccess_root)
 - [Chapter 8: Serving the site](08-serving-the-site.md)
 
 External:

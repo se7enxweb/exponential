@@ -100,16 +100,16 @@ Was ein Reviewer mindestens prüft:
 - Die Betreffzeilen der Commits folgen dem Format (siehe unten).
 - Keine Geheimnisse, Kundendaten oder Hostnamen in Code, Einstellungen, Logs oder Screenshots.
 - Templates eines Administrationsdesigns folgen der
-  [Checkliste für Code-Reviews aus „Die Administration gestalten“](../../../en/us/bc/6.0/admin4-styling.md#code-review-checklist).
+  [Checkliste für Code-Reviews aus „Die Administration gestalten“](../../../eng-us/bc/6.0/admin4-styling.md#code-review-checklist).
 - Änderungen an Einstellungen stehen in Dateien unter Versionsverwaltung und werden nicht auf dem Server vorgenommen.
 
-Die eigene Praxis des Projekts, die es wert ist, übernommen zu werden (aus [CI](../../../en/us/bc/6.0/ci.md)): Ein Pull-Request
+Die eigene Praxis des Projekts, die es wert ist, übernommen zu werden (aus [CI](../../../eng-us/bc/6.0/ci.md)): Ein Pull-Request
 wird **so getestet, als wäre er in `main` gemergt**; ein Branch, der grün war, kann also rot werden, wenn sich `main`
 weiterbewegt. Die Lösung ist, `main` in den Branch zu mergen und erneut zu pushen.
 
 ## Commit-Nachrichten
 
-Die Regel des Projekts (`CONTRIBUTING.md`, [Qualitätsprüfungen](../../../en/us/features/6.0/quality-checks.md)): Jeder
+Die Regel des Projekts (`CONTRIBUTING.md`, [Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md)): Jeder
 Commit-Betreff beginnt mit dem, was die Änderung tut.
 
 | Präfix | Verwendung |
@@ -129,7 +129,7 @@ eigenen Repositorys.
 ## Die Prüfungen, die jeder Commit besteht
 
 Ein einmaliges `make hooks` in einem Kernel-Klon setzt den Hook-Pfad von Git auf `.githooks`. Ab dann gilt
-([Qualitätsprüfungen](../../../en/us/features/6.0/quality-checks.md)):
+([Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md)):
 
 | Wann | Prüfung |
 |---|---|
@@ -158,7 +158,7 @@ Zwei Regeln aus der Dokumentation, die es wert sind, zur Teamrichtlinie zu werde
    für einen Siteaccess ändert die Administration dessen Konfiguration auf dem Server nicht: Der Einstellungseditor,
    die Editoren für Toolbar und Menüs, der Template-Editor, der Setup-Assistent, die Aktivierung von Erweiterungen und
    die Installation von Paketen sind gesperrt, und `eZINI::save()` verweigert das Speichern
-   ([ManagedByDeployment](../../../en/us/features/6.0/managed-by-deployment.md)). Ohne diese Einstellung schreiben diese
+   ([ManagedByDeployment](../../../eng-us/features/6.0/managed-by-deployment.md)). Ohne diese Einstellung schreiben diese
    Editoren Dateien in das Release-Verzeichnis, „wo die Versionsverwaltung sie nicht sieht und das nächste Deployment
    sie verwirft“.
 
@@ -182,7 +182,7 @@ Velocity aus, gibt für jeden Schritt PASS, FAIL oder SKIP aus und hält beim er
 tun würde. Die Reihenfolge ist wichtig: Ein Cache gerenderter Seiten, der geleert wird, bevor PHP den neuen Code
 ausführt, füllt sich wieder mit Seiten des alten Codes ([11.6](../../installation/11-aktualisieren.md#116-von-einer-beliebigen-60x-auf-den-heutigen-stand)).
 
-**Ohne Shell.** Die Erweiterung [git_manager](../../../en/us/features/6.0/extensions/git_manager.md) bietet ein Git-Dashboard
+**Ohne Shell.** Die Erweiterung [git_manager](../../../eng-us/features/6.0/extensions/git_manager.md) bietet ein Git-Dashboard
 in der Administration (sehen, wo die Installation im Verhältnis zu ihrem Branch steht, Branches wechseln, pullen,
 pushen) und einen Backup-Manager. Verwenden Sie sie, wo niemand im Team Shell-Zugang hat, und erstellen Sie vor jeder
 Änderung ein Backup.
@@ -276,7 +276,7 @@ Git setup for <project name>
 
 - [Mit Git entwickeln](../mit-git-entwickeln.md): das Schritt-für-Schritt-Tutorial für Entwickler
 - [Den Code beziehen](../../installation/03-den-code-beschaffen.md), [Erweiterungen](../../anleitungen/extensions.md)
-- [Qualitätsprüfungen](../../../en/us/features/6.0/quality-checks.md), [Kontinuierliche Integration](../../../en/us/bc/6.0/ci.md)
-- [Deployment](../../anleitungen/bereitstellung.md), [ManagedByDeployment](../../../en/us/features/6.0/managed-by-deployment.md)
+- [Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md), [Kontinuierliche Integration](../../../eng-us/bc/6.0/ci.md)
+- [Deployment](../../anleitungen/bereitstellung.md), [ManagedByDeployment](../../../eng-us/features/6.0/managed-by-deployment.md)
 - [Mit der Community arbeiten und etwas zurückgeben](mit-der-community-arbeiten.md), [Qualitätsschranken und Abnahme](qualitaetsschranken-und-abnahme.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

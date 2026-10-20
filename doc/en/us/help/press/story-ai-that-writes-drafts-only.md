@@ -35,7 +35,7 @@ event. The decision keeps the newsroom rule intact: a person is responsible for 
 ## What is new, and when
 
 The assistant joined the Exponential distribution on 12 October 2026, in the 6.0.15 development line, which is not
-released ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)).
+released ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)).
 The drafts-only rule is described in the extension's feature page and the README from that point on.
 
 ## The safeguards, one by one

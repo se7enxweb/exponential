@@ -22,7 +22,7 @@ Each line names the page in the repository where it is described, so you can rea
 | The dashboard: your drafts, pending items, latest content | **Dashboard** | `/content/dashboard` | [Admin tour](../admin-tour.md#the-dashboard) |
 | The content tree | **Content structure** | | [Admin tour](../admin-tour.md#the-left-column) |
 | Images and files | **Media** | | [Media and uploads](../media-and-uploads.md) |
-| Open an item by its number, path or address | **Content finder** below the tree, or **Setup > Content finder** | `/contentfinder/search` | `doc/en/us/features/6.0/content-finder.md` |
+| Open an item by its number, path or address | **Content finder** below the tree, or **Setup > Content finder** | `/contentfinder/search` | `doc/eng-us/features/6.0/content-finder.md` |
 | The store at a glance | **Store** (first entry) | `/shop/dashboard` | [Store dashboard](../../features/6.0/store-dashboard.md) |
 | Search all content | **Search...** in the header (press `/`) | | [Searching](../searching.md) |
 

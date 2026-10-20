@@ -150,5 +150,5 @@ Exponential's `exp:velocity` uses the Composer copy of the engine; the package i
 - [uwebserver](velocity-uwebserver.md), [HTTPS and certificates](velocity-https-certificates.md), [Q shell](velocity-q-shell.md) (`vc-qshell`), [Velocity web server](velocity-web-server.md)
 - Specification: [engine settings](../../specifications/6.0/velocity-engine-settings.md) (programs and the `sbin/` and `bin/` layout)
 - Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (package and path renames), [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md), [Velocity engines](../../bc/6.0/velocity-engines.md)
-- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [August 2026](../../history/velocity/2026-08.md) (first binaries), [23 September](../../history/velocity/2026-09c.md) (platform matrix), [24 September](../../history/velocity/2026-09d.md) (packages), [25 to 30 September](../../history/velocity/2026-09e.md) (rename, `sbin/`)

@@ -4,8 +4,8 @@ Diese Seite ist die Übersicht über den Härtungsdurchgang, den die Linie 6.0.1
 Sicherheitsbefunde, eine größere Zahl von Absicherungen gegen Null- und undefinierte Werte, die PHP 8 in fatale Fehler
 verwandeln würde, Korrekturen für Deprecations von PHP 8.4 und eine Testsuite, die sie nachweist. Lesen Sie sie, wenn Sie
 6.0.12 oder älter betreiben oder Extensions pflegen, die dieselben Codemuster verwenden. Die vollständigen Befunde, Diffs,
-Testergebnisse und CVSS-Werte stehen in den [Release-Notes zur Sicherheitshärtung](../../../en/us/bc/6.0/hardening.md); die
-Test-Werkzeugkette wird in [PHPUnit 10](../../../en/us/bc/6.0/phpunitv10.md) erklärt.
+Testergebnisse und CVSS-Werte stehen in den [Release-Notes zur Sicherheitshärtung](../../../eng-us/bc/6.0/hardening.md); die
+Test-Werkzeugkette wird in [PHPUnit 10](../../../eng-us/bc/6.0/phpunitv10.md) erklärt.
 
 ## Was Sie tun müssen
 
@@ -81,6 +81,6 @@ Als die Änderung vorgenommen wurde, bestanden nach dem Patch 14 von 14 Sicherhe
 
 ## Verwandte Seiten
 
-- [Release-Notes zur Sicherheitshärtung](../../../en/us/bc/6.0/hardening.md), [PHP-8-Unterstützung](../../../en/us/bc/6.0/php8.md), [PHPUnit 10](../../../en/us/bc/6.0/phpunitv10.md), [PHPUnit 13](../../../en/us/bc/6.0/phpunitv13.md), [RAD-Werkzeuge – Sicherheit](../../../en/us/bc/6.0/rad-security.md)
+- [Release-Notes zur Sicherheitshärtung](../../../eng-us/bc/6.0/hardening.md), [PHP-8-Unterstützung](../../../eng-us/bc/6.0/php8.md), [PHPUnit 10](../../../eng-us/bc/6.0/phpunitv10.md), [PHPUnit 13](../../../eng-us/bc/6.0/phpunitv13.md), [RAD-Werkzeuge – Sicherheit](../../../eng-us/bc/6.0/rad-security.md)
 - [Spezifikation: die Sicherheitspatches vom August 2026](sicherheitshaertung-2026-08.md), [Sicherheitsvorgaben vom September 2026](sicherheitsvorgaben-2026-09.md), [Härtung der Datentypen und Eingaben](datentyp-eingabehaertung.md)
-- [Changelog 6.0.13](../../../changelogs/6.0/6.0.13.md), [Chronik: Februar 2026](../../../en/us/history/2026/2026-02.md)
+- [Changelog 6.0.13](../../../changelogs/6.0/6.0.13.md), [Chronik: Februar 2026](../../../eng-us/history/2026/2026-02.md)

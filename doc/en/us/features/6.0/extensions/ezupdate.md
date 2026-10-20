@@ -151,7 +151,7 @@ and clear the template and content caches. `./console exp:ezchecktranslation ger
 - [Package licenses and versions](../package-licenses-and-versions.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
-- [Chronicle](../../../history/extensions/ezupdate.md) and [release notes](../../../../../changelogs/extensions/ezupdate.md)
+- [Chronicle](../../../history/extensions/ezupdate.md) and [release notes](../../../../changelogs/extensions/ezupdate.md)
 - [Change ledger](../../../history/ledger/ezupdate.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-11](../../../history/extensions/months/2024-11.md), [2026-06](../../../history/extensions/months/2026-06.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

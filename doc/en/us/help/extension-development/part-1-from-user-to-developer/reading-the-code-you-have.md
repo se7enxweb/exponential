@@ -117,14 +117,14 @@ The `doc/` folder is organized by kind:
 
 | Folder | What it holds |
 |---|---|
-| `doc/en/us/help/` | Pages like this one, for the help center in the administration |
-| `doc/en/us/guides/` | Task guides for administrators and developers |
-| `doc/en/us/features/6.0/` | One page per feature of the 6.0 line, with its settings |
-| `doc/en/us/bc/6.0/` | Behavior changes and upgrade notes, written for developers |
-| `doc/en/us/specifications/6.0/` | Specifications of larger subsystems |
-| `doc/en/us/install/` | The installation manual |
+| `doc/eng-us/help/` | Pages like this one, for the help center in the administration |
+| `doc/eng-us/guides/` | Task guides for administrators and developers |
+| `doc/eng-us/features/6.0/` | One page per feature of the 6.0 line, with its settings |
+| `doc/eng-us/bc/6.0/` | Behavior changes and upgrade notes, written for developers |
+| `doc/eng-us/specifications/6.0/` | Specifications of larger subsystems |
+| `doc/eng-us/install/` | The installation manual |
 | `doc/changelogs/` | What changed in each release |
-| `doc/en/us/history/` | The chronicle of the project |
+| `doc/eng-us/history/` | The chronicle of the project |
 
 The help center searches all of them; type a class or setting name into its search.
 

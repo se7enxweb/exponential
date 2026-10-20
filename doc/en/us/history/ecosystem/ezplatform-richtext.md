@@ -58,7 +58,7 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 ## Related pages
 
 - [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
-- [Release changelog](../../../../changelogs/extensions/ezplatform-richtext.md)
+- [Release changelog](../../../changelogs/extensions/ezplatform-richtext.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

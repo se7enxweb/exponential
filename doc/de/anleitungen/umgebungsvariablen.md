@@ -28,8 +28,8 @@ erben beim Start die Umgebung des Serverprozesses.
 
 | Variable | Werte | Was sie bewirkt | Gelesen von |
 |---|---|---|---|
-| `EXP_DEMO_MODE` | `1` (genau) | **Demo-Modus** für eine öffentliche Demo: Administratorpasswörter können auf keinem Weg geändert oder zurückgesetzt werden, die Installer akzeptieren ein bekanntes oder kurzes Administratorpasswort (`publish`, `publishing`; nie ein leeres), die Administration zeigt ein Banner, und jeder Prozess vermerkt `demo/mode` in `security.log` und `system.demo.mode` im Audit. Jeder andere Wert oder gar keiner lässt ihn ausgeschaltet. Wird bei jedem Aufruf gelesen (`getenv()`, dann `$_SERVER`); nie aus einer INI-Datei oder einer Anfrage. Setzen Sie ihn nie für eine echte Site. [Demo-Modus](../../en/us/bc/6.0/demo-mode.md) | `expDemoMode` (`kernel/classes/expdemomode.php`) |
-| `EXP_ENGINE_PHAR` | der Pfad eines Engine-Archivs | Führt die Kernel- und Bibliotheksklassen aus diesem Archiv statt aus den Dateien auf der Festplatte aus (nur wenn die Datei existiert). `exp:velocity` setzt sie für die von ihm gestarteten Server, wenn ein Archiv konfiguriert ist. [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md) | `autoload.php`, `expVelocity` |
+| `EXP_DEMO_MODE` | `1` (genau) | **Demo-Modus** für eine öffentliche Demo: Administratorpasswörter können auf keinem Weg geändert oder zurückgesetzt werden, die Installer akzeptieren ein bekanntes oder kurzes Administratorpasswort (`publish`, `publishing`; nie ein leeres), die Administration zeigt ein Banner, und jeder Prozess vermerkt `demo/mode` in `security.log` und `system.demo.mode` im Audit. Jeder andere Wert oder gar keiner lässt ihn ausgeschaltet. Wird bei jedem Aufruf gelesen (`getenv()`, dann `$_SERVER`); nie aus einer INI-Datei oder einer Anfrage. Setzen Sie ihn nie für eine echte Site. [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md) | `expDemoMode` (`kernel/classes/expdemomode.php`) |
+| `EXP_ENGINE_PHAR` | der Pfad eines Engine-Archivs | Führt die Kernel- und Bibliotheksklassen aus diesem Archiv statt aus den Dateien auf der Festplatte aus (nur wenn die Datei existiert). `exp:velocity` setzt sie für die von ihm gestarteten Server, wenn ein Archiv konfiguriert ist. [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md) | `autoload.php`, `expVelocity` |
 | `EXP_INSTALL_DB_PASSWORD` | ein Passwort | Das Datenbankpasswort für `exp:install`, wenn `--db-password` nicht angegeben ist, damit es weder in der Prozessliste noch in der Shell-Historie erscheint. [Kapitel 7](../installation/07-installation-ueber-die-konsole.md) | `bin/php/install.php` |
 | `EXP_KICKSTART_LOG` | `0` | `0` schaltet `var/log/kickstart.log` von `exp:kickstarter run` ab. [Kapitel 6](../installation/06-kickstarter.md) | der Kickstarter |
 | `EXP_BENCHMARK_AUTH` | `user:password` | HTTP-Basic-Authentifizierung für `exp:benchmark`, wenn `--auth` nicht angegeben ist | der Benchmark-Befehl |
@@ -70,10 +70,10 @@ der Demo-Modus kommt nur aus der Umgebung.
 | Konsole | `export NAME=value` oder `NAME=value command` für einen einzelnen Befehl |
 | Container | `ENV` im Image, `-e`, `--env-file` oder `environment:` / `env_file:` für einen Dienst |
 
-Beispiele für den Demo-Modus, eines pro Ort: [Beispiele zum Demo-Modus](../../en/us/examples/demo-mode/README.md).
+Beispiele für den Demo-Modus, eines pro Ort: [Beispiele zum Demo-Modus](../../eng-us/examples/demo-mode/README.md).
 
 ## Verwandte Seiten
 
-- [Demo-Modus](../../en/us/bc/6.0/demo-mode.md), [FAQ zum Demo-Modus](../../en/us/help/demo-mode-faq.md)
+- [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md), [FAQ zum Demo-Modus](../../eng-us/help/demo-mode-faq.md)
 - [Kapitel 2: Voraussetzungen](../installation/02-voraussetzungen.md), [Kapitel 13: Sicherheitshärtung](../installation/13-sicherheitshaertung.md)
-- [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md)
+- [Velocity-Engines](../../eng-us/bc/6.0/velocity-engines.md)

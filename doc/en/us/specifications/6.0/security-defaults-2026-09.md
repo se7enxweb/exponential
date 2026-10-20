@@ -124,7 +124,7 @@ same files:
   store were handed out.
 
 Upgrade note: if you maintain your own copy of `.htaccess`, merge these rules.
-The shipped example is `doc/en/us/examples/` and the root files `.htaccess_root` and
+The shipped example is `doc/eng-us/examples/` and the root files `.htaccess_root` and
 `.htaccess_root_static`.
 
 ## 5. Caching and personal pages
@@ -186,4 +186,4 @@ The shipped example is `doc/en/us/examples/` and the root files `.htaccess_root`
 - Specifications: [Datatype and input hardening](datatype-input-hardening.md), [Security hardening of August 2026](security-hardening-2026-08.md) (the earlier patch set), [Security hardening 6.0.13](security-hardening-6.0.13.md), [Velocity HTTP/2 and security](velocity-http2-and-security.md)
 - Upgrade notes: [Hardening guide](../../bc/6.0/hardening.md), [HTTP cache](../../bc/6.0/httpcache.md), [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md), [RAD tools — security](../../bc/6.0/rad-security.md)
 - Features: [Velocity](../../features/6.0/velocity-persistent-worker-server.md), [Form expired page](../../features/6.0/form-expired-page.md), [Installing in one command](../../features/6.0/install-in-one-command.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md), chronicles [16 to 30 September 2026](../../history/2026/2026-09b.md) and [February 2026](../../history/2026/2026-02.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), chronicles [16 to 30 September 2026](../../history/2026/2026-09b.md) and [February 2026](../../history/2026/2026-02.md)

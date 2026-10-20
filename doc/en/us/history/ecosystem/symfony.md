@@ -74,7 +74,7 @@ Also: 2 merge or funding-metadata commits by the team (no user benefit; see the 
 ## Related pages
 
 - [Framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [Release changelog](../../../../changelogs/extensions/symfony.md)
+- [Release changelog](../../../changelogs/extensions/symfony.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

@@ -37,7 +37,7 @@ TokenTTL=3600
 > enabled or disabled. Enabled (the default): a signed in user may authorize an OAuth client at oauth/authorize only  
 > with the policy oauth/authorize (optionally limited by siteaccess); without it the client gets error=access\_denied.  
 > disabled: every signed in user may authorize clients, as before 6.0.15. Use it only for a short time during an  
-> upgrade, until "php bin/php/addoauthauthorizepolicy.php" has granted the policy (doc/en/us/bc/6.0/oauth-authorize-policy.md).  
+> upgrade, until "php bin/php/addoauthauthorizepolicy.php" has granted the policy (doc/eng-us/bc/6.0/oauth-authorize-policy.md).  
 
 Default: `enabled`.
 

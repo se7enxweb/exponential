@@ -65,7 +65,7 @@ read template and stylesheet sources; they do not render pages in a browser. Amo
 | `AdminRightToLeftTest.php` | `dir="rtl"` and isolated names in right-to-left interface languages |
 
 Automated checks with the axe engine are run by hand during reviews, **not in CI**; their results are recorded in
-the [6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md). Developers can run the suite with:
+the [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md). Developers can run the suite with:
 
 ```bash
 php vendor/bin/phpunit --testsuite design

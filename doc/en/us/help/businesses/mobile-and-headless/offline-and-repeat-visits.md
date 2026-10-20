@@ -30,7 +30,7 @@ The site's service worker is a small script, `/index.js`, "the one service worke
 (file header of `index.js`). Its first and, so far, only feature is the **navigation cache**: "repeat page visits
 answered from the browser, refreshed in the background". `/sw.js` was its earlier name and remains as a one-line
 script that loads `/index.js`, so browsers registered under the old name run the same code
-([6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md)).
+([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
 
 The worker is registered "by the site design after page load"; the header of `index.js` names the media theme
 (`extension/sevenx_themes_media`) as the design that does so. The hosting documentation describes it as part of the

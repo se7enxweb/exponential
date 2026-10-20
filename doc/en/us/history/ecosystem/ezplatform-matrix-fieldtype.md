@@ -55,7 +55,7 @@ composer require se7enxweb/ezplatform-matrix-fieldtype
 
 ## Related pages
 
-- [Release changelog](../../../../changelogs/extensions/ezplatform-matrix-fieldtype.md)
+- [Release changelog](../../../changelogs/extensions/ezplatform-matrix-fieldtype.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

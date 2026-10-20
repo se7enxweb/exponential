@@ -22,7 +22,7 @@ meisten Sites hat sie Ordner wie **Images**, **Files** und **Multimedia**. Sie f
 **Inhaltsstruktur**: Öffnen Sie Ordner im Baum links, öffnen Sie ein Objekt, um es anzusehen, und verwenden Sie darauf
 **Bearbeiten**, **Verschieben** und **Entfernen**.
 
-![Der Reiter Medien: die Seite der Medienbibliothek mit ihren Ordnern als Unterobjekten](../../en/us/help/images/media/media-library.webp)
+![Der Reiter Medien: die Seite der Medienbibliothek mit ihren Ordnern als Unterobjekten](../../eng-us/help/images/media/media-library.webp)
 
 Dateien müssen nicht in der Medienbibliothek liegen. Sie können sie in jeden Ordner hochladen, der sie annimmt, zum
 Beispiel neben den Artikel, der sie verwendet.
@@ -37,11 +37,11 @@ Die Upload-Seite nimmt eine Datei oder Hunderte an, per Schaltfläche, per Ziehe
 - **Hochladen** auf der Seite eines Ordners (lädt in diesen Ordner hoch);
 - **Multi Upload** im Menü eines Objekts im Baum.
 
-![Die Schaltfläche Hochladen auf der Seite eines Ordners, hervorgehoben](../../en/us/help/images/media/folder-upload-button.webp)
+![Die Schaltfläche Hochladen auf der Seite eines Ordners, hervorgehoben](../../eng-us/help/images/media/folder-upload-button.webp)
 
-![Das Menü des Ordners Media im Baum mit hervorgehobenem Eintrag Multi Upload](../../en/us/help/images/media/tree-menu-upload.webp)
+![Das Menü des Ordners Media im Baum mit hervorgehobenem Eintrag Multi Upload](../../eng-us/help/images/media/tree-menu-upload.webp)
 
-![Die Upload-Seite](../../en/us/help/images/multi-upload.webp)
+![Die Upload-Seite](../../eng-us/help/images/multi-upload.webp)
 
 1. **Zielort**: wohin die Dateien kommen. Der Pfad wird mit *Hochladen erlaubt* angezeigt, wenn dort Dateien
    hochgeladen werden können. Klicken Sie auf einen Eintrag der **Schnellauswahl** (etwa **Media**, **Images** oder
@@ -59,9 +59,9 @@ Die Upload-Seite nimmt eine Datei oder Hunderte an, per Schaltfläche, per Ziehe
    Fortschrittsbalken. **Alle abbrechen** hält an, **Fehlgeschlagene erneut versuchen** versucht die fehlgeschlagenen
    noch einmal, **Erledigte entfernen** räumt die Liste auf.
 
-![Der Zielort der Upload-Seite mit dem Hinweis Hochladen erlaubt und der hervorgehobenen Schnellauswahl](../../en/us/help/images/media/upload-target-location.webp)
+![Der Zielort der Upload-Seite mit dem Hinweis Hochladen erlaubt und der hervorgehobenen Schnellauswahl](../../eng-us/help/images/media/upload-target-location.webp)
 
-![Die Upload-Warteschlange mit zwei Bildern und einem PDF, bevor etwas gesendet wird: Vorschau, Typ, Titel und Alternativtext pro Datei sowie die Schaltfläche Alle hochladen](../../en/us/help/images/media/upload-queue.webp)
+![Die Upload-Warteschlange mit zwei Bildern und einem PDF, bevor etwas gesendet wird: Vorschau, Typ, Titel und Alternativtext pro Datei sowie die Schaltfläche Alle hochladen](../../eng-us/help/images/media/upload-queue.webp)
 
 Eine Datei mit demselben Namen und derselben Größe, die es am Zielort bereits gibt, wird markiert. Sie entscheiden, ob
 Sie sie überspringen, die neue umbenennen oder sie trotzdem hochladen; **Alle hochladen** fragt einmal für alle solchen
@@ -76,7 +76,7 @@ Dateien.
   dem Import die Haken bei denen entfernen, die Sie nicht möchten. Bilder aus einer ZIP-Datei werden übersprungen, wo
   die Site einen Alternativtext verlangt, weil eine ZIP-Datei keinen Platz dafür hat.
 
-![Die Optionen Als Entwürfe behalten und Inhalt komprimierter ZIP-Dateien importieren auf der Upload-Seite](../../en/us/help/images/media/upload-options.webp)
+![Die Optionen Als Entwürfe behalten und Inhalt komprimierter ZIP-Dateien importieren auf der Upload-Seite](../../eng-us/help/images/media/upload-options.webp)
 
 ### Nach dem Hochladen
 

@@ -15,7 +15,7 @@ am 5. Oktober 2026, mit wartenden Beispielfreigaben aus `exp:collaborationsample
 abgebrochen oder fortgesetzt.
 
 [Anleitungen](README.md) · Verwandte Anleitung: [Cronjobs](cronjobs.md) · Funktionsreferenz:
-[Die Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md)
+[Die Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md)
 
 ## Kurz gesagt
 
@@ -232,7 +232,7 @@ Setup > **Workflow-Prozesse** oder `/workflow/processlist` in der Administration
 Adresse: `/workflow/processlist/(status)/stopped` und `/workflow/processlist/(status)/all`. Das Blättern fügt wie
 bisher `/(offset)/<n>` hinzu.
 
-![Die Statusleiste und die Übersicht mit drei wartenden Beispielfreigaben](../../en/us/guides/images/workflows/status-and-overview.png)
+![Die Statusleiste und die Übersicht mit drei wartenden Beispielfreigaben](../../eng-us/guides/images/workflows/status-and-overview.png)
 
 ### 5.2 Die Statusleiste
 
@@ -266,7 +266,7 @@ Sieben Kennzahlen, gezählt über alle Prozesse in der Datenbank (nicht nur die 
 
 ### 5.4 Filter, Suche und Seitengröße
 
-![Die Bedienelemente: welche Prozesse, Suche, Seitengröße und das Abbrechen mehrerer Prozesse](../../en/us/guides/images/workflows/controls.png)
+![Die Bedienelemente: welche Prozesse, Suche, Seitengröße und das Abbrechen mehrerer Prozesse](../../eng-us/guides/images/workflows/controls.png)
 
 - **Anzeigen**: *Wartend* (die Vorgabe und alles, was diese Seite früher zeigte), *Angehalten* oder *Alle*, jeweils mit
   ihrer Anzahl. Es sind Links, sie funktionieren also ohne JavaScript und lassen sich als Lesezeichen speichern. Die
@@ -289,7 +289,7 @@ Hinweis auf den Grund.
 
 ### 5.6 Eine Prozesskarte
 
-![Eine wartende Freigabe mit geöffneten technischen Details](../../en/us/guides/images/workflows/process-card.png)
+![Eine wartende Freigabe mit geöffneten technischen Details](../../eng-us/guides/images/workflows/process-card.png)
 
 | Teil | Zeigt |
 |---|---|
@@ -387,7 +387,7 @@ Sehen Sie sich zuerst die graue Zeile an und bei Freigaben die Anfrage im Kollab
 Klicken Sie auf einer Karte auf **Abbrechen...** oder haken Sie mehrere an und klicken Sie auf **Ausgewählte Prozesse
 abbrechen...**. Noch ist nichts geschehen: Eine Seite listet die Prozesse auf und sagt, was das Abbrechen bewirkt.
 
-![Der Bestätigungsschritt](../../en/us/guides/images/workflows/confirm.png)
+![Der Bestätigungsschritt](../../eng-us/guides/images/workflows/confirm.png)
 
 Klicken Sie auf **Ja, Prozess abbrechen**, um fortzufahren, oder auf **Nein, behalten**, um zurückzugehen. Nach der
 Bestätigung geschieht für jeden Prozess in einer Transaktion Folgendes:
@@ -548,5 +548,5 @@ ein Workflow läuft, entscheiden die Trigger.
 - Die Freigabe: `kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php` und
   `kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php`.
 - Der Cronjob: `kernel/private/classes/cronjobs/workflow.php`, `settings/cronjob.ini`; die Anleitung [Cronjobs](cronjobs.md)
-  und die Funktionsseite [Die Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md).
-- Modul-Views als Klassen: [Befehle, Cronjob-Teile und Modul-Views](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md).
+  und die Funktionsseite [Die Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md).
+- Modul-Views als Klassen: [Befehle, Cronjob-Teile und Modul-Views](../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md).

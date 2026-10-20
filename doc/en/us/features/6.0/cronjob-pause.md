@@ -138,4 +138,4 @@ figure and its translations.
 
 - [Leaving out a cronjob part (the filter)](cronjob-part-filter.md)
 - [Cronjobs console](cronjobs-console.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

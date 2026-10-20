@@ -84,5 +84,5 @@ copy; check the output in **Setup > Cronjobs** ([Testing applications](testing-a
 
 - [Cronjobs for applications](cronjobs-for-applications.md)
 - [CLI scripts with eZScript](cli-scripts.md)
-- Cronjob cookbook (`doc/en/us/examples/cookbook/cronjob.md`)
+- Cronjob cookbook (`doc/eng-us/examples/cookbook/cronjob.md`)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -12,7 +12,7 @@ that makes sure a published layout is only changed through its draft.
 **1.3.8 and 1.3.9 (30 September and 1 October 2026):** the editor runs on the admin's jQuery 4 and jQuery UI 1.14 from
 `ezjscore` instead of the jQuery 2.2.4 it bundled, so the whole admin uses one jQuery. The Markdown and HTML blocks have
 their code editor again, the Roboto italic face ships, and layout share links work on Oracle. Details are in the
-[release notes](../../../../../changelogs/extensions/explayouts_ui_api.md). The installed copy in
+[release notes](../../../../changelogs/extensions/explayouts_ui_api.md). The installed copy in
 `extension/explayouts_ui_api` reads 1.3.10 in `ezinfo.php`, one release after the newest tag of the clone; check with
 `grep Version extension/explayouts_ui_api/ezinfo.php`.
 
@@ -164,7 +164,7 @@ The full endpoint list, request and response shapes and error contract are in th
 - [Specification](../../../specifications/6.0/explayouts-ui-api.md)
 - [Exponential Layouts (bc note)](../../../bc/6.0/LAYOUTS.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/explayouts_ui_api.md) and [release notes](../../../../../changelogs/extensions/explayouts_ui_api.md)
+- [Chronicle](../../../history/extensions/explayouts_ui_api.md) and [release notes](../../../../changelogs/extensions/explayouts_ui_api.md)
 - [Change ledger](../../../history/ledger/explayouts_ui_api.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-07](../../../history/extensions/months/2026-07.md), [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md) (all extensions)

@@ -77,7 +77,7 @@ Then `php bin/php/ezcache.php --clear-tag=ini --allow-root-user` (and restart Ve
 |---|---|---|
 | Velocity | `velocity.ini [ServerSettings] StaticMaxAge` | `31536000` (one year) |
 | FrankenPHP | the same setting, written into the generated Caddyfile | as above |
-| Apache | `mod_expires` rules in the virtual host; [doc/en/us/examples/ezpublish.conf](../../../examples/ezpublish.conf) has an example | none until you add them |
+| Apache | `mod_expires` rules in the virtual host; [doc/eng-us/examples/ezpublish.conf](../../../examples/ezpublish.conf) has an example | none until you add them |
 | nginx | your own headers in the server block | none until you add them |
 
 Measured on the front page of a test site: 41 assets, all revalidated on every view before, none after. "This does

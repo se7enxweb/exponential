@@ -42,7 +42,7 @@ layouts (layout type `layout_2`, with zones `header`, `post_header`, `main`, `pr
 ## How a linked zone renders
 
 The zone template draws the blocks of the shared layout's published zone instead of its own; for templates nothing
-changes, the blocks arrive in `$zone.blocks` as usual (`doc/en/us/bc/6.0/LAYOUTS.md`, "How rendering actually works": "or,
+changes, the blocks arrive in `$zone.blocks` as usual (`doc/eng-us/bc/6.0/LAYOUTS.md`, "How rendering actually works": "or,
 for a linked zone, the shared layout's blocks").
 
 ## Rules worth knowing

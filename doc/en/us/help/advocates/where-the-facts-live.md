@@ -38,7 +38,7 @@ source and check that it still says what you remember. Sources change with each 
 | What Exponential is | [Exponential 6, the kernel](../who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
 | Who leads it, who operates it | [The Foundation and 7x](../who-is-the-exponential-foundation.md#the-foundation-and-7x) |
 | The product family | [The product family at a glance](../who-is-the-exponential-foundation.md#the-product-family-at-a-glance) |
-| Releases and dates | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases), [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| Releases and dates | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 | PHP versions | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 | Security process | [Security fixes](../who-is-the-exponential-foundation.md#security-fixes), [Security hardening](../security-hardening.md) |
 | Content Security Policy | [Content Security Policy](../../features/6.0/content-security-policy.md) |

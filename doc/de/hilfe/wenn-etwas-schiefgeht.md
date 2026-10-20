@@ -19,7 +19,7 @@ informieren und wie Sie ein Problem so beschreiben, dass es behoben wird.
 
 Manche Seiten sehen wie Fehler aus, sagen aber nur, dass etwas nicht erlaubt oder nicht vorhanden ist:
 
-![Die Seite, die ein Besucher für eine nicht vorhandene Adresse erhält: eine freundliche Seite „nicht gefunden“, kein Fehler der Site](../../en/us/help/images/help/site-not-found.webp)
+![Die Seite, die ein Besucher für eine nicht vorhandene Adresse erhält: eine freundliche Seite „nicht gefunden“, kein Fehler der Site](../../eng-us/help/images/help/site-not-found.webp)
 
 | Was die Seite sagt | Was es bedeutet | Was Sie tun können |
 |---|---|---|
@@ -35,7 +35,7 @@ Ein Fehler der Site zeigt eine Seite wie **Bei uns ist etwas schiefgegangen**, u
 Beispiel `ERR-0123456789`. Der Fehler ist bereits protokolliert; mit der Referenz findet ein Administrator genau
 diesen Moment in den Protokollen.
 
-![Setup, Logdateien: die Zusammenfassung der jüngsten Fehler und Warnungen aus den Logdateien](../../en/us/help/images/help/logs-digest.webp)
+![Setup, Logdateien: die Zusammenfassung der jüngsten Fehler und Warnungen aus den Logdateien](../../eng-us/help/images/help/logs-digest.webp)
 
 1. **Notieren Sie die Referenz**, die Uhrzeit und die Adresse der Seite (kopieren Sie sie aus der Adressleiste des
    Browsers).
@@ -55,7 +55,7 @@ in der Einrichtung der Site, melden Sie es öffentlich, damit es für alle behob
 melden** der Hilfe (`exphelp/report` in der Administration) führt Sie durch die Meldung, füllt eine Zusammenfassung
 der Installation für Sie aus und öffnet ein neues Issue mit vorbereitetem Titel und Text.
 
-![Die Seite Fehler melden des Hilfe-Centers: welcher Tracker der richtige ist, und ein vorausgefülltes Issue mit einer unbedenklichen Zusammenfassung der Installation](../../en/us/help/images/help/report-an-error.webp)
+![Die Seite Fehler melden des Hilfe-Centers: welcher Tracker der richtige ist, und ein vorausgefülltes Issue mit einer unbedenklichen Zusammenfassung der Installation](../../eng-us/help/images/help/report-an-error.webp)
 
 Wählen Sie den richtigen Tracker:
 
@@ -100,7 +100,7 @@ Finden Sie ein Sicherheitsproblem, etwa eine Möglichkeit, etwas zu sehen oder z
 Repository. Nennen Sie die Version, die Sie betreiben, was ein Angreifer tun könnte und wie es sich nachstellen
 lässt. Die vollständige Richtlinie steht in der Datei `SECURITY.md` im Hauptverzeichnis der Installation.
 
-**„Diese Installation ist eine öffentliche Demo“.** Diese Meldung oder ein Hinweisbalken **Demo-Modus** bedeutet, dass die Site absichtlich im Demo-Modus läuft: Administratorpasswörter lassen sich dort weder ändern noch zurücksetzen. Erscheint sie auf einer echten Site, informieren Sie sofort die Betreiber des Servers. [Demo-Modus: häufige Fragen](demomodus-faq.md), [Probleme mit dem Demo-Modus](../../en/us/help/hosting/runbooks/demo-mode-problems.md).
+**„Diese Installation ist eine öffentliche Demo“.** Diese Meldung oder ein Hinweisbalken **Demo-Modus** bedeutet, dass die Site absichtlich im Demo-Modus läuft: Administratorpasswörter lassen sich dort weder ändern noch zurücksetzen. Erscheint sie auf einer echten Site, informieren Sie sofort die Betreiber des Servers. [Demo-Modus: häufige Fragen](demomodus-faq.md), [Probleme mit dem Demo-Modus](../../eng-us/help/hosting/runbooks/demo-mode-problems.md).
 
 ## Um Hilfe bitten
 
@@ -112,7 +112,7 @@ Für Fragen, die keine Fehler sind („Wie mache ich ...?“), ist die Community
 [eZpedia](https://ezpedia.exponential.earth/) und in den [Artikeln auf Share Exponential](https://share.exponential.earth/learn)
 nach. Vielleicht haben auch die anderen Hilfeseiten schon die Antwort: siehe [Hilfe für Redakteure und Benutzer](README.md).
 
-![Fehler melden im dunklen Modus: wohin jede Art von Problem gehört, und die unbedenkliche Zusammenfassung der Installation zum Kopieren](../../en/us/help/images/help/help-report.webp)
+![Fehler melden im dunklen Modus: wohin jede Art von Problem gehört, und die unbedenkliche Zusammenfassung der Installation zum Kopieren](../../eng-us/help/images/help/help-report.webp)
 
 Kostenlose Hilfe hängt von der Zeit ab, die Menschen geben; niemand verspricht deshalb eine Antwortzeit. Wenn Sie
 nicht warten können, empfiehlt die [Support-Seite](https://exponential.earth/support) des Projekts den

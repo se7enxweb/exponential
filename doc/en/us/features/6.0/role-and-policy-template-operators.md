@@ -106,5 +106,5 @@ The idea comes from the community extension `bcmemberofrole`.
 
 - [Roles: policy IDs, sorting and order buttons](role-policy-order.md), [paging the role and policy screens](../../bc/6.0/role-policy-paging.md)
 - [String operators](string-template-operators.md)
-- [Changelog 6.0.12](../../../../changelogs/6.0/6.0.12.md)
+- [Changelog 6.0.12](../../../changelogs/6.0/6.0.12.md)
 - [Chronicle: January 2026](../../history/2026/2026-01.md)

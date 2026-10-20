@@ -98,7 +98,7 @@ The pages of this section cover:
 These pages explain and summarize; they do not repeat the configuration steps. Settings, templates and code are on
 the technical pages they link to, mostly under
 [website creators](../../creators/website-creators/website-creators-start-here.md) and the feature pages in
-`doc/en/us/features/6.0/`. Tax and legal questions are for your tax adviser and lawyer; these pages only describe what the
+`doc/eng-us/features/6.0/`. Tax and legal questions are for your tax adviser and lawyer; these pages only describe what the
 software does.
 
 ## Neighboring sections

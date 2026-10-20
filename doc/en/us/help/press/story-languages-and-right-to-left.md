@@ -39,9 +39,9 @@ development line, which is not released.
 | What | When | Source |
 |---|---|---|
 | Complete English and German catalogues, a translation string for almost every visible text | 27 and 28 September 2026 | [Translations and languages](../../features/6.0/translations-and-languages.md) |
-| 89 new locales and one page for every language | 15 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#15-october-2026-89-new-locales-and-one-page-for-every-language) |
-| Right-to-left languages, Hebrew, Latin, Klingon and 81 more locales | 16 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-october-2026-right-to-left-languages-hebrew-latin-klingon-and-81-more-locales) |
-| The administration in Arabic, machine-assisted and to be reviewed by a native speaker | 18 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#18-october-2026-the-administration-in-arabic-and-hebrew-for-the-newest-strings) |
+| 89 new locales and one page for every language | 15 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#15-october-2026-89-new-locales-and-one-page-for-every-language) |
+| Right-to-left languages, Hebrew, Latin, Klingon and 81 more locales | 16 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-october-2026-right-to-left-languages-hebrew-latin-klingon-and-81-more-locales) |
+| The administration in Arabic, machine-assisted and to be reviewed by a native speaker | 18 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#18-october-2026-the-administration-in-arabic-and-hebrew-for-the-newest-strings) |
 
 ## Facts you can print
 

@@ -10,8 +10,8 @@ Demonstrationsserver am Code geprüft (`kernel/private/classes/views/setup/syste
 `kernel/private/classes/expfileconsistencyreport.php`, `kernel/private/classes/expschemaconsistencyreport.php`), unter
 Apache mit PHP-FPM und unter Velocity.
 
-[Anleitungen](README.md) · Siehe auch: [Upgrade](aktualisieren.md), [Das Datei-Manifest](../../en/us/features/6.0/file-consistency-check.md),
-[Qualitätsprüfungen](../../en/us/features/6.0/quality-checks.md)
+[Anleitungen](README.md) · Siehe auch: [Upgrade](aktualisieren.md), [Das Datei-Manifest](../../eng-us/features/6.0/file-consistency-check.md),
+[Qualitätsprüfungen](../../eng-us/features/6.0/quality-checks.md)
 
 ## Kurz gesagt
 
@@ -181,14 +181,14 @@ während die Seite die aktiven liest; und der Befehl gibt Hinweise als `warning:
   Datenbank ändert.
 - Jede Schaltfläche sendet das Formular mit dem Formular-Token von ezformtoken; die Seite leitet nicht weiter.
 - Jeder Lauf und jeder Download wird als `system.upgrade.run` in das Audit-Protokoll geschrieben, mit der Prüfung, dem
-  Ergebnis, der Anzahl der Unterschiede und bei einem Download seinem Format (siehe [das Audit](../../en/us/bc/6.0/audit.md)).
+  Ergebnis, der Anzahl der Unterschiede und bei einem Download seinem Format (siehe [das Audit](../../eng-us/bc/6.0/audit.md)).
 - Pfade, Prüfsummen, Tabellennamen und SQL werden auf der Seite escapt ausgegeben.
 
 ## Siehe auch
 
-- [Das Datei-Manifest und wie ein Release es schreibt](../../en/us/features/6.0/file-consistency-check.md)
+- [Das Datei-Manifest und wie ein Release es schreibt](../../eng-us/features/6.0/file-consistency-check.md)
 - [Upgrade](aktualisieren.md)
-- [Qualitätsprüfungen](../../en/us/features/6.0/quality-checks.md): `checkmanifest --staged` im Pre-Commit-Hook
-- [Datenbankunterstützung](../../en/us/help/database-support.md): die unterstützten Datenbanken in ihrer offiziellen Reihenfolge
+- [Qualitätsprüfungen](../../eng-us/features/6.0/quality-checks.md): `checkmanifest --staged` im Pre-Commit-Hook
+- [Datenbankunterstützung](../../eng-us/help/database-support.md): die unterstützten Datenbanken in ihrer offiziellen Reihenfolge
   und welche davon die Datenbankprüfung abdeckt
 - Changelog: [6.0.15](../../changelogs/6.0/6.0.15.md)

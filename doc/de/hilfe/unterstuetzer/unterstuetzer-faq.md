@@ -19,7 +19,7 @@ Forum.
 [Unterstützer: Hier beginnen](unterstuetzer-hier-beginnen.md)
 
 **Wird mein Pull-Request abgelehnt?**
-„Jeder Pull-Request wird gemergt“; was geändert werden muss, wird darüber geändert (`doc/en/us/bc/6.0/ci.md`).
+„Jeder Pull-Request wird gemergt“; was geändert werden muss, wird darüber geändert (`doc/eng-us/bc/6.0/ci.md`).
 [Code beitragen](code-beitragen.md)
 
 **Unter welcher Lizenz wird mein Beitrag veröffentlicht?**
@@ -52,7 +52,7 @@ Sponsern, Arbeitszeit von Mitarbeitenden einbringen und allgemein nutzbare Arbei
 [Exponential als Unternehmen unterstützen](als-unternehmen-unterstuetzen.md)
 
 **Was ist der Unterschied zwischen einem Unterstützer, einem Sponsor und einem Partner?**
-[Was ein Exponential-Partner ist](../../../en/us/help/partners/what-is-an-exponential-partner.md#partner-supporter-sponsor-contributor-customer)
+[Was ein Exponential-Partner ist](../../../eng-us/help/partners/what-is-an-exponential-partner.md#partner-supporter-sponsor-contributor-customer)
 
 ## Verwandte Seiten
 

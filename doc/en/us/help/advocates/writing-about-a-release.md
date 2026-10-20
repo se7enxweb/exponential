@@ -40,10 +40,10 @@ You may write about **work in progress** too, if you say so clearly: "In the dev
 
 | Source | What it gives you |
 |---|---|
-| [Changelogs](../../../../changelogs/README.md), e.g. [6.0.15](../../../../changelogs/6.0/6.0.15.md) | The list of changes of a version |
+| [Changelogs](../../../changelogs/README.md), e.g. [6.0.15](../../../changelogs/6.0/6.0.15.md) | The list of changes of a version |
 | [The history](../../history/README.md) | Month pages that explain what each change makes possible |
-| Feature pages in `doc/en/us/features/6.0/` | How to use each new feature |
-| Notes on backward compatibility in `doc/en/us/bc/6.0/` | What to check when upgrading |
+| Feature pages in `doc/eng-us/features/6.0/` | How to use each new feature |
+| Notes on backward compatibility in `doc/eng-us/bc/6.0/` | What to check when upgrading |
 | [Upgrading](../../install/11-upgrading.md) | How to upgrade safely |
 
 ## Pick what matters, per audience

@@ -44,7 +44,7 @@ The first command prints the shipped defaults from the table above. The second l
    `StaticStorageDir=/full/path/to/static` (an absolute path is used as given), or generate the cache again and
    delete the old directory yourself.
 2. **You serve the files from the web server.** Switch to `.htaccess_root_static` (or the rules in
-   `doc/en/us/examples/staticcache_offload.conf`) and check `EZ_VAR_SITE`. `.htaccess_root` is the plain rules again and
+   `doc/eng-us/examples/staticcache_offload.conf`) and check `EZ_VAR_SITE`. `.htaccess_root` is the plain rules again and
    does not serve static files.
 3. **You relied on `CachedURLArray[]` listing only `/news*` and `/weblog*`.** Put those lines back in your override.
    The new default caches the whole site, limited by `MaxCacheDepth`.
@@ -55,4 +55,4 @@ The first command prints the shipped defaults from the table above. The second l
 - [Preload Sites](../../features/6.0/preload-sites-view.md)
 - [Cache from the console](cache-console.md) and [HTTP caching](http-caching.md)
 - [Static cache in the September 2026 chronicle](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

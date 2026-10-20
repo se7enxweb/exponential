@@ -56,7 +56,7 @@ Exponential Foundation require a signed Contributor Licensing Agreement from its
 submitting, the body assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying the body,
 which cannot withdraw it or set conditions on it. Your internal approvals must accept this, and settle who may sign:
 when the body has the rights to its staff's work, the body signs or gives its permission (CLA, section 6). Extensions the body builds and keeps for its own sites are not affected. See
-[Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ## Translations and documentation
 

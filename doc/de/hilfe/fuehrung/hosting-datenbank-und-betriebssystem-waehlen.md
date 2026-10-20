@@ -129,12 +129,12 @@ Migration auf denselben Dateien bestehen bleibt.
 Andere Server (LiteSpeed, Caddy mit PHP-FPM, IIS, lighttpd) gehören zu Stufe 3; der eingebaute Server von PHP ist nur
 für die Entwicklung gedacht ([Webserver](../betriebssystemunterstuetzung.md#webserver)).
 
-Mehr zu Velocity: [Der Server mit persistenten Workern](../../../en/us/features/6.0/velocity-persistent-worker-server.md),
-[Der Webserver Velocity](../../../en/us/features/6.0/velocity-web-server.md),
-[Der Antwort-Cache](../../../en/us/features/6.0/velocity-response-cache.md),
-[Das Control Panel](../../../en/us/features/6.0/velocity-control-panel.md),
-[HTTPS-Zertifikate](../../../en/us/features/6.0/velocity-https-certificates.md). Zu FrankenPHP:
-[FrankenPHP](../../../en/us/bc/6.0/frankenphp.md).
+Mehr zu Velocity: [Der Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md),
+[Der Webserver Velocity](../../../eng-us/features/6.0/velocity-web-server.md),
+[Der Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md),
+[Das Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md),
+[HTTPS-Zertifikate](../../../eng-us/features/6.0/velocity-https-certificates.md). Zu FrankenPHP:
+[FrankenPHP](../../../eng-us/bc/6.0/frankenphp.md).
 
 ## Hosting-Modell
 
@@ -186,8 +186,8 @@ erfindet“. Was es angibt ([2.10 Arbeitsspeicher, CPU und Festplatte](../../ins
 | Eine MongoDB-Installation | RAM mindestens 512 MB, empfohlen 2 GB; Festplatte mindestens 2 GB, empfohlen 10 GB |
 
 Der Platzbedarf auf der Festplatte wächst mit Uploads und Bildvarianten (`var/storage`), Caches und Logs. Der Rat lautet,
-„eine laufende Site zu messen, statt zu raten“, mit dem Befehl [benchmark](../../../en/us/features/6.0/benchmark.md) und dem
-[Control Panel](../../../en/us/features/6.0/velocity-control-panel.md) von Velocity. Planen Sie eine Messung auf der
+„eine laufende Site zu messen, statt zu raten“, mit dem Befehl [benchmark](../../../eng-us/features/6.0/benchmark.md) und dem
+[Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md) von Velocity. Planen Sie eine Messung auf der
 Testinstallation mit echten Inhalten in den Zeitplan ein, bevor Sie sich auf eine Maschinengröße festlegen.
 
 Stellschrauben für die Performance je Datenbank sind unter

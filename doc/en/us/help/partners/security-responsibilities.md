@@ -26,7 +26,7 @@ Write the split into each contract.
 
 ## Per-site checklist
 
-- [ ] Hardened as in [Security hardening](../security-hardening.md) and `doc/en/us/install/13-security-hardening.md`
+- [ ] Hardened as in [Security hardening](../security-hardening.md) and `doc/eng-us/install/13-security-hardening.md`
 - [ ] Default and shared passwords changed ([Default administrator password](../default-administrator-password.md),
       [Change the admin password](../change-the-admin-password.md))
 - [ ] Setup wizard and installer files not reachable

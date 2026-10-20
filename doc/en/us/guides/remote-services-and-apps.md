@@ -182,5 +182,5 @@ Change one with `./console exp:ini set expservices.ini/Paging/DefaultLimit 50 ov
 - Write a service of your own: one class extending `expServiceBase`, one `[ezjscServer_exp<domain>]` block, and it appears in the catalogue and in Setup > RAD. See [remote services (feature)](../features/6.0/remote-services-expservices.md) and [the services specification](../specifications/6.0/expservices.md).
 - Secure what you expose: roles, policies, audit and debug: [security and audit](security-and-audit.md).
 - Everything about the call interface, domain by domain: [Backend services over ezjscore](../bc/6.0/backend_ezjscore_services.md); the extension that carries it: [ezjscore](../features/6.0/extensions/ezjscore.md).
-- How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md).
+- How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md).
 - Other guides: [Extensions](extensions.md) (build the extension that carries your service), [Glossary](../glossary.md).

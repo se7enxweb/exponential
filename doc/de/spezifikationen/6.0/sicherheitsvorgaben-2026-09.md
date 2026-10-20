@@ -96,7 +96,7 @@ setzen Sie `CookieSameSite=None` und `CookieSecure=true`.
 | Passwort vergessen | „Es gibt keinen registrierten Benutzer mit dieser E-Mail-Adresse“ (auch im Anmeldeformular der Administration) erlaubte es, Adressen eine nach der anderen zu testen. | Eine gültige, aber unbekannte Adresse erhält dieselbe Seite wie eine bekannte („eine Mail wurde gesendet, falls ein Konto registriert ist“); nur Eingaben, die überhaupt keine Adresse sind, werden abgelehnt. Templates maskieren (wash) jede Adresse, die sie ausgeben. |
 | Schlüssel im Link für „Passwort vergessen“ (`ezmbpaex` 6.0.3) | | Enthält einen Schlüssel, der sich nicht erraten lässt. |
 | Passwort oder Hash, der keine Zeichenkette ist | In eine Zeichenkette umgewandelt; `true` konnte zu einem gespeicherten `true` passen. | Authentifiziert nie. |
-| Erstes Administratorpasswort eines Kickstarts | Erratbarer Standardwert oder das eigene Passwort der Site-Daten, wenn keine E-Mail-Adresse angegeben war. | Zufällige 20 Zeichen, einmal ausgegeben und nach `var/log/initial-admin-password` geschrieben. Siehe [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md). |
+| Erstes Administratorpasswort eines Kickstarts | Erratbarer Standardwert oder das eigene Passwort der Site-Daten, wenn keine E-Mail-Adresse angegeben war. | Zufällige 20 Zeichen, einmal ausgegeben und nach `var/log/initial-admin-password` geschrieben. Siehe [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md). |
 
 ## 4. Dateien, die der Webserver ausliefert
 
@@ -124,7 +124,7 @@ dieselben Dateien ausliefern:
   Paketspeicher herausgegeben.
 
 Upgrade-Hinweis: Wenn Sie eine eigene Kopie der `.htaccess` pflegen, übernehmen Sie diese Regeln.
-Das mitgelieferte Beispiel liegt in `doc/en/us/examples/`, dazu die Root-Dateien `.htaccess_root` und
+Das mitgelieferte Beispiel liegt in `doc/eng-us/examples/`, dazu die Root-Dateien `.htaccess_root` und
 `.htaccess_root_static`.
 
 ## 5. Caching und persönliche Seiten
@@ -150,7 +150,7 @@ Das mitgelieferte Beispiel liegt in `doc/en/us/examples/`, dazu die Root-Dateien
   Header, den Ihr Purge-Proxy liest (`xkey` für Varnish, `Surrogate-Key` für Fastly,
   `Cache-Tag` für Cloudflare). `ProxyHeaders=enabled` in einem bestehenden Override
   bedeutet weiterhin `xkey`. Ein Name, der kein HTTP-Token oder ein Rahmungs-Header ist, wird
-  abgelehnt. Siehe [HTTP-Cache](../../../en/us/bc/6.0/httpcache.md).
+  abgelehnt. Siehe [HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md).
 
 ## 6. Weitere Korrekturen mit Sicherheitswirkung
 
@@ -163,7 +163,7 @@ Das mitgelieferte Beispiel liegt in `doc/en/us/examples/`, dazu die Root-Dateien
 | Mail-Header, Dateinamen von Downloads | Siehe [Härtung von Datentypen und Eingaben](datentyp-eingabehaertung.md). |
 | REST | Eine nicht authentifizierte Anfrage antwortet auf jedem Server mit 401 und `WWW-Authenticate` (bei fehlenden Zugangsdaten wurde früher `HTTP/1.1 500` angegeben); der OAuth-Header `Authorization` wird ohne Beachtung der Groß- und Kleinschreibung gelesen, mit `HTTP_AUTHORIZATION` als Ausweichlösung; ein unbekanntes Token antwortet auf SQLite-Sites und auf persistenten Workern mit 401. |
 | Sortierung von Knoten | `content/action` verlangt Bearbeitungsrechte sowie ein bekanntes Sortierfeld und eine bekannte Sortierreihenfolge. |
-| Ablehnungen wegen des Formular-Tokens | Eine 403-Seite ohne Token im Log. Siehe [Seite für abgelaufene Formulare](../../../en/us/features/6.0/form-expired-page.md). |
+| Ablehnungen wegen des Formular-Tokens | Eine 403-Seite ohne Token im Log. Siehe [Seite für abgelaufene Formulare](../../../eng-us/features/6.0/form-expired-page.md). |
 | Velocity-Worker | `[ServerSettings] User`, `Group`, `AllowRootWorkers=disabled`: Worker geben nach dem Start die Root-Rechte ab, sodass Dateien, die sie schreiben, dem Benutzer der Site gehören. |
 | Anonyme Formulare | Abonnieren nicht mehr das gemeinsame anonyme Konto. |
 | Ausgehende Identität | Der Generator des statischen Caches, die Linkprüfung, der RSS-Import, Wechselkurs- und Paket-Downloads, ausgehende Mails und der REST-Realm geben sich als Exponential zu erkennen. Eine Webserver-Regel, die auf den früheren User-Agent des statischen Caches passt, muss geändert werden. |
@@ -184,6 +184,6 @@ Das mitgelieferte Beispiel liegt in `doc/en/us/examples/`, dazu die Root-Dateien
 ## Verwandte Seiten
 
 - Spezifikationen: [Härtung von Datentypen und Eingaben](datentyp-eingabehaertung.md), [Sicherheitshärtung vom August 2026](sicherheitshaertung-2026-08.md) (das frühere Patch-Set), [Sicherheitshärtung 6.0.13](sicherheitshaertung-6.0.13.md), [Velocity – HTTP/2 und Sicherheit](velocity-http2-und-sicherheit.md)
-- Upgrade-Hinweise: [Härtungsleitfaden](../../../en/us/bc/6.0/hardening.md), [HTTP-Cache](../../../en/us/bc/6.0/httpcache.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../../en/us/bc/6.0/behaviour-changes-2026-09b.md), [RAD-Werkzeuge – Sicherheit](../../../en/us/bc/6.0/rad-security.md)
-- Funktionen: [Velocity](../../../en/us/features/6.0/velocity-persistent-worker-server.md), [Seite für abgelaufene Formulare](../../../en/us/features/6.0/form-expired-page.md), [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Chroniken [16. bis 30. September 2026](../../../en/us/history/2026/2026-09b.md) und [Februar 2026](../../../en/us/history/2026/2026-02.md)
+- Upgrade-Hinweise: [Härtungsleitfaden](../../../eng-us/bc/6.0/hardening.md), [HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md), [RAD-Werkzeuge – Sicherheit](../../../eng-us/bc/6.0/rad-security.md)
+- Funktionen: [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md), [Seite für abgelaufene Formulare](../../../eng-us/features/6.0/form-expired-page.md), [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Chroniken [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md) und [Februar 2026](../../../eng-us/history/2026/2026-02.md)

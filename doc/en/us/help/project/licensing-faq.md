@@ -35,7 +35,7 @@ the rule: contributors agree to release their code under the same license as Exp
 For code contributions to the core kernel, 7x and the Exponential Foundation also require a signed Contributor
 Licensing Agreement (CLA) before the contribution is merged, and **by signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it.** 7x may use, change, relicense and distribute your contribution in any way, also under
 other licenses and in commercial products, without asking or paying you; you cannot withdraw it or set conditions. Your own extensions and designs are not affected. See
-[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+[Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ### Is the GPL going to change to version 3 only?
 

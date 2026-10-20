@@ -66,9 +66,9 @@ Der Katalog listet jeden Dienst mit seiner Zusammenfassung, seiner Zugriffsregel
 ./expservices-client.sh catalog node | grep -E '"method"|"summary"'
 ```
 
-Jeder Eintrag hat `access`: `public`, `user` (angemeldet) oder `[module, function]` (eine Richtlinie, dieselben, die die Administration prüft), und `write`: true für Dienste, die etwas ändern. In der Administration listet **Setup > RAD** (`/setup/rad`) denselben Katalog neben den anderen Erweiterungspunkten auf. Tabellen pro Bereich stehen in der Referenz: [Backend-Dienste über ezjscore](../../en/us/bc/6.0/backend_ezjscore_services.md).
+Jeder Eintrag hat `access`: `public`, `user` (angemeldet) oder `[module, function]` (eine Richtlinie, dieselben, die die Administration prüft), und `write`: true für Dienste, die etwas ändern. In der Administration listet **Setup > RAD** (`/setup/rad`) denselben Katalog neben den anderen Erweiterungspunkten auf. Tabellen pro Bereich stehen in der Referenz: [Backend-Dienste über ezjscore](../../eng-us/bc/6.0/backend_ezjscore_services.md).
 
-Regeln, die für jeden Dienst gelten: 401 ohne Anmeldung, 403 ohne die Richtlinie; ein Schreibzugriff braucht POST und ein Formular-Token und wird als `service.<domain>.<method>` im Audit erfasst; große Vorgänge werden an [Inhaltsjobs](../../en/us/features/6.0/content-jobs.md) weitergeleitet.
+Regeln, die für jeden Dienst gelten: 401 ohne Anmeldung, 403 ohne die Richtlinie; ein Schreibzugriff braucht POST und ein Formular-Token und wird als `service.<domain>.<method>` im Audit erfasst; große Vorgänge werden an [Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md) weitergeleitet.
 
 ## 4. Anmelden und einen Schreibzugriff ausführen (5 Minuten)
 
@@ -139,7 +139,7 @@ except TransportError as e:                              # network or JSON fault
     print("retry later:", e)
 ```
 
-Clients für Kotlin und Android, Swift und iOS, Objective-C, Qt und GTK sind in der Referenz ausgeschrieben: [Kapitel zu den Clients](../../en/us/bc/6.0/backend_ezjscore_services.md#clients).
+Clients für Kotlin und Android, Swift und iOS, Objective-C, Qt und GTK sind in der Referenz ausgeschrieben: [Kapitel zu den Clients](../../eng-us/bc/6.0/backend_ezjscore_services.md#clients).
 
 ## 7. Ein Portal öffnen, das auf den Diensten aufbaut (3 Minuten)
 
@@ -179,8 +179,8 @@ Richten Sie die Portale in `extension/expservices/settings/expportal.ini`, Block
 
 ## Siehe auch
 
-- Einen eigenen Dienst schreiben: eine Klasse, die `expServiceBase` erweitert, ein Block `[ezjscServer_exp<domain>]`, und er erscheint im Katalog und unter Setup > RAD. Siehe [Remote-Dienste (Funktionsseite)](../../en/us/features/6.0/remote-services-expservices.md) und [die Spezifikation der Dienste](../spezifikationen/6.0/expservices.md).
+- Einen eigenen Dienst schreiben: eine Klasse, die `expServiceBase` erweitert, ein Block `[ezjscServer_exp<domain>]`, und er erscheint im Katalog und unter Setup > RAD. Siehe [Remote-Dienste (Funktionsseite)](../../eng-us/features/6.0/remote-services-expservices.md) und [die Spezifikation der Dienste](../spezifikationen/6.0/expservices.md).
 - Absichern, was Sie freigeben: Rollen, Richtlinien, Audit und Debugging: [Sicherheit und Audit](sicherheit-und-audit.md).
-- Alles über die Aufrufschnittstelle, Bereich für Bereich: [Backend-Dienste über ezjscore](../../en/us/bc/6.0/backend_ezjscore_services.md); die Extension, die sie trägt: [ezjscore](../../en/us/features/6.0/extensions/ezjscore.md).
-- Wie es entstanden ist: [Chronik Oktober 2026](../../en/us/history/2026/2026-10.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
-- Weitere Anleitungen: [Extensions](extensions.md) (die Extension bauen, die Ihren Dienst trägt), [Glossar](../../en/us/glossary.md).
+- Alles über die Aufrufschnittstelle, Bereich für Bereich: [Backend-Dienste über ezjscore](../../eng-us/bc/6.0/backend_ezjscore_services.md); die Extension, die sie trägt: [ezjscore](../../eng-us/features/6.0/extensions/ezjscore.md).
+- Wie es entstanden ist: [Chronik Oktober 2026](../../eng-us/history/2026/2026-10.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
+- Weitere Anleitungen: [Extensions](extensions.md) (die Extension bauen, die Ihren Dienst trägt), [Glossar](../../eng-us/glossary.md).

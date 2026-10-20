@@ -135,7 +135,7 @@ repository; the team only has to agree to use them.
 | The help | The product's own documentation, free to copy and adapt | `doc/` of the installation, at `/exphelp/dashboard` | The project (everyone may improve it) | Everyone |
 | The issue tracker | Bugs, tasks and stories | Your project's tracker; bugs in the software in the public trackers ([When something goes wrong](../when-something-goes-wrong.md)) | Project manager | Everyone |
 | Branches and pull requests | Every code change, reviewed | Git; the project repository on GitHub | Developers | Project manager, administrator |
-| The changelog | What changed in each release | `doc/changelogs/` ([Changelogs](../../../../changelogs/README.md)); your own for your site | Developers | Everyone |
+| The changelog | What changed in each release | `doc/changelogs/` ([Changelogs](../../../changelogs/README.md)); your own for your site | Developers | Everyone |
 | Workflows | Approval before publishing and other processes | **Setup > Workflows** ([Workflows](../../guides/workflows.md)) | Administrator, on the project manager's decision | Editors |
 | Layouts and rules | Which page gets which arrangement of blocks | **Layouts** tab ([The layouts editor](../layouts-editor.md)) | Editors | Project manager, sales (for demos) |
 | The audit trail | Who did what, tamper-evident | **Audit** tab ([The audit trail](../../features/6.0/audit-trail.md)) | Administrator | Auditor, project manager |

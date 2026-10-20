@@ -31,7 +31,7 @@ or reflected value does not run, even where a template forgets to escape it"
 ([Content Security Policy](../../features/6.0/content-security-policy.md)). To make such a policy possible, the
 administration designs admin4 and admin4l were changed to carry "no inline `<script>`, no `on...=` attribute, no
 `javascript:` link, no `style=""` attribute and no `<style>` element"
-([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-october-2026-the-administration-runs-without-inline-scripts-handlers-and-styles)).
+([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-october-2026-the-administration-runs-without-inline-scripts-handlers-and-styles)).
 The policy ships in report-only mode on the administration and off on public sites; the administrator decides when to
 enforce it, and rolling back is one setting.
 
@@ -41,11 +41,11 @@ All in the 6.0.15 development line, which is not released.
 
 | What | When | Source |
 |---|---|---|
-| The policy setting, report-only on the administration by default | 16 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-october-2026-a-content-security-policy-report-only-on-the-administration) |
-| The administration without inline scripts, handlers and styles | 16 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-october-2026-the-administration-runs-without-inline-scripts-handlers-and-styles) |
-| What enforcing needs: extra sources, a nonce per request, a stricter companion policy | 17 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-enforcing-the-content-security-policy) |
-| Reports in a log of their own, with rate limits | 17 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-the-reports-of-the-content-security-policy-in-a-log-of-their-own) |
-| Extensions without inline scripts in their templates | 17 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-extensions-without-inline-scripts-in-their-templates) |
+| The policy setting, report-only on the administration by default | 16 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-october-2026-a-content-security-policy-report-only-on-the-administration) |
+| The administration without inline scripts, handlers and styles | 16 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-october-2026-the-administration-runs-without-inline-scripts-handlers-and-styles) |
+| What enforcing needs: extra sources, a nonce per request, a stricter companion policy | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-enforcing-the-content-security-policy) |
+| Reports in a log of their own, with rate limits | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-the-reports-of-the-content-security-policy-in-a-log-of-their-own) |
+| Extensions without inline scripts in their templates | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-extensions-without-inline-scripts-in-their-templates) |
 
 ## Facts you can print
 
@@ -54,10 +54,10 @@ All in the 6.0.15 development line, which is not released.
 | By default the policy is "report-only on the administration and off on the sites". | [Content Security Policy](../../features/6.0/content-security-policy.md) |
 | The shipped policy allows scripts and styles from the site itself only (`'self'`) and blocks plugins (`object-src 'none'`). | [Content Security Policy, Settings](../../features/6.0/content-security-policy.md#settings) |
 | In report-only mode the browser reports what it would block and blocks nothing. | same |
-| Rolling back from enforce is one setting: `Mode=report-only`. | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-enforcing-the-content-security-policy) |
+| Rolling back from enforce is one setting: `Mode=report-only`. | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-enforcing-the-content-security-policy) |
 | The online editor falls back from TinyMCE 3 to TinyMCE 8 where a strict policy is enforced. | same |
 | New administration templates may carry no inline styles or scripts; contributors must follow the rule. | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| Reports go to `var/log/csp.log`, rate limited per client and in total. | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-the-reports-of-the-content-security-policy-in-a-log-of-their-own) |
+| Reports go to `var/log/csp.log`, rate limited per client and in total. | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-the-reports-of-the-content-security-policy-in-a-log-of-their-own) |
 
 ## What not to claim
 

@@ -83,5 +83,5 @@ shared between workers, so it is not a shared cache either
 
 - [View cache and cache blocks](../website-creators/view-cache-and-cache-blocks.md)
 - [Caches](../../../guides/caches.md)
-- Caching cookbook (`doc/en/us/examples/cookbook/caching.md`)
+- Caching cookbook (`doc/eng-us/examples/cookbook/caching.md`)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

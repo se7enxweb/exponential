@@ -21,7 +21,7 @@ Never edit `settings/logviewer.ini` itself: an update replaces it. Put the setti
 
 > The limits of each log for rotation, pruning and compression on demand (./console exp:logs --rotate, --prune,  
 > --compress; the log viewer's actions) and by the cronjob part "logs" (php runcronjobs.php logs; in no default part).  
-> Guide: doc/en/us/features/6.0/log-rotation.md. A log without an entry here takes site.ini \[FileSettings\]:  
+> Guide: doc/eng-us/features/6.0/log-rotation.md. A log without an entry here takes site.ini \[FileSettings\]:  
 >   MaxSize\[<key>\]     bytes; the cronjob part rotates a log bigger than this     (LogFileMaxSize, 2097152)  
 >   Keep\[<key>\]        archives kept, .1 .. .N                                    (LogFileRotateCount, 3)  
 >   Compress\[<key>\]    enabled | disabled: archives from .2 on compressed to .gz  (LogFileCompress, disabled)  
@@ -29,7 +29,7 @@ Never edit `settings/logviewer.ini` itself: an update replaces it. Put the setti
 > The key is the log's key in the viewer's permalinks: error, debug, storage, site-storage ... e.g.  
 >   Keep\[debug\]=1  
 >   MaxSize\[debug\]=10485760  
-> The request logs (doc/en/us/features/6.0/request-logs.md) keep more and older archives than the kernel default. The writer  
+> The request logs (doc/eng-us/features/6.0/request-logs.md) keep more and older archives than the kernel default. The writer  
 > of 404.log and security.log still rotates at site.ini \[FileSettings\] LogFileMaxSize while it writes.  
 > The size-triggered rotation of eZDebug and eZLog while a log is written uses the site.ini values only.  
 

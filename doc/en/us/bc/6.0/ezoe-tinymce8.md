@@ -240,4 +240,4 @@ character` on the final OK of the embed dialog). That is why the tests look at t
 - [Behaviour changes of 1 and 2 October 2026](behaviour-changes-2026-10.md#access-and-security) (the upload check)
 - [Audit trail upgrade](audit.md)
 - [Backend ezjscore services](backend_ezjscore_services.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

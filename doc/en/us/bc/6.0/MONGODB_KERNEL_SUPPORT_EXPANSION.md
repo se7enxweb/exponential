@@ -4720,4 +4720,4 @@ The installer now also accepts `mongodb` as `--db` for `php bin/php/console exp:
 - [Installing Exponential in one command](../../features/6.0/install-in-one-command.md)
 - [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md) and [June 2026, first half](../../history/2026/2026-06a.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

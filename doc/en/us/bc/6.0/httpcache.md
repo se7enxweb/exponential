@@ -292,6 +292,6 @@ permission context gets the same copy. Filter events are listed in
 - [Velocity](../../features/6.0/velocity-persistent-worker-server.md)
 - [HTTP caching for anonymous visitors](http-caching.md) and [Cache control from the console](cache-console.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
 - [Velocity response cache](../../features/6.0/velocity-response-cache.md)

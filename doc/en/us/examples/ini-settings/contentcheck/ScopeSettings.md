@@ -19,7 +19,7 @@ Never edit `settings/contentcheck.ini` itself: an update replaces it. Put the se
 
 ## PresetList
 
-> Where a check starts (doc/en/us/features/6.0/content-checks.md, "Where a check starts"): from the  
+> Where a check starts (doc/eng-us/features/6.0/content-checks.md, "Where a check starts"): from the  
 > node in its form or address, else the signed-in user's last choice (the preference  
 > admin\_contentcheck\_scope), else content.ini \[NodeSettings\] RootNode.  
 > The quick scope buttons the checks offer, in this order: tree ("Whole tree", node 1, for users  

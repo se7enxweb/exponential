@@ -38,7 +38,7 @@ Version** (`COPYRIGHT.md` und `LICENSE.md` im Wurzelverzeichnis der Installation
 `GPL-2.0-or-later`). Fast jede Erweiterung verwendet dieselbe Lizenz: Von den 79 Erweiterungen, die im Oktober 2026
 auf der Referenz-Site des Projekts installiert waren, nennen 75 in `composer.json` GPL 2 oder später
 (`GPL-2.0-or-later` oder `GPL-2.0+`), drei GPL 2 (`GPL-2.0-only` oder die ältere Kennung `GPL-2.0`) und eine `GPL-3.0-or-later`. Lesen Sie immer die Lizenz der Erweiterung, die Sie vor
-sich haben ([Lizenzen lesen, bevor Sie etwas wiederverwenden](../../en/us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)).
+sich haben ([Lizenzen lesen, bevor Sie etwas wiederverwenden](../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)).
 
 Bei der GPL geht es um das **Kopieren, Ändern und Verbreiten** des Codes. Was sie von Ihnen verlangt, hängt davon ab,
 was Sie mit Ihrer Erweiterung tun.
@@ -99,10 +99,10 @@ entscheiden.
 
 Schreiben Sie „GNU General Public License v2.0 (or any later version)“, sofern Sie keinen Grund haben, eine andere
 GPL-kompatible Lizenz zu wählen. So bleibt Ihre Erweiterung mit dem Kernel und mit fast jeder anderen Erweiterung
-kombinierbar, auch mit den wenigen unter GPL 3 ([Lizenzen lesen, bevor Sie etwas wiederverwenden](../../en/us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md#combining-licenses-a-quick-table)).
+kombinierbar, auch mit den wenigen unter GPL 3 ([Lizenzen lesen, bevor Sie etwas wiederverwenden](../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md#combining-licenses-a-quick-table)).
 Enthält Ihre Erweiterung Code von jemand anderem, behalten Sie dessen Hinweise und Lizenz bei; haben Sie sie für einen
 Kunden gebaut, stellen Sie sicher, dass Sie sie veröffentlichen dürfen (siehe
-[Eine Erweiterung als Partner veröffentlichen](../../en/us/help/partners/publishing-an-extension.md)).
+[Eine Erweiterung als Partner veröffentlichen](../../eng-us/help/partners/publishing-an-extension.md)).
 
 ## Eine Erweiterung Schritt für Schritt veröffentlichen
 
@@ -116,7 +116,7 @@ Ordner auf Ihrer Site bis zu einem Paket, das jeder installieren kann.
   andere Geheimnisse. Machen Sie aus sitespezifischem Verhalten eine Einstellung mit neutralem Standardwert.
 - Behalten Sie den üblichen Aufbau einer Erweiterung bei: `settings/`, `design/`, `classes/`, `modules/`,
   `translations/`, `autoloads/` nach Bedarf
-  ([Was eine Erweiterung ist](../../en/us/help/extension-development/part-1-from-user-to-developer/what-an-extension-is.md)).
+  ([Was eine Erweiterung ist](../../eng-us/help/extension-development/part-1-from-user-to-developer/what-an-extension-is.md)).
 
 ### 2. Die Lizenzdatei hinzufügen
 
@@ -218,12 +218,12 @@ Jetzt kann jeder sie mit `composer require yourvendor/myextension` installieren.
   wie die [Lizenz-FAQ](https://exponential.earth/faq/licensing) erklärt; Mitwirkende behalten ihr Copyright.
 - **Exponential Projects**, [projects.exponential.earth](https://projects.exponential.earth/): die Projektplattform,
   die Erweiterungen mit ihren Neuigkeiten, Downloads und Links zum Quellcode auflistet
-  ([Exponential Projects](../../en/us/help/extension-development/part-1-from-user-to-developer/projects-exponential-earth.md)).
+  ([Exponential Projects](../../eng-us/help/extension-development/part-1-from-user-to-developer/projects-exponential-earth.md)).
   Geben Sie Ihrer Erweiterung dort eine Projektseite, die auf ihr Repository verweist.
 - **Share Exponential**, [share.exponential.earth](https://share.exponential.earth/): die Community-Site mit den Foren.
   Kündigen Sie die Erweiterung in den [Foren](https://share.exponential.earth/forums) an, suchen Sie Tester und
   beantworten Sie Fragen
-  ([Share Exponential](../../en/us/help/extension-development/part-1-from-user-to-developer/share-exponential-earth.md)).
+  ([Share Exponential](../../eng-us/help/extension-development/part-1-from-user-to-developer/share-exponential-earth.md)).
 
 ### 9. Am Leben erhalten
 
@@ -237,18 +237,18 @@ geänderte Kopie zu behalten. Forken Sie sie, korrigieren Sie sie auf einem Bran
 genau wie es [Mit Git entwickeln: Eine Änderung per Pull-Request beitragen](mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen)
 zeigt. Antwortet der ursprüngliche Autor nicht mehr, forken Sie sie respektvoll: Behalten Sie die History, das
 Copyright und die Lizenz bei und nennen Sie den Autor in der README
-([Erweiterungen an das Upstream-Projekt zurückgeben](../../en/us/help/partners/contributing-extensions-back.md)).
+([Erweiterungen an das Upstream-Projekt zurückgeben](../../eng-us/help/partners/contributing-extensions-back.md)).
 
 ## Verwandte Seiten
 
 - [Mit Git entwickeln](mit-git-entwickeln.md) und [Mit Git aktualisieren](mit-git-aktualisieren.md): Arbeiten Sie mit Klonen,
   damit das Zurückschicken einer Änderung ein einziger Pull-Request ist.
-- [Das Buch zur Entwicklung von Erweiterungen](../../en/us/help/extension-development/README.md): vom Benutzer zum Entwickler von
+- [Das Buch zur Entwicklung von Erweiterungen](../../eng-us/help/extension-development/README.md): vom Benutzer zum Entwickler von
   Erweiterungen und Themes, Schritt für Schritt.
 - [Erweiterungen](../anleitungen/extensions.md): eine Erweiterung bauen, konfigurieren und veröffentlichen.
-- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../../en/us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)
-- [Eine Erweiterung als Partner veröffentlichen](../../en/us/help/partners/publishing-an-extension.md)
-- [Ihr Site-Paket beitragen](../../en/us/help/site-packages/contribute-your-site-package.md): eine ganze Site (Design, Klassen, Demo-Inhalte) über den Einrichtungsassistenten teilen.
+- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)
+- [Eine Erweiterung als Partner veröffentlichen](../../eng-us/help/partners/publishing-an-extension.md)
+- [Ihr Site-Paket beitragen](../../eng-us/help/site-packages/contribute-your-site-package.md): eine ganze Site (Design, Klassen, Demo-Inhalte) über den Einrichtungsassistenten teilen.
 - Die vollständigen Lizenztexte: [GNU GPL Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) und die
   [GPL-FAQ](https://www.gnu.org/licenses/gpl-faq.html).
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

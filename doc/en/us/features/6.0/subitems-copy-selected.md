@@ -51,5 +51,5 @@ All keys are in `settings/content.ini`, block `CopySettings`. Scope: override or
 - [Hide and unhide selected](../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
 - [Sub-items table options](subitems-table-options.md)
 - [The responsive admin design (admin3)](admin3-responsive-admin.md), [the admin4 design](admin4-design.md), [left sidebar width and font size](admin3-sidebar-width-and-font-size.md)
-- [Changelog 6.0.7](../../../../changelogs/6.0/6.0.7.md)
+- [Changelog 6.0.7](../../../changelogs/6.0/6.0.7.md)
 - History: [August 2024](../../history/2024/2024-08.md), [October 2024](../../history/2024/2024-10.md), [November 2024](../../history/2024/2024-11.md), [January 2025](../../history/2025/2025-01.md), [June 2025](../../history/2025/2025-06.md), [June 2026, second half](../../history/2026/2026-06b.md)

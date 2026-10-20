@@ -76,7 +76,7 @@ durchkommt.
 **Das Risiko.** `/user/login` und `/admin/user/login` sind die am häufigsten angegriffenen URLs jeder Site. Geleakte
 Passwörter anderer Dienste funktionieren überall dort, wo Menschen sie wiederverwenden.
 
-![Die Anmeldeseite der Administration, die Seite, auf die Brute-Force-Angriffe zielen](../../en/us/help/images/help/sign-in-hardening.webp)
+![Die Anmeldeseite der Administration, die Seite, auf die Brute-Force-Angriffe zielen](../../eng-us/help/images/help/sign-in-hardening.webp)
 
 **Eingebaut.** Passwörter werden als bcrypt-Hashes gespeichert (`HashType=php_default`). Die Anmeldung kostet bei einem
 unbekannten Login genauso viel wie bei einem falschen Passwort, und **Passwort vergessen?** antwortet für jede Adresse
@@ -135,7 +135,7 @@ Entwicklung) ist der einzige Weg daran vorbei, und selbst dann ist eine Bestäti
 Installer schreibt `[SiteAccessSettings] CheckValidity=false`. Mit `[ConfigurationSettings] ManagedByDeployment=enabled`
 kann die Administration den Assistenten überhaupt nicht ausführen, keine Einstellungen oder Templates bearbeiten, keine
 Erweiterungen aktivieren und keine Pakete installieren
-([Konfiguration durch das Deployment verwaltet](../../en/us/features/6.0/managed-by-deployment.md)).
+([Konfiguration durch das Deployment verwaltet](../../eng-us/features/6.0/managed-by-deployment.md)).
 
 **Härten.** Behalten Sie `CheckValidity=false` und `AllowWizardOnInstalledSite=disabled` bei. Entfernen Sie
 `kickstart.ini` und `var/log/initial-admin-password` nach der Installation. Schalten Sie `ManagedByDeployment` auf den
@@ -157,7 +157,7 @@ die im Browser Skript ausführt (SVG, HTML), oder eine riesige oder fehlerhafte 
   fileinfo von PHP und vergleicht ihn mit `image.ini [ImageUploadSettings] AllowedMIMETypes[]`.
 - SVG-Dateien werden nie so gespeichert, wie sie hochgeladen wurden: `expSvgSanitizer` behält nur, was als sicher
   bekannt ist, und die gespeicherte Datei wird mit Headern ausgeliefert, die verhindern, dass sie etwas ausführt
-  ([SVG-Bilder](../../en/us/bc/6.0/svg-images.md)).
+  ([SVG-Bilder](../../eng-us/bc/6.0/svg-images.md)).
 - Paket-Uploads brauchen die `package`-Richtlinien, und `ManagedByDeployment` sperrt sie.
 
 **Härten.** Halten Sie die Rewrite-Regeln nach jedem Upgrade aktuell (`.htaccess_root` oder der daraus abgeleitete
@@ -195,7 +195,7 @@ und AdminUI sind so geschrieben, dass sie unter einer durchgesetzten Richtlinie 
 Sites aus. Lesen Sie die Berichte und setzen Sie dann `Mode=enforce` auf dem Administrations-Siteaccess; das klassische
 Design bleibt über `ReportOnlyDesigns[]` im Report-Only-Modus. Verfahren Sie ebenso mit den öffentlichen Siteaccesses,
 sobald Ihre Designs und Erweiterungen nichts mehr melden
-([Content Security Policy](../../en/us/features/6.0/content-security-policy.md)). Entwickler: Maskieren Sie jede Ausgabe, bauen
+([Content Security Policy](../../eng-us/features/6.0/content-security-policy.md)). Entwickler: Maskieren Sie jede Ausgabe, bauen
 Sie in PHP nie HTML aus Anfragedaten und legen Sie Skripte in Dateien ab.
 
 ### Cross-Site Request Forgery (CSRF)
@@ -222,7 +222,7 @@ abweisen, bevor PHP läuft.
 **Härten (Entwickler).** Verwenden Sie `eZPersistentObject` und die Content-API; wenn SQL unvermeidlich ist,
 `$db->escapeString()` für jede Zeichenkette und `(int)` für jede Zahl; übergeben Sie Anfragedaten nie ohne
 `escapeshellarg()` an eine Shell. Erzeugen Sie Erweiterungen neu, die mit den RAD-Assistenten vor deren Korrektur
-erstellt wurden ([Härtungshinweise zu 6.0.13](../../en/us/bc/6.0/hardening.md), [RAD-Werkzeuge: Sicherheit](../../en/us/bc/6.0/rad-security.md),
+erstellt wurden ([Härtungshinweise zu 6.0.13](../../eng-us/bc/6.0/hardening.md), [RAD-Werkzeuge: Sicherheit](../../eng-us/bc/6.0/rad-security.md),
 [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md)).
 
 ### Sitzungsübernahme
@@ -244,7 +244,7 @@ Sie das Passwort und entfernen Sie alle Sitzungen (**Setup** > **Sitzungen**, mi
 
 **Eingebaut.** Jedes Weiterleitungsziel, das von außerhalb des Codes kommt (ein Formularfeld, die Sitzung, ein
 URL-Parameter), einschließlich derer der Anmeldung und der Zwei-Faktor-Anmeldung, durchläuft die
-[Regeln für sichere Weiterleitungen](../../en/us/features/6.0/safe-redirects.md) (`eZRedirectManager`): Ein Ziel auf einem
+[Regeln für sichere Weiterleitungen](../../eng-us/features/6.0/safe-redirects.md) (`eZRedirectManager`): Ein Ziel auf einem
 anderen Host als dem der Site selbst oder `[SiteSettings] AllowedRedirectHosts` wird abgewiesen, ebenso Ziele mit
 `javascript:` und `data:` und die üblichen Kodierungstricks.
 
@@ -255,7 +255,7 @@ anderen Host als dem der Site selbst oder `[SiteSettings] AllowedRedirectHosts` 
 **Das Risiko.** Eine bekannte Schwachstelle in einem alten Release des Kernels, einer Erweiterung, einer
 Composer-Abhängigkeit, von PHP oder der Datenbank; eine manipulierte Datei auf dem Server.
 
-![Die Version der Installation oben auf der Seite „Über“, das Erste, was Sie mit dem neuesten Release vergleichen](../../en/us/help/images/help/about-page-security.webp)
+![Die Version der Installation oben auf der Seite „Über“, das Erste, was Sie mit dem neuesten Release vergleichen](../../eng-us/help/images/help/about-page-security.webp)
 
 **Eingebaut.** Releases sind unveränderliche Tags auf Packagist und GitHub, mit Changelogs. **Setup** >
 **Upgrade-Prüfung** vergleicht jede Datei mit der `share/filelist.md5` des Release („Überprüfe Dateikonsistenz“) und das
@@ -345,8 +345,8 @@ Log im anderen wiederfinden lässt. Eine Anfrage, die der Schutzschild abweist, 
 nicht in `security.log`; im Monitor-Modus kann dieselbe Sondierung in beiden Logs stehen. Der HTTP-Cache von Exponential
 arbeitet mit ihr zusammen: Eine Anfrage, die der Schutzschild mit `allow-uncached` markiert (ein ausgedachter Pfad oder
 Parameter), wird beantwortet, aber nie gespeichert, sodass zufällige Adressen den Cache nicht füllen können
-([HTTP-Cache: Mit vorgeschaltetem request-shield](../../en/us/bc/6.0/httpcache.md#with-request-shield-in-front)).
-Einzelheiten: [Request-Logs: request-shield und der Klassifizierer](../../en/us/features/6.0/request-logs.md#request-shield-and-the-classifier).
+([HTTP-Cache: Mit vorgeschaltetem request-shield](../../eng-us/bc/6.0/httpcache.md#with-request-shield-in-front)).
+Einzelheiten: [Request-Logs: request-shield und der Klassifizierer](../../eng-us/features/6.0/request-logs.md#request-shield-and-the-classifier).
 
 ### Installation
 
@@ -427,7 +427,7 @@ Bibliothek.
 
 Härtung ohne Beobachtung verzögert nur den Moment, in dem Sie von einem Angriff erfahren.
 
-![Das Audit-Protokoll: wer wann was getan hat, mit Filtern nach Akteur, Aktion und Zeit](../../en/us/help/images/help/audit-dashboard-security.webp)
+![Das Audit-Protokoll: wer wann was getan hat, mit Filtern nach Akteur, Aktion und Zeit](../../eng-us/help/images/help/audit-dashboard-security.webp)
 
 | Quelle | Was sie aufzeichnet | Wo Sie sie lesen |
 |---|---|---|
@@ -435,7 +435,7 @@ Härtung ohne Beobachtung verzögert nur den Moment, in dem Sie von einem Angrif
 | das Audit-Protokoll | Anmeldungen und Fehlversuche, Passwortänderungen und -rücksetzungen, Änderungen an Rollen und Einstellungen, entfernte Inhalte, ausgeführte Befehle; per Hash verkettet | **Audit**, `./console exp:audit tail`, `exp:audit verify` |
 | `var/log/auth.log` | jeden Schritt der Zwei-Faktor-Anmeldung (nie einen Code oder ein Geheimnis) | **Setup** > **Logs** |
 | `var/log/csp.log` | Verstöße gegen die Content Security Policy | **CSP reports** (`csp/report`) |
-| `error.log`, die Logs des Webservers | Fehler mit einer Referenz-ID | **Setup** > **Logs** ([Log-Anzeige](../../en/us/features/6.0/log-viewer.md)) |
+| `error.log`, die Logs des Webservers | Fehler mit einer Referenz-ID | **Setup** > **Logs** ([Log-Anzeige](../../eng-us/features/6.0/log-viewer.md)) |
 | das Log von request-shield | seine Entscheidungen | seine Live-Ansicht unter `/rs/` |
 
 Tun Sie mindestens Folgendes:
@@ -451,7 +451,7 @@ Tun Sie mindestens Folgendes:
 
 Der Request-Klassifizierer klassifiziert nur: Wegen eines Urteils wird nichts blockiert. Blockieren ist die Aufgabe des
 vorgeschalteten Schutzschilds, des Webservers oder eines Listeners, den Sie in
-`requestclassifier.ini [ClassifierSettings] Listeners[]` registrieren ([Request-Logs](../../en/us/features/6.0/request-logs.md)).
+`requestclassifier.ini [ClassifierSettings] Listeners[]` registrieren ([Request-Logs](../../eng-us/features/6.0/request-logs.md)).
 
 ## Checkliste
 
@@ -490,8 +490,8 @@ Passwörter, Geheimnisse und personenbezogene Daten weg. Die Richtlinie und die 
   [Das Standardpasswort des Administrators](standard-administratorpasswort.md)
 - [Sicherheitsvorgaben vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md),
   [die Sicherheitspatches vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md)
-- [Content Security Policy](../../en/us/features/6.0/content-security-policy.md), [Request-Logs](../../en/us/features/6.0/request-logs.md),
-  [Log-Anzeige](../../en/us/features/6.0/log-viewer.md), [Audit](../../en/us/bc/6.0/audit.md), [Wartungsmodus](../anleitungen/wartungsmodus.md)
+- [Content Security Policy](../../eng-us/features/6.0/content-security-policy.md), [Request-Logs](../../eng-us/features/6.0/request-logs.md),
+  [Log-Anzeige](../../eng-us/features/6.0/log-viewer.md), [Audit](../../eng-us/bc/6.0/audit.md), [Wartungsmodus](../anleitungen/wartungsmodus.md)
 - OWASP [Top Ten](https://owasp.org/projects/top-ten) und
   [Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html);
   NIST [SP 800-63B-4](https://pages.nist.gov/800-63-4/sp800-63b.html)

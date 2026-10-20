@@ -18,7 +18,7 @@ this help.
 
 This help is the documentation of the release you are running: it is the folder `doc/` of the installation, shown in
 the administration, and it changes with every change to the software. Where an older source and this help disagree
-about the software, trust this help and the [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md). It is free
+about the software, trust this help and the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md). It is free
 documentation ([Free documentation](../free-documentation.md)).
 
 ## Current sources

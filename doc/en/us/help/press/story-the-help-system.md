@@ -36,7 +36,7 @@ documentation under the GNU FDL ([Story: free documentation](story-free-document
 
 | What | When | Source |
 |---|---|---|
-| The help system in the administration | October 2026, in the 6.0.15 line (in development) | [October 2026](../../history/2026/2026-10.md), [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| The help system in the administration | October 2026, in the 6.0.15 line (in development) | [October 2026](../../history/2026/2026-10.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 | Help pages written as content in the database, phase 1 | 6.0.15 line | [Help as content](../../features/6.0/help-content.md) |
 
 ![A page of the help with its contents and headings](../images/help/pr-help-page.webp)

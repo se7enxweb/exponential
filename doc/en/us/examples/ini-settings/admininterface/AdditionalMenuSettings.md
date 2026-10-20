@@ -114,7 +114,7 @@ AdvancedMenuTemplateArray[]
 > Template(s) for the Export submenu of the advance menu: the items an extension adds below the package entries  
 > (xrowextract: the CSV entries). Each item opens its tool's form filled in for the node (%nodeID%), never an export  
 > itself, and is shown only to a user with the tool's policy. Export is shown when it has an item.  
-> Guide: doc/en/us/bc/6.0/content-export-menu.md  
+> Guide: doc/eng-us/bc/6.0/content-export-menu.md  
 
 Default: an empty list.
 

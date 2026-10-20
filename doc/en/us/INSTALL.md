@@ -3,7 +3,7 @@
 This guide installs Exponential 6.0 from nothing to a working site: what you need, how to get the code, the three
 ways to install (the browser setup wizard, the kickstarter, the one-command console install), how to serve the
 site and what to do afterwards. For what Exponential is and how it is served, read the project
-[README](../../../README.md) first. For a guided first hour after the install, read
+[README](../../README.md) first. For a guided first hour after the install, read
 [Getting started](guides/getting-started.md).
 
 Every command is run from the installation root: the directory that holds `index.php`, `autoload.php`, `bin/`
@@ -129,7 +129,7 @@ One of these, chosen in [section 8](#8-serve-the-site-web-server-https-and-permi
   certificates, and needs no other web server.
 - **Apache** with `mod_rewrite` and PHP-FPM (or mod_php). The rewrite rules ship in `.htaccess_root`.
 - Any other server that can rewrite a URL to `index.php` (nginx, LiteSpeed, Caddy and others, listed in the
-  [README](../../../README.md#the-traditional-options)). This guide gives no configuration for them.
+  [README](../../README.md#the-traditional-options)). This guide gives no configuration for them.
 
 ## 3. Get the code
 

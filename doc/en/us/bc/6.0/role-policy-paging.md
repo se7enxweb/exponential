@@ -324,4 +324,4 @@ rendered fresh is listed: a cached page is not evidence of what a page uses.
 - [The locations tab: paging and sorting](locations-tab-paging-and-sorting.md)
 - [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
 - [January 2026](../../history/2026/2026-01.md)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

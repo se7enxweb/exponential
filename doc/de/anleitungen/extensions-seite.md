@@ -145,5 +145,5 @@ Millisekunde hält.
   `ExtensionAcknowledgeRisks` und `ExtensionDiscardButton`. Die Formularsendungen der Seite vor der Neugestaltung funktionieren weiterhin:
   `ActivateExtensionsButton` mit `ActiveExtensionList[]` (und `ShownExtensionList[]`) schreibt wie bisher sofort, und das
   JSON-Umordnen `ReorderExtensions` mit `ExtensionOrder[]` ändert nur die Reihenfolge.
-- Siehe auch: [Ladereihenfolge und sicheres Speichern](../../en/us/features/6.0/extension-loading-order.md),
-  [die Extension-Liste und Downloads](../../en/us/features/6.0/extension-list-and-downloads.md).
+- Siehe auch: [Ladereihenfolge und sicheres Speichern](../../eng-us/features/6.0/extension-loading-order.md),
+  [die Extension-Liste und Downloads](../../eng-us/features/6.0/extension-list-and-downloads.md).

@@ -95,7 +95,7 @@ Load `tokens.css` first in the `ezcss_load` list.
 
 ## Rules that keep tokens useful
 
-These are the admin's rules (`doc/en/us/bc/6.0/admin4-styling.md`), and they work for any design:
+These are the admin's rules (`doc/eng-us/bc/6.0/admin4-styling.md`), and they work for any design:
 
 - No literal colors, radii, spacing or font values in rules: only tokens.
 - No local aliases (`--card-bg: var(--site-card)` in a component): use the token itself.

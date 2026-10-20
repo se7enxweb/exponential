@@ -19,7 +19,7 @@ Never edit `settings/package.ini` itself: an update replaces it. Put the setting
 
 ## RawXMLDatatypes
 
-> The JSON package format (doc/en/us/bc/6.0/package-json-format.md).  
+> The JSON package format (doc/eng-us/bc/6.0/package-json-format.md).  
 > Datatypes whose attribute value is kept as an XML string in a JSON document (\["#xml", "..."\])  
 
 Default: a list of 1: `ezxmltext`.

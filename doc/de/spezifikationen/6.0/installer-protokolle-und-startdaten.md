@@ -3,7 +3,7 @@
 Diese Seite ist die Referenz für die Daten, mit denen eine neue Exponential-Installation beginnt (Startdaten-Dateien, der
 Inhaltsbaum, IDs und URL-Aliase), und für die Dateien, die die Installer schreiben (`setup.log`, `kickstart.log` und weitere).
 Lesen Sie sie, wenn Sie einen eigenen Installer oder ein eigenes Site-Paket bauen, eine frische Installation prüfen oder rund um den
-Kickstarter Skripte schreiben. Die Anleitung finden Sie unter [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md).
+Kickstarter Skripte schreiben. Die Anleitung finden Sie unter [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md).
 
 ## Kurz gesagt
 
@@ -91,7 +91,7 @@ Weitere Änderungen an den Startdaten:
   passend zu `share/db_data.dba`.
 - **Bestellstatus.** Zusätzlich zu Pending, Processing und Delivered werden vierzehn Status für den Lebenszyklus
   angelegt; siehe
-  [Shop-Dashboard und Bestellstatus](../../../en/us/features/6.0/store-dashboard.md).
+  [Shop-Dashboard und Bestellstatus](../../../eng-us/features/6.0/store-dashboard.md).
 
 ## Von den Installern geschriebene Protokolle
 
@@ -148,12 +148,12 @@ Daten (`eng-US`) an einer einzigen Stelle.
   maskiert `null` als leere Zeichenkette, wie es der MySQL-Treiber tut.
 - **MySQL** meldet unter PHP 8.1 und neuer eine abgelehnte Anmeldung als fehlgeschlagene
   Verbindung.
-- **MongoDB**: siehe [MongoDB-Unterstützung im Kernel](../../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
+- **MongoDB**: siehe [MongoDB-Unterstützung im Kernel](../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
   und [Datenbanktreiber und Installer](datenbanktreiber-2026-09.md).
 
 ## Siehe auch
 
 - Spezifikationen: [Datenbanktreiber und Installer, September 2026](datenbanktreiber-2026-09.md), [SQLite3-Datenbanktreiber](sqlite3-datenbanktreiber.md)
-- Funktionen: [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md), [Kickstarter: eine ganze Site aus einer Datei installieren](../../../en/us/features/6.0/kickstarter-cli.md), [Ein Paket-Installer, der große Pakete übersteht](../../../en/us/features/6.0/package-installer-batching.md), [In ein Paket hineinsehen, es mit Ihrer Site vergleichen, einzelne Elemente importieren](../../../en/us/features/6.0/package-compare-and-import.md), [Wartungsmodus](../../../en/us/features/6.0/maintenance-mode.md), [Shop-Dashboard und Bestellstatus](../../../en/us/features/6.0/store-dashboard.md)
-- Upgrade-Hinweise: [Kickstarter auf der Kommandozeile](../../../en/us/bc/6.0/kickstartercli.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../../en/us/bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Chroniken [16. bis 30. September 2026](../../../en/us/history/2026/2026-09b.md) und [Juni 2026, zweite Hälfte](../../../en/us/history/2026/2026-06b.md)
+- Funktionen: [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md), [Kickstarter: eine ganze Site aus einer Datei installieren](../../../eng-us/features/6.0/kickstarter-cli.md), [Ein Paket-Installer, der große Pakete übersteht](../../../eng-us/features/6.0/package-installer-batching.md), [In ein Paket hineinsehen, es mit Ihrer Site vergleichen, einzelne Elemente importieren](../../../eng-us/features/6.0/package-compare-and-import.md), [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md), [Shop-Dashboard und Bestellstatus](../../../eng-us/features/6.0/store-dashboard.md)
+- Upgrade-Hinweise: [Kickstarter auf der Kommandozeile](../../../eng-us/bc/6.0/kickstartercli.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Chroniken [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md) und [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)

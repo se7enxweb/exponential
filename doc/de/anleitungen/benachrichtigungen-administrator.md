@@ -8,7 +8,7 @@ Wurzelverzeichnis der Installation ausgeführt; ergänzen Sie `--allow-root-user
 einer Testinstallation, deren Mail-Transport auf Dateien gezwungen war, mit Testadressen unter `nottest.invalid`: Es wurde keine E-Mail gesendet.
 Namen, IDs und Zeiten weichen auf Ihrer Installation ab.
 
-Was Benutzer sehen, steht in [der Anleitung für Benutzer](../../en/us/features/6.0/notifications.md); die Befehle vollständig in
+Was Benutzer sehen, steht in [der Anleitung für Benutzer](../../eng-us/features/6.0/notifications.md); die Befehle vollständig in
 [der Befehlsreferenz](../spezifikationen/6.0/benachrichtigungen-cli.md).
 
 ## 1. Wie es funktioniert, in einer Minute
@@ -71,7 +71,7 @@ fünf Minuten ein guter Standard; ein Digest wird beim ersten Lauf nach seiner S
 
 Wenn Ihre Crontab die Gruppe `frequent` bereits ausführt, ist der Benachrichtigungsteil schon enthalten; fügen Sie keine zweite Zeile hinzu.
 `./console crontab:edit` öffnet die Crontab. Die Anleitung zu Cronjobs ist [Betrieb einer Site](betrieb-einer-website.md#3-cronjobs-ausführen).
-Wenn Sie Velocity betreiben, kann dessen eigener [Scheduler](../../en/us/features/6.0/velocity-scheduler.md) den Teil ohne den System-Cron starten.
+Wenn Sie Velocity betreiben, kann dessen eigener [Scheduler](../../eng-us/features/6.0/velocity-scheduler.md) den Teil ohne den System-Cron starten.
 
 Zwei Dinge schützen vor doppelten Läufen: `runcronjobs.php` sperrt jeden Teil, und der Benachrichtigungsdienst hat eine eigene Sperre
 (Abschnitt 6), sodass sich ein Cron-Lauf, ein Konsolen-Lauf und **Jetzt ausführen** nie überschneiden. Ein zweiter Lauf wird abgewiesen, nicht in eine Warteschlange gestellt.
@@ -291,11 +291,11 @@ IncludeClasses[]=file
 Jede andere Klasse gilt dann als ohne Benachrichtigung veröffentlicht. Eine Klassen-ID in der Liste (`IncludeClasses[]=16`) bezeichnet
 ihre Klasse ebenfalls. Der Standard (`disabled`) benachrichtigt für jede Klasse.
 
-Die ganze Geschichte: [Ohne Benachrichtigung veröffentlichen](../../en/us/features/6.0/publish-without-notification.md).
+Die ganze Geschichte: [Ohne Benachrichtigung veröffentlichen](../../eng-us/features/6.0/publish-without-notification.md).
 
 ## Verwandte Seiten
 
-- [Die Anleitung für Benutzer](../../en/us/features/6.0/notifications.md), [die Anleitung für Entwickler](benachrichtigungen-entwickler.md)
+- [Die Anleitung für Benutzer](../../eng-us/features/6.0/notifications.md), [die Anleitung für Entwickler](benachrichtigungen-entwickler.md)
 - [Die Befehlsreferenz](../spezifikationen/6.0/benachrichtigungen-cli.md), [die INI-Referenz](../spezifikationen/6.0/benachrichtigungen-ini.md), [die Spezifikation](../spezifikationen/6.0/benachrichtigungen.md)
-- [Betrieb einer Site](betrieb-einer-website.md), [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md), [das Audit-Protokoll](../../en/us/features/6.0/audit-trail.md)
-- [Upgrade-Hinweise](../../en/us/bc/6.0/notification-ui-and-commands.md)
+- [Betrieb einer Site](betrieb-einer-website.md), [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md), [das Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md)
+- [Upgrade-Hinweise](../../eng-us/bc/6.0/notification-ui-and-commands.md)

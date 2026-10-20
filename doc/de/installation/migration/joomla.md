@@ -95,4 +95,4 @@ URL sein), der die Weiterleitungstabelle aus den URL-Aliasen von Exponential üb
 - Weiterleitungen (Bulk Import): <https://docs.joomla.org/Help5.x:Redirects:_Links>
 
 Diese Seite ist Teil der Exponential-Dokumentation und freie Dokumentation unter der GNU Free Documentation License
-1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md)).
+1.3 oder einer späteren Version ([die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).

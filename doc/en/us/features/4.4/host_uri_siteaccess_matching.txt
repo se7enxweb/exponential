@@ -21,7 +21,7 @@ rewrite rules / redirects to redirect e.g. example.com to example.com/en if you 
 want both to use the same siteaccess, and thus also avoid having matching rules for both.
 
 There where some refactoring done to siteaccess code while implementing this feature.
-For deprecated / changed functionality, see doc/en/us/bc/4.4.
+For deprecated / changed functionality, see doc/eng-us/bc/4.4.
 For new api to load siteaccess settings from other siteaccesses see ini_enhancments.txt
 
 

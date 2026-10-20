@@ -23,7 +23,7 @@ Never edit `settings/menu.ini` itself: an update replaces it. Put the settings y
 > out of Tabs\[\] that an extension appends (extension settings are read after the  
 > siteaccess's). The editor siteaccess hides the administration's tabs with it.  
 >
-> Fewer tabs, nothing lost (admin4, doc/en/us/features/6.0/admin4-design.md "Moving a tab into Setup"):  
+> Fewer tabs, nothing lost (admin4, doc/eng-us/features/6.0/admin4-design.md "Moving a tab into Setup"):  
 > design and audit have a group of the Setup menu and overview (\[Leftmenu\_setup\] GroupTabs\[\]),  
 > shown only while their tab is not in the top menu; their pages then mark the Setup tab and  
 > draw the Setup menu. Without the dashboard tab the logo leads to the dashboard. In a  
@@ -81,7 +81,7 @@ SetupTabs[]
 >   MegaMenuTabs\[\]=setup  
 >   MegaMenuTabs\[\]=users  
 >   MegaMenuTabs\[\]=dashboard  
-> (doc/en/us/features/6.0/admin4-design.md, "Mega menu")  
+> (doc/eng-us/features/6.0/admin4-design.md, "Mega menu")  
 
 Default: an empty list.
 
@@ -103,7 +103,7 @@ MegaMenuTabs[]
 > Hidden by default as of 4.3  
 > Tabs\[\]=design  
 > Unhidden by default as of 6.0.6  
-> The audit console (doc/en/us/bc/6.0/audit.md): shown only with the policy audit/read  
+> The audit console (doc/eng-us/bc/6.0/audit.md): shown only with the policy audit/read  
 
 Default: a list of 8: `dashboard`, `content`, `media`, `users`, `shop`, `design`, `setup`, `audit`.
 

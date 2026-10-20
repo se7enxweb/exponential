@@ -16,7 +16,7 @@ change it, and what about extensions and this documentation?
 > **Warning**
 > This is a summary in plain words, not legal advice. The license texts in the repository count: the GNU General
 > Public License version 2 in `LICENSE.md` and `LICENSE`, and the GNU Free Documentation License 1.3 in
-> [doc/en/us/LICENSE-GFDL-1.3.txt](../../../LICENSE-GFDL-1.3.txt). For a specific plan, ask your legal adviser. The
+> [doc/eng-us/LICENSE-GFDL-1.3.txt](../../../LICENSE-GFDL-1.3.txt). For a specific plan, ask your legal adviser. The
 > buyer's view of the same licenses is on [Licensing explained for buyers](../../business/licensing-for-buyers.md).
 
 ## Contents

@@ -52,7 +52,7 @@ git tag -l 'v*' --sort=version:refname | tail -5
 ## Changelogs and history
 
 - Each kernel version has a changelog in `doc/changelogs/6.0/`, for example the
-  [6.0.15 changelog](../../../../../../changelogs/6.0/6.0.15.md).
+  [6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md).
 - Extensions have their own changelogs in `doc/changelogs/extensions/`.
 - Every change since December 2023 is told in [the history](../../../../history/README.md).
 

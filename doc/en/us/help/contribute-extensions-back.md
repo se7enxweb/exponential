@@ -212,7 +212,7 @@ Now anyone can install it with `composer require yourvendor/myextension`.
   [...] you do not need to sign the CLA". The page does list "complete/incomplete extensions" among the code that
   needs a signed CLA "which you want 7x to include", so an extension handed over to 7x for inclusion is covered by
   it; the page names no individual repositories. See
-  [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
+  [Copyright assignment (CLA)](../../../CONTRIBUTING.md#copyright-assignment-cla).
 - **Exponential Projects**, [projects.exponential.earth](https://projects.exponential.earth/): the project forge
   that lists extensions with their news, downloads and source links
   ([Exponential Projects](extension-development/part-1-from-user-to-developer/projects-exponential-earth.md)).

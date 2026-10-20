@@ -34,7 +34,7 @@ see the same files and the same database; Exponential's cluster file handlers ma
 example `eZDFSFileHandlerMySQLiBackend`), the DFS backend and the cluster database's host, name and user (retries:
 `DBConnectRetries`, `DBExecuteRetries`). Put the password in `settings/override/`. Then move existing files into the
 cluster with the kernel's tools (`bin/php/clusterize.php`) and purge with `clusterpurge` in cron
-(see `doc/en/us/examples/commands/` for the commands).
+(see `doc/eng-us/examples/commands/` for the commands).
 
 ## What else must be shared
 

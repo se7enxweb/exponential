@@ -37,7 +37,7 @@ for your stylesheet. Write down what the rules must do before writing them.
 `extension/myext/design/admin4/stylesheets/myext-admin.css`:
 
 ```css
-/* myext admin pages. Tokens only (doc/en/us/bc/6.0/admin4-styling.md); light and dark from the tokens. */
+/* myext admin pages. Tokens only (doc/eng-us/bc/6.0/admin4-styling.md); light and dark from the tokens. */
 .myext-runs { display: grid; gap: var(--a4-space-2); }
 .myext-run {
   display: grid;

@@ -250,7 +250,7 @@ systemd would end the server together with the watchdog's oneshot service, and t
 The reasons are `down`, `restart-stale`, `intentionally-stopped`, `restart-in-progress`, `lock-held`, `backoff`,
 `paused`, `overlap` (the previous check is still busy) and `error`.
 
-The audit (doc/en/us/bc/6.0/audit.md) gets one event only from a check that acts or decides something notable, never from
+The audit (doc/eng-us/bc/6.0/audit.md) gets one event only from a check that acts or decides something notable, never from
 the routine "running, nothing to do" check. A `watchdog run` does not record the generic `system.command.run` that
 every other command records (it calls `eZScript::setAuditCommandRun( false )` for its own run). Instead it records:
 
@@ -799,7 +799,7 @@ This page is about driving the engine from Exponential. What the engine is, how 
 
 | You want | Read |
 |---|---|
-| What changed in a release | [Changelog of the Velocity engine](../../../../changelogs/extensions/exponential-velocity.md) |
+| What changed in a release | [Changelog of the Velocity engine](../../../changelogs/extensions/exponential-velocity.md) |
 | What to change when you upgrade the engine (0.0.4.27 to 0.0.4.42) | [Velocity engine upgrade notes](velocity-engine-upgrade-notes.md) |
 | The story month by month | [Velocity chronicle](../../history/velocity/README.md) |
 | The web server, control panel, cache, HTTPS, shell, packages | [web server](../../features/6.0/velocity-web-server.md), [control panel](../../features/6.0/velocity-control-panel.md), [response cache](../../features/6.0/velocity-response-cache.md), [HTTPS](../../features/6.0/velocity-https-certificates.md), [Q shell](../../features/6.0/velocity-q-shell.md), [packages and binaries](../../features/6.0/velocity-packages-and-binaries.md) |

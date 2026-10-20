@@ -75,6 +75,6 @@ and clear the template and content caches. `./console exp:ezchecktranslation ger
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/ezflow.md) and [release notes](../../../../../changelogs/extensions/ezflow.md)
+- [Chronicle](../../../history/extensions/ezflow.md) and [release notes](../../../../changelogs/extensions/ezflow.md)
 - [Change ledger](../../../history/ledger/ezflow.md)
 - Months: [2023-12](../../../history/extensions/months/2023-12.md), [2024-01](../../../history/extensions/months/2024-01.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

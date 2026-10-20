@@ -64,7 +64,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 ## Related pages
 
-- [Release changelog](../../../../changelogs/extensions/ezplatform-http-cache.md)
+- [Release changelog](../../../changelogs/extensions/ezplatform-http-cache.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

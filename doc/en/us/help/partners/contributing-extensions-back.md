@@ -24,7 +24,7 @@ extension where it lives, so everyone benefits and the original author is credit
 
 Most upgrades are small: PHP 8 compatibility, renamed settings, template adjustments. Work in a branch, keep each
 change in its own commit, and describe why in the message (`Fixed: ...`, `Updated: ...`). Test on the PHP versions
-the kernel supports (8.0 to 8.5 for 6.0.15, `doc/en/us/install/02-requirements.md`).
+the kernel supports (8.0 to 8.5 for 6.0.15, `doc/eng-us/install/02-requirements.md`).
 
 ## 3. Send it back
 
@@ -39,7 +39,7 @@ sent in any form, is merged only after you have signed the Contributor Licensing
 Exponential Foundation require. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial
 products, without asking or paying you, and you cannot withdraw it or set conditions on it. Your own custom extensions, and
 fixes you keep for your customers, are not affected. See
-[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+[Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ## 4. Forks and rebranding, done respectfully
 

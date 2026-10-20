@@ -5,7 +5,7 @@ Referenz ERR-0123456789“), zu den Logzeilen dieser Anfrage gelangen, zu dem, w
 hat, und dazu, wer in diesem Moment was getan hat. Sie richtet sich an Administratoren und Entwickler, die solche
 Meldungen beantworten.
 
-[Anleitungen](README.md) · Siehe auch: [Der Log-Viewer](../../en/us/features/6.0/log-viewer.md),
+[Anleitungen](README.md) · Siehe auch: [Der Log-Viewer](../../eng-us/features/6.0/log-viewer.md),
 [Sicherheit und Audit](sicherheit-und-audit.md), [Systeminformationen](systeminformationen.md)
 
 ## Kurz gesagt
@@ -46,9 +46,9 @@ aufgetreten: Jeder Server hat sein eigenes `var/log`.
 Ohne Referenz suchen Sie stattdessen nach Zeit und Adresse: **Von** und **Bis** einige Minuten um die Meldung herum,
 die Adresse unter **Anfrage**, die Stufen **Fehler** und **Warnung**, Bereich **Alle Kernel-Logs**. Als Permalink:
 `/setup/logs/view/error/(level)/error,warning/(from)/2026-10-17T01~3A00/(to)/2026-10-17T01~3A10/(uri)/~2Fshop/(scope)/kernel`
-(ein `:` wird in einem Wert zu `~3A` und ein `/` zu `~2F`, siehe [Permalinks](../../en/us/features/6.0/log-viewer.md#permalinks)).
+(ein `:` wird in einem Wert zu `~3A` und ein `/` zu `~2F`, siehe [Permalinks](../../eng-us/features/6.0/log-viewer.md#permalinks)).
 
-Sind die Webserver-Logs des Servers konfiguriert ([Webserver-Logs](../../en/us/features/6.0/log-viewer.md#web-server-logs)),
+Sind die Webserver-Logs des Servers konfiguriert ([Webserver-Logs](../../eng-us/features/6.0/log-viewer.md#web-server-logs)),
 zeigt `/setup/logs/view/webserver-access` mit demselben Zeitraum die Anfrage so, wie der Webserver sie gesehen hat:
 ihren Status, ihre Größe und den User-Agent.
 

@@ -118,7 +118,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expAuditFunctionCollection` | class | `kernel/classes/audit/console/expauditfunctioncollection.php:22` | The fetch functions of the audit module (kernel/audit/function_definition.php; doc/en/us/bc/6.0/audit.md, "Template operator and fetch"): | – |
+| `expAuditFunctionCollection` | class | `kernel/classes/audit/console/expauditfunctioncollection.php:22` | The fetch functions of the audit module (kernel/audit/function_definition.php; doc/eng-us/bc/6.0/audit.md, "Template operator and fetch"): | – |
 
 ### kernel/classes/help (1)
 

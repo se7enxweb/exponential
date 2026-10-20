@@ -14,7 +14,7 @@ or audit an existing one. Each section names the chapter of the documentation th
 
 ## PHP
 
-Source: `doc/en/us/install/02-requirements.md`.
+Source: `doc/eng-us/install/02-requirements.md`.
 
 - [ ] A supported PHP version: 8.0 to 8.5 for the 6.0.15 line (Velocity needs 8.1 or later)
 - [ ] 64-bit PHP build
@@ -37,7 +37,7 @@ Source: [Database support](../database-support.md).
 
 ## Engine and web server
 
-Sources: `doc/en/us/install/08-serving-the-site.md`, [Security hardening](../security-hardening.md).
+Sources: `doc/eng-us/install/08-serving-the-site.md`, [Security hardening](../security-hardening.md).
 
 - [ ] Engine chosen: Velocity, FrankenPHP, or a web server with PHP-FPM
 - [ ] Only the public entry points are reachable; internal directories are not served
@@ -52,7 +52,7 @@ Sources: `doc/en/us/install/08-serving-the-site.md`, [Security hardening](../sec
 
 ## Security
 
-Source: [Security hardening](../security-hardening.md), `doc/en/us/install/13-security-hardening.md`.
+Source: [Security hardening](../security-hardening.md), `doc/eng-us/install/13-security-hardening.md`.
 
 - [ ] TLS on every host name, with renewal automated
 - [ ] Security headers set; the administration's Content Security Policy not weakened

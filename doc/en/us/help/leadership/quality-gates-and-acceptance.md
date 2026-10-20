@@ -102,7 +102,7 @@ These tests are in `tests/tests/design/` and run in the `design` suite on every 
 
 **axe.** The changelog records manual checks with the axe accessibility engine, for example "axe reports no serious
 finding in the page frame on 10 classic pages at 1440 px and at 960 px with 200 % zoom, on both web servers"
-([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)). axe is not one of the CI workflows. If your acceptance needs an
+([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)). axe is not one of the CI workflows. If your acceptance needs an
 automated audit of your own pages, plan it as a separate task with its own tool and owner.
 
 The [code review checklist](../../bc/6.0/admin4-styling.md#code-review-checklist) for administration templates asks

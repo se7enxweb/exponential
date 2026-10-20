@@ -179,7 +179,7 @@ Not run here: these commands need a Symfony project with the bridge installed, w
 - [Legacy bridge](../../features/6.0/legacy-bridge.md)
 - [Legacy bridge specification](../../specifications/6.0/legacy-bridge-bundle.md)
 - [Console command names](../../specifications/6.0/platform-console-commands.md)
-- [Release changelog](../../../../changelogs/extensions/legacyBridge.md)
+- [Release changelog](../../../changelogs/extensions/legacyBridge.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

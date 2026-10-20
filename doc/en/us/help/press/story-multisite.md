@@ -39,9 +39,9 @@ correct links from one site's pages to another site's content.
 | What | When | Source |
 |---|---|---|
 | Per-site settings inside extensions; one INI cache clear for every project | January 2026 | [Per-site settings inside extensions](../../features/6.0/multi-site-ini-overrides.md) |
-| Host matching by the start of a host, and a redirect to the language | 6 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#6-october-2026-host-matching-by-the-start-of-a-host-and-a-redirect-to-the-language-for-addresses-without-one) |
-| Links to content of another site of a multisite installation | 13 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#13-october-2026-links-to-content-of-another-site-of-a-multisite-installation) |
-| The site menu of the administration: the other sites a user may sign in to | 15 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#15-october-2026-the-site-menu-of-the-administration) |
+| Host matching by the start of a host, and a redirect to the language | 6 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#6-october-2026-host-matching-by-the-start-of-a-host-and-a-redirect-to-the-language-for-addresses-without-one) |
+| Links to content of another site of a multisite installation | 13 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#13-october-2026-links-to-content-of-another-site-of-a-multisite-installation) |
+| The site menu of the administration: the other sites a user may sign in to | 15 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#15-october-2026-the-site-menu-of-the-administration) |
 
 The October changes belong to the 6.0.15 line, which is not released.
 

@@ -108,7 +108,7 @@ Worker-Pool `handlePhp()` auf einem anderen Weg erreicht.
 
 `Q.webserver.followSymlinks` (Standard `false`) stellt das ältere Verhalten für Installationen wieder her, die
 bewusst über Links ausliefern, die den Root verlassen. Für Exponential siehe
-[Velocity-Engines](../../../en/us/bc/6.0/velocity-engines.md), Abschnitt „Symbolic links out of the document root“.
+[Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md), Abschnitt „Symbolic links out of the document root“.
 
 ### Welche Skripte ausgeführt und welche Dateien unverändert gesendet werden
 
@@ -169,7 +169,7 @@ Sicherheitsregeln:
 ## Die Administrationsoberfläche
 
 - Das Control Panel, `/Q/api/` und der Cluster-Beitritt waren bis 0.0.4.27 für jeden offen, der den Port erreichen
-  konnte. Sie folgen jetzt der Zugriffsregel in [Control Panel](../../../en/us/features/6.0/velocity-control-panel.md).
+  konnte. Sie folgen jetzt der Zugriffsregel in [Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md).
 - Log-Injektion über eine Anfragezeile, Dashboard-Injektion über den Host-Header, Personalisierung im Antwort-Cache
   und die Verstärkung der dekodierten Größe bei HPACK wurden im selben Audit geschlossen.
 - Hostnamen werden streng geprüft, bevor sie einen Zertifikats-Client, einen Resolver oder ein Log erreichen (ein
@@ -180,7 +180,7 @@ Sicherheitsregeln:
   aus `skip.cookies` tragen, verglichen nach Präfix. Der Vergleich verlangte früher, dass auf den Namen unmittelbar
   `=` folgt, und verfehlte das Session-Cookie von Exponential, das nach dem Namen einen Digest trägt; behoben in 0.0.4.26.
 - Worker geben die Root-Rechte ab ([Worker-Pool](velocity-worker-pool.md)).
-- Befehle der Q-Shell erhalten keinen der Sockets und keine Umgebung des Servers ([Q-Shell](../../../en/us/features/6.0/velocity-q-shell.md)).
+- Befehle der Q-Shell erhalten keinen der Sockets und keine Umgebung des Servers ([Q-Shell](../../../eng-us/features/6.0/velocity-q-shell.md)).
 - Cache-Dateien liegen standardmäßig in einem Verzeichnis, das nicht für alle lesbar ist (0.0.4.15), mit
   konfigurierbarem `fileMode` und `dirMode`.
 
@@ -205,7 +205,7 @@ Link anlegt. Übernehmen Sie sie.
 
 ## Verwandte Seiten
 
-- Funktionen: [Webserver Velocity](../../../en/us/features/6.0/velocity-web-server.md), [Control Panel](../../../en/us/features/6.0/velocity-control-panel.md), [HTTPS und Zertifikate](../../../en/us/features/6.0/velocity-https-certificates.md), [Statische Dateien und Bilder](../../../en/us/features/6.0/velocity-static-files-and-images.md), [uwebserver](../../../en/us/features/6.0/velocity-uwebserver.md) (seine eigene Härtung)
+- Funktionen: [Webserver Velocity](../../../eng-us/features/6.0/velocity-web-server.md), [Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md), [HTTPS und Zertifikate](../../../eng-us/features/6.0/velocity-https-certificates.md), [Statische Dateien und Bilder](../../../eng-us/features/6.0/velocity-static-files-and-images.md), [uwebserver](../../../eng-us/features/6.0/velocity-uwebserver.md) (seine eigene Härtung)
 - Spezifikationen: [Worker-Pool](velocity-worker-pool.md), [Engine-Einstellungen](velocity-engine-einstellungen.md)
-- Upgrade-Hinweise: [Upgrade-Hinweise zur Velocity-Engine](../../../en/us/bc/6.0/velocity-engine-upgrade-notes.md) (Antwort-Header, Upload-Grenzen), [Velocity-Engines](../../../en/us/bc/6.0/velocity-engines.md)
-- Chronik: [22. September](../../../en/us/history/velocity/2026-09b.md) (HTTP/2), [23. September](../../../en/us/history/velocity/2026-09c.md) und [24. September](../../../en/us/history/velocity/2026-09d.md) (Sicherheitskorrekturen), [25. bis 30. September](../../../en/us/history/velocity/2026-09e.md) (Header, Body-Grenzen); [Velocity-Changelog](../../../changelogs/extensions/exponential-velocity.md)
+- Upgrade-Hinweise: [Upgrade-Hinweise zur Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md) (Antwort-Header, Upload-Grenzen), [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)
+- Chronik: [22. September](../../../eng-us/history/velocity/2026-09b.md) (HTTP/2), [23. September](../../../eng-us/history/velocity/2026-09c.md) und [24. September](../../../eng-us/history/velocity/2026-09d.md) (Sicherheitskorrekturen), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md) (Header, Body-Grenzen); [Velocity-Changelog](../../../changelogs/extensions/exponential-velocity.md)

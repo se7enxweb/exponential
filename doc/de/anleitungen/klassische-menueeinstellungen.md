@@ -11,7 +11,7 @@ wurde am 6. Oktober 2026 gegen den Code dieses Repositorys geprüft, und jedes T
 einer echten Installation gerendert.
 
 [Anleitungen](README.md) · Siehe auch: [Templates und Design](templates-und-design.md) ·
-[Exponential Layouts](../../en/us/bc/6.0/LAYOUTS.md)
+[Exponential Layouts](../../eng-us/bc/6.0/LAYOUTS.md)
 
 ## Kurz gesagt
 

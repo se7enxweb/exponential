@@ -131,7 +131,7 @@ the other columns for the buyer.
 | Criterion                         | Exponential 6.0.x                                   | Option B | Option C | How verified |
 |-----------------------------------|-----------------------------------------------------|----------|----------|--------------|
 | License of the code               | GPL v2 or later, free of charge                     |          |          | LICENSE      |
-| License of the documentation      | GNU FDL 1.3 or later                                |          |          | doc/en/us/README-LICENSE.md |
+| License of the documentation      | GNU FDL 1.3 or later                                |          |          | doc/eng-us/README-LICENSE.md |
 | Source and full history public    | Yes, since 2002                                     |          |          | git log      |
 | Self-hosting                      | Yes, any OS with PHP 8.0+ (tiers)                   |          |          | os-support   |
 | Databases                         | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |          |          | database-support |
@@ -140,8 +140,8 @@ the other columns for the buyer.
 | Published releases immutable      | Yes                                                 |          |          | SECURITY.md  |
 | Security reporting                | Private, first answer within one business day       |          |          | SECURITY.md  |
 | Multisite from one installation   | Yes (siteaccesses)                                  |          |          | README.md    |
-| Content languages                 | 268 locale files; at most 62 per installation       |          |          | doc/en/us/languages.md |
-| Administration translations       | 32, ten complete                                    |          |          | doc/en/us/languages.md |
+| Content languages                 | 268 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
+| Administration translations       | 32, ten complete                                    |          |          | doc/eng-us/languages.md |
 | Visual page builder               | Exponential Layouts                                 |          |          | layouts-editor |
 | Audit trail                       | Tamper-evident, on by default                       |          |          | audit-trail  |
 | Writing assistant                 | Drafts only, region per provider                    |          |          | expai        |
@@ -206,12 +206,12 @@ charge (LICENSE, README.md). The complete source code and its history since 2002
 without a license contract, and any supplier may provide services for it.
 
 Content is stored in a standard database chosen by the authority: SQLite 3, PostgreSQL, MongoDB, MariaDB,
-Oracle or MySQL (doc/en/us/help/database-support.md), and is backed up with that database's own tools. Documented
+Oracle or MySQL (doc/eng-us/help/database-support.md), and is backed up with that database's own tools. Documented
 tools move a site from one database engine to another.
 
 Releases are published as Composer packages and Git tags; a published version is never changed afterwards
 (SECURITY.md). The documentation is part of the repository and is free documentation under the GNU Free
-Documentation License 1.3 (doc/en/us/README-LICENSE.md), so it can be handed to a new supplier unchanged.
+Documentation License 1.3 (doc/eng-us/README-LICENSE.md), so it can be handed to a new supplier unchanged.
 ```
 
 Each sentence of that answer points at a file the evaluator can open. That is the standard for every comparison.

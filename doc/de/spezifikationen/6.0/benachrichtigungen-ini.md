@@ -58,7 +58,7 @@ und seine Mail-Templates in `notification/handler/<id_string>/view/`. Der Handle
 |---|---|---|
 | `Transport` | `sendmail` | Wie E-Mails den Server verlassen: `sendmail`, `smtp` oder `file`. Mit `file` werden die E-Mails in Dateien geschrieben, und nichts wird versendet. Die Statusseite weist darauf hin |
 | `TransportAlias[]` | `file=eZFileTransport`, `sendmail=eZSendmailTransport`, `smtp=eZSMTPTransport` | Ordnet einem Wert von `Transport` seine Klasse zu. Fügen Sie einen hinzu, um einen eigenen Transport mitzubringen |
-| `FileTransportDirectory` | leer (bedeutet `var/log/mail`) | Das Verzeichnis, in das der Transport `file` schreibt. Nicht in der Datei der Distribution; in dieser Version hinzugefügt, siehe [die Upgrade-Hinweise](../../../en/us/bc/6.0/notification-ui-and-commands.md). Relativ zum Wurzelverzeichnis der Installation |
+| `FileTransportDirectory` | leer (bedeutet `var/log/mail`) | Das Verzeichnis, in das der Transport `file` schreibt. Nicht in der Datei der Distribution; in dieser Version hinzugefügt, siehe [die Upgrade-Hinweise](../../../eng-us/bc/6.0/notification-ui-and-commands.md). Relativ zum Wurzelverzeichnis der Installation |
 | `EmailSender`, `AdminEmail` | leer, `nospam@ez.no` | Ersatzabsender, siehe oben. Ändern Sie `AdminEmail` in jeder Installation |
 | `EmailReplyTo` | leer | Antwortadresse von E-Mails, die mit den Standardwerten von `eZMail` erzeugt werden |
 | `UserAgent` | leer | Der Header `User-Agent` jeder über `eZMail` erzeugten E-Mail, Benachrichtigungsmails eingeschlossen (nur ASCII). Leer behält `Exponential, Version <version>` (sendmail, file) und `Apache Zeta Components` (SMTP) bei |
@@ -75,7 +75,7 @@ und seine Mail-Templates in `notification/handler/<id_string>/view/`. Der Handle
 | `site.ini` `[DatabaseSettings] Transactions` | `enabled` | Nötig für `exp:notification:run --dry-run`, das eine Transaktion zurückrollt |
 | `site.ini` `[RunnableSettings] Listeners[]`, `Implementation[]` | keine | Sich in die Befehle, den Cronjob-Teil und die Views einklinken oder sie ersetzen, siehe [die ausführbaren Klassen](ausfuehrbare-befehle-cronjobs-ansichten.md) |
 | `site.ini` `[ExtensionSettings] ActiveExtensions[]` | je Installation | Eine Extension, die Handler oder Ereignistypen hinzufügt, muss aktiv sein |
-| Die Mail-Templates | | Gewöhnliche Templates: Überschreiben Sie sie wie jedes andere, siehe [Reihenfolge der Template-Overrides](../../../en/us/features/6.0/template-override-ordering.md) |
+| Die Mail-Templates | | Gewöhnliche Templates: Überschreiben Sie sie wie jedes andere, siehe [Reihenfolge der Template-Overrides](../../../eng-us/features/6.0/template-override-ordering.md) |
 
 ## cronjob.ini
 

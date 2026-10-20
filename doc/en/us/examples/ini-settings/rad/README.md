@@ -13,7 +13,7 @@ generated: exp:help:examples
 The shipped settings of `settings/rad.ini`: 4 blocks, 20 settings.
 
 > The registries the extension point survey reads entry by entry (Setup > RAD tools > Extension point survey,  
-> setup/radsurvey/(show)/registries; doc/en/us/bc/6.0/rad-extension-surface.md "Registries declared in rad.ini").  
+> setup/radsurvey/(show)/registries; doc/eng-us/bc/6.0/rad-extension-surface.md "Registries declared in rad.ini").  
 >
 > A registry is a list of implementations that something reads from its settings or from its code: AI providers,  
 > MCP tools, queue job types, event listeners. Each one is declared here by the kernel, or by an extension in  

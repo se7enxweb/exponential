@@ -651,5 +651,5 @@ Every run is also logged to `var/log/kickstart.log` with passwords masked; earli
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
 - [Exponential Console](console.md)
 - [September 2026, first half: 13 September](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run)
-- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - `kickstart.ini-dist` in the project root: every section and field, commented.

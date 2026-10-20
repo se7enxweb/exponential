@@ -1,11 +1,11 @@
 # Exponential 6: the crontab of a public demo's system user
 #
-# Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md.
+# Free documentation: GFDL 1.3 or later, see doc/eng-us/README-LICENSE.md.
 #
 # Install with "crontab -u demo crontab-demo" (replace demo and the paths).
 # The first line gives every job demo mode, so the cronjobs and the scheduled
 # rebuild run with EXP_DEMO_MODE=1 like the web server. Guide:
-# doc/en/us/bc/6.0/demo-mode.md; the cronjob groups: doc/en/us/guides/cronjobs.md.
+# doc/eng-us/bc/6.0/demo-mode.md; the cronjob groups: doc/eng-us/guides/cronjobs.md.
 
 EXP_DEMO_MODE=1
 PATH=/usr/local/bin:/usr/bin:/bin

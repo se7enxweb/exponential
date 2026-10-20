@@ -12,7 +12,7 @@ und jede Ausgabe ist echt: Sie wurde am 5. Oktober 2026 auf dem Demonstrationsse
 Die Bildschirmfotos zeigen dieselbe Seite, in einer Breite von 1500 Pixeln im hellen Modus des Designs admin4;
 um sie zu erstellen, wurde nichts ausgeführt, angehalten oder geleert.
 
-[Anleitungen](README.md) · Funktionsreferenz: [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md) · Im
+[Anleitungen](README.md) · Funktionsreferenz: [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md) · Im
 Installationshandbuch: [10.3 Cronjobs](../installation/10-nach-der-installation.md#103-cronjobs) · Kürzere Einführung:
 [Betrieb einer Site, Abschnitt 3](betrieb-einer-website.md#3-cronjobs-ausführen)
 
@@ -142,7 +142,7 @@ JavaScript (Abschnitt 15). Das Layout hält ab 390 Pixeln Breite und bei 200 Pro
 
 ## 4. Die Statusleiste: Laufenden Job anhalten und Protokolle leeren
 
-![Die Statusleiste, während nichts läuft: Untätig, mit deaktiviertem Laufenden Job anhalten und Protokolle leeren](../../en/us/guides/images/cronjobs/status-and-overview.png)
+![Die Statusleiste, während nichts läuft: Untätig, mit deaktiviertem Laufenden Job anhalten und Protokolle leeren](../../eng-us/guides/images/cronjobs/status-and-overview.png)
 
 Die linke Seite zeigt **Untätig** oder **Läuft: <part>** mit einem grün pulsierenden Punkt, gefolgt von **Website: <siteaccess>**,
 **Prozess: <pid>** und **Verstrichen: <seconds>s**, das hochzählt, während Sie zusehen. Der Zustand stammt aus
@@ -170,7 +170,7 @@ bevor irgendetwas ausgeführt wird.
 
 ## 5. Die Übersicht
 
-![Die Übersicht: 28 Teile und 47 Skripte, 1 geplant, 27 nicht geplant, 2 brauchen Aufmerksamkeit, und die letzte Ausführung](../../en/us/guides/images/cronjobs/overview.png)
+![Die Übersicht: 28 Teile und 47 Skripte, 1 geplant, 27 nicht geplant, 2 brauchen Aufmerksamkeit, und die letzte Ausführung](../../eng-us/guides/images/cronjobs/overview.png)
 
 | Zahl | Bedeutung |
 |---|---|
@@ -185,7 +185,7 @@ Einstellungen sperren (Abschnitt 7).
 
 ## 6. Die Site wählen und einen Teil finden
 
-![Die Bedienelemente: Für Website ausführen, Teil oder Skript suchen, die Auswahlknöpfe unter Anzeigen sowie Cronjob-Teil mit Starten](../../en/us/guides/images/cronjobs/controls.png)
+![Die Bedienelemente: Für Website ausführen, Teil oder Skript suchen, die Auswahlknöpfe unter Anzeigen sowie Cronjob-Teil mit Starten](../../eng-us/guides/images/cronjobs/controls.png)
 
 **Für Website ausführen** ist der Siteaccess, den jeder Knopf zum Starten auf der Seite verwendet. Vorausgewählt ist die erste Site der Liste, die
 nicht der Administrations-Siteaccess ist, den Sie gerade betrachten, denn ein Job, der auf Inhalte wirkt, soll auf die Site wirken, die
@@ -201,7 +201,7 @@ sodass ein Treffer bei einem Skript sichtbar ist; sie schließen sich wieder, we
 unter den Bedienelementen gibt an, wie viele Karten angezeigt werden (*25 Teile auf dieser Seite* oder *3 von 25 Teilen dieser Seite angezeigt*);
 *Kein Cronjob-Teil auf dieser Seite passt.*, wenn die Filter keinen übrig lassen.
 
-![Anzeigen: Brauchen Aufmerksamkeit lässt die beiden gesperrten Teile mit ihrem roten Rand übrig](../../en/us/guides/images/cronjobs/need-attention.png)
+![Anzeigen: Brauchen Aufmerksamkeit lässt die beiden gesperrten Teile mit ihrem roten Rand übrig](../../eng-us/guides/images/cronjobs/need-attention.png)
 
 Die Suche und **Anzeigen** wirken auf die Karten der aktuellen Seite. Die Liste wird nach
 `admininterface.ini [PaginationSettings] ItemsPerPage[setup/cronjobs]` (ausgeliefert 25) in Seiten aufgeteilt; die Seitennavigation steht unter der Liste.
@@ -266,7 +266,7 @@ Die Liste der Teile hat zwei Ansichten, umschaltbar neben ihrer Überschrift: **
 mit seinen Kennzeichen, seinem Zeitplan, nächster und letzter Ausführung und den Knöpfen **Anhalten**/**Fortsetzen** und **Starten**, alle Teile auf einer Seite;
 **Ausführlich** zeigt die in diesem Abschnitt beschriebenen Karten, seitenweise. Die Wahl wird für Ihren Benutzer gespeichert.
 
-![Eine Teil-Karte mit geöffneten Skripten: Kennzeichen, Zeitplan, nächste Ausführung, letzte Ausführung, Shell-Befehl und drei Skripte mit ihren Beschreibungen](../../en/us/guides/images/cronjobs/part-card-scripts-open.png)
+![Eine Teil-Karte mit geöffneten Skripten: Kennzeichen, Zeitplan, nächste Ausführung, letzte Ausführung, Shell-Befehl und drei Skripte mit ihren Beschreibungen](../../eng-us/guides/images/cronjobs/part-card-scripts-open.png)
 
 Jede Karte zeigt von oben:
 
@@ -280,7 +280,7 @@ Jede Karte zeigt von oben:
   das gerade laufende Skript und lässt den Rest aus); **Alle Teile anhalten** in der Statusleiste tut
   dasselbe für jeden Teil. Eine Notiz, die in *Notiz zum Anhalten oder Fortsetzen* eingegeben wird, wird mit dem als Nächstes gedrückten Knopf gespeichert und
   erscheint beim Teil, unter **Pausen** und in der Meldung von `runcronjobs.php`. Siehe
-  [Cronjob-Teile anhalten](../../en/us/features/6.0/cronjob-pause.md).
+  [Cronjob-Teile anhalten](../../eng-us/features/6.0/cronjob-pause.md).
 - **Zeitplan** oder **Vorgeschlagener Zeitplan** für einen Teil, den nichts ausführt: der Zeitplan in Worten für die gängigen Formen und der
   Cron-Ausdruck daneben. *Jede Minute*, *Alle 5 Minuten*, *Stündlich zur Minute 17*, *Alle 6 Stunden zur Minute
   0* und *Täglich um 03:30* werden in Worten angegeben; alles andere (`0 8 * * 1-5`) wird als Ausdruck gezeigt, der
@@ -304,7 +304,7 @@ Jede Karte zeigt von oben:
 
 ## 9. Ausgabe: einen Job während der Ausführung verfolgen
 
-![Ausgabe, mit der letzten Ausführung des Teils googlesitemaps](../../en/us/guides/images/cronjobs/output.png)
+![Ausgabe, mit der letzten Ausführung des Teils googlesitemaps](../../eng-us/guides/images/cronjobs/output.png)
 
 **Ausgabe** zeigt das Ende des Protokolls der neuesten von der Seite gestarteten Ausführung (die letzten 64 KB; darüber *... earlier output not
 shown ...*, wenn es mehr gibt), gefolgt von allem Neuen im Fehlerprotokoll. Ihre Zusammenfassung nennt die Datei:
@@ -339,7 +339,7 @@ würde einen PHP-Worker umsonst belegen.
 
 ## 10. Letzte Ausführungen und wie Probleme gezählt werden
 
-![Letzte Ausführungen: Cronjob, Site, Start, Dauer und Ergebnis der letzten zwanzig von der Seite gestarteten Ausführungen](../../en/us/guides/images/cronjobs/recent-runs.png)
+![Letzte Ausführungen: Cronjob, Site, Start, Dauer und Ergebnis der letzten zwanzig von der Seite gestarteten Ausführungen](../../eng-us/guides/images/cronjobs/recent-runs.png)
 
 **Letzte Ausführungen** listet die letzten 20 von der Seite gestarteten Ausführungen auf, neueste zuerst: den Teil oder *Skript (Teil)*; die Site;
 wann sie begann; wie lange sie dauerte; und *läuft*, *OK* oder *n Probleme*. Die Seite erfasst eine Ausführung, wenn sie sie startet,
@@ -354,11 +354,11 @@ der Wörter *error*, *fatal*, *exception*, *failed*, *failure* oder *warning* en
 auf den Karten berücksichtigt diese, die Tabelle zeigt die neuesten 20.
 
 Jede Ausführung eines Cronjob-Teils wird außerdem im Audit-Protokoll als `system.cronjob.run` (oder `system.cronjob.fail`) erfasst,
-egal wer sie gestartet hat: siehe das [Audit-Protokoll](../../en/us/features/6.0/audit-trail.md).
+egal wer sie gestartet hat: siehe das [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md).
 
 ## 11. Skripte, die kein Teil ausführt, und wie Sie eines aktivieren
 
-![Verfügbar, aber nicht aktiviert: Skripte in den Cronjob-Verzeichnissen, die kein Teil nennt](../../en/us/guides/images/cronjobs/available-scripts.png)
+![Verfügbar, aber nicht aktiviert: Skripte in den Cronjob-Verzeichnissen, die kein Teil nennt](../../eng-us/guides/images/cronjobs/available-scripts.png)
 
 **Verfügbar, aber nicht aktiviert** listet jede `*.php` in den Cronjob-Verzeichnissen auf, die kein Teil nennt, mit dem, was sie tut,
 und wo sie liegt. Nichts führt sie je aus. In einer neuen Installation sind das unter anderem `session_gc.php` (abgelaufene
@@ -391,7 +391,7 @@ Ein eigenes Skript gehört in `cronjobs/` Ihrer Extension, wobei die Extension i
 ```
 
 `@link` (das phpDoc-Tag für eine URL) setzt auf der Seite einen Link **Doku** neben das Skript; er öffnet sich in einem neuen Fenster. Ein
-Pfad wie `doc/en/us/guides/sessions.md` wird an `[ScriptDocumentation] DocumentationBase` angehängt (leer: die
+Pfad wie `doc/eng-us/guides/sessions.md` wird an `[ScriptDocumentation] DocumentationBase` angehängt (leer: die
 Dokumentation von Exponential auf GitHub), sodass die Kernel-Skripte auf diese Weise ihre Anleitung nennen. Nur `http`- und `https`-Links
 werden angezeigt; ein Wert, der keines von beiden ist, ergibt keinen Link. Mit der Standardbasis wird ein Pfad nur verlinkt, wenn die
 Installation diese Datei mitliefert, sodass kein Link ins Leere führt, und der relative Pfad eines Extension-Skripts wird nie an die Basis von
@@ -680,7 +680,7 @@ es sie gibt. Die Texte der Seite sind in `ger-DE` übersetzt.
 | `admininterface.ini` | `PaginationSettings` | `ItemsPerPage[setup/cronjobs]` | `25` | Teil-Karten pro Seite |
 | `menu.ini` | `Leftmenu_setup` | `Links[cronjobs]`, `LinkNames[cronjobs]`, `PolicyList_cronjobs[]` | `setup/cronjobs`, `Cronjobs`, `setup/managecronjobs` | Der Menüeintrag und wer ihn sieht |
 
-Ändern Sie sie mit [exp:ini](../../en/us/features/6.0/exp-ini-command.md), zum Beispiel
+Ändern Sie sie mit [exp:ini](../../eng-us/features/6.0/exp-ini-command.md), zum Beispiel
 `./console exp:ini set cronjob.ini/AdminSettings/PhpCliPath /opt/plesk/php/8.5/bin/php global` (der Geltungsbereich `global`
 schreibt nach `settings/override`), und leeren Sie danach den INI-Cache. `./console exp:ini list cronjob.ini/AdminSettings` zeigt, was gilt:
 
@@ -694,22 +694,22 @@ ErrorFile=cronjobs/error.log
 4 variables in [AdminSettings] of cronjob.ini in effect
 ```
 
-**Cronjobs auf einer öffentlichen Demo.** Geben Sie auf einer Demo im Demo-Modus den Cronjobs dieselbe Umgebung wie dem Webserver: Setzen Sie `EXP_DEMO_MODE=1` in eine eigene Zeile ganz oben in die Crontab (Beispiel: [`crontab-demo`](../../en/us/examples/demo-mode/crontab-demo)). Jeder Cronjob-Prozess schreibt dann einmal `demo/mode ... sapi=cli` in `var/log/security.log`. [Demo-Modus](../../en/us/bc/6.0/demo-mode.md).
+**Cronjobs auf einer öffentlichen Demo.** Geben Sie auf einer Demo im Demo-Modus den Cronjobs dieselbe Umgebung wie dem Webserver: Setzen Sie `EXP_DEMO_MODE=1` in eine eigene Zeile ganz oben in die Crontab (Beispiel: [`crontab-demo`](../../eng-us/examples/demo-mode/crontab-demo)). Jeder Cronjob-Prozess schreibt dann einmal `demo/mode ... sapi=cli` in `var/log/security.log`. [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
 
 ## Quellen
 
-- Funktionsseite: [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md)
+- Funktionsseite: [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md)
 - Installationshandbuch: [10.3 Cronjobs](../installation/10-nach-der-installation.md#103-cronjobs) (die ausgelieferten Teile und Skripte, eine
   vollständige Crontab), [10.10 Protokolle und Protokollrotation](../installation/10-nach-der-installation.md#1010-logs-und-log-rotation)
 - Anleitungen: [Betrieb einer Site](betrieb-einer-website.md#3-cronjobs-ausführen),
   [Benachrichtigungen: ausführen und Probleme beheben](benachrichtigungen-administrator.md),
   [E-Mail-Einstellungen: einrichten und ausführen](mail-einstellungen-administrator.md)
-- Die Konsole: [Exponential-Konsole](../../en/us/bc/6.0/console.md#cronjob-parts-and-the-crontab-added-june-2026)
-- Für Entwickler: [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md),
+- Die Konsole: [Exponential-Konsole](../../eng-us/bc/6.0/console.md#cronjob-parts-and-the-crontab-added-june-2026)
+- Für Entwickler: [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md),
   [die Spezifikation](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
-- Verwandte Funktionen: [Inhaltsjobs](../../en/us/features/6.0/content-jobs.md), [Velocity-Scheduler](../../en/us/features/6.0/velocity-scheduler.md),
-  [Audit-Protokoll](../../en/us/features/6.0/audit-trail.md), [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md),
-  [Seitengrößen](../../en/us/bc/6.0/pagination-settings.md)
+- Verwandte Funktionen: [Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md), [Velocity-Scheduler](../../eng-us/features/6.0/velocity-scheduler.md),
+  [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md), [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md),
+  [Seitengrößen](../../eng-us/bc/6.0/pagination-settings.md)
 - Code: `kernel/setup/expcronjobrunner.php` (Teile, Starten, Verlauf, Crontab, Zeitpläne),
   `kernel/private/classes/views/setup/cronjobs.php` und `cronjobsstream.php` (die Ansichten),
   `kernel/private/classes/commands/runcronjobs.php` (`runcronjobs.php`), `kernel/classes/ezruncronjobs.php` (die

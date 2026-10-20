@@ -121,4 +121,4 @@ Scope: extension (`extension/bccie/settings/`). Override them in `settings/overr
 
 - [Feature page](../../features/6.0/extensions/bccie.md), [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
 - [CLI, cronjob and view abstractions](../../bc/6.0/cli_cronjob_view_abstractions.md), [Cronjobs in the console](../../features/6.0/cronjobs-console.md)
-- [Chronicle](../../history/extensions/bccie.md) and [release notes](../../../../changelogs/extensions/bccie.md)
+- [Chronicle](../../history/extensions/bccie.md) and [release notes](../../../changelogs/extensions/bccie.md)
