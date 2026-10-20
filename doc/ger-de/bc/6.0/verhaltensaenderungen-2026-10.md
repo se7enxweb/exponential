@@ -126,5 +126,5 @@ werden. Aufrufe über HTTP sind unverändert. Siehe [SOAP-Aufrufe über HTTPS](.
 - [Chronik vom Oktober 2026](../../../eng-us/history/2026/2026-10.md)
 - [Verhaltensänderungen vom 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)
 - [Verhaltensänderungen vom Juli und August 2026](verhaltensaenderungen-2026-07-08.md)
-- [Erweiterungen: Verhaltensänderungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Erweiterungen: Verhaltensänderungen](verhaltensaenderungen-von-erweiterungen.md)
 - [Anleitung zum Upgrade](../../anleitungen/aktualisieren.md)

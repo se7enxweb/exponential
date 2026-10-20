@@ -200,4 +200,4 @@ In einer Installation, die die Overrides verwendet hat:
 - [Anleitung: die Umschaltung des Administrationsdesigns](../../anleitungen/ui-umschalter-design.md)
 - [UI-Umschaltung: Hinweise für Entwickler](ui-umschalter.md)
 - [Velocity-Engines und das Bereitstellen einer PHP-Änderung](velocity-engines.md)
-- [Erweiterungen: Verhaltensänderungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Erweiterungen: Verhaltensänderungen](verhaltensaenderungen-von-erweiterungen.md)

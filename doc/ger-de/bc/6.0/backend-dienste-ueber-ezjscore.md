@@ -2533,12 +2533,12 @@ Insgesamt: 350 Inhaltsdienste in 15 Domänen (112 Schreibvorgänge).
 Benutzerdienste, das Passwort eines Administrators zu ändern oder zurückzusetzen: HTTP 403 mit „Diese Installation ist
 eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.“ für
 `expaccount.reset`, `expaccount.changePassword` und `expuser.setPassword`; kein Schlüssel und keine E-Mail für einen
-Administrator aus `expaccount.forgotRequest`. [Demomodus](../../../eng-us/bc/6.0/demo-mode.md).
+Administrator aus `expaccount.forgotRequest`. [Demomodus](demomodus.md).
 
 ## Verwandte Seiten
 
 - [Funktionsseite zu den entfernten Diensten (expservices)](../../../eng-us/features/6.0/remote-services-expservices.md)
 - [Anleitung zu entfernten Diensten und Apps](../../anleitungen/entfernte-dienste-und-apps.md)
-- [Inhaltsjobs](../../../eng-us/bc/6.0/content-jobs.md)
+- [Inhaltsjobs](inhaltsjobs.md)
 - [Audit](audit.md)
 - [YUI-Entfernung](yui-entfernung.md)

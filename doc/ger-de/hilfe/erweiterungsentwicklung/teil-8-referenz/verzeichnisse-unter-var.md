@@ -40,7 +40,7 @@ ablegen.
   Clustern funktioniert ([eZFile, eZDir und Cluster-Datei-Handler](ezfile-ezdir-und-cluster-dateien.md)).
 - **Mit den Berechtigungen der Installation**: `eZDir::mkdir()` und `eZFile::create()` verwenden die konfigurierten
   Dateimodi, sodass Webserver und Kommandozeilenskripte jeweils lesen können, was der andere geschrieben hat
-  ([Dateimodi](../../../../eng-us/bc/6.0/file-modes.md)).
+  ([Dateimodi](../../../bc/6.0/dateimodi.md)).
 - **Nichts Geheimes in var/, wenn es über das Web lesbar ist.** Die Webserver-Konfiguration darf `var/` nicht
   ausliefern, außer dem Speicher und den gepackten öffentlichen Dateien; verlassen Sie sich nicht auf unauffällige
   Dateinamen.

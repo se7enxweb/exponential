@@ -79,7 +79,7 @@ Jedes Skript im `bin/php/` einer aktiven Erweiterung (und deren Befehlsklassen) 
 - Zurück: [INI-Dateien, denen ein Erweiterungsautor begegnet](ini-dateien-fuer-erweiterungsautoren.md)
 - Weiter: [Verzeichnisse unter var/](verzeichnisse-unter-var.md)
 - [eZScript und eZCLI](ezscript-und-ezcli.md)
-- [Konsole](../../../../eng-us/bc/6.0/console.md)
+- [Konsole](../../../bc/6.0/konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

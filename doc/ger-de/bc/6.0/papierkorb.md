@@ -342,7 +342,7 @@ Admin-Designs; 960 px breit bei Skalierung 2) besteht mit der neuen Seite.
 
 ## Verwandte Seiten
 
-- [Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md) und das [Upgrade der Inhaltsjobs](../../../eng-us/bc/6.0/content-jobs.md)
+- [Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md) und das [Upgrade der Inhaltsjobs](inhaltsjobs.md)
 - [Upgrade-Checkliste vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)
 - [Audit-Ereignismodell](../../spezifikationen/6.0/audit-ereignismodell.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

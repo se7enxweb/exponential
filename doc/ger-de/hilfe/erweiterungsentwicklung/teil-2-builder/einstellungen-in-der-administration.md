@@ -51,7 +51,7 @@ Einige Einstellungen liest Velocity nur beim Start; für diese sagt die Seite, d
 Ist die Debug-Ausgabe eingeschaltet, zeigt der Tab **Einstellungen** der Exp Debug-Leiste jede Debug-Einstellung mit
 ihrem Wert, ihrer Quelldatei und einem Steuerelement, um sie in einer Ebene Ihrer Wahl zu ändern. Jede Änderung läuft
 über dieselbe Engine, wird protokolliert und kann aus der Leiste rückgängig gemacht werden. Dafür ist die Richtlinie
-`setup/setup` nötig. Siehe [Die Exp Debug-Leiste](../../../../eng-us/bc/6.0/debug-bar.md).
+`setup/setup` nötig. Siehe [Die Exp Debug-Leiste](../../../bc/6.0/debug-leiste.md).
 
 ## Wer sie nutzen darf
 

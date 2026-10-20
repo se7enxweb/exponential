@@ -125,7 +125,7 @@ Eine Erweiterung kann Einstellungen für einen Siteaccess in `settings/siteacces
 Eine Erweiterung, die einen API-Schlüssel braucht, liefert die Einstellung **leer** mit einem Kommentar aus, und die
 Installation füllt sie in `settings/override/`. Benennen Sie sie so, dass sie maskiert wird (`...Key`, `Token`,
 `Secret`, `Password`). Committen Sie nie einen echten Schlüssel; der Paket-Download weigert sich, eine Erweiterung zu
-packen, die einen enthält ([die Prüfung auf Geheimnisse](../../../../eng-us/bc/6.0/extension-package-secret-check.md)).
+packen, die einen enthält ([die Prüfung auf Geheimnisse](../../../bc/6.0/geheimnispruefung-fuer-erweiterungspakete.md)).
 
 ## Einstellungen, die die RAD-Werkzeuge schreiben
 

@@ -101,7 +101,7 @@ beschreibt dieselben Werkzeuge aus den früheren Jahren.
 - Zurück: [Die Template-Operatoren, die Builder am häufigsten nutzen](die-wichtigsten-template-operatoren-fuer-builder.md)
 - Weiter: [Caching und Templates](caching-und-templates.md)
 - [Template-Pfadkommentare](../../../../eng-us/features/6.0/template-path-comments.md)
-- [Die Exp Debug-Leiste](../../../../eng-us/bc/6.0/debug-bar.md)
+- [Die Exp Debug-Leiste](../../../bc/6.0/debug-leiste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

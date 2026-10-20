@@ -42,7 +42,7 @@ Der Server liest `envvars` bei jedem Start (zuerst den Basisbaum, wobei `/etc/vc
 exportiert, was darin gesetzt wird, in seine eigene Umgebung, bevor er forkt. So sieht jeder Worker die Werte mit
 `getenv()`, gleich welche Shell `exp:velocity restart` oder `deploy` ausführt. Hier gehören Einstellungen hin, die eine
 Exponential-Installation aus der Umgebung liest, etwa `EXP_DEMO_MODE=1` auf einer öffentlichen Demo
-([Demomodus](../../../eng-us/bc/6.0/demo-mode.md)). Die Datei wird gelesen, nie ausgeführt: Werte, die eine Shell
+([Demomodus](demomodus.md)). Die Datei wird gelesen, nie ausgeführt: Werte, die eine Shell
 brauchen (`$X`, Backticks), werden nicht exportiert, und `PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`, `PHPRC`,
 `PHP_INI_SCAN_DIR`, `GLIBC_TUNABLES`, `HOME`, `USER` und die anderen Namen in der `docs/layout.md` der Engine
 ("envvars: the server's environment") werden abgelehnt, mit einer Zeile auf der Standardfehlerausgabe beim Start.

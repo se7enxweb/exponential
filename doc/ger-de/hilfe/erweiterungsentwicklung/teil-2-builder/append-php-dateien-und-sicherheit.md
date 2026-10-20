@@ -63,7 +63,7 @@ deshalb liegen sie alle unter `settings/override/` oder außerhalb von `settings
 
 Der Paket-Download unter **Setup > Extensions** weigert sich, eine Erweiterung zu packen, die einen geheimen Wert oder
 Schlüsselmaterial enthält, und nennt die gefundenen Dateien und Einstellungen; siehe
-[die Geheimnisprüfung](../../../../eng-us/bc/6.0/extension-package-secret-check.md).
+[die Geheimnisprüfung](../../../bc/6.0/geheimnispruefung-fuer-erweiterungspakete.md).
 
 ## Dateirechte
 

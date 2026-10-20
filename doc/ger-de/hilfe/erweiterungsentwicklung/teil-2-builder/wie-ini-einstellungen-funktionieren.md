@@ -183,7 +183,7 @@ Leeren.
 - Zurück: [Teil 2: Der Builder: Einstellungen, Templates und Overrides](README.md)
 - Weiter: [Einstellungsebenen und die Reihenfolge, in der sie gewinnen](einstellungsebenen-und-ihre-reihenfolge.md)
 - [Die Einstellungsseite](../../../anleitungen/einstellungsseite.md)
-- [INI behält Kommentare](../../../../eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md)
+- [INI behält Kommentare](../../../bc/6.0/ezini-behaelt-kommentare.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

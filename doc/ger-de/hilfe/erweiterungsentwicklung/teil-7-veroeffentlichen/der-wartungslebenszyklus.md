@@ -45,7 +45,7 @@ dann vor der Installation entscheiden, statt es hinterher herauszufinden.
 | Eine mitgelieferte Bibliothek veröffentlicht eine Korrektur | sie aktualisieren; veröffentlichen |
 
 Die eigene PHP-Geschichte des Kernels ist ein guter Kalender dafür, was Sie erwartet:
-[PHP 8 support](../../../bc/6.0/php8.md) (auf Englisch).
+[PHP 8 support](../../../bc/6.0/php8.md).
 
 ## Dinge ohne Überraschungen ändern
 

@@ -46,7 +46,7 @@ Kommentare zu Schritt 6 bei einer Änderung, die an Schritt 2 scheitert, verschw
 | Commits | das Betreff-Format, ein Thema je Commit ([Commit-Nachrichten](commit-nachrichten.md)) |
 
 Der Kernel hat eine eigene Checkliste für Code-Reviews von Templates der Administration in
-[Styling the administration](../../../bc/6.0/admin4-gestaltung.md) (auf Englisch).
+[Styling the administration](../../../bc/6.0/admin4-gestaltung.md).
 
 ## Probieren Sie es aus
 

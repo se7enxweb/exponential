@@ -89,7 +89,7 @@ API: `eZForgotPassword::lifetime()`, `isExpiredAt( $time, $lifetime, $now )`, `i
 - **Öffentliche Demos:** Mit der Umgebungsvariablen `EXP_DEMO_MODE=1` akzeptieren die Installationsprogramme ein
   bekanntes Administratorpasswort beliebiger Länge (ein leeres wird weiterhin abgelehnt), sodass eine Demo das
   Passwort installieren kann, das sie veröffentlicht; Administratorpasswörter können dann nicht geändert oder
-  zurückgesetzt werden. Nur für öffentliche Demos: [Demomodus](../../../eng-us/bc/6.0/demo-mode.md).
+  zurückgesetzt werden. Nur für öffentliche Demos: [Demomodus](demomodus.md).
 
 ## Tests
 

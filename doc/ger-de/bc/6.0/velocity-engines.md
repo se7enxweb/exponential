@@ -790,7 +790,7 @@ eingelesen wird. Für eine öffentliche Demo fügen Sie `export EXP_DEMO_MODE=1`
 und Deploys aus jeder Shell behalten es. Ein Wert in der Umgebung, die den Server startet (das `Environment=` der Unit,
 siehe [`velocity-demo-mode.conf`](../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)), hat Vorrang vor der
 Datei. Die Datei kann `PATH`, `LD_*`, `PHPRC` und die anderen Variablen des Loaders und der Shell nicht setzen
-([Verzeichnisstruktur](velocity-verzeichnisstruktur.md)). [Demomodus](../../../eng-us/bc/6.0/demo-mode.md).
+([Verzeichnisstruktur](velocity-verzeichnisstruktur.md)). [Demomodus](demomodus.md).
 
 ## Verwandte Seiten
 
@@ -798,7 +798,7 @@ Datei. Die Datei kann `PATH`, `LD_*`, `PHPRC` und die anderen Variablen des Load
 - [Hinweise zum Upgrade der Velocity-Engine](velocity-engine-upgrade-hinweise.md)
 - [Die Verzeichnisstruktur von Velocity](velocity-verzeichnisstruktur.md)
 - [HTTP/2 und das Vorwärmen von Caches](http2-und-cache-vorwaermen.md)
-- [FrankenPHP](../../../eng-us/bc/6.0/frankenphp.md)
+- [FrankenPHP](frankenphp.md)
 - [Engine-Archiv (phar)](phar.md)
 - [Anleitung zum Bereitstellen](../../anleitungen/bereitstellung.md)
 - [Anleitung zum Benchmarking](../../anleitungen/benchmarking.md): die Engines gegeneinander messen

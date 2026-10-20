@@ -882,7 +882,7 @@ Ergebnisse zusammen und schreibt eine datierte Berichtsdatei.
 - [Unterstützung für PHP 8](php8.md)
 - [Unterstützung für PHPUnit 13 und die Testsuite der String-Operatoren](phpunitv13.md)
 - [Aufräumen der Testsuite für PHPUnit 13 / PHP 8.4.23](phpunitv13-fuer-php841.md)
-- [Kompatibilitätskorrekturen von `ezpSessionHandlerDB` für PHP 8 und die Testsuite für PHPUnit 13](../../../eng-us/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md)
+- [Kompatibilitätskorrekturen von `ezpSessionHandlerDB` für PHP 8 und die Testsuite für PHPUnit 13](ezpsessionhandlerdb-php8-korrektur-und-tests.md)
 - [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
 - [April 2025](../../../eng-us/history/2025/2025-04.md)
 - [September 2025](../../../eng-us/history/2025/2025-09.md)

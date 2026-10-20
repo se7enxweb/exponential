@@ -315,5 +315,5 @@ Wurzelverzeichnis genau wie `extension/`:
 - [Zusätzliche Erweiterungsverzeichnisse (Funktion)](../../../eng-us/features/6.0/additional-extension-directories.md)
 - [Spezifikation: Metadaten von Erweiterungen](../../spezifikationen/6.0/extension-metadaten.md)
 - [Spezifikation: Verzeichnisse und Platzierungen von INI-Overrides](../../spezifikationen/6.0/ini-override-platzierungen.md)
-- [Erweiterungen: Verhaltensänderungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Erweiterungen: Verhaltensänderungen](verhaltensaenderungen-von-erweiterungen.md)
 - [Anleitung zu Erweiterungen](../../anleitungen/extensions.md)

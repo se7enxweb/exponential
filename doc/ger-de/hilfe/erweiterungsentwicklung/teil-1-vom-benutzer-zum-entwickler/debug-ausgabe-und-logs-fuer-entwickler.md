@@ -21,7 +21,7 @@ Zusammenfassung der Anfrage und ein Panel mit Reitern für die Abschnitte des Be
 Templates, SQL und mehr). Ihr Reiter **Einstellungen** zeigt jede Debug-Einstellung, den geltenden Wert und die Datei,
 aus der er stammt, und kann ihn in einem Geltungsbereich Ihrer Wahl ändern; jede Änderung läuft über dieselbe Engine
 wie `exp:ini`, wird protokolliert und kann in der Leiste rückgängig gemacht werden. Die Einzelheiten stehen in
-[Die Exp Debug-Leiste](../../../../eng-us/bc/6.0/debug-bar.md).
+[Die Exp Debug-Leiste](../../../bc/6.0/debug-leiste.md).
 
 ### Die Einstellungen
 
@@ -143,7 +143,7 @@ Autoloads, Caches und der RAD-Gesundheitscheck.
 
 - Zurück: [Schritt für Schritt von einer Erweiterung lernen](schritt-fuer-schritt-von-einer-erweiterung-lernen.md)
 - Weiter: [Die Community um Hilfe bitten](die-community-fragen.md)
-- [Die Exp Debug-Leiste](../../../../eng-us/bc/6.0/debug-bar.md)
+- [Die Exp Debug-Leiste](../../../bc/6.0/debug-leiste.md)
 - [eZDebug und Logging](../teil-8-referenz/ezdebug-und-protokollierung.md)
 - [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

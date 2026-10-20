@@ -37,7 +37,7 @@ verwenden.
 | `isWriteable( $dirname )` | ob ein Verzeichnis beschreibbar ist |
 
 `mkdir()` verwendet die Berechtigungen, für die die Installation konfiguriert ist, sodass Dateien für den Webserver
-und den Kommandozeilenbenutzer gleichermaßen lesbar sind ([Dateimodi](../../../../eng-us/bc/6.0/file-modes.md)).
+und den Kommandozeilenbenutzer gleichermaßen lesbar sind ([Dateimodi](../../../bc/6.0/dateimodi.md)).
 
 ## eZClusterFileHandler (kernel/classes/ezclusterfilehandler.php)
 

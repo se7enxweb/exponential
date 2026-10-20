@@ -121,5 +121,5 @@ beide den neuen Code verwenden.
 ## Verwandte Seiten
 
 - [Installationsanleitung, 13.11 Dateirechte und Besitz](../../../eng-us/install/13-security-hardening.md#1311-file-permissions-and-ownership)
-- [eZINI behält Kommentare beim Speichern](../../../eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md)
+- [eZINI behält Kommentare beim Speichern](ezini-behaelt-kommentare.md)
 - [exp:ini](console-exp-ini.md)

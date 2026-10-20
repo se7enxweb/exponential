@@ -122,7 +122,7 @@ Fallstudien dieses Teils erzählt werden:
 
 - Zurück: [Warum die meisten Änderungen klein sind](warum-die-meisten-aenderungen-klein-sind.md)
 - Weiter: [Bestandsaufnahme einer alten Erweiterung](bestandsaufnahme-einer-alten-erweiterung.md)
-- [Verhaltensänderungen für Erweiterungen](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen für Erweiterungen](../../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

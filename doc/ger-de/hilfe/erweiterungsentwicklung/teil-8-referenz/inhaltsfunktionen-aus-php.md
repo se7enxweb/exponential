@@ -119,7 +119,7 @@ if ( $user instanceof eZUser )
 - Zurück: [Die eZWorkflowType-API](ezworkflowtype-api.md)
 - Weiter: [Referenz der ezjscore-Serverfunktionen](ezjscore-serverfunktionen-referenz.md)
 - [eZContentObject](ezcontentobject.md), [eZContentObjectTreeNode](ezcontentobjecttreenode.md)
-- [Inhaltsaufträge](../../../../eng-us/bc/6.0/content-jobs.md)
+- [Inhaltsaufträge](../../../bc/6.0/inhaltsjobs.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

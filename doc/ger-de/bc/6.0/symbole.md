@@ -296,5 +296,5 @@ ansehen.
 ## Verwandte Seiten
 
 - [Icon-Themes in Erweiterungen](../../../eng-us/features/6.0/icon-themes-in-extensions.md)
-- [Erweiterungen: Verhaltensänderungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Erweiterungen: Verhaltensänderungen](verhaltensaenderungen-von-erweiterungen.md)
 - [Anleitung zum Upgrade](../../anleitungen/aktualisieren.md)

@@ -88,7 +88,7 @@ Schalten Sie die Debug-Ausgabe nur auf Entwicklungskopien oder für Ihre eigene 
 
 - Zurück: [eZINI: Einstellungen lesen](ezini.md)
 - Weiter: [eZDB: die Datenbankschicht](ezdb.md)
-- [Debug-Leiste](../../../../eng-us/bc/6.0/debug-bar.md)
+- [Debug-Leiste](../../../bc/6.0/debug-leiste.md)
 - [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

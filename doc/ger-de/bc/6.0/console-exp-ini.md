@@ -517,6 +517,6 @@ Ladereihenfolge) stehen in `tests/tests/kernel/classes/ini/` (`expIniEditorTest`
 - [eZINI behält beim Speichern die Kommentare](ezini-behaelt-kommentare.md)
 - [Einstellungen auf der Kommandozeile ändern: exp:ini](../../../eng-us/features/6.0/exp-ini-command.md)
 - [Juni 2026, zweite Hälfte (16. bis 30. Juni)](../../../eng-us/history/2026/2026-06b.md)
-- [Die Leiste Exp Debug](../../../eng-us/bc/6.0/debug-bar.md) (schreibt über dieselbe Engine)
+- [Die Leiste Exp Debug](debug-leiste.md) (schreibt über dieselbe Engine)
 - [Exponential-Konsole](konsole.md)
 - [Spezifikation: Verzeichnisse und Platzierungen von INI-Overrides](../../spezifikationen/6.0/ini-override-platzierungen.md)

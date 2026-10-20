@@ -67,9 +67,9 @@ Das PHP-Handbuch führt jede inkompatible Änderung pro Version auf:
 
 ## Verwandte Seiten
 
-- [Sicherheitshärtung](../../../eng-us/bc/6.0/hardening.md)
+- [Sicherheitshärtung](haertung.md)
 - [PHPUnit 10](phpunitv10.md), [PHPUnit 13](phpunitv13.md) und [PHPUnit 13 unter PHP 8.4](phpunitv13-fuer-php841.md)
-- [Kompatibilitätskorrekturen und Tests von `ezpSessionHandlerDB` für PHP 8](../../../eng-us/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md)
+- [Kompatibilitätskorrekturen und Tests von `ezpSessionHandlerDB` für PHP 8](ezpsessionhandlerdb-php8-korrektur-und-tests.md)
 - [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
 - Geschichte: [April 2025](../../../eng-us/history/2025/2025-04.md), [September 2025](../../../eng-us/history/2025/2025-09.md),
   [Dezember 2025](../../../eng-us/history/2025/2025-12.md), [Februar 2026](../../../eng-us/history/2026/2026-02.md),

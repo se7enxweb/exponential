@@ -141,7 +141,7 @@ Speicherschutzes als reine Funktion.
 
 ## Verwandte Seiten
 
-- [Demomodus: der Upgrade-Hinweis](../../../../eng-us/bc/6.0/demo-mode.md)
+- [Demomodus: der Upgrade-Hinweis](../../../bc/6.0/demomodus.md)
 - [Demomodus](../../demomodus.md) (Administratoren), [Demomodus für Hoster](../../hosting/sicherheit/demomodus-fuer-hoster.md),
   [Demomodus-FAQ](../../demomodus-faq.md), [Probleme mit dem Demomodus](../../hosting/runbooks/probleme-mit-dem-demomodus.md)
 - [eZUser und Zugriffsprüfungen](ezuser-und-zugriff.md)

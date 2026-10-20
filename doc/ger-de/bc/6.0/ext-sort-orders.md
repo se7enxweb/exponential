@@ -39,7 +39,7 @@ Jetzt (Commits `74bc4ccbd8`, `104a4b487a`, `3d125848e8`):
   Paket-Handler `ezextension`, streamt es und entfernt die temporäre Datei. Seit dem 14. Oktober 2026 lädt die Adresse
   `/setup/extensions/<extension name>/<format>` nicht mehr herunter (sie zeigt die Liste), und eine Erweiterung, die
   einen geheimen Wert oder Schlüsselmaterial enthält, wird nicht gepackt
-  ([die Prüfung auf Geheimnisse](../../../eng-us/bc/6.0/extension-package-secret-check.md)).
+  ([die Prüfung auf Geheimnisse](geheimnispruefung-fuer-erweiterungspakete.md)).
 - **Paket-Assistent.** Setup > Pakete > Paket erstellen > Extension zeigt dieselbe sortierte Tabelle mit Version,
   Geändert und einer Karte Details, ohne Download-Links.
 - **Entwickler-API.** `eZExtension::extensionInfo( $name )` in `lib/ezutils/classes/ezextension.php` gibt `name`,
@@ -95,6 +95,6 @@ Wie die Umsetzung seine offenen Fragen beantwortet hat:
 - [Erweiterungsliste: jede Erweiterung sortieren, untersuchen und herunterladen](../../../eng-us/features/6.0/extension-list-and-downloads.md)
 - [Setup > Extensions: Ladereihenfolge](../../../eng-us/features/6.0/extension-loading-order.md)
 - [Metadaten von Erweiterungen](../../spezifikationen/6.0/extension-metadaten.md)
-- [Die Klasse expInfo und der Operator expinfo](../../../eng-us/bc/6.0/expinfo-operator.md)
+- [Die Klasse expInfo und der Operator expinfo](expinfo-operator.md)
 - [Zusätzliche Erweiterungsverzeichnisse](zusaetzliche-erweiterungsverzeichnisse.md)
 - [August 2026](../../../eng-us/history/2026/2026-08.md)
