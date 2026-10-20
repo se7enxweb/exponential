@@ -110,6 +110,11 @@ The acceptance test of a release, on a **new throwaway installation** (never the
    second run prints **No change.**;
 4. remove the throwaway installation.
 
+Last run on 19 October 2026 on a throwaway SQLite installation of 6.0.15 (sevenx_multisite): `classes` twice ("No
+change." the second time), `package` (`PASS wrote ... (8 classes)`), `verify-package` PASS; then on the fresh
+database `ezpm.php import` and `install` of `exp_help_classes-6.0.15.ezpkg`, after which `classes` printed
+"No change.", `install` made the sections, states, tree and roles, and its second run printed "No change.".
+
 ## Version
 
 - The package's version is the Exponential release it was built from, split as the 7x packages are: version
