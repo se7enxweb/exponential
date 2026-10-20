@@ -12,7 +12,7 @@ type: help
 Teil 8, Referenz 32. Das Hilfezentrum der Administration zeigt die Dokumentation des Kernels und, wenn sich die
 Installation dafür entscheidet, die von Erweiterungen. Diese Seite fasst die Einstellungen und Dateikonventionen an
 einer Stelle zusammen. Die Erklärung steht in [Ihre Erweiterung dokumentieren](../teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md),
-das Tutorial in [Hilfeseiten für Ihre Erweiterung, von Hand](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-help-pages-for-your-extension.md)
+das Tutorial in [Hilfeseiten für Ihre Erweiterung, von Hand](../teil-3-erweiterungsentwickler/tutorials/von-hand-hilfeseiten-fuer-ihre-erweiterung.md)
 und die vollständige Beschreibung in [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md) und seiner
 [Spezifikation](../../../spezifikationen/6.0/hilfesystem.md).
 

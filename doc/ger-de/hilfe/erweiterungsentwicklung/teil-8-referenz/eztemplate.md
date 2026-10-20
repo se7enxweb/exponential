@@ -11,8 +11,8 @@ type: help
 
 Teil 8, Referenz 12. Modul-Views, E-Mails und manche Cronjobs rendern Templates aus PHP. `eZTemplate`
 (`lib/eztemplate/classes/eztemplate.php`) ist die Template-Engine. Diese Seite behandelt ihre Verwendung; wie Sie
-Operatoren und Funktionen für sie schreiben, steht in [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md)
-und [Template-Funktionen](../../../../eng-us/help/extension-development/part-3-extension-developer/template-functions.md).
+Operatoren und Funktionen für sie schreiben, steht in [Template-Operatoren](../teil-3-erweiterungsentwickler/template-operatoren.md)
+und [Template-Funktionen](../teil-3-erweiterungsentwickler/template-funktionen.md).
 
 ## Die üblichen drei Zeilen
 
@@ -58,7 +58,7 @@ $Result['path'] = array( array( 'url' => false, 'text' => ezpI18n::tr( 'extensio
 ```
 
 Der Kernel zeichnet `$Result['content']` dann innerhalb des Pagelayouts
-([View-Ergebnisse, der Pfad und das Pagelayout](../../../../eng-us/help/extension-development/part-3-extension-developer/view-results-and-the-pagelayout.md)).
+([View-Ergebnisse, der Pfad und das Pagelayout](../teil-3-erweiterungsentwickler/view-ergebnisse-und-das-pagelayout.md)).
 
 ## Variablen in Templates sind Werte
 

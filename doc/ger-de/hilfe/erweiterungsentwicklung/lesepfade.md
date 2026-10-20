@@ -50,10 +50,10 @@ einer Erweiterung aufbewahren.
    [Debug-Ausgabe und Logs](teil-1-vom-benutzer-zum-entwickler/debug-ausgabe-und-logs-fuer-entwickler.md)
 2. Teil 2, die Kapitel 1 bis 6 des Builder-Pfads (Einstellungen, Templates, die Design-Kette)
 3. [Teil 3](teil-3-erweiterungsentwickler/README.md), der Aufbau, in dieser Reihenfolge
-4. [Rundgang durch die RAD-Werkzeuge](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/the-rad-tools-tour.md), dann die Tutorials
+4. [Rundgang durch die RAD-Werkzeuge](teil-3-erweiterungsentwickler/tutorials/rundgang-durch-die-rad-werkzeuge.md), dann die Tutorials
    paarweise: jedes Tutorial „Mit RAD“ und sein Gegenstück „Von Hand“
-5. [Abschluss-Tutorial: eine vollständige Erweiterung](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/capstone-a-complete-extension.md)
-6. [Sicherheit in Erweiterungen](../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md) und
+5. [Abschluss-Tutorial: eine vollständige Erweiterung](teil-3-erweiterungsentwickler/tutorials/abschlussprojekt-eine-vollstaendige-erweiterung.md)
+6. [Sicherheit in Erweiterungen](teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md) und
    [Content Security Policy für Erweiterungen](teil-3-erweiterungsentwickler/content-security-policy-fuer-erweiterungen.md)
 7. Halten Sie [Teil 8](teil-8-referenz/README.md) während der Arbeit offen
 
@@ -63,7 +63,7 @@ Danach können Sie eine Erweiterung jeder Art, die der Kernel unterstützt, schr
 
 1. Der Builder-Pfad, Kapitel 1 bis 3
 2. [Teil 6](teil-6-theme-entwickler/README.md), in dieser Reihenfolge
-3. [admin4-Styling für Erweiterungsseiten](../../../eng-us/help/extension-development/part-4-upgrading/admin4-styling-for-extension-pages.md), wenn Sie
+3. [admin4-Styling für Erweiterungsseiten](teil-4-aktualisieren/admin4-styling-fuer-erweiterungsseiten.md), wenn Sie
    Administrationsseiten gestalten
 4. [Wo die Hilfe für Designer weitergeht](teil-6-theme-entwickler/wo-die-hilfe-fuer-designer-weitergeht.md)
 
@@ -72,9 +72,9 @@ Danach können Sie ein Theme bauen, ausliefern und pflegen.
 ## Der Anwendungsentwickler
 
 1. Der Builder-Pfad
-2. [Module und Views](../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md),
-   [Persistente Objekte und eigene Tabellen](../../../eng-us/help/extension-development/part-3-extension-developer/persistent-objects-and-tables.md),
-   [Richtlinienfunktionen und Zugriff](../../../eng-us/help/extension-development/part-3-extension-developer/policy-functions-and-access.md)
+2. [Module und Views](teil-3-erweiterungsentwickler/module-und-views.md),
+   [Persistente Objekte und eigene Tabellen](teil-3-erweiterungsentwickler/persistente-objekte-und-tabellen.md),
+   [Richtlinienfunktionen und Zugriff](teil-3-erweiterungsentwickler/richtlinienfunktionen-und-zugriff.md)
 3. [Ajax mit ezjscore-Serverfunktionen](teil-3-erweiterungsentwickler/ajax-mit-ezjscore-serverfunktionen.md) und
    [expservices](teil-8-referenz/expservices.md) für Apps, die mit der Website sprechen
 4. [Inhaltsfunktionen aus PHP](teil-8-referenz/inhaltsfunktionen-aus-php.md) für Importe
@@ -84,7 +84,7 @@ Danach können Sie ein Theme bauen, ausliefern und pflegen.
 
 1. [Eine alte Erweiterung bewerten](teil-1-vom-benutzer-zum-entwickler/eine-alte-erweiterung-bewerten.md) und
    [Lizenzen lesen, bevor Sie etwas wiederverwenden](teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md)
-2. [Teil 4](../../../eng-us/help/extension-development/part-4-upgrading/README.md), ab [der Checkliste](../../../eng-us/help/extension-development/part-4-upgrading/the-upgrade-checklist.md), in dieser
+2. [Teil 4](teil-4-aktualisieren/README.md), ab [der Checkliste](teil-4-aktualisieren/die-upgrade-checkliste.md), in dieser
    Reihenfolge
 3. Die vier Fallstudien am Ende von Teil 4
 4. [Wann Sie forken sollten und wann nicht](teil-5-erweitern-forken-zurueckgeben/wann-forken.md), wenn die Erweiterung

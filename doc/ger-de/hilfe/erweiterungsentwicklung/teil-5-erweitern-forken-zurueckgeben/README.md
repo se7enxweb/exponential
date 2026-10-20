@@ -52,7 +52,7 @@ um Geld, einen Kundenvertrag oder einen Streit geht, fragen Sie jemanden mit ent
 
 ## Verwandte Seiten
 
-- Zurück: [Fallstudie: kleine PHP-8-Korrekturen in vielen Erweiterungen](../../../../eng-us/help/extension-development/part-4-upgrading/case-study-small-fixes-across-many-extensions.md)
+- Zurück: [Fallstudie: kleine PHP-8-Korrekturen in vielen Erweiterungen](../teil-4-aktualisieren/fallstudie-kleine-korrekturen-in-vielen-erweiterungen.md)
 - Weiter: [Erweitern, ohne zu forken](erweitern-ohne-zu-forken.md)
 - [Erweiterungen zurückgeben](../../erweiterungen-zurueckgeben.md)
 - [Lizenzen lesen, bevor Sie etwas wiederverwenden](../teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md)

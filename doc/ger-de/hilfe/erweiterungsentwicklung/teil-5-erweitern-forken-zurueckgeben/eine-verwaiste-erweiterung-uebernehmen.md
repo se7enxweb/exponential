@@ -81,7 +81,7 @@ schreiben.
 
 Übernehmen bedeutet die Arbeit aus [Der Weg zum Maintainer](der-weg-zum-maintainer.md): Issues beantworten, Pull
 Requests prüfen, Releases veröffentlichen. Beginnen Sie damit, sie zu aktualisieren
-([Teil 4](../../../../eng-us/help/extension-development/part-4-upgrading/README.md)) und eine Version zu
+([Teil 4](../teil-4-aktualisieren/README.md)) und eine Version zu
 veröffentlichen, die auf aktuellem PHP läuft. Teilen Sie es dann den Leuten mit, die sie verwenden: auf
 [share.exponential.earth](https://share.exponential.earth) und im Issue des ursprünglichen Repositorys.
 

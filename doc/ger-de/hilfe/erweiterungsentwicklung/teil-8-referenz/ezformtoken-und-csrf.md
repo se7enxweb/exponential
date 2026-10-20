@@ -80,7 +80,7 @@ stattdessen das Formular.
 
 - Zurück: [Referenz der ezjscore-Serverfunktionen](ezjscore-serverfunktionen-referenz.md)
 - Weiter: [E-Mails mit eZMail versenden](ezmail.md)
-- [Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md)
+- [Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md)
 - [Cross-Site Request Forgery](https://owasp.org/www-community/attacks/csrf) bei OWASP
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

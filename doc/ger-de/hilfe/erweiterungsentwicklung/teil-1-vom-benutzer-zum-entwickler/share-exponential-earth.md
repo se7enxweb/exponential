@@ -48,7 +48,7 @@ führt außerdem Slack, Discord und eine LinkedIn-Gruppe auf.
    den Kernel, dessen Codebasis Exponential fortführt.
 3. Wenn Sie eine Antwort finden, prüfen Sie, für welche Version sie geschrieben wurde. Einstellungen und Templates haben
    sich selten geändert; PHP-Code, der für PHP 5 geschrieben wurde, braucht die Änderungen aus
-   [Teil 4](../../../../eng-us/help/extension-development/part-4-upgrading/README.md).
+   [Teil 4](../teil-4-aktualisieren/README.md).
 
 ## Was Sie finden, verwenden
 

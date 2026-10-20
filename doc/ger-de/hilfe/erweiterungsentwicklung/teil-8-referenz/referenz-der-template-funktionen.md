@@ -87,7 +87,7 @@ Erweiterungen wie die Layouts-Suite fügen ihre eigenen Blockfunktionen hinzu, w
 
 - Zurück: [Eingebaute Template-Operatoren](referenz-der-template-operatoren.md)
 - Weiter: [Eingebaute Fetch-Funktionen nach Modul](referenz-der-fetch-funktionen.md)
-- [Template-Funktionen](../../../../eng-us/help/extension-development/part-3-extension-developer/template-functions.md)
+- [Template-Funktionen](../teil-3-erweiterungsentwickler/template-funktionen.md)
 - [Templates für Builder](../teil-2-builder/templates-fuer-builder.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

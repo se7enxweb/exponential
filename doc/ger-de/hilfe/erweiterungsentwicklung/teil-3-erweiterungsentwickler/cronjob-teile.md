@@ -125,9 +125,9 @@ Registrierung.
 
 ## Verwandte Seiten
 
-- Zurück: [Trigger und Workflows für Entwickler](../../../../eng-us/help/extension-development/part-3-extension-developer/triggers-and-workflows-for-developers.md)
+- Zurück: [Trigger und Workflows für Entwickler](trigger-und-workflows-fuer-entwickler.md)
 - Weiter: [CLI-Skripte und Console-Befehle](cli-skripte-und-console-befehle.md)
-- [Von Hand: ein Cronjob-Teil](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-cronjob-part.md)
+- [Von Hand: ein Cronjob-Teil](tutorials/von-hand-cronjob-teil.md)
 - [Cronjobs](../../../anleitungen/cronjobs.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

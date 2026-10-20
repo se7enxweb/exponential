@@ -102,7 +102,7 @@ Sie auch dort; die CI des Kernels lässt aus diesem Grund MySQL und PostgreSQL l
 
 ## Verwandte Seiten
 
-- Zurück: [Persistente Objekte und eigene Tabellen](../../../../eng-us/help/extension-development/part-3-extension-developer/persistent-objects-and-tables.md)
+- Zurück: [Persistente Objekte und eigene Tabellen](persistente-objekte-und-tabellen.md)
 - Weiter: [Ereignisse, Listener und Filter](ereignisse-und-filter.md)
 - [Datenbanken](../../../installation/09-datenbanken.md)
 - [Pakete (.ezpkg) und der Paket-Ersteller](../teil-7-veroeffentlichen/pakete-ezpkg.md)

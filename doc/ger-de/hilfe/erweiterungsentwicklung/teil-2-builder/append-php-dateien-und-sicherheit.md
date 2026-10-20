@@ -104,7 +104,7 @@ Keine der beiden Adressen darf den Inhalt der Datei liefern. Die vollständige L
 - Zurück: [Einstellungen in der Administration](einstellungen-in-der-administration.md)
 - Weiter: [Templates für Builder](templates-fuer-builder.md)
 - [Sicherheitshärtung](../../../installation/13-sicherheitshaertung.md)
-- [Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md)
+- [Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

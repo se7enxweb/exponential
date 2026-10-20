@@ -115,7 +115,7 @@ Sie es weg.
 - **Ein Datenbank-Client** für die Datenbank Ihrer Installation, um sich beim Lernen Tabellen anzusehen. Lesen Sie,
   schreiben Sie nicht: Die Inhaltstabellen werden vom Kernel gepflegt und gehen kaputt, wenn man sie von Hand bearbeitet.
 - **PHPStan und PHP_CodeSniffer**: Die eigenen Qualitätsprüfungen des Kernels verwenden sie (`phpstan.neon.dist`,
-  `phpcs.xml.dist` im Wurzelverzeichnis). Siehe [Tests für Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/tests-for-extensions.md).
+  `phpcs.xml.dist` im Wurzelverzeichnis). Siehe [Tests für Erweiterungen](../teil-3-erweiterungsentwickler/tests-fuer-erweiterungen.md).
 - **Ein GitHub-Konto**, sobald Sie veröffentlichen oder beitragen möchten. Für die Installation brauchen Sie keines.
 
 ## Alles auf einmal prüfen

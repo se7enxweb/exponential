@@ -12,7 +12,7 @@ type: help
 Teil 2, Kapitel 19. Ein **Workflow** führt Schritte rund um eine Operation des Systems aus, meistens um das
 Veröffentlichen: „jeden Artikel vor der Veröffentlichung einem Redakteur zur Freigabe schicken“, „dies an einem Datum
 veröffentlichen“. Builder richten Workflows in der Administration ein; Entwickler fügen neue Arten von Schritten hinzu
-([Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md)). Die vollständige Anleitung ist
+([Workflow-Ereignistypen](../teil-3-erweiterungsentwickler/workflow-ereignistypen.md)). Die vollständige Anleitung ist
 [Workflows](../../../anleitungen/workflows.md); dieses Kapitel ist die Zusammenfassung für Builder.
 
 ## Die Bausteine
@@ -66,7 +66,7 @@ von Ihnen gewählte Sektion startet.
 
 | Sie brauchen | Verwenden Sie |
 |---|---|
-| Einen Schritt, den die Liste nicht hat (ein externes System benachrichtigen, ein Feld setzen, Inhalte verschieben) | einen eigenen Workflow-Ereignistyp ([Mit RAD: ein Workflow-Ereignis](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-workflow-event.md)) |
+| Einen Schritt, den die Liste nicht hat (ein externes System benachrichtigen, ein Feld setzen, Inhalte verschieben) | einen eigenen Workflow-Ereignistyp ([Mit RAD: ein Workflow-Ereignis](../teil-3-erweiterungsentwickler/tutorials/rad-workflow-ereignis.md)) |
 | Etwas beim Veröffentlichen, das nie wartet und nie nachfragt | oft einfacher als Event-Listener ([Ereignisse, Listener und Filter](../teil-3-erweiterungsentwickler/ereignisse-und-filter.md)) |
 
 ## Fehlersuche
@@ -82,7 +82,7 @@ von Ihnen gewählte Sektion startet.
 - Zurück: [Sektionen, Rollen und Zugriff für Builder](sektionen-rollen-und-zugriff-fuer-builder.md)
 - Weiter: [Cronjobs für Builder](cronjobs-fuer-builder.md)
 - [Workflows](../../../anleitungen/workflows.md)
-- [Trigger und Workflows für Entwickler](../../../../eng-us/help/extension-development/part-3-extension-developer/triggers-and-workflows-for-developers.md)
+- [Trigger und Workflows für Entwickler](../teil-3-erweiterungsentwickler/trigger-und-workflows-fuer-entwickler.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

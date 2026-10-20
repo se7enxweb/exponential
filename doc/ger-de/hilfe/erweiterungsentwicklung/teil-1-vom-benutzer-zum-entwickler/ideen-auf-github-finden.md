@@ -81,7 +81,7 @@ Wenn Sie etwas Vielversprechendes finden, lesen Sie Folgendes, bevor Sie auch nu
 3. **Die Issues und Pull Requests.** Offene Issues zeigen bekannte Probleme; übernommene Pull Requests zeigen, dass
    jemand Beiträge prüft.
 4. **Für welche Version sie geschrieben wurde.** `require.php` in `composer.json`, die README, `extension.xml`. Code,
-   der für PHP 5 geschrieben wurde, braucht die Änderungen aus [Teil 4](../../../../eng-us/help/extension-development/part-4-upgrading/README.md), bevor er unter
+   der für PHP 5 geschrieben wurde, braucht die Änderungen aus [Teil 4](../teil-4-aktualisieren/README.md), bevor er unter
    Exponential 6 läuft.
 
 ## Lebt das Projekt?

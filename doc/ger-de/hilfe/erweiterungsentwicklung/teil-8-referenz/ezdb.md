@@ -14,7 +14,7 @@ Teil 8, Referenz 4. `eZDB::instance()` gibt die Datenbankverbindung der Website 
 `expMongoDB` oder ein Handler aus einer Erweiterung. Programmieren Sie gegen die Schnittstelle, dann läuft Ihr Code auf
 jeder Engine mit SQL. Für Ihre eigenen Tabellen bevorzugen Sie `eZPersistentObject`
 ([eZPersistentObject](ezpersistentobject.md)), das auch mit MongoDB funktioniert. Wie Sie alten Datenbankcode
-aktualisieren, steht in [Datenbankcode für PHP 8 und jede Engine](../../../../eng-us/help/extension-development/part-4-upgrading/database-code-for-php-8.md).
+aktualisieren, steht in [Datenbankcode für PHP 8 und jede Engine](../teil-4-aktualisieren/datenbankcode-fuer-php-8.md).
 
 ## Lesen und Schreiben
 
@@ -74,7 +74,7 @@ offen.
 
 Auf einer Installation, die ihre Inhalte in MongoDB speichert, führt der Adapter `expMongoDB` kein SQL aus:
 `arrayQuery()` gibt keine Zeilen zurück und protokolliert eine Warnung
-([MongoDB-Unterstützung im Kernel](../../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)). Code, der dort funktionieren
+([MongoDB-Unterstützung im Kernel](../../../bc/6.0/mongodb-kernel-unterstuetzung.md)). Code, der dort funktionieren
 muss, verwendet `eZPersistentObject`.
 
 ## Verwandte Seiten

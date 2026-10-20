@@ -43,7 +43,7 @@ if ( $http->hasPostVariable( 'StoreButton' ) )
 ```
 
 Jeder Wert aus dem Request ist nicht vertrauenswürdig: Wandeln Sie Zahlen um, prüfen Sie Zeichenketten und maskieren
-Sie bei der Ausgabe ([Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md)). In
+Sie bei der Ausgabe ([Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md)). In
 Modul-Views prüft der Kernel bei POST außerdem das Formular-Token ([ezformtoken und CSRF](ezformtoken-und-csrf.md)).
 
 ## Session
@@ -83,7 +83,7 @@ ab. Für alles, was über ein einfaches GET hinausgeht, verwenden Sie cURL direk
 
 - Zurück: [eZUser und Zugriffsprüfungen](ezuser-und-zugriff.md)
 - Weiter: [eZSys und eZExtension](ezsys-und-ezextension.md)
-- [View-Parameter](../../../../eng-us/help/extension-development/part-3-extension-developer/view-parameters.md)
+- [View-Parameter](../teil-3-erweiterungsentwickler/view-parameter.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

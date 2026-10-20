@@ -11,7 +11,7 @@ type: help
 
 Teil 8, Referenz 19. Eine Serverfunktion ist eine PHP-Methode, die der Browser über `/ezjscore/call/...` aufrufen kann
 und die JSON zurückgibt. Wie Sie eine bauen, erklären [Ajax mit ezjscore-Serverfunktionen](../teil-3-erweiterungsentwickler/ajax-mit-ezjscore-serverfunktionen.md)
-und das Tutorial [Eine Ajax-Serverfunktion, von Hand](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-ajax-server-function.md).
+und das Tutorial [Eine Ajax-Serverfunktion, von Hand](../teil-3-erweiterungsentwickler/tutorials/von-hand-ajax-serverfunktion.md).
 Diese Seite führt die Einstellungen, die eingebauten Funktionen und die Clients auf.
 
 ## Der Einstellungsblock

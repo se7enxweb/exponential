@@ -11,7 +11,7 @@ type: help
 
 Teil 8, Referenz 26. Die Einstellungen des Kernels liegen in `settings/*.ini` (etwa 70 Dateien). Eine Erweiterung
 bearbeitet sie nie; sie fügt eigene Dateien `settings/<file>.ini.append.php` hinzu, die der Kernel für jede aktive
-Erweiterung einmischt ([Einstellungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/settings-in-an-extension.md)).
+Erweiterung einmischt ([Einstellungen in einer Erweiterung](../teil-3-erweiterungsentwickler/einstellungen-in-einer-erweiterung.md)).
 Diese Seite führt nach Zweck die Dateien und Abschnitte auf, die Erweiterungen am häufigsten ergänzen.
 
 ## Das Dateiformat der Einstellungen einer Erweiterung

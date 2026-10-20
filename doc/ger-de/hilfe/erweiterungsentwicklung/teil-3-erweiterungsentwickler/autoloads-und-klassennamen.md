@@ -99,8 +99,8 @@ Composer-Abhängigkeit vor.
 
 ## Verwandte Seiten
 
-- Zurück: [Einstellungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/settings-in-an-extension.md)
-- Weiter: [Module und Views](../../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md)
+- Zurück: [Einstellungen in einer Erweiterung](einstellungen-in-einer-erweiterung.md)
+- Weiter: [Module und Views](module-und-views.md)
 - [Kernel-Klassen-Overrides: der letzte Ausweg](kernel-overrides-der-letzte-ausweg.md)
 - [Erweiterungen debuggen](erweiterungen-debuggen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

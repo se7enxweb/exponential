@@ -65,7 +65,7 @@ View `ezinfo/about`) und suchen Sie die Zeile Ihrer Erweiterung: Die angezeigte 
 Wenn Sie schon in den Dateien sind, prüfen Sie, ob der Rest noch stimmt: der Name, die Copyright-Jahre, die Lizenz
 (`GNU General Public License v2.0 (or any later version)` oder genau das, was Ihre Lizenzdatei sagt) und `Info_url`,
 die auf das Repository zeigt. Sie werden in
-[ezinfo.php und extension.xml modernisieren](../../../../eng-us/help/extension-development/part-4-upgrading/modernizing-ezinfo-and-extension-xml.md)
+[ezinfo.php und extension.xml modernisieren](../teil-4-aktualisieren/ezinfo-und-extension-xml-modernisieren.md)
 behandelt.
 
 ## Erweiterungen, die mit dem Kernel ausgeliefert werden

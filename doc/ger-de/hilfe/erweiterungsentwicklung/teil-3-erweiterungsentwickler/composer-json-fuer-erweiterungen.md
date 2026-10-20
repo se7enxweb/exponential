@@ -110,7 +110,7 @@ beschreibt
 ## Verwandte Seiten
 
 - Zurück: [Ladereihenfolge der Erweiterungen](ladereihenfolge-der-erweiterungen.md)
-- Weiter: [Einstellungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/settings-in-an-extension.md)
+- Weiter: [Einstellungen in einer Erweiterung](einstellungen-in-einer-erweiterung.md)
 - [Ideen auf Packagist finden](../teil-1-vom-benutzer-zum-entwickler/ideen-auf-packagist-finden.md)
 - [getcomposer.org: das Schema der composer.json](https://getcomposer.org/doc/04-schema.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

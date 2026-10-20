@@ -68,7 +68,7 @@ document.addEventListener( 'click', function ( e ) {
 Ein einziger Listener auf dem Dokument behandelt jede Schaltfläche, auch solche, die später hinzukommen. Daten
 gelangen über maskierte Attribute vom Template zum Skript; das Skript schreibt mit `textContent`. Viele Erweiterungen
 dieses Projekts wurden auf dieses Muster umgestellt; Teil 4 zeigt echte Beispiele vorher und nachher
-([CSP: Event-Handler-Attribute zu Data-Attributen](../../../../eng-us/help/extension-development/part-4-upgrading/csp-event-handlers-to-data-attributes.md)).
+([CSP: Event-Handler-Attribute zu Data-Attributen](../teil-4-aktualisieren/csp-event-handler-zu-data-attributen.md)).
 
 ## Die Nonce, für den seltenen Fall
 
@@ -92,10 +92,10 @@ immer die bessere Lösung.
 
 ## Verwandte Seiten
 
-- Zurück: [Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md)
+- Zurück: [Sicherheit in Erweiterungen](sicherheit-in-erweiterungen.md)
 - Weiter: [Admin-Seiten im admin4-Stil](admin-seiten-im-admin4-stil.md)
 - [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)
-- [CSP: Inline-Skripte in Dateien verschieben](../../../../eng-us/help/extension-development/part-4-upgrading/csp-moving-inline-scripts-out.md)
+- [CSP: Inline-Skripte in Dateien verschieben](../teil-4-aktualisieren/csp-inline-skripte-auslagern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

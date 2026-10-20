@@ -107,7 +107,7 @@ Einige Registrierungen aus [Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-ex
 
 - Zurück: [Ereignisse, Listener und Filter](ereignisse-und-filter.md)
 - Weiter: [Kernel-Klassen-Overrides: der letzte Ausweg](kernel-overrides-der-letzte-ausweg.md)
-- [Mit RAD: Handler und Kernel-Overrides](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-handlers-and-kernel-overrides.md)
+- [Mit RAD: Handler und Kernel-Overrides](tutorials/rad-handler-und-kernel-overrides.md)
 - [E-Mails mit eZMail versenden](../teil-8-referenz/ezmail.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

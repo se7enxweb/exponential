@@ -82,8 +82,8 @@ in eZpedia beschreibt den Mechanismus aus den früheren Jahren.
 ## Verwandte Seiten
 
 - Zurück: [Handler, die über Einstellungen benannt werden](handler-ueber-einstellungen-benennen.md)
-- Weiter: [Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md)
-- [Mit RAD: Handler und Kernel-Overrides](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-handlers-and-kernel-overrides.md)
+- Weiter: [Sicherheit in Erweiterungen](sicherheit-in-erweiterungen.md)
+- [Mit RAD: Handler und Kernel-Overrides](tutorials/rad-handler-und-kernel-overrides.md)
 - [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

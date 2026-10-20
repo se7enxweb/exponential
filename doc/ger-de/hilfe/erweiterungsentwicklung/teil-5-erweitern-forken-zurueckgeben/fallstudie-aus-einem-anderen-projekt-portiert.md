@@ -35,7 +35,7 @@ von der Erweiterung stammt und welche vom Werkzeug.
 
 Änderungen am eingebetteten Code sind eigene Commits in der Historie der Erweiterung, mit Begründung. Commit b02ff09
 zum Beispiel ersetzte für PHP 8.2 `strlen( utf8_decode() )` durch `mb_strlen()` in zwei Dateien von `adminneo/`
-([Veraltete Funktionen von PHP 8.1 bis 8.5](../../../../eng-us/help/extension-development/part-4-upgrading/php-8-1-to-8-5-deprecations.md)).
+([Veraltete Funktionen von PHP 8.1 bis 8.5](../teil-4-aktualisieren/php-8-1-bis-8-5-veraltete-funktionen.md)).
 Eine solche Korrektur ist auch ein Kandidat, um sie an das Projekt des Werkzeugs zurückzuschicken.
 
 ## 2. Forks zusammenführen: expchangeclass
@@ -82,7 +82,7 @@ Kapitels, und dessen Lizenz und Hinweise gelten.
 
 - Zurück: [Die Community durch Code wachsen lassen](die-community-durch-code-wachsen-lassen.md)
 - Weiter: [Fallstudie: ein Pull Request an einen Upstream-Autor](fallstudie-ein-pull-request-an-einen-upstream-autor.md)
-- [Fallstudie: von eZChangeclass zu expchangeclass](../../../../eng-us/help/extension-development/part-4-upgrading/case-study-expchangeclass.md)
+- [Fallstudie: von eZChangeclass zu expchangeclass](../teil-4-aktualisieren/fallstudie-expchangeclass.md)
 - [Ethisches Rebranding](ethisches-rebranding.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -14,7 +14,7 @@ und einem Satz Design-Tokens (`--a4-*`), die in der `components.css` der Adminis
 Administrationsseiten einer Erweiterung verwenden sie ebenfalls. Die vollständige Referenz mit jeder Klasse, jedem
 Zustand und jedem Token ist [Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md); wie Sie die Seiten
 einer alten Erweiterung umstellen, beschreibt
-[admin4-Styling für Erweiterungsseiten](../../../../eng-us/help/extension-development/part-4-upgrading/admin4-styling-for-extension-pages.md).
+[admin4-Styling für Erweiterungsseiten](../teil-4-aktualisieren/admin4-styling-fuer-erweiterungsseiten.md).
 
 ## Die meistverwendeten Komponenten
 

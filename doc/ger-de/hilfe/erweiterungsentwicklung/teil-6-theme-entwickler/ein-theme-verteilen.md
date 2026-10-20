@@ -58,7 +58,7 @@ Siteaccesses, die es erwartet.
 
 ## composer.json
 
-Ein Theme wird wie jede Erweiterung installiert ([composer.json modernisieren](../../../../eng-us/help/extension-development/part-4-upgrading/modernizing-composer-json.md)):
+Ein Theme wird wie jede Erweiterung installiert ([composer.json modernisieren](../teil-4-aktualisieren/composer-json-modernisieren.md)):
 
 ```json
 {

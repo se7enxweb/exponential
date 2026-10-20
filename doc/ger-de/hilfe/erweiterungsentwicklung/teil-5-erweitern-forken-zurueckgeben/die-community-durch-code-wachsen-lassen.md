@@ -30,7 +30,7 @@ Einstellungen mit Geheimnissen), und behalten Sie den Rest.
 - **Hilfeseiten in der Erweiterung**, die das Hilfesystem der Administration neben denen des Kernels anzeigt
   ([Ihre Erweiterung dokumentieren](../teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md)
   und das Tutorial
-  [Hilfeseiten für Ihre Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-help-pages-for-your-extension.md)).
+  [Hilfeseiten für Ihre Erweiterung](../teil-3-erweiterungsentwickler/tutorials/von-hand-hilfeseiten-fuer-ihre-erweiterung.md)).
 
 ## Machen Sie das Helfen leicht
 

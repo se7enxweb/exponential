@@ -132,12 +132,12 @@ HTML-Fragmente zurückzugeben.
 
 **Handler extension: ajax function** (`/setup/handlerextension/ajaxfunction`) schreibt die Klasse und die
 Einstellungen; siehe
-[Von Hand: eine ezjscore-Serverfunktion](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-ajax-server-function.md).
+[Von Hand: eine ezjscore-Serverfunktion](tutorials/von-hand-ajax-serverfunktion.md).
 
 ## Verwandte Seiten
 
 - Zurück: [CSS und JavaScript in einer Erweiterung](css-und-javascript-in-einer-erweiterung.md)
-- Weiter: [Übersetzungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/translations-in-an-extension.md)
+- Weiter: [Übersetzungen in einer Erweiterung](uebersetzungen-in-einer-erweiterung.md)
 - [Referenz der ezjscore-Serverfunktionen](../teil-8-referenz/ezjscore-serverfunktionen-referenz.md)
 - [ezjscore-Dienste im Backend](../../../../eng-us/bc/6.0/backend_ezjscore_services.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

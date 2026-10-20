@@ -108,9 +108,9 @@ Website. Sie verweigert:
 Die öffentlichen Siteaccesses des Kernels haben die Richtlinie standardmäßig ausgeschaltet; Administratoren können sie
 einschalten ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)). Ein Theme, das bereits darunter
 funktioniert, ist ein Hindernis weniger. Die Umstellungen werden in Teil 4 erklärt:
-[Inline-Skripte](../../../../eng-us/help/extension-development/part-4-upgrading/csp-moving-inline-scripts-out.md),
-[Ereignisattribute](../../../../eng-us/help/extension-development/part-4-upgrading/csp-event-handlers-to-data-attributes.md),
-[Inline-CSS](../../../../eng-us/help/extension-development/part-4-upgrading/inline-css-to-stylesheets.md).
+[Inline-Skripte](../teil-4-aktualisieren/csp-inline-skripte-auslagern.md),
+[Ereignisattribute](../teil-4-aktualisieren/csp-event-handler-zu-data-attributen.md),
+[Inline-CSS](../teil-4-aktualisieren/inline-css-in-stylesheets.md).
 
 Eine kleine Ausnahme, die Sie brauchen könnten: ein Skript, das laufen muss, bevor die Seite gezeichnet wird (um ein
 gespeichertes Farbschema anzuwenden, siehe das nächste Kapitel). Machen Sie daraus eine winzige Datei, die als normales

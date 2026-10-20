@@ -89,7 +89,7 @@ return array( 'Name' => "expsite_installer",
 
 `php -l` erkennt das **nicht** (die Datei ist syntaktisch gültig); nur das Ausführen zeigt es. Teil 4 enthält weitere
 solche Fälle:
-[ezinfo.php und extension.xml modernisieren](../../../../eng-us/help/extension-development/part-4-upgrading/modernizing-ezinfo-and-extension-xml.md).
+[ezinfo.php und extension.xml modernisieren](../teil-4-aktualisieren/ezinfo-und-extension-xml-modernisieren.md).
 
 ## HTML in den Werten
 

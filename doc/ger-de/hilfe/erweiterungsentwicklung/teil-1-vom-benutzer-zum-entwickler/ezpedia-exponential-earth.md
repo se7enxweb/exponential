@@ -44,13 +44,13 @@ Die Titel werden so zitiert, wie die Artikel selbst heißen; sie verwenden den P
 | Override-System | ["Template Override System"](https://ezpedia.exponential.earth/en/learning/template_override_system) | [Template-Overrides: die Grundlagen](../teil-2-builder/grundlagen-der-template-overrides.md) |
 | Templates debuggen | ["Learning: Template Debugging"](https://ezpedia.exponential.earth/en/learning/learning_template_debugging) | [Templates debuggen](../teil-2-builder/templates-debuggen.md) |
 | Debugging | ["Debugging"](https://ezpedia.exponential.earth/en/learning/debugging) | [Debug-Ausgabe und Logs für Entwickler](debug-ausgabe-und-logs-fuer-entwickler.md) |
-| Pagelayout | ["Pagelayout.tpl"](https://ezpedia.exponential.earth/en/learning/pagelayout_tpl) | [View-Ergebnisse und das Pagelayout](../../../../eng-us/help/extension-development/part-3-extension-developer/view-results-and-the-pagelayout.md) |
+| Pagelayout | ["Pagelayout.tpl"](https://ezpedia.exponential.earth/en/learning/pagelayout_tpl) | [View-Ergebnisse und das Pagelayout](../teil-3-erweiterungsentwickler/view-ergebnisse-und-das-pagelayout.md) |
 | Knoten-Templates | ["Custom Node Templates"](https://ezpedia.exponential.earth/en/learning/custom_node_templates) | [Override-Bedingungen](../teil-2-builder/override-bedingungen.md) |
 | Datentypen | ["Datatype"](https://ezpedia.exponential.earth/en/learning/datatype) | [Datentypen](../teil-3-erweiterungsentwickler/datentypen.md) |
-| Workflows | ["Workflow"](https://ezpedia.exponential.earth/en/learning/workflow) | [Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md) |
+| Workflows | ["Workflow"](https://ezpedia.exponential.earth/en/learning/workflow) | [Workflow-Ereignistypen](../teil-3-erweiterungsentwickler/workflow-ereignistypen.md) |
 | Einstellungen | ["Configuration Files"](https://ezpedia.exponential.earth/en/learning/configuration_files) | [Wie INI-Einstellungen funktionieren](../teil-2-builder/wie-ini-einstellungen-funktionieren.md) |
 | Kernel-Overrides | ["Overriding kernel classes within an extension"](https://ezpedia.exponential.earth/en/solution/overriding_kernel_classes_within_an_extension) | [Kernel-Klassen-Overrides: das letzte Mittel](../teil-3-erweiterungsentwickler/kernel-overrides-der-letzte-ausweg.md) |
-| View-Parameter | ["How to add view parameter support to your custom module view"](https://ezpedia.exponential.earth/en/solution/how_to_add_view_parameter_support_to_your_custom_module_view) | [View-Parameter](../../../../eng-us/help/extension-development/part-3-extension-developer/view-parameters.md) |
+| View-Parameter | ["How to add view parameter support to your custom module view"](https://ezpedia.exponential.earth/en/solution/how_to_add_view_parameter_support_to_your_custom_module_view) | [View-Parameter](../teil-3-erweiterungsentwickler/view-parameter.md) |
 | Bildaliase aus PHP | ["Creating image alias image variations in PHP"](https://ezpedia.exponential.earth/en/solution/creating_image_alias_image_variations_in_php) | [Referenz in Teil 8](../teil-8-referenz/README.md) |
 | Rich Text aus PHP | ["Manipulating ezxml document contents"](https://ezpedia.exponential.earth/en/solution/manipulating_ezxml_document_contents) | [Inhalte aus PHP anlegen, veröffentlichen und ändern](../teil-8-referenz/inhaltsfunktionen-aus-php.md) |
 | Relationen aus PHP | ["Adding related object programmatic"](https://ezpedia.exponential.earth/en/solution/adding_related_object_programmatic) | dasselbe |
@@ -64,7 +64,7 @@ Module, Datentypen, Workflow-Ereignisse) haben sich seitdem kaum verändert. Was
 
 | Damals | In Exponential 6 |
 |---|---|
-| Code für PHP 4 und PHP 5 (Konstruktoren `function ClassName()`, `each()`, `create_function()`) | PHP 8.0 bis 8.5; siehe [Teil 4](../../../../eng-us/help/extension-development/part-4-upgrading/README.md) |
+| Code für PHP 4 und PHP 5 (Konstruktoren `function ClassName()`, `each()`, `create_function()`) | PHP 8.0 bis 8.5; siehe [Teil 4](../teil-4-aktualisieren/README.md) |
 | Zeilen `include_once( 'kernel/classes/...' )` am Anfang von Dateien | Autoloading; neu erzeugen mit `php bin/php/ezpgenerateautoloads.php -e` |
 | Inline-`<script>` und `onclick=""` in Templates | In der Administration durch ihre Content Security Policy verboten |
 | YUI und älteres jQuery | jQuery 4 und der Namensraum `Exp` von expui |

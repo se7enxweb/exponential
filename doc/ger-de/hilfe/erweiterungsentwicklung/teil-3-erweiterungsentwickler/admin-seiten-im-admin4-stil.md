@@ -130,10 +130,10 @@ Content Security Policy).
 ## Verwandte Seiten
 
 - Zurück: [Content Security Policy für Autoren von Erweiterungen](content-security-policy-fuer-erweiterungen.md)
-- Weiter: [Tests für Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/tests-for-extensions.md)
+- Weiter: [Tests für Erweiterungen](tests-fuer-erweiterungen.md)
 - [Die Administration gestalten](../../../../eng-us/bc/6.0/admin4-styling.md)
 - [admin4-Komponenten und -Tokens](../teil-8-referenz/admin4-komponenten-und-tokens.md)
-- [admin4-Stil für Seiten von Erweiterungen](../../../../eng-us/help/extension-development/part-4-upgrading/admin4-styling-for-extension-pages.md)
+- [admin4-Stil für Seiten von Erweiterungen](../teil-4-aktualisieren/admin4-styling-fuer-erweiterungsseiten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

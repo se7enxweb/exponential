@@ -11,7 +11,7 @@ type: help
 
 Teil 8, Referenz 13. Ein Modul ist ein Ordner unter `modules/` mit einer `module.php` und einem Skript (oder einer
 Klasse) je View. `eZModule` (`lib/ezutils/classes/ezmodule.php`) lädt es und führt die Views aus. Das Tutorial ist
-[Module und Views](../../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md); diese Seite ist die Referenz.
+[Module und Views](../teil-3-erweiterungsentwickler/module-und-views.md); diese Seite ist die Referenz.
 
 ## module.php
 
@@ -29,7 +29,7 @@ Ein View-Skript findet `$Params` vor:
 |---|---|
 | `$Params['Module']` | das `eZModule`-Objekt |
 | `$Params['<Name>']` | jeden geordneten Parameter, der in `'params'` genannt ist |
-| `$Params['UserParameters']` | die Paare `(name)/value` der URL ([View-Parameter](../../../../eng-us/help/extension-development/part-3-extension-developer/view-parameters.md)) |
+| `$Params['UserParameters']` | die Paare `(name)/value` der URL ([View-Parameter](../teil-3-erweiterungsentwickler/view-parameter.md)) |
 
 ## Was eine View zurückgibt
 
@@ -43,7 +43,7 @@ Eine View setzt `$Result` (oder gibt es als Klasse aus `run()` zurück):
 | `pagelayout` | `false` für keinen Rahmen oder ein anderes Pagelayout-Template |
 | `content_info` | bei Inhalts-Views Informationen über den Knoten |
 
-Einzelheiten: [View-Ergebnisse, der Pfad und das Pagelayout](../../../../eng-us/help/extension-development/part-3-extension-developer/view-results-and-the-pagelayout.md).
+Einzelheiten: [View-Ergebnisse, der Pfad und das Pagelayout](../teil-3-erweiterungsentwickler/view-ergebnisse-und-das-pagelayout.md).
 
 ## eZModule-Methoden, die Views verwenden
 
@@ -98,8 +98,8 @@ if ( $Module->isCurrentAction( 'Store' ) )
 
 - Zurück: [eZTemplate aus PHP](eztemplate.md)
 - Weiter: [eZScript und eZCLI](ezscript-und-ezcli.md)
-- [Module und Views](../../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md)
-- [Richtlinienfunktionen und Zugriff](../../../../eng-us/help/extension-development/part-3-extension-developer/policy-functions-and-access.md)
+- [Module und Views](../teil-3-erweiterungsentwickler/module-und-views.md)
+- [Richtlinienfunktionen und Zugriff](../teil-3-erweiterungsentwickler/richtlinienfunktionen-und-zugriff.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

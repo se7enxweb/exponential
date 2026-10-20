@@ -32,7 +32,7 @@ Kommentare zu Schritt 6 bei einer Änderung, die an Schritt 2 scheitert, verschw
 
 | Bereich | Prüfen |
 |---|---|
-| Eingaben | Werte aus der Anfrage laufen über `eZHTTPTool`; Ganzzahlen werden gecastet; Zeichenketten in SQL laufen über `escapeString()` ([Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md)) |
+| Eingaben | Werte aus der Anfrage laufen über `eZHTTPTool`; Ganzzahlen werden gecastet; Zeichenketten in SQL laufen über `escapeString()` ([Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md)) |
 | Ausgaben | Template-Werte werden gewaschen (`\|wash`), Attribute ebenfalls |
 | Zugriff | neue Views deklarieren Richtlinienfunktionen; Menüeinträge prüfen `has_access_to` |
 | Formulare | Views, die den Zustand ändern, verlangen POST und das Formular-Token |

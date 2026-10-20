@@ -14,8 +14,8 @@ die Methoden überschreibt, die sie braucht. Diese Seite führt sie nach Zweck a
 (übernehmen Sie sie genau: PHP 8 verweigert ein Überschreiben mit abweichender Signatur). Wie Sie einen bauen, steht in
 [Datentypen](../teil-3-erweiterungsentwickler/datentypen.md),
 [Speicherung, Validierung und Templates von Datentypen](../teil-3-erweiterungsentwickler/datentyp-speicherung-validierung-und-templates.md)
-und in den Tutorials [Ein Datentyp, von Hand](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-datatype.md) und
-[Mit RAD: ein Datentyp](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-datatype.md).
+und in den Tutorials [Ein Datentyp, von Hand](../teil-3-erweiterungsentwickler/tutorials/von-hand-datentyp.md) und
+[Mit RAD: ein Datentyp](../teil-3-erweiterungsentwickler/tutorials/rad-datentyp.md).
 
 ## Registrierung
 

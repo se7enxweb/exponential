@@ -19,7 +19,7 @@ vermittelt. Finden Sie Ihren Platz auf der Leiter und lesen Sie dann nach oben w
 |---|---|---|---|
 | **Benutzer** | Inhalte: Artikel, Bilder, Menüs, Benutzer | die Administration | Teil 1 (dieser Teil) |
 | **Builder** | Einstellungen, Templates, Overrides, Inhaltsklassen, Rollen, Workflows | einen Texteditor, die INI- und die Template-Sprache, Geduld | [Teil 2](../teil-2-builder/README.md) |
-| **Erweiterungsentwickler** | Neue Module, Datentypen, Operatoren, Workflow-Ereignisse, Cronjobs, Befehle | PHP, die Klassen des Kernels, Git | [Teil 3](../teil-3-erweiterungsentwickler/README.md), [Teil 4](../../../../eng-us/help/extension-development/part-4-upgrading/README.md) |
+| **Erweiterungsentwickler** | Neue Module, Datentypen, Operatoren, Workflow-Ereignisse, Cronjobs, Befehle | PHP, die Klassen des Kernels, Git | [Teil 3](../teil-3-erweiterungsentwickler/README.md), [Teil 4](../teil-4-aktualisieren/README.md) |
 | **Theme-Entwickler** | Das Aussehen: eine Design-Erweiterung mit Templates, CSS, JavaScript | HTML, CSS, die Template-Sprache, die Design-Kette | [Teil 6](../teil-6-theme-entwickler/README.md) |
 
 Zwei weitere Rollen stehen neben der Leiter statt auf ihr:
@@ -101,9 +101,9 @@ von Ihnen, etwas zu lernen, das Sie noch nicht brauchen.
 1. Lesen Sie Teil 1 vollständig und machen Sie [Ihre erste Stunde als Entwickler](ihre-erste-stunde-als-entwickler.md).
 2. Bauen Sie mit Teil 2 etwas Echtes: eine Einstellungs-Erweiterung für Ihre eigene Website.
 3. Machen Sie die ersten drei Tutorials in Teil 3: die
-   [kleinste Erweiterung von Hand](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-minimal-extension.md), einen
-   [Template-Operator](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-template-operator.md) und ein
-   [Modul mit einer View](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-module-with-a-view.md).
+   [kleinste Erweiterung von Hand](../teil-3-erweiterungsentwickler/tutorials/von-hand-minimale-erweiterung.md), einen
+   [Template-Operator](../teil-3-erweiterungsentwickler/tutorials/von-hand-template-operator.md) und ein
+   [Modul mit einer View](../teil-3-erweiterungsentwickler/tutorials/von-hand-modul-mit-view.md).
 4. Nehmen Sie eine alte Erweiterung, die Ihnen gefällt, und bringen Sie sie mit Teil 4 auf den neuesten Stand. Nichts
    bringt Ihnen den Kernel schneller bei.
 5. Veröffentlichen Sie sie (Teil 7) und bieten Sie Ihre Änderungen ihrem Autor an (Teil 5).

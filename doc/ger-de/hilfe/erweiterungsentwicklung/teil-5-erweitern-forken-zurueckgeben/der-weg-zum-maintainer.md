@@ -48,7 +48,7 @@ Jede Stufe ist für sich nützlich. Niemand muss den ganzen Weg gehen.
 - **Labels** für Issues: `bug`, `feature`, `question`, `help wanted`, `good first issue`. Die letzten beiden laden
   Beitragende ein.
 - **CI bei jedem Push**
-  ([Tests und CI für eine aktualisierte Erweiterung](../../../../eng-us/help/extension-development/part-4-upgrading/tests-and-ci-for-an-upgraded-extension.md)),
+  ([Tests und CI für eine aktualisierte Erweiterung](../teil-4-aktualisieren/tests-und-ci-fuer-eine-aktualisierte-erweiterung.md)),
   damit Sie Ergebnisse prüfen, statt Tests von Hand auszuführen.
 - **Kleine Releases.** Veröffentlichen Sie, wenn eine Korrektur übernommen ist; sammeln Sie nicht monatelang.
 - **Beobachten Sie das Repository des Kernels** auf Releases (GitHub: **Watch > Custom > Releases**).

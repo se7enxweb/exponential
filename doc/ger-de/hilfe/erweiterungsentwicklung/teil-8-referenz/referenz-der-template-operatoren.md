@@ -110,7 +110,7 @@ aktive Erweiterung registriert.
 
 - Zurück: [Cache-Tags, Cache-Blöcke und das Leeren von Caches](cache-tags-und-leeren.md)
 - Weiter: [Eingebaute Template-Funktionen](referenz-der-template-funktionen.md)
-- [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md)
+- [Template-Operatoren](../teil-3-erweiterungsentwickler/template-operatoren.md)
 - [Die Template-Operatoren, die Builder am häufigsten verwenden](../teil-2-builder/die-wichtigsten-template-operatoren-fuer-builder.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

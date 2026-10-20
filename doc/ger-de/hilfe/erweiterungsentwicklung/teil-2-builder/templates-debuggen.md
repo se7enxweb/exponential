@@ -67,7 +67,7 @@ sehen, welcher Fetch langsam ist.
 |---|---|---|
 | `Unknown template variable 'x' in namespace ''` | die Variable wurde hier nie definiert | definieren Sie sie mit `{def}`, übergeben Sie sie an das Include oder verwenden Sie `first_set( $x, default )` |
 | `Operator 'x' is not registered` | es gibt keinen Operator dieses Namens (Tippfehler, oder seine Erweiterung ist nicht aktiv) | prüfen Sie den Namen in [Eingebaute Template-Operatoren](../teil-8-referenz/referenz-der-template-operatoren.md); aktivieren Sie die Erweiterung |
-| `Object problem with operator 'x'` | die Klasse des Operators konnte nicht eingerichtet werden | ein PHP-Problem in der Erweiterung; siehe [Konstruktoren alten Stils und statische Aufrufe](../../../../eng-us/help/extension-development/part-4-upgrading/old-constructors-and-static-calls.md) |
+| `Object problem with operator 'x'` | die Klasse des Operators konnte nicht eingerichtet werden | ein PHP-Problem in der Erweiterung; siehe [Konstruktoren alten Stils und statische Aufrufe](../teil-4-aktualisieren/alte-konstruktoren-und-statische-aufrufe.md) |
 | `No template could be loaded for "x.tpl" using resource "design"` | der Pfad liegt in keiner Design-Basis | prüfen Sie den Pfad und die [Design-Kette](die-design-kette.md) |
 | `parser error` mit einer Zeilennummer | ein Syntaxfehler, zum Beispiel `max=3` statt `max 3` in `foreach` | lesen Sie die Zeile; vergleichen Sie mit [Templates für Builder](templates-fuer-builder.md) |
 

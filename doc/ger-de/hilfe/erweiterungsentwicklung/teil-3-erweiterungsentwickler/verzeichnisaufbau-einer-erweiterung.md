@@ -51,18 +51,18 @@ Upgrade-Prüfungen sie lesen.
 | Pfad | Gefunden, weil | Kapitel |
 |---|---|---|
 | `ezinfo.php`, `extension.xml` | von `expInfo` für jede Erweiterung auf der Festplatte gelesen | [ezinfo.php](ezinfo-php.md), [extension.xml](extension-xml.md) |
-| `settings/` | den Override-Verzeichnissen der Einstellungen einer aktiven Erweiterung hinzugefügt | [Einstellungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/settings-in-an-extension.md) |
+| `settings/` | den Override-Verzeichnissen der Einstellungen einer aktiven Erweiterung hinzugefügt | [Einstellungen in einer Erweiterung](einstellungen-in-einer-erweiterung.md) |
 | `classes/` | von `php bin/php/ezpgenerateautoloads.php -e` nach `var/autoload/ezp_extension.php` eingelesen | [Autoloads und Klassennamen](autoloads-und-klassennamen.md) |
-| `autoloads/eztemplateautoload.php` | `site.ini [TemplateSettings] ExtensionAutoloadPath[]=<ext>` | [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md) |
-| `modules/<module>/module.php` | `module.ini [ModuleSettings] ExtensionRepositories[]=<ext>` | [Module und Views](../../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md) |
+| `autoloads/eztemplateautoload.php` | `site.ini [TemplateSettings] ExtensionAutoloadPath[]=<ext>` | [Template-Operatoren](template-operatoren.md) |
+| `modules/<module>/module.php` | `module.ini [ModuleSettings] ExtensionRepositories[]=<ext>` | [Module und Views](module-und-views.md) |
 | `design/<design>/` | `design.ini [ExtensionSettings] DesignExtensions[]=<ext>` | [Ein Design in einer Erweiterung](design-in-einer-erweiterung.md) |
 | `datatypes/<type>/<type>type.php` | `content.ini [DataTypeSettings] ExtensionDirectories[]=<ext>` und `AvailableDataTypes[]=<type>` | [Datentypen](datentypen.md) |
-| `eventtypes/event/<type>/<type>type.php` | `workflow.ini [EventSettings] ExtensionDirectories[]=<ext>` und `AvailableEventTypes[]=event_<type>` | [Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md) |
+| `eventtypes/event/<type>/<type>type.php` | `workflow.ini [EventSettings] ExtensionDirectories[]=<ext>` und `AvailableEventTypes[]=event_<type>` | [Workflow-Ereignistypen](workflow-ereignistypen.md) |
 | `cronjobs/<script>.php` | `cronjob.ini [CronjobSettings] ExtensionDirectories[]=<ext>` und `Scripts[]` eines Teils | [Cronjob-Teile](cronjob-teile.md) |
 | `bin/php/<name>.php` | die Console findet es als `ext:<extension>:<name>` | [CLI-Skripte und Console-Befehle](cli-skripte-und-console-befehle.md) |
-| `translations/<locale>/translation.ts` | `site.ini [RegionalSettings] TranslationExtensions[]=<ext>` | [Übersetzungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/translations-in-an-extension.md) |
+| `translations/<locale>/translation.ts` | `site.ini [RegionalSettings] TranslationExtensions[]=<ext>` | [Übersetzungen in einer Erweiterung](uebersetzungen-in-einer-erweiterung.md) |
 | `share/db_schema.dba`, `sql/` | der Paket-Installer oder Ihr Upgrade-Skript | [Datenbankschema, .dba-Dateien und Upgrades](datenbankschema-und-dba-dateien.md) |
-| `tests/` | Ihre `phpunit.xml.dist` | [Tests für Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/tests-for-extensions.md) |
+| `tests/` | Ihre `phpunit.xml.dist` | [Tests für Erweiterungen](tests-fuer-erweiterungen.md) |
 
 Die Regel hinter der Tabelle: **Der Ordnername ist eine Konvention, und eine Einstellung im eigenen `settings/` Ihrer
 Erweiterung registriert ihn**. Ein Ordner `datatypes/` in einer Erweiterung, die sich nicht selbst in
@@ -102,7 +102,7 @@ done
 Jeder Assistent unter **Setup > RAD** schreibt diese Struktur für die Teile, die Sie auswählen, und listet jede Datei
 auf, bevor er sie schreibt. Die Ausgabe eines Assistenten mit dieser Landkarte zu vergleichen, ist ein guter Weg, sie
 zu lernen; siehe
-[Der Rundgang durch die RAD-Werkzeuge](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/the-rad-tools-tour.md).
+[Der Rundgang durch die RAD-Werkzeuge](tutorials/rundgang-durch-die-rad-werkzeuge.md).
 
 ## Verwandte Seiten
 

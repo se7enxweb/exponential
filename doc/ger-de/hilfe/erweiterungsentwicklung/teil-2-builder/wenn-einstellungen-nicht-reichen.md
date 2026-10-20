@@ -26,17 +26,17 @@ Anforderung passt, damit Ihr erstes PHP klein ist und am richtigen Ort steht.
 
 | Sie brauchen | Mechanismus | Kapitel in Teil 3 | RAD-Assistent |
 |---|---|---|---|
-| Einen Wert oder eine Umwandlung in Templates (`{$price\|mysite_tax}`) | Template-Operator | [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md) | `/setup/templateoperator` |
+| Einen Wert oder eine Umwandlung in Templates (`{$price\|mysite_tax}`) | Template-Operator | [Template-Operatoren](../teil-3-erweiterungsentwickler/template-operatoren.md) | `/setup/templateoperator` |
 | Eine Liste oder ein Objekt, das `fetch()` nicht ausdrücken kann | Fetch-Funktion | [Fetch-Funktionen](../teil-3-erweiterungsentwickler/fetch-funktionen.md) | `/setup/templateoperator` |
-| Eine Seite mit eigener Adresse, ein Formular, einen Bericht | Modul und View | [Module und Views](../../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md) | `/setup/moduleextension`, `/setup/modulewizard` |
+| Eine Seite mit eigener Adresse, ein Formular, einen Bericht | Modul und View | [Module und Views](../teil-3-erweiterungsentwickler/module-und-views.md) | `/setup/moduleextension`, `/setup/modulewizard` |
 | Eine neue Art von Feld für Redakteure | Datentyp | [Datentypen](../teil-3-erweiterungsentwickler/datentypen.md) | `/setup/datatype` |
-| Einen Schritt rund um das Veröffentlichen, der warten oder nachfragen kann | Workflow-Ereignis | [Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md) | `/setup/workflowevent` |
+| Einen Schritt rund um das Veröffentlichen, der warten oder nachfragen kann | Workflow-Ereignis | [Workflow-Ereignistypen](../teil-3-erweiterungsentwickler/workflow-ereignistypen.md) | `/setup/workflowevent` |
 | Etwas nach Zeitplan | Cronjob-Teil | [Cronjob-Teile](../teil-3-erweiterungsentwickler/cronjob-teile.md) | `/setup/cronjobs` |
 | Einen Befehl für Administratoren | Konsolenbefehl | [CLI-Skripte und Konsolenbefehle](../teil-3-erweiterungsentwickler/cli-skripte-und-console-befehle.md) | |
 | Eine Reaktion auf ein Kernel-Ereignis oder einen Filter für einen Wert | Event-Listener | [Ereignisse, Listener und Filter](../teil-3-erweiterungsentwickler/ereignisse-und-filter.md) | `/setup/settingsextension` |
 | Einen anderen Mail-Transport, Login, Session, Suche, Mehrwertsteuer | über eine Einstellung benannter Handler | [Über Einstellungen benannte Handler](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) | `/setup/handlerextension/<kind>` |
 | Einen dynamischen Teil einer Seite aus JavaScript | ezjscore-Serverfunktion | [Ajax mit ezjscore-Serverfunktionen](../teil-3-erweiterungsentwickler/ajax-mit-ezjscore-serverfunktionen.md) | `/setup/handlerextension/ajaxfunction` |
-| Eine eigene Tabelle | persistentes Objekt | [Persistente Objekte und eigene Tabellen](../../../../eng-us/help/extension-development/part-3-extension-developer/persistent-objects-and-tables.md) | `/setup/modulewizard` |
+| Eine eigene Tabelle | persistentes Objekt | [Persistente Objekte und eigene Tabellen](../teil-3-erweiterungsentwickler/persistente-objekte-und-tabellen.md) | `/setup/modulewizard` |
 | Das Verhalten einer Kernel-Klasse ändern, wenn nichts anderes hilft | Kernel-Override | [Kernel-Klassen-Overrides: der letzte Ausweg](../teil-3-erweiterungsentwickler/kernel-overrides-der-letzte-ausweg.md) | `/setup/kerneloverride` |
 
 Der RAD-Katalog unter `/setup/rad` listet jeden Erweiterungspunkt mit denselben Informationen auf; diese Tabelle ist die
@@ -64,7 +64,7 @@ Ersetzen von Zeichenketten, ein Tag-Feld, eine Sitemap: Das alles gibt es bereit
 ## Ihr erstes PHP
 
 Beginnen Sie mit [Teil 3: Der Erweiterungsentwickler](../teil-3-erweiterungsentwickler/README.md) und den
-[Tutorials](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/README.md): Die kleinste Erweiterung dauert fünf Minuten, und ein
+[Tutorials](../teil-3-erweiterungsentwickler/tutorials/README.md): Die kleinste Erweiterung dauert fünf Minuten, und ein
 Template-Operator ist ein gutes erstes Stück Code, weil er klein und rein ist und sofort sichtbar wird.
 
 ## Verwandte Seiten

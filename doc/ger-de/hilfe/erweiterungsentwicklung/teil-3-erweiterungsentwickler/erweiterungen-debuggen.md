@@ -51,7 +51,7 @@ Installation auf Konfiguration, die nicht funktionieren kann, und nennt für jed
 - **Ein Skript mit geladenem Kernel**, um Ihre Klasse direkt aufzurufen: `php bin/php/ezexec.php <script.php>`. Die
   meisten Beispiele in diesem Buch wurden so geprüft.
 - **Ein Test**, der den Fehler reproduziert, bevor Sie ihn beheben
-  ([Tests für Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/tests-for-extensions.md)).
+  ([Tests für Erweiterungen](tests-fuer-erweiterungen.md)).
 - **`git bisect`** im Repository Ihrer Erweiterung findet den Commit, der sie kaputt gemacht hat.
 - **Die Fehlerreferenz** auf einer Fehlerseite führt zu jeder Protokollzeile dieser Anfrage
   ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)).
@@ -61,8 +61,8 @@ in eZpedia behandelt dasselbe Thema aus den früheren Jahren.
 
 ## Verwandte Seiten
 
-- Zurück: [Tests für Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/tests-for-extensions.md)
-- Weiter: [Leistung in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/performance-in-extensions.md)
+- Zurück: [Tests für Erweiterungen](tests-fuer-erweiterungen.md)
+- Weiter: [Leistung in Erweiterungen](leistung-in-erweiterungen.md)
 - [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)
 - [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

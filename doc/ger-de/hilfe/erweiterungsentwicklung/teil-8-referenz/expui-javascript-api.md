@@ -14,7 +14,7 @@ von YUI die JavaScript-Bibliothek der Administration. Erweiterungen verwenden si
 Diese Seite fasst ihre API-Dokumentation zusammen (`doc/API.md` im
 [expui-Repository](https://github.com/se7enxweb/expui), zum Zeitpunkt des Schreibens Version 1.0.0.1); die
 vollständige Beschreibung jedes Moduls steht in dessen Ordner `doc/modules/`. Wie Sie alten YUI-Code darauf umstellen,
-steht in [Von YUI zu expui](../../../../eng-us/help/extension-development/part-4-upgrading/yui-to-expui.md).
+steht in [Von YUI zu expui](../teil-4-aktualisieren/yui-zu-expui.md).
 
 ## Laden
 
@@ -77,7 +77,7 @@ Alle Dialoge geben Promises zurück und verwenden das browsereigene Element `<di
 
 Exponential UI wird aus Dateien geladen, und seine Module starten über `data-*`-Markup, sodass eine damit gebaute
 Seite kein Inline-Skript braucht
-([CSP: Inline-Skripte in Dateien verlagern](../../../../eng-us/help/extension-development/part-4-upgrading/csp-moving-inline-scripts-out.md)). Übergeben Sie die
+([CSP: Inline-Skripte in Dateien verlagern](../teil-4-aktualisieren/csp-inline-skripte-auslagern.md)). Übergeben Sie die
 Texte Ihrer Seite über `exp_config()` statt über ein Inline-Skript.
 
 ## Verwandte Seiten

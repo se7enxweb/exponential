@@ -100,7 +100,7 @@ View-Cache-Einstellungen der Website (welche verwandten Knoten zu leeren sind). 
 - Zurück: [E-Mails mit eZMail versenden](ezmail.md)
 - Weiter: [Eingebaute Template-Operatoren](referenz-der-template-operatoren.md)
 - [Caching und Templates](../teil-2-builder/caching-und-templates.md)
-- [Leistung in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/performance-in-extensions.md)
+- [Leistung in Erweiterungen](../teil-3-erweiterungsentwickler/leistung-in-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

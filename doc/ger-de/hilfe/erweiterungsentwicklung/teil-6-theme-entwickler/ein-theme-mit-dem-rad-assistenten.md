@@ -12,8 +12,8 @@ type: help
 Teil 6, Kapitel 3. Am schnellsten beginnen Sie ein Theme mit dem Assistenten **Design-Extension** in der Administration
 (**Setup > RAD**, Adresse `/setup/designextension`). Er schreibt in einer Minute ein vollständiges, funktionierendes
 Gerüst. Dieses Kapitel nimmt es als Ausgangspunkt und zeigt dann, wie aus dem Gerüst ein Theme wird. Den Assistenten
-selbst, Feld für Feld, beschreibt das Tutorial [Mit RAD: eine Design-Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-design-extension.md);
-den Ablauf, den alle Assistenten teilen, finden Sie in [Der Rundgang durch die RAD-Werkzeuge](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/the-rad-tools-tour.md).
+selbst, Feld für Feld, beschreibt das Tutorial [Mit RAD: eine Design-Erweiterung](../teil-3-erweiterungsentwickler/tutorials/rad-design-erweiterung.md);
+den Ablauf, den alle Assistenten teilen, finden Sie in [Der Rundgang durch die RAD-Werkzeuge](../teil-3-erweiterungsentwickler/tutorials/rundgang-durch-die-rad-werkzeuge.md).
 
 ## 1. Den Assistenten ausfüllen
 
@@ -92,7 +92,7 @@ git commit -m "Added: The theme skeleton written by the design extension wizard"
 
 - Zurück: [Der Aufbau einer Design-Erweiterung](aufbau-einer-design-erweiterung.md)
 - Weiter: [Ein Theme von Hand](ein-theme-von-hand.md)
-- [Mit RAD: eine Design-Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-design-extension.md)
+- [Mit RAD: eine Design-Erweiterung](../teil-3-erweiterungsentwickler/tutorials/rad-design-erweiterung.md)
 - [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

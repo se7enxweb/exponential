@@ -33,7 +33,7 @@ Nicht committete Änderungen sind nicht im Release, egal, was Ihre lokale Websit
 | Die Versionen stimmen überein | `grep -n "Version\|<version>" ezinfo.php extension.xml` |
 
 Der CI-Workflow sollte bei jedem Push dasselbe ausführen
-([Tests und CI für eine aktualisierte Erweiterung](../../../../eng-us/help/extension-development/part-4-upgrading/tests-and-ci-for-an-upgraded-extension.md));
+([Tests und CI für eine aktualisierte Erweiterung](../teil-4-aktualisieren/tests-und-ci-fuer-eine-aktualisierte-erweiterung.md));
 sehen Sie sich vor einem Release sein Ergebnis für genau diesen Commit an.
 
 ## 3. Eine saubere Installation (15 Minuten)
@@ -82,7 +82,7 @@ Commit, und der Tag kommt auf diesen.
 
 - Zurück: [Pakete (.ezpkg) und der Paket-Ersteller](pakete-ezpkg.md)
 - Weiter: [Ein Release ankündigen](ein-release-ankuendigen.md)
-- [Tests für Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/tests-for-extensions.md)
+- [Tests für Erweiterungen](../teil-3-erweiterungsentwickler/tests-fuer-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

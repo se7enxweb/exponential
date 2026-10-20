@@ -37,15 +37,15 @@ umfasste 338 Projekte in Untertypen, die eins zu eins den Kapiteln dieses Buchs 
 
 | Untertyp | Projekte | Kapitel im Buch |
 |---|---|---|
-| Module | 121 | [Module und Views](../../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md) |
+| Module | 121 | [Module und Views](../teil-3-erweiterungsentwickler/module-und-views.md) |
 | Datatype | 73 | [Datentypen](../teil-3-erweiterungsentwickler/datentypen.md) |
-| Template operator | 71 | [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md) |
+| Template operator | 71 | [Template-Operatoren](../teil-3-erweiterungsentwickler/template-operatoren.md) |
 | Command line script | 61 | [CLI-Skripte und Konsolenbefehle](../teil-3-erweiterungsentwickler/cli-skripte-und-console-befehle.md) |
-| Workflow event type | 38 | [Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md) |
-| Template function | 27 | [Template-Funktionen](../../../../eng-us/help/extension-development/part-3-extension-developer/template-functions.md) |
+| Workflow event type | 38 | [Workflow-Ereignistypen](../teil-3-erweiterungsentwickler/workflow-ereignistypen.md) |
+| Template function | 27 | [Template-Funktionen](../teil-3-erweiterungsentwickler/template-funktionen.md) |
 | Admin interface integration | 26 | [Administrationsseiten im admin4-Stil](../teil-3-erweiterungsentwickler/admin-seiten-im-admin4-stil.md) |
 | Content classes | 20 | [Inhaltsklassen für Builder](../teil-2-builder/inhaltsklassen-fuer-builder.md) |
-| Translation | 14 | [Übersetzungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/translations-in-an-extension.md) |
+| Translation | 14 | [Übersetzungen in einer Erweiterung](../teil-3-erweiterungsentwickler/uebersetzungen-in-einer-erweiterung.md) |
 | Extended attribute filter | 11 | [Fetch-Funktionen](../teil-3-erweiterungsentwickler/fetch-funktionen.md) |
 | Content action handler | 10 | [Handler, die über Einstellungen benannt werden](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) |
 | Payment gateway | 9 | [Handler, die über Einstellungen benannt werden](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) |
@@ -67,7 +67,7 @@ wo verbunden, den Quellcode auf Git oder GitHub hinzu.
 
 Das Feld „compatible versions“ ist für Sie das wichtigste: Die meisten Projekte in den historischen Typen wurden für
 PHP 5 und ältere Releases des Kernels geschrieben. Behandeln Sie sie als **Ideen und Ausgangspunkte**, und folgen Sie
-dann [Teil 4](../../../../eng-us/help/extension-development/part-4-upgrading/README.md), um eines auf den neuesten Stand zu bringen, oder suchen Sie zuerst auf
+dann [Teil 4](../teil-4-aktualisieren/README.md), um eines auf den neuesten Stand zu bringen, oder suchen Sie zuerst auf
 GitHub nach einem gepflegten Fork ([Ideen auf GitHub finden](ideen-auf-github-finden.md)).
 
 ## Urheberrecht: verlinken, nicht kopieren

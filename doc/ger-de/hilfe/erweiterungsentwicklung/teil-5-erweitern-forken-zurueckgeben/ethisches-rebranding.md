@@ -59,7 +59,7 @@ Die Lizenz ist das Minimum. Fairness verlangt etwas mehr:
 ## Produktnamen im Code
 
 Den Produktnamen in Oberflächentexten und Dokumentation umzubenennen, gehört zu einem Upgrade
-([Namen und Marken bei einem Upgrade](../../../../eng-us/help/extension-development/part-4-upgrading/naming-and-branding-during-an-upgrade.md)).
+([Namen und Marken bei einem Upgrade](../teil-4-aktualisieren/namen-und-marken-bei-einem-upgrade.md)).
 Die Klassennamen, Operatoren oder Einstellungen des ursprünglichen Autors umzubenennen, ist kein Rebranding: Es macht
 jede Website kaputt, die sie verwendet, und es löscht eine sichtbare Spur dessen, woher der Code stammt. Behalten Sie
 sie.

@@ -18,7 +18,7 @@ richtige Weg, Templates Daten zu geben, die PHP brauchen, ohne Logik in Template
 
 Eine Fetch-Funktion gehört zu einem Modul, daher braucht Ihre Erweiterung einen Modulordner, der mit
 `ExtensionRepositories[]` registriert ist
-([Module und Views](../../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md)).
+([Module und Views](module-und-views.md)).
 Das Modul darf überhaupt keine Views haben; dann existiert es nur für seine Fetch-Funktionen.
 
 ```text
@@ -157,13 +157,13 @@ SQL schreiben, muss sicher sein: Wandeln Sie Zahlen um, maskieren Sie Strings mi
 
 **Template extension** (`/setup/templateoperator`) schreibt Fetch-Funktionen mit ihrer Definition und
 Collection-Klasse; siehe
-[Mit RAD: ein Template-Operator in fünf Minuten](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-template-operator.md).
+[Mit RAD: ein Template-Operator in fünf Minuten](tutorials/rad-template-operator.md).
 
 ## Verwandte Seiten
 
-- Zurück: [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md)
-- Weiter: [Template-Funktionen](../../../../eng-us/help/extension-development/part-3-extension-developer/template-functions.md)
-- [Von Hand: eine Fetch-Funktion](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-fetch-function.md)
+- Zurück: [Template-Operatoren](template-operatoren.md)
+- Weiter: [Template-Funktionen](template-funktionen.md)
+- [Von Hand: eine Fetch-Funktion](tutorials/von-hand-fetch-funktion.md)
 - [Inhalte in Templates abrufen](../teil-2-builder/fetch-fuer-builder.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

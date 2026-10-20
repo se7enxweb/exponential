@@ -124,5 +124,5 @@ nie eine Nennung Ihrer selbst in die Oberflächentexte eines Projekts.
 - Zurück: [Lizenzen und wie sie sich kombinieren lassen](lizenzen-und-kompatibilitaet.md)
 - Weiter: [Mit Pull Requests zurückgeben](mit-pull-requests-zurueckgeben.md)
 - [Ethisches Rebranding](ethisches-rebranding.md)
-- [ezinfo.php und extension.xml modernisieren](../../../../eng-us/help/extension-development/part-4-upgrading/modernizing-ezinfo-and-extension-xml.md)
+- [ezinfo.php und extension.xml modernisieren](../teil-4-aktualisieren/ezinfo-und-extension-xml-modernisieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

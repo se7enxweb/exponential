@@ -13,9 +13,9 @@ Teil 8, Referenz 17. Ein Workflow-Ereignistyp ist ein Schritt, den Administrator
 und den ein Trigger vor oder nach einer Operation ausführt (Veröffentlichen, in den Warenkorb legen, Anmelden). Er ist
 eine Klasse, die `eZWorkflowEventType` erweitert (`kernel/classes/ezworkfloweventtype.php`, das selbst auf
 `eZWorkflowType` in `kernel/classes/ezworkflowtype.php` aufbaut). Die Anleitung ist
-[Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md), dazu die Tutorials
-[Ein Workflow-Ereignis, von Hand](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-workflow-event.md) und
-[Mit RAD: ein Workflow-Ereignis](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-workflow-event.md).
+[Workflow-Ereignistypen](../teil-3-erweiterungsentwickler/workflow-ereignistypen.md), dazu die Tutorials
+[Ein Workflow-Ereignis, von Hand](../teil-3-erweiterungsentwickler/tutorials/von-hand-workflow-ereignis.md) und
+[Mit RAD: ein Workflow-Ereignis](../teil-3-erweiterungsentwickler/tutorials/rad-workflow-ereignis.md).
 
 ## Registrierung
 
@@ -99,7 +99,7 @@ gefunden über die Design-Kette.
 
 - Zurück: [Die eZDataType-API](ezdatatype-api.md)
 - Weiter: [Inhaltsfunktionen aus PHP](inhaltsfunktionen-aus-php.md)
-- [Trigger und Workflows für Entwickler](../../../../eng-us/help/extension-development/part-3-extension-developer/triggers-and-workflows-for-developers.md)
+- [Trigger und Workflows für Entwickler](../teil-3-erweiterungsentwickler/trigger-und-workflows-fuer-entwickler.md)
 - [Workflows](../../../anleitungen/workflows.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

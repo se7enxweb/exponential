@@ -90,7 +90,7 @@ eine Schaltfläche **Update**; verwenden Sie sie einmal und reparieren Sie dann 
 
 - Zurück: [ezinfo.php und extension.xml anheben](ezinfo-und-extension-xml-anheben.md)
 - Weiter: [Der Packagist-Webhook](der-packagist-webhook.md)
-- [composer.json modernisieren](../../../../eng-us/help/extension-development/part-4-upgrading/modernizing-composer-json.md)
+- [composer.json modernisieren](../teil-4-aktualisieren/composer-json-modernisieren.md)
 - [Packagist: about](https://packagist.org/about) (auf Englisch)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

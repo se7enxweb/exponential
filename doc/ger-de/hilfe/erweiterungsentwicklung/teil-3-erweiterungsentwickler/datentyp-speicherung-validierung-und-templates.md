@@ -30,7 +30,7 @@ Die meisten Datentypen kommen mit diesen Spalten aus. Ein Datentyp mit vielen We
 kann eine eigene Tabelle führen, deren Schlüssel `id` und `version` des Attributs sind; er muss diese Zeilen dann in
 den passenden Methoden selbst kopieren, löschen und exportieren (`initializeObjectAttribute()`,
 `deleteStoredObjectAttribute()`, `serializeContentObjectAttribute()`). Siehe
-[Persistente Objekte und eigene Tabellen](../../../../eng-us/help/extension-development/part-3-extension-developer/persistent-objects-and-tables.md).
+[Persistente Objekte und eigene Tabellen](persistente-objekte-und-tabellen.md).
 
 ## Die Klasse
 
@@ -236,9 +236,9 @@ Aussehen in einem Stylesheet fest, nie in einem `style`-Attribut.
 ## Verwandte Seiten
 
 - Zurück: [Datentypen](datentypen.md)
-- Weiter: [Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md)
+- Weiter: [Workflow-Ereignistypen](workflow-ereignistypen.md)
 - [Die API von eZDataType](../teil-8-referenz/ezdatatype-api.md)
-- [Von Hand: ein Datentyp](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-datatype.md)
+- [Von Hand: ein Datentyp](tutorials/von-hand-datentyp.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

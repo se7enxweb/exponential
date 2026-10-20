@@ -111,13 +111,13 @@ Signaturen steht in
 ## RAD
 
 **Datatype extension** (`/setup/datatype`) schreibt die Klasse, die Einstellungen und die vier Templates; siehe
-[Mit RAD: ein Datentyp](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-datatype.md).
+[Mit RAD: ein Datentyp](tutorials/rad-datentyp.md).
 Die von Hand geschriebene Fassung ist
-[Von Hand: ein Datentyp](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-datatype.md).
+[Von Hand: ein Datentyp](tutorials/von-hand-datentyp.md).
 
 ## Verwandte Seiten
 
-- Zurück: [Template-Funktionen](../../../../eng-us/help/extension-development/part-3-extension-developer/template-functions.md)
+- Zurück: [Template-Funktionen](template-funktionen.md)
 - Weiter: [Datentypen: Speicherung, Validierung und Templates](datentyp-speicherung-validierung-und-templates.md)
 - [Härtung der Eingaben von Datentypen (Spezifikation)](../../../spezifikationen/6.0/datentyp-eingabehaertung.md)
 - [eZpedia: Datatype](https://ezpedia.exponential.earth/en/learning/datatype)

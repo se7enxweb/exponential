@@ -15,7 +15,7 @@ Mechanismus pro Kapitel, wie eine Erweiterung PHP-Code in den Kernel einbindet: 
 Einstellung ihn registriert, den Vertrag (Klasse und Methoden, aus dem Quellcode des Kernels übernommen), ein
 minimales Beispiel, das mit `php -l` geprüft und, wo es gefahrlos möglich war, mit geladenem Kernel ausgeführt wurde;
 wie Sie sehen, dass es funktioniert; die häufigen Fehler; und den RAD-Assistenten, der den Code für Sie schreibt. Die
-[Tutorials](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/README.md) bauen
+[Tutorials](tutorials/README.md) bauen
 anschließend Schritt für Schritt echte kleine Erweiterungen.
 
 ## Der Aufbau
@@ -28,31 +28,31 @@ anschließend Schritt für Schritt echte kleine Erweiterungen.
 | [ezinfo.php](ezinfo-php.md), [extension.xml](extension-xml.md) | wer sie gemacht hat, welche Version, welche Lizenz, Abhängigkeiten |
 | [Eine Erweiterung aktivieren](eine-erweiterung-aktivieren.md), [Ladereihenfolge der Erweiterungen](ladereihenfolge-der-erweiterungen.md) | sie einschalten, und wer gewinnt |
 | [composer.json für eine Erweiterung](composer-json-fuer-erweiterungen.md) | sie mit Composer installieren |
-| [Einstellungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/settings-in-an-extension.md) | Ihre eigene INI-Datei und wie Sie sie lesen |
+| [Einstellungen in einer Erweiterung](einstellungen-in-einer-erweiterung.md) | Ihre eigene INI-Datei und wie Sie sie lesen |
 | [Autoloads und Klassennamen](autoloads-und-klassennamen.md) | wie Ihre Klassen gefunden werden |
 
 ### Seiten und Berechtigungen
 
 | Kapitel | |
 |---|---|
-| [Module und Views](../../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md), [View-Parameter](../../../../eng-us/help/extension-development/part-3-extension-developer/view-parameters.md) | Seiten mit eigener Adresse |
-| [Richtlinienfunktionen und Zugriffsprüfungen](../../../../eng-us/help/extension-development/part-3-extension-developer/policy-functions-and-access.md) | wer sie öffnen darf |
-| [View-Ergebnisse und das Pagelayout](../../../../eng-us/help/extension-development/part-3-extension-developer/view-results-and-the-pagelayout.md) | was eine View zurückgibt |
+| [Module und Views](module-und-views.md), [View-Parameter](view-parameter.md) | Seiten mit eigener Adresse |
+| [Richtlinienfunktionen und Zugriffsprüfungen](richtlinienfunktionen-und-zugriff.md) | wer sie öffnen darf |
+| [View-Ergebnisse und das Pagelayout](view-ergebnisse-und-das-pagelayout.md) | was eine View zurückgibt |
 
 ### Templates
 
 | Kapitel | |
 |---|---|
-| [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md), [Fetch-Funktionen](fetch-funktionen.md), [Template-Funktionen](../../../../eng-us/help/extension-development/part-3-extension-developer/template-functions.md) | Templates neue Fähigkeiten geben |
+| [Template-Operatoren](template-operatoren.md), [Fetch-Funktionen](fetch-funktionen.md), [Template-Funktionen](template-funktionen.md) | Templates neue Fähigkeiten geben |
 
 ### Inhalte und Abläufe
 
 | Kapitel | |
 |---|---|
 | [Datentypen](datentypen.md), [Datentypen: Speicherung, Validierung und Templates](datentyp-speicherung-validierung-und-templates.md) | neue Arten von Feldern |
-| [Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md), [Trigger und Workflows für Entwickler](../../../../eng-us/help/extension-development/part-3-extension-developer/triggers-and-workflows-for-developers.md) | Schritte rund um das Veröffentlichen |
+| [Workflow-Ereignistypen](workflow-ereignistypen.md), [Trigger und Workflows für Entwickler](trigger-und-workflows-fuer-entwickler.md) | Schritte rund um das Veröffentlichen |
 | [Cronjob-Teile](cronjob-teile.md), [CLI-Skripte und Console-Befehle](cli-skripte-und-console-befehle.md) | Arbeit außerhalb einer Anfrage |
-| [Fakten, Themes und Logos für die Systemkarte](../../../../eng-us/help/extension-development/part-3-extension-developer/system-card-providers.md) | Ihre Erweiterung in `exp:expfetch`, `exp:info` und `exp:about` aufnehmen |
+| [Fakten, Themes und Logos für die Systemkarte](fakten-themes-und-logos-fuer-die-systemkarte.md) | Ihre Erweiterung in `exp:expfetch`, `exp:info` und `exp:about` aufnehmen |
 
 ### Frontend
 
@@ -60,27 +60,27 @@ anschließend Schritt für Schritt echte kleine Erweiterungen.
 |---|---|
 | [Ein Design in einer Erweiterung](design-in-einer-erweiterung.md), [CSS und JavaScript in einer Erweiterung](css-und-javascript-in-einer-erweiterung.md) | Templates und Assets |
 | [Ajax mit ezjscore-Serverfunktionen](ajax-mit-ezjscore-serverfunktionen.md) | dynamische Teile |
-| [Übersetzungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/translations-in-an-extension.md) | jeder Text in jeder Sprache |
+| [Übersetzungen in einer Erweiterung](uebersetzungen-in-einer-erweiterung.md) | jeder Text in jeder Sprache |
 
 ### Daten und das System
 
 | Kapitel | |
 |---|---|
-| [Persistente Objekte und eigene Tabellen](../../../../eng-us/help/extension-development/part-3-extension-developer/persistent-objects-and-tables.md), [Datenbankschema, .dba-Dateien und Upgrades](datenbankschema-und-dba-dateien.md) | Speicherung |
+| [Persistente Objekte und eigene Tabellen](persistente-objekte-und-tabellen.md), [Datenbankschema, .dba-Dateien und Upgrades](datenbankschema-und-dba-dateien.md) | Speicherung |
 | [Ereignisse, Listener und Filter](ereignisse-und-filter.md), [Handler, die über Einstellungen benannt werden](handler-ueber-einstellungen-benennen.md), [Kernel-Klassen-Overrides: der letzte Ausweg](kernel-overrides-der-letzte-ausweg.md) | das Verhalten des Systems ändern |
 
 ### Qualität
 
 | Kapitel | |
 |---|---|
-| [Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md), [Content Security Policy für Autoren von Erweiterungen](content-security-policy-fuer-erweiterungen.md) | von Haus aus sicher |
+| [Sicherheit in Erweiterungen](sicherheit-in-erweiterungen.md), [Content Security Policy für Autoren von Erweiterungen](content-security-policy-fuer-erweiterungen.md) | von Haus aus sicher |
 | [Admin-Seiten im admin4-Stil](admin-seiten-im-admin4-stil.md) | einheitliche Seiten in der Administration |
-| [Tests für Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/tests-for-extensions.md), [Erweiterungen debuggen](erweiterungen-debuggen.md), [Leistung in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/performance-in-extensions.md) | funktionierend und schnell |
+| [Tests für Erweiterungen](tests-fuer-erweiterungen.md), [Erweiterungen debuggen](erweiterungen-debuggen.md), [Leistung in Erweiterungen](leistung-in-erweiterungen.md) | funktionierend und schnell |
 | [Ihre Erweiterung dokumentieren](ihre-erweiterung-dokumentieren.md) | einschließlich Hilfeseiten in diesem Hilfe-Center |
 
 ## Tutorials
 
-[Tutorials: echte Erweiterungen Schritt für Schritt bauen](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/README.md):
+[Tutorials: echte Erweiterungen Schritt für Schritt bauen](tutorials/README.md):
 der Rundgang durch die RAD-Werkzeuge, dann jede Art von Erweiterung, einmal mit dem RAD-Assistenten und einmal von
 Hand gebaut, zum Abschluss eine Abschlusserweiterung von der Idee bis zum Release.
 

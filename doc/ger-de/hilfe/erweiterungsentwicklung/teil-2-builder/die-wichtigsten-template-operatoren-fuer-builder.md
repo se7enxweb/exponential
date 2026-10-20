@@ -107,7 +107,7 @@ jetzt.
 
 gibt den Text in der Sprache des Benutzers aus, wenn es für diesen Kontext eine Übersetzung in einer `.ts`-Datei gibt,
 und sonst den englischen Text. Jeder Text, den ein Template ausgibt, sollte durch `i18n` laufen; siehe
-[Übersetzungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/translations-in-an-extension.md).
+[Übersetzungen in einer Erweiterung](../teil-3-erweiterungsentwickler/uebersetzungen-in-einer-erweiterung.md).
 
 ## URLs und Dateien
 

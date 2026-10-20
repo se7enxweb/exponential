@@ -12,7 +12,7 @@ type: help
 Teil 1, Kapitel 18. Der schnellste Weg, Erweiterungen zu verstehen, ist, eine kleine zu zerlegen. Dieses Kapitel liest
 zwei echte Erweiterungen aus Ihrer Installation, Datei für Datei, in der Reihenfolge, in der der Kernel sie liest. Hier
 begegnen Sie zum ersten Mal dem Mechanismus der Template-Operatoren;
-[Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md) behandelt ihn später vollständig.
+[Template-Operatoren](../teil-3-erweiterungsentwickler/template-operatoren.md) behandelt ihn später vollständig.
 
 ## Erweiterung 1: str_replace
 
@@ -123,7 +123,7 @@ public function __construct()
 Mit dieser Änderung gibt dasselbe Template für `{ezstr_replace( 'world', 'Exponential', 'Hello world' )}` den Text
 `Hello Exponential` aus. Die Testumgebung dieses Buchs hat beide Fassungen gerendert, bevor diese Seite geschrieben
 wurde. Das ist das häufigste PHP-8-Problem in alten Erweiterungen;
-[Konstruktoren im alten Stil und statische Aufrufe](../../../../eng-us/help/extension-development/part-4-upgrading/old-constructors-and-static-calls.md) zeigt, wie
+[Konstruktoren im alten Stil und statische Aufrufe](../teil-4-aktualisieren/alte-konstruktoren-und-statische-aufrufe.md) zeigt, wie
 Sie jeden solchen Fall finden und korrigieren.
 
 ### Schritt 6: die Metadaten
@@ -219,8 +219,8 @@ geschrieben wurde.
 
 - Zurück: [Eine alte Erweiterung bewerten, bevor Sie sie verwenden](eine-alte-erweiterung-bewerten.md)
 - Weiter: [Debug-Ausgabe und Logs für Entwickler](debug-ausgabe-und-logs-fuer-entwickler.md)
-- [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md)
-- [Von Hand: ein Template-Operator](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-template-operator.md)
+- [Template-Operatoren](../teil-3-erweiterungsentwickler/template-operatoren.md)
+- [Von Hand: ein Template-Operator](../teil-3-erweiterungsentwickler/tutorials/von-hand-template-operator.md)
 - [owsimpleoperator im Erweiterungskatalog](../../../../eng-us/features/6.0/extensions/owsimpleoperator.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

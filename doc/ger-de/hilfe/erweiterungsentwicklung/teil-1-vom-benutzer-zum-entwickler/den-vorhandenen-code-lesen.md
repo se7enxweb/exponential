@@ -69,7 +69,7 @@ grep -n "ViewList\['view'\]" -A6 kernel/content/module.php
 ```
 
 Sie sehen das Skript der View und ihre Parameter. Dieselben drei Schritte funktionieren für jedes Modul im System; das
-Kapitel [Module und Views](../../../../eng-us/help/extension-development/part-3-extension-developer/modules-and-views.md) erklärt, was Sie sehen.
+Kapitel [Module und Views](../teil-3-erweiterungsentwickler/module-und-views.md) erklärt, was Sie sehen.
 
 ## Technik 3: von einer Seite zu ihrem Template
 

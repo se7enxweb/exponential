@@ -29,8 +29,8 @@ Tatsache stammt.
 | [Teil 1: Vom Benutzer zum Entwickler](teil-1-vom-benutzer-zum-entwickler/README.md) | alle | Was eine Erweiterung ist, die Werkzeuge, eine Entwicklungsinstallation, Code und Logs lesen, vorhandene Erweiterungen auf GitHub, Packagist, Share Exponential, Exponential Projects und eZpedia finden und sie im Rahmen ihrer Lizenzen wiederverwenden |
 | [Teil 2: Der Builder](teil-2-builder/README.md) | Builder, Designer, Anwendungsentwickler | Einstellungen und ihre Geltungsbereiche, Templates, die Design-Kette, Overrides, View-Modi, Fetch, Inhaltsklassen, Rollen, Workflows, Cronjobs, alles ohne PHP |
 | [Teil 3: Der Erweiterungsentwickler](teil-3-erweiterungsentwickler/README.md) | Entwickler | Der Aufbau einer Erweiterung, Kapitel für Kapitel: Metadaten, Einstellungen, Autoloads, Module und Views, Richtlinien, Operatoren, Fetch-Funktionen, Datentypen, Workflow-Ereignisse, Cronjobs, Befehle, Designs, Ajax, Übersetzungen, Tabellen, Events, Handler, Sicherheit, CSP, Administrationsseiten, Tests, Dokumentation |
-| [Tutorials](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/README.md) | Entwickler | Echte kleine Erweiterungen, Schritt für Schritt gebaut, mit den RAD-Werkzeugen und von Hand |
-| [Teil 4: Eine alte Erweiterung aktualisieren](../../../eng-us/help/extension-development/part-4-upgrading/README.md) | Entwickler | Eine Erweiterung, die für ältere PHP-Versionen und ältere Releases geschrieben wurde, auf Exponential 6 bringen, mit Vorher-nachher-Beispielen aus Erweiterungen, die dieses Projekt modernisiert hat |
+| [Tutorials](teil-3-erweiterungsentwickler/tutorials/README.md) | Entwickler | Echte kleine Erweiterungen, Schritt für Schritt gebaut, mit den RAD-Werkzeugen und von Hand |
+| [Teil 4: Eine alte Erweiterung aktualisieren](teil-4-aktualisieren/README.md) | Entwickler | Eine Erweiterung, die für ältere PHP-Versionen und ältere Releases geschrieben wurde, auf Exponential 6 bringen, mit Vorher-nachher-Beispielen aus Erweiterungen, die dieses Projekt modernisiert hat |
 | [Teil 5: Erweitern, forken und beitragen](teil-5-erweitern-forken-zurueckgeben/README.md) | Entwickler, Designer | Erweitern ohne zu forken, ethisch forken und umbenennen, Lizenzen, Namensnennung, Pull Requests, verwaiste Erweiterungen übernehmen, der Weg zum Maintainer |
 | [Teil 6: Theme-Entwickler](teil-6-theme-entwickler/README.md) | Designer | Themes als Design-Erweiterungen, mit dem RAD-Assistenten und von Hand; Assets, der Packer, CSP, Dark Mode, Verteilung |
 | [Teil 7: Ihre Erweiterung veröffentlichen](teil-7-veroeffentlichen/README.md) | Maintainer | Versionsnummern, Metadaten, Composer und Packagist, Changelogs, GitHub-Releases, Pakete, die Release-Checkliste |
@@ -41,10 +41,10 @@ Tatsache stammt.
 | Sie sind | Beginnen Sie mit |
 |---|---|
 | Redakteur oder Administrator und möchten bauen | [Teil 1](teil-1-vom-benutzer-zum-entwickler/README.md), dann [Teil 2](teil-2-builder/README.md) |
-| PHP-Entwickler und neu bei Exponential | [Was eine Erweiterung ist](teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md), dann [Teil 3](teil-3-erweiterungsentwickler/README.md) und die [Tutorials](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/README.md) |
+| PHP-Entwickler und neu bei Exponential | [Was eine Erweiterung ist](teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md), dann [Teil 3](teil-3-erweiterungsentwickler/README.md) und die [Tutorials](teil-3-erweiterungsentwickler/tutorials/README.md) |
 | Designer | [Teil 2](teil-2-builder/README.md), dann [Teil 6](teil-6-theme-entwickler/README.md) |
-| Anwendungsentwickler | [Teil 2](teil-2-builder/README.md), dann das [Abschluss-Tutorial](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/capstone-a-complete-extension.md) |
-| Jemand mit einer alten Erweiterung, die auf den neuesten Stand muss | [Teil 4](../../../eng-us/help/extension-development/part-4-upgrading/README.md) |
+| Anwendungsentwickler | [Teil 2](teil-2-builder/README.md), dann das [Abschluss-Tutorial](teil-3-erweiterungsentwickler/tutorials/abschlussprojekt-eine-vollstaendige-erweiterung.md) |
+| Jemand mit einer alten Erweiterung, die auf den neuesten Stand muss | [Teil 4](teil-4-aktualisieren/README.md) |
 | Kurz davor, eine Erweiterung zu veröffentlichen | [Teil 7](teil-7-veroeffentlichen/README.md) und [Teil 5](teil-5-erweitern-forken-zurueckgeben/README.md) |
 
 [Lesepfade durch das Buch](lesepfade.md) nennt vollständige Lesereihenfolgen für jede Rolle, und der
@@ -54,13 +54,13 @@ Tatsache stammt.
 
 | Sie möchten | Schnellster Weg | Kapitel |
 |---|---|---|
-| Einen neuen Wert oder eine neue Funktion für Templates | einen Template-Operator, mit dem RAD-Assistenten in wenigen Minuten | [Mit RAD: ein Template-Operator in fünf Minuten](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-template-operator.md) |
-| Eine Seite mit eigener Adresse | ein Modul mit einer View | [Von Hand: ein Modul mit einer View](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-module-with-a-view.md) |
-| Eine neue Art von Feld für Inhalte | einen Datentyp | [Mit RAD: ein Datentyp](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-datatype.md) |
-| Dass etwas geschieht, wenn Inhalte veröffentlicht werden | ein Workflow-Ereignis | [Mit RAD: ein Workflow-Ereignis](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-workflow-event.md) |
-| Eine Aufgabe, die jede Nacht läuft | einen Cronjob-Teil | [Von Hand: ein Cronjob-Teil](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-cronjob-part.md) |
+| Einen neuen Wert oder eine neue Funktion für Templates | einen Template-Operator, mit dem RAD-Assistenten in wenigen Minuten | [Mit RAD: ein Template-Operator in fünf Minuten](teil-3-erweiterungsentwickler/tutorials/rad-template-operator.md) |
+| Eine Seite mit eigener Adresse | ein Modul mit einer View | [Von Hand: ein Modul mit einer View](teil-3-erweiterungsentwickler/tutorials/von-hand-modul-mit-view.md) |
+| Eine neue Art von Feld für Inhalte | einen Datentyp | [Mit RAD: ein Datentyp](teil-3-erweiterungsentwickler/tutorials/rad-datentyp.md) |
+| Dass etwas geschieht, wenn Inhalte veröffentlicht werden | ein Workflow-Ereignis | [Mit RAD: ein Workflow-Ereignis](teil-3-erweiterungsentwickler/tutorials/rad-workflow-ereignis.md) |
+| Eine Aufgabe, die jede Nacht läuft | einen Cronjob-Teil | [Von Hand: ein Cronjob-Teil](teil-3-erweiterungsentwickler/tutorials/von-hand-cronjob-teil.md) |
 | Ein neues Aussehen | eine Design-Erweiterung | [Teil 6](teil-6-theme-entwickler/README.md) |
-| Die Einstellungen der Website unter Versionskontrolle | eine reine Einstellungs-Erweiterung | [Mit RAD: eine reine Einstellungs-Erweiterung](../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-settings-extension.md) |
+| Die Einstellungen der Website unter Versionskontrolle | eine reine Einstellungs-Erweiterung | [Mit RAD: eine reine Einstellungs-Erweiterung](teil-3-erweiterungsentwickler/tutorials/rad-einstellungs-erweiterung.md) |
 
 Die RAD-Werkzeuge finden Sie unter **Setup > RAD** (`/setup/rad`); sie listen jede Stelle auf, an der der Kernel
 erweitert werden kann, und schreiben für die meisten davon eine funktionierende Erweiterung. Jedes Tutorial zeigt

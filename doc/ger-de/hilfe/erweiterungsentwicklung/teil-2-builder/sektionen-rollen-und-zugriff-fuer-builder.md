@@ -84,7 +84,7 @@ das ist der schnellste Weg, ein „Zugriff verweigert“ zu verstehen.
 - Eine Richtlinie auf das Modul `role` erlaubt ihren Benutzern, sich selbst alles zu geben: Behandeln Sie sie wie
   Administratorzugriff.
 - Neue Module von Erweiterungen deklarieren eigene Richtlinienfunktionen; vergeben Sie sie bewusst
-  ([Richtlinienfunktionen und Zugriffsprüfungen](../../../../eng-us/help/extension-development/part-3-extension-developer/policy-functions-and-access.md)).
+  ([Richtlinienfunktionen und Zugriffsprüfungen](../teil-3-erweiterungsentwickler/richtlinienfunktionen-und-zugriff.md)).
 
 ## Verwandte Seiten
 

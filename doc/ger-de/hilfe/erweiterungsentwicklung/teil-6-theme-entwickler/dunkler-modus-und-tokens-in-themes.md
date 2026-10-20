@@ -148,7 +148,7 @@ die Seite muss auch ohne ihn funktionieren.
 
 - Zurück: [Theme-Assets, der Packer und CSP](theme-assets-der-packer-und-csp.md)
 - Weiter: [Ein Theme verteilen](ein-theme-verteilen.md)
-- [admin4-Styling für Seiten von Erweiterungen](../../../../eng-us/help/extension-development/part-4-upgrading/admin4-styling-for-extension-pages.md)
+- [admin4-Styling für Seiten von Erweiterungen](../teil-4-aktualisieren/admin4-styling-fuer-erweiterungsseiten.md)
 - [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) bei MDN
 - [Contrast (minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) in WCAG 2.2
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -131,7 +131,7 @@ sie nach oben schieben, und dort sehen Sie auch die Ladereihenfolge, die der Ker
 - Zurück: [Siteaccess-Einstellungen](siteaccess-einstellungen.md)
 - Weiter: [Einstellungen mit exp:ini ändern](der-befehl-exp-ini.md)
 - [Einstellungen je Website in Erweiterungen](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)
-- [Mit RAD: eine Erweiterung nur mit Einstellungen](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/rad-settings-extension.md)
+- [Mit RAD: eine Erweiterung nur mit Einstellungen](../teil-3-erweiterungsentwickler/tutorials/rad-einstellungs-erweiterung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

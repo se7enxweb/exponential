@@ -97,7 +97,7 @@ angelegt hat, sollte dokumentieren, wie man sie entfernt.
 | Ein Modul der Erweiterung meldet "not found" | Caches nicht geleert, oder `ExtensionRepositories[]` fehlt in ihrer `module.ini.append.php` |
 | `Class ... not found` | Autoloads nicht neu erzeugt, oder die PHP-Prozesse führen noch alten Code aus |
 | Funktioniert auf der Kommandozeile, nicht im Browser | PHP-FPM oder Velocity nicht neu geladen |
-| Die Website bricht direkt nach der Aktivierung zusammen | eine Klasse, die sich unter PHP 8 nicht laden lässt; führen Sie `checkclasses.php` aus, deaktivieren Sie die Erweiterung, beheben Sie den Fehler ([Teil 4](../../../../eng-us/help/extension-development/part-4-upgrading/README.md)) |
+| Die Website bricht direkt nach der Aktivierung zusammen | eine Klasse, die sich unter PHP 8 nicht laden lässt; führen Sie `checkclasses.php` aus, deaktivieren Sie die Erweiterung, beheben Sie den Fehler ([Teil 4](../teil-4-aktualisieren/README.md)) |
 
 ## Verwandte Seiten
 

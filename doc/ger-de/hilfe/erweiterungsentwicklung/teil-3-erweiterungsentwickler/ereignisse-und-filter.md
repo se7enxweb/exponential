@@ -134,7 +134,7 @@ Benennen Sie Ihre Ereignisse nach Ihrer Erweiterung, und dokumentieren Sie ihre 
 
 - Zurück: [Datenbankschema, .dba-Dateien und Upgrades](datenbankschema-und-dba-dateien.md)
 - Weiter: [Handler, die über Einstellungen benannt werden](handler-ueber-einstellungen-benennen.md)
-- [Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md)
+- [Workflow-Ereignistypen](workflow-ereignistypen.md)
 - [Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-extension-points.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

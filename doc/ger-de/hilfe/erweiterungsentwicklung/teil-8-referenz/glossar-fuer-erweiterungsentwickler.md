@@ -23,8 +23,8 @@ begegnen.
 | Cache-Block (cache block) | ein Teil eines Templates, dessen Ausgabe gecacht wird (`cache-block`) | [Cache-Tags, Cache-Blöcke und das Leeren von Caches](cache-tags-und-leeren.md) |
 | Klasse, Inhaltsklasse (content class) | der Typ eines Inhaltsobjekts: sein Bezeichner und seine Attribute | [eZContentClass und ihre Attribute](ezcontentclass.md) |
 | Cluster-Datei-Handler (cluster file handler) | die Schicht, über die Dateien unter `var/` gelesen und geschrieben werden, damit mehrere Server sie gemeinsam nutzen | [eZFile, eZDir und Cluster-Datei-Handler](ezfile-ezdir-und-cluster-dateien.md) |
-| Content Security Policy (CSP) | ein Header, der dem Browser sagt, welche Skripte und Styles er ausführen darf | [CSP: Inline-Skripte in Dateien verlagern](../../../../eng-us/help/extension-development/part-4-upgrading/csp-moving-inline-scripts-out.md) |
-| Kontextmenü (context menu) | das Rechtsklickmenü des Inhaltsbaums, erweitert über `admininterface.ini` | [Kontextmenüs und Integration in die Administration](../../../../eng-us/help/extension-development/part-4-upgrading/context-menus-and-admin-integration.md) |
+| Content Security Policy (CSP) | ein Header, der dem Browser sagt, welche Skripte und Styles er ausführen darf | [CSP: Inline-Skripte in Dateien verlagern](../teil-4-aktualisieren/csp-inline-skripte-auslagern.md) |
+| Kontextmenü (context menu) | das Rechtsklickmenü des Inhaltsbaums, erweitert über `admininterface.ini` | [Kontextmenüs und Integration in die Administration](../teil-4-aktualisieren/kontextmenues-und-admin-integration.md) |
 | Cronjob-Teil (cronjob part) | eine Gruppe von Cronjob-Skripten, die zusammen ausgeführt werden | [Cronjob-Teile](../teil-3-erweiterungsentwickler/cronjob-teile.md) |
 | Datentyp (datatype) | der Code hinter einer Art von Attribut: Bearbeitung, Speicherung, Anzeige | [Die eZDataType-API](ezdatatype-api.md) |
 | Design | ein benannter Satz von Templates und Dateien, der in der Design-Kette durchsucht wird | [Themes sind Erweiterungen](../teil-6-theme-entwickler/themes-sind-erweiterungen.md) |
@@ -46,19 +46,19 @@ begegnen.
 | Override, Template-Override (template override) | eine Regel, die für bestimmte Inhalte ein anderes Template wählt | [Template-Overrides](../teil-2-builder/grundlagen-der-template-overrides.md) |
 | Packer | das Bündeln von Stylesheets und Skripten durch ezjscore | [Theme-Ressourcen, der Packer und CSP](../teil-6-theme-entwickler/theme-assets-der-packer-und-csp.md) |
 | Paket (package, `.ezpkg`) | ein Archiv mit Klassen, Inhalten oder einer Erweiterung für das Paketsystem | [Pakete (.ezpkg) und der Paketersteller](../teil-7-veroeffentlichen/pakete-ezpkg.md) |
-| Pagelayout | das Template, das jede Seite einrahmt | [View-Ergebnisse, der Pfad und das Pagelayout](../../../../eng-us/help/extension-development/part-3-extension-developer/view-results-and-the-pagelayout.md) |
+| Pagelayout | das Template, das jede Seite einrahmt | [View-Ergebnisse, der Pfad und das Pagelayout](../teil-3-erweiterungsentwickler/view-ergebnisse-und-das-pagelayout.md) |
 | persistentes Objekt (persistent object) | eine Klasse, die auf eine Tabellenzeile abgebildet wird (`eZPersistentObject`) | [eZPersistentObject](ezpersistentobject.md) |
-| Richtlinie, Rolle, Einschränkung (policy, role, limitation) | eine Berechtigung (Modul und Funktion), ein Satz davon, der Benutzern zugewiesen wird, und deren Beschränkung | [Richtlinienfunktionen und Zugriff](../../../../eng-us/help/extension-development/part-3-extension-developer/policy-functions-and-access.md) |
-| RAD-Werkzeuge (RAD tools) | die Assistenten unter **Setup > RAD**, die Erweiterungscode schreiben | [Rundgang durch die RAD-Werkzeuge](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/the-rad-tools-tour.md) |
+| Richtlinie, Rolle, Einschränkung (policy, role, limitation) | eine Berechtigung (Modul und Funktion), ein Satz davon, der Benutzern zugewiesen wird, und deren Beschränkung | [Richtlinienfunktionen und Zugriff](../teil-3-erweiterungsentwickler/richtlinienfunktionen-und-zugriff.md) |
+| RAD-Werkzeuge (RAD tools) | die Assistenten unter **Setup > RAD**, die Erweiterungscode schreiben | [Rundgang durch die RAD-Werkzeuge](../teil-3-erweiterungsentwickler/tutorials/rundgang-durch-die-rad-werkzeuge.md) |
 | Remote-ID (remote ID) | eine stabile, installationsunabhängige ID eines Objekts oder Knotens | [eZContentObject](ezcontentobject.md) |
 | Serverfunktion (server function) | eine PHP-Methode, die über `/ezjscore/call/` aufrufbar ist | [Referenz der ezjscore-Serverfunktionen](ezjscore-serverfunktionen-referenz.md) |
 | Siteaccess | ein Einstiegspunkt einer Installation, mit eigenen Einstellungen und Designs | [Siteaccess-Einstellungen](../teil-2-builder/siteaccess-einstellungen.md) |
 | Tag (Git) | ein Name für einen Commit, als Release-Version verwendet; nach dem Pushen dauerhaft | [Tags und Releases sind dauerhaft](../teil-7-veroeffentlichen/tags-sind-dauerhaft.md) |
 | Template-Operator, Template-Funktion (template operator, template function) | `{$x\|operator}` und `{function}...{/function}` | [Eingebaute Template-Operatoren](referenz-der-template-operatoren.md) |
-| Trigger | die Verbindung zwischen einer Operation (Veröffentlichen) und einem Workflow | [Trigger und Workflows für Entwickler](../../../../eng-us/help/extension-development/part-3-extension-developer/triggers-and-workflows-for-developers.md) |
+| Trigger | die Verbindung zwischen einer Operation (Veröffentlichen) und einem Workflow | [Trigger und Workflows für Entwickler](../teil-3-erweiterungsentwickler/trigger-und-workflows-fuer-entwickler.md) |
 | Velocity | der optionale Anwendungsserver von Exponential | |
 | Ansichtsmodus (view mode) | wie Inhalte angezeigt werden: full, line, embed und eigene | [Ansichtsmodi für Builder](../teil-2-builder/view-modi-fuer-builder.md) |
-| View-Parameter (view parameter) | ein Paar `(name)/value` in einer URL | [View-Parameter](../../../../eng-us/help/extension-development/part-3-extension-developer/view-parameters.md) |
+| View-Parameter (view parameter) | ein Paar `(name)/value` in einer URL | [View-Parameter](../teil-3-erweiterungsentwickler/view-parameter.md) |
 | Workflow, Workflow-Ereignis (workflow, workflow event) | eine Liste von Schritten, die ein Trigger ausführt, und ein einzelner Schritt | [Die eZWorkflowType-API](ezworkflowtype-api.md) |
 
 **Demomodus (demo mode)** - `EXP_DEMO_MODE=1` in der Umgebung: Administratorpasswörter lassen sich nicht ändern oder

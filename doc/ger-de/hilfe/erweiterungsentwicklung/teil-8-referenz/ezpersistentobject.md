@@ -12,8 +12,8 @@ type: help
 Teil 8, Referenz 5. `eZPersistentObject` (`kernel/classes/ezpersistentobject.php`) bildet eine Tabellenzeile auf ein
 Objekt ab. Die eigenen Klassen des Kernels (Inhaltsobjekte, Knoten, Benutzer, Rollen) bauen darauf auf, und es ist der
 empfohlene Weg, eigene Tabellen zu führen. Das Tutorial ist
-[Persistente Objekte und Ihre eigenen Tabellen](../../../../eng-us/help/extension-development/part-3-extension-developer/persistent-objects-and-tables.md) und
-[Ihre eigene Tabelle mit einem persistenten Objekt, von Hand](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-own-table-with-persistent-object.md).
+[Persistente Objekte und Ihre eigenen Tabellen](../teil-3-erweiterungsentwickler/persistente-objekte-und-tabellen.md) und
+[Ihre eigene Tabelle mit einem persistenten Objekt, von Hand](../teil-3-erweiterungsentwickler/tutorials/von-hand-eigene-tabelle-mit-persistentem-objekt.md).
 Diese Seite ist die Referenz.
 
 ## definition()
@@ -124,15 +124,15 @@ Diese drei Methoden machen Objekte in Templates lesbar: `{$item.name}`.
 ## Auf jeder Engine
 
 `eZPersistentObject` erzeugt das SQL für die konfigurierte Engine, und auf MongoDB-Installationen setzt der Adapter
-seine Aufrufe in MongoDB-Abfragen um ([MongoDB-Unterstützung im Kernel](../../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)).
+seine Aufrufe in MongoDB-Abfragen um ([MongoDB-Unterstützung im Kernel](../../../bc/6.0/mongodb-kernel-unterstuetzung.md)).
 Außerdem hält es Felder, die die Klasse nicht deklariert, in einem internen Array, sodass die Abkündigung dynamischer
-Eigenschaften in PHP 8.2 Unterklassen nicht betrifft ([Dynamische Eigenschaften](../../../../eng-us/help/extension-development/part-4-upgrading/dynamic-properties.md)).
+Eigenschaften in PHP 8.2 Unterklassen nicht betrifft ([Dynamische Eigenschaften](../teil-4-aktualisieren/dynamische-eigenschaften.md)).
 
 ## Verwandte Seiten
 
 - Zurück: [eZDB: die Datenbankschicht](ezdb.md)
 - Weiter: [eZContentObject](ezcontentobject.md)
-- [Persistente Objekte und Ihre eigenen Tabellen](../../../../eng-us/help/extension-development/part-3-extension-developer/persistent-objects-and-tables.md)
+- [Persistente Objekte und Ihre eigenen Tabellen](../teil-3-erweiterungsentwickler/persistente-objekte-und-tabellen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

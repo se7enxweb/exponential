@@ -13,7 +13,7 @@ Teil 8, Referenz 9. `eZUser` (`kernel/classes/datatypes/ezuser/ezuser.php`) ist 
 einen aktuellen Benutzer; auf einer öffentlichen Seite ist das meist der anonyme Benutzer. Zugriff wird über Rollen und
 ihre Richtlinien gewährt ([Sektionen, Rollen und Zugriff für Builder](../teil-2-builder/sektionen-rollen-und-zugriff-fuer-builder.md)),
 und eine Erweiterung deklariert ihre eigenen Richtlinienfunktionen
-([Richtlinienfunktionen und Zugriff](../../../../eng-us/help/extension-development/part-3-extension-developer/policy-functions-and-access.md)).
+([Richtlinienfunktionen und Zugriff](../teil-3-erweiterungsentwickler/richtlinienfunktionen-und-zugriff.md)).
 
 ## Der aktuelle Benutzer
 
@@ -82,7 +82,7 @@ Verwenden Sie für Inhalte die eigenen Prüfungen des Objekts und des Knotens, d
 
 `fetch( 'user', 'current_user' )` liefert den aktuellen Benutzer. In Administrationsmenüs verbirgt
 `menu.ini [MenuAccessSettings]` Links, die ein Benutzer nicht öffnen kann
-([Kontextmenüs und Integration in die Administration](../../../../eng-us/help/extension-development/part-4-upgrading/context-menus-and-admin-integration.md)).
+([Kontextmenüs und Integration in die Administration](../teil-4-aktualisieren/kontextmenues-und-admin-integration.md)).
 
 ## Regeln
 
@@ -100,7 +100,7 @@ Benutzer den Grund erfährt. [Demomodus für Entwickler](demomodus-fuer-entwickl
 
 - Zurück: [eZContentClass und ihre Attribute](ezcontentclass.md)
 - Weiter: [eZHTTPTool: Requests, Sessions und Weiterleitungen](ezhttptool.md)
-- [Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md)
+- [Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

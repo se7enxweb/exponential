@@ -27,7 +27,7 @@ find extension/<name> -name '*.php' -print0 | xargs -0 -n1 php -l | grep -v '^No
 ```
 
 Keine Ausgabe bedeutet, dass sich jede Datei parsen lässt. Jede ausgegebene Zeile ist eine Datei, die PHP 8 ablehnt;
-typische Ursachen stehen in [PHP-8-Fehler, die alten Code stoppen](../../../../eng-us/help/extension-development/part-4-upgrading/php-8-errors-that-stop-old-code.md).
+typische Ursachen stehen in [PHP-8-Fehler, die alten Code stoppen](../teil-4-aktualisieren/php-8-fehler-die-alten-code-stoppen.md).
 
 ## 3. Entfernte und veraltete Funktionen (5 Minuten)
 
@@ -37,13 +37,13 @@ grep -rnE 'function\s+([A-Za-z_]+)\s*\(' extension/<name> --include=*.php | head
 ```
 
 Die erste Suche findet Funktionen, die PHP 8 entfernt hat oder als veraltet markiert; für jede gibt es einen Ersatz in
-[Entfernte PHP-Funktionen und ihr Ersatz](../../../../eng-us/help/extension-development/part-4-upgrading/removed-php-functions.md). Die zweite listet die
+[Entfernte PHP-Funktionen und ihr Ersatz](../teil-4-aktualisieren/entfernte-php-funktionen.md). Die zweite listet die
 Methoden auf, damit Sie **Konstruktoren im alten Stil** erkennen: eine Methode mit demselben Namen wie ihre Klasse.
 PHP 8 ruft eine solche Methode nicht mehr als Konstruktor auf, also wird das Objekt erzeugt, ohne eingerichtet zu
 werden. Die Template-Operator-Erweiterung `str_replace`, im Kernel-Baum noch in ihrer ursprünglichen Form von 2005, ist
 genau dieser Fall: Ihre Operatorklasse setzt ihre Operatorliste in `function MyStrReplaceOperator()`, die PHP 8 nie
 aufruft, und die Template-Engine meldet „Object problem with operator 'ezstr_replace'“. Die Korrektur ist eine Zeile
-und wird in [Konstruktoren im alten Stil und statische Aufrufe](../../../../eng-us/help/extension-development/part-4-upgrading/old-constructors-and-static-calls.md)
+und wird in [Konstruktoren im alten Stil und statische Aufrufe](../teil-4-aktualisieren/alte-konstruktoren-und-statische-aufrufe.md)
 gezeigt.
 
 ## 4. Lässt sich jede Klasse laden? (2 Minuten, nachdem Sie sie in der Entwicklung eingeschaltet haben)
@@ -80,7 +80,7 @@ grep -rnE '\{\$[a-zA-Z_.]+\}' extension/<name>/design | grep -v '|wash' | head -
 Variablen, die ohne `|wash` ausgegeben werden, sind ein Risiko für Cross-Site-Scripting, wenn ihr Wert von einem
 Besucher stammen kann (ein View-Parameter, ein Formularfeld, ein Suchwort). Nicht jeder Treffer ist ein Fehler (eine
 Zahl aus dem Kernel ist sicher), aber jeder verdient einen Blick. Siehe
-[Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md).
+[Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md).
 
 ## 7. SQL (5 Minuten)
 
@@ -101,7 +101,7 @@ grep -rnE '<script[^>]*>[^<]|on(click|change|submit|load)=|javascript:|style="' 
 ```
 
 Die Administration erzwingt eine Content Security Policy: Inline-Skripte, Handler-Attribute `on...=` und
-`javascript:`-Links laufen dort nicht. Jeder Treffer ist Arbeit für [Teil 4](../../../../eng-us/help/extension-development/part-4-upgrading/README.md), bevor die
+`javascript:`-Links laufen dort nicht. Jeder Treffer ist Arbeit für [Teil 4](../teil-4-aktualisieren/README.md), bevor die
 Administrationsseiten der Erweiterung funktionieren.
 
 ## 9. Was sie im System ändert (5 Minuten)
@@ -129,8 +129,8 @@ ihrem Tracker.
 
 - Zurück: [Verlinken oder kopieren: Quellen fair zitieren](verlinken-oder-kopieren.md)
 - Weiter: [Schritt für Schritt von einer Erweiterung lernen](schritt-fuer-schritt-von-einer-erweiterung-lernen.md)
-- [Die Upgrade-Checkliste](../../../../eng-us/help/extension-development/part-4-upgrading/the-upgrade-checklist.md)
-- [Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md)
+- [Die Upgrade-Checkliste](../teil-4-aktualisieren/die-upgrade-checkliste.md)
+- [Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

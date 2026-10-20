@@ -145,7 +145,7 @@ Speicherschutzes als reine Funktion.
 - [Demomodus](../../demomodus.md) (Administratoren), [Demomodus für Hoster](../../hosting/sicherheit/demomodus-fuer-hoster.md),
   [Demomodus-FAQ](../../demomodus-faq.md), [Probleme mit dem Demomodus](../../hosting/runbooks/probleme-mit-dem-demomodus.md)
 - [eZUser und Zugriffsprüfungen](ezuser-und-zugriff.md)
-- [Sicherheit in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/security-in-extensions.md)
+- [Sicherheit in Erweiterungen](../teil-3-erweiterungsentwickler/sicherheit-in-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

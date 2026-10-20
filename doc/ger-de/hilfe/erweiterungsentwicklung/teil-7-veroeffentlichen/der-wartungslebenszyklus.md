@@ -54,7 +54,7 @@ Die eigene PHP-Geschichte des Kernels ist ein guter Kalender dafür, was Sie erw
    Meldung in der Debug-Ausgabe.
 2. **Entfernen Sie nur in einem Major-Release**, aufgeführt in den Upgrade-Hinweisen.
 3. **Benennen Sie durch Hinzufügen um**: zuerst der neue Name, der alte Name als Alias
-   ([Namen und Marken bei einem Upgrade](../../../../eng-us/help/extension-development/part-4-upgrading/naming-and-branding-during-an-upgrade.md)).
+   ([Namen und Marken bei einem Upgrade](../teil-4-aktualisieren/namen-und-marken-bei-einem-upgrade.md)).
 
 ## Alte Versionen
 

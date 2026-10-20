@@ -65,7 +65,7 @@ Nur lesend auf einer Demo-Installation ausgeführt, listete dies die sieben Attr
 Der Inhalt eines Klassenattributs ist der richtige Weg, die Einstellungen eines Datentyps zu lesen. Eine
 Datentyp-Methode wie `classAttributeContent()` statisch aufzurufen, ist unter PHP 8 ein fataler Fehler; fragen Sie
 stattdessen das Klassenattribut, wie es se7enxweb/sevenx_themes_media im Commit f7d93c0 getan hat
-([PHP-8-Fehler, die alten Code stoppen](../../../../eng-us/help/extension-development/part-4-upgrading/php-8-errors-that-stop-old-code.md)).
+([PHP-8-Fehler, die alten Code stoppen](../teil-4-aktualisieren/php-8-fehler-die-alten-code-stoppen.md)).
 
 ## Klassen anlegen
 

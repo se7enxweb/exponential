@@ -63,7 +63,7 @@ Schreiben Sie es an drei Stellen auf:
 1. **Neben dem Code.** Eine mitgelieferte Bibliothek behält ihre eigene `LICENSE`-Datei in ihrem Ordner.
 2. **In `ezinfo.php`.** Ein `Includes`-Eintrag je enthaltener Software, mit Name, Version, Lizenz und Copyright. Die
    Seite „Über“ der Administration listet sie unter Ihrer Erweiterung auf
-   ([ezinfo.php und extension.xml modernisieren](../../../../eng-us/help/extension-development/part-4-upgrading/modernizing-ezinfo-and-extension-xml.md)).
+   ([ezinfo.php und extension.xml modernisieren](../teil-4-aktualisieren/ezinfo-und-extension-xml-modernisieren.md)).
 3. **In `composer.json`.** Das Feld `license` enthält die Lizenz Ihrer Erweiterung als SPDX-Bezeichner. Wenn das Ganze
    unter zwei Lizenzen verfügbar ist, ein Array: `"license": ["GPL-2.0-or-later", "MIT"]` bedeutet, dass der Benutzer
    eine von beiden wählen darf.

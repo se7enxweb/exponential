@@ -116,7 +116,7 @@ pro Anfrage). Deshalb:
 Die Administration verwendet jQuery 4 und den Namensraum `Exp` der Erweiterung `expui`; YUI wurde entfernt. Verwenden
 Sie diese, statt eine eigene Kopie einer Bibliothek mitzubringen; siehe
 [Die JavaScript-API von expui](../teil-8-referenz/expui-javascript-api.md)
-und [Vom alten jQuery zu jQuery 4](../../../../eng-us/help/extension-development/part-4-upgrading/old-jquery-to-jquery-4.md).
+und [Vom alten jQuery zu jQuery 4](../teil-4-aktualisieren/altes-jquery-zu-jquery-4.md).
 
 ## Admin-Seiten gestalten
 

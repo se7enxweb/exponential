@@ -12,7 +12,7 @@ type: help
 Teil 8, Referenz 2. `eZINI` (`lib/ezutils/classes/ezini.php`) liest INI-Dateien mit allen zusammengeführten
 Overrides: die Vorgabe in `settings/`, die `settings/` der Erweiterungen, den Siteaccess, `settings/override`. Wie die
 Dateien und Geltungsbereiche zusammenwirken, erklären [Wie INI-Einstellungen funktionieren](../teil-2-builder/wie-ini-einstellungen-funktionieren.md)
-und [Einstellungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/settings-in-an-extension.md).
+und [Einstellungen in einer Erweiterung](../teil-3-erweiterungsentwickler/einstellungen-in-einer-erweiterung.md).
 
 ## Eine Instanz holen
 
@@ -85,7 +85,7 @@ Einstellungen werden gecacht. Leeren Sie nach der Änderung einer INI-Datei den 
 
 - Zurück: [Erweiterungspunkte auf einen Blick](erweiterungspunkte-auf-einen-blick.md)
 - Weiter: [eZDebug und Protokollierung](ezdebug-und-protokollierung.md)
-- [Einstellungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/settings-in-an-extension.md)
+- [Einstellungen in einer Erweiterung](../teil-3-erweiterungsentwickler/einstellungen-in-einer-erweiterung.md)
 - [INI-Dateien, denen ein Erweiterungsautor begegnet](ini-dateien-fuer-erweiterungsautoren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
