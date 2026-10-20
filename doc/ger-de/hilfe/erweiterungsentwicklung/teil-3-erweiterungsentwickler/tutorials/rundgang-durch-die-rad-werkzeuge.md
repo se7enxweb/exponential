@@ -91,7 +91,7 @@ Alle Assistenten folgen demselben Ablauf (`kernel/setup/expextensionwizard.php`)
    Archiv. Wenn der Webserver nicht in `extension/` schreiben kann, sagt die Seite das und bietet nur das Archiv an.
 
 Schutzmechanismen, auf die Sie sich verlassen können
-([RAD-Werkzeuge: Sicherheit](../../../../../eng-us/bc/6.0/rad-security.md)): Nichts wird außerhalb von
+([RAD-Werkzeuge: Sicherheit](../../../../bc/6.0/rad-sicherheit.md)): Nichts wird außerhalb von
 `extension/<name>` geschrieben, eine vorhandene Erweiterung wird nie überschrieben, eingegebene Werte können nicht aus
 Kommentaren oder INI-Zeilen ausbrechen, erzeugte Templates maskieren die Ausgabe, und erzeugte Views prüfen die
 Eingabe.

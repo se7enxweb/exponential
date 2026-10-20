@@ -199,7 +199,7 @@ eine neue Art von Aktion gehört in `expCacheManager` und wird von beiden aufger
 ## Verwandte Seiten
 
 - [Leeren von Caches, das Verzeichnisse beiseiteschiebt](../../../eng-us/features/6.0/cache-clear-rename-aside.md)
-- [HTTP-Cache](httpcache.md), [SQL-Abfrage-Cache](../../../eng-us/bc/6.0/sql-query-cache.md), [Standardwerte des statischen Caches](../../../eng-us/bc/6.0/static-cache-defaults.md)
+- [HTTP-Cache](httpcache.md), [SQL-Abfrage-Cache](sql-abfrage-cache.md), [Standardwerte des statischen Caches](standardwerte-des-statischen-caches.md)
 - [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)
 - [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)

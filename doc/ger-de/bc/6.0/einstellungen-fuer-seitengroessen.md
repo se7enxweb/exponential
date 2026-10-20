@@ -198,6 +198,6 @@ Die ausgelieferten Werte lesen Sie mit `grep -n -A40 "^\[PaginationSettings\]" s
 ## Verwandte Seiten
 
 - [Blättern, Sortieren und Seitengrößen in der Administrationsoberfläche](../../../eng-us/features/6.0/admin-list-paging.md)
-- [Blättern in Rollen und Richtlinien](../../../eng-us/bc/6.0/role-policy-paging.md) und [Der Tab Orte: Blättern und Sortieren](tab-orte-blaettern-und-sortieren.md)
+- [Blättern in Rollen und Richtlinien](seitenweise-anzeige-von-rollen-und-richtlinien.md) und [Der Tab Orte: Blättern und Sortieren](tab-orte-blaettern-und-sortieren.md)
 - [September 2026, erste Hälfte: 15. September](../../../eng-us/history/2026/2026-09a.md#15-september-paging-everywhere)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

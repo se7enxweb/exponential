@@ -160,7 +160,7 @@ php vendor/se7enxweb/exponential-velocity/tests/unit-middle-out.php
 
 ## Verwandte Seiten
 
-- [Antwort-Cache und Navigation](../../../eng-us/bc/6.0/response-cache-and-navigation.md)
+- [Antwort-Cache und Navigation](antwort-cache-und-navigation.md)
 - [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
 - [HTTP-Caching für anonyme Besucher](http-caching.md)
 - [Velocity-Engines](velocity-engines.md)

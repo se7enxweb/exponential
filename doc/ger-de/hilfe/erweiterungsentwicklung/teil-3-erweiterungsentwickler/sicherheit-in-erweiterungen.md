@@ -95,7 +95,7 @@ Verteidigungslinie gegen Cross-Site-Scripting. Siehe
 Erweiterungen, die die RAD-Assistenten schreiben, sind durch acht Schutzmechanismen gesichert (Werte können nicht aus
 Kommentaren oder INI-Zeilen ausbrechen, nichts wird außerhalb von `extension/<name>` geschrieben, erzeugte Templates
 maskieren die Ausgabe, erzeugte Views prüfen die Eingabe). Prüfen Sie, was jeder Generator schreibt, auch Ihre eigenen
-Skripte. Siehe [RAD-Werkzeuge: Sicherheit](../../../../eng-us/bc/6.0/rad-security.md).
+Skripte. Siehe [RAD-Werkzeuge: Sicherheit](../../../bc/6.0/rad-sicherheit.md).
 
 ## Eine Sicherheitslücke melden
 

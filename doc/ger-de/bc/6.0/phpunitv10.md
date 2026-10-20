@@ -14,7 +14,7 @@ geschrieben.
 | Was sich geändert hat | Das Toolkit (`tests/toolkit/`) wurde für PHPUnit 3.7 und dessen Klassennamen im PEAR-Stil (`PHPUnit_Framework_TestCase`) geschrieben. PHPUnit 6 führte Namespaces ein, PHPUnit 7 entfernte die alten Aliase, und PHPUnit 10 (in `composer.json` festgelegt) hat überhaupt keine Klasse `PHPUnit_*`. Das Toolkit, `tests/runtests.php`, eine neue `phpunit.xml` und eine neue `tests/bootstrap.php` mit Shims beheben das. |
 | Wer betroffen ist | Jede Installation älter als 6.0.13, die Tests ausführt, und jeder eigene Test, der gegen die alten Klassennamen geschrieben ist. |
 | Wie Sie es prüfen | `php vendor/bin/phpunit --list-tests` (siehe [Kontrolle](#10-kontrolle--das-korrigierte-toolkit-laufen-lassen)) |
-| Wie Sie es beheben | Aktualisieren Sie auf 6.0.13 oder neuer; die Shims in `tests/bootstrap.php` halten alte Klassennamen funktionsfähig. Folgen Sie dann [Unterstützung für PHPUnit 13](../../../eng-us/bc/6.0/phpunitv13.md) für den nächsten Schritt. |
+| Wie Sie es beheben | Aktualisieren Sie auf 6.0.13 oder neuer; die Shims in `tests/bootstrap.php` halten alte Klassennamen funktionsfähig. Folgen Sie dann [Unterstützung für PHPUnit 13](phpunitv13.md) für den nächsten Schritt. |
 
 Die Fehler, die Sie vor der Korrektur sehen:
 
@@ -880,8 +880,8 @@ Ergebnisse zusammen und schreibt eine datierte Berichtsdatei.
 ## Verwandte Seiten
 
 - [Unterstützung für PHP 8](php8.md)
-- [Unterstützung für PHPUnit 13 und die Testsuite der String-Operatoren](../../../eng-us/bc/6.0/phpunitv13.md)
-- [Aufräumen der Testsuite für PHPUnit 13 / PHP 8.4.23](../../../eng-us/bc/6.0/phpunitv13forPHP841.md)
+- [Unterstützung für PHPUnit 13 und die Testsuite der String-Operatoren](phpunitv13.md)
+- [Aufräumen der Testsuite für PHPUnit 13 / PHP 8.4.23](phpunitv13-fuer-php841.md)
 - [Kompatibilitätskorrekturen von `ezpSessionHandlerDB` für PHP 8 und die Testsuite für PHPUnit 13](../../../eng-us/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md)
 - [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
 - [April 2025](../../../eng-us/history/2025/2025-04.md)

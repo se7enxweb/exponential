@@ -112,7 +112,7 @@ ihre Pfade.
 
 Ein fehlendes Verzeichnis `vendor/` zeigt jetzt eine Seite mit einem Reparaturverfahren statt der rohen
 Fehlerausgabe von PHP. Siehe [Reparatur aus dem Browser](../../../eng-us/features/6.0/repair-from-the-browser.md) und
-[das Upgrade der Reparaturseite](../../../eng-us/bc/6.0/repair.md).
+[das Upgrade der Reparaturseite](reparatur.md).
 
 Seit dem 9. Oktober 2026 lehnt `eZSOAPClient` einen Aufruf über HTTPS ab, wenn die PHP-Erweiterung curl nicht geladen
 ist: `send()` gibt `0` zurück, `ErrorString` sagt, dass HTTPS die PHP-Erweiterung curl braucht, und das
