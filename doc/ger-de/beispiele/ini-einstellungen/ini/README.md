@@ -12,8 +12,8 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/ini.ini`: 1 Blöcke, 3 Einstellungen.
 
-> Settings of the exp:ini command (bin/php/ini.php) and of the settings editor  
-> behind it (kernel/classes/ini/). Guide: doc/eng-us/bc/6.0/console-exp-ini.md  
+> Einstellungen des Befehls exp:ini (bin/php/ini.php) und des Einstellungseditors  
+> dahinter (kernel/classes/ini/). Anleitung: doc/eng-us/bc/6.0/console-exp-ini.md  
 
 | Block | Einstellungen |
 |---|---|

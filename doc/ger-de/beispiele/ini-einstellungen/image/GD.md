@@ -43,8 +43,8 @@ IsEnabled=true
 
 ## Handler
 
-> Which PHP handler to use for the conversion,  
-> ezimagegd means to use the ImageGD extension in PHP  
+> Welcher PHP-Handler für die Umwandlung verwendet wird;  
+> ezimagegd bedeutet die Erweiterung ImageGD in PHP  
 
 Standard: `eZImageGDFactory`.
 

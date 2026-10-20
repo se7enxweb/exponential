@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[MenuAccessSettings]` von `settings/menu.ini`, mit 2 Einstellung(en).
 
-> Example of a custom navigation part  
-> See TopMenuAdminMenu for how you can combine this with a  
-> new top menu  
+> Beispiel eines eigenen Navigationsbereichs  
+> Wie Sie dies mit einem neuen Hauptmenüeintrag kombinieren,  
+> siehe TopMenuAdminMenu  
 > Part\[ezcustomnavigationpart\]=Custom navigation  
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
@@ -24,13 +24,13 @@ Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## CheckViewAccess
 
-> Shows a top tab (\[Topmenu\_\*\] URL) or a left menu link (\[Leftmenu\_\*\] Links\[\]) only to a user who  
-> can open the address it points to, checked the way the kernel checks the request (expViewAccess):  
-> the URL alias, the view's policy functions with their limitations (a view without functions needs  
-> the module), the siteaccess's \[SiteAccessRules\], RequireUserLogin, the user/login SiteAccess  
-> limitation, and the node or object of content/view and content/edit. It comes on top of the  
-> PolicyList settings below, which stay for what an address cannot tell (a node to be readable, a  
-> policy the view itself asks for). Templates ask the same: fetch( 'user', 'can\_open', hash( 'uri', ... ) ).  
+> Zeigt einen Reiter des Hauptmenüs (\[Topmenu\_\*\] URL) oder einen Link des linken Menüs (\[Leftmenu\_\*\] Links\[\]) nur einem Benutzer, der  
+> die Adresse öffnen kann, auf die er zeigt, geprüft wie der Kernel die Anfrage prüft (expViewAccess):  
+> der URL-Alias, die Richtlinienfunktionen der Ansicht mit ihren Einschränkungen (eine Ansicht ohne Funktionen braucht  
+> das Modul), die \[SiteAccessRules\] des Siteaccess, RequireUserLogin, die Einschränkung SiteAccess von user/login  
+> und der Knoten oder das Objekt von content/view und content/edit. Es kommt zu den  
+> Einstellungen PolicyList unten hinzu, die für das bleiben, was eine Adresse nicht sagen kann (ein lesbarer Knoten, eine  
+> Richtlinie, nach der die Ansicht selbst fragt). Templates fragen dasselbe: fetch( 'user', 'can\_open', hash( 'uri', ... ) ).  
 > enabled | disabled  
 
 Standard: `enabled`.
@@ -45,9 +45,9 @@ CheckViewAccess=enabled
 
 ## NoAccessLinks
 
-> What becomes of a left menu link the user cannot open:  
->   hidden    the link is left out (and a menu with no link left is left out)  
->   disabled  its name is shown without a link (the behaviour of the 4.x releases)  
+> Was aus einem Link des linken Menüs wird, den der Benutzer nicht öffnen kann:  
+>   hidden    der Link entfällt (und ein Menü ohne übrig gebliebenen Link entfällt)  
+>   disabled  sein Name wird ohne Link angezeigt (das Verhalten der Releases 4.x)  
 
 Standard: `hidden`.
 

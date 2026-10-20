@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## Confirm
 
-> enabled (the default): a new e-mail address of an account (user/edit, the  
-> admin's edit, the account services) takes effect only once it is confirmed  
-> with the link sent to the new address; the account keeps its old address  
-> until then. disabled: the address changes at once, as before.  
+> enabled (der Standard): Eine neue E-Mail-Adresse eines Kontos (user/edit, das  
+> Bearbeiten durch den Administrator, die Kontodienste) wird erst wirksam, wenn sie mit dem  
+> an die neue Adresse gesendeten Link bestätigt ist; bis dahin behält das Konto seine alte Adresse.  
+> disabled: Die Adresse ändert sich wie bisher sofort.  
 
 Standard: `enabled`.
 
@@ -36,7 +36,7 @@ Confirm=enabled
 
 ## NotifyOldAddress
 
-> enabled: the old address gets a notice that a change was asked for.  
+> enabled: Die alte Adresse erhält einen Hinweis, dass eine Änderung angefordert wurde.  
 
 Standard: `enabled`.
 

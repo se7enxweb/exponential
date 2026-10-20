@@ -19,28 +19,28 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## AllowDefaultOn
 
-> The categories, in the order the preference page shows them. Each has a  
-> block \[Category\_<identifier>\]:  
->   Name, Description   shown on the page (translated through the  
->                       kernel/mailpreferences/categories context)  
->   Essential           true: never switchable, always sent (account  
->                       security, orders, legal notices, admin alerts)  
->   DefaultOn           only for optional categories; false (opt-in) is the  
->                       default and the only lawful choice in the EU. true is  
->                       refused (treated as false, with a warning on the status  
->                       page) unless AllowDefaultOn=enabled below  
->   Frequencies\[\]       immediate, daily, weekly; empty: the category keeps  
->                       its own schedule  
->   DoubleOptIn         true: switching on sends a confirmation mail first  
->   HandlerClass        optional PHP class implementing  
->                       expMailCategoryHandler, which reads existing data  
->                       (subscriptions) as the state of the category  
-> Extensions add categories in their own mailpreferences.ini.append.php.  
+> Die Kategorien, in der Reihenfolge, in der die Einstellungsseite sie zeigt. Jede hat einen  
+> Block \[Category\_<identifier>\]:  
+>   Name, Description   auf der Seite angezeigt (übersetzt über den  
+>                       Kontext kernel/mailpreferences/categories)  
+>   Essential           true: nie abschaltbar, immer gesendet (Konto-  
+>                       sicherheit, Bestellungen, rechtliche Hinweise, Alarme für Administratoren)  
+>   DefaultOn           nur für optionale Kategorien; false (Opt-in) ist der  
+>                       Standard und in der EU die einzige zulässige Wahl. true wird  
+>                       abgelehnt (als false behandelt, mit einer Warnung auf der Status-  
+>                       seite), außer AllowDefaultOn=enabled unten  
+>   Frequencies\[\]       immediate, daily, weekly; leer: Die Kategorie behält  
+>                       ihren eigenen Zeitplan  
+>   DoubleOptIn         true: Das Einschalten sendet zuerst eine Bestätigungsmail  
+>   HandlerClass        optionale PHP-Klasse, die  
+>                       expMailCategoryHandler implementiert und vorhandene Daten  
+>                       (Abonnements) als Zustand der Kategorie liest  
+> Erweiterungen fügen Kategorien in ihrer eigenen mailpreferences.ini.append.php hinzu.  
 >
-> AllowDefaultOn: enabled lets an optional category be on for everybody who never  
-> chose (DefaultOn=true: opt-out). Only for a site whose recipients are under a  
-> law that allows it for that mail (never marketing in the EU or to Canada).  
-> disabled (the default): DefaultOn=true is treated as false.  
+> AllowDefaultOn: enabled lässt eine optionale Kategorie für alle an sein, die nie  
+> gewählt haben (DefaultOn=true: Opt-out). Nur für eine Website, deren Empfänger einem  
+> Recht unterliegen, das es für diese Mail erlaubt (nie Werbung in der EU oder nach Kanada).  
+> disabled (der Standard): DefaultOn=true wird als false behandelt.  
 
 Standard: `disabled`.
 

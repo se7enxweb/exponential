@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[ImageMagick]` von `settings/image.ini`, mit 14 Einstellung(en).
 
-> The following filters are supported by GD  
+> Die folgenden Filter werden von GD unterstützt  
 > geometry/scale  
 > geometry/scalewidth  
 > geometry/scaleheight  
@@ -49,8 +49,8 @@ Name=ImageMagick
 
 ## IsEnabled
 
-> If set to true then this handler will be used,  
-> The setup wizard will turn this off it ImageMagick is not found on the system  
+> Wenn true, wird dieser Handler verwendet;  
+> der Setup-Assistent schaltet ihn ab, wenn ImageMagick auf dem System nicht gefunden wird  
 
 Standard: `true`.
 
@@ -64,9 +64,9 @@ IsEnabled=true
 
 ## Handler
 
-> Which PHP handler to use for the conversion,  
-> ezimageshell means to use the generic shell handler which  
-> creates a command line and executes it with system().  
+> Welcher PHP-Handler für die Umwandlung verwendet wird;  
+> ezimageshell bedeutet den allgemeinen Shell-Handler, der  
+> eine Befehlszeile bildet und mit system() ausführt.  
 
 Standard: `eZImageShellFactory`.
 
@@ -80,7 +80,7 @@ Handler=eZImageShellFactory
 
 ## ExecutablePath
 
-> The path to the executable, can be empty for global path.  
+> Der Pfad zur ausführbaren Datei; kann für den globalen Pfad leer sein.  
 
 Standard: leer.
 
@@ -94,7 +94,7 @@ ExecutablePath=
 
 ## Executable
 
-> Name of the executable  
+> Name der ausführbaren Datei  
 
 Standard: `convert`.
 
@@ -108,13 +108,13 @@ Executable=convert
 
 ## PreParameters
 
-> Name of the executable for windows,  
-> uncomment ExecutableMac for Mac specific converter and  
-> ExecutableUnix for Unix/Linux specific converter  
+> Name der ausführbaren Datei für Windows;  
+> entfernen Sie den Kommentar von ExecutableMac für einen Mac-spezifischen Konverter und  
+> von ExecutableUnix für einen Unix/Linux-spezifischen Konverter  
 > ExecutableWin32=convertim  
 > ExecutableMac=convert  
 > ExecutableUnix=convert  
-> Parameters that must be run before the filenames and filters.  
+> Parameter, die vor den Dateinamen und Filtern stehen müssen.  
 
 Standard: leer.
 
@@ -128,7 +128,7 @@ PreParameters=
 
 ## PostParameters
 
-> Parameters that must be run after the filenames and filters.  
+> Parameter, die nach den Dateinamen und Filtern stehen müssen.  
 
 Standard: leer.
 
@@ -142,9 +142,9 @@ PostParameters=
 
 ## UseTypeTag
 
-> Whether the destination name should be prefixed with a TAG name (see MIMETagMap below)  
-> The variable contains the separator between the TAG and the filename.  
-> This is needed for ImageMagick to provide proper conversions of some formats.  
+> Ob dem Zielnamen ein TAG-Name vorangestellt wird (siehe MIMETagMap unten)  
+> Die Variable enthält das Trennzeichen zwischen dem TAG und dem Dateinamen.  
+> Das braucht ImageMagick, um manche Formate richtig umzuwandeln.  
 
 Standard: `:`.
 
@@ -158,7 +158,7 @@ UseTypeTag=:
 
 ## InputMIMEList
 
-> MIME types that the converter can get as input  
+> MIME-Typen, die der Konverter als Eingabe erhalten kann  
 
 Standard: eine Liste mit 1: `*`.
 
@@ -174,7 +174,7 @@ InputMIMEList[]=*
 
 ## OutputMIMEList
 
-> MIME types that the converter can generate  
+> MIME-Typen, die der Konverter erzeugen kann  
 
 Standard: eine Liste mit 1: `*`.
 
@@ -190,7 +190,7 @@ OutputMIMEList[]=*
 
 ## QualityParameters
 
-> A list of mime types and their quality parameters  
+> Eine Liste von MIME-Typen und ihren Qualitätsparametern  
 
 Standard: eine Liste mit 1: `image/jpeg;-quality %1`.
 
@@ -206,11 +206,11 @@ QualityParameters[]=image/jpeg;-quality %1
 
 ## FrameRangeParameters
 
-> This setting will provide the possibility to postpend options to the source file  filename.  
-> This behavior is needed to address a specific layer in PSD files.  
-> This array needs a semicolon seperated value which will build like this:  
+> Diese Einstellung erlaubt, Optionen an den Dateinamen der Quelldatei anzuhängen.  
+> Das ist nötig, um eine bestimmte Ebene in PSD-Dateien anzusprechen.  
+> Dieses Array braucht einen durch Semikolon getrennten Wert, der so aufgebaut ist:  
 > <mimetype>;<option>  
-> Set frame range to handle PSD files with ImageMagick  
+> Bildbereich setzen, um PSD-Dateien mit ImageMagick zu behandeln  
 
 Standard: eine Liste mit 1: `application/x-photoshop;[0]`.
 
@@ -226,8 +226,8 @@ FrameRangeParameters[]=application/x-photoshop;[0]
 
 ## Filters
 
-> A list of filter ImageMagick supports, add more if needed  
-> The same filter names are used in aliases and MIME type overrides with optional parameters.  
+> Eine Liste der Filter, die ImageMagick unterstützt; fügen Sie bei Bedarf weitere hinzu  
+> Dieselben Filternamen werden in Aliasen und Overrides für MIME-Typen mit optionalen Parametern verwendet.  
 
 Standard: eine Liste mit 19: `geometry/scale=-geometry %1x%2`, `geometry/scalewidth=-geometry %1`, `geometry/scaleheight=-geometry x%1`, `geometry/scaledownonly=-geometry %1x%2>`, `geometry/scalewidthdownonly=-geometry %1>`, `geometry/scaleheightdownonly=-geometry x%1>`, `geometry/scaleexact=-geometry %1x%2!`, `geometry/scalepercent=-geometry %1x%2%`, `geometry/crop=-crop %1x%2+%3+%4`, `filter/noise=-noise %1`, `filter/swirl=-swirl %1`, `colorspace/gray=-colorspace GRAY` ....
 
@@ -261,7 +261,7 @@ Filters[]=resize=-resize %1
 
 ## MIMETagMap
 
-> Maps a MIME type to a tag name which is prepended to the destination name for ImageMagick  
+> Ordnet einem MIME-Typ einen Tag-Namen zu, der für ImageMagick dem Zielnamen vorangestellt wird  
 
 Standard: eine Liste mit 19: `image/x-xpixmap;XPM`, `image/png;PNG`, `image/webp;WEBP`, `image/jpeg;JPEG`, `image/bmp;BMP`, `image/gif;GIF`, `image/x-portable-bitmap;PBM`, `image/tiff;TIFF`, `image/pcx;PCX`, `image/x-pict;PICT`, `image/svg+xml;SVG`, `image/tga;TGA` ....
 

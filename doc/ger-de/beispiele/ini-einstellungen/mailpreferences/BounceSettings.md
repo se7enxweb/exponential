@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## Reader
 
-> The mailbox that bounces and spam complaints arrive in (the Return-Path of  
-> the mail, and the address given to the feedback loops of the large mail  
-> providers). Hard bounces (RFC 3464 delivery status notifications) and  
-> complaints (RFC 5965 ARF reports) put the address on the suppression list.  
-> Read by the cronjob part mailbounces (also in the frequent group) and by  
-> ./console exp:mail:bounces (--dry-run shows what it would do).  
-> Set the server, the user and the password ONLY in  
-> settings/override/mailpreferences.ini.append.php, which is never committed.  
-> enabled: read the mailbox; disabled (the default): nothing is read.  
+> Das Postfach, in dem Rückläufer und Spam-Beschwerden ankommen (der Return-Path  
+> der Mail und die Adresse, die den Feedback-Schleifen der großen Mail-  
+> Anbieter angegeben ist). Hard Bounces (Zustellungsberichte nach RFC 3464) und  
+> Beschwerden (ARF-Berichte nach RFC 5965) setzen die Adresse auf die Sperrliste.  
+> Gelesen vom Cronjob-Teil mailbounces (auch in der Gruppe frequent) und von  
+> ./console exp:mail:bounces (--dry-run zeigt, was er täte).  
+> Setzen Sie Server, Benutzer und Passwort NUR in  
+> settings/override/mailpreferences.ini.append.php, die nie committet wird.  
+> enabled: das Postfach lesen; disabled (der Standard): Es wird nichts gelesen.  
 
 Standard: `disabled`.
 
@@ -41,7 +41,7 @@ Reader=disabled
 
 ## Protocol
 
-> imap or pop3  
+> imap oder pop3  
 
 Standard: `imap`.
 
@@ -67,7 +67,7 @@ Server=
 
 ## Port
 
-> Empty: 993 for IMAP and 995 for POP3 with SSL, 143 and 110 without.  
+> Leer: 993 für IMAP und 995 für POP3 mit SSL, 143 und 110 ohne.  
 
 Standard: leer.
 
@@ -117,7 +117,7 @@ SSL=enabled
 
 ## Folder
 
-> IMAP only: the folder that is read.  
+> Nur IMAP: der Ordner, der gelesen wird.  
 
 Standard: `INBOX`.
 
@@ -131,9 +131,9 @@ Folder=INBOX
 
 ## AfterRead
 
-> keep: IMAP reads only unread messages and marks them read, POP3 reads every  
-> message each time (an address is not added twice). delete: the messages  
-> that were understood (bounces and complaints) are deleted after reading.  
+> keep: IMAP liest nur ungelesene Nachrichten und markiert sie als gelesen, POP3 liest jedes Mal jede  
+> Nachricht (eine Adresse wird nicht zweimal hinzugefügt). delete: Die Nachrichten,  
+> die verstanden wurden (Rückläufer und Beschwerden), werden nach dem Lesen gelöscht.  
 
 Standard: `keep`.
 
@@ -147,7 +147,7 @@ AfterRead=keep
 
 ## MaxMessages
 
-> At most this many messages per run.  
+> Höchstens so viele Nachrichten pro Lauf.  
 
 Standard: `500`.
 
@@ -161,11 +161,11 @@ MaxMessages=500
 
 ## HardStatusCodes
 
-> The status codes of a failed delivery that make it a hard bounce; a code  
-> ending in a dot matches every code that starts with it. Other failures and  
-> delays are counted, not suppressed.  
-> 5.1.x: the address or the domain does not exist; 5.2.1: the mailbox is  
-> disabled; 5.4.4: no mail server for the domain.  
+> Die Statuscodes einer fehlgeschlagenen Zustellung, die sie zum Hard Bounce machen; ein Code,  
+> der auf einen Punkt endet, passt auf jeden Code, der damit beginnt. Andere Fehler und  
+> Verzögerungen werden gezählt, nicht gesperrt.  
+> 5.1.x: die Adresse oder die Domain existiert nicht; 5.2.1: das Postfach ist  
+> deaktiviert; 5.4.4: kein Mailserver für die Domain.  
 
 Standard: eine Liste mit 3: `5.1.`, `5.2.1`, `5.4.4`.
 
@@ -183,8 +183,8 @@ HardStatusCodes[]=5.4.4
 
 ## StatusFile
 
-> The last run (time, counts, error) for the status page and exp:mail:status,  
-> relative to the var directory.  
+> Der letzte Lauf (Zeit, Zahlen, Fehler) für die Statusseite und exp:mail:status,  
+> relativ zum var-Verzeichnis.  
 
 Standard: `log/mailbounces.json`.
 
@@ -198,14 +198,14 @@ StatusFile=log/mailbounces.json
 
 ## MessageListeners
 
-> Classes that get every message the reader reads, after the reader's own  
-> classification and suppression: static mailMessage( $raw, $classification,  
-> $dryRun ), true when the message was for them (AfterRead=delete then  
-> removes it). For another system's own bounces, or mail to its own addresses  
-> that arrives in this mailbox (cjw\_newsletter: subscribe and unsubscribe by  
-> e-mail, soft-bounce retries). A listener must not change anything in a dry  
-> run; one that fails is logged and the reading goes on. Extensions add their  
-> class in their own settings.  
+> Klassen, die jede vom Leser gelesene Nachricht erhalten, nach dessen eigener  
+> Einordnung und Sperrung: static mailMessage( $raw, $classification,  
+> $dryRun ), true, wenn die Nachricht für sie war (AfterRead=delete entfernt sie  
+> dann). Für die eigenen Rückläufer eines anderen Systems oder Mail an dessen eigene Adressen,  
+> die in diesem Postfach ankommt (cjw\_newsletter: An- und Abmelden per  
+> E-Mail, erneute Versuche bei Soft Bounces). Ein Listener darf in einem Probelauf  
+> nichts ändern; einer, der scheitert, wird protokolliert, und das Lesen geht weiter. Erweiterungen fügen ihre  
+> Klasse in ihren eigenen Einstellungen hinzu.  
 
 Standard: eine leere Liste.
 

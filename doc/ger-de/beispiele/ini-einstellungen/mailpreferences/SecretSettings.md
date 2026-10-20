@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## TokenSecret
 
-> The site secret of the links and the address hashes: generated on first use  
-> into settings/override/mailpreferences.ini.append.php (never committed).  
-> Changing it makes every link in sent mail invalid and every stored hash  
-> unmatchable.  
+> Das Website-Geheimnis der Links und der Adress-Hashes: bei der ersten Verwendung  
+> in settings/override/mailpreferences.ini.append.php erzeugt (nie committet).  
+> Eine Änderung macht jeden Link in gesendeten Mails ungültig und jeden gespeicherten Hash  
+> unauffindbar.  
 
 Standard: leer.
 

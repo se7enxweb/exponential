@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[AnalyzerSettings]` von `settings/image.ini`, mit 5 Einstellung(en).
 
-> -------- Image analysis settings --------  
+> -------- Einstellungen der Bildanalyse --------  
 
 Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,7 +21,7 @@ Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## RepositoryList
 
-> Where to look for analyzers  
+> Wo nach Analysatoren gesucht wird  
 
 Standard: eine Liste mit 1: `lib/ezimage/classes`.
 
@@ -37,7 +37,7 @@ RepositoryList[]=lib/ezimage/classes
 
 ## ExtensionList
 
-> A list of extensions which have analyzers, it will look in the imageanalyzer subdir.  
+> Eine Liste der Erweiterungen, die Analysatoren haben; gesucht wird im Unterverzeichnis imageanalyzer.  
 
 Standard: eine leere Liste.
 
@@ -52,7 +52,7 @@ ExtensionList[]
 
 ## ImageAnalyzers
 
-> A list of active analyzers  
+> Eine Liste der aktiven Analysatoren  
 
 Standard: eine Liste mit 2: `GIF`, `EXIF`.
 
@@ -69,8 +69,8 @@ ImageAnalyzers[]=EXIF
 
 ## ImageAnalyzerAlias
 
-> A list of aliases for analyzer, can be used to redirect certain  
-> analyzers to your own.  
+> Eine Liste von Aliasen für Analysatoren; damit lassen sich bestimmte  
+> Analysatoren auf eigene umleiten.  
 
 Standard: eine leere Liste.
 
@@ -85,10 +85,10 @@ ImageAnalyzerAlias[]
 
 ## AnalyzerMIMEList
 
-> A list of formats that need extra analysis  
-> GIF images must be analyzed to check for  
-> animated GIFs, animated GIFs are hard to convert  
-> to other formats.  
+> Eine Liste der Formate, die eine zusätzliche Analyse brauchen  
+> GIF-Bilder müssen analysiert werden, um  
+> animierte GIFs zu erkennen; animierte GIFs lassen sich schwer  
+> in andere Formate umwandeln.  
 
 Standard: eine Liste mit 1: `image/gif`.
 

@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[Leftmenu_design]` von `settings/menu.ini`, mit 9 Einstellung(en).
 
-> Definition of the custom topmenu  
-> Note: This is just an example  
+> Definition des eigenen Hauptmenüeintrags  
+> Hinweis: Dies ist nur ein Beispiel  
 >
 > \[Topmenu\_custom\]  
 > # Uses a custom navigation part (See list NavigationPart group above)  
@@ -32,32 +32,32 @@ Der Block `[Leftmenu_design]` von `settings/menu.ini`, mit 9 Einstellung(en).
 > # We don't show it in browse mode  
 > Shown\[browse\]=false  
 > \[Leftmenu\_example\]  
-> Translated name value (so use eng-GB here)  
-> Note: If you wish to have the name translatable you will need to  
->       add string hidden in a template somewhere with |i18n() call or  
->       a dummy PHP file with the following in it:  
+> Übersetzter Wert des Namens (verwenden Sie hier also eng-GB)  
+> Hinweis: Wenn der Name übersetzbar sein soll, müssen Sie  
+>       die Zeichenkette versteckt in einem Template mit einem Aufruf |i18n() hinzufügen oder  
+>       eine Dummy-PHP-Datei mit folgendem Inhalt anlegen:  
 > ezpI18n::tr( 'design/admin/parts/example/menu', 'Example menu', 'Leftmenu name for example menu' );  
-> This will cause the ezlupdate to include it in the .ts file.  
-> Note2: For custom menues (on custom tabs) you can also pass a hash of translations to ini\_menu.tpl  
-> so it will use strings in that if name of menu or link index exists in the hash.  
-> (see design/admin/templates/parts/setup/menu.tpl for example)  
+> Dann nimmt ezlupdate sie in die .ts-Datei auf.  
+> Hinweis 2: Für eigene Menüs (auf eigenen Reitern) können Sie ini\_menu.tpl auch einen Hash von Übersetzungen übergeben,  
+> sodass es deren Zeichenketten verwendet, wenn der Name des Menüs oder der Index des Links im Hash vorkommt.  
+> (Beispiel siehe design/admin/templates/parts/setup/menu.tpl)  
 > Name=Content Menu  
-> Policy list for menu items, hides box if false  
-> value an be either in "<node\_id>" or "<module>/<function>" form ("<module>/\*" for a module without  
-> policy functions)  
+> Richtlinienliste für Menüeinträge, blendet die Box aus, wenn false  
+> der Wert kann die Form "<node\_id>" oder "<module>/<function>" haben ("<module>/\*" für ein Modul ohne  
+> Richtlinienfunktionen)  
 > PolicyList\[\]=<value>  
-> List of link URLs and index, index is used for LinkNames and PolicyList settings  
+> Liste der Link-URLs und Indizes; der Index wird für die Einstellungen LinkNames und PolicyList verwendet  
 > Links\[\]  
-> Link name, see note on 'Name' for how to translate  
+> Name des Links; zum Übersetzen siehe den Hinweis zu 'Name'  
 > LinkNames\[<Links\_index>\]=<value>  
-> Policy list pr link using index from Links array as part of name and  
-> value an be either in "<node\_id>" or "<module>/<function>" form  
-> Menu item is disabled (no link) if this returns false  
+> Richtlinienliste pro Link, mit dem Index aus dem Array Links als Teil des Namens;  
+> der Wert kann die Form "<node\_id>" oder "<module>/<function>" haben  
+> Der Menüeintrag ist deaktiviert (kein Link), wenn dies false ergibt  
 > PolicyList\_<Links\_index>\[\]=<value>  
-> Enabled sets if menuitem is clickable in current ui\_context or value 'default'  
-> By default 'default' is considered true and 'edit' + 'browse' is false  
+> Enabled legt fest, ob der Menüeintrag im aktuellen ui\_context anklickbar ist, oder der Wert 'default'  
+> Standardmäßig gilt 'default' als true und 'edit' + 'browse' als false  
 > Enabled\_<Links\_index>\[browse\]=false  
-> Uncomment the following to add a left menu to content area  
+> Entfernen Sie den Kommentar der folgenden Zeilen, um dem Inhaltsbereich ein linkes Menü hinzuzufügen  
 > \[Leftmenu\_content\]  
 > Name=Content Menu  
 > Links\[languages\]=content/translations  
@@ -84,8 +84,8 @@ Name=design
 
 ## Links
 
-> The menus of the classic site designs (visual/menuconfig, doc/eng-us/guides/classic-menu-settings.md); its page marks  
-> the Design tab (kernel/visual/module.php)  
+> Die Menüs der klassischen Website-Designs (visual/menuconfig, doc/eng-us/guides/classic-menu-settings.md); seine Seite markiert  
+> den Reiter Design (kernel/visual/module.php)  
 
 Standard: ein Hash mit 4: `look_and_feel=content/edit/54`, `toolbar_management=visual/toolbarlist`, `menu_management=visual/menuconfig`, `template_editor=visual/templatelist`.
 
@@ -173,10 +173,10 @@ PolicyList_template_editor[]=visual/*
 
 ## LinkIcons
 
-> The tiles of these links where the Setup overview shows this menu (\[Leftmenu\_setup\] GroupSections\[design\]);  
-> translated in design/admin/parts/design/menu  
-> The Missing alt text link the extension expai appends here, for admin4's mega menu of the Dashboard tab  
-> (\[Leftmenu\_my\_mega\] adds this menu to its group "ei")  
+> Die Kacheln dieser Links, wo die Setup-Übersicht dieses Menü zeigt (\[Leftmenu\_setup\] GroupSections\[design\]);  
+> übersetzt in design/admin/parts/design/menu  
+> Der Link Fehlender Alternativtext, den die Erweiterung expai hier anhängt, für das Mega-Menü des Reiters Dashboard in admin4  
+> (\[Leftmenu\_my\_mega\] fügt dieses Menü seiner Gruppe "ei" hinzu)  
 
 Standard: ein Hash mit 6: `look_and_feel=palette`, `toolbar_management=tools`, `menu_management=menu-button-wide`, `template_editor=code-square`, `templates=file-earmark-code`, `expai_alttext=images`.
 

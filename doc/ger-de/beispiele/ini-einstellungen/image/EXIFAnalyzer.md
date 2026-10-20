@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[EXIFAnalyzer]` von `settings/image.ini`, mit 2 Einstellung(en).
 
-> Analyzer for EXIF data, currently supports JPEG and TIFF  
+> Analysator für EXIF-Daten, unterstützt derzeit JPEG und TIFF  
 
 Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[LeftMenuSettings]` von `settings/menu.ini`, mit 1 Einstellung(en).
 
-> Controls the display of the left menu for the administration interface.  
-> Width setting can be used to setup the widths (the measure is em) for the  
-> different menu sizes (small/medium/large).  
+> Steuert die Anzeige des linken Menüs der Administrationsoberfläche.  
+> Mit der Einstellung Width lassen sich die Breiten (in em) für die  
+> verschiedenen Menügrößen (small/medium/large) festlegen.  
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

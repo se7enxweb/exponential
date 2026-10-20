@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## RetentionDays
 
-> Days a suppressed address stays suppressed; 0 is forever (the default:  
-> only the hash is stored, the address cannot be read from it).  
+> Tage, die eine gesperrte Adresse gesperrt bleibt; 0 ist für immer (der Standard:  
+> Nur der Hash wird gespeichert, die Adresse lässt sich daraus nicht lesen).  
 
 Standard: `0`.
 
@@ -34,7 +34,7 @@ RetentionDays=0
 
 ## Reasons
 
-> Reasons an address can be suppressed with.  
+> Gründe, mit denen eine Adresse gesperrt werden kann.  
 
 Standard: eine Liste mit 6: `bounce`, `complaint`, `unsubscribe_all`, `legal`, `admin`, `bridge`.
 
@@ -55,9 +55,9 @@ Reasons[]=bridge
 
 ## Listeners
 
-> Classes told when an address is suppressed or lifted, so another system's  
-> own block list stays the same as this one (cjw\_newsletter adds its  
-> blacklist here): static suppressionAdded( $email, $hash, $reason ) and  
+> Klassen, die benachrichtigt werden, wenn eine Adresse gesperrt oder entsperrt wird, damit die eigene  
+> Sperrliste eines anderen Systems dieser gleich bleibt (cjw\_newsletter fügt seine  
+> Blacklist hier hinzu): static suppressionAdded( $email, $hash, $reason ) und  
 > suppressionLifted( $hash, $email or null, $reason ).  
 
 Standard: eine leere Liste.

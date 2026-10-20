@@ -11,18 +11,18 @@ generated: exp:help:examples
 
 Der Block `[Leftmenu_my_mega]` von `settings/menu.ini`, mit 7 Einstellung(en).
 
-> admin4's mega menu of the Dashboard tab (\[TopAdminMenu\] MegaMenuTabs\[\]=dashboard, \[Topmenu\_dashboard\]  
-> MegaMenuTemplate, drawn by parts/my/mega\_menu.tpl through parts/ini\_menu.tpl). Not a left menu: the Dashboard tab's  
-> left menu is \[Leftmenu\_my\], one list. This section only sorts the tab's functions into groups and reuses the menus  
-> that define them instead of restating them: each group adds \[Leftmenu\_my\] (GroupSections\[\]), with the links the  
-> extensions append there (Exponential Intelligence: expai, expai\_vector, expai\_chain, expai\_log, expai\_help; the  
-> Help center, which a site adds to the choice as overview-help\_center once its link is there), the group "ei" adds \[Leftmenu\_design\] too (Missing alt text, expai\_alttext), the group "activity"  
-> adds \[Leftmenu\_audit\] (the audit console and the AI events). Their addresses, policies, icons and descriptions are  
-> those of their menus, so a link of an extension that is not active, or one the user may not open, is not shown.  
-> Named Leftmenu\_my\_\* so that it shares the translation context of the tab's menu, design/admin/parts/my/menu.  
-> MegaMenuLinks\[\] chooses from them as <group>-<key>, in this order (the groups follow the order of their first link:  
-> the audit before Exponential Intelligence, Change password and Edit profile last, as in the left menu); at most 19  
-> are shown. My shopping basket and the preferred currency stay in the left menu.  
+> Das Mega-Menü des Reiters Dashboard in admin4 (\[TopAdminMenu\] MegaMenuTabs\[\]=dashboard, \[Topmenu\_dashboard\]  
+> MegaMenuTemplate, gezeichnet von parts/my/mega\_menu.tpl über parts/ini\_menu.tpl). Kein linkes Menü: Das linke Menü des Reiters Dashboard  
+> ist \[Leftmenu\_my\], eine Liste. Dieser Abschnitt sortiert nur die Funktionen des Reiters in Gruppen und verwendet die Menüs,  
+> die sie definieren, wieder, statt sie zu wiederholen: Jede Gruppe fügt \[Leftmenu\_my\] hinzu (GroupSections\[\]), mit den Links, die die  
+> Erweiterungen dort anhängen (Exponential Intelligence: expai, expai\_vector, expai\_chain, expai\_log, expai\_help; das  
+> Hilfecenter, das eine Website als overview-help\_center zur Auswahl hinzufügt, sobald sein Link da ist), die Gruppe "ei" fügt auch \[Leftmenu\_design\] hinzu (Fehlender Alternativtext, expai\_alttext), die Gruppe "activity"  
+> fügt \[Leftmenu\_audit\] hinzu (die Audit-Konsole und die KI-Ereignisse). Ihre Adressen, Richtlinien, Symbole und Beschreibungen sind  
+> die ihrer Menüs, sodass ein Link einer Erweiterung, die nicht aktiv ist, oder einer, den der Benutzer nicht öffnen darf, nicht angezeigt wird.  
+> Leftmenu\_my\_\* benannt, damit er den Übersetzungskontext des Menüs des Reiters teilt, design/admin/parts/my/menu.  
+> MegaMenuLinks\[\] wählt daraus als <group>-<key>, in dieser Reihenfolge (die Gruppen folgen der Reihenfolge ihres ersten Links:  
+> das Audit vor Exponential Intelligence, Passwort ändern und Profil bearbeiten zuletzt, wie im linken Menü); höchstens 19  
+> werden angezeigt. Mein Warenkorb und die bevorzugte Währung bleiben im linken Menü.  
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

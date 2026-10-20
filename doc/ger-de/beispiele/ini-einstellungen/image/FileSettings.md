@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## TemporaryDir
 
-> Which subdirectory of var/cache to use for temporary image files.  
+> Welches Unterverzeichnis von var/cache für temporäre Bilddateien verwendet wird.  
 
 Standard: `imagetmp`.
 
@@ -33,7 +33,7 @@ TemporaryDir=imagetmp
 
 ## PublishedImages
 
-> Wich subdirectory of var/storage to use for publish images  
+> Welches Unterverzeichnis von var/storage für veröffentlichte Bilder verwendet wird  
 
 Standard: `images`.
 
@@ -47,7 +47,7 @@ PublishedImages=images
 
 ## VersionedImages
 
-> Wich subdirectory of var/storage to use for non-published (drafts, archived) images  
+> Welches Unterverzeichnis von var/storage für nicht veröffentlichte Bilder (Entwürfe, archivierte) verwendet wird  
 
 Standard: `images-versioned`.
 
@@ -61,10 +61,10 @@ VersionedImages=images-versioned
 
 ## DirPermissions
 
-> Permission for new image directories, setting it to 0777 means that anyone  
-> can read and write the files and can be considered a security risk.  
-> It's preferred to use 0770 and make sure the web server has correct  
-> user/group access.  
+> Berechtigung für neue Bildverzeichnisse; 0777 bedeutet, dass jeder  
+> die Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.  
+> Besser ist 0770, wobei Sie sicherstellen, dass der Webserver den richtigen  
+> Benutzer-/Gruppenzugriff hat.  
 
 Standard: `0777`.
 
@@ -78,10 +78,10 @@ DirPermissions=0777
 
 ## ImagePermissions
 
-> Permission for new images, setting it to 0666 means that anyone  
-> can read and write the files and can be considered a security risk.  
-> It's preferred to use 0660 and make sure the web server has correct  
-> user/group access.  
+> Berechtigung für neue Bilder; 0666 bedeutet, dass jeder  
+> die Dateien lesen und schreiben kann, was als Sicherheitsrisiko gelten kann.  
+> Besser ist 0660, wobei Sie sicherstellen, dass der Webserver den richtigen  
+> Benutzer-/Gruppenzugriff hat.  
 
 Standard: `0666`.
 

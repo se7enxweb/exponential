@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[ModuleOverrides]` von `settings/module.ini`, mit 1 Einstellung(en).
 
-> This controls overriding of navigations parts defined  
-> module.php or by dynamic code.  
+> Dies steuert das Überschreiben von Navigationsbereichen, die in  
+> module.php oder durch dynamischen Code definiert sind.  
 >
-> You can use the module name alone or with a view  
+> Sie können den Modulnamen allein oder mit einer Ansicht verwenden  
 
 Bearbeiten Sie `settings/module.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

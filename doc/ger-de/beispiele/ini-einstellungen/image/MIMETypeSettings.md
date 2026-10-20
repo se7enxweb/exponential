@@ -11,23 +11,23 @@ generated: exp:help:examples
 
 Der Block `[MIMETypeSettings]` von `settings/image.ini`, mit 3 Einstellung(en).
 
-> According to the RSS 1.0 / RSS 2.0 specification:  
-> maximum value for width is 144, default value is 88,  
-> maximum value for height is 400, default value is 31.  
-> Optional image alias used in rss feed items if you specify image  
-> attribute as source for description tag, 'rss' is used instead if disabled  
+> Gemäß der Spezifikation von RSS 1.0 / RSS 2.0:  
+> Höchstwert für die Breite ist 144, Standard 88,  
+> Höchstwert für die Höhe ist 400, Standard 31.  
+> Optionaler Bild-Alias für Einträge im RSS-Feed, wenn Sie ein Bild-  
+> attribut als Quelle des Tags description angeben; wenn deaktiviert, wird stattdessen 'rss' verwendet  
 >
 > \[rssitem\]  
 > Reference=reference  
 > Filters\[\]=geometry/scaledownonly=128;128  
-> An example alias which converts the image to grayscale  
+> Ein Beispiel-Alias, der das Bild in Graustufen umwandelt  
 >
 > \[gray\]  
 > Reference=large  
 > Filters\[\]  
 > Filters\[\]=colorspace/gray  
-> An example alias which crops the image to specific size  
-> and adds a border.  
+> Ein Beispiel-Alias, der das Bild auf eine bestimmte Größe zuschneidet  
+> und einen Rahmen hinzufügt.  
 >
 > \[zoom\]  
 > Reference=reference  
@@ -36,7 +36,7 @@ Der Block `[MIMETypeSettings]` von `settings/image.ini`, mit 3 Einstellung(en).
 > Filters\[\]=border/color=0;0;0  
 > Filters\[\]=border=4;4  
 >
-> -------- Image MIME type settings --------  
+> -------- Einstellungen der MIME-Typen von Bildern --------  
 
 Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -46,9 +46,9 @@ Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## OverrideList
 
-> A list of settings which override certain MIME types  
-> The overrides can define allowed and disallowed filters  
-> as well as extra filters.l  
+> Eine Liste von Einstellungen, die bestimmte MIME-Typen überschreiben  
+> Die Overrides können erlaubte und nicht erlaubte Filter  
+> sowie zusätzliche Filter festlegen.  
 
 Standard: eine Liste mit 2: `AnimatedGIF`, `LayeredPhotoshop`.
 
@@ -65,9 +65,9 @@ OverrideList[]=LayeredPhotoshop
 
 ## Quality
 
-> A list of mimetypes and their image quality value  
-> The value varies from mime type to mime type.  
-> Set JPEG quality from 0 (worst quality, smallest file) to 100 (best quality, biggest file)  
+> Eine Liste von MIME-Typen und ihrem Wert für die Bildqualität  
+> Der Wert ist je MIME-Typ verschieden.  
+> JPEG-Qualität von 0 (schlechteste Qualität, kleinste Datei) bis 100 (beste Qualität, größte Datei) setzen  
 
 Standard: eine Liste mit 1: `image/jpeg;75`.
 
@@ -83,8 +83,8 @@ Quality[]=image/jpeg;75
 
 ## ConversionRules
 
-> The global conversion rules  
-> Most will be converted to jpeg except gif and xpms  
+> Die globalen Umwandlungsregeln  
+> Die meisten werden in jpeg umgewandelt, außer gif und xpm  
 
 Standard: eine Liste mit 4: `image/webp;image/png`, `image/gif;image/png`, `image/x-xpixmap;image/png`, `*;image/jpeg`.
 

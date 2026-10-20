@@ -106,8 +106,8 @@ PolicyList[]=content/dashboard
 
 ## MegaMenuTemplate
 
-> admin4's mega menu (\[TopAdminMenu\] MegaMenuTabs\[\]=dashboard): the template that draws its links, a choice of  
-> \[Leftmenu\_my\_mega\] (see there)  
+> Das Mega-Menü von admin4 (\[TopAdminMenu\] MegaMenuTabs\[\]=dashboard): das Template, das seine Links zeichnet, eine Auswahl aus  
+> \[Leftmenu\_my\_mega\] (siehe dort)  
 
 Standard: `design:parts/my/mega_menu.tpl`.
 
@@ -121,8 +121,8 @@ MegaMenuTemplate=design:parts/my/mega_menu.tpl
 
 ## MegaMenuSection
 
-> The menu section whose MegaMenuLinks\[\] the template uses, for the check of its keys (unknown ones are named in the  
-> debug report, parts/a4\_mega\_menu\_check.tpl)  
+> Der Menüabschnitt, dessen MegaMenuLinks\[\] das Template verwendet, für die Prüfung seiner Schlüssel (unbekannte werden im  
+> Debug-Bericht genannt, parts/a4\_mega\_menu\_check.tpl)  
 
 Standard: `Leftmenu_my_mega`.
 
@@ -136,8 +136,8 @@ MegaMenuSection=Leftmenu_my_mega
 
 ## MegaMenuLayout
 
-> The panel's layout: wide sets the groups in up to four balanced columns (three at 960px, two below), for a choice of  
-> many links that would not fit the window's height in the default three columns of the Setup and Users tabs  
+> Das Layout des Panels: wide setzt die Gruppen in bis zu vier ausgeglichene Spalten (drei bei 960px, darunter zwei), für eine Auswahl  
+> vieler Links, die in den drei Standardspalten der Reiter Setup und Benutzer nicht in die Höhe des Fensters passen würden  
 
 Standard: `wide`.
 

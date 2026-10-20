@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## Gate
 
-> enabled: categorised optional mail is checked and blocked when the person  
-> has not switched the category on. disabled: every mail is sent as before  
-> (optional mail still gets its footer and headers).  
+> enabled: Kategorisierte optionale Mail wird geprüft und blockiert, wenn die Person  
+> die Kategorie nicht eingeschaltet hat. disabled: Jede Mail wird wie bisher gesendet  
+> (optionale Mail erhält trotzdem ihre Fußzeile und Header).  
 
 Standard: `enabled`.
 
@@ -35,11 +35,11 @@ Gate=enabled
 
 ## EssentialSenders
 
-> Mail without a category is always sent, as before. It is logged as  
-> "uncategorised" unless its sender is listed here: an e-mail address of the  
-> From header, or a file of the code that hands the mail to eZMailTransport  
-> (path relative to the installation), or a class name in that call stack.  
-> Senders listed here are logged as essential.  
+> Mail ohne Kategorie wird wie bisher immer gesendet. Sie wird als  
+> "uncategorised" protokolliert, außer ihr Absender steht hier: eine E-Mail-Adresse aus dem  
+> Header From, eine Datei des Codes, der die Mail an eZMailTransport übergibt  
+> (Pfad relativ zur Installation), oder ein Klassenname in diesem Aufrufstapel.  
+> Hier aufgeführte Absender werden als essential protokolliert.  
 
 Standard: eine Liste mit 7: `kernel/private/classes/views/user/register.php`, `kernel/private/classes/views/user/forgotpassword.php`, `kernel/user/ezuseroperationcollection.php`, `kernel/classes/confirmorderhandlers/ezdefaultconfirmorderhandler.php`, `kernel/classes/audit/sinks/expauditmailsink.php`, `kernel/setup/steps/ezstep_registration.php`, `expMailPreferencesService`.
 
@@ -61,8 +61,8 @@ EssentialSenders[]=expMailPreferencesService
 
 ## LogFile
 
-> The gate's own log of decisions (blocked, sent, uncategorised), JSON lines,  
-> without addresses, relative to the var directory. Rotated at MaxLogSize bytes.  
+> Das eigene Protokoll der Entscheidungen des Gates (blocked, sent, uncategorised), JSON-Zeilen,  
+> ohne Adressen, relativ zum var-Verzeichnis. Bei MaxLogSize Bytes rotiert.  
 
 Standard: `log/mailgate.jsonl`.
 
@@ -88,8 +88,8 @@ MaxLogSize=5242880
 
 ## SplitRecipients
 
-> Optional mail to several recipients is sent as one message per recipient,  
-> so each gets a working unsubscribe link of its own.  
+> Optionale Mail an mehrere Empfänger wird als eine Nachricht pro Empfänger gesendet,  
+> damit jeder einen eigenen, funktionierenden Abmeldelink erhält.  
 
 Standard: `enabled`.
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/module.ini` nie selbst: Ein Update ersetzt die Datei. S
 
 ## ModuleRepositories
 
-> An array of directories to search for modules  
+> Ein Array von Verzeichnissen, in denen nach Modulen gesucht wird  
 
 Standard: eine Liste mit 2: `kernel`, `kernel/private/modules`.
 
@@ -36,10 +36,10 @@ ModuleRepositories[]=kernel/private/modules
 
 ## ExtensionRepositories
 
-> A list of extensions which have modules  
-> It's common to create a settings/module.ini.append file  
-> in your extension and add the extension name to automatically  
-> get modules from the extension when it's turned on.  
+> Eine Liste der Erweiterungen, die Module haben  
+> Üblicherweise legt man in der Erweiterung eine Datei settings/module.ini.append  
+> an und trägt den Namen der Erweiterung ein, um automatisch  
+> die Module der Erweiterung zu erhalten, wenn sie eingeschaltet ist.  
 
 Standard: eine leere Liste.
 
@@ -54,10 +54,10 @@ ExtensionRepositories[]
 
 ## ModuleList
 
-> An array of known modules in the system, extensions should  
-> append to this array.  
-> This is currently used to avoid URL aliases overriding  
-> existing module names  
+> Ein Array der im System bekannten Module; Erweiterungen sollten  
+> an dieses Array anhängen.  
+> Es wird derzeit verwendet, damit URL-Aliase keine  
+> vorhandenen Modulnamen überschreiben  
 
 Standard: eine Liste mit 34: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `error`, `exphelp`, `ezinfo`, `infocollector` ....
 

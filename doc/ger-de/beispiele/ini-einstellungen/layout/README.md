@@ -12,25 +12,25 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/layout.ini`: 3 Blöcke, 3 Einstellungen.
 
-> Exponential configuration file for layout module  
+> Exponential-Konfigurationsdatei für das Modul layout  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/layout.ini.append or  
->       settings/override/layout.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/layout.ini.append oder  
+>       settings/override/layout.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
 >
-> Consists of groups which are the layout name  
-> A layout group can have the followin variables  
-> - ContentType   - Sets 'Content-Type' to use for output on a specific layout.  
->                   example: ContentType=text/xml  
-> - PageLayout    - Sets the pagelayout to use for a specific layout.  
-> - UseAccessPass - Include or exclude the layout path in links.  
->                   example : UseAccessPass=false  
-> - UseFullUrl    - Turns usage of full urls on links ON or OFF.  
->                   example : UseFullUrl=true  
+> Besteht aus Gruppen, die den Namen des Layouts tragen  
+> Eine Layout-Gruppe kann folgende Variablen haben  
+> - ContentType   - setzt den 'Content-Type' für die Ausgabe eines bestimmten Layouts.  
+>                   Beispiel: ContentType=text/xml  
+> - PageLayout    - setzt das Pagelayout für ein bestimmtes Layout.  
+> - UseAccessPass - den Layout-Pfad in Links ein- oder ausschließen.  
+>                   Beispiel: UseAccessPass=false  
+> - UseFullUrl    - schaltet volle URLs in Links ein oder aus.  
+>                   Beispiel: UseFullUrl=true  
 
 | Block | Einstellungen |
 |---|---|

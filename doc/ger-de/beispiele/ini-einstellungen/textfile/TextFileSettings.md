@@ -79,7 +79,7 @@ FileFieldSeparator=tab
 
 ## DefaultUserGroupType
 
-> Could be id or name  
+> Kann id oder name sein  
 
 Standard: `id`.
 

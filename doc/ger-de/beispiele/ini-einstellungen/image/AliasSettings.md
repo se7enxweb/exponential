@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[AliasSettings]` von `settings/image.ini`, mit 1 Einstellung(en).
 
-> -------- Image alias settings --------  
+> -------- Einstellungen der Bild-Aliase --------  
 
 Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,9 +21,9 @@ Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## AliasList
 
-> Defines a list of aliases that are available to  
-> the template engine and other clients.  
-> The alias must be defined as a separate INI block.  
+> Legt eine Liste von Aliasen fest, die der  
+> Template-Engine und anderen Clients zur Verfügung stehen.  
+> Der Alias muss als eigener INI-Block definiert sein.  
 
 Standard: eine Liste mit 6: `reference`, `small`, `tiny`, `medium`, `large`, `rss`.
 

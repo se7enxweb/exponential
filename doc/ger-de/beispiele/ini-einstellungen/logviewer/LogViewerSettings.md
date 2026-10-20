@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/logviewer.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## LogViewer
 
-> enabled | disabled. With disabled, setup/logs and its feed answer 404.  
+> enabled | disabled. Mit disabled antworten setup/logs und sein Feed mit 404.  
 
 Standard: `enabled`.
 
@@ -33,11 +33,11 @@ LogViewer=enabled
 
 ## Directories
 
-> The directories whose log files are shown, relative to the installation root (or absolute, still inside it).  
-> A \* matches one directory name (var/\*/log is the log directory of every site). Only the files directly in a  
-> directory are listed, never its subdirectories (the audit trail in var/log/audit has its own console), and a  
-> directory or file that resolves (realpath) outside the installation root is never shown, so a symbolic link  
-> cannot lead anywhere else. {log\_dir} is the log directory eZDebug writes to (var/log, or var/<site>/log with  
+> Die Verzeichnisse, deren Logdateien angezeigt werden, relativ zum Wurzelverzeichnis der Installation (oder absolut, aber darin).  
+> Ein \* passt auf einen Verzeichnisnamen (var/\*/log ist das Log-Verzeichnis jeder Website). Nur die Dateien direkt in einem  
+> Verzeichnis werden aufgeführt, nie seine Unterverzeichnisse (der Audit-Trail in var/log/audit hat seine eigene Konsole), und ein  
+> Verzeichnis oder eine Datei, die (per realpath) außerhalb des Wurzelverzeichnisses der Installation liegt, wird nie angezeigt, sodass ein symbolischer Link  
+> nirgendwo anders hinführen kann. {log\_dir} ist das Log-Verzeichnis, in das eZDebug schreibt (var/log, oder var/<site>/log mit  
 > site.ini \[FileSettings\] UseGlobalLogDir=disabled).  
 
 Standard: eine Liste mit 3: `var/log`, `{log_dir}`, `var/*/log`.
@@ -56,8 +56,8 @@ Directories[]=var/*/log
 
 ## FilePatterns
 
-> The file names shown (shell patterns): the log files, their rotations (.1 .. .N) and compressed rotations  
-> (.gz, read only: viewed and searched, never followed).  
+> Die angezeigten Dateinamen (Shell-Muster): die Logdateien, ihre Rotationen (.1 .. .N) und komprimierten Rotationen  
+> (.gz, nur lesen: angesehen und durchsucht, nie verfolgt).  
 
 Standard: eine Liste mit 6: `*.log`, `*.log.[0-9]`, `*.log.[0-9][0-9]`, `*.log.[0-9].gz`, `*.log.[0-9][0-9].gz`, `*.log.gz`.
 
@@ -78,7 +78,7 @@ FilePatterns[]=*.log.gz
 
 ## ExcludePatterns
 
-> File names never shown (shell patterns), whatever the lists above say.  
+> Dateinamen, die nie angezeigt werden (Shell-Muster), egal was die Listen oben sagen.  
 
 Standard: eine leere Liste.
 
@@ -93,11 +93,11 @@ ExcludePatterns[]
 
 ## KernelLogs
 
-> The groups of the navigator. A file whose name matches KernelLogs\[\] is in "Kernel", a file in another site's  
-> log directory (var/<site>/log) in "Site", any other in "Extensions"; a rotation (.1 .. .N, .gz) is in "Rotated  
-> archives". Shell patterns of the current file's name.  
-> The request logs (doc/eng-us/features/6.0/request-logs.md): the not found requests (404, 410) and the requests the  
-> request classifier took for an attack (any status), one line per request.  
+> Die Gruppen des Navigators. Eine Datei, deren Name auf KernelLogs\[\] passt, steht unter „Kernel“, eine Datei im Log-Verzeichnis  
+> einer anderen Website (var/<site>/log) unter „Website“, jede andere unter „Erweiterungen“; eine Rotation (.1 .. .N, .gz) steht unter „Rotierte  
+> Archive“. Shell-Muster auf den Namen der aktuellen Datei.  
+> Die Anfrage-Logs (doc/eng-us/features/6.0/request-logs.md): die nicht gefundenen Anfragen (404, 410) und die Anfragen, die der  
+> Anfrage-Klassifizierer für einen Angriff hielt (jeder Status), eine Zeile pro Anfrage.  
 
 Standard: eine Liste mit 15: `error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`, `deprecated.log`, `auth.log`, `cronjob*.log`, `storage.log`, `setup.log`, `mail.log`, `trashpurge.log` ....
 
@@ -127,8 +127,8 @@ KernelLogs[]=csp.log
 
 ## DefaultKey
 
-> The log opened when the page is opened without one: a key (see below), else the file DefaultFile (relative to the  
-> root). When neither can be opened: the first kernel log.  
+> Das Log, das geöffnet wird, wenn die Seite ohne eines geöffnet wird: ein Schlüssel (siehe unten), sonst die Datei DefaultFile (relativ zum  
+> Wurzelverzeichnis). Wenn sich keines öffnen lässt: das erste Kernel-Log.  
 
 Standard: `error`.
 
@@ -154,18 +154,18 @@ DefaultFile=var/log/error.log
 
 ## LogList
 
-> Every log has a key, used in its permalink /setup/logs/view/<key> (doc/eng-us/features/6.0/log-viewer.md, "Permalinks"):  
->   var/log/<name>.log         <name>              e.g. /setup/logs/view/error, /setup/logs/view/debug  
->   var/<site>/log/<name>.log  <site>-<name>       e.g. /setup/logs/view/site-storage  
-> and the logs configured here by key, such as the web server's. A key names only these: never a path.  
-> LogList\[\] lists the configured keys, LogPath\[<key>\] the file (absolute, or relative to the root; it may be outside  
-> the installation, as the web server's logs are; its rotations <name>.N and <name>.N.gz beside it are listed too),  
-> LogLabel\[<key>\] the name the navigator shows, LogGroup\[<key>\] its group (kernel, site, extensions, webserver; the  
-> default webserver). A key without a LogPath is not shown: the web server's logs are opt-in, never guessed. The web  
-> server's user must be able to read the file (Plesk: /var/www/vhosts/<domain>/logs/access\_ssl\_log and error\_log).  
-> The actions rotate, empty and remove are never offered for the webserver group: the web server owns those files.  
-> LogLabel\[<key>\] also names a log of the log directories by its key (var/log/404.log is the key 404); the label is  
-> translated (context kernel/logviewer) when the translation has it.  
+> Jedes Log hat einen Schlüssel, verwendet in seinem Permalink /setup/logs/view/<key> (doc/eng-us/features/6.0/log-viewer.md, "Permalinks"):  
+>   var/log/<name>.log         <name>              z. B. /setup/logs/view/error, /setup/logs/view/debug  
+>   var/<site>/log/<name>.log  <site>-<name>       z. B. /setup/logs/view/site-storage  
+> und die hier per Schlüssel konfigurierten Logs, etwa die des Webservers. Ein Schlüssel nennt nur diese: nie einen Pfad.  
+> LogList\[\] listet die konfigurierten Schlüssel auf, LogPath\[<key>\] die Datei (absolut oder relativ zum Wurzelverzeichnis; sie darf außerhalb  
+> der Installation liegen, wie die Logs des Webservers; ihre Rotationen <name>.N und <name>.N.gz daneben werden ebenfalls aufgeführt),  
+> LogLabel\[<key>\] den Namen, den der Navigator zeigt, LogGroup\[<key>\] ihre Gruppe (kernel, site, extensions, webserver; der  
+> Standard ist webserver). Ein Schlüssel ohne LogPath wird nicht angezeigt: Die Logs des Webservers müssen eingeschaltet werden, sie werden nie erraten. Der  
+> Benutzer des Webservers muss die Datei lesen können (Plesk: /var/www/vhosts/<domain>/logs/access\_ssl\_log und error\_log).  
+> Die Aktionen Rotieren, Leeren und Entfernen werden für die Gruppe webserver nie angeboten: Diese Dateien gehören dem Webserver.  
+> LogLabel\[<key>\] benennt auch ein Log der Log-Verzeichnisse über seinen Schlüssel (var/log/404.log hat den Schlüssel 404); die Beschriftung wird  
+> übersetzt (Kontext kernel/logviewer), wenn die Übersetzung sie hat.  
 
 Standard: eine Liste mit 2: `webserver-access`, `webserver-error`.
 
@@ -227,10 +227,10 @@ LogGroup[]
 
 ## FileLevels
 
-> The level of a file whose lines do not name one: <file name pattern>;<level> (error, warning, notice, debug).  
-> The first pattern that matches wins; a line that names its level ("Error:", "\[warning\]") always wins.  
-> The request logs name no level: a not found request is a notice (it is an answer, not a fault), a request the  
-> classifier took for an attack a warning (worth a look, listed by the error digest by default).  
+> Die Stufe einer Datei, deren Zeilen keine nennen: <file name pattern>;<level> (error, warning, notice, debug).  
+> Das erste passende Muster gewinnt; eine Zeile, die ihre Stufe nennt ("Error:", "\[warning\]"), gewinnt immer.  
+> Die Anfrage-Logs nennen keine Stufe: Eine nicht gefundene Anfrage ist eine notice (sie ist eine Antwort, kein Fehler), eine Anfrage, die der  
+> Klassifizierer für einen Angriff hielt, eine warning (einen Blick wert, standardmäßig in der Fehlerübersicht aufgeführt).  
 
 Standard: eine Liste mit 10: `error.log*;error`, `*error*.log*;error`, `warning.log*;warning`, `strict.log*;warning`, `deprecated.log*;notice`, `notice.log*;notice`, `debug.log*;debug`, `404.log*;notice`, `security.log*;warning`, `csp.log*;warning`.
 

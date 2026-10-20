@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## TopIdentifierList
 
-> This list contains the identifiers of the classse  
-> that are allowed to be shown in top menues  
+> Diese Liste enthält die Bezeichner der Klassen,  
+> die in oberen Menüs angezeigt werden dürfen  
 
 Standard: eine Liste mit 4: `folder`, `feedback_form`, `gallery`, `forum`.
 
@@ -39,8 +39,8 @@ TopIdentifierList[]=forum
 
 ## LeftIdentifierList
 
-> This list contains the identifiers of the classse  
-> that are allowed to be shown in left menues  
+> Diese Liste enthält die Bezeichner der Klassen,  
+> die in linken Menüs angezeigt werden dürfen  
 
 Standard: eine Liste mit 4: `folder`, `feedback_form`, `gallery`, `forum`.
 

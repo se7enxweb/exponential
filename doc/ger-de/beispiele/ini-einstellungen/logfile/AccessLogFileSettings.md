@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/logfile.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## StorageDir
 
-> Storage of the log file, for example /var/log/httpd  
-> Do not add trailing slash  
+> Speicherort der Logdatei, zum Beispiel /var/log/httpd  
+> Ohne Schrägstrich am Ende  
 
 Standard: leer.
 
@@ -34,7 +34,7 @@ StorageDir=
 
 ## LogFileName
 
-> The name of log file, for example mytest.log  
+> Der Name der Logdatei, zum Beispiel mytest.log  
 
 Standard: leer.
 
@@ -48,10 +48,10 @@ LogFileName=
 
 ## SitePrefix
 
-> If using site match by URL, the site may like http://siteurl/mysite and  
-> apache log will start with for example mysite/content/view/full/node\_id. To  
-> remove this prefix in apache log before analysis the log, add mysite to  
-> SitePrefix. Example: SitePrefix\[\]=mysite  
+> Bei der Erkennung der Website über die URL kann die Website etwa http://siteurl/mysite lauten, und  
+> das Apache-Log beginnt dann zum Beispiel mit mysite/content/view/full/node\_id. Um  
+> dieses Präfix im Apache-Log vor der Auswertung zu entfernen, tragen Sie mysite in  
+> SitePrefix ein. Beispiel: SitePrefix\[\]=mysite  
 
 Standard: eine Liste mit 1: ``.
 
@@ -67,7 +67,7 @@ SitePrefix[]=
 
 ## PathPrefix
 
-> If any site accesses use the PathPrefix setting, enter them here  
+> Wenn Siteaccesses die Einstellung PathPrefix verwenden, tragen Sie sie hier ein  
 
 Standard: eine Liste mit 1: ``.
 

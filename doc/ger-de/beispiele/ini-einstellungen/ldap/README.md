@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/ldap.ini`: 1 Blöcke, 33 Einstellungen.
 
-> Exponential configuration file for connection and authentication of users via LDAP  
+> Exponential-Konfigurationsdatei für die Verbindung und Authentifizierung von Benutzern über LDAP  
 
 | Block | Einstellungen |
 |---|---|

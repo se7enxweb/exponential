@@ -19,39 +19,39 @@ Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## ImageConverters
 
-> List of converters to use, each entry is the name of the converter  
-> which is defined in a ini block.  
-> You can use ImageMagick and GD handlers by default.  
-> The order of the convertes are important since the first  
-> applicable converter will be used. The last handler is  
-> usually a fallback converter which can take care of most formats.  
+> Liste der zu verwendenden Konverter; jeder Eintrag ist der Name des Konverters,  
+> der in einem INI-Block definiert ist.  
+> Standardmäßig können Sie die Handler ImageMagick und GD verwenden.  
+> Die Reihenfolge der Konverter ist wichtig, weil der erste  
+> passende Konverter verwendet wird. Der letzte Handler ist  
+> meist ein Ausweichkonverter, der die meisten Formate beherrscht.  
 >
-> GD comes first: it is the image extension built into PHP, so it  
-> converts in process, without starting an external program for  
-> every image, and needs nothing installed beside PHP. It reads and  
-> writes JPEG, PNG, GIF and WBMP and supports every geometry filter  
-> the default aliases use.  
-> ImageMagick stays in the list as the fallback. It is used for the  
-> formats GD cannot read (for example PSD, TIFF, PDF or WebP) and for  
-> the filters only it supports (for example flatten, resize,  
-> filter/swirl or filter/noise), and it takes over completely when the  
-> GD extension is missing or \[GD\] IsEnabled=false.  
-> To prefer ImageMagick again, override the list in  
+> GD steht zuerst: Es ist die in PHP eingebaute Bilderweiterung, es  
+> wandelt also im Prozess um, ohne für jedes Bild ein externes Programm  
+> zu starten, und braucht außer PHP nichts Installiertes. Es liest und  
+> schreibt JPEG, PNG, GIF und WBMP und unterstützt jeden Geometriefilter,  
+> den die Standard-Aliase verwenden.  
+> ImageMagick bleibt als Ausweichlösung in der Liste. Es wird für die  
+> Formate verwendet, die GD nicht lesen kann (zum Beispiel PSD, TIFF, PDF oder WebP), und für  
+> die Filter, die nur es unterstützt (zum Beispiel flatten, resize,  
+> filter/swirl oder filter/noise), und es übernimmt ganz, wenn die  
+> GD-Erweiterung fehlt oder \[GD\] IsEnabled=false ist.  
+> Um wieder ImageMagick zu bevorzugen, überschreiben Sie die Liste in  
 > settings/override/image.ini.append.php:  
 >   ImageConverters\[\]  
 >   ImageConverters\[\]=ImageMagick  
 >   ImageConverters\[\]=GD  
-> The list can also contain converters which cannot work  
-> on the installed server, the converter should check this  
-> and tell the image system to not use it.  
+> Die Liste darf auch Konverter enthalten, die auf dem installierten  
+> Server nicht funktionieren; der Konverter sollte das prüfen  
+> und dem Bildsystem sagen, ihn nicht zu verwenden.  
 >
-> For any other converter make sure you have a INI section  
-> with the same name as your converter's  
+> Für jeden anderen Konverter sorgen Sie für einen INI-Abschnitt  
+> mit demselben Namen wie Ihr Konverter  
 >
-> For example :  
+> Zum Beispiel:  
 > ImageConverters\[\]=MyCustomConverter  
 > \[MyCustomConverter\]  
-> with the same INI variables as GD or ImageMagick INI sections  
+> mit denselben INI-Variablen wie die INI-Abschnitte GD oder ImageMagick  
 
 Standard: eine Liste mit 2: `GD`, `ImageMagick`.
 
@@ -68,11 +68,11 @@ ImageConverters[]=ImageMagick
 
 ## LockTimeout
 
-> Waiting time for processes in queue to get an exclusive writing lock  
-> for writing a specific image alias.  
+> Wartezeit für Prozesse in der Warteschlange, um eine exklusive Schreibsperre  
+> zum Schreiben eines bestimmten Bild-Alias zu erhalten.  
 >
-> If a process spends longer than this time waiting, the process holding the lock  
-> will be ended, and the waiting process will continue, generating the image alias.  
+> Wartet ein Prozess länger, wird der Prozess, der die Sperre hält,  
+> beendet, und der wartende Prozess macht weiter und erzeugt den Bild-Alias.  
 
 Standard: `60`.
 

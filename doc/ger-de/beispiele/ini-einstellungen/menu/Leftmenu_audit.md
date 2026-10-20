@@ -11,13 +11,13 @@ generated: exp:help:examples
 
 Der Block `[Leftmenu_audit]` von `settings/menu.ini`, mit 13 Einstellung(en).
 
-> Hidden by default as of 4.3  
+> Seit 4.3 standardmäßig ausgeblendet  
 > Links\[my\_shopping\_basket\]=shop/basket  
 > PolicyList\_my\_shopping\_basket\[\]=shop/buy  
-> Hidden by default as of 4.3  
+> Seit 4.3 standardmäßig ausgeblendet  
 > Links\[my\_wish\_list\]=shop/wishlist  
 > PolicyList\_my\_wish\_list\[\]=shop/buy  
-> The left menu of the audit tab (design:audit/menu.tpl). Archives and Settings need audit/manage.  
+> Das linke Menü des Reiters Audit (design:audit/menu.tpl). Archive und Einstellungen brauchen audit/manage.  
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -185,10 +185,10 @@ PolicyList_settings[]=audit/manage
 
 ## LinkIcons
 
-> The tiles of these links where the Setup overview shows this menu (\[Leftmenu\_setup\] GroupSections\[audit\]);  
-> translated in design/admin/parts/audit/menu  
-> The AI events link the extension expai appends here, for admin4's mega menu of the Dashboard tab  
-> (\[Leftmenu\_my\_mega\] adds this menu to its group "activity")  
+> Die Kacheln dieser Links, wo die Setup-Übersicht dieses Menü zeigt (\[Leftmenu\_setup\] GroupSections\[audit\]);  
+> übersetzt in design/admin/parts/audit/menu  
+> Der Link KI-Ereignisse, den die Erweiterung expai hier anhängt, für das Mega-Menü des Reiters Dashboard in admin4  
+> (\[Leftmenu\_my\_mega\] fügt dieses Menü seiner Gruppe "activity" hinzu)  
 
 Standard: ein Hash mit 9: `dashboard=speedometer`, `console=terminal`, `recent=list-ul`, `charts=graph-up-arrow`, `alerts=exclamation-triangle`, `export=download`, `archives=archive`, `settings=journal-check`, `expai_events=lightning`.
 

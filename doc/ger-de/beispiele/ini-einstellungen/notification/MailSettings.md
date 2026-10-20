@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/notification.ini` nie selbst: Ein Update ersetzt die Da
 
 ## EmailSender
 
-> Which email address to use when sending notification mail  
-> If empty site.ini/MailSettings/AdminEmail is used.  
+> Welche E-Mail-Adresse beim Senden von Benachrichtigungsmails verwendet wird  
+> Wenn leer, wird site.ini/MailSettings/AdminEmail verwendet.  
 
 Standard: leer.
 

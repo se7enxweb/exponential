@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/logviewer.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## InitialBytes
 
-> How much of a file the page shows when it is opened: the last InitialBytes bytes, from the first whole line.  
+> Wie viel einer Datei die Seite beim Öffnen zeigt: die letzten InitialBytes Bytes, ab der ersten vollständigen Zeile.  
 
 Standard: `65536`.
 
@@ -33,7 +33,7 @@ InitialBytes=65536
 
 ## MaxBytesPerPoll
 
-> The most bytes one poll reads (a file that grew more than that is caught up over the next polls).  
+> Die meisten Bytes, die eine Abfrage liest (eine Datei, die um mehr gewachsen ist, wird über die nächsten Abfragen eingeholt).  
 
 Standard: `262144`.
 
@@ -47,7 +47,7 @@ MaxBytesPerPoll=262144
 
 ## PollInterval
 
-> The poll interval of the page in milliseconds, while lines arrive.  
+> Das Abfrageintervall der Seite in Millisekunden, solange Zeilen ankommen.  
 
 Standard: `1000`.
 
@@ -61,7 +61,7 @@ PollInterval=1000
 
 ## MaxPollInterval
 
-> While nothing arrives the interval doubles after each empty poll, up to MaxPollInterval milliseconds.  
+> Solange nichts ankommt, verdoppelt sich das Intervall nach jeder leeren Abfrage, bis zu MaxPollInterval Millisekunden.  
 
 Standard: `15000`.
 
@@ -75,7 +75,7 @@ MaxPollInterval=15000
 
 ## MaxLinesKept
 
-> The most lines the page keeps (older lines are dropped from the page, never from the file).  
+> Die meisten Zeilen, die die Seite behält (ältere Zeilen fallen von der Seite, nie aus der Datei).  
 
 Standard: `5000`.
 
@@ -89,8 +89,8 @@ MaxLinesKept=5000
 
 ## WrapLines
 
-> Whether long lines are wrapped for a viewer who has not chosen yet. The page's "Wrap lines" switch stores each  
-> viewer's choice as the user preference admin\_logviewer\_wrap (1 or 0), kept for every log and every visit.  
+> Ob lange Zeilen für einen Betrachter umgebrochen werden, der noch nicht gewählt hat. Der Schalter „Zeilen umbrechen“ der Seite speichert die  
+> Wahl jedes Betrachters als Benutzereinstellung admin\_logviewer\_wrap (1 oder 0), für jedes Log und jeden Besuch.  
 > enabled | disabled  
 
 Standard: `enabled`.
@@ -105,8 +105,8 @@ WrapLines=enabled
 
 ## ChunkCacheTTL
 
-> The server keeps the last chunk read of each file for this many seconds, so several viewers of the same file,  
-> and a poll whose file has not changed, are answered without opening it. 0 switches the cache off.  
+> Der Server behält den zuletzt gelesenen Abschnitt jeder Datei so viele Sekunden, sodass mehrere Betrachter derselben Datei  
+> und eine Abfrage, deren Datei sich nicht geändert hat, beantwortet werden, ohne sie zu öffnen. 0 schaltet den Cache ab.  
 
 Standard: `10`.
 
@@ -120,7 +120,7 @@ ChunkCacheTTL=10
 
 ## ChunkCacheMaxBytes
 
-> The most bytes of a chunk the cache keeps.  
+> Die meisten Bytes eines Abschnitts, die der Cache behält.  
 
 Standard: `262144`.
 

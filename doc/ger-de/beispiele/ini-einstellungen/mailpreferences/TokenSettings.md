@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## TTL
 
-> Lifetime of the links in seconds, per purpose; 0 never expires. The  
-> unsubscribe and manage links in mail must keep working long after the mail  
-> was sent (CAN-SPAM: at least 30 days, CASL: 60 days). A value for  
-> unsubscribe or manage between 0 and 5184000 (60 days) is raised to 60 days,  
-> with a warning on the status page.  
+> Lebensdauer der Links in Sekunden, pro Zweck; 0 läuft nie ab. Die  
+> Abmelde- und Verwaltungslinks in Mails müssen lange nach dem Versand der Mail  
+> funktionieren (CAN-SPAM: mindestens 30 Tage, CASL: 60 Tage). Ein Wert für  
+> unsubscribe oder manage zwischen 0 und 5184000 (60 Tage) wird auf 60 Tage angehoben,  
+> mit einer Warnung auf der Statusseite.  
 
 Standard: ein Hash mit 3: `unsubscribe=0`, `manage=0`, `confirm=604800`.
 
@@ -41,8 +41,8 @@ TTL[confirm]=604800
 
 ## RequestLinkTTL
 
-> The "send me a link" page: the lifetime of the link it sends, and how many  
-> links one address can ask for per hour.  
+> Die Seite „Link zusenden“: die Lebensdauer des Links, den sie sendet, und wie viele  
+> Links eine Adresse pro Stunde anfordern kann.  
 
 Standard: `86400`.
 

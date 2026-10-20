@@ -11,15 +11,15 @@ generated: exp:help:examples
 
 Der Block `[Leftmenu_user_mega]` von `settings/menu.ini`, mit 12 Einstellung(en).
 
-> admin4's mega menu of the Users tab (\[TopAdminMenu\] MegaMenuTabs\[\]=users, \[Topmenu\_users\] MegaMenuTemplate,  
-> drawn by parts/user/mega\_menu.tpl through parts/ini\_menu.tpl). Not a left menu: the Users tab's left menu is the  
-> user tree and \[Leftmenu\_user\] (parts/user/menu.tpl), and a tree is no list of links. This section only gathers  
-> the tab's functions in groups, and it reuses the menus that already define them instead of restating them:  
-> GroupSections\[\] adds \[Leftmenu\_user\] (Roles and policies, Unactivated users) and \[Leftmenu\_my\] (the user's own  
-> settings) with their addresses, policies, icons and descriptions; its own links are the two the Users tab has no  
-> menu entry for, the user tree and the sessions. Named Leftmenu\_user\_\* so that it shares the translation context  
-> of the tab's menu, design/admin/parts/user/menu. MegaMenuLinks\[\] chooses from all of them, a link of an added  
-> section as <group>-<key>; at most 12 are shown, each in its group and only when the user may open it.  
+> Das Mega-Menü des Reiters Benutzer in admin4 (\[TopAdminMenu\] MegaMenuTabs\[\]=users, \[Topmenu\_users\] MegaMenuTemplate,  
+> gezeichnet von parts/user/mega\_menu.tpl über parts/ini\_menu.tpl). Kein linkes Menü: Das linke Menü des Reiters Benutzer ist der  
+> Benutzerbaum und \[Leftmenu\_user\] (parts/user/menu.tpl), und ein Baum ist keine Liste von Links. Dieser Abschnitt sammelt nur  
+> die Funktionen des Reiters in Gruppen und verwendet die Menüs, die sie schon definieren, wieder, statt sie zu wiederholen:  
+> GroupSections\[\] fügt \[Leftmenu\_user\] (Rollen und Richtlinien, Nicht aktivierte Benutzer) und \[Leftmenu\_my\] (die eigenen  
+> Einstellungen des Benutzers) mit ihren Adressen, Richtlinien, Symbolen und Beschreibungen hinzu; seine eigenen Links sind die zwei, für die der Reiter Benutzer keinen  
+> Menüeintrag hat, der Benutzerbaum und die Sitzungen. Leftmenu\_user\_\* benannt, damit er den Übersetzungskontext  
+> des Menüs des Reiters teilt, design/admin/parts/user/menu. MegaMenuLinks\[\] wählt aus all diesen, einen Link eines hinzugefügten  
+> Abschnitts als <group>-<key>; höchstens 12 werden angezeigt, jeder in seiner Gruppe und nur, wenn der Benutzer ihn öffnen darf.  
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -41,8 +41,8 @@ Name=users
 
 ## Links
 
-> The user tree, the Users tab's own page (its PolicyList\[\] and URL\[default\]; content.ini \[NodeSettings\] UserRootNode:  
-> a site with another user root node changes these two lines as it changes \[Topmenu\_users\])  
+> Der Benutzerbaum, die eigene Seite des Reiters Benutzer (seine PolicyList\[\] und URL\[default\]; content.ini \[NodeSettings\] UserRootNode:  
+> eine Website mit einem anderen Wurzelknoten der Benutzer ändert diese beiden Zeilen, wie sie \[Topmenu\_users\] ändert)  
 
 Standard: ein Hash mit 2: `accounts=content/view/full/5`, `sessions=setup/session`.
 

@@ -45,7 +45,7 @@ NavigationPartIdentifier=ezsetupnavigationpart
 
 > Name=Setup  
 > Tooltip=Configure settings and manage advanced functionality.  
-> The Setup overview (setup/menu): every function of the Setup menu as a tile, grouped as the left menu  
+> Die Setup-Übersicht (setup/menu): jede Funktion des Setup-Menüs als Kachel, gruppiert wie das linke Menü  
 
 Standard: ein Hash mit 1: `default=setup/menu`.
 
@@ -93,11 +93,11 @@ Shown[browse]=true
 
 ## MegaMenuTemplate
 
-> No PolicyList\[\]: setup/menu opens with any one of its functions (setup, administrate, managecache, managecronjobs,  
-> preload, system\_info), which \[MenuAccessSettings\] CheckViewAccess asks. \[TopAdminMenu\] SetupTabs\[\] leave the top  
-> menu for the same users, so the tab that holds them asks for nothing more (setup/managecache took it from a user  
-> with system\_info only, and the tabs moved into Setup were nowhere).  
-> admin4's mega menu (\[TopAdminMenu\] MegaMenuTabs\[\]=setup): the template that draws its links, the Setup menu  
+> Keine PolicyList\[\]: setup/menu öffnet sich mit einer beliebigen seiner Funktionen (setup, administrate, managecache, managecronjobs,  
+> preload, system\_info), wonach \[MenuAccessSettings\] CheckViewAccess fragt. \[TopAdminMenu\] SetupTabs\[\] verlassen das Haupt-  
+> menü für dieselben Benutzer, der Reiter, der sie aufnimmt, verlangt also nichts weiter (setup/managecache nahm ihn einem Benutzer  
+> mit nur system\_info, und die in Setup verschobenen Reiter waren nirgends).  
+> Das Mega-Menü von admin4 (\[TopAdminMenu\] MegaMenuTabs\[\]=setup): das Template, das seine Links zeichnet, das Setup-Menü  
 > (\[Leftmenu\_setup\] MegaMenuLinks\[\])  
 
 Standard: `design:parts/setup/mega_menu.tpl`.
@@ -112,8 +112,8 @@ MegaMenuTemplate=design:parts/setup/mega_menu.tpl
 
 ## MegaMenuSection
 
-> The menu section whose MegaMenuLinks\[\] the template uses, for the check of its keys (unknown ones are named in the  
-> debug report, parts/a4\_mega\_menu\_check.tpl)  
+> Der Menüabschnitt, dessen MegaMenuLinks\[\] das Template verwendet, für die Prüfung seiner Schlüssel (unbekannte werden im  
+> Debug-Bericht genannt, parts/a4\_mega\_menu\_check.tpl)  
 
 Standard: `Leftmenu_setup`.
 

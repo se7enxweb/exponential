@@ -31,7 +31,7 @@ Name=access_controll
 
 ## Links
 
-> Check user accounts (doc/eng-us/features/6.0/user-hygiene.md), also a tile of the Setup overview under the same key  
+> Benutzerkonten prüfen (doc/eng-us/features/6.0/user-hygiene.md), auch eine Kachel der Setup-Übersicht unter demselben Schlüssel  
 
 Standard: ein Hash mit 3: `roles_and_policies=role/list`, `unactivated=user/unactivated`, `user_hygiene=user/hygiene`.
 
@@ -105,8 +105,8 @@ PolicyList_user_hygiene[]=user/hygiene
 
 ## LinkIcons
 
-> Icons and descriptions of these links in admin4's mega menu of the Users tab (\[Leftmenu\_user\_mega\] adds this menu  
-> to its group "access"); descriptions are translated in design/admin/parts/user/menu  
+> Symbole und Beschreibungen dieser Links im Mega-Menü des Reiters Benutzer in admin4 (\[Leftmenu\_user\_mega\] fügt dieses Menü  
+> seiner Gruppe "access" hinzu); die Beschreibungen werden in design/admin/parts/user/menu übersetzt  
 
 Standard: ein Hash mit 3: `roles_and_policies=shield-lock`, `unactivated=person-slash`, `user_hygiene=person-badge`.
 

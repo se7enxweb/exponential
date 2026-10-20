@@ -14,33 +14,33 @@ Der Block `[reference]` von `settings/image.ini`, mit 1 Einstellung(en).
 > AliasList\[\]=rssitem  
 > AliasList\[\]=gray  
 > AliasList\[\]=zoom  
-> Example of an image alias, the group is called the same as the alias name  
+> Beispiel eines Bild-Alias; die Gruppe heißt so wie der Alias  
 > \[myalias\]  
 >
-> Tells the system to use the original alias as reference image. The reference  
-> image is the base of conversion and filtering. original is the default and  
-> can be omitted  
+> Sagt dem System, den Alias original als Referenzbild zu verwenden. Das Referenz-  
+> bild ist die Grundlage für Umwandlung und Filter. original ist der Standard und  
+> kann weggelassen werden  
 > Reference=reference  
 >
-> The MIME type of the output image. Can be specified if you want a specific  
-> format for the alias, if not skip it and let the image system decide.  
-> A useful application for this is screenshots, normally you don't want  
-> to use image/jpeg for screenshot but rather image/png or image/gif.  
+> Der MIME-Typ des Ausgabebildes. Kann angegeben werden, wenn Sie für den Alias  
+> ein bestimmtes Format wollen; sonst lassen Sie es weg und das Bildsystem entscheidet.  
+> Eine sinnvolle Anwendung sind Bildschirmfotos: Für ein Bildschirmfoto will man  
+> normalerweise nicht image/jpeg, sondern eher image/png oder image/gif.  
 > MIMEType=image/png  
 >
-> Override quality by MIME type for this alias only  
-> This follows the pattern from the global \[MIMETypeSettings\] settings  
+> Qualität nach MIME-Typ nur für diesen Alias überschreiben  
+> Folgt dem Muster der globalen Einstellungen in \[MIMETypeSettings\]  
 > Quality\[\]  
 > Quality\[\]=image/jpeg;80  
 >
-> A list of filters to run, each filter must be supported by the active image converters  
+> Eine Liste auszuführender Filter; jeder Filter muss von den aktiven Bildkonvertern unterstützt werden  
 > Filters\[\]=geometry/scale=300;300  
-> reference, small, medium and large for backwards compatability  
-> You can for instance remove the reference if don't want the extra disk usage  
-> By defining the 'original' alias and setting some filters  
-> or changing the MIME type you can even force a conversion of  
-> the originally uploaded image.  
-> This is useful to save space or make sure the image is in a specific format  
+> reference, small, medium und large zur Rückwärtskompatibilität  
+> Sie können zum Beispiel reference entfernen, wenn Sie den zusätzlichen Speicherplatz nicht wollen  
+> Wenn Sie den Alias 'original' definieren und Filter setzen  
+> oder den MIME-Typ ändern, können Sie sogar eine Umwandlung  
+> des ursprünglich hochgeladenen Bildes erzwingen.  
+> Das ist nützlich, um Platz zu sparen oder sicherzustellen, dass das Bild in einem bestimmten Format vorliegt  
 > \[original\]  
 > Filters\[\]  
 > Filters\[\]=colorspace/gray  

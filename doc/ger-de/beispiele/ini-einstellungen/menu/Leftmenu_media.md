@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[Leftmenu_media]` von `settings/menu.ini`, mit 0 Einstellung(en).
 
-> Removed from 4.3. Enable if you have special requirements.  
+> Seit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.  
 > Links\[templates\]=visual/templatelist  
 > PolicyList\_templates\[\]=visual/\*  
 

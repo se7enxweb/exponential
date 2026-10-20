@@ -12,22 +12,22 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/override.ini`: 0 Blöcke, 0 Einstellungen.
 
-> Exponential configuration file for template overrides.  
+> Exponential-Konfigurationsdatei für Template-Overrides.  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/override.ini.append or  
->       settings/override/override.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
-> Template Override configuration file  
-> Place your own override configuration file  
-> in settings/siteaccess/myaccess/override.ini.append  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/override.ini.append oder  
+>       settings/override/override.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
+> Konfigurationsdatei der Template-Overrides  
+> Legen Sie Ihre eigene Override-Konfigurationsdatei  
+> in settings/siteaccess/myaccess/override.ini.append ab  
 >
-> This file should only be used for overrides that are  
-> common for all siteaccesses  
-> Example syntax  
+> Diese Datei sollte nur für Overrides verwendet werden, die  
+> allen Siteaccesses gemeinsam sind  
+> Beispielsyntax  
 > \[article\]  
 > Source=node/view/full.tpl  
 > MatchFile=article.tpl  

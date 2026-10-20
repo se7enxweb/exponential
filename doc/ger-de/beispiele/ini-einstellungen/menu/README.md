@@ -12,12 +12,12 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/menu.ini`: 28 Blöcke, 215 Einstellungen.
 
-> Exponential configuration file.  
+> Exponential-Konfigurationsdatei.  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in siteaccess should be created for setting the  
->       values that is required for your site. Create  
->       a file called settings/siteaccess/mysite/menu.ini.append.php.  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei im Siteaccess an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie  
+>       eine Datei settings/siteaccess/mysite/menu.ini.append.php an.  
 
 | Block | Einstellungen |
 |---|---|

@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/logviewer.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## MaskEmails
 
-> Mask in what the viewer shows: e-mail addresses, IP addresses, and secrets (passwords in addresses and  
-> pairs, tokens, keys, session ids, cookies). A user with setup/unmasklogs can switch masking off for  
-> themselves on the page; the secrets of the settings below never are.  
+> Was der Viewer zeigt, maskieren: E-Mail-Adressen, IP-Adressen und Geheimnisse (Passwörter in Adressen und  
+> Paaren, Tokens, Schlüssel, Sitzungs-IDs, Cookies). Ein Benutzer mit setup/unmasklogs kann das Maskieren für  
+> sich auf der Seite abschalten; die Geheimnisse der Einstellungen unten nie.  
 
 Standard: `enabled`.
 
@@ -59,9 +59,9 @@ MaskSecrets=enabled
 
 ## SecretSettings
 
-> The settings whose values are never shown, even unmasked: <file>;<group>;<variable>. Every value of them  
-> that occurs in a log line is replaced by \*\*\*. Variables whose name says they hold a secret (Password,  
-> Secret, Token, Key ...) in these groups are covered too.  
+> Die Einstellungen, deren Werte nie angezeigt werden, auch unmaskiert nicht: <file>;<group>;<variable>. Jeder ihrer Werte,  
+> der in einer Logzeile vorkommt, wird durch \*\*\* ersetzt. Variablen, deren Name sagt, dass sie ein Geheimnis enthalten (Password,  
+> Secret, Token, Key ...), in diesen Gruppen sind ebenfalls abgedeckt.  
 
 Standard: eine Liste mit 2: `site.ini;DatabaseSettings;Password`, `site.ini;MailSettings;TransportPassword`.
 

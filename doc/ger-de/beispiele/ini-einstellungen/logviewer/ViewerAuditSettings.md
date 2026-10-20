@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/logviewer.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## ReadInterval
 
-> Record system.log.read when a file is opened in the viewer (once per file and session within this many  
-> seconds), so following a file does not write one record per poll.  
+> system.log.read festhalten, wenn eine Datei im Viewer geöffnet wird (einmal pro Datei und Sitzung innerhalb so vieler  
+> Sekunden), damit das Verfolgen einer Datei nicht pro Abfrage einen Eintrag schreibt.  
 
 Standard: `600`.
 

@@ -11,13 +11,13 @@ generated: exp:help:examples
 
 Der Block `[NavigationPart]` von `settings/menu.ini`, mit 1 Einstellung(en).
 
-> A list of the current navigation parts and their names  
-> Each entry consists of the identifier as key and the name  
-> as value.  
-> Note: If you wish to have the name translatable you will  
->       need to create a dummy PHP file with the following in it  
+> Eine Liste der aktuellen Navigationsbereiche und ihrer Namen  
+> Jeder Eintrag besteht aus dem Bezeichner als Schlüssel und dem Namen  
+> als Wert.  
+> Hinweis: Wenn der Name übersetzbar sein soll, müssen Sie  
+>       eine Dummy-PHP-Datei mit folgendem Inhalt anlegen  
 > ezpI18n::tr( 'kernel/navigationpart', 'Custom navigation', 'Navigation part' );  
-> This will cause the ezlupdate to include it in the .ts file.  
+> Dann nimmt ezlupdate sie in die .ts-Datei auf.  
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

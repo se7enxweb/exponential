@@ -19,21 +19,21 @@ Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## HiddenTabs
 
-> Tabs the top menu leaves out, whatever Tabs\[\] says: a siteaccess cannot take a tab  
-> out of Tabs\[\] that an extension appends (extension settings are read after the  
-> siteaccess's). The editor siteaccess hides the administration's tabs with it.  
+> Reiter, die das Hauptmenü weglässt, egal was Tabs\[\] sagt: Ein Siteaccess kann keinen Reiter  
+> aus Tabs\[\] herausnehmen, den eine Erweiterung anhängt (die Einstellungen der Erweiterungen werden nach denen  
+> des Siteaccess gelesen). Der Siteaccess editor blendet damit die Reiter der Administration aus.  
 >
-> Fewer tabs, nothing lost (admin4, doc/eng-us/features/6.0/admin4-design.md "Moving a tab into Setup"):  
-> design and audit have a group of the Setup menu and overview (\[Leftmenu\_setup\] GroupTabs\[\]),  
-> shown only while their tab is not in the top menu; their pages then mark the Setup tab and  
-> draw the Setup menu. Without the dashboard tab the logo leads to the dashboard. In a  
-> siteaccess or override menu.ini.append.php:  
+> Weniger Reiter, nichts verloren (admin4, doc/eng-us/features/6.0/admin4-design.md "Moving a tab into Setup"):  
+> Design und Audit haben eine Gruppe im Setup-Menü und in der Übersicht (\[Leftmenu\_setup\] GroupTabs\[\]),  
+> nur angezeigt, solange ihr Reiter nicht im Hauptmenü ist; ihre Seiten markieren dann den Reiter Setup und  
+> zeichnen das Setup-Menü. Ohne den Reiter Dashboard führt das Logo zum Dashboard. In einer  
+> menu.ini.append.php eines Siteaccess oder eines Overrides:  
 >   HiddenTabs\[\]  
 >   HiddenTabs\[\]=dashboard  
 >   HiddenTabs\[\]=design  
 >   HiddenTabs\[\]=audit  
-> or restate the whole list (Tabs\[\] with no value, then the tabs to keep); an extension's tab  
-> can only be left out with HiddenTabs\[\].  
+> oder wiederholen Sie die ganze Liste (Tabs\[\] ohne Wert, dann die zu behaltenden Reiter); der Reiter einer Erweiterung  
+> lässt sich nur mit HiddenTabs\[\] weglassen.  
 
 Standard: eine leere Liste.
 
@@ -48,10 +48,10 @@ HiddenTabs[]
 
 ## SetupTabs
 
-> Tabs that move into the Setup menu for a user who may open the Setup overview (setup/menu):  
-> such a user finds the tab's group there (\[Leftmenu\_setup\] GroupTabs\[\]) and has no tab; a user  
-> who may not open the overview (a role that holds only the tab's own policy) keeps the tab.  
-> Empty by default, e.g. SetupTabs\[\]=audit in a siteaccess or override menu.ini.append.php.  
+> Reiter, die für einen Benutzer, der die Setup-Übersicht (setup/menu) öffnen darf, in das Setup-Menü wandern:  
+> Ein solcher Benutzer findet die Gruppe des Reiters dort (\[Leftmenu\_setup\] GroupTabs\[\]) und hat keinen Reiter; ein Benutzer,  
+> der die Übersicht nicht öffnen darf (eine Rolle, die nur die eigene Richtlinie des Reiters hält), behält den Reiter.  
+> Standardmäßig leer, z. B. SetupTabs\[\]=audit in einer menu.ini.append.php eines Siteaccess oder eines Overrides.  
 
 Standard: eine leere Liste.
 
@@ -66,18 +66,18 @@ SetupTabs[]
 
 ## MegaMenuTabs
 
-> admin4 (prototype): tabs that get a mega menu, a panel under the header with the groups and  
-> links of the tab's menu, opened by a small button beside the tab (the tab stays a link).  
-> A tab takes part when its \[Topmenu\_<tab>\] names a MegaMenuTemplate: setup (the Setup menu,  
-> \[Leftmenu\_setup\]), users (\[Leftmenu\_user\_mega\]) and dashboard (\[Leftmenu\_my\_mega\]) do; a name without one is  
-> ignored (named in the debug report). The  
-> panel holds the menu's links with their names, icons (LinkIcons\[\]), descriptions  
-> (LinkDescriptions\[\]) and access checks, a short choice of them (MegaMenuLinks\[\] of the menu's  
-> section), loaded from user/megamenu/<tab> when it is first opened. A tab name is lower case  
-> letters, digits and \_; a tab with a mega menu should be access checked (PolicyList\[\], or its URL under  
-> CheckViewAccess). Shown from 576px, where  
-> the main menu is one line (not in the phone menu). Empty by default: no button, no script. To switch it on, in a  
-> siteaccess or override menu.ini.append.php:  
+> admin4 (Prototyp): Reiter, die ein Mega-Menü erhalten, ein Panel unter dem Kopf mit den Gruppen und  
+> Links des Menüs des Reiters, geöffnet über eine kleine Schaltfläche neben dem Reiter (der Reiter bleibt ein Link).  
+> Ein Reiter nimmt teil, wenn sein \[Topmenu\_<tab>\] ein MegaMenuTemplate nennt: setup (das Setup-Menü,  
+> \[Leftmenu\_setup\]), users (\[Leftmenu\_user\_mega\]) und dashboard (\[Leftmenu\_my\_mega\]) tun das; ein Name ohne eines wird  
+> ignoriert (im Debug-Bericht genannt). Das  
+> Panel enthält die Links des Menüs mit ihren Namen, Symbolen (LinkIcons\[\]), Beschreibungen  
+> (LinkDescriptions\[\]) und Zugriffsprüfungen, eine kurze Auswahl davon (MegaMenuLinks\[\] des Menü-  
+> abschnitts), geladen von user/megamenu/<tab>, wenn es zum ersten Mal geöffnet wird. Ein Reitername besteht aus Klein-  
+> buchstaben, Ziffern und \_; ein Reiter mit Mega-Menü sollte zugriffsgeprüft sein (PolicyList\[\] oder seine URL unter  
+> CheckViewAccess). Angezeigt ab 576px, wo  
+> das Hauptmenü eine Zeile ist (nicht im Telefonmenü). Standardmäßig leer: keine Schaltfläche, kein Skript. Zum Einschalten, in einer  
+> menu.ini.append.php eines Siteaccess oder eines Overrides:  
 >   MegaMenuTabs\[\]=setup  
 >   MegaMenuTabs\[\]=users  
 >   MegaMenuTabs\[\]=dashboard  
@@ -96,14 +96,14 @@ MegaMenuTabs[]
 
 ## Tabs
 
-> This list contains menuitems of the top menu in admin interface  
-> Hidden by default as of 4.3  
+> Diese Liste enthält die Einträge des Hauptmenüs in der Administrationsoberfläche  
+> Seit 4.3 standardmäßig ausgeblendet  
 > Tabs\[\]=shop  
-> Unhidden by default as of 6.0  
-> Hidden by default as of 4.3  
+> Seit 6.0 standardmäßig eingeblendet  
+> Seit 4.3 standardmäßig ausgeblendet  
 > Tabs\[\]=design  
-> Unhidden by default as of 6.0.6  
-> The audit console (doc/eng-us/bc/6.0/audit.md): shown only with the policy audit/read  
+> Seit 6.0.6 standardmäßig eingeblendet  
+> Die Audit-Konsole (doc/eng-us/bc/6.0/audit.md): nur mit der Richtlinie audit/read angezeigt  
 
 Standard: eine Liste mit 8: `dashboard`, `content`, `media`, `users`, `shop`, `design`, `setup`, `audit`.
 

@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## AllowedOutputFormat
 
-> A list of MIME types that are allowed as output type  
-> This determines which formats you want your web page to display  
+> Eine Liste von MIME-Typen, die als Ausgabetyp erlaubt sind  
+> Dies bestimmt, welche Formate Ihre Webseite anzeigen soll  
 
 Standard: eine Liste mit 4: `image/jpeg`, `image/png`, `image/webp`, `image/gif`.
 

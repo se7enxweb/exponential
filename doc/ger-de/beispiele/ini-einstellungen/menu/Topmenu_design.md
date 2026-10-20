@@ -46,8 +46,8 @@ NavigationPartIdentifier=ezvisualnavigationpart
 > Name=Design  
 > Tooltip=Manage templates, menus, toolbars and other things related to appearence.  
 > URL\[default\]=visual/toolbarlist  
-> The design top node (content.ini \[NodeSettings\] DesignRootNode) by its node id, not by its URL alias  
-> "Design/", which a renamed node or another language's alias would break  
+> Der oberste Knoten des Designs (content.ini \[NodeSettings\] DesignRootNode) über seine Knoten-ID, nicht über seinen URL-Alias  
+> "Design/", den ein umbenannter Knoten oder der Alias einer anderen Sprache zerstören würde  
 
 Standard: ein Hash mit 1: `default=content/view/full/58`.
 
@@ -95,7 +95,7 @@ Shown[browse]=true
 
 ## PolicyList
 
-> The design root node (content.ini \[NodeSettings\] DesignRootNode) must be readable  
+> Der Wurzelknoten des Designs (content.ini \[NodeSettings\] DesignRootNode) muss lesbar sein  
 
 Standard: eine Liste mit 1: `58`.
 

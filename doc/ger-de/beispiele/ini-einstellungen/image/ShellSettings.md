@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[ShellSettings]` von `settings/image.ini`, mit 1 Einstellung(en).
 
-> -------- Image converter settings --------  
+> -------- Einstellungen der Bildkonverter --------  
 
 Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

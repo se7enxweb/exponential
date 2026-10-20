@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## RetentionDays
 
-> Days the consent log of a person is kept after the account (or the last  
-> preference of an address without account) is gone. 1095 = 3 years.  
+> Tage, die das Einwilligungsprotokoll einer Person aufbewahrt wird, nachdem das Konto (oder die letzte  
+> Einstellung einer Adresse ohne Konto) nicht mehr da ist. 1095 = 3 Jahre.  
 
 Standard: `1095`.
 
@@ -34,7 +34,7 @@ RetentionDays=1095
 
 ## PendingDays
 
-> Days a pending double opt-in waits for its confirmation.  
+> Tage, die ein ausstehendes Double-Opt-in auf seine Bestätigung wartet.  
 
 Standard: `7`.
 

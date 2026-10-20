@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## BaseURL
 
-> Where the links in mail point to: scheme and host (and path of the  
-> siteaccess), e.g. https://www.example.com. Empty: https:// and the SiteURL  
-> of the default siteaccess.  
+> Wohin die Links in Mails zeigen: Schema und Host (und Pfad des  
+> Siteaccess), z. B. https://www.example.com. Leer: https:// und die SiteURL  
+> des Standard-Siteaccess.  
 
 Standard: leer.
 

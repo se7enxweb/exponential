@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/mailpreferences.ini` nie selbst: Ein Update ersetzt die
 
 ## OrganisationName
 
-> Required by CAN-SPAM, CASL and the EU rules: who sends the mail and a  
-> valid postal address. The gate adds both to every optional mail; the status  
-> page and exp:mail:status warn while they are empty.  
+> Von CAN-SPAM, CASL und den EU-Regeln verlangt: wer die Mail sendet, und eine  
+> gültige Postanschrift. Das Gate fügt beides jeder optionalen Mail hinzu; die Status-  
+> seite und exp:mail:status warnen, solange sie leer sind.  
 
 Standard: leer.
 
@@ -47,8 +47,8 @@ OrganisationAddress=
 
 ## Template
 
-> The template of the footer (text and HTML parts); the built-in text is used  
-> when the template does not exist.  
+> Das Template der Fußzeile (Text- und HTML-Teil); der eingebaute Text wird verwendet,  
+> wenn das Template nicht existiert.  
 
 Standard: `design:mailpreferences/mail/footer.tpl`.
 
@@ -62,10 +62,10 @@ Template=design:mailpreferences/mail/footer.tpl
 
 ## PrivacyURL
 
-> The privacy notice, linked from the footer of optional mail and from the  
-> preference page (GDPR art. 13): a full https:// address or a path of the  
-> site (/privacy). Empty: the node of menu.ini \[SiteInfo\] PrivacyPolicyID of  
-> the public siteaccess when there is one, else no link.  
+> Die Datenschutzerklärung, verlinkt aus der Fußzeile optionaler Mail und von der  
+> Einstellungsseite (DSGVO Art. 13): eine vollständige https://-Adresse oder ein Pfad der  
+> Website (/privacy). Leer: der Knoten aus menu.ini \[SiteInfo\] PrivacyPolicyID des  
+> öffentlichen Siteaccess, wenn es einen gibt, sonst kein Link.  
 
 Standard: leer.
 

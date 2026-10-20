@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/logviewer.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## DiskBudget
 
-> Setup > Log files > Health (setup/logshealth): the disk all log files and their archives may use together, in bytes.  
-> The page warns from 80 % of it and marks the logs over it; 0 sets no budget. Default 268435456 (256 MB).  
+> Setup > Logdateien > Zustand (setup/logshealth): der Speicherplatz, den alle Logdateien und ihre Archive zusammen belegen dürfen, in Bytes.  
+> Die Seite warnt ab 80 % davon und markiert die Logs darüber; 0 setzt kein Budget. Standard 268435456 (256 MB).  
 
 Standard: `268435456`.
 

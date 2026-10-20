@@ -35,11 +35,11 @@ Name=dashboard
 
 ## Links
 
-> The user's own work, right after Collaboration  
-> The e-mail preferences: which optional e-mail the user gets, consent history, data download  
-> The Help center (exphelp/dashboard), the start page of the help: guides, search, how to report an error  
-> The audit console, only with audit/read (doc/eng-us/bc/6.0/audit.md, "Placement"); the last kernel link, so the links  
-> extensions append follow it  
+> Die eigene Arbeit des Benutzers, direkt nach Zusammenarbeit  
+> Die E-Mail-Einstellungen: welche optionalen E-Mails der Benutzer erhält, Einwilligungsverlauf, Datendownload  
+> Das Hilfecenter (exphelp/dashboard), die Startseite der Hilfe: Anleitungen, Suche, wie man einen Fehler meldet  
+> Die Audit-Konsole, nur mit audit/read (doc/eng-us/bc/6.0/audit.md, "Placement"); der letzte Link des Kernels, sodass die Links,  
+> die Erweiterungen anhängen, danach folgen  
 
 Standard: ein Hash mit 11: `dashboard=content/dashboard`, `collaboration=collaboration/view/summary`, `my_pending=content/pendinglist`, `my_drafts=content/draft`, `my_bookmarks=content/bookmark`, `my_mail=mailpreferences/settings`, `my_notifications=notification/settings`, `help_center=exphelp/dashboard`, `audit=audit/console`, `change_password=user/password`, `edit_profile=user/edit/(action)/edit`.
 
@@ -205,12 +205,12 @@ PolicyList_change_password[]=user/password
 
 ## LinkIcons
 
-> No PolicyList: the profile is edited through content/edit, open with user/selfedit or with  
-> content/edit on the user's own object; CheckViewAccess asks the object itself (canEdit).  
-> Icons and descriptions of some of these links, for admin4's mega menu of the Users tab (\[Leftmenu\_user\_mega\] adds  
-> this menu to its group "account"); descriptions are translated in design/admin/parts/my/menu  
-> Icons and descriptions of the other links, for admin4's mega menu of the Dashboard tab (\[Leftmenu\_my\_mega\] adds  
-> this menu to its groups), including the links the extension expai appends here; translated in  
+> Keine PolicyList: Das Profil wird über content/edit bearbeitet, offen mit user/selfedit oder mit  
+> content/edit auf dem eigenen Objekt des Benutzers; CheckViewAccess fragt das Objekt selbst (canEdit).  
+> Symbole und Beschreibungen einiger dieser Links für das Mega-Menü des Reiters Benutzer in admin4 (\[Leftmenu\_user\_mega\] fügt  
+> dieses Menü seiner Gruppe "account" hinzu); die Beschreibungen werden in design/admin/parts/my/menu übersetzt  
+> Symbole und Beschreibungen der anderen Links für das Mega-Menü des Reiters Dashboard in admin4 (\[Leftmenu\_my\_mega\] fügt  
+> dieses Menü seinen Gruppen hinzu), einschließlich der Links, die die Erweiterung expai hier anhängt; übersetzt in  
 > design/admin/parts/my/menu  
 
 Standard: ein Hash mit 15: `my_notifications=bell`, `my_mail=envelope`, `change_password=key`, `edit_profile=person-circle`, `help_center=question-circle`, `dashboard=speedometer2`, `collaboration=inbox`, `my_pending=hourglass-split`, `my_drafts=pencil-square`, `my_bookmarks=bookmark`, `expai=stars`, `expai_vector=magic` ....
@@ -269,7 +269,7 @@ LinkDescriptions[expai_help]=How the AI features work and how to use them.
 
 ## TrailLinks
 
-> Change password and Edit profile close the menu, after the links extensions append (parts/ini\_menu.tpl)  
+> Passwort ändern und Profil bearbeiten schließen das Menü ab, nach den Links, die Erweiterungen anhängen (parts/ini\_menu.tpl)  
 
 Standard: eine Liste mit 2: `change_password`, `edit_profile`.
 

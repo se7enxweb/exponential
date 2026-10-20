@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/logfile.ini`: 1 Blöcke, 4 Einstellungen.
 
-> Exponential configuration file for parse apache log file  
+> Exponential-Konfigurationsdatei zum Auswerten der Apache-Logdatei  
 
 | Block | Einstellungen |
 |---|---|

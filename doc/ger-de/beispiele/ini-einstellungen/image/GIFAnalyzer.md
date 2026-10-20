@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[GIFAnalyzer]` von `settings/image.ini`, mit 2 Einstellung(en).
 
-> GIF analyzer, figures out details about GIF images  
-> Is primarily used to determine GIF animation.  
+> GIF-Analysator, ermittelt Details zu GIF-Bildern  
+> Wird vor allem verwendet, um GIF-Animationen zu erkennen.  
 
 Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

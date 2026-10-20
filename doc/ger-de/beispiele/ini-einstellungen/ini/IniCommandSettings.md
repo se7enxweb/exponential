@@ -19,20 +19,20 @@ Bearbeiten Sie `settings/ini.ini` nie selbst: Ein Update ersetzt die Datei. Schr
 
 ## Actions
 
-> The actions of the command: Actions\[<name>\]=<class>. The class implements  
+> Die Aktionen des Befehls: Actions\[<name>\]=<class>. Die Klasse implementiert  
 > expIniAction (kernel/classes/ini/actions/expiniaction.php): name(),  
-> description(), usage() and run( expIniCommandContext $c ), which returns the  
-> exit code. "exp:ini <name> ..." makes the class and runs it.  
+> description(), usage() und run( expIniCommandContext $c ), das den  
+> Exit-Code zurückgibt. "exp:ini <name> ..." erzeugt die Klasse und führt sie aus.  
 >
-> An extension adds an action by an INI append of its own, e.g.  
+> Eine Erweiterung fügt eine Aktion mit einem eigenen INI-Append hinzu, z. B.  
 > extension/myext/settings/ini.ini.append.php:  
 >
 >   \[IniCommandSettings\]  
 >   Actions\[dump\]=myExtIniActionDump  
 >
-> then regenerates the extension autoloads (php bin/php/ezpgenerateautoloads.php -e)  
-> so the class is found. The same name as a built-in replaces the built-in;  
-> an empty value (Actions\[copy\]=) switches an action off.  
+> und erzeugt dann die Autoloads der Erweiterungen neu (php bin/php/ezpgenerateautoloads.php -e),  
+> damit die Klasse gefunden wird. Derselbe Name wie eine eingebaute ersetzt die eingebaute;  
+> ein leerer Wert (Actions\[copy\]=) schaltet eine Aktion ab.  
 
 Standard: ein Hash mit 13: `get=expIniActionGet`, `set=expIniActionSet`, `add=expIniActionAdd`, `rem=expIniActionRem`, `clear=expIniActionClear`, `toggle=expIniActionToggle`, `copy=expIniActionCopy`, `move=expIniActionMove`, `move-all=expIniActionMoveAll`, `where=expIniActionWhere`, `list=expIniActionList`, `scopes=expIniActionScopes` ....
 
@@ -60,7 +60,7 @@ Actions[actions]=expIniActionActions
 
 ## ActionAliases
 
-> Other names of actions: ActionAliases\[<alias>\]=<action name>.  
+> Andere Namen von Aktionen: ActionAliases\[<alias>\]=<action name>.  
 
 Standard: ein Hash mit 1: `remove=rem`.
 
@@ -76,16 +76,16 @@ ActionAliases[remove]=rem
 
 ## ScopeProviders
 
-> The scope providers: classes implementing expIniScopeProvider  
-> (kernel/classes/ini/expiniscopeprovider.php), whose scopes( $root ) returns  
-> expIniScope objects. The two built-ins give global, default, every siteaccess,  
-> every extension and every extension siteaccess directory. An extension adds a  
-> scope (a cluster-wide directory, one per environment, ...) by an INI append:  
+> Die Bereichs-Provider: Klassen, die expIniScopeProvider implementieren  
+> (kernel/classes/ini/expiniscopeprovider.php), deren scopes( $root ) Objekte  
+> expIniScope zurückgibt. Die beiden eingebauten liefern global, default, jeden Siteaccess,  
+> jede Erweiterung und jedes Siteaccess-Verzeichnis jeder Erweiterung. Eine Erweiterung fügt einen  
+> Bereich (ein Verzeichnis für den ganzen Cluster, eines pro Umgebung, ...) mit einem INI-Append hinzu:  
 >
 >   \[IniCommandSettings\]  
 >   ScopeProviders\[\]=myExtIniScopeProvider  
 >
-> The first scope of a name wins, so a provider cannot take over a built-in one.  
+> Der erste Bereich eines Namens gewinnt, ein Provider kann also keinen eingebauten übernehmen.  
 
 Standard: eine Liste mit 2: `expIniCoreScopeProvider`, `expIniExtensionScopeProvider`.
 

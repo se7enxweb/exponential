@@ -118,8 +118,8 @@ PolicyList[]=5
 
 ## MegaMenuTemplate
 
-> admin4's mega menu (\[TopAdminMenu\] MegaMenuTabs\[\]=users): the template that draws its links, a choice of  
-> \[Leftmenu\_user\_mega\] (see there)  
+> Das Mega-Menü von admin4 (\[TopAdminMenu\] MegaMenuTabs\[\]=users): das Template, das seine Links zeichnet, eine Auswahl aus  
+> \[Leftmenu\_user\_mega\] (siehe dort)  
 
 Standard: `design:parts/user/mega_menu.tpl`.
 
@@ -133,8 +133,8 @@ MegaMenuTemplate=design:parts/user/mega_menu.tpl
 
 ## MegaMenuSection
 
-> The menu section whose MegaMenuLinks\[\] the template uses, for the check of its keys (unknown ones are named in the  
-> debug report, parts/a4\_mega\_menu\_check.tpl)  
+> Der Menüabschnitt, dessen MegaMenuLinks\[\] das Template verwendet, für die Prüfung seiner Schlüssel (unbekannte werden im  
+> Debug-Bericht genannt, parts/a4\_mega\_menu\_check.tpl)  
 
 Standard: `Leftmenu_user_mega`.
 

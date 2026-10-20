@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/logviewer.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## MaxBytesPerRequest
 
-> The most bytes one search request reads; a search over more continues with "More results" from where it stopped.  
+> Die meisten Bytes, die eine Suchanfrage liest; eine Suche über mehr macht mit „Weitere Ergebnisse“ dort weiter, wo sie aufgehört hat.  
 
 Standard: `33554432`.
 
@@ -33,7 +33,7 @@ MaxBytesPerRequest=33554432
 
 ## TimeLimit
 
-> The longest a search request reads, in milliseconds (also the regular expression's time budget).  
+> Wie lange eine Suchanfrage höchstens liest, in Millisekunden (auch das Zeitbudget des regulären Ausdrucks).  
 
 Standard: `2000`.
 
@@ -47,7 +47,7 @@ TimeLimit=2000
 
 ## MaxResults
 
-> The most matching entries one request returns.  
+> Die meisten passenden Einträge, die eine Anfrage zurückgibt.  
 
 Standard: `200`.
 
@@ -61,7 +61,7 @@ MaxResults=200
 
 ## MaxPatternLength
 
-> The longest search text or regular expression.  
+> Der längste Suchtext oder reguläre Ausdruck.  
 
 Standard: `200`.
 
@@ -75,8 +75,8 @@ MaxPatternLength=200
 
 ## BacktrackLimit
 
-> The backtracking limit of a regular expression search (pcre.backtrack\_limit while it runs): a pattern that  
-> needs more on one line is stopped and reported as too expensive.  
+> Die Backtracking-Grenze einer Suche mit regulärem Ausdruck (pcre.backtrack\_limit, während sie läuft): Ein Muster, das  
+> auf einer Zeile mehr braucht, wird angehalten und als zu aufwendig gemeldet.  
 
 Standard: `100000`.
 
@@ -90,7 +90,7 @@ BacktrackLimit=100000
 
 ## Rotations
 
-> Search the rotations (.1 .. .N and .gz) of a file too, when the page asks for it.  
+> Auch die Rotationen (.1 .. .N und .gz) einer Datei durchsuchen, wenn die Seite danach fragt.  
 
 Standard: `enabled`.
 
@@ -104,7 +104,7 @@ Rotations=enabled
 
 ## MaxGzipBytes
 
-> The most bytes of a compressed rotation one search unpacks.  
+> Die meisten Bytes einer komprimierten Rotation, die eine Suche entpackt.  
 
 Standard: `67108864`.
 
@@ -118,7 +118,7 @@ MaxGzipBytes=67108864
 
 ## RequestWindow
 
-> The seconds before and after an entry that count as the same request (related lines).  
+> Die Sekunden vor und nach einem Eintrag, die als dieselbe Anfrage zählen (zugehörige Zeilen).  
 
 Standard: `2`.
 

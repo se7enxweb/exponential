@@ -33,7 +33,7 @@ DefaultTransport=mail
 
 ## TransportPluginPath
 
-> An array of pathes to the transport plugins  
+> Ein Array von Pfaden zu den Transport-Plugins  
 > TransportPluginPath\[\]=path/to/plugin1  
 > TransportPluginPath\[\]=path/to/plugin2  
 

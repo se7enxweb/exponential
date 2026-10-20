@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/ldap.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## LDAPDebugTrace
 
-> Enable tracing the the ldap login, outputs extensive debug info for use during setup  
-> NOTE: Do not keep this enabled on production setup as login name and passwords will be  
-> logged to logfiles or outputted if DebugOutput settings are enabled.  
+> Aktiviert die Verfolgung der LDAP-Anmeldung, gibt ausführliche Debug-Informationen für die Einrichtung aus  
+> HINWEIS: Lassen Sie dies auf einem Produktivsystem nicht aktiviert, weil Anmeldenamen und Passwörter  
+> in Logdateien protokolliert oder bei aktivierter DebugOutput ausgegeben werden.  
 
 Standard: `disabled`.
 
@@ -35,7 +35,7 @@ LDAPDebugTrace=disabled
 
 ## LDAPVersion
 
-> Set LDAP version number  
+> Die LDAP-Versionsnummer setzen  
 
 Standard: `2`.
 
@@ -49,8 +49,8 @@ LDAPVersion=2
 
 ## LDAPFollowReferrals
 
-> Determines whether the LDAP library automatically follows referrals returned by LDAP servers or not.  
-> set to 1 to enable  
+> Legt fest, ob die LDAP-Bibliothek von LDAP-Servern zurückgegebenen Verweisen automatisch folgt.  
+> zum Aktivieren auf 1 setzen  
 
 Standard: `0`.
 
@@ -64,7 +64,7 @@ LDAPFollowReferrals=0
 
 ## LDAPEnabled
 
-> Set to true if use LDAP server  
+> Auf true setzen, wenn ein LDAP-Server verwendet wird  
 
 Standard: `true`.
 
@@ -78,7 +78,7 @@ LDAPEnabled=true
 
 ## LDAPServer
 
-> LDAP host  
+> LDAP-Host  
 
 Standard: leer.
 
@@ -92,7 +92,7 @@ LDAPServer=
 
 ## LDAPPort
 
-> Port nr for LDAP, default is 389  
+> Portnummer für LDAP, Standard ist 389  
 
 Standard: `389`.
 
@@ -106,7 +106,7 @@ LDAPPort=389
 
 ## LDAPBaseDn
 
-> Specifies the base DN for the directory.  
+> Gibt die Basis-DN des Verzeichnisses an.  
 
 Standard: leer.
 
@@ -120,7 +120,7 @@ LDAPBaseDn=
 
 ## LDAPBindUser
 
-> If the server does not allow anonymous bind, specify the user name for the bind here.  
+> Erlaubt der Server keinen anonymen Bind, geben Sie hier den Benutzernamen für den Bind an.  
 
 Standard: leer.
 
@@ -134,7 +134,7 @@ LDAPBindUser=
 
 ## LDAPBindPassword
 
-> If the server does not allow anonymous bind, specify the password for the bind here.  
+> Erlaubt der Server keinen anonymen Bind, geben Sie hier das Passwort für den Bind an.  
 
 Standard: leer.
 
@@ -148,7 +148,7 @@ LDAPBindPassword=
 
 ## LDAPSearchScope
 
-> Could be sub, one, base.  
+> Kann sub, one oder base sein.  
 
 Standard: `sub`.
 
@@ -162,7 +162,7 @@ LDAPSearchScope=sub
 
 ## LDAPEqualSign
 
-> Use the equla sign to replace "=" when specify LDAPBaseDn or LDAPSearchFilters  
+> Mit diesem Gleichheitszeichen "=" ersetzen, wenn LDAPBaseDn oder LDAPSearchFilters angegeben werden  
 
 Standard: `--`.
 
@@ -176,8 +176,8 @@ LDAPEqualSign=--
 
 ## LDAPSearchFilters
 
-> Add extra search requirment. Uncomment it if you don't need it.  
-> Example LDAPSearchFilters\[\]=objectClass--inetOrgPerson  
+> Zusätzliche Suchbedingung hinzufügen. Kommentieren Sie sie aus, wenn Sie sie nicht brauchen.  
+> Beispiel LDAPSearchFilters\[\]=objectClass--inetOrgPerson  
 
 Standard: eine leere Liste.
 
@@ -192,7 +192,7 @@ LDAPSearchFilters[]
 
 ## LDAPLoginAttribute
 
-> LDAP attribute for login. Normally, uid  
+> LDAP-Attribut für das Login. Normalerweise uid  
 
 Standard: `uid`.
 
@@ -206,7 +206,7 @@ LDAPLoginAttribute=uid
 
 ## LDAPUserGroupType
 
-> Could be id or name  
+> Kann id oder name sein  
 
 Standard: `id`.
 
@@ -220,8 +220,8 @@ LDAPUserGroupType=id
 
 ## LDAPUserGroup
 
-> Default place to store LDAP users. Could be content object id or group name for LDAP user group,  
-> depends on LDAPUserGroupType.  
+> Standardort für LDAP-Benutzer. Kann die Inhaltsobjekt-ID oder der Gruppenname der LDAP-Benutzergruppe sein,  
+> je nach LDAPUserGroupType.  
 
 Standard: eine leere Liste.
 
@@ -236,8 +236,8 @@ LDAPUserGroup[]
 
 ## LDAPGroupRootNodeId
 
-> Group mapping settings:  
-> Root node id where LDAP groups are created, node id: 5 is used if blank  
+> Einstellungen der Gruppenzuordnung:  
+> ID des Wurzelknotens, unter dem LDAP-Gruppen angelegt werden; wenn leer, wird Knoten-ID 5 verwendet  
 
 Standard: `5`.
 
@@ -251,9 +251,9 @@ LDAPGroupRootNodeId=5
 
 ## LDAPGroupMappingType
 
-> Possible values: UseGroupAttribute (old style group assigning using LDAPUserGroupAttribute setting),  
-> SimpleMapping (using LDAPUserGroupMap array for name-to-name group mapping), and GetGroupsTree  
-> (automatic name-to-name group mapping, creating groups as needed)  
+> Mögliche Werte: UseGroupAttribute (alte Zuweisung der Gruppe über die Einstellung LDAPUserGroupAttribute),  
+> SimpleMapping (über das Array LDAPUserGroupMap, Gruppe für Gruppe nach Namen zugeordnet) und GetGroupsTree  
+> (automatische Zuordnung nach Namen, legt Gruppen bei Bedarf an)  
 
 Standard: `UseGroupAttribute`.
 
@@ -267,8 +267,8 @@ LDAPGroupMappingType=UseGroupAttribute
 
 ## LDAPCreateMissingGroups
 
-> When 'LDAPGroupMappingType' is set to 'UseGroupAttribute', this setting decides whether groups that  
-> are not found in Exponential, should be created.  
+> Wenn 'LDAPGroupMappingType' auf 'UseGroupAttribute' steht, entscheidet diese Einstellung, ob Gruppen, die  
+> in Exponential nicht gefunden werden, angelegt werden.  
 
 Standard: `disabled`.
 
@@ -282,7 +282,7 @@ LDAPCreateMissingGroups=disabled
 
 ## LDAPGroupBaseDN
 
-> Base LDAP dn which should be used to fetch user group objects from LDAP  
+> Basis-DN in LDAP, unter der die Objekte der Benutzergruppen aus LDAP geholt werden  
 
 Standard: leer.
 
@@ -296,7 +296,7 @@ LDAPGroupBaseDN=
 
 ## LDAPGroupClass
 
-> LDAP user group class  
+> LDAP-Klasse für Benutzergruppen  
 
 Standard: `exampleGroupDAClassName`.
 
@@ -310,9 +310,9 @@ LDAPGroupClass=exampleGroupDAClassName
 
 ## LDAPGroupNameAttribute
 
-> Attribute which should be used to obtain name of an LDAP group  
-> Required then 'LDAPGroupMappingType' is set to 'GetGroupsTree' or 'SimpleMapping'  
-> and when 'LDAPGroupMappingType' is set to 'UseGroupAttribute' and 'LDAPUserGroupAttributeType' is 'dn'  
+> Attribut, über das der Name einer LDAP-Gruppe ermittelt wird  
+> Erforderlich, wenn 'LDAPGroupMappingType' auf 'GetGroupsTree' oder 'SimpleMapping' steht  
+> und wenn 'LDAPGroupMappingType' auf 'UseGroupAttribute' und 'LDAPUserGroupAttributeType' auf 'dn' steht  
 
 Standard: `cn`.
 
@@ -326,8 +326,8 @@ LDAPGroupNameAttribute=cn
 
 ## LDAPGroupMemberAttribute
 
-> Attribute of LDAP user which should be used to obtain groups which user(group) belongs to.  
-> Required then 'LDAPGroupMappingType' is set to 'GetGroupsTree' or 'SimpleMapping'  
+> Attribut des LDAP-Benutzers, über das die Gruppen ermittelt werden, zu denen der Benutzer (die Gruppe) gehört.  
+> Erforderlich, wenn 'LDAPGroupMappingType' auf 'GetGroupsTree' oder 'SimpleMapping' steht  
 
 Standard: `member`.
 
@@ -341,7 +341,7 @@ LDAPGroupMemberAttribute=member
 
 ## LDAPGroupDescriptionAttribute
 
-> Attribute which contain description of LDAP group, optional  
+> Attribut mit der Beschreibung der LDAP-Gruppe, optional  
 
 Standard: leer.
 
@@ -355,8 +355,8 @@ LDAPGroupDescriptionAttribute=
 
 ## LDAPUserGroupMap
 
-> Group names map (from LDAP to exponential user-groups),  
-> used then 'LDAPGroupMappingType' is set to 'SimpleMapping'  
+> Zuordnung der Gruppennamen (von LDAP zu den Benutzergruppen von Exponential),  
+> verwendet, wenn 'LDAPGroupMappingType' auf 'SimpleMapping' steht  
 
 Standard: eine leere Liste.
 
@@ -371,7 +371,7 @@ LDAPUserGroupMap[]
 
 ## LDAPUserGroupAttributeType
 
-> LDAP attribute type for user group. Could be name, id or dn  
+> LDAP-Attributtyp für die Benutzergruppe. Kann name, id oder dn sein  
 
 Standard: `name`.
 
@@ -385,12 +385,12 @@ LDAPUserGroupAttributeType=name
 
 ## LDAPUserGroupAttribute
 
-> LDAP attribute for user group. For example, employeetype. If specified, LDAP users  
-> will be saved under the same group as in LDAP server.  
-> Depends on the value of LDAPUserGroupAttributeType:  
-> name: attribute holding name of group  
-> id: attribute holding nummeric id of group  
-> dn: attribute holding DN of group  
+> LDAP-Attribut für die Benutzergruppe. Zum Beispiel employeetype. Wenn angegeben, werden LDAP-Benutzer  
+> in derselben Gruppe wie auf dem LDAP-Server gespeichert.  
+> Hängt vom Wert von LDAPUserGroupAttributeType ab:  
+> name: Attribut mit dem Namen der Gruppe  
+> id: Attribut mit der numerischen ID der Gruppe  
+> dn: Attribut mit der DN der Gruppe  
 
 Standard: `employeetype`.
 
@@ -404,7 +404,7 @@ LDAPUserGroupAttribute=employeetype
 
 ## LDAPFirstNameAttribute
 
-> LDAP attribute for First name. Normally, givenname  
+> LDAP-Attribut für den Vornamen. Normalerweise givenname  
 
 Standard: `givenname`.
 
@@ -418,7 +418,7 @@ LDAPFirstNameAttribute=givenname
 
 ## LDAPFirstNameIsCommonName
 
-> If cn (common name) is used for first name, sn (Last name) will be removed from first name  
+> Wird cn (common name) als Vorname verwendet, wird sn (Nachname) aus dem Vornamen entfernt  
 
 Standard: `false`.
 
@@ -432,7 +432,7 @@ LDAPFirstNameIsCommonName=false
 
 ## LDAPLastNameAttribute
 
-> LDAP attribute for Last name. Normally, sn  
+> LDAP-Attribut für den Nachnamen. Normalerweise sn  
 
 Standard: `sn`.
 
@@ -446,7 +446,7 @@ LDAPLastNameAttribute=sn
 
 ## LDAPEmailAttribute
 
-> LDAP attribute for email. Normally, mail  
+> LDAP-Attribut für die E-Mail. Normalerweise mail  
 
 Standard: `mail`.
 
@@ -460,7 +460,7 @@ LDAPEmailAttribute=mail
 
 ## LDAPEmailEmptyAttributeSuffix
 
-> For use if LDAP does not return mail, creates one using login name + email suffix, like '@example.com'  
+> Falls LDAP keine Mail zurückgibt, wird eine aus Anmeldename + E-Mail-Suffix gebildet, etwa '@example.com'  
 
 Standard: leer.
 
@@ -474,7 +474,7 @@ LDAPEmailEmptyAttributeSuffix=
 
 ## Utf8Encoding
 
-> LDAP encoding is utf-8 or not  
+> Ob die LDAP-Kodierung utf-8 ist  
 
 Standard: `false`.
 
@@ -488,9 +488,9 @@ Utf8Encoding=false
 
 ## KeepGroupAssignment
 
-> if 'enabled' you can move LDAP users to a different group and they will not  
-> be automatically moved back (to the group they are configured to be placed in)  
-> when the user logs in again.  
+> Wenn 'enabled', können Sie LDAP-Benutzer in eine andere Gruppe verschieben, und sie werden  
+> bei der nächsten Anmeldung nicht automatisch zurückverschoben (in die Gruppe, in die sie  
+> laut Konfiguration gehören).  
 
 Standard: `disabled`.
 

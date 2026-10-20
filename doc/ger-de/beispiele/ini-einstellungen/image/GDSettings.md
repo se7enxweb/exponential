@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## HasGD2
 
-> If set to true more advanced functionality will be available  
-> which is present in GD2. This requires GD2 to be compiled in  
-> the PHP module.  
-> This only decides whether the texttoimage layers are drawn as  
-> true colour or palette images. It does not affect the GD  
-> image converter (\[GD\] below), which keeps the colour type of  
-> the image it converts.  
+> Wenn true, sind erweiterte Funktionen verfügbar,  
+> die es in GD2 gibt. Dafür muss GD2 in das  
+> PHP-Modul einkompiliert sein.  
+> Dies entscheidet nur, ob die Ebenen von texttoimage als  
+> True-Color- oder Palettenbilder gezeichnet werden. Es betrifft nicht den  
+> Bildkonverter GD (\[GD\] unten), der den Farbtyp des  
+> umgewandelten Bildes beibehält.  
 
 Standard: `false`.
 

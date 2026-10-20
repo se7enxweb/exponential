@@ -11,31 +11,30 @@ generated: exp:help:examples
 
 Der Block `[Topmenu_content]` von `settings/menu.ini`, mit 6 Einstellung(en).
 
-> Example of adding a custom topmenu entry  
-> See the commented Topmenu\_custom entry at the bottom  
+> Beispiel für das Hinzufügen eines eigenen Eintrags im Hauptmenü  
+> Siehe den auskommentierten Eintrag Topmenu\_custom ganz unten  
 > Tabs\[\]=custom  
-> Here are the settings which controls behavour of each  
-> menuitem in top admin menu.  
-> URL\['ui\_context'\] - which view item points to in different contextes.  
-> NavigationPartIdentifier  - Navigation part identifier of the menu item.  
-> Name - name which is shown on the menu item, if it is not set the default value  
->        is used. Write it in English: it is translated like any other interface  
->        text, in the context TranslationContext names, and shown as it is when  
->        the current language has no translation for it.  
-> Tooltip - tooltip which is shown for the menu item, if it is not set the default value  
->           is used. Translated the same way as Name.  
-> TranslationContext - (optional) the translation context Name and Tooltip are  
->        looked up in, design/admin/pagelayout (the context of the default tab  
->        names) when it is not set. An extension that adds a tab puts the  
->        translations of its Name and Tooltip into its own translation.ts under  
->        this context.  
-> Icon - (optional) the name of an icon admin4 draws before the tab's name: a name of design.ini  
->        \[AdminDesignSettings\] IconList\[\] (Bootstrap Icons); a name it does not know draws no icon.  
-> Enabled\[ui\_context\] - sets if menuitem is clickable in current ui\_context.  
-> Shown\[ui\_context\]  - sets if menuitem is clickable in current ui\_context  
-> PolicyList\[\] - list of policies, either in "<node\_id>" or "<module>/<function>" form; a module without  
->                policy functions (visual, class, role, workflow ...) is "<module>/\*"  
->                In case of node id, content/read is checked!  
+> Hier die Einstellungen, die das Verhalten jedes  
+> Eintrags im oberen Menü der Administration steuern.  
+> URL\['ui\_context'\] - auf welche Ansicht der Eintrag in verschiedenen Kontexten zeigt.  
+> NavigationPartIdentifier  - Bezeichner des Navigationsbereichs des Menüeintrags.  
+> Name - Name, der auf dem Menüeintrag angezeigt wird; ist er nicht gesetzt, wird der Standardwert  
+>        verwendet. Schreiben Sie ihn auf Englisch: Er wird wie jeder andere Oberflächen-  
+>        text im Kontext übersetzt, den TranslationContext nennt, und so angezeigt, wie er ist, wenn  
+>        die aktuelle Sprache keine Übersetzung dafür hat.  
+> Tooltip - Tooltip, der für den Menüeintrag angezeigt wird; ist er nicht gesetzt, wird der Standardwert  
+>           verwendet. Wie Name übersetzt.  
+> TranslationContext - (optional) der Übersetzungskontext, in dem Name und Tooltip  
+>        nachgeschlagen werden, design/admin/pagelayout (der Kontext der Standardnamen  
+>        der Reiter), wenn er nicht gesetzt ist. Eine Erweiterung, die einen Reiter hinzufügt, legt die  
+>        Übersetzungen seines Namens und Tooltips unter diesem Kontext in ihre eigene translation.ts.  
+> Icon - (optional) der Name eines Symbols, das admin4 vor den Namen des Reiters zeichnet: ein Name aus design.ini  
+>        \[AdminDesignSettings\] IconList\[\] (Bootstrap Icons); ein unbekannter Name zeichnet kein Symbol.  
+> Enabled\[ui\_context\] - legt fest, ob der Menüeintrag im aktuellen ui\_context anklickbar ist.  
+> Shown\[ui\_context\]  - legt fest, ob der Menüeintrag im aktuellen ui\_context anklickbar ist  
+> PolicyList\[\] - Liste von Richtlinien, in der Form "<node\_id>" oder "<module>/<function>"; ein Modul ohne  
+>                Richtlinienfunktionen (visual, class, role, workflow ...) ist "<module>/\*"  
+>                Bei einer Knoten-ID wird content/read geprüft!  
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -19,17 +19,17 @@ Bearbeiten Sie `settings/notification.ini` nie selbst: Ein Update ersetzt die Da
 
 ## PublishWithoutNotification
 
-> enabled shows "Publish without notification" next to the publish button of  
-> content/edit and of the version preview: the version is published, but no  
-> notification event is made, so the subscribers of its location get no mail  
-> (the filter content/notification/create gets false). disabled hides the button  
-> and publishes every version with notification.  
-> The button is shown to, and counts for, users whose role has the policy  
-> function content/publish\_without\_notification (a content/\* policy includes  
-> it). For anybody else, and with the setting disabled, a posted button  
-> publishes with notification. Only the ezpublish event of the version is left  
-> out: approval (collaboration) notifications are sent as before. Set it per  
-> siteaccess (the admin siteaccess only, for example) to offer it there only.  
+> enabled zeigt „Ohne Benachrichtigung veröffentlichen“ neben der Schaltfläche Veröffentlichen von  
+> content/edit und der Versionsvorschau: Die Version wird veröffentlicht, aber kein  
+> Benachrichtigungsereignis erzeugt, die Abonnenten ihrer Platzierung erhalten also keine Mail  
+> (der Filter content/notification/create erhält false). disabled blendet die Schaltfläche aus  
+> und veröffentlicht jede Version mit Benachrichtigung.  
+> Die Schaltfläche wird Benutzern angezeigt, deren Rolle die Richtlinienfunktion  
+> content/publish\_without\_notification hat (eine Richtlinie content/\* schließt  
+> sie ein), und gilt nur für sie. Für alle anderen und mit deaktivierter Einstellung veröffentlicht eine abgeschickte Schaltfläche  
+> mit Benachrichtigung. Nur das Ereignis ezpublish der Version entfällt:  
+> Benachrichtigungen zu Freigaben (Zusammenarbeit) werden wie bisher gesendet. Setzen Sie es pro  
+> Siteaccess (zum Beispiel nur im Administrations-Siteaccess), um es nur dort anzubieten.  
 > doc/eng-us/features/6.0/publish-without-notification.md  
 
 Standard: `disabled`.
@@ -44,13 +44,13 @@ PublishWithoutNotification=disabled
 
 ## NotificationFilterByClassIdentifier
 
-> enabled makes notification events (the mails and digest items of the  
-> subscribers of a location) only for publications of the classes in  
-> IncludeClasses\[\] (class identifiers; a class ID names its class too); a  
-> publication of any other class counts as published without notification  
-> (the filter content/notification/create gets false).  
-> With an empty list nothing makes an event. disabled (default): every class.  
-> Approval (collaboration) notifications are not concerned.  
+> enabled erzeugt Benachrichtigungsereignisse (die Mails und Einträge der Zusammenfassungen der  
+> Abonnenten einer Platzierung) nur für Veröffentlichungen der Klassen in  
+> IncludeClasses\[\] (Klassenbezeichner; eine Klassen-ID nennt ihre Klasse ebenfalls); eine  
+> Veröffentlichung jeder anderen Klasse gilt als ohne Benachrichtigung veröffentlicht  
+> (der Filter content/notification/create erhält false).  
+> Bei einer leeren Liste erzeugt nichts ein Ereignis. disabled (Standard): jede Klasse.  
+> Benachrichtigungen zu Freigaben (Zusammenarbeit) sind nicht betroffen.  
 > doc/eng-us/features/6.0/publish-without-notification.md  
 
 Standard: `disabled`.

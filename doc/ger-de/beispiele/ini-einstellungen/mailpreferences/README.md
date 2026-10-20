@@ -12,23 +12,23 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/mailpreferences.ini`: 19 Blöcke, 95 Einstellungen.
 
-> Exponential configuration file for the e-mail preferences and consent system.  
+> Exponential-Konfigurationsdatei für das System der E-Mail-Einstellungen und Einwilligungen.  
 >
-> Every person can switch e-mail on and off per category on one page  
-> (mailpreferences/settings, mailpreferences/manage/<token> without login).  
-> The mail gate in eZMailTransport::send() checks every mail that declares a  
-> category (eZMail::setCategory() or the X-Exp-Mail-Category header) against  
-> the master switch, the category, the suppression list and a pending double  
-> opt-in; optional mail gets a footer, a one-click unsubscribe link and the  
-> RFC 8058 List-Unsubscribe and List-Unsubscribe-Post headers.  
+> Jede Person kann E-Mail pro Kategorie auf einer Seite ein- und ausschalten  
+> (mailpreferences/settings, mailpreferences/manage/<token> ohne Anmeldung).  
+> Das Mail-Gate in eZMailTransport::send() prüft jede Mail, die eine  
+> Kategorie angibt (eZMail::setCategory() oder der Header X-Exp-Mail-Category), gegen  
+> den Hauptschalter, die Kategorie, die Sperrliste und ein ausstehendes Double-  
+> Opt-in; optionale Mail erhält eine Fußzeile, einen Abmeldelink mit einem Klick und die  
+> Header List-Unsubscribe und List-Unsubscribe-Post nach RFC 8058.  
 >
-> NOTE: It is not recommended to edit this file directly, instead a file in  
->       override should be created for the values the site needs:  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen eine Datei in  
+>       override für die Werte an, die die Website braucht:  
 >       settings/override/mailpreferences.ini.append.php  
 >
-> The site secret for the links and the address hashes (\[SecretSettings\]) is  
-> generated on first use into settings/override/mailpreferences.ini.append.php.  
-> That file is never committed.  
+> Das Website-Geheimnis für die Links und die Hashes der Adressen (\[SecretSettings\]) wird  
+> bei der ersten Verwendung in settings/override/mailpreferences.ini.append.php erzeugt.  
+> Diese Datei wird nie committet.  
 
 | Block | Einstellungen |
 |---|---|

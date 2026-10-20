@@ -11,11 +11,11 @@ generated: exp:help:examples
 
 Der Block `[AnimatedGIF]` von `settings/image.ini`, mit 5 Einstellung(en).
 
-> Fallback if jpeg is disabled as output.  
+> Ausweichlösung, wenn jpeg als Ausgabe deaktiviert ist.  
 > ConversionRules\[\]=image/jpeg;image/png  
-> Override for animated GIFs, this is needed to properly  
-> handle image/gif files with multiple image frames.  
-> It will turn off any geometry filters to leave the images untouched.  
+> Override für animierte GIFs; nötig, um  
+> Dateien vom Typ image/gif mit mehreren Bildern richtig zu behandeln.  
+> Es schaltet alle Geometriefilter ab, damit die Bilder unverändert bleiben.  
 
 Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -25,7 +25,7 @@ Bearbeiten Sie `settings/image.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## MIMEType
 
-> The MIME type which this override works on  
+> Der MIME-Typ, für den dieses Override gilt  
 
 Standard: `image/gif`.
 
@@ -39,7 +39,7 @@ MIMEType=image/gif
 
 ## Match
 
-> A list of matches that needs to be satisified for this override to be used  
+> Eine Liste von Bedingungen, die erfüllt sein müssen, damit dieses Override verwendet wird  
 
 Standard: ein Hash mit 1: `is_animated=1`.
 
@@ -55,7 +55,7 @@ Match[is_animated]=1
 
 ## OverrideMIMEType
 
-> Alternative MIME type for the image, currently unused.  
+> Alternativer MIME-Typ für das Bild, derzeit unbenutzt.  
 
 Standard: `animation/gif`.
 
@@ -69,8 +69,8 @@ OverrideMIMEType=animation/gif
 
 ## DisallowedFilters
 
-> A list of filters which are not allowed to be run on this image,  
-> wildcards can also be used.  
+> Eine Liste von Filtern, die auf dieses Bild nicht angewendet werden dürfen;  
+> Platzhalter sind ebenfalls möglich.  
 
 Standard: eine Liste mit 1: `*`.
 
@@ -86,13 +86,13 @@ DisallowedFilters[]=*
 
 ## ExtraFilters
 
-> A list of filters which are allowed to be run on this image,  
-> wildcards can also be used. If this is supplied only filters that  
-> are in this list will be allowed  
-> Note that resizing of animated gifs is not supported using GD2, at least not until PHP 5.3.  
-> See: http://www.libgd.org/FAQ\_PHP  
+> Eine Liste von Filtern, die auf dieses Bild angewendet werden dürfen;  
+> Platzhalter sind ebenfalls möglich. Wenn angegeben, sind nur die Filter  
+> in dieser Liste erlaubt  
+> Beachten Sie, dass das Skalieren animierter GIFs mit GD2 nicht unterstützt wird, zumindest nicht vor PHP 5.3.  
+> Siehe: http://www.libgd.org/FAQ\_PHP  
 > AllowedFilters\[\]  
-> A list of extra filters to add for this image.  
+> Eine Liste zusätzlicher Filter für dieses Bild.  
 
 Standard: eine leere Liste.
 

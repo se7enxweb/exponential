@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/logviewer.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Hours
 
-> The error digest (Setup > Log files > Error digest, setup/logsdigest): the distinct messages of the last Hours  
-> hours of each kernel log (or of one log), normalized (numbers, ids, hexadecimal values, quoted values and paths set  
-> aside) and counted, most frequent first. Always masked. Known messages are hidden per user (the preference  
-> admin\_logviewer\_known). The hours of the window when the page names none (1 to 168).  
+> Die Fehlerübersicht (Setup > Logdateien > Fehlerübersicht, setup/logsdigest): die verschiedenen Meldungen der letzten Hours  
+> Stunden jedes Kernel-Logs (oder eines Logs), normalisiert (Zahlen, IDs, Hexadezimalwerte, Werte in Anführungszeichen und Pfade  
+> beiseitegelassen) und gezählt, die häufigsten zuerst. Immer maskiert. Bekannte Meldungen werden pro Benutzer ausgeblendet (die Einstellung  
+> admin\_logviewer\_known). Die Stunden des Zeitfensters, wenn die Seite keine nennt (1 bis 168).  
 
 Standard: `24`.
 
@@ -36,7 +36,7 @@ Hours=24
 
 ## MaxMessages
 
-> The most messages listed per log.  
+> Die meisten pro Log aufgeführten Meldungen.  
 
 Standard: `50`.
 
@@ -50,7 +50,7 @@ MaxMessages=50
 
 ## MaxBytesPerFile
 
-> The most bytes read per log from the start of the window (the start is found by a binary search on the times).  
+> Die meisten Bytes, die pro Log ab dem Beginn des Zeitfensters gelesen werden (der Beginn wird per Binärsuche über die Zeiten gefunden).  
 
 Standard: `8388608`.
 
@@ -64,7 +64,7 @@ MaxBytesPerFile=8388608
 
 ## Levels
 
-> The levels listed.  
+> Die aufgeführten Stufen.  
 
 Standard: eine Liste mit 2: `error`, `warning`.
 
@@ -81,8 +81,8 @@ Levels[]=warning
 
 ## LogLevels
 
-> The levels listed for one log, by its key, instead of Levels\[\]: a comma list. The not found requests (404.log) are  
-> notices, so the digest lists them only through this.  
+> Die für ein Log aufgeführten Stufen, nach seinem Schlüssel, statt Levels\[\]: eine Kommaliste. Die nicht gefundenen Anfragen (404.log) sind  
+> notices, die Übersicht listet sie also nur hierüber auf.  
 
 Standard: ein Hash mit 1: `404=error,warning,notice`.
 
@@ -98,15 +98,15 @@ LogLevels[404]=error,warning,notice
 
 ## GroupBy
 
-> How the entries of a log are grouped, by its key:  
->   message        the normalized message (the default)  
->   category-rule  the first word of the line, <category>/<rule> (security.log: probe/wp-login, injection/sql ...)  
->   reason         the reason= field, with ids and paths set aside (404.log: module:foo, view:content/view, node:# ...)  
->   reason-kind    only the kind of the reason= field (module, view, disabled, node, object, rule, kernel)  
->   uri            the method and the path, without the query, numbers set aside (GET /blog/#)  
->   directive-blocked  the directive and the origin of what it blocked (csp.log: csp/script-src blocked=inline,  
->                  csp/img-src blocked=https://maps.example.com); the path of a blocked URI set aside  
-> An entry that has no such field is grouped by its message.  
+> Wie die Einträge eines Logs gruppiert werden, nach seinem Schlüssel:  
+>   message        die normalisierte Meldung (der Standard)  
+>   category-rule  das erste Wort der Zeile, <category>/<rule> (security.log: probe/wp-login, injection/sql ...)  
+>   reason         das Feld reason=, ohne IDs und Pfade (404.log: module:foo, view:content/view, node:# ...)  
+>   reason-kind    nur die Art des Feldes reason= (module, view, disabled, node, object, rule, kernel)  
+>   uri            die Methode und der Pfad, ohne Query, Zahlen beiseitegelassen (GET /blog/#)  
+>   directive-blocked  die Direktive und die Herkunft dessen, was sie blockiert hat (csp.log: csp/script-src blocked=inline,  
+>                  csp/img-src blocked=https://maps.example.com); der Pfad einer blockierten URI beiseitegelassen  
+> Ein Eintrag ohne ein solches Feld wird nach seiner Meldung gruppiert.  
 
 Standard: ein Hash mit 3: `404=reason`, `security=category-rule`, `csp=directive-blocked`.
 

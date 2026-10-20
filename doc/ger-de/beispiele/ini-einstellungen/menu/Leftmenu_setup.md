@@ -31,13 +31,13 @@ Name=setup
 
 ## Groups
 
-> Groups of the left menu (admin4, parts/ini\_menu.tpl): Groups\[\] in their order, GroupNames\[<group>\] the title,  
-> GroupLinks\_<group>\[\] the link keys. Links in no group follow under "More", the last group. For one plain list  
-> reset Groups\[\] (a line Groups\[\] with no values) in an override. Only the arrangement changes: access is checked per  
-> link as before.  
-> The groups ai and updates hold the links of extensions: a key listed there whose extension is not active shows  
-> nothing, and a group without a link the user may open is not drawn. An extension puts its own link in a group with  
-> GroupLinks\_<group>\[\]=<key> in its menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md, "Setup overview").  
+> Gruppen des linken Menüs (admin4, parts/ini\_menu.tpl): Groups\[\] in ihrer Reihenfolge, GroupNames\[<group>\] der Titel,  
+> GroupLinks\_<group>\[\] die Link-Schlüssel. Links in keiner Gruppe folgen unter „Mehr“, der letzten Gruppe. Für eine einfache Liste  
+> setzen Sie Groups\[\] in einem Override zurück (eine Zeile Groups\[\] ohne Werte). Nur die Anordnung ändert sich: Der Zugriff wird wie bisher  
+> pro Link geprüft.  
+> Die Gruppen ai und updates enthalten die Links von Erweiterungen: Ein dort aufgeführter Schlüssel, dessen Erweiterung nicht aktiv ist, zeigt  
+> nichts, und eine Gruppe ohne einen Link, den der Benutzer öffnen darf, wird nicht gezeichnet. Eine Erweiterung legt ihren eigenen Link mit  
+> GroupLinks\_<group>\[\]=<key> in ihrer menu.ini.append.php in eine Gruppe (doc/eng-us/features/6.0/admin4-design.md, "Setup overview").  
 
 Standard: eine Liste mit 9: `content_model`, `site`, `design`, `workflow`, `users`, `audit`, `system`, `ai`, `updates`.
 
@@ -83,14 +83,14 @@ GroupNames[updates]=Updates
 
 ## GroupTabs
 
-> A group that stands for a top tab (admin4): GroupTabs\[<group>\]=<tab> shows the group only while the tab is not in  
-> the top menu (left out of \[TopAdminMenu\] Tabs\[\], named in HiddenTabs\[\], or named in SetupTabs\[\] for a user who  
-> may open setup/menu); then the tab's pages (its  
-> NavigationPartIdentifier) mark the Setup tab and draw this menu. While the tab is shown, the group and its links  
-> are not here at all. GroupSections\[<group>\]=<section> adds the links of another left menu to the group, after its  
-> GroupLinks\_<group>\[\]: that section's Links\[\], names, PolicyList\[\] and PolicyList\_<key>\[\], Enabled\_<key>\[\] and tile  
-> settings (LinkIcons\[\], LinkDescriptions\[\], LinkFigureTemplates\[\]), so the tab's menu and the group stay one list.  
-> A Setup link to an address the added menu has too shows in that group only.  
+> Eine Gruppe, die für einen Reiter des Hauptmenüs steht (admin4): GroupTabs\[<group>\]=<tab> zeigt die Gruppe nur, solange der Reiter nicht im  
+> Hauptmenü ist (in \[TopAdminMenu\] Tabs\[\] ausgelassen, in HiddenTabs\[\] genannt oder in SetupTabs\[\] genannt für einen Benutzer, der  
+> setup/menu öffnen darf); dann markieren die Seiten des Reiters (sein  
+> NavigationPartIdentifier) den Reiter Setup und zeichnen dieses Menü. Solange der Reiter angezeigt wird, sind die Gruppe und ihre Links  
+> gar nicht hier. GroupSections\[<group>\]=<section> fügt der Gruppe die Links eines anderen linken Menüs hinzu, nach ihren  
+> GroupLinks\_<group>\[\]: Links\[\], Namen, PolicyList\[\] und PolicyList\_<key>\[\], Enabled\_<key>\[\] und Kachel-  
+> einstellungen (LinkIcons\[\], LinkDescriptions\[\], LinkFigureTemplates\[\]) dieses Abschnitts, sodass das Menü des Reiters und die Gruppe eine Liste bleiben.  
+> Ein Setup-Link auf eine Adresse, die auch das hinzugefügte Menü hat, erscheint nur in dieser Gruppe.  
 
 Standard: ein Hash mit 2: `design=design`, `audit=audit`.
 
@@ -216,7 +216,7 @@ GroupLinks_users[]=audit
 
 ## GroupLinks_system
 
-> extensions: expqueue (the job queue, also shipped with expai), sevenx\_dse (the database editor)  
+> Erweiterungen: expqueue (die Auftragswarteschlange, auch mit expai ausgeliefert), sevenx\_dse (der Datenbankeditor)  
 
 Standard: eine Liste mit 12: `cache`, `system_information`, `help_center`, `upgrade_check`, `maintenance`, `cronjobs`, `logs`, `extensions`, `ini`, `sitedata`, `expqueue`, `dse`.
 
@@ -243,7 +243,7 @@ GroupLinks_system[]=dse
 
 ## GroupLinks_ai
 
-> extensions: expai  
+> Erweiterungen: expai  
 
 Standard: eine Liste mit 3: `expai_summary`, `expai_models`, `expai_budgets`.
 
@@ -261,7 +261,7 @@ GroupLinks_ai[]=expai_budgets
 
 ## GroupLinks_updates
 
-> extensions: ezupdate, git\_manager  
+> Erweiterungen: ezupdate, git\_manager  
 
 Standard: eine Liste mit 3: `ezupdate`, `git_manager`, `git_manager_backup`.
 
@@ -279,8 +279,8 @@ GroupLinks_updates[]=git_manager_backup
 
 ## LeadLinks
 
-> Links shown before the groups and in none of them: the overview (setup/menu), every link of this menu as a tile  
-> in the same groups. An extension's link in no group shows under "More" in the menu and on the overview.  
+> Links, die vor den Gruppen und in keiner davon angezeigt werden: die Übersicht (setup/menu), jeder Link dieses Menüs als Kachel  
+> in denselben Gruppen. Der Link einer Erweiterung in keiner Gruppe erscheint unter „Mehr“ im Menü und in der Übersicht.  
 
 Standard: eine Liste mit 1: `overview`.
 
@@ -296,15 +296,15 @@ LeadLinks[]=overview
 
 ## MegaMenuLinks
 
-> admin4's mega menu (prototype, \[TopAdminMenu\] MegaMenuTabs\[\]=setup): the links of this menu it shows, by link key,  
-> in this order; at most 19 (6 to 19 read best), the rest is one click away under "Go to Setup" (the overview).  
-> Each link keeps its group (GroupNames\[\]) and its access checks: a link the user may not open, or whose extension is not  
-> active, is left out, and so is a group with no link left. The groups follow the order of their first link here.  
-> A list reset to no values shows every link of the menu, as the overview does.  
-> Log files (setup/logs) took the place of Link management (url/list), which stays one click away in the  
-> group "Site and URLs" of the overview. Collected information (Content model) and RSS (Site and URLs) were added  
-> in 6.0.15, and so were Preload sites and Packages (Site and URLs) and EI: Models and EI: Budgets (AI) and oAuth admin  
-> (Users and messages): the list holds nineteen.  
+> Das Mega-Menü von admin4 (Prototyp, \[TopAdminMenu\] MegaMenuTabs\[\]=setup): die Links dieses Menüs, die es zeigt, nach Link-Schlüssel,  
+> in dieser Reihenfolge; höchstens 19 (6 bis 19 lesen sich am besten), der Rest ist einen Klick entfernt unter „Zu Setup“ (die Übersicht).  
+> Jeder Link behält seine Gruppe (GroupNames\[\]) und seine Zugriffsprüfungen: Ein Link, den der Benutzer nicht öffnen darf oder dessen Erweiterung nicht  
+> aktiv ist, entfällt, und ebenso eine Gruppe, in der kein Link übrig bleibt. Die Gruppen folgen hier der Reihenfolge ihres ersten Links.  
+> Eine auf keine Werte zurückgesetzte Liste zeigt jeden Link des Menüs, wie die Übersicht.  
+> Logdateien (setup/logs) nahmen den Platz der Linkverwaltung (url/list) ein, die einen Klick entfernt in der  
+> Gruppe „Website und URLs“ der Übersicht bleibt. Gesammelte Informationen (Inhaltsmodell) und RSS (Website und URLs) kamen  
+> in 6.0.15 hinzu, ebenso Websites vorwärmen und Pakete (Website und URLs) sowie EI: Modelle und EI: Budgets (KI) und oAuth admin  
+> (Benutzer und Nachrichten): Die Liste enthält neunzehn.  
 
 Standard: eine Liste mit 19: `classes`, `sections`, `collected`, `rss`, `preload`, `packages`, `audit`, `oauth_list`, `cache`, `cronjobs`, `logs`, `extensions` ....
 
@@ -338,14 +338,14 @@ MegaMenuLinks[]=git_manager
 
 ## LinkIcons
 
-> The Setup overview (setup/menu) draws this menu as tiles. Per link key, all optional:  
->   LinkIcons\[<key>\]=<icon>         an icon of design.ini \[AdminDesignSettings\] IconList\[\] (a Bootstrap icon name,  
->                                   e.g. bar-chart); a name not listed there, or no entry, draws the plug icon  
->   LinkDescriptions\[<key>\]=<text>  one line on what the function does, translated in the menu's context  
->                                   (design/admin/parts/setup/menu) like LinkNames\[\]  
->   LinkFigureTemplates\[<key>\]=design:<path>.tpl  a template that draws the tile's figure, included with  
->                                   figure\_key=<key> for a shown tile only; empty or not design: draws none  
-> An extension sets them for its own link in its menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
+> Die Setup-Übersicht (setup/menu) zeichnet dieses Menü als Kacheln. Pro Link-Schlüssel, alles optional:  
+>   LinkIcons\[<key>\]=<icon>         ein Symbol aus design.ini \[AdminDesignSettings\] IconList\[\] (der Name eines Bootstrap-Symbols,  
+>                                   z. B. bar-chart); ein dort nicht aufgeführter Name oder kein Eintrag zeichnet das Stecker-Symbol  
+>   LinkDescriptions\[<key>\]=<text>  eine Zeile dazu, was die Funktion tut, im Kontext des Menüs übersetzt  
+>                                   (design/admin/parts/setup/menu) wie LinkNames\[\]  
+>   LinkFigureTemplates\[<key>\]=design:<path>.tpl  ein Template, das die Abbildung der Kachel zeichnet, mit  
+>                                   figure\_key=<key> nur für eine angezeigte Kachel eingebunden; leer oder nicht design: zeichnet keine  
+> Eine Erweiterung setzt sie für ihren eigenen Link in ihrer menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
 Standard: ein Hash mit 53: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
 
@@ -434,43 +434,43 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 
 ## Links
 
-> No PolicyList\_overview\[\]: the view opens with any one of the setup module's functions (kernel/setup/module.php),  
-> which one PolicyList entry cannot say; CheckViewAccess asks the view itself.  
-> The audit settings and archives (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/manage  
-> The content finder (doc/eng-us/features/6.0/content-finder.md): find content by id or path, only with contentfinder/search  
-> The content checks (doc/eng-us/features/6.0/content-checks.md): unreferenced objects and broken relations, each only  
-> with its policy  
-> The cronjobs console. LinkNames is what the entry reads as: without it the  
-> menu falls back to the key, and "cronjobs" is not a label.  
-> The log viewer (doc/eng-us/features/6.0/log-viewer.md): follow, search and cross-reference the log files, only with setup/logs  
-> The Design tab's page (its URL\[default\]), in the group that stands for the tab (GroupTabs\[design\]): shown only  
-> while the tab is not in the top menu  
-> Removed from 4.3. Enable if you have special requirements.  
+> Kein PolicyList\_overview\[\]: Die Ansicht öffnet sich mit einer beliebigen Funktion des Moduls setup (kernel/setup/module.php),  
+> was ein Eintrag in PolicyList nicht sagen kann; CheckViewAccess fragt die Ansicht selbst.  
+> Die Einstellungen und Archive des Audits (doc/eng-us/bc/6.0/audit.md, "Placement"), nur mit audit/manage  
+> Der Inhaltsfinder (doc/eng-us/features/6.0/content-finder.md): Inhalte über ID oder Pfad finden, nur mit contentfinder/search  
+> Die Inhaltsprüfungen (doc/eng-us/features/6.0/content-checks.md): nicht referenzierte Objekte und defekte Verknüpfungen, jede nur  
+> mit ihrer Richtlinie  
+> Die Cronjob-Konsole. LinkNames ist das, was der Eintrag zeigt: Ohne ihn  
+> fällt das Menü auf den Schlüssel zurück, und "cronjobs" ist keine Beschriftung.  
+> Der Log-Viewer (doc/eng-us/features/6.0/log-viewer.md): Logdateien verfolgen, durchsuchen und querverweisen, nur mit setup/logs  
+> Die Seite des Reiters Design (seine URL\[default\]), in der Gruppe, die für den Reiter steht (GroupTabs\[design\]): nur angezeigt,  
+> solange der Reiter nicht im Hauptmenü ist  
+> Seit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.  
 > Links\[global\_setting\]=content/edit/52  
 > PolicyList\_global\_setting\[\]=54  
-> The translation fallbacks of every interface language (doc/eng-us/languages.md), read only  
-> The e-mail preferences for administrators: status, categories, suppression list, consent log  
-> Removed from 4.3. Enable if you have special requirements.  
+> Die Übersetzungs-Fallbacks jeder Oberflächensprache (doc/eng-us/languages.md), nur lesend  
+> Die E-Mail-Einstellungen für Administratoren: Status, Kategorien, Sperrliste, Einwilligungsprotokoll  
+> Seit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.  
 > Links\[look\_and\_feel\]=content/edit/54  
 > PolicyList\_look\_and\_feel\[\]=56  
-> The menus of the classic site designs (visual/menuconfig) are a link of the Design menu (\[Leftmenu\_design\])  
-> The notification status (pending events, digest messages, the last runs of the notification cronjob, problems)  
-> Preload Sites, RSS and Packages open the group "Site and URLs" (GroupLinks\_site\[\]), RAD closes it: a group draws its  
-> links in the order of Links\[\], so their order here is the order of the group  
-> Disabled by default in 4.3 as it is also present in user account tab.  
+> Die Menüs der klassischen Website-Designs (visual/menuconfig) sind ein Link des Menüs Design (\[Leftmenu\_design\])  
+> Der Benachrichtigungsstatus (ausstehende Ereignisse, Nachrichten der Zusammenfassungen, die letzten Läufe des Benachrichtigungs-Cronjobs, Probleme)  
+> Websites vorwärmen, RSS und Pakete eröffnen die Gruppe „Website und URLs“ (GroupLinks\_site\[\]), RAD schließt sie ab: Eine Gruppe zeichnet ihre  
+> Links in der Reihenfolge von Links\[\], ihre Reihenfolge hier ist also die Reihenfolge der Gruppe  
+> In 4.3 standardmäßig deaktiviert, weil es auch im Reiter Benutzerkonto vorhanden ist.  
 > Links\[roles\_and\_policies\]=role/list  
 > PolicyList\_roles\_and\_policies\[\]=role/\*  
-> Check user accounts (doc/eng-us/features/6.0/user-hygiene.md): never signed in, not seen for long, disabled, locked,  
-> orphaned, a shared e-mail address; only with user/hygiene. The same key is in \[Leftmenu\_user\].  
-> The rows of ezsite\_data, read only (Setup > Site data)  
-> The Help center, the start page of the help (exphelp/dashboard)  
-> Removed from 4.3. Enable if you have special requirements.  
+> Benutzerkonten prüfen (doc/eng-us/features/6.0/user-hygiene.md): nie angemeldet, lange nicht gesehen, deaktiviert, gesperrt,  
+> verwaist, eine gemeinsame E-Mail-Adresse; nur mit user/hygiene. Derselbe Schlüssel steht in \[Leftmenu\_user\].  
+> Die Zeilen von ezsite\_data, nur lesend (Setup > Website-Daten)  
+> Das Hilfecenter, die Startseite der Hilfe (exphelp/dashboard)  
+> Seit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.  
 > Links\[templates\]=visual/templatelist  
 > PolicyList\_templates\[\]=visual/\*  
-> Removed from 4.3. Enable if you have special requirements.  
+> Seit 4.3 entfernt. Aktivieren Sie es, wenn Sie besondere Anforderungen haben.  
 > Links\[toolbar\_management\]=visual/toolbarlist  
 > PolicyList\_toolbar\_management\[\]=visual/\*  
-> RAD closes the group "Site and URLs"  
+> RAD schließt die Gruppe „Website und URLs“ ab  
 
 Standard: ein Hash mit 40: `overview=setup/menu`, `cache=setup/cache`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance`, `cronjobs=setup/cronjobs`, `logs=setup/logs` ....
 
@@ -1051,7 +1051,7 @@ PolicyList_workflow_processes[]=workflow/*
 
 ## PolicyList_oauth_list
 
-> The views of oauthadmin define no policy functions: the module's own access (oauthadmin/\*), as the kernel checks it  
+> Die Ansichten von oauthadmin definieren keine Richtlinienfunktionen: der eigene Zugriff des Moduls (oauthadmin/\*), wie der Kernel ihn prüft  
 
 Standard: eine Liste mit 1: `oauthadmin/*`.
 

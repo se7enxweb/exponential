@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/logviewer.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Requests
 
-> The most feed requests (polls, searches, related lines) one session may make in Window seconds. A request over  
-> the limit is answered 429 with Retry-After, and the page backs off.  
+> Die meisten Feed-Anfragen (Abfragen, Suchen, zugehörige Zeilen), die eine Sitzung in Window Sekunden stellen darf. Eine Anfrage über  
+> der Grenze wird mit 429 und Retry-After beantwortet, und die Seite wartet länger.  
 
 Standard: `120`.
 

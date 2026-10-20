@@ -65,9 +65,9 @@ Alias[keyword]=ezkeyword
 
 ## LimitDeleteElements
 
-> Maximum number of notification digest elements removed in one query.  
-> This is needed to prevent exceeding DBMS limits  
-> (maximum query length, maximum number of elements in IN() clause).  
+> Höchstzahl der Elemente der Benachrichtigungs-Zusammenfassung, die in einer Abfrage entfernt werden.  
+> Nötig, um die Grenzen des DBMS nicht zu überschreiten  
+> (maximale Abfragelänge, maximale Zahl der Elemente in einer IN()-Klausel).  
 
 Standard: `50`.
 
@@ -81,8 +81,8 @@ LimitDeleteElements=50
 
 ## RetryHours
 
-> How many hours a notification that the mail transport did not take is tried again, at every run, before it is given up  
-> and counted as dropped on the notification status page.  
+> Wie viele Stunden eine Benachrichtigung, die der Mail-Transport nicht angenommen hat, bei jedem Lauf erneut versucht wird, bevor sie aufgegeben  
+> und auf der Seite des Benachrichtigungsstatus als verworfen gezählt wird.  
 
 Standard: `72`.
 
