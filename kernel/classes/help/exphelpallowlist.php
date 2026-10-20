@@ -491,6 +491,82 @@ class expHelpAllowlist
     }
 
     /**
+     * What decides the entries apart from the list of files itself: the settings and the roots. Unlike stamp() it
+     * does not change when only the git index or the manifest is written again (git status refreshes the index; a
+     * commit, a checkout, every root git operation of a working installation rewrites it, about once a minute on a
+     * busy one). A caller that also hashes the listed paths, sizes and times (the help index's signature) knows
+     * everything stamp() would tell it, without a new version of its cache each time the git index is touched.
+     *
+     * @return string 40 hex characters
+     */
+    public function configStamp()
+    {
+        return sha1( json_encode( $this->config ) . "\n" . json_encode( $this->roots() ) . "\n"
+                     . ( $this->projectFiles() !== null && is_file( $this->rootDir . '/.gitignore' ) ? self::fileState( $this->rootDir . '/.gitignore' ) : '' ) );
+    }
+
+    /**
+     * The commit each repository of the roots (and the installation root, for the project files) is at: what
+     * history() answers changes with it. Read from the git directory's files (HEAD, the ref it names, packed-refs),
+     * no git command. '' for a repository without git.
+     *
+     * @return string
+     */
+    public function headState()
+    {
+        $tops = array();
+        foreach ( $this->roots() as $root )
+        {
+            $repo = $this->repositoryOf( $root );
+            if ( $repo !== null && $repo['gitdir'] !== null )
+                $tops[$repo['top']] = $repo['gitdir'];
+        }
+        if ( $this->projectFiles() !== null && ( $gitdir = self::gitDir( $this->rootDir ) ) !== null )
+            $tops[$this->rootDir] = $gitdir;
+        ksort( $tops );
+        $parts = array();
+        foreach ( $tops as $top => $gitdir )
+            $parts[] = $top . ':' . self::headOf( $gitdir );
+        return sha1( implode( "\n", $parts ) );
+    }
+
+    /**
+     * The commit a git directory's HEAD is at, from its files ('' when it cannot be read).
+     *
+     * @param string $gitdir
+     * @return string
+     */
+    protected static function headOf( $gitdir )
+    {
+        $head = trim( (string)@file_get_contents( $gitdir . '/HEAD' ) );
+        if ( strpos( $head, 'ref:' ) !== 0 )
+            return $head;
+        $ref = trim( substr( $head, 4 ) );
+        if ( $ref === '' || strpos( $ref, '..' ) !== false )
+            return '';
+        // a linked work tree keeps its HEAD in its own git directory and the refs in the common one
+        $dirs = array( $gitdir );
+        if ( is_file( $gitdir . '/commondir' ) )
+        {
+            $common = trim( (string)@file_get_contents( $gitdir . '/commondir' ) );
+            $dirs[] = $common !== '' && $common[0] === '/' ? $common : $gitdir . '/' . $common;
+        }
+        foreach ( $dirs as $dir )
+        {
+            $value = trim( (string)@file_get_contents( $dir . '/' . $ref ) );
+            if ( $value !== '' )
+                return $value;
+        }
+        foreach ( $dirs as $dir )
+        {
+            $packed = (string)@file_get_contents( $dir . '/packed-refs' );
+            if ( $packed !== '' && preg_match( '/^([0-9a-f]{40,64}) ' . preg_quote( $ref, '/' ) . '$/m', $packed, $m ) )
+                return $m[1];
+        }
+        return $ref;
+    }
+
+    /**
      * A file's size and time, and its content's hash while the time is too recent to tell two versions apart.
      *
      * A time is whole seconds, and the git index keeps its size when only a page changes (the blob hash in it is
