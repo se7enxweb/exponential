@@ -22,7 +22,7 @@ Diese Seite ist für alle, die auf den Partnerseiten auf einen unbekannten Begri
 | **Punkte** | Das Maß des Programms für Aktivität; etwa 1 Punkt pro Minute Arbeit oder pro Dollar Umsatz | [Das Punktesystem](das-punktesystem.md) |
 | **Umsatzanforderung** | Umsatz, den ein Partner für höhere Stufen pro Quartal oder Jahr erzielen muss | [Anforderungen an Partner](anforderungen-an-partner.md) |
 | **Beratungstreffen** | Ein Treffen mit 7x, das je nach Stufe enthalten ist | [Partnertreffen](partnertreffen-und-briefings.md) |
-| **K.O.P.** | Kick-Off Package: Programmgebühr, Buch, Online-Schulung, Zertifizierung und 8 Std. Support | [Partnertarife und Preise](partnertarife-und-preise.md) |
+| **K.O.P.** | Kick-Off Package für Basic: Programmgebühr, Buch, Online-Schulung, Zertifizierung und 8 Std. Support, 3.200 $ (30 % Rabatt) | [Partnertarife und Preise](partnertarife-und-preise.md) |
 | **Zertifizierung** | Developer, Design, Solution (WCMS) oder Sales; ab Silver verlangt | [Zertifizierungen](zertifizierungen.md) |
 | **Exponential Certified** | Das Logo, das zertifizierte Partner der Stufen Silver, Gold und Platinum verwenden dürfen | [Logos und Zeichen](partnerlogos-und-zeichen.md) |
 | **Lead-Priorität** | Die Reihenfolge, in der Partner Leads erhalten (1 = höchste) | [Empfehlungen und Leads](empfehlungen-und-leads.md) |
@@ -31,7 +31,7 @@ Diese Seite ist für alle, die auf den Partnerseiten auf einen unbekannten Begri
 | **White Label** | Dienstleistungen von 7x unter der Marke des Partners, ab Professional | [Dienstleistungen von 7x als White Label](white-label-dienstleistungen.md) |
 | **OEM** | Wiederverkauf Ihres eigenen Produkts auf Grundlage von Exponential | [OEM und Wiederverkauf](oem-und-wiederverkauf.md) |
 | **Co-Marketing** | Gemeinsames Marketing mit 7x; ein Budget für Gold und Platinum | [Co-Marketing](co-marketing.md) |
-| **Partner Center / Partner Dashboard** | Die Werkzeuge des Programms zum Erfassen von Aktivität und Anzeigen von Punkten (am 18. Oktober 2026 nicht online) | [Ihre Partneraktivität erfassen](partneraktivitaet-erfassen.md) |
+| **Partner Center / Partner Dashboard** | Die Werkzeuge des Programms zum Erfassen von Aktivität und Anzeigen von Punkten; die Partner-Website mit Dashboard ist für Mitte 2027 geplant | [Ihre Partneraktivität erfassen](partneraktivitaet-erfassen.md) |
 | **Powered by Exponential** | Ein Hinweis auf einer Website, die mit Exponential läuft | [„Powered by Exponential“ zeigen](powered-by-exponential.md) |
 | **GPL** | GNU General Public License, v2 oder später: die Lizenz des Codes | [Lizenzierung für Partner](lizenzierung-fuer-partner.md) |
 | **GFDL** | GNU Free Documentation License 1.3 oder später: die Lizenz der Dokumentation | [Freie Dokumentation](../freie-dokumentation.md) |

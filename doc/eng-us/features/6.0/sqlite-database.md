@@ -108,3 +108,10 @@ nested path works on first use.
 - [PHP 8 support](../../bc/6.0/php8.md) (the countable and `is_countable` fixes that came out of the SQLite test runs)
 - Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md) (the driver), [6.0.13](../../../changelogs/6.0/6.0.13.md) (absolute paths, autoload), [6.0.14](../../../changelogs/6.0/6.0.14.md) (schema reading)
 - History: [January 2024, first half](../../history/2024/2024-01a.md), [January 2024, second half](../../history/2024/2024-01b.md), [April 2026](../../history/2026/2026-04.md), [June 2026, second half](../../history/2026/2026-06b.md) (dropping indexes)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

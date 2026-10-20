@@ -299,3 +299,10 @@ The whole story: [Publish without notification](../features/6.0/publish-without-
 - [The command reference](../specifications/6.0/notifications-cli.md), [the INI reference](../specifications/6.0/notifications-ini.md), [the specification](../specifications/6.0/notifications.md)
 - [Operating a site](operating-a-site.md), [cronjobs console](../features/6.0/cronjobs-console.md), [the audit trail](../features/6.0/audit-trail.md)
 - [Upgrade notes](../bc/6.0/notification-ui-and-commands.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

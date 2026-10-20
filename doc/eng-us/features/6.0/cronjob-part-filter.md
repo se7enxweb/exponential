@@ -106,3 +106,10 @@ listener in `[RunnableSettings] Listeners[]` is attached; a listener that throws
 - [Commands, cronjob parts and module views as classes](../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Access and view cache filters for extensions](access-and-cache-filters.md)
 - [Extension points](../../bc/6.0/rad-extension-points.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

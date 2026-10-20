@@ -176,3 +176,10 @@ Full upgrade steps: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine
 - Exponential caching: [HTTP cache](../../bc/6.0/http-caching.md), [the role-aware HTTP cache](../../bc/6.0/httpcache.md), [the response cache, and getting out of the network's way](../../bc/6.0/response-cache-and-navigation.md), [Velocity engines](../../bc/6.0/velocity-engines.md)
 - [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [22 September](../../history/velocity/2026-09b.md), [25 to 30 September](../../history/velocity/2026-09e.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

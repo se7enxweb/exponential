@@ -130,3 +130,10 @@ Since `v4.0.0.1` (2026-04-07) a platform installation on SQLite can run the lega
 - Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - Changelog: [platform changelog](../../../changelogs/extensions/exponential-platform.md)
 - History: [legacyBridge](../../history/ecosystem/legacyBridge.md) (49 changes, 34 releases), [ibexa-legacy-bridge---7x](../../history/ecosystem/ibexa-legacy-bridge---7x.md), [site-legacy-bundle](../../history/ecosystem/site-legacy-bundle.md), [exponential-legacy-installer](../../history/ecosystem/exponential-legacy-installer.md), [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

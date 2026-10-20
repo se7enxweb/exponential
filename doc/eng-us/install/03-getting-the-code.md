@@ -463,3 +463,10 @@ External:
 - Git: [git clone](https://git-scm.com/docs/git-clone), [git tag](https://git-scm.com/docs/git-tag).
 
 [Contents](README.md) · Previous: [2. Requirements](02-requirements.md) · Next: [4. Choosing an install method](04-choosing-an-install-method.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

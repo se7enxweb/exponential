@@ -113,9 +113,10 @@ A conflict exists when your own gain could bend what you tell viewers. Handle it
 ## What the sources say about programs and payments
 
 - No creator, influencer or affiliate program is documented. Do not tell viewers that one exists.
-- The Exponential Partner Program, for companies, publishes lead referral commissions
-  ([Referrals and leads](../partners/referrals-and-leads.md); the rate is
-  [to be confirmed](../partners/partner-plans-and-prices.md#values-still-to-be-confirmed)). If you are a partner, that is a tie to disclose.
+- The Exponential Partner Program, for companies, pays lead referral commissions of 10% of the total contract value
+  for a cold lead and 20% for a hot lead ([Referrals and leads](../partners/referrals-and-leads.md);
+  [Partner plans and prices](../partners/partner-plans-and-prices.md#partner-terms)). If you are a partner, that is a
+  tie to disclose.
 - The two organizations take sponsorship on GitHub ([Sponsors: start here](../sponsors/sponsors-start-here.md)).
   Sponsorship flows to them, not to creators.
 
@@ -126,3 +127,10 @@ A conflict exists when your own gain could bend what you tell viewers. Handle it
 - [Writing a fair review](writing-a-fair-review.md)
 - [Creators and influencers: start here](creators-and-influencers-start-here.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

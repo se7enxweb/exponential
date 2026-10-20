@@ -71,3 +71,10 @@ folder at all, so the extension-schema step is not used for it.
 - [Change ledger](../../../history/ledger/ezwebin-ezpackage.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2023-12](../../../history/extensions/months/2023-12.md), [2024-01](../../../history/extensions/months/2024-01.md), [2024-03](../../../history/extensions/months/2024-03.md), [2026-07](../../../history/extensions/months/2026-07.md) (all extensions)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../../help/partners/partners-start-here.md) and [How to apply](../../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

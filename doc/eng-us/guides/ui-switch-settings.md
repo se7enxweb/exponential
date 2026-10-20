@@ -283,3 +283,10 @@ and is dropped from the session. A provider an extension adds gets its own funct
   coverage and why the default ranking is what it is.
 - [The UI switch provider API](../bc/6.0/ui-switch.md): adding a choice from an extension.
 - [Roles and policies](roles-and-policies.md), [Caches](caches.md), [Content languages](content-languages.md).
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

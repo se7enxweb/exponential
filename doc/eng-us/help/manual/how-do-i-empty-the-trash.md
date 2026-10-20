@@ -42,3 +42,10 @@ Every user sees the items they may read. Removing for good needs `content/cleant
 - [Archiving and the trash](../customers/day-to-day/archiving-and-the-trash.md)
 - [Removing and hiding: the check of reverse relations](../../features/6.0/reverse-relation-check.md)
 - [User manual](README.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

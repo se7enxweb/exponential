@@ -100,3 +100,10 @@ socket.emit('chat/message', { text: 'hello' }, (res) => console.log('saved', res
 - [Velocity worker pool and compatibility layer](../../specifications/6.0/velocity-worker-pool.md)
 - [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [July 2026](../../history/velocity/2026-07.md) (long-lived processes, socket.io), [August 2026](../../history/velocity/2026-08.md) (socket.io in all browsers, Server-Sent Events)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

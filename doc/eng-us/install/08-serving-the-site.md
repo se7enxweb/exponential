@@ -1375,3 +1375,10 @@ External:
 - HSTS: [RFC 6797](https://www.rfc-editor.org/rfc/rfc6797.html), [hstspreload.org](https://hstspreload.org/)
 
 [Contents](README.md) · Previous: [7. The console install](07-console-install.md) · Next: [9. Databases](09-databases.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

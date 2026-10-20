@@ -1,59 +1,85 @@
 ---
-title: Partnertarife und Preise, wie veröffentlicht
+title: Partnertarife und Preise
 audience: partner
 category: partnership
 order: 80
-summary: Die Monatspreise, Support-Tickets, Reaktionszeiten, Beratungstreffen und Umsatzanforderungen jedes Exponential-Partnertarifs, genau wie die Programmseiten sie am 18. Oktober 2026 veröffentlicht haben, mit den Stellen, an denen die Seiten sich widersprechen, und wie Sie budgetieren.
+summary: Die acht Exponential-Partnertarife mit Monatspreisen, Support-Tickets, Reaktionszeiten, Beratungstreffen, Umsatzanforderungen, Rabatten und Lead-Priorität, das Kick-Off Package, die Provision für Lead-Empfehlungen, die Reihenfolge von Bezahlen und Unterschreiben, die Adresse des Partnerteams und wie Sie budgetieren.
 keywords: Preise, Tarife, Kosten, Abonnement, monatlich, USD, Shop, Tickets, Reaktionszeit, Beratungstreffen, Umsatzanforderung, Budget, Kick-Off Package, prices, plans, cost, subscription, monthly, store, tickets, response time, guidance meetings, revenue requirement, budget
 type: help
 ---
-# Partnertarife und Preise, wie veröffentlicht
+# Partnertarife und Preise
 
-Diese Seite ist für die Person, die die Partnerschaft budgetiert. Sie gibt die veröffentlichte Tariftabelle wieder und
-erklärt sie. Die Preise sind in US-Dollar pro Monat angegeben und wurden am 18. Oktober 2026 auf
-<https://exponential.earth/partner/benefits> und <https://exponential.earth/partner/program> gelesen. Maßgeblich sind
-der Shop und die aktuellen Seiten: „7x behält sich alle Rechte vor, dieses Programm zu ändern oder zu verwalten“ (<https://exponential.earth/partner/program>).
+Diese Seite ist für die Person, die die Partnerschaft budgetiert. Die Preise sind in US-Dollar pro Monat angegeben.
+Die Stufen und Tabellen folgen der aktuellen Seite der Partnervorteile, <https://exponential.earth/partner/benefits>
+(gelesen am 18. Oktober 2026); wo eine ältere Seite des Programms eine andere Tabelle zeigt, gilt die Seite der
+Vorteile. Maßgeblich sind der Shop und die aktuellen Seiten: „7x behält sich alle Rechte vor, dieses Programm zu ändern
+oder zu verwalten“ (<https://exponential.earth/partner/program>).
 
 ## Die Tarife
 
-| Tarif | Preis pro Monat | GitHub-Issue-Tickets | Beratungstreffen | Umsatzanforderung pro Quartal |
-|---|---|---|---|---|
-| Student | 25 $ | 2 pro Woche | 1 pro Quartal | Keine |
-| Now | 45 $ | 2 pro Woche | 1 pro Quartal | Keine |
-| Starter | 175 $ | 15 pro Monat | 1 pro Quartal | Keine |
-| Basic | 300 $ | 15 pro Monat | 3 pro Quartal (1 pro Monat) | Keine |
-| Professional | 500 $ | 5 pro Woche | 2 pro Monat | 1.800 $ |
-| Silver | 800 $ | 7 pro Woche | 3 pro Monat | 3.000 $ |
-| Gold | 1.000 $ | 10 pro Woche | 6 pro Quartal | 4.500 $ |
-| Platinum | 2.600 $ | 15 pro Woche | 12 pro Quartal | 7.500 $ |
+| Tarif | Preis pro Monat | GitHub-Issue-Tickets | Reaktionszeit | Beratungstreffen | Umsatzanforderung pro Quartal |
+|---|---|---|---|---|---|
+| Student | 25 $ | 2 pro Woche | ≤ 36 Std. | 1 pro Quartal | Keine |
+| Now | 45 $ | 2 pro Woche | ≤ 36 Std. | 1 pro Quartal | Keine |
+| Starter | 175 $ | 15 pro Monat | ≤ 36 Std. | 1 pro Quartal | Keine |
+| Basic | 300 $ | 15 pro Monat | ≤ 24 Std. | 3 pro Quartal | Keine |
+| Professional | 500 $ | 5 pro Woche | ≤ 12 Std. | 2 pro Monat | 1.800 $ |
+| Silver | 800 $ | 7 pro Woche | ≤ 12 Std. | 3 pro Monat | 3.000 $ |
+| Gold | 1.000 $ | 10 pro Woche | ≤ 4 Std. | 6 pro Quartal | 4.500 $ |
+| Platinum | 2.600 $ | 15 pro Woche | ≤ 3 Std. | 12 pro Quartal | 7.500 $ |
 
 Jeder Tarif hat eine eigene Shopseite unter <https://my.se7enx.com/store/exponential-partners>, zum Beispiel
 `.../exponential-student-partner-plan` und `.../exponential-platinum-partner-plan` (verlinkt von der Seite der Vorteile).
 
-## Reaktionszeiten
+Ob Stunden Geschäftsstunden oder Uhrzeitstunden meinen und in welcher Zeitzone, ist nicht angegeben. Lassen Sie sich
+die Reaktionszeit schriftlich geben, bevor Sie Ihren eigenen Kunden etwas versprechen, das davon abhängt
+([Support-Stufen und Reaktionszeiten](support-stufen-und-reaktionszeiten.md)).
 
-| Tarif | Seite der Vorteile | Programmseite |
-|---|---|---|
-| Student | ≤ 36 Std. | Nur Community |
-| Now | ≤ 36 Std. | Nur Community |
-| Starter | ≤ 36 Std. | ≤ 36 Stunden |
-| Basic | ≤ 24 Std. | ≤ 24 Stunden |
-| Professional | ≤ 12 Std. | ≤ 12 Stunden |
-| Silver | ≤ 12 Std. | ≤ 12 Stunden |
-| Gold | ≤ 4 Std. | ≤ 4 Stunden |
-| Platinum | ≤ 3 Std. | ≤ 3 Stunden |
+## Rabatte und Lead-Priorität nach Tarif
 
-> **Warnung**
-> Für Student und Now widersprechen sich die beiden Seiten. Ob Stunden Geschäftsstunden oder Uhrzeitstunden meinen und
-> in welcher Zeitzone, ist nicht angegeben. Lassen Sie sich die Reaktionszeit schriftlich geben, bevor Sie Ihren eigenen
-> Kunden etwas versprechen, das davon abhängt ([Support-Stufen und Reaktionszeiten](support-stufen-und-reaktionszeiten.md)).
+| Tarif | Lead-Priorität (1 = höchste) | Rabatt auf Dienstleistungen von 7x | Rabatt auf Abonnementprodukte | Rabatt auf Wissensprodukte |
+|---|---|---|---|---|
+| Student | – | 0 % | 4 % | 20 % + K.O.P. |
+| Now | – | 0 % | 4 % | 20 % + K.O.P. |
+| Starter | 6 | 0 % | 4 % | 20 % + K.O.P. |
+| Basic | 5 | 0 % | 4 % | 20 % + K.O.P. |
+| Professional | 4 | 5 % | 4 % | 20 % + K.O.P. |
+| Silver | 3 | 10 % | 15 % | 20 % |
+| Gold | 2 | 15 % | 20 % | 20 % |
+| Platinum | 1 | 20 % | 25 % | 20 % |
 
-## Weitere Kosten, die auf den Seiten erscheinen
+K.O.P. ist das Kick-Off Package (unten). Die übrigen Vorteile jedes Tarifs stehen unter
+[Vorteile für Partner](vorteile-fuer-partner.md).
+
+## Das Kick-Off Package
+
+Das Kick-Off Package für Basic enthält „Programmgebühr, Buch, Online-Schulung, Zertifizierung und 8 Std. Support“ für
+3.200 $ (30 % Rabatt) (<https://exponential.earth/partner/benefits>).
+
+## Partnerbedingungen
+
+| Bedingung | Was gilt |
+|---|---|
+| Provision für Lead-Empfehlungen | **10 %** des gesamten Vertragswerts für einen kalten Lead, **20 %** für einen heißen Lead (ein Kunde, der bereit ist, bei 7x zu kaufen); siehe [Empfehlungen und Leads](empfehlungen-und-leads.md) |
+| Kick-Off Package | 3.200 $ für Basic (30 % Rabatt) |
+| Reihenfolge beim Beitritt | **Erst bezahlen, dann unterschreiben**: Sie kaufen das Partnerabonnement im Shop von 7x, unterschreiben danach die Partnerschaftsvereinbarung und senden sie an das Partnerteam ([Wie Sie sich bewerben](wie-sie-sich-bewerben.md)) |
+| Partnerteam | <partners@exponential.earth> oder das Formular unter <https://exponential.earth/partner/contact-us> |
+| Partner-Website und Dashboard | Für Mitte 2027 geplant (siehe unten) |
+
+### Die Partner-Website und das Dashboard
+
+Eine Partner-Website mit einem Partner-Dashboard, in dem Partner ihre Stufe, Punkte und Aktivität sehen, ist für Mitte
+2027 geplant. Bis sie online ist, senden Sie Ihre Aktivität an das Partnerteam und führen Ihr eigenes Protokoll
+([Ihre Partneraktivität erfassen](partneraktivitaet-erfassen.md)).
+
+Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern können:
+[Wie Sie sich bewerben](wie-sie-sich-bewerben.md).
+
+## Weitere Kosten
 
 | Posten | Wie veröffentlicht | Quelle |
 |---|---|---|
 | Programmgebühr als Einstieg | „Eine monatliche Abonnementgebühr von 45 USD gewährt Ihnen den ersten Zugang zum Partnerprogramm“ | Seite der Anforderungen |
-| Kick-Off Package | Enthält „Programmgebühr, Buch, Online-Schulung, Zertifizierung und 8 Std. Support“; für den Preis siehe die offizielle Seite | <https://exponential.earth/partner/benefits> |
 | Einrichtungsgebühr | Die Shopseiten zeigen eine Überschrift „Setup Fee“ (Einrichtungsgebühr); im Seitentext war kein Betrag lesbar | <https://my.se7enx.com/store/exponential-partners> |
 
 ## Wie Sie budgetieren
@@ -72,7 +98,7 @@ Jeder Tarif hat eine eigene Shopseite unter <https://my.se7enx.com/store/exponen
 Partnership budget, year 1
   Level ......................  ________
   Monthly price x 12 .........  $________
-  Kick-Off Package (if any) ..  $________
+  Kick-Off Package (Basic) ...  $3,200 (if taken)
   Certifications (if any) ....  $________
   Staff time (hours x rate) ..  $________
   Expected discounts .........- $________

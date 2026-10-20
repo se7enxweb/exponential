@@ -3,7 +3,7 @@ title: Advocate conduct and ethics
 audience: advocate
 category: advocacy
 order: 120
-summary: The ethics of advocating for Exponential - honesty, respect, privacy, disclosure, security, inclusion - what the repository says about a code of conduct today, and a personal advocate's pledge you can adopt and publish.
+summary: The ethics of advocating for Exponential - honesty, respect, privacy, disclosure, security, inclusion - how they follow the project's code of conduct, and a personal advocate's pledge you can adopt and publish.
 keywords: code of conduct, ethics, conduct, pledge, honesty, respect, inclusion, privacy, disclosure, harassment, CONTRIBUTING.md, CODE_OF_CONDUCT.md, community standards
 featured: true
 type: help
@@ -11,31 +11,24 @@ type: help
 # Advocate conduct and ethics
 
 This page is for every advocate. Advocates are trusted because they are honest and kind. This page collects the ethics
-that the other advocate pages apply, explains what the repository says about a code of conduct, and offers a personal
-pledge.
+that the other advocate pages apply, points to the project's code of conduct, and offers a personal pledge.
 
 ## Contents
 
-1. [What the repository says](#what-the-repository-says)
+1. [The code of conduct](#the-code-of-conduct)
 2. [Six principles](#six-principles)
 3. [The advocate's pledge](#the-advocates-pledge)
 4. [When something goes wrong](#when-something-goes-wrong)
 
-## What the repository says
+## The code of conduct
 
-[CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) says: "Please make sure to review
-our Code of Conduct before contributing. All contributors are expected to adhere to it", and links a file
-`CODE_OF_CONDUCT.md`. That file **is not in the repository** (checked on 19 October 2026), so the project's code of
-conduct cannot be quoted here. This page does not invent one. Until a code of conduct is published, this page is
-where the help points everyone who looks for one: the partner, business and community pages that mention
-`CODE_OF_CONDUCT.md` link here instead.
+The project's code of conduct is [CODE_OF_CONDUCT.md](../../../../CODE_OF_CONDUCT.md): the Contributor Covenant 2.1
+with Exponential additions, one of them for trainers and advocates. It applies to you in every community space and
+whenever you speak for Exponential. [The Exponential code of conduct](../project/code-of-conduct.md) explains it in
+short; report a problem to <community@se7enx.com>, and the Exponential Foundation decides.
 
-What you can do:
-
-- Follow the conduct rules of each channel you use (the forums, the chat, GitHub).
-- Adopt the personal pledge below, which only binds you.
-- Propose that the project adds the missing file, in the
-  [community tracker](https://github.com/se7enxweb/exponential-community/issues).
+The principles and the pledge below are how an advocate lives that code day to day. The pledge only binds you; the
+code of conduct binds everyone in its scope.
 
 ## Six principles
 
@@ -76,13 +69,21 @@ MY PLEDGE AS AN EXPONENTIAL ADVOCATE
 |---|---|
 | You broke a principle | Apologize, correct, learn |
 | Another advocate breaks one | Talk to them privately and kindly first |
-| Harassment or threats in a channel | Report to the channel's moderators or the platform; do not engage ([Handling hostile threads](handling-hostile-threads.md)) |
+| Harassment or threats in a channel | Report to <community@se7enx.com> and to the channel's moderators or the platform; do not engage ([Handling hostile threads](handling-hostile-threads.md)) |
 | A problem at your meetup | Act by your announced ground rules; protect the person affected ([Proposing a meetup](proposing-a-meetup.md#ground-rules)) |
 | Someone misrepresents the project | Correct the facts once, with a source |
 
 ## Related pages
 
+- [The Exponential code of conduct](../project/code-of-conduct.md)
 - [Honesty and accuracy](honesty-and-accuracy.md)
 - [What an advocate is](what-an-advocate-is.md)
 - [Becoming a leader, Habits of a good community leader](../leadership/becoming-a-community-leader.md#habits-of-a-good-community-leader)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

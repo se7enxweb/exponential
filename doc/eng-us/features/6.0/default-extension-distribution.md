@@ -78,3 +78,10 @@ list grew with the layout system, the newsletter, the tags extension and others.
 - [The product is called Exponential](rebranding-to-exponential.md), [PHP 8 support](../../bc/6.0/php8.md)
 - Changelogs that changed the extension set: [6.0.0](../../../changelogs/6.0/6.0.0.md), [6.0.1](../../../changelogs/6.0/6.0.1.md), [6.0.2](../../../changelogs/6.0/6.0.2.md), [6.0.3](../../../changelogs/6.0/6.0.3.md), [6.0.4](../../../changelogs/6.0/6.0.4.md), [6.0.5](../../../changelogs/6.0/6.0.5.md), [6.0.6](../../../changelogs/6.0/6.0.6.md), [6.0.9](../../../changelogs/6.0/6.0.9.md), [6.0.10](../../../changelogs/6.0/6.0.10.md)
 - History: [December 2023](../../history/2023/2023-12.md), [January 2024, first half](../../history/2024/2024-01a.md), [January 2024, second half](../../history/2024/2024-01b.md), [February 2024](../../history/2024/2024-02.md), [March 2024](../../history/2024/2024-03.md), [June 2024](../../history/2024/2024-06.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

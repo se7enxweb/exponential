@@ -459,3 +459,10 @@ data. The policy and the supported versions are in
 - OWASP [Top Ten](https://owasp.org/projects/top-ten) and
   [Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html);
   NIST [SP 800-63B-4](https://pages.nist.gov/800-63-4/sp800-63b.html)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](partners/partners-start-here.md) and [How to apply](partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

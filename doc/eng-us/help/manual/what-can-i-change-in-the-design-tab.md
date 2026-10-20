@@ -50,3 +50,10 @@ your role: most editors see only **Look and feel** and **Missing alt text**.
 - [The admin4 design](../../features/6.0/admin4-design.md)
 - [How do I build a page with Layouts?](how-do-i-build-a-page-with-layouts.md)
 - [User manual](README.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

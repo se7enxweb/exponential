@@ -86,3 +86,10 @@ Each one goes through the vendor's own migration pages point by point and says w
 ## Public demos
 
 Installing a **public demo**, whose administrator sign-in is published? Set the environment variable `EXP_DEMO_MODE=1` for the installation and for every PHP process of the demo afterwards: the installers then accept the published password (`publish`, `publishing`), and administrator passwords cannot be changed or reset. Chapters 5, 6, 7 and 13 have a note each; the whole story is [Demo mode](../bc/6.0/demo-mode.md), the setup on a server [Recipe: run a public demo on LiteSpeed and Plesk](../help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md).
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

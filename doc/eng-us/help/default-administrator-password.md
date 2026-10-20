@@ -193,3 +193,10 @@ The steps, and why `UserCreatorID` matters, are in
   [chapter 5: the setup wizard](../install/05-setup-wizard.md), [chapter 6: the kickstarter](../install/06-kickstarter.md),
   [chapter 7: the console install](../install/07-console-install.md)
 - [Chapter 13: Security hardening for production](../install/13-security-hardening.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](partners/partners-start-here.md) and [How to apply](partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

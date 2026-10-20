@@ -238,9 +238,10 @@ Berichten Sie Trends über Quartale, keine einmaligen Zahlen, und immer mit dem 
   `SECURITY.md`, nie in ein Forum.
 - **Nennen Sie andere.** Nennen Sie die Menschen und Unternehmen, auf deren Arbeit Sie aufbauen ([Wer ist 7x?](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
 - **Befolgen Sie die Regeln für Beiträge.** Lesen Sie `CONTRIBUTING.md`, bevor Sie Code senden: Branches,
-  fokussierte Pull-Requests, die Präfixe der Commit-Nachrichten und das Review. Dort steht auch, dass von allen
-  Mitwirkenden erwartet wird, einen Verhaltenskodex einzuhalten; die verlinkte Datei (`CODE_OF_CONDUCT.md`) ist zum
-  Zeitpunkt des Schreibens nicht im Repository, fragen Sie also die Maintainer danach, wenn Sie den Text brauchen.
+  fokussierte Pull-Requests, die Präfixe der Commit-Nachrichten und das Review.
+- **Halten Sie den Verhaltenskodex ein.** Von allen Mitwirkenden, Partnern, Trainern und Fürsprechern wird erwartet,
+  [CODE_OF_CONDUCT.md](../../../../CODE_OF_CONDUCT.md) einzuhalten, den Contributor Covenant 2.1 mit Ergänzungen für
+  Exponential. Melden Sie Probleme an <community@se7enx.com>; die Exponential Foundation entscheidet.
 - **Sprechen Sie nicht für das Projekt.** Sofern 7x oder die Foundation Sie nicht darum gebeten haben, sprechen Sie
   für sich selbst oder Ihre Organisation.
 

@@ -139,3 +139,10 @@ the same number of statements; the subtree is matched with `path_string LIKE`, w
 - Tests: `expReverseRelationCheckTest` (modes, decisions, the query on SQLite, the order of the checks in the
   views, the providers, the Locations tab and WebDAV) and `AdminReverseRelationCheckTest` (the pages in admin4,
   the counts, the Layouts row, the translations); explayouts: `tests/explayoutsreverserelationprovidertest.php`.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

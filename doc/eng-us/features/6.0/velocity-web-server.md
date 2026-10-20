@@ -127,3 +127,10 @@ The engine ships a migration page for each. The main steps:
 - Upgrade and operation: [Velocity engines](../../bc/6.0/velocity-engines.md) (choose and run an engine, deploy a PHP change), [Velocity on-disk layout](../../bc/6.0/velocity-ondisk-layout.md) (the `/etc/vc` tree), [engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md)
 - [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [Velocity chronicle](../../history/velocity/README.md), [July](../../history/velocity/2026-07.md), [August](../../history/velocity/2026-08.md), [September](../../history/velocity/2026-09a.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

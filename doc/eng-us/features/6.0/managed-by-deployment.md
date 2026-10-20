@@ -67,3 +67,10 @@ showing links that the switch then answers with the disabled page.
 locked with the switch and open without it, the read-only views stay open, `eZINI::save()` and
 `expIniEditor::save()` refuse in a web request (also in a CLI web server) and write on the command line, generated
 keys are still written, and `settings/site.ini` ships the switch disabled.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

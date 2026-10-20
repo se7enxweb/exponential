@@ -87,3 +87,10 @@ the help commands in [The help system, On the command line](../../features/6.0/h
 - [Mentoring a first contribution](mentoring-a-first-contribution.md)
 - [Writing a tutorial that works](writing-a-tutorial-that-works.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

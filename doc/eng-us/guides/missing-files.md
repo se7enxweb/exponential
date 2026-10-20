@@ -131,3 +131,10 @@ From a shell, always with a dry run first:
 Fix restore: 1 field versions planned, 1 allowed, 1 done, 0 not done
   13905-2      allowed    var/site/storage/original/text/a9d2344afd0d6ea0134cef55f8384827.txt  (from version 1: var/site/storage/original/text/aaa078c1d252cb083b3e94fde402d21d.txt)
 ```
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

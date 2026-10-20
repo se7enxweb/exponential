@@ -3,7 +3,7 @@ title: Referrals and leads
 audience: partner
 category: partnership
 order: 510
-summary: How leads and referrals work in the Exponential Partner Program as published - customer project referrals from Professional, lead priority by level, lead referral commissions (and where the pages disagree), cold and hot leads - and how to qualify, record and follow up a lead.
+summary: How leads and referrals work in the Exponential Partner Program as published - customer project referrals from Professional, lead priority by level, lead referral commissions of 10% for cold and 20% for hot leads - and how to qualify, record and follow up a lead.
 keywords: referrals, leads, lead priority, commission, cold lead, hot lead, customer project referrals, qualification, pipeline, sales
 type: help
 ---
@@ -25,12 +25,16 @@ How leads are distributed (by region, profile, priority, rotation) is not publis
 
 ## Leads from partners to 7x
 
-The program pays a lead referral commission for cold leads and for hot leads ("customer ready to purchase 7x").
-The program's pages publish different rates for a cold lead; both are listed in
-[Values still to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed), and the rate is **to be
-confirmed** until 7x and the Foundation publish one. Get the rate, the definition of "cold" and "hot", and the payment
-terms in writing before you refer a lead. The contract states that on termination "All commissions still due" are paid
-(program page).
+The program pays a lead referral commission on the total contract value:
+
+| Lead | Commission |
+|---|---|
+| Cold lead (a first contact) | **10%** of the total contract value |
+| Hot lead ("customer ready to purchase 7x") | **20%** of the total contract value |
+
+Agree with the partner team how a lead is recorded as cold or hot, and when the commission is paid, before you refer
+it; write to <partners@exponential.earth>. The contract states that on termination "All commissions still due" are
+paid (program page).
 
 ## Qualifying a lead
 

@@ -366,3 +366,10 @@ Depth: [Repair from the browser](../features/6.0/repair-from-the-browser.md), [r
 - What changed, month by month: the [Velocity chronicle](../history/velocity/README.md).
 - Other guides: [Deploying](deploying.md) (servers, HTTPS, shipping a change), [Security and audit](security-and-audit.md) (hardening, roles, the audit trail), [Upgrading](upgrading.md).
 - Words used here: [Glossary](../glossary.md).
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

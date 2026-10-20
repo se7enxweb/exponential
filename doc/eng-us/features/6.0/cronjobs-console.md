@@ -60,7 +60,7 @@ From top to bottom:
   - **Shell command**: the exact command that runs it now, with **Copy**;
   - **Scripts (n)**: the script names on one line; opened, each script with what it does (the `@description` of its
     header) and **Docs** (below), the directory it was found in, **Copy command** (runs that script alone) and **Run**.
-  
+
   A card with a problem has a red edge; the card of the running part a green one. The list is paged (see Settings).
 - **Available but not activated** (folds): scripts in a cronjob directory that no part names, so they never run.
 - **Pauses** (folds): who paused and resumed which part, and when.
@@ -122,3 +122,10 @@ Name it in `[CronjobSettings] Scripts[]` or in a `[CronjobPart-<name>]` block of
 - [RSS import cleanup cronjob part](../../bc/6.0/cleanuprss.md), [console commands](../../bc/6.0/console.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - History: [September 2026, first half: cronjobs console](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [the page redesign of 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools), [June 2026, first half](../../history/2026/2026-06a.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -59,3 +59,10 @@ The file is written with mode 0600. Console output hides addresses unless you ad
 - [Mail preferences for administrators: Requests](../../../../guides/mail-preferences-administrator.md#6-requests-under-data-protection-law)
 - [Consent records for mail](../../privacy/consent-records-for-mail.md)
 - [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../../partners/partners-start-here.md) and [How to apply](../../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

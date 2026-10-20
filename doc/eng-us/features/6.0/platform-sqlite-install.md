@@ -101,3 +101,10 @@ A platform installation on SQLite can also run the Exponential legacy kernel thr
 - Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - Changelog: [platform changelog](../../../changelogs/extensions/exponential-platform.md)
 - History: [core](../../history/ecosystem/core.md), [ezplatform-kernel](../../history/ecosystem/ezplatform-kernel.md), [ezpublish-kernel](../../history/ecosystem/ezpublish-kernel.md), [exponential-platform-legacy](../../history/ecosystem/exponential-platform-legacy.md), [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md), [January 2024, first half](../../history/2024/2024-01a.md), [January 2024, second half](../../history/2024/2024-01b.md), [June 2026, second half](../../history/2026/2026-06b.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

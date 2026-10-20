@@ -248,3 +248,10 @@ installation's content:
 | PostgreSQL | 13.23 | `LIKE` compares in case, as the finder does; URL aliases need `digest()` (pgcrypto), which the installer sets up |
 | Oracle | Oracle AI Database 26ai Free (23.26.3), with `extension/ezoracle` 2.3.5 | `LIKE … ESCAPE` and `LOWER()` as everywhere; no difference found |
 | MongoDB | 8.3.11 | through the driver: `LIKE … ESCAPE`, `LOWER( column )` (the user fetch) and URL alias paths (`eZURLAliasML::fetchByPath()`, one element at a time instead of the join) are translated; every finder query is a single-table one |
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

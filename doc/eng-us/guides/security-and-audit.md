@@ -300,3 +300,10 @@ The idea and the draft handling come from LoveStack (Mugo Web, commit 826e1d4647
 - Upgrade impact of the security changes: [behaviour changes of 1-2 October 2026](../bc/6.0/behaviour-changes-2026-10.md), [security hardening of August 2026](../specifications/6.0/security-hardening-2026-08.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md).
 - How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [September 2026, second half](../history/2026/2026-09b.md).
 - Other guides: [Operating a site](operating-a-site.md) (logs, backups, repairs), [Extensions](extensions.md) (two-factor and other extensions), [Glossary](../glossary.md).
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

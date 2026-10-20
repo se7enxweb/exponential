@@ -83,3 +83,10 @@ package export instead of ending the run (`752adad843`, `8af48c1e59`). See [ezpm
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md), [platform SQLite installer](platform-sqlite-install.md)
 - [The product is called Exponential](rebranding-to-exponential.md), [About and Copyright pages](about-and-package-pages.md), [package licenses and Semantic Versioning](package-licenses-and-versions.md)
 - History: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md), [September 2025](../../history/2025/2025-09.md), [August 2025](../../history/2025/2025-08.md), [July 2025](../../history/2025/2025-07.md), [January 2025](../../history/2025/2025-01.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

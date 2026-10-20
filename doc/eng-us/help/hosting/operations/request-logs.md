@@ -143,3 +143,10 @@ From a shell, the same files can be searched with the log viewer's command:
 - [Request shield and request rules](../security/request-shield-and-request-rules.md)
 - [Request logs: 404.log and security.log](../../../features/6.0/request-logs.md) (feature reference)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../partners/partners-start-here.md) and [How to apply](../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

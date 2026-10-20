@@ -25,7 +25,7 @@ Prüfung etwas vorzuweisen hat.
 
 | Messgröße | Warum | Woher |
 |---|---|---|
-| Gesammelte Punkte | Entscheidet über Ihre Stufe | Ihr eigenes Protokoll und das Partner Dashboard, wenn es online ist ([Ihre Partneraktivität erfassen](partneraktivitaet-erfassen.md)) |
+| Gesammelte Punkte | Entscheidet über Ihre Stufe | Ihr eigenes Protokoll und das Partner Dashboard, sobald die Partner-Website online ist, geplant für Mitte 2027 ([Ihre Partneraktivität erfassen](partneraktivitaet-erfassen.md)) |
 | Vom Programm gezählter Umsatz | Ab Professional erforderlich | Das Partnerteam |
 | Kunden-Websites auf einem unterstützten Release | Zeigt, dass Sie Kunden schützen | Ihre eigene Bestandsliste ([Kunden-Websites aktuell halten](kunden-websites-aktuell-halten.md)) |
 | Übernommene Beiträge | Zeigt, dass Sie etwas zurückgeben | GitHub |

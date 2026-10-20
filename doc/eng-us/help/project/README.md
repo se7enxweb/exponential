@@ -31,6 +31,7 @@ software and say so.
 | [Community channels](community-channels.md) | Forums, Telegram, Discord, Slack, GitHub, social media, the status page | [/about/community](https://exponential.earth/about/community) |
 | [Build with Exponential](build-with-exponential.md) | Why build on it, the product family, the first five steps, the console commands | [/build](https://exponential.earth/build) |
 | [Contribute to the project](contribute-to-the-project.md) | Code, translations, documentation, testing, extensions and site packages | [/faq/support](https://exponential.earth/faq/support) |
+| [The Exponential code of conduct](code-of-conduct.md) | How everyone in the community is expected to behave, and where to report a problem | `CODE_OF_CONDUCT.md` in the repository |
 | [Give and donate](give-and-donate.md) | Partnership, donations, sponsorship subscriptions, sponsored development | [/give](https://exponential.earth/give) |
 | [About the project and its websites](about-the-project.md) | Who runs it, the portals, the demo, the translation project, the package server | [/about](https://exponential.earth/about) |
 | [Documentation sources](documentation-sources.md) | Every place documentation lives, from this help to the free books and the older manuals | [/doc](https://exponential.earth/doc/) |
@@ -60,3 +61,10 @@ software and say so.
 - The people and organizations behind it: [Who is 7x?](../who-is-7x.md) and
   [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md).
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -115,3 +115,10 @@ of every view in the table, with a safe and with an unsafe page in the form.
 - `eZModule::getAllowedRedirectHosts()` (private) is now `eZModule::allowedRedirectHosts()` (public static).
 - Velocity: the changed classes are kernel classes, so `exp:velocity deploy --kernel` (or a restart after the archive
   rebuild); then clear the template-override cache for the new hidden fields.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

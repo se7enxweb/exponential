@@ -38,10 +38,10 @@ quality solutions from the best people around."
 | Gold | Subscription plus requirements | 50,000 | $18,000 | 2 profile + 6 sales |
 | Platinum | Subscription plus requirements | 200,000 | $30,000 | 3 profile + 10 sales |
 
-These are the requirements page's numbers. The program page gives different thresholds and revenue figures, and the
-price table gives revenue requirements per quarter ($1,800, $3,000, $4,500, $7,500 for Professional to Platinum);
-see [The points system](the-points-system.md) and [Partner plans and prices](partner-plans-and-prices.md). Which
-numbers apply to you should be written into your agreement.
+These are the requirements page's numbers. The revenue figures are the yearly totals of the benefits page's
+revenue requirements per quarter ($1,800, $3,000, $4,500, $7,500 for Professional to Platinum), which are the current
+statement ([Partner plans and prices](partner-plans-and-prices.md)). The program page gives different point
+thresholds; see [The points system](the-points-system.md).
 
 ## What counts as revenue
 

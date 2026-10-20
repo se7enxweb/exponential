@@ -34,7 +34,8 @@ the first step for each.
 The website describes the path: get a GitHub account, fork the repository, make your fix on a branch, and send a pull
 request to 7x's repository, where it is reviewed and, when merged, released to everyone. In detail:
 
-1. **Read the rules.** `CONTRIBUTING.md` in the root of the installation, and the code of conduct it links to.
+1. **Read the rules.** `CONTRIBUTING.md` in the root of the installation, and the code of conduct it links to
+   ([The Exponential code of conduct](code-of-conduct.md)).
 2. **Work on a clone.** Fork [se7enxweb/exponential](https://github.com/se7enxweb/exponential) (or the extension's
    repository), clone your fork and create a branch for one change. [Develop with Git](../develop-with-git.md) shows
    how to turn an installation into clones you can work in.
@@ -119,3 +120,10 @@ Exponential. These cost no money and keep the community alive. More ideas:
 - [Develop with Git](../develop-with-git.md)
 - [Ways to support Exponential](../supporters/ways-to-support-exponential.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

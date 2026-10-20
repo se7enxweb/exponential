@@ -143,6 +143,7 @@ PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
 PageOrder[project/SECURITY.md]=50
 PageOrder[project/CONTRIBUTING.md]=100
+PageOrder[project/CODE_OF_CONDUCT.md]=105
 PageOrder[project/COPYRIGHT.md]=110
 PageOrder[README-LICENSE.md]=120
 PageOrder[LICENSE-GFDL-1.3.txt]=130
@@ -235,7 +236,7 @@ front (`kernel/private README`), so no two entries read the same.
 - **Ids**: `project/<path in the repository>`: `/exphelp/viewer/project/README.md`,
   `/exphelp/viewer/project/bin/php/README.md`. An address with the path alone (`/exphelp/viewer/README.md`)
   redirects to the id. The prefix `project/` is reserved for them.
-- **Links**: a link of a documentation page to a project file (`[README](../../../../../README.md)` from
+- **Links**: a link of a documentation page to a project file (`[README](../../../../README.md)` from
   `doc/eng-us/features/6.0/`) opens it in the help, not on GitHub; a link of `README.md` into the documentation
   (`doc/eng-us/guides/caches.md`) opens the help page. Links are resolved against the file, as GitHub resolves them,
   so the same Markdown works in both places.
@@ -472,3 +473,10 @@ and the previous/next links swap sides and their arrows turn, while paths, code 
 right. Every page has one `h1`, named navigation landmarks, labels for each search field and filter, a visible
 focus ring on everything that takes the keyboard, and a note on each link that opens a new window; `/` moves to
 the help search, and the instant results are announced to screen readers.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

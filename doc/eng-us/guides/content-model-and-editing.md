@@ -332,3 +332,10 @@ INI cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`.
 - What happened when: [October 2026 chronicle](../history/2026/2026-10.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md).
 - Hardening of what editors can type: [datatype input hardening](../specifications/6.0/datatype-input-hardening.md).
 - Running background and scheduled work: [cronjobs console](../features/6.0/cronjobs-console.md).
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

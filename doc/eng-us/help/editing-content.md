@@ -148,3 +148,10 @@ priority, the grip at the start of each row changes the order by dragging (or wi
 - [Publishing, versions and the trash](publishing-and-versions.md)
 - [Images, media and uploads](media-and-uploads.md)
 - [Languages](languages.md), for translating an item.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](partners/partners-start-here.md) and [How to apply](partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

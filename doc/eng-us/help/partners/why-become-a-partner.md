@@ -29,7 +29,7 @@ recognition and credibility in the Exponential ecosystem" (<https://exponential.
 
 | Reason | What it means for you | Source of the benefit |
 |---|---|---|
-| Revenue | Commissions, project referrals, joint projects, OEM resale | [Partner benefits](partner-benefits.md) |
+| Revenue | Commissions (10% of the contract value for a cold lead, 20% for a hot one), project referrals, joint projects, OEM resale | [Partner benefits](partner-benefits.md) |
 | Visibility | A listing and an own page on share.exponential.earth; the certified logo from Silver | [Partner directories](partner-directories.md) |
 | Support | GitHub issue tickets with response times by level; guidance meetings | [Support levels](support-levels-and-response-times.md) |
 | Knowledge | Partner meetings, mailing lists, briefings, training and certification | [Partner meetings](partner-meetings-and-briefings.md) |

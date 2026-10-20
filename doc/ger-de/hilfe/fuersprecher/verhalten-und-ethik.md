@@ -3,7 +3,7 @@ title: Verhalten und Ethik für Fürsprecher
 audience: advocate
 category: advocacy
 order: 120
-summary: Die Ethik der Fürsprache für Exponential - Ehrlichkeit, Respekt, Privatsphäre, Offenlegung, Sicherheit, Inklusion - was das Repository heute über einen Verhaltenskodex sagt, und ein persönliches Versprechen für Fürsprecher, das Sie übernehmen und veröffentlichen können.
+summary: Die Ethik der Fürsprache für Exponential - Ehrlichkeit, Respekt, Privatsphäre, Offenlegung, Sicherheit, Inklusion - wie sie dem Verhaltenskodex des Projekts folgen, und ein persönliches Versprechen für Fürsprecher, das Sie übernehmen und veröffentlichen können.
 keywords: Verhaltenskodex, Ethik, Verhalten, Versprechen, Ehrlichkeit, Respekt, Inklusion, Privatsphäre, Offenlegung, Belästigung, CONTRIBUTING.md, CODE_OF_CONDUCT.md, Community-Standards, code of conduct, ethics, conduct, pledge, honesty, respect, inclusion, privacy, disclosure, harassment, community standards
 featured: true
 type: help
@@ -11,29 +11,25 @@ type: help
 # Verhalten und Ethik für Fürsprecher
 
 Diese Seite ist für jeden Fürsprecher. Fürsprechern wird vertraut, weil sie ehrlich und freundlich sind. Diese Seite
-sammelt die Ethik, die die anderen Seiten für Fürsprecher anwenden, erklärt, was das Repository über einen
-Verhaltenskodex sagt, und bietet ein persönliches Versprechen an.
+sammelt die Ethik, die die anderen Seiten für Fürsprecher anwenden, verweist auf den
+Verhaltenskodex des Projekts und bietet ein persönliches Versprechen an.
 
 ## Inhalt
 
-1. [Was das Repository sagt](#was-das-repository-sagt)
+1. [Der Verhaltenskodex](#der-verhaltenskodex)
 2. [Sechs Grundsätze](#sechs-grundsätze)
 3. [Das Versprechen des Fürsprechers](#das-versprechen-des-fürsprechers)
 4. [Wenn etwas schiefgeht](#wenn-etwas-schiefgeht)
 
-## Was das Repository sagt
+## Der Verhaltenskodex
 
-[CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) sagt: „Bitte lesen Sie unseren
-Verhaltenskodex, bevor Sie beitragen. Von allen Beitragenden wird erwartet, dass sie sich daran halten“, und verlinkt
-eine Datei `CODE_OF_CONDUCT.md`. Am 18. Oktober 2026 **ist diese Datei nicht im Repository**, daher kann der
-Verhaltenskodex des Projekts hier nicht zitiert werden. Diese Seite erfindet keinen.
+Der Verhaltenskodex des Projekts ist [CODE_OF_CONDUCT.md](../../../../CODE_OF_CONDUCT.md): der Contributor
+Covenant 2.1 mit Ergänzungen für Exponential, eine davon für Trainer und Fürsprecher. Er gilt für Sie in jedem Raum der
+Community und immer, wenn Sie für Exponential sprechen. Melden Sie ein Problem an <community@se7enx.com>; die
+Exponential Foundation entscheidet.
 
-Was Sie tun können:
-
-- Befolgen Sie die Verhaltensregeln jedes Kanals, den Sie nutzen (die Foren, den Chat, GitHub).
-- Übernehmen Sie das persönliche Versprechen unten, das nur Sie bindet.
-- Schlagen Sie im [Community-Tracker](https://github.com/se7enxweb/exponential-community/issues) vor, dass das Projekt
-  die fehlende Datei hinzufügt.
+Die Grundsätze und das Versprechen unten zeigen, wie ein Fürsprecher diesen Kodex im Alltag lebt. Das Versprechen
+bindet nur Sie; der Verhaltenskodex bindet alle in seinem Geltungsbereich.
 
 ## Sechs Grundsätze
 

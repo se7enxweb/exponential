@@ -88,3 +88,10 @@ For administrators and developers who choose the machine and the database of a s
 |---|---|
 | [Database support](database-support.md) | Choose a database from the supported ones, in their official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and know what each needs |
 | [Operating system support](os-support.md) | Check whether an operating system, processor and web server can run Exponential, from Linux to Windows and beyond |
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](partners/partners-start-here.md) and [How to apply](partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

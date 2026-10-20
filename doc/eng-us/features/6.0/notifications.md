@@ -139,3 +139,10 @@ These mails were made on a test installation and written to files; none was sent
 - [The administrator's guide](../../guides/notifications-administrator.md), [the developer's guide](../../guides/notifications-developer.md)
 - [The specification](../../specifications/6.0/notifications.md), [the commands](../../specifications/6.0/notifications-cli.md)
 - [Upgrade notes](../../bc/6.0/notification-ui-and-commands.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

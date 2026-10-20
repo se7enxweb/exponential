@@ -215,3 +215,10 @@ the page reads: a run's progress and status, the list of runs, and start, stop a
 - `kernel/private/classes/commands/preload.php`, `preloadjob.php`: `bin/php/preload.php` and the background run.
 - `design/admin/templates/setup/preload.tpl` and `stylesheets/modules/setup.css` (and the same in `design/admin4`).
 - Tests: `tests/tests/kernel/classes/preload/` (no database), `expPreloadRunnerLinksTest`, `ExpPreloadStartUrlsTest`.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->
