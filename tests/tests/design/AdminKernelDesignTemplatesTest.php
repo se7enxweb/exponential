@@ -1,13 +1,15 @@
 <?php
 /**
- * Every template a kernel module view names as a literal 'design:<path>.tpl' exists in one of the designs an admin
- * siteaccess falls back to: admin4, admin3, admin or standard. A name that resolves nowhere is a page that renders a
- * template error (kernel/class/delete.php, kernel/content/error.php and kernel/workflow/list.php fetched templates no
- * design had, and no module defined a view for them; copying several items at once named
+ * Every literal 'design:<path>.tpl' in the module view scripts and view classes of the kernel exists in one of the
+ * designs an admin siteaccess falls back to: admin4, admin3, admin or standard. A name that resolves nowhere is a page
+ * that renders a template error (kernel/class/delete.php, kernel/content/error.php and kernel/workflow/list.php
+ * fetched templates no design had, and no module defined a view for them; copying several items at once named
  * content/browse_copy_subtrees.tpl, which no design had either).
- * Read: the module scripts kernel/<module>/*.php and, since those are mostly one call to a view class now, the view
- * classes and modules below kernel/private. Only strings that are exactly 'design:<path>.tpl' count, so templates a
- * wizard writes into a new extension (inside a larger string) and names built at run time are left out.
+ * Read: the module scripts kernel/<module>/<view>.php and, since those are mostly one call to a view class now,
+ * kernel/private/classes/views/<module>/<view>.php and kernel/private/modules/<module>/<file>.php (one directory
+ * level each). Not read: kernel/classes, kernel/common, the rest of kernel/private, and the extensions. Only strings
+ * that are exactly 'design:<path>.tpl' count: names put together at run time (concat, a variable in the string) and
+ * templates a wizard writes into a new extension (inside a larger string) are not checked.
  * No database.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminKernelDesignTemplatesTest.php
