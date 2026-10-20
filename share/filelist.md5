@@ -15410,8 +15410,8 @@ ab8dd7722157d72d6f0dbf9ed83f9ece  share/translations/ara-SA/translation.ts
 4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
 dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
 dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
-a100cbcd88a1d18b00ff94d468cb8e95  share/translations/cro-HR/translation.ts
-03a201eb837c262af55796d13cfddc52  share/translations/cze-CZ/translation.ts
+8b86f7a73a90400f1aebbffd6311e611  share/translations/cro-HR/translation.ts
+38d1af3781428c45e9df4a399c25c872  share/translations/cze-CZ/translation.ts
 f55673690de26ae3db4014bf76bc0ac1  share/translations/dan-DK/translation.ts
 2647d611ee1988f8436bb42bc80e3c65  share/translations/dut-NL/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
@@ -15434,7 +15434,7 @@ a54576ec837dfddd3b3ae856c26fe71e  share/translations/kur-TR/translation.ts
 92e922de40aae6851e4478c31f8bf4af  share/translations/nno-NO/translation.ts
 8bbbf764eeb595adc4615cdca139f3ad  share/translations/nor-NO/readme.txt
 e7086a0b4003a600f7957515152078e9  share/translations/nor-NO/translation.ts
-9654ebbd679b60e62f73f64ed491b7cf  share/translations/pol-PL/translation.ts
+f1d4359e7f4674c458dc379eb076975b  share/translations/pol-PL/translation.ts
 a2dcf777cdbe7d653b1640a7c8124121  share/translations/por-BR/translation.ts
 dddf6dfb02c3b24c837cf04e386a0cd5  share/translations/pus-AF/translation.ts
 d5ee9f6f41a1629151b2c95729988fd1  share/translations/rus-RU/translation.ts
@@ -15443,7 +15443,7 @@ c0bb0e5ef4ff758c9e505585337f7d2a  share/translations/srp-RS/translation.ts
 22202e7ca756968fbbdec73a07d65a29  share/translations/swe-SE/translation.ts
 4a8d2d0a7acf27dadd9db31c88ddaaba  share/translations/tlh-QO/translation.ts
 9b5c429ad622ba10d1e59cbcca352580  share/translations/tur-TR/translation.ts
-1567e6a1a17d11a6705b0427bc3ff81c  share/translations/ukr-UA/translation.ts
+acbc384265847c35c7ffa3bdf14598c5  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
 7787e5f2ced7972f7e33a07cf12a1715  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
