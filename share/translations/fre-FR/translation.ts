@@ -74538,6 +74538,78 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Help Start</source>
         <translation>Accueil de l&apos;aide</translation>
     </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Cette page n&apos;est pas encore traduite en %reader. Elle est affichée en %original.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Anglais</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Allemand</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Langue de lecture :</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Choisir une langue change la langue de toute l&apos;administration.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language : %count pages sur %total</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>L&apos;aide dans les autres langues</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Ouvrir l&apos;original en %language</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Vous lisez l&apos;original en %language de cette page.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Retour à la page en %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Cette page est une traduction.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Lire l&apos;original en %language</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>La documentation que les extensions actives apportent avec elles : leurs guides, README, journal des modifications et licence.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Rechercher dans la documentation de %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Aucune extension active n&apos;apporte sa propre documentation.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Uniquement la documentation de l&apos;extension %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Ses pages</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Rechercher dans toute l&apos;aide</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
