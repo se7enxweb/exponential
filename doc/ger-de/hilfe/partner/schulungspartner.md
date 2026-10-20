@@ -18,7 +18,7 @@ schulen, Berater und Lehrende. Schulungszentren gehören zum Profil Vertrieb: �
 |---|---|---|
 | Punkte für Schulungen | „Offizielle Schulung (pro teilnehmender Person)“ 2.000 | <https://exponential.earth/partner/requirements> |
 | Wissensprodukte | „Wissensprodukte (Bücher, Schulungen, Zertifizierungen)“ mit Partnerrabatten | <https://exponential.earth/partner/program> |
-| Kick-Off Package | Enthält „Buch, Online-Schulung, Zertifizierung und 8 Std. Support“ | <https://exponential.earth/partner/benefits> |
+| Kick-Off Package für Basic | Enthält „Programmgebühr, Buch, Online-Schulung, Zertifizierung und 8 Std. Support“ für 3.200 $ (30 % Rabatt) | <https://exponential.earth/partner/benefits> |
 | Vertrieb | Partner dürfen „Schulungen oder Zertifizierungen“ verbreiten | <https://exponential.earth/partner/partner-classes> |
 
 Was eine Schulung „offiziell“ macht und wer Trainer zulässt, ist nicht veröffentlicht: **von der Foundation (oder 7x)

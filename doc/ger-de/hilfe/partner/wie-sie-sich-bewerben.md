@@ -31,14 +31,13 @@ Nutzen Sie die [Checkliste für die Bewerbung](checkliste-fuer-die-bewerbung.md)
 | 1 | Füllen Sie das Bewerbungsformular auf <https://exponential.earth/partner/apply> aus | „Füllen Sie das Kontaktformular mit Angaben zu Ihrem Unternehmen, Ihrem Team und Ihrer Projekterfahrung aus.“ |
 | 2 | Fügen Sie ergänzende Informationen hinzu | „Fügen Sie Beispiele früherer Arbeiten, relevante Zertifizierungen und eine kurze Erklärung bei, warum Sie mit uns zusammenarbeiten möchten.“ |
 | 3 | Prüfung | „Das Exponential-Partnerteam prüft die Bewerbung und kann Sie für ein weiteres Gespräch kontaktieren. Das Partnerteam teilt seine Entscheidung innerhalb von 10 Arbeitstagen mit.“ Dieselbe Seite sagt auch „innerhalb von 5–10 Werktagen“. |
-| 4 | Die Vereinbarung unterzeichnen | „Wenn Ihre Bewerbung angenommen wird: Bitte prüfen und unterzeichnen Sie den beigefügten Vertrag“ und senden Sie ihn, wie es die Bewerbungsseite sagt (<https://exponential.earth/partner/apply>). |
-| 5 | Das Abonnement kaufen | „Anschließend müssen Sie die Partnerschaft im Shop von 7x kaufen“: <https://my.se7enx.com/store/exponential-partners> |
+| 4 | Das Abonnement kaufen | Erst bezahlen: Kaufen Sie die Partnerschaft im Shop von 7x, <https://my.se7enx.com/store/exponential-partners> |
+| 5 | Die Vereinbarung unterzeichnen | Dann unterschreiben: „Bitte prüfen und unterzeichnen Sie den beigefügten Vertrag“ und senden Sie ihn per E-Mail an <partners@exponential.earth> |
 | 6 | Aktivierung | „Sobald wir Ihre unterzeichnete Vereinbarung erhalten und Ihr Abonnement bestätigt haben, wird Ihre Partnerschaft aktiviert.“ |
 
 > **Hinweis**
-> Oben auf der Bewerbungsseite steht die Reihenfolge „erst das Partner-Abonnement kaufen, dann die
-> Partnerschaftsvereinbarung unterzeichnen“; die ausführlichen Schritte weiter unten sagen: erst unterzeichnen, dann
-> kaufen. Fragen Sie das Partnerteam, welche Reihenfolge es wünscht, bevor Sie bezahlen.
+> Die Reihenfolge ist: erst bezahlen, dann unterschreiben, auch wo eine ältere Programmseite die Schritte umgekehrt
+> nennt. Die Adresse des Partnerteams ist <partners@exponential.earth>.
 
 ## Wenn die Bewerbung nicht angenommen wird
 
@@ -51,7 +50,11 @@ Gehen Sie direkt zur [Checkliste für das Onboarding](checkliste-fuer-das-onboar
 
 ## Kontakte
 
+- Das Partnerteam: <partners@exponential.earth>, auch für die unterzeichnete Vereinbarung.
 - Das Kontaktformular <https://exponential.earth/partner/contact-us>.
+
+Die Partner-Website mit einem Partner-Dashboard ist für Mitte 2027 geplant. Bitte werden Sie noch heute Partner, damit
+wir schneller wachsen und neue Funktionen früher liefern können.
 
 ## Verwandte Seiten
 

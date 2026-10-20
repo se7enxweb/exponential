@@ -18,8 +18,11 @@ section as published at the end of <https://exponential.earth/partner/program> (
 
 ## How the contract is used
 
-"This contract must be signed and emailed to 7x" (the address is on the program page) and is "Valid as long as requirements
+"This contract must be signed and emailed to 7x via partners@exponential.earth" and is "Valid as long as requirements
 are met. 7x may terminate for violations" (program page). The parties are 7x and your company.
+
+The order is **pay first, then sign**: once your application is approved, buy the partner subscription in the 7x
+store, then sign the agreement and e-mail it to <partners@exponential.earth> ([How to apply](how-to-apply.md)).
 
 ## Section by section
 
@@ -41,11 +44,12 @@ are met. 7x may terminate for violations" (program page). The parties are 7x and
 
 ## Questions to ask before signing
 
-- [ ] Which version of the levels, prices and requirements is part of the contract? (The pages disagree in places;
-      see [The points system](the-points-system.md).)
+- [ ] Which version of the levels, prices and requirements is part of the contract? The levels, prices and
+      benefits are those of the benefits page ([Partner plans and prices](partner-plans-and-prices.md)); for points,
+      see [The points system](the-points-system.md).
 - [ ] Which response times apply to our level, and in which hours and time zone?
-- [ ] How are commissions calculated, reported and paid? The published rates disagree and are
-      [to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed).
+- [ ] How are commissions reported and paid? The rates are 10% of the total contract value for a cold lead and
+      20% for a hot lead ([Referrals and leads](referrals-and-leads.md)).
 - [ ] What exactly may we do with the logos at our level?
 - [ ] Which law governs the contract, besides the place for disputes?
 - [ ] How are personal data handled when leads are exchanged ([Protecting customer data](protecting-customer-data.md))?

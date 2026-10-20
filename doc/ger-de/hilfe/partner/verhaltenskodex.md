@@ -13,10 +13,10 @@ Diese Seite ist für alle, die für ein Partnerunternehmen arbeiten. Sie beschre
 erwartet.
 
 > **Hinweis**
-> Es gibt noch keinen veröffentlichten, formellen Verhaltenskodex für Partner. CONTRIBUTING.md bittet Beitragende,
-> „unseren Verhaltenskodex (CODE_OF_CONDUCT.md) zu lesen“, aber diese Datei existiert heute nicht im Repository. Ein formeller
-> Verhaltenskodex für Partner und Beitragende ist **von der Foundation noch festzulegen**. Bis dahin sammeln die
-> folgenden Regeln, was das Programm, der Vertrag und die eigenen Dokumente des Projekts bereits verlangen, mit ihren
+> Partner folgen dem Verhaltenskodex des Projekts, [CODE_OF_CONDUCT.md](../../../../CODE_OF_CONDUCT.md): dem
+> Contributor Covenant 2.1 mit Ergänzungen für Exponential, darunter eine für Partner und geschäftliches Verhalten.
+> Melden Sie ein Problem an <community@se7enx.com>; die Exponential Foundation entscheidet. Die folgenden Regeln
+> wenden diesen Kodex auf die Arbeit als Partner an und sammeln, was das Programm und der Vertrag ergänzen, mit ihren
 > Quellen.
 
 ## 1. Die Werte des Programms leben

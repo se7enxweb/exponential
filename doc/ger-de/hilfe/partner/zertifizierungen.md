@@ -44,8 +44,9 @@ Programm betreibt):
 
 - der Lehrplan und die Lernziele jeder Zertifizierung;
 - das Prüfungsformat, die Bestehensgrenze und die Sprache(n);
-- der Preis, außerhalb des Kick-Off Package, das „Programmgebühr, Buch, Online-Schulung, Zertifizierung und 8 Stunden
-  Support“ umfasst;
+- der Preis, außerhalb des Kick-Off Package für Basic, das „Programmgebühr, Buch, Online-Schulung, Zertifizierung und
+  8 Stunden Support“ für 3.200 $ (30 % Rabatt) umfasst
+  ([Partnertarife und Preise](partnertarife-und-preise.md#das-kick-off-package));
 - die Termine und Orte, online oder vor Ort;
 - wie lange eine Zertifizierung gültig bleibt und wie sie erneuert wird;
 - wer prüfen darf, und ob die Foundation die Zertifikate anerkennt.

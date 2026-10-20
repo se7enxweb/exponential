@@ -3,7 +3,7 @@ title: Empfehlungen und Leads
 audience: partner
 category: partnership
 order: 510
-summary: Wie Leads und Empfehlungen im Exponential-Partnerprogramm laut Veröffentlichung funktionieren - Empfehlungen von Kundenprojekten ab Professional, Lead-Priorität nach Stufe, Provisionen für Lead-Empfehlungen (und wo die Seiten sich widersprechen), kalte und heiße Leads - und wie Sie einen Lead qualifizieren, festhalten und nachverfolgen.
+summary: Wie Leads und Empfehlungen im Exponential-Partnerprogramm laut Veröffentlichung funktionieren - Empfehlungen von Kundenprojekten ab Professional, Lead-Priorität nach Stufe, Provisionen für Lead-Empfehlungen von 10 % für kalte und 20 % für heiße Leads - und wie Sie einen Lead qualifizieren, festhalten und nachverfolgen.
 keywords: Empfehlungen, Leads, Lead-Priorität, Provision, kalter Lead, heißer Lead, Empfehlungen von Kundenprojekten, Qualifizierung, Pipeline, Vertrieb, referrals, leads, lead priority, commission, cold lead, hot lead, customer project referrals, qualification, pipeline, sales
 type: help
 ---
@@ -25,9 +25,15 @@ Wie Leads verteilt werden (nach Region, Profil, Priorität, im Wechsel), ist nic
 
 ## Leads von Partnern an 7x
 
-Das Programm zahlt eine Provision für Lead-Empfehlungen, für kalte Leads und für heiße Leads („Kunde, der bereit ist, bei 7x zu kaufen“). Die Sätze stehen auf der offiziellen Seite des Partnerprogramms,
-<https://exponential.earth/partner/benefits>. Lassen Sie sich den Satz, die Definition von „kalt“ und „heiß“ und die
-Zahlungsbedingungen schriftlich geben, bevor Sie einen Lead empfehlen. Der Vertrag legt fest, dass bei Beendigung „alle noch fälligen Provisionen“ gezahlt werden (Programmseite).
+Das Programm zahlt eine Provision für Lead-Empfehlungen auf den gesamten Vertragswert:
+
+| Lead | Provision |
+|---|---|
+| Kalter Lead (ein erster Kontakt) | **10 %** des gesamten Vertragswerts |
+| Heißer Lead („Kunde, der bereit ist, bei 7x zu kaufen“) | **20 %** des gesamten Vertragswerts |
+
+Vereinbaren Sie mit dem Partnerteam, wie ein Lead als kalt oder heiß festgehalten wird und wann die Provision gezahlt
+wird, bevor Sie ihn empfehlen; schreiben Sie an <partners@exponential.earth>. Der Vertrag legt fest, dass bei Beendigung „alle noch fälligen Provisionen“ gezahlt werden (Programmseite).
 
 ## Einen Lead qualifizieren
 

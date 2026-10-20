@@ -23,11 +23,12 @@ The requirements page (<https://exponential.earth/partner/requirements>, read 18
   the Partner Center using a quick reporting form."
 - **Progress:** "You can monitor your progress and current points balance at any time in your Partner Dashboard."
 
-> **Warning**
-> The Partner Center and the Partner Dashboard that the program pages name are not online: the addresses those pages
-> pointed to returned "not found" on 18 and again on 19 October 2026, so this help does not link them. Until they are
-> online, send your activity to the partner team through <https://exponential.earth/partner/contact-us> and keep your
-> own record. How points are credited without the Partner Center is not stated: to be defined.
+> **Note**
+> The Partner Center and the Partner Dashboard that the program pages name are not online yet: a partner website
+> with a partner dashboard is planned for mid-2027. Until then, send your activity to the partner team at
+> <partners@exponential.earth> (or through <https://exponential.earth/partner/contact-us>) and keep your own record.
+> Please become a partner today to speed up our growth rate and land new features faster
+> ([How to apply](how-to-apply.md)).
 
 ## What to submit and what evidence to give
 

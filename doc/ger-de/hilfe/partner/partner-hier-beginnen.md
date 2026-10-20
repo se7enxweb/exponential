@@ -59,9 +59,10 @@ Beiträge) und wo die veröffentlichten Quellen aufhören und die Exponential Fo
 1. **Jeder Fakt nennt seine Quelle.** Preise, Stufen und Vorteile werden aus den veröffentlichten Programmseiten zitiert,
    mit dem Datum, an dem sie gelesen wurden. Die Live-Seiten sind maßgeblich; „7x behält sich alle Rechte vor, dieses
    Programm zu ändern oder zu verwalten“ (<https://exponential.earth/partner/program>).
-2. **Wo sich die Quellen widersprechen, sehen Sie beide.** Manche Programmseiten nennen für dasselbe unterschiedliche
-   Zahlen. Die Seiten zeigen beide Werte und bitten Sie, sich schriftlich bestätigen zu lassen, bevor Sie sich auf einen
-   verlassen.
+2. **Die Seite der Vorteile ist aktuell.** Stufen, Preise, Rabatte, Lead-Priorität und Vorteile folgen
+   <https://exponential.earth/partner/benefits>; wo eine ältere Programmseite abweicht, gilt die Seite der Vorteile.
+   Die Partnerbedingungen (Provision, Kick-Off Package, Bezahlen und Unterschreiben, die Adresse des Partnerteams)
+   stehen unter [Partnertarife und Preise](partnertarife-und-preise.md#partnerbedingungen).
 3. **Wo die Quellen schweigen, sagt die Seite das.** „Von der Foundation festzulegen“ kennzeichnet jede offene Frage.
 4. **Ideen werden als Vorschläge gekennzeichnet.** Zertifizierungsideen und ähnliche Vorschläge sind mit „Vorschlag,
    kein Programm“ markiert.

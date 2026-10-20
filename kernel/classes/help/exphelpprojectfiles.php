@@ -44,6 +44,7 @@ class expHelpProjectFiles
                                   'INSTALL.md;admin,developer,hosting',
                                   'SECURITY.md;admin,developer,hosting',
                                   'CONTRIBUTING.md;developer,supporter,advocate,partner',
+                                  'CODE_OF_CONDUCT.md;developer,supporter,advocate,partner,trainer,user',
                                   'COPYRIGHT.md;admin,developer,partner,businesses',
                                   'LICENSE.md;admin,developer,partner,businesses' ),
     );

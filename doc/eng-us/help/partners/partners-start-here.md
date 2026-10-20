@@ -59,8 +59,10 @@ published sources stop and the Exponential Foundation still has to decide.
 1. **Every fact names its source.** Prices, levels and benefits are quoted from the published program pages, with
    the date they were read. The live pages are authoritative; "7x reserves full rights to change or administer this
    program" (<https://exponential.earth/partner/program>).
-2. **Where the sources disagree, you see both.** Some program pages give different numbers for the same thing. The
-   pages show both values and ask you to confirm in writing before you rely on one.
+2. **The benefits page is current.** The levels, prices, discounts, lead priority and benefits follow
+   <https://exponential.earth/partner/benefits>; where an older program page differs, the benefits page applies.
+   The partner terms (commission, Kick-Off Package, paying and signing, the partner address) are on
+   [Partner plans and prices](partner-plans-and-prices.md#partner-terms).
 3. **Where the sources are silent, the page says so.** "To be defined by the Foundation" marks every open question.
 4. **Ideas are labeled as proposals.** Certification ideas and similar suggestions are marked "Proposal, not a
    program".
@@ -102,7 +104,7 @@ published sources stop and the Exponential Foundation still has to decide.
 
 | Question | Where | Source |
 |---|---|---|
-| The partner program, your application, your level | The partner team, through the form at <https://exponential.earth/partner/contact-us> | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
+| The partner program, your application, your level | The partner team: <partners@exponential.earth>, or the form at <https://exponential.earth/partner/contact-us> | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
 | Paid support and services from 7x | <https://se7enx.com/contact> | <https://exponential.earth/support> |
 | The Foundation | <https://foundation.exponential.earth/> | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md) |
 | Technical questions | Forums <https://share.exponential.earth/forums>, Telegram <https://t.me/exponentialcms> | <https://exponential.earth/about/project> |

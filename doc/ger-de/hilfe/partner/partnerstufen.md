@@ -30,11 +30,10 @@ Quellen, alle gelesen am 18. Oktober 2026: <https://exponential.earth/partner/pr
 <https://exponential.earth/partner/benefits>.
 
 > **Hinweis**
-> Die Seite program-levels führt sieben Stufen auf (ohne Now); die Seiten benefits, requirements und why führen acht
-> auf (mit Now). Die Seite why beschreibt außerdem „Professional“ zuletzt, als „strategische Expertenpartner ... Allianz der
-> höchsten Stufe“, während jede andere Seite Professional zwischen Basic und Silver einordnet. Diese Hilfe folgt der
-> Reihenfolge der Preistabelle: Student, Now, Starter, Basic, Professional, Silver, Gold, Platinum. Klären Sie mit dem
-> Partnerteam, welche Beschreibung für Ihre Stufe gilt.
+> Die Seite der Vorteile ist die aktuelle Aussage zu den Stufen: acht Stufen in der Reihenfolge Student, Now,
+> Starter, Basic, Professional, Silver, Gold, Platinum, zu 25 $, 45 $, 175 $, 300 $, 500 $, 800 $, 1.000 $ und
+> 2.600 $ pro Monat ([Partnertarife und Preise](partnertarife-und-preise.md)). Ältere Seiten des Programms führen
+> sieben Stufen auf (ohne Now) oder nennen Professional zuletzt; wo sie abweichen, gilt die Seite der Vorteile.
 
 ## Die drei Phasen
 
