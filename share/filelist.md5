@@ -14766,7 +14766,7 @@ b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 ac506b51131ad202029dff2fd1b76284  tests/tests/design/AdminContentJobScriptsTest.php
 54e753194f664126c4004301c8fc4e5c  tests/tests/design/AdminContentSecurityPolicyTest.php
 98b9cecd8a6f9763c8420e981193033a  tests/tests/design/AdminContextMenuNestedSubmenuTest.php
-fc229c0890231675d181a8b0b8d4cc53  tests/tests/design/AdminContextMenuTest.php
+bf48b941cb6d781717c47cacc88d6559  tests/tests/design/AdminContextMenuTest.php
 1031b7f22212518a4180603bafaf72d7  tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php
 39edc8217670a84ba9f44cfc301e7bd2  tests/tests/design/AdminCreateLanguagesTitleTest.php
 9811db047be7881e1faebb56b853e491  tests/tests/design/AdminCssReviewFixesTest.php
