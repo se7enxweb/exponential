@@ -299,6 +299,19 @@ class expSysCardProvidersTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'sendmail', $quiet['site.mail']->value );
     }
 
+    /** SCP-09 the helpers behind the wording: a duration without "ago" for a sentence, a count with its noun */
+    public function testElapsedAgoAndCounted()
+    {
+        $this->assertSame( '5 days', expSysCardBaseProvider::elapsed( self::NOW - 5 * 86400, self::NOW ) );
+        $this->assertSame( '5 days ago', expSysCardBaseProvider::ago( self::NOW - 5 * 86400, self::NOW ) );
+        $this->assertSame( '3 h', expSysCardBaseProvider::elapsed( self::NOW - 3 * 3600, self::NOW ) );
+        $this->assertSame( '5 min ago', expSysCardBaseProvider::ago( self::NOW - 300, self::NOW ) );
+        $this->assertSame( '1 part', expSysCardBaseProvider::counted( 1, 'part' ) );
+        $this->assertSame( '0 parts', expSysCardBaseProvider::counted( 0, 'part' ) );
+        $this->assertSame( '1,200 files', expSysCardBaseProvider::counted( 1200, 'file' ) );
+        $this->assertSame( '2 processes', expSysCardBaseProvider::counted( 2, 'process', 'processes' ) );
+    }
+
     public function testCachesHelpCronComposer()
     {
         $caches = $this->byKey( ( new expSysCardCacheProvider() )->collect( $this->context( array( 'ini' => array( 'site.ini' => array( 'ContentSettings' => array( 'ViewCaching' => 'disabled' ) ) ) ) ) ) );
@@ -318,6 +331,15 @@ class expSysCardProvidersTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '7,083 pages, eng-us ger-de (index stale)', $help['help.state']->value );
         $this->assertSame( expSysCardFact::WARN, $help['help.state']->severity );
         $this->assertSame( '785 / 7,083 pages (11%)', $help['help.coverage:ger-de']->value );
+        // a fresh index of every language: the count of exp:help index, no stale mark and no hint
+        $fresh = $this->byKey( ( new expSysCardHelpProvider() )->collect( $this->context( array( 'help.state' => array( 'pages' => 7615, 'current' => true, 'stale' => array(), 'languages' => array( 'eng-us', 'ger-de' ) ) ) ) ) );
+        $this->assertSame( '7,615 pages, eng-us ger-de', $fresh['help.state']->value );
+        $this->assertSame( expSysCardFact::INFO, $fresh['help.state']->severity );
+        $this->assertSame( '', $fresh['help.state']->hint );
+        // one language's index out of date: that language is named
+        $oneStale = $this->byKey( ( new expSysCardHelpProvider() )->collect( $this->context( array( 'help.state' => array( 'pages' => 7615, 'current' => false, 'stale' => array( 'ger-de' ), 'languages' => array( 'eng-us', 'ger-de' ) ) ) ) ) );
+        $this->assertSame( '7,615 pages, eng-us ger-de (index stale: ger-de)', $oneStale['help.state']->value );
+        $this->assertSame( expSysCardFact::WARN, $oneStale['help.state']->severity );
         $off = $this->byKey( ( new expSysCardHelpProvider() )->collect( $this->context( array( 'ini' => array( 'exphelp.ini' => array( 'HelpSettings' => array( 'Enabled' => 'false' ) ) ) ) ) ) );
         $this->assertSame( 'off', $off['help.state']->value );
 
@@ -332,6 +354,11 @@ class expSysCardProvidersTest extends PHPUnit\Framework\TestCase
         $cronValues['cron.mtime:' . $log] = self::NOW - 5 * 86400;
         $stale = $this->byKey( ( new expSysCardCronProvider() )->collect( $this->context( $cronValues ) ) );
         $this->assertSame( expSysCardFact::WARN, $stale['cron.last']->severity );
+        $this->assertSame( 'last run 5 days ago, 2 parts', $stale['cron.last']->value );
+        $this->assertSame( 'No cronjob has run for 5 days: check the crontab and the cronjob logs.', $stale['cron.last']->hint );
+        $cronValues['ini']['cronjob.ini'] = array( 'CronjobPart-frequent' => array( 'Scripts' => array( 'workflow.php' ) ) );
+        $onePart = $this->byKey( ( new expSysCardCronProvider() )->collect( $this->context( $cronValues ) ) );
+        $this->assertSame( 'last run 5 days ago, 1 part', $onePart['cron.last']->value );
         $never = $this->byKey( ( new expSysCardCronProvider() )->collect( $this->context( array() ) ) );
         $this->assertStringContainsString( 'no run found', $never['cron.last']->value );
 
@@ -339,6 +366,11 @@ class expSysCardProvidersTest extends PHPUnit\Framework\TestCase
         $composer = $this->byKey( ( new expSysCardComposerProvider() )->collect( $this->context( array( 'files' => array( self::ROOT . '/vendor/composer/installed.json' => $installed ), 'composer.issues' => 3 ) ) ) );
         $this->assertSame( '2 packages, 3 with issues', $composer['composer.packages']->value );
         $this->assertSame( expSysCardFact::WARN, $composer['composer.packages']->severity );
+        $this->assertStringStartsWith( '3 Composer packages or extensions do not agree', $composer['composer.packages']->hint );
+        $single = json_encode( array( 'packages' => array( array( 'name' => 'a/b' ) ) ) );
+        $one = $this->byKey( ( new expSysCardComposerProvider() )->collect( $this->context( array( 'files' => array( self::ROOT . '/vendor/composer/installed.json' => $single ), 'composer.issues' => 1 ) ) ) );
+        $this->assertSame( '1 package, 1 with issues', $one['composer.packages']->value );
+        $this->assertStringStartsWith( '1 Composer package or extension does not agree', $one['composer.packages']->hint );
         $noVendor = $this->byKey( ( new expSysCardComposerProvider() )->collect( $this->context( array( 'files' => array( self::ROOT . '/composer.json' => '{}' ) ) ) ) );
         $this->assertSame( expSysCardFact::ERROR, $noVendor['composer.packages']->severity );
         $this->assertStringContainsString( 'composer install', $noVendor['composer.packages']->hint );

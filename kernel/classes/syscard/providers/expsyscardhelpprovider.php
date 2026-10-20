@@ -26,12 +26,32 @@ class expSysCardHelpProvider extends expSysCardBaseProvider
         $state = $context->get( 'help.state', function () {
             if ( !class_exists( 'expHelpDocumentIndex' ) || !class_exists( 'expHelpLanguage' ) )
                 return null;
-            $index = expHelpDocumentIndex::instance();
-            $titles = expHelpDocumentIndex::pageTitles( $index->cacheDir() );
+            // the default language's index, whatever the locale of the siteaccess the card runs in: its pages are the
+            // pages of every language (a translation shows the original where it has no page of its own)
+            $languages = expHelpLanguage::fromIni();
+            $default = $languages->defaultDirectory();
+            $index = expHelpDocumentIndex::forLanguage( $default, $languages );
             $dir = $index->cacheDir();
-            $current = $dir !== null && is_file( $dir . '/index-' . $index->signature() . '.php' );
-            return array( 'pages' => is_array( $titles ) ? count( $titles ) : null, 'current' => $current,
-                          'languages' => expHelpLanguage::fromIni()->directories() );
+            $count = expHelpDocumentIndex::pageCount( $dir );
+            if ( $count !== null )
+                $pages = $count['pages'];
+            else
+            {
+                // a page list written before it carried the number: only its titles, which leave out the generated pages
+                $titles = expHelpDocumentIndex::pageTitles( $dir );
+                $pages = is_array( $titles ) ? count( $titles ) : null;
+            }
+            // current when every language has the index of its current signature, as ./console exp:help index leaves it
+            $staleLanguages = array();
+            foreach ( $languages->directories() as $directory )
+            {
+                $language = $directory === $default ? $index : expHelpDocumentIndex::forLanguage( $directory, $languages );
+                $languageDir = $language->cacheDir();
+                if ( $languageDir === null || !is_file( $languageDir . '/index-' . $language->signature() . '.php' ) )
+                    $staleLanguages[] = $directory;
+            }
+            return array( 'pages' => $pages, 'current' => empty( $staleLanguages ), 'stale' => $staleLanguages,
+                          'languages' => $languages->directories() );
         } );
         if ( !is_array( $state ) )
             return array( $this->fact( 'state', 'Help', 'n/a' ) );
@@ -39,7 +59,10 @@ class expSysCardHelpProvider extends expSysCardBaseProvider
         $pages = isset( $state['pages'] ) ? $state['pages'] : null;
         $text = ( $pages === null ? 'not indexed yet' : number_format( (int)$pages ) . ' pages' ) . ( empty( $languages ) ? '' : ', ' . implode( ' ', $languages ) );
         $stale = empty( $state['current'] );
-        $facts = array( $this->fact( 'state', 'Help', $text . ( $stale ? ' (index stale)' : '' ), $stale ? expSysCardFact::WARN : expSysCardFact::INFO,
+        $staleLanguages = isset( $state['stale'] ) ? (array)$state['stale'] : array();
+        // only some languages: name them; all of them (or not known which): just "index stale"
+        $which = !empty( $staleLanguages ) && count( $staleLanguages ) < count( $languages ) ? ' (index stale: ' . implode( ' ', $staleLanguages ) . ')' : ' (index stale)';
+        $facts = array( $this->fact( 'state', 'Help', $text . ( $stale ? $which : '' ), $stale ? expSysCardFact::WARN : expSysCardFact::INFO,
                                      $stale ? 'The help index is older than the pages (or missing): run ./console exp:help index so search and navigation show every page.' : '' ) );
         if ( $context->mode !== expSysCardContext::MODE_INFO )
             return $facts;
