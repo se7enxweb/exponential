@@ -1,0 +1,52 @@
+# The project information of ./console exp:about (expSysCardAboutProvider).
+# Every statement is taken from the repository's own documentation; the source of each block is named after "from".
+# A block starts with "@ <section> | <heading> | from <source>". Lines under it are one paragraph; "- Label: value"
+# lines are rows. Lines starting with # are comments. An extension can replace this file with syscard.ini
+# [About] TextFile=extension/<ext>/share/syscard/about.txt.
+
+@ about | What Exponential is | from README.md, doc/en/us/help/who-is-7x.md
+Exponential is a professional PHP application framework with advanced CMS (content management system)
+functionality. As a CMS its most notable feature is its fully customizable and extendable content model. It is also
+suitable as a platform for general PHP development. Everything on a site, from a page or a news article to an image,
+a file or a user account, is a content item, arranged in a tree and published from drafts.
+
+@ about | The Exponential Foundation | from doc/en/us/help/who-is-the-exponential-foundation.md
+The Exponential Foundation is the nonprofit organization behind the Exponential open source project: "a 501(c)(3)
+Non-Profit Corporation founded in Seattle, Washington, USA", dedicated to the continued funding, adoption, support,
+direction, education, development, promotion and documentation of the project.
+
+@ about | 7x | from README.md, doc/en/us/help/who-is-7x.md
+7x is the North American company that maintains, develops, supports and hosts Exponential. 7x has been supporting
+Exponential website customers and projects for over 24 years, and took over leadership of the project, its
+development, support, adoption and community growth in 2023. Before 2022, 7x was called Brookins Consulting.
+
+@ about | Exponential Velocity | from README.md, doc/en/us/help/who-is-7x.md
+Since 6.0.15 Exponential also ships a web server of its own, Exponential Velocity, the recommended engine for every
+stage from development to production. Velocity is a PHP web server for real production work that keeps the
+application loaded between requests. It began as a fork of the Qbix web server engine and is MIT licensed.
+
+@ project | License | from COPYRIGHT.md, doc/en/us/README-LICENSE.md
+- Code: GNU General Public License v2.0 (or any later version)
+- Documentation: GNU Free Documentation License 1.3 (or any later version)
+- Copyright: 1998 - 2026 7x & Exponential Foundation; 1999 - 2014 eZ Systems AS
+
+@ links | Links | from README.md, CONTRIBUTING.md
+- Website: https://exponential.earth
+- Documentation: https://exponential.doc.exponential.earth/Exponential
+- GitHub: https://github.com/se7enxweb/exponential
+- Packagist: https://packagist.org/packages/se7enxweb/exponential
+- Issues: https://issues.exponential.earth
+- Forums: https://share.exponential.earth/forums
+
+@ contribute | How to contribute | from CONTRIBUTING.md
+Contributions are welcome as pull requests to se7enxweb/exponential on GitHub; read CONTRIBUTING.md first. Every
+code contribution to the core kernel needs a signed Contributor License Agreement (CLA) before it can be merged:
+https://share.se7enx.com/community-project/contributor-licensing-agreement-cla
+
+@ contribute | Become an Exponential Partner | from doc/en/us/help/project/give-and-donate.md
+Join the network of official partners: companies that build, host or sell around Exponential and support the
+project in return. Apply at https://exponential.earth/partner/apply
+
+@ credits | Credits | from COPYRIGHT.md, doc/en/us/help/who-is-7x.md
+Exponential is developed by 7x and the Exponential Foundation with the community of its users, partners and
+contributors. It continues the code base first created by eZ Systems AS (1999 - 2014).
