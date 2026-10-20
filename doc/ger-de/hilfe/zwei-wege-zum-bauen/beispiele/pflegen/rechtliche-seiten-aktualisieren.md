@@ -38,6 +38,6 @@ Inhalt.
 
 ## Verwandte Seiten
 
-- [Ein schlichtes Layout für die rechtlichen Seiten](../../../../../eng-us/help/build-two-ways/examples/launch/map-legal-pages.md)
+- [Ein schlichtes Layout für die rechtlichen Seiten](../livegang/schlichtes-layout-fuer-rechtliche-seiten.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
