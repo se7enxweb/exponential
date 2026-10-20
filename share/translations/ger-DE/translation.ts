@@ -80263,6 +80263,102 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Für Organisationen und Menschen, die ihre eigene Site mit Exponential betreiben: Team, Veröffentlichen, Commerce, Pflege, Wachstum und Partner.</translation>
     </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>DITA herunterladen</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-Books</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Aus den freigegebenen Themen erstellt, jedes Mal, wenn eines von ihnen freigegeben wird, und mit ihren früheren Versionen aufbewahrt.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Aktualisiert</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Alles als DITA herunterladen</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Hilfethemen mit überfälliger Prüfung</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Das Prüfdatum ist überschritten, oder das Thema ist seit mehr als %days Tagen ohne Änderung in Prüfung.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Überfällig</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Prüfdatum %date vor %days Tagen überschritten</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>Seit %days Tagen ohne Änderung in Prüfung</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Status setzen</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown von %count überfälligen Themen werden angezeigt. ./console exp:help:content review listet alle auf.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Bevor Sie beginnen</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Schritte</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ergebnis</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Wie es weitergeht</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Bedingung</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Ursache</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Abhilfe</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

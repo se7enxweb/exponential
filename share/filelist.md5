@@ -3194,7 +3194,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 f4a6fd7fba388894640420c210f94f94  doc/changelogs/6.0/6.0.12.md
 878882418c7ffe32fd4d202a2d889e95  doc/changelogs/6.0/6.0.13.md
 fb8589325fc127b61d43ce5d7cc188d0  doc/changelogs/6.0/6.0.14.md
-45745eb01188b29120ee6f8b54c604ab  doc/changelogs/6.0/6.0.15.md
+0e4eda6283da1ce3a26bfc4adb5b7a51  doc/changelogs/6.0/6.0.15.md
 dc6c1e6747014d6f9b8be9e724b1b763  doc/changelogs/6.0/6.0.2.md
 831f582bbb230b4566621e2b9c913153  doc/changelogs/6.0/6.0.3.md
 4a9ce240f3051c96fce5a2b61580ff2a  doc/changelogs/6.0/6.0.4.md
@@ -15144,6 +15144,7 @@ a28e8c07d690b44276a468248e76076c  tests/tests/kernel/classes/help/expHelpCachePr
 302d1c97c5b85627647fa52fce670371  tests/tests/kernel/classes/help/expHelpContentExportTest.php
 339b3228bca3859098a74d9027bd1c86  tests/tests/kernel/classes/help/expHelpContentReviewTest.php
 c98a3ab117e6df5ae2e19f71311140ff  tests/tests/kernel/classes/help/expHelpContentTest.php
+55633174d7314090b6467b0c0bb71644  tests/tests/kernel/classes/help/expHelpContentTranslationsTest.php
 7a232b6261dbd79b53bc7e2051513b9c  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 a27bf2c2f2ab96f839caaa6eaf82f7c8  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 34170aa6637be50c4b1a7603b2f4abfc  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php

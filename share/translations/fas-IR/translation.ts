@@ -73259,5 +73259,101 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>برای سازمان‌ها و افرادی که سایت خود را روی Exponential اجرا می‌کنند: تیم، انتشار، تجارت، نگهداری، رشد و شرکا.</translation>
     </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>دانلود DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>کتاب‌های الکترونیکی</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>هر بار که یکی از موضوعات منتشرشده منتشر می‌شود، از روی آن‌ها ساخته می‌شوند و همراه نسخه‌های قبلی نگهداری می‌شوند.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>اندازه</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>به‌روزرسانی</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>دانلود همه به صورت DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>موضوعات راهنما با بازبینی معوق</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>تاریخ بازبینی گذشته است، یا موضوع بیش از %days روز بدون تغییر در بازبینی مانده است.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>معوق</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عملیات</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>تاریخ بازبینی %date، %days روز پیش گذشته است</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>%days روز بدون تغییر در بازبینی</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ویرایش</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>تعیین وضعیت</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown از %count موضوع معوق نمایش داده شده است. ./console exp:help:content review همه را فهرست می‌کند.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>پیش از شروع</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>مراحل</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجه</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>گام بعدی</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>وضعیت مشکل</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>علت</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>راه‌حل</translation>
+    </message>
 </context>
 </TS>

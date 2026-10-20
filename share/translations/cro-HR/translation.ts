@@ -74314,5 +74314,101 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Za organizacije i osobe koje vode vlastito web-mjesto na Exponentialu: tim, objavljivanje, trgovina, održavanje, rast i partneri.</translation>
     </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Preuzmi DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-knjige</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Izrađuju se iz izdanih tema svaki put kad se neka od njih izda i čuvaju se s ranijim verzijama.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datoteka</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Veličina</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Ažurirano</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Preuzmi sve kao DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Teme pomoći kojima je istekao pregled</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Datum pregleda je prošao ili je tema u pregledu dulje od %days dana bez promjene.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Zakašnjelo</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Radnje</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Datum pregleda %date prošao je prije %days dana</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>U pregledu %days dana bez promjene</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Uredi</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Postavi stanje</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>Prikazano je %shown od %count zakašnjelih tema. ./console exp:help:content review prikazuje sve.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Prije nego što počnete</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Koraci</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Što dalje</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Uvjet</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Uzrok</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Rješenje</translation>
+    </message>
 </context>
 </TS>

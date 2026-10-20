@@ -73027,6 +73027,102 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Societatibus et hominibus qui situm suum in Exponential regunt: turma, editio, commercium, cura, incrementum et socii.</translation>
     </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>DITA depromere</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>Libri electronici</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Ex argumentis editis fiunt, quotiens unum eorum editur, et cum versionibus prioribus servantur.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fasciculus</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Magnitudo</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Renovatum</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Omnia ut DITA depromere</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Argumenta auxilii quorum recognitio praeterita est</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Dies recognitionis praeteriit, aut argumentum plus quam %days dies sine mutatione in recognitione est.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Praeteritum</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actiones</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Dies recognitionis %date ante %days dies praeteriit</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>In recognitione per %days dies sine mutatione</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Recensere</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Statum statuere</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown ex %count argumentis praeteritis monstrantur. ./console exp:help:content review omnia enumerat.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Antequam incipias</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Gradus</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Effectus</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Quid deinde facias</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Condicio</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Causa</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Remedium</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

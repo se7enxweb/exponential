@@ -74695,6 +74695,102 @@ Gracias por tu feedback</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Para organizaciones y personas que gestionan su propio sitio en Exponential: equipo, publicación, comercio, mantenimiento, crecimiento y socios.</translation>
     </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Descargar DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>Libros electrónicos</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Se generan a partir de los temas publicados cada vez que se publica uno de ellos, y se conservan con sus versiones anteriores.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Archivo</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamaño</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Actualizado</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Descargar todo como DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Temas de ayuda con revisión atrasada</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>La fecha de revisión ha pasado, o el tema lleva más de %days días en revisión sin cambios.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Atrasado</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acciones</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>La fecha de revisión %date pasó hace %days días</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>En revisión desde hace %days días sin cambios</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Cambiar estado</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>Se muestran %shown de %count temas atrasados. ./console exp:help:content review los muestra todos.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Antes de empezar</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Pasos</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultado</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Qué hacer después</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Condición</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Causa</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Solución</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -73266,5 +73266,101 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Kendi sitesini Exponential üzerinde işleten kuruluşlar ve kişiler için: ekip, yayıncılık, ticaret, bakım, büyüme ve iş ortakları.</translation>
     </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>DITA indir</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-kitaplar</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Yayımlanan konulardan, her biri yayımlandığında yeniden oluşturulur ve önceki sürümleriyle birlikte saklanır.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosya</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Boyut</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Güncellendi</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Tümünü DITA olarak indir</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>İncelemesi geciken yardım konuları</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>İnceleme tarihi geçti veya konu %days günden uzun süredir değişiklik olmadan incelemede.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Gecikmiş</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>İşlemler</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>İnceleme tarihi %date, %days gün önce geçti</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>%days gündür değişiklik olmadan incelemede</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Düzenle</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Durumu ayarla</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%count gecikmiş konudan %shown tanesi listeleniyor. ./console exp:help:content review hepsini listeler.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Başlamadan önce</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Adımlar</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sonuç</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Sonraki adım</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Koşul</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Neden</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Çözüm</translation>
+    </message>
 </context>
 </TS>

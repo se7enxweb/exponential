@@ -74543,5 +74543,101 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Pro organizace a lidi, kteří provozují vlastní web na Exponential: tým, publikování, obchod, údržba, růst a partneři.</translation>
     </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Stáhnout DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-knihy</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Vytvářejí se z vydaných témat pokaždé, když je některé z nich vydáno, a uchovávají se s předchozími verzemi.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Soubor</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Velikost</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Aktualizováno</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Stáhnout vše jako DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Témata nápovědy s prošlou kontrolou</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Datum kontroly uplynulo, nebo je téma v kontrole déle než %days dní beze změny.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Po termínu</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akce</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Datum kontroly %date uplynulo před %days dny</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>V kontrole %days dní beze změny</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Upravit</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Nastavit stav</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>Zobrazeno %shown z %count témat po termínu. ./console exp:help:content review vypíše všechna.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Než začnete</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Kroky</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Výsledek</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Co dál</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Podmínka</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Příčina</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Náprava</translation>
+    </message>
 </context>
 </TS>
