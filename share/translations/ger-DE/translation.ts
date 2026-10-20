@@ -78848,10 +78848,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Hilfe-Center</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Hilfe-Startseite</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Wie können wir helfen?</translation>
     </message>

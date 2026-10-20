@@ -71808,10 +71808,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>د مرستې مرکز</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>د مرستې پیل</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>موږ څنګه مرسته کولی شو؟</translation>
     </message>

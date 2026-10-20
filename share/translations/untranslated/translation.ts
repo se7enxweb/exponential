@@ -71724,10 +71724,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation type="unfinished"></translation>
     </message>

@@ -5,10 +5,11 @@
  * The state lives in view parameters, in a canonical order (expHelp::searchUrl()):
  *   exphelp/search/(q)/upload+image/(category)/layouts/(audience)/editor/(type)/help/(offset)/20/(limit)/10
  * Every part is optional. Without (q) the page browses: it lists every page the filters allow (never an empty page).
- * A GET request with q, audience, category, type, offset or limit (the search form without scripts, old links) is
- * redirected (302) to the canonical address. A JSON request (format=json, or Accept: application/json, as the help
- * script sends it) is never redirected and takes both forms: expHelpSearch::search()'s array plus 'canonical' (the
- * module-relative address of that state) and 'canonical_href' (with the siteaccess).
+ * The options are view parameters only, never GET query parameters: a ?q= or ?format= in the address is not read.
+ * The search form without scripts is sent with POST (q, audience, category, type, offset, limit), and that is
+ * redirected (303) to the canonical address. A JSON request ((format)/json, or Accept: application/json, as the help
+ * script sends it) is never redirected: expHelpSearch::search()'s array plus 'canonical' (the module-relative address
+ * of that state) and 'canonical_href' (with the siteaccess).
  *
  * Values are checked: a category, audience or type must be one exphelp.ini knows (others are dropped), q is at most
  * 200 characters, offset at most 10000, limit 1 to 50.
@@ -45,23 +46,21 @@ class Search extends \Exponential\Runnable\ModuleView
         $known = self::knownValues( $index );
         $defaultLimit = self::defaultLimit();
         $viewState = self::viewParameters( $Params );
-        $json = self::wantsJson( $viewState, $_GET, $_SERVER );
+        $json = self::wantsJson( $viewState, $_SERVER );
 
-        // the form without scripts, and old ?q= links: to the canonical address (never for JSON, never for POST)
-        if ( !$json && self::redirectsGet( $_GET, isset( $_SERVER['REQUEST_METHOD'] ) ? $_SERVER['REQUEST_METHOD'] : 'GET' ) )
+        // the form without scripts (POST): to the canonical address (never for JSON)
+        if ( !$json && self::redirectsPost( $_POST, isset( $_SERVER['REQUEST_METHOD'] ) ? $_SERVER['REQUEST_METHOD'] : 'GET' ) )
         {
-            $state = self::state( array_merge( $viewState, self::getState( $_GET ) ), $known, $defaultLimit );
-            // Sent here, not through $Module->redirectTo(): the kernel carries the query string over a module redirect,
-            // so the canonical address would arrive with ?q=... again and redirect to itself forever. Without HTML
-            // escaping: the address goes into the Location header.
+            $state = self::state( array_merge( $viewState, self::getState( $_POST ) ), $known, $defaultLimit );
+            // Sent here, not through $Module->redirectTo(): the kernel carries a request's query string over a module
+            // redirect. Without HTML escaping: the address goes into the Location header.
             $target = \expHelp::searchUrl( $state, $defaultLimit );
             \eZURI::transformURI( $target, false, 'full', false );
-            \eZHTTPTool::redirect( $target, array(), '302 Found', false );
+            \eZHTTPTool::redirect( $target, array(), '303 See Other', false );
             \eZExecution::cleanExit();
         }
 
-        $state = self::state( $json ? array_merge( self::getState( $_GET ), array_filter( $viewState, function ( $v ) { return $v !== false && $v !== null && $v !== ''; } ) )
-                                    : $viewState, $known, $defaultLimit );
+        $state = self::state( $viewState, $known, $defaultLimit );
         $filters = array();
         foreach ( array( 'audience', 'category', 'type', 'extension' ) as $facet )
         {
@@ -172,9 +171,9 @@ class Search extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The search parameters of a query string (q, category, audience, type, offset, limit) that are set.
+     * The search parameters of the posted form (q, category, audience, type, offset, limit) that are set.
      *
-     * @param array $get
+     * @param array $get usually $_POST (never the query string: the view does not read it)
      * @return array
      */
     public static function getState( array $get )
@@ -189,37 +188,37 @@ class Search extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Whether a request is to be redirected to the canonical address: a GET (or HEAD) with a search parameter in
-     * its query string, empty ones included (the form sends q= with nothing typed). JSON requests are decided before.
+     * Whether a request is to be redirected to the canonical address: a POST of the search form (without scripts)
+     * with a search parameter, empty ones included (the form sends q with nothing typed). A GET is never redirected:
+     * its query string is not read. JSON requests are decided before.
      *
-     * @param array $get
+     * @param array $post usually $_POST
      * @param string $method
      * @return bool
      */
-    public static function redirectsGet( array $get, $method )
+    public static function redirectsPost( array $post, $method )
     {
-        if ( !in_array( strtoupper( (string)$method ), array( 'GET', 'HEAD' ), true ) )
+        if ( strtoupper( (string)$method ) !== 'POST' )
             return false;
         foreach ( \expHelp::SEARCH_PARAMS as $name )
         {
-            if ( array_key_exists( $name, $get ) )
+            if ( array_key_exists( $name, $post ) )
                 return true;
         }
         return false;
     }
 
     /**
-     * Whether the answer is JSON: format=json in the query string or as (format)/json, or Accept: application/json.
+     * Whether the answer is JSON: the view parameter (format)/json, or Accept: application/json. A ?format=json in
+     * the query string is not read.
      *
      * @param array $viewState
-     * @param array $get
      * @param array $server
      * @return bool
      */
-    public static function wantsJson( array $viewState, array $get, array $server )
+    public static function wantsJson( array $viewState, array $server )
     {
-        return ( isset( $get['format'] ) && $get['format'] === 'json' )
-            || ( isset( $viewState['format'] ) && $viewState['format'] === 'json' )
+        return ( isset( $viewState['format'] ) && $viewState['format'] === 'json' )
             || self::acceptsJson( $server );
     }
 
@@ -399,7 +398,8 @@ class Search extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The search parameters of a query string, bounded (the JSON client's form; kept for callers of wave 1).
+     * Search parameters given as an array (name => value), bounded (kept for callers of wave 1; the view itself reads
+     * view parameters, never the query string).
      *
      * @param array $get
      * @return array array( 'q' => string, 'filters' => array, 'limit' => int, 'offset' => int, 'format' => html|json )

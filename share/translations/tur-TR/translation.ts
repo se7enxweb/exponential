@@ -71815,10 +71815,6 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Yardım merkezi</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Yardım başlangıcı</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Size nasıl yardımcı olabiliriz?</translation>
     </message>

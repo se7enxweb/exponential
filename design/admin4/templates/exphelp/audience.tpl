@@ -25,7 +25,7 @@
             {if $help_l.summary|ne( '' )}<p class="a4-help-landing-summary">{$help_l.summary|wash}</p>{/if}
             <p class="a4-help-landing-count">{'%count pages'|i18n( $help_ctx,, hash( '%count', $help_l.count ) )|wash}</p>
         </div>
-        <form class="a4-help-search a4-help-landing-search" action={$help_search_action|ezurl} method="get" role="search">
+        <form class="a4-help-search a4-help-landing-search" action={$help_search_action|ezurl} method="post" role="search">
             <input type="hidden" name="audience" value="{$help_l.id|wash}" />
             <div class="a4-help-search-field">
                 <span class="a4-icon a4-bi-search" aria-hidden="true"></span>

@@ -18,7 +18,7 @@
             {if and( is_set( $help_reading ), $help_reading )}{include uri='design:exphelp/parts/reading_language.tpl' reading=$help_reading prefix='exphelp-contents-reading'}{/if}
         </div>
         <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/extensions'|ezurl}><span class="a4-icon a4-bi-puzzle" aria-hidden="true"></span> {'Extensions'|i18n( 'kernel/exphelp' )}</a>
-        <form class="a4-help-viewer-search a4-help-search-box" data-exphelp-search action={'exphelp/search'|ezurl} method="get" role="search" data-exphelp-endpoint={'exphelp/search'|ezurl}>
+        <form class="a4-help-viewer-search a4-help-search-box" data-exphelp-search action={'exphelp/search'|ezurl} method="post" role="search" data-exphelp-endpoint={'exphelp/search'|ezurl}>
             <label class="a4-sr-only" for="exphelp-contents-q">{'Search the help'|i18n( 'kernel/exphelp' )}</label>
             <input class="a4-input" type="search" id="exphelp-contents-q" name="q" value="" autocomplete="off" placeholder="{'Search the help'|i18n( 'kernel/exphelp' )|wash}" aria-controls="exphelp-contents-results" aria-keyshortcuts="/" data-exphelp-search-input />
             <button type="submit" class="a4-btn a4-btn-small"><span class="a4-icon a4-bi-search" aria-hidden="true"></span> {'Search'|i18n( 'kernel/exphelp' )}</button>

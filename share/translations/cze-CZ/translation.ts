@@ -73092,10 +73092,6 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Centrum nápovědy</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Úvod nápovědy</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Jak vám můžeme pomoci?</translation>
     </message>

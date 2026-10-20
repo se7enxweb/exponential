@@ -71576,10 +71576,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>QaH botlh</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>QaH tagh</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>chay&apos; maQaHlaH?</translation>
     </message>

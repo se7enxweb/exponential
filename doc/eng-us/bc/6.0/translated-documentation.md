@@ -107,7 +107,7 @@ reads the files directly needs the new name:
 |------------|-----|--------------|
 | `/exphelp/viewer/en/us/guides/caches.md`, `/exphelp/viewer/doc/en/us/guides/caches.md` | `/exphelp/viewer/guides/caches.md` | redirected to the page id (`Legacy[en/us]`) |
 | `/exphelp/viewer/de/anleitungen/caches.md` (a translated path) | `/exphelp/viewer/guides/caches.md` | redirected to the page id (`Legacy[de]`) |
-| `?lang=en-us`, `?lang=de` (the original of a page, or one language for one request) | `?lang=eng-us`, `?lang=ger-de` (a locale such as `ger-DE` works too) | the old keys are still accepted (`Legacy[]`) |
+| `?lang=en-us`, `?lang=de` (the original of a page, or one language for one request) | `/(lang)/eng-us`, `/(lang)/ger-de` (a locale such as `ger-DE` works too) | the old keys are still accepted as `/(lang)/en-us` (`Legacy[]`); a `?lang=` query parameter is no longer read |
 | `[DocLanguages] Default=en/us`, `Directories[]=en/us`, `Directories[]=de`, `Map[...]=en/us` / `=de` in an override | `eng-us`, `ger-de` | change the override: `Legacy[]` only serves old addresses, it does not rename a configured directory, and a directory named `en/us` or `de` no longer exists, so it has no pages |
 | `doc/en/us/...`, `doc/de/...` in an override's path rules, in a script or in a GitHub link | `doc/eng-us/...`, `doc/ger-de/...` | change it: the old files no longer exist |
 | a translation of your own in `doc/<two letters>/` (`doc/fr/`) | `doc/<locale lowercased>/` (`doc/fre-fr/`) | `git mv` it, list the new name in `Directories[]`, and add `Legacy[fr]=fre-fr` for its old addresses |
@@ -246,7 +246,7 @@ ExcludePatterns[]=doc/README.md
 
 A `Map[]` entry that names a directory `Directories[]` does not list is ignored. `Legacy[]` maps an old directory
 name to today's, so an old address (`/exphelp/viewer/en/us/<id>`, `/exphelp/viewer/doc/en/us/<id>`,
-`/exphelp/viewer/de/<translated path>`, `?lang=en-us`) still finds its page (`expHelpLanguage::resolveDirectory()`,
+`/exphelp/viewer/de/<translated path>`, `/(lang)/en-us`) still finds its page (`expHelpLanguage::resolveDirectory()`,
 `splitLegacy()`); no file is ever read from an old directory. The two entries above are also built in, so an override
 that replaces `Legacy[]` keeps them. A translation of your own that had a two-letter directory (`doc/fr/`) can add
 `Legacy[fr]=fre-fr` after renaming it, so that its old addresses keep working.
@@ -306,7 +306,7 @@ directory either has its translated name or keeps its English one). It exits wit
   search is per language, and a translation is classified like its original;
 - TD-10: the path maps merge as a union (sorted, the same file whatever the order, a conflict kept from the first map
   and reported, a git conflict read as its two sides) and directory names follow `.dirnames.json`;
-- TD-11: how much of the help each language has, the choices of the "Reading in" switch, and `?lang=` for the
+- TD-11: how much of the help each language has, the choices of the "Reading in" switch, and `/(lang)/` for the
   original (`eng-us`, `ger-de`, and the old keys `en-us`, `de`);
 - TD-12: a translated page is rendered from its file, so its links and images reach the original's directory
   (`../../eng-us/help/images/x.webp` from `doc/ger-de/hilfe/x.md`);

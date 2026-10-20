@@ -73022,10 +73022,6 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Centrum pomocy</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Start pomocy</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>W czym możemy pomóc?</translation>
     </message>

@@ -204,7 +204,7 @@ can never name `content/...`, and a provider that does not implement the interfa
 ./console exp:help:content export -s admin --manual=help-manual-editors --format=pdf
 ```
 
-and on the manual's page in the help, **Download EPUB** and **Download PDF** (`exphelp/manual/<remote_id>?format=epub`).
+and on the manual's page in the help, **Download EPUB** and **Download PDF** (`exphelp/manual/<remote_id>/(format)/epub`).
 An e-book carries only the **Released** chapters and topics the user may read (on the command line: `--login`,
 default `admin`); a preview never goes into a book. The default file of the command is
 `var/<site>/cache/exphelp/ebooks/<remote_id>.<format>`; the download is made per request and not kept.
@@ -263,8 +263,8 @@ for DITA-OT and other DITA tools, and for the change history in git (plan, deliv
 ./console exp:help:content export -s admin --format=dita ...     # the same, under the plan's name
 ```
 
-and on the help's pages of manuals: **Download DITA** on a manual's page (`exphelp/manual/<remote_id>?format=dita`)
-and **Download all as DITA** on the list of manuals (`exphelp/manual?format=dita`), a zip file. As in an e-book, only
+and on the help's pages of manuals: **Download DITA** on a manual's page (`exphelp/manual/<remote_id>/(format)/dita`)
+and **Download all as DITA** on the list of manuals (`exphelp/manual/(format)/dita`), a zip file. As in an e-book, only
 **Released** objects the user may read go into an export (on the command line: `--login`, default `admin`).
 
 Without `--manual` the export holds every Released manual, every Released topic of the pool and the Released glossary
