@@ -1,7 +1,10 @@
 # Help maintained as content
 
-Status: phase 1 in 6.0.15 (18 October 2026). The plan is [help-system.md](../../specifications/6.0/help-system.md),
-the editorial rules are the [help style guide](../../specifications/6.0/help-style-guide.md).
+Status: phase 1 in 6.0.15 (18 October 2026); the DITA export, the stored e-books and the overdue reviews on 20 October
+2026 ([upgrade note](../../bc/6.0/help-content-dita-ebooks-reviews.md)). The plan is
+[help-system.md](../../specifications/6.0/help-system.md), the editorial rules are the
+[help style guide](../../specifications/6.0/help-style-guide.md). For the people who write and release the help:
+[keeping the help up to date](../../help/maintaining-help-topics.md).
 
 Help topics, manuals, figures and the glossary are **content of the site**: written, reviewed and released in the
 administration like any other content, and delivered into the help of the administration (`exphelp`, see

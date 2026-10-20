@@ -1,7 +1,10 @@
 # Plan: user manuals and help maintained inside Exponential
 
 Status: proposal, 18 October 2026; phase 1 (classes, tree, sections, states, roles, validator, web and context help
-in the help of the administration) implemented in 6.0.15, see [help maintained as content](../../features/6.0/help-content.md).
+in the help of the administration) implemented in 6.0.15, see [help maintained as content](../../features/6.0/help-content.md);
+from 20 October 2026 also the DITA export (delivery path 3, and the export for path 4), the e-books stored as file
+objects and rebuilt on release (delivery path 3) and the dashboard list of topics overdue for review (phase 7), see
+[the upgrade note](../../bc/6.0/help-content-dita-ebooks-reviews.md).
 Companion page: [the help style guide](help-style-guide.md).
 
 ## Idea
