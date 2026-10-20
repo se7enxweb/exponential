@@ -288,6 +288,8 @@ class Viewer extends \Exponential\Runnable\ModuleView
         return new \expHelpMarkdownRenderer( array(
             'link_resolver' => array( 'expHelpLinks', 'link' ),
             'image_resolver' => array( 'expHelpLinks', 'sizedImage' ),
+            // an image of another site that the siteaccess's policy blocks is shown as a link (README.md's GitHub images)
+            'image_sources' => \expContentSecurityPolicy::imageSources(),
             'source_path' => (string)$sourcePath ) );
     }
 }

@@ -574,10 +574,17 @@ class expHelpSearch
         return '/exphelp/viewer/' . implode( '/', array_map( 'rawurlencode', explode( '/', $id ) ) ) . ( $anchor !== '' ? '#' . rawurlencode( $anchor ) : '' );
     }
 
-    /** The address with the siteaccess prefix, for the client (outside a web request: unchanged). */
+    /**
+     * The address with the siteaccess prefix, for the client (outside a web request: unchanged).
+     *
+     * A web request is told by eZExecution::isWebRequest() (a request method and a Host header), not by
+     * eZSys::isShellExecution(): that one trusts php_sapi_name(), which is 'cli' in a PHP web server running in the
+     * CLI SAPI (Velocity, the built-in server), so every hit there kept its module-relative address
+     * (/exphelp/viewer/... instead of /admin/exphelp/viewer/...). Built per call from the current access path.
+     */
     protected static function absoluteUrl( $url )
     {
-        if ( class_exists( 'expHelpLinks' ) && class_exists( 'eZURI' ) && class_exists( 'eZSys' ) && !eZSys::isShellExecution() )
+        if ( class_exists( 'expHelpLinks' ) && class_exists( 'eZURI' ) && class_exists( 'eZExecution' ) && eZExecution::isWebRequest() )
             return expHelpLinks::absolute( $url );
         return $url;
     }
