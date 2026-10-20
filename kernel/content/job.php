@@ -1,7 +1,7 @@
 <?php
 /**
  * Entry point of kernel/content/job.php: the progress page of a content job (a subtree remove or copy
- * running in the background), and its JSON status with ?json=1.
+ * running in the background), and its JSON status with /(json)/1.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

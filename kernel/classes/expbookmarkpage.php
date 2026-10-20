@@ -438,10 +438,8 @@ class expBookmarkPage
             $path .= '/(sort)/' . $sort;
         if ( (int) $offset > 0 )
             $path .= '/(offset)/' . (int) $offset;
-        $search = self::searchText( $search );
-        if ( $search !== '' )
-            $path .= '?q=' . rawurlencode( $search );
-        return $path;
+        // the search as a view parameter, /(q)/<text>, never a query string
+        return $path . expViewParameters::suffix( array( 'q' => self::searchText( $search ) ) );
     }
 
     /**
