@@ -13219,7 +13219,7 @@ a5a61099e4c1ed8b3d4cc85ffb11a5eb  kernel/shop/updatebasket.php
 11c090806e9636c16955a873ba5ae028  kernel/shop/vatrules.php
 a04dffad4e657eed3e6e013d3f0c0374  kernel/shop/vattype.php
 ef06c1c17f9c7019e9f5ce249bc232ee  kernel/shop/wishlist.php
-b6f0e8c2cea5e228c975de27492721fa  kernel/sql/common/cleandata.sql
+7774b51415b0e52a39762510cfb8080a  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
@@ -13227,7 +13227,7 @@ dd46ede74b0eb5e4c6fb55fde80f414a  kernel/sql/mysql/kernel_schema.sql
 c82dc0ebec07c22d5cee916faa0967ce  kernel/sql/postgresql/kernel_schema.sql
 f2ad2f8e1711872bbc2d871d7cc6c76b  kernel/sql/postgresql/sequence.sql.template
 ce03b8330af52b5e601c91208fee1ffd  kernel/sql/postgresql/setval.sql
-90390dd0124362796ab09f2f4cdacf5c  kernel/sql/sqlite/cleandata.sql
+fe87abb371fc451f0a0c3ec4b1089a88  kernel/sql/sqlite/cleandata.sql
 9f43f24dada2d8918b9663e43af6d2b0  kernel/sql/sqlite/schema.sql
 1bb603e51ab28ac0367fb23c71c2648e  kernel/state/assign.php
 58b38e2e4ae8744e1d4418ed6659bc18  kernel/state/edit.php
@@ -13652,7 +13652,7 @@ f18e6605875590291f90885a0343ee7e  share/codepages/windows-1255
 eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
-a63ff6444dbbf40c9bd57aee41040c9f  share/db_data.dba
+e5f6b5863776b2f519692dd560cdc983  share/db_data.dba
 2f401f8da6b03bb3f6badf20964a4e87  share/db_schema.dba
 2239955eb5ad31e0f5861a038dba021f  share/help/seed-glossary.json
 44106c7d89ded6e0d66c7085e5d0ce0e  share/help/seed-topics.json
