@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 f340b0174230e7714518fe8bae195f13  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-54769940253eb91947f3b58a09e40f23  autoload/ezp_kernel.php
+e575a80541a1617892ae66757c44885d  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -12865,6 +12865,7 @@ d7b0086399665b9506af909e3d6230fc  kernel/classes/expvelocityphpserver.php
 8575d463d7c31610483091d94c65f8fc  kernel/classes/expvelocityrestartunit.php
 c48709689979f0c3130529b6bfce3dd1  kernel/classes/expvelocitywatchdog.php
 deb2ca869c73bf0de05c142ab2596265  kernel/classes/expviewaccess.php
+124d8cdc277ffc5dd009cbb378bac4f7  kernel/classes/expviewparameters.php
 6b45d5f9510d830f15fcfa3eafb81359  kernel/classes/expweakpasswordlist.php
 264b1b4e82ea87360f2a6bc498696978  kernel/classes/ezaudit.php
 6235fea69dfbb9e5d965e4879d7203db  kernel/classes/ezbasket.php
@@ -16041,6 +16042,7 @@ d192ba3ececa29f5bea6ab48deb3d607  tests/tests/kernel/classes/expVelocityNiceTest
 f7cd1ed759475ce246d5a6cd8c5a92b6  tests/tests/kernel/classes/expVelocityStopRestartTest.php
 d56fc6851ebcd05af301698d84ec6f50  tests/tests/kernel/classes/expVelocityWatchdogTest.php
 a5fd0839917302ca227dd3d9e1cd998f  tests/tests/kernel/classes/expViewAccessTest.php
+cbbbffa01ab1273c1d1d8944d4003e9e  tests/tests/kernel/classes/expViewParametersTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml
