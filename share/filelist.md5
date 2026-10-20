@@ -11052,7 +11052,7 @@ dd8219b03d60ce0dbee6e5abe1289f20  doc/eng-us/standards/patterns/workflow-event.m
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 94b0410f4d6d290ff0b4dc2b284451c4  doc/ger-de/.dirnames.json
-4d52ae988a91de248c03d57aee8612d5  doc/ger-de/.paths.json
+4e22828ceb90acc56361ffaae54f1e1d  doc/ger-de/.paths.json
 2ba7d4102f729a5fa7d53ff750a2cf06  doc/ger-de/anleitungen/README.md
 95eb47bc5b1798896d9e44d00dbd7314  doc/ger-de/anleitungen/aktualisieren.md
 88e9d7a7e41c216d27d0d009da451c34  doc/ger-de/anleitungen/api-schluessel.md
@@ -11620,6 +11620,7 @@ ec3c5b818ad60443733c2d63eb0c8c40  doc/ger-de/hilfe/projekt/faq.md
 3067b42fd7b4a823eaf5e2946d29aa13  doc/ger-de/hilfe/projekt/roadmap.md
 88458cd84b8bf2bee6dc09f6040a1d02  doc/ger-de/hilfe/projekt/ueber-das-projekt.md
 2ffceb307bff7b56a408f72d0b8a9d0f  doc/ger-de/hilfe/projekt/unterstuetzung-erhalten.md
+d9c157d1d0f14db432efbb7d09107410  doc/ger-de/hilfe/projekt/verhaltenskodex.md
 6e98f5c4a05511467ee4a12d7b727bb8  doc/ger-de/hilfe/projekt/zum-projekt-beitragen.md
 10bcdbeb0454404c87dc8d73305773f2  doc/ger-de/hilfe/rundgang-durch-die-administration.md
 ac10f6205e137b81cde3ed1967077cf9  doc/ger-de/hilfe/seitenpakete/README.md
