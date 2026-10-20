@@ -3462,7 +3462,7 @@ f504dbb0bd1d30709cde9b7def0b1c52  doc/en/us/bc/6.0/content-export-menu.md
 d3d1f22911e860a16506696d3fee2cbb  doc/en/us/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/en/us/bc/6.0/content-object-fallback-locale.md
 bd7e17c4ad79edba44858d93f629b015  doc/en/us/bc/6.0/debug-bar.md
-0eb5d65b901d6d5cb00fd902bb5eb3a7  doc/en/us/bc/6.0/demo-mode.md
+5936fd59dbd92dacda2f58405acfbd77  doc/en/us/bc/6.0/demo-mode.md
 68ca2915c347f13a647afb19d14748d0  doc/en/us/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/en/us/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf70523ece418d44818052d3aa825b9f  doc/en/us/bc/6.0/expinfo-operator.md
@@ -3530,8 +3530,8 @@ fb85be121ac1186257310cd979fc3c1e  doc/en/us/bc/6.0/sqlite-transactions.md
 0637dd8b6d6bcb69afd7fa771041c8f5  doc/en/us/bc/6.0/ui-switch.md
 7928239ba6369a6bb899ee998ce94b05  doc/en/us/bc/6.0/user-password-change.md
 2a5697129552228056e196afb966e530  doc/en/us/bc/6.0/velocity-engine-upgrade-notes.md
-6f92f0d35be16c8a0ca5f3694759e2ce  doc/en/us/bc/6.0/velocity-engines.md
-886acb7ce25be5416e143b161f5c0672  doc/en/us/bc/6.0/velocity-ondisk-layout.md
+56ad055679ae744421303f759e59068f  doc/en/us/bc/6.0/velocity-engines.md
+bd1cd88ecdff9dd1dba0ce963c6e5b5f  doc/en/us/bc/6.0/velocity-ondisk-layout.md
 e45848cf4009e8515ef6ed6775a40b07  doc/en/us/bc/6.0/view_full_security.md
 47fd2bff5c237dc0a50c3deb40ab5f34  doc/en/us/bc/6.0/weak-passwords-and-reset-key-lifetime.md
 8fd6c3094d810e78dbd152f24c450ec9  doc/en/us/bc/6.0/yui-removal.md
@@ -3716,7 +3716,7 @@ e37753efe1f2a6c778455cb8e00e16bb  doc/en/us/examples/datatypes/eztext.md
 9cee0e1a1d73c3a713eac4c3ecba22f0  doc/en/us/examples/datatypes/ezurl.md
 0b82da1b146d3a9a199231c2db490836  doc/en/us/examples/datatypes/ezuser.md
 27147271b09243c44cc4d27c71933d93  doc/en/us/examples/datatypes/ezxmltext.md
-65588ee51c978fcea534e8a0750a69be  doc/en/us/examples/demo-mode/README.md
+e939b9f6d0624a6ddf15c2097e5dbd2b  doc/en/us/examples/demo-mode/README.md
 380790c25dfa6710828c11c472548d6c  doc/en/us/examples/demo-mode/apache-vhost-demo.conf
 72b1899857a398bd8833af0a17db3bf2  doc/en/us/examples/demo-mode/crontab-demo
 c5b695be31ba69d390497ebdf3165ef4  doc/en/us/examples/demo-mode/docker-demo.env
@@ -3724,7 +3724,7 @@ c5b695be31ba69d390497ebdf3165ef4  doc/en/us/examples/demo-mode/docker-demo.env
 1aef52fa9577aa1a31dc2ef061939475  doc/en/us/examples/demo-mode/install-demo-sqlite.sh
 85805ace47c0008cf4d99b7d70877f0d  doc/en/us/examples/demo-mode/nginx-fastcgi-demo.conf
 4be067837a640cf888d78908c4b23ae3  doc/en/us/examples/demo-mode/php-fpm-pool-demo.conf
-3ace3b646d1dd56c86491feb7a3eb11b  doc/en/us/examples/demo-mode/velocity-demo-mode.conf
+5c6f80baf4bd79e71b0f898301c1315f  doc/en/us/examples/demo-mode/velocity-demo-mode.conf
 5dcfd6fb4bf4ef079d6b0adc5bd8e9d8  doc/en/us/examples/extension-points/README.md
 3927857be2f6cba3af19a9994fcfb4f2  doc/en/us/examples/extension-points/audit.md
 c2cafe9e2e4dc86fd5103ebc3fca26e9  doc/en/us/examples/extension-points/binaryfile.md
@@ -6379,7 +6379,7 @@ e6788c036282afd665d79ed6bb9c4d6d  doc/en/us/guides/benchmarking.md
 fcc253575bd6d9066cd693ca89fd3d9f  doc/en/us/guides/cronjobs.md
 9ea97a05fa2a16e68fe3ddeaf00535b2  doc/en/us/guides/deploying.md
 b790dd482cd361bdb034bae2f8ee60a5  doc/en/us/guides/drafts-and-pending.md
-8db5943ef266552c24bff7aa68ea4a19  doc/en/us/guides/environment-variables.md
+bab60fc02f9f14b053f17e60faaa179c  doc/en/us/guides/environment-variables.md
 d3e2a3c7bc0531e43eb098c727361f04  doc/en/us/guides/extensions-page.md
 926af1871cfe391ea90bdc79b2f350ca  doc/en/us/guides/extensions.md
 ee351c2663939b30b7b45058a16e32be  doc/en/us/guides/finding-an-error-by-its-reference.md
@@ -8866,7 +8866,7 @@ ea37a265a2025abbe09422f99c759253  doc/en/us/help/hosting/provisioning/one-click-
 4c8a6302b154908b2dc6eeca93a08d9c  doc/en/us/help/hosting/runbooks/README.md
 18dd9bcaf2c0c7c2b49a0c423896e7de  doc/en/us/help/hosting/runbooks/certificate-expiry.md
 6d82c9e745ada0794f2c573404f022d3  doc/en/us/help/hosting/runbooks/compromised-site.md
-d7c805c3dcf3aac08eacef349117a178  doc/en/us/help/hosting/runbooks/demo-mode-problems.md
+9ace01bc51d494ca33d2715c9a56a532  doc/en/us/help/hosting/runbooks/demo-mode-problems.md
 ceeec7e77aad50eef34de225c0f8bcb7  doc/en/us/help/hosting/runbooks/disk-full.md
 352cdca971266a2d66bc5e9b7e42f06e  doc/en/us/help/hosting/runbooks/php-upgrade.md
 782e28c98c62e678c458336a1f851dc1  doc/en/us/help/hosting/runbooks/restore-from-backup.md
@@ -8877,7 +8877,7 @@ ce81ccb6a22033d9a733cfd7f892244d  doc/en/us/help/hosting/runbooks/slow-site.md
 a8d7ae8fe49ac137f83dace1374e19af  doc/en/us/help/hosting/security/audit-trail.md
 13523d0e9c17e18a00c8c9260bcc1a06  doc/en/us/help/hosting/security/compliance-and-gdpr.md
 71dd683548ac339b69975a5a60dd437a  doc/en/us/help/hosting/security/content-security-policy.md
-c508175d4563792ec0c5615fd4b7b60d  doc/en/us/help/hosting/security/demo-mode-for-hosts.md
+62d41c22cacbd61b1c03f00c02962b6b  doc/en/us/help/hosting/security/demo-mode-for-hosts.md
 984ba2f4c8fec505e12d5f4afa318e5b  doc/en/us/help/hosting/security/first-sign-in-and-default-passwords.md
 86422bdaaececd4e0db18e8edbcc8f4a  doc/en/us/help/hosting/security/hardening-for-hosts.md
 f3ef650750023cfac9e1f854489cc8de  doc/en/us/help/hosting/security/log-and-data-retention.md
@@ -8896,9 +8896,9 @@ ce12913e7bff1d65526b5c41f95433d1  doc/en/us/help/hosting/servers/README.md
 c485d5f412a75e17267831e691b4b936  doc/en/us/help/hosting/servers/iis.md
 56b815102536ff821366af139f8373ba  doc/en/us/help/hosting/servers/litespeed.md
 9f5207766f643a0ca55a1c16d371cfbb  doc/en/us/help/hosting/servers/nginx-with-php-fpm.md
-ac61be1c4b5c463dd7cb50ee2f88ba9e  doc/en/us/help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md
+9e4fd41c6f54ceedbd81faa69a6d24df  doc/en/us/help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md
 648127360031b4982a0d14f310ce7fe4  doc/en/us/help/hosting/servers/velocity-beside-apache-or-nginx.md
-be1e8cfdb415ce4ece1537c0564ae034  doc/en/us/help/hosting/servers/velocity-for-hosts.md
+60d1fafc96a96e805fe9f72350ad49d6  doc/en/us/help/hosting/servers/velocity-for-hosts.md
 ca2b004c6c4666c8d25cea94f2d804b3  doc/en/us/help/hosting/servers/velocity-https-certificates.md
 54c50979644da1d66341d3f643f947f7  doc/en/us/help/hosting/servers/velocity-workers-and-pools.md
 fcdea3299a32c3730f641822280611cf  doc/en/us/help/images/accounts/admin-tour-header-dark.webp

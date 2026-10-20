@@ -40,7 +40,7 @@ off.
 
 | Cause | Check | Fix |
 |---|---|---|
-| The variable is set for cron or the console only | no `demo/mode` line with the web SAPI | set it for the web server too: `.htaccess` or virtual host `SetEnv`, the PHP-FPM pool, `fastcgi_param`, or Velocity's unit ([examples](../../../examples/demo-mode/README.md)) |
+| The variable is set for cron or the console only | no `demo/mode` line with the web SAPI | set it for the web server too: `.htaccess` or virtual host `SetEnv`, the PHP-FPM pool, `fastcgi_param`, or Velocity's `/etc/vc/envvars` ([examples](../../../examples/demo-mode/README.md)) |
 | `SetEnv` in a `.htaccess` the server does not read | the server has `AllowOverride None`, or the line is in another directory's `.htaccess` | put it in the virtual host, or allow overrides for the document root; with LiteSpeed check that `.htaccess` is read for the domain |
 | `mod_env` is not loaded | the `<IfModule mod_env.c>` block is skipped | enable `mod_env`, or set the variable in the PHP-FPM pool |
 | PHP-FPM drops the environment | the master has it, the pool has `clear_env = yes` (the default) | `env[EXP_DEMO_MODE] = 1` in the pool, then reload that pool's master |
@@ -70,11 +70,14 @@ shows a **Demo mode** note when it is on. Without the note, set the variable for
 
 ## Demo mode was on and is gone after a restart
 
-- **Exponential Velocity:** `exp:velocity restart` and `exp:velocity deploy` start the new server with the
-  environment of the shell they run in. Set the variable in the systemd unit
-  ([`velocity-demo-mode.conf`](../../../examples/demo-mode/velocity-demo-mode.conf)) and restart through the unit, or
-  `export EXP_DEMO_MODE=1` before restarting from a shell. Velocity's `/etc/vc/envvars` file does not give it to the
-  workers.
+- **Exponential Velocity:** solved by `/etc/vc/envvars`. Put `export EXP_DEMO_MODE=1` there: the server reads the
+  file at every start and exports what it sets to every worker, so `exp:velocity restart` and `exp:velocity deploy`
+  keep demo mode whichever shell runs them. A value in the environment that starts the server wins over the file, so
+  a unit or shell with `EXP_DEMO_MODE=0` still switches it off. The file cannot set `PATH`, `LD_*`, `PHPRC` and the
+  other loader and shell variables ([on-disk layout](../../../bc/6.0/velocity-ondisk-layout.md)). Needs an engine
+  with the envvars export (after v0.0.4.53); with an older engine `exp:velocity start` passes the file's values
+  itself, but a restart with the engine's own `qbixctl` does not. The systemd unit
+  ([`velocity-demo-mode.conf`](../../../examples/demo-mode/velocity-demo-mode.conf)) works too.
 - **PHP-FPM:** a pool file rewritten by the control panel (Plesk, cPanel) loses lines it does not manage. Set it
   through the panel's PHP settings for the domain, or use `.htaccess` / the virtual host instead.
 - **A rebuild:** a fresh `.htaccess` from `.htaccess_root` has no `SetEnv`; the build must append it every time.

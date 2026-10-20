@@ -38,6 +38,16 @@ everything in the expected place.
 The files hold JSON objects (the engine's configuration format) under Apache's file names. `envvars` holds
 `export NAME=value` lines, as in Apache.
 
+The server reads `envvars` at every start (base tree first, `/etc/vc` winning over `/etc/qbix`) and exports what it
+sets into its own environment before it forks, so every worker sees it with `getenv()`, whichever shell runs
+`exp:velocity restart` or `deploy`. This is the place for settings an Exponential installation reads from the
+environment, such as `EXP_DEMO_MODE=1` on a public demo ([demo mode](demo-mode.md)). The file is read, never executed:
+values that need a shell (`$X`, backticks) are not exported, and `PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`,
+`PHPRC`, `PHP_INI_SCAN_DIR`, `GLIBC_TUNABLES`, `HOME`, `USER` and the other names in the engine's `docs/layout.md`
+("envvars: the server's environment") are refused, with a line on standard error at start-up. `exp:velocity start`
+passes the same filtered values itself too, for older engines (`expVelocityConfigLayout::exportable()`, which keeps the
+same list in `ENV_DENIED` and `ENV_DENIED_PREFIXES`).
+
 ## Enable and disable (the a2ensite family)
 
 ```bash
