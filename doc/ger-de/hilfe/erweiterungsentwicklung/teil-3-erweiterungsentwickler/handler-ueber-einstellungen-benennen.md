@@ -85,7 +85,7 @@ extension** schreibt für jeden unter `/setup/handlerextension/<kind>` eine Klas
 | Pakete | `packagehandler`, `packagecreation`, `packageinstall` |
 | Shop | `paymentgateway`, `paymentgatewaydirect`, `vat`, `shipping`, `basketinfo`, `exchangerate` |
 
-Einige Registrierungen aus [Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-extension-points.md):
+Einige Registrierungen aus [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md):
 
 | Handler | Registriert durch | Vertrag |
 |---|---|---|

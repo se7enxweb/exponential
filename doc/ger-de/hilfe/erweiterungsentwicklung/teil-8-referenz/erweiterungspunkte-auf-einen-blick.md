@@ -12,7 +12,7 @@ type: help
 Teil 8, Referenz 1. Der Kernel führt einen Katalog seiner Erweiterungspunkte (`kernel/setup/expradcatalogue.php`,
 `expRADCatalogue::points()`), und die Seite **Setup > RAD** (`/setup/rad`) wird daraus aufgebaut. Der vollständige
 Katalog mit der Codestelle, der registrierenden Einstellung, dem Vertrag und der Kernel-Datei jedes Punkts ist
-[Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-extension-points.md). Diese Seite ist die Kurzübersicht.
+[Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md). Diese Seite ist die Kurzübersicht.
 
 ## Wie registriert wird
 
@@ -47,7 +47,7 @@ Der Katalog zählt 70 Erweiterungspunkte, 65 davon mit einem Werkzeug unter **Se
 Der Katalog ist von Hand geschrieben. Was auf einer Installation wirklich registriert ist (die Einstellungen, Klassen
 und Dateien jeder aktiven Erweiterung), listet die **Übersicht der Erweiterungspunkte** (`/setup/radsurvey`) auf, die
 bei jedem Aufruf von der Festplatte gelesen wird; ihre erzeugte Referenz ist
-[Die Erweiterungsoberfläche](../../../../eng-us/bc/6.0/rad-extension-surface.md). Die Zustandsprüfung der RAD-Seite meldet
+[Die Erweiterungsoberfläche](../../../bc/6.0/rad-erweiterungsoberflaeche.md). Die Zustandsprüfung der RAD-Seite meldet
 Einstellungen, die Klassen nennen, die sich nicht laden lassen, fehlende Verzeichnisse und ähnliche Fehler
 ([Rundgang durch die RAD-Werkzeuge](../teil-3-erweiterungsentwickler/tutorials/rundgang-durch-die-rad-werkzeuge.md)).
 
@@ -61,7 +61,7 @@ file, directory, handler, filter, registry, autoload, override.
 
 - Zurück: [Teil 8: Referenz der eingebauten Funktionen für Erweiterungsautoren](README.md)
 - Weiter: [eZINI: Einstellungen lesen](ezini.md)
-- [Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-extension-points.md)
+- [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md)
 - [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

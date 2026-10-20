@@ -120,7 +120,7 @@ Dann müssen Sie den Code des Originals ändern. Es gibt immer noch zwei Wege, d
 
 - Zurück: [Teil 5: Erweitern, fair forken und zurückgeben](README.md)
 - Weiter: [Wann Sie forken sollten und wann nicht](wann-forken.md)
-- [RAD extension points](../../../../eng-us/bc/6.0/rad-extension-points.md) (auf Englisch)
+- [RAD extension points](../../../bc/6.0/rad-erweiterungspunkte.md) (auf Englisch)
 - [Ladereihenfolge der Erweiterungen](../teil-3-erweiterungsentwickler/ladereihenfolge-der-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

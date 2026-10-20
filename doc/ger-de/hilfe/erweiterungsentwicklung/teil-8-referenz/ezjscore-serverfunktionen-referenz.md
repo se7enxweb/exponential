@@ -44,7 +44,7 @@ lautet mit einem Header `Accept: application/json` `{"error_text":"...","content
 - Jede Funktion muss trotzdem prüfen, was sie tut: Eine Funktion, die Inhalte liest, prüft, ob der Benutzer sie lesen
   darf; eine, die Daten ändert, verlangt POST und das Formular-Token ([ezformtoken und CSRF](ezformtoken-und-csrf.md)).
 - Die Kernel-Funktionen von `ezjscnode` sind für jeden lesbar, der den Knoten lesen darf, sofern nicht
-  `RequirePolicy=enabled` gesetzt ist; [Backend-Dienste über ezjscore](../../../../eng-us/bc/6.0/backend_ezjscore_services.md)
+  `RequirePolicy=enabled` gesetzt ist; [Backend-Dienste über ezjscore](../../../bc/6.0/backend-dienste-ueber-ezjscore.md)
   erklärt den Schalter.
 
 ## Serverfunktionen, die der Kernel mitbringt

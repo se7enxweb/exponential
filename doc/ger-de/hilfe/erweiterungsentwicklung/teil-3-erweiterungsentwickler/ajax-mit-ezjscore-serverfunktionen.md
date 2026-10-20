@@ -139,7 +139,7 @@ Einstellungen; siehe
 - Zurück: [CSS und JavaScript in einer Erweiterung](css-und-javascript-in-einer-erweiterung.md)
 - Weiter: [Übersetzungen in einer Erweiterung](uebersetzungen-in-einer-erweiterung.md)
 - [Referenz der ezjscore-Serverfunktionen](../teil-8-referenz/ezjscore-serverfunktionen-referenz.md)
-- [ezjscore-Dienste im Backend](../../../../eng-us/bc/6.0/backend_ezjscore_services.md)
+- [ezjscore-Dienste im Backend](../../../bc/6.0/backend-dienste-ueber-ezjscore.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

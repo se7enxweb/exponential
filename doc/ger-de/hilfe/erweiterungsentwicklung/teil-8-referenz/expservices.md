@@ -13,7 +13,7 @@ Teil 8, Referenz 33. `expservices` ist eine mit dem Kernel ausgelieferte Erweite
 Installation als Dienste über ezjscore anbietet: eine Klasse je Bereich (System, Caches, Einstellungen, Benutzer,
 Inhalte ...), aufgerufen als `<root>/ezjscore/call/exp<domain>::<method>`, mit der Antwort in einem einheitlichen
 JSON-Umschlag. Apps, Skripte und andere Server verwenden sie; eine Erweiterung kann einen eigenen Bereich hinzufügen.
-Die vollständige Dokumentation ist [Backend-Dienste über ezjscore](../../../../eng-us/bc/6.0/backend_ezjscore_services.md).
+Die vollständige Dokumentation ist [Backend-Dienste über ezjscore](../../../bc/6.0/backend-dienste-ueber-ezjscore.md).
 
 ## Was Sie gegenüber einer einfachen Serverfunktion gewinnen
 
@@ -91,7 +91,7 @@ für einen Administrator keinen Schlüssel. Ein eigener Dienst, der Passwörter 
 
 - Zurück: [Das Hilfesystem für Erweiterungen](hilfesystem-fuer-erweiterungen.md)
 - Weiter: [Glossar für Erweiterungsentwickler](glossar-fuer-erweiterungsentwickler.md)
-- [Backend-Dienste über ezjscore](../../../../eng-us/bc/6.0/backend_ezjscore_services.md)
+- [Backend-Dienste über ezjscore](../../../bc/6.0/backend-dienste-ueber-ezjscore.md)
 - [API-Schlüssel](../../../../eng-us/bc/6.0/api-keys.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

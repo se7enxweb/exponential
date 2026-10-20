@@ -42,7 +42,7 @@ Speicherung und Infrastruktur; Pakete und Shop; Benutzer, Zugriff und Sprache. D
 | Nur Dokumentation | `/setup/rad/(show)/docs` |
 
 Das Feld **Suchen** grenzt die Liste beim Tippen ein (ein Name, eine Einstellung, eine Klasse, eine Datei). Derselbe
-Katalog als Text ist [Erweiterungspunkte](../../../../../eng-us/bc/6.0/rad-extension-points.md).
+Katalog als Text ist [Erweiterungspunkte](../../../../bc/6.0/rad-erweiterungspunkte.md).
 
 ## 2. Die Übersicht
 
@@ -64,7 +64,7 @@ Anfrage von der Festplatte gelesen. Sie zählt, mit einem Link zu den Einträgen
 
 Verwenden Sie sie, um die Frage „Gibt es dafür schon einen Anknüpfungspunkt?“ zu beantworten, bevor Sie einen
 schreiben. Ein Abschnitt lässt sich verlinken: `/setup/radsurvey/(show)/<section>`. Die erzeugte Referenz ist
-[Die Erweiterungsoberfläche](../../../../../eng-us/bc/6.0/rad-extension-surface.md).
+[Die Erweiterungsoberfläche](../../../../bc/6.0/rad-erweiterungsoberflaeche.md).
 
 ## 3. Die Zustandsprüfung
 

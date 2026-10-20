@@ -95,7 +95,7 @@ kennen. Sie brauchen eine Entwicklungsinstallation mit eingeschalteter Debug-Aus
 - Zurück: [Wenn Einstellungen nicht ausreichen](../teil-2-builder/wenn-einstellungen-nicht-reichen.md)
 - Weiter: [Der Verzeichnisaufbau einer Erweiterung](verzeichnisaufbau-einer-erweiterung.md)
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../../anleitungen/extensions.md)
-- [Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-extension-points.md)
+- [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

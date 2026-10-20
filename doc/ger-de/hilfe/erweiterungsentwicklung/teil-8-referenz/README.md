@@ -76,8 +76,8 @@ API-Referenz: Das sind der Quelltext des Kernels und die Seiten, auf die jedes K
 
 - Zurück: [Die Release-Checkliste](../teil-7-veroeffentlichen/die-release-checkliste.md)
 - Weiter: [Erweiterungspunkte auf einen Blick](erweiterungspunkte-auf-einen-blick.md)
-- [Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-extension-points.md)
-- [Die Erweiterungsoberfläche](../../../../eng-us/bc/6.0/rad-extension-surface.md)
+- [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md)
+- [Die Erweiterungsoberfläche](../../../bc/6.0/rad-erweiterungsoberflaeche.md)
 - [Erweiterungsentwicklung: das Buch](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

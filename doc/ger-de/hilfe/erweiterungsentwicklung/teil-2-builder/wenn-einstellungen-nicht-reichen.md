@@ -71,7 +71,7 @@ Template-Operator ist ein gutes erstes Stück Code, weil er klein und rein ist u
 
 - Zurück: [Eine Website bauen, ohne Code zu schreiben](eine-website-ohne-code-bauen.md)
 - Weiter: [Teil 3: Der Erweiterungsentwickler](../teil-3-erweiterungsentwickler/README.md)
-- [Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-extension-points.md)
+- [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md)
 - [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

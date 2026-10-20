@@ -100,7 +100,7 @@ Als diese Seite geschrieben wurde, enthielt dieser Katalog 73 Einträge:
 | Benutzer, Zugriff und Sprache | 15 | Login-Handler, Richtlinienbeschränkung für Inhalte, Übersetzung, Icon-Theme, Siteaccess-Einstellungen |
 
 Zählen Sie die Einträge auf Ihrer eigenen Installation unter `/setup/rad`; die Zahl wächst, wenn der Kernel eine neue
-Stelle lernt. Die kuratierte Beschreibung jedes Eintrags ist [Extension points](../../../../eng-us/bc/6.0/rad-extension-points.md).
+Stelle lernt. Die kuratierte Beschreibung jedes Eintrags ist [Extension points](../../../bc/6.0/rad-erweiterungspunkte.md).
 
 ## Klein oder groß, beides sind Erweiterungen
 
