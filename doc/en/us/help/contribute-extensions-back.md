@@ -204,6 +204,14 @@ Now anyone can install it with `composer require yourvendor/myextension`.
   history and your copyright kept. Code that goes into the project's own repositories must be under the same license
   as Exponential, GPL version 2 or later (not "GPL 2 only" or "GPL 3 only"), as the
   [licensing FAQ](https://exponential.earth/faq/licensing) explains; contributors keep their copyright.
+- **The CLA.** 7x and the Exponential Foundation require a signed Contributor Licensing Agreement (the project's
+  copyright assignment; legally a non-exclusive license, you keep your copyright) for every code contribution to the
+  **core kernel**, `se7enxweb/exponential`, before it is merged. Publishing your own extension in your own repository
+  is not affected: the CLA page says "if you have written a contribution and want to make it available on GitHub
+  [...] you do not need to sign the CLA". The page does list "complete/incomplete extensions" among the code that
+  needs a signed CLA "which you want 7x to include", so an extension handed over to 7x for inclusion is covered by
+  it; the page names no individual repositories. See
+  [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 - **Exponential Projects**, [projects.exponential.earth](https://projects.exponential.earth/): the project forge
   that lists extensions with their news, downloads and source links
   ([Exponential Projects](extension-development/part-1-from-user-to-developer/projects-exponential-earth.md)).

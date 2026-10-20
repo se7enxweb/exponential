@@ -33,6 +33,12 @@ The kernel's notice names "7x & Exponential Foundation" for the years from 1998 
 the rule: contributors keep the copyright of their code and agree to release it under the same license as
 Exponential.
 
+For code contributions to the core kernel, 7x and the Exponential Foundation also require a signed Contributor
+Licensing Agreement (CLA) before the contribution is merged. It does not transfer the copyright: it grants 7x "a
+perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license" to the contribution.
+Your own extensions and designs are not affected. See
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+
 ### Is the GPL going to change to version 3 only?
 
 The website says there are no plans to distribute Exponential under GPL version 3 or later only, though it may be
