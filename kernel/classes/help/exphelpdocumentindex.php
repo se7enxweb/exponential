@@ -1059,6 +1059,37 @@ class expHelpDocumentIndex
     }
 
     /**
+     * How much of the documentation each configured language has, from the help's file list (cheap: no page is read):
+     * per directory, the pages it has of the default language's pages, and that total. The default language has
+     * every page; a translation counts each page of its directory once (a translated file name through its path map)
+     * and only when the default language has that page too, so a page without an original does not raise the share.
+     *
+     * @return array directory => array( 'pages' => int, 'total' => int )
+     */
+    public function languageCoverage()
+    {
+        $default = $this->languages->defaultDirectory();
+        $ids = array();
+        foreach ( $this->languages->directories() as $directory )
+            $ids[$directory] = array();
+        foreach ( $this->files() as $path => $file )
+        {
+            if ( !isset( $file['kind'] ) || $file['kind'] !== 'document' )
+                continue;
+            $split = $this->languages->split( $path );
+            if ( $split === null )
+                continue;
+            $ids[$split[0]][$this->languages->canonical( $split[0], $split[1] )] = true;
+        }
+        $total = count( $ids[$default] );
+        $coverage = array();
+        foreach ( $ids as $directory => $pages )
+            $coverage[$directory] = array( 'pages' => $directory === $default ? $total : count( array_intersect_key( $pages, $ids[$default] ) ),
+                                           'total' => $total );
+        return $coverage;
+    }
+
+    /**
      * The language directory a path is in: a directory of [DocLanguages], '' for a file in no language directory
      * of the doc root (doc/changelogs/), null for a path outside the doc root (an extension's doc directory).
      *

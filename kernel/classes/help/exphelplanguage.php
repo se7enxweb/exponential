@@ -370,6 +370,187 @@ class expHelpLanguage
         $this->reverseMaps[$directory] = array_flip( $map );
     }
 
+    /** The directory name map of a translation, next to its path map: English directory name => translated one */
+    const DIRNAMES_FILE = '.dirnames.json';
+
+    /**
+     * The union of several path maps (or directory name maps), for translators who add entries to the same
+     * .paths.json in parallel: every entry of every map, keys sorted. Two maps that disagree never lose an entry
+     * silently: a key with two different values keeps the first map's value and is reported as a conflict, and
+     * so is a value that two keys give (a page translated under two names: its id would name two files). A key or
+     * value that is not a clean relative path (or not a string) is left out and reported as invalid.
+     *
+     * @param array[] $maps decoded JSON objects, the first one wins a conflict (the side being merged into)
+     * @return array array( 'map' => key => value, sorted by key; 'conflicts' => list of messages; 'invalid' => list of messages )
+     */
+    public static function mergePathMaps( array $maps )
+    {
+        $merged = array();
+        $owner = array();
+        $conflicts = array();
+        $invalid = array();
+        foreach ( array_values( $maps ) as $n => $map )
+        {
+            if ( !is_array( $map ) )
+            {
+                $invalid[] = sprintf( 'map %d is not a JSON object', $n + 1 );
+                continue;
+            }
+            foreach ( $map as $key => $value )
+            {
+                $cleanKey = is_string( $key ) ? self::cleanPath( $key ) : null;
+                $cleanValue = is_string( $value ) ? self::cleanPath( $value ) : null;
+                if ( $cleanKey === null || $cleanValue === null )
+                {
+                    $invalid[] = sprintf( 'map %d: "%s" => %s is not a pair of relative paths', $n + 1, (string)$key, json_encode( $value ) );
+                    continue;
+                }
+                if ( isset( $merged[$cleanKey] ) )
+                {
+                    if ( $merged[$cleanKey] !== $cleanValue )
+                        $conflicts[] = sprintf( '"%s" is "%s" in one map and "%s" in another; kept "%s"', $cleanKey, $merged[$cleanKey], $cleanValue, $merged[$cleanKey] );
+                    continue;
+                }
+                if ( isset( $owner[$cleanValue] ) )
+                {
+                    $conflicts[] = sprintf( '"%s" is named both "%s" and "%s"; kept "%s"', $cleanValue, $owner[$cleanValue], $cleanKey, $owner[$cleanValue] );
+                    continue;
+                }
+                $merged[$cleanKey] = $cleanValue;
+                $owner[$cleanValue] = $cleanKey;
+            }
+        }
+        ksort( $merged, SORT_STRING );
+        return array( 'map' => $merged, 'conflicts' => $conflicts, 'invalid' => $invalid );
+    }
+
+    /**
+     * A path map as the file stores it: a JSON object, keys sorted, four spaces of indent, one entry per line and a
+     * final newline, so that two translators' additions merge line by line and a merge of the same entries is
+     * byte for byte the same file.
+     *
+     * @param array $map
+     * @return string
+     */
+    public static function encodePathMap( array $map )
+    {
+        ksort( $map, SORT_STRING );
+        if ( !$map )
+            return "{}\n";
+        return json_encode( $map, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . "\n";
+    }
+
+    /**
+     * The entries of a path map whose directories are not named as the directory name map says: each directory of
+     * the original path (help, project) has to be the translated name the map gives it (hilfe, projekt), or its own
+     * name when the map has none. So translators who work in parallel put the pages of one directory in one place.
+     *
+     * @param array $pathMap translated path => original path
+     * @param array $dirnames original directory name => translated one
+     * @return string[] one message per entry that does not follow the map
+     */
+    public static function pathsAgainstDirnames( array $pathMap, array $dirnames )
+    {
+        $problems = array();
+        foreach ( $pathMap as $translated => $original )
+        {
+            $from = explode( '/', (string)$original );
+            $to = explode( '/', (string)$translated );
+            array_pop( $from );
+            array_pop( $to );
+            $expected = array();
+            foreach ( $from as $segment )
+                $expected[] = isset( $dirnames[$segment] ) && is_string( $dirnames[$segment] ) ? $dirnames[$segment] : $segment;
+            if ( $expected !== $to )
+                $problems[] = sprintf( '"%s" (for "%s") should be below "%s/"', $translated, $original, implode( '/', $expected ) );
+        }
+        return $problems;
+    }
+
+    /**
+     * The versions a file holds: the file itself, or, when git left conflict markers in it, the two sides of the
+     * conflict ("ours" first, then "theirs"; the lines outside the conflicts belong to both, a diff3 base section to
+     * neither). So a .paths.json that two translators changed can be merged from the conflicted file alone.
+     *
+     * @param string $text
+     * @return string[] one text, or two
+     */
+    public static function conflictSides( $text )
+    {
+        $text = (string)$text;
+        if ( !preg_match( '/^<{7}( |$)/m', $text ) )
+            return array( $text );
+        $ours = $theirs = '';
+        $state = 'both';
+        foreach ( preg_split( '/(?<=\n)/', $text ) as $line )
+        {
+            if ( preg_match( '/^<{7}( |\r?$)/', $line ) )
+                $state = 'ours';
+            elseif ( $state === 'ours' && preg_match( '/^\|{7}( |\r?$)/', $line ) )
+                $state = 'base';
+            elseif ( ( $state === 'ours' || $state === 'base' ) && preg_match( '/^={7}\r?$/', $line ) )
+                $state = 'theirs';
+            elseif ( $state === 'theirs' && preg_match( '/^>{7}( |\r?$)/', $line ) )
+                $state = 'both';
+            elseif ( $state === 'both' )
+            {
+                $ours .= $line;
+                $theirs .= $line;
+            }
+            elseif ( $state === 'ours' )
+                $ours .= $line;
+            elseif ( $state === 'theirs' )
+                $theirs .= $line;
+        }
+        return array( $ours, $theirs );
+    }
+
+    /**
+     * A map file's text as maps: each side of a conflict decoded (conflictSides()); a side that is not a JSON object
+     * is null. A JSON object whose last entry lost or gained a comma in the merge is read all the same.
+     *
+     * @param string $text
+     * @return array list of array|null
+     */
+    public static function decodeMapSides( $text )
+    {
+        $maps = array();
+        foreach ( self::conflictSides( $text ) as $side )
+        {
+            $data = json_decode( $side, true );
+            if ( !is_array( $data ) )
+            {
+                // the commas of the lines next to a conflict: one entry per line, so add the missing and drop the extra
+                $repaired = preg_replace( '/("\s*)\n(\s*")/', "\$1,\n\$2", $side );
+                $repaired = preg_replace( '/,(\s*)([}\]])/', '$1$2', preg_replace( '/,\s*,/', ',', (string)$repaired ) );
+                $data = json_decode( (string)$repaired, true );
+            }
+            $maps[] = is_array( $data ) ? $data : null;
+        }
+        return $maps;
+    }
+
+    /**
+     * A clean relative path ("a/b.md": no leading or trailing slash, no "." or ".." segment, no empty segment, no
+     * backslash or control character), or null.
+     *
+     * @param string $path
+     * @return string|null
+     */
+    protected static function cleanPath( $path )
+    {
+        if ( class_exists( 'expHelpAllowlist' ) )
+            $path = expHelpAllowlist::normalize( $path );
+        else
+            $path = trim( (string)$path, '/' );
+        if ( $path === null || $path === '' || preg_match( '/[\x00-\x1F\x7F\\\\]/', $path ) )
+            return null;
+        foreach ( explode( '/', $path ) as $segment )
+            if ( $segment === '' || $segment === '.' || $segment === '..' )
+                return null;
+        return $path;
+    }
+
     /**
      * The absolute file name of a language's path map, or null for a directory that is not configured.
      *

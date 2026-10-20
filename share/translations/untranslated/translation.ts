@@ -71392,6 +71392,42 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Reading in:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>

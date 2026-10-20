@@ -29,6 +29,8 @@ class Exphelp extends \Exponential\Runnable\Command
                                  "./console exp:help show guides/caches.md     the metadata and headings of one page\n" .
                                  "./console exp:help check                     check the links and images of every page (--below=guides/)\n" .
                                  "./console exp:help pdf help/searching.md      the page as a PDF file (--out=file.pdf, --base-url=https://host)\n" .
+                                 "./console exp:help maps --language=de        check doc/de/.paths.json and .dirnames.json; --fix writes the\n" .
+                                 "                                             union of both sides of a git conflict (and of --paths=, --dirnames=)\n" .
                                  "\n" .
                                  "Only git-tracked files below doc/ (and the doc/ of the extensions in exphelp.ini ExtensionDocDirs[]) are\n" .
                                  "pages; nothing is changed except the cache in var/<site>/cache/exphelp. --json prints one JSON document.\n" .
@@ -40,7 +42,10 @@ class Exphelp extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[rebuild][list][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:][language:]', '', array(
+        $options = $this->startup( '[rebuild][list][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:][language:][fix][paths:][dirnames:]', '', array(
+            'fix'      => 'maps: write .paths.json and .dirnames.json as the union of their entries, sorted',
+            'paths'    => 'maps --fix: also merge the entries of this JSON file into .paths.json',
+            'dirnames' => 'maps --fix: also merge the entries of this JSON file into .dirnames.json',
             'language' => 'the documentation language: a directory of exphelp.ini [DocLanguages] Directories[] (en/us, de)',
             'rebuild'  => 'index: build the index again even when the cached one is current',
             'list'     => 'index: list every page',
@@ -89,8 +94,11 @@ class Exphelp extends \Exponential\Runnable\Command
                 case 'pdf':
                     $code = $this->pdf( $arguments ? (string)$arguments[0] : '', $options, $json );
                     break;
+                case 'maps':
+                    $code = $this->maps( $options, $language, $languages, $json );
+                    break;
                 default:
-                    $cli->error( "Unknown action \"$action\": index, search, show, check or pdf (./console exp:help --help)" );
+                    $cli->error( "Unknown action \"$action\": index, search, show, check, pdf or maps (./console exp:help --help)" );
                     $code = 2;
             }
         }
@@ -403,6 +411,105 @@ class Exphelp extends \Exponential\Runnable\Command
         $cli->output( sprintf( '%s: %d pages, %d links, %d images, %d external (not fetched); %d errors, %d warnings, %d notices',
                                $failed ? 'FAIL' : 'PASS', $stats['pages'], $stats['links'], $stats['images'], $stats['external'],
                                $stats['error'], $stats['warning'], $stats['notice'] ) );
+        return $failed ? 1 : 0;
+    }
+
+    /**
+     * maps: the translated file names of a language (doc/<language>/.paths.json) and its directory names
+     * (.dirnames.json, English name => translated name). Checks them: JSON objects of clean relative paths, no page
+     * under two names, written sorted, each translated file present and its original too, every directory named as
+     * .dirnames.json says. --fix writes them back as the union of every entry: of both sides of a git conflict in the
+     * file, and of the maps --paths= and --dirnames= name (a translator's own list); a conflict keeps the file's entry
+     * and is reported.
+     *
+     * @param array $options
+     * @param string|null $language
+     * @param \expHelpLanguage $languages
+     * @param bool $json
+     * @return int
+     */
+    protected function maps( array $options, $language, $languages, $json )
+    {
+        $cli = $this->cli();
+        if ( $language === null || $language === $languages->defaultDirectory() )
+        {
+            $cli->error( 'maps needs --language= with a translation: ' . implode( ', ', array_slice( $languages->directories(), 1 ) ) );
+            return 2;
+        }
+        $root = \expHelp::installRoot();
+        $dir = ( $root === '' ? '' : rtrim( $root, '/' ) . '/' ) . \expHelpLanguage::DOC_ROOT . '/' . $language;
+        $result = array( 'language' => $language, 'files' => array(), 'problems' => array(), 'conflicts' => array(), 'written' => array() );
+        $merged = array();
+        foreach ( array( 'paths' => \expHelpLanguage::PATH_MAP_FILE, 'dirnames' => \expHelpLanguage::DIRNAMES_FILE ) as $kind => $name )
+        {
+            $file = $dir . '/' . $name;
+            $text = is_file( $file ) ? (string)file_get_contents( $file ) : '';
+            $sides = $text === '' ? array() : \expHelpLanguage::decodeMapSides( $text );
+            foreach ( $sides as $i => $side )
+                if ( $side === null )
+                    $result['problems'][] = sprintf( '%s: %s is not a JSON object', $name, count( $sides ) > 1 ? ( $i === 0 ? 'our side of the conflict' : 'their side of the conflict' ) : 'the file' );
+            if ( count( $sides ) > 1 )
+                $result['problems'][] = sprintf( '%s has git conflict markers (--fix merges both sides)', $name );
+            $extra = isset( $options[$kind] ) && is_string( $options[$kind] ) && $options[$kind] !== '' ? (string)$options[$kind] : '';
+            if ( $extra !== '' )
+            {
+                $data = is_file( $extra ) ? json_decode( (string)file_get_contents( $extra ), true ) : null;
+                if ( !is_array( $data ) )
+                {
+                    $cli->error( "--$kind=$extra is not a readable JSON object" );
+                    return 2;
+                }
+                $sides[] = $data;
+            }
+            $merge = \expHelpLanguage::mergePathMaps( array_values( array_filter( $sides, 'is_array' ) ) );
+            $merged[$kind] = $merge['map'];
+            foreach ( $merge['invalid'] as $message )
+                $result['problems'][] = $name . ': ' . $message;
+            foreach ( $merge['conflicts'] as $message )
+                $result['conflicts'][] = $name . ': ' . $message;
+            $encoded = \expHelpLanguage::encodePathMap( $merge['map'] );
+            $result['files'][$name] = count( $merge['map'] );
+            if ( $text !== '' && $text !== $encoded && count( $sides ) === 1 && !$merge['invalid'] )
+                $result['problems'][] = sprintf( '%s is not written sorted, one entry per line (--fix writes it so)', $name );
+            if ( !empty( $options['fix'] ) && ( $text !== '' || $merge['map'] ) && $text !== $encoded )
+            {
+                if ( @file_put_contents( $file, $encoded ) === false )
+                {
+                    $cli->error( "FAIL: $file could not be written" );
+                    return 2;
+                }
+                $result['written'][] = $name;
+            }
+        }
+        $defaultDir = ( $root === '' ? '' : rtrim( $root, '/' ) . '/' ) . \expHelpLanguage::DOC_ROOT . '/' . $languages->defaultDirectory();
+        foreach ( $merged['paths'] as $translated => $original )
+        {
+            if ( !is_file( $dir . '/' . $translated ) )
+                $result['problems'][] = sprintf( '%s: "%s" is not a file of doc/%s/', \expHelpLanguage::PATH_MAP_FILE, $translated, $language );
+            if ( !is_file( $defaultDir . '/' . $original ) )
+                $result['problems'][] = sprintf( '%s: "%s" translates "%s", which is not a page of doc/%s/', \expHelpLanguage::PATH_MAP_FILE, $translated, $original, $languages->defaultDirectory() );
+        }
+        foreach ( \expHelpLanguage::pathsAgainstDirnames( $merged['paths'], $merged['dirnames'] ) as $message )
+            $result['problems'][] = \expHelpLanguage::PATH_MAP_FILE . ': ' . $message;
+        // after --fix the conflict markers and the order are gone: what is left is a problem of the entries
+        if ( $result['written'] )
+            $result['problems'] = array_values( array_filter( $result['problems'], function ( $p ) {
+                return strpos( $p, 'conflict markers' ) === false && strpos( $p, 'not written sorted' ) === false;
+            } ) );
+        $failed = $result['problems'] || $result['conflicts'];
+        if ( $json )
+        {
+            $this->printJson( $result );
+            return $failed ? 1 : 0;
+        }
+        foreach ( $result['conflicts'] as $message )
+            $cli->output( 'CONFLICT ' . $message );
+        foreach ( $result['problems'] as $message )
+            $cli->output( 'ERROR    ' . $message );
+        foreach ( $result['written'] as $name )
+            $cli->output( "written  doc/$language/$name" );
+        $cli->output( sprintf( '%s: doc/%s/ %s', $failed ? 'FAIL' : 'PASS', $language,
+                               implode( ', ', array_map( function ( $name, $count ) { return "$name $count entries"; }, array_keys( $result['files'] ), $result['files'] ) ) ) );
         return $failed ? 1 : 0;
     }
 

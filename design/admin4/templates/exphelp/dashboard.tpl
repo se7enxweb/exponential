@@ -7,7 +7,7 @@
    Variables (kernel/private/classes/views/exphelp/dashboard.php): help_audiences (id => id, name, count), help_audience_pages (id => up to 4 documents),
    help_categories (id => id, name, icon, count), help_featured (documents: id, path, title, summary, category,
    audience[]), help_recent (id, title, time, subject), help_trackers (key => key, label, description, url,
-   new_issue_url), help_search_url, help_report_url; optional help_i18n_json (client strings) and help_stats
+   new_issue_url), help_search_url, help_report_url; optional help_i18n_json (client strings), help_reading (the reader's language and its switch, parts/reading_language.tpl) and help_stats
    (pages, categories), help_support (the Support Exponential block or false). Every part is left out when its list is
    empty. *}
 {def $help_ctx = 'kernel/exphelp'
@@ -70,6 +70,9 @@
                 {/foreach}
             </fieldset>
         </form>
+
+        {* the reader's language and the switch to the help's other languages (parts/reading_language.tpl) *}
+        {if and( is_set( $help_reading ), $help_reading )}{include uri='design:exphelp/parts/reading_language.tpl' reading=$help_reading prefix='help-dash-reading'}{/if}
 
         {if and( is_set( $help_stats ), is_set( $help_stats.pages ) )}
         <ul class="a4-help-stats">
