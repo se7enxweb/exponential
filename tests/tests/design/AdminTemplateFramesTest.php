@@ -5,8 +5,9 @@
  * outside #page, below the page's background, on white (the trash, the URL aliases, About and Copyright did).
  *
  * Template comments are left out, and of an {if} only the first branch counts: the branches of a condition draw the
- * same frame in other words. The package wizard's header and navigator and the e-mail preferences' page start and end
- * are the two halves of one frame, opened in one template and closed in the other: each pair adds up to nothing.
+ * same frame in other words. The package wizard's header and navigator and the page start and end of the e-mail
+ * preferences and of the API access page are the two halves of one frame, opened in one template and closed in the
+ * other: each pair adds up to nothing.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminTemplateFramesTest.php
  *
@@ -24,6 +25,7 @@ class AdminTemplateFramesTest extends PHPUnit\Framework\TestCase
         array( 'package/header.tpl', 'package/navigator.tpl' ),
         array( 'package/install_header.tpl', 'package/navigator.tpl' ),
         array( 'mailpreferences/parts/page_start.tpl', 'mailpreferences/parts/page_end.tpl' ),
+        array( 'apikey/parts/page_start.tpl', 'apikey/parts/page_end.tpl' ),
     );
 
     /**

@@ -1089,6 +1089,8 @@ c8403c6fd45446005e3280195e056623  design/admin4/stylesheets/modules/workflow.css
 66e556ddbb2a268470dd9b7c34d65393  design/admin4/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin4/templates/ajaxuploader/preview.tpl
 e002d70967d5f151cca6861170e9584f  design/admin4/templates/ajaxuploader/upload.tpl
+c15ecad48d1b01c85adf0a9a3ecb7766  design/admin4/templates/apikey/parts/page_end.tpl
+d17176601f3b56ac7bb05854cf4979b8  design/admin4/templates/apikey/parts/page_start.tpl
 c20531ad4a051efb351cbda3956a85f9  design/admin4/templates/audit/alerts.tpl
 866efab26bbe4334199c3743b716cdfd  design/admin4/templates/audit/archives.tpl
 58f493eebd69f3e195826abc1c4d8d69  design/admin4/templates/audit/charts.tpl
@@ -14830,7 +14832,7 @@ ff2ad90fd1af4bea7b5636bac58d632c  tests/tests/design/AdminStylingRulesTest.php
 b2a98204e4bdaea7429f5e3718ae2aac  tests/tests/design/AdminSubitemsPriorityDragTest.php
 f7ac963fcf5507d76f586eaa634c782c  tests/tests/design/AdminSubitemsTranslationsTest.php
 8286e1d7dde090170062ae07482ea1a4  tests/tests/design/AdminSubitemsWithoutExpUITest.php
-7e25daf854e27ae8480a265adbfe41f4  tests/tests/design/AdminTemplateFramesTest.php
+3fe61bbcabb1600e963569a2c82b939d  tests/tests/design/AdminTemplateFramesTest.php
 598356dd8c4c4db4c1610c27c343efcb  tests/tests/design/AdminThemeSwitchTest.php
 5c79b3f261c1a2c5fc40c51103b86e25  tests/tests/design/AdminTimelineTest.php
 396e28b056d404d6873ae5338e40e48a  tests/tests/design/AdminTokenContrastTest.php
