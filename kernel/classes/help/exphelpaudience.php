@@ -113,20 +113,21 @@ class expHelpAudience
         'release-notes'   => array( 'name' => 'Release notes', 'icon' => 'journal-text' ),
         'history'         => array( 'name' => 'History', 'icon' => 'clock-history' ),
         'reference'       => array( 'name' => 'Reference', 'icon' => 'collection' ),
+        'extensions'      => array( 'name' => 'Extensions', 'icon' => 'puzzle' ),
     );
 
     /** The page types and their names */
     const TYPES = array(
         'help' => 'Help', 'guide' => 'Guide', 'feature' => 'Feature', 'bc' => 'Upgrade note', 'install' => 'Installation',
         'changelog' => 'Changelog', 'specification' => 'Specification', 'history' => 'History', 'example' => 'Example',
-        'reference' => 'Reference',
+        'reference' => 'Reference', 'extension' => 'Extension documentation',
     );
 
     /** [TypeSettings] PathRules[] by default */
     const TYPE_RULES = array(
         'doc/en/us/help/*;help', 'doc/en/us/guides/*;guide', 'doc/en/us/features/*;feature', 'doc/en/us/bc/*;bc', 'doc/changelogs/*;changelog',
         'doc/en/us/install/*;install', 'doc/en/us/INSTALL.md;install', 'doc/en/us/specifications/*;specification', 'doc/en/us/history/*;history',
-        'doc/en/us/examples/*;example', '*;reference',
+        'doc/en/us/examples/*;example', 'extension/*;extension', '*;reference',
     );
 
     /** [AudienceSettings] PathRules[] by default */
@@ -171,6 +172,7 @@ class expHelpAudience
         'help' => 'editor,user', 'guide' => 'admin', 'feature' => 'admin,developer', 'bc' => 'developer,admin',
         'install' => 'admin,developer', 'changelog' => 'admin,developer', 'specification' => 'developer',
         'history' => 'developer', 'example' => 'developer', 'reference' => 'developer,admin',
+        'extension' => 'editor,admin,developer',
     );
 
     /** [CategorySettings] PathRules[] by default */
@@ -217,7 +219,7 @@ class expHelpAudience
     const CATEGORY_DEFAULTS = array(
         'help' => 'getting-started', 'guide' => 'administration', 'feature' => 'features', 'bc' => 'install-upgrade',
         'install' => 'install-upgrade', 'changelog' => 'release-notes', 'specification' => 'development',
-        'history' => 'history', 'example' => 'development', 'reference' => 'reference',
+        'history' => 'history', 'example' => 'development', 'reference' => 'reference', 'extension' => 'extensions',
     );
 
     /** @var array the configuration: audiences, categories, types, typeRules, audienceRules, audienceDefaults, categoryRules, categoryDefaults */
