@@ -73266,5 +73266,13 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Kendi sitesini Exponential üzerinde işleten kuruluşlar ve kişiler için: ekip, yayıncılık, ticaret, bakım, büyüme ve iş ortakları.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Kullanım kılavuzu</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Sayfa başına bir soru: kimin yapabileceği, adımlar, neyin ters gidebileceği ve daha fazlasını nerede okuyabileceğiniz.</translation>
+    </message>
 </context>
 </TS>

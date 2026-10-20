@@ -74314,5 +74314,13 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Za organizacije i osobe koje vode vlastito web-mjesto na Exponentialu: tim, objavljivanje, trgovina, održavanje, rast i partneri.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Korisnički priručnik</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Jedno pitanje po stranici: tko to smije učiniti, koraci, što može poći po zlu i gdje pročitati više.</translation>
+    </message>
 </context>
 </TS>

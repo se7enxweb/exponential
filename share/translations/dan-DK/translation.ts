@@ -73937,5 +73937,13 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Til organisationer og personer, der driver deres eget website på Exponential: team, publicering, handel, vedligeholdelse, vækst og partnere.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Brugervejledning</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Ét spørgsmål pr. side: hvem må gøre det, trinene, hvad der kan gå galt, og hvor du kan læse mere.</translation>
+    </message>
 </context>
 </TS>

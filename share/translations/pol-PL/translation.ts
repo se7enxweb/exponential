@@ -74473,5 +74473,13 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Dla organizacji i osób prowadzących własną witrynę na Exponential: zespół, publikowanie, handel, utrzymanie, rozwój i partnerzy.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Podręcznik użytkownika</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Jedno pytanie na stronę: kto może to zrobić, kroki, co może pójść nie tak i gdzie przeczytać więcej.</translation>
+    </message>
 </context>
 </TS>

@@ -73259,5 +73259,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>د هغو سازمانونو او کسانو لپاره چې خپل سایټ په Exponential چلوي: ټیم، خپرونه، سوداګري، ساتنه، وده او شریکان.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>د کارن لارښود</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>په هره پاڼه کې یوه پوښتنه: څوک یې کولی شي، ګامونه، څه ممکن غلط شي او نور چیرته ولولئ.</translation>
+    </message>
 </context>
 </TS>

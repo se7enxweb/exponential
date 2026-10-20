@@ -347,6 +347,7 @@ class Search extends \Exponential\Runnable\ModuleView
         switch ( $id )
         {
             case 'getting-started': return \ezpI18n::tr( $ctx, 'First steps in the administration: signing in, finding your way and the everyday tasks.' );
+            case 'manual': return \ezpI18n::tr( $ctx, 'One question per page: who may do it, the steps, what can go wrong and where to read more.' );
             case 'editing': return \ezpI18n::tr( $ctx, 'Creating and changing content: the editor, fields, drafts and versions.' );
             case 'media': return \ezpI18n::tr( $ctx, 'Images, files and other media: uploading, choosing and reusing them.' );
             case 'publishing': return \ezpI18n::tr( $ctx, 'Publishing, scheduling, hiding and moving content.' );

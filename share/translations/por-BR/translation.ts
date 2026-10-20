@@ -75253,5 +75253,13 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Para organizações e pessoas que mantêm o próprio site no Exponential: equipe, publicação, comércio, manutenção, crescimento e parceiros.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Manual do usuário</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Uma pergunta por página: quem pode fazer, os passos, o que pode dar errado e onde ler mais.</translation>
+    </message>
 </context>
 </TS>

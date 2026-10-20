@@ -15,6 +15,10 @@ if you write documentation (in `doc/` or in an extension) that should show up in
   (`/exphelp/viewer/features/6.0/help-system.md`).
 - **Search** (`/exphelp/search/(q)/<words>`, see "Finding a page"): finds pages by title, headings and text, with filters for audience, category
   and type. The search field of the help pages shows results while you type; press `/` to focus it.
+- **User manual** (`/exphelp/viewer/help/manual/README.md`, the category **User manual**): one page per question about
+  the work in the Admin 4 administration (the tabs, the daily tasks, the tasks of administrators and site managers),
+  each with who may do it, the steps, what can go wrong and the related pages. Exponential Intelligence has its own
+  manual in the same form among the extension documentation (`/exphelp/viewer/ext/expai/manual/README.md`).
 - **Extensions** (`/exphelp/extensions`, see "Documentation of the extensions"): the documentation every active
   extension brings with it (its `doc/` directory, README, CHANGELOG, LICENSE ...), in the same viewer and search, with
   an index per extension.

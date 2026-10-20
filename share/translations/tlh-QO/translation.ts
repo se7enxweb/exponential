@@ -73027,6 +73027,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Exponential Daq tu&apos;Daj Qorghbogh ghommey nuvpu&apos; je: ghom, ghItlh, Suy&apos;, Qorghghach, Sach, boqpu&apos; je.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>lo&apos;wI&apos; paq</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>One question per page: who may do it, the steps, what can go wrong and where to read more.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

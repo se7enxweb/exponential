@@ -77253,6 +77253,14 @@ Gracias por la retroalimentación</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Para organizaciones y personas que administran su propio sitio en Exponential: equipo, publicación, comercio, mantenimiento, crecimiento y socios.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Manual de usuario</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Una pregunta por página: quién puede hacerlo, los pasos, qué puede salir mal y dónde leer más.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

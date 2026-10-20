@@ -73307,6 +73307,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>User manual</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>One question per page: who may do it, the steps, what can go wrong and where to read more.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

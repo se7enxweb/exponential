@@ -74,7 +74,8 @@ class expHelpAudience
     /** The categories, in their dashboard order, with names and icons */
     const CATEGORIES = array(
         'getting-started' => array( 'name' => 'Getting started', 'icon' => 'signpost-split' ),
-        'editing'         => array( 'name' => 'Editing content', 'icon' => 'pencil-square' ),
+        'manual'          => array( 'name' => 'User manual', 'icon' => 'question-circle' ),
+        'editing'       => array( 'name' => 'Editing content', 'icon' => 'pencil-square' ),
         'media'           => array( 'name' => 'Images and media', 'icon' => 'images' ),
         'publishing'      => array( 'name' => 'Publishing', 'icon' => 'journal-check' ),
         'search'          => array( 'name' => 'Search', 'icon' => 'search' ),
@@ -132,6 +133,7 @@ class expHelpAudience
 
     /** [AudienceSettings] PathRules[] by default */
     const AUDIENCE_RULES = array(
+        'doc/en/us/help/manual/*;editor,admin,user',
         'doc/en/us/help/leadership/*;project-manager',
         'doc/en/us/help/business/*;sales-marketing',
         'doc/en/us/help/partners/*;partner',
@@ -177,6 +179,7 @@ class expHelpAudience
 
     /** [CategorySettings] PathRules[] by default */
     const CATEGORY_RULES = array(
+        'doc/en/us/help/manual/*;manual',
         'doc/en/us/help/leadership/*;leadership',
         'doc/en/us/help/business/*;business',
         'doc/en/us/help/partners/*;partnership',

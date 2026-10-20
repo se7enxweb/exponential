@@ -80263,6 +80263,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Für Organisationen und Menschen, die ihre eigene Site mit Exponential betreiben: Team, Veröffentlichen, Commerce, Pflege, Wachstum und Partner.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Benutzerhandbuch</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Eine Frage pro Seite: wer es darf, die Schritte, was schiefgehen kann und wo Sie mehr lesen.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

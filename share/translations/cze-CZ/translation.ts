@@ -74543,5 +74543,13 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Pro organizace a lidi, kteří provozují vlastní web na Exponential: tým, publikování, obchod, údržba, růst a partneři.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Uživatelská příručka</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Jedna otázka na stránku: kdo to smí udělat, kroky, co se může pokazit a kde si přečíst víc.</translation>
+    </message>
 </context>
 </TS>
