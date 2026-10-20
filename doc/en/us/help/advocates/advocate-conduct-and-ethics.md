@@ -25,8 +25,10 @@ pledge.
 
 [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) says: "Please make sure to review
 our Code of Conduct before contributing. All contributors are expected to adhere to it", and links a file
-`CODE_OF_CONDUCT.md`. On 18 October 2026 that file **is not in the repository**, so the project's code of conduct
-cannot be quoted here. This page does not invent one.
+`CODE_OF_CONDUCT.md`. That file **is not in the repository** (checked on 19 October 2026), so the project's code of
+conduct cannot be quoted here. This page does not invent one. Until a code of conduct is published, this page is
+where the help points everyone who looks for one: the partner, business and community pages that mention
+`CODE_OF_CONDUCT.md` link here instead.
 
 What you can do:
 

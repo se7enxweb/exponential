@@ -68,6 +68,11 @@ a commit subject, a syntax error). Fix it with another commit on the branch.
 **Do I need write access to the project?** No. You push to your fork; the pull request asks the project to take the
 change.
 
+**Do I have to sign anything?** For a code contribution to the kernel, yes: 7x and the Exponential Foundation merge it
+only once the author's signed Contributor Licensing Agreement has been received. It is signed once, and the author
+keeps the copyright. A pull request opened in the course can wait for it. Learners' own extensions are not affected
+([Copyright assignment (CLA)](../../../../../../../CONTRIBUTING.md#copyright-assignment-cla)).
+
 ### Pitfalls
 
 - **Working on `main`.** Always a branch; one change per branch.

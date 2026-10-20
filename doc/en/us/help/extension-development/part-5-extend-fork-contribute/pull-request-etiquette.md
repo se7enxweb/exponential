@@ -25,6 +25,9 @@ habits make that time count, for them and for you.
 - **Say thank you.** For the review, for the merge, for the project.
 - **Mention what is not yours.** A test that already fails on main, a warning that was there before. Name it, so
   nobody thinks you caused it.
+- **Sign the CLA before a kernel pull request.** The kernel (`se7enxweb/exponential`) merges a code contribution only
+  once its author's signed Contributor Licensing Agreement has been received; tick the checkbox in the pull request
+  template ([Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)).
 
 ## Do not
 

@@ -36,6 +36,7 @@ This page is for anyone who meets an unfamiliar term in the partner pages.
 | **GPL** | GNU General Public License, v2 or later: the code's license | [Licensing for partners](licensing-for-partners.md) |
 | **GFDL** | GNU Free Documentation License 1.3 or later: the documentation's license | [Free documentation](../free-documentation.md) |
 | **CC BY-SA 4.0** | The license of the partner program text | [The partnership agreement](the-partnership-agreement.md) |
+| **CLA** | Contributor Licensing Agreement with 7x, signed once, required before a code contribution to the core kernel is merged; a non-exclusive license, the copyright stays with you; your own custom extensions are not affected | [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla) |
 | **Supporter** | Anyone who helps the project | [Supporters: start here](../supporters/supporters-start-here.md) |
 | **Sponsor** | Anyone who funds 7x or the Foundation | [Sponsors: start here](../sponsors/sponsors-start-here.md) |
 | **Upstream** | The original project of code you use or changed | [Contributing extensions back upstream](contributing-extensions-back.md) |

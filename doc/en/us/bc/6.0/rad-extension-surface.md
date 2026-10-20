@@ -2162,7 +2162,7 @@ the name is declared and nothing answers to it.
 ## Events something can listen to
 
 Registered as `site.ini [Event] Listeners[]=<event>@<Class>::<method>`. The
-lightest way there is to add behaviour: no module, no handler, no class to
+lightest way there is to add behavior: no module, no handler, no class to
 replace, just a static method that runs when something happens.
 
 A **filter** event uses what the listener returns, so one that forgets to return

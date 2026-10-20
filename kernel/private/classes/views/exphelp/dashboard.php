@@ -4,8 +4,9 @@
  *
  * Template variables: help_audiences (id => id, name, count), help_categories (id => id, name, icon, count),
  * help_featured (documents), help_recent (id, title, time, subject), help_tree, help_trackers (expHelpIssueReport),
- * help_search_url, help_report_url, help_content (manuals and topics of help maintained as content), help_review (the
- * topics overdue for review the user can act on, reviewSummary()).
+ * help_search_url, help_report_url, help_reading (expHelp::reading(): the reader's language, the switch, the translated share),
+ * help_content (manuals and topics of help maintained as content), help_review (the topics overdue for review the user
+ * can act on, reviewSummary()).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -56,6 +57,10 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_grow_extensions_page', $index->document( 'help/contribute-extensions-back.md' ) !== null ? 'help/contribute-extensions-back.md' : '' );
         // the Support Exponential block at the bottom ([SupportSettings]); a worker started before the class existed skips it
         $tpl->setVariable( 'help_support', class_exists( Audience::class ) ? Audience::support() : false );
+        // the reader's language and the switch to the other languages of the help (a worker started before the
+        // method existed shows the dashboard without it)
+        $tpl->setVariable( 'help_reading', method_exists( 'expHelp', 'reading' ) && method_exists( $index, 'languageCoverage' )
+            ? \expHelp::reading( $index, \expHelp::url( 'dashboard' ) ) : false );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:exphelp/dashboard.tpl' );

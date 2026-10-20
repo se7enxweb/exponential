@@ -1,12 +1,12 @@
 # Exponential documentation
 
-The documentation of Exponential is organized by language. Each language has a directory of its own below `doc/`,
-with the same relative paths in every language:
+The documentation of Exponential is organized by language. Each language has a directory of its own below `doc/`.
+A translation may translate its file names; its `.paths.json` names the English page each translated file belongs to:
 
 | Language | Directory | Start here |
 |----------|-----------|------------|
 | English (the original) | [`doc/en/us/`](en/us/) | [Installation](en/us/INSTALL.md), [guides](en/us/guides/README.md), [help](en/us/help/README.md) |
-| German | `doc/de/` | Being translated; until a page is translated, the English page is shown |
+| German (Deutsch) | [`doc/de/`](de/) | [Installation](de/installation/01-einfuehrung.md), [Anleitungen](de/anleitungen/README.md), [Hilfe](de/hilfe/README.md); being translated, until a page is translated the English page is shown |
 
 Not translated, and therefore not in a language directory:
 

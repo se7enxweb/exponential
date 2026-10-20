@@ -53,8 +53,27 @@ Each plan has its own store page under <https://my.se7enx.com/store/exponential-
 | Item | As published | Source |
 |---|---|---|
 | Program fee as a way in | "A monthly subscription fee of $45 USD grants you initial access to the partner program" | requirements page |
-| Kick-Off Package | Includes "program fee, book, online training, certification, and 8h support"; for the price see the official page | <https://exponential.earth/partner/benefits> |
+| Kick-Off Package | Includes "program fee, book, online training, certification, and 8h support"; the price is [to be confirmed](#values-still-to-be-confirmed) | <https://exponential.earth/partner/benefits> |
 | Setup fee | The store pages show a "Setup Fee" heading; no amount was readable in the page text | <https://my.se7enx.com/store/exponential-partners> |
+
+## Values still to be confirmed
+
+> **To be confirmed**
+> The program's own pages state different values for the three items below. This help does not choose between
+> them: 7x and the Exponential Foundation decide, and this section is the only place in the help that states them.
+> Every other page links here. Until a decision is published, get the value that applies to you in writing before
+> you rely on it.
+
+| Item | [Benefits page](https://exponential.earth/partner/benefits) | [Program page](https://exponential.earth/partner/program) | [Apply page](https://exponential.earth/partner/apply) |
+|---|---|---|---|
+| Lead referral commission, cold lead | "15% of total contract value for cold leads" | "10% for a cold lead" | not stated |
+| Lead referral commission, hot lead | "20% for hot leads (customer ready to purchase 7x)" | "20% for a hot lead" | not stated |
+| Kick-Off Package | "for Basic ... for $3,200 (30% discount)" | "USD 2900 for Bronze (30% discount)" | not stated |
+| Partner team address | not stated | partners@exponential.earth ("Questions", and where the signed contract goes) | partner@exponential.earth ("Talk to us", and where the signed contract goes) |
+
+Read on 19 October 2026. The program has no level called "Bronze" on the other pages. The contact form
+<https://exponential.earth/partner/contact-us> reaches the partner team whichever address is confirmed, so the other
+pages of this help send you there.
 
 ## How to budget
 

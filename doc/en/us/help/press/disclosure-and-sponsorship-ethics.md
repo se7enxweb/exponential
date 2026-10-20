@@ -114,7 +114,8 @@ A conflict exists when your own gain could bend what you tell viewers. Handle it
 
 - No creator, influencer or affiliate program is documented. Do not tell viewers that one exists.
 - The Exponential Partner Program, for companies, publishes lead referral commissions
-  ([Referrals and leads](../partners/referrals-and-leads.md)). If you are a partner, that is a tie to disclose.
+  ([Referrals and leads](../partners/referrals-and-leads.md); the rate is
+  [to be confirmed](../partners/partner-plans-and-prices.md#values-still-to-be-confirmed)). If you are a partner, that is a tie to disclose.
 - The two organizations take sponsorship on GitHub ([Sponsors: start here](../sponsors/sponsors-start-here.md)).
   Sponsorship flows to them, not to creators.
 

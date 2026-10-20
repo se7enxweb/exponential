@@ -25,6 +25,10 @@ This page is for designers sending a change to another maintainer's theme or to 
    - before and after screenshots for visual changes;
    - the issue it closes.
 8. **Respond to review** promptly and kindly; push follow-up commits to the same branch.
+9. **For the Exponential kernel** (`se7enxweb/exponential`), have your signed Contributor Licensing Agreement on file:
+   7x and the Exponential Foundation merge a kernel contribution only after it has been received
+   ([Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Other maintainers'
+   themes and your own themes are not affected.
 
 ## Never include
 

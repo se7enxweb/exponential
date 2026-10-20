@@ -23,7 +23,7 @@ Read a value with:
 ./console exp:ini get site.ini/DatabaseSettings/SQLiteTransactionWait --allow-root-user
 ```
 
-Expected output: `60`, unless an override changes it.
+Expected output: `25`, unless an override changes it. A value that is not a number falls back to 25, and anything below 1 counts as 1 (`eZSQLite3DB::transactionWaitMs()` in `lib/ezdb/classes/ezsqlite3db.php`).
 
 ## Classes and files
 

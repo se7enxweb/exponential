@@ -52,4 +52,24 @@ class eZSQLite3TransactionWaitTest extends PHPUnit\Framework\TestCase
             'transactionWaitMs() starts from a literal default' );
         $this->assertLessThan( self::VELOCITY_REQUEST_TIMEOUT, (int)$m[1] );
     }
+
+    /**
+     * @testdox the driver specification states the shipped default in its settings table and its expected output
+     */
+    public function testSpecificationStatesTheShippedDefault(): void
+    {
+        $ini = file_get_contents( self::root() . '/settings/site.ini' );
+        $this->assertSame( 1, preg_match( '/^SQLiteTransactionWait=(\d+)\s*$/m', $ini, $m ) );
+        $default = $m[1];
+
+        $spec = file_get_contents( self::root() . '/doc/en/us/specifications/6.0/sqlite3-database-driver.md' );
+        $this->assertNotFalse( $spec );
+        $this->assertSame( 1,
+            preg_match( '/\| `SQLiteTransactionWait` \| `(\d+)` \(seconds\) \|/', $spec, $table ),
+            'the settings table lists SQLiteTransactionWait' );
+        $this->assertSame( $default, $table[1], 'the settings table gives the default of settings/site.ini' );
+        $this->assertSame( 1, preg_match( '/^Expected output: `(\d+)`/m', $spec, $out ),
+            'the page says what exp:ini get prints' );
+        $this->assertSame( $default, $out[1], 'the expected output is the default of settings/site.ini' );
+    }
 }

@@ -138,7 +138,7 @@ the cron jobs and every console command. A process without it runs with demo mod
 |---|---|
 | PHP-FPM | in the pool of the demo: `env[EXP_DEMO_MODE] = 1` (a pool with `clear_env = no` also passes the master's environment) |
 | Apache with mod_php or proxying to PHP-FPM | `SetEnv EXP_DEMO_MODE 1` in the demo's virtual host (with PHP-FPM through `mod_proxy_fcgi` it reaches PHP as a FastCGI parameter) |
-| Exponential Velocity | in the environment of the process that starts the server: the service manager (`Environment=EXP_DEMO_MODE=1` in the systemd unit, or `/etc/default/exponential-velocity` for the packaged unit), or `export EXP_DEMO_MODE=1` before `./console exp:velocity start`. Workers inherit the server's environment. `/etc/vc/envvars` is not exported to the server process for other variables than the server's own (see the note below) |
+| Exponential Velocity | `export EXP_DEMO_MODE=1` in `/etc/vc/envvars` (the Debian `/etc/apache2/envvars` of Velocity). The server reads the file itself when it starts and exports what it sets to every worker, so a restart or deploy from any shell keeps it. The service manager's environment works too (`Environment=EXP_DEMO_MODE=1` in the systemd unit, or `/etc/default/exponential-velocity` for the packaged unit); a value set in the environment that starts the server wins over the file |
 | FrankenPHP, RoadRunner | in the environment of the server process |
 | Cron jobs and console commands | in the crontab (`EXP_DEMO_MODE=1` on its own line at the top) and in the shell of whoever runs commands |
 | A container | `ENV EXP_DEMO_MODE=1` in the demo image, or `-e EXP_DEMO_MODE=1` / `environment:` for the demo service only |
@@ -146,10 +146,22 @@ the cron jobs and every console command. A process without it runs with demo mod
 Check it: the banner shows in the administration, and `grep 'demo/mode' var/log/security.log` lists the
 processes that started with it.
 
-**Velocity and restarts.** A Velocity restart started from a shell (`exp:velocity restart`, `exp:velocity deploy`)
-starts the new server with the environment of that shell. If `EXP_DEMO_MODE=1` was only set in the shell that first
-started the server, a later restart from another shell drops it. Set it where the service manager keeps it, or set it
-in every shell that restarts Velocity on the demo.
+**Velocity and restarts.** Put the variable in `/etc/vc/envvars`:
+
+    # /etc/vc/envvars
+    export EXP_DEMO_MODE=1
+
+The server reads that file at every start, so `exp:velocity restart` and `exp:velocity deploy` keep demo mode on
+whichever shell runs them, and a shell that lacks the variable no longer switches it off. A variable already set in the
+environment that starts the server wins over the file (`EXP_DEMO_MODE=0` in that environment switches it off). To end
+demo mode, remove the line and restart Velocity. The file is read, never run: one `NAME=value` per line, and it cannot
+set `PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`, `PHPRC`, `PHP_INI_SCAN_DIR`, `GLIBC_TUNABLES`, `HOME`, `USER` and
+the other loader and shell variables (the engine's `docs/layout.md`, "envvars: the server's environment", lists them;
+the kernel keeps the same list in `expVelocityConfigLayout::ENV_DENIED`). Requires an engine with the envvars export
+(se7enxweb/exponential-velocity after v0.0.4.53); with an older engine `exp:velocity start` passes the file's values
+itself, which also covers restarts made through `exp:velocity`, but not a restart made with the engine's own `qbixctl`.
+
+**Never on a site that is not a demo.** `/etc/vc/envvars` applies to every site the Velocity server serves.
 
 **Never set it** in a shared PHP-FPM pool, a server-wide `SetEnv`, a global `/etc/environment`, a base container
 image or a deployment template used for other sites.

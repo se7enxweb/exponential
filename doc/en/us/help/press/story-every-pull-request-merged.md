@@ -35,6 +35,7 @@ Web; 1,039 merged pull requests appear in the whole history ([Exponential by the
 | Fixes in commits on top, not by rewriting the contribution | same |
 | The test suite runs on every pull request | [CI](../../bc/6.0/ci.md) |
 | Contributions under GPL v2 or later | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
+| Code contributions to the kernel need a signed Contributor Licensing Agreement (CLA) before they are merged; contributors keep their copyright and grant 7x a non-exclusive license; users' own extensions are not affected | [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla) |
 | 1,039 merged pull requests in the history (18 October 2026) | [Exponential by the numbers](exponential-by-the-numbers.md) |
 
 ## What not to claim
@@ -44,6 +45,7 @@ Web; 1,039 merged pull requests appear in the whole history ([Exponential by the
 | "No code review" | Contributions are merged and then fixed or adjusted on top; the CI tests run on every pull request |
 | "Anything goes into the release" | Problems are fixed in follow-up commits before release |
 | "Thousands of contributors" | Count from the history with a date |
+| "Contributors hand over their copyright" | Kernel contributors sign a CLA: they keep their copyright and grant 7x a non-exclusive license |
 
 ## Angles and headline ideas
 

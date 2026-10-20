@@ -26,8 +26,10 @@ How leads are distributed (by region, profile, priority, rotation) is not publis
 ## Leads from partners to 7x
 
 The program pays a lead referral commission for cold leads and for hot leads ("customer ready to purchase 7x").
-The rates are on the official partner program page, <https://exponential.earth/partner/benefits>. Get the rate, the definition of "cold" and "hot", and the payment terms in
-writing before you refer a lead. The contract states that on termination "All commissions still due" are paid
+The program's pages publish different rates for a cold lead; both are listed in
+[Values still to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed), and the rate is **to be
+confirmed** until 7x and the Foundation publish one. Get the rate, the definition of "cold" and "hot", and the payment
+terms in writing before you refer a lead. The contract states that on termination "All commissions still due" are paid
 (program page).
 
 ## Qualifying a lead

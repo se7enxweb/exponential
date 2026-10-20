@@ -50,7 +50,7 @@ sections 1 to 10. What visitors see: [E-mail preferences](../../../../features/6
    checked against the person's preferences, the suppression list and a pending double opt-in. Mail without a
    category is sent as before and counted, so you can find the code that sends it.
 2. **The status page** (4 minutes). **Setup**, then **E-mail preferences** (policy
-   `mailpreferences/administrate`). Show **Sender details** with **Organisation name** and **Postal address**,
+   `mailpreferences/administrate`). Show **Sender details** with **Organization name** and **Postal address**,
    **Settings in use**, and the links to **Categories**, **Suppression list**, **Consent log** and **A user**.
 3. **The site secret** (2 minutes). Links in mail are signed with a secret generated into
    `settings/override/mailpreferences.ini.append.php`. A new secret breaks every link already sent and makes the
@@ -95,10 +95,10 @@ Use your own training installation, in a terminal at the installation root.
 3. Preview setting the organization name in an override, without writing:
 
    ```bash
-   php bin/php/console exp:ini set mailpreferences.ini/FooterSettings/OrganisationName "Training Organisation" global --dry-run
+   php bin/php/console exp:ini set mailpreferences.ini/FooterSettings/OrganisationName "Training Organization" global --dry-run
    ```
 
-4. On the status page, fill in **Organisation name** (`Training Organisation`) and **Postal address**
+4. On the status page, fill in **Organization name** (`Training Organization`) and **Postal address**
    (`Example Street 1`), and press **Save the sender details**. Reload: the footer warning has gone.
 5. Ask the gate what it would decide for two test addresses, writing the mail to files:
 
