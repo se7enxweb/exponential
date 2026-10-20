@@ -38,7 +38,7 @@ vorbereiten, durchführen und auswerten, mit Material, das korrekt, barrierefrei
 | Modul | Lektionen | Dauer | Ergebnis |
 |---|---|---|---|
 | [1. Den Unterricht von Exponential vorbereiten](modul-01-den-unterricht-vorbereiten/README.md) | 5 | 2 Std. 35 Min. | Kennt das Material, das Hilfe-Center, die Teilnehmenden, die Lizenz und die Namen |
-| [2. Die Übungsumgebung aufbauen](../../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/README.md) | 8 | 5 Std. 15 Min. | Baut Schulungsinstallationen auf, stellt sie bereit, befüllt sie und setzt sie zurück |
+| [2. Die Übungsumgebung aufbauen](modul-02-die-uebungsumgebung-aufbauen/README.md) | 8 | 5 Std. 15 Min. | Baut Schulungsinstallationen auf, stellt sie bereit, befüllt sie und setzt sie zurück |
 | [3. Einen Kurs gestalten](../../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/README.md) | 6 | 4 Std. 5 Min. | Formuliert Lernziele, gliedert einen Kurs und plant seine Zeit, schreibt Übungen |
 | [4. Einen Kurs durchführen](../../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/README.md) | 6 | 4 Std. 15 Min. | Gestaltet die erste Stunde, führt sicher vor, behebt Fehler, sorgt für Sicherheit |
 | [5. Barrierefreiheit und Inklusion](../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md) | 4 | 2 Std. 30 Min. | Macht Materialien und Einheiten barrierefrei |

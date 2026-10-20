@@ -84,8 +84,8 @@ zeigt, wie Sie herausfinden, wer Ihre Teilnehmenden sind.
 2. **Lernen Sie das Hilfe-Center kennen** (20 Minuten):
    [Lektion 1.2](train-the-trainer/modul-01-den-unterricht-vorbereiten/das-hilfe-center-als-ihr-lehrbuch.md).
 3. **Bauen Sie eine erste Übungsumgebung auf** (25 Minuten): Installieren Sie eine Schulungs-Website mit einem
-   Befehl, [Lektion 2.3](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md), und stellen Sie sie
-   bereit, [Lektion 2.4](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/serving-the-lab-sites.md).
+   Befehl, [Lektion 2.3](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md), und stellen Sie sie
+   bereit, [Lektion 2.4](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-websites-der-uebungsumgebung-bereitstellen.md).
 4. **Wählen Sie Ihren ersten Kurs** (5 Minuten) im [Kurskatalog](kurskatalog.md).
 
 ## Die Regeln, die jeder Trainer einhält

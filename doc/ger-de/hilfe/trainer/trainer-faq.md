@@ -36,29 +36,29 @@ Korrigieren Sie sie mit **Auf GitHub bearbeiten**, oder melden Sie es auf der Se
 
 **Welche Datenbank für eine Schulungsumgebung?**
 SQLite: kein Server, kein Passwort, eine Datei pro Installation; es ist die Voreinstellung von `exp:install`
-([Lektion 2.3](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md)).
+([Lektion 2.3](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md)).
 
 **Brauchen die Teilnehmenden einen Webserver?**
 Nein. `php bin/php/console exp:velocity start` stellt die Website standardmäßig mit dem eingebauten Server von PHP
-bereit ([Lektion 2.4](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/serving-the-lab-sites.md)).
+bereit ([Lektion 2.4](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-websites-der-uebungsumgebung-bereitstellen.md)).
 
 **Welches Release soll der Kurs verwenden?**
 Ein festes Release für alle, nämlich das, mit dem Sie geprobt haben
-([Lektion 2.2](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/getting-the-code-for-a-class.md)).
+([Lektion 2.2](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/den-code-fuer-einen-kurs-beschaffen.md)).
 
 **Wie setze ich eine Übungsumgebung zwischen zwei Gruppen zurück?**
 Stellen Sie eine Referenzkopie von `var/storage` wieder her, oder installieren Sie nach einem Probelauf mit `--force`
-neu ([Lektion 2.6](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/resetting-the-lab.md)).
+neu ([Lektion 2.6](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-uebungsumgebung-zuruecksetzen.md)).
 
 **Gesperrte Laptops, keine Installationen erlaubt?**
 Verwenden Sie eine gemeinsame Schulungs-Website und beschränken Sie die Rolle aller Teilnehmenden auf ihren eigenen
-Ordner ([Lektion 2.7](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/shared-server-or-one-per-learner.md)).
+Ordner ([Lektion 2.7](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/gemeinsamer-server-oder-einer-pro-teilnehmer.md)).
 
 ## Zu Konten und Daten
 
 **Kann sich der Kurs ein Administratorkonto teilen?**
 Nein. Ein Konto pro Person
-([Lektion 2.5](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/learner-accounts-and-roles.md)).
+([Lektion 2.5](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/konten-und-rollen-der-teilnehmenden.md)).
 
 **Welche E-Mail-Adressen für Testbenutzer?**
 Adressen unter `example.invalid`, die niemals E-Mails empfangen können.

@@ -46,13 +46,13 @@ eigenen Erweiterungen bauen, sie testen, unter Velocity deployen und Änderungen
 | [4. Inhaltsklassen und Datentypen](modul-04-inhaltsklassen-und-datentypen/README.md) | 4 | 3 Std. 40 Min. |
 | [5. Fetch-Funktionen](modul-05-fetch-funktionen/README.md) | 4 | 3 Std. 30 Min. |
 | [6. Module und Views](modul-06-module-und-views/README.md) | 4 | 3 Std. 35 Min. |
-| [7. Erweiterungen](../../../../eng-us/help/trainers/developers/module-07-extensions/README.md) | 5 | 3 Std. 55 Min. |
-| [8. Einstellungen und Siteaccesses](../../../../eng-us/help/trainers/developers/module-08-settings-and-siteaccesses/README.md) | 4 | 3 Std. 15 Min. |
-| [9. Die Konsole und persistente Objekte](../../../../eng-us/help/trainers/developers/module-09-the-console-and-persistent-objects/README.md) | 4 | 3 Std. 20 Min. |
-| [10. Workflows, Ereignisse und Cronjobs](../../../../eng-us/help/trainers/developers/module-10-workflows-events-and-cronjobs/README.md) | 3 | 2 Std. 40 Min. |
-| [11. Die REST-API](../../../../eng-us/help/trainers/developers/module-11-the-rest-api/README.md) | 3 | 2 Std. 45 Min. |
-| [12. Tests und Qualität](../../../../eng-us/help/trainers/developers/module-12-tests-and-quality/README.md) | 3 | 2 Std. 25 Min. |
-| [13. RAD, Velocity und Mitwirken](../../../../eng-us/help/trainers/developers/module-13-rad-velocity-and-contributing/README.md) | 3 | 2 Std. 30 Min. |
+| [7. Erweiterungen](modul-07-erweiterungen/README.md) | 5 | 3 Std. 55 Min. |
+| [8. Einstellungen und Siteaccesses](modul-08-einstellungen-und-siteaccesses/README.md) | 4 | 3 Std. 15 Min. |
+| [9. Die Konsole und persistente Objekte](modul-09-die-konsole-und-persistente-objekte/README.md) | 4 | 3 Std. 20 Min. |
+| [10. Workflows, Ereignisse und Cronjobs](modul-10-workflows-ereignisse-und-cronjobs/README.md) | 3 | 2 Std. 40 Min. |
+| [11. Die REST-API](modul-11-die-rest-api/README.md) | 3 | 2 Std. 45 Min. |
+| [12. Tests und Qualität](modul-12-tests-und-qualitaet/README.md) | 3 | 2 Std. 25 Min. |
+| [13. RAD, Velocity und Mitwirken](modul-13-rad-velocity-und-mitwirken/README.md) | 3 | 2 Std. 30 Min. |
 
 Die Dauer der Module enthält ihre Pausen, wie es der Überblick jedes Moduls angibt.
 

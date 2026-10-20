@@ -56,12 +56,12 @@ AFTER THE COURSE
 
 | Befehle | Seite |
 |---|---|
-| Einen Rechner prüfen | [Lektion 2.1: Anforderungen an einen Schulungsrechner](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/requirements-for-a-training-machine.md), [Anforderungen](../../installation/02-voraussetzungen.md) |
-| Den Code beschaffen | [Lektion 2.2: Den Code für einen Kurs beschaffen](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/getting-the-code-for-a-class.md), [Den Code beschaffen](../../installation/03-den-code-beschaffen.md) |
-| Installieren | [Lektion 2.3: Eine Installation pro Teilnehmer](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md), [Die Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md) |
-| Bereitstellen | [Lektion 2.4: Die Websites der Übungsumgebung bereitstellen](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/serving-the-lab-sites.md), [Die Website bereitstellen](../../installation/08-die-website-ausliefern.md) |
+| Einen Rechner prüfen | [Lektion 2.1: Anforderungen an einen Schulungsrechner](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/anforderungen-an-einen-schulungsrechner.md), [Anforderungen](../../installation/02-voraussetzungen.md) |
+| Den Code beschaffen | [Lektion 2.2: Den Code für einen Kurs beschaffen](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/den-code-fuer-einen-kurs-beschaffen.md), [Den Code beschaffen](../../installation/03-den-code-beschaffen.md) |
+| Installieren | [Lektion 2.3: Eine Installation pro Teilnehmer](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md), [Die Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md) |
+| Bereitstellen | [Lektion 2.4: Die Websites der Übungsumgebung bereitstellen](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-websites-der-uebungsumgebung-bereitstellen.md), [Die Website bereitstellen](../../installation/08-die-website-ausliefern.md) |
 | Fehler beheben | [Lektion 4.4: Fehlersuche im Kurs](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/troubleshooting-in-class.md), [Fehlerbehebung](../../installation/12-fehlerbehebung.md) |
-| Zurücksetzen | [Lektion 2.6: Die Übungsumgebung zurücksetzen](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/resetting-the-lab.md) |
+| Zurücksetzen | [Lektion 2.6: Die Übungsumgebung zurücksetzen](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-uebungsumgebung-zuruecksetzen.md) |
 | Aufräumen | [Lektion 4.5: Sicherheit und Datenschutz im Kurs](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/security-and-privacy-in-class.md) |
 
 > **Warnung**

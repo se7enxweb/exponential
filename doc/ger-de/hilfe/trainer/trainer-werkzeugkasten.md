@@ -17,15 +17,15 @@ erklärt.
 
 - [ ] Kurs und Module für die Gruppe gewählt ([Lektion 1.3](train-the-trainer/modul-01-den-unterricht-vorbereiten/ihre-teilnehmenden-kennen.md))
 - [ ] Umfrage vor dem Kurs verschickt, einschließlich der Frage nach Vorkehrungen ([Lektion 5.4](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accommodations-and-inclusive-practice.md))
-- [ ] Release gewählt; Aufbau der Übungsumgebung gewählt: eine Installation pro Teilnehmer oder eine gemeinsame Website ([Lektion 2.7](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/shared-server-or-one-per-learner.md))
+- [ ] Release gewählt; Aufbau der Übungsumgebung gewählt: eine Installation pro Teilnehmer oder eine gemeinsame Website ([Lektion 2.7](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/gemeinsamer-server-oder-einer-pro-teilnehmer.md))
 - [ ] Jede Übung mit diesem Release geprobt ([Lektion 3.4](../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/writing-exercises-that-work.md))
-- [ ] Rechneranforderungen an die Teilnehmenden geschickt ([Lektion 2.1](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/requirements-for-a-training-machine.md))
+- [ ] Rechneranforderungen an die Teilnehmenden geschickt ([Lektion 2.1](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/anforderungen-an-einen-schulungsrechner.md))
 - [ ] Handouts barrierefrei und korrekt lizenziert ([Lektion 5.1](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accessible-course-materials.md), [Lektion 1.4](train-the-trainer/modul-01-den-unterricht-vorbereiten/ihr-material-und-die-gfdl.md))
 
 ## Checkliste: am Tag vorher
 
 - [ ] Übungsumgebungen installiert oder die Installation auf jedem Rechnertyp getestet
-- [ ] Konten der Teilnehmenden mit Adressen unter `example.invalid` angelegt ([Lektion 2.5](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/learner-accounts-and-roles.md))
+- [ ] Konten der Teilnehmenden mit Adressen unter `example.invalid` angelegt ([Lektion 2.5](train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/konten-und-rollen-der-teilnehmenden.md))
 - [ ] Browserprofil für die Vorführung ohne gespeicherte Anmeldungen; Benachrichtigungen aus ([Lektion 4.2](../../../eng-us/help/trainers/train-the-trainer/module-04-delivering/demonstrating-safely.md))
 - [ ] Kurzkarte der Übungsumgebung für die Helfer gedruckt ([Kurzkarte für die Übungsumgebung](kurzkarte-fuer-die-uebungsumgebung.md))
 - [ ] Fragentafel bereit
