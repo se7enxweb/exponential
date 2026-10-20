@@ -76,7 +76,7 @@ Zu 1.1.1:
 
 ## Verwandte Seiten
 
-- [Datenbankverwaltung AdminNeo](../../../../eng-us/features/6.0/adminneo-database-manager.md)
+- [Datenbankverwaltung AdminNeo](../adminneo-datenbankverwaltung.md)
 - [Übersicht über das Ökosystem](../../../../eng-us/history/ecosystem.md): das Upstream-Werkzeug
 - [Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)

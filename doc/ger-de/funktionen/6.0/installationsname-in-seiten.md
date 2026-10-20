@@ -97,7 +97,7 @@ Beispiel: Analytics nur auf der Produktion laden.
 
 ## Verwandte Seiten
 
-- [Eine saubere Installation, die Exponential sagt](../../../eng-us/features/6.0/clean-install-defaults.md)
+- [Eine saubere Installation, die Exponential sagt](standardwerte-einer-sauberen-installation.md)
 - [INI-Überschreibungen für mehrere Websites](ini-ueberschreibungen-fuer-mehrere-websites.md), [Platzierungen von INI-Überschreibungen](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Chronik: August 2026](../../../eng-us/history/2026/2026-08.md)

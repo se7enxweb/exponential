@@ -66,7 +66,7 @@ unterscheiden müssen.
 
 ## Verwandte Seiten
 
-- [Eine saubere Installation, die zu Shared Hosting passt](../../../eng-us/features/6.0/clean-install-defaults.md)
+- [Eine saubere Installation, die zu Shared Hosting passt](standardwerte-einer-sauberen-installation.md)
 - [bcgooglesitemaps](extensions/bcgooglesitemaps.md), [xrowmetadata](extensions/xrowmetadata.md)
 - [Changelog 6.0.11](../../../changelogs/6.0/6.0.11.md)
 - [Chronik: September 2025](../../../eng-us/history/2025/2025-09.md)

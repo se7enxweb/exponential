@@ -66,7 +66,7 @@ statt eine zu suchen.
 
 - [ezpm: der Paketmanager auf der Kommandozeile](../../../eng-us/features/6.0/ezpm-package-manager-cli.md), [in ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](../../../eng-us/features/6.0/package-compare-and-import.md)
 - [Kickstarter: eine ganze Website aus einer Datei installieren](kickstarter-cli.md), [Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)
-- [MongoDB-Datenbankunterstützung](../../../eng-us/features/6.0/mongodb-database-support.md) (die Änderungen am Assistenten in denselben Wochen)
+- [MongoDB-Datenbankunterstützung](mongodb-datenbankunterstuetzung.md) (die Änderungen am Assistenten in denselben Wochen)
 - [Installer-Protokolle und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Chronik: Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)

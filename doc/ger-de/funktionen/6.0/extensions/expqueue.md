@@ -49,10 +49,10 @@ die API für Erzeuger, Planung, Worker und Einstellungen: [die Dokumentation](ht
 
 ## Verwandte Seiten
 
-- [expai](../../../../eng-us/features/6.0/extensions/expai.md), Exponential Intelligence, das seine eingereihte Arbeit hier ausführt
+- [expai](expai.md), Exponential Intelligence, das seine eingereihte Arbeit hier ausführt
 - [Inhaltsaufträge](../../../../eng-us/bc/6.0/content-jobs.md)
 - [Exponential installieren, Abschnitt 10](../../../../eng-us/INSTALL.md#10-after-installing)
-- [Verzeichnis der Extensions](../../../../eng-us/features/6.0/extensions/README.md)
+- [Verzeichnis der Extensions](README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

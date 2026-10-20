@@ -37,7 +37,7 @@ um. Siehe [Entfernung von YUI](../../../../eng-us/bc/6.0/yui-removal.md).
 ## Verwandte Seiten
 
 - [ezwt](ezwt.md)
-- [jQuery 4 und die Entfernung von YUI](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
+- [jQuery 4 und die Entfernung von YUI](../jquery4-und-entfernung-von-yui.md)
 - [Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md)
 - [Chronik](../../../../eng-us/history/extensions/ezmultiupload.md) und [Versionshinweise](../../../../changelogs/extensions/ezmultiupload.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/ezmultiupload.md)

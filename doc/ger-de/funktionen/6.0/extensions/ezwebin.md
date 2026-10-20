@@ -48,7 +48,7 @@ php bin/php/ezcache.php --clear-tag=template,content --allow-root-user
 
 ## Verwandte Seiten
 
-- [ezwt](ezwt.md), [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md), [ezdemo](ezdemo.md), [ezwebin-ezpackage](../../../../eng-us/features/6.0/extensions/ezwebin-ezpackage.md)
+- [ezwt](ezwt.md), [ezflow](ezflow.md), [ezdemo](ezdemo.md), [ezwebin-ezpackage](ezwebin-ezpackage.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Chronik](../../../../eng-us/history/extensions/ezwebin.md) und [Versionshinweise](../../../../changelogs/extensions/ezwebin.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/ezwebin.md)

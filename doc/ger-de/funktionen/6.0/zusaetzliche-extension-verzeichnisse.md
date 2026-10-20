@@ -88,7 +88,7 @@ Die vollständige Referenz, mit der Ladereihenfolge der Einstellungen und dem Mu
 ## Verwandte Seiten
 
 - [Zusätzliche Extension-Verzeichnisse (Referenz)](../../../eng-us/bc/6.0/AdditionalExtensionDirectories.md)
-- [Extension-Liste und Downloads](../../../eng-us/features/6.0/extension-list-and-downloads.md) (listet Extensions aus jeder Wurzel auf und lädt sie herunter), [Ladereihenfolge der Extensions](../../../eng-us/features/6.0/extension-loading-order.md), [Modulüberschreibung durch Extensions](modulueberschreibung-durch-extensions.md)
+- [Extension-Liste und Downloads](extension-liste-und-downloads.md) (listet Extensions aus jeder Wurzel auf und lädt sie herunter), [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md), [Modulüberschreibung durch Extensions](modulueberschreibung-durch-extensions.md)
 - [Website-spezifische Einstellungen in Extensions](ini-ueberschreibungen-fuer-mehrere-websites.md), [Verzeichnisse und Platzierungen von INI-Überschreibungen](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Icon-Themes in Extensions](icon-themes-in-extensions.md), [Extension-Metadaten](../../spezifikationen/6.0/extension-metadaten.md)
 - [Verhaltensänderungen der Legacy-Extensions (September und Oktober 2026)](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)

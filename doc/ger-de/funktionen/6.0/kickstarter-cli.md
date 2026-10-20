@@ -62,12 +62,12 @@ Protokoll ab.
   `site` und `admin` (15. August, `67e2abf9a3`). Frühere Läufe erzeugten Namen wie `<identifier>_user`, die es nicht
   gab.
 - **Weitere Einstellungen**, etwa der Editor-Siteaccess, kamen später hinzu; siehe die
-  [Seite zum Einrichtungsassistenten](../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md).
+  [Seite zum Einrichtungsassistenten](einrichtungsassistent-und-editor-siteaccess.md).
 
 ## Verwandte Seiten
 
 - [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md): braucht keine `kickstart.ini`
-- [Standardwerte einer sauberen Installation](../../../eng-us/features/6.0/clean-install-defaults.md)
+- [Standardwerte einer sauberen Installation](standardwerte-einer-sauberen-installation.md)
 - [ezpm, der Paketmanager auf der Kommandozeile](../../../eng-us/features/6.0/ezpm-package-manager-cli.md): installiert einzelne Pakete
 - [Eine Paketinstallation, die große Pakete übersteht](paketinstallation-in-teilschritten.md)
 - [In ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](../../../eng-us/features/6.0/package-compare-and-import.md)

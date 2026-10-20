@@ -85,7 +85,7 @@ Im ersten Release hieß das Skript `main.js` und musste von Hand eingeschaltet w
 ## Verwandte Seiten
 
 - [Breite und Schriftgröße der linken Seitenleiste](admin3-seitenleistenbreite-und-schriftgroesse.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
-- [Ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md), [ausgewählte Unterelemente ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md), [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](../../../eng-us/features/6.0/subitems-table-options.md)
+- [Ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md), [ausgewählte Unterelemente ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md), [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md)
 - [Blättern und Seitengrößen](seitenweise-listen-im-admin.md)
 - [Die Entfernung von YUI](../../../eng-us/bc/6.0/yui-removal.md), die alle Admin-Designs auf jQuery umstellte
 - Changelogs: [6.0.4](../../../changelogs/6.0/6.0.4.md), [6.0.6](../../../changelogs/6.0/6.0.6.md), [6.0.10](../../../changelogs/6.0/6.0.10.md)

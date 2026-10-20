@@ -38,7 +38,7 @@ absichtlich nicht seitenweise angezeigt wird, stehen in
 
 Der Bereich **Einstellungen** (Table options) der Unterelementliste hat ein Feld **Individuell**: jede ganze Zahl von 1
 bis 10000, gespeichert als Benutzereinstellung. Siehe
-[Unterelementliste: eigene Seitengröße](../../../eng-us/features/6.0/subitems-table-options.md#custom-page-size).
+[Unterelementliste: eigene Seitengröße](optionen-der-unterelementtabelle.md#eigene-seitengröße).
 
 ## Was jetzt seitenweise angezeigt wird
 
@@ -46,7 +46,7 @@ bis 10000, gespeichert als Benutzereinstellung. Siehe
 |---|---|
 | Reiter Platzierungen eines Elements | [Blättern und Sortieren im Reiter Platzierungen](../../../eng-us/bc/6.0/locations-tab-paging-and-sorting.md) |
 | Rollen und die Richtlinien einer Rolle | [Blättern in Rollen und Richtlinien](../../../eng-us/bc/6.0/role-policy-paging.md); die Rollenliste zeigt außerdem die ID der Rolle und sortiert |
-| Die Benutzer und Gruppen einer Rolle | [Seitenweise Rollenzuweisungen](../../../eng-us/features/6.0/role-assignment-paging.md): nach Namen sortiert, mit einem Namensfilter; die Rollenliste zählt sie pro Rolle |
+| Die Benutzer und Gruppen einer Rolle | [Seitenweise Rollenzuweisungen](seitenweise-rollenzuweisungen.md): nach Namen sortiert, mit einem Namensfilter; die Rollenliste zählt sie pro Rolle |
 | Klassenliste, Liste der Klassengruppen, Liste der Workflow-Gruppen, Liste der PDF-Exporte | keine wurde vorher seitenweise angezeigt |
 | Rabattgruppen, Bestellstatus, MwSt.-Regeln, Produktkategorien | lasen vorher ihre ganze Liste |
 | MwSt.-Typen, Übersetzungen, Extensions, Cronjob-Skripte, REST-Anwendungen | lasen vorher ihre ganze Liste |
@@ -80,7 +80,7 @@ außerdem ihre Blätterparameter und die vom Benutzer gewählte Seitengröße. S
 ## Verwandte Seiten
 
 - [Wo die Seitengrößen liegen](../../../eng-us/bc/6.0/pagination-settings.md), [Blättern in Rollen und Richtlinien](../../../eng-us/bc/6.0/role-policy-paging.md), [Blättern und Sortieren im Reiter Platzierungen](../../../eng-us/bc/6.0/locations-tab-paging-and-sorting.md)
-- [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](../../../eng-us/features/6.0/subitems-table-options.md), [Rollen: Richtlinien-IDs, Sortierung und Schaltflächen für die Reihenfolge](reihenfolge-der-richtlinien-einer-rolle.md)
+- [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md), [Rollen: Richtlinien-IDs, Sortierung und Schaltflächen für die Reihenfolge](reihenfolge-der-richtlinien-einer-rolle.md)
 - [Mehrfachbearbeitung (Elemente aus der Unterelementliste)](../../../eng-us/bc/6.0/multi-node-edit.md)
 - [Sektionen](../../anleitungen/sektionen.md): die Sektionsliste, ihre Seitengröße und die anderen Sektionsseiten
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

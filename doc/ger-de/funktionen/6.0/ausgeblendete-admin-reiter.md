@@ -70,7 +70,7 @@ Menüs kompilieren die Einstellungen ein.
 
 Der Editor-Siteaccess verwendet beide Einstellungen. Er blendet im oberen Menü `explayouts_ui_dashboard`, `setup`,
 `design`, `gitmanager`, `xrowextract`, `bccie_overview` und `syndication` aus und in der Knotenansicht `layouts`. Siehe
-[den Einrichtungsassistenten und den Editor-Siteaccess](../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md).
+[den Einrichtungsassistenten und den Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md).
 
 ## Am selben Tag geändert
 
@@ -85,7 +85,7 @@ Der Editor-Siteaccess verwendet beide Einstellungen. Er blendet im oberen Menü 
 
 - [Admin-Links folgen den Berechtigungen](admin-links-folgen-den-berechtigungen.md)
 - [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
-- [Einrichtungsassistent und Editor-Siteaccess](../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md)
+- [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)

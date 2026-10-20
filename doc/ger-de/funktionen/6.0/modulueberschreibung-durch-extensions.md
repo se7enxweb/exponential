@@ -67,7 +67,7 @@ während die Seite zusammengesetzt wird.
 ## Verwandte Seiten
 
 - [Extensions in mehr als einem Ordner](zusaetzliche-extension-verzeichnisse.md)
-- [Ladereihenfolge der Extensions](../../../eng-us/features/6.0/extension-loading-order.md)
+- [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md)
 - [Verhaltensänderungen der Legacy-Extensions](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
 - Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md) (Reihenfolge der Module), [6.0.5](../../../changelogs/6.0/6.0.5.md) (Korrektur für Robustheit)
 - Chronik: [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [September 2024](../../../eng-us/history/2024/2024-09.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md)

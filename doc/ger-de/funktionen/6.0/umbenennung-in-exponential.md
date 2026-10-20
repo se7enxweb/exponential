@@ -63,8 +63,8 @@ Ein Template, das Sie 2012 geschrieben haben, funktioniert also weiter.
 
 ## Verwandte Seiten
 
-- [Eine saubere Installation, die zu Shared Hosting passt und Exponential sagt](../../../eng-us/features/6.0/clean-install-defaults.md)
-- [Info- und Copyright-Seiten](info-und-paketseiten.md), [Paketlizenzen und Semantic Versioning](../../../eng-us/features/6.0/package-licenses-and-versions.md)
+- [Eine saubere Installation, die zu Shared Hosting passt und Exponential sagt](standardwerte-einer-sauberen-installation.md)
+- [Info- und Copyright-Seiten](info-und-paketseiten.md), [Paketlizenzen und Semantic Versioning](paketlizenzen-und-versionen.md)
 - [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Dateikonsistenzprüfung](../../../eng-us/features/6.0/file-consistency-check.md)
 - [Changelog 6.0.10](../../../changelogs/6.0/6.0.10.md)
 - Chronik: [August 2025](../../../eng-us/history/2025/2025-08.md), [Juli 2025](../../../eng-us/history/2025/2025-07.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md)

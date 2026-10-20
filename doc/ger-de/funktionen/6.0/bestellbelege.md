@@ -87,7 +87,7 @@ wartet, zum Warenkorb.
 
 ## Verwandte Seiten
 
-- [Shop-Dashboard und Bestellstatus](../../../eng-us/features/6.0/store-dashboard.md), [Sortierung der Bestellliste](sortierung-der-bestellliste.md)
+- [Shop-Dashboard und Bestellstatus](shop-dashboard.md), [Sortierung der Bestellliste](sortierung-der-bestellliste.md)
 - [Name der Warenkorbansicht im Shop](../../../eng-us/bc/6.0/shop-basket-view-name.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

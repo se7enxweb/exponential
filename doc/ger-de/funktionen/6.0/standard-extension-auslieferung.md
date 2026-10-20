@@ -74,8 +74,8 @@ sind. Seitdem ist die Liste um das Layout-System, den Newsletter, die Tags-Exten
 
 ## Verwandte Seiten
 
-- [Extensions, Themes und Pakete](../../../eng-us/features/6.0/extensions/README.md), [Extension-Liste: sortieren, untersuchen und herunterladen](../../../eng-us/features/6.0/extension-list-and-downloads.md), [Ladereihenfolge und sicheres Speichern](../../../eng-us/features/6.0/extension-loading-order.md)
-- [Extension-Metadaten: `ezinfo.php` und `extension.xml`](../../specifications/6.0/extension-metadata.md)
+- [Extensions, Themes und Pakete](extensions/README.md), [Extension-Liste: sortieren, untersuchen und herunterladen](extension-liste-und-downloads.md), [Ladereihenfolge und sicheres Speichern](ladereihenfolge-der-extensions.md)
+- [Extension-Metadaten: `ezinfo.php` und `extension.xml`](../../spezifikationen/6.0/extension-metadaten.md)
 - [Das Produkt heißt Exponential](umbenennung-in-exponential.md), [Unterstützung für PHP 8](../../../eng-us/bc/6.0/php8.md)
 - Changelogs, die die Menge der Extensions geändert haben: [6.0.0](../../../changelogs/6.0/6.0.0.md), [6.0.1](../../../changelogs/6.0/6.0.1.md), [6.0.2](../../../changelogs/6.0/6.0.2.md), [6.0.3](../../../changelogs/6.0/6.0.3.md), [6.0.4](../../../changelogs/6.0/6.0.4.md), [6.0.5](../../../changelogs/6.0/6.0.5.md), [6.0.6](../../../changelogs/6.0/6.0.6.md), [6.0.9](../../../changelogs/6.0/6.0.9.md), [6.0.10](../../../changelogs/6.0/6.0.10.md)
 - Chronik: [Dezember 2023](../../../eng-us/history/2023/2023-12.md), [Januar 2024, erste Hälfte](../../../eng-us/history/2024/2024-01a.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [Februar 2024](../../../eng-us/history/2024/2024-02.md), [März 2024](../../../eng-us/history/2024/2024-03.md), [Juni 2024](../../../eng-us/history/2024/2024-06.md)

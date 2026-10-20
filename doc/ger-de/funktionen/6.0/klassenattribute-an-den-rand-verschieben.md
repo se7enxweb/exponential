@@ -38,7 +38,7 @@ eine Stelle verschoben, und die Platzierungen lauteten danach 1 bis n.
 
 ## Verwandte Seiten
 
-- [jQuery 4 und die Entfernung von YUI](../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
+- [jQuery 4 und die Entfernung von YUI](jquery4-und-entfernung-von-yui.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)

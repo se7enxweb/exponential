@@ -51,7 +51,7 @@ Siehe [Entfernung von YUI](../../../../eng-us/bc/6.0/yui-removal.md).
 
 ## Verwandte Seiten
 
-- [jQuery 4 und die Entfernung von YUI](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
+- [jQuery 4 und die Entfernung von YUI](../jquery4-und-entfernung-von-yui.md)
 - [Online-Editor auf TinyMCE 8](../../../../eng-us/features/6.0/online-editor-tinymce8.md)
 - [Chronik](../../../../eng-us/history/extensions/ezautosave.md) und [Versionshinweise](../../../../changelogs/extensions/ezautosave.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/ezautosave.md)
