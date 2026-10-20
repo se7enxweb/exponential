@@ -403,6 +403,7 @@ a9e65725352e9bc79b3896fed6cb6ca4  design/admin/templates/content/browse.tpl
 89b996a34bdb703ef3ea87043b4be6f2  design/admin/templates/content/browse_bookmark.tpl
 32e10c200dcb79251ae6f52b3c5fbe4b  design/admin/templates/content/browse_copy_node.tpl
 c74412b58c650207b249e5d7901905a4  design/admin/templates/content/browse_copy_subtree.tpl
+35704cba392ab0c3fcc6ee7555c348a6  design/admin/templates/content/browse_copy_subtrees.tpl
 311876721423e46f5e27deb463585fc0  design/admin/templates/content/browse_export.tpl
 f5c84e38f4847e5a36fae783b4c62eff  design/admin/templates/content/browse_first_placement.tpl
 d91afdaaf85adddc76b39fc4be1cf983  design/admin/templates/content/browse_mode_list.tpl
@@ -1142,6 +1143,7 @@ c9029ce6ee8c2c42665abaa758a9e680  design/admin4/templates/content/browse.tpl
 89b996a34bdb703ef3ea87043b4be6f2  design/admin4/templates/content/browse_bookmark.tpl
 32e10c200dcb79251ae6f52b3c5fbe4b  design/admin4/templates/content/browse_copy_node.tpl
 c74412b58c650207b249e5d7901905a4  design/admin4/templates/content/browse_copy_subtree.tpl
+35704cba392ab0c3fcc6ee7555c348a6  design/admin4/templates/content/browse_copy_subtrees.tpl
 1d08be1921996dcfb6147cf7b8c7a5a7  design/admin4/templates/content/browse_current_node.tpl
 311876721423e46f5e27deb463585fc0  design/admin4/templates/content/browse_export.tpl
 f5c84e38f4847e5a36fae783b4c62eff  design/admin4/templates/content/browse_first_placement.tpl
@@ -14787,6 +14789,7 @@ a17f98bb54f4291a2028307ea74aea7e  tests/tests/design/AdminHelpFrameClassScopeTes
 8df6b3e23c1da3aea5c7d5b745158627  tests/tests/design/AdminI18nStringTagsTest.php
 d3be49716676a477046ac83a63c95e39  tests/tests/design/AdminIconsTest.php
 ef7f72e6efae269cefa3d98124eee4f2  tests/tests/design/AdminJobTranslationsTest.php
+64677f11b0a72405afb95054d832a65f  tests/tests/design/AdminKernelDesignTemplatesTest.php
 86b15d2240613d3a96b974dc9322bf9f  tests/tests/design/AdminKeyboardTest.php
 4522591d6ef263fd4ffc72628211f061  tests/tests/design/AdminLandmarksTest.php
 fb0fa2eddf13930ac82d0245cb135b9f  tests/tests/design/AdminLanguageBadgeTest.php
