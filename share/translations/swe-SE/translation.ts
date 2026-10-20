@@ -73113,10 +73113,6 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Hjälpcenter</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Hjälpstart</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Hur kan vi hjälpa dig?</translation>
     </message>

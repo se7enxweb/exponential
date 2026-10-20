@@ -73068,10 +73068,6 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Hjelpesenter</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Hjelpestart</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Hva kan vi hjelpe deg med?</translation>
     </message>

@@ -73217,10 +73217,6 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Centro assistenza</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Inizio della guida</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Come possiamo aiutarti?</translation>
     </message>
