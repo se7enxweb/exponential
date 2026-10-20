@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of cronjobs/clusterpurge.php, moved into a class (#207 stage 1). The file cronjobs/clusterpurge.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of cronjobs/clusterpurge.php:

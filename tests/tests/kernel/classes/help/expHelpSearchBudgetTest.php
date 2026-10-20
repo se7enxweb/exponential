@@ -1,6 +1,6 @@
 <?php
 /**
- * The time budget of the help search (doc/features/6.0/help-system.md, "Finding a page"). No database, no files.
+ * The time budget of the help search (doc/en/us/features/6.0/help-system.md, "Finding a page"). No database, no files.
  *
  *  SB-01  over an index of 7 000 generated pages (more than the help has; 5 752 on 19 October 2026), a query, with
  *         and without an audience filter, takes less than BUDGET ms of CPU time at the 95th percentile of 10 runs

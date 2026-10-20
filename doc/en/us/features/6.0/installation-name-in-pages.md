@@ -96,5 +96,5 @@ Example: load analytics only in production.
 
 - [A clean installation that says Exponential](clean-install-defaults.md)
 - [Multi-site INI overrides](multi-site-ini-overrides.md), [INI override placements](../../specifications/6.0/ini-override-placements.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
 - [Chronicle: August 2026](../../history/2026/2026-08.md)

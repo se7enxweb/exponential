@@ -1,7 +1,7 @@
 {* The CSS step of the site style wizard (package/create, creator ezstyle): the two stylesheets of the style, both
    required, each a .css file. The POST names are those of before: PackageSiteCSSFile, PackageClassesCSSFile (files),
    read by eZStylePackageCreator. The same file is in design/admin and design/admin4.
-   Guide: doc/features/6.0/package-wizard.md *}
+   Guide: doc/en/us/features/6.0/package-wizard.md *}
 {def $k_css = 'CSS file'|i18n( 'kernel/package' )
      $errs = hash()}
 {foreach $error_list as $e}{set $errs = $errs|merge( hash( $e.field, $e.description ) )}{/foreach}

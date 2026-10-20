@@ -14,7 +14,7 @@ Garbage-collect expired user sessions from the session store.
 Entry point `cronjobs/session_gc.php`, code in `kernel/private/classes/cronjobs/session_gc.php`.
 
 > The code of cronjobs/session\_gc.php, moved into a class (#207 stage 1). The file cronjobs/session\_gc.php is one call to it.  
-> Guide: doc/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## When it runs
 

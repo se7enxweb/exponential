@@ -54,7 +54,7 @@ class expContentJobSectionSubtree extends expContentJobBatchType
         parent::prepare( $job );
         if ( $first )
         {
-            // Who assigns which section at which node (doc/bc/6.0/audit.md, content.node.section), a child of the
+            // Who assigns which section at which node (doc/en/us/bc/6.0/audit.md, content.node.section), a child of the
             // job's run
             $p = $job->params();
             if ( class_exists( 'expAuditHook' ) )

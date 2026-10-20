@@ -1,6 +1,6 @@
 <?php
 /**
- * The 4.x compatibility path, the settings writes, the keys and the ownership of the files (doc/bc/6.0/audit.md,
+ * The 4.x compatibility path, the settings writes, the keys and the ownership of the files (doc/en/us/bc/6.0/audit.md,
  * "Compatibility mapping", "Keys (Z7)", acceptance test B3).
  *
  *  AC-01 — each of the 15 old names through eZAudit::writeAudit() gives its mapped name; the call site decides

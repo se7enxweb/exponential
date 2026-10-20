@@ -1,7 +1,7 @@
 /*
  * admin4 setup/rad: the search box over the extension points; it hides the cards and groups that do not match.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 ( function () {
     var bar   = document.getElementById( 'radFind' ),

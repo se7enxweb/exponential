@@ -164,7 +164,7 @@ Checked for this page (2026-10-18): `php -l` on the script; every method it call
 - `kernel/classes/ezcontentclassattribute.php` (`create()`, `dataType()`, `initializeObjectAttributes()`)
 - `kernel/classes/help/content/exphelpcontentinstaller.php` (`ensureClass()`, `createAttribute()`: the kernel's own
   re-runnable class creation, which this script follows)
-- `doc/guides/content-model-and-editing.md`, section 2
+- `doc/en/us/guides/content-model-and-editing.md`, section 2
 
 ## Related pages
 

@@ -53,7 +53,7 @@ if ( !file_exists( EZP_PHPUNIT_XML ) )
 {
     fwrite( STDERR, "ERROR: phpunit.xml not found at " . EZP_PHPUNIT_XML . "\n" );
     fwrite( STDERR, "       This file was added in Exponential 6.0.13.\n" );
-    fwrite( STDERR, "       See doc/bc/6.0/phpunitvXXXX.md for instructions.\n" );
+    fwrite( STDERR, "       See doc/en/us/bc/6.0/phpunitvXXXX.md for instructions.\n" );
     exit( 2 );
 }
 

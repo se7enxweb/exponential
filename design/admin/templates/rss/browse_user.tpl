@@ -1,7 +1,7 @@
 {* The description at the top of the content browser when the owner of the objects an RSS import creates is chosen (rss/edit_import, UserBrowse).
 
    The same file is in design/admin and design/admin4, in the look of the RSS pages. Choosing an item and OK hand it
-   back to the edit form; Cancel returns to it unchanged. Guide: doc/guides/rss-feeds.md *}
+   back to the edit form; Cancel returns to it unchanged. Guide: doc/en/us/guides/rss-feeds.md *}
 
 <div class="context-block a4-page exp-rss">
 

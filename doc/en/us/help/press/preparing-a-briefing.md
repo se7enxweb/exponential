@@ -31,7 +31,7 @@ About 30 minutes covers the basics:
 | 5 | [Who is the Exponential Foundation?, In short](../who-is-the-exponential-foundation.md#in-short) | The nonprofit, its mission, its relation to 7x |
 | 5 | [Who is the Exponential Foundation?, What the sources do not say](../who-is-the-exponential-foundation.md#what-the-sources-do-not-say) | The open questions worth asking |
 | 5 | [The history, The story so far](../../history/README.md#the-story-so-far) | The main events since December 2023 |
-| 5 | The changelog of the newest release, for example [6.0.14](../../changelogs/6.0/6.0.14.md) | What just shipped |
+| 5 | The changelog of the newest release, for example [6.0.14](../../../../changelogs/6.0/6.0.14.md) | What just shipped |
 | 5 | [Brand and naming rules, Do and Don't](../business/brand-and-naming-rules.md#do-and-dont) | How to name everything |
 
 Then add the briefing for your kind of outlet: [technical press](briefing-for-technical-press.md),

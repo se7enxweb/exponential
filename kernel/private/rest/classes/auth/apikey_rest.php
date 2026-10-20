@@ -8,7 +8,7 @@
  */
 
 /**
- * How the REST layer resolves a personal API key (doc/guides/api-keys.md, "For developers").
+ * How the REST layer resolves a personal API key (doc/en/us/guides/api-keys.md, "For developers").
  *
  * 1. ezpRestAuthConfiguration::filter() calls reset() first, so nothing of the previous request of a persistent
  *    worker is left.

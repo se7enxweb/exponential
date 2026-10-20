@@ -15,7 +15,7 @@ The shipped settings of `settings/subitems.ini`: 7 blocks, 21 settings.
 > The admin subitems list ("Table options"): which columns are shown by default, the presets  
 > everybody can choose, the defaults per place, the automatic attribute columns and the CSV  
 > export. The columns themselves are defined in subitemscolumns.ini (\[Column\_<key>\] blocks).  
-> Guide: doc/bc/6.0/subitems-table-options.md  
+> Guide: doc/en/us/bc/6.0/subitems-table-options.md  
 >
 > Column keys used below: the 15 built-in columns (thumbnail, name, visibility, type, modifier,  
 > modified, published, translations, section, nodeid, noderemoteid, objectid, objectremoteid,  

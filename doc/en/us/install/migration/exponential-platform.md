@@ -15,7 +15,7 @@ GitHub release is `v3.2.9` (2025-09-28). Its `composer.json` requires the 3.2 ge
 (`se7enxweb/ezplatform-kernel ~1.3.42`, `se7enxweb/ezplatform-admin-ui ~2.3.39`, REST, GraphQL, RichText, Matrix and
 Query field types, Solr), Symfony 5 and PHP `^7.3 || ^8.1` to `^8.4`.
 
-[Migration hub](README.md) · [Checklist](checklist.md) · Installation notes in the product's repository: `doc/INSTALL.md`
+[Migration hub](README.md) · [Checklist](checklist.md) · Installation notes in the product's repository: `doc/en/us/INSTALL.md`
 
 ## Contents
 

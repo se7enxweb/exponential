@@ -1,6 +1,6 @@
 {* The description at the top of the content browser when a section is assigned (section/assign).
 
-   The same file is in design/admin and design/admin4. Guide: doc/guides/sections.md *}
+   The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/sections.md *}
 {def $section = fetch( 'section', 'object', hash( 'section_id', $browse.content.section_id ) )}
 
 <div class="context-block a4-page">

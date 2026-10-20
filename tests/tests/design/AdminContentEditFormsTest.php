@@ -13,7 +13,7 @@
  * - the datatype templates admin4 carries draw their parts in a row with a label above each field, end no label with
  *   a colon, draw no design image, no float helpers and no spacing entities, and the calendar is an icon button.
  *
- * doc/bc/6.0/admin4-styling.md, "Edit forms"
+ * doc/en/us/bc/6.0/admin4-styling.md, "Edit forms"
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminContentEditFormsTest.php
  *

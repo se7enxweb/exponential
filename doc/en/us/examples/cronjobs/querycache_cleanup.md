@@ -14,7 +14,7 @@ Remove the result files of the SQL query cache that are older than MaxAge or fro
 Entry point `cronjobs/querycache_cleanup.php`, code in `kernel/private/classes/cronjobs/querycache_cleanup.php`.
 
 > The code of cronjobs/querycache\_cleanup.php. The file cronjobs/querycache\_cleanup.php is one call to it.  
-> Guide: doc/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 >
 > Removes the result files of the SQL query cache (querycache.ini Storage=file, or auto without APCu) that can no  
 > longer be answered: older than MaxAge or from before the last clear. A lookup never answers them anyway; without  

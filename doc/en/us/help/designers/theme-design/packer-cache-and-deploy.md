@@ -37,7 +37,7 @@ All commands are `php bin/php/ezcache.php <option>`; `--list-ids` lists every id
 
 The administration's page head is kept in a `{cache-block}`, and the cached head names the packed files. If only
 `ezjscore-packer` is cleared, the cached head points to files that no longer exist, and the admin loses its styles and
-scripts until `template-block` is cleared too. Clear them together, and in that order (`doc/bc/6.0/velocity-engines.md`,
+scripts until `template-block` is cleared too. Clear them together, and in that order (`doc/en/us/bc/6.0/velocity-engines.md`,
 "Deploying a PHP change").
 
 An edited `.css` file does not need this: its packed file gets a new name by itself.

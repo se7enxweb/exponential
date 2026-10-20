@@ -132,5 +132,5 @@ directory an index file, or serve through the front controller so unlisted paths
 
 - [Velocity web server](velocity-web-server.md), [response cache](velocity-response-cache.md) (pages, not files), [packages and binaries](velocity-packages-and-binaries.md) (the binaries bundle GD), [uwebserver](velocity-uwebserver.md)
 - [Static cache generator](static-cache-generator.md)
-- [Changelog: Exponential Velocity engine](../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
 - History: [July 2026](../../history/velocity/2026-07.md) (directory listings, galleries, `Save-Data`), [22 September](../../history/velocity/2026-09b.md) (static lifetimes, compressed storage), [23 September](../../history/velocity/2026-09c.md) (cache permissions)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Archives, manifests, verification, restore and retention of the audit channels (doc/bc/6.0/audit.md,
+ * Archives, manifests, verification, restore and retention of the audit channels (doc/en/us/bc/6.0/audit.md,
  * "The archive manifest and its HMAC", "Rotation, archives and retention (Q8)").
  *
  * Archive: the live files of a channel older than LiveDays ([AuditChannel_<c>], defaults in

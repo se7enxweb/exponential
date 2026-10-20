@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit/alerts view (doc/bc/6.0/audit.md, "Views", "Alerts (F5)"): the alerts that fired (system.audit.alert
+ * The audit/alerts view (doc/en/us/bc/6.0/audit.md, "Views", "Alerts (F5)"): the alerts that fired (system.audit.alert
  * records: rule, group, count, window, the first and last matching events) newest first, and the alert rules in use
  * with their settings and any problem. Read-only: evaluating rules and acknowledging alerts are not done here.
  * Policy audit/read; alerts are records of the system channel, so a Channel limitation without it shows none.

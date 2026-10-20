@@ -2,7 +2,7 @@
 
 Read this page before you install or update `syndication`, or to find out which release brought a change.
 
-What each release of `syndication` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/syndication.md); the story is in the [chronicle](../../history/extensions/syndication.md).
+What each release of `syndication` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/syndication.md); the story is in the [chronicle](../../en/us/history/extensions/syndication.md).
 
 ## v1.3.2 (2026-10-02)
 
@@ -56,9 +56,9 @@ What each release of `syndication` contains, assembled from its commits. Each li
 
 ## Related pages
 
-- [Feature page](../../features/6.0/extensions/syndication.md)
-- [Chronicle](../../history/extensions/syndication.md)
-- [Change ledger](../../history/ledger/syndication.md)
-- [Specification](../../specifications/6.0/syndication.md)
-- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- Months: [2025-09](../../history/extensions/months/2025-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../en/us/features/6.0/extensions/syndication.md)
+- [Chronicle](../../en/us/history/extensions/syndication.md)
+- [Change ledger](../../en/us/history/ledger/syndication.md)
+- [Specification](../../en/us/specifications/6.0/syndication.md)
+- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2025-09](../../en/us/history/extensions/months/2025-09.md), [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-07](../../en/us/history/extensions/months/2026-07.md), [2026-09](../../en/us/history/extensions/months/2026-09.md), [2026-10](../../en/us/history/extensions/months/2026-10.md)

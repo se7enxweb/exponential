@@ -130,5 +130,5 @@ Details: [the audit guide](../../bc/6.0/audit.md).
 - [The audit guide](../../bc/6.0/audit.md), [audit specification](../../specifications/6.0/audit-event-model.md)
 - [Remote audit services](remote-services-expservices.md), [content jobs](content-jobs.md), [the Exp Debug bar](exp-debug-bar.md), [the INI command](exp-ini-command.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
 - [October 2026 chronicle](../../history/2026/2026-10.md)

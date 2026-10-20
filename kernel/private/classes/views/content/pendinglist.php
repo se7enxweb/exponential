@@ -1,14 +1,14 @@
 <?php
 /**
  * The code of kernel/content/pendinglist.php, moved into a class (#207 stage 1). The file kernel/content/pendinglist.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * The pending page of the current user ("My pending items"): the versions the user sent for publishing that a
  * workflow holds, and the versions waiting for the user's approval, each with what holds it (the approval and its
  * approvers, the workflow processes), when it was sent and where it goes. A version waiting for the user's approval is
  * shown only when content/versionread allows it. The list (filters, order, paging, figures) is worked out by
  * expContentPendingList, which needs no database; this view reads the versions, approvals and processes.
- * Guide: doc/guides/drafts-and-pending.md
+ * Guide: doc/en/us/guides/drafts-and-pending.md
  */
 /*
  * The original header of kernel/content/pendinglist.php:

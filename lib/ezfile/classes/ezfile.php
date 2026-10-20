@@ -36,7 +36,7 @@ class eZFile
      * The upper limit for the mode of the files the installation creates: the constant EZP_FILE_MODE_MAX (config.php);
      * with only EZP_DIR_MODE_MAX set, that limit without the search bits (0750 gives 0640); null without either (no
      * limit, the modes asked for are used as before). A constant that is no usable limit counts as not set (see
-     * limitFromConstant()). See doc/bc/6.0/file-modes.md.
+     * limitFromConstant()). See doc/en/us/bc/6.0/file-modes.md.
      *
      * @return int|null
      */

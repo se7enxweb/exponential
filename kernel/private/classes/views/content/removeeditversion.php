@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/removeeditversion.php, moved into a class (#207 stage 1). The file kernel/content/removeeditversion.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/removeeditversion.php:
@@ -93,7 +93,7 @@ class Removeeditversion extends \Exponential\Runnable\ModuleView
 
                 $versionCount= $object->getVersionCount();
                 $nodeID = $versionCount == 1 ? $versionObject->attribute( 'main_parent_node_id' ) : $object->attribute( 'main_node_id' );
-                // Audit (doc/bc/6.0/audit.md, content.version.remove): a discarded draft
+                // Audit (doc/en/us/bc/6.0/audit.md, content.version.remove): a discarded draft
                 $auditVersion = array( 'version' => (int)$versionObject->attribute( 'version' ), 'status' => (int)$versionObject->attribute( 'status' ),
                                        'language' => (string)$versionObject->initialLanguageCode() );
                 $auditName = (string)$object->attribute( 'name' );

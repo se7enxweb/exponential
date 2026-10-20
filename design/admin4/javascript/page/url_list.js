@@ -1,7 +1,7 @@
 /*
  * admin4 url/list: the selection count of the address list.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md). The text comes from #url-list-data.
+ * (doc/en/us/features/6.0/content-security-policy.md). The text comes from #url-list-data.
  */
 var expUrlListData = document.getElementById( 'url-list-data' );
 var expUrlListText = {

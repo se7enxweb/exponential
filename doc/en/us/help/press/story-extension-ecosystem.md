@@ -34,7 +34,7 @@ Some extensions come from other companies' work, such as CJW Network's newslette
 | 66 se7enxweb packages required by the kernel (18 October 2026) | [Exponential by the numbers](exponential-by-the-numbers.md) |
 | 219 se7enxweb packages on Packagist | same |
 | Many extensions inactive by default | [The default extension distribution](../../features/6.0/default-extension-distribution.md) |
-| Each extension has its own changelog | [Extension changelogs](../../changelogs/extensions/README.md) |
+| Each extension has its own changelog | [Extension changelogs](../../../../changelogs/extensions/README.md) |
 | RAD tools to create extensions quickly | [RAD tools](../../features/6.0/rad-tools.md), [Extensions](../../guides/extensions.md) |
 | The README speaks of a "plugin API with thousands of open-source extensions available" | README, "Main Exponential features" |
 

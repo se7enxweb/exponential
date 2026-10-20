@@ -58,20 +58,20 @@ The 6.0.15 line also brings, among much else (the full list is in the
 - **[Exponential Layouts](#exponential-layouts-revolutionary)**, a visual page builder: layouts, zones and blocks
   that editors arrange, and rules that decide which pages get them.
 - **A tamper-evident audit trail** with a console, charts, alerts, streamed and background exports, and channels of
-  extensions ([audit guide](doc/bc/6.0/audit.md)).
+  extensions ([audit guide](doc/en/us/bc/6.0/audit.md)).
 - **The content finder** (Setup > Content finder): find the content behind an id, a remote id, a URL alias, a page
-  address or a file path, and act on it within your rights ([feature](doc/features/6.0/content-finder.md)).
+  address or a file path, and act on it within your rights ([feature](doc/en/us/features/6.0/content-finder.md)).
 - **Content jobs and a job queue**: large removes, copies, moves, package installs and audit exports run in the
-  background ([content jobs](doc/bc/6.0/content-jobs.md)); the job queue `expqueue` runs the queued work of
-  extensions ([expqueue](doc/features/6.0/extensions/expqueue.md)).
+  background ([content jobs](doc/en/us/bc/6.0/content-jobs.md)); the job queue `expqueue` runs the queued work of
+  extensions ([expqueue](doc/en/us/features/6.0/extensions/expqueue.md)).
 - **Packages end to end** on Setup > Packages: every upload validated, installs in the background or as drafts, a
-  JSON package format next to the classic one ([packages guide](doc/guides/packages.md),
-  [JSON format](doc/bc/6.0/package-json-format.md)).
+  JSON package format next to the classic one ([packages guide](doc/en/us/guides/packages.md),
+  [JSON format](doc/en/us/bc/6.0/package-json-format.md)).
 - **219 locales**, 170 of them new: content in Bengali, Urdu, Persian, Vietnamese, Swahili, Romanian, Tibetan,
   Yiddish, Latin and nearly every other written language of the world, with their dates, numbers and currencies;
   the administration in English and German complete and partly in 24 more, Hebrew, Latin and (for fun) Klingon as
-  first drafts ([languages](doc/languages.md)); right-to-left languages get `dir="rtl"` in content and in the
-  administration ([right to left](doc/features/6.0/right-to-left.md)).
+  first drafts ([languages](doc/en/us/languages.md)); right-to-left languages get `dir="rtl"` in content and in the
+  administration ([right to left](doc/en/us/features/6.0/right-to-left.md)).
 - **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5, and the bundled
   application server Exponential Velocity (suggested version 0.0.4.50, which answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).
@@ -221,7 +221,7 @@ The same commands drive three servers, chosen with `[ServerSettings] Engine` in
 
 What each engine supports, the ports, the settings they share and who may open
 the views each server answers itself are in
-[doc/bc/6.0/velocity-engines.md](doc/bc/6.0/velocity-engines.md).
+[doc/en/us/bc/6.0/velocity-engines.md](doc/en/us/bc/6.0/velocity-engines.md).
 
 Settings live in `settings/override/velocity.ini.append.php`. Every one of them
 has a default that works, so a server that configures nothing still runs.
@@ -268,9 +268,9 @@ being loaded from its archive: rebuild it first.
 - (Optional) Database server. Used to store website content (and application information). SQLite needs none.
   **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
   3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
-  at this time. Details: [Database support](doc/help/database-support.md).
+  at this time. Details: [Database support](doc/en/us/help/database-support.md).
 - Operating system: almost any that runs PHP 8.0 or later; see
-  [Operating system support](doc/help/os-support.md).
+  [Operating system support](doc/en/us/help/os-support.md).
 - Composer. Used to download Exponential software packages for installation, also notably installs the required Zeta Components php libraries and the extensions listed in `composer.json`.
 - (Optional) For Exponential Intelligence: an API key of a hosted AI provider, or a local open-weight model on the
   same server.
@@ -280,7 +280,7 @@ being loaded from its archive: rebuild it first.
 
 Exponential Legacy supports PHP 8.0 -> 8.5+ please use the latest version of PHP available on your OS.
 
-PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux / Rocky Linux 9) runs Exponential under Apache or PHP-FPM. Exponential Velocity, the optional built-in application server, needs PHP 8.1 or later. See [PHP 8.0 support](doc/bc/6.0/php-8.0-support.md).
+PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux / Rocky Linux 9) runs Exponential under Apache or PHP-FPM. Exponential Velocity, the optional built-in application server, needs PHP 8.1 or later. See [PHP 8.0 support](doc/en/us/bc/6.0/php-8.0-support.md).
 
 PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7.
 
@@ -416,7 +416,7 @@ Requirements: PHP 8.0 or later with `curl`, `dom`, `json` and `mbstring`; ezjsco
 queued work. Read the [installation guide](https://github.com/se7enxweb/expai/blob/main/INSTALL.md), the
 [usage guide](https://github.com/se7enxweb/expai/blob/main/USAGE.md) and the
 [full documentation](https://github.com/se7enxweb/expai/blob/main/doc/index.md) (providers, data policy, Vector,
-security, configuration). A summary is in [doc/features/6.0/extensions/expai.md](doc/features/6.0/extensions/expai.md).
+security, configuration). A summary is in [doc/en/us/features/6.0/extensions/expai.md](doc/en/us/features/6.0/extensions/expai.md).
 
 # Exponential Layouts (Revolutionary)
 
@@ -453,11 +453,11 @@ pages get it, so editors rearrange pages without touching templates.
 
 The suite is required in `composer.json`, so every installation has it in `extension/`. The 7x multi-site installer
 packages set it up for the sites they install that use it. Otherwise follow the
-[installation checklist](doc/bc/6.0/LAYOUTS.md#installation-checklist): activate the extensions, create the
+[installation checklist](doc/en/us/bc/6.0/LAYOUTS.md#installation-checklist): activate the extensions, create the
 `explayouts_*` tables from the extension's `sql/<engine>/schema.sql`, regenerate the autoloads, clear the caches,
 then create a layout and a rule. The README and INSTALL of each extension give its own settings and steps.
 
-The guide: [doc/bc/6.0/LAYOUTS.md](doc/bc/6.0/LAYOUTS.md). The repositories:
+The guide: [doc/en/us/bc/6.0/LAYOUTS.md](doc/en/us/bc/6.0/LAYOUTS.md). The repositories:
 [explayouts](https://github.com/se7enxweb/explayouts) (persistence, resolver, rendering, block handlers),
 [explayouts_core](https://github.com/se7enxweb/explayouts_core) (services),
 [explayouts_standard](https://github.com/se7enxweb/explayouts_standard) (standard blocks),
@@ -532,13 +532,13 @@ the class edit page. Every feature's setting, default and test is in the overvie
 ./console exp:user-login-check           # duplicate logins; --fix-index adds the unique index
 ```
 
-Step by step: [Moving a site from LoveStack](doc/bc/6.0/love/MIGRATION.md) and the upgrade guide's
-[Coming from LoveStack](doc/guides/upgrading.md#coming-from-lovestack).
+Step by step: [Moving a site from LoveStack](doc/en/us/bc/6.0/love/MIGRATION.md) and the upgrade guide's
+[Coming from LoveStack](doc/en/us/guides/upgrading.md#coming-from-lovestack).
 
 ## Documentation and credits
 
-The overview, feature by feature: [doc/bc/6.0/lovestack.md](doc/bc/6.0/lovestack.md), with the detailed pages in
-[doc/bc/6.0/love/](doc/bc/6.0/love/README.md). LoveStack itself: <https://github.com/mugoweb/ezpublish-legacy>.
+The overview, feature by feature: [doc/en/us/bc/6.0/lovestack.md](doc/en/us/bc/6.0/lovestack.md), with the detailed pages in
+[doc/en/us/bc/6.0/love/](doc/en/us/bc/6.0/love/README.md). LoveStack itself: <https://github.com/mugoweb/ezpublish-legacy>.
 
 Thank you to **Mugo Web**, who built these improvements and published them as open source under the GNU GPL. Every
 rebuilt feature keeps their copyright notice and names the LoveStack commit it comes from. "LoveStack" is Mugo Web's
@@ -547,7 +547,7 @@ implies an endorsement by Mugo Web. They are friends of this project, and we are
 
 # Installation
 
-Read [doc/INSTALL.md](doc/INSTALL.md) or go to [exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html](https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html)
+Read [doc/en/us/INSTALL.md](doc/en/us/INSTALL.md) or go to [exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html](https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html)
 
 The shortest path needs only PHP and Composer (SQLite, no database server):
 
@@ -570,10 +570,10 @@ git switch -c my-site
 composer install
 ```
 
-[Develop with Git](doc/help/develop-with-git.md) explains each step, and how to turn an existing site into clones.
+[Develop with Git](doc/en/us/help/develop-with-git.md) explains each step, and how to turn an existing site into clones.
 
 Optional extensions that `composer.json` brings but leaves inactive, such as Exponential Intelligence and the job
-queue, are switched on afterwards; [doc/INSTALL.md](doc/INSTALL.md#10-after-installing) says how.
+queue, are switched on afterwards; [doc/en/us/INSTALL.md](doc/en/us/INSTALL.md#10-after-installing) says how.
 
 # Issue tracker
 

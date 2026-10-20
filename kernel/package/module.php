@@ -50,7 +50,7 @@ $ViewList['create'] = array(
     // The entry of the content tree's Advanced > Export menu: the content object wizard opened with a node (or its
     // subtree) selected and some choices preset, package/create/(creator)/ezcontentobject/(node)/<node id>
     // [/(subtree)/1][/(classes)/0|1][/(versions)/current|all]. It only fills in the wizard: the package is made
-    // when the user confirms its steps. Guide: doc/bc/6.0/content-export-menu.md
+    // when the user confirms its steps. Guide: doc/en/us/bc/6.0/content-export-menu.md
     'unordered_params' => array( 'creator' => 'Creator',
                                  'node' => 'NodeID',
                                  'subtree' => 'Subtree',
@@ -115,7 +115,7 @@ $ViewList['install'] = array(
                                     'PackageStep' => 'PackageStep',
                                     'SkipPackageButton' => 'SkipPackage' ),
     'post_action_parameters' => array( 'InstallPackage' => array( 'InstallerType' => 'InstallerType',
-                                                                  // install the content objects as drafts (doc/bc/6.0/package-json-format.md)
+                                                                  // install the content objects as drafts (doc/en/us/bc/6.0/package-json-format.md)
                                                                   'AsDrafts' => 'AsDrafts',
                                                                   'DraftsExisting' => 'DraftsExisting',
                                                                   // install in the background, as a content job (expContentJobPackageInstall)

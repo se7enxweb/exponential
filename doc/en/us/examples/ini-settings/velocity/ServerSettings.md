@@ -44,7 +44,7 @@ Never edit `settings/velocity.ini` itself: an update replaces it. Put the settin
 > \[FrankenPHPSettings\] and \[PHPServerSettings\] may set Port, HTTPSPort, Host,  
 > Workers, SpareWorkers and DocumentRoot for their engine; left empty, the  
 > value here applies. Settings only one server has are reported by \`status\`  
-> when they are set for another. See doc/bc/6.0/velocity-engines.md.  
+> when they are set for another. See doc/en/us/bc/6.0/velocity-engines.md.  
 
 Default: `php`.
 

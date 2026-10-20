@@ -4,7 +4,7 @@
  * aria-label or aria-labelledby. A title or a placeholder is not a name. Hidden fields, buttons with a value and
  * controls hidden from assistive technology (aria-hidden="true") need none. Labels point at ids that exist, an
  * aria-label does not replace a label that has text, and includes that take their id as a parameter get one.
- * doc/bc/6.0/admin4-styling.md (review checklist).
+ * doc/en/us/bc/6.0/admin4-styling.md (review checklist).
  *
  * The check reads the template source, not the rendered page: a <label for> must name the id in the same file, and
  * a control inside an include is named where it is included only when listed in INCLUDED below.

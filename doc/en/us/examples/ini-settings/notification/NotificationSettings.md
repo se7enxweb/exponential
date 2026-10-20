@@ -30,7 +30,7 @@ Never edit `settings/notification.ini` itself: an update replaces it. Put the se
 > publishes with notification. Only the ezpublish event of the version is left  
 > out: approval (collaboration) notifications are sent as before. Set it per  
 > siteaccess (the admin siteaccess only, for example) to offer it there only.  
-> doc/features/6.0/publish-without-notification.md  
+> doc/en/us/features/6.0/publish-without-notification.md  
 
 Default: `disabled`.
 
@@ -51,7 +51,7 @@ PublishWithoutNotification=disabled
 > (the filter content/notification/create gets false).  
 > With an empty list nothing makes an event. disabled (default): every class.  
 > Approval (collaboration) notifications are not concerned.  
-> doc/features/6.0/publish-without-notification.md  
+> doc/en/us/features/6.0/publish-without-notification.md  
 
 Default: `disabled`.
 

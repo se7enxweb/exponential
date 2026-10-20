@@ -19,7 +19,7 @@
  * option whose value or text matches, and "United States" used to match "United States Minor Outlying Islands"
  * because it sorts before "United States of America".
  *
- * Guide: doc/features/6.0/country-groups.md
+ * Guide: doc/en/us/features/6.0/country-groups.md
  */
 class expCountryGroups
 {

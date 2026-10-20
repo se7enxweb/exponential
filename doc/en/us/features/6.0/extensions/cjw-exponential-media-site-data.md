@@ -32,7 +32,7 @@ suite.
 ## Related pages
 
 - [Platform Nexus starter](../platform-nexus-starter.md)
-- [Chronicle](../../../history/extensions/cjw-exponential-media-site-data.md) and [release notes](../../../changelogs/extensions/cjw-exponential-media-site-data.md)
+- [Chronicle](../../../history/extensions/cjw-exponential-media-site-data.md) and [release notes](../../../../../changelogs/extensions/cjw-exponential-media-site-data.md)
 - [Change ledger](../../../history/ledger/cjw-exponential-media-site-data.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)

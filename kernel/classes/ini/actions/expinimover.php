@@ -10,7 +10,7 @@
  * source that holds nothing more keeps its file and wrapper); then the value in effect of every moved variable
  * is read again for every siteaccess, and when one differs from before the move, both files are put back from
  * what was read before the write (a file the move created is moved aside to var/backup/ini/), unless --force.
- * The message names the file whose value now wins. Guide: doc/bc/6.0/console-exp-ini.md.
+ * The message names the file whose value now wins. Guide: doc/en/us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

@@ -19,7 +19,7 @@
  * Reading 25 translation files of 1 to 3 MB takes seconds, so the result is cached: in memory for the process and in
  * <cache directory>/uiswitch/language-catalogue.json, both keyed by a signature of the names, sizes and modification
  * times of the files read. A changed or added file builds the catalogue again on its next use; nothing needs clearing.
- * Guide: doc/features/6.0/ui-switch-languages.md
+ * Guide: doc/en/us/features/6.0/ui-switch-languages.md
  */
 class expUISwitchLanguageCatalogue
 {

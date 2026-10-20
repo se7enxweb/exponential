@@ -1,4 +1,4 @@
-{* Setup > Log files (setup/logs; doc/features/6.0/log-viewer.md): one log file, followed live, searched and
+{* Setup > Log files (setup/logs; doc/en/us/features/6.0/log-viewer.md): one log file, followed live, searched and
    cross-referenced.
 
    Variables (kernel/private/classes/views/setup/logs.php): log_file, log_error, log_initial, log_search,

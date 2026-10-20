@@ -1,6 +1,6 @@
 <?php
 /**
- * Following a log file by byte offset (doc/features/6.0/log-viewer.md, "Following a file"), on synthetic files in a
+ * Following a log file by byte offset (doc/en/us/features/6.0/log-viewer.md, "Following a file"), on synthetic files in a
  * temporary directory.
  *
  *  LV-10  the first look: the last InitialBytes, from the first whole line, up to the end

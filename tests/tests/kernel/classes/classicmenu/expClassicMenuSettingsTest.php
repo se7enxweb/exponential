@@ -377,7 +377,7 @@ class expClassicMenuSettingsTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'ignore_visibility', $text, "$id leaves hidden pages out" );
             $this->assertSame( substr_count( $text, '{def ' ), substr_count( $text, '{undef ' ), "$id undefines what it defines" );
         }
-        $guide = file_get_contents( expIniEditor::realRoot() . 'doc/guides/classic-menu-settings.md' );
+        $guide = file_get_contents( expIniEditor::realRoot() . 'doc/en/us/guides/classic-menu-settings.md' );
         foreach ( $examples as $id => $example )
             $this->assertStringContainsString( $example['text'], $guide, "the guide shows $id word for word" );
     }

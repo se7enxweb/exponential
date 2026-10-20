@@ -2,7 +2,7 @@
 
 The Redis and Valkey cache backend was published on 20 July 2026, with a cache clear script, release preparation for Exponential 6.0.15 and, on 30 July, a single hash for the compiled INI cache. See the [feature page](../../features/6.0/extensions/sevenx_valkey_cache.md).
 
-This page lists **every one of the 4 changes** of the repository `sevenx_valkey_cache` between 2026-07-20 and 2026-07-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_valkey_cache.md); what each release contains is in the [release notes](../../changelogs/extensions/sevenx_valkey_cache.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_valkey_cache.md).
+This page lists **every one of the 4 changes** of the repository `sevenx_valkey_cache` between 2026-07-20 and 2026-07-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/sevenx_valkey_cache.md); what each release contains is in the [release notes](../../../../changelogs/extensions/sevenx_valkey_cache.md); how to use the extension is on its [feature page](../../features/6.0/extensions/sevenx_valkey_cache.md).
 
 | Kind | Changes |
 |---|---|
@@ -31,6 +31,6 @@ The month across all extensions: [July 2026](months/2026-07.md). [Ledger of this
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/sevenx_valkey_cache.md)
-- [Release notes](../../changelogs/extensions/sevenx_valkey_cache.md)
+- [Release notes](../../../../changelogs/extensions/sevenx_valkey_cache.md)
 - [Change ledger](../ledger/sevenx_valkey_cache.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

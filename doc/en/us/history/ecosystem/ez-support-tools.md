@@ -72,7 +72,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - [Site bundles](../../features/6.0/platform-site-bundles.md)
 - [Extension page](../../features/6.0/extensions/ez-support-tools.md)
-- [Release changelog](../../changelogs/extensions/ez-support-tools.md)
+- [Release changelog](../../../../changelogs/extensions/ez-support-tools.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

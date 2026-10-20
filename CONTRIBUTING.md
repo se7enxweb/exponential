@@ -40,12 +40,12 @@ git checkout -b feature/your-feature
 3. Write clear, concise commit messages whose subject starts with what the change does: `Added: `, `Updated: `,
    `Fixed: `, `Removed: ` or `Renamed: `, e.g. `Fixed: The redirect keeps the query string on the own host`. The
    commit-msg hook of `.githooks/` (`make hooks`) and CI check it; see
-   [the quality checks](doc/features/6.0/quality-checks.md).
+   [the quality checks](doc/en/us/features/6.0/quality-checks.md).
 
 4. Keep your pull request focused. If you have multiple contributions, submit multiple pull requests.
 
 5. Templates and stylesheets of the administration designs (and of extensions' admin designs) follow
-   [Styling the administration](doc/bc/6.0/admin4-styling.md): no `<style>` block or `style=""` attribute, the
+   [Styling the administration](doc/en/us/bc/6.0/admin4-styling.md): no `<style>` block or `style=""` attribute, the
    shared `.a4-*` components and `--a4-*` tokens with dark values, module CSS in `stylesheets/modules/`. Its code
    review checklist applies to every such pull request; `tests/tests/design/AdminStylingRulesTest.php` checks it.
 
@@ -58,7 +58,7 @@ git checkout -b feature/your-feature
 3. Keep the file manifest current: every commit that adds, changes or removes a file updates its line in
    `share/filelist.md5` (`make manifest-fix`). Run `make hooks` once in your clone, and the pre-commit hook checks
    it, the PHP syntax and the code style for every commit. When CI still finds a stale line, its summary shows the
-   lines to change; see [Pull requests](doc/features/6.0/quality-checks.md#pull-requests).
+   lines to change; see [Pull requests](doc/en/us/features/6.0/quality-checks.md#pull-requests).
 
 4. Push your changes to your fork.
 

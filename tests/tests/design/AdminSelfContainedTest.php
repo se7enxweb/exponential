@@ -1,6 +1,6 @@
 <?php
 /**
- * admin4 works with no other admin design present (doc/features/6.0/admin4-design.md). Every template a view of the
+ * admin4 works with no other admin design present (doc/en/us/features/6.0/admin4-design.md). Every template a view of the
  * kernel fetches or an admin4 template includes ("design:<path>.tpl") is found in admin4 itself or in
  * design/standard, never only in design/admin or design/admin3; every override template that an override.ini of the
  * tree names (MatchFile) is in admin4's or standard's override folder when a classic admin design has it. A path

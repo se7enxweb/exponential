@@ -209,7 +209,7 @@ class eZContentObjectTreeNodeOperations
     }
 
     /**
-     * Records a subtree copy (doc/bc/6.0/audit.md, content.node.copy, F2): the subtree's root is the parent event,
+     * Records a subtree copy (doc/en/us/bc/6.0/audit.md, content.node.copy, F2): the subtree's root is the parent event,
      * every other node copied a child. Used by copySubtree() and the content/copysubtree view.
      *
      * @param int $srcNodeID

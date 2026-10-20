@@ -1,6 +1,6 @@
 <?php
 /**
- * The missing files check, the parts that need no database (doc/features/6.0/content-checks.md, "Missing files"):
+ * The missing files check, the parts that need no database (doc/en/us/features/6.0/content-checks.md, "Missing files"):
  * reading the request, the files an image field names, how a field version is judged, the queries, and the target
  * of the broken relations that shows them.
  *

@@ -5,7 +5,7 @@
    and packager. An error of the last Continue is shown at its field and linked from the summary above. The POST
    names are those of before: PackageName, PackageSummary, PackageDescription, PackageVersion, PackageFormat,
    PackageLicence, PackageHost, PackagePackager. The same file is in design/admin and design/admin4.
-   Guide: doc/features/6.0/package-wizard.md *}
+   Guide: doc/en/us/features/6.0/package-wizard.md *}
 {def $k_name = 'Package name'|i18n( 'kernel/package' )
      $k_summary = 'Summary'|i18n( 'kernel/package' )
      $k_version = 'Version'|i18n( 'kernel/package' )
@@ -56,7 +56,7 @@
 <section class="a4-card" aria-labelledby="pkg-info-format">
     <div class="a4-card-head"><h3 class="a4-h3" id="pkg-info-format">{'Format and license'|i18n( 'design/admin/package' )}</h3></div>
     <div class="a4-form is-wide a4-package-form">
-        {* The format the package is kept in (doc/bc/6.0/package-json-format.md); either is downloadable in both *}
+        {* The format the package is kept in (doc/en/us/bc/6.0/package-json-format.md); either is downloadable in both *}
         <div class="a4-field">
             <label for="PackageFormat">{'Format'|i18n( 'design/admin/package' )}</label>
             <select id="PackageFormat" name="PackageFormat" aria-describedby="PackageFormat-help">

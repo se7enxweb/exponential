@@ -40,9 +40,9 @@ database, so a development installation needs no database server ([Database supp
 ## What happens to your pull request
 
 - CI runs syntax, manifest, commit message, code style, PHPStan and test checks on the supported PHP versions
-  (`doc/bc/6.0/ci.md`).
+  (`doc/en/us/bc/6.0/ci.md`).
 - It is reviewed. "Every pull request is merged, and its commits are kept as the contributor wrote them and never
-  rewritten" (`doc/bc/6.0/ci.md`); what needs changing is changed in commits on top.
+  rewritten" (`doc/en/us/bc/6.0/ci.md`); what needs changing is changed in commits on top.
 
 ## License
 

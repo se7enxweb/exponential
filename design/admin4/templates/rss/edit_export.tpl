@@ -12,7 +12,7 @@
    BrowseImageButton, RemoveImageButton, SourceBrowse_<n>, RemoveSource_<n>, Update_Item_Class), and every template
    variable is still set. Cancel (RemoveButton) discards the draft and goes back to the RSS list. This is an edit
    view, which admin4 draws without its main card; .exp-standalone gives the page its own. The same file is in
-   design/admin and design/admin4. Guide: doc/guides/rss-feeds.md *}
+   design/admin and design/admin4. Guide: doc/en/us/guides/rss-feeds.md *}
 
 {def $feed_url = first_set( $rss_feed_url, '' )
      $source_count = $rss_export.item_list|count}

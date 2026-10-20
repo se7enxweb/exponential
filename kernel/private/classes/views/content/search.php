@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/search.php, moved into a class (#207 stage 1). The file kernel/content/search.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/search.php:
@@ -211,7 +211,7 @@ class Search extends \Exponential\Runnable\ModuleView
                                                          "NodeID" => isset( $subTreeArray[0] ) && $subTreeArray[0] != 1 ? $subTreeArray[0] : null  ) ) );
         }
 
-        // Audit (doc/bc/6.0/audit.md, content.search.query): a sampled read
+        // Audit (doc/en/us/bc/6.0/audit.md, content.search.query): a sampled read
         if ( $searchRequested && isset( $searchResult ) && is_array( $searchResult ) && class_exists( 'expAuditHook' ) )
             \expAuditHook::read( 'content.search.query', null, function () use ( $searchText, $searchResult ) {
                 $phrase = (string)$searchText;

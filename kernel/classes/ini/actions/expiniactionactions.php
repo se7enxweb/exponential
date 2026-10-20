@@ -4,7 +4,7 @@
  *
  * exp:ini actions: the actions of the command, the built-in ones and those extensions register in
  * ini.ini [IniCommandSettings] Actions[], with their aliases and registrations that cannot work.
- * Guide: doc/bc/6.0/console-exp-ini.md.
+ * Guide: doc/en/us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

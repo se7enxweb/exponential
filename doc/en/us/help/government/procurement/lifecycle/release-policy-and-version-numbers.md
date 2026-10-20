@@ -63,9 +63,9 @@ every extension ([About and package pages](../../../../features/6.0/about-and-pa
 
 | Record | Where |
 |---|---|
-| Kernel changes per version | `doc/changelogs/<series>/<version>.md`, for example the [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| Kernel changes per version | `doc/changelogs/<series>/<version>.md`, for example the [6.0.15 changelog](../../../../../../changelogs/6.0/6.0.15.md) |
 | Extension changes | `doc/changelogs/extensions/<name>.md` |
-| Changes that need action at upgrade | pages in `doc/bc/6.0/`, linked from the changelog |
+| Changes that need action at upgrade | pages in `doc/en/us/bc/6.0/`, linked from the changelog |
 | The story behind changes since December 2023 | [the history](../../../../history/README.md) |
 
 Changelog entries are grouped by Added, Updated, Removed and Renamed, assembled from the commit history. A supplier can

@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/pdf/<page id> (doc/features/6.0/help-system.md, "Print and PDF"): the help page as a PDF file to
+ * exphelp/pdf/<page id> (doc/en/us/features/6.0/help-system.md, "Print and PDF"): the help page as a PDF file to
  * download. Only pages the viewer serves (expHelpDocumentIndex: git-tracked, allowed); anything else is a 404, as is
  * the view when [PdfSettings] Enabled=false. The file is made by expHelpPdf (cached per page and index signature).
  *

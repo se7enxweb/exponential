@@ -1,6 +1,6 @@
 <?php
 /**
- * The contentcheck/brokenrelations view (doc/features/6.0/content-checks.md, "Broken relations"): visible,
+ * The contentcheck/brokenrelations view (doc/en/us/features/6.0/content-checks.md, "Broken relations"): visible,
  * published content below a node (contentcheck/brokenrelations/<node id>, the content tree's top node without one) that refers
  * to deleted, trashed, hidden or unpublished content, page by page. Read only. Needs the policy
  * contentcheck/brokenrelations; answers on administration siteaccesses only. With the target "Missing files"

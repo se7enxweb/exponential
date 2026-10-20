@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/section/edit.php, moved into a class (#207 stage 1). The file kernel/section/edit.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/section/edit.php:
@@ -54,7 +54,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             {
                 $section = new \eZSection( array() );
             }
-            // Audit (doc/bc/6.0/audit.md, content.section.change): the values before the edit
+            // Audit (doc/en/us/bc/6.0/audit.md, content.section.change): the values before the edit
             $auditBefore = $SectionID == 0 ? null : array( 'name' => (string)$section->attribute( 'name' ),
                                                           'identifier' => (string)$section->attribute( 'identifier' ),
                                                           'navigation_part' => (string)$section->attribute( 'navigation_part_identifier' ) );
@@ -97,7 +97,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                     } );
                 \eZContentCacheManager::clearContentCacheIfNeededBySectionID( $section->attribute( 'id' ) );
                 \ezpEvent::getInstance()->notify( 'content/section/cache', array( $section->attribute( 'id' ) ) );
-                // the list says what was done; the section pages: doc/guides/sections.md
+                // the list says what was done; the section pages: doc/en/us/guides/sections.md
                 $http->setSessionVariable( ListView::FEEDBACK, array( 'type' => $auditBefore === null ? 'created' : 'saved',
                                                                      'names' => array( (string)$section->attribute( 'name' ) ),
                                                                      'id' => (int)$section->attribute( 'id' ) ) );

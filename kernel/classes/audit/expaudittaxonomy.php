@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit taxonomy registry (doc/bc/6.0/audit.md, "Taxonomy", "Naming rules", "The event catalogue").
+ * The audit taxonomy registry (doc/en/us/bc/6.0/audit.md, "Taxonomy", "Naming rules", "The event catalogue").
  *
  * A name is 3 to 6 ranks of [a-z][a-z0-9_]*, joined by dots, in one of five domains (content, access, system,
  * commerce, data). The kernel's catalogue is built in (each name with its severity, its default and its channel);
@@ -42,7 +42,7 @@ class expAuditTaxonomy
 
     /**
      * The kernel's catalogue: name => severity, default (on | off | always | sampled), channel ('' = the channel
-     * of the file it describes). 143 names, generated from the catalogue tables of doc/bc/6.0/audit.md.
+     * of the file it describes). 143 names, generated from the catalogue tables of doc/en/us/bc/6.0/audit.md.
      *
      * @var array
      */
@@ -153,7 +153,7 @@ class expAuditTaxonomy
         'system.cronjob.fail' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system' ),
         'system.cronjob.pause' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.cronjob.resume' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
-        // the log viewer (Setup > Log files, doc/features/6.0/log-viewer.md)
+        // the log viewer (Setup > Log files, doc/en/us/features/6.0/log-viewer.md)
         'system.log.read' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system' ),
         'system.log.download' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.log.rotate' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
@@ -165,11 +165,11 @@ class expAuditTaxonomy
         'system.package.import' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.package.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.install.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
-        // demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): once per process; it cannot be switched off
+        // demo mode (EXP_DEMO_MODE=1, doc/en/us/bc/6.0/demo-mode.md): once per process; it cannot be switched off
         'system.demo.mode' => array( 'severity' => 'warning', 'default' => 'always', 'channel' => 'system' ),
         'system.upgrade.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
-        // the Velocity watchdog (doc/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
+        // the Velocity watchdog (doc/en/us/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
         // something notable; a run that finds the engine running records nothing (not even system.command.run)
         'system.velocity.watchdog.start' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.velocity.watchdog.backoff' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system' ),

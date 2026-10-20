@@ -8,7 +8,7 @@
  */
 
 /**
- * A personal API key (publishing key) of a user: one row of expapikey (doc/guides/api-keys.md).
+ * A personal API key (publishing key) of a user: one row of expapikey (doc/en/us/guides/api-keys.md).
  *
  * A key is the string expk_<id>_<secret>. <id> is twelve random characters [a-z0-9] that identify the key in
  * lists, logs and secret scanners and are stored as they are (key_prefix = "expk_<id>"). <secret> is forty random

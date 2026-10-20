@@ -2,7 +2,7 @@
  * The multi-object edit form (content/multiedit.tpl): the buttons that expand and collapse every item, the items
  * that need fixing opened, and the autosave of the drafts. The autosave's settings and texts are data attributes of
  * #multiedit-autosave, which the template draws only when autosave is on. A file of its own, so the page runs under a
- * Content Security Policy without 'unsafe-inline' (doc/features/6.0/content-security-policy.md).
+ * Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     function panels()

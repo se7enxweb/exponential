@@ -1,6 +1,6 @@
 <?php
 /**
- * The help search (doc/features/6.0/help-system.md, "Search") on a fixture installation (a throwaway git repository
+ * The help search (doc/en/us/features/6.0/help-system.md, "Search") on a fixture installation (a throwaway git repository
  * in the temporary directory): ranking, filters, snippets, paging, and that nothing outside the index is found.
  *
  *  HS-01  tokenize(): lower case, Unicode letters, punctuation split, no empty tokens
@@ -26,12 +26,12 @@ class expHelpSearchContractTest extends PHPUnit\Framework\TestCase
             return;
         self::$root = sys_get_temp_dir() . '/exphelp-search-' . bin2hex( random_bytes( 6 ) );
         $pages = array(
-            'doc/help/zebra-title.md' => "---\naudience: editor\ncategory: getting-started\n---\n# Zebra crossings\n\nNothing else here.\n",
-            'doc/help/zebra-heading.md' => "---\naudience: admin\ncategory: layouts\n---\n# Traffic\n\n## Zebra rules\n\nRules.\n",
-            'doc/help/zebra-body.md' => "---\naudience: developer\ncategory: layouts\n---\n# Animals\n\nA zebra appears once in the body.\n",
-            'doc/help/zebra-body-many.md' => "---\naudience: developer\ncategory: layouts\n---\n# Stripes\n\nzebra zebra zebra zebra and more zebra.\n",
-            'doc/help/xss.md' => "# Snippets\n\nThe word quagga <script>alert(1)</script> next to <img src=x onerror=alert(1)> markup.\n",
-            'doc/help/unicode.md' => "# Übersicht\n\nGrüße aus Köln: Straßenbahn.\n",
+            'doc/en/us/help/zebra-title.md' => "---\naudience: editor\ncategory: getting-started\n---\n# Zebra crossings\n\nNothing else here.\n",
+            'doc/en/us/help/zebra-heading.md' => "---\naudience: admin\ncategory: layouts\n---\n# Traffic\n\n## Zebra rules\n\nRules.\n",
+            'doc/en/us/help/zebra-body.md' => "---\naudience: developer\ncategory: layouts\n---\n# Animals\n\nA zebra appears once in the body.\n",
+            'doc/en/us/help/zebra-body-many.md' => "---\naudience: developer\ncategory: layouts\n---\n# Stripes\n\nzebra zebra zebra zebra and more zebra.\n",
+            'doc/en/us/help/xss.md' => "# Snippets\n\nThe word quagga <script>alert(1)</script> next to <img src=x onerror=alert(1)> markup.\n",
+            'doc/en/us/help/unicode.md' => "# Übersicht\n\nGrüße aus Köln: Straßenbahn.\n",
             'doc/notes.txt' => "Plain text page about the quagga too.\n",
             'AGENTS.md' => "# zebra private\n\nquagga private\n",
             'settings/site.ini' => "[X]\nzebra=quagga\n",
@@ -43,7 +43,7 @@ class expHelpSearchContractTest extends PHPUnit\Framework\TestCase
         }
         foreach ( array( 'init -q', 'config user.email t@example.invalid', 'config user.name T', 'add -A', 'commit -q -m fixture' ) as $a )
             exec( 'git -C ' . escapeshellarg( self::$root ) . ' ' . $a . ' 2>&1' );
-        file_put_contents( self::$root . '/doc/help/untracked.md', "# Zebra untracked\n\nquagga\n" );
+        file_put_contents( self::$root . '/doc/en/us/help/untracked.md', "# Zebra untracked\n\nquagga\n" );
     }
 
     public static function tearDownAfterClass(): void

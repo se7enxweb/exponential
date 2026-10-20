@@ -1,4 +1,4 @@
-{* exphelp/manual[/<remote_id>] (doc/features/6.0/help-content.md): the manuals of help maintained as content, or one
+{* exphelp/manual[/<remote_id>] (doc/en/us/features/6.0/help-content.md): the manuals of help maintained as content, or one
    manual with its table of contents (chapters and topics the user may see; not Released ones only for those who may
    edit them, marked as a preview).
 

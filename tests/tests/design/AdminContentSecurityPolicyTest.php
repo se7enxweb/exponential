@@ -1,7 +1,7 @@
 <?php
 /**
  * The administration (admin4, admin4l) runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md): script-src 'self' runs no inline <script>, no on...= attribute and
+ * (doc/en/us/features/6.0/content-security-policy.md): script-src 'self' runs no inline <script>, no on...= attribute and
  * no javascript: URL; style-src 'self' applies no style="" attribute. Checked on the files alone; no database.
  *
  * - CSP-01: the templates admin4 and admin4l render carry no inline script, no event handler attribute, no
@@ -467,7 +467,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( array(), $unexpected,
             'Inline code in an administration template: move scripts into a file (ezscript), handlers to a listener '
-            . 'or the data-a4-* actions of a4_actions.js, styles to a class (doc/features/6.0/content-security-policy.md)' );
+            . 'or the data-a4-* actions of a4_actions.js, styles to a class (doc/en/us/features/6.0/content-security-policy.md)' );
         $this->assertSame( array(), $fewer );
     }
 

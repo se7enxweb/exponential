@@ -63,11 +63,11 @@ and at which line the problem sits, not only that one exists.
 - Cached output keeps the comments it was rendered with. Clear the content and template caches when you switch the
   key.
 - A request from one siteaccess no longer reads another siteaccess's override list (a later fix, see the
-  [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)).
+  [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
 
 ## Related pages
 
 - [Exp Debug bar](exp-debug-bar.md), [debug bar reference](../../bc/6.0/debug-bar.md)
 - [Template editor: create, order and edit overrides](template-editor-overrides.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
 - History: [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md)

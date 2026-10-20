@@ -190,7 +190,7 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
 
     /**
      * A name in a JS string inside an onclick attribute (the classic admin design): JS-escaped, then HTML-escaped for
-     * the attribute. The admin4 openers have no handler (doc/features/6.0/content-security-policy.md): the name is
+     * the attribute. The admin4 openers have no handler (doc/en/us/features/6.0/content-security-policy.md): the name is
      * data-menu-title, HTML-escaped once, and the values are JSON (json_encode), HTML-escaped for the attribute.
      */
     public function testNamesInInlineMenuHandlersAreEscapedTwice()

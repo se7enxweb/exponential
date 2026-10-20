@@ -31,6 +31,6 @@ with ezwebin and ezflow. Version 0.9.1 added an **email notification**: its text
 ## Related pages
 
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
-- [Chronicle](../../../history/extensions/ezpm.md) and [release notes](../../../changelogs/extensions/ezpm.md)
+- [Chronicle](../../../history/extensions/ezpm.md) and [release notes](../../../../../changelogs/extensions/ezpm.md)
 - [Change ledger](../../../history/ledger/ezpm.md)
 - [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

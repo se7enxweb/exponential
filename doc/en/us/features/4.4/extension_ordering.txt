@@ -55,4 +55,4 @@ Load ordering nodes are to be
 * *extends*: indicates that this extension overrides some features (usually design, also settings) from the documented
   one. Interpreted as 'before' in the loading.php implementation.
 
-See doc/features/4.4/extension_xml.txt for a complete example.
+See doc/en/us/features/4.4/extension_xml.txt for a complete example.

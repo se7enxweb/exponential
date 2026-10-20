@@ -1,6 +1,6 @@
 <?php
 /**
- * Password re-entry before the audit's manage actions (doc/bc/6.0/audit.md, Q9; [AuditConsoleSettings]
+ * Password re-entry before the audit's manage actions (doc/en/us/bc/6.0/audit.md, Q9; [AuditConsoleSettings]
  * ReauthForManage, ReauthMinutes).
  *
  * With ReauthForManage=enabled, a manage action of the console ("Verify now" on the dashboard, the console and

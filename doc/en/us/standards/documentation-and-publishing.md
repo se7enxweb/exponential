@@ -31,7 +31,7 @@ actually does, points to the files and tests that show it, and names the gaps.
 | PDF (ISO 32000) | files declare PDF 1.3 | **Partly complies** | `lib/ezpdf` writes `%PDF-1.3`; help PDFs embed and subset TrueType fonts with `ToUnicode` maps |
 | PDF/UA (ISO 14289), tagged PDF | 1 | **Does not comply** | no structure tree, no `MarkInfo`, no document language in any PDF writer |
 | OpenDocument Format (ODF) | 1.0 written | **Partly complies** | `ezodf` extension 6.1.11 imports and exports OpenDocument text, writes `office:version='1.0'` |
-| Doxygen API documentation | Doxyfile 1.5.4 format | **Partly complies** | `doc/doxygen/Doxyfile` exists, is outdated and not run in CI; its output is excluded from the help |
+| Doxygen API documentation | Doxyfile 1.5.4 format | **Partly complies** | `doc/en/us/doxygen/Doxyfile` exists, is outdated and not run in CI; its output is excluded from the help |
 
 ## DITA 1.3
 
@@ -147,8 +147,8 @@ Foundation, is a copyleft license for manuals and other documentation.
   `NoticePage=README-LICENSE.md`, `ExplainerPage=help/free-documentation.md`. The logic is in
   `kernel/classes/help/exphelplicense.php`.
 - Inherited pages keep their own terms. `[License] OtherLicensePathRules[]` lists the documentation inherited from
-  the code base of eZ Publish 4 (`doc/features/[2-5].*`, `doc/bc/[2-5].*`, `doc/specifications/[2-5].*`,
-  `doc/specifications/trunk/*`, `doc/changelogs/[2-5].*`, `doc/shop/*` and others). For those, the help shows
+  the code base of eZ Publish 4 (`doc/en/us/features/[2-5].*`, `doc/en/us/bc/[2-5].*`, `doc/en/us/specifications/[2-5].*`,
+  `doc/en/us/specifications/trunk/*`, `doc/changelogs/[2-5].*`, `doc/en/us/shop/*` and others). For those, the help shows
   `OtherCopyright` and `OtherLicenseName=GNU General Public License, version 2` instead of the GFDL notice; the
   project does not relicense them.
 - Readers get a plain explanation in [Free documentation](../help/free-documentation.md).
@@ -188,7 +188,7 @@ source code. "Or later" lets a recipient follow the terms of any later GPL versi
 
 ### Known gaps
 
-- The wording is not uniform. The historical header template `doc/standards/header.txt` says "version 2.0" without
+- The wording is not uniform. The historical header template `doc/en/us/standards/header.txt` says "version 2.0" without
   "or later", and `LICENSE` itself does not repeat the "or later" grant that `composer.json` makes.
 - Third-party code bundled inside `lib/` keeps its own notices; a full license inventory of bundled code was not
   made for this page. **Unverified.**
@@ -328,10 +328,10 @@ standard; it is listed here because it defines how the API reference would be pr
 
 ### How Exponential complies
 
-- `doc/doxygen/Doxyfile` configures Doxygen for the kernel: `PROJECT_NAME = "Exponential "`,
+- `doc/en/us/doxygen/Doxyfile` configures Doxygen for the kernel: `PROJECT_NAME = "Exponential "`,
   `OUTPUT_DIRECTORY = doc/generated`, `INPUT` from `lib/ezdb/classes`, `lib/ezpdf/classes`, `lib/ezsoap/classes`,
   `lib/eztemplate/classes`, `kernel/classes`, `kernel/common` and other `lib/` directories.
-- The help never serves Doxygen output: `settings/exphelp.ini [IndexSettings] ExcludePatterns[]=doc/doxygen/*` and the same
+- The help never serves Doxygen output: `settings/exphelp.ini [IndexSettings] ExcludePatterns[]=doc/en/us/doxygen/*` and the same
   default in `kernel/classes/help/exphelpallowlist.php`; `kernel/classes/help/exphelpcontextregistry.php` refuses
   page ids under `doxygen/`.
 

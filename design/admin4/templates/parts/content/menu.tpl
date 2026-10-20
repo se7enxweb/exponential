@@ -14,7 +14,7 @@
 {* Trashcan. *}
 {include uri='design:parts/left_trash.tpl'}
 
-{* The content finder box: only with contentfinder/search (doc/features/6.0/content-finder.md). *}
+{* The content finder box: only with contentfinder/search (doc/en/us/features/6.0/content-finder.md). *}
 {if ne( $ui_context, 'browse' )}
 {include uri='design:contentfinder/box.tpl'}
 {/if}

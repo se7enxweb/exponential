@@ -160,5 +160,5 @@ control.
 
 - [Feature page](../../features/6.0/extensions/syndication.md), [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
 - [Cronjobs in the console](../../features/6.0/cronjobs-console.md), [Operating a site](../../guides/operating-a-site.md)
-- [Chronicle](../../history/extensions/syndication.md), [release notes](../../changelogs/extensions/syndication.md)
+- [Chronicle](../../history/extensions/syndication.md), [release notes](../../../../changelogs/extensions/syndication.md)
 - Months: [2025-09](../../history/extensions/months/2025-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-07](../../history/extensions/months/2026-07.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)

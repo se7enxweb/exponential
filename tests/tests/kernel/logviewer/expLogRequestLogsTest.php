@@ -1,6 +1,6 @@
 <?php
 /**
- * The request logs in the log viewer (doc/features/6.0/request-logs.md): var/log/404.log and var/log/security.log as
+ * The request logs in the log viewer (doc/en/us/features/6.0/request-logs.md): var/log/404.log and var/log/security.log as
  * first-class kernel logs, without a database.
  *
  *  LV-200  the keys 404 and security resolve, are kernel logs with their labels and levels; their archives too

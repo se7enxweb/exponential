@@ -162,5 +162,5 @@ curl -s -H "Authorization: Bearer $TOKEN" -d '{"command":"uptime"}' https://host
 - [Control panel and dashboard](velocity-control-panel.md) (the sign-in the shell needs), [packages and binaries](velocity-packages-and-binaries.md) (`vc-qshell`), [Velocity web server](velocity-web-server.md)
 - Specifications: [engine settings](../../specifications/6.0/velocity-engine-settings.md) (programs, `qbixconsole`), [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md) (the admin surface)
 - Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md)
-- [Changelog: Exponential Velocity engine](../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
 - History: [24 September](../../history/velocity/2026-09d.md), [25 to 30 September](../../history/velocity/2026-09e.md)

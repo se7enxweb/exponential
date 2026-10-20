@@ -2,7 +2,7 @@
 
 The meta data and sitemap extension gained an Open Graph image in August 2026 (1.3.6, 1.3.7), then persistent worker, translation and jQuery 4 fixes and a sitemap cronjob fix in the autumn. See the [feature page](../../features/6.0/extensions/xrowmetadata.md).
 
-This page lists **every one of the 24 changes** of the repository `xrowmetadata` between 2023-12-24 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/xrowmetadata.md); what each release contains is in the [release notes](../../changelogs/extensions/xrowmetadata.md); how to use the extension is on its [feature page](../../features/6.0/extensions/xrowmetadata.md).
+This page lists **every one of the 24 changes** of the repository `xrowmetadata` between 2023-12-24 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/xrowmetadata.md); what each release contains is in the [release notes](../../../../changelogs/extensions/xrowmetadata.md); how to use the extension is on its [feature page](../../features/6.0/extensions/xrowmetadata.md).
 
 | Kind | Changes |
 |---|---|
@@ -86,6 +86,6 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/xrowmetadata.md)
-- [Release notes](../../changelogs/extensions/xrowmetadata.md)
+- [Release notes](../../../../changelogs/extensions/xrowmetadata.md)
 - [Change ledger](../ledger/xrowmetadata.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

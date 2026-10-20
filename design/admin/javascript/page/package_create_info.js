@@ -1,7 +1,7 @@
 /*
  * admin and admin4 package/create, step info: the description and the link of the license follow the license picked in
  * the list. The same file is in design/admin and design/admin4. A file of its own, so the page runs under a Content
- * Security Policy without 'unsafe-inline' (doc/features/6.0/content-security-policy.md).
+ * Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function()
 {

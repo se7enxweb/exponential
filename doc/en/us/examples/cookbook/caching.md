@@ -149,7 +149,7 @@ reads; `cache_ttl` is read by `kernel/classes/eznodeviewfunctions.php`; the sett
 - `kernel/classes/eznodeviewfunctions.php` (`cache_ttl`), `settings/site.ini` (`[ContentSettings]`, `[TemplateSettings]`),
   `settings/viewcache.ini`
 - `extension/ezjscore/settings/site.ini.append.php` (`[Cache]`, `[Cache_ezjscore]`)
-- `doc/guides/caches.md`, `doc/bc/6.0/httpcache.md`, `doc/install/08-serving-the-site.md` (8.3.14)
+- `doc/en/us/guides/caches.md`, `doc/en/us/bc/6.0/httpcache.md`, `doc/en/us/install/08-serving-the-site.md` (8.3.14)
 
 ## Related pages
 

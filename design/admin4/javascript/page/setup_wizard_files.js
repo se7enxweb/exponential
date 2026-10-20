@@ -3,7 +3,7 @@
  * setup/modulewizard, setup/settingsextension, setup/templateoperator, setup/workflowevent): the generated files fold
  * open and shut on a click on their head, and "Open all" / "Close all" (data-a4-wz-fold="open" / "close") fold every
  * file. A file of its own, so the pages run under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md). setup/designextension and setup/moduleextension load it too.
+ * (doc/en/us/features/6.0/content-security-policy.md). setup/designextension and setup/moduleextension load it too.
  */
 ( function () {
     // Folding a file open and shut. The markup is already complete; this only

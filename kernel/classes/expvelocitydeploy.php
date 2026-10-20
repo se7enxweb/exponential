@@ -251,7 +251,7 @@ class expVelocityDeploy
         $result = array( 'ok' => !$failed, 'dry-run' => !empty( $this->options['dry-run'] ),
                          'seconds' => round( microtime( true ) - $start, 1 ), 'steps' => $report );
 
-        // Audit (doc/bc/6.0/audit.md, system.velocity.deploy): a deploy that ran (not a dry run)
+        // Audit (doc/en/us/bc/6.0/audit.md, system.velocity.deploy): a deploy that ran (not a dry run)
         if ( empty( $this->options['dry-run'] ) && class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'system.velocity.deploy', function () use ( $report, $failed, $start ) {
                 $steps = array();

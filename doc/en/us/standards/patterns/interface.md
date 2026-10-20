@@ -153,7 +153,7 @@ A contract that implementations follow; code depends on the interface, not on a 
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expContentCheckFileHandler` | interface | `kernel/classes/contentcheck/expcontentcheckfilehandler.php:15` | Says which storage files a file-backed field stands for (doc/features/6.0/content-checks.md, "Missing files"). | – |
+| `expContentCheckFileHandler` | interface | `kernel/classes/contentcheck/expcontentcheckfilehandler.php:15` | Says which storage files a file-backed field stands for (doc/en/us/features/6.0/content-checks.md, "Missing files"). | – |
 
 ### kernel/classes/contentjob (1)
 
@@ -195,7 +195,7 @@ A contract that implementations follow; code depends on the interface, not on a 
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expLogManagerInterface` | interface | `kernel/classes/logviewer/explogmanagerinterface.php:19` | Log management (doc/features/6.0/log-rotation.md, "For developers"): what the command line, the cronjob part "logs" and the log viewer's actions use. | – |
+| `expLogManagerInterface` | interface | `kernel/classes/logviewer/explogmanagerinterface.php:19` | Log management (doc/en/us/features/6.0/log-rotation.md, "For developers"): what the command line, the cronjob part "logs" and the log viewer's actions use. | – |
 
 ### kernel/classes/mailpreferences (1)
 

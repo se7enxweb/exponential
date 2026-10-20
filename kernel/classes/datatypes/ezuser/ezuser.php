@@ -279,7 +279,7 @@ class eZUser extends eZPersistentObject
         if ( $this->Login )
         {
             // Demo mode (EXP_DEMO_MODE=1): the stored password of an administrator stays, whatever path changed it
-            // (doc/bc/6.0/demo-mode.md). class_exists: a worker started before the class was added.
+            // (doc/en/us/bc/6.0/demo-mode.md). class_exists: a worker started before the class was added.
             if ( class_exists( 'expDemoMode' ) && expDemoMode::enabled() )
                 expDemoMode::guardStore( $this );
             $auditBefore = $this->auditStoredRow();
@@ -314,7 +314,7 @@ class eZUser extends eZPersistentObject
     }
 
     /**
-     * Records what a store changed (doc/bc/6.0/audit.md): access.user.create for a new account,
+     * Records what a store changed (doc/en/us/bc/6.0/audit.md): access.user.create for a new account,
      * access.user.email.change and access.user.login.change, access.user.password.change (never the password, the
      * hash or its type).
      *
@@ -833,14 +833,14 @@ WHERE user_id = '" . $userID . "' AND
             return false;
         }
 
-        // Audit (doc/bc/6.0/audit.md, access.user.remove): the e-mail address under the privacy rule of email
+        // Audit (doc/en/us/bc/6.0/audit.md, access.user.remove): the e-mail address under the privacy rule of email
         if ( class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'access.user.remove', array( 'object' => expAuditHook::user( $user ),
                 'before' => array( 'login' => (string)$user->attribute( 'login' ), 'email' => (string)$user->attribute( 'email' ) ) ) );
 
         eZUser::removeSessionData( $userID );
 
-        // E-mail preferences (doc/bc/6.0/mail-preferences.md): the preferences and pending confirmations are erased and
+        // E-mail preferences (doc/en/us/bc/6.0/mail-preferences.md): the preferences and pending confirmations are erased and
         // the consent log anonymised, keeping the proof of each withdrawal; the suppression list (hashes) stays
         if ( class_exists( 'expMailPreferences' ) )
         {
@@ -1026,7 +1026,7 @@ WHERE user_id = '" . $userID . "' AND
         eZUser::updateLastVisit( $userID, true );
         eZUser::setCurrentlyLoggedInUser( $user, $userID );
 
-        // Who logs in (doc/bc/6.0/audit.md, access.session.login): the user logging in is the actor, with the new
+        // Who logs in (doc/en/us/bc/6.0/audit.md, access.session.login): the user logging in is the actor, with the new
         // session (hashed); every login handler reaches this through eZUser::loginUser()
         if ( class_exists( 'expAuditHook' ) )
         {
@@ -1055,7 +1055,7 @@ WHERE user_id = '" . $userID . "' AND
         if ( $userID )
             eZUser::setFailedLoginAttempts( $userID );
 
-        // A failed login (doc/bc/6.0/audit.md, access.session.login.failed): never the password; a login typed for
+        // A failed login (doc/en/us/bc/6.0/audit.md, access.session.login.failed): never the password; a login typed for
         // no account is often a password in the wrong field, so it is only ever recorded hashed (attempted_login)
         if ( class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'access.session.login.failed', function () use ( $userID, $login ) {
@@ -2121,7 +2121,7 @@ WHERE user_id = '" . $userID . "' AND
         }
         $db->commit();
 
-        // Audit (doc/bc/6.0/audit.md): the account locked by failed logins (access.user.lock, once, when the
+        // Audit (doc/en/us/bc/6.0/audit.md): the account locked by failed logins (access.user.lock, once, when the
         // count reaches [UserSettings] MaxNumberOfFailedLogin), unlocked by an administrator (access.user.unlock)
         if ( class_exists( 'expAuditHook' ) )
         {

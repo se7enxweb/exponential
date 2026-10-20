@@ -5,7 +5,7 @@
    The copy is a new role named "Copy of <name>" with the same policies and no assignments; it opens in the role
    editor. A role with a policy beyond the editor's own access cannot be copied (PreventPrivilegeEscalation); the
    page says so and the button is off. An edit view, drawn without the main card: .exp-standalone gives it its own. The same file is in
-   design/admin and design/admin4. Guide: doc/guides/roles-and-policies.md *}
+   design/admin and design/admin4. Guide: doc/en/us/guides/roles-and-policies.md *}
 
 <form method="post" action={concat( '/role/copy/', $role.id )|ezurl} class="a4-page a4-standalone">
 <div class="context-block">

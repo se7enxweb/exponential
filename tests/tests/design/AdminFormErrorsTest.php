@@ -68,7 +68,7 @@ class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
 
     public function testTheScriptMarksTheControlsOfEveryDatatype()
     {
-        // the script is a file of its own (no inline script, doc/features/6.0/content-security-policy.md)
+        // the script is a file of its own (no inline script, doc/en/us/features/6.0/content-security-policy.md)
         $this->assertStringContainsString( "{ezscript( array( 'page/content_edit_attribute.js' ) )}",
                                            self::read( 'design/admin4/templates/content/edit_attribute.tpl' ) );
         $tpl = self::read( 'design/admin4/javascript/page/content_edit_attribute.js' );

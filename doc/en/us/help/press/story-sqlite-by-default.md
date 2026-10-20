@@ -39,8 +39,8 @@ improvement to the kernel" ([README, Recent improvements](https://github.com/se7
 |---|---|---|
 | 6.0.0 is stable, and SQLite arrives as a database that needs no server | January 2024 | [January 2024](../../history/2024/2024-01a.md) |
 | SQLite support in releases 6.0.1 to 6.0.3, refined since | January to April 2024 | [SQLite database support](../../features/6.0/sqlite-database.md) |
-| SQLite is the setup wizard's default; one-command install on SQLite | 16 to 30 September 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
-| A write queue: concurrent publishes wait their turn instead of failing with "database is locked" | 1 and 2 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
+| SQLite is the setup wizard's default; one-command install on SQLite | 16 to 30 September 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
+| A write queue: concurrent publishes wait their turn instead of failing with "database is locked" | 1 and 2 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
 
 The 2026 changes are in the 6.0.15 development line, which is not released.
 

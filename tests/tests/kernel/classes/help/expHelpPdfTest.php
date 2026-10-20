@@ -1,6 +1,6 @@
 <?php
 /**
- * Print and PDF of a help page (doc/features/6.0/help-system.md, "Print and PDF"), DB-less: expHelpPdf, the writer,
+ * Print and PDF of a help page (doc/en/us/features/6.0/help-system.md, "Print and PDF"), DB-less: expHelpPdf, the writer,
  * the canvas, the font subset, the view and the print hook of the viewer.
  *
  *  HP-01  a PDF is made only for a served page: untracked files, traversal, root *.md, settings and unknown ids are
@@ -40,8 +40,8 @@ class expHelpPdfTest extends PHPUnit\Framework\TestCase
             return;
         self::$root = sys_get_temp_dir() . '/exphelp-pdf-' . bin2hex( random_bytes( 6 ) );
         $files = array(
-            'doc/help/start.md' => "---\ntitle: Getting started\n---\n# Getting started\n\nWelcome to the **help**.\n\n## First step\n\n| A | B |\n|---|---|\n| one | two |\n\n```php\necho '<b>not bold</b>';\n```\n",
-            'doc/help/umlaut.md' => "# Größe und Übermaß\n\nText.\n",
+            'doc/en/us/help/start.md' => "---\ntitle: Getting started\n---\n# Getting started\n\nWelcome to the **help**.\n\n## First step\n\n| A | B |\n|---|---|\n| one | two |\n\n```php\necho '<b>not bold</b>';\n```\n",
+            'doc/en/us/help/umlaut.md' => "# Größe und Übermaß\n\nText.\n",
             'AGENTS.md' => "# private\n",
             'settings/site.ini' => "[DatabaseSettings]\nPassword=secret\n",
         );
@@ -52,7 +52,7 @@ class expHelpPdfTest extends PHPUnit\Framework\TestCase
         }
         foreach ( array( 'init -q', 'config user.email t@example.invalid', 'config user.name T', 'add -A', 'commit -q -m fixture' ) as $args )
             exec( 'git -C ' . escapeshellarg( self::$root ) . ' ' . $args . ' 2>&1' );
-        file_put_contents( self::$root . '/doc/help/untracked.md', "# Untracked\n" );
+        file_put_contents( self::$root . '/doc/en/us/help/untracked.md', "# Untracked\n" );
     }
 
     public static function tearDownAfterClass(): void
@@ -125,13 +125,13 @@ class expHelpPdfTest extends PHPUnit\Framework\TestCase
     /** HP-02 */
     public function testOutputIsAPdfWithTitleAndText()
     {
-        $pdf = self::plainWriter()->render( array( 'title' => 'My help page', 'summary' => 'About it', 'path' => 'doc/help/x.md', 'changed' => 1700000000 ),
+        $pdf = self::plainWriter()->render( array( 'title' => 'My help page', 'summary' => 'About it', 'path' => 'doc/en/us/help/x.md', 'changed' => 1700000000 ),
                                             '<div class="a4-help-body"><h1 id="my-help-page">My help page</h1><p>Paragraph text here.</p><ul><li>An item</li></ul></div>' );
         $this->assertStringStartsWith( '%PDF-', $pdf );
         $this->assertStringContainsString( '%%EOF', substr( $pdf, -16 ) );
         $this->assertStringContainsString( '/Title (My help page)', $pdf );
         $this->assertStringContainsString( '(Paragraph)', $pdf );
-        $this->assertStringContainsString( '(doc/help/x.md)', $pdf );
+        $this->assertStringContainsString( '(doc/en/us/help/x.md)', $pdf );
 
         $unicode = self::plainWriter()->render( array( 'title' => 'Größe' ), '<p>x</p>' );
         $utf16 = "\xFE\xFF" . mb_convert_encoding( 'Größe', 'UTF-16BE', 'UTF-8' );

@@ -3,7 +3,7 @@
    job entries of extensions (xrowextract: Import into this item, Jobs, History, Schedules). Each entry opens its
    tool's form filled in for the item. A top-level menu, opened by the button with %nodeID% and %canImport% (1 for a
    container below which the user may create content). Nothing when the user has no entry.
-   Guide: doc/bc/6.0/content-export-menu.md *}
+   Guide: doc/en/us/bc/6.0/content-export-menu.md *}
 {set-block variable=$import_export_items}
 {include uri='design:popupmenu/popup_export_items.tpl' menu_id='ImportExportMenu' item_prefix='node-export' sub_menu_depth=1 with_import=true()}
 {/set-block}

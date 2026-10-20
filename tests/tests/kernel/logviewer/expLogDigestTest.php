@@ -1,6 +1,6 @@
 <?php
 /**
- * The error digest of the log viewer (doc/features/6.0/log-viewer.md, "Error digest"), without a database.
+ * The error digest of the log viewer (doc/en/us/features/6.0/log-viewer.md, "Error digest"), without a database.
  *
  *  LV-130  headline(): the first line, with the next one when the first is only a label
  *  LV-131  normalize(): numbers, hex, uuids, quoted values, paths and ERR references set aside; whitespace collapsed

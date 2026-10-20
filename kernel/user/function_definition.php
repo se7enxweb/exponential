@@ -126,7 +126,7 @@ $FunctionList['account_status'] = array( 'name' => 'account_status',
                                          'parameters' => array( array( 'name' => 'user_id',
                                                                        'type' => 'integer',
                                                                        'required' => true ) ) );
-// Deactivate and move (doc/features/6.0/user-hygiene.md): whether a user's page and the context menu offer
+// Deactivate and move (doc/en/us/features/6.0/user-hygiene.md): whether a user's page and the context menu offer
 // Deactivate and move and Reactivate and move back for an object, for the current user: hash( deactivate, reactivate ),
 // both false when [UserSettings] DeactivateAndMove is not enabled or the user may not (see expUserDeactivation::offers())
 $FunctionList['deactivation_offers'] = array( 'name' => 'deactivation_offers',

@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/ezsessiongc.php, moved into a class (#207 stage 1). The file bin/php/ezsessiongc.php is one call to it.
  * @description Remove expired sessions as defined by site.ini [Session] SessionTimeout
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/ezsessiongc.php:

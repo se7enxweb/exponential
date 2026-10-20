@@ -68,5 +68,5 @@ rather than looking for one.
 - [Kickstarter: install a whole site from one file](kickstarter-cli.md), [installing Exponential in one command](install-in-one-command.md)
 - [MongoDB database support](mongodb-database-support.md) (the wizard changes of the same weeks)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - [Chronicle: June 2026, second half](../../history/2026/2026-06b.md)

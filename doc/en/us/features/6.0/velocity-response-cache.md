@@ -174,5 +174,5 @@ Full upgrade steps: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine
 - [Control panel](velocity-control-panel.md) (Cache tab), [static files and images](velocity-static-files-and-images.md) (file caching), [scheduler](velocity-scheduler.md) (the cache sweep), [Velocity: running Exponential in a persistent-worker web server](velocity-persistent-worker-server.md)
 - Specifications: [worker pool](../../specifications/6.0/velocity-worker-pool.md), [engine settings](../../specifications/6.0/velocity-engine-settings.md), [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md) (what is never cached)
 - Exponential caching: [HTTP cache](../../bc/6.0/http-caching.md), [the role-aware HTTP cache](../../bc/6.0/httpcache.md), [the response cache, and getting out of the network's way](../../bc/6.0/response-cache-and-navigation.md), [Velocity engines](../../bc/6.0/velocity-engines.md)
-- [Changelog: Exponential Velocity engine](../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
 - History: [22 September](../../history/velocity/2026-09b.md), [25 to 30 September](../../history/velocity/2026-09e.md)

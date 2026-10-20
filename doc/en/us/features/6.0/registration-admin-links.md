@@ -261,4 +261,4 @@ says, as before.
 - [Roles, policies and unactivated users](../../guides/roles-and-policies.md)
 - [E-mail preferences](mail-preferences.md) (the site secret)
 - [Audit trail](audit-trail.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)

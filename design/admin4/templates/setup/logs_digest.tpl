@@ -1,4 +1,4 @@
-{* The error digest of the log viewer (setup/logsdigest; doc/features/6.0/log-viewer.md, "Error digest"): per log, the
+{* The error digest of the log viewer (setup/logsdigest; doc/en/us/features/6.0/log-viewer.md, "Error digest"): per log, the
    distinct errors and warnings of the last hours, normalized and counted, most frequent first, each linked to the log's
    view filtered to it and to its newest entry; a group can be marked known (hidden for this user) and listed again.
    Variables: digest_logs (key, id, label, groups (id, level, text, sample, literal, count, first, last, known, link,

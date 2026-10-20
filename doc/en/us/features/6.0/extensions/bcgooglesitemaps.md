@@ -43,7 +43,7 @@ For richer SEO (titles, descriptions, Open Graph images, news and mobile sitemap
 - [xrowmetadata](xrowmetadata.md)
 - [Cronjobs in the console](../cronjobs-console.md)
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
-- [Chronicle](../../../history/extensions/bcgooglesitemaps.md) and [release notes](../../../changelogs/extensions/bcgooglesitemaps.md)
+- [Chronicle](../../../history/extensions/bcgooglesitemaps.md) and [release notes](../../../../../changelogs/extensions/bcgooglesitemaps.md)
 - [Change ledger](../../../history/ledger/bcgooglesitemaps.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-01](../../../history/extensions/months/2024-01.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

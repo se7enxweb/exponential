@@ -8,7 +8,7 @@
  */
 
 /**
- * Log management (doc/features/6.0/log-rotation.md, "For developers"): what the command line, the cronjob part "logs"
+ * Log management (doc/en/us/features/6.0/log-rotation.md, "For developers"): what the command line, the cronjob part "logs"
  * and the log viewer's actions use. The kernel's implementation is expLogManager; another one (a cluster that keeps
  * its logs elsewhere) implements the same.
  *

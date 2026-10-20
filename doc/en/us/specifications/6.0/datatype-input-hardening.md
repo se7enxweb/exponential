@@ -115,4 +115,4 @@ Everything else on this page is fixed behaviour with no setting.
 - Specifications: [Security defaults of September 2026](security-defaults-2026-09.md), [Security hardening 6.0.13](security-hardening-6.0.13.md), [The August 2026 security patches](security-hardening-2026-08.md)
 - Upgrade notes: [Hardening guide](../../bc/6.0/hardening.md), [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md), [RAD tools — security](../../bc/6.0/rad-security.md)
 - Features: [Form expired page](../../features/6.0/form-expired-page.md) (a refused form is a 403 page)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md), [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md), [February 2026](../../history/2026/2026-02.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md), [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md), [February 2026](../../history/2026/2026-02.md)

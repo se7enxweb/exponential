@@ -3,7 +3,7 @@
  * File containing the expContentCheckFileTable class.
  *
  * The file of a field whose datatype keeps it in a table with the columns of ezbinaryfile: contentobject_attribute_id,
- * version, filename, original_filename, mime_type (doc/features/6.0/content-checks.md, "Missing files"). The file is
+ * version, filename, original_filename, mime_type (doc/en/us/features/6.0/content-checks.md, "Missing files"). The file is
  * var/<site>/storage/original/<the mime type's group>/<filename>, as eZBinaryFile::storedFileInfo() and
  * eZMedia::storedFileInfo() build it. The table of each datatype is contentcheck.ini [MissingFileSettings]
  * Tables[<datatype>] (ezbinaryfile and ezmedia in the kernel).

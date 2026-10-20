@@ -48,7 +48,7 @@ php bin/php/ezcache.php --clear-tag=template,content --allow-root-user
 
 - [ezwt](ezwt.md), [ezflow](ezflow.md), [ezdemo](ezdemo.md), [ezwebin-ezpackage](ezwebin-ezpackage.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/ezwebin.md) and [release notes](../../../changelogs/extensions/ezwebin.md)
+- [Chronicle](../../../history/extensions/ezwebin.md) and [release notes](../../../../../changelogs/extensions/ezwebin.md)
 - [Change ledger](../../../history/ledger/ezwebin.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-01](../../../history/extensions/months/2024-01.md), [2026-04](../../../history/extensions/months/2026-04.md), [2026-07](../../../history/extensions/months/2026-07.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

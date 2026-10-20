@@ -25,7 +25,7 @@ class eZPackage
     public $InstallData;
     /**
      * The serialization the package is stored in: 'xml' (package.xml, the default) or 'json' (package.json, see
-     * expPackageJson and doc/bc/6.0/package-json-format.md).
+     * expPackageJson and doc/en/us/bc/6.0/package-json-format.md).
      * @var string
      */
     public $Format = 'xml';
@@ -1287,7 +1287,7 @@ class eZPackage
     static function import( $archiveName, &$packageName, $dbAvailable = true, $repositoryID = false, $skipExisting = false )
     {
         $result = eZPackage::importUnaudited( $archiveName, $packageName, $dbAvailable, $repositoryID, $skipExisting );
-        // Audit (doc/bc/6.0/audit.md, system.package.import): the archive's sha256, never its content
+        // Audit (doc/en/us/bc/6.0/audit.md, system.package.import): the archive's sha256, never its content
         if ( class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'system.package.import', function () use ( $result, $archiveName, $packageName ) {
                 $ok = $result instanceof eZPackage;
@@ -2200,7 +2200,7 @@ class eZPackage
      */
     function install( &$installParameters )
     {
-        // Audit (doc/bc/6.0/audit.md, system.package.install): the parent of what the install records
+        // Audit (doc/en/us/bc/6.0/audit.md, system.package.install): the parent of what the install records
         if ( !class_exists( 'expAuditHook' ) || !expAuditHook::on( 'system.package.install' ) )
             return $this->installUnaudited( $installParameters );
         $parent = expAuditHook::begin( 'system.package.install', array( 'object' => $this->auditObject() ) );
@@ -2302,7 +2302,7 @@ class eZPackage
         $asDrafts = !empty( $installParameters['as_drafts'] );
         foreach ( $installItems as $item )
         {
-            // As drafts (doc/bc/6.0/package-json-format.md): only content objects are installed, as drafts; classes,
+            // As drafts (doc/en/us/bc/6.0/package-json-format.md): only content objects are installed, as drafts; classes,
             // extensions, settings, design files and scripts would change the site at once and are listed instead
             if ( $asDrafts && $item['type'] !== 'ezcontentobject' )
             {
@@ -2431,7 +2431,7 @@ class eZPackage
     {
         $installed = $this->Parameters['install_type'] == 'install' && $this->isInstalled();
         $result = $this->uninstallUnaudited( $uninstallParameters );
-        // Audit (doc/bc/6.0/audit.md, system.package.uninstall)
+        // Audit (doc/en/us/bc/6.0/audit.md, system.package.uninstall)
         if ( $installed && class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'system.package.uninstall', array( 'object' => $this->auditObject(),
                 'result' => $result ? 'success' : 'failed', 'reason' => $result ? null : 'error',

@@ -11,7 +11,7 @@ type: help
 
 This page is for the members of an evaluation panel and the procurement officer who prepares their work. It gives a
 checklist you can copy into your own evaluation file, and for each line the place where the evidence for Exponential
-can be found. The evidence sources are the standards pages in `doc/standards/` and the feature documentation of the
+can be found. The evidence sources are the standards pages in `doc/en/us/standards/` and the feature documentation of the
 repository; nothing on this page replaces your own tests.
 
 > **Template** - adapt to your procurement rules; not legal advice.

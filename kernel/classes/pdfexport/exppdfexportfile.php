@@ -14,7 +14,7 @@
  * A stored export is written to <storage directory>/pdf/<file name> (var/<site>/storage/pdf/handbook.pdf), through
  * the cluster file handler, so it is also served from that path by the web server. The name comes from a form
  * field, so it is checked before it becomes part of a path: only letters, digits, ".", "_" and "-", no leading dot,
- * ending in ".pdf". Nothing here reads the database. Guide: doc/guides/pdf-exports.md
+ * ending in ".pdf". Nothing here reads the database. Guide: doc/en/us/guides/pdf-exports.md
  */
 class expPDFExportFile
 {

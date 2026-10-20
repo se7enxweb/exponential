@@ -196,7 +196,7 @@ class expMaintenance
     }
 
     /**
-     * Records maintenance switched on, changed or off (doc/bc/6.0/audit.md, system.maintenance.change): the mode
+     * Records maintenance switched on, changed or off (doc/en/us/bc/6.0/audit.md, system.maintenance.change): the mode
      * and the reason, never the allowed addresses.
      *
      * @param array|false $before the state before, false when off

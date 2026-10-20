@@ -61,7 +61,7 @@ not of this extension's file.
 - [Remote services (expservices)](../remote-services-expservices.md)
 - [Backend ezjscore services](../../../bc/6.0/backend_ezjscore_services.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/ezjscore.md) and [release notes](../../../changelogs/extensions/ezjscore.md)
+- [Chronicle](../../../history/extensions/ezjscore.md) and [release notes](../../../../../changelogs/extensions/ezjscore.md)
 - [Change ledger](../../../history/ledger/ezjscore.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - [March 2024](../../../history/2024/2024-03.md), [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

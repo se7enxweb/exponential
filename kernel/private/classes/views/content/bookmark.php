@@ -1,8 +1,8 @@
 <?php
 /**
  * The code of kernel/content/bookmark.php, moved into a class (#207 stage 1). The file kernel/content/bookmark.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
- * User guide of the page: doc/guides/bookmarks.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * User guide of the page: doc/en/us/guides/bookmarks.md
  */
 /*
  * The original header of kernel/content/bookmark.php:

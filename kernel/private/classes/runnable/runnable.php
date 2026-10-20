@@ -13,7 +13,7 @@ namespace Exponential\Runnable;
  * The base of everything Exponential runs from a file: CLI commands (bin/), cronjob parts (cronjobs/) and
  * module views (kernel/<module>/<view>.php, extension/<ext>/modules/<module>/<view>.php). The file keeps
  * its path and becomes one call; the work is done by a class, so it can be called from inside the system,
- * subclassed and re-implemented. Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * subclassed and re-implemented. Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  *   Runnable
  *     Command       a CLI script            bin/php/ezcache.php       -> Exponential\Command\Kernel\EzCache

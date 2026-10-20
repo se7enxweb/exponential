@@ -1,10 +1,10 @@
 <?php
 /**
  * The code of kernel/user/password.php, moved into a class (#207 stage 1). The file kernel/user/password.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * The rules, the inline errors per field, the success state, ending the other sessions and the "your password
- * was changed" mail: doc/features/6.0/modern-password-change.md (rules in expPasswordPolicy).
+ * was changed" mail: doc/en/us/features/6.0/modern-password-change.md (rules in expPasswordPolicy).
  */
 /*
  * The original header of kernel/user/password.php:
@@ -70,7 +70,7 @@ class Password extends \Exponential\Runnable\ModuleView
         $sessionsEnded = null;
         $otherSessionsSignedOut = false;
         $notificationSent = false;
-        // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): an administrator's password cannot be changed
+        // Demo mode (EXP_DEMO_MODE=1, doc/en/us/bc/6.0/demo-mode.md): an administrator's password cannot be changed
         $demoLocked = class_exists( 'expDemoMode' ) && \expDemoMode::protectsPassword( $user );
 
         if ( $demoLocked && $http->hasPostVariable( "OKButton" ) )
@@ -160,7 +160,7 @@ class Password extends \Exponential\Runnable\ModuleView
         $newPassword = '';
         $confirmPassword = '';
 
-        // Audit (doc/bc/6.0/audit.md, access.user.password.change.failed): a refused change, never a password; a
+        // Audit (doc/en/us/bc/6.0/audit.md, access.user.password.change.failed): a refused change, never a password; a
         // change that succeeds is recorded by eZUser::store() (access.user.password.change)
         if ( ( $oldPasswordNotValid || $newPasswordNotMatch || $failedRules ) && class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'access.user.password.change.failed', array( 'object' => \expAuditHook::user( (int)$UserID ),
@@ -196,7 +196,7 @@ class Password extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "newPasswordNotMatch", $newPasswordNotMatch );
         $tpl->setVariable( "newPasswordTooShort", $newPasswordTooShort );
         $tpl->setVariable( "message", $message );
-        // the modern page (doc/features/6.0/modern-password-change.md); old templates ignore these
+        // the modern page (doc/en/us/features/6.0/modern-password-change.md); old templates ignore these
         $tpl->setVariable( "password_changed", $passwordChanged );
         $tpl->setVariable( "min_length", $policy->minLength() );
         $tpl->setVariable( "password_rules", $policy->rulesForTemplate( $failedRules ) );

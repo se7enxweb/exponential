@@ -12,7 +12,7 @@
  * who may open the page and whose content they see stays decided there (History::canOpen(),
  * History::canSeeVersionContent()).
  *
- * Guide: doc/bc/6.0/draft-edit-access.md ("The versions of such an object")
+ * Guide: doc/en/us/bc/6.0/draft-edit-access.md ("The versions of such an object")
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

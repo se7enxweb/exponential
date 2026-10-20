@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/search with view parameters (doc/features/6.0/help-system.md, "Search"): the canonical address
+ * exphelp/search with view parameters (doc/en/us/features/6.0/help-system.md, "Search"): the canonical address
  * (expHelp::searchUrl()), the parsing and checking of view parameters and GET values, the redirect of GET form
  * requests (never for JSON), facet and pager links, and that module.php declares the parameters. No database.
  *

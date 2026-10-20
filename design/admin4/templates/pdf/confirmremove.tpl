@@ -5,7 +5,7 @@
    link back to the list and changes nothing.
 
    Variables: pdf_remove_items (array of hash( 'object', the eZPDFExport, 'info', what the list's cards show )).
-   The same file is in design/admin and design/admin4. Guide: doc/guides/pdf-exports.md *}
+   The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/pdf-exports.md *}
 {def $files = 0
      $bytes = 0}
 {foreach $pdf_remove_items as $item}{if $item.info.file_exists}{set $files = inc( $files )}{set $bytes = sum( $bytes, $item.info.file_size )}{/if}{/foreach}

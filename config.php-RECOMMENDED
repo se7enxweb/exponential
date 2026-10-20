@@ -22,7 +22,7 @@
    Demo mode is not set here either, and cannot be: it comes only from the
    environment variable EXP_DEMO_MODE=1 of the server's processes, for public
    demos. A constant of that name in this file does nothing. See
-   doc/bc/6.0/demo-mode.md and doc/guides/environment-variables.md.
+   doc/en/us/bc/6.0/demo-mode.md and doc/en/us/guides/environment-variables.md.
 */
 
 /*
@@ -103,7 +103,7 @@
     keep their mode. One of them is enough, the other follows from it. A
     value that is no mode, or that takes rights from the owner, is ignored
     and reported in the PHP error log.
-    doc/bc/6.0/file-modes.md
+    doc/en/us/bc/6.0/file-modes.md
     Do keep octal numbers as values here ( meaning they start by a 0 ).
 */
 //define( 'EZP_DIR_MODE_MAX', 0750 );
@@ -115,7 +115,7 @@
     exp:ini). The default is 0640: owner read/write, group read. A file that
     already exists keeps its own mode, owner and group. The bit that lets other
     users write is always removed, whatever is set here.
-    See doc/bc/6.0/ini-save-file-permissions.md.
+    See doc/en/us/bc/6.0/ini-save-file-permissions.md.
 */
 //define( 'EZP_INI_SAVE_FILE_PERMISSION', 0640 );
 
@@ -336,7 +336,7 @@
    Serves cached content views before the autoloader, INI or database load,
    for signed-in visitors too. Inert until settings/httpcache.ini
    [HttpCacheSettings] Enabled=enabled has written
-   var/<site>/cache/exphttpcache/contract.php. See doc/bc/6.0/httpcache.md.
+   var/<site>/cache/exphttpcache/contract.php. See doc/en/us/bc/6.0/httpcache.md.
 */
 if ( is_file( __DIR__ . '/kernel/private/classes/httpcache/ezphttpcacheearlyexit.php' ) )
     require __DIR__ . '/kernel/private/classes/httpcache/ezphttpcacheearlyexit.php';

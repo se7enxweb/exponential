@@ -1,5 +1,5 @@
 /*
- * setup/logs (doc/features/6.0/log-viewer.md): the log viewer's page. It follows the open file through
+ * setup/logs (doc/en/us/features/6.0/log-viewer.md): the log viewer's page. It follows the open file through
  * setup/logsfeed with short requests (never a stream that holds a server process): the interval doubles while
  * nothing arrives, up to the configured maximum, comes back to the minimum when lines arrive, waits as long as a
  * 429 answer says, stops for an archive and while the tab is hidden. Only the lines in view are drawn (a fixed row

@@ -36,11 +36,11 @@ until they do.
 
 | Fact | Where |
 |---|---|
-| Latest tagged release of each extension | The index [Release notes of the extensions ...](../../changelogs/extensions/README.md) |
-| What a release contains | The extension's page in that index, for example [eztags](../../changelogs/extensions/eztags.md) |
+| Latest tagged release of each extension | The index [Release notes of the extensions ...](../../../../changelogs/extensions/README.md) |
+| What a release contains | The extension's page in that index, for example [eztags](../../../../changelogs/extensions/eztags.md) |
 | Notes kept in the extension's own repository | expai (Exponential Intelligence) and expqueue, linked from the index |
-| The version installed on a site | `ezinfo.php` and `extension.xml` of the extension, and **Setup > Extensions** ([index, How to find the version you run](../../changelogs/extensions/README.md#how-to-find-the-version-you-run)) |
-| Which version the kernel's development line requires | [6.0.15 changelog, required packages](../../changelogs/6.0/6.0.15.md#required-packages-root-composerjson-2026-10-10-to-2026-10-12) |
+| The version installed on a site | `ezinfo.php` and `extension.xml` of the extension, and **Setup > Extensions** ([index, How to find the version you run](../../../../changelogs/extensions/README.md#how-to-find-the-version-you-run)) |
+| Which version the kernel's development line requires | [6.0.15 changelog, required packages](../../../../changelogs/6.0/6.0.15.md#required-packages-root-composerjson-2026-10-10-to-2026-10-12) |
 | The story of an extension over time | [Extension chronicles](../../history/extensions/README.md) |
 
 The release rule for extensions is written down: the version is written into `ezinfo.php` and `extension.xml`,
@@ -58,7 +58,7 @@ committed, and then tagged; a wrong version is fixed by the next one
 
 Four extensions ship inside the kernel itself ([Getting the code](../../install/03-getting-the-code.md#35-extensions-are-composer-packages)).
 One of them, ezjscore, also has release notes of its own, with 1.5.5 as the latest release in the index on
-18 October 2026 ([ezjscore release notes](../../changelogs/extensions/ezjscore.md)). When in doubt, quote the version
+18 October 2026 ([ezjscore release notes](../../../../changelogs/extensions/ezjscore.md)). When in doubt, quote the version
 from the extension's release notes page and link it.
 
 ## Credit and naming

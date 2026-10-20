@@ -37,7 +37,7 @@ After this lesson, learners can:
 
 ### How to present it
 
-1. Open any lesson in the Help center and show the page facts: the source file (under `doc/help/trainers/...`) and
+1. Open any lesson in the Help center and show the page facts: the source file (under `doc/en/us/help/trainers/...`) and
    the **Edit on GitHub** link (3 minutes).
 2. Explain the three paths (5 minutes):
    - **Private adaptation** for your organization: allowed under the GFDL, with the conditions of lesson 1.4.

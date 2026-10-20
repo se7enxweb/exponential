@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/ezcheckphptag.php, moved into a class (#207 stage 1). The file bin/php/ezcheckphptag.php is one call to it.
  * @description Check files for characters before the PHP start tag or after the end tag
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/ezcheckphptag.php:

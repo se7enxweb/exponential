@@ -2,7 +2,7 @@
  * The URL aliases of a node (content/urlalias.tpl): the field for a new alias (AliasText) gets the focus, with
  * its text selected.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 jQuery(function( $ )//called on document.ready
 {

@@ -81,7 +81,7 @@ depends on more than the view, implement `expHelpContextProviderInterface`
 
 ## A page in the kernel's catalogue
 
-The kernel's documentation has a page per shipped extension in `doc/features/6.0/extensions/`. If your extension is
+The kernel's documentation has a page per shipped extension in `doc/en/us/features/6.0/extensions/`. If your extension is
 offered to the project, a short page there (what it does, settings, what changed per release) helps every
 administrator; propose it with a pull request ([Contributing back with pull requests](../part-5-extend-fork-contribute/contributing-back-with-pull-requests.md)).
 

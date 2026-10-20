@@ -5,7 +5,7 @@
  * exp:ini move-all: moves every INI file of a scope (or those --files names) into another scope, block by
  * block, one transaction per file as exp:ini move does; for example everything in settings/siteaccess/admin
  * into extension:mysite:siteaccess:admin. It stops at the first file whose move is refused; the files moved
- * before it stay moved. Guide: doc/bc/6.0/console-exp-ini.md.
+ * before it stay moved. Guide: doc/en/us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

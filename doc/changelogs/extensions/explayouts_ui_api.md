@@ -2,7 +2,7 @@
 
 Read this page before you install or update `explayouts_ui_api`, or to find out which release brought a change.
 
-What each release of `explayouts_ui_api` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/explayouts_ui_api.md); the story is in the [chronicle](../../history/extensions/explayouts_ui_api.md).
+What each release of `explayouts_ui_api` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/explayouts_ui_api.md); the story is in the [chronicle](../../en/us/history/extensions/explayouts_ui_api.md).
 
 ## v1.3.9 (2026-10-01)
 
@@ -166,9 +166,9 @@ What each release of `explayouts_ui_api` contains, assembled from its commits. E
 
 ## Related pages
 
-- [Feature page](../../features/6.0/extensions/explayouts_ui_api.md)
-- [Chronicle](../../history/extensions/explayouts_ui_api.md)
-- [Change ledger](../../history/ledger/explayouts_ui_api.md)
-- [Specification](../../specifications/6.0/explayouts-ui-api.md)
-- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- Months: [2026-07](../../history/extensions/months/2026-07.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Feature page](../../en/us/features/6.0/extensions/explayouts_ui_api.md)
+- [Chronicle](../../en/us/history/extensions/explayouts_ui_api.md)
+- [Change ledger](../../en/us/history/ledger/explayouts_ui_api.md)
+- [Specification](../../en/us/specifications/6.0/explayouts-ui-api.md)
+- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-07](../../en/us/history/extensions/months/2026-07.md), [2026-08](../../en/us/history/extensions/months/2026-08.md), [2026-09](../../en/us/history/extensions/months/2026-09.md)

@@ -162,6 +162,6 @@ legacy kernel are in the other guides of this directory, starting with [PHP 8 su
   [SQLite for Exponential Platform](../../features/6.0/platform-sqlite-install.md);
   [AdminNeo database manager](../../features/6.0/adminneo-database-manager.md)
 - [Platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md)
-- [Platform changelog](../../changelogs/extensions/exponential-platform.md)
+- [Platform changelog](../../../../changelogs/extensions/exponential-platform.md)
 - History: [ecosystem overview](../../history/ecosystem.md), a page for every month from 2018-11 in
   [ecosystem months](../../history/ecosystem/months/2026-04.md), and the [change ledger](../../history/ledger/README.md)

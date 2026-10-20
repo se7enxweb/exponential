@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/role/edit.php, moved into a class (#207 stage 1). The file kernel/role/edit.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/role/edit.php:
@@ -377,7 +377,7 @@ class Edit extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Records a role stored by Apply (doc/bc/6.0/audit.md): access.role.create or access.role.change, the parent
+     * Records a role stored by Apply (doc/en/us/bc/6.0/audit.md): access.role.create or access.role.change, the parent
      * of one access.policy.add / access.policy.remove per policy that differs (compared by module, function and
      * limitations).
      *
@@ -439,7 +439,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             $originalRoleName = $originalRole->attribute( 'name' );
             $originalRoleID = $originalRole->attribute( 'id' );
 
-            // Who changes which role (doc/bc/6.0/audit.md): access.role.create for a new role, else access.role.change
+            // Who changes which role (doc/en/us/bc/6.0/audit.md): access.role.create for a new role, else access.role.change
             // with its name and policies before and after, and a child access.policy.add / access.policy.remove per
             // policy that differs
             $http->removeSessionVariable( 'RoleWasChanged' );

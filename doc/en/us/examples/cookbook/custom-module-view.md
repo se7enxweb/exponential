@@ -267,7 +267,7 @@ templates valid (syntax). The module was not run against a database for this pag
 - `kernel/exphelp/module.php`, `kernel/section/module.php`, `kernel/content/module.php` (the `$SectionID` limitation)
 - `lib/ezutils/classes/ezmodule.php` (`params`, `unordered_params`, `UserParameters`)
 - `kernel/classes/ezcontentobjecttreenode.php` (`fetch()`, `canRead()`, `subTree()`, `subTreeCount()`, `sortArray()`)
-- `doc/guides/extensions.md`, section 6.1; `doc/bc/6.0/cli_cronjob_view_abstractions.md` (the class form of a view)
+- `doc/en/us/guides/extensions.md`, section 6.1; `doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md` (the class form of a view)
 
 ## Related pages
 

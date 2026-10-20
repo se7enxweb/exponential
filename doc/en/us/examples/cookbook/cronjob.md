@@ -142,7 +142,7 @@ CrontabSchedule_expexample=30 2 * * *
 Checked for this page (2026-10-18): `php -l` on the script; the options of `runcronjobs.php` are those of
 `kernel/private/classes/commands/runcronjobs.php`; the extension directory lookup is its
 `eZExtension::expandedPathList( $extensionDirectories, 'cronjobs' )`. The class form is the one of
-`doc/bc/6.0/cli_cronjob_view_abstractions.md`; it was not run for this page.
+`doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md`; it was not run for this page.
 
 ## Common mistakes
 
@@ -157,7 +157,7 @@ Checked for this page (2026-10-18): `php -l` on the script; the options of `runc
 
 - `kernel/private/classes/commands/runcronjobs.php`, `kernel/private/classes/runnable/cronjobpart.php`
 - `cronjobs/unlock.php` and `kernel/private/classes/cronjobs/unlock.php` (a kernel part in both forms)
-- `settings/cronjob.ini`; `doc/guides/cronjobs.md`, sections 1, 12 and 13
+- `settings/cronjob.ini`; `doc/en/us/guides/cronjobs.md`, sections 1, 12 and 13
 
 ## Related pages
 

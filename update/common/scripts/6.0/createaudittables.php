@@ -14,7 +14,7 @@
  * alone, so the script can be run again. Then it indexes the audit files written so far (--no-index skips that).
  *
  * The SQL upgrade files of MySQL, PostgreSQL and SQLite (update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql)
- * contain the same statements. Guide: doc/bc/6.0/audit.md, "The index".
+ * contain the same statements. Guide: doc/en/us/bc/6.0/audit.md, "The index".
  */
 
 require_once 'autoload.php';

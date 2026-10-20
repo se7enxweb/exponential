@@ -18,7 +18,7 @@
  * Exit status: 0 done, 1 an error (the columns are missing, the file holds no JSON object, the file cannot be
  * removed), 2 the file was kept because some of its entries have no trash row.
  *
- * Guide: doc/bc/6.0/trash.md
+ * Guide: doc/en/us/bc/6.0/trash.md
  */
 
 require_once 'autoload.php';

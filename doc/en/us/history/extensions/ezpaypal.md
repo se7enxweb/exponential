@@ -2,7 +2,7 @@
 
 The PayPal gateway received composer and funding files in January 2024 and the Exponential metadata in September and October 2026. See the [feature page](../../features/6.0/extensions/ezpaypal.md).
 
-This page lists **every one of the 10 changes** of the repository `ezpaypal` between 2024-01-24 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezpaypal.md); what each release contains is in the [release notes](../../changelogs/extensions/ezpaypal.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezpaypal.md).
+This page lists **every one of the 10 changes** of the repository `ezpaypal` between 2024-01-24 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezpaypal.md); what each release contains is in the [release notes](../../../../changelogs/extensions/ezpaypal.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezpaypal.md).
 
 | Kind | Changes |
 |---|---|
@@ -56,6 +56,6 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/ezpaypal.md)
-- [Release notes](../../changelogs/extensions/ezpaypal.md)
+- [Release notes](../../../../changelogs/extensions/ezpaypal.md)
 - [Change ledger](../ledger/ezpaypal.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

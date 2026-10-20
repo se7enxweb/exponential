@@ -1,7 +1,7 @@
 /*
  * admin4 workflow/processlist: the filter, the selection and the cancel buttons of the process list.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var root = document.querySelector( '.a4-workflow-processes' );

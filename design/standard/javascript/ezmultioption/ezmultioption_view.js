@@ -4,7 +4,7 @@
  * data-rules). Keeps the rules in the global rules<attribute id>, as the inline script did, initializes the options
  * (ezmultioption.js) and checks an option when it changes (the selects and radio buttons with
  * data-ezmultioption-attribute). A file of its own, so the page runs under a Content Security Policy without
- * 'unsafe-inline' (doc/features/6.0/content-security-policy.md).
+ * 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var script = document.currentScript;

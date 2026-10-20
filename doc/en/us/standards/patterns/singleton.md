@@ -143,7 +143,7 @@ A class that hands out one shared instance per key, mostly through a static inst
 | `expHelpContentProvider` | class | `kernel/classes/help/content/exphelpcontentprovider.php:19` | Help maintained as content, delivered into the help system (exphelp): the topics the current user may see, rendered with the help's Markdown renderer… | settings/exphelp.ini [ContextHelp] Providers[] |
 | `expHelpContentRepository` | class | `kernel/classes/help/content/exphelpcontentrepository.php:15` | Reads help maintained as content out of the database into plain arrays (the shapes expHelpContentValidator describes), without any permission filter:… | – |
 | `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:44` | Context help: which help page answers "help for this page", for a module, view and design. | – |
-| `expHelpDocumentIndex` | class | `kernel/classes/help/exphelpdocumentindex.php:34` | The index of the help pages (doc/features/6.0/help-system.md, "The index"): one entry per document of the allowlist (expHelpAllowlist: git-tracked fi… | – |
+| `expHelpDocumentIndex` | class | `kernel/classes/help/exphelpdocumentindex.php:34` | The index of the help pages (doc/en/us/features/6.0/help-system.md, "The index"): one entry per document of the allowlist (expHelpAllowlist: git-tracked fi… | – |
 
 ### kernel/classes/logviewer (2)
 
@@ -151,8 +151,8 @@ A class that hands out one shared instance per key, mostly through a static inst
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log management (doc/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth and limits; rotation, pruning, com… | – |
-| `expLogViewerConfig` | class | `kernel/classes/logviewer/explogviewerconfig.php:11` | The settings of the log viewer (settings/logviewer.ini, doc/features/6.0/log-viewer.md, "Settings"), read once per request with safe bounds. | – |
+| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log management (doc/en/us/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth and limits; rotation, pruning, com… | – |
+| `expLogViewerConfig` | class | `kernel/classes/logviewer/explogviewerconfig.php:11` | The settings of the log viewer (settings/logviewer.ini, doc/en/us/features/6.0/log-viewer.md, "Settings"), read once per request with safe bounds. | – |
 
 ### kernel/classes/mailpreferences (1)
 

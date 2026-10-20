@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/removeobject.php, moved into a class (#207 stage 1). The file kernel/content/removeobject.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/removeobject.php:
@@ -24,7 +24,7 @@ class Removeobject extends \Exponential\Runnable\ModuleView
     /**
      * Calls the content jobs GUI helper (Exponential\View\Kernel\Content\Job) when it can be used. Without it
      * (a Velocity worker started before it existed, the engine not installed or failing) the view takes the
-     * old synchronous path: runAsJob gives false, everything else null. doc/bc/6.0/content-jobs.md
+     * old synchronous path: runAsJob gives false, everything else null. doc/en/us/bc/6.0/content-jobs.md
      *
      * @param string $method runAsJob, lockRefusal or startJob
      * @return mixed
@@ -123,7 +123,7 @@ class Removeobject extends \Exponential\Runnable\ModuleView
         if ( $http->hasSessionVariable( 'HideRemoveConfirmation' ) )
             $hideRemoveConfirm = $http->sessionVariable( 'HideRemoveConfirmation' );
 
-        // Content jobs (doc/bc/6.0/content-jobs.md): a removal inside a subtree a background job is working on
+        // Content jobs (doc/en/us/bc/6.0/content-jobs.md): a removal inside a subtree a background job is working on
         // is refused; a large removal (content.ini [ContentJobSettings] SynchronousLimit, or more than
         // MaxNodesRemoveSubtree) runs as a job in the background. Small removals are done here as before.
         $jobBackURL = '/content/view/full/' . (int) $contentNodeID;
@@ -136,7 +136,7 @@ class Removeobject extends \Exponential\Runnable\ModuleView
                        $contentINI->variable( 'RemoveSettings', 'MaxNodesRemoveSubtree' ) : 100;
         $runAsJob = $jobParams['node_ids'] && self::contentJob( 'chosenAsJob', 'remove', 'remove', $jobParams, $jobOldLimit );
 
-        // Reverse relations (content.ini [RemoveSettings] ReverseRelationCheck, doc/features/6.0/reverse-relation-check.md):
+        // Reverse relations (content.ini [RemoveSettings] ReverseRelationCheck, doc/en/us/features/6.0/reverse-relation-check.md):
         // warn lists the objects that point at what goes on the confirmation page; block also refuses the removal
         // here, whatever the form sent, while such references exist
         $relationMode = \Exponential\Service\ReverseRelationCheck::removeMode();

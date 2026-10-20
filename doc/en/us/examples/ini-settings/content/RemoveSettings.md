@@ -79,7 +79,7 @@ HideRemoveConfirmation=false
 > goes when every one of its locations lies inside the removed subtrees). References are the rows of  
 > ezcontentobject\_link from the published version of a referring object (object relations, embeds and links in  
 > rich text by object or node id, relation fields), plus what the providers of \[ReverseRelationSettings\] report  
-> (Layouts blocks that name a node inside the subtrees). doc/features/6.0/reverse-relation-check.md  
+> (Layouts blocks that name a node inside the subtrees). doc/en/us/features/6.0/reverse-relation-check.md  
 >  disabled - no check  
 >  warn     - (default) the confirmation page lists the referring objects per selected item (link, class, kind  
 >             of reference and field); it is also shown when every location of such an object is selected,  

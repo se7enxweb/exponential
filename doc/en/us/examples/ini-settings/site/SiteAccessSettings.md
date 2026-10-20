@@ -97,7 +97,7 @@ RelatedSiteAccessList[]
 > gets a bare 403 (X-Exp-Mega: signed-out) instead of the sign-in page with a 200. The view checks the  
 > sign-in, the siteaccess and the tab on its own (see PolicyOmitList\[\] below).  
 > Browsers send the reports of the Content Security Policy without signing in; csp/report takes them on every  
-> siteaccess, the administration included (doc/features/6.0/content-security-policy.md, "Reports").  
+> siteaccess, the administration included (doc/en/us/features/6.0/content-security-policy.md, "Reports").  
 
 Default: a list of 6: `user/register`, `user/success`, `user/activate`, `user/forgotpassword`, `user/megamenu`, `csp/report`.
 

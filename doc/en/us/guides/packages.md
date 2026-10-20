@@ -297,4 +297,4 @@ php ezpm.php help --allow-root-user                            # every command
   `confirmremove.tpl`, `view/full.tpl`, `upload.tpl`, `install.tpl`, `uninstall.tpl`, `create.tpl`).
 - Tests (no database): `tests/tests/kernel/classes/packages/eZPackageCatalogTest.php`,
   `eZPackageUploadInspectorTest.php`, `eZPackageRequestGuardTest.php`, `eZPackageDownloadTest.php`.
-- [Changelog 6.0.15](../changelogs/6.0/6.0.15.md#6-october-2026-the-package-pages)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#6-october-2026-the-package-pages)

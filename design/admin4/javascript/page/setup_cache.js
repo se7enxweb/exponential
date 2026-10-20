@@ -1,7 +1,7 @@
 /*
  * admin4 setup/cache: the cache table - filter, selection, and "Clear selected" naming what goes before the form is
  * sent. A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var page = document.getElementById('exp-cachepage');

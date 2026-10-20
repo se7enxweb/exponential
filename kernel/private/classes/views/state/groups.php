@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/state/groups.php, moved into a class (#207 stage 1). The file kernel/state/groups.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/state/groups.php:
@@ -65,7 +65,7 @@ class Groups extends \Exponential\Runnable\ModuleView
                     $group = \eZContentObjectStateGroup::fetchById( $removeID );
                     if ( $group && !$group->isInternal() )
                     {
-                        // Audit (doc/bc/6.0/audit.md, content.state.remove)
+                        // Audit (doc/en/us/bc/6.0/audit.md, content.state.remove)
                         if ( class_exists( 'expAuditHook' ) )
                             \expAuditHook::emit( 'content.state.remove', array(
                                 'object' => array( 'type' => 'state_group', 'id' => (int)$removeID, 'identifier' => (string)$group->attribute( 'identifier' ) ),

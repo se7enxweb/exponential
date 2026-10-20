@@ -13,7 +13,7 @@
  * key. A provider extends it with defaultValue(), apply() and, when apply() touches statics, reset().
  *
  * One instance lives for one request: the registry builds the providers again at the start of every request.
- * Guide: doc/bc/6.0/ui-switch.md
+ * Guide: doc/en/us/bc/6.0/ui-switch.md
  */
 abstract class expUISwitchProvider implements expUISwitchProviderInterface
 {

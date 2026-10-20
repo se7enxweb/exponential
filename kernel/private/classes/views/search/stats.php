@@ -1,8 +1,8 @@
 <?php
 /**
  * The code of kernel/search/stats.php, moved into a class (#207 stage 1). The file kernel/search/stats.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
- * User guide of the page: doc/guides/urls-and-aliases.md (search statistics)
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * User guide of the page: doc/en/us/guides/urls-and-aliases.md (search statistics)
  */
 /*
  * The original header of kernel/search/stats.php:

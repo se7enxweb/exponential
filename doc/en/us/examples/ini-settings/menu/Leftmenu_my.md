@@ -38,7 +38,7 @@ Name=dashboard
 > The user's own work, right after Collaboration  
 > The e-mail preferences: which optional e-mail the user gets, consent history, data download  
 > The Help center (exphelp/dashboard), the start page of the help: guides, search, how to report an error  
-> The audit console, only with audit/read (doc/bc/6.0/audit.md, "Placement"); the last kernel link, so the links  
+> The audit console, only with audit/read (doc/en/us/bc/6.0/audit.md, "Placement"); the last kernel link, so the links  
 > extensions append follow it  
 
 Default: a hash of 11: `dashboard=content/dashboard`, `collaboration=collaboration/view/summary`, `my_pending=content/pendinglist`, `my_drafts=content/draft`, `my_bookmarks=content/bookmark`, `my_mail=mailpreferences/settings`, `my_notifications=notification/settings`, `help_center=exphelp/dashboard`, `audit=audit/console`, `change_password=user/password`, `edit_profile=user/edit/(action)/edit`.

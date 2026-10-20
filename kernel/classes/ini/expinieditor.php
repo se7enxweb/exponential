@@ -915,7 +915,7 @@ class expIniEditor
             throw expIniException::writeFailed( "{$this->relativePath()} changed on disk since it was read; nothing written" );
 
         // [AuditSettings] OnWriteFailure=refuse: no settings write while the audit cannot record it
-        // (system.setting.write; doc/bc/6.0/audit.md, "When the audit cannot write"). Writes in a fixture root
+        // (system.setting.write; doc/en/us/bc/6.0/audit.md, "When the audit cannot write"). Writes in a fixture root
         // are not recorded, so they are not guarded either.
         if ( class_exists( 'expAuditGuard' ) && ( self::isRealRoot() || ( class_exists( 'expAuditConfig' ) && expAuditConfig::isOverridden() ) )
              && !expAuditGuard::allows( 'system.setting.write' ) )
@@ -1134,7 +1134,7 @@ class expIniEditor
         {
             $uid = fileowner( $path );
             $gid = filegroup( $path );
-            // kept, less the bit that lets other users write it (doc/bc/6.0/ini-save-file-permissions.md)
+            // kept, less the bit that lets other users write it (doc/en/us/bc/6.0/ini-save-file-permissions.md)
             $mode = fileperms( $path ) & 0775;
         }
         else if ( class_exists( 'eZINI' ) )

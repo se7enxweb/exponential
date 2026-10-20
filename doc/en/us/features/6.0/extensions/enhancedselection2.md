@@ -35,7 +35,7 @@ or later and clear the template caches.
 - [xrowextract](xrowextract.md) exports and imports this datatype (`ezenhancedselection`)
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/enhancedselection2.md) and [release notes](../../../changelogs/extensions/enhancedselection2.md)
+- [Chronicle](../../../history/extensions/enhancedselection2.md) and [release notes](../../../../../changelogs/extensions/enhancedselection2.md)
 - [Change ledger](../../../history/ledger/enhancedselection2.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

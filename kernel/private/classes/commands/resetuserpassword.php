@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/resetuserpassword.php, moved into a class (#207 stage 1). The file bin/php/resetuserpassword.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/resetuserpassword.php:
@@ -278,7 +278,7 @@ class Resetuserpassword extends \Exponential\Runnable\Command
         $ruleAccount = \eZUser::fetchByName( $targetLogin );
         $ruleAccount = is_object( $ruleAccount ) ? $ruleAccount : null;
 
-        // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): an administrator's password is not reset, also not
+        // Demo mode (EXP_DEMO_MODE=1, doc/en/us/bc/6.0/demo-mode.md): an administrator's password is not reset, also not
         // with --allow-root-user
         if ( $ruleAccount && class_exists( 'expDemoMode' ) && \expDemoMode::protectsPassword( $ruleAccount ) )
         {

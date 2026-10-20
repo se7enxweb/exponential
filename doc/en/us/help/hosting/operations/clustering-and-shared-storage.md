@@ -14,7 +14,7 @@ for product managers who need to know what such an offer requires. It answers: h
 files and caches, what the DFS cluster needs (a shared mount and a metadata database), how files are served, which
 commands maintain the cluster, and where the limits are.
 
-The facts come from `settings/file.ini`, `config.php-RECOMMENDED`, the cluster documents in `doc/features/` and the
+The facts come from `settings/file.ini`, `config.php-RECOMMENDED`, the cluster documents in `doc/en/us/features/` and the
 migration chapters of the installation book. The other half of a multi-server setup (sessions, caches in front of
 PHP, proxies) is on [Several web nodes](several-web-nodes.md).
 

@@ -3,7 +3,7 @@
 Read this page if a check on a commit or a pull request of `se7enxweb/exponential` is red, if you change one of the
 workflows in `.github/workflows/`, or if you want to know how healthy CI has been lately. The checks themselves (git
 hooks, file manifest, code style, PHPStan, the tests of a change) are described in
-[doc/features/6.0/quality-checks.md](../../features/6.0/quality-checks.md); this page is the map around them.
+[doc/en/us/features/6.0/quality-checks.md](../../features/6.0/quality-checks.md); this page is the map around them.
 
 ## In short
 

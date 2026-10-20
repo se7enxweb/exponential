@@ -4,7 +4,7 @@
  *
  * exp:ini set: sets a plain variable (Variable=value) or a hash entry (Variable[key]=value) in one scope's
  * file, creating the file and the block when they are missing (unless --no-create).
- * Guide: doc/bc/6.0/console-exp-ini.md.
+ * Guide: doc/en/us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

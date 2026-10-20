@@ -274,7 +274,7 @@ running Exponential 6 inside a Symfony platform, see [Legacy bridge](../features
    Oracle (`ezoracle`) has no such file: run `ALTER TABLE ezuser MODIFY ( password_hash VARCHAR2(255) );` with your
    Oracle client, and add `trashed` (`ALTER TABLE ezcontentobject_trash ADD ( trashed INTEGER DEFAULT 0 NOT NULL );`)
    if the table lacks it. The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes
-   above). Details: [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
+   above). Details: [Changelog 6.0.0](../../../changelogs/6.0/6.0.0.md).
 3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`); Velocity needs 8.1. Releases 6.0.8 to
    6.0.14 required 8.1. A site that must stay on PHP 7.4 stays on 6.0.7. Check your own extensions for PHP 8
    problems: classes that extend `eZPersistentObject` or `eZDataType` are the usual cases. See
@@ -377,21 +377,21 @@ Read every release note between your version and today; each opens with what to 
 
 | From | Read |
 |---|---|
-| 6.0.0 | [6.0.1](../changelogs/6.0/6.0.1.md): SQLite, replacing kernel modules from an extension |
-| 6.0.1 | [6.0.2](../changelogs/6.0/6.0.2.md): links in the online editor |
-| 6.0.2 | [6.0.3](../changelogs/6.0/6.0.3.md): datatype extensions joined the distribution |
-| 6.0.3 | [6.0.4](../changelogs/6.0/6.0.4.md): the responsive administration design |
-| 6.0.4 | [6.0.5](../changelogs/6.0/6.0.5.md): a failed 6.0.4 install, datatypes of extensions |
-| 6.0.5 | [6.0.6](../changelogs/6.0/6.0.6.md): `admin3` on phones and tablets |
-| 6.0.6 | [6.0.7](../changelogs/6.0/6.0.7.md): the last release for PHP 7.4 |
-| 6.0.7 | [6.0.8](../changelogs/6.0/6.0.8.md): **needs PHP 8.1**; and [PHP 8 support](../bc/6.0/php8.md) |
-| 6.0.8 | [6.0.9](../changelogs/6.0/6.0.9.md): PostgreSQL, REST access to content |
-| 6.0.9 | [6.0.10](../changelogs/6.0/6.0.10.md): the product name in templates, translations and overrides; [The product is called Exponential](../features/6.0/rebranding-to-exponential.md) |
-| 6.0.10 | [6.0.11](../changelogs/6.0/6.0.11.md): PHP 8.5, notification mail, page view counting |
-| 6.0.11 | [6.0.12](../changelogs/6.0/6.0.12.md): role-based template operators, several sites in one installation |
-| 6.0.12 | [6.0.13](../changelogs/6.0/6.0.13.md): **security fixes**, sort column checks; [Security hardening 6.0.13](../specifications/6.0/security-hardening-6.0.13.md), [Hardening](../bc/6.0/hardening.md) |
-| 6.0.13 | [6.0.14](../changelogs/6.0/6.0.14.md): MongoDB, the upgrade file check |
-| 6.0.14 | [6.0.15](../changelogs/6.0/6.0.15.md), then in order: [July and August 2026](../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September 2026](../bc/6.0/behaviour-changes-2026-09b.md) with [Security defaults](../specifications/6.0/security-defaults-2026-09.md), [1 and 2 October 2026](../bc/6.0/behaviour-changes-2026-10.md), [e-mail preferences and the mail gate](../bc/6.0/mail-preferences.md) |
+| 6.0.0 | [6.0.1](../../../changelogs/6.0/6.0.1.md): SQLite, replacing kernel modules from an extension |
+| 6.0.1 | [6.0.2](../../../changelogs/6.0/6.0.2.md): links in the online editor |
+| 6.0.2 | [6.0.3](../../../changelogs/6.0/6.0.3.md): datatype extensions joined the distribution |
+| 6.0.3 | [6.0.4](../../../changelogs/6.0/6.0.4.md): the responsive administration design |
+| 6.0.4 | [6.0.5](../../../changelogs/6.0/6.0.5.md): a failed 6.0.4 install, datatypes of extensions |
+| 6.0.5 | [6.0.6](../../../changelogs/6.0/6.0.6.md): `admin3` on phones and tablets |
+| 6.0.6 | [6.0.7](../../../changelogs/6.0/6.0.7.md): the last release for PHP 7.4 |
+| 6.0.7 | [6.0.8](../../../changelogs/6.0/6.0.8.md): **needs PHP 8.1**; and [PHP 8 support](../bc/6.0/php8.md) |
+| 6.0.8 | [6.0.9](../../../changelogs/6.0/6.0.9.md): PostgreSQL, REST access to content |
+| 6.0.9 | [6.0.10](../../../changelogs/6.0/6.0.10.md): the product name in templates, translations and overrides; [The product is called Exponential](../features/6.0/rebranding-to-exponential.md) |
+| 6.0.10 | [6.0.11](../../../changelogs/6.0/6.0.11.md): PHP 8.5, notification mail, page view counting |
+| 6.0.11 | [6.0.12](../../../changelogs/6.0/6.0.12.md): role-based template operators, several sites in one installation |
+| 6.0.12 | [6.0.13](../../../changelogs/6.0/6.0.13.md): **security fixes**, sort column checks; [Security hardening 6.0.13](../specifications/6.0/security-hardening-6.0.13.md), [Hardening](../bc/6.0/hardening.md) |
+| 6.0.13 | [6.0.14](../../../changelogs/6.0/6.0.14.md): MongoDB, the upgrade file check |
+| 6.0.14 | [6.0.15](../../../changelogs/6.0/6.0.15.md), then in order: [July and August 2026](../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September 2026](../bc/6.0/behaviour-changes-2026-09b.md) with [Security defaults](../specifications/6.0/security-defaults-2026-09.md), [1 and 2 October 2026](../bc/6.0/behaviour-changes-2026-10.md), [e-mail preferences and the mail gate](../bc/6.0/mail-preferences.md) |
 
 The changes people meet most often when they reach 6.0.15:
 
@@ -425,7 +425,7 @@ incompatibility in an extension shows. Extensions carry their own version in `ez
 admin's **Setup > Extensions** list shows it ([Extension list](../features/6.0/extension-list-and-downloads.md)). The
 order in which extensions load changed in 2026: [Extension loading order](../features/6.0/extension-loading-order.md).
 Composer-installed extensions are updated with their package: `composer update se7enxweb/<package>`, after reading
-the package's notes in the [extensions' release notes](../changelogs/extensions/README.md).
+the package's notes in the [extensions' release notes](../../../changelogs/extensions/README.md).
 
 Some classic extensions have their own upgrade scripts in `bin/php/`:
 
@@ -488,7 +488,7 @@ php bin/php/console exp:velocity cache clear
 More in [chapter 12](12-troubleshooting.md).
 
 A published release never changes; a fix always comes as the next version. To see what a version holds, open its
-changelog: [6.0.0 to 6.0.15](../changelogs/6.0/6.0.15.md).
+changelog: [6.0.0 to 6.0.15](../../../changelogs/6.0/6.0.15.md).
 
 **Demo mode (6.0.15).** Nothing changes on an upgraded site unless the environment variable `EXP_DEMO_MODE=1` is set, which is only for public demos. After upgrading a production server, check that no process of a real site has it (`grep -r EXP_DEMO_MODE` over the PHP-FPM pools, virtual hosts, `.htaccess` files, service units and crontabs). [Demo mode](../bc/6.0/demo-mode.md).
 
@@ -497,9 +497,9 @@ changelog: [6.0.0 to 6.0.15](../changelogs/6.0/6.0.15.md).
 In this repository:
 
 - [Upgrading](../guides/upgrading.md): the step-by-step guide this chapter extends.
-- Release notes: [changelogs of 6.0](../changelogs/6.0/6.0.15.md) ([6.0.0](../changelogs/6.0/6.0.0.md) to
-  [6.0.14](../changelogs/6.0/6.0.14.md)), the [extensions' release notes](../changelogs/extensions/README.md),
-  [all changelogs](../changelogs/README.md).
+- Release notes: [changelogs of 6.0](../../../changelogs/6.0/6.0.15.md) ([6.0.0](../../../changelogs/6.0/6.0.0.md) to
+  [6.0.14](../../../changelogs/6.0/6.0.14.md)), the [extensions' release notes](../../../changelogs/extensions/README.md),
+  [all changelogs](../../../changelogs/README.md).
 - Behaviour changes: [July and August 2026](../bc/6.0/behaviour-changes-2026-07-08.md),
   [16 to 30 September 2026](../bc/6.0/behaviour-changes-2026-09b.md),
   [1 and 2 October 2026](../bc/6.0/behaviour-changes-2026-10.md),

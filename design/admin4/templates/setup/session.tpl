@@ -9,7 +9,7 @@
    characters of the key. The view still accepts SessionKeyArray[] from older overrides.
 
    The same file is in design/admin and design/admin4. Every field and button name of the old page is kept, and the
-   page works without javascript. Guide: doc/guides/sessions.md *}
+   page works without javascript. Guide: doc/en/us/guides/sessions.md *}
 
 {def $base_uri = concat( '/setup/session', cond( $user_id, concat( '/', $user_id ), '' ) )
      $summary = first_set( $session_summary, false() )

@@ -151,7 +151,7 @@ Wraps an object or a value to add behavior while keeping its interface: output f
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentication filter for a personal API key (expApiKey) presented as "Authorization: Bearer expk_..." (doc/guides/api-keys.md, "How the REST layer r… | – |
+| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentication filter for a personal API key (expApiKey) presented as "Authorization: Bearer expk_..." (doc/en/us/guides/api-keys.md, "How the REST layer r… | – |
 | `expRestPasswordAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/password_auth_filter.php:19` | Checks a login and password for the REST interface's basic authentication the way the sign-in does. | – |
 | `ezpAsynchronousPublishingFilter` | abstract class | `kernel/private/classes/ezpasynchronouspublishingfilter.php:24` | This interface is to be used to create accept/reject filters for the Asynchronous Publishing feature Each filter class must implement the accept() me… | – |
 | `ezpAsynchronousPublishingFilterInterface` | interface | `kernel/private/interfaces/asynchronouspublishingfilter.php:17` | Base interface for eZ Asynchronous Publishing filter classes | – |

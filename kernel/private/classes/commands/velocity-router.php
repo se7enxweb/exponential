@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/velocity-router.php, moved into a class (#207). The file bin/php/velocity-router.php calls it.
  * @description Router of PHP's built-in web server, as the php engine of exp:velocity runs it
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * Not a Runnable: the built-in server runs the router before any autoloader exists, for every request, and needs
  * the front controller required at the router file's own top level (the kernel's globals live there). So route()

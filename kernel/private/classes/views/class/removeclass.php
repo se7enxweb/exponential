@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/class/removeclass.php, moved into a class (#207 stage 1). The file kernel/class/removeclass.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/class/removeclass.php:
@@ -76,7 +76,7 @@ class Removeclass extends \Exponential\Runnable\ModuleView
         {
             foreach ( $deleteIDArray as $deleteID )
             {
-                // Audit (doc/bc/6.0/audit.md, content.class.remove): described before it goes
+                // Audit (doc/en/us/bc/6.0/audit.md, content.class.remove): described before it goes
                 $auditClass = class_exists( 'expAuditHook' ) && \expAuditHook::on( 'content.class.remove' )
                               ? \expAuditHook::contentClass( (int)$deleteID ) : null;
                 $auditObjects = $auditClass ? (int)\eZContentObject::fetchSameClassListCount( (int)$deleteID ) : 0;

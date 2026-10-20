@@ -1,7 +1,7 @@
 {* Shown instead of rss/edit_import while another user edits the same import (content.ini DraftTimeout).
 
    Says who holds it and until when; Retry asks again (RetryButton, as before), Back goes to the RSS list. The same
-   file is in design/admin and design/admin4, in the look of the RSS pages. Guide: doc/guides/rss-feeds.md *}
+   file is in design/admin and design/admin4, in the look of the RSS pages. Guide: doc/en/us/guides/rss-feeds.md *}
 
 <form action={concat( '/rss/edit_import/', $rss_import.id )|ezurl} method="post" class="a4-page exp-rss a4-standalone">
 <div class="context-block">

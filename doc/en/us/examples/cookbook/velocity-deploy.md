@@ -96,7 +96,7 @@ the port of Velocity, if both run. A change visible on one and not the other mea
 the reload found another PHP-FPM, or Velocity was not restarted.
 
 Checked for this page (2026-10-18): the steps, their order and the options are those of
-`doc/install/08-serving-the-site.md` (section 8.3.14) and `settings/velocity.ini [DeploySettings]`. The commands were
+`doc/en/us/install/08-serving-the-site.md` (section 8.3.14) and `settings/velocity.ini [DeploySettings]`. The commands were
 not run for this page.
 
 ## Common mistakes
@@ -111,9 +111,9 @@ not run for this page.
 
 ## Derived from
 
-- `doc/install/08-serving-the-site.md`, sections 8.3.14 and 8.3.15
+- `doc/en/us/install/08-serving-the-site.md`, sections 8.3.14 and 8.3.15
 - `settings/velocity.ini` `[DeploySettings]`; `kernel/classes/expvelocitydeploy.php`
-- `doc/bc/6.0/velocity-engines.md`
+- `doc/en/us/bc/6.0/velocity-engines.md`
 
 ## Related pages
 

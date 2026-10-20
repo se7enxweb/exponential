@@ -5246,7 +5246,7 @@ ALTER TABLE ONLY ezworkflow_process
 
 
 --
--- The audit index (doc/bc/6.0/audit.md, "The index"): one row per audit record (expaudit_event), how far
+-- The audit index (doc/en/us/bc/6.0/audit.md, "The index"): one row per audit record (expaudit_event), how far
 -- each live channel file has been indexed (expaudit_cursor) and each file's verification state (expaudit_file).
 -- The JSON lines files under var/<site>/log/audit/ are the record; these tables are a copy for the console,
 -- filled by the auditindex cronjob part and rebuilt from the files at any time.

@@ -130,7 +130,7 @@ extension) and keeps a copy before writing. See [Template editor](../../features
 ## Derived from
 
 - `kernel/classes/eznodeviewfunctions.php` (the match keys of a node view)
-- `doc/guides/templates-and-design.md`, sections 4 and 5
+- `doc/en/us/guides/templates-and-design.md`, sections 4 and 5
 - `design/standard/templates/node/view/full.tpl`
 
 ## Related pages

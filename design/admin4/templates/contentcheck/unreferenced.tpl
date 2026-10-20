@@ -1,4 +1,4 @@
-{* The contentcheck/unreferenced view (doc/features/6.0/content-checks.md, "Unreferenced objects").
+{* The contentcheck/unreferenced view (doc/en/us/features/6.0/content-checks.md, "Unreferenced objects").
 
    Variables: result (node, count, rows, error), params (node_id, class_ids, sort, order, containers, offset,
    limit), scope (the start location, see scope.tpl), class_options, sorts, page_uri, page_uri_suffix, view_parameters, limit, limit_choices,

@@ -3,7 +3,7 @@
  * File containing the expContentJobAuditExport class.
  *
  * The content job 'auditexport': the export of the audit console (audit/export) in the background, for a filter
- * too large for a download in the browser (doc/bc/6.0/audit.md, "Export"). The worker writes the file next to the
+ * too large for a download in the browser (doc/en/us/bc/6.0/audit.md, "Export"). The worker writes the file next to the
  * job (var/<site>/jobs/content/<id>.export, site user only, no web access) in batches of RECORDS_PER_UNIT records per
  * unit of content.ini [ContentJobSettings] BatchSize (5000 with the default 50, at least one page of 500),
  * with the same bytes the download of audit/export sends for the same filter (expAuditExportStream); the export

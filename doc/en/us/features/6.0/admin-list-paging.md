@@ -80,5 +80,5 @@ lists their paging parameters and the user's chosen page size. See "Where the re
 - [Sub-items list: columns, presets and CSV export](subitems-table-options.md), [roles: policy IDs, sorting and order buttons](role-policy-order.md)
 - [Multi edit (items from the sub-items list)](../../bc/6.0/multi-node-edit.md)
 - [Sections](../../guides/sections.md): the section list, its page size and the other section pages
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - History: [June 2026, second half](../../history/2026/2026-06b.md) (custom page size), [September 2026, first half: paging everywhere](../../history/2026/2026-09a.md#15-september-paging-everywhere)

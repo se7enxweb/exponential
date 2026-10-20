@@ -1,4 +1,4 @@
-{* exphelp/contents (doc/features/6.0/help-system.md): every page of the help as one tree. Each folder is a native
+{* exphelp/contents (doc/en/us/features/6.0/help-system.md): every page of the help as one tree. Each folder is a native
    <details>, closed, with its title and number of pages; it opens without JavaScript, and an address with its
    #exphelp-folder-... anchor opens it. exphelp.js adds a filter box that narrows the tree as you type (the folders with
    a match open) and the Expand all / Collapse all control, sticky at the bottom of the window at the end side of the

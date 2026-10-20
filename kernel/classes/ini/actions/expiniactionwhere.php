@@ -4,7 +4,7 @@
  *
  * exp:ini where: every file that sets a variable, in the order eZINI loads them (the last one wins for a plain
  * value, arrays add up unless a file resets them), with the scope that writes each and the value in effect.
- * Guide: doc/bc/6.0/console-exp-ini.md.
+ * Guide: doc/en/us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

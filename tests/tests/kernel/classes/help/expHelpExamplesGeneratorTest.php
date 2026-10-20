@@ -51,7 +51,7 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
 
     protected function generator()
     {
-        return new expHelpExamplesGenerator( $this->root, 'doc/examples', array( 'bin/php/sample.php', 'kernel/sample/module.php', 'settings/sample.ini' ) );
+        return new expHelpExamplesGenerator( $this->root, 'doc/en/us/examples', array( 'bin/php/sample.php', 'kernel/sample/module.php', 'settings/sample.ini' ) );
     }
 
     /** HE-01 */
@@ -88,16 +88,16 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $one = $this->generator()->build( array( 'ini-settings', 'commands' ) );
         $two = $this->generator()->build( array( 'ini-settings', 'commands' ) );
         $this->assertSame( $one, $two );
-        $this->assertArrayHasKey( 'doc/examples/ini-settings/sample/First.md', $one );
-        $this->assertArrayHasKey( 'doc/examples/ini-settings/sample/README.md', $one );
-        $this->assertArrayHasKey( 'doc/examples/commands/sample.md', $one );
-        $page = $one['doc/examples/ini-settings/sample/First.md'];
+        $this->assertArrayHasKey( 'doc/en/us/examples/ini-settings/sample/First.md', $one );
+        $this->assertArrayHasKey( 'doc/en/us/examples/ini-settings/sample/README.md', $one );
+        $this->assertArrayHasKey( 'doc/en/us/examples/commands/sample.md', $one );
+        $page = $one['doc/en/us/examples/ini-settings/sample/First.md'];
         $this->assertStringStartsWith( "---\ntitle: sample.ini [First]\n", $page );
         $this->assertStringContainsString( "\ntype: generated\ngenerated: exp:help:examples\n---\n", $page );
         $this->assertStringContainsString( "## Count\n", $page );
         $this->assertStringContainsString( "Count=5\n", $page );
         $this->assertStringContainsString( "Names[]\nNames[]=a\nNames[]=b\n", $page );
-        $command = $one['doc/examples/commands/sample.md'];
+        $command = $one['doc/en/us/examples/commands/sample.md'];
         $this->assertStringContainsString( './console exp:sample:run --help', $command );
         $this->assertStringContainsString( '| `--limit` | required | At most this many |', $command );
         $this->assertDoesNotMatchRegularExpression( '/\b20\d\d-\d\d-\d\d\b/', implode( '', $one ), 'no dates' );
@@ -112,21 +112,21 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( count( $pages ), $stats['written'] );
         $this->assertSame( 0, $generator->write( $pages, array( 'commands' ) )['written'], 'nothing changed, nothing written' );
 
-        $dir = $this->root . '/doc/examples/commands';
+        $dir = $this->root . '/doc/en/us/examples/commands';
         file_put_contents( "$dir/gone.md", "---\ntitle: Gone\ntype: generated\ngenerated: exp:help:examples\n---\n# Gone\n" );
         file_put_contents( "$dir/mine.md", "---\ntitle: Mine\n---\n# Written by hand\n" );
         $diff = $generator->compare( $pages, array( 'commands' ) );
-        $this->assertSame( array( 'doc/examples/commands/gone.md' ), $diff['stale'] );
+        $this->assertSame( array( 'doc/en/us/examples/commands/gone.md' ), $diff['stale'] );
         $this->assertSame( array(), $diff['missing'] );
 
         file_put_contents( "$dir/sample.md", 'edited' );
-        $this->assertSame( array( 'doc/examples/commands/sample.md' ), $generator->compare( $pages, array( 'commands' ) )['different'] );
+        $this->assertSame( array( 'doc/en/us/examples/commands/sample.md' ), $generator->compare( $pages, array( 'commands' ) )['different'] );
 
         $stats = $generator->write( $pages, array( 'commands' ) );
         $this->assertSame( 1, $stats['removed'] );
         $this->assertFileDoesNotExist( "$dir/gone.md" );
         $this->assertFileExists( "$dir/mine.md", 'a page without the marker is never removed' );
-        $this->assertSame( $pages['doc/examples/commands/sample.md'], file_get_contents( "$dir/sample.md" ) );
+        $this->assertSame( $pages['doc/en/us/examples/commands/sample.md'], file_get_contents( "$dir/sample.md" ) );
     }
 
     /** HE-05 */
@@ -137,12 +137,12 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'item', expHelpExamplesGenerator::fileName( '..' ) );
 
         $pages = $this->generator()->build( array( 'module-views', 'policies' ) );
-        $show = $pages['doc/examples/module-views/sample/show.md'];
+        $show = $pages['doc/en/us/examples/module-views/sample/show.md'];
         $this->assertStringContainsString( "/sample/show/<ItemID>/(offset)/<Offset>\n", $show );
         $this->assertStringContainsString( '[`sample/read`](../../policies/sample.md#read)', $show );
-        $open = $pages['doc/examples/module-views/sample/open.md'];
+        $open = $pages['doc/en/us/examples/module-views/sample/open.md'];
         $this->assertStringContainsString( 'a policy for the whole module: `sample/*`', $open );
-        $policies = $pages['doc/examples/policies/sample.md'];
+        $policies = $pages['doc/en/us/examples/policies/sample.md'];
         $this->assertStringContainsString( '| Section | `eZSection::fetchList()` |', $policies );
         $this->assertStringContainsString( 'Checked by the views: [show]', $policies );
     }
@@ -153,7 +153,7 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $text = "[Block]\n# load it with {ezscript[_require]('some.js')} or *this*\nName=1\n";
         file_put_contents( $this->root . '/settings/sample.ini', $text );
         $pages = $this->generator()->build( array( 'ini-settings' ) );
-        $page = $pages['doc/examples/ini-settings/sample/Block.md'];
+        $page = $pages['doc/en/us/examples/ini-settings/sample/Block.md'];
         $this->assertStringContainsString( "> load it with {ezscript\\[\\_require\\]('some.js')} or \\*this\\*", $page );
         if ( !class_exists( 'expHelpLinkCheck' ) )
             require_once __DIR__ . '/../../../../../kernel/classes/help/exphelplinkcheck.php';

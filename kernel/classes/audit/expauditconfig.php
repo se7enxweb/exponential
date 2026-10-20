@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit settings (settings/audit.ini, doc/bc/6.0/audit.md "The settings reference") read once into one array.
+ * The audit settings (settings/audit.ini, doc/en/us/bc/6.0/audit.md "The settings reference") read once into one array.
  *
  * Every value has the shipped default here too, so a missing or partial audit.ini (an old override, a test)
  * still gives a working configuration. The snapshot is kept per request (REQUEST_TIME_FLOAT), so a persistent

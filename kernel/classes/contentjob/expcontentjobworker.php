@@ -295,7 +295,7 @@ class expContentJobWorker
         return 0;
     }
 
-    // ---- the audit (doc/bc/6.0/audit.md, content.job.*) ---------------------------------------
+    // ---- the audit (doc/en/us/bc/6.0/audit.md, content.job.*) ---------------------------------------
 
     /**
      * Starts the run's audit record: the job id on every event of the run, content.job.start as the parent of

@@ -4,7 +4,7 @@
    what it installed stays), the packages that require it, and whether the installer takes it as a source - those
    need their own tick before Remove does anything. Selected values that cannot be removed are listed with the
    reason. Remove posts ConfirmRemovePackageButton with the same PackageSelection[] values; the view removes only
-   what this page offered. Guide: doc/guides/packages.md *}
+   what this page offered. Guide: doc/en/us/guides/packages.md *}
 
 {def $plan = $remove_plan
      $reason_labels = hash( 'vendor_repository', "It is in the setup wizard's repository, which the published packages are built from."|i18n( 'design/admin/package/list' ),

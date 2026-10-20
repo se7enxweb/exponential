@@ -44,7 +44,7 @@ line carries an upgrade project as a cost in your model.
 | **Setup > Upgrade check** | compares files with the release and checks the database before an upgrade | [Upgrade check](../../../../guides/upgrade-check.md) |
 | **Setup > Updates and packages** (ezupdate) | finds, checks and installs Composer package updates with dry runs | [Automated updates with ezupdate](../../../hosting/operations/automated-updates-with-ezupdate.md) |
 | Maintenance mode | takes the site offline cleanly for the upgrade window | [Maintenance mode](../../../../guides/maintenance-mode.md) |
-| Changelogs | say what changed per version | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
+| Changelogs | say what changed per version | [6.0.15 changelog](../../../../../../changelogs/6.0/6.0.15.md) |
 | Configuration managed by deployment | locks settings and templates in production so changes go through releases | [Managed by deployment](../../../../features/6.0/managed-by-deployment.md) |
 
 ## What makes upgrades expensive

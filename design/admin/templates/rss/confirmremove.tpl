@@ -6,7 +6,7 @@
 
    Variables: rss_remove_kind ('export' or 'import'), rss_remove_items (array of hash( 'object', the eZRSSExport or
    eZRSSImport, 'info', what the list's cards show )), rss_remove_button (RemoveExportButton or RemoveImportButton)
-   and rss_remove_field (DeleteIDArray or DeleteIDArrayImport). Guide: doc/guides/rss-feeds.md *}
+   and rss_remove_field (DeleteIDArray or DeleteIDArrayImport). Guide: doc/en/us/guides/rss-feeds.md *}
 {def $is_export = eq( $rss_remove_kind, 'export' )
      $imported = 0}
 {if $is_export|not}{foreach $rss_remove_items as $item}{set $imported = sum( $imported, $item.info.imported_count )}{/foreach}{/if}

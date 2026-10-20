@@ -5,7 +5,7 @@
  * exp:ini copy: copies a setting from one scope's file to another's: a plain variable or a hash entry is set
  * to the same value, a whole array is written as its reset line followed by the same values, so the target
  * ends with what the source has. It is the worked example of the guide's "Adding an action" chapter and is
- * registered as a built-in, so the example is tested with the others. Guide: doc/bc/6.0/console-exp-ini.md.
+ * registered as a built-in, so the example is tested with the others. Guide: doc/en/us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

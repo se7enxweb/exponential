@@ -2,7 +2,7 @@
 
 Read this page before you install or update `sevenx-recipes`, or to find out which release brought a change.
 
-What each release of `sevenx-recipes` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/sevenx-recipes.md); the story is in the [chronicle](../../history/extensions/sevenx-recipes.md).
+What each release of `sevenx-recipes` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/sevenx-recipes.md); the story is in the [chronicle](../../en/us/history/extensions/sevenx-recipes.md).
 
 ## v1.3.23 (2026-04-17)
 
@@ -214,8 +214,8 @@ What each release of `sevenx-recipes` contains, assembled from its commits. Each
 
 ## Related pages
 
-- [Feature page](../../features/6.0/extensions/sevenx-recipes.md)
-- [Chronicle](../../history/extensions/sevenx-recipes.md)
-- [Change ledger](../../history/ledger/sevenx-recipes.md)
-- [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- Months: [2026-03](../../history/extensions/months/2026-03.md), [2026-04](../../history/extensions/months/2026-04.md)
+- [Feature page](../../en/us/features/6.0/extensions/sevenx-recipes.md)
+- [Chronicle](../../en/us/history/extensions/sevenx-recipes.md)
+- [Change ledger](../../en/us/history/ledger/sevenx-recipes.md)
+- [behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-04](../../en/us/history/extensions/months/2026-04.md)

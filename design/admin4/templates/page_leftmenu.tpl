@@ -10,7 +10,7 @@
         {if $a4_own_part|eq( '' )}{set $a4_own_part = first_set( $module_result.navigation_part, '' )}{/if}
         {* A view's own left menu ($module_result.left_menu, the audit pages' design:audit/menu.tpl) is drawn, unless
            the page belongs to a tab the Setup menu stands in for: then the Setup menu with the tab's group is, as the
-           Setup tab is marked (doc/features/6.0/admin4-design.md, "Moving a tab into Setup") *}
+           Setup tab is marked (doc/en/us/features/6.0/admin4-design.md, "Moving a tab into Setup") *}
         {if and( is_set( $module_result.left_menu ),
                  or( $navigation_part_name|ne( 'ezsetupnavigationpart' ), $a4_own_part|eq( 'ezsetupnavigationpart' ) ) )}
             {include uri=$module_result.left_menu}

@@ -45,7 +45,7 @@ Exponential versions do not roll over at nine. After 6.0.9 came 6.0.10 (28 Augus
 - "The last position of a Velocity version counts on past 9 (`0.0.4.9`, `0.0.4.10`, ...)"
   ([Getting the code, the optional Velocity package](../../install/03-getting-the-code.md#34-the-optional-velocity-package)).
 - "Versions count in the last position: `0.0.4.9` is followed by `0.0.4.10`, never `0.0.5.0`"
-  ([Velocity release notes](../../changelogs/extensions/exponential-velocity.md)).
+  ([Velocity release notes](../../../../changelogs/extensions/exponential-velocity.md)).
 
 So do not read a jump in the last position as a small or large release. The number says the order, not the size.
 What a release contains is in its changelog ([Reading a changelog](reading-a-changelog.md)).

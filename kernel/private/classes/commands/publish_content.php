@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/publish_content.php, moved into a class (#207 stage 1). The file bin/php/publish_content.php is one call to it.
  * @description Publish one queued object version (OBJECT_ID VERSION_ID); internal, used by the publisher
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/publish_content.php:

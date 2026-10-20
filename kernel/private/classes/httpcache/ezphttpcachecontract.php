@@ -25,7 +25,7 @@
  *   e/<kk>/<key>.<h>.body entry body (h = start of its sha1), placeholders removed
  *   u/<uu>/<userID>.rec   user context record (JSON)
  *
- * See doc/bc/6.0/httpcache.md.
+ * See doc/en/us/bc/6.0/httpcache.md.
  */
 if ( !class_exists( 'eZTrustedProxy', false ) )
     require_once dirname( __DIR__, 4 ) . '/lib/ezutils/classes/eztrustedproxy.php';
@@ -207,7 +207,7 @@ class ezpHttpCacheContract
      *
      * As in the kernel, the forwarded headers count only when REMOTE_ADDR is
      * one of the trusted proxies ([HTTPHeaderSettings] TrustedProxies[]);
-     * without REMOTE_ADDR they never do. See doc/bc/6.0/trusted-proxies.md.
+     * without REMOTE_ADDR they never do. See doc/en/us/bc/6.0/trusted-proxies.md.
      *
      * The key of a stored page is made of these, so the lookup has to arrive
      * at the same ones. Behind a load balancer that ends TLS and forwards to

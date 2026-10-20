@@ -22,7 +22,7 @@
  * failed, so the export was never stored. A PDF made on the fly was streamed from inside the template
  * (pdf(stream) echoes the whole file and calls cleanExit), without a file name and with ob_clean() on a buffer
  * that may not exist. It is now written to a temporary file and sent like a stored one, in chunks, with its name.
- * Guide: doc/guides/pdf-exports.md
+ * Guide: doc/en/us/guides/pdf-exports.md
  */
 class expPDFExportGenerator
 {

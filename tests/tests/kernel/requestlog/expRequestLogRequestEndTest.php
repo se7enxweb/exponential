@@ -1,7 +1,7 @@
 <?php
 /**
  * Every web request is classified exactly once, whichever way it ends (expRequestLog::begin() and finish(),
- * doc/features/6.0/request-logs.md): the normal end (ezpKernelWeb::shutdown()), eZExecution::cleanExit() (a download,
+ * doc/en/us/features/6.0/request-logs.md): the normal end (ezpKernelWeb::shutdown()), eZExecution::cleanExit() (a download,
  * an ezjscore call, a redirect, a view that sends its own output), the error module, or both.
  *
  *  RE-1  begin() registers finish() as eZExecution's clean-up handler, once, however often it is called in a request
@@ -218,7 +218,7 @@ class expRequestLogRequestEndTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 1, $lines );
         $this->assertStringContainsString( 'injection', $lines[0] );
         $this->assertStringContainsString( '/ezjscore/call/', $lines[0] );
-        // the client address is masked (the query stays: it is the evidence, doc/features/6.0/request-logs.md)
+        // the client address is masked (the query stays: it is the evidence, doc/en/us/features/6.0/request-logs.md)
         $this->assertStringContainsString( '[203.0.x.x]', $lines[0] );
         $this->assertStringNotContainsString( '203.0.113.9', $lines[0] );
     }

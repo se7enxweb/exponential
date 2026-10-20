@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/state/group_edit.php, moved into a class (#207 stage 1). The file kernel/state/group_edit.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/state/group_edit.php:
@@ -65,7 +65,7 @@ class GroupEdit extends \Exponential\Runnable\ModuleView
                 $auditNew = !$group->attribute( 'id' );
                 $group->store();
                 \ezpEvent::getInstance()->notify( 'content/state/group/cache', array( $group->attribute( 'id' ) ) );
-                // Audit (doc/bc/6.0/audit.md, content.state.change)
+                // Audit (doc/en/us/bc/6.0/audit.md, content.state.change)
                 if ( class_exists( 'expAuditHook' ) )
                     \expAuditHook::emit( 'content.state.change', function () use ( $group, $auditNew ) {
                         $names = array();

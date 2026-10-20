@@ -2,7 +2,7 @@
    is in now and where it goes; the others counted by why they are left out) and the result. Reached by POST from a
    user's page, the context menu or Users > Check user accounts; every account is checked again on Confirm
    (expUserDeactivation::decide()). Names are shown only of accounts and groups you may read. The same file is in
-   design/admin and design/admin4. Guide: doc/features/6.0/user-hygiene.md, section "Deactivate and move" *}
+   design/admin and design/admin4. Guide: doc/en/us/features/6.0/user-hygiene.md, section "Deactivate and move" *}
 
 {def $reason_names = hash( 'protected', 'the anonymous user, the administrator account or you'|i18n( 'design/admin/user/deactivate' ),
                            'gone', 'not found, or not visible to you'|i18n( 'design/admin/user/deactivate' ),

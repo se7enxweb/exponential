@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/topic/<help_id> (doc/features/6.0/help-content.md): one help topic maintained as content, rendered.
+ * exphelp/topic/<help_id> (doc/en/us/features/6.0/help-content.md): one help topic maintained as content, rendered.
  * Template design:exphelp/topic.tpl. A topic the user may not see (not Released and not editable by them, or no
  * content/read) is a 404, as an unknown one: the answer does not tell whether it exists.
  *

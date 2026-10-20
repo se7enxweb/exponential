@@ -28,7 +28,7 @@ describe fixes correctly and explains why a story about a version stays accurate
 | "A published tag is never changed: a fix for a problem in `v6.0.14` or an earlier tag reaches you as the next release, not as a corrected copy of the old one." | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
 | "A release tag never changes. Once published, a tag and the package version Packagist built from it are permanent; a fix always arrives as the next version." | [Getting the code](../../install/03-getting-the-code.md#31-versions-tags-and-branches) |
 | "If a published version is wrong, do not move or delete its tag. Publish the next version with the fix and say in its notes what was wrong with the previous one." | [Extensions guide, Release it](../../guides/extensions.md#7-release-it) |
-| "A tag is permanent: a bad release is corrected by the next one, never re-cut." | [Velocity release notes](../../changelogs/extensions/exponential-velocity.md) |
+| "A tag is permanent: a bad release is corrected by the next one, never re-cut." | [Velocity release notes](../../../../changelogs/extensions/exponential-velocity.md) |
 
 The Foundation's page lists the rule among the project's commitments under
 [Releases and version numbers](../who-is-the-exponential-foundation.md#releases-and-version-numbers).
@@ -47,7 +47,7 @@ getting the same files every time, which is what makes a pinned version the righ
 The documented answer is always the next version. A real example: the Velocity release notes say three tags have no
 release page, `v0.0.4.21`, `v0.0.4.22` and `v0.0.4.26`, because "their builds did not produce a usable artifact;
 they are still installable versions on Packagist, so move to the next version above them"
-([Velocity release notes](../../changelogs/extensions/exponential-velocity.md)). The tags were left in place and the
+([Velocity release notes](../../../../changelogs/extensions/exponential-velocity.md)). The tags were left in place and the
 fix came as later versions.
 
 ## What it means for your coverage
@@ -64,7 +64,7 @@ Two consequences for accuracy:
 - A version number is a precise reference. "Exponential 6.0.14" names exactly one set of files, so always print the
   full number ([How version numbers work](how-version-numbers-work.md)).
 - Work after a tag belongs to the next version, never retroactively to the old one. Changes made after 7 June 2026
-  are part of the 6.0.15 line, not of 6.0.14 ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)).
+  are part of the 6.0.15 line, not of 6.0.14 ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
 
 ## Phrases to use and avoid
 

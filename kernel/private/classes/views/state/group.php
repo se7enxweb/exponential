@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/state/group.php, moved into a class (#207 stage 1). The file kernel/state/group.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/state/group.php:
@@ -66,7 +66,7 @@ class Group extends \Exponential\Runnable\ModuleView
             else if ( $currentAction == 'Remove' && $Module->hasActionParameter( 'RemoveIDList' ) )
             {
                 $removeIDList = $Module->actionParameter( 'RemoveIDList' );
-                // Audit (doc/bc/6.0/audit.md, content.state.remove)
+                // Audit (doc/en/us/bc/6.0/audit.md, content.state.remove)
                 if ( class_exists( 'expAuditHook' ) && \expAuditHook::on( 'content.state.remove' ) )
                 {
                     foreach ( (array)$removeIDList as $removeID )

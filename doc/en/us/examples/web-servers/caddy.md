@@ -39,7 +39,7 @@ built-in PHP, plus the first two rules of `.htaccess_root`.
 ```caddy
 # Exponential 6: Caddy with PHP-FPM (automatic HTTPS, HTTP/2 and HTTP/3)
 #
-# Free documentation: GFDL 1.3 or later, see doc/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
+# Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
 #
 # Derived, not shipped by the kernel: the routing of the Caddyfile that
 # "exp:velocity" generates for its FrankenPHP engine

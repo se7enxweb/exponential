@@ -2,7 +2,7 @@
 
 The Composer update screen of November 2024 became a package manager between 28 September and 2 October 2026: packagist.org browsing, guarded installs, package servers, live runs, funding, an installed packages inventory and documentation. See the [feature page](../../features/6.0/extensions/ezupdate.md).
 
-This page lists **every one of the 34 changes** of the repository `ezupdate` between 2024-11-02 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezupdate.md); what each release contains is in the [release notes](../../changelogs/extensions/ezupdate.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezupdate.md).
+This page lists **every one of the 34 changes** of the repository `ezupdate` between 2024-11-02 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezupdate.md); what each release contains is in the [release notes](../../../../changelogs/extensions/ezupdate.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezupdate.md).
 
 | Kind | Changes |
 |---|---|
@@ -96,6 +96,6 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/ezupdate.md)
-- [Release notes](../../changelogs/extensions/ezupdate.md)
+- [Release notes](../../../../changelogs/extensions/ezupdate.md)
 - [Change ledger](../ledger/ezupdate.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

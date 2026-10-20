@@ -1,5 +1,5 @@
 {
-    "about": "The initial glossary for exp:help:content seed-glossary (doc/specifications/6.0/help-style-guide.md, Terminology). Entries are found again by term (remote_id help-glossary-<term>); avoid: the synonyms the validator reports.",
+    "about": "The initial glossary for exp:help:content seed-glossary (doc/en/us/specifications/6.0/help-style-guide.md, Terminology). Entries are found again by term (remote_id help-glossary-<term>); avoid: the synonyms the validator reports.",
     "entries": [
         { "term": "object", "avoid": ["content item", "entry"], "definition": "A piece of content in Exponential, of one content class.", "note": "The term of the admin interface." },
         { "term": "content class", "avoid": ["type", "template"], "definition": "The definition of the fields an object has.", "note": "\"Class\" alone is ambiguous; \"template\" is a design file." },

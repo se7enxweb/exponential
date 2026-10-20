@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/pdf.php, moved into a class (#207 stage 1). The file kernel/content/pdf.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/pdf.php:
@@ -33,7 +33,7 @@ function expModuleViewContentPdfPassthrough( $cacheFile )
 
     $file->fetch( true );
 
-    // Audit (doc/bc/6.0/audit.md, data.export.pdf): the node a PDF was sent for
+    // Audit (doc/en/us/bc/6.0/audit.md, data.export.pdf): the node a PDF was sent for
     if ( class_exists( 'expAuditHook' ) )
         expAuditHook::emit( 'data.export.pdf', function () {
             $p = isset( $GLOBALS['eZRequestedModuleParams']['parameters'] ) ? (array)$GLOBALS['eZRequestedModuleParams']['parameters'] : array();

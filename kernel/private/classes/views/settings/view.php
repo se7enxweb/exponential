@@ -1,12 +1,12 @@
 <?php
 /**
  * The code of kernel/settings/view.php, moved into a class (#207 stage 1). The file kernel/settings/view.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * What the page shows is worked out by expSettingsChain (which file sets a value and what it overrides),
  * expSettingsSecretRule (what is masked) and expSettingsPage (rows, search, comparison, the notice of a write);
  * this view reads the request, checks it against the installation's own lists (expSettingsTarget) and hands the
- * results to the template. User guide: doc/guides/settings-page.md
+ * results to the template. User guide: doc/en/us/guides/settings-page.md
  */
 /*
  * The original header of kernel/settings/view.php:

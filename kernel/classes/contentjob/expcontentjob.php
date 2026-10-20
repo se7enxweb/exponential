@@ -193,7 +193,7 @@ class expContentJob
         } );
         $job = new self( $data );
         $job->appendLog( 'queued: ' . $data['description'] . ' (user ' . $data['user_id'] . ', ' . $total . ' nodes)' );
-        // Audit (doc/bc/6.0/audit.md, content.job.create): the parameters by node id only
+        // Audit (doc/en/us/bc/6.0/audit.md, content.job.create): the parameters by node id only
         if ( class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'content.job.create', function () use ( $job, $normalized, $mode, $total ) {
                 $params = array();
@@ -536,7 +536,7 @@ class expContentJob
         if ( !$data || !$changed )
             return false;
         $this->data = $data + $this->data;
-        // Audit (doc/bc/6.0/audit.md, content.job.cancel): the request; a running worker records when it stops
+        // Audit (doc/en/us/bc/6.0/audit.md, content.job.cancel): the request; a running worker records when it stops
         if ( class_exists( 'expAuditHook' ) )
         {
             $job = $this;
@@ -597,7 +597,7 @@ class expContentJob
             return false;
         $this->data = $data;
         $this->appendLog( 'resumed' );
-        // Audit (doc/bc/6.0/audit.md, content.job.resume)
+        // Audit (doc/en/us/bc/6.0/audit.md, content.job.resume)
         if ( class_exists( 'expAuditHook' ) )
         {
             $job = $this;

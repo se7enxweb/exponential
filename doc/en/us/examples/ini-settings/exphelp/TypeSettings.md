@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > What kind of page a file is: its front matter (type: guide), else the first rule that matches.  
 > <pattern>;<type>, first match wins  
 
-Default: a list of 14: `doc/help/*;help`, `doc/guides/*;guide`, `doc/features/*;feature`, `doc/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/install/*;install`, `doc/INSTALL.md;install`, `doc/specifications/*;specification`, `doc/history/*;history`, `doc/release-overview;history`, `doc/branch-overview;history`, `doc/examples/*;example` ....
+Default: a list of 14: `doc/en/us/help/*;help`, `doc/en/us/guides/*;guide`, `doc/en/us/features/*;feature`, `doc/en/us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/en/us/install/*;install`, `doc/en/us/INSTALL.md;install`, `doc/en/us/specifications/*;specification`, `doc/en/us/history/*;history`, `doc/en/us/release-overview;history`, `doc/branch-overview;history`, `doc/en/us/examples/*;example` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -30,19 +30,19 @@ Default: a list of 14: `doc/help/*;help`, `doc/guides/*;guide`, `doc/features/*;
 [TypeSettings]
 # an empty "PathRules[]" first replaces the shipped list; without it the items are added
 PathRules[]
-PathRules[]=doc/help/*;help
-PathRules[]=doc/guides/*;guide
-PathRules[]=doc/features/*;feature
-PathRules[]=doc/bc/*;bc
+PathRules[]=doc/en/us/help/*;help
+PathRules[]=doc/en/us/guides/*;guide
+PathRules[]=doc/en/us/features/*;feature
+PathRules[]=doc/en/us/bc/*;bc
 PathRules[]=doc/changelogs/*;changelog
-PathRules[]=doc/install/*;install
-PathRules[]=doc/INSTALL.md;install
-PathRules[]=doc/specifications/*;specification
-PathRules[]=doc/history/*;history
-PathRules[]=doc/release-overview;history
+PathRules[]=doc/en/us/install/*;install
+PathRules[]=doc/en/us/INSTALL.md;install
+PathRules[]=doc/en/us/specifications/*;specification
+PathRules[]=doc/en/us/history/*;history
+PathRules[]=doc/en/us/release-overview;history
 PathRules[]=doc/branch-overview;history
-PathRules[]=doc/examples/*;example
-PathRules[]=doc/standards/patterns/*;catalogue
+PathRules[]=doc/en/us/examples/*;example
+PathRules[]=doc/en/us/standards/patterns/*;catalogue
 PathRules[]=*;reference
 */ ?>
 ```

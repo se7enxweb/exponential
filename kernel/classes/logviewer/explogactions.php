@@ -1,6 +1,6 @@
 <?php
 /**
- * The actions of the log viewer besides reading (doc/features/6.0/log-viewer.md, "Actions"): download a range,
+ * The actions of the log viewer besides reading (doc/en/us/features/6.0/log-viewer.md, "Actions"): download a range,
  * rotate now, empty a file, remove an archived rotation. Each is switched on in [ActionSettings]; the view checks the
  * policy (setup/logs for download, setup/managelogs for the others), the POST, the form token and the confirmation,
  * and records the audit. Nothing here locks a file.

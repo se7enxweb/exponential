@@ -57,7 +57,7 @@ class eZDiscountRule extends eZPersistentObject
     }
 
     /**
-     * Stores the discount group and records what changed (doc/bc/6.0/audit.md, commerce.discount.change).
+     * Stores the discount group and records what changed (doc/en/us/bc/6.0/audit.md, commerce.discount.change).
      */
     function store( $fieldFilters = null )
     {
@@ -74,7 +74,7 @@ class eZDiscountRule extends eZPersistentObject
      */
     static function removeByID( $id )
     {
-        // Audit (doc/bc/6.0/audit.md, commerce.discount.change): the row removed
+        // Audit (doc/en/us/bc/6.0/audit.md, commerce.discount.change): the row removed
         if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.discount.change' ) )
         {
             $auditRow = eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$id ), false );

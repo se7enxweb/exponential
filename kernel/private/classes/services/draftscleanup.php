@@ -13,7 +13,7 @@ namespace Exponential\Service;
  * Removing drafts older than their configured lifetime: one service for the two cronjob parts that did it with
  * the same code and different settings, cronjobs/old_drafts_cleanup.php (the drafts users leave) and
  * cronjobs/internal_drafts_cleanup.php (the internal drafts an edit creates before it is saved).
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  *   DraftsCleanup::cleanup( DraftsCleanup::USER_DRAFTS )       content.ini [VersionManagement] DraftsDuration, DraftsCleanUpLimit
  *   DraftsCleanup::cleanup( DraftsCleanup::INTERNAL_DRAFTS )   InternalDraftsDuration, InternalDraftsCleanUpLimit

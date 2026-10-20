@@ -1,4 +1,4 @@
-{* The confirmation of an action of the log viewer (setup/logsaction; doc/features/6.0/log-viewer.md, "Actions"):
+{* The confirmation of an action of the log viewer (setup/logsaction; doc/en/us/features/6.0/log-viewer.md, "Actions"):
    rotate now, empty the file, remove an archived rotation. Variables: log_action (rotate | truncate | delete),
    log_file (id, name, size, mtime, archive ...), log_rotations (the rotations kept, for rotate), log_token_field,
    log_token. Confirm posts the action again with ConfirmButton; Cancel goes back to the file.

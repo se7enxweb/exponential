@@ -144,7 +144,7 @@ the code: it is the prefix of real identifiers, not the product name.
 ## Nearly thirty years: the timeline
 
 Dates come from the sources in the last column. "Tag" means the date of a git tag in this repository; "release
-overview" is the file [doc/release-overview](../release-overview), which lists every version with its source.
+overview" is the file [doc/en/us/release-overview](../release-overview), which lists every version with its source.
 
 | When | What happened | Source |
 |---|---|---|
@@ -188,7 +188,7 @@ overview" is the file [doc/release-overview](../release-overview), which lists e
 | July 2026 | `ezpm` in the console, a one-command installer and the Kickstarter; the first commits of the Velocity web server (20 July). | [July 2026](../history/2026/2026-07.md), [Velocity chronicle](../history/velocity/README.md) |
 | 31 July 2026 | The repository `explayouts` (Exponential Layouts) is created. | GitHub API |
 | 22 September 2026 | Velocity arrives in Exponential and becomes the recommended engine within two days. | [September 2026](../history/2026/2026-09b.md) |
-| October 2026 | jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs, TinyMCE 8, Exponential Intelligence (`expai`, repository created 11 October), the LoveStack features of Mugo Web (12 October), and the help system you are reading. | [October 2026](../history/2026/2026-10.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md) |
+| October 2026 | jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs, TinyMCE 8, Exponential Intelligence (`expai`, repository created 11 October), the LoveStack features of Mugo Web (12 October), and the help system you are reading. | [October 2026](../history/2026/2026-10.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 
 ## The eZ Publish years, 1999 to 2021
 
@@ -209,9 +209,9 @@ What the history shows, generation by generation:
   (<https://exponential.earth/about/about-exponential/features-added-by-7x/7x-core-contributions-to-ez-publish-cms-2000-2015>).
   That line lives on as [Exponential Basic](#exponential-basic).
 - **eZ Publish 3** (2002 to 2007): introduced the content model you still use in Exponential, with classes, objects, versions, siteaccesses
-  and the template language. The [changelogs from 2.9 to 3.10](../changelogs/README.md) are in the help.
+  and the template language. The [changelogs from 2.9 to 3.10](../../../changelogs/README.md) are in the help.
 - **eZ Publish 4** (2007 to 2012): the PHP 5 generation, with ezjscore, the online editor and the 4.x
-  administration. [Changelogs 4.0 to 4.7](../changelogs/README.md).
+  administration. [Changelogs 4.0 to 4.7](../../../changelogs/README.md).
 - **eZ Publish 5 and the community builds** (2012 to 2021): the legacy kernel next to the new Symfony stack, the
   monthly community builds, then the 2017.08 to 2019.03 releases until September 2021 (release overview).
 
@@ -250,7 +250,7 @@ shows that none is missing.
 
 ## The 6.0.x releases
 
-From [doc/release-overview](../release-overview) and the git tags (`git tag -l 'v6.0.*' --sort=version:refname`):
+From [doc/en/us/release-overview](../release-overview) and the git tags (`git tag -l 'v6.0.*' --sort=version:refname`):
 
 | Version | Date | Highlights (from the history pages) |
 |---|---|---|
@@ -269,7 +269,7 @@ From [doc/release-overview](../release-overview) and the git tags (`git tag -l '
 | 6.0.12 | 10 February 2026 | |
 | 6.0.13 | 18 April 2026 | |
 | 6.0.14 | 7 June 2026 | MongoDB 8 as a database |
-| 6.0.15 | not released yet | Velocity, admin4, audit trail, Exponential Layouts, Exponential Intelligence, the help system and much more ([changelog](../changelogs/6.0/6.0.15.md)) |
+| 6.0.15 | not released yet | Velocity, admin4, audit trail, Exponential Layouts, Exponential Intelligence, the help system and much more ([changelog](../../../changelogs/6.0/6.0.15.md)) |
 
 A published tag is never changed: "a fix for a problem in `v6.0.14` or an earlier tag reaches you as the next
 release, not as a corrected copy of the old one" ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
@@ -348,7 +348,7 @@ each does:
 | `expsite-*`, `expquery-translator` | The site API, installer and query translator ported from the Netgen ecosystem | composer.json |
 
 Each extension has its own repository under <https://github.com/se7enxweb>, its own releases and its own changelog
-([extension changelogs](../changelogs/extensions/README.md)).
+([extension changelogs](../../../changelogs/extensions/README.md)).
 
 ## The platform line: Exponential Platform, Legacy, Nexus and DXP
 
@@ -511,10 +511,10 @@ Repository files (all in `se7enxweb/exponential`):
   [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE), [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md),
   [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md),
   [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json)
-- [doc/release-overview](../release-overview), [the history](../history/README.md),
+- [doc/en/us/release-overview](../release-overview), [the history](../history/README.md),
   [the ecosystem overview](../history/ecosystem.md), [the Velocity chronicle](../history/velocity/README.md)
 - [December 2023](../history/2023/2023-12.md), [July 2025](../history/2025/2025-07.md), [August 2025](../history/2025/2025-08.md)
-- [The 6.0.15 changelog](../changelogs/6.0/6.0.15.md), [Languages](../languages.md),
+- [The 6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), [Languages](../languages.md),
   [The license of this documentation](../README-LICENSE.md)
 - The git history: `git log`, `git tag`, `git shortlog`
 

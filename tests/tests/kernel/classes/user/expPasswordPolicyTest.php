@@ -1,6 +1,6 @@
 <?php
 /**
- * The modern user/password page, kernel side (doc/features/6.0/modern-password-change.md): the rules of
+ * The modern user/password page, kernel side (doc/en/us/features/6.0/modern-password-change.md): the rules of
  * expPasswordPolicy, the user/password view's errors per field and success state, ending the user's other
  * sessions, the audit records and the "your password was changed" mail.
  *

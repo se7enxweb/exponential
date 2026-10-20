@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/class/removegroup.php, moved into a class (#207 stage 1). The file kernel/class/removegroup.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/class/removegroup.php:
@@ -74,7 +74,7 @@ class Removegroup extends \Exponential\Runnable\ModuleView
                 foreach ( $deleteClassIDList as $deleteClassID )
                 {
                     $deleteClass = \eZContentClass::fetch( $deleteClassID );
-                    // Audit (doc/bc/6.0/audit.md, content.class.remove): a class removed with its group
+                    // Audit (doc/en/us/bc/6.0/audit.md, content.class.remove): a class removed with its group
                     if ( $deleteClass && class_exists( 'expAuditHook' ) && \expAuditHook::on( 'content.class.remove' ) )
                     {
                         $auditClass = \expAuditHook::contentClass( $deleteClass );

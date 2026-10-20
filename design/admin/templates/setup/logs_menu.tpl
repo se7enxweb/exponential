@@ -1,4 +1,4 @@
-{* The left menu of the log viewer (setup/logs, setup/logsaction; doc/features/6.0/log-viewer.md, "The navigator"):
+{* The left menu of the log viewer (setup/logs, setup/logsaction; doc/en/us/features/6.0/log-viewer.md, "The navigator"):
    the Setup menu, then every log the viewer may open, grouped Kernel, Site, Extensions, Web server and Rotated
    archives, each with its size, its last change and the lines a minute it gains (from fetch( 'setup', 'log_files' ),
    which is empty for a user without setup/logs). Each link is the log's permalink, setup/logs/view/<key>[/(archive)/N].

@@ -3,7 +3,7 @@
  *
  * Only what the shared components (stylesheets/components.css) cannot do, as .a4-<module>-* classes, with
  * colours, radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases).
- * Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules: doc/bc/6.0/admin4-styling.md
+ * Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules: doc/en/us/bc/6.0/admin4-styling.md
  */
 
 /* ---- history ---- content/history, content/draft, content/pendinglist: versions as cards, the diff ----------- */
@@ -317,7 +317,7 @@ div.block.a4-content-attr.is-invalid { border-color: var(--a4-bad); border-inlin
    in .a4-check, a part's label as .a4-label. The classes stay, because scripts look for them (the AJAX uploader and
    the relation list swap button and button-disabled). Selectors are element plus scope class, so they win over
    core.css (input.box, label, fieldset) by loading later, and an attribute's invalid state, a bar of the frame
-   (#controlbar-top) or an extension's own class still wins. doc/bc/6.0/admin4-styling.md, "Edit forms". */
+   (#controlbar-top) or an extension's own class still wins. doc/en/us/bc/6.0/admin4-styling.md, "Edit forms". */
 
 /* the attribute's name: label or legend, the group's heading; its parts take .a4-label */
 .a4-content-attr-label {

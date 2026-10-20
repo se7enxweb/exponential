@@ -108,7 +108,7 @@ class eZDiscountSubRule extends eZPersistentObject
     }
 
     /**
-     * Stores the discount rule and records what changed (doc/bc/6.0/audit.md, commerce.discount.change).
+     * Stores the discount rule and records what changed (doc/en/us/bc/6.0/audit.md, commerce.discount.change).
      */
     function store( $fieldFilters = null )
     {
@@ -125,7 +125,7 @@ class eZDiscountSubRule extends eZPersistentObject
      */
     function remove ( $id = null, $dumb = null )
     {
-        // Audit (doc/bc/6.0/audit.md, commerce.discount.change): the row removed
+        // Audit (doc/en/us/bc/6.0/audit.md, commerce.discount.change): the row removed
         if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.discount.change' ) )
         {
             $auditRow = eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$id ), false );

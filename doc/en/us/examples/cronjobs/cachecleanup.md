@@ -14,7 +14,7 @@ Remove expired and old view cache and cache-block files from disk.
 Entry point `cronjobs/cachecleanup.php`, code in `kernel/private/classes/cronjobs/cachecleanup.php`.
 
 > The code of cronjobs/cachecleanup.php, moved into a class (#207 stage 1). The file cronjobs/cachecleanup.php is one call to it.  
-> Guide: doc/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## When it runs
 

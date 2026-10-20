@@ -8,7 +8,7 @@
    Form field names, buttons and the action are the ones content/translations has always taken: DeleteIDArray[]
    with RemoveButton, NewButton for the add form. Everything works without javascript; the script at the end only
    asks before a removal. The same file is in design/admin and design/admin4. User guide:
-   doc/guides/content-languages.md. *}
+   doc/en/us/guides/content-languages.md. *}
 
 <div class="context-block content-translations a4-page a4-content-languages">
 
@@ -195,7 +195,7 @@
     <div class="a4-fold-body">
         <p>{'A content language is a language your articles, folders and other objects can be written in. Each one has an ID that is a single bit, so an object records all of its translations in one number, its language mask; the lowest bit marks an object as always available, shown even where none of its languages is listed.'|i18n( 'design/admin/content/translations' )}</p>
         <p>{'The texts of the administration interface and the templates (buttons, menus) come from translation files (.ts) and follow the Locale setting of a siteaccess instead. A site can show German content with an English interface and the other way round.'|i18n( 'design/admin/content/translations' )}</p>
-        <p>{'Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/guides/content-languages.md.'|i18n( 'design/admin/content/translations' )}</p>
+        <p>{'Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.'|i18n( 'design/admin/content/translations' )}</p>
     </div>
 </details>
 

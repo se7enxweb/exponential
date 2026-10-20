@@ -6,7 +6,7 @@ Then using browse mode choose parent node of new location of subtree being copie
 The size of subtree being copied are limited by MaxNodesCopySubtree. That is
 implemented to avoid browser timeouts which can occur when you are trying to copy
 big subtree. You can use copy subtree script (see bin/php/ezsubtreecopy.php,
-doc/features/subtree_copy_script.txt) instead of admin interface copy subtree
+doc/en/us/features/subtree_copy_script.txt) instead of admin interface copy subtree
 feature to get free of any limits (of course if you have proper admin rights to
 run scripts on your site).
 

@@ -221,7 +221,7 @@ and clear the template and content caches. `./console exp:ezchecktranslation ger
 - [Audit trail](../../../bc/6.0/audit.md): the `system.git_manager.fetch` event
 - [ezupdate](ezupdate.md): updates after a backup
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/git_manager.md) and [release notes](../../../changelogs/extensions/git_manager.md)
+- [Chronicle](../../../history/extensions/git_manager.md) and [release notes](../../../../../changelogs/extensions/git_manager.md)
 - [Change ledger](../../../history/ledger/git_manager.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-06](../../../history/extensions/months/2026-06.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

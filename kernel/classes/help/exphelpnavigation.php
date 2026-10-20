@@ -1,6 +1,6 @@
 <?php
 /**
- * The navigation tree of the help (doc/features/6.0/help-system.md, "Viewer"): every page the index serves, in its
+ * The navigation tree of the help (doc/en/us/features/6.0/help-system.md, "Viewer"): every page the index serves, in its
  * folders, as nested lists. Folders are native <details> (they open and close without JavaScript) with the number of
  * pages below them; a folder's README.md or index.md is its "Overview" link. The viewer opens the folders on the way
  * to the current page and marks it with aria-current; the contents page (exphelp/contents) opens them all.

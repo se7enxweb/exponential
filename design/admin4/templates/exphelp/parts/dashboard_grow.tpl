@@ -1,6 +1,6 @@
 {* exphelp/parts/dashboard_grow: the "Grow from user to developer" band of the help dashboard. Four steps from the
-   administration to the code (doc/help/getting-started.md, doc/help/develop-with-git.md, doc/help/update-with-git.md, contributing back, and contributing
-   extensions back, doc/help/contribute-extensions-back.md, shown once that page is in the help: help_grow_extensions_page) and links
+   administration to the code (doc/en/us/help/getting-started.md, doc/en/us/help/develop-with-git.md, doc/en/us/help/update-with-git.md, contributing back, and contributing
+   extensions back, doc/en/us/help/contribute-extensions-back.md, shown once that page is in the help: help_grow_extensions_page) and links
    to the Git guide and the installation chapter. Included by exphelp/dashboard.tpl; the classic admin has the same
    file. Styles: stylesheets/modules/help.css (.a4-help-grow*); no inline CSS or script. *}
 {def $help_grow_ctx = 'kernel/exphelp'}

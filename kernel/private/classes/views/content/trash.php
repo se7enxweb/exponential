@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/trash.php, moved into a class (#207 stage 1). The file kernel/content/trash.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/trash.php:
@@ -47,7 +47,7 @@ class Trash extends \Exponential\Runnable\ModuleView
         // a server whose workers kept an autoload array from before the class existed (Velocity) still renders.
         require_once 'kernel/private/classes/services/trash.php';
 
-        // What the list shows about each item (Exponential\Service\TrashList, doc/bc/6.0/trash.md). Loaded by path
+        // What the list shows about each item (Exponential\Service\TrashList, doc/en/us/bc/6.0/trash.md). Loaded by path
         // like the trash service; without it the template falls back to its own fetch.
         if ( !class_exists( '\Exponential\Service\TrashRecord' ) )
             require_once 'kernel/private/classes/services/trashrecord.php';

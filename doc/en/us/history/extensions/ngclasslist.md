@@ -2,7 +2,7 @@
 
 The class list datatype was repackaged in late August and September 2026 and received translations in October. See the [feature page](../../features/6.0/extensions/ngclasslist.md).
 
-This page lists **every one of the 9 changes** of the repository `ngclasslist` between 2026-03-02 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ngclasslist.md); what each release contains is in the [release notes](../../changelogs/extensions/ngclasslist.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ngclasslist.md).
+This page lists **every one of the 9 changes** of the repository `ngclasslist` between 2026-03-02 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ngclasslist.md); what each release contains is in the [release notes](../../../../changelogs/extensions/ngclasslist.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ngclasslist.md).
 
 | Kind | Changes |
 |---|---|
@@ -54,6 +54,6 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/ngclasslist.md)
-- [Release notes](../../changelogs/extensions/ngclasslist.md)
+- [Release notes](../../../../changelogs/extensions/ngclasslist.md)
 - [Change ledger](../ledger/ngclasslist.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

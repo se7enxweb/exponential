@@ -139,5 +139,5 @@ stopped on (`eZSiteInstaller::abortedStep()`).
 - [SQLite database](sqlite-database.md), [database drivers](../../specifications/6.0/database-drivers-sqlite-oracle.md), [database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - History: [16 to 30 September 2026](../../history/2026/2026-09b.md), [January 2024, second half](../../history/2024/2024-01b.md)

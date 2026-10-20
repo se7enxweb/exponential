@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * Generates the catalogue of design patterns and extension points of Exponential (doc/standards/patterns/).
+ * Generates the catalogue of design patterns and extension points of Exponential (doc/en/us/standards/patterns/).
  *
  * It reads the PHP source of the kernel, lib/ and the extensions with PHP's own tokenizer (nothing is loaded or run,
  * no database, no settings), classifies every class, interface, trait, module view, fetch function, template operator,
@@ -9,7 +9,7 @@
  * Markdown page per pattern, one per source area, and an index with the statistics.
  *
  *   php bin/php/exppatterncatalogue.php                     report what would change, write nothing
- *   php bin/php/exppatterncatalogue.php --write             write doc/standards/patterns/
+ *   php bin/php/exppatterncatalogue.php --write             write doc/en/us/standards/patterns/
  *   php bin/php/exppatterncatalogue.php --check             exit 1 when the pages differ from the source (CI)
  *   php bin/php/exppatterncatalogue.php --extensions=<dir>  also scan the extensions below <dir> that are git
  *                                                           repositories of their own (default: extension)
@@ -21,7 +21,7 @@
  * everywhere, so a second run on the same source writes the same bytes.
  *
  * The classification is heuristic (names, inheritance, method signatures, the registration files of the kernel);
- * doc/standards/patterns/README.md explains each rule.
+ * doc/en/us/standards/patterns/README.md explains each rule.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -40,7 +40,7 @@ const EXPPC_OWNERS = array( 'se7enxweb' );
 /** Extensions never catalogued: private or not part of the distribution */
 const EXPPC_EXCLUDED = array( 'expmcp', 'ezmcp', 'expdse', 'sevenx_alpha_settings' );
 /** The output directory */
-const EXPPC_OUT = 'doc/standards/patterns';
+const EXPPC_OUT = 'doc/en/us/standards/patterns';
 /** Longest description, in characters */
 const EXPPC_DESCRIPTION_LENGTH = 150;
 
@@ -1331,9 +1331,9 @@ function exppcRenderIndex( $model, $sources, $byArea )
         . "keywords: design patterns, pattern catalogue, abstractions, architecture, factory, singleton, registry, strategy, handler, template method, observer, adapter, facade, active record, eZPersistentObject, datatype, template operator, fetch function, module view, policy function, workflow event, extension point, plugin, INI\n"
         . "type: reference\n---\n# Design pattern catalogue\n\n";
     $md .= "This catalogue is for developers who extend Exponential or change its kernel. It lists every abstraction the code uses, where it is, and how a new implementation is plugged in, so that new code follows the patterns that are already there instead of inventing new ones. It is generated from the source code, so it is complete and current for the code it was built from; the rules that recognize each pattern are heuristic and are explained below.\n\n";
-    // the examples (doc/examples/) are linked once they are there
-    if ( is_file( 'doc/examples/README.md' ) )
-        $md .= "Runnable examples of most of these extension points: [Examples](../../examples/README.md)" . ( is_file( 'doc/examples/cookbook/README.md' ) ? " and the [cookbook](../../examples/cookbook/README.md)" : '' ) . ".\n\n";
+    // the examples (doc/en/us/examples/) are linked once they are there
+    if ( is_file( 'doc/en/us/examples/README.md' ) )
+        $md .= "Runnable examples of most of these extension points: [Examples](../../examples/README.md)" . ( is_file( 'doc/en/us/examples/cookbook/README.md' ) ? " and the [cookbook](../../examples/cookbook/README.md)" : '' ) . ".\n\n";
     $md .= "The rules the code follows: [Standards](../README.md) and [Kernel architecture](../architecture/kernel-architecture.md).\n\n";
     $md .= "## In numbers\n\n| | |\n|---|---|\n";
     $md .= '| Instances (all categories) | ' . $stats['instances'] . " |\n";
@@ -1366,7 +1366,7 @@ function exppcRenderIndex( $model, $sources, $byArea )
     $md .= "\nAn extension is read when it is a git repository of its own below `extension/` whose origin is a se7enxweb repository, or a Composer package of se7enxweb installed there; private extensions and site settings are never read. A site that has other extensions installed gets a larger catalogue when it runs the generator.\n\n";
     $md .= "## How the catalogue is built\n\nRun in the installation root (no database, nothing is loaded or executed; PHP's tokenizer reads the files):\n\n```bash\n"
          . "php bin/php/exppatterncatalogue.php            # report which pages would change\n"
-         . "php bin/php/exppatterncatalogue.php --write    # write doc/standards/patterns/\n"
+         . "php bin/php/exppatterncatalogue.php --write    # write doc/en/us/standards/patterns/\n"
          . "php bin/php/exppatterncatalogue.php --check    # exit 1 when the pages are out of date\n```\n\n";
     $md .= "The output depends only on the source: no dates, no commit ids, everything sorted, so a second run on the same code writes the same bytes. Commit the pages with the code change that changes them.\n\n";
     $md .= "Each category has a rule (the table above and each pattern's page). A class can match several categories. The rules use the class's name, its parent classes and interfaces (followed through the whole code base), its methods (static, abstract) and the registration files of the kernel: `module.php` (views and policy functions), `function_definition.php` (fetch functions), `eztemplateautoload.php` (template operators and functions), `cronjobs/` directories, `ezpEvent` calls and INI settings whose value is a class name. Names are a heuristic: a class called `...Manager` is listed as a facade or service even when it is something else, and a pattern implemented without the usual names is missed. Descriptions are the first sentence of each class's doc comment.\n\n";

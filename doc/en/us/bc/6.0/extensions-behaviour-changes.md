@@ -8,7 +8,7 @@ releases.
 
 ## Quick checklist
 
-1. Update the extensions you use to their current release (see the [release notes](../../changelogs/extensions/README.md)).
+1. Update the extensions you use to their current release (see the [release notes](../../../../changelogs/extensions/README.md)).
    Keep `se7enxweb/expui` installed.
 2. Regenerate autoloads and clear the caches:
 
@@ -232,7 +232,7 @@ the before and since table are in [REST API v1 and v2: one extension](../../guid
 - [YUI removed from Exponential](yui-removal.md)
 - [Commands, cronjob parts and module views as classes](cli_cronjob_view_abstractions.md)
 - [PHP 8 support](php8.md), [Velocity engines](velocity-engines.md), [Security hardening](hardening.md)
-- [Release notes of all extensions](../../changelogs/extensions/README.md)
+- [Release notes of all extensions](../../../../changelogs/extensions/README.md)
 - [History of the extensions](../../history/extensions/README.md)
 - [An extension can replace a kernel module](../../features/6.0/extension-module-override.md)
 - [Extensions in more than one folder](../../features/6.0/additional-extension-directories.md)

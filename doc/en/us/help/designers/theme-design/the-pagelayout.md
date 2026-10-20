@@ -150,7 +150,7 @@ falling back to `$module_result.content` when no rule matches:
 {/if}
 ```
 
-(pattern from `doc/bc/6.0/LAYOUTS.md`, "How rendering actually works"). The starter design uses
+(pattern from `doc/en/us/bc/6.0/LAYOUTS.md`, "How rendering actually works"). The starter design uses
 `fetch( 'explayouts', 'resolve_layout_for_node', hash( 'node_id', ... ) )` for full views. See
 [Layouts for designers](layouts-for-designers.md).
 

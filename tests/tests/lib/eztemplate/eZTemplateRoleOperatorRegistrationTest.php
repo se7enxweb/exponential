@@ -1,7 +1,7 @@
 <?php
 /**
  * The role and policy template operators (lib/eztemplate/classes/eztemplateroleoperator.php,
- * doc/features/6.0/role-and-policy-template-operators.md) are registered with the template engine
+ * doc/en/us/features/6.0/role-and-policy-template-operators.md) are registered with the template engine
  * (lib/eztemplate/classes/eztemplateautoload.php), so a template that uses them gets no "unknown operator".
  *
  * No kernel bootstrap, no database and no siteaccess: a bare eZTemplate with the lib/eztemplate autoloads. The

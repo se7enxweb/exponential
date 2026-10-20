@@ -37,7 +37,7 @@ rewrite rules of `.htaccess_root`, request filtering and the security headers.
 <!--
   Exponential 6: IIS (Internet Information Services) with PHP over FastCGI
 
-  Free documentation: GFDL 1.3 or later, see doc/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
+  Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
 
   Derived, not shipped by the kernel, and not tested on IIS here: a
   translation of .htaccess_root (this release) into IIS URL Rewrite rules,

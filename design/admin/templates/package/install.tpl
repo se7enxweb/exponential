@@ -1,9 +1,9 @@
 {* The first step of a package install (package/install/<name>): what the package will install, before anything
    is done. Install package (InstallPackageButton) starts it; Skip installation (SkipPackageButton) returns to the
-   package's page. The same names as before. Guide: doc/guides/packages.md
+   package's page. The same names as before. Guide: doc/en/us/guides/packages.md
    What the install meets here ($conflict_report, by remote id) and the option to install the content objects as
    drafts (AsDrafts, DraftsExisting); after an install as drafts $drafts_result lists the drafts.
-   Format reference: doc/bc/6.0/package-json-format.md *}
+   Format reference: doc/en/us/bc/6.0/package-json-format.md *}
 <form method="post" action={concat( 'package/install/', $package.name )|ezurl}>
 
 <div class="context-block a4-page a4-standalone">

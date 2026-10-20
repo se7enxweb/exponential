@@ -2,7 +2,7 @@
 /**
  * File containing the expHelpAllowlist class.
  *
- * The files the help system may show (doc/features/6.0/help-system.md, "Which files are shown"). Only files that are
+ * The files the help system may show (doc/en/us/features/6.0/help-system.md, "Which files are shown"). Only files that are
  * tracked by git below a configured documentation root are listed, and nothing else is ever read or served:
  *
  * - where the list comes from (exphelp.ini [IndexSettings] AllowlistSources[], first one that answers wins):
@@ -13,7 +13,7 @@
  * - a root is doc/ (Roots[]) or the doc/ directory of an extension named in ExtensionDocDirs[] (opt-in), with the
  *   repository the root is in (an extension usually has its own);
  * - a listed path is kept only when it has no empty, "." or ".." segment and no backslash, matches no
- *   ExcludePatterns[] (doc/doxygen/ and HTML by default), has a document or image suffix, is a regular file that is not
+ *   ExcludePatterns[] (doc/en/us/doxygen/ and HTML by default), has a document or image suffix, is a regular file that is not
  *   a symbolic link (nor is any directory above it, up to the root), lies inside the root after realpath(), and is no
  *   larger than MaxFileSize.
  *
@@ -36,7 +36,7 @@ class expHelpAllowlist
         'documentSuffixes'    => array( 'md', 'markdown', 'txt', 'rst' ),
         'plainTextWithoutSuffix' => true,
         'assetSuffixes'       => array( 'png', 'jpg', 'jpeg', 'gif', 'webp' ),
-        'excludePatterns'     => array( 'doc/doxygen/*', '*.html', '*.htm', '*.svg', '*.php' ),
+        'excludePatterns'     => array( 'doc/en/us/doxygen/*', '*.html', '*.htm', '*.svg', '*.php' ),
         'maxFileSize'         => 2097152,
         // the tracked paths (relative to the installation root) to use instead of the sources: tests and tools only
         'tracked'             => null,

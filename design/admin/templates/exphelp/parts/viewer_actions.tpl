@@ -1,4 +1,4 @@
-{* Print and download of a help page (exphelp/viewer.tpl, doc/features/6.0/help-system.md "Print and PDF").
+{* Print and download of a help page (exphelp/viewer.tpl, doc/en/us/features/6.0/help-system.md "Print and PDF").
    "Print this page" is a button exphelp.js shows and handles (data-exphelp-print: window.print()); without
    JavaScript it stays hidden and the browser's own print command does the same. "Download as PDF" is a plain
    link to exphelp/pdf/<page id>, which works without JavaScript. On paper the page's address is printed under the

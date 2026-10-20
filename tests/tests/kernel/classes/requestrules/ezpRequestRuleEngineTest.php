@@ -1,7 +1,7 @@
 <?php
 /**
  * The request rules (kernel/private/classes/requestrules), guide
- * doc/bc/6.0/view_full_security.md.
+ * doc/en/us/bc/6.0/view_full_security.md.
  *
  *  RR-01 — The first rule whose conditions all match decides; order counts; no match runs the view
  *  RR-02 — Values are any-of lists; a leading "!" turns a condition around; an empty value never matches

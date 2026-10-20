@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/package/install.php, moved into a class (#207 stage 1). The file kernel/package/install.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/package/install.php:
@@ -85,7 +85,7 @@ class Install extends \Exponential\Runnable\ModuleView
         {
             $http->removeSessionVariable( 'eZPackageValidation' );
             $persistentData['doItemInstall'] = true;
-            // As drafts (doc/bc/6.0/package-json-format.md): content objects become drafts, nothing is published,
+            // As drafts (doc/en/us/bc/6.0/package-json-format.md): content objects become drafts, nothing is published,
             // the other items are not installed
             if ( $module->hasActionParameter( 'AsDrafts' ) && $module->actionParameter( 'AsDrafts' ) )
             {

@@ -141,5 +141,5 @@ Other options: `--access-log` (common, combined or json), `--error-log`, `--quie
 - [Packages and binaries](velocity-packages-and-binaries.md), [Velocity web server](velocity-web-server.md) (the application server), [static files and images](velocity-static-files-and-images.md)
 - Specifications: [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md), [engine settings](../../specifications/6.0/velocity-engine-settings.md) (programs)
 - Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (the `0.0.4.42` defaults)
-- [Changelog: Exponential Velocity engine](../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
 - History: [August 2026](../../history/velocity/2026-08.md) (first C benchmark server), [25 to 30 September](../../history/velocity/2026-09e.md) (the rebuild)

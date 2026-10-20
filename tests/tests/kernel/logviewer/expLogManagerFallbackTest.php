@@ -1,7 +1,7 @@
 <?php
 /**
  * Log management on the log viewer's own classes (expLogManagerFallback, expLogManagerFactory) and the guards of the
- * view setup/logsmanage (doc/features/6.0/log-viewer.md, "Managing logs"), on temporary directories, no database.
+ * view setup/logsmanage (doc/en/us/features/6.0/log-viewer.md, "Managing logs"), on temporary directories, no database.
  *
  *  LV-140  logs(): size, estimated lines, archives sorted with sizes and gz, archive bytes, growth since the last
  *          rotation, writable, owner, the web server's logs listed but not managed

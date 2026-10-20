@@ -1,6 +1,6 @@
 <?php
 /**
- * The fetch functions of the apikey module (doc/guides/api-keys.md):
+ * The fetch functions of the apikey module (doc/en/us/guides/api-keys.md):
  *
  * - fetch( 'apikey', 'can_create' ): whether the current user may make API keys (for the link on the profile);
  * - fetch( 'apikey', 'counts', hash( 'user_id', <id> ) ): active, expired, revoked, total, never_used and

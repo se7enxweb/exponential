@@ -1,13 +1,13 @@
 <?php
 /**
  * The code of kernel/content/history.php, moved into a class (#207 stage 1). The file kernel/content/history.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * The versions page of an object. run() takes the request in steps: the Back button, who may open the page, the
  * comparison, the removal, the edit and the copy of a version, then the list. The list (filters, order, paging,
  * figures, and the actions each version offers) is worked out by expContentHistoryList, which needs no database;
  * who may open the page and whose content they see is decided here (canOpen(), canSeeVersionContent()).
- * Guides: doc/bc/6.0/draft-edit-access.md ("The versions of such an object"), doc/guides/content-history.md
+ * Guides: doc/en/us/bc/6.0/draft-edit-access.md ("The versions of such an object"), doc/en/us/guides/content-history.md
  */
 /*
  * The original header of kernel/content/history.php:
@@ -308,7 +308,7 @@ class History extends \Exponential\Runnable\ModuleView
             $this->feedback = array( 'type' => 'removed', 'versions' => $removedNumbers );
         }
 
-        // Audit (doc/bc/6.0/audit.md, content.version.remove)
+        // Audit (doc/en/us/bc/6.0/audit.md, content.version.remove)
         if ( $auditRemoved && class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'content.version.remove', function () use ( $objectID, $auditRemoved ) {
                 $versions = array();

@@ -191,4 +191,4 @@ configure; see [Preload Sites](../../features/6.0/preload-sites-view.md#it-runs-
 - [Database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md)
 - [Server control commands](../../features/6.0/web-server-and-solr-commands.md)
 - [Maintenance mode](../../features/6.0/maintenance-mode.md), [Order receipts](../../features/6.0/order-receipts.md), [Store dashboard](../../features/6.0/store-dashboard.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)

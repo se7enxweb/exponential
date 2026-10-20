@@ -136,4 +136,4 @@ trips, which a returning visitor experiences as the page painting immediately.
 - [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
 - [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)

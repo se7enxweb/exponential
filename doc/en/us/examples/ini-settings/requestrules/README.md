@@ -15,7 +15,7 @@ The shipped settings of `settings/requestrules.ini`: 4 blocks, 19 settings.
 > Request rules: what happens to a request before its module view runs.  
 >
 > Guide with every condition, action and fact, and recipes:  
->   doc/bc/6.0/view\_full\_security.md  
+>   doc/en/us/bc/6.0/view\_full\_security.md  
 >
 > A rule is a group \[Rule-<name>\] with conditions and an action. The rules  
 > named in RuleList\[\] are asked in that order about every module view the  

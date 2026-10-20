@@ -106,5 +106,5 @@ nested path works on first use.
 - [SQLite: transactions queue for the write lock](../../bc/6.0/sqlite-transactions.md)
 - [Install in one command](install-in-one-command.md), [SQLite for Exponential Platform](platform-sqlite-install.md), [MongoDB database support](mongodb-database-support.md)
 - [PHP 8 support](../../bc/6.0/php8.md) (the countable and `is_countable` fixes that came out of the SQLite test runs)
-- Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md) (the driver), [6.0.13](../../changelogs/6.0/6.0.13.md) (absolute paths, autoload), [6.0.14](../../changelogs/6.0/6.0.14.md) (schema reading)
+- Changelogs: [6.0.1](../../../../changelogs/6.0/6.0.1.md) (the driver), [6.0.13](../../../../changelogs/6.0/6.0.13.md) (absolute paths, autoload), [6.0.14](../../../../changelogs/6.0/6.0.14.md) (schema reading)
 - History: [January 2024, first half](../../history/2024/2024-01a.md), [January 2024, second half](../../history/2024/2024-01b.md), [April 2026](../../history/2026/2026-04.md), [June 2026, second half](../../history/2026/2026-06b.md) (dropping indexes)

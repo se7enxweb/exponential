@@ -8,7 +8,7 @@
  */
 
 /**
- * The one implementation of log rotation in the kernel (doc/features/6.0/log-rotation.md). eZDebug and eZLog
+ * The one implementation of log rotation in the kernel (doc/en/us/features/6.0/log-rotation.md). eZDebug and eZLog
  * rotate a log through it when it outgrows site.ini [FileSettings] LogFileMaxSize, the log viewer's rotate action
  * and the command line (./console exp:logs --rotate) rotate on demand, and prune() removes old archives.
  *

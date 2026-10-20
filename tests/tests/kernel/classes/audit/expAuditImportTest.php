@@ -1,6 +1,6 @@
 <?php
 /**
- * The import of the 4.x text audit logs (doc/bc/6.0/audit.md, "Import of the old logs (Z4)", acceptance test E4).
+ * The import of the 4.x text audit logs (doc/en/us/bc/6.0/audit.md, "Import of the old logs (Z4)", acceptance test E4).
  *
  *  IM-01 — the current header form and the older one without siteaccess and address; rotated copies first
  *  IM-02 — records are marked imported with their source (file, line, sha256), carry no seq/prev/hash (outside

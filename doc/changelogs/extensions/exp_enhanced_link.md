@@ -2,7 +2,7 @@
 
 Read this page before you install or update `exp_enhanced_link`, or to find out which release brought a change.
 
-What each release of `exp_enhanced_link` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/exp_enhanced_link.md); the story is in the [chronicle](../../history/extensions/exp_enhanced_link.md).
+What each release of `exp_enhanced_link` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/exp_enhanced_link.md); the story is in the [chronicle](../../en/us/history/extensions/exp_enhanced_link.md).
 
 ## v1.0.4 (2026-09-30)
 
@@ -40,8 +40,8 @@ What each release of `exp_enhanced_link` contains, assembled from its commits. E
 
 ## Related pages
 
-- [Feature page](../../features/6.0/extensions/exp_enhanced_link.md)
-- [Chronicle](../../history/extensions/exp_enhanced_link.md)
-- [Change ledger](../../history/ledger/exp_enhanced_link.md)
-- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- Months: [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Feature page](../../en/us/features/6.0/extensions/exp_enhanced_link.md)
+- [Chronicle](../../en/us/history/extensions/exp_enhanced_link.md)
+- [Change ledger](../../en/us/history/ledger/exp_enhanced_link.md)
+- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-08](../../en/us/history/extensions/months/2026-08.md), [2026-09](../../en/us/history/extensions/months/2026-09.md)

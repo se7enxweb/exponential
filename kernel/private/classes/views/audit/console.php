@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit/console view (doc/bc/6.0/audit.md, "Views"): the timeline of the audit records, newest first, with
+ * The audit/console view (doc/en/us/bc/6.0/audit.md, "Views"): the timeline of the audit records, newest first, with
  * filters, search and paging, and the state of each channel's hash chain at the top. Reads the index (brought up
  * to date when the view opens; the records of the live files not indexed yet are merged into the first page), or
  * the files when the index is off or not installed. Policy audit/read; the Channel limitation narrows the

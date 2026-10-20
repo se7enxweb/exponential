@@ -1,6 +1,6 @@
 <?php
 /**
- * Appends audit records to a channel's live file and keeps the hash chain (doc/bc/6.0/audit.md, "The hash chain").
+ * Appends audit records to a channel's live file and keeps the hash chain (doc/en/us/bc/6.0/audit.md, "The hash chain").
  *
  * Files: <LogDir>/<channel>-<YYYY-MM-DD>.jsonl (the UTC date), and when a day's file passes MaxFileSize the next
  * part <channel>-<YYYY-MM-DD>.2.jsonl, .3.jsonl ... One chain per channel runs through all of its files.

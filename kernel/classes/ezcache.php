@@ -436,7 +436,7 @@ class eZCache
     }
 
     /**
-     * Records caches cleared on request (doc/bc/6.0/audit.md, system.cache.clear). Never throws.
+     * Records caches cleared on request (doc/en/us/bc/6.0/audit.md, system.cache.clear). Never throws.
      *
      * @param string $how all, tag, id or purge
      * @param array $asked the tags or ids asked for

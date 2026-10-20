@@ -36,7 +36,7 @@ Published versions are permanent: a fix comes as the next version, never as a ch
 
 ## Before you update
 
-- [ ] Read the changelog of every version you pass (`doc/changelogs/6.0/`) and the behavior change notes (`doc/bc/6.0/`).
+- [ ] Read the changelog of every version you pass (`doc/changelogs/6.0/`) and the behavior change notes (`doc/en/us/bc/6.0/`).
 - [ ] Note your own extensions and template overrides that touch changed areas.
 - [ ] Take a backup ([Backups and restores](backups-and-restores.md)).
 - [ ] Try the update on a copy (staging) first.

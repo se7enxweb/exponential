@@ -7,7 +7,7 @@
    The same file is in design/admin and design/admin4. The usage figures come from the view (section_overview,
    section_summary); without them (an older view class) the cards show what the section rows hold and nothing is
    lost. Everything works without javascript: the selection and the buttons submit the form. The script adds the
-   search, the filter and the selection count. Guide: doc/guides/sections.md *}
+   search, the filter and the selection count. Guide: doc/en/us/guides/sections.md *}
 
 {def $has_overview = and( is_set( $section_overview ), is_set( $section_summary ) )
      $can_edit = first_set( $section_can_edit, true() )

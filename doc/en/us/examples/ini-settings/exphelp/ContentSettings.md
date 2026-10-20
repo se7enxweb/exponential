@@ -19,7 +19,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 
 ## Enabled
 
-> Help maintained as content (doc/features/6.0/help-content.md): topics, manuals, figures and the glossary as content  
+> Help maintained as content (doc/en/us/features/6.0/help-content.md): topics, manuals, figures and the glossary as content  
 > of the site, created by ./console exp:help:content. Nothing here matters until that command ran.  
 > disabled: exphelp/topic, exphelp/manual and exphelp/context are 404 and the help shows no topics  
 

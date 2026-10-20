@@ -20,7 +20,7 @@ Never edit `settings/velocity.ini` itself: an update replaces it. Put the settin
 ## ConfDir
 
 > Where the server's configuration lives, laid out like Debian's /etc/apache2  
-> (see doc/bc/6.0/velocity-ondisk-layout.md):  
+> (see doc/en/us/bc/6.0/velocity-ondisk-layout.md):  
 >   vc.conf, ports.conf, envvars  
 >   mods-available/  -> mods-enabled/   engine modules  
 >   conf-available/  -> conf-enabled/   shared snippets  

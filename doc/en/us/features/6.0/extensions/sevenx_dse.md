@@ -76,7 +76,7 @@ About 1.1.1:
 - [Ecosystem overview](../../../history/ecosystem.md): the upstream tool
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/sevenx_dse.md) and [release notes](../../../changelogs/extensions/sevenx_dse.md)
+- [Chronicle](../../../history/extensions/sevenx_dse.md) and [release notes](../../../../../changelogs/extensions/sevenx_dse.md)
 - [Change ledger](../../../history/ledger/sevenx_dse.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-04](../../../history/extensions/months/2026-04.md), [2026-09](../../../history/extensions/months/2026-09.md) (all extensions)

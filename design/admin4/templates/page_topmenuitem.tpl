@@ -24,7 +24,7 @@
             <a href='#' class="disabled" title="{$menu_item.tooltip}" aria-disabled="true" tabindex="-1">{if $item_icon}<span class="a4-icon a4-bi-{$item_icon|wash}" aria-hidden="true"></span>{/if}{$menu_item.name|wash}</a>
         {/if}
         {if $item_mega}
-            {* The mega menu (prototype; doc/features/6.0/admin4-design.md, "Mega menu"): the WAI-ARIA disclosure
+            {* The mega menu (prototype; doc/en/us/features/6.0/admin4-design.md, "Mega menu"): the WAI-ARIA disclosure
                navigation pattern, not a menu. The tab stays a link; this button beside it opens and closes the
                panel (aria-expanded, aria-controls). The panel's groups and links come from user/megamenu/<tab>,
                loaded by a4_mega_menu.js when it is first opened; until then it holds a status line and the link to

@@ -5753,8 +5753,8 @@
         <translation>The texts of the administration interface and the templates (buttons, menus) come from translation files (.ts) and follow the Locale setting of a siteaccess instead. A site can show German content with an English interface and the other way round.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/guides/content-languages.md.</source>
-        <translation>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
+        <translation>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24345,8 +24345,8 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Switch the profile on to see how many statements each request runs, how many are exact repeats, and what a query cache would save.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.</source>
-        <translation>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
+        <translation>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25697,8 +25697,8 @@ Note: The packages will not be uninstalled.</translation>
         <translation>site.ini settings</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
-        <translation>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
+        <translation>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32364,8 +32364,8 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Settings blocks each entry of which registers an implementation: the columns of the subitems table (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; or Template=), the content job types (content.ini [ContentJobSettings] JobTypes[]), the actions and scope providers of exp:ini (ini.ini [IniCommandSettings]) and the server functions of ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), with every remote service a server function class extending expServiceBase declares (its static $services, called as ezjscore/call/&lt;name&gt;::&lt;service&gt;; each one added to the total, a declared service whose method is missing is broken). An entry that names a class is also one of the settings that name a class and is counted there; the others are added to the total here. An entry whose class, method or template is missing, or whose class does not extend what the registry asks for, is shown as broken. Built-in subitems columns, which the list renders itself, are no point and are not listed.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -39745,8 +39745,8 @@ your account.</translation>
         <translation>Exponential Layouts replaced that for new sites: a layout holds zones and blocks, a menu is one of the blocks, and a rule picks the layout for each page. A siteaccess built that way never reads these settings.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/guides/classic-menu-settings.md explains both ways.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -49781,8 +49781,8 @@ The default code was made from the basic parameters you chose.</translation>
         <translation>Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

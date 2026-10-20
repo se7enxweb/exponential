@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit/settings view (doc/bc/6.0/audit.md, "Views", "The settings reference"): the effective audit.ini of this
+ * The audit/settings view (doc/en/us/bc/6.0/audit.md, "Views", "The settings reference"): the effective audit.ini of this
  * siteaccess, every value with the file it comes from (default, override, siteaccess, extension), secrets masked;
  * the keys as ids and fingerprints only; the sinks and the archive format handlers with what keeps them from working
  * here; and the state of the index (tables, full-text search, rows, lag). Read-only: settings are written with

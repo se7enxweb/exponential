@@ -61,7 +61,7 @@ All keys are in `cie.ini`, block `CieSettings`.
 - [Specification](../../../specifications/6.0/bccie.md): views, policies, files, commands, settings
 - [xrowextract](xrowextract.md): the newer export tool with its own handlers; [birthday](birthday.md) ships a handler for it
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
-- [Chronicle](../../../history/extensions/bccie.md) and [release notes](../../../changelogs/extensions/bccie.md)
+- [Chronicle](../../../history/extensions/bccie.md) and [release notes](../../../../../changelogs/extensions/bccie.md)
 - [Change ledger](../../../history/ledger/bccie.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

@@ -67,7 +67,7 @@ folder at all, so the extension-schema step is not used for it.
 
 - [ezwebin](ezwebin.md), [ezdemo](ezdemo.md)
 - [Setup wizard and editor siteaccess](../setup-wizard-and-editor-siteaccess.md)
-- [Chronicle](../../../history/extensions/ezwebin-ezpackage.md) and [release notes](../../../changelogs/extensions/ezwebin-ezpackage.md)
+- [Chronicle](../../../history/extensions/ezwebin-ezpackage.md) and [release notes](../../../../../changelogs/extensions/ezwebin-ezpackage.md)
 - [Change ledger](../../../history/ledger/ezwebin-ezpackage.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2023-12](../../../history/extensions/months/2023-12.md), [2024-01](../../../history/extensions/months/2024-01.md), [2024-03](../../../history/extensions/months/2024-03.md), [2026-07](../../../history/extensions/months/2026-07.md) (all extensions)

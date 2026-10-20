@@ -1,11 +1,11 @@
 <?php
 /**
  * The code of kernel/pdf/list.php, moved into a class (#207 stage 1). The file kernel/pdf/list.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * pdf/list: the PDF exports, an overview, a search, a filter, an order and pages, one card per export; Regenerate
  * writes a stored file anew; Remove selected asks first (design:pdf/confirmremove.tpl). What a card says is worked
- * out by expPDFExportInfo (kernel/classes/pdfexport). Guide: doc/guides/pdf-exports.md
+ * out by expPDFExportInfo (kernel/classes/pdfexport). Guide: doc/en/us/guides/pdf-exports.md
  */
 /*
  * The original header of kernel/pdf/list.php:

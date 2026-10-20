@@ -159,8 +159,8 @@ PhpBinary=
 ## JobTypes
 
 > The job types: JobTypes\[<name>\]=<class implementing expContentJobType>.  
-> A package install in the background (Setup > Packages > Install, "Install in the background"), doc/bc/6.0/package-json-format.md  
-> An export of the audit console in the background (Audit > Export, "Export in the background"), doc/bc/6.0/audit.md  
+> A package install in the background (Setup > Packages > Install, "Install in the background"), doc/en/us/bc/6.0/package-json-format.md  
+> An export of the audit console in the background (Audit > Export, "Export in the background"), doc/en/us/bc/6.0/audit.md  
 
 Default: a hash of 11: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`.
 

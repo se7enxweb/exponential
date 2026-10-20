@@ -10,7 +10,7 @@
  * The view (kernel/private/classes/views/content/draft.php) reads the drafts of the current user and hands them
  * over; it removes only what removable() allows, checked again on each version at the moment it is removed.
  *
- * Guide: doc/guides/drafts-and-pending.md
+ * Guide: doc/en/us/guides/drafts-and-pending.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

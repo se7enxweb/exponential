@@ -180,7 +180,7 @@ first.
 
 ## Related pages
 
-- [The 6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [The 6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
 - [The administrator's guide](../../guides/mail-preferences-administrator.md)
 - [The developer's guide](../../guides/mail-preferences-developer.md)
 - [The specification](../../specifications/6.0/mail-preferences.md), [the commands](../../specifications/6.0/mail-preferences-cli.md)

@@ -4,7 +4,7 @@
    The Remove button posts DeleteIDArray[] with RemoveButton to content/translations, as it always has. It is off
    while anything has a translation in the language (the kernel would refuse) and for the language the
    administration interface runs in. Works without javascript. The same file is in design/admin and design/admin4.
-   User guide: doc/guides/content-languages.md. *}
+   User guide: doc/en/us/guides/content-languages.md. *}
 {def $language = $language_row
      $locale_object = $translation.locale_object
      $is_interface = eq( false()|locale.locale_code, $locale_object.locale_code )}

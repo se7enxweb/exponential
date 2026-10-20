@@ -24,7 +24,7 @@ published. If you are new to Git, start with [Develop with Git](../help/develop-
 | Commit subject prefixes | **Complies** | `.githooks/commit-msg`, `.githooks/check-commit-range`, `quality.yml` |
 | Other commit message rules (product name, no tool attribution, no private paths) | **Unverified** | policy only, no automated check |
 | Changelogs per version | **Complies** | `doc/changelogs/<series>/<version>.md`, `doc/changelogs/extensions/` |
-| Permanent tags and releases | **Complies** (by policy) | [Extensions guide](../guides/extensions.md), "Release it"; [Velocity changelog](../changelogs/extensions/exponential-velocity.md) |
+| Permanent tags and releases | **Complies** (by policy) | [Extensions guide](../guides/extensions.md), "Release it"; [Velocity changelog](../../../changelogs/extensions/exponential-velocity.md) |
 | Version numbering: last position counts on | **Complies** | `0.0.4.9` followed by `0.0.4.10` in the Velocity history |
 | Extension metadata matches the release | **Complies** (by policy) | `ezinfo.php` `'Version'` and `extension.xml` `<version>` |
 | Packagist publication | **Complies** | Packagist webhook on the repository; push gate checks constraints |
@@ -86,13 +86,13 @@ Further rules of the project, not checked by any tool:
 ## Changelogs
 
 - Kernel changelogs: `doc/changelogs/<series>/<version>.md`, for example
-  [6.0.15](../changelogs/6.0/6.0.15.md) (in development; "Not released yet" on its first line). Older series back to
+  [6.0.15](../../../changelogs/6.0/6.0.15.md) (in development; "Not released yet" on its first line). Older series back to
   2.9 are kept in `doc/changelogs/`.
 - Extension changelogs: `doc/changelogs/extensions/<name>.md`, for example
-  [exponential-velocity.md](../changelogs/extensions/exponential-velocity.md).
+  [exponential-velocity.md](../../../changelogs/extensions/exponential-velocity.md).
 - Entries are assembled from the commit history and grouped by the same prefixes (Added, Updated, Removed, Renamed;
   fixes are listed under Updated in the Velocity changelog).
-- Upgrade-relevant changes get a page in `doc/bc/6.0/` linked from the changelog.
+- Upgrade-relevant changes get a page in `doc/en/us/bc/6.0/` linked from the changelog.
 
 ## Releases
 
@@ -106,7 +106,7 @@ cache the version they found; a moved tag would give two different packages unde
 - **Check before you push**: a clean working tree, passing tests, and build artifacts that match their sources.
 
 This is written down in the [Extensions guide](../guides/extensions.md), "Release it" ("A published tag can never be
-corrected") and in the [Velocity changelog](../changelogs/extensions/exponential-velocity.md) ("A tag is
+corrected") and in the [Velocity changelog](../../../changelogs/extensions/exponential-velocity.md) ("A tag is
 permanent: a bad release is corrected by the next one, never re-cut").
 
 ### Choosing the next version number

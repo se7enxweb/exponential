@@ -73,5 +73,5 @@ off unless you host many sites.
 - [Logs, INI cache and expiry timestamps per site](multi-site-log-and-cache-paths.md)
 - [Specification: INI override placements](../../specifications/6.0/ini-override-placements.md)
 - [Console: exp:ini](exp-ini-command.md), [extensions in more than one folder](additional-extension-directories.md)
-- [Changelog 6.0.12](../../changelogs/6.0/6.0.12.md)
+- [Changelog 6.0.12](../../../../changelogs/6.0/6.0.12.md)
 - [Chronicle: January 2026](../../history/2026/2026-01.md)

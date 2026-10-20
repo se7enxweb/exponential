@@ -31,7 +31,7 @@
  * Which account an action may touch is decided by decide(), a plain function over the state accountState() reads;
  * where an account is put back is planned by planRestore(), also a plain function.
  *
- * Guide: doc/features/6.0/user-hygiene.md, section "Deactivate and move"
+ * Guide: doc/en/us/features/6.0/user-hygiene.md, section "Deactivate and move"
  */
 class expUserDeactivation
 {

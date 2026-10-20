@@ -57,7 +57,7 @@ git tag -l 'v6.0.*' --sort=version:refname | tail -3
 ```
 
 Expected: the newest tags, ending with `v6.0.14`. The 6.0.15 line is in development and has no tag yet; its notes are in
-the [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
+the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md).
 
 ## The chronicle, month by month
 
@@ -109,12 +109,12 @@ the [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
 | Platform ecosystem | The Symfony based repositories around Exponential: admin interface, layouts, starters, bridges, forks | [ecosystem overview](ecosystem.md) |
 | Extensions | The legacy extensions, themes and packages, one chronicle per repository | [extensions](extensions/README.md) |
 | Velocity | The web server engine, from the first commit in July 2026 | [Velocity chronicle](velocity/README.md), [installers and packages](velocity/installers-and-packages.md) |
-| Release notes | One page per release and per extension | [6.0.15](../changelogs/6.0/6.0.15.md), [extensions](../changelogs/extensions/README.md) |
+| Release notes | One page per release and per extension | [6.0.15](../../../changelogs/6.0/6.0.15.md), [extensions](../../../changelogs/extensions/README.md) |
 
 ## Use the history to learn
 
 - **You want to use a feature:** follow the link from its month to the feature page, or start from the [guides](../guides/README.md).
-- **You are upgrading:** read the [6.0.15 changelog](../changelogs/6.0/6.0.15.md), then the behaviour change notes it links, newest last.
+- **You are upgrading:** read the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), then the behaviour change notes it links, newest last.
 - **You meet a word you do not know:** [glossary](../glossary.md).
 - **You hunt for one commit:** search the ledger of the repository, or run `git log --oneline -S"text"` in the installation.
 

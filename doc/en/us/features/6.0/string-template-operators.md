@@ -94,5 +94,5 @@ and compare.
 
 - [Role and policy operators](role-and-policy-template-operators.md)
 - [The expinfo operator](../../bc/6.0/expinfo-operator.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md)
-- [Changelog 6.0.13](../../changelogs/6.0/6.0.13.md)
+- [Changelog 6.0.13](../../../../changelogs/6.0/6.0.13.md)
 - [Chronicle: March 2026](../../history/2026/2026-03.md)

@@ -85,7 +85,7 @@ Replace `eztags` with the extension you look at.
 ## Platform packages
 
 The repositories of the Symfony based platform and its bridge to the legacy kernel. How they relate to Exponential
-is told in [the platform repositories](../../history/ecosystem.md).
+is told in [the platform repositories](../../en/us/history/ecosystem.md).
 
 | Package | Latest release | Release notes |
 |---|---|---|
@@ -129,7 +129,7 @@ is told in [the platform repositories](../../history/ecosystem.md).
 
 ## Related pages
 
-- [Upgrading guide](../../guides/upgrading.md), part C4: check your extensions after an upgrade.
-- [Extensions guide](../../guides/extensions.md): install, configure and release an extension.
-- [Extension catalogue](../../features/6.0/extensions/README.md): what each extension does.
-- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md).
+- [Upgrading guide](../../en/us/guides/upgrading.md), part C4: check your extensions after an upgrade.
+- [Extensions guide](../../en/us/guides/extensions.md): install, configure and release an extension.
+- [Extension catalogue](../../en/us/features/6.0/extensions/README.md): what each extension does.
+- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md).

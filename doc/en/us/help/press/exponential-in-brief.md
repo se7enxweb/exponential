@@ -61,7 +61,7 @@ of the fork was merged. Version 6.0.0 followed on 1 January 2024. The product wa
 ## What is new
 
 The newest release is **6.0.14** (7 June 2026). **6.0.15** is in development; its changelog already lists, among much
-else ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)):
+else ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)):
 
 | Feature | In one sentence | Story |
 |---|---|---|

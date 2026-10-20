@@ -27,7 +27,7 @@
  * The view only reads the session, so it releases it (and its lock) as soon as the user is known: the other requests
  * of the same session do not wait for the menu to be drawn. Every answer is private to the user (Cache-Control:
  * private, no-store; Vary: Cookie), so no shared cache keeps one user's menu, or a refusal, for another.
- * Guide: doc/features/6.0/admin4-design.md ("Mega menu").
+ * Guide: doc/en/us/features/6.0/admin4-design.md ("Mega menu").
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

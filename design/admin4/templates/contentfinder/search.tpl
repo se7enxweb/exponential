@@ -1,4 +1,4 @@
-{* The contentfinder/search view (doc/features/6.0/content-finder.md). Variables: search_text, search_type, types,
+{* The contentfinder/search view (doc/en/us/features/6.0/content-finder.md). Variables: search_text, search_type, types,
    found (null before a search; else input, results, count, truncated), feedback (the outcome of an action, or
    null), form_token, token_field, can_act. Only what the user may see is in found.results. *}
 {def $type_names = hash( 'auto', 'Recognise automatically'|i18n( 'kernel/contentfinder' ),

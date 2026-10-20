@@ -70,5 +70,5 @@ and the siteaccess, **never a token**. The same refusal again (same check, sitea
 - [Datatype and input hardening](../../specifications/6.0/datatype-input-hardening.md)
 - [RAD security](../../bc/6.0/rad-security.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)

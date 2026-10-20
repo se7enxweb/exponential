@@ -1,5 +1,5 @@
 {* The browse page of "Add a location for selected" (content/action AddLocationsButton): the selected items, what
-   the operation touches and the now-or-background choice, sent with the browse form. doc/bc/6.0/content-jobs.md *}
+   the operation touches and the now-or-background choice, sent with the browse form. doc/en/us/bc/6.0/content-jobs.md *}
 {def $content_object_name = $browse.content.name_list|implode( ', ' )}
 <div class="context-block">
 

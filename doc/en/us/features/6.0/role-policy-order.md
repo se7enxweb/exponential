@@ -48,5 +48,5 @@ policies in list order, Save keeps those copies and Cancel deletes them, so the 
 - [Object states](../../guides/object-states.md): the `StateGroup_<identifier>` and `NewState` limitations, with a worked review workflow
 - [Admin list paging](admin-list-paging.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - History: [January 2026](../../history/2026/2026-01.md), [16 to 30 September 2026](../../history/2026/2026-09b.md)

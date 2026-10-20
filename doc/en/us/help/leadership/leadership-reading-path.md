@@ -14,8 +14,8 @@ This page is for project managers and for sales and marketing people who are new
 confident, and then leading, members of an Exponential team. It answers one question: **what should I read, in which
 order?**
 
-The path covers every page of the two sections written for you, **Leadership** (`doc/help/leadership/`) and
-**Business** (`doc/help/business/`), and the existing help pages you need next to them. It is arranged per role and
+The path covers every page of the two sections written for you, **Leadership** (`doc/en/us/help/leadership/`) and
+**Business** (`doc/en/us/help/business/`), and the existing help pages you need next to them. It is arranged per role and
 per week. Everything here is in the help of your own installation, at `/exphelp/dashboard`, and free to copy and adapt
 ([Free documentation](../free-documentation.md)).
 
@@ -101,7 +101,7 @@ per week. Everything here is in the help of your own installation, at `/exphelp/
 | [Operating a site](../../guides/operating-a-site.md) | What running a site involves |
 | [Upgrading](../../guides/upgrading.md) | How a site moves to a newer release |
 | [The help system](../../features/6.0/help-system.md) | How this help works, and its PDF download |
-| [The 6.0.15 changelog](../../changelogs/6.0/6.0.15.md) | What the current line brings |
+| [The 6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) | What the current line brings |
 | [The glossary](../../glossary.md) | Every term explained |
 
 ## The path for project managers
@@ -170,7 +170,7 @@ per week. Everything here is in the help of your own installation, at `/exphelp/
 1. [Positioning and value proposition](../business/positioning-and-value-proposition.md)
 2. [Who Exponential is for: personas and industries](../business/who-exponential-is-for.md)
 3. [Feature highlights mapped to customer needs](../business/feature-highlights-for-customers.md)
-4. [The 6.0.15 changelog](../../changelogs/6.0/6.0.15.md), skimmed for what is new
+4. [The 6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md), skimmed for what is new
 
 ### Week 3: showing and comparing
 

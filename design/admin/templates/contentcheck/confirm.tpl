@@ -1,4 +1,4 @@
-{* The confirmation of contentcheck/trash (doc/features/6.0/content-checks.md, "Moving to the trash").
+{* The confirmation of contentcheck/trash (doc/en/us/features/6.0/content-checks.md, "Moving to the trash").
 
    Variables: plan (items, allowed, too_many, fingerprint), node_id, nothing_selected, confirm_token,
    confirm_field, form_token, token_field, batch_limit. Every ticked object is listed with what will happen to it;

@@ -136,7 +136,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         if ( method_exists( 'expContentSecurityPolicy', 'reset' ) )
             expContentSecurityPolicy::reset();
         // The audit too: what a previous request left is flushed, then its buffer, request id, open parent
-        // events and cached actors are cleared (doc/bc/6.0/audit.md, "Buffering and flushing")
+        // events and cached actors are cleared (doc/en/us/bc/6.0/audit.md, "Buffering and flushing")
         if ( class_exists( 'expAudit' ) )
             expAudit::resetRequest();
         // What the debug bar's Rendering tab shows of the previous request
@@ -1017,13 +1017,13 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         // Check if we should switch access mode (http/https) for this module view.
                         eZSSLZone::checkModuleView( $this->module->attribute( 'name' ), $functionName );
 
-                        // A view of a sensitive admin module opened by a signed-in user (doc/bc/6.0/audit.md,
+                        // A view of a sensitive admin module opened by a signed-in user (doc/en/us/bc/6.0/audit.md,
                         // access.view.sensitive, Z6 "always"; [AuditReadSettings] AlwaysModules[]); never a POST body
                         if ( class_exists( 'expAuditHook' ) )
                             self::auditSensitiveView( $this->module->attribute( 'name' ), $functionName );
 
                         // [AuditSettings] OnWriteFailure=refuse: a POST to a sensitive module does not run while
-                        // the audit cannot record it (doc/bc/6.0/audit.md, "When the audit cannot write")
+                        // the audit cannot record it (doc/en/us/bc/6.0/audit.md, "When the audit cannot write")
                         $moduleResult = null;
                         if ( class_exists( 'expAuditGuard' ) && !expAuditGuard::webAllows( $this->module->attribute( 'name' ), $functionName ) )
                             $moduleResult = expAuditGuard::refusedResult( $this->module->attribute( 'name' ), $functionName );
@@ -1149,7 +1149,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
     }
 
     /**
-     * Records access.view.sensitive (doc/bc/6.0/audit.md, Z6): a view of a module in [AuditReadSettings]
+     * Records access.view.sensitive (doc/en/us/bc/6.0/audit.md, Z6): a view of a module in [AuditReadSettings]
      * AlwaysModules[] (setup, role, user, audit, settings) opened by a signed-in user. Anonymous visitors (the
      * public login, register and password pages) are not recorded here: their actions have events of their own.
      *
@@ -1188,7 +1188,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      */
     protected function formTokenRefusalResult( ezpFormTokenException $e )
     {
-        // A POST refused for a missing or wrong form token (doc/bc/6.0/audit.md, access.token.refused): never the
+        // A POST refused for a missing or wrong form token (doc/en/us/bc/6.0/audit.md, access.token.refused): never the
         // token
         if ( class_exists( 'expAuditHook' ) )
         {
@@ -1742,7 +1742,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             );
         }
 
-        // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md) is recorded once per process: security.log and the
+        // Demo mode (EXP_DEMO_MODE=1, doc/en/us/bc/6.0/demo-mode.md) is recorded once per process: security.log and the
         // audit. class_exists: a worker started before the class was added.
         if ( class_exists( 'expDemoMode' ) )
             expDemoMode::announce();

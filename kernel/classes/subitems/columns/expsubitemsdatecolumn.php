@@ -6,7 +6,7 @@
  * Field= picks the column: published_age, modified_age, days_since_published,
  * days_since_modified, published_iso, modified_iso. All read the loaded object; no query. The
  * formatting (formatAge(), days()) is the base class's, shared with every other column.
- * Guide: doc/bc/6.0/subitems-table-options.md
+ * Guide: doc/en/us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

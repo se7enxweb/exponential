@@ -10,7 +10,7 @@ type: help
 # Customers glossary
 
 The words you will hear from your team, your partner and your host, in plain language. Each entry links to a page
-that explains more. The full glossary of the documentation is in `doc/glossary.md`.
+that explains more. The full glossary of the documentation is in `doc/en/us/glossary.md`.
 
 ## A to C
 

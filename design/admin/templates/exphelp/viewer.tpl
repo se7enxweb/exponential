@@ -1,4 +1,4 @@
-{* exphelp/viewer (doc/features/6.0/help-system.md): one help page. Wide windows show three columns: the tree of
+{* exphelp/viewer (doc/en/us/features/6.0/help-system.md): one help page. Wide windows show three columns: the tree of
    every help page on the left, the page in the middle (title, meta, the rendered document, previous/next) and its
    table of contents on the right, which stays in view. Narrower windows drop the side contents for a folded one above
    the page, and on phones the tree moves below the page (it comes after the page in the source, so the page is read

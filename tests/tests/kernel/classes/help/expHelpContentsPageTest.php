@@ -1,6 +1,6 @@
 <?php
 /**
- * The contents page of the help (exphelp/contents, doc/features/6.0/help-system.md, "All help pages"), without a
+ * The contents page of the help (exphelp/contents, doc/en/us/features/6.0/help-system.md, "All help pages"), without a
  * database: its folders closed, Expand all / Collapse all, deep links to a folder.
  *
  *  HCP-01  the tree is closed by default (native <details>, title and page count), every folder gets a unique id from

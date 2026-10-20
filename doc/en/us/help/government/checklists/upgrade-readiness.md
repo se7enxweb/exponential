@@ -23,7 +23,7 @@ and [The upgrade check](../../../guides/upgrade-check.md).
 ## Before
 
 - [ ] Current version noted from **Setup > System information** ([System information](../../../guides/system-information.md)).
-- [ ] Changelog of every version you pass read, and the upgrade notes it links ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), [Upgrading, Part C](../../../guides/upgrading.md#part-c-from-any-60x-to-today)).
+- [ ] Changelog of every version you pass read, and the upgrade notes it links ([6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md), [Upgrading, Part C](../../../guides/upgrading.md#part-c-from-any-60x-to-today)).
 - [ ] **Setup > Upgrade check** run: files changed in place found and moved into extensions or overrides ([The upgrade check](../../../guides/upgrade-check.md)).
 - [ ] Your own extensions checked against the changes ([Upgrading, C4](../../../guides/upgrading.md#c4-check-your-own-extensions)).
 - [ ] The upgrade rehearsed on a staging copy with a written test list.

@@ -222,8 +222,8 @@ reads. The calls were not run against a site for this page.
 - `extension/ezjscore/settings/ezjscore.ini` (`[ezjscServer]`, `[ezjscServer_<name>]`, `RequirePolicy`)
 - `extension/ezjscore/classes/runnable/views/ezjscore/call.php`, `extension/ezjscore/classes/ezjscajaxcontent.php`
 - `extension/ezjscore/classes/ezjscserverfunctionsjs.php`, `extension/ezjscore/settings/site.ini.append.php`
-- `extension/ezformtoken/event/ezxformtoken.php`; `doc/bc/6.0/backend_ezjscore_services.md`;
-  `doc/guides/rest-api-v1-and-v2.md`
+- `extension/ezformtoken/event/ezxformtoken.php`; `doc/en/us/bc/6.0/backend_ezjscore_services.md`;
+  `doc/en/us/guides/rest-api-v1-and-v2.md`
 
 ## Related pages
 

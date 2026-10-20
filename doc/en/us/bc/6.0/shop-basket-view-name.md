@@ -273,4 +273,4 @@ custom `shop/userregister.tpl` marking line 2 with an asterisk should move it.
 
 - [Shop basket in the September 2026 chronicle](../../history/2026/2026-09a.md#11-september-the-basket-gets-a-name-you-choose)
 - [Order receipts](../../features/6.0/order-receipts.md) and [Store dashboard](../../features/6.0/store-dashboard.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)

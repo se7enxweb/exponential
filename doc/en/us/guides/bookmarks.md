@@ -173,4 +173,4 @@ With an installation: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmar
 - `design/admin4/templates/content/bookmark.tpl`, `design/admin4/stylesheets/modules/content.css` (the same in
   `design/admin`)
 - `tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php`, `tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php`
-- [Changelog 6.0.15](../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

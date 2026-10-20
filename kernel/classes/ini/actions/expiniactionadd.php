@@ -4,7 +4,7 @@
  *
  * exp:ini add: appends a value to an array (Variable[]=value) in one scope's file, creating the file and
  * the block when they are missing (unless --no-create). A value the scope's file already lists is not
- * added twice. Guide: doc/bc/6.0/console-exp-ini.md.
+ * added twice. Guide: doc/en/us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

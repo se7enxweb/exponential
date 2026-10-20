@@ -1,6 +1,6 @@
 <?php
 /**
- * The ezpEvent bridge of the audit (doc/bc/6.0/audit.md, "The ezpEvent bridge", Z3): kernel and extension events
+ * The ezpEvent bridge of the audit (doc/en/us/bc/6.0/audit.md, "The ezpEvent bridge", Z3): kernel and extension events
  * that already exist (ezpEvent::getInstance()->notify() / filter()) are recorded as audit events without touching
  * their code, by INI mapping:
  *

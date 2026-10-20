@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit's scheduled work (doc/bc/6.0/audit.md, "Rotation, archives and retention (Q8)"), run by the cronjob
+ * The audit's scheduled work (doc/en/us/bc/6.0/audit.md, "Rotation, archives and retention (Q8)"), run by the cronjob
  * part audit (cronjobs/audit.php), and task by task by exp:audit and the console's archives view.
  *
  * Every run: the incremental index (when the index exists: expAuditIndexer, which has its own lock), the sink

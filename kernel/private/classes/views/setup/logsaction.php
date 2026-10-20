@@ -1,6 +1,6 @@
 <?php
 /**
- * The actions of the log viewer (setup/logsaction; doc/features/6.0/log-viewer.md, "Actions"). POST only, with the
+ * The actions of the log viewer (setup/logsaction; doc/en/us/features/6.0/log-viewer.md, "Actions"). POST only, with the
  * form token; each action must be switched on in [ActionSettings] and is audited:
  *   DownloadButton  File, From, To (bytes; empty: the last MaxDownloadBytes)   setup/logs        system.log.download
  *   RotateButton    File (a current file)                                     setup/managelogs  system.log.rotate

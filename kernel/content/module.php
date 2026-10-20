@@ -529,7 +529,7 @@ $ViewList['queued'] = array(
     'script' => 'queued.php',
     'params' => array( 'ContentObjectID', 'version' ) );
 
-// Content jobs: large subtree removes and copies in the background (doc/bc/6.0/content-jobs.md).
+// Content jobs: large subtree removes and copies in the background (doc/en/us/bc/6.0/content-jobs.md).
 // content/job/<id> is the progress page (?json=1 its status), content/jobs the list. Both check
 // themselves: the job's owner, content/jobs (everybody's jobs), or unlimited content/remove|create.
 $ViewList['job'] = array(
@@ -766,7 +766,7 @@ $FunctionList['tipafriend'] = array();
 $FunctionList['dashboard'] = array();
 // Opening content by its system URL (content/view/full/<node>) where a request
 // rule asks for it (requestrules.ini, Conditions[policy]=!content/view_system_url).
-// The function is checked by no view; doc/bc/6.0/view_full_security.md
+// The function is checked by no view; doc/en/us/bc/6.0/view_full_security.md
 $FunctionList['view_system_url'] = array();
 // Seeing and acting on everybody's content jobs (content/jobs/(all)/1, content/job/<id>).
 $FunctionList['jobs'] = array();

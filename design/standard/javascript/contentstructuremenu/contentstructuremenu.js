@@ -546,7 +546,7 @@ function ezcst_initializeMenuState( additionalNodesList, menuNodeID, autoopenCur
 
 /*!
     The fold/unfold links of a tree drawn without inline handlers (a[data-cst-fold], design/admin4
-    show_content_structure.tpl, doc/features/6.0/content-security-policy.md): one listener on the document folds or
+    show_content_structure.tpl, doc/en/us/features/6.0/content-security-policy.md): one listener on the document folds or
     unfolds the link's node and hides an open context menu.
 */
 if ( document.addEventListener )

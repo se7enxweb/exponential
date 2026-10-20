@@ -23,7 +23,7 @@ Exponential continues a code base whose original vendor ended it; "Exponential h
 - **The Exponential Foundation**, a nonprofit founded in 2026, operates the project and funds its open source work
   ([Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md)).
 - **Contributors** send pull requests, translations and documentation; "Every pull request is merged"
-  (`doc/bc/6.0/ci.md`).
+  (`doc/en/us/bc/6.0/ci.md`).
 - **Sponsors** pay for the time all of this takes.
 
 "The Exponential Open Source Project is funded by donations of time and resources by 7x (and Exponential Sponsors)"

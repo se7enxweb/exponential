@@ -67,5 +67,5 @@ license and website.
 - [Translations and languages](translations-and-languages.md)
 - [The product is called Exponential](rebranding-to-exponential.md), [a clean installation that fits shared hosting](clean-install-defaults.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - History: [16 to 30 September 2026](../../history/2026/2026-09b.md), [August 2025](../../history/2025/2025-08.md), [July 2025](../../history/2025/2025-07.md), [January 2025](../../history/2025/2025-01.md)

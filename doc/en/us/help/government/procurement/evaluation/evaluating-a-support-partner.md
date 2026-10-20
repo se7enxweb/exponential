@@ -90,7 +90,7 @@ their own staff. Ask the bidder how its promise to you is staffed.
 [ ] Named staff and back-ups; CVs of key staff
 [ ] Support offer with severities and response times staffed by the supplier's own people
 [ ] Security release patching commitment: within <time> of release
-[ ] Hardening plan per site (doc/install/13-security-hardening.md)
+[ ] Hardening plan per site (doc/en/us/install/13-security-hardening.md)
 [ ] Data processing agreement (if personal data is processed)
 [ ] Source code, documentation and credentials handed over at milestones
 [ ] Exit assistance clause

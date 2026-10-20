@@ -1,4 +1,4 @@
-{* exphelp/dashboard: the help start page (doc/features/6.0/help-system.md). From top to bottom: the search hero
+{* exphelp/dashboard: the help start page (doc/en/us/features/6.0/help-system.md). From top to bottom: the search hero
    (instant search through exphelp.js, a plain GET form to exphelp/search without it), the audiences (fourteen, each with its pages; the project-manager and sales-marketing cards link their start page), featured
    pages next to the recently changed pages, the sections as quick links, how to report an error, the license, the
    Support Exponential block (parts/support.tpl) and the keyboard shortcuts. Each audience card's title opens the
@@ -115,7 +115,7 @@
         </ul>
     </section>
 
-    {* ---- Help maintained as content: manuals and topics (doc/features/6.0/help-content.md) ---- *}
+    {* ---- Help maintained as content: manuals and topics (doc/en/us/features/6.0/help-content.md) ---- *}
     {if and( is_set( $help_content ), $help_content, or( $help_content.manuals|count|gt( 0 ), $help_content.topics|count|gt( 0 ) ) )}
     {include uri='design:exphelp/parts/dashboard_content.tpl' content=$help_content}
     {/if}

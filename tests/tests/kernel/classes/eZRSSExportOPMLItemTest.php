@@ -5,7 +5,7 @@
  * Everything exercised here is a pure static method: no database, no kernel
  * bootstrap, no network. The behaviour that needs a live installation - the
  * edit page, the browser, publishing a draft - is covered by the functional
- * scripts described in doc/bc/6.0/opml.md.
+ * scripts described in doc/en/us/bc/6.0/opml.md.
  *
  * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file.

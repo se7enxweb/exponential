@@ -26,7 +26,7 @@ ports. Every setting in it exists in `settings/velocity.ini`, which describes ea
 <?php /* #?ini charset="utf-8"?
 # Exponential 6: Velocity serving a public site on ports 80 and 443
 #
-# Free documentation: GFDL 1.3 or later, see doc/README-LICENSE.md.
+# Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md.
 #
 # Copy to settings/override/velocity.ini.append.php (drop ".example"), or
 # set each value with "exp:velocity config set <Block> <Setting> <value>",
@@ -183,11 +183,11 @@ unit that starts it through `exp:velocity`, so every setting stays in `velocity.
 ```ini
 # Exponential 6: a systemd unit that starts Velocity through exp:velocity
 #
-# Free documentation: GFDL 1.3 or later, see doc/README-LICENSE.md.
+# Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md.
 #
 # Not shipped as a unit; derived from what expVelocity::start() does (it
 # starts the server detached and returns once the port answers, leaving the
-# pid in var/vc/qbix/run/server.pid) and from doc/install/08-serving-the-site.md,
+# pid in var/vc/qbix/run/server.pid) and from doc/en/us/install/08-serving-the-site.md,
 # 8.3.11. It keeps every setting in velocity.ini. Explained in velocity.md.
 #
 # Install: /etc/systemd/system/exponential-velocity-example.service, replace

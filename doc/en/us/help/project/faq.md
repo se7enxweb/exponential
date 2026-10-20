@@ -69,7 +69,7 @@ The website's [About Exponential FAQ](https://exponential.earth/faq/about-expone
 balances new features against stability: every change to the core is reviewed carefully, and the core is kept to
 essential functions while extensions add the rest. In this repository you can see the same rule at work: new
 features usually arrive as extensions or as settings that are off by default, and every change is recorded in the
-[6.0.15 changelog](../../changelogs/6.0/6.0.15.md).
+[6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md).
 
 ## Working with Exponential
 

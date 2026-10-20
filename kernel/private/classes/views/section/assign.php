@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/section/assign.php, moved into a class (#207 stage 1). The file kernel/section/assign.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/section/assign.php:
@@ -80,7 +80,7 @@ class Assign extends \Exponential\Runnable\ModuleView
                                 }
                             }
 
-                            // Content jobs (doc/bc/6.0/content-jobs.md): one large subtree (or the user's last
+                            // Content jobs (doc/en/us/bc/6.0/content-jobs.md): one large subtree (or the user's last
                             // choice) gets a confirmation with the now-or-background choice; small ones as before
                             if ( count( $allowedNodeIDList ) === 1 && !$deniedNodeIDList
                                  && class_exists( 'Exponential\\View\\Kernel\\Content\\Job' ) )

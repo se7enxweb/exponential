@@ -36,7 +36,7 @@ you record; do not type them for the first time on camera.
 | What this help describes: the admin4 design, `exp:install`, Velocity, Exponential Intelligence in the distribution, the current layouts editor | The development line, branch `main` | "The 6.0.15 development line, not a release, as of <date>" |
 
 Most screens in the help belong to the 6.0.15 line, which "Not released yet" opens in its changelog
-([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)). `exp:install`, Velocity and the admin4 design are listed there
+([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)). `exp:install`, Velocity and the admin4 design are listed there
 as added in that line. Never give 6.0.15 a release date.
 
 ## Get the code

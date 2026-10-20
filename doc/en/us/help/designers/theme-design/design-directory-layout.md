@@ -41,7 +41,7 @@ changes the markup of articles may hold only `override/templates/full/article.tp
 
 Templates are read by PHP and are never sent to a browser. Assets are fetched by the browser directly, so the web
 server must let them through. The shipped rewrite rules (`.htaccess_root` in the installation root, and the Apache
-example `doc/examples/ezpublish.conf`) serve only these folders as static files:
+example `doc/en/us/examples/ezpublish.conf`) serve only these folders as static files:
 
 | Location | Folders served directly |
 |---|---|

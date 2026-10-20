@@ -25,13 +25,13 @@ partner joining the program adds its own offer to this landscape.
 
 | Area | Requirement | Source |
 |---|---|---|
-| PHP | 8.0 to 8.5 for the 6.0.15 line; Velocity needs 8.1 or later | `doc/install/02-requirements.md` |
+| PHP | 8.0 to 8.5 for the 6.0.15 line; Velocity needs 8.1 or later | `doc/en/us/install/02-requirements.md` |
 | PHP extensions | Among others `dom`, `xsl`, `mbstring`, `iconv`, `intl`, `zlib`, and one database extension | same |
 | php.ini | `memory_limit` 64M or more, `max_execution_time` 30, `date.timezone` set, `file_uploads` on | same |
 | Database | SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle or MySQL, in that order of preference | [Database support](../database-support.md) |
 | Operating system | See the tiers | [Operating system support](../os-support.md) |
 | Engine | Velocity (recommended), FrankenPHP, or a web server with PHP-FPM | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#exponential-velocity) |
-| Command line | PHP CLI with the same version and extensions as the web PHP, for cronjobs and scripts | `doc/install/02-requirements.md` |
+| Command line | PHP CLI with the same version and extensions as the web PHP, for cronjobs and scripts | `doc/en/us/install/02-requirements.md` |
 | Security | TLS, security headers, user separation, no exposed installer | [Security hardening](../security-hardening.md) |
 | Backups | Database and storage, restore tested | [Database support](../database-support.md#backup-and-restore) |
 

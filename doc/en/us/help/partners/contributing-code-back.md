@@ -36,9 +36,9 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
 ## What happens next
 
 - "Every pull request is merged, and its commits are kept as the contributor wrote them and never rewritten"
-  (`doc/bc/6.0/ci.md`). What needs fixing is fixed in commits on top.
+  (`doc/en/us/bc/6.0/ci.md`). What needs fixing is fixed in commits on top.
 - CI checks syntax, the manifest, commit messages, code style, PHPStan and the tests on supported PHP versions
-  (`doc/bc/6.0/ci.md`).
+  (`doc/en/us/bc/6.0/ci.md`).
 - "By contributing, you agree that your contributions will be licensed under the GNU General Public License, version
   2.0 or later" (CONTRIBUTING.md).
 

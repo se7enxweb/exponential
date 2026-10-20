@@ -14,7 +14,7 @@ Process scheduled hide and unhide actions on content objects.
 Entry point `cronjobs/hide.php`, code in `kernel/private/classes/cronjobs/hide.php`.
 
 > The code of cronjobs/hide.php, moved into a class (#207 stage 1). The file cronjobs/hide.php is one call to it.  
-> Guide: doc/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## When it runs
 

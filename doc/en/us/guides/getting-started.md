@@ -234,6 +234,6 @@ and [Extension loading order](../features/6.0/extension-loading-order.md).
 | Change settings from the command line | [exp:ini](../features/6.0/exp-ini-command.md) |
 | Keep an eye on changes made in the admin | [Audit trail](../features/6.0/audit-trail.md) |
 | Run recurring jobs | [Cronjobs console](../features/6.0/cronjobs-console.md) |
-| See what changed and when | [Chronicle by month](../history/README.md), [Changelog 6.0.15](../changelogs/6.0/6.0.15.md) |
+| See what changed and when | [Chronicle by month](../history/README.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
 | Know what an install does by default | [Clean install defaults](../features/6.0/clean-install-defaults.md), [Installer logs and seed data](../specifications/6.0/installer-logs-and-seed-data.md) |
 | Look up a word | [Glossary](../glossary.md) |

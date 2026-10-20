@@ -73,5 +73,5 @@ The month by month list of all 1,121 changes, including the smaller UI and drive
 - Platform features: [administration interface](platform-admin-ui-fork.md), [DXP skeleton](platform-dxp-skeleton.md), [Layouts on the platform](platform-layouts-core-fork.md), [Nexus starter](platform-nexus-starter.md), [PHP 8.5 framework forks](platform-php85-framework-forks.md), [site bundles](platform-site-bundles.md), [SQLite for Exponential Platform](platform-sqlite-install.md), [legacy bridge](legacy-bridge.md)
 - Specifications: [platform console command names](../../specifications/6.0/platform-console-commands.md), [platform package map](../../specifications/6.0/platform-package-map.md), [platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md), [legacy bridge bundle](../../specifications/6.0/legacy-bridge-bundle.md)
 - Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
-- Changelog: [platform changelog](../../changelogs/extensions/exponential-platform.md)
+- Changelog: [platform changelog](../../../../changelogs/extensions/exponential-platform.md)
 - History: [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md)

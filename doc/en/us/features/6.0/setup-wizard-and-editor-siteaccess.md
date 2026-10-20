@@ -82,5 +82,5 @@ Nothing changes for an installation made earlier. To get an editor siteaccess:
 - [Hidden admin tabs](hidden-admin-tabs.md), [admin links follow permissions](admin-links-follow-permissions.md), [the admin4 design](admin4-design.md)
 - [Install in one command](install-in-one-command.md), [Kickstarter CLI](kickstarter-cli.md), [Kickstarter CLI reference](../../bc/6.0/kickstartercli.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
 - History: [October 2026](../../history/2026/2026-10.md), [January 2024, second half](../../history/2024/2024-01b.md)

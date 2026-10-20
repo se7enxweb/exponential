@@ -12,7 +12,7 @@ generated: exp:help:examples
 The block `[SSLZoneSettings]` of `settings/site.ini`, with 3 setting(s).
 
 > Settings for SSL zones  
-> For more information please look at doc/features/3.8/ssl\_zones.txt.  
+> For more information please look at doc/en/us/features/3.8/ssl\_zones.txt.  
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 

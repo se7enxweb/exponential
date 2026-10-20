@@ -1,7 +1,7 @@
 <?php
 /**
  * The csp module: where browsers send the reports of the Content Security Policy
- * (doc/features/6.0/content-security-policy.md, "Reports").
+ * (doc/en/us/features/6.0/content-security-policy.md, "Reports").
  *
  * csp/report takes a report (POST, application/csp-report or application/reports+json) and writes one line per
  * violation to var/log/csp.log; it answers with a status and no body. Browsers send reports without asking anyone

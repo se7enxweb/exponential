@@ -1,7 +1,7 @@
 /*
  * admin4 package/view/full: "No wrap" (data-wrap-toggle) switches the long lines of the file viewer between wrapped
  * and scrolled, and says so in aria-pressed. A file of its own, so the page runs under a Content Security Policy
- * without 'unsafe-inline' (doc/features/6.0/content-security-policy.md).
+ * without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
  */
 document.addEventListener( 'click', function ( event )
 {

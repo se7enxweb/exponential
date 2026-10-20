@@ -1138,7 +1138,7 @@ function _keyHandler( e )
 }
 
 /*!
-  Menus declared without a script (doc/features/6.0/content-security-policy.md): a page under a Content Security
+  Menus declared without a script (doc/en/us/features/6.0/content-security-policy.md): a page under a Content Security
   Policy without 'unsafe-inline' runs neither inline <script> elements nor on...= attributes, so a menu, its items
   and the elements that open it can say what the menuArray entries and the event handler attributes said in
   data-menu-* attributes; one listener per event on the document acts on them.

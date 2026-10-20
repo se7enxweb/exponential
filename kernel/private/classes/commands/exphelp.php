@@ -3,7 +3,7 @@
  * @description The help system on the command line: build and describe the index of doc/, search it, show a page's metadata, check its links and images
  * @alias exp:help
  *
- * File containing the exp:help command (doc/features/6.0/help-system.md, "On the command line").
+ * File containing the exp:help command (doc/en/us/features/6.0/help-system.md, "On the command line").
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

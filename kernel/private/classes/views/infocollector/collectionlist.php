@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/infocollector/collectionlist.php, moved into a class (#207 stage 1). The file kernel/infocollector/collectionlist.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/infocollector/collectionlist.php:
@@ -74,7 +74,7 @@ class Collectionlist extends \Exponential\Runnable\ModuleView
             }
 
             $objectID = $http->sessionVariable( 'ObjectID' );
-            // Audit (doc/bc/6.0/audit.md, data.infocollection.remove): never the collected values
+            // Audit (doc/en/us/bc/6.0/audit.md, data.infocollection.remove): never the collected values
             if ( is_array( $collectionIDArray ) && $collectionIDArray && class_exists( 'expAuditHook' ) )
                 \expAuditHook::emit( 'data.infocollection.remove', array(
                     'object' => array( 'type' => 'collection', 'id' => implode( ',', array_map( 'intval', $collectionIDArray ) ) ),

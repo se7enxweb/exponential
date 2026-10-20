@@ -61,6 +61,6 @@ Links issued before the update keep working until they expire.
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md#2-forgot-password-pages-no-longer-tell-whether-an-address-has-an-account)
 - [Reset a user's password](../reset-user-password.md)
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
-- [Chronicle](../../../history/extensions/ezmbpaex.md) and [release notes](../../../changelogs/extensions/ezmbpaex.md)
+- [Chronicle](../../../history/extensions/ezmbpaex.md) and [release notes](../../../../../changelogs/extensions/ezmbpaex.md)
 - [Change ledger](../../../history/ledger/ezmbpaex.md)
 - Months: [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

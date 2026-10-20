@@ -36,7 +36,7 @@ Then add an attribute of the enhanced link type to a class in **Setup > Classes*
 
 ## Related pages
 
-- [Chronicle](../../../history/extensions/exp_enhanced_link.md) and [release notes](../../../changelogs/extensions/exp_enhanced_link.md)
+- [Chronicle](../../../history/extensions/exp_enhanced_link.md) and [release notes](../../../../../changelogs/extensions/exp_enhanced_link.md)
 - [Change ledger](../../../history/ledger/exp_enhanced_link.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md) (all extensions)

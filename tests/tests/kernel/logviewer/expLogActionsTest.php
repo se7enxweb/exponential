@@ -1,6 +1,6 @@
 <?php
 /**
- * The log viewer's actions besides reading, the session limit and the settings (doc/features/6.0/log-viewer.md,
+ * The log viewer's actions besides reading, the session limit and the settings (doc/en/us/features/6.0/log-viewer.md,
  * "Actions", "Cost", "Settings"), on a temporary root.
  *
  *  LV-50  range(): inside the file, at most the maximum, the end by default

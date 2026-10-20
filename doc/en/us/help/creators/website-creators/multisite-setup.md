@@ -118,5 +118,5 @@ Write the trade-off into the plan ([Planning multisite and multilingual projects
 
 - [Building a multilingual site](multilingual-sites.md)
 - [Structuring the content tree](structuring-the-content-tree.md)
-- Multisite siteaccess cookbook (`doc/examples/cookbook/multisite-siteaccess.md`)
+- Multisite siteaccess cookbook (`doc/en/us/examples/cookbook/multisite-siteaccess.md`)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

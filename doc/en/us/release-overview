@@ -1112,7 +1112,7 @@ Datatype branch:
 # The records below follow 4.2. They were added in 2026 from sources only: the git tags of this repository,
 # doc/changelogs/, the GitHub releases of se7enxweb/exponential and the releases and tags of the archived
 # upstream repository github.com/ezsystems/ezpublish-legacy. Each record names its source; a date that no
-# source gives is "unknown". 5.90 is the alias of the 2017.08 and later legacy releases (doc/bc/5.90/README.md).
+# source gives is "unknown". 5.90 is the alias of the 2017.08 and later legacy releases (doc/en/us/bc/5.90/README.md).
 
 4.0.20:
 - Tag=4.0.20

@@ -1,6 +1,6 @@
 <?php
 /**
- * The page surface of a help page's PDF (doc/features/6.0/help-system.md, "Print and PDF"): the kernel's own PDF
+ * The page surface of a help page's PDF (doc/en/us/features/6.0/help-system.md, "Print and PDF"): the kernel's own PDF
  * library (lib/ezpdf, Cpdf) with the few changes expHelpPdfWriter needs.
  *
  * - Text is drawn as it is. Cpdf reads <b>, <i> and <c:...> inside a text as font directives; a help page that

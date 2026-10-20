@@ -34,7 +34,7 @@ support ticket, or hand a printed set to the editors of your team. When you do, 
 
 - the **copyright notices** of the pages,
 - the **license notice**, the paragraph that says the GNU Free Documentation License applies, and
-- a **copy of the license** itself (the file `doc/LICENSE-GFDL-1.3.txt`, or the license's text in the same
+- a **copy of the license** itself (the file `doc/en/us/LICENSE-GFDL-1.3.txt`, or the license's text in the same
   document).
 
 Do not add conditions of your own, and do not use technical measures (copy protection, for example) that stop the
@@ -76,7 +76,7 @@ own, independent works; it applies to the pages from this documentation and vers
 ### Cite it
 
 Point to a page by its title and its address in the help, or by its file in the repository
-(`doc/help/getting-started.md`, for example). Quoting a short passage with its source is normally possible under
+(`doc/en/us/help/getting-started.md`, for example). Quoting a short passage with its source is normally possible under
 copyright law anyway; when you copy whole pages or large parts, follow the conditions above.
 
 ## Help others

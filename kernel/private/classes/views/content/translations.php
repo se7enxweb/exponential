@@ -1,13 +1,13 @@
 <?php
 /**
  * The code of kernel/content/translations.php, moved into a class (#207 stage 1). The file kernel/content/translations.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * The content languages page: an overview of the languages content can be written in, with how much content and
  * which classes use each, which siteaccesses show it (site.ini [RegionalSettings] SiteLanguageList) and what keeps
  * it from being removed; the page of one language; and the form that adds one. The helpers that shape what the
  * pages show take plain arrays and touch no database, so they are tested on their own
- * (tests/tests/kernel/classes/expContentLanguagesOverviewTest.php). User guide: doc/guides/content-languages.md.
+ * (tests/tests/kernel/classes/expContentLanguagesOverviewTest.php). User guide: doc/en/us/guides/content-languages.md.
  */
 /*
  * The original header of kernel/content/translations.php:

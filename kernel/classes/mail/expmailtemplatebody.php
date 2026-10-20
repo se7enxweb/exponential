@@ -6,7 +6,7 @@
  * template that sets content_type to text/html and body_text (its plain-text version, e.g. from
  * design:mail/layout_text.tpl) makes a multipart/alternative mail with a text part and an HTML part; one that sets
  * only content_type gets that type, as before; one that sets neither stays plain text. The registration mails use it
- * (doc/features/6.0/registration-admin-links.md).
+ * (doc/en/us/features/6.0/registration-admin-links.md).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

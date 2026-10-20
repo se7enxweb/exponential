@@ -93,5 +93,5 @@ reads when something fails.
 
 - [Writing a cronjob script](writing-a-cronjob-part.md)
 - [Background work: queues, cronjobs and content jobs](background-work-patterns.md)
-- Cronjob examples (`doc/examples/cronjobs/`)
+- Cronjob examples (`doc/en/us/examples/cronjobs/`)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

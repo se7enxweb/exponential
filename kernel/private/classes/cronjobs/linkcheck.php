@@ -1,8 +1,8 @@
 <?php
 /**
  * The code of cronjobs/linkcheck.php, moved into a class (#207 stage 1). The file cronjobs/linkcheck.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
- * User guide of the link check: doc/guides/urls-and-aliases.md (section "How links are checked")
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * User guide of the link check: doc/en/us/guides/urls-and-aliases.md (section "How links are checked")
  */
 /*
  * The original header of cronjobs/linkcheck.php:

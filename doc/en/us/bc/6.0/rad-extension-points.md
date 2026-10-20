@@ -906,7 +906,7 @@ One extension carrying a whole site: its design, its siteaccesses, its grouped s
 | Registered by | site.ini [ExtensionSettings] ActiveExtensions[] and ActiveAccessExtensions[], plus AdditionalExtensionDirectories[] when it lives outside extension/ |
 | Contract | `No class: a directory laid out the way the kernel looks` |
 | Mechanism | directory |
-| Kernel | `doc/bc/6.0/AdditionalExtensionDirectories.md` |
+| Kernel | `doc/en/us/bc/6.0/AdditionalExtensionDirectories.md` |
 
 ### Writing settings from code  
 *Tool:* `/setup/settingsextension`

@@ -1,4 +1,4 @@
-{* The missing files section of contentcheck/brokenrelations (doc/features/6.0/content-checks.md, "Missing files"):
+{* The missing files section of contentcheck/brokenrelations (doc/en/us/features/6.0/content-checks.md, "Missing files"):
    shown when the target "Missing files" is ticked. The order of every result list of the checks: results header
    (title, "X to Y of N", the selection count), table, bulk actions, pages.
 

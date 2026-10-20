@@ -2,7 +2,7 @@
 /**
  * File containing the expHelpFrontMatter class.
  *
- * The front matter of a help page (doc/features/6.0/help-system.md, "Front matter"): a block at the very top of a
+ * The front matter of a help page (doc/en/us/features/6.0/help-system.md, "Front matter"): a block at the very top of a
  * Markdown file between two lines of "---", one "key: value" per line. Only this flat subset of YAML is read, which is
  * all a help page needs and leaves nothing to execute:
  *

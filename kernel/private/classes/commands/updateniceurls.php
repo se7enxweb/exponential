@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/updateniceurls.php, moved into a class (#207 stage 1). The file bin/php/updateniceurls.php is one call to it.
  * @description Import old URL aliases and update the URL aliases of all nodes (--update-nodes)
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/updateniceurls.php:

@@ -77,7 +77,7 @@ written. Several of its items are visible in the repository today:
 | Documentation consolidated | The documentation now lives in `doc/` of the repository and this help shows it in the administration ([Help system](../../features/6.0/help-system.md)), under the GNU FDL |
 | Composer-based package management in the administration | **Setup > Updates and packages**, from the `ezupdate` extension, finds, checks and installs Composer packages from package servers ([Update with Git: Updates and packages](../update-with-git.md#3-update-the-extensions-with-updates-and-packages)) |
 
-For everything that changed release by release, read the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md) and
+For everything that changed release by release, read the [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) and
 [the history](../../history/README.md). The changelog is the authoritative record; the roadmap is a statement of
 intent.
 

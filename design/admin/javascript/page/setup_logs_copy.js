@@ -1,5 +1,5 @@
 /*
- * Setup > Log files: the text of "Copy messages" (doc/features/6.0/log-viewer.md, "Copy messages"). Pure, so a test
+ * Setup > Log files: the text of "Copy messages" (doc/en/us/features/6.0/log-viewer.md, "Copy messages"). Pure, so a test
  * can run it without a browser: window.ExpLogCopy.lineOf( entry, opts ) is one entry as its row shows it, and
  * textOf( entries, opts ) the lines of several, in display order, one per line, as plain text (what a selection of the
  * rows would give, without the page around them).

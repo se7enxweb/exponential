@@ -1,13 +1,13 @@
 <?php
 /**
  * The code of kernel/pdf/edit.php, moved into a class (#207 stage 1). The file kernel/pdf/edit.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * pdf/edit/<id>            the form of an export (a draft of it while it is open); pdf/edit makes a new one
  * pdf/edit/<id>/generate   the PDF: made on the fly, or the stored file of an export generated once
  *
  * The export logic is in kernel/classes/pdfexport: the form is read and checked by expPDFExportForm, the PDF is
- * made by expPDFExportGenerator, the stored file is expPDFExportFile. Guide: doc/guides/pdf-exports.md
+ * made by expPDFExportGenerator, the stored file is expPDFExportFile. Guide: doc/en/us/guides/pdf-exports.md
  */
 /*
  * The original header of ./kernel/pdf/edit.php:

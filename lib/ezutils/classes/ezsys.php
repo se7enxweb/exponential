@@ -775,7 +775,7 @@ class eZSys
      *
      * X-Forwarded-Host is used only when the request comes from a trusted proxy
      * (site.ini [HTTPHeaderSettings] TrustedProxies[]); from anyone else it is a
-     * header the visitor chose, see doc/bc/6.0/trusted-proxies.md.
+     * header the visitor chose, see doc/en/us/bc/6.0/trusted-proxies.md.
      *
      * @return string
     */
@@ -813,7 +813,7 @@ class eZSys
      * proxies are skipped and the first address that is not one is the client.
      * The left-most entries are whatever the client sent and are never used.
      * In every other case the answer is REMOTE_ADDR.
-     * See doc/bc/6.0/trusted-proxies.md.
+     * See doc/en/us/bc/6.0/trusted-proxies.md.
      *
      * Note: X-Forwarded-For is transformed by PHP
      *       into $_SERVER['HTTP_X_FORWARDED_FOR]

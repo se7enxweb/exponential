@@ -705,7 +705,7 @@ Expected: **no output**. If any lines appear, those are remaining unfixed refere
 <a name="security-tests"></a>
 ## 11. How the security hardening tests plug in
 
-The 6.0.13 security hardening patch set (documented in `doc/bc/6.0/hardening.md`)
+The 6.0.13 security hardening patch set (documented in `doc/en/us/bc/6.0/hardening.md`)
 introduced a standalone security test suite at:
 
 ```

@@ -1,6 +1,6 @@
 <?php
 /**
- * Searching the audit files and exporting records (exp:audit search --files, exp:audit export; doc/bc/6.0/audit.md,
+ * Searching the audit files and exporting records (exp:audit search --files, exp:audit export; doc/en/us/bc/6.0/audit.md,
  * "The command: exp:audit").
  *
  * Filters, the console's parameters: channel, name (a taxonomy pattern), user (user id), login, object and target

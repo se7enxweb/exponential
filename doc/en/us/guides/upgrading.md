@@ -2,7 +2,7 @@
 
 This guide is for whoever runs an existing installation and wants to bring it to the current Exponential 6.0 line.
 That line is 6.0.15, still in development; the newest release tag at the time of writing is `v6.0.14` (see
-[Changelog 6.0.15](../changelogs/6.0/6.0.15.md)). Find your version, follow the part for it, and finish with the
+[Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)). Find your version, follow the part for it, and finish with the
 checks at the end. They tell you that the result is good.
 
 Plan for twenty minutes for a small site. The risky step is the database. That is why step 1 is a backup.
@@ -158,7 +158,7 @@ Then read the notes of the 5.90 line, which prepared the move to PHP 7 and a lon
    PostgreSQL: `update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql`. The MySQL file begins with
    `SET default_storage_engine=InnoDB;`, which MySQL (from 5.5.3) and MariaDB accept, so run the whole file. Copies of
    the file from before October 2026 began with `SET storage_engine=InnoDB;`, which MySQL 5.7.5 and newer and
-   MariaDB 12.0 and newer reject; take the current file. Details: [Changelog 6.0.0](../changelogs/6.0/6.0.0.md).
+   MariaDB 12.0 and newer reject; take the current file. Details: [Changelog 6.0.0](../../../changelogs/6.0/6.0.0.md).
 3. PHP: Exponential 6.0 needs PHP 8.0 or newer on the current line (8.1 or newer for Exponential Velocity; see
    [PHP 8.0 support](../bc/6.0/php-8.0-support.md)). A site that must stay on PHP 7.4 stays on 6.0.7; read [PHP 8 support](../bc/6.0/php8.md) for the order of the upgrade steps, and check your own extensions
    for PHP 8 warnings (classes extending `eZPersistentObject` or `eZDataType` are the usual cases).
@@ -229,9 +229,9 @@ quick checklist and a "what to do" column.
 
 | Your version is older than | Read |
 |---|---|
-| 6.0.8 | [Changelog 6.0.8](../changelogs/6.0/6.0.8.md) and [PHP 8 support](../bc/6.0/php8.md) |
-| 6.0.10 | [Changelog 6.0.10](../changelogs/6.0/6.0.10.md), [The product is called Exponential](../features/6.0/rebranding-to-exponential.md) |
-| 6.0.13 | [Changelog 6.0.13](../changelogs/6.0/6.0.13.md), [Security hardening 6.0.13](../specifications/6.0/security-hardening-6.0.13.md) |
+| 6.0.8 | [Changelog 6.0.8](../../../changelogs/6.0/6.0.8.md) and [PHP 8 support](../bc/6.0/php8.md) |
+| 6.0.10 | [Changelog 6.0.10](../../../changelogs/6.0/6.0.10.md), [The product is called Exponential](../features/6.0/rebranding-to-exponential.md) |
+| 6.0.13 | [Changelog 6.0.13](../../../changelogs/6.0/6.0.13.md), [Security hardening 6.0.13](../specifications/6.0/security-hardening-6.0.13.md) |
 | July 2026 | [Behaviour changes of July and August 2026](../bc/6.0/behaviour-changes-2026-07-08.md) |
 | 16 September 2026 | [Behaviour changes of 16 to 30 September 2026](../bc/6.0/behaviour-changes-2026-09b.md) and [Security defaults](../specifications/6.0/security-defaults-2026-09.md) |
 | 1 October 2026 | [Behaviour changes of 1 to 2 October 2026](../bc/6.0/behaviour-changes-2026-10.md) |
@@ -288,7 +288,7 @@ rendered by old code is not served again.
 | Someone cannot sign in | [Behaviour changes of July and August 2026](../bc/6.0/behaviour-changes-2026-07-08.md), the `ezuser_setting` item |
 
 A published release can not be changed; the way to get a fix is the next version. To see what a version holds, open
-its changelog: [6.0.0 to 6.0.15](../changelogs/6.0/6.0.15.md).
+its changelog: [6.0.0 to 6.0.15](../../../changelogs/6.0/6.0.15.md).
 
 **Demo mode (6.0.15).** The environment variable `EXP_DEMO_MODE=1` marks a public demo; without it nothing changes. Upgrading a demo: keep the variable for the web server, cron and console, and check the banner afterwards. Upgrading a real site: make sure the variable is set for none of its processes. [Demo mode](../bc/6.0/demo-mode.md).
 
@@ -298,4 +298,4 @@ its changelog: [6.0.0 to 6.0.15](../changelogs/6.0/6.0.15.md).
 - [Operating a site](operating-a-site.md): backups, caches and repairs after the upgrade.
 - [Deploying](deploying.md) and [Velocity engines](../bc/6.0/velocity-engines.md): reload the right PHP-FPM, or move to a faster server.
 - [Extensions](extensions.md): versions, loading order and releases of your own extensions.
-- Release notes: [Exponential 6.0 changelogs](../changelogs/6.0/6.0.15.md) and [the extensions' release notes](../changelogs/extensions/README.md).
+- Release notes: [Exponential 6.0 changelogs](../../../changelogs/6.0/6.0.15.md) and [the extensions' release notes](../../../changelogs/extensions/README.md).

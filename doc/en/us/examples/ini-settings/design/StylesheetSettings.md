@@ -97,7 +97,7 @@ BackendCSSFileList[]
 > and admin4 designs after their own stylesheets and before BackendCSSFileList, so the packer bundles and caches  
 > them with the rest and an extension still has the last word. Every module stylesheet is listed here by name:  
 > one bundle for every admin page, cached once. The admin's templates carry no CSS of their own (no <style>, no  
-> style=""); see doc/bc/6.0/admin4-styling.md. An extension adds its file to BackendCSSFileList, not here.  
+> style=""); see doc/en/us/bc/6.0/admin4-styling.md. An extension adds its file to BackendCSSFileList, not here.  
 
 Default: a list of 7: `components.css`, `modules/setup.css`, `modules/content.css`, `modules/people.css`, `modules/structure.css`, `modules/workflow.css`, `modules/help.css`.
 

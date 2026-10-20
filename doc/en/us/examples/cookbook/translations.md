@@ -148,7 +148,7 @@ Checked for this page (2026-10-18): `xmllint --noout` on the catalogue; the sign
 - `kernel/common/ezpi18n.php` (`tr()`), `kernel/common/eztemplateautoload.php` (the `i18n` operator)
 - `lib/ezi18n/classes/eztstranslator.php`, `lib/ezi18n/classes/eztranslationcache.php` (`TranslationExtensions`)
 - `extension/ezjscore/translations/ger-DE/translation.ts`, `extension/ezjscore/settings/site.ini.append.php`
-- `settings/site.ini` `[RegionalSettings]`; `doc/languages.md`, sections 7, 8 and 13
+- `settings/site.ini` `[RegionalSettings]`; `doc/en/us/languages.md`, sections 7, 8 and 13
 
 ## Related pages
 

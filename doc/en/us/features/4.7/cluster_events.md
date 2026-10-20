@@ -28,7 +28,7 @@ Listener=MyClusterEventListener
 ```
 
 ### Cluster gateway for index_cluster.php ###
-As of 4.7, cluster index (the one which serves binary files) has been refactored (see `doc/features/4.7/cluster_index.txt`).
+As of 4.7, cluster index (the one which serves binary files) has been refactored (see `doc/en/us/features/4.7/cluster_index.txt`).
 Depending on your cluster backend, a gateway class is used (`ezpDfsMySQLiClusterGateway` in case of DFS MySQLi).
 
 For performance reasons, cluster events are not triggered from cluster gateways, so the listener needs to be notified directly.

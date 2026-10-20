@@ -1,6 +1,6 @@
 <?php
 /**
- * Cuts a TrueType font down to the glyphs a PDF uses (doc/features/6.0/help-system.md, "Print and PDF").
+ * Cuts a TrueType font down to the glyphs a PDF uses (doc/en/us/features/6.0/help-system.md, "Print and PDF").
  *
  * A composite font is embedded whole by the PDF library: DejaVu Sans is 740 kB, and a help page with bold and
  * italic text carried three of them (two megabytes for two pages of text). The glyph numbers stay the same (the

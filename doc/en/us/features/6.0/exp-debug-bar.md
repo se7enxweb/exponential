@@ -143,5 +143,5 @@ SQL, file names and settings. Use `DebugByIP` or `DebugByUser`.
 - [Debug bar guide](../../bc/6.0/debug-bar.md), [runnable classes](../../specifications/6.0/runnable-commands-cronjobs-views.md)
 - [The INI command](exp-ini-command.md) (same editor class), [the audit trail](audit-trail.md) (setting changes are audited), [template path comments](template-path-comments.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- Changelogs: [6.0.4](../../changelogs/6.0/6.0.4.md), [6.0.7](../../changelogs/6.0/6.0.7.md), [6.0.10](../../changelogs/6.0/6.0.10.md), [6.0.15](../../changelogs/6.0/6.0.15.md)
+- Changelogs: [6.0.4](../../../../changelogs/6.0/6.0.4.md), [6.0.7](../../../../changelogs/6.0/6.0.7.md), [6.0.10](../../../../changelogs/6.0/6.0.10.md), [6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - History: [October 2026](../../history/2026/2026-10.md), [August 2025](../../history/2025/2025-08.md), [January 2025](../../history/2025/2025-01.md) (heading and ids, 6.0.7), [August 2024](../../history/2024/2024-08.md) (responsive block, 6.0.4)

@@ -549,7 +549,7 @@ test correctness.
 |---|---|
 | `lib/eztemplate/classes/eztemplatestringoperator.php` | New: 60+ PHP string functions as eZ template operators |
 | `tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php` | New: PHPUnit 13 test suite (92 tests, 337 assertions) |
-| `doc/bc/6.0/phpunitv13.md` | This document |
+| `doc/en/us/bc/6.0/phpunitv13.md` | This document |
 
 ### Modified files — toolkit
 

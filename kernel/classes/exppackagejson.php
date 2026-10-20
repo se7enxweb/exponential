@@ -8,7 +8,7 @@
  */
 
 /**
- * The JSON serialization of a package (doc/bc/6.0/package-json-format.md).
+ * The JSON serialization of a package (doc/en/us/bc/6.0/package-json-format.md).
  *
  * A package is the same model in either format: package.xml and every XML document of the package (the files of
  * its install items, and the object files a content object item names) are written as JSON documents of the same

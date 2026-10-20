@@ -1,7 +1,7 @@
 <?php
 /**
  * The shared option parsing, help and output of Exponential\Runnable\Command (#207 stage 2),
- * guide doc/bc/6.0/cli_cronjob_view_abstractions.md.
+ * guide doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md.
  *
  *  CH-01 — options() hands its arguments to eZScript::getOptions() unchanged and keeps the result
  *  CH-02 — start() runs startup(), getOptions() and initialize() in that order and returns the options

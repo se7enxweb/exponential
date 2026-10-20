@@ -2,7 +2,7 @@
 
    Field and button names (EditLanguage, FromLanguage, SelectLanguageButton, DiscardButton, RedirectIfDiscarded)
    are unchanged; Cancel goes back to the page the form was opened from. The same file is in design/admin and
-   design/admin4. Guide: doc/guides/class-groups.md *}
+   design/admin4. Guide: doc/en/us/guides/class-groups.md *}
 
 <form action={concat( $module.functions.edit.uri, '/', $class.id )|ezurl} method="post" id="SelectClassEditLanguageForm" name="SelectClassEditLanguage" class="a4-page exp-classgroups a4-standalone">
 

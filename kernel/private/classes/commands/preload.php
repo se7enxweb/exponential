@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/preload.php, moved into a class (#207 stage 1). The file bin/php/preload.php is one call to it.
  * @description Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones
- * Guide: doc/guides/preloading-caches.md
+ * Guide: doc/en/us/guides/preloading-caches.md
  */
 /*
  * The original header of bin/php/preload.php:

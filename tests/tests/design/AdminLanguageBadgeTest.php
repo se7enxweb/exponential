@@ -4,7 +4,7 @@
  * eng-US side by side) and its name, not as a flag: a flag stands for a country. Every place goes through design:parts/language_badge.tpl
  * (templates) or the languageBadges map of children_detailed.tpl (the sub-items table's Translations column). The
  * code comes from eZLocale's content_language_code, the locale file's [HTTP] ContentLanguage, which site.ini
- * [RegionalSettings] HTTPLocale does not override. doc/features/6.0/admin4-design.md, doc/bc/6.0/admin4-styling.md.
+ * [RegionalSettings] HTTPLocale does not override. doc/en/us/features/6.0/admin4-design.md, doc/en/us/bc/6.0/admin4-styling.md.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLanguageBadgeTest.php
  *
@@ -181,7 +181,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $state = AdminFiles::read( self::root() . '/design/admin4/templates/parts/language_state_badge.tpl' );
         $this->assertStringContainsString( '{$a4_ls_code|wash}<span class="a4-sr-only"> {$a4_ls_label|wash}</span></a>', $state );
         $template = AdminFiles::read( self::root() . '/design/admin4/templates/children_detailed.tpl' );
-        // the map is JSON in data-conf (no inline script, doc/features/6.0/content-security-policy.md)
+        // the map is JSON in data-conf (no inline script, doc/en/us/features/6.0/content-security-policy.md)
         $this->assertStringContainsString( "'languageBadges', \$subitems_badges,", $template );
         $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code badge_plain=true()", $template );
         $this->assertStringContainsString( '{set $subitems_badges = $subitems_badges|merge( hash( $locale.locale_code, $subitems_badge ) )}', $template );

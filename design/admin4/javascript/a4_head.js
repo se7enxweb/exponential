@@ -1,6 +1,6 @@
 /* admin4: the head script of every page (page_head_style.tpl loads it before the stylesheets): window.a4Pref and
    the color mode, see the comment in page_head_style.tpl. A file of its own, not an inline script, so it runs under a
-   Content Security Policy without 'unsafe-inline' (doc/features/6.0/content-security-policy.md). */
+   Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md). */
 /* window.a4Pref: the one place for the frame's remembered choices (color mode, side columns, left menu
    groups). For a signed-in user each is an eZPreference: parts/a4_preference_attributes.tpl writes it on <html>
    (data-a4-pref-<name>) and set() saves it through user/preferences/set_and_exit (data-a4-pref-url), so it

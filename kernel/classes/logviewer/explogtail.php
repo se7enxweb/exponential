@@ -1,6 +1,6 @@
 <?php
 /**
- * Reads what a log file gained since a byte offset (doc/features/6.0/log-viewer.md, "Following a file").
+ * Reads what a log file gained since a byte offset (doc/en/us/features/6.0/log-viewer.md, "Following a file").
  *
  * The cost of a poll is kept to what changed:
  *  - one stat() first; a file that has not grown since the offset is answered without opening it;

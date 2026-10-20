@@ -1,6 +1,6 @@
 <?php
 /**
- * Rotation by day, archives, manifests, verification, restore, retention and key rotation (doc/bc/6.0/audit.md,
+ * Rotation by day, archives, manifests, verification, restore, retention and key rotation (doc/en/us/bc/6.0/audit.md,
  * "Rotation, archives and retention (Q8)", "The archive manifest and its HMAC", acceptance tests E3 and the archive
  * cases T9-T12 of the tamper test).
  *

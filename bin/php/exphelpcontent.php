@@ -3,7 +3,7 @@
 /**
  * File containing the exphelpcontent.php script.
  *
- * Help maintained as content on the command line (doc/features/6.0/help-content.md):
+ * Help maintained as content on the command line (doc/en/us/features/6.0/help-content.md):
  *
  *   ./console exp:help:content install -s <admin siteaccess> [--dry-run]   classes, tree, roles (idempotent)
  *   ./console exp:help:content check -s <admin siteaccess> [--fix]         the validator of the style guide

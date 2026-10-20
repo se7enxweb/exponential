@@ -13,7 +13,7 @@ an earlier tag reaches you as the next release, not as a corrected copy of the o
 | 5.x, 4.x, 3.x and older | | :x: |
 
 Hardening advice for a production site is in
-[chapter 13 of the installation book](doc/install/13-security-hardening.md).
+[chapter 13 of the installation book](doc/en/us/install/13-security-hardening.md).
 
 ## Reporting a Vulnerability
 

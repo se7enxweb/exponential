@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/visual/templateedit.php, moved into a class (#207 stage 1). The file kernel/visual/templateedit.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/visual/templateedit.php:
@@ -172,7 +172,7 @@ class Templateedit extends \Exponential\Runnable\ModuleView
                     fwrite( $fp, $templateContent );
                 }
                 fclose( $fp );
-                // Audit (doc/bc/6.0/audit.md, system.template.change): never the template text
+                // Audit (doc/en/us/bc/6.0/audit.md, system.template.change): never the template text
                 if ( class_exists( 'expAuditHook' ) )
                     \expAuditHook::emit( 'system.template.change', array( 'object' => array( 'type' => 'template', 'id' => (string)$template ),
                         'verb' => 'change', 'before' => array( 'sha256' => $auditBefore ),

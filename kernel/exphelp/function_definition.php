@@ -1,6 +1,6 @@
 <?php
 /**
- * Fetch functions of the exphelp module (doc/features/6.0/help-system.md, "Context help").
+ * Fetch functions of the exphelp module (doc/en/us/features/6.0/help-system.md, "Context help").
  *
  *   fetch( 'exphelp', 'context', hash( 'module', 'content', 'view', 'edit', 'design', 'admin4' ) )
  *       the help page of a module/view: array( id, anchor, url, title, level ) (expHelpContextRegistry::lookup())

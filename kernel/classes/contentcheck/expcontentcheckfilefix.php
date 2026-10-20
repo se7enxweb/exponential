@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckFileFix class.
  *
- * The resolutions of the missing files list (doc/features/6.0/content-checks.md, "Resolving"): each for one field
+ * The resolutions of the missing files list (doc/en/us/features/6.0/content-checks.md, "Resolving"): each for one field
  * version or for many, always planned first (what will happen to each, shown on a confirmation page) and done only
  * with a confirmation token bound to exactly that plan, in batches.
  *

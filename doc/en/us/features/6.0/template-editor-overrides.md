@@ -186,5 +186,5 @@ Parameters of the function (`kernel/content/function_definition.php`, all option
 - [Template path comments](template-path-comments.md) (see which override answered), [extension loading order](extension-loading-order.md) (which extension's override wins)
 - [Paging, sorting and page sizes](admin-list-paging.md)
 - [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md), [behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
 - History: [July 2026](../../history/2026/2026-07.md), [16 to 30 September 2026](../../history/2026/2026-09b.md)

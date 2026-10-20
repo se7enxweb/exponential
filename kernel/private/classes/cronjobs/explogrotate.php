@@ -2,7 +2,7 @@
 /**
  * The code of cronjobs/explogrotate.php: the log rotation cronjob part ([CronjobPart-logs], in no default part, so it
  * runs only when a site adds it to a part it runs or calls php runcronjobs.php logs). Guide:
- * doc/features/6.0/log-rotation.md, "As a cronjob part".
+ * doc/en/us/features/6.0/log-rotation.md, "As a cronjob part".
  *
  * Each run, through expLogManager: rotates every log over its MaxSize (logviewer.ini [RotationSettings] MaxSize[<key>],
  * else site.ini [FileSettings] LogFileMaxSize), prunes the archives beyond Keep and MaxAgeDays, and compresses the plain

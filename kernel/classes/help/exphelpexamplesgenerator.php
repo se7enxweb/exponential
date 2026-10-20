@@ -2,7 +2,7 @@
 /**
  * File containing the expHelpExamplesGenerator class.
  *
- * Writes the generated reference examples below doc/examples/ (doc/examples/README.md, "How the generated pages are
+ * Writes the generated reference examples below doc/en/us/examples/ (doc/en/us/examples/README.md, "How the generated pages are
  * made"): one Markdown page per template operator, template function, fetch function, module view, module policy
  * list, INI block, datatype, workflow event type, cronjob script and console command, plus the extension points
  * (INI-driven handler lists), each area with an index page. Every page is derived from the git-tracked sources of the
@@ -80,7 +80,7 @@ class expHelpExamplesGenerator
      * @param string $out the output directory, relative to the root
      * @param string[]|null $files the tracked files (null: asks git, else scans the source directories)
      */
-    public function __construct( $root, $out = 'doc/examples', ?array $files = null )
+    public function __construct( $root, $out = 'doc/en/us/examples', ?array $files = null )
     {
         $this->root = rtrim( $root, '/' );
         $this->out = trim( $out, '/' );

@@ -3,7 +3,7 @@
  * File containing the built-in request rule conditions.
  *
  * Every condition here reads facts of the ezpRequestContext and nothing else.
- * The table in doc/bc/6.0/view_full_security.md lists them with the facts
+ * The table in doc/en/us/bc/6.0/view_full_security.md lists them with the facts
  * they read and examples.
  *
  * @copyright Copyright (C) 7x. All rights reserved.

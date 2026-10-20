@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/benchmark.php (exp:benchmark).
  * @description Measure this installation: page timings over HTTP, A/B between servers, kernel probes, regression check
- * Guide: doc/guides/benchmarking.md (reference: doc/features/6.0/benchmark.md)
+ * Guide: doc/en/us/guides/benchmarking.md (reference: doc/en/us/features/6.0/benchmark.md)
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -62,7 +62,7 @@ class Benchmark extends \Exponential\Runnable\Command
                 "and a host the site does not serve is only measured when its URLs are named with\n" .
                 "--url or --urls-file. Nothing is written but cache entries.\n\n" .
                 "Exit code: 0 ok, 1 a metric regressed against --baseline, 2 usage error or refused.\n" .
-                "Guide: doc/guides/benchmarking.md" ),
+                "Guide: doc/en/us/guides/benchmarking.md" ),
             'use-session'    => false,
             'use-modules'    => true,
             'use-extensions' => true,

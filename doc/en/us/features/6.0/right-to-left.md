@@ -3,7 +3,7 @@
 Since 6.0.15 (#521). Builds on the [interface language](ui-switch-languages.md) choice.
 
 When the interface language is one written right to left (Hebrew, Arabic, Persian, Urdu and the other locales listed
-in [doc/languages.md](../../languages.md), section "Right-to-left languages"), the administration turns around: the
+in [doc/en/us/languages.md](../../languages.md), section "Right-to-left languages"), the administration turns around: the
 page says `dir="rtl"` on `<html>`, the side columns change places, text starts at the right and the icons that point
 along the line point the other way. A left-to-right page is exactly what it was before: the same markup byte for byte
 and, as checked by screenshots, the same pixels.
@@ -94,7 +94,7 @@ Independent of the interface language, text in a right-to-left content language 
 (listed here for completeness):
 
 - `design/standard/templates/parts/exp_content_direction.tpl`: prints ` lang="he-IL" dir="rtl"` for a right-to-left
-  content locale, nothing for a left-to-right one. Guide: [doc/guides/content-languages.md](../../guides/content-languages.md).
+  content locale, nothing for a left-to-right one. Guide: [doc/en/us/guides/content-languages.md](../../guides/content-languages.md).
 - The edit forms: `content/edit_attribute.tpl` of design/standard, design/admin, admin4 and AdminUI.
 - The administration's full view and preview: `node/view/admin_preview.tpl`, `node/view/full.tpl` (classic,
   AdminUI), `node/view/a4_full_body.tpl` (admin4), `preview.tpl` of every administration design.

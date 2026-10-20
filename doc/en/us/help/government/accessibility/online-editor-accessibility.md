@@ -77,7 +77,7 @@ What matters most to the public is the HTML the editor's content produces in you
 
 - Pick one engine for the organization and write it into your editor guidelines.
 - Record your test results with the engine and its version.
-- Re-test after upgrades: the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) lists editor changes.
+- Re-test after upgrades: the [6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md) lists editor changes.
 - In your accessibility statement, describe the editing environment only if your law asks for it, and only with what
   you tested.
 

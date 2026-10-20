@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckFileHandler interface.
  *
- * Says which storage files a file-backed field stands for (doc/features/6.0/content-checks.md, "Missing files"). One
+ * Says which storage files a file-backed field stands for (doc/en/us/features/6.0/content-checks.md, "Missing files"). One
  * handler per datatype, named in contentcheck.ini [MissingFileSettings] Handlers[<datatype>]=<class>; the kernel has
  * expContentCheckFileImage (ezimage) and expContentCheckFileTable (ezbinaryfile, ezmedia and any datatype that keeps
  * its file in a table with the same columns). An extension adds its datatype with a class of its own.

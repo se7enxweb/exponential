@@ -1,6 +1,6 @@
 <?php
 /**
- * "Copy messages" of Setup > Log files (doc/features/6.0/log-viewer.md, "Copy messages"): the text copied is the text
+ * "Copy messages" of Setup > Log files (doc/en/us/features/6.0/log-viewer.md, "Copy messages"): the text copied is the text
  * of the lines shown, in display order, as plain text.
  *
  *  LC-01  page/setup_logs_copy.js, run with node: for a filtered view (a search's entries), the copied text is the

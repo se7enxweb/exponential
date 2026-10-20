@@ -1,7 +1,7 @@
 <?php
 /**
  * Extending exp:ini: an action and a scope provider registered by an extension's ini.ini.append.php, the
- * registry, and the dispatcher run in-process. Guide doc/bc/6.0/console-exp-ini.md.
+ * registry, and the dispatcher run in-process. Guide doc/en/us/bc/6.0/console-exp-ini.md.
  *
  *  IE-01 — settings/ini.ini (read by eZINI) registers every built-in action, the remove alias and the two
  *          built-in scope providers, and every registration works

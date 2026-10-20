@@ -2,7 +2,7 @@
 
 Swark was repackaged in January 2024 and received metadata and the Exponential name in September 2026. See the [feature page](../../features/6.0/extensions/swark.md).
 
-This page lists **every one of the 9 changes** of the repository `swark` between 2023-12-24 and 2026-09-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/swark.md); what each release contains is in the [release notes](../../changelogs/extensions/swark.md); how to use the extension is on its [feature page](../../features/6.0/extensions/swark.md).
+This page lists **every one of the 9 changes** of the repository `swark` between 2023-12-24 and 2026-09-30, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/swark.md); what each release contains is in the [release notes](../../../../changelogs/extensions/swark.md); how to use the extension is on its [feature page](../../features/6.0/extensions/swark.md).
 
 | Kind | Changes |
 |---|---|
@@ -54,6 +54,6 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/swark.md)
-- [Release notes](../../changelogs/extensions/swark.md)
+- [Release notes](../../../../changelogs/extensions/swark.md)
 - [Change ledger](../ledger/swark.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

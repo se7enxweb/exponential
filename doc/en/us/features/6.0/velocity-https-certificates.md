@@ -138,5 +138,5 @@ Back up `ssl/`. Everything in it can be made again except the ACME account keys.
 - [Control panel](velocity-control-panel.md) (SSL and Domains tabs), [scheduler](velocity-scheduler.md) (renewal jobs), [Velocity web server](velocity-web-server.md)
 - Specifications: [HTTP/2 and security](../../specifications/6.0/velocity-http2-and-security.md), [engine settings](../../specifications/6.0/velocity-engine-settings.md) (TLS session resumption, `--https-port`)
 - Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md), [Velocity engines](../../bc/6.0/velocity-engines.md) (`[HTTPSSettings]`)
-- [Changelog: Exponential Velocity engine](../../changelogs/extensions/exponential-velocity.md)
+- [Changelog: Exponential Velocity engine](../../../../changelogs/extensions/exponential-velocity.md)
 - History: [24 September](../../history/velocity/2026-09d.md) (certificate subsystem), [25 to 30 September](../../history/velocity/2026-09e.md) (SSL tab, per-domain certificates)

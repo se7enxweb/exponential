@@ -128,7 +128,7 @@ Also: 5 merge or funding-metadata commits by the team (no user benefit; see the 
 
 - [Legacy bridge](../../features/6.0/legacy-bridge.md)
 - [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
-- [Release changelog](../../changelogs/extensions/exponential-platform-legacy.md)
+- [Release changelog](../../../../changelogs/extensions/exponential-platform-legacy.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

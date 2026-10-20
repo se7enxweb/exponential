@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/report (doc/features/6.0/help-system.md, "Reporting an error"): which tracker, how to write a good report,
+ * exphelp/report (doc/en/us/features/6.0/help-system.md, "Reporting an error"): which tracker, how to write a good report,
  * a prefilled issue, the safe diagnostics to copy, and the private path for security issues.
  * Template design:exphelp/report.tpl: help_trackers, help_extension_trackers, help_tracker (the chosen key), help_chosen
  * (its tracker or false), help_draft (title, what, steps, expected), help_drafted, help_environment (label => value),

@@ -47,7 +47,7 @@ in the United States, [Section 508](https://www.section508.gov/) applies to fede
 | EN 301 549 v3.2.1 | **Unverified** | no evaluation against the standard; clause 11.8 (authoring tools) not reviewed |
 | Section 508 | **Unverified** | no VPAT or Accessibility Conformance Report |
 
-Manual axe runs and their results are recorded in the [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md); axe
+Manual axe runs and their results are recorded in the [6.0.15 changelog](../../../../../../changelogs/6.0/6.0.15.md); axe
 does not run in CI.
 
 ## What is not evidenced

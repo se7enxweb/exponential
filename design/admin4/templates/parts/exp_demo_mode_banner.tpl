@@ -3,7 +3,7 @@
    It is included outside every cache-block (page_mainarea.tpl, the main zones of admin4l), so it follows the
    environment of each request, above the content and below the fixed header. The shared
    component .a4-notice.is-warn of components.css, no CSS of its own. The same file is in design/admin.
-   Guide: doc/bc/6.0/demo-mode.md. *}
+   Guide: doc/en/us/bc/6.0/demo-mode.md. *}
 {if exp_demo_mode()}
 <div class="a4-notice is-warn" id="exp-demo-mode-banner" role="note" aria-labelledby="exp-demo-mode-banner-title">
     <p><strong id="exp-demo-mode-banner-title">{'Demo mode'|i18n( 'design/admin/pagelayout' )}</strong></p>

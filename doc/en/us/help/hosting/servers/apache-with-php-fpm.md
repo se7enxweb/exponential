@@ -109,7 +109,7 @@ and how to check the result. The source is
 | Upgrade | copy the new `.htaccess_root` over `.htaccess` | copy the changed rules into the vhost |
 
 Inside `<Directory>` the rules of `.htaccess_root` keep their form. In server context (outside `<Directory>`) every
-pattern needs a leading slash, as in [doc/examples/ezpublish.conf](../../../examples/ezpublish.conf). That example's
+pattern needs a leading slash, as in [doc/en/us/examples/ezpublish.conf](../../../examples/ezpublish.conf). That example's
 rule list predates the current `.htaccess_root`, so take the rules from `.htaccess_root` itself
 ([Chapter 8, step 3](../../../install/08-serving-the-site.md#851-step-by-step)).
 
@@ -170,7 +170,7 @@ Plesk site uses. More on [Plesk](../panels/plesk.md).
 
 ## Static cache offload
 
-With `.htaccess_root_static`, or the rules of [doc/examples/staticcache_offload.conf](../../../examples/staticcache_offload.conf)
+With `.htaccess_root_static`, or the rules of [doc/en/us/examples/staticcache_offload.conf](../../../examples/staticcache_offload.conf)
 in the vhost of the **public** site, Apache answers a generated static page from its file without starting PHP. Never
 add those rules to the administration vhost. See [Static cache](../performance/static-cache.md).
 

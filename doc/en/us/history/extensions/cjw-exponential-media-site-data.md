@@ -2,7 +2,7 @@
 
 The installer data package of the media site was created on 3 July 2026 (1.0.0). See the [feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md).
 
-This page lists **every one of the 2 changes** of the repository `cjw-exponential-media-site-data` between 2026-07-03 and 2026-07-03, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/cjw-exponential-media-site-data.md); what each release contains is in the [release notes](../../changelogs/extensions/cjw-exponential-media-site-data.md); how to use the extension is on its [feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md).
+This page lists **every one of the 2 changes** of the repository `cjw-exponential-media-site-data` between 2026-07-03 and 2026-07-03, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/cjw-exponential-media-site-data.md); what each release contains is in the [release notes](../../../../changelogs/extensions/cjw-exponential-media-site-data.md); how to use the extension is on its [feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md).
 
 | Kind | Changes |
 |---|---|
@@ -27,6 +27,6 @@ The month across all extensions: [July 2026](months/2026-07.md). [Ledger of this
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/cjw-exponential-media-site-data.md)
-- [Release notes](../../changelogs/extensions/cjw-exponential-media-site-data.md)
+- [Release notes](../../../../changelogs/extensions/cjw-exponential-media-site-data.md)
 - [Change ledger](../ledger/cjw-exponential-media-site-data.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -38,8 +38,8 @@ database update file for your database engine, and clearing caches
 
 ### Upgradable for the long term
 
-Every release is tagged, and every change is recorded in the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md) and
-in backwards-compatibility notes under `doc/bc/`. Because the license is the GNU GPL version 2 or later, you can
+Every release is tagged, and every change is recorded in the [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) and
+in backwards-compatibility notes under `doc/en/us/bc/`. Because the license is the GNU GPL version 2 or later, you can
 fork, self-host and upgrade on your own schedule; no vendor can lock you in.
 
 ## What you get out of the box

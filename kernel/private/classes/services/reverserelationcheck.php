@@ -4,7 +4,7 @@
  * (ezcontentobject_link) of the objects that would go, read from the published version of each referring object.
  * Used by content/removeobject (content.ini [RemoveSettings] ReverseRelationCheck = disabled | warn | block) and by
  * content/hide and the Hide action of content/action ([HideSettings] ReverseRelationCheck = disabled | warn).
- * Guide: doc/features/6.0/reverse-relation-check.md
+ * Guide: doc/en/us/features/6.0/reverse-relation-check.md
  *
  * An object counts as "taken away" when every one of its locations lies inside the selected subtrees: an object
  * that keeps a location elsewhere stays, and so do the relations to it. A referring object that is taken away as

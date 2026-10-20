@@ -4,7 +4,7 @@ audience: developer, admin
 category: standards
 order: 220
 summary: The backward compatibility policy of Exponential 6.0.x, how versions and releases are numbered and published, and the standard order of steps for deploying a change or an upgrade.
-keywords: backward compatibility, BC, breaking change, deprecation, upgrade notes, doc/bc, changelog, release, version, tag, semantic versioning, ezinfo.php, extension.xml, filelist.md5, manifest, deployment, deploy, autoloads, ezcache, PHP-FPM, Velocity, exp:velocity deploy, dbupdate, upgrade check
+keywords: backward compatibility, BC, breaking change, deprecation, upgrade notes, doc/en/us/bc, changelog, release, version, tag, semantic versioning, ezinfo.php, extension.xml, filelist.md5, manifest, deployment, deploy, autoloads, ezcache, PHP-FPM, Velocity, exp:velocity deploy, dbupdate, upgrade check
 type: reference
 ---
 # Compatibility, releases and deployment
@@ -33,8 +33,8 @@ or behaves differently without being asked to. In particular:
 
 ### The rules
 
-- **Every break must have upgrade notes in `doc/bc/<series>/`.** The directory exists per series, from `doc/bc/4.1/`
-  to `doc/bc/6.0/` (84 pages in `doc/bc/6.0/` at the time of writing). A page opens with an **In short** table with
+- **Every break must have upgrade notes in `doc/en/us/bc/<series>/`.** The directory exists per series, from `doc/en/us/bc/4.1/`
+  to `doc/en/us/bc/6.0/` (84 pages in `doc/en/us/bc/6.0/` at the time of writing). A page opens with an **In short** table with
   the rows *What changed*, *Who is affected*, *How to check* and *How to fix*; examples:
   [Commands, cronjob parts and module views as classes](../../bc/6.0/cli_cronjob_view_abstractions.md),
   [exp:ini](../../bc/6.0/console-exp-ini.md). Changes that span many areas are collected per period with a deploy
@@ -44,7 +44,7 @@ or behaves differently without being asked to. In particular:
   and the Velocity engine options in [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md)
   ("Nothing changes by itself. New, opt-in: ...").
 - **New settings must have a safe default** in the shipped `settings/<file>.ini`, a comment there, a section on the
-  feature page in `doc/features/6.0/` and a line in the changelog.
+  feature page in `doc/en/us/features/6.0/` and a line in the changelog.
 - **Identifiers are not renamed.** Existing `eZ*` and `ezp*` classes, tables, settings and paths stay
   (see [Layering and naming rules](layering-and-naming.md)); the 2026 product rename changed only text
   ([The product is called Exponential](../../features/6.0/rebranding-to-exponential.md)).
@@ -57,7 +57,7 @@ or behaves differently without being asked to. In particular:
   `kernel/` and `lib/`, for example `eZContentObject::contentObjectListRelatingThis()`, replaced by `reverseRelatedObjectList()`, and `eZUser::isLoggedIn()`, which still works and writes a strict-mode deprecation notice through `eZDebug::writeStrict()`).
 - A renamed command keeps its old name as a deprecated alias that still works
   ([platform package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)).
-- A removal is announced in the changelog's **Removed** section and in a `doc/bc/` page.
+- A removal is announced in the changelog's **Removed** section and in a `doc/en/us/bc/` page.
 
 ### Known exceptions
 
@@ -77,12 +77,12 @@ or behaves differently without being asked to. In particular:
 - The kernel version is in `lib/version.php` (`VERSION_MAJOR = 6`, `VERSION_MINOR = 0`, `VERSION_RELEASE = 15`) and
   in the database row `ezsite_data` `ezpublish-version`, which the update SQL writes (for example `6.0.15stable`).
 - Releases of the 6.0 line are tagged `v6.0.<n>`. The newest tag in the repository is `v6.0.14`; the 6.0.15 line is
-  in development and has no tag yet ([Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)).
+  in development and has no tag yet ([Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)).
 - **Only the last position counts on.** After `x.y.9` comes `x.y.10`, never `x.(y+1).0`; moving a higher position is a
   decision about what the release means. Tags are sorted with `git tag -l 'v*' --sort=version:refname` (or `sort -V`),
   because a plain name sort puts `0.1.10` before `0.1.8`. The rule is written down for extensions in
   [Extensions, section 7](../../guides/extensions.md) and for the Velocity engine in
-  [its changelog](../../changelogs/extensions/exponential-velocity.md).
+  [its changelog](../../../../changelogs/extensions/exponential-velocity.md).
 
 ### Tags are permanent
 
@@ -95,11 +95,11 @@ the working tree is clean, the tests pass, the version fields are bumped, the ma
 
 - One page per release in `doc/changelogs/<series>/<version>.md` (`doc/changelogs/6.0/6.0.0.md` to `6.0.15.md`),
   extensions in `doc/changelogs/extensions/`. Entries are grouped as **Added**, **Updated**, **Removed** and
-  **Renamed**; 6.0.15 additionally by period. Each page starts with **Upgrading** and links the `doc/bc/` pages.
+  **Renamed**; 6.0.15 additionally by period. Each page starts with **Upgrading** and links the `doc/en/us/bc/` pages.
 - Commit subjects use the same prefixes (`Added:`, `Updated:`, `Fixed:`, `Removed:`, `Renamed:`); the CI job
   *Commit messages* of `.github/workflows/quality.yml` checks them with `.githooks/check-commit-range` (a warning only
   for outside contributors).
-- The full per-commit history is kept in `doc/history/ledger/`.
+- The full per-commit history is kept in `doc/en/us/history/ledger/`.
 
 ### Extension versions
 
@@ -162,7 +162,7 @@ A template or stylesheet change needs only the template caches and Velocity's re
    (MySQL, PostgreSQL and SQLite files exist; from 5.4, `dbupdate-5.4.0-6.0.0.sql` first), then the scripts in
    `update/common/scripts/6.0/` the guide names (`createaudittables.php`, `movetrashrecords.php`; the directory also
    ships `createapikeytable.php`).
-4. **Read the checklist of every period passed** in `doc/bc/6.0/` and the changelogs.
+4. **Read the checklist of every period passed** in `doc/en/us/bc/6.0/` and the changelogs.
 5. **Check extensions**: `./console exp:checkclasses` reports classes PHP refuses to load.
 6. **Run the upgrade check**: Setup > System upgrade, *Check file consistency* against `share/filelist.md5` and
    *Check database consistency* against the schema files; both only read. From a shell:

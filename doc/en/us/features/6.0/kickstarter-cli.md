@@ -71,5 +71,5 @@ Every run is logged to `var/log/kickstart.log` with passwords masked. `EXP_KICKS
 - [Static cache generator](static-cache-generator.md)
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
 - [Behaviour changes of July and August 2026](../../bc/6.0/behaviour-changes-2026-07-08.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
 - History: [June 2026, second half](../../history/2026/2026-06b.md), [July 2026](../../history/2026/2026-07.md), [August 2026](../../history/2026/2026-08.md)

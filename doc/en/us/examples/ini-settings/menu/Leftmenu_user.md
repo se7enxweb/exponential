@@ -31,7 +31,7 @@ Name=access_controll
 
 ## Links
 
-> Check user accounts (doc/features/6.0/user-hygiene.md), also a tile of the Setup overview under the same key  
+> Check user accounts (doc/en/us/features/6.0/user-hygiene.md), also a tile of the Setup overview under the same key  
 
 Default: a hash of 3: `roles_and_policies=role/list`, `unactivated=user/unactivated`, `user_hygiene=user/hygiene`.
 

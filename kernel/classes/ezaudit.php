@@ -4,7 +4,7 @@
  *
  * The 4.x audit API, kept so every existing call keeps working: eZAudit::writeAudit( $name, $attributes ) is
  * recorded by expAudit (kernel/classes/audit/) as the new taxonomy name ([AuditCompatSettings] Map[] of
- * audit.ini, or system.legacy.<name>), in the hash-chained JSON lines channels. Guide: doc/bc/6.0/audit.md
+ * audit.ini, or system.legacy.<name>), in the hash-chained JSON lines channels. Guide: doc/en/us/bc/6.0/audit.md
  * ("The eZAudit::writeAudit() compatibility path").
  *
  * The results are no longer cached in $GLOBALS: a persistent Velocity worker kept them across requests, so a

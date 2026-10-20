@@ -991,7 +991,7 @@ tail -n 50 var/vc/frankenphp/log/error.log | jq .
 - Overrides: `settings/override/velocity.ini.append.php`
 - Generated Caddyfile: `var/vc/frankenphp/run/Caddyfile` (do not edit)
 - Binary: `var/vc/frankenphp/bin/frankenphp-<version>-<asset>`
-- Cross-engine reference: [`doc/bc/6.0/velocity-engines.md`](velocity-engines.md)
+- Cross-engine reference: [`doc/en/us/bc/6.0/velocity-engines.md`](velocity-engines.md)
 
 ## Related pages
 
@@ -1000,5 +1000,5 @@ tail -n 50 var/vc/frankenphp/log/error.log | jq .
 - [Behaviour changes, 16 to 30 September 2026: engines and the server commands](behaviour-changes-2026-09b.md#engines-and-the-server-commands)
 - [Velocity persistent worker server](../../features/6.0/velocity-persistent-worker-server.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - [Deploying guide](../../guides/deploying.md)

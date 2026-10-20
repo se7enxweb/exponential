@@ -11,7 +11,7 @@ name: CI health
 #
 # The same report on a developer machine (needs the gh CLI, logged in):
 #   python3 .github/scripts/ci_health_report.py --days 14 --md ci-health.md
-# See doc/bc/6.0/ci.md.
+# See doc/en/us/bc/6.0/ci.md.
 
 on:
   schedule:

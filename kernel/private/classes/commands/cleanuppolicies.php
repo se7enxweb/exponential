@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/cleanuppolicies.php, moved into a class (#207 stage 1). The file bin/php/cleanuppolicies.php is one call to it.
  * @description Remove policies of modules that no longer exist (--dry-run lists them first)
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/cleanuppolicies.php:

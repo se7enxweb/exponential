@@ -18,7 +18,7 @@ Entry point `cronjobs/contentcheck.php`, code in `kernel/private/classes/cronjob
 > than contentcheck.ini \[UnreferencedSettings\] IndexTTL when BuildOnRequest is false. With \[MissingFileSettings\]  
 > CronjobReport=enabled it also counts the missing files and alias problems of the whole tree and writes the count  
 > to the cronjob output (a warning when there are any); it never resolves anything.  
-> Guide: doc/features/6.0/content-checks.md  
+> Guide: doc/en/us/features/6.0/content-checks.md  
 
 ## When it runs
 

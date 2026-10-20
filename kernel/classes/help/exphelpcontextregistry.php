@@ -20,7 +20,7 @@
  * PHP classes can answer first: [ContextHelp] Providers[] lists classes implementing
  * expHelpContextProviderInterface, asked in order before the map.
  * A provider that also implements expHelpContextPageInterface may answer "content/<help_id>": a help topic
- * maintained as content (doc/features/6.0/help-content.md); it gives the address and title of that page itself.
+ * maintained as content (doc/en/us/features/6.0/help-content.md); it gives the address and title of that page itself.
  *
  * The lookup goes from the most to the least specific: the providers, design:module/view, module/view,
  * design:module, module, then the help dashboard. An entry is skipped (and the next key tried) when its value is not

@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/restore.php, moved into a class (#207 stage 1). The file kernel/content/restore.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/restore.php:
@@ -203,7 +203,7 @@ class Restore extends \Exponential\Runnable\ModuleView
 
             $db->commit();
 
-            // Audit (doc/bc/6.0/audit.md, content.object.restore)
+            // Audit (doc/en/us/bc/6.0/audit.md, content.object.restore)
             if ( class_exists( 'expAuditHook' ) )
                 \expAuditHook::emit( 'content.object.restore', function () use ( $object, $mainNodeID ) {
                     $main = \eZContentObjectTreeNode::fetch( $mainNodeID );

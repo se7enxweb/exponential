@@ -9,7 +9,7 @@
 
 /**
  * Plans and applies the grant of the policy exphelp/read (bin/php/addexphelpreadpolicy.php): reading the help system
- * (doc/features/6.0/help-system.md). New installations give it to the Editor role (cleandata.sql); an installation
+ * (doc/en/us/features/6.0/help-system.md). New installations give it to the Editor role (cleandata.sql); an installation
  * from before the help system has to grant it, or editors see no Help control and get "access denied" on the help
  * pages. Administrators have it already through their * / * policy.
  *

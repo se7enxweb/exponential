@@ -5488,8 +5488,8 @@
         <translation>Tekstovi administracijskog sučelja i predložaka (gumbi, izbornici) dolaze iz datoteka prijevoda (.ts) i umjesto toga slijede postavku Locale pristupa web-mjestu. Web-mjesto može prikazivati njemački sadržaj s engleskim sučeljem i obrnuto.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/guides/content-languages.md.</source>
-        <translation>Dodavanjem jezika ovdje ništa se ne prevodi i ne mijenja se nijedan pristup web-mjestu: sadržaj prevedite u uređivaču, a jezik navedite u postavci SiteLanguageList ondje gdje se treba prikazivati. Korisnički vodič nalazi se u doc/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
+        <translation>Dodavanjem jezika ovdje ništa se ne prevodi i ne mijenja se nijedan pristup web-mjestu: sadržaj prevedite u uređivaču, a jezik navedite u postavci SiteLanguageList ondje gdje se treba prikazivati. Korisnički vodič nalazi se u doc/en/us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -23174,8 +23174,8 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>Uključite profil da biste vidjeli koliko naredbi izvodi svaki zahtjev, koliko je točnih ponavljanja i što bi uštedjela predmemorija upita.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.</source>
-        <translation>Profil broji naredbe koje su stigle do baze podataka: kad je predmemorija upita uključena, odgovor iz predmemorije nije u njemu. &quot;Ušteda memoriranja&quot; je ono što bi uštedio način request, a &quot;ušteda zajedničke predmemorije&quot; ono što bi uštedio način shared (otprilike 15 µs po odgovoru). Brojači su po poslužitelju jer svaki poslužitelj ima vlastiti APCu. Zapisnik je var/tmp/sql_profile.log; pogledajte doc/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
+        <translation>Profil broji naredbe koje su stigle do baze podataka: kad je predmemorija upita uključena, odgovor iz predmemorije nije u njemu. &quot;Ušteda memoriranja&quot; je ono što bi uštedio način request, a &quot;ušteda zajedničke predmemorije&quot; ono što bi uštedio način shared (otprilike 15 µs po odgovoru). Brojači su po poslužitelju jer svaki poslužitelj ima vlastiti APCu. Zapisnik je var/tmp/sql_profile.log; pogledajte doc/en/us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -24526,8 +24526,8 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>Postavke site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
-        <translation>Vrsta slijedi site.ini [SiteAccessSettings] SiteAccessType kad je pristup web-mjestu postavlja, inače njegove dizajne i RequireUserLogin. Vodič: doc/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
+        <translation>Vrsta slijedi site.ini [SiteAccessSettings] SiteAccessType kad je pristup web-mjestu postavlja, inače njegove dizajne i RequireUserLogin. Vodič: doc/en/us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -31525,8 +31525,8 @@ svoj račun.</translation>
         <translation>Exponential Layouts to je zamijenio za nova web-mjesta: raspored sadrži zone i blokove, izbornik je jedan od blokova, a pravilo odabire raspored za svaku stranicu. Pristup web-mjestu izrađen na taj način nikad ne čita ove postavke.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>Stranica ostaje za web-mjesta koja još upotrebljavaju klasični dizajn. Promjena postavke ovdje za pristup web-mjestu izrađen s Layouts bezopasna je, ali nema učinka. Vodič doc/guides/classic-menu-settings.md objašnjava oba načina.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>Stranica ostaje za web-mjesta koja još upotrebljavaju klasični dizajn. Promjena postavke ovdje za pristup web-mjestu izrađen s Layouts bezopasna je, ali nema učinka. Vodič doc/en/us/guides/classic-menu-settings.md objašnjava oba načina.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -41656,8 +41656,8 @@ Zadani kôd izrađen je iz osnovnih parametara koje ste odabrali.</translation>
         <translation>Svaka postavka ove instalacije čija je vrijednost klasa ili čiji naziv kaže da prima klasu. Promijenite jednu od njih i umjesto toga odgovara nešto drugo.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Daljnji registri deklarirani su u rad.ini, i to u jezgri i u svakom aktivnom proširenju u vlastitom rad.ini.append.php: slušatelji događaja, davatelji usluga umjetne inteligencije, alati i lanci, MCP alati, vrste poslova u redu čekanja i drugo. Svaki navodi koji INI blokovi ili koji popis klasa sadrže njegove unose i što svaki unos mora biti; registar deklariran s InTotal=disabled odnosi se na točke prebrojane drugdje i provjerava se, ali se ne pribraja. Vodič: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Daljnji registri deklarirani su u rad.ini, i to u jezgri i u svakom aktivnom proširenju u vlastitom rad.ini.append.php: slušatelji događaja, davatelji usluga umjetne inteligencije, alati i lanci, MCP alati, vrste poslova u redu čekanja i drugo. Svaki navodi koji INI blokovi ili koji popis klasa sadrže njegove unose i što svaki unos mora biti; registar deklariran s InTotal=disabled odnosi se na točke prebrojane drugdje i provjerava se, ali se ne pribraja. Vodič: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -56780,8 +56780,8 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Blokovi postavki čiji svaki unos registrira jednu implementaciju: stupci tablice podstavki (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; ili Template=), vrste poslova nad sadržajem (content.ini [ContentJobSettings] JobTypes[]), akcije i davatelji opsega za exp:ini (ini.ini [IniCommandSettings]) te poslužiteljske funkcije za ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), uz svaku udaljenu uslugu koju deklarira klasa poslužiteljske funkcije izvedena iz expServiceBase (njezin statični $services, poziva se kao ezjscore/call/&lt;name&gt;::&lt;service&gt;; svaka se pribraja ukupnom broju, a deklarirana usluga kojoj nedostaje metoda smatra se neispravnom). Unos koji navodi klasu ujedno je i jedna od postavki koje navode klasu i ondje se broji; ostali se ovdje pribrajaju ukupnom broju. Unos kojem nedostaje klasa, metoda ili predložak, ili čija klasa nije izvedena iz onoga što registar traži, prikazuje se kao neispravan. Ugrađeni stupci podstavki, koje popis sam iscrtava, nisu točke i ne navode se.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Daljnji registri deklarirani su u rad.ini, i to u jezgri i u svakom aktivnom proširenju u vlastitom rad.ini.append.php: slušatelji događaja, davatelji usluga umjetne inteligencije, alati i lanci, MCP alati, vrste poslova u redu čekanja i drugo. Svaki navodi koji INI blokovi ili koji popis klasa sadrže njegove unose i što svaki unos mora biti; registar deklariran s InTotal=disabled odnosi se na točke prebrojane drugdje i provjerava se, ali se ne pribraja. Vodič: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Daljnji registri deklarirani su u rad.ini, i to u jezgri i u svakom aktivnom proširenju u vlastitom rad.ini.append.php: slušatelji događaja, davatelji usluga umjetne inteligencije, alati i lanci, MCP alati, vrste poslova u redu čekanja i drugo. Svaki navodi koji INI blokovi ili koji popis klasa sadrže njegove unose i što svaki unos mora biti; registar deklariran s InTotal=disabled odnosi se na točke prebrojane drugdje i provjerava se, ali se ne pribraja. Vodič: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

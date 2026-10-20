@@ -13,7 +13,7 @@ have been added.
   erased or modified until it is correct.
   
 - Introduced new tag "embed-inline'.
-  See 'doc/features/3.8/embed-inline.txt' for details.
+  See 'doc/en/us/features/3.8/embed-inline.txt' for details.
   
 - It is now possible to use inline tags inside headers. (including custom
   inline tags)
@@ -36,5 +36,5 @@ have been added.
 - Automatic headers numeration allows you to use eztoc template operator to 
   automatically create tables of contents for your XML text fields. An anchor
   with unique ID is added to every header.
-  See 'doc/features/3.8/TOC_operator.txt' for details.
+  See 'doc/en/us/features/3.8/TOC_operator.txt' for details.
 

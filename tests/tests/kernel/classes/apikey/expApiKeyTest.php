@@ -2,7 +2,7 @@
 /**
  * File containing the expApiKeyTest class.
  *
- * The parts of the personal API keys (doc/guides/api-keys.md) that need no database: the key format, hashing and
+ * The parts of the personal API keys (doc/en/us/guides/api-keys.md) that need no database: the key format, hashing and
  * the constant-time check of the secret, status and expiry, names, the scope rules (normalising, limiting to what
  * the owner may give, the Scope limitation, the scope a REST route needs), reading the Authorization header, and
  * the password check of the REST interface's basic authentication for every hash type.

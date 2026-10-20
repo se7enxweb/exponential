@@ -8,7 +8,7 @@
  */
 
 /**
- * The actions of the content finder (doc/features/6.0/content-finder.md, "Actions"): move an object to the trash,
+ * The actions of the content finder (doc/en/us/features/6.0/content-finder.md, "Actions"): move an object to the trash,
  * delete it permanently, purge it from the trash, remove a version. Restoring from the trash is the kernel's own
  * content/restore page, which the result links to.
  *
@@ -481,7 +481,7 @@ class expContentFinderAction
                 $db->begin();
                 $version->removeThis();
                 $db->commit();
-                // as content/history records it (doc/bc/6.0/audit.md, content.version.remove)
+                // as content/history records it (doc/en/us/bc/6.0/audit.md, content.version.remove)
                 if ( class_exists( 'expAuditHook' ) )
                     expAuditHook::emit( 'content.version.remove', function () use ( $objectID, $removed ) {
                         $o = expAuditHook::object( $objectID );

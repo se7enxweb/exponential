@@ -53,7 +53,7 @@ ExtensionDirectory=extension
 > resolve across every root. eZExtension::filterExtensionRootDirectories() is  
 > the last word, for a root that has to be worked out at runtime.  
 >
-> See doc/bc/6.0/AdditionalExtensionDirectories.md  
+> See doc/en/us/bc/6.0/AdditionalExtensionDirectories.md  
 
 Default: an empty list.
 

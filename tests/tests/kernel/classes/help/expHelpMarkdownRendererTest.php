@@ -1,6 +1,6 @@
 <?php
 /**
- * The help's Markdown renderer and highlighter are safe (doc/features/6.0/help-system.md, "Security"): whatever a
+ * The help's Markdown renderer and highlighter are safe (doc/en/us/features/6.0/help-system.md, "Security"): whatever a
  * page under doc/ contains, the HTML it becomes has only allowed elements and attributes, no script, no event
  * handler, no inline style (the admin's Content Security Policy forbids it), and links and images only to safe places.
  * Every case is parsed with DOMDocument and checked element by element. No database, no settings needed: the link and

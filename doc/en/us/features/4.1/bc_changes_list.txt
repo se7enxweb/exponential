@@ -9,4 +9,4 @@ The file will be targeted at developers. There will be one file for every
 released version, if necessary.
 
 The file can be found at::
-    <ezp-root>/doc/bc/4.1/changes-4.1.0.txt
+    <ezp-root>/doc/en/us/bc/4.1/changes-4.1.0.txt

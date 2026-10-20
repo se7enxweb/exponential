@@ -228,7 +228,7 @@ A class that adds operators to the template language: it lists them in operatorL
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expAuditTemplateOperator` | class | `kernel/classes/audit/console/expaudittemplateoperator.php:13` | The template operator audit_label (doc/bc/6.0/audit.md, "Template operator and fetch"): the human label of an audit event name from the taxonomy regi… | – |
+| `expAuditTemplateOperator` | class | `kernel/classes/audit/console/expaudittemplateoperator.php:13` | The template operator audit_label (doc/en/us/bc/6.0/audit.md, "Template operator and fetch"): the human label of an audit event name from the taxonomy regi… | – |
 
 ### kernel/common (19)
 

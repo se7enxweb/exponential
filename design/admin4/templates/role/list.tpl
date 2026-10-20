@@ -8,7 +8,7 @@
    Every name the view has always read is kept (RemoveButton, NewButton, DeleteIDArray[]) and every template
    variable is still set (roles, role_count, assignment_counts, limit, limit_choices, limit_choice, role_sort,
    view_parameters). Works without javascript; the script only adds Select all and the selection count.
-   The same file is in design/admin and design/admin4. Guide: doc/guides/roles-and-policies.md *}
+   The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/roles-and-policies.md *}
 
 {def $summaries = first_set( $role_summaries, hash() )
      $search = first_set( $role_search, '' )

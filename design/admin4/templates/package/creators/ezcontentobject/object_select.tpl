@@ -2,7 +2,7 @@
    subtrees the package carries. Add node and Add subtree open the content browser (the shared browse page) and come
    back here with the choice; Remove selected takes the ticked rows out. The POST names are those of before:
    AddNode, AddSubtree, RemoveSelected, DeleteIDArray[], read by eZContentObjectPackageCreator.
-   The same file is in design/admin and design/admin4. Guide: doc/features/6.0/package-wizard.md *}
+   The same file is in design/admin and design/admin4. Guide: doc/en/us/features/6.0/package-wizard.md *}
 {def $k_nodes = 'Selected nodes'|i18n( 'kernel/package' )
      $errs = hash()}
 {foreach $error_list as $e}{set $errs = $errs|merge( hash( $e.field, $e.description ) )}{/foreach}

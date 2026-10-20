@@ -1,4 +1,4 @@
-{* Setup > Log files > Manage logs (setup/logsmanage; doc/features/6.0/log-viewer.md, "Managing logs"): every log with
+{* Setup > Log files > Manage logs (setup/logsmanage; doc/en/us/features/6.0/log-viewer.md, "Managing logs"): every log with
    its size, estimated lines, last write, growth, archives and limits, and its actions; Rotate all and Prune all.
    Every action is a POST (form token) that shows its plan first (setup/logs_manage_confirm.tpl).
    Variables: log_logs (key => log of expLogManagerInterface::logs()), log_total (bytes of the logs and their archives),

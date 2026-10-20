@@ -3,7 +3,7 @@
 /**
  * File containing the exphelpexamples.php script.
  *
- * The generated reference examples below doc/examples/ (doc/examples/README.md, "How the generated pages are made"):
+ * The generated reference examples below doc/en/us/examples/ (doc/en/us/examples/README.md, "How the generated pages are made"):
  *
  *   ./console exp:help:examples              write the pages (only changed files are written)
  *   ./console exp:help:examples --check      exit 1 when the pages on disk are not what the sources give

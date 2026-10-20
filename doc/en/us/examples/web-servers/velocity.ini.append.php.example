@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf-8"?
 # Exponential 6: Velocity serving a public site on ports 80 and 443
 #
-# Free documentation: GFDL 1.3 or later, see doc/README-LICENSE.md.
+# Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md.
 #
 # Copy to settings/override/velocity.ini.append.php (drop ".example"), or
 # set each value with "exp:velocity config set <Block> <Setting> <value>",

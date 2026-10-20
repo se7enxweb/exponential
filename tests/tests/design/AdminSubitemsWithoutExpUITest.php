@@ -39,7 +39,7 @@ class AdminSubitemsWithoutExpUITest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * SX-01 to SX-04 for admin4, which has no inline script (doc/features/6.0/content-security-policy.md): the text is
+     * SX-01 to SX-04 for admin4, which has no inline script (doc/en/us/features/6.0/content-security-policy.md): the text is
      * the data-no-table attribute of #subitems-config, translated and washed for the attribute, and
      * javascript/page/children_detailed.js inserts it; the script runs in node against js/mini_dom.js
      * (js/subitems_no_table.js)

@@ -1,6 +1,6 @@
 <?php
 /**
- * The syslog / journald sink (doc/bc/6.0/audit.md, "Sinks", "syslog / journald"): one RFC 5424 message per
+ * The syslog / journald sink (doc/en/us/bc/6.0/audit.md, "Sinks", "syslog / journald"): one RFC 5424 message per
  * record,
  *
  *   <PRI>1 2026-10-02T13:30:01.123Z web1 exponential 991876 access [exp@32473 id="01J9ZK…" name="…" seq="211"

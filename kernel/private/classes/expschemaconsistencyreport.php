@@ -29,7 +29,7 @@
  * The comparison itself is eZDbSchemaChecker::diff(); fromDifferences() takes its result, so the grouping and the
  * counts can be tested without a database. collect() reads the schema files and the database.
  *
- * Guide: doc/guides/upgrade-check.md
+ * Guide: doc/en/us/guides/upgrade-check.md
  *
  * @package kernel
  */

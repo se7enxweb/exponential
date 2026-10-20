@@ -1,6 +1,6 @@
 <?php
 /**
- * The uiswitch module (doc/features/6.0/ui-switch.md): the administration interface's switchable preferences, the
+ * The uiswitch module (doc/en/us/features/6.0/ui-switch.md): the administration interface's switchable preferences, the
  * display language first. uiswitch/set (POST) changes one, uiswitch/state (GET) answers with JSON what the user may
  * choose.
  *

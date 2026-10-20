@@ -27,7 +27,7 @@ Never edit `settings/content.ini` itself: an update replaces it. Put the setting
 > nothing and reports an error. bin/php/trashpurge.php is not affected; it takes  
 > --trashed-days=<days>. Items trashed before 6.0 have no trash time (trashed = 0)  
 > and are purged on the first run whatever the value; see the guide to keep them.  
-> Guide: doc/bc/6.0/trash.md  
+> Guide: doc/en/us/bc/6.0/trash.md  
 
 Default: empty.
 

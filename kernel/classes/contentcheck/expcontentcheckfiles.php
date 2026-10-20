@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckFiles class.
  *
- * Missing files and image aliases (doc/features/6.0/content-checks.md, "Missing files"): the file-backed fields of
+ * Missing files and image aliases (doc/en/us/features/6.0/content-checks.md, "Missing files"): the file-backed fields of
  * the content below a node (images, files, media and every datatype named in contentcheck.ini [MissingFileSettings]
  * Handlers[]) whose file is not in the storage (var/<site>/storage, or the cluster's DFS when one is used), in the
  * published version and in drafts; and images whose aliases (image.ini) are missing or stale.

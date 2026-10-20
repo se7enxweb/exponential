@@ -7,7 +7,7 @@
    The same file is in design/admin and design/admin4. The figures, the usage and the search come from the view
    (url_summary, url_usage, url_search); without them (an older view class) the cards show what the URL rows hold.
    Everything works without javascript; the script only adds Select all and the selection count.
-   Guide: doc/guides/urls-and-aliases.md *}
+   Guide: doc/en/us/guides/urls-and-aliases.md *}
 
 {def $summary = first_set( $url_summary, false() )
      $usage_map = first_set( $url_usage, hash() )

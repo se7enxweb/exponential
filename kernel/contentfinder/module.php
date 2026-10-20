@@ -1,6 +1,6 @@
 <?php
 /**
- * The content finder (doc/features/6.0/content-finder.md): find content by an object, node, attribute or version
+ * The content finder (doc/en/us/features/6.0/content-finder.md): find content by an object, node, attribute or version
  * id, a remote id, a URL alias or the path of a file, see every version, location and trash entry of what was
  * found, and act on it: move to the trash, delete permanently, purge from the trash, remove a version.
  *

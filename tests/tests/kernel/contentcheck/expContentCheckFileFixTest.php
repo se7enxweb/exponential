@@ -1,6 +1,6 @@
 <?php
 /**
- * The resolutions of the missing files that need no database (doc/features/6.0/content-checks.md, "Resolving"): the
+ * The resolutions of the missing files that need no database (doc/en/us/features/6.0/content-checks.md, "Resolving"): the
  * choice of a restore source, what a replacement may be, where files may be written, the POST path of
  * contentcheck/fixfiles, the audit names and the templates.
  *

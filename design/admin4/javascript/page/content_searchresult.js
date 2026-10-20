@@ -2,7 +2,7 @@
  * The search results (content/searchresult.tpl): the box that selects every result, and "Edit selected", which
  * posts the ticked results to the multi-object editor (data-multiedit-url of the button) in a form of its own, with
  * the request token. A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var all    = document.getElementById( 'ezsearch-select-all' ),

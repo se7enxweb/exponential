@@ -15,7 +15,7 @@
  * - ExtensionDiscovery: the debug switches of the active extensions' own INI files,
  * - Presets[] and [Preset_<id>], Groups[], Thresholds[].
  *
- * Guide: doc/bc/6.0/debug-bar.md
+ * Guide: doc/en/us/bc/6.0/debug-bar.md
  */
 class expDebugBarRegistry
 {

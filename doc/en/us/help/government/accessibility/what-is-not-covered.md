@@ -50,7 +50,7 @@ TinyMCE 3 is the default engine; TinyMCE 8 is opt-in per user or per siteaccess
 ([The online editor on TinyMCE 8](../../../features/6.0/online-editor-tinymce8.md)). Evaluate the engine you deploy.
 
 **Extensions.** Keep a list of activated extensions (Setup > Extensions) and test the screens each one adds. Look for
-the extension's entries in the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) before you rely on it.
+the extension's entries in the [6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md) before you rely on it.
 
 **No CI engine.** Add an automated check of your own public pages to your release routine (an axe-based tool on a
 fixed list of URLs) and a keyboard pass for every release; see "Testing with axe and the keyboard" in this section.

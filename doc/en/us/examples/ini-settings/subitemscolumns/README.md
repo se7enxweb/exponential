@@ -15,7 +15,7 @@ The shipped settings of `settings/subitemscolumns.ini`: 129 blocks, 990 settings
 > The columns of the admin subitems list ("Table options" on content/view/full/<node id>).  
 > One \[Column\_<key>\] block per column; the key is what presets, defaults and saved choices use.  
 > Which columns are visible by default, the presets and the CSV export are set in subitems.ini.  
-> Guide: doc/bc/6.0/subitems-table-options.md  
+> Guide: doc/en/us/bc/6.0/subitems-table-options.md  
 >
 > A block names exactly one of:  
 >   Builtin=true         one of the 15 columns the list renders itself from the node (the keys  

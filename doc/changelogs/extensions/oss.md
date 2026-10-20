@@ -2,7 +2,7 @@
 
 Read this page before you install or update `oss`, or to find out which release brought a change.
 
-Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../history/ecosystem/oss.md).
+Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../en/us/history/ecosystem/oss.md).
 
 ## v3.3.0.5 (2026-04-12)
 
@@ -29,6 +29,6 @@ Releases made by the se7enxweb team, newest first. Each release lists the team's
 
 ## Related pages
 
-- [Package map and upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
-- [package map](../../specifications/6.0/platform-package-map.md)
-- [upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- [Package map and upgrade notes](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [package map](../../en/us/specifications/6.0/platform-package-map.md)
+- [upgrade notes](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)

@@ -587,11 +587,11 @@ A class of static functions grouped by subject; no instances.
 | `ExpInstallationDetailsOutputFilter` | class | `kernel/classes/expinstallationdetailsoutputfilter.php:15` | Installation name output filter. | – |
 | `expMaintenance` | class | `kernel/classes/expmaintenance.php:29` | Maintenance mode: while var/maintenance.json exists, every request to the front controllers is answered with a maintenance page (503, Retry-After, ne… | – |
 | `expManagedConfiguration` | class | `kernel/classes/expmanagedconfiguration.php:25` | site.ini [ConfigurationSettings] ManagedByDeployment=enabled: settings, templates and code come from the deployment only, and the admin interface doe… | – |
-| `expNodeQuickPick` | class | `kernel/classes/expnodequickpick.php:18` | Quick location buttons (doc/features/6.0/quick-location-buttons.md): a few well-known places of the content tree, found from a short key (Websites, M… | – |
+| `expNodeQuickPick` | class | `kernel/classes/expnodequickpick.php:18` | Quick location buttons (doc/en/us/features/6.0/quick-location-buttons.md): a few well-known places of the content tree, found from a short key (Websites, M… | – |
 | `expNotificationJob` | class | `kernel/classes/expnotificationjob.php:17` | A notification run for the status page ("Run now"), in the background. | – |
 | `expNotificationService` | class | `kernel/classes/expnotificationservice.php:26` | The one place that knows how the notification system is run and looked at: the cronjob part, the exp:notification:* commands, the status page and its… | – |
 | `expPackageConflictReport` | class | `kernel/classes/exppackageconflictreport.php:22` | What installing a package would meet on this installation, by remote id, without writing anything: for every content object of the package whether an… | – |
-| `expPackageJson` | class | `kernel/classes/exppackagejson.php:34` | The JSON serialization of a package (doc/bc/6.0/package-json-format.md). | – |
+| `expPackageJson` | class | `kernel/classes/exppackagejson.php:34` | The JSON serialization of a package (doc/en/us/bc/6.0/package-json-format.md). | – |
 | `expPhar` | class | `kernel/classes/expphar.php:21` | Packages the engine -- the kernel and library class files -- into a phar, so the runtime can load them from one archive instead of from a thousand se… | – |
 | `expPolicyOmitList` | class | `kernel/classes/exppolicyomitlist.php:25` | The modules and views that skip the policy check: site.ini [RoleSettings] PolicyOmitList[] without the entries of [RoleSettings] PolicyOmitListExclud… | – |
 | `expPreloadJob` | class | `kernel/classes/exppreloadjob.php:27` | A cache preload run: started in the background from Setup › Preload, or in the foreground from the shell (bin/php/preload.php), with one lock, one st… | – |
@@ -663,24 +663,24 @@ A class of static functions grouped by subject; no instances.
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expAudit` | class | `kernel/classes/audit/expaudit.php:26` | The audit: what happens in Exponential, recorded as hash-chained JSON lines per channel (doc/bc/6.0/audit.md, "The developer API (Z3)"). | – |
-| `expAuditAlertEvaluator` | class | `kernel/classes/audit/alerts/expauditalertevaluator.php:23` | Evaluates the alert rules (doc/bc/6.0/audit.md, "Alerts (F5)") and fires system.audit.alert. | – |
-| `expAuditBridge` | class | `kernel/classes/audit/bridge/expauditbridge.php:24` | The ezpEvent bridge of the audit (doc/bc/6.0/audit.md, "The ezpEvent bridge", Z3): kernel and extension events that already exist (ezpEvent::getInsta… | – |
-| `expAuditConfig` | class | `kernel/classes/audit/expauditconfig.php:21` | The audit settings (settings/audit.ini, doc/bc/6.0/audit.md "The settings reference") read once into one array. | – |
-| `expAuditConsole` | class | `kernel/classes/audit/console/expauditconsole.php:16` | What the views of the audit module share (doc/bc/6.0/audit.md, "The console: module audit"): the channels the current user may read (audit/read and i… | – |
+| `expAudit` | class | `kernel/classes/audit/expaudit.php:26` | The audit: what happens in Exponential, recorded as hash-chained JSON lines per channel (doc/en/us/bc/6.0/audit.md, "The developer API (Z3)"). | – |
+| `expAuditAlertEvaluator` | class | `kernel/classes/audit/alerts/expauditalertevaluator.php:23` | Evaluates the alert rules (doc/en/us/bc/6.0/audit.md, "Alerts (F5)") and fires system.audit.alert. | – |
+| `expAuditBridge` | class | `kernel/classes/audit/bridge/expauditbridge.php:24` | The ezpEvent bridge of the audit (doc/en/us/bc/6.0/audit.md, "The ezpEvent bridge", Z3): kernel and extension events that already exist (ezpEvent::getInsta… | – |
+| `expAuditConfig` | class | `kernel/classes/audit/expauditconfig.php:21` | The audit settings (settings/audit.ini, doc/en/us/bc/6.0/audit.md "The settings reference") read once into one array. | – |
+| `expAuditConsole` | class | `kernel/classes/audit/console/expauditconsole.php:16` | What the views of the audit module share (doc/en/us/bc/6.0/audit.md, "The console: module audit"): the channels the current user may read (audit/read and i… | – |
 | `expAuditFormatRegistry` | class | `kernel/classes/audit/format/expauditformatregistry.php:16` | The archive format registry: [AuditArchiveSettings] FormatHandlers[]= (RAD survey registry "auditformats"). | – |
-| `expAuditFunctionCollection` | class | `kernel/classes/audit/console/expauditfunctioncollection.php:22` | The fetch functions of the audit module (kernel/audit/function_definition.php; doc/bc/6.0/audit.md, "Template operator and fetch"): | – |
-| `expAuditGuard` | class | `kernel/classes/audit/expauditguard.php:32` | [AuditSettings] OnWriteFailure (doc/bc/6.0/audit.md, "When the audit cannot write"): what happens to an action whose audit record cannot be written. | – |
-| `expAuditHook` | class | `kernel/classes/audit/hook/expaudithook.php:25` | The kernel's audit call sites (doc/bc/6.0/audit.md, "The event catalogue", stage 3): one guarded way to record an event from a hook point, and the de… | – |
-| `expAuditIndexRow` | class | `kernel/classes/audit/index/expauditindexrow.php:12` | One audit record as a row of expaudit_event (doc/bc/6.0/audit.md, "Tables"): the columns the console filters on, the record itself (as written, so th… | – |
-| `expAuditIndexSchema` | class | `kernel/classes/audit/index/expauditindexschema.php:18` | The audit index tables (doc/bc/6.0/audit.md, "The index"): their definition in the generic schema format of share/db_schema.dba, creating them on an… | – |
+| `expAuditFunctionCollection` | class | `kernel/classes/audit/console/expauditfunctioncollection.php:22` | The fetch functions of the audit module (kernel/audit/function_definition.php; doc/en/us/bc/6.0/audit.md, "Template operator and fetch"): | – |
+| `expAuditGuard` | class | `kernel/classes/audit/expauditguard.php:32` | [AuditSettings] OnWriteFailure (doc/en/us/bc/6.0/audit.md, "When the audit cannot write"): what happens to an action whose audit record cannot be written. | – |
+| `expAuditHook` | class | `kernel/classes/audit/hook/expaudithook.php:25` | The kernel's audit call sites (doc/en/us/bc/6.0/audit.md, "The event catalogue", stage 3): one guarded way to record an event from a hook point, and the de… | – |
+| `expAuditIndexRow` | class | `kernel/classes/audit/index/expauditindexrow.php:12` | One audit record as a row of expaudit_event (doc/en/us/bc/6.0/audit.md, "Tables"): the columns the console filters on, the record itself (as written, so th… | – |
+| `expAuditIndexSchema` | class | `kernel/classes/audit/index/expauditindexschema.php:18` | The audit index tables (doc/en/us/bc/6.0/audit.md, "The index"): their definition in the generic schema format of share/db_schema.dba, creating them on an… | – |
 | `expAuditIndexSettings` | class | `kernel/classes/audit/index/expauditindexsettings.php:12` | The settings of the audit index and console (audit.ini [AuditIndexSettings], [AuditConsoleSettings] and [AuditPrivacySettings] PseudonymiseAfterDays)… | – |
-| `expAuditJson` | class | `kernel/classes/audit/expauditjson.php:16` | The canonical JSON of audit records (doc/bc/6.0/audit.md, "Canonical JSON"). | – |
-| `expAuditMailRecipients` | class | `kernel/classes/audit/sinks/expauditmailrecipients.php:30` | Who gets the audit's alert mail (doc/bc/6.0/audit.md, "E-mail"; owner decision 2026-10-02). | – |
-| `expAuditReauth` | class | `kernel/classes/audit/console/expauditreauth.php:26` | Password re-entry before the audit's manage actions (doc/bc/6.0/audit.md, Q9; [AuditConsoleSettings] ReauthForManage, ReauthMinutes). | – |
-| `expAuditSinkRegistry` | class | `kernel/classes/audit/sinks/expauditsinkregistry.php:23` | The sink registry and delivery (doc/bc/6.0/audit.md, "Sinks (Q7)", "The sink registry"). | – |
+| `expAuditJson` | class | `kernel/classes/audit/expauditjson.php:16` | The canonical JSON of audit records (doc/en/us/bc/6.0/audit.md, "Canonical JSON"). | – |
+| `expAuditMailRecipients` | class | `kernel/classes/audit/sinks/expauditmailrecipients.php:30` | Who gets the audit's alert mail (doc/en/us/bc/6.0/audit.md, "E-mail"; owner decision 2026-10-02). | – |
+| `expAuditReauth` | class | `kernel/classes/audit/console/expauditreauth.php:26` | Password re-entry before the audit's manage actions (doc/en/us/bc/6.0/audit.md, Q9; [AuditConsoleSettings] ReauthForManage, ReauthMinutes). | – |
+| `expAuditSinkRegistry` | class | `kernel/classes/audit/sinks/expauditsinkregistry.php:23` | The sink registry and delivery (doc/en/us/bc/6.0/audit.md, "Sinks (Q7)", "The sink registry"). | – |
 | `expAuditSourceRegistry` | class | `kernel/classes/audit/console/expauditsourceregistry.php:16` | The registry of the audit console's sources (expAuditSource), from audit.ini [AuditSourceSettings] Sources[]: which are registered, which work here,… | – |
-| `expAuditTaxonomy` | class | `kernel/classes/audit/expaudittaxonomy.php:21` | The audit taxonomy registry (doc/bc/6.0/audit.md, "Taxonomy", "Naming rules", "The event catalogue"). | – |
+| `expAuditTaxonomy` | class | `kernel/classes/audit/expaudittaxonomy.php:21` | The audit taxonomy registry (doc/en/us/bc/6.0/audit.md, "Taxonomy", "Naming rules", "The event catalogue"). | – |
 
 ### kernel/classes/classicmenu (2)
 
@@ -697,15 +697,15 @@ A class of static functions grouped by subject; no instances.
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expContentCheck` | class | `kernel/classes/contentcheck/expcontentcheck.php:19` | What the two content checks share (doc/features/6.0/content-checks.md): their settings, where they answer, the policy check, the form tokens of the t… | – |
-| `expContentCheckBrokenRelations` | class | `kernel/classes/contentcheck/expcontentcheckbrokenrelations.php:38` | Visible, published content that points at something a visitor cannot reach (doc/features/6.0/content-checks.md, "Broken relations"). | – |
-| `expContentCheckFileFix` | class | `kernel/classes/contentcheck/expcontentcheckfilefix.php:25` | The resolutions of the missing files list (doc/features/6.0/content-checks.md, "Resolving"): each for one field version or for many, always planned f… | – |
-| `expContentCheckFiles` | class | `kernel/classes/contentcheck/expcontentcheckfiles.php:26` | Missing files and image aliases (doc/features/6.0/content-checks.md, "Missing files"): the file-backed fields of the content below a node (images, fi… | – |
-| `expContentCheckQuarantine` | class | `kernel/classes/contentcheck/expcontentcheckquarantine.php:25` | The actions of the storage check (doc/features/6.0/content-checks.md, "Quarantine"). | – |
-| `expContentCheckScope` | class | `kernel/classes/contentcheck/expcontentcheckscope.php:24` | The start location of the content checks (doc/features/6.0/content-checks.md, "Where a check starts"): any node, from the whole tree (node 1) to one… | – |
-| `expContentCheckStorage` | class | `kernel/classes/contentcheck/expcontentcheckstorage.php:28` | The storage check (doc/features/6.0/content-checks.md, "Storage files"): the files below var//storage that no content uses (orphan files), and the fi… | – |
-| `expContentCheckTrash` | class | `kernel/classes/contentcheck/expcontentchecktrash.php:23` | Moves unreferenced objects to the trash (doc/features/6.0/content-checks.md, "Moving to the trash"): the list posts the ticked objects, a confirmatio… | – |
-| `expContentCheckUnreferenced` | class | `kernel/classes/contentcheck/expcontentcheckunreferenced.php:31` | The assets below a node that nothing uses (doc/features/6.0/content-checks.md, "Unreferenced objects"): published objects of an asset class ([Unrefer… | – |
+| `expContentCheck` | class | `kernel/classes/contentcheck/expcontentcheck.php:19` | What the two content checks share (doc/en/us/features/6.0/content-checks.md): their settings, where they answer, the policy check, the form tokens of the t… | – |
+| `expContentCheckBrokenRelations` | class | `kernel/classes/contentcheck/expcontentcheckbrokenrelations.php:38` | Visible, published content that points at something a visitor cannot reach (doc/en/us/features/6.0/content-checks.md, "Broken relations"). | – |
+| `expContentCheckFileFix` | class | `kernel/classes/contentcheck/expcontentcheckfilefix.php:25` | The resolutions of the missing files list (doc/en/us/features/6.0/content-checks.md, "Resolving"): each for one field version or for many, always planned f… | – |
+| `expContentCheckFiles` | class | `kernel/classes/contentcheck/expcontentcheckfiles.php:26` | Missing files and image aliases (doc/en/us/features/6.0/content-checks.md, "Missing files"): the file-backed fields of the content below a node (images, fi… | – |
+| `expContentCheckQuarantine` | class | `kernel/classes/contentcheck/expcontentcheckquarantine.php:25` | The actions of the storage check (doc/en/us/features/6.0/content-checks.md, "Quarantine"). | – |
+| `expContentCheckScope` | class | `kernel/classes/contentcheck/expcontentcheckscope.php:24` | The start location of the content checks (doc/en/us/features/6.0/content-checks.md, "Where a check starts"): any node, from the whole tree (node 1) to one… | – |
+| `expContentCheckStorage` | class | `kernel/classes/contentcheck/expcontentcheckstorage.php:28` | The storage check (doc/en/us/features/6.0/content-checks.md, "Storage files"): the files below var//storage that no content uses (orphan files), and the fi… | – |
+| `expContentCheckTrash` | class | `kernel/classes/contentcheck/expcontentchecktrash.php:23` | Moves unreferenced objects to the trash (doc/en/us/features/6.0/content-checks.md, "Moving to the trash"): the list posts the ticked objects, a confirmatio… | – |
+| `expContentCheckUnreferenced` | class | `kernel/classes/contentcheck/expcontentcheckunreferenced.php:31` | The assets below a node that nothing uses (doc/en/us/features/6.0/content-checks.md, "Unreferenced objects"): published objects of an asset class ([Unrefer… | – |
 
 ### kernel/classes/contentfinder (2)
 
@@ -713,8 +713,8 @@ A class of static functions grouped by subject; no instances.
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expContentFinderAction` | class | `kernel/classes/contentfinder/expcontentfinderaction.php:33` | The actions of the content finder (doc/features/6.0/content-finder.md, "Actions"): move an object to the trash, delete it permanently, purge it from… | – |
-| `expContentFinderInput` | class | `kernel/classes/contentfinder/expcontentfinderinput.php:28` | What the content finder (module contentfinder, doc/features/6.0/content-finder.md) makes of its one search field: the kinds of id or path the text ca… | – |
+| `expContentFinderAction` | class | `kernel/classes/contentfinder/expcontentfinderaction.php:33` | The actions of the content finder (doc/en/us/features/6.0/content-finder.md, "Actions"): move an object to the trash, delete it permanently, purge it from… | – |
+| `expContentFinderInput` | class | `kernel/classes/contentfinder/expcontentfinderinput.php:28` | What the content finder (module contentfinder, doc/en/us/features/6.0/content-finder.md) makes of its one search field: the kinds of id or path the text ca… | – |
 
 ### kernel/classes/contentjob (2)
 
@@ -758,16 +758,16 @@ A class of static functions grouped by subject; no instances.
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expHelp` | class | `kernel/classes/help/exphelp.php:11` | The help system's shared helpers (doc/features/6.0/help-system.md): its settings, whether it is on, the install root it reads from, and the URLs of i… | – |
-| `expHelpContentSchema` | class | `kernel/classes/help/content/exphelpcontentschema.php:20` | The content model of help maintained as content (doc/specifications/6.0/help-system.md, doc/features/6.0/help-content.md): the eight help_* content c… | – |
-| `expHelpFrontMatter` | class | `kernel/classes/help/exphelpfrontmatter.php:28` | The front matter of a help page (doc/features/6.0/help-system.md, "Front matter"): a block at the very top of a Markdown file between two lines of "-… | – |
+| `expHelp` | class | `kernel/classes/help/exphelp.php:11` | The help system's shared helpers (doc/en/us/features/6.0/help-system.md): its settings, whether it is on, the install root it reads from, and the URLs of i… | – |
+| `expHelpContentSchema` | class | `kernel/classes/help/content/exphelpcontentschema.php:20` | The content model of help maintained as content (doc/en/us/specifications/6.0/help-system.md, doc/en/us/features/6.0/help-content.md): the eight help_* content c… | – |
+| `expHelpFrontMatter` | class | `kernel/classes/help/exphelpfrontmatter.php:28` | The front matter of a help page (doc/en/us/features/6.0/help-system.md, "Front matter"): a block at the very top of a Markdown file between two lines of "-… | – |
 | `expHelpFunctionCollection` | class | `kernel/classes/help/exphelpfunctioncollection.php:10` | The exphelp fetch functions (kernel/exphelp/function_definition.php). | – |
-| `expHelpHighlighter` | class | `kernel/classes/help/exphelphighlighter.php:29` | Server-side syntax highlighting of the code blocks of the help pages (exphelp, doc/features/6.0/help-system.md), without JavaScript or an external li… | – |
-| `expHelpLicense` | class | `kernel/classes/help/exphelplicense.php:17` | The license of the documentation the help shows (exphelp.ini [License], doc/README-LICENSE.md). | – |
-| `expHelpLinks` | class | `kernel/classes/help/exphelplinks.php:12` | The link and image resolvers the viewer gives expHelpMarkdownRenderer (doc/features/6.0/help-system.md): a relative link to an allowed page becomes i… | – |
-| `expHelpPdf` | class | `kernel/classes/help/exphelppdf.php:18` | A help page as a PDF file (doc/features/6.0/help-system.md, "Print and PDF"): the view exphelp/pdf/ and `./console exp:help pdf ` ask here. | – |
-| `expHelpPdfFontSubset` | class | `kernel/classes/help/exphelppdffontsubset.php:17` | Cuts a TrueType font down to the glyphs a PDF uses (doc/features/6.0/help-system.md, "Print and PDF"). | – |
-| `expHelpReadPolicyGrant` | class | `kernel/classes/help/exphelpreadpolicygrant.php:22` | Plans and applies the grant of the policy exphelp/read (bin/php/addexphelpreadpolicy.php): reading the help system (doc/features/6.0/help-system.md). | – |
+| `expHelpHighlighter` | class | `kernel/classes/help/exphelphighlighter.php:29` | Server-side syntax highlighting of the code blocks of the help pages (exphelp, doc/en/us/features/6.0/help-system.md), without JavaScript or an external li… | – |
+| `expHelpLicense` | class | `kernel/classes/help/exphelplicense.php:17` | The license of the documentation the help shows (exphelp.ini [License], doc/en/us/README-LICENSE.md). | – |
+| `expHelpLinks` | class | `kernel/classes/help/exphelplinks.php:12` | The link and image resolvers the viewer gives expHelpMarkdownRenderer (doc/en/us/features/6.0/help-system.md): a relative link to an allowed page becomes i… | – |
+| `expHelpPdf` | class | `kernel/classes/help/exphelppdf.php:18` | A help page as a PDF file (doc/en/us/features/6.0/help-system.md, "Print and PDF"): the view exphelp/pdf/ and `./console exp:help pdf ` ask here. | – |
+| `expHelpPdfFontSubset` | class | `kernel/classes/help/exphelppdffontsubset.php:17` | Cuts a TrueType font down to the glyphs a PDF uses (doc/en/us/features/6.0/help-system.md, "Print and PDF"). | – |
+| `expHelpReadPolicyGrant` | class | `kernel/classes/help/exphelpreadpolicygrant.php:22` | Plans and applies the grant of the policy exphelp/read (bin/php/addexphelpreadpolicy.php): reading the help system (doc/en/us/features/6.0/help-system.md). | – |
 
 ### kernel/classes/ini (4)
 
@@ -786,11 +786,11 @@ A class of static functions grouped by subject; no instances.
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expLogActions` | class | `kernel/classes/logviewer/explogactions.php:13` | The actions of the log viewer besides reading (doc/features/6.0/log-viewer.md, "Actions"): download a range, rotate now, empty a file, remove an arch… | – |
-| `expLogBundle` | class | `kernel/classes/logviewer/explogbundle.php:17` | "Download all logs" (Setup › Manage logs; doc/features/6.0/log-viewer.md, "Downloading every log"): one archive of every log the viewer lists, option… | – |
-| `expLogHealth` | class | `kernel/classes/logviewer/exploghealth.php:17` | The health of the logs (Setup › Log files › Health, setup/logshealth; doc/features/6.0/log-viewer.md, "Health"): the disk the logs and their archives… | – |
-| `expLogParser` | class | `kernel/classes/logviewer/explogparser.php:25` | Reads the lines of a log file as entries (doc/features/6.0/log-viewer.md, "The line format"). | – |
-| `expLogPermalink` | class | `kernel/classes/logviewer/explogpermalink.php:23` | The permalinks of the log viewer (doc/features/6.0/log-viewer.md, "Permalinks"): every view of a log as a path without a query string, short enough t… | – |
+| `expLogActions` | class | `kernel/classes/logviewer/explogactions.php:13` | The actions of the log viewer besides reading (doc/en/us/features/6.0/log-viewer.md, "Actions"): download a range, rotate now, empty a file, remove an arch… | – |
+| `expLogBundle` | class | `kernel/classes/logviewer/explogbundle.php:17` | "Download all logs" (Setup › Manage logs; doc/en/us/features/6.0/log-viewer.md, "Downloading every log"): one archive of every log the viewer lists, option… | – |
+| `expLogHealth` | class | `kernel/classes/logviewer/exploghealth.php:17` | The health of the logs (Setup › Log files › Health, setup/logshealth; doc/en/us/features/6.0/log-viewer.md, "Health"): the disk the logs and their archives… | – |
+| `expLogParser` | class | `kernel/classes/logviewer/explogparser.php:25` | Reads the lines of a log file as entries (doc/en/us/features/6.0/log-viewer.md, "The line format"). | – |
+| `expLogPermalink` | class | `kernel/classes/logviewer/explogpermalink.php:23` | The permalinks of the log viewer (doc/en/us/features/6.0/log-viewer.md, "Permalinks"): every view of a log as a path without a query string, short enough t… | – |
 
 ### kernel/classes/mail (1)
 
@@ -933,12 +933,12 @@ A class of static functions grouped by subject; no instances.
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expApiKeyRest` | class | `kernel/private/rest/classes/auth/apikey_rest.php:24` | How the REST layer resolves a personal API key (doc/guides/api-keys.md, "For developers"). | – |
+| `expApiKeyRest` | class | `kernel/private/rest/classes/auth/apikey_rest.php:24` | How the REST layer resolves a personal API key (doc/en/us/guides/api-keys.md, "For developers"). | – |
 | `expContentAccessReport` | class | `kernel/private/classes/expcontentaccessreport.php:23` | Answers "may this user do this with this object or node, and if not, which limitation refuses it": the access checks of the kernel made for another u… | – |
 | `expContentSecurityPolicy` | class | `kernel/private/classes/expcontentsecuritypolicy.php:39` | The Content Security Policy of a page, from site.ini [ContentSecurityPolicy]. | – |
 | `expOAuthAuthorizePolicy` | class | `kernel/private/rest/classes/oauth/authorize_policy.php:21` | Decides whether a signed in user may authorize an OAuth client in oauth/authorize. | – |
 | `expOAuthAuthorizePolicyGrant` | class | `kernel/private/rest/classes/oauth/authorize_policy_grant.php:26` | Plans and applies the upgrade grant of the policy oauth/authorize (bin/php/addoauthauthorizepolicy.php). | – |
-| `expRestContentPermission` | class | `kernel/private/rest/classes/auth/content_permission.php:36` | The current user's rights on the content a REST call reads or writes, checked the way the content module checks them (doc/guides/api-keys.md, "Permis… | – |
+| `expRestContentPermission` | class | `kernel/private/rest/classes/auth/content_permission.php:36` | The current user's rights on the content a REST call reads or writes, checked the way the content module checks them (doc/en/us/guides/api-keys.md, "Permis… | – |
 | `ezpAttributeOperatorManager` | class | `kernel/private/eztemplate/ezpattributeoperatormanager.php:12` | – | – |
 | `ezpContentLimitation` | class | `kernel/private/classes/ezpcontentlimitation.php:26` | Asks the handler an extension registered for a content policy limitation the kernel does not know (site.ini [RoleSettings] LimitationHandlers[]=, see… | – |
 | `ezpContentPublishingQueue` | class | `kernel/private/classes/ezpcontentpublishingqueue.php:19` | This class manages the content publishing queue. | settings/content.ini [PublishingSettings] AsynchronousPublishingQueueReader |
@@ -1031,7 +1031,7 @@ A class of static functions grouped by subject; no instances.
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expLogRotator` | class | `lib/ezfile/classes/explogrotator.php:28` | The one implementation of log rotation in the kernel (doc/features/6.0/log-rotation.md). | – |
+| `expLogRotator` | class | `lib/ezfile/classes/explogrotator.php:28` | The one implementation of log rotation in the kernel (doc/en/us/features/6.0/log-rotation.md). | – |
 | `eZDir` | class | `lib/ezfile/classes/ezdir.php:17` | – | – |
 | `eZFile` | class | `lib/ezfile/classes/ezfile.php:18` | – | – |
 | `eZLog` | class | `lib/ezfile/classes/ezlog.php:21` | – | – |

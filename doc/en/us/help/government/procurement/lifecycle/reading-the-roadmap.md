@@ -52,8 +52,8 @@ For a public body this means:
 
 Before you rely on any statement about a feature, check it:
 
-1. Search the changelog of the current line ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
-2. Look for a feature page in `doc/features/6.0/` (for example [Installing Exponential in one command](../../../../features/6.0/install-in-one-command.md)).
+1. Search the changelog of the current line ([6.0.15 changelog](../../../../../../changelogs/6.0/6.0.15.md)).
+2. Look for a feature page in `doc/en/us/features/6.0/` (for example [Installing Exponential in one command](../../../../features/6.0/install-in-one-command.md)).
 3. Ask for a demonstration on a test installation; see the evaluation part of this procurement section.
 
 The roadmap page itself shows this method: it lists roadmap items with what the repository shows

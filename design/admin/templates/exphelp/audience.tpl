@@ -1,4 +1,4 @@
-{* exphelp/audience: the landing page of one audience (doc/features/6.0/help-system.md, "Landing pages"). The blocks
+{* exphelp/audience: the landing page of one audience (doc/en/us/features/6.0/help-system.md, "Landing pages"). The blocks
    and their order come from exphelp.ini [LandingSettings] Blocks[] or [Landing_<audience>] Blocks[]: hero (name,
    summary, a search box limited to the audience, buttons), start (the reading path), boxes (info boxes), categories
    (a search button per category), key (key pages), latest (recently updated), related (related audiences), commits

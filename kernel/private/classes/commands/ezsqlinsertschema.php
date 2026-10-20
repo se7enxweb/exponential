@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/ezsqlinsertschema.php, moved into a class (#207 stage 1). The file bin/php/ezsqlinsertschema.php is one call to it.
  * @description Insert a database schema and data from a .dba file into a database (--type, --user)
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/ezsqlinsertschema.php:

@@ -22,7 +22,7 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 
 > **Note**
 > Every statement about Exponential in this section is taken from the repository (the standards pages in
-> `doc/standards/`, the feature pages, the guides and the shipped settings) and links to its source. Laws and
+> `doc/en/us/standards/`, the feature pages, the guides and the shipped settings) and links to its source. Laws and
 > standards are named with a link to the official publication. Pages about laws describe features and common
 > practice; they are **not legal advice**. No page describes a real government, deployment or customer: examples
 > use obvious placeholders such as "your council" or `example.gov`.

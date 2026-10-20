@@ -1,7 +1,7 @@
 /*
  * admin and admin4 package/create, the pickers of the wizard (create/wizard_pick_script.tpl): the selection count and
  * the filter of the rows. The same file is in design/admin and design/admin4. A file of its own, so the page runs
- * under a Content Security Policy without 'unsafe-inline' (doc/features/6.0/content-security-policy.md).
+ * under a Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function()
 {

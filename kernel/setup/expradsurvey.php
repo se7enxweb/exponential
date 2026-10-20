@@ -649,7 +649,7 @@ class expRADSurvey
                 'ini'       => 'debugbar.ini',
                 'section'   => '/^Preset_(.+)$/',
                 'variables' => array( 'Name' => 'debugbar-preset' ) ),
-            // The audit's registries (settings/audit.ini, doc/bc/6.0/audit.md "Extension interfaces and their
+            // The audit's registries (settings/audit.ini, doc/en/us/bc/6.0/audit.md "Extension interfaces and their
             // registries"): taxonomy branches of extensions, sinks, alert rule classes, archive formats.
             'auditbranches'   => array(
                 'title'     => 'Audit taxonomy branches',
@@ -1060,7 +1060,7 @@ class expRADSurvey
     }
 
     /**
-     * The remote services (doc/bc/6.0/backend_ezjscore_services.md): every service a server function class
+     * The remote services (doc/en/us/bc/6.0/backend_ezjscore_services.md): every service a server function class
      * extending expServiceBase declares in its static $services, called as ezjscore/call/<name>::<service>. The
      * ezjscore entry counts the class once; each service is a point of its own, so every one is added to the
      * total. A declared service whose method the class does not have is broken.

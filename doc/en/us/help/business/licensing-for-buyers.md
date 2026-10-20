@@ -16,7 +16,7 @@ come, what may a buyer do with it, what do the licenses ask in return, and where
 > **Warning**
 > This page is a summary in plain words, not legal advice. The license texts are what count: the GNU General Public
 > License version 2 in `LICENSE.md` (and `LICENSE`) of the repository, and the GNU Free Documentation License 1.3 in
-> [doc/LICENSE-GFDL-1.3.txt](../../LICENSE-GFDL-1.3.txt). A buyer with specific plans (selling a product built on
+> [doc/en/us/LICENSE-GFDL-1.3.txt](../../LICENSE-GFDL-1.3.txt). A buyer with specific plans (selling a product built on
 > Exponential, distributing it to third parties, combining it with proprietary code) should ask their own legal
 > adviser.
 
@@ -200,7 +200,7 @@ response commitment in the project's own files is in `SECURITY.md`: a first answ
 | The license and copyright of the installation | **Info > Copyright** (`/ezinfo/copyright`) |
 | Extensions and third-party software with their licenses | **Info > About** (`/ezinfo/about`) |
 | The documentation license | The notice at the end of every help page and its PDF; [Free documentation](../free-documentation.md) |
-| The license files | `LICENSE.md`, `LICENSE`, `COPYRIGHT.md` in the installation root; `doc/LICENSE-GFDL-1.3.txt` |
+| The license files | `LICENSE.md`, `LICENSE`, `COPYRIGHT.md` in the installation root; `doc/en/us/LICENSE-GFDL-1.3.txt` |
 | The package's declared license | `composer.json` (`"license": "GPL-2.0-or-later"`) and [Packagist](https://packagist.org/packages/se7enxweb/exponential) |
 
 ## Buyer FAQ
@@ -234,7 +234,7 @@ Extensions in use  <list from Info > About, with each license>
 Other components   <list from Info > About, Third-party software>
 Warranty           None under the license; by contract with: <supplier, if any>
 Security reports   Private, as described in SECURITY.md
-Notes              This summary is not legal advice. License texts: LICENSE.md, doc/LICENSE-GFDL-1.3.txt
+Notes              This summary is not legal advice. License texts: LICENSE.md, doc/en/us/LICENSE-GFDL-1.3.txt
 ```
 
 ## Related pages

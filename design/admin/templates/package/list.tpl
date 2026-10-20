@@ -8,7 +8,7 @@
 
    The same file is in design/admin and design/admin4. Everything comes from the view (kernel/private/classes/
    views/package/list.php, eZPackageCatalog); nothing is fetched here. Works without javascript; the script only
-   adds "select all". The POST names are those of before. Guide: doc/guides/packages.md *}
+   adds "select all". The POST names are those of before. Guide: doc/en/us/guides/packages.md *}
 
 {def $q = $package_query
      $repo_base = cond( $repository_id|ne( '' ), concat( '/package/list/', $repository_id ), '/package/list' )

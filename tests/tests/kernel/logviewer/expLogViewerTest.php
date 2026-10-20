@@ -1,6 +1,6 @@
 <?php
 /**
- * The log viewer's facade without a database (doc/features/6.0/log-viewer.md, "The feed"): what the page and the
+ * The log viewer's facade without a database (doc/en/us/features/6.0/log-viewer.md, "The feed"): what the page and the
  * feed receive, on a temporary root with synthetic lines.
  *
  *  LV-60  present(): masked fields and message, links as parts, the request key equal for one request and not the

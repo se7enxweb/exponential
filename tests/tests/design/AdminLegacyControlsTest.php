@@ -14,7 +14,7 @@
  * - the user preferences show each setting as its name and its on/off choice as the design's tabs (ul.tabs);
  * - the node's tab box fills its height with the open tab and keeps room for the resize grip under its last row.
  *
- * doc/bc/6.0/admin4-styling.md
+ * doc/en/us/bc/6.0/admin4-styling.md
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLegacyControlsTest.php
  *

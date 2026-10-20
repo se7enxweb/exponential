@@ -842,7 +842,7 @@ and [LoveStack's tests in Exponential's suite](love/TESTS-MAPPING.md).
   and adds the line
   `Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit <sha>), Copyright (C) Mugo Web, GPL v2`;
   the LoveStack commit is named in the commit message and in the
-  [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#lovestack-features-from-2026-10-12).
+  [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#lovestack-features-from-2026-10-12).
 - The custom tag controls (L23) follow the design of LoveStack's `custom_tags_controls` editor
   plugin, "Copyright 2014, Mugo Web"; that notice moves with the derived parts.
 - The dual-licence wording of the original eZ Systems README can only ever be granted by eZ

@@ -6,7 +6,7 @@
 
    The same file is in design/admin and design/admin4. The usage comes from the view (section_usage); without it (an
    older view class) the page falls back to the section's own fetch functions. Works without javascript.
-   Guide: doc/guides/sections.md *}
+   Guide: doc/en/us/guides/sections.md *}
 
 {def $usage = first_set( $section_usage, false() )
      $can_edit = first_set( $section_can_edit, true() )

@@ -24,7 +24,7 @@ screenshots, each with different terms. When in doubt, take your own ([Taking yo
 
 | Source | Terms | Good for |
 |---|---|---|
-| The images of this help (`doc/help/images/`) | Part of the documentation in `doc/`, published with it under the GNU FDL 1.3 or later ([The license of this documentation](../../README-LICENSE.md)) | Articles and videos that can carry a license notice and credit |
+| The images of this help (`doc/en/us/help/images/`) | Part of the documentation in `doc/`, published with it under the GNU FDL 1.3 or later ([The license of this documentation](../../README-LICENSE.md)) | Articles and videos that can carry a license notice and credit |
 | Galleries on exponential.earth | No license stated on the page | Looking; ask before reuse |
 | The press kit's `screenshots/` folder | Covered by the kit's guidelines ("editorial, review, and partnership coverage"); in v1.0.0 the folder lists planned files only | Editorial use once the files are there |
 | Your own screenshots of an installation you run | The interface is GPL software; the content on screen is yours or your demo's | Anything you write, if the screen holds no one else's data |
@@ -32,8 +32,8 @@ screenshots, each with different terms. When in doubt, take your own ([Taking yo
 ## The images in this help
 
 The help pages use screenshots of a demonstration installation, for example the admin dashboard, the edit form,
-search, the layouts editor and the two-step sign-in setup. They are WebP files under `doc/help/images/` in the
-repository (<https://github.com/se7enxweb/exponential/tree/main/doc/help/images>), shown on pages such as
+search, the layouts editor and the two-step sign-in setup. They are WebP files under `doc/en/us/help/images/` in the
+repository (<https://github.com/se7enxweb/exponential/tree/main/doc/en/us/help/images>), shown on pages such as
 [The admin tour](../admin-tour.md) and [The layouts editor](../layouts-editor.md).
 
 The GNU FDL lets you copy and redistribute them, including commercially, if you keep the license notice, credit the

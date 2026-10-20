@@ -31,10 +31,10 @@ estimate budgets the sources do not publish.
 
 ## Work you can see
 
-The results of funded work are public: the release history in `doc/release-overview`, the changelogs in
+The results of funded work are public: the release history in `doc/en/us/release-overview`, the changelogs in
 `doc/changelogs/`, the story of every change since December 2023 in [the history](../../history/README.md), and the
 commit history on GitHub. The 6.0.15 line alone added, among much else, Velocity, the admin4 design, Exponential
-Layouts, Exponential Intelligence and this help system ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)).
+Layouts, Exponential Intelligence and this help system ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
 
 ## What is not published
 

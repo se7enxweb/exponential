@@ -1,7 +1,7 @@
 <?php
 /**
  * The start location and the storage files of the content checks, the parts that need no database
- * (doc/features/6.0/content-checks.md, "Where a check starts", "Storage files", "Quarantine").
+ * (doc/en/us/features/6.0/content-checks.md, "Where a check starts", "Storage files", "Quarantine").
  *
  *  CS-01  the start location: the form's node, else the address's, else the preference, else the default; only whole
  *         numbers; a node given is remembered, the preference is not written again

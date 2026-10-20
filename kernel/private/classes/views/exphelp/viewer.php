@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/viewer/<page id> (doc/features/6.0/help-system.md): one help page, rendered. Template design:exphelp/viewer.tpl.
+ * exphelp/viewer/<page id> (doc/en/us/features/6.0/help-system.md): one help page, rendered. Template design:exphelp/viewer.tpl.
  * An unknown id, or one expHelpDocumentIndex does not allow, is a 404; no id opens the dashboard.
  *
  * Template variables: help_page (document), help_html (rendered, safe), help_toc (level, text, anchor), help_tree,

@@ -20,7 +20,7 @@ Never edit `settings/contentcheck.ini` itself: an update replaces it. Put the se
 ## Handlers
 
 > Missing files and image aliases (the target "Missing files" of contentcheck/brokenrelations,  
-> doc/features/6.0/content-checks.md, "Missing files"). The class that says which files a field  
+> doc/en/us/features/6.0/content-checks.md, "Missing files"). The class that says which files a field  
 > of a datatype stands for: one implementing expContentCheckFileHandler. An extension adds its  
 > file datatype here.  
 

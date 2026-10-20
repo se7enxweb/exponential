@@ -69,7 +69,7 @@ service, and connect it.
 - [Architecture for application creators](architecture-for-app-creators.md)
 - [Setting up a development environment](development-environment.md)
 - [Your first extension](your-first-extension.md)
-- The extension developer book in `doc/help/extension-development/`, when it is in your installation.
+- The extension developer book in `doc/en/us/help/extension-development/`, when it is in your installation.
 
 ## Related pages
 

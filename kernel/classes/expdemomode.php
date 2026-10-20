@@ -26,7 +26,7 @@
  * for PHP (Apache SetEnv, a PHP-FPM pool's env[], the environment Exponential Velocity is started with). There is no
  * INI setting and no request parameter for it, and only the exact value "1" counts: "0", "true", "yes" and an empty
  * value leave it off. Nothing is cached between calls, so a persistent worker (Velocity, FrankenPHP) always answers
- * for the environment it has now. Guide: doc/bc/6.0/demo-mode.md.
+ * for the environment it has now. Guide: doc/en/us/bc/6.0/demo-mode.md.
  *
  * An administrator is an account with unlimited access to every function of every module (a policy for all modules
  * and all functions without a limitation, as the role Administrator has); see isAdministrator().

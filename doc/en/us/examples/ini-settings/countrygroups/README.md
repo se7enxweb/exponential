@@ -29,7 +29,7 @@ The shipped settings of `settings/countrygroups.ini`: 1 blocks, 4 settings.
 > file is read as a country.  
 >
 > The ranking of the default list is explained in  
-> doc/features/6.0/country-groups.md  
+> doc/en/us/features/6.0/country-groups.md  
 
 | Block | Settings |
 |---|---|

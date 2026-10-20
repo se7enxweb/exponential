@@ -909,7 +909,7 @@ process of its own.
 
    If you prefer not to use `.htaccess` (`AllowOverride None` saves a file lookup per directory), copy the rules of
    `.htaccess_root` into the `<Directory>` block; inside `<Directory>` they keep their form. In server context
-   (outside `<Directory>`) every pattern needs a leading slash, as in `doc/examples/ezpublish.conf`, a complete
+   (outside `<Directory>`) every pattern needs a leading slash, as in `doc/en/us/examples/ezpublish.conf`, a complete
    virtual host (HTTP redirect, HTTPS, HTTP/2, PHP-FPM, headers) with the rules of this release's `.htaccess_root`
    in server context ([Apache virtual host](../examples/web-servers/apache-virtual-host.md)). Compare your copy with
    `.htaccess_root` after every upgrade and merge new rules.
@@ -1029,7 +1029,7 @@ server {
     location ~ ^/var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$                      { try_files $uri =404; }
     location ~ ^/var/([^/]+/)?cache/(texttoimage|public)/                                       { try_files $uri =404; }
     # With site.ini [FileSettings] CacheVarDir=var_cache (multi-site hosting, see
-    # doc/features/6.0/multi-site-log-and-cache-paths.md):
+    # doc/en/us/features/6.0/multi-site-log-and-cache-paths.md):
     #location ~ ^/var_cache/([^/]+/)?cache/(texttoimage|public)/                               { try_files $uri =404; }
     location ~ ^/design/[^/]+/(stylesheets|images|javascript|fonts)/                            { try_files $uri =404; }
     location ~ ^/share/icons/                                                                   { try_files $uri =404; }
@@ -1333,10 +1333,10 @@ In this repository:
   `expvelocityfrankenphp.php`, `kernel/private/classes/commands/velocity.php`, `lib/ezutils/classes/ezsys.php`,
   `lib/ezutils/classes/eztrustedproxy.php`; in the engine package `src/Q/WebServer/Proxy.php` (trusted proxies,
   forwarded protocol) and `src/Q/WebServer/RunAs.php` (worker user)
-- The settings: [`settings/velocity.ini`](../../settings/velocity.ini); the rewrite rules:
-  [`.htaccess_root`](../../.htaccess_root), [`.htaccess_root_static`](../../.htaccess_root_static); the PHP router of the
-  development engine: [`bin/php/velocity-router.php`](../../bin/php/velocity-router.php)
-- The previous single-page guide: [doc/INSTALL.md, section 8](../INSTALL.md#8-serve-the-site-web-server-https-and-permissions)
+- The settings: [`settings/velocity.ini`](../../../../settings/velocity.ini); the rewrite rules:
+  [`.htaccess_root`](../../../../.htaccess_root), [`.htaccess_root_static`](../../../../.htaccess_root_static); the PHP router of the
+  development engine: [`bin/php/velocity-router.php`](../../../../bin/php/velocity-router.php)
+- The previous single-page guide: [doc/en/us/INSTALL.md, section 8](../INSTALL.md#8-serve-the-site-web-server-https-and-permissions)
 
 External:
 

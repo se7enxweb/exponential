@@ -1020,7 +1020,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     const DASHBOARD_APPENDED_LINKS = array( 'expai', 'expai_vector', 'expai_chain', 'expai_log', 'expai_help', 'expai_alttext',
                                             'expai_events', 'help_center' );
 
-    /** The complete kernel catalogues (doc/languages.md), English and the template for new ones */
+    /** The complete kernel catalogues (doc/en/us/languages.md), English and the template for new ones */
     const COMPLETE_CATALOGUES = array( 'eng-US', 'ger-DE', 'fre-FR', 'esl-ES', 'esl-MX', 'ukr-UA', 'heb-IL', 'lat-VA', 'tlh-QO', 'ara-SA' );
 
     /** MM-10 */

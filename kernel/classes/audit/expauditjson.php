@@ -1,6 +1,6 @@
 <?php
 /**
- * The canonical JSON of audit records (doc/bc/6.0/audit.md, "Canonical JSON").
+ * The canonical JSON of audit records (doc/en/us/bc/6.0/audit.md, "Canonical JSON").
  *
  * Objects have their keys sorted by their UTF-8 bytes at every depth, lists keep their order, there is no
  * whitespace outside strings, strings are escaped only where JSON requires it (no escaping of "/" or of non-ASCII

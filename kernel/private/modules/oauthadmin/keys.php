@@ -2,7 +2,7 @@
 /**
  * File containing the oauthadmin/keys view definition
  *
- * The personal API keys of every user (doc/guides/api-keys.md, "For administrators"): figures, a search over key
+ * The personal API keys of every user (doc/en/us/guides/api-keys.md, "For administrators"): figures, a search over key
  * names, prefixes and owners (?q=), a status filter (/(status)/active|expired|revoked), one user's keys
  * (/(user)/<id>), paging, and the selection to revoke (oauthadmin/keyaction asks to confirm).
  *

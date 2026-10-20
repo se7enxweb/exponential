@@ -64,5 +64,5 @@ Actions and scope providers are classes registered in `settings/ini.ini` `[IniCo
 - [eZINI preserves comments on save](../../bc/6.0/eZINI_PRESERVES_COMMENTS.md)
 - [Multi-site INI overrides](multi-site-ini-overrides.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
 - History: [June 2026, second half](../../history/2026/2026-06b.md), [October 2026](../../history/2026/2026-10.md)

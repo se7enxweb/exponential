@@ -1,6 +1,6 @@
 <?php
 /**
- * The permalinks of the log viewer (doc/features/6.0/log-viewer.md, "Permalinks"): setup/logs/view/<key>/(name)/value.
+ * The permalinks of the log viewer (doc/en/us/features/6.0/log-viewer.md, "Permalinks"): setup/logs/view/<key>/(name)/value.
  *
  *  LV-70  encode() / decode(): letters, digits, _ . , - stay; every other byte is ~XX (UTF-8 per byte, ( ) / ~ space);
  *         decode() is the inverse, a ~ without two hex digits stays

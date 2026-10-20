@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/asset/<path> (doc/features/6.0/help-system.md): an image below a help root. Only files
+ * exphelp/asset/<path> (doc/en/us/features/6.0/help-system.md): an image below a help root. Only files
  * expHelpDocumentIndex::asset() allows (git-tracked, allowed suffix); anything else is a 404. Sent with the content
  * type of its suffix, nosniff and a private cache lifetime.
  *

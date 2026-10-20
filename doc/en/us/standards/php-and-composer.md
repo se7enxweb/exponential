@@ -177,14 +177,14 @@ meaning of each increment.
 
 - **The kernel** is versioned `6.0.x`: `lib/version.php` (`ExponentialSDK`, `VERSION_MAJOR = 6`,
   `VERSION_MINOR = 0`, `VERSION_RELEASE = 15`) and the tags `v6.0.0` to `v6.0.14`. 6.0.15 is in development
-  ([6.0.15 changelog](../changelogs/6.0/6.0.15.md)). Feature work lands in patch releases of the 6.0 line, which is
+  ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)). Feature work lands in patch releases of the 6.0 line, which is
   not what SemVer intends for PATCH.
 - **Extensions** use three or four positions: `exp_adminui ~1.0.0.46`, `bcgooglesitemaps ~1.1.6.6`,
   `expai ~0.0.1.12`, and Exponential Velocity `0.0.4.x`. A four-part number is not valid SemVer 2.0.0, but Composer
   accepts up to four numeric positions and compares each numerically.
 - **The last position counts on.** After `0.0.4.9` comes `0.0.4.10`, never `0.0.5.0`
   ([Extensions guide](../guides/extensions.md), "Release it";
-  [Velocity changelog](../changelogs/extensions/exponential-velocity.md)). Moving a higher position is a separate
+  [Velocity changelog](../../../changelogs/extensions/exponential-velocity.md)). Moving a higher position is a separate
   decision about what the release means.
 - **Tags are permanent**: a bad release is followed by a new one, never re-cut.
 

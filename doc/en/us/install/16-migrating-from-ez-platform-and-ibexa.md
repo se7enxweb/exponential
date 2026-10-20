@@ -1297,9 +1297,9 @@ In this repository:
 - Legacy bridge: [Legacy bridge](../features/6.0/legacy-bridge.md), [bundle specification](../specifications/6.0/legacy-bridge-bundle.md), [ngsymfonytools](../features/6.0/extensions/ngsymfonytools.md).
 - Layouts: [Exponential Layouts](../bc/6.0/LAYOUTS.md), [layouts editor API](../specifications/6.0/explayouts-ui-api.md).
 - [Templates and design guide](../guides/templates-and-design.md).
-- Changelogs and history: [Exponential Platform Nexus](../changelogs/extensions/exponential-platform-nexus.md),
-  [Exponential Platform Legacy](../changelogs/extensions/exponential-platform-legacy.md),
-  [XmlText field type](../changelogs/extensions/ezplatform-xmltext-fieldtype.md),
+- Changelogs and history: [Exponential Platform Nexus](../../../changelogs/extensions/exponential-platform-nexus.md),
+  [Exponential Platform Legacy](../../../changelogs/extensions/exponential-platform-legacy.md),
+  [XmlText field type](../../../changelogs/extensions/ezplatform-xmltext-fieldtype.md),
   [legacy bridge history](../history/ecosystem/legacyBridge.md).
 - Code: `share/db_schema.dba`, `kernel/sql/*/`, `bin/php/ezsqldiff.php`, `update/database/*/6.0/`,
   `kernel/classes/datatypes/ezuser/ezuser.php` (hash types), `kernel/classes/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput.php`,

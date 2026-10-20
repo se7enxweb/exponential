@@ -4,7 +4,7 @@
  * each node's name link a tree item with level, position and aria-expanded, the sub items a group the item owns,
  * one tree item in the Tab order, and the keys of the tree view pattern. The behaviour itself is in the script;
  * this test holds the hooks it relies on and keeps the admin and admin4 copies equal.
- * doc/features/6.0/admin4-design.md, "Keyboard".
+ * doc/en/us/features/6.0/admin4-design.md, "Keyboard".
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminTreeViewTest.php
  *

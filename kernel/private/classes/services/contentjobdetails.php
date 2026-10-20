@@ -5,7 +5,7 @@
  * counts, the batches (size, average, slowest, peak memory), where and how it runs (siteaccess, server, worker,
  * heartbeat), the options, the lock it holds, the error with the failing node, cancel and resume history, and
  * where the result is. Only data the engine records is shown; what it does not record is left out.
- * Used by content/job/<id> and content/jobs. Guide: doc/bc/6.0/content-jobs.md
+ * Used by content/job/<id> and content/jobs. Guide: doc/en/us/bc/6.0/content-jobs.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

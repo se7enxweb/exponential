@@ -2,7 +2,7 @@
 
 Read this page before you install or update `admin-ui`, or to find out which release brought a change.
 
-Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../history/ecosystem/admin-ui-7x.md).
+Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../en/us/history/ecosystem/admin-ui-7x.md).
 
 ## v5.0.4 (2026-04-17)
 
@@ -45,6 +45,6 @@ Releases made by the se7enxweb team, newest first. Each release lists the team's
 
 ## Related pages
 
-- [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
-- [package map](../../specifications/6.0/platform-package-map.md)
-- [upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- [Platform admin interface](../../en/us/features/6.0/platform-admin-ui-fork.md)
+- [package map](../../en/us/specifications/6.0/platform-package-map.md)
+- [upgrade notes](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)

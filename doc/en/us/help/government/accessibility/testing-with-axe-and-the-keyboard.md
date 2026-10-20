@@ -28,7 +28,7 @@ the practice the project follows for its own administration.
 - **Source tests** in `tests/tests/design/` (the `design` suite of `phpunit.xml`) check templates and stylesheets of
   the administration: labels, landmarks, keyboard hooks, contrast tokens, error summaries. They do not render pages.
 - **axe runs by hand** during reviews, not in CI; findings and fixes are recorded in the
-  [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md).
+  [6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md).
 - Pages are checked in light and dark mode, at 1440 px and at 960 px with 200% zoom, and with the keyboard alone
   ([Accessibility standards: For template authors](../../../standards/accessibility.md#for-template-authors)).
 

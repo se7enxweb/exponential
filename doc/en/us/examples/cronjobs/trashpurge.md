@@ -14,7 +14,7 @@ Permanently delete objects in the trash (all, or as old as [TrashSettings] KeepI
 Entry point `cronjobs/trashpurge.php`, code in `kernel/private/classes/cronjobs/trashpurge.php`.
 
 > The code of cronjobs/trashpurge.php, moved into a class (#207 stage 1). The file cronjobs/trashpurge.php is one call to it.  
-> Guide: doc/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## When it runs
 

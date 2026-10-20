@@ -1,4 +1,4 @@
-{* The plan of a log management action (setup/logsmanage; doc/features/6.0/log-viewer.md, "Managing logs"): every step
+{* The plan of a log management action (setup/logsmanage; doc/en/us/features/6.0/log-viewer.md, "Managing logs"): every step
    it will take, nothing changed yet (the dry run). Confirm posts the same action with ConfirmButton; the plan is then
    made again from the disk and applied, each step recorded in the audit. Variables: log_op (rotate | truncate |
    compress | prune | rotate_all | prune_all), log_key, log_days, log_plan (op, steps => key, op, from, to, bytes,

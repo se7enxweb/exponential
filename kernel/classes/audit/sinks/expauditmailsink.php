@@ -1,6 +1,6 @@
 <?php
 /**
- * The e-mail sink (doc/bc/6.0/audit.md, "E-mail"): events at MinSeverity (critical) or matching Events[] are mailed
+ * The e-mail sink (doc/en/us/bc/6.0/audit.md, "E-mail"): events at MinSeverity (critical) or matching Events[] are mailed
  * through eZMail, one mail per alert or event and recipient, with the console link and nothing beyond what the
  * record holds after the privacy rules. Always spooled: mail is sent by the audit cronjob part, so a request never
  * waits on SMTP.

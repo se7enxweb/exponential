@@ -38,7 +38,7 @@ orders.
 ## Related pages
 
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/bcwebsitestatistics.md) and [release notes](../../../changelogs/extensions/bcwebsitestatistics.md)
+- [Chronicle](../../../history/extensions/bcwebsitestatistics.md) and [release notes](../../../../../changelogs/extensions/bcwebsitestatistics.md)
 - [Change ledger](../../../history/ledger/bcwebsitestatistics.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-07](../../../history/extensions/months/2026-07.md), [2026-09](../../../history/extensions/months/2026-09.md) (all extensions)

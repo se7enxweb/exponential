@@ -24,7 +24,7 @@ extension where it lives, so everyone benefits and the original author is credit
 
 Most upgrades are small: PHP 8 compatibility, renamed settings, template adjustments. Work in a branch, keep each
 change in its own commit, and describe why in the message (`Fixed: ...`, `Updated: ...`). Test on the PHP versions
-the kernel supports (8.0 to 8.5 for 6.0.15, `doc/install/02-requirements.md`).
+the kernel supports (8.0 to 8.5 for 6.0.15, `doc/en/us/install/02-requirements.md`).
 
 ## 3. Send it back
 

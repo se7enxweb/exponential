@@ -17,7 +17,7 @@
  * the PHP wrapper of a .ini.append.php file). Until 6.0.15 the page saved the whole merged menu.ini into that file,
  * which froze every other menu setting (the admin's tabs among them) for the siteaccess.
  *
- * Guide: doc/guides/classic-menu-settings.md
+ * Guide: doc/en/us/guides/classic-menu-settings.md
  */
 class expClassicMenuSettings
 {
@@ -224,7 +224,7 @@ class expClassicMenuSettings
 
     /**
      * The template examples of the page and the guide ("Use in your templates"), from kernel/classes/classicmenu/
-     * examples/: one file each, so the page, the guide (doc/guides/classic-menu-settings.md, checked by a test to hold
+     * examples/: one file each, so the page, the guide (doc/en/us/guides/classic-menu-settings.md, checked by a test to hold
      * the same text) and the rendering check use the same snippets.
      *
      * @return array id => array( 'file' => file name, 'text' => content ), in the order they are shown

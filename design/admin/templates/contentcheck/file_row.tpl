@@ -1,4 +1,4 @@
-{* One "file problem" row of an a4-table (doc/features/6.0/content-checks.md, "Missing files"): select, object and
+{* One "file problem" row of an a4-table (doc/en/us/features/6.0/content-checks.md, "Missing files"): select, object and
    node, field, version, expected path, last modified, state, actions. Shared by the file checks.
 
    Variables: select_all (tick the box), row (key, object_id, object_name, node_id, field_name, language, version, version_status, path,

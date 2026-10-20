@@ -6,7 +6,7 @@
  *
  * Who may see a job: the user who started it; a user with the content/jobs policy; a user with unlimited
  * content/remove (a remove job) or content/create (a copy job).
- * Guide: doc/bc/6.0/content-jobs.md
+ * Guide: doc/en/us/bc/6.0/content-jobs.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

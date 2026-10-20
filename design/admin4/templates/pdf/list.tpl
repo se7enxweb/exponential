@@ -9,7 +9,7 @@
    the export row holds. The variables the page always had are still set: pdfexport_list, pdfexport_count, limit,
    view_parameters. The form fields and buttons are the same: DeleteIDArray[], RemoveExportButton, NewPDFExport.
    Everything works without javascript; the script only adds "select all" and the selection count.
-   Guide: doc/guides/pdf-exports.md *}
+   Guide: doc/en/us/guides/pdf-exports.md *}
 
 {def $infos = first_set( $pdfexport_info, hash() )
      $summary = first_set( $pdfexport_summary, false() )

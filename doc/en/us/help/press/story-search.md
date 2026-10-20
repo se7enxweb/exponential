@@ -30,7 +30,7 @@ and needs no search server: "Exponential searches with its built-in index ... un
 ([Server control commands](../../features/6.0/web-server-and-solr-commands.md#expsolr-an-optional-search-server)).
 The 6.0.15 development line added the **content finder**, which finds the content behind an id, a URL alias, a page
 address or a file path, and hardened the administration's search so that malformed or very long queries no longer
-break it ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration)). The
+break it ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration)). The
 help system has its own instant search.
 
 ![The search of the administration](../images/help/pr-search.webp)
@@ -41,11 +41,11 @@ All in the 6.0.15 line, which is in development and not released.
 
 | What | When | Source |
 |---|---|---|
-| `exp:solr`, a command for an optional Solr server | 16 to 30 September 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
-| The content finder | 10 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#10-october-2026-the-content-finder) |
-| The content finder by the address a visitor sees, on every database engine | 11 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#11-october-2026-the-content-finder-by-the-address-a-visitor-sees-on-every-database-engine) |
-| The search of the administration hardened | 14 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration) |
-| The help system with instant search | 18 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#18-october-2026-the-help-system-in-the-administration) |
+| `exp:solr`, a command for an optional Solr server | 16 to 30 September 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
+| The content finder | 10 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#10-october-2026-the-content-finder) |
+| The content finder by the address a visitor sees, on every database engine | 11 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#11-october-2026-the-content-finder-by-the-address-a-visitor-sees-on-every-database-engine) |
+| The search of the administration hardened | 14 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration) |
+| The help system with instant search | 18 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#18-october-2026-the-help-system-in-the-administration) |
 
 ## Facts you can print
 
@@ -55,7 +55,7 @@ All in the 6.0.15 line, which is in development and not released.
 | Editors press `/` anywhere in the administration to jump to the search field. | [Searching, The quick search](../searching.md#the-quick-search) |
 | Visitors find only published, visible items they may read. | [Searching, Searching the site](../searching.md#searching-the-site) |
 | The content finder finds an object from an object, node, attribute or version id, a remote id, a URL alias, a page URL or a file path. | [The content finder, In short](../../features/6.0/content-finder.md#in-short) |
-| A search text is cut to 16 words and 1024 characters by default, with a note on the page. | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration) |
+| A search text is cut to 16 words and 1024 characters by default, with a note on the page. | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration) |
 | The help's search shows matching pages as you type, with audience and topic filters. | [Searching, The help pages](../searching.md#the-help-pages) |
 
 ## What not to claim

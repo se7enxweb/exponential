@@ -1,6 +1,6 @@
 <?php
 /**
- * The alert rules (doc/bc/6.0/audit.md, "Alerts (F5)", acceptance test E2): each built-in rule reached, not
+ * The alert rules (doc/en/us/bc/6.0/audit.md, "Alerts (F5)", acceptance test E2): each built-in rule reached, not
  * reached and repeated, an INI rule, de-duplication and the cronjob pass. All events are simulated into a test
  * directory (never the live log).
  *

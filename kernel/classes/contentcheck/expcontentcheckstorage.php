@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckStorage class.
  *
- * The storage check (doc/features/6.0/content-checks.md, "Storage files"): the files below var/<site>/storage that no
+ * The storage check (doc/en/us/features/6.0/content-checks.md, "Storage files"): the files below var/<site>/storage that no
  * content uses (orphan files), and the file-system problems of the files content does use: a wrong owner or mode,
  * an empty file, and a name or path that does not match what the database says.
  *

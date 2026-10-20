@@ -1,6 +1,6 @@
 <?php
 /**
- * The apikey module: personal API keys (publishing keys) of the signed in user (doc/guides/api-keys.md).
+ * The apikey module: personal API keys (publishing keys) of the signed in user (doc/en/us/guides/api-keys.md).
  *
  * apikey/list is the "API access" page of the user's account: the user's keys, a form to make one (name, scopes,
  * lifetime; the key is shown once) and revoking. It is in site.ini [RoleSettings] PolicyOmitList[] because it checks

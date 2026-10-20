@@ -50,7 +50,7 @@ customer asks for more than a page says, the honest answer is "the documentation
 > **Note**
 > The features below are those of the 6.0.15 line, which is in development; the newest tag is 6.0.14
 > ([Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases)). When a customer will run a released version,
-> check the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md) for what is in which version before you promise a date.
+> check the [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) for what is in which version before you promise a date.
 
 ## The map: need, feature, where to show it, proof
 

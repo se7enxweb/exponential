@@ -1,6 +1,6 @@
 <?php
 /**
- * The license of the documentation the help shows (exphelp.ini [License], doc/README-LICENSE.md).
+ * The license of the documentation the help shows (exphelp.ini [License], doc/en/us/README-LICENSE.md).
  *
  * The documentation the project holds is free documentation under the GNU Free Documentation License 1.3 or any
  * later version. A few inherited files (OtherLicensePathRules[]) keep the terms they came with; forPage() tells the
@@ -35,9 +35,9 @@ class expHelpLicense
         'CopyrightYears' => '1998 - 2026',
         'CopyrightHolder' => '7x & Exponential Foundation and the Exponential contributors',
         // the same list as the shipped exphelp.ini
-        'OtherLicensePathRules' => array( 'doc/features/[2-5].*', 'doc/bc/[2-5].*', 'doc/specifications/[2-5].*',
-                                          'doc/specifications/trunk/*', 'doc/changelogs/[2-5].*', 'doc/changelogs/README.md',
-                                          'doc/shop/*', 'doc/release-overview', 'doc/standards/header.txt' ),
+        'OtherLicensePathRules' => array( 'doc/en/us/features/[2-5].*', 'doc/en/us/bc/[2-5].*', 'doc/en/us/specifications/[2-5].*',
+                                          'doc/en/us/specifications/trunk/*', 'doc/changelogs/[2-5].*', 'doc/changelogs/README.md',
+                                          'doc/en/us/shop/*', 'doc/en/us/release-overview', 'doc/en/us/standards/header.txt' ),
         'OtherCopyright' => 'Copyright (C) 1999 - 2014 eZ Systems AS and contributors',
         'OtherLicenseName' => 'GNU General Public License, version 2',
         'OtherLicenseURL' => 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.html' );

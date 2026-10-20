@@ -7,7 +7,7 @@
 
    The same file is in design/admin and design/admin4. Form fields and buttons are those of the page before 6.0.15
    (CurrentSiteAccess, SelectCurrentSiteAccessButton, MenuType, StoreButton), and it works without javascript.
-   Guide: doc/guides/classic-menu-settings.md *}
+   Guide: doc/en/us/guides/classic-menu-settings.md *}
 
 {def $mc_info = first_set( $menu_selected_info, false() )
      $mc_current = first_set( $menu_current, false() )
@@ -418,7 +418,7 @@
     <div class="a4-fold-body">
         <p>{'The classic designs build every page from one page layout, and that page layout asks menu.ini which menus to draw. This page has chosen that since the first versions: four arrangements of a top and a left menu, saved per siteaccess.'|i18n( 'design/admin/visual/menuconfig' )}</p>
         <p>{'Exponential Layouts replaced that for new sites: a layout holds zones and blocks, a menu is one of the blocks, and a rule picks the layout for each page. A siteaccess built that way never reads these settings.'|i18n( 'design/admin/visual/menuconfig' )}</p>
-        <p>{'The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/guides/classic-menu-settings.md explains both ways.'|i18n( 'design/admin/visual/menuconfig' )}</p>
+        <p>{'The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.'|i18n( 'design/admin/visual/menuconfig' )}</p>
     </div>
 </details>
 

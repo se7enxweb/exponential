@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/urlalias.php, moved into a class (#207 stage 1). The file kernel/content/urlalias.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 89a5a73877), Copyright (C) Mugo Web, GPL v2
  */
 /*
@@ -181,7 +181,7 @@ class Urlalias extends \Exponential\Runnable\ModuleView
             }
         }
 
-        // Audit (doc/bc/6.0/audit.md, content.urlalias.change): an alias or wildcard added or removed
+        // Audit (doc/en/us/bc/6.0/audit.md, content.urlalias.change): an alias or wildcard added or removed
         if ( class_exists( 'expAuditHook' ) && in_array( $infoCode, array( 'feedback-removed-all', 'feedback-removed', 'feedback-alias-created',
                                                                            'feedback-alias-cleanup', 'feedback-wildcard-removed-all',
                                                                            'feedback-wildcard-removed', 'feedback-wildcard-created' ), true ) )

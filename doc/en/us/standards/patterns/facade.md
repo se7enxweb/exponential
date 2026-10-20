@@ -151,7 +151,7 @@ One simple entry point in front of a subsystem, or a service class that holds th
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log management (doc/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth and limits; rotation, pruning, com… | – |
+| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log management (doc/en/us/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth and limits; rotation, pruning, com… | – |
 
 ### kernel/classes/mailpreferences (1)
 

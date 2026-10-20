@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/visual/templatecreate.php, moved into a class (#207 stage 1). The file kernel/visual/templatecreate.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/visual/templatecreate.php:
@@ -513,7 +513,7 @@ class Templatecreate extends \Exponential\Runnable\ModuleView
                     fclose( $fp );
                     chmod( $fileName, \eZFile::fileMode( octdec( $filePermission ) ) );
                     umask( $oldumask );
-                    // Audit (doc/bc/6.0/audit.md, system.template.change): a new override template, never its text
+                    // Audit (doc/en/us/bc/6.0/audit.md, system.template.change): a new override template, never its text
                     if ( class_exists( 'expAuditHook' ) )
                         \expAuditHook::emit( 'system.template.change', array( 'object' => array( 'type' => 'template', 'id' => (string)$fileName ),
                             'verb' => 'create', 'before' => array( 'sha256' => null ),

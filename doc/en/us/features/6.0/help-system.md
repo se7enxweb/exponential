@@ -42,7 +42,7 @@ The Help button appears only for users who have it.
 The help shows only files that are **tracked by git** below the directories of `exphelp.ini [IndexSettings] Roots[]`
 (`doc/` by default), with a page suffix (`md`, `markdown`, `txt`, `rst`, or none) or an image suffix (`png`, `jpg`,
 `jpeg`, `gif`, `webp`). Everything else is a 404: files outside `doc/`, untracked files, paths with `..`, symbolic
-links, generated HTML (`doc/doxygen/`), SVG files and files over `MaxFileSize`. An installation without `.git` uses
+links, generated HTML (`doc/en/us/doxygen/`), SVG files and files over `MaxFileSize`. An installation without `.git` uses
 the file manifest `share/filelist.md5` as the list of tracked files.
 
 Markdown is rendered safely: raw HTML is escaped, links with `javascript:` and similar schemes are dropped, links to
@@ -94,16 +94,16 @@ Without it, `[AudienceSettings] PathRules[]` and `[CategorySettings] PathRules[]
 ### Titles of unclear pages
 
 Plain text files have no front matter, and many of the inherited ones begin with a line that makes a poor title: a
-source code comment (`doc/standards/header.txt` began with `//`), a bare version (`5.90`), the word `CHANGELOG`, or
+source code comment (`doc/en/us/standards/header.txt` began with `//`), a bare version (`5.90`), the word `CHANGELOG`, or
 the same title as another page. Such files keep their names, because other files refer to them; the help gives them a
 clearer title in `[TitleSettings]` instead:
 
 ```ini
 [TitleSettings]
-Titles[doc/standards/header.txt]=Source file header template (inherited, 4.1)
-Summaries[doc/standards/header.txt]=The copyright and license header that every PHP file of the inherited 4.x code base started with ...
+Titles[doc/en/us/standards/header.txt]=Source file header template (inherited, 4.1)
+Summaries[doc/en/us/standards/header.txt]=The copyright and license header that every PHP file of the inherited 4.x code base started with ...
 TitleRules[]=doc/changelogs/*/CHANGELOG-desc-*;Release {fileversion} summary: {title}
-TitleRules[]=doc/features/*/event.*;{title} ({dirversion})
+TitleRules[]=doc/en/us/features/*/event.*;{title} ({dirversion})
 ```
 
 `Titles[]` and `Summaries[]` are keyed by the path relative to the installation root. A `TitleRules[]` entry is
@@ -185,13 +185,13 @@ help, its mission and `Funds[]`. `Enabled=disabled` removes the block.
   `--exp-debug-clearance` that `expdebugbar.css` sets (the room the bar keeps free at the bottom of the window; unset
   without the bar); another fixed control at the bottom of a page can use it the same way:
   `bottom: calc(var(--exp-debug-clearance, 0px) + <gap>)`. Each folder has an id from its path, so
-  `/exphelp/contents#exphelp-folder-help-editors` opens the folder `doc/help/editors`. The viewer shows the same tree at the
+  `/exphelp/contents#exphelp-folder-help-editors` opens the folder `doc/en/us/help/editors`. The viewer shows the same tree at the
   side of each page, with the folders on the way to the page open. Folders are native disclosure elements, so the
   tree works without JavaScript; a folder's `README.md` or `index.md` is its "Overview" link. A folder is named by
   `exphelp.ini [NavigationSettings] FolderNames[<path>]`, else by the title of its README, else by its directory
   name. The tree is cached per index, siteaccess and language, so a page with 1 200 entries costs one file read.
   Folders listed in `[NavigationSettings] FoldedFolders[]` (shipped: the generated reference examples below
-  `doc/examples/`) show only their "Overview" link and page count; their pages, and those of the folders below them,
+  `doc/en/us/examples/`) show only their "Overview" link and page count; their pages, and those of the folders below them,
   are listed while a page inside is open. Without folding, the 2 400 generated pages would put about 2 400 more links
   on every page of the help.
 - **Search and browse addresses** use view parameters, so they can be bookmarked and linked:
@@ -208,7 +208,7 @@ help, its mission and `Funds[]`. `Enabled=disabled` removes the block.
 
 ## Record pages
 
-The release history (`doc/release-overview`) and any other plain text list of version records
+The release history (`doc/en/us/release-overview`) and any other plain text list of version records
 are shown as tables per series by `expHelpRecordRenderer`: version, name, date, revisions,
 addresses and notes, with a filter field over all rows and sort buttons in the column headers (without the script
 the tables are complete and in date order). Any plain text file written in the same "name line, then `- Key=value`
@@ -218,7 +218,7 @@ links. These pages rank in the search like the pages of the old versions they de
 ## The documentation license
 
 The documentation in `doc/` is free documentation under the GNU Free Documentation License 1.3 or later
-(`doc/LICENSE-GFDL-1.3.txt`, `doc/README-LICENSE.md`, and for readers `doc/help/free-documentation.md`). Every help
+(`doc/en/us/LICENSE-GFDL-1.3.txt`, `doc/en/us/README-LICENSE.md`, and for readers `doc/en/us/help/free-documentation.md`). Every help
 page, its print view and its PDF end with the license notice, and the dashboard has a "Free documentation" block.
 This covers all 6.x documentation, including pages contributed through pull requests; the pages inherited from
 earlier versions keep their own notice (`exphelp.ini [License] OtherLicensePathRules[]`). `[License] Enabled=false`
@@ -226,8 +226,8 @@ hides the notices.
 
 ## Related
 
-- `doc/help/develop-with-git.md`: working from a Git clone with its history, and growing from a user to a developer.
-- `doc/specifications/6.0/help-system.md` and `doc/specifications/6.0/help-style-guide.md`: the specification of the
+- `doc/en/us/help/develop-with-git.md`: working from a Git clone with its history, and growing from a user to a developer.
+- `doc/en/us/specifications/6.0/help-system.md` and `doc/en/us/specifications/6.0/help-style-guide.md`: the specification of the
   help as content (help pages edited in the content tree) and the style guide for writing help pages.
 ## Print and PDF
 
@@ -265,7 +265,7 @@ page or the settings makes a new file.
 ./console exp:help pdf help/searching.md --out=searching.pdf --base-url=https://www.example.com
 ```
 
-The examples below `doc/examples/` that are generated from the code (template operators, fetch functions, module
+The examples below `doc/en/us/examples/` that are generated from the code (template operators, fetch functions, module
 views, policies, INI settings, datatypes, workflow events, cronjobs, console commands, extension points) are written
 by `./console exp:help:examples`; `--check` reports pages that are not current. See
 [Examples](../../examples/README.md#how-the-generated-pages-are-made). They have the page type `generated`, which ranks

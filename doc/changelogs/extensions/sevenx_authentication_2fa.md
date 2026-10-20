@@ -2,7 +2,7 @@
 
 Read this page before you install or update `sevenx_authentication_2fa`, or to find out which release brought a change.
 
-What each release of `sevenx_authentication_2fa` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/sevenx_authentication_2fa.md); the story is in the [chronicle](../../history/extensions/sevenx_authentication_2fa.md).
+What each release of `sevenx_authentication_2fa` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/sevenx_authentication_2fa.md); the story is in the [chronicle](../../en/us/history/extensions/sevenx_authentication_2fa.md).
 
 ## Unreleased
 
@@ -20,8 +20,8 @@ What each release of `sevenx_authentication_2fa` contains, assembled from its co
 
 ## Related pages
 
-- [Feature page](../../features/6.0/extensions/sevenx_authentication_2fa.md)
-- [Chronicle](../../history/extensions/sevenx_authentication_2fa.md)
-- [Change ledger](../../history/ledger/sevenx_authentication_2fa.md)
-- [behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- Months: [2026-07](../../history/extensions/months/2026-07.md)
+- [Feature page](../../en/us/features/6.0/extensions/sevenx_authentication_2fa.md)
+- [Chronicle](../../en/us/history/extensions/sevenx_authentication_2fa.md)
+- [Change ledger](../../en/us/history/ledger/sevenx_authentication_2fa.md)
+- [behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-07](../../en/us/history/extensions/months/2026-07.md)

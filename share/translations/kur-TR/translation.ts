@@ -5494,8 +5494,8 @@
         <translation>Nivîsên panela rêveberiyê û şablonan (bişkok, menû) ji pelên wergerê (.ts) tên û li şûna wê li dû mîhenga Locale ya gihîştina malperê diçin. Malperek dikare naveroka almanî bi navrûyeke îngilîzî nîşan bide û berevajî.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/guides/content-languages.md.</source>
-        <translation>Zêdekirina zimanekî li vir tiştekî wernagerîne û tu gihîştina malperê naguherîne: naverokê di edîtorê de wergerînin, û zimanî li cihê ku divê were nîşandan di SiteLanguageList de binivîsin. Rêbera bikarhêner doc/guides/content-languages.md e.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
+        <translation>Zêdekirina zimanekî li vir tiştekî wernagerîne û tu gihîştina malperê naguherîne: naverokê di edîtorê de wergerînin, û zimanî li cihê ku divê were nîşandan di SiteLanguageList de binivîsin. Rêbera bikarhêner doc/en/us/guides/content-languages.md e.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24012,8 +24012,8 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Profîlê çalak bikin da ku bibînin her daxwaz çend fermanan dixebitîne, çend ji wan dubarekirinên tam in, û cacheke lêpirsînan dê çi teserûf bike.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.</source>
-        <translation>Profîl wan fermanan dihejmêre ku gihîştine danegehê: dema ku cache ya lêpirsînan çalak e, bersiveke ji cache ne tê de ye. &quot;Teserûfa bîrnîşanê&quot; ew e ku moda request dê teserûf bike, &quot;teserûfa cache ya hevpar&quot; ew e ku moda shared dê teserûf bike (nêzîkî 15 µs ji bo her bersivê). Hejmarker li gorî pêşkêşkarê ne, ji ber ku her pêşkêşkar APCu ya xwe heye. Tomar var/tmp/sql_profile.log e; binêrin doc/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
+        <translation>Profîl wan fermanan dihejmêre ku gihîştine danegehê: dema ku cache ya lêpirsînan çalak e, bersiveke ji cache ne tê de ye. &quot;Teserûfa bîrnîşanê&quot; ew e ku moda request dê teserûf bike, &quot;teserûfa cache ya hevpar&quot; ew e ku moda shared dê teserûf bike (nêzîkî 15 µs ji bo her bersivê). Hejmarker li gorî pêşkêşkarê ne, ji ber ku her pêşkêşkar APCu ya xwe heye. Tomar var/tmp/sql_profile.log e; binêrin doc/en/us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25364,8 +25364,8 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Mîhengên site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
-        <translation>Cure li gorî site.ini [SiteAccessSettings] SiteAccessType e dema ku gihîştineke malperê wê diyar dike, wekî din li gorî sêwiranên wê û RequireUserLogin. Rêber: doc/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
+        <translation>Cure li gorî site.ini [SiteAccessSettings] SiteAccessType e dema ku gihîştineke malperê wê diyar dike, wekî din li gorî sêwiranên wê û RequireUserLogin. Rêber: doc/en/us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32031,8 +32031,8 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Blokên mîhengan ku her tomareke wan pêkanînekê qeyd dike: stûnên tabloya binhêmanan (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; an Template=), cureyên karên naverokê (content.ini [ContentJobSettings] JobTypes[]), çalakî û dabînkerên çarçoveyê yên exp:ini (ini.ini [IniCommandSettings]) û fonksiyonên pêşkêşkarê yên ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), digel her xizmeta dûr a ku çîneke fonksiyona pêşkêşkarê ya ji expServiceBase dirêj dibe radigihîne (ya wê ya statîk $services, wekî ezjscore/call/&lt;name&gt;::&lt;service&gt; tê gazîkirin; her yek li giştî tê zêdekirin, xizmeteke ragihandî ku rêbaza wê tune ye şikestî ye). Tomarek ku navê çînekê dide di heman demê de yek ji wan mîhengan e ku navê çînekê didin û li wir tê hejmartin; yên din li vir li giştî tên zêdekirin. Tomarek ku çîn, rêbaz an şablona wê tune ye, an çîna wê ji ya ku qeydgeh dixwaze dirêj nabe, wekî şikestî tê nîşandan. Stûnên binhêmanan ên çêkirî, ku lîste bi xwe nîşan dide, ne xal in û nayên rêzkirin.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Qeydgehên din di rad.ini de tên ragihandin, ji aliyê kernel ve û ji aliyê her pêveka çalak ve di rad.ini.append.php ya xwe de: guhdarên bûyeran, dabînker, amûr û zincîrên ZÇ, amûrên MCP, cureyên karên rêzê û hwd. Her yek dibêje ka kîjan blokên ini, an kîjan lîsteya çînan, tomarên wê dihewînin û divê her tomar çi be; yeka ku bi InTotal=disabled hatiye ragihandin behsa xalên ku li cihekî din tên hejmartin dike û bê zêdekirin tê kontrolkirin. Rêber: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Qeydgehên din di rad.ini de tên ragihandin, ji aliyê kernel ve û ji aliyê her pêveka çalak ve di rad.ini.append.php ya xwe de: guhdarên bûyeran, dabînker, amûr û zincîrên ZÇ, amûrên MCP, cureyên karên rêzê û hwd. Her yek dibêje ka kîjan blokên ini, an kîjan lîsteya çînan, tomarên wê dihewînin û divê her tomar çi be; yeka ku bi InTotal=disabled hatiye ragihandin behsa xalên ku li cihekî din tên hejmartin dike û bê zêdekirin tê kontrolkirin. Rêber: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38747,8 +38747,8 @@ bişopînin.</translation>
         <translation>Exponential Layouts ji bo malperên nû ew guhert: plansaziyek herêm û blokan dihewîne, menû yek ji blokan e, û qaîdeyek ji bo her rûpelê plansaziyê hildibijêre. Gihîştineke malperê ya bi vî awayî hatî avakirin tu carî van mîhengan naxwîne.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>Ev rûpel ji bo malperên ku hîn sêwiraneke klasîk bikar tînin dimîne. Guhertina mîhengekê li vir ji bo gihîştineke malperê ya bi Layouts hatî avakirin bê zirar e lê bandora wê tune ye. Rêbera doc/guides/classic-menu-settings.md her du rêyan rave dike.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>Ev rûpel ji bo malperên ku hîn sêwiraneke klasîk bikar tînin dimîne. Guhertina mîhengekê li vir ji bo gihîştineke malperê ya bi Layouts hatî avakirin bê zirar e lê bandora wê tune ye. Rêbera doc/en/us/guides/classic-menu-settings.md her du rêyan rave dike.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -48783,8 +48783,8 @@ Koda standard ji parametreyên bingehîn ên ku we hilbijartin hate çêkirin.</
         <translation>Her mîhenga li ser vê sazkirinê ku nirxa wê çînek e, an navê wê dibêje ku çînekê digire. Yek ji van biguherînin û li şûnê tiştekî din bersiv dide.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Qeydgehên din di rad.ini de tên ragihandin, ji aliyê kernel ve û ji aliyê her pêveka çalak ve di rad.ini.append.php ya xwe de: guhdarên bûyeran, dabînker, amûr û zincîrên ZÇ, amûrên MCP, cureyên karên rêzê û hwd. Her yek dibêje ka kîjan blokên ini, an kîjan lîsteya çînan, tomarên wê dihewînin û divê her tomar çi be; yeka ku bi InTotal=disabled hatiye ragihandin behsa xalên ku li cihekî din tên hejmartin dike û bê zêdekirin tê kontrolkirin. Rêber: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Qeydgehên din di rad.ini de tên ragihandin, ji aliyê kernel ve û ji aliyê her pêveka çalak ve di rad.ini.append.php ya xwe de: guhdarên bûyeran, dabînker, amûr û zincîrên ZÇ, amûrên MCP, cureyên karên rêzê û hwd. Her yek dibêje ka kîjan blokên ini, an kîjan lîsteya çînan, tomarên wê dihewînin û divê her tomar çi be; yeka ku bi InTotal=disabled hatiye ragihandin behsa xalên ku li cihekî din tên hejmartin dike û bê zêdekirin tê kontrolkirin. Rêber: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

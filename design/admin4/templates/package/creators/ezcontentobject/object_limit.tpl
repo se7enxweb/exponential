@@ -4,7 +4,7 @@
    before: IncludeClasses, IncludeTemplates, SiteAccesses[], VersionExport, Languages[], NodeAssignment,
    RelatedObjects, read by eZContentObjectPackageCreator; siteaccesses and languages are checkboxes now, which post
    the same lists the multiple selects posted. The same file is in design/admin and design/admin4.
-   Guide: doc/features/6.0/package-wizard.md *}
+   Guide: doc/en/us/features/6.0/package-wizard.md *}
 {def $k_nodes = 'Selected nodes'|i18n( 'kernel/package' )}
 <div id="package" class="create">
 <div id="sid-{$current_step.id|wash}" class="pc-{$creator.id|wash}">

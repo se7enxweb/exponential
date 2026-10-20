@@ -219,7 +219,7 @@ procedure is in [Extensions, section 7](../../guides/extensions.md#7-release-it)
 - `settings/module.ini` (`ExtensionRepositories[]`, `ModuleList[]`), `settings/design.ini` (`[JavaScriptSettings]`)
 - `lib/eztemplate/classes/eztemplate.php` (`ExtensionAutoloadPath`), `lib/ezi18n/classes/eztstranslator.php`
   (`TranslationExtensions`)
-- `doc/guides/extensions.md`, `doc/specifications/6.0/extension-metadata.md`
+- `doc/en/us/guides/extensions.md`, `doc/en/us/specifications/6.0/extension-metadata.md`
 
 ## Related pages
 

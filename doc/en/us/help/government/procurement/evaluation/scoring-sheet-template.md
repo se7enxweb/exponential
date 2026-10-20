@@ -55,14 +55,14 @@ Tender <ref>                    Bid <bidder> / Exponential <version>          Ev
 Criterion                       Weight   Score (0-4)   Weighted   Evidence (link, demo minute, PoC step)
 ------------------------------  -------  ------------  ---------  -------------------------------------
 1 Editorial functions           <w1>     <s>           <w1*s>     ...
-2 Accessibility                 <w2>     <s>           <w2*s>     doc/standards/accessibility.md; demo ...
-3 Security                      <w3>     <s>           <w3*s>     doc/standards/security.md; PoC step ...
-4 Privacy and data protection   <w4>     <s>           <w4*s>     doc/standards/privacy.md
+2 Accessibility                 <w2>     <s>           <w2*s>     doc/en/us/standards/accessibility.md; demo ...
+3 Security                      <w3>     <s>           <w3*s>     doc/en/us/standards/security.md; PoC step ...
+4 Privacy and data protection   <w4>     <s>           <w4*s>     doc/en/us/standards/privacy.md
 5 Languages                     <w5>     <s>           <w5*s>     ...
 6 Hosting and operations        <w6>     <s>           <w6*s>     ...
 7 Support and maintenance       <w7>     <s>           <w7*s>     the support offer
 8 Training and documentation    <w8>     <s>           <w8*s>     ...
-9 Exit and portability          <w9>     <s>           <w9*s>     doc/install/migration/leaving-exponential.md
+9 Exit and portability          <w9>     <s>           <w9*s>     doc/en/us/install/migration/leaving-exponential.md
 10 Price / total cost           <w10>    <s>           <w10*s>    the TCO worksheet
                                 -------                ---------
 Total                           <100>                  <sum>
@@ -84,7 +84,7 @@ cost of ownership worksheet in the sibling folder total-cost-of-ownership helps 
 
 The Exponential standards pages use fixed status words. A fair way to translate them to the scale above:
 
-| Status in `doc/standards/` | Score it as at most | Why |
+| Status in `doc/en/us/standards/` | Score it as at most | Why |
 |---|---|---|
 | **Complies** | 3, or 4 when you reproduced it | the page names the evidence (tests, settings, files) |
 | **Partly complies** | 2 | the page names what is covered and the gaps |

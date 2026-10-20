@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/user/forgotpassword.php, moved into a class (#207 stage 1). The file kernel/user/forgotpassword.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/user/forgotpassword.php:
@@ -63,7 +63,7 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
             else if ( $forgotPasswdObj && class_exists( 'expDemoMode' )
                       && \expDemoMode::protectsPassword( (int)$forgotPasswdObj->attribute( 'user_id' ) ) )
             {
-                // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): a key of an administrator (made before the
+                // Demo mode (EXP_DEMO_MODE=1, doc/en/us/bc/6.0/demo-mode.md): a key of an administrator (made before the
                 // mode was switched on) is removed and refused; the page says why (demo_mode_text)
                 $forgotPasswdObj->remove();
                 $tpl->setVariable( 'demo_mode_refused', true );
@@ -132,7 +132,7 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                 $tpl->setVariable( 'email', $email );
                 $forgotPasswdObj->remove();
                 $db->commit();
-                // Audit (doc/bc/6.0/audit.md, access.user.password.reset): never the hash key, never the password
+                // Audit (doc/en/us/bc/6.0/audit.md, access.user.password.reset): never the hash key, never the password
                 if ( class_exists( 'expAuditHook' ) )
                     \expAuditHook::emit( 'access.user.password.reset', array( 'object' => \expAuditHook::user( $user ),
                         'after' => array( 'mail_sent' => (bool)$mailResult ) ) );
@@ -273,7 +273,7 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                     $mail->setCategory( 'security' );
                     $mailResult = \eZMailTransport::send( $mail );
                     $tpl->setVariable( 'email', $email );
-                    // Audit (doc/bc/6.0/audit.md, access.user.password.reset.request): never the hash key
+                    // Audit (doc/en/us/bc/6.0/audit.md, access.user.password.reset.request): never the hash key
                     if ( class_exists( 'expAuditHook' ) )
                         \expAuditHook::emit( 'access.user.password.reset.request', array( 'object' => \expAuditHook::user( $user ),
                             'after' => array( 'mail_sent' => (bool)$mailResult ) ) );

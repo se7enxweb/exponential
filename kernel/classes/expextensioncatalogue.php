@@ -15,7 +15,7 @@
  * gather() reads the disk; rows() and summary() only combine what was gathered with a plan, so they are tested
  * without it (tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php). Nothing here writes.
  *
- * Guide: doc/guides/extensions-page.md
+ * Guide: doc/en/us/guides/extensions-page.md
  */
 class expExtensionCatalogue
 {

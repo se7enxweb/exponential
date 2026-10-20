@@ -1,6 +1,6 @@
 <?php
 /**
- * What the content finder makes of its search text (expContentFinderInput, doc/features/6.0/content-finder.md,
+ * What the content finder makes of its search text (expContentFinderInput, doc/en/us/features/6.0/content-finder.md,
  * "Input types"): recognition, normalisation, and the texts it refuses.
  *
  *  CF-01  a number is tried as every kind of id; ids are whole numbers from 1 to 2147483647

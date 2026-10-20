@@ -11,7 +11,7 @@ type: help
 
 `./console exp:ini` (the script `bin/php/ini.php`) reads and changes INI settings in every scope. It is the fastest
 way to make the settings changes these pages describe, and it is safe to try: `--dry-run` shows the diff and writes
-nothing. Its full guide is `doc/bc/6.0/console-exp-ini.md`.
+nothing. Its full guide is `doc/en/us/bc/6.0/console-exp-ini.md`.
 
 ## The commands used on these pages
 

@@ -8,7 +8,7 @@
    The same file is in design/admin and design/admin4. The page of aliases, what each resolves to, the search and
    what the form held come from the view (alias_list, alias_info, alias_search, alias_form); without them (an older
    view class) the page reads $filter.items as before. Everything works without javascript.
-   Guide: doc/guides/urls-and-aliases.md *}
+   Guide: doc/en/us/guides/urls-and-aliases.md *}
 
 {def $aliasList = first_set( $alias_list, $filter.items )
      $alias_total = first_set( $alias_total_count, $filter.count )

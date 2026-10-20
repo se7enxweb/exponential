@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/user/login.php, moved into a class (#207 stage 1). The file kernel/user/login.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/user/login.php:
@@ -179,7 +179,7 @@ class Login extends \Exponential\Runnable\ModuleView
                  *    If the user object is published under several groups, main node is chosen
                  *    (it its URI non-empty; otherwise first non-empty URI is chosen from the group list -- if any).
                  *
-                 * See doc/features/3.8/advanced_redirection_after_user_login.txt for more information.
+                 * See doc/en/us/features/3.8/advanced_redirection_after_user_login.txt for more information.
                  */
 
                 // First, let's determine which attributes we should search redirection URI in.

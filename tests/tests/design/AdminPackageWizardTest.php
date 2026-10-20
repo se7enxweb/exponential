@@ -4,7 +4,7 @@
  * design/admin carry the same templates; every step draws the shared head, progress and actions; the step list marks
  * the current step; and every name the creators read is still posted (the redesign changed the look, not the form).
  * No inline CSS (AdminStylingRulesTest checks that for every template). DB-less.
- * Guide: doc/features/6.0/package-wizard.md
+ * Guide: doc/en/us/features/6.0/package-wizard.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

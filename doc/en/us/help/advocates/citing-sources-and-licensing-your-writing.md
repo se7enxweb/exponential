@@ -32,13 +32,13 @@ A good citation lets the reader find the exact place:
 
 | Source | Cite as |
 |---|---|
-| A help page | Its title and a link to the page in the repository, e.g. `doc/help/security-hardening.md` on GitHub |
+| A help page | Its title and a link to the page in the repository, e.g. `doc/en/us/help/security-hardening.md` on GitHub |
 | A section | The page and the heading: "Security hardening, Checklist" |
 | A repository file | The file name and its link, e.g. SECURITY.md |
 | A commit | The short hash, which anyone can open with `git show <hash>` |
 | A public website | The site and the page, with the date you read it |
 
-Link to the file on GitHub (for example `https://github.com/se7enxweb/exponential/blob/main/doc/help/...`) rather than
+Link to the file on GitHub (for example `https://github.com/se7enxweb/exponential/blob/main/doc/en/us/help/...`) rather than
 to an administration URL of one installation, which readers cannot open.
 
 ## Quoting versus copying

@@ -1,6 +1,6 @@
 <?php
 /**
- * The uiswitch/set view (doc/features/6.0/ui-switch.md): changes one of the signed-in user's interface choices on
+ * The uiswitch/set view (doc/en/us/features/6.0/ui-switch.md): changes one of the signed-in user's interface choices on
  * the current siteaccess and goes back to the page it came from.
  *
  * POST only (405 otherwise): Provider, Value, RedirectURI. The kernel refuses a POST without the form token (403)

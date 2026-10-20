@@ -254,7 +254,7 @@ class eZCurrencyData extends eZPersistentObject
                 eZPersistentObject::removeObject( eZCurrencyData::definition(),
                                                   array( 'code' => array( $currencyCodeList ) ) );
             $db->commit();
-            // Audit (doc/bc/6.0/audit.md, commerce.currency.change)
+            // Audit (doc/en/us/bc/6.0/audit.md, commerce.currency.change)
             if ( class_exists( 'expAuditHook' ) )
                 expAuditHook::emit( 'commerce.currency.change', array( 'object' => array( 'type' => 'currency', 'id' => implode( ',', array_map( 'strval', $currencyCodeList ) ) ),
                     'verb' => 'remove', 'before' => array( 'codes' => array_values( array_map( 'strval', $currencyCodeList ) ) ) ) );
@@ -312,7 +312,7 @@ class eZCurrencyData extends eZPersistentObject
 
     function store( $fieldFilters = null )
     {
-        // Audit (doc/bc/6.0/audit.md, commerce.currency.change): the stored row before
+        // Audit (doc/en/us/bc/6.0/audit.md, commerce.currency.change): the stored row before
         $auditBefore = null;
         if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.currency.change' ) )
         {

@@ -2,7 +2,7 @@
 
 Read this page before you install or update `git_manager`, or to find out which release brought a change.
 
-What each release of `git_manager` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/git_manager.md); the story is in the [chronicle](../../history/extensions/git_manager.md).
+What each release of `git_manager` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/git_manager.md); the story is in the [chronicle](../../en/us/history/extensions/git_manager.md).
 
 ## v2.0.14 (2026-10-02)
 
@@ -140,8 +140,8 @@ What each release of `git_manager` contains, assembled from its commits. Each li
 
 ## Related pages
 
-- [Feature page](../../features/6.0/extensions/git_manager.md)
-- [Chronicle](../../history/extensions/git_manager.md)
-- [Change ledger](../../history/ledger/git_manager.md)
-- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- Months: [2024-01](../../history/extensions/months/2024-01.md), [2024-10](../../history/extensions/months/2024-10.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-06](../../history/extensions/months/2026-06.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../en/us/features/6.0/extensions/git_manager.md)
+- [Chronicle](../../en/us/history/extensions/git_manager.md)
+- [Change ledger](../../en/us/history/ledger/git_manager.md)
+- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../en/us/history/extensions/months/2024-01.md), [2024-10](../../en/us/history/extensions/months/2024-10.md), [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-06](../../en/us/history/extensions/months/2026-06.md), [2026-09](../../en/us/history/extensions/months/2026-09.md), [2026-10](../../en/us/history/extensions/months/2026-10.md)

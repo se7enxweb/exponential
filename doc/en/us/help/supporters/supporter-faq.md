@@ -18,7 +18,7 @@ Fix a mistake with "Edit on GitHub" on any help page, or answer one forum questi
 [Supporters: start here](supporters-start-here.md)
 
 **Will my pull request be rejected?**
-"Every pull request is merged"; what needs changing is changed on top (`doc/bc/6.0/ci.md`).
+"Every pull request is merged"; what needs changing is changed on top (`doc/en/us/bc/6.0/ci.md`).
 [Contributing code](contributing-code.md)
 
 **Under which license is my contribution published?**

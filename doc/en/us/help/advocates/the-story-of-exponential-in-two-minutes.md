@@ -68,7 +68,7 @@ Tell the two-minute version, then add any of these blocks, depending on your lis
 | 6.0.0 on 1 January 2024 to 6.0.14 on 7 June 2026, fifteen releases; 6.0.15 in development | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases) |
 | The product became Exponential on 11 and 12 August 2025 | [Timeline](../who-is-the-exponential-foundation.md#timeline) |
 | The Foundation was founded on 19 March 2026 in Seattle | [What the Foundation is](../who-is-the-exponential-foundation.md#what-the-foundation-is) |
-| What 6.0.15 adds | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md) |
+| What 6.0.15 adds | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
 | "not associated with the original eZ Publish software or its original developer, eZ Systems or Ibexa" | [Who is 7x?, In short](../who-is-7x.md#in-short) |
 
 ## Words to use and words to avoid

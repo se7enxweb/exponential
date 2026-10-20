@@ -37,9 +37,9 @@ written down. (6.0.15 is in development and not released; the feature was added 
 
 | What | When | Source |
 |---|---|---|
-| The audit trail: hash-chained, signed, searchable, with the `exp:audit` command, the Audit tab, sinks, alert rules and archives; on by default | 2 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
-| Extension sources in the audit console, streamed and background exports | 12 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#12-october-2026-the-audit-consoles-extension-sources-a-streamed-and-background-export-repeated-records) |
-| A timeline for admin4's audit events | 14 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#14-october-2026-a-timeline-for-admin4s-audit-events) |
+| The audit trail: hash-chained, signed, searchable, with the `exp:audit` command, the Audit tab, sinks, alert rules and archives; on by default | 2 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
+| Extension sources in the audit console, streamed and background exports | 12 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#12-october-2026-the-audit-consoles-extension-sources-a-streamed-and-background-export-repeated-records) |
+| A timeline for admin4's audit events | 14 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#14-october-2026-a-timeline-for-admin4s-audit-events) |
 | Exponential Intelligence logs its requests as audit events | 12 October 2026 | [expai, For administrators](../../features/6.0/extensions/expai.md#for-administrators) |
 
 ## Facts you can print
@@ -52,7 +52,7 @@ written down. (6.0.15 is in development and not released; the feature was added 
 | Addresses are truncated, sessions hashed, user agents shortened, query values removed. | same |
 | Passwords, tokens, repair keys and secrets are never recorded. | same |
 | A subtree removal is one parent event with one child per node below it. | same |
-| Sinks include syslog, journald, a signed webhook and mail; archives in five formats. | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
+| Sinks include syslog, journald, a signed webhook and mail; archives in five formats. | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
 | Exponential Intelligence requests are audit events, but never a prompt, an answer or a key. | [README, Safety](https://github.com/se7enxweb/exponential/blob/main/README.md#safety) |
 
 ## What not to claim

@@ -13,7 +13,7 @@ generated: exp:help:examples
 The shipped settings of `settings/ini.ini`: 1 blocks, 3 settings.
 
 > Settings of the exp:ini command (bin/php/ini.php) and of the settings editor  
-> behind it (kernel/classes/ini/). Guide: doc/bc/6.0/console-exp-ini.md  
+> behind it (kernel/classes/ini/). Guide: doc/en/us/bc/6.0/console-exp-ini.md  
 
 | Block | Settings |
 |---|---|

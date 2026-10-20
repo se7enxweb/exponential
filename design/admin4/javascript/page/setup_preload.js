@@ -1,7 +1,7 @@
 /*
  * admin4 setup/preload: follows a running cache preload (the job, its log and its progress) while the page is open.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     'use strict';

@@ -2,7 +2,7 @@
 /**
  * File containing the expNodeQuickPick class.
  *
- * Quick location buttons (doc/features/6.0/quick-location-buttons.md): a few well-known places of the content tree,
+ * Quick location buttons (doc/en/us/features/6.0/quick-location-buttons.md): a few well-known places of the content tree,
  * found from a short key (Websites, Media, a node id, a node's remote id or a URL alias path) and the content.ini
  * settings rather than fixed node ids, plus a row of the children of one of them in the tree's own order. The content
  * checks' start location (expContentCheckScope) and the upload page's target location (ezmultiupload) draw their

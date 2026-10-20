@@ -77,7 +77,7 @@ come with their method; quote them as the README's, and if you measure, publish 
 A fair review reports what the sources themselves admit, with the source:
 
 - 6.0.15 is in development and has no release date; much of what the help describes belongs to it
-  ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)).
+  ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
 - Nineteen of the 33 administration translations are complete (19 October 2026); the others show English for missing texts
   ([Languages in Exponential](../../languages.md)).
 - Velocity's shipped default engine is PHP's built-in server, for development only; the recommended engine must be

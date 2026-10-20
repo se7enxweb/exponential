@@ -106,7 +106,7 @@ $eZTemplateOperatorArray[] = array( 'class' => 'eZTemplateDigestOperator',
 $eZTemplateOperatorArray[] = array( 'class' => 'eZTemplateExpInfoOperator',
                                     'operator_names' => array( 'expinfo' ) );
 
-// Role and policy checks (doc/features/6.0/role-and-policy-template-operators.md)
+// Role and policy checks (doc/en/us/features/6.0/role-and-policy-template-operators.md)
 $eZTemplateOperatorArray[] = array( 'class' => 'eZTemplateRoleOperator',
                                     'operator_names' => array( 'has_role', 'has_role_id', 'has_any_role',
                                                                'has_role_by_user', 'has_role_by_user_id',

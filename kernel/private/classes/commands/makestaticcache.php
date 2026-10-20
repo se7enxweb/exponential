@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/makestaticcache.php, moved into a class (#207 stage 1). The file bin/php/makestaticcache.php is one call to it.
  * @description Crawl the public siteaccesses and generate static pages (--site, --max-pages, --max-depth)
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/makestaticcache.php:

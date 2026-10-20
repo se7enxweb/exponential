@@ -373,7 +373,7 @@ class eZScript
             $moduleRepositories = eZModule::activeModuleRepositories( $this->UseExtensions );
             eZModule::setGlobalPathList( $moduleRepositories );
         }
-        // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): recorded once per process, and said on the console
+        // Demo mode (EXP_DEMO_MODE=1, doc/en/us/bc/6.0/demo-mode.md): recorded once per process, and said on the console
         if ( class_exists( 'expDemoMode' ) && expDemoMode::announce() && $this->isLoud() )
             eZCLI::instance()->warning( 'Demo mode is on (EXP_DEMO_MODE=1): administrator passwords cannot be changed or reset. Never use it in production.' );
         $this->setIsInitialized( true );
@@ -436,7 +436,7 @@ class eZScript
                                                  $this->UseDebugTimingPoints, $this->UseIncludeFiles ) );
         }
 
-        // Audit (doc/bc/6.0/audit.md, system.command.run): before the cleanup handlers, which flush the audit
+        // Audit (doc/en/us/bc/6.0/audit.md, system.command.run): before the cleanup handlers, which flush the audit
         $this->auditCommandRun( $exitCode !== false ? (int)$exitCode : ( $this->ExitCode !== false ? (int)$this->ExitCode : 0 ) );
 
         eZExecution::cleanup();
@@ -454,7 +454,7 @@ class eZScript
     }
 
     /**
-     * Records the run of this command (system.command.run, doc/bc/6.0/audit.md) unless the command itself said
+     * Records the run of this command (system.command.run, doc/en/us/bc/6.0/audit.md) unless the command itself said
      * that it records its own, more specific events instead (setAuditCommandRun( false )). Called by shutdown().
      *
      * @param int $exitCode

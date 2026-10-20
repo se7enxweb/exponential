@@ -16,7 +16,7 @@
  * and missing from the row it already has.
  *
  * The rules (states(), isOutdated(), showMissingInList()) work on plain arrays, so they are tested without an
- * installation: tests/tests/design/AdminLanguageStatesTest.php. Guide: doc/features/6.0/admin4-design.md.
+ * installation: tests/tests/design/AdminLanguageStatesTest.php. Guide: doc/en/us/features/6.0/admin4-design.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

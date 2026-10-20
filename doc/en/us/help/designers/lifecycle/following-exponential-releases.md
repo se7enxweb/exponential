@@ -3,8 +3,8 @@ title: "Following Exponential releases"
 audience: designer, developer
 category: theme-lifecycle
 order: 40
-summary: Where to watch for changes that affect a theme - the changelogs in doc/changelogs, release tags and GitHub releases of the repository, the upgrade notes in doc/bc, project news and RSS - and a weekly routine.
-keywords: releases, changelog, watch, GitHub releases, RSS, upgrade notes, doc/bc, news, routine
+summary: Where to watch for changes that affect a theme - the changelogs in doc/changelogs, release tags and GitHub releases of the repository, the upgrade notes in doc/en/us/bc, project news and RSS - and a weekly routine.
+keywords: releases, changelog, watch, GitHub releases, RSS, upgrade notes, doc/en/us/bc, news, routine
 type: help
 ---
 # Following Exponential releases
@@ -17,8 +17,8 @@ extensions can affect your templates; knowing early saves emergency fixes.
 | Source | What it holds |
 |---|---|
 | `doc/changelogs/6.0/<version>.md` in the repository | The changelog of each release; the one in development (6.0.15) is updated as work lands |
-| `doc/bc/6.0/` | Upgrade notes for changes that need action, for example [YUI removal](../../../bc/6.0/yui-removal.md) |
-| `doc/features/6.0/` | What a new feature does, for example [jQuery 4 in the admin, and YUI gone](../../../features/6.0/jquery4-and-yui-removal.md) |
+| `doc/en/us/bc/6.0/` | Upgrade notes for changes that need action, for example [YUI removal](../../../bc/6.0/yui-removal.md) |
+| `doc/en/us/features/6.0/` | What a new feature does, for example [jQuery 4 in the admin, and YUI gone](../../../features/6.0/jquery4-and-yui-removal.md) |
 | Releases and tags of `se7enxweb/exponential` and of the extensions you use | Versions as published |
 | [projects.exponential.earth](https://projects.exponential.earth/) news and RSS (`/rss/feed/projects-news`, `/rss/feed/git`) | Announcements and recent Git changes |
 | [share.exponential.earth](https://share.exponential.earth/) blogs | Release announcements |

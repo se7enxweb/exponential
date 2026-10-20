@@ -7,7 +7,7 @@
 
    The same file is in design/admin and design/admin4. The figures, the filter and the order come from the view
    (search_stats_summary, search_stats_show, search_stats_sort); without them (an older view class) the page shows
-   the table and the reset as before. Everything works without javascript. Guide: doc/guides/urls-and-aliases.md *}
+   the table and the reset as before. Everything works without javascript. Guide: doc/en/us/guides/urls-and-aliases.md *}
 
 {def $summary = first_set( $search_stats_summary, false() )
      $logging = first_set( $search_stats_logging, false() )

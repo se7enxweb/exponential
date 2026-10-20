@@ -1,4 +1,4 @@
-{* The dashboard's section of help maintained as content (doc/features/6.0/help-content.md): the manuals and the newest
+{* The dashboard's section of help maintained as content (doc/en/us/features/6.0/help-content.md): the manuals and the newest
    topics the user may see. Variables: content (help_content of the dashboard view: manuals, topics, count).
    The same file is in design/admin and design/admin4. *}
 <section class="a4-card" aria-labelledby="help-dash-content">

@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry point of exphelp/contents, every help page as one tree (doc/features/6.0/help-system.md).
+ * Entry point of exphelp/contents, every help page as one tree (doc/en/us/features/6.0/help-system.md).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

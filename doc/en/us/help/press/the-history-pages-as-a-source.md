@@ -55,8 +55,8 @@ changelog of the release. Follow them to describe a feature correctly.
 ## How to cite it
 
 ```text
-According to the project's documented history (doc/history, "August 2025"), the product was renamed to
-Exponential on 12 August 2025. https://github.com/se7enxweb/exponential/blob/main/doc/history/2025/2025-08.md
+According to the project's documented history (doc/en/us/history, "August 2025"), the product was renamed to
+Exponential on 12 August 2025. https://github.com/se7enxweb/exponential/blob/main/doc/en/us/history/2025/2025-08.md
 ```
 
 - Name the month page, not just "the history".

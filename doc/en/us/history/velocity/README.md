@@ -8,7 +8,7 @@ How to use this section:
 
 - **Want to know what happened and why?** Read the month pages in order. Each opens with a paragraph, a table of what a user could do afterwards that they could not before, and the story of the month; the last table lists *every* change of the period with its class.
 - **Want to use a feature?** Go to the feature pages below; each has settings with defaults, commands that work and limits.
-- **Upgrading?** Read the [upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) first, then the [changelog](../../changelogs/extensions/exponential-velocity.md).
+- **Upgrading?** Read the [upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) first, then the [changelog](../../../../changelogs/extensions/exponential-velocity.md).
 - **Looking for one commit?** The complete, machine-made list is in the [ledger](../ledger/exponential-velocity.md) (and, under the old name, [the ledger of qbix-webserver](../ledger/qbix-webserver.md)).
 
 ## Month pages
@@ -60,6 +60,6 @@ The engine began as the Qbix web server. In the code you will still see `Q_WebSe
 
 - [History of Exponential](../README.md): the month chronicle of the main installation
 - [Velocity engines](../../bc/6.0/velocity-engines.md): choose and run an engine from Exponential
-- [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) and the [changelog](../../changelogs/extensions/exponential-velocity.md)
+- [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) and the [changelog](../../../../changelogs/extensions/exponential-velocity.md)
 - [Operating a site](../../guides/operating-a-site.md)
 - [Glossary](../../glossary.md)

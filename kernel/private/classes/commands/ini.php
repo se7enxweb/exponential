@@ -3,7 +3,7 @@
  * File containing the Exponential\Command\Kernel\Ini class, the exp:ini command (bin/php/ini.php).
  *
  * @description Read and change INI settings in every scope: get, set, add, rem, clear, toggle, copy, move, where, list, scopes
- * Guide: doc/bc/6.0/console-exp-ini.md
+ * Guide: doc/en/us/bc/6.0/console-exp-ini.md
  *
  * The command starts the script, parses the options and hands the rest to expIniCommand::dispatch(), which
  * finds the action in ini.ini [IniCommandSettings] Actions[] and runs it (kernel/classes/ini/actions/).

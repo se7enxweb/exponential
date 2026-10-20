@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/updatesearchindex.php, moved into a class (#207 stage 1). The file bin/php/updatesearchindex.php is one call to it.
  * @description Reindex all content objects in the search engine
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/updatesearchindex.php:
@@ -174,7 +174,7 @@ class Updatesearchindex extends \Exponential\Runnable\Command
 
         } while ( count( $objects ) == $length );
 
-        // Audit (doc/bc/6.0/audit.md, data.index.rebuild)
+        // Audit (doc/en/us/bc/6.0/audit.md, data.index.rebuild)
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'data.index.rebuild', array( 'object' => array( 'type' => 'search_index', 'id' => get_class( $searchEngine ) ),
                 'verb' => 'rebuild', 'after' => array( 'objects' => (int)$count, 'clean' => (bool)$cleanupSearch,

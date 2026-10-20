@@ -1,6 +1,6 @@
 <?php
 /**
- * Fills the audit index from the channel files (doc/bc/6.0/audit.md, "Incremental indexing", "Rebuild",
+ * Fills the audit index from the channel files (doc/en/us/bc/6.0/audit.md, "Incremental indexing", "Rebuild",
  * "Pseudonymisation after 90 days").
  *
  * Incremental: each live file is read from its cursor's byte offset; whole lines only (a line without its "\n"

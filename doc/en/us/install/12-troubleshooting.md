@@ -296,7 +296,7 @@ not worked. More in [Cache console](../bc/6.0/cache-console.md) and [Operating a
 - The online manual: [https://exponential.doc.exponential.earth/](https://exponential.doc.exponential.earth/).
 - Report a bug: the [Exponential issue tracker](https://github.com/se7enxweb/exponential/issues), or the
   [community issue tracker](https://github.com/se7enxweb/exponential-community/issues).
-- Report a security issue privately, as [SECURITY.md](../../SECURITY.md) describes, never in a public issue.
+- Report a security issue privately, as [SECURITY.md](../../../../SECURITY.md) describes, never in a public issue.
 - Forums: [share.exponential.earth/forums](https://share.exponential.earth/forums).
 
 When you report a problem, include the version (`php bin/php/console --version`), `php -v`, the database and its

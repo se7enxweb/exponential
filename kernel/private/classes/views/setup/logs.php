@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup > Log files (setup/logs; doc/features/6.0/log-viewer.md): the page of the log viewer. It shows the end of a
+ * Setup > Log files (setup/logs; doc/en/us/features/6.0/log-viewer.md): the page of the log viewer. It shows the end of a
  * log file (rendered here, so the page reads without JavaScript too), the navigator of every file in the left menu,
  * the search form, and the actions that are switched on. The page's script (page/setup_logs.js) follows the file
  * through setup/logsfeed, short requests only.

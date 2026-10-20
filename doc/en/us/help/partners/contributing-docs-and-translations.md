@@ -17,7 +17,7 @@ contributions: partners see the questions customers ask, and serve customers in 
 - The documentation lives in the repository in `doc/`, and the help shows it in the administration
   ([Free documentation](../free-documentation.md)).
 - Every help page has an "Edit on GitHub" link: fix a mistake directly with a pull request.
-- New help pages are Markdown files with front matter (title, audience, category, order, summary) under `doc/help/`.
+- New help pages are Markdown files with front matter (title, audience, category, order, summary) under `doc/en/us/help/`.
 - The documentation is licensed under the GNU Free Documentation License 1.3 or later; your contribution will be too
   ([The license of this documentation](../../README-LICENSE.md)).
 
@@ -39,7 +39,7 @@ contributions: partners see the questions customers ask, and serve customers in 
 ## Translations
 
 - The administration is translated into many languages; [Languages](../languages.md) explains the locales and
-  `doc/languages.md` lists the catalogues and their completeness.
+  `doc/en/us/languages.md` lists the catalogues and their completeness.
 - Translations live in `share/translations/<locale>/translation.ts`. Improve an existing language or complete a
   partial one with a pull request.
 - Have a second native speaker review before you submit.

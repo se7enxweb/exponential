@@ -84,7 +84,7 @@ Name=design
 
 ## Links
 
-> The menus of the classic site designs (visual/menuconfig, doc/guides/classic-menu-settings.md); its page marks  
+> The menus of the classic site designs (visual/menuconfig, doc/en/us/guides/classic-menu-settings.md); its page marks  
 > the Design tab (kernel/visual/module.php)  
 
 Default: a hash of 4: `look_and_feel=content/edit/54`, `toolbar_management=visual/toolbarlist`, `menu_management=visual/menuconfig`, `template_editor=visual/templatelist`.

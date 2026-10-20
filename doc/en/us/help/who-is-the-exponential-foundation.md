@@ -154,7 +154,7 @@ installation, and developers who build applications on its framework.
 **Where it stands.** 6.0.14 is the newest tag (7 June 2026). The 6.0.15 line adds, among much else, Velocity, the
 admin4 design, an audit trail, Exponential Layouts, Exponential Intelligence, content jobs, packages end to end, 219
 locales in the README's count, the LoveStack features of Mugo Web and this help system
-([6.0.15 changelog](../changelogs/6.0/6.0.15.md), README "Recent improvements"). The story of every change since
+([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md), README "Recent improvements"). The story of every change since
 December 2023 is in [the history](../history/README.md).
 
 ### Exponential Basic
@@ -430,7 +430,7 @@ No events (conferences, meetups) are documented in the sources used for this pag
 | April 2026 | 14 security pull requests to Zeta Components | se7enxweb profile README |
 | 7 June 2026 | Exponential 6.0.14 | release overview |
 | September 2026 | Exponential Velocity joins Exponential | [Velocity chronicle](../history/velocity/README.md) |
-| October 2026 | Exponential Intelligence, the LoveStack features and the help system in the 6.0.15 line | [6.0.15 changelog](../changelogs/6.0/6.0.15.md) |
+| October 2026 | Exponential Intelligence, the LoveStack features and the help system in the 6.0.15 line | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 
 ## How to support or join
 
@@ -486,7 +486,7 @@ Repository files (`se7enxweb/exponential`):
 [release overview](../release-overview), [history](../history/README.md), [ecosystem](../history/ecosystem.md),
 [CI](../bc/6.0/ci.md), [Extensions](../guides/extensions.md), [Languages](../languages.md),
 [Content Security Policy](../features/6.0/content-security-policy.md),
-[Styling the administration](../bc/6.0/admin4-styling.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
+[Styling the administration](../bc/6.0/admin4-styling.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md).
 
 Other repositories, read through the GitHub API on 18 October 2026: the `composer.json` and description of
 `exponential-platform`, `exponential-platform-legacy`, `exponential-platform-nexus`, `exponential-platform-dxp`,

@@ -1,7 +1,7 @@
 /*
  * admin4 setup/extensions: the search, the order of the active extensions (drag and drop, arrows) and the pending plan.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     'use strict';

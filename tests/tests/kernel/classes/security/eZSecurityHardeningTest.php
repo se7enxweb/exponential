@@ -5,7 +5,7 @@
  * Tests that the SQL injection, shell injection, and XSS patches applied in
  * 6.0.13 behave correctly in isolation (no full eZ Publish stack needed).
  *
- * Test IDs map to doc/bc/6.0/hardening.md sections:
+ * Test IDs map to doc/en/us/bc/6.0/hardening.md sections:
  *  SEC-01 — SQL injection via eZContentObjectTreeNode attribute list
  *  SEC-02 — SQL injection via eZContentClass sort fields
  *  SEC-03 — SQL injection via eZUser search filter

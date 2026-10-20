@@ -10,7 +10,7 @@
  * ezurlalias_ml, the location fields one on ezcontentobject_tree, per node or, prefetched, per page.
  *
  * The public siteaccess is SiteAccess= in the column block, or else [SiteSettings] DefaultAccess.
- * Guide: doc/bc/6.0/subitems-table-options.md
+ * Guide: doc/en/us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

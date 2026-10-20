@@ -58,7 +58,7 @@ own overrides are not changed by the kernel.
 
 Pages that load `ezjsc::jquery` got jQuery 3.7.1 and jQuery Migrate 3.4.1 (muted). Code that still needs jQuery 1.x
 behaviour usually works through Migrate. This was superseded in October by jQuery 4; see the
-[6.0.15 changelog](../../changelogs/6.0/6.0.15.md) and [YUI removal](yui-removal.md).
+[6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) and [YUI removal](yui-removal.md).
 
 ### Kickstart and the setup wizard
 
@@ -184,5 +184,5 @@ The README header explains that a downloaded copy of Exponential 6.0 needs `comp
   [Icon themes](../../features/6.0/icon-themes-in-extensions.md),
   [Installation name](../../features/6.0/installation-name-in-pages.md),
   [jQuery 4 and YUI](../../features/6.0/jquery4-and-yui-removal.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - [Behaviour changes of 16 to 30 September 2026 (next)](behaviour-changes-2026-09b.md)

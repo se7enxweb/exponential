@@ -28,7 +28,7 @@
  *   core_designs    designs the kernel itself ships (design/<name>), which never depend on an extension
  *   ordering        true when site.ini [ExtensionSettings] ExtensionOrdering=enabled
  *
- * Guide: doc/guides/extensions-page.md
+ * Guide: doc/en/us/guides/extensions-page.md
  */
 class expExtensionChangePlan
 {

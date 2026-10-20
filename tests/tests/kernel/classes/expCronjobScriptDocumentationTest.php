@@ -55,8 +55,8 @@ class expCronjobScriptDocumentationTest extends PHPUnit\Framework\TestCase
     {
         $base = expCronjobRunner::DOCUMENTATION_BASE;
         $this->assertSame( 'https://example.com/a?b=1#c', expCronjobRunner::documentationUrl( 'https://example.com/a?b=1#c' ) );
-        $this->assertSame( $base . 'doc/guides/sessions.md', expCronjobRunner::documentationUrl( 'doc/guides/sessions.md' ) );
-        $this->assertSame( $base . 'doc/guides/sessions.md#cleanup', expCronjobRunner::documentationUrl( ' doc/guides/sessions.md#cleanup ' ) );
+        $this->assertSame( $base . 'doc/en/us/guides/sessions.md', expCronjobRunner::documentationUrl( 'doc/en/us/guides/sessions.md' ) );
+        $this->assertSame( $base . 'doc/en/us/guides/sessions.md#cleanup', expCronjobRunner::documentationUrl( ' doc/en/us/guides/sessions.md#cleanup ' ) );
         $this->assertSame( 'https://intranet.example.com/ops/doc/x.md',
                            expCronjobRunner::documentationUrl( 'doc/x.md', 'https://intranet.example.com/ops/' ) );
     }
@@ -73,8 +73,8 @@ class expCronjobScriptDocumentationTest extends PHPUnit\Framework\TestCase
     public function testTheHeaderNamesTheDocumentation()
     {
         $this->links( array() );
-        $path = $this->script( " * @description Does a thing\n * @link doc/guides/sessions.md\n" );
-        $this->assertSame( expCronjobRunner::DOCUMENTATION_BASE . 'doc/guides/sessions.md',
+        $path = $this->script( " * @description Does a thing\n * @link doc/en/us/guides/sessions.md\n" );
+        $this->assertSame( expCronjobRunner::DOCUMENTATION_BASE . 'doc/en/us/guides/sessions.md',
                            expCronjobRunner::scriptDocumentation( 'thing.php', $path ) );
         $this->assertSame( 'Does a thing', expCronjobRunner::scriptDescription( $path ) );
         // Without a tag, or without a file, there is no link.
@@ -84,7 +84,7 @@ class expCronjobScriptDocumentationTest extends PHPUnit\Framework\TestCase
 
     public function testTheInstallationComesFirst()
     {
-        $path = $this->script( " * @link doc/guides/sessions.md\n" );
+        $path = $this->script( " * @link doc/en/us/guides/sessions.md\n" );
         $this->links( array( 'thing.php' => 'https://intranet.example.com/ops/thing' ) );
         $this->assertSame( 'https://intranet.example.com/ops/thing', expCronjobRunner::scriptDocumentation( 'thing.php', $path ) );
         // By the file name, also when the part names the script with a directory.
@@ -98,9 +98,9 @@ class expCronjobScriptDocumentationTest extends PHPUnit\Framework\TestCase
         $this->links( array( 'thing.php' => 'javascript:alert(1)' ) );
         $this->assertSame( '', expCronjobRunner::scriptDocumentation( 'thing.php', $path ) );
         $this->links( array( 'thing.php' => array( 'x' ) ) );
-        $this->assertSame( expCronjobRunner::DOCUMENTATION_BASE . 'doc/guides/sessions.md', expCronjobRunner::scriptDocumentation( 'thing.php', $path ) );
+        $this->assertSame( expCronjobRunner::DOCUMENTATION_BASE . 'doc/en/us/guides/sessions.md', expCronjobRunner::scriptDocumentation( 'thing.php', $path ) );
         $this->links( array( 'thing.php' => '' ) );
-        $this->assertSame( expCronjobRunner::DOCUMENTATION_BASE . 'doc/guides/sessions.md', expCronjobRunner::scriptDocumentation( 'thing.php', $path ) );
+        $this->assertSame( expCronjobRunner::DOCUMENTATION_BASE . 'doc/en/us/guides/sessions.md', expCronjobRunner::scriptDocumentation( 'thing.php', $path ) );
         // The installation's base for paths.
         $this->links( array( 'thing.php' => 'betrieb/thing.md' ), 'https://intranet.example.com/doc/' );
         $this->assertSame( 'https://intranet.example.com/doc/betrieb/thing.md', expCronjobRunner::scriptDocumentation( 'thing.php', $path ) );
@@ -127,8 +127,8 @@ class expCronjobScriptDocumentationTest extends PHPUnit\Framework\TestCase
     public function testAPathThatIsNotShippedGivesNoLink()
     {
         $this->links( array() );
-        $this->assertSame( '', expCronjobRunner::scriptDocumentation( 'thing.php', $this->script( " * @link doc/guides/t471-no-such-page.md\n" ) ) );
-        $this->links( array( 'thing.php' => 'doc/guides/t471-no-such-page.md' ) );
+        $this->assertSame( '', expCronjobRunner::scriptDocumentation( 'thing.php', $this->script( " * @link doc/en/us/guides/t471-no-such-page.md\n" ) ) );
+        $this->links( array( 'thing.php' => 'doc/en/us/guides/t471-no-such-page.md' ) );
         $this->assertSame( '', expCronjobRunner::scriptDocumentation( 'thing.php', $this->script( " * @description Does a thing\n" ) ) );
         // An installation's own base is its own to keep alive.
         $this->links( array( 'thing.php' => 'doc/t471-intranet.md' ), 'https://intranet.example.com/' );
@@ -147,7 +147,7 @@ class expCronjobScriptDocumentationTest extends PHPUnit\Framework\TestCase
         $file = $dir . '/thing.php';
         try
         {
-            file_put_contents( $file, "<?php\n/**\n * @link doc/guides/sessions.md\n */\n" );
+            file_put_contents( $file, "<?php\n/**\n * @link doc/en/us/guides/sessions.md\n */\n" );
             $this->assertSame( '', expCronjobRunner::scriptDocumentation( 'thing.php', $file ) );
             file_put_contents( $file, "<?php\n/**\n * @link https://example.com/demo/cronjobs\n */\n" );
             $this->assertSame( 'https://example.com/demo/cronjobs', expCronjobRunner::scriptDocumentation( 'thing.php', $file ) );

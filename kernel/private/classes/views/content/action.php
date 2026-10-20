@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/action.php, moved into a class (#207 stage 1). The file kernel/content/action.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/action.php:
@@ -24,7 +24,7 @@ class Action extends \Exponential\Runnable\ModuleView
     /**
      * Calls the content jobs GUI helper (Exponential\View\Kernel\Content\Job) when it can be used. Without it
      * (a Velocity worker started before it existed, the engine not installed or failing) the view takes the
-     * old synchronous path: runAsJob gives false, everything else null. doc/bc/6.0/content-jobs.md
+     * old synchronous path: runAsJob gives false, everything else null. doc/en/us/bc/6.0/content-jobs.md
      *
      * @param string $method runAsJob, lockRefusal or startJob
      * @return mixed
@@ -50,7 +50,7 @@ class Action extends \Exponential\Runnable\ModuleView
      * ReverseRelationCheck=warn: the selected nodes that other objects point at, or whose objects have further
      * locations, each with its list. Its OK posts the same selection again, with ReverseRelationCheckConfirmed.
      * Null when nothing needs confirming, or when a node is missing or may not be hidden (the action reports that).
-     * doc/features/6.0/reverse-relation-check.md
+     * doc/en/us/features/6.0/reverse-relation-check.md
      *
      * @param array $nodeIDArray
      * @param int $parentNodeID
@@ -650,7 +650,7 @@ class Action extends \Exponential\Runnable\ModuleView
                 }
             }
 
-            // Content jobs (doc/bc/6.0/content-jobs.md): a move from or into a subtree a background job is working
+            // Content jobs (doc/en/us/bc/6.0/content-jobs.md): a move from or into a subtree a background job is working
             // on is refused.
             $jobRefused = self::contentJob( 'lockRefusal', array_merge( $nodeIDlist, array( $selectedNodeID ) ),
                                             '/content/view/full/' . (int) $selectedNodeID );
@@ -1229,7 +1229,7 @@ class Action extends \Exponential\Runnable\ModuleView
             }
             else
             {
-                // Content jobs (doc/bc/6.0/content-jobs.md): locations a background job is working on are refused;
+                // Content jobs (doc/en/us/bc/6.0/content-jobs.md): locations a background job is working on are refused;
                 // many (or the user's last choice "background") get a confirmation with the now-or-background
                 // choice and become a removelocation job; a few are removed at once, as before
                 $jobRemoveIDs = array_values( array_map( 'intval', array_keys( $removeList ) ) );
@@ -1332,7 +1332,7 @@ class Action extends \Exponential\Runnable\ModuleView
         {
             // "Add a location for selected" in the sub items list: one new location for each selected item's
             // object under a node chosen in the browse page; many (or the "background" choice) as an addlocation
-            // content job (doc/bc/6.0/content-jobs.md)
+            // content job (doc/en/us/bc/6.0/content-jobs.md)
             return $this->viewResult( isset( $Result ) ? $Result : null, $this->addLocations( $module, $http, $viewMode, $languageCode ) );
         }
         else if ( $http->hasPostVariable( 'RemoveButton' ) )

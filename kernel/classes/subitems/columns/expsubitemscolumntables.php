@@ -4,7 +4,7 @@
  * and that have no persistent class of their own: ezuservisit (the user columns) and
  * ezsearch_object_word_link (the search index column). Going through eZPersistentObject keeps the
  * queries working on every database the kernel supports.
- * Guide: doc/bc/6.0/subitems-table-options.md
+ * Guide: doc/en/us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

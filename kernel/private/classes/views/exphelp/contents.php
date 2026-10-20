@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/contents (doc/features/6.0/help-system.md): every page of the help as one tree, its folders closed (native
+ * exphelp/contents (doc/en/us/features/6.0/help-system.md): every page of the help as one tree, its folders closed (native
  * <details>: title and page count, they open without JavaScript), with a filter box and the Expand all / Collapse all
  * control (exphelp.js). Each folder has an id (folderIds()), so #exphelp-folder-help links to it and opens it.
  * Template design:exphelp/contents.tpl.

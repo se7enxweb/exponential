@@ -8,7 +8,7 @@
  * be tested without an installation (tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php). The view
  * (kernel/private/classes/views/content/bookmark.php) reads the rows and the nodes and hands them over.
  *
- * Guide: doc/guides/bookmarks.md
+ * Guide: doc/en/us/guides/bookmarks.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

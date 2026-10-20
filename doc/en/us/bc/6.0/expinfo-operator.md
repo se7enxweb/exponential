@@ -97,4 +97,4 @@ Then reload the PHP-FPM that serves the site, so the web runtime picks up the ne
 - [RAD tools](../../features/6.0/rad-tools.md)
 - [ExponentialSDK and exponential.cron](exponentialsdk-and-exponential-cron.md)
 - [September 2026, first half](../../history/2026/2026-09a.md#1-to-2-september-knowing-what-is-installed)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)

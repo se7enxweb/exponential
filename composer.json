@@ -9,7 +9,7 @@
         "php-64bit": "For support of more than 30 languages, a 64bit php installation on all involved prod/dev machines is required",
         "ext-curl": "Curl provides better support for interacting with other servers, like downloading packages over SSL",
         "ext-gd": "Unless you have ImageMagic installed GD is required for Exponential to be able to manipulate images",
-        "ext-sqlite3": "SQLite 3 is the default database of Exponential (DatabaseImplementation=ezsqlite3); the supported databases in order of preference: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL (doc/help/database-support.md)",
+        "ext-sqlite3": "SQLite 3 is the default database of Exponential (DatabaseImplementation=ezsqlite3); the supported databases in order of preference: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL (doc/en/us/help/database-support.md)",
         "ext-pgsql": "PostgreSQL, the recommended database server (DatabaseImplementation=ezpostgresql)",
         "mongodb/mongodb": "The MongoDB database handler (DatabaseImplementation=mongodb) connects through MongoDB\\Client from this library, on top of the PHP mongodb extension",
         "ext-mysqli": "Mysqli is the database handler for MariaDB and MySQL (DatabaseImplementation=ezmysqli)",

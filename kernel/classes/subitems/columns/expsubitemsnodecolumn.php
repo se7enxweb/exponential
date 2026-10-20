@@ -8,7 +8,7 @@
  * view_count. The plain fields cost nothing (the row is already loaded); the children fields cost
  * one count or one small query each, and children_count, child_classes and view_count one query
  * for the whole page (prefetch()).
- * Guide: doc/bc/6.0/subitems-table-options.md
+ * Guide: doc/en/us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

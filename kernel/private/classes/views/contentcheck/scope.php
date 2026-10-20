@@ -1,6 +1,6 @@
 <?php
 /**
- * The contentcheck/scope view (doc/features/6.0/content-checks.md, "Where a check starts"): chooses the start
+ * The contentcheck/scope view (doc/en/us/features/6.0/content-checks.md, "Where a check starts"): chooses the start
  * location of a check with the shared node picker.
  *
  *   GET  contentcheck/scope/<view>/<node id>   opens the node picker (content/browse) at that node

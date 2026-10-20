@@ -14,8 +14,8 @@ Check all internal and external links in published content for broken URLs.
 Entry point `cronjobs/linkcheck.php`, code in `kernel/private/classes/cronjobs/linkcheck.php`.
 
 > The code of cronjobs/linkcheck.php, moved into a class (#207 stage 1). The file cronjobs/linkcheck.php is one call to it.  
-> Guide: doc/bc/6.0/cli\_cronjob\_view\_abstractions.md  
-> User guide of the link check: doc/guides/urls-and-aliases.md (section "How links are checked")  
+> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> User guide of the link check: doc/en/us/guides/urls-and-aliases.md (section "How links are checked")  
 
 ## When it runs
 

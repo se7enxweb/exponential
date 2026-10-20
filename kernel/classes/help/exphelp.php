@@ -1,6 +1,6 @@
 <?php
 /**
- * The help system's shared helpers (doc/features/6.0/help-system.md): its settings, whether it is on, the install
+ * The help system's shared helpers (doc/en/us/features/6.0/help-system.md): its settings, whether it is on, the install
  * root it reads from, and the URLs of its views. Every other expHelp* class takes its settings from here.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.

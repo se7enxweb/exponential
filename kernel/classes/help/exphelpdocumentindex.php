@@ -2,13 +2,13 @@
 /**
  * File containing the expHelpDocumentIndex class.
  *
- * The index of the help pages (doc/features/6.0/help-system.md, "The index"): one entry per document of the
+ * The index of the help pages (doc/en/us/features/6.0/help-system.md, "The index"): one entry per document of the
  * allowlist (expHelpAllowlist: git-tracked files below doc/ and opted-in extension doc/ directories), with its title,
  * headings and their anchors, summary, audiences, category, type, order and keywords. The views, the search and the
  * console command exp:help read it; nothing reads a file of doc/ without asking it first.
  *
  * A page is named by its id: its path below doc/ ("guides/caches.md"), or "ext/<extension>/<path below its doc/>"
- * for an extension's page. The entry's 'path' is the path relative to the installation root ("doc/guides/caches.md").
+ * for an extension's page. The entry's 'path' is the path relative to the installation root ("doc/en/us/guides/caches.md").
  *
  *   $index = expHelpDocumentIndex::instance();
  *   $index->documents();                  // 'guides/caches.md' => array( 'id', 'path', 'title', 'headings', ... )
@@ -203,7 +203,7 @@ class expHelpDocumentIndex
     }
 
     /**
-     * The id of a path relative to the installation root: doc/guides/x.md -> guides/x.md,
+     * The id of a path relative to the installation root: doc/en/us/guides/x.md -> guides/x.md,
      * extension/foo/doc/x.md -> ext/foo/x.md; other configured roots keep their path. null for a path outside the roots.
      *
      * @param string $path

@@ -138,4 +138,4 @@ still works, for keys of that user only. Every form carries the form token.
   `cronjobs/session_gc.php`.
 - Tests: `tests/tests/kernel/classes/setup/SessionPageTest.php` (references, own-session rule, cleaning, durations,
   rows; no database).
-- [Changelog 6.0.15](../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

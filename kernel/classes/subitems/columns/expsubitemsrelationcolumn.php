@@ -10,7 +10,7 @@
  * those the current user may not read. tags and tag_count need the eztags extension, rating and
  * rating_count the ezstarrating extension; without them (or for classes without such an
  * attribute) the value is null.
- * Guide: doc/bc/6.0/subitems-table-options.md
+ * Guide: doc/en/us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

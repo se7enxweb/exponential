@@ -17,7 +17,7 @@
  * The overview only describes; every change stays with the page it links to. fromUser() reads this installation;
  * the constructor takes the facts built by hand, so the state, the hints and the actions are tested without a
  * database (tests/tests/kernel/classes/user/expUserAccountOverviewTest.php). The texts are the template's: the overview
- * hands it keys, numbers and addresses. Guide: doc/guides/security-and-audit.md, section 6
+ * hands it keys, numbers and addresses. Guide: doc/en/us/guides/security-and-audit.md, section 6
  */
 class expUserAccountOverview
 {

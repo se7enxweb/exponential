@@ -787,7 +787,7 @@ left to right, as are Fula (`ful-SN`) and Tamazight (`zgh-MA`, Tifinagh).
 **The locale says so.** Each of these files has
 
 ```ini
-# Text direction: right-to-left ([LanguageSettings] TextDirection, see "Right-to-left languages" in doc/languages.md).
+# Text direction: right-to-left ([LanguageSettings] TextDirection, see "Right-to-left languages" in doc/en/us/languages.md).
 [LanguageSettings]
 TextDirection=rtl
 ```

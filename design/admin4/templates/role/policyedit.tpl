@@ -4,7 +4,7 @@
    (role/exp_limitations.tpl). OK (UpdatePolicy) keeps the change in the draft of the role and goes back to the role
    editor; Cancel (DiscardChange) drops it. A function without limitations has nothing to edit here. Every name is
    the one the view has always read; every value is escaped. The same file is in design/admin and design/admin4.
-   Guide: doc/guides/roles-and-policies.md *}
+   Guide: doc/en/us/guides/roles-and-policies.md *}
 
 <form method="post" action={concat( $Module.functions.policyedit.uri, '/', $policy_id, '/' )|ezurl} class="a4-page a4-standalone">
 {if $function_limitations}<input type="submit" name="UpdatePolicy" value="{'OK'|i18n( 'design/admin/role/policyedit' )}" tabindex="-1" aria-hidden="true" class="a4-sr-only" />{/if}

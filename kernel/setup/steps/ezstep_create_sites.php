@@ -398,7 +398,7 @@ class eZStepCreateSites extends eZStepInstaller
             $this->setUpMailPreferences( $siteType );
         }
 
-        // Audit (doc/bc/6.0/audit.md, system.install.run): an installation made (the wizard, the kickstarter,
+        // Audit (doc/en/us/bc/6.0/audit.md, system.install.run): an installation made (the wizard, the kickstarter,
         // exp:install); never the database or mail passwords
         if ( class_exists( 'expAuditHook' ) )
         {
@@ -1847,7 +1847,7 @@ language_locale='eng-GB'";
         // A new installation closes open registration and the ezjscnode node data calls, which
         // settings/site.ini and ezjscore.ini keep open for upgraded sites: registering needs the
         // user/register policy (PolicyOmitListExclude[], read by expPolicyOmitList), the node data the
-        // ezjscore/call policy with the function list ezjscnode (doc/guides/roles-and-policies.md, 8).
+        // ezjscore/call policy with the function list ezjscnode (doc/en/us/guides/roles-and-policies.md, 8).
         // Portions derived from LoveStack (mugoweb/ezpublish-legacy, commits 98854ab935 and aa307a7ff3), Copyright (C) Mugo Web, GPL v2
         $extraCommonSettings[] = array( 'name' => 'site.ini',
                                         'settings' => array( 'RoleSettings' => array( 'PolicyOmitListExclude' => array( 'user/register' ) ) ) );

@@ -1,7 +1,7 @@
 <?php
 /**
  * Shared code of the built-in alert rule classes: the record fields a rule groups by, the time of a record, and
- * the de-duplication (doc/bc/6.0/audit.md, "Alerts (F5)"): an alert for (rule, group) fires once per window;
+ * the de-duplication (doc/en/us/bc/6.0/audit.md, "Alerts (F5)"): an alert for (rule, group) fires once per window;
  * while it is open, more matches update its count instead of firing again; it fires again when the count doubles,
  * or in a new window after the window closed.
  *

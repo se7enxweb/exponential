@@ -43,10 +43,10 @@ does not publish this" if the answer is no.
 
 | Record | Example |
 |---|---|
-| The changelog of the release | [6.0.13](../../changelogs/6.0/6.0.13.md): "Security hardening (seven findings fixed)", findings SEC-01 to SEC-06 and others |
+| The changelog of the release | [6.0.13](../../../../changelogs/6.0/6.0.13.md): "Security hardening (seven findings fixed)", findings SEC-01 to SEC-06 and others |
 | A specification page per hardening round | [The 6.0.13 hardening](../../specifications/6.0/security-hardening-6.0.13.md), [Security patches of August 2026](../../specifications/6.0/security-hardening-2026-08.md), [Security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md) |
 | The month page of the history | [August 2026](../../history/2026/2026-08.md): "Six security patches and jQuery 3.7.1 landed on 16 August" |
-| The development line | The [6.0.15 changelog](../../changelogs/6.0/6.0.15.md) lists later fixes by date; they are not released until the 6.0.15 tag exists |
+| The development line | The [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) lists later fixes by date; they are not released until the 6.0.15 tag exists |
 
 Note the status: the August 2026 patches are on the 6.0.15 development line. A story must not say they are in a
 released version until a tag contains them ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).

@@ -4,7 +4,7 @@
  * with a Bootstrap icon, a name and one line of description, in the groups of the left menu. The links, groups and
  * access checks are the left menu's own (menu.ini [Leftmenu_setup], parts/ini_menu.tpl with menu_layout='tiles'),
  * so a link the user may not open has no tile and an extension's link shows under "More". The page draws no image
- * but the Bootstrap icon masks. doc/features/6.0/admin4-design.md ("Setup overview").
+ * but the Bootstrap icon masks. doc/en/us/features/6.0/admin4-design.md ("Setup overview").
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminSetupOverviewTest.php
  *
@@ -398,7 +398,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
     /**
      * The Design and Audit tabs can leave the top menu without losing a page: each has a group of the Setup menu
      * (GroupTabs[]) that lists its own menu (GroupSections[]) and its tab's page, shown only while the tab is not in
-     * the top menu; by default every tab stays (HiddenTabs[] is empty). doc/features/6.0/admin4-design.md,
+     * the top menu; by default every tab stays (HiddenTabs[] is empty). doc/en/us/features/6.0/admin4-design.md,
      * "Moving a tab into Setup".
      */
     public function testTheDesignAndAuditTabsHaveAGroupOfTheSetupMenu()

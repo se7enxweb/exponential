@@ -30,7 +30,7 @@ directly) and marks the order paid when the provider confirms.
 3. At checkout the event runs. A redirect gateway sends the customer to the provider; the provider calls back the site
    to confirm; the order gets its paid status.
 
-The kernel's payment classes are documented in `doc/shop/` (gateway, redirect gateway, payment object, callback
+The kernel's payment classes are documented in `doc/en/us/shop/` (gateway, redirect gateway, payment object, callback
 checker, and a PayPal example).
 
 ## The gateways you can use
@@ -64,7 +64,7 @@ The notify URL must be reachable from the internet and must not require a login.
 
 A gateway is a class extending the kernel's gateway classes (`eZPaymentGateway`, or `eZRedirectGateway` for redirect
 providers), registered in `paymentgateways.ini` of an extension, plus a module view for the provider's callback. The
-`doc/shop/examples/paypal/` pages walk through one. This is application creator work: see
+`doc/en/us/shop/examples/paypal/` pages walk through one. This is application creator work: see
 [Writing a workflow event type](../app-creators/writing-a-workflow-event-type.md).
 
 ## Related pages

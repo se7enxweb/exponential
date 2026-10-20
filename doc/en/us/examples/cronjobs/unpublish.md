@@ -14,7 +14,7 @@ Process scheduled unpublish actions on content objects.
 Entry point `cronjobs/unpublish.php`, code in `kernel/private/classes/cronjobs/unpublish.php`.
 
 > The code of cronjobs/unpublish.php, moved into a class (#207 stage 1). The file cronjobs/unpublish.php is one call to it.  
-> Guide: doc/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Guide: doc/en/us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## When it runs
 

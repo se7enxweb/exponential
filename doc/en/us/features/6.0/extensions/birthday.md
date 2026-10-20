@@ -46,7 +46,7 @@ not of this extension's file.
 
 - [xrowextract](xrowextract.md), [bccie](bccie.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/birthday.md) and [release notes](../../../changelogs/extensions/birthday.md)
+- [Chronicle](../../../history/extensions/birthday.md) and [release notes](../../../../../changelogs/extensions/birthday.md)
 - [Change ledger](../../../history/ledger/birthday.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

@@ -67,7 +67,7 @@ A reference your administrator can look up in the logs. Copy it into your report
 ## Store
 
 **Where do we see how the store is doing?**
-In the Store dashboard, the first entry of the **Store** tab (`doc/features/6.0/store-dashboard.md`;
+In the Store dashboard, the first entry of the **Store** tab (`doc/en/us/features/6.0/store-dashboard.md`;
 [Store reports](commerce/store-reports.md)).
 
 **Does Exponential handle VAT for us?**

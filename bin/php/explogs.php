@@ -3,7 +3,7 @@
 /**
  * File containing the explogs.php script.
  *
- * The log viewer on the command line, read only (doc/features/6.0/log-viewer.md):
+ * The log viewer on the command line, read only (doc/en/us/features/6.0/log-viewer.md):
  *
  *   ./console exp:logs --list                                the log files, by group, with size, time and line rate
  *   ./console exp:logs --tail=var/log/error.log --follow     follow a file (Ctrl-C ends)

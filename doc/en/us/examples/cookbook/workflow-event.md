@@ -174,7 +174,7 @@ for this page.
 - `kernel/classes/ezworkflowtype.php` (`loadAndRegisterType()`, the `STATUS_*` constants, `setTriggerTypes()`)
 - `kernel/classes/ezworkfloweventtype.php`, `kernel/classes/workflowtypes/event/ezfinishuserregister/ezfinishuserregistertype.php`
 - `kernel/common/eztemplateautoload.php` (`event_view_gui`, `event_edit_gui`), `settings/workflow.ini`
-- `doc/guides/workflows.md`, section 3
+- `doc/en/us/guides/workflows.md`, section 3
 
 ## Related pages
 

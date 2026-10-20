@@ -365,7 +365,7 @@ class ezpActiveExtensions
         }
         eZINI::resetInstance( 'site.ini' );
 
-        // Audit (doc/bc/6.0/audit.md, system.extension.change): the list and its order, before and after
+        // Audit (doc/en/us/bc/6.0/audit.md, system.extension.change): the list and its order, before and after
         if ( class_exists( 'expAuditHook' ) )
         {
             $old = isset( $beforeGroups['ExtensionSettings']['ActiveExtensions'] ) ? array_values( array_filter( (array)$beforeGroups['ExtensionSettings']['ActiveExtensions'], 'strlen' ) ) : array();

@@ -40,7 +40,7 @@ the pages linked; test each on your own installation before an incident tests it
    press *Create new*, watch the stored pages. Or from a shell:
    `php bin/php/makestaticcache.php --site=<siteaccess>`.
 2. Serve it: with Apache and `.htaccess`, copy `.htaccess_root_static` to `.htaccess`; with a virtual host, use the
-   rules of `doc/examples/staticcache_offload.conf`.
+   rules of `doc/en/us/examples/staticcache_offload.conf`.
 3. A request is answered from a file only when it is a plain GET or HEAD without a query string and without a
    session; forms, searches and signed-in users get the live page.
 4. Settings are in `settings/staticcache.ini [CacheSettings]`: `CachedURLArray[]` (what is cached),
@@ -74,7 +74,7 @@ itself ([Maintenance mode](../../../../guides/maintenance-mode.md)).
 |---|---|
 | Velocity's response cache | paused while maintenance is on; every request reaches `index.php` |
 | The application's HTTP cache | its directories are moved aside when maintenance is switched on and off |
-| The static cache | the offload rules in `.htaccess_root_static` and `doc/examples/staticcache_offload.conf` contain no check for the maintenance marker, so static files keep being served by the web server during maintenance |
+| The static cache | the offload rules in `.htaccess_root_static` and `doc/en/us/examples/staticcache_offload.conf` contain no check for the maintenance marker, so static files keep being served by the web server during maintenance |
 | A CDN | does not store the maintenance page, may keep older copies; purge after the window if content changed |
 
 During an incident, the last two rows matter: if you must take the CMS offline for repairs, cached static pages and

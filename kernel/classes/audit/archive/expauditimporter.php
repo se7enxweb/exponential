@@ -1,6 +1,6 @@
 <?php
 /**
- * Import of the 4.x text audit logs (doc/bc/6.0/audit.md, "Import of the old logs (Z4)"; exp:audit import).
+ * Import of the 4.x text audit logs (doc/en/us/bc/6.0/audit.md, "Import of the old logs (Z4)"; exp:audit import).
  *
  * Reads each file named in [AuditSettings] AuditFileNames[] and its rotated copies (.3, .2, .1, then the file
  * itself: oldest first) in the old log directory, splits entries at lines starting with "[ " — the current form

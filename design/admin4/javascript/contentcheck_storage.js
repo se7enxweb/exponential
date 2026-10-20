@@ -1,5 +1,5 @@
 /**
- * The scan of the storage files (contentcheck/storageaction, doc/features/6.0/content-checks.md): presses the
+ * The scan of the storage files (contentcheck/storageaction, doc/en/us/features/6.0/content-checks.md): presses the
  * button marked data-a4-autocontinue after a short pause, so a long scan goes on step by step by itself. Pressing
  * the button marked data-a4-stop, or any key, stops it; without JavaScript the button is pressed by hand.
  */

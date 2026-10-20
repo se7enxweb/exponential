@@ -3,7 +3,7 @@
 /**
  * File containing the exphelp.php script.
  *
- * The help system on the command line (doc/features/6.0/help-system.md):
+ * The help system on the command line (doc/en/us/features/6.0/help-system.md):
  *
  *   ./console exp:help index [--rebuild] [--list]     build the index of doc/ and describe it
  *   ./console exp:help search "clear cache"           search the help pages

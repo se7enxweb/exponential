@@ -23,7 +23,7 @@ Never edit `settings/cronjob.ini` itself: an update replaces it. Put the setting
 > runcronjobs.php, whoever starts it, until it is resumed. The state is a file per part,  
 > cronpart\_deactivated\_<part>.txt with "1" for paused, the layout extensions that paused  
 > parts already use, so a page of such an extension shows the same state. disabled ignores them.  
-> Guide: doc/features/6.0/cronjob-pause.md  
+> Guide: doc/en/us/features/6.0/cronjob-pause.md  
 
 Default: `enabled`.
 

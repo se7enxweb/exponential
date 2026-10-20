@@ -36,7 +36,7 @@ Forum topic and Forum reply; whether your site uses them depends on how it was b
 
 - **When someone registers**: the "New user registered" mail arrives (if your site sends it). Open the link, check
   the account, approve or reject it. The page asks you to confirm before anything changes
-  (`doc/features/6.0/registration-admin-links.md`).
+  (`doc/en/us/features/6.0/registration-admin-links.md`).
 - **Every week**: answer member questions, check that new members can see what they should, publish the member
   news.
 - **Every quarter**: open **Users > Check user accounts** and look at the filters *Never signed in*, *Not seen for N

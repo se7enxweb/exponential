@@ -5,7 +5,7 @@
  * than contentcheck.ini [UnreferencedSettings] IndexTTL when BuildOnRequest is false. With [MissingFileSettings]
  * CronjobReport=enabled it also counts the missing files and alias problems of the whole tree and writes the count
  * to the cronjob output (a warning when there are any); it never resolves anything.
- * Guide: doc/features/6.0/content-checks.md
+ * Guide: doc/en/us/features/6.0/content-checks.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

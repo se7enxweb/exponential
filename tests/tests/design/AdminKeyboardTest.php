@@ -4,7 +4,7 @@
  * show/hide tabs toggle is a button that reports its state, the open/close link of the content tree is a named
  * button with aria-expanded (contentstructuremenu_dynamic.js), and the calendar of the date fields opens from a
  * button. The behaviour itself (arrow keys, Home, End, focus) is in the scripts; this test holds the markup and the
- * hooks they rely on. doc/features/6.0/admin4-design.md.
+ * hooks they rely on. doc/en/us/features/6.0/admin4-design.md.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminKeyboardTest.php
  *

@@ -1,7 +1,7 @@
 /*
  * admin4 user/unactivated: the selection count of the unactivated accounts.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md). The text comes from #user-unactivated-data.
+ * (doc/en/us/features/6.0/content-security-policy.md). The text comes from #user-unactivated-data.
  */
 var expUserUnactivatedData = document.getElementById( 'user-unactivated-data' );
 var expUnactText = {

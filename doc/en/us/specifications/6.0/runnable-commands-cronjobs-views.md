@@ -129,4 +129,4 @@ Tests: unit tests for the base classes and every moved entry point.
 - [CLI, cronjob and view abstractions](../../bc/6.0/cli_cronjob_view_abstractions.md), [RAD extension points](../../bc/6.0/rad-extension-points.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
 - [Cronjobs console](../../features/6.0/cronjobs-console.md), [content jobs](../../features/6.0/content-jobs.md), [Exp Debug bar](../../features/6.0/exp-debug-bar.md)
 - [Audit event model](audit-event-model.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [October 2026 chronicle](../../history/2026/2026-10.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md), [October 2026 chronicle](../../history/2026/2026-10.md)

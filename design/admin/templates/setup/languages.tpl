@@ -1,4 +1,4 @@
-{* Setup > Interface languages (setup/languages; doc/languages.md, "Translation fallbacks"). Variables:
+{* Setup > Interface languages (setup/languages; doc/en/us/languages.md, "Translation fallbacks"). Variables:
    language_rows (locale, english, native, http, own, kind: own, fallback or untranslated, has_coverage, coverage, pct,
    from, chain: list of target, source, rule, rule_kind: configured, automatic or rule, translated; problem,
    problem_target, extensions: total, translated, complete, average), language_counts (own, fallback, untranslated),

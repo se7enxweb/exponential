@@ -11,7 +11,7 @@
 
    The same file is in design/admin and design/admin4. The page uses the shared admin components (components.css)
    and stylesheets/modules/setup.css (.a4-setup-*). Everything works without javascript, except the "Copy" button, which is only shown with it.
-   Guide: doc/guides/system-information.md *}
+   Guide: doc/en/us/guides/system-information.md *}
 {def $si = $system_report
      $si_state_class = hash( 'ok', 'is-ok', 'warn', 'is-warn', 'fail', 'is-bad', 'info', 'is-info' )
      $si_state_label = hash( 'ok', 'OK'|i18n( 'design/admin/setup/info' ),
@@ -315,7 +315,7 @@
             </li>
         {/foreach}
         </ul>
-        <p class="a4-help">{'The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md'|i18n( 'design/admin/setup/info' )}</p>
+        <p class="a4-help">{'The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md'|i18n( 'design/admin/setup/info' )}</p>
     </div>
 </details>
 {undef $sa_map $sa_probe_label $sa_kind_label}
@@ -625,7 +625,7 @@
             {else}
             <p class="a4-help">{'Switch the profile on to see how many statements each request runs, how many are exact repeats, and what a query cache would save.'|i18n( 'design/admin/setup/info' )}</p>
             {/if}
-            <p class="a4-help">{'The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. "Memo saves" is what the request mode would save, "shared cache saves" what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.'|i18n( 'design/admin/setup/info' )}</p>
+            <p class="a4-help">{'The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. "Memo saves" is what the request mode would save, "shared cache saves" what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.'|i18n( 'design/admin/setup/info' )}</p>
             {if $can_flush_caches}
             <form method="post" action={'/setup/info'|ezurl} class="a4-actions">
                 {if $sql_profile.on}

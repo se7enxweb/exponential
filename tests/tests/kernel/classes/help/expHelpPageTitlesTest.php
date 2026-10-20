@@ -1,7 +1,7 @@
 <?php
 /**
  * Clearer titles and summaries for pages whose own are unclear (exphelp.ini [TitleSettings],
- * doc/features/6.0/help-system.md, "Titles of unclear pages"), without a database.
+ * doc/en/us/features/6.0/help-system.md, "Titles of unclear pages"), without a database.
  *
  *  HT-01  Titles[<path>] replaces the title a page gives itself; Summaries[<path>] its summary
  *  HT-02  TitleRules[] templates fill {title}, {name}, {fileversion} and {dirversion}; first match wins
@@ -19,12 +19,12 @@ class expHelpPageTitlesTest extends PHPUnit\Framework\TestCase
     private static function audience()
     {
         return new expHelpAudience( array(
-            'titles' => array( 'doc/standards/header.txt' => 'Source file header template', 'doc/empty.txt' => '  ' ),
-            'summaries' => array( 'doc/standards/header.txt' => 'The old header.' ),
+            'titles' => array( 'doc/en/us/standards/header.txt' => 'Source file header template', 'doc/empty.txt' => '  ' ),
+            'summaries' => array( 'doc/en/us/standards/header.txt' => 'The old header.' ),
             'titleRules' => array(
                 'doc/changelogs/*/CHANGELOG-desc-*;Release {fileversion} summary: {title}',
-                'doc/features/*/event.*;{title} ({dirversion})',
-                'doc/features/*/odd_*;{name}',
+                'doc/en/us/features/*/event.*;{title} ({dirversion})',
+                'doc/en/us/features/*/odd_*;{name}',
                 'doc/blank/*;  ',
             ),
         ) );
@@ -39,7 +39,7 @@ class expHelpPageTitlesTest extends PHPUnit\Framework\TestCase
     /** HT-01 */
     public function testExactTitleAndSummary()
     {
-        $page = self::index()->describe( 'doc/standards/header.txt', "//\n// Definition of classname class\n//\n" );
+        $page = self::index()->describe( 'doc/en/us/standards/header.txt', "//\n// Definition of classname class\n//\n" );
         $this->assertSame( 'Source file header template', $page['title'] );
         $this->assertSame( 'The old header.', $page['summary'] );
     }
@@ -50,14 +50,14 @@ class expHelpPageTitlesTest extends PHPUnit\Framework\TestCase
         $a = self::audience();
         $this->assertSame( 'Release 2.9-3 summary: Bug fixes', $a->pageTitle( 'doc/changelogs/2.9/CHANGELOG-desc-2.9-3', 'Bug fixes' ) );
         $this->assertSame( 'Release 3.1.0-1 summary: First release', $a->pageTitle( 'doc/changelogs/3.1/CHANGELOG-desc-3.1.0-1', 'First release.' ) );
-        $this->assertSame( 'Event system (4.5)', $a->pageTitle( 'doc/features/4.5/event.txt', 'Event system' ) );
-        $this->assertSame( 'Odd name here', $a->pageTitle( 'doc/features/3.9/odd_name_here.txt', 'x' ) );
+        $this->assertSame( 'Event system (4.5)', $a->pageTitle( 'doc/en/us/features/4.5/event.txt', 'Event system' ) );
+        $this->assertSame( 'Odd name here', $a->pageTitle( 'doc/en/us/features/3.9/odd_name_here.txt', 'x' ) );
     }
 
     /** HT-03 */
     public function testFrontMatterWins()
     {
-        $page = self::index()->describe( 'doc/standards/header.txt', "---\ntitle: Mine\nsummary: My summary.\n---\n# Heading\n", array( 'format' => 'markdown' ) );
+        $page = self::index()->describe( 'doc/en/us/standards/header.txt', "---\ntitle: Mine\nsummary: My summary.\n---\n# Heading\n", array( 'format' => 'markdown' ) );
         $this->assertSame( 'Mine', $page['title'] );
         $this->assertSame( 'My summary.', $page['summary'] );
     }
@@ -66,11 +66,11 @@ class expHelpPageTitlesTest extends PHPUnit\Framework\TestCase
     public function testNoEntryKeepsOwnTitle()
     {
         $a = self::audience();
-        $this->assertSame( 'Own', $a->pageTitle( 'doc/guides/x.md', 'Own' ) );
+        $this->assertSame( 'Own', $a->pageTitle( 'doc/en/us/guides/x.md', 'Own' ) );
         $this->assertSame( 'Own', $a->pageTitle( 'doc/empty.txt', 'Own' ) );
         $this->assertSame( 'Own', $a->pageTitle( 'doc/blank/a.txt', 'Own' ) );
-        $this->assertSame( 'kept', $a->pageSummary( 'doc/guides/x.md', 'kept' ) );
-        $page = self::index()->describe( 'doc/guides/x.md', "# A guide\n\nText.\n", array( 'format' => 'markdown' ) );
+        $this->assertSame( 'kept', $a->pageSummary( 'doc/en/us/guides/x.md', 'kept' ) );
+        $page = self::index()->describe( 'doc/en/us/guides/x.md', "# A guide\n\nText.\n", array( 'format' => 'markdown' ) );
         $this->assertSame( 'A guide', $page['title'] );
     }
 

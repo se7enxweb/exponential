@@ -70,7 +70,7 @@ in the software depends on the project.
 | Ask | Good answer shows |
 |---|---|
 | Who on your staff knows Exponential? | Named roles, training completed ([Course catalogue](../../../trainers/course-catalogue.md)) |
-| How do you learn of a new release? | Watching the repository releases and changelog ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)) |
+| How do you learn of a new release? | Watching the repository releases and changelog ([6.0.15 changelog](../../../../../../changelogs/6.0/6.0.15.md)) |
 | How do you test an update before production? | A staging copy and a written procedure ([Upgrading customer sites](../../../hosting/operations/upgrading-customer-sites.md)) |
 | What do you do when the fix is upstream? | An issue in the public tracker, a pull request, or the partner ticket route ([Filing bugs as a partner](../../../partners/filing-bugs-as-a-partner.md)) |
 

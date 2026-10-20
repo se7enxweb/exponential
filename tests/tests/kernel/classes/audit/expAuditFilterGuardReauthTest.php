@@ -1,6 +1,6 @@
 <?php
 /**
- * The filter, write-failure and re-authentication fixes (doc/bc/6.0/audit.md, formerly Appendix C):
+ * The filter, write-failure and re-authentication fixes (doc/en/us/bc/6.0/audit.md, formerly Appendix C):
  *
  *  AG-01 — name patterns: *, a prefix ending in .*, a whole name are valid; access.session.login*, access.*.failed,
  *          a bare prefix, an unknown domain and malformed ranks are refused with a reason; the forms match as documented

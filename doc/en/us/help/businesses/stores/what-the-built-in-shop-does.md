@@ -112,7 +112,7 @@ work ([App creators: start here](../../creators/app-creators/app-creators-start-
 - The dashboard tells a small team what needs attention, without reports to build.
 - Long-lived code: the shop's classes carry copyright lines going back to 1998
   (for example `kernel/classes/ezvattype.php`), and the 6.0.15 release still added to it
-  ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
+  ([Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md)).
 
 ## Related pages
 

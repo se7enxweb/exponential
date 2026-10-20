@@ -1,6 +1,6 @@
 <?php
 /**
- * A help page as a PDF file (doc/features/6.0/help-system.md, "Print and PDF"): the view exphelp/pdf/<page id> and
+ * A help page as a PDF file (doc/en/us/features/6.0/help-system.md, "Print and PDF"): the view exphelp/pdf/<page id> and
  * `./console exp:help pdf <page id>` ask here.
  *
  * Only pages of the help index are made (expHelpDocumentIndex::document() and source(): git-tracked, allowed, not

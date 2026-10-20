@@ -1,7 +1,7 @@
 <?php
 /**
  * The request and client address filters of the log viewer compare what the viewer is shown, on every path that
- * filters (doc/features/6.0/log-viewer.md, "Search"), without a database.
+ * filters (doc/en/us/features/6.0/log-viewer.md, "Search"), without a database.
  *
  *  LV-220  expLogRedactor::ip(): IPv4, IPv6 and its compressed forms (2001::7334, fe80::1, ::1), a value written masked
  *          already; a "Class::method" in a text is left alone

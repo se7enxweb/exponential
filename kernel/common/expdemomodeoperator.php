@@ -14,7 +14,7 @@
  *   {if exp_demo_mode()}{include uri='design:parts/exp_demo_mode_banner.tpl'}{/if}
  *
  * It is worked out each time the template runs, never when it is compiled, so a compiled template and a persistent
- * worker always show the mode the environment has now. Guide: doc/bc/6.0/demo-mode.md.
+ * worker always show the mode the environment has now. Guide: doc/en/us/bc/6.0/demo-mode.md.
  *
  * @package kernel
  */

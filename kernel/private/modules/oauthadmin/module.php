@@ -49,7 +49,7 @@ $ViewList['view'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
 );
 
-// The personal API keys of every user (doc/guides/api-keys.md): figures, search and filters, revoke.
+// The personal API keys of every user (doc/en/us/guides/api-keys.md): figures, search and filters, revoke.
 // oauthadmin/keys/(user)/<id> is one user's keys, linked from the user's settings page.
 $ViewList['keys'] = array(
     'script' => 'keys.php',

@@ -1,5 +1,5 @@
 <?php /* #?ini charset="utf-8"?
-# The three worked examples of doc/bc/6.0/subitems-table-options.md ("Adding a column in
+# The three worked examples of doc/en/us/bc/6.0/subitems-table-options.md ("Adding a column in
 # 3 minutes"), exactly as the guide prints them. expSubitemsGuideExamplesTest loads this file.
 
 [Column_mydaysonline]

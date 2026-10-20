@@ -1,6 +1,6 @@
 <?php
 /**
- * The streamed export of the audit console and its background job (doc/bc/6.0/audit.md, "Export", #393).
+ * The streamed export of the audit console and its background job (doc/en/us/bc/6.0/audit.md, "Export", #393).
  *
  * Live-database tests like expAuditIndexTest: the kernel is started on the admin siteaccess against the installation's
  * own database; the records are written by the audit into a throwaway directory under var/tmp/ and routed to the

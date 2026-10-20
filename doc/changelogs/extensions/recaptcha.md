@@ -2,7 +2,7 @@
 
 Read this page before you install or update `recaptcha`, or to find out which release brought a change.
 
-What each release of `recaptcha` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/recaptcha.md); the story is in the [chronicle](../../history/extensions/recaptcha.md).
+What each release of `recaptcha` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/recaptcha.md); the story is in the [chronicle](../../en/us/history/extensions/recaptcha.md).
 
 ## v1.4.5 (2026-09-30)
 
@@ -66,8 +66,8 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 ## Related pages
 
-- [Feature page](../../features/6.0/extensions/recaptcha.md)
-- [Chronicle](../../history/extensions/recaptcha.md)
-- [Change ledger](../../history/ledger/recaptcha.md)
-- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- Months: [2024-08](../../history/extensions/months/2024-08.md), [2024-09](../../history/extensions/months/2024-09.md), [2026-03](../../history/extensions/months/2026-03.md), [2026-09](../../history/extensions/months/2026-09.md)
+- [Feature page](../../en/us/features/6.0/extensions/recaptcha.md)
+- [Chronicle](../../en/us/history/extensions/recaptcha.md)
+- [Change ledger](../../en/us/history/ledger/recaptcha.md)
+- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-08](../../en/us/history/extensions/months/2024-08.md), [2024-09](../../en/us/history/extensions/months/2024-09.md), [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-09](../../en/us/history/extensions/months/2026-09.md)

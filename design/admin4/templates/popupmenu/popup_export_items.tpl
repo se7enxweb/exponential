@@ -1,7 +1,7 @@
 {* The entries of the export menus, one definition for both: Advanced > Export of the context menus
    (popupmenu/popup_sub_advance_menu.tpl) and the node view's Import/Export menu (popupmenu/popup_import_export_menu.tpl,
    node/view/import_export_button.tpl). Each entry opens its tool's form filled in for the item (%nodeID%); nothing is
-   exported or imported from a menu. Guide: doc/bc/6.0/content-export-menu.md
+   exported or imported from a menu. Guide: doc/en/us/bc/6.0/content-export-menu.md
    Parameters: $menu_id (the menu the items are in, whose menuArray entry exists before), $item_prefix (of the item
    ids), $sub_menu_depth (the depth of the items' submenus), $with_import (also the import and job entries).
    - the package entries: fetch( 'package', 'content_export_access' ) (package/create with the content object wizard,

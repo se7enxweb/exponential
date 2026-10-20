@@ -71,7 +71,7 @@ Also: 1 merge or funding-metadata commits by the team (no user benefit; see the 
 ## Related pages
 
 - [Site bundles](../../features/6.0/platform-site-bundles.md)
-- [Release changelog](../../changelogs/extensions/mediata-ezpage-fieldtype-bundle-main.md)
+- [Release changelog](../../../../changelogs/extensions/mediata-ezpage-fieldtype-bundle-main.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

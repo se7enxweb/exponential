@@ -9,7 +9,7 @@
  * The class is also the one place for how values are shown: the cell HTML (html()) and the CSV
  * text (text()) by Type=, and the formatting helpers every column shares (escape(), oneLine(),
  * markupToText(), formatDate(), formatAge(), days(), formatBytes()).
- * Guide: doc/bc/6.0/subitems-table-options.md
+ * Guide: doc/en/us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

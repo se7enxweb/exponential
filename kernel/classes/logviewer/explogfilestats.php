@@ -1,6 +1,6 @@
 <?php
 /**
- * The line rate of the navigator: how many lines a minute each log file gains (doc/features/6.0/log-viewer.md,
+ * The line rate of the navigator: how many lines a minute each log file gains (doc/en/us/features/6.0/log-viewer.md,
  * "The navigator").
  *
  * The navigator lists sizes and times from stat() anyway; the rate is the growth in bytes between two of those

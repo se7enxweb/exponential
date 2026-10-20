@@ -75,4 +75,4 @@ default, scope) and ends with "Related pages".
 ## Related pages
 
 - [Glossary](../../glossary.md), [Guides](../../guides/README.md), [History](../../history/README.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)

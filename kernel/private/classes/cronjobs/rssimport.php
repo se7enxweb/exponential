@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of cronjobs/rssimport.php, moved into a class (#207 stage 1). The file cronjobs/rssimport.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of cronjobs/rssimport.php:
@@ -49,7 +49,7 @@ function rssImport1( $root, $rssImport, $cli )
 }
 
 /*!
-  Records an RSS import that ran (doc/bc/6.0/audit.md, data.import.rss)
+  Records an RSS import that ran (doc/en/us/bc/6.0/audit.md, data.import.rss)
 */
 function rssImportAudit( $rssImport, $addCount )
 {

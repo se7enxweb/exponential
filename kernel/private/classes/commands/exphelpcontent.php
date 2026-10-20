@@ -3,7 +3,7 @@
  * @description Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall
  * @alias exp:help:content
  *
- * File containing the exp:help:content command (doc/features/6.0/help-content.md, doc/specifications/6.0/help-system.md).
+ * File containing the exp:help:content command (doc/en/us/features/6.0/help-content.md, doc/en/us/specifications/6.0/help-system.md).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

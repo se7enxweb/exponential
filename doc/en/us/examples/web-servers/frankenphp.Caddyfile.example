@@ -1,6 +1,6 @@
 # Exponential 6: FrankenPHP on its own (without exp:velocity)
 #
-# Free documentation: GFDL 1.3 or later, see doc/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
+# Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
 #
 # The shape of the Caddyfile that "exp:velocity" generates for its FrankenPHP
 # engine (kernel/classes/expvelocityfrankenphp.php, caddyfileText(), in

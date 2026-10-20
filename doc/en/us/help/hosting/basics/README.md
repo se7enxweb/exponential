@@ -12,7 +12,7 @@ type: help
 This section is for everyone at a hosting company who needs to know what Exponential asks of a server before an
 offer is designed, a server is built or a customer is helped: product managers, system administrators and support
 staff. It answers one question per page: what does the software need, and what does that mean for the way you host
-it. Every fact on these pages is taken from the repository (the installation book in `doc/install/`, the help pages
+it. Every fact on these pages is taken from the repository (the installation book in `doc/en/us/install/`, the help pages
 on [database support](../../database-support.md) and [operating system support](../../os-support.md), and the
 shipped settings in `settings/`), and each page links to its sources so you can check them.
 

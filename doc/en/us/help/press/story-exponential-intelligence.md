@@ -38,8 +38,8 @@ It is the extension `se7enxweb/expai`, required by the kernel from the 6.0.15 de
 | What | When | Source |
 |---|---|---|
 | The repository `expai` is created | 11 October 2026 | [Who is 7x?, timeline](../who-is-7x.md#nearly-thirty-years-the-timeline) |
-| Read services as tools of the assistant | 11 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#11-october-2026-read-services-as-tools-of-the-assistant) |
-| `composer.json` requires `se7enxweb/expai`; the job queue `expqueue` too | 12 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution) |
+| Read services as tools of the assistant | 11 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#11-october-2026-read-services-as-tools-of-the-assistant) |
+| `composer.json` requires `se7enxweb/expai`; the job queue `expqueue` too | 12 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution) |
 | First release of the extension, 0.0.1.0 | the sources give no date | [expai, In short](../../features/6.0/extensions/expai.md#in-short) |
 
 The 6.0.15 line is in development and not released.
@@ -57,7 +57,7 @@ The 6.0.15 line is in development and not released.
 | "EI: Summary" is one printable page for a data protection officer. | same |
 | It can suggest alternative text for images and report images that lack it. | [expai, For editors](../../features/6.0/extensions/expai.md#for-editors) |
 | On a new installation it is active for the administration, but "Without a key it stays idle and sends nothing." | [README, How to enable it](https://github.com/se7enxweb/exponential/blob/main/README.md#how-to-enable-it) |
-| On an upgraded installation it arrives inactive until an administrator activates it. | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution) |
+| On an upgraded installation it arrives inactive until an administrator activates it. | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution) |
 
 ## What not to claim
 

@@ -35,7 +35,7 @@ Each operator has a page in the extension's `doc/operators` folder.
 - [String template operators](../string-template-operators.md)
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/swark.md) and [release notes](../../../changelogs/extensions/swark.md)
+- [Chronicle](../../../history/extensions/swark.md) and [release notes](../../../../../changelogs/extensions/swark.md)
 - [Change ledger](../../../history/ledger/swark.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

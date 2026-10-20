@@ -412,7 +412,7 @@ wiki article ["Reseting the admin password in eZ publish"](https://ezpedia.expon
 on eZpedia, written by kracker, xavier, Graham Brookins and other contributors since 2006, and distributed under the
 GNU Free Documentation License. The adapted text was rewritten and corrected for Exponential 6 and is distributed under
 the GNU Free Documentation License 1.3 or any later version, like the rest of this documentation
-(<https://www.gnu.org/licenses/fdl-1.3.html>; the copyright and permission notice is `doc/README-LICENSE.md`).
+(<https://www.gnu.org/licenses/fdl-1.3.html>; the copyright and permission notice is `doc/en/us/README-LICENSE.md`).
 Everything else on this page was written from the Exponential 6 source code.
 
 **Demo mode.** On a public demo (environment variable `EXP_DEMO_MODE=1`, a **Demo mode** banner in the administration) none of the ways on this page works for an administrator: the page, the forgot-password link, the edit form, `exp:resetuserpassword` and the web services all refuse with "This installation is a public demo: the passwords of administrators cannot be changed or reset." To change it, the server's owner removes the variable first. [Demo mode](demo-mode.md).

@@ -43,7 +43,7 @@ About 6.0.3:
 - [sevenx_themes_simple](sevenx_themes_simple.md): the simple theme's rating view loads the jQuery script
 - [Backend ezjscore services](../../../bc/6.0/backend_ezjscore_services.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
-- [Chronicle](../../../history/extensions/ezstarrating.md) and [release notes](../../../changelogs/extensions/ezstarrating.md)
+- [Chronicle](../../../history/extensions/ezstarrating.md) and [release notes](../../../../../changelogs/extensions/ezstarrating.md)
 - [Change ledger](../../../history/ledger/ezstarrating.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

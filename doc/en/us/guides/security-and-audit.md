@@ -297,6 +297,6 @@ The idea and the draft handling come from LoveStack (Mugo Web, commit 826e1d4647
 
 - The threats one by one, and request-shield in front: [Security hardening](../help/security-hardening.md); the administrator account: [Change the administrator password](../help/change-the-admin-password.md), [The default administrator password](../help/default-administrator-password.md).
 - Control a site from scripts and apps with tokens: [remote services and apps](remote-services-and-apps.md).
-- Upgrade impact of the security changes: [behaviour changes of 1-2 October 2026](../bc/6.0/behaviour-changes-2026-10.md), [security hardening of August 2026](../specifications/6.0/security-hardening-2026-08.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
+- Upgrade impact of the security changes: [behaviour changes of 1-2 October 2026](../bc/6.0/behaviour-changes-2026-10.md), [security hardening of August 2026](../specifications/6.0/security-hardening-2026-08.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md).
 - How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [September 2026, second half](../history/2026/2026-09b.md).
 - Other guides: [Operating a site](operating-a-site.md) (logs, backups, repairs), [Extensions](extensions.md) (two-factor and other extensions), [Glossary](../glossary.md).

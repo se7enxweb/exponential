@@ -1,6 +1,6 @@
 <?php
 /**
- * E-books of help maintained as content (doc/features/6.0/help-content.md, "E-books"), without a database: the
+ * E-books of help maintained as content (doc/en/us/features/6.0/help-content.md, "E-books"), without a database: the
  * pieces of the EPUB writer that decide what goes into the book.
  *
  *  HCE-01  headings move below the topic's title, never inside fenced code, at most to h6

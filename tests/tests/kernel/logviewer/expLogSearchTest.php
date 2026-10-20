@@ -1,6 +1,6 @@
 <?php
 /**
- * Searching log files within limits (doc/features/6.0/log-viewer.md, "Searching"), on synthetic files.
+ * Searching log files within limits (doc/en/us/features/6.0/log-viewer.md, "Searching"), on synthetic files.
  *
  *  LV-40  criteria(): levels, from/to (a day ends at 23:59:59), ip, reference, a text too long, an invalid expression
  *  LV-41  compile() and textMatches(): literal and regular expression, case, a ~ in the pattern

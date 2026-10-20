@@ -322,7 +322,7 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
         {
             $this->assertArrayHasKey( $name, $catalogue );
             $this->assertSame( 'access', $catalogue[$name]['channel'] );
-            $this->assertStringContainsString( "| `$name` |", self::read( 'doc/bc/6.0/audit.md' ) );
+            $this->assertStringContainsString( "| `$name` |", self::read( 'doc/en/us/bc/6.0/audit.md' ) );
         }
         $this->assertSame( 'create', expAuditHook::withVerb( 'access.user.deactivated_group.create', array() )['verb'] );
     }

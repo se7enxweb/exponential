@@ -59,7 +59,7 @@ Category=listing
 
 ![Layouts, Components: the layout types, zones and block definitions the installation offers](../../images/layouts/layout-components.webp)
 
-The exact list and categories are in the INI file; `doc/bc/6.0/LAYOUTS.md` has a block catalogue with parameters.
+The exact list and categories are in the INI file; `doc/en/us/bc/6.0/LAYOUTS.md` has a block catalogue with parameters.
 
 ## Adding a view type: no PHP
 
@@ -87,7 +87,7 @@ and `design/mytheme/templates/explayouts/block/list/mytheme_cards.tpl`. See [Blo
 
 A new block type needs a handler class (PHP), so it is a developer's task: register it with `Name`, `Handler`,
 `ViewTypes[]` (and `HasCollection=1` for content), add a template per view type under `block/`, regenerate autoloads and
-clear caches (`doc/bc/6.0/LAYOUTS.md`, "Extending the system"). A container rarely needs its own handler:
+clear caches (`doc/en/us/bc/6.0/LAYOUTS.md`, "Extending the system"). A container rarely needs its own handler:
 `expLayoutsContainerBlockHandler` with `IsContainer=1` and `Placeholders[]` is enough.
 
 ## Related pages

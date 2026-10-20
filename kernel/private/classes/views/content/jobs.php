@@ -6,7 +6,7 @@
  * Resume actions. A user sees the jobs they started; with the content/jobs policy, /(all)/1 lists everybody's.
  * Query parameters: state, type, user (a user id, all jobs only), sort (created|started|duration|items|state),
  * order (asc|desc), offset.
- * Guide: doc/bc/6.0/content-jobs.md
+ * Guide: doc/en/us/bc/6.0/content-jobs.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

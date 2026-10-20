@@ -212,4 +212,4 @@ both. Tests: `tests/tests/kernel/classes/expCacheManagerTest.php`.
 - [Velocity response cache](../../features/6.0/velocity-response-cache.md)
 - [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)

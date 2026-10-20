@@ -20,7 +20,7 @@ Never edit `settings/cronjob.ini` itself: an update replaces it. Put the setting
 ## SiteURL
 
 > The link check (linkcheck.php, part infrequent) tests the links of published content.  
-> Guide: doc/guides/urls-and-aliases.md  
+> Guide: doc/en/us/guides/urls-and-aliases.md  
 >
 > Specify full path of all site URL; a path that is not a URL alias or module  
 > view is tried on these addresses.  

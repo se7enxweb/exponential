@@ -26,7 +26,7 @@
  * sign-in or of the last request after a longer pause (ezuservisit.current_visit_timestamp, which a sign-out stores
  * negated), not the visit before it that eZUser::lastVisit() gives.
  *
- * Guide: doc/features/6.0/user-hygiene.md
+ * Guide: doc/en/us/features/6.0/user-hygiene.md
  */
 class expUserHygiene
 {

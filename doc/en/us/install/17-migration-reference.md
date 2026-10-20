@@ -287,7 +287,7 @@ Extension datatypes found in this installation:
 
 Only pairs that can be shown to describe the same thing are listed. The YAML keys were checked against the generated
 configuration reference and the `ibexa.yaml` files of the Ibexa 5 reference installation; the database and file pairs
-are also the ones the legacy bridge maps automatically (`doc/specifications/6.0/legacy-bridge-bundle.md`).
+are also the ones the legacy bridge maps automatically (`doc/en/us/specifications/6.0/legacy-bridge-bundle.md`).
 `<scope>` is a siteaccess, a siteaccess group or `default`, under `ibexa.system`.
 
 ### Siteaccesses, languages and design

@@ -19,7 +19,7 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 
 ## Mode
 
-> The Content Security Policy of the pages (doc/features/6.0/content-security-policy.md):  
+> The Content Security Policy of the pages (doc/en/us/features/6.0/content-security-policy.md):  
 > which scripts, stylesheets, images and connections a page may use. It is sent  
 > beside the security headers of \[HTTPHeaderSettings\] SecurityHeaders\[\].  
 >

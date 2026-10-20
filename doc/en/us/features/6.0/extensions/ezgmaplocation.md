@@ -56,7 +56,7 @@ The included filter fetches by distance, sorted by closeness:
 ## Related pages
 
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/ezgmaplocation.md) and [release notes](../../../changelogs/extensions/ezgmaplocation.md)
+- [Chronicle](../../../history/extensions/ezgmaplocation.md) and [release notes](../../../../../changelogs/extensions/ezgmaplocation.md)
 - [Change ledger](../../../history/ledger/ezgmaplocation.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-04](../../../history/extensions/months/2026-04.md), [2026-09](../../../history/extensions/months/2026-09.md) (all extensions)

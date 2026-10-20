@@ -123,7 +123,7 @@ class ezpRepairQueue
         file_put_contents( $file, $text, LOCK_EX );
         @chmod( $file, self::fileMode( 0640 ) );
 
-        // Audit (doc/bc/6.0/audit.md, system.repair.queue): whether a key is set, never the key or its hash. The
+        // Audit (doc/en/us/bc/6.0/audit.md, system.repair.queue): whether a key is set, never the key or its hash. The
         // audit may be one of the things missing here, so it is only asked for when its class can be loaded.
         try
         {

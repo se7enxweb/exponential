@@ -2,7 +2,7 @@
    kept by expRoleGrantCheck::remember() and shown once by role/edit, role/view and role/copy.
    Variable: refusal (what: policy, save, assign, copy, or deactivated_group: the group of deactivated users was
    left out of an assignment, see expUserDeactivation::withoutGroup(); grants: the refused policies in words). Every
-   text is escaped. The same file is in design/admin and design/admin4. Guide: doc/guides/roles-and-policies.md *}
+   text is escaped. The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/roles-and-policies.md *}
 {if and( $refusal, eq( $refusal.what, 'deactivated_group' ) )}
 <div class="a4-notice is-warn" role="alert" id="role-deactivated-group-refused">
     <p><strong>{'The role was not assigned to the group of deactivated users.'|i18n( 'design/admin/role/grant' )}</strong>

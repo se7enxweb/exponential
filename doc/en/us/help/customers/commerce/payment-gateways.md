@@ -76,7 +76,7 @@ Providers change their interfaces, signatures and security rules. When they anno
 ## Adding or changing a provider
 
 Another provider needs a gateway extension: a class extending `eZPaymentGateway` or `eZRedirectGateway`, documented
-in `doc/shop/` and walked through in `doc/shop/examples/paypal/`. That is partner work. Ask for a redirect-style
+in `doc/en/us/shop/` and walked through in `doc/en/us/shop/examples/paypal/`. That is partner work. Ask for a redirect-style
 gateway where possible, so card data does not pass your site ([Card payments and PCI](card-payments-and-pci.md)).
 
 ## Questions for your partner

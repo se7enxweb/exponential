@@ -1,4 +1,4 @@
-{* The start location of a content check (doc/features/6.0/content-checks.md, "Where a check starts"), shared by
+{* The start location of a content check (doc/en/us/features/6.0/content-checks.md, "Where a check starts"), shared by
    every check that takes one. Include it inside the check's GET filter form (an a4-filterbar):
 
      {include uri='design:contentcheck/scope.tpl' scope=$scope}

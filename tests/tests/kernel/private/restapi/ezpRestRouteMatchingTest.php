@@ -1,6 +1,6 @@
 <?php
 /**
- * How the REST router picks a route (doc/guides/api-keys.md, "Routes of the ezp provider").
+ * How the REST router picks a route (doc/en/us/guides/api-keys.md, "Routes of the ezp provider").
  *
  *  RM-01 a route that matches the path but not the method no longer ends the search: the next route is tried
  *  RM-02 405 only when no route takes the method; Allow lists the methods of every route that matched the path

@@ -69,7 +69,7 @@ Registered in `kernel/common/eztemplateautoload.php`:
 | `module_params` | module and view of the current request |
 | `ezpackage` | package information |
 | `eztoc` | a table of contents of rich text |
-| `ezmodule` | module information (see `doc/features/3.10/ezmodule_template_operator.txt`) |
+| `ezmodule` | module information (see `doc/en/us/features/3.10/ezmodule_template_operator.txt`) |
 | `installation_name`, `is_production_system` | the installation's name and whether it is production |
 | `audit_label` | labels of the audit log |
 | `exp_environment`, `exp_environment_badge` | the environment (development, staging, production) and its badge |

@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/view.php, moved into a class (#207 stage 1). The file kernel/content/view.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/view.php:
@@ -77,7 +77,7 @@ class View extends \Exponential\Runnable\ModuleView
         if ( $testingHandler->isEnabled() )
             $NodeID = $testingHandler->execute( $NodeID );
 
-        // Audit (doc/bc/6.0/audit.md, content.node.view): a sampled read, never the rendered page
+        // Audit (doc/en/us/bc/6.0/audit.md, content.node.view): a sampled read, never the rendered page
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::read( 'content.node.view', $NodeID, function () use ( $NodeID, $Params ) {
                 return array( 'object' => array( 'type' => 'node', 'id' => (int)$NodeID ),

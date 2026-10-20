@@ -1,6 +1,6 @@
 # Installer and package repositories: history
 
-*Part of the [Exponential Velocity history](README.md).* This page covers the two small repositories that carry the legacy installers: `ezwebin-ezpackage` (the site packages the setup wizard installs) and `exponential-legacy-installer` (the Composer installer that puts the legacy kernel and its extensions in place). Release notes of both are also in [ezwebin-ezpackage](../../changelogs/extensions/ezwebin-ezpackage.md) and [exponential-legacy-installer](../../changelogs/extensions/exponential-legacy-installer.md); the package map is in [platform package map](../../specifications/6.0/platform-package-map.md).
+*Part of the [Exponential Velocity history](README.md).* This page covers the two small repositories that carry the legacy installers: `ezwebin-ezpackage` (the site packages the setup wizard installs) and `exponential-legacy-installer` (the Composer installer that puts the legacy kernel and its extensions in place). Release notes of both are also in [ezwebin-ezpackage](../../../../changelogs/extensions/ezwebin-ezpackage.md) and [exponential-legacy-installer](../../../../changelogs/extensions/exponential-legacy-installer.md); the package map is in [platform package map](../../specifications/6.0/platform-package-map.md).
 
 ## In short
 

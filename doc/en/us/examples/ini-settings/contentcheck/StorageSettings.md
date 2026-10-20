@@ -19,7 +19,7 @@ Never edit `settings/contentcheck.ini` itself: an update replaces it. Put the se
 
 ## ScanDirectoryList
 
-> The storage files (doc/features/6.0/content-checks.md, "Storage files"): files below  
+> The storage files (doc/en/us/features/6.0/content-checks.md, "Storage files"): files below  
 > var/<site>/storage that no content uses, and the file-system problems of those it uses.  
 > The directories below the storage that are scanned  
 

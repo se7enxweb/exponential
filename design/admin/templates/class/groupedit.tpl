@@ -3,7 +3,7 @@
    Field and button names (Group_name, StoreButton, DiscardButton, RedirectIfDiscarded) are unchanged; Cancel goes
    back to the page the form was opened from. This is an edit view, which admin4 draws without its main card;
    .exp-standalone gives the page its own. The same file is in design/admin and design/admin4.
-   Guide: doc/guides/class-groups.md *}
+   Guide: doc/en/us/guides/class-groups.md *}
 
 <form name="GroupEdit" method="post" action={concat( $module.functions.groupedit.uri, '/', $classgroup.id )|ezurl} class="a4-page exp-classgroups a4-standalone">
 

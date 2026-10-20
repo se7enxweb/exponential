@@ -4,7 +4,7 @@
  *   [AuditAlertSettings]
  *   RuleClasses[<name>]=<class implementing expAuditAlertRule>
  * Counted by the RAD survey (registry "auditalertrules"). Rules are evaluated from stage 5 on.
- * Guide: doc/bc/6.0/audit.md ("Alerts").
+ * Guide: doc/en/us/bc/6.0/audit.md ("Alerts").
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

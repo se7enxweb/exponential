@@ -58,6 +58,6 @@ From the extension README:
 - [ezwt](ezwt.md), [ezdemo](ezdemo.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/ezodf.md) and [release notes](../../../changelogs/extensions/ezodf.md)
+- [Chronicle](../../../history/extensions/ezodf.md) and [release notes](../../../../../changelogs/extensions/ezodf.md)
 - [Change ledger](../../../history/ledger/ezodf.md)
 - Months: [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

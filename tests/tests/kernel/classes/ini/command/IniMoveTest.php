@@ -1,7 +1,7 @@
 <?php
 /**
  * exp:ini move and move-all end to end, as real processes against a temporary installation root (--root).
- * Guide doc/bc/6.0/console-exp-ini.md, "Moving settings into an extension".
+ * Guide doc/en/us/bc/6.0/console-exp-ini.md, "Moving settings into an extension".
  *
  *  IM-01 — A block moves with its comments and blank lines, in order; the source loses it; an emptied source keeps
  *          its file and wrapper

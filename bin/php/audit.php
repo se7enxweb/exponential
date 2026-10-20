@@ -12,7 +12,7 @@
  *   php bin/php/audit.php verify [--channel=content] [--date=YYYY-MM-DD] [--json]
  *   php bin/php/audit.php checkpoint
  *
- * Also ./console exp:audit ... Guide: doc/bc/6.0/audit.md
+ * Also ./console exp:audit ... Guide: doc/en/us/bc/6.0/audit.md
  *
  * @description Audit log: tail, show one event, verify the hash chains, list the channels
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.

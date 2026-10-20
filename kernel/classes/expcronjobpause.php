@@ -558,7 +558,7 @@ class expCronjobPause
     }
 
     /**
-     * Audit (doc/bc/6.0/audit.md, system.cronjob.pause and system.cronjob.resume): who paused or resumed which part.
+     * Audit (doc/en/us/bc/6.0/audit.md, system.cronjob.pause and system.cronjob.resume): who paused or resumed which part.
      *
      * @param string $part
      * @param bool $pause

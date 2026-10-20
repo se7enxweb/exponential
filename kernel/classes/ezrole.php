@@ -124,7 +124,7 @@ class eZRole extends eZPersistentObject
                                                 array( '%rolename' => $this->attribute( 'name' ) ) ) );
         $newRole->store();
         $db->commit();
-        // Audit (doc/bc/6.0/audit.md, access.role.copy)
+        // Audit (doc/en/us/bc/6.0/audit.md, access.role.copy)
         if ( class_exists( 'expAuditHook' ) )
         {
             $role = $this;
@@ -245,7 +245,7 @@ class eZRole extends eZPersistentObject
         {
             $this->Policies[] = $policy;
         }
-        // Audit (doc/bc/6.0/audit.md, access.policy.add): a policy added to a role in use (not to the temporary
+        // Audit (doc/en/us/bc/6.0/audit.md, access.policy.add): a policy added to a role in use (not to the temporary
         // version role/edit works on: that edit is recorded as access.role.change)
         if ( class_exists( 'expAuditHook' ) && (int)$this->attribute( 'version' ) === 0 )
         {
@@ -395,7 +395,7 @@ class eZRole extends eZPersistentObject
     */
     function removeThis()
     {
-        // Audit (doc/bc/6.0/audit.md, access.role.remove): a role in use (not a temporary editing version), with
+        // Audit (doc/en/us/bc/6.0/audit.md, access.role.remove): a role in use (not a temporary editing version), with
         // its policies and assignments; its policies are part of it, not removals of their own
         $auditData = null;
         if ( class_exists( 'expAuditHook' ) && (int)$this->attribute( 'version' ) === 0 && expAuditHook::on( 'access.role.remove' ) )
@@ -1495,7 +1495,7 @@ class eZRole extends eZPersistentObject
         $limitValue = $db->escapeString( $limitValue );
         $userID =(int) $userID;
 
-        // Who assigns which role to whom (doc/bc/6.0/audit.md, access.role.assign): recorded when the assignment is new
+        // Who assigns which role to whom (doc/en/us/bc/6.0/audit.md, access.role.assign): recorded when the assignment is new
         $auditLimit = array( 'identifier' => $limitIdent, 'value' => $limitValue );
 
         switch( $limitIdent )
@@ -1564,7 +1564,7 @@ class eZRole extends eZPersistentObject
     }
 
     /**
-     * Records an assignment of this role made or removed (doc/bc/6.0/audit.md, access.role.assign /
+     * Records an assignment of this role made or removed (doc/en/us/bc/6.0/audit.md, access.role.assign /
      * access.role.unassign).
      *
      * @param string $name

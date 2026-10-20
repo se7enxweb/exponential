@@ -11,7 +11,7 @@
  * Who may see it: the same users as the subitems columns "Account enabled" and "Locked out"
  * (settings/subitemscolumns.ini, Policy[]=role/read), so the marks show nothing those columns
  * would not.
- * Guide: doc/features/6.0/admin4-design.md, section "Visibility and account status"
+ * Guide: doc/en/us/features/6.0/admin4-design.md, section "Visibility and account status"
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

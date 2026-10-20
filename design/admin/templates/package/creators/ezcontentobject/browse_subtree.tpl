@@ -1,7 +1,7 @@
 {* The head of the content browser opened by Add subtree in the content object export wizard (package/create, creator
    ezcontentobject; eZContentBrowse description_template): what to choose and how. Select returns to the wizard's
    content step with the choice added, Cancel returns without a change. The same file is in design/admin and
-   design/admin4. Guide: doc/features/6.0/package-wizard.md *}
+   design/admin4. Guide: doc/en/us/features/6.0/package-wizard.md *}
 <div class="context-block content-browse a4-page a4-package-browse">
 <div class="box-header"><div class="box-ml">
 <div class="a4-pagehead">

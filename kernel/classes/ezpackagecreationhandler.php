@@ -621,7 +621,7 @@ class eZPackageCreationHandler
         $persistentData['licence'] = eZPackageLicense::defaultIdentifier();
         // Three parts, Semantic Versioning 2.0.0, see eZPackageVersion
         $persistentData['version'] = eZPackageVersion::DEFAULT_NEW_VERSION;
-        // the format the package is kept in: the classic XML one or the JSON one (doc/bc/6.0/package-json-format.md)
+        // the format the package is kept in: the classic XML one or the JSON one (doc/en/us/bc/6.0/package-json-format.md)
         $persistentData['format'] = eZPackage::FORMAT_XML;
         if ( isset( $_SERVER['HOSTNAME'] ) )
             $host = $_SERVER['HOSTNAME'];

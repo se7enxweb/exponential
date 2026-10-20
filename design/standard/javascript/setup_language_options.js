@@ -2,7 +2,7 @@
  * The setup wizard's language step (setup/init/language_options.tpl): the default language is not also an
  * additional one: choosing a language as the default clears and disables its checkbox (the server checks it as
  * well). A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var table = document.getElementById( 'eZSetupLanguageTable' );

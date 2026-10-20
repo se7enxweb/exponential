@@ -1,6 +1,6 @@
 <?php
 /**
- * The content model of help maintained as content (doc/specifications/6.0/help-system.md, doc/features/6.0/help-content.md):
+ * The content model of help maintained as content (doc/en/us/specifications/6.0/help-system.md, doc/en/us/features/6.0/help-content.md):
  * the eight help_* content classes, the sections, the object state group, the folder tree and the two roles. Data only,
  * no database: the installer, the validator, the provider and the tests all read the model from here.
  *

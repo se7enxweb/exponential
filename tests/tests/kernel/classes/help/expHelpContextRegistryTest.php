@@ -1,6 +1,6 @@
 <?php
 /**
- * The context help (doc/features/6.0/help-system.md, "Context help"): which help page the "?" control of an admin page
+ * The context help (doc/en/us/features/6.0/help-system.md, "Context help"): which help page the "?" control of an admin page
  * opens, from a given map, without settings or a database.
  *
  *  HC-01  module/view hit: level view, the url is the viewer's with the anchor
@@ -111,7 +111,7 @@ class expHelpContextRegistryTest extends PHPUnit\Framework\TestCase
 
     public function testDocPrefixStripped()
     {
-        $hit = $this->registry( array( 'setup' => 'doc/help/setup.md' ) )->lookup( 'setup', 'x', '' );
+        $hit = $this->registry( array( 'setup' => 'doc/en/us/help/setup.md' ) )->lookup( 'setup', 'x', '' );
         $this->assertSame( 'help/setup.md', $hit['id'] );
     }
 

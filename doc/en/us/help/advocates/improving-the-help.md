@@ -41,7 +41,7 @@ For larger changes, work in a clone:
 git clone https://github.com/<you>/exponential.git
 cd exponential
 git switch -c help-fix-layouts
-# edit doc/help/...
+# edit doc/en/us/help/...
 git commit -am "Fixed: The layouts help names the Discard button"
 git push -u origin help-fix-layouts
 ```

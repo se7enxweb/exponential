@@ -127,7 +127,7 @@ The language attribute and direction:
 ## Variables you should not expect
 
 - **`$node`**: not set in the pagelayout (the kernel unsets it); fetch the node from `content_info.node_id`
-  (since 3.9, see `doc/features/3.9/no_more_node_in_pagelayout.txt`).
+  (since 3.9, see `doc/en/us/features/3.9/no_more_node_in_pagelayout.txt`).
 - **Variables of view templates**: a `{def}` in `node/view/full.tpl` does not reach the pagelayout. Use the
   persistent variable to hand values over.
 - **Anything user-specific inside a cache-block** without the user in the keys: the cached copy would be shown to

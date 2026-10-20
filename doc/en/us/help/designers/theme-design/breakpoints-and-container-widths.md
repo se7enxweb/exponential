@@ -24,7 +24,7 @@ and why, how to pick yours, and how to keep them consistent.
 
 ## admin4 as an example
 
-From the admin styling guide (`doc/bc/6.0/admin4-styling.md`, "Window widths"):
+From the admin styling guide (`doc/en/us/bc/6.0/admin4-styling.md`, "Window widths"):
 
 | Width | The admin frame |
 |---|---|

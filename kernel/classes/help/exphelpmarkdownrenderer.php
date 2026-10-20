@@ -3,7 +3,7 @@
  * File containing the expHelpMarkdownRenderer class.
  *
  * Renders the Markdown of the documentation (doc/**.md) to the HTML of the help viewer (exphelp/viewer,
- * doc/features/6.0/help-system.md): CommonMark blocks (ATX and setext headings, paragraphs, block quotes, ordered and
+ * doc/en/us/features/6.0/help-system.md): CommonMark blocks (ATX and setext headings, paragraphs, block quotes, ordered and
  * bullet lists, fenced and indented code, thematic breaks), the GitHub extensions the documentation uses (tables with
  * alignment, task lists, strikethrough, footnotes, autolinked URLs, alerts "> [!NOTE]"), callouts written as
  * "> **Note:** ..." or ":::tip Title ... :::", heading ids (GitHub's slugs, so links written for GitHub land on the

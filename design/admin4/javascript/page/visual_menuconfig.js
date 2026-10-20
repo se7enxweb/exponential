@@ -1,7 +1,7 @@
 /*
  * admin4 visual/menuconfig: the "Copy" buttons of the template examples.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var buttons = document.querySelectorAll('.a4-visual .a4-visual-copy');

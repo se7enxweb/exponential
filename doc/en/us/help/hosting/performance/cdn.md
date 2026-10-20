@@ -36,7 +36,7 @@ provider's documentation.
 | Signed-in pages, the administration, forms | no | `no-cache` by default; pages with a form token are `private` |
 
 The note about image URLs is in the shipped Apache example: "Exponential appends the version number to image URL
-(ezimage datatype) so when an image is updated, its URL changes" ([doc/examples/ezpublish.conf](../../../examples/ezpublish.conf)).
+(ezimage datatype) so when an image is updated, its URL changes" ([doc/en/us/examples/ezpublish.conf](../../../examples/ezpublish.conf)).
 
 ## Static files at the edge
 

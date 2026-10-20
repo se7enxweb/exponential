@@ -1,4 +1,4 @@
-{* The interface choices of the signed-in user (uiswitch, doc/features/6.0/ui-switch.md): one disclosure per provider
+{* The interface choices of the signed-in user (uiswitch, doc/en/us/features/6.0/ui-switch.md): one disclosure per provider
    the user may use on this siteaccess (fetch( 'uiswitch', 'toolbar' )), the display language first.
 
    The disclosure follows the header menus (admin4.js disclosure(), the menu pattern of #165): a button with

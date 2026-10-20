@@ -109,7 +109,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 
 - [SQLite for the platform](../../features/6.0/platform-sqlite-install.md)
 - [Console command names](../../specifications/6.0/platform-console-commands.md)
-- [Release changelog](../../changelogs/extensions/ezplatform-kernel.md)
+- [Release changelog](../../../../changelogs/extensions/ezplatform-kernel.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

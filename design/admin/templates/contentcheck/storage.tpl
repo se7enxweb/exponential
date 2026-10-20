@@ -1,4 +1,4 @@
-{* The contentcheck/storage view (doc/features/6.0/content-checks.md, "Storage files").
+{* The contentcheck/storage view (doc/en/us/features/6.0/content-checks.md, "Storage files").
 
    Variables: scope (the start location, see scope.tpl), params (show, sort, order, kinds, offset, limit, node_id),
    state (the last scan, or null), percent, rows (the page), count, quarantine (the listing, with Show=quarantine),

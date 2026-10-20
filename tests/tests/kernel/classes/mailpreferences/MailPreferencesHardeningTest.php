@@ -2,7 +2,7 @@
 /**
  * The e-mail preferences after the review of 2026-10-05: the answers that end a request on every web server, the
  * history of an address change, the public site name in mail sent from the console, and the gaps of the law
- * checklist (doc/specifications/6.0/mail-preferences-compliance.md, "Gaps") that were closed.
+ * checklist (doc/en/us/specifications/6.0/mail-preferences-compliance.md, "Gaps") that were closed.
  *
  * Live style, like MailPreferencesCoreTest: the tests run on the installation they find (no test database), with
  * addresses on mph.invalid and one test user (remote id mph-user) that are removed again; without an installation

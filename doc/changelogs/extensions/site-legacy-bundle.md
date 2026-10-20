@@ -2,7 +2,7 @@
 
 Read this page before you install or update `site-legacy-bundle`, or to find out which release brought a change.
 
-Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../history/ecosystem/site-legacy-bundle.md).
+Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../en/us/history/ecosystem/site-legacy-bundle.md).
 
 ## v2.1.0 (2026-04-17)
 
@@ -66,6 +66,6 @@ Releases made by the se7enxweb team, newest first. Each release lists the team's
 
 ## Related pages
 
-- [Site bundles](../../features/6.0/platform-site-bundles.md)
-- [package map](../../specifications/6.0/platform-package-map.md)
-- [upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- [Site bundles](../../en/us/features/6.0/platform-site-bundles.md)
+- [package map](../../en/us/specifications/6.0/platform-package-map.md)
+- [upgrade notes](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)

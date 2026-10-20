@@ -1,7 +1,7 @@
 /*
  * admin4 pdf/edit: the focus when the page opens - the first invalid field (or the error box) after a failed save, the
  * title otherwise. The template says which in data-error on #pdf-edit-script. A file of its own, so the page runs
- * under a Content Security Policy without 'unsafe-inline' (doc/features/6.0/content-security-policy.md).
+ * under a Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
  */
 var expPdfEditScript = document.getElementById( 'pdf-edit-script' );
 var expPdfEditError = !!expPdfEditScript && expPdfEditScript.getAttribute( 'data-error' ) === '1';

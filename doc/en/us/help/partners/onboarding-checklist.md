@@ -46,7 +46,7 @@ This page is for the partnership owner in a newly activated partner company. Wor
 
 - [ ] A current Exponential 6.0 development installation from Git ([Develop with Git](../develop-with-git.md))
 - [ ] Watch the main repository's releases on GitHub (<https://github.com/se7enxweb/exponential>)
-- [ ] Read the release overview and the latest changelog (`doc/release-overview`, `doc/changelogs/6.0/`)
+- [ ] Read the release overview and the latest changelog (`doc/en/us/release-overview`, `doc/changelogs/6.0/`)
 - [ ] A staging environment where you test releases before your customers do ([Testing releases](testing-releases.md))
 
 ## Internal knowledge

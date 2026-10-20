@@ -5497,8 +5497,8 @@
         <translation>loHmeH jIH mIw &apos;echletmey je mu&apos;mey (leQmey, HIDjolevmey) mughghach ghItlhmeyvo&apos; (.ts) chol, &apos;ej yoS lojmIt Locale DuH lutlha&apos;. Doych Hol De&apos; DIvI&apos; Hol jIH je &apos;ang yoS; latlh mIwDaq je.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/guides/content-languages.md.</source>
-        <translation>naDev Hol Dachelchugh, pagh mughlu&apos; &apos;ej pagh yoS lojmIt choHlu&apos;: choHwI&apos;Daq De&apos; yImugh, &apos;ej Hol &apos;anglu&apos;nISbogh Daq SiteLanguageList tetlhDaq Hol yIlan. lo&apos;wI&apos; DevwI&apos; ghItlh: doc/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
+        <translation>naDev Hol Dachelchugh, pagh mughlu&apos; &apos;ej pagh yoS lojmIt choHlu&apos;: choHwI&apos;Daq De&apos; yImugh, &apos;ej Hol &apos;anglu&apos;nISbogh Daq SiteLanguageList tetlhDaq Hol yIlan. lo&apos;wI&apos; DevwI&apos; ghItlh: doc/en/us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24023,8 +24023,8 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>qonmeH ghItlh yIchu&apos;, vaj Dalegh: wa&apos; tlhobghach ra&apos;ghachmey &apos;ar QapmoH, &apos;ar rapqu&apos;, &apos;ej poH &apos;ar nampu&apos; tlhobghach De&apos; polwI&apos;.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.</source>
-        <translation>De&apos; pa&apos; SIchbogh ra&apos;ghachmey togh qonmeH ghItlh: tlhobghach De&apos; polwI&apos; chu&apos;lu&apos;DI&apos;, pollu&apos;bogh jang qonlu&apos;be&apos;. &quot;qawmeH ghItlhHom poH nap&quot;: tlhobghach Segh poH nampu&apos;bogh. &quot;Hoch lo&apos;bogh De&apos; polwI&apos; poH nap&quot;: Hoch lo&apos;bogh Segh poH nampu&apos;bogh (wa&apos; jangvaD 15 µs &apos;ar). jabwI&apos; wa&apos; wa&apos; mI&apos;mey ghaj, APCu ghajmo&apos; jabwI&apos; Hoch. wanI&apos; tetlh: var/tmp/sql_profile.log; doc/bc/6.0/sql-query-cache.md yIlaD.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
+        <translation>De&apos; pa&apos; SIchbogh ra&apos;ghachmey togh qonmeH ghItlh: tlhobghach De&apos; polwI&apos; chu&apos;lu&apos;DI&apos;, pollu&apos;bogh jang qonlu&apos;be&apos;. &quot;qawmeH ghItlhHom poH nap&quot;: tlhobghach Segh poH nampu&apos;bogh. &quot;Hoch lo&apos;bogh De&apos; polwI&apos; poH nap&quot;: Hoch lo&apos;bogh Segh poH nampu&apos;bogh (wa&apos; jangvaD 15 µs &apos;ar). jabwI&apos; wa&apos; wa&apos; mI&apos;mey ghaj, APCu ghajmo&apos; jabwI&apos; Hoch. wanI&apos; tetlh: var/tmp/sql_profile.log; doc/en/us/bc/6.0/sql-query-cache.md yIlaD.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25375,8 +25375,8 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>site.ini DuHmey</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
-        <translation>yoS lojmIt cherchugh, site.ini [SiteAccessSettings] SiteAccessType tlha&apos; Segh; pagh, HaDwI&apos; nabmeyDaj RequireUserLogin je tlha&apos;. ghojmoHwI&apos; ghItlh: doc/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
+        <translation>yoS lojmIt cherchugh, site.ini [SiteAccessSettings] SiteAccessType tlha&apos; Segh; pagh, HaDwI&apos; nabmeyDaj RequireUserLogin je tlha&apos;. ghojmoHwI&apos; ghItlh: doc/en/us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32042,8 +32042,8 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>DuHmey ngoghmey; Doch Hoch ta&apos;ghach qon: puq Dochmey tetlh tutmey (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; pagh Template=), De&apos; Qu&apos; Seghmey (content.ini [ContentJobSettings] JobTypes[]), exp:ini vangghachmey veH nobwI&apos;mey je (ini.ini [IniCommandSettings]), ezjscore jabwI&apos; vangghachmey je (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), &apos;ej expServiceBase chelbogh jabwI&apos; vangghach buv ja&apos;bogh Hop QaHwI&apos; Hoch (static $services Daj; ezjscore/call/&lt;name&gt;::&lt;service&gt; rur rI&apos;lu&apos;; Hoch mI&apos; naQDaq chellu&apos;; ngoq mIwDaj Hutlhbogh QaHwI&apos; ja&apos;lu&apos;pu&apos;bogh, ghor). buv pongbogh Doch, buv pongbogh DuHmey wa&apos; &apos;oH je, &apos;ej pa&apos; toghlu&apos;; latlh naDev mI&apos; naQDaq chellu&apos;. buvDaj, ngoq mIwDaj, mIw &apos;echletDaj ghap Hutlhbogh Doch, pagh qonmeH tetlh poQbogh chelbe&apos;bogh buv ghajbogh Doch, ghorlu&apos;pu&apos; &apos;e&apos; &apos;anglu&apos;. puq Dochmey tutmey Qemlu&apos;bogh, tetlh &apos;angbogh&apos;e&apos;, Daq &apos;oHbe&apos;, &apos;ej tetlhlu&apos;be&apos;.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>latlh qonmeH tetlhmey ja&apos;lu&apos; rad.ini Daq - ngoq botlh, chelwI&apos; chu&apos;bogh Hoch je, rad.ini.append.php Daj Daq: wanI&apos; QoywI&apos;mey, yab ngeb nobwI&apos;mey, janmey mIrmey je, MCP janmey, loSwI&apos; tetlh Qu&apos; Seghmey, latlh je. Hoch ja&apos;: Dochmey ngaSbogh INI ngoghmey pagh buv tetlh, &apos;ej Doch Hoch nuq &apos;oHnIS. InTotal=disabled lo&apos;taHvIS ja&apos;lu&apos;bogh, latlh DaqDaq toghlu&apos;bogh Daqmey rar, &apos;ej &apos;ollu&apos; &apos;ach chellu&apos;be&apos;. QaH ghItlh: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>latlh qonmeH tetlhmey ja&apos;lu&apos; rad.ini Daq - ngoq botlh, chelwI&apos; chu&apos;bogh Hoch je, rad.ini.append.php Daj Daq: wanI&apos; QoywI&apos;mey, yab ngeb nobwI&apos;mey, janmey mIrmey je, MCP janmey, loSwI&apos; tetlh Qu&apos; Seghmey, latlh je. Hoch ja&apos;: Dochmey ngaSbogh INI ngoghmey pagh buv tetlh, &apos;ej Doch Hoch nuq &apos;oHnIS. InTotal=disabled lo&apos;taHvIS ja&apos;lu&apos;bogh, latlh DaqDaq toghlu&apos;bogh Daqmey rar, &apos;ej &apos;ollu&apos; &apos;ach chellu&apos;be&apos;. QaH ghItlh: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38758,8 +38758,8 @@ yIlob.</translation>
         <translation>yoSmey chu&apos;vaD &apos;oH tam Exponential Layouts: mIchmey ngoghmey je ngaS mIch mIw, ngoghmey wa&apos; &apos;oH HIDjolev&apos;e&apos;, &apos;ej Hoch navvaD mIch mIw wIv chut. DuHmeyvam laDbe&apos;chu&apos; mIwvetlh lo&apos;bogh yoS lojmIt.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>ngo&apos; mIllogh nab lo&apos;taHbogh yoSmeyvaD ratlh navvam. Layouts lo&apos;bogh yoS lojmItvaD naDev DuH DachoHchugh, Qobbe&apos; &apos;ach vangbe&apos;. mIwmey cha&apos; QIj QaH ghItlh doc/guides/classic-menu-settings.md.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>ngo&apos; mIllogh nab lo&apos;taHbogh yoSmeyvaD ratlh navvam. Layouts lo&apos;bogh yoS lojmItvaD naDev DuH DachoHchugh, Qobbe&apos; &apos;ach vangbe&apos;. mIwmey cha&apos; QIj QaH ghItlh doc/en/us/guides/classic-menu-settings.md.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -48794,8 +48794,8 @@ DuHmey Dalo&apos;bogh, wIvta&apos;bogh, vo&apos; ngoq motlh chenmoHlu&apos;ta&ap
         <translation>jomghachvamDaq buv &apos;oHbogh ngoD ghajbogh DuH Hoch, pagh buv laj &apos;e&apos; ja&apos;bogh pong ghajbogh DuH Hoch. wa&apos; DachoHchugh, latlh Doch jang.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>latlh qonmeH tetlhmey ja&apos;lu&apos; rad.ini Daq - ngoq botlh, chelwI&apos; chu&apos;bogh Hoch je, rad.ini.append.php Daj Daq: wanI&apos; QoywI&apos;mey, yab ngeb nobwI&apos;mey, janmey mIrmey je, MCP janmey, loSwI&apos; tetlh Qu&apos; Seghmey, latlh je. Hoch ja&apos;: Dochmey ngaSbogh INI ngoghmey pagh buv tetlh, &apos;ej Doch Hoch nuq &apos;oHnIS. InTotal=disabled lo&apos;taHvIS ja&apos;lu&apos;bogh, latlh DaqDaq toghlu&apos;bogh Daqmey rar, &apos;ej &apos;ollu&apos; &apos;ach chellu&apos;be&apos;. QaH ghItlh: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>latlh qonmeH tetlhmey ja&apos;lu&apos; rad.ini Daq - ngoq botlh, chelwI&apos; chu&apos;bogh Hoch je, rad.ini.append.php Daj Daq: wanI&apos; QoywI&apos;mey, yab ngeb nobwI&apos;mey, janmey mIrmey je, MCP janmey, loSwI&apos; tetlh Qu&apos; Seghmey, latlh je. Hoch ja&apos;: Dochmey ngaSbogh INI ngoghmey pagh buv tetlh, &apos;ej Doch Hoch nuq &apos;oHnIS. InTotal=disabled lo&apos;taHvIS ja&apos;lu&apos;bogh, latlh DaqDaq toghlu&apos;bogh Daqmey rar, &apos;ej &apos;ollu&apos; &apos;ach chellu&apos;be&apos;. QaH ghItlh: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

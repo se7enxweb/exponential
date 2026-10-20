@@ -3,7 +3,7 @@
  * @description Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only, unless --fix, --quarantine or --fix-permissions without --dry-run)
  * @alias exp:content-check
  *
- * File containing the exp:content-check command (doc/features/6.0/content-checks.md, "On the command line").
+ * File containing the exp:content-check command (doc/en/us/features/6.0/content-checks.md, "On the command line").
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

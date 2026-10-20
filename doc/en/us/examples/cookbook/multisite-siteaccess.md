@@ -152,7 +152,7 @@ On the command line every script takes the siteaccess with `-s` (`--siteaccess`)
 
 Checked for this page (2026-10-18): every setting named exists in the shipped `settings/site.ini` or
 `settings/content.ini` with the meaning described; the host map and its methods are those of
-`doc/features/6.0/siteaccess-host-and-language-matching.md`. The configuration was not applied to a site for this page.
+`doc/en/us/features/6.0/siteaccess-host-and-language-matching.md`. The configuration was not applied to a site for this page.
 
 ## Common mistakes
 
@@ -168,7 +168,7 @@ Checked for this page (2026-10-18): every setting named exists in the shipped `s
 
 - `settings/site.ini` (`[SiteAccessSettings]`, `[SiteSettings]`, `[DesignSettings]`, `[RegionalSettings]`, `[FileSettings]`)
 - `settings/content.ini` (`[NodeSettings] RootNode`), `settings/siteaccess/mysite/site.ini.append`
-- `doc/features/6.0/siteaccess-host-and-language-matching.md`, `doc/features/6.0/multi-site-log-and-cache-paths.md`
+- `doc/en/us/features/6.0/siteaccess-host-and-language-matching.md`, `doc/en/us/features/6.0/multi-site-log-and-cache-paths.md`
 
 ## Related pages
 

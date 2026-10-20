@@ -43,7 +43,7 @@ your interview time on design decisions. Facts are as of 18 October 2026; check 
 | Point | Source |
 |---|---|
 | SQLite needs no database server; "the whole content repository is one file" | [Database support](../database-support.md#the-supported-databases-in-order) |
-| MongoDB works "through an adapter that translates the kernel's SQL-shaped calls into MongoDB operations", with documented limits; it arrived with 6.0.14 | Same page; [6.0.14 changelog](../../changelogs/6.0/6.0.14.md) |
+| MongoDB works "through an adapter that translates the kernel's SQL-shaped calls into MongoDB operations", with documented limits; it arrived with 6.0.14 | Same page; [6.0.14 changelog](../../../../changelogs/6.0/6.0.14.md) |
 | Microsoft SQL Server has no driver; it is "known to be possible with additional work" | Same page |
 
 ## Engines and web servers

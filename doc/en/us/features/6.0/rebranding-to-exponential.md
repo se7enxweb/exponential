@@ -62,5 +62,5 @@ So a template you wrote in 2012 keeps working.
 - [A clean installation that fits shared hosting and says Exponential](clean-install-defaults.md)
 - [About and Copyright pages](about-and-package-pages.md), [package licenses and Semantic Versioning](package-licenses-and-versions.md)
 - [Default extension distribution](default-extension-distribution.md), [file consistency check](file-consistency-check.md)
-- [Changelog 6.0.10](../../changelogs/6.0/6.0.10.md)
+- [Changelog 6.0.10](../../../../changelogs/6.0/6.0.10.md)
 - History: [August 2025](../../history/2025/2025-08.md), [July 2025](../../history/2025/2025-07.md), [January 2025](../../history/2025/2025-01.md)

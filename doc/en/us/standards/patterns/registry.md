@@ -65,9 +65,9 @@ A central place where objects or callbacks are registered by name and looked up 
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expAudit` | class | `kernel/classes/audit/expaudit.php:26` | The audit: what happens in Exponential, recorded as hash-chained JSON lines per channel (doc/bc/6.0/audit.md, "The developer API (Z3)"). | – |
+| `expAudit` | class | `kernel/classes/audit/expaudit.php:26` | The audit: what happens in Exponential, recorded as hash-chained JSON lines per channel (doc/en/us/bc/6.0/audit.md, "The developer API (Z3)"). | – |
 | `expAuditFormatRegistry` | class | `kernel/classes/audit/format/expauditformatregistry.php:16` | The archive format registry: [AuditArchiveSettings] FormatHandlers[]= (RAD survey registry "auditformats"). | – |
-| `expAuditSinkRegistry` | class | `kernel/classes/audit/sinks/expauditsinkregistry.php:23` | The sink registry and delivery (doc/bc/6.0/audit.md, "Sinks (Q7)", "The sink registry"). | – |
+| `expAuditSinkRegistry` | class | `kernel/classes/audit/sinks/expauditsinkregistry.php:23` | The sink registry and delivery (doc/en/us/bc/6.0/audit.md, "Sinks (Q7)", "The sink registry"). | – |
 | `expAuditSourceRegistry` | class | `kernel/classes/audit/console/expauditsourceregistry.php:16` | The registry of the audit console's sources (expAuditSource), from audit.ini [AuditSourceSettings] Sources[]: which are registered, which work here,… | – |
 
 ### kernel/classes/datatypes (1)
@@ -93,7 +93,7 @@ A central place where objects or callbacks are registered by name and looked up 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:44` | Context help: which help page answers "help for this page", for a module, view and design. | – |
-| `expHelpHighlighter` | class | `kernel/classes/help/exphelphighlighter.php:29` | Server-side syntax highlighting of the code blocks of the help pages (exphelp, doc/features/6.0/help-system.md), without JavaScript or an external li… | – |
+| `expHelpHighlighter` | class | `kernel/classes/help/exphelphighlighter.php:29` | Server-side syntax highlighting of the code blocks of the help pages (exphelp, doc/en/us/features/6.0/help-system.md), without JavaScript or an external li… | – |
 
 ### kernel/classes/ini (2)
 

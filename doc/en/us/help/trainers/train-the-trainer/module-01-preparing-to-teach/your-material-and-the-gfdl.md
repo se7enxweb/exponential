@@ -15,7 +15,7 @@ Documentation License (GFDL) 1.3 or any later version. This lesson explains in p
 what it asks of you, so your course folder is correct from the start.
 
 > **Note**
-> This lesson is a summary, not legal advice. The license text in `doc/LICENSE-GFDL-1.3.txt` is what counts.
+> This lesson is a summary, not legal advice. The license text in `doc/en/us/LICENSE-GFDL-1.3.txt` is what counts.
 
 ## At a glance
 
@@ -80,7 +80,7 @@ Build the license part of a course folder for a two-hour editor session.
    and [Publishing, versions and the trash](../../../publishing-and-versions.md).
 2. In the Help center, open each page and press **Download as PDF**. Check that the last part of each PDF is the
    license notice.
-3. Copy `doc/LICENSE-GFDL-1.3.txt` from the installation (or download the license from the GNU website) into the
+3. Copy `doc/en/us/LICENSE-GFDL-1.3.txt` from the installation (or download the license from the GNU website) into the
    course folder.
 4. Take a third page, [Getting started](../../../getting-started.md), and adapt it: shorten it to the steps your
    learners need. Give it a new title, for example "Getting started at our office".
@@ -111,7 +111,7 @@ Build the license part of a course folder for a two-hour editor session.
 2. **True.** Copies may be given for free or for a fee, on the license's conditions.
 3. The same license, the GNU Free Documentation License (1.3 or any later version).
 4. **No.** Independent works combined in a collection keep their own terms.
-5. `doc/LICENSE-GFDL-1.3.txt` ([Free documentation](../../../free-documentation.md)).
+5. `doc/en/us/LICENSE-GFDL-1.3.txt` ([Free documentation](../../../free-documentation.md)).
 
 </details>
 

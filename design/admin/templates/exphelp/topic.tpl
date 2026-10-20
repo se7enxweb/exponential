@@ -1,4 +1,4 @@
-{* exphelp/topic/<help_id> (doc/features/6.0/help-content.md): one help topic maintained as content, in the layout of
+{* exphelp/topic/<help_id> (doc/en/us/features/6.0/help-content.md): one help topic maintained as content, in the layout of
    exphelp/viewer.tpl: the topic in the middle (title, short description, its type, audiences and validity, the
    rendered fields, figures, related topics), the list of help topics on the left, its contents on the right.
    A topic that is not Released is shown only to those who may edit it, marked as a preview.

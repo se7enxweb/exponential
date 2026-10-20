@@ -1,7 +1,7 @@
 /*
  * admin4 setup/info: "Copy" puts the system report on the clipboard (or selects it for a copy by hand).
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var button = document.getElementById('exp-sysinfo-copy');

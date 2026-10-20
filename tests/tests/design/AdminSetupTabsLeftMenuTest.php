@@ -4,7 +4,7 @@
  * The audit views return $module_result.left_menu (design:audit/menu.tpl, expAuditConsole::result()); admin4's
  * page_leftmenu.tpl and admin4l's left menu block drew it before asking parts/a4_navigation_part.tpl, so with Audit in
  * SetupTabs[] or HiddenTabs[] an audit page marked the Setup tab but drew the audit menu instead of the Setup menu with
- * the Audit group open (doc/features/6.0/admin4-design.md, "Moving a tab into Setup"). While the tab is in the top
+ * the Audit group open (doc/en/us/features/6.0/admin4-design.md, "Moving a tab into Setup"). While the tab is in the top
  * menu, the view's own menu stays. Checked on the templates (no database); rendered with and without the tab in
  * Setup when the change was made.
  *

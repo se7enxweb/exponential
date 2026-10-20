@@ -1,6 +1,6 @@
 <?php
 /**
- * expHelpSearch: the full-text search of the help system (doc/features/6.0/help-system.md, "Search").
+ * expHelpSearch: the full-text search of the help system (doc/en/us/features/6.0/help-system.md, "Search").
  *
  * The index is built from the documents expHelpDocumentIndex lists and kept as a PHP file in the help cache
  * (var/<site>/cache/exphelp/search-<key>.php). OPcache keeps that file in shared memory, so a query costs a few

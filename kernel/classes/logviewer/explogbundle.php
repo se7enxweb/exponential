@@ -1,6 +1,6 @@
 <?php
 /**
- * "Download all logs" (Setup > Manage logs; doc/features/6.0/log-viewer.md, "Downloading every log"): one archive of
+ * "Download all logs" (Setup > Manage logs; doc/en/us/features/6.0/log-viewer.md, "Downloading every log"): one archive of
  * every log the viewer lists, optionally with their rotations, masked as the viewer masks unless the user who may see
  * them unmasked asks for that, with a MANIFEST.txt (path, size, last write, sha256 of what is stored).
  *

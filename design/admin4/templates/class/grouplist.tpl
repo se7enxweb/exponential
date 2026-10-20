@@ -8,7 +8,7 @@
    The same file is in design/admin and design/admin4. The extra data comes from the view (group_overview,
    group_summary); without it (an older view class) the cards show what the group rows hold and nothing is lost.
    Every variable the page had before is still set: groups, group_count, limit, view_parameters, module. Field
-   names (DeleteIDArray[], RemoveGroupButton, NewGroupButton) are unchanged. Guide: doc/guides/class-groups.md *}
+   names (DeleteIDArray[], RemoveGroupButton, NewGroupButton) are unchanged. Guide: doc/en/us/guides/class-groups.md *}
 
 {def $overview = first_set( $group_overview, hash() )
      $summary = first_set( $group_summary, false() )}

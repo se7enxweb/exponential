@@ -144,7 +144,7 @@ script is added.
 
 - [Platform DXP skeleton](../platform-dxp-skeleton.md)
 - [Legacy bridge](../legacy-bridge.md)
-- [Chronicle](../../../history/extensions/sevenx-recipes.md) and [release notes](../../../changelogs/extensions/sevenx-recipes.md)
+- [Chronicle](../../../history/extensions/sevenx-recipes.md) and [release notes](../../../../../changelogs/extensions/sevenx-recipes.md)
 - [Change ledger](../../../history/ledger/sevenx-recipes.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-03](../../../history/extensions/months/2026-03.md), [2026-04](../../../history/extensions/months/2026-04.md) (all extensions)

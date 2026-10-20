@@ -1,4 +1,4 @@
-{* Checks the mega menu's settings (menu.ini; doc/features/6.0/admin4-design.md, "Mega menu") and names what is ignored
+{* Checks the mega menu's settings (menu.ini; doc/en/us/features/6.0/admin4-design.md, "Mega menu") and names what is ignored
    in the debug report, as a debug message: page_head_script.tpl includes it while [TopAdminMenu] MegaMenuTabs[]
    names a tab. The header and the fragment simply leave out what they cannot use; this says why.
    * a MegaMenuTabs[] value whose [Topmenu_<tab>] has no MegaMenuTemplate or NavigationPartIdentifier

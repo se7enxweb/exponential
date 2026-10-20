@@ -96,7 +96,7 @@ ExcludePatterns[]
 > The groups of the navigator. A file whose name matches KernelLogs\[\] is in "Kernel", a file in another site's  
 > log directory (var/<site>/log) in "Site", any other in "Extensions"; a rotation (.1 .. .N, .gz) is in "Rotated  
 > archives". Shell patterns of the current file's name.  
-> The request logs (doc/features/6.0/request-logs.md): the not found requests (404, 410) and the requests the  
+> The request logs (doc/en/us/features/6.0/request-logs.md): the not found requests (404, 410) and the requests the  
 > request classifier took for an attack (any status), one line per request.  
 
 Default: a list of 15: `error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`, `deprecated.log`, `auth.log`, `cronjob*.log`, `storage.log`, `setup.log`, `mail.log`, `trashpurge.log` ....
@@ -154,7 +154,7 @@ DefaultFile=var/log/error.log
 
 ## LogList
 
-> Every log has a key, used in its permalink /setup/logs/view/<key> (doc/features/6.0/log-viewer.md, "Permalinks"):  
+> Every log has a key, used in its permalink /setup/logs/view/<key> (doc/en/us/features/6.0/log-viewer.md, "Permalinks"):  
 >   var/log/<name>.log         <name>              e.g. /setup/logs/view/error, /setup/logs/view/debug  
 >   var/<site>/log/<name>.log  <site>-<name>       e.g. /setup/logs/view/site-storage  
 > and the logs configured here by key, such as the web server's. A key names only these: never a path.  

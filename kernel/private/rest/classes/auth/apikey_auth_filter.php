@@ -9,7 +9,7 @@
 
 /**
  * Authentication filter for a personal API key (expApiKey) presented as "Authorization: Bearer expk_..."
- * (doc/guides/api-keys.md, "How the REST layer resolves a key").
+ * (doc/en/us/guides/api-keys.md, "How the REST layer resolves a key").
  *
  * The credentials' id is the whole key. run() answers with the status codes of ezpOauthFilter, so the REST layer's
  * existing answers apply (401 invalid_token / expired_token), plus STATUS_RATE_LIMITED (429). Every refusal of a

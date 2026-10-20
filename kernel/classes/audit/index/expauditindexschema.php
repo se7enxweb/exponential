@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit index tables (doc/bc/6.0/audit.md, "The index"): their definition in the generic schema format of
+ * The audit index tables (doc/en/us/bc/6.0/audit.md, "The index"): their definition in the generic schema format of
  * share/db_schema.dba, creating them on an existing installation (every engine, through its eZDbSchema handler:
  * MySQL/MariaDB, PostgreSQL, SQLite, Oracle with the ezoracle extension, MongoDB through expMongoSchema), the
  * full-text part each engine has on top, and the questions the indexer and the console ask: are the tables there,
@@ -141,7 +141,7 @@ class expAuditIndexSchema
     }
 
     /**
-     * The statements each engine adds for full-text search (doc/bc/6.0/audit.md, "Full-text search per engine").
+     * The statements each engine adds for full-text search (doc/en/us/bc/6.0/audit.md, "Full-text search per engine").
      * Oracle's CONTEXT index needs Oracle Text (the CTXAPP role); install() tries it and falls back to LIKE.
      *
      * @param string $type eZDB databaseName(): mysql, postgresql, sqlite, oracle, mongodb

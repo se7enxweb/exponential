@@ -118,7 +118,7 @@ never in the extension's own settings file under version control.
 
 - [Reset a user's password](../reset-user-password.md)
 - [Audit trail](../audit-trail.md)
-- [Chronicle](../../../history/extensions/sevenx_authentication_2fa.md) and [release notes](../../../changelogs/extensions/sevenx_authentication_2fa.md)
+- [Chronicle](../../../history/extensions/sevenx_authentication_2fa.md) and [release notes](../../../../../changelogs/extensions/sevenx_authentication_2fa.md)
 - [Change ledger](../../../history/ledger/sevenx_authentication_2fa.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * What the log viewer masks before a line leaves the server (doc/features/6.0/log-viewer.md, "Privacy").
+ * What the log viewer masks before a line leaves the server (doc/en/us/features/6.0/log-viewer.md, "Privacy").
  *
  * By default: e-mail addresses (a***@***.com), IP addresses (192.0.x.x, 2001:db8:x:...), and secrets: passwords in
  * addresses and "password=..." pairs, tokens, keys, Bearer and Basic credentials, JSON web tokens, session ids and

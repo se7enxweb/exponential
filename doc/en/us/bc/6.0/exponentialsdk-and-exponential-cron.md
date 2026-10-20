@@ -79,4 +79,4 @@ installed entries run `runcronjobs.php` directly and never read the file again.
 - [Version information and the expinfo operator](expinfo-operator.md)
 - [Console and cronjob parts](console.md)
 - [Velocity engines: deploying a PHP change](velocity-engines.md#deploying-a-php-change-expvelocity-deploy)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)

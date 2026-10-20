@@ -85,7 +85,7 @@ These rules protect the customer, your company and the project. They are the sam
 | 110 | [Licensing explained for buyers: GPL code, GFDL documentation](licensing-for-buyers.md) | What a buyer may do with the code and the documentation | 2 |
 | 120 | [Growing the community](growing-the-community.md) | Documented channels, a content calendar, a contributor funnel | 4 |
 
-The **Leadership** section (`doc/help/leadership/`) is written for project managers, but several pages are for you
+The **Leadership** section (`doc/en/us/help/leadership/`) is written for project managers, but several pages are for you
 too: [What Exponential is: the product family](../leadership/what-exponential-is.md),
 [Working together](../leadership/working-together.md),
 [Becoming a leader in the Exponential community](../leadership/becoming-a-community-leader.md) and
@@ -149,7 +149,7 @@ Plan four to six hours a day for reading and trying things. Use an installation 
 | [The help system](../../features/6.0/help-system.md) | Show that the documentation is built into the product, searchable and downloadable as PDF |
 | [Free documentation](../free-documentation.md) | Explain that customers may copy and adapt this help |
 | [When something goes wrong](../when-something-goes-wrong.md) | Explain how bugs and security problems are reported |
-| [The 6.0.15 changelog](../../changelogs/6.0/6.0.15.md) | Know what is new |
+| [The 6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) | Know what is new |
 | [The glossary](../../glossary.md) | Look up a term before you use it |
 
 > **Tip**

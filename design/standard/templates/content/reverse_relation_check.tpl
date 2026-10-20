@@ -1,5 +1,5 @@
 {* The objects that point at what a removal or a hide takes away (Exponential\Service\ReverseRelationCheck,
-   doc/features/6.0/reverse-relation-check.md), one list per selected item. Variables: $check (the view's
+   doc/en/us/features/6.0/reverse-relation-check.md), one list per selected item. Variables: $check (the view's
    reverse_relation_check: items, has_references, more, failed, mode, blocked, refused) and $operation (remove or
    hide). Objects, Layouts blocks and locations the user may not read are never named, only counted per item
    ("2 references you cannot see"). *}

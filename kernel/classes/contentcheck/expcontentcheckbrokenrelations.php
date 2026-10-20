@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckBrokenRelations class.
  *
- * Visible, published content that points at something a visitor cannot reach (doc/features/6.0/content-checks.md,
+ * Visible, published content that points at something a visitor cannot reach (doc/en/us/features/6.0/content-checks.md,
  * "Broken relations"). Read only.
  *
  * Sources: published objects whose main location is visible (not hidden, not below a hidden node), below the

@@ -1,6 +1,6 @@
 <?php
 /**
- * The request limit of the log viewer's feed, per session ([RateLimitSettings], doc/features/6.0/log-viewer.md,
+ * The request limit of the log viewer's feed, per session ([RateLimitSettings], doc/en/us/features/6.0/log-viewer.md,
  * "Cost"), and the memory of which files a session was recorded reading (system.log.read, once per ReadInterval).
  *
  * One small file per session in <cache dir>/logviewer/rate (named by a hash of the session id, never the id

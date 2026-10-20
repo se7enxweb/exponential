@@ -1,6 +1,6 @@
 <?php
 /**
- * The archive viewer of the log viewer (doc/features/6.0/log-viewer.md, "Archives"): the rotations .N and .N.gz of
+ * The archive viewer of the log viewer (doc/en/us/features/6.0/log-viewer.md, "Archives"): the rotations .N and .N.gz of
  * a log opened read only in the same viewer, at /setup/logs/view/<key>/(archive)/N. No database.
  *
  *  LV-110  (archive)/N resolves to rotation N: the plain .N before a .N.gz of the same number, a .N.gz alone, a bare

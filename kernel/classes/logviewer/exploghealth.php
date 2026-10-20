@@ -1,6 +1,6 @@
 <?php
 /**
- * The health of the logs (Setup > Log files > Health, setup/logshealth; doc/features/6.0/log-viewer.md, "Health"):
+ * The health of the logs (Setup > Log files > Health, setup/logshealth; doc/en/us/features/6.0/log-viewer.md, "Health"):
  * the disk the logs and their archives use against a budget ([HealthSettings] DiskBudget), the fastest growing logs,
  * the logs over their size limit, the files the web server's user cannot write (a log written by root, from a
  * command line or Exponential Velocity, that PHP-FPM can no longer append to), the newest error of each log, and the

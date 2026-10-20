@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckTrash class.
  *
- * Moves unreferenced objects to the trash (doc/features/6.0/content-checks.md, "Moving to the trash"): the list
+ * Moves unreferenced objects to the trash (doc/en/us/features/6.0/content-checks.md, "Moving to the trash"): the list
  * posts the ticked objects, a confirmation page shows what will happen to each, and the confirmed objects go to the
  * trash through the kernel's own removal (the operation content/delete with move_to_trash, as content/removeobject
  * does it), which records each removal in the audit as content.node.remove.trash. Nothing is deleted permanently;

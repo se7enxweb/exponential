@@ -1,7 +1,7 @@
 <?php
 /**
  * @description Process pending workflow events and advance stalled workflows
- * @link doc/guides/workflows.md
+ * @link doc/en/us/guides/workflows.md
  *
  * File containing the workflow.php cronjob
  *

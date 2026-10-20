@@ -1738,7 +1738,7 @@ table.list th.admin-dt-asc, table.list th.admin-dt-desc {
   background-color: var(--a4-accent-soft) !important;
   color: var(--a4-ink);
 }
-/* Zebra rows (doc/bc/6.0/admin4-styling.md, Tables): every data table -- table.list, .a4-table, the sub-items
+/* Zebra rows (doc/en/us/bc/6.0/admin4-styling.md, Tables): every data table -- table.list, .a4-table, the sub-items
    table -- stripes its even data rows with --a4-zebra. Only rows with data cells count (a header row of th inside
    tbody, or a row with the hidden attribute, does not), so the first data row is plain, whatever bglight/bgdark
    sequence a template writes; a row header (th scope=row) takes the stripe with its cells; the hovered row wins.

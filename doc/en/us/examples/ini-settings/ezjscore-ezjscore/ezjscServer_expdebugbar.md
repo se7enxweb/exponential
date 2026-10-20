@@ -21,7 +21,7 @@ Never edit `extension/ezjscore/settings/ezjscore.ini` itself: an update replaces
 
 ## Class
 
-> The Exp Debug bar (settings/debugbar.ini, guide doc/bc/6.0/debug-bar.md):  
+> The Exp Debug bar (settings/debugbar.ini, guide doc/en/us/bc/6.0/debug-bar.md):  
 > <root>/ezjscore/call/expdebugbar::settings\[::<siteaccess>\]  
 >   every debug setting with its value in effect, where it comes from and the value of each scope  
 > <root>/ezjscore/call/expdebugbar::set      (POST setting, op, value, scope, ezxform\_token)  

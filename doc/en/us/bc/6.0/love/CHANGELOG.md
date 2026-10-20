@@ -2,7 +2,7 @@
 
 Changes to the LoveStack features in Exponential, newest first. The full list, one line per
 feature with its LoveStack commit and upgrade note, is in the 6.0.15 changelog:
-[LoveStack features (from 2026-10-12)](../../../changelogs/6.0/6.0.15.md#lovestack-features-from-2026-10-12).
+[LoveStack features (from 2026-10-12)](../../../../../changelogs/6.0/6.0.15.md#lovestack-features-from-2026-10-12).
 
 ## 6.0.15 (in development)
 

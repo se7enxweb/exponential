@@ -2,7 +2,7 @@
 
 Multiple upload changed vendor in early 2024 and in October 2026 moved from the YUI 3 uploader to Exponential UI's `exp::upload` (6.0.5, 6.0.6). See the [feature page](../../features/6.0/extensions/ezmultiupload.md).
 
-This page lists **every one of the 21 changes** of the repository `ezmultiupload` between 2023-12-22 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezmultiupload.md); what each release contains is in the [release notes](../../changelogs/extensions/ezmultiupload.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezmultiupload.md).
+This page lists **every one of the 21 changes** of the repository `ezmultiupload` between 2023-12-22 and 2026-10-02, by month, with what kind of change each is. Read it to find out when a behaviour arrived and which release you need for it. The complete machine-made record, with sizes, is the [change ledger](../ledger/ezmultiupload.md); what each release contains is in the [release notes](../../../../changelogs/extensions/ezmultiupload.md); how to use the extension is on its [feature page](../../features/6.0/extensions/ezmultiupload.md).
 
 | Kind | Changes |
 |---|---|
@@ -78,6 +78,6 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 ## Related pages
 
 - [Feature page](../../features/6.0/extensions/ezmultiupload.md)
-- [Release notes](../../changelogs/extensions/ezmultiupload.md)
+- [Release notes](../../../../changelogs/extensions/ezmultiupload.md)
 - [Change ledger](../ledger/ezmultiupload.md)
 - [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

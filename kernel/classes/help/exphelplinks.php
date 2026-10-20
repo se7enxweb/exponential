@@ -1,6 +1,6 @@
 <?php
 /**
- * The link and image resolvers the viewer gives expHelpMarkdownRenderer (doc/features/6.0/help-system.md):
+ * The link and image resolvers the viewer gives expHelpMarkdownRenderer (doc/en/us/features/6.0/help-system.md):
  * a relative link to an allowed page becomes its viewer URL, a relative image an asset URL; http(s) links stay
  * (the renderer adds rel="noopener"); everything else (javascript:, data:, a page outside the help, ..) is dropped.
  *

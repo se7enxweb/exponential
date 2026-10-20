@@ -131,7 +131,7 @@ $ViewList['unactivated'] = array(
 
 // Check user accounts: every account, or those below a user group, by filter (never signed in, not seen for N days,
 // disabled, locked, orphaned, a shared e-mail address); disable, enable or unlock the ticked ones (after a
-// confirmation, each needing content/edit on the account) and the CSV of the list (doc/features/6.0/user-hygiene.md)
+// confirmation, each needing content/edit on the account) and the CSV of the list (doc/en/us/features/6.0/user-hygiene.md)
 $ViewList['hygiene'] = array(
     'functions' => array( 'hygiene' ),
     'script' => 'hygiene.php',
@@ -141,7 +141,7 @@ $ViewList['hygiene'] = array(
     'params' => array(),
 );
 
-// Deactivate and move / Reactivate and move back (doc/features/6.0/user-hygiene.md): disables an account and
+// Deactivate and move / Reactivate and move back (doc/en/us/features/6.0/user-hygiene.md): disables an account and
 // brings its locations together in the group for deactivated accounts, remembering where it was, or puts it back.
 // Off unless site.ini [UserSettings] DeactivateAndMove=enabled; POST only, after a confirmation, each account
 // needing content/edit on it and the rights to move it (see kernel/private/classes/views/user/deactivate.php)

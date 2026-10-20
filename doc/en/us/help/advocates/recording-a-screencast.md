@@ -85,7 +85,7 @@ More: [Accessible slides and visuals](accessible-slides-and-visuals.md).
 ## Keep it correct
 
 - After each release, check the changelog for changes to the screens you show
-  ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)).
+  ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
 - When the video is wrong, add a pinned comment with the correction, then re-record.
 - When it is obsolete, say so in the title or description, or unlist it.
 

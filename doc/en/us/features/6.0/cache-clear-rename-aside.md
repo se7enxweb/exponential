@@ -77,5 +77,5 @@ Only the file system handler (`eZFSFileHandler`) renames. A clustered cache goes
 - [Static cache generator](static-cache-generator.md), [Velocity response cache](velocity-response-cache.md)
 - [Velocity: running Exponential in a persistent-worker web server](velocity-persistent-worker-server.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)

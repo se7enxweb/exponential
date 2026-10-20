@@ -1,7 +1,7 @@
 /*
  * admin4 role/createpolicystep1: offers the functions of the chosen module already in step one.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md). The modules and their functions come from #createpolicy-modules.
+ * (doc/en/us/features/6.0/content-security-policy.md). The modules and their functions come from #createpolicy-modules.
  */
 (function () {
     var form = document.getElementById( 'createpolicyform' );

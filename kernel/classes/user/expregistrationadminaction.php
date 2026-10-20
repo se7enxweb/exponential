@@ -3,7 +3,7 @@
  * File containing the expRegistrationAdminAction class.
  *
  * The signed links of the administrator's "New user registered" mail (design:user/registrationfeedback.tpl) and the
- * actions behind them (user/registration, doc/features/6.0/registration-admin-links.md).
+ * actions behind them (user/registration, doc/en/us/features/6.0/registration-admin-links.md).
  *
  * A link carries a token: "<user id>.<action>.<expiry>.<nonce>.<signature>", the signature an HMAC-SHA-256 over the
  * other four parts under a key derived from the site secret (expMailSecret::derive( 'registration-action' )). It

@@ -2,7 +2,7 @@
    Scoped to .exp-oauth; takes admin4's tokens where they exist (--a4-*) and has values of its own for the older
    designs. Every text has at least 4.5:1 contrast on its background. Included once at the top of each page.
    (design/standard/templates/oauthadmin/parts/style.tpl links this file: a stylesheet, not a <style> element, so the page works under a
-   Content Security Policy with style-src 'self', doc/features/6.0/content-security-policy.md) */
+   Content Security Policy with style-src 'self', doc/en/us/features/6.0/content-security-policy.md) */
 .exp-oauth {
     --oa-ink: var(--a4-ink, #1f2430);
     --oa-muted: var(--a4-muted, #5d6573);

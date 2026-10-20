@@ -1,6 +1,6 @@
 <?php
 /**
- * The log viewer's "Wrap lines" choice (doc/features/6.0/log-viewer.md, "Wrapping long lines"): a user preference,
+ * The log viewer's "Wrap lines" choice (doc/en/us/features/6.0/log-viewer.md, "Wrapping long lines"): a user preference,
  * admin_logviewer_wrap, on by default, the same for every log and view.
  *
  *  LV-100  a stored '1' or '0' wins; no stored choice takes the default, which is on

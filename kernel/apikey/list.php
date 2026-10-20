@@ -1,6 +1,6 @@
 <?php
 /**
- * The "API access" page of the signed in user: apikey/list (doc/guides/api-keys.md, "For site users").
+ * The "API access" page of the signed in user: apikey/list (doc/en/us/guides/api-keys.md, "For site users").
  *
  * - Anonymous: what the page is for, a sign in form that comes back here, and the link to register.
  * - Signed in: the user's keys (name, prefix, scopes, created, last used, last address, expiry, status), revoke

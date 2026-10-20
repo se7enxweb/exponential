@@ -6,7 +6,7 @@
    module" with every function is a policy that gives access to everything: the page says so before it is added.
    Cancel goes back to the editor; nothing has been added to the draft yet. Every name is the one the view has always
    read (CurrentModule, ModuleFunction, AddModule, CustomFunction, AddFunction, Limitation). design/admin has the same
-   page with the script inline; here it is page/role_createpolicystep1.js. Guide: doc/guides/roles-and-policies.md *}
+   page with the script inline; here it is page/role_createpolicystep1.js. Guide: doc/en/us/guides/roles-and-policies.md *}
 
 <form id="createpolicyform" action={concat( $module.functions.edit.uri, '/', $role.id, '/' )|ezurl} method="post" class="a4-page a4-standalone">
 <div class="context-block">

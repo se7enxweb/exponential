@@ -22,7 +22,7 @@
  *   /var/lib/vc/sites/<site>.json               what is known about a site
  *
  * /etc/qbix is the engine's base tree; the engine loads it first and /etc/vc,
- * Velocity's overlay, on top. See doc/bc/6.0/velocity-ondisk-layout.md.
+ * Velocity's overlay, on top. See doc/en/us/bc/6.0/velocity-ondisk-layout.md.
  *
  * velocity.ini stays the source of what is generated. Generated files carry
  * "_generated": "exp:velocity" and are rewritten on every start; like a dpkg

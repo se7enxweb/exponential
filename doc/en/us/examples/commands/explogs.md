@@ -32,7 +32,7 @@ The log viewer on the command line (read only; e-mail and IP addresses and secre
 ./console exp:logs --reference=ERR-0123456789          where an error page's reference is, and its request
 ./console exp:logs --related=var/log/error.log:123456      the lines of the request of the entry at that offset
 
-Log management (doc/features/6.0/log-rotation.md):
+Log management (doc/en/us/features/6.0/log-rotation.md):
 ./console exp:logs --archives                              each log with its archives and their sizes
 ./console exp:logs --rotate=error,debug                    rotate these logs now (keys as in --archives, or ids)
 ./console exp:logs --rotate-all                            rotate every log that is not empty

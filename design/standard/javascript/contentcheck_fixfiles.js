@@ -1,5 +1,5 @@
 /**
- * The batches of contentcheck/fixfiles (doc/features/6.0/content-checks.md, "Resolving"): the progress page posts
+ * The batches of contentcheck/fixfiles (doc/en/us/features/6.0/content-checks.md, "Resolving"): the progress page posts
  * the rest on by itself after a moment, as if "Go on with the next batch" was pressed. "Stop here" (or any click
  * on the page, or a key) stops it; without JavaScript the button does the same.
  *

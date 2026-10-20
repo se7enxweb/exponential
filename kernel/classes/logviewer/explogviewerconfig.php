@@ -1,6 +1,6 @@
 <?php
 /**
- * The settings of the log viewer (settings/logviewer.ini, doc/features/6.0/log-viewer.md, "Settings"), read once
+ * The settings of the log viewer (settings/logviewer.ini, doc/en/us/features/6.0/log-viewer.md, "Settings"), read once
  * per request with safe bounds. A test gives its own values with fromArray(), so nothing here needs eZINI.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.

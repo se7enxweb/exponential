@@ -8,7 +8,7 @@
  */
 
 /**
- * What the content finder (module contentfinder, doc/features/6.0/content-finder.md) makes of its one search field:
+ * What the content finder (module contentfinder, doc/en/us/features/6.0/content-finder.md) makes of its one search field:
  * the kinds of id or path the text can be, each normalised. Pure: no database, no settings, no request.
  *
  * parse( $text, $type ) gives the queries to run, in order, as array( 'type' => ..., 'value' => ... ):

@@ -59,7 +59,7 @@ routine is yours.
 - After every release that changes templates: an automated check and a keyboard pass on the changed templates (see
   "Testing with axe and the keyboard").
 - After an upgrade: read the release's changelog for accessibility entries (the project records fixes there, for
-  example in the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
+  example in the [6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md)).
 - Re-check embedded third-party content (maps, video, forms of other services) when the provider changes it.
 
 ## Records to keep

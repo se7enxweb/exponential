@@ -1,5 +1,5 @@
 /**
- * The selection of the result lists of the content checks (doc/features/6.0/content-checks.md): a master checkbox
+ * The selection of the result lists of the content checks (doc/en/us/features/6.0/content-checks.md): a master checkbox
  * [data-a4-select-all] in a table [data-a4-select] checks or clears every row box [data-a4-select-item] of it, shows
  * the mixed state when some are checked, and keeps the count [data-a4-select-count] up to date from its
  * data-a4-count-text ("%selected of %total selected"). Without JavaScript the master box is hidden and the links

@@ -123,4 +123,4 @@ written so far.
 
 - [Audit](../../bc/6.0/audit.md), [the audit trail](../../features/6.0/audit-trail.md), [remote services](../../features/6.0/remote-services-expservices.md)
 - [Commands, cronjob parts and module views as classes](runnable-commands-cronjobs-views.md), [expservices specification](expservices.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [October 2026 chronicle](../../history/2026/2026-10.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md), [October 2026 chronicle](../../history/2026/2026-10.md)

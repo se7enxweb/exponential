@@ -12,7 +12,7 @@
  *   $editor->set( $setting['block'], $setting['variable'], $value );
  *   return $c->commit( $editor, $scope, $setting['file'], 'set ' . expIniCommandContext::settingText( $setting ) );
  *
- * Guide: doc/bc/6.0/console-exp-ini.md.
+ * Guide: doc/en/us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

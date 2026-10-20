@@ -1,6 +1,6 @@
 <?php
 /**
- * E-books of a manual of help maintained as content (doc/features/6.0/help-content.md, "E-books"): EPUB 3 (written
+ * E-books of a manual of help maintained as content (doc/en/us/features/6.0/help-content.md, "E-books"): EPUB 3 (written
  * here, pure PHP with ZipArchive) and PDF (with the help's PDF writer, expHelpPdfWriter, when it is installed).
  *
  * Only Released chapters and topics go into an e-book, and only those the user (on the command line: --login) may

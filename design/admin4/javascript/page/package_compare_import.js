@@ -1,7 +1,7 @@
 /*
  * admin4 package/compare (the import confirmation): All/None per item over the plain value checkboxes, and a class
  * left out takes the values that need it along. A file of its own, so the page runs under a Content Security Policy
- * without 'unsafe-inline' (doc/features/6.0/content-security-policy.md).
+ * without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var blocks = document.querySelectorAll( '.pcmp-import details.pcmp-values' );

@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/dashboard (doc/features/6.0/help-system.md): the help start page. Template design:exphelp/dashboard.tpl.
+ * exphelp/dashboard (doc/en/us/features/6.0/help-system.md): the help start page. Template design:exphelp/dashboard.tpl.
  *
  * Template variables: help_audiences (id => id, name, count), help_categories (id => id, name, icon, count),
  * help_featured (documents), help_recent (id, title, time, subject), help_tree, help_trackers (expHelpIssueReport),
@@ -47,7 +47,7 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_trackers', \expHelp::translatedNames( $report->trackers(), array( 'label', 'description' ) ) );
         $tpl->setVariable( 'help_search_url', \expHelp::url( 'search' ) );
         $tpl->setVariable( 'help_report_url', \expHelp::url( 'report' ) );
-        // help maintained as content (doc/features/6.0/help-content.md): the manuals and topics the user may see
+        // help maintained as content (doc/en/us/features/6.0/help-content.md): the manuals and topics the user may see
         $tpl->setVariable( 'help_content', self::contentSummary() );
         // the fifth step of the grow band, only when its page is in the help (it never links a missing page)
         $tpl->setVariable( 'help_grow_extensions_page', $index->document( 'help/contribute-extensions-back.md' ) !== null ? 'help/contribute-extensions-back.md' : '' );

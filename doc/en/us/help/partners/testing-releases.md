@@ -16,7 +16,7 @@ it is the best way to avoid surprises, and testing it before it is released help
 
 - Releases are tags of <https://github.com/se7enxweb/exponential>; watch its releases on GitHub.
 - The changes are in the changelog of each version (`doc/changelogs/6.0/`) and the release overview
-  (`doc/release-overview`).
+  (`doc/en/us/release-overview`).
 - Development happens on `main`; "Security fixes are made on the `main` branch ... and published with the next 6.0.x
   release" (SECURITY.md).
 - "A published tag is never changed" (SECURITY.md): a fix arrives as the next release.
@@ -29,7 +29,7 @@ it is the best way to avoid surprises, and testing it before it is released help
 
 ## Test checklist
 
-- [ ] Upgrade steps of the release applied (`doc/install/11-upgrading.md`)
+- [ ] Upgrade steps of the release applied (`doc/en/us/install/11-upgrading.md`)
 - [ ] Front page, a content page, search and forms work
 - [ ] Sign-in to the administration; edit and publish a draft; upload an image
 - [ ] Each language and siteaccess

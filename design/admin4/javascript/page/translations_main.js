@@ -1,7 +1,7 @@
 /*
  * admin4 translations tab: Set main becomes the default button when another main language is chosen.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function( $ )
 {

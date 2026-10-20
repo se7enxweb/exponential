@@ -1,4 +1,4 @@
-{* The contentcheck/brokenrelations view (doc/features/6.0/content-checks.md, "Broken relations"). Read only.
+{* The contentcheck/brokenrelations view (doc/en/us/features/6.0/content-checks.md, "Broken relations"). Read only.
 
    Variables: result (node, excluded, findings, checked, last, done, error), params (node_id, exclude, kinds,
    relations, after, limit), scope (the start location, see scope.tpl), kinds, relations, page_uri, filter_suffix, limit, limit_choices, limit_preference.

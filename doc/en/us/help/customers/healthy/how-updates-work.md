@@ -60,7 +60,7 @@ Ask for these three results in writing after every update.
 ## Where to read what changed
 
 Every release has a changelog with an "Upgrading" section, and the behavior change notes say what behaves
-differently ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md),
+differently ([Changelog 6.0.15](../../../../../changelogs/6.0/6.0.15.md),
 [Behavior changes of October 2026](../../../bc/6.0/behaviour-changes-2026-10.md)). Ask your provider for a short
 summary in your own words: what changes for editors, what changes for visitors, and anything your team must do.
 

@@ -208,7 +208,7 @@ Thresholds[apcu_memory]=75;90
 
 > Panels of extensions: a tab each after Memory, a chip in the summary and data in the page's JSON. An  
 > extension adds an id here and names its class (expDebugBarPanelInterface) in \[Panel\_<id>\] Class=; the  
-> class decides who may see the panel. Guide: doc/bc/6.0/debug-bar.md, "Panels of extensions".  
+> class decides who may see the panel. Guide: doc/en/us/bc/6.0/debug-bar.md, "Panels of extensions".  
 >   Panels\[\]=mypanel  
 >   \[Panel\_mypanel\]  
 >   Class=myExtensionDebugBarPanel  

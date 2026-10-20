@@ -128,5 +128,5 @@ corresponding source is.
 - [Remote services `expeditor`](remote-services-expservices.md) and the [expservices specification](../../specifications/6.0/expservices.md)
 - [ezoe](extensions/ezoe.md), [ezautosave](extensions/ezautosave.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
-- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
 - [October 2026 chronicle](../../history/2026/2026-10.md)

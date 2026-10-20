@@ -21,7 +21,7 @@ is covered for builders in [Shop overview](../../creators/website-creators/shop-
 ## Where the store lives in the administration
 
 Sign in to the administration and open the **Store** tab (it was called Webshop before 30 September 2026). Its
-first entry is the **Store dashboard** (`shop/dashboard`, `doc/features/6.0/store-dashboard.md`), which shows on
+first entry is the **Store dashboard** (`shop/dashboard`, `doc/en/us/features/6.0/store-dashboard.md`), which shows on
 one page:
 
 - **At a glance**: orders today, in 7 and in 30 days with the trend; revenue and average order per currency; new

@@ -76,7 +76,7 @@ You may cite, with the link, the project's own evidence for the administration:
 - the status words of [Accessibility standards](../../../standards/accessibility.md) (Partly complies, Unverified);
 - the list of design tests and what they hold (form labels, landmarks, keyboard patterns, contrast tokens, error
   summaries);
-- the manual axe results recorded in the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md).
+- the manual axe results recorded in the [6.0.15 changelog](../../../../../changelogs/6.0/6.0.15.md).
 
 Do not turn "Partly complies" into "Supports". The project's tests read template sources; they are evidence for your
 remarks, not a substitute for your test.

@@ -22,7 +22,7 @@
  *
  * With groups or AllLanguages the toolbar shows the choice grouped (groups()): the configured groups in their order,
  * then every offered locale A-Z by its name, each with how complete its translation is (expUISwitchLanguageCatalogue).
- * Guides: doc/guides/ui-switch-settings.md, doc/features/6.0/ui-switch-languages.md
+ * Guides: doc/en/us/guides/ui-switch-settings.md, doc/en/us/features/6.0/ui-switch-languages.md
  */
 class expUISwitchLanguageProvider extends expUISwitchProvider
 {

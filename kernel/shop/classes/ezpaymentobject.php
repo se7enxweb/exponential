@@ -43,7 +43,7 @@ class eZPaymentObject extends eZPersistentObject
         $auditOld = (int)$this->attribute( 'status' );
         $this->setAttribute( 'status', self::STATUS_APPROVED );
         $this->store();
-        // Audit (doc/bc/6.0/audit.md, commerce.payment.approve): never card or account data
+        // Audit (doc/en/us/bc/6.0/audit.md, commerce.payment.approve): never card or account data
         if ( class_exists( 'expAuditHook' ) && $auditOld !== (int)self::STATUS_APPROVED )
             expAuditHook::emit( 'commerce.payment.approve', array( 'object' => array( 'type' => 'payment', 'id' => (int)$this->attribute( 'id' ),
                                                                                      'payment_type' => (string)$this->attribute( 'payment_string' ) ),

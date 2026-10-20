@@ -2,7 +2,7 @@
 /**
  * The code of ezpm.php, moved into a class (#207 stage 1). The file ezpm.php is one call to it.
  * @description Create, import, install, list and delete Exponential packages
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of ./ezpm.php:
@@ -79,7 +79,7 @@ function helpExport()
                   "  (no -d)        export the .ezpkg archive to the current directory\n" .
                   "  --format=xml   the classic format: package.xml and XML documents (default for a classic package)\n" .
                   "  --format=json  the JSON format: package.json and JSON documents with checksums, as\n" .
-                  "                 PACKAGE-VERSION-RELEASE.json.ezpkg (doc/bc/6.0/package-json-format.md)\n"
+                  "                 PACKAGE-VERSION-RELEASE.json.ezpkg (doc/en/us/bc/6.0/package-json-format.md)\n"
                   );
 }
 
@@ -296,7 +296,7 @@ function resetCommandItem()
                           'version' => false,
                           'file' => false,
                           'destination-node-id' => false,
-                          // the JSON package format (doc/bc/6.0/package-json-format.md)
+                          // the JSON package format (doc/en/us/bc/6.0/package-json-format.md)
                           'format' => false,
                           'target' => false,
                           'to' => false,

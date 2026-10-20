@@ -48,7 +48,7 @@ second depends on the project, the first on you" ([SLA options](../../../hosting
 ## How you learn about a fix
 
 - Watch the releases of the repository on GitHub, and the changelog of the current line
-  ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
+  ([6.0.15 changelog](../../../../../../changelogs/6.0/6.0.15.md)).
 - The administration dashboard has a panel "Stay secure: keep Exponential up to date" with links to the Git Manager
   and Composer updates.
 - **Setup > Updates and packages** lists newer versions of the installed packages

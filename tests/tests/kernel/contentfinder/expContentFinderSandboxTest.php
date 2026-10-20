@@ -1,6 +1,6 @@
 <?php
 /**
- * The content finder against a real installation (doc/features/6.0/content-finder.md): lookups, the rights per
+ * The content finder against a real installation (doc/en/us/features/6.0/content-finder.md): lookups, the rights per
  * result with users of different roles, the actions and their refusals, and the audit records.
  *
  *  CS-01  every kind of id, the remote id and the URL alias find the object; the result shows its versions,
@@ -27,7 +27,7 @@
  *         finds the node; wildcards and quotes are text; the result cap; PartialAliasSearch=disabled; rights
  *
  * It runs on SQLite and, in a throwaway database named by EXP_CONTENTFINDER_SANDBOX_DATABASE as well, on MySQL or
- * MariaDB, PostgreSQL, Oracle and MongoDB (doc/features/6.0/content-finder.md, "Databases").
+ * MariaDB, PostgreSQL, Oracle and MongoDB (doc/en/us/features/6.0/content-finder.md, "Databases").
  *
  * It WRITES to the database (content, users, roles; fixtures/expcontentfindertestfixtures.php), so it runs ONLY
  * in a throwaway copy of an installation with an SQLite database inside it, named by EXP_CONTENTFINDER_SANDBOX,

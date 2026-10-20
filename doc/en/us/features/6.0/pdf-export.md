@@ -69,5 +69,5 @@ The list of exports is paged by `admininterface.ini [PaginationSettings] ItemsPe
 
 - [PDF export upgrade](../../bc/6.0/pdf-export.md) (database columns, changed defaults)
 - [Paging, sorting and page sizes](admin-list-paging.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - [Chronicle: September 2026, first half, 14 September](../../history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)

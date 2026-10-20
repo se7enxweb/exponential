@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/manual/<remote_id> (doc/features/6.0/help-content.md): a manual of help maintained as content, its metadata
+ * exphelp/manual/<remote_id> (doc/en/us/features/6.0/help-content.md): a manual of help maintained as content, its metadata
  * and table of contents (chapters and topics the user may see). Without a remote_id: the list of manuals.
  * Template design:exphelp/manual.tpl.
  *

@@ -160,7 +160,7 @@ Also: 7 merge or funding-metadata commits by the team (no user benefit; see the 
 ## Related pages
 
 - [Nexus](../../features/6.0/platform-nexus-starter.md)
-- [Release changelog](../../changelogs/extensions/cjw-exponential-platform-nexus.md)
+- [Release changelog](../../../../changelogs/extensions/cjw-exponential-platform-nexus.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

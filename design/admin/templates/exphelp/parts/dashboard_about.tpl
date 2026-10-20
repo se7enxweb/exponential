@@ -1,5 +1,5 @@
 {* exphelp/parts/dashboard_about: the "Who makes Exponential" band of the help dashboard, linking the two pages about
-   the people behind the software (doc/help/who-is-7x.md, doc/help/who-is-the-exponential-foundation.md). Included by
+   the people behind the software (doc/en/us/help/who-is-7x.md, doc/en/us/help/who-is-the-exponential-foundation.md). Included by
    exphelp/dashboard.tpl right below the search hero; the classic admin has the same file. Styles:
    stylesheets/modules/help.css (.a4-help-about*); no inline CSS or script. *}
 {def $help_about_ctx = 'kernel/exphelp'}

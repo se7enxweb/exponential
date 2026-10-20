@@ -8,7 +8,7 @@
 
    The same file is in design/admin and design/admin4. Every field and button name of the old page is kept
    (ObjectIDArray[], RemoveObjectCollectionButton), the page works without javascript, and the figures only
-   appear when the view hands them over. Guide: doc/guides/collected-information.md *}
+   appear when the view hands them over. Guide: doc/en/us/guides/collected-information.md *}
 
 {def $summary = first_set( $info_summary, false() )
      $search = first_set( $info_search, '' )

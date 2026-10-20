@@ -112,7 +112,7 @@ and clear the template and content caches. `./console exp:ezchecktranslation ger
 
 - [YUI removal and jQuery 4](../../../bc/6.0/yui-removal.md)
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/ezie.md) and [release notes](../../../changelogs/extensions/ezie.md)
+- [Chronicle](../../../history/extensions/ezie.md) and [release notes](../../../../../changelogs/extensions/ezie.md)
 - [Change ledger](../../../history/ledger/ezie.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-03](../../../history/extensions/months/2024-03.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

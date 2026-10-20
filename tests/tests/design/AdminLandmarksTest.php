@@ -5,7 +5,7 @@
  * one main landmark on every page: #maincontent, also on the edit-type pages that bring their own, and #a4-main
  * around a page without the left column that brings none. Header cells of admin4's tables have scope="col", and the
  * controls the audit found without a name have one.
- * doc/features/6.0/admin4-design.md, doc/bc/6.0/admin4-styling.md.
+ * doc/en/us/features/6.0/admin4-design.md, doc/en/us/bc/6.0/admin4-styling.md.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLandmarksTest.php
  *

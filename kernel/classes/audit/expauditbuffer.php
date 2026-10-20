@@ -1,7 +1,7 @@
 <?php
 /**
  * The records of one request (or one stretch of a command), per channel, until they are flushed
- * (doc/bc/6.0/audit.md, "Buffering and flushing (F3)").
+ * (doc/en/us/bc/6.0/audit.md, "Buffering and flushing (F3)").
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

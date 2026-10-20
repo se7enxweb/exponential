@@ -51,7 +51,7 @@ documentation and use your time for the follow-up. Open questions are marked **o
 
 | Question | Background in the sources |
 |---|---|
-| When will 6.0.15 be released? | No date is published ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)). Any answer is the speaker's statement, not a fact |
+| When will 6.0.15 be released? | No date is published ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)). Any answer is the speaker's statement, not a fact |
 | How do you decide when a line is ready to tag? | **Open** |
 | Will there be an Exponential 7? | **Open**; no source mentions one |
 | Why do version numbers keep counting in the last position? | Documented as a rule ([How version numbers work](how-version-numbers-work.md)); the reasoning is partly **open** |
@@ -71,7 +71,7 @@ documentation and use your time for the follow-up. Open questions are marked **o
 |---|---|
 | How are security reports handled? | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md): private reports, first answer "within one business day" |
 | Do you publish advisories or CVE identifiers? | **Open**; SECURITY.md does not mention them |
-| What did the 2026 hardening rounds find? | [6.0.13 changelog](../../changelogs/6.0/6.0.13.md), [August 2026](../../history/2026/2026-08.md) |
+| What did the 2026 hardening rounds find? | [6.0.13 changelog](../../../../changelogs/6.0/6.0.13.md), [August 2026](../../history/2026/2026-08.md) |
 
 ## Community, funding and open source
 

@@ -3,7 +3,7 @@
  * view mode, and ticking versions updates the selection count, the list of versions the Remove button removes, and the
  * select all box. The texts are data-text-* attributes of #history-texts.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md).
+ * (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var texts = document.getElementById( 'history-texts' );

@@ -329,6 +329,6 @@ INI cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`.
 ## Related pages
 
 - Change how content is shown: [Templates and design](templates-and-design.md).
-- What happened when: [October 2026 chronicle](../history/2026/2026-10.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
+- What happened when: [October 2026 chronicle](../history/2026/2026-10.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md).
 - Hardening of what editors can type: [datatype input hardening](../specifications/6.0/datatype-input-hardening.md).
 - Running background and scheduled work: [cronjobs console](../features/6.0/cronjobs-console.md).

@@ -12,7 +12,7 @@
    a bookmark on a folder of the folder list moves it there. Every POST name of the page is the one it always had
    (RemoveButton, AddButton, DeleteIDArray, MoveSelectedButton, FolderID, BookmarkFolderAction ...), with
    BookmarkShiftButton, BookmarkOrderButton and BookmarkPosition* added. The same file is in design/admin and
-   design/admin4. Guide: doc/guides/bookmarks.md *}
+   design/admin4. Guide: doc/en/us/guides/bookmarks.md *}
 {def $bp = $bookmark_page
      $summary = $bp.summary
      $current = $bp.current

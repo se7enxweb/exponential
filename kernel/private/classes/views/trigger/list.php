@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/trigger/list.php, moved into a class (#207 stage 1). The file kernel/trigger/list.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of ./kernel/trigger/list.php:
@@ -283,7 +283,7 @@ class ListView extends \Exponential\Runnable\ModuleView
             }
         }
 
-        // Audit (doc/bc/6.0/audit.md, system.workflow.trigger.change): the triggers before a change
+        // Audit (doc/en/us/bc/6.0/audit.md, system.workflow.trigger.change): the triggers before a change
         $auditTriggers = function () {
             $map = array();
             foreach ( (array)\eZTrigger::fetchList() as $t )

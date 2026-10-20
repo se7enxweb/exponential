@@ -12,7 +12,7 @@
  * qlo-ZZ), and the lorem ipsum text exp:loremipsum (bin/php/exploremipsumfill.php) writes into a translation in one,
  * per datatype. Reads files only; no database, no kernel bootstrap needed.
  *
- * Reference: doc/languages.md (test languages), guide: doc/guides/test-language-lorem-ipsum.md
+ * Reference: doc/en/us/languages.md (test languages), guide: doc/en/us/guides/test-language-lorem-ipsum.md
  */
 class expTestLanguage
 {

@@ -31,7 +31,7 @@ Class List Datatype) lets an editor select a list of content classes and stores 
 ## Related pages
 
 - [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
-- [Chronicle](../../../history/extensions/ngclasslist.md) and [release notes](../../../changelogs/extensions/ngclasslist.md)
+- [Chronicle](../../../history/extensions/ngclasslist.md) and [release notes](../../../../../changelogs/extensions/ngclasslist.md)
 - [Change ledger](../../../history/ledger/ngclasslist.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-08](../../../history/extensions/months/2026-08.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

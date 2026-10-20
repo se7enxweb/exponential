@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup > Log files > Health (setup/logshealth; doc/features/6.0/log-viewer.md, "Health"): the disk the logs and their
+ * Setup > Log files > Health (setup/logshealth; doc/en/us/features/6.0/log-viewer.md, "Health"): the disk the logs and their
  * archives use against [HealthSettings] DiskBudget, the fastest growing logs, the logs over their size limit, the files
  * the web server's user cannot write (mixed ownership of root and the site user), the newest error of each log linked
  * to its line in the viewer, and the effective rotation settings of each log with where each one is set (read only).

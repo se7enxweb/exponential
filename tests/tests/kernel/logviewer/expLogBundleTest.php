@@ -1,6 +1,6 @@
 <?php
 /**
- * "Download all logs" (expLogBundle; doc/features/6.0/log-viewer.md, "Downloading every log"), without a database,
+ * "Download all logs" (expLogBundle; doc/en/us/features/6.0/log-viewer.md, "Downloading every log"), without a database,
  * on a temporary root.
  *
  *  LV-160  the files: every listed log, with or without the archives; entry paths relative to the root, a configured

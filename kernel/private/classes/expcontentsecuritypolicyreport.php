@@ -8,7 +8,7 @@
  */
 
 /**
- * The reports of the Content Security Policy (doc/features/6.0/content-security-policy.md, "Reports"): what the
+ * The reports of the Content Security Policy (doc/en/us/features/6.0/content-security-policy.md, "Reports"): what the
  * view csp/report receives from the browser, read and written to var/log/csp.log, one line per violation.
  *
  * - Both formats: application/csp-report (report-uri: {"csp-report": {...}}) and application/reports+json (the

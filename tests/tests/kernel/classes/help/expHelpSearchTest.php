@@ -1,6 +1,6 @@
 <?php
 /**
- * expHelpSearch (doc/features/6.0/help-system.md, "Search"): ranking with title and heading boosts, every word
+ * expHelpSearch (doc/en/us/features/6.0/help-system.md, "Search"): ranking with title and heading boosts, every word
  * required with a relaxed fallback, prefix matching for search while typing, exclusions, filters and facets,
  * sections with anchors, snippets that escape every character of the source, the cache file. No database.
  *
@@ -78,7 +78,7 @@ class expHelpSearchTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'restart-the-server', $hit['anchor'] );
         $this->assertStringEndsWith( '#restart-the-server', $hit['url'] );
         $this->assertStringContainsString( '/exphelp/viewer/guides/velocity.md', $hit['url'] );
-        $this->assertSame( 'doc/guides/velocity.md', $hit['path'] );
+        $this->assertSame( 'doc/en/us/guides/velocity.md', $hit['path'] );
     }
 
     public function testSectionsFindSetextAndRepeatedHeadingsAsTheIndexDoes()

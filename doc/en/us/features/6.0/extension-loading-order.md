@@ -80,5 +80,5 @@ siteaccess settings are merged.
 - [Extension list: sort, inspect and download any extension](extension-list-and-downloads.md), [the default extension distribution](default-extension-distribution.md), [extensions, themes and packages](extensions/README.md)
 - [Extension metadata: `ezinfo.php` and `extension.xml`](../../specifications/6.0/extension-metadata.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)
 - History: [16 to 30 September 2026](../../history/2026/2026-09b.md), [June 2024](../../history/2024/2024-06.md), [March 2024](../../history/2024/2024-03.md), [February 2024](../../history/2024/2024-02.md), [January 2024, second half](../../history/2024/2024-01b.md), [January 2024, first half](../../history/2024/2024-01a.md)

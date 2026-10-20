@@ -12,7 +12,7 @@ type: help
 This page is for administrators who connect an intranet to the organization's directory. The kernel ships an LDAP
 login handler (`kernel/classes/datatypes/ezuser/ezldapuser.php`) configured in `settings/ldap.ini`. The 6.x
 documentation has no guide for it; the settings file's comments and the older feature notes
-(`doc/features/4.3/ldap_login_handler.txt`, `doc/features/3.8/ldap_user_binding.txt`) are the reference. Test it with
+(`doc/en/us/features/4.3/ldap_login_handler.txt`, `doc/en/us/features/3.8/ldap_user_binding.txt`) are the reference. Test it with
 your directory before relying on it.
 
 ## Contents

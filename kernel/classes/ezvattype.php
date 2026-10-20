@@ -228,7 +228,7 @@ class eZVatType extends eZPersistentObject
     }
 
     /**
-     * Stores the VAT type and records what changed (doc/bc/6.0/audit.md, commerce.vat.change).
+     * Stores the VAT type and records what changed (doc/en/us/bc/6.0/audit.md, commerce.vat.change).
      */
     function store( $fieldFilters = null )
     {
@@ -254,7 +254,7 @@ class eZVatType extends eZPersistentObject
         $vatID = $this->ID;
         $db = eZDB::instance();
         $db->begin();
-        // Audit (doc/bc/6.0/audit.md, commerce.vat.change): the row removed
+        // Audit (doc/en/us/bc/6.0/audit.md, commerce.vat.change): the row removed
         if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.vat.change' ) )
         {
             $auditRow = eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$vatID ), false );

@@ -105,7 +105,7 @@
          Linux 9): no syntax or functions of later versions (enums, readonly, never,
          array_is_list() unguarded, fputcsv()'s $eol, json_validate(), ...), and no
          functions later versions removed or deprecate. PHPCompatibility comes with
-         the development tools (composer.dev.json). doc/bc/6.0/php-8.0-support.md -->
+         the development tools (composer.dev.json). doc/en/us/bc/6.0/php-8.0-support.md -->
     <config name="testVersion" value="8.0-"/>
     <rule ref="PHPCompatibility"/>
 </ruleset>

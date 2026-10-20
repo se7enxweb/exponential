@@ -1,6 +1,6 @@
 <?php
 /**
- * The run() methods split into named protected methods (#207 stage 6), guide doc/bc/6.0/cli_cronjob_view_abstractions.md.
+ * The run() methods split into named protected methods (#207 stage 6), guide doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md.
  *
  *  ER-01 — Every extracted method of the split runnables is protected, takes run()'s variables by reference and is
  *          called from run() exactly once

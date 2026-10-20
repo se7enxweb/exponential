@@ -41,14 +41,14 @@ Sources: [Who is 7x?](../who-is-7x.md), [The history of Exponential](../../histo
 
 | Chapter | Years | What to read |
 |---|---|---|
-| The eZ Publish years | 1999 to 2021 | [The eZ Publish years, 1999 to 2021](../who-is-7x.md#the-ez-publish-years-1999-to-2021); the old changelogs in [Changelogs](../../changelogs/README.md) |
+| The eZ Publish years | 1999 to 2021 | [The eZ Publish years, 1999 to 2021](../who-is-7x.md#the-ez-publish-years-1999-to-2021); the old changelogs in [Changelogs](../../../../changelogs/README.md) |
 | The company that stayed | 2000 to 2023 | [From Brookins Consulting to 7x](../who-is-7x.md#from-brookins-consulting-to-7x-in-three-stages); [7x in three stages](7x-in-three-stages.md) |
 | The month the code changed hands | December 2023 | [December 2023](../../history/2023/2023-12.md); [Stewardship](../who-is-7x.md#stewardship-from-a-dormant-code-base-to-exponential-6) |
 | The 6.0.x releases | 2024 to 2026 | [The 6.0.x releases](../who-is-7x.md#the-60x-releases) |
 | A name of its own | August 2025 | [August 2025](../../history/2025/2025-08.md); [Why it is called Exponential](why-it-is-called-exponential.md) |
 | A nonprofit for the project | March 2026 | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md) |
 | A web server written in PHP | July to September 2026 | [Velocity chronicle](../../history/velocity/README.md) |
-| The 6.0.15 line | 2026 | [October 2026](../../history/2026/2026-10.md); [6.0.15 changelog](../../changelogs/6.0/6.0.15.md) |
+| The 6.0.15 line | 2026 | [October 2026](../../history/2026/2026-10.md); [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md) |
 
 ## The history pages
 

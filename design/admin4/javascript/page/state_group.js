@@ -1,7 +1,7 @@
 /*
  * admin4 state/group: Move up and Move down move the state on the page and renumber the positions.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/features/6.0/content-security-policy.md). The text comes from #state-order-data.
+ * (doc/en/us/features/6.0/content-security-policy.md). The text comes from #state-order-data.
  */
 var expStateOrderData = document.getElementById( 'state-order-data' );
 var expStateOrderText = {

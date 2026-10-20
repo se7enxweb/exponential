@@ -7,7 +7,7 @@
    kind); its changelog; and the contents browser of every file it holds. The card and what it carries come from
    the view (eZPackageCatalog: package_card, package_contents); without them (an older view) the page shows what
    the package itself says. The POST names are those of before (InstallButton, UninstallButton, ExportButton);
-   Remove posts RemovePackageButton to the package list, which asks first. Guide: doc/guides/packages.md *}
+   Remove posts RemovePackageButton to the package list, which asks first. Guide: doc/en/us/guides/packages.md *}
 {let package=fetch( package,item,
                     hash( package_name, $package_name,
                           repository_id, $repository_id ) )}
@@ -337,7 +337,7 @@
                     </span>
                 </div>
                 <div class="pvf-viewer-actions">
-                    {* a document in either format (XML and JSON are 1:1, doc/bc/6.0/package-json-format.md) *}
+                    {* a document in either format (XML and JSON are 1:1, doc/en/us/bc/6.0/package-json-format.md) *}
                     {if is_set( $viewed.format )}
                     <span class="pvf-format" data-format="{$viewed.format|wash}">{if $viewed.format|eq( 'json' )}JSON{else}XML{/if}{if $viewed.format|ne( $viewed.native )} ({'converted'|i18n('design/admin/package')}){/if}</span>
                     {if $viewed.format|eq( 'json' )}<a class="pvf-link-button" data-as="xml" href={$ContentsBrowser.url_as_xml|ezurl}>{'View as XML'|i18n('design/admin/package')}</a>

@@ -10,7 +10,7 @@ type: help
 # Glossary for hosts
 
 The terms the hosting pages use, in alphabetical order, each with the page that explains it. The general glossary of
-the documentation is [doc/glossary.md](../../glossary.md).
+the documentation is [doc/en/us/glossary.md](../../glossary.md).
 
 | Term | Meaning | More |
 |---|---|---|

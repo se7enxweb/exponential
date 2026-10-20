@@ -37,7 +37,7 @@ virtual host instead, where they are read once.
 ```apache
 # Exponential 6: an OpenLiteSpeed virtual host (vhconf.conf)
 #
-# Free documentation: GFDL 1.3 or later, see doc/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
+# Free documentation: GFDL 1.3 or later, see doc/en/us/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
 #
 # Derived, not shipped by the kernel, and NOT syntax-checked here (no
 # OpenLiteSpeed on the machine the examples are verified on): a translation

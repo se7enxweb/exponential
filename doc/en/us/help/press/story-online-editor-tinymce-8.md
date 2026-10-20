@@ -37,11 +37,11 @@ The 6.0.15 line is in development and not released; the dates are dates of the c
 
 | What | When | Source |
 |---|---|---|
-| TinyMCE 8.9.2 as an opt-in second engine, with the ezoe dialogs and browser tests | 2 October 2026 | [The online editor on TinyMCE 8](../../features/6.0/online-editor-tinymce8.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
-| The engine page `/ezoe/engine` | 11 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#11-october-2026-the-online-editors-engine-page) |
-| The engine switch as one control | 15 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#15-october-2026-the-online-editors-engine-switch-is-one-control) |
-| A clearer message for a dead link | 15 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#15-october-2026-the-online-editors-message-for-a-dead-link) |
-| Online editor hardening | 16 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#16-october-2026-online-editor-hardening) |
+| TinyMCE 8.9.2 as an opt-in second engine, with the ezoe dialogs and browser tests | 2 October 2026 | [The online editor on TinyMCE 8](../../features/6.0/online-editor-tinymce8.md), [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
+| The engine page `/ezoe/engine` | 11 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#11-october-2026-the-online-editors-engine-page) |
+| The engine switch as one control | 15 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#15-october-2026-the-online-editors-engine-switch-is-one-control) |
+| A clearer message for a dead link | 15 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#15-october-2026-the-online-editors-message-for-a-dead-link) |
+| Online editor hardening | 16 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#16-october-2026-online-editor-hardening) |
 
 ## Facts you can print
 

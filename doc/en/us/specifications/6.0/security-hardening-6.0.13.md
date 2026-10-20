@@ -82,4 +82,4 @@ When the change was made, 14 of 14 security tests passed after the patch and non
 
 - [Security hardening release notes](../../bc/6.0/hardening.md), [PHP 8 support](../../bc/6.0/php8.md), [PHPUnit 10](../../bc/6.0/phpunitv10.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md), [RAD tools — security](../../bc/6.0/rad-security.md)
 - [Specification: the August 2026 security patches](security-hardening-2026-08.md), [Security defaults of September 2026](security-defaults-2026-09.md), [Datatype and input hardening](datatype-input-hardening.md)
-- [Changelog 6.0.13](../../changelogs/6.0/6.0.13.md), [Chronicle: February 2026](../../history/2026/2026-02.md)
+- [Changelog 6.0.13](../../../../changelogs/6.0/6.0.13.md), [Chronicle: February 2026](../../history/2026/2026-02.md)

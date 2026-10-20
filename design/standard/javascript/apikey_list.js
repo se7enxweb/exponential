@@ -1,7 +1,7 @@
 /*
  * The API access page (apikey/list): shows the copy button of a new key where the clipboard can be used, and moves
  * the focus to the new key. A file of its own, so the page runs under a Content Security Policy without
- * 'unsafe-inline' (doc/features/6.0/content-security-policy.md).
+ * 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
  */
 (function () {
     var buttons = document.querySelectorAll('.ak .ak-copy');

@@ -65,5 +65,5 @@ domain its own document root, or generate the file per host, if the rules must d
 
 - [A clean installation that fits shared hosting](clean-install-defaults.md)
 - [bcgooglesitemaps](extensions/bcgooglesitemaps.md), [xrowmetadata](extensions/xrowmetadata.md)
-- [Changelog 6.0.11](../../changelogs/6.0/6.0.11.md)
+- [Changelog 6.0.11](../../../../changelogs/6.0/6.0.11.md)
 - [Chronicle: September 2025](../../history/2025/2025-09.md)

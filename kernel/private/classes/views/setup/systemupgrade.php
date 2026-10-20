@@ -12,7 +12,7 @@
  * upgrade_sql ('ok', 'mongo' or the SQL), mongo_check, mongo_missing_count, mongo_grouped_list, mongo_extra,
  * mongo_create_cmd; file_report, file_items, file_items_limit, schema_report, upgrade_info, upgrade_check.
  *
- * Guide: doc/guides/upgrade-check.md
+ * Guide: doc/en/us/guides/upgrade-check.md
  */
 /*
  * The original header of kernel/setup/systemupgrade.php:
@@ -269,7 +269,7 @@ class Systemupgrade extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Audit (doc/bc/6.0/audit.md, system.upgrade.run): an upgrade check that ran, with its outcome.
+     * Audit (doc/en/us/bc/6.0/audit.md, system.upgrade.run): an upgrade check that ran, with its outcome.
      */
     private static function audit( $check, $status, $differences, $download = '' )
     {

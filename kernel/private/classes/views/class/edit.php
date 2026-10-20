@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/class/edit.php, moved into a class (#207 stage 1). The file kernel/class/edit.php is one call to it.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/class/edit.php:
@@ -616,7 +616,7 @@ class Edit extends \Exponential\Runnable\ModuleView
 
                 $unorderedParameters = array( 'Language' => $EditLanguage );
 
-                // Audit (doc/bc/6.0/audit.md): the class as defined before this store; none = content.class.create
+                // Audit (doc/en/us/bc/6.0/audit.md): the class as defined before this store; none = content.class.create
                 $auditDefined = null;
                 if ( class_exists( 'expAuditHook' ) && ( \expAuditHook::on( 'content.class.create' ) || \expAuditHook::on( 'content.class.change' ) ) )
                 {

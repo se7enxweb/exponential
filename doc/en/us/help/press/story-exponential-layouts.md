@@ -38,10 +38,10 @@ other layout, and layouts move between installations by export and import. The s
 | What | When | Source |
 |---|---|---|
 | The repository `explayouts` is created | 31 July 2026 | [Who is 7x?, timeline](../who-is-7x.md#nearly-thirty-years-the-timeline) |
-| A Layouts tab in the admin node view | July and August 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#july-and-august-2026) |
-| Copy and duplicate blocks with their collections; the Layouts tab and breadcrumbs | 10 to 12 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#10-to-12-october-2026-exponential-layouts) |
-| Export and import of layouts | 17 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#17-october-2026-export-and-import-of-layouts) |
-| The layout editor page meets WCAG 2 AA (as the changelog states it) | 17 October 2026 | [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#17-october-2026-the-layout-editor-page-meets-wcag-2-aa) |
+| A Layouts tab in the admin node view | July and August 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#july-and-august-2026) |
+| Copy and duplicate blocks with their collections; the Layouts tab and breadcrumbs | 10 to 12 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#10-to-12-october-2026-exponential-layouts) |
+| Export and import of layouts | 17 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-export-and-import-of-layouts) |
+| The layout editor page meets WCAG 2 AA (as the changelog states it) | 17 October 2026 | [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#17-october-2026-the-layout-editor-page-meets-wcag-2-aa) |
 
 The 6.0.15 line is in development and not released.
 

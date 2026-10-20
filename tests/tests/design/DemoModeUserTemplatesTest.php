@@ -1,6 +1,6 @@
 <?php
 /**
- * Every user/forgotpassword.tpl and user/password.tpl in the tree shows the demo mode notice (doc/bc/6.0/demo-mode.md):
+ * Every user/forgotpassword.tpl and user/password.tpl in the tree shows the demo mode notice (doc/en/us/bc/6.0/demo-mode.md):
  * the kernel passes demo_mode_text to the forgot-password page and demo_mode_locked with demo_mode_text to the
  * password page while the environment variable EXP_DEMO_MODE=1 is set, and a design that overrides either page must
  * show it, or the visitors of a public demo never learn why an administrator password cannot be reset. Read from the

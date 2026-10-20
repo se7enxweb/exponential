@@ -28,7 +28,7 @@ special about designs.
 - [ ] Keyboard navigation and visible focus; text contrast at least 4.5:1
 - [ ] Responsive from phone width up; no horizontal scrolling
 - [ ] Works with the layouts editor's blocks if it targets layouts ([The layouts editor](../layouts-editor.md))
-- [ ] If it touches the administration: follows `doc/bc/6.0/admin4-styling.md` (no inline CSS, tokens with dark
+- [ ] If it touches the administration: follows `doc/en/us/bc/6.0/admin4-styling.md` (no inline CSS, tokens with dark
       values)
 
 ## Assets and their licenses

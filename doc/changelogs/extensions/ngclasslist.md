@@ -2,7 +2,7 @@
 
 Read this page before you install or update `ngclasslist`, or to find out which release brought a change.
 
-What each release of `ngclasslist` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ngclasslist.md); the story is in the [chronicle](../../history/extensions/ngclasslist.md).
+What each release of `ngclasslist` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/ngclasslist.md); the story is in the [chronicle](../../en/us/history/extensions/ngclasslist.md).
 
 ## 1.1.3 (2026-10-02)
 
@@ -38,8 +38,8 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 ## Related pages
 
-- [Feature page](../../features/6.0/extensions/ngclasslist.md)
-- [Chronicle](../../history/extensions/ngclasslist.md)
-- [Change ledger](../../history/ledger/ngclasslist.md)
-- [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)
-- Months: [2026-03](../../history/extensions/months/2026-03.md), [2026-08](../../history/extensions/months/2026-08.md), [2026-09](../../history/extensions/months/2026-09.md), [2026-10](../../history/extensions/months/2026-10.md)
+- [Feature page](../../en/us/features/6.0/extensions/ngclasslist.md)
+- [Chronicle](../../en/us/history/extensions/ngclasslist.md)
+- [Change ledger](../../en/us/history/ledger/ngclasslist.md)
+- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-08](../../en/us/history/extensions/months/2026-08.md), [2026-09](../../en/us/history/extensions/months/2026-09.md), [2026-10](../../en/us/history/extensions/months/2026-10.md)

@@ -1,7 +1,7 @@
 <?php
 /**
  * The pre-paint code of the administration pagelayouts runs under an enforced Content Security Policy with
- * script-src 'self' (doc/features/6.0/content-security-policy.md): what must run before the first paint (the color
+ * script-src 'self' (doc/en/us/features/6.0/content-security-policy.md): what must run before the first paint (the color
  * mode, the remembered width of the left column) is a script FILE loaded synchronously in <head>, never an inline
  * script, so no nonce or hash is needed and nothing flashes. Checked on the files alone; no database.
  *

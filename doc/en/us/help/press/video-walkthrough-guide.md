@@ -99,7 +99,7 @@ The full list of what must not appear is on [Keeping secrets off screen](keeping
 ## Keep it correct
 
 - After each release, read the changelog for changes to the screens you showed
-  ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)).
+  ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
 - When a step no longer works, pin a correction and fix the description; re-record when it matters
   ([Correcting a video or post](correcting-a-video-or-post.md)).
 - When the video is obsolete, say so in the title or description.

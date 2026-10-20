@@ -12,8 +12,8 @@ type: help
 This section is for procurement officers, project managers and the specialists who sit on an evaluation panel in a
 public body: a ministry, an agency, a council, a school board. It answers the questions a public procurement of a web
 content management system raises, from the first requirement to the end of the contract, and it says for each one
-what Exponential's own documentation can prove. The facts come from the standards pages in `doc/standards/`, the
-installation book in `doc/install/`, the partner and hosting sections of this help, and `SECURITY.md`.
+what Exponential's own documentation can prove. The facts come from the standards pages in `doc/en/us/standards/`, the
+installation book in `doc/en/us/install/`, the partner and hosting sections of this help, and `SECURITY.md`.
 
 > **Note** This section describes features and common practice; it is not legal advice. Public procurement is
 > governed by the law and the rules of your organization. Check them with your procurement and legal counsel.

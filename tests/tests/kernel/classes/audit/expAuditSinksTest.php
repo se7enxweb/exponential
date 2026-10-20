@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit sinks (doc/bc/6.0/audit.md, "Sinks (Q7)", acceptance test E1).
+ * The audit sinks (doc/en/us/bc/6.0/audit.md, "Sinks (Q7)", acceptance test E1).
  *
  *  SK-01 — syslog: the RFC 5424 message (PRI = facility * 8 + severity, MSGID the channel, the exp@32473 element
  *          with escaped values, the record as MSG); udp carries no body; the journald datagram has the identifier

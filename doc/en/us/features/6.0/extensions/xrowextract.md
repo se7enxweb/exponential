@@ -12,7 +12,7 @@ Open it at **Export** in the top admin menu (`/xrowextract/csv`). Everything on 
 command line, see [Command line](#command-line). The full reference (settings, policies, tables, classes) is in the
 [xrowextract specification](../../../specifications/6.0/xrowextract.md); the history of the work is in the
 [xrowextract chronicle](../../../history/extensions/xrowextract.md) and the
-[release notes](../../../changelogs/extensions/xrowextract.md).
+[release notes](../../../../../changelogs/extensions/xrowextract.md).
 
 ## Quick start: articles to a spreadsheet
 
@@ -386,7 +386,7 @@ the PHP configuration.
 - [Package compare and import](../package-compare-and-import.md)
 - [Command line and cronjob abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
-- [Chronicle of the extension](../../../history/extensions/xrowextract.md) and [release notes](../../../changelogs/extensions/xrowextract.md)
+- [Chronicle of the extension](../../../history/extensions/xrowextract.md) and [release notes](../../../../../changelogs/extensions/xrowextract.md)
 - [Change ledger](../../../history/ledger/xrowextract.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-04](../../../history/extensions/months/2024-04.md), [2024-07](../../../history/extensions/months/2024-07.md), [2024-08](../../../history/extensions/months/2024-08.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)

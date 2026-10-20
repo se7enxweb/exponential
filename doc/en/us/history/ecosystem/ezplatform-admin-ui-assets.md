@@ -54,7 +54,7 @@ The fork contains the full upstream history. The table counts it by month and ki
 ## Related pages
 
 - [Platform admin interface](../../features/6.0/platform-admin-ui-fork.md)
-- [Release changelog](../../changelogs/extensions/ezplatform-admin-ui-assets.md)
+- [Release changelog](../../../../changelogs/extensions/ezplatform-admin-ui-assets.md)
 - [Package map](../../specifications/6.0/platform-package-map.md)
 - [Upgrade notes](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - [Ecosystem overview](../ecosystem.md)

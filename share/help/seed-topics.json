@@ -1,5 +1,5 @@
 {
-    "about": "Initial help topics and one manual for exp:help:content seed-topics: the templates of doc/specifications/6.0/help-style-guide.md (sections 1.1 to 1.5). Topics are found again by help_id (remote_id help-topic-<help_id>), manuals by remote_id; an existing object is left as the editors made it unless --update is given. Links to other topics: help:<help_id>. related: help_ids.",
+    "about": "Initial help topics and one manual for exp:help:content seed-topics: the templates of doc/en/us/specifications/6.0/help-style-guide.md (sections 1.1 to 1.5). Topics are found again by help_id (remote_id help-topic-<help_id>), manuals by remote_id; an existing object is left as the editors made it unless --update is given. Links to other topics: help:<help_id>. related: help_ids.",
     "topics": [
         {
             "class": "help_concept",

@@ -3,7 +3,7 @@
    components.css (the tokens) into each editor's document and copies the page's html[data-a4-theme] there, so the
    text, links, literal blocks, custom tags and embeds follow the light and the dark mode. Every rule is scoped to
    html[data-a4-theme]: without admin4's script nothing here applies. Colours come from the --a4-* tokens only.
-   doc/bc/6.0/admin4-styling.md, "Edit forms". */
+   doc/en/us/bc/6.0/admin4-styling.md, "Edit forms". */
 
 html[data-a4-theme] { color-scheme: light; }
 html[data-a4-theme="dark"] { color-scheme: dark; }

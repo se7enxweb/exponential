@@ -12,7 +12,7 @@
 
    The same file is in design/admin and design/admin4. The variables of the page before the redesign
    (available_extension_array, selected_extension_array, extension_positions, extension_info ...) are still set by
-   the view. Guide: doc/guides/extensions-page.md *}
+   the view. Guide: doc/en/us/guides/extensions-page.md *}
 
 {def $plan = $extension_plan
      $summary = $extension_summary

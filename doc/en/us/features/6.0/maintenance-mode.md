@@ -145,4 +145,4 @@ caches pause during maintenance too (engine release 0.0.4.34 and later).
 - [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)

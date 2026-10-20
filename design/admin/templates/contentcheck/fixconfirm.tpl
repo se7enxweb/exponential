@@ -1,4 +1,4 @@
-{* The preview of contentcheck/fixfiles (doc/features/6.0/content-checks.md, "Resolving").
+{* The preview of contentcheck/fixfiles (doc/en/us/features/6.0/content-checks.md, "Resolving").
 
    Variables: plan (action, items, allowed, too_many, fingerprint), action, node_id, nothing_selected, batch_size,
    max_items, confirm_token, confirm_field, form_token, token_field. Every chosen field version is listed with what

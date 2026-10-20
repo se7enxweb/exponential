@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckScope class.
  *
- * The start location of the content checks (doc/features/6.0/content-checks.md, "Where a check starts"): any node,
+ * The start location of the content checks (doc/en/us/features/6.0/content-checks.md, "Where a check starts"): any node,
  * from the whole tree (node 1) to one folder. A check takes it from its filter form (GET NodeID), else from the
  * address (contentcheck/<view>/<node id>), else from the signed-in user's preference admin_contentcheck_scope,
  * else the content tree's top node (content.ini [NodeSettings] RootNode). A node given in the form or the address

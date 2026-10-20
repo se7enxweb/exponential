@@ -164,4 +164,4 @@ SQLite counterpart of this change: [transactions and writers](sqlite3-database-d
 - Specifications: [SQLite3 database driver](sqlite3-database-driver.md), [Installer logs and seed data](installer-logs-and-seed-data.md)
 - Features: [SQLite database](../../features/6.0/sqlite-database.md), [MongoDB as the database](../../features/6.0/mongodb-database-support.md), [Installing in one command](../../features/6.0/install-in-one-command.md)
 - Upgrade notes: [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md), [SQL query cache](../../bc/6.0/sql-query-cache.md)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md), chronicles [16 to 30 September 2026](../../history/2026/2026-09b.md) and [June 2026, first half](../../history/2026/2026-06a.md)
+- [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md), chronicles [16 to 30 September 2026](../../history/2026/2026-09b.md) and [June 2026, first half](../../history/2026/2026-06a.md)

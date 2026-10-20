@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/ezcsvexport.php, moved into a class (#207 stage 1). The file bin/php/ezcsvexport.php is one call to it.
  * @description Export the subtree below a node to one CSV file per content class (--storage-dir)
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/ezcsvexport.php:
@@ -179,7 +179,7 @@ class Ezcsvexport extends \Exponential\Runnable\Command
             fclose( $fp );
         }
 
-        // Audit (doc/bc/6.0/audit.md, data.export.csv): what left the system, never the values
+        // Audit (doc/en/us/bc/6.0/audit.md, data.export.csv): what left the system, never the values
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'data.export.csv', array( 'object' => \expAuditHook::node( $node ), 'verb' => 'export',
                 'after' => array( 'node' => (int)$nodeID, 'rows' => count( $subTree ), 'classes' => array_keys( $openedFPs ),

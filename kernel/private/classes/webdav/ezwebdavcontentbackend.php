@@ -2382,7 +2382,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         }
 
         // content.ini [RemoveSettings] ReverseRelationCheck=block: no removal while other objects point at what goes
-        // (doc/features/6.0/reverse-relation-check.md); a process that started before the class existed skips it
+        // (doc/en/us/features/6.0/reverse-relation-check.md); a process that started before the class existed skips it
         if ( class_exists( 'Exponential\\Service\\ReverseRelationCheck' ) )
         {
             $relationMode = \Exponential\Service\ReverseRelationCheck::removeMode();

@@ -45,7 +45,7 @@ The extension README has the full text.
 ## Related pages
 
 - [ezwebin](ezwebin.md), [ezflow](ezflow.md), [ezodf](ezodf.md), [ezmultiupload](ezmultiupload.md)
-- [Chronicle](../../../history/extensions/ezwt.md) and [release notes](../../../changelogs/extensions/ezwt.md)
+- [Chronicle](../../../history/extensions/ezwt.md) and [release notes](../../../../../changelogs/extensions/ezwt.md)
 - [Change ledger](../../../history/ledger/ezwt.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2026-07](../../../history/extensions/months/2026-07.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)
