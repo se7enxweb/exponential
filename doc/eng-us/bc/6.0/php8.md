@@ -41,8 +41,9 @@ php -v
 grep -n '"php"' composer.json
 ```
 
-The first line of `php -v` must show 8.0 or newer, for a site on Exponential Velocity too (see
-[PHP 8.0 support](php-8.0-support.md)). The `composer.json` line shows the PHP versions the current release accepts.
+The first line of `php -v` must show 8.0 or newer, also when the site runs on Exponential Velocity (from its release
+0.0.4.54; see [PHP 8.0 support](php-8.0-support.md)). The `composer.json` line shows the PHP versions the current
+release accepts.
 
 ## What this means for your own code
 
@@ -52,8 +53,8 @@ The first line of `php -v` must show 8.0 or newer, for a site on Exponential Vel
 - **Mark SPL methods.** Give methods that implement `Iterator`, `ArrayAccess` or `Countable` the
   `#[ReturnTypeWillChange]` attribute, or real return types.
 - **Raise your PHP constraint.** Set your own `composer.json` PHP constraint to `^8.0` or newer, the oldest version
-  the product supports again since 6.0.15 (6.0.8 to 6.0.14 required `^8.1`). Use `^8.1` if the site runs on
-  Exponential Velocity. Sites still on PHP 7.4 must stay on 6.0.7.
+  the product supports again since 6.0.15 (6.0.8 to 6.0.14 required `^8.1`). Exponential Velocity runs on 8.0 too
+  from its release 0.0.4.54. Sites still on PHP 7.4 must stay on 6.0.7.
 
 The PHP manual lists every incompatible change per version:
 

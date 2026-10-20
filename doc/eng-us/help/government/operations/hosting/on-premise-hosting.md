@@ -34,7 +34,7 @@ An Exponential site is a PHP application with a database and a directory of file
 
 | Part | What it is | Where to read |
 |---|---|---|
-| PHP 8 for the web and for the command line | the same version for both; 8.0 or later, for Velocity too | [PHP versions and extensions](../../../hosting/basics/php-versions-and-extensions.md) |
+| PHP 8 for the web and for the command line | the same version for both; 8.0 or later, Velocity included | [PHP versions and extensions](../../../hosting/basics/php-versions-and-extensions.md) |
 | A database | one of six, in the project's official order | [Database choice in the official order](database-choice-in-the-official-order.md) |
 | A web server or the Velocity engine | serves pages and HTTPS | [Web server choices](web-server-choices.md) |
 | Writable directories | `var/` and the settings overrides | [Storage layout](../../../hosting/operations/storage-layout.md) |

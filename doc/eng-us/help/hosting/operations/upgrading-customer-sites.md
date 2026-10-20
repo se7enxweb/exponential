@@ -69,7 +69,7 @@ Which part of the guide applies follows from the version ([Which part do I read?
 
 | Step | What to decide |
 |---|---|
-| PHP | Exponential 6.0 needs PHP 8.0 or newer on the current line, for Velocity too; a site that must stay on PHP 7.4 stays on 6.0.7 ([PHP versions and extensions](../basics/php-versions-and-extensions.md)) |
+| PHP | Exponential 6.0 needs PHP 8.0 or newer on the current line, Velocity included; a site that must stay on PHP 7.4 stays on 6.0.7 ([PHP versions and extensions](../basics/php-versions-and-extensions.md)) |
 | Customizations | own extensions and template overrides: test them on a copy first |
 | Staging | restore the latest backup on a staging copy, upgrade it there, let the customer check it |
 | Window | a maintenance window for the database step, announced to the customer |

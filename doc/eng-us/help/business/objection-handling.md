@@ -51,7 +51,7 @@ not state that" over a guess.
 | "Is it still maintained?" | Fifteen 6.0.x releases from 1 January 2024 to 7 June 2026, 6.0.15 in development; CI on every push | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases), [CI](../../bc/6.0/ci.md) |
 | "Will it last?" | A code base kept since 1999, a company and a nonprofit behind it, and a GPL license that keeps the code available to everyone | `COPYRIGHT.md`, [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md) |
 | "Who supports us?" | Documented commitments for PHP, security fixes, releases and documentation; service contracts from 7x or any provider; community places | [The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment) |
-| "Which PHP versions?" | PHP 8.0 to 8.5, Velocity included | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
+| "Which PHP versions?" | PHP 8.0 to 8.5, Velocity included (from its release 0.0.4.54) | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 | "We will be locked in." | GPL code, six databases, almost any operating system, documented moves between databases | [Comparing Exponential factually](comparing-exponential-factually.md#no-lock-in-point-by-point) |
 | "Nobody knows this system." | The sources do not count developers; they document the stack and a lot of free learning material | [Skills](#skills-can-we-find-people-who-know-it) |
 | "Upgrades are risky." | Published versions never change; update files per database; an upgrade check in the administration | [Upgrading](../../install/11-upgrading.md), [The upgrade check](../../guides/upgrade-check.md) |
@@ -144,7 +144,7 @@ report, "within one business day" (`SECURITY.md`). Service levels belong in a co
 | Objection | Answer | Source |
 |---|---|---|
 | "It needs an old PHP." | PHP 8.0 is the oldest supported version; 8.1 to 8.5 are supported; `composer.json` allows up to 8.8. | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
-| "We run Red Hat Enterprise Linux 9 with its stock PHP." | PHP 8.0, the stock PHP of RHEL 9 and its rebuilds, runs it under Apache or PHP-FPM. | `README.md`, [PHP 8.0 support](../../bc/6.0/php-8.0-support.md) |
+| "We run Red Hat Enterprise Linux 9 with its stock PHP." | PHP 8.0, the stock PHP of RHEL 9 and its rebuilds, runs it under Apache, PHP-FPM or Velocity (from Velocity 0.0.4.54). | `README.md`, [PHP 8.0 support](../../bc/6.0/php-8.0-support.md) |
 | "We are still on PHP 7.4." | 6.0.7 is the last release for PHP 7.4; 7x "strongly recommends you to upgrade". | `README.md` |
 | "The interface looks dated." | admin4, with light and dark mode; jQuery 4 and TinyMCE 8 in the 6.0.15 line; AdminUI as an alternative look. | [The admin4 design](../../features/6.0/admin4-design.md), [October 2026](../../history/2026/2026-10.md), [AdminUI](../../features/6.0/exp-adminui.md) |
 | "We need headless delivery." | A REST API, versions 1 and 2. For a Symfony project with GraphQL, the family offers Exponential Platform DXP. | [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md), [Which product is for you](../who-is-the-exponential-foundation.md#which-product-is-for-you) |

@@ -136,7 +136,7 @@ Platform or Ibexa is covered by [chapter 16](16-migrating-from-ez-platform-and-i
 
 ## 15.4 Plan and timeline
 
-**Requirements of the target.** PHP 8.0 to 8.5 (`composer.json`: `^8.0`), Velocity included; the old site ran on
+**Requirements of the target.** PHP 8.0 to 8.5 (`composer.json`: `^8.0`), Velocity too (from its release 0.0.4.54); the old site ran on
 PHP 5.3.17 or later (the community project's minimum), so every PHP file of your own extensions crosses PHP 7 and 8.
 See [chapter 2](02-requirements.md), [PHP 8 support](../bc/6.0/php8.md) and the PHP migration guides in the
 references. Databases: [chapter 9](09-databases.md).

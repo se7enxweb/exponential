@@ -18,7 +18,7 @@ as the user who owns the files. Each line names the page that explains it. Print
 EXPONENTIAL TRAINING LAB                                   run in the installation root, not as root
 
 CHECK THE MACHINE
-  php -v ; php -m                        PHP 8.0+ (Velocity too); intl, xsl, sqlite3, mbstring ...
+  php -v ; php -m                        PHP 8.0+ (Velocity included); intl, xsl, sqlite3, mbstring ...
   composer --version ; git --version
 
 GET THE CODE (a fixed release)

@@ -28,7 +28,7 @@ and the support commitment in [Who is the Exponential Foundation?](../../../who-
 | PHP | Exponential 6.0 |
 |---|---|
 | 7.4 and older | not supported from 6.0.8 on; a site that must stay on 7.4 stays on 6.0.7 |
-| 8.0 | the oldest supported version (new in 6.0.15); the stock PHP of Red Hat Enterprise Linux 9 and its rebuilds; Velocity does not run on it |
+| 8.0 | the oldest supported version (new in 6.0.15); the stock PHP of Red Hat Enterprise Linux 9 and its rebuilds; Velocity runs on it from its release 0.0.4.54 |
 | 8.1 to 8.4 | supported, Velocity included |
 | 8.5 | supported; the newest version tested |
 | later 8.x | accepted by `composer.json` but not yet released or tested |
@@ -52,7 +52,7 @@ The database is part of the platform: plan its own upgrades, and its backup meth
 ## Web servers and engines
 
 A site can be served by Exponential Velocity, by Apache or nginx with PHP-FPM, or by FrankenPHP
-([8. Serving the site](../../../../install/08-serving-the-site.md)). Velocity needs PHP 8.0 or later with the `sockets`
+([8. Serving the site](../../../../install/08-serving-the-site.md)). Velocity needs PHP 8.0 or later (from its release 0.0.4.54) with the `sockets`
 extension ([2. Requirements](../../../../install/02-requirements.md)). Velocity is a separate package with its own
 versions and changelog ([Velocity changelog](../../../../../changelogs/extensions/exponential-velocity.md)).
 

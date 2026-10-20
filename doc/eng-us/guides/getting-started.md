@@ -12,7 +12,7 @@ Every command is run from the root of the installation (the directory that holds
 
 | Need | Detail |
 |---|---|
-| PHP | 8.0 or newer; `composer.json` allows 8.0 up to 8.8. Exponential Velocity, the built-in server of step 4, runs on 8.0 or newer too. The command line PHP needs the PDO driver of your database (SQLite is enough to start). |
+| PHP | 8.0 or newer; `composer.json` allows 8.0 up to 8.8. Exponential Velocity, the built-in server of step 4, runs on 8.0 too (from its release 0.0.4.54). The command line PHP needs the PDO driver of your database (SQLite is enough to start). |
 | Composer | version 2.x, only for the Composer install paths below |
 | A database | none to start: the default is SQLite in a file. MySQL or MariaDB, PostgreSQL, MongoDB and Oracle are choices of `--db=`. |
 | A web server | any for production (Apache with the shipped `.htaccess`, or PHP-FPM behind a server). To try the site at once, Exponential brings its own, see step 4. |

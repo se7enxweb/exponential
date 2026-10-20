@@ -25,7 +25,7 @@ partner joining the program adds its own offer to this landscape.
 
 | Area | Requirement | Source |
 |---|---|---|
-| PHP | 8.0 to 8.5 for the 6.0.15 line, Velocity included | `doc/eng-us/install/02-requirements.md` |
+| PHP | 8.0 to 8.5 for the 6.0.15 line, Velocity included (from its release 0.0.4.54) | `doc/eng-us/install/02-requirements.md` |
 | PHP extensions | Among others `dom`, `xsl`, `mbstring`, `iconv`, `intl`, `zlib`, and one database extension | same |
 | php.ini | `memory_limit` 64M or more, `max_execution_time` 30, `date.timezone` set, `file_uploads` on | same |
 | Database | SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle or MySQL, in that order of preference | [Database support](../database-support.md) |

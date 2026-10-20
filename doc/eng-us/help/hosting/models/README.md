@@ -41,7 +41,7 @@ Back to [Hosting companies: start here](../hosting-companies-start-here.md).
 Whatever the model, an Exponential site needs the same few things
 ([Chapter 2: Requirements](../../../install/02-requirements.md)):
 
-- **PHP 8.0 or later** (for Exponential Velocity too) with the required extensions;
+- **PHP 8.0 or later** (Exponential Velocity included) with the required extensions;
 - **one database** of the six supported ones, in the official order: 1. SQLite 3 (the default) · 2. PostgreSQL ·
   3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
   at this time; it has no driver in 6.0.x ([Database support](../../database-support.md));

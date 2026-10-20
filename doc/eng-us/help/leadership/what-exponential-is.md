@@ -152,7 +152,7 @@ leadership pages are written for Exponential 6, the kernel this help belongs to.
 
 | Layer | Facts | Read |
 |---|---|---|
-| PHP | 8.0 to 8.5, Velocity included (from 0.0.4.54); 7.4 only up to 6.0.7 | [The support commitment](../who-is-the-exponential-foundation.md#php-versions) |
+| PHP | 8.0 to 8.5, Velocity included (from its release 0.0.4.54); 7.4 only up to 6.0.7 | [The support commitment](../who-is-the-exponential-foundation.md#php-versions) |
 | Database | In order of preference: SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Database support](../database-support.md) |
 | Operating system | "almost any that runs PHP 8.0 or later", sorted into four tiers | [Operating system support](../os-support.md) |
 | Web server | Exponential Velocity (recommended; part of Exponential and installed with it as of 6.0.15), FrankenPHP (production-ready alternative), Apache or nginx with PHP-FPM, and others | [Chapter 8: Serving the site](../../install/08-serving-the-site.md) |

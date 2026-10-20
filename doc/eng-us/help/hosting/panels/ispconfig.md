@@ -52,7 +52,7 @@ test result: treat ISPConfig as at most tier 3 until you have tested it.
 | Need | Value | Panel task (generic) |
 |---|---|---|
 | Operating system | a tier 1 or 2 distribution, for example Debian 12 or 13, Ubuntu 22.04 or 24.04, AlmaLinux 9 | the base install below the panel ([Tier 2](../../os-support.md#tier-2-known-to-work)) |
-| PHP | 8.0 or later (for Velocity too), with `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, one database extension, `gd` or ImageMagick | PHP version and modules per site ([2.3](../../../install/02-requirements.md#23-php-extensions)) |
+| PHP | 8.0 or later (Velocity included), with `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, one database extension, `gd` or ImageMagick | PHP version and modules per site ([2.3](../../../install/02-requirements.md#23-php-extensions)) |
 | PHP for the command line | the same version and extensions as the site's | for Composer, the console and cron ([Command line and web PHP](../../../install/02-requirements.md#command-line-and-web-php)) |
 | `php.ini` | `memory_limit` 64M or more, `max_execution_time` 30 or more, `date.timezone`, `file_uploads` on, `allow_url_fopen` on | per-site PHP settings ([2.5](../../../install/02-requirements.md#25-phpini-settings)) |
 | PHP user | PHP runs as the site's own user | per-site PHP-FPM pool ([8.7.2](../../../install/08-serving-the-site.md#872-one-user-or-one-group)) |

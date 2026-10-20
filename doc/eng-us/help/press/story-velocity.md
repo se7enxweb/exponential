@@ -54,7 +54,7 @@ Velocity in Exponential belongs to the 6.0.15 development line, which is not rel
 |---|---|
 | Velocity is a web server written in PHP that keeps the application loaded between requests. | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#how-exponential-is-served) |
 | It is MIT licensed (Exponential itself is GPL). | [Who is 7x?, Open source licenses](../who-is-7x.md#open-source-licenses) |
-| It runs on PHP 8.0 or later (from 0.0.4.54; it needed 8.1 before). | [README, What version of PHP is required](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
+| It runs on PHP 8.0 or later, from its release 0.0.4.54 (until then 8.1). | [README, What version of PHP is required](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
 | HTTPS from the first start with a self-signed certificate; your own certificates or Let's Encrypt are possible. | [Velocity](../../features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it), [README](https://github.com/se7enxweb/exponential/blob/main/README.md#how-exponential-is-served) |
 | HTTP/2 is built into the bundled server. | [Velocity](../../features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
 | One command deploys a PHP change: `./console exp:velocity deploy`. | [Velocity, Deploy a PHP change](../../features/6.0/velocity-persistent-worker-server.md#deploy-a-php-change-in-one-command) |

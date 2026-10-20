@@ -43,7 +43,8 @@ two of security fixes.
 - **PHP 8.0 is the oldest supported version**, because it is the stock PHP of Red Hat Enterprise Linux 9; see
   [PHP 8.0 support](../bc/6.0/php-8.0-support.md). PHP functions newer than 8.0 are defined in `lib/phpcompat.php`,
   which `autoload.php` loads only when `PHP_VERSION_ID < 80100`.
-- Exponential Velocity, the application server, runs on PHP 8.0 or later; since 6.0.15 it is in `require` (`~0.0.4.54`), not `suggest`.
+- Exponential Velocity, the application server, runs on PHP 8.0 to 8.5 from its release 0.0.4.54 and is in
+  `require` at `~0.0.4.54` (until then it needed PHP 8.1 and was only in `suggest`).
 - Required PHP extensions in `composer.json`: `dom`, `libxml`, `mbstring`, `pcre`, `json`, `iconv`, `reflection`,
   `session`, `spl`, `simplexml`. Database and image extensions are in `suggest`.
 

@@ -34,7 +34,7 @@ them as decisions.
 |---|---|---|
 | Does more than one machine have to write the database? | yes | A database server, PostgreSQL first; not SQLite |
 | Does the hosting allow long-running processes? | no (typical shared hosting) | Apache or nginx with PHP-FPM; Velocity usually not |
-| Is the machine's PHP 8.0? | yes (for example the stock PHP of RHEL 9) | Either engine: Velocity runs on PHP 8.0 too |
+| Is the machine's PHP 8.0? | yes (for example the stock PHP 8.0 of RHEL 9) | Any engine; Velocity runs on 8.0 from its release 0.0.4.54 |
 | Is the organization standardized on one database? | yes | That database, if it is among the six; read its limits |
 | Is there shell access on the server? | no | The setup wizard in the browser |
 
@@ -99,7 +99,7 @@ For a production project, prefer tier 1 or tier 2. A tier 3 system is "a reasone
 installation early.
 
 What every system has to provide is on [Operating system support](../os-support.md) and in
-[chapter 2](../../install/02-requirements.md): PHP 8.0 or later (for Velocity too), the required PHP extensions, a
+[chapter 2](../../install/02-requirements.md): PHP 8.0 or later (Velocity included), the required PHP extensions, a
 database, Composer 2, writable directories, and 64-bit PHP recommended "for support of more than 30 languages".
 
 ## Web server and engine
@@ -109,7 +109,7 @@ database, Composer 2, writable directories, and 64-bit PHP recommended "for supp
 | | Exponential Velocity | FrankenPHP (through Velocity) | Apache + PHP-FPM | nginx + PHP-FPM |
 |---|---|---|---|---|
 | Role | **recommended** for every stage | production-ready alternative | traditional | traditional |
-| PHP | 8.1 or later | the PHP built into the binary | 8.0 or later | 8.0 or later |
+| PHP | 8.0 or later | the PHP built into the binary | 8.0 or later | 8.0 or later |
 | Separate web server needed | no | no | yes | yes |
 | Separate HTTPS or certificate tool needed | no: own certificates, self-signed fallback, ACME | no: your certificate or a self-signed one | yes: `mod_ssl` plus certbot or a hosting panel | yes |
 | Application kept in memory | yes (persistent workers) | no | no | no |

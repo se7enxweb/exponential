@@ -120,8 +120,8 @@ The job `php80` is the check for the oldest supported version, PHP 8.0 (the stoc
 
 1. `make lint80-all`: `php -l` with PHP 8.0 on every PHP file in git (blocking).
 2. `composer install --no-dev` with PHP 8.0. It passes `--ignore-platform-req=php`, because `composer.json` and
-   some se7enxweb packages still declare 8.1 (Exponential Velocity, which `composer.json` requires at `~0.0.4.54`,
-   declares 8.0 since 0.0.4.54); what the job tests is that the code runs on 8.0.
+   some se7enxweb packages still declare 8.1 (Velocity did until its release 0.0.4.54); what the job tests is that the
+   code runs on 8.0.
 3. `php bin/php/ezexec.php tests/bin/bootsmoke.php`: boots the kernel without a database, loads every class of the
    kernel and extension autoload arrays, checks `lib/phpcompat.php` and renders a template with `wash`. A warning
    until syndication and ezstarrating are released with their fixed declarations, which no PHP 8 can load today.

@@ -53,7 +53,7 @@ is to make the Exponential column complete, sourced and honest, including where 
 | Self-hosting | Runs on "almost any [operating system] that runs PHP 8.0 or later", in four documented tiers | [Operating system support](../os-support.md) |
 | Databases | "1. SQLite 3 (the default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL" | [Database support](../database-support.md) |
 | Web servers | Exponential Velocity (recommended), Apache, nginx, FrankenPHP, LiteSpeed, Caddy, IIS, lighttpd and others | [Operating system support, Web servers](../os-support.md#web-servers), `README.md` |
-| PHP versions | PHP 8.0 to 8.5, Velocity included; PHP 7.4 only up to 6.0.7 | [Who is the Exponential Foundation?, PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
+| PHP versions | PHP 8.0 to 8.5, Velocity included (from its release 0.0.4.54); PHP 7.4 only up to 6.0.7 | [Who is the Exponential Foundation?, PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 | Release integrity | "A published tag is never changed": a fix arrives as the next release | `SECURITY.md` |
 | Security process | Private reporting, a first answer "within one business day", fixes on `main` and in the next 6.0.x release | `SECURITY.md` |
 | Continuous integration | Quality and PHPUnit on every push and pull request; PHPUnit on PHP 8.1 to 8.5; database tests on MySQL 8.0 and PostgreSQL 15; PHP 8.0 boot check | [Continuous integration](../../bc/6.0/ci.md) |

@@ -41,7 +41,7 @@ paths in one cut-over.
 
 | | Path A (Symfony platform) | Path B (Exponential 6.0) |
 |---|---|---|
-| PHP | depends on the Nexus line chosen; chapter 16 lists the PHP of each | 8.0 to 8.5 (for Velocity too) |
+| PHP | depends on the Nexus line chosen; chapter 16 lists the PHP of each | 8.0 to 8.5 (Velocity included) |
 | Web server | a Symfony front controller under Apache or nginx with PHP-FPM | Velocity, FrankenPHP, or Apache/nginx with PHP-FPM ([Choosing a web server](../servers/choosing-a-web-server.md)) |
 | Database | as the source platform used | the six of Exponential, in order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | Search | as the source platform used | see [Search backends](../basics/search-backends.md) |

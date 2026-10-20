@@ -43,7 +43,7 @@ guide](../install/02-requirements.md); where an item is a recommendation rather 
 | Need | Minimum | Why |
 |---|---|---|
 | PHP | **8.0** (`composer.json`: `"php": "^8.0 || ^8.1 || ... || ^8.8"`; the setup wizard: `[phpversion] MinimumVersion=8.0.0`) | the kernel; 8.0 is the stock PHP of RHEL 9 and its rebuilds |
-| PHP for Velocity | **8.0**, with `sockets` (`pcntl` and `openssl` recommended) | Velocity, the recommended web server and part of Exponential as of 6.0.15, is a PHP program (0.0.4.54 and later run on 8.0) |
+| PHP for Velocity | **8.0**, with `sockets` (`pcntl` and `openssl` recommended); 8.1 before Velocity 0.0.4.54 | Velocity, the recommended web server, is a PHP program |
 | PHP extensions | `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, one database extension, `gd` or ImageMagick | the setup wizard's critical tests and `composer.json` |
 | A database | SQLite 3 needs only the `sqlite3` extension; the others need their server somewhere on the network | see [Database support](database-support.md) |
 | A web server | none, if Velocity or PHP's built-in server serves the site; otherwise anything that can send a URL to `index.php` | see [Web servers](#web-servers) |
@@ -78,7 +78,7 @@ If you run Exponential on a tier 3 system, please tell the project on the
 
 | Distribution | PHP 8 from | Notes |
 |---|---|---|
-| **Red Hat Enterprise Linux 9 and 10**, **Rocky Linux**, **AlmaLinux**, **Oracle Linux**, **CentOS Stream 9 and 10** | AppStream (PHP 8.0 stock in EL 9; module streams `php:8.1` to `php:8.3`), Remi (8.0 to 8.5) | the documented reference platform ([chapter 2](../install/02-requirements.md#29-operating-system-notes)); Velocity ships `.rpm` packages for EL 9 and EL 10 |
+| **Red Hat Enterprise Linux 9 and 10**, **Rocky Linux**, **AlmaLinux**, **Oracle Linux**, **CentOS Stream 9 and 10** | AppStream (PHP 8.0 stock in EL 9; module streams `php:8.1` to `php:8.3`), Remi (8.0 to 8.5) | the documented reference platform ([chapter 2](../install/02-requirements.md#29-operating-system-notes)); Velocity ships `.rpm` packages for EL 9 and EL 10; the EL 9 package installs on the stock PHP 8.0 |
 | **Debian 12 and 13** | the distribution (8.2, 8.4), or Ondřej Surý's repository | Velocity ships `.deb` packages for both |
 | **Ubuntu 22.04 and 24.04** | the distribution (8.1, 8.3), or the `ondrej/php` PPA | Velocity ships `.deb` packages for both; the CI runs on Ubuntu |
 | **Alpine Linux** (musl) | `apk` (`php83-*` and others) | Velocity's CI proves the server on Alpine x86_64, aarch64 and i386; Velocity's extension manifest knows its packages |
@@ -178,7 +178,7 @@ up is the subject of [chapter 8, Serving the site](../install/08-serving-the-sit
 
 | Server | Status | Notes |
 |---|---|---|
-| **Exponential Velocity** (the `qbix` engine) | recommended for every stage; tier 1 | a PHP program that serves HTTP and HTTPS itself with a pool of persistent workers; PHP 8.1+; no other web server needed |
+| **Exponential Velocity** (the `qbix` engine) | recommended for every stage; tier 1 | a PHP program that serves HTTP and HTTPS itself with a pool of persistent workers; PHP 8.0+ (from release 0.0.4.54); no other web server needed |
 | **Apache httpd 2.4** with PHP-FPM (or mod_php) | tier 1 | the classic setup and shared hosting; rewrite rules in `.htaccess_root` |
 | **FrankenPHP** (through `exp:velocity`, `Engine=frankenphp`) | production-ready alternative | Caddy with PHP built in, one binary |
 | **nginx** with PHP-FPM | tier 2 | rules in the server block, see [8.6](../install/08-serving-the-site.md#86-nginx-with-php-fpm) |
@@ -210,6 +210,18 @@ version and extensions ([chapter 2](../install/02-requirements.md#command-line-a
 The reference platform. Package names per family are in
 [chapter 2](../install/02-requirements.md#29-operating-system-notes), and
 `php bin/php/console exp:velocity ext install-hint <extension>` prints the install command for the system it runs on.
+
+### PHP 8.0 and Red Hat Enterprise Linux
+
+Exponential Velocity runs on PHP 8.0 to 8.5 from its release 0.0.4.54 (20 October 2026), with nothing extra on 8.0.
+On RHEL 9 and its rebuilds the default AppStream PHP 8.0 works, with the el9 rpm (it depends on `php-cli >= 8.0`, no
+module stream to enable) or with Composer. On RHEL 8, whose default PHP is 7.2, enable the 8.0 stream
+(`dnf module enable php:8.0`) and use the phar or Composer; there is no el8 rpm. On PHP 8.0, AVIF image output (needs
+8.1) and the dashboard's per-request memory peak (needs 8.2) are not available, `$_FILES` has no `full_path`, and a
+class declared with `eval()` that has static properties makes its worker get replaced after that request. Details:
+[chapter 2](../install/02-requirements.md#php-80-and-red-hat-enterprise-linux) and the engine's
+[PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md)
+page (extensions, systemd, SELinux, verification).
 
 ### BSD
 

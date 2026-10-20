@@ -53,7 +53,7 @@ hosting that does not allow a long-lived process (shared hosting), or a tuned Ng
 | The shipped default in `settings/velocity.ini` is `Engine=php`, because it needs nothing installed; the documentation says to change it to `qbix` for any real site. | [Velocity, Why you would use it](../../features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
 | All three engines can run at once, each with its own port, pid file and logs, for tests. | [Velocity, Engines side by side](../../features/6.0/velocity-persistent-worker-server.md#engines-side-by-side) |
 | PHP's built-in server is "Single-threaded, no concurrency, not hardened. Never expose it to the internet." | [README, The traditional options](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options) |
-| PHP 8.0 runs Exponential under Apache or PHP-FPM, and from Velocity 0.0.4.54 on (required by `composer.json` as of 6.0.15) under Velocity too. | [README, PHP](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
+| PHP 8.0 runs Exponential under Apache, PHP-FPM or Velocity (Velocity from its release 0.0.4.54). | [README, PHP](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
 | Shared hosting: Apache or LiteSpeed with `.htaccess`; Velocity usually cannot run there. | [Operating system support](../os-support.md#containers-cloud-and-hosting-panels) |
 | Workers keep the application in memory, so a changed template, setting or class needs a restart. | [README, One thing to know](https://github.com/se7enxweb/exponential/blob/main/README.md#one-thing-to-know-before-you-rely-on-it) |
 

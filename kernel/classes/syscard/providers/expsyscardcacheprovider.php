@@ -52,7 +52,7 @@ class expSysCardCacheProvider extends expSysCardBaseProvider
         if ( !is_array( $size ) || $size['bytes'] === null )
             return $facts;
         $prefix = !empty( $size['complete'] ) ? '' : 'at least ';
-        $facts[] = $this->fact( 'size', 'Cache size', $prefix . self::size( $size['bytes'] ) . ' in ' . number_format( (int)$size['files'] ) . ' files', expSysCardFact::INFO, '', 'caches' );
+        $facts[] = $this->fact( 'size', 'Cache size', $prefix . self::size( $size['bytes'] ) . ' in ' . self::counted( $size['files'], 'file' ), expSysCardFact::INFO, '', 'caches' );
         $entries = isset( $size['entries'] ) && is_array( $size['entries'] ) ? $size['entries'] : array();
         arsort( $entries );
         foreach ( array_slice( $entries, 0, self::LISTED, true ) as $name => $bytes )

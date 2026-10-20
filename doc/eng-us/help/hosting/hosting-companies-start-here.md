@@ -64,7 +64,7 @@ they show you how to measure and decide.
 
 | Need | Minimum | Notes |
 |---|---|---|
-| PHP | 8.0, for the site and for Velocity | the newest 8.x your system offers; 8.5 is supported |
+| PHP | 8.0 (Velocity included) | the newest 8.x your system offers; 8.5 is supported |
 | Database | one of the six | in the official order: 1. SQLite 3 (default) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at this time. |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on | checked by the setup wizard |
 | Web server | none required | Velocity serves HTTP and HTTPS itself; or Apache/nginx with PHP-FPM |

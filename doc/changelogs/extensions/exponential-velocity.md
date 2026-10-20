@@ -9,8 +9,9 @@ Three tags have no release page: `v0.0.4.21`, `v0.0.4.22` and `v0.0.4.26` (their
 ## Releases after v0.0.4.42
 
 The releases from v0.0.4.43 on are described in full on
-[GitHub Releases](https://github.com/se7enxweb/exponential-velocity/releases). Exponential 6.0.15 suggests
-`~0.0.4.50` (`composer require se7enxweb/exponential-velocity:~0.0.4.50`).
+[GitHub Releases](https://github.com/se7enxweb/exponential-velocity/releases). Exponential 6.0.15 requires
+`~0.0.4.54` (until then it only suggested the engine, because it needed PHP 8.1); `v0.0.4.54` of 20 October 2026 is
+the first release that runs on PHP 8.0 ([engine changelog](https://github.com/se7enxweb/exponential-velocity/blob/main/CHANGELOG.md)).
 
 | Release | Date | What it brings |
 |---|---|---|

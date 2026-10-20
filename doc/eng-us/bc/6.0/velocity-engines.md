@@ -811,6 +811,35 @@ The Qbix rules are the server's own (`Q_WebServer::adminAllowed()`, v0.0.4.27);
 the page reads the running server's token, remote setting and panel password
 rather than assuming velocity.ini's.
 
+## PHP 8.0 and Red Hat Enterprise Linux
+
+The `qbix` engine runs on PHP 8.0 to 8.5 from release 0.0.4.54 (20 October 2026); its `composer.json` requires
+`"php": ">=8.0"` (it was `>=8.1`), and nothing extra is needed on 8.0, no polyfill package and no extension.
+Exponential's `composer.json` requires the engine at `~0.0.4.54`, so `composer install` on PHP 8.0 installs it too.
+
+- **RHEL 9, AlmaLinux 9, Rocky Linux 9**: the default AppStream PHP 8.0 works, with the el9 rpm
+  (`exponential-velocity-<release>-1.el9.noarch.rpm`, which depends on `php-cli >= 8.0`) or with Composer; no module
+  stream has to be enabled, and a newer one still works.
+- **RHEL 8**: the default PHP is 7.2. Run `dnf module enable php:8.0` and use the phar or Composer; there is no el8
+  rpm.
+
+What differs on PHP 8.0, and only this:
+
+| | On PHP 8.0 |
+|---|---|
+| AVIF image output | needs PHP 8.1; the negotiation stops at WebP |
+| The dashboard's per-request memory peak | needs PHP 8.2; the column is empty |
+| `$_FILES` `full_path` | absent, as in PHP 8.0 itself |
+| A class declared with `eval()` that has static properties | its worker is replaced after that request (correct; it costs a fork) |
+
+The engine handles the rest itself: it reads declared static defaults from the source (PHP 8.0's `getDefaultValue()`
+returns the current value), calls `setAccessible()` on 8.0 for private and protected statics, and clears the stat
+cache for the dashboard's log tail. The zygote runs on 8.0. Extensions, systemd, SELinux and verification are in the
+engine's [PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md)
+page, its minimums in [requirements](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/requirements.md),
+the release in its [changelog](https://github.com/se7enxweb/exponential-velocity/blob/main/CHANGELOG.md). For the
+kernel on PHP 8.0, see [PHP 8.0 support](php-8.0-support.md).
+
 ## The engine itself: releases, upgrade notes and feature pages
 
 This page is about driving the engine from Exponential. What the engine is, how it came to be and what each of its releases changed is documented separately:

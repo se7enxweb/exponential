@@ -48,7 +48,7 @@ through PHP and the database: x86_64 is tier 1, aarch64 tier 2
 
 A VPS image for Exponential carries:
 
-- **PHP 8.0 or later**, for Velocity as for Apache or PHP-FPM. The
+- **PHP 8.0 or later**, for Apache, PHP-FPM and Velocity alike (Velocity runs on 8.0 from its release 0.0.4.54). The
   newest 8.x your distribution offers is the recommendation; 8.5 is supported
   ([2.2 PHP](../../../install/02-requirements.md#22-php)).
 - **The required extensions**: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`,
@@ -66,8 +66,8 @@ On Red Hat Enterprise Linux 9 and its rebuilds, the documented package set for t
 dnf install php php-fpm php-mysqlnd php-gd php-intl php-mbstring php-xml php-pdo php-opcache
 ```
 
-For Velocity switch to a newer module stream (`dnf module reset php`, `dnf module enable php:8.3`,
-`dnf distro-sync`). After an installation exists, let it check the machine:
+That stock PHP 8.0 runs Velocity too (the el9 rpm installs on it without a module stream). For a newer PHP switch
+to another module stream (`dnf module reset php`, `dnf module enable php:8.3`, `dnf distro-sync`). After an installation exists, let it check the machine:
 
 ```bash
 php bin/php/console exp:velocity ext check
@@ -143,7 +143,7 @@ usually chooses between:
 
 ## Checklist
 
-- [ ] Distribution of tier 1 or 2, PHP 8.1 or later for web and CLI, the same extensions in both.
+- [ ] Distribution of tier 1 or 2, PHP 8.0 or later for web and CLI, the same extensions in both.
 - [ ] `exp:velocity ext check` clean for the features in use.
 - [ ] Velocity with a boot service, or Apache/nginx with PHP-FPM; HTTPS with a CA certificate.
 - [ ] Database chosen in the official order and documented.

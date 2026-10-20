@@ -182,14 +182,41 @@ abstract class expSysCardBaseProvider implements expSysCardProvider
      */
     public static function ago( $time, $now )
     {
+        return self::elapsed( $time, $now ) . ' ago';
+    }
+
+    /**
+     * The time since a time, without "ago", for a sentence such as "has not run for 5 days": "50 s", "5 min",
+     * "3 h", "2 days".
+     *
+     * @param int $time
+     * @param int $now
+     * @return string
+     */
+    public static function elapsed( $time, $now )
+    {
         $diff = max( 0, (int)$now - (int)$time );
         if ( $diff < 120 )
-            return $diff . ' s ago';
+            return $diff . ' s';
         if ( $diff < 7200 )
-            return intdiv( $diff, 60 ) . ' min ago';
+            return intdiv( $diff, 60 ) . ' min';
         if ( $diff < 172800 )
-            return intdiv( $diff, 3600 ) . ' h ago';
-        return intdiv( $diff, 86400 ) . ' days ago';
+            return intdiv( $diff, 3600 ) . ' h';
+        return intdiv( $diff, 86400 ) . ' days';
+    }
+
+    /**
+     * A number and its noun, singular for one: "1 part", "2 parts", "1,250 files".
+     *
+     * @param int $count
+     * @param string $one the singular ("part")
+     * @param string|null $many the plural, default the singular with an "s"
+     * @return string
+     */
+    public static function counted( $count, $one, $many = null )
+    {
+        $count = (int)$count;
+        return number_format( $count ) . ' ' . ( $count === 1 ? $one : ( $many !== null ? $many : $one . 's' ) );
     }
 
     /**

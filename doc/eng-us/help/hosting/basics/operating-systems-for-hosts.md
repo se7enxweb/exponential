@@ -55,13 +55,32 @@ asks to be told on the [software tracker](https://github.com/se7enxweb/exponenti
 
 | Family | PHP 8 from | Notes for hosts |
 |---|---|---|
-| RHEL 9 and 10 and rebuilds | AppStream (PHP 8.0 stock in EL 9; module streams `php:8.1` to `php:8.3`), Remi (8.0 to 8.5) | the documented reference platform; Velocity ships `.rpm` packages for EL 9 and EL 10; the stock 8.0 does not run Velocity |
+| RHEL 9 and 10 and rebuilds | AppStream (PHP 8.0 stock in EL 9; module streams `php:8.1` to `php:8.3`), Remi (8.0 to 8.5) | the documented reference platform; Velocity ships `.rpm` packages for EL 9 and EL 10; the stock 8.0 runs Velocity (from release 0.0.4.54) |
 | Debian 12 and 13 | the distribution (8.2, 8.4) or Ondřej Surý's repository | Velocity ships `.deb` packages |
 | Ubuntu 22.04 and 24.04 | the distribution (8.1, 8.3) or the `ondrej/php` PPA | Velocity ships `.deb` packages; the project's CI runs on Ubuntu |
 | Alpine (musl) | `apk` | Velocity's CI proves its server there; common as a container base |
 
 Package names per family are on [PHP versions and extensions](php-versions-and-extensions.md#packages-per-system-family)
 and in [chapter 2.9](../../../install/02-requirements.md#29-operating-system-notes).
+
+### PHP 8.0 and Red Hat Enterprise Linux
+
+Exponential Velocity runs on PHP 8.0 to 8.5 from its release 0.0.4.54 (20 October 2026); nothing extra is needed on
+8.0. For a host that means:
+
+- **RHEL 9, AlmaLinux 9, Rocky Linux 9**: the default AppStream PHP 8.0 runs Velocity. The el9 rpm
+  (`exponential-velocity-<release>-1.el9.noarch.rpm`) depends on `php-cli >= 8.0` and installs without enabling a
+  module stream; a newer stream still works. Composer installs the engine on 8.0 too.
+- **RHEL 8**: the default PHP is 7.2. Enable the 8.0 stream (`dnf module enable php:8.0`) and use the phar or
+  Composer; there is no el8 rpm.
+- **What differs on 8.0**: AVIF image output needs PHP 8.1 (the negotiation stops at WebP); the dashboard's
+  per-request memory peak needs PHP 8.2 (the column is empty); `$_FILES` has no `full_path`, as in PHP 8.0 itself;
+  a class declared with `eval()` that has static properties makes its worker get replaced after that request
+  (correct, it costs a fork).
+
+Extensions, systemd, SELinux and verification: the engine's
+[PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md) page
+and [chapter 2](../../../install/02-requirements.md#php-80-and-red-hat-enterprise-linux).
 
 ## Panels
 
@@ -118,7 +137,7 @@ is not run there by the project. OpenBSD and NetBSD are tier 3.
 ## Check a machine
 
 ```bash
-php -v                          # 8.0 or later (for Velocity too)
+php -v                          # 8.0 or later, for Velocity too
 php -m                          # the required extensions
 php -i | grep "Integer Size"    # 64 bits recommended
 ```

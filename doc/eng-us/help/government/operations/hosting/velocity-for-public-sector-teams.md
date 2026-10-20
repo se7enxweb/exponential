@@ -31,7 +31,7 @@ pages are [Velocity web server](../../../../features/6.0/velocity-web-server.md)
 Velocity is a PHP application server. Workers keep the application in memory between requests, a response cache
 answers anonymous visitors before PHP runs, and HTTPS with certificates (including Let's Encrypt and other ACME
 authorities) is built in. It needs no Apache, nginx or PHP-FPM ([Deploying](../../../../guides/deploying.md)). It needs
-PHP 8.1 or later.
+PHP 8.0 or later (from its release 0.0.4.54; until then 8.1), so the stock PHP of RHEL 9 runs it.
 
 ## Starting and stopping
 

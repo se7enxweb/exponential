@@ -47,13 +47,13 @@ class expSysCardCronProvider extends expSysCardBaseProvider
                 $parts[substr( $group, 12 )] = (array)$context->ini( 'cronjob.ini', $group, 'Scripts', array() );
 
         if ( $last === 0 )
-            $fact = $this->fact( 'last', 'Cronjobs', 'no run found, ' . count( $parts ) . ' parts', expSysCardFact::INFO,
+            $fact = $this->fact( 'last', 'Cronjobs', 'no run found, ' . self::counted( count( $parts ), 'part' ), expSysCardFact::INFO,
                                  'No cronjob run was found: add runcronjobs.php to the crontab (doc/eng-us/guides/cronjobs.md), or the cleanup, notification and search index jobs never run.' );
         else
         {
             $old = $context->now - $last > self::STALE;
-            $fact = $this->fact( 'last', 'Cronjobs', 'last run ' . self::ago( $last, $context->now ) . ', ' . count( $parts ) . ' parts', $old ? expSysCardFact::WARN : expSysCardFact::OK,
-                                 $old ? 'No cronjob has run for ' . self::ago( $last, $context->now ) . ': check the crontab and the cronjob logs.' : '' );
+            $fact = $this->fact( 'last', 'Cronjobs', 'last run ' . self::ago( $last, $context->now ) . ', ' . self::counted( count( $parts ), 'part' ), $old ? expSysCardFact::WARN : expSysCardFact::OK,
+                                 $old ? 'No cronjob has run for ' . self::elapsed( $last, $context->now ) . ': check the crontab and the cronjob logs.' : '' );
         }
         $facts = array( $fact );
         if ( $context->mode === expSysCardContext::MODE_INFO )

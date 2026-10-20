@@ -82,8 +82,8 @@ The 6.0.15 line also brings, among much else (the full list is in the
   first drafts ([languages](doc/eng-us/languages.md)); right-to-left languages get `dir="rtl"` in content and in the
   administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
 - **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5, and the bundled
-  application server Exponential Velocity, now part of Exponential and required at `~0.0.4.54` (which runs on PHP 8.0
-  and later, answers HEAD over HTTP/2 with its headers only and drains its connections when it stops).
+  application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.54`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
+  headers only and drains its connections when it stops).
 
 ## What does Exponential provide for end users building websites?
 
@@ -309,7 +309,7 @@ being loaded from its archive: rebuild it first.
 
 Exponential Legacy supports PHP 8.0 -> 8.5+ please use the latest version of PHP available on your OS.
 
-PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux / Rocky Linux 9) runs Exponential under Apache or PHP-FPM, and Exponential Velocity, the built-in application server that is part of Exponential as of 6.0.15, runs on it too (Velocity 0.0.4.54 supports PHP 8.0 to 8.5). See [PHP 8.0 support](doc/eng-us/bc/6.0/php-8.0-support.md).
+PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux / Rocky Linux 9) runs Exponential under Apache or PHP-FPM and under Exponential Velocity, the built-in application server, which runs on PHP 8.0 to 8.5 from its release 0.0.4.54 (until then it needed 8.1). See [PHP 8.0 support](doc/eng-us/bc/6.0/php-8.0-support.md) and the engine's [PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md) page.
 
 PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7.
 

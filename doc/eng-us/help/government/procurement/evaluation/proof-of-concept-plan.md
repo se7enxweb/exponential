@@ -37,7 +37,7 @@ a proof of concept needs no license, no database server and no contract. The ste
 | Need | From [Requirements](../../../../install/02-requirements.md) |
 |---|---|
 | A machine or virtual machine you may wipe | AlmaLinux 9 and Ubuntu are tier 1, "tested here" ([Operating system support](../../../os-support.md#tier-1-tested-here)) |
-| PHP 8.0 or newer (for the built-in Velocity server too) | check with `php -v` |
+| PHP 8.0 or newer (the built-in Velocity server included) | check with `php -v` |
 | Composer 2 and Git | to get the code |
 | No database server | SQLite 3 is the default database |
 

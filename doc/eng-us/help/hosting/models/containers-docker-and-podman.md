@@ -42,7 +42,7 @@ Two routes:
 
 | Route | What you get | What to watch |
 |---|---|---|
-| Your own image from a PHP 8.1+ base | the PHP extensions you choose, Composer, the installation built with `composer install` | install every required extension: `dom`, `xsl`, `intl`, `mbstring`, `iconv`, `zlib`, one database extension, `gd` or ImageMagick, and for Velocity `sockets`, `pcntl`, `openssl` |
+| Your own image from a PHP 8.0+ base | the PHP extensions you choose, Composer, the installation built with `composer install` | install every required extension: `dom`, `xsl`, `intl`, `mbstring`, `iconv`, `zlib`, one database extension, `gd` or ImageMagick, and for Velocity `sockets`, `pcntl`, `openssl` |
 | Velocity's published image as a base | the server and a PHP with a defined extension set | check the variant against what Exponential needs |
 
 Velocity's images are tagged by release, PHP version and variant

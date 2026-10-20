@@ -29,7 +29,7 @@ and `README.md`, "Requirements":
 
 | Need | Minimum | Notes |
 |---|---|---|
-| PHP | 8.0 | the newest 8.x the system offers is recommended; Velocity runs on 8.0 too |
+| PHP | 8.0 | the newest 8.x the system offers is recommended; Velocity runs on 8.0 too (from release 0.0.4.54) |
 | Database | SQLite 3, no server | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | Web server | none if Velocity serves the site | or Apache, nginx, LiteSpeed, Caddy, IIS and others |
 | Composer | 2.x | installs the software and its extensions |
@@ -46,7 +46,7 @@ From [Choosing hosting, database and operating system](../../leadership/choosing
 |---|---|---|
 | Does more than one machine have to write the database? | yes | a database server, PostgreSQL first; not SQLite |
 | Does the hosting allow long-running processes? | no (typical shared hosting) | Apache or nginx with PHP-FPM; Velocity usually not |
-| Is the machine's PHP 8.0? | yes | either engine: Velocity runs on PHP 8.0 too |
+| Is the machine's PHP 8.0? | yes | any web server; Velocity runs on 8.0 from its release 0.0.4.54 |
 | Is the organization standardized on one database? | yes | that database, if it is among the six |
 | Is there shell access on the server? | no | the setup wizard in the browser |
 
@@ -75,7 +75,7 @@ measurements show the need ([Hosting cost drivers](../costs/hosting-cost-drivers
 
 Copy and send; more in [Questions to ask a partner](questions-to-ask-a-partner.md):
 
-- [ ] Which PHP versions do you offer, and can I choose 8.1 or newer per site?
+- [ ] Which PHP versions do you offer, and can I choose the newest 8.x per site?
 - [ ] May I run a long-running process for Exponential Velocity, or only PHP-FPM behind your web server?
 - [ ] Do you support SQLite for production on one machine, and which database servers do you offer?
 - [ ] Can I schedule a cron job every few minutes?

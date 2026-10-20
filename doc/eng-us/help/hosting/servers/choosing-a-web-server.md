@@ -34,7 +34,7 @@ Taken from [Chapter 8, The choice in one table](../../../install/08-serving-the-
 | | Exponential Velocity (`qbix`) | FrankenPHP (through Velocity) | Apache + PHP-FPM | nginx + PHP-FPM |
 |---|---|---|---|---|
 | Role | **recommended** for every stage | production-ready alternative | traditional | traditional |
-| PHP | 8.1 or later | the PHP built into the binary | 8.0 or later | 8.0 or later |
+| PHP | 8.0 or later (from Velocity 0.0.4.54) | the PHP built into the binary | 8.0 or later | 8.0 or later |
 | Separate web server needed | no | no (Caddy is built in) | yes | yes |
 | Separate HTTPS or certificate tool needed | no: own certificates, self-signed fallback, ACME | no: your certificate or a self-signed one | yes (`mod_ssl` plus certbot or a panel) | yes |
 | Application kept in memory between requests | yes (persistent workers) | no (clean state per request) | no | no |
@@ -57,7 +57,7 @@ work.
 | Question | If the answer is ... | Then |
 |---|---|---|
 | May a customer's site run a long-lived process on this plan? | no (typical shared hosting) | Apache or LiteSpeed with `.htaccess`. "Shared hosting usually will not" allow one (`README.md`) |
-| Is the machine's PHP 8.0? | yes (the stock PHP of Red Hat Enterprise Linux 9 and its rebuilds) | either engine: Velocity runs on PHP 8.0 too ([Chapter 2](../../../install/02-requirements.md#29-operating-system-notes)) |
+| Is the machine's PHP 8.0? | yes (the stock PHP of Red Hat Enterprise Linux 9 and its rebuilds) | any engine; Velocity runs on 8.0 from its release 0.0.4.54, with the el9 rpm or Composer ([Chapter 2](../../../install/02-requirements.md#php-80-and-red-hat-enterprise-linux)) |
 | Must customers on one machine be isolated from each other by the operating system? | yes | one Velocity per site, each as its own user, or one PHP-FPM pool per site |
 | Do you already run a tuned Apache or nginx you want to keep? | yes | keep it; Velocity can sit behind it or beside it |
 | Do you want the fastest answer for repeat pages without adding a cache server? | yes | Velocity with its response cache |
@@ -130,7 +130,7 @@ Tested on staging on:           <date>, by <role>
 ## Checklist
 
 - [ ] The plan's answer to "may a long-running process run?" is written down.
-- [ ] The PHP version on the machine is 8.0 or later, also if Velocity is offered.
+- [ ] The PHP version on the machine is 8.0 or later, also where Velocity is offered.
 - [ ] Isolation between customers decided: per machine, per Velocity instance or per PHP-FPM pool.
 - [ ] The four routing checks of [Web servers and engines](README.md#what-every-setup-has-in-common) pass.
 - [ ] Support knows how a PHP change reaches the server (`exp:velocity deploy`, or the FPM reload).

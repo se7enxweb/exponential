@@ -28,7 +28,7 @@ From [2.1 The checklist](../../../install/02-requirements.md#21-the-checklist):
 | Need | Minimum | Recommended |
 |---|---|---|
 | PHP | 8.0 | the newest 8.x the system offers (8.5 is supported) |
-| PHP for Velocity | 8.0 with `sockets` | plus `pcntl` and `openssl` |
+| PHP for Velocity | 8.0 with `sockets` (from Velocity 0.0.4.54) | plus `pcntl` and `openssl` |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | |
 | Database | SQLite 3 (no server) | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | Composer | 2.x | the current 2.x |
@@ -45,7 +45,7 @@ From [8.1 The choice in one table](../../../install/08-serving-the-site.md#81-th
 | | Velocity | FrankenPHP (through Velocity) | Apache + PHP-FPM | nginx + PHP-FPM |
 |---|---|---|---|---|
 | Role | recommended for every stage | production-ready alternative | traditional | traditional |
-| PHP | 8.1 or later | built into the binary | 8.0 or later | 8.0 or later |
+| PHP | 8.0 or later | built into the binary | 8.0 or later | 8.0 or later |
 | Own HTTPS certificates | yes, including ACME | yes | needs `mod_ssl` and a certificate tool | needs a certificate tool |
 | Response cache in front of PHP | yes | not yet | no | no |
 | Suits shared hosting | usually not (long-running process) | usually not | yes | rarely |
@@ -56,7 +56,8 @@ So:
 - **Shared hosting:** Apache with PHP-FPM and the shipped `.htaccess_root` rules
   ([8.5 Apache with PHP-FPM](../../../install/08-serving-the-site.md#85-apache-with-php-fpm)).
 - **An nginx you already run:** [8.6 nginx with PHP-FPM](../../../install/08-serving-the-site.md#86-nginx-with-php-fpm).
-- **Only PHP 8.0 available:** Velocity runs on it too, as do Apache and nginx.
+- **Only PHP 8.0 available:** any of them; Velocity runs on PHP 8.0 too, from its release 0.0.4.54
+  ([PHP 8.0 and Red Hat Enterprise Linux](../../../install/02-requirements.md#php-80-and-red-hat-enterprise-linux)).
 
 ## Choosing the database
 
@@ -85,7 +86,7 @@ Details, limits and the support order: [Database support](../../database-support
 
 Copy and send:
 
-- [ ] Which PHP versions do you offer, and can I choose 8.1 or newer per site?
+- [ ] Which PHP versions do you offer, and can I choose the newest 8.x per site?
 - [ ] Are the PHP extensions in [2.3 PHP extensions](../../../install/02-requirements.md#23-php-extensions) installed?
 - [ ] May I run a long-running process (for Velocity), or only PHP-FPM behind your web server?
 - [ ] Which databases do you offer, and may I create a database user for the site alone?

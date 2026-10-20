@@ -59,7 +59,7 @@ in maintenance.
 
 1. **Freeze the old code.** Note the exact old version (14.3), the list of active extensions and every file you
    changed in the kernel. Kernel changes are not carried over; they have to become extensions or overrides.
-2. **Staging server.** PHP 8.0 to 8.5 (for Exponential Velocity too), the database engine
+2. **Staging server.** PHP 8.0 to 8.5 (Exponential Velocity included), the database engine
    you will use in production, and the requirements of [chapter 2](02-requirements.md).
 3. **New code.** Get Exponential as in [chapter 3](03-getting-the-code.md). Do **not** run an installer against the
    old database: the setup wizard, the kickstarter and `exp:install` create a new database

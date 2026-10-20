@@ -26,7 +26,7 @@ takes every learner through a first start on their own installation.
 | Duration | 45 minutes (20 presenting, 25 exercise) |
 | Level | Intermediate |
 | Audience | System administrators and hosting support staff |
-| Prerequisites | [Module 1](../module-01-serving-the-site/README.md); a training installation with PHP 8.1 or later and the `sockets`, `pcntl`, `posix` and `openssl` extensions |
+| Prerequisites | [Module 1](../module-01-serving-the-site/README.md); a training installation with PHP 8.0 or later and the `sockets`, `pcntl`, `posix` and `openssl` extensions |
 
 ## Learning objectives
 
@@ -64,8 +64,9 @@ and [Velocity for hosts](../../../hosting/servers/velocity-for-hosts.md).
 **Do I need Apache in front?** No. Velocity serves HTTP and HTTPS itself. A proxy in front is still right when a load
 balancer or CDN terminates TLS (section 8.8).
 
-**Why does the engine package not come installed?** It needs PHP 8.1 or later, so Exponential only suggests it. Add
-it with `composer require se7enxweb/exponential-velocity:~0.0.4.44`.
+**Does the engine package come installed?** Yes: Exponential's `composer.json` requires it at `~0.0.4.54`, the first
+release that runs on PHP 8.0. Before that it needed PHP 8.1 and was only suggested; an older installation adds it
+with `composer require se7enxweb/exponential-velocity:~0.0.4.54`.
 
 **What does `ext check` do?** It lists the PHP extensions this PHP lacks, with the install command for the operating
 system (`ext install-hint <extension>`).
