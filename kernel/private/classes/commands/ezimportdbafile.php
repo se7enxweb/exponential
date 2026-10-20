@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/ezimportdbafile.php, moved into a class (#207 stage 1). The file bin/php/ezimportdbafile.php is one call to it.
  * @description Import the dba data of a datatype into the database (--datatype=ezisbn)
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/ezimportdbafile.php:
@@ -61,7 +61,7 @@ class Ezimportdbafile extends \Exponential\Runnable\Command
                 $dataType = $registeredDataTypes[$dataTypeName];
                 if ( $dataType->importDBDataFromDBAFile() )
                 {
-                    // Audit (doc/en/us/bc/6.0/audit.md, data.import.dba)
+                    // Audit (doc/eng-us/bc/6.0/audit.md, data.import.dba)
                     if ( class_exists( 'expAuditHook' ) )
                         \expAuditHook::emit( 'data.import.dba', array( 'object' => array( 'type' => 'file', 'id' => (string)$dataType->getDBAFilePath() ),
                             'verb' => 'import', 'after' => array( 'datatype' => (string)$dataType->DataTypeString ) ) );

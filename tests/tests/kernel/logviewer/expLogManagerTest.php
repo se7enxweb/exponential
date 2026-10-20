@@ -1,6 +1,6 @@
 <?php
 /**
- * expLogManager, log management on the log viewer's allow-list (doc/en/us/features/6.0/log-rotation.md), in a throwaway
+ * expLogManager, log management on the log viewer's allow-list (doc/eng-us/features/6.0/log-rotation.md), in a throwaway
  * installation root (no database, no real log):
  *   - logs(): current logs with archives, sizes, growth, limits with their sources, owner; never an archive, a link
  *     out of the directories or a configured (web server) log

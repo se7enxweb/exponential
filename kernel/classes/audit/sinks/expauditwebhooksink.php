@@ -1,6 +1,6 @@
 <?php
 /**
- * The webhook sink (doc/en/us/bc/6.0/audit.md, "Webhook"): POSTs batches of records as JSON,
+ * The webhook sink (doc/eng-us/bc/6.0/audit.md, "Webhook"): POSTs batches of records as JSON,
  *
  *   {"v":1,"installation":"6f1c…","site":"example","batch":"b-…","events":[<record>,…]}
  *

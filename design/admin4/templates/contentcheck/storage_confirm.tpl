@@ -1,4 +1,4 @@
-{* The plan of an action on storage files (doc/en/us/features/6.0/content-checks.md, "Quarantine"): the dry run. Nothing
+{* The plan of an action on storage files (doc/eng-us/features/6.0/content-checks.md, "Quarantine"): the dry run. Nothing
    has changed when this page is shown; it lists every ticked file with what would happen to it, and only the
    allowed ones are posted back with the confirmation token that binds them. Deleting from the quarantine needs the
    box ConfirmDelete as well.

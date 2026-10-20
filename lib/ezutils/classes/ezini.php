@@ -78,7 +78,7 @@ class eZINI
     /**
      * Mode of a settings file that save() creates (owner read/write, group read),
      * unless EZP_INI_SAVE_FILE_PERMISSION says otherwise. A file that already
-     * exists keeps its own mode. See doc/en/us/bc/6.0/ini-save-file-permissions.md.
+     * exists keeps its own mode. See doc/eng-us/bc/6.0/ini-save-file-permissions.md.
      *
      * @var int
      */
@@ -1574,7 +1574,7 @@ class eZINI
         }
 
         // mode, owner and group of the file it replaces; for a new file SAVE_FILE_PERMISSION
-        // and the directory's owner and group (doc/en/us/bc/6.0/ini-save-file-permissions.md)
+        // and the directory's owner and group (doc/eng-us/bc/6.0/ini-save-file-permissions.md)
         self::applySaveFilePermissions( $filePath, $originalFilePath );
 
         if ( file_exists( $backupFilePath ) )
@@ -1590,7 +1590,7 @@ class eZINI
             return false;
         }
 
-        // Audit (doc/en/us/bc/6.0/audit.md, system.setting.write): one record per changed variable, secrets as [secret]
+        // Audit (doc/eng-us/bc/6.0/audit.md, system.setting.write): one record per changed variable, secrets as [secret]
         if ( class_exists( 'expAudit' ) )
             self::auditSave( $originalFilePath, $originalFileName, $auditOld );
 
@@ -1819,7 +1819,7 @@ class eZINI
                 $sectionSettings = isset( $parsed['settings'][$blockName] ) ? $parsed['settings'][$blockName] : array();
 
                 // Round-trip mode patches only targeted keys (see
-                // doc/en/us/bc/6.0/eZINI_PRESERVES_COMMENTS.md). A variable that already
+                // doc/eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md). A variable that already
                 // exists on disk and was never touched via setVariable() must be
                 // left byte-for-byte as-is, even on a full ($onlyModified = false)
                 // save - otherwise every array setting in the file gets reformatted

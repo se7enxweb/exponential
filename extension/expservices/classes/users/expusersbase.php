@@ -138,7 +138,7 @@ abstract class expUsersBase extends expServiceBase
 
     /**
      * @throws expServiceException 403 in demo mode (EXP_DEMO_MODE=1) when $user is an administrator, whose password
-     *         cannot be changed or reset there (doc/en/us/bc/6.0/demo-mode.md); 422 when the password is refused, naming
+     *         cannot be changed or reset there (doc/eng-us/bc/6.0/demo-mode.md); 422 when the password is refused, naming
      *         every rule it fails
      */
     protected static function requireAcceptablePassword( $password, $user = null, $login = null )

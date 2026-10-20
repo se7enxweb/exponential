@@ -11,7 +11,7 @@
    class) the cards show what the rows hold and nothing is lost. Every variable the page had before is still set:
    rssexport_list, rssimport_list, rssexport_count, rssimport_count, rssexport_pager, rssimport_pager, page_limit,
    page_limit_links, rssexport_sort, rssimport_sort. Everything works without javascript; the script adds the
-   search, the filter and the selection count. Guide: doc/en/us/guides/rss-feeds.md *}
+   search, the filter and the selection count. Guide: doc/eng-us/guides/rss-feeds.md *}
 
 {def $export_info = first_set( $rssexport_info, hash() )
      $import_info = first_set( $rssimport_info, hash() )

@@ -1,6 +1,6 @@
 {* The review on the last step of the package creation wizard: everything the earlier steps collected
    ($persistent_data), shown before Create package writes the package. It only reads; Back changes a step.
-   The same file is in design/admin and design/admin4. Guide: doc/en/us/features/6.0/package-wizard.md *}
+   The same file is in design/admin and design/admin4. Guide: doc/eng-us/features/6.0/package-wizard.md *}
 {def $rv = $persistent_data
      $rv_none = '&ndash;'}
 <section class="a4-card a4-package-review" aria-labelledby="a4-package-review-title">

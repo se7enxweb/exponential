@@ -1,7 +1,7 @@
 <?php
 /**
  * The Database Source Editor (sevenx_dse, dse/dashboard) follows the administration's styling rules
- * (doc/en/us/bc/6.0/admin4-styling.md), checked on the files alone; no database.
+ * (doc/eng-us/bc/6.0/admin4-styling.md), checked on the files alone; no database.
  *
  * - No <style> block, no style="" attribute and no inline <script> body in any sevenx_dse template.
  * - The view and the embedded AdminNeo print no inline styles into the page (the editor's layout is in dse.css).

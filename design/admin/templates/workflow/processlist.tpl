@@ -10,7 +10,7 @@
    with the shared components (stylesheets/components.css) and its own .a4-workflow-* rules in
    stylesheets/modules/workflow.css. Everything works without javascript: the filters are links, the cancel buttons submit the form, the
    folding sections are <details>. The script below only adds the search and "select all".
-   User guide: doc/en/us/guides/workflows.md *}
+   User guide: doc/eng-us/guides/workflows.md *}
 
 
 {def $wfp_ctx = 'design/admin/workflow/processlist'

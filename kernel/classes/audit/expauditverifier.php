@@ -1,6 +1,6 @@
 <?php
 /**
- * Verifies the hash chain of audit channels (doc/en/us/bc/6.0/audit.md, "Verification").
+ * Verifies the hash chain of audit channels (doc/eng-us/bc/6.0/audit.md, "Verification").
  *
  * For each line of a channel's files, oldest first: parse it (else unparseable), check it is canonical (else
  * noncanonical, a sign of editing), recompute the hash (else altered), check prev against the previous record's
@@ -47,7 +47,7 @@ class expAuditVerifier
 
     /**
      * Where the archived files' heads come from (expAuditArchiver::archivedHeads()): the first live file of a
-     * channel may start from a file that has been archived, which is then no break (doc/en/us/bc/6.0/audit.md,
+     * channel may start from a file that has been archived, which is then no break (doc/eng-us/bc/6.0/audit.md,
      * "Verification", step 4). Without it, the live directory's own archive (when it is the configured one) is
      * asked.
      *
@@ -215,7 +215,7 @@ class expAuditVerifier
                 $id = isset( $rec->id ) ? (string)$rec->id : null;
                 $kinds = array();
                 // the same record id once more (a forked process wrote its copy of its parent's buffer): chained
-                // like any line, so not a break; the index keeps the first (doc/en/us/bc/6.0/audit.md, "Repeated records")
+                // like any line, so not a break; the index keeps the first (doc/eng-us/bc/6.0/audit.md, "Repeated records")
                 if ( $id !== null )
                 {
                     if ( isset( $idsInFile[$id] ) )

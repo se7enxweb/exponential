@@ -2,7 +2,7 @@
 /**
  * File containing the expHelpLinkCheck class.
  *
- * Checks the links and images of the help pages (doc/en/us/features/6.0/help-system.md, "Checking the documentation";
+ * Checks the links and images of the help pages (doc/eng-us/features/6.0/help-system.md, "Checking the documentation";
  * "./console exp:help check"). Every inline link and image and every reference definition of a Markdown page,
  * outside code, is resolved as the viewer resolves it:
  *

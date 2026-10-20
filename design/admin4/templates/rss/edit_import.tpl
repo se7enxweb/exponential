@@ -10,7 +10,7 @@
    DestinationBrowse, UserBrowse), and every template variable is still set (rss_import, rss_class_array, step).
    Cancel (RemoveButton) discards the draft and goes back to the RSS list. This is an edit view, which admin4 draws
    without its main card; .exp-standalone gives the page its own. The same file is in design/admin and
-   design/admin4. Guide: doc/en/us/guides/rss-feeds.md *}
+   design/admin4. Guide: doc/eng-us/guides/rss-feeds.md *}
 
 {def $errors = first_set( $validation_errors, array() )
      $imported = first_set( $rss_import_imported, false() )

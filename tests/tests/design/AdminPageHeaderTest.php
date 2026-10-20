@@ -4,7 +4,7 @@
  * h1.context-title, the node view, the dashboard), the node view's header row built from .a4-pagehead, and the
  * breadcrumb as an ordered list in the #path navigation landmark, its separators drawn by the stylesheet, the
  * current page marked with aria-current and the names no longer cut to 18 characters.
- * doc/en/us/features/6.0/admin4-design.md, doc/en/us/bc/6.0/admin4-styling.md.
+ * doc/eng-us/features/6.0/admin4-design.md, doc/eng-us/bc/6.0/admin4-styling.md.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminPageHeaderTest.php
  *

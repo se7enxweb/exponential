@@ -1,7 +1,7 @@
 /*
  * admin4 section/list: the filter and the selection of the section list.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md). The texts come from #section-list-data.
+ * (doc/eng-us/features/6.0/content-security-policy.md). The texts come from #section-list-data.
  */
 var expSectionListData = document.getElementById( 'section-list-data' );
 var expSectionText = {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Audit records of location changes (doc/en/us/bc/6.0/audit.md, content.node.add, content.node.remove, content.node.main),
+ * Audit records of location changes (doc/eng-us/bc/6.0/audit.md, content.node.add, content.node.remove, content.node.main),
  * written through the audit trail from eZContentOperationCollection.
  *
  *  AL-01 - Adding a location records one content.node.add per new location: the object, the new node as the

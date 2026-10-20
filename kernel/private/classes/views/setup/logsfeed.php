@@ -1,6 +1,6 @@
 <?php
 /**
- * The feed of the log viewer (setup/logsfeed; doc/en/us/features/6.0/log-viewer.md, "The feed"): JSON for the page's
+ * The feed of the log viewer (setup/logsfeed; doc/eng-us/features/6.0/log-viewer.md, "The feed"): JSON for the page's
  * script, one short request each, never held open (so a Velocity worker or a PHP-FPM child is busy for the
  * milliseconds of one read, not for as long as a page stays open).
  *

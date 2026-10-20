@@ -1,7 +1,7 @@
 /*
  * admin4 role/list: the "select all" box and the selection count of the role list.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md). The texts come from #role-list-data.
+ * (doc/eng-us/features/6.0/content-security-policy.md). The texts come from #role-list-data.
  */
 var expRoleListData = document.getElementById( 'role-list-data' );
 var expRoleListText = {

@@ -2,7 +2,7 @@
  * admin4 notification settings, subtree handler (notification/handler/ezsubtree/settings/edit.tpl): "Select all on
  * this page" (data-nf-select-all) ticks or clears every rule of the list as it is itself ticked or cleared. A file of
  * its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 document.addEventListener( 'click', function ( event )
 {

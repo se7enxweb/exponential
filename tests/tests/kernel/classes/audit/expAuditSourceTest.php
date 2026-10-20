@@ -1,6 +1,6 @@
 <?php
 /**
- * The console's sources of extensions (doc/en/us/bc/6.0/audit.md, "An extension's source in the console"):
+ * The console's sources of extensions (doc/eng-us/bc/6.0/audit.md, "An extension's source in the console"):
  * audit.ini [AuditSourceSettings] Sources[] and expAuditSourceRegistry.
  *
  *  AS-01 — no source registered (the shipped settings): every answer is empty, the channel filter is the channel

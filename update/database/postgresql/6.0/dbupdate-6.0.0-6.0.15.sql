@@ -336,7 +336,7 @@ INSERT INTO ezorder_status (is_active, name, status_id)
 
 
 --
--- The audit index (doc/en/us/bc/6.0/audit.md, "The index"): one row per audit record (expaudit_event), how far
+-- The audit index (doc/eng-us/bc/6.0/audit.md, "The index"): one row per audit record (expaudit_event), how far
 -- each live channel file has been indexed (expaudit_cursor) and each file's verification state (expaudit_file).
 -- The JSON lines files under var/<site>/log/audit/ are the record; these tables are a copy for the console,
 -- filled by the auditindex cronjob part and rebuilt from the files at any time. New in 6.0.15.
@@ -522,7 +522,7 @@ CREATE TABLE expmail_suppression (
 ALTER TABLE ONLY expmail_suppression ADD CONSTRAINT expmail_suppression_pkey PRIMARY KEY ( id );
 CREATE UNIQUE INDEX expmail_suppression_hash ON expmail_suppression USING btree ( email_hash );
 
--- Personal API keys (doc/en/us/guides/api-keys.md).
+-- Personal API keys (doc/eng-us/guides/api-keys.md).
 --
 -- One row per key a user made on the API access page (apikey/list). key_prefix is the
 -- public part of the key (expk_<id>); the secret is never stored, only secret_hash,

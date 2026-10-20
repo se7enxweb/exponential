@@ -1,6 +1,6 @@
 <?php
 /**
- * The help classes as a content class package (doc/en/us/specifications/6.0/help-content-package.md, CJW #16564):
+ * The help classes as a content class package (doc/eng-us/specifications/6.0/help-content-package.md, CJW #16564):
  * the eight help_* classes of expHelpContentSchema in the class group "Help", as one package "exp_help_classes" of
  * the type contentclass, exported as an .ezpkg that Setup > Packages and the setup wizard install.
  *

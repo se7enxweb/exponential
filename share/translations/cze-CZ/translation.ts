@@ -5476,8 +5476,8 @@
         <translation>Texty administračního rozhraní a šablon (tlačítka, nabídky) pocházejí ze souborů překladů (.ts) a řídí se místo toho nastavením Locale přístupu k webu. Web může zobrazovat německý obsah s anglickým rozhraním a naopak.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>Přidáním jazyka zde se nic nepřeloží a nezmění se žádný přístup k webu: obsah přeložte v editoru a jazyk uveďte v SiteLanguageList tam, kde se má zobrazovat. Uživatelská příručka je doc/en/us/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>Přidáním jazyka zde se nic nepřeloží a nezmění se žádný přístup k webu: obsah přeložte v editoru a jazyk uveďte v SiteLanguageList tam, kde se má zobrazovat. Uživatelská příručka je doc/eng-us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -23253,8 +23253,8 @@ Exponential verze</translation>
         <translation>Zapněte profil, chcete-li vidět, kolik příkazů každý požadavek provede, kolik je přesných opakování a co by ušetřila mezipaměť dotazů.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>Profil počítá příkazy, které dorazily do databáze: se zapnutou mezipamětí dotazů v něm odpověď z mezipaměti není. &quot;Úspora memo&quot; je to, co by ušetřil režim request, &quot;úspora sdílené mezipaměti&quot; to, co by ušetřil režim shared (přibližně 15 µs na odpověď). Čítače jsou pro každý server zvlášť, protože každý server má vlastní APCu. Protokol je var/tmp/sql_profile.log; viz doc/en/us/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>Profil počítá příkazy, které dorazily do databáze: se zapnutou mezipamětí dotazů v něm odpověď z mezipaměti není. &quot;Úspora memo&quot; je to, co by ušetřil režim request, &quot;úspora sdílené mezipaměti&quot; to, co by ušetřil režim shared (přibližně 15 µs na odpověď). Čítače jsou pro každý server zvlášť, protože každý server má vlastní APCu. Protokol je var/tmp/sql_profile.log; viz doc/eng-us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -24605,8 +24605,8 @@ Exponential verze</translation>
         <translation>Nastavení site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>Druh se řídí site.ini [SiteAccessSettings] SiteAccessType, pokud ho přístup k webu nastavuje, jinak jeho designy a RequireUserLogin. Příručka: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>Druh se řídí site.ini [SiteAccessSettings] SiteAccessType, pokud ho přístup k webu nastavuje, jinak jeho designy a RequireUserLogin. Příručka: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -31614,8 +31614,8 @@ Tlačítko registrovat</translation>
         <translation>Exponential Layouts to u nových webů nahradil: rozvržení obsahuje zóny a bloky, nabídka je jedním z bloků a pravidlo vybírá rozvržení pro každou stránku. Přístup k webu vytvořený tímto způsobem tato nastavení nikdy nečte.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>Stránka zůstává pro weby, které stále používají klasický design. Změna nastavení zde pro přístup k webu vytvořený s Layouts je neškodná, ale nemá žádný účinek. Příručka doc/en/us/guides/classic-menu-settings.md vysvětluje oba způsoby.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>Stránka zůstává pro weby, které stále používají klasický design. Změna nastavení zde pro přístup k webu vytvořený s Layouts je neškodná, ale nemá žádný účinek. Příručka doc/eng-us/guides/classic-menu-settings.md vysvětluje oba způsoby.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -41808,8 +41808,8 @@ Výchozí kód byl vytvořen ze základních parametrů, které jste zvolili.</t
         <translation>Každé nastavení v této instalaci, jehož hodnotou je třída nebo jehož název říká, že ji přijímá. Změňte jedno z nich a místo toho odpoví něco jiného.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Další registry deklaruje rad.ini, jádro a každé aktivní rozšíření ve vlastním rad.ini.append.php: posluchače událostí, poskytovatele, nástroje a řetězce AI, nástroje MCP, typy úloh fronty a další. Každý uvádí, které bloky INI nebo který seznam tříd obsahují jeho položky a čím musí každá položka být; registr deklarovaný s InTotal=disabled odkazuje na body počítané jinde a kontroluje se, aniž by se přičítal. Příručka: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Další registry deklaruje rad.ini, jádro a každé aktivní rozšíření ve vlastním rad.ini.append.php: posluchače událostí, poskytovatele, nástroje a řetězce AI, nástroje MCP, typy úloh fronty a další. Každý uvádí, které bloky INI nebo který seznam tříd obsahují jeho položky a čím musí každá položka být; registr deklarovaný s InTotal=disabled odkazuje na body počítané jinde a kontroluje se, aniž by se přičítal. Příručka: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -57009,8 +57009,8 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Bloky nastavení, jejichž každá položka registruje implementaci: sloupce tabulky podřízených položek (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; nebo Template=), typy úloh s obsahem (content.ini [ContentJobSettings] JobTypes[]), akce a poskytovatelé rozsahů exp:ini (ini.ini [IniCommandSettings]) a serverové funkce ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), s každou vzdálenou službou, kterou deklaruje třída serverové funkce rozšiřující expServiceBase (její statické $services, volané jako ezjscore/call/&lt;name&gt;::&lt;service&gt;; každá je přičtena k celku, deklarovaná služba, jejíž metoda chybí, je nefunkční). Položka, která uvádí třídu, je také jedním z nastavení uvádějících třídu a počítá se tam; ostatní se zde přičítají k celku. Položka, jejíž třída, metoda nebo šablona chybí nebo jejíž třída nerozšiřuje to, co registr požaduje, se zobrazí jako nefunkční. Vestavěné sloupce podřízených položek, které seznam vykresluje sám, nejsou bodem a neuvádějí se.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Další registry deklaruje rad.ini, jádro a každé aktivní rozšíření ve vlastním rad.ini.append.php: posluchače událostí, poskytovatele, nástroje a řetězce AI, nástroje MCP, typy úloh fronty a další. Každý uvádí, které bloky INI nebo který seznam tříd obsahují jeho položky a čím musí každá položka být; registr deklarovaný s InTotal=disabled odkazuje na body počítané jinde a kontroluje se, aniž by se přičítal. Příručka: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Další registry deklaruje rad.ini, jádro a každé aktivní rozšíření ve vlastním rad.ini.append.php: posluchače událostí, poskytovatele, nástroje a řetězce AI, nástroje MCP, typy úloh fronty a další. Každý uvádí, které bloky INI nebo který seznam tříd obsahují jeho položky a čím musí každá položka být; registr deklarovaný s InTotal=disabled odkazuje na body počítané jinde a kontroluje se, aniž by se přičítal. Příručka: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

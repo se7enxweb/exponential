@@ -1,6 +1,6 @@
 <?php
 /**
- * The fetch functions of the audit module (kernel/audit/function_definition.php; doc/en/us/bc/6.0/audit.md, "Template
+ * The fetch functions of the audit module (kernel/audit/function_definition.php; doc/eng-us/bc/6.0/audit.md, "Template
  * operator and fetch"):
  *
  *   fetch( 'audit', 'events', hash( 'object', hash( 'type', 'node', 'id', $node.node_id ), 'limit', 10 ) )

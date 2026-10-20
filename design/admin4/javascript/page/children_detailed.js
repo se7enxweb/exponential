@@ -2,7 +2,7 @@
  * The sub-items table of the node view (children_detailed.tpl): reads the settings and texts from the data
  * attributes of #subitems-config and starts Exponential UI's exp::datatable (ezajaxsubitems_expdatatable.js).
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     'use strict';

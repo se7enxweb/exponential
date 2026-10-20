@@ -2,7 +2,7 @@
 
 Read this page before you install or update `sevenx_valkey_cache`, or to find out which release brought a change.
 
-What each release of `sevenx_valkey_cache` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/sevenx_valkey_cache.md); the story is in the [chronicle](../../en/us/history/extensions/sevenx_valkey_cache.md).
+What each release of `sevenx_valkey_cache` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md); the story is in the [chronicle](../../eng-us/history/extensions/sevenx_valkey_cache.md).
 
 ## Unreleased
 
@@ -34,8 +34,8 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 ## Related pages
 
-- [Feature page](../../en/us/features/6.0/extensions/sevenx_valkey_cache.md)
-- [Chronicle](../../en/us/history/extensions/sevenx_valkey_cache.md)
-- [Change ledger](../../en/us/history/ledger/sevenx_valkey_cache.md)
-- [behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
-- Months: [2026-07](../../en/us/history/extensions/months/2026-07.md)
+- [Feature page](../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md)
+- [Chronicle](../../eng-us/history/extensions/sevenx_valkey_cache.md)
+- [Change ledger](../../eng-us/history/ledger/sevenx_valkey_cache.md)
+- [behaviour changes of the extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2026-07](../../eng-us/history/extensions/months/2026-07.md)

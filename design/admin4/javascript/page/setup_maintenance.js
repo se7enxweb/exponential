@@ -1,7 +1,7 @@
 /*
  * admin4 setup/maintenance: the end time, the message count and preview, the address check and the copy buttons.
  * The texts are data-text-* attributes of #maintenance-script. A file of its own, so the page runs under a Content
- * Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 var expMaintenanceText = ( function ( el ) {
     return {

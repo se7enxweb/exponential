@@ -1,6 +1,6 @@
 <?php
 /**
- * The context help (doc/en/us/features/6.0/help-system.md, "Context help"): which help page the "?" control of an admin page
+ * The context help (doc/eng-us/features/6.0/help-system.md, "Context help"): which help page the "?" control of an admin page
  * opens, from a given map, without settings or a database.
  *
  *  HC-01  module/view hit: level view, the url is the viewer's with the anchor
@@ -111,7 +111,7 @@ class expHelpContextRegistryTest extends PHPUnit\Framework\TestCase
 
     public function testDocPrefixStripped()
     {
-        $hit = $this->registry( array( 'setup' => 'doc/en/us/help/setup.md' ) )->lookup( 'setup', 'x', '' );
+        $hit = $this->registry( array( 'setup' => 'doc/eng-us/help/setup.md' ) )->lookup( 'setup', 'x', '' );
         $this->assertSame( 'help/setup.md', $hit['id'] );
     }
 
@@ -169,9 +169,9 @@ class expHelpContextRegistryTest extends PHPUnit\Framework\TestCase
             $parsed = expHelpContextRegistry::parseTarget( $target );
             $this->assertNotEmpty( $parsed, 'Map[' . $key . ']=' . $target . ' is valid' );
             $id = preg_replace( '/#.*$/', '', $parsed['id'] );
-            // a page id is the path below doc/en/us/ (or below doc/ for a file in no language directory)
+            // a page id is the path below doc/eng-us/ (or below doc/ for a file in no language directory)
             if ( $tracked !== null && strpos( $id, 'ext/' ) !== 0 )
-                $this->assertTrue( in_array( 'doc/en/us/' . $id, $tracked, true ) || in_array( 'doc/' . $id, $tracked, true ),
+                $this->assertTrue( in_array( 'doc/eng-us/' . $id, $tracked, true ) || in_array( 'doc/' . $id, $tracked, true ),
                                    'Map[' . $key . '] names a tracked page' );
         }
     }

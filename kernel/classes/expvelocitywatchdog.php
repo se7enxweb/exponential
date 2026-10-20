@@ -246,7 +246,7 @@ class expVelocityWatchdog
     }
 
     /**
-     * The audit event of one run (doc/en/us/bc/6.0/audit.md, system.velocity.watchdog.*), or null when the run did
+     * The audit event of one run (doc/eng-us/bc/6.0/audit.md, system.velocity.watchdog.*), or null when the run did
      * nothing worth a record: the engine was running, or the watchdog is paused (its configuration file is
      * disabled, so it does nothing on purpose). Every other run is one event:
      *

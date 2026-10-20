@@ -5,7 +5,7 @@
  * What the built-in exp:ini actions share: the three describing methods from class constants, the printing
  * of a value as INI lines, and the small checks several actions make (a setting of the wrong kind, a value an
  * array already has, a scope without the file). An action of an extension may extend it or implement
- * expIniAction on its own. Guide: doc/en/us/bc/6.0/console-exp-ini.md.
+ * expIniAction on its own. Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

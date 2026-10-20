@@ -1,7 +1,7 @@
 {* The description at the top of the content browser when the image of an RSS export is chosen (rss/edit_export, BrowseImageButton).
 
    The same file is in design/admin and design/admin4, in the look of the RSS pages. Choosing an item and OK hand it
-   back to the edit form; Cancel returns to it unchanged. Guide: doc/en/us/guides/rss-feeds.md *}
+   back to the edit form; Cancel returns to it unchanged. Guide: doc/eng-us/guides/rss-feeds.md *}
 
 <div class="context-block a4-page exp-rss">
 

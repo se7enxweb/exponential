@@ -5,7 +5,7 @@
    parts/ini_menu.tpl): the links, their names, groups and access checks, and per link LinkIcons[],
    LinkDescriptions[] and LinkFigureTemplates[]. A function the user may not open has no tile; an extension's link
    shows under "More", with the icon, description and figure its menu.ini.append.php gives it.
-   Guide: doc/en/us/features/6.0/admin4-design.md ("Setup overview") *}
+   Guide: doc/eng-us/features/6.0/admin4-design.md ("Setup overview") *}
 {def $setup_menu_layout = 'tiles'}
 
 <div class="a4-page a4-setup-overview">

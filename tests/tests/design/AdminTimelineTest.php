@@ -3,7 +3,7 @@
  * The .a4-timeline component (components.css, both copies) and where admin4 draws a chronological list with it: the
  * dashboard's audit block and the node view's Audit tab, through the shared parts/audit_timeline.tpl. A timeline is
  * an ordered list with machine-readable times; its dots repeat the state the result badge says in words; its line is
- * an edge, so forced colors keep it. doc/en/us/bc/6.0/admin4-styling.md (Timeline).
+ * an edge, so forced colors keep it. doc/eng-us/bc/6.0/admin4-styling.md (Timeline).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminTimelineTest.php
  *

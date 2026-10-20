@@ -6,7 +6,7 @@
   <li>{'Download and install doxygen'|i18n('design/standard/reference/ez')}</li>
   <li>{'Generate the documentation by running the following command'|i18n('design/standard/reference/ez')}
 <pre class="example">
-doxygen doc/en/us/doxygen/Doxyfile
+doxygen doc/eng-us/doxygen/Doxyfile
 </pre></li>
 </ol>
 

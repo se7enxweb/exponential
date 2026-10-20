@@ -1,6 +1,6 @@
 <?php
 /**
- * The audience factor of the help search, [SearchSettings] AudienceBoost[] (doc/en/us/features/6.0/help-system.md). No
+ * The audience factor of the help search, [SearchSettings] AudienceBoost[] (doc/eng-us/features/6.0/help-system.md). No
  * database.
  *
  *  AB-01  a trainer lesson ranks below an editor page with the same words in a general search, and first when the

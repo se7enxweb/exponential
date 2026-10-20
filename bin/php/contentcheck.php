@@ -3,7 +3,7 @@
 /**
  * File containing the contentcheck.php script.
  *
- * The content checks on the command line, report only (doc/en/us/features/6.0/content-checks.md):
+ * The content checks on the command line, report only (doc/eng-us/features/6.0/content-checks.md):
  *
  *   ./console exp:content-check --build-index            build the reference index
  *   ./console exp:content-check --unreferenced --node=2   the unused assets below node 2

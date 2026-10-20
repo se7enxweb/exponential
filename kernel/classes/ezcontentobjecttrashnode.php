@@ -327,7 +327,7 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
 
     /**
      * The entries of <VarDir>/trash/trashed.json, where who moved what to the trash was kept before the columns
-     * trashed_by and trashed_via existed (Exponential\Service\TrashRecord, doc/en/us/bc/6.0/trash.md): purging or
+     * trashed_by and trashed_via existed (Exponential\Service\TrashRecord, doc/eng-us/bc/6.0/trash.md): purging or
      * restoring an object forgets its entry. Loaded by path when the autoload array of a long-running worker
      * predates the class; a failure never stops the purge.
      *

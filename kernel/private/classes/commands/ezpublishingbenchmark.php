@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/ezpublishingbenchmark.php, moved into a class (#207 stage 1). The file bin/php/ezpublishingbenchmark.php is one call to it.
  * @description Benchmark parallel publishing in concurrent batches (--batches-count, -l level)
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/ezpublishingbenchmark.php:

@@ -32,7 +32,7 @@
  * Storage, under var/<site>/cache/querycache/: state.ser
  *   { generation, genTime, tables: { table => last write } }
  *
- * See doc/en/us/bc/6.0/sql-query-cache.md.
+ * See doc/eng-us/bc/6.0/sql-query-cache.md.
  */
 class eZDBQueryCache
 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * expNodeQuickPick (doc/en/us/features/6.0/quick-location-buttons.md): the keys of the quick location buttons, their labels,
+ * expNodeQuickPick (doc/eng-us/features/6.0/quick-location-buttons.md): the keys of the quick location buttons, their labels,
  * the rows with the current place and the place it lies in, a filter that keeps places out, and the shared component
  * .a4-quickpick. No database.
  *

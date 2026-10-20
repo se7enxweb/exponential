@@ -8,7 +8,7 @@
  */
 
 /**
- * The content finder (module contentfinder, doc/en/us/features/6.0/content-finder.md): finds content objects by an id or
+ * The content finder (module contentfinder, doc/eng-us/features/6.0/content-finder.md): finds content objects by an id or
  * a path and describes each with what the current user may see of it.
  *
  *   $finder = new expContentFinder();

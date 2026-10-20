@@ -1,6 +1,6 @@
 <?php
 /**
- * The editor engines under an enforced Content Security Policy (doc/en/us/features/6.0/content-security-policy.md): an
+ * The editor engines under an enforced Content Security Policy (doc/eng-us/features/6.0/content-security-policy.md): an
  * engine that needs inline scripts (TinyMCE 3) is not offered where the policy runs none, and editors get the
  * configured or the first other engine instead of an editor that cannot start.
  *

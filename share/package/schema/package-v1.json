@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/se7enxweb/exponential/main/share/package/schema/package-v1.json",
   "title": "Exponential package document (JSON format 1.x)",
-  "description": "A document of an Exponential package in the JSON format: package.json (kind definition) or the JSON form of one of the package's XML documents (kind document). The XML is mirrored element for element in JsonML. Reference: doc/en/us/bc/6.0/package-json-format.md",
+  "description": "A document of an Exponential package in the JSON format: package.json (kind definition) or the JSON form of one of the package's XML documents (kind document). The XML is mirrored element for element in JsonML. Reference: doc/eng-us/bc/6.0/package-json-format.md",
   "type": "object",
   "required": [ "format", "format-version", "kind", "root" ],
   "additionalProperties": false,

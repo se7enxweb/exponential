@@ -20,7 +20,7 @@
  * - undo(): the inverse of a logged write, refused when the file changed since;
  * - applyPreset(): the values of a preset, each a logged write of one group.
  *
- * Guide: doc/en/us/bc/6.0/debug-bar.md
+ * Guide: doc/eng-us/bc/6.0/debug-bar.md
  */
 class expDebugBarSettings
 {

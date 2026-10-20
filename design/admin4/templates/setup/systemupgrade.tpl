@@ -12,13 +12,13 @@
    The same file is in design/admin and design/admin4. The view gives file_report, file_groups, schema_report and
    upgrade_info; without them (an older view class) the page shows md5_result and upgrade_sql as before. Everything
    works without javascript; the script adds the search and the filters and says that a check is running.
-   Guide: doc/en/us/guides/upgrade-check.md *}
+   Guide: doc/eng-us/guides/upgrade-check.md *}
 
 {def $info = first_set( $upgrade_info, false() )
      $files = first_set( $file_report, false() )
      $schema = first_set( $schema_report, false() )
      $current = first_set( $upgrade_check, '' )
-     $guide = 'https://github.com/se7enxweb/exponential/blob/main/doc/en/us/guides/upgrade-check.md'
+     $guide = 'https://github.com/se7enxweb/exponential/blob/main/doc/eng-us/guides/upgrade-check.md'
      $state_labels = hash( 'modified', 'Modified'|i18n( 'design/admin/setup/systemupgrade' ),
                            'missing', 'Missing'|i18n( 'design/admin/setup/systemupgrade' ),
                            'unreadable', 'Unreadable'|i18n( 'design/admin/setup/systemupgrade' ),
@@ -522,8 +522,8 @@
 
 <p class="a4-setup-docs">{'How each finding is read and fixed, and how the check runs from the command line:'|i18n( 'design/admin/setup/systemupgrade' )}
     <a href="{$guide}">{'Guide: upgrade check'|i18n( 'design/admin/setup/systemupgrade' )}</a> &middot;
-    <a href="https://github.com/se7enxweb/exponential/blob/main/doc/en/us/features/6.0/file-consistency-check.md">{'The file manifest'|i18n( 'design/admin/setup/systemupgrade' )}</a> &middot;
-    <a href="https://github.com/se7enxweb/exponential/blob/main/doc/en/us/guides/upgrading.md">{'Upgrading'|i18n( 'design/admin/setup/systemupgrade' )}</a></p>
+    <a href="https://github.com/se7enxweb/exponential/blob/main/doc/eng-us/features/6.0/file-consistency-check.md">{'The file manifest'|i18n( 'design/admin/setup/systemupgrade' )}</a> &middot;
+    <a href="https://github.com/se7enxweb/exponential/blob/main/doc/eng-us/guides/upgrading.md">{'Upgrading'|i18n( 'design/admin/setup/systemupgrade' )}</a></p>
 
 </form>
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/copysubtree.php, moved into a class (#207 stage 1). The file kernel/content/copysubtree.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/copysubtree.php:
@@ -490,7 +490,7 @@ function expModuleViewContentCopySubtreeCopySubtree( $srcNodeID, $dstNodeID, &$n
     eZDebug::writeDebug( $objectIDBlackList, "Copy subtree: Not copied object IDs list:" );
     eZDebug::writeDebug( $nodeIDBlackList, "Copy subtree: Not copied node IDs list:" );
 
-    // Audit (doc/en/us/bc/6.0/audit.md, content.node.copy)
+    // Audit (doc/eng-us/bc/6.0/audit.md, content.node.copy)
     if ( method_exists( 'eZContentObjectTreeNodeOperations', 'auditSubtreeCopy' ) )
         eZContentObjectTreeNodeOperations::auditSubtreeCopy( $srcNodeID, $sourceSubTreeMainNode, $destinationNode, $syncNodeIDListSrc,
                                                             $syncNodeIDListNew, $countNewNodes, $countNewObjects );
@@ -862,7 +862,7 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
     /**
      * Calls the content jobs GUI helper (Exponential\View\Kernel\Content\Job) when it can be used. Without it
      * (a Velocity worker started before it existed, the engine not installed or failing) the view takes the
-     * old synchronous path: runAsJob gives false, everything else null. doc/en/us/bc/6.0/content-jobs.md
+     * old synchronous path: runAsJob gives false, everything else null. doc/eng-us/bc/6.0/content-jobs.md
      *
      * @param string $method runAsJob, lockRefusal or startJob
      * @return mixed
@@ -938,7 +938,7 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
         $maxNodesCopySubtree = $contentINI->variable( 'CopySettings', 'MaxNodesCopySubtree' );
         $srcSubtreeNodesCount = $srcNode->subTreeCount();
 
-        // Content jobs (doc/en/us/bc/6.0/content-jobs.md): a large copy (content.ini [ContentJobSettings]
+        // Content jobs (doc/eng-us/bc/6.0/content-jobs.md): a large copy (content.ini [ContentJobSettings]
         // SynchronousLimit, or more than MaxNodesCopySubtree) runs as a job in the background; a copy from or
         // into a subtree a job is working on is refused. Small copies are done here as before.
         $runAsJob = self::contentJob( 'runAsJob', 'copy', array( 'source_node_id' => (int) $NodeID ), $maxNodesCopySubtree );
@@ -950,7 +950,7 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
                                                    "the maximum possible nodes for subtree copying. ".
                                                    "You can copy this subtree using Subtree Copy script.",
                                                    null, array( $maxNodesCopySubtree ) );
-            // only reached when background jobs cannot be used; say so (doc/en/us/bc/6.0/content-jobs.md)
+            // only reached when background jobs cannot be used; say so (doc/eng-us/bc/6.0/content-jobs.md)
             $notifications['Warnings'][] = \ezpI18n::tr( 'design/admin/content/job',
                                                    'Large copies normally run as a background job, but background jobs are not available on this server right now. Try again later, or use the command exp:expcontentjob copy.' );
             $notifications['Result'] = false;

@@ -1,6 +1,6 @@
 <?php
 /**
- * The law checklist of the e-mail preferences (doc/en/us/specifications/6.0/mail-preferences-compliance.md): one test per
+ * The law checklist of the e-mail preferences (doc/eng-us/specifications/6.0/mail-preferences-compliance.md): one test per
  * requirement of CAN-SPAM, GDPR + ePrivacy, CCPA/CPRA, CASL and RFC 8058 that is not already proven by
  * MailPreferencesCoreTest (MP-01 .. MP-20). The checklist names the test of every requirement. Not legal advice.
  *

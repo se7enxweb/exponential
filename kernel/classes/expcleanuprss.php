@@ -17,7 +17,7 @@
  * this keeps: the newest items of a feed are found by asking for the feed's
  * children sorted newest first and skipping the number to keep, so whatever is
  * returned is by definition the surplus. What has changed is everything around
- * that - see doc/en/us/bc/6.0/rss-import-cleanup.md.
+ * that - see doc/eng-us/bc/6.0/rss-import-cleanup.md.
  *
  * @copyright Copyright (C) 1999 - 2011 Brookins Consulting. All rights reserved.
  * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.

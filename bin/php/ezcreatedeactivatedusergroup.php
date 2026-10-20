@@ -10,7 +10,7 @@
  *   php bin/php/ezcreatedeactivatedusergroup.php -s <admin siteaccess>
  *   php bin/php/ezcreatedeactivatedusergroup.php -s <admin siteaccess> --commit [--name="Former staff"] [--section-id=2]
  *
- * Guide: doc/en/us/features/6.0/user-hygiene.md, section "Deactivate and move"
+ * Guide: doc/eng-us/features/6.0/user-hygiene.md, section "Deactivate and move"
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

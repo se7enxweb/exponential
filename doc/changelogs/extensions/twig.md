@@ -2,7 +2,7 @@
 
 Read this page before you install or update `twig`, or to find out which release brought a change.
 
-Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../en/us/history/ecosystem/twig.md).
+Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../eng-us/history/ecosystem/twig.md).
 
 ## v2.16.4 (2026-04-09)
 
@@ -37,6 +37,6 @@ Releases made by the se7enxweb team, newest first. Each release lists the team's
 
 ## Related pages
 
-- [Framework forks](../../en/us/features/6.0/platform-php85-framework-forks.md)
-- [package map](../../en/us/specifications/6.0/platform-package-map.md)
-- [upgrade notes](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Framework forks](../../eng-us/features/6.0/platform-php85-framework-forks.md)
+- [package map](../../eng-us/specifications/6.0/platform-package-map.md)
+- [upgrade notes](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)

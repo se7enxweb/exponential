@@ -1,6 +1,6 @@
 <?php
 /**
- * Evaluates the alert rules (doc/en/us/bc/6.0/audit.md, "Alerts (F5)") and fires system.audit.alert.
+ * Evaluates the alert rules (doc/eng-us/bc/6.0/audit.md, "Alerts (F5)") and fires system.audit.alert.
  *
  *   [AuditAlertSettings] Alerts, EvaluateIn[] (flush, cronjob), Rules[], RuleClasses[], BusinessDays, BusinessHours
  *   [AlertRule_<name>]   Class (default threshold), Event (pattern), Threshold, Window, GroupBy, Severity, Sinks[], ...

@@ -1,6 +1,6 @@
 <?php
 /**
- * Which log files the viewer may open, and where they are (doc/en/us/features/6.0/log-viewer.md, "Which files").
+ * Which log files the viewer may open, and where they are (doc/eng-us/features/6.0/log-viewer.md, "Which files").
  *
  * A file is named by its path relative to the installation root ("var/log/error.log"), its id. resolve() accepts an
  * id only when
@@ -287,7 +287,7 @@ class expLogFileLocator
     }
 
     /**
-     * The key of a log in the permalinks (doc/en/us/features/6.0/log-viewer.md, "Permalinks"). Pure.
+     * The key of a log in the permalinks (doc/eng-us/features/6.0/log-viewer.md, "Permalinks"). Pure.
      *  - a log configured in LogList[] (directory id "@<key>"): its key;
      *  - var/log/<name>.log: <name>, e.g. error, debug, expmcp;
      *  - var/<site>/log/<name>.log: <site>-<name>, e.g. site-storage;

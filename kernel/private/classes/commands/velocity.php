@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/velocity.php, moved into a class (#207 stage 1). The file bin/php/velocity.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/velocity.php:
@@ -879,7 +879,7 @@ class Velocity extends \Exponential\Runnable\Command
                 $result = $watchdog->$action();
                 if ( $action === 'run' )
                 {
-                    // Audit only on action (doc/en/us/bc/6.0/audit.md): the timer runs this every 45 s, so instead of
+                    // Audit only on action (doc/eng-us/bc/6.0/audit.md): the timer runs this every 45 s, so instead of
                     // system.command.run for every run it records one system.velocity.watchdog.* event when it
                     // started the engine, backed off or skipped, and nothing when the engine was running.
                     $script->setAuditCommandRun( false );

@@ -1,6 +1,6 @@
 <?php
 /**
- * The contentcheck/fixfiles view (doc/en/us/features/6.0/content-checks.md, "Resolving"): POST only. The missing files
+ * The contentcheck/fixfiles view (doc/eng-us/features/6.0/content-checks.md, "Resolving"): POST only. The missing files
  * list posts an action (FixAction with the ticked Keys[], or one row's ItemAction "<action>:<key>") and NodeID; this
  * view answers with the preview, which shows what will happen to each field version (expContentCheckFileFix::plan())
  * and posts back with ConfirmButton, the confirmation token and, for replace, one file per field version. Then the

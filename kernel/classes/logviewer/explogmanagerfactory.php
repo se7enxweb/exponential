@@ -1,6 +1,6 @@
 <?php
 /**
- * The log manager the views of the log viewer use (doc/en/us/features/6.0/log-viewer.md, "Managing logs"): the kernel's
+ * The log manager the views of the log viewer use (doc/eng-us/features/6.0/log-viewer.md, "Managing logs"): the kernel's
  * service expLogManager when it is there, else expLogManagerFallback, which does the same on the log viewer's own
  * classes. Both implement expLogManagerInterface.
  *

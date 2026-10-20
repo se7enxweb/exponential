@@ -1,7 +1,7 @@
 <?php
 /**
  * The place of a page in the help's page tree from the settings (exphelp.ini [TreeSettings] PageOrder[],
- * doc/en/us/features/6.0/help-system.md, "Order of the pages"), without a database.
+ * doc/eng-us/features/6.0/help-system.md, "Order of the pages"), without a database.
  *
  *  HO-01  PageOrder[<page id>] wins over a page's front matter order and places a page without front matter
  *  HO-02  a page without an entry keeps its front matter order, 0 for a folder index, else 1000; the tree sorts by it
@@ -31,10 +31,10 @@ class expHelpPageOrderTest extends PHPUnit\Framework\TestCase
     public function testSettingWins()
     {
         $index = self::index( array( 'branch-overview.md' => 30, 'release-overview' => 40 ) );
-        $page = $index->describe( 'doc/en/us/branch-overview.md', "---\ntitle: Branch history\norder: 90\n---\n# Branch history\n", array( 'format' => 'markdown' ) );
+        $page = $index->describe( 'doc/eng-us/branch-overview.md', "---\ntitle: Branch history\norder: 90\n---\n# Branch history\n", array( 'format' => 'markdown' ) );
         $this->assertSame( 'branch-overview.md', $page['id'] );
         $this->assertSame( 30, $page['order'] );
-        $page = $index->describe( 'doc/en/us/release-overview', "Release history\n\n- 6.0.0 one\n", array( 'format' => 'text' ) );
+        $page = $index->describe( 'doc/eng-us/release-overview', "Release history\n\n- 6.0.0 one\n", array( 'format' => 'text' ) );
         $this->assertSame( 40, $page['order'] );
     }
 
@@ -42,10 +42,10 @@ class expHelpPageOrderTest extends PHPUnit\Framework\TestCase
     public function testWithoutEntry()
     {
         $index = self::index( array( 'other.md' => 5 ) );
-        $page = $index->describe( 'doc/en/us/x.md', "---\norder: 7\n---\n# X\n", array( 'format' => 'markdown' ) );
+        $page = $index->describe( 'doc/eng-us/x.md', "---\norder: 7\n---\n# X\n", array( 'format' => 'markdown' ) );
         $this->assertSame( 7, $page['order'] );
-        $this->assertSame( 1000, $index->describe( 'doc/en/us/y.md', "# Y\n", array( 'format' => 'markdown' ) )['order'] );
-        $this->assertSame( 0, $index->describe( 'doc/en/us/guides/README.md', "# Guides\n", array( 'format' => 'markdown' ) )['order'] );
+        $this->assertSame( 1000, $index->describe( 'doc/eng-us/y.md', "# Y\n", array( 'format' => 'markdown' ) )['order'] );
+        $this->assertSame( 0, $index->describe( 'doc/eng-us/guides/README.md', "# Guides\n", array( 'format' => 'markdown' ) )['order'] );
 
         $a = new expHelpAudience( array( 'pageOrder' => array( 'b.md' => 10 ) ) );
         $this->assertSame( 10, $a->pageOrder( 'b.md', 1000 ) );
@@ -78,12 +78,12 @@ class expHelpPageOrderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( expHelpAudience::PAGE_ORDER, expHelpAudience::defaults()['pageOrder'] );
         foreach ( array_keys( expHelpAudience::PAGE_ORDER ) as $id )
         {
-            $file = strpos( $id, 'project/' ) === 0 ? substr( $id, strlen( 'project/' ) ) : 'doc/en/us/' . $id;
+            $file = strpos( $id, 'project/' ) === 0 ? substr( $id, strlen( 'project/' ) ) : 'doc/eng-us/' . $id;
             $this->assertFileExists( self::root() . '/' . $file, 'an order for a page that does not exist' );
         }
         // the top level has one source: a front matter order there agrees with the settings
         foreach ( array( 'branch-overview.md', 'README-LICENSE.md', 'glossary.md' ) as $id )
-            if ( preg_match( '/^order:\s*(-?\d+)\s*$/m', (string)file_get_contents( self::root() . '/doc/en/us/' . $id ), $o ) )
+            if ( preg_match( '/^order:\s*(-?\d+)\s*$/m', (string)file_get_contents( self::root() . '/doc/eng-us/' . $id ), $o ) )
                 $this->assertSame( expHelpAudience::PAGE_ORDER[$id], (int)$o[1], $id );
     }
 }

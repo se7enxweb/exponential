@@ -19,7 +19,7 @@
  * current user, and for another user only on the command line.
  *
  * Used by the admin dashboard, its menus and the top tabs to show a link only to a user who can follow it.
- * Templates: fetch( 'user', 'can_open', hash( 'uri', 'setup/cache' ) ). Guide: doc/en/us/bc/6.0/audit.md
+ * Templates: fetch( 'user', 'can_open', hash( 'uri', 'setup/cache' ) ). Guide: doc/eng-us/bc/6.0/audit.md
  * ("Dashboard defect").
  */
 class expViewAccess

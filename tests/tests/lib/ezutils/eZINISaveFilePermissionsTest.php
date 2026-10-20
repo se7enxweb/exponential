@@ -10,7 +10,7 @@
 
 /**
  * Mode, owner and group of the settings files eZINI::save() writes
- * (doc/en/us/bc/6.0/ini-save-file-permissions.md). Before 6.0.15 every saved file was
+ * (doc/eng-us/bc/6.0/ini-save-file-permissions.md). Before 6.0.15 every saved file was
  * chmod 0666 (EZP_INI_FILE_PERMISSION's default), settings/override/site.ini.append.php
  * with the database password included. No database is needed.
  */

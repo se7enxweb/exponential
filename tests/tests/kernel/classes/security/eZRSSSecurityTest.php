@@ -2,7 +2,7 @@
 /**
  * Security regression tests for the /rss/ module, 6.0.15.
  *
- * Test IDs map to doc/en/us/bc/6.0/opml.md, "Security".
+ * Test IDs map to doc/eng-us/bc/6.0/opml.md, "Security".
  *
  *  RSS-01 — An outline address may only be one a reader should follow
  *  RSS-02 — Characters no xml document can carry never reach one

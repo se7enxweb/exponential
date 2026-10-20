@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/checkclasses.php, moved into a class (#207 stage 1). The file bin/php/checkclasses.php is one call to it.
  * @description Load every declared class and report the ones PHP refuses to load
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 
 namespace Exponential\Command\Kernel

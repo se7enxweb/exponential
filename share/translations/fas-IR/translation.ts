@@ -5494,8 +5494,8 @@
         <translation>در مقابل، متن‌های پنل مدیریت و قالب‌ها (دکمه‌ها، منوها) از فایل‌های ترجمه (.ts) می‌آیند و از تنظیم Locale یک دسترسی سایت پیروی می‌کنند. یک سایت می‌تواند محتوای آلمانی را با رابط کاربری انگلیسی نمایش دهد و برعکس.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>افزودن یک زبان در اینجا چیزی را ترجمه نمی‌کند و هیچ دسترسی سایتی را تغییر نمی‌دهد: محتوا را در ویرایشگر ترجمه کنید و زبان را در SiteLanguageList جایی که باید نمایش داده شود فهرست کنید. راهنمای کاربر doc/en/us/guides/content-languages.md است.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>افزودن یک زبان در اینجا چیزی را ترجمه نمی‌کند و هیچ دسترسی سایتی را تغییر نمی‌دهد: محتوا را در ویرایشگر ترجمه کنید و زبان را در SiteLanguageList جایی که باید نمایش داده شود فهرست کنید. راهنمای کاربر doc/eng-us/guides/content-languages.md است.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24012,8 +24012,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>پروفایل را روشن کنید تا ببینید هر درخواست چند دستور اجرا می‌کند، چند تای آن‌ها تکرار دقیق هستند و یک حافظهٔ پنهان پرس‌وجو چه مقدار صرفه‌جویی می‌کرد.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>پروفایل دستورهایی را می‌شمارد که به پایگاه داده رسیده‌اند: وقتی حافظهٔ پنهان پرس‌وجو روشن است، پاسخ ذخیره‌شده در آن شمرده نمی‌شود. «صرفه‌جویی memo» مقداری است که حالت request صرفه‌جویی می‌کرد و «صرفه‌جویی حافظهٔ پنهان مشترک» مقداری که حالت shared صرفه‌جویی می‌کرد (حدود 15 µs برای هر پاسخ). شمارنده‌ها به تفکیک سرور هستند، زیرا هر سرور APCu خود را دارد. گزارش در var/tmp/sql_profile.log است؛ doc/en/us/bc/6.0/sql-query-cache.md را ببینید.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>پروفایل دستورهایی را می‌شمارد که به پایگاه داده رسیده‌اند: وقتی حافظهٔ پنهان پرس‌وجو روشن است، پاسخ ذخیره‌شده در آن شمرده نمی‌شود. «صرفه‌جویی memo» مقداری است که حالت request صرفه‌جویی می‌کرد و «صرفه‌جویی حافظهٔ پنهان مشترک» مقداری که حالت shared صرفه‌جویی می‌کرد (حدود 15 µs برای هر پاسخ). شمارنده‌ها به تفکیک سرور هستند، زیرا هر سرور APCu خود را دارد. گزارش در var/tmp/sql_profile.log است؛ doc/eng-us/bc/6.0/sql-query-cache.md را ببینید.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25364,8 +25364,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>تنظیمات site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>نوع از site.ini [SiteAccessSettings] SiteAccessType پیروی می‌کند، اگر دسترسی سایت آن را تنظیم کرده باشد، وگرنه از طراحی‌ها و RequireUserLogin آن. راهنما: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>نوع از site.ini [SiteAccessSettings] SiteAccessType پیروی می‌کند، اگر دسترسی سایت آن را تنظیم کرده باشد، وگرنه از طراحی‌ها و RequireUserLogin آن. راهنما: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32031,8 +32031,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>بلوک‌های تنظیمات که هر ورودی آن‌ها یک پیاده‌سازی را ثبت می‌کند: ستون‌های جدول زیرموردها (subitemscolumns.ini [Column_&lt;key&gt;] Class=، Handler=&lt;class&gt;::&lt;method&gt; یا Template=)، انواع کار محتوا (content.ini [ContentJobSettings] JobTypes[])، کنش‌ها و ارائه‌دهندگان دامنهٔ exp:ini (ini.ini [IniCommandSettings]) و توابع سرور ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=)، به‌همراه هر سرویس راه دوری که یک کلاس تابع سرور مشتق از expServiceBase اعلام می‌کند (متغیر ایستای $services آن، که به‌صورت ezjscore/call/&lt;name&gt;::&lt;service&gt; فراخوانی می‌شود؛ هر کدام به مجموع افزوده می‌شود، و سرویس اعلام‌شده‌ای که روش آن وجود ندارد خراب است). ورودی‌ای که نام یک کلاس را می‌برد، یکی از تنظیماتی هم هست که نام کلاس می‌برند و در آنجا شمرده می‌شود؛ بقیه در اینجا به مجموع افزوده می‌شوند. ورودی‌ای که کلاس، روش یا قالب آن وجود ندارد، یا کلاس آن از آنچه رجیستری می‌خواهد مشتق نشده است، خراب نشان داده می‌شود. ستون‌های داخلی زیرموردها که خود فهرست آن‌ها را نمایش می‌دهد، نقطهٔ گسترش نیستند و فهرست نمی‌شوند.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>رجیستری‌های بیشتری در rad.ini اعلام شده‌اند، توسط هسته و توسط هر افزونهٔ فعال در rad.ini.append.php خودش: شنونده‌های رویداد، ارائه‌دهندگان هوش مصنوعی، ابزارها و زنجیره‌ها، ابزارهای MCP، انواع کار صف و موارد دیگر. هر کدام می‌گوید کدام بلوک‌های ini یا کدام فهرست کلاس ورودی‌هایش را نگه می‌دارند و هر ورودی باید چه باشد؛ رجیستری‌ای که با InTotal=disabled اعلام شده به نقاطی اشاره دارد که در جای دیگری شمرده شده‌اند و بدون افزوده شدن بررسی می‌شود. راهنما: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>رجیستری‌های بیشتری در rad.ini اعلام شده‌اند، توسط هسته و توسط هر افزونهٔ فعال در rad.ini.append.php خودش: شنونده‌های رویداد، ارائه‌دهندگان هوش مصنوعی، ابزارها و زنجیره‌ها، ابزارهای MCP، انواع کار صف و موارد دیگر. هر کدام می‌گوید کدام بلوک‌های ini یا کدام فهرست کلاس ورودی‌هایش را نگه می‌دارند و هر ورودی باید چه باشد؛ رجیستری‌ای که با InTotal=disabled اعلام شده به نقاطی اشاره دارد که در جای دیگری شمرده شده‌اند و بدون افزوده شدن بررسی می‌شود. راهنما: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38747,8 +38747,8 @@ your account.</source>
         <translation>Exponential Layouts این روش را برای سایت‌های جدید جایگزین کرد: یک چیدمان شامل ناحیه‌ها و بلوک‌هاست، منو یکی از بلوک‌هاست، و یک قاعده چیدمان هر صفحه را انتخاب می‌کند. دسترسی سایتی که این‌گونه ساخته شده باشد هرگز این تنظیمات را نمی‌خواند.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>این صفحه برای سایت‌هایی که هنوز از طراحی کلاسیک استفاده می‌کنند باقی می‌ماند. تغییر یک تنظیم در اینجا برای دسترسی سایتی که با Layouts ساخته شده بی‌ضرر است اما اثری ندارد. راهنمای doc/en/us/guides/classic-menu-settings.md هر دو روش را توضیح می‌دهد.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>این صفحه برای سایت‌هایی که هنوز از طراحی کلاسیک استفاده می‌کنند باقی می‌ماند. تغییر یک تنظیم در اینجا برای دسترسی سایتی که با Layouts ساخته شده بی‌ضرر است اما اثری ندارد. راهنمای doc/eng-us/guides/classic-menu-settings.md هر دو روش را توضیح می‌دهد.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -48783,8 +48783,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>هر تنظیم در این نصب که مقدارش یک کلاس است، یا نامش می‌گوید که یک کلاس می‌گیرد. یکی از این‌ها را تغییر دهید تا چیز دیگری به‌جای آن پاسخ دهد.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>رجیستری‌های بیشتری در rad.ini اعلام شده‌اند، توسط هسته و توسط هر افزونهٔ فعال در rad.ini.append.php خودش: شنونده‌های رویداد، ارائه‌دهندگان هوش مصنوعی، ابزارها و زنجیره‌ها، ابزارهای MCP، انواع کار صف و موارد دیگر. هر کدام می‌گوید کدام بلوک‌های ini یا کدام فهرست کلاس ورودی‌هایش را نگه می‌دارند و هر ورودی باید چه باشد؛ رجیستری‌ای که با InTotal=disabled اعلام شده به نقاطی اشاره دارد که در جای دیگری شمرده شده‌اند و بدون افزوده شدن بررسی می‌شود. راهنما: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>رجیستری‌های بیشتری در rad.ini اعلام شده‌اند، توسط هسته و توسط هر افزونهٔ فعال در rad.ini.append.php خودش: شنونده‌های رویداد، ارائه‌دهندگان هوش مصنوعی، ابزارها و زنجیره‌ها، ابزارهای MCP، انواع کار صف و موارد دیگر. هر کدام می‌گوید کدام بلوک‌های ini یا کدام فهرست کلاس ورودی‌هایش را نگه می‌دارند و هر ورودی باید چه باشد؛ رجیستری‌ای که با InTotal=disabled اعلام شده به نقاطی اشاره دارد که در جای دیگری شمرده شده‌اند و بدون افزوده شدن بررسی می‌شود. راهنما: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

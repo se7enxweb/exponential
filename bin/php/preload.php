@@ -5,7 +5,7 @@
  *
  * Warms the section pages of the site of a siteaccess (site.ini [SiteSettings] SiteURL and
  * URLTranslationKeyword), then follows its links, and reports the broken ones with the pages that link to
- * them. The same run as Setup > Preload: one at a time, and listed there. Guide: doc/en/us/guides/preloading-caches.md
+ * them. The same run as Setup > Preload: one at a time, and listed there. Guide: doc/eng-us/guides/preloading-caches.md
  *
  * Usage:
  *   php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-depth=<n>] [--images] [--dry-run]

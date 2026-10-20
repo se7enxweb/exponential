@@ -1,6 +1,6 @@
 <?php
 /**
- * The help's addresses and link rewriting (doc/en/us/features/6.0/help-system.md, "Security"), without a database.
+ * The help's addresses and link rewriting (doc/eng-us/features/6.0/help-system.md, "Security"), without a database.
  *
  *  HL-01  expHelp::url(): module-relative, each segment encoded, the anchor encoded, the query RFC 3986
  *  HL-02  expHelp::requestedId(): the rest of the address or ?p=, decoded, backslashes as slashes, no array tricks
@@ -74,7 +74,7 @@ class expHelpLinksTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'features/6.0/y.md', expHelpLinks::resolvePath( 'y.md', 'features/6.0/x.md' ) );
         $this->assertSame( 'features/y.md', expHelpLinks::resolvePath( '../y.md', 'features/6.0/x.md' ) );
         $this->assertSame( 'features/6.0/img/a.png', expHelpLinks::resolvePath( './img/a.png', 'features/6.0/x.md' ) );
-        $this->assertSame( 'help/start.md', expHelpLinks::resolvePath( '/doc/en/us/help/start.md', 'features/6.0/x.md' ) );
+        $this->assertSame( 'help/start.md', expHelpLinks::resolvePath( '/doc/eng-us/help/start.md', 'features/6.0/x.md' ) );
         $this->assertSame( 'help/start.md', expHelpLinks::resolvePath( '/help/start.md', 'features/6.0/x.md' ) );
         $this->assertSame( 'x.md', expHelpLinks::resolvePath( 'a/../x.md', '' ) );
     }
@@ -131,7 +131,7 @@ class expHelpLinksTest extends PHPUnit\Framework\TestCase
     {
         $src = '../../images/creators/about-extensions.webp';
         $page = 'help/creators/website-creators/site-packages-and-shipped-themes.md';
-        $file = dirname( __DIR__, 5 ) . '/doc/en/us/help/images/creators/about-extensions.webp';
+        $file = dirname( __DIR__, 5 ) . '/doc/eng-us/help/images/creators/about-extensions.webp';
         $this->assertFileExists( $file );
         $size = getimagesize( $file );
         $sized = expHelpLinks::sizedImage( $src, $page );

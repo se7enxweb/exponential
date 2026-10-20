@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit module (doc/en/us/bc/6.0/audit.md, "The console: module audit"): the console (timeline, filters, search,
+ * The audit module (doc/eng-us/bc/6.0/audit.md, "The console: module audit"): the console (timeline, filters, search,
  * paging), one event in full, charts, alerts, export, archives and the effective settings; audit/recent is the
  * short list of stage 2.
  *

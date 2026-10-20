@@ -3,7 +3,7 @@
  * File containing the expHelpCommitFeed class.
  *
  * The latest commits of the Exponential repository for the developers' landing page of the help
- * (exphelp/audience/developer, doc/en/us/features/6.0/help-system.md "Landing pages"). The server reads the repository's
+ * (exphelp/audience/developer, doc/eng-us/features/6.0/help-system.md "Landing pages"). The server reads the repository's
  * Atom feed ([CommitFeedSettings] FeedURL, by default https://github.com/se7enxweb/exponential/commits/main.atom),
  * never the browser: the admin's Content Security Policy allows no outside requests, and the visitor's address is not
  * handed to GitHub.

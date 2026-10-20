@@ -7,7 +7,7 @@
  * longer the one its licence covers. Templates of admin4 draw no GIF icon, no inline SVG and no image button. Every
  * link that opens the site (the header's "Open the site", the node view's "View on site") shows the globe (globe2),
  * not the generic "open elsewhere" arrow.
- * doc/en/us/features/6.0/admin4-design.md, doc/en/us/bc/6.0/admin4-styling.md.
+ * doc/eng-us/features/6.0/admin4-design.md, doc/eng-us/bc/6.0/admin4-styling.md.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminIconsTest.php
  *

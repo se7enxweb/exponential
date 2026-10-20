@@ -1,7 +1,7 @@
 /*
  * admin4 user/hygiene: the selection count of the account list.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md). The text comes from #user-hygiene-data.
+ * (doc/eng-us/features/6.0/content-security-policy.md). The text comes from #user-hygiene-data.
  */
 var expUserHygieneData = document.getElementById( 'user-hygiene-data' );
 var expHygieneText = {

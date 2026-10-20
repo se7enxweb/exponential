@@ -1,6 +1,6 @@
 <?php
 /**
- * DB-less tests of expHelpRecordRenderer: the release and branch history (doc/en/us/release-overview,
+ * DB-less tests of expHelpRecordRenderer: the release and branch history (doc/eng-us/release-overview,
  * and the SVN branch records doc/branch-overview had, kept as fixtures/branch-overview-svn.txt) shown as tables per
  * series, recognised by the shape of the text.
  *
@@ -14,7 +14,7 @@
  *  RR-08  search ranks the history like the pages of the version most of its records belong to (VersionBoost)
  *  RR-09  the records after 4.2 (5.x, 6.x): sourced, dates from their changelogs, unknown dates marked, live links
  *         only to hosts that are online (GitHub), changelogs open in the help
- *  RR-10  doc/en/us/branch-overview.md (Markdown) keeps every SVN branch of the old record file, title "Branch history"
+ *  RR-10  doc/eng-us/branch-overview.md (Markdown) keeps every SVN branch of the old record file, title "Branch history"
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -35,10 +35,10 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         return dirname( __DIR__, 5 );
     }
 
-    /** A page of doc/en/us/, or "branch-overview-svn": the SVN branch records doc/branch-overview had until it became Markdown */
+    /** A page of doc/eng-us/, or "branch-overview-svn": the SVN branch records doc/branch-overview had until it became Markdown */
     protected static function source( $name )
     {
-        $text = file_get_contents( $name === 'branch-overview-svn' ? __DIR__ . '/fixtures/branch-overview-svn.txt' : self::root() . '/doc/en/us/' . $name );
+        $text = file_get_contents( $name === 'branch-overview-svn' ? __DIR__ . '/fixtures/branch-overview-svn.txt' : self::root() . '/doc/eng-us/' . $name );
         self::assertIsString( $text );
         return $text;
     }
@@ -301,7 +301,7 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'confluence.ez.no', $html, 'the dead address stays as text' );
     }
 
-    /** RR-10 doc/en/us/branch-overview.md is a Markdown page, not a record list, and keeps every SVN branch of the old file */
+    /** RR-10 doc/eng-us/branch-overview.md is a Markdown page, not a record list, and keeps every SVN branch of the old file */
     public function testBranchOverviewKeepsTheSvnBranches()
     {
         $page = self::source( 'branch-overview.md' );

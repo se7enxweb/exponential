@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/ezapplytemplate.php, moved into a class (#207 stage 1). The file bin/php/ezapplytemplate.php is one call to it.
  * @description Apply the template blocks found in files and write the files back (exit code 0, 1 or 2)
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/ezapplytemplate.php:

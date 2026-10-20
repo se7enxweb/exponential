@@ -31,7 +31,7 @@ class Exploremipsumfill extends \Exponential\Runnable\Command
                                                "  php bin/php/exploremipsumfill.php --subtree=<node id> [--limit=50] [--dry-run]\n" .
                                                "  ./console exp:loremipsum <object id> --language=qlo-ZZ --from=eng-GB\n\n" .
                                                "Exit code: 0 done (or a dry run), 1 refused or failed, 2 usage error.\n" .
-                                               "Guide: doc/en/us/guides/test-language-lorem-ipsum.md",
+                                               "Guide: doc/eng-us/guides/test-language-lorem-ipsum.md",
                               'use-session' => false,
                               'use-modules' => true,
                               'use-extensions' => true,
@@ -58,7 +58,7 @@ class Exploremipsumfill extends \Exponential\Runnable\Command
         if ( !\eZContentLanguage::fetchByLocale( $language ) )
         {
             $cli->error( "FAIL: $language is not a content language of this installation. Add it on Setup > Languages first;" );
-            $cli->error( "      this command never adds one. Guide: doc/en/us/guides/test-language-lorem-ipsum.md" );
+            $cli->error( "      this command never adds one. Guide: doc/eng-us/guides/test-language-lorem-ipsum.md" );
             $this->shutdown( 1 );
             return;
         }

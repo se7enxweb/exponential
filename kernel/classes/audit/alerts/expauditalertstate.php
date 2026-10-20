@@ -1,6 +1,6 @@
 <?php
 /**
- * The window state of one alert rule (doc/en/us/bc/6.0/audit.md, "Alerts (F5)"): <LogDir>/alerts/<rule>.json, read and
+ * The window state of one alert rule (doc/eng-us/bc/6.0/audit.md, "Alerts (F5)"): <LogDir>/alerts/<rule>.json, read and
  * written under flock() only when a matching record was flushed, so a request without matching events pays
  * nothing.
  *

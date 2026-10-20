@@ -1,7 +1,7 @@
 /*
  * admin4 notification/status: runs the notifications (or a dry run) in the background and shows its lines.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md). The address of the job and the texts come from data attributes
+ * (doc/eng-us/features/6.0/content-security-policy.md). The address of the job and the texts come from data attributes
  * on #nf-console.
  */
 (function () {

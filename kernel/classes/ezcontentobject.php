@@ -1959,7 +1959,7 @@ class eZContentObject extends eZPersistentObject
                     // if initial_language_id is 4 and the attribute is always available
                     // language_id will be 5 in ezcontentobject_version/ezcontentobject_attribute,
                     // this means it uses language ID 4 but also has the bit 0 set to 1 (a reservered bit),
-                    // You can read about this in the document in doc/en/us/features/3.8/.
+                    // You can read about this in the document in doc/eng-us/features/3.8/.
                     $initialLangID = !$this->isAlwaysAvailable() ? $this->attribute( 'initial_language_id' ) : $this->attribute( 'initial_language_id' ) | 1;
                     $contentAttribute = eZContentObjectAttribute::fetchByClassAttributeID( $classAttribute->attribute( 'id' ),
                                                                                            $this->attribute( 'id' ),
@@ -2236,7 +2236,7 @@ class eZContentObject extends eZPersistentObject
     function purge()
     {
         $delID = $this->ID;
-        // Who purges which object (doc/en/us/bc/6.0/audit.md, content.object.purge); a subtree removal or the trash
+        // Who purges which object (doc/eng-us/bc/6.0/audit.md, content.object.purge); a subtree removal or the trash
         // records it as its child, eZContentObjectTreeNode::removeNodeFromTree() as content.object.remove
         if ( class_exists( 'expAuditHook' ) )
         {
@@ -2383,7 +2383,7 @@ class eZContentObject extends eZPersistentObject
     {
         $delID = $this->ID;
 
-        // Who moves which object to the trash (doc/en/us/bc/6.0/audit.md, content.node.remove.trash); inside
+        // Who moves which object to the trash (doc/eng-us/bc/6.0/audit.md, content.node.remove.trash); inside
         // eZContentObjectTreeNode::removeNodeFromTree() the node removal is the record and this one is muted
         if ( class_exists( 'expAuditHook' ) )
         {
@@ -6753,7 +6753,7 @@ class eZContentObject extends eZPersistentObject
         // Minimum install element is an object now.
 
         $contentObject = eZContentObject::fetchByRemoteID( $remoteID );
-        // Install as drafts ($options['as_drafts'], doc/en/us/bc/6.0/package-json-format.md): nothing is published and no
+        // Install as drafts ($options['as_drafts'], doc/eng-us/bc/6.0/package-json-format.md): nothing is published and no
         // published object, node or name is changed. A new object becomes an object with one draft (the active
         // version of the package), an existing one gets a new draft version ($options['drafts_existing'] 'skip'
         // leaves it alone). Every draft is listed in $options['drafts'].

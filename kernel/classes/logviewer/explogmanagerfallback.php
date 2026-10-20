@@ -1,6 +1,6 @@
 <?php
 /**
- * Log management on the log viewer's own classes (expLogManagerInterface; doc/en/us/features/6.0/log-viewer.md, "Managing
+ * Log management on the log viewer's own classes (expLogManagerInterface; doc/eng-us/features/6.0/log-viewer.md, "Managing
  * logs"), used while the kernel's service expLogManager is not there (expLogManagerFactory).
  *
  * Every change is a plan first: plan() lists each step (delete, rename, copy, gzip, truncate) and changes nothing,

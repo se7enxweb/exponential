@@ -3,11 +3,11 @@
  * @description The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives
  * @alias exp:logs
  *
- * File containing the exp:logs command (doc/en/us/features/6.0/log-viewer.md, "On the command line"). It uses the same
+ * File containing the exp:logs command (doc/eng-us/features/6.0/log-viewer.md, "On the command line"). It uses the same
  * classes and settings (logviewer.ini) as Setup > Log files: the same files (the allow-list of directories), the
  * same masking, the same limits. The command line is the server's operator, so no policy is checked; one
  * system.log.read is recorded per run that reads a file. --rotate, --rotate-all, --prune, --compress and --truncate change
- * files (expLogManager, doc/en/us/features/6.0/log-rotation.md) and are recorded as system.log.rotate, system.log.delete and
+ * files (expLogManager, doc/eng-us/features/6.0/log-rotation.md) and are recorded as system.log.rotate, system.log.delete and
  * system.log.truncate.
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
@@ -45,7 +45,7 @@ class Explogs extends \Exponential\Runnable\Command
                                  "./console exp:logs --reference=ERR-0123456789          where an error page's reference is, and its request\n" .
                                  "./console exp:logs --related=var/log/error.log:123456      the lines of the request of the entry at that offset\n" .
                                  "\n" .
-                                 "Log management (doc/en/us/features/6.0/log-rotation.md):\n" .
+                                 "Log management (doc/eng-us/features/6.0/log-rotation.md):\n" .
                                  "./console exp:logs --archives                              each log with its archives and their sizes\n" .
                                  "./console exp:logs --rotate=error,debug                    rotate these logs now (keys as in --archives, or ids)\n" .
                                  "./console exp:logs --rotate-all                            rotate every log that is not empty\n" .

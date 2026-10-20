@@ -1,7 +1,7 @@
 <?php
 /**
  * What a module view's run() receives in $scope, and the two ways its code reads it (guide
- * doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md). The view classes take the including file's variables by reference
+ * doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md). The view classes take the including file's variables by reference
  * ($Params, $Module, $Result, ...), and newer lines read the same values as $scope['Params'] and $scope['Result'].
  *
  *  MS-01 — Through eZProcess::run(), as eZModule runs a view: $Params and $scope['Params'] are one value, and so are

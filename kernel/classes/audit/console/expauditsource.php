@@ -9,7 +9,7 @@
  * series, an event of its channel its fields and links, the CSV export of its channel its columns, the settings
  * view its state. The audit left menu leaves out a link into a channel the user may not read. A source that is not
  * registered, or whose extension is not active, changes nothing. Extend expAuditSourceBase, which answers every
- * method with "nothing". Guide: doc/en/us/bc/6.0/audit.md ("An extension's source in the console").
+ * method with "nothing". Guide: doc/eng-us/bc/6.0/audit.md ("An extension's source in the console").
  *
  * Every address a source returns is a module/view path with view parameters (expai/log/(errors)/1), never a query
  * string or an absolute URL; the registry drops anything else. A source returns only links the current user may

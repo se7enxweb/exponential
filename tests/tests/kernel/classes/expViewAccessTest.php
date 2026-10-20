@@ -2,7 +2,7 @@
 /**
  * expViewAccess (fetch user/can_open), the admin top tabs (eZTopMenuOperator) and the dashboard blocks
  * (content/dashboard: PolicyList[], ViewList[]): each shows a link only to a user who can open it.
- * Audit stage 1, "Dashboard defect" in doc/en/us/bc/6.0/audit.md.
+ * Audit stage 1, "Dashboard defect" in doc/eng-us/bc/6.0/audit.md.
  *
  * Live-database tests: the kernel is started once on the admin siteaccess against the installation's own
  * database (no test database, nothing written). The users are the admin user, the anonymous user and,

@@ -3,7 +3,7 @@
    Variables: rows (name, value, template_readable), count, limit, filter, template_readable (the names of
    site.ini [SiteDataSettings] TemplateReadable[]), view_parameters, page_uri.
 
-   The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/system-information.md ("Site data")
+   The same file is in design/admin and design/admin4. Guide: doc/eng-us/guides/system-information.md ("Site data")
    Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 94b7b6c239), Copyright (C) Mugo Web, GPL v2. *}
 <div class="context-block exp-sitedata">
 

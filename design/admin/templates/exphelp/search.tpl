@@ -1,4 +1,4 @@
-{* exphelp/search: search and browse the help (doc/en/us/features/6.0/help-system.md, "Search"). The state is in view
+{* exphelp/search: search and browse the help (doc/eng-us/features/6.0/help-system.md, "Search"). The state is in view
    parameters (/exphelp/search/(q)/words/(category)/id/(audience)/id/(type)/id/(offset)/n); without words the page
    browses every page the filters allow, so it is never empty. It works without scripts: the form is a GET that the
    view redirects to the canonical address, the facets and the pager are plain links. With exphelp.js the same form

@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/section/view.php, moved into a class (#207 stage 1). The file kernel/section/view.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/section/view.php:
@@ -46,7 +46,7 @@ class View extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "view_parameters", $viewParameters );
         $tpl->setVariable( "section", $section );
 
-        // The page leads with how the section is used (doc/en/us/guides/sections.md): its objects by status, the roles
+        // The page leads with how the section is used (doc/eng-us/guides/sections.md): its objects by status, the roles
         // whose policies name it, the role assignments limited to it, and whether it could be removed.
         $overview = ListView::overviewFromDatabase();
         $sectionID = (int)$section->attribute( 'id' );

@@ -1,0 +1,371 @@
+# Engine archive (phar) support
+
+Read this page if you run Exponential Velocity, if you deploy by copying files, or if a stack trace names a
+`phar://` path. Exponential 6.0 can load its own engine (`kernel/`, `lib/` and `autoload/`) from one phar archive
+instead of from a thousand separate files on disk. It is off by default; with it off, the installation is exactly
+what it was.
+
+## In short
+
+| | |
+|---|---|
+| What changed | New command `exp:phar` (`build`, `check`, `info`, `clean`), new setting `velocity.ini [ServerSettings] EnginePhar` (default `disabled`), environment variable `EXP_ENGINE_PHAR`, an *Engine* block in **Setup → System information**. `eZINI` resolves the installation root through `eZINI::installationRoot()`. |
+| Who is affected | Velocity users with `EnginePhar=enabled`: a change to `kernel/`, `lib/` or `autoload/` is live only after the archive is rebuilt (a Velocity restart rebuilds it when needed). Code that computes the installation root from `__DIR__` breaks when it runs from the archive. Velocity (qbix-webserver) older than 0.0.4.8 sends no headers or cookies from the archive. |
+| How to check | `php bin/php/console exp:phar info` and `php bin/php/console exp:phar check` (exit 1 when the archive is stale) |
+| How to fix | Rebuild with `php bin/php/console exp:phar build` or restart Velocity; clear the caches when you switch engines; use `EXP_ROOT_DIR` or `eZINI::installationRoot()` instead of paths relative to a kernel file. |
+
+## Quick start
+
+```bash
+php bin/php/console exp:phar build      # write dist/engine.phar
+php bin/php/console exp:phar info       # what exists, and whether it is in use
+php bin/php/console exp:phar clean      # remove it
+```
+
+Then switch the runtime onto it, either in `settings/velocity.ini` (`[ServerSettings] EnginePhar=enabled`, see
+[Switch the runtime onto it](#switch-the-runtime-onto-it)) or with one environment variable in whatever serves the
+site:
+
+```bash
+EXP_ENGINE_PHAR=/path/to/install/dist/engine.phar
+```
+
+Unset it and the installation is exactly what it was.
+
+## What it is not
+
+**It is not a replacement for the installation.** Nothing leaves the disk. The
+same files stay where they are, and `design/`, `extension/`, `settings/`,
+`share/`, `bin/` and `var/` are untouched and still read from disk. Only the
+autoloader behaves differently.
+
+**It is not a performance feature.** Measured, it makes no difference. See
+*Measurements* below. If it is being proposed as an optimisation, the numbers
+there are the answer.
+
+**It is not source protection.** A phar is an archive. Anyone who can read it
+can extract it.
+
+**It is not yet a single executable.** Combining the archive with a static PHP
+binary — `spc micro:combine`, which would remove the need for PHP on the
+target — is not implemented. See *Not implemented*.
+
+
+## Using it
+
+### Build
+
+```bash
+php bin/php/console exp:phar build
+```
+
+Building requires `phar.readonly=0`. That is an ini setting, and the console
+dispatches each command to a fresh PHP, so a flag typed on the console line
+never reaches the command. The command therefore re-executes itself once with
+the setting rather than asking anyone to know that. Nothing needs to be passed.
+
+The archive is written to `dist/engine.phar`. `dist/` is gitignored; nothing
+in it is source.
+
+Options:
+
+| Option | Meaning |
+|---|---|
+| `--output=PATH` | write the archive somewhere other than `dist/engine.phar` |
+| `--force` | rebuild even when the archive is current |
+| `--json` | print the result as JSON, for scripting |
+
+### Rebuilt only when something changed
+
+Beside the archive the build writes `dist/engine.phar.index.json`: every file
+it packaged, with its size, modification time and SHA-1, the PHP release it
+was checked under, and the archive's own size and time. A build, and every
+`exp:velocity start`, `restart` and `graceful`, compares that with the disk
+first and rebuilds only when
+
+- a file in `kernel/`, `lib/` or `autoload/` was **added, removed or changed**
+  (a file whose time moved is hashed, so a checkout or a regenerated autoload
+  array that wrote the same bytes again is not a change; its new time is
+  recorded, and it is not hashed again);
+- the index is missing, belongs to another archive (the archive was replaced
+  after it was written) or was written by an older builder;
+- PHP's major or minor version is not the one the files were checked under.
+
+```bash
+php bin/php/console exp:phar build          # engine.phar is current, not rebuilt   (0.3s)
+php bin/php/console exp:phar build --force  # built engine.phar                     (about 28s)
+php bin/php/console exp:phar check          # current or not, and which files differ; exit 1 when not
+php bin/php/console exp:velocity restart --rebuild-phar --allow-root-user   # rebuild at this restart anyway
+```
+
+A restart says which it was: `started (engine.phar is current, not rebuilt)`
+or `started (engine.phar rebuilt: 1 changed (kernel/classes/expvelocity.php))`.
+Measured on a test instance: 3.2 seconds for a restart with nothing changed,
+33 seconds with one kernel file changed.
+
+This replaced a rule that rebuilt when any file on disk was newer than the
+archive. That rule missed a file removed and a file put in place with an older
+time (`rsync -a`, `cp -p`, an unpacked release), and rebuilt for a checkout
+that only rewrote the same bytes.
+
+**A file that does not parse keeps the old archive.** Every PHP file is parsed
+before anything is written; one that fails is named, nothing is written, and
+the archive already there stays. A restart then refuses before stopping the
+server, which keeps running on the old archive:
+
+```
+velocity: the engine archive needs rebuilding (1 added (kernel/classes/example.php)) and could
+not be rebuilt: 1 file(s) do not parse: kernel/classes/example.php (php -l names the line).
+Nothing was written and the archive already there was kept; fix that and restart again, or set
+EnginePhar=disabled -- the running server was left as it is
+```
+
+The version stamp (commit and `-dirty`, see *Versioning*) is not a reason to
+rebuild: it moves with every commit, whether or not a file in the archive did.
+**Setup → System information** therefore reports the archive as matching when
+its files are the files on disk, and names the two commits beside it.
+
+### Inspect
+
+```bash
+php bin/php/console exp:phar info
+```
+
+Reports the archive's path, size, build time and version, whether the runtime
+is currently using it, and the working tree's own version for comparison.
+
+The same facts appear in the admin under **Setup → System information**, in a
+block named *Engine*:
+
+- **Loaded from** — individual files on disk, or the archive
+- **Installation root** — the absolute path the kernel resolves against
+- **Archive** — path, file count, size, build time
+- **Archive version** — read from inside the archive
+- **Matches working tree** — whether the archive was built from what is on
+  disk now
+- **Phar stream wrapper** — registered or not, and `phar.readonly`
+- **Opcode cache** — loaded, enabled, scripts cached
+
+That block exists because when an edit to a kernel file appears to do nothing,
+or a stack trace names a `phar://` path, this is the first thing worth reading.
+
+### Switch the runtime onto it
+
+    [ServerSettings]
+    EnginePhar=enabled
+
+in `settings/velocity.ini`, or an override of it. The value may be:
+
+| | |
+|---|---|
+| `disabled` | the files on disk. The default. |
+| `enabled` | `dist/engine.phar`, wherever `expPhar` puts it. |
+| *a path* | that archive, relative to the installation root or absolute. |
+
+The service exports `EXP_ENGINE_PHAR` into the server's environment at launch,
+and the workers inherit it when they fork. It has to be the environment rather
+than a command line argument, because `autoload.php` reads it before it has
+parsed anything -- which is necessarily before any argument could be consulted.
+
+An archive that is not there stops the server from starting rather than falling
+back to the files on disk. A silent fall back is indistinguishable from success
+and the difference only surfaces much later.
+
+`exp:velocity status` reports which engine is running, for the same reason:
+from outside, an archive that failed to load and an ordinary run look identical.
+
+**Clear the caches when switching, in either direction.** Pages rendered under
+one engine are cached and will be served under the other.
+
+### Revert
+
+    EnginePhar=disabled
+
+then clear the caches and restart. Unsetting the variable or deleting the
+archive works too. There is no other state.
+
+### It could not work at all before 0.0.4.8
+
+The compatibility layer in the application server rewrites `header()`,
+`setcookie()` and their kin as each file is included, because under the CLI SAPI
+those functions do nothing on their own. It did that by wrapping the `file://`
+scheme, and code included through `phar://` never passed through it.
+
+So the engine ran from the archive and every one of those calls went nowhere.
+The site rendered the right pages and sent almost nothing with them:
+
+    Content-Type: text/html; charset=UTF-8
+    Content-Length: 76800
+    Connection: close
+
+No `Cache-Control`, so nothing could be cached and every request was rendered --
+75ms became 1.2-1.7s. No `Set-Cookie`, so nobody could sign in: the login
+answered 302 to the right place and set no session. Nothing was logged, because
+nothing failed.
+
+`qbix-webserver` 0.0.4.8 wraps `phar://` as well. If the archive is in use and
+headers or sign-in misbehave, check that version first.
+
+
+## Versioning
+
+The archive is stamped with a version composed of the release, the short
+commit, and `-dirty` when the working tree does not match that commit:
+
+```
+6.0.15stable-aae2c57d72-dirty
+```
+
+A build from a dirty tree is allowed — refusing would make iterating painful —
+so the marker is what stops the artifact claiming to be a commit it is not.
+The stamp is readable from inside the archive at `ENGINE_VERSION`, through
+`exp:phar info`, and in the admin.
+
+
+## How it resolves classes
+
+The build writes a `MANIFEST.php` into the archive: a map whose keys are the
+paths exactly as the kernel class map holds them. The autoloader reads it
+once, then every lookup is a single `isset()`.
+
+Asking the archive per class would mean a stat per class, which is the cost
+this is meant to avoid rather than add.
+
+**A class the archive does not carry is still loaded from disk.** An archive
+that has gone stale therefore degrades to the old behaviour for that class
+instead of failing. This is deliberate: a kernel file added after the archive
+was built must not break the installation.
+
+
+## What had to change in the kernel
+
+Kernel code derives paths from its own file's location. `__DIR__` inside an
+archive names a path *inside the archive*, so that code stops finding things
+that were never in it.
+
+### `autoload.php`
+
+Publishes `EXP_ROOT_DIR`, the absolute installation root, because it is the
+one file guaranteed to be on disk. Resolves `EXP_ENGINE_PHAR` from the
+environment. Resolves kernel and library classes from the archive when there
+is one.
+
+It also keeps the phar stream wrapper registered when the runtime is itself
+read through it — unregistering it in that case unloads the running program.
+See [The phar stream wrapper](#the-phar-stream-wrapper) below, and the comment in the file.
+
+### `lib/ezutils/classes/ezini.php`
+
+Five places computed the installation root as three levels up from that file.
+All five now call `eZINI::installationRoot()`, which returns `EXP_ROOT_DIR`
+when defined and falls back to the old computation when not.
+
+Two of them mattered, and **the one that mattered most was not the obvious
+one**:
+
+- `eZINI::exists()` — settings appear absent. Loud.
+- `eZINI::findInputFiles()` — **quiet and much worse.** The base `.ini` drops
+  out of the input list while the override, which resolves against the working
+  directory, stays. Configuration comes back half-loaded: `VarDir` reads
+  correctly, `CacheDir` returns `false`, and the failure surfaces somewhere
+  else entirely as `Cannot use bool as array` in `global_functions.php`.
+
+If a future change to the archive's contents produces symptoms like that,
+this is the pattern to look for.
+
+### Not changed
+
+Four other files use the same self-relative pattern —
+`kernel/setup/expcronjobrunner.php`, `kernel/setup/expextensionwizard.php`,
+`kernel/setup/expkerneloverridewizard.php` and `lib/ezdb/classes/expmongodb.php`.
+None is on the request path. If any of them is ever packaged and exercised
+from an archive, it will need the same treatment.
+
+
+## The phar stream wrapper
+
+The bootstrap unregisters the phar stream wrapper, and that protection is
+real: the wrapper lets any path-taking function reach inside an archive, and a
+file that is a valid image and a valid phar at the same time is trivial to
+produce. This application accepts image uploads by design.
+
+The 2018 metadata-deserialization vector the original comment named is closed
+on PHP 8. The wrapper still matters for the reason above.
+
+Consequences for this feature:
+
+- When `EXP_ENGINE_PHAR` is set, the wrapper stays registered, because the
+  runtime is being read through it.
+- When it is not set, the wrapper is unregistered — including on the command
+  line. `expPhar` therefore restores it around its own archive work and puts
+  it back exactly as it found it. `Phar` extends `RecursiveDirectoryIterator`
+  and cannot even be constructed without the wrapper.
+
+
+## Measurements: the archive is not faster
+
+The archive exists because a single stamped artifact is easier to deploy than a thousand files. It was also hoped to
+be faster. It is not.
+
+Measured on a test installation, on `/site/recipes`, the front page and a content page, four workers per server,
+against the persistent-worker server, with requests sent round-robin to the servers being compared:
+
+| Change | Result |
+|---|---|
+| **Opcode cache enabled for the server process** | **+18 to +26%** |
+| Engine loaded from the archive | no measurable difference (five runs: +2.4%, −2.3%, −3.8%, −0.1%, +1.8%; mean about −0.4%) |
+| Cheaper tests in the server's file stream wrapper | +9.7%, then +2.9%, then +0.5% — noise |
+| Opcode cache without timestamp checks | within noise of the cache alone |
+| Opcode cache with a 32M interned string buffer | within noise |
+| Tracing JIT | within noise; worst of five on one run, best on the next |
+
+**Only the opcode cache pays.** On the test machine it was off because a system-wide ini file disabled it for every
+command line PHP, and the persistent-worker server runs under that interpreter. It is now requested per process in
+`settings/velocity.ini` under `[PHPSettings]`; the system-wide file was left untouched.
+
+**Measure round-robin, never one server after the other.** Timing one server and then the other reported +3.9%,
++7.8%, −19.8% and +7.8% for a change that is worth about −0.4%. The page costs over half a second and the machine does
+other work, so whatever drifts during a run lands entirely on the side being timed. Sending one request to each server
+in turn makes drift hit both equally.
+
+**The remaining time is the application, not the server.** A trivial script through the same server answers in about
+30 ms, against roughly 450 ms for a content page. The cost is PHP generated at run time (compiled templates and INI
+caches, included on every request), not finding class files, and packaging does not touch it. The next place to look
+is the database and template rendering.
+
+## Not implemented
+
+Deliberately left undone:
+
+- **Combining with a static PHP binary.** The part that would make this a
+  single-file handover with no PHP on the target.
+- **Engine and site version mismatch enforcement.** The archive is stamped and
+  the admin shows whether it matches, but nothing refuses to start on a
+  mismatch. Drop a newer archive beside an older install and the failure looks
+  like a bug in the site.
+- **Consistency checking of the archive.** `share/filelist.md5` checks the
+  on-disk copies, which are still present, so it keeps working. It does not
+  verify the archive's contents.
+
+
+## Files
+
+| Path | Role |
+|---|---|
+| `kernel/classes/expphar.php` | the service: build, info, clean, version, wrapper handling |
+| `bin/php/phar.php` | the command, discovered by the console as `exp:phar` |
+| `autoload.php` | publishes the root, resolves the archive, loads classes from it |
+| `lib/ezutils/classes/ezini.php` | asks for the root instead of computing it |
+| `kernel/setup/info.php` | gathers the Engine block |
+| `design/admin/templates/setup/info.tpl` | renders it |
+| `dist/engine.phar` | the artifact (gitignored) |
+| `dist/engine.phar.index.json` | what the artifact carries, for deciding whether to rebuild (gitignored) |
+
+## Related pages
+
+- [Behaviour changes, 16 to 30 September 2026: engine archive](behaviour-changes-2026-09b.md#engine-archive-expphar) (atomic build, batched syntax check)
+- [Velocity persistent worker server](../../features/6.0/velocity-persistent-worker-server.md)
+- [Velocity engines — Qbix, FrankenPHP, PHP's built-in server](velocity-engines.md)
+- [Velocity engine upgrade notes](velocity-engine-upgrade-notes.md)
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

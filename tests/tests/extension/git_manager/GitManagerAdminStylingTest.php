@@ -1,7 +1,7 @@
 <?php
 /**
  * git_manager's admin pages (the dashboard, the commit details, the Backup page and the Git tab's left menu) follow
- * the administration's styling rules (doc/en/us/bc/6.0/admin4-styling.md), checked on the files alone; no database.
+ * the administration's styling rules (doc/eng-us/bc/6.0/admin4-styling.md), checked on the files alone; no database.
  *
  * - No <style> block, no style="" attribute and no inline <script> body in any git_manager template; the behaviours
  *   are design/standard/javascript/git_manager.js, required with ezscript_require.

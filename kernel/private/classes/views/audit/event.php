@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit/event view (doc/en/us/bc/6.0/audit.md, "Views"): one record in full: when, who, the request, object and
+ * The audit/event view (doc/eng-us/bc/6.0/audit.md, "Views"): one record in full: when, who, the request, object and
  * target with links into the admin, before and after side by side, the parent, the children, the other events of
  * the same request and job, and the chain position (prev, hash, whether the hash matches the record and the
  * file's verification state). /(format)/json sends the record as it is in the file. Policy audit/read; a record

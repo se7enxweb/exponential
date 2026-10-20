@@ -2,7 +2,7 @@
 /**
  * File containing the expHelpLanding class.
  *
- * The landing page of one audience of the help: exphelp/audience/<audience> (doc/en/us/features/6.0/help-system.md,
+ * The landing page of one audience of the help: exphelp/audience/<audience> (doc/eng-us/features/6.0/help-system.md,
  * "Landing pages"). The page is a list of blocks, configured in exphelp.ini:
  *
  *   [LandingSettings] Blocks[]           the blocks of every landing page, in order

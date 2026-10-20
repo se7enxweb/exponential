@@ -5494,8 +5494,8 @@
         <translation>Yönetim arayüzünün ve şablonların metinleri (düğmeler, menüler) ise çeviri dosyalarından (.ts) gelir ve bir site erişiminin Locale ayarını izler. Bir site Almanca içeriği İngilizce bir arayüzle gösterebilir, tersi de mümkündür.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>Burada dil eklemek hiçbir şeyi çevirmez ve hiçbir site erişimini değiştirmez: içeriği düzenleyicide çevirin ve dili gösterilmesi gereken yerlerde SiteLanguageList ayarında listeleyin. Kullanım kılavuzu doc/en/us/guides/content-languages.md dosyasındadır.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>Burada dil eklemek hiçbir şeyi çevirmez ve hiçbir site erişimini değiştirmez: içeriği düzenleyicide çevirin ve dili gösterilmesi gereken yerlerde SiteLanguageList ayarında listeleyin. Kullanım kılavuzu doc/eng-us/guides/content-languages.md dosyasındadır.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24012,8 +24012,8 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Her isteğin kaç deyim çalıştırdığını, bunların kaçının birebir tekrar olduğunu ve bir sorgu önbelleğinin ne kazandıracağını görmek için profili açın.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>Profil, veritabanına ulaşan deyimleri sayar: sorgu önbelleği açıkken önbellekten gelen bir yanıt bunun içinde yer almaz. &quot;Not belleği kazancı&quot; request modunun, &quot;paylaşılan önbellek kazancı&quot; shared modunun kazandıracağı süredir (yanıt başına yaklaşık 15 µs). Her sunucunun kendi APCu&apos;su olduğundan sayaçlar sunucu başınadır. Günlük var/tmp/sql_profile.log dosyasıdır; bkz. doc/en/us/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>Profil, veritabanına ulaşan deyimleri sayar: sorgu önbelleği açıkken önbellekten gelen bir yanıt bunun içinde yer almaz. &quot;Not belleği kazancı&quot; request modunun, &quot;paylaşılan önbellek kazancı&quot; shared modunun kazandıracağı süredir (yanıt başına yaklaşık 15 µs). Her sunucunun kendi APCu&apos;su olduğundan sayaçlar sunucu başınadır. Günlük var/tmp/sql_profile.log dosyasıdır; bkz. doc/eng-us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25364,8 +25364,8 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>site.ini ayarları</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>Tür, bir site erişimi ayarladığında site.ini [SiteAccessSettings] SiteAccessType değerini, aksi halde tasarımlarını ve RequireUserLogin değerini izler. Kılavuz: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>Tür, bir site erişimi ayarladığında site.ini [SiteAccessSettings] SiteAccessType değerini, aksi halde tasarımlarını ve RequireUserLogin değerini izler. Kılavuz: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32031,8 +32031,8 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Her girdisi bir uygulamayı kaydeden ayar blokları: alt öğeler tablosunun sütunları (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; veya Template=), içerik işi türleri (content.ini [ContentJobSettings] JobTypes[]), exp:ini eylemleri ve kapsam sağlayıcıları (ini.ini [IniCommandSettings]) ve ezjscore sunucu işlevleri (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=); ayrıca expServiceBase sınıfından türeyen bir sunucu işlevi sınıfının bildirdiği her uzak hizmet (statik $services değişkeni, ezjscore/call/&lt;name&gt;::&lt;service&gt; olarak çağrılır; her biri toplama eklenir, yöntemi eksik olan bildirilmiş bir hizmet bozuk sayılır). Bir sınıf adı veren girdi aynı zamanda bir sınıf adı veren ayarlardan biridir ve orada sayılır; diğerleri burada toplama eklenir. Sınıfı, yöntemi veya şablonu eksik olan ya da sınıfı kayıt defterinin istediğinden türemeyen bir girdi bozuk olarak gösterilir. Listenin kendisinin oluşturduğu yerleşik alt öğe sütunları birer nokta değildir ve listelenmez.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Diğer kayıt defterleri rad.ini içinde bildirilir; çekirdek tarafından ve her etkin uzantı tarafından kendi rad.ini.append.php dosyasında: olay dinleyicileri, YZ sağlayıcıları, araçları ve zincirleri, MCP araçları, kuyruk iş türleri ve daha fazlası. Her biri girdilerini hangi ini bloklarının veya hangi sınıf listesinin tuttuğunu ve her girdinin ne olması gerektiğini belirtir; InTotal=disabled ile bildirilen bir kayıt defteri başka yerde sayılan noktalara atıfta bulunur ve toplama eklenmeden denetlenir. Kılavuz: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Diğer kayıt defterleri rad.ini içinde bildirilir; çekirdek tarafından ve her etkin uzantı tarafından kendi rad.ini.append.php dosyasında: olay dinleyicileri, YZ sağlayıcıları, araçları ve zincirleri, MCP araçları, kuyruk iş türleri ve daha fazlası. Her biri girdilerini hangi ini bloklarının veya hangi sınıf listesinin tuttuğunu ve her girdinin ne olması gerektiğini belirtir; InTotal=disabled ile bildirilen bir kayıt defteri başka yerde sayılan noktalara atıfta bulunur ve toplama eklenmeden denetlenir. Kılavuz: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38747,8 +38747,8 @@ o e-postadaki yönergeleri izleyin.</translation>
         <translation>Exponential Layouts yeni siteler için bunun yerini aldı: bir düzen bölgeler ve bloklar içerir, menü bloklardan biridir ve bir kural her sayfa için düzeni seçer. Bu şekilde oluşturulmuş bir site erişimi bu ayarları hiç okumaz.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>Sayfa, hâlâ klasik bir tasarım kullanan siteler için kalıyor. Layouts ile oluşturulmuş bir site erişimi için burada bir ayarı değiştirmek zararsızdır ancak etkisi yoktur. doc/en/us/guides/classic-menu-settings.md kılavuzu her iki yolu da açıklar.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>Sayfa, hâlâ klasik bir tasarım kullanan siteler için kalıyor. Layouts ile oluşturulmuş bir site erişimi için burada bir ayarı değiştirmek zararsızdır ancak etkisi yoktur. doc/eng-us/guides/classic-menu-settings.md kılavuzu her iki yolu da açıklar.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -48783,8 +48783,8 @@ Varsayılan kod, seçtiğiniz temel parametrelerden oluşturuldu.</translation>
         <translation>Bu kurulumda değeri bir sınıf olan veya adı bir sınıf aldığını söyleyen her ayar. Bunlardan birini değiştirin, yerine başka bir şey yanıt verir.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Diğer kayıt defterleri rad.ini içinde bildirilir; çekirdek tarafından ve her etkin uzantı tarafından kendi rad.ini.append.php dosyasında: olay dinleyicileri, YZ sağlayıcıları, araçları ve zincirleri, MCP araçları, kuyruk iş türleri ve daha fazlası. Her biri girdilerini hangi ini bloklarının veya hangi sınıf listesinin tuttuğunu ve her girdinin ne olması gerektiğini belirtir; InTotal=disabled ile bildirilen bir kayıt defteri başka yerde sayılan noktalara atıfta bulunur ve toplama eklenmeden denetlenir. Kılavuz: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Diğer kayıt defterleri rad.ini içinde bildirilir; çekirdek tarafından ve her etkin uzantı tarafından kendi rad.ini.append.php dosyasında: olay dinleyicileri, YZ sağlayıcıları, araçları ve zincirleri, MCP araçları, kuyruk iş türleri ve daha fazlası. Her biri girdilerini hangi ini bloklarının veya hangi sınıf listesinin tuttuğunu ve her girdinin ne olması gerektiğini belirtir; InTotal=disabled ile bildirilen bir kayıt defteri başka yerde sayılan noktalara atıfta bulunur ve toplama eklenmeden denetlenir. Kılavuz: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

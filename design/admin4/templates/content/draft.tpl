@@ -11,7 +11,7 @@
    worked out by expContentDraftList. The
    POST names of the page before are kept (DeleteIDArray[], RemoveButton, EmptyButton); RemoveDraftButton[id],
    RemoveOldButton and OldDraftDays are new. Everything works without javascript; the script only adds Select all and
-   the count of ticked drafts. Guide: doc/en/us/guides/drafts-and-pending.md *}
+   the count of ticked drafts. Guide: doc/eng-us/guides/drafts-and-pending.md *}
 
 {def $rows = first_set( $draft_rows, array() )
      $overview = first_set( $draft_overview, hash( 'total', 0, 'new_objects', 0, 'old', 0, 'old_days', 30, 'languages', hash(), 'classes', hash() ) )

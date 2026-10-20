@@ -4,7 +4,7 @@
    [TopAdminMenu] Tabs[], named in HiddenTabs[], or named in SetupTabs[] for a user who may open setup/menu). Then
    the Setup tab is marked and the Setup menu, which holds the tab's links in its group, is drawn: no page marks a
    tab that is not there or draws a menu no tab leads to.
-   page_topmenu.tpl and page_leftmenu.tpl read it with {set-block}. doc/en/us/features/6.0/admin4-design.md,
+   page_topmenu.tpl and page_leftmenu.tpl read it with {set-block}. doc/eng-us/features/6.0/admin4-design.md,
    "Moving a tab into Setup". *}
 {def $a4np_part = first_set( $navigation_part.identifier, '' )}
 {if $a4np_part|eq( '' )}{set $a4np_part = first_set( $module_result.navigation_part, '' )}{/if}

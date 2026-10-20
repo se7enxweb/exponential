@@ -5,7 +5,7 @@
  *
  * Fills the translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text per datatype.
  * Only for a test language that is already a content language; it never adds one. Has --dry-run.
- * Guide: doc/en/us/guides/test-language-lorem-ipsum.md
+ * Guide: doc/eng-us/guides/test-language-lorem-ipsum.md
  *
  * @alias exp:loremipsum
  *

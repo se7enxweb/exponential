@@ -1,5 +1,5 @@
 {* The dashboard's "Free documentation" block: the license of the help (exphelp.ini [License]) and what readers may
-   do with it, in the words of doc/en/us/help/free-documentation.md (which it links to, with the license in the help and on
+   do with it, in the words of doc/eng-us/help/free-documentation.md (which it links to, with the license in the help and on
    the web). No variables; the license comes from fetch( 'exphelp', 'license' ).
    The same file is in design/admin and design/admin4. *}
 {def $lic = fetch( 'exphelp', 'license', hash( 'id', '' ) )

@@ -14,7 +14,7 @@
 
    Used by the edit forms (content/edit_attribute.tpl, content/edit.tpl) and the admin full view
    (node/view/admin_preview.tpl) of every design; a template that needs a wrapper only for right-to-left content
-   catches the output with set-block and tests it for ''. Guide: doc/en/us/guides/content-languages.md.
+   catches the output with set-block and tests it for ''. Guide: doc/eng-us/guides/content-languages.md.
 *}{if and( is_set( $exp_locale_code ), $exp_locale_code|ne( '' ) )}{*
     *}{def $exp_dir_locale = $exp_locale_code|locale()}{*
     *}{if $exp_dir_locale.is_valid}{*

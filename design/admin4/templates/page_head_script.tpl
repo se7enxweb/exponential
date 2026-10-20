@@ -16,7 +16,7 @@
    lifetime and browsers kept an old copy after an update. *}
 {ezscript_load( array( 'admin4.js' ) )}
 {* The small actions of the pages (confirmations, select all, dismiss, ...), declared in data-a4-* attributes instead of
-   on...= attributes (doc/en/us/features/6.0/content-security-policy.md) *}
+   on...= attributes (doc/eng-us/features/6.0/content-security-policy.md) *}
 {ezscript_load( array( 'a4_actions.js' ) )}
 {* admin4 (prototype): the mega menu's script, only while a tab has one (menu.ini [TopAdminMenu] MegaMenuTabs[], empty
    by default): without it the page loads nothing more. parts/a4_mega_menu_check.tpl names ignored settings in the

@@ -1,6 +1,6 @@
 <?php
 /**
- * The machine-checkable rules of the help style guide (doc/en/us/specifications/6.0/help-style-guide.md), on plain arrays:
+ * The machine-checkable rules of the help style guide (doc/eng-us/specifications/6.0/help-style-guide.md), on plain arrays:
  * no database. expHelpContentRepository loads the topics, figures, maps and glossary into the shapes below; the
  * command `exp:help:content check` prints the findings and exits 1 while an ERROR is left.
  *

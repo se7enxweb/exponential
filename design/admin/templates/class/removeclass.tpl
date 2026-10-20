@@ -4,7 +4,7 @@
    that only left this group because they are also in another one. OK (ConfirmButton) removes, Cancel (CancelButton)
    goes back to the group; both post to the view as before. Every template variable is unchanged (DeleteResult,
    already_removed, can_remove, GroupID, module). The same file is in design/admin and design/admin4.
-   Guide: doc/en/us/guides/class-groups.md *}
+   Guide: doc/eng-us/guides/class-groups.md *}
 {def $objects = 0
      $blocked = 0}
 {foreach $DeleteResult as $result}{set $objects = sum( $objects, $result.objectCount )}{if $result.is_removable|not}{set $blocked = inc( $blocked )}{/if}{/foreach}

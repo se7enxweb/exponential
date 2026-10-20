@@ -12,7 +12,7 @@
  *   bin/php/console exp:benchmark micro                   hot paths without HTTP or a database (CI)
  *   bin/php/console exp:benchmark --baseline=base.json    exit 1 when slower than a saved run
  *
- * Guide: doc/en/us/guides/benchmarking.md (reference: doc/en/us/features/6.0/benchmark.md)
+ * Guide: doc/eng-us/guides/benchmarking.md (reference: doc/eng-us/features/6.0/benchmark.md)
  *
  * @description Measure this installation: page timings over HTTP, A/B between servers, kernel probes, regression check
  * @alias bench

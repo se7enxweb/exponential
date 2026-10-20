@@ -21,7 +21,7 @@
 # editor and a logged in member always get the live page.
 #
 # An installation served from a vhost does not read .htaccess at all. The same
-# rules for that case are in doc/en/us/examples/staticcache_offload.conf.
+# rules for that case are in doc/eng-us/examples/staticcache_offload.conf.
 
 DirectoryIndex index.php
 

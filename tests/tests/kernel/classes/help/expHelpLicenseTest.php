@@ -1,9 +1,9 @@
 <?php
 /**
- * The license of the documentation (doc/en/us/README-LICENSE.md, exphelp.ini [License], expHelpLicense): read from the
+ * The license of the documentation (doc/eng-us/README-LICENSE.md, exphelp.ini [License], expHelpLicense): read from the
  * files; no database.
  *
- *  LIC-01  doc/en/us/LICENSE-GFDL-1.3.txt is the unmodified GFDL 1.3 text (the SHA-256 of gnu.org's fdl-1.3.txt)
+ *  LIC-01  doc/eng-us/LICENSE-GFDL-1.3.txt is the unmodified GFDL 1.3 text (the SHA-256 of gnu.org's fdl-1.3.txt)
  *  LIC-02  exphelp.ini [License] names the license, its version, its URLs and the pages, and the pages exist
  *  LIC-03  the help allowlist serves the license text, the notice and the explanation for readers
  *  LIC-04  every help template of admin and admin4 carries the license block, from the setting, without inline CSS
@@ -59,10 +59,10 @@ class expHelpLicenseTest extends PHPUnit\Framework\TestCase
     /** LIC-01 */
     public function testLicenseTextIsTheOfficialText()
     {
-        $file = self::root() . '/doc/en/us/LICENSE-GFDL-1.3.txt';
+        $file = self::root() . '/doc/eng-us/LICENSE-GFDL-1.3.txt';
         $this->assertFileExists( $file );
         $this->assertSame( '110535522396708cea37c72a802c5e7e81391139f5f7985631c93ef242b206a4', hash_file( 'sha256', $file ),
-                           'doc/en/us/LICENSE-GFDL-1.3.txt must be https://www.gnu.org/licenses/fdl-1.3.txt, unmodified' );
+                           'doc/eng-us/LICENSE-GFDL-1.3.txt must be https://www.gnu.org/licenses/fdl-1.3.txt, unmodified' );
         $this->assertSame( expHelpLicense::GFDL_13_SHA256, hash_file( 'sha256', $file ) );
         $this->assertTrue( expHelpLicense::isOfficialText( $file ) );
         $this->assertStringContainsString( 'Version 1.3, 3 November 2008', (string)file_get_contents( $file ) );
@@ -81,7 +81,7 @@ class expHelpLicenseTest extends PHPUnit\Framework\TestCase
         {
             $id = self::ini( 'License', $page );
             $this->assertIsString( $id, $page );
-            $this->assertFileExists( self::root() . '/doc/en/us/' . $id, $page );
+            $this->assertFileExists( self::root() . '/doc/eng-us/' . $id, $page );
         }
         $this->assertIsArray( self::ini( 'License', 'OtherLicensePathRules' ) );
         // the class falls back to the same list when the setting is missing
@@ -91,13 +91,13 @@ class expHelpLicenseTest extends PHPUnit\Framework\TestCase
         $this->assertSame( self::ini( 'License', 'CopyrightHolder' ), $value['CopyrightHolder'] );
         $this->assertSame( self::ini( 'License', 'OtherCopyright' ), $value['OtherCopyright'] );
         // the help lists the license text for everyone
-        $this->assertContains( 'doc/en/us/LICENSE-GFDL-1.3.txt;editor,admin,developer,user', (array)self::ini( 'AudienceSettings', 'PathRules' ) );
+        $this->assertContains( 'doc/eng-us/LICENSE-GFDL-1.3.txt;editor,admin,developer,user', (array)self::ini( 'AudienceSettings', 'PathRules' ) );
     }
 
     /** LIC-03 */
     public function testServedByTheAllowlist()
     {
-        $paths = array( 'doc/en/us/LICENSE-GFDL-1.3.txt', 'doc/en/us/README-LICENSE.md', 'doc/en/us/help/free-documentation.md' );
+        $paths = array( 'doc/eng-us/LICENSE-GFDL-1.3.txt', 'doc/eng-us/README-LICENSE.md', 'doc/eng-us/help/free-documentation.md' );
         $config = array( 'roots' => (array)self::ini( 'IndexSettings', 'Roots' ),
                          'documentSuffixes' => (array)self::ini( 'IndexSettings', 'DocumentSuffixes' ),
                          'excludePatterns' => (array)self::ini( 'IndexSettings', 'ExcludePatterns' ),
@@ -169,7 +169,7 @@ class expHelpLicenseTest extends PHPUnit\Framework\TestCase
             $this->assertFalse( expHelpLicense::isOtherLicense( $id ), $id );
         foreach ( array( 'features/3.8/foo.txt', 'features/4.4/extension_xml.txt', 'bc/5.4/changes.txt', 'changelogs/2.9/CHANGELOG-2.9-7',
                          'specifications/trunk/x.txt', 'shop/index.html', 'release-overview',
-                         'standards/header.txt', 'changelogs/README.md', 'doc/en/us/features/3.9/x.txt' ) as $id )
+                         'standards/header.txt', 'changelogs/README.md', 'doc/eng-us/features/3.9/x.txt' ) as $id )
             $this->assertTrue( expHelpLicense::isOtherLicense( $id ), $id );
 
         $free = expHelpLicense::forPage( 'help/getting-started.md' );
@@ -212,14 +212,14 @@ class expHelpLicenseTest extends PHPUnit\Framework\TestCase
     /** LIC-06 */
     public function testNoticeAndExplanationPages()
     {
-        $notice = (string)file_get_contents( self::root() . '/doc/en/us/README-LICENSE.md' );
+        $notice = (string)file_get_contents( self::root() . '/doc/eng-us/README-LICENSE.md' );
         $this->assertStringContainsString( 'Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free'
             . "\nDocumentation License, Version 1.3 or any later version published by the Free Software Foundation; with no"
             . "\nInvariant Sections, no Front-Cover Texts, and no Back-Cover Texts.", $notice );
         $this->assertStringContainsString( '## GNU Free Documentation License', $notice, 'the section the notice names' );
         $this->assertStringContainsString( '(LICENSE-GFDL-1.3.txt)', $notice );
 
-        $explain = (string)file_get_contents( self::root() . '/doc/en/us/help/free-documentation.md' );
+        $explain = (string)file_get_contents( self::root() . '/doc/eng-us/help/free-documentation.md' );
         $this->assertMatchesRegularExpression( '/^audience: editor, admin, developer, user$/m', $explain );
         $this->assertStringContainsString( '(../LICENSE-GFDL-1.3.txt)', $explain );
         $this->assertStringContainsString( '(../README-LICENSE.md)', $explain );

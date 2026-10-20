@@ -7,7 +7,7 @@
    Every template variable (class, attributes, datatypes, language_code, validation, scheduled_script_id, module)
    and every field and button name (EditLanguage, _DefaultButton; the included windows post AddGroupButton,
    RemoveGroupButton, ContentClass_group, group_id_checked[] and the translation buttons) is unchanged. The same
-   file is in design/admin and design/admin4. Guide: doc/en/us/guides/class-groups.md *}
+   file is in design/admin and design/admin4. Guide: doc/eng-us/guides/class-groups.md *}
 
 <div class="context-block a4-page exp-classgroups exp-classview">
 

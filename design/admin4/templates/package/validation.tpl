@@ -1,4 +1,4 @@
-{* The validation of a package (expPackageJson::validateDirectory(), doc/en/us/bc/6.0/package-json-format.md): every
+{* The validation of a package (expPackageJson::validateDirectory(), doc/eng-us/bc/6.0/package-json-format.md): every
    document well-formed and, in the JSON format, valid against the schema; the checksums of package.json.
    $validation: valid, errors, warnings, format, documents, files, checksums (bool); $validation_title: the heading. *}
 <div class="a4-card" data-validation="{if $validation.valid}valid{else}invalid{/if}">

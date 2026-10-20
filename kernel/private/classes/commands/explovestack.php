@@ -41,7 +41,7 @@ class Explovestack extends \Exponential\Runnable\Command
                                  "\n" .
                                  "Exit code: check 0 nothing to do, 1 something needs attention (status found);\n" .
                                  "migrate 0 done or nothing to do, 1 refused; 2 usage error.\n" .
-                                 "Guide: doc/en/us/guides/upgrading.md (Coming from LoveStack)",
+                                 "Guide: doc/eng-us/guides/upgrading.md (Coming from LoveStack)",
                 'use-session'    => false,
                 'use-modules'    => false,
                 'use-extensions' => true

@@ -106,7 +106,7 @@ $ViewList['sitedata'] = array(
     'unordered_params' => array( 'offset' => 'Offset', 'filter' => 'Filter' ) );
 
 // Setup > Interface languages: every locale's translation fallback chain and coverage, read only
-// (doc/en/us/languages.md, "Translation fallbacks")
+// (doc/eng-us/languages.md, "Translation fallbacks")
 $ViewList['languages'] = array(
     'functions' => array( 'system_info' ),
     'script' => 'languages.php',
@@ -335,7 +335,7 @@ $ViewList['systemupgrade'] = array(
                                     'DownloadSchemaReportButton' => 'DownloadSchemaReport' ),
     'params' => array( ) );
 
-// The log viewer (doc/en/us/features/6.0/log-viewer.md): the page, its feed (polls, searches, related lines; JSON, short
+// The log viewer (doc/eng-us/features/6.0/log-viewer.md): the page, its feed (polls, searches, related lines; JSON, short
 // requests, never held open) and its actions (POST only). The page's permalinks name a log by its key and its state
 // by view parameters: setup/logs/view/<key>/(level)/error/(search)/timeout/(follow)/0 (expLogPermalink); a link of
 // the old form setup/logs?file=<path> answers 301 with the permalink.
@@ -351,7 +351,7 @@ $ViewList['logs'] = array(
                                  'cursor' => 'cursor', 'offset' => 'offset', 'follow' => 'follow', 'wrap' => 'wrap',
                                  'unmask' => 'unmask', 'done' => 'done', 'ok' => 'ok', 'archive' => 'archive' ) );
 
-// Log management (doc/en/us/features/6.0/log-viewer.md, "Managing logs"): every log with its archives, sizes and limits,
+// Log management (doc/eng-us/features/6.0/log-viewer.md, "Managing logs"): every log with its archives, sizes and limits,
 // rotate, empty, compress and prune one log or all of them, always with a preview first (GET shows, POST with the
 // form token and ConfirmButton changes). Policy setup/managelogs; the actions also need [ActionSettings].
 $ViewList['logsmanage'] = array(

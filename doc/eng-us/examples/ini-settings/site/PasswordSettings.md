@@ -1,0 +1,194 @@
+---
+title: site.ini [PasswordSettings]
+audience: developer, admin
+category: examples
+summary: "The settings of [PasswordSettings] in site.ini: RequireLowercase, RequireUppercase, RequireDigit, RequireSymbol, MinCharacterClasses, ForbidLogin, ForbidCurrentPassword, EndOtherSessions ..."
+keywords: site.ini, PasswordSettings, INI, setting, RequireLowercase, RequireUppercase, RequireDigit, RequireSymbol, MinCharacterClasses, ForbidLogin, ForbidCurrentPassword, EndOtherSessions, ChangeNotificationMail, StrengthMeter, GenerateButton
+type: generated
+generated: exp:help:examples
+---
+# site.ini [PasswordSettings]
+
+The block `[PasswordSettings]` of `settings/site.ini`, with 11 setting(s).
+
+Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
+
+- `settings/override/site.ini.append.php` for every siteaccess,
+- `settings/siteaccess/<siteaccess>/site.ini.append.php` for one siteaccess,
+- `extension/<extension>/settings/site.ini.append.php` in an extension (read when the extension is active).
+
+## RequireLowercase
+
+> The rules a new password must meet (user/password, registration, the user account in  
+> content/edit, bin/php/resetuserpassword.php), besides the length  
+> (\[UserSettings\] MinPasswordLength), and what happens after a change.  
+> Every rule is off by default: a site keeps the rules it had.  
+> Guide: doc/eng-us/features/6.0/modern-password-change.md  
+>
+> At least one lowercase letter (any script, not only a-z)  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+RequireLowercase=disabled
+*/ ?>
+```
+
+## RequireUppercase
+
+> At least one uppercase letter  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+RequireUppercase=disabled
+*/ ?>
+```
+
+## RequireDigit
+
+> At least one digit  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+RequireDigit=disabled
+*/ ?>
+```
+
+## RequireSymbol
+
+> At least one character that is neither a letter nor a digit (a space counts)  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+RequireSymbol=disabled
+*/ ?>
+```
+
+## MinCharacterClasses
+
+> At least this many of the four kinds above (0 to 4; 0 = no such rule)  
+
+Default: `0`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+MinCharacterClasses=0
+*/ ?>
+```
+
+## ForbidLogin
+
+> The new password must not contain the user's login name (logins of 3 or more characters)  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+ForbidLogin=disabled
+*/ ?>
+```
+
+## ForbidCurrentPassword
+
+> The new password must differ from the current one  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+ForbidCurrentPassword=disabled
+*/ ?>
+```
+
+## EndOtherSessions
+
+> After a password change: the user's other sessions are signed out on their next  
+> request (a sign-in keeps a stamp of the password in the session, checked by  
+> eZUser::currentUser()); this one stays signed in, with a new session id. The database  
+> session handler also deletes them at once. Sessions from before the upgrade (no stamp)  
+> and accounts without a password of their own (LDAP, SSO) are not checked.  
+> disabled: no stamp, no check, other sessions stay.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+EndOtherSessions=enabled
+*/ ?>
+```
+
+## ChangeNotificationMail
+
+> After a change: mail "your password was changed" to the user (mail category  
+> security, essential; template design:user/password\_changed\_mail.tpl). The mail never  
+> contains the password.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+ChangeNotificationMail=enabled
+*/ ?>
+```
+
+## StrengthMeter
+
+> For the page's script: show the strength meter, offer "Generate a strong password"  
+> (its length is \[UserSettings\] GeneratePasswordLength, at least 12)  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+StrengthMeter=enabled
+*/ ?>
+```
+
+## GenerateButton
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasswordSettings]
+GenerateButton=enabled
+*/ ?>
+```
+
+## Related
+
+- [All blocks of site.ini](README.md)
+- [All INI files](../README.md)
+- [The settings page](../../../guides/settings-page.md)
+
+---
+
+Generated by `./console exp:help:examples` from `settings/site.ini`. Do not edit this page: change the source and generate again ([how](../../README.md#how-the-generated-pages-are-made)). Free documentation: [GFDL 1.3 or later](../../../help/free-documentation.md).

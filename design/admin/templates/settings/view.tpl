@@ -10,7 +10,7 @@
 
    The same file is in design/admin and design/admin4. The old variables (settings, block_count, setting_count,
    ini_file, ini_files, siteaccess_list, current_siteaccess) are still set. Works without javascript.
-   Guide: doc/en/us/guides/settings-page.md *}
+   Guide: doc/eng-us/guides/settings-page.md *}
 
 {def $has_file = and( $ini_file, is_set( $page ), $page )
      $base_url = concat( 'settings/view/', $current_siteaccess, '/', $ini_file )

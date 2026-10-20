@@ -1,5 +1,5 @@
 {
-  "comment": "Maps source files to the PHPUnit test files that cover them, for running only the tests of a change. 'map' holds hand-made entries (a path or an fnmatch pattern, where * also matches /), 'generated' the source paths that test files name literally (regenerated), 'ignore' the files no PHPUnit test covers on purpose. See doc/en/us/features/6.0/quality-checks.md.",
+  "comment": "Maps source files to the PHPUnit test files that cover them, for running only the tests of a change. 'map' holds hand-made entries (a path or an fnmatch pattern, where * also matches /), 'generated' the source paths that test files name literally (regenerated), 'ignore' the files no PHPUnit test covers on purpose. See doc/eng-us/features/6.0/quality-checks.md.",
   "ignore": [
     "doc/*",
     "*.md",
@@ -1774,20 +1774,20 @@
       "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php",
       "tests/tests/kernel/classes/help/expHelpContentsPageTest.php"
     ],
-    "doc/en/us/help/leadership/*": [
+    "doc/eng-us/help/leadership/*": [
       "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php"
     ],
-    "doc/en/us/help/business/*": [
+    "doc/eng-us/help/business/*": [
       "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php"
     ],
-    "doc/en/us/install/migration/*": [
+    "doc/eng-us/install/migration/*": [
       "tests/tests/kernel/classes/help/expHelpMigrationHubTest.php"
     ],
-    "doc/en/us/install/README.md": [
+    "doc/eng-us/install/README.md": [
       "tests/tests/kernel/classes/help/expHelpMigrationHubTest.php"
     ],
     "design/admin*/javascript/exphelp.js": [

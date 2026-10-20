@@ -1,6 +1,6 @@
 <?php
 /**
- * What the help may serve (doc/en/us/features/6.0/help-system.md, "Security"): only git-tracked files below doc/, never
+ * What the help may serve (doc/eng-us/features/6.0/help-system.md, "Security"): only git-tracked files below doc/, never
  * anything else, on a fixture installation: a throwaway git repository in the temporary directory with tracked pages,
  * an untracked page, a tracked symbolic link that points out of doc/, a link to a directory outside, a root *.md,
  * settings, ai/, doxygen output, a file with a wrong suffix and one over the size limit. No database.
@@ -36,20 +36,20 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         self::$root = $base . '/install';
         self::$outside = $base . '/outside';
         $files = array(
-            'doc/en/us/help/start.md' => "---\ntitle: Getting started\naudience: editor\ncategory: getting-started\norder: 1\n---\n# Start here\n\nWelcome.\n\n## First step\n\nSee [next](editing.md).\n",
-            'doc/en/us/help/editing.md' => "---\naudience: [editor, user]\norder: 2\n---\n# Editing content\n\n## Store a draft\n\nText.\n",
-            'doc/en/us/help/zz-last.md' => "# Zebra\n\norder by title\n",
-            'doc/en/us/features/6.0/feature.md' => "# A feature\n\n```php\necho 1;\n```\n",
+            'doc/eng-us/help/start.md' => "---\ntitle: Getting started\naudience: editor\ncategory: getting-started\norder: 1\n---\n# Start here\n\nWelcome.\n\n## First step\n\nSee [next](editing.md).\n",
+            'doc/eng-us/help/editing.md' => "---\naudience: [editor, user]\norder: 2\n---\n# Editing content\n\n## Store a draft\n\nText.\n",
+            'doc/eng-us/help/zz-last.md' => "# Zebra\n\norder by title\n",
+            'doc/eng-us/features/6.0/feature.md' => "# A feature\n\n```php\necho 1;\n```\n",
             'doc/notes.txt' => "Plain text notes\n",
             'doc/README' => "A readme without suffix\n",
-            'doc/en/us/help/img/shot.png' => base64_decode( 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==' ),
-            'doc/en/us/help/img/evil.svg' => '<svg xmlns="http://www.w3.org/2000/svg" onload="alert(1)"/>',
-            'doc/en/us/help/page.php' => "<?php echo 'never';\n",
-            'doc/en/us/help/page.html' => "<script>alert(1)</script>\n",
-            'doc/en/us/doxygen/html/index.md' => "# generated\n",
-            'doc/en/us/doxygen/index.html' => "<html></html>\n",
-            'doc/en/us/help/.hidden.md' => "# hidden\n",
-            'doc/en/us/help/big.md' => "# Big\n\n" . str_repeat( "line of text\n", 100000 ),
+            'doc/eng-us/help/img/shot.png' => base64_decode( 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==' ),
+            'doc/eng-us/help/img/evil.svg' => '<svg xmlns="http://www.w3.org/2000/svg" onload="alert(1)"/>',
+            'doc/eng-us/help/page.php' => "<?php echo 'never';\n",
+            'doc/eng-us/help/page.html' => "<script>alert(1)</script>\n",
+            'doc/eng-us/doxygen/html/index.md' => "# generated\n",
+            'doc/eng-us/doxygen/index.html' => "<html></html>\n",
+            'doc/eng-us/help/.hidden.md' => "# hidden\n",
+            'doc/eng-us/help/big.md' => "# Big\n\n" . str_repeat( "line of text\n", 100000 ),
             'AGENTS.md' => "# Read FIRST - private\n",
             'README.md' => "# root readme\n",
             'settings/site.ini' => "[DatabaseSettings]\nPassword=secret\n",
@@ -63,23 +63,23 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         }
         @mkdir( self::$outside, 0777, true );
         file_put_contents( self::$outside . '/secret.md', "# Outside secret\n" );
-        file_put_contents( self::$outside . '/secret.png', $files['doc/en/us/help/img/shot.png'] );
+        file_put_contents( self::$outside . '/secret.png', $files['doc/eng-us/help/img/shot.png'] );
         // tracked symbolic links leaving doc/
-        symlink( '../../settings/site.ini', self::$root . '/doc/en/us/help/link-to-settings.md' );
-        symlink( self::$outside . '/secret.md', self::$root . '/doc/en/us/help/link-absolute.md' );
+        symlink( '../../settings/site.ini', self::$root . '/doc/eng-us/help/link-to-settings.md' );
+        symlink( self::$outside . '/secret.md', self::$root . '/doc/eng-us/help/link-absolute.md' );
         symlink( self::$outside, self::$root . '/doc/linkdir' );
-        symlink( '../../AGENTS.md', self::$root . '/doc/en/us/help/agents.md' );
-        symlink( self::$outside . '/secret.png', self::$root . '/doc/en/us/help/img/outside.png' );
+        symlink( '../../AGENTS.md', self::$root . '/doc/eng-us/help/agents.md' );
+        symlink( self::$outside . '/secret.png', self::$root . '/doc/eng-us/help/img/outside.png' );
         // a symbolic link inside doc/ to a tracked page (allowed or refused, never something else)
-        symlink( 'start.md', self::$root . '/doc/en/us/help/alias.md' );
+        symlink( 'start.md', self::$root . '/doc/eng-us/help/alias.md' );
         self::git( 'init -q' );
         self::git( 'config user.email t@example.invalid' );
         self::git( 'config user.name T' );
         self::git( 'add -A' );
         self::git( 'commit -q -m fixture' );
         // created after the commit: untracked
-        file_put_contents( self::$root . '/doc/en/us/help/untracked.md', "# Untracked\n" );
-        file_put_contents( self::$root . '/doc/en/us/help/img/untracked.png', $files['doc/en/us/help/img/shot.png'] );
+        file_put_contents( self::$root . '/doc/eng-us/help/untracked.md', "# Untracked\n" );
+        file_put_contents( self::$root . '/doc/eng-us/help/img/untracked.png', $files['doc/eng-us/help/img/shot.png'] );
     }
 
     public static function tearDownAfterClass(): void
@@ -143,14 +143,14 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $index->isAllowed( 'help/img/shot.png' ) );
         $asset = $index->asset( 'help/img/shot.png' );
         $this->assertNotNull( $asset );
-        $this->assertSame( realpath( self::$root . '/doc/en/us/help/img/shot.png' ), realpath( $asset ) );
+        $this->assertSame( realpath( self::$root . '/doc/eng-us/help/img/shot.png' ), realpath( $asset ) );
         $this->assertNull( $index->document( 'help/img/shot.png' ), 'an image is not a page' );
 
         $doc = $index->document( 'help/start.md' );
         foreach ( array( 'id', 'path', 'title', 'summary', 'type', 'category', 'audience', 'order', 'suffix', 'headings', 'mtime', 'size' ) as $k )
             $this->assertArrayHasKey( $k, $doc, $k );
         $this->assertSame( 'help/start.md', $doc['id'] );
-        $this->assertSame( 'doc/en/us/help/start.md', $doc['path'] );
+        $this->assertSame( 'doc/eng-us/help/start.md', $doc['path'] );
         $this->assertSame( 'Getting started', $doc['title'] );
         $this->assertSame( array( 'editor' ), array_values( (array)$doc['audience'] ) );
         $this->assertSame( 'getting-started', $doc['category'] );
@@ -163,7 +163,7 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         {
             $this->assertSame( $id, $d['id'] );
             // in the default language's directory, or in no language directory (doc/README)
-            $this->assertContains( $d['path'], array( 'doc/en/us/' . $id, 'doc/' . $id ) );
+            $this->assertContains( $d['path'], array( 'doc/eng-us/' . $id, 'doc/' . $id ) );
         }
     }
 
@@ -236,7 +236,7 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         }
         // whatever the alias inside doc/ gives, it is the tracked page's text or nothing
         $alias = $index->source( 'help/alias.md' );
-        $this->assertTrue( $alias === null || $alias === file_get_contents( self::$root . '/doc/en/us/help/start.md' ) );
+        $this->assertTrue( $alias === null || $alias === file_get_contents( self::$root . '/doc/eng-us/help/start.md' ) );
         foreach ( $index->documents() as $d )
         {
             $real = realpath( self::$root . '/' . $d['path'] );
@@ -253,10 +253,10 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( '..', $path );
             $this->assertTrue( $allow->allows( $path ), $path );
         }
-        $this->assertFalse( $allow->allows( 'doc/en/us/help/link-absolute.md' ) );
+        $this->assertFalse( $allow->allows( 'doc/eng-us/help/link-absolute.md' ) );
         $this->assertFalse( $allow->allows( 'AGENTS.md' ) );
         $this->assertFalse( $allow->allows( 'doc/../AGENTS.md' ) );
-        $this->assertTrue( $allow->allows( 'doc/en/us/help/start.md' ) );
+        $this->assertTrue( $allow->allows( 'doc/eng-us/help/start.md' ) );
     }
 
     /** HX-05 */
@@ -274,10 +274,10 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         {
             $this->assertArrayHasKey( $path, $tracked, $path . ' is served but not tracked' );
             $this->assertStringStartsWith( 'doc/', $path );
-            $this->assertStringNotContainsString( 'doc/en/us/doxygen/', $path );
+            $this->assertStringNotContainsString( 'doc/eng-us/doxygen/', $path );
         }
         exec( 'git -C ' . escapeshellarg( $repo ) . ' ls-files --others --exclude-standard -- doc 2>/dev/null', $untracked );
-        foreach ( array_merge( $untracked, array( 'doc/en/us/features/6.0/quick-location-buttons.md' ) ) as $path )
+        foreach ( array_merge( $untracked, array( 'doc/eng-us/features/6.0/quick-location-buttons.md' ) ) as $path )
         {
             if ( isset( $tracked[$path] ) )
                 continue;
@@ -306,9 +306,9 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         $one = self::index()->signature();
         $this->assertNotSame( '', $one );
         $this->assertSame( $one, self::index()->signature(), 'stable without a change' );
-        file_put_contents( self::$root . '/doc/en/us/help/zz-last.md', "# Zebra changed\n" );
-        touch( self::$root . '/doc/en/us/help/zz-last.md', time() + 5 );
-        self::git( 'add -A doc/en/us/help/zz-last.md' );
+        file_put_contents( self::$root . '/doc/eng-us/help/zz-last.md', "# Zebra changed\n" );
+        touch( self::$root . '/doc/eng-us/help/zz-last.md', time() + 5 );
+        self::git( 'add -A doc/eng-us/help/zz-last.md' );
         self::git( 'commit -q -m change' );
         $this->assertNotSame( $one, self::index()->signature(), 'a commit changes the signature' );
         $this->assertSame( 'Zebra changed', self::index()->document( 'help/zz-last.md' )['title'] );
@@ -326,7 +326,7 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
     /** HX-08 StatFilesInterval: the look at the files is reused by other instances for that long, never longer */
     public function testSignatureIntervalReusesTheLookAtTheFiles()
     {
-        $file = self::$root . '/doc/en/us/help/editing.md';
+        $file = self::$root . '/doc/eng-us/help/editing.md';
         $checked = dirname( self::$root ) . '/cache/' . expHelpDocumentIndex::CHECKED_SIGNATURE_FILE;
         $one = self::cachedIndex( 60 )->signature();
         $this->assertSame( $one, self::cachedIndex( 0 )->signature(), 'the same signature as without the interval' );
@@ -361,7 +361,7 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
 
         // a commit changes the git index: seen at once, whatever the interval
         file_put_contents( $file, file_get_contents( $file ) . "Committed.\n" );
-        self::git( 'add -A doc/en/us/help/editing.md' );
+        self::git( 'add -A doc/eng-us/help/editing.md' );
         self::git( 'commit -q -m edit' );
         $this->assertNotSame( $rebuilt['signature'], self::cachedIndex( 60 )->signature(), 'a commit is seen at once' );
         $this->assertSame( self::cachedIndex( 0 )->signature(), self::cachedIndex( 60 )->signature() );

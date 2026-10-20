@@ -3,5 +3,5 @@
    (.a4-package-pick-filter, hidden without the script), which hides the rows whose data-filter does not hold the
    text typed. It posts nothing and changes no checkbox: a row hidden by the filter keeps its choice. Without the
    script the list is complete and the count is the one the page was drawn with. The code is page/package_wizard_pick.js.
-   The same files are in design/admin and design/admin4. Guide: doc/en/us/features/6.0/package-wizard.md *}
+   The same files are in design/admin and design/admin4. Guide: doc/eng-us/features/6.0/package-wizard.md *}
 {ezscript( array( 'page/package_wizard_pick.js' ) )}

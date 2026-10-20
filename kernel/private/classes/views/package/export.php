@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/package/export.php, moved into a class (#207 stage 1). The file kernel/package/export.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/package/export.php:
@@ -53,7 +53,7 @@ class Export extends \Exponential\Runnable\ModuleView
         // Building the archive is the only part that may fail with an exception; sending it and ending the request
         // stay outside the try: under Exponential Velocity eZExecution::cleanExit() ends a request by throwing,
         // and a catch around it would render the page on after the file.
-        // (format)/json: the JSON format, (format)/xml: the classic one (doc/en/us/bc/6.0/package-json-format.md)
+        // (format)/json: the JSON format, (format)/xml: the classic one (doc/eng-us/bc/6.0/package-json-format.md)
         $format = isset( $scope['Params']['UserParameters']['format'] ) && in_array( $scope['Params']['UserParameters']['format'], array( \eZPackage::FORMAT_XML, \eZPackage::FORMAT_JSON ), true )
                   ? $scope['Params']['UserParameters']['format'] : false;
         $exportName = $package->exportName( $format );
@@ -73,7 +73,7 @@ class Export extends \Exponential\Runnable\ModuleView
         if ( !$fileName || !is_file( $fileName ) )
             return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
-        // Audit (doc/en/us/bc/6.0/audit.md, data.export.package)
+        // Audit (doc/eng-us/bc/6.0/audit.md, data.export.package)
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'data.export.package', array( 'object' => array( 'type' => 'package', 'id' => (string)$package->attribute( 'name' ) ),
                 'verb' => 'export', 'after' => array( 'name' => (string)$package->attribute( 'name' ), 'file' => (string)$exportName,

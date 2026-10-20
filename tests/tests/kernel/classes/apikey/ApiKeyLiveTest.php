@@ -1,6 +1,6 @@
 <?php
 /**
- * The personal API keys end to end, over HTTP, against the installation's own web servers (doc/en/us/guides/api-keys.md).
+ * The personal API keys end to end, over HTTP, against the installation's own web servers (doc/eng-us/guides/api-keys.md).
  *
  * A throwaway user (...@apikey.example.invalid) with a throwaway role (apikey/create, content/read, user/login, content/create below its own folder)
  * signs in on the public site, makes a key on apikey/list, uses it against the REST interface, has it refused where

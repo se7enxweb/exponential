@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/setup/preloadstream.php, moved into a class (#207 stage 1). The file kernel/setup/preloadstream.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/setup/preloadstream.php:

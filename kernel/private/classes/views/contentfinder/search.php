@@ -1,6 +1,6 @@
 <?php
 /**
- * The contentfinder/search view (doc/en/us/features/6.0/content-finder.md): one search field and a type selector, read
+ * The contentfinder/search view (doc/eng-us/features/6.0/content-finder.md): one search field and a type selector, read
  * from the query string (SearchText, SearchType), and one result block per object found, with what the user may
  * see of it. Needs the policy contentfinder/search; answers on administration siteaccesses only. Every search is
  * recorded in the audit (content.finder.search).

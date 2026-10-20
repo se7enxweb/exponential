@@ -1,0 +1,197 @@
+---
+title: exphelp.ini [SearchSettings]
+audience: developer, admin
+category: examples
+summary: "The settings of [SearchSettings] in exphelp.ini: ResultLimit, TitleBoost, HeadingBoost, BodyBoost, PathBoost, KeywordBoost, TitleMatchBoost, TypeBoost ..."
+keywords: exphelp.ini, SearchSettings, INI, setting, ResultLimit, TitleBoost, HeadingBoost, BodyBoost, PathBoost, KeywordBoost, TitleMatchBoost, TypeBoost, VersionBoost, AudienceBoost, StopWords
+type: generated
+generated: exp:help:examples
+---
+# exphelp.ini [SearchSettings]
+
+The block `[SearchSettings]` of `settings/exphelp.ini`, with 11 setting(s).
+
+Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
+
+- `settings/override/exphelp.ini.append.php` for every siteaccess,
+- `settings/siteaccess/<siteaccess>/exphelp.ini.append.php` for one siteaccess,
+- `extension/<extension>/settings/exphelp.ini.append.php` in an extension (read when the extension is active).
+
+## ResultLimit
+
+> Results per page (the JSON view takes limit=, at most 50)  
+
+Default: `20`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+ResultLimit=20
+*/ ?>
+```
+
+## TitleBoost
+
+> Score weights of a match in the title, a heading and the text  
+
+Default: `8`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+TitleBoost=8
+*/ ?>
+```
+
+## HeadingBoost
+
+Default: `3`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+HeadingBoost=3
+*/ ?>
+```
+
+## BodyBoost
+
+Default: `1`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+BodyBoost=1
+*/ ?>
+```
+
+## PathBoost
+
+> ... in the page's path (features/6.0/maintenance-mode.md: "maintenance", "mode") and its front matter keywords  
+
+Default: `2`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+PathBoost=2
+*/ ?>
+```
+
+## KeywordBoost
+
+Default: `4`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+KeywordBoost=4
+*/ ?>
+```
+
+## TitleMatchBoost
+
+> Factor for a page whose title holds every word of the query  
+
+Default: `1.4`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+TitleMatchBoost=1.4
+*/ ?>
+```
+
+## TypeBoost
+
+> Factor per page type (expHelpDocumentIndex types): help pages and guides rank above reference material with the  
+> same words, changelogs and history below it  
+> The generated reference examples (doc/eng-us/examples/, ./console exp:help:examples): thousands of short pages that  
+> repeat setting, operator and view names; below the written pages that explain the same words  
+> the generated pattern catalogue (doc/eng-us/standards/patterns/) lists thousands of class names: below the written pages  
+
+Default: a hash of 7: `help=1.5`, `guide=1.3`, `specification=0.8`, `changelog=0.45`, `history=0.6`, `generated=0.5`, `catalogue=0.5`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+# an empty "TypeBoost[]" first replaces the shipped list; without it the items are added
+TypeBoost[]
+TypeBoost[help]=1.5
+TypeBoost[guide]=1.3
+TypeBoost[specification]=0.8
+TypeBoost[changelog]=0.45
+TypeBoost[history]=0.6
+TypeBoost[generated]=0.5
+TypeBoost[catalogue]=0.5
+*/ ?>
+```
+
+## VersionBoost
+
+> Factor per major version for pages below a version directory (features/3.8/, bc/4.1/): older releases rank lower  
+
+Default: a hash of 3: `3=0.5`, `4=0.6`, `5=0.75`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+# an empty "VersionBoost[]" first replaces the shipped list; without it the items are added
+VersionBoost[]
+VersionBoost[3]=0.5
+VersionBoost[4]=0.6
+VersionBoost[5]=0.75
+*/ ?>
+```
+
+## AudienceBoost
+
+> Factor per audience for the pages that are for it (the lowest when a page has several); not applied while the  
+> search is filtered to that audience. The trainers' lessons repeat the subjects of the editor and administrator pages,  
+> so they rank below them in a general search and on their own under the Trainers filter.  
+
+Default: a hash of 1: `trainer=0.6`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+# an empty "AudienceBoost[]" first replaces the shipped list; without it the items are added
+AudienceBoost[]
+AudienceBoost[trainer]=0.6
+*/ ?>
+```
+
+## StopWords
+
+> Words that are not indexed (an empty list keeps the built-in English and German list)  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+# an empty "StopWords[]" first replaces the shipped list; without it the items are added
+StopWords[]
+*/ ?>
+```
+
+## Related
+
+- [All blocks of exphelp.ini](README.md)
+- [All INI files](../README.md)
+- [The settings page](../../../guides/settings-page.md)
+
+---
+
+Generated by `./console exp:help:examples` from `settings/exphelp.ini`. Do not edit this page: change the source and generate again ([how](../../README.md#how-the-generated-pages-are-made)). Free documentation: [GFDL 1.3 or later](../../../help/free-documentation.md).

@@ -1,6 +1,6 @@
 <?php
 /**
- * The log viewer (Setup > Log files, setup/logs; doc/en/us/features/6.0/log-viewer.md): what its page, its feed and its
+ * The log viewer (Setup > Log files, setup/logs; doc/eng-us/features/6.0/log-viewer.md): what its page, its feed and its
  * command line use. It joins the parts: the files (expLogFileLocator), reading (expLogTail), entries
  * (expLogParser), searching (expLogSearch), masking (expLogRedactor), and the policies and the audit.
  *

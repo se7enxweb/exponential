@@ -3,7 +3,7 @@
  * Generated script and stylesheet content (the output of a server function such as ezjsc::jqueryio with packing off,
  * or of one that is never cached) reaches the page as a file of its own, not as an inline <script> or <style>: a page
  * under a Content Security Policy without 'unsafe-inline' (script-src 'self', style-src 'self') would not run it
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  *
  *  GC-01 - ezsjc::jqueryio with packing off is a <script src> of a file that holds its code
  *  GC-02 - the file is named after the content: the same content gives the same file, other content another one

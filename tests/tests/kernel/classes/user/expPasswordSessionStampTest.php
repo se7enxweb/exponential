@@ -1,7 +1,7 @@
 <?php
 /**
  * Ending the other sessions of a user after a password change, whatever the session handler
- * (doc/en/us/features/6.0/modern-password-change.md, "Other sessions"): the password stamp a sign-in keeps in the
+ * (doc/eng-us/features/6.0/modern-password-change.md, "Other sessions"): the password stamp a sign-in keeps in the
  * session, its check in eZUser::currentUser(), and the session that changes its own password staying signed in.
  *
  * Live style: one test user (remote id and login p1stamp-user, address on p1stamp.invalid), created and removed

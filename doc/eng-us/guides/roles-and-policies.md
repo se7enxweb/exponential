@@ -1,0 +1,289 @@
+# Roles, policies and unactivated users
+
+This guide is for administrators. In about 25 minutes you read what every role gives and to whom, build a role with
+limited policies, put its policies in order, assign it to a group, and clean up registrations nobody finished.
+
+All pages are under **Users** in the administration: **Roles and policies** (`role/list`) and **Unactivated users**
+(`user/unactivated`). The editor siteaccess refuses the role module; use the administration siteaccess.
+
+## In short
+
+- A **role** is a set of **policies**. A policy lets its users use one module, or one function of a module, possibly
+  only in some sections, classes, subtrees, languages or siteaccesses.
+- A role does nothing until it is **assigned** to users or user groups. A user has every policy of every role
+  assigned to them or to one of their groups.
+- Every change in the role editor is made in a **draft**. Nothing changes for anyone until you press **Save**;
+  **Cancel** throws the draft away.
+- A role with a policy over **every module** gives **full access**: the list and the role page mark it in red. A
+  policy over the **role** module lets its users change roles, and so give themselves any access: marked in amber.
+
+## 1. Read the role list
+
+Open **Users > Roles and policies**. Each role is a card with its ID, how many policies it has and how many users and
+groups it is assigned to (the number links to the role page), and its actions: View, Edit, Assign, Copy.
+
+- **Find a role**: any part of the name, or the ID. Upper and lower case are the same.
+- **Order**: by name, ID, number of policies or number of assignments. Click the current order again to reverse it.
+  The order and the search are kept in the address (`/role/list/(sort)/policies/(dir)/desc?q=edit`), so you can
+  bookmark them. The orders by count are offered up to 500 roles.
+- **Badges**: *Full access* (red), *Can change roles* (amber), *Not assigned* (the role gives nobody anything).
+- **Per page**: the sizes come from `site.ini [RoleSettings] RolesPerPageList`.
+
+Expected: Administrator shows *Full access*; Anonymous shows about 15 policies and 3 assignments on a fresh install.
+
+## 2. Read one role
+
+Click a role. The page shows:
+
+- **The figures**: policies; assignments; user groups; users assigned directly; and **users affected in all**: every
+  user the role reaches, counting the members of its groups once each (a user in two of its groups counts once).
+  Users of an assignment with a subtree or section limitation count too; the line below the figures says how many
+  assignments are limited.
+- **The policies as sentences**, for example:
+  - *May read content, in section Standard, of the classes Article and Folder*
+  - *May log in, on the siteaccesses site and bold*
+  - *May do everything, in every module* (full access)
+
+  Under each sentence: the policy ID, its module and function, and its limitations as stored, with links to the
+  nodes and subtrees. A limitation that no handler evaluates is marked *(no handler, denies)*: that policy gives no
+  access. Order the list by role order, module (grouped under each module), function or limitation.
+- **The users and groups** the role is assigned to, with their limitation (*Only in section Standard*, *Only in the
+  subtree Media*), a name filter when there are many, and paging. An assignment whose user or group was removed is
+  listed first and can be removed.
+
+## 3. Create a role with limited policies
+
+1. On the role list, click **New role**. The editor opens on a new draft.
+2. Type the name, for example `News editors`.
+3. Click **New policy**. The wizard shows its three steps: Module, Function, Limitations.
+   - **Step 1, Module**: choose `content`. With JavaScript, the functions of the module are offered at once.
+     *Grant access to all functions* adds a policy over the whole module now. Choosing *Every module* with all
+     functions is full access; the page warns before you add it.
+   - **Step 2, Function**: choose `read`. *Grant full access* adds it without limitations; *Grant limited access*
+     goes to step 3.
+   - **Step 3, Limitations**: choose *Section: Standard* and *Class: Article* and *Folder* (Ctrl or Cmd for more than
+     one). *Any* leaves a limitation out. Several limitations must all be met; several values of one are
+     alternatives. Nodes and subtrees are picked in the content browser. Press **OK**.
+4. The editor lists the policy as *May read content, in section Standard, of the classes Article and Folder* and
+   says **Unsaved changes**.
+5. Press **Save**. The role page opens.
+
+To change the limitations of a policy later, click **Limitations** next to it in the editor.
+
+## 4. Put the policies in order
+
+The order of the policies does not change what anyone may do: each policy grants access on its own. It helps people
+read a role. The order is the policies' IDs in the draft (see
+[Roles: policy IDs, sorting and order buttons](../features/6.0/role-policy-order.md)); all ways of moving use it.
+
+In the editor, keep **Role order** (ID ascending), then:
+
+- **Drag** a policy by its grip (the dotted handle) to its new place. The page sends the move, the policy lands
+  there and the page says *The policy was moved to position N*.
+- **Keyboard**: Tab to the grip, press the **up** or **down arrow** key. The grip keeps the focus at its new place.
+- **Without JavaScript**: the **up** and **down** buttons move one place, also across pages; the **position field**
+  and **Move** put a policy at any place in the whole list.
+- Press **Save** to keep the order, or **Cancel** to drop it.
+
+Dragging is offered only in role order and within the page shown: in another order the list is not the role's
+order, and a drag can only reach what is on the screen. To move further, use the position field.
+
+## 5. Assign the role
+
+On the role page:
+
+- **Assign** opens the content browser on the user tree: choose users or groups. Prefer groups: every member, now
+  and later, gets the role.
+- **Assign with limitation**: choose *Subtree* or *Section*, then the subtree or the section, then the users or
+  groups. The role then applies only there.
+- **Remove selected**: tick assignments, open the confirmation and press *Remove the ticked assignments*. The users
+  and groups lose the role at once; they are not removed.
+
+## 6. Copy and remove roles
+
+- **Copy** opens a page that says what the copy holds; *Make the copy* creates "Copy of <name>" with the same
+  policies and no assignments, and opens it in the editor. Opening the copy address alone makes nothing.
+- **Remove**: on the role list tick roles, open *Remove selected* and confirm. The roles, their policies and
+  assignments are removed for good.
+
+## 7. Clean up unactivated users
+
+**Users > Unactivated users** lists people who registered but never clicked the link of their activation mail.
+
+- The heading counts them. **Find a registration** searches login, e-mail and name. Order by registration date,
+  login, e-mail or name. A registration older than 30 days is marked **Old**.
+- Tick users, then open one of the confirmations:
+  - **Activate selected users**: the accounts work at once, as if their owners had clicked the link. A registration
+    waiting for its activation is completed as the link does (the user object is published, the post_register
+    workflow runs); an account without one (made by a script or an import) is published by hand. Either way the user
+    gets the "registration approved" mail (`user/registrationapproved.tpl`), unless
+    `site.ini [UserSettings] ActivationByAdministratorSendsApprovalMail=disabled` (this page only) or
+    `EmailRegistrationInfo=disabled` (everywhere). Activating never sends a new activation link.
+  - **Send the activation mail again**: each gets a new link; the earlier link stops working. The page names the
+    mail transport (`site.ini [MailSettings] Transport`). A user without a valid address is reported, not mailed.
+  - **Remove selected users**: removed for good, with their user objects.
+- **Remove all unactivated users** removes every unactivated user, on every page. With a search active the button
+  says *Remove all N matching the search* and removes only those. The confirmation states the number. Users are
+  removed in batches of 50. Each one is checked again just before removal. Never removed: anyone activated
+  meanwhile, the anonymous user, the account `admin`, and you. The page reports *N removed, M skipped* with the
+  reasons. The removal is recorded in the audit trail as `access.user.remove`, with the counts.
+
+Every action, here and on the role pages, needs the form token of the page. A request without it is refused with 403.
+
+**From the "New user registered" mail.** With `site.ini [UserSettings] RegistrationFeedback=email` every registration
+sends the administrator (`RegistrationEmail`, else `[MailSettings] AdminEmail`) an HTML mail with the account's
+details, its state and signed links: **View account**, **Activate account** (or **Approve** when a workflow's approval
+item holds it), **Reject and remove**, the approval item, and the list of unactivated users. Each opens
+`user/registration/<token>` in the administration, which needs you signed in with `user/activation` (or as approver
+of the waiting approval item) and asks you to confirm; opening a link changes nothing. Approve activates the account
+as **Activate selected users** does, or accepts the approval item and publishes the account at once; reject removes
+the account. Approve and reject links work once, every link expires. Details:
+[Signed links in the "New user registered" mail](../features/6.0/registration-admin-links.md).
+
+The settings, in `[UserSettings]` (best in `settings/override/site.ini.append.php`):
+
+| Setting | Default | What it does |
+|---|---|---|
+| `RegistrationAdminLinks` | `enabled` | `disabled`: the mail has no links and `user/registration` is not found |
+| `RegistrationAdminBaseURL` | empty | the address of the administration the links point to; empty: `https://` and the `SiteURL` of the administration siteaccess |
+| `RegistrationAdminSiteAccess` | empty | the administration siteaccess; empty: the one whose `[SiteSettings] FrontSiteAccess` is the current siteaccess, else `admin` |
+| `RegistrationActionTTL` | `604800` | how long a link works, in seconds (7 days) |
+
+```ini
+[UserSettings]
+RegistrationAdminBaseURL=https://admin.example.com
+# or, for an administration under a path of the site:
+# RegistrationAdminBaseURL=https://www.example.com/admin
+RegistrationActionTTL=259200
+```
+
+If the `SiteURL` of the administration siteaccess is not an address the administrator can reach from the mail (an
+internal host name, `localhost`, a siteaccess matched by port or by a path the `SiteURL` leaves out), set
+`RegistrationAdminBaseURL`; otherwise the links lead nowhere.
+
+For the accounts that did activate, **Users > Check user accounts** (`user/hygiene`) lists those never signed in,
+not seen for a long time, disabled, locked, orphaned or sharing an e-mail address, and disables, enables or unlocks
+them in bulk: [Check user accounts](../features/6.0/user-hygiene.md). With `[UserSettings]
+DeactivateAndMove=enabled`, **Deactivate and move** retires accounts instead of removing them, and moves them back
+on reactivation ([Deactivate and move](../features/6.0/user-hygiene.md#deactivate-and-move), function
+`user/deactivate`). A role is never assigned to the group of deactivated users: Assign leaves it out and says so.
+
+## 8. Decide who may register and who may read node data
+
+Two permissions were open to everyone by default and can now be given through roles instead. Both ideas come from
+Mugo Web's LoveStack distribution (commits `98854ab935` and `aa307a7ff3`), with thanks.
+
+**Registering a new account (`user/register`).** On a new installation registering needs the `user/register`
+policy, and the base data gives it to the **Anonymous** role, so visitors can register. To close registration,
+remove the policy *User / Register* from the Anonymous role; to open it on a site that closed it, add it again. The
+other steps of registering (`user/activate`, `user/success`, `user/forgotpassword`) and signing in stay in
+`PolicyOmitList[]`, and the Anonymous role also has *User / Login* for the public siteaccesses. The login pages of the
+administration, the standard design, the media and the starter designs show *Register new account*, *Not
+registered?* or *Sign Up* only to a visitor who may open `user/register`, so a site without open registration shows
+no dead link.
+
+- An upgraded site keeps registration open, as before: `user/register` stays in `site.ini [RoleSettings]
+  PolicyOmitList[]` and the link stays on the login page.
+- To close it on an upgraded site, add to `settings/override/site.ini.append.php`:
+
+  ```ini
+  [RoleSettings]
+  PolicyOmitListExclude[]=user/register
+  ```
+
+  then clear the INI cache. `PolicyOmitListExclude[]` takes single entries out of `PolicyOmitList[]` after every
+  settings file is read, so the entries the extensions add (`ezjscore/call` and others) stay.
+
+**Node data as JSON or XML (`ezjscore/call/ezjscnode::load`, `::subtree`, `::updatepriority`).** These calls return
+a node's name, ids, remote id, owner, section, dates, class and translations to every user who may read the node,
+anonymous visitors included. With `ezjscore.ini [ezjscServer_ezjscnode] RequirePolicy=enabled` a user also needs the
+policy *ezjscore / call* with the function list **ezjscnode**; a request whose calls are all refused is answered with
+403 Forbidden.
+
+- New installations switch it on and give the **Editor** role *ezjscore / call* with the function list
+  `ezjscnode`, which the sub-items list (its fallback list and the priority column) and the image size preview of
+  the rich text editor use. Administrators have it through full access.
+- An upgraded site keeps `RequirePolicy=disabled`: nothing changes. To switch it on, first give *ezjscore / call*
+  with the function list `ezjscnode` to every role whose users use the administration without full access, then add
+  to `settings/override/ezjscore.ini.append.php`:
+
+  ```ini
+  [ezjscServer_ezjscnode]
+  RequirePolicy=enabled
+  ```
+
+  and clear the INI cache. The shipped designs do not call `ezjscnode` for anonymous visitors; a site's own
+  JavaScript that does would need the policy for the Anonymous role.
+
+## 9. Decide who may authorize OAuth clients
+
+An application registered at **Setup > oAuth admin** sends users to `oauth/authorize`, where they allow it to act for
+them. From 6.0.15 on that needs the policy *OAuth / Authorize* (`oauth/authorize`), optionally limited to some
+siteaccesses; a user without it is sent back to the application with `error=access_denied`.
+
+- New installations give it to the **Editor** role; administrators have it through full access.
+- On an upgraded site run `php bin/php/addoauthauthorizepolicy.php --dry-run`, then without `--dry-run`: every role
+  that lets users sign in gets the policy for the same siteaccesses, so nobody loses what they could do before.
+  The whole story, and how to keep the old behavior for a while, is in
+  [the upgrade note](../bc/6.0/oauth-authorize-policy.md).
+
+## Who may do this
+
+- The role pages need access to the `role` module. The unactivated users page needs `user/activation`, and so do
+  the approve and reject links of the "New user registered" mail (or being approver of the waiting approval item;
+  a view link also opens with `content/edit` on the account); Check user
+  accounts needs `user/hygiene`, and `role/assign` for the e-mail addresses; Deactivate and move needs
+  `user/deactivate`, and the content rights to move the account.
+- **Nobody gives more than they have.** With `site.ini [RoleSettings] PreventPrivilegeEscalation=enabled` (the
+  default), a user who may edit roles can only grant what their own roles cover:
+  - In the policy wizard, a policy they do not hold is taken out again at once and the page says *The policy was not
+    added*, naming it.
+  - **Save** of the role editor refuses a draft with a new or changed policy they do not hold (*The role was not
+    saved*); the draft stays, so you can narrow or remove the policy.
+  - The policy editor refuses a change that makes a policy broader than their access; the policy stays as it was.
+  - **Copy** is off for a role with a policy beyond their access, and **Assign** refuses such a role (*The role was not
+    assigned*). An assignment with a subtree or section limitation counts as narrowed by it.
+- What "covered" means: one of the editor's policies has the same module (or every module) and the same function (or
+  every function), and each of that policy's limitations is met at least as narrowly: a subtree inside one of its
+  subtrees (or a node inside it), sections, classes, nodes, languages, siteaccesses, owner and state values among its
+  values. Two policies for section A and section B together cover a policy for A and B. A role assigned to the editor
+  for a section or subtree counts as that limitation. The check is careful rather than clever: a subtree that happens
+  to lie in a section is not taken as covered by a policy for that section.
+- Users with every function of every module (Administrator) may grant anything. Set
+  `PreventPrivilegeEscalation=disabled` to give back the old behaviour, where anyone with the `role` module could give
+  any role any policy.
+- The role list still marks roles that let their users change roles (*Can change roles*): give them carefully.
+
+## Problems
+
+| You see | Why | Do |
+|---|---|---|
+| *Unsaved changes* on the editor | The draft differs from the saved role | Save or Cancel |
+| The browser asks before you leave the editor | The draft or the name changed | Save, or Cancel to discard |
+| No grip next to the policies | The list is not in role order | Click **Role order** |
+| *(no handler, denies)* after a limitation | No extension evaluates that limitation | Activate the extension that adds it, or remove the policy |
+| A user still listed after *Activate* | They were activated meanwhile, or are not unactivated | Read the message above the list |
+| *The policy was not added* / *The role was not saved* | The policy goes beyond your own access | Narrow it to what your roles allow, or ask an administrator with full access |
+
+## For developers
+
+- `expRolePolicySentence` (kernel/classes/role) words a policy; `expRolePage` gives the role list rows, summaries,
+  the users a role reaches, the draft comparison and the policy moves (`moveSteps()`, `movePolicyTo()`, built on
+  `eZRole::movePolicy()`); `expRoleGrantCheck` decides what an editor may grant; `expUserActivation` completes an
+  activation; `expUnactivatedUsers` (kernel/classes/user) gives the list, the age, the resend and
+  Remove all (`removeAllWith()` takes the database work as functions).
+- Tests without a database: `php vendor/bin/phpunit tests/tests/kernel/classes/expRolePagesTest.php` and
+  `tests/tests/kernel/classes/expRoleGrantCheckTest.php`.
+- Every template is in `design/admin` and `design/admin4`; the look is `role/exp_style.tpl`, scoped to `.exp-roles`.
+  No shared stylesheet is changed.
+
+**Demo mode and the Administrator role.** On a public demo (environment variable `EXP_DEMO_MODE=1`) an account whose roles give unlimited access to every module and function, as the role **Administrator** does, counts as an administrator: its password cannot be changed or reset. Accounts with limited roles keep the usual password rules. [Demo mode](../bc/6.0/demo-mode.md).
+
+## Related pages
+
+- [Roles: policy IDs, sorting and order buttons](../features/6.0/role-policy-order.md)
+- [Role assignment paging](../features/6.0/role-assignment-paging.md)
+- [Signed links in the "New user registered" mail](../features/6.0/registration-admin-links.md)
+- [Sections](sections.md), [Object states](object-states.md), [Security and audit](security-and-audit.md)
+- [Changing owners](changing-owners.md): the `owner/change` and `owner/subtree` policies of ezownerchange
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

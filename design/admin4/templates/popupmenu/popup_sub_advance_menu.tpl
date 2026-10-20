@@ -1,12 +1,12 @@
 <!-- Advanced menu -->
-{* The content checks (doc/en/us/features/6.0/content-checks.md) for the subtree, only for a user with their policies *}
+{* The content checks (doc/eng-us/features/6.0/content-checks.md) for the subtree, only for a user with their policies *}
 {def $contentcheck_unreferenced = fetch( 'user', 'has_access_to', hash( 'module', 'contentcheck', 'function', 'unreferenced' ) )
      $contentcheck_broken = fetch( 'user', 'has_access_to', hash( 'module', 'contentcheck', 'function', 'brokenrelations' ) )}
 
 {* Export: the item or its subtree as a content package (the package wizard) and the export entries of extensions
    (xrowextract's CSV), from popupmenu/popup_export_items.tpl, which the node view's Import/Export menu shares. Every
    entry opens its tool's form filled in for the item; the export is started there. The submenu is shown only when
-   it has an entry for the user. Guide: doc/en/us/bc/6.0/content-export-menu.md *}
+   it has an entry for the user. Guide: doc/eng-us/bc/6.0/content-export-menu.md *}
 {set-block variable=$export_menu_items}
 {include uri='design:popupmenu/popup_export_items.tpl' menu_id='ExportMenu' item_prefix='menu-export' sub_menu_depth=3 with_import=false()}
 {/set-block}

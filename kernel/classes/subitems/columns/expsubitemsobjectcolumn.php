@@ -8,7 +8,7 @@
  * always_available, language_mask, state_identifiers, locked, word_count, text_length, name_length,
  * attribute_count. Most read the loaded object; class_groups, owner and section_identifier cost one
  * cached fetch, the text fields read the data map (one query per object, shared with other columns).
- * Guide: doc/en/us/bc/6.0/subitems-table-options.md
+ * Guide: doc/eng-us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

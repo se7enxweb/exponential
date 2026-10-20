@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/shop/checkout.php, moved into a class (#207 stage 1). The file kernel/shop/checkout.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/shop/checkout.php:
@@ -65,7 +65,7 @@ class Checkout extends \Exponential\Runnable\ModuleView
 
                     $http->setSessionVariable( "UserOrderID", $order->attribute( 'id' ) );
 
-                    // Audit (doc/en/us/bc/6.0/audit.md, commerce.basket.checkout): items and total, never the address
+                    // Audit (doc/eng-us/bc/6.0/audit.md, commerce.basket.checkout): items and total, never the address
                     if ( class_exists( 'expAuditHook' ) )
                         \expAuditHook::emit( 'commerce.basket.checkout', function () use ( $order ) {
                             return array( 'object' => array( 'type' => 'basket', 'id' => (int)$order->attribute( 'productcollection_id' ) ),

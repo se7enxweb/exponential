@@ -62,7 +62,7 @@ class eZSQLite3TransactionWaitTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 1, preg_match( '/^SQLiteTransactionWait=(\d+)\s*$/m', $ini, $m ) );
         $default = $m[1];
 
-        $spec = file_get_contents( self::root() . '/doc/en/us/specifications/6.0/sqlite3-database-driver.md' );
+        $spec = file_get_contents( self::root() . '/doc/eng-us/specifications/6.0/sqlite3-database-driver.md' );
         $this->assertNotFalse( $spec );
         $this->assertSame( 1,
             preg_match( '/\| `SQLiteTransactionWait` \| `(\d+)` \(seconds\) \|/', $spec, $table ),

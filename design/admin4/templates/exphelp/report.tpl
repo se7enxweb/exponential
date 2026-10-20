@@ -1,4 +1,4 @@
-{* exphelp/report: how to report an error (doc/en/us/features/6.0/help-system.md, "Reporting an error"). From top to bottom:
+{* exphelp/report: how to report an error (doc/eng-us/features/6.0/help-system.md, "Reporting an error"). From top to bottom:
    the security warning, what to do before reporting, where to report (the trackers, an extension's repository, the
    community), the report form that prepares a GitHub issue, the diagnostics to copy, the logs, and the private path
    for security issues (id="security", linked from the dashboard). Styles: stylesheets/modules/help.css (.a4-help-*,

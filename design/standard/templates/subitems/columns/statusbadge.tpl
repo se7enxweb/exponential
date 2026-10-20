@@ -2,7 +2,7 @@
    the item. Variables: $node (the row), $column (the column's settings), $key (its key).
    The output is the cell; its text ("Hidden", "Locked" ...) is the value and the CSV text. The badges are the
    administration's .a4-badge (components.css): red, yellow, grey and green tints from the tokens.
-   Guide: doc/en/us/bc/6.0/subitems-table-options.md *}
+   Guide: doc/eng-us/bc/6.0/subitems-table-options.md *}
 {def $exp_badge = 'visible'}
 {if $node.is_hidden}
     {set $exp_badge = 'hidden'}

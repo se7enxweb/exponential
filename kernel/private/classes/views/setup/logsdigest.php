@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup > Log files > Error digest (setup/logsdigest; doc/en/us/features/6.0/log-viewer.md, "Error digest"): the distinct
+ * Setup > Log files > Error digest (setup/logsdigest; doc/eng-us/features/6.0/log-viewer.md, "Error digest"): the distinct
  * errors and warnings of the last hours, per log, normalized and counted (expLogDigest), each linked to the log's view
  * filtered to it. Policy setup/logs.
  *

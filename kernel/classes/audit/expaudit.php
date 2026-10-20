@@ -1,7 +1,7 @@
 <?php
 /**
  * The audit: what happens in Exponential, recorded as hash-chained JSON lines per channel
- * (doc/en/us/bc/6.0/audit.md, "The developer API (Z3)").
+ * (doc/eng-us/bc/6.0/audit.md, "The developer API (Z3)").
  *
  *   expAudit::event( 'content.node.move', array( 'object' => ..., 'target' => ..., 'before' => ..., 'after' => ... ) );
  *   $parent = expAudit::begin( 'content.node.remove', ... ); ... expAudit::end( $parent, array( 'after' => ... ) );

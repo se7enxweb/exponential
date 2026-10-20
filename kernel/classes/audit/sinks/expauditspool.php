@@ -1,6 +1,6 @@
 <?php
 /**
- * The spool of a sink (doc/en/us/bc/6.0/audit.md, "Webhook"): records for network sinks are appended at flush time to
+ * The spool of a sink (doc/eng-us/bc/6.0/audit.md, "Webhook"): records for network sinks are appended at flush time to
  * <SpoolDir>/<sink>.jsonl under flock(), so a web request never waits for a network; the audit cronjob part
  * (and exp:audit sinks flush) delivers them. A delivered batch is cut from the front of the file; what was not
  * delivered stays, so delivery is at least once (receivers de-duplicate by event id).

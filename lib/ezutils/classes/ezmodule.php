@@ -698,7 +698,7 @@ class eZModule
      */
     function handleError( $errorCode, $errorType = false, $parameters = array(), $userParameters = false )
     {
-        // A module view refused by policy, by the dispatcher or inside the view (doc/en/us/bc/6.0/audit.md,
+        // A module view refused by policy, by the dispatcher or inside the view (doc/eng-us/bc/6.0/audit.md,
         // access.permission.refused): the module/view, the node or object when known, the policy that was asked
         if ( $errorCode == eZError::KERNEL_ACCESS_DENIED && ( $errorType === 'kernel' || $errorType === false ) && class_exists( 'expAuditHook' ) )
         {

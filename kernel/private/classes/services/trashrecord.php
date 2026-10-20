@@ -25,7 +25,7 @@ namespace Exponential\Service;
  *   it (a CLI script), the files are given to the owner of the var directory, so the web server can write next.
  * - A failure to record never stops the trash move: errors go to the debug log.
  *
- * Guide: doc/en/us/bc/6.0/trash.md
+ * Guide: doc/eng-us/bc/6.0/trash.md
  */
 class TrashRecord
 {

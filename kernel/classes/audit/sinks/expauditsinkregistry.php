@@ -1,6 +1,6 @@
 <?php
 /**
- * The sink registry and delivery (doc/en/us/bc/6.0/audit.md, "Sinks (Q7)", "The sink registry").
+ * The sink registry and delivery (doc/eng-us/bc/6.0/audit.md, "Sinks (Q7)", "The sink registry").
  *
  *   [AuditSinkSettings] SinkClasses[<name>]=<class implementing expAuditSink>, SpoolDir
  *   [AuditSink_<name>]  the sink's own settings

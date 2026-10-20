@@ -7,7 +7,7 @@
  * the classes in each of them; only admin4 has a dark mode, switched by html[data-a4-theme="dark"] (a page layout
  * with html[data-a4-modes="light"] stays light even then).
  *
- * Rules (doc/en/us/bc/6.0/admin4-styling.md):
+ * Rules (doc/eng-us/bc/6.0/admin4-styling.md):
  * - no <style> block and no style="" attribute in a template: CSS lives here or in stylesheets/modules/;
  * - colours, radius, spacing and fonts only from the --a4-* tokens below; no hard-coded values, no local aliases;
  * - every colour token has a value for html[data-a4-theme="dark"]; spacing, size, radius and font tokens are the

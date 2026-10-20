@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckReferences class.
  *
- * The reference index of the unreferenced list (doc/en/us/features/6.0/content-checks.md, "What counts as a reference"):
+ * The reference index of the unreferenced list (doc/eng-us/features/6.0/content-checks.md, "What counts as a reference"):
  * every object id, node id, remote id and path that something in the installation uses, collected from all the
  * places content can be reached from besides ezcontentobject_link, which expContentCheck::referenceExistsSQL()
  * covers in SQL:

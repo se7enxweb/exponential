@@ -1,6 +1,6 @@
 <?php
 /**
- * The kernel's audit hook points (doc/en/us/bc/6.0/audit.md, stage 3): expAuditHook and the ezpEvent bridge.
+ * The kernel's audit hook points (doc/eng-us/bc/6.0/audit.md, stage 3): expAuditHook and the ezpEvent bridge.
  *
  *  AH-01 — every kernel name of the catalogue is raised somewhere in the kernel (a hook point names it), except the
  *          audit's own names (stages 2, 4, 5) and the re-authentication of the audit module (stage 4)

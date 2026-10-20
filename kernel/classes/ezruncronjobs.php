@@ -57,7 +57,7 @@ class eZRunCronjobs
             global $script;
             global $isQuiet;
             global $cronPart;
-            // Audit (doc/en/us/bc/6.0/audit.md, system.cronjob.run / system.cronjob.fail): every event of the part
+            // Audit (doc/eng-us/bc/6.0/audit.md, system.cronjob.run / system.cronjob.fail): every event of the part
             // carries the run (this invocation's request id)
             $auditStart = microtime( true );
             if ( class_exists( 'expAudit' ) )

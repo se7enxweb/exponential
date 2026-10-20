@@ -1,7 +1,7 @@
 <?php
 /**
- * E-books of help manuals stored as content (doc/en/us/specifications/6.0/help-system.md, delivery path 3: "stored as a
- * file object under E-books (section according to audience)"; doc/en/us/features/6.0/help-content.md, "Stored e-books").
+ * E-books of help manuals stored as content (doc/eng-us/specifications/6.0/help-system.md, delivery path 3: "stored as a
+ * file object under E-books (section according to audience)"; doc/eng-us/features/6.0/help-content.md, "Stored e-books").
  *
  * Each format of each Released manual is one object of the class "file" below the folder E-books (remote_id
  * help-ebooks), found by its remote_id help-ebook-<manual remote_id>-<format>:

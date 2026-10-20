@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/setup/info.php, moved into a class (#207 stage 1). The file kernel/setup/info.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/setup/info.php:
@@ -159,7 +159,7 @@ class Info extends \Exponential\Runnable\ModuleView
 
         // Database queries: the SQL query cache (eZDBQueryCache, settings/querycache.ini)
         // and the SQL profile of recent requests (eZDBInterface::profileSQL(),
-        // var/tmp/sql_profile.on). See doc/en/us/bc/6.0/sql-query-cache.md.
+        // var/tmp/sql_profile.on). See doc/eng-us/bc/6.0/sql-query-cache.md.
         // SQL engines only; the MongoDB driver keeps its own profile.
         \eZDebug::accumulatorStart( 'setup_info_sql_profile_info', 'System information', 'sqlProfileInfo' );
         $this->sqlProfileInfo( $db, $canFlushCaches, $http, $when, $tpl, $m, $n );

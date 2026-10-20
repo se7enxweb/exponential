@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckUnreferenced class.
  *
- * The assets below a node that nothing uses (doc/en/us/features/6.0/content-checks.md, "Unreferenced objects"): published
+ * The assets below a node that nothing uses (doc/eng-us/features/6.0/content-checks.md, "Unreferenced objects"): published
  * objects of an asset class ([UnreferencedSettings] AssetClassList[]: images, files, media) whose main location is
  * below the node, that the current user may read, and that nothing uses:
  *   - no relation row from a counting version of another object (expContentCheck, "what counts as a reference"),

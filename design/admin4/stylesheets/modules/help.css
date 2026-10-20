@@ -4,7 +4,7 @@
  * Only what the shared components (stylesheets/components.css) cannot do, as .a4-help-* classes, with colours,
  * radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases), so the dark mode
  * follows from the tokens. Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules:
- * doc/en/us/bc/6.0/admin4-styling.md. The same file is in design/admin (classic) and design/admin4.
+ * doc/eng-us/bc/6.0/admin4-styling.md. The same file is in design/admin (classic) and design/admin4.
  *
  * Sections: the page frame and the shared parts (audience pills, icon tiles); the dashboard (search hero, search
  * results as exphelp.js draws them, audience cards, featured pages, recently changed pages, quick links, report an
@@ -1801,7 +1801,7 @@
 }
 
 /* ---- documentation license (O): the notice under every help page and the dashboard's free documentation block --
-   parts/license_notice.tpl and parts/license_dashboard.tpl (exphelp.ini [License], doc/en/us/README-LICENSE.md).
+   parts/license_notice.tpl and parts/license_dashboard.tpl (exphelp.ini [License], doc/eng-us/README-LICENSE.md).
    Tokens only; the notice stays in print, so a printed page carries its license. */
 .a4-help-license {
   max-width: 80ch;

@@ -2,7 +2,7 @@
 
 Read this page before you install or update `exponential-platform-nexus`, or to find out which release brought a change.
 
-Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../en/us/history/ecosystem/exponential-platform-nexus.md).
+Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../eng-us/history/ecosystem/exponential-platform-nexus.md).
 
 ## 1.0.0.6 (2026-04-21)
 
@@ -167,6 +167,6 @@ Releases made by the se7enxweb team, newest first. Each release lists the team's
 
 ## Related pages
 
-- [Nexus](../../en/us/features/6.0/platform-nexus-starter.md)
-- [package map](../../en/us/specifications/6.0/platform-package-map.md)
-- [upgrade notes](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Nexus](../../eng-us/features/6.0/platform-nexus-starter.md)
+- [package map](../../eng-us/specifications/6.0/platform-package-map.md)
+- [upgrade notes](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)

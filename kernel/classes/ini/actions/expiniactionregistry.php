@@ -12,7 +12,7 @@
  * The kernel's settings/ini.ini registers the built-in actions; an extension adds its own by an
  * extension/<ext>/settings/ini.ini.append.php. When ini.ini cannot be read the built-in actions
  * are used, so the command keeps working on a broken settings tree.
- * Guide: doc/en/us/bc/6.0/console-exp-ini.md.
+ * Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

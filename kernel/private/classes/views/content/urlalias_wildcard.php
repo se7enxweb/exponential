@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/urlalias_wildcard.php, moved into a class (#207 stage 1). The file kernel/content/urlalias_wildcard.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/urlalias_wildcard.php:
@@ -124,7 +124,7 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
             }
         }
 
-        // Audit (doc/en/us/bc/6.0/audit.md, content.urlalias.change): an alias or wildcard added or removed
+        // Audit (doc/eng-us/bc/6.0/audit.md, content.urlalias.change): an alias or wildcard added or removed
         if ( class_exists( 'expAuditHook' ) && in_array( $infoCode, array( 'feedback-removed-all', 'feedback-removed', 'feedback-alias-created',
                                                                            'feedback-alias-cleanup', 'feedback-wildcard-removed-all',
                                                                            'feedback-wildcard-removed', 'feedback-wildcard-created' ), true ) )

@@ -1,6 +1,6 @@
 {* The header's context help: a round "?" link, among the header's tools after light/dark, to the help page of the
    page being shown (exphelp/viewer, at the heading the map names), or to the help dashboard when nothing in
-   exphelp.ini [ContextHelp] Map[] answers it (expHelpContextRegistry; doc/en/us/features/6.0/help-system.md).
+   exphelp.ini [ContextHelp] Map[] answers it (expHelpContextRegistry; doc/eng-us/features/6.0/help-system.md).
 
    The page layout looks the help up before its cache blocks, as $a4_help, and keys the header's cache block by
    $a4_help.key: that block is shared by every page of a navigation part, so without the key it would keep the

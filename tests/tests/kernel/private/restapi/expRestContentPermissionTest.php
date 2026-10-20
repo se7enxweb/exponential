@@ -1,7 +1,7 @@
 <?php
 /**
  * expRestContentPermission, the check of the current user's rights before a REST read or write
- * (doc/en/us/guides/api-keys.md, "Permissions of the REST interface"), without a database: nodes, objects, classes and
+ * (doc/eng-us/guides/api-keys.md, "Permissions of the REST interface"), without a database: nodes, objects, classes and
  * languages are stand-ins whose answers the tests set.
  *
  *  CP-01 create: parentNodeID and classIdentifier are required (400), an unknown parent is 404, an unknown class or

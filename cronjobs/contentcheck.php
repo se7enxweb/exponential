@@ -1,7 +1,7 @@
 <?php
 /**
  * @description Build the reference index of the content checks (unused assets), for installations where a page may not build it (contentcheck.ini BuildOnRequest=false)
- * @link doc/en/us/features/6.0/content-checks.md
+ * @link doc/eng-us/features/6.0/content-checks.md
  *
  * File containing the contentcheck.php cronjob
  *

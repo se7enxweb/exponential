@@ -35,7 +35,7 @@
    their link keys apart, as an item is <group>-<key>): that section's Links[], LinkNames[] (translated in its
    context, design/admin/parts/<name>/menu), PolicyList[], PolicyList_<key>[], Enabled_<key>[] and tile settings; the
    i18n_hash names them as <group>-<key>. A link of this menu to an address the added section has too is left out, so
-   the moved tab's menu keeps it. Both are read only where groups are (doc/en/us/features/6.0/admin4-design.md, "Moving a
+   the moved tab's menu keeps it. Both are read only where groups are (doc/eng-us/features/6.0/admin4-design.md, "Moving a
    tab into Setup").
    * section_hidden_links : (optional) hash of a section name to the keys of its links to leave out, as hidden_links
      for the sections GroupSections[] adds

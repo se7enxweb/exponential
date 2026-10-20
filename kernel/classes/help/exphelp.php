@@ -1,6 +1,6 @@
 <?php
 /**
- * The help system's shared helpers (doc/en/us/features/6.0/help-system.md): its settings, whether it is on, the install
+ * The help system's shared helpers (doc/eng-us/features/6.0/help-system.md): its settings, whether it is on, the install
  * root it reads from, and the URLs of its views. Every other expHelp* class takes its settings from here.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -256,13 +256,14 @@ class expHelp
         return trim( str_replace( '\\', '/', $id ), '/' );
     }
 
-    /** The uiswitch provider whose value is the reader's language (doc/en/us/features/6.0/ui-switch.md) */
+    /** The uiswitch provider whose value is the reader's language (doc/eng-us/features/6.0/ui-switch.md) */
     const READING_PROVIDER = 'language';
 
     /**
-     * The language a help page is asked for with ?lang=<key> (en-us, de): a configured directory other than the
-     * reader's, else null. The viewer then shows the page of that language for this one request (the English
-     * original of a translated page), without changing the reader's interface language.
+     * The language a help page is asked for with ?lang=<key> (eng-us, ger-de; the old keys en-us and de of 6.0.14
+     * are still accepted): a configured directory other than the reader's, else null. The viewer then shows the page
+     * of that language for this one request (the English original of a translated page), without changing the
+     * reader's interface language.
      *
      * @param array $get usually $_GET
      * @param expHelpLanguage $languages
@@ -273,8 +274,8 @@ class expHelp
     {
         if ( !isset( $get['lang'] ) || !is_string( $get['lang'] ) || strlen( $get['lang'] ) > 16 )
             return null;
-        $directory = expHelpLanguage::cleanDirectory( str_replace( '-', '/', $get['lang'] ) );
-        return $directory !== null && $directory !== $reader && $languages->isDirectory( $directory ) ? $directory : null;
+        $directory = method_exists( $languages, 'resolveDirectory' ) ? $languages->resolveDirectory( $get['lang'] ) : null;
+        return $directory !== null && $directory !== $reader ? $directory : null;
     }
 
     /**
@@ -298,7 +299,7 @@ class expHelp
     public static function readingChoices( expHelpLanguage $languages, $reader, array $coverage, array $allowed, array $labels, $currentLocale, $defaultLocale )
     {
         $default = $languages->defaultDirectory();
-        $mapOrder = array_keys( $languages->map() );
+        $mapOrder = $languages->localeOrder();
         $choices = array();
         $translations = array();
         foreach ( $languages->directories() as $directory )

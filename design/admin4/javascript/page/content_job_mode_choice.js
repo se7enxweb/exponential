@@ -3,7 +3,7 @@
  * remembered as the user's preference admin_content_job_mode_<data-op of the fieldset>, saved through window.a4Pref
  * (a4_head.js: a POST to user/preferences/set_and_exit with the form token), and with data-form the
  * choice is sent with that form, which may stand elsewhere on the page. A file of its own, so the page runs under a
- * Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * Content Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  *
  * The file may be loaded more than once; it sets up every choice the page has, each once: those above it now,
  * any further one when the document is read.

@@ -12,7 +12,7 @@
    Every name the view reads is kept (DeleteIDArray[], ActivateButton, RemoveButton); ResendButton and RemoveAllButton are new; every
    template variable of the old page is still set. Works without javascript; the script only adds Select all and the
    selection count. Overrides design/standard/templates/user/unactivated.tpl in the administration designs; the same
-   file is in design/admin and design/admin4. Guide: doc/en/us/guides/roles-and-policies.md *}
+   file is in design/admin and design/admin4. Guide: doc/eng-us/guides/roles-and-policies.md *}
 
 {def $uri = $module.functions.unactivated.uri
      $rows = first_set( $unactivated_rows, array() )

@@ -1,7 +1,7 @@
 <?php
 /**
  * The admin designs use no class that no stylesheet draws any more. The setup pages moved to the shared admin
- * components (.a4-help, .a4-notice, .a4-setup-inline ...; doc/en/us/bc/6.0/admin4-styling.md) and their old exp-note and
+ * components (.a4-help, .a4-notice, .a4-setup-inline ...; doc/eng-us/bc/6.0/admin4-styling.md) and their old exp-note and
  * exp-inline rules went with the inline <style> blocks; a template written for the old markup still used them
  * (the query cache's APCu reserve warning in setup/info.tpl), and its warning showed as plain text.
  *
