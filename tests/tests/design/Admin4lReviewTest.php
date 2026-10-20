@@ -7,6 +7,11 @@
  *          exist and left the generation out); the raw GET SectionID in the cache keys is cast to a number
  *  AL-R2 - the blocks admin_toolbar_right and admin_toolbar_developer draw the toolbars of toolbar.ini as admin4 does
  *  AL-R3 - the tab menu block draws only <li> items: the page wraps the topmenu zone in #a4-navbar-menu > ul
+ *  AL-R7 - the page parts popup menu, debug area and overlay are drawn once, from the footer zone: the zone
+ *          template skips them in every other zone (else #overlay-mask, #ajaxuploader-loader and the debug marker
+ *          appear twice); rendered with a rebuilt layout
+ *  AL-R8 - the zone template includes only admin_* block definitions; rendered with a rebuilt layout
+ *  AL-R9 - the page reads the safety switch through the fetch function admin_layouts_enabled
  *
  * Run: php vendor/bin/phpunit tests/tests/design/Admin4lReviewTest.php
  *
@@ -82,5 +87,93 @@ class Admin4lReviewTest extends PHPUnit\Framework\TestCase
         // the page has the wrapper the items sit in
         $page = self::read( 'design/admin4l/templates/pagelayout.tpl' );
         $this->assertMatchesRegularExpression( '#id="a4-navbar-menu" class="navbar-menu[^>]*>\s*<ul class="navbar-bar">\s*\{\$topmenu_html\}#', $page );
+    }
+
+    /**
+     * Renders the real admin_zone.tpl with a rebuilt layout. The one change to the template: the block includes point
+     * at stub templates in a temporary directory that print "[<identifier>]" (the real blocks need the design
+     * resources). The conditions under test are the template's own.
+     */
+    private function renderZone( array $blocks, $zone, array $params = array() )
+    {
+        $root = dirname( __DIR__, 3 );
+        $dir = $root . '/var/tmp/al_zone_' . uniqid( '', true );
+        mkdir( $dir, 0700, true );
+        $text = self::read( 'design/admin4l/templates/explayouts/admin_zone.tpl' );
+        $this->assertStringContainsString( "'design:explayouts/block/'", $text );
+        file_put_contents( "$dir/zone.tpl", str_replace( "'design:explayouts/block/'", var_export( "file:$dir/", true ), $text ) );
+        $zoneBlocks = array();
+        foreach ( $blocks as $identifier )
+        {
+            file_put_contents( "$dir/$identifier.tpl", "[$identifier]" );
+            $zoneBlocks[] = array( 'parent_id' => 0, 'definition_identifier' => $identifier );
+        }
+        $layout = array( 'zones' => array( array( 'identifier' => $zone, 'blocks' => $zoneBlocks ) ) );
+        $saved = array_key_exists( 'eZTemplateCompilerSettings', $GLOBALS ) ? $GLOBALS['eZTemplateCompilerSettings'] : null;
+        try
+        {
+            $outputs = array();
+            foreach ( array( false, true ) as $compiled )
+            {
+                $GLOBALS['eZTemplateCompilerSettings']['compile'] = $compiled;
+                $GLOBALS['eZTemplateCompilerSettings']['compilation-directory'] = $dir;
+                eZTemplate::resetInstance();
+                $tpl = new eZTemplate();
+                $tpl->autoload();
+                $tpl->setVariable( 'layout', $layout );
+                $tpl->setVariable( 'zone_identifier', $zone );
+                foreach ( $params as $name => $value )
+                    $tpl->setVariable( $name, $value );
+                $outputs[] = preg_replace( '/\s+/', '', (string)$tpl->fetch( "$dir/zone.tpl" ) );
+            }
+            $this->assertSame( $outputs[0], $outputs[1], 'interpreted and compiled agree' );
+            return $outputs[0];
+        }
+        finally
+        {
+            if ( $saved === null )
+                unset( $GLOBALS['eZTemplateCompilerSettings'] );
+            else
+                $GLOBALS['eZTemplateCompilerSettings'] = $saved;
+            eZTemplate::resetInstance();
+            foreach ( new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ), RecursiveIteratorIterator::CHILD_FIRST ) as $f )
+                $f->isDir() ? rmdir( $f->getPathname() ) : unlink( $f->getPathname() );
+            rmdir( $dir );
+        }
+    }
+
+    /** AL-R7 */
+    public function testThePagePartsAreDrawnOnlyFromTheFooterZone()
+    {
+        $parts = array( 'admin_popup_menu', 'admin_debug_area', 'admin_overlay' );
+        $this->assertSame( '[admin_module_result]', $this->renderZone( array_merge( $parts, array( 'admin_module_result' ) ), 'main' ), 'main: the page parts stay out' );
+        $this->assertSame( '', $this->renderZone( $parts, 'left' ), 'left' );
+        $this->assertSame( '[admin_popup_menu][admin_debug_area][admin_overlay]', $this->renderZone( $parts, 'footer' ), 'footer draws them' );
+        $this->assertSame( '[admin_overlay]', $this->renderZone( $parts, 'footer', array( 'only' => array( 'admin_overlay' ) ) ), 'footer with only' );
+        $this->assertSame( '[admin_footer]', $this->renderZone( array_merge( $parts, array( 'admin_footer' ) ), 'footer', array( 'skip' => $parts ) ), 'footer with skip' );
+        // the page asks for them from the footer zone only
+        $page = self::read( 'design/admin4l/templates/pagelayout.tpl' );
+        foreach ( $parts as $block )
+        {
+            $this->assertMatchesRegularExpression( "/zone_identifier='footer' only=array\\( '" . $block . "' \\)/", $page, $block );
+            $this->assertDoesNotMatchRegularExpression( "/zone_identifier='(?!footer')[a-z_]+' only=array\\( '" . $block . "'/", $page, $block );
+        }
+    }
+
+    /** AL-R8 */
+    public function testTheZoneTemplateDrawsOnlyAdminBlocks()
+    {
+        $this->assertSame( '[admin_logo]', $this->renderZone( array( 'not_admin_block', 'admin_logo', 'adminx' ), 'header' ) );
+        $this->assertSame( '', $this->renderZone( array( 'title' ), 'header' ) );
+        foreach ( glob( dirname( __DIR__, 3 ) . '/design/admin4l/templates/explayouts/block/*.tpl' ) as $file )
+            $this->assertStringStartsWith( 'admin_', basename( $file ) );
+    }
+
+    /** AL-R9 */
+    public function testThePageReadsTheSafetySwitchThroughTheFetchFunction()
+    {
+        $page = self::read( 'design/admin4l/templates/pagelayout.tpl' );
+        $this->assertStringContainsString( "{if fetch( 'explayouts', 'admin_layouts_enabled' )}", $page );
+        $this->assertStringNotContainsString( "ezini( 'AdminLayoutSettings', 'Enabled'", $page );
     }
 }

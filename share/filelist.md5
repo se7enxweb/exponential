@@ -1605,7 +1605,7 @@ ea753c9ed114f13cd39c420bfe00a0c0  design/admin4/templates/workflow/exp_list_scri
 b285f624393b5302474eab16c48cab24  design/admin4/templates/workflow/processlist.tpl
 ea9d2f821f900d127eb72e998c8be47c  design/admin4/templates/workflow/view.tpl
 d0360cfda82bd890f2b0368f53a8141f  design/admin4/templates/workflow/workflowlist.tpl
-14afe23eaa9aa8bb6b9302eeb32a2311  design/admin4l/templates/explayouts/admin_zone.tpl
+812792863cd9403360b5240534057425  design/admin4l/templates/explayouts/admin_zone.tpl
 3d0d0e55b78d7ec1a771bee80b897008  design/admin4l/templates/explayouts/block/admin_bookmarks.tpl
 bd8bbeb157adb74c7b3f3d9e0a4a563e  design/admin4l/templates/explayouts/block/admin_breadcrumb.tpl
 f78a198bf9da2ffad2f5ac7a884abf38  design/admin4l/templates/explayouts/block/admin_clear_cache.tpl
@@ -1629,7 +1629,7 @@ f1bb365da04942b2a7c6e659a681a87d  design/admin4l/templates/explayouts/block/admi
 00dc6fc9a64cbb17ffcdd7be6133b9a8  design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl
 435fa478e336ab853226197df0b70fc2  design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
-6de529b8873135665ea6f8dd1644be8a  design/admin4l/templates/pagelayout.tpl
+1cb205f33732058b9b2f7615f827f3a4  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -14852,7 +14852,7 @@ b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
-0f61a66b5e0996561766fc594dec3781  tests/tests/design/Admin4lReviewTest.php
+48f0934cad170c262fb8061786724f64  tests/tests/design/Admin4lReviewTest.php
 1ae5a0d8d8818787dcfc5b08f01fbeb7  tests/tests/design/AdminBaseStylesheetsTest.php
 59ec01ce80314b5d77be3007f4a32b66  tests/tests/design/AdminBrowseCurrentNodeTest.php
 759fe4ff4c2d9fc1985f080528d04c2f  tests/tests/design/AdminCardsTest.php
