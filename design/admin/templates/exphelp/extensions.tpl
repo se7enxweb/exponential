@@ -1,4 +1,4 @@
-{* exphelp/extensions (doc/en/us/features/6.0/help-system.md, "Documentation of the extensions"): the documentation of the
+{* exphelp/extensions (doc/eng-us/features/6.0/help-system.md, "Documentation of the extensions"): the documentation of the
    active extensions. Without an extension: each extension with pages, its overview's title and its number of pages. With
    one (exphelp/extensions/<name>): its pages by folder, opened in the help's viewer, and a search limited to them
    (exphelp/search/(extension)/<name>; exphelp.js searches as you type). Shared classes only (components.css,

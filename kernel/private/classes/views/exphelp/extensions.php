@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/extensions (doc/en/us/features/6.0/help-system.md, "Documentation of the extensions"): the documentation of
+ * exphelp/extensions (doc/eng-us/features/6.0/help-system.md, "Documentation of the extensions"): the documentation of
  * the active extensions in the help.
  *
  *   exphelp/extensions          every extension that has pages: its name, the title of its overview, the number of

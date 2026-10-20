@@ -2,9 +2,9 @@
 /**
  * File containing the expHelpRecordRenderer class.
  *
- * Plain text pages that are lists of records (doc/en/us/release-overview, the release history; doc/branch-overview was one
+ * Plain text pages that are lists of records (doc/eng-us/release-overview, the release history; doc/branch-overview was one
  * until it became Markdown) shown as a structured page instead of one block of text
- * (doc/en/us/features/6.0/help-system.md, "Record pages"). A record is a name line ("3.0-1:", "stable/3.5:", with or
+ * (doc/eng-us/features/6.0/help-system.md, "Record pages"). A record is a name line ("3.0-1:", "stable/3.5:", with or
  * without the colon) followed by "- " field lines: "Key=value" ("Revision=2251", "Merged Revision=1159:1162",
  * "Release url=http://... (2252)") or "Key value" for dates and revisions ("Date 01-Nov-2002", "Release date
  * 29-Sep-2009", "Revision 2454 and 2458"); other field lines are notes. A name line without fields is a section

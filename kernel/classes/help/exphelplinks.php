@@ -1,6 +1,6 @@
 <?php
 /**
- * The link and image resolvers the viewer gives expHelpMarkdownRenderer (doc/en/us/features/6.0/help-system.md):
+ * The link and image resolvers the viewer gives expHelpMarkdownRenderer (doc/eng-us/features/6.0/help-system.md):
  * a relative link to an allowed page becomes its viewer URL, a relative image an asset URL; http(s) links stay
  * (the renderer adds rel="noopener"); everything else (javascript:, data:, a page outside the help, ..) is dropped.
  *
@@ -89,7 +89,7 @@ class expHelpLinks
 
     /**
      * The page or image id a link of a page names. A relative link is resolved against the file the page was read
-     * from (doc/en/us/features/6.0/x.md, or its translation doc/de/...), as GitHub resolves it, and the file's id is
+     * from (doc/eng-us/features/6.0/x.md, or its translation doc/ger-de/...), as GitHub resolves it, and the file's id is
      * taken from the index (expHelpDocumentIndex::idOf(): the language directory and a translated name are taken
      * away, doc/changelogs/x.md is changelogs/x.md). "/doc/..." names a file from the installation root. Anything
      * else falls back to resolvePath() (relative to the id).
@@ -155,7 +155,7 @@ class expHelpLinks
 
     /**
      * A relative path resolved against the directory of the current page id, normalised; null when it leaves the
-     * root. Ids are paths below doc/en/us/ ("features/6.0/x.md"); a leading "/" or "/doc/" means from the doc root.
+     * root. Ids are paths below doc/eng-us/ ("features/6.0/x.md"); a leading "/" or "/doc/" means from the doc root.
      *
      * @param string $path
      * @param string $currentId
@@ -187,7 +187,7 @@ class expHelpLinks
             }
             $parts[] = $segment;
         }
-        // "/doc/<file>": the file's id (doc/en/us/x.md and a translation's doc/de/... are x.md, doc/changelogs/x.md is
+        // "/doc/<file>": the file's id (doc/eng-us/x.md and a translation's doc/ger-de/... are x.md, doc/changelogs/x.md is
         // changelogs/x.md)
         if ( isset( $parts[0] ) && $parts[0] === 'doc' && count( $parts ) > 1 && $path[0] === '/' )
             return class_exists( 'expHelpLanguage' ) ? expHelpLanguage::fromIni()->idOfValue( implode( '/', $parts ) )

@@ -1,7 +1,7 @@
 <?php
 /**
- * Overdue reviews of help maintained as content (doc/en/us/specifications/6.0/help-system.md, phase 7 "a list of
- * outdated topics (review date passed) in the admin dashboard"; doc/en/us/features/6.0/help-content.md, "Overdue
+ * Overdue reviews of help maintained as content (doc/eng-us/specifications/6.0/help-system.md, phase 7 "a list of
+ * outdated topics (review date passed) in the admin dashboard"; doc/eng-us/features/6.0/help-content.md, "Overdue
  * reviews"). A topic is overdue when
  *
  *   - its review date has passed (the validator's rule review-date.past, style guide section 8), whatever its state;

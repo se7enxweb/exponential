@@ -1,6 +1,6 @@
 <?php
 /**
- * The interface strings of help maintained as content (doc/en/us/features/6.0/help-content.md) in every translation
+ * The interface strings of help maintained as content (doc/eng-us/features/6.0/help-content.md) in every translation
  * catalogue that has the context kernel/exphelp, without a database.
  *
  *  HCL-01  every string of the help content templates and headings is in each such catalogue; translated in all but

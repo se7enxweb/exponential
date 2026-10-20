@@ -59,7 +59,7 @@ class expHelpFrontMatterQuotingTest extends PHPUnit\Framework\TestCase
     public function testNoShippedTitleShowsAnEscapeBackslash()
     {
         $root = dirname( __DIR__, 5 );
-        $files = glob( $root . '/doc/en/us/help/advocates/*.md' );
+        $files = glob( $root . '/doc/eng-us/help/advocates/*.md' );
         $this->assertNotEmpty( $files );
         $checked = 0;
         foreach ( $files as $file )

@@ -1,9 +1,9 @@
 <?php
 /**
- * The migration hub of the help and its guides (doc/en/us/install/migration/). No database.
+ * The migration hub of the help and its guides (doc/eng-us/install/migration/). No database.
  *
  *  MH-01  the hub exists, is featured (front matter and settings/exphelp.ini [FeaturedSettings]) and is linked from
- *         the installation book's contents (doc/en/us/install/README.md)
+ *         the installation book's contents (doc/eng-us/install/README.md)
  *  MH-02  every guide of the folder is linked from the hub, and every guide the hub links exists
  *  MH-03  every page has front matter: title = first heading, an audience, category install-upgrade, type install,
  *         a summary; and ends with the documentation license notice
@@ -27,8 +27,8 @@ unset( $helpClass, $helpFile );
 
 class expHelpMigrationHubTest extends PHPUnit\Framework\TestCase
 {
-    const FOLDER = 'doc/en/us/install/migration';
-    const HUB = 'doc/en/us/install/migration/README.md';
+    const FOLDER = 'doc/eng-us/install/migration';
+    const HUB = 'doc/eng-us/install/migration/README.md';
 
     private static function root()
     {
@@ -118,7 +118,7 @@ class expHelpMigrationHubTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( isset( $meta['featured'] ) && ( $meta['featured'] === true || $meta['featured'] === 'true' ), 'featured' );
         $this->assertMatchesRegularExpression( '#^PageList\[\]=install/migration/README\.md\s*$#m',
                                                self::iniSection( 'settings/exphelp.ini', 'FeaturedSettings' ) );
-        $this->assertStringContainsString( '](migration/README.md)', self::read( 'doc/en/us/install/README.md' ) );
+        $this->assertStringContainsString( '](migration/README.md)', self::read( 'doc/eng-us/install/README.md' ) );
     }
 
     /** MH-02 */

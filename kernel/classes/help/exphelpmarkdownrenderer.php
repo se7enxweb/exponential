@@ -3,7 +3,7 @@
  * File containing the expHelpMarkdownRenderer class.
  *
  * Renders the Markdown of the documentation (doc/**.md) to the HTML of the help viewer (exphelp/viewer,
- * doc/en/us/features/6.0/help-system.md): CommonMark blocks (ATX and setext headings, paragraphs, block quotes, ordered and
+ * doc/eng-us/features/6.0/help-system.md): CommonMark blocks (ATX and setext headings, paragraphs, block quotes, ordered and
  * bullet lists, fenced and indented code, thematic breaks), the GitHub extensions the documentation uses (tables with
  * alignment, task lists, strikethrough, footnotes, autolinked URLs, alerts "> [!NOTE]"), callouts written as
  * "> **Note:** ..." or ":::tip Title ... :::", heading ids (GitHub's slugs, so links written for GitHub land on the
@@ -31,9 +31,9 @@
  *   translate      callable( string $text ): string  the interface words (Note, Warning, Table ...); default
  *                  ezpI18n::tr( 'kernel/exphelp', ... ) when the kernel is loaded, else the English text.
  *   id_prefix      string prefixed to every id the renderer makes (default '').
- *   source_path    the file the page was read from, relative to the installation root (doc/de/hilfe/suchen.md); a
+ *   source_path    the file the page was read from, relative to the installation root (doc/ger-de/hilfe/suchen.md); a
  *                  relative link or image must then stay inside the installation from that file, as GitHub resolves
- *                  it (a translation links ../../en/us/help/images/x.webp), instead of inside the documentation
+ *                  it (a translation links ../../eng-us/help/images/x.webp), instead of inside the documentation
  *                  root from the page id. The resolvers still decide which files may be shown. Default '': the id.
  *
  * The markup (styled by help.css; the class contract with the viewer and exphelp.js): div.a4-help-body around the

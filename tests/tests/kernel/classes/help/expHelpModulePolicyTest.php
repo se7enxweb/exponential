@@ -1,6 +1,6 @@
 <?php
 /**
- * The exphelp module's access (doc/en/us/features/6.0/help-system.md): every view needs the policy function read, the
+ * The exphelp module's access (doc/eng-us/features/6.0/help-system.md): every view needs the policy function read, the
  * module is registered, and Anonymous is never given it - not by AnonymousAccessList, not by PolicyOmitList, not by
  * the clean install data and not by an update script. Read from the files; no database.
  *
@@ -48,7 +48,7 @@ class expHelpModulePolicyTest extends PHPUnit\Framework\TestCase
         foreach ( $m['views'] as $name => $view )
         {
             $this->assertArrayHasKey( 'functions', $view, $name . ' must name its policy function' );
-            // the context help JSON of help maintained as content has its own function (doc/en/us/features/6.0/help-content.md)
+            // the context help JSON of help maintained as content has its own function (doc/eng-us/features/6.0/help-content.md)
             $expected = $name === 'context' ? array( 'context' ) : array( 'read' );
             $this->assertSame( $expected, array_values( (array)$view['functions'] ), $name . ' needs exphelp/' . $expected[0] );
         }

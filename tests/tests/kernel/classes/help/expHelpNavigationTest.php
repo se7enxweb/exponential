@@ -1,6 +1,6 @@
 <?php
 /**
- * The navigation tree of the help (expHelpNavigation, doc/en/us/features/6.0/help-system.md, "Viewer"), without a database.
+ * The navigation tree of the help (expHelpNavigation, doc/eng-us/features/6.0/help-system.md, "Viewer"), without a database.
  *
  *  HN-01  every page of the tree is linked once, at any depth, nothing capped; folders carry their page count
  *  HN-02  the folders on the way to the current page are open, the others closed; the current page has aria-current

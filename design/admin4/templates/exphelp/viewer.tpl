@@ -1,4 +1,4 @@
-{* exphelp/viewer (doc/en/us/features/6.0/help-system.md): one help page. Wide windows show three columns: the tree of
+{* exphelp/viewer (doc/eng-us/features/6.0/help-system.md): one help page. Wide windows show three columns: the tree of
    every help page on the left, the page in the middle (title, meta, the rendered document, previous/next) and its
    table of contents on the right, which stays in view. Narrower windows drop the side contents for a folded one above
    the page, and on phones the tree moves below the page (it comes after the page in the source, so the page is read
@@ -16,7 +16,7 @@
    help_next (documents or null), help_edit_url (GitHub, may be empty), help_category (id, name, icon, or not set),
    help_i18n_json, help_page_lang, help_page_dir, help_fallback, help_reader_language, help_page_language; help_reading
    (the "Reading in" control, parts/reading_language.tpl), help_original_url, help_original_language, help_original_view
-   (the English original of a page for a reader of another language: ?lang=en-us).
+   (the English original of a page for a reader of another language: ?lang=eng-us).
 
    The same file is in design/admin and design/admin4. *}
 {def $help_title = cond( and( is_set( $help_page.title ), $help_page.title|ne( '' ) ), $help_page.title, $help_page.id )

@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/context/<help_id> and exphelp/context/manual/<remote_id> (doc/en/us/features/6.0/help-content.md, "Context help
+ * exphelp/context/<help_id> and exphelp/context/manual/<remote_id> (doc/eng-us/features/6.0/help-content.md, "Context help
  * by help_id"): a help topic, or a manual's table of contents, as JSON for other clients (a mobile app, a JavaScript
  * front end). Markdown body, ETag (If-None-Match answers 304). Only what the user may see: a Released topic they may
  * read (content/read with its section and state), or a preview for those who may edit it. Anything else, unknown or
