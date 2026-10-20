@@ -28,6 +28,8 @@ technical glossary is [the glossary](../../glossary.md); the product and organiz
 | Exponential 6, 6.0.x | The current major line, since 1 January 2024 |
 | 7x | The company that leads Exponential; formerly Brookins Consulting |
 | se7enxweb | 7x's GitHub account and Composer vendor name |
+| `sevenx` | 7x's official public PHP code prefix; "7x" cannot be one, because a code name cannot start with a digit ([Naming prefixes](../../standards/naming-prefixes-sevenx-and-exp.md)) |
+| `exp` | The code prefix 7x uses with intent to build the Exponential brand and to assign an extension or solution to the Exponential project and the Exponential Foundation |
 | Exponential Foundation | The nonprofit that operates and funds the project |
 | Velocity | Exponential's own PHP web and application server |
 | Exponential Intelligence (expai) | The writing assistant that writes drafts |

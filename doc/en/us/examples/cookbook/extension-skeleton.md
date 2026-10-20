@@ -26,7 +26,8 @@ mkdir -p extension/expexample/settings \
 ```
 
 The folder name is the extension's name: lower case letters, digits and underscores. New code in this project starts
-with `exp`.
+with `exp`; 7x's own extensions use `sevenx` or `exp`, and your own extension uses your own prefix
+([Naming prefixes: sevenx and exp](../../standards/naming-prefixes-sevenx-and-exp.md)).
 
 ## 2. ezinfo.php
 

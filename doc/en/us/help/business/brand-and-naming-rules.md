@@ -146,11 +146,17 @@ Never "correct" these in code, documentation of code, or technical marketing:
 
 ### Names for new things
 
-The help does not set a written rule for naming new modules or classes. What you can observe in the sources: new
-products and packages of the 6.0.x line use `Exponential` or `exp` (Exponential Velocity, Exponential Intelligence
-as `expai`, Exponential Layouts as `explayouts`, `expqueue`, `exp_adminui`, console commands with the `exp:` prefix,
-see the [Glossary](../../glossary.md)), and 7x's own extensions use `sevenx_` (`sevenx_authentication_2fa`,
-`sevenx_dse`). Follow that pattern and ask the maintainers when in doubt.
+The written rule is [Naming prefixes: sevenx and exp](../../standards/naming-prefixes-sevenx-and-exp.md):
+
+- `sevenx` is 7x's official public PHP code prefix. A class or identifier cannot start with a digit (among other
+  technical reasons), so "7x" cannot be a prefix (`sevenx_authentication_2fa`, `sevenx_dse`).
+- Extensions and PHP classes from 7x use `sevenx` or `exp`, as 7x needs.
+- 7x uses `exp` strategically, with intent, to build the Exponential brand and to assign ownership of an extension or
+  solution to the Exponential project and the Exponential Foundation (Exponential Intelligence as `expai`,
+  Exponential Layouts as `explayouts`, `expqueue`, `exp_adminui`, console commands with the `exp:` prefix, see the
+  [Glossary](../../glossary.md)).
+
+Your own extensions use your own prefix. Existing `eZ` identifiers are never renamed.
 
 ## Other companies and products
 

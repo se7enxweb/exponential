@@ -43,8 +43,10 @@ The extension name and the design name may differ. `cjw_themes_jumper` carries t
 - **Keep the product name out of your theme's name.** A theme is not "Exponential Harbor"; it is "Harbor, a theme for
   Exponential". See [Names and trademarks](../sales/names-and-trademarks.md) and
   [Brand and naming rules](../../business/brand-and-naming-rules.md).
-- **New code uses the exp prefix where it names an Exponential concept**, and never renames existing kernel
-  identifiers such as `eZINI` or `eZTemplate`.
+- **`sevenx` and `exp` are 7x's prefixes.** 7x's own themes are `sevenx_themes_*` because `sevenx` is 7x's official
+  public PHP code prefix (a name cannot start with a digit, so "7x" cannot be one); 7x uses `exp` with intent for work
+  it assigns to the Exponential project and the Exponential Foundation. Your theme uses your own prefix, and never
+  renames existing kernel identifiers such as `eZINI` or `eZTemplate`. See [Naming prefixes: sevenx and exp](../../../standards/naming-prefixes-sevenx-and-exp.md).
 - **Search before you choose**: Packagist, GitHub and
   [projects.exponential.earth](https://projects.exponential.earth/) (browse by type).
 

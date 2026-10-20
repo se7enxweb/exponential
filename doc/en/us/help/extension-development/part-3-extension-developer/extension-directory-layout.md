@@ -89,8 +89,10 @@ done
 
 - Lower case letters, digits and underscores: `mysite_hello`, not `MySite-Hello`.
 - Unique, and yours: a prefix of your organization or project (`mysite_`, `acme_`) avoids collisions with every other
-  extension. New code in this project uses `exp`; do not start new names with `ez`, which belongs to the kernel's
-  historical classes.
+  extension. Extensions from 7x use `sevenx` (7x's official public PHP code prefix; "7x" cannot be one, since a name
+  cannot start with a digit) or `exp` (used with intent for work assigned to the Exponential project and the
+  Exponential Foundation): see [Naming prefixes: sevenx and exp](../../../standards/naming-prefixes-sevenx-and-exp.md).
+  Do not start new names with `ez`, which belongs to the kernel's historical classes.
 - The folder name is used everywhere (settings, Composer's `extra`, class names such as `mysite_helloInfo`), so choose
   it once.
 

@@ -50,7 +50,10 @@ companies ([Not associated with eZ Systems or Ibexa](not-associated-with-ez-syst
 
 You will see `eZ` in the code: `eZContentObject`, `eZINI`, `bin/php/ezcache.php`, packages such as `ezwebin`. These are
 real identifiers and stay as they are. When you quote code, quote it exactly; when you name the product, write
-Exponential. Package names are written in code style and lowercase: `expai`, `explayouts`.
+Exponential. Package names are written in code style and lowercase: `expai`, `explayouts`. In code, 7x is written
+`sevenx` (its official public PHP code prefix, because a code name cannot start with a digit) or `exp`, the prefix 7x
+uses with intent to assign work to the Exponential project and the Exponential Foundation
+([Naming prefixes](../../standards/naming-prefixes-sevenx-and-exp.md)). In running text it is always 7x.
 
 ## Other companies
 

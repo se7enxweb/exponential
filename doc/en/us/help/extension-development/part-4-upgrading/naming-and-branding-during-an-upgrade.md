@@ -27,7 +27,7 @@ Rename what **people read**; never rename what **code or settings refer to**.
 | INI file names, sections and settings | no | sites have overrides for them |
 | Database tables and columns | no | renaming needs an upgrade script and breaks other readers |
 | Translation contexts (`'extension/myoldext'`) | no | existing translations are keyed by them |
-| New classes, files, operators, settings you add | use `exp` | the convention for new code |
+| New classes, files, operators, settings you add | use `exp` for Exponential project code, your own prefix otherwise | the convention for new code; see [Naming prefixes: sevenx and exp](../../../standards/naming-prefixes-sevenx-and-exp.md) |
 
 ## Product names in texts
 
@@ -56,7 +56,8 @@ header that names the old product as the work it was written for stays as writte
 ## The ez prefix and new code
 
 Old extensions name everything with `ez` because the kernel did. In Exponential 6 the convention for **new** code is
-`exp`: a new module, class, template operator or setting is `exp...`, never `ez...`. Existing names keep their
+`exp` (or, for 7x's own extensions, `sevenx`): a new module, class, template operator or setting is `exp...`, never
+`ez...`; your own extension uses your own prefix. The reasons are in [Naming prefixes: sevenx and exp](../../../standards/naming-prefixes-sevenx-and-exp.md). Existing names keep their
 prefix: renaming `ezmyoperator` to `expmyoperator` breaks every template written for it.
 
 If you must offer a new name (because the old one collides, or is misleading), add the new one and keep the old one
@@ -96,7 +97,7 @@ The ethics of this are a chapter of their own: [Rebranding ethically](../part-5-
 
 - [ ] Interface texts, README and metadata say "Exponential".
 - [ ] Folder name, class names, operator names, settings, tables and translation contexts are unchanged.
-- [ ] New code you added uses `exp`.
+- [ ] New code you added uses `exp` (project code) or your own prefix.
 - [ ] Any new name for an old one keeps the old one working, with a deprecation note.
 - [ ] The original authors are named in the copyright lines, `composer.json` and `ezinfo.php`.
 

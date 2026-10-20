@@ -116,6 +116,8 @@ as Brookins Consulting".
 | **se7enxweb** | The GitHub account and the Composer vendor name of every package 7x publishes (`se7enxweb/exponential`, `se7enxweb/expai` ...). | [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) |
 | **Exponential** | The product, formerly eZ Publish. Renamed in the repository on 12 August 2025 (`837c7b835d` and the commits around it). | [August 2025](../history/2025/2025-08.md), [The product is called Exponential](../features/6.0/rebranding-to-exponential.md) |
 | **exponential.earth** | The website of the open source project, with documentation, forums and downloads. | <https://exponential.earth/> |
+| **`sevenx`** | 7x's official public PHP code prefix (`sevenx_dse`, `sevenx_themes_media`). "7x" cannot be a prefix: a class or identifier cannot start with a digit. | [Naming prefixes: sevenx and exp](../standards/naming-prefixes-sevenx-and-exp.md) |
+| **`exp`** | The code prefix 7x uses strategically, with intent, to build the Exponential brand and to assign ownership of an extension or solution to the Exponential project and the Exponential Foundation (`explayouts`, `expai`, `expqueue`). Extensions and classes from 7x use `sevenx` or `exp`, as 7x needs. | [Naming prefixes: sevenx and exp](../standards/naming-prefixes-sevenx-and-exp.md) |
 
 ### From Brookins Consulting to 7x, in three stages
 

@@ -11,7 +11,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 ## In short
 
 - One line per term; follow the link for the how-to, the settings and the examples.
-- Names that start with `exp` or `sevenx` are Exponential extensions or classes; names that start with `ez` are older extensions and kernel identifiers that keep their names.
+- Names that start with `exp` or `sevenx` are extensions or classes from 7x (`exp` marks work 7x assigns to the Exponential project and the Exponential Foundation); names that start with `ez` are older extensions and kernel identifiers that keep their names. [Naming prefixes: sevenx and exp](standards/naming-prefixes-sevenx-and-exp.md).
 - Commands are shown as you type them in the installation root: `./console exp:<name>` is the same program as `php bin/php/<name>.php`.
 
 ## Contents
@@ -84,6 +84,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **engine (web server engine)**: the program that serves the site: `php` (built-in server), `qbix` (**Velocity**) or `frankenphp`. [Velocity engines](bc/6.0/velocity-engines.md).
 - **engine.phar**: the archive of `kernel/`, `lib/` and `autoload/` that Velocity can load. [Engine archive](bc/6.0/phar.md).
 - **Exp Debug bar**: a bar on pages that shows queries, time and template information to administrators. [Exp Debug bar](features/6.0/exp-debug-bar.md).
+- **exp (prefix)**: a code prefix 7x uses strategically, with intent, to build the Exponential brand and to assign ownership of an extension or solution to the Exponential project and the Exponential Foundation (`explayouts`, `expai`, `expHelpAudience`); new kernel code uses it. [Naming prefixes: sevenx and exp](standards/naming-prefixes-sevenx-and-exp.md).
 - **exp:** the prefix of the console commands that run `bin/php/*.php` scripts. [Console](bc/6.0/console.md).
 - **exp:ini**: the command that reads and writes **INI** settings in every scope. [exp:ini](features/6.0/exp-ini-command.md).
 - **exp_enhanced_link**: the extension that provides the enhanced link field type. [exp_enhanced_link](features/6.0/extensions/exp_enhanced_link.md).
@@ -230,6 +231,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **security defaults**: the settings that make a default installation safe without extra work (security headers, session cookie, login, served files, caching). [Security defaults](specifications/6.0/security-defaults-2026-09.md), [datatype and input hardening](specifications/6.0/datatype-input-hardening.md).
 - **seed data**: the tables and content a new installation starts with. [Installer logs and seed data](specifications/6.0/installer-logs-and-seed-data.md).
 - **setup wizard**: the browser installer. [Setup wizard](features/6.0/setup-wizard-and-editor-siteaccess.md).
+- **sevenx**: 7x's official public PHP code prefix (`sevenx_dse`, `sevenx_valkey_cache`). "7x" itself cannot be a prefix because a class or identifier cannot start with a digit; extensions and classes from 7x use `sevenx` or `exp`, as 7x needs. **7x** is the company that leads Exponential. [Naming prefixes: sevenx and exp](standards/naming-prefixes-sevenx-and-exp.md).
 - **shared layout**: a **layout** that exists to be borrowed: a zone of another layout is linked to one of its zones and renders its blocks, so a header or footer is built once. [Shared layouts and linked zones](bc/6.0/LAYOUTS.md#shared-layouts-and-linked-zones).
 - **site package**: the content and design set installed at setup. [Clean install defaults](features/6.0/clean-install-defaults.md).
 - **siteaccess**: one way of reaching the site (by URL, host or port) with its own settings and design, such as `site` and `admin`. [Getting started](guides/getting-started.md), [Multi-site INI overrides](features/6.0/multi-site-ini-overrides.md).
