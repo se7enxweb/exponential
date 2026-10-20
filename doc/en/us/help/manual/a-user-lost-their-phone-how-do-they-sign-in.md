@@ -39,5 +39,6 @@ the request really comes from the user, for example by phone.
 
 - [How do I turn on two-step sign-in for my account?](how-do-i-turn-on-two-step-sign-in.md)
 - [Two-step sign-in](../../guides/two-factor-login.md)
+- [Change the administrator password: two-step sign-in and a lost phone](../change-the-admin-password.md#two-step-sign-in-and-a-lost-phone)
 - [Admin accounts and access](../customers/healthy/admin-accounts-and-access.md)
 - [User manual](README.md)

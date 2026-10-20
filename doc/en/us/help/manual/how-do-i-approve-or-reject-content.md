@@ -28,8 +28,6 @@ Users or groups named as approvers in the site's approval workflow. Only an appr
 5. Click **Approve** to publish it, or **Deny** to send it back. Confirm the question.
    The item is closed. The author sees your decision and comment.
 
-![An approval item in Collaboration with Preview, the comment box and the buttons Approve and Deny](images/collaboration-approval.webp)
-
 ## What can go wrong
 
 - **"Only an approver can approve or deny this item."** You take part in the item but are not its approver.
