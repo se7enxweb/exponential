@@ -14229,6 +14229,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>Help center</source>
         <translation>Centrum auxilii</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Modus demonstrationis</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Haec institutio demonstratio publica est: quivis tesseram administratoris eius scire potest, et tesserae administratorum mutari aut restitui non possunt. Nihil privatum hic inscribe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -50631,6 +50639,14 @@ Plura vide in pagina postulatorum.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Haec tessera nota aut nimis vulgaris est, quam quivis coniicere possit. Aliam elige.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Modus demonstrationis</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>Variabilis ambitus EXP_DEMO_MODE=1 hanc institutionem demonstrationem publicam notat: tessera administratoris vulgo nota accipitur, et tesserae administratorum postea mutari aut restitui non possunt. Numquam modum demonstrationis in situ productionis adhibe.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -73229,6 +73245,13 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>No locale is of this kind.</source>
         <translation>Nulla localizatio huius generis est.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Haec institutio demonstratio publica est: tesserae administratorum mutari aut restitui non possunt.</translation>
     </message>
 </context>
 </TS>

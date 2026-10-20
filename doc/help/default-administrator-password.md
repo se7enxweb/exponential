@@ -153,8 +153,10 @@ For developers: the package installer API (`eZSiteInstaller::updateContentObject
 creates through an install script a random login and the password `publish`. No shipped package uses it for users; a
 package of your own that does should set a real password afterwards.
 
-A public demonstration site may publish a sign-in for its visitors. That is the demo's own choice, made after the
-installation; such a password must never be reused on a real site.
+A public demonstration site may publish a sign-in for its visitors. Such a site runs with the environment variable
+`EXP_DEMO_MODE=1` ([Demo mode](demo-mode.md)): the installers then accept the published password even though it is
+well-known (the length rule stays), and nobody can change or reset an administrator password while the variable is
+set. Such a password must never be reused on a real site, and the variable must never be set for one.
 
 ## After the first sign-in
 

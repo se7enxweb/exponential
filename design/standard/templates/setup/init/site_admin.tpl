@@ -57,6 +57,14 @@
     </blockquote>
 {/if}
 
+{if first_set( $demo_mode, false() )}
+    <blockquote class="note">
+        <h2>{"Demo mode"|i18n("design/standard/setup/init")}</h2>
+        <p>
+            {"The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site."|i18n("design/standard/setup/init")}
+        </p>
+    </blockquote>
+{/if}
 
 <fieldset>
 <legend>{"Administrator settings"|i18n("design/standard/setup/init")}:</legend>

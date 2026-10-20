@@ -14226,6 +14226,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Help center</source>
         <translation>Центр довідки</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Демонстраційний режим</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Ця інсталяція є публічною демонстрацією: будь-хто може знати її пароль адміністратора, а паролі адміністраторів не можна змінити або скинути. Не вводьте тут нічого приватного.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -50628,6 +50636,14 @@ See the requirements page for more information.</source>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Цей пароль відомий або надто поширений, тож будь-хто може його вгадати. Оберіть інший.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Демонстраційний режим</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>Змінна середовища EXP_DEMO_MODE=1 позначає цю інсталяцію як публічну демонстрацію: приймається загальновідомий пароль адміністратора, а паролі адміністраторів згодом не можна буде змінити або скинути. Ніколи не використовуйте демонстраційний режим для робочого сайту.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -73214,6 +73230,13 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>No locale is of this kind.</source>
         <translation>Немає локалей цього виду.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Ця інсталяція є публічною демонстрацією: паролі адміністраторів не можна змінити або скинути.</translation>
     </message>
 </context>
 </TS>

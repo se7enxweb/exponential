@@ -50,6 +50,9 @@
 {/foreach}
         </ul>
     </div>
+{elseif first_set( $demo_mode_locked, false() )}
+    {* demo mode (EXP_DEMO_MODE=1): an administrator's password cannot be changed *}
+    <div class="a4-notice is-warn" role="status"><p>{$demo_mode_text|wash}</p></div>
 {/if}
 
 <form name="Password" class="a4pw-card" method="post" action={concat( $module.functions.password.uri, '/', $userID )|ezurl} novalidate

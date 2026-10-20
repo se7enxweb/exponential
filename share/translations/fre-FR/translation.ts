@@ -14697,6 +14697,14 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <source>Help center</source>
         <translation>Centre d&apos;aide</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Mode démonstration</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Cette installation est une démonstration publique : n'importe qui peut connaître son mot de passe administrateur, et les mots de passe des administrateurs ne peuvent être ni modifiés ni réinitialisés. Ne saisissez rien de privé ici.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -43860,6 +43868,14 @@ Consultez la page des prérequis pour plus d&apos;informations.</translation>
     <message>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Ce mot de passe est connu ou trop courant : n'importe qui pourrait le deviner. Choisissez-en un autre.</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Mode démonstration</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>La variable d'environnement EXP_DEMO_MODE=1 fait de cette installation une démonstration publique : un mot de passe administrateur bien connu est accepté, et les mots de passe des administrateurs ne pourront plus être modifiés ni réinitialisés. N'utilisez jamais le mode démonstration pour un site de production.</translation>
     </message>
 </context>
 <context>
@@ -74624,6 +74640,13 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>No locale is of this kind.</source>
         <translation>Aucune locale de ce type.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Cette installation est une démonstration publique : les mots de passe des administrateurs ne peuvent être ni modifiés ni réinitialisés.</translation>
     </message>
 </context>
 </TS>

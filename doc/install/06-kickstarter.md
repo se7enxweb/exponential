@@ -438,6 +438,12 @@ and writes `var/log/initial-admin-password` with mode `0600`. Log in, change the
 the same rules as `exp:install` ([chapter 7](07-console-install.md)); before 6.0.15 a short password from
 `kickstart.ini` was installed as it was.
 
+**Public demos only:** with the environment variable `EXP_DEMO_MODE=1` (`EXP_DEMO_MODE=1 ./console exp:kickstarter
+run`), a well-known password is installed as it is, so a public demo gets the password it publishes; an empty or
+short one is still replaced. The run's child process inherits the variable. The site must keep the variable for its
+PHP afterwards, or its administrator password can be changed again: [Demo mode](../bc/6.0/demo-mode.md). Never set it
+for a real site.
+
 **`[security]`**
 
 | Key | Type | Default | Effect |

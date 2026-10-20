@@ -14485,6 +14485,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Help center</source>
         <translation>Help center</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demo mode</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -51650,6 +51658,14 @@ See the requirements page for more information.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>This password is well-known or too common, so anyone could guess it. Choose another one.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demo mode</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -73290,6 +73306,13 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>This installation is a public demo: the passwords of administrators cannot be changed or reset.</translation>
     </message>
 </context>
 </TS>

@@ -524,6 +524,11 @@ site is secure and has proper name and email set.", then "Administrator settings
 In the browser wizard you choose the password yourself and an empty one is refused. (The automatic replacement of an
 empty or well-known password applies to `kickstart.ini`, [chapter 6](06-kickstarter.md#64-kickstartini-reference).)
 
+**Public demos only:** when the web server's PHP has the environment variable `EXP_DEMO_MODE=1` (demo mode, since
+6.0.15), the page says so in a note, and a well-known password is accepted, so a public demo can install the password
+it publishes; the empty and length checks stay. After the installation nobody can change or reset an administrator
+password while the variable is set. Never set it for a real site: [Demo mode](../bc/6.0/demo-mode.md).
+
 **Written.** The administrator's e-mail becomes `[MailSettings] AdminEmail`.
 
 ### 5.3.13 Site security

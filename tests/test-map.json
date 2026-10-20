@@ -19,7 +19,8 @@
       "tests/tests/design/TranslationFilesValidTest.php",
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php",
-      "tests/tests/kernel/classes/help/expHelpContentsPageTest.php"
+      "tests/tests/kernel/classes/help/expHelpContentsPageTest.php",
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],
     "*.php": [
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
@@ -771,7 +772,8 @@
       "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
     ],
     "kernel/user/ezuseroperationcollection.php": [
-      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
+      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php",
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],
     "kernel/user/ezuserfunctioncollection.php": [
       "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
@@ -1221,7 +1223,8 @@
     ],
     "kernel/classes/audit/expaudittaxonomy.php": [
       "tests/tests/kernel/classes/audit/expAuditRecordTest.php",
-      "tests/tests/kernel/classes/audit/expAuditHookTest.php"
+      "tests/tests/kernel/classes/audit/expAuditHookTest.php",
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],
     "kernel/classes/uiswitch/expuiswitchdesignprovider.php": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php"
@@ -1258,7 +1261,8 @@
     ],
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
-      "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+      "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php",
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],
     "kernel/classes/user/exp*": [
       "tests/tests/kernel/classes/user/expUserAccountStatusTest.php",
@@ -1350,7 +1354,8 @@
     ],
     "design/admin4l/templates/pagelayout.tpl": [
       "tests/tests/design/Admin4lReviewTest.php",
-      "tests/tests/design/AdminHeaderTabOrderTest.php"
+      "tests/tests/design/AdminHeaderTabOrderTest.php",
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],
     "design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl": [
       "tests/tests/design/Admin4lReviewTest.php"
@@ -1502,10 +1507,12 @@
       "tests/tests/design/AdminStoredValueEscapingTest.php"
     ],
     "design/admin/templates/pagelayout.tpl": [
-      "tests/tests/design/AdminStoredValueEscapingTest.php"
+      "tests/tests/design/AdminStoredValueEscapingTest.php",
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],
     "design/admin4/templates/pagelayout.tpl": [
-      "tests/tests/design/AdminStoredValueEscapingTest.php"
+      "tests/tests/design/AdminStoredValueEscapingTest.php",
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],
     "design/admin/templates/visual/templatecreate.tpl": [
       "tests/tests/design/AdminStoredValueEscapingTest.php"
@@ -1881,6 +1888,67 @@
     ],
     "kernel/private/classes/commands/exphelpexamples.php": [
       "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php"
+    ],
+    "kernel/classes/expdemomode.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/common/expdemomodeoperator.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/common/eztemplateautoload.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/classes/datatypes/ezuser/ezuser.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/classes/datatypes/ezuser/ezusertype.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/private/classes/views/user/password.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/private/classes/views/user/forgotpassword.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/private/classes/commands/resetuserpassword.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/private/classes/ezpkernelweb.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/classes/ezscript.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "extension/expservices/classes/users/expusersbase.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "extension/expservices/classes/users/expaccountservices.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "design/admin/templates/parts/exp_demo_mode_banner.tpl": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "design/admin4/templates/parts/exp_demo_mode_banner.tpl": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "design/admin/templates/user/password.tpl": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "design/admin4/templates/user/password.tpl": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "design/standard/templates/user/password.tpl": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "design/standard/templates/user/forgotpassword.tpl": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "design/standard/templates/setup/init/site_admin.tpl": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+    ],
+    "kernel/setup/steps/ezstep_site_admin.php": [
+      "tests/tests/kernel/classes/user/expDemoModeTest.php",
+      "tests/tests/kernel/classes/user/expWeakPasswordListTest.php"
     ]
   },
   "generated": {

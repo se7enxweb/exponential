@@ -349,6 +349,13 @@ class eZUserOperationCollection
     {
         $user = eZUser::fetch( $userID );
 
+        // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): an administrator's password is not changed
+        if ( $user instanceof eZUser && class_exists( 'expDemoMode' ) && expDemoMode::protectsPassword( $user ) )
+        {
+            expDemoMode::refused( $user, 'user/password operation' );
+            return array( 'status' => false, 'reason' => 'demo_mode' );
+        }
+
         if ( $user instanceof eZUser )
         {
             $login   = $user->attribute( 'login' );
@@ -405,6 +412,13 @@ class eZUserOperationCollection
     static public function forgotpassword( $userID, $passwordHash, $time )
     {
         $user = eZUser::fetch( $userID );
+
+        // Demo mode (EXP_DEMO_MODE=1): no reset key for an administrator
+        if ( $user instanceof eZUser && class_exists( 'expDemoMode' ) && expDemoMode::protectsPassword( $user ) )
+        {
+            expDemoMode::refused( $user, 'user/forgotpassword operation', 'access.user.password.reset.failed' );
+            return array( 'status' => false, 'reason' => 'demo_mode' );
+        }
 
         if ( $user instanceof eZUser )
         {

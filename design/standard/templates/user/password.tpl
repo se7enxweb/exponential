@@ -44,6 +44,9 @@
         {/foreach}
         </ul>
     </div>
+{elseif first_set( $demo_mode_locked, false() )}
+    {* demo mode (EXP_DEMO_MODE=1): an administrator's password cannot be changed *}
+    <div class="exp-pw-notice exp-pw-summary" role="status"><p>{$demo_mode_text|wash}</p></div>
 {/if}
     <p class="exp-pw-who">{'Signed in as %1.'|i18n( 'design/standard/user/password', '', array( $userAccount.login|wash ) )}</p>
 

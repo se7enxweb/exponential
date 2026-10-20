@@ -70,8 +70,16 @@ class Password extends \Exponential\Runnable\ModuleView
         $sessionsEnded = null;
         $otherSessionsSignedOut = false;
         $notificationSent = false;
+        // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): an administrator's password cannot be changed
+        $demoLocked = class_exists( 'expDemoMode' ) && \expDemoMode::protectsPassword( $user );
 
-        if ( $http->hasPostVariable( "OKButton" ) )
+        if ( $demoLocked && $http->hasPostVariable( "OKButton" ) )
+        {
+            $formErrors[] = \expDemoMode::refusalText();
+            $message = true;
+            \expDemoMode::refused( $user, 'user/password' );
+        }
+        else if ( $http->hasPostVariable( "OKButton" ) )
         {
             if ( $http->hasPostVariable( "oldPassword" ) )
             {
@@ -200,6 +208,8 @@ class Password extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "sessions_ended", $sessionsEnded );
         $tpl->setVariable( "other_sessions_signed_out", $otherSessionsSignedOut );
         $tpl->setVariable( "notification_sent", $notificationSent );
+        $tpl->setVariable( "demo_mode_locked", $demoLocked );
+        $tpl->setVariable( "demo_mode_text", $demoLocked ? \expDemoMode::refusalText() : '' );
         $tpl->setVariable( "redirect_uri", (string)$redirectionURI );
         $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module, self::FORM_RETURN_NAMES ) );
         $tpl->setVariable( "password_js_config", $jsConfig );

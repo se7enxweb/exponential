@@ -14226,6 +14226,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Help center</source>
         <translation>مركز المساعدة</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>وضع العرض التوضيحي</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>هذا التثبيت عرض توضيحي عام: قد يعرف أي شخص كلمة مرور المسؤول، ولا يمكن تغيير كلمات مرور المسؤولين أو إعادة تعيينها. لا تُدخل هنا أي شيء خاص.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -50660,6 +50668,14 @@ See the requirements page for more information.</source>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>كلمة المرور هذه معروفة أو شائعة جدًا، ويمكن لأي شخص تخمينها. اختر كلمة أخرى.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>وضع العرض التوضيحي</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>يحدد متغير البيئة EXP_DEMO_MODE=1 هذا التثبيت كعرض توضيحي عام: تُقبل كلمة مرور مسؤول معروفة، ولا يمكن تغيير كلمات مرور المسؤولين أو إعادة تعيينها لاحقًا. لا تستخدم وضع العرض التوضيحي أبدًا لموقع إنتاج.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -73258,6 +73274,13 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>No locale is of this kind.</source>
         <translation>لا توجد إعدادات محلية من هذا النوع.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>هذا التثبيت عرض توضيحي عام: لا يمكن تغيير كلمات مرور المسؤولين أو إعادة تعيينها.</translation>
     </message>
 </context>
 </TS>

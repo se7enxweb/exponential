@@ -14229,6 +14229,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Help center</source>
         <translation>QaH botlh</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>ghojmoHmeH lo'</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>ghojmoHmeH Daq 'oH Daqvam'e': loHwI' mu' pegh Sovlaw' Hoch, 'ej loHwI' mu'mey pegh choHlaHbe' 'ej taghqa'laHbe'. naDev pegh yIghItlhQo'.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -50631,6 +50639,14 @@ latlh De&apos; DaneHchugh, poQghachmey nav yIlegh.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Qagh! pegh mu' vam Sovlu'; Hoch Sovlaw'. latlh yIwIv.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>ghojmoHmeH lo'</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>EXP_DEMO_MODE=1 Dotlh mu' ghojmoHmeH Daq 'oHmoH Daqvam: loHwI' mu' pegh Sovbogh Hoch laj, 'ej tugh loHwI' mu'mey pegh choHlaHbe' 'ej taghqa'laHbe'. Qapmeh Daq ghojmoHmeH lo' yIlo'Qo'.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -73229,6 +73245,13 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>No locale is of this kind.</source>
         <translation>Hol Sep Segh vam tu'lu'be'.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>ghojmoHmeH Daq 'oH Daqvam'e': loHwI' mu'mey pegh choHlaHbe' 'ej taghqa'laHbe'.</translation>
     </message>
 </context>
 </TS>

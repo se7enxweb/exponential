@@ -330,6 +330,21 @@ rm var/log/initial-admin-password
 A password you gave yourself is stored nowhere in clear text: the summary says "The password is shown here once and
 stored nowhere else in clear text", and the saved configuration in `var/log/` has it masked.
 
+### A public demo: EXP_DEMO_MODE=1
+
+A public demonstration site publishes its administrator password. With the environment variable `EXP_DEMO_MODE=1`
+(demo mode, since 6.0.15) `exp:install` installs a well-known `--password` as it is instead of replacing it:
+
+```bash
+EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password='publishing' --url=https://demo.example.com
+```
+
+Only the well-known check is relaxed: an empty `--password` is still refused and one shorter than `MinPasswordLength`
+is still replaced. Keep the variable in the environment of the demo's PHP, cron jobs and console afterwards: while it is
+set, nobody can change or reset an administrator password, and the administration shows a **Demo mode** banner. A
+reset with `exp:resetuserpassword` after the installation is not needed, and is refused in demo mode. Never set it
+for a real site. All of it: [Demo mode](../bc/6.0/demo-mode.md).
+
 ## 7.6 Dry run and print
 
 | Mode | Checks the options | Connects to the database | Fetches the packages | Writes |

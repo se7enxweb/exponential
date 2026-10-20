@@ -213,9 +213,15 @@ class eZStepCreateSites extends eZStepInstaller
             $accessType = $siteType['access_type'];
             $resultArray = array( 'errors' => array() );
 
-            $result = $this->initializePackage( $siteType, $accessMap, $charset,
-                                                $allLanguageCodes, $allLanguages, $primaryLanguage, $this->PersistenceList['admin'],
-                                                $resultArray );
+            // In demo mode (EXP_DEMO_MODE=1) eZUser::store() keeps an administrator's stored password; the
+            // installation sets the administrator password inside expDemoMode::installing(), so it goes through
+            $initialize = function () use ( $siteType, &$accessMap, $charset, &$allLanguageCodes, &$allLanguages, &$primaryLanguage, &$resultArray )
+            {
+                return $this->initializePackage( $siteType, $accessMap, $charset,
+                                                 $allLanguageCodes, $allLanguages, $primaryLanguage, $this->PersistenceList['admin'],
+                                                 $resultArray );
+            };
+            $result = class_exists( 'expDemoMode' ) ? expDemoMode::installing( $initialize ) : $initialize();
             if ( !$result )
             {
                 $this->Error['errors'] = array_merge( $this->Error['errors'], $resultArray['errors'] );

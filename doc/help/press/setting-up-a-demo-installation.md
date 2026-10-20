@@ -26,6 +26,7 @@ you record; do not type them for the first time on camera.
 5. [Make it camera-ready](#make-it-camera-ready)
 6. [Reset between takes](#reset-between-takes)
 7. [When something fails](#when-something-fails)
+8. [A demo that others sign in to](#a-demo-that-others-sign-in-to)
 
 ## Decide which version you show
 
@@ -122,7 +123,29 @@ Password rules for the first sign-in: [The default administrator password](../de
 
 Full table: [The console install, What can go wrong](../../install/07-console-install.md#711-what-can-go-wrong).
 
+## A demo that others sign in to
+
+A recording on your own machine needs nothing more. A demo on the internet whose administrator sign-in you publish
+(so viewers can try it themselves) is a **public demo**: run it with the environment variable `EXP_DEMO_MODE=1`.
+
+- Install with the variable, so `exp:install` keeps the password you publish instead of generating one (it must still
+  be at least ten characters):
+
+  ```bash
+  EXP_DEMO_MODE=1 php bin/php/console exp:install --password='<the password you publish>'
+  ```
+
+- Keep the variable for the site's PHP, cron jobs and console afterwards. While it is set, nobody can change or reset
+  the administrator password, so the next viewer can still sign in, and the administration shows a **Demo mode**
+  banner.
+- Rebuild the demo on a schedule: demo mode protects only the administrator password, not the content.
+- Never set the variable for a real site, and never reuse the published password anywhere.
+
+How to set it for each kind of server: [Demo mode for hosts](../hosting/security/demo-mode-for-hosts.md).
+
 ## Related pages
+
+- [Demo mode](../demo-mode.md)
 
 - [Keeping secrets off screen](keeping-secrets-off-screen.md)
 - [Demo script: install from zero](demo-script-install-from-zero.md)

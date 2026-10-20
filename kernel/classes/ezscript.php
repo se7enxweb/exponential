@@ -373,6 +373,9 @@ class eZScript
             $moduleRepositories = eZModule::activeModuleRepositories( $this->UseExtensions );
             eZModule::setGlobalPathList( $moduleRepositories );
         }
+        // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): recorded once per process, and said on the console
+        if ( class_exists( 'expDemoMode' ) && expDemoMode::announce() && $this->isLoud() )
+            eZCLI::instance()->warning( 'Demo mode is on (EXP_DEMO_MODE=1): administrator passwords cannot be changed or reset. Never use it in production.' );
         $this->setIsInitialized( true );
     }
 

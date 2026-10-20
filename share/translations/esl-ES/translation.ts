@@ -14870,6 +14870,14 @@ Nota: los paquetes no serán desinstalados.</translation>
         <source>Help center</source>
         <translation>Centro de ayuda</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Modo de demostración</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Esta instalación es una demostración pública: cualquiera puede conocer su contraseña de administrador, y las contraseñas de los administradores no se pueden cambiar ni restablecer. No introduzca aquí nada privado.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -51693,6 +51701,14 @@ Consulta la página de requisitos para obtener más información.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Esta contraseña es conocida o demasiado común, así que cualquiera podría adivinarla. Elige otra.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Modo de demostración</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>La variable de entorno EXP_DEMO_MODE=1 marca esta instalación como una demostración pública: se acepta una contraseña de administrador conocida, y las contraseñas de los administradores no se podrán cambiar ni restablecer después. No utilice nunca el modo de demostración en un sitio de producción.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -74678,6 +74694,13 @@ Gracias por tu feedback</translation>
     <message>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Para organizaciones y personas que gestionan su propio sitio en Exponential: equipo, publicación, comercio, mantenimiento, crecimiento y socios.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Esta instalación es una demostración pública: las contraseñas de los administradores no se pueden cambiar ni restablecer.</translation>
     </message>
 </context>
 </TS>

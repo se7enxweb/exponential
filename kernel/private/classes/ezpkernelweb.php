@@ -1742,6 +1742,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             );
         }
 
+        // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md) is recorded once per process: security.log and the
+        // audit. class_exists: a worker started before the class was added.
+        if ( class_exists( 'expDemoMode' ) )
+            expDemoMode::announce();
+
         // The signed-in user's interface choices (the display language, ...): after the session start, before the
         // locale, the translations, the design and any template are set up. beginRequest() forgets the request
         // before (persistent Velocity workers). class_exists: a worker started before the class was added.

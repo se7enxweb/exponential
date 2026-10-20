@@ -16851,6 +16851,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Help center</source>
         <translation>Hilfe-Center</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demo-Modus</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Diese Installation ist eine öffentliche Demo: Jeder kann ihr Administratorpasswort kennen, und Administratorpasswörter können nicht geändert oder zurückgesetzt werden. Geben Sie hier nichts Privates ein.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -57583,6 +57591,14 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Dieses Passwort ist bekannt oder zu häufig, jeder könnte es erraten. Bitte wählen Sie ein anderes.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demo-Modus</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>Die Umgebungsvariable EXP_DEMO_MODE=1 kennzeichnet diese Installation als öffentliche Demo: Ein bekanntes Administratorpasswort wird akzeptiert, und Administratorpasswörter können später nicht geändert oder zurückgesetzt werden. Verwenden Sie den Demo-Modus nie für eine Produktivsite.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -80234,6 +80250,13 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Für Organisationen und Menschen, die ihre eigene Site mit Exponential betreiben: Team, Veröffentlichen, Commerce, Pflege, Wachstum und Partner.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Diese Installation ist eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.</translation>
     </message>
 </context>
 </TS>

@@ -336,6 +336,19 @@ reset an administrator password, and what to do when nobody can sign in:
 which nobody can switch off; the mail never contains the password). It is how a user learns of a change they did not
 make.
 
+### Demo mode must be off
+
+The environment variable `EXP_DEMO_MODE=1` marks an installation as a **public demo** (since 6.0.15): administrator
+passwords can no longer be changed or reset, and the installers accept a well-known administrator password. On a
+production site that is a known administrator password nobody can change, so:
+
+- Make sure no process of the site has it: `grep -r EXP_DEMO_MODE` over the PHP-FPM pools, the virtual hosts, the
+  service units (Velocity's included), the crontabs and the container definitions must find nothing.
+- The administration shows a **Demo mode** banner on every page while it is on, and every process that starts with
+  it writes a `demo/mode` line to `var/log/security.log` and the audit event `system.demo.mode`. Alert on either.
+- It cannot come from settings: there is no INI setting or request parameter for it, and only the exact value `1`
+  counts. Details and the risks: [Demo mode](../bc/6.0/demo-mode.md).
+
 ### Failed sign-ins
 
 ```ini
@@ -770,6 +783,8 @@ Full guide: [Audit](../bc/6.0/audit.md).
 - [ ] `[SiteAccessSettings] CheckValidity=false`; the administration on its own host, restricted by network or a second
       authentication; least-privilege roles.
 - [ ] Password policy decided (`MinPasswordLength`, `[PasswordSettings]`); `EndOtherSessions=enabled`.
+- [ ] Demo mode off: `EXP_DEMO_MODE` set for no process of the site; no **Demo mode** banner, no `demo/mode` line in
+      `security.log` ([Demo mode must be off](#demo-mode-must-be-off)).
 - [ ] `[Session] CookieSecure=true` on an HTTPS-only site; `HttpOnly` and `SameSite` left on.
 - [ ] `ezformtoken` active.
 - [ ] HTTPS on every name; HTTP redirected; HSTS raised once stable; certificate renewal watched.

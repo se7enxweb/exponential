@@ -1,0 +1,261 @@
+# Demo mode: EXP_DEMO_MODE=1 for public demonstration sites (6.0.15)
+
+A public demo of Exponential publishes its administrator sign-in, so that visitors can try the administration. Two
+things then go wrong without help:
+
+1. A visitor changes or resets the administrator password, and the next visitor cannot sign in. On a demo that is
+   rebuilt every few hours that breaks the demo until the next rebuild; on one that is not, for good.
+2. Since 6.0.15 the installers refuse a well-known administrator password
+   ([weak-passwords-and-reset-key-lifetime.md](weak-passwords-and-reset-key-lifetime.md)), so a demo installer
+   could not install the password it publishes, and had to reset it after the installation.
+
+Demo mode solves both. It is switched on by one **environment variable**, never by a setting:
+
+```sh
+EXP_DEMO_MODE=1
+```
+
+It is off on every installation that does not set it, which is every installation that has not been set up as a
+demo on purpose. Nothing changes there.
+
+## Contents
+
+1. [What demo mode does](#what-demo-mode-does)
+2. [Who counts as an administrator](#who-counts-as-an-administrator)
+3. [Every path that is closed](#every-path-that-is-closed)
+4. [The installers accept the demo password](#the-installers-accept-the-demo-password)
+5. [Why it cannot be switched on by accident](#why-it-cannot-be-switched-on-by-accident)
+6. [Switching it on](#switching-it-on)
+7. [The banner and the log](#the-banner-and-the-log)
+8. [Risks](#risks)
+9. [The demo installer on the demo host](#the-demo-installer-on-the-demo-host)
+10. [For developers](#for-developers)
+11. [Compatibility](#compatibility)
+12. [Tests](#tests)
+
+## What demo mode does
+
+While `EXP_DEMO_MODE=1`:
+
+- **The password of an administrator cannot be changed or reset**, by any path: the **Change password** page, the
+  **Forgot your password?** form and its links, the user account in the edit form, `exp:resetuserpassword` (also with
+  `--allow-root-user`), the web services, and any other code that stores a user (see
+  [Every path that is closed](#every-path-that-is-closed)). Each refusal says, translated: "This installation is a
+  public demo: the passwords of administrators cannot be changed or reset."
+- **Every other account keeps every rule**: an editor or a visitor who registered changes and resets their own password
+  as usual, and new passwords are still checked against the list of well-known ones.
+- **The installers accept a well-known administrator password**, such as the one the demo publishes. Only the
+  administrator password of a new installation is concerned, and the length rule still applies
+  ([The installers accept the demo password](#the-installers-accept-the-demo-password)).
+- **The administration shows a banner** on every page (admin4, admin4l and the classic admin): "Demo mode. This
+  installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be
+  changed or reset. Do not enter anything private here."
+- **Every process records once that demo mode is on**: a line in `var/log/security.log` and the audit event
+  `system.demo.mode` ([The banner and the log](#the-banner-and-the-log)).
+
+Demo mode does not make an installation read-only, does not reset content, and does not restrict what an
+administrator may do apart from the password. A demo that must undo what visitors do is rebuilt on a schedule (see
+[The demo installer on the demo host](#the-demo-installer-on-the-demo-host)).
+
+## Who counts as an administrator
+
+An account counts as an administrator when its roles give it **unlimited access to every function of every module**:
+a policy for all modules and all functions with no limitation, which is what the shipped role **Administrator** has.
+That covers the account `admin` and every account in **Administrator users**, and any account that has been given
+such a role directly.
+
+An account whose roles cannot be read (a database error) counts as an administrator while demo mode is on: an error
+never opens the password of an administrator. The check is `expDemoMode::isAdministrator()`.
+
+An account with broad but limited access (an editor, a section administrator) is not protected. If a demo publishes
+the sign-in of such an account too, give it a role that is not worth taking over, or rebuild the demo often.
+
+## Every path that is closed
+
+| Path | What happens in demo mode | Code |
+|---|---|---|
+| **Change password** (`user/password`), every design | the form says why and changes nothing; on admin and admin4 the page shows the reason before anything is typed | `kernel/private/classes/views/user/password.php` |
+| **Forgot your password?** (`user/forgotpassword`), the request | no key and no mail for an administrator; the answer is the one every address gets, and the page says for every visitor that administrator passwords cannot be reset, so the form does not tell which addresses belong to an administrator | `kernel/private/classes/views/user/forgotpassword.php` |
+| **Forgot your password?**, the link | a link of an administrator (sent before the mode was switched on) is refused and removed | same |
+| The user account in **content/edit** (also the user's own profile) | a new password for an administrator is a validation error with the reason; the other fields can still be changed | `kernel/classes/datatypes/ezuser/ezusertype.php` |
+| `exp:resetuserpassword` / `bin/php/resetuserpassword.php` | refused with the reason and exit code 1, also with `--allow-root-user` | `kernel/private/classes/commands/resetuserpassword.php` |
+| Web services: `expaccount.reset`, `expaccount.changePassword`, `expuser.setPassword` | HTTP 403 with the reason | `extension/expservices/classes/users/expusersbase.php` |
+| Web services: `expaccount.forgotRequest` | no key and no mail for an administrator; the same answer as for any address | `extension/expservices/classes/users/expaccountservices.php` |
+| The operations `user/password` and `user/forgotpassword` (workflows, extensions) | status false with the reason `demo_mode` | `kernel/user/ezuseroperationcollection.php` |
+| **Anything else that stores a user**: a CSV or package import, an extension, a script | `eZUser::store()` keeps the stored password of an administrator and stores everything else; the refusal is recorded | `kernel/classes/datatypes/ezuser/ezuser.php`, `expDemoMode::guardStore()` |
+
+Every refusal is recorded in the audit as `access.user.password.change.failed` or
+`access.user.password.reset.failed` with the reason `demo_mode` and the path ([audit.md](audit.md)), and as a
+warning in the debug output.
+
+Not affected: signing in (an existing password is never refused), and the hash upgrade at sign-in
+(`[UserSettings] UpdateHash`), which stores the same password with a newer method.
+
+## The installers accept the demo password
+
+Every installer asks one function whether an administrator password may be installed:
+`eZStepSiteAdmin::isWeakDefaultPassword()`. That is the setup wizard, the kickstarter (`kickstart.ini`), `exp:install`
+(`bin/php/install.php`) and every demo installer built on them. In demo mode it accepts a well-known password. Exactly:
+
+- **Relaxed:** the check against the list of well-known passwords (`expWeakPasswordList`, with its variants), for the
+  administrator password of a new installation only.
+- **Not relaxed:** an empty password is still refused (the kickstarter and `exp:install` generate one); the length
+  rule `[UserSettings] MinPasswordLength` (10 as shipped) still applies; and every other account, and every password
+  set after the installation, is checked as before.
+
+So a demo can install `publishing` (ten characters, well-known) as it is. The classic `publish` (seven characters) is
+still too short with the shipped settings; a demo that wants it lowers `MinPasswordLength` in its own settings, with
+the consequences that has for every account.
+
+The setup wizard says on its administrator page that demo mode is on and what it means. The installation itself sets
+the administrator password inside `expDemoMode::installing()`, so the store guard lets it through.
+
+## Why it cannot be switched on by accident
+
+- **Environment only.** There is no INI setting, no request parameter, no cookie and no administration page for it. A
+  settings file copied from a demo, a database restored from one, a package or a crafted request cannot switch it on.
+  An HTTP header arrives as `HTTP_EXP_DEMO_MODE` and is never read.
+- **Only the exact value `1`.** `0`, `true`, `yes`, `on`, an empty value and anything else leave it off.
+- **Read on every call.** Nothing is cached, so a persistent worker (Exponential Velocity, FrankenPHP) answers for the
+  environment it has now, and a compiled template asks again each time it runs.
+- **Visible.** The banner on every administration page, the note in the setup wizard, the warning on the console
+  (`Demo mode is on (EXP_DEMO_MODE=1) ...` on standard error) and the log line of every process.
+
+The value is read with `getenv()` first (the process environment; under PHP-FPM also the FastCGI parameters), then
+`$_SERVER` (Apache `SetEnv` with mod_php and similar SAPIs). A value in the process environment wins: `EXP_DEMO_MODE=0`
+there keeps the mode off whatever `$_SERVER` says.
+
+## Switching it on
+
+Set the variable for **every** process of the demo: the web server's PHP, Exponential Velocity if it serves the site,
+the cron jobs and every console command. A process without it runs with demo mode off.
+
+| Where PHP runs | How |
+|---|---|
+| PHP-FPM | in the pool of the demo: `env[EXP_DEMO_MODE] = 1` (a pool with `clear_env = no` also passes the master's environment) |
+| Apache with mod_php or proxying to PHP-FPM | `SetEnv EXP_DEMO_MODE 1` in the demo's virtual host (with PHP-FPM through `mod_proxy_fcgi` it reaches PHP as a FastCGI parameter) |
+| Exponential Velocity | in the environment of the process that starts the server: the service manager (`Environment=EXP_DEMO_MODE=1` in the systemd unit, or `/etc/default/exponential-velocity` for the packaged unit), or `export EXP_DEMO_MODE=1` before `./console exp:velocity start`. Workers inherit the server's environment. `/etc/vc/envvars` is not exported to the server process for other variables than the server's own (see the note below) |
+| FrankenPHP, RoadRunner | in the environment of the server process |
+| Cron jobs and console commands | in the crontab (`EXP_DEMO_MODE=1` on its own line at the top) and in the shell of whoever runs commands |
+| A container | `ENV EXP_DEMO_MODE=1` in the demo image, or `-e EXP_DEMO_MODE=1` / `environment:` for the demo service only |
+
+Check it: the banner shows in the administration, and `grep 'demo/mode' var/log/security.log` lists the
+processes that started with it.
+
+**Velocity and restarts.** A Velocity restart started from a shell (`exp:velocity restart`, `exp:velocity deploy`)
+starts the new server with the environment of that shell. If `EXP_DEMO_MODE=1` was only set in the shell that first
+started the server, a later restart from another shell drops it. Set it where the service manager keeps it, or set it
+in every shell that restarts Velocity on the demo.
+
+**Never set it** in a shared PHP-FPM pool, a server-wide `SetEnv`, a global `/etc/environment`, a base container
+image or a deployment template used for other sites.
+
+## The banner and the log
+
+- **Banner:** `design/admin4/templates/parts/exp_demo_mode_banner.tpl` (admin4, and admin4l through its fallback) and
+  the same file in `design/admin` (the classic admin). admin4 draws it at the top of the main area (`page_mainarea.tpl`,
+  below the fixed header), admin4l also in front of the main zone of an admin layout, the classic admin below its
+  header; always outside the cache-blocks, so it follows the environment of each request. It uses the shared component `.a4-notice.is-warn` of `components.css`
+  (tokens with light and dark values; no CSS of its own). The template operator `exp_demo_mode()` returns whether the
+  mode is on; a design of your own can show the banner with
+  `{include uri='design:parts/exp_demo_mode_banner.tpl'}`.
+- **Log:** at the start of the first web request (`ezpKernelWeb::requestInit()`) and of every script
+  (`eZScript::initialize()`), each process writes one line to `var/log/security.log`, in the format of the request
+  classifier's lines, so **Setup > Log files** groups it as `demo/mode`:
+
+  ```
+  [ Oct 19 2026 18:00:00 ] [203.0.x.x] demo/mode on pid=4711 sapi=fpm-fcgi EXP_DEMO_MODE=1: administrator passwords cannot be changed or reset, the installers accept a well-known administrator password; never use it in production
+  ```
+
+  and records the audit event `system.demo.mode` (severity warning, channel system, always on). A forked worker has
+  its own pid and records it again; a persistent worker records it once. A console command also says
+  `Demo mode is on (EXP_DEMO_MODE=1) ...` on standard error.
+
+On a production site, a `system.demo.mode` event or a `demo/mode` line means that the variable reached a process it
+should not have: remove it at once and check who changed the server's environment.
+
+## Risks
+
+- **Demo mode tells everyone that the administrator password is known.** Only run it on an installation whose
+  content, users and settings are all throwaway: no real customer data, no real mail addresses, no secrets in
+  settings, no connection to other systems.
+- **Administrators keep every other power.** A visitor signed in as an administrator can create accounts, change
+  roles, edit settings in the administration, install packages and upload files. Demo mode does not limit that. Rebuild
+  the demo on a schedule, keep it on its own host or account, and give it no credentials that work elsewhere.
+- **A well-known password is installed.** That is the purpose, and the reason the mode must never reach a real site.
+- **Mail.** Visitors can trigger mail (registration, notifications). Send the demo's mail to a file or a sink, never
+  to real addresses.
+- **A lost variable switches it off silently.** A restart without the variable runs the demo with demo mode off:
+  visitors can then change the administrator password again. Set it where it survives restarts, and watch for the
+  banner.
+- **Only administrators are protected.** Other published sign-ins (editor, member) can still be changed by whoever
+  uses them.
+
+## The demo installer on the demo host
+
+The public demo is rebuilt from the current code every two hours by a script that runs `exp:install` with SQLite and
+swaps the new site in. With demo mode it should set the variable twice:
+
+1. **For the installation,** so `exp:install` installs the published demo password as it is, instead of replacing it
+   with a random one and resetting it afterwards:
+
+   ```sh
+   EXP_DEMO_MODE=1 php bin/php/install.php --db=sqlite --password='<the published demo password>' ...
+   ```
+
+   The reset step after the installation (`exp:resetuserpassword`) is then no longer needed, and in demo mode it is
+   refused anyway. The password must still be at least `MinPasswordLength` characters long.
+2. **For the running site,** in the environment of the demo's PHP (its PHP-FPM pool, LiteSpeed's `lsphp`
+   environment or the virtual host's `SetEnv`) and in the crontab of the demo's user, so the banner shows and the
+   administrator password cannot be changed between two rebuilds. The preloader run after the swap
+   (`bin/php/preload.php`) needs no variable.
+
+The variable belongs only to the demo's own user and virtual host. The script must not write it into `config.php`,
+`settings/` or anything else that is copied to other sites.
+
+## For developers
+
+- `expDemoMode::enabled()`: the mode is on (`EXP_DEMO_MODE` is exactly `1`); read on every call.
+- `expDemoMode::protectsPassword( $user )`: the mode is on and the account (an `eZUser` or a content object id) is an
+  administrator. Ask it before changing a password, and show `expDemoMode::refusalText()`.
+- `expDemoMode::refused( $user, $path, $event )`: records a refusal (audit and debug output).
+- `expDemoMode::installing( $callable )`: runs an installer's work that sets the administrator password; the store guard
+  lets it through. The scope ends with the call, also on an exception. An installer of your own that sets the
+  administrator password after the kernel's steps must use it, or its change is refused in demo mode.
+- `expDemoMode::guardStore( $user )`: called by `eZUser::store()`; keeps an administrator's stored password while the
+  mode is on. Code that writes `ezuser.password_hash` with its own SQL bypasses it: do not do that.
+- The template operator `exp_demo_mode()` (`expDemoModeOperator`).
+- Check the mode with `class_exists( 'expDemoMode' ) && expDemoMode::enabled()` in code that may run in a persistent
+  worker started before the class existed.
+
+## Compatibility
+
+- Without `EXP_DEMO_MODE=1` nothing changes: no setting, no database change, no new default.
+- New classes: `expDemoMode` (`kernel/classes/expdemomode.php`), `expDemoModeOperator`
+  (`kernel/common/expdemomodeoperator.php`); regenerate the kernel autoloads when you update by copying files.
+  Exponential Velocity loads classes when it starts: run `exp:velocity deploy --kernel` (or restart it) after the
+  update.
+- New audit event `system.demo.mode`; the existing events `access.user.password.change.failed` and
+  `access.user.password.reset.failed` can have the reason `demo_mode`.
+- New template variables (all optional, so an older design still renders): `demo_mode_locked` and `demo_mode_text`
+  on `user/password.tpl`, `demo_mode_text` and `demo_mode_refused` on `user/forgotpassword.tpl`, `demo_mode` on
+  `setup/init/site_admin.tpl`.
+- The operations `user/password` and `user/forgotpassword` can return `status => false` with `reason => demo_mode`.
+- The web services can answer HTTP 403 for a password change or reset of an administrator.
+
+## Tests
+
+- `tests/tests/kernel/classes/user/expDemoModeTest.php` (no database): the value rules, getenv before `$_SERVER` and
+  never the request, no caching, who is an administrator, the store guard's decision, the `installing()` scope, the
+  installers' relaxation and its limits, the once-per-process record, the template operator, the banner (one partial,
+  shared component, no inline CSS, outside every cache-block of the three pagelayouts), every password path, the
+  audit catalogue and the catalogues.
+- `expAuditRecordTest` counts the new audit event.
+
+## Related pages
+
+- [Demo mode](../../help/demo-mode.md) (administrators), [Demo mode for hosts](../../help/hosting/security/demo-mode-for-hosts.md),
+  [Demo mode for developers](../../help/extension-development/part-8-reference/demo-mode-for-developers.md)
+- [Well-known passwords are refused](weak-passwords-and-reset-key-lifetime.md)
+- [Chapter 13: Security hardening for production](../../install/13-security-hardening.md)
+- [Setting up a demo installation](../../help/press/setting-up-a-demo-installation.md)

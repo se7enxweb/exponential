@@ -165,6 +165,8 @@ class expAuditTaxonomy
         'system.package.import' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.package.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.install.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        // demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): once per process; it cannot be switched off
+        'system.demo.mode' => array( 'severity' => 'warning', 'default' => 'always', 'channel' => 'system' ),
         'system.upgrade.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         // the Velocity watchdog (doc/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides

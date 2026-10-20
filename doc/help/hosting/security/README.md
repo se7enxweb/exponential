@@ -39,6 +39,7 @@ Back to [Hosting companies: start here](../hosting-companies-start-here.md).
 | [request-shield and request rules](request-shield-and-request-rules.md) | the firewall in front of the kernel, the kernel's request classifier and its request rules |
 | [Restricting the administration](restricting-the-administration.md) | its own host name, network limits, least privilege and `ManagedByDeployment` |
 | [First sign-in and default passwords](first-sign-in-and-default-passwords.md) | what each installer sets as the administrator password, and what a host does after provisioning |
+| [Demo mode for hosts](demo-mode-for-hosts.md) | running a public demo with `EXP_DEMO_MODE=1`, and keeping it away from every production site |
 | [Two-step sign-in](two-factor-sign-in.md) | the sevenx_authentication_2fa extension: turning it on, requiring it, lost phones |
 | [Audit trail](audit-trail.md) | what is recorded, verifying the hash chain, alerts, sinks and keys |
 | [Security updates and disclosure](security-updates-and-disclosure.md) | supported versions, following releases, updating, and how to report a vulnerability |

@@ -60,6 +60,15 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                     \expAuditHook::emit( 'access.user.password.reset.failed', array( 'object' => array( 'type' => 'user' ),
                         'result' => 'refused', 'reason' => 'expired' ) );
             }
+            else if ( $forgotPasswdObj && class_exists( 'expDemoMode' )
+                      && \expDemoMode::protectsPassword( (int)$forgotPasswdObj->attribute( 'user_id' ) ) )
+            {
+                // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): a key of an administrator (made before the
+                // mode was switched on) is removed and refused; the page says why (demo_mode_text)
+                $forgotPasswdObj->remove();
+                $tpl->setVariable( 'demo_mode_refused', true );
+                \expDemoMode::refused( (int)$forgotPasswdObj->attribute( 'user_id' ), 'user/forgotpassword', 'access.user.password.reset.failed' );
+            }
             else if ( $forgotPasswdObj )
             {
                 $userID = $forgotPasswdObj->attribute( 'user_id' );
@@ -204,7 +213,17 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                     $random_bytes = mt_rand(); // Not secure, but should not happen since SSL is required, and anyway admins have been warned.
                 }
 
-                if ( isset($users) && count($users) > 0 )
+                if ( isset( $users ) && count( $users ) > 0 && class_exists( 'expDemoMode' )
+                     && \expDemoMode::protectsPassword( $users[0] ) )
+                {
+                    // Demo mode (EXP_DEMO_MODE=1): no key and no mail for an administrator. The answer is the one
+                    // every address gets, so the form does not tell which addresses belong to an administrator;
+                    // the page says for everyone that administrator passwords cannot be reset (demo_mode_text).
+                    $tpl->setVariable( 'link', true );
+                    $tpl->setVariable( 'email', $email );
+                    \expDemoMode::refused( $users[0], 'user/forgotpassword', 'access.user.password.reset.failed' );
+                }
+                else if ( isset($users) && count($users) > 0 )
                 {
                     $user   = $users[0];
                     $time   = time();
@@ -285,6 +304,12 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                 }
             }
         }
+
+        // demo mode: the page says that administrator passwords cannot be reset, whatever address was typed
+        $demoMode = class_exists( 'expDemoMode' ) && \expDemoMode::enabled();
+        $tpl->setVariable( 'demo_mode_text', $demoMode ? \expDemoMode::refusalText() : '' );
+        if ( !$tpl->hasVariable( 'demo_mode_refused' ) )
+            $tpl->setVariable( 'demo_mode_refused', false );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:user/forgotpassword.tpl' );

@@ -44,6 +44,12 @@ class eZStepSiteAdmin extends eZStepInstaller
      * (expWeakPasswordList: the built-in words with their simple variants, site.ini [UserSettings]
      * WeakPasswordList[] and WeakPasswordFile). The installers always check, whatever WeakPasswordCheck says.
      *
+     * In demo mode (the environment variable EXP_DEMO_MODE=1, expDemoMode, doc/bc/6.0/demo-mode.md) a well-known
+     * password is accepted, so a public demo can install the password it publishes; an empty one never is, and the
+     * length rule (minAdminPasswordLength()) still applies. This is the one place every installer asks (setup
+     * wizard, kickstarter, exp:install and the demo installers built on them), and it only concerns the
+     * administrator password of a new installation.
+     *
      * @param mixed $password
      * @return bool
      */
@@ -51,7 +57,17 @@ class eZStepSiteAdmin extends eZStepInstaller
     {
         if ( !is_string( $password ) || trim( $password ) === '' )
             return true;
+        if ( self::demoModeAcceptsWellKnown() )
+            return false;
         return expWeakPasswordList::instance()->isWeak( $password );
+    }
+
+    /**
+     * @return bool demo mode is on, so the installers accept a well-known administrator password (read on every call)
+     */
+    public static function demoModeAcceptsWellKnown()
+    {
+        return class_exists( 'expDemoMode' ) && expDemoMode::enabled();
     }
 
     /**
@@ -303,6 +319,8 @@ class eZStepSiteAdmin extends eZStepInstaller
         }
 
         $this->Tpl->setVariable( 'has_errors', count( $this->Error ) > 0 );
+        // demo mode (EXP_DEMO_MODE=1): the page says that a well-known password is accepted, and why
+        $this->Tpl->setVariable( 'demo_mode', self::demoModeAcceptsWellKnown() );
 
         $adminUser = array( 'first_name' => false,
                             'last_name' => false,

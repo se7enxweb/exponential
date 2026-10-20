@@ -107,6 +107,12 @@ personal administrator account per person, and retire `admin` as a sign-in
 ([Account hygiene](change-the-admin-password.md#account-hygiene)). Check for an old seed password on migrated sites:
 `./console exp:resetuserpassword --allow-root-user -u admin -g -l 24` sets a new one.
 
+**Demo mode.** A public demo that publishes its administrator password runs with the environment variable
+`EXP_DEMO_MODE=1`: the installers accept the published password and nobody can change or reset an administrator
+password. On a real site that would be a known password nobody can change. It cannot come from a setting or a
+request, the administration shows a banner while it is on, and every process logs it; check that no process of a
+production site has the variable ([Demo mode](demo-mode.md)).
+
 ### An exposed setup wizard or installer files
 
 **The risk.** A setup wizard reachable on a live site lets anyone reinstall it with their own administrator. Installer
@@ -416,6 +422,7 @@ front, of the web server, or of a listener you register in `requestclassifier.in
 - [ ] Administrator password changed, `var/log/initial-admin-password` and `kickstart.ini` removed.
 - [ ] A personal administrator account per person; `admin` retired as a sign-in; a tested break-glass procedure.
 - [ ] Two-step sign-in required for administrators; password policy decided.
+- [ ] Demo mode off: `EXP_DEMO_MODE` set for no process; no **Demo mode** banner in the administration.
 - [ ] The administration on its own host, restricted by network, VPN or the shield's browser check.
 - [ ] `CheckValidity=false`, `AllowWizardOnInstalledSite=disabled`; `ManagedByDeployment` where the configuration
       comes from version control.

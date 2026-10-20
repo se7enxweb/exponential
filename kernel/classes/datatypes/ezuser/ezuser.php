@@ -278,6 +278,10 @@ class eZUser extends eZPersistentObject
 
         if ( $this->Login )
         {
+            // Demo mode (EXP_DEMO_MODE=1): the stored password of an administrator stays, whatever path changed it
+            // (doc/bc/6.0/demo-mode.md). class_exists: a worker started before the class was added.
+            if ( class_exists( 'expDemoMode' ) && expDemoMode::enabled() )
+                expDemoMode::guardStore( $this );
             $auditBefore = $this->auditStoredRow();
             parent::store( $fieldFilters );
             if ( $auditBefore !== null )

@@ -132,7 +132,12 @@ class expAccountServices extends expUsersBase
         if ( !eZMail::validate( $email ) || preg_match( '/[<>"\'&\\\\]/', $email ) )
             throw new expServiceException( 'The e-mail address is not valid', 422 );
         $users = eZPersistentObject::fetchObjectList( eZUser::definition(), null, array( 'email' => $email ), null, null, true );
-        if ( $users )
+        if ( $users && class_exists( 'expDemoMode' ) && expDemoMode::protectsPassword( $users[0] ) )
+        {
+            // demo mode (EXP_DEMO_MODE=1): no key and no mail for an administrator; the same answer as for any address
+            expDemoMode::refused( $users[0], 'services', 'access.user.password.reset.failed' );
+        }
+        else if ( $users )
         {
             $user = $users[0];
             $hash = bin2hex( random_bytes( 16 ) );

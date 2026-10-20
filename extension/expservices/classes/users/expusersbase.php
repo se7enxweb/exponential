@@ -136,9 +136,18 @@ abstract class expUsersBase extends expServiceBase
         return eZUser::validatePassword( $password ) ? array() : array( 'The password is too short' );
     }
 
-    /** @throws expServiceException 422 when the password is refused, naming every rule it fails */
+    /**
+     * @throws expServiceException 403 in demo mode (EXP_DEMO_MODE=1) when $user is an administrator, whose password
+     *         cannot be changed or reset there (doc/bc/6.0/demo-mode.md); 422 when the password is refused, naming
+     *         every rule it fails
+     */
     protected static function requireAcceptablePassword( $password, $user = null, $login = null )
     {
+        if ( $user instanceof eZUser && class_exists( 'expDemoMode' ) && expDemoMode::protectsPassword( $user ) )
+        {
+            expDemoMode::refused( $user, 'services' );
+            throw new expServiceException( expDemoMode::refusalText(), 403 );
+        }
         $errors = self::passwordErrors( $password, $user, $login );
         if ( $errors )
             throw new expServiceException( 'The password is not acceptable: ' . implode( ' ', $errors ), 422 );

@@ -44,6 +44,10 @@ The demo scripts carry the same warning ([Demo scripts](../business/demo-scripts
 5. If you show Exponential Intelligence, use a key with a low spending limit that you can revoke afterwards, and
    never open the screen that shows it.
 6. Run it on your own machine or a test server you control.
+7. If the audience signs in to the demo themselves with a sign-in you show on screen, run it as a public demo with
+   the environment variable `EXP_DEMO_MODE=1`: nobody can then change or reset the administrator password during the
+   session, and a **Demo mode** banner says so on every page. It protects only the administrator password, so
+   reinstall the demo afterwards ([Demo mode](../demo-mode.md)).
 
 ## Prepare the machine
 

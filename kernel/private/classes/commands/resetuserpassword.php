@@ -277,6 +277,15 @@ class Resetuserpassword extends \Exponential\Runnable\Command
         $policy = class_exists( 'expPasswordPolicy' ) ? new \expPasswordPolicy() : null;
         $ruleAccount = \eZUser::fetchByName( $targetLogin );
         $ruleAccount = is_object( $ruleAccount ) ? $ruleAccount : null;
+
+        // Demo mode (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md): an administrator's password is not reset, also not
+        // with --allow-root-user
+        if ( $ruleAccount && class_exists( 'expDemoMode' ) && \expDemoMode::protectsPassword( $ruleAccount ) )
+        {
+            \expDemoMode::refused( $ruleAccount, 'console' );
+            $cli->error( \expDemoMode::refusalText() . " (EXP_DEMO_MODE=1, user '$targetLogin')" );
+            $script->shutdown( 1 );
+        }
         $generated = false;
         if ( $targetPassword === null && $generate )
         {

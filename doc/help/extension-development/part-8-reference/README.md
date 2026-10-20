@@ -29,6 +29,7 @@ documentation. It is not a complete API reference: the kernel's source and the p
 | [eZContentObjectTreeNode](ezcontentobjecttreenode.md) | nodes, the content tree |
 | [eZContentClass](ezcontentclass.md) | content classes and their attributes |
 | [eZUser and access checks](ezuser-and-access.md) | the current user and policies |
+| [Demo mode for developers](demo-mode-for-developers.md) | `EXP_DEMO_MODE`, password changes on a public demo |
 | [eZHTTPTool](ezhttptool.md) | request variables, sessions, redirects |
 | [eZSys and eZExtension](ezsys-and-ezextension.md) | paths, the environment, extensions |
 | [eZTemplate](eztemplate.md) | templates from PHP |
