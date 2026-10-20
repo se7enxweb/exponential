@@ -430,6 +430,11 @@ below the written pages (`[SearchSettings] TypeBoost[generated]`) and stays off 
 The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change. A rebuild
 also removes what the older index left: the other `index-<signature>.php` files and the cached navigation trees
 (`nav/`) and rendered pages (`render/`) written before it, so the cache holds only what the current index uses.
+The signature of the index covers the listed help files (their paths, sizes and times), the commit each repository
+is at and the settings, not the git index file itself: `git status`, or a commit or checkout that changes no help
+file, keeps the index, the search index and the rendered pages. A new index is built by one process at a time; the
+other requests use the newest index already in the cache until it is ready (the search index likewise), instead
+of each building its own. Removed versions are also dropped from OPcache, so its memory is reclaimed.
 
 ## Languages and accessibility
 

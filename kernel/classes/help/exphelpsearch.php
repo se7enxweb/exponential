@@ -1103,6 +1103,17 @@ class expHelpSearch
         if ( $file !== null && ( is_dir( dirname( $file ) ) || @mkdir( dirname( $file ), eZDir::dirMode( 0775 ), true ) ) )
         {
             $lock = @fopen( dirname( $file ) . '/search.lock', 'c' );
+            // while another process builds, the newest index already there answers (the documents of a few seconds
+            // ago) instead of a wait as long as the build, which under load ended in gateway timeouts
+            if ( $lock && !@flock( $lock, LOCK_EX | LOCK_NB ) )
+            {
+                $older = $this->newestIndex( dirname( $file ) );
+                if ( $older !== null )
+                {
+                    fclose( $lock );
+                    return $this->index = $older;
+                }
+            }
             if ( $lock && @flock( $lock, LOCK_EX ) )
             {
                 $index = $this->load( $file, $signature );
@@ -1138,6 +1149,24 @@ class expHelpSearch
         return null;
     }
 
+    /** The newest cached index of this FORMAT in a directory, whatever its signature, or null. */
+    protected function newestIndex( $dir )
+    {
+        $files = array();
+        foreach ( (array)glob( $dir . '/search-*.php' ) as $old )
+            if ( preg_match( '/\/search-[a-f0-9]{32}\.php$/', $old ) && ( $mtime = @filemtime( $old ) ) !== false )
+                $files[$old] = $mtime;
+        arsort( $files );
+        foreach ( array_keys( $files ) as $old )
+        {
+            $index = @include $old;
+            if ( is_array( $index ) && isset( $index['format'], $index['signature'], $index['docs'], $index['terms'], $index['vocabulary'] )
+                 && $index['format'] === self::FORMAT )
+                return $index;
+        }
+        return null;
+    }
+
     /**
      * Builds the index again, whatever the cache holds (the CLI: exp:help index).
      *
@@ -1159,7 +1188,12 @@ class expHelpSearch
         foreach ( (array)glob( dirname( $file ) . '/search-*.php' ) as $old )
         {
             if ( $old !== $file && preg_match( '/\/search-[a-f0-9]{32}\.php$/', $old ) )
+            {
+                // the compile too (expHelpDocumentIndex::unlinkCompiled()), so OPcache can reclaim it
+                if ( function_exists( 'opcache_invalidate' ) )
+                    @opcache_invalidate( $old, true );
                 @unlink( $old );
+            }
         }
     }
 

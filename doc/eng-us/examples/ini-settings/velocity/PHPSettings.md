@@ -71,7 +71,7 @@ Never edit `settings/velocity.ini` itself: an update replaces it. Put the settin
 > (13 pages a second); with 256 MB, 303 ms (29-31 pages a second). The  
 > memory is reserved, not used, until it fills.  
 
-Default: a list of 7: `opcache.enable_cli=1`, `opcache.memory_consumption=256`, `opcache.max_accelerated_files=20000`, `opcache.interned_strings_buffer=32`, `opcache.revalidate_freq=0`, `opcache.file_update_protection=0`, `apc.shm_size=256M`.
+Default: a list of 7: `opcache.enable_cli=1`, `opcache.memory_consumption=512`, `opcache.max_accelerated_files=20000`, `opcache.interned_strings_buffer=64`, `opcache.revalidate_freq=0`, `opcache.file_update_protection=0`, `apc.shm_size=256M`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -80,9 +80,9 @@ Default: a list of 7: `opcache.enable_cli=1`, `opcache.memory_consumption=256`, 
 # an empty "IniOptions[]" first replaces the shipped list; without it the items are added
 IniOptions[]
 IniOptions[]=opcache.enable_cli=1
-IniOptions[]=opcache.memory_consumption=256
+IniOptions[]=opcache.memory_consumption=512
 IniOptions[]=opcache.max_accelerated_files=20000
-IniOptions[]=opcache.interned_strings_buffer=32
+IniOptions[]=opcache.interned_strings_buffer=64
 IniOptions[]=opcache.revalidate_freq=0
 IniOptions[]=opcache.file_update_protection=0
 IniOptions[]=apc.shm_size=256M

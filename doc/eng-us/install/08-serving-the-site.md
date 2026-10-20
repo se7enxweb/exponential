@@ -56,7 +56,7 @@ command as `root`, add `--allow-root-user`; a script that needs it says so.
 | PHP version | 8.0 or later (the engine package requires it, from release 0.0.4.54; until then 8.1) | the PHP built into the binary (8.5 in the 1.12 releases) | 8.0 or later | 8.0 or later |
 | Separate web server needed | **no** | no (Caddy is built into the binary) | yes | yes |
 | Separate HTTPS / certificate tool needed | **no**: own certificates, self-signed fallback, ACME | no: your certificate or a self-signed one | yes (`mod_ssl` plus certbot or a hosting panel) | yes |
-| Where the code comes from | Composer package `se7enxweb/exponential-velocity` | binary downloaded and SHA-256 checked by `exp:velocity install` | the operating system | the operating system |
+| Where the code comes from | Composer package `se7enxweb/exponential-velocity`, installed with Exponential by `composer install` | binary downloaded and SHA-256 checked by `exp:velocity install` | the operating system | the operating system |
 | Application kept in memory between requests | yes (persistent workers) | no (clean state per request) | no | no |
 | Response cache in front of PHP | yes | not yet | no (the kernel's own caches only) | no |
 | HTTP/2 | yes | yes | with `mod_http2` | with `http2` |
@@ -133,6 +133,23 @@ reachable from outside. A `404` for every asset under `design/` means the docume
 ---
 
 ## 8.3 Exponential Velocity, the recommended way
+
+**Velocity is part of Exponential as of 6.0.15.** The root `composer.json` requires
+`se7enxweb/exponential-velocity ~0.0.4.54`, so the `composer install` of [chapter 3](03-getting-the-code.md#34-the-velocity-package)
+has already installed it, on the same PHP as the kernel (8.0 and later, the stock PHP 8.0 of Red Hat Enterprise Linux 9
+included). There is nothing extra to download before the first `exp:velocity start`. This is the turning point of the
+6.0 line: the Internet / Web Application Server is a cornerstone of the core product, so serving, caching, HTTPS and
+deploying come out of the box, by default, from the same source as the application. The background:
+[Velocity is part of Exponential 6.0.15](../help/velocity-is-part-of-exponential-6-0-15.md).
+
+The four commands of daily work:
+
+```bash
+./console exp:velocity deploy --allow-root-user       # after a change: autoloads, settings, caches, PHP-FPM, Velocity
+./console exp:velocity start --allow-root-user
+./console exp:velocity restart --allow-root-user      # workers load changed classes and settings
+./console exp:velocity cache clear --allow-root-user  # empty the response cache
+```
 
 Velocity is an application server written for Exponential. A parent process loads the application once and forks
 **workers** that answer one request after another; between requests each worker is put back into the state it had
