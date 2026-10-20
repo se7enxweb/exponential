@@ -45,7 +45,7 @@ Ein Paket, das Sie dort beitragen, lässt jede neue Installation mit Ihrer Arbei
 Bevor Sie eines senden, entfernen Sie alle Kundeninhalte, Namen und Zugangsdaten daraus und prüfen Sie die Lizenzen
 jedes Bildes und jeder Schrift darin ([Ein Theme oder Design als Partner veröffentlichen](ein-theme-veroeffentlichen.md#assets-und-ihre-lizenzen)).
 Das Repository zum Forken, der Ordneraufbau, die Checkliste und der Pull Request Schritt für Schritt:
-[Ihr Seitenpaket beitragen](../../../en/us/help/site-packages/contribute-your-site-package.md).
+[Ihr Seitenpaket beitragen](../seitenpakete/ihr-seitenpaket-beitragen.md).
 
 ## Pflegepflichten
 
