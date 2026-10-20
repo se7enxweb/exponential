@@ -376,18 +376,13 @@ class expHelpRemoteImages
     protected function store( $id, $suffix, $body )
     {
         if ( !is_dir( $this->dir ) )
-        {
-            if ( class_exists( 'eZDir' ) && class_exists( 'eZINI' ) )
-                eZDir::mkdir( $this->dir, false, true );
-            else
-                @mkdir( $this->dir, 0777, true );
-        }
+            eZDir::mkdir( $this->dir, eZDir::directoryPermission(), true );
         if ( !is_dir( $this->dir ) || !is_writable( $this->dir ) )
             return false;
         $temporary = $this->dir . '/.' . $id . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $temporary, $body, LOCK_EX ) === false )
             return false;
-        @chmod( $temporary, self::filePermissions() );
+        @chmod( $temporary, eZFile::fileMode( self::filePermissions() ) );
         if ( !@rename( $temporary, $this->dir . '/' . $id . '.' . $suffix ) )
         {
             @unlink( $temporary );
@@ -397,15 +392,15 @@ class expHelpRemoteImages
     }
 
     /**
-     * @return int site.ini [FileSettings] StorageFilePermissions (0666 by default)
+     * @return int site.ini [FileSettings] StorageFilePermissions (0666 by default), before eZFile::fileMode()
      */
     protected static function filePermissions()
     {
-        if ( class_exists( 'eZINI' ) && class_exists( 'eZFile' ) )
+        if ( class_exists( 'eZINI' ) )
         {
             $value = eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' );
             if ( preg_match( '/^0?[0-7]{3}$/', (string)$value ) )
-                return eZFile::fileMode( octdec( $value ) );
+                return octdec( $value );
         }
         return 0666;
     }
