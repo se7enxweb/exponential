@@ -20165,7 +20165,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>A search is only counted when the siteaccess the visitor searches in has LogSearchStats=enabled in the [SearchSettings] block of its site.ini; it is disabled by default. What is listed below was recorded earlier.</source>
-        <translation>Et søk telles bare når nettstedstilgangen den besøkende søker i, har LogSearchStats=enabled i seksjonen [SearchSettings] i site.ini; det er deaktivert som standard. Det som vises nedenfor, ble registrert tidligere.</translation>
+        <translation>Et søk telles bare når nettstedstilgangen den besøkende søker i, har LogSearchStats=enabled i blokken [SearchSettings] i site.ini; det er deaktivert som standard. Det som vises nedenfor, ble registrert tidligere.</translation>
     </message>
     <message>
         <source>Searches are recorded on: %siteaccesses.</source>
@@ -21046,7 +21046,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>Block</source>
-        <translation>Seksjon</translation>
+        <translation>Blokk</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -21582,7 +21582,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>Blocks</source>
-        <translation>Seksjoner</translation>
+        <translation>Blokker</translation>
     </message>
     <message>
         <source>Arrays</source>
@@ -21650,7 +21650,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>Block, setting name or value. The values of secrets are never searched.</source>
-        <translation>Seksjon, innstillingsnavn eller verdi. Verdiene til hemmeligheter søkes aldri i.</translation>
+        <translation>Blokk, innstillingsnavn eller verdi. Verdiene til hemmeligheter søkes aldri i.</translation>
     </message>
     <message>
         <source>Search in</source>
@@ -59665,7 +59665,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>If the override is no longer wanted, remove its whole block from %file rather than only the MatchFile line.</source>
-        <translation>Hvis overstyringen ikke lenger er ønsket, fjerner du hele seksjonen dens fra %file, ikke bare MatchFile-linjen.</translation>
+        <translation>Hvis overstyringen ikke lenger er ønsket, fjerner du hele blokken dens fra %file, ikke bare MatchFile-linjen.</translation>
     </message>
     <message>
         <source>Clear the template caches: php bin/php/ezcache.php --clear-tag=template</source>
@@ -60233,7 +60233,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>the ini file has no such block</source>
-        <translation>INI-filen har ingen slik seksjon</translation>
+        <translation>INI-filen har ingen slik blokk</translation>
     </message>
     <message>
         <source>the value is not one of the words allowed</source>
@@ -60257,7 +60257,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>the registry has no block of its own</source>
-        <translation>registeret har ingen egen seksjon</translation>
+        <translation>registeret har ingen egen blokk</translation>
     </message>
     <message>
         <source>the registry has no Title</source>
@@ -65013,7 +65013,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>Rules are set in audit.ini ([AuditAlertSettings] Rules[] and the [AlertRule_*] blocks); write them with exp:ini.</source>
-        <translation>Regler angis i audit.ini ([AuditAlertSettings] Rules[] og seksjonene [AlertRule_*]); skriv dem med exp:ini.</translation>
+        <translation>Regler angis i audit.ini ([AuditAlertSettings] Rules[] og blokkene [AlertRule_*]); skriv dem med exp:ini.</translation>
     </message>
     <message>
         <source>Search</source>

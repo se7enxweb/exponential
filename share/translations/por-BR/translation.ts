@@ -21625,7 +21625,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Block</source>
-        <translation>Bloquear</translation>
+        <translation>Bloco</translation>
     </message>
     <message>
         <source>Setting</source>
