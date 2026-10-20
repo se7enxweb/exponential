@@ -26,12 +26,12 @@ schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzuf�
 
 - [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md): die kurze Antwort und die drei Wege.
 - [Das Kopfmenü in der Administration](kopfmenue-in-der-administration.md): Schritt für Schritt, ohne Code.
-- [Das Kopfmenü über die Kommandozeile](../../../eng-us/help/build-two-ways/header-menu-by-cli.md): `exp:ini` und `exp:cache`, echte Ausgaben.
-- [Das Kopfmenü und der Inhaltsbaum](../../../eng-us/help/build-two-ways/header-menu-and-the-content-tree.md): was Redakteure im Baum ändern.
+- [Das Kopfmenü über die Kommandozeile](kopfmenue-per-kommandozeile.md): `exp:ini` und `exp:cache`, echte Ausgaben.
+- [Das Kopfmenü und der Inhaltsbaum](kopfmenue-und-inhaltsbaum.md): was Redakteure im Baum ändern.
 - [Einträge des Kopfmenüs umordnen oder entfernen](kopfmenue-eintraege-umordnen-oder-entfernen.md).
 - [Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md): vom gemeinsamen Layout bis zur `menu.ini`.
-- [Fehlerbehebung beim Kopfmenü](../../../eng-us/help/build-two-ways/header-menu-troubleshooting.md).
-- [Ein Kopfmenü, das dem Baum folgt](../../../eng-us/help/build-two-ways/header-menu-from-the-tree.md): der Weg über Templates, getestet.
+- [Fehlerbehebung beim Kopfmenü](kopfmenue-fehlerbehebung.md).
+- [Ein Kopfmenü, das dem Baum folgt](kopfmenue-aus-dem-baum.md): der Weg über Templates, getestet.
 
 ## Die Fußzeile
 
@@ -47,7 +47,7 @@ schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzuf�
 - [Manuelle und dynamische Sammlungen](manuelle-und-dynamische-sammlungen.md).
 - [Welches Layout bekommt eine Seite?](../../../eng-us/help/build-two-ways/layout-mappings.md).
 - [Wie ein Block seinen Templates zugeordnet wird](../../../eng-us/help/build-two-ways/block-to-template-map.md).
-- [Gemeinsame Layouts und Zonenverknüpfung](../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md): warum eine Kopfzeile jede Seite bedient.
+- [Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md): warum eine Kopfzeile jede Seite bedient.
 - [Warum erscheint meine Änderung nicht?](warum-erscheint-meine-aenderung-nicht.md): die Checkliste.
 - [Caches nach einer Änderung](caches-nach-einer-aenderung.md): welcher Cache für welche Änderung.
 - [Bekanntes Verhalten des Editors](bekanntes-verhalten-des-editors.md).
@@ -56,7 +56,7 @@ schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzuf�
 
 - [Ihre eigene Design-Erweiterung](eigene-design-erweiterung.md): Einrichtung, Reihenfolge der Aktivierung, Overrides.
 - [Einen Ansichtstyp hinzufügen](ansichtstyp-hinzufuegen.md).
-- [Einen Blocktyp hinzufügen](../../../eng-us/help/build-two-ways/add-a-block-type.md).
+- [Einen Blocktyp hinzufügen](blocktyp-hinzufuegen.md).
 - [Eigene Template-Blöcke](eigene-template-bloecke.md).
 - [Ihre Blöcke gestalten](bloecke-gestalten.md).
 

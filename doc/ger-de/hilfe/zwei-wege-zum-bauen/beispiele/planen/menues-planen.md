@@ -27,7 +27,7 @@ Vor dem Livegang wissen, wie jeder Menüeintrag geändert wird.
 ## Mit Einstellungen und Templates
 
 1. Kopfzeile: `menu.ini [SiteInfo] MainMenuID[]`. Erste Zeile der Fußzeile: `FooterMenuID[]`. Zweite Zeile der Fußzeile: Menu items unter **Media > Configuration > Footer links**.
-2. Für ein Menü, das dem Baum folgt, planen Sie einen Template-Override von `pagelayout/header/main_menu.tpl` ([Ein Kopfmenü, das dem Baum folgt](../../../../../eng-us/help/build-two-ways/header-menu-from-the-tree.md)).
+2. Für ein Menü, das dem Baum folgt, planen Sie einen Template-Override von `pagelayout/header/main_menu.tpl` ([Ein Kopfmenü, das dem Baum folgt](../../kopfmenue-aus-dem-baum.md)).
 
 ## Welchen Weg Sie wählen
 

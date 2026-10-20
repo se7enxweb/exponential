@@ -46,12 +46,12 @@ Die Schaltfläche **+** oben links öffnet die Palette. Ihre Gruppen und Blöcke
 | Containers | Column, Two columns, Three columns, Four columns |
 | Placeholders | Template block, Full view, Single content |
 
-Ziehen Sie einen Block aus der Palette in eine Zone. Erweiterungen können eigene hinzufügen ([Einen Blocktyp hinzufügen](../../../eng-us/help/build-two-ways/add-a-block-type.md)).
+Ziehen Sie einen Block aus der Palette in eine Zone. Erweiterungen können eigene hinzufügen ([Einen Blocktyp hinzufügen](blocktyp-hinzufuegen.md)).
 
 ## Zonen und Blöcke
 
 Zonen sind die gestrichelten Bereiche, beschriftet mit ihrem Bezeichner (HEADER, MAIN, PRE_FOOTER ...). Eine **verknüpfte**
-Zone zeigt die Blöcke eines gemeinsamen Layouts ([Gemeinsame Layouts und Zonenverknüpfung](../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md)).
+Zone zeigt die Blöcke eines gemeinsamen Layouts ([Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md)).
 
 Jeder Block hat einen Kopf: einen Griff zum Ziehen, den **Ansichtstyp** in Großbuchstaben, den **Namen des Blocktyps** und
 ein Menü `...`. Die Mitte des Blocks zeigt eine Vorschau. Container (Column, Two columns ...) enthalten in ihren

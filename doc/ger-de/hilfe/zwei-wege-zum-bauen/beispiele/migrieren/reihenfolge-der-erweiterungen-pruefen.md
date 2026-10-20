@@ -39,7 +39,7 @@ Prüfen Sie nach jeder Änderung von `ActiveExtensions[]`.
 ## Verwandte Seiten
 
 - [Ihre eigene Design-Erweiterung](../../eigene-design-erweiterung.md)
-- [Einen Blocktyp hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-block-type.md)
+- [Einen Blocktyp hinzufügen](../../blocktyp-hinzufuegen.md)
 - [Beispiele zur Migration, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

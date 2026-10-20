@@ -14,7 +14,7 @@ Arbeiten Sie von oben nach unten: Die ersten Ursachen sind die häufigsten.
 | # | Prüfung | Wie man es sieht | Abhilfe |
 |---|---|---|---|
 | 1 | Die Layoutänderung ist noch ein **Entwurf** | Der Editor zeigt **Verwerfen** und **Layout veröffentlichen**; `exp:layouts list --drafts` listet Entwürfe | **Layout veröffentlichen** |
-| 2 | Sie haben eine Zone bearbeitet, die **verknüpft** ist | Die Zone des Seitenlayouts ist mit einem gemeinsamen Layout verknüpft (`exp:layouts list`, Spalte *Links to*) | Das gemeinsame Layout bearbeiten oder die Verknüpfung der Zone aufheben ([Gemeinsame Layouts und Zonenverknüpfung](../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md)) |
+| 2 | Sie haben eine Zone bearbeitet, die **verknüpft** ist | Die Zone des Seitenlayouts ist mit einem gemeinsamen Layout verknüpft (`exp:layouts list`, Spalte *Links to*) | Das gemeinsame Layout bearbeiten oder die Verknüpfung der Zone aufheben ([Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md)) |
 | 3 | Die Seite verwendet ein **anderes Layout** | Layouts > Layout-Zuordnungen: welche Zuordnung auf die Seite passt | Die Zuordnung ändern oder das passende Layout bearbeiten |
 | 4 | Die Änderung steckt gar nicht in einem Layout | Kopf- und Fußzeilenmenü sind Listen in der `menu.ini`, dargestellt von Template-Blöcken | [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md), [Die Einträge des Fußzeilenmenüs](eintraege-des-fusszeilenmenues.md) |
 | 5 | Eine Einstellung landete in einer **Datei, die nicht gewinnt** | `./console exp:ini where <file>/<Block>/<Variable> <siteaccess>`; in der Administration *In N Dateien gesetzt* | Den als wirksam markierten Geltungsbereich schreiben |
@@ -37,8 +37,8 @@ Arbeiten Sie von oben nach unten: Die ersten Ursachen sind die häufigsten.
 ## Verwandte Seiten
 
 - [Caches nach einer Änderung](caches-nach-einer-aenderung.md)
-- [Fehlerbehebung beim Kopfmenü](../../../eng-us/help/build-two-ways/header-menu-troubleshooting.md)
-- [Gemeinsame Layouts und Zonenverknüpfung](../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md)
+- [Fehlerbehebung beim Kopfmenü](kopfmenue-fehlerbehebung.md)
+- [Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

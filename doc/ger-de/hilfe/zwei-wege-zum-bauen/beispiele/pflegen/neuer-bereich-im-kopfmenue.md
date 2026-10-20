@@ -31,7 +31,7 @@ Nicht im Layout-Editor; geben Sie dem Bereich bei Bedarf über eine Zuordnung se
 
 ## Mit einem Menü aus dem Baum
 
-1. Wenn die Kopfzeile den Override verwendet, der dem Baum folgt ([Ein Kopfmenü, das dem Baum folgt](../../../../../eng-us/help/build-two-ways/header-menu-from-the-tree.md)), genügt es, den Bereich zu veröffentlichen.
+1. Wenn die Kopfzeile den Override verwendet, der dem Baum folgt ([Ein Kopfmenü, das dem Baum folgt](../../kopfmenue-aus-dem-baum.md)), genügt es, den Bereich zu veröffentlichen.
 
 ## Welchen Weg Sie wählen
 

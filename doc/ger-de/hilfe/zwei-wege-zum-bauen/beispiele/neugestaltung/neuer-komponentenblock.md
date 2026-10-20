@@ -26,7 +26,7 @@ Eine Komponente „Preistabelle“, die Redakteure hineinziehen können.
 
 ## Mit Templates
 
-1. Definieren Sie `[BlockDefinition_pricing]` und `AvailableBlocks[]=pricing` mit einem Handler, der die benötigten Felder hat (`expLayoutsComponentBlockHandler` bietet Titel, Inhalt, Bild, Link, CSS-Klasse und ID), und `explayouts/block/pricing.tpl` ([Einen Blocktyp hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-block-type.md)).
+1. Definieren Sie `[BlockDefinition_pricing]` und `AvailableBlocks[]=pricing` mit einem Handler, der die benötigten Felder hat (`expLayoutsComponentBlockHandler` bietet Titel, Inhalt, Bild, Link, CSS-Klasse und ID), und `explayouts/block/pricing.tpl` ([Einen Blocktyp hinzufügen](../../blocktyp-hinzufuegen.md)).
 
 ## Welchen Weg Sie wählen
 
@@ -38,7 +38,7 @@ Verwenden Sie einen Handler wieder, wenn seine Felder passen; schreiben Sie nur 
 
 ## Verwandte Seiten
 
-- [Einen Blocktyp hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-block-type.md)
+- [Einen Blocktyp hinzufügen](../../blocktyp-hinzufuegen.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

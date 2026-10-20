@@ -26,7 +26,7 @@ Keine Kopien desselben Kastens als rohes HTML mehr.
 
 ## Mit Templates
 
-1. Definieren Sie den Blocktyp ([Einen Blocktyp hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-block-type.md)).
+1. Definieren Sie den Blocktyp ([Einen Blocktyp hinzufügen](../../blocktyp-hinzufuegen.md)).
 
 ## Welchen Weg Sie wählen
 
@@ -38,7 +38,7 @@ Tun Sie es, sobald dasselbe Markup dreimal vorkommt.
 
 ## Verwandte Seiten
 
-- [Einen Blocktyp hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-block-type.md)
+- [Einen Blocktyp hinzufügen](../../blocktyp-hinzufuegen.md)
 - [Beispiele zur Migration, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

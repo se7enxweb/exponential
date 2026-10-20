@@ -26,7 +26,7 @@ Vor dem Bauen wissen, welche Blöcke es gibt und welche angefertigt werden müss
 
 ## Mit Templates
 
-1. Eine fehlende Art von Block ist eine Blockdefinition, ein Handler und ein Template ([Einen Blocktyp hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-block-type.md)); ein fehlendes Aussehen eines vorhandenen Blocks ist ein Ansichtstyp ([Einen Ansichtstyp hinzufügen](../../ansichtstyp-hinzufuegen.md)).
+1. Eine fehlende Art von Block ist eine Blockdefinition, ein Handler und ein Template ([Einen Blocktyp hinzufügen](../../blocktyp-hinzufuegen.md)); ein fehlendes Aussehen eines vorhandenen Blocks ist ein Ansichtstyp ([Einen Ansichtstyp hinzufügen](../../ansichtstyp-hinzufuegen.md)).
 
 ## Welchen Weg Sie wählen
 
@@ -38,7 +38,7 @@ Ziehen Sie einen Ansichtstyp einem neuen Blocktyp vor, wenn die Daten dieselben 
 
 ## Verwandte Seiten
 
-- [Einen Blocktyp hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-block-type.md)
+- [Einen Blocktyp hinzufügen](../../blocktyp-hinzufuegen.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

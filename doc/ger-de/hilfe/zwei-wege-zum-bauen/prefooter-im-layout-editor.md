@@ -74,11 +74,11 @@ Um den Entwurf stattdessen wegzuwerfen, klicken Sie auf **Verwerfen**.
 | Raster oder Liste, Anzahl der Spalten, Aussehen der Einträge | Die List auswählen, Reiter **Design**: Ansichtstyp, Ansichtstyp der Elemente, Number of columns |
 | Hintergrund, Abstände, CSS-Klasse, Container | Reiter **Design** der Column oder der List |
 | Eine Liste, die sich selbst füllt | Sammlungstyp **Ändern** > Dynamische Sammlung ([Manuelle und dynamische Sammlungen](manuelle-und-dynamische-sammlungen.md)) |
-| Das Band auf anderen Seitentypen zeigen | Die Zone `pre_footer` ihrer Layouts mit Prefooter verknüpfen ([Gemeinsame Layouts und Zonenverknüpfung](../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md)) |
+| Das Band auf anderen Seitentypen zeigen | Die Zone `pre_footer` ihrer Layouts mit Prefooter verknüpfen ([Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md)) |
 
 ## Verwandte Seiten
 
-- [Gemeinsame Layouts und Zonenverknüpfung](../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md)
+- [Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md)
 - [Manuelle und dynamische Sammlungen](manuelle-und-dynamische-sammlungen.md)
 - [Der Layout-Editor, ein Rundgang](rundgang-durch-den-layout-editor.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

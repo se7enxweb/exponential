@@ -96,9 +96,9 @@ Im HTML der Seite erscheint Ihr Markup. Die **Kurzeinstellungen** der Administra
 
 ## Verwandte Seiten
 
-- [Ein Kopfmenü, das dem Baum folgt](../../../eng-us/help/build-two-ways/header-menu-from-the-tree.md)
+- [Ein Kopfmenü, das dem Baum folgt](kopfmenue-aus-dem-baum.md)
 - [Einen Ansichtstyp hinzufügen](ansichtstyp-hinzufuegen.md)
-- [Einen Blocktyp hinzufügen](../../../eng-us/help/build-two-ways/add-a-block-type.md)
+- [Einen Blocktyp hinzufügen](blocktyp-hinzufuegen.md)
 - [Eigene Template-Blöcke](eigene-template-bloecke.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

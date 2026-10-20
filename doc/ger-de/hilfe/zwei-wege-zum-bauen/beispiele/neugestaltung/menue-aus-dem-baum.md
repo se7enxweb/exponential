@@ -26,7 +26,7 @@ Nichts im Layout-Editor; `MainMenuID[]` wird von Ihrem Template nicht mehr geles
 
 ## Mit Templates
 
-1. Folgen Sie [Ein Kopfmenü, das dem Baum folgt](../../../../../eng-us/help/build-two-ways/header-menu-from-the-tree.md): Einstellungen `[MySiteMenu]`, das Template, die Reihenfolge der Aktivierung, das Leeren des Cache.
+1. Folgen Sie [Ein Kopfmenü, das dem Baum folgt](../../kopfmenue-aus-dem-baum.md): Einstellungen `[MySiteMenu]`, das Template, die Reihenfolge der Aktivierung, das Leeren des Cache.
 
 ## Welchen Weg Sie wählen
 
@@ -38,7 +38,7 @@ Legen Sie die Längenbegrenzung gemeinsam mit dem Design fest.
 
 ## Verwandte Seiten
 
-- [Ein Kopfmenü, das dem Baum folgt](../../../../../eng-us/help/build-two-ways/header-menu-from-the-tree.md)
+- [Ein Kopfmenü, das dem Baum folgt](../../kopfmenue-aus-dem-baum.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

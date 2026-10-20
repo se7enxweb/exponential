@@ -31,7 +31,7 @@ Wählen Sie einen Block aus, dann **Design**. Die Optionen hängen vom Blocktyp 
 | Wrap in container | mit **Container size** (Regular ...) | ein inneres `<div class="container">` |
 
 Andere Blöcke zeigen hier auch ihre eigenen Felder aus ihrem Handler: der Template-Block seinen **Template name**, der
-Notice-Block aus [Einen Blocktyp hinzufügen](../../../eng-us/help/build-two-ways/add-a-block-type.md) seinen **Content**.
+Notice-Block aus [Einen Blocktyp hinzufügen](blocktyp-hinzufuegen.md) seinen **Content**.
 
 ## Beispiel
 

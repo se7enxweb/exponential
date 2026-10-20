@@ -73,7 +73,7 @@ Warm-ups behalten. Nach einer Änderung an Einstellungen rät `exp:ini` dort sel
 
 ## Verwandte Seiten
 
-- [Fehlerbehebung beim Kopfmenü](../../../eng-us/help/build-two-ways/header-menu-troubleshooting.md)
+- [Fehlerbehebung beim Kopfmenü](kopfmenue-fehlerbehebung.md)
 - [Warum erscheint meine Änderung nicht?](warum-erscheint-meine-aenderung-nicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

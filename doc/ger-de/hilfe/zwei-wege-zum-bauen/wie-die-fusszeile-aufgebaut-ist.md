@@ -54,7 +54,7 @@ wird mit `ezroot` statt `ezurl` geschrieben.
 | Eine Seite zur ersten Zeile hinzufügen | Einstellungen (`FooterMenuID[]`) | [Die Einträge des Fußzeilenmenüs](eintraege-des-fusszeilenmenues.md) |
 | Einen Link zur zweiten Zeile hinzufügen | Inhalt (Menu item in Footer links) | [Fußzeilen-Links aus dem Inhaltsbaum](fusszeilen-links-aus-dem-inhaltsbaum.md) |
 | Adressen der Social-Media-Profile | Inhalt (das Site-Info-Objekt bearbeiten) | |
-| Blöcke über der Fußzeile auf Artikel- und Rezeptseiten | Layout-Editor (gemeinsames Layout Prefooter) | [Gemeinsame Layouts und Zonenverknüpfung](../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md) |
+| Blöcke über der Fußzeile auf Artikel- und Rezeptseiten | Layout-Editor (gemeinsames Layout Prefooter) | [Gemeinsame Layouts und Zonenverknüpfung](gemeinsame-layouts-und-zonenverknuepfung.md) |
 | Markup der Fußzeile | Template-Override in Ihrer eigenen Design-Erweiterung | [Zwei Wege zum Bauen](../../../eng-us/help/build-two-ways/two-ways-to-build.md) |
 
 ## Verwandte Seiten

@@ -87,12 +87,12 @@ Laden Sie die Site neu. Die Kopfzeile hat den neuen Eintrag, mit dem Namen der S
 
 ![Die Kopfzeile nach der Änderung: Fitness, Healthy eating, Recipes, Running, Video, Tour, Showcase](../../../eng-us/help/build-two-ways/images/hm-06-header-after.webp)
 
-Es erscheint nichts? Siehe [Fehlerbehebung beim Kopfmenü](../../../eng-us/help/build-two-ways/header-menu-troubleshooting.md).
+Es erscheint nichts? Siehe [Fehlerbehebung beim Kopfmenü](kopfmenue-fehlerbehebung.md).
 
 ## Verwandte Seiten
 
 - [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md)
-- [Das Kopfmenü über die Kommandozeile](../../../eng-us/help/build-two-ways/header-menu-by-cli.md)
+- [Das Kopfmenü über die Kommandozeile](kopfmenue-per-kommandozeile.md)
 - [INI-Einstellungen in der Administration](ini-einstellungen-in-der-administration.md)
 - [Caches nach einer Änderung](caches-nach-einer-aenderung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

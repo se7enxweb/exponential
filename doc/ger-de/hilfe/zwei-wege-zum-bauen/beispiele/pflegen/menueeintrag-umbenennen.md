@@ -43,7 +43,7 @@ Inhalt: Das Menü folgt der Seite.
 
 ## Verwandte Seiten
 
-- [Das Kopfmenü und der Inhaltsbaum](../../../../../eng-us/help/build-two-ways/header-menu-and-the-content-tree.md)
+- [Das Kopfmenü und der Inhaltsbaum](../../kopfmenue-und-inhaltsbaum.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

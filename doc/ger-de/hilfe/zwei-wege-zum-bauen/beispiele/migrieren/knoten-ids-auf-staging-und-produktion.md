@@ -39,7 +39,7 @@ Kopieren Sie ID-Listen niemals blind zwischen Installationen.
 ## Verwandte Seiten
 
 - [Layouts exportieren und importieren](../../layouts-exportieren-und-importieren.md)
-- [Das Kopfmenü über die Kommandozeile](../../../../../eng-us/help/build-two-ways/header-menu-by-cli.md)
+- [Das Kopfmenü über die Kommandozeile](../../kopfmenue-per-kommandozeile.md)
 - [Beispiele zur Migration, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

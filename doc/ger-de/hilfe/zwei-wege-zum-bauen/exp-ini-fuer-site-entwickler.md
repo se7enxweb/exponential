@@ -66,7 +66,7 @@ Menüs und Theme-Einstellungen einer Site mit dem Theme unter Versionsverwaltung
 
 ## Verwandte Seiten
 
-- [Das Kopfmenü über die Kommandozeile](../../../eng-us/help/build-two-ways/header-menu-by-cli.md)
+- [Das Kopfmenü über die Kommandozeile](kopfmenue-per-kommandozeile.md)
 - [INI-Einstellungen in der Administration](ini-einstellungen-in-der-administration.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -39,7 +39,7 @@ Die Konsole: zwei Befehle, etwa 4 Sekunden auf der Testkopie.
 
 ## Verwandte Seiten
 
-- [Das Kopfmenü über die Kommandozeile](../../../../../eng-us/help/build-two-ways/header-menu-by-cli.md)
+- [Das Kopfmenü über die Kommandozeile](../../kopfmenue-per-kommandozeile.md)
 - [Gemessene Schritte und Zeiten](../../gemessene-schritte-und-zeiten.md)
 - [Beispiele zum Livegang, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
