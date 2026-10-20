@@ -73092,10 +73092,6 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Centrum nápovědy</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Úvod nápovědy</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Jak vám můžeme pomoci?</translation>
     </message>
@@ -74662,6 +74658,78 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Help Start</source>
         <translation>Úvod nápovědy</translation>
+    </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Tato stránka zatím není přeložena (jazyk: %reader). Zobrazuje se v originále (jazyk: %original).</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Angličtina</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Němčina</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Jazyk čtení:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Volba jazyka změní jazyk celé administrace.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count z %total stránek</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>Nápověda v jiných jazycích</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Otevřít originál (jazyk: %language)</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Čtete originál této stránky (jazyk: %language).</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Zpět na stránku (jazyk: %language)</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Tato stránka je překlad.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Číst originál (jazyk: %language)</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>Dokumentace, kterou s sebou přinášejí aktivní rozšíření: jejich návody, README, seznam změn a licence.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Hledat v dokumentaci rozšíření %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Žádné aktivní rozšíření nepřináší vlastní dokumentaci.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Pouze dokumentace rozšíření %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Jeho stránky</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Hledat v celé nápovědě</translation>
     </message>
 </context>
 </TS>

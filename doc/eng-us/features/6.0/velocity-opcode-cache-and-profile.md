@@ -31,7 +31,7 @@ No setting of yours needs to change. A restart of Velocity applies it (workers k
 |---|---|---|---|---|
 | `settings/velocity.ini` | server options | `IniOptions[]=opcache.file_update_protection=0` | `0` | the Velocity server process |
 | `settings/velocity.ini` | server options | `IniOptions[]=opcache.revalidate_freq=0` | `0` (check every include) | the Velocity server process |
-| `settings/velocity.ini` | server options | `IniOptions[]=opcache.memory_consumption=256` | 256 (MB) | the Velocity server process |
+| `settings/velocity.ini` | server options | `IniOptions[]=opcache.memory_consumption=512` | 512 (MB) | the Velocity server process |
 
 Check:
 

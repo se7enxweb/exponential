@@ -73022,10 +73022,6 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Centrum pomocy</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Start pomocy</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>W czym możemy pomóc?</translation>
     </message>
@@ -74592,6 +74588,78 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Help Start</source>
         <translation>Start pomocy</translation>
+    </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Ta strona nie została jeszcze przetłumaczona (język: %reader). Jest wyświetlana w wersji oryginalnej (język: %original).</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Angielski</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Niemiecki</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Język czytania:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Wybór języka zmienia język całej administracji.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count z %total stron</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>Pomoc w innych językach</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Otwórz oryginał (język: %language)</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Czytasz oryginał tej strony (język: %language).</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Wróć do strony (język: %language)</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Ta strona jest tłumaczeniem.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Przeczytaj oryginał (język: %language)</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>Dokumentacja dostarczana przez aktywne rozszerzenia: ich poradniki, README, dziennik zmian i licencja.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Przeszukaj dokumentację rozszerzenia %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Żadne aktywne rozszerzenie nie dostarcza własnej dokumentacji.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Tylko dokumentacja rozszerzenia %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Jego strony</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Przeszukaj całą pomoc</translation>
     </message>
 </context>
 </TS>

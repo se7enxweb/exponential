@@ -78848,10 +78848,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Hilfe-Center</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Hilfe-Startseite</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Wie können wir helfen?</translation>
     </message>
@@ -80418,6 +80414,30 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Help Start</source>
         <translation>Hilfe-Startseite</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>Die Dokumentation, die die aktiven Extensions mitbringen: ihre Anleitungen, README, Changelog und Lizenz.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Dokumentation von %extension durchsuchen</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Keine aktive Extension bringt eine eigene Dokumentation mit.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Nur die Dokumentation der Extension %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Ihre Seiten</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Die ganze Hilfe durchsuchen</translation>
     </message>
 </context>
 <context>

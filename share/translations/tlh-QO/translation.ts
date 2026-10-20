@@ -71576,10 +71576,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>QaH botlh</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>QaH tagh</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>chay&apos; maQaHlaH?</translation>
     </message>
@@ -73033,7 +73029,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
-        <translation type="unfinished"></translation>
+        <translation>wa&apos; nav wa&apos; ghel: &apos;Iv ta&apos;laH, mIwmey, qaS chugh Qagh, nuqDaq latlh laDlu&apos;.</translation>
     </message>
     <message>
         <source>Project files</source>
@@ -73146,6 +73142,78 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Help Start</source>
         <translation>QaH tagh</translation>
+    </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>%reader Hol mughlu&apos;pa&apos; navvam. %original Hol cha&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>DIvI&apos; Hol</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Doych Hol</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Hol laD:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Hol DaghajmoH, Hoch loH Hol choHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %total nav %count</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>latlh Hol QaH</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>%language Hol wa&apos;DIch ghItlh yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>%language Hol wa&apos;DIch ghItlh DalaD.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>%language Hol navDaq yIchegh</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>mughmeH ghItlh &apos;oH navvam&apos;e&apos;.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>%language Hol wa&apos;DIch ghItlh yIlaD</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>chu&apos;lu&apos;ta&apos;bogh chelwI&apos;mey De&apos; ghItlh: nav&apos;e&apos; QaH, README, choHmey tetlh, chaw&apos; je.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>%extension De&apos; ghItlh yInej</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>chu&apos;lu&apos;ta&apos;bogh chelwI&apos; De&apos; ghItlh ghaj pagh.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>%extension chelwI&apos; De&apos; ghItlh neH.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>navmeyDaj</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Hoch QaH yInej</translation>
     </message>
 </context>
 <context>

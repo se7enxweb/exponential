@@ -44,6 +44,15 @@ server. It runs behind any of the usual ones, and since 6.0.15 it also ships one
 of its own — **Exponential Velocity** — which is considerably faster. See
 [How Exponential is served](#how-exponential-is-served) below.
 
+**As of 6.0.15, the Velocity Internet / Web Application Server is part of Exponential.** The root `composer.json`
+requires `se7enxweb/exponential-velocity` (`~0.0.4.54`); it is no longer a suggestion, so every installation has it,
+on every PHP Exponential supports (8.0 and later, the stock PHP of Red Hat Enterprise Linux 9 included). This marks a
+turning point for the project: a cornerstone, a capstone, and a new level of application system integration, which
+provides even greater features out of the box in the core product, by default. Exponential is a whole working unit,
+not just a framework: a rapid application development (RAD) stack for Internet applications that is a CMS, a digital
+experience platform and an e-commerce system in one installation. See
+[Velocity is part of Exponential 6.0.15](doc/eng-us/help/velocity-is-part-of-exponential-6-0-15.md).
+
 Exponential with a full complement of all popular and available php extensions installed like SQLite3 users no longer require a dedicated database server anymore with Exponential 6.
 
 With PHP we require composer to install Exponential software and no other software required to run
@@ -73,7 +82,7 @@ The 6.0.15 line also brings, among much else (the full list is in the
   first drafts ([languages](doc/eng-us/languages.md)); right-to-left languages get `dir="rtl"` in content and in the
   administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
 - **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5, and the bundled
-  application server Exponential Velocity (required at `~0.0.4.54`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
+  application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.54`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).
 
 ## What does Exponential provide for end users building websites?
@@ -128,6 +137,24 @@ All of these work. Exponential does not require any particular one.
 
 **Velocity is a web server written in PHP, bundled with Exponential, that keeps
 the application loaded between requests.**
+
+### Part of Exponential as of 6.0.15
+
+As of 6.0.15 Velocity is part of Exponential itself. `composer.json` requires
+`se7enxweb/exponential-velocity ~0.0.4.54`, so `composer install` installs the
+server with the rest of the product, on PHP 8.0 and later, next to Apache with
+PHP-FPM, nginx and FrankenPHP. It is the recommended engine for every stage;
+FrankenPHP is the production-ready alternative; the traditional servers keep
+working exactly as before.
+
+This is a turning point, a cornerstone and a capstone for the project: the path
+from a visitor's request to a rendered page now belongs to one product, with one
+installer, one console and one set of documentation. With the server in the
+core, Exponential is one working stack (server, RAD application platform, CMS,
+digital experience and e-commerce) rather than a framework that needs other
+software assembled around it, so it can be adopted anywhere without the usual
+integration work. The whole story:
+[Velocity is part of Exponential 6.0.15](doc/eng-us/help/velocity-is-part-of-exponential-6-0-15.md).
 
 It is based on the Qbix server and is developed alongside Exponential, so the
 two are tuned against each other rather than merely made compatible.
@@ -187,6 +214,8 @@ raises the ceiling further; it is not what makes the application quick.
 ### Using it
 
 ```bash
+./console exp:velocity deploy          --allow-root-user   # after a change: autoloads, settings, caches, PHP-FPM, Velocity
+./console exp:velocity cache clear     --allow-root-user   # empty Velocity's response cache
 ./bin/php/console exp:velocity start     --allow-root-user
 ./bin/php/console exp:velocity status    --allow-root-user
 ./bin/php/console exp:velocity restart   --allow-root-user
@@ -323,7 +352,7 @@ Developer note: PHP 7 support can be regained at any time by reverting php8.1 sp
 - A content finder that finds content by id, remote id, URL alias, page address or file path
 - Background content jobs and a job queue for large operations and queued work
 - Content packages in the classic or a JSON format, validated on upload, installed in the background or as drafts
-- An application server of its own, Exponential Velocity, next to Apache, Nginx and the others
+- An Internet / web application server of its own, Exponential Velocity, part of Exponential as of 6.0.15 and installed with every copy, next to Apache, Nginx, FrankenPHP and the others
 - plugin API with thousands of open-source extensions available, including:
     - content rating and commenting
     - landing page management

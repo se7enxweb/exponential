@@ -1,7 +1,9 @@
 /**
  * The help pages (module exphelp, doc/eng-us/features/6.0/help-system.md): instant search, keyboard shortcuts, the table of
  * contents that follows the reading position, copy buttons on code and collapsible sections. Every page works without
- * this file: the search form sends a GET to exphelp/search, the contents are plain #anchors, code is a plain <pre>.
+ * this file: the search form posts to exphelp/search, the contents are plain #anchors, code is a plain <pre>.
+ * Every address this file builds carries its options as view parameters (/(q)/<words>/(format)/json), never as a
+ * GET query string.
  *
  * Hooks (data-* attributes, no inline script or handler, so it runs under the admin's Content Security Policy):
  * - [data-exphelp] the page root; data-exphelp-i18n holds the translated strings as JSON.
@@ -120,7 +122,7 @@
         this.root = closestRoot(form);
         this.t = strings(this.root);
         this.input = form.querySelector('[data-exphelp-search-input]');
-        this.endpoint = form.getAttribute('data-exphelp-endpoint') || '';
+        this.endpoint = String(form.getAttribute('data-exphelp-endpoint') || '').replace(/[?#].*$/, '').replace(/\/+$/, '');
         this.base = String(form.getAttribute('data-exphelp-canonical-base') || '').replace(/\/+$/, '');
         this.seq = 0;
         this.timer = null;
@@ -176,13 +178,10 @@
             if (!groups[name]) { groups[name] = []; order.push(name); }
             if (f.value !== '' && groups[name].indexOf(f.value) < 0) { groups[name].push(f.value); }
         });
-        var parts = ['q=' + encodeURIComponent(q)];
-        order.forEach(function (name) {
-            if (groups[name].length) { parts.push(encodeURIComponent(name) + '=' + encodeURIComponent(groups[name].join(','))); }
-        });
-        parts.push('limit=' + LIMIT, 'format=json');
         var filtered = order.some(function (name) { return groups[name].length > 0; });
-        return { q: q, groups: groups, filtered: filtered, query: parts.join('&') };
+        // the JSON request: the canonical view parameters plus (limit) and (format)/json, no query string
+        var query = canonicalUrl('', { q: q, groups: groups }) + '/(limit)/' + LIMIT + '/(format)/json';
+        return { q: q, groups: groups, filtered: filtered, query: query };
     };
 
     Search.prototype.schedule = function () {
@@ -202,7 +201,7 @@
         if (p.query === this.lastKey && !this.box.hidden) { return; }
         this.lastKey = p.query;
         var seq = (this.seq += 1);
-        var url = this.endpoint + (this.endpoint.indexOf('?') >= 0 ? '&' : '?') + p.query;
+        var url = this.endpoint + p.query;
         this.box.setAttribute('aria-busy', 'true');
         if (typeof fetch !== 'function') { this.fail(); return; }
         fetch(url, { headers: { Accept: 'application/json' }, credentials: 'same-origin' })

@@ -12,7 +12,7 @@ const source = fs.readFileSync(process.argv[2], 'utf8');
 const attr = (value) => JSON.stringify(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
 const SEARCH = '<div class="a4-help-frame" data-exphelp data-exphelp-i18n="' + attr({ resultsCount: '%count Treffer', copy: 'Kopieren', copied: 'Kopiert' }) + '">'
-    + '<form data-exphelp-search action="/admin/exphelp/search" method="get" data-exphelp-endpoint="/admin/exphelp/search">'
+    + '<form data-exphelp-search action="/admin/exphelp/search" method="post" data-exphelp-endpoint="/admin/exphelp/search">'
     + '<input type="search" name="q" id="q" data-exphelp-search-input aria-controls="res" />'
     + '<label data-exphelp-facet="audience:editor"><input type="radio" name="audience" value="" data-exphelp-filter checked="checked" />All</label>'
     + '<label data-exphelp-facet="audience:editor"><input type="radio" name="audience" value="editor" id="aud-editor" data-exphelp-filter />Editors <span data-exphelp-count>?</span></label>'

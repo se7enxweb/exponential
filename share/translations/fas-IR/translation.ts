@@ -71808,10 +71808,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>مرکز راهنما</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>صفحهٔ آغاز راهنما</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>چگونه می‌توانیم کمک کنیم؟</translation>
     </message>
@@ -73378,6 +73374,78 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Help Start</source>
         <translation>صفحهٔ آغاز راهنما</translation>
+    </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>این صفحه هنوز به %reader ترجمه نشده است. به %original نمایش داده می‌شود.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>انگلیسی</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>آلمانی</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>زبان خواندن:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>انتخاب یک زبان، زبان کل بخش مدیریت را تغییر می‌دهد.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count از %total صفحه</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>راهنما به زبان‌های دیگر</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>باز کردن نسخهٔ اصلی به %language</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>شما نسخهٔ اصلی این صفحه را به %language می‌خوانید.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>بازگشت به صفحه به %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>این صفحه یک ترجمه است.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>خواندن نسخهٔ اصلی به %language</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>مستنداتی که افزونه‌های فعال با خود می‌آورند: راهنماها، README، فهرست تغییرات و مجوز نشر آن‌ها.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>جستجو در مستندات %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>هیچ افزونهٔ فعالی مستندات خودش را همراه ندارد.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>فقط مستندات افزونهٔ %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>صفحه‌های آن</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>جستجو در کل راهنما</translation>
     </message>
 </context>
 </TS>

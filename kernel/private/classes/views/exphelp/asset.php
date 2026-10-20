@@ -25,7 +25,7 @@ class Asset extends \Exponential\Runnable\ModuleView
         if ( !\expHelp::isEnabled() )
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
 
-        $id = \expHelp::requestedId( $Params, $_GET );
+        $id = \expHelp::requestedId( $Params );
         $file = $id === '' ? null : \expHelpDocumentIndex::instance()->asset( $id );
         $type = self::contentType( (string)$file );
         if ( $file === null || $type === null || !is_file( $file ) )

@@ -32,7 +32,7 @@ diese Seite ist seine Zusammenfassung für Hoster.
 | Bedarf | Minimum | Empfohlen | Geprüft von |
 |---|---|---|---|
 | PHP | 8.0 | das neueste 8.x, das das System anbietet; 8.5 ist das neueste getestete | Composer (`composer.json` `require.php`) und der Setup-Assistent (`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0`) |
-| PHP für Exponential Velocity | 8.1 mit `sockets` | zusätzlich mit `pcntl` und `openssl` | Composer (das Velocity-Paket verlangt `"php": ">=8.1"` und `ext-sockets`) |
+| PHP für Exponential Velocity | 8.0 mit `sockets` (8.1 vor Release 0.0.4.54) | zusätzlich mit `pcntl` und `openssl` | Composer (das Velocity-Paket verlangt `"php": ">=8.0"` und `ext-sockets`) |
 | PHP-Erweiterungen | siehe [unten](#erforderliche-php-erweiterungen) | zusätzlich `curl`, `gd`, `openssl`, `pcntl`, `opcache` | Composer (`ext-*`) und die kritischen Tests des Setup-Assistenten |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an, `allow_url_fopen` an | mehr Speicher für Importe und Bildarbeit; Upload-Grenzen für Ihre Kunden bemessen | die kritischen Tests des Setup-Assistenten |
 | Datenbank | eine der sechs, SQLite 3 braucht keinen Server | in der offiziellen Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | der Datenbankschritt des Installers |
@@ -121,7 +121,7 @@ Berechtigungen die genauen Befehle `chmod` und `chown` ([Kapitel 2.4](../../../i
 ## Einen Server in zwei Minuten prüfen
 
 ```bash
-php -v                          # 8.0 or later (8.1 or later for Velocity)
+php -v                          # 8.0 or later, for Velocity too
 php -m                          # the extensions listed above
 php -i | grep "Integer Size"    # 64 bits recommended
 composer --version              # Composer 2, and the PHP it runs with
@@ -134,7 +134,7 @@ den Paketbefehl für das System aus ([Kapitel 2.3](../../../installation/02-vora
 
 ## Checkliste
 
-- [ ] `php -v` zeigt 8.0 oder später sowohl für das Web-PHP als auch für das PHP der Kommandozeile (8.1 oder später für Velocity).
+- [ ] `php -v` zeigt 8.0 oder später sowohl für das Web-PHP als auch für das PHP der Kommandozeile (einschließlich Velocity).
 - [ ] Jede erforderliche Erweiterung ist in beiden geladen.
 - [ ] `memory_limit`, `max_execution_time`, `date.timezone`, `file_uploads` und `allow_url_fopen` gesetzt.
 - [ ] Eine Datenbankerweiterung für die Datenbank, die der Tarif anbietet.

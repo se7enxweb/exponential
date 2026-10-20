@@ -147,7 +147,7 @@ A command-line PHP for cron and Velocity usually has its own `php.ini` without s
 
 **Velocity** runs PHP as command line processes and passes its own options from `settings/velocity.ini`,
 `[PHPSettings] IniOptions[]`. The shipped list turns on OPcache for the command line (`opcache.enable_cli=1`), sets
-`memory_consumption=256`, `max_accelerated_files=20000`, `interned_strings_buffer=32`, `opcache.revalidate_freq=0`,
+`memory_consumption=512`, `max_accelerated_files=20000`, `interned_strings_buffer=64`, `opcache.revalidate_freq=0`,
 `opcache.file_update_protection=0` and `apc.shm_size=256M`. The two OPcache values differ from PHP-FPM on purpose: a
 Velocity worker is one long request, and with the PHP-FPM values it would keep serving stale cache files
 ([chapter 10.12](../../../install/10-after-installing.md#opcache)). Put changes in

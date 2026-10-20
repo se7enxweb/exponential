@@ -71856,10 +71856,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Help center</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Help start</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>How can we help?</translation>
     </message>
@@ -73426,6 +73422,78 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Help Start</source>
         <translation>Help Start</translation>
+    </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>This page is not translated into %reader yet. It is shown in %original.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>English</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>German</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Reading in:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Choosing a language changes the language of the whole administration.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count of %total pages</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>About the help in other languages</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Open the %language original</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>You are reading the %language original of this page.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Back to the page in %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>This page is a translation.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Read the %language original</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>The documentation the active extensions bring with them: their guides, README, changelog and license.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Search the documentation of %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>No active extension brings documentation of its own.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Only the documentation of the extension %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Its pages</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Search the whole help</translation>
     </message>
 </context>
 <context>
