@@ -1,6 +1,6 @@
-{* The license notice under every help page (doc/en/us/README-LICENSE.md, exphelp.ini [License]): the documentation is free
+{* The license notice under every help page (doc/eng-us/README-LICENSE.md, exphelp.ini [License]): the documentation is free
    documentation under the license named in exphelp.ini, with links to the license in the help, on the web and to
-   doc/en/us/help/free-documentation.md. Inherited pages (OtherLicensePathRules[]), an extension's pages, the project files
+   doc/eng-us/help/free-documentation.md. Inherited pages (OtherLicensePathRules[]), an extension's pages, the project files
    (project/README.md ..., the license of the software) and the license text
    itself get the notice that is true for them. It is printed with the page (help.css keeps it in print).
    Variables: license_page_id (page id below doc/; empty for a help page that is not a document: search, report).

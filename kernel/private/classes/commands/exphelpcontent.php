@@ -3,7 +3,7 @@
  * @description Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall
  * @alias exp:help:content
  *
- * File containing the exp:help:content command (doc/en/us/features/6.0/help-content.md, doc/en/us/specifications/6.0/help-system.md).
+ * File containing the exp:help:content command (doc/eng-us/features/6.0/help-content.md, doc/eng-us/specifications/6.0/help-system.md).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -246,7 +246,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
     }
 
     /**
-     * The DITA 1.3 export into a directory (doc/en/us/features/6.0/help-content.md, "DITA export"): changed files are
+     * The DITA 1.3 export into a directory (doc/eng-us/features/6.0/help-content.md, "DITA export"): changed files are
      * written, files of an earlier export that are gone are removed, then the directory is checked (well-formed, the
      * DITA 1.3 DOCTYPEs, every reference resolves). Exit 1 when the check finds a problem.
      */
@@ -288,7 +288,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
     }
 
     /**
-     * The overdue reviews (doc/en/us/features/6.0/help-content.md, "Overdue reviews"): review date passed, or in Review
+     * The overdue reviews (doc/eng-us/features/6.0/help-content.md, "Overdue reviews"): review date passed, or in Review
      * longer than [ContentSettings] ReviewMaxDays. Exit 0 also when some are overdue: it is a list, not a check
      * (check reports the past review dates as warnings).
      */

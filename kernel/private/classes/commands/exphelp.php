@@ -3,7 +3,7 @@
  * @description The help system on the command line: build and describe the index of doc/, search it, show a page's metadata, check its links and images
  * @alias exp:help
  *
- * File containing the exp:help command (doc/en/us/features/6.0/help-system.md, "On the command line").
+ * File containing the exp:help command (doc/eng-us/features/6.0/help-system.md, "On the command line").
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -29,13 +29,13 @@ class Exphelp extends \Exponential\Runnable\Command
                                  "./console exp:help show guides/caches.md     the metadata and headings of one page\n" .
                                  "./console exp:help check                     check the links and images of every page (--below=guides/)\n" .
                                  "./console exp:help pdf help/searching.md      the page as a PDF file (--out=file.pdf, --base-url=https://host)\n" .
-                                 "./console exp:help maps --language=de        check doc/de/.paths.json and .dirnames.json; --fix writes the\n" .
+                                 "./console exp:help maps --language=ger-de    check doc/ger-de/.paths.json and .dirnames.json; --fix writes the\n" .
                                  "                                             union of both sides of a git conflict (and of --paths=, --dirnames=)\n" .
                                  "\n" .
                                  "Only git-tracked files below doc/ (and the doc/ of the extensions in exphelp.ini ExtensionDocDirs[]) are\n" .
                                  "pages; nothing is changed except the cache in var/<site>/cache/exphelp. --json prints one JSON document.\n" .
-                                 "index builds the index of every language of exphelp.ini [DocLanguages] (doc/en/us/, doc/de/ ...);\n" .
-                                 "--language=de limits it to one, and makes search, show, check and pdf read that language.\n" .
+                                 "index builds the index of every language of exphelp.ini [DocLanguages] (doc/eng-us/, doc/ger-de/ ...);\n" .
+                                 "--language=ger-de limits it to one, and makes search, show, check and pdf read that language.\n" .
                                  "Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing was found, 2 error.",
                 'use-session'    => false,
                 'use-modules'    => false,
@@ -46,7 +46,7 @@ class Exphelp extends \Exponential\Runnable\Command
             'fix'      => 'maps: write .paths.json and .dirnames.json as the union of their entries, sorted',
             'paths'    => 'maps --fix: also merge the entries of this JSON file into .paths.json',
             'dirnames' => 'maps --fix: also merge the entries of this JSON file into .dirnames.json',
-            'language' => 'the documentation language: a directory of exphelp.ini [DocLanguages] Directories[] (en/us, de)',
+            'language' => 'the documentation language: a directory of exphelp.ini [DocLanguages] Directories[] (eng-us, ger-de; the old en/us and de are accepted)',
             'rebuild'  => 'index: build the index again even when the cached one is current',
             'list'     => 'index: list every page',
             'json'     => 'Print one JSON document instead of the text',
@@ -121,8 +121,9 @@ class Exphelp extends \Exponential\Runnable\Command
     {
         if ( !isset( $options['language'] ) || $options['language'] === '' || $options['language'] === null )
             return null;
-        $directory = \expHelpLanguage::cleanDirectory( (string)$options['language'] );
-        return $directory !== null && $languages->isDirectory( $directory ) ? $directory : false;
+        // a directory (ger-de), a locale (ger-DE) or an old directory (de, en/us)
+        $directory = $languages->resolveDirectory( (string)$options['language'] );
+        return $directory !== null ? $directory : false;
     }
 
     /**
@@ -303,7 +304,7 @@ class Exphelp extends \Exponential\Runnable\Command
     {
         $cli = $this->cli();
         $index = \expHelpDocumentIndex::instance();
-        // a file name (doc/en/us/<id>, doc/<language>/<translated path>) names its page
+        // a file name (doc/eng-us/<id>, doc/<language>/<translated path>) names its page
         $id = trim( $id ) === '' ? '' : \expHelpLanguage::fromIni()->idOfValue( trim( $id ) );
         $document = $id === '' ? null : $index->document( $id );
         if ( $document === null )
@@ -350,7 +351,7 @@ class Exphelp extends \Exponential\Runnable\Command
     protected function pdf( $id, array $options, $json )
     {
         $cli = $this->cli();
-        // a file name (doc/en/us/<id>, doc/<language>/<translated path>) names its page
+        // a file name (doc/eng-us/<id>, doc/<language>/<translated path>) names its page
         $id = trim( $id ) === '' ? '' : \expHelpLanguage::fromIni()->idOfValue( trim( $id ) );
         if ( $id === '' )
         {

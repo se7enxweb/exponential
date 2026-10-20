@@ -1,5 +1,5 @@
 /**
- * The help pages (module exphelp, doc/en/us/features/6.0/help-system.md): instant search, keyboard shortcuts, the table of
+ * The help pages (module exphelp, doc/eng-us/features/6.0/help-system.md): instant search, keyboard shortcuts, the table of
  * contents that follows the reading position, copy buttons on code and collapsible sections. Every page works without
  * this file: the search form sends a GET to exphelp/search, the contents are plain #anchors, code is a plain <pre>.
  *

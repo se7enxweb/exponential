@@ -1,6 +1,6 @@
 <?php
 /**
- * expHelpSearch: the full-text search of the help system (doc/en/us/features/6.0/help-system.md, "Search").
+ * expHelpSearch: the full-text search of the help system (doc/eng-us/features/6.0/help-system.md, "Search").
  *
  * The index is built from the documents expHelpDocumentIndex lists and kept as a PHP file in the help cache
  * (var/<site>/cache/exphelp/search-<key>.php). OPcache keeps that file in shared memory, so a query costs a few
@@ -34,7 +34,7 @@
 class expHelpSearch
 {
     /** Version of the index file format; a change builds a new index. */
-    const FORMAT = 4;
+    const FORMAT = 5;
 
     const DEFAULT_LIMIT = 20;
     const MAX_LIMIT = 50;
@@ -1228,7 +1228,7 @@ class expHelpSearch
         $lengths = array();
         $stems = array();
         // a document given without its file is taken to be in the default language's directory
-        $defaultDir = 'doc/' . ( class_exists( 'expHelpLanguage' ) ? expHelpLanguage::fromIni()->defaultDirectory() : 'en/us' ) . '/';
+        $defaultDir = 'doc/' . ( class_exists( 'expHelpLanguage' ) ? expHelpLanguage::fromIni()->defaultDirectory() : 'eng-us' ) . '/';
         foreach ( $documents as $key => $doc )
         {
             $key = (string)$key;

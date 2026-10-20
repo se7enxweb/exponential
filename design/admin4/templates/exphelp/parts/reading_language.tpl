@@ -1,4 +1,4 @@
-{* The reader's language of the help, with the switch to its other languages (doc/en/us/help/reading-help-in-other-languages.md).
+{* The reader's language of the help, with the switch to its other languages (doc/eng-us/help/reading-help-in-other-languages.md).
 
    "Reading in: English / Deutsch": one button per language of [DocLanguages] Directories[] that has pages and that the
    interface language switch can choose (expHelp::reading()). Each button posts to uiswitch/set, the same view as the
