@@ -41,7 +41,8 @@ The Help button appears only for users who have it.
 
 The help shows only files that are **tracked by git** below the directories of `exphelp.ini [IndexSettings] Roots[]`
 (`doc/` by default), with a page suffix (`md`, `markdown`, `txt`, `rst`, or none) or an image suffix (`png`, `jpg`,
-`jpeg`, `gif`, `webp`). Everything else is a 404: files outside `doc/`, untracked files, paths with `..`, symbolic
+`jpeg`, `gif`, `webp`), and the tracked project files outside `doc/` (`README.md`, `SECURITY.md` ..., see "Project
+files"). Everything else is a 404: other files outside `doc/`, untracked files, paths with `..`, symbolic
 links, generated HTML (`doc/en/us/doxygen/`), SVG files and files over `MaxFileSize`. An installation without `.git` uses
 the file manifest `share/filelist.md5` as the list of tracked files.
 
@@ -59,6 +60,7 @@ Security Policy.
 | `[IndexSettings] Roots[]` | `doc` | the directories whose tracked files are shown |
 | `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose `doc/` directory is shown too (opt-in) |
 | `[IndexSettings] ExcludePatterns[]` | doxygen, HTML, SVG | never shown, even when tracked |
+| `[ProjectFiles] Enabled`, `Include[]`, `Exclude[]` | `enabled`, the root `*.md` and the README.md of `bin/`, `tests/`, `design/`, `kernel/` | the tracked Markdown files outside `doc/` that are shown as project files (see "Project files") |
 | `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor`, `trainer`, `press`, `businesses`, `government`, `customer` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
 | `[AudienceSettings] PathRules[]` | per directory | `<glob>;<audience,...>`, first match wins |
 | `[CategorySettings]` | eight categories | names, icons and path rules |
@@ -125,6 +127,57 @@ Map[mymodule/edit]=ext/myextension/usage.md#editing
 
 and, to show its own `doc/` directory, an administrator adds it to `[IndexSettings] ExtensionDocDirs[]`. Its pages
 then have the ids `ext/<extension>/<path>`.
+
+## Project files
+
+The Markdown files of the repository that document the project itself, outside `doc/`, are help pages too: the
+root's `README.md`, `SECURITY.md`, `CONTRIBUTING.md`, `COPYRIGHT.md`, `LICENSE.md` (and `INSTALL.md`, `CHANGELOG.md`
+or any other root `*.md` once one is committed), the `README.md` files of `bin/`, `tests/`, `design/<design>/` and
+`kernel/`, the Markdown of `.github/`, and the `README.md` of an extension's tests (`extension/ezoe/tests/tinymce8/`).
+They are in the category **Project files** (`project-files`, type `project`), in the folder of the same name in the
+page tree of the contents page and of every help page, in the search (filter by the category or the type) and on the
+dashboard. Their audiences are developers and administrators, and more for some (`[ProjectFiles] AudienceRules[]`:
+`README.md` is also for editors, users, partners and hosting companies); the title is the first heading.
+
+- **Ids**: `project/<path in the repository>`: `/exphelp/viewer/project/README.md`,
+  `/exphelp/viewer/project/bin/php/README.md`. An address with the path alone (`/exphelp/viewer/README.md`)
+  redirects to the id. The prefix `project/` is reserved for them.
+- **Links**: a link of a documentation page to a project file (`[README](../../../../../README.md)` from
+  `doc/en/us/features/6.0/`) opens it in the help, not on GitHub; a link of `README.md` into the documentation
+  (`doc/en/us/guides/caches.md`) opens the help page. Links are resolved against the file, as GitHub resolves them,
+  so the same Markdown works in both places.
+- **Language**: the project files are English only and not translated, like `doc/changelogs/`. A reader of another
+  language sees them in English with the note that the page is not translated.
+- **License**: they are part of the software and are distributed under its license (`[ProjectFiles] LicenseName`,
+  linked to `LicensePage`), not under the documentation license; the notice under them says so.
+- **Left out** (`[ProjectFiles] Exclude[]`): test fixtures (`**/fixtures/**`) and the copies of other projects
+  (`**/javascript/**`, the README of a bundled JavaScript library such as TinyMCE).
+
+What can never be shown, whatever `Include[]` says and in an override too:
+
+- a file git does not track: the list comes from the git index, `git ls-files` or the release manifest, never from
+  the directory, so a private note in the root that is not committed (an untracked `notes.md`) is never shown,
+  searched, linked or redirected to;
+- a tracked file in a place `.gitignore` or `.git/info/exclude` ignores (added with `git add -f`);
+- anything but Markdown (`.md`, `.markdown`), and any path below `doc/` (the documentation itself), an extension's
+  `doc/`, `var/`, `vendor/`, `settings/override/`, `settings/siteaccess/`, `node_modules/`, or in a hidden
+  directory other than `.github/`;
+- symbolic links, files outside the installation root and files over `MaxFileSize`, as for every help file.
+
+```ini
+[ProjectFiles]
+Enabled=enabled
+Include[]
+Include[]=*.md
+Include[]=bin/**/README.md
+Exclude[]
+Exclude[]=**/fixtures/**
+```
+
+`*` stays inside one directory and `**` crosses directories. `Enabled=disabled` takes them out of the help. After a
+change, `./console exp:help index --rebuild` builds the index and search again (a commit that adds a file does it on
+its own, because the git index changes). `tests/tests/kernel/classes/help/expHelpProjectFilesTest.php` covers it (no
+database), among others that an untracked root note is never indexed.
 
 ## Landing pages of the audiences
 

@@ -15,7 +15,10 @@
  * - a listed path is kept only when it has no empty, "." or ".." segment and no backslash, matches no
  *   ExcludePatterns[] (doc/en/us/doxygen/ and HTML by default), has a document or image suffix, is a regular file that is not
  *   a symbolic link (nor is any directory above it, up to the root), lies inside the root after realpath(), and is no
- *   larger than MaxFileSize.
+ *   larger than MaxFileSize;
+ * - the project files (expHelpProjectFiles, exphelp.ini [ProjectFiles]): tracked Markdown files of the installation
+ *   root's own repository outside the roots (README.md, SECURITY.md, bin/php/README.md ...), from the same sources,
+ *   with the root '' in their entry; a file .gitignore ignores is refused even when it is tracked.
  *
  * A file on disk that git does not track (a local note, a file written by someone else) is therefore not in the list,
  * and every view answers "not found" for it. safePath() repeats the file checks at the time a file is read, so a file
@@ -38,6 +41,8 @@ class expHelpAllowlist
         'assetSuffixes'       => array( 'png', 'jpg', 'jpeg', 'gif', 'webp' ),
         'excludePatterns'     => array( 'doc/en/us/doxygen/*', 'doc/README.md', '*.html', '*.htm', '*.svg', '*.php' ),
         'maxFileSize'         => 2097152,
+        // the project files outside doc/ (expHelpProjectFiles configuration, exphelp.ini [ProjectFiles]); null: none
+        'projectFiles'        => null,
         // the tracked paths (relative to the installation root) to use instead of the sources: tests and tools only
         'tracked'             => null,
     );
@@ -60,7 +65,10 @@ class expHelpAllowlist
     /** Option names also accepted by the constructor => DEFAULTS key */
     const OPTION_ALIASES = array( 'suffixes' => 'documentSuffixes', 'asset_suffixes' => 'assetSuffixes', 'exclude' => 'excludePatterns',
                                   'max_size' => 'maxFileSize', 'extension_doc_dirs' => 'extensionDocDirs',
-                                  'plain_text_without_suffix' => 'plainTextWithoutSuffix' );
+                                  'plain_text_without_suffix' => 'plainTextWithoutSuffix', 'project_files' => 'projectFiles' );
+
+    /** @var expHelpProjectFiles|null|false the project files, false until made */
+    protected $projectFiles = false;
 
     /**
      * new expHelpAllowlist( '/path/to/root', array( 'roots' => ... ) ), or new expHelpAllowlist( array( 'root' => ..., ... ) )
@@ -123,7 +131,40 @@ class expHelpAllowlist
             $config['plainTextWithoutSuffix'] = $ini->variable( 'IndexSettings', 'PlainTextWithoutSuffix' ) === 'enabled';
         if ( $ini->hasVariable( 'IndexSettings', 'MaxFileSize' ) )
             $config['maxFileSize'] = max( 1024, (int)$ini->variable( 'IndexSettings', 'MaxFileSize' ) );
+        // the project files ([ProjectFiles]); a server process started before the class existed has none
+        if ( class_exists( 'expHelpProjectFiles' ) )
+            $config['projectFiles'] = expHelpProjectFiles::iniConfig();
         return $config;
+    }
+
+    /**
+     * The project files of the help (README.md, SECURITY.md ... outside doc/), or null when there are none.
+     *
+     * @return expHelpProjectFiles|null
+     */
+    public function projectFiles()
+    {
+        if ( $this->projectFiles === false )
+        {
+            $config = $this->config['projectFiles'];
+            $this->projectFiles = is_array( $config ) && class_exists( 'expHelpProjectFiles' ) ? new expHelpProjectFiles( $config ) : null;
+            if ( $this->projectFiles !== null && !$this->projectFiles->isEnabled() )
+                $this->projectFiles = null;
+        }
+        return $this->projectFiles;
+    }
+
+    /**
+     * Whether a path relative to the installation root has the name of a project file (expHelpProjectFiles::isCandidate():
+     * enabled, matched by Include[] and none of the paths that never are). Whether it is listed is contains()'s question.
+     *
+     * @param string $path
+     * @return bool
+     */
+    public function isProjectPath( $path )
+    {
+        $projectFiles = $this->projectFiles();
+        return $projectFiles !== null && $projectFiles->isCandidate( $path );
     }
 
     /**
@@ -220,8 +261,77 @@ class expHelpAllowlist
                     $files[$path] = $entry;
             }
         }
+        foreach ( $this->projectEntries() as $path => $entry )
+            if ( !isset( $files[$path] ) )
+                $files[$path] = $entry;
         ksort( $files, SORT_STRING );
         return $this->files = $files;
+    }
+
+    /**
+     * The project files (expHelpProjectFiles): the tracked files of the installation root's own repository whose
+     * name Include[] matches, that no ignore rule of git ignores, and that pass the file checks. Their entry's root
+     * is '' (the installation root). Only the git index, "git ls-files" and the release manifest list them, never
+     * the directory, so a file that is not committed is never one, whatever the settings say.
+     *
+     * @return array path => entry
+     */
+    protected function projectEntries()
+    {
+        $projectFiles = $this->projectFiles();
+        if ( $projectFiles === null )
+            return array();
+        $rootReal = realpath( $this->rootDir );
+        if ( $rootReal === false )
+            return array();
+        $gitdir = is_array( $this->config['tracked'] ) ? null : self::gitDir( $this->rootDir );
+        $entries = array();
+        foreach ( $this->trackedInRoot() as $path )
+        {
+            if ( !$projectFiles->isCandidate( $path ) || $this->excluded( $path ) || $projectFiles->isIgnored( $this->rootDir, $path, $gitdir ) )
+                continue;
+            if ( $this->kindOf( $path ) !== array( 'document', 'markdown' ) || !$this->checkFile( $path, '', $rootReal ) )
+                continue;
+            $size = filesize( $this->rootDir . '/' . $path );
+            if ( $size === false || $size > $this->config['maxFileSize'] )
+                continue;
+            $entries[$path] = array( 'path' => $path, 'root' => '', 'kind' => 'document', 'format' => 'markdown',
+                                     'mtime' => (int)filemtime( $this->rootDir . '/' . $path ), 'size' => (int)$size, 'project' => true );
+        }
+        return $entries;
+    }
+
+    /**
+     * The tracked files of the repository whose top is the installation root (the 'tracked' option, else the first
+     * source that answers); empty when the installation root is not the top of a repository or a release.
+     *
+     * @return string[]
+     */
+    protected function trackedInRoot()
+    {
+        if ( is_array( $this->config['tracked'] ) )
+        {
+            $this->usedSources['project files'] = 'given';
+            return array_values( array_filter( array_map( 'strval', $this->config['tracked'] ), 'strlen' ) );
+        }
+        $this->usedSources['project files'] = 'none';
+        $gitdir = self::gitDir( $this->rootDir );
+        foreach ( $this->config['sources'] as $source )
+        {
+            $paths = null;
+            if ( $source === 'gitindex' && $gitdir !== null )
+                $paths = self::readGitIndex( $gitdir . '/index', self::hashLength( $gitdir ) );
+            elseif ( $source === 'gitcommand' && $gitdir !== null )
+                $paths = self::runGitLsFiles( $this->rootDir );
+            elseif ( $source === 'manifest' )
+                $paths = self::readManifest( $this->rootDir . '/' . self::MANIFEST );
+            if ( is_array( $paths ) )
+            {
+                $this->usedSources['project files'] = $source;
+                return $paths;
+            }
+        }
+        return array();
     }
 
     /**
@@ -291,16 +401,25 @@ class expHelpAllowlist
     public function stamp()
     {
         $parts = array( json_encode( $this->config ), json_encode( $this->roots() ) );
+        $tops = array();
         foreach ( $this->roots() as $root )
         {
             $repo = $this->repositoryOf( $root );
-            if ( $repo === null )
-                continue;
-            foreach ( array( $repo['gitdir'] ? $repo['gitdir'] . '/index' : null,
-                             $repo['top'] . '/' . self::MANIFEST ) as $file )
+            if ( $repo !== null )
+                $tops[$repo['top']] = $repo['gitdir'];
+        }
+        // the project files come from the installation root's repository, and its ignore rules
+        if ( $this->projectFiles() !== null )
+        {
+            $gitdir = self::gitDir( $this->rootDir );
+            $tops[$this->rootDir] = $gitdir;
+            if ( is_file( $this->rootDir . '/.gitignore' ) )
+                $parts[] = self::fileState( $this->rootDir . '/.gitignore' );
+        }
+        foreach ( $tops as $top => $gitdir )
+            foreach ( array( $gitdir ? $gitdir . '/index' : null, $top . '/' . self::MANIFEST ) as $file )
                 if ( $file !== null && is_file( $file ) )
                     $parts[] = self::fileState( $file );
-        }
         return sha1( implode( "\n", $parts ) );
     }
 
@@ -569,14 +688,27 @@ class expHelpAllowlist
         $recent = array();
         if ( is_array( $this->config['tracked'] ) || !function_exists( 'proc_open' ) )
             return array( 'changed' => $changed, 'recent' => $recent );
+        $logs = array();
         foreach ( $this->roots() as $root )
         {
             $repo = $this->repositoryOf( $root );
             if ( $repo === null || $repo['gitdir'] === null )
                 continue;
-            $rootInRepo = $repo['prefix'] === '' ? $root : substr( $root, strlen( $repo['prefix'] ) + 1 );
-            $command = array( 'git', '-c', 'safe.directory=' . $repo['top'], '-C', $repo['top'], 'log', '--no-renames',
-                              '--format=%x01%ct%x02%s', '--name-only', '--', $rootInRepo );
+            $logs[] = array( $repo, array( $repo['prefix'] === '' ? $root : substr( $root, strlen( $repo['prefix'] ) + 1 ) ) );
+        }
+        // the project files: one log of the installation root's repository for exactly those files
+        $projectPaths = array();
+        foreach ( $this->entries() as $path => $entry )
+            if ( $entry['root'] === '' )
+                $projectPaths[] = $path;
+        if ( $projectPaths && count( $projectPaths ) <= 500 && self::gitDir( $this->rootDir ) !== null )
+            $logs[] = array( array( 'top' => $this->rootDir, 'prefix' => '', 'gitdir' => self::gitDir( $this->rootDir ) ),
+                             array_map( function ( $path ) { return ':(literal)' . $path; }, $projectPaths ) );
+        foreach ( $logs as $log )
+        {
+            list( $repo, $pathspecs ) = $log;
+            $command = array_merge( array( 'git', '-c', 'safe.directory=' . $repo['top'], '-C', $repo['top'], 'log', '--no-renames',
+                                           '--format=%x01%ct%x02%s', '--name-only', '--' ), $pathspecs );
             $process = @proc_open( $command, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
             if ( !is_resource( $process ) )
                 continue;
@@ -714,10 +846,22 @@ class expHelpAllowlist
      */
     protected function checkFile( $path, $root, $rootReal )
     {
-        if ( strncmp( $path, $root . '/', strlen( $root ) + 1 ) !== 0 )
+        // root '': a project file, relative to the installation root itself
+        if ( $root === '' )
+        {
+            if ( self::normalize( $path ) !== $path || !$this->isProjectPath( $path ) )
+                return false;
+            $current = $this->rootDir;
+            $rest = $path;
+        }
+        elseif ( strncmp( $path, $root . '/', strlen( $root ) + 1 ) !== 0 )
             return false;
-        $current = $this->rootDir . '/' . $root;
-        foreach ( explode( '/', substr( $path, strlen( $root ) + 1 ) ) as $segment )
+        else
+        {
+            $current = $this->rootDir . '/' . $root;
+            $rest = substr( $path, strlen( $root ) + 1 );
+        }
+        foreach ( explode( '/', $rest ) as $segment )
         {
             $current .= '/' . $segment;
             if ( is_link( $current ) )

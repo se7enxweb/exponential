@@ -103,6 +103,9 @@ class Viewer extends \Exponential\Runnable\ModuleView
         $id = \expHelpAllowlist::normalize( $id );
         if ( $id === null || strpos( $id, 'ext/' ) === 0 )
             return null;
+        // a project file named by its path in the repository (README.md, bin/php/README.md): project/<path>
+        if ( class_exists( 'expHelpProjectFiles' ) && !\expHelpProjectFiles::isProjectId( $id ) && $index->allowlist()->isProjectPath( $id ) )
+            return \expHelpProjectFiles::idOf( $id );
         $canonical = $index->languages()->idOfValue( $id );
         return $canonical !== '' && $canonical !== $id ? $canonical : null;
     }
@@ -177,6 +180,13 @@ class Viewer extends \Exponential\Runnable\ModuleView
         foreach ( $dirs as $segment )
         {
             $dir = $dir === '' ? $segment : $dir . '/' . $segment;
+            // the project files (project/...): their folder in the list of every page
+            if ( class_exists( 'expHelpProjectFiles' ) && $dir === \expHelpProjectFiles::ID_PREFIX )
+            {
+                $path[] = array( 'url' => ltrim( \expHelp::url( 'contents' ), '/' ) . '#exphelp-folder-' . \expHelpProjectFiles::ID_PREFIX,
+                                 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Project files' ) );
+                continue;
+            }
             $landing = null;
             foreach ( array( 'README.md', 'readme.md', 'index.md' ) as $file )
             {
