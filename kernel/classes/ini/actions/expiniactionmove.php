@@ -6,7 +6,7 @@
  * one scope to another, typically from settings/override or settings/siteaccess/<sa> into an extension's
  * settings, which --create-extension creates and --activate activates. The values in effect of every moved
  * variable are compared for every siteaccess before and after; a move that changes one is rolled back
- * (unless --force). The work is expIniMover's. Guide: doc/en/us/bc/6.0/console-exp-ini.md.
+ * (unless --force). The work is expIniMover's. Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

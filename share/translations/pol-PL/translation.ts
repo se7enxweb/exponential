@@ -5493,8 +5493,8 @@
         <translation>Teksty interfejsu administracyjnego i szablonów (przyciski, menu) pochodzą z plików tłumaczeń (.ts) i zamiast tego zależą od ustawienia Locale dostępu do witryny. Witryna może pokazywać treść niemiecką z interfejsem angielskim i odwrotnie.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>Dodanie języka tutaj niczego nie tłumaczy i nie zmienia żadnego dostępu do witryny: treść tłumaczy się w edytorze, a język należy wymienić w SiteLanguageList tam, gdzie ma być pokazywany. Podręcznik użytkownika to doc/en/us/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>Dodanie języka tutaj niczego nie tłumaczy i nie zmienia żadnego dostępu do witryny: treść tłumaczy się w edytorze, a język należy wymienić w SiteLanguageList tam, gdzie ma być pokazywany. Podręcznik użytkownika to doc/eng-us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -23252,8 +23252,8 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>Po włączeniu profilu widać, ile poleceń wykonuje każde żądanie, ile z nich to dokładne powtórzenia i ile zaoszczędziłaby pamięć podręczna zapytań.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>Profil liczy polecenia, które dotarły do bazy danych: przy włączonej pamięci podręcznej zapytań odpowiedź z pamięci podręcznej nie jest w nim uwzględniana. „Oszczędność pamięci na żądanie” to oszczędność trybu request, „oszczędność współdzielonej pamięci” to oszczędność trybu shared (około 15 µs na odpowiedź). Liczniki są osobne dla każdego serwera, ponieważ każdy serwer ma własne APCu. Dziennik to var/tmp/sql_profile.log; więcej w doc/en/us/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>Profil liczy polecenia, które dotarły do bazy danych: przy włączonej pamięci podręcznej zapytań odpowiedź z pamięci podręcznej nie jest w nim uwzględniana. „Oszczędność pamięci na żądanie” to oszczędność trybu request, „oszczędność współdzielonej pamięci” to oszczędność trybu shared (około 15 µs na odpowiedź). Liczniki są osobne dla każdego serwera, ponieważ każdy serwer ma własne APCu. Dziennik to var/tmp/sql_profile.log; więcej w doc/eng-us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -24604,8 +24604,8 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <translation>Ustawienia site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>Rodzaj wynika z site.ini [SiteAccessSettings] SiteAccessType, jeśli dostęp do witryny go ustawia, w przeciwnym razie z jego projektów graficznych i RequireUserLogin. Przewodnik: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>Rodzaj wynika z site.ini [SiteAccessSettings] SiteAccessType, jeśli dostęp do witryny go ustawia, w przeciwnym razie z jego projektów graficznych i RequireUserLogin. Przewodnik: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -31607,8 +31607,8 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
         <translation>Exponential Layouts zastąpiło to w nowych witrynach: układ zawiera strefy i bloki, menu jest jednym z bloków, a reguła wybiera układ dla każdej strony. Dostęp do witryny zbudowany w ten sposób nigdy nie odczytuje tych ustawień.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>Strona pozostaje dla witryn, które nadal używają klasycznego projektu graficznego. Zmiana ustawienia tutaj dla dostępu do witryny zbudowanego z Layouts jest nieszkodliwa, ale nie ma efektu. Przewodnik doc/en/us/guides/classic-menu-settings.md objaśnia oba sposoby.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>Strona pozostaje dla witryn, które nadal używają klasycznego projektu graficznego. Zmiana ustawienia tutaj dla dostępu do witryny zbudowanego z Layouts jest nieszkodliwa, ale nie ma efektu. Przewodnik doc/eng-us/guides/classic-menu-settings.md objaśnia oba sposoby.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -41773,8 +41773,8 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
         <translation>Każde ustawienie w tej instalacji, którego wartością jest klasa lub którego nazwa wskazuje, że przyjmuje klasę. Zmiana jednego z nich sprawia, że odpowiada coś innego.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Kolejne rejestry są deklarowane w rad.ini przez jądro i przez każde aktywne rozszerzenie we własnym rad.ini.append.php: odbiorniki zdarzeń, dostawcy, narzędzia i łańcuchy AI, narzędzia MCP, typy zadań kolejki i inne. Każdy określa, które bloki INI lub która lista klas zawiera jego wpisy i czym musi być każdy wpis; rejestr zadeklarowany z InTotal=disabled odnosi się do punktów liczonych gdzie indziej i jest sprawdzany bez doliczania. Przewodnik: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Kolejne rejestry są deklarowane w rad.ini przez jądro i przez każde aktywne rozszerzenie we własnym rad.ini.append.php: odbiorniki zdarzeń, dostawcy, narzędzia i łańcuchy AI, narzędzia MCP, typy zadań kolejki i inne. Każdy określa, które bloki INI lub która lista klas zawiera jego wpisy i czym musi być każdy wpis; rejestr zadeklarowany z InTotal=disabled odnosi się do punktów liczonych gdzie indziej i jest sprawdzany bez doliczania. Przewodnik: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -56939,8 +56939,8 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Bloki ustawień, których każdy wpis rejestruje implementację: kolumny tabeli elementów podrzędnych (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; lub Template=), typy zadań treści (content.ini [ContentJobSettings] JobTypes[]), akcje i dostawcy zakresów exp:ini (ini.ini [IniCommandSettings]) oraz funkcje serwerowe ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), wraz z każdą usługą zdalną deklarowaną przez klasę funkcji serwerowej rozszerzającą expServiceBase (jej statyczna $services, wywoływana jako ezjscore/call/&lt;name&gt;::&lt;service&gt;; każda jest doliczana do sumy, a zadeklarowana usługa bez metody jest uszkodzona). Wpis wskazujący klasę jest też jednym z ustawień wskazujących klasę i jest liczony tam; pozostałe są doliczane do sumy tutaj. Wpis, któremu brakuje klasy, metody lub szablonu albo którego klasa nie rozszerza tego, czego wymaga rejestr, jest pokazywany jako uszkodzony. Wbudowane kolumny elementów podrzędnych, które lista renderuje sama, nie są punktami i nie są wymieniane.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Kolejne rejestry są deklarowane w rad.ini przez jądro i przez każde aktywne rozszerzenie we własnym rad.ini.append.php: odbiorniki zdarzeń, dostawcy, narzędzia i łańcuchy AI, narzędzia MCP, typy zadań kolejki i inne. Każdy określa, które bloki INI lub która lista klas zawiera jego wpisy i czym musi być każdy wpis; rejestr zadeklarowany z InTotal=disabled odnosi się do punktów liczonych gdzie indziej i jest sprawdzany bez doliczania. Przewodnik: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Kolejne rejestry są deklarowane w rad.ini przez jądro i przez każde aktywne rozszerzenie we własnym rad.ini.append.php: odbiorniki zdarzeń, dostawcy, narzędzia i łańcuchy AI, narzędzia MCP, typy zadań kolejki i inne. Każdy określa, które bloki INI lub która lista klas zawiera jego wpisy i czym musi być każdy wpis; rejestr zadeklarowany z InTotal=disabled odnosi się do punktów liczonych gdzie indziej i jest sprawdzany bez doliczania. Przewodnik: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

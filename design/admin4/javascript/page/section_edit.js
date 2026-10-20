@@ -1,7 +1,7 @@
 /*
  * admin4 section/edit: proposes and checks the identifier of the section.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md). The state and the texts come from #section-edit-data.
+ * (doc/eng-us/features/6.0/content-security-policy.md). The state and the texts come from #section-edit-data.
  */
 var expSectionEditData = document.getElementById( 'section-edit-data' );
 var expSectionEditNew = expSectionEditData.getAttribute( 'data-section-edit-new' ) === '1';

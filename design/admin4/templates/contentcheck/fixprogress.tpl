@@ -1,4 +1,4 @@
-{* The progress of contentcheck/fixfiles between two batches (doc/en/us/features/6.0/content-checks.md, "Resolving").
+{* The progress of contentcheck/fixfiles between two batches (doc/eng-us/features/6.0/content-checks.md, "Resolving").
 
    Variables: action, node_id, keys (the field versions still to do), done, failed, total, last_failed (the failures
    of the last batch), auto (go on by itself), confirm_token (bound to keys), confirm_field, form_token,

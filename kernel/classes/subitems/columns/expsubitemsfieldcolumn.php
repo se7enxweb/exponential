@@ -12,7 +12,7 @@
  * rows -- share one query. A family lists in prefetchSets() what it can load for a whole page at
  * once; prefetch() then runs prefetch<Set>( $nodes ) for the sets the column's Field= reads, which
  * fill the same memo buckets the field methods read, one query per page instead of one per row.
- * Guide: doc/en/us/bc/6.0/subitems-table-options.md
+ * Guide: doc/eng-us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

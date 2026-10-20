@@ -1,4 +1,4 @@
-{* A scan of the storage in progress (doc/en/us/features/6.0/content-checks.md, "Storage files"): the share done and the
+{* A scan of the storage in progress (doc/eng-us/features/6.0/content-checks.md, "Storage files"): the share done and the
    button that runs the next step. The button carries data-a4-autocontinue: contentcheck_storage.js presses it after
    a moment, unless the user stops it; without JavaScript it is pressed by hand.
 

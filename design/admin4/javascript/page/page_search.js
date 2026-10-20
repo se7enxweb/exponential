@@ -1,7 +1,7 @@
 /*
  * The header search (page_search.tpl): the scope popup of each search box on the page.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 /* One handler for every header search on the page (the header's and the narrow screen menu's): each works on its
    own field and popup. The popup opens from the scope button, under the field; Escape, a click outside it or the

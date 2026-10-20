@@ -8,7 +8,7 @@
  * move and hide buttons), answered from the user's cached policies, so they cost no query for
  * most limitations. search_words counts the rows the built-in search engine (eZSearchEngine)
  * indexed for the object, one grouped count query for the page; with another search engine it is null.
- * Guide: doc/en/us/bc/6.0/subitems-table-options.md
+ * Guide: doc/eng-us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

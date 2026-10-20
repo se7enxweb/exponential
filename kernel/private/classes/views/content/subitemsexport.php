@@ -5,7 +5,7 @@
  * GET columns=a,b,c (column keys, in order; default: the user's saved choice for the node, else
  * its default columns), sort=<column key> and order=0|1. Every child the user can read, up to
  * [SubitemsSettings] CSVLimit in subitems.ini; only the columns the user may see.
- * Guide: doc/en/us/bc/6.0/subitems-table-options.md
+ * Guide: doc/eng-us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -73,7 +73,7 @@ class Subitemsexport extends \Exponential\Runnable\ModuleView
         $rows = \expSubitemsCSVExport::export( $out, $parent, $registry, $columns, $sortKey, $ascending );
         fclose( $out );
 
-        // Audit (doc/en/us/bc/6.0/audit.md, data.export.csv): what left the system, never the values
+        // Audit (doc/eng-us/bc/6.0/audit.md, data.export.csv): what left the system, never the values
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'data.export.csv', array( 'object' => \expAuditHook::node( $parent ), 'verb' => 'export',
                 'after' => array( 'node' => (int)$nodeID, 'rows' => (int)$rows, 'columns' => array_values( array_map( 'strval', array_keys( $columns ) ) ),

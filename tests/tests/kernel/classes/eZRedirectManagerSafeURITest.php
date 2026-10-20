@@ -2,7 +2,7 @@
 /**
  * The rules for a redirect target that came from outside the code, without the database:
  * eZRedirectManager::unsafeReason(), safeURI(), moduleView(), returnURI(), and the Cancel or Discard target of
- * every edit view that uses them. doc/en/us/features/6.0/safe-redirects.md
+ * every edit view that uses them. doc/eng-us/features/6.0/safe-redirects.md
  *
  *  SAFE-01  Paths of this site are safe: with and without the leading slash, a siteaccess prefix, a query, a
  *           fragment, spaces around them

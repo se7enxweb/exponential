@@ -1,7 +1,7 @@
 <?php
 /**
  * The limits for the modes of new files and directories (EZP_FILE_MODE_MAX, EZP_DIR_MODE_MAX in config.php;
- * doc/en/us/bc/6.0/file-modes.md), in the whole installation. No database is needed.
+ * doc/eng-us/bc/6.0/file-modes.md), in the whole installation. No database is needed.
  *
  *  FM-01 - The helpers: a mode is only ever narrowed; without the constants nothing changes; the umask that replaces
  *          umask( 0 ); how a constant is read (0750, "0750", "00750", "750", 750 written without the 0, nonsense)

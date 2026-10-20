@@ -3,7 +3,7 @@
    $column (the column's settings: Attributes[] = identifiers to try, Length = characters),
    $key (its key). An XML text block is rendered (its output is HTML, already escaped) and its
    tags stripped; a plain text block is shortened and escaped here.
-   Guide: doc/en/us/bc/6.0/subitems-table-options.md *}
+   Guide: doc/eng-us/bc/6.0/subitems-table-options.md *}
 {def $exp_teaser_map = $node.data_map
      $exp_teaser_text = ''
      $exp_teaser_length = first_set( $column.Length, 120 )

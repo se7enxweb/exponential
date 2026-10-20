@@ -1,8 +1,8 @@
 <?php
 /**
  * The code of kernel/workflow/processlist.php, moved into a class (#207 stage 1). The file kernel/workflow/processlist.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
- * User guide of the page: doc/en/us/guides/workflows.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
+ * User guide of the page: doc/eng-us/guides/workflows.md
  */
 /*
  * The original header of kernel/workflow/processlist.php:

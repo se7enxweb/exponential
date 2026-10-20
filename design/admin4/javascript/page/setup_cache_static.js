@@ -2,7 +2,7 @@
  * admin4 setup/cache, static cache: "Create new" runs the crawl in the page and shows its lines as they come (an
  * EventSource on the stream url), "Stop" closes the stream. The url and the texts are data-* attributes of
  * #staticcache-console. A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     var consoleEl = document.getElementById( 'staticcache-console' );

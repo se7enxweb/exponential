@@ -27,7 +27,7 @@
 {* The right menu is open unless this user closed it (admin_right_menu_show=0), as in admin4: it carries the same
    tools, the interface choices (UI switch) among them, so a user who came here from another design can go back. *}
 
-{* The one inline CSS kept in this design, on purpose (doc/en/us/bc/6.0/admin4-styling.md, "Exceptions"): the column
+{* The one inline CSS kept in this design, on purpose (doc/eng-us/bc/6.0/admin4-styling.md, "Exceptions"): the column
    widths of this editor's preferences, in em from menu.ini [LeftMenuSettings] MenuWidth or a width dragged by hand,
    which a stylesheet cannot know, needed before the page is drawn. Nothing else may be added here. *}
 {if and( $ui_context_edit|not, or( $collapse_right_menu, $admin_left_size, $collapse_left_menu, $hide_left_menu ))}

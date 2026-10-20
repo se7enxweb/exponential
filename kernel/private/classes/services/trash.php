@@ -11,7 +11,7 @@ namespace Exponential\Service;
 
 /**
  * Emptying the trash: one service for the trash view (content/trash), the command (bin/php/trashpurge.php)
- * and the cronjob part (cronjobs/trashpurge.php). Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * and the cronjob part (cronjobs/trashpurge.php). Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  *   Trash::purge( $cli, false, false, $script, 100, 1, 30 )   batched, transactional, with progress (CLI, cron)
  *   Trash::emptyTrash()                                        the view's Empty button: purgeInBatches(), then emptyArchived()
@@ -26,7 +26,7 @@ class Trash
     private static $auditDepth = 0;
 
     /**
-     * Runs a trash operation as one content.trash.empty event (doc/en/us/bc/6.0/audit.md) whose children are the
+     * Runs a trash operation as one content.trash.empty event (doc/eng-us/bc/6.0/audit.md) whose children are the
      * content.object.purge events of the objects; nested calls belong to the outermost one.
      *
      * @param string $how purge_objects, empty_archived, purge_in_batches, empty_trash

@@ -1,6 +1,6 @@
 /*
  * admin4 package/list: "Select all" over the package checkboxes, and the selected cards marked. A file of its own, so
- * the page runs under a Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * the page runs under a Content Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     var all = document.getElementById( 'package-select-all' );

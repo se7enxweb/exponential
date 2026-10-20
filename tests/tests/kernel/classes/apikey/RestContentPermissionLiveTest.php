@@ -1,7 +1,7 @@
 <?php
 /**
  * The rights of the REST interface, end to end over HTTP against the installation's own web servers
- * (doc/en/us/guides/api-keys.md, "Permissions of the REST interface"; the ezprestapi routes of the ezp provider).
+ * (doc/eng-us/guides/api-keys.md, "Permissions of the REST interface"; the ezprestapi routes of the ezp provider).
  *
  * A throwaway user (...@restperm.example.invalid) with a narrow throwaway role: user/login, content/read of the test's
  * own folder, content/create of folders directly below its "allowed" subfolder, content/remove inside that subfolder.

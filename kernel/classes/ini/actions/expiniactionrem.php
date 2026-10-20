@@ -4,7 +4,7 @@
  *
  * exp:ini rem (alias remove): removes a variable from one scope's file, or one value of an array, or one
  * entry of a hash. The variable must be in that file (exit 2 otherwise); a missing file is never created.
- * Guide: doc/en/us/bc/6.0/console-exp-ini.md.
+ * Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

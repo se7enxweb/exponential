@@ -5494,8 +5494,8 @@
         <translation>Тексти інтерфейсу адміністрування та шаблонів (кнопки, меню) беруться з файлів перекладу (.ts) і натомість залежать від параметра Locale доступу до сайту. Сайт може показувати німецький вміст з англійським інтерфейсом і навпаки.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>Додавання мови тут нічого не перекладає й не змінює жодного доступу до сайту: перекладайте вміст у редакторі та вкажіть мову в SiteLanguageList там, де її треба показувати. Посібник користувача: doc/en/us/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>Додавання мови тут нічого не перекладає й не змінює жодного доступу до сайту: перекладайте вміст у редакторі та вкажіть мову в SiteLanguageList там, де її треба показувати. Посібник користувача: doc/eng-us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24020,8 +24020,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>Увімкніть профіль, щоб побачити, скільки інструкцій виконує кожен запит, скільки з них є точними повторами і що заощадив би кеш запитів.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>Профіль рахує інструкції, які дійшли до бази даних: з увімкненим кешем запитів кешованої відповіді в ньому немає. «Економія мемо» — те, що заощадив би режим request, «економія спільного кешу» — те, що заощадив би режим shared (близько 15 мкс на відповідь). Лічильники ведуться для кожного сервера окремо, бо кожен сервер має власний APCu. Журнал — var/tmp/sql_profile.log; див. doc/en/us/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>Профіль рахує інструкції, які дійшли до бази даних: з увімкненим кешем запитів кешованої відповіді в ньому немає. «Економія мемо» — те, що заощадив би режим request, «економія спільного кешу» — те, що заощадив би режим shared (близько 15 мкс на відповідь). Лічильники ведуться для кожного сервера окремо, бо кожен сервер має власний APCu. Журнал — var/tmp/sql_profile.log; див. doc/eng-us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25372,8 +25372,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>Налаштування site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>Тип визначається site.ini [SiteAccessSettings] SiteAccessType, якщо доступ до сайту його задає, інакше — його дизайнами та RequireUserLogin. Посібник: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>Тип визначається site.ini [SiteAccessSettings] SiteAccessType, якщо доступ до сайту його задає, інакше — його дизайнами та RequireUserLogin. Посібник: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32039,8 +32039,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>Блоки налаштувань, кожен запис яких реєструє реалізацію: стовпці таблиці підлеглих елементів (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; або Template=), типи завдань вмісту (content.ini [ContentJobSettings] JobTypes[]), дії та постачальники областей дії exp:ini (ini.ini [IniCommandSettings]) і серверні функції ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), разом із кожним віддаленим сервісом, який оголошує клас серверної функції, похідний від expServiceBase (його static $services, що викликається як ezjscore/call/&lt;name&gt;::&lt;service&gt;; кожен додається до загальної кількості, а оголошений сервіс без методу вважається зламаним). Запис, що називає клас, є також одним із налаштувань, які називають клас, і враховується там; решта додаються до загальної кількості тут. Запис, у якого бракує класу, методу чи шаблону або клас якого не походить від того, що вимагає реєстр, показано як зламаний. Вбудовані стовпці підлеглих елементів, які список відображає сам, не є точками й не перелічуються.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Інші реєстри оголошено в rad.ini — ядром і кожним активним розширенням у власному rad.ini.append.php: слухачі подій, постачальники ШІ, інструменти й ланцюжки, інструменти MCP, типи завдань черги тощо. Кожен вказує, які блоки ini або який список класів містять його записи і яким має бути кожен запис; реєстр, оголошений з InTotal=disabled, посилається на точки, враховані деінде, і перевіряється без додавання. Посібник: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Інші реєстри оголошено в rad.ini — ядром і кожним активним розширенням у власному rad.ini.append.php: слухачі подій, постачальники ШІ, інструменти й ланцюжки, інструменти MCP, типи завдань черги тощо. Кожен вказує, які блоки ini або який список класів містять його записи і яким має бути кожен запис; реєстр, оголошений з InTotal=disabled, посилається на точки, враховані деінде, і перевіряється без додавання. Посібник: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38755,8 +38755,8 @@ your account.</source>
         <translation>Для нових сайтів це замінили Exponential Layouts: макет містить зони й блоки, меню — один із блоків, а правило вибирає макет для кожної сторінки. Доступ до сайту, побудований так, ніколи не читає цих налаштувань.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>Сторінка залишається для сайтів, які ще використовують класичний дизайн. Зміна налаштування тут для доступу до сайту, побудованого з Layouts, нешкідлива, але не має ефекту. Посібник doc/en/us/guides/classic-menu-settings.md пояснює обидва способи.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>Сторінка залишається для сайтів, які ще використовують класичний дизайн. Зміна налаштування тут для доступу до сайту, побудованого з Layouts, нешкідлива, але не має ефекту. Посібник doc/eng-us/guides/classic-menu-settings.md пояснює обидва способи.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -48791,8 +48791,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Кожне налаштування цієї інсталяції, значенням якого є клас або назва якого каже, що воно приймає клас. Змініть одне з них — і відповідатиме щось інше.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Інші реєстри оголошено в rad.ini — ядром і кожним активним розширенням у власному rad.ini.append.php: слухачі подій, постачальники ШІ, інструменти й ланцюжки, інструменти MCP, типи завдань черги тощо. Кожен вказує, які блоки ini або який список класів містять його записи і яким має бути кожен запис; реєстр, оголошений з InTotal=disabled, посилається на точки, враховані деінде, і перевіряється без додавання. Посібник: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Інші реєстри оголошено в rad.ini — ядром і кожним активним розширенням у власному rad.ini.append.php: слухачі подій, постачальники ШІ, інструменти й ланцюжки, інструменти MCP, типи завдань черги тощо. Кожен вказує, які блоки ini або який список класів містять його записи і яким має бути кожен запис; реєстр, оголошений з InTotal=disabled, посилається на точки, враховані деінде, і перевіряється без додавання. Посібник: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

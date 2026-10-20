@@ -1,7 +1,7 @@
 <?php
 /**
  * The services a view, a command and a cronjob part share (#207 stage 3), kernel/private/classes/services,
- * guide doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md.
+ * guide doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md.
  *
  *  SV-01 — Trash::canEmpty() is content/cleantrash granted fully or with limitations, nothing else
  *  SV-02 — Trash::purgeObjects() of no ids purges nothing and touches nothing

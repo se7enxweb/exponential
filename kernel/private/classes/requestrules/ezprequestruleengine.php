@@ -12,7 +12,7 @@
  * action, asked about every module view the kernel is about to run. The first
  * rule whose conditions all match decides; when none does, the request runs as
  * it always has. Settings: requestrules.ini. Guide:
- * doc/en/us/bc/6.0/view_full_security.md.
+ * doc/eng-us/bc/6.0/view_full_security.md.
  *
  * The rules come on top of the role policies, never instead of them: the
  * kernel asks them only after the user's policies allowed the view, so a rule

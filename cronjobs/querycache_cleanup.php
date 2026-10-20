@@ -1,7 +1,7 @@
 <?php
 /**
  * @description Remove the result files of the SQL query cache that are older than MaxAge or from before the last clear
- * @link doc/en/us/bc/6.0/sql-query-cache.md
+ * @link doc/eng-us/bc/6.0/sql-query-cache.md
  *
  * File containing the querycache_cleanup.php cronjob
  *

@@ -45,7 +45,7 @@ function ContentStructureMenu( params, i18n )
     } );
 
     // The open/close buttons: a click (or Space, as for a button) loads, opens or closes the node's sub items. One
-    // listener for all of them, no handler attribute (doc/en/us/features/6.0/content-security-policy.md).
+    // listener for all of them, no handler attribute (doc/eng-us/features/6.0/content-security-policy.md).
     document.addEventListener( 'click', function( e )
     {
         var toggle = e.target && e.target.closest ? e.target.closest( 'a[data-tree-load]' ) : null;

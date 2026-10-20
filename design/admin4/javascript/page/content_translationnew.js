@@ -3,7 +3,7 @@
  * first match, and the custom fields count only with Custom chosen. The texts of the count are data-text-* attributes
  * of #locale-search-count.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     var select = document.getElementById( 'localeSelector' );

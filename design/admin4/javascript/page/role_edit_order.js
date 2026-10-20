@@ -1,7 +1,7 @@
 /*
  * admin4 role/edit: moves the policies by drag and drop and with the arrow keys on the grip.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md). The offset of the page comes from #role-edit-order.
+ * (doc/eng-us/features/6.0/content-security-policy.md). The offset of the page comes from #role-edit-order.
  */
 /* Drag and drop and the arrow keys on the grip. Both send the move the buttons send (MovePolicyTo with the place in
    the whole list, or MovePolicyUp / MovePolicyDown), so the server makes it in the draft; nothing is reordered only

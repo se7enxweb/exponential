@@ -2,7 +2,7 @@
  * The "Create New" button of the object relation list field (content/datatype/edit/ezobjectrelationlist.tpl): a
  * click shows the hidden name field (data-a4-reveal, the id of its box), focuses its input (data-a4-reveal-focus)
  * and hides the button. One listener on the document handles every field of the page. A file of its own, so the
- * page runs under a Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * page runs under a Content Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     'use strict';

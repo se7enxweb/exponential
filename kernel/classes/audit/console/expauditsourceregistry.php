@@ -6,7 +6,7 @@
  * reported (audit/settings). A source that throws is left out of that call and logged; the view carries on.
  *
  * With no source registered (the shipped settings) every method answers "nothing", so the views look and work as
- * without the registry. Guide: doc/en/us/bc/6.0/audit.md ("An extension's source in the console").
+ * without the registry. Guide: doc/eng-us/bc/6.0/audit.md ("An extension's source in the console").
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

@@ -3,7 +3,7 @@
    handler) with a time window, a search, sorting and paging, and explains how to switch to session administration.
 
    The same file is in design/admin and design/admin4; design/standard keeps the one-line notice. Guide:
-   doc/en/us/guides/sessions.md *}
+   doc/eng-us/guides/sessions.md *}
 
 {def $summary = first_set( $visit_summary, false() )
      $window = first_set( $visit_window, 'session' )

@@ -4,7 +4,7 @@
  * /(channel)/access) with name, time, actor, object, result and request id, and a chain status line per channel
  * (the verifier's result over the live files). Needs the audit/read policy, whose Channel limitation narrows the
  * channels; "Verify now" needs audit/manage. Opening it is recorded (system.audit.read).
- * Guide: doc/en/us/bc/6.0/audit.md ("Stage 2 — built")
+ * Guide: doc/eng-us/bc/6.0/audit.md ("Stage 2 — built")
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

@@ -3,7 +3,7 @@
  * invalid attribute stays open, and the data controls are marked required and invalid (aria-required, aria-invalid,
  * the attribute's message as description). The error summary takes the focus after a failed store.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 jQuery(function( $ )
 {

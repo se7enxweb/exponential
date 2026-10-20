@@ -39,7 +39,7 @@
 <input type="checkbox" name="is_enabled" {if $userSetting.is_enabled}checked="checked"{/if} title="{'Use this checkbox to enable or disable the user account.'|i18n( 'design/admin/user/setting' )}" />
 </div>
 
-{* The user's personal API keys (doc/en/us/guides/api-keys.md), for an administrator of oauthadmin. *}
+{* The user's personal API keys (doc/eng-us/guides/api-keys.md), for an administrator of oauthadmin. *}
 {def $setting_key_counts = fetch( 'apikey', 'counts', hash( 'user_id', $userID ) )}
 {if $setting_key_counts}
 <div class="block">

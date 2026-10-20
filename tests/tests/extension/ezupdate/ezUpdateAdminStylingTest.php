@@ -1,7 +1,7 @@
 <?php
 /**
  * ezupdate's admin pages (Setup > Updates and packages) follow the administration's styling rules
- * (doc/en/us/bc/6.0/admin4-styling.md), checked on the files alone; no database.
+ * (doc/eng-us/bc/6.0/admin4-styling.md), checked on the files alone; no database.
  *
  * - No <style> block, no style="" attribute and no inline <script> body in any ezupdate template, and the script
  *   (ezupdate.js) sets no inline style either.

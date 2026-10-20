@@ -28,7 +28,7 @@
  * (enabled as shipped) switches the check off for user/password, registration, the user edit form, the console and
  * the web services. The installers (setup wizard, kickstarter, exp:install) always check: a new site never starts
  * with a well-known administrator password. Only a new password is checked: signing in with an existing one is
- * never refused. Guide: doc/en/us/bc/6.0/weak-passwords-and-reset-key-lifetime.md.
+ * never refused. Guide: doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md.
  *
  * @package kernel
  */

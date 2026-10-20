@@ -1,6 +1,6 @@
 <?php
 /**
- * The extension points of the runnables (#207 stage 4), guide doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md:
+ * The extension points of the runnables (#207 stage 4), guide doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md:
  * events around run() and the [RunnableSettings] registry of site.ini.
  *
  *  EP-01 — eventName() is runnable/<kind>/<moment>

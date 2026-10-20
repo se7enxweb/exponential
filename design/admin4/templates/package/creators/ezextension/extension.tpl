@@ -3,7 +3,7 @@
    [ExtensionExportSettings]): an extension that may not be exported cannot be chosen, says why, and the step says how
    to switch exporting on. The POST name is that of before: PackageExtensionNames[], read by
    eZExtensionPackageCreator, which refuses a forbidden extension even when it is posted. The same file is in
-   design/admin and design/admin4. Guide: doc/en/us/features/6.0/package-wizard.md *}
+   design/admin and design/admin4. Guide: doc/eng-us/features/6.0/package-wizard.md *}
 {def $k_list = 'Extension list'|i18n( 'kernel/package' )
      $chosen = first_set( $persistent_data.extensionlist, array() )
      $choosable = 0

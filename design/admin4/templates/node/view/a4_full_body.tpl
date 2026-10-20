@@ -123,7 +123,7 @@
     {/if}
     {* Deactivate and move / Reactivate and move back (user/deactivate): for a user account, when site.ini
        [UserSettings] DeactivateAndMove=enabled and you may (user/deactivate, edit the account); a confirmation follows.
-       Guide: doc/en/us/features/6.0/user-hygiene.md *}
+       Guide: doc/eng-us/features/6.0/user-hygiene.md *}
     {if ezini( 'UserSettings', 'DeactivateAndMove' )|eq( 'enabled' )}
         {def $deactivation_offers = fetch( 'user', 'deactivation_offers', hash( 'object_id', $node.contentobject_id ) )}
         {if $deactivation_offers.deactivate}

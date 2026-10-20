@@ -5,7 +5,7 @@
   Added in 6.0.13-alpha2 to fix complete test suite failure caused by missing
   bootstrap when upgrading from PHPUnit 3.7 to PHPUnit 10.0.
 
-  See doc/en/us/bc/6.0/phpunitvXXXX.md for full explanation of what broke and why.
+  See doc/eng-us/bc/6.0/phpunitvXXXX.md for full explanation of what broke and why.
 
   Usage:
     php vendor/bin/phpunit                              # run all suites
@@ -61,25 +61,25 @@
             <directory suffix="Test.php">tests/tests/kernel/private</directory>
         </testsuite>
 
-        <!-- the content finder (doc/en/us/features/6.0/content-finder.md): the input tests need nothing; the database
+        <!-- the content finder (doc/eng-us/features/6.0/content-finder.md): the input tests need nothing; the database
              tests write, so they run only in a throwaway copy named by EXP_CONTENTFINDER_SANDBOX and skip elsewhere -->
         <testsuite name="kernel-contentfinder">
             <directory suffix="Test.php">tests/tests/kernel/contentfinder</directory>
         </testsuite>
 
-        <!-- the content checks (doc/en/us/features/6.0/content-checks.md): the query tests need no database; the database
+        <!-- the content checks (doc/eng-us/features/6.0/content-checks.md): the query tests need no database; the database
              tests write, so they run only in a throwaway installation named by EXP_CONTENTCHECK_SANDBOX and skip elsewhere -->
         <testsuite name="kernel-contentcheck">
             <directory suffix="Test.php">tests/tests/kernel/contentcheck</directory>
         </testsuite>
 
-        <!-- the log viewer (doc/en/us/features/6.0/log-viewer.md): parser, tailing by offset, masking, path safety, the
+        <!-- the log viewer (doc/eng-us/features/6.0/log-viewer.md): parser, tailing by offset, masking, path safety, the
              bounded search and the actions, on synthetic files in the temporary directory; no database -->
         <testsuite name="kernel-logviewer">
             <directory suffix="Test.php">tests/tests/kernel/logviewer</directory>
         </testsuite>
 
-        <!-- the request logs (doc/en/us/features/6.0/request-logs.md): 404.log, the request classifier and security.log,
+        <!-- the request logs (doc/eng-us/features/6.0/request-logs.md): 404.log, the request classifier and security.log,
              one line per request whichever way it ends; settings given to the classes, files below var/tmp; no
              database -->
         <testsuite name="kernel-requestlog">
@@ -199,7 +199,7 @@
 
         <!--
           design: the rules of the admin designs read from the files (no inline CSS in the templates, tokens only in
-          the module stylesheets, a dark value for every colour token). No database. doc/en/us/bc/6.0/admin4-styling.md
+          the module stylesheets, a dark value for every colour token). No database. doc/eng-us/bc/6.0/admin4-styling.md
           Run: php vendor/bin/phpunit - -testsuite design
         -->
         <testsuite name="design">

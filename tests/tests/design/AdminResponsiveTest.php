@@ -13,7 +13,7 @@
  * - tree labels break between words, with hyphens; a search result name breaks on a phone;
  * - a fact's note stands under its value; the header search has no square frame; touch targets of 24px.
  *
- * doc/en/us/bc/6.0/admin4-styling.md
+ * doc/eng-us/bc/6.0/admin4-styling.md
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminResponsiveTest.php
  *

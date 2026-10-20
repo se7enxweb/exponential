@@ -3,7 +3,7 @@
  * error gets the focus, and ticking wildcards updates the selection count and the select all box. The text of the
  * count is data-text-selected of #wildcard-selected-count.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     var nodes = document.querySelectorAll( '.a4-url .a4-url-js-only' ), i;

@@ -355,7 +355,7 @@ class eZExtension
 
         if ( $extensionType === false )
         {
-            eZDebug::writeStrict( "Setting parameter \$extensionType to false is deprecated as of 4.4, see doc/en/us/bc/4.4!", __METHOD__ );
+            eZDebug::writeStrict( "Setting parameter \$extensionType to false is deprecated as of 4.4, see doc/eng-us/bc/4.4!", __METHOD__ );
         }
 
         $activeExtensions   = self::activeExtensions( $extensionType, $siteINI );

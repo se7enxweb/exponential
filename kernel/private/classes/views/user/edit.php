@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/user/edit.php, moved into a class (#207 stage 1). The file kernel/user/edit.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/user/edit.php:
@@ -119,7 +119,7 @@ class Edit extends \Exponential\Runnable\ModuleView
      * else the page last viewed, else the sitemap of the users. It always went to that sitemap, a page an editor
      * changing their own account has no business with. Every page passes the rules of
      * \eZRedirectManager::returnURI() (a path of this site or an allowed host, never user/edit itself, a POST-only
-     * view or a page the user can no longer view); doc/en/us/features/6.0/safe-redirects.md.
+     * view or a page the user can no longer view); doc/eng-us/features/6.0/safe-redirects.md.
      *
      * @param \eZModule|null $module
      * @param array $options see \eZRedirectManager::returnURI()

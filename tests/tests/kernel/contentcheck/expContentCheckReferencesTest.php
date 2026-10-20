@@ -1,7 +1,7 @@
 <?php
 /**
  * The reference sources of the unreferenced list and the new parts of the broken relations, without a database
- * (doc/en/us/features/6.0/content-checks.md, "What counts as a reference"): every extractor, the judging of a candidate
+ * (doc/eng-us/features/6.0/content-checks.md, "What counts as a reference"): every extractor, the judging of a candidate
  * against an index, and the asset class condition of the SQL.
  *
  *  CR-01  rich text by id: object_id and node_id of embeds and links, relation lists (contentobject-id, node-id but

@@ -59,7 +59,7 @@ class eZUserOperationCollection
             {
                 eZUserAccountKey::removeByUserID( $userID );
             }
-            // Audit (doc/en/us/bc/6.0/audit.md, access.user.enable / access.user.disable)
+            // Audit (doc/eng-us/bc/6.0/audit.md, access.user.enable / access.user.disable)
             if ( class_exists( 'expAuditHook' ) && ( $auditBefore['enabled'] !== $isUserEnabled || $auditBefore['max_login'] !== (int)$maxLogin ) )
                 expAuditHook::emit( $isUserEnabled ? 'access.user.enable' : 'access.user.disable', array(
                     'object' => expAuditHook::user( (int)$userID ), 'before' => $auditBefore,
@@ -324,7 +324,7 @@ class eZUserOperationCollection
                 // the content tree marks disabled accounts and is cached by modified_subnode: renew it
                 expUserAccountStatus::touchTree( $userID );
             }
-            // Audit (doc/en/us/bc/6.0/audit.md, access.user.activate): never the activation hash
+            // Audit (doc/eng-us/bc/6.0/audit.md, access.user.activate): never the activation hash
             if ( $enableUser && $userChange && class_exists( 'expAuditHook' ) )
                 expAuditHook::emit( 'access.user.activate', array( 'object' => expAuditHook::user( $user ),
                     'before' => array( 'enabled' => false ), 'after' => array( 'enabled' => true ) ) );
@@ -349,7 +349,7 @@ class eZUserOperationCollection
     {
         $user = eZUser::fetch( $userID );
 
-        // Demo mode (EXP_DEMO_MODE=1, doc/en/us/bc/6.0/demo-mode.md): an administrator's password is not changed
+        // Demo mode (EXP_DEMO_MODE=1, doc/eng-us/bc/6.0/demo-mode.md): an administrator's password is not changed
         if ( $user instanceof eZUser && class_exists( 'expDemoMode' ) && expDemoMode::protectsPassword( $user ) )
         {
             expDemoMode::refused( $user, 'user/password operation' );

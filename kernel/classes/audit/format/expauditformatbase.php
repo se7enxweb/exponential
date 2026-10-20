@@ -1,6 +1,6 @@
 <?php
 /**
- * Shared code of the archive format handlers (doc/en/us/bc/6.0/audit.md, "Rotation, archives and retention"):
+ * Shared code of the archive format handlers (doc/eng-us/bc/6.0/audit.md, "Rotation, archives and retention"):
  * streaming compression through a PHP stream wrapper, or through a binary (xz, zstd) run without a shell.
  *
  * A stream returned by open() is closed with expAuditFormatBase::close( $stream ), which also ends the

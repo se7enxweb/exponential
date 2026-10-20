@@ -3,7 +3,7 @@
    What an upload does and what it checks, the errors of the last attempt, and the file field. The archive is
    inspected before anything of it is written (eZPackageUploadInspector); the limits come from the view
    (upload_limits). POST names as before: PackageBinaryFile, UploadPackageButton, UploadCancelButton.
-   Guide: doc/en/us/guides/packages.md *}
+   Guide: doc/eng-us/guides/packages.md *}
 {def $limits = first_set( $upload_limits, false() )}
 
 <div class="context-block a4-page">

@@ -1,7 +1,7 @@
 <?php
 /**
  * How the content finder resolves a URL alias or a page address (expContentFinder::urlAliasCandidates(),
- * prefixed(), expContentFinderInput::urlHost(); doc/en/us/features/6.0/content-finder.md, "URL aliases and siteaccesses").
+ * prefixed(), expContentFinderInput::urlHost(); doc/eng-us/features/6.0/content-finder.md, "URL aliases and siteaccesses").
  *
  *  CU-01  a full URL names its host in the query; a path has none
  *  CU-02  the PathPrefix of a siteaccess is put in front as the kernel does: not twice, not before an excluded path

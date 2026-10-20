@@ -25,7 +25,7 @@
  * used by eZSys, and by the HTTP cache contract before the kernel starts and in
  * Exponential Velocity's parent process, so all of them reach the same answer.
  *
- * See doc/en/us/bc/6.0/trusted-proxies.md.
+ * See doc/eng-us/bc/6.0/trusted-proxies.md.
  */
 class eZTrustedProxy
 {

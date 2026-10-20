@@ -1,6 +1,6 @@
 <?php
 /**
- * The contentcheck/storage view (doc/en/us/features/6.0/content-checks.md, "Storage files"): the result of the last scan
+ * The contentcheck/storage view (doc/eng-us/features/6.0/content-checks.md, "Storage files"): the result of the last scan
  * of var/<site>/storage, in three lists (GET Show):
  *
  *   orphans     files no content uses, with size and age and the totals (the whole storage: they belong to no node)

@@ -14,7 +14,7 @@
  * be run again.
  *
  * The SQL upgrade files of MySQL, PostgreSQL and SQLite (update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql)
- * create the same table. Guide: doc/en/us/guides/api-keys.md; change note: doc/en/us/bc/6.0/api-keys.md.
+ * create the same table. Guide: doc/eng-us/guides/api-keys.md; change note: doc/eng-us/bc/6.0/api-keys.md.
  */
 
 require_once 'autoload.php';

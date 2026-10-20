@@ -1,7 +1,7 @@
 <?php
 /**
  * The check of reverse relations before a removal or a hide (Exponential\Service\ReverseRelationCheck,
- * doc/en/us/features/6.0/reverse-relation-check.md).
+ * doc/eng-us/features/6.0/reverse-relation-check.md).
  *
  *  RC-01 - the modes: defaults (remove warn, hide warn), known values, unknown values, block for a hide is warn
  *  RC-02 - block refuses while references exist or the check failed; disabled and warn never refuse

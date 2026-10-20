@@ -1,7 +1,7 @@
 {* The changelog step of the package creation wizard (package/create), the last step of every creator: who made the
    change and what changed, then the review of the whole package (wizard_review.tpl, from wizard_actions.tpl) and
    Create package. The POST names are those of before: PackageChangelogPerson, PackageChangelogEmail,
-   PackageChangelogText. The same file is in design/admin and design/admin4. Guide: doc/en/us/features/6.0/package-wizard.md *}
+   PackageChangelogText. The same file is in design/admin and design/admin4. Guide: doc/eng-us/features/6.0/package-wizard.md *}
 {def $k_name = 'Name'|i18n( 'kernel/package' )
      $k_email = 'Email'|i18n( 'kernel/package' )
      $k_text = 'Changelog'|i18n( 'kernel/package' )

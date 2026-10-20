@@ -5497,8 +5497,8 @@
         <translation>Textus interfaciei administrationis et formularum (pugae, indices) ex fasciculis translationum (.ts) veniunt et potius optionem Locale aditus situs sequuntur. Situs contenta Germanica cum interfacie Anglica ostendere potest, et vice versa.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>Linguam hic addere nihil vertit neque ullum aditum situs mutat: contenta in editore verte, et linguam in SiteLanguageList enumera ubi ostendi debet. Enchiridion usoris est doc/en/us/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>Linguam hic addere nihil vertit neque ullum aditum situs mutat: contenta in editore verte, et linguam in SiteLanguageList enumera ubi ostendi debet. Enchiridion usoris est doc/eng-us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24023,8 +24023,8 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Profilum activa ut videas quot sententias quaeque petitio exsequatur, quot repetitiones exactae sint, et quid promptuarium interrogationum lucrifaceret.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>Profilum sententias numerat quae ad basim datorum pervenerunt: promptuario interrogationum activo, responsum in promptuario servatum in eo non est. &quot;Lucrum memorialis&quot; est quod modus request lucrifaceret, &quot;lucrum promptuarii communis&quot; quod modus shared (circiter 15 µs pro responso). Numeratores pro singulis servitris sunt, quia quodque servitrum suum APCu habet. Acta sunt var/tmp/sql_profile.log; vide doc/en/us/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>Profilum sententias numerat quae ad basim datorum pervenerunt: promptuario interrogationum activo, responsum in promptuario servatum in eo non est. &quot;Lucrum memorialis&quot; est quod modus request lucrifaceret, &quot;lucrum promptuarii communis&quot; quod modus shared (circiter 15 µs pro responso). Numeratores pro singulis servitris sunt, quia quodque servitrum suum APCu habet. Acta sunt var/tmp/sql_profile.log; vide doc/eng-us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25375,8 +25375,8 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Optiones site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>Genus sequitur site.ini [SiteAccessSettings] SiteAccessType cum aditus situs id statuit, aliter designationes eius et RequireUserLogin. Dux: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>Genus sequitur site.ini [SiteAccessSettings] SiteAccessType cum aditus situs id statuit, aliter designationes eius et RequireUserLogin. Dux: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32042,8 +32042,8 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Sectiones optionum quarum quaeque inscriptio impletionem registrat: columnae tabulae rerum subiectarum (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; vel Template=), genera operum contenti (content.ini [ContentJobSettings] JobTypes[]), actiones et provisores ambituum exp:ini (ini.ini [IniCommandSettings]) et functiones servitri ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), cum omni servitio remoto quod classis functionis servitri expServiceBase extendens declarat (eius $services statica, vocata ut ezjscore/call/&lt;name&gt;::&lt;service&gt;; quodque summae additur, et servitium declaratum cuius methodus deest fractum est). Inscriptio quae classem nominat etiam una ex optionibus est quae classem nominant et ibi numeratur; ceterae hic summae adduntur. Inscriptio cuius classis, methodus vel formula deest, vel cuius classis non extendit quod registrum postulat, ut fracta ostenditur. Columnae rerum subiectarum internae, quas index ipse reddit, puncta non sunt nec enumerantur.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Alia registra in rad.ini declarantur, a nucleo et ab omni extensione activa in suo rad.ini.append.php: auscultatores eventuum, provisores IA, instrumenta et catenae, instrumenta MCP, genera operum in ordine exspectationis et alia. Quodque dicit quae sectiones ini, vel qui index classium, inscriptiones suas teneant et quid quaeque inscriptio esse debeat; quod cum InTotal=disabled declaratum est ad puncta alibi numerata refertur et probatur nec additur. Dux: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Alia registra in rad.ini declarantur, a nucleo et ab omni extensione activa in suo rad.ini.append.php: auscultatores eventuum, provisores IA, instrumenta et catenae, instrumenta MCP, genera operum in ordine exspectationis et alia. Quodque dicit quae sectiones ini, vel qui index classium, inscriptiones suas teneant et quid quaeque inscriptio esse debeat; quod cum InTotal=disabled declaratum est ad puncta alibi numerata refertur et probatur nec additur. Dux: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38758,8 +38758,8 @@ rationem tuam activeres.</translation>
         <translation>Exponential Layouts id in novis sitibus substituit: dispositio zonas et segmenta continet, index unum ex segmentis est, et norma dispositionem cuique paginae eligit. Aditus situs ita constructus has optiones numquam legit.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>Haec pagina manet pro sitibus qui adhuc designatione classica utuntur. Optionem hic mutare pro aditu situs cum Layouts constructo innocuum est, sed nihil efficit. Libellus doc/en/us/guides/classic-menu-settings.md utramque viam explicat.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>Haec pagina manet pro sitibus qui adhuc designatione classica utuntur. Optionem hic mutare pro aditu situs cum Layouts constructo innocuum est, sed nihil efficit. Libellus doc/eng-us/guides/classic-menu-settings.md utramque viam explicat.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -48794,8 +48794,8 @@ Codex praedefinitus ex parametris fundamentalibus quos elegisti factus est.</tra
         <translation>Omnis optio in hac institutione cuius valor classis est, vel cuius nomen dicit eam classem accipere. Unam harum muta et aliquid aliud loco respondet.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Alia registra in rad.ini declarantur, a nucleo et ab omni extensione activa in suo rad.ini.append.php: auscultatores eventuum, provisores IA, instrumenta et catenae, instrumenta MCP, genera operum in ordine exspectationis et alia. Quodque dicit quae sectiones ini, vel qui index classium, inscriptiones suas teneant et quid quaeque inscriptio esse debeat; quod cum InTotal=disabled declaratum est ad puncta alibi numerata refertur et probatur nec additur. Dux: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Alia registra in rad.ini declarantur, a nucleo et ab omni extensione activa in suo rad.ini.append.php: auscultatores eventuum, provisores IA, instrumenta et catenae, instrumenta MCP, genera operum in ordine exspectationis et alia. Quodque dicit quae sectiones ini, vel qui index classium, inscriptiones suas teneant et quid quaeque inscriptio esse debeat; quod cum InTotal=disabled declaratum est ad puncta alibi numerata refertur et probatur nec additur. Dux: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

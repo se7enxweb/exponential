@@ -1,6 +1,6 @@
 <?php
 /**
- * The permalinks of the log viewer (doc/en/us/features/6.0/log-viewer.md, "Permalinks"): every view of a log as a path
+ * The permalinks of the log viewer (doc/eng-us/features/6.0/log-viewer.md, "Permalinks"): every view of a log as a path
  * without a query string, short enough to type and safe to bookmark:
  *
  *   /setup/logs/view/<key>[/(name)/<value>]...

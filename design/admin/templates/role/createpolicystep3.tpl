@@ -7,7 +7,7 @@
    (AddLimitation) adds the policy to the draft. Every name is the one the view has always read (the limitation names
    with [], DeleteNodeIDArray[], DeleteNodeButton, BrowseLimitationNodeButton, DeleteSubtreeIDArray[],
    DeleteSubtreeButton, BrowseLimitationSubtreeButton, Step1, Step2, AddLimitation, Cancel, CurrentModule,
-   CurrentFunction). The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/roles-and-policies.md *}
+   CurrentFunction). The same file is in design/admin and design/admin4. Guide: doc/eng-us/guides/roles-and-policies.md *}
 
 <form method="post" action={concat( $module.functions.edit.uri, '/', $role.id, '/' )|ezurl} class="a4-page a4-standalone">
 {* Enter in a field presses the first button of the form: OK, not a remove button *}

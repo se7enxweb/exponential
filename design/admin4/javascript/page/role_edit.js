@@ -1,7 +1,7 @@
 /*
  * admin4 role/edit: shows when the draft has unsaved changes and asks before the page is left with them.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md). The text and the draft state come from data attributes on #roleedit.
+ * (doc/eng-us/features/6.0/content-security-policy.md). The text and the draft state come from data attributes on #roleedit.
  */
 (function () {
     var form = document.getElementById( 'roleedit' ), name = document.getElementById( 'roleName' );

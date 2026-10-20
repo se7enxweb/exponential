@@ -4,7 +4,7 @@
    action is Create package; on every other step it is Continue. Both post NextStepButton, Back posts
    PreviousStepButton (from the first step it returns to the choice of wizard), as before. Cancel is a link to the
    package list and writes nothing. The same file is in design/admin and design/admin4.
-   Guide: doc/en/us/features/6.0/package-wizard.md *}
+   Guide: doc/eng-us/features/6.0/package-wizard.md *}
 {if $current_step.next_step|not}
 {include uri="design:package/create/wizard_review.tpl"}
 {/if}

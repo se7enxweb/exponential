@@ -236,7 +236,7 @@ class eZPolicy extends eZPersistentObject
      */
     function removeThis( $id = false )
     {
-        // Audit (doc/en/us/bc/6.0/audit.md, access.policy.remove): a policy of a role in use (not of the temporary
+        // Audit (doc/eng-us/bc/6.0/audit.md, access.policy.remove): a policy of a role in use (not of the temporary
         // version role/edit works on), described before it goes
         $auditData = null;
         if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'access.policy.remove' ) )

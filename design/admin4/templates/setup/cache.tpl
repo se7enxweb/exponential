@@ -12,7 +12,7 @@
 
    The same file is in design/admin and design/admin4. The styling is the shared admin components (components.css)
    and stylesheets/modules/setup.css (.a4-setup-cache). Everything works without javascript; the search, the group filter, the selection count and the
-   confirmation of "Clear selected" need it. Guide: doc/en/us/guides/caches.md *}
+   confirmation of "Clear selected" need it. Guide: doc/eng-us/guides/caches.md *}
 {def $cp_tag_buttons = array( hash( 'tag', 'content', 'name', 'ClearContentCacheButton', 'label', 'Clear content caches'|i18n( 'design/admin/setup/cache' ) ),
                               hash( 'tag', 'template', 'name', 'ClearTemplateCacheButton', 'label', 'Clear template caches'|i18n( 'design/admin/setup/cache' ) ),
                               hash( 'tag', 'ini', 'name', 'ClearINICacheButton', 'label', 'Clear INI caches'|i18n( 'design/admin/setup/cache' ) ) )

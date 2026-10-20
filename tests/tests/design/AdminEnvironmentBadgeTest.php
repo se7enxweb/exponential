@@ -22,7 +22,7 @@
  * - each level's text 4.5:1 on its fill and its edge 3:1 on the header, in both modes; forced colors keep the text;
  * - German and American English for the new strings.
  *
- * doc/en/us/features/6.0/admin4-design.md
+ * doc/eng-us/features/6.0/admin4-design.md
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminEnvironmentBadgeTest.php
  *

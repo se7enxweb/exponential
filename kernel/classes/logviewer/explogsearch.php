@@ -1,6 +1,6 @@
 <?php
 /**
- * Searches log files and their rotations, within limits (doc/en/us/features/6.0/log-viewer.md, "Searching").
+ * Searches log files and their rotations, within limits (doc/eng-us/features/6.0/log-viewer.md, "Searching").
  *
  * The criteria: a text (literal, or a regular expression), case sensitive or not; levels; a time range; the
  * siteaccess; part of the request; the client IP (its start); an error reference (ERR-XXXXXXXXXX). Every request

@@ -5492,8 +5492,8 @@
         <translation>I testi dell&apos;interfaccia di amministrazione e dei template (pulsanti, menu) provengono invece dai file di traduzione (.ts) e seguono l&apos;impostazione Locale di un siteaccess. Un sito può mostrare contenuti in tedesco con un&apos;interfaccia in inglese e viceversa.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>Aggiungere qui una lingua non traduce nulla e non modifica alcun siteaccess: traduci i contenuti nell&apos;editor ed elenca la lingua nella SiteLanguageList dove deve essere mostrata. La guida per l&apos;utente è doc/en/us/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>Aggiungere qui una lingua non traduce nulla e non modifica alcun siteaccess: traduci i contenuti nell&apos;editor ed elenca la lingua nella SiteLanguageList dove deve essere mostrata. La guida per l&apos;utente è doc/eng-us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -23359,8 +23359,8 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Attiva il profilo per vedere quante istruzioni esegue ogni richiesta, quante sono ripetizioni esatte e cosa risparmierebbe una cache delle query.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>Il profilo conta le istruzioni che hanno raggiunto il database: con la cache delle query attiva, una risposta dalla cache non vi compare. &quot;Risparmio memo&quot; è ciò che risparmierebbe la modalità request, &quot;risparmio cache condivisa&quot; ciò che risparmierebbe la modalità shared (circa 15 µs per risposta). I contatori sono per server, poiché ogni server ha il proprio APCu. Il log è var/tmp/sql_profile.log; vedi doc/en/us/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>Il profilo conta le istruzioni che hanno raggiunto il database: con la cache delle query attiva, una risposta dalla cache non vi compare. &quot;Risparmio memo&quot; è ciò che risparmierebbe la modalità request, &quot;risparmio cache condivisa&quot; ciò che risparmierebbe la modalità shared (circa 15 µs per risposta). I contatori sono per server, poiché ogni server ha il proprio APCu. Il log è var/tmp/sql_profile.log; vedi doc/eng-us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -24711,8 +24711,8 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Impostazioni di site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>Il tipo segue site.ini [SiteAccessSettings] SiteAccessType quando un siteaccess lo imposta, altrimenti i suoi design e RequireUserLogin. Guida: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>Il tipo segue site.ini [SiteAccessSettings] SiteAccessType quando un siteaccess lo imposta, altrimenti i suoi design e RequireUserLogin. Guida: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -31738,8 +31738,8 @@ per attivare il tuo account.</translation>
         <translation>Exponential Layouts lo ha sostituito per i nuovi siti: un layout contiene zone e blocchi, un menu è uno dei blocchi e una regola sceglie il layout per ogni pagina. Un siteaccess costruito così non legge mai queste impostazioni.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>La pagina resta per i siti che usano ancora un design classico. Modificare qui un&apos;impostazione per un siteaccess costruito con Layouts non fa danni ma non ha effetto. La guida doc/en/us/guides/classic-menu-settings.md spiega entrambi i modi.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>La pagina resta per i siti che usano ancora un design classico. Modificare qui un&apos;impostazione per un siteaccess costruito con Layouts non fa danni ma non ha effetto. La guida doc/eng-us/guides/classic-menu-settings.md spiega entrambi i modi.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -41932,8 +41932,8 @@ Il codice predefinito è stato ricavato dai parametri di base che hai scelto.</t
         <translation>Ogni impostazione di questa installazione il cui valore è una classe, o il cui nome indica che ne accetta una. Modificane una e risponde qualcos&apos;altro.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Altri registri sono dichiarati in rad.ini, dal kernel e da ogni estensione attiva nel proprio rad.ini.append.php: listener di eventi, provider di IA, strumenti e catene, strumenti MCP, tipi di processi in coda e altro. Ognuno indica quali blocchi ini, o quale elenco di classi, contengono le sue voci e cosa deve essere ogni voce; uno dichiarato con InTotal=disabled si riferisce a punti conteggiati altrove e viene controllato senza essere aggiunto. Guida: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Altri registri sono dichiarati in rad.ini, dal kernel e da ogni estensione attiva nel proprio rad.ini.append.php: listener di eventi, provider di IA, strumenti e catene, strumenti MCP, tipi di processi in coda e altro. Ognuno indica quali blocchi ini, o quale elenco di classi, contengono le sue voci e cosa deve essere ogni voce; uno dichiarato con InTotal=disabled si riferisce a punti conteggiati altrove e viene controllato senza essere aggiunto. Guida: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -57134,8 +57134,8 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Blocchi di impostazioni in cui ogni voce registra un&apos;implementazione: le colonne della tabella dei sottoelementi (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; o Template=), i tipi di processo sui contenuti (content.ini [ContentJobSettings] JobTypes[]), le azioni e i provider di ambito di exp:ini (ini.ini [IniCommandSettings]) e le funzioni server di ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), con ogni servizio remoto dichiarato da una classe di funzioni server che estende expServiceBase (il suo static $services, chiamato come ezjscore/call/&lt;name&gt;::&lt;service&gt;; ognuno viene aggiunto al totale, e un servizio dichiarato il cui metodo manca è rotto). Una voce che indica una classe è anche una delle impostazioni che indicano una classe e viene conteggiata lì; le altre vengono aggiunte al totale qui. Una voce la cui classe, metodo o template manca, o la cui classe non estende ciò che il registro richiede, viene mostrata come rotta. Le colonne predefinite dei sottoelementi, che l&apos;elenco visualizza da sé, non sono punti di estensione e non vengono elencate.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Altri registri sono dichiarati in rad.ini, dal kernel e da ogni estensione attiva nel proprio rad.ini.append.php: listener di eventi, provider di IA, strumenti e catene, strumenti MCP, tipi di processi in coda e altro. Ognuno indica quali blocchi ini, o quale elenco di classi, contengono le sue voci e cosa deve essere ogni voce; uno dichiarato con InTotal=disabled si riferisce a punti conteggiati altrove e viene controllato senza essere aggiunto. Guida: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Altri registri sono dichiarati in rad.ini, dal kernel e da ogni estensione attiva nel proprio rad.ini.append.php: listener di eventi, provider di IA, strumenti e catene, strumenti MCP, tipi di processi in coda e altro. Ognuno indica quali blocchi ini, o quale elenco di classi, contengono le sue voci e cosa deve essere ogni voce; uno dichiarato con InTotal=disabled si riferisce a punti conteggiati altrove e viene controllato senza essere aggiunto. Guida: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

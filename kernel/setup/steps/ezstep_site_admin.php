@@ -44,7 +44,7 @@ class eZStepSiteAdmin extends eZStepInstaller
      * (expWeakPasswordList: the built-in words with their simple variants, site.ini [UserSettings]
      * WeakPasswordList[] and WeakPasswordFile). The installers always check, whatever WeakPasswordCheck says.
      *
-     * In demo mode (the environment variable EXP_DEMO_MODE=1, expDemoMode, doc/en/us/bc/6.0/demo-mode.md) a well-known
+     * In demo mode (the environment variable EXP_DEMO_MODE=1, expDemoMode, doc/eng-us/bc/6.0/demo-mode.md) a well-known
      * password is accepted, so a public demo can install the password it publishes; an empty one never is (the
      * length: isTooShortAdminPassword()). This is the one place every installer asks (setup
      * wizard, kickstarter, exp:install and the demo installers built on them), and it only concerns the
@@ -105,7 +105,7 @@ class eZStepSiteAdmin extends eZStepInstaller
 
     /**
      * Whether an administrator password of a new installation is shorter than minAdminPasswordLength(). In demo mode
-     * (EXP_DEMO_MODE=1, doc/en/us/bc/6.0/demo-mode.md) no length is too short, so a public demo can install the short
+     * (EXP_DEMO_MODE=1, doc/eng-us/bc/6.0/demo-mode.md) no length is too short, so a public demo can install the short
      * password it publishes (publish); an empty password is refused by the callers before they ask.
      *
      * @param mixed $password

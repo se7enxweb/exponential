@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/settings/edit.php, moved into a class (#207 stage 1). The file kernel/settings/edit.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * Every name in the request is checked against the installation's own lists before anything is read or written
  * (expSettingsTarget): the INI file against the files the settings page lists, the siteaccess against
@@ -9,7 +9,7 @@
  * the setting name against what eZINI reads back; read-only settings (site.ini [eZINISettings]
  * ReadonlySettingList) are refused. eZINI::save() refuses a value that would break out of its line or out of the
  * PHP comment of a .ini.append.php file. After a write the INI cache is cleared (expSettingsPage::afterWrite()),
- * so PHP-FPM and Velocity both read the change on their next request. User guide: doc/en/us/guides/settings-page.md
+ * so PHP-FPM and Velocity both read the change on their next request. User guide: doc/eng-us/guides/settings-page.md
  */
 /*
  * The original header of kernel/settings/edit.php:

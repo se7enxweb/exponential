@@ -1,7 +1,7 @@
 {* The maintainer step of the package creation wizard (package/create): who maintains the package and in which role.
    A creator leaves the step out when the user may use no maintainer role. The POST names are those of before:
    PackageMaintainerPerson, PackageMaintainerEmail, PackageMaintainerRole. The same file is in design/admin and
-   design/admin4. Guide: doc/en/us/features/6.0/package-wizard.md *}
+   design/admin4. Guide: doc/eng-us/features/6.0/package-wizard.md *}
 {def $maintainer_role_list = fetch( package, maintainer_role_list, hash( check_roles, true() ) )
      $k_name = 'Name'|i18n( 'kernel/package' )
      $k_email = 'Email'|i18n( 'kernel/package' )

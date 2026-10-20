@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/checkdbfiles.php, moved into a class (#207 stage 1). The file bin/php/checkdbfiles.php is one call to it.
  * @description Verify the database update files against the upgrade path; reports missing or stray files
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/checkdbfiles.php:
@@ -306,7 +306,7 @@ class Checkdbfiles extends \Exponential\Runnable\Command
                    );
 
         // The 6.12, 7.2 and 7.3 files of the upstream legacy line (2016 to 2018); not on the 6.0 path, see
-        // doc/en/us/install/11-upgrading.md, section 11.3
+        // doc/eng-us/install/11-upgrading.md, section 11.3
         $versions['6.12'] = array( 'unstable' => array( ),
                      'unstable_subdir' => 'unstable',
                      'stable' => array( array( '5.4.0', '6.12.0' ) ),

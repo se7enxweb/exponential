@@ -6,7 +6,7 @@
 
    Variables: remove_groups (eZWorkflowGroup objects), remove_overview (group id => what the list's cards show),
    remove_plan (remove: workflow ids, unlink: workflow id => the groups it stays in), module.
-   Guide: doc/en/us/guides/workflows.md *}
+   Guide: doc/eng-us/guides/workflows.md *}
 {def $removed_triggered = 0
      $removed_waiting = 0}
 {foreach $remove_groups as $group}{if is_set( $remove_overview[$group.id] )}{set $removed_waiting = sum( $removed_waiting, $remove_overview[$group.id].removes_waiting )

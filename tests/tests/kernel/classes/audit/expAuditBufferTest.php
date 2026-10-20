@@ -1,6 +1,6 @@
 <?php
 /**
- * Buffering, flushing and the per-request reset of a persistent worker (doc/en/us/bc/6.0/audit.md, "Buffering and
+ * Buffering, flushing and the per-request reset of a persistent worker (doc/eng-us/bc/6.0/audit.md, "Buffering and
  * flushing (F3)", acceptance test B4).
  *
  *  AB-01 — buffered events reach the file only at the flush, in one append; immediate events at once

@@ -11,7 +11,7 @@
    trigger_orphans, trigger_summary, trigger_feedback); without it (an older view class) the page draws the rows
    from possible_triggers as before. Every variable the page had before is still set: possible_triggers, triggers,
    modules, functions, current_module, current_function, show_modules, show_functions, module. Field names
-   (WorkflowID_<key>, StoreButton, DeleteIDArray[], RemoveButton) are unchanged. Guide: doc/en/us/guides/workflows.md *}
+   (WorkflowID_<key>, StoreButton, DeleteIDArray[], RemoveButton) are unchanged. Guide: doc/eng-us/guides/workflows.md *}
 
 {def $groups = first_set( $trigger_groups, false() )
      $orphans = first_set( $trigger_orphans, array() )

@@ -14,7 +14,7 @@
    DeleteIDArray[], RedirectIfDiscarded); the order buttons send MovePolicyUp / MovePolicyDown with the policy's id
    as value, which is what the view reads (the old image buttons MovePolicyUp_<id> still work). Every template
    variable is still set. This is an edit view, which admin4 draws without its main card; .exp-standalone gives the
-   page its own. The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/roles-and-policies.md *}
+   page its own. The same file is in design/admin and design/admin4. Guide: doc/eng-us/guides/roles-and-policies.md *}
 
 {def $sentences = first_set( $policy_sentences, hash() )
      $differs = first_set( $draft_differs, false() )

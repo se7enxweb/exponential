@@ -1,6 +1,6 @@
 <?php
 /**
- * The contentcheck/unreferenced view (doc/en/us/features/6.0/content-checks.md, "Unreferenced objects"): the published
+ * The contentcheck/unreferenced view (doc/eng-us/features/6.0/content-checks.md, "Unreferenced objects"): the published
  * objects below a node (contentcheck/unreferenced/<node id>) that nothing refers to, filtered by class, sorted and
  * paged, with a form that posts the ticked ones to contentcheck/trash. Needs the policy contentcheck/unreferenced;
  * answers on administration siteaccesses only.

@@ -1,6 +1,6 @@
 {* The uninstall step of a package (package/uninstall/<name>): what uninstalling removes from the site, before
    anything is done. Uninstall package (UninstallPackageButton) starts it; Skip uninstallation (SkipPackageButton)
-   returns to the package's page. The same names as before. Guide: doc/en/us/guides/packages.md *}
+   returns to the package's page. The same names as before. Guide: doc/eng-us/guides/packages.md *}
 <div id="package">
 
 <form method="post" action={concat( 'package/uninstall/', $package.name )|ezurl}>

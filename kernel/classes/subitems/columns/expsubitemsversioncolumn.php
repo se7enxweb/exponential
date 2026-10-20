@@ -7,7 +7,7 @@
  * workflow_processes. Every version field of a row shares one query: the object's version rows
  * (ezcontentobject_version, no data), fetched once per object per request, or for the whole page
  * at once (prefetch()); workflow_processes is one grouped count for the page.
- * Guide: doc/en/us/bc/6.0/subitems-table-options.md
+ * Guide: doc/eng-us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

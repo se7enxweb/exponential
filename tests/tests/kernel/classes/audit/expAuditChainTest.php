@@ -1,6 +1,6 @@
 <?php
 /**
- * The hash chain, its files and its verification (doc/en/us/bc/6.0/audit.md, "The hash chain", "Verification",
+ * The hash chain, its files and its verification (doc/eng-us/bc/6.0/audit.md, "The hash chain", "Verification",
  * acceptance tests B2 and the file cases of the tamper test, T0-T8).
  *
  *  CH-01 — genesis: the first record of a channel links to sha256("exponential-audit:<installation>:<channel>");

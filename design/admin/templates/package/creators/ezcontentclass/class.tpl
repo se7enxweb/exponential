@@ -2,7 +2,7 @@
    the package carries, as a list of checkboxes with their identifier and groups. A filter above the list (a script,
    it posts nothing) narrows it by name or identifier; without the script the whole list shows. The POST name is
    that of before: ClassList[] (the ids of the chosen classes), read by eZContentClassPackageCreator.
-   The same file is in design/admin and design/admin4. Guide: doc/en/us/features/6.0/package-wizard.md *}
+   The same file is in design/admin and design/admin4. Guide: doc/eng-us/features/6.0/package-wizard.md *}
 {def $class_list = fetch( class, list )
      $chosen = first_set( $persistent_data.classlist, array() )
      $k_list = 'Class list'|i18n( 'kernel/package' )

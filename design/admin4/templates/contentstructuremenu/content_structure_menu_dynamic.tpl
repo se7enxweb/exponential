@@ -44,7 +44,7 @@
 {/if}
 
 {* The tree is drawn by contentstructuremenu_dynamic.js from the data of this element (no inline script, so it works
-   under a Content Security Policy without 'unsafe-inline', doc/en/us/features/6.0/content-security-policy.md):
+   under a Content Security Policy without 'unsafe-inline', doc/eng-us/features/6.0/content-security-policy.md):
    data-tree-root the top node, data-tree-params the icons, classes, languages and texts (cached), data-tree-request
    what depends on the request and the user. Each is JSON.
    The class list of data-tree-root is the one the current user may create below the root node: the roles and

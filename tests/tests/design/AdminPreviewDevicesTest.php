@@ -14,7 +14,7 @@
  *   Bootstrap icons with their mask rules and IconList[] entries;
  * - the new texts have their German translation.
  *
- * doc/en/us/features/6.0/admin4-design.md ("Version preview"), doc/en/us/bc/6.0/admin4-styling.md
+ * doc/eng-us/features/6.0/admin4-design.md ("Version preview"), doc/eng-us/bc/6.0/admin4-styling.md
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminPreviewDevicesTest.php
  *

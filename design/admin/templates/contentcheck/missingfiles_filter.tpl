@@ -1,5 +1,5 @@
 {* The filters of the missing files in the GET form of contentcheck/brokenrelations, shown when the target "Missing
-   files" is ticked (doc/en/us/features/6.0/content-checks.md, "Missing files"). Included twice: the groups before the
+   files" is ticked (doc/eng-us/features/6.0/content-checks.md, "Missing files"). Included twice: the groups before the
    form's Show button, their buttons after it (Enter in a field still submits Show). "Select all" and "Select none" are the shared submit buttons
    (filter_choice.tpl: ProblemChoice, VersionChoice), which work without JavaScript. Variable: files (from section():
    params, problems, versions), part (chips: the two groups, before the Show button; choice: their Select all and

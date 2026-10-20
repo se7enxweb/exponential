@@ -3,7 +3,7 @@
  * Every complete administration translation is registered wherever the kernel lists languages: a locale file in
  * share/locale whose HTTP code matches the catalogue's language, the catalogue itself (complete against the source
  * texts, as the interface language switch measures it), the switch's ranked groups in settings/uiswitch.ini, the
- * catalogues of the bundled ezoe and ezjscore extensions, and the table of doc/en/us/languages.md. Ukrainian additionally
+ * catalogues of the bundled ezoe and ezjscore extensions, and the table of doc/eng-us/languages.md. Ukrainian additionally
  * checks its Cyrillic names, its left-to-right direction and its fallback in settings/i18n.ini; Arabic and Hebrew their
  * right-to-left locale, their script in every catalogue and the user-name sense of "Login". Without a database.
  *
@@ -20,7 +20,7 @@ unset( $expAdminTranslationsRoot );
 
 class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
 {
-    /** The complete administration translations besides English (doc/en/us/languages.md, section 4). */
+    /** The complete administration translations besides English (doc/eng-us/languages.md, section 4). */
     const COMPLETE = array( 'ger-DE', 'esl-ES', 'esl-MX', 'fre-FR', 'heb-IL', 'lat-VA', 'tlh-QO', 'ukr-UA', 'ara-SA' );
 
     /** Those whose ezoe and ezjscore catalogues are complete too. */
@@ -119,7 +119,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     #[PHPUnit\Framework\Attributes\DataProvider( 'completeLanguages' )]
     public function testLanguagesDocumentListsTheTranslationAsComplete( $code )
     {
-        $doc = (string)file_get_contents( $this->root . '/doc/en/us/languages.md' );
+        $doc = (string)file_get_contents( $this->root . '/doc/eng-us/languages.md' );
         $this->assertMatchesRegularExpression( '/^\| `' . preg_quote( $code, '/' ) . '` \| (99|100)% /m', $doc );
     }
 

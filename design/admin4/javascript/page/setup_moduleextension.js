@@ -2,7 +2,7 @@
  * admin4 setup/moduleextension: the file pick list, the kind and the source of the database, and the filter of the
  * table list. Folding the files is page/setup_wizard_files.js; "Tick none" is a data-a4-check-all action. A file of
  * its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 ( function () {
     // The external details only apply to an external database.

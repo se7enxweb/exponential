@@ -14,7 +14,7 @@
  * rules are site.ini [PasswordSettings]; they are all off by default, so a site keeps the rules it had. After a
  * change the user/password view calls afterChange(): the session id is renewed, the user's other sessions are
  * ended (EndOtherSessions) and the "your password was changed" mail is sent (ChangeNotificationMail, mail
- * category security). Guide: doc/en/us/features/6.0/modern-password-change.md.
+ * category security). Guide: doc/eng-us/features/6.0/modern-password-change.md.
  *
  * The rule not_common refuses well-known and common passwords (expWeakPasswordList: the built-in words, site.ini
  * [UserSettings] WeakPasswordList[] and WeakPasswordFile); it is on unless [UserSettings] WeakPasswordCheck=disabled.
@@ -340,7 +340,7 @@ class expPasswordPolicy
     }
 
     /**
-     * What the client script needs (doc/en/us/features/6.0/modern-password-change.md, "The page").
+     * What the client script needs (doc/eng-us/features/6.0/modern-password-change.md, "The page").
      *
      * @param eZUser|null $user
      * @return array

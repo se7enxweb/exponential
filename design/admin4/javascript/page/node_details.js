@@ -2,7 +2,7 @@
  * The details tab of the node view (details.tpl): the Set buttons of the states and the section are highlighted
  * once their choice changes.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function( $ )
 {

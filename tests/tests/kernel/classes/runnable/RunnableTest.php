@@ -1,7 +1,7 @@
 <?php
 /**
  * The runnable base classes (kernel/private/classes/runnable), namespace Exponential\Runnable,
- * guide doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md.
+ * guide doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md.
  *
  *  RN-01 — Command::main() creates the command for the script file and returns what run() returns
  *  RN-02 — CronjobPart::main() hands the including function's variables to run() and returns its result

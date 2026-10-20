@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit record and its canonical JSON (doc/en/us/bc/6.0/audit.md, "The record format", acceptance test B1), the
+ * The audit record and its canonical JSON (doc/eng-us/bc/6.0/audit.md, "The record format", acceptance test B1), the
  * ULID, and the taxonomy registry (names, patterns, routing, on/off at any rank, extension branches).
  *
  *  AR-01 — canonical JSON: keys sorted by bytes at every depth, lists keep their order, {} vs [], no escaping of

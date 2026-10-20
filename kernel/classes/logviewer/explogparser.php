@@ -1,6 +1,6 @@
 <?php
 /**
- * Reads the lines of a log file as entries (doc/en/us/features/6.0/log-viewer.md, "The line format").
+ * Reads the lines of a log file as entries (doc/eng-us/features/6.0/log-viewer.md, "The line format").
  *
  * The formats, tried in this order on a line that starts an entry:
  *  - eZDebug:  [ Oct 17 2026 01:54:58 ] [ip] [siteaccess] [url or command line] Label:
@@ -149,7 +149,7 @@ class expLogParser
     }
 
     /**
-     * The fields of a line of the request logs (doc/en/us/features/6.0/request-logs.md), when the message after the eZLog
+     * The fields of a line of the request logs (doc/eng-us/features/6.0/request-logs.md), when the message after the eZLog
      * prefix is one: the request (url), siteaccess, status, the reason of a not found request or the category and
      * rule of a security one (source), the directive, disposition and blocked source of a CSP report (csp.log). Any
      * other message is left as it is. Pure.

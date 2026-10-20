@@ -6,7 +6,7 @@
 #
 # Every non-merge commit of <base>..<head> is checked with .githooks/commit-msg.
 #
-# The policy (doc/en/us/features/6.0/quality-checks.md, "The commit messages"):
+# The policy (doc/eng-us/features/6.0/quality-checks.md, "The commit messages"):
 # - A commit by a project author (an e-mail address listed in .githooks/commit-msg-authors)
 #   must start with Added:, Updated:, Fixed:, Removed: or Renamed:. A bad subject fails.
 # - A commit by anyone else, a contributor whose pull request was merged, is kept as written:

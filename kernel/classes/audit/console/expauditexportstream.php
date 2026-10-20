@@ -3,7 +3,7 @@
  * File containing the expAuditExportStream class.
  *
  * The audit records of a filter as CSV, JSON lines or JSON, newest first, written piece by piece to a callback as
- * they are read: the download of audit/export (sent to the browser while it is read, doc/en/us/bc/6.0/audit.md,
+ * they are read: the download of audit/export (sent to the browser while it is read, doc/eng-us/bc/6.0/audit.md,
  * "Export") and the background export (the content job 'auditexport', expContentJobAuditExport, which writes a
  * file in batches and keeps state() in its checkpoint). Nothing is built in memory: at most one page of rows and
  * one segment of ids at a time.

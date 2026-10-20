@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry point of kernel/contentcheck/trash.php: moving unreferenced objects to the trash (doc/en/us/features/6.0/content-checks.md).
+ * Entry point of kernel/contentcheck/trash.php: moving unreferenced objects to the trash (doc/eng-us/features/6.0/content-checks.md).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

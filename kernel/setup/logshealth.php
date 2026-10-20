@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the setup/logshealth view of the log viewer (doc/en/us/features/6.0/log-viewer.md).
+ * File containing the setup/logshealth view of the log viewer (doc/eng-us/features/6.0/log-viewer.md).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

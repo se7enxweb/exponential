@@ -1,6 +1,6 @@
 <?php
 /**
- * The health of the logs (doc/en/us/features/6.0/log-viewer.md, "Health"): expLogHealth over a test double of the log
+ * The health of the logs (doc/eng-us/features/6.0/log-viewer.md, "Health"): expLogHealth over a test double of the log
  * manager, without a database.
  *
  *  LV-120  the budget: [HealthSettings] DiskBudget, the default 256 MB, 0 for none, nonsense falls back

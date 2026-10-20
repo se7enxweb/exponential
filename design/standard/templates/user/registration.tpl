@@ -11,7 +11,7 @@
    user, which are never removed.
    registration_account: id, name, login, email, created, published, state, collaboration_uri, node_uri, version_uri;
    false when there is no such account. Used by every administration design: shared component classes only, no
-   inline styles. Guide: doc/en/us/features/6.0/registration-admin-links.md *}
+   inline styles. Guide: doc/eng-us/features/6.0/registration-admin-links.md *}
 
 {def $mode = $registration_mode
      $account = $registration_account

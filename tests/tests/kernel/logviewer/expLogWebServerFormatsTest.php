@@ -1,6 +1,6 @@
 <?php
 /**
- * The web server's log formats in the log viewer's parser (doc/en/us/features/6.0/log-viewer.md, "Web server logs"). Synthetic
+ * The web server's log formats in the log viewer's parser (doc/eng-us/features/6.0/log-viewer.md, "Web server logs"). Synthetic
  * lines only (documentation addresses).
  *
  *  LV-90  access log, common and combined: client, time with its zone, request path as the request, status as the level

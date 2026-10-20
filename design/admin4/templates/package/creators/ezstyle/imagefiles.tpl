@@ -2,7 +2,7 @@
    image is added on its own: Add image (or Continue with a file chosen) adds it and stays on the step; Continue
    without a file goes on. The POST name is that of before: PackageImageFile (a file); Add image posts
    NextStepButton like Continue, read by eZStylePackageCreator. The same file is in design/admin and design/admin4.
-   Guide: doc/en/us/features/6.0/package-wizard.md *}
+   Guide: doc/eng-us/features/6.0/package-wizard.md *}
 {def $errs = hash()}
 {foreach $error_list as $e}{set $errs = $errs|merge( hash( $e.field, $e.description ) )}{/foreach}
 <div id="package" class="create">

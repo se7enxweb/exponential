@@ -1,7 +1,7 @@
 {* The choice of package creation wizard (package/create), reached from Create new package on the package list.
    Each wizard asks its own steps (package/create/wizard_*.tpl and the creators' templates); this page says what each
    one exports. The POST names are those of before: CreatorItemID, CreatePackageButton. The same file is in
-   design/admin and design/admin4. Guides: doc/en/us/features/6.0/package-wizard.md, doc/en/us/guides/packages.md *}
+   design/admin and design/admin4. Guides: doc/eng-us/features/6.0/package-wizard.md, doc/eng-us/guides/packages.md *}
 {def $creator_help = hash( 'ezcontentclass', 'The definitions of content classes, to create the same classes on another site. No content is included.'|i18n( 'design/admin/package' ),
                            'ezcontentobject', 'Nodes or whole subtrees with their content, optionally with their class definitions and templates.'|i18n( 'design/admin/package' ),
                            'ezextension', 'The files of extensions, as they are on this site. Exporting extensions has to be switched on first.'|i18n( 'design/admin/package' ),

@@ -2,7 +2,7 @@
    page runs in admin4 (--a4-*) and plain defaults on a public site or the old admin. Included once by each page.
    No script is needed: every switch is a checkbox or a button in a form.
    (design/standard/templates/mailpreferences/parts/style.tpl links this file: a stylesheet, not a <style> element, so the page works under a
-   Content Security Policy with style-src 'self', doc/en/us/features/6.0/content-security-policy.md) */
+   Content Security Policy with style-src 'self', doc/eng-us/features/6.0/content-security-policy.md) */
 .mp { --mp-ink: var(--a4-ink, #1f2430); --mp-muted: var(--a4-muted, #5d6573); --mp-line: var(--a4-line, #d9dde3);
       --mp-soft: var(--a4-soft, #f5f6f8); --mp-card: #fff; --mp-radius: var(--a4-radius-s, 9px);
       --mp-accent: #c2410c; --mp-accent-dark: #9a3412; --mp-accent-soft: rgba(194,65,12,.14);

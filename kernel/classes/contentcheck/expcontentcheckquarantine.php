@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheckQuarantine class.
  *
- * The actions of the storage check (doc/en/us/features/6.0/content-checks.md, "Quarantine"). Nothing is ever deleted from
+ * The actions of the storage check (doc/eng-us/features/6.0/content-checks.md, "Quarantine"). Nothing is ever deleted from
  * the storage itself:
  *
  *   quarantine   moves orphan files to var/<site>/storage-quarantine/<date>/<their path below the storage>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup > Log files > Manage (setup/logsmanage; doc/en/us/features/6.0/log-viewer.md, "Managing logs"): every log with its
+ * Setup > Log files > Manage (setup/logsmanage; doc/eng-us/features/6.0/log-viewer.md, "Managing logs"): every log with its
  * size, estimated lines, last write, growth, archives and limits, and the actions rotate now, empty (archive first),
  * compress the archives, remove the archives older than N days, rotate all, prune all, and the download of the
  * viewer (setup/logsaction).

@@ -1,6 +1,6 @@
 <?php
 /**
- * The content checks (doc/en/us/features/6.0/content-checks.md): the objects below a node that nothing refers to, with
+ * The content checks (doc/eng-us/features/6.0/content-checks.md): the objects below a node that nothing refers to, with
  * a move to the trash for those the user may remove, and the visible content that links to or embeds something
  * deleted, in the trash, hidden or never published.
  *

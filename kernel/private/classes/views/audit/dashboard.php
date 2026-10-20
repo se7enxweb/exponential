@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit/dashboard view (doc/en/us/bc/6.0/audit.md, "The console", "Views"): the summary that binds the audit's views
+ * The audit/dashboard view (doc/eng-us/bc/6.0/audit.md, "The console", "Views"): the summary that binds the audit's views
  * together, in cards that each link into their detailed view: health (audit on or off, the chain of each channel
  * as last verified, the signing key's age; "Verify now" for audit/manage), today and the last 7 days per channel
  * and family, security (failed logins by address and login, role grants, permission refusals), alerts (recent

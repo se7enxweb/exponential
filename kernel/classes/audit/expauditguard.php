@@ -1,6 +1,6 @@
 <?php
 /**
- * [AuditSettings] OnWriteFailure (doc/en/us/bc/6.0/audit.md, "When the audit cannot write"): what happens to an action
+ * [AuditSettings] OnWriteFailure (doc/eng-us/bc/6.0/audit.md, "When the audit cannot write"): what happens to an action
  * whose audit record cannot be written.
  *
  *   continue  (the shipped default) the action goes on; the record goes to error.log as AUDIT-UNWRITTEN

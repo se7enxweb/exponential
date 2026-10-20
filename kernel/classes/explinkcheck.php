@@ -5,7 +5,7 @@
  * Decides whether a link of published content works, for the link check cronjob (linkcheck.php) and the link list
  * (url/list). Every outside effect - the HTTP request, the DNS lookup, the content lookup, the alias lookup, the
  * MX lookup, the clock and sleeping - is a callable, so the decisions can be tested without a network or a
- * database. Settings: cronjob.ini [linkCheckSettings]. Guide: doc/en/us/guides/urls-and-aliases.md
+ * database. Settings: cronjob.ini [linkCheckSettings]. Guide: doc/eng-us/guides/urls-and-aliases.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

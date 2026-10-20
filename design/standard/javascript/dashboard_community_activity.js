@@ -1,7 +1,7 @@
 /*
  * The dashboard block "community activity" (dashboard/community_activity.tpl): fetches the latest forum posts with
  * the values of #community-activity-config (number of items, feed URL, version). A file of its own, so the page
- * runs under a Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * runs under a Content Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     var config = document.getElementById( 'community-activity-config' );

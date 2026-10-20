@@ -201,7 +201,7 @@ class eZContentOperationCollection
         $object = eZContentObject::fetch( $objectID );
         $version = $object->version( $versionNum );
 
-        // Audit (doc/en/us/bc/6.0/audit.md): the state before this version is published, for content.object.create,
+        // Audit (doc/eng-us/bc/6.0/audit.md): the state before this version is published, for content.object.create,
         // content.object.publish and content.object.translate
         $auditBefore = null;
         if ( class_exists( 'expAuditHook' )
@@ -273,7 +273,7 @@ class eZContentOperationCollection
     }
 
     /**
-     * Records the publication of a version (doc/en/us/bc/6.0/audit.md): content.object.create for the first published
+     * Records the publication of a version (doc/eng-us/bc/6.0/audit.md): content.object.create for the first published
      * version, content.object.publish for a later one (with the identifiers of the attributes that changed, never
      * their values), and content.object.translate when it adds languages.
      *
@@ -1234,7 +1234,7 @@ class eZContentOperationCollection
             eZContentOperationCollection::registerSearchObject( $objectID );
         }
 
-        // Audit (doc/en/us/bc/6.0/audit.md, content.node.add; 4.x name location-assign): one record per added location,
+        // Audit (doc/eng-us/bc/6.0/audit.md, content.node.add; 4.x name location-assign): one record per added location,
         // about the object, with the new node as the target (its id, parent and path)
         if ( $auditInserted && class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.add' ) )
             self::auditLocationsAdded( $objectID, $assignedNodes, $auditInserted );
@@ -1346,7 +1346,7 @@ class eZContentOperationCollection
                 $mainNodeChanged[$objectId] = 1;
                 $auditOldMain[$objectId] = (int)$nodeId;
             }
-            // Audit (doc/en/us/bc/6.0/audit.md, content.node.remove): described before it goes, recorded after the commit
+            // Audit (doc/eng-us/bc/6.0/audit.md, content.node.remove): described before it goes, recorded after the commit
             // (4.x name location-remove; "main" says whether the removed location was the object's main one)
             if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.remove' ) )
             {
@@ -1648,7 +1648,7 @@ class eZContentOperationCollection
 
         eZSearch::swapNode( $nodeID, $selectedNodeID, $nodeIdList = array() );
 
-        // Audit (doc/en/us/bc/6.0/audit.md, content.node.swap)
+        // Audit (doc/eng-us/bc/6.0/audit.md, content.node.swap)
         if ( class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'content.node.swap', function () use ( $nodeID, $selectedNodeID, $objectID, $selectedObjectID ) {
                 return array( 'object' => expAuditHook::node( $nodeID ), 'target' => expAuditHook::node( $selectedNodeID ),
@@ -1728,7 +1728,7 @@ class eZContentOperationCollection
         $curNode = eZContentObjectTreeNode::fetch( $nodeID );
         if ( is_object( $curNode ) )
         {
-             // Audit (doc/en/us/bc/6.0/audit.md, content.node.sort)
+             // Audit (doc/eng-us/bc/6.0/audit.md, content.node.sort)
              if ( class_exists( 'expAuditHook' ) )
                  expAuditHook::emit( 'content.node.sort', function () use ( $curNode, $sortingField, $sortingOrder ) {
                      if ( $curNode->attribute( 'sort_field' ) == $sortingField && $curNode->attribute( 'sort_order' ) == $sortingOrder )
@@ -1765,7 +1765,7 @@ class eZContentOperationCollection
         $curNode = eZContentObjectTreeNode::fetch( $parentNodeID );
         if ( $curNode instanceof eZContentObjectTreeNode )
         {
-             // Audit (doc/en/us/bc/6.0/audit.md, content.node.priority): the priorities that change
+             // Audit (doc/eng-us/bc/6.0/audit.md, content.node.priority): the priorities that change
              $auditBefore = null;
              if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.priority' ) )
              {
@@ -1837,7 +1837,7 @@ class eZContentOperationCollection
      */
     static public function updateMainAssignment( $mainAssignmentID, $objectID, $mainAssignmentParentID )
     {
-        // Audit (doc/en/us/bc/6.0/audit.md, content.node.main; 4.x name main-node-update)
+        // Audit (doc/eng-us/bc/6.0/audit.md, content.node.main; 4.x name main-node-update)
         $auditOldMain = null;
         if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.main' ) )
         {
@@ -1870,7 +1870,7 @@ class eZContentOperationCollection
         $language = eZContentLanguage::fetch( $newInitialLanguageID );
         if ( $language and !$language->attribute( 'disabled' ) )
         {
-            // Audit (doc/en/us/bc/6.0/audit.md, content.object.initial_language)
+            // Audit (doc/eng-us/bc/6.0/audit.md, content.object.initial_language)
             if ( class_exists( 'expAuditHook' ) && $object->attribute( 'initial_language_id' ) != $newInitialLanguageID )
                 expAuditHook::emit( 'content.object.initial_language', function () use ( $object, $language ) {
                     $old = eZContentLanguage::fetch( $object->attribute( 'initial_language_id' ) );
@@ -1925,7 +1925,7 @@ class eZContentOperationCollection
         }
         if ( $change )
         {
-            // Audit (doc/en/us/bc/6.0/audit.md, content.object.always_available)
+            // Audit (doc/eng-us/bc/6.0/audit.md, content.object.always_available)
             if ( class_exists( 'expAuditHook' ) )
                 expAuditHook::emit( 'content.object.always_available', function () use ( $object, $newAlwaysAvailable ) {
                     return array( 'object' => expAuditHook::object( $object ),
@@ -1967,7 +1967,7 @@ class eZContentOperationCollection
                 $auditRemoved[] = $languageID;
         }
 
-        // Audit (doc/en/us/bc/6.0/audit.md, content.object.translation.remove)
+        // Audit (doc/eng-us/bc/6.0/audit.md, content.object.translation.remove)
         if ( $auditLanguagesBefore !== null && $auditRemoved )
             expAuditHook::emit( 'content.object.translation.remove', function () use ( $objectID, $auditRemoved, $auditLanguagesBefore ) {
                 $object = eZContentObject::fetch( $objectID );
@@ -2017,7 +2017,7 @@ class eZContentOperationCollection
             $state = eZContentObjectState::fetchById( $selectedStateID );
             $object->assignState( $state );
         }
-        // Who assigns which states (doc/en/us/bc/6.0/audit.md, content.object.state)
+        // Who assigns which states (doc/eng-us/bc/6.0/audit.md, content.object.state)
         if ( $auditStatesBefore !== null && $selectedStateIDList )
             expAuditHook::emit( 'content.object.state', function () use ( $objectID, $selectedStateIDList, $auditStatesBefore ) {
                 $object = eZContentObject::fetch( $objectID );
@@ -2034,7 +2034,7 @@ class eZContentOperationCollection
         ezpEvent::getInstance()->notify( 'content/state/assign', array( $objectID, $selectedStateIDList ) );
 
         // Help maintained as content: a release builds the stored e-books of the manuals again
-        // (doc/en/us/features/6.0/help-content.md, "Stored e-books"; exphelp.ini [ContentSettings] EbooksOnRelease)
+        // (doc/eng-us/features/6.0/help-content.md, "Stored e-books"; exphelp.ini [ContentSettings] EbooksOnRelease)
         if ( $selectedStateIDList && class_exists( 'expHelpContentEbooks' ) )
             expHelpContentEbooks::onStateAssign( $objectID, $selectedStateIDList );
 

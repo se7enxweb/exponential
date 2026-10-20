@@ -8,7 +8,7 @@
  */
 
 /**
- * Log management (doc/en/us/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth
+ * Log management (doc/eng-us/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth
  * and limits; rotation, pruning, compression and emptying on demand, as a plan (a dry run) that apply() carries out;
  * for the command line (./console exp:logs --rotate ...), the cronjob part "logs" and the log viewer (Setup > Log
  * files), which builds its actions on this API.

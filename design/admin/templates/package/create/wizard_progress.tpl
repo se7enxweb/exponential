@@ -5,7 +5,7 @@
    Parameters: intro (the step's explanation, optional), field_ids (optional hash: the field name an error names, as
    the creator writes it, => the id of the control it belongs to; such an error links to its control), field_labels
    (optional hash: such a field name => the label shown, for a creator that names a field by its POST name). The same file
-   is in design/admin and design/admin4. Guide: doc/en/us/features/6.0/package-wizard.md *}
+   is in design/admin and design/admin4. Guide: doc/eng-us/features/6.0/package-wizard.md *}
 {def $wz_steps = $creator.current_steps
      $wz_number = 1
      $wz_state = 'done'

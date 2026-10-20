@@ -34,7 +34,7 @@
  * the Content-Security-Policy that SecurityHeaders[] already carries (frame-ancestors 'self' by default), as a second
  * policy of the same header, and the browser applies both.
  *
- * Settings: site.ini [ContentSecurityPolicy] of the current siteaccess. See doc/en/us/features/6.0/content-security-policy.md.
+ * Settings: site.ini [ContentSecurityPolicy] of the current siteaccess. See doc/eng-us/features/6.0/content-security-policy.md.
  */
 class expContentSecurityPolicy
 {

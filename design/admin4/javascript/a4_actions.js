@@ -1,6 +1,6 @@
 /*
  * admin4: the small actions of the pages, declared in data-a4-* attributes instead of on...= attributes, so a page
- * works under a Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md). One
+ * works under a Content Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md). One
  * listener per event on the document handles every element, also those a script adds later.
  *
  *   data-a4-confirm="Question?"          on a button, link or input: the click goes on only when confirmed; on a

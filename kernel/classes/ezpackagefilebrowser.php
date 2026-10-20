@@ -64,7 +64,7 @@ class eZPackageFileBrowser
         if ( $topDir === 'documents' )
             return 'document';
         if ( $ext === 'json' )
-            return 'unknown-json'; // a document of the JSON format (doc/en/us/bc/6.0/package-json-format.md), resolved by peekJSONKind()
+            return 'unknown-json'; // a document of the JSON format (doc/eng-us/bc/6.0/package-json-format.md), resolved by peekJSONKind()
         if ( $ext !== 'xml' )
             return 'other';
         return 'unknown-xml'; // resolved by peekXMLKind() once the caller has the package to read the file from
@@ -165,7 +165,7 @@ class eZPackageFileBrowser
     }
 
     /**
-     * A document's text in either format, the two being 1:1 (doc/en/us/bc/6.0/package-json-format.md): a JSON document
+     * A document's text in either format, the two being 1:1 (doc/eng-us/bc/6.0/package-json-format.md): a JSON document
      * as it is (JSON) or as the XML it mirrors (XML); an XML document pretty-printed (XML) or as the JSON format
      * would write it (JSON). Anything else is returned as it is.
      *

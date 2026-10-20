@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit/archives view (doc/en/us/bc/6.0/audit.md, "Views", "Rotation, archives and retention"): per channel its live
+ * The audit/archives view (doc/eng-us/bc/6.0/audit.md, "Views", "Rotation, archives and retention"): per channel its live
  * files (count, size, oldest), its archives and manifests, the verification state of every live file (as the index
  * stores it: intact, repaired, broken with the line, unchecked) and the signing key's id and fingerprint.
  * Read-only: archiving, verifying and restoring are done by exp:audit and the audit cronjob part.

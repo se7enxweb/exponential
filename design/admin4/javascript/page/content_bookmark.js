@@ -2,7 +2,7 @@
  * The bookmarks page (content/bookmark.tpl): select all and the selection count, and moving bookmarks and
  * folders by drag and drop or with the keyboard. The text of the count is data-text-selected of #bm-selected-count.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     'use strict';

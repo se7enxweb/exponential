@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/state/assign.php, moved into a class (#207 stage 1). The file kernel/state/assign.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/state/assign.php:
@@ -46,7 +46,7 @@ class Assign extends \Exponential\Runnable\ModuleView
             $selectedStateIDList = isset( $Params['SelectedStateID'] ) ? array( $Params['SelectedStateID'] ) : false ;
         }
 
-        // Content jobs (doc/en/us/bc/6.0/content-jobs.md): "also for everything below this node" sets the states on the
+        // Content jobs (doc/eng-us/bc/6.0/content-jobs.md): "also for everything below this node" sets the states on the
         // whole subtree, now or as a background job; without it the object's states are set as before
         $http = \eZHTTPTool::instance();
         if ( $objectID and $selectedStateIDList and $Module->isCurrentAction( 'Assign' )

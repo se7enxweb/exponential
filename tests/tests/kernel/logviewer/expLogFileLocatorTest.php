@@ -1,6 +1,6 @@
 <?php
 /**
- * Which files the log viewer may open (doc/en/us/features/6.0/log-viewer.md, "Which files"), on a temporary root.
+ * Which files the log viewer may open (doc/eng-us/features/6.0/log-viewer.md, "Which files"), on a temporary root.
  *
  *  LV-30  the shape of an id: .., ., //, a leading /, a backslash, NUL and control characters are refused
  *  LV-31  traversal and absolute paths never resolve; a url-encoded .. is not decoded

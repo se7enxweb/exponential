@@ -23,7 +23,7 @@
  *   view cache, compiled templates. Generated code reads it from $GLOBALS['expUISwitchVariantKey'], so it never
  *   needs this class.
  *
- * Guide: doc/en/us/bc/6.0/ui-switch.md; settings: doc/en/us/guides/ui-switch-settings.md
+ * Guide: doc/eng-us/bc/6.0/ui-switch.md; settings: doc/eng-us/guides/ui-switch-settings.md
  */
 class expUISwitch
 {

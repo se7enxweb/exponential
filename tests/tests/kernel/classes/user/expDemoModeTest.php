@@ -1,6 +1,6 @@
 <?php
 /**
- * Demo mode (kernel/classes/expdemomode.php, doc/en/us/bc/6.0/demo-mode.md): the environment variable EXP_DEMO_MODE=1 marks
+ * Demo mode (kernel/classes/expdemomode.php, doc/eng-us/bc/6.0/demo-mode.md): the environment variable EXP_DEMO_MODE=1 marks
  * an installation as a public demo. Administrator passwords cannot be changed or reset, the installers accept a
  * well-known administrator password, the administration shows a banner, and each process records the mode once.
  *
@@ -454,7 +454,7 @@ class expDemoModeTest extends PHPUnit\Framework\TestCase
     {
         $source = self::file( 'kernel/classes/audit/expaudittaxonomy.php' );
         $this->assertMatchesRegularExpression( "/'system\\.demo\\.mode' => array\\( 'severity' => 'warning', 'default' => 'always'/", $source );
-        $this->assertStringContainsString( '`system.demo.mode`', self::file( 'doc/en/us/bc/6.0/audit.md' ) );
+        $this->assertStringContainsString( '`system.demo.mode`', self::file( 'doc/eng-us/bc/6.0/audit.md' ) );
 
         $messages = array(
             'kernel/user/demo' => 'This installation is a public demo: the passwords of administrators cannot be changed or reset.',

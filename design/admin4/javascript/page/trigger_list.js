@@ -1,7 +1,7 @@
 /*
  * admin4 trigger/list: counts the unsaved changes of the trigger list.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md). The text comes from #trigger-list-data.
+ * (doc/eng-us/features/6.0/content-security-policy.md). The text comes from #trigger-list-data.
  */
 var expTriggerListData = document.getElementById( 'trigger-list-data' );
 var expTriggerChanged = expTriggerListData.getAttribute( 'data-trigger-changed' );

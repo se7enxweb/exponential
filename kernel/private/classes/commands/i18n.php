@@ -3,7 +3,7 @@
  * @description The translation fallbacks: per locale the chain of translations it falls back to, and how much of the kernel and of each extension it shows translated; --check for CI
  * @alias exp:i18n
  *
- * File containing the exp:i18n command (doc/en/us/languages.md, "Translation fallbacks"). It uses the classes of
+ * File containing the exp:i18n command (doc/eng-us/languages.md, "Translation fallbacks"). It uses the classes of
  * Setup > Interface languages: expI18nFallbackResolver (i18n.ini [TranslationSettings]) and expI18nFallbackReport.
  * Nothing is changed.
  *
@@ -27,7 +27,7 @@ class I18n extends \Exponential\Runnable\Command
         $cli = $this->cli();
         $this->script(
             array(
-                'description' => "The translation fallbacks (i18n.ini [TranslationSettings], doc/en/us/languages.md)\n" .
+                'description' => "The translation fallbacks (i18n.ini [TranslationSettings], doc/eng-us/languages.md)\n" .
                                  "\n" .
                                  "./console exp:i18n fallbacks                         every locale: its chain, kernel and extension coverage\n" .
                                  "./console exp:i18n fallbacks --only=fallback         only the locales translated through a fallback\n" .

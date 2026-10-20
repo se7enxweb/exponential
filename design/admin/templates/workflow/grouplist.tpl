@@ -10,7 +10,7 @@
    group_summary, group_feedback); without it (an older view class) the cards show the group's name and the page
    works as before. Every variable the page had before is still set: groups, group_count, limit, view_parameters,
    module. Field names (ContentClass_id_checked[], DeleteGroupButton, NewGroupButton) are unchanged.
-   Guide: doc/en/us/guides/workflows.md *}
+   Guide: doc/eng-us/guides/workflows.md *}
 
 {def $overview = first_set( $group_overview, hash() )
      $summary = first_set( $group_summary, false() )

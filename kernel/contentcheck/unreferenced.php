@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry point of kernel/contentcheck/unreferenced.php: the objects below a node that nothing refers to (doc/en/us/features/6.0/content-checks.md).
+ * Entry point of kernel/contentcheck/unreferenced.php: the objects below a node that nothing refers to (doc/eng-us/features/6.0/content-checks.md).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

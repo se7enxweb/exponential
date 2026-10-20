@@ -13,7 +13,7 @@
  * Template=design:subitems/columns/<x>.tpl (expSubitemsTemplateColumn). Every name comes from
  * the INI; nothing from a request is ever used as a class, function or template name, and
  * request keys are only looked up in the registry.
- * Guide: doc/en/us/bc/6.0/subitems-table-options.md
+ * Guide: doc/eng-us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

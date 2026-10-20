@@ -1,6 +1,6 @@
 <?php
 /**
- * The parts of the content checks that need no database (doc/en/us/features/6.0/content-checks.md): reading the request,
+ * The parts of the content checks that need no database (doc/eng-us/features/6.0/content-checks.md): reading the request,
  * the SQL they build, what counts as a reference, the links found in rich text, and how a target is judged.
  *
  *  CQ-01  id lists: whole numbers only, unique, bounded; anything else (SQL, negative, huge, arrays in arrays) is left out

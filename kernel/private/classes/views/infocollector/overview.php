@@ -1,8 +1,8 @@
 <?php
 /**
  * The code of kernel/infocollector/overview.php, moved into a class (#207 stage 1). The file kernel/infocollector/overview.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
- * User guide: doc/en/us/guides/collected-information.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
+ * User guide: doc/eng-us/guides/collected-information.md
  */
 /*
  * The original header of kernel/infocollector/overview.php:
@@ -104,7 +104,7 @@ class Overview extends \Exponential\Runnable\ModuleView
                     $auditCount = (int)\eZInformationCollection::fetchCollectionsCount( $objectID );
                     $removed += $auditCount;
                     \eZInformationCollection::removeContentObject( $objectID );
-                    // Audit (doc/en/us/bc/6.0/audit.md, data.infocollection.remove): all of an object's collections
+                    // Audit (doc/eng-us/bc/6.0/audit.md, data.infocollection.remove): all of an object's collections
                     if ( class_exists( 'expAuditHook' ) )
                         \expAuditHook::emit( 'data.infocollection.remove', array( 'object' => array( 'type' => 'collection', 'id' => 'all' ),
                             'target' => \expAuditHook::object( (int)$objectID ), 'verb' => 'remove', 'before' => array( 'count' => $auditCount ) ) );

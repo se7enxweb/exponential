@@ -1,7 +1,7 @@
 {* What section/assign says when it could not assign the section: to some of the chosen items (1), to any object
    at all (2), or because the user may not assign this section (3).
 
-   The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/sections.md *}
+   The same file is in design/admin and design/admin4. Guide: doc/eng-us/guides/sections.md *}
 
 <div class="context-block a4-page">
 

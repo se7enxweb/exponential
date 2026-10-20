@@ -1,7 +1,7 @@
 /*
  * admin4 visual/templateview: Enter in a condition field, the order of the overrides (drag, arrows) and the card
  * filter. A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function()
 {

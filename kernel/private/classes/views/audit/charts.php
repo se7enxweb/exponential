@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit/charts view (doc/en/us/bc/6.0/audit.md, "Views"): events per day per channel, refusals and failures per
+ * The audit/charts view (doc/eng-us/bc/6.0/audit.md, "Views"): events per day per channel, refusals and failures per
  * day, logins against failed logins per day, the most active actors and the most frequent event names, over the
  * last /(days)/<n> days (14 by default) and under the console's filters. Needs the index (the files alone give no
  * charts). Policy audit/read with its Channel limitation. Recorded as system.audit.read.

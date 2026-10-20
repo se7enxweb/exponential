@@ -23,7 +23,7 @@
  *  - unknown: no page layout was found.
  *
  * classify() is pure and does the deciding; inspect() only gathers the files.
- * Guide: doc/en/us/guides/classic-menu-settings.md
+ * Guide: doc/eng-us/guides/classic-menu-settings.md
  */
 class expClassicMenuSiteAccessInspector
 {

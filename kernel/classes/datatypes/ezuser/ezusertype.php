@@ -169,7 +169,7 @@ class eZUserType extends eZDataType
                     // [PasswordSettings]); "_ezpassword" is the edit form's "unchanged", which is not checked
                     if ( $password !== '_ezpassword' )
                     {
-                        // Demo mode (EXP_DEMO_MODE=1, doc/en/us/bc/6.0/demo-mode.md): an administrator's password stays
+                        // Demo mode (EXP_DEMO_MODE=1, doc/eng-us/bc/6.0/demo-mode.md): an administrator's password stays
                         if ( class_exists( 'expDemoMode' ) && expDemoMode::enabled() )
                         {
                             $demoAccount = eZUser::fetch( $contentObjectAttribute->attribute( 'contentobject_id' ) );

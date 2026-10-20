@@ -2,7 +2,7 @@
 /**
  * File containing the expContentCheck class.
  *
- * What the two content checks share (doc/en/us/features/6.0/content-checks.md): their settings, where they answer, the
+ * What the two content checks share (doc/eng-us/features/6.0/content-checks.md): their settings, where they answer, the
  * policy check, the form tokens of the trash action, the reading of node and class id lists, and the one rule both
  * build on: what counts as a reference to an object.
  *

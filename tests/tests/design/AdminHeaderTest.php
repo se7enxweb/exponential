@@ -16,7 +16,7 @@
  *   logout, in the markup in the order they are drawn; the logo stands alone;
  * - "/" puts the focus in the header search; the new rules take their colours from the tokens.
  *
- * doc/en/us/bc/6.0/admin4-styling.md
+ * doc/eng-us/bc/6.0/admin4-styling.md
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminHeaderTest.php
  *
@@ -341,7 +341,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '{if $box|eq( \'\' )} aria-keyshortcuts="/" data-short-placeholder="1"{/if}', $search );
         // the narrow header field: a short placeholder; the scope ("Search in all content") stays its name and title
         $this->assertStringContainsString( 'placeholder="{if $box|eq( \'\' )}{\'Search...\'|i18n( \'design/admin/pagelayout\' )|wash}{else}{$search_title|wash}{/if}" aria-label="{$search_title|wash}"', $search );
-        // the scope popup's script is a file of its own (no inline script, doc/en/us/features/6.0/content-security-policy.md)
+        // the scope popup's script is a file of its own (no inline script, doc/eng-us/features/6.0/content-security-policy.md)
         $this->assertStringContainsString( "{ezscript( array( 'page/page_search.js' ) )}", $search );
         $this->assertStringContainsString( "if ( !field.hasAttribute( 'data-short-placeholder' ) ) field.placeholder = label;",
                                            self::file( 'design/admin4/javascript/page/page_search.js' ) );

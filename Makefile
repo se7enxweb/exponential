@@ -1,4 +1,4 @@
-# Development checks of Exponential. See doc/en/us/features/6.0/quality-checks.md.
+# Development checks of Exponential. See doc/eng-us/features/6.0/quality-checks.md.
 #
 #   make devtools          install PHP_CodeSniffer and PHPStan into .devtools/
 #   make hooks             run the checks of .githooks/ on every commit and push
@@ -27,7 +27,7 @@ lint:
 	done; echo "lint: no syntax errors"
 
 # PHP 8.0 syntax of the PHP files changed since $(BASE); PHP80 names the binary
-# (PHP 8.0 is the oldest supported version, doc/en/us/bc/6.0/php-8.0-support.md)
+# (PHP 8.0 is the oldest supported version, doc/eng-us/bc/6.0/php-8.0-support.md)
 PHP80 ?= $(or $(EXP_PHP80),$(shell command -v php8.0 2>/dev/null || command -v php80 2>/dev/null || ls /opt/plesk/php/8.0/bin/php 2>/dev/null),php8.0)
 lint80:
 	@for file in $$(git diff --name-only --diff-filter=ACMR $$(git merge-base $(BASE) HEAD) -- '*.php'); do \

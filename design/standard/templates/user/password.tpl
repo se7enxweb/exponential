@@ -10,7 +10,7 @@
    checklist, the strength meter, show/hide, "passwords match" and "Generate a strong password"; every control it
    needs is in the markup with the hidden attribute, so without JavaScript none of them is shown.
 
-   The typed passwords are never written back into the page. Variables and hooks: doc/en/us/features/6.0/
+   The typed passwords are never written back into the page. Variables and hooks: doc/eng-us/features/6.0/
    modern-password-change.md. Drawn by stylesheets/exp_password_page.css, linked here so it reaches the page
    whatever the pagelayout loads. *}
 {def $pw_t = $password_js_config.i18n

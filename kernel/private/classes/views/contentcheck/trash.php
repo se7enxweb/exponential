@@ -1,6 +1,6 @@
 <?php
 /**
- * The contentcheck/trash view (doc/en/us/features/6.0/content-checks.md, "Moving to the trash"): POST only. The list of
+ * The contentcheck/trash view (doc/eng-us/features/6.0/content-checks.md, "Moving to the trash"): POST only. The list of
  * unreferenced objects posts ObjectIDList[] and NodeID; this view answers with the confirmation page, which shows
  * what will happen to each object (expContentCheckTrash::plan()) and posts back with ConfirmButton and the
  * confirmation token. Then the objects go to the trash through the kernel's removal and the browser goes back to
