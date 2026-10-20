@@ -15,12 +15,12 @@ The releases from v0.0.4.43 on are described in full on
 | Release | Date | What it brings |
 |---|---|---|
 | [v0.0.4.50](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.50) | 2026-10-12 | A HEAD over HTTP/2 is answered with its headers only (one `HEADERS` frame, the GET's headers) and from the response cache; a streamed answer to a HEAD ends at its head; the server's own HTTP/1.1 answers to a HEAD carry no body; a stop drains gracefully (`GOAWAY` per HTTP/2 connection, idle keep-alive connections closed at once) |
-| [v0.0.4.49](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.49) | 2026-10-12 | Streaming responses from persistent pool workers (`streamTimeout`, `streamShare`, `maxStreams`, `retryWithin`; set from Exponential in [velocity.ini](../../en/us/bc/6.0/velocity-engines.md#streaming-responses)) |
+| [v0.0.4.49](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.49) | 2026-10-12 | Streaming responses from persistent pool workers (`streamTimeout`, `streamShare`, `maxStreams`, `retryWithin`; set from Exponential in [velocity.ini](../../eng-us/bc/6.0/velocity-engines.md#streaming-responses)) |
 | [v0.0.4.48](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.48) | 2026-10-11 | The full Docker images load `event` after `sockets` |
 | [v0.0.4.47](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.47) | 2026-10-09 | A key a script adds to `$_SERVER` ends with its request |
 | [v0.0.4.46](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.46) | 2026-10-08 | A stop is bounded and leaves nothing behind; a file read through the compat wrapper is read whole |
 | [v0.0.4.45](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.45) | 2026-10-06 | `Q.webserver.fallback` serves the file it names |
-| [v0.0.4.44](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.44) | 2026-10-06 | Forwarded protocol headers are honored only from trusted proxies ([trusted proxies](../../en/us/bc/6.0/trusted-proxies.md)) |
+| [v0.0.4.44](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.44) | 2026-10-06 | Forwarded protocol headers are honored only from trusted proxies ([trusted proxies](../../eng-us/bc/6.0/trusted-proxies.md)) |
 | [v0.0.4.43](https://github.com/se7enxweb/exponential-velocity/releases/tag/v0.0.4.43) | 2026-10-05 | The Logs panel follows the log with a byte cursor, handles rotation and shows its live or paused state |
 
 ## v0.0.4.42 (2026-09-30)
@@ -30,19 +30,19 @@ Persistent workers report each request's own start time and read sessions withou
 **Added**
 
 - `uwebserver --root=DIR` serves files (ranges, `ETag`, directory listing, `--gzip-static`, hidden-file and symlink policy), with options for listening, TLS, limits, logging and privileges, a configuration file, a manual page, bash completion and a Makefile (`make sanitize`, `make fuzz`).
-- The packages install the shell as `/usr/bin/vc-qshell` (container image: `/usr/local/bin/vc-qshell`) ([Q shell](../../en/us/features/6.0/velocity-q-shell.md)).
+- The packages install the shell as `/usr/bin/vc-qshell` (container image: `/usr/local/bin/vc-qshell`) ([Q shell](../../eng-us/features/6.0/velocity-q-shell.md)).
 
 **Updated**
 
 - A pool worker reports each request's own `REQUEST_TIME_FLOAT` and `REQUEST_TIME` (they were inherited from the forking process, so a per-request cache keyed on them, as Exponential has, kept one request's data for the worker's life).
 - The compat session handler decodes each value from its own bytes (PHP 8.3 and later reported `unserialize(): Extra data` for every key but the last; values after a float or an object with `__serialize` were misread).
-- `uwebserver` never starts on an argument it does not know; its defaults are safe (`127.0.0.1:8000`, no `SO_REUSEPORT`, root needs `--user` or `--allow-root`); hardening against oversize heads, slow clients, descriptor exhaustion, path escape and weak TLS ([uwebserver](../../en/us/features/6.0/velocity-uwebserver.md)).
+- `uwebserver` never starts on an argument it does not know; its defaults are safe (`127.0.0.1:8000`, no `SO_REUSEPORT`, root needs `--user` or `--allow-root`); hardening against oversize heads, slow clients, descriptor exhaustion, path escape and weak TLS ([uwebserver](../../eng-us/features/6.0/velocity-uwebserver.md)).
 
 **Removed**
 
 - The generated record types and U runtime compiled into `uwebserver`, and the unused headers `u_runtime.h` and `u_merkle_cache.h`.
 
-Upgrade: [uwebserver defaults](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md#to-00442).
+Upgrade: [uwebserver defaults](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md#to-00442).
 
 ## v0.0.4.41 (2026-09-30)
 
@@ -57,7 +57,7 @@ The programs move to `sbin/` and `bin/`, and every former path keeps working.
 
 - `qbixserver.php`, `qbixctl.php`, `qbixconsole.php` become `sbin/...`; `qshell.php` becomes `bin/qshell.php`; the committed phar is `sbin/qbixserver.phar` (`bin/qbixserver.phar` is the same file); `uwebserver` is `sbin/uwebserver` with C sources in `native/uwebserver/`. Every former path is a forwarder that runs the new file in the same process.
 
-Upgrade: [programs moved](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md#to-00441).
+Upgrade: [programs moved](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md#to-00441).
 
 ## v0.0.4.40 (2026-09-30)
 
@@ -75,7 +75,7 @@ The response cache is off unless a setting turns it on.
 
 **Updated**
 
-- The built-in default of `Q.web.cache.enabled` was `true` although the documentation said `false`; it is now `false`. Enabling the cache is an explicit `enabled: true`. An installation that relied on the old default stops caching: add `{"Q":{"web":{"cache":{"enabled":true}}}}`. Disabling the cache module (`qbixctl dismod cache`) now really turns the cache off ([response cache](../../en/us/features/6.0/velocity-response-cache.md); [upgrade](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md#to-00439)).
+- The built-in default of `Q.web.cache.enabled` was `true` although the documentation said `false`; it is now `false`. Enabling the cache is an explicit `enabled: true`. An installation that relied on the old default stops caching: add `{"Q":{"web":{"cache":{"enabled":true}}}}`. Disabling the cache module (`qbixctl dismod cache`) now really turns the cache off ([response cache](../../eng-us/features/6.0/velocity-response-cache.md); [upgrade](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md#to-00439)).
 
 ## v0.0.4.38 (2026-09-29)
 
@@ -105,7 +105,7 @@ Security headers on every response, pages found behind a TLS-ending load balance
 
 **Added**
 
-- `Q.webserver.headers`, `headersOnScripts` and `hsts` ([headers](../../en/us/specifications/6.0/velocity-http2-and-security.md#headers-on-every-response)); embedded OpenType fonts are served with their media type.
+- `Q.webserver.headers`, `headersOnScripts` and `hsts` ([headers](../../eng-us/specifications/6.0/velocity-http2-and-security.md#headers-on-every-response)); embedded OpenType fonts are served with their media type.
 
 **Updated**
 
@@ -121,7 +121,7 @@ Workers run as the site's user, not as root, and the response caches pause for a
 
 **Added**
 
-- Workers, the zygote, fork-per-request children and scheduled tasks give up root: `--user`, `--group`, `Q.webserver.user`, `Q.webserver.group`, `QBIX_RUN_USER`, `QBIX_RUN_GROUP` (`VC_RUN_*` under Velocity); default: the owner of the document root ([worker pool](../../en/us/specifications/6.0/velocity-worker-pool.md#the-user-workers-run-as)).
+- Workers, the zygote, fork-per-request children and scheduled tasks give up root: `--user`, `--group`, `Q.webserver.user`, `Q.webserver.group`, `QBIX_RUN_USER`, `QBIX_RUN_GROUP` (`VC_RUN_*` under Velocity); default: the owner of the document root ([worker pool](../../eng-us/specifications/6.0/velocity-worker-pool.md#the-user-workers-run-as)).
 - `Q.web.cache.pauseFile`: while the file exists neither cache answers.
 
 ## v0.0.4.33 (2026-09-27)
@@ -178,7 +178,7 @@ A response cache that is faster and says what it is doing, a control panel to ru
 - Pool workers are forked from the zygote by default; an uncaught exception's message is no longer sent to the client (the application's exception handler, else the designed `500`; the message goes to the log, and to the response only with `Q.webserver.debug`); APCu is used only when it can hold entries; cached pages are filed under the coding they are stored in (the first request for each page re-renders).
 - Worker memory figures corrected from measurements: 1.3 to 1.9 MB private for the bare server, about 10 MB for a full CMS.
 
-Upgrade: [from v0.0.4.28](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md#to-00429).
+Upgrade: [from v0.0.4.28](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md#to-00429).
 
 ## v0.0.4.28 (2026-09-25, tagged 2026-09-26)
 
@@ -186,8 +186,8 @@ Domains, certificates and a shell in the control panel, and scripts that run onl
 
 **Added**
 
-- Domains tab (status, aliases, subdomains, document roots, redirects, HSTS, error documents, certificates, traffic), SSL tab, bookmarkable tabs, Logs tab filter, `/Q/metrics` for browsers ([control panel](../../en/us/features/6.0/velocity-control-panel.md)).
-- The Q shell ([Q shell](../../en/us/features/6.0/velocity-q-shell.md)); one registry of recognised PHP applications; a PHP extension baseline with `ext:*` commands; release builds for every platform, PHP version and variant; deb and rpm packages; Docker images ([packages and binaries](../../en/us/features/6.0/velocity-packages-and-binaries.md)).
+- Domains tab (status, aliases, subdomains, document roots, redirects, HSTS, error documents, certificates, traffic), SSL tab, bookmarkable tabs, Logs tab filter, `/Q/metrics` for browsers ([control panel](../../eng-us/features/6.0/velocity-control-panel.md)).
+- The Q shell ([Q shell](../../eng-us/features/6.0/velocity-q-shell.md)); one registry of recognised PHP applications; a PHP extension baseline with `ext:*` commands; release builds for every platform, PHP version and variant; deb and rpm packages; Docker images ([packages and binaries](../../eng-us/features/6.0/velocity-packages-and-binaries.md)).
 - `Q.webserver.scripts`, `Q.webserver.frontControllers`, `Q.web.static.paths`: only listed scripts run by name, only listed files are served as they are (opt-in).
 - `qbixctl panel:password`; `qbixctl status`, `stop` and `graceful` find a server without its pid file.
 
@@ -199,7 +199,7 @@ Domains, certificates and a shell in the control panel, and scripts that run onl
 
 - The package and repository are `se7enxweb/exponential-velocity`; the OS packages are `exponential-velocity` (they replace `qbix-webserver` in place); the default branch is `main`.
 
-Upgrade: [from v0.0.4.27](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md#to-00428).
+Upgrade: [from v0.0.4.27](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md#to-00428).
 
 ## v0.0.4.27 (2026-09-24)
 
@@ -207,7 +207,7 @@ HTTPS that looks after itself, a worker pool that sizes itself, and workers that
 
 **Added**
 
-- Self-managing HTTPS: a self-signed certificate through a chain of providers, renewed and swapped live; certificates from files, archives, PKCS#12; built-in ACME ([HTTPS](../../en/us/features/6.0/velocity-https-certificates.md)).
+- Self-managing HTTPS: a self-signed certificate through a chain of providers, renewed and swapped live; certificates from files, archives, PKCS#12; built-in ACME ([HTTPS](../../eng-us/features/6.0/velocity-https-certificates.md)).
 - A dynamic worker pool; a configuration directory like `/etc/apache2`; `qbixconsole` and `qbixctl`; GNU and BSD option spellings; designs on disk for the server's own pages; a toolbar; the response cache generation marker; `Q_WebServer_Pool::retireAfterResponse()`; `Q.webserver.workerMemoryCeiling` and a per-request health check; `Q.webserver.warmup`; the `exponential` preset; `Q.webserver.brand`.
 
 **Updated**
@@ -260,13 +260,13 @@ Three security fixes, and macOS ships for the first time.
 
 **Added**
 
-- A virtual host can keep its own access and error log; log and cache take configurable file and directory modes; the pre-compressed cache no longer defaults to a world-readable directory ([engine settings](../../en/us/specifications/6.0/velocity-engine-settings.md)).
+- A virtual host can keep its own access and error log; log and cache take configurable file and directory modes; the pre-compressed cache no longer defaults to a world-readable directory ([engine settings](../../eng-us/specifications/6.0/velocity-engine-settings.md)).
 
 ## v0.0.4.14 (2026-09-22)
 
 **Added**
 
-- Conditional requests (`304`) for the response cache; stale-while-revalidate and negative caching; optional whitespace collapsing of cached HTML; shared-dictionary compression of stored entries (off by default); a cached response is recognised before routing, the listen backlog is a queue, every response carries a `Date`; the README gains a configuration reference ([response cache](../../en/us/features/6.0/velocity-response-cache.md)).
+- Conditional requests (`304`) for the response cache; stale-while-revalidate and negative caching; optional whitespace collapsing of cached HTML; shared-dictionary compression of stored entries (off by default); a cached response is recognised before routing, the listen backlog is a queue, every response carries a `Date`; the README gains a configuration reference ([response cache](../../eng-us/features/6.0/velocity-response-cache.md)).
 
 ## v0.0.4.9 to v0.0.4.13 (2026-09-22)
 
@@ -299,11 +299,11 @@ The first tag: the engine as adopted from upstream plus the compatibility layer 
 
 ## Before v0.0.1 (July to 21 September 2026)
 
-Not tagged. The engine as it stood after the first release of a pure PHP web server on 20 July 2026: WebSockets, socket.io, a scheduler, virtual hosts, a control panel, octane (persistent) workers, logging, Server-Sent Events, GitHub Actions builds of binaries, example applications, and the compatibility layer. See the [July](../../en/us/history/velocity/2026-07.md), [August](../../en/us/history/velocity/2026-08.md) and [September](../../en/us/history/velocity/2026-09a.md) chronicles.
+Not tagged. The engine as it stood after the first release of a pure PHP web server on 20 July 2026: WebSockets, socket.io, a scheduler, virtual hosts, a control panel, octane (persistent) workers, logging, Server-Sent Events, GitHub Actions builds of binaries, example applications, and the compatibility layer. See the [July](../../eng-us/history/velocity/2026-07.md), [August](../../eng-us/history/velocity/2026-08.md) and [September](../../eng-us/history/velocity/2026-09a.md) chronicles.
 
 ## Related pages
 
-- [Velocity history](../../en/us/history/velocity/README.md)
-- [upgrade notes](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md)
-- [feature: web server](../../en/us/features/6.0/velocity-web-server.md)
+- [Velocity history](../../eng-us/history/velocity/README.md)
+- [upgrade notes](../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
+- [feature: web server](../../eng-us/features/6.0/velocity-web-server.md)
 - the engine's own `CHANGELOG.md` in the package.

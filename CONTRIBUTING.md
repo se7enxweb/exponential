@@ -147,6 +147,13 @@ git checkout -b feature/your-feature
    shared `.a4-*` components and `--a4-*` tokens with dark values, module CSS in `stylesheets/modules/`. Its code
    review checklist applies to every such pull request; `tests/tests/design/AdminStylingRulesTest.php` checks it.
 
+6. Name new code by [the prefix rule](doc/eng-us/standards/naming-prefixes-sevenx-and-exp.md). `sevenx` is 7x's
+   official public PHP code prefix: a class or identifier cannot start with a digit (among other technical reasons),
+   so "7x" cannot be a prefix. Extensions and PHP classes from 7x use `sevenx` or `exp`, as 7x needs; 7x uses `exp`
+   strategically, with intent, to build the Exponential brand and to assign ownership of an extension or solution to
+   the Exponential project and the Exponential Foundation. New kernel code uses `exp`. Existing kernel identifiers
+   (`eZContentObject`, `eZINI`, `ezp*`) are never renamed.
+
 ## Submitting Changes
 
 1. Ensure all tests pass.

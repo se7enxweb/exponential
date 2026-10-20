@@ -1,17 +1,17 @@
 <?php
 /**
- * exphelp/viewer/<page id> (doc/en/us/features/6.0/help-system.md): one help page, rendered. Template design:exphelp/viewer.tpl.
+ * exphelp/viewer/<page id> (doc/eng-us/features/6.0/help-system.md): one help page, rendered. Template design:exphelp/viewer.tpl.
  * An unknown id, or one expHelpDocumentIndex does not allow, is a 404; no id opens the dashboard.
  *
  * Template variables: help_page (document), help_html (rendered, safe), help_toc (level, text, anchor), help_tree,
  * help_nav_html (the navigation tree, expHelpNavigation: safe HTML, not washed), help_prev, help_next (documents or
  * null), help_edit_url (GitHub), help_category, help_breadcrumb (array of url, text),
  * help_pdf_enabled (bool: the "Download as PDF" link, exphelp/pdf/<page id>), help_page_lang (the HTML language of the
- * page: en-US, de), help_page_dir (ltr, rtl), help_fallback (the page is not translated into the reader's language yet and is shown in
+ * page: en-US, de-DE), help_page_dir (ltr, rtl), help_fallback (the page is not translated into the reader's language yet and is shown in
  * another), help_reader_language and help_page_language (their names, translated), help_reading (the "Reading in"
  * control, expHelp::reading()), help_original_url, help_original_language and help_original_view (readingVariables():
- * ?lang=en-us shows the English original of a page to a reader of another language). An address that names a file
- * (doc/en/us/<id>, de/<translated path>) redirects to the page id.
+ * ?lang=eng-us shows the English original of a page to a reader of another language). An address that names a file
+ * (doc/eng-us/<id>, ger-de/<translated path>, and the old doc/en/us/<id>, en/us/<id>, de/<translated path>) redirects to the page id.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -23,8 +23,8 @@ namespace Exponential\View\Kernel\Exphelp
 
 class Viewer extends \Exponential\Runnable\ModuleView
 {
-    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images; 4: anchors map to the shown language's headings) */
-    const RENDER_VERSION = 4;
+    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images; 4: anchors map to the shown language's headings; 5: the language directories eng-us, ger-de) */
+    const RENDER_VERSION = 5;
 
     public function run( array $scope )
     {
@@ -39,13 +39,13 @@ class Viewer extends \Exponential\Runnable\ModuleView
 
         $readerIndex = \expHelpDocumentIndex::instance();
         $index = $readerIndex;
-        // ?lang=en-us: the page in another language for this request (the English original of a translated page)
+        // ?lang=eng-us (the old en-us too): the page in another language for this request (the English original of a translated page)
         $original = method_exists( 'expHelp', 'requestedLanguage' )
             ? \expHelp::requestedLanguage( $_GET, $readerIndex->languages(), $readerIndex->language() ) : null;
         if ( $original !== null )
             $index = \expHelpDocumentIndex::forLanguage( $original, $readerIndex->languages() );
         $document = $index->document( $id );
-        // an address that names a file instead of a page id (doc/en/us/<id>, en/us/<id>, de/<translated path>, the
+        // an address that names a file instead of a page id (doc/eng-us/<id>, eng-us/<id>, ger-de/<translated path>, the old en/us/<id> and de/..., the
         // old doc/<id>): the page's own address, so a link keeps working and shows the reader's language
         if ( $document === null )
         {
@@ -90,8 +90,8 @@ class Viewer extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The page id an address names when it is not an id: a file name (doc/en/us/guides/x.md), a path in a language
-     * directory (en/us/guides/x.md, de/anleitungen/x.md through the language's path map). Null when it names no
+     * The page id an address names when it is not an id: a file name (doc/eng-us/guides/x.md), a path in a language
+     * directory (eng-us/guides/x.md, ger-de/anleitungen/x.md, the old en/us/... and de/..., through the language's path map). Null when it names no
      * other id.
      *
      * @param \expHelpDocumentIndex $index
@@ -111,7 +111,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The template variables of a page's language: help_page_lang (its HTML language, en-US, de), help_fallback
+     * The template variables of a page's language: help_page_lang (its HTML language, en-US, de-DE), help_fallback
      * (whether the page is shown in another language than the reader's), help_reader_language and
      * help_page_language (translated names, for the note).
      *
@@ -278,7 +278,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
     /**
      * The renderer, with relative links resolved to the viewer and images to the asset view, with their size (so the
      * page keeps their room while they load). Links and images are checked against the file the page was read from
-     * (a translation in doc/de/ links the original's images in doc/en/us/).
+     * (a translation in doc/ger-de/ links the original's images in doc/eng-us/).
      *
      * @param string $sourcePath the page's file, relative to the installation root ('' : its id)
      * @return \expHelpMarkdownRenderer

@@ -2,7 +2,7 @@
 
 Read this page before you install or update `ezpublish-kernel`, or to find out which release brought a change.
 
-Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../en/us/history/ecosystem/ezpublish-kernel.md).
+Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../eng-us/history/ecosystem/ezpublish-kernel.md).
 
 ## v7.5.41 (2026-04-09)
 
@@ -85,6 +85,6 @@ Releases made by the se7enxweb team, newest first. Each release lists the team's
 
 ## Related pages
 
-- [SQLite for the platform](../../en/us/features/6.0/platform-sqlite-install.md)
-- [package map](../../en/us/specifications/6.0/platform-package-map.md)
-- [upgrade notes](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [SQLite for the platform](../../eng-us/features/6.0/platform-sqlite-install.md)
+- [package map](../../eng-us/specifications/6.0/platform-package-map.md)
+- [upgrade notes](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)

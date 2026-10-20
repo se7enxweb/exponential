@@ -1,9 +1,9 @@
 <?php
 /**
- * @description Generate the reference examples of the help below doc/en/us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points
+ * @description Generate the reference examples of the help below doc/eng-us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points
  * @alias exp:help:examples
  *
- * File containing the exp:help:examples command (doc/en/us/examples/README.md, "How the generated pages are made").
+ * File containing the exp:help:examples command (doc/eng-us/examples/README.md, "How the generated pages are made").
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -20,7 +20,7 @@ class Exphelpexamples extends \Exponential\Runnable\Command
         $cli = $this->cli();
         $this->script(
             array(
-                'description' => "The generated reference examples of the help (doc/en/us/examples/)\n" .
+                'description' => "The generated reference examples of the help (doc/eng-us/examples/)\n" .
                                  "\n" .
                                  "./console exp:help:examples                      write the pages of every area (only changed files are written)\n" .
                                  "./console exp:help:examples --area=datatypes     only this area (repeat with a comma: --area=datatypes,cronjobs)\n" .
@@ -42,11 +42,11 @@ class Exphelpexamples extends \Exponential\Runnable\Command
             'area'  => 'Only these areas, comma separated (template-operators, template-functions, fetch-functions, module-views, policies, ini-settings, datatypes, workflow-events, cronjobs, commands, extension-points)',
             'check' => 'Compare the generated pages with the files and change nothing; exit 1 on a difference',
             'list'  => 'List the areas with their page counts',
-            'out'   => 'The output directory relative to the installation root (default doc/en/us/examples)',
+            'out'   => 'The output directory relative to the installation root (default doc/eng-us/examples)',
         ) );
 
         $root = defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : getcwd();
-        $out = !empty( $options['out'] ) ? trim( (string)$options['out'], '/' ) : 'doc/en/us/examples';
+        $out = !empty( $options['out'] ) ? trim( (string)$options['out'], '/' ) : 'doc/eng-us/examples';
         if ( strpos( $out, '..' ) !== false || $out === '' || $out[0] === '/' )
         {
             $cli->error( "--out must be a directory below the installation root" );

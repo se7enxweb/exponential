@@ -1,6 +1,6 @@
 <?php
 /**
- * Overdue reviews of help maintained as content (doc/en/us/features/6.0/help-content.md, "Overdue reviews"), without a
+ * Overdue reviews of help maintained as content (doc/eng-us/features/6.0/help-content.md, "Overdue reviews"), without a
  * database: the rule, the settings, and the dashboard's part (shared admin components, no inline CSS, the same file in
  * both designs).
  *

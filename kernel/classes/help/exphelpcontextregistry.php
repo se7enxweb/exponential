@@ -14,14 +14,14 @@
  *
  * A key is "module/view", "module" (every view of the module without an entry of its own), or either with a design
  * before it ("admin4l:module/view", "editor:module"), which wins over the same key without one. The value is a page
- * id (the path below doc/en/us/, the same in every language; a file name such as doc/en/us/<id> is accepted too;
+ * id (the path below doc/eng-us/, the same in every language; a file name such as doc/eng-us/<id> is accepted too;
  * or ext/<extension>/<path>) and, after "#", the anchor of one of its headings (expHelpMarkdownRenderer::slug() of
  * the heading's text).
  *
  * PHP classes can answer first: [ContextHelp] Providers[] lists classes implementing
  * expHelpContextProviderInterface, asked in order before the map.
  * A provider that also implements expHelpContextPageInterface may answer "content/<help_id>": a help topic
- * maintained as content (doc/en/us/features/6.0/help-content.md); it gives the address and title of that page itself.
+ * maintained as content (doc/eng-us/features/6.0/help-content.md); it gives the address and title of that page itself.
  *
  * The lookup goes from the most to the least specific: the providers, design:module/view, module/view,
  * design:module, module, then the help dashboard. An entry is skipped (and the next key tried) when its value is not
@@ -390,7 +390,7 @@ class expHelpContextRegistry
     /**
      * Splits "id#anchor" and checks the id. Null when it is not a safe page id: absolute or with a scheme, "." or
      * ".." or hidden or empty segments, a backslash or other characters outside [A-Za-z0-9_.-/], not a page suffix,
-     * or doxygen output. A file name (doc/<id>, doc/en/us/<id>, doc/<language>/<translated path>) becomes its id.
+     * or doxygen output. A file name (doc/<id>, doc/eng-us/<id>, doc/<language>/<translated path>) becomes its id.
      * The anchor keeps letters, digits, "-" and "_"; anything else drops the anchor (the page still opens).
      *
      * @param string $value
@@ -406,7 +406,7 @@ class expHelpContextRegistry
             $anchor = substr( $value, $hash + 1 );
             $value = substr( $value, 0, $hash );
         }
-        // a file name instead of an id: doc/<id>, doc/en/us/<id> or a translation's doc/de/... (its id)
+        // a file name instead of an id: doc/<id>, doc/eng-us/<id> or a translation's doc/ger-de/... (its id)
         if ( strpos( $value, 'doc/' ) === 0 )
             $value = class_exists( 'expHelpLanguage' ) ? expHelpLanguage::fromIni()->idOfValue( $value ) : substr( $value, 4 );
         if ( $value === '' || !preg_match( '#^[A-Za-z0-9_.][A-Za-z0-9_./-]*$#', $value ) || !preg_match( self::PAGE_PATTERN, $value ) )

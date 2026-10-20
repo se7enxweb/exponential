@@ -1,6 +1,6 @@
 <?php
 /**
- * Lays a rendered help page out as a PDF (doc/en/us/features/6.0/help-system.md, "Print and PDF").
+ * Lays a rendered help page out as a PDF (doc/eng-us/features/6.0/help-system.md, "Print and PDF").
  *
  * Input is the safe HTML of expHelpMarkdownRenderer (the same markup the viewer shows), read with DOMDocument;
  * output is the PDF as a string, drawn on expHelpPdfCanvas (the kernel's own PDF library, lib/ezpdf). Nothing is

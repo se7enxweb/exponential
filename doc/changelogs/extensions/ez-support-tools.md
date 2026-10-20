@@ -2,7 +2,7 @@
 
 Read this page before you install or update `ez-support-tools`, or to find out which release brought a change.
 
-Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../en/us/history/ecosystem/ez-support-tools.md).
+Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../eng-us/history/ecosystem/ez-support-tools.md).
 
 ## v2.3.14 (2025-09-28)
 
@@ -29,8 +29,8 @@ Releases made by the se7enxweb team, newest first. Each release lists the team's
 
 ## Related pages
 
-- [Site bundles](../../en/us/features/6.0/platform-site-bundles.md)
-- [package map](../../en/us/specifications/6.0/platform-package-map.md)
-- [upgrade notes](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Feature page](../../en/us/features/6.0/extensions/ez-support-tools.md)
-- [behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
+- [Site bundles](../../eng-us/features/6.0/platform-site-bundles.md)
+- [package map](../../eng-us/specifications/6.0/platform-package-map.md)
+- [upgrade notes](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Feature page](../../eng-us/features/6.0/extensions/ez-support-tools.md)
+- [behaviour changes of the extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md)

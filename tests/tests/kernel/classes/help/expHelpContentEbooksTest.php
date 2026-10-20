@@ -1,6 +1,6 @@
 <?php
 /**
- * E-books of help manuals stored as file objects (doc/en/us/features/6.0/help-content.md, "Stored e-books"), without a
+ * E-books of help manuals stored as file objects (doc/eng-us/features/6.0/help-content.md, "Stored e-books"), without a
  * database: what goes into a stored edition, which manuals a release rebuilds, and that the same content gives the
  * same EPUB file (so a rebuild publishes a new version only when the book changed).
  *

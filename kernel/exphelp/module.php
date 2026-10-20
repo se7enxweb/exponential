@@ -1,6 +1,6 @@
 <?php
 /**
- * The exphelp module: the help system of the administration (doc/en/us/features/6.0/help-system.md).
+ * The exphelp module: the help system of the administration (doc/eng-us/features/6.0/help-system.md).
  *
  * It reads the git-tracked text and Markdown files under doc/ and the documentation of the active extensions
  * (exphelp.ini [IndexSettings] ActiveExtensionDocs, ExtensionDocDirs[]) and shows them rendered, searchable and
@@ -105,7 +105,7 @@ $ViewList['report'] = array(
     'functions' => array( 'read' ),
     'params' => array() );
 
-// Help maintained as content (doc/en/us/features/6.0/help-content.md): a topic by its help_id, rendered
+// Help maintained as content (doc/eng-us/features/6.0/help-content.md): a topic by its help_id, rendered
 // (exphelp/topic/content.publish-article); what the user may see is decided by content/read and the state
 $ViewList['topic'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',

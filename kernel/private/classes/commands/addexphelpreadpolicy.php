@@ -3,7 +3,7 @@
  * The code of bin/php/addexphelpreadpolicy.php.
  * @description Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first)
  * @alias help-grant
- * Guide: doc/en/us/features/6.0/help-system.md
+ * Guide: doc/eng-us/features/6.0/help-system.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

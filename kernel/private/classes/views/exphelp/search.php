@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/search (doc/en/us/features/6.0/help-system.md, "Search"): the search and browse page of the help.
+ * exphelp/search (doc/eng-us/features/6.0/help-system.md, "Search"): the search and browse page of the help.
  *
  * The state lives in view parameters, in a canonical order (expHelp::searchUrl()):
  *   exphelp/search/(q)/upload+image/(category)/layouts/(audience)/editor/(type)/help/(offset)/20/(limit)/10
@@ -116,7 +116,7 @@ class Search extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * Help topics maintained as content (doc/en/us/features/6.0/help-content.md) the user may see, put before the pages of
+     * Help topics maintained as content (doc/eng-us/features/6.0/help-content.md) the user may see, put before the pages of
      * doc/ on the first page of results; the total counts them too. Nothing when help as content is not installed.
      *
      * @param array $result expHelpSearch::search()'s array

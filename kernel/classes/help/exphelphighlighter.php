@@ -2,7 +2,7 @@
 /**
  * File containing the expHelpHighlighter class.
  *
- * Server-side syntax highlighting of the code blocks of the help pages (exphelp, doc/en/us/features/6.0/help-system.md),
+ * Server-side syntax highlighting of the code blocks of the help pages (exphelp, doc/eng-us/features/6.0/help-system.md),
  * without JavaScript or an external library, so it works under the admin's Content Security Policy and with
  * scripts off. highlight() returns HTML: every character of the code HTML-escaped, the recognised tokens wrapped in
  * <span class="a4-help-tok-<kind>">. The kinds (the CSS classes, coloured by the --a4-code-<kind> tokens of

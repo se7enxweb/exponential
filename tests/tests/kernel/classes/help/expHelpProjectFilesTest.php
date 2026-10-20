@@ -1,6 +1,6 @@
 <?php
 /**
- * The project files of the help (doc/en/us/features/6.0/help-system.md, "Project files"): README.md, SECURITY.md,
+ * The project files of the help (doc/eng-us/features/6.0/help-system.md, "Project files"): README.md, SECURITY.md,
  * CONTRIBUTING.md ... outside doc/, as pages with the id project/<path>. No database; the fixtures are real git
  * repositories made in a temporary directory (skipped without git).
  *
@@ -15,8 +15,8 @@
  *  PF-05  ids: project/<path> and back; the repository path as an address leads to the id; doc ids do not change
  *  PF-06  classified by [ProjectFiles]: category project-files, type project, audiences by AudienceRules[]; the title
  *         from the first heading; front matter wins
- *  PF-07  links both ways: ../../../README.md from doc/en/us/... opens the project file in the help, a link of
- *         README.md into doc/en/us/... opens the help page; the link check finds no "not served" link
+ *  PF-07  links both ways: ../../../README.md from doc/eng-us/... opens the project file in the help, a link of
+ *         README.md into doc/eng-us/... opens the help page; the link check finds no "not served" link
  *  PF-08  English only: a German reader gets them with the fallback note, like the changelogs
  *  PF-09  navigation: the project files are pages at the top of the tree, next to the folders; there is no folder
  *         "project" (nor any folder of theirs), a title that is only "README" gets its directory in front, and the
@@ -55,7 +55,7 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
             $base = sys_get_temp_dir();
         self::$root = $base . '/exphelp-project-' . bin2hex( random_bytes( 6 ) );
         $files = array(
-            'README.md' => "# Exponential\n\nThe project. Read the [caches guide](doc/en/us/guides/caches.md#clearing) and the "
+            'README.md' => "# Exponential\n\nThe project. Read the [caches guide](doc/eng-us/guides/caches.md#clearing) and the "
                          . "[security policy](SECURITY.md). Unique word: marmalade.\n\n## Install\n\nText.\n",
             'SECURITY.md' => "# Security Policy\n\nReport privately.\n",
             'CONTRIBUTING.md' => "---\ntitle: How to contribute\naudience: designer\n---\n# Contributors Guidelines\n\nThanks.\n",
@@ -84,13 +84,13 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
             'keep-secret.md' => "# Re-included by a negation\n",
             'local-only.md' => "# Ignored by info/exclude\n\n" . self::SECRET_WORD . "\n",
             '.gitignore' => "/notes/\nsecret*.md\nkeep*.md\n!keep-secret.md\n/qbix.md\n",
-            'doc/en/us/guides/caches.md' => "# Caches\n\nSee [the project](../../../../README.md#install), "
-                                          . "[security](../../../../SECURITY.md), [a note](../../../../qbix.md) and "
-                                          . "[the agents](../../../../AGENTS.md).\n\n## Clearing\n\nText.\n",
+            'doc/eng-us/guides/caches.md' => "# Caches\n\nSee [the project](../../../README.md#install), "
+                                          . "[security](../../../SECURITY.md), [a note](../../../qbix.md) and "
+                                          . "[the agents](../../../AGENTS.md).\n\n## Clearing\n\nText.\n",
             'doc/changelogs/6.0.md' => "# Changes in 6.0\n",
         );
         foreach ( self::PRIVATE_NOTES as $note )
-            $files[$note] = "# Private note\n\n" . self::SECRET_WORD . " see doc/en/us/guides/caches.md\n";
+            $files[$note] = "# Private note\n\n" . self::SECRET_WORD . " see doc/eng-us/guides/caches.md\n";
         foreach ( $files as $path => $content )
         {
             @mkdir( dirname( self::$root . '/' . $path ), 0777, true );
@@ -159,12 +159,12 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
 
     private static function languages( $root = null )
     {
-        return new expHelpLanguage( array( 'default' => 'en/us', 'directories' => array( 'en/us', 'de' ),
-                                           'map' => array( 'eng-US' => 'en/us', 'ger-DE' => 'de' ),
-                                           'names' => array( 'en/us' => 'English', 'de' => 'German' ) ), $root !== null ? $root : self::$root );
+        return new expHelpLanguage( array( 'default' => 'eng-us', 'directories' => array( 'eng-us', 'ger-de' ),
+                                           'map' => array( 'eng-US' => 'eng-us', 'ger-DE' => 'ger-de' ),
+                                           'names' => array( 'eng-us' => 'English', 'ger-de' => 'German' ) ), $root !== null ? $root : self::$root );
     }
 
-    private static function index( $language = 'en/us', ?expHelpAllowlist $allowlist = null )
+    private static function index( $language = 'eng-us', ?expHelpAllowlist $allowlist = null )
     {
         return new expHelpDocumentIndex( $allowlist !== null ? $allowlist : self::allowlist(),
                                          array( 'cache_dir' => false, 'git_history' => false, 'audience' => new expHelpAudience(),
@@ -207,14 +207,14 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
             $this->assertTrue( $files->isCandidate( $path ), $path );
         foreach ( array( '.github/SUPPORT.md', '.github/PULL_REQUEST_TEMPLATE.md', 'tests/README.md', 'tests/browser/README.md',
                          'kernel/classes/tests/README.md', 'extension/ezoe/tests/tinymce8/README.md', 'extension/ezoe/README.md',
-                         'doc/README.md', 'doc/en/us/guides/caches.md', 'bin/php/notes.md', 'tests/fixtures/README.md',
+                         'doc/README.md', 'doc/eng-us/guides/caches.md', 'bin/php/notes.md', 'tests/fixtures/README.md',
                          'extension/ezoe/design/standard/javascript/tinymce8/README.md', 'extension/x/doc/README.md',
                          'settings/override/README.md', 'var/README.md', 'vendor/a/README.md', '.hidden/README.md',
                          'README.txt', 'README', 'x.php', '../README.md', 'a/../README.md', '/README.md/..', '', '.md' ) as $path )
             $this->assertFalse( $files->isCandidate( $path ), $path );
         // whatever the settings ask for, these are never project files
         $greedy = new expHelpProjectFiles( array( 'include' => array( '**', '*', '**/*' ), 'exclude' => array() ) );
-        foreach ( array( 'doc/en/us/x.md', 'var/site/x.md', 'vendor/x/README.md', 'settings/override/x.md',
+        foreach ( array( 'doc/eng-us/x.md', 'var/site/x.md', 'vendor/x/README.md', 'settings/override/x.md',
                          'settings/siteaccess/admin/x.md', 'a/node_modules/x/README.md', '.git/x.md', '.claude/x.md',
                          '.github/../x.md', 'extension/x/doc/README.md', 'x.php', 'x.txt', 'settings/site.ini',
                          '.github/SUPPORT.md', '.github/ISSUE_TEMPLATE/bug.md', '.hidden.md', 'bin/.notes.md',
@@ -243,7 +243,7 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
                 $this->assertNull( $allowlist->safePath( $note ), $note );
                 $this->assertFalse( $allowlist->allows( $note ), $note );
             }
-            $index = self::index( 'en/us', $allowlist );
+            $index = self::index( 'eng-us', $allowlist );
             foreach ( self::PRIVATE_NOTES as $note )
             {
                 $this->assertNull( $index->document( 'project/' . $note ), $note );
@@ -264,26 +264,26 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
             expHelpDocumentIndex::setInstance( $index );
             foreach ( array( 'qbix.md', 'AGENTS.md' ) as $note )
             {
-                $id = expHelpLinks::resolveId( '../../../../' . $note, 'guides/caches.md', $index );
+                $id = expHelpLinks::resolveId( '../../../' . $note, 'guides/caches.md', $index );
                 $this->assertFalse( $id !== null && $index->isAllowed( $id ), $note );
-                $this->assertNull( expHelpLinks::link( '../../../../' . $note, 'guides/caches.md' ), $note );
+                $this->assertNull( expHelpLinks::link( '../../../' . $note, 'guides/caches.md' ), $note );
             }
             expHelpDocumentIndex::setInstance( null );
             $problems = array();
             foreach ( ( new expHelpLinkCheck( $index ) )->check( 'guides/' ) as $problem )
                 $problems[$problem['target']] = $problem['problem'];
-            $this->assertSame( 'not-served', $problems['../../../../qbix.md'] ?? null, 'the link check sees it as not served' );
-            $this->assertSame( 'not-served', $problems['../../../../AGENTS.md'] ?? null );
+            $this->assertSame( 'not-served', $problems['../../../qbix.md'] ?? null, 'the link check sees it as not served' );
+            $this->assertSame( 'not-served', $problems['../../../AGENTS.md'] ?? null );
         }
 
         // a release without .git: the manifest lists what was shipped, never the notes
         $release = self::$root . '-release';
-        @mkdir( $release . '/doc/en/us/guides', 0777, true );
+        @mkdir( $release . '/doc/eng-us/guides', 0777, true );
         @mkdir( $release . '/share', 0777, true );
-        foreach ( array_merge( array( 'README.md', 'doc/en/us/guides/caches.md' ), self::PRIVATE_NOTES ) as $path )
+        foreach ( array_merge( array( 'README.md', 'doc/eng-us/guides/caches.md' ), self::PRIVATE_NOTES ) as $path )
             copy( self::$root . '/' . $path, $release . '/' . $path );
         file_put_contents( $release . '/share/filelist.md5', md5_file( $release . '/README.md' ) . "  README.md\n"
-                                                         . md5_file( $release . '/doc/en/us/guides/caches.md' ) . "  doc/en/us/guides/caches.md\n" );
+                                                         . md5_file( $release . '/doc/eng-us/guides/caches.md' ) . "  doc/eng-us/guides/caches.md\n" );
         try
         {
             $allowlist = self::allowlist( array( 'sources' => array( 'manifest' ), 'project_files' => $asking ), $release );
@@ -339,7 +339,7 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'project/README.md', $index->idOf( 'README.md' ) );
         $this->assertSame( 'project/bin/php/README.md', $index->idOf( 'bin/php/README.md' ) );
         $this->assertSame( 'README.md', $index->pathOf( 'project/README.md' ) );
-        $this->assertSame( 'guides/caches.md', $index->idOf( 'doc/en/us/guides/caches.md' ), 'doc ids do not change' );
+        $this->assertSame( 'guides/caches.md', $index->idOf( 'doc/eng-us/guides/caches.md' ), 'doc ids do not change' );
         $this->assertSame( 'changelogs/6.0.md', $index->idOf( 'doc/changelogs/6.0.md' ) );
         $this->assertNull( $index->idOf( 'kernel/classes/notes.php' ) );
         $this->assertNotNull( $index->document( 'project/README.md' ) );
@@ -394,10 +394,10 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
     public function testLinksBothWays()
     {
         $index = self::index();
-        $this->assertSame( 'project/README.md', expHelpLinks::resolveId( '../../../../README.md', 'guides/caches.md', $index ) );
+        $this->assertSame( 'project/README.md', expHelpLinks::resolveId( '../../../README.md', 'guides/caches.md', $index ) );
         $this->assertTrue( $index->isAllowed( 'project/README.md' ) );
-        $this->assertSame( 'project/SECURITY.md', expHelpLinks::resolveId( '../../../../SECURITY.md', 'guides/caches.md', $index ) );
-        $this->assertSame( 'guides/caches.md', expHelpLinks::resolveId( 'doc/en/us/guides/caches.md', 'project/README.md', $index ) );
+        $this->assertSame( 'project/SECURITY.md', expHelpLinks::resolveId( '../../../SECURITY.md', 'guides/caches.md', $index ) );
+        $this->assertSame( 'guides/caches.md', expHelpLinks::resolveId( 'doc/eng-us/guides/caches.md', 'project/README.md', $index ) );
         $this->assertSame( 'project/SECURITY.md', expHelpLinks::resolveId( 'SECURITY.md', 'project/README.md', $index ) );
         $this->assertSame( 'project/README.md', expHelpLinks::resolveId( '../../README.md', 'project/bin/php/README.md', $index ) );
         $this->assertNull( expHelpLinks::resolveId( '../README.md', 'project/README.md', $index ), 'never above the root' );
@@ -406,21 +406,21 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
         $byTarget = array();
         foreach ( $problems as $problem )
             $byTarget[$problem['target']] = $problem['problem'];
-        foreach ( array( 'doc/en/us/guides/caches.md#clearing', 'SECURITY.md', '../../../../README.md#install', '../../../../SECURITY.md' ) as $target )
+        foreach ( array( 'doc/eng-us/guides/caches.md#clearing', 'SECURITY.md', '../../../README.md#install', '../../../SECURITY.md' ) as $target )
             $this->assertArrayNotHasKey( $target, $byTarget, $target . ' resolves to a help page' );
     }
 
     /** PF-08 */
     public function testEnglishOnlyWithTheFallbackNote()
     {
-        $german = self::index( 'de' );
+        $german = self::index( 'ger-de' );
         $readme = $german->document( 'project/README.md' );
         $this->assertSame( 'README.md', $readme['path'] );
         $this->assertSame( '', $readme['language'] );
         $this->assertTrue( $readme['fallback'], 'shown with the note, like the changelogs' );
         $this->assertTrue( $german->document( 'changelogs/6.0.md' )['fallback'] );
         $this->assertSame( 'en-US', Exponential\View\Kernel\Exphelp\Viewer::languageVariables( $german, $readme )['help_page_lang'] );
-        $this->assertFalse( self::index( 'en/us' )->document( 'project/README.md' )['fallback'] );
+        $this->assertFalse( self::index( 'eng-us' )->document( 'project/README.md' )['fallback'] );
     }
 
     /** PF-09 */
@@ -511,13 +511,13 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
         $errors = array();
         foreach ( array( 'project/', 'help/project-files.md' ) as $below )
             foreach ( $check->check( $below ) as $problem )
-                // CODE_OF_CONDUCT.md is not in the repository yet (doc/en/us/help/advocates/advocate-conduct-and-ethics.md says so)
+                // CODE_OF_CONDUCT.md is not in the repository yet (doc/eng-us/help/advocates/advocate-conduct-and-ethics.md says so)
                 if ( ( $problem['severity'] === 'error' && $problem['resolved'] !== 'CODE_OF_CONDUCT.md' )
                      || ( $below !== 'project/' && $problem['problem'] === 'not-served' ) )
                     $errors[] = $problem['id'] . ': ' . $problem['target'] . ' (' . $problem['problem'] . ')';
         $this->assertSame( array(), $errors );
         $this->assertNotNull( $index->document( 'project/README.md' ) );
-        $this->assertSame( 'project/README.md', expHelpLinks::resolveId( '../../../../README.md', 'help/project-files.md', $index ) );
+        $this->assertSame( 'project/README.md', expHelpLinks::resolveId( '../../../README.md', 'help/project-files.md', $index ) );
 
         // the shipped settings are the built-in defaults
         $group = self::shippedGroup( 'ProjectFiles' );
@@ -556,7 +556,7 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
         $allowlist = self::allowlist( array( 'project_files' => array( 'enabled' => false ) ) );
         $this->assertSame( array(), self::projectPaths( $allowlist ) );
         $this->assertNull( $allowlist->projectFiles() );
-        $index = self::index( 'en/us', $allowlist );
+        $index = self::index( 'eng-us', $allowlist );
         $this->assertNull( $index->document( 'project/README.md' ) );
         $this->assertNull( $index->idOf( 'README.md' ) );
         // without the option (a caller of its own) there are none either
@@ -597,7 +597,7 @@ class expHelpProjectFilesTest extends PHPUnit\Framework\TestCase
             $paths = self::projectPaths( $allowlist );
             foreach ( $never as $path )
                 $this->assertNotContains( $path, $paths, $path . ' (' . implode( ' ', $include ) . ')' );
-            $index = self::index( 'en/us', $allowlist );
+            $index = self::index( 'eng-us', $allowlist );
             foreach ( $never as $path )
                 $this->assertNull( $index->document( 'project/' . $path ), $path );
         }

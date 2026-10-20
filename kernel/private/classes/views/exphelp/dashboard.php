@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/dashboard (doc/en/us/features/6.0/help-system.md): the help start page. Template design:exphelp/dashboard.tpl.
+ * exphelp/dashboard (doc/eng-us/features/6.0/help-system.md): the help start page. Template design:exphelp/dashboard.tpl.
  *
  * Template variables: help_audiences (id => id, name, count), help_categories (id => id, name, icon, count),
  * help_featured (documents), help_recent (id, title, time, subject), help_tree, help_trackers (expHelpIssueReport),
@@ -49,7 +49,7 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_trackers', \expHelp::translatedNames( $report->trackers(), array( 'label', 'description' ) ) );
         $tpl->setVariable( 'help_search_url', \expHelp::url( 'search' ) );
         $tpl->setVariable( 'help_report_url', \expHelp::url( 'report' ) );
-        // help maintained as content (doc/en/us/features/6.0/help-content.md): the manuals and topics the user may see
+        // help maintained as content (doc/eng-us/features/6.0/help-content.md): the manuals and topics the user may see
         $tpl->setVariable( 'help_content', self::contentSummary() );
         // the topics overdue for review, for help editors and release managers (those who can act on them)
         $tpl->setVariable( 'help_review', self::reviewSummary() );
@@ -126,7 +126,7 @@ class Dashboard extends \Exponential\Runnable\ModuleView
 
     /**
      * The topics of help maintained as content whose review is overdue and that the user can act on (edit, or assign a
-     * state), false when there are none or help as content is not installed (doc/en/us/features/6.0/help-content.md,
+     * state), false when there are none or help as content is not installed (doc/eng-us/features/6.0/help-content.md,
      * "Overdue reviews")
      *
      * @return array|false array( 'items' => list of help_id, title, state, state_name, reason, since, days, node_id, can_edit,

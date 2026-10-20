@@ -1,6 +1,6 @@
 <?php
 /**
- * The documentation of the active extensions in the help (doc/en/us/features/6.0/help-system.md, "Documentation of
+ * The documentation of the active extensions in the help (doc/eng-us/features/6.0/help-system.md, "Documentation of
  * the extensions"), on a fixture installation in the temporary directory: extensions with their own git repository
  * and one tracked by the installation's repository, active and inactive ones. No database.
  *
@@ -31,7 +31,7 @@ class expHelpExtensionDocsTest extends PHPUnit\Framework\TestCase
         $files = array(
             // the installation's own repository
             '.gitignore' => "/extension/foo/\n/extension/bar/\n/extension/baz/\n/extension/qux/\n",
-            'doc/en/us/help/start.md' => "# Start\n\nWelcome.\n",
+            'doc/eng-us/help/start.md' => "# Start\n\nWelcome.\n",
             'extension/inroot/doc/guide.md' => "# In-root guide\n\nAn extension tracked by the installation.\n",
             'extension/inroot/README.md' => "# In-root extension\n",
             'extension/inroot/classes/x.php' => "<?php // source\n",
@@ -151,7 +151,7 @@ class expHelpExtensionDocsTest extends PHPUnit\Framework\TestCase
             array( 'ext/foo/ezinfo.php' ), array( 'ext/foo/classes/foo.php' ), array( 'ext/foo/../classes/foo.php' ),
             array( 'ext/foo/../settings/foo.ini' ), array( 'ext/foo/settings/foo.ini' ), array( 'ext/foo/untracked.md' ),
             array( 'ext/foo/README-local.md' ), array( 'ext/bar/index.md' ), array( 'ext/bar/README.md' ),
-            array( 'ext/inroot/classes/x.php' ), array( 'ext/inroot/../../doc/en/us/help/start.md' ),
+            array( 'ext/inroot/classes/x.php' ), array( 'ext/inroot/../../doc/eng-us/help/start.md' ),
             array( 'extension/foo/README.md' ), array( 'extension/foo/classes/foo.php' ), array( 'ext/foo/.git/config' ),
             array( 'ext/../extension/foo/classes/foo.php' ), array( 'ext/foo/%2e%2e/classes/foo.php' ),
         );
@@ -253,8 +253,8 @@ class expHelpExtensionDocsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'exphelp/extensions/baz', $path[2]['url'], 'without an overview: the extension\'s index' );
         $base = 'https://github.com/se7enxweb/exponential/blob/main/';
         $this->assertSame( '', \Exponential\View\Kernel\Exphelp\Viewer::editUrl( $base, $index->document( 'ext/foo/index.md' ) ) );
-        $this->assertSame( $base . 'doc/en/us/help/start.md', \Exponential\View\Kernel\Exphelp\Viewer::editUrl( $base, array( 'path' => 'doc/en/us/help/start.md' ) ) );
-        $this->assertSame( '', \Exponential\View\Kernel\Exphelp\Viewer::editUrl( '', array( 'path' => 'doc/en/us/help/start.md' ) ) );
+        $this->assertSame( $base . 'doc/eng-us/help/start.md', \Exponential\View\Kernel\Exphelp\Viewer::editUrl( $base, array( 'path' => 'doc/eng-us/help/start.md' ) ) );
+        $this->assertSame( '', \Exponential\View\Kernel\Exphelp\Viewer::editUrl( '', array( 'path' => 'doc/eng-us/help/start.md' ) ) );
     }
 
     /** HE-05 */

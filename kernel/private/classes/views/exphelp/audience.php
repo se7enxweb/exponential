@@ -1,6 +1,6 @@
 <?php
 /**
- * exphelp/audience/<audience> (doc/en/us/features/6.0/help-system.md, "Landing pages"): the landing page of one audience,
+ * exphelp/audience/<audience> (doc/eng-us/features/6.0/help-system.md, "Landing pages"): the landing page of one audience,
  * built from the blocks of exphelp.ini [LandingSettings] / [Landing_<audience>] (expHelpLanding). The commit log of
  * the developers' page (block commits) pages with the view parameter (offset); (merges)/1 shows merge commits too.
  * Template design:exphelp/audience.tpl.

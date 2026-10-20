@@ -1,6 +1,6 @@
 <?php
 /**
- * The license of the documentation the help shows (exphelp.ini [License], doc/en/us/README-LICENSE.md).
+ * The license of the documentation the help shows (exphelp.ini [License], doc/eng-us/README-LICENSE.md).
  *
  * The documentation the project holds is free documentation under the GNU Free Documentation License 1.3 or any
  * later version. A few inherited files (OtherLicensePathRules[]) keep the terms they came with; forPage() tells the
@@ -35,9 +35,9 @@ class expHelpLicense
         'CopyrightYears' => '1998 - 2026',
         'CopyrightHolder' => '7x & Exponential Foundation and the Exponential contributors',
         // the same list as the shipped exphelp.ini
-        'OtherLicensePathRules' => array( 'doc/en/us/features/[2-5].*', 'doc/en/us/bc/[2-5].*', 'doc/en/us/specifications/[2-5].*',
-                                          'doc/en/us/specifications/trunk/*', 'doc/changelogs/[2-5].*', 'doc/changelogs/README.md',
-                                          'doc/en/us/shop/*', 'doc/en/us/release-overview', 'doc/en/us/standards/header.txt' ),
+        'OtherLicensePathRules' => array( 'doc/eng-us/features/[2-5].*', 'doc/eng-us/bc/[2-5].*', 'doc/eng-us/specifications/[2-5].*',
+                                          'doc/eng-us/specifications/trunk/*', 'doc/changelogs/[2-5].*', 'doc/changelogs/README.md',
+                                          'doc/eng-us/shop/*', 'doc/eng-us/release-overview', 'doc/eng-us/standards/header.txt' ),
         'OtherCopyright' => 'Copyright (C) 1999 - 2014 eZ Systems AS and contributors',
         'OtherLicenseName' => 'GNU General Public License, version 2',
         'OtherLicenseURL' => 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.html' );
@@ -129,10 +129,10 @@ class expHelpLicense
 
     /**
      * Whether a page keeps another license (OtherLicensePathRules[] match its path in the default language,
-     * doc/en/us/<id>, or, for a page in no language directory, doc/<id>; a translation has the license of the page
+     * doc/eng-us/<id>, or, for a page in no language directory, doc/<id>; a translation has the license of the page
      * it translates).
      *
-     * @param string $id page id (below doc/en/us/) or a path starting with doc/
+     * @param string $id page id (below doc/eng-us/) or a path starting with doc/
      * @return bool
      */
     public static function isOtherLicense( $id )
