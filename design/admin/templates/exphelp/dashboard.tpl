@@ -81,6 +81,9 @@
             <li><strong>{$help_audience_ids|count}</strong> {'audiences'|i18n( $help_ctx )}</li>
         </ul>
         {/if}
+
+        {* quick access to the master help index (exphelp/contents), the same button as the viewer sidebar *}
+        <p class="a4-help-hero-actions"><a class="a4-btn a4-btn-small" href={'exphelp/contents'|ezurl}><span class="a4-icon a4-bi-list-ul" aria-hidden="true"></span> {'Browse all help'|i18n( 'kernel/exphelp' )}</a></p>
     </section>
 
     {* ---- Who makes Exponential (parts/dashboard_about.tpl) ---- *}

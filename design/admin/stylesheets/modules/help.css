@@ -264,6 +264,13 @@
 .a4-help-stats li { display: inline-flex; align-items: center; gap: var(--a4-space-2); }
 .a4-help-stats strong { color: var(--a4-ink); font-size: var(--a4-text-l); font-variant-numeric: tabular-nums; }
 
+/* the Browse all help button at the bottom of the hero (the hero's grid gap spaces it) */
+.a4-help-hero-actions {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
 /* "Reading in: English / Deutsch" (parts/reading_language.tpl): the reader's language, a segmented switch that posts
    to uiswitch/set, and how much of the help each translation has. Centred in the dashboard's hero, at the end of
    the viewer's bar. */
