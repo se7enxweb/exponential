@@ -29,7 +29,7 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 - Wie halten Sie die Website auf der gepflegten Linie 6.0 ([Release-Linie und Support](release-linie-und-support.md))?
 - Welche unserer individuellen Teile brauchen beim nächsten Upgrade oder bei einem PHP-Upgrade Arbeit?
 - Geben Sie allgemeine Korrekturen an das Projekt zurück, damit wir sie nicht allein tragen
-  ([Code zurückgeben](../../../../en/us/help/partners/contributing-code-back.md))?
+  ([Code zurückgeben](../../partner/code-zurueckgeben.md))?
 - Wer liest das Changelog und sagt uns, was sich ändert?
 
 ## Support
@@ -63,7 +63,7 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 
 > **Tipp**
 > Ein Partner des Exponential-Programms hat eine Stufe und eigene, veröffentlichte Support-Stufen beim Projekt
-> ([Partnerstufen](../../../../en/us/help/partners/partner-levels.md)). Die Stufe sagt Ihnen etwas über sein Engagement für das Programm;
+> ([Partnerstufen](../../partner/partnerstufen.md)). Die Stufe sagt Ihnen etwas über sein Engagement für das Programm;
 > sie „ist keine Qualitätsgarantie für Ihr Projekt“ ([Einen Partner auswählen](../../../../en/us/help/businesses/choosing/choosing-a-partner.md)).
 
 ## Verwandte Seiten

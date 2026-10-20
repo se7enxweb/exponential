@@ -12,7 +12,7 @@ type: help
 **Vorlage. Keine Rechtsberatung.** Eine Struktur für die Support-Bedingungen einer Exponential-Website, aus Sicht des
 Betreibers. Sie baut auf dem Stufenblatt und den Schweregraden aus dem Bereich für Hosting auf
 ([Support-Stufen](../../../../en/us/help/hosting/business/support-tiers.md)) und auf dem, was Partnern für ihre eigenen Support-Aussagen
-geraten wird ([Support-Stufen und Reaktionszeiten](../../../../en/us/help/partners/support-levels-and-response-times.md)). Werte in
+geraten wird ([Support-Stufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md)). Werte in
 eckigen Klammern sind Felder, die zu vereinbaren sind; es werden keine Zahlen vorgeschlagen. Lassen Sie das Ergebnis
 von Ihrer Rechtsberatung prüfen.
 
@@ -55,7 +55,7 @@ Die Definitionen folgen [Support-Stufen](../../../../en/us/help/hosting/business
 
 Partnern wird gesagt, dass das Programm nicht veröffentlicht, ob seine eigenen Reaktionszeiten die erste Antwort oder
 die Lösung meinen und ob Geschäftsstunden oder Zeitstunden, und dass sie das schriftlich festhalten sollen
-([Support-Stufen und Reaktionszeiten](../../../../en/us/help/partners/support-levels-and-response-times.md)). Klären Sie dieselben zwei
+([Support-Stufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md)). Klären Sie dieselben zwei
 Punkte in Ihrer eigenen Vereinbarung.
 
 ## Enthalten und nicht enthalten

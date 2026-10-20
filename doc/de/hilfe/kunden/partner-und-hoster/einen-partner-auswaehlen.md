@@ -32,7 +32,7 @@ Ein neuer Partner muss mit dem arbeiten können, was schon da ist:
 Aus [Einen Partner auswählen](../../../../en/us/help/businesses/choosing/choosing-a-partner.md):
 
 - die Seiten des Partnerprogramms auf <https://exponential.earth> und sein Verzeichnis auf share.exponential.earth
-  ([Partnerverzeichnisse](../../../../en/us/help/partners/partner-directories.md));
+  ([Partnerverzeichnisse](../../partner/partnerverzeichnisse.md));
 - die Foren und Chats der Community: Fragen Sie, wer ähnliche Arbeit gemacht hat;
 - direkt 7x ([Mit 7x und dem Projekt zusammenarbeiten](mit-7x-und-dem-projekt-zusammenarbeiten.md));
 - Agenturen, die Sie bereits kennen: Fragen Sie, ob sie Exponential-Websites betrieben haben, und prüfen Sie die Antwort.
@@ -71,5 +71,5 @@ Aus [Einen Partner auswählen](../../../../en/us/help/businesses/choosing/choosi
 
 - [Was Sie Ihren Partner fragen sollten](../gesund-halten/was-sie-ihren-partner-fragen-sollten.md)
 - [Verträge und SLAs](vertraege-und-slas.md)
-- [Was ist ein Exponential-Partner?](../../../../en/us/help/partners/what-is-an-exponential-partner.md)
+- [Was ist ein Exponential-Partner?](../../partner/was-ein-exponential-partner-ist.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

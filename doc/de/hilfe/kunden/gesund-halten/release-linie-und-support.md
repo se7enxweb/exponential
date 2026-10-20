@@ -35,7 +35,7 @@ ein Upgrade-Projekt; [Upgrade](../../../../en/us/guides/upgrading.md) hat einen 
 - **Info > Über** listet die Version von Exponential und von jeder Erweiterung
   ([Die Seiten Über und Copyright](../../../../en/us/features/6.0/about-and-package-pages.md)).
 - Fragen Sie Ihren Anbieter: Ein Anbieter, der ein Verzeichnis der Websites seiner Kunden führt, kann sofort antworten
-  ([Kunden aktuell halten](../../../../en/us/help/partners/keeping-customers-current.md)).
+  ([Kunden aktuell halten](../../partner/kunden-websites-aktuell-halten.md)).
 
 Notieren Sie die Version mit dem Datum. Vergleichen Sie sie mit dem neuesten Release im Changelog
 ([Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)).

@@ -59,7 +59,7 @@ Strengere Level kosten mehr. Passen Sie sie an das an, was Ausfallzeit Ihre Orga
 [Arbeitsblatt zu den Kosten von Ausfällen](../../../../en/us/help/businesses/costs/cost-of-downtime-worksheet.md) hilft dabei. Ein Level,
 das Sie nie brauchen, ist verschwendetes Geld, und ein Level, für das Ihr Anbieter kein Personal hat, ist nur ein
 Versprechen auf Papier. Partnern wird geraten, einem Kunden nie „eine kürzere Reaktion zu versprechen, als Sie mit
-Ihrem eigenen Personal leisten können“ ([Support-Stufen und Reaktionszeiten](../../../../en/us/help/partners/support-levels-and-response-times.md));
+Ihrem eigenen Personal leisten können“ ([Support-Stufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md));
 es ist fair zu fragen, wie sie das Versprochene personell abdecken.
 
 ## Punkte zu Open Source
@@ -97,5 +97,5 @@ vereinbaren Sie.
 
 - [Ihren Anbieter jedes Jahr überprüfen](anbieter-jedes-jahr-ueberpruefen.md)
 - [Support-Stufen (für Hoster)](../../../../en/us/help/hosting/business/support-tiers.md)
-- [Die Partnerschaftsvereinbarung (für Partner)](../../../../en/us/help/partners/the-partnership-agreement.md)
+- [Die Partnerschaftsvereinbarung (für Partner)](../../partner/die-partnerschaftsvereinbarung.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

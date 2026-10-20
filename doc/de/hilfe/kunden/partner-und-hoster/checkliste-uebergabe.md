@@ -12,7 +12,7 @@ type: help
 Eine Übergabe findet statt, wenn ein Projekt endet und die Website in Ihre Obhut übergeht, wenn ein Vertrag endet oder
 wenn ein Anbieter einen anderen ersetzt. Diese Checkliste nennt, was Sie aus Sicht des Betreibers erhalten müssen.
 Hoster arbeiten ihre eigene Liste ab ([Ausscheiden eines Kunden](../../../../en/us/help/hosting/checklists/customer-offboarding.md)) und
-Partner die Übergabephase ihres Leitfadens ([Leitfaden für Implementierungsprojekte](../../../../en/us/help/partners/implementation-project-playbook.md)).
+Partner die Übergabephase ihres Leitfadens ([Leitfaden für Implementierungsprojekte](../../partner/leitfaden-fuer-implementierungsprojekte.md)).
 
 ## Zuerst den Plan vereinbaren
 

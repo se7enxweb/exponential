@@ -53,5 +53,5 @@ Diese Seiten helfen Ihnen, diese Freiheit wirklich zu erhalten.
 - [Ihre Website gesund halten](../gesund-halten/README.md)
 - [Hosting, Partner und Support auswählen (für Unternehmen)](../../../../en/us/help/businesses/choosing/README.md)
 - [Hosting-Anbieter: hier beginnen](../../../../en/us/help/hosting/hosting-companies-start-here.md)
-- [Partner: hier beginnen](../../../../en/us/help/partners/partners-start-here.md)
+- [Partner: hier beginnen](../../partner/partner-hier-beginnen.md)
 - [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

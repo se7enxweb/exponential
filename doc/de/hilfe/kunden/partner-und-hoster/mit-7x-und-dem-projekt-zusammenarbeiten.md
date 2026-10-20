@@ -35,7 +35,7 @@ Quelle: [Mit 7x und dem Projekt zusammenarbeiten](../../../../en/us/help/busines
 | Vertrauliche Sicherheitsmeldungen | security@se7enx.com ([Vertrauliche Sicherheitsmeldungen](../gesund-halten/vertrauliche-sicherheitsmeldungen.md)) |
 
 Kostenlose Hilfe kommt ohne Versprechen: Die Support-Seite des Projekts sagt, seine Entwickler „sind nicht verpflichtet,
-kostenlosen Support zu leisten“ ([Support-Stufen und Reaktionszeiten](../../../../en/us/help/partners/support-levels-and-response-times.md)).
+kostenlosen Support zu leisten“ ([Support-Stufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md)).
 
 ## Was Sie kaufen können
 
@@ -61,7 +61,7 @@ Eine Organisation, die sich auf Exponential verlässt, hat ein Interesse daran, 
 Freiwillige Wege zu helfen ([Mit 7x und dem Projekt zusammenarbeiten](../../../../en/us/help/businesses/choosing/working-with-7x-and-the-project.md)):
 
 - Fehler gut melden, mit Version, Schritten und erwartetem Ergebnis;
-- Ihren Partner allgemeine Korrekturen zurückgeben lassen ([Code zurückgeben](../../../../en/us/help/partners/contributing-code-back.md));
+- Ihren Partner allgemeine Korrekturen zurückgeben lassen ([Code zurückgeben](../../partner/code-zurueckgeben.md));
 - die Dokumentation verbessern: Diese Hilfe ist freie Dokumentation unter der GNU FDL;
 - 7x oder die Foundation sponsern ([Geben und spenden](../../../../en/us/help/project/give-and-donate.md));
 - Ihre Geschichte als Fallstudie teilen, mit Ihrer Zustimmung

@@ -106,7 +106,7 @@ Dieser Bereich verweist auf die anderen Bereiche, statt sie zu wiederholen:
 | [Unternehmen](../../../en/us/help/businesses/businesses-start-here.md) | Organisationen, die Exponential noch prüfen |
 | [Website-Ersteller](../../../en/us/help/creators/website-creators/website-creators-start-here.md) | Die Personen, die die Website bauen und ändern |
 | [Hosting-Anbieter](../../../en/us/help/hosting/hosting-companies-start-here.md) | Die Sicht Ihres Hosters |
-| [Partner](../../../en/us/help/partners/partners-start-here.md) | Die Sicht Ihres Implementierungspartners |
+| [Partner](../partner/partner-hier-beginnen.md) | Die Sicht Ihres Implementierungspartners |
 | [Wer ist 7x?](../../../en/us/help/who-is-7x.md), [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md) | Die Menschen hinter Exponential |
 
 ## Verwandte Seiten

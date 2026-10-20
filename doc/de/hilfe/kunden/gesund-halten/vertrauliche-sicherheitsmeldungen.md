@@ -66,7 +66,7 @@ Diese erste Antwort ist die einzige Zusage zur Reaktionszeit in den eigenen Date
   Webserver) Ihre Website in der Zwischenzeit schützt; die Leitfäden zur Härtung beschreiben viele ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md)).
 - Wenn das Release mit der Korrektur erscheint, lassen Sie es schnell einspielen ([Upgrades mit Ihrem Anbieter](upgrades-mit-ihrem-anbieter.md)).
 - Partner informieren die Öffentlichkeit nicht, bevor eine Korrektur veröffentlicht ist
-  ([Eskalationen und Sicherheitsprobleme](../../../../en/us/help/partners/escalations-and-security-issues.md)); halten Sie Ihre eigene
+  ([Eskalationen und Sicherheitsprobleme](../../partner/eskalationen-und-sicherheitsprobleme.md)); halten Sie Ihre eigene
   Kommunikation an dieselbe Regel.
 
 ## Erweiterungen anderer Autoren

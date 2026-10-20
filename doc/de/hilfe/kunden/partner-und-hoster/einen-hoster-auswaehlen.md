@@ -60,7 +60,7 @@ entscheiden am häufigsten:
 - [ ] Support-Zeiten und erste Reaktionszeiten, schriftlich.
 - [ ] Wo die Server und Backups stehen (für den Datenschutz).
 - [ ] Hat der Hoster schon Exponential-Websites betrieben? Hosting-Partner werden vom Projekt aufgelistet
-      ([Hosting-Partner](../../../../en/us/help/partners/hosting-partners.md)).
+      ([Hosting-Partner](../../partner/hosting-partner.md)).
 - [ ] Wie Sie wieder gehen: Exportformat, Dauer, Löschung ([Ausscheiden eines Kunden](../../../../en/us/help/hosting/checklists/customer-offboarding.md)).
 
 ## Angebote fair vergleichen

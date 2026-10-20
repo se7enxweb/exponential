@@ -13,7 +13,7 @@ type: help
 (`SECURITY.md`), die Pflege der Website ist also eine Aufgabe, die nie endet. Diese Vorlage hält diese Aufgabe
 schriftlich fest. Sie folgt der Upgrade-Praxis, die unter [Upgrades mit Ihrem Anbieter](../gesund-halten/upgrades-mit-ihrem-anbieter.md),
 [Kunden-Websites aktualisieren](../../../../en/us/help/hosting/operations/upgrading-customer-sites.md) und
-[Kunden aktuell halten](../../../../en/us/help/partners/keeping-customers-current.md) beschrieben ist. Werte in eckigen Klammern sind
+[Kunden aktuell halten](../../partner/kunden-websites-aktuell-halten.md) beschrieben ist. Werte in eckigen Klammern sind
 Felder, die zu vereinbaren sind. Lassen Sie das Ergebnis von Ihrer Rechtsberatung prüfen.
 
 ## Parteien und Umfang
@@ -65,7 +65,7 @@ Felder, die zu vereinbaren sind. Lassen Sie das Ergebnis von Ihrer Rechtsberatun
 |---|---|
 | Wo der Code der Website aufbewahrt wird | [repository, owned by the customer or copyable on request] |
 | Änderungen an den eigenen Dateien von Exponential | [none / kept in version control with a reason] |
-| Allgemeine Korrekturen an das Projekt zurückgegeben | [yes / no] ([Code zurückgeben](../../../../en/us/help/partners/contributing-code-back.md)) |
+| Allgemeine Korrekturen an das Projekt zurückgegeben | [yes / no] ([Code zurückgeben](../../partner/code-zurueckgeben.md)) |
 | Arbeit, um eigenen Code bei einem Upgrade anzupassen | [included up to [hours] / quoted separately] |
 
 ## Berichte und Überprüfung

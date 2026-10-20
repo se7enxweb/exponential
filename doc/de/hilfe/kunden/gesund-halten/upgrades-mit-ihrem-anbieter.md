@@ -13,7 +13,7 @@ Die meisten Website-Betreiber führen Upgrades nicht selbst durch: Ein Hoster, e
 freiberuflicher Entwickler erledigt das. Diese Seite behandelt Ihre Seite dieser Vereinbarung: was einmal zu vereinbaren
 ist, was jedes Mal zu fragen ist und welche Nachweise zu erwarten sind. Das eigene Verfahren des Anbieters steht unter
 [Kunden-Websites aktualisieren](../../../../en/us/help/hosting/operations/upgrading-customer-sites.md) und, für Partner, unter
-[Kunden aktuell halten](../../../../en/us/help/partners/keeping-customers-current.md).
+[Kunden aktuell halten](../../partner/kunden-websites-aktuell-halten.md).
 
 ## Einmal vereinbaren
 
@@ -71,7 +71,7 @@ warum ([Upgrade-Prüfung und Dateikonsistenz](../../../../en/us/help/businesses/
 - Der Anbieter kann Ihnen nicht sagen, welche Version die Website betreibt.
 - Änderungen am Code von Exponential selbst werden auf der Live-Website vorgenommen und nirgends aufbewahrt. Die
   Upgrade-Prüfung listet sie auf; ein Anbieter, der solche Änderungen pflegt, sollte sie in einer Versionsverwaltung
-  halten und allgemeine Korrekturen zurückgeben ([Code zurückgeben](../../../../en/us/help/partners/contributing-code-back.md)).
+  halten und allgemeine Korrekturen zurückgeben ([Code zurückgeben](../../partner/code-zurueckgeben.md)).
 
 ## Verwandte Seiten
 

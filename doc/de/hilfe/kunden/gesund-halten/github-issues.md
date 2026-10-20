@@ -67,13 +67,13 @@ Die Meldeseite der Hilfe entwirft ein solches Issue für Sie ([Die Meldeseite de
 Meist legt Ihr Administrator oder Partner das Issue an, nachdem er bestätigt hat, dass das Problem in der Software und
 nicht in der Einrichtung Ihrer Website liegt. Bitten Sie ihn, Ihnen den Link zu schicken, und bewahren Sie ihn in
 Ihren Notizen zum Problem auf. Ein Partner des Programms kann auch Support-Tickets für Partner nutzen
-([Fehler als Partner melden](../../../../en/us/help/partners/filing-bugs-as-a-partner.md)).
+([Fehler als Partner melden](../../partner/fehler-gut-melden.md)).
 
 ## Funktionswünsche
 
 Auch der Wunsch nach einer neuen Funktion ist ein Issue, im Software-Tracker oder, bei allem, was das Projekt betrifft,
 im Community-Tracker. Beschreiben Sie den Bedarf, nicht nur die Lösung. Wenn die Funktion für Ihr Geschäft wichtig ist,
-ist ihr Sponsoring ein dokumentierter Weg ([Funktionswünsche und gesponserte Funktionen](../../../../en/us/help/partners/feature-requests-and-sponsored-features.md)).
+ist ihr Sponsoring ein dokumentierter Weg ([Funktionswünsche und gesponserte Funktionen](../../partner/funktionswuensche-und-gesponserte-funktionen.md)).
 
 ## Verwandte Seiten
 
