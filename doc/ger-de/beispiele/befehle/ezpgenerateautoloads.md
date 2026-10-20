@@ -2,14 +2,14 @@
 title: exp:ezpgenerateautoloads
 audience: developer, admin
 category: examples
-summary: "Generate the class autoload arrays: kernel (-k), kernel overrides (-o), extensions (-e)."
+summary: "Erzeugt die Autoload-Arrays der Klassen: Kernel (-k), Kernel-Overrides (-o), Erweiterungen (-e)."
 keywords: Konsole, Befehl, exp:ezpgenerateautoloads, ezpgenerateautoloads, console, command, CLI, ezpgenerateautoloads.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezpgenerateautoloads
 
-Generate the class autoload arrays: kernel (-k), kernel overrides (-o), extensions (-e).
+Erzeugt die Autoload-Arrays der Klassen: Kernel (-k), Kernel-Overrides (-o), Erweiterungen (-e).
 
 Skript `bin/php/ezpgenerateautoloads.php`, Code in `kernel/private/classes/commands/ezpgenerateautoloads.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,18 +22,18 @@ php bin/php/ezpgenerateautoloads.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--help` |  | Show help information (short: -h) |
-| `--quiet` |  | do not give any output except when errors occur (short: -q) |
-| `--target` | erforderlich | The directory to where the generated autoload file should be written. (short: -t) |
-| `--verbose` |  | Whether or not to display more information. (short: -v) |
-| `--dry-run` |  | Whether a new file autoload file should be written. (short: -n) |
-| `--kernel` |  | If an autoload array for the kernel files should be generated. (short: -k) |
-| `--kernel-override` |  | If an autoload array for the kernel override files should be generated. (short: -o) |
-| `--extension` |  | If an autoload array for the extensions should be generated. (short: -e) |
-| `--tests` |  | If an autoload array for the tests should be generated. (short: -s) |
-| `--exclude` | erforderlich | Folders to exclude from the class search. |
-| `--progress` |  | If progress output should be shown on the command-line. (short: -p) |
-| `--allow-root-user` |  | Accepted for compatibility with the other scripts; has no effect. |
+| `--help` |  | Hilfe anzeigen (short: -h) |
+| `--quiet` |  | keine Ausgabe außer bei Fehlern (short: -q) |
+| `--target` | erforderlich | Das Verzeichnis, in das die erzeugte Autoload-Datei geschrieben wird. (short: -t) |
+| `--verbose` |  | Ob mehr Informationen angezeigt werden sollen. (short: -v) |
+| `--dry-run` |  | Ob eine neue Autoload-Datei geschrieben werden soll. (short: -n) |
+| `--kernel` |  | Ob ein Autoload-Array für die Kernel-Dateien erzeugt werden soll. (short: -k) |
+| `--kernel-override` |  | Ob ein Autoload-Array für die Kernel-Override-Dateien erzeugt werden soll. (short: -o) |
+| `--extension` |  | Ob ein Autoload-Array für die Erweiterungen erzeugt werden soll. (short: -e) |
+| `--tests` |  | Ob ein Autoload-Array für die Tests erzeugt werden soll. (short: -s) |
+| `--exclude` | erforderlich | Verzeichnisse, die bei der Klassensuche ausgelassen werden. |
+| `--progress` |  | Ob der Fortschritt auf der Kommandozeile angezeigt werden soll. (short: -p) |
+| `--allow-root-user` |  | Zur Kompatibilität mit den anderen Skripten akzeptiert; hat keine Wirkung. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

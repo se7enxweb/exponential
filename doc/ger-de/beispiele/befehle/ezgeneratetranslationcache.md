@@ -2,14 +2,14 @@
 title: exp:ezgeneratetranslationcache
 audience: developer, admin
 category: examples
-summary: Generate translation cache files (--ts-list limits it to the given translations).
+summary: Erzeugt die Cache-Dateien der Übersetzungen (--ts-list beschränkt es auf die angegebenen Übersetzungen).
 keywords: Konsole, Befehl, exp:ezgeneratetranslationcache, ezgeneratetranslationcache, console, command, CLI, ezgeneratetranslationcache.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezgeneratetranslationcache
 
-Generate translation cache files (--ts-list limits it to the given translations).
+Erzeugt die Cache-Dateien der Übersetzungen (--ts-list beschränkt es auf die angegebenen Übersetzungen).
 
 Skript `bin/php/ezgeneratetranslationcache.php`, Code in `kernel/private/classes/commands/ezgeneratetranslationcache.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,7 +22,7 @@ php bin/php/ezgeneratetranslationcache.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--ts-list` | erforderlich | A list of translations to generate caches for, for example 'rus-RU nor-NO' By default caches for all translations will be generated |
+| `--ts-list` | erforderlich | Eine Liste der Übersetzungen, für die Caches erzeugt werden, zum Beispiel 'rus-RU nor-NO' Standardmäßig werden Caches für alle Übersetzungen erzeugt |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -35,11 +35,11 @@ Example: ./bin/php/updateisbn13.php --url=<url of the xml file with the ranges>
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--url` | erforderlich | URL containing the xml file for the different ranges |
-| `--db-host` | erforderlich | Database host. |
-| `--db-user` | erforderlich | Database user. |
-| `--db-password` | erforderlich | Database password. |
-| `--db-database` | erforderlich | Database name. |
-| `--db-driver` | erforderlich | Database driver. |
+| `--db-host` | erforderlich | Datenbankhost. |
+| `--db-user` | erforderlich | Datenbankbenutzer. |
+| `--db-password` | erforderlich | Datenbankpasswort. |
+| `--db-database` | erforderlich | Datenbankname. |
+| `--db-driver` | erforderlich | Datenbanktreiber. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

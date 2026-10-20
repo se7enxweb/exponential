@@ -23,7 +23,7 @@ php bin/php/solr.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--json` |  | Report as JSON, for a caller that is not a person |
+| `--json` |  | Als JSON berichten, für einen Aufrufer, der kein Mensch ist |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

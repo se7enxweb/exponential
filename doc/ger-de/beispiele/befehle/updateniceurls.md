@@ -22,13 +22,13 @@ php bin/php/updateniceurls.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--db-host` | erforderlich | Database host |
-| `--db-user` | erforderlich | Database user |
-| `--db-password` | erforderlich | Database password |
-| `--db-database` | erforderlich | Database name |
-| `--db-type` | erforderlich | Database driver, alias for --db-driver |
-| `--db-driver` | erforderlich | Database driver |
-| `--sql` |  | Display sql queries |
+| `--db-host` | erforderlich | Datenbankhost |
+| `--db-user` | erforderlich | Datenbankbenutzer |
+| `--db-password` | erforderlich | Datenbankpasswort |
+| `--db-database` | erforderlich | Datenbankname |
+| `--db-type` | erforderlich | Datenbanktreiber, Alias für --db-driver |
+| `--db-driver` | erforderlich | Datenbanktreiber |
+| `--sql` |  | SQL-Abfragen anzeigen |
 | `--no-import` |  | Disables all import routines. To enable specific ones use the --import-* options. |
 | `--import` |  | Enables all import routines. |
 | `--import-nodes` |  | Enables importing of urls from the old node data. |

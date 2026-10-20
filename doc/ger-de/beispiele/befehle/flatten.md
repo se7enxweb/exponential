@@ -2,14 +2,14 @@
 title: exp:flatten
 audience: developer, admin
 category: examples
-summary: "Remove unused data from the database: contentobject, contentclass, workflow, role or all."
+summary: "Entfernt ungenutzte Daten aus der Datenbank: contentobject, contentclass, workflow, role oder all."
 keywords: Konsole, Befehl, exp:flatten, flatten, console, command, CLI, flatten.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:flatten
 
-Remove unused data from the database: contentobject, contentclass, workflow, role or all.
+Entfernt ungenutzte Daten aus der Datenbank: contentobject, contentclass, workflow, role oder all.
 
 Skript `bin/php/flatten.php`, Code in `kernel/private/classes/commands/flatten.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,13 +22,13 @@ php bin/php/flatten.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--db-host` | erforderlich | Database host |
-| `--db-user` | erforderlich | Database user |
-| `--db-password` | erforderlich | Database password |
-| `--db-database` | erforderlich | Database name |
-| `--db-type` | erforderlich | Database driver, alias for --db-driver |
-| `--db-driver` | erforderlich | Database driver |
-| `--sql` |  | Display sql queries |
+| `--db-host` | erforderlich | Datenbankhost |
+| `--db-user` | erforderlich | Datenbankbenutzer |
+| `--db-password` | erforderlich | Datenbankpasswort |
+| `--db-database` | erforderlich | Datenbankname |
+| `--db-type` | erforderlich | Datenbanktreiber, Alias für --db-driver |
+| `--db-driver` | erforderlich | Datenbanktreiber |
+| `--sql` |  | SQL-Abfragen anzeigen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

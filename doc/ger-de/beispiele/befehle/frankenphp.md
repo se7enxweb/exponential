@@ -2,14 +2,14 @@
 title: exp:frankenphp
 audience: developer, admin
 category: examples
-summary: Control the FrankenPHP engine of the Exponential web server.
+summary: Steuert die FrankenPHP-Engine des Exponential-Webservers.
 keywords: Konsole, Befehl, exp:frankenphp, frankenphp, console, command, CLI, frankenphp.php, exp:fp
 type: generated
 generated: exp:help:examples
 ---
 # exp:frankenphp
 
-Control the FrankenPHP engine of the Exponential web server.
+Steuert die FrankenPHP-Engine des Exponential-Webservers.
 
 Skript `bin/php/frankenphp.php`, Code in `kernel/private/classes/commands/frankenphp.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -23,13 +23,13 @@ php bin/php/frankenphp.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--json` |  | Report as JSON, for a caller that is not a person |
-| `--engine` | erforderlich | override the frankenphp default for this command only (php, qbix, or several) |
-| `--all` |  | start, stop, restart, graceful, kill or status every engine, one after the other |
-| `--force` |  | install: download again even if the binary is already there |
-| `--check` |  | install: re-hash the installed binary against its SHA-256 |
-| `--trust-github-digest` |  | install: accept the digest GitHub publishes when no Sha256 is pinned |
-| `--from` | erforderlich | install: take the binary from this file instead of downloading it |
+| `--json` |  | Als JSON berichten, für einen Aufrufer, der kein Mensch ist |
+| `--engine` | erforderlich | den frankenphp-Standard nur für diesen Befehl überschreiben (php, qbix oder mehrere) |
+| `--all` |  | start, stop, restart, graceful, kill oder status für jede Engine, eine nach der anderen |
+| `--force` |  | install: erneut herunterladen, auch wenn die Binärdatei schon da ist |
+| `--check` |  | install: den Hash der installierten Binärdatei erneut gegen ihre SHA-256 prüfen |
+| `--trust-github-digest` |  | install: den von GitHub veröffentlichten Digest akzeptieren, wenn keine Sha256 festgelegt ist |
+| `--from` | erforderlich | install: die Binärdatei aus dieser Datei nehmen, statt sie herunterzuladen |
 | `--keep-global` | erforderlich |  |
 | `--https` |  |  |
 | `--no-https` |  |  |

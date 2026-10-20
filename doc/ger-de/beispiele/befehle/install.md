@@ -2,14 +2,14 @@
 title: exp:install
 audience: developer, admin
 category: examples
-summary: One-command installation, SQLite by default, no kickstart.ini needed.
+summary: Installation mit einem Befehl, standardmäßig mit SQLite, ohne kickstart.ini.
 keywords: Konsole, Befehl, exp:install, install, console, command, CLI, install.php, exp:names
 type: generated
 generated: exp:help:examples
 ---
 # exp:install
 
-One-command installation, SQLite by default, no kickstart.ini needed.
+Installation mit einem Befehl, standardmäßig mit SQLite, ohne kickstart.ini.
 
 Skript `bin/php/install.php`, Code in `kernel/private/classes/commands/install.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

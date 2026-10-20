@@ -2,14 +2,14 @@
 title: exp:ezsqldumpschema
 audience: developer, admin
 category: examples
-summary: Dump the database schema to a file or standard output (--type, --user).
+summary: Schreibt das Datenbankschema in eine Datei oder auf die Standardausgabe (--type, --user).
 keywords: Konsole, Befehl, exp:ezsqldumpschema, ezsqldumpschema, console, command, CLI, ezsqldumpschema.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezsqldumpschema
 
-Dump the database schema to a file or standard output (--type, --user).
+Schreibt das Datenbankschema in eine Datei oder auf die Standardausgabe (--type, --user).
 
 Skript `bin/php/ezsqldumpschema.php`, Code in `kernel/private/classes/commands/ezsqldumpschema.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

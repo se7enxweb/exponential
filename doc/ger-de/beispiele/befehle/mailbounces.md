@@ -2,14 +2,14 @@
 title: exp:mailbounces
 audience: developer, admin
 category: examples
-summary: "Read the bounce mailbox: hard bounces and spam complaints go on the suppression list."
+summary: "Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste."
 keywords: Konsole, Befehl, exp:mailbounces, mailbounces, console, command, CLI, mailbounces.php, exp:mail:bounces
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailbounces
 
-Read the bounce mailbox: hard bounces and spam complaints go on the suppression list.
+Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste.
 
 Skript `bin/php/mailbounces.php`, Code in `kernel/private/classes/commands/mailbounces.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -42,9 +42,9 @@ Ends with PASS, SKIP (the reader is disabled or not configured) or FAIL (exit 1)
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Report only: nothing is suppressed, no message is changed, the status is not written |
-| `--file` | erforderlich | Read these saved messages (.eml file, or a directory of them) instead of the mailbox |
-| `--status` |  | Show the last run and stop |
+| `--dry-run` |  | Nur berichten: nichts wird gesperrt, keine Nachricht geändert, der Status nicht geschrieben |
+| `--file` | erforderlich | Diese gespeicherten Nachrichten (.eml-Datei oder ein Verzeichnis davon) statt des Postfachs lesen |
+| `--status` |  | Den letzten Lauf zeigen und aufhören |
 | `--json` |  | Ein JSON-Objekt statt des Textes |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

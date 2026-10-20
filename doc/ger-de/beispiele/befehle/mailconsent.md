@@ -2,14 +2,14 @@
 title: exp:mailconsent
 audience: developer, admin
 category: examples
-summary: "The consent log of the e-mail preferences: list, export as CSV, retention cleanup."
+summary: "Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen."
 keywords: Konsole, Befehl, exp:mailconsent, mailconsent, console, command, CLI, mailconsent.php, exp:mail:consent
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailconsent
 
-The consent log of the e-mail preferences: list, export as CSV, retention cleanup.
+Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen.
 
 Skript `bin/php/mailconsent.php`, Code in `kernel/private/classes/commands/mailconsent.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -42,7 +42,7 @@ Filters: --user, --email, --category, --action, --source, --from, --to (YYYY-MM-
 |---|---|---|
 | `--user` | erforderlich | a login or user id |
 | `--email` | erforderlich | an address |
-| `--category` | erforderlich | a category identifier |
+| `--category` | erforderlich | ein Kategoriebezeichner |
 | `--action` | erforderlich | on, off, pending, confirm, ... |
 | `--source` | erforderlich | page, link, admin, import, signup, bridge, confirm, system |
 | `--from` | erforderlich | from this day |
@@ -50,8 +50,8 @@ Filters: --user, --email, --category, --action, --source, --from, --to (YYYY-MM-
 | `--limit` | erforderlich | list: how many (default 50) |
 | `--offset` | erforderlich | list: skip this many |
 | `--output` | erforderlich | export: the file (mode 0600) |
-| `--dry-run` |  | cleanup: count only |
-| `--addresses` |  | list: show addresses instead of hiding them |
+| `--dry-run` |  | cleanup: nur zählen |
+| `--addresses` |  | list: Adressen zeigen, statt sie zu verbergen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

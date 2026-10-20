@@ -2,14 +2,14 @@
 title: exp:ezpublishingbenchmark
 audience: developer, admin
 category: examples
-summary: Benchmark parallel publishing in concurrent batches (--batches-count, -l level).
+summary: Misst paralleles Veröffentlichen in gleichzeitigen Stapeln (--batches-count, -l level).
 keywords: Konsole, Befehl, exp:ezpublishingbenchmark, ezpublishingbenchmark, console, command, CLI, ezpublishingbenchmark.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezpublishingbenchmark
 
-Benchmark parallel publishing in concurrent batches (--batches-count, -l level).
+Misst paralleles Veröffentlichen in gleichzeitigen Stapeln (--batches-count, -l level).
 
 Skript `bin/php/ezpublishingbenchmark.php`, Code in `kernel/private/classes/commands/ezpublishingbenchmark.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -35,15 +35,15 @@ Example: ./bin/php/ezpublishingbenchmark.php --concurrency-level=20 --batches-co
 | Option | Wert | Hilfe |
 |---|---|---|
 | `-b` | erforderlich |  |
-| `--batches-count` | erforderlich | How many times a concurrent batch should be started [default: 1] |
+| `--batches-count` | erforderlich | Wie oft ein gleichzeitiger Stapel gestartet wird [Standard: 1] |
 | `-c` | erforderlich |  |
-| `--content-class` | erforderlich | Identifier of the content class used for testing [default: article] |
+| `--content-class` | erforderlich | Bezeichner der für den Test verwendeten Inhaltsklasse [Standard: article] |
 | `-l` | erforderlich |  |
-| `--concurrency-level` | erforderlich | Parallel processes to use [default: 20] |
+| `--concurrency-level` | erforderlich | Zu verwendende parallele Prozesse [Standard: 20] |
 | `-p` | erforderlich |  |
-| `--parent-node` | erforderlich | Container content should be created in [default: 2] |
+| `--parent-node` | erforderlich | Container, in dem die Inhalte angelegt werden [Standard: 2] |
 | `-g` |  |  |
-| `--generate-content` |  | Wether content should  be generated or not (not fully supported yet) [default: off] |
+| `--generate-content` |  | Ob Inhalte erzeugt werden sollen (noch nicht vollständig unterstützt) [Standard: off] |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

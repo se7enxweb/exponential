@@ -2,14 +2,14 @@
 title: exp:ezconvert2isbn13
 audience: developer, admin
 category: examples
-summary: Convert ISBN-10 numbers to ISBN-13.
+summary: Wandelt ISBN-10-Nummern in ISBN-13 um.
 keywords: Konsole, Befehl, exp:ezconvert2isbn13, ezconvert2isbn13, console, command, CLI, ezconvert2isbn13.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezconvert2isbn13
 
-Convert ISBN-10 numbers to ISBN-13.
+Wandelt ISBN-10-Nummern in ISBN-13 um.
 
 Skript `bin/php/ezconvert2isbn13.php`, Code in `kernel/private/classes/commands/ezconvert2isbn13.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,11 +22,11 @@ php bin/php/ezconvert2isbn13.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--class-id` | erforderlich | The class id for the ISBN attribute. |
-| `--attribute-id` | erforderlich | The attribute id for the ISBN attribute which should be converted. |
-| `--all-classes` |  | Will convert all ISBN attributes in all content classes. |
-| `-f` |  | Short alias for force. |
-| `--force` |  | Will convert all attributes even if the class is set to ISBN. |
+| `--class-id` | erforderlich | Die Klassen-ID für das ISBN-Attribut. |
+| `--attribute-id` | erforderlich | Die Attribut-ID des umzuwandelnden ISBN-Attributs. |
+| `--all-classes` |  | Wandelt alle ISBN-Attribute in allen Inhaltsklassen um. |
+| `-f` |  | Kurzer Alias für force. |
+| `--force` |  | Wandelt alle Attribute um, auch wenn die Klasse auf ISBN gesetzt ist. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

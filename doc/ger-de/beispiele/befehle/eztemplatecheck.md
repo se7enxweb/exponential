@@ -2,14 +2,14 @@
 title: exp:eztemplatecheck
 audience: developer, admin
 category: examples
-summary: Check the syntax of the templates of a siteaccess or of a design directory.
+summary: Prüft die Syntax der Templates eines Siteaccess oder eines Design-Verzeichnisses.
 keywords: Konsole, Befehl, exp:eztemplatecheck, eztemplatecheck, console, command, CLI, eztemplatecheck.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:eztemplatecheck
 
-Check the syntax of the templates of a siteaccess or of a design directory.
+Prüft die Syntax der Templates eines Siteaccess oder eines Design-Verzeichnisses.
 
 Skript `bin/php/eztemplatecheck.php`, Code in `kernel/private/classes/commands/eztemplatecheck.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

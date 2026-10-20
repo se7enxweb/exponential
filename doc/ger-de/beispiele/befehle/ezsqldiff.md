@@ -2,14 +2,14 @@
 title: exp:ezsqldiff
 audience: developer, admin
 category: examples
-summary: Show the differences between two database schemas; the exit code tells if they differ.
+summary: Zeigt die Unterschiede zwischen zwei Datenbankschemata; der Exit-Code sagt, ob sie sich unterscheiden.
 keywords: Konsole, Befehl, exp:ezsqldiff, ezsqldiff, console, command, CLI, ezsqldiff.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezsqldiff
 
-Show the differences between two database schemas; the exit code tells if they differ.
+Zeigt die Unterschiede zwischen zwei Datenbankschemata; der Exit-Code sagt, ob sie sich unterscheiden.
 
 Skript `bin/php/ezsqldiff.php`, Code in `kernel/private/classes/commands/ezsqldiff.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

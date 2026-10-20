@@ -2,14 +2,14 @@
 title: exp:ezrequestrules
 audience: developer, admin
 category: examples
-summary: List and check the request rules of a siteaccess and explain their decision for an address.
+summary: Listet und prüft die Anfrageregeln eines Siteaccess und erklärt ihre Entscheidung für eine Adresse.
 keywords: Konsole, Befehl, exp:ezrequestrules, ezrequestrules, console, command, CLI, ezrequestrules.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezrequestrules
 
-List and check the request rules of a siteaccess and explain their decision for an address.
+Listet und prüft die Anfrageregeln eines Siteaccess und erklärt ihre Entscheidung für eine Adresse.
 
 Skript `bin/php/ezrequestrules.php`, Code in `kernel/private/classes/commands/ezrequestrules.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -37,14 +37,14 @@ Lists and checks the rules of a siteaccess and explains their decision for an ad
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--list` |  | List the rules in the order they are asked |
-| `--check` |  | Report problems in the settings; exits 1 when there are any |
-| `--uri` | erforderlich | Explain the decision for this address, as typed after the host and siteaccess (e.g. content/view/full/2 or Fit-Healthy) |
-| `--user` | erforderlich | The login of the user to explain it for (default: the anonymous user) |
-| `--method` | erforderlich | HTTP method (default GET) |
-| `--host` | erforderlich | Host name the visitor used |
-| `--ip` | erforderlich | Client address |
-| `--scheme` | erforderlich | http or https (default https) |
+| `--list` |  | Die Regeln in der Reihenfolge auflisten, in der sie gefragt werden |
+| `--check` |  | Probleme in den Einstellungen melden; Exit-Code 1, wenn es welche gibt |
+| `--uri` | erforderlich | Die Entscheidung für diese Adresse erklären, so wie sie nach Host und Siteaccess eingegeben wird (z. B. content/view/full/2 oder Fit-Healthy) |
+| `--user` | erforderlich | Das Login des Benutzers, für den es erklärt wird (Standard: der anonyme Benutzer) |
+| `--method` | erforderlich | HTTP-Methode (Standard GET) |
+| `--host` | erforderlich | Hostname, den der Besucher verwendet hat |
+| `--ip` | erforderlich | Client-Adresse |
+| `--scheme` | erforderlich | http oder https (Standard https) |
 | `--header:*` |  |  |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

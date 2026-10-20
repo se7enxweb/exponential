@@ -2,14 +2,14 @@
 title: exp:ezwebinupgrade
 audience: developer, admin
 category: examples
-summary: Upgrade an existing ezwebin installation to the current package version (--to-version).
+summary: Aktualisiert eine vorhandene ezwebin-Installation auf die aktuelle Paketversion (--to-version).
 keywords: Konsole, Befehl, exp:ezwebinupgrade, ezwebinupgrade, console, command, CLI, ezwebinupgrade.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezwebinupgrade
 
-Upgrade an existing ezwebin installation to the current package version (--to-version).
+Aktualisiert eine vorhandene ezwebin-Installation auf die aktuelle Paketversion (--to-version).
 
 Skript `bin/php/ezwebinupgrade.php`, Code in `kernel/private/classes/commands/ezwebinupgrade.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -30,12 +30,12 @@ intro
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--to-version` | erforderlich | Specify what upgrade path to use.   available options: '1.2-0' - upgrade 1.1-1 to 1.2-0                     '1.3-0' - upgrade 1.2-0 to 1.3-0                     '1.4-0' - upgrade 1.3-0 to 1.4-0 |
-| `--repository` | erforderlich | Path to repository where unpacked(unarchived) packages are  placed. it's relative to 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]'  (default is 'var/storage/packages/ez_systems') |
-| `--package` | erforderlich | Package(s) to install, f.e. 'ezwebin_classes' |
-| `--package-dir` | erforderlich | Path to directory with packed(ezpkg) packages(default is '/tmp/ezwebin')  |
-| `--url` | erforderlich | URL to download packages, f.e. 'http://packages.ez.no/Exponential/3.9'. 'package-dir' can be specified to store uploaded packages on local computer. if 'package-dir' is not specified then default dir('/tmp/ezwebin') will be used. |
-| `--auto-mode` | erforderlich | [on/off]. Do not ask what to do in case of confilicts. By default is 'on' |
+| `--to-version` | erforderlich | Den zu verwendenden Upgrade-Pfad angeben.   Verfügbare Optionen: '1.2-0' - Upgrade von 1.1-1 auf 1.2-0                     '1.3-0' - Upgrade von 1.2-0 auf 1.3-0                     '1.4-0' - Upgrade von 1.3-0 auf 1.4-0 |
+| `--repository` | erforderlich | Pfad zum Repository, in dem die entpackten Pakete  liegen. Er ist relativ zu 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]'  (Standard ist 'var/storage/packages/ez_systems') |
+| `--package` | erforderlich | Zu installierende(s) Paket(e), z. B. 'ezwebin_classes' |
+| `--package-dir` | erforderlich | Pfad zum Verzeichnis mit gepackten (ezpkg) Paketen (Standard ist '/tmp/ezwebin')  |
+| `--url` | erforderlich | URL zum Herunterladen der Pakete, z. B. 'http://packages.ez.no/Exponential/3.9'. Mit 'package-dir' können die heruntergeladenen Pakete auf dem lokalen Rechner gespeichert werden. Ohne 'package-dir' wird das Standardverzeichnis ('/tmp/ezwebin') verwendet. |
+| `--auto-mode` | erforderlich | [on/off]. Bei Konflikten nicht nachfragen. Standard ist 'on' |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

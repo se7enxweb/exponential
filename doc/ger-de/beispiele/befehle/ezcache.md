@@ -2,14 +2,14 @@
 title: exp:ezcache
 audience: developer, admin
 category: examples
-summary: Clear Exponential caches by tag or id (--clear-tag, --clear-id, --clear-all, --list-tags).
+summary: Leert die Caches von Exponential nach Tag oder ID (--clear-tag, --clear-id, --clear-all, --list-tags).
 keywords: Konsole, Befehl, exp:ezcache, ezcache, console, command, CLI, ezcache.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezcache
 
-Clear Exponential caches by tag or id (--clear-tag, --clear-id, --clear-all, --list-tags).
+Leert die Caches von Exponential nach Tag oder ID (--clear-tag, --clear-id, --clear-all, --list-tags).
 
 Skript `bin/php/ezcache.php`, Code in `kernel/private/classes/commands/ezcache.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -33,15 +33,15 @@ Allows for easy clearing of Cache files
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--clear-tag` | erforderlich | Clears all caches related to a given tag, separate multiple tags with a comma |
-| `--clear-id` | erforderlich | Clears all caches related to a given id, separate multiple ids with a comma |
-| `--clear-all` |  | Clears all caches |
-| `--iteration-sleep` | erforderlich | Amount of seconds to sleep between each iteration when performing a purge operation, can be a float. |
-| `--iteration-max` | erforderlich | Amount of items to remove in each iteration when performing a purge operation. |
-| `--expiry` | erforderlich | Date or relative time which specifies when cache items are to be considered expired, e.g 'now', '-2 days' or 'last monday'. Can only be used together with --purge. |
-| `--list-tags` |  | Lists all available tags |
-| `--list-ids` |  | Lists all available ids |
-| `--purge` |  | Enforces purging of cache items which ensures that specified entries are physically removed (Useful for saving diskspace). Used together with the clear-* options. |
+| `--clear-tag` | erforderlich | Leert alle Caches zu einem Tag; mehrere Tags durch Kommas trennen |
+| `--clear-id` | erforderlich | Leert alle Caches zu einer ID; mehrere IDs durch Kommas trennen |
+| `--clear-all` |  | Leert alle Caches |
+| `--iteration-sleep` | erforderlich | Sekunden Pause zwischen den Iterationen beim Löschen, auch als Dezimalzahl. |
+| `--iteration-max` | erforderlich | Anzahl der Einträge, die beim Löschen in jeder Iteration entfernt werden. |
+| `--expiry` | erforderlich | Datum oder relative Zeit, ab der Cache-Einträge als abgelaufen gelten, z. B. 'now', '-2 days' oder 'last monday'. Nur zusammen mit --purge verwendbar. |
+| `--list-tags` |  | Listet alle verfügbaren Tags auf |
+| `--list-ids` |  | Listet alle verfügbaren IDs auf |
+| `--purge` |  | Erzwingt das Löschen der Cache-Einträge, sodass die angegebenen Einträge physisch entfernt werden (nützlich, um Speicherplatz zu sparen). Zusammen mit den Optionen clear-* verwendet. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

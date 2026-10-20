@@ -2,14 +2,14 @@
 title: exp:ezcreatedeactivatedusergroup
 audience: developer, admin
 category: examples
-summary: Create the user group for deactivated accounts ("Deactivate and move") ahead of first use.
+summary: Legt die Benutzergruppe für deaktivierte Konten („Deaktivieren und verschieben“) schon vor der ersten Verwendung an.
 keywords: Konsole, Befehl, exp:ezcreatedeactivatedusergroup, ezcreatedeactivatedusergroup, console, command, CLI, ezcreatedeactivatedusergroup.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezcreatedeactivatedusergroup
 
-Create the user group for deactivated accounts ("Deactivate and move") ahead of first use.
+Legt die Benutzergruppe für deaktivierte Konten („Deaktivieren und verschieben“) schon vor der ersten Verwendung an.
 
 Skript `bin/php/ezcreatedeactivatedusergroup.php`, Code in `kernel/private/classes/commands/ezcreatedeactivatedusergroup.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -34,9 +34,9 @@ A dry run unless --commit is given. Prints the node id; never writes an INI file
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--commit` |  | Create the group (without it, only say what would be done) |
-| `--name` | erforderlich | The name of the group (default: "Deactivated users" in the siteaccess language) |
-| `--section-id` | erforderlich | Put the group in this section (default: the section of the user root node) |
+| `--commit` |  | Die Gruppe anlegen (ohne die Option nur sagen, was getan würde) |
+| `--name` | erforderlich | Der Name der Gruppe (Standard: "Deactivated users" in der Sprache des Siteaccess) |
+| `--section-id` | erforderlich | Die Gruppe in diese Sektion legen (Standard: die Sektion des Wurzelknotens der Benutzer) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

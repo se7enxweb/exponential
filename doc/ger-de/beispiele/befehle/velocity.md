@@ -22,14 +22,14 @@ php bin/php/velocity.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--json` |  | Report as JSON, for a caller that is not a person |
+| `--json` |  | Als JSON berichten, für einen Aufrufer, der kein Mensch ist |
 | `--keep-global` | erforderlich | More globals to keep between requests (comma-separated), appended to the built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command |
 | `--engine` | erforderlich | php, frankenphp or qbix -- or several, comma-separated -- for this command only, instead of [ServerSettings] Engine |
 | `--from` | erforderlich | install: take the binary from this file instead of downloading it (still verified) |
-| `--force` |  | install: download again even if the binary is already there |
-| `--check` |  | install: re-hash the installed binary against its SHA-256 |
+| `--force` |  | install: erneut herunterladen, auch wenn die Binärdatei schon da ist |
+| `--check` |  | install: den Hash der installierten Binärdatei erneut gegen ihre SHA-256 prüfen |
 | `--trust-github-digest` |  | install: with no Sha256 pinned for the version, accept the digest GitHub publishes for the release |
-| `--all` |  | start, stop, restart, graceful, kill or status every engine, one after the other |
+| `--all` |  | start, stop, restart, graceful, kill oder status für jede Engine, eine nach der anderen |
 | `--https` |  |  |
 | `--no-https` |  |  |
 | `--rebuild-phar` |  | start, restart, graceful, deploy: rebuild the engine archive even when it is current |

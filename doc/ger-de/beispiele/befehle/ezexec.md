@@ -2,14 +2,14 @@
 title: exp:ezexec
 audience: developer, admin
 category: examples
-summary: "Run a PHP script with the Exponential bootstrap done: ezexec.php myscript.php."
+summary: "Führt ein PHP-Skript nach dem Bootstrap von Exponential aus: ezexec.php myscript.php."
 keywords: Konsole, Befehl, exp:ezexec, ezexec, console, command, CLI, ezexec.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezexec
 
-Run a PHP script with the Exponential bootstrap done: ezexec.php myscript.php.
+Führt ein PHP-Skript nach dem Bootstrap von Exponential aus: ezexec.php myscript.php.
 
 Skript `bin/php/ezexec.php`, Code in `kernel/private/classes/commands/ezexec.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

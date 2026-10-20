@@ -2,14 +2,14 @@
 title: exp:exprepair
 audience: developer, admin
 category: examples
-summary: "Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run."
+summary: "Reparaturwarteschlange der Fehlerseite für fehlende Bibliotheken: --create-key, --disable, --status, --run."
 keywords: Konsole, Befehl, exp:exprepair, exprepair, console, command, CLI, exprepair.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:exprepair
 
-Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run.
+Reparaturwarteschlange der Fehlerseite für fehlende Bibliotheken: --create-key, --disable, --status, --run.
 
 Skript `bin/php/exprepair.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

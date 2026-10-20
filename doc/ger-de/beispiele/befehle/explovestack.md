@@ -2,14 +2,14 @@
 title: exp:explovestack
 audience: developer, admin
 category: examples
-summary: Check an installation coming from LoveStack (read-only), and record its database as Exponential's (migrate).
+summary: Prüft eine von LoveStack kommende Installation (nur lesend) und trägt ihre Datenbank als die von Exponential ein (migrate).
 keywords: Konsole, Befehl, exp:explovestack, explovestack, console, command, CLI, explovestack.php, exp:lovestack
 type: generated
 generated: exp:help:examples
 ---
 # exp:explovestack
 
-Check an installation coming from LoveStack (read-only), and record its database as Exponential's (migrate).
+Prüft eine von LoveStack kommende Installation (nur lesend) und trägt ihre Datenbank als die von Exponential ein (migrate).
 
 Skript `bin/php/explovestack.php`, Code in `kernel/private/classes/commands/explovestack.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -53,8 +53,8 @@ Guide: doc/eng-us/guides/upgrading.md (Coming from LoveStack)
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--json` |  | Ein JSON-Objekt statt des Textes |
-| `--dry-run` |  | migrate: print what would be written, write nothing (the default) |
-| `--apply` |  | migrate: write the two ezsite_data rows |
+| `--dry-run` |  | migrate: ausgeben, was geschrieben würde, nichts schreiben (der Standard) |
+| `--apply` |  | migrate: die zwei Zeilen in ezsite_data schreiben |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

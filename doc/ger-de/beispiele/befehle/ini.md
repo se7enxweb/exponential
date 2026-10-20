@@ -2,14 +2,14 @@
 title: exp:ini
 audience: developer, admin
 category: examples
-summary: "Read and change INI settings in every scope: get, set, add, rem, clear, toggle, copy, move, where, list, scopes."
+summary: "INI-Einstellungen in jedem Bereich lesen und ändern: get, set, add, rem, clear, toggle, copy, move, where, list, scopes."
 keywords: Konsole, Befehl, exp:ini, ini, console, command, CLI, ini.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ini
 
-Read and change INI settings in every scope: get, set, add, rem, clear, toggle, copy, move, where, list, scopes.
+INI-Einstellungen in jedem Bereich lesen und ändern: get, set, add, rem, clear, toggle, copy, move, where, list, scopes.
 
 Skript `bin/php/ini.php`, Code in `kernel/private/classes/commands/ini.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

@@ -50,38 +50,38 @@ Exit code: 0 something listed or found, 1 nothing found, 2 error.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--list` |  | List the log files the viewer may open, by group, with size, time and lines a minute |
+| `--list` |  | Die Logdateien, die der Viewer öffnen darf, nach Gruppe auflisten, mit Größe, Zeit und Zeilen pro Minute |
 | `--archives` |  | Die rotierbaren Logs mit ihren Archiven (.1 .. .N, .gz), Größen und Grenzen auflisten |
-| `--rotate` | erforderlich | Rotate these logs now, whatever their size: keys (error,debug,site-storage) or ids (var/log/error.log), comma separated |
-| `--rotate-all` |  | Rotate every log over its MaxSize (with --force: every log that is not empty) |
-| `--force` |  | With --rotate-all: also the logs under their MaxSize |
-| `--prune` | optional | Remove the archives beyond the limits (Keep, MaxAgeDays): of every log, or of these keys |
+| `--rotate` | erforderlich | Diese Logs jetzt rotieren, unabhängig von ihrer Größe: Schlüssel (error,debug,site-storage) oder IDs (var/log/error.log), durch Kommas getrennt |
+| `--rotate-all` |  | Jedes Log über seiner MaxSize rotieren (mit --force: jedes Log, das nicht leer ist) |
+| `--force` |  | Mit --rotate-all: auch die Logs unter ihrer MaxSize |
+| `--prune` | optional | Die Archive über die Grenzen (Keep, MaxAgeDays) hinaus entfernen: von jedem Log oder von diesen Schlüsseln |
 | `--days` | erforderlich | Mit --prune: Archive entfernen, die älter als so viele Tage sind, statt MaxAgeDays |
 | `--compress` | optional | Die unkomprimierten Archive ab .2 komprimieren: von jedem Log oder von diesen Schlüsseln |
-| `--truncate` | erforderlich | Empty these logs: rotate them (the content stays in .1), or with --in-place empty the file itself |
-| `--in-place` |  | With --truncate: empty the file in place, keeping no copy |
+| `--truncate` | erforderlich | Diese Logs leeren: sie rotieren (der Inhalt bleibt in .1) oder mit --in-place die Datei selbst leeren |
+| `--in-place` |  | Mit --truncate: die Datei an Ort und Stelle leeren, ohne Kopie |
 | `--dry-run` |  | Mit --rotate, --rotate-all, --prune, --compress oder --truncate: nur den Plan ausgeben |
-| `--tail` | erforderlich | The last entries of a file (its path relative to the root, e.g. var/log/error.log) |
-| `--lines` | erforderlich | With --tail: how many entries (default 20) |
-| `--follow` |  | With --tail: go on printing what the file gains, polling with backoff (Ctrl-C ends) |
-| `--interval` | erforderlich | With --follow: the shortest poll interval in milliseconds (default [TailSettings] PollInterval) |
-| `--search` | erforderlich | Search for a text (literal, or a regular expression with --regex) |
-| `--regex` |  | With --search: the text is a regular expression (bounded by [SearchSettings] BacktrackLimit and TimeLimit) |
+| `--tail` | erforderlich | Die letzten Einträge einer Datei (ihr Pfad relativ zum Wurzelverzeichnis, z. B. var/log/error.log) |
+| `--lines` | erforderlich | Mit --tail: wie viele Einträge (Standard 20) |
+| `--follow` |  | Mit --tail: weiter ausgeben, was zur Datei hinzukommt, mit zunehmendem Abfrageintervall (Strg-C beendet) |
+| `--interval` | erforderlich | Mit --follow: das kürzeste Abfrageintervall in Millisekunden (Standard [TailSettings] PollInterval) |
+| `--search` | erforderlich | Nach einem Text suchen (wörtlich oder als regulärer Ausdruck mit --regex) |
+| `--regex` |  | Mit --search: der Text ist ein regulärer Ausdruck (begrenzt durch [SearchSettings] BacktrackLimit und TimeLimit) |
 | `--case` |  | Mit --search: Groß- und Kleinschreibung beachten |
-| `--file` | erforderlich | With --search: the file (default: [LogViewerSettings] DefaultFile) |
-| `--scope` | erforderlich | With --search: file (default), kernel (every kernel log) or all (every file listed) |
-| `--rotations` |  | With --search: the rotations (.1 .. .N, .gz) too |
-| `--level` | erforderlich | Only these levels: error,warning,notice,debug |
-| `--from` | erforderlich | Only entries at or after this time (e.g. 2026-10-17 01:00) |
-| `--to` | erforderlich | Only entries at or before this time (a date alone means the whole day) |
-| `--sa` | erforderlich | Only entries of this siteaccess |
-| `--uri` | erforderlich | Only entries whose request contains this text |
-| `--ip` | erforderlich | Only entries whose client address starts with this |
+| `--file` | erforderlich | Mit --search: die Datei (Standard: [LogViewerSettings] DefaultFile) |
+| `--scope` | erforderlich | Mit --search: file (Standard), kernel (jedes Kernel-Log) oder all (jede aufgeführte Datei) |
+| `--rotations` |  | Mit --search: auch die Rotationen (.1 .. .N, .gz) |
+| `--level` | erforderlich | Nur diese Stufen: error,warning,notice,debug |
+| `--from` | erforderlich | Nur Einträge zu oder nach diesem Zeitpunkt (z. B. 2026-10-17 01:00) |
+| `--to` | erforderlich | Nur Einträge zu oder vor diesem Zeitpunkt (ein Datum allein bedeutet den ganzen Tag) |
+| `--sa` | erforderlich | Nur Einträge dieses Siteaccess |
+| `--uri` | erforderlich | Nur Einträge, deren Anfrage diesen Text enthält |
+| `--ip` | erforderlich | Nur Einträge, deren Client-Adresse damit beginnt |
 | `--cursor` | erforderlich | Mit --search: dort weitermachen, wo eine frühere Suche aufgehört hat (ausgegeben als "More: --cursor=...") |
-| `--limit` | erforderlich | With --search: print at most this many entries |
-| `--reference` | erforderlich | Find an error reference (ERR-XXXXXXXXXX) in the kernel logs and their rotations, with its request |
-| `--related` | erforderlich | The lines of the same request as the entry at <file>:<offset> |
-| `--unmask` |  | Show e-mail addresses, IP addresses and secrets unmasked (the values of secret settings stay hidden) |
+| `--limit` | erforderlich | Mit --search: höchstens so viele Einträge ausgeben |
+| `--reference` | erforderlich | Eine Fehlerreferenz (ERR-XXXXXXXXXX) in den Kernel-Logs und ihren Rotationen finden, mit ihrer Anfrage |
+| `--related` | erforderlich | Die Zeilen derselben Anfrage wie der Eintrag bei <file>:<offset> |
+| `--unmask` |  | E-Mail-Adressen, IP-Adressen und Geheimnisse unmaskiert zeigen (die Werte geheimer Einstellungen bleiben verborgen) |
 | `--json` |  | Ein JSON-Objekt statt des Textes |
 | `--color` | erforderlich | Die Stufen einfärben: auto (Standard: wenn die Ausgabe ein Terminal ist), always, never |
 

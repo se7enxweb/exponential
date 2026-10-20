@@ -30,9 +30,9 @@ Processes the Exponential publishing queue
 | Option | Wert | Hilfe |
 |---|---|---|
 | `-n` |  |  |
-| `--daemon` |  | Run in the background |
+| `--daemon` |  | Im Hintergrund laufen |
 | `-p` | erforderlich |  |
-| `--pid-file` | erforderlich | PID file |
+| `--pid-file` | erforderlich | PID-Datei |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

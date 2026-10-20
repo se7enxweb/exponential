@@ -2,14 +2,14 @@
 title: exp:ezflowupgrade
 audience: developer, admin
 category: examples
-summary: Upgrade the installed ezflow packages (--to-version, --package, --url).
+summary: Aktualisiert die installierten ezflow-Pakete (--to-version, --package, --url).
 keywords: Konsole, Befehl, exp:ezflowupgrade, ezflowupgrade, console, command, CLI, ezflowupgrade.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezflowupgrade
 
-Upgrade the installed ezflow packages (--to-version, --package, --url).
+Aktualisiert die installierten ezflow-Pakete (--to-version, --package, --url).
 
 Skript `bin/php/ezflowupgrade.php`, Code in `kernel/private/classes/commands/ezflowupgrade.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,12 +22,12 @@ php bin/php/ezflowupgrade.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--to-version` | erforderlich | Specify what upgrade path to use.   available options: '1.1-0' - upgrade 1.0-0 to 1.1-0 |
-| `--repository` | erforderlich | Path to repository where unpacked(unarchived) packages are  placed. it's relative to 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]'  (default is 'var/storage/packages/eZ-systems') |
-| `--package` | erforderlich | Package(s) to install, f.e. 'ezflow_classes' |
-| `--package-dir` | erforderlich | Path to directory with packed(ezpkg) packages(default is '/tmp/ezflow')  |
-| `--url` | erforderlich | URL to download packages, f.e. 'http://packages.ez.no/Exponential/3.9'. 'package-dir' can be specified to store uploaded packages on local computer. if 'package-dir' is not specified then default dir('/tmp/ezflow') will be used. |
-| `--auto-mode` | erforderlich | [on/off]. Do not ask what to do in case of confilicts. By default is 'on' |
+| `--to-version` | erforderlich | Den zu verwendenden Upgrade-Pfad angeben.   Verfügbare Optionen: '1.1-0' - Upgrade von 1.0-0 auf 1.1-0 |
+| `--repository` | erforderlich | Pfad zum Repository, in dem die entpackten Pakete  liegen. Er ist relativ zu 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]'  (Standard ist 'var/storage/packages/eZ-systems') |
+| `--package` | erforderlich | Zu installierende(s) Paket(e), z. B. 'ezflow_classes' |
+| `--package-dir` | erforderlich | Pfad zum Verzeichnis mit gepackten (ezpkg) Paketen (Standard ist '/tmp/ezflow')  |
+| `--url` | erforderlich | URL zum Herunterladen der Pakete, z. B. 'http://packages.ez.no/Exponential/3.9'. Mit 'package-dir' können die heruntergeladenen Pakete auf dem lokalen Rechner gespeichert werden. Ohne 'package-dir' wird das Standardverzeichnis ('/tmp/ezflow') verwendet. |
+| `--auto-mode` | erforderlich | [on/off]. Bei Konflikten nicht nachfragen. Standard ist 'on' |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

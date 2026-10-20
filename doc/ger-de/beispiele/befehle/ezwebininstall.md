@@ -2,14 +2,14 @@
 title: exp:ezwebininstall
 audience: developer, admin
 category: examples
-summary: Install the ezwebin site package and configure the site.
+summary: Installiert das Seitenpaket ezwebin und konfiguriert die Website.
 keywords: Konsole, Befehl, exp:ezwebininstall, ezwebininstall, console, command, CLI, ezwebininstall.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezwebininstall
 
-Install the ezwebin site package and configure the site.
+Installiert das Seitenpaket ezwebin und konfiguriert die Website.
 
 Skript `bin/php/ezwebininstall.php`, Code in `kernel/private/classes/commands/ezwebininstall.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,13 +22,13 @@ php bin/php/ezwebininstall.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--repository` | erforderlich | Path to repository where unpacked(unarchived) packages are  placed. it's relative to 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]'  (default is 'var/storage/packages/ez_systems') |
+| `--repository` | erforderlich | Pfad zum Repository, in dem die entpackten Pakete  liegen. Er ist relativ zu 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]'  (Standard ist 'var/storage/packages/ez_systems') |
 | `--package` | erforderlich |  |
-| `--package-dir` | erforderlich | Path to directory with packed(ezpkg) packages(default is '/tmp/ezwebin')  |
-| `--url` | erforderlich | URL to download packages, f.e. 'http://packages.ez.no/Exponential/3.9'. 'package-dir' can be specified to store uploaded packages on local computer. if 'package-dir' is not specified then default dir('/tmp/ezwebin') will be used. |
-| `--admin-siteaccess` | erforderlich | Will be used as base for eZWebin admin siteaccess |
-| `--user-siteaccess` | erforderlich | Will be used as base for eZWebin user siteaccesses |
-| `--auto-mode` | erforderlich | [on/off]. Do not ask what to do in case of confilicts. By default is 'on' |
+| `--package-dir` | erforderlich | Pfad zum Verzeichnis mit gepackten (ezpkg) Paketen (Standard ist '/tmp/ezwebin')  |
+| `--url` | erforderlich | URL zum Herunterladen der Pakete, z. B. 'http://packages.ez.no/Exponential/3.9'. Mit 'package-dir' können die heruntergeladenen Pakete auf dem lokalen Rechner gespeichert werden. Ohne 'package-dir' wird das Standardverzeichnis ('/tmp/ezwebin') verwendet. |
+| `--admin-siteaccess` | erforderlich | Wird als Basis für den Administrations-Siteaccess von eZWebin verwendet |
+| `--user-siteaccess` | erforderlich | Wird als Basis für die Benutzer-Siteaccesses von eZWebin verwendet |
+| `--auto-mode` | erforderlich | [on/off]. Bei Konflikten nicht nachfragen. Standard ist 'on' |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

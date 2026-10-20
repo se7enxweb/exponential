@@ -2,14 +2,14 @@
 title: exp:ezsessiongc
 audience: developer, admin
 category: examples
-summary: Remove expired sessions as defined by site.ini [Session] SessionTimeout.
+summary: Entfernt abgelaufene Sitzungen gemäß site.ini [Session] SessionTimeout.
 keywords: Konsole, Befehl, exp:ezsessiongc, ezsessiongc, console, command, CLI, ezsessiongc.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezsessiongc
 
-Remove expired sessions as defined by site.ini [Session] SessionTimeout.
+Entfernt abgelaufene Sitzungen gemäß site.ini [Session] SessionTimeout.
 
 Skript `bin/php/ezsessiongc.php`, Code in `kernel/private/classes/commands/ezsessiongc.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

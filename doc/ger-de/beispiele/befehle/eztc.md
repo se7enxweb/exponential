@@ -2,14 +2,14 @@
 title: exp:eztc
 audience: developer, admin
 category: examples
-summary: Compile the templates of a siteaccess into the template cache (--force recompiles all).
+summary: Kompiliert die Templates eines Siteaccess in den Template-Cache (--force kompiliert alle neu).
 keywords: Konsole, Befehl, exp:eztc, eztc, console, command, CLI, eztc.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:eztc
 
-Compile the templates of a siteaccess into the template cache (--force recompiles all).
+Kompiliert die Templates eines Siteaccess in den Template-Cache (--force kompiliert alle neu).
 
 Skript `bin/php/eztc.php`, Code in `kernel/private/classes/commands/eztc.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,13 +22,13 @@ php bin/php/eztc.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--compile-directory` | erforderlich | Where to place compiled files, default is template/compiled in current cache directory |
-| `--www-dir` | erforderlich | The part before the index.php in your URL, you should supply this if you are running in non-virtualhost mode |
-| `--index-file` | erforderlich | The name of your index.php if you are running in non-virtualhost mode |
-| `--access-path` | erforderlich | Extra access path |
-| `--force` |  | Force compilation of template whether it has changed or not |
-| `--full-url` |  | Makes sure generated urls have http:// in them (i.e. global), used mainly by sites that include the Exponential HTML (e.g payment gateways) |
-| `--no-full-url` |  | Makes sure generated urls are relative to the site. (default) |
+| `--compile-directory` | erforderlich | Wohin die kompilierten Dateien gelegt werden, Standard ist template/compiled im aktuellen Cache-Verzeichnis |
+| `--www-dir` | erforderlich | Der Teil vor der index.php in Ihrer URL; geben Sie ihn an, wenn Sie im Modus ohne virtuellen Host arbeiten |
+| `--index-file` | erforderlich | Der Name Ihrer index.php, wenn Sie im Modus ohne virtuellen Host arbeiten |
+| `--access-path` | erforderlich | Zusätzlicher Zugriffspfad |
+| `--force` |  | Templates kompilieren, ob sie sich geändert haben oder nicht |
+| `--full-url` |  | Sorgt dafür, dass erzeugte URLs http:// enthalten (also global sind), vor allem für Websites, die das HTML von Exponential einbinden (z. B. Zahlungs-Gateways) |
+| `--no-full-url` |  | Sorgt dafür, dass erzeugte URLs relativ zur Website sind. (Standard) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -42,49 +42,49 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:exphelpcontent](exphelpcontent.md) | exp:help:content | Hilfe als Inhalt gepflegt: die Hilfeklassen, Sektionen, Zustände, den Baum und die Rollen anlegen (idempotent), die Themen gegen den Styleguide prüfen, das Glossar und die Themen befüllen, berichten und deinstallieren |
 | [exp:exphelpexamples](exphelpexamples.md) | exp:help:examples | Erzeugt die Referenzbeispiele der Hilfe unter doc/eng-us/examples/ aus dem Code: Template-Operatoren und -Funktionen, Fetch-Funktionen, Modulansichten, Richtlinien, INI-Einstellungen, Datentypen, Workflow-Ereignisse, Cronjobs, Konsolenbefehle und Erweiterungspunkte |
 | [exp:explogs](explogs.md) | exp:logs | Der Log-Viewer auf der Kommandozeile: die Logdateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive bereinigen |
-| [exp:exploremipsumfill](exploremipsumfill.md) | exp:loremipsum | Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text |
-| [exp:explovestack](explovestack.md) | exp:lovestack | Check an installation coming from LoveStack (read-only), and record its database as Exponential's (migrate) |
+| [exp:exploremipsumfill](exploremipsumfill.md) | exp:loremipsum | Füllt eine Übersetzung von Objekten in einer Testsprache (Lorem Ipsum, qlo-ZZ) mit Lorem-Ipsum-Text |
+| [exp:explovestack](explovestack.md) | exp:lovestack | Prüft eine von LoveStack kommende Installation (nur lesend) und trägt ihre Datenbank als die von Exponential ein (migrate) |
 | [exp:exppatterncatalogue](exppatterncatalogue.md) |  |  |
-| [exp:exprepair](exprepair.md) |  | Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run |
-| [exp:ezapplytemplate](ezapplytemplate.md) |  | Apply the template blocks found in files and write the files back (exit code 0, 1 or 2) |
+| [exp:exprepair](exprepair.md) |  | Reparaturwarteschlange der Fehlerseite für fehlende Bibliotheken: --create-key, --disable, --status, --run |
+| [exp:ezapplytemplate](ezapplytemplate.md) |  | Wendet die in Dateien gefundenen Template-Blöcke an und schreibt die Dateien zurück (Exit-Code 0, 1 oder 2) |
 | [exp:ezasynchronouspublisher](ezasynchronouspublisher.md) |  |  |
-| [exp:ezcache](ezcache.md) |  | Clear Exponential caches by tag or id (--clear-tag, --clear-id, --clear-all, --list-tags) |
-| [exp:ezcheckphptag](ezcheckphptag.md) |  | Check files for characters before the PHP start tag or after the end tag |
-| [exp:ezchecktranslation](ezchecktranslation.md) |  | Show statistics for one translation, e.g. ezchecktranslation.php ita-IT |
-| [exp:ezcontentcache](ezcontentcache.md) |  | Clear content caches of given nodes or subtrees (--clear-node, --clear-subtree) |
-| [exp:ezconvert2isbn13](ezconvert2isbn13.md) |  | Convert ISBN-10 numbers to ISBN-13 |
-| [exp:ezconvertdbcharset](ezconvertdbcharset.md) |  | Convert all Exponential database tables to use UTF-8 character set |
-| [exp:ezconvertmysqltabletype](ezconvertmysqltabletype.md) |  | Convert the tables of a MySQL database to another table type (--list, --newtype=TYPE) |
-| [exp:ezcreatedeactivatedusergroup](ezcreatedeactivatedusergroup.md) |  | Create the user group for deactivated accounts ("Deactivate and move") ahead of first use |
-| [exp:ezcsvexport](ezcsvexport.md) |  | Export the subtree below a node to one CSV file per content class (--storage-dir) |
-| [exp:ezcsvimport](ezcsvimport.md) |  | Import content objects of a class below a node from a CSV file (--class, --creator) |
-| [exp:ezexec](ezexec.md) |  | Run a PHP script with the Exponential bootstrap done: ezexec.php myscript.php |
-| [exp:ezflowupgrade](ezflowupgrade.md) |  | Upgrade the installed ezflow packages (--to-version, --package, --url) |
-| [exp:ezgeneratetranslationcache](ezgeneratetranslationcache.md) |  | Generate translation cache files (--ts-list limits it to the given translations) |
-| [exp:ezimportdbafile](ezimportdbafile.md) |  | Import the dba data of a datatype into the database (--datatype=ezisbn) |
-| [exp:ezpgenerateautoloads](ezpgenerateautoloads.md) |  | Generate the class autoload arrays: kernel (-k), kernel overrides (-o), extensions (-e) |
-| [exp:ezpublishingbenchmark](ezpublishingbenchmark.md) |  | Benchmark parallel publishing in concurrent batches (--batches-count, -l level) |
-| [exp:ezrequestrules](ezrequestrules.md) |  | List and check the request rules of a siteaccess and explain their decision for an address |
-| [exp:ezsessiongc](ezsessiongc.md) |  | Remove expired sessions as defined by site.ini [Session] SessionTimeout |
-| [exp:ezsqldiff](ezsqldiff.md) |  | Show the differences between two database schemas; the exit code tells if they differ |
-| [exp:ezsqldumpisbndata](ezsqldumpisbndata.md) |  | Dump the ISBN group and range tables as SQL to a file or standard output |
-| [exp:ezsqldumpschema](ezsqldumpschema.md) |  | Dump the database schema to a file or standard output (--type, --user) |
-| [exp:ezsqlinsertschema](ezsqlinsertschema.md) |  | Insert a database schema and data from a .dba file into a database (--type, --user) |
-| [exp:ezsubtreecopy](ezsubtreecopy.md) |  | Copy a content subtree to a new location (--src-node-id, --dst-node-id) |
-| [exp:ezsubtreeremove](ezsubtreeremove.md) |  | Remove content subtrees by node ID, to the trash unless --ignore-trash is given |
-| [exp:eztc](eztc.md) |  | Compile the templates of a siteaccess into the template cache (--force recompiles all) |
-| [exp:eztemplatecheck](eztemplatecheck.md) |  | Check the syntax of the templates of a siteaccess or of a design directory |
-| [exp:ezwebincommon](ezwebincommon.md) |  | Helper library of ezwebininstall and ezwebinupgrade, not meant to be run directly |
-| [exp:ezwebininstall](ezwebininstall.md) |  | Install the ezwebin site package and configure the site |
-| [exp:ezwebinupgrade](ezwebinupgrade.md) |  | Upgrade an existing ezwebin installation to the current package version (--to-version) |
-| [exp:flatten](flatten.md) |  | Remove unused data from the database: contentobject, contentclass, workflow, role or all |
-| [exp:frankenphp](frankenphp.md) | exp:fp | Control the FrankenPHP engine of the Exponential web server |
-| [exp:i18n](i18n.md) |  | The translation fallbacks: per locale the chain of translations it falls back to, and how much of the kernel and of each extension it shows translated; --check for CI |
-| [exp:ini](ini.md) |  | Read and change INI settings in every scope: get, set, add, rem, clear, toggle, copy, move, where, list, scopes |
-| [exp:install](install.md) | exp:names | One-command installation, SQLite by default, no kickstart.ini needed |
-| [exp:kickstarter](kickstarter.md) |  | Kickstarter runner. Supports "ini" generation and full "run" setup subcommands |
-| [exp:mailbounces](mailbounces.md) | exp:mail:bounces | Read the bounce mailbox: hard bounces and spam complaints go on the suppression list |
-| [exp:mailconsent](mailconsent.md) | exp:mail:consent | The consent log of the e-mail preferences: list, export as CSV, retention cleanup |
+| [exp:ezcache](ezcache.md) |  | Leert die Caches von Exponential nach Tag oder ID (--clear-tag, --clear-id, --clear-all, --list-tags) |
+| [exp:ezcheckphptag](ezcheckphptag.md) |  | Prüft Dateien auf Zeichen vor dem PHP-Start-Tag oder nach dem End-Tag |
+| [exp:ezchecktranslation](ezchecktranslation.md) |  | Zeigt Statistiken zu einer Übersetzung, z. B. ezchecktranslation.php ita-IT |
+| [exp:ezcontentcache](ezcontentcache.md) |  | Leert die Inhalts-Caches der angegebenen Knoten oder Teilbäume (--clear-node, --clear-subtree) |
+| [exp:ezconvert2isbn13](ezconvert2isbn13.md) |  | Wandelt ISBN-10-Nummern in ISBN-13 um |
+| [exp:ezconvertdbcharset](ezconvertdbcharset.md) |  | Stellt alle Datenbanktabellen von Exponential auf den Zeichensatz UTF-8 um |
+| [exp:ezconvertmysqltabletype](ezconvertmysqltabletype.md) |  | Wandelt die Tabellen einer MySQL-Datenbank in einen anderen Tabellentyp um (--list, --newtype=TYPE) |
+| [exp:ezcreatedeactivatedusergroup](ezcreatedeactivatedusergroup.md) |  | Legt die Benutzergruppe für deaktivierte Konten („Deaktivieren und verschieben“) schon vor der ersten Verwendung an |
+| [exp:ezcsvexport](ezcsvexport.md) |  | Exportiert den Teilbaum unter einem Knoten in eine CSV-Datei pro Inhaltsklasse (--storage-dir) |
+| [exp:ezcsvimport](ezcsvimport.md) |  | Importiert Inhaltsobjekte einer Klasse unter einen Knoten aus einer CSV-Datei (--class, --creator) |
+| [exp:ezexec](ezexec.md) |  | Führt ein PHP-Skript nach dem Bootstrap von Exponential aus: ezexec.php myscript.php |
+| [exp:ezflowupgrade](ezflowupgrade.md) |  | Aktualisiert die installierten ezflow-Pakete (--to-version, --package, --url) |
+| [exp:ezgeneratetranslationcache](ezgeneratetranslationcache.md) |  | Erzeugt die Cache-Dateien der Übersetzungen (--ts-list beschränkt es auf die angegebenen Übersetzungen) |
+| [exp:ezimportdbafile](ezimportdbafile.md) |  | Importiert die dba-Daten eines Datentyps in die Datenbank (--datatype=ezisbn) |
+| [exp:ezpgenerateautoloads](ezpgenerateautoloads.md) |  | Erzeugt die Autoload-Arrays der Klassen: Kernel (-k), Kernel-Overrides (-o), Erweiterungen (-e) |
+| [exp:ezpublishingbenchmark](ezpublishingbenchmark.md) |  | Misst paralleles Veröffentlichen in gleichzeitigen Stapeln (--batches-count, -l level) |
+| [exp:ezrequestrules](ezrequestrules.md) |  | Listet und prüft die Anfrageregeln eines Siteaccess und erklärt ihre Entscheidung für eine Adresse |
+| [exp:ezsessiongc](ezsessiongc.md) |  | Entfernt abgelaufene Sitzungen gemäß site.ini [Session] SessionTimeout |
+| [exp:ezsqldiff](ezsqldiff.md) |  | Zeigt die Unterschiede zwischen zwei Datenbankschemata; der Exit-Code sagt, ob sie sich unterscheiden |
+| [exp:ezsqldumpisbndata](ezsqldumpisbndata.md) |  | Schreibt die ISBN-Gruppen- und -Bereichstabellen als SQL in eine Datei oder auf die Standardausgabe |
+| [exp:ezsqldumpschema](ezsqldumpschema.md) |  | Schreibt das Datenbankschema in eine Datei oder auf die Standardausgabe (--type, --user) |
+| [exp:ezsqlinsertschema](ezsqlinsertschema.md) |  | Fügt ein Datenbankschema und Daten aus einer .dba-Datei in eine Datenbank ein (--type, --user) |
+| [exp:ezsubtreecopy](ezsubtreecopy.md) |  | Kopiert einen Teilbaum von Inhalten an einen neuen Ort (--src-node-id, --dst-node-id) |
+| [exp:ezsubtreeremove](ezsubtreeremove.md) |  | Entfernt Teilbäume von Inhalten nach Knoten-ID, in den Papierkorb, außer --ignore-trash ist angegeben |
+| [exp:eztc](eztc.md) |  | Kompiliert die Templates eines Siteaccess in den Template-Cache (--force kompiliert alle neu) |
+| [exp:eztemplatecheck](eztemplatecheck.md) |  | Prüft die Syntax der Templates eines Siteaccess oder eines Design-Verzeichnisses |
+| [exp:ezwebincommon](ezwebincommon.md) |  | Hilfsbibliothek von ezwebininstall und ezwebinupgrade, nicht zum direkten Ausführen gedacht |
+| [exp:ezwebininstall](ezwebininstall.md) |  | Installiert das Seitenpaket ezwebin und konfiguriert die Website |
+| [exp:ezwebinupgrade](ezwebinupgrade.md) |  | Aktualisiert eine vorhandene ezwebin-Installation auf die aktuelle Paketversion (--to-version) |
+| [exp:flatten](flatten.md) |  | Entfernt ungenutzte Daten aus der Datenbank: contentobject, contentclass, workflow, role oder all |
+| [exp:frankenphp](frankenphp.md) | exp:fp | Steuert die FrankenPHP-Engine des Exponential-Webservers |
+| [exp:i18n](i18n.md) |  | Die Übersetzungs-Fallbacks: pro Locale die Kette der Übersetzungen, auf die sie zurückfällt, und wie viel vom Kernel und von jeder Erweiterung übersetzt angezeigt wird; --check für CI |
+| [exp:ini](ini.md) |  | INI-Einstellungen in jedem Bereich lesen und ändern: get, set, add, rem, clear, toggle, copy, move, where, list, scopes |
+| [exp:install](install.md) | exp:names | Installation mit einem Befehl, standardmäßig mit SQLite, ohne kickstart.ini |
+| [exp:kickstarter](kickstarter.md) |  | Kickstarter-Runner. Unterstützt die Unterbefehle "ini" zum Erzeugen und "run" für die vollständige Einrichtung |
+| [exp:mailbounces](mailbounces.md) | exp:mail:bounces | Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste |
+| [exp:mailconsent](mailconsent.md) | exp:mail:consent | Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen |
 | [exp:mailgate](mailgate.md) | exp:mail:gate | Test the mail gate: who of the given addresses would get a mail of a category, and what the decorated mail looks like |
 | [exp:mailpreferences](mailpreferences.md) | exp:mail:preferences | Show and change the e-mail preferences of a user or an address: categories, master switch, frequency, export, erase |
 | [exp:mailstatus](mailstatus.md) | exp:mail:status | Show the e-mail preference system: tables, gate, footer, categories, suppression, consent log, the gate's last decisions and problems |

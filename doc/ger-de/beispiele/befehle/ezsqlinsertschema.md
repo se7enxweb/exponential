@@ -2,14 +2,14 @@
 title: exp:ezsqlinsertschema
 audience: developer, admin
 category: examples
-summary: Insert a database schema and data from a .dba file into a database (--type, --user).
+summary: Fügt ein Datenbankschema und Daten aus einer .dba-Datei in eine Datenbank ein (--type, --user).
 keywords: Konsole, Befehl, exp:ezsqlinsertschema, ezsqlinsertschema, console, command, CLI, ezsqlinsertschema.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezsqlinsertschema
 
-Insert a database schema and data from a .dba file into a database (--type, --user).
+Fügt ein Datenbankschema und Daten aus einer .dba-Datei in eine Datenbank ein (--type, --user).
 
 Skript `bin/php/ezsqlinsertschema.php`, Code in `kernel/private/classes/commands/ezsqlinsertschema.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

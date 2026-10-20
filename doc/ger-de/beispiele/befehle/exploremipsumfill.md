@@ -2,14 +2,14 @@
 title: exp:exploremipsumfill
 audience: developer, admin
 category: examples
-summary: Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text.
+summary: Füllt eine Übersetzung von Objekten in einer Testsprache (Lorem Ipsum, qlo-ZZ) mit Lorem-Ipsum-Text.
 keywords: Konsole, Befehl, exp:exploremipsumfill, exploremipsumfill, console, command, CLI, exploremipsumfill.php, exp:loremipsum
 type: generated
 generated: exp:help:examples
 ---
 # exp:exploremipsumfill
 
-Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text.
+Füllt eine Übersetzung von Objekten in einer Testsprache (Lorem Ipsum, qlo-ZZ) mit Lorem-Ipsum-Text.
 
 Skript `bin/php/exploremipsumfill.php`, Code in `kernel/private/classes/commands/exploremipsumfill.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -43,7 +43,7 @@ Guide: doc/eng-us/guides/test-language-lorem-ipsum.md
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--language` | erforderlich | the test language to fill (default:  |
+| `--language` | erforderlich | die zu füllende Testsprache (Standard:  |
 | `--from` | erforderlich |  |
 | `--subtree` | erforderlich |  |
 | `--limit` | erforderlich |  |

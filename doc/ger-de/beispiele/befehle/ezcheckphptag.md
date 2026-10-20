@@ -2,14 +2,14 @@
 title: exp:ezcheckphptag
 audience: developer, admin
 category: examples
-summary: Check files for characters before the PHP start tag or after the end tag.
+summary: Prüft Dateien auf Zeichen vor dem PHP-Start-Tag oder nach dem End-Tag.
 keywords: Konsole, Befehl, exp:ezcheckphptag, ezcheckphptag, console, command, CLI, ezcheckphptag.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezcheckphptag
 
-Check files for characters before the PHP start tag or after the end tag.
+Prüft Dateien auf Zeichen vor dem PHP-Start-Tag oder nach dem End-Tag.
 
 Skript `bin/php/ezcheckphptag.php`, Code in `kernel/private/classes/commands/ezcheckphptag.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,7 +22,7 @@ php bin/php/ezcheckphptag.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--no-print` |  | Do not print path for bad files |
+| `--no-print` |  | Den Pfad fehlerhafter Dateien nicht ausgeben |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

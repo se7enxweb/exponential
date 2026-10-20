@@ -2,14 +2,14 @@
 title: exp:ezcontentcache
 audience: developer, admin
 category: examples
-summary: Clear content caches of given nodes or subtrees (--clear-node, --clear-subtree).
+summary: Leert die Inhalts-Caches der angegebenen Knoten oder Teilbäume (--clear-node, --clear-subtree).
 keywords: Konsole, Befehl, exp:ezcontentcache, ezcontentcache, console, command, CLI, ezcontentcache.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezcontentcache
 
-Clear content caches of given nodes or subtrees (--clear-node, --clear-subtree).
+Leert die Inhalts-Caches der angegebenen Knoten oder Teilbäume (--clear-node, --clear-subtree).
 
 Skript `bin/php/ezcontentcache.php`, Code in `kernel/private/classes/commands/ezcontentcache.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

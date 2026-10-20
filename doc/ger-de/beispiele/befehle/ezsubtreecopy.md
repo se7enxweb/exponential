@@ -2,14 +2,14 @@
 title: exp:ezsubtreecopy
 audience: developer, admin
 category: examples
-summary: Copy a content subtree to a new location (--src-node-id, --dst-node-id).
+summary: Kopiert einen Teilbaum von Inhalten an einen neuen Ort (--src-node-id, --dst-node-id).
 keywords: Konsole, Befehl, exp:ezsubtreecopy, ezsubtreecopy, console, command, CLI, ezsubtreecopy.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezsubtreecopy
 
-Copy a content subtree to a new location (--src-node-id, --dst-node-id).
+Kopiert einen Teilbaum von Inhalten an einen neuen Ort (--src-node-id, --dst-node-id).
 
 Skript `bin/php/ezsubtreecopy.php`, Code in `kernel/private/classes/commands/ezsubtreecopy.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,11 +22,11 @@ php bin/php/ezsubtreecopy.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--src-node-id` | erforderlich | Source subtree parent node ID. |
-| `--dst-node-id` | erforderlich | Destination node ID. |
-| `--all-versions` |  | Copy all versions for each contentobject being copied. |
-| `--keep-creator` |  | Do not change the creator (user) for the copied content objects. |
-| `--keep-time` |  | Do not change the creation and modification time of the copied content objects. |
+| `--src-node-id` | erforderlich | ID des Elternknotens des Quell-Teilbaums. |
+| `--dst-node-id` | erforderlich | ID des Zielknotens. |
+| `--all-versions` |  | Alle Versionen jedes kopierten Inhaltsobjekts kopieren. |
+| `--keep-creator` |  | Den Ersteller (Benutzer) der kopierten Inhaltsobjekte nicht ändern. |
+| `--keep-time` |  | Die Zeitpunkte der Erstellung und Änderung der kopierten Inhaltsobjekte nicht ändern. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

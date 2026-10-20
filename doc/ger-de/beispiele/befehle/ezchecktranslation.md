@@ -2,14 +2,14 @@
 title: exp:ezchecktranslation
 audience: developer, admin
 category: examples
-summary: Show statistics for one translation, e.g. ezchecktranslation.php ita-IT.
+summary: Zeigt Statistiken zu einer Übersetzung, z. B. ezchecktranslation.php ita-IT.
 keywords: Konsole, Befehl, exp:ezchecktranslation, ezchecktranslation, console, command, CLI, ezchecktranslation.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezchecktranslation
 
-Show statistics for one translation, e.g. ezchecktranslation.php ita-IT.
+Zeigt Statistiken zu einer Übersetzung, z. B. ezchecktranslation.php ita-IT.
 
 Skript `bin/php/ezchecktranslation.php`, Code in `kernel/private/classes/commands/ezchecktranslation.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,7 +22,7 @@ php bin/php/ezchecktranslation.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--ignore-tr-setup` |  | Tells the analyzer to skip all translations regarding the setup |
+| `--ignore-tr-setup` |  | Lässt den Analysator alle Übersetzungen zum Setup überspringen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

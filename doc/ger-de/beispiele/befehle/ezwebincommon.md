@@ -2,14 +2,14 @@
 title: exp:ezwebincommon
 audience: developer, admin
 category: examples
-summary: Helper library of ezwebininstall and ezwebinupgrade, not meant to be run directly.
+summary: Hilfsbibliothek von ezwebininstall und ezwebinupgrade, nicht zum direkten Ausführen gedacht.
 keywords: Konsole, Befehl, exp:ezwebincommon, ezwebincommon, console, command, CLI, ezwebincommon.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezwebincommon
 
-Helper library of ezwebininstall and ezwebinupgrade, not meant to be run directly.
+Hilfsbibliothek von ezwebininstall und ezwebinupgrade, nicht zum direkten Ausführen gedacht.
 
 Skript `bin/php/ezwebincommon.php`, Code in `kernel/private/classes/commands/ezwebincommon.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
