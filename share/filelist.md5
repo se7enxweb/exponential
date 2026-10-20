@@ -13,8 +13,8 @@ eaaeadb6ed4a511e060e3402ade0968b  .github/PULL_REQUEST_TEMPLATE.md
 9454f46c8c1ff874ff4bb885d4df67f6  .github/workflows/phpunit.yml
 f669c30e35503fffb2eb184e4da101b6  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
-9ae9da440bdbe3c882b160ce651bbbca  .htaccess_root
-03ef382542df17941aa891033089b79c  .htaccess_root_static
+fe07d4527019a2f7527aba8b09d4634c  .htaccess_root
+f8ebd7798cfaece1003ad797351f7bb2  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 fa808e242d7ab7dae38a7ab71c7fce44  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
@@ -14772,6 +14772,7 @@ cb34401be4cee0b728449535cc448c34  tests/tests/design/AdminContentJobScriptsTest.
 5aeca4b5fc05720233ceaad27620f27e  tests/tests/design/AdminEditConflictNewDraftTest.php
 2e45f4f6c49a009cc6d2ed32e774ca45  tests/tests/design/AdminEditorSkinTest.php
 eb340386c58d8d50d11b4e7b20a4c11d  tests/tests/design/AdminEnvironmentBadgeTest.php
+9593865d8992f92cdd6814ce39838d3d  tests/tests/design/AdminExtensionIconsRewriteTest.php
 4833a54303e0502e9eb97275b8aeb4aa  tests/tests/design/AdminFiles.php
 a732e808d64b9a5a30633dd745cae6fe  tests/tests/design/AdminFirstPaintColumnsTest.php
 4b31a7a7ec21e2ea903b0dad5a5d9045  tests/tests/design/AdminFontStackTest.php
