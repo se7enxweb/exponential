@@ -605,7 +605,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     public function testTheActionsWork()
     {
         $c = $this->harness( 'csp_actions.js', 'design/admin4/javascript/a4_actions.js' );
-        $this->assertCount( 10, $c );
+        $this->assertCount( 11, $c );
         $this->assertSame( array( 'Remove?', 'Remove?' ), $c['confirm link']['asked'] );
         $this->assertTrue( $c['confirm link']['cancelledPrevented'] );
         $this->assertFalse( $c['confirm link']['confirmedPrevented'] );
@@ -623,6 +623,9 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $c['dismiss']['named'] );
         $this->assertSame( array( 'f' ), $c['change']['submitted'] );
         $this->assertSame( '/setup/info', $c['change']['location'] );
+        // an address that is not of this site is not followed: javascript:, data:, another host, protocol-relative
+        $this->assertSame( array( 'javascript' => null, 'data' => null, 'other host' => null, 'protocol-relative' => null,
+                                  'absolute site' => 'https://admin.example/setup/info' ), $c['navigate refused']['seen'] );
         $this->assertSame( '0', $c['change']['reset'] );
         // data-a4-print and data-a4-disable-on-submit are gone: a click on them is an ordinary click
         $this->assertSame( array( 'prints' => 0, 'prevented' => false, 'timers' => 0, 'sent' => 1 ),

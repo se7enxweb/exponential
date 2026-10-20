@@ -24,6 +24,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     /** The designs whose copies of the menu script and its openers are kept identical */
     const SCRIPT_COPIES = array(
         'javascript/popupmenu/ezpopupmenu.js',
+        'javascript/a4_url.js',
         'javascript/contentstructuremenu_dynamic.js',
         'javascript/ezajaxsubitems_expdatatable.js',
         'templates/contentstructuremenu/show_content_structure.tpl',

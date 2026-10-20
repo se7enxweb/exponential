@@ -940,7 +940,8 @@
             return;
         if ( ev )
             ev.preventDefault();
-        window.location.href = href;
+        if ( window.a4SafeURL && window.a4SafeURL( href, 'setup_logs' ) )
+            window.location.href = href;
     };
     if ( picker )
         picker.addEventListener( 'change', function () { openPicked( null ); } );

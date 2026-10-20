@@ -53,11 +53,25 @@ class AdminContentJobScriptsTest extends PHPUnit\Framework\TestCase
         return $cases;
     }
 
+    /** The finished job's address is followed only when it is of this site; otherwise the link keeps its own address */
+    public function testTheFinishedJobFollowsOnlyAddressesOfTheSite()
+    {
+        $c = $this->harness( 'content_job.js', 'design/admin4/javascript/page/content_job.js' );
+        $this->assertSame( '/content/view/full/2', $c['redirect site']['href'] );
+        $this->assertSame( 0, $c['redirect site']['refused'] );
+        foreach ( array( 'javascript', 'data', 'other host', 'protocol-relative' ) as $case )
+        {
+            $this->assertSame( '/x', $c["redirect $case"]['href'], "$case: the page goes to the link's own address" );
+            $this->assertSame( '/x', $c["redirect $case"]['link'], $case );
+            $this->assertSame( 1, $c["redirect $case"]['refused'], "$case: refused with a console error" );
+        }
+    }
+
     /** CJS-01 */
     public function testTheProgressPageStopsWhenItCannotGoOn()
     {
         $c = $this->harness( 'content_job.js', 'design/admin4/javascript/page/content_job.js' );
-        $this->assertCount( 9, $c );
+        $this->assertCount( 14, $c );
         $this->assertSame( array( 2000 ), $c['running']['delays'], 'a running job is asked again in two seconds' );
         $this->assertSame( 'Working', $c['running']['message'] );
         foreach ( array( 'status 404', 'status 403' ) as $case )
