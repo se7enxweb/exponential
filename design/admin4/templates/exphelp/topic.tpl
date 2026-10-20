@@ -15,7 +15,10 @@
 <div class="a4-page a4-help-frame a4-help-viewer a4-help-topic{if $help_toc_items|count|lt( 2 )} is-no-toc{/if}" data-exphelp data-exphelp-i18n="{$help_i18n_json|wash}">
 
     <div class="a4-help-viewer-bar">
-        <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help start'|i18n( 'kernel/exphelp' )}</a>
+        <div class="a4-help-viewer-line" data-exphelp-line>
+            <a class="a4-btn a4-btn-ghost a4-btn-small a4-help-viewer-start" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help Start'|i18n( 'kernel/exphelp' )}</a>
+            {if and( is_set( $help_reading ), $help_reading )}{include uri='design:exphelp/parts/reading_language.tpl' reading=$help_reading prefix='exphelp-topic-reading'}{/if}
+        </div>
         <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/manual'|ezurl}><span class="a4-icon a4-bi-journal-text" aria-hidden="true"></span> {'Manuals'|i18n( 'kernel/exphelp' )}</a>
         <form class="a4-help-viewer-search a4-help-search-box" data-exphelp-search action={'exphelp/search'|ezurl} method="get" role="search" data-exphelp-endpoint={'exphelp/search'|ezurl}>
             <label class="a4-sr-only" for="exphelp-topic-q">{'Search the help'|i18n( 'kernel/exphelp' )}</label>

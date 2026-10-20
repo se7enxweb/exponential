@@ -266,7 +266,7 @@
 
 /* "Reading in: English / Deutsch" (parts/reading_language.tpl): the reader's language, a segmented switch that posts
    to uiswitch/set, and how much of the help each translation has. Centred in the dashboard's hero, at the end of
-   the viewer's bar. */
+   the line of Help Start in the bar of the help pages. */
 .a4-help-reading {
   display: flex;
   flex-wrap: wrap;
@@ -277,7 +277,15 @@
   color: var(--a4-muted);
   font-size: var(--a4-text-s);
 }
-.a4-help-viewer-bar .a4-help-reading { flex: 1 1 100%; justify-content: flex-start; margin: 0; }
+/* In the bar of the help pages it follows Help Start on one line: [Help Start] | Reading in: English | Deutsch */
+.a4-help-viewer-line .a4-help-reading {
+  justify-content: flex-start;
+  gap: var(--a4-space-1) var(--a4-space-2);
+  min-width: 0;
+  margin: 0;
+  padding-inline-start: var(--a4-space-2);
+  border-inline-start: 1px solid var(--a4-line);
+}
 .a4-help-reading-label { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
 .a4-help-reading-form { display: inline-flex; margin: 0; }
 .a4-help-reading-list {
@@ -1227,12 +1235,23 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--a4-space-2) var(--a4-space-3);
-  margin: 0 0 var(--a4-space-5);
-  padding: 0 0 var(--a4-space-3);
+  gap: var(--a4-space-1) var(--a4-space-2);
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 var(--a4-space-2);
   border-bottom: 1px solid var(--a4-line);
 }
 .a4-help-viewer-bar .a4-btn .a4-icon { flex: none; }
+/* Help Start and the language bar share one line (no row of their own); it wraps at 960px / 200% zoom */
+.a4-help-viewer-line {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-1) var(--a4-space-2);
+  min-width: 0;
+  max-width: 100%;
+}
 .a4-help-viewer-search {
   display: flex;
   flex: 1 1 18rem;
@@ -1309,7 +1328,7 @@
 }
 
 /* The page: title, summary, meta */
-.a4-help-pagehead { margin: 0 0 var(--a4-space-5); }
+.a4-help-pagehead { margin: 0 0 var(--a4-space-4); }
 .a4-help-title {
   margin: 0 0 var(--a4-space-2);
   color: var(--a4-ink);

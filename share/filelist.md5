@@ -342,7 +342,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 623c9833355a4c65569507e84d4c0a4c  design/admin/stylesheets/modules/content.css
-3224f2c0c7d0ee9691831b4cde9955e4  design/admin/stylesheets/modules/help.css
+dcce6a5a5d0718c52248b168e84e577b  design/admin/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin/stylesheets/modules/structure.css
@@ -517,10 +517,10 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 60e288bd8fb5708e034ac8c4000e36e1  design/admin/templates/error/shop/3.tpl
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
 284b503b52dee16ddf05f18534ec3441  design/admin/templates/exphelp/audience.tpl
-ffb437cd79e96f3bac654e27b6d65c6b  design/admin/templates/exphelp/contents.tpl
+a3d466f0d0a2ec8c4572f00b527c26d4  design/admin/templates/exphelp/contents.tpl
 a3e46437185403ff6fafb5936179997d  design/admin/templates/exphelp/dashboard.tpl
 4a834da224dd961a2ea82f1792e8ee66  design/admin/templates/exphelp/extensions.tpl
-8340849e0f2fcb58a872f3b27443dcc8  design/admin/templates/exphelp/manual.tpl
+9c0046ff0ef5162c7bf4a417f7d1e89b  design/admin/templates/exphelp/manual.tpl
 77db075b95942d32e2c5fed41ce61892  design/admin/templates/exphelp/parts/dashboard_about.tpl
 81d43cbd9fa957ae5d98aa0fc1897450  design/admin/templates/exphelp/parts/dashboard_brand.tpl
 2d3ab0459fb05e9f40a1a248e17ab391  design/admin/templates/exphelp/parts/dashboard_content.tpl
@@ -536,8 +536,8 @@ cffca0dbb6da2810fd346d4b1d6da4c0  design/admin/templates/exphelp/parts/license_n
 69992051147dd0f6b3dbc0892bee4fa9  design/admin/templates/exphelp/parts/viewer_toc.tpl
 09958bf7beae3141c6b62351bc073240  design/admin/templates/exphelp/report.tpl
 311642cf2a7706c742602db62039d20f  design/admin/templates/exphelp/search.tpl
-176a5dafdd17a7fbd9c72f3456e97259  design/admin/templates/exphelp/topic.tpl
-6930b6539e6171cd19634129b4129006  design/admin/templates/exphelp/viewer.tpl
+bbfad6dcf79f72b25b01f1da8973776d  design/admin/templates/exphelp/topic.tpl
+69ba6dfc1cbdb56f7dd38ed512aabbc6  design/admin/templates/exphelp/viewer.tpl
 779a3d4311505cfeb78de4b8f1ca2751  design/admin/templates/ezinfo/about.tpl
 6c10e7f9eea0fc7029c8110b0b33fb28  design/admin/templates/ezinfo/copyright.tpl
 be642b13d020aa2e44360d60c283fbc5  design/admin/templates/infocollection_validation.tpl
@@ -1078,7 +1078,7 @@ fef6201f7a8970ad72c4e5d3fc5147ce  design/admin4/stylesheets/content.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 623c9833355a4c65569507e84d4c0a4c  design/admin4/stylesheets/modules/content.css
-3224f2c0c7d0ee9691831b4cde9955e4  design/admin4/stylesheets/modules/help.css
+dcce6a5a5d0718c52248b168e84e577b  design/admin4/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin4/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin4/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin4/stylesheets/modules/structure.css
@@ -1275,10 +1275,10 @@ b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 61b4fd1fca8330170ce7e6b1425a3962  design/admin4/templates/error/shop/3.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
 284b503b52dee16ddf05f18534ec3441  design/admin4/templates/exphelp/audience.tpl
-ffb437cd79e96f3bac654e27b6d65c6b  design/admin4/templates/exphelp/contents.tpl
+a3d466f0d0a2ec8c4572f00b527c26d4  design/admin4/templates/exphelp/contents.tpl
 a3e46437185403ff6fafb5936179997d  design/admin4/templates/exphelp/dashboard.tpl
 4a834da224dd961a2ea82f1792e8ee66  design/admin4/templates/exphelp/extensions.tpl
-8340849e0f2fcb58a872f3b27443dcc8  design/admin4/templates/exphelp/manual.tpl
+9c0046ff0ef5162c7bf4a417f7d1e89b  design/admin4/templates/exphelp/manual.tpl
 77db075b95942d32e2c5fed41ce61892  design/admin4/templates/exphelp/parts/dashboard_about.tpl
 d2a1fc43b3dcd5c44608181728a04a4e  design/admin4/templates/exphelp/parts/dashboard_brand.tpl
 2d3ab0459fb05e9f40a1a248e17ab391  design/admin4/templates/exphelp/parts/dashboard_content.tpl
@@ -1294,8 +1294,8 @@ cffca0dbb6da2810fd346d4b1d6da4c0  design/admin4/templates/exphelp/parts/license_
 69992051147dd0f6b3dbc0892bee4fa9  design/admin4/templates/exphelp/parts/viewer_toc.tpl
 09958bf7beae3141c6b62351bc073240  design/admin4/templates/exphelp/report.tpl
 311642cf2a7706c742602db62039d20f  design/admin4/templates/exphelp/search.tpl
-176a5dafdd17a7fbd9c72f3456e97259  design/admin4/templates/exphelp/topic.tpl
-6930b6539e6171cd19634129b4129006  design/admin4/templates/exphelp/viewer.tpl
+bbfad6dcf79f72b25b01f1da8973776d  design/admin4/templates/exphelp/topic.tpl
+69ba6dfc1cbdb56f7dd38ed512aabbc6  design/admin4/templates/exphelp/viewer.tpl
 7deb1dc6bd320de93789f39eb322d1f4  design/admin4/templates/ezinfo/about.tpl
 6c10e7f9eea0fc7029c8110b0b33fb28  design/admin4/templates/ezinfo/copyright.tpl
 1930afe53fb5c2737daf2736356f4ca7  design/admin4/templates/infocollection_validation.tpl
@@ -15539,6 +15539,7 @@ ed1234aa427025390b186bf68774b685  tests/tests/design/AdminFormErrorsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
 a473ae5da1336c436df67200b19ab55d  tests/tests/design/AdminHeaderTest.php
 a17f98bb54f4291a2028307ea74aea7e  tests/tests/design/AdminHelpFrameClassScopeTest.php
+c239764eaf3a9faa20a382734df78387  tests/tests/design/AdminHelpLanguageLineTest.php
 73978ce4ddc17eb9990f2fe10cd2bbe0  tests/tests/design/AdminHelpScriptTest.php
 8df6b3e23c1da3aea5c7d5b745158627  tests/tests/design/AdminI18nStringTagsTest.php
 9e471e6d5c672f60a74d65b48a683e94  tests/tests/design/AdminIconsTest.php
