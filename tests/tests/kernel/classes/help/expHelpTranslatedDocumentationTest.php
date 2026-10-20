@@ -21,7 +21,7 @@
  *  TD-10  path maps (.paths.json, .dirnames.json) merge as a union: sorted, the same file whatever the order, a
  *         conflict kept from the first map and reported, a git conflict read as its two sides; directory names
  *         follow .dirnames.json
- *  TD-11  how much of the help each language has, the "Reading in" choices of the switch, and ?lang= for the original
+ *  TD-11  how much of the help each language has, the "Reading in" choices of the switch, and /(lang)/ for the original
  *  TD-12  a translated page rendered from its file reaches the images and pages of the original's directory
  *  TD-14  no tracked text file names the language directories of 6.0.14 (doc/en/us, doc/de; doc/eng-us and
  *         doc/ger-de since 6.0.15), apart from the history and the code that still answers their old addresses

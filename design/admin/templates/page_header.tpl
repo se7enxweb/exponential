@@ -50,7 +50,7 @@
     <details class="header-help-menu">
         <summary class="a4-help-context" title="{'Help menu'|i18n( 'kernel/exphelp' )|wash}"><span class="a4-icon a4-bi-question-circle" aria-hidden="true"></span><span class="header-help-label">{'Help'|i18n( 'kernel/exphelp' )}</span><span class="a4-sr-only">{'Help menu'|i18n( 'kernel/exphelp' )|wash}</span></summary>
         <div class="header-help-panel">
-            <form class="header-help-search" action={'/exphelp/search'|ezurl} method="get" role="search">
+            <form class="header-help-search" action={'/exphelp/search'|ezurl} method="post" role="search">
                 <label class="a4-sr-only" for="header-help-q">{'Search the help'|i18n( 'kernel/exphelp' )|wash}</label>
                 <input type="search" id="header-help-q" class="a4-input" name="q" maxlength="200" autocomplete="off" placeholder="{'Search the help'|i18n( 'kernel/exphelp' )|wash}" />
                 <button type="submit" class="a4-btn">{'Search'|i18n( 'kernel/exphelp' )|wash}</button>

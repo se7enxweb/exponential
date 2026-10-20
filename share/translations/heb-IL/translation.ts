@@ -71607,10 +71607,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>מרכז העזרה</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>דף הבית של העזרה</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>איך נוכל לעזור?</translation>
     </message>

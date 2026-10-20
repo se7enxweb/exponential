@@ -91,16 +91,19 @@ class expHelp
      * @param string $view dashboard|viewer|search|asset|report
      * @param string $id a page or asset id (path below doc/, or ext/<extension>/<path> for extension docs)
      * @param string $anchor a heading anchor, without #
-     * @param array $query extra GET parameters
-     * @return string e.g. "/exphelp/viewer/features/6.0/help-system.md#context-help"
+     * @param array $query view parameters, name => value, appended as /(name)/value (never a GET query string)
+     * @return string e.g. "/exphelp/viewer/features/6.0/help-system.md#context-help", "/exphelp/viewer/x.md/(lang)/eng-us"
      */
     public static function url( $view, $id = '', $anchor = '', array $query = array() )
     {
         $url = '/exphelp/' . $view;
         if ( $id !== '' )
             $url .= '/' . implode( '/', array_map( 'rawurlencode', explode( '/', ltrim( (string)$id, '/' ) ) ) );
-        if ( $query )
-            $url .= '?' . http_build_query( $query, '', '&', PHP_QUERY_RFC3986 );
+        foreach ( $query as $name => $value )
+        {
+            if ( is_scalar( $value ) && (string)$value !== '' && preg_match( '/^[a-z][a-z0-9_]*$/', (string)$name ) )
+                $url .= '/(' . $name . ')/' . rawurlencode( (string)$value );
+        }
         if ( $anchor !== '' )
             $url .= '#' . rawurlencode( (string)$anchor );
         return $url;
@@ -241,17 +244,17 @@ class expHelp
     }
 
     /**
-     * The page or asset id a request names: the rest of the address ($Params['Parameters']) or GET p.
-     * Only syntax is checked here; whether the file may be served is expHelpDocumentIndex::resolve()'s job.
+     * The page or asset id a request names: the rest of the address ($Params['Parameters']; view parameters such as
+     * (lang) are not part of it). Never a GET parameter. Only syntax is checked here; whether the file may be served is
+     * expHelpDocumentIndex::resolve()'s job.
      *
      * @param array $params the view's $Params
-     * @param array $get usually $_GET
      * @return string '' when none was given
      */
-    public static function requestedId( array $params, array $get )
+    public static function requestedId( array $params )
     {
         $parts = isset( $params['Parameters'] ) && is_array( $params['Parameters'] ) ? $params['Parameters'] : array();
-        $id = $parts ? implode( '/', array_map( 'strval', $parts ) ) : ( isset( $get['p'] ) && is_string( $get['p'] ) ? $get['p'] : '' );
+        $id = implode( '/', array_map( 'strval', $parts ) );
         $id = rawurldecode( $id );
         return trim( str_replace( '\\', '/', $id ), '/' );
     }
@@ -260,21 +263,21 @@ class expHelp
     const READING_PROVIDER = 'language';
 
     /**
-     * The language a help page is asked for with ?lang=<key> (eng-us, ger-de; the old keys en-us and de of 6.0.14
-     * are still accepted): a configured directory other than the reader's, else null. The viewer then shows the page
-     * of that language for this one request (the English original of a translated page), without changing the
-     * reader's interface language.
+     * The language a help page is asked for with the view parameter /(lang)/<key> (eng-us, ger-de; the old keys
+     * en-us and de of 6.0.14 are still accepted): a configured directory other than the reader's, else null. The
+     * viewer then shows the page of that language for this one request (the English original of a translated page),
+     * without changing the reader's interface language. A GET ?lang= is not read.
      *
-     * @param array $get usually $_GET
+     * @param array $viewParameters the view's user parameters ($Params['UserParameters']), name => value
      * @param expHelpLanguage $languages
      * @param string $reader the reader's directory
      * @return string|null
      */
-    public static function requestedLanguage( array $get, expHelpLanguage $languages, $reader )
+    public static function requestedLanguage( array $viewParameters, expHelpLanguage $languages, $reader )
     {
-        if ( !isset( $get['lang'] ) || !is_string( $get['lang'] ) || strlen( $get['lang'] ) > 16 )
+        if ( !isset( $viewParameters['lang'] ) || !is_string( $viewParameters['lang'] ) || strlen( $viewParameters['lang'] ) > 16 )
             return null;
-        $directory = method_exists( $languages, 'resolveDirectory' ) ? $languages->resolveDirectory( $get['lang'] ) : null;
+        $directory = method_exists( $languages, 'resolveDirectory' ) ? $languages->resolveDirectory( $viewParameters['lang'] ) : null;
         return $directory !== null && $directory !== $reader ? $directory : null;
     }
 

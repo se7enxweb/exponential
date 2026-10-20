@@ -73244,10 +73244,6 @@ Gracias por tu feedback</translation>
         <translation>Centro de ayuda</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Inicio de la ayuda</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>¿En qué podemos ayudarte?</translation>
     </message>
