@@ -136,4 +136,4 @@ Setup-Schritte noch `eZPackage::install()` handeln danach. Die Designpakete von 
 - [Importieren oder installieren](importieren-oder-installieren.md)
 - [Das Format index.xml](../paketserver/das-format-index-xml.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -143,4 +143,4 @@ Aus einer Shell lassen sich dieselben Dateien mit dem Befehl des Log-Viewers dur
 - [Überblick über die Überwachung](ueberblick-ueber-die-ueberwachung.md)
 - [request-shield und Request-Regeln](../sicherheit/request-shield-und-request-regeln.md)
 - [Anfrage-Logs: 404.log und security.log](../../../../en/us/features/6.0/request-logs.md) (Referenz der Funktion)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

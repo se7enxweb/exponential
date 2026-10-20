@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für den Betreiber und die Chefredaktion. Die Begriffe, die Besucher in das Suchfeld Ihrer Website
 eingeben, sind die direkteste Rückmeldung, die Sie bekommen: Sie sagen in den eigenen Worten der Besucher, was diese zu
 finden erwarten. Exponential kann sie aufzeichnen und anzeigen, welche davon nichts gefunden haben
-([URL-Aliase, Wildcards und Suchstatistiken](../../../../en/us/guides/urls-and-aliases.md#5-search-statistics)). Wie Redakteure
-innerhalb der Administration suchen, ist ein anderes Thema: [Suchen](../../../../en/us/help/searching.md).
+([URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md#5-suchstatistiken)). Wie Redakteure
+innerhalb der Administration suchen, ist ein anderes Thema: [Suchen](../../suchen.md).
 
 ## Inhalt
 
@@ -47,7 +47,7 @@ sie zu nutzen:
 **Setup > Suchstatistiken** (`/search/stats`) zeigt dann jeden Begriff, wie oft danach gesucht wurde und die
 durchschnittliche Zahl der Treffer. Die Seite filtert die Begriffe, die nichts gefunden haben, sortiert nach
 Häufigkeit, Begriff oder den wenigsten Treffern und führt einen Begriff mit einem Klick erneut aus. Wenn kein
-Siteaccess Suchen aufzeichnet, sagt die Seite das ([URL-Aliase, Wildcards und Suchstatistiken](../../../../en/us/guides/urls-and-aliases.md)).
+Siteaccess Suchen aufzeichnet, sagt die Seite das ([URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)).
 
 ## Die Begriffe lesen
 
@@ -88,6 +88,6 @@ Fragen Sie Ihren Partner, wenn:
 ## Verwandte Seiten
 
 - [Website-Suche](../../../../en/us/help/creators/website-creators/site-search.md)
-- [Suchen (für Redakteure)](../../../../en/us/help/searching.md)
+- [Suchen (für Redakteure)](../../suchen.md)
 - [Suche im Intranet](../../../../en/us/help/businesses/intranets/intranet-search.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

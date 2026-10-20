@@ -53,11 +53,11 @@ PLAN
 | Punkt | Lesen Sie |
 |---|---|
 | Wiederherstellungstest | [Wiederherstellungsübungen](../../../../../en/us/help/businesses/reliability/restore-drills.md), [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
-| Zugriffsüberprüfung | [Zugriffsüberprüfungen](../../../../../en/us/help/businesses/security/access-reviews.md), [Rollen und Richtlinien](../../../../../en/us/guides/roles-and-policies.md) |
-| Zweistufige Anmeldung | [Zwei-Faktor-Anmeldung](../../../../../en/us/guides/two-factor-login.md) |
+| Zugriffsüberprüfung | [Zugriffsüberprüfungen](../../../../../en/us/help/businesses/security/access-reviews.md), [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) |
+| Zweistufige Anmeldung | [Zwei-Faktor-Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Updates der Erweiterungen | [Budget für Upgrades und Wartung](../../../../../en/us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md) |
 | PHP-Unterstützung | `README.md`: PHP 8.0 bis 8.5 unterstützt; Ihr Hoster plant das Upgrade |
-| Inhalts-Audit | [Die Inhaltsprüfungen](../../../../../en/us/features/6.0/content-checks.md), [Veröffentlichen und Versionen](../../../../../en/us/help/publishing-and-versions.md) |
+| Inhalts-Audit | [Die Inhaltsprüfungen](../../../../../en/us/features/6.0/content-checks.md), [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Barrierefreiheit | [Barrierefreiheit testen](../../../../../en/us/help/creators/website-creators/testing-accessibility.md) |
 | Kosten und ROI-Zahlen | [Betriebskosten für Betreiber](../betriebskosten-fuer-betreiber.md), [Den ROI messen](../den-roi-messen.md) |
 | Nachverfolgung des Plans | [Jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md) |
@@ -80,4 +80,4 @@ Wiederherstellung funktioniert.
 - [Jährliche Checkliste](jaehrlich.md)
 - [Wiederherstellungsübungen](../../../../../en/us/help/businesses/reliability/restore-drills.md)
 - [Zugriffsüberprüfungen](../../../../../en/us/help/businesses/security/access-reviews.md)
-- [Freie Dokumentation](../../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

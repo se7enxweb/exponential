@@ -91,4 +91,4 @@ Die Listen für Veranstaltungen stehen unter [Checklisten für Veranstaltungen](
 
 - [Der Werkzeugkasten für Fürsprecher](werkzeugkasten-fuer-fuersprecher.md)
 - [Checklisten für Veranstaltungen](checklisten-fuer-veranstaltungen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

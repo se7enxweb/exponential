@@ -73027,6 +73027,126 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Exponential Daq tu&apos;Daj Qorghbogh ghommey nuvpu&apos; je: ghom, ghItlh, Suy&apos;, Qorghghach, Sach, boqpu&apos; je.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>lo&apos;wI&apos; paq</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>jInmol teywI'mey</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>jInmol teywI'</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>teywI'vam Exponential Hal ngoq bID 'oH; %license tIn tlhej.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>DITA yIlI'</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>paq De'wI'</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>ngangmoHlu'bogh qechmey vo' chenmoHlu' qoH ngangmoHlu'DI', ghIq ghIq mI'mey ngo' tlhej pollu'.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>De'wI' ghItlh</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>juv</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>chu'moHlu'</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Hoch DITA Daq yIlI'</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>QaH qechmey bej poHmey Hoch</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>bej jaj Hop, pagh %days jaj ret qech bejlu'taHvIS choHlu'be'.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>poH Hop</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Qu'mey</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>bej jaj %date Hop %days jaj ret</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>%days jaj bejlu'taH choHlu'be'</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>choH</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Dotlh yIwIv</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%count qechmey Hop vo' %shown 'aghlu'. ./console exp:help:content review Hoch tetlh.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>bItaghpa'</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>mIwmey</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ghotvam</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>ghIq nuq Dalo'</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>ghu'</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>meq</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>QaH</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>QaH tagh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

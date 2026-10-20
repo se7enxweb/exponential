@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für Systemadministratoren bei einem Hoster und für Support-Mitarbeitende, die die Website eines Kunden einrichten. In der
 Administration werden Inhalte veröffentlicht, Rollen vergeben und Einstellungen geändert; die Anmeldung (`/user/login`,
 `/admin/user/login`) ist die am meisten angegriffene Adresse jeder Website
-([Sicherheitshärtung](../../../../en/us/help/security-hardening.md#brute-force-and-credential-stuffing-on-the-sign-in)). Die Referenz ist
-[13.5 Der Siteaccess der Administration](../../../../en/us/install/13-security-hardening.md#135-the-administration-siteaccess).
+([Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung)). Die Referenz ist
+[13.5 Der Siteaccess der Administration](../../../installation/13-sicherheitshaertung.md#135-der-administrations-siteaccess).
 
 ![Setup, Sitzungen: wer gerade angemeldet ist, mit den Schaltflächen zum Beenden von Sitzungen](../../../../en/us/help/images/hosting/sessions.webp)
 
@@ -80,7 +80,7 @@ Administration. Siehe [request-shield und Request-Regeln](request-shield-und-req
 ## Geringste Rechte
 
 Geben Sie Redakteuren die Rollen, die sie brauchen, nicht Administrator. Richtlinien, die für die Sicherheit zählen
-([13.5](../../../../en/us/install/13-security-hardening.md#135-the-administration-siteaccess)):
+([13.5](../../../installation/13-sicherheitshaertung.md#135-der-administrations-siteaccess)):
 
 | Richtlinie | Gibt |
 |---|---|
@@ -92,7 +92,7 @@ Geben Sie Redakteuren die Rollen, die sie brauchen, nicht Administrator. Richtli
 | `user/login` pro Siteaccess | wer sich überhaupt an der Administration anmelden darf |
 
 Ein persönliches Konto pro Person, und `admin` als Anmeldung stillgelegt
-([Kontenpflege](../../../../en/us/help/change-the-admin-password.md#account-hygiene)). Auch die eigenen Support-Mitarbeitenden des Hosters sollten
+([Kontenpflege](../../administratorpasswort-aendern.md#kontenhygiene)). Auch die eigenen Support-Mitarbeitenden des Hosters sollten
 persönliche Konten haben, mit ihrem Arbeitsverhältnis angelegt und entfernt, nie eine geteilte Support-Anmeldung.
 
 ## Konfiguration aus der Versionsverwaltung
@@ -133,7 +133,7 @@ geschickt. Setzen Sie es auf einer Live-Website nie zurück; die Seite
 ## Verwandte Seiten
 
 - [Sicherheit für Hoster: Überblick](README.md)
-- [Kapitel 13: Der Siteaccess der Administration](../../../../en/us/install/13-security-hardening.md#135-the-administration-siteaccess)
-- [Das Administratorpasswort ändern](../../../../en/us/help/change-the-admin-password.md)
+- [Kapitel 13: Der Siteaccess der Administration](../../../installation/13-sicherheitshaertung.md#135-der-administrations-siteaccess)
+- [Das Administratorpasswort ändern](../../administratorpasswort-aendern.md)
 - [Request-Regeln](../../../../en/us/bc/6.0/view_full_security.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

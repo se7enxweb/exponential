@@ -24,7 +24,7 @@ und die Ehrenamtlichen, die helfen. Die Planung einer Mitglieder-Website behande
 |---|---|---|
 | Menschen registrieren sich selbst | Registrierung von Benutzern, wo gewünscht mit einem Genehmigungsschritt | [Registrierung von Mitgliedern und Mitgliederbereiche](../../../../en/us/help/creators/website-creators/member-registration-and-areas.md) |
 | Sie erfahren von neuen Registrierungen | Die E-Mail „New user registered“ mit signierten Links zum Ansehen, Genehmigen oder Ablehnen des Kontos (6.0.15) | [Administratorlinks bei Registrierungen](../../../../en/us/features/6.0/registration-admin-links.md) |
-| Inhalte nur für Mitglieder | Sektionen und Rollen: Anonyme Besucher sehen einen Teil, Mitglieder einen anderen | [Inhalte nur für Mitglieder](../../../../en/us/help/businesses/members/members-only-content.md), [Sektionen](../../../../en/us/guides/sections.md) |
+| Inhalte nur für Mitglieder | Sektionen und Rollen: Anonyme Besucher sehen einen Teil, Mitglieder einen anderen | [Inhalte nur für Mitglieder](../../../../en/us/help/businesses/members/members-only-content.md), [Sektionen](../../../anleitungen/sektionen.md) |
 | Mitglieder wählen ihre E-Mails | E-Mail-Einstellungen: eine Seite pro Person, um E-Mails zu wählen und zu beenden und ihre Daten herunterzuladen | [E-Mail-Einstellungen](../../../../en/us/features/6.0/mail-preferences.md) |
 | Newsletter an Mitglieder | Die Erweiterung CJW Newsletter | [Newsletter](../wachstum/newsletter.md) |
 | Veranstaltungen, Foren | Klassen für Veranstaltungskalender und Foren in der Demo-Installation | [Veranstaltungen und Kalender](../../../../en/us/help/businesses/members/events-and-calendars.md) |
@@ -68,4 +68,4 @@ Folgen Sie dem [Lesepfad für Mitglieder-Websites](lesepfad-mitglieder-websites.
 - [Checkliste für Mitglieder-Websites (Unternehmen)](../../../../en/us/help/businesses/members/member-site-checklist.md)
 - [Kommunikation mit Mitgliedern](../../../../en/us/help/businesses/members/member-communications.md)
 - [Vereine](../../../../en/us/help/businesses/associations/README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

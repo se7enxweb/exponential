@@ -30,7 +30,7 @@ und gelten für Sie wie für alle anderen.
 4. **Entfernen Sie schnell**, was durchgerutscht ist.
 
 Das Projekt hält es ebenso: Fehlerberichte dürfen nie „die personenbezogenen Daten von Kunden oder Benutzern“ enthalten
-([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#a-good-bug-description)), und die Sicherheitsrichtlinie bittet
+([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#eine-gute-fehlerbeschreibung)), und die Sicherheitsrichtlinie bittet
 darum, personenbezogene Daten wegzulassen ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
 
 ## Wo personenbezogene Daten nach außen gelangen
@@ -76,5 +76,5 @@ Wenn Sie ein Treffen organisieren ([Ein Treffen vorschlagen](ein-treffen-vorschl
 
 - [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md)
 - [Verhalten und Ethik für Fürsprecher](verhalten-und-ethik.md)
-- [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md#data-protection-and-privacy-questions-to-answer)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#datenschutz-und-privatsphäre-zu-beantwortende-fragen)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

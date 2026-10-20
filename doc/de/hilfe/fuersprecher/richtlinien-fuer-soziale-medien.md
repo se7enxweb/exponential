@@ -61,7 +61,7 @@ nennen die unten verlinkten Seiten sie.
   Hashtag als offiziell dar. Wenn Sie einen Hashtag verwenden, ist das Ihre Wahl; `#Exponential` allein ist mehrdeutig,
   geben Sie also im Text Zusammenhang.
 - Discord und Slack werden auf exponential.earth/about/project nur „unter den Support-Kanälen genannt“; die Quellen
-  geben hier keine Adressen an, also erfinden Sie keine ([Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places)).
+  geben hier keine Adressen an, also erfinden Sie keine ([Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community)).
 
 ## Barrierefreiheit von Beiträgen
 
@@ -88,4 +88,4 @@ nennen die unten verlinkten Seiten sie.
 - [Vorlagen für Beiträge in sozialen Medien](vorlagen-fuer-soziale-medien.md)
 - [Kurzkarte zu den Namensregeln](kurzkarte-namensregeln.md)
 - [Öffentlich antworten](oeffentlich-antworten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

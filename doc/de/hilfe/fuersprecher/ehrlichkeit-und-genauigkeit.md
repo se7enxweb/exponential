@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für jeden Fürsprecher. Die Dokumentation, die Sie zitieren, hält sich an eine Regel: „Jede Aussage
 nennt ihre Quelle ... Die Seite beschreibt nicht, was die Quellen nicht sagen“
-([Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md)). Halten Sie sich an dieselbe Regel.
+([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)). Halten Sie sich an dieselbe Regel.
 
 ## Inhalt
 
@@ -61,4 +61,4 @@ nicht wieder passiert.
 - [Aussagen, die Sie nicht machen dürfen](aussagen-die-sie-nicht-machen-duerfen.md)
 - [Wo die Fakten stehen](wo-die-fakten-stehen.md)
 - [Verhalten und Ethik für Fürsprecher](verhalten-und-ethik.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

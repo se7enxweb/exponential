@@ -10,14 +10,16 @@ generated: exp:help:examples
 ---
 # The exphelp module
 
-Name `Help`, defined in `kernel/exphelp/module.php`. 10 views.
+Name `Help`, defined in `kernel/exphelp/module.php`. 12 views.
 
 | View | Address | Policy functions |
 |---|---|---|
 | [asset](asset.md) | `/exphelp/asset` | read |
+| [audience](audience.md) | `/exphelp/audience/<Audience>` | read |
 | [contents](contents.md) | `/exphelp/contents` | read |
 | [context](context.md) | `/exphelp/context` | context |
 | [dashboard](dashboard.md) | `/exphelp/dashboard` | read |
+| [extensions](extensions.md) | `/exphelp/extensions/<Extension>` | read |
 | [manual](manual.md) | `/exphelp/manual` | read |
 | [pdf](pdf.md) | `/exphelp/pdf` | read |
 | [report](report.md) | `/exphelp/report` | read |

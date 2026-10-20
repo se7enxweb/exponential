@@ -157,4 +157,4 @@ nun Dateien `*.bak` und `*.bak.*` aus jedem Paket weg, und das neu gebaute Archi
 - [Die Clean-Variante und sevenx_site](die-clean-variante-und-sevenx-site.md)
 - [Layoutdaten und share-DBA-Dateien](layoutdaten-und-share-dba-dateien.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

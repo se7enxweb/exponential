@@ -40,13 +40,13 @@ What we need from 7x: answers / a call / a joint meeting / a statement
 
 | Bedarf | Seite |
 |---|---|
-| Positionierung und Pitches | [Positionierung und Nutzenversprechen](../../../en/us/help/business/positioning-and-value-proposition.md) |
-| Funktionen passend zu Bedürfnissen | [Funktions-Highlights für Kunden](../../../en/us/help/business/feature-highlights-for-customers.md) |
-| Demos | [Demo-Skripte](../../../en/us/help/business/demo-scripts.md) |
-| Einwände (Sicherheit, Langlebigkeit, Support) | [Mit Einwänden umgehen](../../../en/us/help/business/objection-handling.md) |
-| Fragen zur Lizenzierung | [Lizenzierung für Käufer erklärt](../../../en/us/help/business/licensing-for-buyers.md) |
-| Datenbanken und Betriebssysteme | [Datenbankunterstützung](../../../en/us/help/database-support.md), [Betriebssystemunterstützung](../../../en/us/help/os-support.md) |
-| Sicherheit | [Sicherheitshärtung](../../../en/us/help/security-hardening.md), SECURITY.md |
+| Positionierung und Pitches | [Positionierung und Nutzenversprechen](../geschaeft/positionierung-und-nutzenversprechen.md) |
+| Funktionen passend zu Bedürfnissen | [Funktions-Highlights für Kunden](../geschaeft/funktionshighlights-fuer-kunden.md) |
+| Demos | [Demo-Skripte](../geschaeft/demo-drehbuecher.md) |
+| Einwände (Sicherheit, Langlebigkeit, Support) | [Mit Einwänden umgehen](../geschaeft/einwandbehandlung.md) |
+| Fragen zur Lizenzierung | [Lizenzierung für Käufer erklärt](../geschaeft/lizenzen-fuer-kaeufer.md) |
+| Datenbanken und Betriebssysteme | [Datenbankunterstützung](../datenbankunterstuetzung.md), [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md) |
+| Sicherheit | [Sicherheitshärtung](../sicherheitshaertung.md), SECURITY.md |
 
 ## Versprechen Sie nie
 
@@ -58,6 +58,6 @@ What we need from 7x: answers / a call / a joint meeting / a statement
 ## Verwandte Seiten
 
 - [Empfehlungen und Leads](empfehlungen-und-leads.md)
-- [Vertrieb und Marketing: hier beginnen](../../../en/us/help/business/sales-and-marketing-start-here.md)
+- [Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md)
 - [Dienstleistungen von 7x als White Label](white-label-dienstleistungen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

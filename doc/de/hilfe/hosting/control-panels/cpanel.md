@@ -33,10 +33,10 @@ allgemeinen Ratschlägen.
 
 | Aussage | Quelle |
 |---|---|
-| Hosts mit cPanel sind **Stufe 3**, funktionieren erwartungsgemäß: eine begründete Erwartung, kein Testergebnis | [Stufe 3](../../../../en/us/help/os-support.md#tier-3-expected-to-work) |
+| Hosts mit cPanel sind **Stufe 3**, funktionieren erwartungsgemäß: eine begründete Erwartung, kein Testergebnis | [Stufe 3](../../betriebssystemunterstuetzung.md#stufe-3-voraussichtlich-lauffähig) |
 | EasyApache (EA-PHP 8.x), PHP pro Konto | dieselbe Tabelle |
 | Shared Hosting kann lang laufende Prozesse verbieten, sodass Velocity womöglich nicht erlaubt ist; nutzen Sie Apache oder LiteSpeed mit `.htaccess` | dieselbe Tabelle |
-| Auf Shared Hosting ohne Shell-Zugang ist der Setup-Assistent im Browser der Installer | [Container, Cloud und Hosting-Panels](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels) |
+| Auf Shared Hosting ohne Shell-Zugang ist der Setup-Assistent im Browser der Installer | [Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
 | ezupdate sucht Composer unter anderem in `/opt/cpanel/composer/bin/` | [Einstellungen von ezupdate](../../../../en/us/features/6.0/extensions/ezupdate.md) |
 
 Das ist alles, was die Quellen speziell über cPanel sagen.
@@ -48,9 +48,9 @@ derselben Überlegung, die cPanel in Stufe 3 einordnet:
 
 - PHP 8.0 oder später für das Konto, mit den erforderlichen Erweiterungen: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`,
   `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick
-  ([2.3 PHP-Erweiterungen](../../../../en/us/install/02-requirements.md#23-php-extensions)). `xsl` und `intl` sind kritische Tests des
+  ([2.3 PHP-Erweiterungen](../../../installation/02-voraussetzungen.md#23-php-extensions)). `xsl` und `intl` sind kritische Tests des
   Setup-Assistenten und fehlen am häufigsten in einem Standard-Build von PHP.
-- Die `php.ini`-Werte, die der Assistent prüft ([2.5](../../../../en/us/install/02-requirements.md#25-phpini-settings)).
+- Die `php.ini`-Werte, die der Assistent prüft ([2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)).
 - Apache (oder LiteSpeed), das `.htaccess` liest, mit `mod_rewrite`.
 - Eine Datenbank: 1. SQLite 3 braucht keine; sonst einer der Server in der offiziellen Reihenfolge, 2. PostgreSQL · 3. MongoDB ·
   4. MariaDB · 5. Oracle · 6. MySQL (Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich). Auf einem
@@ -65,12 +65,12 @@ Das Folgende ist ein allgemeiner Ratschlag, abgeleitet aus den Anforderungen von
    Einstellungen für Erweiterungen des Panels. Nutzen Sie dieselbe Version für die Kommandozeile, wenn das Konto eine Shell hat.
 2. **Richten Sie den Document Root der Domain auf das Wurzelverzeichnis der Installation** (das Verzeichnis mit `index.php`).
 3. **Kopieren Sie die Rewrite-Regeln**: `cp .htaccess_root .htaccess` (oder laden Sie `.htaccess_root` als `.htaccess` hoch)
-   ([8.5.1](../../../../en/us/install/08-serving-the-site.md#851-step-by-step)).
+   ([8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt)).
 4. **Legen Sie die Datenbank und ihren Benutzer** im Panel an, wenn nicht SQLite. Für MariaDB oder MySQL nutzen Sie `utf8mb4`
-   ([9.3](../../../../en/us/install/09-databases.md#93-mysql-and-mariadb)). Seit 6.0.15 braucht der Assistent nur Rechte auf diese
+   ([9.3](../../../installation/09-datenbanken.md#93-mysql-und-mariadb)). Seit 6.0.15 braucht der Assistent nur Rechte auf diese
    Datenbank ([Eine saubere Installation, die zu Shared Hosting passt](../../../../en/us/features/6.0/clean-install-defaults.md)).
 5. **Laden Sie den Code mit `vendor/` hoch**, oder führen Sie Composer in einer Shell aus, wenn es eine gibt (nächster Abschnitt).
-6. **Öffnen Sie den Setup-Assistenten** im Browser und folgen Sie seiner Systemprüfung ([Kapitel 5](../../../../en/us/install/05-setup-wizard.md)).
+6. **Öffnen Sie den Setup-Assistenten** im Browser und folgen Sie seiner Systemprüfung ([Kapitel 5](../../../installation/05-setup-assistent.md)).
 7. **Fügen Sie die Cron-Zeile** auf der Cron-Seite des Panels hinzu, mit dem PHP des Kontos ([Cron und Shell-Zugang](cron-und-shell-zugang.md)).
 8. **Installieren Sie das Zertifikat** mit der Zertifikatsverwaltung des Panels und leiten Sie HTTP auf HTTPS um
    ([TLS-Zertifikate in Panels](tls-zertifikate-in-panels.md)).
@@ -78,12 +78,12 @@ Das Folgende ist ein allgemeiner Ratschlag, abgeleitet aus den Anforderungen von
 > **Warnung**
 > Löschen Sie keine Regeln aus `.htaccess`, damit etwas funktioniert. Die Regeln entscheiden, welche Dateien Apache ausliefern
 > darf; alles andere geht an `index.php`, was `settings/*.ini` und die SQLite-Datenbank privat hält
-> ([13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)).
+> ([13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)).
 
 ## Composer auf cPanel
 
 - Mit einer Shell: Führen Sie `composer install` mit der PHP-Version des Kontos aus, damit Composer Pakete für das PHP auflöst,
-  das sie ausführen wird ([Kommandozeile und Web-PHP](../../../../en/us/install/02-requirements.md#command-line-and-web-php)).
+  das sie ausführen wird ([Kommandozeile und Web-PHP](../../../installation/02-voraussetzungen.md#php-auf-der-kommandozeile-und-im-web)).
 - In der Administration: Die Erweiterung ezupdate durchsucht unter ihren Standardorten für Composer `/opt/cpanel/composer/bin/` und
   kann mit *Get Composer* ein per SHA-256 geprüftes `composer.phar` nach `var/ezupdate/` herunterladen. Aktualisieren und
   Installieren aus dem Browser sind aus, bis `[UpdateSettings] AllowUpdate` und `AllowInstall` eingeschaltet sind
@@ -96,7 +96,7 @@ Velocity ist ein lang laufender Prozess. Auf geteilten cPanel-Konten ist es wom�
 Apache oder LiteSpeed mit `.htaccess`. Auf einem cPanel-Server, auf dem Sie als Hoster die Maschine kontrollieren, könnte Velocity
 neben dem Apache des Panels laufen wie auf dem Plesk-Server des Projekts, aber diese Kombination ist in den Quellen nicht
 beschrieben. Wenn Sie es versuchen, lesen Sie [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md) und
-halten Sie die Regel eines Benutzers für `var/` ein ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)).
+halten Sie die Regel eines Benutzers für `var/` ein ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)).
 
 ## Ein Testplan
 
@@ -105,14 +105,14 @@ Verwandeln Sie Stufe 3 auf Ihrer eigenen Plattform in einen Beleg, bevor Kunden 
 | Schritt | Besteht, wenn |
 |---|---|
 | Mit dem Setup-Assistenten auf einem frischen Konto installieren | jeder kritische Test besteht; die Website und `/admin` antworten |
-| `/settings/site.ini`, `/.env`, `/composer.json` anfragen | 404 oder eine Exponential-Seite, nie der Inhalt der Datei ([13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)) |
+| `/settings/site.ini`, `/.env`, `/composer.json` anfragen | 404 oder eine Exponential-Seite, nie der Inhalt der Datei ([13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)) |
 | Ein Bild in der Administration hochladen | das Bild und seine Varianten werden ausgeliefert |
 | `runcronjobs.php` aus dem Cron des Panels ausführen | Ausgabe im Cron-Log, **Setup > Cronjobs** zeigt den Lauf |
-| Sichern und auf einem zweiten Konto wiederherstellen | die wiederhergestellte Website funktioniert ([10.9](../../../../en/us/install/10-after-installing.md#109-backups-and-restore)) |
+| Sichern und auf einem zweiten Konto wiederherstellen | die wiederhergestellte Website funktioniert ([10.9](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung)) |
 | Eine Erweiterung aktualisieren (ezupdate oder Composer) | die Website funktioniert nach dem Update |
 
 Wenn alles besteht, möchte das Projekt davon hören: Wenn Sie Exponential auf einem System der Stufe 3 betreiben, teilen Sie es dem
-Projekt mit, und die Zeile rückt auf ([Die vier Stufen](../../../../en/us/help/os-support.md#the-four-tiers)).
+Projekt mit, und die Zeile rückt auf ([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)).
 
 ## Checkliste
 
@@ -131,4 +131,4 @@ Projekt mit, und die Zeile rückt auf ([Die vier Stufen](../../../../en/us/help/
 - [Control Panels: Überblick](README.md), [DirectAdmin](directadmin.md)
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

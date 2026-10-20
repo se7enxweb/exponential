@@ -36,7 +36,7 @@ der Ablauf auf der Seite des Kunden steht auf [Kunden zu Ihrem Hosting migrieren
 | `var/cache`, `var/<site>/cache` | nein | wird neu erzeugt |
 | `var/log` | optional | für spätere Untersuchungen |
 
-Quelle der Liste: [10.9 Backups und Wiederherstellung](../../../../en/us/install/10-after-installing.md#109-backups-and-restore).
+Quelle der Liste: [10.9 Backups und Wiederherstellung](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung).
 
 ## Vor dem Umzug
 
@@ -82,7 +82,7 @@ Quelle der Liste: [10.9 Backups und Wiederherstellung](../../../../en/us/install
    `var/maintenance.json` auf der alten Maschine, die das Datei-Backup oben nicht enthält; das Ziel ist also nicht im
    Wartungsmodus, es sei denn, Sie schalten ihn dort ein. Wenn Sie das getan haben (um in Ruhe zu testen), beenden Sie ihn
    mit `php bin/php/maintenance.php off --allow-root-user`
-   ([10.9](../../../../en/us/install/10-after-installing.md#maintenance-windows)).
+   ([10.9](../../../installation/10-nach-der-installation.md#wartungsfenster)).
 
 ## Einstellungen, die die alte Maschine nennen
 
@@ -105,7 +105,7 @@ Quelle der Liste: [10.9 Backups und Wiederherstellung](../../../../en/us/install
 - Startseite und Administration laden auf dem Ziel.
 - Anmelden, ein Testobjekt veröffentlichen, ein Bild hochladen, suchen.
 - Zeilenzahlen von `ezcontentobject`, `ezcontentobject_tree` und `ezcontentobject_attribute` mit der alten Datenbank
-  vergleichen ([Datenbankunterstützung](../../../../en/us/help/database-support.md#moving-a-site-to-another-database)).
+  vergleichen ([Datenbankunterstützung](../../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen)).
 - Die Cronjobs laufen auf dem Ziel und nicht mehr auf der alten Maschine ([Cronjobs](../betrieb/cronjobs.md)).
 - Mail kommt an.
 - Der Log-Viewer zeigt keine neuen Fehler ([Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md)).
@@ -115,4 +115,4 @@ Quelle der Liste: [10.9 Backups und Wiederherstellung](../../../../en/us/install
 - [Aus einem Backup wiederherstellen (Runbook)](../runbooks/aus-einem-backup-wiederherstellen.md)
 - [Was gesichert werden muss](../betrieb/backups-was-gesichert-werden-muss.md)
 - [Checkliste für den Start einer Kunden-Website](../checklisten/checkliste-fuer-den-start-einer-kunden-website.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

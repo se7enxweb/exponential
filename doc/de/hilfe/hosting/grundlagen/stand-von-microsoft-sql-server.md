@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Produktmanager, Vertriebs- und Support-Mitarbeitende bei einem Hosting-Anbieter, besonders bei einem
 mit einem Angebot rund um Windows oder Microsoft, die gefragt werden, ob Exponential auf Microsoft SQL Server läuft. Sie
 beantwortet: was die Aussage des Projekts ist, was es heute gibt, was fehlt und was ein Hoster ehrlich stattdessen
-anbieten kann. Die Quelle ist [Datenbankunterstützung, Microsoft SQL Server](../../../../en/us/help/database-support.md#microsoft-sql-server-possible-with-additional-work).
+anbieten kann. Die Quelle ist [Datenbankunterstützung, Microsoft SQL Server](../../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand).
 
 ## Inhalt
 
@@ -39,7 +39,7 @@ einem solchen Treiber gelesen werden soll. Die unterstützten Datenbanken in der
 
 ## Was es heute gibt
 
-Aus [Datenbankunterstützung](../../../../en/us/help/database-support.md#microsoft-sql-server-possible-with-additional-work):
+Aus [Datenbankunterstützung](../../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand):
 
 | Teil | Was es bedeutet |
 |---|---|
@@ -96,12 +96,12 @@ Website-Datenbank einer anderen Engine daneben meist akzeptabel; fragen Sie, was
 - **PostgreSQL** ist der empfohlene Datenbankserver ([PostgreSQL für Hoster](postgresql-fuer-hoster.md)).
 - **Auf Windows-Servern** ist Windows in Stufe 2 (funktioniert bekanntermaßen), mit den offiziellen PHP-Builds für
   Windows und Apache oder IIS mit FastCGI; lesen Sie zuerst, was dort fehlt
-  ([Betriebssysteme für Hoster](betriebssysteme-fuer-hoster.md), [Betriebssystemunterstützung: Windows](../../../../en/us/help/os-support.md#windows)).
+  ([Betriebssysteme für Hoster](betriebssysteme-fuer-hoster.md), [Betriebssystemunterstützung: Windows](../../betriebssystemunterstuetzung.md#windows)).
 
 ## Verwandte Seiten
 
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md)
-- [Datenbankunterstützung: Microsoft SQL Server](../../../../en/us/help/database-support.md#microsoft-sql-server-possible-with-additional-work)
-- [Kapitel 9.10: Microsoft SQL Server](../../../../en/us/install/09-databases.md#910-microsoft-sql-server)
+- [Datenbankunterstützung: Microsoft SQL Server](../../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)
+- [Kapitel 9.10: Microsoft SQL Server](../../../installation/09-datenbanken.md#910-microsoft-sql-server)
 - [Mit dem Projekt und 7x zusammenarbeiten](../geschaeft/mit-dem-projekt-und-7x-zusammenarbeiten.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

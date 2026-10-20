@@ -95,5 +95,5 @@ Ein Paket trifft an vier Stellen auf den Code, und jede prüft etwas anderes:
 - [Glossar](../glossar-der-seitenpakete.md)
 - [Referenz zu package.xml](../grundlagen/referenz-zu-package-xml.md)
 - [Das Format index.xml](../paketserver/das-format-index-xml.md)
-- [Anleitung zu Paketen](../../../../en/us/guides/packages.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Anleitung zu Paketen](../../../anleitungen/pakete.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

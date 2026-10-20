@@ -30,7 +30,7 @@ Systems AS“ ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main
 - Geld für Dienstleistungen verlangen: Entwicklung, Hosting, Support, Schulung, Design.
 - Geld für die Verbreitung von Kopien verlangen.
 - Die Dokumentation unter der GFDL in Kursmaterial und Kundenhandbücher kopieren, anpassen und übersetzen
-  ([Freie Dokumentation](../../../en/us/help/free-documentation.md)).
+  ([Freie Dokumentation](../freie-dokumentation.md)).
 - Den Programmtext unter CC BY-SA 4.0 mit Namensnennung für Ihr eigenes Programm anpassen.
 
 „Die Nutzung von Exponential unter den Bedingungen der GNU GPL ist kostenlos“ (README). Kunden bezahlen Sie also für Arbeit und Service, nie für eine Lizenz der Software.
@@ -52,13 +52,13 @@ Code, der zum Projekt beigetragen wird, wird unter der GPL veröffentlicht („M
 |---|---|
 | Muss die Website eines Kunden veröffentlicht werden? | Eine Website, die auf den eigenen Servern des Kunden läuft, wird nicht verbreitet; seine Inhalte bleiben privat. Erst die Verbreitung löst die Pflichten oben aus. |
 | Dürfen wir eine Kundenerweiterung privat halten? | Code, den Sie nicht verbreiten, ist nicht betroffen. Wenn Sie ihn mit Exponential verbreiten, fragen Sie Ihre Rechtsberatung, ob er unter der GPL stehen muss. |
-| Dürfen wir „Lizenzen“ für Exponential verkaufen? | Eine solche Lizenz gibt es nicht; beschreiben Sie die GPL korrekt ([Lizenzierung für Käufer erklärt](../../../en/us/help/business/licensing-for-buyers.md)). |
+| Dürfen wir „Lizenzen“ für Exponential verkaufen? | Eine solche Lizenz gibt es nicht; beschreiben Sie die GPL korrekt ([Lizenzierung für Käufer erklärt](../geschaeft/lizenzen-fuer-kaeufer.md)). |
 | Dürfen wir die Hilfe in unseren Handbüchern verwenden? | Ja, unter der GFDL: Behalten Sie die Hinweise, fügen Sie die Lizenz bei, veröffentlichen Sie Ihre Fassung unter der GFDL. |
 
 ## Verwandte Seiten
 
-- [Lizenzierung für Käufer erklärt](../../../en/us/help/business/licensing-for-buyers.md)
-- [Wer ist 7x?](../../../en/us/help/who-is-7x.md)
+- [Lizenzierung für Käufer erklärt](../geschaeft/lizenzen-fuer-kaeufer.md)
+- [Wer ist 7x?](../wer-ist-7x.md)
 - [Vertriebspartner und Wiederverkäufer](vertriebspartner.md)
-- [Fragen zur Lizenzierung](../../../en/us/help/project/licensing-faq.md): die FAQ zur Lizenzierung von exponential.earth in einfachen Worten
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Fragen zur Lizenzierung](../projekt/lizenz-faq.md): die FAQ zur Lizenzierung von exponential.earth in einfachen Worten
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

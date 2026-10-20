@@ -30,7 +30,7 @@ Exponential setzt die Codebasis fort, die viele Jahre lang als eZ Publish veröf
 nach fast 18 Jahren eingestellt; der Copyright-Hinweis nennt noch beide Eigentümer des Codes, `Copyright (C) 1998 - 2026 7x & Exponential
 Foundation` und `Copyright (C) eZ Systems AS`, die Zeile oben in `lib/eztemplate/classes/eztemplate.php`. Die Template-Bibliothek ist während
 ihrer ganzen aufgezeichneten Geschichte Teil der Codebasis gewesen, und 7x hat sie weitergeführt, seit es das Projekt 2023 übernommen hat
-([Wer ist 7x?](../../../en/us/help/who-is-7x.md)).
+([Wer ist 7x?](../wer-ist-7x.md)).
 
 ## Die Aufzeichnungen im Repository
 
@@ -119,5 +119,5 @@ wird (`eZTemplate`), und die Operatoren `csp_nonce` und `exp_environment` des Ke
 - Weiter: [Smarty und die Template-Sprache nebeneinander](smarty-nebeneinander.md)
 - [Sections und foreach](sections-und-foreach.md)
 - [Section (veraltet)](../../../en/us/help/designers/templates/section-legacy.md) zum Umstellen alter Templates
-- [Wer ist 7x?](../../../en/us/help/who-is-7x.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wer ist 7x?](../wer-ist-7x.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

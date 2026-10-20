@@ -67,9 +67,9 @@ Installationsskripte mit, die die Siteaccesses und Einstellungen um sie herum ba
 
 ## Es installieren
 
-`cjw_multisite` installiert sich wie jedes Seitenpaket: Wählen Sie es im [Setup-Assistenten](../../../../en/us/install/05-setup-wizard.md), nennen Sie
-es als `Site_package` in `kickstart.ini` für den [Kickstarter](../../../../en/us/install/06-kickstarter.md) oder übergeben Sie es der
-[Installation über die Konsole](../../../../en/us/install/07-console-install.md). Die eigene Beschreibung des Pakets gibt diesen Befehl an:
+`cjw_multisite` installiert sich wie jedes Seitenpaket: Wählen Sie es im [Setup-Assistenten](../../../installation/05-setup-assistent.md), nennen Sie
+es als `Site_package` in `kickstart.ini` für den [Kickstarter](../../../installation/06-kickstarter.md) oder übergeben Sie es der
+[Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md). Die eigene Beschreibung des Pakets gibt diesen Befehl an:
 
 ```bash
 ./console exp:install --package=cjw_multisite --languages=eng-US,ger-DE
@@ -136,4 +136,4 @@ Eine laufende Kopie der Startseite ist auf [Demo-Websites](../../../../en/us/hel
 - [Was ein Seiteninstallationspaket ist](../grundlagen/was-ein-seiteninstallationspaket-ist.md)
 - [Was auf dem Paketserver liegt](../paketserver/was-auf-dem-paketserver-liegt.md)
 - [Glossar](../glossar-der-seitenpakete.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

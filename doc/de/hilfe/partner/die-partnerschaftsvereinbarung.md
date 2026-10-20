@@ -62,4 +62,4 @@ unter CC BY-SA 4.0 mit Namensnennung anpassen.
 - [Wie Sie sich bewerben](wie-sie-sich-bewerben.md)
 - [Verlängerungen, Auf- und Abstufungen](verlaengerungen-auf-und-abstufungen.md)
 - [Verhaltenskodex für Partner](verhaltenskodex.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -20,7 +20,7 @@ Siehe [Was Ihnen gehört](was-ihnen-gehoert.md).
 
 **Wer macht Exponential?**
 Es wird vom Unternehmen 7x geleitet und von der gemeinnützigen Exponential Foundation betrieben; siehe
-[Wer ist 7x?](../../../en/us/help/who-is-7x.md) und [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md).
+[Wer ist 7x?](../wer-ist-7x.md) und [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md).
 
 **Welche Version sollten wir betreiben?**
 Die gepflegte Linie ist Exponential 6.0; Sicherheitskorrekturen werden mit dem nächsten Release 6.0.x veröffentlicht,
@@ -62,7 +62,7 @@ der Version und den Schritten und ohne Passwörter oder personenbezogene Daten (
 
 **Die Website zeigt einen Fehler mit einer Referenz. Was ist das?**
 Eine Referenz, die Ihr Administrator in den Logs nachschlagen kann. Kopieren Sie sie in Ihre Meldung
-([Einen Fehler anhand seiner Referenz finden](../../../en/us/guides/finding-an-error-by-its-reference.md)).
+([Einen Fehler anhand seiner Referenz finden](../../anleitungen/fehler-anhand-der-referenz-finden.md)).
 
 ## Shop
 
@@ -110,4 +110,4 @@ Es sind Vorlagen, keine Rechtsberatung.
 - [Kunden: hier beginnen](kunden-hier-beginnen.md)
 - [Shop-FAQ](handel/shop-faq.md)
 - [FAQ für Unternehmen](../../../en/us/help/businesses/businesses-faq.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -139,4 +139,4 @@ curl -s -o /dev/null -w '%{http_code}\n' https://packages.example.com/exponentia
 - [Wie der Setup-Assistent Pakete nutzt](../grundlagen/wie-der-setup-assistent-pakete-nutzt.md)
 - [Was auf dem Paketserver liegt](../paketserver/was-auf-dem-paketserver-liegt.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

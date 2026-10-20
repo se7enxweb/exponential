@@ -84,11 +84,11 @@ Partnership budget, year 1
 
 Rechnungen für das Partner-Abonnement kommen vom Verkäufer im Shop, 7x. Die steuerliche Behandlung eines
 geschäftlichen Abonnements ist in den Quellen nicht beschrieben; fragen Sie Ihre Steuerberatung. Das Partner-Abonnement
-ist ein Kauf von Dienstleistungen, keine Spende; zu Spenden siehe [Sponsoren: hier beginnen](../../../en/us/help/sponsors/sponsors-start-here.md).
+ist ein Kauf von Dienstleistungen, keine Spende; zu Spenden siehe [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md).
 
 ## Verwandte Seiten
 
 - [Partnerstufen von Student bis Platinum](partnerstufen.md)
 - [Vorteile für Partner im Detail](vorteile-fuer-partner.md)
 - [Anforderungen an Partner](anforderungen-an-partner.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

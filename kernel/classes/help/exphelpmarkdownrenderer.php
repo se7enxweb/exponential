@@ -31,6 +31,10 @@
  *   translate      callable( string $text ): string  the interface words (Note, Warning, Table ...); default
  *                  ezpI18n::tr( 'kernel/exphelp', ... ) when the kernel is loaded, else the English text.
  *   id_prefix      string prefixed to every id the renderer makes (default '').
+ *   source_path    the file the page was read from, relative to the installation root (doc/de/hilfe/suchen.md); a
+ *                  relative link or image must then stay inside the installation from that file, as GitHub resolves
+ *                  it (a translation links ../../en/us/help/images/x.webp), instead of inside the documentation
+ *                  root from the page id. The resolvers still decide which files may be shown. Default '': the id.
  *
  * The markup (styled by help.css; the class contract with the viewer and exphelp.js): div.a4-help-body around the
  * page; h1-h6.a4-help-h[id] with a.a4-help-anchor; div.a4-help-code[data-lang][data-label] > pre.a4-help-pre >
@@ -66,6 +70,16 @@ class expHelpMarkdownRenderer
         'important' => 'important', 'action required' => 'important', 'attention' => 'important', 'remember' => 'important',
         'warning' => 'warning', 'deprecated' => 'warning', 'heads up' => 'warning', 'breaking' => 'warning', 'breaking change' => 'warning',
         'caution' => 'caution', 'danger' => 'caution', 'critical' => 'caution', 'security' => 'caution',
+        // the notice levels of the help style guide (IEC/IEEE 82079-1): Attention, Data protection, Note
+        'data protection' => 'important', 'data-protection' => 'important', 'privacy' => 'important',
+    );
+
+    /** @var array words whose callout keeps its own title and icon instead of the kind's: word => array( title, icon ) */
+    protected static $calloutLevels = array(
+        'attention' => array( 'Attention', 'a4-bi-exclamation-diamond' ),
+        'data protection' => array( 'Data protection', 'a4-bi-person-lock' ),
+        'data-protection' => array( 'Data protection', 'a4-bi-person-lock' ),
+        'privacy' => array( 'Data protection', 'a4-bi-person-lock' ),
     );
 
     /** @var array callout kind => array( icon, default title ) */
@@ -114,6 +128,7 @@ class expHelpMarkdownRenderer
             'image_resolver' => null,
             'translate' => null,
             'id_prefix' => '',
+            'source_path' => '',
         );
     }
 
@@ -548,7 +563,7 @@ class expHelpMarkdownRenderer
                 $word = strtolower( $m[2] );
                 $kind = isset( self::$calloutWords[$word] ) ? self::$calloutWords[$word] : ( isset( self::$callouts[$word] ) ? $word : 'note' );
                 $title = trim( $m[3] );
-                $html .= $this->renderCallout( $kind, $title === '' ? null : $this->renderInline( $title ), $this->renderBlocks( $inner ) );
+                $html .= $this->renderCallout( $kind, $title === '' ? null : $this->renderInline( $title ), $this->renderBlocks( $inner ), $word );
                 continue;
             }
 
@@ -895,18 +910,21 @@ class expHelpMarkdownRenderer
                     array_shift( $lines );
                 else
                     $lines[0] = $m[5];
-                return $this->renderCallout( self::$calloutWords[$word], $this->renderInline( trim( $m[2] ) ), $this->renderBlocks( $lines ) );
+                return $this->renderCallout( self::$calloutWords[$word], $this->renderInline( trim( $m[2] ) ), $this->renderBlocks( $lines ), $word );
             }
         }
         return '<blockquote class="a4-help-quote">' . $this->renderBlocks( $lines ) . '</blockquote>';
     }
 
     /**
-     * A callout box. $title is HTML (already rendered) or null for the kind's own word.
+     * A callout box. $title is HTML (already rendered) or null for the kind's own word. $level is the word that named
+     * it: a notice level of the style guide (Attention, Data protection) keeps its own title and icon.
      */
-    protected function renderCallout( $kind, $title, $body )
+    protected function renderCallout( $kind, $title, $body, $level = '' )
     {
         list( $icon, $word ) = self::$callouts[$kind];
+        if ( isset( self::$calloutLevels[$level] ) )
+            list( $word, $icon ) = self::$calloutLevels[$level];
         if ( $title === null )
             $title = self::escape( $this->t( $word ) );
         return '<div class="a4-help-callout a4-help-callout--' . $kind . '" role="note">'
@@ -1461,10 +1479,14 @@ class expHelpMarkdownRenderer
                 return null;
             return array( 'href' => '#' . $anchorId, 'external' => false, 'width' => null, 'height' => null );
         }
-        // a relative path: it must stay inside the documentation (checked here too), the resolver decides the rest
+        // a relative path: it must stay inside the documentation (checked here too), the resolver decides the rest;
+        // with source_path, inside the installation from the file the page was read from (a translation's link to
+        // the original's directory climbs above its page id)
         $decoded = rawurldecode( $url );
+        $sourcePath = is_string( $this->options['source_path'] ) ? self::normalizePath( $this->options['source_path'] ) : null;
+        $base = $sourcePath !== null && $sourcePath !== '' && $decoded !== '' && $decoded[0] !== '/' ? $sourcePath : $this->path;
         if ( preg_match( '/[\x00-\x1F\x7F\\\\]/', $decoded ) === 1
-             || self::resolvePath( $this->path, $decoded[0] === '/' ? ltrim( $decoded, '/' ) : $decoded, $decoded[0] === '/' ) === null )
+             || self::resolvePath( $base, $decoded[0] === '/' ? ltrim( $decoded, '/' ) : $decoded, $decoded[0] === '/' ) === null )
             return null;
         $resolver = $image ? $this->options['image_resolver'] : $this->options['link_resolver'];
         if ( !is_callable( $resolver ) )

@@ -59,7 +59,7 @@ Zwei Cronjobs des standardmäßigen (globalen) Cron-Teils reagieren auf Daten, d
 
 - **`hide.php`** verbirgt Elemente, deren Datumsfeld, pro Klasse in `[HideSettings] HideDateAttributeList[]` benannt,
   überschritten ist, unterhalb der Knoten in `RootNodeList[]`. Verborgene Elemente bleiben in der Administration und
-  lassen sich wieder einblenden ([Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md#hide-an-item)).
+  lassen sich wieder einblenden ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md#ein-objekt-verstecken)).
 - **`unpublish.php`** entfernt Elemente der Klassen in `[UnpublishSettings] ClassList[]` unterhalb von `RootNodeList[]`,
   wenn ihr Feld `unpublish_date` überschritten ist. Das Entfernen ist das Entfernen des Kernels in den **Papierkorb**,
   sodass das Element von dort wiederhergestellt werden kann (`kernel/private/classes/cronjobs/unpublish.php`).
@@ -79,7 +79,7 @@ angezeigt. Siehe [Landingpages mit Layouts](../wachstum/landingpages-mit-layouts
 > **Warnung**
 > Wartende Versionen werden vom Workflow-Cronjob veröffentlicht (`workflow.php`, Teil *frequent*); Verbergen und
 > Entfernen laufen im globalen Teil. Wenn Cron nicht läuft, geschieht an dem Datum nichts
-> ([Workflows](../../../../en/us/guides/workflows.md), [Cronjobs](../../../../en/us/guides/cronjobs.md)). Die Seite Cronjobs zeigt jeden
+> ([Workflows](../../../anleitungen/workflows.md), [Cronjobs](../../../anleitungen/cronjobs.md)). Die Seite Cronjobs zeigt jeden
 > Teil als *Geplant* oder *Nicht geplant* mit seinem nächsten Lauf.
 
 Der Zeitpunkt der Veröffentlichung ist daher „der erste Cron-Lauf nach dem Datum“, nicht die genaue Minute. Fragen Sie
@@ -96,7 +96,7 @@ Ihren Hoster, wie oft der Teil frequent läuft.
 
 ## Verwandte Seiten
 
-- [Workflows](../../../../en/us/guides/workflows.md)
+- [Workflows](../../../anleitungen/workflows.md)
 - [Redaktionskalender](redaktionskalender.md)
 - [Freigabe und Prüfung](freigabe-und-pruefung.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

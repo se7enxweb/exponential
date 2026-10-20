@@ -98,7 +98,7 @@ Die Archivgrößen sind die der Seitenpakete allein, ohne das, was sie verlangen
 | eine einzelne Website im Design simple, die Sie selbst füllen | `sevenx_site_clean` |
 
 Installieren Sie mit `exp:install --package=<name>` oder `Site_package` in `kickstart.ini`
-([6.4 Referenz zu kickstart.ini](../../../../en/us/install/06-kickstarter.md#64-kickstartini-reference)), oder wählen Sie es auf der Seite der
+([6.4 Referenz zu kickstart.ini](../../../installation/06-kickstarter.md#64-referenz-zu-kickstartini)), oder wählen Sie es auf der Seite der
 Seitenpakete im Setup-Assistenten. Die Sicht eines Hosters auf dieselbe Wahl steht in
 [Seitenpakete für Hoster](../../hosting/bereitstellung/seitenpakete-fuer-hoster.md).
 
@@ -114,4 +114,4 @@ Seitenpakete im Setup-Assistenten. Die Sicht eines Hosters auf dieselbe Wahl ste
 - [cjw_multisite im Vergleich](../cjw-multisite/sevenx-multisite-und-cjw-multisite-im-vergleich.md)
 - [Seitenpakete und die mitgelieferten Themes](../../../../en/us/help/creators/website-creators/site-packages-and-shipped-themes.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

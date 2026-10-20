@@ -28,7 +28,7 @@ Sicherheitslücke kann gegen jede Website missbraucht werden, bevor es eine Korr
 „Bitte melden Sie Sicherheitsprobleme vertraulich per E-Mail an security@se7enx.com, nicht im öffentlichen
 Issue-Tracker oder in den Diskussionen. Sie können eine erste Antwort innerhalb eines Werktags erwarten“
 ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). Die vertrauliche Meldung von
-Sicherheitslücken des Repositorys bei GitHub wird ebenfalls angenommen ([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#security-problems)).
+Sicherheitslücken des Repositorys bei GitHub wird ebenfalls angenommen ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#sicherheitsprobleme)).
 
 ## Der vertrauliche Weg
 
@@ -84,4 +84,4 @@ and the steps - and no passwords or personal data. I won't share what you told m
 - [Gesprächspunkte: Sicherheit](gespraechspunkte-sicherheit.md)
 - [Für Sicherheit eintreten](fuer-sicherheit-eintreten.md)
 - [Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

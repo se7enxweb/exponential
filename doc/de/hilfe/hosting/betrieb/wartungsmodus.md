@@ -14,7 +14,7 @@ auf gehosteten Exponential-Websites ausführen. Sie beantwortet: wie Sie eine We
 Besucher und Suchmaschinen sehen, wer die Website noch erreicht, worauf Sie auf einer Hosting-Plattform achten müssen (getrennte
 Hostnamen für die Administration, Proxys, Caches, Cron) und wie Sie wieder hineinkommen, wenn etwas schiefging.
 
-Die vollständige Anleitung ist [Wartungsmodus: die Website vom Netz nehmen und zurückbringen](../../../../en/us/guides/maintenance-mode.md);
+Die vollständige Anleitung ist [Wartungsmodus: die Website vom Netz nehmen und zurückbringen](../../../anleitungen/wartungsmodus.md);
 die Referenz der Funktion ist [Wartungsmodus](../../../../en/us/features/6.0/maintenance-mode.md).
 
 ## Inhalt
@@ -141,7 +141,7 @@ ein und aus.
 Die Seite ist die `errors/maintenance.html` des aktiven Themes, wenn eine aktive Erweiterung eine hat, sonst
 `share/maintenance.html`: eine eigenständige HTML-Datei mit Platzhaltern für die Nachricht und das erwartete Ende. Um sie für einen
 Kunden zu gestalten, geben Sie der Theme-Erweiterung des Kunden eine eigene `errors/maintenance.html`
-([Abschnitt 8 der Anleitung](../../../../en/us/guides/maintenance-mode.md#8-the-maintenance-page-and-its-preview)).
+([Abschnitt 8 der Anleitung](../../../anleitungen/wartungsmodus.md#8-die-wartungsseite-und-ihre-vorschau)).
 
 > **Tipp**
 > Schreiben Sie die Nachricht in den Worten des Kunden und geben Sie eine Endzeit mit Zeitzone an: „Wir aktualisieren den Shop.
@@ -159,7 +159,7 @@ Kunden zu gestalten, geben Sie der Theme-Erweiterung des Kunden eine eigene `err
 | **Eine Installation läuft**, und nichts wird installiert | ein Kickstarter-Lauf ist gescheitert und hat sie angelassen: reparieren, dann ausschalten |
 | Die REST-API antwortet mit 503 | die API ist auch ein Front-Controller: erlauben Sie die Adressen ihrer Clients oder halten Sie das Fenster kurz |
 
-Die vollständige Tabelle steht in [Abschnitt 15 der Anleitung](../../../../en/us/guides/maintenance-mode.md#15-troubleshooting).
+Die vollständige Tabelle steht in [Abschnitt 15 der Anleitung](../../../anleitungen/wartungsmodus.md#15-fehlerbehebung).
 
 ## Checkliste
 
@@ -176,5 +176,5 @@ Die vollständige Tabelle steht in [Abschnitt 15 der Anleitung](../../../../en/u
 - [Kunden-Websites aktualisieren](kunden-websites-aktualisieren.md), [Änderungen ausrollen](aenderungen-ausrollen.md)
 - [Wiederherstellung und Wiederherstellungstests](wiederherstellung-und-wiederherstellungstests.md)
 - [Website nicht erreichbar](../runbooks/website-nicht-erreichbar.md) (Runbook)
-- [Anleitung zum Wartungsmodus](../../../../en/us/guides/maintenance-mode.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Anleitung zum Wartungsmodus](../../../anleitungen/wartungsmodus.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

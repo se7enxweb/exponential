@@ -41,7 +41,7 @@ scheitert, Seiten zeigen Fehler, Logs wachsen nicht mehr, die Datenbank verweige
 
 | Pfad | Entfernen? | Warum |
 |---|---|---|
-| `var/cache`, `var/<site>/cache` | ja, über den Cache-Befehl | Caches brauchen kein Backup: Sie werden neu erzeugt ([10.9](../../../../en/us/install/10-after-installing.md#109-backups-and-restore)) |
+| `var/cache`, `var/<site>/cache` | ja, über den Cache-Befehl | Caches brauchen kein Backup: Sie werden neu erzeugt ([10.9](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung)) |
 | Rotierte Log-Archive (`*.log.1` ... und komprimierte Archive) | ja, über `exp:logs --prune` | sie sind alte Kopien |
 | `var/log/*.log` (die aktuellen Logs) | leeren Sie sie über `exp:logs --truncate`, nicht durch Löschen | behält die Dateien und ihre Berechtigungen |
 | `var/storage`, `var/<site>/storage` | **nie** | Uploads und Bilder: Kundendaten |
@@ -80,7 +80,7 @@ Symptom. `./console exp:logs --list` zeigt Zeilen pro Minute je Datei. Dann:
 archiviert oder entfernt werden ([Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md)).
 
 **SQLite.** Eine große Datei `-wal` schrumpft bei einem Checkpoint; `VACUUM` gewinnt nach großen Löschungen Platz zurück, braucht aber selbst
-freien Platz. Lesen Sie [ANALYZE, VACUUM und die WAL-Datei](../../../../en/us/install/09-databases.md#analyze-vacuum-and-the-wal-file), bevor Sie
+freien Platz. Lesen Sie [ANALYZE, VACUUM und die WAL-Datei](../../../installation/09-datenbanken.md#analyze-vacuum-und-die-wal-datei), bevor Sie
 etwas ausführen.
 
 > **Warnung**
@@ -101,4 +101,4 @@ etwas ausführen.
 
 - [Aufbau des Speichers](../betrieb/aufbau-des-speichers.md)
 - [Langsame Website](langsame-website.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

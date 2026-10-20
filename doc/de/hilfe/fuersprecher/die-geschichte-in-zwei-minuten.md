@@ -52,25 +52,25 @@ Erzählen Sie die Zwei-Minuten-Fassung und fügen Sie je nach Zuhörer einen die
 
 | Zuhörer | Fügen Sie hinzu | Quelle |
 |---|---|---|
-| Ein Entwickler | „Es läuft auf PHP 8.0 bis 8.5, wird mit Composer installiert, und jedes Paket ist ein Git-Repository, das Sie mit vollständiger Historie klonen können. Jeder Pull Request wird übernommen.“ | [PHP-Versionen](../../../en/us/help/who-is-the-exponential-foundation.md#php-versions), [Mit Git entwickeln](../../../en/us/help/develop-with-git.md), [Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows) |
-| Ein Administrator | „SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL; Linux, BSD, macOS oder Windows; und eine Installation mit einem Befehl.“ | [Datenbankunterstützung](../../../en/us/help/database-support.md), [Betriebssystemunterstützung](../../../en/us/help/os-support.md), [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
-| Ein Redakteur | „Entwürfe und Versionen, eine Vorschau in Telefonbreite, ein Seitenbaukasten und Hilfe auf jedem Bildschirm.“ | [Ein Rundgang durch die Administration](../../../en/us/help/admin-tour.md), [Der Layouts-Editor](../../../en/us/help/layouts-editor.md) |
-| Ein Entscheider | „Die Software hat ihren ursprünglichen Hersteller schon einmal überlebt, weil ihr Code frei ist. Ein Unternehmen und eine gemeinnützige Organisation stehen dahinter.“ | [Mit Einwänden umgehen, Langlebigkeit](../../../en/us/help/business/objection-handling.md#longevity-will-it-still-be-here-in-ten-years) |
+| Ein Entwickler | „Es läuft auf PHP 8.0 bis 8.5, wird mit Composer installiert, und jedes Paket ist ein Git-Repository, das Sie mit vollständiger Historie klonen können. Jeder Pull Request wird übernommen.“ | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen), [Mit Git entwickeln](../mit-git-entwickeln.md), [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
+| Ein Administrator | „SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL; Linux, BSD, macOS oder Windows; und eine Installation mit einem Befehl.“ | [Datenbankunterstützung](../datenbankunterstuetzung.md), [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
+| Ein Redakteur | „Entwürfe und Versionen, eine Vorschau in Telefonbreite, ein Seitenbaukasten und Hilfe auf jedem Bildschirm.“ | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md), [Der Layouts-Editor](../layout-editor.md) |
+| Ein Entscheider | „Die Software hat ihren ursprünglichen Hersteller schon einmal überlebt, weil ihr Code frei ist. Ein Unternehmen und eine gemeinnützige Organisation stehen dahinter.“ | [Mit Einwänden umgehen, Langlebigkeit](../geschaeft/einwandbehandlung.md#langlebigkeit-gibt-es-das-in-zehn-jahren-noch) |
 | Jemand aus der Symfony-Welt | „Die Familie hat auch Symfony-Distributionen: Exponential Platform DXP sowie Legacy oder Nexus mit Exponential 6 darin.“ | [Die Produktfamilie kennen](die-produktfamilie-kennen.md) |
 
 ## Die Fakten hinter der Geschichte
 
 | Aussage | Quelle |
 |---|---|
-| „ein professionelles PHP-Anwendungsframework mit fortgeschrittener CMS-Funktionalität (Content-Management-System) ... seine bemerkenswerteste Eigenschaft ist sein vollständig anpassbares und erweiterbares Inhaltsmodell“ | [README](https://github.com/se7enxweb/exponential/blob/main/README.md), [Exponential 6](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
+| „ein professionelles PHP-Anwendungsframework mit fortgeschrittener CMS-Funktionalität (Content-Management-System) ... seine bemerkenswerteste Eigenschaft ist sein vollständig anpassbares und erweiterbares Inhaltsmodell“ | [README](https://github.com/se7enxweb/exponential/blob/main/README.md), [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
 | Copyright „1998 - 2026 7x & Exponential Foundation“ und „1999 - 2014 eZ Systems AS“ | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
-| eZ Publish wurde von seinem Hersteller nach fast achtzehn Jahren eingestellt | [Exponential 6](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
-| „7x hat 2023 die Leitung des Projekts übernommen ...“ | [Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short) |
-| 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, fünfzehn Releases; 6.0.15 in Entwicklung | [Wer ist 7x?, Die Releases 6.0.x](../../../en/us/help/who-is-7x.md#the-60x-releases) |
-| Das Produkt wurde am 11. und 12. August 2025 zu Exponential | [Zeitleiste](../../../en/us/help/who-is-the-exponential-foundation.md#timeline) |
-| Die Foundation wurde am 19. März 2026 in Seattle gegründet | [Was die Foundation ist](../../../en/us/help/who-is-the-exponential-foundation.md#what-the-foundation-is) |
+| eZ Publish wurde von seinem Hersteller nach fast achtzehn Jahren eingestellt | [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
+| „7x hat 2023 die Leitung des Projekts übernommen ...“ | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
+| 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, fünfzehn Releases; 6.0.15 in Entwicklung | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
+| Das Produkt wurde am 11. und 12. August 2025 zu Exponential | [Zeitleiste](../wer-ist-die-exponential-foundation.md#zeitleiste) |
+| Die Foundation wurde am 19. März 2026 in Seattle gegründet | [Was die Foundation ist](../wer-ist-die-exponential-foundation.md#was-die-foundation-ist) |
 | Was 6.0.15 hinzufügt | [Änderungsprotokoll 6.0.15](../../../changelogs/6.0/6.0.15.md) |
-| „steht in keiner Verbindung zur ursprünglichen Software eZ Publish oder ihrem ursprünglichen Entwickler, eZ Systems oder Ibexa“ | [Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short) |
+| „steht in keiner Verbindung zur ursprünglichen Software eZ Publish oder ihrem ursprünglichen Entwickler, eZ Systems oder Ibexa“ | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
 
 ## Wörter, die Sie verwenden, und Wörter, die Sie meiden
 
@@ -83,7 +83,7 @@ Erzählen Sie die Zwei-Minuten-Fassung und fügen Sie je nach Zuhörer einen die
 | „steht in keiner Verbindung zu eZ Systems oder Ibexa“ | „der offizielle Nachfolger“ |
 
 Mehr in [Richtig über die Geschichte schreiben](richtig-ueber-die-geschichte-schreiben.md) und den
-[Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md#the-old-name-ez-publish-only-as-history).
+[Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#der-alte-name-ez-publish-nur-als-geschichte).
 
 ## Üben
 
@@ -95,6 +95,6 @@ Mehr in [Richtig über die Geschichte schreiben](richtig-ueber-die-geschichte-sc
 
 - [Gesprächspunkte: Langlebigkeit und Geschichte](gespraechspunkte-langlebigkeit-und-geschichte.md)
 - [Beiträge zur Geschichte schreiben](beitraege-zur-geschichte-schreiben.md)
-- [Wer ist 7x?](../../../en/us/help/who-is-7x.md)
+- [Wer ist 7x?](../wer-ist-7x.md)
 - [Die Geschichte von Exponential](../../../en/us/history/README.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

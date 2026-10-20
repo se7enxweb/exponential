@@ -109,4 +109,4 @@ Die Grenze zwischen den beiden Arten von Support ist die häufigste Quelle von R
 - [SLA-Vorlage](sla-vorlage.md)
 - [Wann Sie wen anrufen](wann-sie-wen-anrufen.md)
 - [Verträge und SLAs](vertraege-und-slas.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

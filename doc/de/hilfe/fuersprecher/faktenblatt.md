@@ -45,14 +45,14 @@ Für ein deutschsprachiges Publikum übersetzen Sie die Zeilen und behalten die 
 
 | Zeile | Quelle |
 |---|---|
-| Was es ist | [Exponential 6](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
-| Wer | [Die Foundation und 7x](../../../en/us/help/who-is-the-exponential-foundation.md#the-foundation-and-7x) |
-| Releases | [Wer ist 7x?, Die Releases 6.0.x](../../../en/us/help/who-is-7x.md#the-60x-releases) |
+| Was es ist | [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
+| Wer | [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x) |
+| Releases | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
 | Lizenz | [Gesprächspunkte: Open Source und Lizenzierung](gespraechspunkte-open-source-und-lizenzierung.md) |
-| Läuft auf | [PHP-Versionen](../../../en/us/help/who-is-the-exponential-foundation.md#php-versions), [Datenbankunterstützung](../../../en/us/help/database-support.md), [Betriebssystemunterstützung](../../../en/us/help/os-support.md) |
-| Neu | [Die Produkte im Einzelnen](../../../en/us/help/who-is-the-exponential-foundation.md#the-products-one-by-one) |
-| Sicherheit | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), [Sicherheitshärtung](../../../en/us/help/security-hardening.md) |
-| Sprachen | [Sprachen und Barrierefreiheit](../../../en/us/help/who-is-the-exponential-foundation.md#languages-and-accessibility) |
+| Läuft auf | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen), [Datenbankunterstützung](../datenbankunterstuetzung.md), [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md) |
+| Neu | [Die Produkte im Einzelnen](../wer-ist-die-exponential-foundation.md#die-produkte-im-einzelnen) |
+| Sicherheit | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), [Sicherheitshärtung](../sicherheitshaertung.md) |
+| Sprachen | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | Geschichte | [Gesprächspunkte: Langlebigkeit und Geschichte](gespraechspunkte-langlebigkeit-und-geschichte.md) |
 | Ausprobieren | [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
 | Community, Unterstützung | [Die Community-Kanäle](community-kanaele.md) |
@@ -66,4 +66,4 @@ Für ein deutschsprachiges Publikum übersetzen Sie die Zeilen und behalten die 
 
 - [Gesprächspunkte: das Grundset](gespraechspunkte-grundset.md)
 - [Der Werkzeugkasten für Fürsprecher](werkzeugkasten-fuer-fuersprecher.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

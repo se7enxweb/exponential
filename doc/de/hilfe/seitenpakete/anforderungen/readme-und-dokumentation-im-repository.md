@@ -121,4 +121,4 @@ Entscheidungen.
 - [Wie ein Release den Paketserver erreicht](../paketserver/wie-ein-release-den-paketserver-erreicht.md)
 - [Ein Seitenpaket forken](../eigene/ein-seitenpaket-forken.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

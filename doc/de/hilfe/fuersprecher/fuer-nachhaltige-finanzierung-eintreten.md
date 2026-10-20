@@ -31,8 +31,8 @@ Es gibt zwei Organisationen mit zwei Missionen ([7x und die Foundation für Für
 | Die Exponential Foundation | [github.com/sponsors/exponentialcms](https://github.com/sponsors/exponentialcms) oder über [foundation.exponential.earth](https://foundation.exponential.earth/) | „das Open-Source-Projekt selbst“ |
 | 7x | [github.com/sponsors/se7enxweb](https://github.com/sponsors/se7enxweb); laut README auch sponsor.se7enx.com und PayPal | „das Unternehmen, das den Betrieb am Laufen hält“ |
 
-Quellen: [Wie Sie unterstützen oder beitreten](../../../en/us/help/who-is-the-exponential-foundation.md#how-to-support-or-join),
-[Die Foundation und 7x](../../../en/us/help/who-is-the-exponential-foundation.md#the-foundation-and-7x). Die Foundation sagt, Spenden an
+Quellen: [Wie Sie unterstützen oder beitreten](../wer-ist-die-exponential-foundation.md#unterstützen-oder-mitmachen),
+[Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x). Die Foundation sagt, Spenden an
 sie seien in den Vereinigten Staaten steuerlich absetzbar; das muss jeder mit seiner eigenen Beratung prüfen.
 
 ## Wofür das Geld bezahlt
@@ -41,9 +41,9 @@ Aus der Profil-README von se7enxweb, wie sie in der Hilfe zitiert wird:
 
 - **Die Foundation**: Pflege der Kernbibliotheken, API- und Kerndokumentation, Integrationsschichten (GraphQL, REST,
   Solr), Community-Infrastruktur, Sicherheitshärtung der Zeta Components
-  ([Was die Foundation finanziert](../../../en/us/help/who-is-the-exponential-foundation.md#what-the-foundation-funds)).
+  ([Was die Foundation finanziert](../wer-ist-die-exponential-foundation.md#was-die-foundation-finanziert)).
 - **7x**: monatliche Releases, Patches an den Zeta Components, die LegacyBridge, der Symfony-Fork, der
-  Datenbankübersetzer, der Spiegel der Schulungsbücher ([Die Foundation und 7x](../../../en/us/help/who-is-the-exponential-foundation.md#the-foundation-and-7x)).
+  Datenbankübersetzer, der Spiegel der Schulungsbücher ([Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x)).
 
 ## Gute Argumente vorbringen
 
@@ -74,14 +74,14 @@ sponsorship is a small, predictable cost that protects our investment.
 Proposed amount: <amount>, reviewed yearly.
 ```
 
-[Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md#every-year) nennt eine jährliche Entscheidung über
+[Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md#jedes-jahr) nennt eine jährliche Entscheidung über
 Sponsoring als Routine für Organisationen.
 
 ## Sagen Sie nicht
 
 - Dass ein Sponsoring Support, Funktionen oder Vorrang kauft, es sei denn, die Sponsorenseite sagt das.
 - Beträge, die andere geben, oder wie viel die Organisationen brauchen: Die Quellen nennen keine Budgets
-  ([Was die Quellen nicht sagen](../../../en/us/help/who-is-the-exponential-foundation.md#what-the-sources-do-not-say)).
+  ([Was die Quellen nicht sagen](../wer-ist-die-exponential-foundation.md#was-die-quellen-nicht-sagen)).
 - Dass Sie Geld sammeln: Schicken Sie Menschen nur auf die offiziellen Sponsorenseiten.
 - Steuerliche Ratschläge.
 
@@ -89,5 +89,5 @@ Sponsoring als Routine für Organisationen.
 
 - [7x und die Exponential Foundation, für Fürsprecher erklärt](7x-und-die-foundation.md)
 - [Vorlagen für Beiträge in sozialen Medien](vorlagen-fuer-soziale-medien.md#unterstützung-und-dank)
-- [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

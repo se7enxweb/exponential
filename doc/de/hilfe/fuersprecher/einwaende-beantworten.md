@@ -10,7 +10,7 @@ type: help
 # Einwände als Fürsprecher beantworten
 
 Diese Seite ist für Fürsprecher, die auf Zweifel stoßen: „Ist das nicht tot?“, „PHP ist alt“, „Niemand nutzt es“,
-„Warum nicht X?“. Der Vertrieb antwortet Käufern in Besprechungen ([Mit Einwänden umgehen](../../../en/us/help/business/objection-handling.md));
+„Warum nicht X?“. Der Vertrieb antwortet Käufern in Besprechungen ([Mit Einwänden umgehen](../geschaeft/einwandbehandlung.md));
 Fürsprecher antworten Gleichgesinnten, oft öffentlich, wo viele andere mitlesen. Das ändert das Ziel: Sie versuchen
 nicht, die Person vor Ihnen zu überzeugen, sondern hinterlassen eine genaue, freundliche Antwort für alle, die sie später
 lesen.
@@ -78,18 +78,18 @@ Part of that is right: <the true part, with source>. One detail has changed sinc
 | „KI ruiniert Inhalte“ / „wir brauchen KI“ | [Einwand: „Was ist mit den KI-Funktionen?“](einwand-ki-funktionen.md) |
 | Eine Diskussion, die feindselig wird | [Mit feindseligen Diskussionen umgehen](feindselige-diskussionen.md) |
 
-Für Käufer, mit mehr Zeilen (Support, Upgrades, Hosting): [Mit Einwänden umgehen](../../../en/us/help/business/objection-handling.md#quick-reference).
+Für Käufer, mit mehr Zeilen (Support, Upgrades, Hosting): [Mit Einwänden umgehen](../geschaeft/einwandbehandlung.md#kurzübersicht).
 
 ## Wann Sie aufhören
 
 - Nach zwei Antworten, wenn die andere Person keine Fragen mehr stellt. Die Leser haben, was sie brauchen.
 - Wenn die Diskussion persönlich wird. Siehe [Mit feindseligen Diskussionen umgehen](feindselige-diskussionen.md).
 - Wenn die ehrliche Antwort lautet: „Exponential passt dafür nicht.“ Sagen Sie es und wünschen Sie viel Erfolg
-  ([Wo Exponential nicht passt](../../../en/us/help/business/comparing-exponential-factually.md#where-exponential-is-not-the-right-fit)).
+  ([Wo Exponential nicht passt](../geschaeft/exponential-sachlich-vergleichen.md#wo-exponential-nicht-die-richtige-wahl-ist)).
 
 ## Verwandte Seiten
 
 - [Öffentlich antworten](oeffentlich-antworten.md)
 - [Aussagen, die Sie nicht machen dürfen](aussagen-die-sie-nicht-machen-duerfen.md)
-- [Mit Einwänden umgehen](../../../en/us/help/business/objection-handling.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Mit Einwänden umgehen](../geschaeft/einwandbehandlung.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

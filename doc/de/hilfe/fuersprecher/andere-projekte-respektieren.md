@@ -24,9 +24,9 @@ Sie glaubwürdig.
 ## Warum es wichtig ist
 
 - Die Codebasis von Exponential trägt die Arbeit von eZ Systems und Hunderten Beitragenden
-  ([Beitragende und Freunde des Projekts](../../../en/us/help/who-is-7x.md#contributors-and-friends-of-the-project)).
+  ([Beitragende und Freunde des Projekts](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
 - Seine Funktionen bauen auf anderen Projekten auf: Netgen Layouts, LoveStack von Mugo Web, der Newsletter von CJW
-  Network, Zeta Components, Symfony, PHP selbst ([Der PHP-Stack, auf dem es steht](../../../en/us/help/who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to)).
+  Network, Zeta Components, Symfony, PHP selbst ([Der PHP-Stack, auf dem es steht](../wer-ist-die-exponential-foundation.md#der-php-stack-auf-dem-es-steht-und-dem-es-etwas-zurückgibt)).
 - Menschen, die Sie heute beleidigen, könnten morgen Beitragende sein.
 - Wer einen Angriff auf ein anderes Produkt liest, traut jeder anderen Aussage weniger.
 
@@ -40,13 +40,13 @@ Sie glaubwürdig.
 | eZ Systems | Sein Copyright von 1999 bis 2014 bleibt im Code |
 | eZ Systems und Ibexa | „Dieses Projekt steht in keiner Verbindung“ zu ihnen; über sie wird sachlich gesprochen |
 
-Quellen: [Marken- und Namensregeln, Andere Unternehmen und Produkte](../../../en/us/help/business/brand-and-naming-rules.md#other-companies-and-products),
-[Wer ist 7x?](../../../en/us/help/who-is-7x.md#contributors-and-friends-of-the-project).
+Quellen: [Marken- und Namensregeln, Andere Unternehmen und Produkte](../geschaeft/marken-und-namensregeln.md#andere-unternehmen-und-produkte),
+[Wer ist 7x?](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts).
 
 ## Regeln für das Sprechen über andere
 
 1. **Beschreiben Sie nie die Schwächen eines anderen Produkts.** Beschreiben Sie, was Exponential kann; lassen Sie die
-   Menschen das andere Produkt in dessen eigener Dokumentation prüfen ([Exponential sachlich vergleichen](../../../en/us/help/business/comparing-exponential-factually.md#the-rules-of-a-fair-comparison)).
+   Menschen das andere Produkt in dessen eigener Dokumentation prüfen ([Exponential sachlich vergleichen](../geschaeft/exponential-sachlich-vergleichen.md#die-regeln-eines-fairen-vergleichs)).
 2. **Nennen Sie die Arbeit, auf der Sie aufbauen**, beim Namen.
 3. **Keine Spekulationen** über die Motive oder die Zukunft anderer Unternehmen.
 4. **Keine Behauptungen über Verbindungen**: Deuten Sie nie Partnerschaften, Empfehlungen oder eine Kontinuität an, die
@@ -67,7 +67,7 @@ Quellen: [Marken- und Namensregeln, Andere Unternehmen und Produkte](../../../en
 | Statt | Sagen Sie |
 |---|---|
 | „X ist aufgebläht.“ | „Die Installation von Exponential ist ein Befehl auf SQLite.“ |
-| „Ibexa hat Sie im Stich gelassen.“ | „Wenn Sie eZ Platform oder Ibexa nutzen, gibt es einen dokumentierten Migrationsweg“ ([Kapitel 16](../../../en/us/install/16-migrating-from-ez-platform-and-ibexa.md)) |
+| „Ibexa hat Sie im Stich gelassen.“ | „Wenn Sie eZ Platform oder Ibexa nutzen, gibt es einen dokumentierten Migrationsweg“ ([Kapitel 16](../../installation/16-migration-von-ez-platform-und-ibexa.md)) |
 | „Unser Layouts-Editor ist besser als der von Netgen.“ | „Exponential Layouts bringt das Konzept von Netgen Layouts zu Exponential.“ |
 | „Niemand, der ernst zu nehmen ist, nutzt X.“ | Sagen Sie nichts. |
 
@@ -76,4 +76,4 @@ Quellen: [Marken- und Namensregeln, Andere Unternehmen und Produkte](../../../en
 - [Einwand: „Warum nicht ein anderes CMS?“](einwand-warum-nicht-ein-anderes-cms.md)
 - [Richtig über die Geschichte schreiben](richtig-ueber-die-geschichte-schreiben.md)
 - [Verhalten und Ethik für Fürsprecher](verhalten-und-ethik.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

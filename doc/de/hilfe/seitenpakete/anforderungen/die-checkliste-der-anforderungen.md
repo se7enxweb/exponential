@@ -112,5 +112,5 @@ Details: [README und Dokumentation im Repository](readme-und-dokumentation-im-re
 - [Seitenpakete: hier beginnen](../README.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Die Datei ezpkg](../grundlagen/die-datei-ezpkg.md)
-- [Anleitung zu Paketen](../../../../en/us/guides/packages.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Anleitung zu Paketen](../../../anleitungen/pakete.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

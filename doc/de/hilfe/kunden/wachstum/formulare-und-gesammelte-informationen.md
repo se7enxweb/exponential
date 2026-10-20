@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Betreiber, die Informationen von Besuchern sammeln: Kontakt- und Feedbackformulare, Umfragen,
 Anmeldungen, Lead-Formulare. In Exponential ist ein Formular ein Element einer Klasse, deren Felder als **Information
 Collector** markiert sind; jedes Mal, wenn ein Besucher es absendet, wird eine **Sammlung** gespeichert
-([Gesammelte Informationen](../../../../en/us/guides/collected-information.md)). Das Formular selbst baut Ihr Website-Ersteller
+([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)). Das Formular selbst baut Ihr Website-Ersteller
 ([Formulare mit dem Information Collector](../../../../en/us/help/creators/website-creators/forms-with-the-information-collector.md));
 was mit den Einsendungen geschieht, ist Ihre Routine.
 
@@ -29,7 +29,7 @@ was mit den Einsendungen geschieht, ist Ihre Routine.
 
 - **Setup > Gesammelte Informationen** listet die Elemente, die gesammelt haben, mit Zahlen, Suche, Sortierung und
   Seitenaufteilung; jedes verweist auf seine Sammlungen, auf das Element und auf einen **CSV-Export**
-  ([Gesammelte Informationen](../../../../en/us/guides/collected-information.md)).
+  ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)).
 - Drei Formulartypen sind bekannt: Formular, Feedback und Umfrage; eine Umfrage kann pro Benutzer einmal beantwortet
   werden, und Umfragen senden standardmäßig keine E-Mail (`settings/collect.ini`, siehe
   [Formulare mit dem Information Collector](../../../../en/us/help/creators/website-creators/forms-with-the-information-collector.md)).
@@ -38,7 +38,7 @@ was mit den Einsendungen geschieht, ist Ihre Routine.
 ## Wer die Einsendungen liest
 
 Alles auf den Seiten der gesammelten Informationen erfordert die Richtlinie `infocollector/read`, und mit ihr liest
-eine Person die Einsendungen **jedes** Formulars ([Gesammelte Informationen](../../../../en/us/guides/collected-information.md)).
+eine Person die Einsendungen **jedes** Formulars ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)).
 Geben Sie sie den Personen, die Formulare beantworten, nicht jedem Redakteur ([Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md)).
 
 | Formular | Wer antwortet | Wie schnell (Ihr Versprechen) |
@@ -72,7 +72,7 @@ Spam-Sammlungen lassen sich unter **Setup > Gesammelte Informationen** gesammelt
 - **Exportieren** Sie die Einsendungen eines Formulars als CSV, wenn sie in ein anderes System müssen.
 - **Entfernen** löscht nach einer Bestätigung alle Sammlungen der angehakten Formulare oder die angehakten Sammlungen
   eines Formulars; die Formulare bleiben. Es lässt sich nicht rückgängig machen: Exportieren Sie zuerst, wenn die Daten
-  noch gebraucht werden ([Gesammelte Informationen](../../../../en/us/guides/collected-information.md)).
+  noch gebraucht werden ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)).
 - Legen Sie fest, wie lange Einsendungen aufbewahrt werden, schreiben Sie es in Ihre Datenschutzhinweise und löschen
   Sie nach diesem Plan. Dies ist keine Rechtsberatung ([Einwilligung und Formulare](../../../../en/us/help/businesses/security/consent-and-forms.md),
   [Datenaufbewahrung und Löschung](../../../../en/us/help/businesses/security/data-retention-and-deletion.md)).
@@ -95,7 +95,7 @@ Eine monatliche Routine:
 
 ## Verwandte Seiten
 
-- [Gesammelte Informationen](../../../../en/us/guides/collected-information.md)
+- [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
 - [Formulareinsendungen lesen und exportieren](../../../../en/us/help/creators/website-creators/form-submissions.md)
 - [Formulare und Feedback von Mitgliedern](../../../../en/us/help/businesses/associations/forms-and-member-feedback.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

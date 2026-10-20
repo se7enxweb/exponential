@@ -218,6 +218,27 @@ instead, so you need no write access to the project. For the kernel itself, read
 installation first: it explains the commit hook (`make hooks`) and the file manifest (`make manifest-fix`) that every
 kernel pull request keeps current.
 
+**Expect many review rounds.** 7x reviews a commit or pull request in many more rounds than usual, sometimes hundreds
+of revisions; be ready to revise your change until it is simple to accept. While the pull request is open, squash it
+and rebase it onto `main` as the reviews ask, which 7x requires:
+
+```bash
+git fetch origin
+git rebase -i origin/main
+git push --force-with-lease
+```
+
+Push with force only to your own pull request branch. After the merge, `main` is never rewritten
+([Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews)).
+
+**Copyright assignment (CLA).** 7x and the Exponential Foundation merge a code contribution to
+the core kernel (`se7enxweb/exponential`), sent in any form (pull request, patch, issue or mail), only after you have
+signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other
+licenses and in commercial products, without asking or paying you, and you cannot withdraw it or set conditions on it.
+Your own custom extensions, and the branch of your own site, are not affected. See
+[Copyright assignment (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)
+and the [CLA page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla).
+
 Built an extension of your own? [Contribute extensions back](contribute-extensions-back.md) shows how to publish it on
 GitHub and Packagist so every site can install it, and what the GPL requires when you hand an extension to others.
 

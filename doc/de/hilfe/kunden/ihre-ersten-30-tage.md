@@ -38,7 +38,7 @@ die sich der nächste Betreiber freuen wird.
 
 ## Woche 2: die Website und das Team kennenlernen
 
-- [ ] Machen Sie den [Rundgang durch die Administration](../../../en/us/help/admin-tour.md) und öffnen Sie die Seiten aus der
+- [ ] Machen Sie den [Rundgang durch die Administration](../rundgang-durch-die-administration.md) und öffnen Sie die Seiten aus der
       [Kurzreferenz](kurzreferenz-fuer-betreiber.md).
 - [ ] Treffen Sie jede Person, die in der Website arbeitet, und fragen Sie, was sie tut, wie oft und was ihr im Weg steht.
 - [ ] Schreiben Sie die Rollen im Team auf, wie sie sind und wie sie sein sollten
@@ -77,4 +77,4 @@ die sich der nächste Betreiber freuen wird.
 - [Lesepfad für Kunden](lesepfad-fuer-kunden.md)
 - [Was Ihnen gehört](was-ihnen-gehoert.md)
 - [Kunden: hier beginnen](kunden-hier-beginnen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

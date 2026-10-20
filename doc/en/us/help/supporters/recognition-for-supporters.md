@@ -14,8 +14,8 @@ to help, but it matters, especially for companies and for people building a care
 
 ## Contributors
 
-- **The Git history.** Every merged commit keeps its author: "Every pull request is merged, and its commits are kept as
-  the contributor wrote them and never rewritten" (`doc/en/us/bc/6.0/ci.md`). `git shortlog -sn` shows everyone who
+- **The Git history.** Every merged commit keeps its author: every pull request is merged, squashed and rebased
+  by its author while it was open, and `main`'s history is never rewritten after the merge (`doc/en/us/bc/6.0/ci.md`). `git shortlog -sn` shows everyone who
   contributed.
 - **The documentation's copyright notice** names "the Exponential contributors" next to 7x and the Foundation
   ([The license of this documentation](../../README-LICENSE.md)).

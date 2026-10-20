@@ -98,7 +98,7 @@ Einträge so abgewiesen werden wie bei einem Import, und das Verzeichnis wird da
 
 ## Auf eine Testinstallation hochladen
 
-`package/upload` in der Administration ist die strengste Tür ([Anleitung zu Paketen, Hochladen](../../../../en/us/guides/packages.md#6-uploading-a-package)).
+`package/upload` in der Administration ist die strengste Tür ([Anleitung zu Paketen, Hochladen](../../../anleitungen/pakete.md#6-ein-paket-hochladen)).
 Bevor irgendetwas entpackt wird, prüft `eZPackageUploadInspector::inspect()` in dieser Reihenfolge: Eine Datei wurde gesendet; ihr Name endet
 auf eine erlaubte Endung; sie ist nicht größer als `MaxArchiveSize`; sie beginnt mit der gzip-Signatur; jeder Eintrag ist sicher und
 innerhalb von `MaxEntries` und `MaxUnpackedSize`; es gibt oben eine `package.xml` oder `package.json` von höchstens 16 MiB; die Definition
@@ -138,4 +138,4 @@ Führen Sie vor der Veröffentlichung eine vollständige Installation in einer S
 - [ezpm: der Paketmanager auf der Kommandozeile](../../../../en/us/features/6.0/ezpm-package-manager-cli.md)
 - [Das JSON-Paketformat](../../../../en/us/bc/6.0/package-json-format.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

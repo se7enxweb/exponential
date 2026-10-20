@@ -18,7 +18,7 @@ Versionsverwaltung halten.
 ![Setup, Extensions: die Erweiterungen auf der Festplatte, welche aktiv sind, und die Schaltfläche zum Neuerzeugen der Autoload-Arrays](../../../../en/us/help/images/hosting/extensions.webp)
 
 Die Referenz ist [Eine PHP-Änderung ausrollen](../../../../en/us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy);
-die Schritt-für-Schritt-Anleitung ist [Exponential ausrollen](../../../../en/us/guides/deploying.md#7-ship-a-php-change-with-one-command).
+die Schritt-für-Schritt-Anleitung ist [Exponential ausrollen](../../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern).
 
 ## Inhalt
 
@@ -87,7 +87,7 @@ WarmUpURL[]=https://www.example.com/admin/user/login
 `[DeploySettings] PhpFpmService=auto` findet den PHP-FPM-Dienst, der die Installation ausliefert (es sucht den Pool, der nach
 der Hosting-Domain der Installation benannt ist), sodass auf einem Server mit mehreren PHP-Versionen der richtige neu geladen
 wird. Auf einem Plesk-Server zum Beispiel startet `systemctl restart php-fpm` ein PHP neu, das keine Website nutzt
-([Ausrollen, 3.4](../../../../en/us/guides/deploying.md#34-after-every-php-change-reload-the-right-php-fpm)).
+([Ausrollen, 3.4](../../../anleitungen/bereitstellung.md#34-nach-jeder-php-änderung-das-richtige-php-fpm-neu-laden)).
 
 > **Warnung**
 > Ein Neuladen beschränkt sich nicht auf einen Kunden. Der Master bittet jedes Kind jedes Pools, seine Anfrage zu beenden, und
@@ -174,4 +174,4 @@ Maßnahme.
 - [Abstimmung von PHP-FPM](../leistung/abstimmung-von-php-fpm.md)
 - [Velocity für Hoster](../server/velocity-fuer-hoster.md)
 - [Composer und Git auf Servern](../grundlagen/composer-und-git-auf-servern.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

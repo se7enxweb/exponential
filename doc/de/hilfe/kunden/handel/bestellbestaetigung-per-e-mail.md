@@ -80,4 +80,4 @@ Postfach des Shops.
 - [Bestellbelege und Bestellbestätigung für Unternehmen](../../../../en/us/help/businesses/stores/order-receipts-and-confirmation-mail.md)
 - [E-Mail-Zustellung](../../hosting/betrieb/mailzustellung.md)
 - [E-Mail-Einstellungen](../../../../en/us/features/6.0/mail-preferences.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

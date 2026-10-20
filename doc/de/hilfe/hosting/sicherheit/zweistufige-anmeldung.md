@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei einem Hoster. Mit der zweistufigen Anmeldung gibt ein Benutzer
 nach dem Passwort einen Code aus einer Authenticator-App oder aus einer E-Mail ein, sodass ein gestohlenes oder erratenes Passwort allein
 nutzlos ist. Sie ist der stärkste einzelne Schutz gegen Credential Stuffing auf der Anmeldeseite. Die Referenz ist
-[Zweistufige Anmeldung](../../../../en/us/guides/two-factor-login.md); die Erweiterung ist `sevenx_authentication_2fa`, die `composer.json` verlangt
+[Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md); die Erweiterung ist `sevenx_authentication_2fa`, die `composer.json` verlangt
 und die Installer aktivieren.
 
 ## Inhalt
@@ -79,7 +79,7 @@ DefaultMethod=totp
 Leeren Sie den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und rollen Sie aus. Richten Sie zuerst die Administratoren ein, damit
 niemand ohne Telefon überrascht wird. Eine später angelegte Rolle braucht ebenfalls `user2fa/setup` und `user2fa/verify`. Sie mindestens
 für Administratoren zu verlangen, ist die Empfehlung von
-[Sicherheitshärtung](../../../../en/us/help/security-hardening.md#brute-force-and-credential-stuffing-on-the-sign-in).
+[Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung).
 
 ## Der Schlüssel für die Geheimnisse
 
@@ -98,7 +98,7 @@ richtet jeder Benutzer die App neu ein. Erzeugen Sie einen Schlüssel pro Websit
 
 Ein Administrator der Website öffnet das Objekt des Benutzers in der Administration, setzt das Feld *Zweistufige Anmeldung* auf
 *E-mail one-time code* oder *Deaktiviert* und veröffentlicht; der Benutzer meldet sich an und richtet die App neu ein
-([Zweistufige Anmeldung und ein verlorenes Telefon](../../../../en/us/help/change-the-admin-password.md#two-step-sign-in-and-a-lost-phone)).
+([Zweistufige Anmeldung und ein verlorenes Telefon](../../administratorpasswort-aendern.md#zweistufige-anmeldung-und-ein-verlorenes-telefon)).
 
 Für den Support-Desk eines Hosters heißt das:
 
@@ -110,7 +110,7 @@ Für den Support-Desk eines Hosters heißt das:
 
 ## Was sie schützt
 
-Aus [Was sie schützt](../../../../en/us/guides/two-factor-login.md#what-protects-it):
+Aus [Was sie schützt](../../../anleitungen/zwei-faktor-anmeldung.md#was-sie-schützt):
 
 - Das Passwort allein meldet nie an; der Benutzer wird erst nach dem richtigen Code angemeldet, mit einer neuen Sitzungs-ID.
 - Falsche Codes zählen als gescheiterte Anmeldungen des Kontos (`[UserSettings] MaxNumberOfFailedLogin` sperrt es).
@@ -140,7 +140,7 @@ Möglichkeiten, die ein Hoster wählen kann:
 ## Verwandte Seiten
 
 - [Sicherheit für Hoster: Überblick](README.md)
-- [Zweistufige Anmeldung (Anleitung)](../../../../en/us/guides/two-factor-login.md)
-- [Sicherheit und Audit: absichern](../../../../en/us/guides/security-and-audit.md)
+- [Zweistufige Anmeldung (Anleitung)](../../../anleitungen/zwei-faktor-anmeldung.md)
+- [Sicherheit und Audit: absichern](../../../anleitungen/sicherheit-und-audit.md)
 - [Die Administration einschränken](die-administration-einschraenken.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

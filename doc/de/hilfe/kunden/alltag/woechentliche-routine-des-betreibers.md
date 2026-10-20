@@ -26,20 +26,20 @@ wenn Ihre Rolle sie nicht anzeigt, erledigen Sie diese Schritte mit Ihrem Admini
 
 | Minuten | Ansehen | Sie prüfen | Hilfe |
 |---|---|---|---|
-| 5 | Das Dashboard: neue Inhalte | das Veröffentlichte entspricht dem Plan | [Ein Rundgang durch die Administration](../../../../en/us/help/admin-tour.md) |
+| 5 | Das Dashboard: neue Inhalte | das Veröffentlichte entspricht dem Plan | [Ein Rundgang durch die Administration](../../rundgang-durch-die-administration.md) |
 | 10 | Der [Redaktionskalender](redaktionskalender.md) | die nächsten zwei Wochen haben zuständige und freigebende Personen | [Redaktionskalender](redaktionskalender.md) |
 | 5 | *Meine Warteliste* der freigebenden Personen, oder fragen Sie sie | nichts wartet, was erscheinen sollte | [Freigabe und Prüfung](freigabe-und-pruefung.md) |
-| 5 | **Setup > Workflow-Prozesse** | kein Prozess wartet seit Tagen; die Statusleiste meldet, dass der Workflow-Cronjob eingeplant ist | [Workflows](../../../../en/us/guides/workflows.md) |
+| 5 | **Setup > Workflow-Prozesse** | kein Prozess wartet seit Tagen; die Statusleiste meldet, dass der Workflow-Cronjob eingeplant ist | [Workflows](../../../anleitungen/workflows.md) |
 | 5 | Der Papierkorb, gefiltert auf diese Woche | nichts versehentlich entfernt | [Archivieren und der Papierkorb](archivieren-und-der-papierkorb.md) |
 | 5 | **Benutzer > Benutzerkonten prüfen**, neue Konten und **Gesperrt** | jedes Konto gehört einer Person, die aktuell dazugehört | [Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md) |
 | 10 | **Setup > Suchstatistiken**, Begriffe ohne Treffer | Ideen für Inhalte | [Website-Suche und wonach Besucher suchen](website-suche-und-wonach-besucher-suchen.md) |
-| 5 | Formulareinsendungen, wenn Ihre Website welche sammelt | jemand beantwortet sie | [Gesammelte Informationen](../../../../en/us/guides/collected-information.md) |
+| 5 | Formulareinsendungen, wenn Ihre Website welche sammelt | jemand beantwortet sie | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | 5 | Die Website selbst, abgemeldet, auf einem Smartphone | die Startseite und eine neue Seite sehen richtig aus | [Barrierefreiheit pflegen](barrierefreiheit-pflegen.md) |
-| 5 | Notizen für den Partner oder Hoster | alles Langsame, Kaputte oder Verwirrende, mit Adresse und Uhrzeit | [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md) |
+| 5 | Notizen für den Partner oder Hoster | alles Langsame, Kaputte oder Verwirrende, mit Adresse und Uhrzeit | [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md) |
 
 > **Tipp**
 > Die Hilfe hat ihr eigenes Dashboard unter `/exphelp/dashboard` in der Administration und eine Meldeseite unter
-> `/exphelp/report` für Fehler in der Hilfe oder in der Software ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+> `/exphelp/report` für Fehler in der Hilfe oder in der Software ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 
 ## Was an wen geht
 
@@ -47,12 +47,12 @@ wenn Ihre Rolle sie nicht anzeigt, erledigen Sie diese Schritte mit Ihrem Admini
 |---|---|
 | Ein verspätetes oder fehlendes Element | die zuständige Person im Kalender |
 | Eine Version, die zu lange wartet | die freigebende Person oder eine Vertretung |
-| Einen hängenden Prozess, oder „not scheduled in the crontab“ | Administrator oder Hoster ([Cronjobs](../../../../en/us/guides/cronjobs.md)) |
+| Einen hängenden Prozess, oder „not scheduled in the crontab“ | Administrator oder Hoster ([Cronjobs](../../../anleitungen/cronjobs.md)) |
 | Eine versehentliche Entfernung | den Redakteur; aus dem Papierkorb wiederherstellen |
 | Ein Konto, das niemand kennt | Kontenverwaltung: deaktivieren ([Ausscheiden von Mitarbeitenden](ausscheiden-von-mitarbeitenden.md)) |
 | Begriffe ohne Treffer | Chefredaktion, als Themen für den Kalender |
-| Eine Fehlerseite mit einer Referenz | Administrator, mit der Referenz ([Einen Fehler anhand seiner Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md)) |
-| Einen Fehler in der Software | den Issue-Tracker, siehe [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md) |
+| Eine Fehlerseite mit einer Referenz | Administrator, mit der Referenz ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)) |
+| Einen Fehler in der Software | den Issue-Tracker, siehe [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md) |
 | Ein Sicherheitsproblem | nie öffentlich: E-Mail an security@se7enx.com, wie `SECURITY.md` es beschreibt |
 
 ## Einmal im Monat zusätzlich
@@ -85,5 +85,5 @@ Sent to partner/host: ________________________________________________
 
 - [Ihre Website im Alltag betreiben](README.md)
 - [Monatliche Checkliste für den Betrieb](../../../../en/us/help/businesses/templates/monthly-operations-checklist.md)
-- [Eine Website betreiben](../../../../en/us/guides/operating-a-site.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

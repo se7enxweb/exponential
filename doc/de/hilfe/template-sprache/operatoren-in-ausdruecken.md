@@ -216,4 +216,4 @@ WARNING eZTemplateOperatorElement: Parameter 'class' (0) missing
 - [Überblick über Operatoren](../../../en/us/help/designers/templates/operators-overview.md)
 - [Referenz der Operatoren](../../../en/us/help/designers/templates/operator-reference.md)
 - [Jeder Template-Operator](../../../en/us/examples/template-operators/README.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -29,11 +29,11 @@ technische, aber die Entscheidungen auf dieser Seite treffen Sie.
 | REST-API (`ezprestapi`) | Apps und Frontends, die Inhalte lesen; Schreiben ab v2 | [Die REST-API für Betreiber](rest-api-fuer-betreiber.md) |
 | Remote-Dienste (`expservices`) | Skripte und Portale, die tun, was die Administration tut | [Remote-Dienste (expservices)](remote-dienste-expservices.md) |
 | RSS-, Atom- und Podcast-Feeds | andere Websites, Aggregatoren und Verzeichnisse, die Ihre Neuigkeiten lesen | [RSS- und Podcast-Feeds](rss-und-podcast-feeds.md) |
-| RSS-Import | den Feed einer anderen Website als Inhalt übernehmen | [RSS-Feeds](../../../../en/us/guides/rss-feeds.md) |
+| RSS-Import | den Feed einer anderen Website als Inhalt übernehmen | [RSS-Feeds](../../../anleitungen/rss-feeds.md) |
 | Die Erweiterung `syndication` | Inhalte zwischen Installationen teilen, in eine Richtung oder in beide | [Feeds und Syndikation](../../../../en/us/help/businesses/mobile-and-headless/feeds-and-syndication.md) |
 | Anmeldung über ein Verzeichnis (LDAP und andere) | Mitarbeitende melden sich mit ihrem Firmenkonto an | [Anmeldung über Verzeichnisse und LDAP](../../../../en/us/help/businesses/intranets/directory-sign-in-and-ldap.md) |
 | Payment-Gateways | die Zahlungen des Shops | [Zahlungsanbieter für Unternehmen](../../../../en/us/help/businesses/stores/payment-gateways-for-businesses.md) |
-| CSV-Export | Formulareinsendungen, Kontenlisten, Listen von Unterelementen | [Gesammelte Informationen](../../../../en/us/guides/collected-information.md) |
+| CSV-Export | Formulareinsendungen, Kontenlisten, Listen von Unterelementen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 
 ## Sieben Fragen
 
@@ -52,7 +52,7 @@ technische, aber die Entscheidungen auf dieser Seite treffen Sie.
 - Halten Sie fest, welche personenbezogenen Daten von wo nach wo gehen, und warum. Dies ist keine Rechtsberatung;
   fragen Sie die Person, die für den Datenschutz verantwortlich ist ([Personenbezogene Daten in Exponential](../../../../en/us/help/businesses/security/personal-data-in-exponential.md)).
 - Halten Sie Zugangsdaten aus Dokumenten und E-Mails heraus; Schlüssel und Tokens werden einmal angezeigt, und
-  gespeichert wird nur ein Hash ([Persönliche API-Schlüssel](../../../../en/us/guides/api-keys.md)).
+  gespeichert wird nur ein Hash ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
 - Jedes Ereignis zu API-Schlüsseln und jeder Schreibvorgang über Remote-Dienste steht im Prüfprotokoll, das Ihnen einen
   Nachweis dessen gibt, was die Integration getan hat ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md)).
 
@@ -67,7 +67,7 @@ technische, aber die Entscheidungen auf dieser Seite treffen Sie.
 | Wer wird informiert? | |
 
 Informieren Sie die Person, die die Integration pflegt, vor jedem Upgrade der Website
-([Release- und Upgrade-Planung](../../../../en/us/help/leadership/release-and-upgrade-planning.md)).
+([Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md)).
 
 ## Vorlage für einen Integrationsplan
 
@@ -91,5 +91,5 @@ Next review: __________
 
 - [Mobil und Apps](mobil-und-apps.md)
 - [Über Netzwerke und Partner verkaufen](../../../../en/us/help/businesses/mobile-and-headless/selling-through-networks-and-partners.md)
-- [Schätzen und Abgrenzen mit Erweiterungen](../../../../en/us/help/leadership/estimating-and-scoping-with-extensions.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Schätzen und Abgrenzen mit Erweiterungen](../../fuehrung/schaetzen-und-abgrenzen-mit-erweiterungen.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

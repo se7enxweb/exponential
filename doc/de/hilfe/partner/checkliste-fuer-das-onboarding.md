@@ -44,7 +44,7 @@ Sie sie in den ersten Wochen durch; [Ihre ersten 30 Tage](ihre-ersten-30-tage.md
 
 ## Technische Einrichtung
 
-- [ ] Eine aktuelle Entwicklungsinstallation von Exponential 6.0 aus Git ([Mit Git entwickeln](../../../en/us/help/develop-with-git.md))
+- [ ] Eine aktuelle Entwicklungsinstallation von Exponential 6.0 aus Git ([Mit Git entwickeln](../mit-git-entwickeln.md))
 - [ ] Beobachten Sie die Releases des Hauptrepositorys auf GitHub (<https://github.com/se7enxweb/exponential>)
 - [ ] Lesen Sie die Release-Übersicht und das neueste Änderungsprotokoll (`doc/en/us/release-overview`, `doc/changelogs/6.0/`)
 - [ ] Eine Staging-Umgebung, in der Sie Releases testen, bevor Ihre Kunden es tun ([Releases testen](releases-testen.md))
@@ -52,9 +52,9 @@ Sie sie in den ersten Wochen durch; [Ihre ersten 30 Tage](ihre-ersten-30-tage.md
 ## Internes Wissen
 
 - [ ] Alle, die mit Kunden sprechen, lesen [Namens- und Markenregeln für Partner](namens-und-markenregeln.md)
-- [ ] Der Vertrieb liest [Vertrieb und Marketing: hier beginnen](../../../en/us/help/business/sales-and-marketing-start-here.md)
-- [ ] Projektverantwortliche lesen [Projektverantwortliche: hier beginnen](../../../en/us/help/leadership/project-managers-start-here.md)
-- [ ] Entwickler lesen CONTRIBUTING.md und [Mit Git entwickeln](../../../en/us/help/develop-with-git.md)
+- [ ] Der Vertrieb liest [Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md)
+- [ ] Projektverantwortliche lesen [Projektverantwortliche: hier beginnen](../fuehrung/projektleiter-hier-beginnen.md)
+- [ ] Entwickler lesen CONTRIBUTING.md und [Mit Git entwickeln](../mit-git-entwickeln.md)
 
 ## Erste Beiträge
 
@@ -67,4 +67,4 @@ Sie sie in den ersten Wochen durch; [Ihre ersten 30 Tage](ihre-ersten-30-tage.md
 - [Ihre ersten 30 Tage als Partner](ihre-ersten-30-tage.md)
 - [Ihr erstes Jahr als Partner](ihr-erstes-jahr.md)
 - [Mit 7x zusammenarbeiten](mit-7x-zusammenarbeiten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -78,16 +78,16 @@ Wählen Sie ein Format: [Skript für einen Lightning Talk](skript-lightning-talk
 ## Mit Exponential unterrichten
 
 Lehrende dürfen die Dokumentation wiederverwenden: Sie ist frei unter der GNU FDL, sodass Seiten unter den Bedingungen
-der Lizenz gedruckt, in Kursmaterial kopiert und übersetzt werden dürfen ([Freie Dokumentation](../../../en/us/help/free-documentation.md)).
+der Lizenz gedruckt, in Kursmaterial kopiert und übersetzt werden dürfen ([Freie Dokumentation](../freie-dokumentation.md)).
 Nützliche Ausgangspunkte:
 
 | Für Studierende, die | Nutzen Sie |
 |---|---|
-| Nie ein CMS benutzt haben | [Erste Schritte](../../../en/us/help/getting-started.md), [Ein Rundgang durch die Administration](../../../en/us/help/admin-tour.md) |
-| PHP lernen | [Erweiterungen](../../../en/us/guides/extensions.md), [Templates und Design](../../../en/us/guides/templates-and-design.md) |
-| Git und Open Source lernen | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) |
+| Nie ein CMS benutzt haben | [Erste Schritte](../erste-schritte.md), [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
+| PHP lernen | [Erweiterungen](../../anleitungen/extensions.md), [Templates und Design](../../anleitungen/templates-und-design.md) |
+| Git und Open Source lernen | [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | Etwas über Softwaregeschichte lernen | [Die Geschichte](../../../en/us/history/README.md) |
-| Ein kleines CMS studieren möchten | Exponential Basic, „für alle, für Bildungszwecke, für den persönlichen Gebrauch“ ([Exponential Basic](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-basic)) |
+| Ein kleines CMS studieren möchten | Exponential Basic, „für alle, für Bildungszwecke, für den persönlichen Gebrauch“ ([Exponential Basic](../wer-ist-die-exponential-foundation.md#exponential-basic)) |
 
 Erste Beiträge von Studierenden sind willkommen: Eine Korrektur der Dokumentation oder eine Übersetzung ist ein echter
 Pull Request ([Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md)). Bitten Sie eine Klasse nicht, ein
@@ -113,4 +113,4 @@ Projekt mit Übungs-Pull-Requests zu überfluten; vereinbaren Sie zuerst echte, 
 - [Ein Treffen vorschlagen](ein-treffen-vorschlagen.md)
 - [Barrierefreie Folien und Grafiken](barrierefreie-folien-und-grafiken.md)
 - [Offenlegung und Interessenkonflikte](offenlegung-und-interessenkonflikte.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

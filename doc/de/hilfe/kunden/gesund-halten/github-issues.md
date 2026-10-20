@@ -22,17 +22,17 @@ nutzt: um zu prüfen, ob ein Problem bekannt ist, um eine Korrektur zu verfolgen
 | [Exponential-Projekt und Community](https://github.com/se7enxweb/exponential-community/issues) | Das Projekt, die Website, das Ökosystem und alles, was kein Fehler in Software ist |
 | Das eigene Repository einer Erweiterung | Fehler in einer Erweiterung, die eines hat; die Meldeseite der Hilfe listet sie auf |
 
-Quelle: `settings/exphelp.ini [IssueTrackers]` und [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md).
+Quelle: `settings/exphelp.ini [IssueTrackers]` und [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md).
 
 ## Vor dem Anlegen: suchen
 
 Durchsuchen Sie den Tracker nach Wörtern aus der Fehlermeldung oder der Funktion. „Wenn das Problem bereits bekannt
-ist, ergänzen Sie, was Sie wissen, in diesem Issue, statt ein neues zu eröffnen“ ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+ist, ergänzen Sie, was Sie wissen, in diesem Issue, statt ein neues zu eröffnen“ ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 Wenn Sie ein bestehendes Issue auf GitHub verfolgen, sehen Sie, wann es behoben ist.
 
 ## Was ein gutes Issue enthält
 
-Aus [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md):
+Aus [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md):
 
 - **Einen kurzen Titel**, der das Problem benennt.
 - **Was Sie getan haben**, Schritt für Schritt, damit jemand anderes es nachstellen kann.
@@ -53,14 +53,14 @@ Die Meldeseite der Hilfe entwirft ein solches Issue für Sie ([Die Meldeseite de
 ## Was zu erwarten ist
 
 - **Keine zugesagte Antwortzeit.** Kostenlose Hilfe „hängt von der Zeit ab, die Menschen geben, daher verspricht
-  niemand eine Antwortzeit“ ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)). Wenn Sie nicht warten
-  können, ist bezahlter Support von 7x der Weg, den die Support-Seite des Projekts nennt ([Support erhalten](../../../../en/us/help/project/getting-support.md)).
+  niemand eine Antwortzeit“ ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)). Wenn Sie nicht warten
+  können, ist bezahlter Support von 7x der Weg, den die Support-Seite des Projekts nennt ([Support erhalten](../../projekt/unterstuetzung-erhalten.md)).
 - **Eine Korrektur erreicht Sie in einem Release.** Korrekturen werden in der gepflegten Linie vorgenommen und mit dem
   nächsten Release veröffentlicht; eine veröffentlichte Version wird nie geändert (`SECURITY.md`). Ihr Anbieter spielt
   dann dieses Release ein ([Wie Updates funktionieren](wie-updates-funktionieren.md)).
 - **Sie können helfen.** Eine genaue Reproduktion, ein Test auf der Entwicklungslinie oder eine als Pull Request
   eingereichte Korrektur beschleunigen die Sache; „Erwähnen Sie das Issue im Pull Request (zum Beispiel `Fixes #123`),
-  damit beide verknüpft sind“ ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md), [Mit Git entwickeln](../../../../en/us/help/develop-with-git.md)).
+  damit beide verknüpft sind“ ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md), [Mit Git entwickeln](../../mit-git-entwickeln.md)).
 
 ## Wer für Ihre Organisation meldet
 
@@ -79,5 +79,5 @@ ist ihr Sponsoring ein dokumentierter Weg ([Funktionswünsche und gesponserte Fu
 
 - [Probleme melden](probleme-melden.md)
 - [Mit 7x und dem Projekt zusammenarbeiten](../partner-und-hoster/mit-7x-und-dem-projekt-zusammenarbeiten.md)
-- [Zum Projekt beitragen](../../../../en/us/help/project/contribute-to-the-project.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Zum Projekt beitragen](../../projekt/zum-projekt-beitragen.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

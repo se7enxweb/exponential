@@ -34,7 +34,7 @@ auf vier Wochen, damit die Partnerschaft an Tag 30 sichtbar, nutzbar und geplant
 | Aufgabe | Ergebnis |
 |---|---|
 | Ein erstes, echtes Support-Ticket eröffnen und die Reaktionszeit notieren | Sie wissen, wie Support in der Praxis funktioniert |
-| Das aktuelle Exponential aus Git in einer Testumgebung installieren ([Mit Git entwickeln](../../../en/us/help/develop-with-git.md)) | Ihre Entwickler arbeiten mit dem aktuellen Code |
+| Das aktuelle Exponential aus Git in einer Testumgebung installieren ([Mit Git entwickeln](../mit-git-entwickeln.md)) | Ihre Entwickler arbeiten mit dem aktuellen Code |
 | Das neueste Änderungsprotokoll lesen und entscheiden, welche Kunden ein Upgrade brauchen | Eine erste Upgrade-Liste ([Kunden-Websites aktuell halten](kunden-websites-aktuell-halten.md)) |
 
 ## Woche 4: etwas zurückgeben und planen
@@ -58,4 +58,4 @@ auf vier Wochen, damit die Partnerschaft an Tag 30 sichtbar, nutzbar und geplant
 - [Checkliste für das Onboarding neuer Partner](checkliste-fuer-das-onboarding.md)
 - [Ihr erstes Jahr als Partner](ihr-erstes-jahr.md)
 - [Partner: hier beginnen](partner-hier-beginnen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

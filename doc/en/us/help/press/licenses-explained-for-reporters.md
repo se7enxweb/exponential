@@ -51,8 +51,9 @@ notices are kept and changed versions stay under the same license
 ## Who holds the copyright
 
 "Copyright (C) 1998 - 2026 7x & Exponential Foundation", and "Copyright (C) 1999 - 2014 eZ Systems AS" for the
-inherited code ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)). Contributors keep
-their contributions under the GPL. Write "7x and the Exponential Foundation hold the copyright together", never
+inherited code ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)). Contributions are
+released under the GPL, and kernel contributors assign the copyright in their contributions to 7x
+([Copyright assignment (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)). Write "7x and the Exponential Foundation hold the copyright together", never
 "7x owns Exponential".
 
 ## Free of charge, and what is sold

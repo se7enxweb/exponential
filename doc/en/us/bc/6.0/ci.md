@@ -12,7 +12,7 @@ hooks, file manifest, code style, PHPStan, the tests of a change) are described 
 | What runs | **Quality** and **PHPUnit** on every push and pull request, **Performance** when PHP, templates or settings change, and **CI health** once a week. |
 | What blocks | Quality and PHPUnit. Performance is a warning only, and CI health only reports. |
 | A red check | Open the run, find the failed step in the table below, and run that step's command on your machine. `gh run view <id> --log-failed` prints only the failed steps' log. |
-| A contributor's commit | Kept as written. A subject outside `Added:`/`Updated:`/`Fixed:`/`Removed:`/`Renamed:` is a warning for a contributor, and an error only for the project's own authors. |
+| A contributor's commit | Squashed and rebased onto `main` by its author while the pull request is open, never rewritten after the merge. A subject outside `Added:`/`Updated:`/`Fixed:`/`Removed:`/`Renamed:` is a warning for a contributor, and an error only for the project's own authors. |
 | How healthy is CI | `python3 .github/scripts/ci_health_report.py --days 14`, or the weekly **CI health** run's summary. |
 
 ## The workflows
@@ -139,9 +139,12 @@ Every commit of the project starts with what it does: `Added: `, `Updated: `, `F
 
 - A commit by a **project author**, an e-mail address listed in `.githooks/commit-msg-authors`, must follow the
   format. A bad subject fails the check.
-- A commit by **anyone else** is a contributor's commit. Every pull request is merged, and its commits are kept as
-  the contributor wrote them and never rewritten, so a subject such as `Changed: ...` or `Fix typo` is a warning
-  annotation and never fails the check: neither on the pull request nor on the push of `main` that carries the merge.
+- A commit by **anyone else** is a contributor's commit. Every pull request is merged. While it is open, its author
+  squashes it and rebases it onto `main` as the reviews ask
+  ([Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews)); once it is
+  merged, `main`'s history is never rewritten, and later fixes come as new pull requests. A subject such as
+  `Changed: ...` or `Fix typo` is a warning annotation and never fails the check: neither on the pull request nor on
+  the push of `main` that carries the merge.
 - Merge commits are not checked.
 - `EXP_COMMIT_MSG_STRICT_ALL=1 sh .githooks/check-commit-range origin/main HEAD` checks every commit as a project
   commit, for a contributor who wants their branch to follow the format.

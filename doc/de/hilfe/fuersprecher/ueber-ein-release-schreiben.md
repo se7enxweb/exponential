@@ -24,7 +24,7 @@ schädlich, wenn er Dinge verspricht, die nicht im Release sind.
 ## Auf das Tag warten
 
 Ein Release existiert, wenn sein Tag existiert. Vorher ist die Arbeit „in Entwicklung“ (zum Beispiel „6.0.15 ist in
-Entwicklung“, [Wer ist 7x?](../../../en/us/help/who-is-7x.md#the-60x-releases)).
+Entwicklung“, [Wer ist 7x?](../wer-ist-7x.md#die-releases-60x)).
 
 ```bash
 git fetch --tags
@@ -32,7 +32,7 @@ git tag -l 'v6.0.*' --sort=version:refname | tail -3
 ```
 
 Prüfen Sie auch die [Releases auf GitHub](https://github.com/se7enxweb/exponential/releases). Sortieren Sie Versionen mit
-`--sort=version:refname`, nie nach Namen ([Releases und Versionsnummern](../../../en/us/help/who-is-the-exponential-foundation.md#releases-and-version-numbers)).
+`--sort=version:refname`, nie nach Namen ([Releases und Versionsnummern](../wer-ist-die-exponential-foundation.md#releases-und-versionsnummern)).
 
 Sie dürfen auch über **laufende Arbeit** schreiben, wenn Sie das deutlich sagen: „In der Entwicklungslinie, noch nicht
 veröffentlicht“.
@@ -45,7 +45,7 @@ veröffentlicht“.
 | [Die Geschichte](../../../en/us/history/README.md) | Monatsseiten, die erklären, was jede Änderung möglich macht |
 | Funktionsseiten in `doc/en/us/features/6.0/` | Wie man jede neue Funktion nutzt |
 | Hinweise zur Abwärtskompatibilität in `doc/en/us/bc/6.0/` | Was beim Upgrade zu prüfen ist |
-| [Upgrade](../../../en/us/install/11-upgrading.md) | Wie man sicher aktualisiert |
+| [Upgrade](../../installation/11-aktualisieren.md) | Wie man sicher aktualisiert |
 
 ## Auswählen, was für welches Publikum zählt
 
@@ -96,12 +96,12 @@ Questions: share.exponential.earth/forums, t.me/exponentialcms
 [ ] Shared in the forums and on social media with the right names
 ```
 
-Die Regel zum Upgrade stammt aus [Upgrade](../../../en/us/install/11-upgrading.md); die Regel zur Schreibweise der Version aus den
-[Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md#the-product-exponential).
+Die Regel zum Upgrade stammt aus [Upgrade](../../installation/11-aktualisieren.md); die Regel zur Schreibweise der Version aus den
+[Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#das-produkt-exponential).
 
 ## Verwandte Seiten
 
 - [Beiträge zur Geschichte schreiben](beitraege-zur-geschichte-schreiben.md)
 - [Vorlagen für Beiträge in sozialen Medien](vorlagen-fuer-soziale-medien.md)
 - [Die Entwicklungslinie testen](die-entwicklungslinie-testen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

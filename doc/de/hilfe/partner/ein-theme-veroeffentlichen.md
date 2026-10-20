@@ -24,10 +24,10 @@ Diese Seite ergänzt, was bei Designs besonders ist.
 
 - [ ] Funktioniert mit dem erwarteten Inhaltsmodell und bleibt brauchbar, wenn Felder leer sind
 - [ ] Funktioniert mit langen Titeln und anderen Sprachen; Schreibrichtung von rechts nach links getestet, wenn Sie sie
-      unterstützen ([Sprachen](../../../en/us/help/languages.md))
+      unterstützen ([Sprachen](../sprachen.md))
 - [ ] Tastaturbedienung und sichtbarer Fokus; Textkontrast mindestens 4,5:1
 - [ ] Responsiv ab Telefonbreite; kein horizontales Scrollen
-- [ ] Funktioniert mit den Blöcken des Layouts-Editors, wenn es Layouts unterstützt ([Der Layouts-Editor](../../../en/us/help/layouts-editor.md))
+- [ ] Funktioniert mit den Blöcken des Layouts-Editors, wenn es Layouts unterstützt ([Der Layouts-Editor](../layout-editor.md))
 - [ ] Wenn es die Administration berührt: folgt `doc/en/us/bc/6.0/admin4-styling.md` (kein Inline-CSS, Tokens mit
       Werten für den Dunkelmodus)
 
@@ -49,7 +49,7 @@ Jede Datei in einem Theme hat eine Lizenz. Führen Sie sie in der README auf:
 
 ## Release und Pflege
 
-- Versionieren und veröffentlichen Sie wie bei jeder Erweiterung ([Erweiterungen, „Release it“](../../../en/us/guides/extensions.md#7-release-it)).
+- Versionieren und veröffentlichen Sie wie bei jeder Erweiterung ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
 - Testen Sie nach jedem Exponential-Release erneut, besonders bei Änderungen an Templates und Layouts.
 - Führen Sie ein Änderungsprotokoll, dem Designer folgen können.
 
@@ -63,4 +63,4 @@ oder einer Fallstudie sein ([Zertifizierungen](zertifizierungen.md), [Punkte dur
 - [Kreativpartner](kreativpartner.md)
 - [Partner für Erweiterungen und Themes](partner-fuer-erweiterungen-und-themes.md)
 - [Eine Erweiterung als Partner veröffentlichen](eine-erweiterung-veroeffentlichen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

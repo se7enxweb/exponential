@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die erklären müssen, wer hinter Exponential steht. Es gibt **zwei Organisationen** und
 ein Projekt. Wer sie richtig benennt, schafft Vertrauen; wer sie verwechselt, verwirrt. Jede Tatsache hier stammt aus
-[Wer ist 7x?](../../../en/us/help/who-is-7x.md) und [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md).
+[Wer ist 7x?](../wer-ist-7x.md) und [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md).
 
 ## Inhalt
 
@@ -32,8 +32,8 @@ ein Projekt. Wer sie richtig benennt, schafft Vertrauen; wer sie verwechselt, ve
 | Website | [se7enx.com](https://se7enx.com/) | [foundation.exponential.earth](https://foundation.exponential.earth/), [exponential.earth](https://exponential.earth/) |
 | Namen im Code | `se7enxweb` (Vendor bei GitHub und Composer) | |
 
-Quellen: [Die Foundation und 7x](../../../en/us/help/who-is-the-exponential-foundation.md#the-foundation-and-7x),
-[Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short).
+Quellen: [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x),
+[Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt).
 
 Das Copyright ist geteilt: „Copyright (C) 1998 - 2026 7x & Exponential Foundation“
 ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
@@ -53,7 +53,7 @@ Das Copyright ist geteilt: „Copyright (C) 1998 - 2026 7x & Exponential Foundat
 | Falsch | Richtig | Warum |
 |---|---|---|
 | „Die 7x Foundation“ | „die Exponential Foundation“ | Zwei Organisationen, zwei Namen |
-| „Die Foundation verkauft Support“ | „7x und andere Anbieter verkaufen Dienstleistungen“ | Die Foundation verkauft keine Dienstleistungen ([Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md#the-nonprofit-the-exponential-foundation)) |
+| „Die Foundation verkauft Support“ | „7x und andere Anbieter verkaufen Dienstleistungen“ | Die Foundation verkauft keine Dienstleistungen ([Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#die-gemeinnützige-organisation-die-exponential-foundation)) |
 | „7x gehört Exponential“ | „7x leitet Exponential“ | Das Copyright ist geteilt, und die Lizenz ist die GPL |
 | „Exponential Inc.“ | „7x“ oder „die Exponential Foundation“ | Ein solches Unternehmen nennen die Quellen nicht |
 | „Sponsern Sie uns“ (wenn Sie ehrenamtlich tätig sind) | „Sie können die Foundation oder 7x sponsern“ | Sie sprechen für keine der beiden ([Offenlegung](offenlegung-und-interessenkonflikte.md)) |
@@ -62,22 +62,22 @@ Das Copyright ist geteilt: „Copyright (C) 1998 - 2026 7x & Exponential Foundat
 
 | Frage | Antwort | Quelle |
 |---|---|---|
-| „Wer bezahlt die Entwicklung?“ | „Das Open-Source-Projekt Exponential wird durch Spenden von Zeit und Ressourcen von 7x (und Exponential-Sponsoren) finanziert.“ | [Die Foundation und 7x](../../../en/us/help/who-is-the-exponential-foundation.md#the-foundation-and-7x) |
-| „Wofür zahlt ein Sponsoring der Foundation?“ | Pflege der Kernbibliotheken, Dokumentation, Integrationsschichten, Community-Infrastruktur, Sicherheitsarbeit an den Zeta Components | [Was die Foundation finanziert](../../../en/us/help/who-is-the-exponential-foundation.md#what-the-foundation-funds) |
-| „Sind Spenden steuerlich absetzbar?“ | Die Foundation sagt das für die Vereinigten Staaten; fragen Sie Ihre eigene Steuerberatung | [Wie Sie unterstützen oder beitreten](../../../en/us/help/who-is-the-exponential-foundation.md#how-to-support-or-join) |
-| „Gehört es zu eZ Systems oder Ibexa?“ | Nein: „steht in keiner Verbindung zur ursprünglichen Software eZ Publish oder ihrem ursprünglichen Entwickler, eZ Systems oder Ibexa“ | [Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short) |
+| „Wer bezahlt die Entwicklung?“ | „Das Open-Source-Projekt Exponential wird durch Spenden von Zeit und Ressourcen von 7x (und Exponential-Sponsoren) finanziert.“ | [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x) |
+| „Wofür zahlt ein Sponsoring der Foundation?“ | Pflege der Kernbibliotheken, Dokumentation, Integrationsschichten, Community-Infrastruktur, Sicherheitsarbeit an den Zeta Components | [Was die Foundation finanziert](../wer-ist-die-exponential-foundation.md#was-die-foundation-finanziert) |
+| „Sind Spenden steuerlich absetzbar?“ | Die Foundation sagt das für die Vereinigten Staaten; fragen Sie Ihre eigene Steuerberatung | [Wie Sie unterstützen oder beitreten](../wer-ist-die-exponential-foundation.md#unterstützen-oder-mitmachen) |
+| „Gehört es zu eZ Systems oder Ibexa?“ | Nein: „steht in keiner Verbindung zur ursprünglichen Software eZ Publish oder ihrem ursprünglichen Entwickler, eZ Systems oder Ibexa“ | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
 | „Kann ich jemand anderen als 7x beauftragen?“ | Ja. Der Code steht unter der GPL; jeder darf ihn hosten, ändern und unterstützen | [Gesprächspunkte: Open Source und Lizenzierung](gespraechspunkte-open-source-und-lizenzierung.md) |
 
 ## Was die Quellen nicht sagen
 
 Die Quellen sagen nicht, wer im Vorstand der Foundation sitzt, wie sie geführt wird, ob sie außer ihren Unterstützern
-Mitglieder hat und wie hoch ihr Budget ist ([Was die Quellen nicht sagen](../../../en/us/help/who-is-the-exponential-foundation.md#what-the-sources-do-not-say)).
+Mitglieder hat und wie hoch ihr Budget ist ([Was die Quellen nicht sagen](../wer-ist-die-exponential-foundation.md#was-die-quellen-nicht-sagen)).
 Wenn jemand fragt, sagen Sie: „Das ist nicht dokumentiert. Sie können die Foundation über ihre Website fragen.“ Raten Sie nie.
 
 ## Verwandte Seiten
 
 - [Für nachhaltige Finanzierung eintreten](fuer-nachhaltige-finanzierung-eintreten.md)
 - [Die Produktfamilie kennen](die-produktfamilie-kennen.md)
-- [Wer ist 7x?](../../../en/us/help/who-is-7x.md)
-- [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wer ist 7x?](../wer-ist-7x.md)
+- [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

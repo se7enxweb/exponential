@@ -74,4 +74,4 @@ nicht belegen können.
 - [Wie Sie sich bewerben](wie-sie-sich-bewerben.md)
 - [Anforderungen an Partner](anforderungen-an-partner.md)
 - [Warum Partner werden](warum-partner-werden.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

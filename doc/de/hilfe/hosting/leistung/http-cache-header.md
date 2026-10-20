@@ -155,4 +155,4 @@ Trefferquote und den Gründen für Fehlschläge. Nutzen Sie für die Prüfung al
 - [Varnish und Reverse Proxys](varnish-und-reverse-proxys.md)
 - [CDN](cdn.md)
 - [Der rollenbewusste HTTP-Cache](../../../../en/us/bc/6.0/httpcache.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

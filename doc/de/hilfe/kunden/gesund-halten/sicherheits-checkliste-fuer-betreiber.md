@@ -9,8 +9,8 @@ type: help
 ---
 # Sicherheits-Checkliste für Betreiber
 
-Diese Checkliste macht aus den technischen Checklisten der [Sicherheitshärtung](../../../../en/us/help/security-hardening.md) und der
-[Go-live-Checkliste](../../../../en/us/install/13-security-hardening.md) des Installationshandbuchs Fragen, die ein Betreiber
+Diese Checkliste macht aus den technischen Checklisten der [Sicherheitshärtung](../../sicherheitshaertung.md) und der
+[Go-live-Checkliste](../../../installation/13-sicherheitshaertung.md) des Installationshandbuchs Fragen, die ein Betreiber
 stellen kann, und Nachweise, die ein Betreiber erhalten kann. Gehen Sie sie einmal im Quartal durch, und nach jedem
 Wechsel des Anbieters oder des Personals mit Administratorrechten.
 
@@ -26,14 +26,14 @@ mit dem Datum auf; sie zeigen einem Prüfer, einem Versicherer oder einem Kunden
       ([Release-Linie und Support](release-linie-und-support.md)).
 - [ ] Wurden die Sicherheitskorrekturen des neuesten Releases eingespielt, und wann?
 - [ ] Erhält die laufende PHP-Version noch Sicherheitsunterstützung? **Setup > Systeminformationen** warnt, wenn
-      nicht ([Systeminformationen](../../../../en/us/guides/system-information.md)).
+      nicht ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 - [ ] Werden alle Erweiterungen gepflegt? Nachweis: **Setup > Extensions** mit Versionen.
 
 ## Konten
 
 - [ ] Hat jede Person ihr eigenes Konto? Ist das gemeinsame Konto `admin` als Anmeldung stillgelegt
-      ([Das Administratorpasswort ändern, Kontenpflege](../../../../en/us/help/change-the-admin-password.md))?
-- [ ] Ist die zweistufige Anmeldung für Administratoren verpflichtend ([Zweistufige Anmeldung](../../../../en/us/guides/two-factor-login.md))?
+      ([Das Administratorpasswort ändern, Kontenpflege](../../administratorpasswort-aendern.md))?
+- [ ] Ist die zweistufige Anmeldung für Administratoren verpflichtend ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md))?
 - [ ] Wer hat die Rolle Administrator? Ist die Liste so kurz wie möglich?
 - [ ] Wurden die Konten von Personen geschlossen, die gegangen sind? Nachweis: **Benutzer > Benutzerkonten prüfen**
       ([Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md)).
@@ -42,7 +42,7 @@ mit dem Datum auf; sie zeigen einem Prüfer, einem Versicherer oder einem Kunden
 ## Einstellungen und ausgelieferte Dateien
 
 - [ ] Erscheinen die fünf Sicherheits-Header auf jeder Seite? Nachweis: die `curl`-Prüfung aus
-      [Sicherheit und Prüfprotokoll](../../../../en/us/guides/security-and-audit.md).
+      [Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-und-audit.md).
 - [ ] Antworten private Dateien (`.env`, `.git/config`, PHP-Dateien von Erweiterungen) von außen mit 404? Dieselbe Seite.
 - [ ] Ist die Debug-Ausgabe für alle ausgeschaltet, außer höchstens für eine Adresse mit Ablaufdatum?
 - [ ] Läuft die ganze Website über HTTPS?
@@ -87,4 +87,4 @@ Open actions: ____ (who, by when)
 - [Sicherheitsgrundlagen](sicherheitsgrundlagen.md)
 - [Sicherheitsüberprüfung (für Hoster)](../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md)
 - [Zugriffsüberprüfungen](../../../../en/us/help/businesses/security/access-reviews.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

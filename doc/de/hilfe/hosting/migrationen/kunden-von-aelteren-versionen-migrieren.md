@@ -32,14 +32,14 @@ Schritte stehen.
 
 | Die Website läuft auf | Kapitel |
 |---|---|
-| 3.10, 4.0 bis 4.7, einem frühen Legacy-Kernel 5.x auf PHP 5 | [Kapitel 14: Migration von der Linie 4.x](../../../../en/us/install/14-migrating-from-4x.md) |
-| 5.0 bis 5.4, den Community-Releases 2013.x und 2014.x, 5.90 (Legacy-Kernel neben einem Symfony-Stack) | [Kapitel 15: Migration vom Legacy-Stack 5.x](../../../../en/us/install/15-migrating-from-5x-legacy.md) |
-| Exponential 6.0.x, älter als das aktuelle Release | [Kapitel 11: Upgrade, 11.6](../../../../en/us/install/11-upgrading.md#116-from-any-60x-to-today) |
-| einer dieser Versionen, Referenz zu Tabellen und Skripten | [Kapitel 17: Referenz zur Migration](../../../../en/us/install/17-migration-reference.md) |
+| 3.10, 4.0 bis 4.7, einem frühen Legacy-Kernel 5.x auf PHP 5 | [Kapitel 14: Migration von der Linie 4.x](../../../installation/14-migration-von-4x.md) |
+| 5.0 bis 5.4, den Community-Releases 2013.x und 2014.x, 5.90 (Legacy-Kernel neben einem Symfony-Stack) | [Kapitel 15: Migration vom Legacy-Stack 5.x](../../../installation/15-migration-von-5x-legacy.md) |
+| Exponential 6.0.x, älter als das aktuelle Release | [Kapitel 11: Upgrade, 11.6](../../../installation/11-aktualisieren.md#116-von-einer-beliebigen-60x-auf-den-heutigen-stand) |
+| einer dieser Versionen, Referenz zu Tabellen und Skripten | [Kapitel 17: Referenz zur Migration](../../../installation/17-migrationsreferenz.md) |
 
 ## Was gleich bleibt
 
-Exponential 6.0 ist derselbe Legacy-Kernel, weitergeführt ([14.1](../../../../en/us/install/14-migrating-from-4x.md#141-what-changes-and-what-does-not)):
+Exponential 6.0 ist derselbe Legacy-Kernel, weitergeführt ([14.1](../../../installation/14-migration-von-4x.md#141-was-sich-ändert-und-was-nicht)):
 
 - **Die Familie des Datenbankschemas.** Dieselben Tabellen; die alten Update-Dateien bringen eine alte Datenbank auf das
   aktuelle Schema. Nichts wird exportiert und wieder importiert.
@@ -56,12 +56,12 @@ ersetzt durch Zeta Components, die Composer installiert, die Cluster-Handler, di
 
 Für eine Website auf 5.x ist der Umzug eher ein Herauslösen als eine Neufassung: Der Legacy-Teil wird aus der
 Symfony-Anwendung herausgenommen, seine Symfony-Konfiguration wird in INI-Dateien festgehalten, und die Datenbank wird an Ort
-und Stelle aktualisiert ([Kapitel 15](../../../../en/us/install/15-migrating-from-5x-legacy.md)).
+und Stelle aktualisiert ([Kapitel 15](../../../installation/15-migration-von-5x-legacy.md)).
 
 ## Was den Aufwand bestimmt
 
 Kapitel 14 sagt klar, dass die Zeit weit mehr von der Größe einiger Tabellen abhängt als von der Version, von der Sie
-kommen ([14.15](../../../../en/us/install/14-migrating-from-4x.md#1415-how-long-it-takes)). Bewerten Sie für ein Angebot:
+kommen ([14.15](../../../installation/14-migration-von-4x.md#1415-wie-lange-es-dauert)). Bewerten Sie für ein Angebot:
 
 | Treiber | Wächst mit | Erfragen Sie |
 |---|---|---|
@@ -77,7 +77,7 @@ kommen ([14.15](../../../../en/us/install/14-migrating-from-4x.md#1415-how-long-
 
 ## Von einem älteren Release 6.0.x
 
-Das ist ein Update, keine Migration. In Umrissen ([11.6](../../../../en/us/install/11-upgrading.md#116-from-any-60x-to-today)):
+Das ist ein Update, keine Migration. In Umrissen ([11.6](../../../installation/11-aktualisieren.md#116-von-einer-beliebigen-60x-auf-den-heutigen-stand)):
 
 1. Bringen Sie den neuen Code an seinen Platz (Git-Checkout des Tags oder `composer update se7enxweb/exponential`).
 2. Erzeugen Sie die Autoloads neu und leeren Sie die Caches:
@@ -102,10 +102,10 @@ Siehe [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.m
 1. Kopieren Sie die alte Website (Datenbank und Dateien) auf eine Staging-Maschine auf Ihrer Plattform.
 2. Gehen Sie das Kapitel für den Ausgangspunkt auf dieser Kopie durch, und schreiben Sie jeden Schritt und seine Dauer auf.
 3. Portieren Sie die eigenen Erweiterungen auf PHP 8; die Checkliste steht in
-   [14.9](../../../../en/us/install/14-migrating-from-4x.md#149-porting-your-own-extensions-from-php-5-to-php-8).
+   [14.9](../../../installation/14-migration-von-4x.md#149-eigene-extensions-von-php-5-auf-php-8-portieren).
 4. Lassen Sie den Kunden die Staging-Kopie testen.
 5. Wiederholen Sie die Datenbankschritte für den endgültigen Lauf auf einer frischen Kopie, in einem Wartungsfenster.
-6. Halten Sie den Rückfallplan des Kapitels bereit ([14.14](../../../../en/us/install/14-migrating-from-4x.md#1414-rollback-plan)).
+6. Halten Sie den Rückfallplan des Kapitels bereit ([14.14](../../../installation/14-migration-von-4x.md#1414-rollback-plan)).
 
 ## Was Sie dem Kunden sagen
 
@@ -119,4 +119,4 @@ Siehe [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.m
 - [Kunden zu Ihrem Hosting migrieren](kunden-zu-ihrem-hosting-migrieren.md)
 - [Von eZ Platform und Ibexa](kunden-von-ez-platform-und-ibexa-migrieren.md)
 - [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

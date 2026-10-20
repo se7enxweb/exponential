@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die anderen Exponential erklären. Jeder Begriff hat eine einfache Definition und einen
 Link. Das vollständige technische Glossar ist [das Glossar](../../../en/us/glossary.md); die Begriffe zu Produkt und
-Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../../../en/us/help/who-is-the-exponential-foundation.md#glossary).
+Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../wer-ist-die-exponential-foundation.md#glossar).
 
 ## Inhalt
 
@@ -45,7 +45,7 @@ Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../../
 | Version | Jeder gespeicherte Zustand eines Objekts; ältere bleiben erhalten |
 | Veröffentlichen | Einen Entwurf zu der Version machen, die Besucher sehen |
 | Papierkorb | Wo entfernte Inhalte warten und wiederhergestellt werden können |
-| Layout, Zone, Block | Eine Seitenanordnung, ihre Bereiche und die Bausteine darin ([Der Layouts-Editor](../../../en/us/help/layouts-editor.md)) |
+| Layout, Zone, Block | Eine Seitenanordnung, ihre Bereiche und die Bausteine darin ([Der Layouts-Editor](../layout-editor.md)) |
 | Sektion, Rolle, Richtlinie | Wie Zugriff organisiert und gewährt wird |
 
 ## Bauen und betreiben
@@ -53,8 +53,8 @@ Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../../
 | Begriff | Einfache Bedeutung |
 |---|---|
 | Siteaccess | Ein Zugang zu einer Installation: eine Website, eine Sprache oder die Administration |
-| Erweiterung | Ein Paket, das Module, Klassen, Templates oder Einstellungen hinzufügt ([Erweiterungen](../../../en/us/guides/extensions.md)) |
-| Override | Ein Template, das für bestimmte Seiten ein anderes ersetzt ([Templates und Design](../../../en/us/guides/templates-and-design.md)) |
+| Erweiterung | Ein Paket, das Module, Klassen, Templates oder Einstellungen hinzufügt ([Erweiterungen](../../anleitungen/extensions.md)) |
+| Override | Ein Template, das für bestimmte Seiten ein anderes ersetzt ([Templates und Design](../../anleitungen/templates-und-design.md)) |
 | INI-Einstellungen | Konfigurationsdateien wie `site.ini` |
 | Engine | Was die Website ausliefert: Velocity, FrankenPHP oder ein Webserver mit PHP-FPM |
 | CSP | Content Security Policy: sagt dem Browser, welche Skripte und Styles eine Seite verwenden darf |
@@ -66,7 +66,7 @@ Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../../
 |---|---|
 | GPL | GNU General Public License, Version 2 oder später: die Lizenz des Codes |
 | GFDL | GNU Free Documentation License 1.3 oder später: die Lizenz der Dokumentation |
-| Pull Request | Eine auf GitHub eingereichte, vorgeschlagene Änderung ([Mit Git entwickeln](../../../en/us/help/develop-with-git.md)) |
+| Pull Request | Eine auf GitHub eingereichte, vorgeschlagene Änderung ([Mit Git entwickeln](../mit-git-entwickeln.md)) |
 | Issue | Eine Meldung oder ein Vorschlag in einem Tracker ([Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md)) |
 | Fork, Klon | Ihre Kopie eines Repositorys auf GitHub; eine lokale Kopie mit ihrer Historie |
 | Tag, Release | Eine feste, veröffentlichte Version; Tags ändern sich nie |
@@ -74,11 +74,11 @@ Organisationen stammen aus [Wer ist die Exponential Foundation?, Glossar](../../
 | eZpedia | Die Community-Enzyklopädie |
 | Fürsprecher | Eine Person, die anderen hilft, Exponential zu finden, zu nutzen und dazu beizutragen ([Was ein Fürsprecher ist](was-ein-fuersprecher-ist.md)) |
 
-**Demomodus** - Wie eine öffentliche Demo ihre veröffentlichte Administrator-Anmeldung funktionsfähig hält: Mit `EXP_DEMO_MODE=1` kann niemand ein Administratorpasswort ändern oder zurücksetzen. Nie auf einer echten Website. [Häufige Fragen zum Demomodus](../../../en/us/help/demo-mode-faq.md).
+**Demomodus** - Wie eine öffentliche Demo ihre veröffentlichte Administrator-Anmeldung funktionsfähig hält: Mit `EXP_DEMO_MODE=1` kann niemand ein Administratorpasswort ändern oder zurücksetzen. Nie auf einer echten Website. [Häufige Fragen zum Demomodus](../demomodus-faq.md).
 
 ## Verwandte Seiten
 
 - [Das Glossar](../../../en/us/glossary.md)
 - [Kurzkarte zu den Namensregeln](kurzkarte-namensregeln.md)
 - [Häufige Fragen von Neuen](faq-fuer-neue.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

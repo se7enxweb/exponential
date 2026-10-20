@@ -24,7 +24,7 @@ Probleme werden schneller gelöst, wenn sie zuerst die richtige Person erreichen
 | Langsame Website | Hoster | Partner ([Geschwindigkeit und Caching](../gesund-halten/geschwindigkeit-und-caching.md)) |
 | Eine Seite sieht falsch aus, ein Problem mit Template oder Design | Partner | |
 | Ein Redakteur kann etwas nicht, was er können sollte | Administrator der Website (Rollen und Zugriff) | Partner |
-| „Wie mache ich ...?“ in der Administration | Die Hilfe in der Administration, dann der Administrator der Website | Community ([Support erhalten](../../../../en/us/help/project/getting-support.md)) |
+| „Wie mache ich ...?“ in der Administration | Die Hilfe in der Administration, dann der Administrator der Website | Community ([Support erhalten](../../projekt/unterstuetzung-erhalten.md)) |
 | Ein vermuteter Einbruch: unbekannte Konten, geänderte Dateien | Hoster, sofort, als Schweregrad 1 | Partner; Ihr Datenschutzbeauftragter, wenn personenbezogene Daten offengelegt sein könnten |
 | Eine Sicherheitslücke in Exponential selbst | Vertraulich an security@se7enx.com, meist über Ihren Partner | ([Vertrauliche Sicherheitsmeldungen](../gesund-halten/vertrauliche-sicherheitsmeldungen.md)) |
 | Ein reproduzierbarer Fehler in Exponential selbst | Partner oder Administrator, der ihn meldet | Der öffentliche Tracker ([GitHub-Issues](../gesund-halten/github-issues.md)) |
@@ -60,11 +60,11 @@ Nennen Sie beim Anruf den Schweregrad. Eine gängige Skala ([Support-Stufen](../
 ## Kostenlose Hilfe hat keine zugesagte Zeit
 
 Hilfe der Community in den Foren und Chats ist kostenlos, und „niemand verspricht eine Antwortzeit“
-([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)). Nutzen Sie sie für Fragen, nicht für einen Ausfall.
+([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)). Nutzen Sie sie für Fragen, nicht für einen Ausfall.
 
 ## Verwandte Seiten
 
 - [Vorlage für Eskalationskontakte](vorlage-eskalationskontakte.md)
 - [Probleme melden](../gesund-halten/probleme-melden.md)
 - [Support-Stufen (für Hoster)](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

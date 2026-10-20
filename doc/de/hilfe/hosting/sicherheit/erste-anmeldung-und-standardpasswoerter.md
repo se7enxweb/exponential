@@ -20,7 +20,7 @@ die erste Anmeldung sicher an einen Kunden übergeben.
 
 > **Warnung**
 > Diese Seite gibt nie ein Passwort aus. Das historische Standardpasswort des mitgelieferten Datenbank-Seeds und jede Regel zu erzeugten
-> Passwörtern sind auf [Das Standard-Administratorpasswort](../../../../en/us/help/default-administrator-password.md) dokumentiert. Kopieren Sie kein festes
+> Passwörtern sind auf [Das Standard-Administratorpasswort](../../standard-administratorpasswort.md) dokumentiert. Kopieren Sie kein festes
 > Passwort in Skripte, Tickets, Willkommensmails oder Kundendokumentation.
 
 ## Inhalt
@@ -35,7 +35,7 @@ die erste Anmeldung sicher an einen Kunden übergeben.
 
 ## Was jeder Installer hinterlässt
 
-Aus [Das Standard-Administratorpasswort](../../../../en/us/help/default-administrator-password.md#in-short):
+Aus [Das Standard-Administratorpasswort](../../standard-administratorpasswort.md#kurz-gesagt):
 
 | Wie die Website installiert wurde | Passwort nach der Installation |
 |---|---|
@@ -90,14 +90,14 @@ Passwort geändert wurde (`ChangeNotificationMail=enabled`), gehen dorthin.
 
 ## Nach der ersten Anmeldung
 
-Aus [Nach der ersten Anmeldung](../../../../en/us/help/default-administrator-password.md#after-the-first-sign-in):
+Aus [Nach der ersten Anmeldung](../../standard-administratorpasswort.md#nach-der-ersten-anmeldung):
 
-1. Ändern Sie das Passwort ([Das Administratorpasswort ändern](../../../../en/us/help/change-the-admin-password.md)).
+1. Ändern Sie das Passwort ([Das Administratorpasswort ändern](../../administratorpasswort-aendern.md)).
 2. Geben Sie dem Konto eine echte E-Mail-Adresse.
 3. Löschen Sie `var/log/initial-admin-password`.
 4. Entfernen Sie `kickstart.ini`, wenn eine genutzt wurde.
 5. Legen Sie ein persönliches Administratorkonto pro Person an und nutzen Sie `admin` nicht mehr zur Anmeldung
-   ([Kontenpflege](../../../../en/us/help/change-the-admin-password.md#account-hygiene)).
+   ([Kontenpflege](../../administratorpasswort-aendern.md#kontenhygiene)).
 6. Schalten Sie die zweistufige Anmeldung für Administratoren ein ([Zweistufige Anmeldung](zweistufige-anmeldung.md)).
 
 ## Migrierte und importierte Websites
@@ -115,7 +115,7 @@ können Benutzerkonten mit eigenen Passwort-Hashes mitbringen; prüfen Sie sie v
 
 ## Wenn sich niemand anmelden kann
 
-Die unterstützten Wege, in Reihenfolge ([Ausgesperrt](../../../../en/us/help/change-the-admin-password.md#locked-out-when-no-administrator-can-sign-in)):
+Die unterstützten Wege, in Reihenfolge ([Ausgesperrt](../../administratorpasswort-aendern.md#ausgesperrt-wenn-sich-kein-administrator-anmelden-kann)):
 
 1. ein anderer Administrator der Website ändert das Passwort oder setzt die gescheiterten Anmeldungen zurück;
 2. **Passwort vergessen?**, wenn die Mail des Kontos funktioniert;
@@ -143,8 +143,8 @@ kann ein Angriff sein. Halten Sie dieses Verfahren neben dem Verfahren zur Wiede
 ## Verwandte Seiten
 
 - [Sicherheit für Hoster: Überblick](README.md)
-- [Das Standard-Administratorpasswort](../../../../en/us/help/default-administrator-password.md)
-- [Das Administratorpasswort ändern](../../../../en/us/help/change-the-admin-password.md)
+- [Das Standard-Administratorpasswort](../../standard-administratorpasswort.md)
+- [Das Administratorpasswort ändern](../../administratorpasswort-aendern.md)
 - [Bereitstellung: Überblick](../bereitstellung/README.md)
 - [Die Administration einschränken](die-administration-einschraenken.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

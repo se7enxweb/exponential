@@ -25,7 +25,7 @@ Aufzeichnung zu führen und Kosten zu erkennen, die wachsen, ohne dass jemand es
 | Support und Änderungen | Partner | Vertrag oder pro Anfrage | Eine Gewährleistung oder garantierte Reaktionszeit fügt ein Vertrag hinzu; die GPL hat keine (`LICENSE.md`, Abschnitte 11 und 12) |
 | Inhaltsarbeit | Eigenes Personal | Laufend | Auf jeder Plattform meist der größte Posten |
 | Dienste von Drittanbietern | Jeder Anbieter | Monatlich oder pro Nutzung | Zahlungsgebühren, E-Mail-Zustellung, CAPTCHA, ein gehosteter KI-Anbieter, wenn Sie einen nutzen |
-| Schulung neuer Mitarbeitender | Eigenes Personal oder Partner | Bei Personalwechsel | Redakteure beginnen mit [Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md) |
+| Schulung neuer Mitarbeitender | Eigenes Personal oder Partner | Bei Personalwechsel | Redakteure beginnen mit [Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md) |
 | Freiwillige Unterstützung des Projekts | Das Projekt | Wenn Sie es wählen | Sponsoring und Spenden sind freiwillig (`README.md`) |
 
 ## Ein jährliches Kostenregister
@@ -88,4 +88,4 @@ An Ihren Hoster:
 - [Wofür Sie nicht bezahlen](../../../../en/us/help/businesses/costs/what-you-do-not-pay-for.md)
 - [Budget für Upgrades und Wartung](../../../../en/us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)
 - [Den ROI messen](den-roi-messen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

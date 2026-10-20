@@ -2,7 +2,6 @@
 title: The license of this documentation
 audience: editor, admin, developer, user
 category: reference
-order: 90
 summary: The documentation of Exponential is free documentation under the GNU Free Documentation License 1.3 or later. The copyright notice, what it covers, and the older pages that keep their own terms.
 keywords: license, copyright, GFDL, GNU Free Documentation License, free documentation, attribution, copying, permission
 type: reference

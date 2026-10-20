@@ -142,4 +142,4 @@ In den zwei Quell-Repositorys am 18.10.2026 geprüft:
 - [Die Datei LICENSE eines Themes](../../../../en/us/help/designers/extensions/license-file.md)
 - [Eine Lizenz im Paketassistenten wählen](../../../../en/us/help/designers/extensions/package-licenses-in-the-wizard.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

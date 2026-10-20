@@ -14,8 +14,8 @@ Diese Seite ist für Fürsprecher, die wissen möchten, wo sie stehen und was al
 anderen beim Aufstieg helfen. Sie beantwortet: Welche Stufen gibt es, was tut eine Person auf jeder, und was ist der
 eine nächste Schritt von jeder aus?
 
-Die Stufen bauen auf dem Trichter für Beitragende aus [Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md#the-contributor-funnel)
-und den Stufen der Beteiligung aus [Eine Leitungsrolle übernehmen](../../../en/us/help/leadership/becoming-a-community-leader.md#the-contribution-ladder)
+Die Stufen bauen auf dem Trichter für Beitragende aus [Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md#der-trichter-für-mitwirkende)
+und den Stufen der Beteiligung aus [Eine Leitungsrolle übernehmen](../fuehrung/community-leiter-werden.md#die-beitragsleiter)
 auf. Sie ergänzen die Sicht des Fürsprechers: **anderen Menschen** beim Aufstieg helfen.
 
 ## Inhalt
@@ -33,11 +33,11 @@ auf. Sie ergänzen die Sicht des Fürsprechers: **anderen Menschen** beim Aufsti
 
 | Stufe | Wer | Was sie tun | Nächster Schritt | Seite |
 |---|---|---|---|---|
-| 1. Benutzer | Betreibt, bearbeitet oder baut eine Website | Nutzt die Hilfe, stellt Fragen | Eine Frage für jemand anderen beantworten | [Erste Schritte](../../../en/us/help/getting-started.md) |
+| 1. Benutzer | Betreibt, bearbeitet oder baut eine Website | Nutzt die Hilfe, stellt Fragen | Eine Frage für jemand anderen beantworten | [Erste Schritte](../erste-schritte.md) |
 | 2. Helfer | Beantwortet ab und zu Fragen | Teilt Links zu Hilfeseiten | Etwas schreiben oder präsentieren | [Fragen gut beantworten](fragen-gut-beantworten.md) |
 | 3. Fürsprecher | Spricht, schreibt, führt vor | Bringt neue Menschen dazu, mit Quellen | Organisieren oder begleiten | [Gesprächspunkte: das Grundset](gespraechspunkte-grundset.md) |
 | 4. Organisator und Begleiter | Führt Treffen und Sprints durch, begleitet erste Beiträge | Hilft anderen, Fürsprecher zu werden | Einen Bereich übernehmen | [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md) |
-| 5. Leitung | Verantwortet einen Bereich: eine Sprache, eine Erweiterung, einen Kanal, ein Thema | Hält ihn auf Dauer gesund | Die nächste Leitung heranziehen | [Eine Leitungsrolle übernehmen](../../../en/us/help/leadership/becoming-a-community-leader.md) |
+| 5. Leitung | Verantwortet einen Bereich: eine Sprache, eine Erweiterung, einen Kanal, ein Thema | Hält ihn auf Dauer gesund | Die nächste Leitung heranziehen | [Eine Leitungsrolle übernehmen](../fuehrung/community-leiter-werden.md) |
 
 Die Stufen sind eine Denkhilfe, keine Titel. Das Projekt vergibt sie nicht; die Quellen nennen keine Ränge oder Programme.
 
@@ -45,7 +45,7 @@ Die Stufen sind eine Denkhilfe, keine Titel. Das Projekt vergibt sie nicht; die 
 
 **Wer.** Jemand, der sich an der Administration anmeldet, Inhalte bearbeitet, eine Website baut oder einen Server betreibt.
 
-**Was hilft.** Die Hilfe (das „?“ in der Kopfzeile), die [Hilfe für Redakteure und Benutzer](../../../en/us/help/README.md), die
+**Was hilft.** Die Hilfe (das „?“ in der Kopfzeile), die [Hilfe für Redakteure und Benutzer](../README.md), die
 [Foren](https://share.exponential.earth/forums) und [Telegram](https://t.me/exponentialcms).
 
 **Der nächste Schritt.** Beantworten Sie eine Frage, deren Antwort Sie kennen. Sie wissen schon mehr als jemand, der
@@ -101,15 +101,15 @@ einen Kanal, eine lokale Community, ein Thema wie Barrierefreiheit.
 
 **Was sich ändert.** Eine Leitung denkt in Jahren. Sie schreibt Dinge auf, damit andere weitermachen können, sie prüft
 die Arbeit anderer und zieht die nächste Leitung heran. Die vollständige Beschreibung mit einem 30/60/90-Tage-Plan
-steht in [Eine Leitungsrolle in der Exponential-Community übernehmen](../../../en/us/help/leadership/becoming-a-community-leader.md).
+steht in [Eine Leitungsrolle in der Exponential-Community übernehmen](../fuehrung/community-leiter-werden.md).
 
 **Dokumentierte Gelegenheiten für Leitungen.**
 
 - Übersetzungen: Zehn Übersetzungen der Administration sind vollständig; für jede andere Sprache ist das Übersetzen der
   seit 6.0 hinzugekommenen Texte „die nützlichste Arbeit“ ([Sprachen in Exponential, Abschnitt 8](../../../en/us/languages.md#8-adding-or-completing-an-administration-translation)).
-- Dokumentation: Jede Hilfeseite lässt sich mit **Auf GitHub bearbeiten** verbessern ([Freie Dokumentation](../../../en/us/help/free-documentation.md#help-others)).
+- Dokumentation: Jede Hilfeseite lässt sich mit **Auf GitHub bearbeiten** verbessern ([Freie Dokumentation](../freie-dokumentation.md#anderen-helfen)).
 - Erweiterungen: Eine Erweiterung nennt ihre Version in ihren eigenen Dateien und wird als Composer-Paket veröffentlicht
-  ([Erweiterungen, „Release it“](../../../en/us/guides/extensions.md#7-release-it)).
+  ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
 
 ## Menschen nach oben helfen
 
@@ -140,6 +140,6 @@ Niemand schuldet dem Projekt seine Zeit. Eine gute Übergabe ist ein letzter Bei
 
 - [Was ein Exponential-Fürsprecher ist](was-ein-fuersprecher-ist.md)
 - [Ein 90-Tage-Plan für Fürsprecher](ein-90-tage-plan.md)
-- [Eine Leitungsrolle in der Exponential-Community übernehmen](../../../en/us/help/leadership/becoming-a-community-leader.md)
-- [Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Leitungsrolle in der Exponential-Community übernehmen](../fuehrung/community-leiter-werden.md)
+- [Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

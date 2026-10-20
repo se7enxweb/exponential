@@ -27,7 +27,7 @@ richtige PHP neu laden, was auf Servern mit mehreren PHP-Versionen der häufigst
 
 ## Welche PHP-Versionen Sie anbieten
 
-Aus [2.2 PHP](../../../../en/us/install/02-requirements.md#22-php):
+Aus [2.2 PHP](../../../installation/02-voraussetzungen.md#22-php):
 
 | PHP | Stand |
 |---|---|
@@ -41,14 +41,14 @@ Sicherheitsunterstützung. 64-Bit-PHP wird für die Unterstützung von mehr als 
 
 > **Hinweis**
 > Die Unterstützung für PHP 8.0 ist neu in 6.0.15; die Releases `v6.0.8` bis `v6.0.14` verlangen PHP 8.1. Eine Kunden-Website auf
-> einem älteren Release 6.0.x braucht mindestens 8.1 ([2.2](../../../../en/us/install/02-requirements.md#22-php)).
+> einem älteren Release 6.0.x braucht mindestens 8.1 ([2.2](../../../installation/02-voraussetzungen.md#22-php)).
 
 ## Web-PHP und PHP der Kommandozeile
 
 Exponential nutzt PHP zweimal: Das PHP des Webservers (PHP-FPM, mod_php oder die Worker von Velocity) liefert Seiten aus, und das PHP
 der Kommandozeile (`php`) führt Composer, die Installer, die Konsole, die Cronjobs und Velocity selbst aus. Beide müssen eine
 unterstützte Version sein und dieselben Erweiterungen haben. Auf Maschinen mit mehreren PHP-Versionen (Plesk, Remi) ist das `php` im
-`PATH` oft nicht das, das der Webserver nutzt ([Kommandozeile und Web-PHP](../../../../en/us/install/02-requirements.md#command-line-and-web-php)).
+`PATH` oft nicht das, das der Webserver nutzt ([Kommandozeile und Web-PHP](../../../installation/02-voraussetzungen.md#php-auf-der-kommandozeile-und-im-web)).
 
 Was schiefgeht, wenn sie sich unterscheiden: Composer wählt Paketversionen, die das Web-PHP nicht ausführen kann, oder eine
 Installation gelingt auf der Kommandozeile, und der Browser zeigt eine weiße Seite.
@@ -60,7 +60,7 @@ php --ini                            # the files the command line PHP reads
 ```
 
 Vergleichen Sie mit der Webseite auf **Setup > Systeminformationen**, die zuerst sagt, welcher Server geantwortet hat und wie er PHP
-ausführt ([Systeminformationen](../../../../en/us/guides/system-information.md)).
+ausführt ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 
 > **Tipp**
 > Wenn ein Panel die PHP-Version einer Website ändert, ändern Sie im selben Schritt das PHP der Kommandozeile in den Cron-Zeilen
@@ -68,11 +68,11 @@ ausführt ([Systeminformationen](../../../../en/us/guides/system-information.md)
 
 ## Ein Pool pro Website
 
-- Der Pool führt PHP als Benutzer der Website aus ([8.5.2](../../../../en/us/install/08-serving-the-site.md#852-php-fpm)).
+- Der Pool führt PHP als Benutzer der Website aus ([8.5.2](../../../installation/08-die-website-ausliefern.md#852-php-fpm)).
 - Wenn mehrere Kunden auf einer Maschine voneinander auf Ebene des Betriebssystems abgeschottet sein müssen, nutzen Sie einen
-  klassischen Server mit einem PHP-FPM-Pool pro Website ([8.1](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table)).
+  klassischen Server mit einem PHP-FPM-Pool pro Website ([8.1](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)).
 - Alles, was `var/` schreibt (Pool, Cron, Konsole, Velocity-Worker), läuft als dieser eine Benutzer
-  ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)).
+  ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)).
 
 Wo Pools liegen, laut den Quellen:
 
@@ -83,14 +83,14 @@ Wo Pools liegen, laut den Quellen:
 | Parallele Installationen von Remi | `/etc/opt/remi/php*/php-fpm.d` | `php<XY>-php-fpm` |
 | Debian und Ubuntu | `/etc/php/<version>/fpm/pool.d/` | `php<version>-fpm` |
 
-Quellen: [Kapitel 2, Plesk und Debian](../../../../en/us/install/02-requirements.md#29-operating-system-notes),
+Quellen: [Kapitel 2, Plesk und Debian](../../../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen),
 [Engines von Velocity, welches PHP-FPM](../../../../en/us/bc/6.0/velocity-engines.md).
 
 ## Pool-Einstellungen für Exponential
 
 Einstellungen, die für Exponential zählen (in der Pool-Datei oder in `php.ini`): `memory_limit` (mindestens 256M; mehr für große
 Importe), `max_execution_time`, `upload_max_filesize` und `post_max_size` (Ihr größter Upload), OPcache an
-([8.5.2](../../../../en/us/install/08-serving-the-site.md#852-php-fpm)).
+([8.5.2](../../../installation/08-die-website-ausliefern.md#852-php-fpm)).
 
 Kapitel 2 nennt einen minimalen Satz für eine produktive `php.ini` (oder die `php_admin_value`-Zeilen eines PHP-FPM-Pools):
 
@@ -106,20 +106,20 @@ variables_order = "EGPCS"
 ```
 
 Die Werte über den Mindestwerten sind Vorschläge, keine Anforderungen. Die Untergrenzen des Setup-Assistenten sind `memory_limit` 64M
-und `max_execution_time` 30 ([2.5](../../../../en/us/install/02-requirements.md#25-phpini-settings)).
+und `max_execution_time` 30 ([2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)).
 
 **Zeitgrenzen für Anfragen.** Neben `max_execution_time` kann ein Pool eine Anfrage nach einer Grenze in Echtzeit beenden
 (`request_terminate_timeout`), die `set_time_limit()` von PHP nicht überschreiben kann. Die Notizen zur MongoDB-Portierung
 beschreiben, wie der Setup-Assistent dadurch abgebrochen wird und die Grenze nur für die Installation erhöht wird
 ([MongoDB-Unterstützung im Kernel](../../../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)). Unter Velocity ist das Gegenstück das
 `requestTimeout` der Engine (30 Sekunden; der Client erhält 504); halten Sie `SQLiteTransactionWait` von SQLite (Standard 25) unter
-dem Zeitlimit der Anfrage ([9.2](../../../../en/us/install/09-databases.md#92-sqlite-3-a-production-database-in-one-file)).
+dem Zeitlimit der Anfrage ([9.2](../../../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei)).
 
 ## OPcache
 
 Unter PHP-FPM schalten Sie OPcache in der `php.ini` des Pools ein und lassen die Zeitstempelprüfungen an: Setzen Sie auf einer
 Exponential-Website nie `opcache.validate_timestamps=0`; eine Cache-Datei, die nach dem Leeren neu geschrieben wird, würde bis zum
-Neustart von PHP in ihrer alten Form ausgeliefert ([10.12 OPcache](../../../../en/us/install/10-after-installing.md#opcache)).
+Neustart von PHP in ihrer alten Form ausgeliefert ([10.12 OPcache](../../../installation/10-nach-der-installation.md#opcache)).
 
 ```ini
 opcache.enable=1
@@ -135,7 +135,7 @@ Velocity setzt seine eigenen OPcache-Optionen in `settings/velocity.ini [PHPSett
 ## Das richtige PHP-FPM neu laden
 
 Nach einer Änderung an einer PHP-Klasse, einem Operator oder einer INI-Datei laden Sie den FPM-Master neu, der die Website ausliefert
-([8.5.2](../../../../en/us/install/08-serving-the-site.md#852-php-fpm)). Auf Maschinen mit mehreren PHP-Versionen ist der Master, der die
+([8.5.2](../../../installation/08-die-website-ausliefern.md#852-php-fpm)). Auf Maschinen mit mehreren PHP-Versionen ist der Master, der die
 Website ausliefert, oft nicht der mit dem Namen `php-fpm`. Finden Sie ihn über seine Pool-Datei.
 
 `exp:velocity deploy` erledigt das für Sie. `[DeploySettings] PhpFpmService=auto` (der Standard in `settings/velocity.ini`) findet in
@@ -155,10 +155,10 @@ ausliefert.
 
 | Einschränkung | Wirkung auf Exponential | Quelle |
 |---|---|---|
-| `open_basedir` | der Setup-Assistent warnt; ezupdate sucht Composer zuerst innerhalb der Installation | [2.4](../../../../en/us/install/02-requirements.md#24-the-setup-wizards-system-check), [ezupdate](../../../../en/us/features/6.0/extensions/ezupdate.md) |
-| `disable_functions` mit `proc_open`, `exec` oder `posix_kill` | die Seite Cronjobs kann keinen Job starten, die Crontab nicht lesen oder einen Job nicht anhalten; sie sagt, welches davon | [Cronjobs](../../../../en/us/guides/cronjobs.md#2-before-you-start) |
-| `disable_functions` mit `opcache_get_status` | **Systeminformationen** kann keine OPcache-Kennzahlen zeigen; der Cache funktioniert weiter | [Systeminformationen](../../../../en/us/guides/system-information.md) |
-| `variables_order` ohne `E` | der optionale Test meldet, dass PHP keine Umgebungsvariablen registriert | [Kapitel 12](../../../../en/us/install/12-troubleshooting.md) |
+| `open_basedir` | der Setup-Assistent warnt; ezupdate sucht Composer zuerst innerhalb der Installation | [2.4](../../../installation/02-voraussetzungen.md#24-der-systemtest-des-setup-assistenten), [ezupdate](../../../../en/us/features/6.0/extensions/ezupdate.md) |
+| `disable_functions` mit `proc_open`, `exec` oder `posix_kill` | die Seite Cronjobs kann keinen Job starten, die Crontab nicht lesen oder einen Job nicht anhalten; sie sagt, welches davon | [Cronjobs](../../../anleitungen/cronjobs.md#2-bevor-sie-beginnen) |
+| `disable_functions` mit `opcache_get_status` | **Systeminformationen** kann keine OPcache-Kennzahlen zeigen; der Cache funktioniert weiter | [Systeminformationen](../../../anleitungen/systeminformationen.md) |
+| `variables_order` ohne `E` | der optionale Test meldet, dass PHP keine Umgebungsvariablen registriert | [Kapitel 12](../../../installation/12-fehlerbehebung.md) |
 
 ## Checkliste
 
@@ -176,4 +176,4 @@ ausliefert.
 - [Control Panels: Überblick](README.md), [Plesk](plesk.md)
 - [PHP-Versionen und Erweiterungen](../grundlagen/php-versionen-und-erweiterungen.md), [PHP-Einstellungen für Exponential](../grundlagen/php-einstellungen-fuer-exponential.md)
 - [Abstimmung von PHP-FPM](../leistung/abstimmung-von-php-fpm.md), [Benutzer und Pools pro Kunde](../sicherheit/benutzer-und-pools-pro-kunde.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

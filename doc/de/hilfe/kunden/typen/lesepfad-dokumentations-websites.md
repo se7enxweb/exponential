@@ -16,10 +16,10 @@ Die Reihenfolge, in der ein Dokumentationsteam seine Website kennenlernt. Jeder 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 1 | [Dokumentations-Websites: hier beginnen](dokumentations-websites-hier-beginnen.md) | Alle | Wie Dokumentation mit Exponential läuft |
-| 2 | [Im Editor anmelden](../../../../en/us/help/logging-into-the-editor.md) | Autoren | Wo man sich anmeldet |
-| 3 | [Inhalte bearbeiten](../../../../en/us/help/editing-content.md) | Autoren | Seiten anlegen und ändern |
-| 4 | [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md) | Autoren | Entwürfe, Versionen und zurückgehen |
-| 5 | [Medien und Uploads](../../../../en/us/help/media-and-uploads.md) | Autoren | Screenshots und Dateien |
+| 2 | [Im Editor anmelden](../../anmelden-im-editor.md) | Autoren | Wo man sich anmeldet |
+| 3 | [Inhalte bearbeiten](../../inhalte-bearbeiten.md) | Autoren | Seiten anlegen und ändern |
+| 4 | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) | Autoren | Entwürfe, Versionen und zurückgehen |
+| 5 | [Medien und Uploads](../../medien-und-uploads.md) | Autoren | Screenshots und Dateien |
 | 6 | [Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md) | Dokumentationsleitung | Autoren und Freigebende |
 
 ## Der erste Monat: Struktur, Prüfung und Suche
@@ -27,9 +27,9 @@ Die Reihenfolge, in der ein Dokumentationsteam seine Website kennenlernt. Jeder 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 7 | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md) | Dokumentationsleitung | Prüfung vor der Freigabe |
-| 8 | [Objektzustände](../../../../en/us/guides/object-states.md) | Dokumentationsleitung | Ein Freigabezustand, getrennt vom Veröffentlichen |
+| 8 | [Objektzustände](../../../anleitungen/objektzustaende.md) | Dokumentationsleitung | Ein Freigabezustand, getrennt vom Veröffentlichen |
 | 9 | [Den Inhaltsbaum strukturieren](../../../../en/us/help/creators/website-creators/structuring-the-content-tree.md) | Dokumentationsleitung | Eine Hierarchie, die wachsen kann |
-| 10 | [Suchen](../../../../en/us/help/searching.md) | Alle | Wie Redakteure Seiten finden |
+| 10 | [Suchen](../../suchen.md) | Alle | Wie Redakteure Seiten finden |
 | 11 | [Website-Suche und wonach Besucher suchen](../alltag/website-suche-und-wonach-besucher-suchen.md) | Dokumentationsleitung | Fehlende Seiten und fehlende Wörter |
 | 12 | [URLs, Weiterleitungen und verschobene Seiten](../alltag/urls-weiterleitungen-und-verschobene-seiten.md) | Autoren | Lesezeichen, die weiter funktionieren |
 | 13 | [Richtlinien für Bilder und Dateien](../alltag/richtlinien-fuer-bilder-und-dateien.md) | Autoren | Screenshots, die lesbar und beschrieben sind |
@@ -55,4 +55,4 @@ Lesen Sie die Schritte 1, 4, 7 und 11: das Modell, Versionen, Prüfung und was L
 
 - [Dokumentations-Websites: hier beginnen](dokumentations-websites-hier-beginnen.md)
 - [Lesepfad für Kunden](../lesepfad-fuer-kunden.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

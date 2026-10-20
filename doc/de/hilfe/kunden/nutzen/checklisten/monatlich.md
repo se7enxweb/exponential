@@ -58,13 +58,13 @@ STORE (if you sell)
 
 | Punkt | Wo, oder wen Sie fragen | Lesen Sie |
 |---|---|---|
-| Neue Releases | Partner; Sicherheitskorrekturen werden mit dem nächsten Release 6.0.x veröffentlicht | `SECURITY.md`, [Upgrade](../../../../../en/us/guides/upgrading.md) |
-| Upgrade-Prüfung | **Setup > Upgrade-Prüfung**; beide Prüfungen lesen nur | [Upgrade-Prüfung](../../../../../en/us/guides/upgrade-check.md) |
+| Neue Releases | Partner; Sicherheitskorrekturen werden mit dem nächsten Release 6.0.x veröffentlicht | `SECURITY.md`, [Upgrade](../../../../anleitungen/aktualisieren.md) |
+| Upgrade-Prüfung | **Setup > Upgrade-Prüfung**; beide Prüfungen lesen nur | [Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) |
 | Backups und Wiederherstellungstests | Hoster | [Backups, die sich wiederherstellen lassen](../../../../../en/us/help/businesses/reliability/backups-that-restore.md) |
 | Alarme des Prüfprotokolls | Das Dashboard des Prüfprotokolls, Richtlinie `audit/read` | [Das Prüfprotokoll](../../../../../en/us/features/6.0/audit-trail.md) |
 | HTTPS | Hoster | [TLS und HTTPS](../../../hosting/sicherheit/tls-und-https.md) |
 | Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../../en/us/features/6.0/user-hygiene.md) |
-| Formulareinsendungen | **Setup > Gesammelte Informationen** | [Gesammelte Informationen](../../../../../en/us/guides/collected-information.md) |
+| Formulareinsendungen | **Setup > Gesammelte Informationen** | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
 | Datenschutzanfragen | Ihr Anfragenprotokoll | [DSGVO-Anfragen](../../handel/dsgvo-anfragen.md) |
 | Inhaltsprüfungen | `/contentcheck/...` | [Die Inhaltsprüfungen](../../../../../en/us/features/6.0/content-checks.md) |
 | Kosten | Ihr Kostenregister | [Betriebskosten für Betreiber](../betriebskosten-fuer-betreiber.md) |
@@ -92,4 +92,4 @@ Eine Antwort „Ich glaube schon“ auf eine dieser Fragen ist ein Grund, nächs
 - [Vierteljährliche Checkliste](vierteljaehrlich.md)
 - [Monatliche Checkliste für den Betrieb](../../../../../en/us/help/businesses/templates/monthly-operations-checklist.md)
 - [Monatliche Shop-Checkliste](../../handel/monatliche-shop-checkliste.md)
-- [Freie Dokumentation](../../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

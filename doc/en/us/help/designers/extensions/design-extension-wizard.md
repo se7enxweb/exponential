@@ -34,7 +34,7 @@ it writes anything.
    | **Title** | What the admin interface calls it; left empty, it is made from the name |
    | **Summary** | One sentence for the README and `composer.json` |
    | **Author**, **Composer vendor**, **Version** | Your name or organization, your Packagist vendor, the first version |
-   | **Licence** | One of the licenses configured in `package.ini [LicenseSettings]` |
+   | **License** | One of the licenses configured in `package.ini [LicenseSettings]` |
    | **Falls back on** | The base design: `standard`, or a design present on the installation (`admin3`, `admin2`, `admin`, `base`, `ezwebin`) |
    | **Siteaccess** | Used only when the siteaccess settings part is ticked |
 

@@ -55,5 +55,5 @@ Consent to share contact details with the other party:  yes / no
 
 - [Leads übergeben und zurückgeben](leads-uebergeben.md)
 - [Pre-Sales-Unterstützung](pre-sales-unterstuetzung.md)
-- [Für wen Exponential gedacht ist](../../../en/us/help/business/who-exponential-is-for.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Für wen Exponential gedacht ist](../geschaeft/fuer-wen-exponential-ist.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

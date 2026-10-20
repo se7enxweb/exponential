@@ -59,9 +59,9 @@ AFTER
 
 | Punkt | Lesen Sie |
 |---|---|
-| Landingpages und Layouts | [Der Layouts-Editor](../../../../../en/us/help/layouts-editor.md), [Landingpages mit Layouts](../../../../../en/us/help/creators/website-creators/landing-pages-with-layouts.md), [Layout-Regeln](../../../../../en/us/help/creators/website-creators/layout-rules.md) |
-| Entwürfe und Vorschau | [Veröffentlichen und Versionen](../../../../../en/us/help/publishing-and-versions.md) |
-| Adressen | [URLs und Aliase](../../../../../en/us/guides/urls-and-aliases.md) |
+| Landingpages und Layouts | [Der Layouts-Editor](../../../layout-editor.md), [Landingpages mit Layouts](../../../../../en/us/help/creators/website-creators/landing-pages-with-layouts.md), [Layout-Regeln](../../../../../en/us/help/creators/website-creators/layout-rules.md) |
+| Entwürfe und Vorschau | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
+| Adressen | [URLs und Aliase](../../../../anleitungen/urls-und-aliase.md) |
 | Metadaten und Teilen | [Metadaten und Teilen in sozialen Netzwerken](../../../../../en/us/help/creators/website-creators/metadata-and-social-sharing.md) |
 | Newsletter und Einwilligung | [Newsletter versenden](../../../../../en/us/help/creators/website-creators/sending-newsletters.md), [Opt-in und Einwilligung](../../../../../en/us/help/businesses/newsletters/opt-in-and-consent.md) |
 | Shop | [Rabatte](../../handel/rabatte.md), [Vorbereitung auf die Hochsaison](../../handel/vorbereitung-auf-die-hochsaison.md) |
@@ -85,4 +85,4 @@ eingeplant.
 - [Nach einem Vorfall](nach-einem-vorfall.md)
 - [Ihren Shop bewerben](../../../../../en/us/help/businesses/stores/promoting-your-store.md)
 - [Checklisten für Betreiber](README.md)
-- [Freie Dokumentation](../../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

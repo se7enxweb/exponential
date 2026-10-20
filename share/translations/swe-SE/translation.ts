@@ -4078,7 +4078,7 @@
     </message>
     <message>
         <source>Block changes</source>
-        <translation>Spärra ändringar</translation>
+        <translation>Ändringar i block</translation>
     </message>
     <message>
         <source>New version</source>
@@ -20283,7 +20283,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Block</source>
-        <translation>Blockera</translation>
+        <translation>Block</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -33774,7 +33774,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>You are not allowed to create comments.</source>
-        <translation>Du är har inte rätt att skriva kommentarer.</translation>
+        <translation>Du har inte rätt att skriva kommentarer.</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -37259,7 +37259,7 @@ Om du vill skicka kommentarer till personen som godkänner eller visa statusen, 
     </message>
     <message>
         <source>Block changes</source>
-        <translation>Spärra ändringar</translation>
+        <translation>Ändringar i block</translation>
     </message>
     <message>
         <source>New version</source>
@@ -45960,7 +45960,7 @@ För att göra detta måste du ändra %chown kommandona under Alternativa shell-
     </message>
     <message>
         <source>You are not allowed to access %1.</source>
-        <translation>Du har åtkomst till %1.</translation>
+        <translation>Du har inte åtkomst till %1.</translation>
     </message>
     <message>
         <source>Password</source>
@@ -74563,6 +74563,126 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>För organisationer och personer som driver en egen webbplats på Exponential: team, publicering, handel, underhåll, tillväxt och partner.</translation>
+    </message>
+    <message>
+        <source>User manual</source>
+        <translation>Användarhandbok</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>En fråga per sida: vem som får göra det, stegen, vad som kan gå fel och var du kan läsa mer.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Projektfiler</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projektfil</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Den här filen är en del av källkoden för Exponential och distribueras med den under %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Ladda ned DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-böcker</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Byggs från de släppta ämnena varje gång ett av dem släpps, och sparas med sina tidigare versioner.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Storlek</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Uppdaterad</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Ladda ned allt som DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Hjälpämnen med försenad granskning</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Granskningsdatumet har passerat, eller ämnet har varit under granskning i mer än %days dagar utan ändringar.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Försenad</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Åtgärder</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Granskningsdatumet %date passerades för %days dagar sedan</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>Under granskning i %days dagar utan ändringar</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redigera</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Ange status</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown av %count försenade ämnen visas. ./console exp:help:content review listar alla.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Innan du börjar</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Steg</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Vad du gör sedan</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Villkor</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Orsak</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Åtgärd</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Hjälpstart</translation>
     </message>
 </context>
 </TS>

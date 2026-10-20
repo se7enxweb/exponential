@@ -152,5 +152,5 @@ Pull Request für den gemeinsamen Server öffnen ([Ihr Seitenpaket beitragen](..
 - [Was auf dem Paketserver liegt](was-auf-dem-paketserver-liegt.md)
 - [Einstellungen des Paketservers](einstellungen-des-paketservers.md)
 - [Wie der Setup-Assistent Pakete nutzt](../grundlagen/wie-der-setup-assistent-pakete-nutzt.md)
-- [Der Setup-Assistent, 5.3.8 Seitenpaket](../../../../en/us/install/05-setup-wizard.md#538-site-package)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Der Setup-Assistent, 5.3.8 Seitenpaket](../../../installation/05-setup-assistent.md#538-site-paket)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

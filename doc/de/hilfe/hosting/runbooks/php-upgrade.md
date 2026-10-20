@@ -25,12 +25,12 @@ kaputtmacht; behandeln Sie es mit einem Runbook.
 
 | PHP | Exponential 6.0 | Quelle |
 |---|---|---|
-| 8.0 | die älteste unterstützte; Velocity läuft darauf nicht | [Kapitel 2](../../../../en/us/install/02-requirements.md) |
+| 8.0 | die älteste unterstützte; Velocity läuft darauf nicht | [Kapitel 2](../../../installation/02-voraussetzungen.md) |
 | 8.1 bis 8.4 | unterstützt, einschließlich Velocity | Kapitel 2 |
 | 8.5 | unterstützt | Kapitel 2 |
 
 Die CI des Projekts führt die Testsuite auf PHP 8.1 bis 8.5 aus und prüft, dass 8.0 noch startet
-([Wer ist die Exponential Foundation?](../../../../en/us/help/who-is-the-exponential-foundation.md#php-versions)). Aktualisieren Sie Exponential vor
+([Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#php-versionen)). Aktualisieren Sie Exponential vor
 einem PHP-Upgrade auf das neueste 6.0.x, damit bereits gemachte Korrekturen für PHP vorhanden sind.
 
 ## Vorher: auf einer Staging-Kopie
@@ -60,12 +60,12 @@ einem PHP-Upgrade auf das neueste 6.0.x, damit bereits gemachte Korrekturen für
 2. Stellen Sie das **Web**-PHP der Website um:
    - PHP-FPM: Richten Sie die Website auf den Pool der neuen Version (in einem Panel: die Einstellung der PHP-Version der Website) und laden
      Sie den PHP-FPM-Dienst dieser Version neu. Auf Plesk ist der Dienst `plesk-php<XY>-fpm`, nicht `php-fpm`
-     ([11.6](../../../../en/us/install/11-upgrading.md#116-from-any-60x-to-today)).
+     ([11.6](../../../installation/11-aktualisieren.md#116-von-einer-beliebigen-60x-auf-den-heutigen-stand)).
    - Velocity: Der Server läuft auf dem PHP der Kommandozeile, das ihn startet; starten Sie ihn mit der neuen Binärdatei (siehe
      [Velocity für Hoster](../server/velocity-fuer-hoster.md)).
 3. Stellen Sie das PHP der **Kommandozeile** um, das die Cronjobs und Skripte der Website nutzen. Verwenden Sie dieselbe PHP-Binärdatei,
    die der Webserver nutzt (`/opt/.../php` auf Hosts mit mehreren PHP-Versionen); `php -v` in der Cron-Umgebung kann sich von dem Ihrer
-   Shell unterscheiden ([10.3](../../../../en/us/install/10-after-installing.md#a-crontab)).
+   Shell unterscheiden ([10.3](../../../installation/10-nach-der-installation.md#eine-crontab)).
 4. Leeren Sie die Caches und erzeugen Sie die Autoloads neu, dann starten Sie neu:
 
    ```bash
@@ -95,4 +95,4 @@ auf dem Rückweg.
 - [PHP-Versionen und Erweiterungen](../grundlagen/php-versionen-und-erweiterungen.md)
 - [PHP-Auswahl und FPM-Pools in Panels](../control-panels/php-auswahl-und-fpm-pools.md)
 - [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

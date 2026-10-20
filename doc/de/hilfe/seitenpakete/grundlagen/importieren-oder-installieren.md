@@ -101,7 +101,7 @@ festgehalten.
 Entfernen löscht das Paketverzeichnis aus dem Repository und löscht seinen Vermerk der Installation. Es deinstalliert **nicht**: Klassen,
 Inhalte, Erweiterungen und Dateien, die das Paket installiert hat, bleiben auf der Website, und das Paket lässt sich danach nicht mehr unter
 **Setup > Pakete** deinstallieren. In der Administration führt die Bestätigungsseite auf, was entfernt wird, welche Pakete es verlangen und
-ob der Installer es als Quelle nutzt; siehe [Anleitung zu Paketen, 9. Pakete entfernen](../../../../en/us/guides/packages.md#9-removing-packages).
+ob der Installer es als Quelle nutzt; siehe [Anleitung zu Paketen, 9. Pakete entfernen](../../../anleitungen/pakete.md#9-pakete-entfernen).
 Auf der Kommandozeile: `php ezpm.php delete <name>` (Aliase `del`, `remove`, `rm`).
 
 ## Welches Werkzeug was tut
@@ -131,7 +131,7 @@ Der Teil von ezupdate ist in [Pakete mit ezupdate abrufen](../admin-oberflaeche/
 - [Seitenpakete: hier beginnen](../README.md)
 - [Ein Paket importieren](../admin-oberflaeche/ein-paket-importieren.md)
 - [Installieren und Deinstallieren](../admin-oberflaeche/installieren-und-deinstallieren.md)
-- [Anleitung zu Paketen, 7. Installieren und Deinstallieren](../../../../en/us/guides/packages.md#7-installing-and-uninstalling)
+- [Anleitung zu Paketen, 7. Installieren und Deinstallieren](../../../anleitungen/pakete.md#7-installieren-und-deinstallieren)
 - [ezpm, der Paketmanager auf der Kommandozeile](../../../../en/us/features/6.0/ezpm-package-manager-cli.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

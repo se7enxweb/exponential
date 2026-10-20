@@ -74,9 +74,9 @@ Image, von dem Ihre Hoster starten), bevor der Setup-Assistent, der Kickstarter 
 
 | Methode | Wie Sie das Paket wählen |
 |---|---|
-| Setup-Assistent | die Seite **Site Paket** führt jeden Eintrag `type="site"` Ihres Index mit seinem Vorschaubild auf ([5.3.8](../../../../en/us/install/05-setup-wizard.md#538-site-package)) |
-| Kickstarter | `kickstart.ini`, Abschnitt `[site_types]`, Schlüssel `Site_package` ([6.4](../../../../en/us/install/06-kickstarter.md#64-kickstartini-reference)) |
-| Installation über die Konsole | `php bin/php/console exp:install --package=<name>` ([7.3](../../../../en/us/install/07-console-install.md#73-options)) |
+| Setup-Assistent | die Seite **Site Paket** führt jeden Eintrag `type="site"` Ihres Index mit seinem Vorschaubild auf ([5.3.8](../../../installation/05-setup-assistent.md#538-site-paket)) |
+| Kickstarter | `kickstart.ini`, Abschnitt `[site_types]`, Schlüssel `Site_package` ([6.4](../../../installation/06-kickstarter.md#64-referenz-zu-kickstartini)) |
+| Installation über die Konsole | `php bin/php/console exp:install --package=<name>` ([7.3](../../../installation/07-installation-ueber-die-konsole.md#73-optionen)) |
 
 ```ini
 # kickstart.ini
@@ -90,7 +90,7 @@ php bin/php/console exp:install --package=acme_site --url=https://www.example.co
 ```
 
 Der Kickstarter zieht den entfernten Eintrag des Index vor, nutzt aber ein Paket, das bereits importiert ist; um eine frische Kopie zu
-erzwingen, entfernen Sie zuerst das importierte Verzeichnis ([6.4](../../../../en/us/install/06-kickstarter.md#64-kickstartini-reference)).
+erzwingen, entfernen Sie zuerst das importierte Verzeichnis ([6.4](../../../installation/06-kickstarter.md#64-referenz-zu-kickstartini)).
 
 ## Den Server zu ezupdate hinzufügen
 
@@ -136,4 +136,4 @@ Der Probelauf lädt das Seitenpaket und seine Anforderungen nach `var/storage/pa
 - [Wie der Kickstarter und die Konsole Pakete nutzen](../grundlagen/wie-der-kickstarter-und-die-konsole-pakete-nutzen.md)
 - [Seitenpakete für Hoster](../../hosting/bereitstellung/seitenpakete-fuer-hoster.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

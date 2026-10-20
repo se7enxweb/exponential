@@ -27,9 +27,9 @@ oft, wer im Team es erledigt und was zu prüfen ist) und verweist auf die Hilfes
 Eine Website bleibt gut, wenn einige Routinen eingehalten werden: Die richtigen Personen haben die richtigen Konten,
 Inhalte werden geplant und geprüft, bevor sie erscheinen, Dateien und Seiten werden regelmäßig aufgeräumt, und jemand
 schaut sich an, wonach Besucher suchen und was sie nicht finden. Exponential unterstützt jede dieser Routinen mit
-eingebauten Werkzeugen: Rollen und Richtlinien ([Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)),
-Freigabe-Workflows ([Workflows](../../../../en/us/guides/workflows.md)), Versionen und der Papierkorb
-([Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md)), die Inhaltsprüfungen
+eingebauten Werkzeugen: Rollen und Richtlinien ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)),
+Freigabe-Workflows ([Workflows](../../../anleitungen/workflows.md)), Versionen und der Papierkorb
+([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)), die Inhaltsprüfungen
 ([Die Inhaltsprüfungen](../../../../en/us/features/6.0/content-checks.md)) und die Seite zur Überprüfung der Konten
 ([Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md)).
 
@@ -69,8 +69,8 @@ Freigabe-Workflows ([Workflows](../../../../en/us/guides/workflows.md)), Version
 
 ## Was dieser Bereich nicht abdeckt
 
-- Die Klicks in der Administration: siehe [Erste Schritte](../../../../en/us/help/getting-started.md),
-  [Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md) und [Ein Rundgang durch die Administration](../../../../en/us/help/admin-tour.md).
+- Die Klicks in der Administration: siehe [Erste Schritte](../../erste-schritte.md),
+  [Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md) und [Ein Rundgang durch die Administration](../../rundgang-durch-die-administration.md).
 - Die Templates und Klassen der Website bauen oder ändern: siehe
   [Website-Ersteller: hier beginnen](../../../../en/us/help/creators/website-creators/website-creators-start-here.md).
 - Die Website mit Newslettern, Kampagnen, Sprachen, Apps und mehr ausbauen: siehe [Ihre Website ausbauen](../wachstum/README.md).
@@ -80,4 +80,4 @@ Freigabe-Workflows ([Workflows](../../../../en/us/guides/workflows.md)), Version
 - [Ihre Website ausbauen](../wachstum/README.md)
 - [Ihre Website pflegen](../../../../en/us/help/creators/website-creators/maintaining-your-website.md)
 - [Unternehmen: hier beginnen](../../../../en/us/help/businesses/businesses-start-here.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

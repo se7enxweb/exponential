@@ -36,12 +36,12 @@ Das Verhalten kommt aus `kernel/setup/steps/ezstep_site_types.php`:
 
 Der verlässliche Weg, offline zu installieren, ist also, **zuerst jedes Paket zu importieren**. Die Dokumentation des Kickstarters sagt
 dasselbe: Wenn sich der Index nicht lesen lässt, wird ein Paket im lokalen Repository genutzt, wenn alle seine Anforderungen importiert sind
-(eine Offline-Installation) ([Der Kickstarter, 6.4](../../../../en/us/install/06-kickstarter.md#64-kickstartini-reference)).
+(eine Offline-Installation) ([Der Kickstarter, 6.4](../../../installation/06-kickstarter.md#64-referenz-zu-kickstartini)).
 
 > **Hinweis**
 > Ein Probelauf (`exp:install --dry-run`, `exp:kickstarter run --dry-run`) lädt das Seitenpaket und seine Anforderungen immer in das
 > temporäre Repository `var/storage/packages/dryrun/` herunter, um sie zu prüfen. Er braucht den Paketserver (oder einen Spiegel), selbst
-> wenn die Pakete importiert sind ([Der Kickstarter, 6.7](../../../../en/us/install/06-kickstarter.md#67-dry-runs)).
+> wenn die Pakete importiert sind ([Der Kickstarter, 6.7](../../../installation/06-kickstarter.md#67-probeläufe)).
 
 ## Offline-Installation, Schritt für Schritt
 
@@ -150,4 +150,4 @@ Kunden-Websites installiert, testet meist zuerst.
 - [Einen eigenen Paketserver betreiben](../eigene/einen-eigenen-paketserver-betreiben.md)
 - [Das lokale Paket-Repository](../grundlagen/das-lokale-paket-repository.md)
 - [Seitenpakete für Hoster](../../hosting/bereitstellung/seitenpakete-fuer-hoster.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

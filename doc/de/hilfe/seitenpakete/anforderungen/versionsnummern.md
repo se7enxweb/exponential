@@ -119,4 +119,4 @@ Die Einstellungen und die Seite der Assistenten stehen in [Paketlizenzen und Sem
 - [Das Format index.xml](../paketserver/das-format-index-xml.md)
 - [Semantic Versioning 2.0.0](https://semver.org/)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

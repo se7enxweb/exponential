@@ -30,11 +30,11 @@ des Projekts funktioniert, was meist nicht, wie eine Website ohne Shell installi
   mit `.htaccess` ist dort die Antwort (`README.md` im Wurzelverzeichnis, Abschnitt dazu, wann ein klassischer Server noch
   die richtige Antwort ist).
 - Velocity passt meist nicht zu Shared Hosting, weil es einen lang laufenden Prozess braucht; Apache mit PHP-FPM passt
-  ([Kapitel 8](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table)).
+  ([Kapitel 8](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)).
 - Shared Hosting ohne Shell-Zugang: der Assistent. Er braucht nur einen Browser und FTP-Zugang
-  ([Kapitel 4](../../../../en/us/install/04-choosing-an-install-method.md#45-which-method-for-which-situation)).
+  ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md#45-welche-methode-für-welche-situation)).
 - Hosts mit cPanel und DirectAdmin sind Stufe 3: Shared Hosting kann lang laufende Prozesse verbieten, sodass Velocity
-  womöglich nicht erlaubt ist; nutzen Sie Apache oder LiteSpeed mit `.htaccess` ([Stufe 3](../../../../en/us/help/os-support.md#tier-3-expected-to-work)).
+  womöglich nicht erlaubt ist; nutzen Sie Apache oder LiteSpeed mit `.htaccess` ([Stufe 3](../../betriebssystemunterstuetzung.md#stufe-3-voraussichtlich-lauffähig)).
 - Seit 6.0.15 arbeitet der Setup-Assistent nur mit Ihrer eigenen Datenbank: Er führt kein `SHOW DATABASES` mehr aus und
   öffnet die Systemdatenbank `mysql` nicht mehr, was Rechte bräuchte, die ein Shared Host nicht vergibt
   ([Eine saubere Installation, die zu Shared Hosting passt](../../../../en/us/features/6.0/clean-install-defaults.md)).
@@ -51,14 +51,14 @@ cp .htaccess_root .htaccess
 Nutzen Sie stattdessen `.htaccess_root_static` nur, wenn die Website einen erzeugten statischen Cache ausliefert. Für Apache
 muss der virtuelle Host `.htaccess` wirken lassen (`AllowOverride All` auf dem Document Root), und `mod_rewrite` muss an
 sein; ein 404 für jede Seite bedeutet, dass `.htaccess` nicht gelesen wird (`AllowOverride`) oder `mod_rewrite` aus ist
-([8.5 Apache mit PHP-FPM](../../../../en/us/install/08-serving-the-site.md#85-apache-with-php-fpm)). LiteSpeed liest die
-Rewrite-Regeln von Apache in den meisten Fällen und ist Stufe 3 ([Webserver](../../../../en/us/help/os-support.md#web-servers)).
+([8.5 Apache mit PHP-FPM](../../../installation/08-die-website-ausliefern.md#85-apache-mit-php-fpm)). LiteSpeed liest die
+Rewrite-Regeln von Apache in den meisten Fällen und ist Stufe 3 ([Webserver](../../betriebssystemunterstuetzung.md#webserver)).
 
 > **Hinweis**
 > Der Document Root des Kontos muss das Wurzelverzeichnis der Installation sein, das Verzeichnis, das `index.php` enthält.
 > Die Sicherheit kommt vom Routing, nicht vom Verzeichnisaufbau: Nur eine feste Liste von Asset-Pfaden wird als Dateien
 > ausgeliefert; alles andere geht an `index.php`
-> ([13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)). Eine allgemeine
+> ([13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)). Eine allgemeine
 > Konfiguration eines Panels „Datei ausliefern, wenn sie existiert“ würde `settings/*.ini` und die SQLite-Datenbank
 > ausliefern; prüfen Sie einmal pro Server-Image, dass eine Anfrage nach `/settings/site.ini` eine HTML-Seite liefert, nie
 > INI-Text.
@@ -68,7 +68,7 @@ Mehr: [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md), [LiteSpeed](../serv
 ## Installation ohne Shell
 
 Ohne Shell kann der Kunde Composer nicht ausführen, und ohne Composer, oder ohne dass es ausgeführt wird, fehlt `vendor/`,
-und die Website kann nicht starten ([2.7 Composer](../../../../en/us/install/02-requirements.md#27-composer)). Daraus ergeben sich zwei
+und die Website kann nicht starten ([2.7 Composer](../../../installation/02-voraussetzungen.md#27-composer)). Daraus ergeben sich zwei
 praktische Wege:
 
 1. **Der Hoster stellt den Code bereit.** Ihre Bereitstellung (ein Ein-Klick-Installer, ein Vorlagenkonto) legt einen Baum an,
@@ -80,7 +80,7 @@ praktische Wege:
 Dann erledigt der Setup-Assistent den Rest im Browser: Seine Seite **Systemtest** prüft PHP, die Erweiterungen, die
 beschreibbaren Verzeichnisse und die `php.ini`-Werte und gibt für jeden Fehler die Abhilfe aus
 ([Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md),
-[Kapitel 5](../../../../en/us/install/05-setup-wizard.md)).
+[Kapitel 5](../../../installation/05-setup-assistent.md)).
 
 > **Warnung**
 > Ein langer Schritt des Assistenten kann an die Zeitgrenze für Anfragen von PHP-FPM des Kontos stoßen. Die Notizen zur
@@ -91,7 +91,7 @@ beschreibbaren Verzeichnisse und die `php.ini`-Werte und gibt für jeden Fehler 
 
 ## PHP-Einstellungen pro Konto
 
-Der Setup-Assistent prüft diese ([2.5 php.ini-Einstellungen](../../../../en/us/install/02-requirements.md#25-phpini-settings)):
+Der Setup-Assistent prüft diese ([2.5 php.ini-Einstellungen](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)):
 
 | Einstellung | Wert, den der Assistent prüft | Hinweis für Shared Hosting |
 |---|---|---|
@@ -107,7 +107,7 @@ Der Setup-Assistent prüft diese ([2.5 php.ini-Einstellungen](../../../../en/us/
 Panels setzen `open_basedir` und `disable_functions` oft pro Konto. Der Assistent warnt nur bei `open_basedir`. Die Seite
 Cronjobs in der Administration braucht `proc_open`, um einen Job zu starten, `exec`, um die Crontab zu lesen, und
 `posix_kill`, um einen Job anzuhalten; ist eine davon deaktiviert, öffnet sich die Seite trotzdem und sagt, welche Funktion
-fehlt ([Cronjobs, Bevor Sie beginnen](../../../../en/us/guides/cronjobs.md#2-before-you-start)).
+fehlt ([Cronjobs, Bevor Sie beginnen](../../../anleitungen/cronjobs.md#2-bevor-sie-beginnen)).
 
 Details: [PHP-Einstellungen für Exponential](../grundlagen/php-einstellungen-fuer-exponential.md),
 [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md).
@@ -122,9 +122,9 @@ Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit mögli
   die von einer Maschine ausgeliefert wird, was ein Shared-Konto ist.
 - **Ein Datenbankserver aus dem Panel** (meist 4. MariaDB oder 6. MySQL, manchmal 2. PostgreSQL): Legen Sie Datenbank und
   Benutzer vor der Installation an; die Installer legen weder Datenbanken noch Benutzer an
-  ([2.6 Datenbanken](../../../../en/us/install/02-requirements.md#26-databases)). Legen Sie die Datenbank für MariaDB und MySQL in
+  ([2.6 Datenbanken](../../../installation/02-voraussetzungen.md#26-datenbanken)). Legen Sie die Datenbank für MariaDB und MySQL in
   `utf8mb4` an. Der Benutzer braucht nur Rechte auf die eine Datenbank
-  ([9.3 MySQL und MariaDB](../../../../en/us/install/09-databases.md#93-mysql-and-mariadb)).
+  ([9.3 MySQL und MariaDB](../../../installation/09-datenbanken.md#93-mysql-und-mariadb)).
 
 Siehe [Datenbanken und Benutzer in Control Panels](../control-panels/datenbanken-und-benutzer.md).
 
@@ -133,7 +133,7 @@ Siehe [Datenbanken und Benutzer in Control Panels](../control-panels/datenbanken
 Geplantes Veröffentlichen, Benachrichtigungen und Bereinigung hängen von `runcronjobs.php` ab. Auf Shared Hosting plant der
 Kunde es meist über die Cron-Seite des Panels. Der Befehl muss dieselbe PHP-Version wie die Website nutzen; auf Maschinen mit
 mehreren PHP-Versionen heißt das den vollständigen Pfad zur richtigen Binärdatei
-([Kapitel 10, Cronjobs](../../../../en/us/install/10-after-installing.md#103-cronjobs)):
+([Kapitel 10, Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs)):
 
 ```text
 */5 * * * * cd /var/www/vhosts/<domain>/<docroot> && /path/to/php runcronjobs.php -q -s site frequent >/dev/null 2>&1
@@ -148,7 +148,7 @@ die die anderen enthalten. Geben Sie jedem Konto einen eigenen Benutzer des Betr
 als dieser Benutzer läuft; das empfiehlt Kapitel 8, wenn mehrere Kunden auf einer Maschine voneinander auf Ebene des
 Betriebssystems abgeschottet sein müssen. Innerhalb des Kontos sollte alles, was `var/` schreibt (der Pool, Cron, die Skripte
 des Kunden), als dieser eine Benutzer laufen
-([8.7.2 Ein Benutzer oder eine Gruppe](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)). Siehe
+([8.7.2 Ein Benutzer oder eine Gruppe](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)). Siehe
 [Trennung von Mandanten](../sicherheit/trennung-von-mandanten.md).
 
 ## Checkliste
@@ -167,5 +167,5 @@ des Kunden), als dieser eine Benutzer laufen
 - [Ein Hosting-Modell wählen](ein-hosting-modell-waehlen.md)
 - [Control Panels: Überblick](../control-panels/README.md)
 - [Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md)
-- [Kapitel 8: Die Website ausliefern](../../../../en/us/install/08-serving-the-site.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

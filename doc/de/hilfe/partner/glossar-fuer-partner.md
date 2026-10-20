@@ -13,7 +13,7 @@ Diese Seite ist für alle, die auf den Partnerseiten auf einen unbekannten Begri
 
 | Begriff | Bedeutung | Seite |
 |---|---|---|
-| **7x** | Das Unternehmen, das das Partnerprogramm betreibt und Exponential leitet; früher Brookins Consulting | [Wer ist 7x?](../../../en/us/help/who-is-7x.md) |
+| **7x** | Das Unternehmen, das das Partnerprogramm betreibt und Exponential leitet; früher Brookins Consulting | [Wer ist 7x?](../wer-ist-7x.md) |
 | **Exponential** | Das Open-Source-CMS und -Framework; das Produkt, auf dem Partner aufbauen | [Namens- und Markenregeln](namens-und-markenregeln.md) |
 | **Exponential Foundation** | Die gemeinnützige Organisation, die das Projekt betreibt | [Mit der Foundation zusammenarbeiten](mit-der-foundation-zusammenarbeiten.md) |
 | **Exponential Partner** | Eine Organisation im offiziellen Partnerprogramm | [Was ein Exponential-Partner ist](was-ein-exponential-partner-ist.md) |
@@ -34,17 +34,17 @@ Diese Seite ist für alle, die auf den Partnerseiten auf einen unbekannten Begri
 | **Partner Center / Partner Dashboard** | Die Werkzeuge des Programms zum Erfassen von Aktivität und Anzeigen von Punkten (am 18. Oktober 2026 nicht online) | [Ihre Partneraktivität erfassen](partneraktivitaet-erfassen.md) |
 | **Powered by Exponential** | Ein Hinweis auf einer Website, die mit Exponential läuft | [„Powered by Exponential“ zeigen](powered-by-exponential.md) |
 | **GPL** | GNU General Public License, v2 oder später: die Lizenz des Codes | [Lizenzierung für Partner](lizenzierung-fuer-partner.md) |
-| **GFDL** | GNU Free Documentation License 1.3 oder später: die Lizenz der Dokumentation | [Freie Dokumentation](../../../en/us/help/free-documentation.md) |
+| **GFDL** | GNU Free Documentation License 1.3 oder später: die Lizenz der Dokumentation | [Freie Dokumentation](../freie-dokumentation.md) |
 | **CC BY-SA 4.0** | Die Lizenz des Textes des Partnerprogramms | [Die Partnerschaftsvereinbarung](die-partnerschaftsvereinbarung.md) |
-| **Unterstützer** | Alle, die dem Projekt helfen | [Unterstützer: hier beginnen](../../../en/us/help/supporters/supporters-start-here.md) |
-| **Sponsor** | Alle, die 7x oder die Foundation finanzieren | [Sponsoren: hier beginnen](../../../en/us/help/sponsors/sponsors-start-here.md) |
+| **Unterstützer** | Alle, die dem Projekt helfen | [Unterstützer: hier beginnen](../unterstuetzer/unterstuetzer-hier-beginnen.md) |
+| **Sponsor** | Alle, die 7x oder die Foundation finanzieren | [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md) |
 | **Upstream** | Das ursprüngliche Projekt von Code, den Sie nutzen oder geändert haben | [Erweiterungen an die Upstream-Projekte zurückgeben](erweiterungen-zurueckgeben.md) |
 | **Von der Foundation noch festzulegen** | Eine Frage, die die veröffentlichten Quellen noch nicht beantworten | [Governance: wer was entscheidet](governance-und-entscheidungen.md) |
 
-**Demomodus** - Die Einstellung einer öffentlichen Demo über die Umgebungsvariable `EXP_DEMO_MODE=1`: Ihr veröffentlichtes Administratorpasswort kann nicht geändert oder zurückgesetzt werden. [Häufige Fragen zum Demomodus](../../../en/us/help/demo-mode-faq.md).
+**Demomodus** - Die Einstellung einer öffentlichen Demo über die Umgebungsvariable `EXP_DEMO_MODE=1`: Ihr veröffentlichtes Administratorpasswort kann nicht geändert oder zurückgesetzt werden. [Häufige Fragen zum Demomodus](../demomodus-faq.md).
 
 ## Verwandte Seiten
 
 - [Häufige Fragen von Partnern](faq-fuer-partner.md)
 - [Partner: hier beginnen](partner-hier-beginnen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

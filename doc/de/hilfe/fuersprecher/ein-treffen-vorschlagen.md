@@ -10,9 +10,9 @@ type: help
 # Ein Treffen vorschlagen
 
 Diese Seite ist für Fürsprecher, die Exponential-Benutzer persönlich oder online zusammenbringen möchten. **In den
-Quellen des Projekts sind keine Konferenzen oder Treffen dokumentiert** ([Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places)).
+Quellen des Projekts sind keine Konferenzen oder Treffen dokumentiert** ([Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community)).
 Jedes Treffen, das Sie organisieren, ist **Ihre** Veranstaltung: Stellen Sie es so dar, nie als offizielles
-([Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md#the-documented-channels)).
+([Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md#die-dokumentierten-kanäle)).
 
 ## Inhalt
 
@@ -99,4 +99,4 @@ Checklisten für vorher, während und danach: [Checklisten für Veranstaltungen]
 - [Ein Online-Treffen durchführen](ein-online-treffen-durchfuehren.md)
 - [Checklisten für Veranstaltungen](checklisten-fuer-veranstaltungen.md)
 - [Ein Tisch auf der Veranstaltung anderer](ein-tisch-auf-fremden-veranstaltungen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

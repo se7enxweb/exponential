@@ -17,13 +17,13 @@ am 18. Oktober 2026).
 
 | Fähigkeit | Was sie umfasst | Lernen aus |
 |---|---|---|
-| Installation und Umgebungen | Anforderungen, Installationswege, Engines (Velocity, PHP-FPM, FrankenPHP) | `doc/en/us/install/` (Kapitel 1 bis 13), [Erste Schritte](../../../en/us/help/getting-started.md) |
-| Inhaltsmodellierung | Inhaltsklassen, Attribute, Sektionen, Sprachen | [Workshops zur Inhaltsmodellierung](../../../en/us/help/leadership/content-modeling-workshops.md), [Inhalte bearbeiten](../../../en/us/help/editing-content.md) |
-| Templates und Designs | Template-Sprache, Overrides, Layouts | [Der Layouts-Editor](../../../en/us/help/layouts-editor.md) |
-| Erweiterungen | Module, Einstellungen, die RAD-Werkzeuge, Releases | [Erweiterungen](../../../en/us/guides/extensions.md) |
-| Datenbanken | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../../../en/us/help/database-support.md) |
-| Git-Arbeitsweise | Klone mit Historie, Branches, Pull Requests | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) |
-| Sicherheit | Härtung, CSP, Updates | [Sicherheitshärtung](../../../en/us/help/security-hardening.md) |
+| Installation und Umgebungen | Anforderungen, Installationswege, Engines (Velocity, PHP-FPM, FrankenPHP) | `doc/en/us/install/` (Kapitel 1 bis 13), [Erste Schritte](../erste-schritte.md) |
+| Inhaltsmodellierung | Inhaltsklassen, Attribute, Sektionen, Sprachen | [Workshops zur Inhaltsmodellierung](../fuehrung/workshops-zur-inhaltsmodellierung.md), [Inhalte bearbeiten](../inhalte-bearbeiten.md) |
+| Templates und Designs | Template-Sprache, Overrides, Layouts | [Der Layouts-Editor](../layout-editor.md) |
+| Erweiterungen | Module, Einstellungen, die RAD-Werkzeuge, Releases | [Erweiterungen](../../anleitungen/extensions.md) |
+| Datenbanken | SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
+| Git-Arbeitsweise | Klone mit Historie, Branches, Pull Requests | [Mit Git entwickeln](../mit-git-entwickeln.md) |
+| Sicherheit | Härtung, CSP, Updates | [Sicherheitshärtung](../sicherheitshaertung.md) |
 | Upgrades und Migrationen | Von älteren Linien und anderen Plattformen | `doc/en/us/install/11-upgrading.md`, `doc/en/us/install/14-migrating-from-4x.md` bis `17-migration-reference.md` |
 
 ## Dienstleistungen, die Sie anbieten können
@@ -35,7 +35,7 @@ am 18. Oktober 2026).
 | Upgrade und Wartung | Aktuelle Releases, Sicherheitskorrekturen, PHP-Upgrades | [Kunden-Websites aktuell halten](kunden-websites-aktuell-halten.md) |
 | Eigene Erweiterungen | Funktionen, die der Kernel nicht hat | [Eine Erweiterung veröffentlichen](eine-erweiterung-veroeffentlichen.md) |
 | Integration | REST, Suche, Single Sign-on, Shop | Die Funktionsdokumentation in `doc/en/us/features/` |
-| Audits | Sicherheit, Leistung, Barrierefreiheit | [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md) |
+| Audits | Sicherheit, Leistung, Barrierefreiheit | [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md) |
 
 ## Das Programm als Implementierungspartner nutzen
 
@@ -56,5 +56,5 @@ Teile zurück:
 
 - [Ein Leitfaden für Implementierungsprojekte](leitfaden-fuer-implementierungsprojekte.md)
 - [Partnerprofile](partnerprofile.md)
-- [Ein Exponential-Projekt planen](../../../en/us/help/leadership/planning-an-exponential-project.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Ein Exponential-Projekt planen](../fuehrung/ein-exponential-projekt-planen.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

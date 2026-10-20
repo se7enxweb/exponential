@@ -41,15 +41,15 @@ Dokumentation nennt. Schicken Sie Menschen nicht im Namen des Projekts woandersh
 | Die Foundation sponsern | [github.com/sponsors/exponentialcms](https://github.com/sponsors/exponentialcms) | Finanziert das Open-Source-Projekt | [Für nachhaltige Finanzierung eintreten](fuer-nachhaltige-finanzierung-eintreten.md) |
 | 7x sponsern | [github.com/sponsors/se7enxweb](https://github.com/sponsors/se7enxweb) | Finanziert das Unternehmen, das die Entwicklung leitet | ebenda |
 
-Quellen: [Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places),
-[Wer ist 7x?, Die Community](../../../en/us/help/who-is-7x.md#the-community), [Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md#the-documented-channels).
+Quellen: [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community),
+[Wer ist 7x?, Die Community](../wer-ist-7x.md#die-community), [Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md#die-dokumentierten-kanäle).
 
 ## Wen Sie wohin schicken
 
 | Jemand möchte | Schicken Sie ihn zu |
 |---|---|
-| Erfahren, was Exponential ist | [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md) |
-| Es ausprobieren | [Erste Schritte](../../../en/us/help/getting-started.md), [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
+| Erfahren, was Exponential ist | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
+| Es ausprobieren | [Erste Schritte](../erste-schritte.md), [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
 | Fragen „Wie mache ich ...?“ | Zuerst zur Hilfe, dann in die Foren oder zu Telegram |
 | Einen Fehler melden | Zur Seite **Fehler melden** der Hilfe und zum richtigen Tracker |
 | Ein Sicherheitsproblem melden | Vertraulich, wie `SECURITY.md` es beschreibt |
@@ -62,7 +62,7 @@ Quellen: [Orte der Community](../../../en/us/help/who-is-the-exponential-foundat
 ## Kanäle, die ohne Adresse genannt werden
 
 „Discord und Slack“ werden auf [exponential.earth/about/project](https://exponential.earth/about/project) „unter den
-Support-Kanälen genannt“; die Dokumentation gibt keine Adressen für sie an ([Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places)).
+Support-Kanälen genannt“; die Dokumentation gibt keine Adressen für sie an ([Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community)).
 Wenn Sie sie brauchen, suchen Sie den Link auf dieser Seite; geben Sie Adressen aus anderen Quellen nicht als offiziell weiter.
 
 ## Vertrauliche Kanäle
@@ -75,7 +75,7 @@ Wenn Sie sie brauchen, suchen Sie den Link auf dieser Seite; geben Sie Adressen 
 
 ## Was nicht dokumentiert ist
 
-- Es sind keine Konferenzen oder Treffen dokumentiert ([Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places)).
+- Es sind keine Konferenzen oder Treffen dokumentiert ([Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community)).
   Wenn Sie eines organisieren, stellen Sie es als Ihres dar ([Ein Treffen vorschlagen](ein-treffen-vorschlagen.md)).
 - Die Quellen nennen keine offiziellen Konten in sozialen Medien, Hashtags, Mailinglisten oder Botschafterprogramme.
 - Es ist keine Zertifizierung dokumentiert.
@@ -98,5 +98,5 @@ Sponsor         github.com/sponsors/exponentialcms   github.com/sponsors/se7enxw
 
 - [Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md)
 - [Neue willkommen heißen](neue-willkommen-heissen.md)
-- [Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

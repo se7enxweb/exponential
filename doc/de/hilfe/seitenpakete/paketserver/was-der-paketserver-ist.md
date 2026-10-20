@@ -42,7 +42,7 @@ Eine Installation liest also vom Server, während sie installiert wird, und dana
 | eine Anwendung | er eine statische HTTPS-Website ist, die GitHub Pages veröffentlicht; nichts darauf führt Code aus |
 | ein Kontensystem | es keine Anmeldung, keinen API-Schlüssel und kein Formular zum Hochladen gibt; alle bekommen dieselben Dateien |
 | ein Composer-Repository | Composer-Pakete (Erweiterungen, der Kernel) von Packagist kommen; der Paketserver enthält nur Dateien `.ezpkg` |
-| ein Ort für Updates einer laufenden Website | eine installierte Website ihn nicht prüft; Code wird mit Git oder Composer aktualisiert ([Mit Git aktualisieren](../../../../en/us/help/update-with-git.md)) |
+| ein Ort für Updates einer laufenden Website | eine installierte Website ihn nicht prüft; Code wird mit Git oder Composer aktualisiert ([Mit Git aktualisieren](../../mit-git-aktualisieren.md)) |
 | die einzige Quelle für Pakete | der Installer auch Pakete nutzt, die bereits in `var/storage/packages/` liegen, und eine hochgeladene `.ezpkg` annimmt |
 
 ## Wer von ihm liest
@@ -114,4 +114,4 @@ Auf dem laufenden Server geprüft:
 - [Einstellungen des Paketservers](einstellungen-des-paketservers.md)
 - [Was ein Seiteninstallationspaket ist](../grundlagen/was-ein-seiteninstallationspaket-ist.md)
 - [Paketserver in ezupdate](../admin-oberflaeche/paketserver-in-ezupdate.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

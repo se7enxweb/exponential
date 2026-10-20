@@ -309,4 +309,4 @@ Ausgabe auf alpha:
 - [If und Bedingungen](../../../en/us/help/designers/templates/if-and-conditions.md), [Switch und case](../../../en/us/help/designers/templates/switch-case.md)
 - [Foreach-Schleifen](../../../en/us/help/designers/templates/foreach-loops.md), [For-Schleifen](../../../en/us/help/designers/templates/for-loops.md), [While- und do-Schleifen](../../../en/us/help/designers/templates/while-and-do-loops.md)
 - [foreach](../../../en/us/examples/template-functions/foreach.md), [switch](../../../en/us/examples/template-functions/switch.md), aus dem Code erzeugt
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

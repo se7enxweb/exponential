@@ -36,7 +36,7 @@ cd sandbox-acme
 composer install
 ```
 
-Die Wege, an den Code zu kommen, und was `composer install` tut, stehen in [3. Den Code holen](../../../../en/us/install/03-getting-the-code.md).
+Die Wege, an den Code zu kommen, und was `composer install` tut, stehen in [3. Den Code holen](../../../installation/03-den-code-beschaffen.md).
 
 Richten Sie sie auf den Server, der Ihre Testpakete enthält ([Eine Website auf Ihren Paketserver richten](eine-website-auf-ihren-paketserver-richten.md)):
 
@@ -74,9 +74,9 @@ php bin/php/console exp:install --package=acme_site --dry-run
 
 `--print` zeigt die Konfiguration und hält an. `--dry-run` verbindet sich mit der Datenbank und holt Ihr Seitenpaket und seine Anforderungen
 nach `var/storage/packages/dryrun/`, das wieder entfernt wird; es schreibt weder Datenbank noch Einstellungen
-([7.6](../../../../en/us/install/07-console-install.md#76-dry-run-and-print)). Es belegt, dass sich Ihr Index lesen lässt, jedes Archiv herunterlädt
+([7.6](../../../installation/07-installation-ueber-die-konsole.md#76-probelauf-und-ausgabe)). Es belegt, dass sich Ihr Index lesen lässt, jedes Archiv herunterlädt
 und importiert und jedes `<require>` gefunden wird. Mit einer `kickstart.ini`: `php bin/php/console exp:kickstarter run --dry-run` tut
-dasselbe ([6.7](../../../../en/us/install/06-kickstarter.md#67-dry-runs)).
+dasselbe ([6.7](../../../installation/06-kickstarter.md#67-probeläufe)).
 
 ## Runde 3: eine vollständige Installation
 
@@ -85,7 +85,7 @@ php bin/php/console exp:install --package=acme_site --url=http://localhost:8080 
 ```
 
 Führen Sie es als der Benutzer aus, als der das PHP des Webservers läuft, damit die angelegten Dateien beschreibbar bleiben
-([7.3](../../../../en/us/install/07-console-install.md#73-options)). Lesen Sie dann die Logs:
+([7.3](../../../installation/07-installation-ueber-die-konsole.md#73-optionen)). Lesen Sie dann die Logs:
 
 | Log | Wonach Sie suchen |
 |---|---|
@@ -125,6 +125,6 @@ Halten Sie kurz fest, was Sie auf welchem Release getestet haben: Es gehört in 
 - [Ein Paket vor der Veröffentlichung prüfen](../anforderungen/ein-paket-vor-der-veroeffentlichung-pruefen.md)
 - [Wie der Kickstarter und die Konsole Pakete nutzen](../grundlagen/wie-der-kickstarter-und-die-konsole-pakete-nutzen.md)
 - [Ihr Paket auf einer Testwebsite installieren](../../../../en/us/help/designers/extensions/installing-your-package-on-a-test-site.md)
-- [7. Die Installation über die Konsole](../../../../en/us/install/07-console-install.md)
+- [7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

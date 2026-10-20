@@ -74,14 +74,14 @@ Datenbankserver. Fragen: die Foren auf share.exponential.earth und der Telegram-
 
 | Satz | Quelle |
 |---|---|
-| Framework, Inhaltsmodell, Shop, mehrere Websites, Sprachen | [Exponential 6](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
+| Framework, Inhaltsmodell, Shop, mehrere Websites, Sprachen | [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
 | Nach fast achtzehn Jahren eingestellt | ebenda |
-| 7x übernahm 2023; fünfzehn Releases seit Januar 2024 | [Wer ist 7x?](../../../en/us/help/who-is-7x.md#the-60x-releases) |
-| Die Foundation betreibt das Projekt | [Die Foundation und 7x](../../../en/us/help/who-is-the-exponential-foundation.md#the-foundation-and-7x) |
-| Velocity, Layouts, Exponential Intelligence | [Die Produkte im Einzelnen](../../../en/us/help/who-is-the-exponential-foundation.md#the-products-one-by-one) |
+| 7x übernahm 2023; fünfzehn Releases seit Januar 2024 | [Wer ist 7x?](../wer-ist-7x.md#die-releases-60x) |
+| Die Foundation betreibt das Projekt | [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x) |
+| Velocity, Layouts, Exponential Intelligence | [Die Produkte im Einzelnen](../wer-ist-die-exponential-foundation.md#die-produkte-im-einzelnen) |
 | Hilfe in der Administration | [Das Hilfesystem](../../../en/us/features/6.0/help-system.md) |
 | GPL, GFDL | [Open Source und Lizenzierung](gespraechspunkte-open-source-und-lizenzierung.md) |
-| Jeder Pull Request wird übernommen | [Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows) |
+| Jeder Pull Request wird übernommen | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 | Ein Befehl, SQLite | [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
 
 ## Checkliste zum Proben
@@ -100,4 +100,4 @@ Datenbankserver. Fragen: die Foren auf share.exponential.earth und der Telegram-
 - [Folienplan für einen 20-Minuten-Vortrag](folienplan-20-minuten-vortrag.md)
 - [Die Geschichte von Exponential in zwei Minuten](die-geschichte-in-zwei-minuten.md)
 - [Vor einer Benutzergruppe oder Klasse präsentieren](vor-benutzergruppe-oder-klasse-praesentieren.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

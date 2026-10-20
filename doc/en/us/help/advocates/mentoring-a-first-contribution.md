@@ -10,9 +10,10 @@ type: help
 # Mentoring a first contribution
 
 This page is for advocates who help another person make their first contribution. A first pull request that is
-welcomed turns a user into a contributor. In Exponential "every pull request is merged, and its commits are kept as
-the contributor wrote them" ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)),
-which makes it an especially good place to start.
+welcomed turns a user into a contributor. In Exponential every pull request is merged, under its author's name, once
+its author has squashed and rebased it onto `main` as the reviews ask
+([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)), which makes it an
+especially good place to start.
 
 ## Contents
 
@@ -66,6 +67,12 @@ git push -u fork fix-<short-name>
 
 For the kernel, read CONTRIBUTING.md together: the commit hook (`make hooks`) and the file manifest
 (`make manifest-fix`) ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
+Tell them early that a code contribution to the kernel is merged only once they have signed the Contributor
+Licensing Agreement that 7x and the Exponential Foundation require, and explain plainly what it means: **by signing
+and submitting, they assign the copyright in the contribution to 7x, which becomes its owner, and give up control over it.** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying them, and
+they cannot withdraw it or set conditions on it
+([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Their own extensions are
+not affected.
 
 ## The pull request
 
@@ -78,7 +85,12 @@ How I tested: <steps, version>
 Fixes #<issue number> (if there is one)
 ```
 
-Explain that reviewers may fix things in commits on top; that is normal and not a rejection.
+Explain that review rounds asking for changes are normal and not a rejection. For the kernel, prepare them for many
+review rounds: 7x reviews a commit or pull request in many more rounds than usual, sometimes hundreds of revisions,
+until the change is simple to accept. While the pull request is open, they squash it and rebase it onto `main` as the
+reviews ask (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` to their pull request
+branch only); after the merge, `main` is never rewritten
+([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
 
 ## After it is merged
 
@@ -93,9 +105,10 @@ Explain that reviewers may fix things in commits on top; that is normal and not 
 [ ] They have a GitHub account (with two-factor authentication)
 [ ] They chose the path (docs, translation, code) and read the page for it
 [ ] Commit message starts with Added:/Updated:/Fixed:/Removed:/Renamed:
+[ ] For a kernel code change: they know the CLA gives control of it to 7x, and their signed CLA is on file
 [ ] No secrets or personal data in the change
 [ ] Pull request text: what, why, how tested
-[ ] They know reviews may add commits on top
+[ ] They know how to squash and rebase their pull request onto main
 [ ] Celebrated, with consent
 ```
 

@@ -28,7 +28,7 @@ nur auf veröffentlichte Quellen.
 
 ## Was nicht veröffentlicht ist
 
-[Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md#what-the-sources-do-not-say) hält fest,
+[Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#was-die-quellen-nicht-sagen) hält fest,
 dass keine öffentliche Quelle sagt, „wer im Vorstand der Foundation sitzt, wie sie geführt wird, ob sie außer ihren
 Unterstützern Mitglieder hat und wie hoch ihr Budget ist“. Für Partner heißt das, dass Folgendes **von der Foundation
 noch festzulegen** ist:
@@ -60,4 +60,4 @@ noch festzulegen** ist:
 
 - [Wer das Partnerprogramm betreibt](wer-das-partnerprogramm-betreibt.md)
 - [Mit der Exponential Foundation zusammenarbeiten](mit-der-foundation-zusammenarbeiten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

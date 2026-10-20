@@ -31,9 +31,9 @@ anbieten.
 Angebote als Platform as a Service, die PHP 8 mit einer beschreibbaren persistenten Festplatte ausführen, funktionieren
 erwartungsgemäß (Stufe 3). Angebote mit einem schreibgeschützten oder flüchtigen Dateisystem brauchen `var/` auf
 persistentem Speicher und einen Datenbankserver
-([Container, Cloud und Hosting-Panels](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels)).
+([Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels)).
 
-Stufe 3 bedeutet eine begründete Erwartung, kein Testergebnis ([Die vier Stufen](../../../../en/us/help/os-support.md#the-four-tiers)): Die
+Stufe 3 bedeutet eine begründete Erwartung, kein Testergebnis ([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)): Die
 Quellen nennen und testen kein bestimmtes PaaS-Produkt. Führen Sie eine vollständige Testinstallation auf der Plattform aus,
 bevor Sie sie anbieten.
 
@@ -42,7 +42,7 @@ bevor Sie sie anbieten.
 Der Test `directory_permissions` des Setup-Assistenten listet die Verzeichnisse auf, die beschreibbar sein müssen: `design`,
 `extension`, `settings`, `settings/override`, `settings/siteaccess`, `settings/siteaccess/admin`, `var`, `var/cache` und seine
 Unterverzeichnisse, `var/log`, `var/storage` und seine Unterverzeichnisse, `var/autoload`
-([2.4 Die Systemprüfung des Setup-Assistenten](../../../../en/us/install/02-requirements.md#24-the-setup-wizards-system-check)).
+([2.4 Die Systemprüfung des Setup-Assistenten](../../../installation/02-voraussetzungen.md#24-der-systemtest-des-setup-assistenten)).
 
 | Pfad | Geschrieben, wenn | Muss erhalten bleiben? |
 |---|---|---|
@@ -55,7 +55,7 @@ Unterverzeichnisse, `var/log`, `var/storage` und seine Unterverzeichnisse, `var/
 
 Nach der Installation können Sie den Schreibzugriff auf `design/` und `extension/` wieder entziehen, wenn nichts Pakete aus der
 Administration installiert; `settings/` bleibt beschreibbar, wenn Administratoren Einstellungen im Browser ändern
-([8.7.1](../../../../en/us/install/08-serving-the-site.md#871-what-must-be-writable)).
+([8.7.1](../../../installation/08-die-website-ausliefern.md#871-was-beschreibbar-sein-muss)).
 
 > **Tipp**
 > Auf einer PaaS gehören Einstellungen in das Code-Repository. Der Schalter `[ConfigurationSettings] ManagedByDeployment=enabled`
@@ -92,14 +92,14 @@ Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit mögli
 Mit einem schreibgeschützten oder flüchtigen Dateisystem verlangen die Quellen einen Datenbankserver. Auch mit einer
 persistenten Festplatte kann eine Plattform, die vielleicht mehr als eine Instanz der Anwendung betreibt, keine SQLite-Datei
 zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst **2. PostgreSQL**, wenn sie mehrere anbietet
-([Datenbankunterstützung](../../../../en/us/help/database-support.md#the-supported-databases-in-order)).
+([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 
 ## Prozesse: Web, Cron und lang laufende Server
 
 - **Web.** Wenn die Plattform PHP hinter ihrem eigenen Webserver ausführt (nach Art von PHP-FPM), müssen die Rewrite-Regeln
   aus `.htaccess_root` für diesen Server übersetzt werden: Nur eine feste Liste von Asset-Pfaden wird als Dateien
   ausgeliefert; alles andere geht an `index.php`
-  ([13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)). Eine allgemeine
+  ([13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)). Eine allgemeine
   Konfiguration „Datei ausliefern, wenn sie existiert“ würde `settings/*.ini` ausliefern.
 - **Velocity** braucht einen lang laufenden Prozess und PHP 8.1 mit `sockets`. Eine Plattform, die einen Prozess pro
   Container ausführt und HTTP an einen Port leitet, kann es betreiben; eine, die PHP nur pro Anfrage ausführt, nicht.
@@ -110,9 +110,9 @@ zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst
 ## Bauen und veröffentlichen
 
 - Bauen: `composer install` (das über das Skript `legacy-scripts` auch `bin/php/ezpgenerateautoloads.php` ausführt)
-  ([2.7 Composer](../../../../en/us/install/02-requirements.md#27-composer)).
+  ([2.7 Composer](../../../installation/02-voraussetzungen.md#27-composer)).
 - Einmal installieren, gegen die verwaltete Datenbank, mit `exp:install` und Geheimnissen aus der Umgebung
-  (`EXP_INSTALL_DB_PASSWORD`) ([4.6](../../../../en/us/install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)).
+  (`EXP_INSTALL_DB_PASSWORD`) ([4.6](../../../installation/04-installationsweg-waehlen.md#46-unbeaufsichtigte-installationen-ci-und-container)).
 - Jedes spätere Release: neuer Code, dasselbe persistente `var/` und dieselbe Datenbank, die Schema-Update-Dateien, wenn ein
   Upgrade sie verlangt, dann ein Leeren des Caches ([Änderungen ausrollen](../betrieb/aenderungen-ausrollen.md)).
 
@@ -120,7 +120,7 @@ zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst
 
 | Frage | Warum |
 |---|---|
-| Welche PHP-Versionen und Erweiterungen, und kann ich `intl`, `xsl` und eine Datenbankerweiterung hinzufügen? | die erforderliche Ausstattung ([2.3](../../../../en/us/install/02-requirements.md#23-php-extensions)) |
+| Welche PHP-Versionen und Erweiterungen, und kann ich `intl`, `xsl` und eine Datenbankerweiterung hinzufügen? | die erforderliche Ausstattung ([2.3](../../../installation/02-voraussetzungen.md#23-php-extensions)) |
 | Gibt es eine persistente Festplatte, und kann sie unter `var/` innerhalb der Anwendung eingehängt werden? | `VarDir` muss relativ sein |
 | Wie viele Instanzen dürfen gleichzeitig laufen? | ein Schreiber für SQLite; sonst gemeinsame Sitzungen und gemeinsamer Speicher |
 | Gibt es einen Planer? | `runcronjobs.php` |
@@ -134,4 +134,4 @@ zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst
 - [Ein Hosting-Modell wählen](ein-hosting-modell-waehlen.md), [Container: Docker und Podman](container-docker-und-podman.md)
 - [Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md)
 - [Aufbau des Speichers](../betrieb/aufbau-des-speichers.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

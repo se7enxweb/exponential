@@ -103,9 +103,9 @@ Prüfungen ausführt.
 ## Verwandte Seiten
 
 - [Pakete in der Administration](README.md)
-- [Pakete, Abschnitt 6](../../../../en/us/guides/packages.md#6-uploading-a-package)
+- [Pakete, Abschnitt 6](../../../anleitungen/pakete.md#6-ein-paket-hochladen)
 - [Ein Paket vor der Veröffentlichung prüfen](../anforderungen/ein-paket-vor-der-veroeffentlichung-pruefen.md)
 - [Ein Paket von Hand herunterladen](../paketserver/ein-paket-von-hand-herunterladen.md)
 - [Importieren oder installieren](../grundlagen/importieren-oder-installieren.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

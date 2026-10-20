@@ -16,7 +16,7 @@ Diese Seite ist für Fürsprecher mit einer kurzen Frage zur Fürsprache selbst.
 | Brauche ich eine Erlaubnis, um Fürsprecher zu sein? | Nein. Helfen Sie Menschen ehrlich, und Sie sind einer | [Was ein Fürsprecher ist](was-ein-fuersprecher-ist.md) |
 | Gibt es ein offizielles Programm für Fürsprecher oder Botschafter? | Keines ist dokumentiert. Behaupten Sie keines | [Aussagen, die Sie nicht machen dürfen](aussagen-die-sie-nicht-machen-duerfen.md#veranstaltungen-und-programme) |
 | Darf ich für 7x oder die Foundation sprechen? | Nur, wenn diese Sie darum bitten. Sonst sprechen Sie als Sie selbst | [Offenlegung und Interessenkonflikte](offenlegung-und-interessenkonflikte.md) |
-| Darf ich das Logo verwenden? | Die Quellen legen keine Logoregeln für Dritte fest; fragen Sie den Inhaber | [Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md#what-the-sources-do-not-decide) |
+| Darf ich das Logo verwenden? | Die Quellen legen keine Logoregeln für Dritte fest; fragen Sie den Inhaber | [Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#was-die-quellen-nicht-entscheiden) |
 | Darf ich für Beiträge oder Vorträge bezahlt werden? | Ja, wenn Sie es deutlich offenlegen | [Offenlegung und Interessenkonflikte](offenlegung-und-interessenkonflikte.md) |
 | Darf ich ein „Exponential-Treffen“ organisieren? | Ja, als Ihre eigene Veranstaltung, deutlich so benannt | [Ein Treffen vorschlagen](ein-treffen-vorschlagen.md) |
 | Darf ich Hilfeseiten in meinen Blog kopieren? | Unter den Bedingungen der GNU FDL; am einfachsten ist ein Zitat mit Link | [Quellen zitieren und Ihre Texte lizenzieren](quellen-zitieren-und-texte-lizenzieren.md) |
@@ -33,4 +33,4 @@ Diese Seite ist für Fürsprecher mit einer kurzen Frage zur Fürsprache selbst.
 - [Fürsprecher: hier beginnen](fuersprecher-hier-beginnen.md)
 - [Häufige Fragen von Neuen](faq-fuer-neue.md)
 - [Der Werkzeugkasten für Fürsprecher](werkzeugkasten-fuer-fuersprecher.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -54,18 +54,18 @@ wöchentlicher Blick auf die Website. Planen Sie dann mit dem [Arbeitsblatt für
 | Fähigkeit | Wird mit Exponential geliefert | Braucht meist einen Partner für |
 |---|---|---|
 | Newsletter (`cjw_newsletter`) | ja, in `composer.json` ([Newsletter für Unternehmen](../../../../en/us/help/businesses/newsletters/README.md)) | Klassen, Cronjobs, E-Mail-Transport, Absenderdomain |
-| Landingpages (Exponential Layouts) | ja ([Der Layouts-Editor](../../../../en/us/help/layouts-editor.md)) | neue Layout-Typen oder Block-Typen |
-| Weitere Inhaltssprachen | ja ([Inhaltssprachen](../../../../en/us/guides/content-languages.md)) | Siteaccess-Einstellungen, Sprachumschalter |
+| Landingpages (Exponential Layouts) | ja ([Der Layouts-Editor](../../layout-editor.md)) | neue Layout-Typen oder Block-Typen |
+| Weitere Inhaltssprachen | ja ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)) | Siteaccess-Einstellungen, Sprachumschalter |
 | Weitere Websites in einer Installation | ja ([Eine Installation, viele Websites](../../../../en/us/help/businesses/multisite/one-installation-many-sites.md)) | Siteaccess, DNS, Zertifikate |
-| REST-API und API-Schlüssel | ja ([REST-API v1 und v2](../../../../en/us/guides/rest-api-v1-and-v2.md)) | die App oder das Frontend selbst |
-| Remote-Dienste (`expservices`) | ja, in der Standarddistribution ([Remote-Dienste und Apps](../../../../en/us/guides/remote-services-and-apps.md)) | Skripte und Portale |
+| REST-API und API-Schlüssel | ja ([REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)) | die App oder das Frontend selbst |
+| Remote-Dienste (`expservices`) | ja, in der Standarddistribution ([Remote-Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)) | Skripte und Portale |
 | Schreibassistent (`expai`) | ja, auf neuen Installationen aktiv; ohne Schlüssel eines Anbieters untätig (`README.md`) | Wahl des Anbieters, Cron, Datenrichtlinie |
-| RSS-, Atom- und Podcast-Feeds | ja ([RSS-Feeds](../../../../en/us/guides/rss-feeds.md)) | Templates für die Feed-Ausgabe, falls nötig |
-| Formulare und Registrierung von Mitgliedern | ja ([Gesammelte Informationen](../../../../en/us/guides/collected-information.md)) | Formularklassen, CAPTCHA, Templates |
+| RSS-, Atom- und Podcast-Feeds | ja ([RSS-Feeds](../../../anleitungen/rss-feeds.md)) | Templates für die Feed-Ausgabe, falls nötig |
+| Formulare und Registrierung von Mitgliedern | ja ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) | Formularklassen, CAPTCHA, Templates |
 
 ## Verwandte Seiten
 
 - [Ihre Website im Alltag betreiben](../alltag/README.md)
 - [Mobil und Headless für Unternehmen](../../../../en/us/help/businesses/mobile-and-headless/README.md)
 - [Was Sie bauen können](../../../../en/us/help/creators/website-creators/what-you-can-build.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

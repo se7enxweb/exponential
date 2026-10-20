@@ -51,15 +51,15 @@ statt auf eine Administrations-URL einer einzelnen Installation, die Leser nicht
 
 Die Dokumentation steht unter der GNU Free Documentation License 1.3 oder später
 ([Die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md)). Sie dürfen sie unter den Bedingungen der Lizenz kopieren,
-übersetzen, anpassen und teilen. [Freie Dokumentation](../../../en/us/help/free-documentation.md#what-you-can-do) erklärt in einfachen Worten:
+übersetzen, anpassen und teilen. [Freie Dokumentation](../freie-dokumentation.md#was-sie-tun-dürfen) erklärt in einfachen Worten:
 
-- [Kopieren und teilen](../../../en/us/help/free-documentation.md#copy-it-and-share-it-with-other-users)
-- [Übersetzen](../../../en/us/help/free-documentation.md#translate-it)
-- [Anpassen und verbessern und Ihre Fassung teilen](../../../en/us/help/free-documentation.md#adapt-and-improve-it-and-share-your-version)
-- [Mit anderen Werken kombinieren](../../../en/us/help/free-documentation.md#combine-it-with-other-works)
-- [Zitieren](../../../en/us/help/free-documentation.md#cite-it)
+- [Kopieren und teilen](../freie-dokumentation.md#kopieren-und-an-andere-benutzer-weitergeben)
+- [Übersetzen](../freie-dokumentation.md#übersetzen)
+- [Anpassen und verbessern und Ihre Fassung teilen](../freie-dokumentation.md#anpassen-verbessern-und-ihre-fassung-weitergeben)
+- [Mit anderen Werken kombinieren](../freie-dokumentation.md#mit-anderen-werken-zusammenstellen)
+- [Zitieren](../freie-dokumentation.md#zitieren)
 
-Manche älteren Seiten haben eigene Bedingungen ([Ältere Seiten mit eigenen Bedingungen](../../../en/us/help/free-documentation.md#older-pages-with-their-own-terms));
+Manche älteren Seiten haben eigene Bedingungen ([Ältere Seiten mit eigenen Bedingungen](../freie-dokumentation.md#ältere-seiten-mit-eigenen-bedingungen));
 prüfen Sie die Seite, die Sie kopieren.
 
 ## Codebeispiele (GPL)
@@ -76,7 +76,7 @@ Bedingungen der GPL. Verlinken Sie im Zweifel auf die Datei, statt sie zu kopier
 | [eZpedia](https://ezpedia.exponential.earth/) | GNU FDL (laut der Website) | Mit Link zitieren; nur unter der GFDL kopieren |
 | Beiträge auf [Share](https://share.exponential.earth/) | Die eigenen Bedingungen jedes Autors | Kurz mit Link zitieren; vor dem Kopieren den Autor fragen |
 | [Projects](https://projects.exponential.earth/) | Die eigene Lizenz jedes Projekts | Im Projekt nachlesen |
-| Spiegel der Schulungsbücher, „Learning eZ Publish“ | Laut den Beschreibungen der Repositorys; „Learning eZ Publish“ unter der GFDL | [Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places) |
+| Spiegel der Schulungsbücher, „Learning eZ Publish“ | Laut den Beschreibungen der Repositorys; „Learning eZ Publish“ unter der GFDL | [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |
 | Andere Websites und Blogs | Meist alle Rechte vorbehalten | Verlinken, nicht kopieren |
 
 Wenn Sie der Hilfe Text beisteuern, der aus einer anderen Quelle mit einer anderen Lizenz stammt, sagen Sie das in Ihrem
@@ -85,10 +85,10 @@ Pull Request ([Zur Dokumentation beitragen](../../../en/us/README-LICENSE.md#con
 ## Menschen und Projekte nennen
 
 - Nennen Sie Arbeit so, wie es das Projekt tut: „bringt das Konzept von Netgen Layouts in den Kernel von Exponential“,
-  „unter voller Nennung von Mugo Web“ ([Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows)).
+  „unter voller Nennung von Mugo Web“ ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)).
 - Nennen Sie Beitragende nur so, wie öffentliche Quellen sie nennen, und nur mit dem, was öffentlich ist.
 - Übernehmen Sie Copyright-Hinweise genau so, wie sie geschrieben sind: „7x & Exponential Foundation“
-  ([Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md#the-nonprofit-the-exponential-foundation)).
+  ([Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#die-gemeinnützige-organisation-die-exponential-foundation)).
 
 ## Ihre eigene Arbeit lizenzieren
 
@@ -107,4 +107,4 @@ macht die GNU FDL das am einfachsten.
 
 - [Für freie Dokumentation eintreten](fuer-freie-dokumentation-eintreten.md)
 - [Einen Blogbeitrag schreiben](einen-blogbeitrag-schreiben.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

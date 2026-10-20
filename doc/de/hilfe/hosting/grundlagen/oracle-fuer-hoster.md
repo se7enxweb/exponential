@@ -13,8 +13,8 @@ Diese Seite ist für Systemadministratoren bei einem Hosting-Anbieter, deren Kun
 meist auf einer Datenbank, die der Kunde bereits besitzt. Sie beantwortet: was die Webserver brauchen (PHP `oci8` und
 einen Oracle-Client), was der DBA des Kunden bereitstellen muss, wie die Verbindung konfiguriert wird, welche
 Einstellungen die Kosten für Verbindungen senken und wie die Datenbank gewartet und gesichert wird. Oracle ist die
-fünfte in der offiziellen Reihenfolge. Quellen: [Datenbankunterstützung](../../../../en/us/help/database-support.md#5-oracle) und
-[Kapitel 9.6](../../../../en/us/install/09-databases.md#96-oracle-19c-and-later-ezoracle); die vollständige Referenz sind die
+fünfte in der offiziellen Reihenfolge. Quellen: [Datenbankunterstützung](../../datenbankunterstuetzung.md#5-oracle) und
+[Kapitel 9.6](../../../installation/09-datenbanken.md#96-oracle-19c-und-neuer-ezoracle); die vollständige Referenz sind die
 eigenen Dateien `README.md` und `INSTALL` der Erweiterung in `extension/ezoracle/`.
 
 ## Inhalt
@@ -114,7 +114,7 @@ KeepAliveInterval=60
   `EXECUTE DBMS_CONNECTION_POOL.START_POOL;`.
 - **Die Reihenfolge der Erweiterungen zählt.** Wenn die Einstellungen aus einer Website-Erweiterung statt aus
   `settings/override/` kommen, führen Sie diese Erweiterung in `ActiveExtensions[]` **vor** `ezoracle` auf
-  ([Kapitel 9.6](../../../../en/us/install/09-databases.md#persistent-connections-and-drcp)).
+  ([Kapitel 9.6](../../../installation/09-datenbanken.md#persistente-verbindungen-und-drcp)).
 
 Den wirksamen Wert prüfen Sie mit `php bin/php/console exp:ini get ezoracle.ini/ConnectionSettings/DRCP --allow-root-user`.
 
@@ -143,7 +143,7 @@ gesetzt ist.
 | `AS` vor einem Tabellenalias wird abgelehnt (`ORA-00933`) | das SQL der Erweiterung korrigieren |
 
 Oracle ist nicht in der CI des Projekts; Tests nur für Oracle in der Kernel-Suite werden auf anderen Engines
-übersprungen ([Testabdeckung](../../../../en/us/help/database-support.md#test-coverage-ci)).
+übersprungen ([Testabdeckung](../../datenbankunterstuetzung.md#testabdeckung-ci)).
 
 ## Checkliste
 
@@ -157,8 +157,8 @@ Oracle ist nicht in der CI des Projekts; Tests nur für Oracle in der Kernel-Sui
 ## Verwandte Seiten
 
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md)
-- [Datenbankunterstützung: Oracle](../../../../en/us/help/database-support.md#5-oracle)
-- [Kapitel 9.6: Oracle 19c und später](../../../../en/us/install/09-databases.md#96-oracle-19c-and-later-ezoracle)
-- [Treiber für SQLite und Oracle](../../../../en/us/specifications/6.0/database-drivers-sqlite-oracle.md)
+- [Datenbankunterstützung: Oracle](../../datenbankunterstuetzung.md#5-oracle)
+- [Kapitel 9.6: Oracle 19c und später](../../../installation/09-datenbanken.md#96-oracle-19c-und-neuer-ezoracle)
+- [Treiber für SQLite und Oracle](../../../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md)
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

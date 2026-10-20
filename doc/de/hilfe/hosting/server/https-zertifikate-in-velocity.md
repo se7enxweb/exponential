@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren bei Hosting-Unternehmen, die Velocity HTTPS für Kunden-Websites ausliefern lassen. Sie
 beantwortet: welche Quellen für Zertifikate Velocity akzeptiert, wie Sie jede konfigurieren, was bei Erneuerung und Fehlschlag passiert,
 wie Sie den Ablauf über viele Websites beobachten und was gesichert werden muss. Die Quellen sind
-[Kapitel 8, Abschnitt 8.3.9](../../../../en/us/install/08-serving-the-site.md#839-https-served-by-velocity-itself) und
+[Kapitel 8, Abschnitt 8.3.9](../../../installation/08-die-website-ausliefern.md#839-https-direkt-von-velocity) und
 [HTTPS und Zertifikate in Velocity](../../../../en/us/features/6.0/velocity-https-certificates.md).
 
 ## Inhalt
@@ -185,4 +185,4 @@ Private Schlüssel werden mit `0600` geschrieben, atomar, und nie protokolliert.
 - [TLS-Zertifikate in Panels](../control-panels/tls-zertifikate-in-panels.md)
 - [Ablauf von Zertifikaten](../runbooks/ablauf-von-zertifikaten.md)
 - [HTTPS und Zertifikate in Velocity](../../../../en/us/features/6.0/velocity-https-certificates.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -28,7 +28,7 @@ Dann gilt beides.
 
 „Bitte melden Sie Sicherheitsprobleme vertraulich per E-Mail an security@se7enx.com, nicht im öffentlichen
 Issue-Tracker oder in den Diskussionen“ (`SECURITY.md`). Die Fehlermeldeseite der Hilfe bietet außerdem die private
-Meldung von Sicherheitslücken des Repositorys auf GitHub an ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+Meldung von Sicherheitslücken des Repositorys auf GitHub an ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 
 Veröffentlichen Sie es **nicht** in einem öffentlichen Issue, einem Forum, einem Chat, einem Pull Request oder einem
 sozialen Netzwerk.
@@ -63,7 +63,7 @@ Diese erste Antwort ist die einzige Zusage zur Reaktionszeit in den eigenen Date
 
 - Beschränken Sie den Fund auf die Personen, die davon wissen müssen.
 - Fragen Sie Ihren Partner oder Hoster, ob eine vorübergehende Maßnahme (eine Konfiguration oder eine Regel im
-  Webserver) Ihre Website in der Zwischenzeit schützt; die Leitfäden zur Härtung beschreiben viele ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md)).
+  Webserver) Ihre Website in der Zwischenzeit schützt; die Leitfäden zur Härtung beschreiben viele ([Sicherheitshärtung](../../sicherheitshaertung.md)).
 - Wenn das Release mit der Korrektur erscheint, lassen Sie es schnell einspielen ([Upgrades mit Ihrem Anbieter](upgrades-mit-ihrem-anbieter.md)).
 - Partner informieren die Öffentlichkeit nicht, bevor eine Korrektur veröffentlicht ist
   ([Eskalationen und Sicherheitsprobleme](../../partner/eskalationen-und-sicherheitsprobleme.md)); halten Sie Ihre eigene
@@ -87,4 +87,4 @@ Sie sofort Ihren Datenschutzbeauftragten oder Anwalt. Diese Seite ist keine Rech
 - [Sicherheitsgrundlagen](sicherheitsgrundlagen.md)
 - [Sicherheitsupdates und Offenlegung (für Unternehmen)](../../../../en/us/help/businesses/security/security-updates-and-disclosure.md)
 - [Probleme melden](probleme-melden.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

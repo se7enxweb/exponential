@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die gefragt werden: „Warum nicht einfach ein bekannteres CMS?“ Die faire Antwort ist
 nie „weil das andere schlecht ist“. Sie lautet: „Das kann Exponential, so prüfen Sie es, und hier passt es nicht.“ Die
-Regeln stammen aus [Exponential sachlich vergleichen](../../../en/us/help/business/comparing-exponential-factually.md#the-rules-of-a-fair-comparison).
+Regeln stammen aus [Exponential sachlich vergleichen](../geschaeft/exponential-sachlich-vergleichen.md#die-regeln-eines-fairen-vergleichs).
 
 ## Inhalt
 
@@ -49,9 +49,9 @@ besten passt.
 
 | Bedarf | Eigenschaft von Exponential | Quelle |
 |---|---|---|
-| Strukturierte Inhalte vieler Typen | Ein vollständig anpassbares Inhaltsmodell, in der Administration definiert | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../en/us/guides/content-model-and-editing.md) |
-| Mehrere Websites und viele Sprachen aus einer Installation | Siteaccesses, Übersetzungen pro Inhalt, von rechts nach links | [Funktions-Highlights](../../../en/us/help/business/feature-highlights-for-customers.md#several-sites-from-one-installation) |
-| Redaktionelle Kontrolle | Entwürfe, Versionen, Freigabe-Workflows, ein Prüfprotokoll | [Funktions-Highlights](../../../en/us/help/business/feature-highlights-for-customers.md#structured-content-approval-and-versions) |
+| Strukturierte Inhalte vieler Typen | Ein vollständig anpassbares Inhaltsmodell, in der Administration definiert | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
+| Mehrere Websites und viele Sprachen aus einer Installation | Siteaccesses, Übersetzungen pro Inhalt, von rechts nach links | [Funktions-Highlights](../geschaeft/funktionshighlights-fuer-kunden.md#mehrere-sites-aus-einer-installation) |
+| Redaktionelle Kontrolle | Entwürfe, Versionen, Freigabe-Workflows, ein Prüfprotokoll | [Funktions-Highlights](../geschaeft/funktionshighlights-fuer-kunden.md#strukturierte-inhalte-freigabe-und-versionen) |
 | Ein Shop im selben System | Der eingebaute Shop | [Shop-Dashboard](../../../en/us/features/6.0/store-dashboard.md) |
 | Freie Wahl beim Hosting | Sechs Datenbanken, Betriebssysteme in Stufen | [Gesprächspunkte: Hosting](gespraechspunkte-hosting-datenbanken-freiheit.md) |
 | Langes Leben und keine Bindung an einen Anbieter | GPL-Code mit öffentlicher Geschichte seit 2002 | [Gesprächspunkte: Langlebigkeit](gespraechspunkte-langlebigkeit-und-geschichte.md) |
@@ -59,7 +59,7 @@ besten passt.
 ## Wo es nicht passt
 
 Sagen Sie das selbst. Jeder Punkt ist dokumentiert in
-[Wo Exponential nicht passt](../../../en/us/help/business/comparing-exponential-factually.md#where-exponential-is-not-the-right-fit):
+[Wo Exponential nicht passt](../geschaeft/exponential-sachlich-vergleichen.md#wo-exponential-nicht-die-richtige-wahl-ist):
 
 - Microsoft SQL Server ist vorgeschrieben: kein Treiber in 6.0.x.
 - Ein reines Symfony-Projekt ohne den Legacy-Kernel: Dann ist Exponential Platform DXP das passende Familienmitglied.
@@ -86,7 +86,7 @@ the project - and if your needs change, the forums are open.
 ```
 
 Ein Vergleichsraster zum gemeinsamen Ausfüllen steht in
-[Exponential sachlich vergleichen](../../../en/us/help/business/comparing-exponential-factually.md#a-comparison-grid-to-fill-in).
+[Exponential sachlich vergleichen](../geschaeft/exponential-sachlich-vergleichen.md#ein-vergleichsraster-zum-ausfüllen).
 
 ## Sagen Sie nicht
 
@@ -98,6 +98,6 @@ Ein Vergleichsraster zum gemeinsamen Ausfüllen steht in
 ## Verwandte Seiten
 
 - [Andere Projekte und Unternehmen respektieren](andere-projekte-respektieren.md)
-- [Exponential sachlich vergleichen](../../../en/us/help/business/comparing-exponential-factually.md)
+- [Exponential sachlich vergleichen](../geschaeft/exponential-sachlich-vergleichen.md)
 - [Einwände als Fürsprecher beantworten](einwaende-beantworten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

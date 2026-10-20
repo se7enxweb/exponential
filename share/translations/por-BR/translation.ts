@@ -21625,7 +21625,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Block</source>
-        <translation>Bloquear</translation>
+        <translation>Bloco</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -75252,6 +75252,126 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Para organizações e pessoas que mantêm o próprio site no Exponential: equipe, publicação, comércio, manutenção, crescimento e parceiros.</translation>
+    </message>
+    <message>
+        <source>User manual</source>
+        <translation>Manual do usuário</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Uma pergunta por página: quem pode fazer, os passos, o que pode dar errado e onde ler mais.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Arquivos do projeto</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Arquivo do projeto</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Este arquivo faz parte do código-fonte do Exponential e é distribuído com ele sob a %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Baixar DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>Livros digitais</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Gerados a partir dos tópicos lançados sempre que um deles é lançado, e mantidos com suas versões anteriores.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Arquivo</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamanho</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Atualizado</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Baixar tudo como DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Tópicos de ajuda com revisão atrasada</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>A data de revisão já passou, ou o tópico está em revisão há mais de %days dias sem alteração.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Atrasado</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ações</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>A data de revisão %date passou há %days dias</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>Em revisão há %days dias sem alteração</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Definir estado</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown de %count tópicos atrasados são exibidos. ./console exp:help:content review lista todos.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Antes de começar</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Passos</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultado</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>O que fazer em seguida</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Condição</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Causa</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Solução</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Início da ajuda</translation>
     </message>
 </context>
 </TS>

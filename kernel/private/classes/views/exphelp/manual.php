@@ -35,9 +35,13 @@ class Manual extends \Exponential\Runnable\ModuleView
                 return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
             $toc = $provider->toc( $manual );
             $format = isset( $_GET['format'] ) && is_string( $_GET['format'] ) ? $_GET['format'] : '';
+            if ( $format === 'dita' )
+                return self::downloadDita( $Module, $provider, $manual['remote_id'] );
             if ( $format !== '' )
                 return self::download( $Module, $provider, $manual, $format );
         }
+        elseif ( isset( $_GET['format'] ) && $_GET['format'] === 'dita' )
+            return self::downloadDita( $Module, $provider, null );
         $manuals = array();
         foreach ( $provider->manuals() as $item )
             $manuals[] = array( 'title' => $item['title'], 'subtitle' => $item['subtitle'], 'shortdesc' => $item['shortdesc'],
@@ -49,6 +53,10 @@ class Manual extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_manual_toc', self::twoLevels( $toc ) );
         $tpl->setVariable( 'help_manuals', $manuals );
         $tpl->setVariable( 'help_ebook_formats', $manual ? \expHelpContentExport::formats() : array() );
+        // the DITA 1.3 export as a zip: of this manual, or (on the list) of every manual, the topic pool and the glossary
+        $tpl->setVariable( 'help_dita', class_exists( 'expHelpContentDita' ) && \expHelpContentDita::canZip() );
+        // the e-books stored as file objects below E-books (rebuilt on release), those the user may read
+        $tpl->setVariable( 'help_ebooks_stored', $manual && class_exists( 'expHelpContentEbooks' ) ? \expHelpContentEbooks::stored( $manual['remote_id'] ) : array() );
         $tpl->setVariable( 'help_json_url', $manual ? ltrim( \expHelp::url( 'context', 'manual/' . $manual['remote_id'] ), '/' ) : '' );
 
         $path = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ),
@@ -95,6 +103,52 @@ class Manual extends \Exponential\Runnable\ModuleView
         $name = preg_replace( '/[^A-Za-z0-9._-]/', '-', $manual['remote_id'] ) . '.' . $format;
         header( 'Content-Type: ' . $types[$format] );
         header( 'Content-Disposition: attachment; filename="' . $name . '"' );
+        header( 'Content-Length: ' . strlen( $data ) );
+        header( 'Cache-Control: private, no-store' );
+        header( 'X-Content-Type-Options: nosniff' );
+        echo $data;
+        \eZExecution::cleanExit();
+        return null;
+    }
+
+    /**
+     * Sends the DITA 1.3 export as a zip (?format=dita): of one manual, or with $remoteId null of every manual, the
+     * topic pool and the glossary. Only Released objects the user may read are in it. An export that does not pass
+     * its own check, or one without topics, is a 404 (the reason is in the debug output).
+     *
+     * @param \eZModule $Module
+     * @param \expHelpContentProvider $provider
+     * @param string|null $remoteId
+     * @return array|null
+     */
+    public static function downloadDita( $Module, $provider, $remoteId )
+    {
+        if ( !class_exists( 'expHelpContentDita' ) || !\expHelpContentDita::canZip() )
+            return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
+        try
+        {
+            $export = ( new \expHelpContentDita( $provider, $remoteId ) )->build();
+            $problems = \expHelpContentDita::validate( $export );
+            if ( $problems || $export['counts']['topics'] === 0 )
+            {
+                \eZDebug::writeWarning( 'The DITA export was not sent: ' . ( $problems ? $problems[0]['file'] . ': ' . $problems[0]['message'] : 'no Released topic' ), __METHOD__ );
+                return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
+            }
+            $name = ( $remoteId === null ? 'help-dita' : preg_replace( '/[^A-Za-z0-9._-]/', '-', $remoteId ) . '-dita' );
+            $file = rtrim( \expHelp::cacheDirectory(), '/' ) . '/dita/' . sha1( $name . "\0" . \eZUser::currentUserID() . "\0" . microtime( true ) ) . '.zip';
+            if ( !is_dir( dirname( $file ) ) )
+                \eZDir::mkdir( dirname( $file ), false, true );
+            \expHelpContentDita::zip( $export, $file, $name );
+        }
+        catch ( \RuntimeException $e )
+        {
+            \eZDebug::writeWarning( 'The DITA export could not be made: ' . $e->getMessage(), __METHOD__ );
+            return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
+        }
+        $data = (string)file_get_contents( $file );
+        @unlink( $file );
+        header( 'Content-Type: application/zip' );
+        header( 'Content-Disposition: attachment; filename="' . $name . '.zip"' );
         header( 'Content-Length: ' . strlen( $data ) );
         header( 'Cache-Control: private, no-store' );
         header( 'X-Content-Type-Options: nosniff' );

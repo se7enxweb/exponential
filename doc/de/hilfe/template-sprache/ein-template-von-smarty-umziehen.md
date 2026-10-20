@@ -160,4 +160,4 @@ und ein `set` auf eine nie definierte Variable scheitern beide stillschweigend i
 - [Knoten und Listen holen](../../../en/us/help/designers/templates/fetching-nodes-and-lists.md)
 - [URL-Operatoren](../../../en/us/help/designers/templates/url-operators.md)
 - [Daten, Zahlen und Lokalisierung](../../../en/us/help/designers/templates/dates-numbers-and-l10n.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

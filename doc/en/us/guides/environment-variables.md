@@ -63,7 +63,7 @@ environment.
 | LiteSpeed / OpenLiteSpeed with `lsphp` | `SetEnv` in `.htaccess` (LiteSpeed reads it like Apache), or the virtual host's environment |
 | PHP-FPM | `env[NAME] = value` in the site's pool, then reload that pool's master |
 | nginx with PHP-FPM | `fastcgi_param NAME value;` where requests are passed to PHP-FPM, or the pool |
-| Exponential Velocity | the environment of the process that runs `exp:velocity start`: `Environment=` in its systemd unit or a drop-in, or `export` in the shell. Workers inherit it; a restart from another shell starts with that shell's environment. `/etc/vc/envvars` is read for the server's own settings and is not exported to the workers |
+| Exponential Velocity | `export NAME=value` in `/etc/vc/envvars`: the server reads the file at every start and exports what it sets into its own environment before it forks, so every worker sees it and a restart or deploy from any shell keeps it. The environment of the process that runs `exp:velocity start` (`Environment=` in its systemd unit or a drop-in, or `export` in the shell) wins over the file. The file is read, never run, and refuses `PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`, `PHPRC`, `PHP_INI_SCAN_DIR`, `GLIBC_TUNABLES`, `HOME`, `USER` and the other names listed in [the on-disk layout](../bc/6.0/velocity-ondisk-layout.md) |
 | cron | a `NAME=value` line at the top of the crontab |
 | console | `export NAME=value`, or `NAME=value command` for one command |
 | containers | `ENV` in the image, `-e`, `--env-file` or `environment:` / `env_file:` for one service |

@@ -13,8 +13,8 @@ type: help
 Diese Seite ist für Produktmanager, die entscheiden, welche Datenbanken ein Hosting-Angebot enthält, und für
 Systemadministratoren, die sie betreiben werden. Sie beantwortet: Welche Datenbanken Exponential 6.0.x unterstützt, in
 welcher Reihenfolge das Projekt sie empfiehlt, wie sie sich aus Sicht eines Hosters vergleichen und wie Sie wählen, was
-Sie anbieten. Die Aussage zur Unterstützung und jedes Detail stehen in [Datenbankunterstützung](../../../../en/us/help/database-support.md);
-das Kapitel für den Betrieb ist [Kapitel 9, Datenbanken](../../../../en/us/install/09-databases.md).
+Sie anbieten. Die Aussage zur Unterstützung und jedes Detail stehen in [Datenbankunterstützung](../../datenbankunterstuetzung.md);
+das Kapitel für den Betrieb ist [Kapitel 9, Datenbanken](../../../installation/09-datenbanken.md).
 
 ## Inhalt
 
@@ -33,7 +33,7 @@ das Kapitel für den Betrieb ist [Kapitel 9, Datenbanken](../../../../en/us/inst
 > zusätzlicher Arbeit möglich.
 
 Alle sechs haben einen Treiber im Kernel oder in einer mitgelieferten Erweiterung, einen Eintrag im Setup-Assistenten
-und einen Weg in den Installern für die Kommandozeile ([Datenbankunterstützung](../../../../en/us/help/database-support.md#the-supported-databases-in-order)).
+und einen Weg in den Installern für die Kommandozeile ([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 Die Reihenfolge ist die Reihenfolge der Empfehlung für neue Websites; sie bedeutet nicht, dass die späteren weniger gut
 funktionieren. Microsoft SQL Server hat in 6.0.x keinen Treiber ([Stand von Microsoft SQL Server](stand-von-microsoft-sql-server.md)).
 
@@ -54,9 +54,9 @@ Bestellformulare, Support-Artikel.
 | In der CI des Projekts getestet | Unit-Tests des Treibers | ja (PostgreSQL 15) | Unit-Tests des Adapters | nein (durch den MySQL-Job abgedeckt, derselbe Treiber) | nein | ja (MySQL 8.0) |
 | Backup-Werkzeug | `sqlite3 .backup` | `pg_dump` | `mongodump` | `mariadb-dump` | `ext:ezoracle:datapump`, `expdp` | `mysqldump` |
 
-Quellen: [Auf einen Blick](../../../../en/us/help/database-support.md#at-a-glance),
-[Versionen](../../../../en/us/help/database-support.md#versions-checked-against-the-code) und
-[Testabdeckung](../../../../en/us/help/database-support.md#test-coverage-ci).
+Quellen: [Auf einen Blick](../../datenbankunterstuetzung.md#auf-einen-blick),
+[Versionen](../../datenbankunterstuetzung.md#versionen-am-code-überprüft) und
+[Testabdeckung](../../datenbankunterstuetzung.md#testabdeckung-ci).
 
 ## Was jede für einen Hoster bedeutet
 
@@ -72,7 +72,7 @@ Quellen: [Auf einen Blick](../../../../en/us/help/database-support.md#at-a-glanc
 ## Wählen, was Sie anbieten
 
 Das Projekt schreibt kein Hosting-Angebot vor. Diese Fragen, entnommen der Entscheidungstabelle in
-[Hosting, Datenbank und Betriebssystem wählen](../../../../en/us/help/leadership/choosing-hosting-database-and-os.md), entscheiden es:
+[Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md), entscheiden es:
 
 | Frage | Wenn ja |
 |---|---|
@@ -91,7 +91,7 @@ Typische Angebote, die ein Hoster daraus bauen kann:
 > **Tipp**
 > Was immer Sie anbieten: Schreiben Sie die Engine jeder Kunden-Website in Ihre Bestandsliste. Backups,
 > Wiederherstellungen, Upgrades und Support unterscheiden sich je Engine, und die Update-Dateien eines Upgrades werden
-> nach der Engine gewählt, auf der die Website jetzt läuft ([eine Website umziehen](../../../../en/us/help/database-support.md#moving-a-site-to-another-database)).
+> nach der Engine gewählt, auf der die Website jetzt läuft ([eine Website umziehen](../../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen)).
 
 ## Was alle Datenbanken gemeinsam haben
 
@@ -117,7 +117,7 @@ Typische Angebote, die ein Hoster daraus bauen kann:
 
   oder **Setup > Systeminformationen**, die Karte Datenbank.
 - **Ein vollständiges Backup** besteht aus der Datenbank und den Dateien: `var/storage`, `settings/override` und
-  `settings/siteaccess` ([Backup und Wiederherstellung](../../../../en/us/help/database-support.md#backup-and-restore)).
+  `settings/siteaccess` ([Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung)).
 - **Ein Wechsel zwischen Engines** ist möglich; siehe [Die Datenbank-Engine wechseln](../migrationen/die-datenbank-engine-einer-kunden-website-wechseln.md).
 
 ## Checkliste
@@ -130,10 +130,10 @@ Typische Angebote, die ein Hoster daraus bauen kann:
 
 ## Verwandte Seiten
 
-- [Datenbankunterstützung](../../../../en/us/help/database-support.md) und [Kapitel 9, Datenbanken](../../../../en/us/install/09-databases.md)
+- [Datenbankunterstützung](../../datenbankunterstuetzung.md) und [Kapitel 9, Datenbanken](../../../installation/09-datenbanken.md)
 - [SQLite](sqlite-fuer-hoster.md), [PostgreSQL](postgresql-fuer-hoster.md), [MongoDB](mongodb-fuer-hoster.md),
   [MariaDB](mariadb-fuer-hoster.md), [Oracle](oracle-fuer-hoster.md), [MySQL](mysql-fuer-hoster.md) für Hoster
 - [Stand von Microsoft SQL Server](stand-von-microsoft-sql-server.md)
 - [Datenbanken und Benutzer in Control Panels](../control-panels/datenbanken-und-benutzer.md)
-- [Betriebssystemunterstützung](../../../../en/us/help/os-support.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

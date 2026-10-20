@@ -24,7 +24,7 @@ Team und Ihrem Partner, wenn Sie fragen, was eingeschaltet werden soll.
 | **Ohne Benachrichtigung veröffentlichen** | E-Mails an jeden Abonnenten wegen einer Tippfehlerkorrektur | Neben der Schaltfläche zum Veröffentlichen ([Ohne Benachrichtigung veröffentlichen](../../../../en/us/features/6.0/publish-without-notification.md)) | Einstellung in `notification.ini` und die Richtlinie `content/publish_without_notification` |
 | Versionsvorschau in anderen View-Modi | Nur zu veröffentlichen, um ein Druck- oder PDF-Layout zu sehen | `content/versionview` mit einem View-Modus ([Versionsvorschau in anderen View-Modi](../../../../en/us/features/6.0/version-preview-view-modes.md)) | Nichts weiter |
 | Lesezeichenordner | Jeden Tag nach denselben Orten zu suchen | Die Seitenleiste und der Auswahldialog ([Lesezeichenordner](../../../../en/us/features/6.0/bookmark-folders.md)) | Nichts weiter |
-| Tastenkürzel, etwa `/` für die Suche | Wege mit der Maus | Überall in der Administration ([Tastenkürzel](../../../../en/us/help/keyboard-shortcuts.md)) | Funktioniert im Design Admin 4; die anderen Designs haben die meisten davon |
+| Tastenkürzel, etwa `/` für die Suche | Wege mit der Maus | Überall in der Administration ([Tastenkürzel](../../tastenkuerzel.md)) | Funktioniert im Design Admin 4; die anderen Designs haben die meisten davon |
 
 ## Aufräumen
 
@@ -52,7 +52,7 @@ Team und Ihrem Partner, wenn Sie fragen, was eingeschaltet werden soll.
 | Das Hilfe-Center in der Administration | Im Internet nach Anleitungen zu suchen | `/exphelp/dashboard` und die Schaltfläche **Hilfe** auf jeder Seite ([Das Hilfesystem](../../../../en/us/features/6.0/help-system.md)) | Die Richtlinie `exphelp/read` |
 | Die Meldeseite der Hilfe | Einen Fehlerbericht von Grund auf zu schreiben | `/exphelp/report`, mit einem vorausgefüllten Issue und Diagnosedaten zum Kopieren (dieselbe Seite) | `exphelp/read` |
 | Signierte Links in der E-Mail „New user registered“ | Nach einem neuen Konto zu suchen, um es zu genehmigen | Die E-Mail selbst ([Signierte Links in der Registrierungs-E-Mail](../../../../en/us/features/6.0/registration-admin-links.md)) | Rückmeldung zu Registrierungen per E-Mail |
-| Wartungsmodus mit Vorschau | Eine leere oder kaputte Website während geplanter Arbeiten | **Setup > Wartung**, oder ein Befehl ([Wartungsmodus](../../../../en/us/guides/maintenance-mode.md)) | Administrator |
+| Wartungsmodus mit Vorschau | Eine leere oder kaputte Website während geplanter Arbeiten | **Setup > Wartung**, oder ein Befehl ([Wartungsmodus](../../../anleitungen/wartungsmodus.md)) | Administrator |
 | Cronjob-Teile pausieren | Bei einem Release auf jedem Server die Crontab zu bearbeiten | **Setup > Cronjobs** ([Cronjob-Teile pausieren](../../../../en/us/features/6.0/cronjob-pause.md)) | Administrator |
 | PDF-Export mit eigener Fußzeile | Inhalte für ein PDF in eine Textverarbeitung zu kopieren | **Setup > PDF export** ([PDF-Export](../../../../en/us/features/6.0/pdf-export.md)) | Die Richtlinie `pdf/edit` |
 
@@ -72,6 +72,6 @@ Team und Ihrem Partner, wenn Sie fragen, was eingeschaltet werden soll.
 
 - [Rundgang durch die Funktionen](rundgang-durch-die-funktionen.md)
 - [Betriebskosten für Betreiber](betriebskosten-fuer-betreiber.md)
-- [Rundgang durch die Administration](../../../../en/us/help/admin-tour.md)
-- [Tastenkürzel](../../../../en/us/help/keyboard-shortcuts.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Rundgang durch die Administration](../../rundgang-durch-die-administration.md)
+- [Tastenkürzel](../../tastenkuerzel.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

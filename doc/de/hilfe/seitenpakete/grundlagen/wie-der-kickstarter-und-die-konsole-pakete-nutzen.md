@@ -150,10 +150,10 @@ löschen nur die Kopie im Repository, nicht das, was eine Installation auf eine 
 
 - [Grundlagen der Seitenpakete](README.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Der Kickstarter, 6.4.2 Abschnitte und Schlüssel](../../../../en/us/install/06-kickstarter.md#642-sections-and-keys)
-- [Der Kickstarter, 6.7 Probeläufe](../../../../en/us/install/06-kickstarter.md#67-dry-runs)
-- [Die Installation über die Konsole, 7.3 Optionen](../../../../en/us/install/07-console-install.md#73-options)
+- [Der Kickstarter, 6.4.2 Abschnitte und Schlüssel](../../../installation/06-kickstarter.md#642-abschnitte-und-schlüssel)
+- [Der Kickstarter, 6.7 Probeläufe](../../../installation/06-kickstarter.md#67-probeläufe)
+- [Die Installation über die Konsole, 7.3 Optionen](../../../installation/07-installation-ueber-die-konsole.md#73-optionen)
 - [Installation mit einem Befehl](../../../../en/us/features/6.0/install-in-one-command.md)
 - [Offline-Installationen und Spiegel](../paketserver/offline-installationen-und-spiegel.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

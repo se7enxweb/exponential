@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Fürsprecher, die ihre [erste Woche](ihre-erste-woche.md) hinter sich haben und einen
 Plan für das Quartal möchten. Sie beantwortet: Was sollte ich in 30, 60 und 90 Tagen anstreben, und wie prüfe ich, ob es
 funktioniert hat? Der Plan ist eine leichtere, auf Fürsprecher zugeschnittene Fassung des 30/60/90-Tage-Plans für
-Community-Leitungen in [Eine Leitungsrolle übernehmen](../../../en/us/help/leadership/becoming-a-community-leader.md#the-306090-day-plan).
+Community-Leitungen in [Eine Leitungsrolle übernehmen](../fuehrung/community-leiter-werden.md#der-306090-tage-plan).
 
 ## Inhalt
 
@@ -73,7 +73,7 @@ Nicht jeder möchte jedes Ziel. Wählen Sie einen Schwerpunkt und tauschen Sie Z
 | Schreiben | Die Demo | Ein zweites Tutorial und einen eZpedia-Artikel ([Zu eZpedia beitragen](zu-ezpedia-beitragen.md)) |
 | Vortragen | Den Blogbeitrag | Einen 20-Minuten-Vortrag ([Folienplan für einen 20-Minuten-Vortrag](folienplan-20-minuten-vortrag.md)) |
 | Übersetzen | Den Blogbeitrag und die Demo | 200 Texte und einen Aufruf zum Gegenlesen für Ihre Sprache |
-| Entwickeln | Die Übersetzung | Eine Korrektur als Pull Request ([Mit Git entwickeln](../../../en/us/help/develop-with-git.md#contribute-a-change-with-a-pull-request)) |
+| Entwickeln | Die Übersetzung | Eine Korrektur als Pull Request ([Mit Git entwickeln](../mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen)) |
 | Gestalten | Die Übersetzung | Eine Prüfung der Barrierefreiheit eines Themes, das Sie nutzen ([Für Barrierefreiheit eintreten](fuer-barrierefreiheit-eintreten.md)) |
 
 ## Der Rückblick an Tag 90
@@ -125,5 +125,5 @@ NEXT QUARTER
 - [Ihre erste Woche als Fürsprecher](ihre-erste-woche.md)
 - [Die Stufen der Fürsprache](die-stufen-der-fuersprache.md)
 - [Ihre Beiträge festhalten](ihre-beitraege-festhalten.md)
-- [Eine Leitungsrolle in der Exponential-Community übernehmen](../../../en/us/help/leadership/becoming-a-community-leader.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Leitungsrolle in der Exponential-Community übernehmen](../fuehrung/community-leiter-werden.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

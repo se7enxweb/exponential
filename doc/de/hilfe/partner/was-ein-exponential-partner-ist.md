@@ -52,10 +52,10 @@ Dieselbe Organisation kann mehrere dieser Rollen zugleich spielen. Die Tabelle h
 | Rolle | Was sie bedeutet | Bezahlt? | Mehr dazu |
 |---|---|---|---|
 | **Partner** | Liefert Produkte oder Dienstleistungen auf Grundlage von Exponential im Rahmen des Partnerprogramms; hat eine Stufe, ein Profil und eine Vereinbarung | Ja, ein Partner-Abonnement oder Qualifikation über Punkte | Dieser Bereich |
-| **Unterstützer** | Hilft dem Projekt auf jede Weise: Code, Dokumentation, Übersetzungen, Tests, Fürsprache, Geld | Nicht unbedingt | [Unterstützer: hier beginnen](../../../en/us/help/supporters/supporters-start-here.md) |
-| **Sponsor** | Gibt Geld an 7x oder an die Exponential Foundation, zum Beispiel über GitHub Sponsors | Ja | [Sponsoren: hier beginnen](../../../en/us/help/sponsors/sponsors-start-here.md) |
-| **Beitragende** | Senden Pull Requests, Issues, Übersetzungen oder Dokumentation | Nein | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) |
-| **Kunde** | Kauft Dienstleistungen oder Abonnements von 7x oder von einem Partner | Ja | [Wer ist 7x?](../../../en/us/help/who-is-7x.md) |
+| **Unterstützer** | Hilft dem Projekt auf jede Weise: Code, Dokumentation, Übersetzungen, Tests, Fürsprache, Geld | Nicht unbedingt | [Unterstützer: hier beginnen](../unterstuetzer/unterstuetzer-hier-beginnen.md) |
+| **Sponsor** | Gibt Geld an 7x oder an die Exponential Foundation, zum Beispiel über GitHub Sponsors | Ja | [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md) |
+| **Beitragende** | Senden Pull Requests, Issues, Übersetzungen oder Dokumentation | Nein | [Mit Git entwickeln](../mit-git-entwickeln.md) |
+| **Kunde** | Kauft Dienstleistungen oder Abonnements von 7x oder von einem Partner | Ja | [Wer ist 7x?](../wer-ist-7x.md) |
 
 Ein Partner ist meist auch Beitragender und oft Sponsor. Das Programm belohnt das: Viele der Aktivitäten, die Punkte
 bringen, sind Beiträge zur Community ([Punkte durch Community-Arbeit sammeln](punkte-durch-community-arbeit.md)).
@@ -87,4 +87,4 @@ Das veröffentlichte Programm verlangt:
 - [Warum Partner werden](warum-partner-werden.md)
 - [Das Partnerprogramm auf einen Blick](partnerprogramm-auf-einen-blick.md)
 - [Glossar für Partner](glossar-fuer-partner.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

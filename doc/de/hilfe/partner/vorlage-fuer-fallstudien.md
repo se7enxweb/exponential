@@ -81,5 +81,5 @@ Withdrawal contact: <role e-mail>
 
 - [Eine Fallstudie schreiben](eine-fallstudie-schreiben.md)
 - [Kundenreferenzen](kundenreferenzen.md)
-- [Fallstudien und Content-Marketing](../../../en/us/help/business/case-studies-and-content-marketing.md#the-case-study-template)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Fallstudien und Content-Marketing](../geschaeft/fallstudien-und-content-marketing.md#die-vorlage-für-fallstudien)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

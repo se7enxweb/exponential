@@ -39,10 +39,10 @@ des Datums haben ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trai
 ## Vor dem letzten Tag
 
 - [ ] Bitten Sie die Person, ihre **Entwürfe** fertigzustellen oder zu übergeben. Entwürfe sind persönlich: Nur ihr
-      Ersteller sieht sie unter *Meine Entwürfe* ([Meine Entwürfe und meine ausstehenden Elemente](../../../../en/us/guides/drafts-and-pending.md)).
-      Jemand anderes kann auf der Versionsseite aus jeder Version einen neuen Entwurf machen ([Versionen eines Objekts](../../../../en/us/guides/content-history.md)).
+      Ersteller sieht sie unter *Meine Entwürfe* ([Meine Entwürfe und meine ausstehenden Elemente](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)).
+      Jemand anderes kann auf der Versionsseite aus jeder Version einen neuen Entwurf machen ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - [ ] Ist sie eine **freigebende Person**, fügen Sie zuerst einen Ersatz zu den freigebenden Benutzern oder Gruppen
-      des Freigabe-Workflows hinzu, damit nichts auf eine Person wartet, die nicht mehr da ist ([Workflows](../../../../en/us/guides/workflows.md)).
+      des Freigabe-Workflows hinzu, damit nichts auf eine Person wartet, die nicht mehr da ist ([Workflows](../../../anleitungen/workflows.md)).
 - [ ] Erhält sie Formular-E-Mails, Newsletter-Freigaben oder Benachrichtigungen im Namen des Teams, leiten Sie diese
       an eine Funktionsadresse oder einen Kollegen um.
 - [ ] Listen Sie die Layouts, Newsletter und Kampagnen auf, für die sie zuständig ist, und benennen Sie eine neue
@@ -53,7 +53,7 @@ des Datums haben ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trai
 1. **Deaktivieren Sie das Konto** unter **Benutzer > Benutzerkonten prüfen** (oder über **Edit user settings** des Kontos).
 2. **Widerrufen Sie API-Schlüssel und Tokens.** Persönliche API-Schlüssel enden, wenn ihr Besitzer deaktiviert oder
    entfernt wird, und Administratoren können jeden Schlüssel unter **Setup > oAuth-Verwaltung > API-Schlüssel**
-   widerrufen ([Persönliche API-Schlüssel](../../../../en/us/guides/api-keys.md)). Remote-Service-Tokens eines deaktivierten
+   widerrufen ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)). Remote-Service-Tokens eines deaktivierten
    Benutzers antworten mit 401 ([Remote-Dienste](../../../../en/us/features/6.0/remote-services-expservices.md)). Prüfen Sie
    trotzdem beide Listen.
 3. **Entfernen Sie Rollenzuweisungen, die der Person direkt** (nicht über eine Gruppe) gemacht wurden, falls vorhanden.
@@ -67,7 +67,7 @@ des Datums haben ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trai
 ## Nach dem letzten Tag
 
 - Prüfen Sie, dass über ausstehende Versionen, die sie geschickt hat, entschieden ist: *Meine Warteliste* der
-  freigebenden Personen oder **Setup > Workflow-Prozesse** ([Workflows](../../../../en/us/guides/workflows.md)).
+  freigebenden Personen oder **Setup > Workflow-Prozesse** ([Workflows](../../../anleitungen/workflows.md)).
 - Filtern Sie bei der nächsten Überprüfung unter Benutzerkonten prüfen nach **Deaktiviert** und **Seit N Tagen nicht
   gesehen**, um zu bestätigen, dass nichts übersehen wurde.
 - Aktualisieren Sie das [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md).
@@ -90,4 +90,4 @@ Checked by (manager): ______________
 - [Neue Mitarbeitende einarbeiten](neue-mitarbeitende-einarbeiten.md)
 - [Konten, Passwörter und zweistufige Anmeldung](konten-passwoerter-und-zweistufige-anmeldung.md)
 - [Zugriffsüberprüfungen](../../../../en/us/help/businesses/security/access-reviews.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

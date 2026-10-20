@@ -13,7 +13,7 @@ type: help
 Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei Hosting-Unternehmen, die Exponential Velocity für Kunden-Websites
 betreiben. Sie beantwortet: was Velocity von einem Server braucht, wie Sie es installieren und konfigurieren, wie es Neustarts und Abstürze
 übersteht, wie eine Änderung es erreicht, wohin es protokolliert, wie Sie es beobachten und wie Sie jedem Kunden eine eigene Instanz
-geben. Die Quellen sind [Kapitel 8](../../../../en/us/install/08-serving-the-site.md#83-exponential-velocity-the-recommended-way) und
+geben. Die Quellen sind [Kapitel 8](../../../installation/08-die-website-ausliefern.md#83-exponential-velocity-der-empfohlene-weg) und
 [Velocity-Engines](../../../../en/us/bc/6.0/velocity-engines.md); jeder Befehl unten wird aus dem Wurzelverzeichnis der Installation ausgeführt.
 
 ## Inhalt
@@ -36,7 +36,7 @@ Velocity ist ein für Exponential geschriebener Anwendungsserver. Ein Elternproz
 Anfrage nach der anderen beantworten; zwischen den Anfragen wird jeder Worker auf den Zustand zurückgesetzt, den er beim Fork hatte. Der
 Elternprozess nimmt jede Verbindung an, beantwortet statische Dateien, Treffer im Antwort-Cache und seine eigenen Seiten ohne Worker und
 beendet TLS, sodass eine Velocity-Website kein Apache, nginx, PHP-FPM und keinen eigenen TLS-Terminator braucht
-([Kapitel 8, Abschnitt 8.3](../../../../en/us/install/08-serving-the-site.md#83-exponential-velocity-the-recommended-way)).
+([Kapitel 8, Abschnitt 8.3](../../../installation/08-die-website-ausliefern.md#83-exponential-velocity-der-empfohlene-weg)).
 
 Was das für Ihren Betrieb heißt:
 
@@ -60,7 +60,7 @@ Entwicklungsserver von PHP).
 | PHP-Erweiterungen | `sockets` (vom Paket verlangt), `pcntl` und `posix` (Worker forken, ihren Benutzer wechseln), `openssl` (HTTPS) |
 | Ein langlebiger Prozess | vom Tarif erlaubt; Shared Hosting erlaubt meist keinen |
 | Root oder hohe Ports | Ports unter 1024 brauchen root; als root gestartet, behält nur der Elternprozess es |
-| Betriebssystem | Linux und die BSDs für alles; unter Windows sind Worker Unterprozesse `php-cgi` ([Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md#windows)) |
+| Betriebssystem | Linux und die BSDs für alles; unter Windows sind Worker Unterprozesse `php-cgi` ([Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#windows)) |
 
 Beim Start weigert sich die Engine, ohne Prozesstrennung (`pcntl` oder eine php-cgi-Binärdatei) und ohne `openssl` zu laufen, wenn HTTPS
 konfiguriert ist; für den Rest warnt sie einmal. Fragen Sie die Maschine, was ihr fehlt:
@@ -71,7 +71,7 @@ php bin/php/console exp:velocity ext install-hint <extension>    # the install c
 ```
 
 Auf Red Hat Enterprise Linux 9 und seinen Nachbauten ist das Standard-PHP 8.0: Schalten Sie zuerst einen neueren Modul-Stream ein
-([Kapitel 2, Abschnitt 2.9](../../../../en/us/install/02-requirements.md#29-operating-system-notes)).
+([Kapitel 2, Abschnitt 2.9](../../../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen)).
 
 ## Installation und erster Start
 
@@ -85,7 +85,7 @@ curl -sI http://127.0.0.1:8088/ | head -1
 
 - Das Paket landet in `vendor/se7enxweb/exponential-velocity`. Die Tilde-Bedingung akzeptiert spätere Releases `0.0.4.x`; 0.0.4.44 ist die
   Version, die die `composer.json` von Exponential vorschlägt, und die erste, die weitergeleitete Protokoll-Header nur von
-  vertrauenswürdigen Proxys liest ([Kapitel 8, Abschnitt 8.8](../../../../en/us/install/08-serving-the-site.md#88-behind-a-reverse-proxy)).
+  vertrauenswürdigen Proxys liest ([Kapitel 8, Abschnitt 8.8](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy)).
 - `settings/velocity.ini` wird mit `Engine=php` ausgeliefert, weil der eingebaute Server von PHP immer funktioniert; jede echte Website
   setzt `qbix`.
 - `start` schreibt die Konfiguration, startet den Server im Hintergrund, wartet, bis der Port antwortet, und gibt den Status aus.
@@ -152,7 +152,7 @@ existiert, stoppt den Start. Prüfen Sie die Startzeile `Workers as: ...` in `va
 ## Am Laufen halten: Dienst beim Systemstart und Watchdog
 
 `exp:velocity` hat keinen Befehl, der einen **Dienst beim Systemstart** installiert. Zwei Wege
-([Kapitel 8, Abschnitt 8.3.11](../../../../en/us/install/08-serving-the-site.md#8311-running-velocity-as-a-service)):
+([Kapitel 8, Abschnitt 8.3.11](../../../installation/08-die-website-ausliefern.md#8311-velocity-als-dienst-betreiben)):
 
 - die eigenen Units der Engine (`vendor/se7enxweb/exponential-velocity/service/qbixserver.service` und `exponential-velocity.service` des
   Betriebssystempakets), die die Engine direkt starten und deshalb umgehen, was `exp:velocity` hinzufügt (die erzeugte Site-Datei,
@@ -185,7 +185,7 @@ oder ein Zurückweichen wird im Prüfprotokoll als `system.velocity.watchdog.*` 
 ## Eine Änderung ausrollen
 
 Worker halten Klassen, INI-Werte und kompilierte Templates im Speicher. Ein Befehl bringt eine Website in der Reihenfolge auf den neuesten
-Stand, die funktioniert ([Kapitel 8, Abschnitt 8.3.14](../../../../en/us/install/08-serving-the-site.md#8314-deploying-a-change-expvelocity-deploy)):
+Stand, die funktioniert ([Kapitel 8, Abschnitt 8.3.14](../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy)):
 
 ```bash
 php bin/php/console exp:velocity deploy --dry-run --allow-root-user   # what it would do
@@ -246,7 +246,7 @@ Siehe [Trennung von Mandanten](../sicherheit/trennung-von-mandanten.md).
 
 ## Checkliste
 
-Aus [Kapitel 8, Checkliste](../../../../en/us/install/08-serving-the-site.md#89-checklist), für jede Kunden-Website:
+Aus [Kapitel 8, Checkliste](../../../installation/08-die-website-ausliefern.md#89-checkliste), für jede Kunden-Website:
 
 - [ ] `Engine=qbix` gesetzt, `exp:velocity status` zeigt den Server laufend, die Website antwortet.
 - [ ] `Host`, `Port`, `HTTPSPort` wie beabsichtigt; Firewall offen, wo Velocity Besuchern gegenübersteht.
@@ -267,4 +267,4 @@ Aus [Kapitel 8, Checkliste](../../../../en/us/install/08-serving-the-site.md#89-
 - [Antwort-Cache von Velocity](../leistung/antwort-cache-von-velocity.md)
 - [Velocity startet nicht](../runbooks/velocity-startet-nicht.md)
 - [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../../en/us/features/6.0/velocity-persistent-worker-server.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

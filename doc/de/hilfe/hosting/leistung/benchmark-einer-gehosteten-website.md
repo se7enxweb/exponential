@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren und Produktmanager bei Hosting-Anbietern, die sagen müssen, wie schnell eine
 Kunden-Website ist, zwei Server-Einrichtungen vergleichen, beweisen, dass ein Ausrollen nichts langsamer gemacht hat, oder die Grenzen
 eines Tarifs festlegen. Sie beantwortet: was `exp:benchmark` misst, wie Sie es sicher auf Produktionsmaschinen nutzen, wie Sie fair
-vergleichen und wie Sie aus den Zahlen Entscheidungen machen. Die Quellen sind [Benchmark von Exponential](../../../../en/us/guides/benchmarking.md)
+vergleichen und wie Sie aus den Zahlen Entscheidungen machen. Die Quellen sind [Benchmark von Exponential](../../../anleitungen/benchmarking.md)
 und [Benchmark: exp:benchmark](../../../../en/us/features/6.0/benchmark.md).
 
 ## Inhalt
@@ -98,7 +98,7 @@ einem Lauf, direkt nacheinander:
 
 Das eigene Beispiel der Anleitung zeigt, warum beide Läufe zählen: Zwischengespeichert antwortete Velocity in 1,3 bis 2,6 ms gegenüber
 8,7 bis 10,7 ms von Apache; gerendert war Apache in diesem Lauf schneller. Eine einzelne Zahl dazu, welcher Server schneller ist,
-führt in die Irre ([Benchmark, Abschnitt 4.4](../../../../en/us/guides/benchmarking.md#44-two-servers-back-to-back-apache-and-velocity)).
+führt in die Irre ([Benchmark, Abschnitt 4.4](../../../anleitungen/benchmarking.md#44-zwei-server-unmittelbar-nacheinander-apache-und-velocity)).
 Drei oder mehr Server lassen sich auf einmal vergleichen; jeder wird mit dem ersten verglichen.
 
 ## Ein Ausrollen prüfen
@@ -114,13 +114,13 @@ echo $?        # 0 no regression, 1 a metric regressed, 2 usage error or refused
 Eine Kennzahl gilt als verschlechtert, wenn sie um mehr als `--threshold` Prozent (15) und um mehr als `--min-delta` Millisekunden (1)
 gewachsen ist. Ein Skript zum Ausrollen kann den Exit-Code nutzen; geben Sie ihm auf einer geteilten Maschine `--threshold=25` oder mehr
 und ein `--min-delta`, sonst schlägt es falschen Alarm
-([Benchmark, Abschnitt 11.5](../../../../en/us/guides/benchmarking.md#115-checking-a-deploy-did-not-regress)).
+([Benchmark, Abschnitt 11.5](../../../anleitungen/benchmarking.md#115-prüfen-dass-eine-bereitstellung-keine-regression-gebracht-hat)).
 
 ## Rauschen auf geteilten Maschinen
 
 Die Anleitung wiederholte einen gespeicherten Lauf neun Minuten später ohne jede Änderung und bekam 13 „Verschlechterungen“: Die
 Maschine war ausgelasteter. Cache-Treffer von 1 bis 3 ms verdoppelten sich auf einer geteilten Maschine von einer Minute zur nächsten.
-Was zu tun ist ([Benchmark, Abschnitt 10](../../../../en/us/guides/benchmarking.md#10-noise-and-how-to-reduce-it)):
+Was zu tun ist ([Benchmark, Abschnitt 10](../../../anleitungen/benchmarking.md#10-rauschen-und-wie-man-es-verringert)):
 
 1. Dieselbe Maschine, dasselbe PHP, dieselbe Einstellung für OPcache, JIT und Xdebug (die Umgebungszeile sagt, welche).
 2. Derselbe Befehl: dieselben Seiten, Läufe, dasselbe Vorwärmen, dieselbe Gleichzeitigkeit, warm oder kalt.
@@ -142,7 +142,7 @@ Das Projekt veröffentlicht keine Kapazität pro Server, und diese Hilfe nennt k
 |---|---|
 | Anzahl der Velocity-Worker für einen Tarif | gerenderte Seiten bei steigender Gleichzeitigkeit; stimmen Sie bis zu dem Punkt ab, an dem p90 umkippt ([Velocity-Worker und Pools](../server/velocity-worker-und-pools.md#die-zahl-für-einen-tarif-finden)) |
 | Engine für einen Tarif | `--compare` warm und `--cold`, dazu eine Seite angemeldeter Benutzer mit `--cookie`, wenn Redakteure zählen |
-| Einstellungen für OPcache oder Worker | eine Einstellung pro Schritt, ein kalter Lauf davor und danach, nur behalten, wenn sich der Gewinn wiederholt ([Benchmark, Abschnitt 11.3](../../../../en/us/guides/benchmarking.md#113-tuning-opcache-and-velocity)) |
+| Einstellungen für OPcache oder Worker | eine Einstellung pro Schritt, ein kalter Lauf davor und danach, nur behalten, wenn sich der Gewinn wiederholt ([Benchmark, Abschnitt 11.3](../../../anleitungen/benchmarking.md#113-opcache-und-velocity-optimieren)) |
 | Kunden pro Maschine | messen Sie eine repräsentative Kunden-Website, dann eine Kopie davon unter einem Lastgenerator; lassen Sie Reserve für Cronjobs, Vorwärmen der Caches und Backups |
 
 Zahlen, die in der Dokumentation zitiert werden (zum Beispiel 8.941 Anfragen pro Sekunde im README oder die Zahlen zu Instanzen auf
@@ -163,6 +163,6 @@ Eigenschaft des Servers und sollten nicht als solche zitiert werden. Nehmen Sie 
 - [Leistung](README.md)
 - [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md)
 - [Hosting-Tarife gestalten](../geschaeft/hosting-tarife-gestalten.md)
-- [Benchmark von Exponential](../../../../en/us/guides/benchmarking.md)
+- [Benchmark von Exponential](../../../anleitungen/benchmarking.md)
 - [Benchmark: exp:benchmark](../../../../en/us/features/6.0/benchmark.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

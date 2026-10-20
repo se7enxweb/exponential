@@ -24,14 +24,14 @@ Schreiben Sie die Aufteilung in jeden Vertrag.
 
 ## Checkliste pro Website
 
-- [ ] Gehärtet wie in [Sicherheitshärtung](../../../en/us/help/security-hardening.md) und `doc/en/us/install/13-security-hardening.md`
-- [ ] Standard- und gemeinsam genutzte Passwörter geändert ([Standardpasswort des Administrators](../../../en/us/help/default-administrator-password.md),
-      [Das Administratorpasswort ändern](../../../en/us/help/change-the-admin-password.md))
+- [ ] Gehärtet wie in [Sicherheitshärtung](../sicherheitshaertung.md) und `doc/en/us/install/13-security-hardening.md`
+- [ ] Standard- und gemeinsam genutzte Passwörter geändert ([Standardpasswort des Administrators](../standard-administratorpasswort.md),
+      [Das Administratorpasswort ändern](../administratorpasswort-aendern.md))
 - [ ] Setup-Assistent und Installer-Dateien nicht erreichbar
 - [ ] Überall TLS; Sicherheits-Header; die Content Security Policy der Administration nicht abgeschwächt
 - [ ] Debug-Ausgabe im Produktivbetrieb aus
-- [ ] Zwei-Faktor-Authentifizierung für Administratoren angeboten, wo verfügbar ([Konten und Anmeldung](../../../en/us/help/accounts-and-sign-in.md))
-- [ ] Eigener Code auf SQL-Injection, XSS und CSRF geprüft ([Sicherheitshärtung](../../../en/us/help/security-hardening.md))
+- [ ] Zwei-Faktor-Authentifizierung für Administratoren angeboten, wo verfügbar ([Konten und Anmeldung](../konten-und-anmeldung.md))
+- [ ] Eigener Code auf SQL-Injection, XSS und CSRF geprüft ([Sicherheitshärtung](../sicherheitshaertung.md))
 - [ ] Updates nach Zeitplan eingespielt ([Kunden-Websites aktuell halten](kunden-websites-aktuell-halten.md))
 - [ ] Backups getestet
 
@@ -59,5 +59,5 @@ Halten Sie für jeden Kunden einen kurzen Plan bereit:
 
 - [Eskalationen und Sicherheitsprobleme](eskalationen-und-sicherheitsprobleme.md)
 - [Kundendaten schützen](kundendaten-schuetzen.md)
-- [Sicherheitshärtung](../../../en/us/help/security-hardening.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Sicherheitshärtung](../sicherheitshaertung.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

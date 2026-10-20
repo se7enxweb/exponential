@@ -100,4 +100,4 @@ und [Newsletter sicher versenden](../../../../en/us/help/creators/website-creato
 - [Newsletter-Routine](newsletter-routine.md)
 - [Newsletter-Checkliste](../../../../en/us/help/businesses/newsletters/newsletter-checklist.md)
 - [Kommunikation mit Mitgliedern](../../../../en/us/help/businesses/members/member-communications.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -151,7 +151,7 @@ Ob und wie Sie dafür abrechnen, entscheidet der Hoster; siehe [Hosting-Tarife g
 
 - [Sicherheit für Hoster: Überblick](README.md)
 - [Content Security Policy (Referenz der Funktion)](../../../../en/us/features/6.0/content-security-policy.md)
-- [Sicherheitshärtung: Cross-Site-Scripting und die Content Security Policy](../../../../en/us/help/security-hardening.md#cross-site-scripting-xss-and-the-content-security-policy)
+- [Sicherheitshärtung: Cross-Site-Scripting und die Content Security Policy](../../sicherheitshaertung.md#cross-site-scripting-xss-und-die-content-security-policy)
 - [Sicherheitslog](../betrieb/sicherheitslog.md)
 - [Härtung für Hoster](haertung-fuer-hoster.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

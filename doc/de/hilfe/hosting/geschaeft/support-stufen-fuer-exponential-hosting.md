@@ -41,7 +41,7 @@ unklare Grenze.
 
 > **Tipp**
 > Redaktionelle Fragen haben oft eine Antwort in dieser Hilfe. Verweisen Sie Kunden auf die Zielgruppen Redakteure und
-> Benutzer im Hilfe-Center, zum Beispiel [Erste Schritte](../../../../en/us/help/getting-started.md) und [Inhalte bearbeiten](../../../../en/us/help/editing-content.md).
+> Benutzer im Hilfe-Center, zum Beispiel [Erste Schritte](../../erste-schritte.md) und [Inhalte bearbeiten](../../inhalte-bearbeiten.md).
 
 ## Optionen für Stufen
 
@@ -69,7 +69,7 @@ Ein vermuteter Sicherheitsvorfall ist immer Schweregrad 1: Folgen Sie [Kompromit
 1. Die Adresse der Seite und die Uhrzeit des Vorfalls (mit Zeitzone).
 2. Was der Kunde getan hat und was er erwartet hat.
 3. Die **Fehlerreferenz**, die auf der Fehlerseite angezeigt wird, falls vorhanden. Der Administrator kann sie nachschlagen;
-   siehe [Einen Fehler über seine Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md).
+   siehe [Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md).
 4. Ob das Problem bei allen oder bei einem Konto auftritt.
 5. Kürzliche Änderungen: ein Update, eine neue Erweiterung, eine geänderte Einstellung.
 
@@ -80,9 +80,9 @@ Zustand nachstellen müssen.
 
 | Situation | Wohin sie geht |
 |---|---|
-| Ein reproduzierbarer Fehler in Exponential selbst | in den Software-Tracker, wie auf [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md) beschrieben |
+| Ein reproduzierbarer Fehler in Exponential selbst | in den Software-Tracker, wie auf [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md) beschrieben |
 | Eine Sicherheitslücke | vertraulich, wie `SECURITY.md` es beschreibt; nie als öffentliches Issue ([Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)) |
-| Eine Frage zum Projekt oder zur Community | in den Community-Tracker oder die Foren ([Wer ist die Exponential Foundation?](../../../../en/us/help/who-is-the-exponential-foundation.md#community-places)) |
+| Eine Frage zum Projekt oder zur Community | in den Community-Tracker oder die Foren ([Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#orte-der-community)) |
 | Bezahlter Support über Ihr Team hinaus | ein Support-Vertrag mit 7x oder einem anderen Anbieter ([Mit dem Projekt und 7x zusammenarbeiten](mit-dem-projekt-und-7x-zusammenarbeiten.md)) |
 
 Bevor Sie eskalieren, entfernen Sie Passwörter, Geheimnisse und personenbezogene Daten aus Logs und Screenshots;
@@ -116,5 +116,5 @@ Customer obligations:  report with page, time and error reference; keep contacts
 - [SLA-Optionen](sla-optionen-fuer-exponential-hosting.md)
 - [Überblick über die Überwachung](../betrieb/ueberblick-ueber-die-ueberwachung.md)
 - [Website nicht erreichbar](../runbooks/website-nicht-erreichbar.md)
-- [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

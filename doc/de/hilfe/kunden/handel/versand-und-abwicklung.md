@@ -94,4 +94,4 @@ von Exponential, sofern sie nicht hinzugefügt werden ([Einen Shop betreiben: Ü
 - [Bestellungen im Alltag](bestellungen-im-alltag.md)
 - [Retouren und Erstattungen](retouren-und-erstattungen.md)
 - [Warenkorb, Kasse und Bestellungen](../../../../en/us/help/creators/website-creators/basket-checkout-and-orders.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

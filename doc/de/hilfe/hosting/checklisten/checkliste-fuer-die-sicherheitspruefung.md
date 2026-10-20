@@ -11,8 +11,8 @@ type: help
 
 Diese Checkliste ist für den Sicherheitsprüfer oder Systemadministrator des Hosters. Nutzen Sie sie, bevor eine Website live
 geht, nach einem Sicherheitsvorfall und mindestens einmal im Quartal. Die Gründe für jeden Punkt stehen auf
-[Sicherheitshärtung](../../../../en/us/help/security-hardening.md) und in
-[Kapitel 13 des Installationsbuchs](../../../../en/us/install/13-security-hardening.md); die Sicht des Hosters steht auf
+[Sicherheitshärtung](../../sicherheitshaertung.md) und in
+[Kapitel 13 des Installationsbuchs](../../../installation/13-sicherheitshaertung.md); die Sicht des Hosters steht auf
 [Härtung für Hoster](../sicherheit/haertung-fuer-hoster.md).
 
 ```text
@@ -28,7 +28,7 @@ Site: <domain>        Reviewer: <name>        Date: <date>        Reason: <go-li
 
 ## Konten
 
-- [ ] Kein Standard- oder gemeinsames Administratorpasswort ([Das Standard-Administratorpasswort](../../../../en/us/help/default-administrator-password.md)).
+- [ ] Kein Standard- oder gemeinsames Administratorpasswort ([Das Standard-Administratorpasswort](../../standard-administratorpasswort.md)).
 - [ ] Administratoren nutzen die zweistufige Anmeldung, wo der Kunde zugestimmt hat ([Zweistufige Anmeldung](../sicherheit/zweistufige-anmeldung.md)).
 - [ ] Jedes Konto mit Rechten in der Administration gehört einer benannten Person, die es noch braucht.
 - [ ] Anonymous hat keine Richtlinien über das hinaus, was die öffentliche Website braucht.
@@ -39,7 +39,7 @@ Site: <domain>        Reviewer: <name>        Date: <date>        Reason: <go-li
 - [ ] Nur die Asset-Pfade werden als Dateien ausgeliefert; `settings/`, `var/log`, `var/cache` und Quelldateien sind aus dem
       Web nicht erreichbar. Testen Sie es: Eine Anfrage nach einer Datei unter `settings/` darf sie nicht liefern.
 - [ ] Der Setup-Assistent bleibt geschlossen: `settings/override/site.ini.append.php` hat `[SiteAccessSettings] CheckValidity=false`
-      ([Kapitel 13](../../../../en/us/install/13-security-hardening.md), [Erste Anmeldung und Standardpasswörter](../sicherheit/erste-anmeldung-und-standardpasswoerter.md)).
+      ([Kapitel 13](../../../installation/13-sicherheitshaertung.md), [Erste Anmeldung und Standardpasswörter](../sicherheit/erste-anmeldung-und-standardpasswoerter.md)).
 - [ ] Uploads werden unter `var/` gespeichert und nicht als PHP ausgeführt.
 
 ## Transport und Header
@@ -54,7 +54,7 @@ Site: <domain>        Reviewer: <name>        Date: <date>        Reason: <go-li
 
 - [ ] `security.log` wird geschrieben und durchgesehen ([Sicherheitslog](../betrieb/sicherheitslog.md)).
 - [ ] Hinter einem Proxy oder Load Balancer ist `TrustedProxies[]` konfiguriert, sodass die Logs die echten
-      Client-Adressen sehen ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md)).
+      Client-Adressen sehen ([Sicherheitshärtung](../../sicherheitshaertung.md)).
 - [ ] Über einen Schutz vor der Website entschieden: request-shield oder die Request-Regeln des Kernels
       ([request-shield und Request-Regeln](../sicherheit/request-shield-und-request-regeln.md)).
 - [ ] Das Prüfprotokoll ist an und für den Prüfer lesbar ([Prüfprotokoll](../sicherheit/pruefprotokoll.md)).
@@ -84,6 +84,6 @@ Site: <domain>        Reviewer: <name>        Date: <date>        Reason: <go-li
 
 ## Verwandte Seiten
 
-- [Zusammenfassung der Sicherheitsprüfung für Führungskräfte](../../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md)
+- [Zusammenfassung der Sicherheitsprüfung für Führungskräfte](../../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md)
 - [Checkliste für den monatlichen Betrieb](checkliste-fuer-den-monatlichen-betrieb.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

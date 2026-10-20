@@ -49,11 +49,11 @@ Diese Seiten setzen voraus, dass Ihre Website bereits läuft. Wenn Sie noch ein 
 ist der Bereich [Unternehmen](../../../../en/us/help/businesses/businesses-start-here.md) für Sie geschrieben. Wenn Sie die Website selbst
 bauen oder ändern, ist es der Bereich [Website-Ersteller](../../../../en/us/help/creators/website-creators/website-creators-start-here.md).
 Wenn Sie Inhalte schreiben und veröffentlichen und die Schritte im Editor brauchen, beginnen Sie mit der Seite
-[Inhalte bearbeiten](../../../../en/us/help/editing-content.md).
+[Inhalte bearbeiten](../../inhalte-bearbeiten.md).
 
 ## Verwandte Seiten
 
 - [Kundentypen](README.md)
 - [Kunden: hier beginnen](../kunden-hier-beginnen.md)
 - [Welcher Bereich zu Ihrer Organisation passt](../../../../en/us/help/businesses/which-section-fits-your-organization.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

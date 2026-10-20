@@ -11,13 +11,13 @@ type: help
 
 Ein gut gemeldetes Problem ist halb gelöst. Diese Seite legt fest, wie Ihr Team Probleme meldet: wer sie sammelt,
 welche Fakten verschickt werden und wohin welche Art von Problem geht. Die Schritt-für-Schritt-Fassung für Redakteure
-ist [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md).
+ist [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md).
 
 ## Zuerst: Ist es ein Fehler?
 
 Manche Seiten sagen nur, dass etwas nicht erlaubt oder nicht vorhanden ist, zum Beispiel „Your account does not have
 the proper privileges“, oder eine ausgegraute Schaltfläche. Das sind Fragen des Zugriffs, keine Fehler: Fragen Sie den
-Administrator Ihrer Website ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+Administrator Ihrer Website ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 
 ## Ein Kontakt für das Team
 
@@ -38,7 +38,7 @@ verhindert, dass dasselbe Problem dreimal gemeldet wird, und gibt Ihrem Anbieter
 
 Das ist die Liste, die das Support-Personal eines Hosters sammeln soll ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md));
 wenn Sie sie gleich mitschicken, spart das eine Rückfrage. Ein Screenshot hilft, „solange er keine Passwörter und keine
-personenbezogenen Daten anderer zeigt“ ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+personenbezogenen Daten anderer zeigt“ ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 
 ## Wie dringend ist es?
 
@@ -62,12 +62,12 @@ Verwenden Sie die Skala, die Ihr Vertrag festlegt, falls er eine hat; andernfall
 | Ihre Templates, Designs, eigene Erweiterungen | Ihren Partner oder Entwickler |
 | Ein reproduzierbarer Fehler in Exponential selbst | Den öffentlichen Issue-Tracker, meist von Ihrem Administrator oder Partner gemeldet ([GitHub-Issues](github-issues.md), [Die Meldeseite der Hilfe](die-meldeseite-der-hilfe.md)) |
 | Ein Sicherheitsproblem in der Software | Vertraulich an security@se7enx.com, nie öffentlich ([Vertrauliche Sicherheitsmeldungen](vertrauliche-sicherheitsmeldungen.md)) |
-| Fragen zum Projekt | Die Orte der Community ([Support erhalten](../../../../en/us/help/project/getting-support.md)) |
+| Fragen zum Projekt | Die Orte der Community ([Support erhalten](../../projekt/unterstuetzung-erhalten.md)) |
 
 ## Nie verschicken
 
 „Schreiben Sie nie Passwörter, Schlüssel, Sitzungs-Cookies, Datenbankadressen oder die personenbezogenen Daten von
-Kunden oder Benutzern in ein öffentliches Issue“ ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+Kunden oder Benutzern in ein öffentliches Issue“ ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 Dieselbe Regel ist für Tickets und E-Mails an Ihre Anbieter klug: Ein Anbieter sollte nie nach einem Passwort fragen;
 „Verwenden Sie ein Wegwerf-Testkonto, wenn Sie etwas im angemeldeten Zustand nachstellen müssen“ ([Support-Stufen](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)).
 
@@ -91,4 +91,4 @@ Reported by:     <name, role, how to reach you>
 - [Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md)
 - [Logs für Betreiber](logs-fuer-betreiber.md)
 - [Logs und Fehlerreferenzen (für Unternehmen)](../../../../en/us/help/businesses/reliability/logs-and-error-references.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

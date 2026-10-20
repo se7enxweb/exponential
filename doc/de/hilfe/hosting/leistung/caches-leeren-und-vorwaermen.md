@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei Hosting-Anbietern. Sie beantwortet: welcher Cache für
 welche Art von Änderung geleert wird, in welcher Reihenfolge, mit welchem Befehl, wie sich das Leeren auf einer ausgelasteten
 Website verhält und wie Sie eine Website danach vorwärmen, damit die ersten Besucher nicht dafür bezahlen. Die Quellen sind
-[Caches](../../../../en/us/guides/caches.md), [Kapitel 10, Abschnitt 10.6](../../../../en/us/install/10-after-installing.md#106-caches),
-[Cache-Steuerung aus der Konsole](../../../../en/us/bc/6.0/cache-console.md) und [Caches vorladen](../../../../en/us/guides/preloading-caches.md).
+[Caches](../../../anleitungen/caches.md), [Kapitel 10, Abschnitt 10.6](../../../installation/10-nach-der-installation.md#106-caches),
+[Cache-Steuerung aus der Konsole](../../../../en/us/bc/6.0/cache-console.md) und [Caches vorladen](../../../anleitungen/caches-vorwaermen.md).
 
 ## Inhalt
 
@@ -28,7 +28,7 @@ Website verhält und wie Sie eine Website danach vorwärmen, damit die ersten Be
 
 ## Welcher Cache für welche Änderung
 
-Aus [Kapitel 10, Was zu leeren ist](../../../../en/us/install/10-after-installing.md#which-to-clear), mit `php bin/php/ezcache.php`:
+Aus [Kapitel 10, Was zu leeren ist](../../../installation/10-nach-der-installation.md#welcher-cache-zu-leeren-ist), mit `php bin/php/ezcache.php`:
 
 ![Setup, Cache-Verwaltung: alle Caches, den Content-View-Cache, die INI- und Template-Caches oder einzelne Caches aus der Liste leeren](../../../../en/us/help/images/hosting/cache-management.webp)
 
@@ -153,7 +153,7 @@ php bin/php/preload.php --siteaccess=site --max-pages=20 --max-depth=1
 
 Jedes Leeren wird im Prüfprotokoll als `system.cache.clear` festgehalten, über die Seite, `exp:cache` und `bin/php/ezcache.php`
 gleichermaßen, bei einer Shell mit dem Benutzer des Betriebssystems. Setup > Caches zeigt Benutzern, die den Systemkanal des Audits
-lesen dürfen, wann und von wem jeder Cache zuletzt geleert wurde ([Caches, zuletzt geleert](../../../../en/us/guides/caches.md#3-last-cleared)).
+lesen dürfen, wann und von wem jeder Cache zuletzt geleert wurde ([Caches, zuletzt geleert](../../../anleitungen/caches.md#3-zuletzt-geleert)).
 Der Support kann daher beantworten, wer den Cache geleert hat, bevor die Website langsam wurde.
 
 ## Checkliste
@@ -169,6 +169,6 @@ Der Support kann daher beantworten, wer den Cache geleert hat, bevor die Website
 - [Cache-Schichten](cache-schichten.md)
 - [Änderungen ausrollen](../betrieb/aenderungen-ausrollen.md)
 - [Langsame Website](../runbooks/langsame-website.md)
-- [Caches vorladen](../../../../en/us/guides/preloading-caches.md)
+- [Caches vorladen](../../../anleitungen/caches-vorwaermen.md)
 - [Cache-Steuerung aus der Konsole](../../../../en/us/bc/6.0/cache-console.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -75,6 +75,6 @@ solange alle wissen, wer.
 
 - [Partner und Hoster](../partner-und-hoster/README.md)
 - [Zuverlässigkeit für Unternehmen](../../../../en/us/help/businesses/reliability/README.md)
-- [Eine Website betreiben](../../../../en/us/guides/operating-a-site.md)
-- [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md)
+- [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

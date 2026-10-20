@@ -16,7 +16,7 @@ Testinstallation ausprobiert, findet Probleme, bevor sie ein Release erreichen.
 
 > **Warnung**
 > Nur auf einer separaten Testinstallation mit erfundenen Daten. Nie auf einer Produktiv-Website, und richten Sie einen
-> Installer nie auf eine Datenbank, die Sie behalten möchten ([Upgrade](../../../en/us/install/11-upgrading.md)).
+> Installer nie auf eine Datenbank, die Sie behalten möchten ([Upgrade](../../installation/11-aktualisieren.md)).
 
 ## Inhalt
 
@@ -27,7 +27,7 @@ Testinstallation ausprobiert, findet Probleme, bevor sie ein Release erreichen.
 ## Die Entwicklungslinie holen
 
 Am einfachsten ist ein Git-Klon, mit dem Sie auch aktualisieren und beitragen können
-([Mit Git entwickeln](../../../en/us/help/develop-with-git.md)):
+([Mit Git entwickeln](../mit-git-entwickeln.md)):
 
 ```bash
 git clone https://github.com/se7enxweb/exponential.git exponential-main
@@ -36,8 +36,8 @@ git log -1 --format='%h %ad %s'      # note the commit you test
 ```
 
 Installieren Sie sie dann auf SQLite, wie [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md)
-es beschreibt. Um sie aktuell zu halten, siehe [Mit Git entwickeln, Auf dem neuesten Stand bleiben](../../../en/us/help/develop-with-git.md#keep-up-to-date);
-um eine Korrektur vor ihrem Release auszuprobieren, [Eine Korrektur vor dem Release nutzen](../../../en/us/help/develop-with-git.md#use-a-fix-before-it-is-released).
+es beschreibt. Um sie aktuell zu halten, siehe [Mit Git entwickeln, Auf dem neuesten Stand bleiben](../mit-git-entwickeln.md#auf-dem-neuesten-stand-bleiben);
+um eine Korrektur vor ihrem Release auszuprobieren, [Eine Korrektur vor dem Release nutzen](../mit-git-entwickeln.md#eine-korrektur-vor-ihrem-release-nutzen).
 
 ## Was Sie testen
 
@@ -66,6 +66,6 @@ Kündigen Sie ungetestete Funktionen nicht als veröffentlicht an ([Über ein Re
 ## Verwandte Seiten
 
 - [Issues nachstellen und bestätigen](issues-nachstellen-und-bestaetigen.md)
-- [Mit Git entwickeln](../../../en/us/help/develop-with-git.md)
-- [Release- und Upgrade-Planung](../../../en/us/help/leadership/release-and-upgrade-planning.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Mit Git entwickeln](../mit-git-entwickeln.md)
+- [Release- und Upgrade-Planung](../fuehrung/release-und-upgrade-planung.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

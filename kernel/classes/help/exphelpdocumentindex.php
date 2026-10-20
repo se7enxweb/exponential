@@ -287,8 +287,9 @@ class expHelpDocumentIndex
     /**
      * The id of a path relative to the installation root: doc/en/us/guides/x.md -> guides/x.md, a translation
      * doc/de/anleitungen/x.md -> guides/x.md (its path map) or doc/de/guides/x.md -> guides/x.md, a file in no
-     * language directory doc/changelogs/x.md -> changelogs/x.md, extension/foo/doc/x.md -> ext/foo/x.md; other
-     * configured roots keep their path. null for a path outside the roots.
+     * language directory doc/changelogs/x.md -> changelogs/x.md, extension/foo/doc/x.md -> ext/foo/x.md, a top file of
+     * an extension extension/foo/README.md -> ext/foo/README.md; other configured roots keep their path. null for a
+     * path outside the roots.
      *
      * @param string $path
      * @return string|null
@@ -315,6 +316,13 @@ class expHelpDocumentIndex
                 return 'ext/' . $m[1] . '/' . $rest;
             return $path;
         }
+        // README.md, CHANGELOG, LICENSE ... at the top of an extension whose documentation is shown
+        if ( preg_match( '#^extension/([^/]+)/([^/]+)$#', $path, $m ) && in_array( $m[1], $this->allowlist->extensions(), true )
+             && $this->allowlist->isExtensionTopFile( $m[2] ) )
+            return 'ext/' . $m[1] . '/' . $m[2];
+        // a project file outside the roots (README.md -> project/README.md); whether it is listed is the allowlist's
+        if ( $this->allowlist->isProjectPath( $path ) )
+            return expHelpProjectFiles::idOf( $path );
         return null;
     }
 
@@ -333,8 +341,21 @@ class expHelpDocumentIndex
         if ( $id === null )
             return null;
         $roots = $this->allowlist->roots();
+        // project/<path>: the project file, when that path is one by its name (else a page of doc/en/us/project/)
+        $projectPath = class_exists( 'expHelpProjectFiles' ) ? expHelpProjectFiles::pathOfId( $id ) : null;
+        if ( $projectPath !== null && $this->allowlist->isProjectPath( $projectPath ) )
+            return $projectPath;
         if ( preg_match( '#^ext/([^/]+)/(.+)$#', $id, $m ) && in_array( 'extension/' . $m[1] . '/doc', $roots, true ) )
+        {
+            // a top file (ext/foo/README.md) when its doc/ has no file of that name
+            if ( strpos( $m[2], '/' ) === false && $this->allowlist->isExtensionTopFile( $m[2] ) )
+            {
+                $files = $this->files();
+                if ( !isset( $files['extension/' . $m[1] . '/doc/' . $m[2]] ) && isset( $files['extension/' . $m[1] . '/' . $m[2]] ) )
+                    return 'extension/' . $m[1] . '/' . $m[2];
+            }
             return 'extension/' . $m[1] . '/doc/' . $m[2];
+        }
         foreach ( $roots as $root )
             if ( $root !== 'doc' && strncmp( $id, $root . '/', strlen( $root ) + 1 ) === 0 )
                 return $id;
@@ -384,6 +405,8 @@ class expHelpDocumentIndex
         // the code that builds the entries: a deploy of a changed parser or slugger builds the index again
         foreach ( array( __FILE__, ( new ReflectionClass( 'expHelpFrontMatter' ) )->getFileName(),
                          ( new ReflectionClass( 'expHelpAudience' ) )->getFileName(),
+                         ( new ReflectionClass( 'expHelpAllowlist' ) )->getFileName(),
+                         class_exists( 'expHelpProjectFiles' ) ? ( new ReflectionClass( 'expHelpProjectFiles' ) )->getFileName() : '',
                          class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '',
                          class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
             if ( is_string( $code ) && $code !== '' )
@@ -565,6 +588,66 @@ class expHelpDocumentIndex
     }
 
     /**
+     * The extensions that have visible pages in the help (ext/<name>/...), by name: array( 'name', 'count',
+     * 'index_id' (its doc/README.md or doc/index.md, else its top README, else its first page), 'title' (that page's
+     * title), 'pages' => list of array( 'id', 'title', 'summary', 'folder' (the folder below the extension, '' at
+     * its top) ) in navigation order ). Sorted by name.
+     *
+     * @return array
+     */
+    public function extensions()
+    {
+        $extensions = array();
+        foreach ( $this->tree( 'ext' )['children'] as $node )
+        {
+            $pages = array();
+            $walk = function ( array $node, $folder ) use ( &$walk, &$pages )
+            {
+                if ( $node['index_id'] !== null )
+                    $pages[] = array( 'id' => $node['index_id'], 'folder' => $folder );
+                foreach ( $node['documents'] as $document )
+                    $pages[] = array( 'id' => $document['id'], 'folder' => $folder );
+                foreach ( $node['children'] as $child )
+                    $walk( $child, $folder === '' ? $child['name'] : $folder . '/' . $child['name'] );
+            };
+            $walk( $node, '' );
+            if ( !$pages )
+                continue;
+            // the overview: doc/README.md or doc/index.md, else the README at the top of the extension
+            $index = null;
+            foreach ( array( true, false ) as $inDoc )
+                foreach ( array( 'README.md', 'index.md', 'README.markdown', 'README.txt', 'README' ) as $name )
+                    foreach ( $pages as $page )
+                    {
+                        $document = $this->document( $page['id'] );
+                        if ( $document !== null && strcasecmp( $page['id'], 'ext/' . $node['name'] . '/' . $name ) === 0
+                             && ( strpos( $document['path'], '/doc/' ) !== false ) === $inDoc )
+                        {
+                            $index = $page['id'];
+                            break 3;
+                        }
+                    }
+            if ( $index === null )
+                $index = $pages[0]['id'];
+            $list = array();
+            foreach ( $pages as $page )
+            {
+                $document = $this->document( $page['id'] );
+                if ( $document === null )
+                    continue;
+                $list[] = array( 'id' => $page['id'], 'title' => $document['title'], 'summary' => $document['summary'],
+                                 'folder' => $page['folder'] );
+            }
+            $indexDocument = $this->document( $index );
+            $extensions[$node['name']] = array( 'name' => $node['name'], 'count' => count( $list ), 'index_id' => $index,
+                                                'title' => $indexDocument !== null ? $indexDocument['title'] : $node['name'],
+                                                'pages' => $list );
+        }
+        ksort( $extensions, SORT_NATURAL | SORT_FLAG_CASE );
+        return $extensions;
+    }
+
+    /**
      * The configured categories with their page counts: id => array( 'id', 'name', 'icon', 'count' ).
      *
      * @return array
@@ -647,7 +730,8 @@ class expHelpDocumentIndex
      *   else the humanized name), index and index_id (the id of that README.md/index.md, or null), order,
      *   children (list of nodes), documents (list of array( 'id', 'path', 'title', 'order', 'type', 'audience' ))
      * Children and documents are in order, then natural title order; a folder's README.md/index.md is its index, not
-     * one of its documents.
+     * one of its documents. The project files (project/...) are documents of the top node, with
+     * expHelpProjectFiles::treeTitle(), not a folder.
      *
      * @param string|null $below only this folder (id space, e.g. 'guides')
      * @return array the top node (or the folder's node; an empty node for an unknown folder)
@@ -658,6 +742,16 @@ class expHelpDocumentIndex
         $below = $below === null ? null : trim( (string)$below, '/' );
         foreach ( $this->visibleDocuments() as $id => $document )
         {
+            // the project files (project/README.md, project/bin/php/README.md ...) are pages at the top of the tree,
+            // next to the folders, never a folder of their own
+            if ( class_exists( 'expHelpProjectFiles' ) && expHelpProjectFiles::isProjectId( $id ) )
+            {
+                $root['documents'][] = array( 'id' => $id, 'path' => $document['path'],
+                                              'title' => expHelpProjectFiles::treeTitle( $document['path'], $document['title'] ),
+                                              'order' => $document['order'], 'type' => $document['type'],
+                                              'audience' => $document['audience'] );
+                continue;
+            }
             $segments = explode( '/', $id );
             $file = array_pop( $segments );
             $node = &$root;
@@ -668,6 +762,19 @@ class expHelpDocumentIndex
                 if ( !isset( $node['children'][$segment] ) )
                     $node['children'][$segment] = self::node( $segment, $dir, self::humanize( $segment ) );
                 $node = &$node['children'][$segment];
+            }
+            // an extension's doc/README.md or doc/index.md is its overview rather than the README at its top, which
+            // then is one of its pages
+            if ( preg_match( '/^(readme|index)\.(md|markdown|txt)$/i', $file ) && $node['index'] !== null
+                 && preg_match( '#^extension/[^/]+/[^/]+$#', (string)$this->documents()[$node['index']]['path'] )
+                 && !preg_match( '#^extension/[^/]+/[^/]+$#', (string)$document['path'] ) )
+            {
+                $previous = $this->documents()[$node['index']];
+                $node['documents'][] = array( 'id' => $previous['id'], 'path' => $previous['path'], 'title' => $previous['title'],
+                                              'order' => 1000, 'type' => $previous['type'], 'audience' => $previous['audience'] );
+                $node['index'] = $node['index_id'] = null;
+                $node['order'] = 1000;
+                $node['title'] = self::humanize( $node['name'] );
             }
             if ( preg_match( '/^(readme|index)\.(md|markdown|txt)$/i', $file ) && $node['index'] === null )
             {
@@ -1058,6 +1165,91 @@ class expHelpDocumentIndex
                       'documents' => $documents, 'assets' => $assets, 'sources' => $this->sourcesCache, 'recent' => $recent );
     }
 
+    /** @var array path => list of heading anchors of another language's version of a page (anchorOf()) */
+    protected $otherHeadings = array();
+
+    /**
+     * The anchor a link names on the page this index shows for an id, when the link was written for another
+     * language's version of that page: an English page links "guides/x.md#cross-engine-notes" and the reader sees
+     * the German page, whose heading is "#hinweise-zu-den-engines"; or a German page links a German anchor of a page
+     * the reader sees in English. A translation has the headings of its original in the same order (the structure
+     * checks keep it so), so the n-th heading of one version is the n-th of the other. The anchor is kept when the
+     * shown page has it, when no other version has it, or when the versions differ in their number of headings.
+     *
+     * @param string $id the page id
+     * @param string $anchor as written in the link (without "#")
+     * @return string
+     */
+    public function anchorOf( $id, $anchor )
+    {
+        $anchor = (string)$anchor;
+        $document = $anchor === '' ? null : $this->document( $id );
+        if ( $document === null || empty( $document['headings'] ) )
+            return $anchor;
+        $shown = array();
+        foreach ( $document['headings'] as $heading )
+            $shown[] = (string)$heading['anchor'];
+        if ( in_array( $anchor, $shown, true ) || in_array( strtolower( $anchor ), $shown, true ) )
+            return $anchor;
+        $files = $this->files();
+        foreach ( $this->languages->directories() as $directory )
+        {
+            $path = expHelpLanguage::DOC_ROOT . '/' . $directory . '/' . $this->languages->translated( $directory, (string)$id );
+            if ( $path === $document['path'] || !isset( $files[$path] ) )
+                continue;
+            if ( !isset( $this->otherHeadings[$path] ) )
+            {
+                $this->otherHeadings[$path] = array();
+                $name = $this->allowlist->safePath( $path, $files );
+                $text = $name === null ? false : @file_get_contents( $name );
+                if ( is_string( $text ) )
+                {
+                    list( , $body ) = expHelpFrontMatter::split( self::toUtf8( $text ) );
+                    foreach ( self::headings( $body ) as $heading )
+                        $this->otherHeadings[$path][] = (string)$heading['anchor'];
+                }
+            }
+            $other = $this->otherHeadings[$path];
+            $position = array_search( $anchor, $other, true );
+            if ( $position === false )
+                $position = array_search( strtolower( $anchor ), $other, true );
+            if ( $position !== false && count( $other ) === count( $shown ) )
+                return $shown[$position];
+        }
+        return $anchor;
+    }
+
+    /**
+     * How much of the documentation each configured language has, from the help's file list (cheap: no page is read):
+     * per directory, the pages it has of the default language's pages, and that total. The default language has
+     * every page; a translation counts each page of its directory once (a translated file name through its path map)
+     * and only when the default language has that page too, so a page without an original does not raise the share.
+     *
+     * @return array directory => array( 'pages' => int, 'total' => int )
+     */
+    public function languageCoverage()
+    {
+        $default = $this->languages->defaultDirectory();
+        $ids = array();
+        foreach ( $this->languages->directories() as $directory )
+            $ids[$directory] = array();
+        foreach ( $this->files() as $path => $file )
+        {
+            if ( !isset( $file['kind'] ) || $file['kind'] !== 'document' )
+                continue;
+            $split = $this->languages->split( $path );
+            if ( $split === null )
+                continue;
+            $ids[$split[0]][$this->languages->canonical( $split[0], $split[1] )] = true;
+        }
+        $total = count( $ids[$default] );
+        $coverage = array();
+        foreach ( $ids as $directory => $pages )
+            $coverage[$directory] = array( 'pages' => $directory === $default ? $total : count( array_intersect_key( $pages, $ids[$default] ) ),
+                                           'total' => $total );
+        return $coverage;
+    }
+
     /**
      * The language directory a path is in: a directory of [DocLanguages], '' for a file in no language directory
      * of the doc root (doc/changelogs/), null for a path outside the doc root (an extension's doc directory).
@@ -1070,6 +1262,9 @@ class expHelpDocumentIndex
         $split = $this->languages->split( $path );
         if ( $split !== null )
             return $split[0];
+        // a project file is English only and never translated, like doc/changelogs/: in no language directory
+        if ( $this->allowlist->isProjectPath( (string)$path ) )
+            return '';
         return strncmp( (string)$path, expHelpLanguage::DOC_ROOT . '/', strlen( expHelpLanguage::DOC_ROOT ) + 1 ) === 0 ? '' : null;
     }
 
@@ -1105,6 +1300,10 @@ class expHelpDocumentIndex
         $language = $this->languageOfPath( $path );
         $text = self::toUtf8( $text );
         list( $meta, $body ) = $format === 'markdown' ? expHelpFrontMatter::split( $text ) : array( array(), $text );
+        // a project file (README.md, SECURITY.md ...) is classified by [ProjectFiles] unless its front matter says otherwise
+        $projectFiles = $this->allowlist->projectFiles();
+        if ( $projectFiles !== null && $projectFiles->isCandidate( $path ) )
+            $meta += $projectFiles->classification( $path );
         $headings = $format === 'markdown' ? self::headings( $body ) : array();
 
         $title = isset( $meta['title'] ) && is_string( $meta['title'] ) && trim( $meta['title'] ) !== '' ? trim( $meta['title'] ) : '';
@@ -1153,9 +1352,12 @@ class expHelpDocumentIndex
         $dot = strrpos( $base, '.' );
         $suffix = $dot === false || $dot === 0 ? '' : strtolower( substr( $base, $dot + 1 ) );
         $mtime = isset( $file['mtime'] ) ? (int)$file['mtime'] : 0;
+        $id = $this->idOf( $path );
+        // exphelp.ini [TreeSettings] PageOrder[<page id>] wins over the front matter order
+        $order = $this->audience->pageOrder( $id, isset( $meta['order'] ) && is_int( $meta['order'] ) ? $meta['order'] : ( $isIndex ? 0 : 1000 ) );
 
         return array(
-            'id'       => $this->idOf( $path ),
+            'id'       => $id,
             'path'     => $path,
             'suffix'   => $format === 'text' && !in_array( $suffix, array( 'txt', 'rst' ), true ) ? '' : $suffix,
             'format'   => $format,
@@ -1165,7 +1367,7 @@ class expHelpDocumentIndex
             'audience' => $class['audience'],
             'category' => $class['category'],
             'type'     => $class['type'],
-            'order'    => isset( $meta['order'] ) && is_int( $meta['order'] ) ? $meta['order'] : ( $isIndex ? 0 : 1000 ),
+            'order'    => $order,
             'keywords' => array_values( array_unique( $keywords ) ),
             'featured' => isset( $meta['featured'] ) && $meta['featured'] === true,
             'hidden'   => isset( $meta['hidden'] ) && $meta['hidden'] === true,

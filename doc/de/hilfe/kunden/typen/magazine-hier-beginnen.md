@@ -21,8 +21,8 @@ Diese Seite ist für die Chefredaktion, den Art Director und die Person, die die
 | Bedarf | Was ihn trägt | Wo es erklärt wird |
 |---|---|---|
 | Lange Artikel mit mehreren Teilen | Inhaltsklassen mit den Feldern, die Sie brauchen; die Demo-Installation hat *Article*, *Article (main-page)* und *Article (sub-page)* | [Ihr Inhaltsmodell entwerfen](../../../../en/us/help/creators/website-creators/designing-your-content-model.md) |
-| Gestaltete Reportage- und Ausgabenseiten | Exponential Layouts: Layouts, Zonen und Blöcke, die Ihre Redaktion anordnet | [Der Layouts-Editor](../../../../en/us/help/layouts-editor.md), [Landingpages mit Layouts](../wachstum/landingpages-mit-layouts.md) |
-| Fotostrecken | Galerien und automatische Umwandlung und Skalierung von Bildern | [Medien und Uploads](../../../../en/us/help/media-and-uploads.md), [Bilder und Bildvarianten](../../../../en/us/help/creators/website-creators/images-and-image-variations.md) |
+| Gestaltete Reportage- und Ausgabenseiten | Exponential Layouts: Layouts, Zonen und Blöcke, die Ihre Redaktion anordnet | [Der Layouts-Editor](../../layout-editor.md), [Landingpages mit Layouts](../wachstum/landingpages-mit-layouts.md) |
+| Fotostrecken | Galerien und automatische Umwandlung und Skalierung von Bildern | [Medien und Uploads](../../medien-und-uploads.md), [Bilder und Bildvarianten](../../../../en/us/help/creators/website-creators/images-and-image-variations.md) |
 | Klare redaktionelle Stufen | Entwürfe, Freigabe-Workflows und Versionskontrolle | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md) |
 | Ausgaben, die an einem festen Datum erscheinen | Zeitgesteuerte Veröffentlichung | [Zeitgesteuertes Veröffentlichen](../alltag/zeitgesteuertes-veroeffentlichen.md) |
 | Leser, die wiederkommen | Newsletter (die Erweiterung CJW Newsletter) und Feeds | [Newsletter](../wachstum/newsletter.md) |
@@ -81,4 +81,4 @@ verkauft, ergänzen Sie den [Lesepfad für Onlineshops](lesepfad-onlineshops.md)
 - [Nachrichtenredaktionen: hier beginnen](nachrichtenredaktionen-hier-beginnen.md)
 - [Blogs: hier beginnen](blogs-hier-beginnen.md)
 - [Landingpages mit Layouts (Website-Ersteller)](../../../../en/us/help/creators/website-creators/landing-pages-with-layouts.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

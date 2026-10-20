@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Administratoren, die Benutzer auf einer Installation von `sevenx_multisite` verwalten und wissen wollen, was die
 Installation jeder Rolle gegeben hat, und für Entwickler, die das ändern. Sie beantwortet: welche Rollen welche Richtlinien bekommen, welche
 Sektionen und Benutzergruppen angelegt werden und wer wem zugewiesen ist. Die allgemeine Anleitung zu Rollen ist
-[Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md).
+[Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md).
 
 ## Inhalt
 
@@ -139,6 +139,6 @@ in der Objektzuordnung des Setups):
 - [sevenx_multisite](README.md)
 - [Das Skript des Multisite-Installers](das-skript-des-multisite-installers.md)
 - [Berechtigungen für Pakete](../admin-oberflaeche/berechtigungen-fuer-pakete.md)
-- [Rollen und Richtlinien (Anleitung)](../../../../en/us/guides/roles-and-policies.md)
+- [Rollen und Richtlinien (Anleitung)](../../../anleitungen/rollen-und-richtlinien.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

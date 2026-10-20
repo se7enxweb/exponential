@@ -18,7 +18,7 @@ Wissen öffentlich, wo es anderen hilft.
 |---|---|---|---|
 | Ihre Partnerschaft: Bewerbung, Stufe, Rechnungen, Vereinbarung | Das Partnerteam, über <https://exponential.earth/partner/contact-us> | Nein | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
 | Technischer Support im Rahmen Ihres Tarifs | GitHub-Issue-Tickets, je nach Stufe | Hängt vom Repository ab | <https://exponential.earth/partner/benefits> |
-| Ein Fehler in der Software | <https://github.com/se7enxweb/exponential/issues> | Ja | README, [Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md) |
+| Ein Fehler in der Software | <https://github.com/se7enxweb/exponential/issues> | Ja | README, [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md) |
 | Das Projekt, die Community oder die Websites | <https://github.com/se7enxweb/exponential-community/issues> | Ja | README |
 | Eine Sicherheitslücke | security@se7enx.com | Nein, nie öffentlich | SECURITY.md |
 | Fragen und Antworten | Foren <https://share.exponential.earth/forums> | Ja | <https://exponential.earth/about/project> |
@@ -51,4 +51,4 @@ Partner-Tickets auf Ihrer Stufe zugesagt ([Support-Stufen und Reaktionszeiten](s
 - [Ein Support-Ticket als Partner eröffnen](support-ticket-eroeffnen.md)
 - [Eskalationen und Sicherheitsprobleme](eskalationen-und-sicherheitsprobleme.md)
 - [Partnertreffen, Mailinglisten und Briefings](partnertreffen-und-briefings.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

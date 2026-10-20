@@ -21,7 +21,7 @@ gemeinsame Pflege: Sobald Ihre Korrektur im Kernel ist, enthält jedes Release s
 
 ## Der Ablauf
 
-Aus CONTRIBUTING.md und [Mit Git entwickeln](../../../en/us/help/develop-with-git.md):
+Aus CONTRIBUTING.md und [Mit Git entwickeln](../mit-git-entwickeln.md):
 
 1. Forken Sie <https://github.com/se7enxweb/exponential> und klonen Sie Ihren Fork.
 2. Legen Sie einen Branch für eine Änderung an: `git checkout -b feature/your-feature`.
@@ -63,6 +63,6 @@ never published.
 ## Verwandte Seiten
 
 - [Erweiterungen an die Upstream-Projekte zurückgeben](erweiterungen-zurueckgeben.md)
-- [Mit Git entwickeln](../../../en/us/help/develop-with-git.md)
+- [Mit Git entwickeln](../mit-git-entwickeln.md)
 - [Fehler gut melden](fehler-gut-melden.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

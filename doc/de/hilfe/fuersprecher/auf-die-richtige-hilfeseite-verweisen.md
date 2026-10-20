@@ -24,28 +24,28 @@ Sie das Menü „?“ ([Das Hilfesystem, Eine Seite finden](../../../en/us/featu
 
 | Frage | Seite |
 |---|---|
-| „Wo fange ich an?“ | [Erste Schritte](../../../en/us/help/getting-started.md) |
-| „Was ist das alles auf diesem Bildschirm?“ | [Ein Rundgang durch die Administration](../../../en/us/help/admin-tour.md) |
-| „Wie erstelle oder bearbeite ich etwas?“ | [Inhalte erstellen und bearbeiten](../../../en/us/help/editing-content.md) |
-| „Wie lade ich Bilder hoch?“ | [Bilder, Medien und Uploads](../../../en/us/help/media-and-uploads.md) |
-| „Wie veröffentliche ich, mache etwas rückgängig, stelle wieder her?“ | [Veröffentlichen, Versionen und der Papierkorb](../../../en/us/help/publishing-and-versions.md) |
-| „Wie finde ich Inhalte?“ | [Suchen](../../../en/us/help/searching.md) |
-| „Wie übersetze ich?“ | [Sprachen](../../../en/us/help/languages.md) |
-| „Wie baue ich eine Seite?“ | [Der Layouts-Editor](../../../en/us/help/layouts-editor.md) |
-| „Wie ändere ich mein Passwort oder schalte die zweistufige Anmeldung ein?“ | [Ihr Konto und die Anmeldung](../../../en/us/help/accounts-and-sign-in.md) |
-| „Tastenkürzel?“ | [Tastenkürzel](../../../en/us/help/keyboard-shortcuts.md) |
-| „Etwas ist schiefgegangen“ | [Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md) |
+| „Wo fange ich an?“ | [Erste Schritte](../erste-schritte.md) |
+| „Was ist das alles auf diesem Bildschirm?“ | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
+| „Wie erstelle oder bearbeite ich etwas?“ | [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md) |
+| „Wie lade ich Bilder hoch?“ | [Bilder, Medien und Uploads](../medien-und-uploads.md) |
+| „Wie veröffentliche ich, mache etwas rückgängig, stelle wieder her?“ | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
+| „Wie finde ich Inhalte?“ | [Suchen](../suchen.md) |
+| „Wie übersetze ich?“ | [Sprachen](../sprachen.md) |
+| „Wie baue ich eine Seite?“ | [Der Layouts-Editor](../layout-editor.md) |
+| „Wie ändere ich mein Passwort oder schalte die zweistufige Anmeldung ein?“ | [Ihr Konto und die Anmeldung](../konten-und-anmeldung.md) |
+| „Tastenkürzel?“ | [Tastenkürzel](../tastenkuerzel.md) |
+| „Etwas ist schiefgegangen“ | [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md) |
 
 ## Administratoren
 
 | Frage | Seite |
 |---|---|
-| „Wie installiere ich es?“ | [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md), [Inhalt des Installationsbuchs](../../../en/us/install/README.md) |
-| „Welche Datenbank?“ | [Datenbankunterstützung](../../../en/us/help/database-support.md) |
-| „Welches Betriebssystem?“ | [Betriebssystemunterstützung](../../../en/us/help/os-support.md) |
-| „Wie sichere ich es ab?“ | [Sicherheitshärtung](../../../en/us/help/security-hardening.md) |
-| „Wie lautet das Standardpasswort des Administrators?“ | [Das Standardpasswort des Administrators](../../../en/us/help/default-administrator-password.md) |
-| „Wie aktualisiere ich?“ | [Upgrade](../../../en/us/install/11-upgrading.md), [Die Upgrade-Prüfung](../../../en/us/guides/upgrade-check.md) |
+| „Wie installiere ich es?“ | [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md), [Inhalt des Installationsbuchs](../../installation/README.md) |
+| „Welche Datenbank?“ | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
+| „Welches Betriebssystem?“ | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md) |
+| „Wie sichere ich es ab?“ | [Sicherheitshärtung](../sicherheitshaertung.md) |
+| „Wie lautet das Standardpasswort des Administrators?“ | [Das Standardpasswort des Administrators](../standard-administratorpasswort.md) |
+| „Wie aktualisiere ich?“ | [Upgrade](../../installation/11-aktualisieren.md), [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
 | „Wo sind die Logs?“ | [Log-Viewer](../../../en/us/features/6.0/log-viewer.md) |
 | „Wer hat was getan?“ | [Das Prüfprotokoll](../../../en/us/features/6.0/audit-trail.md) |
 | „Wie betreibe ich Velocity?“ | [Velocity](../../../en/us/features/6.0/velocity-persistent-worker-server.md) |
@@ -54,10 +54,10 @@ Sie das Menü „?“ ([Das Hilfesystem, Eine Seite finden](../../../en/us/featu
 
 | Frage | Seite |
 |---|---|
-| „Wie installiere ich mit Git und trage bei?“ | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) |
-| „Wie baue ich eine Erweiterung?“ | [Erweiterungen](../../../en/us/guides/extensions.md), [RAD-Werkzeuge](../../../en/us/features/6.0/rad-tools.md) |
-| „Wie ändere ich Templates?“ | [Templates und Design](../../../en/us/guides/templates-and-design.md) |
-| „Gibt es eine API?“ | [REST-API v1 und v2](../../../en/us/guides/rest-api-v1-and-v2.md) |
+| „Wie installiere ich mit Git und trage bei?“ | [Mit Git entwickeln](../mit-git-entwickeln.md) |
+| „Wie baue ich eine Erweiterung?“ | [Erweiterungen](../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../en/us/features/6.0/rad-tools.md) |
+| „Wie ändere ich Templates?“ | [Templates und Design](../../anleitungen/templates-und-design.md) |
+| „Gibt es eine API?“ | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
 | „Was bedeutet dieser Begriff?“ | [Das Glossar](../../../en/us/glossary.md) |
 | „Was hat sich in einem Release geändert?“ | [Änderungsprotokolle](../../../changelogs/README.md), [Die Geschichte](../../../en/us/history/README.md) |
 
@@ -65,14 +65,14 @@ Sie das Menü „?“ ([Das Hilfesystem, Eine Seite finden](../../../en/us/featu
 
 | Frage | Seite |
 |---|---|
-| „Wer macht es?“ | [Wer ist 7x?](../../../en/us/help/who-is-7x.md), [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md) |
-| „Welches Produkt ist für mich?“ | [Welches Produkt passt zu Ihnen](../../../en/us/help/who-is-the-exponential-foundation.md#which-product-is-for-you) |
-| „Was darf ich mit der Dokumentation tun?“ | [Freie Dokumentation](../../../en/us/help/free-documentation.md) |
+| „Wer macht es?“ | [Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
+| „Welches Produkt ist für mich?“ | [Welches Produkt passt zu Ihnen](../wer-ist-die-exponential-foundation.md#welches-produkt-zu-ihnen-passt) |
+| „Was darf ich mit der Dokumentation tun?“ | [Freie Dokumentation](../freie-dokumentation.md) |
 | „Wo ist die Community?“ | [Die Community-Kanäle](community-kanaele.md) |
 
 ## Verwandte Seiten
 
 - [Fragen gut beantworten](fragen-gut-beantworten.md)
 - [Häufige Fragen von Neuen](faq-fuer-neue.md)
-- [Hilfe für Redakteure und Benutzer](../../../en/us/help/README.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Hilfe für Redakteure und Benutzer](../README.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

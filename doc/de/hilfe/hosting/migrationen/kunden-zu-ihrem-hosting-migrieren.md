@@ -42,7 +42,7 @@ vorbereiten, wie Sie mit möglichst wenig Ausfallzeit umschalten, wie Sie prüfe
 | Frage | Warum sie zählt | Wie Sie es herausfinden |
 |---|---|---|
 | Welche Version läuft? | eine Website 6.0.x zieht um; eine ältere wird aktualisiert | die Seite Über (**Info > Über**) oder `composer show se7enxweb/exponential` |
-| Welche Datenbank und Version? | entscheidet die Werkzeuge für Backup und Wiederherstellung; vielleicht ein Wechsel der Engine | `[DatabaseSettings]` in `settings/override/site.ini.append.php` ([Welche Datenbank nutzt meine Website?](../../../../en/us/help/database-support.md#which-database-is-my-site-using)) |
+| Welche Datenbank und Version? | entscheidet die Werkzeuge für Backup und Wiederherstellung; vielleicht ein Wechsel der Engine | `[DatabaseSettings]` in `settings/override/site.ini.append.php` ([Welche Datenbank nutzt meine Website?](../../datenbankunterstuetzung.md#welche-datenbank-verwendet-meine-site)) |
 | Welche PHP-Version? | das Ziel muss sie anbieten | `php -v` beim alten Hoster |
 | Welche Engine liefert sie aus? | Velocity, FrankenPHP, Apache oder nginx | der alte Hoster |
 | Wie groß sind `var/storage` und die Datenbank? | Übertragungszeit, Größe des Tarifs | `du -s`, die Werkzeuge der Datenbank |
@@ -97,7 +97,7 @@ vorbereiten, wie Sie mit möglichst wenig Ausfallzeit umschalten, wie Sie prüfe
 Nutzen Sie die Prüfungen des Installationsbuchs: Vergleichen Sie die Zeilenzahlen von `ezcontentobject`,
 `ezcontentobject_tree` und `ezcontentobject_attribute` mit der alten Website, melden Sie sich an, veröffentlichen Sie ein
 Testobjekt, laden Sie ein Bild hoch, führen Sie eine Suche aus
-([Datenbankunterstützung](../../../../en/us/help/database-support.md#moving-a-site-to-another-database)). Gehen Sie dann die
+([Datenbankunterstützung](../../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen)). Gehen Sie dann die
 [Checkliste für den Start](../checklisten/checkliste-fuer-den-start-einer-kunden-website.md) durch.
 
 ## Rückfall
@@ -130,4 +130,4 @@ sagen Sie das im Plan, und entscheiden Sie vorab, wie lange die Möglichkeit zum
 - [Eine Website zwischen Hostern umziehen](eine-website-zwischen-hostern-umziehen.md)
 - [Die Datenbank-Engine wechseln](die-datenbank-engine-einer-kunden-website-wechseln.md)
 - [Aus einem Backup wiederherstellen (Runbook)](../runbooks/aus-einem-backup-wiederherstellen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die Exponential Kollegen, Benutzergruppen, Klassen oder Freunden zeigen. Eine gute Demo
 zeigt zwei oder drei Dinge gut, auf einer Installation, die Sie kontrollieren, und endet damit, wohin die Menschen als
-Nächstes gehen können. Die Skripte Klick für Klick für 5, 15 und 45 Minuten stehen in [Demo-Skripte](../../../en/us/help/business/demo-scripts.md);
+Nächstes gehen können. Die Skripte Klick für Klick für 5, 15 und 45 Minuten stehen in [Demo-Skripte](../geschaeft/demo-drehbuecher.md);
 diese Seite passt sie an die Situation eines Fürsprechers an.
 
 ## Inhalt
@@ -44,12 +44,12 @@ Ein Befehl installiert eine vollständige Website auf SQLite
 Dann:
 
 - ändern Sie das erzeugte Administratorpasswort und löschen Sie `var/log/initial-admin-password`
-  ([Das Standardpasswort des Administrators](../../../en/us/help/default-administrator-password.md));
+  ([Das Standardpasswort des Administrators](../standard-administratorpasswort.md));
 - legen Sie ein Demo-Konto für die Redaktion mit der Rolle Editor an;
 - fügen Sie eine zweite Inhaltssprache hinzu (**Setup > Sprachen**);
 - legen Sie einen Ordner mit einigen erfundenen Inhalten an.
 
-Eine vollständige Checkliste steht in [Demo-Skripte, Vor jeder Demo](../../../en/us/help/business/demo-scripts.md#before-any-demo-the-setup-checklist).
+Eine vollständige Checkliste steht in [Demo-Skripte, Vor jeder Demo](../geschaeft/demo-drehbuecher.md#vor-jeder-demo-die-checkliste-zur-vorbereitung).
 
 ## Wählen Sie ein Ziel und einen Weg
 
@@ -85,8 +85,8 @@ Eine vollständige Checkliste steht in [Demo-Skripte, Vor jeder Demo](../../../e
 3. **Oberfläche**: Hebräisch oder Arabisch wählen; die Administration dreht sich um.
 4. Zurück zu Englisch.
 
-Quellen für das, was Sie sagen: [Der Layouts-Editor](../../../en/us/help/layouts-editor.md), [Sprachen](../../../en/us/help/languages.md),
-[Veröffentlichen, Versionen und der Papierkorb](../../../en/us/help/publishing-and-versions.md).
+Quellen für das, was Sie sagen: [Der Layouts-Editor](../layout-editor.md), [Sprachen](../sprachen.md),
+[Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md).
 
 ## Die Checkliste zur Vorbereitung
 
@@ -117,11 +117,11 @@ Ask and share:   share.exponential.earth/forums   t.me/exponentialcms
 
 Beantworten Sie dann Fragen. Wenn Sie etwas nicht wissen: „Ich suche die Quelle und veröffentliche sie.“
 
-**Demos, bei denen sich das Publikum anmeldet.** Lassen Sie sie im Demomodus laufen (`EXP_DEMO_MODE=1`): Das Administratorpasswort, das Sie zeigen, kann von Teilnehmenden nicht geändert werden. Bauen Sie die Installation danach neu auf oder installieren Sie neu, denn der Demomodus schützt nichts anderes. [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md), [Häufige Fragen zum Demomodus](../../../en/us/help/demo-mode-faq.md).
+**Demos, bei denen sich das Publikum anmeldet.** Lassen Sie sie im Demomodus laufen (`EXP_DEMO_MODE=1`): Das Administratorpasswort, das Sie zeigen, kann von Teilnehmenden nicht geändert werden. Bauen Sie die Installation danach neu auf oder installieren Sie neu, denn der Demomodus schützt nichts anderes. [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md), [Häufige Fragen zum Demomodus](../demomodus-faq.md).
 
 ## Verwandte Seiten
 
 - [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md)
 - [Skript für einen Lightning Talk](skript-lightning-talk.md)
-- [Demo-Skripte](../../../en/us/help/business/demo-scripts.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Demo-Skripte](../geschaeft/demo-drehbuecher.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

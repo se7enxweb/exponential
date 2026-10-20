@@ -294,4 +294,4 @@ eine Leerzeile, um einen zu behalten (siehe die Leerraumregel in [Fehler und Feh
 - [Attribute view gui](../../../en/us/help/designers/templates/attribute-view-gui.md)
 - [Ansichts-Templates von Datentypen](../../../en/us/help/designers/templates/datatype-view-templates.md)
 - [Datentypen mit Beispielen](../../../en/us/examples/datatypes/README.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

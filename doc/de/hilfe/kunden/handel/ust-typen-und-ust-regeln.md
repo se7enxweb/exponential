@@ -105,4 +105,4 @@ Die wiederkehrende Fassung dieser Prüfungen ist die [Mehrwertsteuer-Checkliste]
 - [USt-Regeln und USt-Typen für Unternehmen](../../../../en/us/help/businesses/stores/vat-rules-and-vat-types.md)
 - [Produkte, Preise und Mehrwertsteuer](../../../../en/us/help/creators/website-creators/products-prices-and-vat.md)
 - [Preise und Währungen](preise-und-waehrungen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

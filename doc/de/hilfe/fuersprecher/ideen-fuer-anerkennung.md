@@ -23,9 +23,9 @@ Fürsprecher umsetzen kann, und Vorschläge, die Sie in den Community-Tracker ei
 ## Was das Projekt bereits tut
 
 - Jeder Pull Request wird übernommen, und die Commits der Beitragenden bleiben so erhalten, wie sie sie geschrieben
-  haben, sodass ihre Namen in der Historie bleiben ([Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows)).
+  haben, sodass ihre Namen in der Historie bleiben ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)).
 - Beitragende und Unternehmen werden auf den Seiten zur Geschichte und unter
-  [Wer ist 7x?](../../../en/us/help/who-is-7x.md#contributors-and-friends-of-the-project) genannt.
+  [Wer ist 7x?](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) genannt.
 
 ## Ideen, die Sie heute umsetzen können
 
@@ -56,4 +56,4 @@ Bringen Sie diese als Vorschläge in den [Community-Tracker](https://github.com/
 - [Ihre Beiträge festhalten](ihre-beitraege-festhalten.md)
 - [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md)
 - [Die Stufen der Fürsprache](die-stufen-der-fuersprache.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -73058,6 +73058,126 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>לארגונים ולאנשים המפעילים אתר משלהם ב-Exponential: צוות, פרסום, מסחר, תחזוקה, צמיחה ושותפים.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>מדריך למשתמש</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>שאלה אחת בכל דף: מי רשאי לבצע, השלבים, מה עלול להשתבש והיכן לקרוא עוד.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>קובצי הפרויקט</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>קובץ פרויקט</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>קובץ זה הוא חלק מקוד המקור של Exponential ומופץ איתו תחת %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>הורדת DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>ספרים אלקטרוניים</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>נבנים מהנושאים ששוחררו בכל פעם שאחד מהם משוחרר, ונשמרים יחד עם הגרסאות הקודמות שלהם.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>קובץ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>גודל</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>עודכן</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>הורדת הכול כ-DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>נושאי עזרה שהבדיקה שלהם באיחור</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>תאריך הבדיקה עבר, או שהנושא נמצא בבדיקה יותר מ-%days ימים ללא שינוי.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>באיחור</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>פעולות</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>תאריך הבדיקה %date עבר לפני %days ימים</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>בבדיקה כבר %days ימים ללא שינוי</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>עריכה</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>הגדרת מצב</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>מוצגים %shown מתוך %count נושאים באיחור. ./console exp:help:content review מציג את כולם.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>לפני שמתחילים</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>שלבים</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>תוצאה</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>מה הלאה</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>תנאי</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>סיבה</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>פתרון</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>דף הבית של העזרה</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

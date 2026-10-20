@@ -62,7 +62,7 @@ zugleich Hoster und Partner ist, fassen Sie die beiden Spalten zusammen, behalte
 ## Die Fassung für Projektleitungen
 
 Der Bereich für Projektleitungen hat eine RACI-Matrix (verantwortlich, rechenschaftspflichtig, konsultiert, informiert)
-für ein ganzes Projekt ([Projektvorlagen](../../../../en/us/help/leadership/project-templates.md)). Verwenden Sie sie, während ein Aufbau
+für ein ganzes Projekt ([Projektvorlagen](../../fuehrung/projektvorlagen.md)). Verwenden Sie sie, während ein Aufbau
 oder eine Migration läuft; die obige Tabelle ist für die Jahre des Betriebs danach.
 
 ## Aktuell halten
@@ -78,4 +78,4 @@ oder eine Migration läuft; die obige Tabelle ist für die Jahre des Betriebs da
 - [Wann Sie wen anrufen](wann-sie-wen-anrufen.md)
 - [Verträge und SLAs](vertraege-und-slas.md)
 - [Sicherheitsgrundlagen](../gesund-halten/sicherheitsgrundlagen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

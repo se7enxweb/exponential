@@ -91,7 +91,7 @@ exponential/6.0/6.0.15/
 | Regel | Warum |
 |---|---|
 | Dateiname = `<package name>.ezpkg`, der Name genau wie in `<name>` von `package.xml` | Der Index zeigt auf die Datei, und der Importer weist einen Namen ab, der nicht aus Kleinbuchstaben, Ziffern und `_` besteht ([Pflichtfelder in package.xml](anforderungen/pflichtfelder-in-package-xml.md)) |
-| Ein eigener Name, nie einer, der existiert | Ein Import weist ein Paket ab, dessen Name bereits in irgendeinem Repository der Website steht ([Anleitung zu Paketen](../../../en/us/guides/packages.md#6-uploading-a-package)) |
+| Ein eigener Name, nie einer, der existiert | Ein Import weist ein Paket ab, dessen Name bereits in irgendeinem Repository der Website steht ([Anleitung zu Paketen](../../anleitungen/pakete.md#6-ein-paket-hochladen)) |
 | Vorschaubild in `thumbnails/<package name>.png` | Dasselbe Muster, das jedes vorhandene Seitenpaket nutzt (`thumbnail_url` in `index.xml`) |
 | Pakete, die Ihr Seitenpaket verlangt, liegen ebenfalls auf dem Server | Der Assistent lädt jedes verlangte Paket aus demselben Index herunter ([Abhängigkeiten und die Installationsreihenfolge](grundlagen/abhaengigkeiten-und-die-installationsreihenfolge.md)) |
 | Nur gebaute Archive, keine Quellordner | Der Server liefert Dateien aus; die Quelle gehört in Ihr eigenes Repository |
@@ -160,7 +160,7 @@ Kurz gefasst, bevor Sie den Pull Request öffnen:
   Exponential selbst unter GPL 2.0 oder neuer steht. Der Standard des Paketassistenten ist `GPL-2.0-or-later`
   (`package.ini [LicenseSettings] DefaultLicense`). Siehe [GPL für Theme-Code](../../../en/us/help/designers/distribution/gpl-for-theme-code.md).
 - **Dokumentation**, die mit dem Paket ausgeliefert wird (README, Anleitungen): die GNU Free Documentation License 1.3, wie für die eigene
-  Dokumentation von Exponential ([Freie Dokumentation](../../../en/us/help/free-documentation.md),
+  Dokumentation von Exponential ([Freie Dokumentation](../freie-dokumentation.md),
   [GFDL für Theme-Dokumentation](../../../en/us/help/designers/distribution/gfdl-for-theme-documentation.md)).
 - **Bilder und Demo-Inhalte**: nur Material, das Sie teilen dürfen, mit angegebener Lizenz. Creative-Commons-Lizenzen stehen in der Liste
   des Assistenten ([Creative Commons für Bilder](../../../en/us/help/designers/distribution/creative-commons-for-images.md)).
@@ -217,7 +217,7 @@ Website zur Installationsversion hinzufügte, 31.12.2023) lief genau so. Nach de
 Server neu, und jede Installation, die den Index dieses Release liest, sieht Ihr Paket.
 
 Fragen zu einem Paket, bevor Sie einen Pull Request öffnen, sind in den Issue-Trackern des Projekts willkommen; siehe
-[Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md), wo welcher Tracker liegt.
+[Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md), wo welcher Tracker liegt.
 
 ## Verwandte Seiten
 
@@ -226,4 +226,4 @@ Fragen zu einem Paket, bevor Sie einen Pull Request öffnen, sind in den Issue-T
 - [Der Paketserver](paketserver/README.md)
 - [Anforderungen an die Dokumentation von Seitenpaketen](anforderungen/README.md)
 - [Wählen, wo Sie veröffentlichen](../../../en/us/help/designers/distribution/choosing-where-to-publish.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

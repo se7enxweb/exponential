@@ -33,13 +33,13 @@ dem Rechner, den Sie zeigen, nichts Geheimes liegt.
 - Die Website eines Kunden oder Arbeitgebers, es sei denn, er hat schriftlich zugestimmt.
 - Andere Browser-Tabs, Chat-Benachrichtigungen, E-Mail-Vorschauen, die Lesezeichenleiste.
 
-Die Demo-Skripte enthalten dieselbe Warnung ([Demo-Skripte](../../../en/us/help/business/demo-scripts.md#the-checklist-one-day-before)).
+Die Demo-Skripte enthalten dieselbe Warnung ([Demo-Skripte](../geschaeft/demo-drehbuecher.md#die-checkliste-einen-tag-vorher)).
 
 ## Eine saubere Demo-Installation vorbereiten
 
 1. Installieren Sie eine frische Kopie mit erfundenen Inhalten ([Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md)).
 2. Ändern Sie das erzeugte Passwort; löschen Sie `var/log/initial-admin-password`
-   ([Das Standardpasswort des Administrators](../../../en/us/help/default-administrator-password.md)).
+   ([Das Standardpasswort des Administrators](../standard-administratorpasswort.md)).
 3. Legen Sie Demo-Konten mit erfundenen Namen an (zum Beispiel „Demo Redakteur“), nie für echte Menschen.
 4. Verwenden Sie erfundene Beispielinhalte. Kopieren Sie keine echten Artikel, Kundendaten oder privaten Texte.
 5. Wenn Sie Exponential Intelligence zeigen, verwenden Sie einen Schlüssel mit niedrigem Ausgabenlimit, den Sie danach
@@ -48,7 +48,7 @@ Die Demo-Skripte enthalten dieselbe Warnung ([Demo-Skripte](../../../en/us/help/
 7. Wenn sich das Publikum selbst mit einer Anmeldung, die Sie auf dem Bildschirm zeigen, an der Demo anmeldet, betreiben
    Sie sie als öffentliche Demo mit der Umgebungsvariablen `EXP_DEMO_MODE=1`: Dann kann während der Sitzung niemand das
    Administratorpasswort ändern oder zurücksetzen, und ein Banner **Demo-Modus** sagt das auf jeder Seite. Er schützt nur
-   das Administratorpasswort; installieren Sie die Demo danach also neu ([Demomodus](../../../en/us/help/demo-mode.md)).
+   das Administratorpasswort; installieren Sie die Demo danach also neu ([Demomodus](../demomodus.md)).
 
 ## Den Rechner vorbereiten
 
@@ -94,11 +94,11 @@ Nehmen Sie nie an, „das hat niemand bemerkt“. Aufzeichnungen und Screenshots
 | Ein Entwurf aus einem früheren Durchlauf ist im Weg | **Dashboard > Meine Entwürfe**, verwerfen Sie ihn |
 | Sie haben vergessen, was als Nächstes kommt | Halten Sie das Skript auf einer gedruckten Karte bereit |
 
-Weitere Wege der Wiederherstellung: [Demo-Skripte, Was schiefgehen kann](../../../en/us/help/business/demo-scripts.md#what-can-go-wrong-and-how-to-recover).
+Weitere Wege der Wiederherstellung: [Demo-Skripte, Was schiefgehen kann](../geschaeft/demo-drehbuecher.md#was-schiefgehen-kann-und-wie-sie-die-lage-retten).
 
 ## Verwandte Seiten
 
 - [Demos als Fürsprecher zeigen](demos-zeigen.md)
 - [Einen Screencast aufnehmen](einen-screencast-aufnehmen.md)
 - [Die Privatsphäre von Menschen schützen](privatsphaere-schuetzen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

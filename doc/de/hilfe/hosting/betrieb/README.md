@@ -95,7 +95,7 @@ Kernel (die Befehle liegen in `kernel/private/classes/commands/`).
 `./console` ist die Abkürzung für `bin/php/console` im Wurzelverzeichnis der Installation. Führen Sie jeden Befehl als
 eigenen Systembenutzer der Website aus; als `root` verweigern die Skripte den Start, sofern nicht `--allow-root-user`
 hinzugefügt wird, und die Dateien, die sie anlegen, gehören dann `root`
-([Kapitel 11](../../../../en/us/install/11-upgrading.md#111-before-you-start)).
+([Kapitel 11](../../../installation/11-aktualisieren.md#111-bevor-sie-beginnen)).
 
 > **Tipp**
 > `./console list` gibt jeden Befehl der Installation mit einer einzeiligen Beschreibung aus. Auf einem Host mit vielen
@@ -112,15 +112,15 @@ hinzugefügt wird, und die Dateien, die sie anlegen, gehören dann `root`
 | ein Angebot mit mehreren Servern zu gestalten | [Mehrere Web-Knoten](mehrere-web-knoten.md), [Clustering und gemeinsamer Speicher](clustering-und-gemeinsamer-speicher.md) |
 
 Das Installationsbuch behandelt dasselbe Gebiet für eine einzelne Website ausführlicher: Kapitel 10,
-[Nach der Installation](../../../../en/us/install/10-after-installing.md), und Kapitel 12,
-[Fehlersuche](../../../../en/us/install/12-troubleshooting.md). Die Anleitung
-[Eine Website betreiben](../../../../en/us/guides/operating-a-site.md) ist die Kurzfassung für einen Website-Administrator.
+[Nach der Installation](../../../installation/10-nach-der-installation.md), und Kapitel 12,
+[Fehlersuche](../../../installation/12-fehlerbehebung.md). Die Anleitung
+[Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md) ist die Kurzfassung für einen Website-Administrator.
 
 ## Verwandte Seiten
 
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
 - [Grundlagen des Hostings](../grundlagen/README.md), [Sicherheit](../sicherheit/README.md), [Leistung](../leistung/README.md)
 - [Checklisten](../checklisten/README.md) und [Runbooks](../runbooks/README.md)
-- [Eine Website betreiben](../../../../en/us/guides/operating-a-site.md) (Anleitung)
-- [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md) (Anleitung)
+- [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

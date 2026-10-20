@@ -46,12 +46,12 @@ Aus [Besucherstatistik und Analyse](../../../../en/us/help/creators/website-crea
 | Prüfprotokoll | wer in der Administration was geändert hat | [Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md) |
 
 Diese Quellen beantworten Fragen des Betriebs; sie ersetzen keinen Analysedienst (dieselbe Quelle). Die Seite für
-Projektleitungen [Ein Projekt messen: Kennzahlen](../../../../en/us/help/leadership/kpis-from-logs-and-audit.md) listet weitere Zahlen,
+Projektleitungen [Ein Projekt messen: Kennzahlen](../../fuehrung/kennzahlen-aus-logs-und-audit.md) listet weitere Zahlen,
 die das Produkt liefert, jeweils mit der Seite oder dem Befehl, und eine Vorlage für einen Monatsbericht.
 
 > **Hinweis**
 > Das Lesen des Prüfprotokolls erfordert `audit/read`; auf einer neuen Installation hat nur Administrator diese
-> Richtlinie ([Ein Projekt messen: Kennzahlen](../../../../en/us/help/leadership/kpis-from-logs-and-audit.md)). Eine Berichtsrolle,
+> Richtlinie ([Ein Projekt messen: Kennzahlen](../../fuehrung/kennzahlen-aus-logs-und-audit.md)). Eine Berichtsrolle,
 > beschränkt auf die Kanäle, die Sie brauchen, lässt sich ohne das Recht anlegen, etwas zu ändern.
 
 ## Einen Analysedienst hinzufügen
@@ -90,11 +90,11 @@ One thing we change next month: __________________________________________
 ```
 
 Vergleichen Sie jede Zahl mit demselben Monat davor; die erste Messung ist Ihr Ausgangswert
-([Ein Projekt messen: Kennzahlen](../../../../en/us/help/leadership/kpis-from-logs-and-audit.md)).
+([Ein Projekt messen: Kennzahlen](../../fuehrung/kennzahlen-aus-logs-und-audit.md)).
 
 ## Verwandte Seiten
 
 - [Website-Suche und wonach Besucher suchen](website-suche-und-wonach-besucher-suchen.md)
 - [Besucherstatistik und Analyse](../../../../en/us/help/creators/website-creators/statistics-and-analytics.md)
 - [Shop-Dashboard und Berichte](../../../../en/us/help/businesses/stores/store-dashboard-and-reports.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

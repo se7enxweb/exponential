@@ -146,4 +146,4 @@ jeder Lauf mit einem leeren Paket beginnt.
 - [Das JSON-Paketformat](../../../../en/us/bc/6.0/package-json-format.md)
 - [Klassen und Inhalte ändern](klassen-und-inhalte-aendern.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

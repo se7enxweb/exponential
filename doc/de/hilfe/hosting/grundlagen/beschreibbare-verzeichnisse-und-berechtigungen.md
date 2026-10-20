@@ -15,8 +15,8 @@ Benutzer beteiligt sind, welche Dateimodi Sie statt der mitgelieferten, für all
 eine Website reparieren, die ein root-Befehl beschädigt hat. Probleme mit Berechtigungen gehören bei jeder
 PHP-Anwendung zu den häufigsten Support-Fällen; bei Exponential entstehen sie fast immer dadurch, dass zwei Benutzer
 dieselben Dateien schreiben. Quellen:
-[Kapitel 8.7](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership) und
-[Kapitel 13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership).
+[Kapitel 8.7](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer) und
+[Kapitel 13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer).
 
 ## Inhalt
 
@@ -45,7 +45,7 @@ Der kritische Test `directory_permissions` des Setup-Assistenten prüft die List
 
 Alles andere (`kernel/`, `lib/`, `vendor/`, `index.php`) muss nur lesbar sein. Ein Code-Baum, den das PHP der Website
 nicht ändern kann, ist ein starker Schutz: Eine Schwachstelle in einer Erweiterung kann dann keinen Code einschleusen
-([Kapitel 13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership)).
+([Kapitel 13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)).
 
 > **Tipp**
 > Websites, die aus der Versionsverwaltung ausgerollt werden, können ihre Einstellungen mit
@@ -67,7 +67,7 @@ und die Website versagt an seltsamen Stellen.
 
 ## Einrichtung 1: ein Benutzer
 
-Die empfohlene Einrichtung ([Kapitel 8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)):
+Die empfohlene Einrichtung ([Kapitel 8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)):
 **Führen Sie alles als Benutzer der Website aus.**
 
 - PHP-FPM-Pool: `user = <customer>`.
@@ -143,7 +143,7 @@ find settings extension/*/settings -perm -o+w
 ```
 
 Es darf nichts ausgeben. Stellen Sie sicher, dass der Webserver diese Dateien nie ausliefert
-([Kapitel 13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)).
+([Kapitel 13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)).
 
 ## Die eigenen Dateien von Velocity
 
@@ -155,7 +155,7 @@ Es darf nichts ausgeben. Stellen Sie sicher, dass der Webserver diese Dateien ni
 | `var/cache/qbix-reverse/` | dem Server, für die Worker | `[CacheSettings] FileMode` `0640`, `DirMode` `0750` |
 
 Der Benutzer der Worker muss den Quellcode der Engine in `vendor/` lesen können
-([Kapitel 8.7.3](../../../../en/us/install/08-serving-the-site.md#873-velocitys-own-files)).
+([Kapitel 8.7.3](../../../installation/08-die-website-ausliefern.md#873-die-eigenen-dateien-von-velocity)).
 
 ## Eine Website reparieren
 
@@ -182,9 +182,9 @@ beschreibbar.
 
 ## Verwandte Seiten
 
-- [Kapitel 8.7: Dateiberechtigungen und Eigentum](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership)
-- [Kapitel 13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership)
+- [Kapitel 8.7: Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)
+- [Kapitel 13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)
 - [Trennung von Mandanten](../sicherheit/trennung-von-mandanten.md)
 - [Aufbau des Speichers](../betrieb/aufbau-des-speichers.md)
-- [Sicherheitshärtung](../../../../en/us/help/security-hardening.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Sicherheitshärtung](../../sicherheitshaertung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

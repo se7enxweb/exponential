@@ -128,4 +128,4 @@ Beide Listen der Einstellungen in `package.xml` haben dieselbe Form: `ini-site.p
 - [Das Skript des Multisite-Installers von sevenx_multisite](../sevenx-multisite/das-skript-des-multisite-installers.md)
 - [Seitenpakete und die mitgelieferten Themes](../../../../en/us/help/creators/website-creators/site-packages-and-shipped-themes.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -15,7 +15,7 @@ bedeutet, wie der Klassifizierer abgestimmt wird, was er nicht tut (er blockiert
 in Ihre eigene Überwachung bekommen.
 
 Die Details stehen in [Anfrage-Logs](../../../../en/us/features/6.0/request-logs.md), [Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md)
-und [Sicherheitshärtung: beobachten](../../../../en/us/help/security-hardening.md#watching-logs-the-request-classifier-and-the-audit-trail).
+und [Sicherheitshärtung: beobachten](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll).
 
 ## Inhalt
 
@@ -39,7 +39,7 @@ und [Sicherheitshärtung: beobachten](../../../../en/us/help/security-hardening.
 | `error.log`, die Logs des Webservers | Fehler mit einer Referenz-ID | **Setup > Logdateien** |
 | das Log von request-shield | seine Entscheidungen, wenn der Schutz installiert ist | seine eigene Live-Ansicht |
 
-Quelle: [Sicherheitshärtung](../../../../en/us/help/security-hardening.md#watching-logs-the-request-classifier-and-the-audit-trail).
+Quelle: [Sicherheitshärtung](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll).
 
 ## security.log: der Request-Klassifizierer
 
@@ -89,7 +89,7 @@ Nichts wird blockiert. Der Klassifizierer stuft nur ein: Die Anfrage bekommt die
 gehört zu:
 
 - **einem Schutz vor dem Kernel**, request-shield, der läuft, bevor Exponential startet, und eine Anfrage in seinem eigenen Log
-  ablehnen oder festhalten kann ([Ein Schutz davor](../../../../en/us/help/security-hardening.md#a-shield-in-front-request-shield),
+  ablehnen oder festhalten kann ([Ein Schutz davor](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield),
   [request-shield und Request-Regeln](../sicherheit/request-shield-und-request-regeln.md));
 - **dem Webserver oder einer Firewall** des Hosters;
 - **einem Listener**, der in `[ClassifierSettings] Listeners[]` registriert ist (eine Klasse, die
@@ -134,7 +134,7 @@ steht auf [Prüfprotokoll](../sicherheit/pruefprotokoll.md).
 
 ## Eine wöchentliche Routine
 
-Aus der eigenen Checkliste des Projekts ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md#watching-logs-the-request-classifier-and-the-audit-trail)):
+Aus der eigenen Checkliste des Projekts ([Sicherheitshärtung](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll)):
 
 1. Führen Sie die Cronjob-Gruppe `frequent` aus, damit die Alarmregeln des Audits laufen, und prüfen Sie, wer Alarm-Mails erhält
    (`./console exp:audit alerts recipients`).
@@ -159,5 +159,5 @@ Aus der eigenen Checkliste des Projekts ([Sicherheitshärtung](../../../../en/us
 - [Log-Viewer und Log-Rotation](log-viewer-und-log-rotation.md)
 - [Härtung für Hoster](../sicherheit/haertung-fuer-hoster.md)
 - [Kompromittierte Website](../runbooks/kompromittierte-website.md) (Runbook)
-- [Sicherheitshärtung](../../../../en/us/help/security-hardening.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Sicherheitshärtung](../../sicherheitshaertung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

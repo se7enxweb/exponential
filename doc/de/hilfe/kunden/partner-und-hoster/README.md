@@ -15,7 +15,7 @@ Betreibers gut mit ihnen zusammenzuarbeiten: klare Rollen, faire Verträge, reib
 Überprüfung jedes Jahr.
 
 Exponential ist freie Software unter der GPL. Niemand ist Ihr vorgeschriebener Lieferant, und Sie können jederzeit zu
-einem anderen Hoster oder Partner wechseln ([Lizenzierung für Käufer erklärt](../../../../en/us/help/business/licensing-for-buyers.md)).
+einem anderen Hoster oder Partner wechseln ([Lizenzierung für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md)).
 Diese Seiten helfen Ihnen, diese Freiheit wirklich zu erhalten.
 
 ## Die Seiten in diesem Ordner
@@ -54,4 +54,4 @@ Diese Seiten helfen Ihnen, diese Freiheit wirklich zu erhalten.
 - [Hosting, Partner und Support auswählen (für Unternehmen)](../../../../en/us/help/businesses/choosing/README.md)
 - [Hosting-Anbieter: hier beginnen](../../hosting/hosting-anbieter-hier-beginnen.md)
 - [Partner: hier beginnen](../../partner/partner-hier-beginnen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

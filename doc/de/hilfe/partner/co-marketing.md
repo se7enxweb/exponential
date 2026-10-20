@@ -39,7 +39,7 @@ bevor Sie ein Budget darauf aufbauen.
 
 ## Regeln für gemeinsame Botschaften
 
-- Jede Aussage hat eine Quelle; keine erfundenen Zahlen ([Vertrieb und Marketing: hier beginnen](../../../en/us/help/business/sales-and-marketing-start-here.md#the-ground-rules)).
+- Jede Aussage hat eine Quelle; keine erfundenen Zahlen ([Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md#die-grundregeln)).
 - Nennen Sie alle korrekt ([Namens- und Markenregeln für Partner](namens-und-markenregeln.md)).
 - Gemeinsames Material wird vor der Veröffentlichung von beiden Seiten schriftlich freigegeben.
 - Kunden werden nur mit ihrer schriftlichen Erlaubnis genannt.
@@ -54,5 +54,5 @@ die Sie selbst messen können, ohne mehr personenbezogene Daten als nötig zu er
 
 - [Checkliste für Co-Marketing-Kampagnen](checkliste-fuer-co-marketing-kampagnen.md)
 - [Pressemitteilungen und Ankündigungen](pressemitteilungen-und-ankuendigungen.md)
-- [Fallstudien und Content-Marketing](../../../en/us/help/business/case-studies-and-content-marketing.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Fallstudien und Content-Marketing](../geschaeft/fallstudien-und-content-marketing.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

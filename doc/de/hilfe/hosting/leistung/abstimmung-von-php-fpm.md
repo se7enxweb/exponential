@@ -27,14 +27,14 @@ die Schlüssel stehen in der Referenz von PHP zur [Konfiguration von FPM](https:
 
 ## Ein Pool pro Website
 
-Ein Pool führt PHP als Benutzer der Website aus ([Kapitel 8, PHP-FPM](../../../../en/us/install/08-serving-the-site.md#852-php-fpm)). Für einen
+Ein Pool führt PHP als Benutzer der Website aus ([Kapitel 8, PHP-FPM](../../../installation/08-die-website-ausliefern.md#852-php-fpm)). Für einen
 Hoster ist das die Einheit der Abschottung und der Abstimmung: ein Pool pro Kunden-Website, der als Benutzer dieses Kunden läuft, mit
 eigenen PHP-Werten. Panels wie Plesk legen einen Pool pro Domain an (`/opt/plesk/php/<version>/etc/php-fpm.d/<domain>.conf`). Siehe
 [Benutzer und Pools pro Kunde](../sicherheit/benutzer-und-pools-pro-kunde.md).
 
 ## PHP-Werte pro Pool
 
-Aus [Kapitel 2, php.ini-Einstellungen](../../../../en/us/install/02-requirements.md#25-phpini-settings) und Kapitel 8; setzen Sie sie in den
+Aus [Kapitel 2, php.ini-Einstellungen](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini) und Kapitel 8; setzen Sie sie in den
 `php_admin_value`-Zeilen des Pools oder in der `php.ini` des Pools:
 
 | Einstellung | Wert | Quelle |
@@ -64,7 +64,7 @@ variables_order = "EGPCS"
 
 Die Werte über den Mindestwerten sind Vorschläge, keine Anforderungen. Das Web-PHP und das PHP der Kommandozeile lesen verschiedene
 Dateien; eine Änderung, die „nicht wirkt“, ist meist eine Änderung an der Datei, die das andere PHP liest
-([Kapitel 2](../../../../en/us/install/02-requirements.md#25-phpini-settings)).
+([Kapitel 2](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)).
 
 ## Zeitlimits, die zusammenpassen müssen
 
@@ -73,7 +73,7 @@ Dateien; eine Änderung, die „nicht wirkt“, ist meist eine Änderung an der 
 | `max_execution_time` | PHP | der eigene Zeitgeber des Skripts |
 | `request_terminate_timeout` | der FPM-Pool | vom FPM-Master durchgesetzt, was auch immer das Skript tut; die echte Grenze in Echtzeit unter FPM |
 | `SQLiteTransactionWait` | `site.ini [DatabaseSettings]`, Standard 25 s | unter dem Zeitlimit der Anfrage halten und beide gemeinsam erhöhen ([SQLite-Transaktionen](../../../../en/us/bc/6.0/sqlite-transactions.md)) |
-| der Setup-Assistent auf MongoDB | — | der Konfigurationsschritt kann ein bis drei Minuten dauern; erhöhen Sie `request_terminate_timeout` oder nutzen Sie die Konsole ([Datenbankunterstützung](../../../../en/us/help/database-support.md)) |
+| der Setup-Assistent auf MongoDB | — | der Konfigurationsschritt kann ein bis drei Minuten dauern; erhöhen Sie `request_terminate_timeout` oder nutzen Sie die Konsole ([Datenbankunterstützung](../../datenbankunterstuetzung.md)) |
 
 > **Tipp**
 > Lange Jobs gehören auf die Kommandozeile, wo das PHP der Kommandozeile standardmäßig keine Ausführungsgrenze hat: Installationen mit
@@ -153,4 +153,4 @@ Die Quellen nennen keine Anzahl von Kindern für PHP-FPM; sie geben eine Methode
 - [PHP-Einstellungen für Exponential](../grundlagen/php-einstellungen-fuer-exponential.md)
 - [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md)
 - [SQL-Abfrage-Cache](../../../../en/us/bc/6.0/sql-query-cache.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

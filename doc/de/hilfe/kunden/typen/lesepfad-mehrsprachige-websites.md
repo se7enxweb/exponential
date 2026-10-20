@@ -17,9 +17,9 @@ Lesepfad des Typs Ihrer Website (Nachrichtenredaktion, Shop, Intranet ...). Jede
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 1 | [Mehrsprachige Websites: hier beginnen](mehrsprachige-websites-hier-beginnen.md) | Alle | Die vier Entscheidungen |
-| 2 | [Sprachen](../../../../en/us/help/languages.md) | Übersetzer, Redaktion | Übersetzungen ansehen und hinzufügen |
-| 3 | [Inhalte bearbeiten](../../../../en/us/help/editing-content.md) | Übersetzer | Das Bearbeitungsformular |
-| 4 | [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md) | Übersetzer | Eine Übersetzung veröffentlichen, zurückgehen |
+| 2 | [Sprachen](../../sprachen.md) | Übersetzer, Redaktion | Übersetzungen ansehen und hinzufügen |
+| 3 | [Inhalte bearbeiten](../../inhalte-bearbeiten.md) | Übersetzer | Das Bearbeitungsformular |
+| 4 | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) | Übersetzer | Eine Übersetzung veröffentlichen, zurückgehen |
 | 5 | [Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md) | Website-Betreiber | Die Rechte der Übersetzer |
 
 ## Der erste Monat: die Routine
@@ -27,7 +27,7 @@ Lesepfad des Typs Ihrer Website (Nachrichtenredaktion, Shop, Intranet ...). Jede
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 6 | [Übersetzungsroutine](../alltag/uebersetzungsroutine.md) | Übersetzungskoordination | Bemerken, was sich geändert hat |
-| 7 | [Inhaltssprachen](../../../../en/us/guides/content-languages.md) | Website-Betreiber, Administrator | Wie Sprachen eingerichtet werden |
+| 7 | [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) | Website-Betreiber, Administrator | Wie Sprachen eingerichtet werden |
 | 8 | [Übersetzungs-Workflow (Unternehmen)](../../../../en/us/help/businesses/multilingual/translation-workflow.md) | Übersetzungskoordination | Stufen einer Übersetzung |
 | 9 | [Währungen, Datums- und Zahlenformate](../../../../en/us/help/businesses/multilingual/currencies-dates-and-formats.md) | Website-Betreiber | Formate pro Land |
 | 10 | [SEO-Prüfungen](../alltag/seo-pruefungen.md) | Redaktion in jeder Sprache | Titel und Zusammenfassungen in jeder Sprache |
@@ -54,4 +54,4 @@ wöchentliche Routine.
 - [Mehrsprachige Websites: hier beginnen](mehrsprachige-websites-hier-beginnen.md)
 - [Betreiber mehrerer Websites: hier beginnen](mehrere-websites-hier-beginnen.md)
 - [Lesepfad für Kunden](../lesepfad-fuer-kunden.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

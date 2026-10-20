@@ -40,7 +40,7 @@ Regeln, die für einen Hoster zählen, aus `SECURITY.md` und den Release-Regeln:
   diesen Versionen brauchen eine Migration ([Kunden migrieren](../migrationen/README.md)).
 - **Versionsnummern zählen in der letzten Stelle weiter.** Nach `.9` kommt `.10`; sortieren Sie Versionen mit
   `git tag -l --sort=version:refname` oder `sort -V`, nicht nach Namen
-  ([Wer ist die Exponential Foundation?](../../../../en/us/help/who-is-the-exponential-foundation.md#releases-and-version-numbers)).
+  ([Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#releases-und-versionsnummern)).
 
 ```bash
 # list the newest kernel tags in version order
@@ -49,7 +49,7 @@ git ls-remote --tags https://github.com/se7enxweb/exponential.git | awk '{print 
 
 ## Fehler melden
 
-Folgen Sie [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md): Dort steht, welcher Tracker passt (Software,
+Folgen Sie [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md): Dort steht, welcher Tracker passt (Software,
 Projekt oder Community) und was eine gute Meldung enthält. Als Hoster geben Sie an:
 
 - die Version und die PHP-Version;
@@ -69,9 +69,9 @@ Daten weg. Details: [Sicherheitsupdates und Offenlegung](../sicherheit/sicherhei
 Eine Korrektur, die Sie nur auf Ihren Servern behalten, müssen Sie bei jedem Update erneut anwenden. Eine Korrektur, die im
 Projekt gemergt wird, pflegt das Projekt. Die Praxis des Projekts: Jeder Pull Request wird gemergt, und die Commits der
 Mitwirkenden bleiben erhalten
-([Mitwirkende und Pull Requests](../../../../en/us/help/who-is-the-exponential-foundation.md#contributors-and-pull-requests)).
+([Mitwirkende und Pull Requests](../../wer-ist-die-exponential-foundation.md#mitwirkende-und-pull-requests)).
 
-1. Forken Sie das Repository und legen Sie einen Branch an ([Mit Git entwickeln](../../../../en/us/help/develop-with-git.md)).
+1. Forken Sie das Repository und legen Sie einen Branch an ([Mit Git entwickeln](../../mit-git-entwickeln.md)).
 2. Nehmen Sie die Korrektur vor, wo möglich mit einem Test.
 3. Öffnen Sie einen Pull Request, der das Problem erklärt und wie Sie die Korrektur geprüft haben.
 4. Code wird unter der GPL v2 oder später beigetragen (`CONTRIBUTING.md`).
@@ -83,14 +83,14 @@ Mitwirkenden bleiben erhalten
 ## Sponsern
 
 Sowohl 7x als auch die Foundation nehmen Sponsoring an; die Links stehen auf
-[Wie Sie unterstützen oder mitmachen](../../../../en/us/help/who-is-the-exponential-foundation.md#how-to-support-or-join). Ein Hoster, der
+[Wie Sie unterstützen oder mitmachen](../../wer-ist-die-exponential-foundation.md#unterstützen-oder-mitmachen). Ein Hoster, der
 mit Exponential Geld verdient, hat ein direktes Interesse an einem gut finanzierten Projekt: Neue Funktionen, Dokumentation,
 Erweiterungen und Sicherheitsarbeit halten seine Kunden auf der Plattform.
 
 ## Dienste einkaufen
 
 7x verkauft Support- und Wartungsverträge für bestehende Websites, Migrationen, Entwicklung und Schulungen; Preise und
-Bedingungen stehen auf der Website von 7x, nicht hier ([Wer ist 7x?](../../../../en/us/help/who-is-7x.md#services-and-hosting)). Andere
+Bedingungen stehen auf der Website von 7x, nicht hier ([Wer ist 7x?](../../wer-ist-7x.md#dienstleistungen-und-hosting)). Andere
 Unternehmen bieten vielleicht dieselben Dienste an. Typische Gründe für einen Hoster, Hilfe einzukaufen:
 
 - die Migration eines Kunden von einer alten Hauptversion;
@@ -102,4 +102,4 @@ Unternehmen bieten vielleicht dieselben Dienste an. Typische Gründe für einen 
 - [Partnerprogramme für Hoster](partnerprogramme-fuer-hoster.md)
 - [Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)
 - [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

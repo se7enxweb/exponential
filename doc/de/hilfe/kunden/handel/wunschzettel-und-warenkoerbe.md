@@ -48,7 +48,7 @@ BasketViewName`; `/shop/basket/` funktioniert für alte Links weiterhin
 
 Alte Warenkörbe werden vom Cronjob `basket_cleanup.php` entfernt, der im seltenen Teil der ausgelieferten
 `settings/cronjob.ini` steht. `site.ini [Session] BasketCleanup=cronjob` ist die ausgelieferte Einstellung, die
-Bereinigung findet also nur statt, wenn die Cronjobs laufen ([Cronjobs](../../../../en/us/guides/cronjobs.md)).
+Bereinigung findet also nur statt, wenn die Cronjobs laufen ([Cronjobs](../../../anleitungen/cronjobs.md)).
 
 - [ ] Fragen Sie Ihren Hoster, ob der seltene Cronjob-Teil läuft, und wie oft.
 - [ ] Wenn die „Nächsten Schritte“ des Dashboards vor der Warenkorb-Bereinigung und in Sitzungen gespeicherten
@@ -82,4 +82,4 @@ Berücksichtigen Sie sie, wenn Sie die Daten Ihres Shops in Ihrer Datenschutzerk
 - [Rabatte und Wunschzettel für Unternehmen](../../../../en/us/help/businesses/stores/discounts-and-wishlists.md)
 - [Shop-Berichte](shop-berichte.md)
 - [Warenkorb, Kasse und Bestellungen](../../../../en/us/help/creators/website-creators/basket-checkout-and-orders.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

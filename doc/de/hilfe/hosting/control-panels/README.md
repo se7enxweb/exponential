@@ -52,19 +52,19 @@ Zurück zu [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.m
 | ISPConfig | nicht eingestuft | in den Quellen nicht erwähnt |
 | Webmin | nicht eingestuft | in den Quellen nicht erwähnt |
 
-Quelle: [Betriebssystemunterstützung](../../../../en/us/help/os-support.md) (Stufen 1 bis 3 und „Container, Cloud und Hosting-Panels“).
+Quelle: [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) (Stufen 1 bis 3 und „Container, Cloud und Hosting-Panels“).
 Stufe 3 ist eine begründete Erwartung, kein Testergebnis; ein Panel, das nicht eingestuft ist, hat überhaupt keine Aussage. Planen
 Sie eine Testinstallation, bevor Sie eines davon anbieten.
 
 ## Was jedes Panel bereitstellen muss
 
-Welches Panel auch immer: Eine Exponential-Website braucht ([Kapitel 2](../../../../en/us/install/02-requirements.md)):
+Welches Panel auch immer: Eine Exponential-Website braucht ([Kapitel 2](../../../installation/02-voraussetzungen.md)):
 
 | Bedarf | In der Sprache eines Panels |
 |---|---|
 | PHP 8.0 oder später (8.1 für Velocity) mit den erforderlichen Erweiterungen | die PHP-Auswahl und die Schalter für Erweiterungen des Panels, für die Website und für ihre Kommandozeile |
 | `php.ini`: `memory_limit` 64M oder mehr, `max_execution_time` 30 oder mehr, `date.timezone`, `file_uploads`, `allow_url_fopen` | die PHP-Einstellungen pro Website im Panel |
-| Rewrite-Regeln: nur aufgeführte Asset-Pfade als Dateien ausgeliefert, alles andere an `index.php` | `.htaccess` aus `.htaccess_root` unter Apache oder LiteSpeed; für nginx der abgeleitete Server-Block ([8.6](../../../../en/us/install/08-serving-the-site.md#86-nginx-with-php-fpm)) |
+| Rewrite-Regeln: nur aufgeführte Asset-Pfade als Dateien ausgeliefert, alles andere an `index.php` | `.htaccess` aus `.htaccess_root` unter Apache oder LiteSpeed; für nginx der abgeleitete Server-Block ([8.6](../../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm)) |
 | Der Document Root im Wurzelverzeichnis der Installation | die Einstellung des Panels für den Document Root der Domain |
 | Eine Datenbank der sechs, in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard, kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich | die Datenbankseite des Panels, oder nichts für SQLite |
 | Beschreibbare `var/` und `settings/` für den Benutzer der Website | der eigene Benutzer des Kontos |
@@ -75,11 +75,11 @@ Welches Panel auch immer: Eine Exponential-Website braucht ([Kapitel 2](../../..
 
 Panels verwalten Apache oder nginx und ihre PHP-FPM-Pools. Velocity ist ein getrennter, lang laufender Prozess; auf einem Server
 mit Panel läuft es daher **neben** dem Webserver des Panels, wie auf dem Entwicklungsserver des Projekts, wo das Apache von Plesk
-mit PHP-FPM und Velocity dieselbe Installation ausliefern ([Stufe 1](../../../../en/us/help/os-support.md#tier-1-tested-here)). Dann:
+mit PHP-FPM und Velocity dieselbe Installation ausliefern ([Stufe 1](../../betriebssystemunterstuetzung.md#stufe-1-hier-getestet)). Dann:
 
-- müssen beide `var/` als derselbe Benutzer schreiben ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group));
+- müssen beide `var/` als derselbe Benutzer schreiben ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe));
 - muss ein Ausrollen das richtige PHP-FPM neu laden und Velocity neu starten; `exp:velocity deploy` tut beides in Reihenfolge
-  ([8.3.14](../../../../en/us/install/08-serving-the-site.md#8314-deploying-a-change-expvelocity-deploy));
+  ([8.3.14](../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy));
 - muss die Firewall des Panels die Ports von Velocity erlauben, wenn Besucher es direkt erreichen.
 
 Siehe [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md).
@@ -88,5 +88,5 @@ Siehe [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-ng
 
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
 - [Shared Hosting](../modelle/shared-hosting.md)
-- [Betriebssystemunterstützung](../../../../en/us/help/os-support.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

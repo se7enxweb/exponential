@@ -48,7 +48,7 @@ in den Paketen stammt, und verlinkt die Seite, die ihn vollständig erklärt.
 |---|---|---|
 | **Repository** | Ein Ordner unter `var/storage/packages/`, der Pakete enthält: `local` für hier erstellte oder importierte Pakete und einer pro Hersteller | [Das lokale Paket-Repository](grundlagen/das-lokale-paket-repository.md) |
 | **Hersteller** | Der `<vendor>` eines Pakets; er bestimmt den Repository-Ordner (`7x`, `ez-systems`). `package.ini [RepositorySettings] Vendor=7x` ist das Repository des Setup-Assistenten | [Das lokale Paket-Repository](grundlagen/das-lokale-paket-repository.md) |
-| **Installer-Quelle** | Ein Paket, von dem der Setup-Assistent abhängt: im Repository des Assistenten, ein Seitenpaket oder von einem verlangt. In **Setup > Pakete** markiert; das Entfernen braucht eine zusätzliche Bestätigung | [Anleitung zu Paketen, 4. Installer-Quellen](../../../en/us/guides/packages.md#4-installer-sources) |
+| **Installer-Quelle** | Ein Paket, von dem der Setup-Assistent abhängt: im Repository des Assistenten, ein Seitenpaket oder von einem verlangt. In **Setup > Pakete** markiert; das Entfernen braucht eine zusätzliche Bestätigung | [Anleitung zu Paketen, 4. Installer-Quellen](../../anleitungen/pakete.md#4-installer-quellen) |
 | **Quell-Repository** | Das Git-Repository mit den entpackten Ordnern, aus denen ein Paket gebaut wird, etwa `se7enxweb/sevenx-ezpackage` | [Die Quell-Repositorys](paketserver/die-quell-repositorys.md) |
 
 ## Installieren
@@ -85,4 +85,4 @@ in den Paketen stammt, und verlinkt die Seite, die ihn vollständig erklärt.
 - [Seitenpakete: hier beginnen](README.md)
 - [Ihr Seitenpaket beitragen](ihr-seitenpaket-beitragen.md)
 - [Das Glossar von Exponential](../../../en/us/glossary.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -51,4 +51,4 @@ Der OEM-Vorteil ist eine Zusage des Programms; seine Details sind nicht veröffe
 - [Vertriebspartner und Wiederverkäufer](vertriebspartner.md)
 - [Dienstleistungen von 7x als White Label](white-label-dienstleistungen.md)
 - [Lizenzierung für Partner](lizenzierung-fuer-partner.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

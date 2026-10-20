@@ -27,7 +27,7 @@ Diese Seite ist für Partnerteams, die die Werte des Programms in alltägliche G
 |---|---|---|---|
 | Projekte | Auf öffentlichen Erweiterungen aufbauen, bevor Sie neue schreiben | Allgemeine Korrekturen an die Upstream-Projekte geben, statt privat zu patchen | Das Problem des Kunden lösen und es dann für alle verallgemeinern |
 | Verträge | Kunden sagen, dass die Software unter der GPL steht und ihnen ihre Website gehört | Vorab vereinbaren, welche allgemeine Arbeit veröffentlicht werden darf | Wartung anbieten, die Websites aktuell hält |
-| Code | In Git mit vollständiger Historie arbeiten ([Mit Git entwickeln](../../../en/us/help/develop-with-git.md)) | Pull Requests senden ([Code zurückgeben](code-zurueckgeben.md)) | Neue Funktionen mit einem funktionierenden Prototyp vorschlagen |
+| Code | In Git mit vollständiger Historie arbeiten ([Mit Git entwickeln](../mit-git-entwickeln.md)) | Pull Requests senden ([Code zurückgeben](code-zurueckgeben.md)) | Neue Funktionen mit einem funktionierenden Prototyp vorschlagen |
 | Dokumentation | Die Hilfe lesen und verlinken | Tutorials unter einer freien Lizenz schreiben | Dokumentieren, was Sie entdeckt haben, auch wenn es klein ist |
 | Support | In öffentlichen Kanälen antworten | Wiederholte Antworten in Dokumentation verwandeln | Automatisieren, was Sie zweimal beantworten |
 | Vertrieb | Fakten mit Quellen nennen | Arbeit, die Sie nicht gut können, an einen anderen Partner empfehlen | Zeigen, was in jedem Release neu ist |
@@ -38,9 +38,9 @@ Diese Seite ist für Partnerteams, die die Werte des Programms in alltägliche G
   werden muss, wird obendrauf korrigiert.
 - **Nennung fremder Arbeit.** Die LoveStack-Verbesserungen von Mugo Web wurden „unter voller Nennung von Mugo Web“ neu gebaut
   (README).
-- **Beiträge an die Upstream-Projekte.** Die Profil-README von se7enxweb meldet „14 Sicherheits-PRs an das Upstream-Projekt zetacomponents eingereicht“ (zitiert in [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to)).
+- **Beiträge an die Upstream-Projekte.** Die Profil-README von se7enxweb meldet „14 Sicherheits-PRs an das Upstream-Projekt zetacomponents eingereicht“ (zitiert in [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#der-php-stack-auf-dem-es-steht-und-dem-es-etwas-zurückgibt)).
 - **Freie Dokumentation.** Die Hilfe steht unter der GFDL 1.3 oder später, sodass jeder sie kopieren und verbessern kann
-  ([Freie Dokumentation](../../../en/us/help/free-documentation.md)).
+  ([Freie Dokumentation](../freie-dokumentation.md)).
 
 ## Was Sie mit Kunden vereinbaren sollten
 
@@ -57,4 +57,4 @@ nicht. Vereinbaren Sie schriftlich:
 - [Verhaltenskodex für Partner](verhaltenskodex.md)
 - [Lizenzierung für Partner: GPL-Code, GFDL-Dokumentation](lizenzierung-fuer-partner.md)
 - [Erweiterungen an die Upstream-Projekte zurückgeben](erweiterungen-zurueckgeben.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

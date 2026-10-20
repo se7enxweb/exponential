@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber und die Chefredaktion, die entscheiden, ob Inhalte geprüft werden müssen, bevor
 Besucher sie sehen. Exponential kann eine Version zurückhalten, bis eine freigebende Person sie annimmt: ein
 **Freigabe-Workflow**, der mit dem Veröffentlichen verbunden ist. Ihr Administrator richtet ihn ein
-([Workflows](../../../../en/us/guides/workflows.md)); diese Seite hilft Ihnen zu entscheiden, wie er sich verhalten soll und wie
+([Workflows](../../../anleitungen/workflows.md)); diese Seite hilft Ihnen zu entscheiden, wie er sich verhalten soll und wie
 Sie ihn im Alltag betreiben.
 
 ## Inhalt
@@ -37,7 +37,7 @@ Sie ihn im Alltag betreiben.
 ## Die Entscheidungen, die Sie treffen
 
 Das Ereignis *Approve* grenzt ein, wer und was eine Freigabe braucht; Inhalte außerhalb davon werden sofort
-durchgelassen ([Workflows, 3.2 Das Ereignis Approve einrichten](../../../../en/us/guides/workflows.md#32-set-up-the-approve-event)):
+durchgelassen ([Workflows, 3.2 Das Ereignis Approve einrichten](../../../anleitungen/workflows.md#32-das-ereignis-freigeben-einrichten)):
 
 | Feld | Ihre Entscheidung |
 |---|---|
@@ -55,9 +55,9 @@ Freigaberegeln werden mit einem Ereignis *Multiplexer* kombiniert, das Ihr Admin
 ## Was Autoren und freigebende Personen sehen
 
 - Der **Autor** drückt **Zur Veröffentlichung schicken**; die Version wird **ausstehend** und erscheint in seiner
-  Liste *Meine Warteliste* ([Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md)).
+  Liste *Meine Warteliste* ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)).
 - Die **freigebende Person** findet die Anfrage unter **Mein Konto > Zusammenarbeit**, sieht sich die Vorschau an und
-  drückt **Freigeben**, oder **Ablehnen** mit einem Kommentar für den Autor ([Workflows, 3.5 Ausprobieren](../../../../en/us/guides/workflows.md#35-try-it)).
+  drückt **Freigeben**, oder **Ablehnen** mit einem Kommentar für den Autor ([Workflows, 3.5 Ausprobieren](../../../anleitungen/workflows.md#35-ausprobieren)).
 - Abgelehnt: Die Version ist wieder ein Entwurf des Autors. Freigegeben: Sie wird beim nächsten Lauf des
   Workflow-Cronjobs veröffentlicht.
 
@@ -68,7 +68,7 @@ Veröffentlichungsvorgang aus, sodass die Freigabe sie zurückhält ([Exponentia
 
 > **Warnung**
 > Freigegebene Inhalte werden vom **Workflow-Cronjob** veröffentlicht (`workflow.php`, im Teil *frequent*). Ohne ihn
-> werden freigegebene Inhalte nie veröffentlicht ([Workflows](../../../../en/us/guides/workflows.md)). **Setup >
+> werden freigegebene Inhalte nie veröffentlicht ([Workflows](../../../anleitungen/workflows.md)). **Setup >
 > Workflow-Prozesse** hat eine Statusleiste, die anzeigt, ob der Cronjob eingeplant ist und wann er als Nächstes
 > läuft. Bitten Sie Ihren Hoster oder Partner zu bestätigen, dass er eingeplant ist, und sehen Sie sich diese Leiste
 > nach jedem Serverumzug an.
@@ -80,20 +80,20 @@ Veröffentlichungsvorgang aus, sodass die Freigabe sie zurückhält ([Exponentia
 2. Entscheiden Sie; wenn Sie ablehnen, schreiben Sie einen Kommentar, der sagt, was zu ändern ist.
 3. Prüfen Sie vor einem Veröffentlichungstag im [Redaktionskalender](redaktionskalender.md), dass nichts Wichtiges wartet.
 4. Einmal pro Woche sieht sich die Chefredaktion **Setup > Workflow-Prozesse** an: Ein Prozess, der seit Tagen wartet,
-   bedeutet meist, dass eine freigebende Person gegangen ist oder der Cronjob angehalten hat ([Workflows](../../../../en/us/guides/workflows.md)).
+   bedeutet meist, dass eine freigebende Person gegangen ist oder der Cronjob angehalten hat ([Workflows](../../../anleitungen/workflows.md)).
 
 ## Leichtere Alternativen
 
 - **Vorschau vor dem Veröffentlichen**: Mit der Vorschau im Bearbeitungsformular und der Versionsvorschau kann ein
   Kollege hinsehen, bevor der Autor veröffentlicht ([Vorschau vor dem Veröffentlichen](../../../../en/us/help/businesses/reliability/preview-before-you-publish.md)).
 - **Objektzustände** als Prüfstufen (Entwurf, in Prüfung, freigegeben), die Rollen nutzen können
-  ([Objektzustände](../../../../en/us/guides/object-states.md)).
+  ([Objektzustände](../../../anleitungen/objektzustaende.md)).
 - **Nachträgliche Prüfung** mit Versionen und der Vergleichsansicht
-  ([Versionen eines Objekts](../../../../en/us/guides/content-history.md)).
+  ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 
 ## Verwandte Seiten
 
-- [Workflows](../../../../en/us/guides/workflows.md)
+- [Workflows](../../../anleitungen/workflows.md)
 - [Freigabe-Workflows für Intranets](../../../../en/us/help/businesses/intranets/approval-workflows.md)
 - [Entwürfe, Versionen und Rückgängigmachen](entwuerfe-versionen-und-rueckgaengig.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

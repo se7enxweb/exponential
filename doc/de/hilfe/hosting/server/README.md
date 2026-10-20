@@ -28,17 +28,17 @@ Zurück zu [Hosting-Unternehmen: hier beginnen](../hosting-anbieter-hier-beginne
 - **Exponential Velocity** (die Engine `qbix`) ist der vom Projekt **empfohlene** Weg, eine Website in jeder Phase auszuliefern, von der
   Entwicklung bis zur Produktion. Es ist ein in PHP geschriebener Webserver, der die Anwendung in persistenten Workern geladen hält,
   wiederholte Seiten aus seinem eigenen Antwort-Cache beantwortet und HTTPS selbst ausliefert
-  ([Kapitel 8](../../../../en/us/install/08-serving-the-site.md#83-exponential-velocity-the-recommended-way)).
+  ([Kapitel 8](../../../installation/08-die-website-ausliefern.md#83-exponential-velocity-der-empfohlene-weg)).
 - **FrankenPHP**, gesteuert über denselben Befehl `exp:velocity`, ist die **produktionsreife Alternative**.
 - **Apache mit PHP-FPM** und **nginx mit PHP-FPM** sind die klassischen Einrichtungen. Sie bleiben vollständig unterstützt und sind das, was
   Shared Hosting meist anbietet, weil Velocity einen dauerhaft laufenden Prozess braucht, den Shared Hosting meist nicht erlaubt
   (`README.md`, Abschnitt darüber, wann ein klassischer Server noch die richtige Antwort ist).
 - Jeder andere Webserver, der eine Anfrage an PHP weitergeben und eine URL auf `index.php` umschreiben kann, liefert Exponential ebenfalls
-  aus ([Unterstützung von Betriebssystemen, Webserver](../../../../en/us/help/os-support.md#web-servers)).
+  aus ([Unterstützung von Betriebssystemen, Webserver](../../betriebssystemunterstuetzung.md#webserver)).
 
 ## Die Server auf einen Blick
 
-Die Stufen stammen aus [Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md#web-servers).
+Die Stufen stammen aus [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#webserver).
 
 | Server | Status in den Quellen | Typisches Hosting-Modell | Seite |
 |---|---|---|---|
@@ -53,7 +53,7 @@ Die Stufen stammen aus [Unterstützung von Betriebssystemen](../../../../en/us/h
 
 > **Hinweis**
 > Stufe 3 heißt „sollte funktionieren“: eine begründete Erwartung, kein Testergebnis
-> ([Die vier Stufen](../../../../en/us/help/os-support.md#the-four-tiers)). Testen Sie einen Server der Stufe 3 auf einer Staging-Maschine, bevor Sie einen
+> ([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)). Testen Sie einen Server der Stufe 3 auf einer Staging-Maschine, bevor Sie einen
 > Tarif verkaufen, der davon abhängt.
 
 ## Seiten in diesem Abschnitt
@@ -76,7 +76,7 @@ Die Stufen stammen aus [Unterstützung von Betriebssystemen](../../../../en/us/h
 ## Was jede Einrichtung gemeinsam hat
 
 Was auch immer die Website ausliefert, es gelten dieselben Regeln
-([Kapitel 8, Wie eine Anfrage ausgeliefert wird](../../../../en/us/install/08-serving-the-site.md#82-how-a-request-is-served)):
+([Kapitel 8, Wie eine Anfrage ausgeliefert wird](../../../installation/08-die-website-ausliefern.md#82-wie-eine-anfrage-beantwortet-wird)):
 
 - Der **Document Root ist das Wurzelverzeichnis der Installation**, das Verzeichnis, das `index.php` enthält.
 - Das Routing ist einmal aufgeschrieben, in `.htaccess_root`. Die Engines von Velocity und die erzeugte Konfiguration von FrankenPHP
@@ -87,7 +87,7 @@ Was auch immer die Website ausliefert, es gelten dieselben Regeln
   die per Pfad angefragt werden, erreichen `index.php`, nie die Datei.
 - Der Benutzer, der PHP ausführt, muss `var/` und die Verzeichnisse unter `settings/` schreiben können, und **ein** Benutzer (oder eine
   Gruppe) sollte sie schreiben, welcher Server auch läuft
-  ([Kapitel 8, Dateiberechtigungen und Eigentum](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership)).
+  ([Kapitel 8, Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)).
 
 Prüfen Sie das Routing auf jedem Server mit den vier Anfragen aus Kapitel 8 und ersetzen Sie die Adresse durch Ihre eigene:
 
@@ -105,7 +105,7 @@ die Website von außen erreichbar ist.
 
 - [Hosting-Unternehmen: hier beginnen](../hosting-anbieter-hier-beginnen.md)
 - [Leistung](../leistung/README.md)
-- [Kapitel 8: Die Website ausliefern](../../../../en/us/install/08-serving-the-site.md)
-- [Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md)
+- [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
 - [Velocity-Engines](../../../../en/us/bc/6.0/velocity-engines.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren und Entwickler, die die Bereitstellung eines Hosters auf der Installation über die Konsole
 aufbauen, `exp:install` (`bin/php/install.php`). Sie beantwortet: welche Optionen ein Hoster setzt, wie Geheimnisse übergeben werden,
 was der Befehl mit Passwörtern tut, wie Sie vor der Installation testen und wie ein Skript weiß, dass es funktioniert hat. Die Referenz
-ist [Kapitel 7](../../../../en/us/install/07-console-install.md).
+ist [Kapitel 7](../../../installation/07-installation-ueber-die-konsole.md).
 
 ## Inhalt
 
@@ -28,7 +28,7 @@ ist [Kapitel 7](../../../../en/us/install/07-console-install.md).
 
 `exp:install` ist eine Oberfläche für den Kickstarter. Es verwandelt seine Optionen in eine temporäre `kickstart.ini`, führt
 `expKickstarter` im selben Prozess aus, entfernt die temporäre Datei und legt eine `kickstart.ini`, die vorher da war, wieder zurück
-([4.2](../../../../en/us/install/04-choosing-an-install-method.md#the-console-install)). Jede Option hat einen Standard, sodass
+([4.2](../../../installation/04-installationsweg-waehlen.md#die-konsoleninstallation)). Jede Option hat einen Standard, sodass
 `php bin/php/console exp:install` allein das Seitenpaket `sevenx_multisite` auf SQLite mit dem Administrator `admin` und einem
 erzeugten Passwort installiert.
 
@@ -48,11 +48,11 @@ erzeugten Passwort installiert.
 | `--password=` / `--random-password` | erzeugt | siehe unten |
 | `--force` | aus | nur für eine bewusste Neuinstallation |
 
-Vollständige Liste mit jeder Prüfung und Meldung: [7.3 Optionen](../../../../en/us/install/07-console-install.md#73-options).
+Vollständige Liste mit jeder Prüfung und Meldung: [7.3 Optionen](../../../installation/07-installation-ueber-die-konsole.md#73-optionen).
 
 > **Hinweis**
 > Wenn `extension/exp_adminui` in der Installation ist, wird auch ein Siteaccess `adminui` angelegt, erreichbar über `/adminui`, was
-> auch immer `--access` sagt ([7.3](../../../../en/us/install/07-console-install.md#site)).
+> auch immer `--access` sagt ([7.3](../../../installation/07-installation-ueber-die-konsole.md#site)).
 
 ## Geheimnisse
 
@@ -65,7 +65,7 @@ Vollständige Liste mit jeder Prüfung und Meldung: [7.3 Optionen](../../../../e
 
 ## Das Administratorpasswort
 
-Aus [7.5](../../../../en/us/install/07-console-install.md#75-the-administrator-password): `exp:install` installiert nie ein Passwort, das leer,
+Aus [7.5](../../../installation/07-installation-ueber-die-konsole.md#75-das-passwort-des-administrators): `exp:install` installiert nie ein Passwort, das leer,
 kurz oder bekannt ist.
 
 | Sie geben | Ergebnis |
@@ -129,7 +129,7 @@ php bin/php/console exp:install --db=oracle --db-host=<db host> --db-name=<servi
   --url=https://www.example.com --email=<contact>
 ```
 
-Hinweise je Engine stehen in [7.9](../../../../en/us/install/07-console-install.md#79-examples-by-database) und auf den Datenbankseiten dieses
+Hinweise je Engine stehen in [7.9](../../../installation/07-installation-ueber-die-konsole.md#79-beispiele-nach-datenbank) und auf den Datenbankseiten dieses
 Bereichs, von [SQLite für Hoster](../grundlagen/sqlite-fuer-hoster.md) bis [MySQL für Hoster](../grundlagen/mysql-fuer-hoster.md).
 
 **Eine öffentliche Demo bereitstellen.** `EXP_DEMO_MODE=1 ./console exp:install --password=<the published password> ...` installiert das veröffentlichte Administratorpasswort unverändert, auch ein bekanntes oder kurzes (`publish`, `publishing`); ohne die Variable wird es durch ein erzeugtes in `var/log/initial-admin-password` ersetzt, was ein Aufbau einer Demo als Fehler behandeln sollte. Stellen Sie die Website eines Kunden nie mit der Variablen bereit. [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
@@ -139,4 +139,4 @@ Bereichs, von [SQLite für Hoster](../grundlagen/sqlite-fuer-hoster.md) bis [MyS
 - [Ein-Klick-Installer](ein-klick-installer-fuer-exponential.md)
 - [Bereitstellung automatisieren](bereitstellung-automatisieren.md)
 - [Mit einem Befehl installieren](../../../../en/us/features/6.0/install-in-one-command.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

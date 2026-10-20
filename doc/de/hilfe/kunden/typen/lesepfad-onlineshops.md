@@ -17,7 +17,7 @@ Katalog, Preise und Mehrwertsteuer danach; Wachstum und Pflege zuletzt. Jeder Sc
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 1 | [Onlineshops: hier beginnen](onlineshops-hier-beginnen.md) | Alle | Wer für welchen Teil des Shops zuständig ist |
-| 2 | [In der Administration anmelden](../../../../en/us/help/logging-into-the-admin.md) | Shop-Team | Wo man sich anmeldet |
+| 2 | [In der Administration anmelden](../../anmelden-in-der-administration.md) | Shop-Team | Wo man sich anmeldet |
 | 3 | [Konten, Passwörter und zweistufige Anmeldung](../alltag/konten-passwoerter-und-zweistufige-anmeldung.md) | Shop-Team | Konten, die Kundendaten sehen, müssen sicher sein |
 | 4 | [Tägliche Shop-Routine](../handel/taegliche-shop-routine.md) | Shop-Leitung | Die Morgenrunde |
 | 5 | [Bestellungen im Alltag](../handel/bestellungen-im-alltag.md) | Shop-Leitung | Eine Bestellung von bezahlt bis versendet bearbeiten |
@@ -63,4 +63,4 @@ Zahlungen ankommen.
 - [Onlineshops: hier beginnen](onlineshops-hier-beginnen.md)
 - [Lesepfad für Kunden](../lesepfad-fuer-kunden.md)
 - [Checkliste für den Start eines Shops (Unternehmen)](../../../../en/us/help/businesses/stores/store-launch-checklist.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

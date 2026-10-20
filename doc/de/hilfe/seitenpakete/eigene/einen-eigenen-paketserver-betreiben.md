@@ -146,4 +146,4 @@ Nutzen Sie HTTPS für jede URL in Ihrem Index, damit beide Clients sie annehmen.
 - [Offline-Installationen und Spiegel](../paketserver/offline-installationen-und-spiegel.md)
 - [Einstellungen des Paketservers](../paketserver/einstellungen-des-paketservers.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

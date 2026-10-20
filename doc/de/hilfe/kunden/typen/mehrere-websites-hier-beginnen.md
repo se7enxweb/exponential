@@ -43,7 +43,7 @@ erledigt die Erweiterung `ezurlmultisite`. Wenn Sie Links einer Website sehen, d
 ## Rollen pro Website
 
 Geben Sie jeder Website ihre eigenen Leitungen und Redakteure, beschränkt auf den Teil des Inhaltsbaums und die
-Sektionen dieser Website ([Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md), [Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)).
+Sektionen dieser Website ([Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md), [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 Halten Sie die wenigen Personen, die alle Websites oder die gemeinsamen Teile ändern dürfen, klein und namentlich benannt.
 
 ## Staging und Produktion
@@ -74,4 +74,4 @@ Websites sind auch mehrsprachig: Ergänzen Sie den [Lesepfad für mehrsprachige 
 - [Eine Installation, viele Websites (Unternehmen)](../../../../en/us/help/businesses/multisite/one-installation-many-sites.md)
 - [Einstellungen und Logs pro Website (Unternehmen)](../../../../en/us/help/businesses/multisite/per-site-settings-and-logs.md)
 - [Multisite-Einrichtung (Website-Ersteller)](../../../../en/us/help/creators/website-creators/multisite-setup.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

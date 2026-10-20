@@ -39,7 +39,7 @@ Partner heißt das: Ideen willkommen heißen, Wissen teilen, echte Probleme lös
 - Sagen Sie, wer die Arbeit macht: Wenn 7x für Sie Dienstleistungen als White Label erbringt, stellen Sie das in einem
   Vertrag nicht falsch dar.
 - Verwenden Sie belegte Fakten über Exponential; keine erfundenen Zahlen, Kunden oder Zitate
-  ([Vertrieb und Marketing: hier beginnen](../../../en/us/help/business/sales-and-marketing-start-here.md#the-ground-rules)).
+  ([Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md#die-grundregeln)).
 
 ## 4. Die Lizenzen respektieren
 
@@ -49,7 +49,7 @@ Partner heißt das: Ideen willkommen heißen, Wissen teilen, echte Probleme lös
 
 ## 5. Fair konkurrieren
 
-- Vergleichen Sie mit Fakten, nie indem Sie andere herabsetzen ([Exponential sachlich vergleichen](../../../en/us/help/business/comparing-exponential-factually.md)).
+- Vergleichen Sie mit Fakten, nie indem Sie andere herabsetzen ([Exponential sachlich vergleichen](../geschaeft/exponential-sachlich-vergleichen.md)).
 - Mit Ihnen geteilte Leads werden wie vereinbart behandelt; kein Abwerben eines Leads, der einem anderen Partner
   gegeben wurde ([Leads übergeben und zurückgeben](leads-uebergeben.md)).
 - Der Vertrag verlangt „keinen Interessenkonflikt“; legen Sie einen Interessenkonflikt offen, wenn er entsteht.
@@ -81,4 +81,4 @@ Informieren Sie das Partnerteam (<https://exponential.earth/partner/contact-us>)
 
 - [Open-Source-Werte in der täglichen Partnerarbeit](open-source-werte.md)
 - [Die Partnerschaftsvereinbarung in einfachen Worten](die-partnerschaftsvereinbarung.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

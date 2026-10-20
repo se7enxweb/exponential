@@ -66,7 +66,7 @@ verstehen, zu nutzen und dazu beizutragen, und der die Wahrheit sagt, mit einer 
 | Spricht für | Sich selbst | Ihren Arbeitgeber | Die Organisation, die sie gebeten hat |
 | Ziel | Mehr Menschen geholfen, mehr Beitragende | Kunden für ihre Organisation | Die Botschaften der Organisation |
 | Typischer Kanal | Foren, Telegram, Blogs, Benutzergruppen | Angebote, Ausschreibungen, Demos für Käufer | Offizielle Ankündigungen, die Websites des Projekts |
-| Seiten | Dieser Bereich | [Vertrieb und Marketing: hier beginnen](../../../en/us/help/business/sales-and-marketing-start-here.md) | Fragen Sie die Organisation |
+| Seiten | Dieser Bereich | [Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md) | Fragen Sie die Organisation |
 
 Eine Person kann zu verschiedenen Zeiten alle drei sein. Sagen Sie in jedem Gespräch, welchen Hut Sie tragen
 ([Offenlegung und Interessenkonflikte](offenlegung-und-interessenkonflikte.md)).
@@ -77,11 +77,11 @@ Die eigenen Quellen des Projekts beschreiben ein Projekt, bei dem die Community 
 
 - „Das Exponential-Projekt und die Exponential Foundation unterstützen die Open-Source-Community direkt, als Teil unserer
   täglichen Routine und Arbeitsethik, und stellen die Support-Bedürfnisse der Community-Benutzer an erste Stelle“
-  ([Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md#what-the-foundation-is)).
+  ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#was-die-foundation-ist)).
 - Die Mission der Foundation umfasst „Verbreitung“, „Support“, „Bildung“, „Werbung“ und „Dokumentation“
-  ([Kurz gesagt](../../../en/us/help/who-is-the-exponential-foundation.md#in-short)). Genau das tun Fürsprecher, ehrenamtlich.
+  ([Kurz gesagt](../wer-ist-die-exponential-foundation.md#kurz-gesagt)). Genau das tun Fürsprecher, ehrenamtlich.
 - Jeder Pull Request wird übernommen, und die Commits des Beitragenden bleiben erhalten
-  ([Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows)): Das Projekt will Beiträge,
+  ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)): Das Projekt will Beiträge,
   und Fürsprecher bringen Beitragende.
 
 ## Arten der Fürsprache
@@ -114,5 +114,5 @@ Wenn eine Zeile nicht abgehakt ist, lesen Sie zuerst [Fürsprecher: hier beginne
 
 - [Die Stufen der Fürsprache](die-stufen-der-fuersprache.md)
 - [Verhalten und Ethik für Fürsprecher](verhalten-und-ethik.md)
-- [Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

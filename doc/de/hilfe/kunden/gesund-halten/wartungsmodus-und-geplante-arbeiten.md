@@ -11,14 +11,14 @@ type: help
 
 Manche Arbeiten, etwa ein Upgrade, ein großer Import oder eine Reparatur, sind sicherer, wenn die Website kurz vom Netz
 ist. Exponential hat dafür einen Wartungsmodus. Diese Seite ist der Teil des Betreibers: entscheiden, ankündigen und
-prüfen. Die Person, die die Arbeit erledigt, folgt [Wartungsmodus](../../../../en/us/guides/maintenance-mode.md), und die Sicht
+prüfen. Die Person, die die Arbeit erledigt, folgt [Wartungsmodus](../../../anleitungen/wartungsmodus.md), und die Sicht
 für Unternehmen steht unter [Wartungsmodus und geplante Arbeiten für Unternehmen](../../../../en/us/help/businesses/reliability/maintenance-mode-and-planned-work.md).
 
 ## Was Besucher und Suchmaschinen sehen
 
 Solange der Wartungsmodus eingeschaltet ist, erhält jede Seitenanfrage eine Wartungsseite mit dem Status
 `503 Service Unavailable`, `Retry-After` und `no-store`; Bilder, Stylesheets und Skripte werden weiterhin ausgeliefert,
-und die Administration unter `/admin` bleibt erreichbar ([Wartungsmodus](../../../../en/us/guides/maintenance-mode.md)). „Ein 503
+und die Administration unter `/admin` bleibt erreichbar ([Wartungsmodus](../../../anleitungen/wartungsmodus.md)). „Ein 503
 mit `Retry-After` ist die Antwort, die Suchmaschinen als ‚später wiederkommen‘ verstehen: Die Seiten behalten ihren
 Platz im Index“ (derselbe Leitfaden).
 
@@ -41,7 +41,7 @@ wenn die erwartete Zeit verstreicht“: Jemand muss die Website zurückholen.
 Das Beispiel des Leitfadens: „We are upgrading the site. Back at 06:00 UTC.“ Halten Sie sie bei einem oder zwei
 Sätzen, nennen Sie eine Uhrzeit mit Zeitzone, und versprechen Sie nicht mehr, als Ihnen die Person gesagt hat, die die
 Arbeit erledigt. Für einen Notfall lautet das Beispiel des Leitfadens: „We are fixing a problem. Back shortly.“
-([Wartungsmodus](../../../../en/us/guides/maintenance-mode.md)).
+([Wartungsmodus](../../../anleitungen/wartungsmodus.md)).
 
 ## Vor dem Zeitfenster
 
@@ -63,11 +63,11 @@ Arbeit erledigt. Für einen Notfall lautet das Beispiel des Leitfadens: „We ar
 ## Der Nachweis
 
 „Jedes Ein- und Ausschalten wird ins Prüfprotokoll geschrieben (`system.maintenance.change`); die Seite listet die
-letzten acht“ ([Wartungsmodus](../../../../en/us/guides/maintenance-mode.md)). Die Zeiten, in denen die Website vom Netz war, und
+letzten acht“ ([Wartungsmodus](../../../anleitungen/wartungsmodus.md)). Die Zeiten, in denen die Website vom Netz war, und
 wer sie umgeschaltet hat, sind also für Ihren Monatsbericht festgehalten.
 
 > **Hinweis**
-> Der Wartungsmodus betrifft nur Webanfragen. Befehle und Cronjobs laufen weiter ([Wartungsmodus](../../../../en/us/guides/maintenance-mode.md));
+> Der Wartungsmodus betrifft nur Webanfragen. Befehle und Cronjobs laufen weiter ([Wartungsmodus](../../../anleitungen/wartungsmodus.md));
 > die Person, die die Arbeit erledigt, hält diejenigen an, die nicht laufen dürfen.
 
 ## Verwandte Seiten
@@ -75,4 +75,4 @@ wer sie umgeschaltet hat, sind also für Ihren Monatsbericht festgehalten.
 - [Checkliste für den Upgrade-Tag](checkliste-upgrade-tag.md)
 - [Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md)
 - [Wartungsmodus (Funktionsreferenz)](../../../../en/us/features/6.0/maintenance-mode.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

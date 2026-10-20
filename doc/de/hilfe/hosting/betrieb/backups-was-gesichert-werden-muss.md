@@ -17,8 +17,8 @@ Backup erstellen, dessen Datenbank und Dateien übereinstimmen.
 
 ![Backup in der Administration: Backups der Installation erstellen, herunterladen und entfernen](../../../../en/us/help/images/hosting/git-manager-backup.webp)
 
-Die Fakten stammen aus [10.9 Backups und Wiederherstellung](../../../../en/us/install/10-after-installing.md#109-backups-and-restore),
-[Backup und Wiederherstellung](../../../../en/us/help/database-support.md#backup-and-restore) und den unten verlinkten Seiten zu den Funktionen.
+Die Fakten stammen aus [10.9 Backups und Wiederherstellung](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung),
+[Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung) und den unten verlinkten Seiten zu den Funktionen.
 
 ## Inhalt
 
@@ -36,7 +36,7 @@ Die Fakten stammen aus [10.9 Backups und Wiederherstellung](../../../../en/us/in
 Exponential hält seinen Zustand an zwei Orten: in der **Datenbank** (Inhalte, Benutzer, Rollen, Versionen, in Tabellen
 gespeicherte Einstellungen) und in den **Dateien** (hochgeladene Bilder und Dokumente, die Einstellungen der Installation, Ihre
 eigenen Erweiterungen und Designs). Ein Backup besteht aus der Datenbank und den Dateien, im selben Moment erstellt
-([10.9](../../../../en/us/install/10-after-installing.md#109-backups-and-restore)). Ein Bild, das in der Datenbank existiert, aber
+([10.9](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung)). Ein Bild, das in der Datenbank existiert, aber
 nicht auf der Festplatte, erscheint als defektes Bild; eine Datei ohne ihre Datenbankzeile ist Ballast.
 
 Die Datenbankhälfte hängt von der Engine ab; die Befehle für jede der sechs unterstützten Datenbanken stehen auf
@@ -72,8 +72,8 @@ etwas kaputt, das keine Wiederherstellung von Inhalten reparieren kann:
 | Datei | Enthält | Wenn sie verloren geht |
 |---|---|---|
 | `settings/override/audit.ini.append.php` | die Signatur- und Pseudonymschlüssel des Prüfprotokolls | die vorhandenen Aufzeichnungen lassen sich nicht mehr als unversehrt prüfen ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md)) |
-| `settings/override/mailpreferences.ini.append.php` | `[SecretSettings] TokenSecret`, das Website-Geheimnis der E-Mail-Einstellungen | ein neues Geheimnis macht jeden Link in jeder bereits versandten Mail ungültig, und kein Eintrag der Unterdrückungsliste passt mehr ([E-Mail-Einstellungen](../../../../en/us/guides/mail-preferences-administrator.md)) |
-| Der Konfigurationsbaum von Velocity (`/etc/vc` oder `var/vc/qbix/etc`, wenn `/etc/vc` nicht genutzt wird) | die Konfiguration der Website und, in seinem Verzeichnis `ssl/`, private Schlüssel von Zertifikaten (Modus `0600`) | HTTPS auf Velocity muss neu eingerichtet werden ([8.3.10](../../../../en/us/install/08-serving-the-site.md#8310-the-configuration-tree-etcvc-debian-style)) |
+| `settings/override/mailpreferences.ini.append.php` | `[SecretSettings] TokenSecret`, das Website-Geheimnis der E-Mail-Einstellungen | ein neues Geheimnis macht jeden Link in jeder bereits versandten Mail ungültig, und kein Eintrag der Unterdrückungsliste passt mehr ([E-Mail-Einstellungen](../../../anleitungen/mail-einstellungen-administrator.md)) |
+| Der Konfigurationsbaum von Velocity (`/etc/vc` oder `var/vc/qbix/etc`, wenn `/etc/vc` nicht genutzt wird) | die Konfiguration der Website und, in seinem Verzeichnis `ssl/`, private Schlüssel von Zertifikaten (Modus `0600`) | HTTPS auf Velocity muss neu eingerichtet werden ([8.3.10](../../../installation/08-die-website-ausliefern.md#8310-der-konfigurationsbaum-etcvc-im-debian-stil)) |
 
 Diese Dateien sind klein. Nehmen Sie sie in jedes Backup auf, und halten Sie sie so vertraulich wie die Zugangsdaten der Website.
 
@@ -83,7 +83,7 @@ Diese werden neu erzeugt und kosten in einem Backup nur Platz und Zeit:
 
 | Pfad | Warum es wegfallen kann |
 |---|---|
-| `var/cache/`, `var/<site>/cache/` | Caches; werden neu erzeugt ([10.9](../../../../en/us/install/10-after-installing.md#109-backups-and-restore)) |
+| `var/cache/`, `var/<site>/cache/` | Caches; werden neu erzeugt ([10.9](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung)) |
 | `var/autoload/` | Klassenzuordnungen; `php bin/php/ezpgenerateautoloads.php -e` baut sie neu auf |
 | `vendor/` | Composer-Pakete; werden aus `composer.lock` neu aufgebaut |
 | `var/vc/*/log/`, `var/vc/*/run/` | die Logs und PID-Dateien von Velocity |
@@ -92,12 +92,12 @@ Diese werden neu erzeugt und kosten in einem Backup nur Platz und Zeit:
 
 Der Kernel, `lib/`, `bin/` und die mitgelieferten `settings/*.ini` kommen mit dem Release und lassen sich in derselben Version
 erneut holen. Sichern Sie sie nur, wenn jemand sie an Ort und Stelle geändert hat; Setup > Upgrade-Prüfung listet Dateien auf,
-die vom Release abweichen ([Die Upgrade-Prüfung](../../../../en/us/guides/upgrade-check.md)).
+die vom Release abweichen ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)).
 
 ## Datenbank und Dateien gemeinsam sichern
 
 Der Wartungsmodus macht das Paar konsistent: Kein Besucher und kein Redakteur schreibt zwischen dem Datenbank-Dump und der
-Kopie der Dateien ([10.9, Vorgehen](../../../../en/us/install/10-after-installing.md#procedure)).
+Kopie der Dateien ([10.9, Vorgehen](../../../installation/10-nach-der-installation.md#vorgehen)).
 
 ```bash
 php bin/php/maintenance.php on --message="Back soon" --until=30m --allow-root-user
@@ -148,5 +148,5 @@ eigene Aufgabe des Hosters.
 - [Wiederherstellung und Wiederherstellungstests](wiederherstellung-und-wiederherstellungstests.md)
 - [Aus einem Backup wiederherstellen](../runbooks/aus-einem-backup-wiederherstellen.md) (Runbook)
 - [Aufbau des Speichers](aufbau-des-speichers.md)
-- [Sicherheitshärtung: Backups und Wiederherstellung](../../../../en/us/help/security-hardening.md#backups-and-recovery)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Sicherheitshärtung: Backups und Wiederherstellung](../../sicherheitshaertung.md#sicherungen-und-wiederherstellung)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

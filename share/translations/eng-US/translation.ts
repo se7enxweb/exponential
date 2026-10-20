@@ -73307,6 +73307,126 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>User manual</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>One question per page: who may do it, the steps, what can go wrong and where to read more.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Project files</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Project file</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>This file is part of the source code of Exponential and is distributed with it under the %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Download DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-books</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Built from the released topics each time one of them is released, and kept with their earlier versions.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Size</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Updated</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Download all as DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Help topics overdue for review</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>The review date has passed, or the topic has been in Review for more than %days days without a change.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Overdue</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Review date %date passed %days days ago</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>In Review for %days days without a change</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Set state</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Before you begin</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Steps</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Result</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>What to do next</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Condition</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Cause</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Remedy</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Help Start</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

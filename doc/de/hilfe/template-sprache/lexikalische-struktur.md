@@ -253,4 +253,4 @@ der Debug-Ausgabe nach einer solchen Warnung.
 - [Kommentare](../../../en/us/help/designers/templates/comments.md)
 - [Literal und Begrenzer](../../../en/us/help/designers/templates/literal-and-delimiters.md)
 - [Fehlersuche in Templates](../../../en/us/help/designers/templates/template-debugging.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

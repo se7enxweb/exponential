@@ -27,7 +27,7 @@ wird, was er installiert und wie Sie ihn wiederholbar und sicher machen.
 
 ## Die Kurzfassung
 
-> Ein Installer, drei Oberflächen ([Kapitel 4](../../../../en/us/install/04-choosing-an-install-method.md#41-one-installer-three-front-ends)):
+> Ein Installer, drei Oberflächen ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md#41-ein-installer-drei-frontends)):
 > Jede Methode führt dieselben Schritte aus und endet in `CreateSites`, sie installieren also dieselben Dinge.
 
 | Situation | Nutzen Sie |
@@ -39,6 +39,6 @@ wird, was er installiert und wie Sie ihn wiederholbar und sicher machen.
 ## Verwandte Seiten
 
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
-- [Kapitel 4: Eine Installationsmethode wählen](../../../../en/us/install/04-choosing-an-install-method.md)
+- [Kapitel 4: Eine Installationsmethode wählen](../../../installation/04-installationsweg-waehlen.md)
 - [Erste Anmeldung und Standardpasswörter](../sicherheit/erste-anmeldung-und-standardpasswoerter.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

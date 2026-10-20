@@ -11,7 +11,7 @@ type: help
 
 Für die Bereitschaft, wenn die Exponential-Website eines Kunden keine Seiten ausliefert. Arbeiten Sie von oben nach unten; hören Sie auf,
 wenn die Ursache gefunden ist. Die Fehlerseiten und ihre Ursachen stammen aus
-[12.9 Seiten und Fehler zur Laufzeit](../../../../en/us/install/12-troubleshooting.md#129-pages-and-errors-at-run-time).
+[12.9 Seiten und Fehler zur Laufzeit](../../../installation/12-fehlerbehebung.md#129-seiten-und-fehler-zur-laufzeit).
 
 ## Inhalt
 
@@ -52,7 +52,7 @@ wenn die Ursache gefunden ist. Die Fehlerseiten und ihre Ursachen stammen aus
 | `We'll be right back` (503, `Retry-After: 30`) | die Datenbank war nicht erreichbar | prüfen Sie, dass der Datenbankserver läuft; prüfen Sie die Zugangsdaten in `settings/override/site.ini.append.php`; die Log-Zeile enthält die Meldung des Treibers |
 | `Down for maintenance` (503) | der Wartungsmodus ist an | `php bin/php/maintenance.php status --allow-root-user`; wenn die Arbeit erledigt ist: `php bin/php/maintenance.php off --allow-root-user`; das Löschen von `var/maintenance.json` beendet ihn, was auch immer sonst falsch ist |
 | `The site is missing the software libraries it needs` (503) | `vendor/` fehlt, wurde verschoben oder umbenannt | legen Sie `vendor/` zurück oder führen Sie `composer install --no-dev` aus; dann `php bin/php/ezcache.php --clear-all`, und starten Sie Velocity neu, wenn es die Website ausliefert |
-| `Something went wrong on our side` (500) mit `ERR-...` | ein nicht abgefangener Fehler | `./console exp:logs --reference=ERR-...`; die Zeile nennt Meldung, Datei und Zeile ([Einen Fehler über seine Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md)) |
+| `Something went wrong on our side` (500) mit `ERR-...` | ein nicht abgefangener Fehler | `./console exp:logs --reference=ERR-...`; die Zeile nennt Meldung, Datei und Zeile ([Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)) |
 | Eine leere Seite, oder 500 ohne etwas in `error.log` | PHP scheiterte, bevor Exponential protokollieren konnte: Syntaxfehler, fehlende Erweiterung, Speicher erschöpft | lesen Sie das Fehlerlog des Webservers oder von PHP-FPM; `php -l` auf einer kürzlich geänderten Datei |
 | 404 für jede Seite unter Apache | `.htaccess` wird nicht gelesen oder `mod_rewrite` ist aus | erlauben Sie Overrides, aktivieren Sie `mod_rewrite` ([Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)) |
 
@@ -90,11 +90,11 @@ Worker festhängt, `exp:velocity kill` und dann `start`.
 - [ ] Prüfen Sie: Startseite, Administration, eine Anmeldung, eine Veröffentlichung.
 - [ ] Schreiben Sie die Notiz zum Vorfall: Beginn, Erkennung, Ursache, Abhilfe, Ende, was eine Wiederholung verhindert.
 - [ ] Informieren Sie den Kunden.
-- [ ] Wenn die Ursache ein Fehler in Exponential ist, melden Sie ihn ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+- [ ] Wenn die Ursache ein Fehler in Exponential ist, melden Sie ihn ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 
 ## Verwandte Seiten
 
 - [Langsame Website](langsame-website.md)
 - [Velocity startet nicht](velocity-startet-nicht.md)
-- [Kapitel 12: Fehlersuche](../../../../en/us/install/12-troubleshooting.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 12: Fehlersuche](../../../installation/12-fehlerbehebung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

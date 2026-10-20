@@ -42,7 +42,7 @@ Probleme in der linken Spalte gehen an Ihren Partner; Probleme in der rechten Sp
 ## Wobei Exponential hilft
 
 - Bildfelder können einen Alternativtext **verlangen**; bitten Sie Ihren Administrator, das für Ihre Bildklassen
-  einzuschalten ([Das Inhaltsmodell und das Bearbeiten](../../../../en/us/guides/content-model-and-editing.md)).
+  einzuschalten ([Das Inhaltsmodell und das Bearbeiten](../../../anleitungen/inhaltsmodell-und-bearbeitung.md)).
 - Der Online-Editor schreibt strukturierten Rich Text (Überschriften, Listen, Tabellen) statt freiem HTML.
 - Inhalte in Sprachen, die von rechts nach links geschrieben werden, sind mit ihrer Sprache und Schreibrichtung
   gekennzeichnet ([Websites mit Schreibrichtung von rechts nach links](../../../../en/us/help/creators/website-creators/right-to-left-sites.md)).
@@ -85,12 +85,12 @@ Geben Sie Besuchern eine Möglichkeit, Barrieren zu melden, zum Beispiel ein Kon
 - Bitten Sie Ihren Partner, nach jeder Designänderung die automatischen Prüfungen als Teil seiner Release-Prüfungen
   laufen zu lassen ([Die Barrierefreiheit Ihrer Website testen](../../../../en/us/help/creators/website-creators/testing-accessibility.md)).
 - Prüfen Sie die neuen Seiten selbst mit der Tastatur und bei 200 % Zoom, bevor Sie sie abnehmen
-  ([Qualitätsschranken und Abnahme](../../../../en/us/help/leadership/quality-gates-and-acceptance.md)).
+  ([Qualitätsschranken und Abnahme](../../fuehrung/qualitaetsschranken-und-abnahme.md)).
 - Stellen Sie sicher, dass jedes neue Farbschema und jeder Dunkelmodus genug Kontrast behält.
 
 ## Verwandte Seiten
 
 - [Checkliste zur Barrierefreiheit für Redakteure](checkliste-barrierefreiheit-fuer-redakteure.md)
-- [Checklisten zu Barrierefreiheit, Sicherheit und Compliance](../../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md)
+- [Checklisten zu Barrierefreiheit, Sicherheit und Compliance](../../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md)
 - [Barrierefreiheit für gemeinnützige Organisationen](../../../../en/us/help/businesses/nonprofits/accessibility-for-nonprofits.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

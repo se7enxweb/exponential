@@ -53,7 +53,7 @@ Aus [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../..
 
 | Aufgabe | Wo | Wer |
 |---|---|---|
-| Registrierungen, die niemand abgeschlossen hat | **Benutzer > Nicht aktivierte Benutzer**; eine Registrierung, die älter als 30 Tage ist, wird als **Alt** markiert; aktivieren oder entfernen ([Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)) | Kontenverwaltung |
+| Registrierungen, die niemand abgeschlossen hat | **Benutzer > Nicht aktivierte Benutzer**; eine Registrierung, die älter als 30 Tage ist, wird als **Alt** markiert; aktivieren oder entfernen ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)) | Kontenverwaltung |
 | Nie genutzte, lange nicht gesehene, gesperrte Konten | **Benutzer > Benutzerkonten prüfen**, Filter **Nie angemeldet**, **Seit N Tagen nicht gesehen**, **Gesperrt** ([Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md)) | Kontenverwaltung |
 | Spam-Registrierungen | dieselbe Seite, dann deaktivieren | Kontenverwaltung |
 | Die Rolle Member gibt weiterhin nur, was Mitglieder brauchen | **Benutzer > Rollen und Richtlinien** | Administrator |
@@ -61,7 +61,7 @@ Aus [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../..
 
 > **Hinweis**
 > Wenn eine Registrierung von Hand aktiviert wird, erhält die Person die E-Mail „Registrierung genehmigt“, es sei denn,
-> Ihr Administrator hat das abgeschaltet ([Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)). Das
+> Ihr Administrator hat das abgeschaltet ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)). Das
 > Entfernen eines Benutzers ist endgültig; das Deaktivieren lässt sich rückgängig machen
 > ([Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md)).
 
@@ -69,9 +69,9 @@ Aus [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../..
 
 | Frage | Antwort |
 |---|---|
-| „Ich habe mein Passwort vergessen“ | der Link „Passwort vergessen?“ auf der Anmeldeseite ([Ihr Konto und die Anmeldung](../../../../en/us/help/accounts-and-sign-in.md)) |
+| „Ich habe mein Passwort vergessen“ | der Link „Passwort vergessen?“ auf der Anmeldeseite ([Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md)) |
 | „Die Aktivierungs-E-Mail ist nicht angekommen“ | den Spam-Ordner prüfen; die Kontenverwaltung kann das Konto unter Nicht aktivierte Benutzer aktivieren |
-| „Ich habe mein Telefon verloren“ (zweistufige Anmeldung) | ein Administrator stellt das Konto auf E-Mail-Codes um oder schaltet die zweite Stufe ab ([Zwei-Faktor-Anmeldung](../../../../en/us/guides/two-factor-login.md)) |
+| „Ich habe mein Telefon verloren“ (zweistufige Anmeldung) | ein Administrator stellt das Konto auf E-Mail-Codes um oder schaltet die zweite Stufe ab ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)) |
 | „Schicken Sie mir keine E-Mails mehr“ | der Abmeldelink mit einem Klick in jeder optionalen E-Mail, oder ihre Einstellungsseite ([E-Mail-Einstellungen](../../../../en/us/features/6.0/mail-preferences.md)) |
 | „Was wissen Sie über mich?“ | Mitglieder können ihre E-Mail-Einstellungen als JSON oder CSV herunterladen; für alles andere Ihre Datenschutzroutine |
 
@@ -91,4 +91,4 @@ Diese Liste folgt der Checkliste für Website-Ersteller
 - [Mitglieder-Websites](../../../../en/us/help/businesses/members/README.md)
 - [Registrierung von Mitgliedern](../../../../en/us/help/businesses/members/member-registration.md)
 - [Kunden- und Partnerbereiche](../../../../en/us/help/businesses/extranets/customer-and-partner-areas.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -34,11 +34,11 @@ Das Installationsbuch und die Anleitungen nennen eine kleine Zahl von Regeln, un
 
 | Regel | Quelle |
 |---|---|
-| Ein Backup besteht aus der Datenbank und den Dateien, im selben Moment erstellt | [10.9](../../../../en/us/install/10-after-installing.md#109-backups-and-restore) |
-| Bewahren Sie Backups getrennt vom Server auf, und behalten Sie mehrere Generationen | [10.9](../../../../en/us/install/10-after-installing.md#109-backups-and-restore) |
-| Sichern Sie vor jedem Upgrade: zuerst sichern, jedes Mal | [11.1](../../../../en/us/install/11-upgrading.md#111-before-you-start) |
-| Testen Sie eine Wiederherstellung auf einer anderen Maschine mindestens einmal und nach jedem größeren Upgrade | [10.9, Wiederherstellung](../../../../en/us/install/10-after-installing.md#restore) |
-| Wöchentlich: Ein Backup der letzten sieben Tage existiert und wurde mindestens einmal auf einer anderen Maschine wiederhergestellt | [Eine Website betreiben, wöchentliche Checkliste](../../../../en/us/guides/operating-a-site.md#10-a-weekly-checklist) |
+| Ein Backup besteht aus der Datenbank und den Dateien, im selben Moment erstellt | [10.9](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung) |
+| Bewahren Sie Backups getrennt vom Server auf, und behalten Sie mehrere Generationen | [10.9](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung) |
+| Sichern Sie vor jedem Upgrade: zuerst sichern, jedes Mal | [11.1](../../../installation/11-aktualisieren.md#111-bevor-sie-beginnen) |
+| Testen Sie eine Wiederherstellung auf einer anderen Maschine mindestens einmal und nach jedem größeren Upgrade | [10.9, Wiederherstellung](../../../installation/10-nach-der-installation.md#wiederherstellung) |
+| Wöchentlich: Ein Backup der letzten sieben Tage existiert und wurde mindestens einmal auf einer anderen Maschine wiederhergestellt | [Eine Website betreiben, wöchentliche Checkliste](../../../anleitungen/betrieb-einer-website.md#10-eine-wöchentliche-checkliste) |
 
 ## Die Entscheidungen einer Backup-Richtlinie
 
@@ -52,7 +52,7 @@ Jede Zeile ist eine Wahl, die Sie für einen Tarif oder einen Kunden treffen; di
 | Generationen | wie viele tägliche, wöchentliche und monatliche Kopien | je mehr Generationen, desto weiter kann ein Kunde nach einem spät bemerkten Fehler zurückgehen |
 | Ort | ein anderer Server, ein anderes Rechenzentrum, ein anderer Anbieter | „getrennt vom Server“ ist das Minimum |
 | Verschlüsselung | im Ruhezustand, bei der Übertragung | das Backup enthält `settings/override/`, das Zugangsdaten enthält |
-| Wiederherstellung zu einem Zeitpunkt | keine, oder die eigene logbasierte Wiederherstellung der Datenbank | die Quellen nennen sie für PostgreSQL (eigene Wiederherstellung zu einem Zeitpunkt, [Datenbankunterstützung](../../../../en/us/help/database-support.md#2-postgresql)); bei anderen Engines prüfen Sie deren Dokumentation |
+| Wiederherstellung zu einem Zeitpunkt | keine, oder die eigene logbasierte Wiederherstellung der Datenbank | die Quellen nennen sie für PostgreSQL (eigene Wiederherstellung zu einem Zeitpunkt, [Datenbankunterstützung](../../datenbankunterstuetzung.md#2-postgresql)); bei anderen Engines prüfen Sie deren Dokumentation |
 | Wer wiederherstellen darf | nur der Hoster, oder der Kunde aus einem Panel | eine Wiederherstellung durch den Kunden darf nie die Daten eines anderen Kunden überschreiben |
 | Wiederherstellungstests | wie oft, auf welcher Maschine | ein Backup, das nie wiederhergestellt wurde, ist eine Hoffnung, kein Backup |
 
@@ -66,10 +66,10 @@ Jede Zeile ist eine Wahl, die Sie für einen Tarif oder einen Kunden treffen; di
 Neben dem Zeitplan erstellen Sie direkt vor jeder riskanten Änderung ein Backup. Die Quellen verlangen eines vor:
 
 - **einem Upgrade** von Exponential: Der Datenbankschritt lässt sich nicht durch Zurücklegen von Dateien rückgängig machen
-  ([11.1](../../../../en/us/install/11-upgrading.md#111-before-you-start));
+  ([11.1](../../../installation/11-aktualisieren.md#111-bevor-sie-beginnen));
 - **einem Composer-Update oder einer Paketinstallation** aus der Administration: ezupdate bittet Sie zu bestätigen, dass ein
   Backup existiert, bevor Sie **Install updates** wählen ([ezupdate](../../../../en/us/features/6.0/extensions/ezupdate.md));
-- **einem Wechsel der Datenbank-Engine** ([Eine Website auf eine andere Datenbank umziehen](../../../../en/us/help/database-support.md#moving-a-site-to-another-database));
+- **einem Wechsel der Datenbank-Engine** ([Eine Website auf eine andere Datenbank umziehen](../../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen));
 - **einer Wiederherstellung**: Sichern Sie zuerst den aktuellen Zustand, damit eine falsche Wiederherstellung rückgängig
   gemacht werden kann.
 
@@ -93,7 +93,7 @@ stimmen Sie also beides aufeinander ab:
 | Archive anderer Logs | `site.ini [FileSettings] LogFileRotateCount`, `LogFileMaxAge` | 3 Archive, keine Altersgrenze |
 
 Quellen: [Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md),
-[E-Mail-Einstellungen, Aufbewahrung](../../../../en/us/guides/mail-preferences-administrator.md#9-retention-and-the-cronjob),
+[E-Mail-Einstellungen, Aufbewahrung](../../../anleitungen/mail-einstellungen-administrator.md#9-aufbewahrung-und-der-cronjob),
 [Anfrage-Logs](../../../../en/us/features/6.0/request-logs.md), [Log-Rotation](../../../../en/us/features/6.0/log-rotation.md).
 Die Sicherheitsseiten besprechen, was diese Werte für eine Datenschutzrichtlinie bedeuten:
 [Aufbewahrung von Logs und Daten](../sicherheit/aufbewahrung-von-logs-und-daten.md).
@@ -137,4 +137,4 @@ Versprechen, die die Plattform nicht von selbst hält:
 - [SLA-Optionen](../geschaeft/sla-optionen-fuer-exponential-hosting.md), [Hosting-Tarife gestalten](../geschaeft/hosting-tarife-gestalten.md)
 - [Compliance und DSGVO](../sicherheit/compliance-und-dsgvo.md)
 - [Monatlicher Betrieb](../checklisten/checkliste-fuer-den-monatlichen-betrieb.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

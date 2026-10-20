@@ -158,8 +158,8 @@ Schritt tut, ist in [Das Skript des Multisite-Installers](../sevenx-multisite/da
 - [Grundlagen der Seitenpakete](README.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Das Installerskript ändern](../eigene/das-installerskript-aendern.md)
-- [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../../en/us/install/04-choosing-an-install-method.md#43-site-packages-what-is-installed)
-- [Der Setup-Assistent, 5.3.15 Websites anlegen](../../../../en/us/install/05-setup-wizard.md#5315-creating-sites)
+- [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird)
+- [Der Setup-Assistent, 5.3.15 Websites anlegen](../../../installation/05-setup-assistent.md#5315-erstellung-der-seiten)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md): 7x und die Exponential Foundation ermutigen Sie ausdrücklich, Ihr
   Seitenpaket per Pull Request einzureichen.
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

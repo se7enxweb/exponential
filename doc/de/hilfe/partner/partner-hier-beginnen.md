@@ -72,7 +72,7 @@ Beiträge) und wo die veröffentlichten Quellen aufhören und die Exponential Fo
 
 | Tag | Tun Sie das | Seite |
 |---|---|---|
-| 1 | Lesen Sie, wer hinter Exponential steht | [Wer ist 7x?](../../../en/us/help/who-is-7x.md), [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md) |
+| 1 | Lesen Sie, wer hinter Exponential steht | [Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 | 1 | Verstehen Sie, was ein Partner ist und wer das Programm betreibt | [Was ein Exponential-Partner ist](was-ein-exponential-partner-ist.md), [Wer das Partnerprogramm betreibt](wer-das-partnerprogramm-betreibt.md) |
 | 2 | Wählen Sie Ihr Profil und eine realistische Stufe | [Partnerprofile](partnerprofile.md), [Partnerstufen](partnerstufen.md) |
 | 2 | Prüfen Sie die Kosten und was sie kaufen | [Partnertarife und Preise](partnertarife-und-preise.md), [Vorteile für Partner](vorteile-fuer-partner.md) |
@@ -105,17 +105,17 @@ Beiträge) und wo die veröffentlichten Quellen aufhören und die Exponential Fo
 |---|---|---|
 | Das Partnerprogramm, Ihre Bewerbung, Ihre Stufe | Das Partnerteam, über das Formular unter <https://exponential.earth/partner/contact-us> | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
 | Bezahlter Support und Dienstleistungen von 7x | <https://se7enx.com/contact> | <https://exponential.earth/support> |
-| Die Foundation | <https://foundation.exponential.earth/> | [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md) |
+| Die Foundation | <https://foundation.exponential.earth/> | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 | Technische Fragen | Foren <https://share.exponential.earth/forums>, Telegram <https://t.me/exponentialcms> | <https://exponential.earth/about/project> |
 | Ein Sicherheitsproblem | security@se7enx.com, vertraulich | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
 
-**Öffentliche Demos für Interessenten.** Eine Demo mit veröffentlichter Anmeldung läuft im Demomodus (`EXP_DEMO_MODE=1`), damit die Anmeldung weiter funktioniert. [Demomodus für Hoster](../hosting/sicherheit/demomodus-fuer-hoster.md), [FAQ zum Demomodus](../../../en/us/help/demo-mode-faq.md).
+**Öffentliche Demos für Interessenten.** Eine Demo mit veröffentlichter Anmeldung läuft im Demomodus (`EXP_DEMO_MODE=1`), damit die Anmeldung weiter funktioniert. [Demomodus für Hoster](../hosting/sicherheit/demomodus-fuer-hoster.md), [FAQ zum Demomodus](../demomodus-faq.md).
 
 ## Verwandte Seiten
 
-- [Unterstützer: hier beginnen](../../../en/us/help/supporters/supporters-start-here.md)
-- [Sponsoren: hier beginnen](../../../en/us/help/sponsors/sponsors-start-here.md)
-- [Vertrieb und Marketing: hier beginnen](../../../en/us/help/business/sales-and-marketing-start-here.md)
-- [Projektleitungen: hier beginnen](../../../en/us/help/leadership/project-managers-start-here.md)
-- [Wer ist 7x?](../../../en/us/help/who-is-7x.md), [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Unterstützer: hier beginnen](../unterstuetzer/unterstuetzer-hier-beginnen.md)
+- [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md)
+- [Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md)
+- [Projektleitungen: hier beginnen](../fuehrung/projektleiter-hier-beginnen.md)
+- [Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

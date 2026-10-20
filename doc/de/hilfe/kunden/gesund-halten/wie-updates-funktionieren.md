@@ -11,7 +11,7 @@ type: help
 
 Diese Seite erklärt ohne Befehle, was geschieht, wenn Ihre Exponential-Website aktualisiert wird. Wenn Sie die Teile
 kennen, können Sie besser planen, die richtigen Fragen stellen und einen Kostenvoranschlag beurteilen. Die Personen, die
-die Arbeit erledigen, folgen [Upgrade](../../../../en/us/guides/upgrading.md) und [Mit Git aktualisieren](../../../../en/us/help/update-with-git.md).
+die Arbeit erledigen, folgen [Upgrade](../../../anleitungen/aktualisieren.md) und [Mit Git aktualisieren](../../mit-git-aktualisieren.md).
 
 ## Warum Sie überhaupt aktualisieren
 
@@ -24,7 +24,7 @@ Sicherheitsplan.
 ## Die vier Teile eines Updates
 
 Ein Update einer Exponential-Website betrifft vier Dinge, in dieser Reihenfolge
-([Upgrade, Teil C](../../../../en/us/guides/upgrading.md)):
+([Upgrade, Teil C](../../../anleitungen/aktualisieren.md)):
 
 | Teil | Was sich ändert | Wer es üblicherweise erledigt |
 |---|---|---|
@@ -34,14 +34,14 @@ Ein Update einer Exponential-Website betrifft vier Dinge, in dieser Reihenfolge
 | Caches und der laufende Server | Caches werden geleert und der PHP-Server (oder Exponential Velocity) neu geladen, damit Besucher den neuen Code sehen | Dieselbe Person, zuletzt |
 
 Bei einer Website aus Git-Klonen sind die ersten beiden Schritte „Git bringt den Kernel auf Stand“ und dann „Composer
-bringt die Erweiterungen auf Stand“ ([Mit Git aktualisieren](../../../../en/us/help/update-with-git.md)). Beides lässt sich über die
+bringt die Erweiterungen auf Stand“ ([Mit Git aktualisieren](../../mit-git-aktualisieren.md)). Beides lässt sich über die
 Kommandozeile erledigen oder, wenn die Erweiterungen `git_manager` und `ezupdate` aktiv sind, aus der Administration.
 
 ## Was der Betreiber entscheidet
 
 | Entscheidung | Warum sie Ihre ist |
 |---|---|
-| Wie eng Sie folgen | Das neueste Release-Tag oder ein Branch, den Ihr Anbieter pflegt; siehe [Mit Git aktualisieren](../../../../en/us/help/update-with-git.md) |
+| Wie eng Sie folgen | Das neueste Release-Tag oder ein Branch, den Ihr Anbieter pflegt; siehe [Mit Git aktualisieren](../../mit-git-aktualisieren.md) |
 | Wann das Zeitfenster ist | Besucher sehen möglicherweise für kurze Zeit eine Wartungsseite |
 | Wer danach was testet | Nur Ihr Team weiß, welche Seiten und Formulare am wichtigsten sind |
 | Was geschieht, wenn es fehlschlägt | Zum Backup zurückkehren oder vorwärts korrigieren; entscheiden Sie vorher, nicht währenddessen |
@@ -49,11 +49,11 @@ Kommandozeile erledigen oder, wenn die Erweiterungen `git_manager` und `ezupdate
 ## Woran Sie erkennen, dass ein Update funktioniert hat
 
 Die Person, die das Update durchführt, hat Prüfungen mit einem klaren Ergebnis
-([Upgrade, das Upgrade prüfen](../../../../en/us/guides/upgrading.md)):
+([Upgrade, das Upgrade prüfen](../../../anleitungen/aktualisieren.md)):
 
 - **Setup > Systeminformationen** nennt die neue Version.
 - **Setup > Upgrade-Prüfung** vergleicht die Dateien mit dem Release und die Datenbank mit ihrem Schema; sie liest nur
-  und ändert nichts ([Die Upgrade-Prüfung](../../../../en/us/guides/upgrade-check.md)).
+  und ändert nichts ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)).
 - Die Startseite lädt, die Administration öffnet sich, und ein Testelement lässt sich veröffentlichen.
 
 Lassen Sie sich diese drei Ergebnisse nach jedem Update schriftlich geben.
@@ -74,7 +74,7 @@ alles, was Ihr Team tun muss.
 ## Automatische Updates
 
 Eine Website aus Git-Klonen kann sich mit Cron oder einem systemd-Timer nach Plan selbst aktualisieren
-([Mit Git aktualisieren](../../../../en/us/help/update-with-git.md)). Ob das zu Ihnen passt, ist eine Entscheidung, die Sie mit Ihrem
+([Mit Git aktualisieren](../../mit-git-aktualisieren.md)). Ob das zu Ihnen passt, ist eine Entscheidung, die Sie mit Ihrem
 Anbieter treffen: Es spart Arbeit, aber jemand muss trotzdem das Ergebnis lesen und die Website prüfen. Der
 Hosting-Leitfaden rät, den prüfenden Teil über viele Websites hinweg zu automatisieren, „ohne etwas unbeaufsichtigt zu
 aktualisieren“ ([Automatische Updates mit ezupdate](../../hosting/betrieb/automatische-updates-mit-ezupdate.md)).
@@ -85,4 +85,4 @@ aktualisieren“ ([Automatische Updates mit ezupdate](../../hosting/betrieb/auto
 - [Upgrades mit Ihrem Anbieter](upgrades-mit-ihrem-anbieter.md)
 - [Checkliste für den Upgrade-Tag](checkliste-upgrade-tag.md)
 - [Upgrades ohne Überraschungen](../../../../en/us/help/businesses/reliability/upgrades-without-surprises.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

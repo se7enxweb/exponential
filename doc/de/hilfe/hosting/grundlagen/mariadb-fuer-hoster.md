@@ -13,8 +13,8 @@ Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei einem H
 für Exponential-Websites bereitstellen, die übliche Datenbank, die ein Hosting-Panel anlegt. Sie beantwortet: wie
 MariaDB angesteuert wird, wie Sie die Datenbank und den Benutzer einer Website anlegen, worauf Sie bei Zeichensätzen
 achten müssen und wie Sie sichern. MariaDB ist die vierte in der offiziellen Reihenfolge und der MySQL-kompatible
-Server, den das Projekt bevorzugt. Quellen: [Datenbankunterstützung](../../../../en/us/help/database-support.md#4-mariadb) und
-[Kapitel 9.3](../../../../en/us/install/09-databases.md#93-mysql-and-mariadb).
+Server, den das Projekt bevorzugt. Quellen: [Datenbankunterstützung](../../datenbankunterstuetzung.md#4-mariadb) und
+[Kapitel 9.3](../../../installation/09-datenbanken.md#93-mysql-und-mariadb).
 
 ## Inhalt
 
@@ -38,13 +38,13 @@ tun muss und was sich unterscheidet.
 - `exp:install --db=mariadb` ist dasselbe wie `--db=mysql`.
 - Der Kickstarter nimmt `[database_choice] Type=mysqli` (`mysql` wird akzeptiert).
 - MariaDB ist nicht in der CI des Projekts; der Job für MySQL 8.0 testet denselben Treiber, und MariaDB 10.5 läuft auf
-  dem Entwicklungsserver des Projekts ([Testabdeckung](../../../../en/us/help/database-support.md#test-coverage-ci)).
+  dem Entwicklungsserver des Projekts ([Testabdeckung](../../datenbankunterstuetzung.md#testabdeckung-ci)).
 
 ## Versionen
 
 Die Untergrenze des Assistenten ist 4.1.1 (die MySQL-Nummer in `eZSetupDatabaseMap()`), was keine Empfehlung ist.
 Betreiben Sie ein Release, das Ihr Hersteller noch mit Sicherheitskorrekturen versorgt, mit `utf8mb4` und InnoDB
-([Versionen](../../../../en/us/help/database-support.md#versions-checked-against-the-code)).
+([Versionen](../../datenbankunterstuetzung.md#versionen-am-code-überprüft)).
 
 ## Eine Datenbank pro Website anlegen
 
@@ -95,7 +95,7 @@ konvertiert sie.
 
 **Lese-Replikate.** `UseSlaveServer=enabled` mit `SlaveServerArray[]` und den zugehörigen Schlüsseln schickt
 Lesezugriffe an ein Replikat, das pro Anfrage zufällig gewählt wird; Schreibzugriffe gehen an `Server`. MySQL und MariaDB
-sind die einzigen Engines mit eingebauter Aufteilung von Lesezugriffen ([Kapitel 9.3, Replikate](../../../../en/us/install/09-databases.md#replicas)).
+sind die einzigen Engines mit eingebauter Aufteilung von Lesezugriffen ([Kapitel 9.3, Replikate](../../../installation/09-datenbanken.md#replikate)).
 
 ## Zeichensätze
 
@@ -143,8 +143,8 @@ Maschine; bevorzugen Sie die Abfrage oder eine Optionsdatei. Ein vollständiges 
 ## Verwandte Seiten
 
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md) und [MySQL für Hoster](mysql-fuer-hoster.md)
-- [Datenbankunterstützung: MariaDB](../../../../en/us/help/database-support.md#4-mariadb) und
-  [Zeichensätze](../../../../en/us/help/database-support.md#character-sets-and-collations)
-- [Kapitel 9.3: MySQL und MariaDB](../../../../en/us/install/09-databases.md#93-mysql-and-mariadb)
+- [Datenbankunterstützung: MariaDB](../../datenbankunterstuetzung.md#4-mariadb) und
+  [Zeichensätze](../../datenbankunterstuetzung.md#zeichensätze-und-kollationen)
+- [Kapitel 9.3: MySQL und MariaDB](../../../installation/09-datenbanken.md#93-mysql-und-mariadb)
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

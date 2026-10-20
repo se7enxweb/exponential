@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für die Leitung, die dem Administrator sagen muss, was ein neuer Kollege tun darf. Die Regel ist
 einfach: Geben Sie die kleinste Rolle, mit der die Person ihre Arbeit erledigen kann, im kleinsten Teil der Website,
 und fügen Sie mehr erst hinzu, wenn es gebraucht wird. Exponential macht das praktikabel, weil sich eine Rolle auf
-eine Sektion, einen Teilbaum oder eine Sprache einschränken lässt ([Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)).
+eine Sektion, einen Teilbaum oder eine Sprache einschränken lässt ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 
 ## Inhalt
 
@@ -37,9 +37,9 @@ eine Sektion, einen Teilbaum oder eine Sprache einschränken lässt ([Rollen und
 |---|---|---|
 | Redakteur in einer Abteilung | die Gruppe der Redakteure mit der Rolle Editor | zugewiesen mit einer Einschränkung auf Teilbaum oder Sektion der Abteilung ([Abteilungen, Rollen und Sektionen](../../../../en/us/help/businesses/intranets/departments-roles-and-sections.md)) |
 | Nachwuchsautor oder Praktikant | die Gruppe der Redakteure, nicht unter den *Ausgenommenen Benutzergruppen* der Freigabe, sodass ihre Versionen auf eine freigebende Person warten | wie oben, in einer Sektion, die die Freigabe abdeckt |
-| Freigebende Person oder Chefredaktion | in die Gruppe der freigebenden Personen des Freigabe-Workflows aufgenommen | die betroffenen Sektionen des Workflows ([Workflows](../../../../en/us/guides/workflows.md)) |
+| Freigebende Person oder Chefredaktion | in die Gruppe der freigebenden Personen des Freigabe-Workflows aufgenommen | die betroffenen Sektionen des Workflows ([Workflows](../../../anleitungen/workflows.md)) |
 | Übersetzer oder Agentur | eine Übersetzerrolle | Bearbeiten, Übersetzen und Anlegen nach Sprache eingeschränkt ([Übersetzungs-Workflow](../../../../en/us/help/businesses/multilingual/translation-workflow.md)) |
-| Person, die Kontaktformulare beantwortet | eine Rolle mit `infocollector/read` | sonst nichts ([Gesammelte Informationen](../../../../en/us/guides/collected-information.md)) |
+| Person, die Kontaktformulare beantwortet | eine Rolle mit `infocollector/read` | sonst nichts ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) |
 | Shop-Personal | eine Shop-Rolle, die Ihr Partner eingerichtet hat | der Teil des Baums, der zum Shop gehört ([Shop-Dashboard](../../../../en/us/features/6.0/store-dashboard.md)) |
 | Vorübergehende Hilfe | die kleinste der obigen | ein Enddatum in Ihren eigenen Notizen, siehe [Ausscheiden von Mitarbeitenden](ausscheiden-von-mitarbeitenden.md) |
 
@@ -80,4 +80,4 @@ Bewahren Sie die Anfrage auf: Sie ist der Nachweis, mit dem Sie bei der jährlic
 - [Rollen für Ihr Team](rollen-fuer-ihr-team.md)
 - [Neue Mitarbeitende einarbeiten](neue-mitarbeitende-einarbeiten.md)
 - [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

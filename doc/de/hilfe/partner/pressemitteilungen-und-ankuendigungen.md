@@ -69,5 +69,5 @@ led by 7x and operated by the Exponential Foundation. https://exponential.earth/
 
 - [Co-Marketing mit 7x und dem Projekt](co-marketing.md)
 - [Eine Fallstudie schreiben](eine-fallstudie-schreiben.md)
-- [Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

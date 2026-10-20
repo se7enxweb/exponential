@@ -22,7 +22,7 @@ verantwortlich ist.
 | Bedarf | Was ihn trägt | Wo es erklärt wird |
 |---|---|---|
 | Beiträge in einem Blog | Inhaltsklassen; die Demo-Installation hat *Blog* und *Blog post* | [Inhaltsklassen für Websites](../../../../en/us/help/creators/website-creators/content-classes-for-websites.md) |
-| Schreiben und Veröffentlichen | Entwürfe, Veröffentlichen, Versionskontrolle | [Inhalte bearbeiten](../../../../en/us/help/editing-content.md), [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md) |
+| Schreiben und Veröffentlichen | Entwürfe, Veröffentlichen, Versionskontrolle | [Inhalte bearbeiten](../../inhalte-bearbeiten.md), [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
 | Beiträge, die erscheinen, während Sie unterwegs sind | Zeitgesteuerte Veröffentlichung | [Zeitgesteuertes Veröffentlichen](../alltag/zeitgesteuertes-veroeffentlichen.md) |
 | Leser, die dem Blog folgen | RSS- und ATOM-Feeds | [RSS- und Podcast-Feeds](../wachstum/rss-und-podcast-feeds.md) |
 | Themen und Tags | Tags (die Erweiterung eZ Tags, wo Ihre Website sie verwendet) | [Verschlagworten mit eZ Tags](../../../../en/us/help/creators/website-creators/tagging-with-eztags.md) |
@@ -78,4 +78,4 @@ Folgen Sie dem [Lesepfad für Blogs](lesepfad-blogs.md).
 - [Magazine: hier beginnen](magazine-hier-beginnen.md)
 - [RSS-Feeds für Ihre Website (Website-Ersteller)](../../../../en/us/help/creators/website-creators/rss-feeds-for-your-site.md)
 - [SEO-Grundlagen (Website-Ersteller)](../../../../en/us/help/creators/website-creators/seo-basics.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

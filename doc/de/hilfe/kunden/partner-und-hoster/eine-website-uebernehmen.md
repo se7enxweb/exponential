@@ -30,19 +30,19 @@ Betreibers. Wenn eine ordentliche Übergabe noch möglich ist, verwenden Sie zue
 
 | Herausfinden | Wo |
 |---|---|
-| Version von Exponential | **Setup > Systeminformationen** ([Systeminformationen](../../../../en/us/guides/system-information.md)) |
+| Version von Exponential | **Setup > Systeminformationen** ([Systeminformationen](../../../anleitungen/systeminformationen.md)) |
 | PHP, Datenbank, Engine | Dieselbe Seite |
 | Erweiterungen und ihre Versionen | **Setup > Extensions** und **Info > Über** |
-| Ob Dateien gegenüber dem Release geändert wurden | **Setup > Upgrade-Prüfung** ([Die Upgrade-Prüfung](../../../../en/us/guides/upgrade-check.md)) |
+| Ob Dateien gegenüber dem Release geändert wurden | **Setup > Upgrade-Prüfung** ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)) |
 | Warnungen zum Zustand | Die Statusprüfungen oben auf **Setup > Systeminformationen** |
 | Eingeplante Jobs | **Setup > Cronjobs** |
 
 Vergleichen Sie die Version mit der gepflegten Linie ([Release-Linie und Support](../gesund-halten/release-linie-und-support.md)).
-Eine Website auf 5.x oder älter braucht ein Upgrade-Projekt ([Upgrade](../../../../en/us/guides/upgrading.md)).
+Eine Website auf 5.x oder älter braucht ein Upgrade-Projekt ([Upgrade](../../../anleitungen/aktualisieren.md)).
 
 > **Tipp**
 > **Bericht als Text kopieren** auf **Setup > Systeminformationen** liefert eine Zusammenfassung für eine
-> Support-Anfrage ohne Passwörter, Schlüssel, Tokens oder vollständige Serverpfade ([Systeminformationen](../../../../en/us/guides/system-information.md)).
+> Support-Anfrage ohne Passwörter, Schlüssel, Tokens oder vollständige Serverpfade ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 > Sie ist ein gutes erstes Dokument für einen neuen Partner.
 
 ## Dritte Woche: Historie und Personen
@@ -80,4 +80,4 @@ Anzeichen eines Einbruchs sein. Löschen Sie nichts; rufen Sie den Hoster an und
 - [Sicherheits-Checkliste für Betreiber](../gesund-halten/sicherheits-checkliste-fuer-betreiber.md)
 - [Zuverlässigkeits-Scorecard](../../../../en/us/help/businesses/reliability/reliability-scorecard.md)
 - [Zu Exponential wechseln](../../../../en/us/help/businesses/choosing/switching-to-exponential.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

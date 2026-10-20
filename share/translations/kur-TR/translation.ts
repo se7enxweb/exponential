@@ -73259,5 +73259,125 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Ji bo rêxistin û kesên ku malpera xwe li ser Exponential dimeşînin: tîm, weşandin, bazirganî, lênêrîn, mezinbûn û hevkar.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Rêbera bikarhêner</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Her rûpel pirsek: kî dikare bike, gav, çi dikare xelet biçe û li ku derê bêtir bixwîne.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Pelên projeyê</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Pela projeyê</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Ev pel beşek ji koda çavkaniyê ya Exponential e û bi wê re di bin %license de tê belavkirin.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>DITA daxistin</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>Pirtûkên elektronîk</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Ji mijarên belavkirî têne çêkirin her carê ku yek ji wan tê belavkirin, û bi guhertoyên xwe yên berê re têne parastin.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Pel</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Mezinahî</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Hate nûkirin</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Hemûyan wek DITA daxistin</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Mijarên alîkariyê yên ku kontrola wan dereng maye</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Dîroka kontrolê derbas bûye, an jî mijar zêdetirî %days rojan bê guhertin di kontrolê de ye.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Dereng</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Kirin</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Dîroka kontrolê %date berî %days rojan derbas bû</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>%days roj in bê guhertin di kontrolê de ye</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Biguherîne</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Rewşê diyar bike</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown ji %count mijarên dereng têne nîşandan. ./console exp:help:content review hemûyan rêz dike.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Berî ku dest pê bikî</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Gav</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Encam</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Paşê çi bikî</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Merc</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Sedem</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Çareserî</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Destpêka alîkariyê</translation>
+    </message>
 </context>
 </TS>

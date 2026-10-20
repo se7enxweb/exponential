@@ -71392,6 +71392,42 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Reading in:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
@@ -73137,6 +73173,126 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help Start</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

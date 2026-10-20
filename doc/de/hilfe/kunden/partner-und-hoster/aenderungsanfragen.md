@@ -12,13 +12,13 @@ type: help
 Eine Änderungsanfrage ist der Weg, auf dem Ihr Team einen Partner oder Hoster um etwas Neues oder Anderes an der
 Website bittet: einen neuen Seitentyp, eine Designänderung, eine neue Sprache, eine Einstellungsänderung. Eine klare
 Anfrage bekommt eine klare Schätzung und bringt weniger Überraschungen. Diese Seite beschreibt die Seite des
-Betreibers; die Vorlagen für Projektleitungen stehen unter [Projektvorlagen](../../../../en/us/help/leadership/project-templates.md).
+Betreibers; die Vorlagen für Projektleitungen stehen unter [Projektvorlagen](../../fuehrung/projektvorlagen.md).
 
 ## Ist es eine Änderung, oder können Sie es selbst erledigen?
 
 Vieles braucht überhaupt keinen Anbieter: Inhalte, Menüs, die aus Inhalten bestehen, Bilder, Übersetzungen, Rollen und
-Konten. Die Seiten für Redakteure zeigen, wie ([Inhalte bearbeiten](../../../../en/us/help/editing-content.md), [Sprachen](../../../../en/us/help/languages.md),
-[Layouts-Editor](../../../../en/us/help/layouts-editor.md)). Eine Änderungsanfrage ist für Templates, Designs, Erweiterungen, das
+Konten. Die Seiten für Redakteure zeigen, wie ([Inhalte bearbeiten](../../inhalte-bearbeiten.md), [Sprachen](../../sprachen.md),
+[Layouts-Editor](../../layout-editor.md)). Eine Änderungsanfrage ist für Templates, Designs, Erweiterungen, das
 Inhaltsmodell, Einstellungen und den Server.
 
 ## Was zu schreiben ist
@@ -36,7 +36,7 @@ Inhaltsmodell, Einstellungen und den Server.
 ## Wie es ablaufen sollte
 
 1. **Schätzung schriftlich**, mit dem, was enthalten ist und was nicht. „Eine Änderungsanfrage ist eine neue Zeile mit
-   eigener Schätzung“ ([Schätzen und Abgrenzen mit Erweiterungen](../../../../en/us/help/leadership/estimating-and-scoping-with-extensions.md)).
+   eigener Schätzung“ ([Schätzen und Abgrenzen mit Erweiterungen](../../fuehrung/schaetzen-und-abgrenzen-mit-erweiterungen.md)).
 2. **Genehmigung** durch die in Ihrem Vertrag genannte Person.
 3. **Gebaut und getestet auf einer Kopie** der Website, nie zuerst auf der Live-Website
    ([Unterbrechungsfreie Deployments](../../../../en/us/help/businesses/reliability/graceful-deploys.md)).
@@ -86,4 +86,4 @@ Live:                ____ (date, time)   Checked by: ____
 - [Wer was macht](wer-was-macht.md)
 - [Was Sie Ihren Partner fragen sollten](../gesund-halten/was-sie-ihren-partner-fragen-sollten.md)
 - [Vorschau vor dem Veröffentlichen](../../../../en/us/help/businesses/reliability/preview-before-you-publish.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

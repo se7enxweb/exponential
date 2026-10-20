@@ -66,4 +66,4 @@ Beginn des Schuljahres.
 - [Lesepfad für Kunden](lesepfad-fuer-kunden.md)
 - [Ihre ersten 30 Tage als Website-Betreiber](ihre-ersten-30-tage.md)
 - [Monatliche Checkliste für den Betrieb (Unternehmen)](../../../en/us/help/businesses/templates/monthly-operations-checklist.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

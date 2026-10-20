@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren bei Hosting-Anbietern, die PHP für Exponential-Websites konfigurieren. Sie beantwortet: welche
 OPcache-Einstellungen Sie unter jedem Server nutzen, warum die Einstellungen von Velocity von denen von PHP-FPM abweichen, welche
 Einstellung Exponential kaputtmacht, was das Projekt gemessen hat und wie Sie den Cache auf einer Live-Website prüfen. Die Quelle ist
-[Kapitel 10, Abschnitt 10.12](../../../../en/us/install/10-after-installing.md#opcache) und
+[Kapitel 10, Abschnitt 10.12](../../../installation/10-nach-der-installation.md#opcache) und
 [Velocity und der Opcode-Cache](../../../../en/us/features/6.0/velocity-opcode-cache-and-profile.md).
 
 ## Inhalt
@@ -105,7 +105,7 @@ php bin/php/cache.php opcache status --allow-root-user        # the cache of the
 ```
 
 Setup > Caches hat **OPcache zurücksetzen** und **APCu leeren** für den Serverprozess, der die Seite beantwortet hat; der andere Server
-behält seine eigenen ([Caches](../../../../en/us/guides/caches.md#4-velocity)).
+behält seine eigenen ([Caches](../../../anleitungen/caches.md#4-velocity)).
 
 Um zu sehen, wie Anfragen den Cache nutzen, schalten Sie das Opcode-Cache-Profil ein. Es ist aus, solange keine Markierungsdatei
 existiert; solange sie existiert, hängt jede Anfrage eine JSON-Zeile an `var/tmp/opcache_profile.log` an:
@@ -133,4 +133,4 @@ wieder aus, indem Sie die Datei `.on` aus `var/tmp/` verschieben; das Log wächs
 - [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md)
 - [Cache-Schichten](cache-schichten.md)
 - [Velocity und der Opcode-Cache](../../../../en/us/features/6.0/velocity-opcode-cache-and-profile.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

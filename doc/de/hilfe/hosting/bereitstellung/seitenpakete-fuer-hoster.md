@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Hoster, die wählen, was eine neue Kunden-Website bei der Installation enthält. Sie beantwortet: welche Seitenpakete es
 gibt, was „clean“ bedeutet, woher der Installer Pakete holt und wie Sie ohne Internetzugang installieren. Die Referenz ist
-[4.3 Seitenpakete](../../../../en/us/install/04-choosing-an-install-method.md#43-site-packages-what-is-installed).
+[4.3 Seitenpakete](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird).
 
 ## Inhalt
 
@@ -74,10 +74,10 @@ eine Installation ohne Internet. Für einen Hoster heißt das:
 | migriert eine bestehende Website | keines davon: die Website kommt aus ihrem Backup ([Kunden migrieren](../migrationen/README.md)) |
 
 Installieren Sie mit `exp:install --package=<name>` oder mit `Site_package` im Abschnitt `[site_types]` von `kickstart.ini`
-([6.4](../../../../en/us/install/06-kickstarter.md#64-kickstartini-reference)).
+([6.4](../../../installation/06-kickstarter.md#64-referenz-zu-kickstartini)).
 
 ## Verwandte Seiten
 
 - [Ein-Klick-Installer](ein-klick-installer-fuer-exponential.md)
 - [Mehrere Websites in einer Installation](mehrere-websites-in-einer-installation.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

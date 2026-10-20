@@ -25,7 +25,7 @@ wenn Sie keinen Zugriff haben.
 ## Besucher und Suche
 
 - [ ] Öffnen Sie **Setup > Suchstatistiken** (`/search/stats`). Filtern Sie die Begriffe, die nichts gefunden haben,
-      und sortieren Sie nach Häufigkeit ([URL-Aliase, Wildcards und Suchstatistiken](../../../../en/us/guides/urls-and-aliases.md#5-search-statistics)).
+      und sortieren Sie nach Häufigkeit ([URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md#5-suchstatistiken)).
 - [ ] Für jeden der häufigsten Begriffe ohne Treffer: Fehlt der Inhalt (schreiben Sie ihn), heißt er anders (nehmen
       Sie das Wort in einen Titel oder eine Einleitung auf), oder ist er verborgen (prüfen Sie seine Sichtbarkeit)?
 - [ ] Wenn die Seite meldet, dass kein Siteaccess Suchen aufzeichnet, entscheiden Sie, ob Sie das anfordern
@@ -35,7 +35,7 @@ wenn Sie keinen Zugriff haben.
 
 - [ ] **Setup > URL-Verwaltung** (`/url/list`): Zeigen Sie **ungültige** Links an; beheben oder entfernen Sie jeden
       in dem Inhalt, der ihn verwendet. Die Linkprüfung läuft im Cron-Teil `infrequent`
-      ([URL-Aliase, Wildcards und Suchstatistiken](../../../../en/us/guides/urls-and-aliases.md)).
+      ([URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)).
 - [ ] **Kaputte Beziehungen** ab der Inhaltswurzel: Beheben Sie jede Quelle
       ([Die Inhaltsprüfungen](../../../../en/us/features/6.0/content-checks.md)).
 - [ ] In diesem Monat entfernte Seiten: Jede hat eine Ersatzadresse (einen Alias auf der neuen Seite oder eine
@@ -83,4 +83,4 @@ Crawl errors in webmaster tools: ____   Sent to partner/host: ______________
 - [SEO-Prüfungen](seo-pruefungen.md)
 - [Wöchentliche Routine des Betreibers](woechentliche-routine-des-betreibers.md)
 - [Monatliche Checkliste für den Betrieb](../../../../en/us/help/businesses/templates/monthly-operations-checklist.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

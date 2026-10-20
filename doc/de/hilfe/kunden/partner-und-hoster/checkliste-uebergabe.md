@@ -28,7 +28,7 @@ Partner die Übergabephase ihres Leitfadens ([Leitfaden für Implementierungspro
 - [ ] Die Domain und das DNS, auf Ihren Namen, oder zum vereinbarten Datum übertragen.
 - [ ] Die Liste der Konten, die der alte Anbieter in Ihrer Administration hatte, damit sie deaktiviert werden können;
       ein gut geführter Hoster wird „dem Kunden mitteilen, welche Konten die eigenen waren“ ([Ausscheiden eines Kunden](../../hosting/checklisten/checkliste-fuer-das-offboarding-eines-kunden.md)).
-- [ ] Das Notfallverfahren, schriftlich festgehalten ([Das Administratorpasswort ändern](../../../../en/us/help/change-the-admin-password.md)).
+- [ ] Das Notfallverfahren, schriftlich festgehalten ([Das Administratorpasswort ändern](../../administratorpasswort-aendern.md)).
 
 ## Ein vollständiger Export
 
@@ -47,7 +47,7 @@ Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheid
 
 - [ ] Die Versionen: Exponential, PHP, Datenbank-Engine und -Version, Engine, Erweiterungen.
 - [ ] Ein Übergabedokument: Inhaltsmodell, Rollen, Einstellungen, Cronjobs, Backups, Überwachung, bekannte Probleme
-      ([Projektvorlagen, Übergabedokument](../../../../en/us/help/leadership/project-templates.md)).
+      ([Projektvorlagen, Übergabedokument](../../fuehrung/projektvorlagen.md)).
 - [ ] Die Cron-Einträge und was sie ausführen.
 - [ ] Bekannte Probleme und ihre Links beim Projekt, falls vorhanden.
 - [ ] Offene Änderungsanfragen und ihr Stand ([Änderungsanfragen](aenderungsanfragen.md)).
@@ -64,7 +64,7 @@ Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheid
 |---|---|
 | Den Export auf einem Testrechner wiederherstellen | Er läuft ([Wiederherstellungstest](../gesund-halten/wiederherstellungstest.md)) |
 | **Setup > Systeminformationen** auf der neuen Website | Die erwartete Version; keine fehlgeschlagene Statusprüfung |
-| **Setup > Upgrade-Prüfung** | Keine unerwartet geänderten Dateien ([Die Upgrade-Prüfung](../../../../en/us/guides/upgrade-check.md)) |
+| **Setup > Upgrade-Prüfung** | Keine unerwartet geänderten Dateien ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)) |
 | Ihre Testliste | Jeder Punkt besteht ([Checkliste für den Upgrade-Tag](../gesund-halten/checkliste-upgrade-tag.md)) |
 
 ## Ganz am Ende
@@ -84,4 +84,4 @@ Eine vollständige Website besteht aus der Datenbank und den Dateien ([Ausscheid
 - [Eine Website übernehmen](eine-website-uebernehmen.md)
 - [Einen Hoster auswählen](einen-hoster-auswaehlen.md)
 - [Eine Website zwischen Hostern umziehen](../../hosting/migrationen/eine-website-zwischen-hostern-umziehen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

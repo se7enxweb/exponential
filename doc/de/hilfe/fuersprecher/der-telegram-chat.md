@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die im Community-Chat aktiv sind. Die README nennt ihn „Share Exponential! Telegram
 Community Support Chat“, den Support-Chat der Community, unter [t.me/exponentialcms](https://t.me/exponentialcms)
-([Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places)). Ein Chat ist schnell und freundlich und
+([Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community)). Ein Chat ist schnell und freundlich und
 vergisst schnell. Nutzen Sie ihn für schnelle Hilfe und zum Willkommenheißen, und bringen Sie dauerhafte Antworten an
 Orte, an denen man sie später findet.
 
@@ -92,4 +92,4 @@ Thank you for reporting!
 - [In den Foren arbeiten](in-den-foren-arbeiten.md)
 - [Die Community-Kanäle](community-kanaele.md)
 - [Neue willkommen heißen](neue-willkommen-heissen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

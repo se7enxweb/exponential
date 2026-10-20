@@ -72,7 +72,7 @@ Jeder Grund endet mit der Anzahl empfangener Bytes, zum Beispiel `HTTP 404, 9379
 |---|---|
 | `var/log/setup.log` | eine Warnung pro gescheitertem Versuch: `Download of <url>, attempt <n> of <N> failed: <reason>; trying again in <s> s` |
 | die Debug-Ausgabe, `var/log/warning.log` | dieselben Warnungen und `Download of package '<name>' from '<url>' failed after <N> attempt(s): <reason>` |
-| `var/log/kickstart.log` | der Lauf des Kickstarters ([Der Kickstarter, 6.9](../../../../en/us/install/06-kickstarter.md#69-logs)) |
+| `var/log/kickstart.log` | der Lauf des Kickstarters ([Der Kickstarter, 6.9](../../../installation/06-kickstarter.md#69-logs)) |
 
 Testen Sie vom Server selbst aus, was der Installer sehen würde:
 
@@ -112,14 +112,14 @@ Arbeiten Sie die Liste von oben nach unten ab:
 - [ ] **Installieren Sie offline**: Importieren Sie zuerst jedes Paket ([Offline-Installationen und Spiegel](offline-installationen-und-spiegel.md)).
 
 Für die Installation über die Konsole ist ein Halt beim Abrufen von Paketen in
-[Die Installation über die Konsole, 7.11](../../../../en/us/install/07-console-install.md#711-what-can-go-wrong) und
-[Fehlerbehebung, 12.8](../../../../en/us/install/12-troubleshooting.md#128-the-kickstarter-and-the-console-install) behandelt.
+[Die Installation über die Konsole, 7.11](../../../installation/07-installation-ueber-die-konsole.md#711-was-schiefgehen-kann) und
+[Fehlerbehebung, 12.8](../../../installation/12-fehlerbehebung.md#128-der-kickstarter-und-die-installation-über-die-konsole) behandelt.
 
 > **Tipp**
 > Führen Sie auf einem Server, auf dem Sie oft installieren, zuerst `exp:install --dry-run` aus. Es lädt das Seitenpaket und seine
 > Anforderungen in ein temporäres Repository herunter und hält an, bevor irgendetwas geschrieben wird, sodass ein Problem beim Herunterladen
 > sichtbar wird, bevor die Installation beginnt
-> ([Die Installation über die Konsole, 7.6](../../../../en/us/install/07-console-install.md#76-dry-run-and-print)).
+> ([Die Installation über die Konsole, 7.6](../../../installation/07-installation-ueber-die-konsole.md#76-probelauf-und-ausgabe)).
 
 ## In ezupdate
 
@@ -142,6 +142,6 @@ Siehe [Paketserver in ezupdate](../admin-oberflaeche/paketserver-in-ezupdate.md)
 - [Der Paketserver](README.md)
 - [Einstellungen des Paketservers](einstellungen-des-paketservers.md)
 - [Offline-Installationen und Spiegel](offline-installationen-und-spiegel.md)
-- [Der Setup-Assistent, 5.3.8 Seitenpaket](../../../../en/us/install/05-setup-wizard.md#538-site-package)
-- [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Der Setup-Assistent, 5.3.8 Seitenpaket](../../../installation/05-setup-assistent.md#538-site-paket)
+- [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

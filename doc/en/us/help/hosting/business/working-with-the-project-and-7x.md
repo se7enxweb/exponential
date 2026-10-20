@@ -67,7 +67,7 @@ attacker can do and the steps to reproduce, and "leave out passwords, secrets an
 ## Contributing fixes upstream
 
 A fix you keep only on your servers must be re-applied at every update. A fix merged upstream is maintained by the
-project. The project's practice: every pull request is merged, and contributors' commits are kept
+project. The project's practice: every pull request is merged, once its author has squashed and rebased it onto `main`
 ([Contributors and pull requests](../../who-is-the-exponential-foundation.md#contributors-and-pull-requests)).
 
 1. Fork the repository and create a branch ([Develop with Git](../../develop-with-git.md)).

@@ -182,5 +182,5 @@ auf Ihren eigenen Server richten, einschließlich der Liste von ezupdate und `ki
 - [Das Format index.xml](das-format-index-xml.md)
 - [Offline-Installationen und Spiegel](offline-installationen-und-spiegel.md)
 - [Paketserver in ezupdate](../admin-oberflaeche/paketserver-in-ezupdate.md)
-- [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../../en/us/install/04-choosing-an-install-method.md#43-site-packages-what-is-installed)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

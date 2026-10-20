@@ -39,22 +39,22 @@ der Website.
 | Link | die Adresse oder Knotennummer des Elements in der Administration |
 
 Verwenden Sie für den Link die Knotennummer oder die Adresse. Jede Person im Team kann sie mit der Suche öffnen
-([Ein Element über seine Nummer oder Adresse öffnen](../../../../en/us/help/searching.md)).
+([Ein Element über seine Nummer oder Adresse öffnen](../../suchen.md)).
 
 ## Wie jede Zeile auf der Website Wirklichkeit wird
 
 | Status im Kalender | In Exponential | Hilfe |
 |---|---|---|
-| In Arbeit | ein **Entwurf**; nur sein Ersteller sieht ihn, unter *Meine Entwürfe* | [Meine Entwürfe und meine ausstehenden Elemente](../../../../en/us/guides/drafts-and-pending.md) |
+| In Arbeit | ein **Entwurf**; nur sein Ersteller sieht ihn, unter *Meine Entwürfe* | [Meine Entwürfe und meine ausstehenden Elemente](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md) |
 | In Prüfung | eine **ausstehende** Version, von einer Freigabe zurückgehalten | [Freigabe und Prüfung](freigabe-und-pruefung.md) |
 | Geplant | eine Version, die ein Workflow *Bis Datum warten* bis zu ihrem Datum zurückhält, wenn Ihre Website einen hat | [Zeitgesteuertes Veröffentlichen](zeitgesteuertes-veroeffentlichen.md) |
-| Veröffentlicht | die veröffentlichte Version | [Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md) |
+| Veröffentlicht | die veröffentlichte Version | [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md) |
 | Landingpage für einen Zeitraum | ein Layout, zugeordnet durch eine Regel mit einer Bedingung `time` | [Landingpages mit Layouts](../wachstum/landingpages-mit-layouts.md) |
 | Newsletter | eine Ausgabe mit geplantem oder wiederkehrendem Versand | [Newsletter-Routine](../wachstum/newsletter-routine.md) |
 
 > **Hinweis**
 > Entwürfe sind persönlich. Ein Kollege kann den Entwurf eines anderen nicht öffnen, um ihn fertigzustellen; er
-> erstellt auf der Versionsseite einen neuen Entwurf aus einer Version ([Versionen eines Objekts](../../../../en/us/guides/content-history.md)).
+> erstellt auf der Versionsseite einen neuen Entwurf aus einer Version ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 > Planen Sie Übergaben vor dem Urlaub.
 
 ## Ein wöchentlicher Planungsrhythmus
@@ -91,4 +91,4 @@ einem Tag:
 - [Vorlage für den Redaktionskalender](vorlage-redaktionskalender.md)
 - [Wöchentliche Routine des Betreibers](woechentliche-routine-des-betreibers.md)
 - [Freigabe und Prüfung](freigabe-und-pruefung.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

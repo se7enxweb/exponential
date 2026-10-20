@@ -25,22 +25,22 @@ die Belege sind öffentlich und jeder kann sie in Minuten prüfen.
 
 Der Zweifel ist berechtigt. Die Codebasis wurde viele Jahre unter dem Namen eZ Publish entwickelt, und ihr Hersteller
 hat dieses Produkt nach fast achtzehn Jahren eingestellt
-([Exponential 6](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-6-the-kernel)). Die eigenen Quellen des Projekts
+([Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel)). Die eigenen Quellen des Projekts
 sagen: „Die Plattform, die ursprünglich als eZ Publish bekannt war, erreichte 2021 das Ende ihrer Lebensdauer. Wir
-haben weitergemacht“ ([Zeitleiste](../../../en/us/help/who-is-the-exponential-foundation.md#timeline)). Wer in diesen Jahren aufgehört
+haben weitergemacht“ ([Zeitleiste](../wer-ist-die-exponential-foundation.md#zeitleiste)). Wer in diesen Jahren aufgehört
 hat, das Projekt zu verfolgen, hat allen Grund zu fragen.
 
 ## Die Belege
 
 | Beleg | Quelle |
 |---|---|
-| 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026: fünfzehn Releases, 6.0.15 in Entwicklung | [Wer ist 7x?, Die Releases 6.0.x](../../../en/us/help/who-is-7x.md#the-60x-releases) |
-| „6556 Änderungen im Änderungsbuch in 53 Repositorys seit Dezember 2023“ | [Mit Einwänden umgehen, Wird es gepflegt?](../../../en/us/help/business/objection-handling.md#is-it-maintained) |
-| Tests laufen bei jedem Push und Pull Request, auf PHP 8.1 bis 8.5 | [CI](../../../en/us/bc/6.0/ci.md), [PHP-Versionen](../../../en/us/help/who-is-the-exponential-foundation.md#php-versions) |
+| 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026: fünfzehn Releases, 6.0.15 in Entwicklung | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
+| „6556 Änderungen im Änderungsbuch in 53 Repositorys seit Dezember 2023“ | [Mit Einwänden umgehen, Wird es gepflegt?](../geschaeft/einwandbehandlung.md#wird-es-gepflegt) |
+| Tests laufen bei jedem Push und Pull Request, auf PHP 8.1 bis 8.5 | [CI](../../../en/us/bc/6.0/ci.md), [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Was die aktuelle Linie hinzufügt: Velocity, admin4, Prüfprotokoll, Layouts, Exponential Intelligence, die Hilfe | [Änderungsprotokoll 6.0.15](../../../changelogs/6.0/6.0.15.md) |
 | Jeder Monat Arbeit wird in der Geschichte erzählt | [Die Geschichte](../../../en/us/history/README.md) |
-| Ein Unternehmen leitet es (7x), und eine gemeinnützige Organisation betreibt es (die Exponential Foundation, gegründet 2026) | [Die Foundation und 7x](../../../en/us/help/who-is-the-exponential-foundation.md#the-foundation-and-7x) |
-| Pull Requests kommen von mehreren Organisationen und werden übernommen | [Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows) |
+| Ein Unternehmen leitet es (7x), und eine gemeinnützige Organisation betreibt es (die Exponential Foundation, gegründet 2026) | [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x) |
+| Pull Requests kommen von mehreren Organisationen und werden übernommen | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 
 ## Lassen Sie es prüfen
 
@@ -77,7 +77,7 @@ since January 2024 - I can show you the list on my phone."
 
 - „Es ist lebendiger denn je.“ Vage; nennen Sie stattdessen die Fakten.
 - „eZ Publish ist jetzt Exponential von eZ Systems.“ Falsch: keine Verbindung zu eZ Systems oder Ibexa
-  ([Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short)).
+  ([Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt)).
 - „Tausende Unternehmen nutzen es noch.“ Keine Quelle zählt Benutzer.
 - „Jeden Monat ein Release.“ Nennen Sie die tatsächlichen Daten.
 
@@ -86,4 +86,4 @@ since January 2024 - I can show you the list on my phone."
 - [Gesprächspunkte: Langlebigkeit und Geschichte](gespraechspunkte-langlebigkeit-und-geschichte.md)
 - [Die Geschichte von Exponential in zwei Minuten](die-geschichte-in-zwei-minuten.md)
 - [Einwände als Fürsprecher beantworten](einwaende-beantworten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

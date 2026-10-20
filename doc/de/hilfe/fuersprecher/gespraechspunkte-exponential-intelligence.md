@@ -25,7 +25,7 @@ nicht, damit jede Person selbst entscheiden kann.
 
 „Ein Schreibassistent, der in die Oberfläche der Administration eingebaut ist“ und der „Entwürfe schreibt, als die
 angemeldete redaktionelle Person und mit deren eigenen Rechten“, und der nie selbst veröffentlicht
-([Exponential Intelligence](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-intelligence)).
+([Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence)).
 
 ## Die Punkte
 
@@ -34,8 +34,8 @@ angemeldete redaktionelle Person und mit deren eigenen Rechten“, und der nie s
 | „Es schreibt nur Entwürfe. Es veröffentlicht nie selbst.“ | [expai, Kurz gesagt](../../../en/us/features/6.0/extensions/expai.md#in-short) |
 | „Es arbeitet als die angemeldete redaktionelle Person, mit deren Rechten; es kann nichts tun, was diese Person nicht darf.“ | ebenda |
 | „**Send for approval** führt den normalen Veröffentlichungsvorgang aus, sodass ein Freigabe-Workflow die Version zurückhält.“ | [expai, Für Redakteure](../../../en/us/features/6.0/extensions/expai.md#for-editors) |
-| „Sie wählen den Anbieter: gehostete Dienste in den USA oder der EU oder ein lokales Modell mit offenen Gewichten.“ | [Exponential Intelligence](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-intelligence), [expai, Kurz gesagt](../../../en/us/features/6.0/extensions/expai.md#in-short) |
-| „Eine neue Installation aktiviert es, aber es sendet nichts irgendwohin, bis Sie einen Anbieterschlüssel hinzufügen.“ | [Exponential Intelligence](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-intelligence) |
+| „Sie wählen den Anbieter: gehostete Dienste in den USA oder der EU oder ein lokales Modell mit offenen Gewichten.“ | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence), [expai, Kurz gesagt](../../../en/us/features/6.0/extensions/expai.md#in-short) |
+| „Eine neue Installation aktiviert es, aber es sendet nichts irgendwohin, bis Sie einen Anbieterschlüssel hinzufügen.“ | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence) |
 | „Es kann Alternativtext für Bilder vorschlagen und Bilder melden, denen er fehlt.“ | [expai, Für Redakteure](../../../en/us/features/6.0/extensions/expai.md#for-editors) |
 | „Jeder Klick zeigt das Modell, die Region und die Kosten.“ | ebenda |
 
@@ -44,12 +44,12 @@ angemeldete redaktionelle Person und mit deren eigenen Rechten“, und der nie s
 | Bedenken | Antwort | Quelle |
 |---|---|---|
 | „KI veröffentlicht Unsinn.“ | Nur Entwürfe; ein Mensch veröffentlicht; Workflows gelten weiterhin | [expai, Für Redakteure](../../../en/us/features/6.0/extensions/expai.md#for-editors) |
-| „Unsere Daten verlassen das Haus.“ | Nichts wird gesendet, bis ein Anbieterschlüssel hinzugefügt ist; ein lokales Modell ist möglich | [Exponential Intelligence](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-intelligence) |
+| „Unsere Daten verlassen das Haus.“ | Nichts wird gesendet, bis ein Anbieterschlüssel hinzugefügt ist; ein lokales Modell ist möglich | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence) |
 | „Wir wollen überhaupt keine KI.“ | Administratoren können es abschalten; lesen Sie zuerst die Funktionsseite | [expai, Für Administratoren](../../../en/us/features/6.0/extensions/expai.md#for-administrators) |
 | „Wer ist für den Text verantwortlich?“ | Die redaktionelle Person, die ihn veröffentlicht, wie bei jedem Text | Die Richtlinie Ihrer Organisation |
 
 Für Organisationen hat die Seite des Vertriebs eine ausführlichere Tabelle:
-[Mit Einwänden umgehen, Exponential Intelligence und Datenschutz](../../../en/us/help/business/objection-handling.md#exponential-intelligence-and-data-protection).
+[Mit Einwänden umgehen, Exponential Intelligence und Datenschutz](../geschaeft/einwandbehandlung.md#exponential-intelligence-und-datenschutz).
 
 ## Sagen Sie nicht
 
@@ -73,4 +73,4 @@ Für Organisationen hat die Seite des Vertriebs eine ausführlichere Tabelle:
 - [Einwand: „Was ist mit den KI-Funktionen?“](einwand-ki-funktionen.md)
 - [Exponential Intelligence](../../../en/us/features/6.0/extensions/expai.md)
 - [Gesprächspunkte für Redakteure](gespraechspunkte-fuer-redakteure.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -39,7 +39,7 @@ Installer importiert haben, plus alles, was Sie hochladen, abrufen oder erstelle
 | Die Pakete eines Servers, Abrufen | `/update/packages/<server>` | [Pakete mit ezupdate abrufen](pakete-mit-ezupdate-abrufen.md) |
 | Wer was darf | Rollen und Richtlinien | [Berechtigungen für Pakete](berechtigungen-fuer-pakete.md) |
 
-Die Referenz für jedes Detail der Seiten des Kernels ist [Pakete](../../../../en/us/guides/packages.md); dieser Abschnitt ist der aufgabenorientierte
+Die Referenz für jedes Detail der Seiten des Kernels ist [Pakete](../../../anleitungen/pakete.md); dieser Abschnitt ist der aufgabenorientierte
 Einstieg.
 
 ## Zwei Module
@@ -77,9 +77,9 @@ Kommandozeile (`ezpm.php`) funktioniert weiter.
 ## Verwandte Seiten
 
 - [Seitenpakete: hier beginnen](../README.md)
-- [Pakete](../../../../en/us/guides/packages.md)
+- [Pakete](../../../anleitungen/pakete.md)
 - [ezupdate: Updates und Pakete in der Administration](../../../../en/us/features/6.0/extensions/ezupdate.md)
 - [Die Seiten Über und Pakete](../../../../en/us/features/6.0/about-and-package-pages.md)
 - [Ein eigenes Seitenpaket erstellen](../eigene/README.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

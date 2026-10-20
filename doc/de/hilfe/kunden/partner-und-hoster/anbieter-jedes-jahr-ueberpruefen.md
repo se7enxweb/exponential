@@ -82,4 +82,4 @@ Next review:        ____
 - [Verträge und SLAs](vertraege-und-slas.md)
 - [Was Sie Ihren Hoster fragen sollten](../gesund-halten/was-sie-ihren-hoster-fragen-sollten.md)
 - [Was Sie Ihren Partner fragen sollten](../gesund-halten/was-sie-ihren-partner-fragen-sollten.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

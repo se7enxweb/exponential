@@ -67,4 +67,4 @@ Vertriebszertifizierungen. Siehe [Zertifizierungen](zertifizierungen.md).
 - [Wie Sie sich bewerben](wie-sie-sich-bewerben.md)
 - [Checkliste für die Bewerbung](checkliste-fuer-die-bewerbung.md)
 - [Partnerstufen von Student bis Platinum](partnerstufen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

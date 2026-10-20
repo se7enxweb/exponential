@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Administratoren, die den Setup-Assistenten im Web ausführen, und für Entwickler, die wissen müssen, was er hinter den
 Bildschirmen mit Paketen tut. Sie beantwortet: woher die Liste der Seitenpakete kommt, was wann heruntergeladen wird, wohin es geht und wie
 aus dem gewählten Paket eine Website wird. Die Bildschirme selbst, mit jeder Meldung, sind in
-[Der Setup-Assistent](../../../../en/us/install/05-setup-wizard.md) beschrieben; diese Seite folgt den Paketen.
+[Der Setup-Assistent](../../../installation/05-setup-assistent.md) beschrieben; diese Seite folgt den Paketen.
 
 ## Inhalt
 
@@ -142,9 +142,9 @@ Das Seitenpaket selbst wird nie installiert: Es ist `install_type="import"` und 
 
 - [Grundlagen der Seitenpakete](README.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Der Setup-Assistent, 5.3.8 Seitenpaket](../../../../en/us/install/05-setup-wizard.md#538-site-package)
+- [Der Setup-Assistent, 5.3.8 Seitenpaket](../../../installation/05-setup-assistent.md#538-site-paket)
 - [Wie der Kickstarter und die Konsole Pakete nutzen](wie-der-kickstarter-und-die-konsole-pakete-nutzen.md)
 - [Ein Paket von Hand herunterladen](../paketserver/ein-paket-von-hand-herunterladen.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md): Ein auf dem gemeinsamen Server angenommenes Paket erscheint in der Liste
   jedes Assistenten.
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

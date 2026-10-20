@@ -11,8 +11,8 @@ type: help
 
 Diese Seite ist für die Systemadministratoren eines Hosters, die die Einrichtung pro Kunde auf einer geteilten Maschine bauen. Sie macht
 aus dem Prinzip der [Trennung von Mandanten](trennung-von-mandanten.md) Benutzer, Pools, Crontabs und Dateimodi. Das Verfahren dahinter
-ist [Kapitel 8, Dateiberechtigungen und Eigentum](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership) und
-[13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership).
+ist [Kapitel 8, Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer) und
+[13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer).
 
 ## Inhalt
 
@@ -39,7 +39,7 @@ customer A                               customer B
 ```
 
 Probleme mit Berechtigungen entstehen fast immer dadurch, dass **zwei Benutzer dieselben Dateien schreiben**
-([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)). Also schreibt ein Benutzer jede Website: Der Pool oder die
+([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)). Also schreibt ein Benutzer jede Website: Der Pool oder die
 Velocity-Worker, die Cronjobs und die Konsolenskripte laufen alle als Benutzer dieses Kunden.
 
 ## Der Benutzer
@@ -70,7 +70,7 @@ LogFilePermissions=0660
 ```
 
 und korrigieren Sie vorhandene Dateien einmal, mit der Gruppe der Website auf allem
-([13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership)):
+([13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)):
 
 ```bash
 find var -type d -exec chmod 2770 {} +
@@ -81,7 +81,7 @@ Geben Sie jeder Website ein eigenes `TemporaryDir` unter `var/` statt des geteil
 
 ## Ein PHP-FPM-Pool pro Kunde
 
-Der Pool führt PHP als Benutzer der Website aus ([8.5.2](../../../../en/us/install/08-serving-the-site.md#852-php-fpm)). Setzen Sie pro Pool
+Der Pool führt PHP als Benutzer der Website aus ([8.5.2](../../../installation/08-die-website-ausliefern.md#852-php-fpm)). Setzen Sie pro Pool
 Benutzer und Gruppe und die PHP-Werte, die Exponential braucht (`memory_limit` mindestens 256M, `max_execution_time`,
 `upload_max_filesize`, `post_max_size`, OPcache an). Wo Pools liegen und wie Sie den richtigen Master neu laden:
 [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md). Auf Maschinen mit mehreren PHP-Versionen findet
@@ -103,7 +103,7 @@ php bin/php/console exp:velocity restart --allow-root-user
 
 - Wer die Worker werden: `[ServerSettings] User` und `Group`, sonst `VC_RUN_USER` und `VC_RUN_GROUP`, sonst der Eigentümer des Document
   Root. Ein Document Root, der root gehört, ohne Konfiguration lässt die Worker als root laufen; der Start meldet das
-  ([8.3.5](../../../../en/us/install/08-serving-the-site.md#835-address-ports-user-and-group)).
+  ([8.3.5](../../../installation/08-die-website-ausliefern.md#835-adresse-ports-benutzer-und-gruppe)).
 - `AllowRootWorkers=disabled` (der Standard) verweigert root als Benutzer der Worker.
 - Jede Instanz braucht eigene Ports; die Datei pro Website `/etc/vc/sites-available/<site>.conf` hat den Modus `0600`.
 - Worker und Poolgrößen pro Tarif: [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md).
@@ -120,13 +120,13 @@ sudo -u site-a php bin/php/ezcache.php --clear-tag=ini
 
 Die Kommandozeilenskripte von Exponential verweigern den Lauf als root, es sei denn, `--allow-root-user` wird angegeben; nutzen Sie es
 nur für die dokumentierten Aufgaben als root, und prüfen Sie danach, dass die Dateien in `var/` noch dem Benutzer der Website gehören
-([Sicherheitshärtung](../../../../en/us/help/security-hardening.md#cron-and-command-line-scripts-as-root)).
+([Sicherheitshärtung](../../sicherheitshaertung.md#cron--und-kommandozeilenskripte-als-root)).
 
 ## Wenn zwei Benutzer schreiben müssen
 
 Wenn die Benutzer verschieden sein müssen (zum Beispiel der PHP-Benutzer des Webservers und ein Deploy-Benutzer), geben Sie ihnen eine
 gemeinsame Gruppe, machen Sie die beschreibbaren Verzeichnisse für die Gruppe beschreibbar und setgid, sodass neue Dateien die Gruppe
-erben, und nutzen Sie die Modi oben, die die Gruppe erhalten ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)):
+erben, und nutzen Sie die Modi oben, die die Gruppe erhalten ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)):
 
 ```bash
 sudo chgrp -R site-a design extension settings var
@@ -156,7 +156,7 @@ find var -newer index.php -not -user site-a | head
 ps -eo user,cmd | grep 'php-fpm: pool' | grep -v grep
 ```
 
-Die erste darf nichts ausgeben ([13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership)).
+Die erste darf nichts ausgeben ([13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)).
 
 ## Checkliste
 
@@ -175,5 +175,5 @@ Die erste darf nichts ausgeben ([13.11](../../../../en/us/install/13-security-ha
 - [Trennung von Mandanten](trennung-von-mandanten.md)
 - [Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md)
 - [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md)
-- [Kapitel 8: Dateiberechtigungen und Eigentum](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 8: Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -85,9 +85,9 @@ Diese Seiten behandeln Teile des Themas bereits ausführlich; dieser Abschnitt v
 
 | Seite | Was sie behandelt |
 |---|---|
-| [Anleitung zu Paketen](../../../en/us/guides/packages.md) | **Setup > Pakete** Seite für Seite: die Liste, die Seite eines Pakets, Prüfungen beim Hochladen, Installation, Deinstallation, Entfernen, Berechtigungen |
-| [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../en/us/install/04-choosing-an-install-method.md) | Welches Installations-Frontend Pakete wie nutzt |
-| [Der Setup-Assistent](../../../en/us/install/05-setup-wizard.md), [Der Kickstarter](../../../en/us/install/06-kickstarter.md), [Die Installation über die Konsole](../../../en/us/install/07-console-install.md) | Die drei Installations-Frontends |
+| [Anleitung zu Paketen](../../anleitungen/pakete.md) | **Setup > Pakete** Seite für Seite: die Liste, die Seite eines Pakets, Prüfungen beim Hochladen, Installation, Deinstallation, Entfernen, Berechtigungen |
+| [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../installation/04-installationsweg-waehlen.md) | Welches Installations-Frontend Pakete wie nutzt |
+| [Der Setup-Assistent](../../installation/05-setup-assistent.md), [Der Kickstarter](../../installation/06-kickstarter.md), [Die Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md) | Die drei Installations-Frontends |
 | [Der Paketassistent](../../../en/us/features/6.0/package-wizard.md) | Pakete in der Administration erstellen |
 | [ezpm, der Paketmanager auf der Kommandozeile](../../../en/us/features/6.0/ezpm-package-manager-cli.md) | `ezpm.php` |
 | [Das JSON-Paketformat](../../../en/us/bc/6.0/package-json-format.md) | Das zweite Speicherformat eines Pakets |
@@ -96,12 +96,12 @@ Diese Seiten behandeln Teile des Themas bereits ausführlich; dieser Abschnitt v
 | [Seitenpakete und die mitgelieferten Themes](../../../en/us/help/creators/website-creators/site-packages-and-shipped-themes.md) | Die Seitenpakete aus der Sicht eines Website-Erstellers |
 | [Was ein Exponential-Paket ist](../../../en/us/help/designers/extensions/what-an-exponential-package-is.md) und [Seitenstil-Paket](../../../en/us/help/designers/extensions/site-style-package.md) | Pakete aus der Sicht eines Designers |
 | [Verteilung für Designer](../../../en/us/help/designers/distribution/distribution-start-here.md) | Themes und Erweiterungen veröffentlichen |
-| [Mit Git aktualisieren](../../../en/us/help/update-with-git.md) | Den Code einer Installation aktuell halten |
+| [Mit Git aktualisieren](../mit-git-aktualisieren.md) | Den Code einer Installation aktuell halten |
 
 ## Verwandte Seiten
 
 - [Ihr Seitenpaket beitragen](ihr-seitenpaket-beitragen.md)
 - [Glossar](glossar-der-seitenpakete.md)
 - [Hosting-Unternehmen: hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md)
-- [Wer ist 7x?](../../../en/us/help/who-is-7x.md) und [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wer ist 7x?](../wer-ist-7x.md) und [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

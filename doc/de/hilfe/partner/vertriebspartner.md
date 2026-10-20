@@ -21,7 +21,7 @@ Schulungszentren)“ (<https://exponential.earth/partner/program>, gelesen am 18
 | Ihre eigenen Erweiterungen auf Grundlage von Exponential | Ja („OEM-Optionen stehen ebenfalls zur Verfügung, um Ihre eigenen Produkte auf Grundlage von Exponential weiterzuverkaufen“, Seite der Vorteile) | Wenn sie mit GPL-Code oder als Teil davon verbreitet werden, müssen sie GPL-kompatibel sein; fragen Sie Ihre Rechtsberatung | [OEM und Wiederverkauf](oem-und-wiederverkauf.md) |
 | Dienstleistungen und Abonnements von 7x | Wie mit 7x vereinbart; White Label ab Professional | Partnervereinbarung | [Dienstleistungen von 7x als White Label](white-label-dienstleistungen.md) |
 | Schulungen und Zertifizierungen | Schulungen: ja. Zertifizierungen: wie das Programm sie festlegt | Zertifizierungen sind noch festzulegen | [Schulungspartner](schulungspartner.md) |
-| Dokumentation | Ja, unter der GFDL 1.3 oder später | Hinweise behalten, die Lizenz beifügen | [Freie Dokumentation](../../../en/us/help/free-documentation.md) |
+| Dokumentation | Ja, unter der GFDL 1.3 oder später | Hinweise behalten, die Lizenz beifügen | [Freie Dokumentation](../freie-dokumentation.md) |
 
 ## Angebote ehrlich schnüren
 
@@ -29,7 +29,7 @@ Schulungszentren)“ (<https://exponential.earth/partner/program>, gelesen am 18
   kostenlos ist (die Software und ihre Dokumentation). Kunden vertrauen einem Wiederverkäufer, der das sagt.
 - Nennen Sie die Versionen, die Sie liefern, und wie lange Sie sie pflegen werden.
 - Bezeichnen Sie die Software nicht als „an den Kunden lizenziert“, als wäre sie proprietär; beschreiben Sie die GPL
-  korrekt ([Lizenzierung für Käufer erklärt](../../../en/us/help/business/licensing-for-buyers.md)).
+  korrekt ([Lizenzierung für Käufer erklärt](../geschaeft/lizenzen-fuer-kaeufer.md)).
 
 ## Pflichten eines Distributors
 
@@ -55,4 +55,4 @@ Zertifizierungsaktivitäten ([Das Punktesystem](das-punktesystem.md)).
 - [OEM und Wiederverkauf](oem-und-wiederverkauf.md)
 - [Lizenzierung für Partner: GPL-Code, GFDL-Dokumentation](lizenzierung-fuer-partner.md)
 - [Schulungspartner](schulungspartner.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

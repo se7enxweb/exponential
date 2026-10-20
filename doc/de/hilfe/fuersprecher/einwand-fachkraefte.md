@@ -25,13 +25,13 @@ ist, und tun Sie dann etwas dagegen: Über Fürsprecher wächst der Kreis der Fa
 
 | Punkt | Quelle |
 |---|---|
-| „Der Stack ist schlicht: PHP 8, Composer, eine Template-Sprache, INI-Einstellungen, die Datenbank Ihrer Wahl. Ein PHP-Entwickler ist schnell produktiv.“ | [Wer ist 7x?, Der Anwendungsstack](../../../en/us/help/who-is-7x.md#the-application-stack) |
-| „Das Lernmaterial ist umfangreich und kostenlos: diese Hilfe, das Installationsbuch, die Anleitungen, doc.exponential.earth, eZpedia und drei Schulungsbücher mit über 700 Seiten.“ | [Mit Einwänden umgehen, Fachkräfte](../../../en/us/help/business/objection-handling.md#skills-can-we-find-people-who-know-it), [Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places) |
-| „Es gibt einen dokumentierten Weg vom Benutzer zum Entwickler.“ | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) |
+| „Der Stack ist schlicht: PHP 8, Composer, eine Template-Sprache, INI-Einstellungen, die Datenbank Ihrer Wahl. Ein PHP-Entwickler ist schnell produktiv.“ | [Wer ist 7x?, Der Anwendungsstack](../wer-ist-7x.md#der-anwendungs-stack) |
+| „Das Lernmaterial ist umfangreich und kostenlos: diese Hilfe, das Installationsbuch, die Anleitungen, doc.exponential.earth, eZpedia und drei Schulungsbücher mit über 700 Seiten.“ | [Mit Einwänden umgehen, Fachkräfte](../geschaeft/einwandbehandlung.md#fachkräfte-finden-wir-leute-die-es-kennen), [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |
+| „Es gibt einen dokumentierten Weg vom Benutzer zum Entwickler.“ | [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | „Die RAD-Werkzeuge schreiben in Minuten eine funktionierende Erweiterung, sodass neue Entwickler durch Tun lernen.“ | [RAD-Werkzeuge](../../../en/us/features/6.0/rad-tools.md) |
-| „Schulungen kann man kaufen; 7x führt sie unter seinen Dienstleistungen, und jeder Anbieter kann sie anbieten.“ | [Dienstleistungen und Hosting](../../../en/us/help/who-is-7x.md#services-and-hosting) |
-| „Die Codebasis hatte viele Beitragende: 194 Commit-Autoren vor 2016 und seit 2023 Pull Requests von mehreren Organisationen.“ | [Beitragende und Freunde des Projekts](../../../en/us/help/who-is-7x.md#contributors-and-friends-of-the-project) |
-| „Hilfe ist öffentlich: Foren, Telegram, Issue-Tracker.“ | [Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places) |
+| „Schulungen kann man kaufen; 7x führt sie unter seinen Dienstleistungen, und jeder Anbieter kann sie anbieten.“ | [Dienstleistungen und Hosting](../wer-ist-7x.md#dienstleistungen-und-hosting) |
+| „Die Codebasis hatte viele Beitragende: 194 Commit-Autoren vor 2016 und seit 2023 Pull Requests von mehreren Organisationen.“ | [Beitragende und Freunde des Projekts](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) |
+| „Hilfe ist öffentlich: Foren, Telegram, Issue-Tracker.“ | [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |
 
 ## Was Sie nicht sagen dürfen
 
@@ -41,7 +41,7 @@ ist, und tun Sie dann etwas dagegen: Über Fürsprecher wächst der Kreis der Fa
 - Irgendeine Zahl zum Arbeitsmarkt.
 
 Machen Sie aus dem Zweifel stattdessen einen Planungsschritt: „Planen Sie Einarbeitung und Schulung in den Projektplan
-ein“ ([Ein Exponential-Projekt planen](../../../en/us/help/leadership/planning-an-exponential-project.md)).
+ein“ ([Ein Exponential-Projekt planen](../fuehrung/ein-exponential-projekt-planen.md)).
 
 ## Antwortvorlagen
 
@@ -76,6 +76,6 @@ Jeder Fürsprecher kann diesen Einwand schwächer machen:
 ## Verwandte Seiten
 
 - [Gesprächspunkte für Entwickler](gespraechspunkte-fuer-entwickler.md)
-- [Mit Einwänden umgehen, Fachkräfte](../../../en/us/help/business/objection-handling.md#skills-can-we-find-people-who-know-it)
+- [Mit Einwänden umgehen, Fachkräfte](../geschaeft/einwandbehandlung.md#fachkräfte-finden-wir-leute-die-es-kennen)
 - [Die Stufen der Fürsprache](die-stufen-der-fuersprache.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

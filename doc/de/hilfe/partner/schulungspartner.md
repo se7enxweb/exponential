@@ -29,23 +29,23 @@ Schulung.
 
 | Material | Lizenz | Wo |
 |---|---|---|
-| Diese Hilfe und die Dokumentation in `doc/` | GFDL 1.3 oder später | [Freie Dokumentation](../../../en/us/help/free-documentation.md) |
+| Diese Hilfe und die Dokumentation in `doc/` | GFDL 1.3 oder später | [Freie Dokumentation](../freie-dokumentation.md) |
 | Die ursprünglichen Schulungsbücher aus der Zeit von eZ Publish, von 7x gespiegelt | GNU FDL (wie veröffentlicht) | <https://github.com/se7enxweb/mirror.exponential.se7enx.com> |
 | eZpedia | GFDL | <https://ezpedia.exponential.earth/> |
 | Community-Artikel und Foren | Wie jeweils angegeben | <https://share.exponential.earth/> |
 
 Die GFDL erlaubt Ihnen, die Hilfe in Kursmaterial zu kopieren und anzupassen, wenn Sie die Hinweise behalten und Ihr
-Material unter derselben Lizenz veröffentlichen ([Freie Dokumentation](../../../en/us/help/free-documentation.md)).
+Material unter derselben Lizenz veröffentlichen ([Freie Dokumentation](../freie-dokumentation.md)).
 
 ## Zielgruppen und Kursideen
 
 | Zielgruppe | Kursidee | Grundlage |
 |---|---|---|
-| Redakteure | Bearbeiten, Medien, Veröffentlichen, Sprachen an einem Tag | [Erste Schritte](../../../en/us/help/getting-started.md), [Inhalte bearbeiten](../../../en/us/help/editing-content.md) |
-| Administratoren | Installieren, absichern, sichern, aktualisieren | `doc/en/us/install/`, [Sicherheitshärtung](../../../en/us/help/security-hardening.md) |
-| Entwickler | Erweiterungen, Templates, Git-Arbeitsweise | [Erweiterungen](../../../en/us/guides/extensions.md), [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) |
-| Projektverantwortliche | Projekte planen und durchführen | [Projektverantwortliche: hier beginnen](../../../en/us/help/leadership/project-managers-start-here.md) |
-| Vertrieb | Die Geschichte wahrheitsgemäß erzählen | [Vertrieb und Marketing: hier beginnen](../../../en/us/help/business/sales-and-marketing-start-here.md) |
+| Redakteure | Bearbeiten, Medien, Veröffentlichen, Sprachen an einem Tag | [Erste Schritte](../erste-schritte.md), [Inhalte bearbeiten](../inhalte-bearbeiten.md) |
+| Administratoren | Installieren, absichern, sichern, aktualisieren | `doc/en/us/install/`, [Sicherheitshärtung](../sicherheitshaertung.md) |
+| Entwickler | Erweiterungen, Templates, Git-Arbeitsweise | [Erweiterungen](../../anleitungen/extensions.md), [Mit Git entwickeln](../mit-git-entwickeln.md) |
+| Projektverantwortliche | Projekte planen und durchführen | [Projektverantwortliche: hier beginnen](../fuehrung/projektleiter-hier-beginnen.md) |
+| Vertrieb | Die Geschichte wahrheitsgemäß erzählen | [Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md) |
 
 Die Schritt-für-Schritt-Anleitung ist [Eine Exponential-Schulung durchführen](eine-schulung-durchfuehren.md).
 
@@ -54,4 +54,4 @@ Die Schritt-für-Schritt-Anleitung ist [Eine Exponential-Schulung durchführen](
 - [Eine Exponential-Schulung durchführen](eine-schulung-durchfuehren.md)
 - [Partner für Studierende und Bildung](partner-fuer-studierende-und-bildung.md)
 - [Zertifizierungen](zertifizierungen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -74486,5 +74486,125 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Voor organisaties en mensen die hun eigen site op Exponential beheren: team, publiceren, commerce, onderhoud, groei en partners.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Gebruikershandleiding</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Eén vraag per pagina: wie het mag doen, de stappen, wat er mis kan gaan en waar u meer leest.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Projectbestanden</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projectbestand</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Dit bestand maakt deel uit van de broncode van Exponential en wordt ermee verspreid onder de %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>DITA downloaden</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-boeken</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Gemaakt van de vrijgegeven onderwerpen telkens wanneer een ervan wordt vrijgegeven, en bewaard met hun eerdere versies.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Bestand</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grootte</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Bijgewerkt</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Alles als DITA downloaden</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Helponderwerpen met achterstallige controle</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>De controledatum is verstreken, of het onderwerp staat al meer dan %days dagen zonder wijziging in controle.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Achterstallig</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acties</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Controledatum %date %days dagen geleden verstreken</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>Al %days dagen zonder wijziging in controle</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bewerken</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Status instellen</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown van %count achterstallige onderwerpen worden getoond. ./console exp:help:content review toont ze allemaal.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Voordat u begint</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Stappen</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Wat u daarna doet</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Voorwaarde</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Oorzaak</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Oplossing</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Help-start</translation>
+    </message>
 </context>
 </TS>

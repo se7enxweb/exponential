@@ -16,12 +16,12 @@ Die Reihenfolge, in der ein Mitgliederteam seine Website kennenlernt. Jeder Schr
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 1 | [Mitglieder-Websites: hier beginnen](mitglieder-websites-hier-beginnen.md) | Alle | Wie eine Mitglieder-Website läuft |
-| 2 | [In der Administration anmelden](../../../../en/us/help/logging-into-the-admin.md) | Mitgliederverwaltung | Wo man sich anmeldet |
+| 2 | [In der Administration anmelden](../../anmelden-in-der-administration.md) | Mitgliederverwaltung | Wo man sich anmeldet |
 | 3 | [Konten, Passwörter und zweistufige Anmeldung](../alltag/konten-passwoerter-und-zweistufige-anmeldung.md) | Alle mit Zugang | Mitgliederdaten brauchen sichere Konten |
 | 4 | [Administratorlinks bei Registrierungen](../../../../en/us/features/6.0/registration-admin-links.md) | Mitgliederverwaltung | Neue Mitglieder genehmigen oder ablehnen |
 | 5 | [Inhalte nur für Mitglieder](../../../../en/us/help/businesses/members/members-only-content.md) | Mitgliederverwaltung | Was die Öffentlichkeit sieht und was Mitglieder sehen |
 | 6 | [Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md) | Vorstandsmitglied, das für die Website verantwortlich ist | Eine Rolle pro Aufgabe |
-| 7 | [Inhalte bearbeiten](../../../../en/us/help/editing-content.md) und [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md) | Nachrichtenredaktion | Neuigkeiten für Mitglieder |
+| 7 | [Inhalte bearbeiten](../../inhalte-bearbeiten.md) und [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) | Nachrichtenredaktion | Neuigkeiten für Mitglieder |
 
 ## Der erste Monat: E-Mails und Routinen
 
@@ -55,4 +55,4 @@ E-Mail-Einstellungen.
 
 - [Mitglieder-Websites: hier beginnen](mitglieder-websites-hier-beginnen.md)
 - [Lesepfad für Kunden](../lesepfad-fuer-kunden.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

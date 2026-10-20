@@ -94,7 +94,7 @@ MaxAgeDays[security]=365
 
 Velocity schreibt `<siteaccess>-access.log` und `<siteaccess>-error.log` unter `var/vc/qbix/log/` (`[LogSettings] Dir`), im Format
 combined von Apache, mit den Modi `0640` und `0750`. Die Rotation setzt das Datum vor die Endung (`site-access.2026-09-24.log`)
-([8.3.12 Logs](../../../../en/us/install/08-serving-the-site.md#8312-logs)). Das Repository dokumentiert für diese datierten Dateien keine
+([8.3.12 Logs](../../../installation/08-die-website-ausliefern.md#8312-logs)). Das Repository dokumentiert für diese datierten Dateien keine
 Altersgrenze; entfernen Sie alte mit Ihrem eigenen geplanten Job, nach dem Zeitraum, den Ihr Tarif nennt.
 
 ## Das Prüfprotokoll
@@ -131,7 +131,7 @@ ArchiveDays=365
 Der Cronjob-Teil `mailpreferences` (Gruppe `infrequent`) entfernt die Zeilen des Einwilligungsprotokolls von Personen, die nicht mehr da
 sind, sobald sie älter sind als `RetentionDays` (1095 Tage: die Lebensdauer des Kontos plus drei Jahre), entfernt Bestätigungen, die länger
 als `PendingDays` (7) gewartet haben, und, wenn `[SuppressionSettings] RetentionDays` über 0 liegt, alte Einträge der Unterdrückungsliste
-([9. Aufbewahrung und der Cronjob](../../../../en/us/guides/mail-preferences-administrator.md#9-retention-and-the-cronjob)).
+([9. Aufbewahrung und der Cronjob](../../../anleitungen/mail-einstellungen-administrator.md#9-aufbewahrung-und-der-cronjob)).
 
 ```bash
 ./console exp:mail:consent cleanup --dry-run
@@ -179,4 +179,4 @@ Person sie vorher eingeschaltet hatte.
 - [Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md)
 - [Prüfprotokoll](pruefprotokoll.md)
 - [Log-Rotation und Bereinigung](../../../../en/us/features/6.0/log-rotation.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

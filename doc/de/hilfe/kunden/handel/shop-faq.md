@@ -105,5 +105,5 @@ Zuerst Ihren Partner oder Hoster. Einen Fehler in Exponential selbst können Sie
 
 - [Ihren Shop betreiben](README.md)
 - [Shop-FAQ für Unternehmen](../../../../en/us/help/businesses/stores/store-faq.md)
-- [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

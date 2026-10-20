@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren, die das PHP eines Servers für Expon
 entscheiden, welche PHP-Versionen ein Tarif anbietet. Sie beantwortet: welche PHP-Versionen Exponential und Velocity
 ausführen, welche Erweiterungen erforderlich oder empfohlen sind, woher sie auf den üblichen Linux-Familien kommen und
 warum die beiden PHPs eines Servers (Web und Kommandozeile) übereinstimmen müssen. Die Quelle ist
-[Kapitel 2 des Installationsbuchs](../../../../en/us/install/02-requirements.md#22-php).
+[Kapitel 2 des Installationsbuchs](../../../installation/02-voraussetzungen.md#22-php).
 
 ## Inhalt
 
@@ -43,7 +43,7 @@ nach 8.5 werden von der Bedingung akzeptiert, sind aber weder veröffentlicht no
 > Versionen für Websites, die sie brauchen. Jede neuere Version bringt Geschwindigkeit, und die älteren verlieren zuerst
 > die Sicherheitsunterstützung.
 
-**Welches Exponential-Release welches PHP braucht** ([Kapitel 3](../../../../en/us/install/03-getting-the-code.md#31-versions-tags-and-branches)):
+**Welches Exponential-Release welches PHP braucht** ([Kapitel 3](../../../installation/03-den-code-beschaffen.md#31-versionen-tags-und-branches)):
 
 | Exponential | `"php"` in seiner `composer.json` | Auf PHP 8.0 |
 |---|---|---|
@@ -89,7 +89,7 @@ Installieren Sie nur die Erweiterung der Datenbank, die die Website nutzt; minde
 | 5. Oracle | `oci8` (PECL) | gegen einen Oracle-Client gebaut (der Instant Client genügt); PECL oci8 3.4 für PHP 8.4 und 8.5, 3.2 für 8.1 bis 8.3 |
 | 6. MySQL | `mysqli` | wie MariaDB |
 
-Quelle: [Datenbankunterstützung, PHP-Erweiterungen](../../../../en/us/help/database-support.md#php-extensions).
+Quelle: [Datenbankunterstützung, PHP-Erweiterungen](../../datenbankunterstuetzung.md#php-erweiterungen).
 
 ## Empfohlene Erweiterungen
 
@@ -104,12 +104,12 @@ Quelle: [Datenbankunterstützung, PHP-Erweiterungen](../../../../en/us/help/data
 | `redis` | nur für die Cache-Erweiterungen für Valkey und Redis (`sevenx_valkey`, `sevenx_valkey_cache`) |
 
 Die Seite **Setup > Systeminformationen** der Administration warnt, wenn `curl`, `fileinfo`, `intl`, `xsl`, OPcache oder
-APCu fehlt oder wenn sowohl `gd` als auch `imagick` fehlen ([Systeminformationen](../../../../en/us/guides/system-information.md)).
+APCu fehlt oder wenn sowohl `gd` als auch `imagick` fehlen ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 `pcntl` und `posix` gibt es unter Windows nicht.
 
 ## Pakete je Systemfamilie
 
-Aus [Kapitel 2.9](../../../../en/us/install/02-requirements.md#29-operating-system-notes):
+Aus [Kapitel 2.9](../../../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen):
 
 **RHEL 9, AlmaLinux 9, Rocky Linux 9.** Das mitgelieferte PHP aus AppStream ist 8.0:
 
@@ -138,7 +138,7 @@ Erweiterungen aktiviert.
 Exponential nutzt PHP zweimal: Das PHP des Webservers (PHP-FPM, mod_php oder die Worker von Velocity) liefert Seiten
 aus, und das PHP der Kommandozeile führt Composer, die Installer, die Konsole, die Cronjobs und Velocity selbst aus.
 Beide müssen eine unterstützte Version sein und dieselben Erweiterungen haben
-([Kapitel 2](../../../../en/us/install/02-requirements.md#command-line-and-web-php)).
+([Kapitel 2](../../../installation/02-voraussetzungen.md#php-auf-der-kommandozeile-und-im-web)).
 
 Was schiefgeht, wenn sie sich unterscheiden:
 
@@ -169,5 +169,5 @@ Auf Maschinen mit mehreren PHP-Versionen rufen Sie die richtige Binärdatei übe
 - [Anforderungen auf einen Blick](anforderungen-auf-einen-blick.md) und [PHP-Einstellungen für Exponential](php-einstellungen-fuer-exponential.md)
 - [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md)
 - [Unterstützung für PHP 8.0](../../../../en/us/bc/6.0/php-8.0-support.md)
-- [Kapitel 2: Anforderungen](../../../../en/us/install/02-requirements.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 2: Anforderungen](../../../installation/02-voraussetzungen.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

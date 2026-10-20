@@ -65,4 +65,4 @@ Approval needed from: ______________________
 - [Co-Marketing mit 7x und dem Projekt](co-marketing.md)
 - [Pressemitteilungen und Ankündigungen](pressemitteilungen-und-ankuendigungen.md)
 - [Eine Fallstudie schreiben](eine-fallstudie-schreiben.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

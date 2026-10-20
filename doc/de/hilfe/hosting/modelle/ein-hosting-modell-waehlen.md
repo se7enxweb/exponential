@@ -39,15 +39,15 @@ Websites pro Server: Die Quellen nennen keine, und die richtigen Zahlen ergeben 
 | Abschottung zwischen Kunden | pro Konto und PHP-FPM-Pool, wie der Hoster es einrichtet | eine Maschine pro Kunde | eine Maschine pro Kunde | pro Container | pro Namespace und Pod, wie konfiguriert |
 | Stufe in den Quellen | über das Panel: Plesk Stufe 1, cPanel und DirectAdmin Stufe 3 | nach Distribution: Stufe 2 oder 3 | nach Distribution: Stufe 1 bis 3 | Stufe 2 (Docker und Podman) | Stufe 3 |
 
-Quellen: [Betriebssystemunterstützung](../../../../en/us/help/os-support.md) (Stufen, „Container, Cloud und Hosting-Panels“),
-[Kapitel 8](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table) („Passt zu Shared Hosting“),
-[Kapitel 4](../../../../en/us/install/04-choosing-an-install-method.md#45-which-method-for-which-situation) (Installationsmethoden)
+Quellen: [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) (Stufen, „Container, Cloud und Hosting-Panels“),
+[Kapitel 8](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle) („Passt zu Shared Hosting“),
+[Kapitel 4](../../../installation/04-installationsweg-waehlen.md#45-welche-methode-für-welche-situation) (Installationsmethoden)
 und die `README.md` im Wurzelverzeichnis (wann ein klassischer Server noch die richtige Antwort ist).
 
 > **Hinweis**
 > „Stufe“ ist hier die eigene Skala des Projekts: 1 hier getestet, 2 funktioniert bekanntermaßen, 3 funktioniert
 > erwartungsgemäß, 4 heute nicht möglich. Ein Eintrag der Stufe 3 ist eine begründete Erwartung, kein Testergebnis
-> ([Die vier Stufen](../../../../en/us/help/os-support.md#the-four-tiers)). Planen Sie eine Testinstallation, bevor Sie ein Modell der
+> ([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)). Planen Sie eine Testinstallation, bevor Sie ein Modell der
 > Stufe 3 verkaufen.
 
 ## Die fünf Fragen, die entscheiden
@@ -55,10 +55,10 @@ und die `README.md` im Wurzelverzeichnis (wann ein klassischer Server noch die r
 | Frage | Wenn die Antwort ... lautet | Dann |
 |---|---|---|
 | Dürfen Kunden einen lang laufenden Prozess ausführen? | nein | Apache oder LiteSpeed mit `.htaccess` oder nginx mit PHP-FPM; Velocity ist meist nicht möglich ([Shared Hosting](shared-hosting.md)) |
-| Braucht die Website mehr als eine Maschine, die in die Datenbank schreibt? | ja | ein Datenbankserver, zuerst PostgreSQL; nicht SQLite ([Datenbankunterstützung](../../../../en/us/help/database-support.md#the-supported-databases-in-order)) |
-| Ist das PHP der Maschine älter als 8.1? | ja, zum Beispiel das mitgelieferte PHP 8.0 von Red Hat Enterprise Linux 9 | ein klassischer Webserver; Velocity braucht 8.1 ([Kapitel 2](../../../../en/us/install/02-requirements.md#22-php)) |
+| Braucht die Website mehr als eine Maschine, die in die Datenbank schreibt? | ja | ein Datenbankserver, zuerst PostgreSQL; nicht SQLite ([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)) |
+| Ist das PHP der Maschine älter als 8.1? | ja, zum Beispiel das mitgelieferte PHP 8.0 von Red Hat Enterprise Linux 9 | ein klassischer Webserver; Velocity braucht 8.1 ([Kapitel 2](../../../installation/02-voraussetzungen.md#22-php)) |
 | Müssen Kunden auf Ebene des Betriebssystems abgeschottet sein? | ja | ein PHP-FPM-Pool oder eine Velocity-Instanz pro Website, jeweils als eigener Benutzer ([Abschottung](#abschottung-zwischen-kunden)) |
-| Hat der Kunde Shell-Zugang? | nein | der Setup-Assistent im Browser installiert die Website ([Kapitel 4](../../../../en/us/install/04-choosing-an-install-method.md#45-which-method-for-which-situation)) |
+| Hat der Kunde Shell-Zugang? | nein | der Setup-Assistent im Browser installiert die Website ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md#45-welche-methode-für-welche-situation)) |
 
 ## Webserver und Engine je Modell
 
@@ -67,7 +67,7 @@ nginx mit PHP-FPM sind die klassischen Einrichtungen. Kapitel 8 nennt die Fälle
 Antwort ist: wenn Ihr Hosting keine lang laufenden Prozesse erlaubt, wenn Sie bereits ein abgestimmtes Apache oder nginx
 betreiben, das Sie behalten möchten, wenn die Maschine nur PHP 8.0 hat oder wenn mehrere Kunden auf einer Maschine
 voneinander auf Ebene des Betriebssystems abgeschottet sein müssen
-([8.1 Die Wahl in einer Tabelle](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table)).
+([8.1 Die Wahl in einer Tabelle](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)).
 
 Für einen Hosting-Anbieter heißt das:
 
@@ -93,9 +93,9 @@ möglich.
 | Container | 1. SQLite 3 mit einem schreibenden Container oder ein Datenbankserver | das WAL von SQLite braucht gemeinsamen Speicher auf einem Host |
 | Kubernetes mit mehreren Replikaten | ein Datenbankserver, zuerst 2. PostgreSQL | mehrere Replikate können keine SQLite-Datei über ein Netzwerk-Volume teilen |
 
-Quellen: [Datenbankunterstützung](../../../../en/us/help/database-support.md) und
-[Container, Cloud und Hosting-Panels](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels). Lesen Sie die
-[Grenzen von MongoDB](../../../../en/us/help/database-support.md#mongodb-limits), bevor Sie 3. MongoDB anbieten.
+Quellen: [Datenbankunterstützung](../../datenbankunterstuetzung.md) und
+[Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels). Lesen Sie die
+[Grenzen von MongoDB](../../datenbankunterstuetzung.md#grenzen-von-mongodb), bevor Sie 3. MongoDB anbieten.
 
 ## Abschottung zwischen Kunden
 
@@ -103,7 +103,7 @@ Die `README.md` im Wurzelverzeichnis ist eindeutig: Ein einzelner Serverprozess,
 Bequemlichkeit beim Routing, keine Sicherheitsgrenze; der Prozess, der eine Website ausliefert, kann jede Datei lesen, die
 die anderen enthalten. Für mehrere Kunden auf einer Maschine empfiehlt sie eine Velocity-Instanz pro Website hinter einem
 Proxy, jede als eigener Benutzer des Betriebssystems, oder einen klassischen Server mit einem PHP-FPM-Pool pro Website
-([Kapitel 8](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table)).
+([Kapitel 8](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)).
 
 > **Warnung**
 > Mehrere Kunden-Websites innerhalb einer Exponential-Installation (eine Installation mit mehreren Websites) teilen eine
@@ -118,7 +118,7 @@ Die meisten Hosting-Anbieter bieten am Ende mehr als ein Modell an. Übliche Kom
 - **Shared Hosting für kleine Websites, VPS für Wachstum.** Eine Website umzuziehen heißt, ihre Dateien und ihre Datenbank
   umzuziehen ([Eine Website zwischen Hostern umziehen](../migrationen/eine-website-zwischen-hostern-umziehen.md)).
 - **Velocity neben dem Apache eines Panels.** Der eigene Entwicklungsserver des Projekts betreibt das Apache von Plesk mit
-  PHP-FPM und Exponential Velocity auf derselben Installation ([Stufe 1](../../../../en/us/help/os-support.md#tier-1-tested-here)).
+  PHP-FPM und Exponential Velocity auf derselben Installation ([Stufe 1](../../betriebssystemunterstuetzung.md#stufe-1-hier-getestet)).
 - **Container für Staging, eine VM für die Produktion**, aus denselben Optionen von `exp:install` oder derselben
   `kickstart.ini` gebaut.
 
@@ -144,6 +144,6 @@ Risks accepted:     <for example a tier 3 system>
 - [Hosting-Modelle: Überblick](README.md)
 - [Shared Hosting](shared-hosting.md), [VPS-Hosting](vps-hosting.md), [Dedizierte Server](dedizierte-server.md),
   [Container: Docker und Podman](container-docker-und-podman.md), [Kubernetes](kubernetes.md)
-- [Hosting, Datenbank und Betriebssystem wählen](../../../../en/us/help/leadership/choosing-hosting-database-and-os.md)
+- [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
 - [Hosting-Tarife gestalten](../geschaeft/hosting-tarife-gestalten.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -102,11 +102,11 @@ Das Skript darf die Variable nicht in `config.php`, `settings/` oder irgendetwas
 
 ## Verwandte Seiten
 
-- [Demomodus](../../../../en/us/help/demo-mode.md) (für Administratoren), [Häufige Fragen zum Demomodus](../../../../en/us/help/demo-mode-faq.md)
+- [Demomodus](../../demomodus.md) (für Administratoren), [Häufige Fragen zum Demomodus](../../demomodus-faq.md)
 - [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md),
   [Probleme mit dem Demomodus](../runbooks/probleme-mit-dem-demomodus.md), [Beispiele für den Demomodus](../../../../en/us/examples/demo-mode/README.md)
 - [Demomodus: der Hinweis zum Upgrade](../../../../en/us/bc/6.0/demo-mode.md)
 - [Erste Anmeldung und Standardpasswörter](erste-anmeldung-und-standardpasswoerter.md)
 - [Härtung für Hoster](haertung-fuer-hoster.md), [Sicherheit für Hoster: Überblick](README.md)
 - [Eine Demo-Installation einrichten](../../../../en/us/help/press/setting-up-a-demo-installation.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

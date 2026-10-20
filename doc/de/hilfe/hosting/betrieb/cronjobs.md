@@ -14,8 +14,8 @@ Frage beantworten, warum die Benachrichtigung nie verschickt wurde. Sie beantwor
 Exponential-Website braucht, was jeder Teil tut, wie Sie sie in der Crontab eines Kunden einrichten und was schiefgeht, wenn
 sie nicht laufen.
 
-Die vollständige Anleitung ist [Cronjobs: ausführen, planen und verfolgen](../../../../en/us/guides/cronjobs.md); die Fassung des
-Installationsbuchs ist [10.3 Cronjobs](../../../../en/us/install/10-after-installing.md#103-cronjobs). Die Seite **Setup > Cronjobs** der
+Die vollständige Anleitung ist [Cronjobs: ausführen, planen und verfolgen](../../../anleitungen/cronjobs.md); die Fassung des
+Installationsbuchs ist [10.3 Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs). Die Seite **Setup > Cronjobs** der
 Administration wird auf [Die Cronjob-Konsole](die-cronjob-konsole.md) beschrieben.
 
 ## Inhalt
@@ -68,7 +68,7 @@ keine Benachrichtigungen verschickt, und die Alarme des Audits lösen nie aus.
 
 ## Eine Crontab für eine Kunden-Website
 
-Aus [10.3, Eine Crontab](../../../../en/us/install/10-after-installing.md#a-crontab), in der Crontab des Benutzers der Website:
+Aus [10.3, Eine Crontab](../../../installation/10-nach-der-installation.md#eine-crontab), in der Crontab des Benutzers der Website:
 
 ```text
 # m   h  dom mon dow  command
@@ -88,7 +88,7 @@ Aus [10.3, Eine Crontab](../../../../en/us/install/10-after-installing.md#a-cron
   ([ExponentialSDK und exponential.cron](../../../../en/us/bc/6.0/exponentialsdk-and-exponential-cron.md)).
 - **Setup > Cronjobs** schlägt eine Crontab-Zeile für jeden Teil vor, den noch nichts ausführt, geschrieben mit dem
   Wurzelverzeichnis und der PHP-Binärdatei der Installation; der Zeitplan kommt aus
-  `cronjob.ini [AdminSettings] CrontabSchedule_<part>` ([Cronjobs, Abschnitt 12](../../../../en/us/guides/cronjobs.md#12-scheduling-with-the-crontab)).
+  `cronjob.ini [AdminSettings] CrontabSchedule_<part>` ([Cronjobs, Abschnitt 12](../../../anleitungen/cronjobs.md#12-planen-mit-der-crontab)).
 
 ## Welcher Benutzer, welches PHP
 
@@ -120,7 +120,7 @@ Manche Hosting-Tarife erlauben wenige Cron-Einträge oder ein Mindestintervall. 
 - **Der Wartungsmodus hält Cron nicht an.** Cronjobs laufen in einer Shell und sind nicht betroffen. Pausieren Sie die Teile, die
   während eines Fensters nicht laufen dürfen (Importe, Neuaufbau von Indizes), auf **Setup > Cronjobs**, oder entfernen Sie die
   Zeilen für die Dauer des Fensters
-  ([Anleitung zum Wartungsmodus](../../../../en/us/guides/maintenance-mode.md#10-installations-cronjobs-and-deploys)).
+  ([Anleitung zum Wartungsmodus](../../../anleitungen/wartungsmodus.md#10-installationen-cronjobs-und-bereitstellungen)).
 - **Mehrere Knoten: eine Crontab.** Führen Sie die Jobs nur auf einem Knoten aus; die Sperren der Skripte sind auf einem Knoten
   lokal. Ein gemeinsames `[PauseSettings] Directory` lässt eine Pause für jeden Knoten gelten
   ([Mehrere Web-Knoten](mehrere-web-knoten.md)).
@@ -136,7 +136,7 @@ Manche Hosting-Tarife erlauben wenige Cron-Einträge oder ein Mindestintervall. 
 | Ein Teil wird mit `is paused` übersprungen | er wurde auf **Setup > Cronjobs** pausiert; übersprungene Läufe werden in `cronjob_skipped.log` festgehalten |
 | Jobs schreiben Dateien, die die Website nicht ersetzen kann | die Crontab läuft als root; verlegen Sie sie zum Benutzer der Website |
 
-Der Abschnitt zur Fehlersuche der Anleitung behandelt weitere Fälle: [Cronjobs, Abschnitt 17](../../../../en/us/guides/cronjobs.md#17-troubleshooting).
+Der Abschnitt zur Fehlersuche der Anleitung behandelt weitere Fälle: [Cronjobs, Abschnitt 17](../../../anleitungen/cronjobs.md#17-fehlerbehebung).
 
 ## Checkliste
 
@@ -156,4 +156,4 @@ Der Abschnitt zur Fehlersuche der Anleitung behandelt weitere Fälle: [Cronjobs,
 - [Wartungsmodus](wartungsmodus.md)
 - [Einwilligung und Bounces bei Mails](einwilligung-und-bounces-bei-mails.md)
 - [Checkliste für den Start einer Kunden-Website](../checklisten/checkliste-fuer-den-start-einer-kunden-website.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

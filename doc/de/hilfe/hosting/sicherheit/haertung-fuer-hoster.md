@@ -13,14 +13,14 @@ type: help
 Diese Seite ist für Systemadministratoren und Sicherheitsverantwortliche eines Hosters, die die Server-Vorlage bauen, aus der jede
 Exponential-Website angelegt wird. Sie geht die Schichten einer Website von außen nach innen durch, sagt, was Exponential standardmäßig
 tut, und nennt die Einstellung oder den Befehl, die der Hoster setzt oder prüft. Sie folgt der Reihenfolge von
-[Kapitel 13 des Installationsbuchs](../../../../en/us/install/13-security-hardening.md), das jedes Detail enthält, und der Sicht Bedrohung für
-Bedrohung von [Sicherheitshärtung](../../../../en/us/help/security-hardening.md).
+[Kapitel 13 des Installationsbuchs](../../../installation/13-sicherheitshaertung.md), das jedes Detail enthält, und der Sicht Bedrohung für
+Bedrohung von [Sicherheitshärtung](../../sicherheitshaertung.md).
 
 > **Hinweis**
 > Einstellungen werden in Überschreibungen geändert, nie in den mitgelieferten Dateien: `settings/override/<file>.ini.append.php` für die
 > ganze Installation, `settings/siteaccess/<siteaccess>/<file>.ini.append.php` für einen Siteaccess. Leeren Sie nach einer Änderung den
 > INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`), und führen Sie unter Velocity `exp:velocity deploy` aus
-> ([Kapitel 13](../../../../en/us/install/13-security-hardening.md#contents-of-this-chapter)).
+> ([Kapitel 13](../../../installation/13-sicherheitshaertung.md#inhalt-dieses-kapitels)).
 
 ## Inhalt
 
@@ -38,7 +38,7 @@ Bedrohung von [Sicherheitshärtung](../../../../en/us/help/security-hardening.md
 
 ## Die Prinzipien
 
-[Sicherheitshärtung](../../../../en/us/help/security-hardening.md#principles-secure-by-default) misst Exponential an der Arbeitsweise von OpenBSD:
+[Sicherheitshärtung](../../sicherheitshaertung.md#grundsätze-sicher-ab-werk) misst Exponential an der Arbeitsweise von OpenBSD:
 standardmäßig sicher, geringste Rechte, Trennung von Rechten, minimale Angriffsfläche, Audit und Korrektur nach vorn. Für einen Hoster
 heißt das vor allem eine Regel: **Lockern Sie keinen Standard, damit etwas funktioniert; finden Sie die Ursache.** Ein Support-Ticket, das
 damit endet, dass die Rewrite-Regel ausgeschaltet wurde, hat auf dieser Website eine Lücke geöffnet.
@@ -47,12 +47,12 @@ damit endet, dass die Rewrite-Regel ausgeschaltet wurde, hat auf dieser Website 
 
 Der Document Root von Exponential ist das Wurzelverzeichnis der Installation, sodass `settings/`, `var/`, `vendor/` und die
 SQLite-Datenbank darin liegen. Die Sicherheit kommt vom Routing: Nur eine feste Liste von Asset-Pfaden wird als Dateien ausgeliefert,
-alles andere geht an `index.php` ([13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)).
+alles andere geht an `index.php` ([13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)).
 
 | Webserver | Was der Hoster tut |
 |---|---|
 | Apache, LiteSpeed mit `.htaccess` | `cp .htaccess_root .htaccess`; nach jedem Upgrade vergleichen und neue Regeln einfügen |
-| nginx | der abgeleitete Server-Block aus [8.6](../../../../en/us/install/08-serving-the-site.md#86-nginx-with-php-fpm), mit den Regeln für Dateien mit Punkt und für Skripte vor jeder statischen Location |
+| nginx | der abgeleitete Server-Block aus [8.6](../../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm), mit den Regeln für Dateien mit Punkt und für Skripte vor jeder statischen Location |
 | Velocity | nichts; `FollowSymlinks=disabled` (der Standard) verweigert auch Links aus der Wurzel hinaus |
 | jeder | nie eine allgemeine Konfiguration „Datei ausliefern, wenn sie existiert“ |
 
@@ -65,14 +65,14 @@ done
 ```
 
 Jede Zeile muss `404` zeigen, oder `200` mit einer Exponential-Seite und nie dem Inhalt der Datei. Details zu Webservern:
-[Einen Webserver wählen](../server/einen-webserver-waehlen.md) und [Kapitel 8](../../../../en/us/install/08-serving-the-site.md).
+[Einen Webserver wählen](../server/einen-webserver-waehlen.md) und [Kapitel 8](../../../installation/08-die-website-ausliefern.md).
 
 ## Geheimnisse
 
 `settings/override/` enthält das Datenbankpasswort (`site.ini.append.php`), die Signatur- und Pseudonymschlüssel des Audits
 (`audit.ini.append.php`), das Website-Geheimnis der E-Mail-Einstellungen (`mailpreferences.ini.append.php`, das auch den
 Passwort-Stempel der Sitzung schlüsselt) und, wenn gesetzt, das Token des Dashboards von Velocity
-([13.3](../../../../en/us/install/13-security-hardening.md#133-secrets-in-settingsoverride)).
+([13.3](../../../installation/13-sicherheitshaertung.md#133-geheimnisse-in-settingsoverride)).
 
 - Modus `0640` oder strenger, nie in der Versionsverwaltung, nie an einem öffentlichen Ort.
 - Sichern Sie es als Geheimnis, verschlüsselt, mit der Datenbank ([Was gesichert werden muss](../betrieb/backups-was-gesichert-werden-muss.md)).
@@ -96,7 +96,7 @@ DebugIPList[]=203.0.113.10
 ```
 
 In der `php.ini` oder im Pool von PHP-FPM: `display_errors=Off`, `log_errors=On`, `expose_php=Off`
-([13.4](../../../../en/us/install/13-security-hardening.md#134-debug-output-and-error-display)). Hinter einem Proxy ist `DebugByIP` nur so
+([13.4](../../../installation/13-sicherheitshaertung.md#134-debug-ausgabe-und-fehleranzeige)). Hinter einem Proxy ist `DebugByIP` nur so
 verlässlich wie `TrustedProxies[]` (siehe [TLS und HTTPS](tls-und-https.md#proxys-die-tls-beenden)).
 
 ## Administration, Passwörter und Sitzungen
@@ -105,11 +105,11 @@ verlässlich wie `TrustedProxies[]` (siehe [TLS und HTTPS](tls-und-https.md#prox
 |---|---|---|
 | Siteaccess der Administration | `RequireUserLogin=true` | ein eigener Hostname, Einschränkungen im Netzwerk: [Die Administration einschränken](die-administration-einschraenken.md) |
 | Setup-Assistent | auf einer installierten Website geschlossen; `CheckValidity=false` vom Installer geschrieben | `[SetupSettings] AllowWizardOnInstalledSite=disabled` beibehalten |
-| Passwörter | `MinPasswordLength=10`, `WeakPasswordCheck=enabled`, bcrypt | eine Richtlinie anbieten wie `MinPasswordLength=15`, `ForbidLogin`, `ForbidCurrentPassword` ([13.6](../../../../en/us/install/13-security-hardening.md#136-passwords-and-sign-in)) |
+| Passwörter | `MinPasswordLength=10`, `WeakPasswordCheck=enabled`, bcrypt | eine Richtlinie anbieten wie `MinPasswordLength=15`, `ForbidLogin`, `ForbidCurrentPassword` ([13.6](../../../installation/13-sicherheitshaertung.md#136-passwörter-und-anmeldung)) |
 | Sperre | `MaxNumberOfFailedLogin=0` (aus) | mit dem Kunden entscheiden; eine Sperre lässt auch jeden ein bekanntes Konto sperren |
 | Zweistufige Anmeldung | Erweiterung von `composer.json` verlangt und von den Installern aktiviert; `Enforce2FA=disabled` | `Enforce2FA` für Administratoren empfehlen: [Zweistufige Anmeldung](zweistufige-anmeldung.md) |
-| Sitzungscookie | `HttpOnly`, `SameSite=Lax`, `CookieSecure=auto` | `CookieSecure=true` auf Websites nur mit HTTPS ([13.7](../../../../en/us/install/13-security-hardening.md#137-sessions-and-cookies)) |
-| Formular-Tokens | `ezformtoken` aktiv | in `ActiveExtensions[]` behalten ([13.8](../../../../en/us/install/13-security-hardening.md#138-form-tokens-against-cross-site-request-forgery)) |
+| Sitzungscookie | `HttpOnly`, `SameSite=Lax`, `CookieSecure=auto` | `CookieSecure=true` auf Websites nur mit HTTPS ([13.7](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)) |
+| Formular-Tokens | `ezformtoken` aktiv | in `ActiveExtensions[]` behalten ([13.8](../../../installation/13-sicherheitshaertung.md#138-formular-tokens-gegen-cross-site-request-forgery)) |
 | Konfiguration aus Git | `ManagedByDeployment=disabled` | `enabled` auf Siteaccesses der Administration in der Produktion, wenn Einstellungen und Templates aus der Versionsverwaltung kommen |
 
 Eine Passwortänderung meldet jede andere Sitzung dieses Benutzers ab (`[PasswordSettings] EndOtherSessions=enabled`). Lassen Sie es an:
@@ -126,13 +126,13 @@ Apache und nginx fügen statischen Dateien von sich aus nichts hinzu. Der Teil d
   [Content Security Policy](content-security-policy.md).
 - Hinter einem Load Balancer, CDN oder Proxy eines Panels: Führen Sie genau Ihre Proxys in `site.ini [HTTPHeaderSettings] TrustedProxies[]`
   auf (Velocity: `Q.webserver.proxy.trusted`), und stellen Sie sicher, dass der Anwendungsserver nicht an ihnen vorbei erreichbar ist
-  ([13.10](../../../../en/us/install/13-security-hardening.md#1310-behind-a-proxy-trusted-headers)).
+  ([13.10](../../../installation/13-sicherheitshaertung.md#1310-hinter-einem-proxy-vertrauenswürdige-header)).
 
 ## Dateien, Benutzer und Prozesse
 
 Wenn der PHP-Prozess nur `var/` und `settings/` ändern kann und der Webserver sich weigert, irgendetwas unterhalb der Wurzel auszuführen,
 kann eine Schwachstelle in einer Erweiterung keinen Code einschleusen
-([13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership)).
+([13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)).
 
 - Ein Benutzer schreibt: PHP-FPM-Pool, Velocity-Worker, Cronjobs und Konsolenskripte laufen als Benutzer der Website.
 - Der Code (`kernel/`, `lib/`, `vendor/`, `index.php`) gehört einem anderen Benutzer und ist für den Benutzer der Website nur lesbar.
@@ -150,7 +150,7 @@ LogFilePermissions=0660
 - `TemporaryDir` wird als `/tmp/` ausgeliefert, mit jedem Benutzer der Maschine geteilt; geben Sie jeder Website ein eigenes unter `var/`.
 - Velocity: `[ServerSettings] Host=127.0.0.1`, wenn ein Proxy davor ist, `User` und `Group` auf den Benutzer der Website gesetzt,
   `AllowRootWorkers=disabled`, Token des Dashboards und Passwort des Kontrollzentrums gesetzt oder die Ansichten lokal gehalten
-  ([13.12](../../../../en/us/install/13-security-hardening.md#1312-velocity-specific-hardening)).
+  ([13.12](../../../installation/13-sicherheitshaertung.md#1312-velocity-spezifische-härtung)).
 
 Wie das auf viele Kunden skaliert: [Benutzer und Pools pro Kunde](benutzer-und-pools-pro-kunde.md) und
 [Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md).
@@ -168,11 +168,11 @@ Härtung ohne Beobachtung verzögert nur den Moment, in dem Sie von einem Angrif
 
 Führen Sie die Cronjob-Gruppe `frequent` aus, damit die Alarmregeln des Audits laufen, leiten Sie das Protokoll mit einer Senke von der
 Maschine weg und lesen Sie `security.log` wöchentlich
-([Sicherheitshärtung](../../../../en/us/help/security-hardening.md#watching-logs-the-request-classifier-and-the-audit-trail)).
+([Sicherheitshärtung](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll)).
 
 ## Ein Schutz davor
 
-[request-shield](../../../../en/us/help/security-hardening.md#a-shield-in-front-request-shield), eine kleine Web Application Firewall für PHP vom CJW
+[request-shield](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield), eine kleine Web Application Firewall für PHP vom CJW
 Network, weist Scanner und Fluten ab, bevor der Kernel startet. Es wird für jede Website empfohlen, die aus dem Internet erreichbar ist,
 und ist nicht Teil der `composer.json` von Exponential. Ein Hoster kann es als Teil eines verwalteten Tarifs anbieten:
 [request-shield und Request-Regeln](request-shield-und-request-regeln.md).
@@ -200,7 +200,7 @@ Betriebssystem und die Engine von Velocity aktuell: [Sicherheitsupdates und Offe
 - [ ] Cronjob-Gruppe `frequent` läuft als Benutzer der Website; Empfänger der Alarme des Audits geprüft; eine Senke konfiguriert.
 - [ ] Eine Routine für Updates mit benannten Verantwortlichen.
 
-Die Go-Live-Liste Einstellung für Einstellung ist [13.16](../../../../en/us/install/13-security-hardening.md#1316-go-live-checklist); die
+Die Go-Live-Liste Einstellung für Einstellung ist [13.16](../../../installation/13-sicherheitshaertung.md#1316-checkliste-für-den-livegang); die
 wiederkehrende Prüfung ist die [Checkliste für die Sicherheitsprüfung](../checklisten/checkliste-fuer-die-sicherheitspruefung.md).
 
 **Der Demomodus bleibt aus.** `EXP_DEMO_MODE=1` installiert und behält ein bekanntes Administratorpasswort; setzen Sie es nur für den eigenen Pool, virtuellen Host oder die eigene Unit einer öffentlichen Demo, nie serverweit oder in einer Vorlage, und lösen Sie bei Zeilen `demo/mode` in `security.log` von Kunden-Websites einen Alarm aus. [Demomodus für Hoster](demomodus-fuer-hoster.md).
@@ -208,8 +208,8 @@ wiederkehrende Prüfung ist die [Checkliste für die Sicherheitsprüfung](../che
 ## Verwandte Seiten
 
 - [Sicherheit für Hoster: Überblick](README.md)
-- [Sicherheitshärtung](../../../../en/us/help/security-hardening.md)
-- [Kapitel 13: Sicherheitshärtung für die Produktion](../../../../en/us/install/13-security-hardening.md)
+- [Sicherheitshärtung](../../sicherheitshaertung.md)
+- [Kapitel 13: Sicherheitshärtung für die Produktion](../../../installation/13-sicherheitshaertung.md)
 - [Checkliste für einen neuen Server](../checklisten/checkliste-fuer-einen-neuen-server.md)
 - [Kompromittierte Website](../runbooks/kompromittierte-website.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

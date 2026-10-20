@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber oder die Leitung, die entscheidet, wer im Team was tun darf. In Exponential kommt
 jede Berechtigung aus einer **Rolle**: einer Menge von **Richtlinien**, von denen jede ein Modul oder eine Funktion
 erlaubt, möglicherweise eingeschränkt auf Sektionen, Klassen, Teilbäume, Sprachen oder Siteaccesses. Eine Rolle bewirkt
-nichts, bis sie Benutzern oder Benutzergruppen **zugewiesen** ist ([Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)).
+nichts, bis sie Benutzern oder Benutzergruppen **zugewiesen** ist ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 Ihr Administrator nimmt die Änderungen vor; diese Seite hilft Ihnen zu entscheiden, worum Sie bitten.
 
 ## Inhalt
@@ -37,7 +37,7 @@ Die Demo-Installation unter `https://alpha.se7enx.com` zeigt die Rollen, mit den
 
 Die Rolle Administrator ist „Vollzugriff“: Die Rollenliste kennzeichnet sie rot. Eine Rolle, die Rollen ändern darf,
 wird bernsteinfarben gekennzeichnet, weil ihre Inhaber sich jeden Zugriff selbst geben können
-([Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)). Ihre eigene Website hat vielleicht weitere Rollen,
+([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)). Ihre eigene Website hat vielleicht weitere Rollen,
 die Ihr Partner hinzugefügt hat; fragen Sie nach der Liste.
 
 > **Hinweis**
@@ -57,7 +57,7 @@ Website-Ersteller nennt die üblichen: Autor, Redakteur (veröffentlicht), Layou
 | Redakteur | schreiben und veröffentlichen | die Rolle Editor, eingeschränkt auf den Teil des Baums, der zum Team gehört |
 | Freigebende Person | über ausstehende Versionen entscheiden | Mitgliedschaft in der Gruppe der freigebenden Personen des Freigabe-Workflows |
 | Layout-Redakteur | Landingpages ändern | die Richtlinien von `explayouts` ([Landingpages mit Layouts](../wachstum/landingpages-mit-layouts.md)) |
-| Formularbearbeitung | Formulareinsendungen lesen und exportieren | `infocollector/read` ([Gesammelte Informationen](../../../../en/us/guides/collected-information.md)) |
+| Formularbearbeitung | Formulareinsendungen lesen und exportieren | `infocollector/read` ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) |
 | Kontenverwaltung | Konten überprüfen und deaktivieren | `user/hygiene` ([Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md)) |
 | Übersetzer | in eine Sprache übersetzen | Übersetzen und Bearbeiten, eingeschränkt nach **Sprache** ([Übersetzungsroutine](uebersetzungsroutine.md)) |
 
@@ -70,7 +70,7 @@ gemeinsame Rolle Editor, die der Gruppe jeder Abteilung mit einer Einschränkung
 bedeutet eine einzige Rolle zu pflegen statt einer pro Team
 ([Abteilungen, Rollen und Sektionen](../../../../en/us/help/businesses/intranets/departments-roles-and-sections.md)). Die Richtlinien
 zum Bearbeiten, Übersetzen und Anlegen von Inhalten lassen sich außerdem nach Sprache einschränken
-([Inhaltssprachen](../../../../en/us/guides/content-languages.md)).
+([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)).
 
 ## Berechtigungen, die wenigen Personen vorbehalten sind
 
@@ -97,6 +97,6 @@ Quellen: [Zugriffsüberprüfungen](../../../../en/us/help/businesses/security/ac
 
 - [Rollen für neue Mitarbeitende wählen](rollen-fuer-neue-mitarbeitende-waehlen.md)
 - [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md)
-- [Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)
+- [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)
 - [Zugriffsüberprüfungen](../../../../en/us/help/businesses/security/access-reviews.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

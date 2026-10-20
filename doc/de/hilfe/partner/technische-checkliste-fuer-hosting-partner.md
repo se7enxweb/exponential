@@ -26,7 +26,7 @@ Quelle: `doc/en/us/install/02-requirements.md`.
 
 ## Datenbank
 
-Quelle: [Datenbankunterstützung](../../../en/us/help/database-support.md).
+Quelle: [Datenbankunterstützung](../datenbankunterstuetzung.md).
 
 - [ ] Die Datenbank in der Reihenfolge gewählt, die das Projekt bevorzugt: SQLite 3, PostgreSQL, MongoDB, MariaDB,
       Oracle, MySQL
@@ -37,7 +37,7 @@ Quelle: [Datenbankunterstützung](../../../en/us/help/database-support.md).
 
 ## Engine und Webserver
 
-Quellen: `doc/en/us/install/08-serving-the-site.md`, [Sicherheitshärtung](../../../en/us/help/security-hardening.md).
+Quellen: `doc/en/us/install/08-serving-the-site.md`, [Sicherheitshärtung](../sicherheitshaertung.md).
 
 - [ ] Engine gewählt: Velocity, FrankenPHP oder ein Webserver mit PHP-FPM
 - [ ] Nur die öffentlichen Einstiegspunkte sind erreichbar; interne Verzeichnisse werden nicht ausgeliefert
@@ -47,17 +47,17 @@ Quellen: `doc/en/us/install/08-serving-the-site.md`, [Sicherheitshärtung](../..
 ## Geplante Aufgaben
 
 - [ ] Cronjobs der Installation laufen als Benutzer der Website, nicht als root
-      ([Sicherheitshärtung](../../../en/us/help/security-hardening.md#cron-and-command-line-scripts-as-root))
+      ([Sicherheitshärtung](../sicherheitshaertung.md#cron--und-kommandozeilenskripte-als-root))
 - [ ] Logs der Cron-Läufe werden aufbewahrt und rotiert
 
 ## Sicherheit
 
-Quelle: [Sicherheitshärtung](../../../en/us/help/security-hardening.md), `doc/en/us/install/13-security-hardening.md`.
+Quelle: [Sicherheitshärtung](../sicherheitshaertung.md), `doc/en/us/install/13-security-hardening.md`.
 
 - [ ] TLS auf jedem Hostnamen, mit automatischer Erneuerung
 - [ ] Sicherheits-Header gesetzt; die Content Security Policy der Administration nicht abgeschwächt
 - [ ] Debug-Ausgabe im Produktivbetrieb aus
-- [ ] Standardpasswörter geändert ([Standardpasswort des Administrators](../../../en/us/help/default-administrator-password.md))
+- [ ] Standardpasswörter geändert ([Standardpasswort des Administrators](../standard-administratorpasswort.md))
 - [ ] Getrennte Benutzer pro Kunden-Website
 
 ## Backups und Wiederherstellung
@@ -70,7 +70,7 @@ Quelle: [Sicherheitshärtung](../../../en/us/help/security-hardening.md), `doc/e
 
 - [ ] Verfügbarkeitsprüfung der Startseite und der Anmeldeseite der Administration
 - [ ] Alarme für den Speicherplatz von `var/`
-- [ ] Fehlerlog überwacht ([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md))
+- [ ] Fehlerlog überwacht ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md))
 
 ## Updates
 
@@ -85,6 +85,6 @@ Quelle: [Sicherheitshärtung](../../../en/us/help/security-hardening.md), `doc/e
 ## Verwandte Seiten
 
 - [Hosting-Partner](hosting-partner.md)
-- [Betriebssystemunterstützung](../../../en/us/help/os-support.md)
+- [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md)
 - [Sicherheitspflichten von Partnern](sicherheitspflichten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

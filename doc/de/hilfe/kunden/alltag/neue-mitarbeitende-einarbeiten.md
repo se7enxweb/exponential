@@ -33,30 +33,30 @@ Sie müssen keines von Grund auf schreiben ([Die Website an die Redaktion überg
 
 ## Erster Tag
 
-1. **Melden Sie sich gemeinsam an.** Die neue Person meldet sich in der Administration an ([In der Administration anmelden](../../../../en/us/help/logging-into-the-admin.md))
-   oder, wenn Ihre Website sie verwendet, in der vereinfachten Oberfläche Editor ([Im Editor anmelden](../../../../en/us/help/logging-into-the-editor.md)).
+1. **Melden Sie sich gemeinsam an.** Die neue Person meldet sich in der Administration an ([In der Administration anmelden](../../anmelden-in-der-administration.md))
+   oder, wenn Ihre Website sie verwendet, in der vereinfachten Oberfläche Editor ([Im Editor anmelden](../../anmelden-im-editor.md)).
 2. **Ändern Sie das Passwort und schalten Sie die zweistufige Anmeldung ein**, unter *Mein Konto*
-   ([Ihr Konto und die Anmeldung](../../../../en/us/help/accounts-and-sign-in.md)).
-3. **Machen Sie den Rundgang.** Gehen Sie [Ein Rundgang durch die Administration](../../../../en/us/help/admin-tour.md) mit Ihren
+   ([Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md)).
+3. **Machen Sie den Rundgang.** Gehen Sie [Ein Rundgang durch die Administration](../../rundgang-durch-die-administration.md) mit Ihren
    eigenen Inhalten durch. Eine Schulung, die dem Rundgang mit den eigenen Inhalten der Website folgt, bringt die
    meisten Redakteure von null zur Arbeitsfähigkeit ([Die Website an die Redaktion übergeben](../../../../en/us/help/creators/website-creators/handing-over-to-editors.md)).
 4. **Nehmen Sie eine erste Änderung vor**, als Entwurf, sehen Sie sich die Vorschau an und veröffentlichen oder
-   verwerfen Sie sie ([Erste Schritte](../../../../en/us/help/getting-started.md), [Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md)).
+   verwerfen Sie sie ([Erste Schritte](../../erste-schritte.md), [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)).
 
 ## Die erste Woche
 
 | Tag | Thema | Hilfeseite |
 |---|---|---|
-| 2 | Anlegen und Bearbeiten, Rich Text, Beziehungen | [Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md) |
-| 2 | Bilder und Uploads, Alternativtexte | [Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md), [Richtlinien für Bilder und Dateien](richtlinien-fuer-bilder-und-dateien.md) |
-| 3 | Dinge finden | [Suchen](../../../../en/us/help/searching.md), [Tastenkürzel](../../../../en/us/help/keyboard-shortcuts.md) |
+| 2 | Anlegen und Bearbeiten, Rich Text, Beziehungen | [Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md) |
+| 2 | Bilder und Uploads, Alternativtexte | [Bilder, Medien und Uploads](../../medien-und-uploads.md), [Richtlinien für Bilder und Dateien](richtlinien-fuer-bilder-und-dateien.md) |
+| 3 | Dinge finden | [Suchen](../../suchen.md), [Tastenkürzel](../../tastenkuerzel.md) |
 | 3 | Freigabe, wenn die Person hinter einer arbeitet | [Freigabe und Prüfung](freigabe-und-pruefung.md) |
-| 4 | Landingpages, wenn sie sie bearbeitet | [Der Layouts-Editor](../../../../en/us/help/layouts-editor.md) |
-| 4 | Übersetzungen, wenn sie übersetzt | [Sprachen](../../../../en/us/help/languages.md) |
+| 4 | Landingpages, wenn sie sie bearbeitet | [Der Layouts-Editor](../../layout-editor.md) |
+| 4 | Übersetzungen, wenn sie übersetzt | [Sprachen](../../sprachen.md) |
 | 5 | Ihre Hausregeln und wen sie fragen kann | Ihr Leitfaden für die Redaktion, [Checkliste zur Barrierefreiheit für Redakteure](checkliste-barrierefreiheit-fuer-redakteure.md) |
 
 Zeigen Sie, wie man ein Problem mit der Seite **Report an error** der Hilfe meldet und was hineingehört
-([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 
 > **Tipp**
 > Sammeln Sie die Fragen, die neue Personen in ihren ersten Wochen stellen. Wiederholte Fragen gehören in den eigenen
@@ -84,5 +84,5 @@ Die Schritt-für-Schritt-Liste zum Abhaken ist die [Checkliste für die Einarbei
 
 - [Checkliste für die Einarbeitung](checkliste-einarbeitung.md)
 - [Ausscheiden von Mitarbeitenden](ausscheiden-von-mitarbeitenden.md)
-- [Erste Schritte](../../../../en/us/help/getting-started.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Erste Schritte](../../erste-schritte.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -160,4 +160,4 @@ Am 15.10.2026 lief eine Änderung durch beide Repositorys:
 - [Der Paketserver auf GitHub](der-paketserver-auf-github.md)
 - [Eigene Pakete versionieren](../eigene/eigene-pakete-versionieren.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

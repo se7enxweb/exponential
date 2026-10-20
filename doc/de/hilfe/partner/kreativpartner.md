@@ -18,11 +18,11 @@ gelesen am 18. Oktober 2026).
 
 | Thema | Warum es für Designer wichtig ist | Lesen Sie |
 |---|---|---|
-| Inhaltsmodell | Designs folgen der Struktur der Inhalte, nicht umgekehrt | [Workshops zur Inhaltsmodellierung](../../../en/us/help/leadership/content-modeling-workshops.md) |
-| Layouts | Redakteure ordnen Blöcke in Zonen an; Designs müssen in vielen Anordnungen funktionieren | [Der Layouts-Editor](../../../en/us/help/layouts-editor.md) |
-| Sprachen und Schreibrichtung von rechts nach links | 268 Locale-Dateien, 40 davon von rechts nach links (`doc/en/us/languages.md`) | [Sprachen](../../../en/us/help/languages.md) |
-| Medien | Bildvarianten und Uploads | [Bilder und Medien](../../../en/us/help/media-and-uploads.md) |
-| Bedienerlebnis der Redaktion | Die Menschen, die die Administration jeden Tag nutzen | [Inhalte bearbeiten](../../../en/us/help/editing-content.md), [Rundgang durch die Administration](../../../en/us/help/admin-tour.md) |
+| Inhaltsmodell | Designs folgen der Struktur der Inhalte, nicht umgekehrt | [Workshops zur Inhaltsmodellierung](../fuehrung/workshops-zur-inhaltsmodellierung.md) |
+| Layouts | Redakteure ordnen Blöcke in Zonen an; Designs müssen in vielen Anordnungen funktionieren | [Der Layouts-Editor](../layout-editor.md) |
+| Sprachen und Schreibrichtung von rechts nach links | 268 Locale-Dateien, 40 davon von rechts nach links (`doc/en/us/languages.md`) | [Sprachen](../sprachen.md) |
+| Medien | Bildvarianten und Uploads | [Bilder und Medien](../medien-und-uploads.md) |
+| Bedienerlebnis der Redaktion | Die Menschen, die die Administration jeden Tag nutzen | [Inhalte bearbeiten](../inhalte-bearbeiten.md), [Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
 | Barrierefreiheit | Das Design admin4 folgt WCAG-Regeln, die durch Tests geprüft werden | `doc/en/us/bc/6.0/admin4-styling.md` |
 
 ## Für die Administration gestalten
@@ -56,4 +56,4 @@ gibt es, weil die Administration eine Content Security Policy durchsetzt und hel
 - [Partner für Erweiterungen und Themes](partner-fuer-erweiterungen-und-themes.md)
 - [Ein Theme oder Design als Partner veröffentlichen](ein-theme-veroeffentlichen.md)
 - [Partnerprofile](partnerprofile.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

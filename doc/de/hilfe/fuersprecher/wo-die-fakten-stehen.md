@@ -36,33 +36,33 @@ jedem Release; Ihr Gedächtnis nicht.
 
 | Bereich der Aussage | Quellseite in dieser Hilfe |
 |---|---|
-| Was Exponential ist | [Exponential 6, der Kernel](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
-| Wer es leitet, wer es betreibt | [Die Foundation und 7x](../../../en/us/help/who-is-the-exponential-foundation.md#the-foundation-and-7x) |
-| Die Produktfamilie | [Die Produktfamilie auf einen Blick](../../../en/us/help/who-is-the-exponential-foundation.md#the-product-family-at-a-glance) |
-| Releases und Daten | [Wer ist 7x?, Die Releases 6.0.x](../../../en/us/help/who-is-7x.md#the-60x-releases), [Änderungsprotokoll 6.0.15](../../../changelogs/6.0/6.0.15.md) |
-| PHP-Versionen | [PHP-Versionen](../../../en/us/help/who-is-the-exponential-foundation.md#php-versions) |
-| Sicherheitsprozess | [Sicherheitskorrekturen](../../../en/us/help/who-is-the-exponential-foundation.md#security-fixes), [Sicherheitshärtung](../../../en/us/help/security-hardening.md) |
+| Was Exponential ist | [Exponential 6, der Kernel](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
+| Wer es leitet, wer es betreibt | [Die Foundation und 7x](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x) |
+| Die Produktfamilie | [Die Produktfamilie auf einen Blick](../wer-ist-die-exponential-foundation.md#die-produktfamilie-im-überblick) |
+| Releases und Daten | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x), [Änderungsprotokoll 6.0.15](../../../changelogs/6.0/6.0.15.md) |
+| PHP-Versionen | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| Sicherheitsprozess | [Sicherheitskorrekturen](../wer-ist-die-exponential-foundation.md#sicherheitskorrekturen), [Sicherheitshärtung](../sicherheitshaertung.md) |
 | Content Security Policy | [Content Security Policy](../../../en/us/features/6.0/content-security-policy.md) |
 | Prüfprotokoll | [Das Prüfprotokoll](../../../en/us/features/6.0/audit-trail.md) |
-| Zweistufige Anmeldung | [Zweistufige Anmeldung](../../../en/us/guides/two-factor-login.md) |
-| Datenbanken | [Datenbankunterstützung](../../../en/us/help/database-support.md) |
-| Betriebssysteme, Webserver | [Betriebssystemunterstützung](../../../en/us/help/os-support.md) |
+| Zweistufige Anmeldung | [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md) |
+| Datenbanken | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
+| Betriebssysteme, Webserver | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md) |
 | Sprachen und von rechts nach links | [Sprachen in Exponential](../../../en/us/languages.md), [Von rechts nach links](../../../en/us/features/6.0/right-to-left.md) |
 | Barrierefreiheit der Administration | [Das Design admin4](../../../en/us/features/6.0/admin4-design.md), [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md) |
 | Velocity | [Velocity](../../../en/us/features/6.0/velocity-persistent-worker-server.md) |
-| Exponential Layouts | [Der Layouts-Editor](../../../en/us/help/layouts-editor.md) |
+| Exponential Layouts | [Der Layouts-Editor](../layout-editor.md) |
 | Exponential Intelligence | [expai](../../../en/us/features/6.0/extensions/expai.md) |
 | Die Hilfe | [Das Hilfesystem](../../../en/us/features/6.0/help-system.md) |
-| Erweiterungen und die RAD-Werkzeuge | [Erweiterungen](../../../en/us/guides/extensions.md), [RAD-Werkzeuge](../../../en/us/features/6.0/rad-tools.md) |
+| Erweiterungen und die RAD-Werkzeuge | [Erweiterungen](../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../en/us/features/6.0/rad-tools.md) |
 | Installation mit einem Befehl | [Exponential mit einem Befehl installieren](../../../en/us/features/6.0/install-in-one-command.md) |
-| Upgrades und Migrationen | [Upgrade](../../../en/us/install/11-upgrading.md), [Migration von 4.x](../../../en/us/install/14-migrating-from-4x.md) |
+| Upgrades und Migrationen | [Upgrade](../../installation/11-aktualisieren.md), [Migration von 4.x](../../installation/14-migration-von-4x.md) |
 | Geschichte, Monat für Monat | [Die Geschichte](../../../en/us/history/README.md) |
-| Orte der Community | [Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places) |
-| Sponsoring | [Wie Sie unterstützen oder beitreten](../../../en/us/help/who-is-the-exponential-foundation.md#how-to-support-or-join) |
-| Pull Requests werden übernommen | [Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows) |
+| Orte der Community | [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |
+| Sponsoring | [Wie Sie unterstützen oder beitreten](../wer-ist-die-exponential-foundation.md#unterstützen-oder-mitmachen) |
+| Pull Requests werden übernommen | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 | Jeder Begriff | [Das Glossar](../../../en/us/glossary.md) |
 
-Für die geschäftliche Einordnung derselben Fakten: [Funktions-Highlights passend zu den Bedürfnissen der Kunden](../../../en/us/help/business/feature-highlights-for-customers.md#the-map-need-feature-where-to-show-it-proof).
+Für die geschäftliche Einordnung derselben Fakten: [Funktions-Highlights passend zu den Bedürfnissen der Kunden](../geschaeft/funktionshighlights-fuer-kunden.md#die-übersicht-bedürfnis-funktion-wo-zeigen-nachweis).
 
 ## Prüfen Sie es selbst
 
@@ -79,7 +79,7 @@ cat COPYRIGHT.md                              # the copyright holders
 
 > **Hinweis**
 > Sortieren Sie Versionen immer mit `--sort=version:refname`. Eine einfache Sortierung nach Namen setzt `0.1.10` vor
-> `0.1.9` ([Releases und Versionsnummern](../../../en/us/help/who-is-the-exponential-foundation.md#releases-and-version-numbers)).
+> `0.1.9` ([Releases und Versionsnummern](../wer-ist-die-exponential-foundation.md#releases-und-versionsnummern)).
 
 ## Öffentliche Websites, die die Dokumentation zitiert
 
@@ -107,4 +107,4 @@ oder eröffnen Sie ein Issue im [Community-Tracker](https://github.com/se7enxweb
 - [Ehrlichkeit und Genauigkeit](ehrlichkeit-und-genauigkeit.md)
 - [Quellen zitieren und Ihre Texte lizenzieren](quellen-zitieren-und-texte-lizenzieren.md)
 - [Faktenblatt auf einer Seite](faktenblatt.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

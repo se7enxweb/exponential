@@ -45,7 +45,7 @@ die Stufen in [Abschnitt 2](../../../en/us/languages.md#2-support-levels).
 |---|---|
 | Die Oberfläche der Administration | `share/translations/<code>/translation.ts` |
 | Die Oberflächen von Erweiterungen | Die eigenen Übersetzungsdateien jeder Erweiterung |
-| Hilfeseiten | `doc/en/us/help/...` als neue Dateien oder übersetzte Kopien, unter der GNU FDL ([Freie Dokumentation](../../../en/us/help/free-documentation.md#translate-it)) |
+| Hilfeseiten | `doc/en/us/help/...` als neue Dateien oder übersetzte Kopien, unter der GNU FDL ([Freie Dokumentation](../freie-dokumentation.md#übersetzen)) |
 
 ## Die Administration übersetzen, Schritt für Schritt
 
@@ -73,7 +73,7 @@ Die Qualitätsregeln stammen aus dem Qualitätstest für Übersetzungen, der in 
 
 ## Ihre Arbeit einreichen
 
-Reichen Sie sie als Pull Request ein ([Mit Git entwickeln](../../../en/us/help/develop-with-git.md#contribute-a-change-with-a-pull-request)),
+Reichen Sie sie als Pull Request ein ([Mit Git entwickeln](../mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen)),
 mit einer Commit-Nachricht wie `Updated: 300 more German strings of the administration`. Kleine, regelmäßige Pull
 Requests sind einfacher als ein riesiger.
 
@@ -90,4 +90,4 @@ Requests sind einfacher als ein riesiger.
 - [Eine maschinell unterstützte Übersetzung gegenlesen](maschinell-unterstuetzte-uebersetzung-gegenlesen.md)
 - [Gesprächspunkte: Sprachen und Schreibrichtung von rechts nach links](gespraechspunkte-sprachen-und-rtl.md)
 - [Sprachen in Exponential](../../../en/us/languages.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

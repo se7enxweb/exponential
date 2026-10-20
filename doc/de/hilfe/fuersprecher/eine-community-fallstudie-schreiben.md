@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Fürsprecher, die die Geschichte einer mit Exponential gebauten Website erzählen möchten: ihrer
 eigenen, der eines Kunden, einer gemeinnützigen Organisation, einer Schule. Eine Fallstudie ist das überzeugendste
 Material überhaupt und das, bei dem man am leichtesten etwas falsch macht. Der vollständige Ablauf in acht Schritten
-steht in [Fallstudien und Content-Marketing schreiben](../../../en/us/help/business/case-studies-and-content-marketing.md#the-process-at-a-glance);
+steht in [Fallstudien und Content-Marketing schreiben](../geschaeft/fallstudien-und-content-marketing.md#der-ablauf-auf-einen-blick);
 diese Seite passt ihn für Ehrenamtliche an.
 
 ## Inhalt
@@ -27,9 +27,9 @@ diese Seite passt ihn für Ehrenamtliche an.
 ## Die drei unverzichtbaren Punkte
 
 1. **Zustimmung vor dem Schreiben.** Die Organisation stimmt schriftlich zu, dass Sie über sie schreiben dürfen, bevor
-   Sie beginnen ([Schritt 2: um Zustimmung bitten](../../../en/us/help/business/case-studies-and-content-marketing.md#step-2-ask-for-consent-before-you-write)).
+   Sie beginnen ([Schritt 2: um Zustimmung bitten](../geschaeft/fallstudien-und-content-marketing.md#schritt-2-vor-dem-schreiben-um-einwilligung-bitten)).
 2. **Jede Tatsache geprüft.** Zahlen kommen von der Organisation, mit ihrer Erlaubnis, sie zu veröffentlichen.
-3. **Schriftliche Freigabe des endgültigen Textes** ([Schritt 6](../../../en/us/help/business/case-studies-and-content-marketing.md#step-6-written-approval-of-the-final-text)).
+3. **Schriftliche Freigabe des endgültigen Textes** ([Schritt 6](../geschaeft/fallstudien-und-content-marketing.md#schritt-6-schriftliche-freigabe-des-endgültigen-textes)).
 
 Keine Ausnahmen. Eine ohne Zustimmung veröffentlichte Geschichte kann der Organisation, Ihnen und dem Projekt schaden.
 
@@ -108,7 +108,7 @@ Approved by <organization> on <date>. Written by <you>; <disclosure of your rela
 - [ ] Ihre Beziehung ist offengelegt ([Offenlegung und Interessenkonflikte](offenlegung-und-interessenkonflikte.md)).
 
 Wenn die Organisation Sie später bittet, die Geschichte zu entfernen, entfernen Sie sie zügig
-([Schritt 8: pflegen und zurückziehen](../../../en/us/help/business/case-studies-and-content-marketing.md#step-8-maintain-and-withdraw)).
+([Schritt 8: pflegen und zurückziehen](../geschaeft/fallstudien-und-content-marketing.md#schritt-8-pflegen-und-zurückziehen)).
 
 ## Wo Sie veröffentlichen
 
@@ -118,7 +118,7 @@ Wenn die Organisation Sie später bittet, die Geschichte zu entfernen, entfernen
 
 ## Verwandte Seiten
 
-- [Fallstudien und Content-Marketing schreiben](../../../en/us/help/business/case-studies-and-content-marketing.md)
+- [Fallstudien und Content-Marketing schreiben](../geschaeft/fallstudien-und-content-marketing.md)
 - [Die Privatsphäre von Menschen schützen](privatsphaere-schuetzen.md)
 - [Einen Blogbeitrag schreiben](einen-blogbeitrag-schreiben.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

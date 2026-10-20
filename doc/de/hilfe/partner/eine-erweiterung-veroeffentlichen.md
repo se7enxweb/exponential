@@ -10,7 +10,7 @@ type: help
 # Eine Erweiterung als Partner veröffentlichen
 
 Diese Seite ist für Entwickler in Partnerunternehmen, die eine Erweiterung veröffentlichen möchten. Die technische
-Grundlage ist die Entwickleranleitung [Erweiterungen](../../../en/us/guides/extensions.md); diese Seite ergänzt die Checkliste
+Grundlage ist die Entwickleranleitung [Erweiterungen](../../anleitungen/extensions.md); diese Seite ergänzt die Checkliste
 des Partners rundherum.
 
 ## 1. Sie vom Kundenprojekt trennen
@@ -22,7 +22,7 @@ des Partners rundherum.
 
 ## 2. Ihr die Metadaten geben
 
-Aus [Erweiterungen, „Release it“](../../../en/us/guides/extensions.md#7-release-it):
+Aus [Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen):
 
 - [ ] `ezinfo.php` mit `'Version'` (ohne Präfix `v`), Name, Copyright, Lizenz und Info-URL.
 - [ ] `extension.xml` mit derselben `<version>`, `<license>` und `<info_url>`.
@@ -78,6 +78,6 @@ License: GPL v2 or later.  Credits: <original authors, sponsors>
 
 - [Partner für Erweiterungen und Themes](partner-fuer-erweiterungen-und-themes.md)
 - [Erweiterungen an die Upstream-Projekte zurückgeben](erweiterungen-zurueckgeben.md)
-- [Erweiterungen](../../../en/us/guides/extensions.md)
-- [Erweiterungen zurückgeben](../../../en/us/help/contribute-extensions-back.md): eine Erweiterung veröffentlichen und was die GPL verlangt, wenn Sie sie verbreiten
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Erweiterungen](../../anleitungen/extensions.md)
+- [Erweiterungen zurückgeben](../erweiterungen-zurueckgeben.md): eine Erweiterung veröffentlichen und was die GPL verlangt, wenn Sie sie verbreiten
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

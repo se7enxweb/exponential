@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei Hosting-Anbietern, deren Kunden-Websites auf Velocity laufen.
 Sie beantwortet: was der Antwort-Cache speichert, welche Einstellungen entscheiden, wie frisch Seiten sind, wie Sie prüfen, dass er
 funktioniert, wie Sie ihn leeren und was Sie einem Kunden sagen, der eine alte Seite sieht. Die Quellen sind
-[Kapitel 8, Abschnitt 8.3.8](../../../../en/us/install/08-serving-the-site.md#838-the-response-cache),
+[Kapitel 8, Abschnitt 8.3.8](../../../installation/08-die-website-ausliefern.md#838-der-antwort-cache),
 [Antwort-Cache von Velocity](../../../../en/us/features/6.0/velocity-response-cache.md) und
 [Der Antwort-Cache, und dem Netzwerk aus dem Weg gehen](../../../../en/us/bc/6.0/response-cache-and-navigation.md).
 
@@ -43,7 +43,7 @@ mit gzip: etwa 2.950 Seiten pro Sekunde von einem Server, 11.985 von vier Server
 
 ## Was er nie speichert
 
-Aus [Kapitel 8](../../../../en/us/install/08-serving-the-site.md#838-the-response-cache) und der Seite der Funktion:
+Aus [Kapitel 8](../../../installation/08-die-website-ausliefern.md#838-der-antwort-cache) und der Seite der Funktion:
 
 - angemeldete Besucher werden nie daraus bedient; eine Seite mit einem Formular-Token wird `private` gesendet;
 - eine Anfrage mit einem Cookie, das in `SkipCookies` genannt ist (leer bedeutet das Sitzungscookie und `is_logged_in`, das der Kernel
@@ -150,4 +150,4 @@ den Support: Eine veröffentlichte Änderung erscheint beim **zweiten** Aufruf, 
 - [Caches leeren und vorwärmen](caches-leeren-und-vorwaermen.md)
 - [Velocity für Hoster](../server/velocity-fuer-hoster.md)
 - [Antwort-Cache von Velocity](../../../../en/us/features/6.0/velocity-response-cache.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

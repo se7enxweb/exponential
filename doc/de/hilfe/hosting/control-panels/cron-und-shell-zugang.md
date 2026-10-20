@@ -32,7 +32,7 @@ Administration braucht und was ein Kunde ohne Shell tun kann.
 Cronjobs erledigen die Arbeit, auf die kein Besucher wartet: Sie veröffentlichen und verbergen Inhalte nach Zeitplan, versenden
 Benachrichtigungen, setzen Inhaltsjobs fort, führen die Wartung des Prüfprotokolls aus, importieren Feeds, indizieren Inhalte und
 räumen auf. Ohne sie funktioniert eine Website, aber geplante Inhalte erscheinen nie, Benachrichtigungen gehen nie hinaus, und
-Caches und Entwürfe häufen sich auf der Festplatte ([10.3 Cronjobs](../../../../en/us/install/10-after-installing.md#103-cronjobs)).
+Caches und Entwürfe häufen sich auf der Festplatte ([10.3 Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs)).
 
 `runcronjobs.php` führt **Teile** aus, benannte Listen von Skripten in `settings/cronjob.ini`; ohne Namen eines Teils führt es den
 globalen Teil aus. `php runcronjobs.php --list` zeigt jeden Teil und seine Skripte.
@@ -61,7 +61,7 @@ nach den fünf Zeitfeldern.
 > **Hinweis**
 > Die Seite Cronjobs erkennt eine Zeile dieser Installation nur, wenn sie `runcronjobs.php` und den **echten** Wurzelpfad der
 > Installation enthält; ein Pfad über einen symbolischen Link zeigt den Teil als *Nicht geplant*. Verwenden Sie in der Zeile
-> `cd <real root> &&` ([Cronjobs, Fehlersuche](../../../../en/us/guides/cronjobs.md#17-troubleshooting)).
+> `cd <real root> &&` ([Cronjobs, Fehlersuche](../../../anleitungen/cronjobs.md#17-fehlerbehebung)).
 
 ## Die richtige PHP-Binärdatei
 
@@ -79,18 +79,18 @@ Wenn das Panel die PHP-Version der Website ändert, aktualisieren Sie auch die C
 
 Richten Sie die Zeilen in der Crontab des Benutzers der Website ein (der, als der der Webserver läuft, damit die Dateien, die die
 Jobs schreiben, ihm gehören): `crontab -e -u <site user>` oder `php bin/php/console crontab:edit` als dieser Benutzer
-([Cronjobs, Planen](../../../../en/us/guides/cronjobs.md#12-scheduling-with-the-crontab)). Die Cron-Seite eines Panels pro Konto führt Jobs
+([Cronjobs, Planen](../../../anleitungen/cronjobs.md#12-planen-mit-der-crontab)). Die Cron-Seite eines Panels pro Konto führt Jobs
 meist als Benutzer des Kontos aus, was Exponential braucht; lesen Sie in der Dokumentation Ihres Panels nach.
 
 > **Warnung**
 > Cron-Zeilen in der Crontab von root schreiben Cache- und Logdateien als root, die der Benutzer der Website danach nicht ersetzen
-> kann, und die Website versagt an seltsamen Stellen ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)).
+> kann, und die Website versagt an seltsamen Stellen ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)).
 > Als root braucht jedes Skript `--allow-root-user`; besser, Sie führen sie nicht als root aus.
 
 ## Die Seite Cronjobs in der Administration
 
 **Setup > Cronjobs** führt jeden Teil oder jedes Skript aus, folgt seiner Ausgabe, zählt Probleme, hält Teile an und schlägt
-Crontab-Zeilen für die noch nicht geplanten Teile vor ([Anleitung zu Cronjobs](../../../../en/us/guides/cronjobs.md)). Was sie vom Server
+Crontab-Zeilen für die noch nicht geplanten Teile vor ([Anleitung zu Cronjobs](../../../anleitungen/cronjobs.md)). Was sie vom Server
 braucht:
 
 | Bedarf | Warum | Wenn es fehlt |
@@ -128,8 +128,8 @@ Wiederherstellung nützlich.
 | Logs lesen | `tail var/log/error.log` | **Setup > Logdateien** |
 | Velocity | möglich, wenn lang laufende Prozesse erlaubt sind | nicht möglich |
 
-Quellen: [Kapitel 4](../../../../en/us/install/04-choosing-an-install-method.md#45-which-method-for-which-situation),
-[Wartungsmodus](../../../../en/us/guides/maintenance-mode.md), [Log-Viewer](../../../../en/us/features/6.0/log-viewer.md),
+Quellen: [Kapitel 4](../../../installation/04-installationsweg-waehlen.md#45-welche-methode-für-welche-situation),
+[Wartungsmodus](../../../anleitungen/wartungsmodus.md), [Log-Viewer](../../../../en/us/features/6.0/log-viewer.md),
 [ezupdate](../../../../en/us/features/6.0/extensions/ezupdate.md).
 
 Shell-Zugang als eigener Benutzer der Website (nicht als root) ist die sicherste Form, die Sie anbieten können: Alles, was der
@@ -144,7 +144,7 @@ Kunde ausführt, schreibt dann Dateien, die die Website weiterhin ändern kann.
 | *Cronjob part locked by other process* | dasselbe Skript läuft bereits | erwartet: die Sperre funktioniert |
 | Ein neuer Teil erscheint nicht auf der Seite | INI-Cache | `php bin/php/ezcache.php --clear-tag=ini --allow-root-user` |
 
-Mehr in [Cronjobs, Fehlersuche](../../../../en/us/guides/cronjobs.md#17-troubleshooting) und [Cronjobs für Hoster](../betrieb/cronjobs.md).
+Mehr in [Cronjobs, Fehlersuche](../../../anleitungen/cronjobs.md#17-fehlerbehebung) und [Cronjobs für Hoster](../betrieb/cronjobs.md).
 
 ## Checkliste
 
@@ -161,5 +161,5 @@ Mehr in [Cronjobs, Fehlersuche](../../../../en/us/guides/cronjobs.md#17-troubles
 
 - [Control Panels: Überblick](README.md)
 - [Cronjobs](../betrieb/cronjobs.md), [Cronjob-Konsole](../betrieb/die-cronjob-konsole.md)
-- [Anleitung zu Cronjobs](../../../../en/us/guides/cronjobs.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Anleitung zu Cronjobs](../../../anleitungen/cronjobs.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

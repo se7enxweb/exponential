@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren und Produktmanager bei einem Hosting-Anbieter, die Server und Tarife für
 Exponential-Websites dimensionieren. Sie beantwortet: welche Zahlen die Dokumentation und die Einstellungen des Projekts
 tatsächlich nennen, was auf einer laufenden Website Arbeitsspeicher, CPU und Festplatte verbraucht und wie Sie eine echte
-Website messen. Sie nennt keine Zahlen, die das Repository nicht nennt; [Kapitel 2.10](../../../../en/us/install/02-requirements.md#210-memory-cpu-and-disk)
+Website messen. Sie nennt keine Zahlen, die das Repository nicht nennt; [Kapitel 2.10](../../../installation/02-voraussetzungen.md#210-arbeitsspeicher-cpu-und-festplatte)
 sagt dasselbe: Die Dokumentation nennt wenige harte Zahlen, und das Buch erfindet keine weiteren.
 
 ## Inhalt
@@ -31,18 +31,18 @@ sagt dasselbe: Die Dokumentation nennt wenige harte Zahlen, und das Buch erfinde
 | Element | Wert | Quelle |
 |---|---|---|
 | PHP `memory_limit`, Untergrenze des Installers | 64M | `settings/setup.ini`, `[memory_limit] MinMemoryLimit` |
-| PHP `memory_limit`, Zustandsprüfung | unter 128M ein Fehler, unter 256M eine Warnung | [Systeminformationen](../../../../en/us/guides/system-information.md#3-health-checks) |
+| PHP `memory_limit`, Zustandsprüfung | unter 128M ein Fehler, unter 256M eine Warnung | [Systeminformationen](../../../anleitungen/systeminformationen.md#3-zustandsprüfungen) |
 | PHP `memory_limit` unter FrankenPHP | 512M mitgeliefert | `settings/velocity.ini`, `[FrankenPHPSettings] IniOptions[]` |
 | Ein Velocity-Worker | etwa 10 MB privater Speicher (gemessen) | `settings/velocity.ini`; [Velocity-Webserver](../../../../en/us/features/6.0/velocity-web-server.md) |
-| Velocity-Pool | `Workers=4` mitgeliefert; der eigene Standard der Engine ist, was in den RAM passt, höchstens 8 pro Kern und 64, nie weniger als 4 | `settings/velocity.ini`, [Kapitel 2.10](../../../../en/us/install/02-requirements.md#210-memory-cpu-and-disk) |
+| Velocity-Pool | `Workers=4` mitgeliefert; der eigene Standard der Engine ist, was in den RAM passt, höchstens 8 pro Kern und 64, nie weniger als 4 | `settings/velocity.ini`, [Kapitel 2.10](../../../installation/02-voraussetzungen.md#210-arbeitsspeicher-cpu-und-festplatte) |
 | OPcache | `memory_consumption=256`, `max_accelerated_files=20000`, `interned_strings_buffer=32` | Kapitel 10.12 und `velocity.ini [PHPSettings]` |
 | APCu für Velocity | `apc.shm_size=256M` (reserviert, nicht genutzt, bis er sich füllt) | `velocity.ini [PHPSettings]` |
-| SQLite-Seitencache | bis zu 64 MB pro Prozess, der die Datenbank geöffnet hat; 256 MB Memory Map | [Datenbankunterstützung](../../../../en/us/help/database-support.md#performance-and-scaling) |
-| SQLite `VACUUM` | etwa die doppelte Größe der Datenbank als freier Speicherplatz | [Kapitel 9.2](../../../../en/us/install/09-databases.md#analyze-vacuum-and-the-wal-file) |
+| SQLite-Seitencache | bis zu 64 MB pro Prozess, der die Datenbank geöffnet hat; 256 MB Memory Map | [Datenbankunterstützung](../../datenbankunterstuetzung.md#performance-und-skalierung) |
+| SQLite `VACUUM` | etwa die doppelte Größe der Datenbank als freier Speicherplatz | [Kapitel 9.2](../../../installation/09-datenbanken.md#analyze-vacuum-und-die-wal-datei) |
 | Eine MongoDB-Installation | RAM mindestens 512 MB, empfohlen 2 GB; Festplatte mindestens 2 GB, empfohlen 10 GB | [Referenz zur Portierung](../../../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md), Abschnitt 24.1 |
-| Freier Speicherplatz, Zustandsprüfung | unter 1 GB oder 5 % ein Fehler; unter 5 GB oder 10 % eine Warnung | [Systeminformationen](../../../../en/us/guides/system-information.md#3-health-checks) |
+| Freier Speicherplatz, Zustandsprüfung | unter 1 GB oder 5 % ein Fehler; unter 5 GB oder 10 % eine Warnung | [Systeminformationen](../../../anleitungen/systeminformationen.md#3-zustandsprüfungen) |
 | Log-Rotation | jedes Log wird bei `LogFileMaxSize=2097152` (2 MB) rotiert, `LogFileRotateCount=3` werden behalten | `settings/site.ini`, `[FileSettings]` |
-| Ein Kernel-Klon mit Historie | etwa 370 MB | [Kapitel 3.2](../../../../en/us/install/03-getting-the-code.md#a-git-clone-and-composer-install-recommended) |
+| Ein Kernel-Klon mit Historie | etwa 370 MB | [Kapitel 3.2](../../../installation/03-den-code-beschaffen.md#a-git-clone-und-composer-install-empfohlen) |
 
 ## Arbeitsspeicher
 
@@ -67,7 +67,7 @@ Was auf einem Server mit Exponential-Websites Arbeitsspeicher verbraucht:
 > Lesen Sie den Speicher von Velocity so, wie sein Kontrollzentrum ihn zeigt: als Proportional Set Size (PSS) des
 > Elternprozesses und seiner Worker. Die Resident Set Size (RSS) jedes geforkten Workers zählt den gemeinsam genutzten
 > Speicher immer wieder mit und summiert sich zu weit mehr, als die Maschine tatsächlich nutzt
-> ([Kapitel 2.10](../../../../en/us/install/02-requirements.md#210-memory-cpu-and-disk)).
+> ([Kapitel 2.10](../../../installation/02-voraussetzungen.md#210-arbeitsspeicher-cpu-und-festplatte)).
 
 ## CPU
 
@@ -78,7 +78,7 @@ Was auf einem Server mit Exponential-Websites Arbeitsspeicher verbraucht:
   Gerenderte Seiten sind durch die Worker begrenzt, nicht dadurch.
 - **Gerenderte Seiten** (erste Aufrufe nach dem Leeren, angemeldete Redakteure, Suche) verbrauchen die CPU. Lassen Sie
   den Content-View-Cache und den Template-Block-Cache an (beide mitgeliefert), und lassen Sie den statischen Cache aus
-  ([Kapitel 10.12](../../../../en/us/install/10-after-installing.md#1012-performance-tuning)).
+  ([Kapitel 10.12](../../../installation/10-nach-der-installation.md#1012-performance-tuning)).
 - **OPcache zählt.** Unter Velocity ließ `opcache.file_update_protection` über 0 ein Rendering etwa das Vierfache der
   CPU kosten, die es unter PHP-FPM braucht; die mitgelieferte `velocity.ini` setzt es auf 0
   ([Opcode-Cache von Velocity](../../../../en/us/features/6.0/velocity-opcode-cache-and-profile.md)).
@@ -111,7 +111,7 @@ du -sh var/storage var/cache var/log
 ```
 
 `exp:benchmark` ruft die Startseite, Menüseiten, die Suchseite und die Anmeldeseite der Administration ab und gibt
-Median, p90 und p99 aus; gegenüber anderen Hosts ist es standardmäßig zurückhaltend ([Benchmarking](../../../../en/us/guides/benchmarking.md)).
+Median, p90 und p99 aus; gegenüber anderen Hosts ist es standardmäßig zurückhaltend ([Benchmarking](../../../anleitungen/benchmarking.md)).
 `exp:system:info` gibt die Fakten und Zustandsprüfungen von **Setup > Systeminformationen** aus (Speichergrenze, OPcache
 und APCu, Festplatte, Arbeitsspeicher und Last der Maschine). Das [Kontrollzentrum](../../../../en/us/features/6.0/velocity-control-panel.md)
 von Velocity zeigt den Speicher des Pools.
@@ -148,5 +148,5 @@ kann, jede mit den Befehlen oben messbar:
 - [Cache-Schichten](../leistung/cache-schichten.md) und [Benchmark einer gehosteten Website](../leistung/benchmark-einer-gehosteten-website.md)
 - [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md)
 - [Hosting-Tarife gestalten](../geschaeft/hosting-tarife-gestalten.md)
-- [Kapitel 2.10: Arbeitsspeicher, CPU und Festplatte](../../../../en/us/install/02-requirements.md#210-memory-cpu-and-disk)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 2.10: Arbeitsspeicher, CPU und Festplatte](../../../installation/02-voraussetzungen.md#210-arbeitsspeicher-cpu-und-festplatte)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

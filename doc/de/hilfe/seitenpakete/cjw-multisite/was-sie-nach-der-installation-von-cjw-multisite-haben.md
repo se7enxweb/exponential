@@ -144,4 +144,4 @@ die Layouts der Administration aus ihrem eigenen Fragment.
 - [Was Sie nach der Installation von sevenx_multisite haben](../sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md)
 - [Links auf Inhalte einer anderen Website](../../../../en/us/features/6.0/multisite-cross-site-links.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

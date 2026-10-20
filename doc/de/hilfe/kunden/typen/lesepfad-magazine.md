@@ -17,10 +17,10 @@ die meisten dauern weniger als eine Stunde. Er setzt voraus, dass die Website l�
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 1 | [Magazine: hier beginnen](magazine-hier-beginnen.md) | Alle | Wie eine Ausgabe organisiert ist |
-| 2 | [Im Editor anmelden](../../../../en/us/help/logging-into-the-editor.md) | Alle | Wo man sich anmeldet |
-| 3 | [Inhalte bearbeiten](../../../../en/us/help/editing-content.md) | Autoren, Redaktion | Beiträge anlegen und ändern |
-| 4 | [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md) | Autoren, Redaktion | Entwürfe, Veröffentlichen und zurückgehen |
-| 5 | [Medien und Uploads](../../../../en/us/help/media-and-uploads.md) | Art Director, Redaktion | Bilder, Galerien und Dateien |
+| 2 | [Im Editor anmelden](../../anmelden-im-editor.md) | Alle | Wo man sich anmeldet |
+| 3 | [Inhalte bearbeiten](../../inhalte-bearbeiten.md) | Autoren, Redaktion | Beiträge anlegen und ändern |
+| 4 | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) | Autoren, Redaktion | Entwürfe, Veröffentlichen und zurückgehen |
+| 5 | [Medien und Uploads](../../medien-und-uploads.md) | Art Director, Redaktion | Bilder, Galerien und Dateien |
 | 6 | [Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md) | Website-Betreiber | Wer veröffentlichen und wer gestalten darf |
 | 7 | [Konten, Passwörter und zweistufige Anmeldung](../alltag/konten-passwoerter-und-zweistufige-anmeldung.md) | Alle | Sichere Konten |
 
@@ -28,7 +28,7 @@ die meisten dauern weniger als eine Stunde. Er setzt voraus, dass die Website l�
 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
-| 8 | [Der Layouts-Editor](../../../../en/us/help/layouts-editor.md) | Art Director | Seiten für Ausgaben und Reportagen anordnen |
+| 8 | [Der Layouts-Editor](../../layout-editor.md) | Art Director | Seiten für Ausgaben und Reportagen anordnen |
 | 9 | [Landingpages mit Layouts](../wachstum/landingpages-mit-layouts.md) | Art Director, Website-Betreiber | Seiten für Ausgaben, Themen und Kampagnen |
 | 10 | [Redaktionskalender](../alltag/redaktionskalender.md) und seine [Vorlage](../alltag/vorlage-redaktionskalender.md) | Chefredaktion | Die Ausgaben planen |
 | 11 | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md) | Chefredaktion | Klare redaktionelle Stufen |
@@ -59,4 +59,4 @@ Seiten gestaltet werden und wie der Kalender die Ausgaben am Laufen hält.
 - [Magazine: hier beginnen](magazine-hier-beginnen.md)
 - [Lesepfad für Kunden](../lesepfad-fuer-kunden.md)
 - [Lesepfad für Nachrichtenredaktionen](lesepfad-nachrichtenredaktionen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

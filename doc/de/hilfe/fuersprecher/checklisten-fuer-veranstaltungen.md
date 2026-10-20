@@ -85,4 +85,4 @@ Anleitungen für jeden Schritt: [Ein Online-Treffen durchführen](ein-online-tre
 - [Ein Treffen vorschlagen](ein-treffen-vorschlagen.md)
 - [Checklisten für Fürsprecher](checklisten-fuer-fuersprecher.md)
 - [Barrierefreie Folien und Grafiken](barrierefreie-folien-und-grafiken.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

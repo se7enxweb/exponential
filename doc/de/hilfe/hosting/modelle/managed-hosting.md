@@ -45,22 +45,22 @@ Preise oder Service-Level: Das sind Entscheidungen eines Hosters ([SLA-Optionen]
 | Aufgabe | Werkzeug in Exponential | Wo es beschrieben ist |
 |---|---|---|
 | Updates und neue Pakete | **ezupdate**: **Setup > Updates and packages** (`/update/dashboard`); eine Prüfung, die nichts ändert, ein Probelauf, eine Bestätigung des Backups und die eigene Ausgabe von Composer während des Laufs; auch auf der Kommandozeile (`php extension/ezupdate/bin/php/ezupdate.php`) | [ezupdate](../../../../en/us/features/6.0/extensions/ezupdate.md), [Automatische Updates mit ezupdate](../betrieb/automatische-updates-mit-ezupdate.md) |
-| Vor einem Upgrade | **Setup > Upgrade-Prüfung** (`/setup/systemupgrade`): Konsistenz von Dateien und Datenbank, nur lesend | [Die Upgrade-Prüfung](../../../../en/us/guides/upgrade-check.md) |
-| Upgrade | die Update-Dateien und Upgrade-Schritte des Release | [Kapitel 11](../../../../en/us/install/11-upgrading.md), [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.md) |
-| Backups | Wartungsmodus, das Datenbankwerkzeug der Engine, `tar` der Dateien | [10.9 Backups und Wiederherstellung](../../../../en/us/install/10-after-installing.md#109-backups-and-restore) |
-| Die Website vom Netz nehmen | **Setup > Wartung** oder `php bin/php/maintenance.php on ... / off / status` | [Wartungsmodus](../../../../en/us/guides/maintenance-mode.md) |
-| Zustand | **Setup > Systeminformationen** (`/setup/info`) und `exp:system:info` | [Systeminformationen](../../../../en/us/guides/system-information.md) |
+| Vor einem Upgrade | **Setup > Upgrade-Prüfung** (`/setup/systemupgrade`): Konsistenz von Dateien und Datenbank, nur lesend | [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
+| Upgrade | die Update-Dateien und Upgrade-Schritte des Release | [Kapitel 11](../../../installation/11-aktualisieren.md), [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.md) |
+| Backups | Wartungsmodus, das Datenbankwerkzeug der Engine, `tar` der Dateien | [10.9 Backups und Wiederherstellung](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung) |
+| Die Website vom Netz nehmen | **Setup > Wartung** oder `php bin/php/maintenance.php on ... / off / status` | [Wartungsmodus](../../../anleitungen/wartungsmodus.md) |
+| Zustand | **Setup > Systeminformationen** (`/setup/info`) und `exp:system:info` | [Systeminformationen](../../../anleitungen/systeminformationen.md) |
 | Logs | **Setup > Logdateien** (`setup/logs`), mit Permalinks; Rotation | [Log-Viewer](../../../../en/us/features/6.0/log-viewer.md), [Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md) |
-| Geplante Jobs | **Setup > Cronjobs**, das Teile ausführt und Crontab-Zeilen vorschlägt | [Cronjobs](../../../../en/us/guides/cronjobs.md) |
+| Geplante Jobs | **Setup > Cronjobs**, das Teile ausführt und Crontab-Zeilen vorschlägt | [Cronjobs](../../../anleitungen/cronjobs.md) |
 | Wer hat was getan | das Prüfprotokoll | [Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md), [Prüfprotokoll für Hoster](../sicherheit/pruefprotokoll.md) |
-| Codeänderungen ausrollen | `exp:velocity deploy` (Autoloads, Caches, Neuladen von PHP-FPM, Neustart von Velocity in Reihenfolge) | [8.3.14](../../../../en/us/install/08-serving-the-site.md#8314-deploying-a-change-expvelocity-deploy) |
+| Codeänderungen ausrollen | `exp:velocity deploy` (Autoloads, Caches, Neuladen von PHP-FPM, Neustart von Velocity in Reihenfolge) | [8.3.14](../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy) |
 | Leistungsprüfungen | `exp:benchmark` | [Benchmark](../../../../en/us/features/6.0/benchmark.md) |
 
 > **Hinweis**
 > Ein verwaltetes Backup besteht aus der Datenbank **und** `var/storage`, `settings/override` und `settings/siteaccess`, im
 > selben Moment erstellt, außerhalb des Servers gespeichert und einmal auf einer anderen Maschine wiederhergestellt, um zu
 > beweisen, dass es funktioniert. Die Checkliste für die erste Woche im Installationsbuch verlangt genau das
-> ([10.15](../../../../en/us/install/10-after-installing.md#1015-a-checklist-for-the-first-week)).
+> ([10.15](../../../installation/10-nach-der-installation.md#1015-eine-checkliste-für-die-erste-woche)).
 
 ## Eine Zuständigkeitsmatrix
 
@@ -105,14 +105,14 @@ Zwei Möglichkeiten:
   Person nennt ([Die Administration einschränken](../sicherheit/die-administration-einschraenken.md)).
 - Nutzen Sie für diese Konten die zweistufige Anmeldung ([Zweistufige Anmeldung](../sicherheit/zweistufige-anmeldung.md)).
 - Shell-Zugang als Benutzer der Website, nicht als root, sodass Dateien, die Ihre Mitarbeitenden anlegen, für die Website
-  beschreibbar bleiben ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)).
+  beschreibbar bleiben ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)).
 
 ## 7x als verwaltender Hoster
 
 7x, der Verwalter des Projekts, verkauft Dienste rund um die quelloffene Software; die Software selbst bleibt frei. Sein
 Angebot umfasst verwaltetes Hosting („Exponential Website Hosting“ und „Exponential Platform SSD Hosting“), Support- und
 Wartungsverträge und Upgrades von älteren Versionen. Preise und Bedingungen stehen auf der Website von 7x, nicht hier
-([Wer ist 7x?](../../../../en/us/help/who-is-7x.md#services-and-hosting)).
+([Wer ist 7x?](../../wer-ist-7x.md#dienstleistungen-und-hosting)).
 
 Exponential ist freie Software: Jeder Hoster darf verwaltetes Exponential-Hosting anbieten, und ein Kunde darf zwischen
 Hostern wechseln. Siehe [Mit dem Projekt und 7x zusammenarbeiten](../geschaeft/mit-dem-projekt-und-7x-zusammenarbeiten.md) und
@@ -133,4 +133,4 @@ Hostern wechseln. Siehe [Mit dem Projekt und 7x zusammenarbeiten](../geschaeft/m
 - [Ein Hosting-Modell wählen](ein-hosting-modell-waehlen.md)
 - [Support-Stufen](../geschaeft/support-stufen-fuer-exponential-hosting.md), [SLA-Optionen](../geschaeft/sla-optionen-fuer-exponential-hosting.md)
 - [Checkliste: monatlicher Betrieb](../checklisten/checkliste-fuer-den-monatlichen-betrieb.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -249,6 +249,12 @@ Rules:
 - The data protection notice does not repeat the privacy policy; it states
   only what **this** action does and links the legal texts.
 
+The validator reports a notice in `context`, `prereq`, `result` or `postreq`
+(`notice.position`), after the action in its step (`notice.before-action`),
+a second notice in one step (`notice.per-step`) and a notice outside the steps
+with more than three sentences (`notice.too-long`). Write the label in bold
+with a colon: `**Attention:**`, `**Data protection:**`, `**Note:**`.
+
 Example in a step:
 
 ```
@@ -422,4 +428,5 @@ topic.
 ## Related pages
 
 - [Help system plan](help-system.md)
+- [Help standards](help-standards.md)
 - [Glossary](../../glossary.md)

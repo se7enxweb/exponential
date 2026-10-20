@@ -29,7 +29,7 @@ offizielle Veranstaltungen dokumentiert. Sein Ergebnis sind echte Pull Requests 
 | Übersetzung einer Sprache | Muttersprachler | [Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md) |
 | Übersetzungen gegenlesen | Muttersprachler | [Eine maschinell unterstützte Übersetzung gegenlesen](maschinell-unterstuetzte-uebersetzung-gegenlesen.md) |
 | Offene Issues bestätigen | Benutzer und Administratoren | [Issues nachstellen und bestätigen](issues-nachstellen-und-bestaetigen.md) |
-| Kleine Korrekturen | Entwickler | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md#contribute-a-change-with-a-pull-request) |
+| Kleine Korrekturen | Entwickler | [Mit Git entwickeln](../mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen) |
 | Barrierefreiheit testen | Nutzer assistiver Technologien | [Für Barrierefreiheit eintreten](fuer-barrierefreiheit-eintreten.md) |
 
 ## Aufgaben vorbereiten
@@ -70,4 +70,4 @@ CONTRIBUTION SPRINT: <theme>                <date>, <time>, <place | online>   (
 - [Ein Treffen vorschlagen](ein-treffen-vorschlagen.md)
 - [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md)
 - [Checklisten für Veranstaltungen](checklisten-fuer-veranstaltungen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

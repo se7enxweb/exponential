@@ -12,7 +12,7 @@ type: help
 Diese Seite ist eine **Vorlage** für den Betreiber oder die Leitung. Füllen Sie sie einmal mit Ihrem Administrator aus,
 bewahren Sie sie bei den anderen Unterlagen Ihrer Website auf und aktualisieren Sie sie, wenn jemand dazukommt, die
 Aufgabe wechselt oder geht. Sie übersetzt „wer macht was“ in die Rollen und Gruppen, die Exponential verwendet
-([Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)), sodass der Administrator prüfen kann, ob die Website
+([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)), sodass der Administrator prüfen kann, ob die Website
 dem entspricht.
 
 ## Inhalt
@@ -96,4 +96,4 @@ Worksheet completed on: __________   by: ______________   Next review: _________
 - [Rollen für Ihr Team](rollen-fuer-ihr-team.md)
 - [Rollen für neue Mitarbeitende wählen](rollen-fuer-neue-mitarbeitende-waehlen.md)
 - [Checkliste für die Einarbeitung](checkliste-einarbeitung.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

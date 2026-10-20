@@ -36,11 +36,11 @@ beantworten.
 
 | Sagen Sie | Quelle |
 |---|---|
-| „268 Locale-Dateien können als Inhaltssprachen genutzt werden.“ | [Sprachen in Exponential](../../../en/us/languages.md), [Sprachen und Barrierefreiheit](../../../en/us/help/who-is-the-exponential-foundation.md#languages-and-accessibility) |
-| „40 davon werden von rechts nach links geschrieben.“ | [Sprachen und Barrierefreiheit](../../../en/us/help/who-is-the-exponential-foundation.md#languages-and-accessibility) |
+| „268 Locale-Dateien können als Inhaltssprachen genutzt werden.“ | [Sprachen in Exponential](../../../en/us/languages.md), [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
+| „40 davon werden von rechts nach links geschrieben.“ | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | „Es gibt 32 Übersetzungen der Administration, zehn davon vollständig.“ | ebenda |
-| „Jede Übersetzung eines Inhalts wird einzeln veröffentlicht, und Kennzeichen zeigen, was es gibt und was fehlt.“ | [Sprachen](../../../en/us/help/languages.md) |
-| „Jede redaktionelle Person wählt die Sprache ihrer eigenen Administration.“ | [Sprachen](../../../en/us/help/languages.md) |
+| „Jede Übersetzung eines Inhalts wird einzeln veröffentlicht, und Kennzeichen zeigen, was es gibt und was fehlt.“ | [Sprachen](../sprachen.md) |
+| „Jede redaktionelle Person wählt die Sprache ihrer eigenen Administration.“ | [Sprachen](../sprachen.md) |
 | „Ein Land ohne eigene Übersetzung fällt auf eine verwandte zurück, zum Beispiel jedes deutschsprachige Land auf Deutsch.“ | [Sprachen in Exponential, Unterstützungsstufen](../../../en/us/languages.md#2-support-levels) |
 | „In einer Sprache mit Schreibrichtung von rechts nach links dreht sich die Administration um, und Inhalte bekommen `dir=\"rtl\"`.“ | [Von rechts nach links](../../../en/us/features/6.0/right-to-left.md) |
 | „Für die Sprachen wird zur Laufzeit keine PHP-Erweiterung gebraucht.“ | [Sprachen in Exponential, Abschnitt 10](../../../en/us/languages.md#10-no-php-extension-at-run-time) |
@@ -55,7 +55,7 @@ Auf einer Installation, die Sie kontrollieren:
    sich um.
 4. Stellen Sie zurück.
 
-Fassung mit Zeitangaben: [Demo-Skripte, Teil 3: Sprachen und von rechts nach links](../../../en/us/help/business/demo-scripts.md#part-3-languages-and-right-to-left-3-minutes).
+Fassung mit Zeitangaben: [Demo-Skripte, Teil 3: Sprachen und von rechts nach links](../geschaeft/demo-drehbuecher.md#teil-3-sprachen-und-schreibrichtung-von-rechts-nach-links-3-minuten).
 
 ## Sagen Sie nicht
 
@@ -76,11 +76,11 @@ Sprachgemeinschaften sind natürliche Fürsprecher. Wenn Sie einer begegnen:
 3. Wenn sie teilweise vorhanden ist oder fehlt, laden Sie Übersetzer ein ([Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md)).
 4. Schlagen Sie einen Übersetzungs-Sprint vor ([Einen Beitrags-Sprint vorschlagen](einen-beitrags-sprint-vorschlagen.md)).
 5. Übersetzen Sie auch eine Hilfeseite: „Eine übersetzte Seite hilft jedem Leser dieser Sprache“
-   ([Freie Dokumentation](../../../en/us/help/free-documentation.md#help-others)).
+   ([Freie Dokumentation](../freie-dokumentation.md#anderen-helfen)).
 
 ## Verwandte Seiten
 
 - [Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md)
 - [Sprachen in Exponential](../../../en/us/languages.md)
-- [Mehrere Websites und Sprachen planen](../../../en/us/help/leadership/multisite-and-multilingual-planning.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Mehrere Websites und Sprachen planen](../fuehrung/multisite-und-mehrsprachigkeit-planen.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

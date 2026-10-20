@@ -19,7 +19,7 @@ wenn nicht, fragen Sie das Partnerteam.
 - [ ] Durchsuchen Sie die Hilfe (die Taste `/` setzt in der Hilfe den Fokus auf die Suche) und die Foren.
 - [ ] Durchsuchen Sie offene und geschlossene Issues von <https://github.com/se7enxweb/exponential/issues>.
 - [ ] Stellen Sie das Problem nach Möglichkeit auf einer sauberen, aktuellen Installation nach.
-- [ ] Lesen Sie [Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md); dort werden Logs und Debug-Ausgabe erklärt.
+- [ ] Lesen Sie [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md); dort werden Logs und Debug-Ausgabe erklärt.
 - [ ] Entscheiden Sie: Ist es ein Fehler in Exponential (öffentliches Issue), eine Frage zu Ihrem Projekt
       (Partner-Ticket) oder ein Sicherheitsproblem (vertrauliche E-Mail an security@se7enx.com, nie ein Ticket)?
 
@@ -41,7 +41,7 @@ wenn nicht, fragen Sie das Partnerteam.
 
 Bevor Sie etwas einfügen, entfernen Sie Passwörter, Schlüssel, Hostnamen von Datenbanken, Kundennamen, E-Mail-Adressen
 und private URLs. Ersetzen Sie sie durch Platzhalter wie `<customer-site>`. Genau aus diesem Grund erstellt der
-Fehlerbericht-Helfer der Hilfe eine sichere Zusammenfassung der Umgebung ([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md)).
+Fehlerbericht-Helfer der Hilfe eine sichere Zusammenfassung der Umgebung ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md)).
 
 ## Vorlage
 
@@ -70,5 +70,5 @@ Tried so far: ...
 
 - [Support-Stufen und Reaktionszeiten](support-stufen-und-reaktionszeiten.md)
 - [Eskalationen und Sicherheitsprobleme](eskalationen-und-sicherheitsprobleme.md)
-- [Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

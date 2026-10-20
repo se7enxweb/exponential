@@ -33,24 +33,24 @@ teilen, ohne nach der nächsten Erneuerung ein abgelaufenes auszuliefern.
 | FrankenPHP über Velocity | FrankenPHP | Ihrem Zertifikat oder einem selbstsignierten; Velocity steuert dafür kein ACME |
 | Velocity oder FrankenPHP hinter dem Webserver des Panels | dem Webserver des Panels | dem Panel; dem Proxy muss vertraut werden |
 
-Quellen: [8.1](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table),
+Quellen: [8.1](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle),
 [Vertrauenswürdige Proxys](../../../../en/us/bc/6.0/trusted-proxies.md), [FrankenPHP](../../../../en/us/bc/6.0/frankenphp.md).
 
 ## Das Zertifikat des Panels für Apache oder nginx
 
 Für einen vom Panel verwalteten Webserver stellen Sie das Zertifikat im Panel aus oder laden es hoch und schalten die Umleitung von
 HTTP auf HTTPS ein. Für Plesk sagen die Quellen genau das: Installieren Sie das Zertifikat in Plesk (seine Let's-Encrypt-Erweiterung
-oder Ihr eigenes), und schalten Sie die Umleitung auf HTTPS ein ([8.5.3](../../../../en/us/install/08-serving-the-site.md#853-plesk)). Für andere
+oder Ihr eigenes), und schalten Sie die Umleitung auf HTTPS ein ([8.5.3](../../../installation/08-die-website-ausliefern.md#853-plesk)). Für andere
 Panels lesen Sie in der Dokumentation Ihres Panels nach, wo Zertifikate ausgestellt und erneuert werden.
 
 ACME-Challenges nach HTTP-01 brauchen ein erreichbares `/.well-known/`. Die mitgelieferten Rewrite-Regeln halten es so: Dateien und
 Verzeichnisse mit einem Punkt am Anfang antworten mit 404, mit `.well-known` als Ausnahme
-([13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)).
+([13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)).
 
 ## Was Exponential mitgeteilt werden muss
 
 Ein Zertifikat allein macht eine Exponential-Website nicht zu „überall HTTPS“. Aus
-[13.9](../../../../en/us/install/13-security-hardening.md#139-security-headers-and-https):
+[13.9](../../../installation/13-sicherheitshaertung.md#139-sicherheits-header-und-https):
 
 1. Liefern Sie jeden Namen der Website über HTTPS aus.
 2. Leiten Sie reines HTTP auf HTTPS um. Für einzelne Teilbäume hat Exponential eigene `[SSLZoneSettings]`.
@@ -61,7 +61,7 @@ Ein Zertifikat allein macht eine Exponential-Website nicht zu „überall HTTPS�
 5. Halten Sie Zertifikate erneuert und beobachtet.
 
 Stellen Sie sicher, dass die Adressen, die die Website erzeugt, HTTPS-Adressen sind (`site.ini [SiteSettings] SiteURL` und die URLs
-der Siteaccesses), bevor Sie HSTS erhöhen ([8.3.9](../../../../en/us/install/08-serving-the-site.md#839-https-served-by-velocity-itself)).
+der Siteaccesses), bevor Sie HSTS erhöhen ([8.3.9](../../../installation/08-die-website-ausliefern.md#839-https-direkt-von-velocity)).
 
 > **Warnung**
 > Ein Browser merkt sich HSTS für den ganzen Zeitraum und verweigert reines HTTP zu diesem Host, auch nachdem Sie den Wert gesenkt
@@ -72,7 +72,7 @@ entscheidet Exponential anhand der Header des Proxys, ob die Anfrage HTTPS war, 
 derselben Maschine, der die Header setzt, braucht nichts: Die Standardliste `TrustedProxies[]` deckt `127.0.0.1` und `::1` ab; lassen
 Sie den Proxy `X-Forwarded-Proto` selbst setzen. Auch die Einrichtung von Plesk mit nginx vor Apache braucht nichts, weil
 `mod_remoteip` von Apache den Besucher zur Gegenstelle macht und Apache `HTTPS=on` setzt
-([13.10](../../../../en/us/install/13-security-hardening.md#1310-behind-a-proxy-trusted-headers)).
+([13.10](../../../installation/13-sicherheitshaertung.md#1310-hinter-einem-proxy-vertrauenswürdige-header)).
 
 ```bash
 curl -sI https://example.com/ | grep -i -E 'strict-transport|x-content-type|x-frame|referrer|permissions|content-security'
@@ -92,7 +92,7 @@ eigenes Zertifikat. Drei Wege:
 
 ACME von Velocity braucht einen erreichbaren Port 80 des Servers für die Challenge HTTP-01. Auf einem Server mit Panel gehört Port 80
 meist dem Webserver des Panels; die Quellen nennen für diesen Fall `webroot` (wenn ein anderer Server Port 80 belegt) und die
-Challenge `dns-01` als Möglichkeiten ([8.3.9](../../../../en/us/install/08-serving-the-site.md#839-https-served-by-velocity-itself),
+Challenge `dns-01` als Möglichkeiten ([8.3.9](../../../installation/08-die-website-ausliefern.md#839-https-direkt-von-velocity),
 [HTTPS und Zertifikate in Velocity](../../../../en/us/features/6.0/velocity-https-certificates.md)).
 
 **Die Falle bei der Erneuerung.** Die Testinstallation des Projekts teilt das Let's-Encrypt-Zertifikat, das Plesk für den Host hält, mit
@@ -140,5 +140,5 @@ Siehe [Ablauf von Zertifikaten](../runbooks/ablauf-von-zertifikaten.md).
 
 - [Control Panels: Überblick](README.md), [Plesk](plesk.md)
 - [TLS und HTTPS](../sicherheit/tls-und-https.md), [HTTPS-Zertifikate in Velocity](../server/https-zertifikate-in-velocity.md)
-- [Kapitel 13: Sicherheitshärtung](../../../../en/us/install/13-security-hardening.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 13: Sicherheitshärtung](../../../installation/13-sicherheitshaertung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -149,7 +149,12 @@ the 6.0.14 release; the repository's requirements, which also cover PHP 8.0, are
 The website's article
 [Getting started: hosting your first Exponential website](https://exponential.earth/faq/getting-started-hosting-your-first-exponential-website)
 recommends hosting providers that offer Exponential already installed, so you can start with content instead of
-server setup. If you install it yourself, the [installation book](../../install/README.md) covers every step, and
+server setup. Its requirements are those of an older release and not the reference: it names 6.0.10 as the current
+version, asks for PHP 8.3 or higher and for a LAMP stack with MySQL 5.7 or MariaDB 10.2. The repository says
+otherwise: 6.0.10 to 6.0.14 require PHP 8.1 or later in their `composer.json`, the 6.0.15 line runs on PHP 8.0 to 8.5,
+and no database server is needed, because SQLite 3 is the default; PostgreSQL, MongoDB, MariaDB, Oracle and MySQL are
+the alternatives ([Requirements](../../install/02-requirements.md)). Apache, nginx with PHP-FPM, LiteSpeed and the
+Velocity application server all serve it. If you install it yourself, the [installation book](../../install/README.md) covers every step, and
 [Getting started](../getting-started.md) shows the administration. Hosting companies have their own section of this
 help ([Hosting companies: start here](../hosting/hosting-companies-start-here.md)).
 
@@ -167,6 +172,15 @@ anything.
 The website's FAQ names donations and memberships, and also the many ways that cost no money: code, translations,
 documentation, accessibility advice and testing. See [Contribute to the project](contribute-to-the-project.md),
 [Contribute extensions back](../contribute-extensions-back.md) and [Give and donate](give-and-donate.md).
+
+### Do I have to sign anything to contribute code, and what do I give up?
+
+For the core kernel, yes. 7x and the Exponential Foundation require a signed Contributor Licensing Agreement (CLA)
+for every code contribution to the kernel, whether it is sent as a pull request, a patch, an issue or by mail, before
+it can be merged. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without
+asking or paying you, and you cannot withdraw it or set conditions on it. You sign once for all future contributions. Your
+own custom extensions, site packages and themes are not affected. See
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ### Is it really free?
 

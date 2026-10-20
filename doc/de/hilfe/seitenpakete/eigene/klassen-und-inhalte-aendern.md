@@ -143,4 +143,4 @@ Inhaltspaket zu ändern lässt die Seite ohne sie.
 - [Pakete mit Inhaltsklassen bündeln](../../../../en/us/help/designers/extensions/bundling-content-class-packages.md)
 - [Inhaltsklassen für Websites](../../../../en/us/help/creators/website-creators/content-classes-for-websites.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

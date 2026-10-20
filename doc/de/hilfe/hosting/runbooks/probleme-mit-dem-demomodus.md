@@ -103,8 +103,8 @@ mehr ändern, und die Installer würden ein bekanntes akzeptieren.
 ## Verwandte Seiten
 
 - [Demomodus: der Hinweis zum Upgrade](../../../../en/us/bc/6.0/demo-mode.md)
-- [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Häufige Fragen zum Demomodus](../../../../en/us/help/demo-mode-faq.md)
+- [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Häufige Fragen zum Demomodus](../../demomodus-faq.md)
 - [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md)
 - [Beispiele für den Demomodus](../../../../en/us/examples/demo-mode/README.md)
 - [Runbooks](README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

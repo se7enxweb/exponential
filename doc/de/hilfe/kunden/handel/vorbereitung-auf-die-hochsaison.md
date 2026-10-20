@@ -49,7 +49,7 @@ Aus [Shop-Leistung zu Spitzenzeiten](../../../../en/us/help/businesses/stores/st
 | Änderungsstopp: keine Änderungen an Code, Design oder Einstellungen bis nach der Spitze | Eigentümer informiert Partner und Hoster |
 | Landingpages veröffentlicht; Caches vom Hoster vorgewärmt | Marketing, Hoster |
 | Eine Testbestellung von Anfang bis Ende, mit Zahlung | Shop-Leitung |
-| Cronjobs laufen, sodass alte Warenkörbe bereinigt werden ([Cronjobs](../../../../en/us/guides/cronjobs.md)) | Hoster |
+| Cronjobs laufen, sodass alte Warenkörbe bereinigt werden ([Cronjobs](../../../anleitungen/cronjobs.md)) | Hoster |
 | Backups überprüft ([Backups, die sich wiederherstellen lassen](../../../../en/us/help/businesses/reliability/backups-that-restore.md)) | Hoster |
 | Statusseite und Support-Kontakt des Zahlungsanbieters griffbereit | Shop-Leitung |
 | Schriftlich festgehalten, wer über den Wartungsmodus entscheidet und wer den Hoster anruft | Eigentümer |
@@ -93,4 +93,4 @@ Aus [Shop-Leistung zu Spitzenzeiten](../../../../en/us/help/businesses/stores/st
 - [Planung für Lastspitzen](../../../../en/us/help/businesses/reliability/peak-traffic-planning.md)
 - [Vor einer Kampagne](../nutzen/checklisten/vor-einer-kampagne.md)
 - [Wöchentliche Shop-Checkliste](woechentliche-shop-checkliste.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -15,6 +15,13 @@ if you write documentation (in `doc/` or in an extension) that should show up in
   (`/exphelp/viewer/features/6.0/help-system.md`).
 - **Search** (`/exphelp/search/(q)/<words>`, see "Finding a page"): finds pages by title, headings and text, with filters for audience, category
   and type. The search field of the help pages shows results while you type; press `/` to focus it.
+- **User manual** (`/exphelp/viewer/help/manual/README.md`, the category **User manual**): one page per question about
+  the work in the Admin 4 administration (the tabs, the daily tasks, the tasks of administrators and site managers),
+  each with who may do it, the steps, what can go wrong and the related pages. Exponential Intelligence has its own
+  manual in the same form among the extension documentation (`/exphelp/viewer/ext/expai/manual/README.md`).
+- **Extensions** (`/exphelp/extensions`, see "Documentation of the extensions"): the documentation every active
+  extension brings with it (its `doc/` directory, README, CHANGELOG, LICENSE ...), in the same viewer and search, with
+  an index per extension.
 - **Context help**: the **Help** button in the header of the administration opens the help page that belongs to the
   page you are on (the module and view), or the dashboard when there is none.
 - **Report an error** (`/exphelp/report`): which tracker to use, what to write, a prefilled issue and the
@@ -41,7 +48,8 @@ The Help button appears only for users who have it.
 
 The help shows only files that are **tracked by git** below the directories of `exphelp.ini [IndexSettings] Roots[]`
 (`doc/` by default), with a page suffix (`md`, `markdown`, `txt`, `rst`, or none) or an image suffix (`png`, `jpg`,
-`jpeg`, `gif`, `webp`). Everything else is a 404: files outside `doc/`, untracked files, paths with `..`, symbolic
+`jpeg`, `gif`, `webp`), and the tracked project files outside `doc/` (`README.md`, `SECURITY.md` ..., see "Project
+files"). Everything else is a 404: other files outside `doc/`, untracked files, paths with `..`, symbolic
 links, generated HTML (`doc/en/us/doxygen/`), SVG files and files over `MaxFileSize`. An installation without `.git` uses
 the file manifest `share/filelist.md5` as the list of tracked files.
 
@@ -57,8 +65,11 @@ Security Policy.
 | `[HelpSettings] Enabled` | `true` | `false` turns every help view into a 404 and hides the Help button |
 | `[HelpSettings] EditBaseURL` | GitHub, `main` | the "Edit on GitHub" link of a page; empty for none |
 | `[IndexSettings] Roots[]` | `doc` | the directories whose tracked files are shown |
-| `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose `doc/` directory is shown too (opt-in) |
+| `[IndexSettings] ActiveExtensionDocs` | `enabled` | the documentation of every active extension is shown too ("Documentation of the extensions") |
+| `[IndexSettings] ExtensionTopFiles[]` | `README*`, `CHANGELOG*`, `LICENSE*`, `INSTALL*`, `USAGE*`, `COPYING*` | the files at the top of an extension's directory shown besides its `doc/` |
+| `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose documentation is shown whether they are active or not |
 | `[IndexSettings] ExcludePatterns[]` | doxygen, HTML, SVG | never shown, even when tracked |
+| `[ProjectFiles] Enabled`, `Include[]`, `Exclude[]` | `enabled`, the root `*.md` and the README.md of `bin/`, `design/`, `kernel/` | the tracked Markdown files outside `doc/` that are shown as project files (see "Project files") |
 | `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor`, `trainer`, `press`, `businesses`, `government`, `customer` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
 | `[AudienceSettings] PathRules[]` | per directory | `<glob>;<audience,...>`, first match wins |
 | `[CategorySettings]` | eight categories | names, icons and path rules |
@@ -74,6 +85,7 @@ Security Policy.
 | `[PdfSettings] PageSize` | `A4` | `A4` or `Letter` |
 | `[PdfSettings] FontFiles[]` and the others | DejaVu Sans, Droid Sans Fallback | TrueType fonts of the PDF, first readable file of each list (see below) |
 | `[TitleSettings] Titles[]`, `Summaries[]`, `TitleRules[]` | about 50 inherited pages | a clearer title and summary for a page whose own is unclear (see below) |
+| `[TreeSettings] PageOrder[]` | the top-level pages | `PageOrder[<page id>]=<integer>`: the place of a page in the page tree, the folder lists and the category lists; wins over the front matter `order` (see "Order of the pages") |
 
 ### Front matter
 
@@ -113,6 +125,38 @@ TitleRules[]=doc/en/us/features/*/event.*;{title} ({dirversion})
 titles, list every page with `./console exp:help index --list` and look for file names, `README`, versions and
 duplicates.
 
+### Order of the pages
+
+The page tree (`/exphelp/contents` and the sidebar of every page), the folder lists and the category lists sort pages by
+their order, then by title. A page's order is its front matter `order:`, else 0 for a folder's `README.md` or
+`index.md` and 1000 for any other page. The project files (`README.md`, `CONTRIBUTING.md` ...) and the plain text pages
+(`release-overview`, `LICENSE-GFDL-1.3.txt`) cannot carry front matter, so `[TreeSettings] PageOrder[]` places a page by
+its id, and wins over its front matter:
+
+```ini
+[TreeSettings]
+PageOrder[]
+PageOrder[project/README.md]=0
+PageOrder[INSTALL.md]=10
+PageOrder[languages.md]=20
+PageOrder[branch-overview.md]=30
+PageOrder[release-overview]=40
+PageOrder[project/SECURITY.md]=50
+PageOrder[project/CONTRIBUTING.md]=100
+PageOrder[project/COPYRIGHT.md]=110
+PageOrder[README-LICENSE.md]=120
+PageOrder[LICENSE-GFDL-1.3.txt]=130
+PageOrder[project/LICENSE.md]=140
+PageOrder[glossary.md]=9999
+```
+
+The key is the page id: the path below the language directory (`INSTALL.md`, `release-overview`), `project/<path>`
+for a project file, `ext/<extension>/<path>` for a page of an extension. The id is the same in every language, so one
+entry places a page and its translations. The list above is what Exponential ships, and also the built-in default
+(`expHelpAudience::PAGE_ORDER`); `PageOrder[]` alone in an override clears it, and an override can add entries for
+its own pages. The top-level pages are placed here only (`glossary.md` keeps its front matter `order: 9999`, the same
+value). Folders still come before the pages of their level. Check the result on `/exphelp/contents`.
+
 ## Help from extensions
 
 An extension adds context help in `extension/<ext>/settings/exphelp.ini.append.php`:
@@ -123,8 +167,114 @@ Map[mymodule]=ext/myextension/usage.md
 Map[mymodule/edit]=ext/myextension/usage.md#editing
 ```
 
-and, to show its own `doc/` directory, an administrator adds it to `[IndexSettings] ExtensionDocDirs[]`. Its pages
-then have the ids `ext/<extension>/<path>`.
+Its own documentation is shown on its own while the extension is active (next section); its pages have the ids
+`ext/<extension>/<path>`, which the context help map can name.
+
+## Documentation of the extensions
+
+The help center finds the documentation of every **active** extension when it looks
+(`[IndexSettings] ActiveExtensionDocs=enabled`, the default; `eZExtension::activeExtensions()` of the request): an
+extension switched on shows up at once, one switched off is gone at once. Of each such extension it shows
+
+- the files below `extension/<name>/doc/` that the extension's repository tracks (its own `.git`, or the
+  installation's when the extension is part of it), or that its release lists in its `share/filelist.md5`;
+- the files at the top of `extension/<name>/` whose names match `[IndexSettings] ExtensionTopFiles[]`: `README*`,
+  `CHANGELOG*`, `LICENSE*`, `INSTALL*`, `USAGE*`, `COPYING*` (compared without case), tracked or listed the same way.
+
+and nothing else of the extension. The rules of "What it shows, and what never" apply, plus:
+
+- only page suffixes (`md`, `markdown`, `txt`, `rst`) and images; PHP, templates, scripts, styles, settings and every
+  other source file are never shown, whatever their place (`ExcludePatterns[]` has `*.php`, and other suffixes are no
+  page suffix);
+- a text file without a suffix (`LICENSE`, `CHANGELOG`) is left out when it starts like a program (`#!` or `<?`);
+- nothing of an inactive extension (unless it is named in `ExtensionDocDirs[]`), no untracked file, nothing outside
+  the extension's `doc/` directory but the top files, no symbolic link, no path with `..`;
+- a file of `doc/` wins over the top file of the same name (`doc/README.md` over `README.md`).
+
+An extension installed without its repository and without a `share/filelist.md5` (a copy) shows nothing: the help
+cannot tell its own files from files someone put there.
+
+| | |
+|---|---|
+| Page id | `ext/<name>/<path below doc/>` (`ext/expai/vector.md`); a top file `ext/<name>/README.md` |
+| Address | `/exphelp/viewer/ext/expai/vector.md`, like every page |
+| Type, category | "Extension documentation" (`extension`), category and navigation folder **Extensions** |
+| Audience | editors, administrators and developers, unless the page's front matter or the path rules say otherwise |
+| Overview | the extension's `doc/README.md` or `doc/index.md`, else its top `README` |
+| Links | resolved against the file, as GitHub does: `../README.md` in `doc/index.md` opens the top README |
+| Edit on GitHub | none: `EditBaseURL` names the installation's repository, not the extension's |
+| Breadcrumb | Help > Extensions > the extension's overview (or its index) > ... > the page |
+
+**The Extensions index** (`/exphelp/extensions`) lists every extension that has pages, with the title of its overview
+and its number of pages; `/exphelp/extensions/<name>` is one extension's index: its pages by folder, and a search
+field limited to them. The **search** takes `(extension)/<name>` as a view parameter
+(`/exphelp/search/(q)/vector/(extension)/expai`, in the form as a hidden field and in the JSON request as
+`extension=expai`); its page says which extension it is limited to and links to the whole help. The contents page
+links to the index, and the dashboard shows the category **Extensions** with the others.
+
+An extension that had its own documentation view can send its old addresses there; expai does
+(`expai/help` redirects to `exphelp/extensions/expai`, `expai/help/(page)/<name>` to the page).
+
+Tests: `tests/tests/kernel/classes/help/expHelpExtensionDocsTest.php` (no database: a fixture installation with
+extensions in their own repositories and in the installation's, active and inactive; source files, settings, scripts
+without a suffix, untracked files and traversal refused; ids, overview, list, search filter, breadcrumb).
+
+## Project files
+
+The Markdown files of the repository that document the project itself, outside `doc/`, are help pages too: the
+root's `README.md`, `SECURITY.md`, `CONTRIBUTING.md`, `COPYRIGHT.md`, `LICENSE.md` (and `INSTALL.md`, `CHANGELOG.md`
+or any other root `*.md` once one is committed), and the `README.md` files of `bin/`, `design/<design>/` and
+`kernel/` when there are any. They are in the category **Project files** (`project-files`, type `project`) in the
+search (filter by the category or the type) and on the dashboard. In the page tree of the contents page
+(`/exphelp/contents`) and of every help page they are not in a folder: each is a page at the top of the tree, next to
+the main folders, and the breadcrumb of one is Help > the page. Their audiences are developers and administrators, and
+more for some (`[ProjectFiles] AudienceRules[]`: `README.md` is also for editors, users, partners and hosting
+companies); the title is the first heading. In the tree, a title that says no more than "README" gets the directory in
+front (`kernel/private README`), so no two entries read the same.
+
+- **Ids**: `project/<path in the repository>`: `/exphelp/viewer/project/README.md`,
+  `/exphelp/viewer/project/bin/php/README.md`. An address with the path alone (`/exphelp/viewer/README.md`)
+  redirects to the id. The prefix `project/` is reserved for them.
+- **Links**: a link of a documentation page to a project file (`[README](../../../../../README.md)` from
+  `doc/en/us/features/6.0/`) opens it in the help, not on GitHub; a link of `README.md` into the documentation
+  (`doc/en/us/guides/caches.md`) opens the help page. Links are resolved against the file, as GitHub resolves them,
+  so the same Markdown works in both places.
+- **Language**: the project files are English only and not translated, like `doc/changelogs/`. A reader of another
+  language sees them in English with the note that the page is not translated.
+- **License**: they are part of the software and are distributed under its license (`[ProjectFiles] LicenseName`,
+  linked to `LicensePage`), not under the documentation license; the notice under them says so.
+- **Left out** (`[ProjectFiles] Exclude[]`): test fixtures (`**/fixtures/**`) and the copies of other projects
+  (`**/javascript/**`, the README of a bundled JavaScript library such as TinyMCE).
+
+What can never be shown, whatever `Include[]` says and in an override too:
+
+- a file git does not track: the list comes from the git index, `git ls-files` or the release manifest, never from
+  the directory, so a private note in the root that is not committed (an untracked `notes.md`) is never shown,
+  searched, linked or redirected to;
+- a tracked file in a place `.gitignore` or `.git/info/exclude` ignores (added with `git add -f`);
+- anything but Markdown (`.md`, `.markdown`), and any path below `doc/` (the documentation itself), `var/`,
+  `vendor/`, `settings/override/`, `settings/siteaccess/` or `node_modules/`;
+- a hidden file or a file in a hidden directory, `.github/` included (the pull request template is not a page);
+- anything below `extension/`: the documentation of the extensions is the category **Extensions**
+  (`exphelp/extensions`), not project files;
+- anything below a `tests/` directory, wherever it is (`tests/`, `kernel/classes/tests/`,
+  `extension/ezoe/tests/tinymce8/`): tests and their fixtures are not documentation;
+- symbolic links, files outside the installation root and files over `MaxFileSize`, as for every help file.
+
+```ini
+[ProjectFiles]
+Enabled=enabled
+Include[]
+Include[]=*.md
+Include[]=bin/**/README.md
+Exclude[]
+Exclude[]=**/fixtures/**
+```
+
+`*` stays inside one directory and `**` crosses directories. `Enabled=disabled` takes them out of the help. After a
+change, `./console exp:help index --rebuild` builds the index and search again (a commit that adds a file does it on
+its own, because the git index changes). `tests/tests/kernel/classes/help/expHelpProjectFilesTest.php` covers it (no
+database), among others that an untracked root note is never indexed.
 
 ## Landing pages of the audiences
 
@@ -196,7 +346,7 @@ help, its mission and `Funds[]`. `Enabled=disabled` removes the block.
   on every page of the help.
 - **Search and browse addresses** use view parameters, so they can be bookmarked and linked:
   `/exphelp/search/(q)/publish`, `/exphelp/search/(category)/layouts/(audience)/editor`, with `(type)`,
-  `(offset)` and `(limit)` as well. Without `(q)` the page lists every page the filters allow (browse mode); with no
+  `(extension)` (the documentation of one extension), `(offset)` and `(limit)` as well. Without `(q)` the page lists every page the filters allow (browse mode); with no
   parameter at all it lists all pages. The dashboard's audience cards, topics and chips, the category and audience
   of a page and the search forms all link to these addresses. An old address with `?q=...&category=...` is
   redirected to its canonical form; the JSON answer for the instant search (`format=json` or
@@ -299,6 +449,16 @@ note ("This page is not translated into German yet"); the index, the search, the
 are kept per language (`lang-<language>/` in the help cache), and `./console exp:help index` builds them all. An
 address that names a file (`/exphelp/viewer/en/us/guides/caches.md`, `/exphelp/viewer/de/<translated path>`) is
 redirected to the page id.
+
+The start page and every page show the reader's language next to the search: "Reading in: English / Deutsch"
+(`exphelp/parts/reading_language.tpl`, `expHelp::reading()`). It offers each language of `[DocLanguages]
+Directories[]` that has pages and that the interface language switch can choose for the user; a button posts to
+`uiswitch/set` like the language switch of the top bar, so it changes the interface language of the whole
+administration, and comes back to the same page. Below it, how much of the help each translation has ("German: 120
+of 7,265 pages", `expHelpDocumentIndex::languageCoverage()`, counted from the file list without reading a page). A
+translated page links to its English original, and so does the note of a page that is not translated yet: the
+original is the same address with `?lang=en-us`, which shows the page in that language for the one request, with a
+link back to the reader's language.
 
 In a right-to-left interface language (Hebrew, Arabic) the pages are mirrored: the navigation tree, the contents
 and the previous/next links swap sides and their arrows turn, while paths, code and the diagnostics stay left to

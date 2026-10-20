@@ -30,7 +30,7 @@ Seiten beschrieben, gelesen am 18. Oktober 2026; prüfen Sie auf den Websites ih
 | Wie sie sich beschreibt | „Share ist das Tor zur Exponential-Community ...“ (Beschreibung der Website) | „Laden Sie Exponential kostenlos herunter und treten Sie unserer Community bei! Veröffentlichen Sie Ihre eigenen angepassten Exponential-Erweiterungen“ (Beschreibung der Website) |
 | Was Sie finden | Foren, Blogs, Artikel, Neuigkeiten von 7x | Neue und aktualisierte Projekte, Stöbern und Suchen, RSS-Feeds |
 | Nutzen Sie sie für | Fragen, Antworten, Beiträge, Tutorials | Erweiterungen und Community-Projekte |
-| Dokumentiert in | [Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places) | der Website selbst |
+| Dokumentiert in | [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) | der Website selbst |
 
 ## Konten
 
@@ -58,9 +58,9 @@ maßgebliche Quelle verweisen: das Git-Repository und, bei Composer-Paketen, den
 
 Bereiten Sie vor:
 
-1. **Ein öffentliches Repository** mit README, einer Datei LICENSE und einem klaren Namen ([Erweiterungen](../../../en/us/guides/extensions.md)).
+1. **Ein öffentliches Repository** mit README, einer Datei LICENSE und einem klaren Namen ([Erweiterungen](../../anleitungen/extensions.md)).
 2. **Versionsangaben in den eigenen Dateien der Erweiterung**: `ezinfo.php` und `extension.xml` tragen die Release-Nummer
-   ([Erweiterungen, „Release it“](../../../en/us/guides/extensions.md#7-release-it)).
+   ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
 3. **Installationsanleitung**: `composer require` und die Einstellungen zum Aktivieren.
 4. **Kompatibilität**: Mit welchen Exponential- und PHP-Versionen Sie getestet haben.
 5. **Screenshots** mit Alternativtext und ohne personenbezogene Daten.
@@ -79,7 +79,7 @@ Bereiten Sie vor:
 [ ] Credits to the original author if it is a fork or port
 ```
 
-Hinweise zur Benennung neuer Dinge stehen unter [Marken- und Namensregeln, Namen für Neues](../../../en/us/help/business/brand-and-naming-rules.md#names-for-new-things).
+Hinweise zur Benennung neuer Dinge stehen unter [Marken- und Namensregeln, Namen für Neues](../geschaeft/marken-und-namensregeln.md#namen-für-neue-dinge).
 
 ## Neue Arbeit verfolgen
 
@@ -91,5 +91,5 @@ verlinkt). Wer sie verfolgt, findet leicht neue Erweiterungen zum Ausprobieren, 
 
 - [Die Community-Kanäle](community-kanaele.md)
 - [Zu eZpedia beitragen](zu-ezpedia-beitragen.md)
-- [Erweiterungen](../../../en/us/guides/extensions.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Erweiterungen](../../anleitungen/extensions.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

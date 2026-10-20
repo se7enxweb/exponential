@@ -2033,6 +2033,11 @@ class eZContentOperationCollection
         // Triggering content/state/assign event for persistence cache purge
         ezpEvent::getInstance()->notify( 'content/state/assign', array( $objectID, $selectedStateIDList ) );
 
+        // Help maintained as content: a release builds the stored e-books of the manuals again
+        // (doc/en/us/features/6.0/help-content.md, "Stored e-books"; exphelp.ini [ContentSettings] EbooksOnRelease)
+        if ( $selectedStateIDList && class_exists( 'expHelpContentEbooks' ) )
+            expHelpContentEbooks::onStateAssign( $objectID, $selectedStateIDList );
+
         eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
 
         return array( 'status' => true );

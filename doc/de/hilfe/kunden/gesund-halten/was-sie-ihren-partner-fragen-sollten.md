@@ -22,7 +22,7 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 | Welche Teile sind individuell: Templates, Designs, Erweiterungen, Inhaltsklassen? | Eine Liste, und wo der Code aufbewahrt wird |
 | Haben Sie Dateien von Exponential selbst geändert? | Im Idealfall keine; jede Änderung wird in einer Versionsverwaltung gehalten und erscheint in der Upgrade-Prüfung ([Upgrade-Prüfung und Dateikonsistenz](../../../../en/us/help/businesses/reliability/upgrade-check-and-file-consistency.md)) |
 | Wo wird der Code unserer Website aufbewahrt? | Ein Git-Repository, das Ihnen gehört oder das Sie kopieren können ([Einen Partner auswählen](../../../../en/us/help/businesses/choosing/choosing-a-partner.md)) |
-| Gibt es ein Dokument, das die Website beschreibt? | Ein Übergabedokument: Inhaltsmodell, Rollen, Einstellungen, Kontakte ([Projektvorlagen](../../../../en/us/help/leadership/project-templates.md)) |
+| Gibt es ein Dokument, das die Website beschreibt? | Ein Übergabedokument: Inhaltsmodell, Rollen, Einstellungen, Kontakte ([Projektvorlagen](../../fuehrung/projektvorlagen.md)) |
 
 ## Updates und die lange Sicht
 
@@ -50,8 +50,8 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 ## Schulung und Dokumentation
 
 - Wurde unseren Redakteuren die Hilfe in ihrer Administration gezeigt, das Dashboard der Hilfe?
-- Welche Hilfeseiten sollten unsere neuen Mitarbeitenden zuerst lesen ([Erste Schritte](../../../../en/us/help/getting-started.md),
-  [Inhalte bearbeiten](../../../../en/us/help/editing-content.md))?
+- Welche Hilfeseiten sollten unsere neuen Mitarbeitenden zuerst lesen ([Erste Schritte](../../erste-schritte.md),
+  [Inhalte bearbeiten](../../inhalte-bearbeiten.md))?
 
 ## Eigentum und Ausstieg
 
@@ -71,4 +71,4 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 - [Was Sie Ihren Hoster fragen sollten](was-sie-ihren-hoster-fragen-sollten.md)
 - [Einen Partner auswählen](../partner-und-hoster/einen-partner-auswaehlen.md)
 - [Ihren Anbieter jedes Jahr überprüfen](../partner-und-hoster/anbieter-jedes-jahr-ueberpruefen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

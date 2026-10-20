@@ -33,18 +33,18 @@ sie es sehen werden.
 | Sagen Sie | Quelle |
 |---|---|
 | „Ein Befehl installiert eine vollständige Website auf SQLite, ohne Datenbankserver.“ | [Exponential mit einem Befehl installieren](../../../en/us/features/6.0/install-in-one-command.md) |
-| „Sechs Datenbanken: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle und MySQL, in dieser offiziellen Reihenfolge.“ | [Datenbankunterstützung](../../../en/us/help/database-support.md#the-supported-databases-in-order) |
-| „PHP 8.0 ist die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt.“ | [PHP-Versionen](../../../en/us/help/who-is-the-exponential-foundation.md#php-versions) |
-| „Betriebssysteme in vier dokumentierten Stufen, von getestet bis theoretisch.“ | [Betriebssystemunterstützung](../../../en/us/help/os-support.md#the-four-tiers) |
-| „Velocity ist die empfohlene Engine; FrankenPHP ist die produktionsreife Alternative; Apache oder nginx mit PHP-FPM liefern es ebenfalls aus.“ | [Velocity](../../../en/us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it), [Webserver](../../../en/us/help/os-support.md#web-servers) |
-| „Eine Anleitung zur Härtung, Bedrohung für Bedrohung, mit einer Checkliste.“ | [Sicherheitshärtung](../../../en/us/help/security-hardening.md#checklist) |
-| „Eine neue Installation erzeugt ein zufälliges Administratorpasswort, wenn keines oder ein allgemein bekanntes angegeben wird.“ | [Das Standardpasswort des Administrators](../../../en/us/help/default-administrator-password.md) |
+| „Sechs Datenbanken: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle und MySQL, in dieser offiziellen Reihenfolge.“ | [Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge) |
+| „PHP 8.0 ist die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt.“ | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
+| „Betriebssysteme in vier dokumentierten Stufen, von getestet bis theoretisch.“ | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md#die-vier-stufen) |
+| „Velocity ist die empfohlene Engine; FrankenPHP ist die produktionsreife Alternative; Apache oder nginx mit PHP-FPM liefern es ebenfalls aus.“ | [Velocity](../../../en/us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it), [Webserver](../betriebssystemunterstuetzung.md#webserver) |
+| „Eine Anleitung zur Härtung, Bedrohung für Bedrohung, mit einer Checkliste.“ | [Sicherheitshärtung](../sicherheitshaertung.md#checkliste) |
+| „Eine neue Installation erzeugt ein zufälliges Administratorpasswort, wenn keines oder ein allgemein bekanntes angegeben wird.“ | [Das Standardpasswort des Administrators](../standard-administratorpasswort.md) |
 | „Sondierungen und Angriffe werden in ein Sicherheitslog eingeordnet, mit maskierten Adressen.“ | [Request-Logs](../../../en/us/features/6.0/request-logs.md) |
 | „Ein manipulationssicheres Prüfprotokoll, standardmäßig eingeschaltet.“ | [Das Prüfprotokoll](../../../en/us/features/6.0/audit-trail.md) |
-| „Ein Log-Viewer in der Administration und Fehlerreferenzen, die man nachschlagen kann.“ | [Log-Viewer](../../../en/us/features/6.0/log-viewer.md), [Einen Fehler über seine Referenz finden](../../../en/us/guides/finding-an-error-by-its-reference.md) |
-| „**Setup > Upgrade-Prüfung** vergleicht die Dateien mit dem Release-Manifest und die Datenbank mit dem Release-Schema.“ | [Die Upgrade-Prüfung](../../../en/us/guides/upgrade-check.md) |
+| „Ein Log-Viewer in der Administration und Fehlerreferenzen, die man nachschlagen kann.“ | [Log-Viewer](../../../en/us/features/6.0/log-viewer.md), [Einen Fehler über seine Referenz finden](../../anleitungen/fehler-anhand-der-referenz-finden.md) |
+| „**Setup > Upgrade-Prüfung** vergleicht die Dateien mit dem Release-Manifest und die Datenbank mit dem Release-Schema.“ | [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
 | „Große Löschungen und Verschiebungen laufen als Hintergrundjobs, sodass sie nicht in eine Zeitüberschreitung laufen.“ | [Inhaltsjobs](../../../en/us/features/6.0/content-jobs.md) |
-| „Standard-Dumps pro Datenbank und dokumentierte Wege, eine Website zwischen Datenbanken umzuziehen.“ | [Backup und Wiederherstellung](../../../en/us/help/database-support.md#backup-and-restore), [Eine Website umziehen](../../../en/us/help/database-support.md#moving-a-site-to-another-database) |
+| „Standard-Dumps pro Datenbank und dokumentierte Wege, eine Website zwischen Datenbanken umzuziehen.“ | [Backup und Wiederherstellung](../datenbankunterstuetzung.md#backup-und-wiederherstellung), [Eine Website umziehen](../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen) |
 
 ## Befehle und Bildschirme zum Zeigen
 
@@ -65,12 +65,12 @@ Prüfen Sie die Befehlsnamen auf der Installation, die Sie verwenden; `--help` b
 
 | Frage | Antwort | Quelle |
 |---|---|---|
-| „Läuft es auf Shared Hosting?“ | Apache oder LiteSpeed mit `.htaccess` können es ausliefern; ohne Shell-Zugang installiert es der Setup-Assistent. Velocity kann dort meist nicht laufen. | [Container, Cloud und Hosting-Panels](../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels) |
-| „Welche Datenbank sollen wir nehmen?“ | SQLite 3 ist der Standard; PostgreSQL ist der empfohlene Server | [Datenbankunterstützung](../../../en/us/help/database-support.md) |
-| „Wie werden Sicherheitskorrekturen ausgeliefert?“ | Auf `main`, veröffentlicht mit dem nächsten Release 6.0.x | [Sicherheitskorrekturen](../../../en/us/help/who-is-the-exponential-foundation.md#security-fixes) |
-| „Dürfen wir Cron als root laufen lassen?“ | Die Anleitung zur Härtung behandelt Cron und Kommandozeilenskripte als root | [Sicherheitshärtung](../../../en/us/help/security-hardening.md#cron-and-command-line-scripts-as-root) |
-| „Wie aktualisieren wir sicher?“ | Zuerst sichern, nie einen Installer über eine bestehende Website laufen lassen; Dateien je Datenbank aktualisieren | [Upgrade](../../../en/us/install/11-upgrading.md) |
-| „Kann eine WAF davor sitzen?“ | request-shield von CJW Network ist als Begleitprojekt dokumentiert | [Ein Schutzschild davor](../../../en/us/help/security-hardening.md#a-shield-in-front-request-shield) |
+| „Läuft es auf Shared Hosting?“ | Apache oder LiteSpeed mit `.htaccess` können es ausliefern; ohne Shell-Zugang installiert es der Setup-Assistent. Velocity kann dort meist nicht laufen. | [Container, Cloud und Hosting-Panels](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
+| „Welche Datenbank sollen wir nehmen?“ | SQLite 3 ist der Standard; PostgreSQL ist der empfohlene Server | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
+| „Wie werden Sicherheitskorrekturen ausgeliefert?“ | Auf `main`, veröffentlicht mit dem nächsten Release 6.0.x | [Sicherheitskorrekturen](../wer-ist-die-exponential-foundation.md#sicherheitskorrekturen) |
+| „Dürfen wir Cron als root laufen lassen?“ | Die Anleitung zur Härtung behandelt Cron und Kommandozeilenskripte als root | [Sicherheitshärtung](../sicherheitshaertung.md#cron--und-kommandozeilenskripte-als-root) |
+| „Wie aktualisieren wir sicher?“ | Zuerst sichern, nie einen Installer über eine bestehende Website laufen lassen; Dateien je Datenbank aktualisieren | [Upgrade](../../installation/11-aktualisieren.md) |
+| „Kann eine WAF davor sitzen?“ | request-shield von CJW Network ist als Begleitprojekt dokumentiert | [Ein Schutzschild davor](../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield) |
 
 ## Sagen Sie nicht
 
@@ -83,4 +83,4 @@ Prüfen Sie die Befehlsnamen auf der Installation, die Sie verwenden; `--help` b
 - [Gesprächspunkte: Hosting, Datenbanken und Freiheit](gespraechspunkte-hosting-datenbanken-freiheit.md)
 - [Gesprächspunkte: Sicherheit](gespraechspunkte-sicherheit.md)
 - [Für Sicherheit eintreten](fuer-sicherheit-eintreten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

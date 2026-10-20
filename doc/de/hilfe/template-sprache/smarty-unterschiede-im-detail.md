@@ -280,4 +280,4 @@ um Ausgabe-Tags wie `{$x}`. Templates können also jede Funktion in eine eigene 
 - [Häufige Fehler in Templates](../../../en/us/help/designers/templates/common-template-mistakes.md)
 - [Logik- und Vergleichsoperatoren](../../../en/us/help/designers/templates/logic-and-comparison-operators.md)
 - [Literal und Begrenzer](../../../en/us/help/designers/templates/literal-and-delimiters.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

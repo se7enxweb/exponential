@@ -15,7 +15,7 @@ umziehen. Sie beantwortet: wann sich ein Wechsel lohnt, wie die Daten übertrage
 
 Die unterstützten Datenbanken in der offiziellen Reihenfolge: 1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB ·
 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich, ohne
-Treiber in 6.0.x ([Datenbankunterstützung](../../../../en/us/help/database-support.md)).
+Treiber in 6.0.x ([Datenbankunterstützung](../../datenbankunterstuetzung.md)).
 
 ## Inhalt
 
@@ -29,7 +29,7 @@ Treiber in 6.0.x ([Datenbankunterstützung](../../../../en/us/help/database-supp
 
 ## Wann wechseln
 
-Typische Gründe, die ein Hoster sieht, aus [Datenbankunterstützung](../../../../en/us/help/database-support.md#1-sqlite-3-the-default):
+Typische Gründe, die ein Hoster sieht, aus [Datenbankunterstützung](../../datenbankunterstuetzung.md#1-sqlite-3-der-standard):
 Wählen Sie statt SQLite 3 einen Server, wenn mehr als eine Maschine in die Datenbank schreiben muss, wenn viele
 Redakteure den ganzen Tag gleichzeitig große Änderungen veröffentlichen oder wenn Sie Replikation oder Benutzer und Rechte
 auf Ebene der Datenbank brauchen. Der empfohlene Server ist PostgreSQL. Andere Gründe: Die Organisation des Kunden
@@ -42,7 +42,7 @@ standardisiert auf eine Engine, oder Ihre Plattform bietet verwaltete Backups nu
 ## Planen
 
 - Ein Wartungsfenster: Zwischen dem Dump und dem Moment, in dem die Website auf der neuen Datenbank läuft, darf kein
-  Redakteur veröffentlichen, sonst geht diese Arbeit verloren ([9.9](../../../../en/us/install/09-databases.md#99-switching-an-existing-site-to-another-engine)).
+  Redakteur veröffentlichen, sonst geht diese Arbeit verloren ([9.9](../../../installation/09-datenbanken.md#99-eine-bestehende-site-auf-eine-andere-engine-umstellen)).
 - Ein vollständiges Backup der aktuellen Datenbank und der Dateien, bevor Sie beginnen.
 - Der neue Datenbankserver, eine leere Datenbank und ein Benutzer mit dem Recht, Tabellen anzulegen.
 - Eine Generalprobe auf einer Kopie, mit Zeitmessung.
@@ -72,14 +72,14 @@ Für SQLite 3 ist das Datenbankargument der Dateiname, wie in der Einstellung `D
 > **Warnung**
 > `--password=` setzt das Passwort auf die Kommandozeile, wo andere Benutzer der Maschine es in der Prozessliste sehen
 > können. Führen Sie die Übertragung auf einer Maschine aus, die Sie kontrollieren, oder mit einem temporären Passwort, das
-> Sie danach ändern ([9.9](../../../../en/us/install/09-databases.md#99-switching-an-existing-site-to-another-engine)).
+> Sie danach ändern ([9.9](../../../installation/09-datenbanken.md#99-eine-bestehende-site-auf-eine-andere-engine-umstellen)).
 
 ## Nach Oracle oder MongoDB
 
 - **Oracle**: Die Erweiterung `ezoracle` hat eigene Übertragungsbefehle, `ext:ezoracle:mysql2oracle-schema` und
   `ext:ezoracle:mysql2oracle-data` ([Oracle für Hoster](../grundlagen/oracle-fuer-hoster.md)).
 - **MongoDB**: die Skripte in `bin/mongodb/` (`export_mysql.sh`, `mysql2ndjson.py`, `import_all.sh`,
-  `validate_ndjson.sh`). Prüfen Sie die [Grenzen von MongoDB](../../../../en/us/help/database-support.md#mongodb-limits) gegen die
+  `validate_ndjson.sh`). Prüfen Sie die [Grenzen von MongoDB](../../datenbankunterstuetzung.md#grenzen-von-mongodb) gegen die
   Erweiterungen des Kunden, bevor Sie den Wechsel zusagen ([MongoDB für Hoster](../grundlagen/mongodb-fuer-hoster.md)).
 
 ## Zu ändernde Einstellungen
@@ -87,7 +87,7 @@ Für SQLite 3 ist das Datenbankargument der Dateiname, wie in der Einstellung `D
 In `settings/override/site.ini.append.php`, Block `[DatabaseSettings]`: `DatabaseImplementation` und die Schlüssel der
 Verbindung (Server, Port, Benutzer, Passwort, Datenbank). Ein vergessenes `DatabaseImplementation` ist der übliche Grund,
 warum nach einem Wechsel keine Seite lädt (9.9). Die Schlüssel je Engine stehen auf
-[Die Einstellungen: DatabaseSettings in site.ini](../../../../en/us/help/database-support.md#the-settings-databasesettings-in-siteini).
+[Die Einstellungen: DatabaseSettings in site.ini](../../datenbankunterstuetzung.md#die-einstellungen-databasesettings-in-siteini).
 
 Leeren Sie dann jeden Cache und starten Sie die Worker neu:
 
@@ -103,7 +103,7 @@ Unter PHP-FPM laden Sie stattdessen den PHP-FPM-Dienst der Website neu.
 1. Zählen Sie die Zeilen von `ezcontentobject`, `ezcontentobject_tree` und `ezcontentobject_attribute` auf beiden Seiten;
    die Zahlen müssen übereinstimmen.
 2. Korrigieren Sie auf PostgreSQL die Sequenzen, wenn `ezsqlinsertschema.php` ein Problem damit gemeldet hat
-   ([9.4](../../../../en/us/install/09-databases.md#94-postgresql)).
+   ([9.4](../../../installation/09-datenbanken.md#94-postgresql)).
 3. Melden Sie sich in der Administration an, öffnen Sie einige Seiten und veröffentlichen Sie ein Testobjekt: Eine
    Veröffentlichung prüft die Schreibvorgänge, die ein Seitenaufruf nicht prüft.
 4. Schalten Sie den Wartungsmodus aus: `php bin/php/maintenance.php off --allow-root-user`.
@@ -120,5 +120,5 @@ Kunden fest.
 
 - [Datenbanken in der offiziellen Reihenfolge](../grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md)
 - [Eine Website zwischen Hostern umziehen](eine-website-zwischen-hostern-umziehen.md)
-- [Kapitel 9: Datenbanken](../../../../en/us/install/09-databases.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 9: Datenbanken](../../../installation/09-datenbanken.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

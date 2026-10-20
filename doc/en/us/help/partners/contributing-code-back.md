@@ -32,11 +32,24 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
 5. Keep the file manifest current: every added, changed or removed file updates its line in `share/filelist.md5`
    (`make manifest-fix`); `make hooks` installs the pre-commit hook that checks it.
 6. Make sure the tests pass, update the documentation, push to your fork and open a pull request.
+7. Make sure a signed Contributor Licensing Agreement is on file with 7x, knowing that it gives control of the
+   contribution to 7x (see below)
+   ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). When the partner company
+   has the rights to its developers' work, the company signs it or gives its permission (CLA, section 6); one
+   signature covers all future contributions.
 
 ## What happens next
 
-- "Every pull request is merged, and its commits are kept as the contributor wrote them and never rewritten"
-  (`doc/en/us/bc/6.0/ci.md`). What needs fixing is fixed in commits on top.
+- **Copyright assignment (CLA).** A kernel contribution, sent in any form (pull request,
+  patch, issue or mail), is merged only once its signed CLA has been received; 7x and the Exponential Foundation
+  require it. **By signing and submitting, the partner assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial
+  products, without asking or paying the partner, who cannot withdraw it or set conditions on it. It does not
+  affect the partner's own custom extensions or its customers' sites.
+
+- Every pull request is merged. While it is open, you squash it and rebase it onto `main` as the reviews ask
+  (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` to your pull request branch only);
+  once it is merged, `main`'s history is never rewritten, and later fixes come as new pull requests
+  (`doc/en/us/bc/6.0/ci.md`).
 - CI checks syntax, the manifest, commit messages, code style, PHPStan and the tests on supported PHP versions
   (`doc/en/us/bc/6.0/ci.md`).
 - "By contributing, you agree that your contributions will be licensed under the GNU General Public License, version

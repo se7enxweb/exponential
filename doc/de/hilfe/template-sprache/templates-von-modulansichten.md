@@ -260,4 +260,4 @@ In der URL angegebene Benutzerparameter werden außerdem als eigene Variablen ge
 - [Eigene Module und Ansichten](../../../en/us/help/creators/app-creators/custom-modules-and-views.md)
 - [Ergebnisse von Ansichten und das Pagelayout](../../../en/us/help/creators/app-creators/view-results-and-the-pagelayout.md)
 - [Referenz der Moduldefinition](../../../en/us/help/creators/app-creators/module-definition-reference.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

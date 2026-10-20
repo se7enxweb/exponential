@@ -26,20 +26,20 @@ Nostalgie, und versprechen Sie nie die Zukunft.
 | Sagen Sie | Quelle |
 |---|---|
 | „Der Copyright-Hinweis beginnt 1998 und 1999; die Codebasis wird seit mehr als 25 Jahren entwickelt.“ | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
-| „Die Historie des Repositorys reicht bis zum 2. September 2002 zurück, und jeder kann sie lesen.“ | [Wer ist 7x?, 7x in Zahlen](../../../en/us/help/who-is-7x.md#7x-in-numbers) |
-| „Exponential hat es über sein Lebensende 2021 hinaus geschafft und überlebt.“ (im Original wörtlich zitiert) | [Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short) |
-| „7x hat 2023 die Leitung übernommen und seit dem 1. Januar 2024 fünfzehn Releases 6.0.x veröffentlicht.“ | [Wer ist 7x?, Die Releases 6.0.x](../../../en/us/help/who-is-7x.md#the-60x-releases) |
-| „Eine gemeinnützige Organisation, die Exponential Foundation, wurde im März 2026 gegründet, um das Projekt zu betreiben.“ | [Was die Foundation ist](../../../en/us/help/who-is-the-exponential-foundation.md#what-the-foundation-is) |
-| „Jede Änderung seit Dezember 2023 wird Monat für Monat in der Geschichte erzählt und in Änderungsbüchern festgehalten.“ | [Die Geschichte](../../../en/us/history/README.md), [Dokumentation](../../../en/us/help/who-is-the-exponential-foundation.md#documentation) |
-| „Die GPL bedeutet, dass der Code jedes Unternehmen überleben kann. Er hat seinen ursprünglichen Hersteller schon einmal überlebt.“ | [Mit Einwänden umgehen, Langlebigkeit](../../../en/us/help/business/objection-handling.md#longevity-will-it-still-be-here-in-ten-years) |
+| „Die Historie des Repositorys reicht bis zum 2. September 2002 zurück, und jeder kann sie lesen.“ | [Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen) |
+| „Exponential hat es über sein Lebensende 2021 hinaus geschafft und überlebt.“ (im Original wörtlich zitiert) | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
+| „7x hat 2023 die Leitung übernommen und seit dem 1. Januar 2024 fünfzehn Releases 6.0.x veröffentlicht.“ | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
+| „Eine gemeinnützige Organisation, die Exponential Foundation, wurde im März 2026 gegründet, um das Projekt zu betreiben.“ | [Was die Foundation ist](../wer-ist-die-exponential-foundation.md#was-die-foundation-ist) |
+| „Jede Änderung seit Dezember 2023 wird Monat für Monat in der Geschichte erzählt und in Änderungsbüchern festgehalten.“ | [Die Geschichte](../../../en/us/history/README.md), [Dokumentation](../wer-ist-die-exponential-foundation.md#dokumentation) |
+| „Die GPL bedeutet, dass der Code jedes Unternehmen überleben kann. Er hat seinen ursprünglichen Hersteller schon einmal überlebt.“ | [Mit Einwänden umgehen, Langlebigkeit](../geschaeft/einwandbehandlung.md#langlebigkeit-gibt-es-das-in-zehn-jahren-noch) |
 
 ## Eine Zeitleiste zum Zeigen
 
 | Wann | Was | Quelle |
 |---|---|---|
 | 1999 bis 2014 | Copyright-Jahre von eZ Systems AS im Code | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
-| 2002 | Ältester Commit im Repository | [7x in Zahlen](../../../en/us/help/who-is-7x.md#7x-in-numbers) |
-| 2006 | eZpedia startet | [Zeitleiste](../../../en/us/help/who-is-the-exponential-foundation.md#timeline) |
+| 2002 | Ältester Commit im Repository | [7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen) |
+| 2006 | eZpedia startet | [Zeitleiste](../wer-ist-die-exponential-foundation.md#zeitleiste) |
 | 2021 | Die Plattform erreicht das Ende ihrer Lebensdauer; die Codebasis lebt weiter | ebenda |
 | Dezember 2023 | Das Projekt von 7x startet und übernimmt die Codebasis | ebenda |
 | 1. Januar 2024 | 6.0.0 | ebenda |
@@ -48,8 +48,8 @@ Nostalgie, und versprechen Sie nie die Zukunft.
 | 7. Juni 2026 | 6.0.14 | ebenda |
 | September und Oktober 2026 | Velocity kommt hinzu; Exponential Intelligence und die Hilfe in der Linie 6.0.15 | ebenda |
 
-Die vollständige Tabelle steht in [Wer ist die Exponential Foundation?, Zeitleiste](../../../en/us/help/who-is-the-exponential-foundation.md#timeline);
-die lange Geschichte in [Wer ist 7x?](../../../en/us/help/who-is-7x.md#nearly-thirty-years-the-timeline).
+Die vollständige Tabelle steht in [Wer ist die Exponential Foundation?, Zeitleiste](../wer-ist-die-exponential-foundation.md#zeitleiste);
+die lange Geschichte in [Wer ist 7x?](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste).
 
 ## Wie Sie den alten Namen einordnen
 
@@ -87,4 +87,4 @@ Oder verweisen Sie auf einen Monat in [der Geschichte](../../../en/us/history/RE
 - [Die Geschichte von Exponential in zwei Minuten](die-geschichte-in-zwei-minuten.md)
 - [Einwand: „Lebt es noch?“](einwand-lebt-es-noch.md)
 - [Beiträge zur Geschichte schreiben](beitraege-zur-geschichte-schreiben.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

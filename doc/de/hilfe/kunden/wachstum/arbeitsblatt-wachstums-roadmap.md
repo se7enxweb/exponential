@@ -86,7 +86,7 @@ Vor jedem Schritt:
       ([Ihre Website im Alltag betreiben](../alltag/README.md)).
 - [ ] Der Schritt steht im [Redaktionskalender](../alltag/redaktionskalender.md).
 - [ ] Ihr Partner weiß, wann das nächste Upgrade geplant ist, damit sich beides nicht überschneidet
-      ([Release- und Upgrade-Planung](../../../../en/us/help/leadership/release-and-upgrade-planning.md)).
+      ([Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md)).
 - [ ] Die Kosten sind mit den Arbeitsblättern aus dem Bereich für Unternehmen geschätzt
       ([Vorlage für ein ROI-Arbeitsblatt](../../../../en/us/help/businesses/templates/roi-worksheet-template.md),
       [Gesamtbetriebskosten](../../../../en/us/help/businesses/costs/total-cost-of-ownership.md)).
@@ -104,6 +104,6 @@ Next year's first step: ______________________
 ## Verwandte Seiten
 
 - [Ihre Website ausbauen](README.md)
-- [Ein Exponential-Projekt planen](../../../../en/us/help/leadership/planning-an-exponential-project.md)
+- [Ein Exponential-Projekt planen](../../fuehrung/ein-exponential-projekt-planen.md)
 - [Checkliste für die Jahresüberprüfung](../../../../en/us/help/businesses/templates/annual-review-checklist.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

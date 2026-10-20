@@ -20,7 +20,7 @@ Unternehmen ist [Mit 7x und dem Projekt zusammenarbeiten](../../../../en/us/help
 |---|---|---|
 | Was es ist | Ein Unternehmen: Webdesign, Support, Entwicklung und Hosting | Eine gemeinnützige Körperschaft |
 | Rolle | „7x übernahm 2023 die Leitung des Projekts und seiner Entwicklung, seines Supports, seiner Verbreitung und des Wachstums der Community“ (`README.md`) | Betreibt das Projekt |
-| Mehr | [Wer ist 7x?](../../../../en/us/help/who-is-7x.md) | [Wer ist die Exponential Foundation?](../../../../en/us/help/who-is-the-exponential-foundation.md) |
+| Mehr | [Wer ist 7x?](../../wer-ist-7x.md) | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md) |
 
 Quelle: [Mit 7x und dem Projekt zusammenarbeiten](../../../../en/us/help/businesses/choosing/working-with-7x-and-the-project.md).
 
@@ -28,9 +28,9 @@ Quelle: [Mit 7x und dem Projekt zusammenarbeiten](../../../../en/us/help/busines
 
 | Was | Wo |
 |---|---|
-| Die Software und ihre Updates | Unter der GPL; keine Lizenzgebühr ([Lizenzierung für Käufer erklärt](../../../../en/us/help/business/licensing-for-buyers.md)) |
+| Die Software und ihre Updates | Unter der GPL; keine Lizenzgebühr ([Lizenzierung für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md)) |
 | Diese Hilfe, in Ihrer Administration | Das Dashboard der Hilfe, `/exphelp/dashboard` |
-| Hilfe der Community | Foren und Chats ([Support erhalten](../../../../en/us/help/project/getting-support.md)) |
+| Hilfe der Community | Foren und Chats ([Support erhalten](../../projekt/unterstuetzung-erhalten.md)) |
 | Öffentliche Issue-Tracker | [GitHub-Issues](../gesund-halten/github-issues.md) |
 | Vertrauliche Sicherheitsmeldungen | security@se7enx.com ([Vertrauliche Sicherheitsmeldungen](../gesund-halten/vertrauliche-sicherheitsmeldungen.md)) |
 
@@ -41,8 +41,8 @@ kostenlosen Support zu leisten“ ([Support-Stufen und Reaktionszeiten](../../pa
 
 7x verkauft Dienstleistungen rund um die freie Software: Webdesign und Entwicklung, E-Commerce und Integration von
 Zahlungen, Schulungen, Migration zu Exponential 6, Support- und Wartungsverträge sowie Managed Hosting. „Preise und
-Bedingungen stehen auf der Website von 7x, nicht hier“ ([Wer ist 7x?](../../../../en/us/help/who-is-7x.md)). Wenn Sie nicht warten
-können, empfiehlt die Support-Seite des Projekts bezahlten Support von 7x ([Support erhalten](../../../../en/us/help/project/getting-support.md)).
+Bedingungen stehen auf der Website von 7x, nicht hier“ ([Wer ist 7x?](../../wer-ist-7x.md)). Wenn Sie nicht warten
+können, empfiehlt die Support-Seite des Projekts bezahlten Support von 7x ([Support erhalten](../../projekt/unterstuetzung-erhalten.md)).
 Andere Unternehmen bieten möglicherweise dieselben Dienstleistungen an; die GPL nennt keinen vorgeschriebenen Lieferanten
 ([Einen Partner auswählen](../../../../en/us/help/businesses/choosing/choosing-a-partner.md)).
 
@@ -63,7 +63,7 @@ Freiwillige Wege zu helfen ([Mit 7x und dem Projekt zusammenarbeiten](../../../.
 - Fehler gut melden, mit Version, Schritten und erwartetem Ergebnis;
 - Ihren Partner allgemeine Korrekturen zurückgeben lassen ([Code zurückgeben](../../partner/code-zurueckgeben.md));
 - die Dokumentation verbessern: Diese Hilfe ist freie Dokumentation unter der GNU FDL;
-- 7x oder die Foundation sponsern ([Geben und spenden](../../../../en/us/help/project/give-and-donate.md));
+- 7x oder die Foundation sponsern ([Geben und spenden](../../projekt/geben-und-spenden.md));
 - Ihre Geschichte als Fallstudie teilen, mit Ihrer Zustimmung
   ([Vorlage für eine Fallstudie](../../../../en/us/help/businesses/templates/case-study-template.md)).
 
@@ -71,5 +71,5 @@ Freiwillige Wege zu helfen ([Mit 7x und dem Projekt zusammenarbeiten](../../../.
 
 - [Wann Sie wen anrufen](wann-sie-wen-anrufen.md)
 - [Wer was macht](wer-was-macht.md)
-- [Über das Projekt](../../../../en/us/help/project/about-the-project.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Über das Projekt](../../projekt/ueber-das-projekt.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

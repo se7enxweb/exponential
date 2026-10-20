@@ -34,11 +34,11 @@ Die Seite program-levels ergänzt: „Erhalten Sie exklusiven Zugang zu modernst
 | Wissen | Partnertreffen, Mailinglisten, Briefings, Schulung und Zertifizierung | [Partnertreffen](partnertreffen-und-briefings.md) |
 | Einfluss | Wünsche zur Produkt-Roadmap ab Silver | [An der Roadmap mitwirken](an-der-roadmap-mitwirken.md) |
 | Rabatte | Auf Dienstleistungen, Abonnements und Wissensprodukte von 7x | [Vorteile für Partner](vorteile-fuer-partner.md) |
-| Nachhaltigkeit | Ihr Abonnement und Ihre Beiträge halten die Plattform gepflegt, die Sie verkaufen | [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md) |
+| Nachhaltigkeit | Ihr Abonnement und Ihre Beiträge halten die Plattform gepflegt, die Sie verkaufen | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 
 Der letzte Grund wird leicht vergessen und ist der wichtigste. Exponential führt eine Codebasis fort, die ihr
 ursprünglicher Hersteller eingestellt hat; sie lebt, weil 7x, die Foundation, Sponsoren und Partner sie tragen
-([Wer ist 7x?](../../../en/us/help/who-is-7x.md)). Jeder Partner, der damit verdient und etwas zurückgibt, macht das nächste Release
+([Wer ist 7x?](../wer-ist-7x.md)). Jeder Partner, der damit verdient und etwas zurückgibt, macht das nächste Release
 wahrscheinlicher.
 
 ## Die Kosten und Verpflichtungen
@@ -65,7 +65,7 @@ Beantworten Sie jede Frage mit Ja oder Nein.
 - [ ] Wir verstehen, dass sich das Programm ändern kann und dass die Rolle der Foundation darin noch festzulegen ist.
 
 Fünfmal oder öfter Ja: Lesen Sie [Wie Sie sich bewerben](wie-sie-sich-bewerben.md). Weniger: Beginnen Sie als Unterstützer
-([Unterstützer: hier beginnen](../../../en/us/help/supporters/supporters-start-here.md)) oder auf der Stufe Student oder Now und prüfen
+([Unterstützer: hier beginnen](../unterstuetzer/unterstuetzer-hier-beginnen.md)) oder auf der Stufe Student oder Now und prüfen
 Sie es in sechs Monaten erneut.
 
 ## Verwandte Seiten
@@ -74,4 +74,4 @@ Sie es in sechs Monaten erneut.
 - [Partnerstufen von Student bis Platinum](partnerstufen.md)
 - [Checkliste für die Bewerbung](checkliste-fuer-die-bewerbung.md)
 - [Häufige Fragen von Partnern](faq-fuer-partner.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

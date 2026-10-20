@@ -14,7 +14,7 @@ Hosting-Anleitungen erwähnt sehen. Sie beantwortet: was er ist, warum er ausges
 wie Sie ihn erzeugen und ausliefern, wenn ein Kunde ihn braucht. Die Quellen sind
 [Generator für den statischen Cache](../../../../en/us/features/6.0/static-cache-generator.md),
 [Standardwerte des statischen Caches](../../../../en/us/bc/6.0/static-cache-defaults.md) und
-[Kapitel 10, Abschnitt 10.12](../../../../en/us/install/10-after-installing.md#1012-performance-tuning).
+[Kapitel 10, Abschnitt 10.12](../../../installation/10-nach-der-installation.md#1012-performance-tuning).
 
 ## Inhalt
 
@@ -38,7 +38,7 @@ keinen Query-String hat und keine Sitzung trägt; Formulare, Suchen und alle Ang
 ist direkt: **Lassen Sie den statischen Cache aus.** Mit eingeschaltetem statischem Cache erzeugte jede Veröffentlichung jede betroffene
 Seite auf jedem öffentlichen Siteaccess über HTTP innerhalb der Anfrage des Redakteurs neu, sodass eine Veröffentlichung, die nichts
 änderte, Sekunden statt eines Bruchteils davon dauerte. Der Antwort-Cache von Velocity gibt Besuchern denselben Nutzen ohne diese Kosten
-([Kapitel 10, Abschnitt 10.12](../../../../en/us/install/10-after-installing.md#1012-performance-tuning)).
+([Kapitel 10, Abschnitt 10.12](../../../installation/10-nach-der-installation.md#1012-performance-tuning)).
 
 Die Arbeit an 6.0 hat das Auffrischen günstiger gemacht (jede Seite einmal abgerufen, mehrere gleichzeitig: eine Veröffentlichung ohne
 Änderung, die 24 Seiten in 4975 ms auffrischte, frischt jetzt 14 Seiten in etwa 0,5 s auf), aber die Kosten fallen weiterhin in der
@@ -122,4 +122,4 @@ verließen; siehe [Standardwerte des statischen Caches](../../../../en/us/bc/6.0
 - [Antwort-Cache von Velocity](antwort-cache-von-velocity.md)
 - [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)
 - [Generator für den statischen Cache](../../../../en/us/features/6.0/static-cache-generator.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

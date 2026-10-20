@@ -61,7 +61,7 @@ prüfen, achten Sie auf:
 
 - Verweisen Sie Theme-Ersteller auf die eigene Praxis der Administration als Beispiel und auf die WCAG.
 - Ermutigen Sie dazu, verpflichtenden Alternativtext für Bildklassen einzuschalten
-  ([Checklisten zur Barrierefreiheit](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md#accessibility)).
+  ([Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#barrierefreiheit)).
 - Zeigen Sie Redakteuren den Bericht „Fehlender Alternativtext“ von Exponential Intelligence, wo er eingerichtet ist
   ([expai, Für Redakteure](../../../en/us/features/6.0/extensions/expai.md#for-editors)).
 - Schreiben Sie ein Tutorial über barrierefreie Inhalte: Überschriften, Linktext, Alternativtext, Tabellen
@@ -77,5 +77,5 @@ prüfen, achten Sie auf:
 
 - [Gesprächspunkte: Barrierefreiheit](gespraechspunkte-barrierefreiheit.md)
 - [Barrierefreie Folien und Grafiken](barrierefreie-folien-und-grafiken.md)
-- [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

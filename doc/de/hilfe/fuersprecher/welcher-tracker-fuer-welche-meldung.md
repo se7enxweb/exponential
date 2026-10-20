@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die Menschen beim Melden helfen. Eine Meldung an der richtigen Stelle wird bearbeitet;
 eine Meldung an der falschen Stelle wartet oder geht verloren. Die Liste der Tracker stammt aus
-[Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#filing-a-bug-in-exponential).
+[Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#einen-fehler-in-exponential-melden).
 
 ## Inhalt
 
@@ -50,7 +50,7 @@ eine Meldung an der falschen Stelle wartet oder geht verloren. Die Liste der Tra
 
 In der Administration führt die Seite **Fehler melden** der Hilfe (`exphelp/report`) durch eine Meldung: Sie wählt den
 Tracker, füllt eine Zusammenfassung der Installation aus und öffnet ein neues Issue mit vorbereitetem Titel und Text.
-Die Zusammenfassung lässt Passwörter, Schlüssel und Serverpfade weg ([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#filing-a-bug-in-exponential)).
+Die Zusammenfassung lässt Passwörter, Schlüssel und Serverpfade weg ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#einen-fehler-in-exponential-melden)).
 Empfehlen Sie sie allen, die sich anmelden können.
 
 ## Wenn Sie unsicher sind
@@ -66,4 +66,4 @@ Empfehlen Sie sie allen, die sich anmelden können.
 - [Fehler gut melden](fehler-gut-melden.md)
 - [Sicherheitsmeldungen bleiben vertraulich](sicherheitsmeldungen-bleiben-vertraulich.md)
 - [GitHub für Fürsprecher](github-fuer-fuersprecher.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

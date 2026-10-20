@@ -36,7 +36,7 @@ Verwenden Sie für jede Anfrage die [Vorlage für ein DSGVO-Anfragenprotokoll](v
 | Anfrage | Was die Software bietet | Quelle |
 |---|---|---|
 | Ihre Daten einsehen | Für E-Mail-Daten: der eigene Download der Person, oder `./console exp:mail:preferences export`; Prüfprotokoll-Einträge zu einem Benutzer: `exp:audit export --subject-user=<id>`; Bestellungen: **Shop > Kunden** und die Bestellansicht des Kunden; Belege können als Datei heruntergeladen werden | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md), `kernel/shop/module.php` |
-| Ihre Daten berichtigen | Der Kunde bearbeitet sein eigenes Konto; Mitarbeitende bearbeiten den Benutzer unter **Benutzer** | [Konten und Anmeldung](../../../../en/us/help/accounts-and-sign-in.md) |
+| Ihre Daten berichtigen | Der Kunde bearbeitet sein eigenes Konto; Mitarbeitende bearbeiten den Benutzer unter **Benutzer** | [Konten und Anmeldung](../../konten-und-anmeldung.md) |
 | Ihre Daten mitnehmen | „Meine E-Mail-Daten herunterladen“ in JSON und CSV für E-Mail-Daten | [DSGVO-Grundlagen](../../../../en/us/help/businesses/security/gdpr-basics.md) |
 | Ihre Daten löschen | E-Mail-Daten: `exp:mail:preferences erase`; das Konto: den Benutzer entfernen (endgültig, löscht auch die E-Mail-Einstellungen); Formulardaten: **Setup > Gesammelte Informationen**; Bestellungen: archivieren oder entfernen | [Datenexport und Löschung](datenexport-und-loeschung.md) |
 | Werbung beenden | Der Link „alle optionalen E-Mails abbestellen“, oder `exp:mail:suppression add` | [Einwilligung und Formulare](../../../../en/us/help/businesses/security/consent-and-forms.md) |
@@ -87,4 +87,4 @@ eine Löschanfrage erfüllt, ist eine Rechtsfrage für Ihre Beratung.
 - [Datenexport und Löschung](datenexport-und-loeschung.md)
 - [DSGVO-Grundlagen](../../../../en/us/help/businesses/security/gdpr-basics.md)
 - [Personenbezogene Daten in Exponential](../../../../en/us/help/businesses/security/personal-data-in-exponential.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

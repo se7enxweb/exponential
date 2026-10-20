@@ -38,7 +38,7 @@ Did it work before? What changed?
 ```
 
 Erinnern Sie die Menschen daran, Passwörter, Schlüssel und personenbezogene Daten wegzulassen
-([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#a-good-bug-description)).
+([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#eine-gute-fehlerbeschreibung)).
 
 ## Muster für häufige Fragen
 
@@ -76,4 +76,4 @@ propose it in the community tracker: <link>.
 - [In den Foren arbeiten](in-den-foren-arbeiten.md)
 - [Neue willkommen heißen](neue-willkommen-heissen.md)
 - [Häufige Fragen von Neuen](faq-fuer-neue.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

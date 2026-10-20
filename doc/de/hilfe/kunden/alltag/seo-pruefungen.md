@@ -66,7 +66,7 @@ Redakteure schreiben, was Suchmaschinen lesen: Titel, Einleitungen, Alternativte
 | Sehen Sie nach in | Es sagt Ihnen | Quelle |
 |---|---|---|
 | **Setup > Suchstatistiken** | wonach Besucher auf Ihrer Website suchen und was sie nicht finden (standardmäßig aus) | [Website-Suche und wonach Besucher suchen](website-suche-und-wonach-besucher-suchen.md) |
-| **Setup > URL-Verwaltung**, Filter ungültig | kaputte ausgehende Links | [URL-Aliase, Wildcards und Suchstatistiken](../../../../en/us/guides/urls-and-aliases.md) |
+| **Setup > URL-Verwaltung**, Filter ungültig | kaputte ausgehende Links | [URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md) |
 | Kaputte Beziehungen | Seiten, die auf etwas Entferntes oder Verborgenes verweisen | [Die Inhaltsprüfungen](../../../../en/us/features/6.0/content-checks.md) |
 | Die Webmaster-Tools der Suchmaschinen | Indexierungs- und Crawl-Fehler | [SEO-Grundlagen](../../../../en/us/help/creators/website-creators/seo-basics.md) |
 | Das Fehlerlog nach einem Relaunch | alte Adressen, die ins Leere laufen | [Weiterleitungen und verschobene Inhalte](../../../../en/us/help/creators/website-creators/redirects-and-moved-content.md) |
@@ -85,4 +85,4 @@ Redakteure schreiben, was Suchmaschinen lesen: Titel, Einleitungen, Alternativte
 - [Monatliche SEO-Checkliste](monatliche-seo-checkliste.md)
 - [URLs, Weiterleitungen und verschobene Seiten](urls-weiterleitungen-und-verschobene-seiten.md)
 - [SEO-Grundlagen für Exponential-Websites](../../../../en/us/help/creators/website-creators/seo-basics.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

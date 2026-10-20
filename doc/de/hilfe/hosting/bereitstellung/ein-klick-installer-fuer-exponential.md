@@ -26,7 +26,7 @@ Oberfläche Sie aufbauen und was Ihr Klick drumherum tun muss.
 
 Jede Installationsmethode führt dieselbe Folge von Schrittklassen in `kernel/setup/steps/` aus, von `Welcome` bis `Final`; `CreateSites`
 ist der Schritt, der die Datenbank, die Pakete und die Einstellungen schreibt. Die Oberflächen unterscheiden sich nur darin, woher die
-Antworten kommen ([4.1](../../../../en/us/install/04-choosing-an-install-method.md#41-one-installer-three-front-ends)):
+Antworten kommen ([4.1](../../../installation/04-installationsweg-waehlen.md#41-ein-installer-drei-frontends)):
 
 | | Setup-Assistent | Kickstarter | `exp:install` |
 |---|---|---|---|
@@ -37,13 +37,13 @@ Antworten kommen ([4.1](../../../../en/us/install/04-choosing-an-install-method.
 | Log | `var/log/setup.log` | `setup.log`, `kickstart.log` | `setup.log`, `var/log/exp-install-<date>.ini` |
 | Administratorpasswort | im Formular eingegeben | aus der Datei; erzeugt, wenn leer oder bekannt | erzeugt, sofern kein annehmbares `--password` angegeben ist |
 
-Quelle: [4.2](../../../../en/us/install/04-choosing-an-install-method.md#42-the-three-methods-at-a-glance).
+Quelle: [4.2](../../../installation/04-installationsweg-waehlen.md#42-die-drei-methoden-im-überblick).
 
 ## Welche Oberfläche für welches Angebot
 
 | Angebot | Oberfläche | Warum |
 |---|---|---|
-| Eine Schaltfläche im Panel, die die Website anlegt | `exp:install` | Bevorzugen Sie `exp:install` in der Automatisierung: Es braucht keine Datei, prüft seine Optionen, bevor etwas geschrieben wird, und gibt bei jedem Fehler einen Exit-Status ungleich null zurück ([4.6](../../../../en/us/install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)) |
+| Eine Schaltfläche im Panel, die die Website anlegt | `exp:install` | Bevorzugen Sie `exp:install` in der Automatisierung: Es braucht keine Datei, prüft seine Optionen, bevor etwas geschrieben wird, und gibt bei jedem Fehler einen Exit-Status ungleich null zurück ([4.6](../../../installation/04-installationsweg-waehlen.md#46-unbeaufsichtigte-installationen-ci-und-container)) |
 | Vorlagen, die Sie pflegen („Starter-Website für Agenturen“) | der Kickstarter | die geprüfte `kickstart.ini` ist die Spezifikation der Installation |
 | Kunden auf Shared Hosting ohne Shell | der Setup-Assistent | braucht nur einen Browser; kann durch eine `kickstart.ini` vorgefüllt werden |
 | Container-Images | `exp:install` im Entry Point, einmal ausgeführt | siehe [Container: Docker und Podman](../modelle/container-docker-und-podman.md) |
@@ -80,13 +80,13 @@ Jeder Schritt ist in [Bereitstellung automatisieren](bereitstellung-automatisier
 ## Sicherheitsregeln
 
 - **Richten Sie `--db-action=remove` nie auf eine Datenbank, die Daten enthält.** Es ist der Standard von `exp:install` und leert die
-  Datenbank zuerst ([7.3](../../../../en/us/install/07-console-install.md#73-options)). Ein Ein-Klick-Installer sollte jedes Mal eine neue, leere
+  Datenbank zuerst ([7.3](../../../installation/07-installation-ueber-die-konsole.md#73-optionen)). Ein Ein-Klick-Installer sollte jedes Mal eine neue, leere
   Datenbank anlegen.
 - **Halten Sie Geheimnisse von der Kommandozeile fern.** Nutzen Sie `EXP_INSTALL_DB_PASSWORD` statt `--db-password`; eine Option ist für
   jeden Benutzer der Maschine in der Prozessliste (`ps`) sichtbar, solange die Installation läuft.
 - **Als Benutzer der Website ausführen.** Dateien, die `root` anlegt, kann der Webserver später nicht ändern.
 - **Prüfen Sie den Exit-Status.** `0` installiert, `1` etwas ist gescheitert; bei einem Fehler bleibt der Wartungsmodus an, und
-  `var/log/setup.log` sagt, warum ([7.7](../../../../en/us/install/07-console-install.md#77-exit-status)).
+  `var/log/setup.log` sagt, warum ([7.7](../../../installation/07-installation-ueber-die-konsole.md#77-exit-status)).
 - **Lassen Sie keine Installationsdateien zurück.** Eine `kickstart.ini` enthält Passwörter im Klartext; entfernen Sie sie nach der
   Installation, da der Assistent sie bei einem späteren Lauf lesen würde.
 
@@ -103,4 +103,4 @@ Jeder Schritt ist in [Bereitstellung automatisieren](bereitstellung-automatisier
 - [exp:install](exp-install-fuer-hoster.md)
 - [Der Kickstarter](der-kickstarter-fuer-hoster.md)
 - [Lizenzierung für Hoster](../geschaeft/lizenzierung-fuer-hoster.md) (Images und Installer, die Sie weitergeben)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

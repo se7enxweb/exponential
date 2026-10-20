@@ -69,14 +69,14 @@ NEXT MONTH
 | Ungenutzte Dateien | Inhaltsprüfungen | [Die Inhaltsprüfungen](../../../../en/us/features/6.0/content-checks.md) |
 | Datenschutzanfragen | Ihr Anfragenprotokoll | [DSGVO-Anfragen](dsgvo-anfragen.md), [Vorlage für ein DSGVO-Anfragenprotokoll](vorlage-dsgvo-anfragenprotokoll.md) |
 | Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md) |
-| Backups, Cronjobs, Updates | Der Hoster | [Cronjobs](../../../../en/us/guides/cronjobs.md), [Upgrade](../../../../en/us/guides/upgrading.md) |
+| Backups, Cronjobs, Updates | Der Hoster | [Cronjobs](../../../anleitungen/cronjobs.md), [Upgrade](../../../anleitungen/aktualisieren.md) |
 
 ## Fragen an den Hoster, jeden Monat
 
 - Sind alle Backups gelaufen, und wann wurde zuletzt eine Wiederherstellung getestet
   ([Wiederherstellungsübungen](../../../../en/us/help/businesses/reliability/restore-drills.md))?
 - Laufen die Cronjobs planmäßig? **Setup > Cronjobs** zeigt die Teile und ob sie eingeplant sind
-  ([Cronjobs](../../../../en/us/guides/cronjobs.md)).
+  ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - Ist ein neues Release von Exponential 6.0.x mit Sicherheitskorrekturen erschienen? Korrekturen werden mit dem
   nächsten Release 6.0.x veröffentlicht (`SECURITY.md`).
 - Gibt es etwas in den Logs, das wir wissen sollten ([Log-Viewer](../../../../en/us/features/6.0/log-viewer.md))?
@@ -87,4 +87,4 @@ NEXT MONTH
 - [Shop-Berichte](shop-berichte.md)
 - [Mehrwertsteuer-Checkliste](mehrwertsteuer-checkliste.md)
 - [Monatliche Checkliste für die ganze Website](../nutzen/checklisten/monatlich.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

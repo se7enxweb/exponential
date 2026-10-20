@@ -17,7 +17,7 @@ Woche auf eine Seite schaut.
 ![Job-Warteschlange: wartende, laufende und gescheiterte Hintergrundjobs](../../../../en/us/help/images/hosting/job-queue.webp)
 
 Es gibt keine einzelne Zustands-URL; kombinieren Sie eine Prüfung von außen mit den Statusbefehlen im Inneren
-([10.11 Überwachung und Zustandsprüfungen](../../../../en/us/install/10-after-installing.md#1011-monitoring-and-health-checks)). Die
+([10.11 Überwachung und Zustandsprüfungen](../../../installation/10-nach-der-installation.md#1011-überwachung-und-zustandsprüfungen)). Die
 externen Prüfungen stehen auf [Zustandsprüfungen und Verfügbarkeit](zustandspruefungen-und-verfuegbarkeit.md).
 
 ## Inhalt
@@ -55,11 +55,11 @@ und enden mit einem erkennbaren Status oder einem Exit-Code.
 | Cron | `php bin/php/console crontab:list` und die Daten der Cron-Logs | Einträge vorhanden, Logs aktuell |
 | Festplatte | `df -h /path/to/installation` | Platz für Caches, Logs und ein Backup |
 | Leistung | `php bin/php/console exp:benchmark --baseline=var/benchmark/base.json` | Exit-Status 0 (keine Verschlechterung) |
-| Datenbank | SQLite: [Eine SQLite-Website überwachen](../../../../en/us/install/09-databases.md#monitoring-a-sqlite-site); Oracle: `ext:ezoracle:health` | |
+| Datenbank | SQLite: [Eine SQLite-Website überwachen](../../../installation/09-datenbanken.md#überwachung-einer-sqlite-site); Oracle: `ext:ezoracle:health` | |
 
-Quellen: [10.11](../../../../en/us/install/10-after-installing.md#1011-monitoring-and-health-checks),
-[Systeminformationen](../../../../en/us/guides/system-information.md),
-[E-Mail-Einstellungen](../../../../en/us/guides/mail-preferences-administrator.md#3-the-status-page),
+Quellen: [10.11](../../../installation/10-nach-der-installation.md#1011-überwachung-und-zustandsprüfungen),
+[Systeminformationen](../../../anleitungen/systeminformationen.md),
+[E-Mail-Einstellungen](../../../anleitungen/mail-einstellungen-administrator.md#3-die-statusseite),
 [Benchmark](../../../../en/us/features/6.0/benchmark.md).
 
 Für einen einzelnen Server genügt ein kleines Skript in der Crontab des Benutzers der Website, das diese ausführt und bei einem
@@ -70,7 +70,7 @@ sammeln die Exit-Codes.
 > `exp:systeminfo` auf der Kommandozeile meldet das PHP der Kommandozeile, nicht den PHP-FPM-Pool oder Velocity, der die Website
 > ausliefert. Die Seite **Setup > Systeminformationen** der Administration zeigt den Server, der die Anfrage beantwortet hat;
 > öffnen Sie sie über jeden Server, den Sie betreiben
-> ([Systeminformationen, welcher Server geantwortet hat](../../../../en/us/guides/system-information.md#2-which-server-answered)).
+> ([Systeminformationen, welcher Server geantwortet hat](../../../anleitungen/systeminformationen.md#2-welcher-server-geantwortet-hat)).
 
 ## Seiten für einen Menschen
 
@@ -90,7 +90,7 @@ gemischten Eigentümern, die die Rotation aufhalten ([Zustand der Logs](../../..
 > **Tipp**
 > Ein wöchentlicher Blick auf die Fehlerübersicht und `security.log` steht in der eigenen Checkliste des Projekts: Ein plötzlicher
 > Anstieg einer Regel ist einen Blick wert
-> ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md#watching-logs-the-request-classifier-and-the-audit-trail)).
+> ([Sicherheitshärtung](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll)).
 
 ## Die eigenen Endpunkte von Velocity
 
@@ -154,4 +154,4 @@ ein zentrales System weiter ([Sicherheitslog](sicherheitslog.md)).
 - [Anfrage-Logs](anfrage-logs.md), [Sicherheitslog](sicherheitslog.md)
 - [Benchmark einer gehosteten Website](../leistung/benchmark-einer-gehosteten-website.md)
 - [Langsame Website](../runbooks/langsame-website.md), [Website nicht erreichbar](../runbooks/website-nicht-erreichbar.md) (Runbooks)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -44,7 +44,7 @@ Felder, die zu vereinbaren sind. Lassen Sie das Ergebnis von Ihrer Rechtsberatun
 | Nachweis | Quelle |
 |---|---|
 | Alte und neue Version | **Setup > Systeminformationen** |
-| Ergebnis der Upgrade-Prüfung, mit Erklärung bewusst geänderter Dateien | **Setup > Upgrade-Prüfung** ([Die Upgrade-Prüfung](../../../../en/us/guides/upgrade-check.md)) |
+| Ergebnis der Upgrade-Prüfung, mit Erklärung bewusst geänderter Dateien | **Setup > Upgrade-Prüfung** ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)) |
 | Zusammenfassung dessen, was sich für Redaktion und Besucher ändert | Das Changelog und die Hinweise zu Verhaltensänderungen, in einfachen Worten |
 | Durchgeführte Prüfungen | Startseite, Anmeldung, Veröffentlichen, Formulare, Shop, jede Website und Sprache |
 | Offene Punkte | Zu prüfende Einstellungen, Erweiterungen, die auf ein Release warten |
@@ -95,4 +95,4 @@ Felder, die zu vereinbaren sind. Lassen Sie das Ergebnis von Ihrer Rechtsberatun
 - [Wie Updates funktionieren](../gesund-halten/wie-updates-funktionieren.md)
 - [SLA-Vorlage](sla-vorlage.md)
 - [Budget für Upgrades und Wartung](../../../../en/us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

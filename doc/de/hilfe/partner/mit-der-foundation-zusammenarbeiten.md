@@ -20,7 +20,7 @@ unterstützen möchten.
 - „Dieses Projekt wird von der Exponential Foundation betrieben“ (<https://exponential.earth/about/project>).
 - Sie nennt 7x „den derzeit führenden Beitragenden zum Projekt, finanziell wie mit Code, Erweiterungsentwicklung, neuen Funktionen, Infrastruktur, Wartung und vielem mehr“ (<https://foundation.exponential.earth/supporters>).
 
-Das ganze Bild: [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md).
+Das ganze Bild: [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md).
 
 ## Die Foundation und das Partnerprogramm
 
@@ -31,8 +31,8 @@ Foundation darin: **von der Foundation noch festzulegen** ([Wer das Partnerprogr
 
 | Weg | Wo | Seite |
 |---|---|---|
-| Auf GitHub sponsern, monatlich oder einmalig | <https://github.com/sponsors/exponentialcms> | [Die Exponential Foundation sponsern](../../../en/us/help/sponsors/sponsoring-the-foundation.md) |
-| Ein tragendes Abonnement oder eine einmalige Spende über ihre Website | <https://foundation.exponential.earth/> | [Sponsoren: hier beginnen](../../../en/us/help/sponsors/sponsors-start-here.md) |
+| Auf GitHub sponsern, monatlich oder einmalig | <https://github.com/sponsors/exponentialcms> | [Die Exponential Foundation sponsern](../sponsoren/die-foundation-sponsern.md) |
+| Ein tragendes Abonnement oder eine einmalige Spende über ihre Website | <https://foundation.exponential.earth/> | [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md) |
 | Dokumentation, Tutorials, Anleitungen, FAQs, Erweiterungen | Der Eintrag der Foundation bei GitHub Sponsors sagt, sie sei „auf die Entwicklung von Funktionen, Dokumentation, Tutorials, Anleitungen, FAQs, Quellcode, Plugins, Erweiterungen und Bundles ausgerichtet“ | [Dokumentation und Übersetzungen beitragen](dokumentation-und-uebersetzungen-beitragen.md) |
 | Verbreitung und Bildung | Fallstudien, Schulungen, Vorträge | [Eine Fallstudie schreiben](eine-fallstudie-schreiben.md), [Schulungspartner](schulungspartner.md) |
 
@@ -54,5 +54,5 @@ Sagen Sie „geleitet von 7x und betrieben von der Exponential Foundation“, we
 
 - [Mit 7x zusammenarbeiten](mit-7x-zusammenarbeiten.md)
 - [Governance: wer was entscheidet](governance-und-entscheidungen.md)
-- [Zwei Organisationen, zwei Sponsorenseiten](../../../en/us/help/sponsors/two-organizations-two-sponsor-pages.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Zwei Organisationen, zwei Sponsorenseiten](../sponsoren/zwei-organisationen-zwei-sponsorenseiten.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

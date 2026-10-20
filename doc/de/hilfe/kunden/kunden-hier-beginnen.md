@@ -81,7 +81,7 @@ allem anderen sicher, dass Sie wissen:
 | Situation | Weiter zu |
 |---|---|
 | Die Website ist nicht erreichbar oder sehr langsam | [Wenn die Website nicht erreichbar ist](gesund-halten/wenn-die-website-nicht-erreichbar-ist.md) |
-| Eine Fehlermeldung, eine Seite, die nicht funktioniert | [Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md), dann [Probleme melden](gesund-halten/probleme-melden.md) |
+| Eine Fehlermeldung, eine Seite, die nicht funktioniert | [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md), dann [Probleme melden](gesund-halten/probleme-melden.md) |
 | Sie haben einen Fehler in Exponential selbst gefunden | [GitHub-Issues](gesund-halten/github-issues.md) und die [Meldeseite](gesund-halten/die-meldeseite-der-hilfe.md) der Hilfe |
 | Sie vermuten ein Sicherheitsproblem | [Vertrauliche Sicherheitsmeldungen](gesund-halten/vertrauliche-sicherheitsmeldungen.md): per E-Mail an security@se7enx.com, nie in einem öffentlichen Issue (`SECURITY.md`) |
 | Ein Kunde fragt nach seinen Daten | [DSGVO-Anfragen](handel/dsgvo-anfragen.md) |
@@ -101,18 +101,18 @@ Dieser Bereich verweist auf die anderen Bereiche, statt sie zu wiederholen:
 
 | Bereich | Für |
 |---|---|
-| [Inhalte bearbeiten](../../../en/us/help/editing-content.md), [Veröffentlichen und Versionen](../../../en/us/help/publishing-and-versions.md), [Medien und Uploads](../../../en/us/help/media-and-uploads.md) | Die Schritte im Editor |
-| [Rundgang durch die Administration](../../../en/us/help/admin-tour.md) | Ein Rundgang durch die Administration |
+| [Inhalte bearbeiten](../inhalte-bearbeiten.md), [Veröffentlichen und Versionen](../veroeffentlichen-und-versionen.md), [Medien und Uploads](../medien-und-uploads.md) | Die Schritte im Editor |
+| [Rundgang durch die Administration](../rundgang-durch-die-administration.md) | Ein Rundgang durch die Administration |
 | [Unternehmen](../../../en/us/help/businesses/businesses-start-here.md) | Organisationen, die Exponential noch prüfen |
 | [Website-Ersteller](../../../en/us/help/creators/website-creators/website-creators-start-here.md) | Die Personen, die die Website bauen und ändern |
 | [Hosting-Anbieter](../hosting/hosting-anbieter-hier-beginnen.md) | Die Sicht Ihres Hosters |
 | [Partner](../partner/partner-hier-beginnen.md) | Die Sicht Ihres Implementierungspartners |
-| [Wer ist 7x?](../../../en/us/help/who-is-7x.md), [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md) | Die Menschen hinter Exponential |
+| [Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) | Die Menschen hinter Exponential |
 
 ## Verwandte Seiten
 
 - [Lesepfad für Kunden](lesepfad-fuer-kunden.md)
 - [Welcher Kundentyp sind Sie?](typen/welcher-kundentyp-sind-sie.md)
 - [Ihre ersten 30 Tage als Website-Betreiber](ihre-ersten-30-tage.md)
-- [Erste Schritte](../../../en/us/help/getting-started.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Erste Schritte](../erste-schritte.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

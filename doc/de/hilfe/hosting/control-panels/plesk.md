@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Hosting-Anbieter und Administratoren, die Exponential auf Servern betreiben, die von Plesk verwaltet werden. Plesk
 ist das Panel, das das Projekt selbst nutzt: Sein Entwicklungsserver ist AlmaLinux 9 mit Plesk, was Plesk auf AlmaLinux 9 zu
-**Stufe 1** macht, jeden Tag getestet ([Stufe 1](../../../../en/us/help/os-support.md#tier-1-tested-here)). Die Seite beantwortet, wie PHP und Pools
+**Stufe 1** macht, jeden Tag getestet ([Stufe 1](../../betriebssystemunterstuetzung.md#stufe-1-hier-getestet)). Die Seite beantwortet, wie PHP und Pools
 von Plesk aufgebaut sind, wie Sie eine Domain für Exponential einrichten, was Sie nach einer Änderung neu laden, wie Zertifikate, Logs
 und Cron dort funktionieren und wie Velocity neben Plesk läuft.
 
@@ -36,12 +36,12 @@ in der Dokumentation von Plesk nach.
 
 AlmaLinux 9 (x86_64, RHEL-9-Familie): der Entwicklungsserver des Projekts, mit Apache 2.4 und PHP-FPM 8.5 aus dem Plesk-Panel und
 Exponential Velocity auf derselben Installation; dort laufen Websites mit SQLite, MariaDB, MongoDB und Oracle (in einem Container),
-und ein PostgreSQL-Server steht zur Verfügung ([Stufe 1](../../../../en/us/help/os-support.md#tier-1-tested-here)). Plesk-Hosts auf den anderen
-Distributionen der Stufe 2 sind Stufe 2 ([Stufe 2](../../../../en/us/help/os-support.md#tier-2-known-to-work)).
+und ein PostgreSQL-Server steht zur Verfügung ([Stufe 1](../../betriebssystemunterstuetzung.md#stufe-1-hier-getestet)). Plesk-Hosts auf den anderen
+Distributionen der Stufe 2 sind Stufe 2 ([Stufe 2](../../betriebssystemunterstuetzung.md#stufe-2-bekanntermaßen-lauffähig)).
 
 ## Das PHP von Plesk: Versionen, Erweiterungen, Kommandozeile
 
-Aus [Kapitel 2, Plesk](../../../../en/us/install/02-requirements.md#plesk):
+Aus [Kapitel 2, Plesk](../../../installation/02-voraussetzungen.md#plesk):
 
 - Plesk installiert jede PHP-Version unter `/opt/plesk/php/<version>/` (zum Beispiel `/opt/plesk/php/8.5/bin/php`) neben dem PHP des
   Systems. Eine Domain nutzt die Version, die in ihren Hosting-Einstellungen gewählt ist; das `php` der Kommandozeile ist das des
@@ -58,12 +58,12 @@ Aus [Kapitel 2, Plesk](../../../../en/us/install/02-requirements.md#plesk):
 > **Warnung**
 > Das `php` im `PATH` ist das PHP des Systems, nicht das der Domain. Composer, mit dem falschen PHP ausgeführt, wählt Paketversionen,
 > die das Web-PHP nicht ausführen kann, und eine fehlende Erweiterung zeigt sich dann als weiße Seite
-> ([Kommandozeile und Web-PHP](../../../../en/us/install/02-requirements.md#command-line-and-web-php)). Rufen Sie für Composer, die Konsole,
+> ([Kommandozeile und Web-PHP](../../../installation/02-voraussetzungen.md#php-auf-der-kommandozeile-und-im-web)). Rufen Sie für Composer, die Konsole,
 > die Installer und Cron immer das PHP der Domain über seinen Pfad auf.
 
 ## Eine Domain einrichten
 
-Aus [8.5.3 Plesk](../../../../en/us/install/08-serving-the-site.md#853-plesk): Plesk erzeugt den virtuellen Host selbst; bearbeiten Sie seine
+Aus [8.5.3 Plesk](../../../installation/08-die-website-ausliefern.md#853-plesk): Plesk erzeugt den virtuellen Host selbst; bearbeiten Sie seine
 Dateien nicht. In Plesk:
 
 - richten Sie den Document Root der Domain auf das Wurzelverzeichnis der Installation (das Verzeichnis mit `index.php`);
@@ -79,7 +79,7 @@ cp .htaccess_root .htaccess
 
 Die PHP-Werte, die der Setup-Assistent prüft (`memory_limit` 64M oder mehr, `max_execution_time` 30 oder mehr, `date.timezone`,
 `file_uploads`, `allow_url_fopen`), werden in den PHP-Einstellungen der Domain gesetzt
-([2.5](../../../../en/us/install/02-requirements.md#25-phpini-settings)). Die Notizen zur MongoDB-Portierung setzen FPM-Direktiven wie
+([2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)). Die Notizen zur MongoDB-Portierung setzen FPM-Direktiven wie
 `request_terminate_timeout` in den PHP-Einstellungen der Domain, im Feld **Additional configuration directives** (Plesk → Domains →
 Ihre Domain → PHP Settings) ([MongoDB-Unterstützung im Kernel](../../../../en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)).
 
@@ -87,9 +87,9 @@ Ihre Domain → PHP Settings) ([MongoDB-Unterstützung im Kernel](../../../../en
 
 - Jede Domain hat ihren eigenen PHP-FPM-Pool in `/opt/plesk/php/<version>/etc/php-fpm.d/<domain>.conf`, betrieben vom Dienst
   `plesk-php<XY>-fpm` (zum Beispiel `plesk-php85-fpm`), nicht von `php-fpm`. Laden Sie nach einer Änderung an PHP diesen neu
-  ([Kapitel 2, Plesk](../../../../en/us/install/02-requirements.md#plesk)).
+  ([Kapitel 2, Plesk](../../../installation/02-voraussetzungen.md#plesk)).
 - `systemctl restart php-fpm` startet einen anderen Master neu, den keine Plesk-Website nutzt
-  ([8.5.3](../../../../en/us/install/08-serving-the-site.md#853-plesk)).
+  ([8.5.3](../../../installation/08-die-website-ausliefern.md#853-plesk)).
 
 ```bash
 ls /opt/plesk/php/*/etc/php-fpm.d/ | grep <domain>     # which PHP version serves the domain
@@ -119,14 +119,14 @@ auf `false` bleiben ([Vertrauenswürdige Proxys](../../../../en/us/bc/6.0/truste
 ## Zertifikate
 
 - Installieren Sie das Zertifikat der Domain in Plesk (seine Let's-Encrypt-Erweiterung oder Ihr eigenes), und schalten Sie die
-  Umleitung auf HTTPS ein ([8.5.3](../../../../en/us/install/08-serving-the-site.md#853-plesk)).
+  Umleitung auf HTTPS ein ([8.5.3](../../../installation/08-die-website-ausliefern.md#853-plesk)).
 - Wenn Velocity oder FrankenPHP dieselbe Domain auf einem anderen Port ausliefert, können sie das Zertifikat nutzen, das Plesk hält:
   Die Notizen zu FrankenPHP richten `[HTTPSSettings] Certificate` und `Key` auf eine Kopie des Let's-Encrypt-Zertifikats, das Plesk
   für den Host hält, exportiert aus `/usr/local/psa/var/certificates/` außerhalb des Document Root.
 - Plesk erneuert das Let's-Encrypt-Zertifikat nach eigenem Zeitplan und schreibt dabei eine **neue Datei unter einem neuen Namen**;
   die exportierte Kopie veraltet dann. Der Export muss nach jeder Erneuerung wiederholt werden, gefolgt von einem Neuladen
   ([FrankenPHP, Erneuerung](../../../../en/us/bc/6.0/frankenphp.md)). Velocity prüft seine Zertifikatsdateien alle 60 Sekunden und tauscht ein
-  geändertes, gültiges Paar live aus ([8.3.9](../../../../en/us/install/08-serving-the-site.md#839-https-served-by-velocity-itself)), aber nur,
+  geändertes, gültiges Paar live aus ([8.3.9](../../../installation/08-die-website-ausliefern.md#839-https-direkt-von-velocity)), aber nur,
   wenn der Pfad, den es liest, die neue Datei bekommt.
 
 Siehe [TLS-Zertifikate in Panels](tls-zertifikate-in-panels.md).
@@ -150,7 +150,7 @@ Der Benutzer des Webservers muss die Datei lesen können (`settings/logviewer.in
 
 Die Seite Cronjobs in der Administration braucht ein PHP für die Kommandozeile; auf einem Host mit mehreren PHP-Versionen setzen Sie
 `PhpCliPath` auf die, auf der die Website läuft, zum Beispiel `/opt/plesk/php/8.5/bin/php`
-([Cronjobs, Bevor Sie beginnen](../../../../en/us/guides/cronjobs.md#2-before-you-start)):
+([Cronjobs, Bevor Sie beginnen](../../../anleitungen/cronjobs.md#2-bevor-sie-beginnen)):
 
 ```bash
 /opt/plesk/php/8.5/bin/php bin/php/console exp:ini set cronjob.ini/AdminSettings/PhpCliPath /opt/plesk/php/8.5/bin/php global
@@ -170,20 +170,20 @@ beschreibbar bleiben ([Cron und Shell-Zugang](cron-und-shell-zugang.md)).
 Der Entwicklungsserver betreibt Velocity neben dem Apache von Plesk auf derselben Installation. Zu klärende Punkte:
 
 - **Ports.** Apache und nginx von Plesk belegen 80 und 443; Velocity behält seine eigenen Ports (8088 und 8080 in der Auslieferung)
-  oder sitzt hinter dem nginx von Plesk ([8.3.5](../../../../en/us/install/08-serving-the-site.md#835-address-ports-user-and-group)).
+  oder sitzt hinter dem nginx von Plesk ([8.3.5](../../../installation/08-die-website-ausliefern.md#835-adresse-ports-benutzer-und-gruppe)).
 - **Firewall.** Manche Plesk-Installationen steuern firewalld oder nftables über die Plesk-Erweiterung Firewall. Wenn eine Regel, die
   Sie mit `firewall-cmd` hinzufügen, beim nächsten Anwenden durch Plesk verschwindet, fügen Sie sie stattdessen in Plesk hinzu
   (Tools & Settings → Firewall) ([FrankenPHP](../../../../en/us/bc/6.0/frankenphp.md)).
 - **Ein Benutzer.** Die Worker von Velocity laufen als Systembenutzer der Domain (`[ServerSettings] User`, `Group`), derselbe Benutzer
-  wie der Pool von Plesk ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)).
+  wie der Pool von Plesk ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)).
 - **Ausrollen.** `exp:velocity deploy` lädt `plesk-php<XY>-fpm` neu und startet Velocity in einem Lauf neu.
 
 ## Bekannte Auswirkungen von Plesk-Einstellungen
 
 | Symptom | Ursache in den Quellen | Was zu tun ist |
 |---|---|---|
-| **Setup > Systeminformationen** meldet, dass Statistiken zu OPcache nicht verfügbar sind | Plesk kann `opcache_get_status` für eine Domain in `disable_functions` setzen; der Cache funktioniert, nur seine Kennzahlen lassen sich aus PHP nicht lesen ([Systeminformationen](../../../../en/us/guides/system-information.md)) | nichts, oder erlauben Sie die Funktion für die Domain |
-| Eine Änderung an PHP wirkt nicht | der falsche Master wurde neu geladen ([Kapitel 12](../../../../en/us/install/12-troubleshooting.md)) | `plesk-php<XY>-fpm` neu laden |
+| **Setup > Systeminformationen** meldet, dass Statistiken zu OPcache nicht verfügbar sind | Plesk kann `opcache_get_status` für eine Domain in `disable_functions` setzen; der Cache funktioniert, nur seine Kennzahlen lassen sich aus PHP nicht lesen ([Systeminformationen](../../../anleitungen/systeminformationen.md)) | nichts, oder erlauben Sie die Funktion für die Domain |
+| Eine Änderung an PHP wirkt nicht | der falsche Master wurde neu geladen ([Kapitel 12](../../../installation/12-fehlerbehebung.md)) | `plesk-php<XY>-fpm` neu laden |
 | Ein Test scheitert im Browser, aber `php -m` sieht gut aus | die beiden PHPs unterscheiden sich: Installieren Sie die Erweiterung für das Web-PHP (auf Plesk die PHP-Version der Domain) | in der PHP-Version der Domain installieren und neu laden |
 | ezupdate findet kein Composer des Systems | `open_basedir` (Standard bei Plesk) verbirgt die Systemordner, sodass ezupdate zuerst unterhalb des Wurzelverzeichnisses der Installation sucht ([Einstellungen von ezupdate](../../../../en/us/features/6.0/extensions/ezupdate.md)) | `[ComposerSettings] Path`/`Binary` setzen, oder mit *Get Composer* ein geprüftes `composer.phar` nach `var/ezupdate/` herunterladen lassen |
 | Ein langer Schritt des Setup-Assistenten wird abgebrochen | das `request_terminate_timeout` des Pools | für die Installation erhöhen, danach wieder senken |
@@ -204,5 +204,5 @@ Der Entwicklungsserver betreibt Velocity neben dem Apache von Plesk auf derselbe
 
 - [Control Panels: Überblick](README.md)
 - [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md), [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md)
-- [Kapitel 8: Die Website ausliefern](../../../../en/us/install/08-serving-the-site.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

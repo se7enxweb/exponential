@@ -13,7 +13,7 @@ type: help
 Diese Seite ist für Produktmanager und Systemadministratoren bei Hosting-Unternehmen, die entscheiden müssen, was die Exponential-Websites
 eines Tarifs ausliefert. Sie beantwortet: welche Server und Engines möglich sind, welche Fragen zwischen ihnen entscheiden, was jede Wahl
 für den Betrieb bedeutet und wie Sie die Entscheidung festhalten. Die Fakten stammen aus
-[Kapitel 8: Die Website ausliefern](../../../../en/us/install/08-serving-the-site.md), [Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md)
+[Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md), [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
 und der `README.md` des Repositorys.
 
 ## Inhalt
@@ -29,7 +29,7 @@ und der `README.md` des Repositorys.
 
 ## Die Wahl in einer Tabelle
 
-Aus [Kapitel 8, Die Wahl in einer Tabelle](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table):
+Aus [Kapitel 8, Die Wahl in einer Tabelle](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle):
 
 | | Exponential Velocity (`qbix`) | FrankenPHP (über Velocity) | Apache + PHP-FPM | nginx + PHP-FPM |
 |---|---|---|---|---|
@@ -44,7 +44,7 @@ Aus [Kapitel 8, Die Wahl in einer Tabelle](../../../../en/us/install/08-serving-
 
 Andere Server, die eine URL auf `index.php` umschreiben können, funktionieren ebenfalls. Das README nennt LiteSpeed und OpenLiteSpeed,
 Caddy, Microsoft IIS, lighttpd, H2O und Traefik (Letzteres meist vor einem anderen Server) und sagt deutlich, dass sie alle funktionieren
-und Exponential keinen bestimmten verlangt. [Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md#web-servers) ordnet LiteSpeed, Caddy
+und Exponential keinen bestimmten verlangt. [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#webserver) ordnet LiteSpeed, Caddy
 mit PHP-FPM, IIS und lighttpd in Stufe 3 ein: sollte funktionieren.
 
 > **Hinweis**
@@ -56,7 +56,7 @@ mit PHP-FPM, IIS und lighttpd in Stufe 3 ein: sollte funktionieren.
 | Frage | Wenn die Antwort ... ist | Dann |
 |---|---|---|
 | Darf die Website eines Kunden in diesem Tarif einen langlebigen Prozess betreiben? | nein (typisches Shared Hosting) | Apache oder LiteSpeed mit `.htaccess`. Shared Hosting erlaubt das meist nicht (`README.md`) |
-| Hat die Maschine PHP 8.0? | ja (das Standard-PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten) | ein klassischer Server; Velocity braucht 8.1 ([Kapitel 2](../../../../en/us/install/02-requirements.md#29-operating-system-notes)) |
+| Hat die Maschine PHP 8.0? | ja (das Standard-PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten) | ein klassischer Server; Velocity braucht 8.1 ([Kapitel 2](../../../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen)) |
 | Müssen Kunden auf einer Maschine durch das Betriebssystem voneinander getrennt sein? | ja | eine Velocity pro Website, jede als eigener Benutzer, oder ein PHP-FPM-Pool pro Website |
 | Betreiben Sie bereits ein abgestimmtes Apache oder nginx, das Sie behalten wollen? | ja | behalten Sie es; Velocity kann dahinter oder daneben stehen |
 | Wollen Sie die schnellste Antwort für wiederholte Seiten, ohne einen Cache-Server hinzuzufügen? | ja | Velocity mit seinem Antwort-Cache |
@@ -73,7 +73,7 @@ auf einer Maschine durch das Betriebssystem voneinander getrennt sein müssen.
 | VPS oder dedizierter Server pro Kunde | Velocity | eine Website pro Maschine, root für die Ports 80 und 443 verfügbar |
 | Mehrere Kunden auf einem VPS oder dedizierten Server | Velocity pro Website (eigener Benutzer, eigene Ports, ein Proxy davor) oder PHP-FPM-Pool pro Website | Trennung durch das Betriebssystem |
 | Container | Velocity oder FrankenPHP im Container | ein Prozessbaum pro Website; für Velocity gibt es Images ([Pakete und Binärdateien von Velocity](../../../../en/us/features/6.0/velocity-packages-and-binaries.md)) |
-| Windows-Hosting | IIS oder Apache mit FastCGI-PHP | `pcntl` und `posix` gibt es unter Windows nicht ([Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md#windows)) |
+| Windows-Hosting | IIS oder Apache mit FastCGI-PHP | `pcntl` und `posix` gibt es unter Windows nicht ([Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#windows)) |
 
 Die Modelle selbst werden auf [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md) verglichen.
 
@@ -103,7 +103,7 @@ Die Seite der Sicherheit steht auf [Trennung von Mandanten](../sicherheit/trennu
 > **Warnung**
 > Unter Velocity halten die Worker Klassen, INI-Werte und kompilierte Templates im Speicher. Eine geänderte Klasse oder Einstellung
 > erreicht sie erst nach einem Neustart. Schulen Sie die Support-Mitarbeitenden auf `exp:velocity deploy`, bevor Sie Tarife mit Velocity
-> verkaufen ([Kapitel 8, Eine Änderung ausrollen](../../../../en/us/install/08-serving-the-site.md#8314-deploying-a-change-expvelocity-deploy)).
+> verkaufen ([Kapitel 8, Eine Änderung ausrollen](../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy)).
 
 ## Server mischen
 
@@ -141,5 +141,5 @@ Tested on staging on:           <date>, by <role>
 - [Velocity für Hoster](velocity-fuer-hoster.md)
 - [Apache mit PHP-FPM](apache-mit-php-fpm.md)
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
-- [Hosting, Datenbank und Betriebssystem wählen](../../../../en/us/help/leadership/choosing-hosting-database-and-os.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -77,4 +77,4 @@ löschen Sie die Anmeldedaten und legen Sie den Termin für das nächste Treffen
 - [Ein Treffen vorschlagen](ein-treffen-vorschlagen.md)
 - [Checklisten für Veranstaltungen](checklisten-fuer-veranstaltungen.md)
 - [Vorlagen für Beiträge in sozialen Medien](vorlagen-fuer-soziale-medien.md#aufrufe-an-die-community)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

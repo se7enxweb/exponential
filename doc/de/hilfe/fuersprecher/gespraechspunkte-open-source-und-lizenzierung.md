@@ -32,9 +32,9 @@ den Fachleuten.
 | Der Code von Exponential | GNU General Public License, Version 2 oder jede spätere Version | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 | Die Dokumentation in `doc/` | GNU Free Documentation License, Version 1.3 oder jede spätere Version | [Die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md) |
 | Copyright | „7x & Exponential Foundation“ (mit „eZ Systems AS“ für 1999 bis 2014) | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
-| Velocity | MIT-Lizenz (seine eigene `composer.json`) | [Exponential Velocity](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-velocity) |
+| Velocity | MIT-Lizenz (seine eigene `composer.json`) | [Exponential Velocity](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
 
-Erweiterungen haben jeweils ihre eigene Lizenz; lesen Sie die Dateien der Erweiterung ([Erweiterungen](../../../en/us/guides/extensions.md)).
+Erweiterungen haben jeweils ihre eigene Lizenz; lesen Sie die Dateien der Erweiterung ([Erweiterungen](../../anleitungen/extensions.md)).
 
 ## Die Punkte
 
@@ -42,10 +42,10 @@ Erweiterungen haben jeweils ihre eigene Lizenz; lesen Sie die Dateien der Erweit
 |---|---|
 | „Exponential ist freie Software unter der GNU GPL Version 2 oder später. Sie dürfen es ausführen, studieren, ändern und weitergeben.“ | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) |
 | „Die Klausel ‚oder später‘ erlaubt dem Projekt, auf künftige Versionen der GPL zu wechseln.“ | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| „Auch die Dokumentation ist frei: Sie dürfen sie unter der GNU FDL kopieren, übersetzen, anpassen und weitergeben.“ | [Freie Dokumentation](../../../en/us/help/free-documentation.md) |
+| „Auch die Dokumentation ist frei: Sie dürfen sie unter der GNU FDL kopieren, übersetzen, anpassen und weitergeben.“ | [Freie Dokumentation](../freie-dokumentation.md) |
 | „Für die Software gibt es keine Lizenzgebühr.“ | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) |
-| „Weil der Code frei ist, kann kein einzelnes Unternehmen ihn wegnehmen. So hat er seinen ursprünglichen Hersteller überlebt.“ | [Mit Einwänden umgehen, Langlebigkeit](../../../en/us/help/business/objection-handling.md#longevity-will-it-still-be-here-in-ten-years) |
-| „Die vollständige Historie seit 2002 ist öffentlich: Jeder kann lesen, wer was warum geändert hat.“ | [Grundsätze, die man im Code sieht](../../../en/us/help/who-is-7x.md#principles-you-can-see-in-the-code) |
+| „Weil der Code frei ist, kann kein einzelnes Unternehmen ihn wegnehmen. So hat er seinen ursprünglichen Hersteller überlebt.“ | [Mit Einwänden umgehen, Langlebigkeit](../geschaeft/einwandbehandlung.md#langlebigkeit-gibt-es-das-in-zehn-jahren-noch) |
+| „Die vollständige Historie seit 2002 ist öffentlich: Jeder kann lesen, wer was warum geändert hat.“ | [Grundsätze, die man im Code sieht](../wer-ist-7x.md#grundsätze-die-sie-im-code-sehen-können) |
 | „Beiträge bleiben frei: Änderungen werden unter derselben GPL veröffentlicht.“ | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 
 ## Beiträge und ihre Lizenz
@@ -62,7 +62,7 @@ Erweiterungen haben jeweils ihre eigene Lizenz; lesen Sie die Dateien der Erweit
 
 | Sagen Sie nicht | Sagen Sie stattdessen | Warum |
 |---|---|---|
-| „Es ist Freeware“ oder „gemeinfrei“ | „Es ist freie Software unter der GNU GPL“ | Die GPL hat Bedingungen ([Marken- und Namensregeln, Tun und Lassen](../../../en/us/help/business/brand-and-naming-rules.md#do-and-dont)) |
+| „Es ist Freeware“ oder „gemeinfrei“ | „Es ist freie Software unter der GNU GPL“ | Die GPL hat Bedingungen ([Marken- und Namensregeln, Tun und Lassen](../geschaeft/marken-und-namensregeln.md#richtig-und-falsch)) |
 | „Sie können damit alles machen“ | „Sie dürfen es unter den Bedingungen der GPL ausführen, studieren, ändern und weitergeben“ | Die Weitergabe geänderter Fassungen hat Bedingungen |
 | „Sie müssen den Code Ihrer Website veröffentlichen“ | „Lesen Sie die Lizenz; fragen Sie für Ihren Fall eine Rechtsberatung“ | Das ist eine Rechtsfrage zur Verbreitung |
 | „7x gehört Exponential“ | „7x und die Exponential Foundation halten das Copyright; die Lizenz ist die GPL“ | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
@@ -74,12 +74,12 @@ Erweiterungen haben jeweils ihre eigene Lizenz; lesen Sie die Dateien der Erweit
 |---|---|
 | „Dürfen wir es kommerziell nutzen?“ | Die GPL erlaubt kommerzielle Nutzung. Bedingungen gelten, wenn Sie es verbreiten. Lesen Sie die Lizenz; fragen Sie für Ihren Fall Ihre Beratung. |
 | „Dürfen wir geschlossene Erweiterungen bauen?“ | Das ist eine Rechtsfrage zur GPL; verweisen Sie auf den Lizenztext und eine Beratung. Beantworten Sie sie nicht selbst. |
-| „Darf ich eine Hilfeseite in unser Intranet kopieren?“ | Ja, unter den Bedingungen der GNU FDL: Behalten Sie den Hinweis und die Lizenz bei ([Freie Dokumentation](../../../en/us/help/free-documentation.md#copy-it-and-share-it-with-other-users)). |
-| „Darf ich die Hilfe übersetzen?“ | Ja, und wer die Übersetzung zurückgibt, hilft allen ([Freie Dokumentation](../../../en/us/help/free-documentation.md#translate-it)). |
+| „Darf ich eine Hilfeseite in unser Intranet kopieren?“ | Ja, unter den Bedingungen der GNU FDL: Behalten Sie den Hinweis und die Lizenz bei ([Freie Dokumentation](../freie-dokumentation.md#kopieren-und-an-andere-benutzer-weitergeben)). |
+| „Darf ich die Hilfe übersetzen?“ | Ja, und wer die Übersetzung zurückgibt, hilft allen ([Freie Dokumentation](../freie-dokumentation.md#übersetzen)). |
 
 ## Verwandte Seiten
 
 - [Für Open Source eintreten](fuer-open-source-eintreten.md)
 - [Für freie Dokumentation eintreten](fuer-freie-dokumentation-eintreten.md)
-- [Lizenzierung für Käufer](../../../en/us/help/business/licensing-for-buyers.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Lizenzierung für Käufer](../geschaeft/lizenzen-fuer-kaeufer.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

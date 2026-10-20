@@ -129,6 +129,6 @@ Installer des Seitenpakets seine Dateien nutzen kann, und es allein zu installie
 - [Was ein Seiteninstallationspaket ist](was-ein-seiteninstallationspaket-ist.md)
 - [Seitenstil-Paket](../../../../en/us/help/designers/extensions/site-style-package.md): der Typ `sitestyle` aus der Sicht eines Designers
 - [Berechtigungen für Pakete](../admin-oberflaeche/berechtigungen-fuer-pakete.md)
-- [Anleitung zu Paketen, 10. Berechtigungen](../../../../en/us/guides/packages.md#10-permissions)
+- [Anleitung zu Paketen, 10. Berechtigungen](../../../anleitungen/pakete.md#10-berechtigungen)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

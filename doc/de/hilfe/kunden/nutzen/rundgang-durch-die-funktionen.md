@@ -20,17 +20,17 @@ aktiv sind.
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
 | Inhaltsklassen, die Sie selbst definieren (Artikel, Produkte, Veranstaltungen ...) | Partner definiert, Redaktion füllt | [Inhaltsklassen für Websites](../../../../en/us/help/creators/website-creators/content-classes-for-websites.md) |
-| Versionskontrolle: Jede Veröffentlichung bewahrt die frühere Version | Redaktion | [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md) |
-| Freigabe von Inhalten und zeitgesteuerte Veröffentlichung | Redaktion, freigebende Personen | [Workflows](../../../../en/us/guides/workflows.md) |
-| Multimedia mit automatischer Umwandlung und Skalierung von Bildern | Redaktion | [Medien und Uploads](../../../../en/us/help/media-and-uploads.md) |
-| Eingebaute Suchmaschine | Besucher, Redaktion | [Suchen](../../../../en/us/help/searching.md) |
-| Fein abgestufte, rollenbasierte Berechtigungen | Betreiber entscheidet, Administrator richtet ein | [Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md) |
+| Versionskontrolle: Jede Veröffentlichung bewahrt die frühere Version | Redaktion | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
+| Freigabe von Inhalten und zeitgesteuerte Veröffentlichung | Redaktion, freigebende Personen | [Workflows](../../../anleitungen/workflows.md) |
+| Multimedia mit automatischer Umwandlung und Skalierung von Bildern | Redaktion | [Medien und Uploads](../../medien-und-uploads.md) |
+| Eingebaute Suchmaschine | Besucher, Redaktion | [Suchen](../../suchen.md) |
+| Fein abgestufte, rollenbasierte Berechtigungen | Betreiber entscheidet, Administrator richtet ein | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
 
 ## Seiten
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
-| Exponential Layouts: Layouts, Zonen und Blöcke, von der Redaktion angeordnet, und Regeln, die entscheiden, welche Seiten sie erhalten | Redaktion, Marketing | [Der Layouts-Editor](../../../../en/us/help/layouts-editor.md) |
+| Exponential Layouts: Layouts, Zonen und Blöcke, von der Redaktion angeordnet, und Regeln, die entscheiden, welche Seiten sie erhalten | Redaktion, Marketing | [Der Layouts-Editor](../../layout-editor.md) |
 | Gemeinsame Layouts: ein Header oder Footer, einmal gebaut und in andere Layouts verknüpft | Partner richtet ein, Redaktion pflegt | `README.md`, „Exponential Layouts“ |
 | Trennung von Inhalt und Darstellung, eine erweiterbare Template-Engine | Partner, Designer | [Template-Overrides](../../../../en/us/help/creators/website-creators/template-overrides.md) |
 
@@ -38,7 +38,7 @@ aktiv sind.
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
-| Mehrsprachige Inhalte, mit 219 Locales | Übersetzer, Redaktion | [Sprachen](../../../../en/us/help/languages.md), [Inhaltssprachen](../../../../en/us/guides/content-languages.md) |
+| Mehrsprachige Inhalte, mit 219 Locales | Übersetzer, Redaktion | [Sprachen](../../sprachen.md), [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
 | Sprachen mit Schreibrichtung von rechts nach links | Redaktion | [Von rechts nach links](../../../../en/us/features/6.0/right-to-left.md) |
 | Mehrere Websites aus einer Installation | Betreiber, Administrator | [Multisite-Einrichtung](../../../../en/us/help/creators/website-creators/multisite-setup.md) |
 
@@ -54,8 +54,8 @@ aktiv sind.
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
-| Kontaktformulare (der Information Collector) | Besucher; Mitarbeitende lesen die Einsendungen | [Gesammelte Informationen](../../../../en/us/guides/collected-information.md) |
-| Feeds als RSS, ATOM, iTunes-RSS und OPML | Leser, Partner, Podcast-Hörer | [RSS-Feeds](../../../../en/us/guides/rss-feeds.md) |
+| Kontaktformulare (der Information Collector) | Besucher; Mitarbeitende lesen die Einsendungen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
+| Feeds als RSS, ATOM, iTunes-RSS und OPML | Leser, Partner, Podcast-Hörer | [RSS-Feeds](../../../anleitungen/rss-feeds.md) |
 | E-Mail-Einstellungen: eine Seite, auf der Menschen wählen, welche E-Mails sie erhalten | Besucher, Mitglieder | [E-Mail-Einstellungen](../../../../en/us/features/6.0/mail-preferences.md) |
 | Benachrichtigungen, wenn sich verfolgte Inhalte ändern | Redaktion, Mitglieder | [Benachrichtigungen](../../../../en/us/features/6.0/notifications.md) |
 | Newsletter mit der Erweiterung `cjw_newsletter` | Marketing | [cjw_newsletter](../../../../en/us/features/6.0/extensions/cjw_newsletter.md) |
@@ -64,8 +64,8 @@ aktiv sind.
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
-| Eine Headless-CRUD-REST-API | Entwickler, Apps | [REST-API v1 und v2](../../../../en/us/guides/rest-api-v1-and-v2.md) |
-| Remote-Dienste für Apps und andere Systeme | Entwickler | [Remote-Dienste und Apps](../../../../en/us/guides/remote-services-and-apps.md) |
+| Eine Headless-CRUD-REST-API | Entwickler, Apps | [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md) |
+| Remote-Dienste für Apps und andere Systeme | Entwickler | [Remote-Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md) |
 | Tausende Open-Source-Erweiterungen über eine Plugin-API | Partner | `README.md`, „Main Exponential features“ |
 
 ## Der Schreibassistent
@@ -83,8 +83,8 @@ Betreiber entscheidet, ob und mit welchem Anbieter ([expai](../../../../en/us/fe
 | Der Inhaltsfinder: Inhalte anhand von ID, Adresse oder Dateipfad finden | Administrator, erfahrene Redakteure | [Der Inhaltsfinder](../../../../en/us/features/6.0/content-finder.md) |
 | Inhaltsaufträge: große Entfernungen, Kopien und Verschiebungen im Hintergrund | Redaktion, Administrator | [Inhaltsaufträge](../../../../en/us/features/6.0/content-jobs.md) |
 | Der Log-Viewer | Administrator, Hoster | [Der Log-Viewer](../../../../en/us/features/6.0/log-viewer.md) |
-| Wartungsmodus mit einer freundlichen Seite | Administrator | [Wartungsmodus](../../../../en/us/guides/maintenance-mode.md) |
-| Die Upgrade-Prüfung von Dateien und Datenbank | Administrator, Partner | [Upgrade-Prüfung](../../../../en/us/guides/upgrade-check.md) |
+| Wartungsmodus mit einer freundlichen Seite | Administrator | [Wartungsmodus](../../../anleitungen/wartungsmodus.md) |
+| Die Upgrade-Prüfung von Dateien und Datenbank | Administrator, Partner | [Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md) |
 | Exponential Velocity, der mitgelieferte Anwendungsserver | Hoster | [Velocity für Unternehmen](../../../../en/us/help/businesses/reliability/velocity-for-businesses.md) |
 | Das Hilfesystem in der Administration (`/exphelp/dashboard`) | Mitarbeitende, deren Rolle `exphelp/read` hat | [Das Hilfesystem](../../../../en/us/features/6.0/help-system.md) |
 
@@ -92,10 +92,10 @@ Betreiber entscheidet, ob und mit welchem Anbieter ([expai](../../../../en/us/fe
 
 | Funktion | Wer sie nutzt | Lesen Sie |
 |---|---|---|
-| Zweistufige Anmeldung | Alle mit einem Konto | [Zwei-Faktor-Anmeldung](../../../../en/us/guides/two-factor-login.md) |
+| Zweistufige Anmeldung | Alle mit einem Konto | [Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Formular-Tokens gegen Cross-Site Request Forgery | Automatisch | [„This form has expired“](../../../../en/us/features/6.0/form-expired-page.md) |
 | Content Security Policy | Hoster, Administrator | [Content Security Policy](../../../../en/us/features/6.0/content-security-policy.md) |
-| Ratschläge zur Härtung von Produktiv-Websites | Hoster, Partner | [Sicherheitshärtung](../../../../en/us/help/security-hardening.md) |
+| Ratschläge zur Härtung von Produktiv-Websites | Hoster, Partner | [Sicherheitshärtung](../../sicherheitshaertung.md) |
 
 ## Den Rundgang nutzen
 
@@ -109,4 +109,4 @@ oft die günstigste Verbesserung, die Sie vornehmen können.
 - [Was der eingebaute Shop leistet](../../../../en/us/help/businesses/stores/what-the-built-in-shop-does.md)
 - [Wofür Sie nicht bezahlen](../../../../en/us/help/businesses/costs/what-you-do-not-pay-for.md)
 - [Jährliche Überprüfung des Nutzens](jaehrliche-ueberpruefung-des-nutzens.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

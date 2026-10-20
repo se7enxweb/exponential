@@ -59,19 +59,19 @@ Wie auch immer der endgültige Lehrplan aussieht, diese Teile der Dokumentation 
 
 | Zertifizierung | Vorbereiten mit |
 |---|---|
-| Developer | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md), [Erweiterungen](../../../en/us/guides/extensions.md), [Datenbankunterstützung](../../../en/us/help/database-support.md), [Sicherheitshärtung](../../../en/us/help/security-hardening.md) |
-| Design | [Der Layouts-Editor](../../../en/us/help/layouts-editor.md), [Sprachen](../../../en/us/help/languages.md), die Gestaltungsregeln der Administration in `doc/en/us/bc/6.0/admin4-styling.md` |
-| Solution (WCMS) | [Erste Schritte](../../../en/us/help/getting-started.md), [Inhalte bearbeiten](../../../en/us/help/editing-content.md), [Veröffentlichen und Versionen](../../../en/us/help/publishing-and-versions.md), [Suchen](../../../en/us/help/searching.md) |
-| Sales | [Vertrieb und Marketing: hier beginnen](../../../en/us/help/business/sales-and-marketing-start-here.md), [Lizenzierung für Käufer erklärt](../../../en/us/help/business/licensing-for-buyers.md) |
+| Developer | [Mit Git entwickeln](../mit-git-entwickeln.md), [Erweiterungen](../../anleitungen/extensions.md), [Datenbankunterstützung](../datenbankunterstuetzung.md), [Sicherheitshärtung](../sicherheitshaertung.md) |
+| Design | [Der Layouts-Editor](../layout-editor.md), [Sprachen](../sprachen.md), die Gestaltungsregeln der Administration in `doc/en/us/bc/6.0/admin4-styling.md` |
+| Solution (WCMS) | [Erste Schritte](../erste-schritte.md), [Inhalte bearbeiten](../inhalte-bearbeiten.md), [Veröffentlichen und Versionen](../veroeffentlichen-und-versionen.md), [Suchen](../suchen.md) |
+| Sales | [Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md), [Lizenzierung für Käufer erklärt](../geschaeft/lizenzen-fuer-kaeufer.md) |
 
 Die ursprünglichen Schulungsbücher zu eZ Publish, veröffentlicht unter der GNU FDL, werden von 7x gespiegelt
 (<https://github.com/se7enxweb/mirror.exponential.se7enx.com>, „drei ursprüngliche Schulungsbücher für Entwickler
 (zusammen über 700 Seiten)“, laut der Profil-README von se7enxweb, zitiert in
-[Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md#community-places)).
+[Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#orte-der-community)).
 
 ## Verwandte Seiten
 
 - [Ideen zur Zertifizierung (Vorschläge)](vorschlaege-fuer-zertifizierungen.md)
 - [Schulungspartner](schulungspartner.md)
 - [Logos und Zeichen für Partner](partnerlogos-und-zeichen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

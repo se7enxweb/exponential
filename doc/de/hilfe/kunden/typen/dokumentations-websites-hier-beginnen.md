@@ -23,10 +23,10 @@ Dokumentation einstehen.
 | Bedarf | Was ihn trägt | Wo es erklärt wird |
 |---|---|---|
 | Seiten in einer klaren Hierarchie | Der Inhaltsbaum und Container-Klassen; die Demo-Installation hat eine Klasse *Documentation page* | [Den Inhaltsbaum strukturieren](../../../../en/us/help/creators/website-creators/structuring-the-content-tree.md) |
-| Prüfung vor der Freigabe | Entwürfe, Freigabe-Workflows, Objektzustände | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md), [Objektzustände](../../../../en/us/guides/object-states.md) |
-| Wissen, was eine Seite vorher gesagt hat | Versionskontrolle | [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md) |
+| Prüfung vor der Freigabe | Entwürfe, Freigabe-Workflows, Objektzustände | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md), [Objektzustände](../../../anleitungen/objektzustaende.md) |
+| Wissen, was eine Seite vorher gesagt hat | Versionskontrolle | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
 | Antworten schnell finden | Die eingebaute Suchmaschine, oder Solr über eZ Find, wo installiert | [Website-Suche](../../../../en/us/help/creators/website-creators/site-search.md), [Suche mit eZ Find und Solr](../../../../en/us/help/creators/website-creators/search-with-ezfind-and-solr.md) |
-| Dieselbe Seite in mehreren Sprachen | Übersetzungen jedes Elements | [Sprachen](../../../../en/us/help/languages.md), [Übersetzungsroutine](../alltag/uebersetzungsroutine.md) |
+| Dieselbe Seite in mehreren Sprachen | Übersetzungen jedes Elements | [Sprachen](../../sprachen.md), [Übersetzungsroutine](../alltag/uebersetzungsroutine.md) |
 | Druckbare Handbücher | Der PDF-Export (**Setup > PDF export**) | [PDF-Export](../../../../en/us/features/6.0/pdf-export.md) |
 | Links, die nicht kaputtgehen | URL-Aliase und Weiterleitungen, Linkprüfungen | [URLs, Weiterleitungen und verschobene Seiten](../alltag/urls-weiterleitungen-und-verschobene-seiten.md) |
 
@@ -77,4 +77,4 @@ Sprachen sollte den [Lesepfad für mehrsprachige Websites](lesepfad-mehrsprachig
 - [Lesepfad für Dokumentations-Websites](lesepfad-dokumentations-websites.md)
 - [Hilfe als Inhalt gepflegt](../../../../en/us/features/6.0/help-content.md)
 - [Beziehungen und Wiederverwendung](../../../../en/us/help/creators/website-creators/relations-and-reuse.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

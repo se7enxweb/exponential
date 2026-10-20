@@ -21,7 +21,7 @@ sind. Eine Website, die nicht aktualisiert wird, wird zum Sicherheitsrisiko und 
 | PHP 8.0 bis 8.5 werden für die Linie 6.0.15 unterstützt; PHP 7.4 nur bis 6.0.7 | README, `doc/en/us/install/02-requirements.md` |
 | „Ein veröffentlichtes Tag wird nie geändert“ | SECURITY.md |
 
-Die vollständige Liste: [Wer ist die Exponential Foundation?, „Die Support-Zusage“](../../../en/us/help/who-is-the-exponential-foundation.md#the-support-commitment).
+Die vollständige Liste: [Wer ist die Exponential Foundation?, „Die Support-Zusage“](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung).
 
 ## Eine Bestandsliste führen
 
@@ -48,7 +48,7 @@ Bieten Sie mit jedem Projekt Wartung an. Ein nützlicher Vertrag legt fest:
 - Erklären Sie Upgrades als Schutz, nicht als Verkauf.
 - Zeigen Sie die Punkte des Änderungsprotokolls, die für den Kunden wichtig sind.
 - Planen Sie große Schritte (PHP-Versionen, Ersatz von Erweiterungen) ein Jahr im Voraus
-  ([Release- und Upgrade-Planung](../../../en/us/help/leadership/release-and-upgrade-planning.md)).
+  ([Release- und Upgrade-Planung](../fuehrung/release-und-upgrade-planung.md)).
 
 ## Websites aus der Zeit von eZ Publish
 
@@ -60,5 +60,5 @@ Sie sind die natürlichen Kunden von Partnern. Die Migrationskapitel `doc/en/us/
 
 - [Releases testen, bevor Ihre Kunden es tun](releases-testen.md)
 - [Sicherheitspflichten von Partnern](sicherheitspflichten.md)
-- [Release- und Upgrade-Planung](../../../en/us/help/leadership/release-and-upgrade-planning.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Release- und Upgrade-Planung](../fuehrung/release-und-upgrade-planung.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

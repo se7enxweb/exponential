@@ -33,6 +33,13 @@ their credit, respect their license and give your improvements back).
 3. **Give back what helps others.** A fix you send back is a fix you no longer have to maintain alone, and the next
    person does not have to find the bug again.
 
+**Copyright assignment (CLA).** 7x and the Exponential Foundation merge a code contribution to
+the core kernel (`se7enxweb/exponential`), sent in any form (pull request, patch, issue or mail), only after you have
+signed the Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other
+licenses and in commercial products, without asking or paying you, and you cannot withdraw it or set conditions on it. Extending
+the kernel from your own extension, forking an extension, or publishing your own work is not affected. See
+[Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+
 ## Not legal advice
 
 This part explains licenses the way developers need to understand them day to day. It is not legal advice. When

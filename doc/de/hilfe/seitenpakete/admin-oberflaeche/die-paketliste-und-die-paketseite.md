@@ -115,9 +115,9 @@ stammen, und das Paket lässt sich hier nicht mehr deinstallieren. Laden Sie zue
 ## Verwandte Seiten
 
 - [Pakete in der Administration](README.md)
-- [Pakete, Abschnitte 2 bis 4 und 9](../../../../en/us/guides/packages.md#2-the-package-list)
+- [Pakete, Abschnitte 2 bis 4 und 9](../../../anleitungen/pakete.md#2-die-paketliste)
 - [Das lokale Paket-Repository](../grundlagen/das-lokale-paket-repository.md)
 - [Importieren oder installieren](../grundlagen/importieren-oder-installieren.md)
 - [Installieren und Deinstallieren](installieren-und-deinstallieren.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

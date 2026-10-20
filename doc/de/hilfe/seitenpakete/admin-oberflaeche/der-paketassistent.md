@@ -105,4 +105,4 @@ geben Sie ihr einen `<vendor>` und nennen Sie sie in `<requires>` Ihres Seitenpa
 - [Berechtigungen für Pakete](berechtigungen-fuer-pakete.md)
 - [Paketlizenzen und Versionen](../../../../en/us/features/6.0/package-licenses-and-versions.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

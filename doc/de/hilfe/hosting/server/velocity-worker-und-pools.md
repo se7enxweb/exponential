@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für Systemadministratoren bei Hosting-Unternehmen, die Velocity für Kunden-Websites bemessen und wissen müssen, was ein
 Worker kostet. Sie beantwortet: welche Einstellungen den Pool formen, wie Speicher ehrlich gemessen wird, wann Worker ersetzt werden, wo
 die Grenzen liegen und wie Sie die richtige Zahl für einen Tarif ohne Raten finden. Die Quellen sind
-[Kapitel 8, Abschnitt 8.3.6](../../../../en/us/install/08-serving-the-site.md#836-workers-pool-size-the-dynamic-pool-and-the-zygote) und die
-[Spezifikation des Worker-Pools](../../../../en/us/specifications/6.0/velocity-worker-pool.md).
+[Kapitel 8, Abschnitt 8.3.6](../../../installation/08-die-website-ausliefern.md#836-worker-pool-größe-der-dynamische-pool-und-die-zygote) und die
+[Spezifikation des Worker-Pools](../../../spezifikationen/6.0/velocity-worker-pool.md).
 
 ## Inhalt
 
@@ -59,7 +59,7 @@ Engine-Einstellungen unter `Q.webserver` (über ein Snippet im Konfigurationsbau
 ## Was ein Worker kostet
 
 Gemessen am 26.09.2026 als PSS aus `/proc/<pid>/smaps_rollup`, Linux mit 12 Kernen, PHP 8.5
-([Spezifikation des Worker-Pools](../../../../en/us/specifications/6.0/velocity-worker-pool.md#what-a-worker-costs)):
+([Spezifikation des Worker-Pools](../../../spezifikationen/6.0/velocity-worker-pool.md#was-ein-worker-kostet)):
 
 | | Privat pro Worker | PSS pro Worker | Worker pro GB |
 |---|---|---|---|
@@ -89,7 +89,7 @@ Messen Sie Ihre eigenen Websites, bevor Sie die Grenzen eines Tarifs festlegen.
 | Speicher | bezahlt für Worker, die vielleicht nie bedienen | bezahlt für das, was genutzt wird |
 
 Gemessen auf einer Installation: Ein fester Pool von 590 hielt 7.094 MB, der dynamische Pool 626 MB
-([Spezifikation des Worker-Pools](../../../../en/us/specifications/6.0/velocity-worker-pool.md#what-a-worker-costs)). Kapitel 8 schlägt einen
+([Spezifikation des Worker-Pools](../../../spezifikationen/6.0/velocity-worker-pool.md#was-ein-worker-kostet)). Kapitel 8 schlägt einen
 dynamischen Pool als Ausgangspunkt für die Produktion vor:
 
 ```ini
@@ -132,7 +132,7 @@ geforkt, und das Log sagt es.
 
 `ForkPerRequest=disabled` (ausgeliefert) hält Worker über Anfragen hinweg am Leben, mit Datenbankverbindungen und Stat-Caches. Gemessen auf
 einer angemeldeten Seite der Administration: 256 bis 284 ms mit einem frischen Worker pro Anfrage, 73 bis 80 ms mit persistenten Workern
-([Kapitel 8, Abschnitt 8.3.7](../../../../en/us/install/08-serving-the-site.md#837-persistent-workers-and-keepglobals)). Zwischen Anfragen stellt
+([Kapitel 8, Abschnitt 8.3.7](../../../installation/08-die-website-ausliefern.md#837-persistente-worker-und-keepglobals)). Zwischen Anfragen stellt
 der Worker statische Eigenschaften, Superglobals, Globals, Puffer und Handler wieder her. Vier Registries des Kernels werden absichtlich
 behalten (`expVelocity::DEFAULT_KEEP_GLOBALS`); `[ApplicationSettings] KeepGlobals[]` fügt Namen nur für eine globale Variable hinzu, die
 einmal durch `include_once` gefüllt wird. Behalten Sie nichts anderes: Eine globale Variable mit Anfragebezug, die zwischen Anfragen
@@ -181,5 +181,5 @@ er Verbindungen annimmt und keine beantwortet.
 - [Velocity für Hoster](velocity-fuer-hoster.md)
 - [Speicher, CPU und Festplatte bemessen](../grundlagen/speicher-cpu-und-festplatte-dimensionieren.md)
 - [Eine gehostete Website messen](../leistung/benchmark-einer-gehosteten-website.md)
-- [Spezifikation des Worker-Pools von Velocity](../../../../en/us/specifications/6.0/velocity-worker-pool.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Spezifikation des Worker-Pools von Velocity](../../../spezifikationen/6.0/velocity-worker-pool.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

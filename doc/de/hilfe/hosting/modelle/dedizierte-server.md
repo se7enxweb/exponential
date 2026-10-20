@@ -32,14 +32,14 @@ messen müssen.
 | Viele Kunden-Websites | ein PHP-FPM-Pool oder eine Velocity-Instanz pro Website, jeweils als eigener Benutzer | Abschottung; faire Aufteilung von Speicher und CPU |
 
 Ein dedizierter Server ist Stufe 1, 2 oder 3 nach der Distribution, die Sie installieren, genau wie eine virtuelle Maschine
-([Betriebssystemunterstützung](../../../../en/us/help/os-support.md#the-four-tiers)). Der eigene Entwicklungsserver des Projekts ist eine
+([Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md#die-vier-stufen)). Der eigene Entwicklungsserver des Projekts ist eine
 Maschine mit AlmaLinux 9 und Plesk, die Apache mit PHP-FPM 8.5 und Exponential Velocity auf derselben Installation betreibt
-([Stufe 1](../../../../en/us/help/os-support.md#tier-1-tested-here)).
+([Stufe 1](../../betriebssystemunterstuetzung.md#stufe-1-hier-getestet)).
 
 ## Die Kerne nutzen: Worker und Instanzen
 
 Die Kapazität von Velocity wird in `settings/override/velocity.ini.append.php`, `[ServerSettings]` gesetzt
-([8.3.6](../../../../en/us/install/08-serving-the-site.md#836-workers-pool-size-the-dynamic-pool-and-the-zygote)):
+([8.3.6](../../../installation/08-die-website-ausliefern.md#836-worker-pool-größe-der-dynamische-pool-und-die-zygote)):
 
 | Einstellung | Mitgeliefert | Bedeutung |
 |---|---|---|
@@ -76,7 +76,7 @@ Mit Apache oder nginx und PHP-FPM übernehmen die Prozesseinstellungen des PHP-F
 Ein Worker eines vollständigen Exponential kostet etwa 10 bis 11 MB eigenen Speicher (gemessen als PSS auf 12 Kernen und
 PHP 8.5); der gemeinsame Teil, etwa 47 MB, wird einmal bezahlt. Beurteilen Sie den Speicher nach PSS oder privatem Speicher,
 nie nach RSS, das jede gemeinsame Seite einmal pro Worker zählt und einen Pool um ein Vielfaches überschätzt
-([8.3.6](../../../../en/us/install/08-serving-the-site.md#836-workers-pool-size-the-dynamic-pool-and-the-zygote)).
+([8.3.6](../../../installation/08-die-website-ausliefern.md#836-worker-pool-größe-der-dynamische-pool-und-die-zygote)).
 
 Für einen dedizierten Server heißt das: Ein großer Pool ist im Speicher günstig; die Grenzen kommen von CPU, Datenbank und
 Caches. Das Kontrollzentrum von Velocity zeigt den Speicher als PSS
@@ -84,7 +84,7 @@ Caches. Das Kontrollzentrum von Velocity zeigt den Speicher als PSS
 
 Worker werden außerdem von selbst ersetzt nach `maxRequests` (1000), wenn der Heap `workerMemoryCeiling` überschreitet,
 oder wenn eine Anfrage länger als `requestTimeout` läuft (30 Sekunden, der Client erhält 504). Das sind Einstellungen der
-Engine ([Worker-Pool von Velocity](../../../../en/us/specifications/6.0/velocity-worker-pool.md)).
+Engine ([Worker-Pool von Velocity](../../../spezifikationen/6.0/velocity-worker-pool.md)).
 
 ## Die Datenbank auf einem dedizierten Server
 
@@ -95,7 +95,7 @@ Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit mögli
   einer Warteschlange. Es ist eine vollwertige Produktionsdatenbank für eine Maschine. Rechnen Sie mit bis zu 64 MB
   Seitencache pro Prozess, der die Datenbank geöffnet hat, wenn Sie den Speicher für einen großen Worker-Pool bemessen
   (`SQLitePragmas[]=cache_size=-16384` senkt ihn auf 16 MB)
-  ([Leistung und Skalierung](../../../../en/us/help/database-support.md#performance-and-scaling)).
+  ([Leistung und Skalierung](../../datenbankunterstuetzung.md#performance-und-skalierung)).
 - **2. PostgreSQL** (und 4. MariaDB, 6. MySQL) skalieren Schreibvorgänge mit Sperren auf Zeilenebene; unter Velocity hält
   jeder Worker seine Verbindung, sodass der Datenbankserver so viele Verbindungen annehmen muss, wie es Worker über alle
   Instanzen gibt.
@@ -109,7 +109,7 @@ antworten zuerst ([Cache-Schichten](../leistung/cache-schichten.md)).
 Für viele Kunden auf einem dedizierten Server folgen Sie der Regel zur Abschottung aus der `README.md` im Wurzelverzeichnis:
 Betreiben Sie eine Velocity-Instanz pro Website hinter einem Proxy, jede als eigener Benutzer des Betriebssystems, oder
 nutzen Sie einen klassischen Server mit einem PHP-FPM-Pool pro Website
-([8.1](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table)). Eine Exponential-Installation mit mehreren
+([8.1](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)). Eine Exponential-Installation mit mehreren
 Siteaccesses ist keine Grenze zwischen Kunden ([Trennung von Mandanten](../sicherheit/trennung-von-mandanten.md)).
 
 Jede Website hat dann ihr eigenes `var/`, ihre eigenen Cron-Zeilen in der Crontab ihres eigenen Benutzers und ihre eigenen
@@ -118,7 +118,7 @@ Backups.
 ## Messen, bevor Sie kaufen
 
 Das Installationsbuch nennt wenige harte Zahlen und erfindet keine weiteren
-([2.10 Arbeitsspeicher, CPU und Festplatte](../../../../en/us/install/02-requirements.md#210-memory-cpu-and-disk)). Messen Sie eine
+([2.10 Arbeitsspeicher, CPU und Festplatte](../../../installation/02-voraussetzungen.md#210-arbeitsspeicher-cpu-und-festplatte)). Messen Sie eine
 repräsentative Website auf der Hardware, die in Frage kommt:
 
 ```bash
@@ -145,4 +145,4 @@ Halten Sie zu jedem Ergebnis Hardware, PHP-Version, Engine, Worker-Einstellungen
 - [Speicher, CPU und Festplatte dimensionieren](../grundlagen/speicher-cpu-und-festplatte-dimensionieren.md)
 - [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md)
 - [Velocity-Webserver](../../../../en/us/features/6.0/velocity-web-server.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

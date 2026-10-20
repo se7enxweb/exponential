@@ -11,7 +11,7 @@ type: help
 
 Caches machen die Website schnell und halten sie unter Last stabil. Sie erklären auch die beiden häufigsten Fragen von
 Betreibern: „Warum ist die Website langsam?“ und „Warum erscheint meine Änderung nicht?“. Diese Seite beantwortet beide
-aus Sicht des Betreibers. Die technischen Seiten sind [Caches](../../../../en/us/guides/caches.md) und
+aus Sicht des Betreibers. Die technischen Seiten sind [Caches](../../../anleitungen/caches.md) und
 [Caching für Verfügbarkeit](../../../../en/us/help/businesses/reliability/caching-for-availability.md).
 
 ## Die Schichten in einer Tabelle
@@ -32,8 +32,8 @@ Ein Content Delivery Network oder ein cachender Proxy vor der Website ist option
 ## „Meine Änderung erscheint nicht“
 
 - **Warten Sie ein paar Sekunden und laden Sie neu.** Velocity beantwortet Seiten „für ein paar Sekunden aus seinem
-  eigenen Response-Cache“ ([Caches](../../../../en/us/guides/caches.md)).
-- **Prüfen Sie, dass die Version veröffentlicht wurde**, nicht als Entwurf liegen geblieben ist ([Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md)).
+  eigenen Response-Cache“ ([Caches](../../../anleitungen/caches.md)).
+- **Prüfen Sie, dass die Version veröffentlicht wurde**, nicht als Entwurf liegen geblieben ist ([Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md)).
 - **Versuchen Sie ein privates Fenster**, das den Cache Ihres Browsers ignoriert.
 - Erscheint sie dann immer noch nicht, nennen Sie Ihrem Administrator die Seitenadresse und die Uhrzeit, zu der Sie
   veröffentlicht haben. Caches zu leeren ist seine Aufgabe: „Leeren Sie das Kleinste, was das Problem behebt“, denn
@@ -54,16 +54,16 @@ Melden Sie es so, dass es sich messen lässt:
 Das Runbook für eine langsame Website beginnt mit „zuerst messen“ und trennt kalte von warmen Seiten, vor jeder
 Änderung ([Langsame Website](../../hosting/runbooks/langsame-website.md)). Nach einem Leeren oder einem Deployment „bezahlt der
 erste Besucher für das Rendern“; der Administrator kann die Seiten mit **Seiten vorladen** vorwärmen
-([Caches vorladen](../../../../en/us/guides/preloading-caches.md)).
+([Caches vorladen](../../../anleitungen/caches-vorwaermen.md)).
 
 ## Vor einem geschäftigen Tag
 
 Eine Aktion, eine Kampagne, ein Newsletter oder eine Erwähnung in der Presse kann die Zugriffe vervielfachen. Fragen Sie
 Ihren Hoster, Wochen im Voraus ([Planung für Lastspitzen](../../../../en/us/help/businesses/reliability/peak-traffic-planning.md)):
 
-- [ ] Haben Sie unsere wichtigsten Seiten unter Last gemessen ([Benchmarking](../../../../en/us/guides/benchmarking.md))?
+- [ ] Haben Sie unsere wichtigsten Seiten unter Last gemessen ([Benchmarking](../../../anleitungen/benchmarking.md))?
 - [ ] Sind die Caches eingeschaltet, die eingeschaltet sein sollten? **Setup > Systeminformationen** warnt, wenn das
-      View-Caching oder das Template-Caching ausgeschaltet ist ([Systeminformationen](../../../../en/us/guides/system-information.md)).
+      View-Caching oder das Template-Caching ausgeschaltet ist ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 - [ ] Werden Sie während der Spitze darauf verzichten, Caches zu leeren und Deployments durchzuführen?
 - [ ] Wer hat an diesem Tag Bereitschaft?
 
@@ -79,4 +79,4 @@ Ihren Hoster, Wochen im Voraus ([Planung für Lastspitzen](../../../../en/us/hel
 - [Statischer Cache und Response-Cache](../../../../en/us/help/businesses/reliability/static-and-response-cache.md)
 - [Velocity für Unternehmen](../../../../en/us/help/businesses/reliability/velocity-for-businesses.md)
 - [Caching-Schichten (für Hoster)](../../hosting/leistung/cache-schichten.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

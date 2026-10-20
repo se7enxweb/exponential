@@ -20165,7 +20165,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>A search is only counted when the siteaccess the visitor searches in has LogSearchStats=enabled in the [SearchSettings] block of its site.ini; it is disabled by default. What is listed below was recorded earlier.</source>
-        <translation>Et søk telles bare når nettstedstilgangen den besøkende søker i, har LogSearchStats=enabled i seksjonen [SearchSettings] i site.ini; det er deaktivert som standard. Det som vises nedenfor, ble registrert tidligere.</translation>
+        <translation>Et søk telles bare når nettstedstilgangen den besøkende søker i, har LogSearchStats=enabled i blokken [SearchSettings] i site.ini; det er deaktivert som standard. Det som vises nedenfor, ble registrert tidligere.</translation>
     </message>
     <message>
         <source>Searches are recorded on: %siteaccesses.</source>
@@ -21046,7 +21046,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>Block</source>
-        <translation>Seksjon</translation>
+        <translation>Blokk</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -21582,7 +21582,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>Blocks</source>
-        <translation>Seksjoner</translation>
+        <translation>Blokker</translation>
     </message>
     <message>
         <source>Arrays</source>
@@ -21650,7 +21650,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>Block, setting name or value. The values of secrets are never searched.</source>
-        <translation>Seksjon, innstillingsnavn eller verdi. Verdiene til hemmeligheter søkes aldri i.</translation>
+        <translation>Blokk, innstillingsnavn eller verdi. Verdiene til hemmeligheter søkes aldri i.</translation>
     </message>
     <message>
         <source>Search in</source>
@@ -59665,7 +59665,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>If the override is no longer wanted, remove its whole block from %file rather than only the MatchFile line.</source>
-        <translation>Hvis overstyringen ikke lenger er ønsket, fjerner du hele seksjonen dens fra %file, ikke bare MatchFile-linjen.</translation>
+        <translation>Hvis overstyringen ikke lenger er ønsket, fjerner du hele blokken dens fra %file, ikke bare MatchFile-linjen.</translation>
     </message>
     <message>
         <source>Clear the template caches: php bin/php/ezcache.php --clear-tag=template</source>
@@ -60233,7 +60233,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>the ini file has no such block</source>
-        <translation>INI-filen har ingen slik seksjon</translation>
+        <translation>INI-filen har ingen slik blokk</translation>
     </message>
     <message>
         <source>the value is not one of the words allowed</source>
@@ -60257,7 +60257,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>the registry has no block of its own</source>
-        <translation>registeret har ingen egen seksjon</translation>
+        <translation>registeret har ingen egen blokk</translation>
     </message>
     <message>
         <source>the registry has no Title</source>
@@ -65013,7 +65013,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>Rules are set in audit.ini ([AuditAlertSettings] Rules[] and the [AlertRule_*] blocks); write them with exp:ini.</source>
-        <translation>Regler angis i audit.ini ([AuditAlertSettings] Rules[] og seksjonene [AlertRule_*]); skriv dem med exp:ini.</translation>
+        <translation>Regler angis i audit.ini ([AuditAlertSettings] Rules[] og blokkene [AlertRule_*]); skriv dem med exp:ini.</translation>
     </message>
     <message>
         <source>Search</source>
@@ -74518,6 +74518,126 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>For organisasjoner og personer som driver sitt eget nettsted på Exponential: team, publisering, handel, vedlikehold, vekst og partnere.</translation>
+    </message>
+    <message>
+        <source>User manual</source>
+        <translation>Brukerhåndbok</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Ett spørsmål per side: hvem som kan gjøre det, trinnene, hva som kan gå galt og hvor du kan lese mer.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Prosjektfiler</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Prosjektfil</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Denne filen er en del av kildekoden til Exponential og distribueres sammen med den under %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Last ned DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-bøker</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Bygges fra de utgitte emnene hver gang ett av dem utgis, og lagres sammen med tidligere versjoner.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Størrelse</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Oppdatert</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Last ned alt som DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Hjelpeemner med forsinket gjennomgang</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Gjennomgangsdatoen er passert, eller emnet har vært til gjennomgang i mer enn %days dager uten endringer.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Forsinket</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Gjennomgangsdatoen %date ble passert for %days dager siden</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>Til gjennomgang i %days dager uten endringer</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Rediger</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Sett status</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown av %count forsinkede emner vises. ./console exp:help:content review viser alle.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Før du begynner</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Trinn</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Hva du gjør videre</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Betingelse</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Årsak</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Løsning</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Hjelpestart</translation>
     </message>
 </context>
 </TS>

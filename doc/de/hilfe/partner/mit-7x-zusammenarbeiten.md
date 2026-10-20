@@ -16,7 +16,7 @@ Vertrieb. 7x betreibt das Partnerprogramm und leitet die Entwicklung von Exponen
 ## Wer 7x ist, in einem Absatz
 
 7x beschreibt sich als „ein reaktionsschnelles nordamerikanisches Unternehmen für Webdesign, Support, Entwicklung und Website-Hosting“ und als „Integratoren für Enterprise Content Management, die das Enterprise-Content-Management-System Exponential einführen“ (<https://se7enx.com/about>). Es hieß früher Brookins Consulting und arbeitet seit ihren frühen Jahren
-mit dieser Codebasis. Die ganze Geschichte: [Wer ist 7x?](../../../en/us/help/who-is-7x.md).
+mit dieser Codebasis. Die ganze Geschichte: [Wer ist 7x?](../wer-ist-7x.md).
 
 ## Was 7x Partnern bietet
 
@@ -56,5 +56,5 @@ mit dieser Codebasis. Die ganze Geschichte: [Wer ist 7x?](../../../en/us/help/wh
 
 - [Mit der Exponential Foundation zusammenarbeiten](mit-der-foundation-zusammenarbeiten.md)
 - [Kommunikationskanäle für Partner](kommunikationskanaele.md)
-- [Wer ist 7x?](../../../en/us/help/who-is-7x.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wer ist 7x?](../wer-ist-7x.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -35,7 +35,7 @@ listet sie in der Reihenfolge auf, in der Sie sie brauchen.
 |---|---|
 | Wird Webmin in der Dokumentation oder im Code genannt? | nein |
 | Welche Stufe? | keine: es ist nicht eingeordnet |
-| Was entscheidet stattdessen über die Unterstützung? | das Betriebssystem und der Webserver darunter, die in Stufen eingeordnet sind ([Betriebssystemunterstützung](../../../../en/us/help/os-support.md)) |
+| Was entscheidet stattdessen über die Unterstützung? | das Betriebssystem und der Webserver darunter, die in Stufen eingeordnet sind ([Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)) |
 
 Wenn die Distribution darunter Stufe 1 oder 2 ist (zum Beispiel AlmaLinux 9, Red Hat Enterprise Linux 9 und 10, Debian 12 und 13,
 Ubuntu 22.04 und 24.04) und der Webserver Apache mit PHP-FPM (Stufe 1) oder nginx mit PHP-FPM (Stufe 2), ist der Stack, den
@@ -45,19 +45,19 @@ Exponential sieht, ein eingeordneter; nur die Verwaltungsoberfläche obendrauf i
 
 | Aufgabe | Wo das Buch sie beschreibt |
 |---|---|
-| PHP-Pakete je Distribution | [2.9 Hinweise zu Betriebssystemen](../../../../en/us/install/02-requirements.md#29-operating-system-notes) |
-| `php.ini`-Werte | [2.5](../../../../en/us/install/02-requirements.md#25-phpini-settings) |
-| Virtueller Host für Apache mit PHP-FPM | [8.5.1 Schritt für Schritt](../../../../en/us/install/08-serving-the-site.md#851-step-by-step) |
-| Server-Block für nginx (abgeleitet, nicht mitgeliefert) | [8.6](../../../../en/us/install/08-serving-the-site.md#86-nginx-with-php-fpm) |
-| Einstellungen und Neuladen von PHP-FPM | [8.5.2](../../../../en/us/install/08-serving-the-site.md#852-php-fpm) |
-| Velocity, mit einer systemd-Unit | [8.3](../../../../en/us/install/08-serving-the-site.md#83-exponential-velocity-the-recommended-way), [8.3.11](../../../../en/us/install/08-serving-the-site.md#8311-running-velocity-as-a-service) |
-| Dateiberechtigungen und Eigentum | [8.7](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership) |
-| Datenbanken: Datenbank und Benutzer anlegen | [Kapitel 9](../../../../en/us/install/09-databases.md) |
-| Crontab | [10.3 Cronjobs](../../../../en/us/install/10-after-installing.md#103-cronjobs) |
-| HTTPS und Header | [13.9](../../../../en/us/install/13-security-hardening.md#139-security-headers-and-https) |
+| PHP-Pakete je Distribution | [2.9 Hinweise zu Betriebssystemen](../../../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen) |
+| `php.ini`-Werte | [2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini) |
+| Virtueller Host für Apache mit PHP-FPM | [8.5.1 Schritt für Schritt](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt) |
+| Server-Block für nginx (abgeleitet, nicht mitgeliefert) | [8.6](../../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm) |
+| Einstellungen und Neuladen von PHP-FPM | [8.5.2](../../../installation/08-die-website-ausliefern.md#852-php-fpm) |
+| Velocity, mit einer systemd-Unit | [8.3](../../../installation/08-die-website-ausliefern.md#83-exponential-velocity-der-empfohlene-weg), [8.3.11](../../../installation/08-die-website-ausliefern.md#8311-velocity-als-dienst-betreiben) |
+| Dateiberechtigungen und Eigentum | [8.7](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer) |
+| Datenbanken: Datenbank und Benutzer anlegen | [Kapitel 9](../../../installation/09-datenbanken.md) |
+| Crontab | [10.3 Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs) |
+| HTTPS und Header | [13.9](../../../installation/13-sicherheitshaertung.md#139-sicherheits-header-und-https) |
 
 Auf einem solchen Server haben Sie außerdem die volle Wahl der Engines: Exponential Velocity, für jede Phase empfohlen, braucht keinen
-getrennten Webserver und liefert HTTPS selbst aus ([8.1](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table)).
+getrennten Webserver und liefert HTTPS selbst aus ([8.1](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)).
 
 ## Reihenfolge der Arbeit
 
@@ -65,8 +65,8 @@ getrennten Webserver und liefert HTTPS selbst aus ([8.1](../../../../en/us/insta
 2. **Datenbank**, in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard, kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
    5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich. Legen Sie die Datenbank und
    ihren Benutzer vor der Installation an ([Datenbanken und Benutzer](datenbanken-und-benutzer.md)).
-3. **Code**: `git clone` und `composer install`, als Benutzer der Website ([Kapitel 3](../../../../en/us/install/03-getting-the-code.md)).
-4. **Installieren**: `exp:install`, der Kickstarter oder der Setup-Assistent ([Kapitel 4](../../../../en/us/install/04-choosing-an-install-method.md)).
+3. **Code**: `git clone` und `composer install`, als Benutzer der Website ([Kapitel 3](../../../installation/03-den-code-beschaffen.md)).
+4. **Installieren**: `exp:install`, der Kickstarter oder der Setup-Assistent ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md)).
 5. **Ausliefern**: Velocity mit einem Startdienst, oder Apache/nginx mit einem PHP-FPM-Pool, der als Benutzer der Website läuft.
 6. **Cron**: Zeilen für `runcronjobs.php` in der Crontab des Benutzers der Website.
 7. **HTTPS**: ein Zertifikat für jeden Namen; HTTP umleiten; HSTS, sobald alles funktioniert.
@@ -79,7 +79,7 @@ php bin/php/console exp:install --dry-run
 ```
 
 `exp:install --dry-run` prüft Konfiguration und Pakete und schreibt nichts
-([4.6](../../../../en/us/install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)).
+([4.6](../../../installation/04-installationsweg-waehlen.md#46-unbeaufsichtigte-installationen-ci-und-container)).
 
 ## Was eine Verwaltungsoberfläche nicht rückgängig machen darf
 
@@ -88,15 +88,15 @@ Exponential schützen Sie diese:
 
 | Einstellung | Warum |
 |---|---|
-| Die Rewrite-Regeln (`.htaccess` oder der nginx-Block) | sie entscheiden, welche Dateien ausgeliefert werden; ohne sie liegen `settings/*.ini` und die SQLite-Datenbank offen ([13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out)) |
-| Der `user` des PHP-FPM-Pools | ein Benutzer schreibt `var/` ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)) |
+| Die Rewrite-Regeln (`.htaccess` oder der nginx-Block) | sie entscheiden, welche Dateien ausgeliefert werden; ohne sie liegen `settings/*.ini` und die SQLite-Datenbank offen ([13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf)) |
+| Der `user` des PHP-FPM-Pools | ein Benutzer schreibt `var/` ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)) |
 | `AllowOverride` für den Document Root (Apache) | `.htaccess` muss gelesen werden |
 | Die Crontab-Zeilen des Benutzers der Website | geplantes Veröffentlichen, Benachrichtigungen, Aufräumen |
 | Firewall-Regeln für die Ports von Velocity, wenn Besucher Velocity direkt erreichen | fügen Sie den Port mit dem Werkzeug hinzu, dem der Regelsatz auf der Maschine gehört ([FrankenPHP](../../../../en/us/bc/6.0/frankenphp.md)) |
 
 > **Tipp**
 > Führen Sie nach jeder Konfigurationsänderung über eine Oberfläche erneut die Prüfung auf offengelegte Dateien aus
-> [13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out) aus. Sie dauert Sekunden und fängt
+> [13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf) aus. Sie dauert Sekunden und fängt
 > den gefährlichsten Rückschritt ab.
 
 ## Ein Testplan
@@ -123,4 +123,4 @@ Exponential schützen Sie diese:
 - [Control Panels: Überblick](README.md), [ISPConfig](ispconfig.md)
 - [VPS-Hosting](../modelle/vps-hosting.md), [Dedizierte Server](../modelle/dedizierte-server.md)
 - [Checkliste: neuer Server](../checklisten/checkliste-fuer-einen-neuen-server.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

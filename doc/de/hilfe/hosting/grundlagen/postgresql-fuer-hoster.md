@@ -13,8 +13,8 @@ Diese Seite ist für Systemadministratoren bei einem Hosting-Anbieter, die Postg
 bereitstellen. Sie beantwortet: welche PostgreSQL-Versionen Sie betreiben, wie Sie die Datenbank und den Benutzer jeder
 Website so anlegen, dass der Installer gelingt, was die Erweiterung `pgcrypto` damit zu tun hat und wie Sie sichern und
 Fehler suchen. PostgreSQL ist die zweite in der offiziellen Reihenfolge und der empfohlene Datenbankserver. Quellen:
-[Datenbankunterstützung](../../../../en/us/help/database-support.md#2-postgresql) und
-[Kapitel 9.4](../../../../en/us/install/09-databases.md#94-postgresql).
+[Datenbankunterstützung](../../datenbankunterstuetzung.md#2-postgresql) und
+[Kapitel 9.4](../../../installation/09-datenbanken.md#94-postgresql).
 
 ## Inhalt
 
@@ -34,7 +34,7 @@ Fehler suchen. PostgreSQL ist die zweite in der offiziellen Reihenfolge und der 
 Das Projekt nennt PostgreSQL den empfohlenen Datenbankserver: striktes SQL, Sperren auf Zeilenebene, eigene Replikation
 und Wiederherstellung zu einem Zeitpunkt, und ein Datenbank-Testjob in der CI des Projekts bei jedem Push
 (PostgreSQL 15). Es ist die erste Wahl, wenn eine Website einen Datenbankserver braucht, zum Beispiel wenn sich mehrere
-Webserver eine Datenbank teilen ([Datenbankunterstützung](../../../../en/us/help/database-support.md#the-supported-databases-in-order)).
+Webserver eine Datenbank teilen ([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)).
 
 ## Versionen und Erweiterung
 
@@ -43,7 +43,7 @@ Webserver eine Datenbank teilen ([Datenbankunterstützung](../../../../en/us/hel
 | Untergrenze des Assistenten | 8.0 | `eZSetupDatabaseMap()` in `kernel/setup/ezsetupcommon.php` |
 | Praktisches Minimum | **13** | der Installer legt `pgcrypto` an, ab PostgreSQL 13 eine vertrauenswürdige Erweiterung |
 | Ab 15 | der Benutzer der Website muss Eigentümer der Datenbank sein | PostgreSQL lässt andere Benutzer keine Tabellen mehr in `public` anlegen |
-| Funktionierend gesehen | 13.23 auf dem Entwicklungsserver; 15 in der CI | [Versionen](../../../../en/us/help/database-support.md#versions-checked-against-the-code) |
+| Funktionierend gesehen | 13.23 auf dem Entwicklungsserver; 15 in der CI | [Versionen](../../datenbankunterstuetzung.md#versionen-am-code-überprüft) |
 | PHP-Erweiterung | `pgsql` (`php-pgsql`, `php<version>-pgsql`) | |
 
 Betreiben Sie ein Release, das Ihr Hersteller noch mit Sicherheitskorrekturen versorgt. Die Untergrenze des Assistenten
@@ -133,7 +133,7 @@ pg_restore -U <customer> -d <customer> --clean <customer>.dump
 
 Ein vollständiges Backup enthält außerdem `var/storage`, `settings/override` und `settings/siteaccess`. Schalten Sie für
 eine Wiederherstellung den Wartungsmodus ein, und leeren Sie danach jeden Cache
-([Backup und Wiederherstellung](../../../../en/us/help/database-support.md#backup-and-restore)). Wiederherstellung zu einem Zeitpunkt und
+([Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung)). Wiederherstellung zu einem Zeitpunkt und
 Replikation sind eigene Funktionen von PostgreSQL; konfigurieren Sie sie mit der Dokumentation von PostgreSQL.
 
 ## Probleme und ihre Ursachen
@@ -144,7 +144,7 @@ Replikation sind eigene Funktionen von PostgreSQL; konfigurieren Sie sie mit der
 | Verbindung abgelehnt | `listen_addresses` in `postgresql.conf` oder eine fehlende Zeile in `pg_hba.conf` |
 | Zugriff verweigert beim Anlegen von Tabellen | der Benutzer der Website ist nicht Eigentümer der Datenbank (PostgreSQL 15 und später) |
 | Doppelter Schlüssel beim Einfügen nach einem Import | Sequenzen hinter ihren Tabellen; korrigieren Sie sie wie oben |
-| Das SQL einer Erweiterung scheitert nur auf PostgreSQL | MySQL-Syntax wie Backticks als Anführungszeichen ([Hinweise für alle Engines](../../../../en/us/install/09-databases.md#98-cross-engine-notes)) |
+| Das SQL einer Erweiterung scheitert nur auf PostgreSQL | MySQL-Syntax wie Backticks als Anführungszeichen ([Hinweise für alle Engines](../../../installation/09-datenbanken.md#98-hinweise-über-engines-hinweg)) |
 | Keine Seite lädt, `error.log` meldet „Database implementation not supported“ | ein falsch geschriebenes `DatabaseImplementation` |
 
 ## Checkliste
@@ -158,8 +158,8 @@ Replikation sind eigene Funktionen von PostgreSQL; konfigurieren Sie sie mit der
 ## Verwandte Seiten
 
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md)
-- [Datenbankunterstützung: PostgreSQL](../../../../en/us/help/database-support.md#2-postgresql)
-- [Kapitel 9.4: PostgreSQL](../../../../en/us/install/09-databases.md#94-postgresql)
+- [Datenbankunterstützung: PostgreSQL](../../datenbankunterstuetzung.md#2-postgresql)
+- [Kapitel 9.4: PostgreSQL](../../../installation/09-datenbanken.md#94-postgresql)
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
 - [Mehrere Web-Knoten](../betrieb/mehrere-web-knoten.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

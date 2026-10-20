@@ -49,7 +49,7 @@ enthält.
 
 ### Engine
 
-[Kapitel 8](../../../../en/us/install/08-serving-the-site.md) empfiehlt Exponential Velocity für jede Phase und nennt FrankenPHP
+[Kapitel 8](../../../installation/08-die-website-ausliefern.md) empfiehlt Exponential Velocity für jede Phase und nennt FrankenPHP
 eine produktionsreife Alternative. Velocity ist ein lang laufender Prozess; auf Shared Hosting, das lang laufende
 Prozesse verbietet, nutzen Tarife stattdessen Apache oder nginx mit PHP-FPM. Eine Tariffamilie kann sich daher an dieser
 Linie teilen:
@@ -62,7 +62,7 @@ Details: [Einen Webserver wählen](../server/einen-webserver-waehlen.md), [Veloc
 ### Datenbank
 
 SQLite 3 ist der Standard und mit dem Treiber, den Exponential mitliefert, eine vollwertige Produktionsdatenbank für eine
-Website, die von einer Maschine ausgeliefert wird ([Datenbankunterstützung](../../../../en/us/help/database-support.md#1-sqlite-3-the-default)).
+Website, die von einer Maschine ausgeliefert wird ([Datenbankunterstützung](../../datenbankunterstuetzung.md#1-sqlite-3-der-standard)).
 Es braucht keinen Datenbankserver und kostet einen Hoster daher nichts zusätzlich. Ein Tarif, der mehrere Web-Knoten
 verspricht, braucht einen Datenbankserver, zuerst PostgreSQL
 ([Datenbanken in der offiziellen Reihenfolge](../grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md)).
@@ -70,7 +70,7 @@ verspricht, braucht einen Datenbankserver, zuerst PostgreSQL
 ### Speicher und Backups
 
 Ein vollständiges Backup besteht aus der Datenbank und den Dateien: `var/storage`, `settings/override` und
-`settings/siteaccess` ([Datenbankunterstützung](../../../../en/us/help/database-support.md#backup-and-restore)). Bemessen Sie den
+`settings/siteaccess` ([Datenbankunterstützung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung)). Bemessen Sie den
 Backup-Speicher eines Tarifs nach diesen Verzeichnissen, nicht nach der ganzen Installation; den Code selbst können Sie
 erneut aus Git oder Composer holen. Siehe [Was gesichert werden muss](../betrieb/backups-was-gesichert-werden-muss.md).
 
@@ -83,7 +83,7 @@ Ebene des Betriebssystems abgeschottet sein müssen. Siehe [Trennung von Mandant
 ## Grenzen aus Messungen festlegen
 
 Das Installationsbuch nennt wenige harte Zahlen und sagt das auch: Die Dokumentation nennt wenige harte Zahlen, und das
-Buch erfindet keine weiteren ([2.10](../../../../en/us/install/02-requirements.md#210-memory-cpu-and-disk)). Was es nennt:
+Buch erfindet keine weiteren ([2.10](../../../installation/02-voraussetzungen.md#210-arbeitsspeicher-cpu-und-festplatte)). Was es nennt:
 
 | Element | Wert | Quelle |
 |---|---|---|
@@ -162,7 +162,7 @@ Not included:         <list, for example custom development>
 - **Velocity auf einer Plattform anbieten, die lang laufende Prozesse beendet.** Prüfen Sie es, bevor Sie es verkaufen.
 - **Kunden in einem PHP-FPM-Pool mischen.** Geben Sie jeder Website einen eigenen Systembenutzer und Pool.
 - **Einen Tarif nach dem alten Produktnamen benennen.** Das Produkt heißt Exponential; siehe
-  [Marken- und Namensregeln](../../../../en/us/help/business/brand-and-naming-rules.md).
+  [Marken- und Namensregeln](../../geschaeft/marken-und-namensregeln.md).
 
 ## Verwandte Seiten
 
@@ -171,4 +171,4 @@ Not included:         <list, for example custom development>
 - [Abrechnungs- und Messoptionen](abrechnungs-und-messoptionen.md)
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
 - [Speicher, CPU und Festplatte dimensionieren](../grundlagen/speicher-cpu-und-festplatte-dimensionieren.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

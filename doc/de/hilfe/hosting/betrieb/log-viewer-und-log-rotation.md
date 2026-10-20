@@ -72,7 +72,7 @@ im Audit festgehalten.
 ## Die Zeilen einer Anfrage finden
 
 Eine Fehlerseite zeigt eine Referenz wie `ERR-0123456789`, und dieselbe Referenz steht in `error.log`
-([Einen Fehler über seine Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md)):
+([Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)):
 
 ![Die Übersicht der Logdateien: aktuelle Fehler und Warnungen, über Dateien hinweg gruppiert](../../../../en/us/help/images/hosting/log-digest.webp)
 
@@ -101,7 +101,7 @@ LogPath[webserver-error]=/var/www/vhosts/<domain>/logs/error_log
 Die Pfade oben sind die eines Plesk-Servers; verwenden Sie die Pfade Ihres Panels oder Ihres virtuellen Hosts. So konfigurierte
 Logs werden von Exponential nie rotiert oder bereinigt: Das Programm, das sie schreibt, ist für ihre Rotation zuständig.
 Velocity schreibt seine eigenen Zugriffs- und Fehlerlogs unter `var/vc/qbix/log/` und rotiert sie nach Datum
-([8.3.12 Logs](../../../../en/us/install/08-serving-the-site.md#8312-logs)).
+([8.3.12 Logs](../../../installation/08-die-website-ausliefern.md#8312-logs)).
 
 ## Dasselbe aus einer Shell
 
@@ -162,7 +162,7 @@ Prüfprotokoll festgehalten (`system.log.rotate`, `system.log.delete`). Für ein
 Wenn stattdessen `logrotate` des Systems `var/log` verwaltet, setzen Sie `LogFileRotateCount=0`, damit der Kernel nicht
 zusätzlich rotiert, und nutzen Sie dort `copytruncate` oder `create <mode> <owner> <group>`. Ihre eigenen Cron-Ausgabedateien
 (`cron-*.log`) brauchen immer logrotate, da der Kernel sie nicht schreibt
-([10.10](../../../../en/us/install/10-after-installing.md#1010-logs-and-log-rotation)).
+([10.10](../../../installation/10-nach-der-installation.md#1010-logs-und-log-rotation)).
 
 > **Warnung**
 > Lassen Sie `[DebugSettings] DebugOutput=enabled` in der Produktion nie eingeschaltet: Es zeigt Besuchern Interna und schreibt
@@ -186,4 +186,4 @@ zusätzlich rotiert, und nutzen Sie dort `copytruncate` oder `create <mode> <own
 - [Festplatte voll](../runbooks/festplatte-voll.md) (Runbook)
 - [Aufbewahrung von Logs und Daten](../sicherheit/aufbewahrung-von-logs-und-daten.md)
 - [Der Log-Viewer](../../../../en/us/features/6.0/log-viewer.md) (Referenz der Funktion)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

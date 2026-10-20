@@ -27,7 +27,7 @@ Steuerungsmöglichkeiten, die es gibt.
 | Sie sagen | Antwort | Quelle |
 |---|---|---|
 | „Die KI veröffentlicht falsche Inhalte.“ | Sie schreibt nur Entwürfe und veröffentlicht nie selbst; ein Mensch veröffentlicht, und Workflows gelten weiterhin | [expai, Kurz gesagt](../../../en/us/features/6.0/extensions/expai.md#in-short), [Für Redakteure](../../../en/us/features/6.0/extensions/expai.md#for-editors) |
-| „Sie gibt unsere Daten preis.“ | Sie sendet nichts, bis ein Anbieterschlüssel hinzugefügt wird; Sie wählen die Region (USA, EU) oder ein lokales Modell | [Exponential Intelligence](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-intelligence), [Für Administratoren](../../../en/us/features/6.0/extensions/expai.md#for-administrators) |
+| „Sie gibt unsere Daten preis.“ | Sie sendet nichts, bis ein Anbieterschlüssel hinzugefügt wird; Sie wählen die Region (USA, EU) oder ein lokales Modell | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence), [Für Administratoren](../../../en/us/features/6.0/extensions/expai.md#for-administrators) |
 | „Wir wollen überhaupt keine KI.“ | Es gibt einen Hauptschalter, auch pro Siteaccess | [Für Administratoren](../../../en/us/features/6.0/extensions/expai.md#for-administrators) |
 | „Die Kosten laufen aus dem Ruder.“ | Die Nutzung wird protokolliert, mit Grenzen pro Benutzer, Tag, Monat, Website und Anbieter sowie mit Budgets | ebenda |
 | „Niemand wird wissen, was die KI getan hat.“ | Jede Anfrage, jeder Entwurf und jede Zustandsänderung eines Entwurfs ist ein Ereignis im Prüfprotokoll; Prompts, Antworten und Schlüssel werden nie aufgezeichnet | ebenda |
@@ -78,6 +78,6 @@ the job queue. It always stops at a draft so a human publishes. (link)
 ## Verwandte Seiten
 
 - [Gesprächspunkte: Exponential Intelligence](gespraechspunkte-exponential-intelligence.md)
-- [Mit Einwänden umgehen, Exponential Intelligence und Datenschutz](../../../en/us/help/business/objection-handling.md#exponential-intelligence-and-data-protection)
+- [Mit Einwänden umgehen, Exponential Intelligence und Datenschutz](../geschaeft/einwandbehandlung.md#exponential-intelligence-und-datenschutz)
 - [Einwände als Fürsprecher beantworten](einwaende-beantworten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

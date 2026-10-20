@@ -159,7 +159,7 @@ Server steht in [Was auf dem Paketserver liegt](../paketserver/was-auf-dem-paket
 - [Seitenpakete: hier beginnen](../README.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md): Sie haben ein eigenes gebaut? 7x und die Exponential Foundation ermutigen
   Sie ausdrücklich, es per Pull Request einzureichen.
-- [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../../en/us/install/04-choosing-an-install-method.md#43-site-packages-what-is-installed)
+- [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird)
 - [Seitenpakete für Hoster](../../hosting/bereitstellung/seitenpakete-fuer-hoster.md)
 - [Seitenpakete und die mitgelieferten Themes](../../../../en/us/help/creators/website-creators/site-packages-and-shipped-themes.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

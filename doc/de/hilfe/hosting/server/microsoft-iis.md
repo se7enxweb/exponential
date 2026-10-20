@@ -29,16 +29,16 @@ nach.
 | Quelle | Aussage |
 |---|---|
 | `README.md`, Abschnitt „The traditional options“ | Microsoft IIS schreibt mit dem URL Rewrite Module (`web.config`) um, für Windows-Hosting |
-| [Unterstützung von Betriebssystemen, Webserver](../../../../en/us/help/os-support.md#web-servers) | Microsoft IIS mit FastCGI: **Stufe 3**; das Modul URL Rewrite (`web.config`); die Anfragebehandlung des Kernels hat Tests für Servervariablen von IIS 7 |
-| [Unterstützung von Betriebssystemen, PHP-SAPIs](../../../../en/us/help/os-support.md#php-sapis) | CGI / FastCGI (`cgi-fcgi`) ist die SAPI für IIS unter Windows |
-| [Unterstützung von Betriebssystemen, Windows](../../../../en/us/help/os-support.md#windows) | nutzen Sie die offiziellen PHP-8-Builds für Windows (x64, nicht threadsicher für FastCGI) mit Apache oder IIS |
+| [Unterstützung von Betriebssystemen, Webserver](../../betriebssystemunterstuetzung.md#webserver) | Microsoft IIS mit FastCGI: **Stufe 3**; das Modul URL Rewrite (`web.config`); die Anfragebehandlung des Kernels hat Tests für Servervariablen von IIS 7 |
+| [Unterstützung von Betriebssystemen, PHP-SAPIs](../../betriebssystemunterstuetzung.md#php-sapis) | CGI / FastCGI (`cgi-fcgi`) ist die SAPI für IIS unter Windows |
+| [Unterstützung von Betriebssystemen, Windows](../../betriebssystemunterstuetzung.md#windows) | nutzen Sie die offiziellen PHP-8-Builds für Windows (x64, nicht threadsicher für FastCGI) mit Apache oder IIS |
 
 Mit Exponential wird keine `web.config` ausgeliefert. Stufe 3 bedeutet: sollte funktionieren, hier nicht getestet
-([Die vier Stufen](../../../../en/us/help/os-support.md#the-four-tiers)).
+([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)).
 
 ## Was Windows ändert
 
-Aus [Unterstützung von Betriebssystemen, Windows](../../../../en/us/help/os-support.md#windows):
+Aus [Unterstützung von Betriebssystemen, Windows](../../betriebssystemunterstuetzung.md#windows):
 
 - `pcntl` und `posix` gibt es unter Windows nicht. Asynchrones Veröffentlichen (`bin/php/ezasynchronouspublisher.php`) ist nicht
   verfügbar.
@@ -67,7 +67,7 @@ PHP 8. Testen Sie Ihren eigenen Stack.
 ## Nachzubildendes Routing
 
 Welchen Regelsatz Sie für IIS auch schreiben, er muss tun, was `.htaccess_root` tut
-([Kapitel 8, Wie eine Anfrage ausgeliefert wird](../../../../en/us/install/08-serving-the-site.md#82-how-a-request-is-served)):
+([Kapitel 8, Wie eine Anfrage ausgeliefert wird](../../../installation/08-die-website-ausliefern.md#82-wie-eine-anfrage-beantwortet-wird)):
 
 | Anfrage | Muss gehen an |
 |---|---|
@@ -94,9 +94,9 @@ Führen Sie die vier Prüfungen des Routings aus [Webserver und Engines](README.
 - Ein hochgeladenes Bild wird angezeigt, und eine hochgeladene Datei lässt sich über `content/download` herunterladen.
 - Die geplante Aufgabe, die `runcronjobs.php` ausführt, funktioniert mit dem PHP der Kommandozeile ([Cronjobs](../betrieb/cronjobs.md)).
 - PHP für Web und Kommandozeile hat dieselbe Version mit denselben Erweiterungen
-  ([Kapitel 2, PHP für Kommandozeile und Web](../../../../en/us/install/02-requirements.md#command-line-and-web-php)).
+  ([Kapitel 2, PHP für Kommandozeile und Web](../../../installation/02-voraussetzungen.md#php-auf-der-kommandozeile-und-im-web)).
 - 64-Bit-PHP: 32-Bit-PHP beschränkt eine Website auf 30 Sprachen
-  ([Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md#processor-architectures)).
+  ([Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#prozessorarchitekturen)).
 
 ## Alternativen auf Windows-Maschinen
 
@@ -117,6 +117,6 @@ Führen Sie die vier Prüfungen des Routings aus [Webserver und Engines](README.
 
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
 - [Betriebssysteme für Hoster](../grundlagen/betriebssysteme-fuer-hoster.md)
-- [Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md)
-- [Kapitel 8: Die Website ausliefern](../../../../en/us/install/08-serving-the-site.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
+- [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

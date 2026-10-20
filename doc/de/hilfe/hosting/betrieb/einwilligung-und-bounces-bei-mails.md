@@ -16,7 +16,7 @@ Unterdrückungsliste kommen und wie Anfragen zu personenbezogenen Daten behandel
 
 ![E-Mail-Einstellungen in Setup: Mailkategorien, Unterdrückungen und Einwilligungen](../../../../en/us/help/images/hosting/mail-preferences-status.webp)
 
-Die Anleitung für Administratoren ist [E-Mail-Einstellungen: einrichten und betreiben](../../../../en/us/guides/mail-preferences-administrator.md);
+Die Anleitung für Administratoren ist [E-Mail-Einstellungen: einrichten und betreiben](../../../anleitungen/mail-einstellungen-administrator.md);
 die Einstellungen stehen in `settings/mailpreferences.ini`. Transporte und Zustellbarkeit stehen auf
 [Mailzustellung](mailzustellung.md).
 
@@ -24,7 +24,7 @@ die Einstellungen stehen in `settings/mailpreferences.ini`. Transporte und Zuste
 > Diese Seite beschreibt, was die Software bereitstellt. Sie ist keine Rechtsberatung. Welche Mail eine Einwilligung braucht,
 > was eine Fußzeile sagen muss und wie lange Aufzeichnungen aufbewahrt werden, sind rechtliche Fragen; der Hoster und seine
 > Kunden müssen ihren eigenen rechtlichen Rat einholen. Das Projekt führt eine Checkliste der Regeln, die es berücksichtigt hat,
-> einschließlich ihrer Lücken: [Compliance der E-Mail-Einstellungen](../../../../en/us/specifications/6.0/mail-preferences-compliance.md).
+> einschließlich ihrer Lücken: [Compliance der E-Mail-Einstellungen](../../../spezifikationen/6.0/mail-einstellungen-compliance.md).
 
 ## Inhalt
 
@@ -182,4 +182,4 @@ mit dem Backup-Zeitraum zusammenspielen.
 - [Aufbewahrung von Logs und Daten](../sicherheit/aufbewahrung-von-logs-und-daten.md)
 - [Cronjobs](cronjobs.md)
 - [E-Mail-Einstellungen](../../../../en/us/features/6.0/mail-preferences.md) (was die Menschen auf einer Website sehen)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

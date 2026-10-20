@@ -187,5 +187,5 @@ und Systemen (`.DS_Store`, `.idea`, `.vscode`, `*~`, `*.swp`) und `node_modules`
 - [Klassische und JSON-Pakete](klassische-und-json-pakete.md)
 - [Ein Paket vor der Veröffentlichung prüfen](../anforderungen/ein-paket-vor-der-veroeffentlichung-pruefen.md)
 - [Mit build.sh neu bauen](../eigene/mit-build-sh-neu-bauen.md)
-- [Anleitung zu Paketen, 6. Ein Paket hochladen](../../../../en/us/guides/packages.md#6-uploading-a-package)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Anleitung zu Paketen, 6. Ein Paket hochladen](../../../anleitungen/pakete.md#6-ein-paket-hochladen)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

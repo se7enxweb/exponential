@@ -80,4 +80,4 @@ bis das echte wieder nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../.
 
 - [HTTPS-Zertifikate in Velocity](../server/https-zertifikate-in-velocity.md)
 - [Velocity startet nicht](velocity-startet-nicht.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -10,7 +10,7 @@ type: help
 # Runbook: Velocity startet nicht
 
 Für die Bereitschaft, wenn die Engine Exponential Velocity einer Website nicht startet oder startet und nicht antwortet. Die Meldungen und
-Abhilfen stammen aus [12.11 Velocity und der Webserver](../../../../en/us/install/12-troubleshooting.md#1211-velocity-and-the-web-server).
+Abhilfen stammen aus [12.11 Velocity und der Webserver](../../../installation/12-fehlerbehebung.md#1211-velocity-und-der-webserver).
 
 ## Inhalt
 
@@ -47,7 +47,7 @@ php bin/php/console exp:velocity config get ServerSettings Engine --allow-root-u
 
 | Meldung oder Symptom | Ursache | Abhilfe |
 |---|---|---|
-| `velocity: no server script at ...` | die Engine `qbix` braucht das Velocity-Paket, das nicht installiert ist | installieren Sie das Paket `se7enxweb/exponential-velocity` (PHP 8.1 oder später), wie [12.11](../../../../en/us/install/12-troubleshooting.md#1211-velocity-and-the-web-server) beschreibt |
+| `velocity: no server script at ...` | die Engine `qbix` braucht das Velocity-Paket, das nicht installiert ist | installieren Sie das Paket `se7enxweb/exponential-velocity` (PHP 8.1 oder später), wie [12.11](../../../installation/12-fehlerbehebung.md#1211-velocity-und-der-webserver) beschreibt |
 | `velocity: already running` | ein Server dieser Engine läuft bereits | `exp:velocity status`; `restart`, um Änderungen anzuwenden |
 | `velocity: port ... is already in use by another process` | ein anderes Programm oder eine andere Engine hält den Port | halten Sie die andere Engine an (`exp:velocity stop --engine=...`) oder ändern Sie `Port`/`HTTPSPort` mit `exp:velocity config set` |
 | `velocity: EnginePhar names an archive that does not exist` | `[ServerSettings] EnginePhar` zeigt auf ein Archiv, das nie gebaut oder entfernt wurde | `php bin/php/console exp:phar build` oder `exp:velocity config set ServerSettings EnginePhar disabled` |
@@ -55,7 +55,7 @@ php bin/php/console exp:velocity config get ServerSettings Engine --allow-root-u
 | eine fehlende PHP-Erweiterung in `console.log` | dem PHP der Kommandozeile fehlt `sockets`, `pcntl` oder `openssl` | `php bin/php/console exp:velocity ext check --allow-root-user` zeigt, was fehlt, `ext install-hint <ext>` den Installationsbefehl |
 | das PHP der Maschine ist 8.0 | Velocity braucht PHP 8.1 oder später | starten Sie es mit einer neueren PHP-Binärdatei, oder liefern Sie die Website mit PHP-FPM aus ([Einen Webserver wählen](../server/einen-webserver-waehlen.md)) |
 | HTTPS zeigt ein selbstsigniertes Zertifikat | das konfigurierte Zertifikat fehlt, ist abgelaufen oder passt nicht zu seinem Schlüssel | `exp:velocity ssl show`; korrigieren Sie `[HTTPSSettings] Certificate` und `Key` ([Ablauf von Zertifikaten](ablauf-von-zertifikaten.md)) |
-| Worker können nicht schreiben | Worker laufen als `[ServerSettings] User` und `Group` | setzen Sie sie oder korrigieren Sie das Eigentum; Worker laufen nie als root, sofern nicht `AllowRootWorkers=enabled` ([12.3](../../../../en/us/install/12-troubleshooting.md#123-permissions-and-ownership)) |
+| Worker können nicht schreiben | Worker laufen als `[ServerSettings] User` und `Group` | setzen Sie sie oder korrigieren Sie das Eigentum; Worker laufen nie als root, sofern nicht `AllowRootWorkers=enabled` ([12.3](../../../installation/12-fehlerbehebung.md#123-berechtigungen-und-eigentümerschaft)) |
 | es hat angehalten, und der Watchdog startet es nicht | `exp:velocity stop` oder `kill` hinterlässt `stopped.json`; der Watchdog lässt es dann absichtlich in Ruhe | `exp:velocity start`; `exp:velocity watchdog status` und `var/log/velocity-watchdog.log` sagen, was der Watchdog getan hat |
 
 Um die genaue Kommandozeile zu sehen, die der Server ausführen würde, ohne ihn zu starten:
@@ -91,4 +91,4 @@ den Server nicht unten lässt. Wenn ein Neustart nicht fertig wird:
 - [Velocity für Hoster](../server/velocity-fuer-hoster.md)
 - [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md)
 - [Website nicht erreichbar](website-nicht-erreichbar.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

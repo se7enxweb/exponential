@@ -178,4 +178,4 @@ installierte Website dieselben Adressen beantwortet wie die Quellseite. Siehe [D
 - [Installationselemente und Handler](../grundlagen/installationselemente-und-handler.md)
 - [Die Demo-Inhaltspakete von sevenx_multisite](../sevenx-multisite/die-demo-inhaltspakete.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -14,7 +14,7 @@ Systemadministratoren, die entscheiden, was Kunden dort tun dürfen. Sie beantwo
 von der PHP-Konfiguration einer Hosting-Plattform braucht, wie das Anhalten funktioniert, welche Teile es nie startet und wie
 Sie es einem Kunden übergeben.
 
-Das vollständige Benutzerhandbuch ist [Cronjobs: ausführen, planen und verfolgen](../../../../en/us/guides/cronjobs.md); die Referenz
+Das vollständige Benutzerhandbuch ist [Cronjobs: ausführen, planen und verfolgen](../../../anleitungen/cronjobs.md); die Referenz
 der Funktion ist [Cronjob-Konsole](../../../../en/us/features/6.0/cronjobs-console.md). Was die Teile tun, steht auf
 [Cronjobs](cronjobs.md).
 
@@ -127,7 +127,7 @@ nicht aus dem Browser starten darf.
 ## Dateien, die die Seite führt
 
 Unterhalb des var-Verzeichnisses des Siteaccess der Administration, in `cronjobs/`
-([Cronjobs, Abschnitt 14](../../../../en/us/guides/cronjobs.md#14-logs-and-the-files-the-page-keeps)):
+([Cronjobs, Abschnitt 14](../../../anleitungen/cronjobs.md#14-protokolle-und-die-dateien-die-die-seite-führt)):
 
 | Datei | Enthält |
 |---|---|
@@ -166,4 +166,4 @@ Sie die Logs pro Teil mit logrotate des Systems.
 - [PHP-Einstellungen für Exponential](../grundlagen/php-einstellungen-fuer-exponential.md)
 - [Cron und Shell-Zugang](../control-panels/cron-und-shell-zugang.md)
 - [Support-Stufen](../geschaeft/support-stufen-fuer-exponential-hosting.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

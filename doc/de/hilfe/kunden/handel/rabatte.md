@@ -85,7 +85,7 @@ Aus dem Kernel-Code, wie unter [Rabatte und Wunschzettel für Unternehmen](../..
 - Rabatte für nicht angemeldete Gäste (außer man gibt allen einen).
 
 Wenn Sie etwas davon brauchen, bitten Sie Ihren Partner um ein Angebot. Ein gängiger Ansatz ist ein Workflow-Ereignis,
-das vor der Bestätigungsseite eine negative Bestellposition hinzufügt ([Workflows](../../../../en/us/guides/workflows.md)).
+das vor der Bestätigungsseite eine negative Bestellposition hinzufügt ([Workflows](../../../anleitungen/workflows.md)).
 
 ## Verwandte Seiten
 
@@ -93,4 +93,4 @@ das vor der Bestätigungsseite eine negative Bestellposition hinzufügt ([Workfl
 - [Ihren Shop bewerben](../../../../en/us/help/businesses/stores/promoting-your-store.md)
 - [Kundenkonten](kundenkonten.md)
 - [Wunschzettel und Warenkörbe](wunschzettel-und-warenkoerbe.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

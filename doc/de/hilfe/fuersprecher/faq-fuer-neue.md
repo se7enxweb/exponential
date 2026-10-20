@@ -16,7 +16,7 @@ der Seite, die sie belegt. Prüfen Sie die Quelle, bevor Sie antworten: Fakten �
 
 | Frage | Antwort | Seite |
 |---|---|---|
-| Was ist Exponential? | Ein PHP-Anwendungsframework mit fortgeschrittener CMS-Funktionalität; seine beste Eigenschaft ist ein vollständig anpassbares Inhaltsmodell | [Exponential 6](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
+| Was ist Exponential? | Ein PHP-Anwendungsframework mit fortgeschrittener CMS-Funktionalität; seine beste Eigenschaft ist ein vollständig anpassbares Inhaltsmodell | [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
 | Ist es kostenlos? | Ja: Der Code steht unter der GNU GPL v2 oder später, die Dokumentation unter der GNU FDL | [Gesprächspunkte: Open Source](gespraechspunkte-open-source-und-lizenzierung.md) |
 | Wer macht es? | 7x leitet die Entwicklung; die Exponential Foundation, eine gemeinnützige Organisation, betreibt das Projekt | [7x und die Foundation](7x-und-die-foundation.md) |
 | Wird es gepflegt? | Fünfzehn Releases 6.0.x seit dem 1. Januar 2024; 6.0.15 ist in Entwicklung | [Lebt es noch?](einwand-lebt-es-noch.md) |
@@ -28,9 +28,9 @@ der Seite, die sie belegt. Prüfen Sie die Quelle, bevor Sie antworten: Fakten �
 | Frage | Antwort | Seite |
 |---|---|---|
 | Wie probiere ich es aus? | `./console exp:install`: eine vollständige Website auf SQLite mit einem Befehl | [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
-| Was braucht es? | PHP 8.0 oder später; eine Datenbank (SQLite braucht keinen Server) | [Betriebssystemunterstützung](../../../en/us/help/os-support.md), [Datenbankunterstützung](../../../en/us/help/database-support.md) |
+| Was braucht es? | PHP 8.0 oder später; eine Datenbank (SQLite braucht keinen Server) | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Welcher Webserver? | Velocity wird empfohlen; FrankenPHP oder Apache/nginx mit PHP-FPM funktionieren auch | [Velocity](../../../en/us/features/6.0/velocity-persistent-worker-server.md) |
-| Shared Hosting? | Möglich mit Apache oder LiteSpeed; Velocity meist nicht | [Container, Cloud und Hosting-Panels](../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels) |
+| Shared Hosting? | Möglich mit Apache oder LiteSpeed; Velocity meist nicht | [Container, Cloud und Hosting-Panels](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
 | Wird meine Sprache unterstützt? | 268 Locale-Dateien für Inhalte; 32 Übersetzungen der Administration, zehn davon vollständig | [Gesprächspunkte: Sprachen](gespraechspunkte-sprachen-und-rtl.md) |
 
 ## Hilfe bekommen und helfen
@@ -42,13 +42,13 @@ der Seite, die sie belegt. Prüfen Sie die Quelle, bevor Sie antworten: Fakten �
 | Ich habe einen Fehler gefunden | Nutzen Sie die Seite **Fehler melden** der Hilfe und den richtigen Tracker | [Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md) |
 | Ich habe ein Sicherheitsproblem gefunden | Vertraulich, wie SECURITY.md es beschreibt | [Sicherheitsmeldungen bleiben vertraulich](sicherheitsmeldungen-bleiben-vertraulich.md) |
 | Wie kann ich helfen? | Eine Frage beantworten, eine Hilfeseite korrigieren, übersetzen, Fehler melden | [Die Stufen der Fürsprache](die-stufen-der-fuersprache.md) |
-| Kann ich jemanden bezahlen, der meine Website baut? | Ja, jeden Anbieter; 7x ist einer davon | [Dienstleistungen und Hosting](../../../en/us/help/who-is-7x.md#services-and-hosting) |
+| Kann ich jemanden bezahlen, der meine Website baut? | Ja, jeden Anbieter; 7x ist einer davon | [Dienstleistungen und Hosting](../wer-ist-7x.md#dienstleistungen-und-hosting) |
 
-**Warum zeigt die Demo „Demo-Modus“ an?** Die öffentliche Demo veröffentlicht ihr Administratorpasswort und läuft im Demomodus, sodass niemand es ändern oder zurücksetzen kann und der nächste Besucher sich trotzdem anmelden kann. Sie wird alle paar Stunden aus dem aktuellen Code neu aufgebaut. [Häufige Fragen zum Demomodus](../../../en/us/help/demo-mode-faq.md).
+**Warum zeigt die Demo „Demo-Modus“ an?** Die öffentliche Demo veröffentlicht ihr Administratorpasswort und läuft im Demomodus, sodass niemand es ändern oder zurücksetzen kann und der nächste Besucher sich trotzdem anmelden kann. Sie wird alle paar Stunden aus dem aktuellen Code neu aufgebaut. [Häufige Fragen zum Demomodus](../demomodus-faq.md).
 
 ## Verwandte Seiten
 
 - [Neue willkommen heißen](neue-willkommen-heissen.md)
 - [Auf die richtige Hilfeseite verweisen](auf-die-richtige-hilfeseite-verweisen.md)
 - [Häufige Fragen von Fürsprechern](faq-fuer-fuersprecher.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

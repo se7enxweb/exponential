@@ -19,7 +19,7 @@ kennenlernen. Folgen Sie ihm neben dem Lesepfad des Typs jeder Website. Jeder Sc
 | 1 | [Betreiber mehrerer Websites: hier beginnen](mehrere-websites-hier-beginnen.md) | Betreiber, Website-Leitungen | Was geteilt wird und was pro Website gilt |
 | 2 | [Eine Installation, viele Websites](../../../../en/us/help/businesses/multisite/one-installation-many-sites.md) | Betreiber | Wie die Websites zusammenhängen |
 | 3 | [Rollen für Ihr Team](../alltag/rollen-fuer-ihr-team.md) | Betreiber | Leitungen und Redakteure pro Website |
-| 4 | [Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md) | Administrator | Eine Rolle auf den Teil einer Website beschränken |
+| 4 | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) | Administrator | Eine Rolle auf den Teil einer Website beschränken |
 | 5 | [Wer was macht](../partner-und-hoster/wer-was-macht.md) | Betreiber | Partner, Hoster und Ihr Team |
 
 ## Der erste Monat: gemeinsame Inhalte und Einstellungen
@@ -55,4 +55,4 @@ Lesen Sie die Schritte 1, 3, 6 und 12: was geteilt wird, Rollen pro Website, gem
 - [Betreiber mehrerer Websites: hier beginnen](mehrere-websites-hier-beginnen.md)
 - [Lesepfad für mehrsprachige Websites](lesepfad-mehrsprachige-websites.md)
 - [Lesepfad für Kunden](../lesepfad-fuer-kunden.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -64,8 +64,8 @@ Rückfallsprache hinzu, wenn sie in den gewählten Sprachen fehlt (`fallback_loc
 ./console exp:install --package=cjw_multisite --language=ger-DE --languages=eng-US
 ```
 
-`--language` und `--languages` sind in [Die Installation über die Konsole](../../../../en/us/install/07-console-install.md) beschrieben; der
-Kickstarter nutzt `[language_options] Primary` und `Languages[]` (siehe [Der Kickstarter](../../../../en/us/install/06-kickstarter.md)).
+`--language` und `--languages` sind in [Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md) beschrieben; der
+Kickstarter nutzt `[language_options] Primary` und `Languages[]` (siehe [Der Kickstarter](../../../installation/06-kickstarter.md)).
 
 ## Wie ein Übersetzungs-Siteaccess benannt wird
 
@@ -155,4 +155,4 @@ Siteaccesses löschen würde. Der Umschalter des Designs starter liest es.
 - [Siteaccesses und Sprachen von sevenx_multisite](../sevenx-multisite/siteaccesses-und-sprachen-von-sevenx-multisite.md)
 - [Übersetzungen und Sprachen](../../../../en/us/features/6.0/translations-and-languages.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

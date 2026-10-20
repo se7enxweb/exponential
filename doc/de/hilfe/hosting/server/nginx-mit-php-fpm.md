@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren bei Hosting-Unternehmen, die nginx betreiben und Exponential damit ausliefern wollen. Sie
 beantwortet: welche Konfiguration es für nginx gibt, wie der Server-Block aufgebaut ist, worauf Sie nach einem Upgrade achten und wie Sie
 belegen, dass das Routing stimmt. Die Quelle ist
-[Kapitel 8, nginx mit PHP-FPM](../../../../en/us/install/08-serving-the-site.md#86-nginx-with-php-fpm).
+[Kapitel 8, nginx mit PHP-FPM](../../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm).
 
 ## Inhalt
 
@@ -29,7 +29,7 @@ belegen, dass das Routing stimmt. Die Quelle ist
 **Nichts ausgeliefert; ein abgeleiteter Block dokumentiert.** Exponential liefert in seinem Repository keine Konfiguration für nginx aus.
 Der Server-Block in Kapitel 8 ist eine Übersetzung von `.htaccess_root` in nginx-Direktiven, Regel für Regel. Kapitel 8 sagt es deutlich:
 Testen Sie ihn auf Ihrer Website, bevor Sie sich darauf verlassen, und vergleichen Sie ihn nach jedem Upgrade mit `.htaccess_root`.
-[Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md#web-servers) führt nginx mit PHP-FPM als Stufe 2: funktioniert bekanntermaßen.
+[Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#webserver) führt nginx mit PHP-FPM als Stufe 2: funktioniert bekanntermaßen.
 
 > **Warnung**
 > Behandeln Sie den Block unten als Ausgangspunkt, für den Sie zuständig sind. Wenn ein neues Release `.htaccess_root` ändert, ändert sich
@@ -137,7 +137,7 @@ Aus Kapitel 8:
 Fügen Sie `listen 443 ssl;` (und `http2 on;` ab nginx 1.25.1), `ssl_certificate` und `ssl_certificate_key` hinzu, und einen eigenen
 `server` auf Port 80, der `301 https://$host$request_uri` zurückgibt. Prüfen Sie mit `nginx -t` und laden Sie mit
 `systemctl reload nginx` neu. Sicherheitsheader für statische Dateien: `add_header ... always;`
-([Kapitel 13](../../../../en/us/install/13-security-hardening.md)). Der Kernel sendet seine eigenen Sicherheitsheader auf Seiten
+([Kapitel 13](../../../installation/13-sicherheitshaertung.md)). Der Kernel sendet seine eigenen Sicherheitsheader auf Seiten
 (`site.ini [HTTPHeaderSettings] SecurityHeaders[]`).
 
 Zertifikate für viele Domains von Kunden: siehe [TLS und HTTPS](../sicherheit/tls-und-https.md).
@@ -187,5 +187,5 @@ Was schiefgehen kann:
 - [Apache mit PHP-FPM](apache-mit-php-fpm.md)
 - [Velocity neben Apache oder nginx](velocity-neben-apache-oder-nginx.md)
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
-- [Kapitel 8: Die Website ausliefern](../../../../en/us/install/08-serving-the-site.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

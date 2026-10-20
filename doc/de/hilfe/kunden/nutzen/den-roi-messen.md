@@ -37,10 +37,10 @@ Berichten, die niemand liest.
 | Zahl | Wo in Exponential | Quelle |
 |---|---|---|
 | Bestellungen, Umsatz, Kunden, abgebrochene Warenkörbe | Shop-Dashboard; Produkt-Statistiken pro Monat | [Shop-Dashboard und Bestellstatus](../../../../en/us/features/6.0/store-dashboard.md), [Shop-Berichte](../handel/shop-berichte.md) |
-| Formulareinsendungen | **Setup > Gesammelte Informationen**, mit CSV-Export | [Gesammelte Informationen](../../../../en/us/guides/collected-information.md) |
+| Formulareinsendungen | **Setup > Gesammelte Informationen**, mit CSV-Export | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 | Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | [cjw_newsletter](../../../../en/us/features/6.0/extensions/cjw_newsletter.md) |
 | Wonach Besucher suchen | Suchbegriffe werden gespeichert (`ezsearch_search_phrase`) | [Personenbezogene Daten in Exponential](../../../../en/us/help/businesses/security/personal-data-in-exponential.md) |
-| Veröffentlichte Inhalte | Versionen und Veröffentlichungshistorie der Inhalte | [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md) |
+| Veröffentlichte Inhalte | Versionen und Veröffentlichungshistorie der Inhalte | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) |
 | Kosten eines KI-Anbieters, falls genutzt | Das Dashboard von Exponential Intelligence zeigt Kosten, Tokens und Anfragen | `README.md`, „Exponential Intelligence“ |
 | Besucherzahlen | Nicht als Bericht eingebaut; ein Statistikwerkzeug | [Besucherstatistik und Analyse](../../../../en/us/help/creators/website-creators/statistics-and-analytics.md) |
 
@@ -80,4 +80,4 @@ werden. Bringen Sie sie zur [jährlichen Überprüfung des Nutzens](jaehrliche-u
 - [ROI-Arbeitsblatt](roi-arbeitsblatt.md)
 - [Return on Investment von Stabilität](../../../../en/us/help/businesses/costs/roi-of-stability.md)
 - [Betriebskosten für Betreiber](betriebskosten-fuer-betreiber.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -131,4 +131,4 @@ für alle zu ändern, öffnen Sie dort einen Pull Request, und für ein neues Pa
 - [Wie ein Release den Paketserver erreicht](wie-ein-release-den-paketserver-erreicht.md)
 - [Der Paketserver auf GitHub](der-paketserver-auf-github.md)
 - [Ein eigenes Seitenpaket erstellen](../eigene/README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

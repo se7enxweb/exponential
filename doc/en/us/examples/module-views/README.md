@@ -23,7 +23,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [contentfinder](contentfinder/README.md) | 2 | `kernel/contentfinder/module.php` |
 | [csp](csp/README.md) | 1 | `kernel/csp/module.php` |
 | [error](error/README.md) | 1 | `kernel/error/module.php` |
-| [exphelp](exphelp/README.md) | 10 | `kernel/exphelp/module.php` |
+| [exphelp](exphelp/README.md) | 12 | `kernel/exphelp/module.php` |
 | [ezinfo](ezinfo/README.md) | 3 | `kernel/ezinfo/module.php` |
 | [ezjscore](ezjscore/README.md) | 3 | `extension/ezjscore/modules/ezjscore/module.php` |
 | [ezoe](ezoe/README.md) | 8 | `extension/ezoe/modules/ezoe/module.php` |

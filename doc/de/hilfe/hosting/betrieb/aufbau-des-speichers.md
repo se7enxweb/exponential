@@ -64,8 +64,8 @@ um sie zu prüfen.
 
 `<site>` steht für das var-Verzeichnis der Website, wenn ihre Siteaccesses `VarDir=var/<site>` setzen; viele Installationen halten
 alles in `var/` allein. Die Pfade der Cronjobs folgen dem var-Verzeichnis des Siteaccess der Administration
-([Cronjobs, Abschnitt 14](../../../../en/us/guides/cronjobs.md#14-logs-and-the-files-the-page-keeps)); der Baum von Velocity ist in
-[8.3.12 Logs](../../../../en/us/install/08-serving-the-site.md#8312-logs) beschrieben.
+([Cronjobs, Abschnitt 14](../../../anleitungen/cronjobs.md#14-protokolle-und-die-dateien-die-die-seite-führt)); der Baum von Velocity ist in
+[8.3.12 Logs](../../../installation/08-die-website-ausliefern.md#8312-logs) beschrieben.
 
 Dateien unter `storage/` werden nach den ersten Zeichen ihres Namens auf Unterverzeichnisse verteilt (`[FileSettings] DirDepth=3`),
 sodass kein einzelnes Verzeichnis zu groß wird.
@@ -73,7 +73,7 @@ sodass kein einzelnes Verzeichnis zu groß wird.
 > **Hinweis**
 > Caches können jederzeit gelöscht werden; die Website baut sie bei den nächsten Anfragen neu auf, auf Kosten langsamerer erster
 > Seiten. `php bin/php/ezcache.php --clear-all` ist der unterstützte Weg, weil er auch die Ablaufzeitstempel behandelt
-> ([Caches](../../../../en/us/guides/caches.md)).
+> ([Caches](../../../anleitungen/caches.md)).
 
 ## Die Einstellungen, die Dateien platzieren
 
@@ -92,7 +92,7 @@ Alle in `site.ini [FileSettings]`; setzen Sie sie in `settings/override/site.ini
 | `LogFilePermissions` | `0666` | Modus neuer Logdateien |
 
 Die mitgelieferten Modi sind für alle beschreibbar. `site.ini` selbst empfiehlt `0770` und `0660` mit dem richtigen Eigentümer und
-der richtigen Gruppe, was die gehärtete Wahl ist ([8.7.2 Ein Benutzer oder eine Gruppe](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)).
+der richtigen Gruppe, was die gehärtete Wahl ist ([8.7.2 Ein Benutzer oder eine Gruppe](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)).
 
 > **Warnung**
 > `TemporaryDir=/tmp/` liegt außerhalb der Installation. Unter einer Beschränkung mit `open_basedir` (auf Shared-Hosting-Panels
@@ -104,11 +104,11 @@ der richtigen Gruppe, was die gehärtete Wahl ist ([8.7.2 Ein Benutzer oder eine
 Der Setup-Assistent prüft die Liste in `settings/setup.ini [directory_permissions] CheckList`: `design`, `extension`, `settings`
 mit `settings/override` und `settings/siteaccess` und `var` mit seinen Verzeichnissen für Cache, Log, Speicher und Autoload. Nach
 der Installation können `design/` und `extension/` wieder schreibgeschützt werden, wenn nichts Pakete aus der Administration
-installiert ([8.7.1](../../../../en/us/install/08-serving-the-site.md#871-what-must-be-writable)).
+installiert ([8.7.1](../../../installation/08-die-website-ausliefern.md#871-was-beschreibbar-sein-muss)).
 
 Die häufigste Ursache seltsamer Fehler sind **zwei Systembenutzer, die dieselben Dateien schreiben**: der PHP-FPM-Pool, die Worker
 von Velocity, Cronjobs und Skripte der Kommandozeile. Führen Sie alle als Benutzer der Website aus, oder geben Sie ihnen eine
-gemeinsame Gruppe mit setgid-Verzeichnissen ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)). Die
+gemeinsame Gruppe mit setgid-Verzeichnissen ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)). Die
 Details für eine Hosting-Plattform stehen auf [Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md).
 
 ## Mehrere Websites in einer Installation
@@ -134,7 +134,7 @@ erzeugt wurden, nicht wieder als aktuell gelten.
 - **Wachstum auf der Festplatte**: Der Speicher wächst mit den Uploads des Kunden; Caches wachsen mit Verkehr und Templates; Logs
   werden rotiert (siehe [Log-Viewer und Log-Rotation](log-viewer-und-log-rotation.md)). `./console exp:systeminfo --sizes` und
   **Setup > Systeminformationen > Größen messen** melden die Größe von `var/` und jedes Cache-Verzeichnisses
-  ([Systeminformationen](../../../../en/us/guides/system-information.md)).
+  ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 - **Inodes**: Der View-Cache und die Bildvarianten sind viele kleine Dateien; beobachten Sie auf dem Dateisystem, das `var/`
   enthält, neben den Bytes auch die Nutzung der Inodes.
 - **Eigentümer**: Prüfen Sie nach jedem als `root` ausgeführten Befehl den Eigentümer neuer Dateien in `var/`.
@@ -154,5 +154,5 @@ erzeugt wurden, nicht wieder als aktuell gelten.
 - [Clustering und gemeinsamer Speicher](clustering-und-gemeinsamer-speicher.md)
 - [Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md)
 - [Speicher, CPU und Festplatte dimensionieren](../grundlagen/speicher-cpu-und-festplatte-dimensionieren.md)
-- [8.7 Dateiberechtigungen und Eigentum](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [8.7 Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

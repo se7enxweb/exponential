@@ -66,7 +66,7 @@ den Personen, die den Shop betreiben, nicht jedem Redakteur ([Rollen für Ihr Te
 ## Wenn im Shop etwas schiefgeht
 
 Eine Zahlung, die nicht angekommen ist, eine Bestellung, die in einem Status hängen bleibt, eine Kasse, die fehlschlägt:
-Beginnen Sie mit der [Shop-FAQ](../handel/shop-faq.md), dann mit [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md).
+Beginnen Sie mit der [Shop-FAQ](../handel/shop-faq.md), dann mit [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md).
 Notieren Sie die Bestellnummer und die Fehlerreferenz, die die Website anzeigt; Ihr Partner braucht beides
 ([Probleme melden](../gesund-halten/probleme-melden.md)).
 
@@ -80,4 +80,4 @@ Folgen Sie dem [Lesepfad für Onlineshops](lesepfad-onlineshops.md).
 - [Einen Shop im Alltag betreiben (Unternehmen)](../../../../en/us/help/businesses/stores/running-a-store-day-to-day.md)
 - [Shop-Dashboard und Bestellstatus](../../../../en/us/features/6.0/store-dashboard.md)
 - [Sicherheits-Checkliste für den Shop](../../../../en/us/help/businesses/stores/store-security-checklist.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

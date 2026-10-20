@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für alle in einem Partnerunternehmen, die über Exponential schreiben: auf Ihrer Website, in Angeboten,
 Verträgen, Stellenanzeigen, sozialen Medien und Fallstudien. Das Vertriebsteam hat das vollständige Regelwerk in
-[Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md); diese Seite ist die Kurzfassung für Partner.
+[Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md); diese Seite ist die Kurzfassung für Partner.
 
 ## Die Namen
 
@@ -21,7 +21,7 @@ Verträgen, Stellenanzeigen, sozialen Medien und Fallstudien. Das Vertriebsteam 
 | **Exponential 6**, **Exponential 6.0.x** | Die aktuelle Hauptlinie | „eZ Publish 6“ |
 | **7x** | Das Unternehmen, das Entwicklung, Support und Hosting leitet | „7X“, „SevenX“ im Fließtext (die Domain und die Konten schreiben sich se7enx und se7enxweb) |
 | **die Exponential Foundation** | Die gemeinnützige Organisation, die das Projekt betreibt | „das Exponential-Unternehmen“ |
-| **Exponential Platform**, **Legacy**, **Nexus**, **DXP**, **Basic** | Die Produktfamilie ([Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md#the-product-family-at-a-glance)) | Erfundene Produktnamen |
+| **Exponential Platform**, **Legacy**, **Nexus**, **DXP**, **Basic** | Die Produktfamilie ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#die-produktfamilie-im-überblick)) | Erfundene Produktnamen |
 | **Exponential Partner (Stufe)** | Ihr Status, z. B. „Exponential Partner (Silver)“ | „Offizieller Exponential-Anbieter“, „Exponential-Wiederverkäufer“, es sei denn, Sie haben das Profil Vertrieb |
 
 ## Der alte Name
@@ -58,6 +58,6 @@ We have worked with this code base since <year>, from its eZ Publish years to Ex
 ## Verwandte Seiten
 
 - [Partnerlogos und das Zertifizierungszeichen verwenden](partnerlogos-und-zeichen.md)
-- [Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md)
+- [Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md)
 - [Pressemitteilungen und Ankündigungen](pressemitteilungen-und-ankuendigungen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

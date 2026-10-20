@@ -43,7 +43,7 @@ Seite von Exponential zu jedem Schritt.
 Ein Systembenutzer pro Website ([Benutzer und Pools pro Kunde](../sicherheit/benutzer-und-pools-pro-kunde.md)). Alles, was der
 Installer und die Website schreiben, muss diesem Benutzer gehören: Führen Sie ihn als den Benutzer aus, als der der Webserver oder
 Velocity läuft, oder korrigieren Sie danach das Eigentum
-([4.6](../../../../en/us/install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)).
+([4.6](../../../installation/04-installationsweg-waehlen.md#46-unbeaufsichtigte-installationen-ci-und-container)).
 
 ### 2. PHP
 
@@ -94,11 +94,11 @@ curl -s -o /dev/null -w '%{http_code}\n' https://www.example.com/
 curl -s -o /dev/null -w '%{http_code}\n' https://www.example.com/admin/user/login
 ```
 
-Beide sollten mit `200` antworten ([10.11](../../../../en/us/install/10-after-installing.md#1011-monitoring-and-health-checks)).
+Beide sollten mit `200` antworten ([10.11](../../../installation/10-nach-der-installation.md#1011-überwachung-und-zustandsprüfungen)).
 
 ### 7. Cron
 
-Richten Sie die Crontab aus [10.3](../../../../en/us/install/10-after-installing.md#a-crontab) in der Crontab des Benutzers der Website ein, mit
+Richten Sie die Crontab aus [10.3](../../../installation/10-nach-der-installation.md#eine-crontab) in der Crontab des Benutzers der Website ein, mit
 derselben PHP-Binärdatei, die das Web nutzt ([Cronjobs](../betrieb/cronjobs.md)).
 
 ### 8. Übergabe
@@ -140,4 +140,4 @@ brauchen ihn beim ersten Anruf.
 - [Ein-Klick-Installer](ein-klick-installer-fuer-exponential.md)
 - [Container: Docker und Podman](../modelle/container-docker-und-podman.md)
 - [Checkliste für einen neuen Server](../checklisten/checkliste-fuer-einen-neuen-server.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

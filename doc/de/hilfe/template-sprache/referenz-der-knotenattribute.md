@@ -179,4 +179,4 @@ url:             fitness/why-should-you-choose-strength-training
 - [Referenz von Inhaltsattribut und Version](referenz-von-inhaltsattribut-und-version.md)
 - [Knoten, Objekte und Attribute](../../../en/us/help/designers/templates/nodes-objects-attributes.md)
 - [Knoten und Listen holen](../../../en/us/help/designers/templates/fetching-nodes-and-lists.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

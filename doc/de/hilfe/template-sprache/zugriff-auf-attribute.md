@@ -265,4 +265,4 @@ Diese Skizze wurde nicht auf alpha ausgeführt; sie zeigt die Form, auf die die 
 - [Attribute und Punktschreibweise](../../../en/us/help/designers/templates/attributes-and-dot-notation.md)
 - [Knoten, Objekte und Attribute](../../../en/us/help/designers/templates/nodes-objects-attributes.md)
 - [attribute](../../../en/us/examples/template-operators/attribute.md) und [dump](../../../en/us/examples/template-operators/dump.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

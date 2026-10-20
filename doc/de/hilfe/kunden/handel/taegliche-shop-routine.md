@@ -20,7 +20,7 @@ die Sie an die Wand hängen können.
 
 Sie brauchen ein eigenes Konto mit der Richtlinie `shop/administrate`, die den Reiter Shop, das Dashboard, die
 Bestellliste und die Kundenliste öffnet (`kernel/shop/module.php`). Melden Sie sich mit der Anmeldung in zwei
-Schritten an, wenn Ihre Website sie anbietet ([Zwei-Faktor-Anmeldung](../../../../en/us/guides/two-factor-login.md)). Teilen
+Schritten an, wenn Ihre Website sie anbietet ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)). Teilen
 Sie nie ein Shop-Konto zwischen mehreren Personen: Die Statushistorie der Bestellungen und das Prüfprotokoll können
 dann nicht mehr sagen, wer was getan hat.
 
@@ -108,4 +108,4 @@ und Zahlungsanbieter. Eine Übergabeliste finden Sie unter
 - [Wöchentliche Shop-Checkliste](woechentliche-shop-checkliste.md)
 - [Shop-Berichte](shop-berichte.md)
 - [Einen Shop im Alltag betreiben (für Unternehmen)](../../../../en/us/help/businesses/stores/running-a-store-day-to-day.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

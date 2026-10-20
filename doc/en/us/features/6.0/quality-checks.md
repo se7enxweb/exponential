@@ -156,8 +156,9 @@ them depend on the branch, not on the code:
   request; CI and the local gates run the same script. A commit by a project author (an address listed in
   `.githooks/commit-msg-authors`) starts with `Added: `, `Updated: `, `Fixed: `, `Removed: ` or `Renamed: `, or the
   check fails; reword it with `git rebase -i` before the merge. A commit by anyone else is a contributor's commit:
-  every pull request is merged and its commits are kept as written, so a subject such as `Changed: ...` or
-  `Fix typo` is a warning annotation, never a failure, on the pull request and later on `main`. A merge commit is
+  every pull request is merged (its author squashes and rebases it onto `main` while it is open, and `main` is never
+  rewritten after the merge), and a subject such as `Changed: ...` or `Fix typo` is a warning annotation, never a
+  failure, on the pull request and later on `main`. A merge commit is
   not checked. `EXP_COMMIT_MSG_STRICT_ALL=1` makes every author strict, for a contributor who wants the project's
   check on their own branch.
 

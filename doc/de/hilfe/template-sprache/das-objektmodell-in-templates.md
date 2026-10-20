@@ -211,4 +211,4 @@ same data_map: yes
 - [Knoten, Objekte und Attribute](../../../en/us/help/designers/templates/nodes-objects-attributes.md) (die Einführung für Designer)
 - [Attribute und Punktschreibweise](../../../en/us/help/designers/templates/attributes-and-dot-notation.md)
 - [Die Content-API](../../../en/us/help/creators/app-creators/the-content-api.md) (dieselben Objekte aus PHP)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

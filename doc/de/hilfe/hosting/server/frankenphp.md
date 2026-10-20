@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren bei Hosting-Unternehmen, die FrankenPHP für Kunden-Websites in Betracht ziehen. Sie
 beantwortet: was FrankenPHP in Exponential ist, wie es installiert und geprüft wird, was sein eingebettetes PHP braucht, wie es sich mit
 der eigenen Engine von Velocity vergleicht und was zuerst schiefgeht. Die Quellen sind
-[Kapitel 8, Abschnitt 8.4](../../../../en/us/install/08-serving-the-site.md#84-frankenphp) und
+[Kapitel 8, Abschnitt 8.4](../../../installation/08-die-website-ausliefern.md#84-frankenphp) und
 [FrankenPHP als Web-Engine von Exponential](../../../../en/us/bc/6.0/frankenphp.md).
 
 ## Inhalt
@@ -170,4 +170,4 @@ php bin/php/console exp:velocity ctl version   --engine=frankenphp --allow-root-
 - [Caddy](caddy.md)
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
 - [FrankenPHP als Web-Engine von Exponential](../../../../en/us/bc/6.0/frankenphp.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

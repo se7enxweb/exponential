@@ -18,12 +18,19 @@ Fix a mistake with "Edit on GitHub" on any help page, or answer one forum questi
 [Supporters: start here](supporters-start-here.md)
 
 **Will my pull request be rejected?**
-"Every pull request is merged"; what needs changing is changed on top (`doc/en/us/bc/6.0/ci.md`).
+"Every pull request is merged" (`doc/en/us/bc/6.0/ci.md`). While it is open, you squash it and rebase it onto `main`
+as the reviews ask.
 [Contributing code](contributing-code.md)
 
 **Under which license is my contribution published?**
 Code: GPL v2 or later (CONTRIBUTING.md). Documentation: GFDL 1.3 or later.
 [Contributing documentation](contributing-documentation.md)
+
+**Do I have to sign anything, and what do I give up?**
+For code contributions to the core kernel, yes: a Contributor Licensing Agreement (CLA), once, before the first
+merge. By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it: 7x may use, change, relicense
+and distribute it in any way, without asking or paying you, and you cannot take it back. Your own extensions are not affected.
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)
 
 **Where do I report a security problem?**
 Privately to security@se7enx.com, never in public. [Testing and reporting bugs](testing-and-reporting-bugs.md)

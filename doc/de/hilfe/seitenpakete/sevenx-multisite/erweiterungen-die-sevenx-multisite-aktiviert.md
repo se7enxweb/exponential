@@ -119,4 +119,4 @@ ausgelassen hat. Was das für die Layoutdaten bedeutet, steht auf [Layoutdaten u
 - [Siteaccesses und Sprachen](siteaccesses-und-sprachen-von-sevenx-multisite.md)
 - [Links zwischen Websites einer Multisite](../../../../en/us/features/6.0/multisite-cross-site-links.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

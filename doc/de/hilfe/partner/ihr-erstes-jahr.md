@@ -58,4 +58,4 @@ Help we need from 7x / the community: ______________________
 - [Ihre ersten 30 Tage als Partner](ihre-ersten-30-tage.md)
 - [Das Punktesystem](das-punktesystem.md)
 - [Verlängerungen, Auf- und Abstufungen](verlaengerungen-auf-und-abstufungen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

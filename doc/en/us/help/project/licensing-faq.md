@@ -30,8 +30,12 @@ compatible with either, such as the GNU Affero GPL version 3, as the website not
 
 The kernel's notice names "7x & Exponential Foundation" for the years from 1998 and eZ Systems AS for 1999 to 2014
 (`COPYRIGHT.md`). The code also contains the work of many contributors over the years. The website's FAQ explains
-the rule: contributors keep the copyright of their code and agree to release it under the same license as
-Exponential.
+the rule: contributors agree to release their code under the same license as Exponential.
+
+For code contributions to the core kernel, 7x and the Exponential Foundation also require a signed Contributor
+Licensing Agreement (CLA) before the contribution is merged, and **by signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it.** 7x may use, change, relicense and distribute your contribution in any way, also under
+other licenses and in commercial products, without asking or paying you; you cannot withdraw it or set conditions. Your own extensions and designs are not affected. See
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ### Is the GPL going to change to version 3 only?
 

@@ -116,6 +116,6 @@ ihn einschalten: zuerst den Cache erzeugen, dann die eine Einstellung setzen.
 - [sevenx_multisite](README.md)
 - [Siteaccesses und Sprachen](siteaccesses-und-sprachen-von-sevenx-multisite.md)
 - [Generator für den statischen Cache](../../../../en/us/features/6.0/static-cache-generator.md)
-- [Erste Schritte](../../../../en/us/help/getting-started.md)
+- [Erste Schritte](../../erste-schritte.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

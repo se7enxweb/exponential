@@ -41,7 +41,7 @@ Aus `kernel/package/module.php`:
 | `package/export_extension` | eine Erweiterung als Paket exportieren (siehe unten) | keine |
 
 Jedes Formular dieser Seiten trägt das Formular-Token; ein Absenden ohne es wird mit 403 abgewiesen
-([Pakete, Abschnitt 10](../../../../en/us/guides/packages.md#10-permissions)).
+([Pakete, Abschnitt 10](../../../anleitungen/pakete.md#10-berechtigungen)).
 
 ## Die Einschränkungen
 
@@ -101,9 +101,9 @@ machen.
 ## Verwandte Seiten
 
 - [Pakete in der Administration](README.md)
-- [Pakete, Abschnitt 10](../../../../en/us/guides/packages.md#10-permissions)
+- [Pakete, Abschnitt 10](../../../anleitungen/pakete.md#10-berechtigungen)
 - [ezupdate: Updates und Pakete in der Administration](../../../../en/us/features/6.0/extensions/ezupdate.md)
 - [Der Paketassistent](der-paketassistent.md)
 - [Pakettypen](../grundlagen/pakettypen.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

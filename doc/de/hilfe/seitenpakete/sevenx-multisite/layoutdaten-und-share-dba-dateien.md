@@ -66,7 +66,7 @@ Gezählt in `extension/sevenx_themes_media/share/db_data.dba`, wie sie in 6.0.15
 Die zwei geteilten Layouts (`shared` = 1) sind `Header / Footer` (ID 2) und `Prefooter` (ID 7). Zu den anderen Layouts gehören
 `Default Layout`, die Layouts `Full / ...` für Artikel, Rezepte, Themen und Videos, die Landingpages von Fit & Healthy, `Showcase` und die
 Layouts `Bold Agency - ...`. Wie geteilte Layouts und verknüpfte Zonen im Editor funktionieren, steht auf
-[Der Layout-Editor](../../../../en/us/help/layouts-editor.md).
+[Der Layout-Editor](../../layout-editor.md).
 
 ## Wie der Installer sie lädt
 
@@ -142,4 +142,4 @@ baut die Seiten der Administration aus diesen Layouts; siehe [admin4l](../../../
 - [Das Skript des Multisite-Installers](das-skript-des-multisite-installers.md)
 - [Klassen und Inhalte ändern](../eigene/klassen-und-inhalte-aendern.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

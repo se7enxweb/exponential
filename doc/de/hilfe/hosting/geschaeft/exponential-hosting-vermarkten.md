@@ -14,7 +14,7 @@ beantwortet: welche Fakten Sie nutzen können und woher sie stammen, was Sie nic
 benennen und was auf die Landingpage Ihres Angebots gehört.
 
 Die allgemeinen Regeln für alle, die öffentlich über Exponential sprechen, stehen im Bereich Vertrieb und Marketing
-dieser Hilfe, beginnend bei [Vertrieb und Marketing: hier beginnen](../../../../en/us/help/business/sales-and-marketing-start-here.md).
+dieser Hilfe, beginnend bei [Vertrieb und Marketing: hier beginnen](../../geschaeft/vertrieb-und-marketing-hier-beginnen.md).
 Diese Seite ergänzt, was für das Hosting spezifisch ist.
 
 ## Inhalt
@@ -34,14 +34,14 @@ Jeder Fakt hat eine Quelle, die ein Kunde prüfen kann.
 |---|---|
 | Exponential ist ein professionelles PHP-Anwendungsframework mit fortgeschrittener CMS-Funktionalität (Content-Management-System) | `README.md` |
 | Freie Software unter der GNU GPL v2 oder später; keine Lizenzgebühr | `COPYRIGHT.md`, `README.md` |
-| Läuft auf PHP 8.0 bis 8.5 | [Kapitel 2](../../../../en/us/install/02-requirements.md) |
-| Sechs unterstützte Datenbanken: SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../../../../en/us/help/database-support.md) |
-| Läuft auf fast jedem Betriebssystem, das PHP 8 ausführt | [Betriebssystemunterstützung](../../../../en/us/help/os-support.md) |
-| Bringt seinen eigenen Webserver und seine eigene Engine mit, Exponential Velocity, mit eigenen HTTPS-Zertifikaten | [Kapitel 8](../../../../en/us/install/08-serving-the-site.md), [HTTPS-Zertifikate](../../../../en/us/features/6.0/velocity-https-certificates.md) |
+| Läuft auf PHP 8.0 bis 8.5 | [Kapitel 2](../../../installation/02-voraussetzungen.md) |
+| Sechs unterstützte Datenbanken: SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../../datenbankunterstuetzung.md) |
+| Läuft auf fast jedem Betriebssystem, das PHP 8 ausführt | [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) |
+| Bringt seinen eigenen Webserver und seine eigene Engine mit, Exponential Velocity, mit eigenen HTTPS-Zertifikaten | [Kapitel 8](../../../installation/08-die-website-ausliefern.md), [HTTPS-Zertifikate](../../../../en/us/features/6.0/velocity-https-certificates.md) |
 | Eine durchgesetzte Content Security Policy in der Administration | [Content Security Policy](../../../../en/us/features/6.0/content-security-policy.md) |
 | Sicherheitsmeldungen erhalten eine erste Antwort innerhalb eines Werktags; veröffentlichte Versionen ändern sich nie | `SECURITY.md` |
-| Eine lange Geschichte: führt die Codebasis von eZ Publish fort, einem Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat | [Wer ist 7x?](../../../../en/us/help/who-is-7x.md) |
-| Gepflegt von 7x und der Exponential Foundation | [Wer ist die Exponential Foundation?](../../../../en/us/help/who-is-the-exponential-foundation.md) |
+| Eine lange Geschichte: führt die Codebasis von eZ Publish fort, einem Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat | [Wer ist 7x?](../../wer-ist-7x.md) |
+| Gepflegt von 7x und der Exponential Foundation | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md) |
 
 Was Ihr eigenes Angebot hinzufügt (Ihr Rechenzentrum, Ihre Support-Zeiten, Ihre Backups), nennen Sie als Ihre Fakten,
 mit Ihren eigenen Belegen.
@@ -68,7 +68,7 @@ mit Ihren eigenen Belegen.
 - Benennen Sie Ihr Angebot als Ihres: „<Ihr Unternehmen> Exponential Hosting“ ist klar; vermeiden Sie Namen, die
   nahelegen, dass es vom Projekt stammt.
 
-Vollständige Regeln: [Marken- und Namensregeln](../../../../en/us/help/business/brand-and-naming-rules.md).
+Vollständige Regeln: [Marken- und Namensregeln](../../geschaeft/marken-und-namensregeln.md).
 
 ## Eine Landingpage für Ihr Angebot
 
@@ -86,7 +86,7 @@ Vollständige Regeln: [Marken- und Namensregeln](../../../../en/us/help/business
 
 > **Tipp**
 > Verlinken Sie die Hilfeseiten, statt sie zu kopieren. Wenn Sie kopieren, dürfen Sie das: Die Dokumentation steht unter
-> der GNU FDL 1.3, behalten Sie also den Lizenzhinweis ([Freie Dokumentation](../../../../en/us/help/free-documentation.md)).
+> der GNU FDL 1.3, behalten Sie also den Lizenzhinweis ([Freie Dokumentation](../../freie-dokumentation.md)).
 
 ## Botschaften für verschiedene Käufer
 
@@ -109,7 +109,7 @@ Vollständige Regeln: [Marken- und Namensregeln](../../../../en/us/help/business
 
 ## Verwandte Seiten
 
-- [Positionierung und Wertversprechen](../../../../en/us/help/business/positioning-and-value-proposition.md)
-- [Die Community und das Ökosystem als Verkaufsargument](../../../../en/us/help/business/community-and-ecosystem.md)
+- [Positionierung und Wertversprechen](../../geschaeft/positionierung-und-nutzenversprechen.md)
+- [Die Community und das Ökosystem als Verkaufsargument](../../geschaeft/community-und-oekosystem.md)
 - [Partnerprogramme](partnerprogramme-fuer-hoster.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

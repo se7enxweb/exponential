@@ -13,9 +13,9 @@ Diese Seite ist für Systemadministratoren bei Hosting-Anbietern, die einen Reve
 oder einen Load Balancer vor Kunden-Websites betreiben. Sie beantwortet: ob Exponential überhaupt einen braucht, was der Proxy senden
 muss und wofür ihm vertraut werden muss, was ein zwischenspeichernder Proxy speichern darf und wie Sie ihn leeren. Die eigene
 Konfigurationssprache von Varnish wird hier nicht beschrieben; lesen Sie in seiner Dokumentation nach. Die Quellen sind
-[Kapitel 8, Abschnitt 8.8](../../../../en/us/install/08-serving-the-site.md#88-behind-a-reverse-proxy),
+[Kapitel 8, Abschnitt 8.8](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy),
 [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../en/us/bc/6.0/trusted-proxies.md) und
-[Kapitel 15, Abschnitt 15.14](../../../../en/us/install/15-migrating-from-5x-legacy.md#1514-caches).
+[Kapitel 15, Abschnitt 15.14](../../../installation/15-migration-von-5x-legacy.md#1514-caches).
 
 ## Inhalt
 
@@ -88,7 +88,7 @@ Engine 0.0.4.44 oder später ist nötig, damit das weitergeleitete Protokoll nur
 
 > **Warnung**
 > Ein zwischenspeichernder Proxy darf keine Seiten angemeldeter Benutzer speichern. Speichern Sie keine Antworten zwischen, die das
-> Sitzungscookie setzen oder davon abhängen ([Kapitel 8, Abschnitt 8.8](../../../../en/us/install/08-serving-the-site.md#88-behind-a-reverse-proxy)).
+> Sitzungscookie setzen oder davon abhängen ([Kapitel 8, Abschnitt 8.8](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy)).
 
 Was Exponential einem Proxy zum Arbeiten gibt:
 
@@ -147,4 +147,4 @@ curl -s -o /dev/null -w '%{redirect_url}\n' -H 'X-Forwarded-Proto: https' http:/
 - [HTTP-Cache-Header](http-cache-header.md)
 - [CDN](cdn.md)
 - [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../en/us/bc/6.0/trusted-proxies.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

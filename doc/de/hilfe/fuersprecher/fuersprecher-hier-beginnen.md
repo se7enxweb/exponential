@@ -47,8 +47,8 @@ zitiert. Wo die Quellen etwas nicht sagen, sagen die Seiten das, und das sollten
 | Lehrende oder Studierende | Vor einer Klasse oder Benutzergruppe präsentieren, einen Workshop durchführen | [Vor einer Benutzergruppe oder Klasse präsentieren](vor-benutzergruppe-oder-klasse-praesentieren.md), [Ablaufplan für einen Praxis-Workshop](ablaufplan-praxis-workshop.md) |
 | Ein Unternehmen, das es nutzt | Mit Zustimmung eine Fallstudie veröffentlichen, die Arbeit sponsern, Zeit für Korrekturen an den Upstream-Projekten einplanen | [Eine Community-Fallstudie schreiben](eine-community-fallstudie-schreiben.md), [Für nachhaltige Finanzierung eintreten](fuer-nachhaltige-finanzierung-eintreten.md) |
 
-Fürsprache ist kein Vertrieb. Der Vertrieb hat eigene Seiten ([Vertrieb und Marketing: hier beginnen](../../../en/us/help/business/sales-and-marketing-start-here.md)),
-die Projektverantwortlichen ebenfalls ([Projektverantwortliche: hier beginnen](../../../en/us/help/leadership/project-managers-start-here.md)).
+Fürsprache ist kein Vertrieb. Der Vertrieb hat eigene Seiten ([Vertrieb und Marketing: hier beginnen](../geschaeft/vertrieb-und-marketing-hier-beginnen.md)),
+die Projektverantwortlichen ebenfalls ([Projektverantwortliche: hier beginnen](../fuehrung/projektleiter-hier-beginnen.md)).
 Ein Fürsprecher arbeitet auf Augenhöhe: ein Benutzer hilft einem anderen, öffentlich.
 
 ## Die Stufen: Benutzer, Fürsprecher, Leitung
@@ -61,13 +61,13 @@ Ein Fürsprecher arbeitet auf Augenhöhe: ein Benutzer hilft einem anderen, öff
 ```
 
 Jeder Schritt hat eine dokumentierte nächste Handlung. [Die Stufen der Fürsprache](die-stufen-der-fuersprache.md) beschreibt
-jede Stufe, und [Eine Leitungsrolle in der Exponential-Community übernehmen](../../../en/us/help/leadership/becoming-a-community-leader.md)
+jede Stufe, und [Eine Leitungsrolle in der Exponential-Community übernehmen](../fuehrung/community-leiter-werden.md)
 enthält den 30/60/90-Tage-Plan der obersten Stufe.
 
 ## Ihre erste Stunde
 
-1. **Wissen, wer hinter dem Projekt steht** (10 Minuten): [Wer ist 7x?](../../../en/us/help/who-is-7x.md#in-short) und
-   [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md#in-short).
+1. **Wissen, wer hinter dem Projekt steht** (10 Minuten): [Wer ist 7x?](../wer-ist-7x.md#kurz-gesagt) und
+   [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#kurz-gesagt).
 2. **Die Produktfamilie kennen** (10 Minuten): [Die Produktfamilie kennen](die-produktfamilie-kennen.md).
 3. **Die wichtigsten Gesprächspunkte lernen** (15 Minuten): [Gesprächspunkte: das Grundset](gespraechspunkte-grundset.md)
    und die Seite, die Sie lesen müssen, bevor Sie öffentlich irgendetwas sagen: [Aussagen, die Sie nicht machen dürfen](aussagen-die-sie-nicht-machen-duerfen.md).
@@ -209,16 +209,16 @@ Folgen Sie dann [Ihre erste Woche als Fürsprecher](ihre-erste-woche.md).
 
 | Seite | Warum ein Fürsprecher sie liest |
 |---|---|
-| [Wer ist 7x?](../../../en/us/help/who-is-7x.md) | Das Unternehmen, seine Geschichte und seine Community-Arbeit |
-| [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md) | Die gemeinnützige Organisation, die Produktfamilie und die Support-Zusage |
-| [Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md) | Der Trichter für Beitragende und ein Redaktionskalender |
-| [Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md) | Die vollständigen Namensregeln |
-| [Mit Einwänden umgehen](../../../en/us/help/business/objection-handling.md) | Belegte Antworten auf die Zweifel von Käufern |
-| [Demo-Skripte](../../../en/us/help/business/demo-scripts.md) | Demos Klick für Klick von 5, 15 und 45 Minuten |
-| [Eine Leitungsrolle in der Exponential-Community übernehmen](../../../en/us/help/leadership/becoming-a-community-leader.md) | Die oberste Stufe |
-| [Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md) | Fehlerberichte, Sicherheitsprobleme, um Hilfe bitten |
-| [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) | Vom Benutzer zum Entwickler, und Ihr erster Pull Request |
-| [Freie Dokumentation](../../../en/us/help/free-documentation.md) | Was Sie mit diesen Seiten tun dürfen |
+| [Wer ist 7x?](../wer-ist-7x.md) | Das Unternehmen, seine Geschichte und seine Community-Arbeit |
+| [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) | Die gemeinnützige Organisation, die Produktfamilie und die Support-Zusage |
+| [Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md) | Der Trichter für Beitragende und ein Redaktionskalender |
+| [Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md) | Die vollständigen Namensregeln |
+| [Mit Einwänden umgehen](../geschaeft/einwandbehandlung.md) | Belegte Antworten auf die Zweifel von Käufern |
+| [Demo-Skripte](../geschaeft/demo-drehbuecher.md) | Demos Klick für Klick von 5, 15 und 45 Minuten |
+| [Eine Leitungsrolle in der Exponential-Community übernehmen](../fuehrung/community-leiter-werden.md) | Die oberste Stufe |
+| [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md) | Fehlerberichte, Sicherheitsprobleme, um Hilfe bitten |
+| [Mit Git entwickeln](../mit-git-entwickeln.md) | Vom Benutzer zum Entwickler, und Ihr erster Pull Request |
+| [Freie Dokumentation](../freie-dokumentation.md) | Was Sie mit diesen Seiten tun dürfen |
 
 ## Diese Seiten wiederfinden
 
@@ -227,12 +227,12 @@ Folgen Sie dann [Ihre erste Woche als Fürsprecher](ihre-erste-woche.md).
 - Jede Seite hat **Auf GitHub bearbeiten**: Wenn hier etwas falsch ist oder fehlt, korrigieren Sie es. Auch das ist
   Fürsprache.
 
-**Demomodus.** Öffentliche Demos laufen im Demomodus (`EXP_DEMO_MODE=1`): eine veröffentlichte Administrator-Anmeldung, die niemand ändern kann. Erklären Sie ihn genau: Er schützt nur Administratorpasswörter und darf nie auf einer echten Website aktiv sein. [Häufige Fragen zum Demomodus](../../../en/us/help/demo-mode-faq.md).
+**Demomodus.** Öffentliche Demos laufen im Demomodus (`EXP_DEMO_MODE=1`): eine veröffentlichte Administrator-Anmeldung, die niemand ändern kann. Erklären Sie ihn genau: Er schützt nur Administratorpasswörter und darf nie auf einer echten Website aktiv sein. [Häufige Fragen zum Demomodus](../demomodus-faq.md).
 
 ## Verwandte Seiten
 
 - [Die Stufen der Fürsprache](die-stufen-der-fuersprache.md)
 - [Der Werkzeugkasten für Fürsprecher](werkzeugkasten-fuer-fuersprecher.md)
 - [Lesepfad für Fürsprecher](lesepfad-fuer-fuersprecher.md)
-- [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

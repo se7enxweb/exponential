@@ -34,7 +34,7 @@ Aus [Weiterleitungen und verschobene Inhalte](../../../../en/us/help/creators/we
 | Ein Element wird entfernt | die Adresse antwortet mit „nicht gefunden“; nichts leitet weiter |
 
 Redakteure dürfen also ohne Sorge umbenennen und verschieben. Auch das Verbergen eines Elements nimmt es von der
-Website, mit allem, was darunter liegt ([Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md#hide-an-item)).
+Website, mit allem, was darunter liegt ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md#ein-objekt-verstecken)).
 
 ## Wenn eine Seite wegfällt
 
@@ -49,7 +49,7 @@ entscheiden Sie, wohin ihre Besucher stattdessen gelangen sollen:
 
 Wildcards werden nur herangezogen, wenn kein Alias passt, und **Eine Adresse ausprobieren** auf der Seite der Wildcards
 zeigt, zu welcher Wildcard eine Adresse passt, ohne etwas zu ändern
-([URL-Aliase, Wildcards und Suchstatistiken](../../../../en/us/guides/urls-and-aliases.md#4-url-wildcards)).
+([URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md#4-url-platzhalter)).
 
 > **Tipp**
 > Entfernte Inhalte kommen in den Papierkorb und lassen sich mit ihrer Adresse wiederherstellen
@@ -90,4 +90,4 @@ Ihr Teil als Betreiber ist Schritt 2: Nur Sie wissen, welche neue Seite die rich
 - [URL-Aliase und sprechende URLs](../../../../en/us/help/creators/website-creators/url-aliases-and-nice-urls.md)
 - [URL-Wildcards und eigene Aliase](../../../../en/us/help/creators/website-creators/url-wildcards.md)
 - [SEO-Prüfungen](seo-pruefungen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

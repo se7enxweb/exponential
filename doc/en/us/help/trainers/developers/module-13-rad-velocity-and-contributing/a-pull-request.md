@@ -36,7 +36,7 @@ After this lesson, learners can:
 - make a focused change on a branch of its own;
 - write a commit subject with the right prefix and run the checks and the manifest;
 - push the branch to the fork and open a pull request with a useful description;
-- respond to review comments with further commits on the same branch.
+- respond to review comments with changes on the same branch, then squash and rebase it onto `main`.
 
 ## Trainer's notes
 
@@ -55,7 +55,10 @@ and `CONTRIBUTING.md` in the installation root.
    `gh pr create`).
 4. **A good description** (3 minutes). What was wrong, what the change does, how it was tested, and anything the
    reviewer should look at. One topic per pull request.
-5. **Review** (2 minutes). Answer comments, push further commits to the same branch; the pull request updates itself.
+5. **Review** (2 minutes). Answer comments and change the code on the same branch. For the kernel, 7x requires the
+   pull request to be squashed and rebased onto `main` while it is open: `git fetch origin`,
+   `git rebase -i origin/main`, `git push --force-with-lease` to the pull request branch only; the pull request
+   updates itself. After the merge, `main` is never rewritten.
 
 ### Common questions
 
@@ -67,6 +70,16 @@ a commit subject, a syntax error). Fix it with another commit on the branch.
 
 **Do I need write access to the project?** No. You push to your fork; the pull request asks the project to take the
 change.
+
+**How long does review take?** Prepare learners for many rounds: 7x reviews a commit or pull request in many more
+rounds than usual, sometimes hundreds of revisions, until the change is simple to accept
+([Code reviews](../../../../../../../CONTRIBUTING.md#code-reviews)).
+
+**Do I have to sign anything?** For a code contribution to the kernel, yes: 7x and the Exponential Foundation merge it
+only once the author's signed Contributor Licensing Agreement has been received. Say plainly what it means: by
+signing and submitting, the author assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it; 7x may use, change, relicense
+and distribute it in any way, without asking or paying the author, who cannot withdraw it or set conditions on it. It is signed once. A pull request opened in the course can wait for it. Learners' own extensions are not affected
+([Copyright assignment (CLA)](../../../../../../../CONTRIBUTING.md#copyright-assignment-cla)).
 
 ### Pitfalls
 
@@ -121,7 +134,8 @@ In the kernel clone of your development installation (or in the clone of an exte
 1. To your fork; `origin` points at the project, where you have no write access.
 2. **B.** `CONTRIBUTING.md` in the installation root.
 3. What was wrong, what the change does, how it was tested, and what the reviewer should look at.
-4. With another commit on the same branch, pushed to the fork; the pull request updates itself.
+4. With a change on the same branch, squashed and rebased onto `main` (`git rebase -i origin/main`) and pushed to the
+   fork with `git push --force-with-lease`; the pull request updates itself.
 5. The GNU GPL, version 2 or later, like the project.
 
 </details>

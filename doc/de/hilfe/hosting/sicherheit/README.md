@@ -16,8 +16,8 @@ des Hosters auf dem Server, im Panel und im Vertrag ist.
 Exponential 6 ist so gebaut, dass es standardmäßig sicher ist: Eine frische Installation liefert nur eine feste Liste von Dateien aus,
 sendet Sicherheitsheader, hält die Debug-Ausgabe aus, schützt Formulare mit Tokens, hasht Passwörter mit bcrypt, führt ein
 manipulationssichtbares Prüfprotokoll und weigert sich, seinen Setup-Assistenten auf einer installierten Website auszuführen. Die
-Begründung hinter jedem Standard steht auf [Sicherheitshärtung](../../../../en/us/help/security-hardening.md), und die Referenz Einstellung für
-Einstellung ist [Kapitel 13 des Installationsbuchs](../../../../en/us/install/13-security-hardening.md). Die Seiten hier nehmen die Sicht des
+Begründung hinter jedem Standard steht auf [Sicherheitshärtung](../../sicherheitshaertung.md), und die Referenz Einstellung für
+Einstellung ist [Kapitel 13 des Installationsbuchs](../../../installation/13-sicherheitshaertung.md). Die Seiten hier nehmen die Sicht des
 Hosters ein: viele Websites, viele Kunden, ein Team.
 
 Zurück zu [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md).
@@ -83,8 +83,8 @@ Wenn bereits etwas schiefgegangen ist, ist das Runbook [Kompromittierte Website]
 ## Verwandte Seiten
 
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
-- [Sicherheitshärtung](../../../../en/us/help/security-hardening.md)
-- [Kapitel 13: Sicherheitshärtung für die Produktion](../../../../en/us/install/13-security-hardening.md)
+- [Sicherheitshärtung](../../sicherheitshaertung.md)
+- [Kapitel 13: Sicherheitshärtung für die Produktion](../../../installation/13-sicherheitshaertung.md)
 - [Checkliste für die Sicherheitsprüfung](../checklisten/checkliste-fuer-die-sicherheitspruefung.md)
 - [Kompromittierte Website](../runbooks/kompromittierte-website.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

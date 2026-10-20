@@ -117,7 +117,7 @@ git -C exponential.packages.exponential.earth show HEAD:exponential/6.0/6.0.15/s
 
 Der Import wendet auch eigene Prüfungen an: gzip-Signatur, Grenzen für Größe und Einträge, nur einfache Dateien und Ordner mit relativen
 Pfaden, eine gültige `package.xml` mit gültigem Namen. Sie sind in der
-[Anleitung zu Paketen, 6. Ein Paket hochladen](../../../../en/us/guides/packages.md#6-uploading-a-package) aufgeführt.
+[Anleitung zu Paketen, 6. Ein Paket hochladen](../../../anleitungen/pakete.md#6-ein-paket-hochladen) aufgeführt.
 
 ## Herausfinden, was es verlangt
 
@@ -152,14 +152,14 @@ werden konnte, weil es bereits existiert). Siehe [ezpm, der Paketmanager auf der
 ([Ein Paket importieren](../admin-oberflaeche/ein-paket-importieren.md)).
 
 **Im Setup-Assistenten**: im Schritt **Site Paket** **Paket hochladen** mit der Datei, dann **Upload**. Die Seite wird erneut mit dem Paket
-in der Liste gezeigt ([Der Setup-Assistent, 5.3.8](../../../../en/us/install/05-setup-wizard.md#538-site-package)).
+in der Liste gezeigt ([Der Setup-Assistent, 5.3.8](../../../installation/05-setup-assistent.md#538-site-paket)).
 
 > **Tipp**
 > Damit der Installer Ihre Kopien nutzt, statt herunterzuladen, importieren Sie das Seitenpaket und jedes Paket, das es verlangt, bevor Sie
 > beginnen. Ein verlangtes Paket wird so genutzt, wie es ist, wenn seine Version mindestens die verlangte `min-version` ist. Der Kickstarter
 > und `exp:install` nutzen ein importiertes Seitenpaket so, wie es ist; der Setup-Assistent zeigt nur den entfernten Eintrag, wenn der Index
 > eine höhere Version führt als die importierte Kopie, und wenn Sie ihn wählen, wird das Paket neu heruntergeladen
-> ([Der Setup-Assistent, 5.3.8](../../../../en/us/install/05-setup-wizard.md#538-site-package)).
+> ([Der Setup-Assistent, 5.3.8](../../../installation/05-setup-assistent.md#538-site-paket)).
 
 ## Verwandte Seiten
 
@@ -167,6 +167,6 @@ in der Liste gezeigt ([Der Setup-Assistent, 5.3.8](../../../../en/us/install/05-
 - [Der Paketserver](README.md)
 - [Offline-Installationen und Spiegel](offline-installationen-und-spiegel.md)
 - [Das Format index.xml](das-format-index-xml.md)
-- [Anleitung zu Paketen](../../../../en/us/guides/packages.md)
+- [Anleitung zu Paketen](../../../anleitungen/pakete.md)
 - [Ein Paket vor der Veröffentlichung prüfen](../anforderungen/ein-paket-vor-der-veroeffentlichung-pruefen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

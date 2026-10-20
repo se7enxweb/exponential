@@ -13,8 +13,8 @@ Diese Seite ist für Systemadministratoren bei einem Hosting-Anbieter, die MySQL
 bereitstellen. Sie beantwortet: wo MySQL steht, wie Sie die Datenbank und den Benutzer einer Website anlegen, was der
 Treiber vom Server braucht, wie Sie Replikate nutzen und wie Sie sichern. MySQL ist die sechste in der offiziellen
 Reihenfolge: unterstützt und in der CI des Projekts getestet, nur deshalb zuletzt, weil das Projekt für neue Websites
-zuerst die anderen empfiehlt. Quellen: [Datenbankunterstützung](../../../../en/us/help/database-support.md#6-mysql) und
-[Kapitel 9.3](../../../../en/us/install/09-databases.md#93-mysql-and-mariadb).
+zuerst die anderen empfiehlt. Quellen: [Datenbankunterstützung](../../datenbankunterstuetzung.md#6-mysql) und
+[Kapitel 9.3](../../../installation/09-datenbanken.md#93-mysql-und-mariadb).
 
 ## Inhalt
 
@@ -36,7 +36,7 @@ zuerst die anderen empfiehlt. Quellen: [Datenbankunterstützung](../../../../en/
 - Es teilt den Treiber mit MariaDB ([MariaDB für Hoster](mariadb-fuer-hoster.md)); für einen Hoster werden beide gleich
   bereitgestellt.
 - Die CI des Projekts führt ihre Datenbanktests bei jedem Push gegen MySQL 8.0 aus
-  ([Testabdeckung](../../../../en/us/help/database-support.md#test-coverage-ci)).
+  ([Testabdeckung](../../datenbankunterstuetzung.md#testabdeckung-ci)).
 
 ## Versionen und Erweiterung
 
@@ -60,7 +60,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER,
 
 Es ist kein globales Recht nötig. Der Installer legt InnoDB-Tabellen an, wenn der Server InnoDB anbietet, und
 Transaktionen brauchen es. Die MySQL-Update-Dateien eines Upgrades beginnen mit `SET default_storage_engine=InnoDB;`
-([Kapitel 9.3](../../../../en/us/install/09-databases.md#character-set-and-storage-engine)).
+([Kapitel 9.3](../../../installation/09-datenbanken.md#zeichensatz-und-speicher-engine)).
 
 ## Einstellungen und Installation
 
@@ -89,7 +89,7 @@ EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=my
 > Der Verbindungszeichensatz `utf-8` wird als MySQLs `utf8` gesendet, drei Byte pro Zeichen; Zeichen außerhalb der
 > Basic Multilingual Plane, etwa Emoji, können daher nicht durch die Verbindung gehen, auch wenn die Tabellen `utf8mb4`
 > sind. Kunden, die sie brauchen, sollten das wissen, bevor sie MySQL oder MariaDB wählen
-> ([Zeichensätze](../../../../en/us/help/database-support.md#character-sets-and-collations)).
+> ([Zeichensätze](../../datenbankunterstuetzung.md#zeichensätze-und-kollationen)).
 
 ## Replikate und persistente Verbindungen
 
@@ -110,7 +110,7 @@ mysql -u <customer> -p <customer> < <customer>.sql
 
 `--single-transaction` ergibt einen konsistenten Dump von InnoDB-Tabellen, ohne sie zu sperren. Ein vollständiges Backup
 enthält außerdem `var/storage`, `settings/override` und `settings/siteaccess`
-([Backup und Wiederherstellung](../../../../en/us/help/database-support.md#backup-and-restore)).
+([Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung)).
 
 ## Probleme und ihre Ursachen
 
@@ -132,7 +132,7 @@ enthält außerdem `var/storage`, `settings/override` und `settings/siteaccess`
 ## Verwandte Seiten
 
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md) und [MariaDB für Hoster](mariadb-fuer-hoster.md)
-- [Datenbankunterstützung: MySQL](../../../../en/us/help/database-support.md#6-mysql)
-- [Kapitel 9.3: MySQL und MariaDB](../../../../en/us/install/09-databases.md#93-mysql-and-mariadb)
+- [Datenbankunterstützung: MySQL](../../datenbankunterstuetzung.md#6-mysql)
+- [Kapitel 9.3: MySQL und MariaDB](../../../installation/09-datenbanken.md#93-mysql-und-mariadb)
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

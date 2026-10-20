@@ -16,10 +16,10 @@ steht. Das vollständige Glossar der Dokumentation steht in `doc/en/us/glossary.
 ## A bis C
 
 **Administration** (*Administration*): der Teil der Website, in dem Ihr Team arbeitet, meist unter `/admin` nach der
-Adresse Ihrer Website. Siehe [Ein Rundgang durch die Administration](../../../en/us/help/admin-tour.md).
+Adresse Ihrer Website. Siehe [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md).
 
 **Freigabe** (*Approval*): ein Schritt, der eine neue Version zurückhält, bis jemand mit dem Recht zur Freigabe sie
-annimmt. Es ist ein Workflow-Ereignis namens *Approve* ([Workflows](../../../en/us/guides/workflows.md), [Freigabe und Prüfung](alltag/freigabe-und-pruefung.md)).
+annimmt. Es ist ein Workflow-Ereignis namens *Approve* ([Workflows](../../anleitungen/workflows.md), [Freigabe und Prüfung](alltag/freigabe-und-pruefung.md)).
 
 **Prüfprotokoll** (*Audit trail*): der manipulationssichere Nachweis, wer in der Administration was getan hat, mit
 eigenem Reiter **Audit** ([Prüfprotokoll](../../../en/us/features/6.0/audit-trail.md)).
@@ -41,12 +41,12 @@ Zweigen haben.
 
 ## D bis M
 
-**Entwurf** (*Draft*): eine Version in Arbeit, die die Öffentlichkeit nicht sieht ([Veröffentlichen und Versionen](../../../en/us/help/publishing-and-versions.md)).
+**Entwurf** (*Draft*): eine Version in Arbeit, die die Öffentlichkeit nicht sieht ([Veröffentlichen und Versionen](../veroeffentlichen-und-versionen.md)).
 
 **Exponential Intelligence**: der in die Administration eingebaute Schreibassistent; er schreibt nur Entwürfe und sendet
 nichts, bis ein Schlüssel eines Anbieters hinzugefügt wird (`README.md`) ([Exponential Intelligence für Betreiber](wachstum/exponential-intelligence.md)).
 
-**Exponential Layouts**: der visuelle Page Builder mit Layouts, Zonen und Blöcken ([Der Layouts-Editor](../../../en/us/help/layouts-editor.md)).
+**Exponential Layouts**: der visuelle Page Builder mit Layouts, Zonen und Blöcken ([Der Layouts-Editor](../layout-editor.md)).
 
 **Exponential Velocity**: ein eigener Anwendungsserver von Exponential, neben Apache, Nginx und den anderen
 (`README.md`, „How Exponential is served“).
@@ -67,7 +67,7 @@ die Administration kann erreichbar bleiben (**Setup > Wartung**, [Wartungsmodus]
 **Knoten** (*Node*, auch *Ort*): ein Platz eines Inhaltselements im Baum, mit eigener Nummer.
 
 **Objektzustand** (*Object state*): eine Kennzeichnung an einem Inhaltselement (etwa Draft, Review, Released), anhand
-derer Rollen entscheiden können, wer was tun darf ([Objektzustände](../../../en/us/guides/object-states.md)).
+derer Rollen entscheiden können, wer was tun darf ([Objektzustände](../../anleitungen/objektzustaende.md)).
 
 **Bestellstatus** (*Order status*): die Stufe einer Bestellung im Shop, vom Eingang bis zur Zustellung ([Bestellstatus](handel/bestellstatus.md)).
 
@@ -75,7 +75,7 @@ derer Rollen entscheiden können, wer was tun darf ([Objektzustände](../../../e
 ([Zahlungsanbieter](handel/zahlungsanbieter.md)).
 
 **Richtlinie** (*Policy*): eine einzelne Berechtigung innerhalb einer Rolle, etwa „darf Inhalte in dieser Sektion
-bearbeiten“ ([Rollen und Richtlinien](../../../en/us/guides/roles-and-policies.md)).
+bearbeiten“ ([Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)).
 
 **Release** (*Release*): eine veröffentlichte Version von Exponential, etwa 6.0.14. Ein veröffentlichtes Release ändert
 sich nie (`SECURITY.md`).
@@ -85,7 +85,7 @@ sich nie (`SECURITY.md`).
 **Rolle** (*Role*): eine Menge von Richtlinien, die Benutzern oder Benutzergruppen gegeben wird ([Rollen für Ihr Team](alltag/rollen-fuer-ihr-team.md)).
 
 **Sektion** (*Section*): eine Kennzeichnung an einem Teil des Inhaltsbaums, mit der Rollen trennen, was Menschen sehen
-oder bearbeiten dürfen ([Sektionen](../../../en/us/guides/sections.md)).
+oder bearbeiten dürfen ([Sektionen](../../anleitungen/sektionen.md)).
 
 **Siteaccess** (*Siteaccess*): ein Zugang zur Installation (eine öffentliche Website, eine Sprache, die Administration),
 zugeordnet über Adresse oder Host. Mehrere Websites einer Installation sind mehrere Siteaccesses.
@@ -95,14 +95,14 @@ zugeordnet über Adresse oder Host. Mehrere Websites einer Installation sind meh
 
 ## T bis Z
 
-**Übersetzung** (*Translation*): ein Inhaltselement in einer anderen Sprache; jedes Element kann mehrere haben ([Sprachen](../../../en/us/help/languages.md)).
+**Übersetzung** (*Translation*): ein Inhaltselement in einer anderen Sprache; jedes Element kann mehrere haben ([Sprachen](../sprachen.md)).
 
 **Upgrade** (*Upgrade*): die Installation auf ein neueres Release von Exponential bringen ([Wie Updates funktionieren](gesund-halten/wie-updates-funktionieren.md)).
 
 **Upgrade-Prüfung** (*Upgrade check*): **Setup > Upgrade-Prüfung**, die die installierten Dateien und die Datenbank mit
-dem vergleicht, was das Release erwartet ([Upgrade-Prüfung](../../../en/us/guides/upgrade-check.md)).
+dem vergleicht, was das Release erwartet ([Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md)).
 
-**URL-Alias** (*URL alias*): die lesbare Adresse einer Seite, etwa `/news/our-new-shop` ([URLs und Aliase](../../../en/us/guides/urls-and-aliases.md)).
+**URL-Alias** (*URL alias*): die lesbare Adresse einer Seite, etwa `/news/our-new-shop` ([URLs und Aliase](../../anleitungen/urls-und-aliase.md)).
 
 **USt-Typ und USt-Regel** (*VAT type and VAT rule*): die Steuersätze und die Regeln, die für ein Produkt und ein Land im
 Shop einen davon auswählen ([USt-Typen und USt-Regeln](handel/ust-typen-und-ust-regeln.md)).
@@ -111,11 +111,11 @@ Shop einen davon auswählen ([USt-Typen und USt-Regeln](handel/ust-typen-und-ust
 bewahrt die früheren.
 
 **Workflow** (*Workflow*): eine Liste von Schritten (Ereignissen), die abläuft, wenn etwas geschieht, etwa vor dem
-Veröffentlichen ([Workflows](../../../en/us/guides/workflows.md)).
+Veröffentlichen ([Workflows](../../anleitungen/workflows.md)).
 
 ## Verwandte Seiten
 
 - [FAQ für Kunden](faq-fuer-kunden.md)
 - [Glossar für Hoster](../hosting/glossar-fuer-hoster.md)
 - [Glossar für Unternehmen](../../../en/us/help/businesses/businesses-glossary.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

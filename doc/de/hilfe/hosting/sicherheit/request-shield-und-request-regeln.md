@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren und Sicherheitsverantwortliche bei einem Hoster. Drei Schichten betrachten eine Anfrage an
 Exponential, bevor oder während der Kernel sie bearbeitet, und sie werden oft verwechselt. Diese Seite sagt, was jede tut, wo sie läuft und
 wie ein Hoster sie einschaltet. Die Fakten zu request-shield stammen aus
-[Sicherheitshärtung: Ein Schutz davor](../../../../en/us/help/security-hardening.md#a-shield-in-front-request-shield); zum Klassifizierer aus
+[Sicherheitshärtung: Ein Schutz davor](../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield); zum Klassifizierer aus
 [Anfrage-Logs](../../../../en/us/features/6.0/request-logs.md); zu den Request-Regeln aus
 [Request-Regeln](../../../../en/us/bc/6.0/view_full_security.md).
 
@@ -163,8 +163,8 @@ Das sind Möglichkeiten, die ein Hoster wählen kann:
 ## Verwandte Seiten
 
 - [Sicherheit für Hoster: Überblick](README.md)
-- [Sicherheitshärtung](../../../../en/us/help/security-hardening.md)
+- [Sicherheitshärtung](../../sicherheitshaertung.md)
 - [Die Administration einschränken](die-administration-einschraenken.md)
 - [Sicherheitslog](../betrieb/sicherheitslog.md)
 - [HTTP-Cache: Mit request-shield davor](../../../../en/us/bc/6.0/httpcache.md#with-request-shield-in-front)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

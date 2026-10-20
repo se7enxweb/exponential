@@ -29,8 +29,8 @@ Beides sind gute Geschichten.
 | „Die Hilfe zeigt die Dokumentation aus dem Ordner `doc/` des Repositorys, sodass sich Dokumentation und Code gemeinsam ändern.“ | [Das Hilfesystem, Was sie zeigt](../../../en/us/features/6.0/help-system.md#what-it-shows-and-what-never) |
 | „Seiten werden nach Zielgruppen gefiltert: Redakteure, Administratoren, Entwickler, Benutzer und mehr.“ | [Das Hilfesystem](../../../en/us/features/6.0/help-system.md) |
 | „Jede Seite lässt sich sauber drucken oder als PDF herunterladen, erzeugt auf dem Server, ohne externen Dienst.“ | [Hilfesystem, Drucken und PDF](../../../en/us/features/6.0/help-system.md#print-and-pdf) |
-| „Die Hilfe ist freie Dokumentation unter der GNU FDL 1.3 oder später: kopieren, übersetzen, verbessern.“ | [Freie Dokumentation](../../../en/us/help/free-documentation.md), [Die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md) |
-| „Jede Seite hat **Auf GitHub bearbeiten**; eine Korrektur ist nur einen Pull Request entfernt.“ | [Freie Dokumentation, Anderen helfen](../../../en/us/help/free-documentation.md#help-others) |
+| „Die Hilfe ist freie Dokumentation unter der GNU FDL 1.3 oder später: kopieren, übersetzen, verbessern.“ | [Freie Dokumentation](../freie-dokumentation.md), [Die Lizenz dieser Dokumentation](../../../en/us/README-LICENSE.md) |
+| „Jede Seite hat **Auf GitHub bearbeiten**; eine Korrektur ist nur einen Pull Request entfernt.“ | [Freie Dokumentation, Anderen helfen](../freie-dokumentation.md#anderen-helfen) |
 | „Erweiterungen können ihre eigene Hilfe mitbringen.“ | [Hilfe aus Erweiterungen](../../../en/us/features/6.0/help-system.md#help-from-extensions) |
 | „Die Hilfe wird nie Besuchern gezeigt, die nicht angemeldet sind.“ | [Wer sie lesen darf](../../../en/us/features/6.0/help-system.md#who-may-read-it) |
 
@@ -45,9 +45,9 @@ Beides sind gute Geschichten.
 
 | Material | Wo | Quelle |
 |---|---|---|
-| Das Installationsbuch | [Inhalt](../../../en/us/install/README.md) | in `doc/` |
-| Die Anleitungen | [Anleitungen](../../../en/us/guides/README.md) | in `doc/` |
-| Die offizielle Dokumentationswebsite | [doc.exponential.earth](https://doc.exponential.earth/) | [Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places) |
+| Das Installationsbuch | [Inhalt](../../installation/README.md) | in `doc/` |
+| Die Anleitungen | [Anleitungen](../../anleitungen/README.md) | in `doc/` |
+| Die offizielle Dokumentationswebsite | [doc.exponential.earth](https://doc.exponential.earth/) | [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |
 | eZpedia | [ezpedia.exponential.earth](https://ezpedia.exponential.earth/) | ebenda |
 | Schulungsbücher | [Spiegel auf GitHub](https://github.com/se7enxweb/mirror.exponential.se7enx.com) | ebenda |
 | Die Geschichte, Monat für Monat | [Die Geschichte](../../../en/us/history/README.md) | in `doc/` |
@@ -55,7 +55,7 @@ Beides sind gute Geschichten.
 ## Warum freie Dokumentation wichtig ist
 
 - **Menschen können lernen, ohne um Erlaubnis zu fragen.** Eine Lehrkraft kann eine Seite für eine Klasse drucken; ein
-  Unternehmen kann sie in sein Intranet stellen ([Freie Dokumentation, Was Sie tun dürfen](../../../en/us/help/free-documentation.md#what-you-can-do)).
+  Unternehmen kann sie in sein Intranet stellen ([Freie Dokumentation, Was Sie tun dürfen](../freie-dokumentation.md#was-sie-tun-dürfen)).
 - **Übersetzungen können überall entstehen.** Eine Community kann die Hilfe in ihre Sprache übersetzen und teilen.
 - **Korrekturen kommen zurück.** Eine Änderung wird unter derselben Lizenz angenommen, sodass die Verbesserung für alle
   frei bleibt ([Zur Dokumentation beitragen](../../../en/us/README-LICENSE.md#contributing-to-the-documentation)).
@@ -73,4 +73,4 @@ Beides sind gute Geschichten.
 - [Für freie Dokumentation eintreten](fuer-freie-dokumentation-eintreten.md)
 - [Die Hilfe verbessern](die-hilfe-verbessern.md)
 - [Das Hilfesystem](../../../en/us/features/6.0/help-system.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -79,7 +79,7 @@ The project's own sources describe a community-first project:
   ([Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#what-the-foundation-is)).
 - The Foundation's mission includes "Adoption", "Support", "Education", "Promotion" and "Documentation"
   ([In short](../who-is-the-exponential-foundation.md#in-short)). Advocates do exactly these things, as volunteers.
-- Every pull request is merged and the contributor's commits are kept
+- Every pull request is merged under the contributor's name
   ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)): the project wants
   contributions, and advocates bring contributors.
 

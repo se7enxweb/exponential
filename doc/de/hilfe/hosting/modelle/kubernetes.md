@@ -30,17 +30,17 @@ abbilden müssen.
 ## Was die Quellen sagen
 
 - **Kubernetes ist Stufe 3**, funktioniert erwartungsgemäß: Es führt die oben beschriebenen Container aus, mit dem Hinweis
-  auf einen einzigen Schreiber für SQLite ([Stufe 3](../../../../en/us/help/os-support.md#tier-3-expected-to-work)). Stufe 3 ist eine
+  auf einen einzigen Schreiber für SQLite ([Stufe 3](../../betriebssystemunterstuetzung.md#stufe-3-voraussichtlich-lauffähig)). Stufe 3 ist eine
   begründete Erwartung, kein Testergebnis.
 - Mehrere Replikate brauchen einen Datenbankserver (zuerst PostgreSQL) und gemeinsamen Speicher für `var/storage`
-  ([Container, Cloud und Hosting-Panels](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels)).
+  ([Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels)).
 - Alles auf [Container: Docker und Podman](container-docker-und-podman.md) gilt: Images, Volumes, der Entry Point,
   Geheimnisse.
 
 > **Hinweis**
 > Wenn Sie Exponential produktiv auf Kubernetes betreiben, teilen Sie es dem Projekt in seinem Tracker mit; die Seite zu
 > den Betriebssystemen bittet genau darum, damit ein Eintrag der Stufe 3 aufrücken kann
-> ([Die vier Stufen](../../../../en/us/help/os-support.md#the-four-tiers)).
+> ([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)).
 
 ## Ein Replikat oder mehrere
 
@@ -63,7 +63,7 @@ Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit mögli
 Mit mehreren Replikaten scheidet SQLite aus: Das WAL von SQLite braucht gemeinsamen Speicher auf einem Host, sodass mehrere
 Replikate keine Datenbankdatei über ein Netzwerk-Volume teilen können. Die Quellen empfehlen zuerst **2. PostgreSQL**; jede
 Server-Datenbank der Liste hat „Mehrere Webserver an einer Datenbank: ja“
-([Auf einen Blick](../../../../en/us/help/database-support.md#at-a-glance)). Unter Velocity hält jeder Worker seine eigene Verbindung, sodass
+([Auf einen Blick](../../datenbankunterstuetzung.md#auf-einen-blick)). Unter Velocity hält jeder Worker seine eigene Verbindung, sodass
 die Datenbank Worker mal Replikate Verbindungen annehmen muss.
 
 ## Gemeinsame Dateien
@@ -88,7 +88,7 @@ erlauben es, Logs und Caches auf andere Dateisysteme als den Speicher zu legen
 ## Sitzungen
 
 Standardmäßig ist `site.ini [Session] Handler` leer, was `ezpSessionHandlerPHP` bedeutet: PHP hält sie in seinem eigenen
-Speicher (Dateien) ([Sitzungen](../../../../en/us/guides/sessions.md)). Dateien auf einem Pod sind für den nächsten unsichtbar; ein
+Speicher (Dateien) ([Sitzungen](../../../anleitungen/sitzungen.md)). Dateien auf einem Pod sind für den nächsten unsichtbar; ein
 Besucher, der auf einem Replikat angemeldet ist, ist auf einem anderen ein Fremder. Wählen Sie eines:
 
 - `Handler=ezpSessionHandlerDB`, das Sitzungen in der Tabelle `ezsession` der gemeinsamen Datenbank hält; oder
@@ -107,7 +107,7 @@ Handler=ezpSessionHandlerDB
 Teil `frequent` in derselben Minute ausführen, würden Benachrichtigungen doppelt verschicken und Workflows doppelt
 ausführen. Ein Kubernetes-CronJob, der einen Container aus demselben Image startet, mit denselben Volumes,
 Datenbankeinstellungen und demselben Benutzer, entspricht der dokumentierten Crontab
-([Kapitel 10, Cronjobs](../../../../en/us/install/10-after-installing.md#103-cronjobs)):
+([Kapitel 10, Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs)):
 
 ```text
 */5   * * * *   php runcronjobs.php -q -s site frequent
@@ -124,7 +124,7 @@ des Besuchers mitteilen dürfen:
 
 - Unter PHP-FPM führen Sie die Proxys in `site.ini [HTTPHeaderSettings] TrustedProxies[]` auf (mitgeliefert: `127.0.0.1` und
   `::1`); setzen Sie `ClientIpByCustomHTTPHeader` nur zusammen mit dieser Liste
-  ([13.10 Hinter einem Proxy](../../../../en/us/install/13-security-hardening.md#1310-behind-a-proxy-trusted-headers)).
+  ([13.10 Hinter einem Proxy](../../../installation/13-sicherheitshaertung.md#1310-hinter-einem-proxy-vertrauenswürdige-header)).
 - Unter Velocity konfigurieren Sie die vertrauenswürdigen Proxys in der eigenen Liste von Velocity,
   `Q.webserver.proxy.trusted`; Proxys vor Velocity werden **dort** konfiguriert
   ([Vertrauenswürdige Proxys](../../../../en/us/bc/6.0/trusted-proxies.md)).
@@ -133,7 +133,7 @@ des Besuchers mitteilen dürfen:
 > **Warnung**
 > Eine falsche Liste vertrauenswürdiger Proxys lässt Besucher entweder ihre Adresse und ihren HTTPS-Zustand fälschen, oder
 > sie lässt jeden Besucher wie der Ingress aussehen. Testen Sie mit der curl-Prüfung aus
-> [8.8 Hinter einem Reverse Proxy](../../../../en/us/install/08-serving-the-site.md#88-behind-a-reverse-proxy).
+> [8.8 Hinter einem Reverse Proxy](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy).
 
 ## Code ausrollen
 
@@ -161,4 +161,4 @@ Quellen:
 - [Container: Docker und Podman](container-docker-und-podman.md)
 - [Mehrere Web-Knoten](../betrieb/mehrere-web-knoten.md), [Clustering und gemeinsamer Speicher](../betrieb/clustering-und-gemeinsamer-speicher.md)
 - [Varnish und Reverse Proxys](../leistung/varnish-und-reverse-proxys.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -26,10 +26,10 @@ Was der „Sandbox-Zugang“ umfasst, ist nicht beschrieben; fragen Sie das Part
 | Grund | Quelle |
 |---|---|
 | Freie Software: Studierende können alles lesen, ausführen und ändern | GPL v2 oder später (LICENSE) |
-| Freie Dokumentation, die Studierende in Kursunterlagen kopieren dürfen | [Freie Dokumentation](../../../en/us/help/free-documentation.md) |
-| Kein Datenbankserver nötig: SQLite ist der Standard | [Datenbankunterstützung](../../../en/us/help/database-support.md) |
-| Eine Codebasis aus der Praxis mit vollständiger Git-Historie | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) |
-| Ein kleines CMS für Einsteiger: Exponential Basic, „für alle, für Bildungszwecke, für den persönlichen Gebrauch“ | [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-basic) |
+| Freie Dokumentation, die Studierende in Kursunterlagen kopieren dürfen | [Freie Dokumentation](../freie-dokumentation.md) |
+| Kein Datenbankserver nötig: SQLite ist der Standard | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
+| Eine Codebasis aus der Praxis mit vollständiger Git-Historie | [Mit Git entwickeln](../mit-git-entwickeln.md) |
+| Ein kleines CMS für Einsteiger: Exponential Basic, „für alle, für Bildungszwecke, für den persönlichen Gebrauch“ | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#exponential-basic) |
 
 ## Ideen für Kurse und Projekte
 
@@ -48,7 +48,7 @@ Echte Beiträge sind das beste Portfolio, das Studierende haben können: Ein üb
 
 1. Lernen Sie mit der Hilfe und einer lokalen Installation.
 2. Tragen Sie bei: Fehlerberichte, Übersetzungen, Dokumentation, kleine Korrekturen
-   ([Unterstützer: hier beginnen](../../../en/us/help/supporters/supporters-start-here.md)).
+   ([Unterstützer: hier beginnen](../unterstuetzer/unterstuetzer-hier-beginnen.md)).
 3. Liefern Sie ein erstes Projekt, allein oder als Praktikantin oder Praktikant bei einem Partner.
 4. Wechseln Sie zur Stufe Now oder Starter, wenn Sie Dienstleistungen verkaufen ([Partnerstufen](partnerstufen.md)).
 
@@ -64,4 +64,4 @@ Echte Beiträge sind das beste Portfolio, das Studierende haben können: Ein üb
 - [Schulungspartner](schulungspartner.md)
 - [Eine Exponential-Schulung durchführen](eine-schulung-durchfuehren.md)
 - [Partnerstufen von Student bis Platinum](partnerstufen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

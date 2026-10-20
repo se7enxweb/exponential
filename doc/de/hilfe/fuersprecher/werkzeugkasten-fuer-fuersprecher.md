@@ -51,7 +51,7 @@ Diese Seite ist für Fürsprecher, die alles griffbereit haben möchten. Setzen 
 [20-Minuten-Vortrag](folienplan-20-minuten-vortrag.md), [Workshop](ablaufplan-praxis-workshop.md),
 [Benutzergruppe oder Klasse](vor-benutzergruppe-oder-klasse-praesentieren.md), [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md),
 [Screencast](einen-screencast-aufnehmen.md), [Barrierefreie Folien](barrierefreie-folien-und-grafiken.md)
-und die [Demo-Skripte](../../../en/us/help/business/demo-scripts.md) Klick für Klick.
+und die [Demo-Skripte](../geschaeft/demo-drehbuecher.md) Klick für Klick.
 
 ## Schreiben und veröffentlichen
 
@@ -114,4 +114,4 @@ Sponsor 7x           https://github.com/sponsors/se7enxweb
 
 - [Fürsprecher: hier beginnen](fuersprecher-hier-beginnen.md)
 - [Lesepfad für Fürsprecher](lesepfad-fuer-fuersprecher.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

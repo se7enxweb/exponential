@@ -20,7 +20,7 @@ zusammen mit dem Pfad Ihres Typs; wo beide dieselbe Seite nennen, lesen Sie sie 
 | 1 | [Kunden: hier beginnen](kunden-hier-beginnen.md) | Betreiber | Die Übersicht über diesen Bereich |
 | 2 | [Welcher Kundentyp sind Sie?](typen/welcher-kundentyp-sind-sie.md) | Betreiber | Die Startseiten, die Sie als Nächstes lesen |
 | 3 | [Was Ihnen gehört](was-ihnen-gehoert.md) | Betreiber | Inhalte, Daten, Code und die Lizenz |
-| 4 | [Rundgang durch die Administration](../../../en/us/help/admin-tour.md) | Betreiber, Leitungen | Wo sich was in der Administration befindet |
+| 4 | [Rundgang durch die Administration](../rundgang-durch-die-administration.md) | Betreiber, Leitungen | Wo sich was in der Administration befindet |
 | 5 | [Rollen für Ihr Team](alltag/rollen-fuer-ihr-team.md) | Betreiber | Wer was tun darf |
 | 6 | [Konten, Passwörter und zweistufige Anmeldung](alltag/konten-passwoerter-und-zweistufige-anmeldung.md) | Alle mit Zugang | Sichere Konten |
 | 7 | [Administratorkonten und Zugriff](gesund-halten/administratorkonten-und-zugriff.md) | Betreiber | Wer die Schlüssel hat |
@@ -65,4 +65,4 @@ Website ([Jährliche Überprüfung des Nutzens](nutzen/jaehrliche-ueberpruefung-
 - [Kunden: hier beginnen](kunden-hier-beginnen.md)
 - [Kundentypen](typen/README.md)
 - [FAQ für Kunden](faq-fuer-kunden.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

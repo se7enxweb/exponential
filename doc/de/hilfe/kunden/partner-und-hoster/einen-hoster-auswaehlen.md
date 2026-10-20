@@ -31,7 +31,7 @@ Aus [Hosting auswählen](../../../../en/us/help/businesses/choosing/choosing-hos
 | Backups | Datenbank, hochgeladene Dateien, Einstellungen, Schlüssel, Prüfprotokoll |
 
 Notieren Sie, was Ihre Website heute verwendet: **Setup > Systeminformationen** zeigt die PHP-Version, die Datenbank,
-die Engine, die geantwortet hat, und mehr ([Systeminformationen](../../../../en/us/guides/system-information.md)). Ein neuer
+die Engine, die geantwortet hat, und mehr ([Systeminformationen](../../../anleitungen/systeminformationen.md)). Ein neuer
 Hoster sollte mindestens dasselbe bieten, oder einen geplanten Upgrade-Pfad.
 
 ## Die Fragen, die über das Modell entscheiden
@@ -94,4 +94,4 @@ Ihr Teil:
 - [Einen Partner auswählen](einen-partner-auswaehlen.md)
 - [Verträge und SLAs](vertraege-und-slas.md)
 - [Kunden auf Ihr Hosting umziehen (für Hoster)](../../hosting/migrationen/kunden-zu-ihrem-hosting-migrieren.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

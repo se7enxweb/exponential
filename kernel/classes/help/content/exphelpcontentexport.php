@@ -282,6 +282,13 @@ class expHelpContentExport
             . '<rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>' );
         foreach ( $files as $path => $content )
             $zip->addFromString( 'OEBPS/' . $path, $content );
+        // every entry dated by the book's content, not by the clock: the same content gives the same file, so a stored
+        // e-book is only published as a new version when its content changed (expHelpContentEbooks)
+        if ( method_exists( $zip, 'setMtimeName' ) )
+        {
+            for ( $i = 0; $i < $zip->numFiles; $i++ )
+                $zip->setMtimeName( (string)$zip->getNameIndex( $i ), $this->modified() );
+        }
         $zip->close();
         if ( !@rename( $tmp, $file ) )
             throw new RuntimeException( "Cannot write $file" );
@@ -291,6 +298,22 @@ class expHelpContentExport
 
     /** @var array chapter id => its file in the EPUB */
     protected $chapterFile = array();
+
+    /**
+     * When the book's content last changed: the newest modification of the manual and of its chapters and topics
+     *
+     * @return int
+     */
+    public function modified()
+    {
+        $modified = (int)$this->manual['modified'];
+        foreach ( $this->flatten( $this->entries() ) as $entry )
+        {
+            if ( $entry['kind'] === 'topic' )
+                $modified = max( $modified, (int)$entry['topic']['modified'] );
+        }
+        return $modified;
+    }
 
     /**
      * The entries in reading order, chapters before their children
@@ -336,7 +359,7 @@ class expHelpContentExport
             '<dc:identifier id="uid">' . self::h( $uid ) . '</dc:identifier>',
             '<dc:title>' . self::h( $this->manual['title'] ) . '</dc:title>',
             '<dc:language>' . self::h( $language ) . '</dc:language>',
-            '<meta property="dcterms:modified">' . gmdate( 'Y-m-d\TH:i:s\Z', (int)$this->manual['modified'] ) . '</meta>',
+            '<meta property="dcterms:modified">' . gmdate( 'Y-m-d\TH:i:s\Z', $this->modified() ) . '</meta>',
             '<dc:publisher>Exponential</dc:publisher>',
             '<meta property="schema:accessMode">textual</meta>',
             '<meta property="schema:accessMode">visual</meta>',
@@ -437,7 +460,7 @@ class expHelpContentExport
         ) );
         $pdf = $writer->render( array( 'title' => $this->manual['title'],
                                        'summary' => trim( $this->manual['subtitle'] . ( $this->manual['subtitle'] !== '' && $this->manual['shortdesc'] !== '' ? ' - ' : '' ) . $this->manual['shortdesc'] ),
-                                       'path' => '', 'changed' => (int)$this->manual['modified'],
+                                       'path' => '', 'changed' => $this->modified(),
                                        'url' => expHelpLinks::absolute( expHelp::url( 'manual', $this->manual['remote_id'] ) ),
                                        'notice' => $this->manual['license'] ), $html );
         $dir = dirname( $file );

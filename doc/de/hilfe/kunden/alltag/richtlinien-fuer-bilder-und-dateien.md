@@ -55,7 +55,7 @@ und SVG (`settings/image.ini [ImageUploadSettings] AllowedMIMETypes[]`).
 - Laden Sie Bilder hoch, die groß genug für die größte Stelle sind, an der sie erscheinen, aber nicht direkt aus der
   Kamera. Vereinbaren Sie eine maximale Breite mit Ihrem Designer, der die größte Variante Ihres Designs kennt.
 - Die Upload-Seite zeigt die größte Datei, die sie annimmt, zum Beispiel *Höchstens 64 MB pro Datei*
-  ([Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md)). Große Dateien verlangsamen die Redaktion und die Backups.
+  ([Bilder, Medien und Uploads](../../medien-und-uploads.md)). Große Dateien verlangsamen die Redaktion und die Backups.
 - Wird ein Upload als zu groß abgewiesen, verkleinern Sie ihn (weniger Pixel oder stärkere Kompression), statt eine
   höhere Grenze zu verlangen.
 
@@ -67,7 +67,7 @@ und SVG (`settings/image.ini [ImageUploadSettings] AllowedMIMETypes[]`).
 | Titel | kurz und klar; Redakteure sehen ihn in Listen und Suchen, Besucher oft als Linktext | Rathaus, Vorderseite |
 | Alternativtext | was das Bild zeigt, für jemanden, der es nicht sehen kann; nur bei reiner Dekoration leer | Der Rathauseingang mit der neuen Rampe |
 
-Die Regeln dahinter: [Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md#good-practice) und die
+Die Regeln dahinter: [Bilder, Medien und Uploads](../../medien-und-uploads.md#bewährte-vorgehensweise) und die
 [Checkliste zur Barrierefreiheit für Redakteure](checkliste-barrierefreiheit-fuer-redakteure.md). Bilder aus einem ZIP-Upload
 werden übersprungen, wo die Website einen Alternativtext verlangt, weil eine ZIP-Datei keinen Platz dafür hat.
 
@@ -99,7 +99,7 @@ Who to ask: ______________ (role)
 
 ## Verwandte Seiten
 
-- [Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md)
+- [Bilder, Medien und Uploads](../../medien-und-uploads.md)
 - [Pflege der Medienbibliothek](pflege-der-medienbibliothek.md)
 - [Dateien und Downloads](../../../../en/us/help/creators/website-creators/files-and-downloads.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -88,4 +88,4 @@ Betrachten Sie die Seite der Vorteile als die neuere Aussage und lassen Sie sich
 - [Partnertarife und Preise, wie veröffentlicht](partnertarife-und-preise.md)
 - [Anforderungen an Partner](anforderungen-an-partner.md)
 - [Support-Stufen und Reaktionszeiten](support-stufen-und-reaktionszeiten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

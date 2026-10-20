@@ -15,7 +15,7 @@ ursprüngliche Autor genannt wird.
 
 ## 1. Das Upstream-Projekt finden
 
-- `ezinfo.php` und `extension.xml` der Erweiterung nennen ihre Info-URL und Lizenz ([Erweiterungen](../../../en/us/guides/extensions.md)).
+- `ezinfo.php` und `extension.xml` der Erweiterung nennen ihre Info-URL und Lizenz ([Erweiterungen](../../anleitungen/extensions.md)).
 - Der Composer-Paketname (`vendor/name`) führt zu ihrem Repository auf Packagist.
 - Viele Erweiterungen im Ökosystem werden von se7enxweb als Fortführung früherer Arbeit gepflegt; andere liegen bei
   ihren ursprünglichen Autoren oder auf <https://projects.exponential.earth>.
@@ -51,7 +51,7 @@ Das Projekt hält es ebenso: Exponential Layouts „bringt das Konzept von Netge
 Wenn Sie Betreuer werden:
 
 - Veröffentlichen Sie Releases nach den Regeln: Version in `ezinfo.php` und `extension.xml`, Tag nach dem Anheben, nie
-  ein Tag verschieben ([Erweiterungen, „Release it“](../../../en/us/guides/extensions.md#7-release-it)).
+  ein Tag verschieben ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
 - Beantworten Sie Issues, oder sagen Sie in der README, dass Sie sie nur für Ihre eigenen Bedürfnisse pflegen.
 - Informieren Sie die Community in den Foren.
 
@@ -60,5 +60,5 @@ Wenn Sie Betreuer werden:
 - [Partner für Erweiterungen und Themes](partner-fuer-erweiterungen-und-themes.md)
 - [Eine Erweiterung als Partner veröffentlichen](eine-erweiterung-veroeffentlichen.md)
 - [Code zurückgeben](code-zurueckgeben.md)
-- [Erweiterungen zurückgeben](../../../en/us/help/contribute-extensions-back.md): eine Erweiterung veröffentlichen und was die GPL verlangt, wenn Sie sie verbreiten
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Erweiterungen zurückgeben](../erweiterungen-zurueckgeben.md): eine Erweiterung veröffentlichen und was die GPL verlangt, wenn Sie sie verbreiten
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

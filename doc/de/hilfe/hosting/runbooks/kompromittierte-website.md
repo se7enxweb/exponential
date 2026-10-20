@@ -62,7 +62,7 @@ sollte, von der Website versandter Spam oder ein Alarm aus dem Prüfprotokoll. D
 | Hat die Website Mail versandt? | die Mail-Logs des Servers |
 | Welche Version lief? | die Seite Über oder `composer show se7enxweb/exponential`; vergleichen Sie mit den Korrekturen in späteren Release Notes |
 
-Das Prinzip hinter der Prüfung der Dateien, aus [13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership):
+Das Prinzip hinter der Prüfung der Dateien, aus [13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer):
 Wenn der PHP-Prozess nur `var/` und `settings/` ändern kann und der Webserver sich weigert, irgendetwas unterhalb der Wurzel auszuführen,
 kann eine Schwachstelle in einer Erweiterung keinen Code einschleusen.
 
@@ -82,7 +82,7 @@ kann eine Schwachstelle in einer Erweiterung keinen Code einschleusen.
    `settings/override/site.ini.append.php`); API-Schlüssel und Tokens, die die Website hält; Passwörter für SFTP und Panel.
 2. **Sitzungen**: Eine Passwortänderung meldet jede andere Sitzung dieses Benutzers ab (`[PasswordSettings] EndOtherSessions=enabled`);
    nach einem vermuteten Einbruch entfernen Sie außerdem alle Sitzungen (**Setup** > **Sitzungen**, mit dem Sitzungs-Handler für die
-   Datenbank) ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md#session-hijacking)).
+   Datenbank) ([Sicherheitshärtung](../../sicherheitshaertung.md#sitzungsübernahme)).
 3. **Konten**: Entfernen Sie Konten und Rollenzuweisungen, die der Angreifer angelegt hat.
 4. **Caches**: Leeren Sie alles, damit keine zwischengespeicherte Seite aus dem kompromittierten Zustand ausgeliefert wird:
    `php bin/php/ezcache.php --clear-all --allow-root-user`, und mit Velocity starten Sie es neu und leeren seinen Antwort-Cache.
@@ -104,12 +104,12 @@ kann eine Schwachstelle in einer Erweiterung keinen Code einschleusen.
 - Machen Sie den Code für den Benutzer der Website schreibgeschützt (13.11).
 - Leiten Sie das Prüfprotokoll mit einer Senke von der Maschine weg (`[AuditSink_syslog]`, `[AuditSink_webhook]`), damit eine
   kompromittierte Maschine ihre eigene Geschichte nicht stillschweigend umschreiben kann
-  ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md#watching-logs-the-request-classifier-and-the-audit-trail)).
+  ([Sicherheitshärtung](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll)).
 - Erwägen Sie request-shield davor ([request-shield und Request-Regeln](../sicherheit/request-shield-und-request-regeln.md)).
 
 ## Verwandte Seiten
 
 - [Härtung für Hoster](../sicherheit/haertung-fuer-hoster.md)
 - [Aus einem Backup wiederherstellen](aus-einem-backup-wiederherstellen.md)
-- [Kapitel 13: Sicherheitshärtung](../../../../en/us/install/13-security-hardening.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 13: Sicherheitshärtung](../../../installation/13-sicherheitshaertung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

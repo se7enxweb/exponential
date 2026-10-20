@@ -28,7 +28,7 @@ Berechtigungen einrichten und wie Sie die Arbeit zwischen Hoster und Kunde aufte
 
 Virtuelle Maschinen in der Cloud (Amazon EC2 einschließlich Graviton, Google Compute Engine, Azure, Hetzner, DigitalOcean und
 die übrigen) sind gewöhnliche Linux-Maschinen: Stufe 2 oder 3 nach ihrer Distribution
-([Container, Cloud und Hosting-Panels](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels)). Ein VPS von Ihrer eigenen
+([Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels)). Ein VPS von Ihrer eigenen
 Plattform ist dasselbe: Seine Unterstützungsstufe ist die der Distribution, die Sie darauf installieren.
 
 | Distribution im Image | Stufe | PHP 8 aus (laut den Quellen) |
@@ -40,9 +40,9 @@ Plattform ist dasselbe: Seine Unterstützungsstufe ist die der Distribution, die
 | Alpine Linux | 2 | `apk` |
 | Fedora, SUSE, Arch, Amazon Linux 2023 und andere | 3 | ihre eigenen Pakete |
 
-Quelle: [Betriebssystemunterstützung](../../../../en/us/help/os-support.md#tier-2-known-to-work). Die Prozessorarchitektur zählt nur über PHP
+Quelle: [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md#stufe-2-bekanntermaßen-lauffähig). Die Prozessorarchitektur zählt nur über PHP
 und die Datenbank: x86_64 ist Stufe 1, aarch64 Stufe 2
-([Prozessorarchitekturen](../../../../en/us/help/os-support.md#processor-architectures)).
+([Prozessorarchitekturen](../../betriebssystemunterstuetzung.md#prozessorarchitekturen)).
 
 ## Das Basis-Image
 
@@ -50,15 +50,15 @@ Ein VPS-Image für Exponential enthält:
 
 - **PHP 8.1 oder später**, damit Velocity laufen kann (8.0 führt Exponential unter Apache oder PHP-FPM aus, nicht Velocity).
   Die Empfehlung ist das neueste 8.x, das Ihre Distribution anbietet; 8.5 wird unterstützt
-  ([2.2 PHP](../../../../en/us/install/02-requirements.md#22-php)).
+  ([2.2 PHP](../../../installation/02-voraussetzungen.md#22-php)).
 - **Die erforderlichen Erweiterungen**: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`,
   `session`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick; für Velocity außerdem `sockets`, mit `pcntl` und
-  `openssl` ([2.3 PHP-Erweiterungen](../../../../en/us/install/02-requirements.md#23-php-extensions)).
+  `openssl` ([2.3 PHP-Erweiterungen](../../../installation/02-voraussetzungen.md#23-php-extensions)).
 - **64-Bit-PHP**, empfohlen für die Unterstützung von mehr als 30 Sprachen.
 - **Composer 2** und **Git**, für Installationen und Updates aus dem Quellcode
   ([Composer und Git auf Servern](../grundlagen/composer-und-git-auf-servern.md)).
 - **Dasselbe PHP für Web und Kommandozeile.** Beide müssen eine unterstützte Version sein und dieselben Erweiterungen haben
-  ([Kommandozeile und Web-PHP](../../../../en/us/install/02-requirements.md#command-line-and-web-php)).
+  ([Kommandozeile und Web-PHP](../../../installation/02-voraussetzungen.md#php-auf-der-kommandozeile-und-im-web)).
 
 Unter Red Hat Enterprise Linux 9 und seinen Nachbauten ist die dokumentierte Paketauswahl für das mitgelieferte PHP:
 
@@ -75,7 +75,7 @@ php bin/php/console exp:velocity ext install-hint intl xsl
 ```
 
 Der zweite Befehl gibt den Installationsbefehl für die Pakete des Systems aus, auf dem er läuft
-([Herausfinden, was fehlt](../../../../en/us/install/02-requirements.md#finding-what-is-missing)).
+([Herausfinden, was fehlt](../../../installation/02-voraussetzungen.md#herausfinden-was-fehlt)).
 
 ## Die Website ausliefern
 
@@ -90,9 +90,9 @@ Auf einem VPS darf der Kunde lang laufende Prozesse ausführen; die empfohlene E
 Velocity bindet sich in der Auslieferung an `127.0.0.1` auf den Ports 8088 (HTTP) und 8080 (HTTPS). Um den Besuchern direkt
 gegenüberzustehen, wird es auf `Host=0.0.0.0`, `Port=80` und `HTTPSPort=443` gesetzt und als root gestartet; die Worker
 wechseln dann zum Benutzer der Website
-([8.3.5 Adresse, Ports, Benutzer und Gruppe](../../../../en/us/install/08-serving-the-site.md#835-address-ports-user-and-group)).
+([8.3.5 Adresse, Ports, Benutzer und Gruppe](../../../installation/08-die-website-ausliefern.md#835-adresse-ports-benutzer-und-gruppe)).
 `exp:velocity` hat keinen Befehl, der einen Startdienst installiert; Kapitel 8 zeigt eine abgeleitete systemd-Unit, die
-`exp:velocity start` ausführt ([8.3.11](../../../../en/us/install/08-serving-the-site.md#8311-running-velocity-as-a-service)).
+`exp:velocity start` ausführt ([8.3.11](../../../installation/08-die-website-ausliefern.md#8311-velocity-als-dienst-betreiben)).
 
 > **Tipp**
 > Legen Sie den Startdienst in Ihre Vorlage für VPS-Images, mit dem Installationspfad und dem Datenbankdienst in `After=` als
@@ -110,7 +110,7 @@ Ein VPS liefert eine Website von einer Maschine aus, und genau dort ist **1. SQL
 Produktionsdatenbank. Wählen Sie einen Server, wenn mehr als eine Maschine in die Datenbank schreiben muss, wenn viele
 Redakteure den ganzen Tag gleichzeitig große Änderungen veröffentlichen oder wenn Sie Replikation oder Benutzer und Rechte
 auf Ebene der Datenbank brauchen; dann ist **2. PostgreSQL** der empfohlene Datenbankserver
-([Datenbankunterstützung](../../../../en/us/help/database-support.md)). Der Datenbankserver kann auf dem VPS selbst oder auf einer getrennten
+([Datenbankunterstützung](../../datenbankunterstuetzung.md)). Der Datenbankserver kann auf dem VPS selbst oder auf einer getrennten
 Datenbankmaschine Ihrer Plattform laufen.
 
 Siehe [Datenbanken in der offiziellen Reihenfolge](../grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md).
@@ -118,12 +118,12 @@ Siehe [Datenbanken in der offiziellen Reihenfolge](../grundlagen/datenbanken-in-
 ## Benutzer, Berechtigungen und Cron
 
 - **Ein Benutzer schreibt.** Der PHP-FPM-Pool, die Velocity-Worker, Cronjobs und Konsolenskripte laufen alle als Benutzer
-  der Website ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)). Lassen Sie Worker nie als root
+  der Website ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)). Lassen Sie Worker nie als root
   laufen (`[ServerSettings] AllowRootWorkers=disabled`, der Standard).
 - **Keine für alle beschreibbaren Dateien.** Setzen Sie die gehärteten `[FileSettings]`-Werte `0770` und `0660`, die
-  `site.ini` empfiehlt ([13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership)).
+  `site.ini` empfiehlt ([13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)).
 - **Cron in der Crontab des Benutzers der Website**: `crontab -e -u <site user>` oder `php bin/php/console crontab:edit` als
-  dieser Benutzer ([Kapitel 10, Cronjobs](../../../../en/us/install/10-after-installing.md#103-cronjobs)).
+  dieser Benutzer ([Kapitel 10, Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs)).
 
 ## Wer was tut
 
@@ -142,7 +142,7 @@ Möglichkeiten, zwischen denen ein Hoster üblicherweise wählt:
 > **Warnung**
 > Ein Snapshot des Hypervisors von einer laufenden Maschine ersetzt kein Datenbank-Backup. Für SQLite gilt: Kopieren Sie
 > nie eine Datenbankdatei, die in Benutzung ist; nutzen Sie `.backup` oder `VACUUM INTO`
-> ([Backup und Wiederherstellung](../../../../en/us/help/database-support.md#backup-and-restore)).
+> ([Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung)).
 
 ## Checkliste
 
@@ -159,5 +159,5 @@ Möglichkeiten, zwischen denen ein Hoster üblicherweise wählt:
 - [Ein Hosting-Modell wählen](ein-hosting-modell-waehlen.md), [Dedizierte Server](dedizierte-server.md)
 - [Betriebssysteme für Hoster](../grundlagen/betriebssysteme-fuer-hoster.md)
 - [Checkliste: neuer Server](../checklisten/checkliste-fuer-einen-neuen-server.md)
-- [Kapitel 2: Anforderungen](../../../../en/us/install/02-requirements.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 2: Anforderungen](../../../installation/02-voraussetzungen.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

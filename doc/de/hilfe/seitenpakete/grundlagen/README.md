@@ -15,7 +15,7 @@ Seiten wurde gegen den Kernel-Code von 6.0.15 (`kernel/classes/ezpackage.php` un
 Paketquellen und den laufenden Paketserver geprüft.
 
 Wenn Sie nur eine Website installieren wollen, brauchen Sie nichts davon: Der Setup-Assistent, der Kickstarter und `exp:install` erledigen
-das für Sie (siehe [Eine Installationsmethode wählen](../../../../en/us/install/04-choosing-an-install-method.md)). Lesen Sie weiter, wenn eine
+das für Sie (siehe [Eine Installationsmethode wählen](../../../installation/04-installationsweg-waehlen.md)). Lesen Sie weiter, wenn eine
 Installation scheitert, wenn Sie ändern wollen, was eine neue Website enthält, oder wenn Sie ein Paket bauen.
 
 ## Inhalt
@@ -96,6 +96,6 @@ Installation scheitert, wenn Sie ändern wollen, was eine neue Website enthält,
 - [Glossar](../glossar-der-seitenpakete.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md): 7x und die Exponential Foundation ermutigen Sie ausdrücklich, Ihre eigenen
   Seitenpakete beim gemeinsamen Paketserver einzureichen.
-- [Anleitung zu Paketen](../../../../en/us/guides/packages.md): **Setup > Pakete** in der Administration
+- [Anleitung zu Paketen](../../../anleitungen/pakete.md): **Setup > Pakete** in der Administration
 - [Was ein Exponential-Paket ist](../../../../en/us/help/designers/extensions/what-an-exponential-package-is.md): die Sicht des Designers
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

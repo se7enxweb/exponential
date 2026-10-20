@@ -44,7 +44,7 @@ Support erkennen, woher eine veraltete oder langsame Seite kommt.
 | 11 | SQL-Abfrage-Cache | aus (`querycache.ini [QueryCacheSettings] Mode=off`) | jede Anfrage, die er beantworten kann | Schreibvorgänge in die gelesenen Tabellen; `--clear-id=querycache` |
 | 12 | OPcache, APCu | pro PHP-Prozess | jede Anfrage | Neuladen oder Neustart; Schaltflächen in Setup > Caches |
 
-Quellen: [Caches](../../../../en/us/guides/caches.md), [Kapitel 10, Abschnitt 10.6](../../../../en/us/install/10-after-installing.md#106-caches) und
+Quellen: [Caches](../../../anleitungen/caches.md), [Kapitel 10, Abschnitt 10.6](../../../installation/10-nach-der-installation.md#106-caches) und
 die unten verlinkten Seiten.
 
 ## Vor dem Server
@@ -87,7 +87,7 @@ jede betroffene Seite über HTTP innerhalb der Anfrage des Redakteurs neu. Siehe
 
 Wenn eine Änderung die View-Caches von `[ContentSettings] CacheThreshold` Knoten oder mehr (250 mitgeliefert) leeren würde, wird
 stattdessen jeder View-Cache der Website als abgelaufen markiert, und das Log meldet `Expiring all view cache`
-([Caches, häufige Fragen](../../../../en/us/guides/caches.md#6-usual-questions)).
+([Caches, häufige Fragen](../../../anleitungen/caches.md#6-häufige-fragen)).
 
 Mit der Erweiterung `sevenx_valkey_cache` können der Content-View-Cache, Template-Blöcke und der kompilierte INI-Cache statt in Dateien
 in Redis oder Valkey liegen. Siehe [Valkey und Redis](valkey-und-redis.md).
@@ -106,7 +106,7 @@ ging eine gerenderte Startseite von etwa 0,6 s auf etwa 0,17 s, ohne dass eine A
 ## Welche Schichten zwischen Servern geteilt werden
 
 Die Cache-Dateien liegen in `var/`, das sich Apache mit PHP-FPM und Velocity teilen: Das Leeren eines Caches in Setup > Caches erreicht
-beide. Zwei Dinge nicht ([Caches](../../../../en/us/guides/caches.md#in-short)):
+beide. Zwei Dinge nicht ([Caches](../../../anleitungen/caches.md#kurz-gesagt)):
 
 - Velocity hält Einstellungen im Speicher: Starten Sie es nach dem Leeren der INI-Caches neu.
 - Der Antwort-Cache von Velocity beantwortet Seiten aus seinem eigenen Speicher: Leeren Sie ihn mit `exp:velocity cache clear`.
@@ -153,6 +153,6 @@ Rendering, das beide Caches gefüllt hat ([HTTP-Cache, sehen, was er tut](../../
 - [Antwort-Cache von Velocity](antwort-cache-von-velocity.md)
 - [HTTP-Cache-Header](http-cache-header.md)
 - [Caches leeren und vorwärmen](caches-leeren-und-vorwaermen.md)
-- [Caches](../../../../en/us/guides/caches.md)
+- [Caches](../../../anleitungen/caches.md)
 - [Cache-Steuerung aus der Konsole](../../../../en/us/bc/6.0/cache-console.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

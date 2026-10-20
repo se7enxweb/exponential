@@ -81,4 +81,4 @@ wünschen ([Log-Viewer](../../../../en/us/features/6.0/log-viewer.md)).
 - [Monatliche Shop-Checkliste](monatliche-shop-checkliste.md)
 - [Shop-Dashboard und Berichte für Unternehmen](../../../../en/us/help/businesses/stores/store-dashboard-and-reports.md)
 - [Wöchentliche Checkliste für die ganze Website](../nutzen/checklisten/woechentlich.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -38,7 +38,7 @@ Exponential ist freie Software unter der GNU GPL v2 oder später: Die Nutzung vo
 GNU GPL ist kostenlos (`README.md`). Ein Hoster zahlt keine Lizenzgebühr pro Website oder pro Server. Was ein Hoster
 verkauft, ist die Arbeit rund um die Software: ein dafür vorbereiteter Server, Installation, Updates, Backups,
 Überwachung, Sicherheit, Support und, wenn er möchte, Entwicklungs- und Migrationsdienste. 7x selbst bietet verwaltetes
-Hosting an („Exponential Website Hosting“ und „Exponential Platform SSD Hosting“, [Wer ist 7x?](../../../../en/us/help/who-is-7x.md#services-and-hosting));
+Hosting an („Exponential Website Hosting“ und „Exponential Platform SSD Hosting“, [Wer ist 7x?](../../wer-ist-7x.md#dienstleistungen-und-hosting));
 anderen Hostern steht es frei, dasselbe anzubieten.
 
 ## Wo Sie beginnen
@@ -46,12 +46,12 @@ anderen Hostern steht es frei, dasselbe anzubieten.
 1. Lesen Sie [Hosting-Tarife gestalten](hosting-tarife-gestalten.md) mit Ihrem Systemadministrator.
 2. Entscheiden Sie mit [SLA-Optionen](sla-optionen-fuer-exponential-hosting.md) und [Support-Stufen](support-stufen-fuer-exponential-hosting.md), was Sie zusagen.
 3. Prüfen Sie jeden Marketingsatz gegen [Exponential-Hosting vermarkten](exponential-hosting-vermarkten.md) und die
-   [Marken- und Namensregeln](../../../../en/us/help/business/brand-and-naming-rules.md).
+   [Marken- und Namensregeln](../../geschaeft/marken-und-namensregeln.md).
 
 ## Verwandte Seiten
 
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
-- [Lizenzierung für Käufer erklärt](../../../../en/us/help/business/licensing-for-buyers.md)
-- [Positionierung und Wertversprechen](../../../../en/us/help/business/positioning-and-value-proposition.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Lizenzierung für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md)
+- [Positionierung und Wertversprechen](../../geschaeft/positionierung-und-nutzenversprechen.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

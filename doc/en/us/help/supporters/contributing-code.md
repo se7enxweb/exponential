@@ -41,13 +41,21 @@ database, so a development installation needs no database server ([Database supp
 
 - CI runs syntax, manifest, commit message, code style, PHPStan and test checks on the supported PHP versions
   (`doc/en/us/bc/6.0/ci.md`).
-- It is reviewed. "Every pull request is merged, and its commits are kept as the contributor wrote them and never
-  rewritten" (`doc/en/us/bc/6.0/ci.md`); what needs changing is changed in commits on top.
+- It is reviewed, and every pull request is merged. While it is open, you squash it and rebase it onto `main` as the
+  reviews ask (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` to your pull request
+  branch only); once it is merged, `main`'s history is never rewritten (`doc/en/us/bc/6.0/ci.md`).
 
 ## License
 
 "By contributing, you agree that your contributions will be licensed under the GNU General Public License, version
 2.0 or later" (CONTRIBUTING.md).
+
+**Copyright assignment (CLA).** 7x and the Exponential Foundation merge a code contribution to
+the core kernel, sent in any form (pull request, patch, issue or mail), only after you have signed the Contributor
+Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial
+products, without asking or paying you, and you cannot withdraw it or set conditions on it. One signature covers all your
+future contributions. Extensions you write for yourself are not affected. How to sign:
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ## First contribution ideas
 

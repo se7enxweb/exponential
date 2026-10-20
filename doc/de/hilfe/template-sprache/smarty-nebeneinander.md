@@ -198,4 +198,4 @@ Fields: 18
 - [Grundlagen der TPL-Syntax](../../../en/us/help/designers/templates/tpl-syntax-basics.md)
 - [Set-block und append-block](../../../en/us/help/designers/templates/set-block-and-append-block.md)
 - [Wash und Maskierung](../../../en/us/help/designers/templates/wash-and-escaping.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

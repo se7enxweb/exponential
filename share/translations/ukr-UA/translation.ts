@@ -73012,6 +73012,126 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Для організацій і людей, які ведуть власний сайт на Exponential: команда, публікації, торгівля, супровід, зростання й партнери.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Посібник користувача</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Одне питання на сторінку: хто може це зробити, кроки, що може піти не так і де прочитати більше.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Файли проєкту</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Файл проєкту</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Цей файл є частиною вихідного коду Exponential і поширюється разом із ним на умовах %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Завантажити DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>Електронні книги</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Створюються з випущених тем щоразу, коли одну з них випускають, і зберігаються разом із попередніми версіями.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Розмір</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Оновлено</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Завантажити все як DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Теми довідки з простроченою перевіркою</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Дата перевірки минула, або тема перебуває на перевірці понад %days днів без змін.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Прострочено</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дії</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Дата перевірки %date минула %days днів тому</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>На перевірці %days днів без змін</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Редагувати</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Встановити стан</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>Показано %shown з %count прострочених тем. ./console exp:help:content review показує всі.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Перш ніж почати</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Кроки</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Що далі</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Умова</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Причина</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Усунення</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Початок довідки</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

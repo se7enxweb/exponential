@@ -62,7 +62,7 @@ beschrieben. Diese Seiten wiederholen das nicht; sie sagen Ihnen, wie Sie ihn be
 | Produktredaktion | Produktseiten, Bilder, Preise als Felder des Produkts | Inhalte in den Produktordnern bearbeiten |
 | Hoster oder Partner | Einstellungen, Zahlungsanbieter, Cronjobs, Backups, Updates | Zugriff auf Server und Einstellungen |
 
-Die Rollen selbst richtet Ihr Administrator ein ([Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)).
+Die Rollen selbst richtet Ihr Administrator ein ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 
 > **Hinweis**
 > Das Shop-Modul hat fünf Funktionen: `buy`, `administrate`, `setup`, `edit_status` und `setstatus`
@@ -74,4 +74,4 @@ Die Rollen selbst richtet Ihr Administrator ein ([Rollen und Richtlinien](../../
 - [Einen Shop im Alltag betreiben (für Unternehmen)](../../../../en/us/help/businesses/stores/running-a-store-day-to-day.md)
 - [Einen Shop betreiben: Überblick](../../../../en/us/help/creators/website-creators/shop-overview.md)
 - [Shop-Dashboard und Bestellstatus](../../../../en/us/features/6.0/store-dashboard.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

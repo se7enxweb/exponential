@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für Systemadministratoren, die Exponential-Websites über HTTPS ausliefern, und für Support-Mitarbeitende, die den üblichen
 Symptomen begegnen: Links mit `http://` hinter einem TLS-Proxy, Schleifen bei der Anmeldung oder eine Warnung des Browsers. Sie sagt, wer
 TLS beenden kann, welche Einstellungen von Exponential zu dieser Wahl passen müssen und wie Sie das Ergebnis prüfen. Die Referenz ist
-[13.9 Sicherheitsheader und HTTPS](../../../../en/us/install/13-security-hardening.md#139-security-headers-and-https) und
-[13.10 Hinter einem Proxy](../../../../en/us/install/13-security-hardening.md#1310-behind-a-proxy-trusted-headers).
+[13.9 Sicherheitsheader und HTTPS](../../../installation/13-sicherheitshaertung.md#139-sicherheits-header-und-https) und
+[13.10 Hinter einem Proxy](../../../installation/13-sicherheitshaertung.md#1310-hinter-einem-proxy-vertrauenswürdige-header).
 
 ## Inhalt
 
@@ -38,7 +38,7 @@ TLS beenden kann, welche Einstellungen von Exponential zu dieser Wahl passen mü
 
 Velocity braucht für HTTPS kein `mod_ssl`, kein stunnel und keinen Proxy; es prüft ein Zertifikatspaar, bevor es es nutzt, tauscht ein
 erneuertes Paar innerhalb von `watchInterval` (60 Sekunden) im Betrieb aus und liefert lieber einen selbstsignierten Ersatz als ein
-kaputtes Paar aus ([8.3.9](../../../../en/us/install/08-serving-the-site.md#839-https-served-by-velocity-itself)). Details für Hoster:
+kaputtes Paar aus ([8.3.9](../../../installation/08-die-website-ausliefern.md#839-https-direkt-von-velocity)). Details für Hoster:
 [HTTPS-Zertifikate in Velocity](../server/https-zertifikate-in-velocity.md); Zertifikate in Panels:
 [TLS-Zertifikate in Panels](../control-panels/tls-zertifikate-in-panels.md).
 
@@ -46,7 +46,7 @@ kaputtes Paar aus ([8.3.9](../../../../en/us/install/08-serving-the-site.md#839-
 
 1. **Liefern Sie jeden Namen der Website über HTTPS aus**, einschließlich `www.` und des Hostnamens der Administration.
 2. **Leiten Sie einfaches HTTP auf HTTPS um**, in Apache oder nginx (Abschnitte 8.5 und 8.6 von
-   [Kapitel 8](../../../../en/us/install/08-serving-the-site.md)). Velocity lauscht auf beiden Ports und hat keine Einstellung, die einen auf den
+   [Kapitel 8](../../../installation/08-die-website-ausliefern.md)). Velocity lauscht auf beiden Ports und hat keine Einstellung, die einen auf den
    anderen umleitet; setzen Sie die Umleitung davor, oder schließen Sie den einfachen Port nach außen.
    Die eigenen `[SSLZoneSettings]` von Exponential in `site.ini` können einzelne Teilbäume umschalten, für eine Website, die noch nicht nur
    HTTPS sein kann.
@@ -72,7 +72,7 @@ SecurityHeaders[Strict-Transport-Security]=max-age=31536000
 ```
 
 Preload braucht `HSTSIncludeSubDomains` und mindestens ein Jahr
-([8.3.9, Strict-Transport-Security](../../../../en/us/install/08-serving-the-site.md#strict-transport-security)).
+([8.3.9, Strict-Transport-Security](../../../installation/08-die-website-ausliefern.md#strict-transport-security)).
 
 > **Warnung**
 > `includeSubDomains` gilt für jede Subdomain des Namens, auch für solche, die andere Teams oder andere Kunden über einfaches HTTP
@@ -81,7 +81,7 @@ Preload braucht `HSTSIncludeSubDomains` und mindestens ein Jahr
 ## Sichere Cookies
 
 `settings/site.ini [Session]`, mit den Standards, die gelten, solange die Schlüssel nicht gesetzt sind
-([13.7](../../../../en/us/install/13-security-hardening.md#137-sessions-and-cookies)):
+([13.7](../../../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)):
 
 | Schlüssel | Standard | Für eine Website nur mit HTTPS |
 |---|---|---|
@@ -125,14 +125,14 @@ Einträge sind Adressen oder Bereiche; Hostnamen werden nicht aufgelöst, und ei
 Unter Velocity führen Sie die Proxys in Velocitys eigenem `Q.webserver.proxy.trusted` auf, in einem Snippet unter
 `/etc/vc/conf-available/`, eingeschaltet mit `exp:velocity conf enable <name>`; Velocity gibt dann den Besucher als `REMOTE_ADDR` weiter
 und setzt `$_SERVER['HTTPS']` selbst (ab Engine-Release 0.0.4.44 nur für vertrauenswürdige Gegenstellen). Details:
-[13.10, Unter Velocity](../../../../en/us/install/13-security-hardening.md#under-velocity) und
+[13.10, Unter Velocity](../../../installation/13-sicherheitshaertung.md#unter-velocity) und
 [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../en/us/bc/6.0/trusted-proxies.md).
 
 ## Zertifikate überwachen
 
 - Velocity: `php bin/php/console exp:velocity ssl show --json --allow-root-user`, und beobachten Sie `daysLeft`. Ein CA-Zertifikat mit
   90 Tagen wird erneuert, wenn etwa 30 Tage übrig sind; weniger als 14 übrige Tage bedeuten also, dass die Erneuerung seit mehr als zwei
-  Wochen scheitert ([8.3.9, Zertifikate untersuchen](../../../../en/us/install/08-serving-the-site.md#inspecting-certificates)).
+  Wochen scheitert ([8.3.9, Zertifikate untersuchen](../../../installation/08-die-website-ausliefern.md#zertifikate-untersuchen)).
 - Apache oder nginx: der Timer Ihres ACME-Clients oder die Erneuerung des Panels, plus eine externe Prüfung des Ablaufs.
 - Halten Sie NTP am Laufen: Zertifikate werden gegen die Systemuhr geprüft.
 
@@ -176,5 +176,5 @@ curl -s -o /dev/null -w '%{redirect_url}\n' -H 'X-Forwarded-Proto: https' http:/
 - [TLS-Zertifikate in Panels](../control-panels/tls-zertifikate-in-panels.md)
 - [Varnish und Reverse Proxys](../leistung/varnish-und-reverse-proxys.md)
 - [Ablauf von Zertifikaten](../runbooks/ablauf-von-zertifikaten.md)
-- [Kapitel 13: Sicherheitshärtung für die Produktion](../../../../en/us/install/13-security-hardening.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 13: Sicherheitshärtung für die Produktion](../../../installation/13-sicherheitshaertung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

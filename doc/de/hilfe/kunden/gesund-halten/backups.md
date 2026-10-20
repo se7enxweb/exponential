@@ -11,14 +11,14 @@ type: help
 
 Diese Seite ist für den Betreiber, der dafür verantwortlich ist, dass keine Inhalte, Bestellungen und
 Mitgliederdaten verloren gehen. Das Backup selbst erstellt meist der Hoster oder ein Betreiber; die Befehle stehen unter
-[Eine Website betreiben, sichern und wiederherstellen](../../../../en/us/guides/operating-a-site.md) und
+[Eine Website betreiben, sichern und wiederherstellen](../../../anleitungen/betrieb-einer-website.md) und
 [Backups und Wiederherstellungen](../../../../en/us/help/creators/website-creators/backups-and-restores.md). Ihre Aufgabe ist es zu
 entscheiden, was gut genug ist, und sicherzustellen, dass es wirklich geschieht.
 
 ## Ein Backup hat zwei Hälften
 
 „Exponential hält seinen Zustand an zwei Orten: der **Datenbank** und den **Dateien**“ ... „Ein Backup umfasst beides,
-zum selben Zeitpunkt erstellt“ ([Eine Website betreiben](../../../../en/us/guides/operating-a-site.md)). Die Datenbank ohne die
+zum selben Zeitpunkt erstellt“ ([Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md)). Die Datenbank ohne die
 hochgeladenen Bilder oder die Bilder ohne die Datenbank bringen eine Website nicht zurück.
 
 | Was | Warum es für Sie wichtig ist |
@@ -74,7 +74,7 @@ nutzen ([Backups, die sich wiederherstellen lassen](../../../../en/us/help/busin
 
 | Fehler | Verwenden Sie stattdessen |
 |---|---|
-| Ein Element wurde entfernt | Den Papierkorb: wiederherstellen ([Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md)) |
+| Ein Element wurde entfernt | Den Papierkorb: wiederherstellen ([Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md)) |
 | Ein Text wurde überschrieben | Versionen: einen neuen Entwurf aus einer früheren machen (dieselbe Seite) |
 | Unklar, wer was geändert hat | Das Prüfprotokoll ([Prüfprotokoll für den Betrieb](../../../../en/us/help/businesses/reliability/audit-trail-for-operations.md)) |
 
@@ -93,4 +93,4 @@ nutzen ([Backups, die sich wiederherstellen lassen](../../../../en/us/help/busin
 - [Backups, die sich wiederherstellen lassen](../../../../en/us/help/businesses/reliability/backups-that-restore.md)
 - [Was gesichert werden muss (für Hoster)](../../hosting/betrieb/backups-was-gesichert-werden-muss.md)
 - [Datenaufbewahrung und Löschung](../../../../en/us/help/businesses/security/data-retention-and-deletion.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

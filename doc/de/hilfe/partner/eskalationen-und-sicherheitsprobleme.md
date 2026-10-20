@@ -54,7 +54,7 @@ Your contact and preferred disclosure timeline: ...
 
 - Informieren Sie die Öffentlichkeit nicht, bevor eine Korrektur veröffentlicht ist.
 - Schützen Sie betroffene Kunden mit vorübergehenden Maßnahmen, die Sie selbst anwenden können (Konfiguration,
-  Webserver-Regeln), aus [Sicherheitshärtung](../../../en/us/help/security-hardening.md).
+  Webserver-Regeln), aus [Sicherheitshärtung](../sicherheitshaertung.md).
 - Aktualisieren Sie nach dem Release jede betroffene Kunden-Website und sagen Sie, was getan wurde, ohne Details, die
   Angreifern bei nicht aktualisierten Websites helfen.
 
@@ -62,5 +62,5 @@ Your contact and preferred disclosure timeline: ...
 
 - [Sicherheitspflichten von Partnern](sicherheitspflichten.md)
 - [Support-Stufen und Reaktionszeiten](support-stufen-und-reaktionszeiten.md)
-- [Sicherheitshärtung](../../../en/us/help/security-hardening.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Sicherheitshärtung](../sicherheitshaertung.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

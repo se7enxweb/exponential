@@ -98,4 +98,4 @@ vereinbaren Sie.
 - [Ihren Anbieter jedes Jahr überprüfen](anbieter-jedes-jahr-ueberpruefen.md)
 - [Support-Stufen (für Hoster)](../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)
 - [Die Partnerschaftsvereinbarung (für Partner)](../../partner/die-partnerschaftsvereinbarung.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

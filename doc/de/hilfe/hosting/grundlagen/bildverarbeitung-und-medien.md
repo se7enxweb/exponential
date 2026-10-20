@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei einem H
 Bildbibliotheken und Programme ein Exponential-Server braucht, wie Bilder und ihre Varianten gespeichert werden, welche
 Uploads akzeptiert werden, was Velocity hinzufügt und welche PHP- und Berechtigungseinstellungen Medien betreffen. Die
 Einstellungen stehen in `settings/image.ini`; die Zusammenfassung für den Betrieb ist
-[Kapitel 10.8](../../../../en/us/install/10-after-installing.md#108-search-indexing-and-image-handling).
+[Kapitel 10.8](../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung).
 
 ## Inhalt
 
@@ -32,7 +32,7 @@ Einstellungen stehen in `settings/image.ini`; die Zusammenfassung für den Betri
 | Element | Gebraucht für | Geprüft von |
 |---|---|---|
 | GD (Erweiterung `gd`, `imagegd2()`) oder ImageMagick (`convert`) | Bildvarianten; mindestens eines ist erforderlich | kritischer Test `image_conversion` (`Require=one`) |
-| Sowohl GD als auch ImageMagick | GD für die üblichen Formate im Prozess, ImageMagick für Formate, die GD nicht lesen kann | empfohlen ([Kapitel 2](../../../../en/us/install/02-requirements.md#21-the-checklist)) |
+| Sowohl GD als auch ImageMagick | GD für die üblichen Formate im Prozess, ImageMagick für Formate, die GD nicht lesen kann | empfohlen ([Kapitel 2](../../../installation/02-voraussetzungen.md#21-die-checkliste)) |
 | GD mit FreeType (`imagettftext()`, `imagettfbbox()`) | den Template-Operator Text-zu-Bild | optionaler Test `texttoimage_functions` |
 | `fileinfo` | den Typ eines hochgeladenen Bildes aus seinem Inhalt lesen | `[ImageUploadSettings]`; Systeminformationen warnen, wenn es fehlt |
 | `system()` nicht deaktiviert | der ImageMagick-Konverter führt `convert` darüber aus | siehe [PHP-Einstellungen für Exponential](php-einstellungen-fuer-exponential.md#funktionen-die-manche-funktionen-aufrufen) |
@@ -143,9 +143,9 @@ jedes Backup enthalten muss ([Was gesichert werden muss](../betrieb/backups-was-
 
 ## Verwandte Seiten
 
-- [Kapitel 10.8: Suchindizierung und Bildverarbeitung](../../../../en/us/install/10-after-installing.md#108-search-indexing-and-image-handling)
-- [Medien und Uploads](../../../../en/us/help/media-and-uploads.md) (für Redakteure)
+- [Kapitel 10.8: Suchindizierung und Bildverarbeitung](../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung)
+- [Medien und Uploads](../../medien-und-uploads.md) (für Redakteure)
 - [Statische Dateien und Bilder in Velocity](../../../../en/us/features/6.0/velocity-static-files-and-images.md)
 - [Speicher, CPU und Festplatte dimensionieren](speicher-cpu-und-festplatte-dimensionieren.md)
 - [CDN](../leistung/cdn.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

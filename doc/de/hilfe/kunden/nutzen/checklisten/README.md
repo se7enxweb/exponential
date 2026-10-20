@@ -33,7 +33,7 @@ Die Zeiten sind Vorschläge für ein kleines Team; messen Sie in den ersten Mona
 | Wenn Sie außerdem betreiben | Verwenden Sie zusätzlich |
 |---|---|
 | Einen Shop | [Tägliche Shop-Routine](../../handel/taegliche-shop-routine.md), [Wöchentliche Shop-Checkliste](../../handel/woechentliche-shop-checkliste.md), [Monatliche Shop-Checkliste](../../handel/monatliche-shop-checkliste.md) |
-| Den Betrieb selbst | [Monatliche Checkliste für den Betrieb](../../../../../en/us/help/businesses/templates/monthly-operations-checklist.md) und die wöchentliche Checkliste in [Eine Website betreiben](../../../../../en/us/guides/operating-a-site.md) |
+| Den Betrieb selbst | [Monatliche Checkliste für den Betrieb](../../../../../en/us/help/businesses/templates/monthly-operations-checklist.md) und die wöchentliche Checkliste in [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md) |
 | Eine jährliche Überprüfung durch die Geschäftsleitung | [Jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md) und [Checkliste für die Jahresüberprüfung](../../../../../en/us/help/businesses/templates/annual-review-checklist.md) |
 
 ## Sie gut nutzen
@@ -54,5 +54,5 @@ Die Zeiten sind Vorschläge für ein kleines Team; messen Sie in den ersten Mona
 
 - [Nutzen aus Ihrer Website ziehen](../README.md)
 - [Ihren Shop betreiben](../../handel/README.md)
-- [Eine Website betreiben](../../../../../en/us/guides/operating-a-site.md)
-- [Freie Dokumentation](../../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md)
+- [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

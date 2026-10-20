@@ -45,4 +45,4 @@ ist von der Foundation noch festzulegen.
 
 - [Ihre Partnerseite](ihre-partnerseite.md)
 - [Partnerprofile](partnerprofile.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

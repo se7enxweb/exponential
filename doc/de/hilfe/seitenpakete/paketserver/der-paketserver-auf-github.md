@@ -146,7 +146,7 @@ Sie hat diesen Wert seit dem 13.08.2025. Ihn zu ändern verlegt die Website auf 
 
 `.github/FUNDING.yml` lässt GitHub im Repository eine Schaltfläche **Sponsor** zeigen. Sie nennt GitHub Sponsors für die Organisation
 `se7enxweb`, Patreon und eigene Links zu PayPal, Venmo, Cash App und <https://se7enx.com>. Sie wurde am 24.12.2023 angelegt. Auf die Website
-hat sie keine Wirkung. Siehe [Wer ist die Exponential Foundation?](../../../../en/us/help/who-is-the-exponential-foundation.md), wie das Projekt finanziert
+hat sie keine Wirkung. Siehe [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md), wie das Projekt finanziert
 wird.
 
 ## crossdomain.xml und README.md
@@ -171,4 +171,4 @@ Request an dieses Repository der bessere Weg: [Ihr Seitenpaket beitragen](../ihr
 - [Geschichte des Paketservers](geschichte-des-paketservers.md)
 - [Wie ein Release den Paketserver erreicht](wie-ein-release-den-paketserver-erreicht.md)
 - [Die Quell-Repositorys](die-quell-repositorys.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

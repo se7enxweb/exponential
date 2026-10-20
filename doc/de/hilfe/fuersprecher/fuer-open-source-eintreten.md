@@ -27,10 +27,10 @@ Dokumentation unter der GNU FDL ([Gesprächspunkte: Open Source und Lizenzierung
 | Freiheit, zu nutzen, zu studieren, zu ändern, zu teilen | GPL v2 oder später | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) |
 | Transparenz | Eine öffentliche Geschichte seit 2002; seit 2023 wird jeder Monat erzählt | [Die Geschichte](../../../en/us/history/README.md) |
 | Beiträge bleiben frei | Änderungen werden unter derselben GPL veröffentlicht | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| Respekt vor Beitragenden | Jeder Pull Request wird übernommen, Commits bleiben, wie sie geschrieben wurden | [Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows) |
+| Respekt vor Beitragenden | Jeder Pull Request wird übernommen, Commits bleiben, wie sie geschrieben wurden | [Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst) |
 | Nennung | Die Arbeit von Netgen, Mugo Web, CJW Network wird namentlich genannt | [Andere Projekte respektieren](andere-projekte-respektieren.md) |
-| Etwas an die Upstream-Projekte zurückgeben | Sicherheits-Pull-Requests an die Zeta Components | [Der PHP-Stack](../../../en/us/help/who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to) |
-| Freies Wissen | Dokumentation unter der GNU FDL | [Freie Dokumentation](../../../en/us/help/free-documentation.md) |
+| Etwas an die Upstream-Projekte zurückgeben | Sicherheits-Pull-Requests an die Zeta Components | [Der PHP-Stack](../wer-ist-die-exponential-foundation.md#der-php-stack-auf-dem-es-steht-und-dem-es-etwas-zurückgibt) |
+| Freies Wissen | Dokumentation unter der GNU FDL | [Freie Dokumentation](../freie-dokumentation.md) |
 
 ## Argumente für Organisationen
 
@@ -42,14 +42,14 @@ Dokumentation unter der GNU FDL ([Gesprächspunkte: Open Source und Lizenzierung
   helfen ihr.
 
 Etwas zurückzugeben ist auch günstiger: Eine an das Upstream-Projekt gesendete Korrektur „erreicht mit dem nächsten
-Release jede Website“ und muss nicht für immer mitgeschleppt werden ([Noch besser: die Korrektur senden](../../../en/us/help/when-something-goes-wrong.md#even-better-send-the-fix));
-siehe [Mit der Community arbeiten und etwas zurückgeben](../../../en/us/help/leadership/working-with-the-community.md#why-contributing-back-pays-off-for-a-project).
+Release jede Website“ und muss nicht für immer mitgeschleppt werden ([Noch besser: die Korrektur senden](../wenn-etwas-schiefgeht.md#noch-besser-die-korrektur-mitschicken));
+siehe [Mit der Community arbeiten und etwas zurückgeben](../fuehrung/mit-der-community-arbeiten.md#warum-sich-beiträge-für-ein-projekt-auszahlen).
 
 ## Etwas zurückgeben
 
 | Beitrag | Seite |
 |---|---|
-| Eine Korrektur | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md#contribute-a-change-with-a-pull-request) |
+| Eine Korrektur | [Mit Git entwickeln](../mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen) |
 | Dokumentation | [Die Hilfe verbessern](die-hilfe-verbessern.md) |
 | Übersetzung | [Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md) |
 | Ein Fehlerbericht | [Fehler gut melden](fehler-gut-melden.md) |
@@ -57,8 +57,8 @@ siehe [Mit der Community arbeiten und etwas zurückgeben](../../../en/us/help/le
 
 ## Erste Schritte, die Sie vorschlagen können
 
-1. Vom ersten Tag an mit Git-Klonen installieren ([Mit Git entwickeln](../../../en/us/help/develop-with-git.md)).
-2. Eine Richtlinie für Beiträge einführen ([Eine Beitragsrichtlinie für das Team](../../../en/us/help/leadership/working-with-the-community.md#a-team-contribution-policy-to-adapt)).
+1. Vom ersten Tag an mit Git-Klonen installieren ([Mit Git entwickeln](../mit-git-entwickeln.md)).
+2. Eine Richtlinie für Beiträge einführen ([Eine Beitragsrichtlinie für das Team](../fuehrung/mit-der-community-arbeiten.md#eine-beitragsrichtlinie-für-ihr-team-zum-anpassen)).
 3. In jedem Projekt Zeit für Korrekturen an den Upstream-Projekten einplanen.
 4. Die Arbeit sponsern, von der Sie abhängen.
 
@@ -66,5 +66,5 @@ siehe [Mit der Community arbeiten und etwas zurückgeben](../../../en/us/help/le
 
 - [Gesprächspunkte: Open Source und Lizenzierung](gespraechspunkte-open-source-und-lizenzierung.md)
 - [Für freie Dokumentation eintreten](fuer-freie-dokumentation-eintreten.md)
-- [Mit der Community arbeiten und etwas zurückgeben](../../../en/us/help/leadership/working-with-the-community.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Mit der Community arbeiten und etwas zurückgeben](../fuehrung/mit-der-community-arbeiten.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

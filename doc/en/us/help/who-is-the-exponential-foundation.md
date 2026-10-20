@@ -373,10 +373,19 @@ clones with their full history" (README, "Installation"; [Develop with Git](deve
 
 ### Contributors and pull requests
 
-- **Every pull request is merged.** "Every pull request is merged, and its commits are kept as the contributor wrote
-  them and never rewritten" ([CI](../bc/6.0/ci.md), commit messages). What needs fixing is fixed in commits on top.
+- **Every pull request is merged.** While it is open, its author squashes it and rebases it onto `main` as the
+  reviews ask; once it is merged, `main`'s history is never rewritten, and later fixes come as new pull requests
+  ([CI](../bc/6.0/ci.md), commit messages;
+  [Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews)).
 - **Contributions stay free.** "any modifications made to the project are also released under the same GPLv2 or
   later license" ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
+- **Copyright assignment (CLA).** 7x and the Exponential Foundation require a signed Contributor
+  Licensing Agreement for every code contribution to the core kernel, in any form, before it is merged. By signing
+  and submitting, the contributor assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it: 7x may use, change, relicense and distribute
+  it in any way, also commercially and under other licenses, without asking or paying the contributor, who cannot
+  withdraw it or set conditions on it. Users' own
+  custom extensions are not affected
+  ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)).
 - **Who contributes.** Since December 2023 pull requests have come from se7enxweb, [ekked](https://github.com/ekked),
   [fwoldt](https://github.com/fwoldt), [netgen](https://github.com/netgen), brookinsconsulting,
   [mugoweb](https://github.com/mugoweb) and others (`git log --grep="Merge pull request"`). Before that, hundreds of

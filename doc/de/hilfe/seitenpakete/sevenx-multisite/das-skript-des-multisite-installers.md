@@ -163,6 +163,6 @@ Benutzer-Siteaccess, den Siteaccess der Administration und `settings/override` s
 - [Installationsskripte in einem Seitenpaket](../grundlagen/installationsskripte-in-einem-seitenpaket.md)
 - [Korrekturen nach der Installation](korrekturen-nach-der-installation-von-sevenx-multisite.md)
 - [Das Installerskript ändern](../eigene/das-installerskript-aendern.md)
-- [4.3 Seitenpakete: was installiert wird](../../../../en/us/install/04-choosing-an-install-method.md#43-site-packages-what-is-installed)
+- [4.3 Seitenpakete: was installiert wird](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

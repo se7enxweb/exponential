@@ -96,4 +96,4 @@ je nach Ort und ändern sich mit der Zeit; befolgen Sie die, die für Sie gelten
 - [Verhalten und Ethik für Fürsprecher](verhalten-und-ethik.md)
 - [Ehrlichkeit und Genauigkeit](ehrlichkeit-und-genauigkeit.md)
 - [Was ein Fürsprecher ist](was-ein-fuersprecher-ist.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -1,7 +1,10 @@
 # Plan: user manuals and help maintained inside Exponential
 
 Status: proposal, 18 October 2026; phase 1 (classes, tree, sections, states, roles, validator, web and context help
-in the help of the administration) implemented in 6.0.15, see [help maintained as content](../../features/6.0/help-content.md).
+in the help of the administration) implemented in 6.0.15, see [help maintained as content](../../features/6.0/help-content.md);
+from 20 October 2026 also the DITA export (delivery path 3, and the export for path 4), the e-books stored as file
+objects and rebuilt on release (delivery path 3) and the dashboard list of topics overdue for review (phase 7), see
+[the upgrade note](../../bc/6.0/help-content-dita-ebooks-reviews.md).
 Companion page: [the help style guide](help-style-guide.md).
 
 ## Idea
@@ -260,6 +263,11 @@ Two kernel facts the scripts have to handle:
 ## Related pages
 
 - [Help style guide](help-style-guide.md)
+- [Help standards](help-standards.md): what the help takes from DITA 1.3, IEC/IEEE 82079-1, ISO/IEC/IEEE 26514,
+  ISO 3864-2, EPUB Accessibility 1.1 and WCAG 2.2 AA
+- [The help classes as a package](help-content-package.md)
+- [Help maintained as content](../../features/6.0/help-content.md#compared-with-the-specifications): what of this
+  plan is implemented, in progress or left out
 - [Sections](../../guides/sections.md)
 - [Object states](../../guides/object-states.md)
 - [Roles and policies](../../guides/roles-and-policies.md)

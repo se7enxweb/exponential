@@ -51,9 +51,9 @@ des [Arbeitsblatts für die Prüfung](#arbeitsblatt-für-die-prüfung) hinzu.
 |---|---|---|
 | Kaputte Beziehungen | sichtbare Inhalte, die auf etwas Entferntes, Verborgenes, im Papierkorb Liegendes oder nie Veröffentlichtes verweisen | [Die Inhaltsprüfungen](../../../../en/us/features/6.0/content-checks.md) |
 | Nicht referenzierte Objekte | Bilder und Dateien, die nichts verwendet | ebenda |
-| URL-Verwaltung, ungültig | kaputte ausgehende Links | [URL-Aliase, Wildcards und Suchstatistiken](../../../../en/us/guides/urls-and-aliases.md) |
+| URL-Verwaltung, ungültig | kaputte ausgehende Links | [URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md) |
 | Suchstatistiken | wonach Besucher suchen und was sie nicht finden | [Website-Suche und wonach Besucher suchen](website-suche-und-wonach-besucher-suchen.md) |
-| Setup > Sprachen | wie viele Elemente eine Übersetzung in jeder Sprache haben | [Inhaltssprachen](../../../../en/us/guides/content-languages.md) |
+| Setup > Sprachen | wie viele Elemente eine Übersetzung in jeder Sprache haben | [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
 | *Meine Entwürfe* jedes Redakteurs | vergessene Arbeit | [Entwürfe, Versionen und Rückgängigmachen](entwuerfe-versionen-und-rueckgaengig.md) |
 
 Die Inhaltsprüfungen finden Sie im Menü Setup und im Kontextmenü des Baums (**Fortgeschritten**); auf einer neuen
@@ -101,4 +101,4 @@ Signed off by: ______________
 - [Archivieren und der Papierkorb](archivieren-und-der-papierkorb.md)
 - [Pflege der Medienbibliothek](pflege-der-medienbibliothek.md)
 - [Kaputte Links und Inhaltsprüfungen](../../../../en/us/help/creators/website-creators/link-and-content-checks.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -11,14 +11,14 @@ type: help
 
 Diese Seite ist für die Person, die für die Sicherheit der Website einsteht, ohne ihre Technikerin zu sein. Sie legt
 dar, was Exponential bereits tut, was Ihre Entscheidung bleibt und wer in Ihrem Team oder bei Ihrem Anbieter welchen
-Teil erledigen sollte. Die technische Tiefe steht unter [Sicherheit und Prüfprotokoll](../../../../en/us/guides/security-and-audit.md),
-[Sicherheitshärtung](../../../../en/us/help/security-hardening.md) und im [Kapitel 13](../../../../en/us/install/13-security-hardening.md) des
+Teil erledigen sollte. Die technische Tiefe steht unter [Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-und-audit.md),
+[Sicherheitshärtung](../../sicherheitshaertung.md) und im [Kapitel 13](../../../installation/13-sicherheitshaertung.md) des
 Installationshandbuchs.
 
 ## Was bereits eingeschaltet ist
 
 „Seit September 2026 ist eine Standardinstallation ohne zusätzliche Arbeit sicher. Prüfen Sie das, statt darauf zu
-vertrauen“ ([Sicherheit und Prüfprotokoll](../../../../en/us/guides/security-and-audit.md)). Zu den Standardeinstellungen gehören:
+vertrauen“ ([Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-und-audit.md)). Zu den Standardeinstellungen gehören:
 
 | Schutz | Was er für Sie tut |
 |---|---|
@@ -29,7 +29,7 @@ vertrauen“ ([Sicherheit und Prüfprotokoll](../../../../en/us/guides/security-
 | Ein zufälliges erstes Administratorpasswort | Wenn der Installer keines oder ein allgemein bekanntes erhalten hat |
 | Das Prüfprotokoll, standardmäßig eingeschaltet | Ein manipulationssicherer Nachweis von Anmeldungen, Inhaltsänderungen, Einstellungen und Deployments ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md)) |
 
-Bitten Sie Ihren Anbieter, die Prüfungen aus [Sicherheit und Prüfprotokoll](../../../../en/us/guides/security-and-audit.md)
+Bitten Sie Ihren Anbieter, die Prüfungen aus [Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-und-audit.md)
 einmal durchzuführen und Ihnen das Ergebnis zu schicken.
 
 ## Was nur Sie entscheiden können
@@ -37,7 +37,7 @@ einmal durchzuführen und Ihnen das Ergebnis zu schicken.
 | Entscheidung | Warum sie Ihre ist | Seite |
 |---|---|---|
 | Wer welchen Zugriff bekommt | Sie wissen, wer was braucht | [Administratorkonten und Zugriff](administratorkonten-und-zugriff.md) |
-| Ob die zweistufige Anmeldung verpflichtend ist | Sie kostet Ihr Personal bei jeder Anmeldung ein paar Sekunden | [Zweistufige Anmeldung](../../../../en/us/guides/two-factor-login.md) |
+| Ob die zweistufige Anmeldung verpflichtend ist | Sie kostet Ihr Personal bei jeder Anmeldung ein paar Sekunden | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Wie schnell Sicherheits-Releases eingespielt werden | Es ist eine Vertragsbedingung mit Ihrem Anbieter | [Release-Linie und Support](release-linie-und-support.md) |
 | Wie viel Datenverlust hinnehmbar ist | Es bestimmt den Backup-Plan | [Backups](backups.md) |
 | Wer Sicherheitsalarme erhält | Jemand muss sie lesen | [Überwachung](ueberwachung.md) |
@@ -47,9 +47,9 @@ einmal durchzuführen und Ihnen das Ergebnis zu schicken.
 
 1. **Aktuell bleiben.** Sicherheitskorrekturen erreichen Sie nur als nächstes Release (`SECURITY.md`). Eine veraltete
    Website ist der häufigste Weg, den Schutz zu verlieren, den das Projekt bereits gebaut hat
-   ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md)).
+   ([Sicherheitshärtung](../../sicherheitshaertung.md)).
 2. **Zugänge knapp halten.** Ein Konto pro Person, wenige Administratoren, zweistufige Anmeldung für sie, und Konten
-   werden geschlossen, wenn Menschen gehen ([Das Administratorpasswort ändern, Kontenpflege](../../../../en/us/help/change-the-admin-password.md)).
+   werden geschlossen, wenn Menschen gehen ([Das Administratorpasswort ändern, Kontenpflege](../../administratorpasswort-aendern.md)).
 3. **Wissen, wen Sie anrufen.** Vereinbaren Sie einen Kontakt für einen vermuteten Vorfall, und wissen Sie, dass ein
    Sicherheitsproblem in der Software vertraulich gemeldet wird, nie öffentlich ([Vertrauliche Sicherheitsmeldungen](vertrauliche-sicherheitsmeldungen.md)).
 
@@ -76,11 +76,11 @@ haben, in der [Vorlage für Vorfallnotizen](vorlage-vorfallnotizen.md).
 
 > **Warnung**
 > Schicken Sie nie Passwörter, Schlüssel oder personenbezogene Daten von Kunden in einem Ticket, Chat oder einer E-Mail,
-> um ein Problem zu melden ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+> um ein Problem zu melden ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 
 ## Verwandte Seiten
 
 - [Sicherheits-Checkliste für Betreiber](sicherheits-checkliste-fuer-betreiber.md)
 - [Sicherheitsgrundlagen für Unternehmen](../../../../en/us/help/businesses/security/security-basics-for-businesses.md)
 - [DSGVO-Grundlagen](../../../../en/us/help/businesses/security/gdpr-basics.md) (keine Rechtsberatung)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

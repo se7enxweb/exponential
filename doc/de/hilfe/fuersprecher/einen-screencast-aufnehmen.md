@@ -29,10 +29,10 @@ Ein Video, eine Aufgabe. Gute Themen sind Aufgaben, die die Hilfe bereits beschr
 | Thema | Länge | Hilfeseite zum Verlinken |
 |---|---|---|
 | Exponential mit einem Befehl installieren | 3 Min. | [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
-| Einen Artikel veröffentlichen und Versionen vergleichen | 3 Min. | [Veröffentlichen, Versionen und der Papierkorb](../../../en/us/help/publishing-and-versions.md) |
-| Eine Seite mit dem Layouts-Editor bauen | 4 Min. | [Der Layouts-Editor](../../../en/us/help/layouts-editor.md) |
-| Einen Inhalt übersetzen | 2 Min. | [Sprachen](../../../en/us/help/languages.md) |
-| Die zweistufige Anmeldung einschalten | 2 Min. | [Ihr Konto und die Anmeldung](../../../en/us/help/accounts-and-sign-in.md) |
+| Einen Artikel veröffentlichen und Versionen vergleichen | 3 Min. | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
+| Eine Seite mit dem Layouts-Editor bauen | 4 Min. | [Der Layouts-Editor](../layout-editor.md) |
+| Einen Inhalt übersetzen | 2 Min. | [Sprachen](../sprachen.md) |
+| Die zweistufige Anmeldung einschalten | 2 Min. | [Ihr Konto und die Anmeldung](../konten-und-anmeldung.md) |
 | Ihre erste Erweiterung mit den RAD-Werkzeugen | 6 Min. | [RAD-Werkzeuge](../../../en/us/features/6.0/rad-tools.md) |
 | Eine Hilfeseite mit Auf GitHub bearbeiten korrigieren | 3 Min. | [Die Hilfe verbessern](die-hilfe-verbessern.md) |
 
@@ -52,7 +52,7 @@ Help page:  <link>
 ```
 
 Verwenden Sie die Namen der Schaltflächen und Menüs genau so wie auf dem Bildschirm, im Transkript **fett**
-([Marken- und Namensregeln, Sprache und Schreibweise](../../../en/us/help/business/brand-and-naming-rules.md#language-and-spelling)).
+([Marken- und Namensregeln, Sprache und Schreibweise](../geschaeft/marken-und-namensregeln.md#sprache-und-schreibweise)).
 
 ## Sauber aufnehmen
 
@@ -95,4 +95,4 @@ Mehr: [Barrierefreie Folien und Grafiken](barrierefreie-folien-und-grafiken.md).
 - [Ein Tutorial schreiben, das funktioniert](ein-tutorial-schreiben.md)
 - [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md)
 - [Vorlagen für Beiträge in sozialen Medien](vorlagen-fuer-soziale-medien.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

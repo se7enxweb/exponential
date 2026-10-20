@@ -32,7 +32,7 @@ Was das für Sie als Kunde bedeutet:
   Ihrer Installation arbeiten.
 
 Die Hilfe, die Sie gerade lesen, ist freie Dokumentation unter der GNU Free Documentation License 1.3 oder später
-([Freie Dokumentation](../../../en/us/help/free-documentation.md)).
+([Freie Dokumentation](../freie-dokumentation.md)).
 
 ## Ihre Inhalte und Ihre Daten
 
@@ -83,6 +83,6 @@ Anbieter nennt, genau ist: Zwei Installationen derselben Version führen denselb
 
 - [Checkliste für die Übergabe](partner-und-hoster/checkliste-uebergabe.md)
 - [Eine Website übernehmen](partner-und-hoster/eine-website-uebernehmen.md)
-- [Lizenzierung für Käufer](../../../en/us/help/business/licensing-for-buyers.md)
-- [Wer ist 7x?](../../../en/us/help/who-is-7x.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Lizenzierung für Käufer](../geschaeft/lizenzen-fuer-kaeufer.md)
+- [Wer ist 7x?](../wer-ist-7x.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -242,4 +242,4 @@ Schleife also auf `foreach` mit `str_split|reverse` um.
 - [Section (veraltet)](../../../en/us/help/designers/templates/section-legacy.md)
 - [section](../../../en/us/examples/template-functions/section.md), aus dem Code erzeugt
 - [Foreach-Schleifen](../../../en/us/help/designers/templates/foreach-loops.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

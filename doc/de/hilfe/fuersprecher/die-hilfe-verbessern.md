@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Fürsprecher, die in der Hilfe etwas zu verbessern finden: einen Tippfehler, einen veralteten
 Schritt, einen fehlenden Satz, eine ganze fehlende Seite. Die Hilfeseiten sind die Markdown-Dateien im Ordner `doc/`
 des Repositorys; sie zu verbessern ist also ein Pull Request wie jeder andere
-([Mit Git entwickeln](../../../en/us/help/develop-with-git.md#contribute-a-change-with-a-pull-request)).
+([Mit Git entwickeln](../mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen)).
 
 ## Inhalt
 
@@ -33,7 +33,7 @@ des Repositorys; sie zu verbessern ist also ein Pull Request wie jeder andere
    es geprüft haben.
 
 Jeder Pull Request wird übernommen, und die Commits des Beitragenden bleiben erhalten
-([Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows)).
+([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)).
 
 ## Der gründliche Weg: ein Klon
 
@@ -61,7 +61,7 @@ Kernel beschreibt CONTRIBUTING.md außerdem den Commit-Hook und das Dateimanifes
 | Ein Link auf die ausführlichere Seite | Von einer Hilfeseite zur Funktionsseite |
 | Ein klarerer Satz | Kürzer, aktiv, das Wort auf dem Bildschirm |
 | Eine fehlende Seite für eine häufige Frage | Sie haben sie dreimal in den Foren beantwortet |
-| Eine Übersetzung einer Seite | „Eine übersetzte Seite hilft jedem Leser dieser Sprache“ ([Freie Dokumentation](../../../en/us/help/free-documentation.md#help-others)) |
+| Eine Übersetzung einer Seite | „Eine übersetzte Seite hilft jedem Leser dieser Sprache“ ([Freie Dokumentation](../freie-dokumentation.md#anderen-helfen)) |
 
 ## Regeln für das Schreiben von Hilfeseiten
 
@@ -69,7 +69,7 @@ Kernel beschreibt CONTRIBUTING.md außerdem den Commit-Hook und das Dateimanifes
   wie die bestehenden Seiten ([Das Hilfesystem, Front Matter](../../../en/us/features/6.0/help-system.md#front-matter)).
 - **Wörter auf dem Bildschirm**: „Verwenden Sie den Produktnamen, den der Leser auf dem Bildschirm sieht“, und die Namen
   der Schaltflächen genau so, wie sie angezeigt werden (Stilrichtlinie der Hilfe, zitiert in
-  [Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md#language-and-spelling)).
+  [Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#sprache-und-schreibweise)).
 - **Amerikanisches Englisch** auf den englischen Seiten: license, color, behavior.
 - **Quellen**: Verlinken Sie die Seite oder Datei, die eine Tatsache belegt.
 - **Sicheres Markdown**: Rohes HTML wird in der Hilfe maskiert; verwenden Sie schlichtes Markdown, Tabellen und
@@ -83,12 +83,12 @@ Kernel beschreibt CONTRIBUTING.md außerdem den Commit-Hook und das Dateimanifes
 - Text von Websites oder aus Büchern mit anderen Lizenzen kopieren.
 - Personenbezogene Daten, echte Kundennamen, Schlüssel oder Serveradressen in Beispiele aufnehmen.
 - Bezeichner im Code (`eZINI`, `ezcontentobject`) in der Dokumentation von Code umbenennen; nur der Produktname ändert
-  sich ([Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md#code-identifiers-stay-as-they-are)).
+  sich ([Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#bezeichner-im-code-bleiben-wie-sie-sind)).
 - Werbesprache in Hilfeseiten: Die Hilfe erklärt; sie verkauft nicht.
 
 ## Verwandte Seiten
 
 - [Für freie Dokumentation eintreten](fuer-freie-dokumentation-eintreten.md)
 - [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md#help-others)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md#anderen-helfen)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

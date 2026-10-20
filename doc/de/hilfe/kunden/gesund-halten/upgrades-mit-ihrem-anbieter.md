@@ -46,8 +46,8 @@ Schreiben Sie diese Punkte in den Vertrag oder die Support-Vereinbarung (siehe
 
 | Nachweis | Woher er kommt |
 |---|---|
-| Die neue Versionsnummer | **Setup > Systeminformationen** ([Systeminformationen](../../../../en/us/guides/system-information.md)) |
-| Eine saubere Upgrade-Prüfung, oder eine Liste bewusst geänderter Dateien | **Setup > Upgrade-Prüfung** ([Die Upgrade-Prüfung](../../../../en/us/guides/upgrade-check.md)) |
+| Die neue Versionsnummer | **Setup > Systeminformationen** ([Systeminformationen](../../../anleitungen/systeminformationen.md)) |
+| Eine saubere Upgrade-Prüfung, oder eine Liste bewusst geänderter Dateien | **Setup > Upgrade-Prüfung** ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)) |
 | Das Deployment festgehalten | Das Prüfprotokoll hält Deployments und das Leeren von Caches fest ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md)) |
 | Ihre wichtigsten Seiten geprüft | Startseite, Anmeldung, eine Veröffentlichung, ein Formular, der Shop, falls Sie einen haben |
 | Alles, was noch zu tun ist | Zu prüfende Einstellungen, Erweiterungen, die auf ein Release warten |
@@ -79,4 +79,4 @@ warum ([Upgrade-Prüfung und Dateikonsistenz](../../../../en/us/help/businesses/
 - [Was Sie Ihren Hoster fragen sollten](was-sie-ihren-hoster-fragen-sollten.md)
 - [Was Sie Ihren Partner fragen sollten](was-sie-ihren-partner-fragen-sollten.md)
 - [Budget für Upgrades und Wartung](../../../../en/us/help/businesses/costs/budgeting-for-upgrades-and-maintenance.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

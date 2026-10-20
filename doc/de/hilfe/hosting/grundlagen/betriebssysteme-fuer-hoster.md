@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren und Produktmanager bei einem Hosting-
 Server wählen, auf denen ein Exponential-Angebot läuft. Sie beantwortet: welche Systeme getestet sind, bekanntermaßen
 funktionieren oder nur erwartungsgemäß funktionieren, was das für eine Hosting-Plattform bedeutet und worauf Sie bei
 Panels, Containern, anderen Architekturen und Windows achten müssen. Die vollständige Aussage zur Unterstützung mit
-jedem System ist [Betriebssystemunterstützung](../../../../en/us/help/os-support.md); diese Seite ordnet sie für Hoster.
+jedem System ist [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md); diese Seite ordnet sie für Hoster.
 
 ## Inhalt
 
@@ -32,7 +32,7 @@ jedem System ist [Betriebssystemunterstützung](../../../../en/us/help/os-suppor
 
 Exponential 6.0.x läuft auf fast jedem Betriebssystem, das PHP 8.0 oder später und einen Webserver hat. Es besteht aus
 reinen PHP-Dateien und einer Datenbank; es hat keinen eigenen kompilierten Code und hängt von keiner bestimmten
-C-Bibliothek ab ([Betriebssystemunterstützung](../../../../en/us/help/os-support.md#what-the-operating-system-has-to-provide)). Für einen
+C-Bibliothek ab ([Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md#was-das-betriebssystem-bereitstellen-muss)). Für einen
 Hoster ist die praktische Wahl eine aktuelle Linux-Distribution mit einem gepflegten PHP 8.
 
 ## Die vier Stufen
@@ -62,7 +62,7 @@ und die Zeile rückt auf.
 | Alpine (musl) | `apk` | die CI von Velocity weist seinen Server dort nach; als Container-Basis verbreitet |
 
 Paketnamen je Familie stehen auf [PHP-Versionen und Erweiterungen](php-versionen-und-erweiterungen.md#pakete-je-systemfamilie)
-und in [Kapitel 2.9](../../../../en/us/install/02-requirements.md#29-operating-system-notes).
+und in [Kapitel 2.9](../../../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen).
 
 ## Panels
 
@@ -76,7 +76,7 @@ Auf Shared Hosting ohne Shell-Zugang ist der Setup-Assistent im Browser der Inst
 
 ## Container und Cloud
 
-Aus [Betriebssystemunterstützung](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels):
+Aus [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels):
 
 - Jedes Image mit PHP 8 und den erforderlichen Erweiterungen kann Exponential ausführen. Velocity veröffentlicht Images
   unter `ghcr.io/se7enxweb/exponential-velocity` für amd64 und arm64, je eines pro PHP-Version und Variante.
@@ -105,7 +105,7 @@ Exponential hat keinen Maschinencode; die Architektur zählt also nur über PHP 
 ## Windows und die BSDs
 
 **Windows** (Stufe 2): die offiziellen PHP-8-Builds mit Apache oder IIS (FastCGI). Was dort fehlt
-([Betriebssystemunterstützung: Windows](../../../../en/us/help/os-support.md#windows)):
+([Betriebssystemunterstützung: Windows](../../betriebssystemunterstuetzung.md#windows)):
 
 - `pcntl` und `posix` gibt es nicht; asynchrones Veröffentlichen ist daher nicht verfügbar, und Velocity betreibt seine
   Worker als `php-cgi`-Unterprozesse.
@@ -126,7 +126,7 @@ php -i | grep "Integer Size"    # 64 bits recommended
 
 Lassen Sie dann den Installer den Rest prüfen: den **Systemtest** des Setup-Assistenten, den Kickstarter oder
 `exp:install`. Mit installiertem Velocity vergleicht `php bin/php/console exp:velocity ext check` die Maschine mit der
-Erweiterungsausstattung, die Velocity erwartet ([Betriebssystemunterstützung](../../../../en/us/help/os-support.md#check-a-machine-in-two-minutes)).
+Erweiterungsausstattung, die Velocity erwartet ([Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md#einen-rechner-in-zwei-minuten-prüfen)).
 
 ## Checkliste
 
@@ -138,9 +138,9 @@ Erweiterungsausstattung, die Velocity erwartet ([Betriebssystemunterstützung](.
 
 ## Verwandte Seiten
 
-- [Betriebssystemunterstützung](../../../../en/us/help/os-support.md)
+- [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
 - [Anforderungen auf einen Blick](anforderungen-auf-einen-blick.md)
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
 - [Einen Webserver wählen](../server/einen-webserver-waehlen.md)
-- [Kapitel 2.9: Hinweise zu Betriebssystemen](../../../../en/us/install/02-requirements.md#29-operating-system-notes)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 2.9: Hinweise zu Betriebssystemen](../../../installation/02-voraussetzungen.md#29-hinweise-zu-betriebssystemen)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

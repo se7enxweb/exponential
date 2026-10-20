@@ -91,4 +91,4 @@ beeinträchtigen. Nach jeder solchen Änderung:
 - [PayPal-Zahlungen für Unternehmen](../../../../en/us/help/businesses/stores/paypal-payments.md)
 - [ezpaypal](../../../../en/us/features/6.0/extensions/ezpaypal.md)
 - [Bestellstatus](bestellstatus.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

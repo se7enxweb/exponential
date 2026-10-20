@@ -87,7 +87,7 @@ ClientIpByCustomHTTPHeader=X-Forwarded-For
 
 Unter Velocity entscheidet stattdessen die eigene Liste der Engine, `Q.webserver.proxy.trusted`, und von einem vertrauenswürdigen Proxy
 behandelt sie eine einfache Verbindung als HTTPS bei `X-Forwarded-Proto: https`, `CloudFront-Forwarded-Proto: https` oder
-`CF-Visitor: {"scheme":"https"}` von Cloudflare ([Kapitel 8, Abschnitt 8.3.9](../../../../en/us/install/08-serving-the-site.md#839-https-served-by-velocity-itself)).
+`CF-Visitor: {"scheme":"https"}` von Cloudflare ([Kapitel 8, Abschnitt 8.3.9](../../../installation/08-die-website-ausliefern.md#839-https-direkt-von-velocity)).
 Legen Sie die Bereiche in ein Snippet, wie auf [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md#wer-dem-proxy-vertraut)
 gezeigt.
 
@@ -138,4 +138,4 @@ beantwortet und nie einem zweiten, anonymen Browser ausgeliefert wird.
 - [HTTP-Cache-Header](http-cache-header.md)
 - [TLS und HTTPS](../sicherheit/tls-und-https.md)
 - [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../en/us/bc/6.0/trusted-proxies.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

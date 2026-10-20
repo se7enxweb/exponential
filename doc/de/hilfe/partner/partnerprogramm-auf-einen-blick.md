@@ -68,4 +68,4 @@ Verhaltenskodex, Prüfungstermine für Zertifizierungen, wie Partnertreffen gepl
 - [Partnertarife und Preise, wie veröffentlicht](partnertarife-und-preise.md)
 - [Vorteile für Partner im Detail](vorteile-fuer-partner.md)
 - [Häufige Fragen von Partnern](faq-fuer-partner.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

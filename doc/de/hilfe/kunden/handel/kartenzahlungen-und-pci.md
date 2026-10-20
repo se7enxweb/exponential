@@ -40,16 +40,16 @@ Wenn Sie nicht sicher sind, welche Variante Ihr Shop verwendet, fragen Sie Ihren
 |---|---|---|
 | Mit dem Anbieter klären, welche Pflichten für Ihre Anbindung gelten | Eigentümer | Die Unterlagen des Anbieters |
 | Die Selbstbewertung oder die Nachweise erbringen, die der Anbieter verlangt | Eigentümer, mit dem Partner | Die Formulare des Anbieters |
-| Bestätigen, dass die Erweiterung für die Zahlungsanbindung und Exponential aktuell sind | Partner oder Hoster | [Upgrade](../../../../en/us/guides/upgrading.md) |
-| Prüfen, wer Administrator- und Shop-Zugriff hat | Eigentümer | [Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md) |
-| Die Anmeldung in zwei Schritten für Administratoren und Shop-Personal bestätigen | Eigentümer, mit dem Hoster | [Zwei-Faktor-Anmeldung](../../../../en/us/guides/two-factor-login.md) |
+| Bestätigen, dass die Erweiterung für die Zahlungsanbindung und Exponential aktuell sind | Partner oder Hoster | [Upgrade](../../../anleitungen/aktualisieren.md) |
+| Prüfen, wer Administrator- und Shop-Zugriff hat | Eigentümer | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
+| Die Anmeldung in zwei Schritten für Administratoren und Shop-Personal bestätigen | Eigentümer, mit dem Hoster | [Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
 
 ## Nach jeder Änderung am Shop
 
 - [ ] Die ganze Website, und vor allem die Kasse, läuft weiterhin über HTTPS.
 - [ ] Testmodus- oder Sandbox-Adressen sind nicht aktiv geblieben.
 - [ ] Die Debug-Ausgabe ist auf der Live-Website ausgeschaltet; Logs und Fehlerseiten zeigen keine Kartendaten
-  ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md)).
+  ([Sicherheitshärtung](../../sicherheitshaertung.md)).
 - [ ] Backups mit Bestelldaten sind weiterhin so geschützt wie die Datenbank selbst.
 
 ## Wenn Ihr Shop ein Kartenformular auf der eigenen Website verwendet
@@ -93,5 +93,5 @@ Aus [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../en/us/h
 - [Zahlungsanbieter](zahlungsanbieter.md)
 - [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../en/us/help/businesses/stores/card-payments-and-pci-basics.md)
 - [Sicherheits-Checkliste für den Shop](../../../../en/us/help/businesses/stores/store-security-checklist.md)
-- [Sicherheitshärtung](../../../../en/us/help/security-hardening.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Sicherheitshärtung](../../sicherheitshaertung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

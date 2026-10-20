@@ -13,7 +13,7 @@ Diese Seite ist für Betreiber und Marketingleitungen, die Startseiten und Kampa
 Entwickler zu warten. Exponential Layouts ist ein visueller Page Builder: Ein **Layout** ist eine gespeicherte Anordnung
 von **Blöcken** in **Zonen**, und eine **Regel** entscheidet, welche Seiten es erhalten, sodass Redakteure Seiten neu
 anordnen, ohne Templates anzufassen (`README.md`, „Exponential Layouts“). Die Klicks für Redakteure stehen unter
-[Der Layouts-Editor](../../../../en/us/help/layouts-editor.md).
+[Der Layouts-Editor](../../layout-editor.md).
 
 ## Inhalt
 
@@ -28,7 +28,7 @@ anordnen, ohne Templates anzufassen (`README.md`, „Exponential Layouts“). Di
 
 | Aufgabe | Wie | Quelle |
 |---|---|---|
-| Eine Seite neu anordnen | Blöcke in den Zonen ihres Layouts hinzufügen, verschieben und ändern | [Der Layouts-Editor](../../../../en/us/help/layouts-editor.md) |
+| Eine Seite neu anordnen | Blöcke in den Zonen ihres Layouts hinzufügen, verschieben und ändern | [Der Layouts-Editor](../../layout-editor.md) |
 | Die neuesten Artikel automatisch anzeigen | ein Listen- oder Rasterblock mit einer dynamischen Sammlung (Kinder, Teilbaum, neueste ...) | `README.md`, „Exponential Layouts“ |
 | Ein ausgewähltes Element unter dynamischen anheften | ein von Hand gewähltes Element in der Sammlung | ebenda |
 | Text-, Bild-, Schaltflächen-, Karten-, Galerie-, Karussell-, Reiter-, Akkordeon-, Landkarten- oder Videoblöcke verwenden | die Standardblöcke von `explayouts_standard` | ebenda |
@@ -90,7 +90,7 @@ Ein Fehler dort steht auf jeder Seite. Überlassen Sie es einer einzigen zustän
 
 ## Verwandte Seiten
 
-- [Der Layouts-Editor](../../../../en/us/help/layouts-editor.md)
+- [Der Layouts-Editor](../../layout-editor.md)
 - [Checkliste für Kampagnen-Landingpages](checkliste-kampagnen-landingpages.md)
 - [Kampagnen und Landingpages für gemeinnützige Organisationen](../../../../en/us/help/businesses/nonprofits/campaigns-and-landing-pages.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

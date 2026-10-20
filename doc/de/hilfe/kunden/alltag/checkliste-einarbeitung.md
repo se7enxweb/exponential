@@ -36,28 +36,28 @@ Teamunterlagen auf; sie ist der Nachweis, dass der Zugriff bewusst gewährt wurd
 
 ## Erster Tag
 
-- [ ] Die Person meldet sich an ([In der Administration anmelden](../../../../en/us/help/logging-into-the-admin.md) oder
-      [Im Editor anmelden](../../../../en/us/help/logging-into-the-editor.md)).
-- [ ] Das Passwort ist auf eines geändert, das nur sie kennt ([Ihr Konto und die Anmeldung](../../../../en/us/help/accounts-and-sign-in.md)).
+- [ ] Die Person meldet sich an ([In der Administration anmelden](../../anmelden-in-der-administration.md) oder
+      [Im Editor anmelden](../../anmelden-im-editor.md)).
+- [ ] Das Passwort ist auf eines geändert, das nur sie kennt ([Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md)).
 - [ ] Die zweistufige Anmeldung ist unter *Mein Konto* eingerichtet, wenn Ihre Website sie anbietet
-      ([Zwei-Faktor-Anmeldung](../../../../en/us/guides/two-factor-login.md)).
+      ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 - [ ] Benachrichtigungs- und E-Mail-Einstellungen sind gesetzt
       ([Benachrichtigungen: die Anleitung für Benutzer](../../../../en/us/features/6.0/notifications.md)).
-- [ ] Der Rundgang ist mit den eigenen Inhalten der Website gemacht ([Ein Rundgang durch die Administration](../../../../en/us/help/admin-tour.md)).
+- [ ] Der Rundgang ist mit den eigenen Inhalten der Website gemacht ([Ein Rundgang durch die Administration](../../rundgang-durch-die-administration.md)).
 - [ ] Ein erster Entwurf ist erstellt, in der Vorschau angesehen und dann veröffentlicht oder verworfen.
 
 ## Erste Woche
 
-- [ ] Anlegen und Bearbeiten, Beziehungen und Rich Text ([Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md)).
-- [ ] Dateien hochladen und Alternativtexte schreiben ([Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md)).
-- [ ] Suchen und ein Element über seine Nummer öffnen ([Suchen](../../../../en/us/help/searching.md)).
+- [ ] Anlegen und Bearbeiten, Beziehungen und Rich Text ([Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md)).
+- [ ] Dateien hochladen und Alternativtexte schreiben ([Bilder, Medien und Uploads](../../medien-und-uploads.md)).
+- [ ] Suchen und ein Element über seine Nummer öffnen ([Suchen](../../suchen.md)).
 - [ ] Versionen: vergleichen und zurückgehen ([Entwürfe, Versionen und Rückgängigmachen](entwuerfe-versionen-und-rueckgaengig.md)).
 - [ ] Wenn hinter einer Freigabe: eine Version geschickt und freigegeben ([Freigabe und Prüfung](freigabe-und-pruefung.md)).
-- [ ] Wenn Landingpages bearbeitet werden: einen Layout-Entwurf erstellt und verworfen ([Der Layouts-Editor](../../../../en/us/help/layouts-editor.md)).
-- [ ] Wenn übersetzt wird: eine Übersetzung erstellt ([Sprachen](../../../../en/us/help/languages.md)).
+- [ ] Wenn Landingpages bearbeitet werden: einen Layout-Entwurf erstellt und verworfen ([Der Layouts-Editor](../../layout-editor.md)).
+- [ ] Wenn übersetzt wird: eine Übersetzung erstellt ([Sprachen](../../sprachen.md)).
 - [ ] Die Hausregeln gelesen: Titel, Bilder, Linktexte, Überschriften
       ([Checkliste zur Barrierefreiheit für Redakteure](checkliste-barrierefreiheit-fuer-redakteure.md)).
-- [ ] Die Person weiß, wie sie ein Problem meldet ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+- [ ] Die Person weiß, wie sie ein Problem meldet ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 - [ ] Die Person weiß, wen sie fragen kann (eine Funktionsbezeichnung, nicht eine Person, die gehen könnte).
 
 ## Nach einem Monat
@@ -83,4 +83,4 @@ Approved by (site owner or manager): ______________
 - [Neue Mitarbeitende einarbeiten](neue-mitarbeitende-einarbeiten.md)
 - [Ausscheiden von Mitarbeitenden](ausscheiden-von-mitarbeitenden.md)
 - [Arbeitsblatt für Teamrollen](arbeitsblatt-teamrollen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

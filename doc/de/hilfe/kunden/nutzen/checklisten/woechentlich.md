@@ -49,10 +49,10 @@ ASK THE ADMINISTRATOR OR HOST (answer "yes" expected)
 
 | Punkt | Wo | Lesen Sie |
 |---|---|---|
-| Entwürfe | **Meine Entwürfe** | [Veröffentlichen und Versionen](../../../../../en/us/help/publishing-and-versions.md) |
+| Entwürfe | **Meine Entwürfe** | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Kaputte Links | **Setup > URL-Verwaltung** (`/url/list`); die Linkprüfung läuft im Cron-Teil `infrequent` | [Kaputte Links und Inhaltsprüfungen](../../../../../en/us/help/creators/website-creators/link-and-content-checks.md) |
 | Nicht gefundene Seiten | `404.log`, gelesen unter **Setup > Logdateien** | [Request-Logs](../../../../../en/us/features/6.0/request-logs.md) |
-| Weiterleitungen für verschobene Seiten | URL-Aliase und Wildcards | [URLs und Aliase](../../../../../en/us/guides/urls-and-aliases.md) |
+| Weiterleitungen für verschobene Seiten | URL-Aliase und Wildcards | [URLs und Aliase](../../../../anleitungen/urls-und-aliase.md) |
 | Suchbegriffe | Die Suchstatistiken der Website | [Website-Suche](../../../../../en/us/help/creators/website-creators/site-search.md) |
 | Konten | **Benutzer > Benutzerkonten prüfen** | [Benutzerkonten prüfen](../../../../../en/us/features/6.0/user-hygiene.md) |
 | Shop | Shop-Dashboard | [Wöchentliche Shop-Checkliste](../../handel/woechentliche-shop-checkliste.md) |
@@ -60,7 +60,7 @@ ASK THE ADMINISTRATOR OR HOST (answer "yes" expected)
 ## Die wöchentlichen Prüfungen des Administrators
 
 Der Leitfaden für Betreiber listet eine wöchentliche Checkliste, die Ihr Administrator oder Hoster in wenigen Minuten
-durchgehen kann ([Eine Website betreiben](../../../../../en/us/guides/operating-a-site.md), Abschnitt 10):
+durchgehen kann ([Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md), Abschnitt 10):
 
 1. Der Cache-Status endet mit PASS.
 2. Der Status des Prüfprotokolls zeigt jede Kette unversehrt.
@@ -80,5 +80,5 @@ einem kurzen Gespräch.
 - [Tägliche Checkliste](taeglich.md)
 - [Monatliche Checkliste](monatlich.md)
 - [Wöchentliche Shop-Checkliste](../../handel/woechentliche-shop-checkliste.md)
-- [Eine Website betreiben](../../../../../en/us/guides/operating-a-site.md)
-- [Freie Dokumentation](../../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md)
+- [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -13,8 +13,8 @@ Diese Seite ist für Systemadministratoren bei einem Hosting-Anbieter, deren Kun
 möchten. Sie beantwortet: was MongoDB vom Server und von PHP braucht, wie Sie den Benutzer der Website anlegen, damit
 sich der Adapter verbinden kann, welche Schritte die Installation über die üblichen hinaus braucht, welche Grenzen Sie
 einem Kunden nennen sollten, bevor er sich dafür entscheidet, und wie Sie sichern. MongoDB ist die dritte in der
-offiziellen Reihenfolge. Quellen: [Datenbankunterstützung](../../../../en/us/help/database-support.md#3-mongodb),
-[Kapitel 9.5](../../../../en/us/install/09-databases.md#95-mongodb) und
+offiziellen Reihenfolge. Quellen: [Datenbankunterstützung](../../datenbankunterstuetzung.md#3-mongodb),
+[Kapitel 9.5](../../../installation/09-datenbanken.md#95-mongodb) und
 [MongoDB als Datenbank](../../../../en/us/features/6.0/mongodb-database-support.md).
 
 ## Inhalt
@@ -102,7 +102,7 @@ Database=<customer>
 
 ## Grenzen, die Sie dem Kunden nennen sollten
 
-Aus [Grenzen von MongoDB](../../../../en/us/help/database-support.md#mongodb-limits):
+Aus [Grenzen von MongoDB](../../datenbankunterstuetzung.md#grenzen-von-mongodb):
 
 - Der Adapter führt nie echtes SQL aus. Handgeschriebenes SQL, das er nicht übersetzen kann, liefert ein leeres Ergebnis
   und protokolliert eine Warnung (suchen Sie in den Logs nach `MONGO TODO`). Erweiterungen mit eigenem SQL brauchen
@@ -128,7 +128,7 @@ mongorestore --uri="mongodb://<customer>@localhost:27017/<customer>" --drop /bac
 ```
 
 Ein vollständiges Backup enthält außerdem `var/storage`, `settings/override` und `settings/siteaccess`
-([Backup und Wiederherstellung](../../../../en/us/help/database-support.md#backup-and-restore)).
+([Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung)).
 
 ## Zahlen zur Dimensionierung
 
@@ -150,8 +150,8 @@ eine echte Website mit `php bin/php/console exp:benchmark` ([Speicher, CPU und F
 ## Verwandte Seiten
 
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md)
-- [Datenbankunterstützung: MongoDB](../../../../en/us/help/database-support.md#3-mongodb)
-- [Kapitel 9.5: MongoDB](../../../../en/us/install/09-databases.md#95-mongodb)
+- [Datenbankunterstützung: MongoDB](../../datenbankunterstuetzung.md#3-mongodb)
+- [Kapitel 9.5: MongoDB](../../../installation/09-datenbanken.md#95-mongodb)
 - [MongoDB als Datenbank](../../../../en/us/features/6.0/mongodb-database-support.md)
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

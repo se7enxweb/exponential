@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die gern dokumentieren. eZpedia ist die Community-Enzyklopädie: „Die freie
 eZ-Publish-Enzyklopädie, die jeder bearbeiten kann“, seit 2006 in Betrieb, unter der GNU Free Documentation License
-([Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places)). Sie bewahrt das Wissen vieler Jahre
+([Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community)). Sie bewahrt das Wissen vieler Jahre
 und vieler Menschen.
 
 ## Inhalt
@@ -75,7 +75,7 @@ Beide sind freie Dokumentation unter der GNU FDL, sodass Text unter den Bedingun
 ## Der alte Name auf eZpedia
 
 eZpedia führt den alten Namen im eigenen Titel: „The free eZ Publish encyclopedia“. Zitieren Sie solche Titel, wie sie
-sind ([Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md#the-old-name-ez-publish-only-as-history)). In
+sind ([Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#der-alte-name-ez-publish-nur-als-geschichte)). In
 Ihrem eigenen Text schreiben Sie **Exponential** für das heutige Produkt und verwenden den alten Namen nur für die
 Vergangenheit, zum Beispiel „In den Jahren von eZ Publish machte man das mit ...“
 ([Richtig über die Geschichte schreiben](richtig-ueber-die-geschichte-schreiben.md)). Benennen Sie nie Bezeichner im Code
@@ -86,4 +86,4 @@ wie `eZContentObject` um.
 - [Auf Share und Projects veröffentlichen](auf-share-und-projects-veroeffentlichen.md)
 - [Für freie Dokumentation eintreten](fuer-freie-dokumentation-eintreten.md)
 - [Quellen zitieren und Ihre Texte lizenzieren](quellen-zitieren-und-texte-lizenzieren.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -11,7 +11,7 @@ type: help
 
 Ein Runbook ist die Seite, die die Bereitschaft öffnet, wenn etwas nicht stimmt. Jedes beginnt mit den Symptomen, dann den ersten
 Minuten, dann Diagnose und Abhilfe, und endet mit dem, was danach zu tun ist. Die Befehle sind die aus dem Kapitel zur Fehlersuche des
-Installationsbuchs ([Kapitel 12](../../../../en/us/install/12-troubleshooting.md)), für einen Vorfall geordnet.
+Installationsbuchs ([Kapitel 12](../../../installation/12-fehlerbehebung.md)), für einen Vorfall geordnet.
 
 ## Seiten in diesem Bereich
 
@@ -32,10 +32,10 @@ Installationsbuchs ([Kapitel 12](../../../../en/us/install/12-troubleshooting.md
 1. **Schreiben Sie die Uhrzeit auf**, zu der Sie begonnen haben, und jeden Schritt, den Sie tun. Der Log-Viewer und das Prüfprotokoll
    nutzen genaue Zeiten.
 2. **Lesen, bevor Sie ändern.** Der erste Blick gilt immer `var/log/error.log` und dem Log der Engine oder des Webservers
-   ([12.2 Wo die Logs liegen](../../../../en/us/install/12-troubleshooting.md#122-where-the-logs-are)).
+   ([12.2 Wo die Logs liegen](../../../installation/12-fehlerbehebung.md#122-wo-die-logs-liegen)).
 3. **Ändern Sie eine Sache nach der anderen**, und leeren Sie den kleinsten Cache, der sie abdeckt.
 4. **Führen Sie Befehle als Eigentümer der Installation aus**, nicht als root; ein als root ausgeführtes Skript hinterlässt Dateien, die
-   die Website nicht ändern kann ([12.3](../../../../en/us/install/12-troubleshooting.md#123-permissions-and-ownership)).
+   die Website nicht ändern kann ([12.3](../../../installation/12-fehlerbehebung.md#123-berechtigungen-und-eigentümerschaft)).
 5. **Informieren Sie den Kunden** früh, mit dem, was Sie wissen, und wann Sie ihn auf den neuesten Stand bringen.
 
 ## Die Befehle, die Sie am häufigsten nutzen
@@ -53,5 +53,5 @@ php bin/php/console exp:velocity cache clear --allow-root-user  # Velocity's res
 
 - [Checklisten für Hoster](../checklisten/README.md)
 - [Überblick über die Überwachung](../betrieb/ueberblick-ueber-die-ueberwachung.md)
-- [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für den Betreiber und die Person im Team, die sich um Bilder und Dateien kümmert. Die Medienbibliothek
 ist ein Teil des Inhaltsbaums für Inhalte, die von anderen Inhalten verwendet werden: Bilder, Dateien, Videos. Jeder
-Upload ist ein eigenes Inhaltselement ([Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md)). Ohne ein paar Regeln
+Upload ist ein eigenes Inhaltselement ([Bilder, Medien und Uploads](../../medien-und-uploads.md)). Ohne ein paar Regeln
 füllt sie sich mit Duplikaten und Dateien, die niemand verwendet; mit ihnen finden Redakteure in Sekunden, was sie brauchen.
 
 ## Inhalt
@@ -29,7 +29,7 @@ füllt sie sich mit Duplikaten und Dateien, die niemand verwendet; mit ihnen fin
 | Ordner nach Thema, nach Jahr und Monat oder nach Website | wählen Sie die Ordnung, in der Ihre Redakteure denken | ebenda |
 | Ein Ordner `Shared` für Logos und Icons | überall verwendet, von einer Person verantwortet | ebenda |
 | Bilder nach dem benennen, was sie zeigen | der Name wird zum Titel des Elements und zum Vorschlag für den Alternativtext | ebenda |
-| Jedes Bild mit einem Alternativtext | für Screenreader und wenn ein Bild nicht laden kann | [Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md) |
+| Jedes Bild mit einem Alternativtext | für Screenreader und wenn ein Bild nicht laden kann | [Bilder, Medien und Uploads](../../medien-und-uploads.md) |
 | Einmal hochladen, per Beziehung wiederverwenden | eine zweite Kopie ist ein zweites Element, das aktuell gehalten werden muss | [Beziehungen und Wiederverwendung von Inhalten](../../../../en/us/help/creators/website-creators/relations-and-reuse.md) |
 
 Schreiben Sie die Regeln in Ihren Leitfaden für die Redaktion und in die [Richtlinien für Bilder und Dateien](richtlinien-fuer-bilder-und-dateien.md).
@@ -44,7 +44,7 @@ Schreiben Sie die Regeln in Ihren Leitfaden für die Redaktion und in die [Richt
 | Entscheiden, was mit großen oder alten Dateien geschieht | Betreiber | wenn das Aufräumen sie findet |
 
 Die Upload-Seite markiert eine Datei, die mit gleichem Namen und gleicher Größe bereits am Ort vorhanden ist, und lässt
-Sie sie überspringen ([Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md)). Ermutigen Sie die Redaktion, lieber zu
+Sie sie überspringen ([Bilder, Medien und Uploads](../../medien-und-uploads.md)). Ermutigen Sie die Redaktion, lieber zu
 überspringen als „trotzdem hochzuladen“.
 
 ## Das vierteljährliche Aufräumen
@@ -59,7 +59,7 @@ hat nur Administrator Zugriff darauf; erledigen Sie das also mit Ihrem Administr
 2. **Kaputte Beziehungen ab der Inhaltswurzel.** Sichtbare Inhalte, die auf etwas Gelöschtes, Verborgenes, im
    Papierkorb Liegendes oder nie Veröffentlichtes verweisen, mit einem Link zum Bearbeiten der Quelle. Beheben Sie jede Quelle.
 3. **Fehlende Dateien.** Bilder und Dateien, deren Datei aus dem Speicher verschwunden ist
-   ([Fehlende Dateien](../../../../en/us/guides/missing-files.md)). Laden Sie sie erneut hoch oder entfernen Sie das Element.
+   ([Fehlende Dateien](../../../anleitungen/fehlende-dateien.md)). Laden Sie sie erneut hoch oder entfernen Sie das Element.
 4. **Dateien im Speicher.** Dateien auf der Festplatte, die kein Inhalt verwendet. Sie können in eine Quarantäne
    verschoben und später von dort gelöscht werden; direkt aus dem Speicher wird nichts gelöscht.
 5. **Den Papierkorb erst später leeren.** Lassen Sie Medien eine Weile im Papierkorb, falls etwas sie doch noch
@@ -81,7 +81,7 @@ hat nur Administrator Zugriff darauf; erledigen Sie das also mit Ihrem Administr
 
 ## Verwandte Seiten
 
-- [Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md)
+- [Bilder, Medien und Uploads](../../medien-und-uploads.md)
 - [Richtlinien für Bilder und Dateien](richtlinien-fuer-bilder-und-dateien.md)
 - [Kaputte Links und Inhaltsprüfungen](../../../../en/us/help/creators/website-creators/link-and-content-checks.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

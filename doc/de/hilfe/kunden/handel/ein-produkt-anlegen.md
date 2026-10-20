@@ -11,8 +11,8 @@ type: help
 
 Diese Seite ist für die Produktredaktion und die Shop-Leitung, die neue Produkte freigibt. Sie ist die Checkliste des
 Betreibers für jedes neue Produkt: was bereitliegen muss, was auszufüllen ist und was zu testen ist, bevor Kunden es
-kaufen können. Die Klicks zum Anlegen und Veröffentlichen von Inhalten stehen unter [Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md)
-und [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md); diese Seite wiederholt sie nicht.
+kaufen können. Die Klicks zum Anlegen und Veröffentlichen von Inhalten stehen unter [Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md)
+und [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md); diese Seite wiederholt sie nicht.
 
 ## Bevor Sie beginnen
 
@@ -36,7 +36,7 @@ Tabelle mit technischen Daten ([Produktklassen und Katalog](../../../../en/us/he
 | Kurzbeschreibung | Ein oder zwei Sätze für Listen | Liest sich gut auf dem Smartphone |
 | Beschreibung | Der vollständige Text | Größen, Materialien, Lieferumfang |
 | Preis | Der Betrag, der USt-Typ und ob er die Mehrwertsteuer enthält | Siehe nächster Abschnitt |
-| Bilder | Verknüpfte Bildobjekte | Alternativtext ausgefüllt ([Medien und Uploads](../../../../en/us/help/media-and-uploads.md)) |
+| Bilder | Verknüpfte Bildobjekte | Alternativtext ausgefüllt ([Medien und Uploads](../../medien-und-uploads.md)) |
 | Optionen | Größen, Farben, Extras, mit Preisunterschieden | Im Warenkorb getestet |
 | Tags oder Schlagwörter | Wörter für Suche und Filter | Die Wörter, die Ihre Kunden verwenden |
 | Metadaten | Titel und Beschreibung für Suchmaschinen | Keine Kopie des Namens |
@@ -65,7 +65,7 @@ Der Kernel hat vier Optionsfelder: `ezoption`, `ezmultioption`, `ezmultioption2`
 
 ## Testen, bevor es online geht
 
-Sehen Sie sich zuerst die Vorschau des Entwurfs an ([Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md)). Nach dem Veröffentlichen:
+Sehen Sie sich zuerst die Vorschau des Entwurfs an ([Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md)). Nach dem Veröffentlichen:
 
 - [ ] Das Produkt erscheint in seinem Ordner, im Menü und in der Suche.
 - [ ] **Zum Warenkorb hinzufügen** funktioniert, mit jeder Option.
@@ -85,12 +85,12 @@ von Produkt, einem neuen USt-Typ oder einem neuen Optionsfeld ([Warenkorb, Kasse
 | Ein Produkt mit einem neuen Steuersatz oder einem neuen Optionsfeld | Eigentümer, dazu eine Testbestellung |
 
 Wenn Ihre Website einen Freigabe-Workflow für die Produktordner hat, geht der Entwurf automatisch an die freigebende
-Person, sobald die Redaktion veröffentlicht ([Workflows](../../../../en/us/guides/workflows.md)).
+Person, sobald die Redaktion veröffentlicht ([Workflows](../../../anleitungen/workflows.md)).
 
 ## Verwandte Seiten
 
 - [Produkte und Katalog](produkte-und-katalog.md)
-- [Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md)
+- [Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md)
 - [Produktklassen und Katalog (für Unternehmen)](../../../../en/us/help/businesses/stores/product-classes-and-catalog.md)
 - [Produkte, Preise und Mehrwertsteuer](../../../../en/us/help/creators/website-creators/products-prices-and-vat.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

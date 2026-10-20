@@ -40,7 +40,7 @@ ihn wie jede andere Version ([Freigabe und Prüfung](../alltag/freigabe-und-prue
 - [ ] Ton und Wortwahl entsprechen Ihrem Hausstil; Fachjargon entfernt.
 - [ ] Überschriften, Listen und Linktexte folgen der [Checkliste zur Barrierefreiheit für Redakteure](../alltag/checkliste-barrierefreiheit-fuer-redakteure.md).
 - [ ] Bei einer Änderung an einer bestehenden Seite: **Vergleichen** Sie den Entwurf auf der Versionsseite mit der
-      veröffentlichten Version, damit Sie genau sehen, was sich geändert hat ([Versionen eines Objekts](../../../../en/us/guides/content-history.md)).
+      veröffentlichten Version, damit Sie genau sehen, was sich geändert hat ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - [ ] Bei Massenarbeit in Vector: Prüfen Sie jede Änderung pro Feld, bevor etwas geschrieben wird, und nutzen Sie
       danach **What changed** mit Zurücknehmen ([expai](../../../../en/us/features/6.0/extensions/expai.md)).
 
@@ -103,4 +103,4 @@ AI DRAFTS POLICY for ______________________   Agreed on: __________   Owner: ___
 - [Exponential Intelligence](exponential-intelligence.md)
 - [Entwürfe, Versionen und Rückgängigmachen](../alltag/entwuerfe-versionen-und-rueckgaengig.md)
 - [Personenbezogene Daten in Exponential](../../../../en/us/help/businesses/security/personal-data-in-exponential.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

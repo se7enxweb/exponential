@@ -10,7 +10,7 @@ type: help
 # Kurzkarte zu den Namensregeln
 
 Diese Seite ist für Fürsprecher, die die Namen schnell richtig brauchen. Sie verdichtet die vollständigen
-[Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md) auf einen Bildschirm. Drucken Sie sie aus oder halten
+[Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md) auf einen Bildschirm. Drucken Sie sie aus oder halten
 Sie sie beim Schreiben offen.
 
 ## Inhalt
@@ -63,9 +63,9 @@ nur in der Vergangenheit („als die Software noch eZ Publish hieß“), und Bez
 3. **Der alte Name ist Geschichte.** Verwenden Sie ihn nur in der Vergangenheitsform und zitieren Sie historische Titel,
    wie sie sind (eZpedia, „Learning eZ Publish“).
 4. **Benennen Sie das Produkt um, nie ein Symbol.** `eZ` allein ist ein Präfix im Code
-   ([Bezeichner im Code bleiben, wie sie sind](../../../en/us/help/business/brand-and-naming-rules.md#code-identifiers-stay-as-they-are)).
+   ([Bezeichner im Code bleiben, wie sie sind](../geschaeft/marken-und-namensregeln.md#bezeichner-im-code-bleiben-wie-sie-sind)).
 5. **Nennen Sie andere bei ihrem Namen.** Netgen, Mugo Web, CJW Network
-   ([Andere Unternehmen und Produkte](../../../en/us/help/business/brand-and-naming-rules.md#other-companies-and-products)).
+   ([Andere Unternehmen und Produkte](../geschaeft/marken-und-namensregeln.md#andere-unternehmen-und-produkte)).
 
 ## Finden Sie den Fehler
 
@@ -88,7 +88,7 @@ Copyright ist geteilt, und die Lizenz ist die GPL.
 
 ## Verwandte Seiten
 
-- [Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md)
+- [Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md)
 - [Richtig über die Geschichte schreiben](richtig-ueber-die-geschichte-schreiben.md)
 - [Glossar für Fürsprecher](glossar-fuer-fuersprecher.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

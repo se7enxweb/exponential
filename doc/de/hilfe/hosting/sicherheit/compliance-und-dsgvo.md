@@ -18,7 +18,7 @@ Repository zu finden sind. Sie sagt nicht, ob eine Website ein Gesetz einhält.
 > Diese Seite ist keine Rechtsberatung. Ob eine Website die Vorschriften einhält, hängt davon ab, was sie verarbeitet, für wen, und von
 > Einstellungen und Dokumenten, die nur ihr Eigentümer bereitstellen kann. Der Hoster und jeder Kunde müssen ihren eigenen rechtlichen
 > Rat einholen. Die eigene rechtliche Checkliste des Projekts sagt dasselbe: Fragen Sie zu Ihrem eigenen Fall einen Anwalt
-> ([E-Mail-Einstellungen: die rechtliche Checkliste](../../../../en/us/specifications/6.0/mail-preferences-compliance.md)).
+> ([E-Mail-Einstellungen: die rechtliche Checkliste](../../../spezifikationen/6.0/mail-einstellungen-compliance.md)).
 
 ## Inhalt
 
@@ -73,7 +73,7 @@ sagt, dass sie keine Rechtsberatung ist:
 
 ## Einwilligung, Abmeldung und Unterdrückung bei Mails
 
-Seit 6.0.15 passiert jede Mail die Mail-Sperre ([13.13](../../../../en/us/install/13-security-hardening.md#1313-mail-consent-and-suppression)):
+Seit 6.0.15 passiert jede Mail die Mail-Sperre ([13.13](../../../installation/13-sicherheitshaertung.md#1313-mail-einwilligung-und-sperrliste)):
 
 - **Notwendige** Kategorien (`security`, `orders`, `legal`, `admin`) gehen immer hinaus.
 - **Optionale** Kategorien gehen nur an Empfänger, die sie eingeschaltet haben, aus, bis die Person sie einschaltet, mit einer Fußzeile,
@@ -85,7 +85,7 @@ Seit 6.0.15 passiert jede Mail die Mail-Sperre ([13.13](../../../../en/us/instal
 
 Die rechtliche Checkliste ordnet jede Anforderung von CAN-SPAM, DSGVO und ePrivacy, CCPA/CPRA und CASL dem Code und dem Test zu, der sie
 beweist, und listet auf, was **der Website überlassen** bleibt
-([Der Website überlassen](../../../../en/us/specifications/6.0/mail-preferences-compliance.md#left-to-the-site)):
+([Der Website überlassen](../../../spezifikationen/6.0/mail-einstellungen-compliance.md#der-site-überlassen)):
 
 1. die Postanschrift in der Fußzeile (`mailpreferences.ini [FooterSettings] OrganisationAddress`, nach einer Installation leer) und der
    Name des Absenders (`OrganisationName`);
@@ -150,7 +150,7 @@ werden ([Trennung von Mandanten](trennung-von-mandanten.md)).
 
 - [Sicherheit für Hoster: Überblick](README.md)
 - [Aufbewahrung von Logs und Daten](aufbewahrung-von-logs-und-daten.md)
-- [E-Mail-Einstellungen: die rechtliche Checkliste](../../../../en/us/specifications/6.0/mail-preferences-compliance.md)
-- [E-Mail-Einstellungen: die Anleitung für Administratoren](../../../../en/us/guides/mail-preferences-administrator.md)
+- [E-Mail-Einstellungen: die rechtliche Checkliste](../../../spezifikationen/6.0/mail-einstellungen-compliance.md)
+- [E-Mail-Einstellungen: die Anleitung für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md)
 - [Audit: Datenschutz- und DSGVO-Aufgaben](../../../../en/us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

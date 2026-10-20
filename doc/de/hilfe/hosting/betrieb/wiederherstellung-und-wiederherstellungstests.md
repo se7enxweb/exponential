@@ -15,7 +15,7 @@ beantwortet: in welcher Reihenfolge Sie wiederherstellen, was Sie danach leeren 
 Wiederherstellungstest sicher auf einer anderen Maschine ausführen und wie Sie prüfen, dass das Ergebnis vollständig ist.
 
 Ein Backup, das nie wiederhergestellt wurde, ist eine Hoffnung, kein Backup
-([10.9 Backups und Wiederherstellung](../../../../en/us/install/10-after-installing.md#109-backups-and-restore)). Die Notfallfassung
+([10.9 Backups und Wiederherstellung](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung)). Die Notfallfassung
 dieser Seite, für einen Vorfall, ist das Runbook [Aus einem Backup wiederherstellen](../runbooks/aus-einem-backup-wiederherstellen.md).
 
 ## Inhalt
@@ -41,7 +41,7 @@ dieser Seite, für einen Vorfall, ist das Runbook [Aus einem Backup wiederherste
 
 ## Die Wiederherstellung, Schritt für Schritt
 
-Aus [10.9, Wiederherstellung](../../../../en/us/install/10-after-installing.md#restore):
+Aus [10.9, Wiederherstellung](../../../installation/10-nach-der-installation.md#wiederherstellung):
 
 1. **Wartung an.** Besucher erhalten die Wartungsseite 503, während sich die Daten ändern.
 
@@ -58,7 +58,7 @@ Aus [10.9, Wiederherstellung](../../../../en/us/install/10-after-installing.md#r
 2. **Stellen Sie die Datenbank** mit dem Werkzeug ihrer Engine **wieder her**, und **entpacken Sie die Dateien** über die
    Installation (`var/storage`, den Speicher pro Website, `settings/override`, `settings/siteaccess`, Ihre Erweiterungen).
 3. **Korrigieren Sie Eigentümer und Modus** dessen, was Sie entpackt haben: Die Dateien müssen dem Benutzer der Website oder
-   der gemeinsamen Gruppe gehören ([8.7 Dateiberechtigungen und Eigentum](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership)).
+   der gemeinsamen Gruppe gehören ([8.7 Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)).
 4. **Leeren Sie jeden Cache und erzeugen Sie die Autoloads neu**:
 
    ```bash
@@ -81,7 +81,7 @@ wenn sich Code oder Einstellungen geändert haben ([Änderungen ausrollen](aende
 > **Warnung**
 > Führen Sie die Befehle als Benutzer der Website aus (oder als root mit `--allow-root-user` und korrigieren Sie dann das
 > Eigentum). Dateien, die root in `var/` anlegt, kann der Webserver danach nicht ersetzen, und die Website versagt an seltsamen
-> Stellen ([12.3 Berechtigungen und Eigentum](../../../../en/us/install/12-troubleshooting.md#123-permissions-and-ownership)).
+> Stellen ([12.3 Berechtigungen und Eigentum](../../../installation/12-fehlerbehebung.md#123-berechtigungen-und-eigentümerschaft)).
 
 > **Hinweis**
 > Der Wartungszustand ist die Datei `var/maintenance.json`. Wenn ein Backup des ganzen Verzeichnisses `var/` erstellt wurde,
@@ -101,15 +101,15 @@ wenn sich Code oder Einstellungen geändert haben ([Änderungen ausrollen](aende
 | Nur SQLite | `sqlite3 <db file> "PRAGMA integrity_check"` | `ok` |
 | Neue Fehler | `tail -n 50 var/log/error.log` | nichts, was Sie nicht erklären können |
 
-Quellen: [10.11 Überwachung und Zustandsprüfungen](../../../../en/us/install/10-after-installing.md#1011-monitoring-and-health-checks),
-[Datenbankunterstützung](../../../../en/us/help/database-support.md#backup-and-restore). Wenn Inhalte zwischen Maschinen oder Engines umgezogen
+Quellen: [10.11 Überwachung und Zustandsprüfungen](../../../installation/10-nach-der-installation.md#1011-überwachung-und-zustandsprüfungen),
+[Datenbankunterstützung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung). Wenn Inhalte zwischen Maschinen oder Engines umgezogen
 sind, vergleichen Sie außerdem die Zeilenzahlen von `ezcontentobject`, `ezcontentobject_tree` und `ezcontentobject_attribute`
-mit der Quelle ([Eine Website auf eine andere Datenbank umziehen](../../../../en/us/help/database-support.md#moving-a-site-to-another-database)).
+mit der Quelle ([Eine Website auf eine andere Datenbank umziehen](../../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen)).
 
 ## Ein Wiederherstellungstest auf einer anderen Maschine
 
 Eine Testwiederherstellung beweist das Backup, das Verfahren und die Dauer. Führen Sie sie mindestens einmal und nach jedem
-größeren Upgrade auf einer anderen Maschine aus ([10.9](../../../../en/us/install/10-after-installing.md#restore)), und nach einem
+größeren Upgrade auf einer anderen Maschine aus ([10.9](../../../installation/10-nach-der-installation.md#wiederherstellung)), und nach einem
 Zeitplan, den Sie für Ihren Dienst festlegen ([Backup-Zeitpläne und Aufbewahrung](backup-zeitplaene-und-aufbewahrung.md)).
 
 Eine wiederhergestellte Kopie ist eine vollständige Website mit echten Benutzerkonten und echten E-Mail-Adressen. Halten Sie
@@ -165,4 +165,4 @@ sie davon ab, sich wie die Live-Website zu verhalten:
 - [Datenbank-Backups je Engine](datenbank-backups-je-engine.md)
 - [Wartungsmodus](wartungsmodus.md)
 - [Eine Website zwischen Hostern umziehen](../migrationen/eine-website-zwischen-hostern-umziehen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

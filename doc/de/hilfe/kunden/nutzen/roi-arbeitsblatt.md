@@ -85,7 +85,7 @@ Checked by (someone who redid the arithmetic): ______    Date: ______
 | A5, B3 | Ihre Zeiterfassung, oder eine zweiwöchige Zeitstichprobe | [Den ROI messen](den-roi-messen.md) |
 | A6 | Abrechnungen von Zahlungsanbietern und Diensten; das Dashboard von Exponential Intelligence für KI-Kosten (`README.md`) | [Betriebskosten für Betreiber](betriebskosten-fuer-betreiber.md) |
 | B1 | Buchhaltung, mit den Produkt-Statistiken des Shops | [Shop-Berichte](../handel/shop-berichte.md) |
-| B2 | **Setup > Gesammelte Informationen**, Newsletter-Administration | [Gesammelte Informationen](../../../../en/us/guides/collected-information.md) |
+| B2 | **Setup > Gesammelte Informationen**, Newsletter-Administration | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
 
 ## Das Arbeitsblatt prüfen
 
@@ -101,4 +101,4 @@ Checked by (someone who redid the arithmetic): ______    Date: ______
 - [ROI-Beispielannahmen](roi-beispielannahmen.md)
 - [Jährliche Überprüfung des Nutzens](jaehrliche-ueberpruefung-des-nutzens.md)
 - [Vorlage für ein ROI-Arbeitsblatt (vor einem Projekt)](../../../../en/us/help/businesses/templates/roi-worksheet-template.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

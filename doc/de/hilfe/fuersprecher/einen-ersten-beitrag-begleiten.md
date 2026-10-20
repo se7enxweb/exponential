@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Fürsprecher, die einer anderen Person zu ihrem ersten Beitrag verhelfen. Ein erster Pull Request,
 der willkommen geheißen wird, macht aus einem Benutzer einen Beitragenden. Bei Exponential „wird jeder Pull Request
 übernommen, und seine Commits bleiben so erhalten, wie der Beitragende sie geschrieben hat“
-([Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows)), was es zu einem besonders
+([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)), was es zu einem besonders
 guten Ort für den Anfang macht.
 
 ## Inhalt
@@ -54,7 +54,7 @@ Folgen Sie [Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md): Die Übers
 
 ## Weg C: Code
 
-Folgen Sie [Mit Git entwickeln, Eine Änderung per Pull Request beitragen](../../../en/us/help/develop-with-git.md#contribute-a-change-with-a-pull-request):
+Folgen Sie [Mit Git entwickeln, Eine Änderung per Pull Request beitragen](../mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen):
 
 ```bash
 # in the clone of the kernel or an extension
@@ -103,6 +103,6 @@ Erklären Sie, dass Prüfende Dinge in Commits obendrauf korrigieren können; da
 ## Verwandte Seiten
 
 - [Neue willkommen heißen](neue-willkommen-heissen.md)
-- [Mit Git entwickeln](../../../en/us/help/develop-with-git.md)
-- [Eine Leitungsrolle in der Exponential-Community übernehmen](../../../en/us/help/leadership/becoming-a-community-leader.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Mit Git entwickeln](../mit-git-entwickeln.md)
+- [Eine Leitungsrolle in der Exponential-Community übernehmen](../fuehrung/community-leiter-werden.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

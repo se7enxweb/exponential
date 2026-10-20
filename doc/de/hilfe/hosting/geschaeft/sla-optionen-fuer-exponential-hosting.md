@@ -15,7 +15,7 @@ Sie sie messen und was Sie ausschließen.
 
 > **Warnung**
 > Das Exponential-Projekt veröffentlicht kein SLA. Die kaufmännischen Bedingungen von 7x stehen auf der Website von 7x,
-> nicht hier ([Wer ist 7x?](../../../../en/us/help/who-is-7x.md#services-and-hosting)). Die einzige Zusage zur Reaktion in den eigenen
+> nicht hier ([Wer ist 7x?](../../wer-ist-7x.md#dienstleistungen-und-hosting)). Die einzige Zusage zur Reaktion in den eigenen
 > Dateien des Projekts steht in `SECURITY.md`: eine erste Antwort auf eine vertrauliche Sicherheitsmeldung innerhalb eines
 > Werktags. Alles auf dieser Seite ist eine Option für **Ihren** Vertrag. Lassen Sie den endgültigen Text von Ihrem
 > rechtlichen Berater prüfen; diese Seite ist keine Rechtsberatung.
@@ -121,4 +121,4 @@ Service level agreement — <plan name>                 version <x>, valid from 
 - [Zustandsprüfungen und Verfügbarkeit](../betrieb/zustandspruefungen-und-verfuegbarkeit.md)
 - [Backup-Zeitpläne und Aufbewahrung](../betrieb/backup-zeitplaene-und-aufbewahrung.md)
 - [Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

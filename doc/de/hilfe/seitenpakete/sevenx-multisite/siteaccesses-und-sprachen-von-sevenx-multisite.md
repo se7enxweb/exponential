@@ -148,6 +148,6 @@ jede `SiteLanguageList` aufgenommen (`fallback_locales`), sodass Seiten ihre Inh
 - [Das Skript des Multisite-Installers](das-skript-des-multisite-installers.md)
 - [Was Sie nach der Installation haben](was-sie-nach-der-installation-von-sevenx-multisite-haben.md)
 - [Zuordnung von Siteaccesses nach Host und Sprache](../../../../en/us/features/6.0/siteaccess-host-and-language-matching.md)
-- [Sprachen](../../../../en/us/help/languages.md)
+- [Sprachen](../../sprachen.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

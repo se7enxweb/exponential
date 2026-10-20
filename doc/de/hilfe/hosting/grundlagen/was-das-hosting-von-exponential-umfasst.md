@@ -27,14 +27,14 @@ aufgeteilt werden kann. Die Details zu jedem Teil stehen auf den anderen Seiten 
 ## Exponential aus Sicht des Servers
 
 Exponential ist ein quelloffenes Content-Management-System, in PHP geschrieben und unter der GNU GPL veröffentlicht
-(`composer.json`: `"license": "GPL-2.0-or-later"`). Es wird von 7x gepflegt ([Wer ist 7x?](../../../../en/us/help/who-is-7x.md)) und führt
+(`composer.json`: `"license": "GPL-2.0-or-later"`). Es wird von 7x gepflegt ([Wer ist 7x?](../../wer-ist-7x.md)) und führt
 eine Codebasis fort, deren ursprüngliches Produkt sein Hersteller nach fast 18 Jahren eingestellt hat.
 
 Für einen Server ist eine Installation:
 
 - **Reine PHP-Dateien** in einem Verzeichnis (der Kernel, `lib/`, `extension/`, `design/`, `vendor/`), mit einem
   Front-Controller, `index.php`, durch den jede Seitenanfrage geht
-  ([Kapitel 3](../../../../en/us/install/03-getting-the-code.md#36-a-tour-of-the-installation-root)).
+  ([Kapitel 3](../../../installation/03-den-code-beschaffen.md#36-ein-rundgang-durch-das-installationsverzeichnis)).
 - **Eine Datenbank**: eine von sechs unterstützten Engines, standardmäßig SQLite 3, das überhaupt keinen Datenbankserver
   braucht ([Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md)).
 - **Ein beschreibbarer Laufzeitbaum**, `var/`, mit Caches, Logs, hochgeladenen Dateien und Bildvarianten und (mit SQLite)
@@ -63,7 +63,7 @@ Es hat keinen eigenen kompilierten Code und läuft daher überall, wo ein unters
 
 > **Hinweis**
 > Während einer Installation über die Kommandozeile (der Kickstarter oder `exp:install`) ist kein Webserver nötig; der
-> Setup-Assistent braucht einen, weil er im Browser läuft ([Kapitel 2](../../../../en/us/install/02-requirements.md#28-web-server)).
+> Setup-Assistent braucht einen, weil er im Browser läuft ([Kapitel 2](../../../installation/02-voraussetzungen.md#28-webserver)).
 
 ## Was nach der Installation weiterläuft
 
@@ -71,14 +71,14 @@ Eine Exponential-Website ist nicht fertig, wenn der Installer endet. Diese Dinge
 
 | Was | Warum | Wo es beschrieben ist |
 |---|---|---|
-| **Cronjobs** | Benachrichtigungen, Suchindizierung bei verzögerter Indizierung, Linkprüfungen, Bereinigung von Caches und Sitzungen | [Kapitel 10, Cronjobs](../../../../en/us/install/10-after-installing.md#103-cronjobs) |
+| **Cronjobs** | Benachrichtigungen, Suchindizierung bei verzögerter Indizierung, Linkprüfungen, Bereinigung von Caches und Sitzungen | [Kapitel 10, Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs) |
 | **Velocity**, wenn es die Website ausliefert | ein lang laufender PHP-Serverprozess mit einem Pool von Workern | [Velocity für Hoster](../server/velocity-fuer-hoster.md) |
 | **PHP-FPM**, wenn Apache oder nginx die Website ausliefert | ein Pool pro Website ist üblich | [Abstimmung von PHP-FPM](../leistung/abstimmung-von-php-fpm.md) |
 | **Ein Datenbankserver**, außer bei SQLite | PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL | die Seite der jeweiligen Datenbank |
 | **Logs** | `var/log/` und die eigenen Logs des Webservers wachsen und brauchen Rotation | [Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md) |
 | **Caches** | `var/cache/` wächst und wird nach Änderungen geleert | [Caches leeren und vorwärmen](../leistung/caches-leeren-und-vorwaermen.md) |
 
-Die Beispiel-Crontab in [Kapitel 10](../../../../en/us/install/10-after-installing.md#a-crontab) führt den Teil `frequent` alle
+Die Beispiel-Crontab in [Kapitel 10](../../../installation/10-nach-der-installation.md#eine-crontab) führt den Teil `frequent` alle
 5 Minuten aus, den Standard-Teil alle 15 Minuten, `infrequent` stündlich und die Bereinigungsteile einmal pro Nacht, alle
 aus der Crontab des Benutzers der Website.
 
@@ -90,7 +90,7 @@ aus der Crontab des Benutzers der Website.
 ## Wie eine Website installiert wird
 
 Jede Installationsmethode führt dieselben Schritte des Installers aus; sie unterscheiden sich nur darin, woher die
-Antworten kommen ([Kapitel 4](../../../../en/us/install/04-choosing-an-install-method.md#41-one-installer-three-front-ends)):
+Antworten kommen ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md#41-ein-installer-drei-frontends)):
 
 | Methode | Antworten aus | Passt zu |
 |---|---|---|
@@ -140,7 +140,7 @@ Möglichkeiten; wählen Sie pro Tarif, und schreiben Sie die Wahl in die Beschre
 - [Grundlagen des Hostings](README.md) und [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
 - [Anforderungen auf einen Blick](anforderungen-auf-einen-blick.md)
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
-- [Kapitel 2: Anforderungen](../../../../en/us/install/02-requirements.md) und
-  [Kapitel 10: Nach der Installation](../../../../en/us/install/10-after-installing.md)
-- [Hosting, Datenbank und Betriebssystem wählen](../../../../en/us/help/leadership/choosing-hosting-database-and-os.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 2: Anforderungen](../../../installation/02-voraussetzungen.md) und
+  [Kapitel 10: Nach der Installation](../../../installation/10-nach-der-installation.md)
+- [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

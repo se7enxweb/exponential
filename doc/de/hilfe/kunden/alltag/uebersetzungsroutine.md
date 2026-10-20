@@ -10,7 +10,7 @@ type: help
 # Übersetzungsroutine
 
 Diese Seite ist für den Betreiber und die Übersetzungskoordination einer Website in mehr als einer Sprache. Die Klicks
-für Redakteure stehen unter [Sprachen](../../../../en/us/help/languages.md); die Planungssicht unter
+für Redakteure stehen unter [Sprachen](../../sprachen.md); die Planungssicht unter
 [Übersetzungs-Workflow](../../../../en/us/help/businesses/multilingual/translation-workflow.md). Hier finden Sie die wöchentliche
 Routine und die Prüfungen, die verhindern, dass Sprachen auseinanderdriften.
 
@@ -40,7 +40,7 @@ Freigabe pro Sprache nutzt das Feld *Betroffene Sprachen* des Freigabe-Workflows
 ## Wie eine Übersetzung entsteht
 
 Der Übersetzer öffnet das Element, drückt **Bearbeiten**, wählt die neue Sprache und die Übersetzung, von der er
-ausgeht, übersetzt und veröffentlicht oder schickt zur Freigabe ([Inhaltssprachen](../../../../en/us/guides/content-languages.md#7-translating-content-in-the-editor)).
+ausgeht, übersetzt und veröffentlicht oder schickt zur Freigabe ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md#7-inhalte-im-editor-übersetzen)).
 Eine Übersetzung ist Teil desselben Elements, kein zweites Element: Sie teilt sich den Ort und die Versionshistorie
 des Elements.
 
@@ -53,7 +53,7 @@ des Elements.
 Wenn sich der Ausgangstext ändert, ändern sich seine Übersetzungen nicht von selbst
 ([Übersetzungs-Workflow](../../../../en/us/help/businesses/multilingual/translation-workflow.md)). Jeder Siteaccess zeigt ein Element in
 der ersten Sprache seiner Sprachliste, die das Element hat; ein Element in keiner davon ist verborgen, es sei denn, es
-ist *immer verfügbar* ([Inhaltssprachen](../../../../en/us/guides/content-languages.md)). Eine fehlende Übersetzung kann also
+ist *immer verfügbar* ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)). Eine fehlende Übersetzung kann also
 bedeuten, dass Besucher dieser Sprache eine andere Sprache sehen, oder nichts.
 
 Möglichkeiten, den Überblick zu behalten:
@@ -61,7 +61,7 @@ Möglichkeiten, den Überblick zu behalten:
 - **Setup > Sprachen** zeigt pro Sprache, wie viele Elemente und Klassen eine Übersetzung darin haben und welche
   Siteaccesses sie anzeigen.
 - Auf der Versionsseite können Sie die aktuelle Version der Quelle mit der vergleichen, aus der die Übersetzung erstellt
-  wurde ([Versionen eines Objekts](../../../../en/us/guides/content-history.md)).
+  wurde ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - Eine gemeinsame Liste (Ihr [Redaktionskalender](redaktionskalender.md)) mit einer Spalte „Sprachen“ für jedes neue Element.
 
 ## Eine wöchentliche Routine
@@ -79,7 +79,7 @@ Möglichkeiten, den Überblick zu behalten:
 
 > **Warnung**
 > Das Entfernen der **Übersetzung** eines Elements löscht alle seine Felder in dieser Sprache, in jeder Version,
-> endgültig ([Inhaltssprachen](../../../../en/us/guides/content-languages.md)). Um die Hauptsprache eines Elements zu ändern,
+> endgültig ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)). Um die Hauptsprache eines Elements zu ändern,
 > übersetzen Sie zuerst, machen die neue Sprache zur Hauptsprache und entfernen dann die alte Übersetzung. Das
 > Entfernen einer ganzen **Sprache** ist nur möglich, wenn nichts eine Übersetzung darin hat; das löscht also nie Inhalte.
 
@@ -96,7 +96,7 @@ bevor Sie ihn für Übersetzer einschalten.
 
 ## Verwandte Seiten
 
-- [Sprachen](../../../../en/us/help/languages.md)
+- [Sprachen](../../sprachen.md)
 - [Eine Sprache hinzufügen](../wachstum/eine-sprache-hinzufuegen.md)
 - [Checkliste für Mehrsprachigkeit](../../../../en/us/help/businesses/multilingual/multilingual-checklist.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

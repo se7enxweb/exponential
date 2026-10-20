@@ -93,4 +93,4 @@ nicht über Ihre Website laufen ([Kartenzahlungen und PCI](kartenzahlungen-und-p
 - [Kartenzahlungen und PCI](kartenzahlungen-und-pci.md)
 - [Zahlungsanbieter für Unternehmen](../../../../en/us/help/businesses/stores/payment-gateways-for-businesses.md)
 - [Payment-Gateways für Website-Ersteller](../../../../en/us/help/creators/website-creators/payment-gateways.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

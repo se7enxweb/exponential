@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber und die Chefredaktion, die wissen wollen, wie sicher die tägliche Arbeit des Teams
 ist. In Exponential ist jedes Speichern eine **Version**; die Website zeigt die veröffentlichte, während ein neuer
 **Entwurf** geschrieben wird, und ältere veröffentlichte Versionen werden als **archiviert** aufbewahrt, sodass Sie
-zurückkehren können ([Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md)). Dadurch lassen
+zurückkehren können ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)). Dadurch lassen
 sich die meisten Fehler mit wenig Aufwand rückgängig machen.
 
 ## Inhalt
@@ -28,8 +28,8 @@ sich die meisten Fehler mit wenig Aufwand rückgängig machen.
 | Was | Wie lange aufbewahrt | Quelle |
 |---|---|---|
 | Versionen eines Elements | bis zu einer Grenze pro Element; danach wird die älteste archivierte Version entfernt, um Platz zu schaffen. Der ausgelieferte Standard ist 45 (`[VersionManagement] DefaultVersionHistoryLimit=45`), eine eigene Grenze pro Klasse ist möglich | `settings/content.ini` |
-| Die veröffentlichte Version | immer; sie lässt sich auf der Versionsseite nie entfernen | [Versionen eines Objekts](../../../../en/us/guides/content-history.md) |
-| Entwürfe | bis sie veröffentlicht, verworfen oder entfernt werden | [Meine Entwürfe und meine ausstehenden Elemente](../../../../en/us/guides/drafts-and-pending.md) |
+| Die veröffentlichte Version | immer; sie lässt sich auf der Versionsseite nie entfernen | [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md) |
+| Entwürfe | bis sie veröffentlicht, verworfen oder entfernt werden | [Meine Entwürfe und meine ausstehenden Elemente](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md) |
 | Entfernte Elemente | im Papierkorb, bis ihn jemand leert | [Archivieren und der Papierkorb](archivieren-und-der-papierkorb.md) |
 
 Ihre Website verwendet möglicherweise andere Grenzen; fragen Sie Ihren Administrator nach dem Wert in Ihrer `content.ini`.
@@ -42,8 +42,8 @@ Ihre Website verwendet möglicherweise andere Grenzen; fragen Sie Ihren Administ
    **Neuen Entwurf machen**.
 4. Prüfen Sie den Entwurf und veröffentlichen Sie ihn. Die aktuelle Version bleibt unverändert, bis Sie veröffentlichen.
 
-Vollständige Schritte: [Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md#go-back-to-an-earlier-version) und
-[Versionen eines Objekts](../../../../en/us/guides/content-history.md).
+Vollständige Schritte: [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md#zu-einer-früheren-version-zurückkehren) und
+[Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md).
 
 > **Tipp**
 > Das funktioniert auch mit der Version einer anderen Person: Der neue Entwurf gehört Ihnen. So „übernimmt“ ein
@@ -54,16 +54,16 @@ Vollständige Schritte: [Veröffentlichen, Versionen und der Papierkorb](../../.
 | Aktion | Warum sie endgültig ist | Sicherere Alternative |
 |---|---|---|
 | **Papierkorb leeren**, oder Elemente aus dem Papierkorb entfernen | löscht endgültig | im Zweifel zuerst wiederherstellen |
-| Die **Übersetzung** eines Elements entfernen | löscht alle seine Felder in dieser Sprache, in jeder Version ([Inhaltssprachen](../../../../en/us/guides/content-languages.md)) | zuerst übersetzen, die Hauptsprache ändern, dann entfernen |
+| Die **Übersetzung** eines Elements entfernen | löscht alle seine Felder in dieser Sprache, in jeder Version ([Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)) | zuerst übersetzen, die Hauptsprache ändern, dann entfernen |
 | Einen **Benutzer** entfernen | Benutzer kommen nie in den Papierkorb ([Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md)) | das Konto deaktivieren |
-| **Formulareinsendungen** entfernen | die Sammlungen werden gelöscht; die Formulare bleiben ([Gesammelte Informationen](../../../../en/us/guides/collected-information.md)) | zuerst als CSV exportieren |
+| **Formulareinsendungen** entfernen | die Sammlungen werden gelöscht; die Formulare bleiben ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) | zuerst als CSV exportieren |
 | Änderungen an einem **Layout** nach dem Veröffentlichen | Layouts haben Entwürfe, aber nicht die Versionshistorie der Elemente; zwei Personen, die dasselbe Layout bearbeiten, überschreiben sich gegenseitig ([Landingpages mit Layouts](../../../../en/us/help/creators/website-creators/landing-pages-with-layouts.md)) | jeweils nur eine Person pro Layout |
 
 ## Alte Entwürfe
 
 Entwürfe sammeln sich an: begonnen und vergessen, oder von jemandem zurückgelassen, der weitergezogen ist. *Meine
 Entwürfe* zeigt jeder Person ihre eigenen und bietet **Alte Entwürfe entfernen** nach 7, 30, 90 oder 365 Tagen ohne
-Änderung an ([Meine Entwürfe und meine ausstehenden Elemente](../../../../en/us/guides/drafts-and-pending.md)). Das Entfernen des
+Änderung an ([Meine Entwürfe und meine ausstehenden Elemente](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)). Das Entfernen des
 Entwurfs eines **neuen** Elements entfernt auch dieses neue Element, das nie veröffentlicht wurde; ein Entwurf eines
 veröffentlichten Elements lässt die veröffentlichte Version unverändert.
 
@@ -74,18 +74,18 @@ Fünf Minuten im Monat:
 - [ ] Ihr Administrator kann alte Entwürfe auch für die ganze Website per Cronjob aufräumen: Das Skript
       `old_drafts_cleanup.php` entfernt Entwürfe, die älter als `[VersionManagement] DraftsDuration` sind (ausgeliefert
       90 Tage), höchstens `DraftsCleanUpLimit=100` pro Lauf (`settings/content.ini`). Es ist nicht im ausgelieferten
-      globalen Teil enthalten; fragen Sie, ob Ihre Website es einplant ([Cronjobs](../../../../en/us/guides/cronjobs.md)).
+      globalen Teil enthalten; fragen Sie, ob Ihre Website es einplant ([Cronjobs](../../../anleitungen/cronjobs.md)).
 
 ## Regeln für das Team
 
 - Bei einer Unterbrechung als Entwurf speichern (**Entwurf speichern und beenden**), das Formular nicht offen lassen.
 - Jeweils nur eine Person bearbeitet ein Element; das Bearbeitungsformular warnt, wenn jemand anderes gerade bearbeitet
-  ([Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md)).
+  ([Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md)).
 - Notieren Sie vor einer großen Änderung die aktuelle Versionsnummer. Der Weg zurück ist dann ein einziger Schritt.
 
 ## Verwandte Seiten
 
-- [Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md)
-- [Versionen eines Objekts](../../../../en/us/guides/content-history.md)
+- [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)
+- [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)
 - [Archivieren und der Papierkorb](archivieren-und-der-papierkorb.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

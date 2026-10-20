@@ -10,7 +10,7 @@ type: help
 # Runbook: aus einem Backup wiederherstellen
 
 Für Systemadministratoren, die eine Kunden-Website aus einem Backup zurückholen müssen: nach Datenverlust, einem kaputten Update oder
-einem Einbruch. Das Verfahren ist das aus [10.9 Backups und Wiederherstellung](../../../../en/us/install/10-after-installing.md#109-backups-and-restore);
+einem Einbruch. Das Verfahren ist das aus [10.9 Backups und Wiederherstellung](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung);
 diese Seite ordnet es für einen Vorfall.
 
 ## Inhalt
@@ -62,8 +62,8 @@ diese Seite ordnet es für einen Vorfall.
    | 5. Oracle | `php bin/php/console ext:ezoracle:datapump --import=db.dmp` oder Oracles `impdp` |
    | 6. MySQL | `mysql -u USER -p DATABASE < /backup/db.sql` |
 
-   Quellen: [10.9](../../../../en/us/install/10-after-installing.md#109-backups-and-restore) und
-   [Datenbankunterstützung](../../../../en/us/help/database-support.md#backup-and-restore). `-p` lässt den Client nach dem Passwort fragen; schreiben Sie
+   Quellen: [10.9](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung) und
+   [Datenbankunterstützung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung). `-p` lässt den Client nach dem Passwort fragen; schreiben Sie
    es nie auf die Kommandozeile.
 
 2. **Die Dateien**: Entpacken Sie `var/storage` (und `var/<site>/storage`) und bei Bedarf `settings/override` und `settings/siteaccess`
@@ -110,4 +110,4 @@ diese Seite ordnet es für einen Vorfall.
 - [Wiederherstellung und Wiederherstellungstests](../betrieb/wiederherstellung-und-wiederherstellungstests.md)
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
 - [Kompromittierte Website](kompromittierte-website.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

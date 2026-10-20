@@ -36,7 +36,7 @@ Administration öffnet die Hilfeseite, die zu der Seite gehört, auf der Sie ger
 | Sicherheitsprobleme | Der vertrauliche Weg: E-Mail an security@se7enx.com, oder die private Meldung von Sicherheitslücken auf GitHub |
 
 Wenn die Meldung geschrieben ist, bereitet die Seite im gewählten Tracker ein neues Issue mit diesem Text vor, fertig
-zum Öffnen. Zum Absenden brauchen Sie ein kostenloses GitHub-Konto ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+zum Öffnen. Zum Absenden brauchen Sie ein kostenloses GitHub-Konto ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 Die Diagnosedaten und der Text des Issues bleiben bewusst auf Englisch, „weil die Maintainer sie lesen“
 ([Das Hilfesystem](../../../../en/us/features/6.0/help-system.md)).
 
@@ -73,6 +73,6 @@ Tracker angeboten (`[IssueTrackers] BundledExtensions[]` und `ExtensionOwners[]`
 ## Verwandte Seiten
 
 - [GitHub-Issues](github-issues.md)
-- [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)
-- [Systeminformationen](../../../../en/us/guides/system-information.md): Ihr **Bericht als Text kopieren** liefert eine ähnliche sichere Zusammenfassung
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
+- [Systeminformationen](../../../anleitungen/systeminformationen.md): Ihr **Bericht als Text kopieren** liefert eine ähnliche sichere Zusammenfassung
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

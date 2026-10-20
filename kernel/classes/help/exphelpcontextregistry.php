@@ -10,7 +10,7 @@
  *   Map[setup/logsdigest]=features/6.0/log-viewer.md#error-digest
  *   Map[role]=guides/roles-and-policies.md
  *   Map[editor:content/history]=help/publishing-and-versions.md
- *   Map[mymodule]=ext/myextension/usage.md          (extension docs: [IndexSettings] ExtensionDocDirs[])
+ *   Map[mymodule]=ext/myextension/usage.md          (an active extension's doc/usage.md)
  *
  * A key is "module/view", "module" (every view of the module without an entry of its own), or either with a design
  * before it ("admin4l:module/view", "editor:module"), which wins over the same key without one. The value is a page

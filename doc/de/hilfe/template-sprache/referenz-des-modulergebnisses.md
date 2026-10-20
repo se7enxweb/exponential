@@ -149,4 +149,4 @@ Ausführen der Ansicht stammen.
 - [Die persistente Variable, von innen](die-persistente-variable-von-innen.md)
 - [Modulergebnis und content_info](../../../en/us/help/designers/templates/module-result-and-content-info.md)
 - [Brotkrumennavigation](../../../en/us/help/designers/templates/breadcrumbs.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

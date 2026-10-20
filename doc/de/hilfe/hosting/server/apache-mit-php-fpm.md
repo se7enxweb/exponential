@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren bei Hosting-Unternehmen, die Exponential mit Apache httpd 2.4 und PHP-FPM ausliefern, der
 klassischen Einrichtung und der üblichen auf Shared Hosting und Control Panels. Sie beantwortet: welche Module und Regeln nötig sind, wie
 der virtuelle Host aussieht, wie HTTPS und der PHP-FPM-Pool hineinpassen, welchen FPM-Master Sie nach einer Änderung neu laden und wie Sie
-das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../../en/us/install/08-serving-the-site.md#85-apache-with-php-fpm).
+das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../installation/08-die-website-ausliefern.md#85-apache-mit-php-fpm).
 
 ## Inhalt
 
@@ -30,8 +30,8 @@ das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../..
 
 - Es braucht keinen eigenen langlebigen Prozess des Kunden und passt also zu Shared Hosting.
 - Die Rewrite-Regeln werden mit Exponential als `.htaccess_root` ausgeliefert; Apache (und LiteSpeed) lesen sie direkt.
-- [Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md#web-servers) führt Apache httpd 2.4 mit PHP-FPM (oder mod_php) als Stufe 1.
-  PHP-FPM wird mod_php vorgezogen, das PHP an das Prefork-Modell von Apache bindet ([PHP-SAPIs](../../../../en/us/help/os-support.md#php-sapis)).
+- [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#webserver) führt Apache httpd 2.4 mit PHP-FPM (oder mod_php) als Stufe 1.
+  PHP-FPM wird mod_php vorgezogen, das PHP an das Prefork-Modell von Apache bindet ([PHP-SAPIs](../../betriebssystemunterstuetzung.md#php-sapis)).
 - Es betreibt Exponential auf PHP 8.0 und neuer und ist damit die Antwort auf Maschinen mit dem Standard-PHP 8.0 von Red Hat Enterprise
   Linux 9 und seinen Nachbauten.
 
@@ -95,7 +95,7 @@ das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../..
 
 6. **Sicherheitsheader.** Der Kernel sendet sie auf seinen Seiten (`site.ini [HTTPHeaderSettings] SecurityHeaders[]`). Für statische
    Dateien fügen Sie dieselben mit `mod_headers` hinzu, wenn Sie sie auch dort wollen
-   ([Kapitel 13](../../../../en/us/install/13-security-hardening.md)).
+   ([Kapitel 13](../../../installation/13-sicherheitshaertung.md)).
 
 ## Regeln in .htaccess oder im virtuellen Host
 
@@ -109,7 +109,7 @@ das Ergebnis prüfen. Die Quelle ist [Kapitel 8, Apache mit PHP-FPM](../../../..
 Innerhalb von `<Directory>` behalten die Regeln von `.htaccess_root` ihre Form. Im Server-Kontext (außerhalb von `<Directory>`) braucht
 jedes Muster einen führenden Schrägstrich, wie in [doc/en/us/examples/ezpublish.conf](../../../../en/us/examples/ezpublish.conf). Die Regelliste
 dieses Beispiels ist älter als die aktuelle `.htaccess_root`; nehmen Sie die Regeln also aus `.htaccess_root` selbst
-([Kapitel 8, Schritt 3](../../../../en/us/install/08-serving-the-site.md#851-step-by-step)).
+([Kapitel 8, Schritt 3](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt)).
 
 > **Warnung**
 > Vergleichen Sie nach jedem Upgrade Ihre kopierten Regeln mit der neuen `.htaccess_root`. Eine fehlende Regel kann Dateien offenlegen, die
@@ -122,7 +122,7 @@ Der Pool führt PHP als Benutzer der Website aus. Die Einstellungen, die Kapitel
 
 | Einstellung | Empfehlung aus den Quellen |
 |---|---|
-| `memory_limit` | mindestens 256M in der Produktion; mehr für große Importe. Die Untergrenze des Setup-Assistenten ist 64M ([Kapitel 2](../../../../en/us/install/02-requirements.md#25-phpini-settings)) |
+| `memory_limit` | mindestens 256M in der Produktion; mehr für große Importe. Die Untergrenze des Setup-Assistenten ist 64M ([Kapitel 2](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)) |
 | `max_execution_time` | die Untergrenze des Assistenten ist 30; das Produktionsbeispiel in Kapitel 2 nutzt 60 |
 | `upload_max_filesize`, `post_max_size` | der größte Upload des Kunden |
 | `date.timezone` | setzen; ein fehlender Wert lässt den kritischen Test des Assistenten scheitern |
@@ -156,7 +156,7 @@ oder ihr Verzeichnis nennt, in `/opt/plesk/php/*/etc/php-fpm.d`, `/etc/php-fpm.d
 
 ## Plesk
 
-Plesk erzeugt den virtuellen Host selbst; bearbeiten Sie seine Dateien nicht ([Kapitel 8, Plesk](../../../../en/us/install/08-serving-the-site.md#853-plesk)):
+Plesk erzeugt den virtuellen Host selbst; bearbeiten Sie seine Dateien nicht ([Kapitel 8, Plesk](../../../installation/08-die-website-ausliefern.md#853-plesk)):
 
 - Richten Sie den Document Root der Domain auf das Wurzelverzeichnis der Installation.
 - Wählen Sie in den PHP-Einstellungen „FPM application served by Apache“ und die PHP-Version.
@@ -182,7 +182,7 @@ diese Regeln nie dem vhost der Administration hinzu. Siehe [Statischer Cache](..
 | 500 | ein PHP- oder Berechtigungsfehler | die Fehlerlogs von Apache und PHP-FPM lesen, dann `var/log/error.log` |
 | 200 für `/.git/config` oder einen `.php`-Pfad des Kernels | Regeln nicht aktiv | beheben, bevor die Website öffentlich ist |
 | Eine Änderung scheint nicht zu wirken | der neu geladene FPM-Master ist nicht der, der die Website ausliefert | `exp:velocity deploy --no-velocity --dry-run` |
-| Dateien in `var/` gehören root | ein Konsolenskript wurde als root ausgeführt | Skripte als Benutzer der Website ausführen ([Kapitel 8, Ein Benutzer oder eine Gruppe](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)) |
+| Dateien in `var/` gehören root | ein Konsolenskript wurde als root ausgeführt | Skripte als Benutzer der Website ausführen ([Kapitel 8, Ein Benutzer oder eine Gruppe](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)) |
 
 ## Checkliste
 
@@ -201,5 +201,5 @@ diese Regeln nie dem vhost der Administration hinzu. Siehe [Statischer Cache](..
 - [nginx mit PHP-FPM](nginx-mit-php-fpm.md)
 - [PHP-FPM abstimmen](../leistung/abstimmung-von-php-fpm.md)
 - [Benutzer und Pools pro Kunde](../sicherheit/benutzer-und-pools-pro-kunde.md)
-- [Kapitel 8: Die Website ausliefern](../../../../en/us/install/08-serving-the-site.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

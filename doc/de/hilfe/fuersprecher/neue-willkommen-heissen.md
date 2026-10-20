@@ -34,10 +34,10 @@ Stellen Sie eine Frage: „Was möchten Sie mit Exponential tun?“
 
 | Sie sagen | Sie sind | Als Nächstes |
 |---|---|---|
-| „Ich bearbeite Inhalte auf unserer Website“ | Redakteur | [Hilfe für Redakteure und Benutzer](../../../en/us/help/README.md), [Erste Schritte](../../../en/us/help/getting-started.md) |
+| „Ich bearbeite Inhalte auf unserer Website“ | Redakteur | [Hilfe für Redakteure und Benutzer](../README.md), [Erste Schritte](../erste-schritte.md) |
 | „Ich möchte es ausprobieren“ | Jemand, der bewertet | [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
-| „Wir betreiben eine alte Website aus der Zeit von eZ Publish“ | Administrator mit einer Migration | [Migration von 4.x](../../../en/us/install/14-migrating-from-4x.md), [Upgrade](../../../en/us/install/11-upgrading.md) |
-| „Ich bin PHP-Entwickler“ | Entwickler | [Gesprächspunkte für Entwickler](gespraechspunkte-fuer-entwickler.md), [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) |
+| „Wir betreiben eine alte Website aus der Zeit von eZ Publish“ | Administrator mit einer Migration | [Migration von 4.x](../../installation/14-migration-von-4x.md), [Upgrade](../../installation/11-aktualisieren.md) |
+| „Ich bin PHP-Entwickler“ | Entwickler | [Gesprächspunkte für Entwickler](gespraechspunkte-fuer-entwickler.md), [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | „Ich möchte helfen“ | Künftige beitragende Person | [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md) |
 | „Wir wählen ein CMS aus“ | Entscheider | [Gesprächspunkte für Entscheider](gespraechspunkte-fuer-entscheider.md) |
 
@@ -83,4 +83,4 @@ der Administration (die Schaltfläche „?“) hat eine Seite Erste Schritte, un
 - [Fragen gut beantworten](fragen-gut-beantworten.md)
 - [Häufige Fragen von Neuen](faq-fuer-neue.md)
 - [Auf die richtige Hilfeseite verweisen](auf-die-richtige-hilfeseite-verweisen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

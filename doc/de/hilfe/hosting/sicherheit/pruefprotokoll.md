@@ -116,7 +116,7 @@ Mail wird nur vom Cronjob versandt, höchstens eine pro Regel und Empfänger inn
 ## Von der Maschine weiterleiten
 
 Eine Senke schickt Einträge vom Server weg, damit eine kompromittierte Maschine ihre eigene Geschichte nicht stillschweigend umschreiben
-kann ([Sicherheitshärtung](../../../../en/us/help/security-hardening.md#watching-logs-the-request-classifier-and-the-audit-trail)).
+kann ([Sicherheitshärtung](../../sicherheitshaertung.md#beobachten-logs-der-request-klassifizierer-und-das-audit-protokoll)).
 
 | Senke | Transport |
 |---|---|
@@ -183,6 +183,6 @@ und die Schlüssel selbst in settings/override bereitstellen.
 - [Sicherheit für Hoster: Überblick](README.md)
 - [Das Prüfprotokoll (Funktion)](../../../../en/us/features/6.0/audit-trail.md)
 - [Audit (vollständige Anleitung)](../../../../en/us/bc/6.0/audit.md)
-- [13.14 Das Audit-Log](../../../../en/us/install/13-security-hardening.md#1314-the-audit-log)
+- [13.14 Das Audit-Log](../../../installation/13-sicherheitshaertung.md#1314-das-audit-protokoll)
 - [Sicherheitslog](../betrieb/sicherheitslog.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

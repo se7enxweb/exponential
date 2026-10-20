@@ -24,8 +24,8 @@ denen Sie nie begegnen werden.
 
 ## Warum die Foren wichtig sind
 
-- Die README nennt sie als den Ort für weitere Hilfe ([Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places)).
-- Es gibt auch ein Forum für Exponential Platform ([Wer ist 7x?, Die Community](../../../en/us/help/who-is-7x.md#the-community)).
+- Die README nennt sie als den Ort für weitere Hilfe ([Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community)).
+- Es gibt auch ein Forum für Exponential Platform ([Wer ist 7x?, Die Community](../wer-ist-7x.md#die-community)).
 - Anders als in einem Chat sind Diskussionen durchsuchbar und verlinkbar.
 
 ## Bevor Sie schreiben
@@ -77,7 +77,7 @@ What I tried: <links you read>
 ```
 
 Fügen Sie nie Passwörter, Schlüssel, Datenbankadressen oder personenbezogene Daten ein
-([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#a-good-bug-description)).
+([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#eine-gute-fehlerbeschreibung)).
 
 ## Eine wöchentliche Routine
 
@@ -103,4 +103,4 @@ WEEKLY FORUM ROUTINE (30 minutes)                  Week of <date>
 - [Fragen gut beantworten](fragen-gut-beantworten.md)
 - [Der Telegram-Chat](der-telegram-chat.md)
 - [Neue willkommen heißen](neue-willkommen-heissen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

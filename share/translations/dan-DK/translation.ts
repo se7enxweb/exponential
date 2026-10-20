@@ -73937,5 +73937,125 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Til organisationer og personer, der driver deres eget website på Exponential: team, publicering, handel, vedligeholdelse, vækst og partnere.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Brugervejledning</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Ét spørgsmål pr. side: hvem må gøre det, trinene, hvad der kan gå galt, og hvor du kan læse mere.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Projektfiler</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projektfil</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Denne fil er en del af kildekoden til Exponential og distribueres sammen med den under %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Hent DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-bøger</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Bygges ud fra de udgivne emner, hver gang et af dem udgives, og gemmes sammen med deres tidligere versioner.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Størrelse</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Opdateret</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Hent alt som DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Hjælpeemner med forsinket gennemgang</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Gennemgangsdatoen er overskredet, eller emnet har været til gennemgang i mere end %days dage uden ændringer.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Forsinket</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Gennemgangsdatoen %date blev overskredet for %days dage siden</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>Til gennemgang i %days dage uden ændringer</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Rediger</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Sæt status</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown af %count forsinkede emner vises. ./console exp:help:content review viser dem alle.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Før du begynder</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Trin</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Det næste trin</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Betingelse</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Årsag</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Løsning</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Hjælpens start</translation>
+    </message>
 </context>
 </TS>

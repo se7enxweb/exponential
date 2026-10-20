@@ -15,7 +15,7 @@ beantwortet: welche URLs Sie von außen anfragen, wie eine gesunde Antwort aussi
 zeigt, welche Prüfungen auf dem Server selbst laufen und was Velocity hinzufügt.
 
 Exponential hat keine einzelne Zustands-URL; das Installationsbuch empfiehlt, eine Prüfung von außen mit den Statusbefehlen im
-Inneren zu kombinieren ([10.11](../../../../en/us/install/10-after-installing.md#1011-monitoring-and-health-checks)). Die innere Hälfte
+Inneren zu kombinieren ([10.11](../../../installation/10-nach-der-installation.md#1011-überwachung-und-zustandsprüfungen)). Die innere Hälfte
 steht auf [Überblick über die Überwachung](ueberblick-ueber-die-ueberwachung.md).
 
 ## Inhalt
@@ -41,7 +41,7 @@ Die Startseite wird oft aus einem Cache ausgeliefert (dem Antwort-Cache von Velo
 antworten kann, während die Datenbank nicht erreichbar ist. Das ist ein Grund, wie das Installationsbuch auch die Anmeldeseite
 der Administration zu prüfen; eine Seite, deren Inhalt Sie prüfen können (ein Wort, das nur die gerenderte Seite enthält), ist
 stärker als ein Statuscode. Messen Sie die Zeit jedes Mal vom selben Ort aus; ein einzelner Seitenaufruf beweist nichts
-([Ausrollen](../../../../en/us/guides/deploying.md#8-make-it-fast)).
+([Ausrollen](../../../anleitungen/bereitstellung.md#8-machen-sie-sie-schnell)).
 
 > **Tipp**
 > Richten Sie den Monitor auf die Adresse, die Besucher nutzen, einschließlich HTTPS, sodass auch ein abgelaufenes Zertifikat
@@ -51,7 +51,7 @@ stärker als ein Statuscode. Messen Sie die Zeit jedes Mal vom selben Ort aus; e
 ## Geplante Wartung ist kein Ausfall
 
 Solange der Wartungsmodus an ist, erhält jede Seitenanfrage die Wartungsseite mit diesen Headern
-([Anleitung zum Wartungsmodus](../../../../en/us/guides/maintenance-mode.md#1-what-maintenance-mode-does)):
+([Anleitung zum Wartungsmodus](../../../anleitungen/wartungsmodus.md#1-was-der-wartungsmodus-tut)):
 
 ```text
 HTTP/1.1 503 Service Unavailable
@@ -85,7 +85,7 @@ df -h /path/to/installation                             # room for caches, logs 
 
 `exp:systeminfo` meldet die Zustandsprüfungen von **Setup > Systeminformationen** für das PHP der Kommandozeile: PHP-Version
 und Erweiterungen, OPcache, `memory_limit`, `max_execution_time` und mehr, jeweils mit dem, was zu tun ist
-([Systeminformationen, Zustandsprüfungen](../../../../en/us/guides/system-information.md#3-health-checks)). Öffnen Sie die Seite der
+([Systeminformationen, Zustandsprüfungen](../../../anleitungen/systeminformationen.md#3-zustandsprüfungen)). Öffnen Sie die Seite der
 Administration über jeden Server, den Sie betreiben, um die Prüfungen des PHP zu sehen, das Besucher bedient.
 
 ## Velocity: Zustandsendpunkt und Watchdog
@@ -159,4 +159,4 @@ Siehe [SLA-Optionen](../geschaeft/sla-optionen-fuer-exponential-hosting.md), wie
 - [Website nicht erreichbar](../runbooks/website-nicht-erreichbar.md), [Velocity startet nicht](../runbooks/velocity-startet-nicht.md),
   [Ablauf von Zertifikaten](../runbooks/ablauf-von-zertifikaten.md) (Runbooks)
 - [SLA-Optionen](../geschaeft/sla-optionen-fuer-exponential-hosting.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

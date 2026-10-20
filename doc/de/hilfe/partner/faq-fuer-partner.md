@@ -65,7 +65,7 @@ Nein. Die Software steht unter der GPL; jeder darf Dienstleistungen aufbauen und
 Anerkennung und Vorteile hinzu. [Lizenzierung für Partner](lizenzierung-fuer-partner.md)
 
 **Dürfen wir die Hilfe in unseren Handbüchern verwenden?**
-Ja, unter der GFDL 1.3 oder später. [Freie Dokumentation](../../../en/us/help/free-documentation.md)
+Ja, unter der GFDL 1.3 oder später. [Freie Dokumentation](../freie-dokumentation.md)
 
 ## Offene Punkte
 
@@ -76,4 +76,4 @@ Noch keinen formellen; das erwartete Verhalten ist hier zusammengestellt: [Verha
 
 - [Partner: hier beginnen](partner-hier-beginnen.md)
 - [Glossar für Partner](glossar-fuer-partner.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

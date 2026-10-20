@@ -94,4 +94,4 @@ Signed off: __________________   Next check due: __________
 - [USt-Typen und USt-Regeln](ust-typen-und-ust-regeln.md)
 - [USt-Regeln und USt-Typen für Unternehmen](../../../../en/us/help/businesses/stores/vat-rules-and-vat-types.md)
 - [Monatliche Shop-Checkliste](monatliche-shop-checkliste.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

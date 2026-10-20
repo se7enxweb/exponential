@@ -76,9 +76,9 @@ Planen Sie sie wie jede Integration: [Eine Integration planen](eine-integration-
 
 - Überprüfen Sie die Zugangsdaten der App einmal im Jahr mit der [Zugriffsüberprüfung](../../../../en/us/help/businesses/security/access-reviews.md):
   Schlüssel werden vom Besitzer oder einem Administrator widerrufen und enden, wenn sie ablaufen oder ihr Besitzer
-  deaktiviert wird ([Persönliche API-Schlüssel](../../../../en/us/guides/api-keys.md)).
+  deaktiviert wird ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
 - Informieren Sie den App-Entwickler vor Upgrades; fragen Sie Ihren Partner, was sich für API-Clients ändert
-  ([REST-API v1 und v2](../../../../en/us/guides/rest-api-v1-and-v2.md)).
+  ([REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)).
 - Verwenden Sie vor jedem Release der App die [Mobil-Checkliste](../../../../en/us/help/businesses/mobile-and-headless/mobile-checklist.md).
 
 ## Verwandte Seiten
@@ -86,4 +86,4 @@ Planen Sie sie wie jede Integration: [Eine Integration planen](eine-integration-
 - [Mobil und Headless für Unternehmen](../../../../en/us/help/businesses/mobile-and-headless/README.md)
 - [Headless mit der REST-API](../../../../en/us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md)
 - [Die REST-API für Betreiber](rest-api-fuer-betreiber.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -11,7 +11,7 @@ type: help
 # Fact sheet for journalists
 
 This page is for reporters and editors who need the facts in one place. Each line has a source below. The facts were
-checked on **18 October 2026**. Before you publish, check the lines that change with releases (marked *) on the
+checked on **19 October 2026**. Before you publish, check the lines that change with releases (marked *) on the
 pages linked in [Sources](#sources).
 
 ## Contents
@@ -24,7 +24,7 @@ pages linked in [Sources](#sources).
 ## The fact sheet
 
 ```text
-EXPONENTIAL - FACT SHEET FOR THE PRESS                                  facts checked 18 October 2026
+EXPONENTIAL - FACT SHEET FOR THE PRESS                                  facts checked 19 October 2026
 
 PRODUCT        Exponential: a free and open source PHP content management system and application framework
                "with advanced CMS functionality"; its most notable feature is a fully customizable content model.
@@ -38,7 +38,8 @@ COPYRIGHT      "7x & Exponential Foundation" (1998 - 2026); "eZ Systems AS" (199
 HISTORY        Code base developed since 1999, first as eZ Publish, a product its creator discontinued after
                almost 18 years. 7x: idea 2014 (se7enx.com registered), project start 2022, launch December 2023.
                Renamed Exponential on 11/12 August 2025.
-RELEASES *     6.0.0 on 1 January 2024 ... 6.0.14 on 7 June 2026 (15 releases); 6.0.15 in development.
+RELEASES *     6.0.0 on 1 January 2024 ... 6.0.14 on 7 June 2026 (15 releases). Current line: 6.0.15,
+               in development (lib/version.php), no release tag on 19 October 2026.
 LICENSE        Software: GNU GPL v2 or later, free of charge. Documentation: GNU FDL 1.3 or later.
                Exponential Velocity: MIT.
 RUNS ON *      PHP 8.0 - 8.5. SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL.
@@ -84,7 +85,7 @@ PRESS          info@se7enx.com   press kit: exponential.earth/about/press-kit
 ## Using the fact sheet
 
 - Copy any line; name "Exponential documentation" or link this page as the source.
-- Keep the date: "as of 18 October 2026". If you update a line yourself, change the date and your source.
+- Keep the date: "as of 19 October 2026". If you update a line yourself, change the date and your source.
 - Do not add figures that are not here. Counts of installations, users or customers are not published
   ([What the sources do not say](what-the-sources-do-not-say.md)).
 - The advocates keep a shorter version for handouts: [One-page fact sheet](../advocates/one-page-fact-sheet.md).

@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei einem H
 installieren und aktualisieren, und für Produktmanager, die entscheiden, ob Kunden Shell-Zugang mit Composer und Git
 bekommen. Sie beantwortet: wie der Code ankommt, was Composer tut, was eine einfache Kopie nicht tut, welcher
 Installationsweg zu welcher Art von Tarif passt und welche Befehle auf einer laufenden Website gefährlich sind. Die
-Quelle ist [Kapitel 3 des Installationsbuchs, Den Code holen](../../../../en/us/install/03-getting-the-code.md).
+Quelle ist [Kapitel 3 des Installationsbuchs, Den Code holen](../../../installation/03-den-code-beschaffen.md).
 
 ## Inhalt
 
@@ -33,7 +33,7 @@ Exponential wird mit [Composer](https://getcomposer.org/) 2 installiert. Compose
 jede Erweiterung, die `composer.json` verlangt, und auf Wunsch Velocity. Ohne Composer fehlt `vendor/`, und die Website
 kann nicht starten. Nach `composer install` führt das Skript `legacy-scripts` den Befehl
 `php bin/php/ezpgenerateautoloads.php` aus, der die Klassenzuordnungen erzeugt
-([Kapitel 2.7](../../../../en/us/install/02-requirements.md#27-composer)).
+([Kapitel 2.7](../../../installation/02-voraussetzungen.md#27-composer)).
 
 ## Was ein Hoster bereitstellt
 
@@ -50,7 +50,7 @@ Auf Servern mit mehreren PHP-Versionen führen Sie Composer mit dem PHP der Webs
 
 ## Drei Wege, den Code zu holen
 
-Aus [Kapitel 3.2](../../../../en/us/install/03-getting-the-code.md#32-three-ways-to-get-the-code):
+Aus [Kapitel 3.2](../../../installation/03-den-code-beschaffen.md#32-drei-wege-zum-code):
 
 | Weg | Ergibt | Passt für |
 |---|---|---|
@@ -77,7 +77,7 @@ composer create-project se7enxweb/exponential:v6.0.14 exponential --no-dev
 > Auf PHP 8.0 lässt sich kein veröffentlichtes Tag installieren: Die Tags `v6.0.8` bis `v6.0.14` verlangen PHP 8.1.
 > Nehmen Sie die Linie 6.0.15 (`dev-main`), bis ihr Tag veröffentlicht ist. Die Tags `v6.0.13` und `v6.0.14` brauchen
 > auf PHP 8.1 bis 8.3 außerdem zusätzliche Schritte wegen ihrer PHPUnit-Anforderung
-> ([Kapitel 3.3](../../../../en/us/install/03-getting-the-code.md#33-installing-on-php-80-to-83)).
+> ([Kapitel 3.3](../../../installation/03-den-code-beschaffen.md#33-installation-unter-php-80-bis-83)).
 
 ## Versionen und Tags
 
@@ -97,7 +97,7 @@ composer create-project se7enxweb/exponential:v6.0.14 exponential --no-dev
 Jede Erweiterung außer den vier, die im Repository des Kernels mitgeliefert werden (`ezjscore`, `ezoe`, `ezformtoken`,
 `expservices`), ist ein Composer-Paket, das das Installer-Plugin in `extension/<name>` ablegt. `composer.json`
 entscheidet also, welche Erweiterungen eine Installation hat und in welchen Versionen
-([Kapitel 3.5](../../../../en/us/install/03-getting-the-code.md#35-extensions-are-composer-packages)).
+([Kapitel 3.5](../../../installation/03-den-code-beschaffen.md#35-extensions-sind-composer-pakete)).
 
 Eine hinzuzufügen sind drei Schritte:
 
@@ -121,12 +121,12 @@ kann, darunter `ezfind` (Solr-Suche), `sevenx_valkey_cache` (Cache auf Valkey od
 > und lesen Sie zuerst seine Release Notes.
 
 - Klone, die Composer selbst angelegt hat, sind sicher: Composer weigert sich, einen Klon mit nicht committeten
-  Änderungen oder nicht gepushten Commits zu aktualisieren ([Wenn Composer sich weigert](../../../../en/us/help/develop-with-git.md#when-composer-refuses)).
+  Änderungen oder nicht gepushten Commits zu aktualisieren ([Wenn Composer sich weigert](../../mit-git-entwickeln.md#wenn-composer-sich-weigert)).
 - Ein **von Hand** angelegter Klon an der Stelle eines Pakets, das Composer als Archiv installiert hat, ist nicht
   sicher: Composer behandelt den Ordner weiter als Archiv und ersetzt ihn, samt Historie und Commits. Nutzen Sie
   stattdessen `composer reinstall <package>`, nachdem Sie `preferred-install` gesetzt haben.
 - Den Code zu bewegen ist die Hälfte eines Upgrades; die Update-Dateien der Datenbank sind die andere Hälfte
-  ([Kapitel 11](../../../../en/us/install/11-upgrading.md)).
+  ([Kapitel 11](../../../installation/11-aktualisieren.md)).
 - Sichern Sie vor jedem Update ([Was gesichert werden muss](../betrieb/backups-was-gesichert-werden-muss.md)).
 
 Ein sicheres Update einer Website auf Basis von Klonen:
@@ -159,8 +159,8 @@ einschalten für Kunden, die ihre eigenen verwalten. Siehe [Automatische Updates
 
 ## Verwandte Seiten
 
-- [Kapitel 3: Den Code holen](../../../../en/us/install/03-getting-the-code.md)
-- [Mit Git entwickeln](../../../../en/us/help/develop-with-git.md)
+- [Kapitel 3: Den Code holen](../../../installation/03-den-code-beschaffen.md)
+- [Mit Git entwickeln](../../mit-git-entwickeln.md)
 - [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.md) und [Änderungen ausrollen](../betrieb/aenderungen-ausrollen.md)
-- [Anleitung zu Erweiterungen](../../../../en/us/guides/extensions.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Anleitung zu Erweiterungen](../../../anleitungen/extensions.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

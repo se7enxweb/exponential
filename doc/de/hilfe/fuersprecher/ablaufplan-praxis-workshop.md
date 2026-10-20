@@ -25,7 +25,7 @@ damit die Teilnehmenden allein weitermachen können.
 ## Vor dem Workshop
 
 **Die Teilnehmenden bringen** einen Laptop mit PHP 8.1 oder später, Composer und Git mit sowie ein GitHub-Konto für die
-letzte Übung. Prüfen Sie die PHP-Anforderung unter [Betriebssystemunterstützung](../../../en/us/help/os-support.md#what-the-operating-system-has-to-provide).
+letzte Übung. Prüfen Sie die PHP-Anforderung unter [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md#was-das-betriebssystem-bereitstellen-muss).
 
 **Sie bereiten vor**:
 
@@ -45,10 +45,10 @@ letzte Übung. Prüfen Sie die PHP-Anforderung unter [Betriebssystemunterstützu
 |---|---|---|---|
 | 0:00 | Begrüßung, was Exponential ist (5 Min.) | | [Die Geschichte in zwei Minuten](die-geschichte-in-zwei-minuten.md) |
 | 0:05 | Mit einem Befehl auf SQLite installieren | Die Administration öffnet sich; Passwort geändert | [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
-| 0:25 | Rundgang durch die Administration | Alle haben die Hilfe-Schaltfläche „?“ gefunden | [Ein Rundgang durch die Administration](../../../en/us/help/admin-tour.md) |
-| 0:35 | Einen Artikel erstellen, bearbeiten, in der Vorschau ansehen und veröffentlichen; Versionen vergleichen | Zwei Versionen sichtbar unter **Versionen verwalten** | [Inhalte erstellen und bearbeiten](../../../en/us/help/editing-content.md), [Veröffentlichen, Versionen und der Papierkorb](../../../en/us/help/publishing-and-versions.md) |
-| 0:55 | Eine Sprache hinzufügen und den Artikel übersetzen | Der Artikel hat zwei Sprachkennzeichen | [Sprachen](../../../en/us/help/languages.md) |
-| 1:10 | Eine Seite im Layouts-Editor bauen | Ein Block hinzugefügt und veröffentlicht | [Der Layouts-Editor](../../../en/us/help/layouts-editor.md) |
+| 0:25 | Rundgang durch die Administration | Alle haben die Hilfe-Schaltfläche „?“ gefunden | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
+| 0:35 | Einen Artikel erstellen, bearbeiten, in der Vorschau ansehen und veröffentlichen; Versionen vergleichen | Zwei Versionen sichtbar unter **Versionen verwalten** | [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md), [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
+| 0:55 | Eine Sprache hinzufügen und den Artikel übersetzen | Der Artikel hat zwei Sprachkennzeichen | [Sprachen](../sprachen.md) |
+| 1:10 | Eine Seite im Layouts-Editor bauen | Ein Block hinzugefügt und veröffentlicht | [Der Layouts-Editor](../layout-editor.md) |
 | 1:25 | Wie es weitergeht; Community-Kanäle | Alle haben die Links | [Die Community-Kanäle](community-kanaele.md) |
 
 ## Format B: halbtägiger Workshop für Website-Ersteller
@@ -57,11 +57,11 @@ Die ersten drei Übungen aus Format A, dann:
 
 | Zeit | Übung | Kontrollpunkt | Folgt |
 |---|---|---|---|
-| 0:40 | Eine Inhaltsklasse „Event“ mit Titel, Datum und Text definieren | Ein Event lässt sich anlegen | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../en/us/guides/content-model-and-editing.md) |
-| 1:10 | Herausfinden, welches Template eine Seite zeichnet; mit einem Override, das sich rückgängig machen lässt, etwas ändern | Die Seite zeigt die Änderung | [Templates und Design](../../../en/us/guides/templates-and-design.md) |
+| 0:40 | Eine Inhaltsklasse „Event“ mit Titel, Datum und Text definieren | Ein Event lässt sich anlegen | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
+| 1:10 | Herausfinden, welches Template eine Seite zeichnet; mit einem Override, das sich rückgängig machen lässt, etwas ändern | Die Seite zeigt die Änderung | [Templates und Design](../../anleitungen/templates-und-design.md) |
 | 1:50 | Pause | | |
-| 2:00 | Eine erste Erweiterung mit den RAD-Werkzeugen schreiben, aktivieren, in der Übersicht sehen | Die Erweiterung erscheint unter **Setup > RAD** | [RAD-Werkzeuge](../../../en/us/features/6.0/rad-tools.md), [Erweiterungen, Abschnitt 6](../../../en/us/guides/extensions.md#6-build-your-own-extension) |
-| 2:50 | Als Git-Klone installieren; eine kleine Korrektur an der Dokumentation machen; einen Pull Request an den eigenen Fork oder das Projekt eröffnen | Ein Link zum Pull Request | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md), [Die Hilfe verbessern](die-hilfe-verbessern.md) |
+| 2:00 | Eine erste Erweiterung mit den RAD-Werkzeugen schreiben, aktivieren, in der Übersicht sehen | Die Erweiterung erscheint unter **Setup > RAD** | [RAD-Werkzeuge](../../../en/us/features/6.0/rad-tools.md), [Erweiterungen, Abschnitt 6](../../anleitungen/extensions.md#6-eine-eigene-extension-bauen) |
+| 2:50 | Als Git-Klone installieren; eine kleine Korrektur an der Dokumentation machen; einen Pull Request an den eigenen Fork oder das Projekt eröffnen | Ein Link zum Pull Request | [Mit Git entwickeln](../mit-git-entwickeln.md), [Die Hilfe verbessern](die-hilfe-verbessern.md) |
 | 3:30 | Abschluss: was die Teilnehmenden gebaut haben; nächste Schritte | | [Die Stufen der Fürsprache](die-stufen-der-fuersprache.md) |
 
 Die Übung mit dem Pull Request ist freiwillig und nur mit dem eigenen GitHub-Konto jeder teilnehmenden Person. Bitten
@@ -71,7 +71,7 @@ Korrektur (ein Tippfehler, ein klarerer Satz) ist ein besserer erster Beitrag.
 ## Hinweise für die Moderation
 
 - **Beginnen Sie früh mit der Installation.** Der Installationsschritt dauert am längsten, wenn einem Laptop eine
-  PHP-Erweiterung fehlt; Helfende gehen durch den Raum. [Einen Rechner in zwei Minuten prüfen](../../../en/us/help/os-support.md#check-a-machine-in-two-minutes) hilft.
+  PHP-Erweiterung fehlt; Helfende gehen durch den Raum. [Einen Rechner in zwei Minuten prüfen](../betriebssystemunterstuetzung.md#einen-rechner-in-zwei-minuten-prüfen) hilft.
 - **Verwenden Sie erfundene Inhalte.** „Jährlicher Fahrradtag“, nicht die Veranstaltung eines echten Kunden.
 - **Bilden Sie Paare.** Schnellere Teilnehmende helfen langsameren; das baut Community auf.
 - **Schreiben Sie Fragen auf.** Beantworten Sie sie später mit Quellen; veröffentlichen Sie die Antworten danach im Forum.
@@ -101,4 +101,4 @@ Security problems  privately, as SECURITY.md describes
 - [Einen Beitrags-Sprint vorschlagen](einen-beitrags-sprint-vorschlagen.md)
 - [Ein Tutorial schreiben, das funktioniert](ein-tutorial-schreiben.md)
 - [Checklisten für Veranstaltungen](checklisten-fuer-veranstaltungen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

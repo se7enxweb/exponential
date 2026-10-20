@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die Fehler melden und anderen beim Melden helfen. Ein guter Bericht ist der schnellste
 Weg, ein Problem für alle zu beheben. Die eigene Anleitung des Projekts steht in
-[Wenn etwas schiefgeht, Eine gute Fehlerbeschreibung](../../../en/us/help/when-something-goes-wrong.md#a-good-bug-description); diese
+[Wenn etwas schiefgeht, Eine gute Fehlerbeschreibung](../wenn-etwas-schiefgeht.md#eine-gute-fehlerbeschreibung); diese
 Seite macht daraus eine Routine.
 
 ## Inhalt
@@ -41,7 +41,7 @@ Seite macht daraus eine Routine.
 | Umgebung | Exponential-Version, PHP, Engine, Datenbank, Design |
 | Logzeilen | Um den Zeitpunkt herum, ohne private Teile |
 
-Das Beispiel für den Titel stammt aus [Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#a-good-bug-description).
+Das Beispiel für den Titel stammt aus [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#eine-gute-fehlerbeschreibung).
 
 ## Die Vorlage
 
@@ -73,7 +73,7 @@ Reproduced on a fresh installation: <yes/no>. Related: <links>.
 
 - Die Seite **Fehler melden** der Hilfe (`exphelp/report`) füllt eine Zusammenfassung der Installation aus.
 - **Setup > Systeminformationen**, **Bericht als Text kopieren**, liefert dieselbe Zusammenfassung.
-- Beide lassen Passwörter, Schlüssel und Serverpfade weg ([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#a-good-bug-description)).
+- Beide lassen Passwörter, Schlüssel und Serverpfade weg ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#eine-gute-fehlerbeschreibung)).
 - Entfernen Sie IP-Adressen, E-Mail-Adressen und Namen aus Logs, bevor Sie sie veröffentlichen.
 
 ## Den Bericht eines anderen prüfen
@@ -93,7 +93,7 @@ Siehe [Issues nachstellen und bestätigen](issues-nachstellen-und-bestaetigen.md
 ## Nach der Meldung
 
 - Beantworten Sie Fragen im Issue zügig.
-- Wenn Sie die Ursache finden, überlegen Sie, die Korrektur zu senden ([Noch besser: die Korrektur senden](../../../en/us/help/when-something-goes-wrong.md#even-better-send-the-fix)).
+- Wenn Sie die Ursache finden, überlegen Sie, die Korrektur zu senden ([Noch besser: die Korrektur senden](../wenn-etwas-schiefgeht.md#noch-besser-die-korrektur-mitschicken)).
 - Wenn es behoben ist, danken Sie den Beteiligten.
 
 ## Verwandte Seiten
@@ -101,4 +101,4 @@ Siehe [Issues nachstellen und bestätigen](issues-nachstellen-und-bestaetigen.md
 - [Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md)
 - [Issues nachstellen und bestätigen](issues-nachstellen-und-bestaetigen.md)
 - [GitHub für Fürsprecher](github-fuer-fuersprecher.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

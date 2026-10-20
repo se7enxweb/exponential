@@ -10,7 +10,7 @@ type: help
 # Eine Fallstudie schreiben
 
 Diese Seite ist für Partner, die die Geschichte eines Projekts erzählen möchten. Den ausführlichen Ablauf des
-Vertriebsteams finden Sie unter [Fallstudien und Content-Marketing schreiben](../../../en/us/help/business/case-studies-and-content-marketing.md);
+Vertriebsteams finden Sie unter [Fallstudien und Content-Marketing schreiben](../geschaeft/fallstudien-und-content-marketing.md);
 diese Seite ist die Fassung für Partner, mit den Regeln des Programms.
 
 ## Warum es wichtig ist
@@ -25,7 +25,7 @@ Können. Das Programm belohnt sie: „auf exponential.earth veröffentlichte Fal
 | Schritt | Tun Sie | Tun Sie nicht |
 |---|---|---|
 | 1. Auswählen | Ein Projekt, das seit einigen Monaten läuft, mit einem Ergebnis, auf das der Kunde stolz ist | Ein Projekt, das noch in Schwierigkeiten steckt |
-| 2. Zustimmung | Fragen Sie den Kunden schriftlich, bevor Sie etwas schreiben ([Fallstudien, Schritt 2](../../../en/us/help/business/case-studies-and-content-marketing.md#step-2-ask-for-consent-before-you-write)) | Erst schreiben und später fragen |
+| 2. Zustimmung | Fragen Sie den Kunden schriftlich, bevor Sie etwas schreiben ([Fallstudien, Schritt 2](../geschaeft/fallstudien-und-content-marketing.md#schritt-2-vor-dem-schreiben-um-einwilligung-bitten)) | Erst schreiben und später fragen |
 | 3. Interview | Fragen Sie nach dem Problem, der Entscheidung, dem Ergebnis, in seinen Worten | Ihm Worte in den Mund legen |
 | 4. Fakten | Sammeln Sie Versionen, genutzte Funktionen und Zahlen, die der Kunde bestätigen kann | Zahlen erfinden oder aufrunden |
 | 5. Entwurf | Verwenden Sie die [Vorlage für Fallstudien](vorlage-fuer-fallstudien.md) | Eine Werbeanzeige daraus machen |
@@ -51,5 +51,5 @@ einer freien Lizenz und sagen Sie das. Das Programm verlangt Artikel „unter FL
 
 - [Vorlage für Fallstudien](vorlage-fuer-fallstudien.md)
 - [Kundenreferenzen](kundenreferenzen.md)
-- [Fallstudien und Content-Marketing](../../../en/us/help/business/case-studies-and-content-marketing.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Fallstudien und Content-Marketing](../geschaeft/fallstudien-und-content-marketing.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

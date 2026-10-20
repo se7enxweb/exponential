@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Systemadministratoren bei Hosting-Unternehmen, deren Maschinen bereits Apache oder nginx betreiben und die Velocity
 hinzufügen. Sie beantwortet: welche Formen funktionieren, was jede braucht (vertrauenswürdige Proxys, ein Benutzer für die Dateien,
 geteilte Sitzungen, ein Ausrollen) und wie Sie prüfen, dass sich ein weitergeleiteter Header nicht fälschen lässt. Die Quellen sind
-[Kapitel 8, Abschnitte 8.7 und 8.8](../../../../en/us/install/08-serving-the-site.md#88-behind-a-reverse-proxy) und
+[Kapitel 8, Abschnitte 8.7 und 8.8](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy) und
 [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../en/us/bc/6.0/trusted-proxies.md).
 
 ## Inhalt
@@ -94,12 +94,12 @@ HTTPS, wenn ein vertrauenswürdiger Proxy `X-Forwarded-Proto: https`, `CloudFron
 > Dass das weitergeleitete Protokoll nur von vertrauenswürdigen Proxys gelesen wird, kam mit Exponential Velocity **0.0.4.44**. Bis
 > einschließlich 0.0.4.43 konnte ein Besucher auf einem einfachen Listener eine Anfrage wie HTTPS aussehen lassen. Prüfen Sie mit
 > `composer show se7enxweb/exponential-velocity`; halten Sie bei einer älteren Engine den einfachen Port von Velocity von außen
-> unerreichbar, solange ein Proxy davor steht ([Kapitel 8, Abschnitt 8.8](../../../../en/us/install/08-serving-the-site.md#88-behind-a-reverse-proxy)).
+> unerreichbar, solange ein Proxy davor steht ([Kapitel 8, Abschnitt 8.8](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy)).
 
 ## Form 2: beide liefern dieselbe Installation aus
 
 Wenn Apache (PHP-FPM) und Velocity dieselbe Installation ausliefern, teilen sie `var/`, die Caches und die Sitzungen
-([Kapitel 8, Ein Benutzer oder eine Gruppe](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)):
+([Kapitel 8, Ein Benutzer oder eine Gruppe](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)):
 
 - **Ein Benutzer.** Geben Sie dem PHP-FPM-Pool und den Workern von Velocity denselben Benutzer (`[ServerSettings] User` und `Group`) oder
   eine gemeinsame Gruppe mit für die Gruppe beschreibbaren Verzeichnissen mit setgid und den Berechtigungen in `[FileSettings]` aus
@@ -112,7 +112,7 @@ Wenn Apache (PHP-FPM) und Velocity dieselbe Installation ausliefern, teilen sie 
   ([HTTP-Cache](../../../../en/us/bc/6.0/httpcache.md#switching-it-on)).
 - **Caches.** Das Leeren eines Caches unter **Setup > Caches** erreicht beide, weil die Dateien geteilt sind. Zwei Dinge nicht: Velocity
   hält Einstellungen im Speicher (starten Sie es nach dem Leeren der INI-Caches neu) und beantwortet Seiten aus seinem eigenen
-  Antwort-Cache (`exp:velocity cache clear`) ([Caches](../../../../en/us/guides/caches.md#4-velocity)).
+  Antwort-Cache (`exp:velocity cache clear`) ([Caches](../../../anleitungen/caches.md#4-velocity)).
 - **OPcache und APCu** gehören zu den eigenen Prozessen jedes Servers.
 
 ## Form 3: nebeneinander für einen Vergleich
@@ -168,4 +168,4 @@ die der Kernel für den Besucher nutzt.
 - [Apache mit PHP-FPM](apache-mit-php-fpm.md)
 - [nginx mit PHP-FPM](nginx-mit-php-fpm.md)
 - [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../../../en/us/bc/6.0/trusted-proxies.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

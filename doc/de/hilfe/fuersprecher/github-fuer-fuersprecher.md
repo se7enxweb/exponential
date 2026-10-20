@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Fürsprecher, die neu bei GitHub sind, und für Entwickler, die es als Fürsprecher nutzen möchten,
 nicht nur zum Programmieren. Exponential lebt auf GitHub unter dem Konto [se7enxweb](https://github.com/se7enxweb): der
 Kernel, die Erweiterungen, Velocity und der Community-Tracker. Für Issues und Pull Requests brauchen Sie ein kostenloses
-GitHub-Konto ([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#filing-a-bug-in-exponential)).
+GitHub-Konto ([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#einen-fehler-in-exponential-melden)).
 
 ## Inhalt
 
@@ -57,11 +57,11 @@ Wie Sie ein gutes Issue schreiben: [Fehler gut melden](fehler-gut-melden.md). We
 
 - **Dokumentation**: **Auf GitHub bearbeiten** auf jeder Hilfeseite öffnet die Datei; GitHub forkt das Repository für
   Sie ([Die Hilfe verbessern](die-hilfe-verbessern.md)).
-- **Code**: forken, Branch anlegen, committen, Pull Request ([Mit Git entwickeln](../../../en/us/help/develop-with-git.md#contribute-a-change-with-a-pull-request)).
+- **Code**: forken, Branch anlegen, committen, Pull Request ([Mit Git entwickeln](../mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen)).
 - **Commit-Nachrichten** beginnen mit `Added:`, `Updated:`, `Fixed:`, `Removed:` oder `Renamed:`
   ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 - **Jeder Pull Request wird übernommen**, und seine Commits bleiben erhalten; was korrigiert werden muss, wird in Commits
-  obendrauf korrigiert ([Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows)).
+  obendrauf korrigiert ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)).
 
 ## Helfen ohne Code
 
@@ -86,5 +86,5 @@ Wie Sie ein gutes Issue schreiben: [Fehler gut melden](fehler-gut-melden.md). We
 
 - [Welcher Tracker für welche Meldung](welcher-tracker-fuer-welche-meldung.md)
 - [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md)
-- [Mit Git entwickeln](../../../en/us/help/develop-with-git.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Mit Git entwickeln](../mit-git-entwickeln.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

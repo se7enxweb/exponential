@@ -39,7 +39,7 @@ Prozesse betreibt. Das README sagt es deutlich: Wenn mehrere Kunden die Daten de
 Velocity-Instanz pro Website hinter einem Proxy, jede als eigener Benutzer des Betriebssystems, denn der Prozess, der eine Website
 ausliefert, kann jede Datei lesen, die die anderen halten.
 
-Und aus [Kapitel 8](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table): wenn mehrere Kunden auf einer Maschine voneinander
+Und aus [Kapitel 8](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle): wenn mehrere Kunden auf einer Maschine voneinander
 auf Ebene des Betriebssystems getrennt sein müssen (eine Velocity pro Website, jede als eigener Benutzer, oder ein klassischer Server mit
 einem PHP-FPM-Pool pro Website).
 
@@ -57,9 +57,9 @@ einem PHP-FPM-Pool pro Website).
 Das eigene Prozessmodell von Velocity innerhalb einer Website: Der Elternprozess darf root bleiben, um Ports zu binden und Zertifikate zu
 lesen, und jeder Worker gibt root auf, bevor Code der Anwendung läuft; `[ServerSettings] User` und `Group` entscheiden, wer er wird, und
 Worker als root werden verweigert, es sei denn `AllowRootWorkers=enabled`
-([8.3.5](../../../../en/us/install/08-serving-the-site.md#835-address-ports-user-and-group)). Persistente Worker bedienen viele Anfragen **derselben**
+([8.3.5](../../../installation/08-die-website-ausliefern.md#835-adresse-ports-benutzer-und-gruppe)). Persistente Worker bedienen viele Anfragen **derselben**
 Website; `ForkPerRequest=enabled` gibt eine Anfrage pro Worker, also dieselbe Trennung wie bei PHP-FPM
-([8.3.7](../../../../en/us/install/08-serving-the-site.md#837-persistent-workers-and-keepglobals)). Keine der beiden Einstellungen trennt Kunden;
+([8.3.7](../../../installation/08-die-website-ausliefern.md#837-persistente-worker-und-keepglobals)). Keine der beiden Einstellungen trennt Kunden;
 getrennte Instanzen tun es.
 
 ## Mehrere Websites auf einer Installation
@@ -78,7 +78,7 @@ Selbst mit einem Benutzer pro Website zeigen einige Standards auf Orte, die jede
 
 | Pfad oder Einstellung | Standard | Was zu tun ist |
 |---|---|---|
-| `site.ini [FileSettings] TemporaryDir` | `/tmp/` | ein eigenes Verzeichnis der Website unter `var/` ([13.11](../../../../en/us/install/13-security-hardening.md#1311-file-permissions-and-ownership)) |
+| `site.ini [FileSettings] TemporaryDir` | `/tmp/` | ein eigenes Verzeichnis der Website unter `var/` ([13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)) |
 | Berechtigungen in `[FileSettings]` | `0777` für Verzeichnisse, `0666` für Dateien | `0770` / `0660` mit der Gruppe der Website |
 | Sitzungsspeicher von PHP | `session.save_handler` der `php.ini` (files), wenn `[Session] Handler` leer ist | ein Sitzungsverzeichnis pro Pool oder der Sitzungs-Handler der Datenbank |
 | `upload_tmp_dir` von PHP | der Standard des Systems | pro Pool, im Bereich der Website |
@@ -96,7 +96,7 @@ Verbindung, einschließlich des Passworts, steht in `settings/override/site.ini.
 `0640` oder strenger, damit andere Benutzer sie nicht lesen können ([Datenbanken und Benutzer](../control-panels/datenbanken-und-benutzer.md)). Die
 unterstützten Datenbanken in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
 5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich
-([Datenbankunterstützung](../../../../en/us/help/database-support.md)). Mit SQLite 3 ist die Datenbank eine Datei unterhalb der Installation
+([Datenbankunterstützung](../../datenbankunterstuetzung.md)). Mit SQLite 3 ist die Datenbank eine Datei unterhalb der Installation
 (standardmäßig `var/storage/sqlite3/`), sodass die Dateiberechtigungen die ganze Grenze sind.
 
 ## Caches, Sitzungen und Logs
@@ -137,5 +137,5 @@ Das sind Möglichkeiten; der Hoster wählt und nennt das Modell in seinen Tarife
 - [Benutzer und Pools pro Kunde](benutzer-und-pools-pro-kunde.md)
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
 - [Shared Hosting](../modelle/shared-hosting.md)
-- [Kapitel 8: Dateiberechtigungen und Eigentum](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 8: Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

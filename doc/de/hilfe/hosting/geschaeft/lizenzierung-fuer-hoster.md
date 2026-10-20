@@ -18,7 +18,7 @@ ausliefern dürfen, was gilt, wenn Sie es ändern, und was mit Erweiterungen und
 > GNU General Public License Version 2 in `LICENSE.md` und `LICENSE` und die GNU Free Documentation License 1.3 in
 > [doc/en/us/LICENSE-GFDL-1.3.txt](../../../../en/us/LICENSE-GFDL-1.3.txt). Fragen Sie für einen bestimmten Tarif Ihren
 > rechtlichen Berater. Die Sicht des Käufers auf dieselben Lizenzen steht auf
-> [Lizenzierung für Käufer erklärt](../../../../en/us/help/business/licensing-for-buyers.md).
+> [Lizenzierung für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md).
 
 ## Inhalt
 
@@ -89,7 +89,7 @@ Prüfen Sie die Seite Über der Installation, die Sie ausliefern, bevor Sie sage
 
 Die Hilfe, einschließlich dieser Hosting-Seiten, steht unter der GNU FDL 1.3 oder später. Sie dürfen sie in Ihre eigene
 Kundendokumentation kopieren, übersetzen und anpassen, unter den Bedingungen der Lizenz: die Hinweise erhalten, sie unter
-derselben Lizenz halten, sagen, was Sie geändert haben ([Freie Dokumentation](../../../../en/us/help/free-documentation.md)). Ein Link auf
+derselben Lizenz halten, sagen, was Sie geändert haben ([Freie Dokumentation](../../freie-dokumentation.md)). Ein Link auf
 die Seiten ist an gar keine Bedingungen geknüpft.
 
 ## Fragen an Ihren rechtlichen Berater
@@ -102,6 +102,6 @@ die Seiten ist an gar keine Bedingungen geknüpft.
 
 ## Verwandte Seiten
 
-- [Lizenzierung für Käufer erklärt](../../../../en/us/help/business/licensing-for-buyers.md)
+- [Lizenzierung für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md)
 - [Ein-Klick-Installer](../bereitstellung/ein-klick-installer-fuer-exponential.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

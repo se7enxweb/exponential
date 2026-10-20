@@ -146,4 +146,4 @@ Seite auch, was die Engine protokolliert hat.
 - [Grundlagen der TPL-Syntax](../../../en/us/help/designers/templates/tpl-syntax-basics.md)
 - [Referenz der Operatoren](../../../en/us/help/designers/templates/operator-reference.md) und [Referenz der Funktionen](../../../en/us/help/designers/templates/function-reference.md)
 - [Jeder Template-Operator](../../../en/us/examples/template-operators/README.md) und [jede Template-Funktion](../../../en/us/examples/template-functions/README.md), aus dem Code erzeugt
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

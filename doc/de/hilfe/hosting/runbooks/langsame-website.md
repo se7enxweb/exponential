@@ -10,7 +10,7 @@ type: help
 # Runbook: langsame Website
 
 Für die Bereitschaft und Administratoren, wenn ein Kunde meldet, dass seine Exponential-Website langsam ist. Die Hebel und ihre Reihenfolge
-stammen aus [10.12 Abstimmung der Leistung](../../../../en/us/install/10-after-installing.md#1012-performance-tuning).
+stammen aus [10.12 Abstimmung der Leistung](../../../installation/10-nach-der-installation.md#1012-performance-tuning).
 
 ## Inhalt
 
@@ -65,7 +65,7 @@ php bin/php/console exp:benchmark --baseline=var/benchmark/base.json --threshold
 4. **OPcache**: `php bin/php/cache.php opcache status --allow-root-user`. Betreiben Sie eine Exponential-Website nie mit
    `opcache.validate_timestamps=0`; unter Velocity zählen die mitgelieferten Einstellungen ([OPcache](../leistung/opcache.md)).
 5. **Die Datenbank**: Auf SQLite hat der Query-Planer nach einer Installation oder einem großen Import keine Statistiken: Führen Sie einmal
-   `sqlite3 var/storage/sqlite3/exponential.db ANALYZE` aus ([12.10](../../../../en/us/install/12-troubleshooting.md#1210-databases)). Auf MongoDB
+   `sqlite3 var/storage/sqlite3/exponential.db ANALYZE` aus ([12.10](../../../installation/12-fehlerbehebung.md#1210-datenbanken)). Auf MongoDB
    prüfen Sie, dass die Indizes aus `bin/mongodb/create_indexes.js` existieren.
 6. **Verkehr**: `security.log` und `404.log` zeigen Häufungen von Abtastungen und Anfragen „nicht gefunden“; ein Crawler oder ein Angriff
    kann wie Langsamkeit aussehen ([Anfrage-Logs](../betrieb/anfrage-logs.md)).
@@ -82,7 +82,7 @@ Aus 10.12:
 3. **OPcache**, konfiguriert, wie [OPcache](../leistung/opcache.md) es beschreibt.
 4. **APCu** für die Speicherstufe des Antwort-Caches von Velocity und den SQL-Abfrage-Cache im Modus `shared`.
 5. **Der SQL-Abfrage-Cache**, auf der Website gemessen.
-6. **Die Abstimmung der Datenbank** aus [Kapitel 9](../../../../en/us/install/09-databases.md).
+6. **Die Abstimmung der Datenbank** aus [Kapitel 9](../../../installation/09-datenbanken.md).
 
 Ändern Sie einen Hebel nach dem anderen und messen Sie erneut mit der Basislinie.
 
@@ -97,5 +97,5 @@ Aus 10.12:
 
 - [Cache-Schichten](../leistung/cache-schichten.md)
 - [Caches leeren und vorwärmen](../leistung/caches-leeren-und-vorwaermen.md)
-- [Benchmark von Exponential](../../../../en/us/guides/benchmarking.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Benchmark von Exponential](../../../anleitungen/benchmarking.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

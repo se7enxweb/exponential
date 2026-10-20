@@ -16,9 +16,9 @@ das Profil Kreativ (Themes und Designs) ([Partnerprofile](partnerprofile.md)).
 ## Das Ökosystem, dem Sie sich anschließen
 
 - `composer.json` des Kernels verlangt 66 Pakete `se7enxweb/*`, und der Vendor se7enxweb hat 219 Pakete auf Packagist
-  ([Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md#the-extension-ecosystem)).
+  ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#das-ökosystem-der-erweiterungen)).
 - Jede Erweiterung ist ein Git-Repository und ein Composer-Paket; die Administration listet installierte Erweiterungen
-  unter **Setup > Extensions** ([Erweiterungen](../../../en/us/guides/extensions.md#2-find-an-extension)).
+  unter **Setup > Extensions** ([Erweiterungen](../../anleitungen/extensions.md#2-eine-extension-finden)).
 - Das Community-Projektportal <https://projects.exponential.earth> beherbergt „von Benutzern erstellte und gepflegte Projekte für Erweiterungen, Plugins, Designs und Bundles“ (<https://exponential.earth/about/project>).
 
 ## Geschäftsmodelle, die die GPL respektieren
@@ -54,7 +54,7 @@ deutlich, dass Sie es nicht tun werden.
 
 - Halten Sie sie auf den unterstützten PHP-Versionen lauffähig (8.0 bis 8.5 für 6.0.15).
 - Befolgen Sie die Release-Regeln: Version in `ezinfo.php` und `extension.xml`, nie ein veröffentlichtes Tag verschieben
-  ([Erweiterungen, „Release it“](../../../en/us/guides/extensions.md#7-release-it)).
+  ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
 - Führen Sie ein Änderungsprotokoll und beantworten Sie Issues.
 - Kennzeichnen Sie aufgegebene Erweiterungen als solche und verweisen Sie auf eine Alternative.
 
@@ -72,5 +72,5 @@ Viele Erweiterungen im Ökosystem setzen die Arbeit früherer Autoren fort. Wenn
 
 - [Eine Erweiterung als Partner veröffentlichen](eine-erweiterung-veroeffentlichen.md)
 - [Ein Theme oder Design als Partner veröffentlichen](ein-theme-veroeffentlichen.md)
-- [Erweiterungen](../../../en/us/guides/extensions.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Erweiterungen](../../anleitungen/extensions.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

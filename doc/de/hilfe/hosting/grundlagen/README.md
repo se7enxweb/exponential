@@ -13,8 +13,8 @@ Dieser Bereich ist für alle bei einem Hosting-Anbieter, die wissen müssen, was
 bevor ein Angebot entworfen, ein Server gebaut oder einem Kunden geholfen wird: Produktmanager, Systemadministratoren und
 Support-Mitarbeitende. Er beantwortet eine Frage pro Seite: Was braucht die Software, und was bedeutet das für die Art,
 wie Sie sie hosten? Jede Tatsache auf diesen Seiten stammt aus dem Repository (dem Installationsbuch in
-`doc/en/us/install/`, den Hilfeseiten zur [Datenbankunterstützung](../../../../en/us/help/database-support.md) und
-[Betriebssystemunterstützung](../../../../en/us/help/os-support.md) sowie den mitgelieferten Einstellungen in `settings/`), und jede
+`doc/en/us/install/`, den Hilfeseiten zur [Datenbankunterstützung](../../datenbankunterstuetzung.md) und
+[Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) sowie den mitgelieferten Einstellungen in `settings/`), und jede
 Seite verlinkt ihre Quellen, damit Sie sie prüfen können.
 
 Zurück zum Anfang der Hilfe zum Hosting: [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md).
@@ -61,12 +61,12 @@ Zurück zum Anfang der Hilfe zum Hosting: [Hosting-Anbieter: hier beginnen](../h
 ## Die Kurzfassung
 
 - **PHP 8.0 oder später** für den Kernel; **PHP 8.1 oder später** mit `sockets` für Exponential Velocity, den empfohlenen
-  Webserver ([Kapitel 2](../../../../en/us/install/02-requirements.md#22-php)).
+  Webserver ([Kapitel 2](../../../installation/02-voraussetzungen.md#22-php)).
 - **Datenbanken, in der offiziellen Reihenfolge:** 1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB ·
   5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich (kein Treiber
-  in 6.0.x). Siehe [Datenbankunterstützung](../../../../en/us/help/database-support.md).
+  in 6.0.x). Siehe [Datenbankunterstützung](../../datenbankunterstuetzung.md).
 - **Beschreibbar:** immer `var/` und `settings/`; `design/` und `extension/`, solange Pakete aus der Administration
-  installiert werden ([Kapitel 8](../../../../en/us/install/08-serving-the-site.md#87-file-permissions-and-ownership)).
+  installiert werden ([Kapitel 8](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)).
 - **Zugang zur Kommandozeile** ist wichtig: Composer, Cronjobs, das Leeren von Caches und die Konsole laufen alle mit dem
   PHP der Kommandozeile.
 - **Der Installer prüft die Maschine für Sie:** Die Systemprüfung des Setup-Assistenten, der Kickstarter und
@@ -78,5 +78,5 @@ Zurück zum Anfang der Hilfe zum Hosting: [Hosting-Anbieter: hier beginnen](../h
 - [Hosting-Modelle](../modelle/README.md) und [Control Panels](../control-panels/README.md)
 - [Webserver und Engines](../server/README.md) und [Leistung](../leistung/README.md)
 - [Betrieb](../betrieb/README.md), [Sicherheit](../sicherheit/README.md) und [Bereitstellung](../bereitstellung/README.md)
-- [Kapitel 2: Anforderungen](../../../../en/us/install/02-requirements.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 2: Anforderungen](../../../installation/02-voraussetzungen.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

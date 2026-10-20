@@ -73056,6 +73056,126 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>للمؤسسات والأفراد الذين يديرون موقعهم الخاص على Exponential: الفريق والنشر والتجارة والصيانة والنمو والشركاء.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>دليل المستخدم</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>سؤال واحد في كل صفحة: من يمكنه القيام بذلك، والخطوات، وما الذي قد يحدث خطأ، وأين تقرأ المزيد.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>ملفات المشروع</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>ملف المشروع</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>هذا الملف جزء من الشيفرة المصدرية لـ Exponential ويُوزَّع معها بموجب %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>تنزيل DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>الكتب الإلكترونية</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>تُبنى من الموضوعات المنشورة في كل مرة يُنشر فيها أحدها، وتُحفظ مع إصداراتها السابقة.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>الملف</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>الحجم</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>آخر تحديث</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>تنزيل الكل بصيغة DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>موضوعات مساعدة تأخرت مراجعتها</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>انقضى تاريخ المراجعة، أو بقي الموضوع قيد المراجعة أكثر من %days يومًا دون تغيير.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>متأخر</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>الإجراءات</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>انقضى تاريخ المراجعة %date منذ %days يومًا</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>قيد المراجعة منذ %days يومًا دون تغيير</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>تحرير</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>تعيين الحالة</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>يُعرض %shown من أصل %count موضوعًا متأخرًا. يعرضها ./console exp:help:content review كلها.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>قبل أن تبدأ</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>الخطوات</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>النتيجة</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>ما التالي</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>الحالة المرصودة</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>السبب</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>الحل</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>بداية المساعدة</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

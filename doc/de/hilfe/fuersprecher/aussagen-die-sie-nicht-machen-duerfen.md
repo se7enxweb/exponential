@@ -34,13 +34,13 @@ gibt es in der Dokumentation keine Quelle; die rechte Spalte sagt, was Sie statt
 | Sagen Sie nicht | Warum | Sagen Sie stattdessen |
 |---|---|---|
 | „Tausende Websites nutzen Exponential.“ | Die Quellen zählen weder Installationen noch Benutzer | „Ich weiß nicht, wie viele Websites es nutzen; die Quellen zählen sie nicht.“ |
-| „Es gibt Tausende Exponential-Entwickler.“ | Es gibt keine Zählung ([Fachkräfte](../../../en/us/help/business/objection-handling.md#skills-can-we-find-people-who-know-it)) | „Der Stack ist schlichtes PHP, und das Lernmaterial ist umfangreich und kostenlos.“ |
+| „Es gibt Tausende Exponential-Entwickler.“ | Es gibt keine Zählung ([Fachkräfte](../geschaeft/einwandbehandlung.md#fachkräfte-finden-wir-leute-die-es-kennen)) | „Der Stack ist schlichtes PHP, und das Lernmaterial ist umfangreich und kostenlos.“ |
 | „Es ist N-mal schneller als X.“ | Es gibt keinen veröffentlichten Vergleich | „So wird es schnell gemacht; messen Sie Ihre eigene Website“ ([Gesprächspunkte: Geschwindigkeit](gespraechspunkte-geschwindigkeit-und-velocity.md)) |
 | „Marktanteil“, „am beliebtesten“, „Nummer eins“ | Keine Quelle | Lassen Sie es weg |
 | Jede Zahl, die Sie im Kopf haben, aber nicht finden | Zahlen ändern sich mit Releases | Schlagen Sie sie unter [Wo die Fakten stehen](wo-die-fakten-stehen.md) nach |
 
 Die Zahlen, die **dokumentiert** sind (etwa 268 Locale-Dateien, 15 Releases 6.0.x, 66 benötigte Pakete), haben ein
-Datum; Zahlen ändern sich, also zitieren Sie die Seite, nicht Ihr Gedächtnis ([Wer ist 7x?, 7x in Zahlen](../../../en/us/help/who-is-7x.md#7x-in-numbers)).
+Datum; Zahlen ändern sich, also zitieren Sie die Seite, nicht Ihr Gedächtnis ([Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen)).
 
 ## Sicherheit und Compliance
 
@@ -48,7 +48,7 @@ Datum; Zahlen ändern sich, also zitieren Sie die Seite, nicht Ihr Gedächtnis (
 |---|---|
 | „Es ist sicher“, „nicht zu hacken“, „Sicherheit wie bei Banken“ | „Hier sind der Sicherheitsprozess und die Anleitung zur Härtung“ ([Gesprächspunkte: Sicherheit](gespraechspunkte-sicherheit.md)) |
 | „Es hatte noch nie eine Sicherheitslücke.“ | „Sicherheitslücken werden vertraulich gemeldet und im nächsten Release behoben.“ |
-| „Es ist DSGVO-konform“, „HIPAA-konform“ oder irgendeine rechtliche Konformität | „Konformität hängt davon ab, wie eine Website gebaut und betrieben wird; hier sind die Checklisten“ ([Checklisten für Barrierefreiheit, Sicherheit und Compliance](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md)) |
+| „Es ist DSGVO-konform“, „HIPAA-konform“ oder irgendeine rechtliche Konformität | „Konformität hängt davon ab, wie eine Website gebaut und betrieben wird; hier sind die Checklisten“ ([Checklisten für Barrierefreiheit, Sicherheit und Compliance](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md)) |
 | „Es ist WCAG-konform.“ | „Die Administration folgt WCAG-Regeln, die durch Tests geprüft werden“ ([Gesprächspunkte: Barrierefreiheit](gespraechspunkte-barrierefreiheit.md)) |
 | „Der Support antwortet innerhalb von N Stunden.“ | „Die einzige dokumentierte Zeit ist die erste Antwort auf eine Sicherheitsmeldung, innerhalb eines Werktags.“ |
 
@@ -57,7 +57,7 @@ Datum; Zahlen ändern sich, also zitieren Sie die Seite, nicht Ihr Gedächtnis (
 | Sagen Sie nicht | Sagen Sie stattdessen |
 |---|---|
 | „Das große Unternehmen X nutzt es.“ | Nur mit schriftlicher Zustimmung dieser Organisation ([Eine Community-Fallstudie schreiben](eine-community-fallstudie-schreiben.md)) |
-| „Von eZ Systems oder Ibexa empfohlen“, „offizieller Nachfolger“ | „Steht in keiner Verbindung zu eZ Systems oder Ibexa“ ([Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short)) |
+| „Von eZ Systems oder Ibexa empfohlen“, „offizieller Nachfolger“ | „Steht in keiner Verbindung zu eZ Systems oder Ibexa“ ([Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt)) |
 | „7x gehört Exponential.“ | „7x leitet es; 7x und die Exponential Foundation halten das Copyright; die Lizenz ist die GPL.“ |
 | „Der Vorstand der Foundation ist ...“ | „Die Governance der Foundation ist in den Quellen nicht dokumentiert.“ |
 | „Wir“ (als wären Sie 7x oder die Foundation) | „Ich“, es sei denn, diese haben Sie gebeten, für sie zu sprechen ([Offenlegung](offenlegung-und-interessenkonflikte.md)) |
@@ -68,7 +68,7 @@ Datum; Zahlen ändern sich, also zitieren Sie die Seite, nicht Ihr Gedächtnis (
 |---|---|
 | „6.0.15 erscheint am Datum X.“ | „6.0.15 ist in Entwicklung; Releases werden angekündigt, wenn sie getaggt sind.“ |
 | „Funktion Y kommt.“ | „Ich habe sie nicht dokumentiert gesehen. Prüfen Sie das Änderungsprotokoll und den Issue-Tracker.“ |
-| „Es wird N Jahre unterstützt.“ | „Hier ist die Support-Zusage, wie sie dokumentiert ist“ ([Die Support-Zusage](../../../en/us/help/who-is-the-exponential-foundation.md#the-support-commitment)) |
+| „Es wird N Jahre unterstützt.“ | „Hier ist die Support-Zusage, wie sie dokumentiert ist“ ([Die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung)) |
 | „Es wird nie verschwinden.“ | „Die Lizenz erlaubt jedem, den Code zu behalten und zu pflegen.“ |
 
 ## Funktionen
@@ -108,5 +108,5 @@ Correction: In my post above I said "<wrong claim>". That is not right. The docu
 
 - [Ehrlichkeit und Genauigkeit](ehrlichkeit-und-genauigkeit.md)
 - [Wo die Fakten stehen](wo-die-fakten-stehen.md)
-- [Funktions-Highlights, Was Sie nicht behaupten sollten](../../../en/us/help/business/feature-highlights-for-customers.md#what-not-to-claim)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Funktions-Highlights, Was Sie nicht behaupten sollten](../geschaeft/funktionshighlights-fuer-kunden.md#was-sie-nicht-behaupten-sollten)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

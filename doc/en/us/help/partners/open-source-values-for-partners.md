@@ -34,8 +34,9 @@ read 18 October 2026).
 
 ## Examples from the project itself
 
-- **Every pull request is merged.** "Every pull request is merged, and its commits are kept as the contributor wrote
-  them and never rewritten" (`doc/en/us/bc/6.0/ci.md`). Contributors are not turned away; what needs fixing is fixed on top.
+- **Every pull request is merged.** Contributors are not turned away. While a pull request is open, its author
+  squashes it and rebases it onto `main` as the reviews ask; once it is merged, `main`'s history is never rewritten,
+  and later fixes come as new pull requests (`doc/en/us/bc/6.0/ci.md`).
 - **Credit for others' work.** The LoveStack improvements of Mugo Web were rebuilt "with full credit to Mugo Web"
   (README).
 - **Upstream contributions.** The se7enxweb profile README reports "14 security PRs submitted upstream to

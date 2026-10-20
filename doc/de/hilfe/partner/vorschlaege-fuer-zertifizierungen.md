@@ -57,4 +57,4 @@ keine Preise oder Termine; diese legt die Foundation fest.
 
 - [Zertifizierungen](zertifizierungen.md)
 - [Schulungspartner](schulungspartner.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

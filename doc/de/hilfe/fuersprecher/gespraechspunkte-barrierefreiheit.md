@@ -26,19 +26,19 @@ Sie genau, was die Quellen sagen, und machen Sie klar, dass sie die **Administra
 Die dokumentierte Arbeit an der Barrierefreiheit steckt in der **Administration** (dem Design admin4) und der Hilfe.
 Die Quellen sagen nicht, dass irgendein Design einer öffentlichen Website einen bestimmten Standard erfüllt. Die
 Barrierefreiheit einer öffentlichen Website hängt von ihren eigenen Templates und Inhalten ab
-([Checklisten zur Barrierefreiheit](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md#accessibility)).
+([Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#barrierefreiheit)).
 
 ## Die Punkte
 
 | Sagen Sie | Quelle |
 |---|---|
-| „Das Design admin4 folgt WCAG-Regeln, die durch Tests geprüft werden: ein Kontrasttest der Farb-Tokens im hellen und dunklen Modus.“ | [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md), [Sprachen und Barrierefreiheit](../../../en/us/help/who-is-the-exponential-foundation.md#languages-and-accessibility) |
-| „Bedienziele sind mindestens 24 mal 24 Pixel groß (WCAG 2.5.8), und jedes Formularfeld hat einen Namen.“ | [Checklisten zur Barrierefreiheit](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md#accessibility) |
+| „Das Design admin4 folgt WCAG-Regeln, die durch Tests geprüft werden: ein Kontrasttest der Farb-Tokens im hellen und dunklen Modus.“ | [Die Administration gestalten](../../../en/us/bc/6.0/admin4-styling.md), [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
+| „Bedienziele sind mindestens 24 mal 24 Pixel groß (WCAG 2.5.8), und jedes Formularfeld hat einen Namen.“ | [Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#barrierefreiheit) |
 | „Ein Sprunglink ist der erste Tab-Stopp, mit Landmarks für Kopfbereich, Menüs, Brotkrumenpfad und Hauptinhalt.“ | [Das Design admin4, Landmarks und Namen](../../../en/us/features/6.0/admin4-design.md#landmarks-and-names) |
-| „Die Administration und die Hilfe lassen sich allein mit der Tastatur bedienen.“ | [Tastenkürzel](../../../en/us/help/keyboard-shortcuts.md), [Das Design admin4, Tastatur](../../../en/us/features/6.0/admin4-design.md#keyboard) |
-| „Helles und dunkles Theme, der hohe Kontrast von Windows (erzwungene Farben) und reduzierte Bewegung werden unterstützt.“ | [Checklisten zur Barrierefreiheit](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md#accessibility) |
+| „Die Administration und die Hilfe lassen sich allein mit der Tastatur bedienen.“ | [Tastenkürzel](../tastenkuerzel.md), [Das Design admin4, Tastatur](../../../en/us/features/6.0/admin4-design.md#keyboard) |
+| „Helles und dunkles Theme, der hohe Kontrast von Windows (erzwungene Farben) und reduzierte Bewegung werden unterstützt.“ | [Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#barrierefreiheit) |
 | „Sprachen mit Schreibrichtung von rechts nach links drehen die Administration um, und darin geschriebene Inhalte bekommen die richtige Richtung.“ | [Von rechts nach links](../../../en/us/features/6.0/right-to-left.md) |
-| „Bildfelder können pro Klasse einen Alternativtext verlangen; das ist aus, bis es eingeschaltet wird.“ | [Checklisten zur Barrierefreiheit](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md#accessibility) |
+| „Bildfelder können pro Klasse einen Alternativtext verlangen; das ist aus, bis es eingeschaltet wird.“ | [Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md#barrierefreiheit) |
 | „Exponential Intelligence hat einen Bericht ‚Fehlender Alternativtext‘, der Vorschläge für einen Teilbaum in die Warteschlange stellt.“ | [expai, Für Redakteure](../../../en/us/features/6.0/extensions/expai.md#for-editors) |
 | „Sofortsuchergebnisse in der Hilfe werden Screenreadern angesagt.“ | [Das Hilfesystem, Sprachen und Barrierefreiheit](../../../en/us/features/6.0/help-system.md#languages-and-accessibility) |
 | „Beitragende müssen denselben Regeln folgen: keine Inline-Styles, gemeinsame Komponenten, Tokens mit Werten für den Dunkelmodus; ein Test setzt das durch.“ | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
@@ -61,7 +61,7 @@ Barrierefreiheit einer öffentlichen Website hängt von ihren eigenen Templates 
 
 | Frage | Antwort |
 |---|---|
-| „Gibt es eine Erklärung zur Barrierefreiheit?“ | Die Quellen enthalten keine für das Produkt. Jede Website veröffentlicht ihre eigene; die Checklisten helfen bei der Vorbereitung ([Checklisten zur Barrierefreiheit](../../../en/us/help/leadership/accessibility-security-and-compliance-checklists.md)). |
+| „Gibt es eine Erklärung zur Barrierefreiheit?“ | Die Quellen enthalten keine für das Produkt. Jede Website veröffentlicht ihre eigene; die Checklisten helfen bei der Vorbereitung ([Checklisten zur Barrierefreiheit](../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md)). |
 | „Können Redakteure barrierefreie Inhalte erstellen?“ | Sie können Alternativtext hinzufügen; eine Klasse kann ihn verlangen; Überschriften und Listen im Rich-Text-Editor helfen bei der Struktur. Am wichtigsten ist die Schulung der Redaktion. |
 | „Wie melde ich ein Problem mit der Barrierefreiheit?“ | Als Fehler im richtigen Tracker, mit der Seite, der assistiven Technologie und dem, was geschah ([Fehler gut melden](fehler-gut-melden.md)). |
 | „Kann ich helfen?“ | Ja: Testen Sie mit Ihrer assistiven Technologie und melden Sie; prüfen Sie ein Theme ([Für Barrierefreiheit eintreten](fuer-barrierefreiheit-eintreten.md)). |
@@ -70,5 +70,5 @@ Barrierefreiheit einer öffentlichen Website hängt von ihren eigenen Templates 
 
 - [Für Barrierefreiheit eintreten](fuer-barrierefreiheit-eintreten.md)
 - [Barrierefreie Folien und Grafiken](barrierefreie-folien-und-grafiken.md)
-- [Funktions-Highlights, Barrierefreiheit der Administration](../../../en/us/help/business/feature-highlights-for-customers.md#accessibility-of-the-administration)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Funktions-Highlights, Barrierefreiheit der Administration](../geschaeft/funktionshighlights-fuer-kunden.md#barrierefreiheit-der-administration)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

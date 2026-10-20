@@ -29,12 +29,12 @@ installiert und den Server laufen lässt und wie Sie Geheimnisse aus Images hera
 
 - **Docker und Podman (Linux-Container) sind Stufe 2**, funktionieren bekanntermaßen: Velocity veröffentlicht Images
   unter `ghcr.io/se7enxweb/exponential-velocity` für amd64 und arm64, je eines pro PHP-Version und Variante
-  ([Stufe 2](../../../../en/us/help/os-support.md#tier-2-known-to-work)).
+  ([Stufe 2](../../betriebssystemunterstuetzung.md#stufe-2-bekanntermaßen-lauffähig)).
 - Jedes Image mit PHP 8 und den erforderlichen Erweiterungen kann Exponential ausführen. Halten Sie `var/` (Speicher,
   Logs, die SQLite-Datenbank) und `settings/override` auf einem persistenten Volume. Mit SQLite betreiben Sie **einen**
-  Container, der schreibt ([Container, Cloud und Hosting-Panels](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels)).
+  Container, der schreibt ([Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels)).
 - `exp:install` ist die Methode für CI-Pipelines, Container-Images und automatische Testumgebungen: Optionen oder
-  Umgebungsvariablen, Exit-Status ([4.6 Unbeaufsichtigte Installationen](../../../../en/us/install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)).
+  Umgebungsvariablen, Exit-Status ([4.6 Unbeaufsichtigte Installationen](../../../installation/04-installationsweg-waehlen.md#46-unbeaufsichtigte-installationen-ci-und-container)).
 
 ## Images
 
@@ -60,7 +60,7 @@ Produktion einen festen Tag fest. Die Variante `standard` ist der Standard, von 
 > **Tipp**
 > Welche Basis auch immer: Führen Sie `php bin/php/console exp:velocity ext check` im gebauten Image als Teil Ihrer
 > Image-Pipeline aus. Es listet jede Erweiterung auf, die die Installation will, markiert, was fehlt, und gibt den
-> Installationsbefehl aus ([Herausfinden, was fehlt](../../../../en/us/install/02-requirements.md#finding-what-is-missing)).
+> Installationsbefehl aus ([Herausfinden, was fehlt](../../../installation/02-voraussetzungen.md#herausfinden-was-fehlt)).
 
 ## Volumes: was erhalten bleiben muss
 
@@ -72,11 +72,11 @@ Produktion einen festen Tag fest. Die Variante `standard` ist der Standard, von 
 | `kernel/`, `lib/`, `vendor/`, `extension/`, `design/` | der Code | im Image |
 
 Der Backup-Satz ist derselbe wie überall: die Datenbank und `var/storage`, `settings/override` und `settings/siteaccess`
-([Backup und Wiederherstellung](../../../../en/us/help/database-support.md#backup-and-restore)).
+([Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung)).
 
 > **Warnung**
 > Dateien auf dem Volume müssen dem Benutzer gehören, als der das PHP des Containers läuft. Dateien, die `root` anlegt,
-> sind für den Webserver später vielleicht nicht beschreibbar ([4.6](../../../../en/us/install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)).
+> sind für den Webserver später vielleicht nicht beschreibbar ([4.6](../../../installation/04-installationsweg-waehlen.md#46-unbeaufsichtigte-installationen-ci-und-container)).
 > Legen Sie die Benutzer-ID einmal für Image und Volume fest, und behalten Sie sie bei.
 
 ## Die Datenbank und die Regel eines einzigen Schreibers
@@ -88,7 +88,7 @@ In der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL · 3
   braucht gemeinsamen Speicher auf einem Host, sodass mehrere Replikate keine Datenbankdatei über ein Netzwerk-Volume
   teilen können.
 - **Mehrere Container, die eine Website ausliefern**, brauchen einen Datenbankserver (zuerst PostgreSQL) und gemeinsamen
-  Speicher für `var/storage` ([Container, Cloud und Hosting-Panels](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels)).
+  Speicher für `var/storage` ([Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels)).
   Sie brauchen außerdem Sitzungen, die jeder Container lesen kann; siehe [Kubernetes](kubernetes.md#sitzungen).
 - Der Datenbankserver läuft meist in einem eigenen Container oder als verwalteter Dienst Ihrer Plattform, mit eigenem
   Volume und eigenen Backups ([Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)).
@@ -123,12 +123,12 @@ Was das Kapitel dazu erklärt:
   kann.
 - Wenn der Entry Point als `root` läuft, fügen Sie den beiden Befehlen `exp:velocity` `--allow-root-user` hinzu.
 - Das Beispiel nutzt `--db=mysql`; die anderen Werte sind `sqlite` (der Standard), `pgsql`, `mongodb`, `mariadb` und
-  `oracle` ([Datenbankunterstützung, Auf einen Blick](../../../../en/us/help/database-support.md#at-a-glance)).
+  `oracle` ([Datenbankunterstützung, Auf einen Blick](../../datenbankunterstuetzung.md#auf-einen-blick)).
 
 > **Warnung**
 > `exp:install` nutzt standardmäßig die Datenbankaktion `remove`. Das ist, was ein frischer Container will, und genau das,
 > was nie auf eine Datenbank zeigen darf, die Daten enthält, die Sie brauchen
-> ([4.6](../../../../en/us/install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)). Lassen Sie den Test
+> ([4.6](../../../installation/04-installationsweg-waehlen.md#46-unbeaufsichtigte-installationen-ci-und-container)). Lassen Sie den Test
 > „bereits installiert“ davor stehen.
 
 ## Geheimnisse
@@ -139,7 +139,7 @@ Was das Kapitel dazu erklärt:
   `var/log/initial-admin-password` (Modus `0600`); lesen Sie es dort und ändern Sie es, oder übergeben Sie eines aus Ihrem
   Geheimnisspeicher ([Erste Anmeldung und Standardpasswörter](../sicherheit/erste-anmeldung-und-standardpasswoerter.md)).
 - Backen Sie `settings/override` nie in ein Image ein: Es enthält die Zugangsdaten zur Datenbank
-  ([13.3 Geheimnisse in settings/override](../../../../en/us/install/13-security-hardening.md#133-secrets-in-settingsoverride)).
+  ([13.3 Geheimnisse in settings/override](../../../installation/13-sicherheitshaertung.md#133-geheimnisse-in-settingsoverride)).
 
 ## Betrieb in Containern
 
@@ -149,7 +149,7 @@ Was das Kapitel dazu erklärt:
 - **Logs.** Exponential schreibt seine Logs unter `var/log` (und pro Website unter `var/<site>/log`); halten Sie sie auf
   dem Volume oder sammeln Sie sie dort ein ([Anfrage-Logs](../betrieb/anfrage-logs.md)).
 - **Codeänderungen** erreichen die Worker von Velocity erst nach einem Neustart; `exp:velocity deploy` führt die Schritte
-  in Reihenfolge aus ([8.3.14](../../../../en/us/install/08-serving-the-site.md#8314-deploying-a-change-expvelocity-deploy)). In
+  in Reihenfolge aus ([8.3.14](../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy)). In
   Containern ist das übliche Gegenstück ein neues Image und ein neuer Container.
 
 ## Checkliste
@@ -168,4 +168,4 @@ Was das Kapitel dazu erklärt:
 - [Kubernetes](kubernetes.md), [Platform as a Service](platform-as-a-service.md)
 - [exp:install](../bereitstellung/exp-install-fuer-hoster.md), [Bereitstellung automatisieren](../bereitstellung/bereitstellung-automatisieren.md)
 - [Mit einem Befehl installieren](../../../../en/us/features/6.0/install-in-one-command.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

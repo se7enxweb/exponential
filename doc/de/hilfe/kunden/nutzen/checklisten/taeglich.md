@@ -43,13 +43,13 @@ IF SOMETHING LOOKS WRONG
 
 | Punkt | Wo | Lesen Sie |
 |---|---|---|
-| Elemente, die auf Freigabe warten | **Meine Warteliste** in der Administration | [Veröffentlichen und Versionen](../../../../../en/us/help/publishing-and-versions.md) |
-| Geplante Elemente | Das Workflow-Ereignis *Bis Datum warten* läuft mit dem Cronjob | [Workflows](../../../../../en/us/guides/workflows.md) |
-| Formulareinsendungen | **Setup > Gesammelte Informationen**, Richtlinie `infocollector/read` | [Gesammelte Informationen](../../../../../en/us/guides/collected-information.md) |
+| Elemente, die auf Freigabe warten | **Meine Warteliste** in der Administration | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
+| Geplante Elemente | Das Workflow-Ereignis *Bis Datum warten* läuft mit dem Cronjob | [Workflows](../../../../anleitungen/workflows.md) |
+| Formulareinsendungen | **Setup > Gesammelte Informationen**, Richtlinie `infocollector/read` | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
 | Registrierungs-E-Mails | Gesendet an `RegistrationEmail`, sonst `AdminEmail`, mit signierten Links zum Genehmigen oder Ablehnen | [Signierte Links in der Registrierungs-E-Mail](../../../../../en/us/features/6.0/registration-admin-links.md) |
 | Alarm-E-Mails | Die Alarmregeln des Prüfprotokolls schicken standardmäßig E-Mails an die `AdminEmail` der Website | [Das Prüfprotokoll](../../../../../en/us/features/6.0/audit-trail.md) |
 | Shop | Dashboard **Shop** | [Tägliche Shop-Routine](../../handel/taegliche-shop-routine.md) |
-| Fehlerreferenzen | Eine Fehlerseite zeigt eine Referenz wie `ERR-0123456789` | [Einen Fehler anhand seiner Referenz finden](../../../../../en/us/guides/finding-an-error-by-its-reference.md) |
+| Fehlerreferenzen | Eine Fehlerseite zeigt eine Referenz wie `ERR-0123456789` | [Einen Fehler anhand seiner Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md) |
 
 ## Wenn etwas nicht stimmt
 
@@ -60,7 +60,7 @@ IF SOMETHING LOOKS WRONG
 | Die ganze Website ist nicht erreichbar, oder eine unerwartete Wartungsseite | Rufen Sie den Hoster an ([Website nicht erreichbar](../../../hosting/runbooks/website-nicht-erreichbar.md)) |
 | Eine Seite, die Sie nicht geändert haben, sieht verändert aus | Prüfen Sie ihre Versionen; das Prüfprotokoll zeigt, wer was getan hat ([Das Prüfprotokoll](../../../../../en/us/features/6.0/audit-trail.md)) |
 
-Weitere erste Schritte stehen unter [Wenn etwas schiefgeht](../../../../../en/us/help/when-something-goes-wrong.md).
+Weitere erste Schritte stehen unter [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md).
 
 > **Tipp**
 > Zehn Minuten genügen, wenn die Liste jeden Tag erledigt wird. Dauert es länger, wartet etwas darauf zu lange: Finden
@@ -70,6 +70,6 @@ Weitere erste Schritte stehen unter [Wenn etwas schiefgeht](../../../../../en/us
 
 - [Wöchentliche Checkliste](woechentlich.md)
 - [Tägliche Shop-Routine](../../handel/taegliche-shop-routine.md)
-- [Wenn etwas schiefgeht](../../../../../en/us/help/when-something-goes-wrong.md)
+- [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md)
 - [Checklisten für Betreiber](README.md)
-- [Freie Dokumentation](../../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

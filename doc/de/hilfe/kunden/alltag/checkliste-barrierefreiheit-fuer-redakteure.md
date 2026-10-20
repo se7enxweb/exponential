@@ -29,7 +29,7 @@ Seiten der Hilfe für Redakteure.
 ## Bilder
 
 - [ ] Jedes Bild, das Information trägt, hat einen **Alternativtext**, der sagt, was es zeigt
-      ([Bilder, Medien und Uploads](../../../../en/us/help/media-and-uploads.md#good-practice)).
+      ([Bilder, Medien und Uploads](../../medien-und-uploads.md#bewährte-vorgehensweise)).
 - [ ] Der Text beginnt nicht mit „Bild von“; Screenreader sagen bereits, dass es ein Bild ist.
 - [ ] Rein dekorative Bilder haben einen leeren Alternativtext, wenn Ihre Website das erlaubt.
 - [ ] Text in einem Bild (ein Plakat, ein Diagramm) steht auch auf der Seite.
@@ -59,7 +59,7 @@ Seiten der Hilfe für Redakteure.
 ## Sprache
 
 - [ ] Die Seite ist in der Sprache des Siteaccess, in dem sie angezeigt wird; eine Übersetzung ist eine Übersetzung
-      des Elements, kein zweites Element ([Sprachen](../../../../en/us/help/languages.md)).
+      des Elements, kein zweites Element ([Sprachen](../../sprachen.md)).
 - [ ] Wörter oder Zitate in einer anderen Sprache sind als solche gekennzeichnet, wenn Ihr Editor das anbietet.
 
 ## Dokumente, Audio und Video
@@ -92,5 +92,5 @@ Seiten der Hilfe für Redakteure.
 
 - [Barrierefreiheit pflegen](barrierefreiheit-pflegen.md)
 - [Richtlinien für Bilder und Dateien](richtlinien-fuer-bilder-und-dateien.md)
-- [Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

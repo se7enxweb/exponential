@@ -87,7 +87,8 @@ easier.
 
 What makes stage 5 attractive, and is documented:
 
-- "Every pull request is merged, and its commits are kept as the contributor wrote them and never rewritten"
+- Every pull request is merged. While it is open, its author squashes it and rebases it onto `main` as the reviews
+  ask; once it is merged, `main`'s history is never rewritten
   ([Continuous integration](../../bc/6.0/ci.md#the-commit-message-policy)).
 - Contributions stay free: "any modifications made to the project are also released under the same GPLv2 or later
   license" (`CONTRIBUTING.md`).
@@ -233,8 +234,8 @@ Report trends over quarters, not one-off numbers, and always with the date of th
 - **Credit others.** Name the people and companies whose work you build on ([Who is 7x?](../who-is-7x.md#contributors-and-friends-of-the-project)).
 - **Follow the contribution rules.** Read `CONTRIBUTING.md` before you send code: branches, focused pull requests,
   the commit message prefixes and the review. It also says all contributors are expected to adhere to a code of
-  conduct; the file it links (`CODE_OF_CONDUCT.md`) is not in the repository at the time of writing, so ask the
-  maintainers for it if you need the text.
+  conduct; the file it links (`CODE_OF_CONDUCT.md`) is not in the repository at the time of writing. Until it is,
+  follow [Advocate conduct and ethics](../advocates/advocate-conduct-and-ethics.md), the help's conduct page.
 - **Do not speak for the project.** Unless 7x or the Foundation asked you to, speak as yourself or your organization.
 
 ## Related pages

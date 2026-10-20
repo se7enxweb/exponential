@@ -199,4 +199,4 @@ Parameter erfindet, Cache-Dateien anlegt. Die Anpassung `ignore_viewparameters` 
 - [Seitenblättern](../../../en/us/help/designers/templates/pagination.md)
 - [Template-Caches](template-caches.md)
 - [Referenz der Moduldefinition](../../../en/us/help/creators/app-creators/module-definition-reference.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

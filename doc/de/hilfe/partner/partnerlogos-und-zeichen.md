@@ -47,11 +47,11 @@ nicht auf den Programmseiten: Fragen Sie das Partnerteam nach den Dateien und de
 Das Produkt heißt **Exponential** (die Linie **Exponential 6.0.x**), das Unternehmen **7x**, die gemeinnützige
 Organisation **Exponential Foundation**. Der alte Name eZ Publish gehört nur zur Geschichte der Codebasis. Siehe
 [Namens- und Markenregeln für Partner](namens-und-markenregeln.md) und die
-[Marken- und Namensregeln](../../../en/us/help/business/brand-and-naming-rules.md) des Vertriebsteams.
+[Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md) des Vertriebsteams.
 
 ## Verwandte Seiten
 
 - [„Powered by Exponential“ zeigen](powered-by-exponential.md)
 - [Verlängerungen, Auf- und Abstufungen](verlaengerungen-auf-und-abstufungen.md)
 - [Co-Marketing mit 7x und dem Projekt](co-marketing.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

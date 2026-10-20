@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei einem H
 auf SQLite 3 betreiben, der Standarddatenbank. Sie beantwortet: was SQLite vom Server braucht, wie Sie seine Dateien so
 einrichten, dass jeder Prozess sie schreiben kann, wie Sie sicher sichern und wiederherstellen, worauf Sie achten müssen
 und wann eine Website auf einen Datenbankserver umziehen sollte. Alles hier stammt aus
-[Kapitel 9.2 des Installationsbuchs](../../../../en/us/install/09-databases.md#92-sqlite-3-a-production-database-in-one-file),
+[Kapitel 9.2 des Installationsbuchs](../../../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei),
 das alle Details enthält.
 
 ## Inhalt
@@ -39,7 +39,7 @@ SQLite ist die erste in der offiziellen Reihenfolge und der Standard der Install
   Quota angerechnet und ist wie der Rest der Website abgeschottet.
 - **Sie ist eine vollwertige Produktionsdatenbank** für eine Website, die von einer Maschine ausgeliefert wird: Das
   Projekt beschreibt sie so, und der Treiber wurde dafür unter Last getestet
-  ([Datenbankunterstützung](../../../../en/us/help/database-support.md#1-sqlite-3-the-default)).
+  ([Datenbankunterstützung](../../datenbankunterstuetzung.md#1-sqlite-3-der-standard)).
 
 ## Anforderungen
 
@@ -51,7 +51,7 @@ SQLite ist die erste in der offiziellen Reihenfolge und der Standard der Install
 
 ## Was der Treiber hinzufügt
 
-Aus [Datenbankunterstützung](../../../../en/us/help/database-support.md#1-sqlite-3-the-default):
+Aus [Datenbankunterstützung](../../datenbankunterstuetzung.md#1-sqlite-3-der-standard):
 
 - **Write-Ahead Logging (WAL)**, sodass Seitenaufrufe weiterlesen, während ein Redakteur veröffentlicht.
 - **Verbindungseinstellungen für einen Webserver**: `synchronous=NORMAL`, ein Seitencache von 64 MB, eine Memory Map von
@@ -61,7 +61,7 @@ Aus [Datenbankunterstützung](../../../../en/us/help/database-support.md#1-sqlit
   `SQLiteTransactionWait` Sekunden (25 mitgeliefert), statt mit `database is locked` zu scheitern.
 
 Die meisten Anfragen erreichen die Datenbank nie: Der Antwort-Cache von Velocity, der Content-View-Cache und der
-Template-Block-Cache antworten zuerst ([Kapitel 9.2](../../../../en/us/install/09-databases.md#what-carries-the-read-load-the-caching-layers)).
+Template-Block-Cache antworten zuerst ([Kapitel 9.2](../../../installation/09-datenbanken.md#was-die-leselast-trägt-die-cache-schichten)).
 
 ## Dateien und Berechtigungen
 
@@ -147,7 +147,7 @@ php bin/php/console exp:velocity cache clear --allow-root-user
 Wenn `.restore` einen Fehler meldet, ist die Live-Datenbank unverändert; halten Sie dann jeden Prozess an, der die Datei
 geöffnet haben könnte, verschieben Sie die Datenbank und ihre Dateien `-wal` und `-shm` gemeinsam zur Seite, legen Sie
 das Backup an ihre Stelle, korrigieren Sie Eigentümer und Modus und starten Sie wieder
-([Kapitel 9.2](../../../../en/us/install/09-databases.md#sqlite-backup-and-restore)). Ein vollständiges Backup enthält außerdem
+([Kapitel 9.2](../../../installation/09-datenbanken.md#sqlite-sicherung-und--wiederherstellung)). Ein vollständiges Backup enthält außerdem
 `var/storage`, `settings/override` und `settings/siteaccess`.
 
 ## Überwachung
@@ -164,7 +164,7 @@ das Backup an ihre Stelle, korrigieren Sie Eigentümer und Modus und starten Sie
 Eine große Datei `-wal`, die nach starkem Schreiben übrig bleibt, schrumpft mit `SQLitePragmas[]=journal_size_limit=67108864`
 oder einem manuellen `PRAGMA wal_checkpoint(TRUNCATE)`. `VACUUM` braucht etwa die doppelte Größe der Datenbank als freien
 Speicherplatz und hält die Schreibsperre; führen Sie es daher im Wartungsmodus aus
-([Kapitel 9.2](../../../../en/us/install/09-databases.md#analyze-vacuum-and-the-wal-file)).
+([Kapitel 9.2](../../../installation/09-datenbanken.md#analyze-vacuum-und-die-wal-datei)).
 
 ## Wann eine Website SQLite entwachsen ist
 
@@ -193,9 +193,9 @@ Die Größe der Datenbank ist selten der Grund. Siehe [Die Datenbank-Engine wech
 ## Verwandte Seiten
 
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md)
-- [Datenbankunterstützung: SQLite 3](../../../../en/us/help/database-support.md#1-sqlite-3-the-default)
-- [Kapitel 9.2: SQLite 3](../../../../en/us/install/09-databases.md#92-sqlite-3-a-production-database-in-one-file)
+- [Datenbankunterstützung: SQLite 3](../../datenbankunterstuetzung.md#1-sqlite-3-der-standard)
+- [Kapitel 9.2: SQLite 3](../../../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei)
 - [Unterstützung für SQLite-Datenbanken](../../../../en/us/features/6.0/sqlite-database.md) und
   [SQLite-Transaktionen](../../../../en/us/bc/6.0/sqlite-transactions.md)
 - [Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

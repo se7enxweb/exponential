@@ -57,9 +57,16 @@ How to write a good issue: [Reporting bugs well](reporting-bugs-well.md). Which 
 - **Documentation**: **Edit on GitHub** on any help page opens the file; GitHub forks the repository for you
   ([Improving the help](improving-the-help.md)).
 - **Code**: fork, branch, commit, pull request ([Develop with Git](../develop-with-git.md#contribute-a-change-with-a-pull-request)).
+- **Copyright assignment (CLA)**: a code contribution to the kernel
+  (`se7enxweb/exponential`), in any form, is merged only once its author's signed Contributor Licensing Agreement
+  has been received. By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it: 7x may use, change,
+  relicense and distribute it in any way, without asking or paying you, and you cannot withdraw it
+  ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Your own extensions are
+  not affected.
 - **Commit messages** start with `Added:`, `Updated:`, `Fixed:`, `Removed:` or `Renamed:`
   ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
-- **Every pull request is merged**, and its commits are kept; what needs fixing is fixed in commits on top
+- **Every pull request is merged.** While it is open, its author squashes it and rebases it onto `main` as the
+  reviews ask; once it is merged, `main` is never rewritten, and later fixes come as new pull requests
   ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)).
 
 ## Helping without code

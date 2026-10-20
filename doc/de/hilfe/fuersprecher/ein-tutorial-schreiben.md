@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Fürsprecher, die Schritt-für-Schritt-Tutorials schreiben. Ein Tutorial scheitert in dem Moment, in
 dem der Bildschirm eines Lesers nicht zu Ihrem passt. Die Methode unten, übernommen aus der Art, wie die Hilfe selbst
 geschrieben ist (jeder Teil „endet mit etwas, das Sie prüfen können“, wie es die
-[Anleitung zu Templates und Design](../../../en/us/guides/templates-and-design.md) sagt), ergibt Tutorials, die funktionieren.
+[Anleitung zu Templates und Design](../../anleitungen/templates-und-design.md) sagt), ergibt Tutorials, die funktionieren.
 
 ## Inhalt
 
@@ -44,7 +44,7 @@ Der einfachste nachvollziehbare Start ist eine frische Installation auf SQLite
 ```
 
 Beginnen Sie bei Tutorials über Erweiterungen mit einer Installation aus Git, damit Leser später beitragen können
-([Mit Git entwickeln](../../../en/us/help/develop-with-git.md)). Sagen Sie bei Tutorials für die Redaktion, welche Rolle der Leser
+([Mit Git entwickeln](../mit-git-entwickeln.md)). Sagen Sie bei Tutorials für die Redaktion, welche Rolle der Leser
 braucht (zum Beispiel Editor oder Administrator).
 
 ## Die Vorlage
@@ -115,4 +115,4 @@ Für ein deutschsprachiges Tutorial übersetzen Sie die Überschriften der Vorla
 - [Einen Blogbeitrag schreiben](einen-blogbeitrag-schreiben.md)
 - [Einen Screencast aufnehmen](einen-screencast-aufnehmen.md)
 - [Auf Share und Projects veröffentlichen](auf-share-und-projects-veroeffentlichen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

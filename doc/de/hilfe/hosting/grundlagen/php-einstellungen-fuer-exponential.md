@@ -33,7 +33,7 @@ PHP-FPM PHP ausführt.
 
 ## Was der Installer prüft
 
-Aus [Kapitel 2.5](../../../../en/us/install/02-requirements.md#25-phpini-settings) und `settings/setup.ini`:
+Aus [Kapitel 2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini) und `settings/setup.ini`:
 
 | Einstellung | Wert | Geprüft von |
 |---|---|---|
@@ -50,11 +50,11 @@ Aus [Kapitel 2.5](../../../../en/us/install/02-requirements.md#25-phpini-setting
 Die Untergrenze von 64M ist, was der Installer braucht, nicht was eine laufende Website haben sollte. Die
 Zustandsprüfung der Administration unter **Setup > Systeminformationen** meldet ein `memory_limit` unter 128M als Fehler
 und unter 256M als Warnung, und ein `max_execution_time` unter 30 Sekunden auf einem Webserver
-([Systeminformationen, Zustandsprüfungen](../../../../en/us/guides/system-information.md#3-health-checks)).
+([Systeminformationen, Zustandsprüfungen](../../../anleitungen/systeminformationen.md#3-zustandsprüfungen)).
 
 ## Ein Produktionssatz für einen Pool
 
-Der minimale Produktionssatz aus [Kapitel 2](../../../../en/us/install/02-requirements.md#25-phpini-settings), als
+Der minimale Produktionssatz aus [Kapitel 2](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini), als
 `php_admin_value`-Zeilen eines PHP-FPM-Pools oder in `php.ini`:
 
 ```ini
@@ -87,7 +87,7 @@ Kernel bei jeder Anfrage anwendet. Für einen Hoster genügt es, `date.timezone`
 
 ## Fehleranzeige
 
-Aus [Kapitel 13.4](../../../../en/us/install/13-security-hardening.md#134-debug-output-and-error-display): Setzen Sie in der
+Aus [Kapitel 13.4](../../../installation/13-sicherheitshaertung.md#134-debug-ausgabe-und-fehleranzeige): Setzen Sie in der
 `php.ini` von PHP-FPM
 
 ```ini
@@ -102,7 +102,7 @@ sein muss.
 
 ## OPcache unter PHP-FPM
 
-Aus [Kapitel 10.12](../../../../en/us/install/10-after-installing.md#opcache):
+Aus [Kapitel 10.12](../../../installation/10-nach-der-installation.md#opcache):
 
 ```ini
 opcache.enable=1
@@ -128,10 +128,10 @@ häufig auf solchen Listen stehen; die Website läuft ohne sie weiter, aber die 
 | Funktion | Genutzt von | Ohne sie | Quelle |
 |---|---|---|---|
 | `system` | dem ImageMagick-Konverter (`eZImageShellFactory`) | ImageMagick-Konvertierungen schlagen fehl; GD funktioniert weiter | `lib/ezimage/classes/ezimageshellhandler.php`, `settings/image.ini [ImageMagick]` |
-| `proc_open` | **Setup > Cronjobs**: einen Job aus der Administration starten | die Seite sagt es; führen Sie Cron aus einer Shell aus | [Anleitung zu Cronjobs](../../../../en/us/guides/cronjobs.md) |
-| `exec` | **Setup > Cronjobs**: die Crontab lesen | die Seite sagt, welche Funktion fehlt | [Anleitung zu Cronjobs](../../../../en/us/guides/cronjobs.md) |
-| `posix_kill` | **Setup > Cronjobs**: **Laufenden Job anhalten** | die Schaltfläche kann keinen Job anhalten | [Anleitung zu Cronjobs](../../../../en/us/guides/cronjobs.md) |
-| `opcache_get_status` | **Setup > Systeminformationen**: OPcache-Kennzahlen | der Cache funktioniert; nur seine Kennzahlen werden nicht gezeigt | [Systeminformationen](../../../../en/us/guides/system-information.md) |
+| `proc_open` | **Setup > Cronjobs**: einen Job aus der Administration starten | die Seite sagt es; führen Sie Cron aus einer Shell aus | [Anleitung zu Cronjobs](../../../anleitungen/cronjobs.md) |
+| `exec` | **Setup > Cronjobs**: die Crontab lesen | die Seite sagt, welche Funktion fehlt | [Anleitung zu Cronjobs](../../../anleitungen/cronjobs.md) |
+| `posix_kill` | **Setup > Cronjobs**: **Laufenden Job anhalten** | die Schaltfläche kann keinen Job anhalten | [Anleitung zu Cronjobs](../../../anleitungen/cronjobs.md) |
+| `opcache_get_status` | **Setup > Systeminformationen**: OPcache-Kennzahlen | der Cache funktioniert; nur seine Kennzahlen werden nicht gezeigt | [Systeminformationen](../../../anleitungen/systeminformationen.md) |
 | `pcntl_fork` | asynchrones Veröffentlichen (`bin/php/ezasynchronouspublisher.php`) | asynchrones Veröffentlichen ist nicht verfügbar | `composer.json` schlägt `ext-pcntl` vor |
 
 Ein PHP der Kommandozeile für Cron und Velocity hat meist eine eigene `php.ini` ohne eine solche Liste; prüfen Sie mit
@@ -140,7 +140,7 @@ Ein PHP der Kommandozeile für Cron und Velocity hat meist eine eigene `php.ini`
 ## Zeitlimits
 
 - `max_execution_time` begrenzt die eigene CPU-Zeit von PHP; unter PHP-FPM ist die harte Grenze einer Anfrage das
-  `request_terminate_timeout` des Pools (aus, wenn nicht gesetzt) ([Kapitel 9.2](../../../../en/us/install/09-databases.md#92-sqlite-3-a-production-database-in-one-file)).
+  `request_terminate_timeout` des Pools (aus, wenn nicht gesetzt) ([Kapitel 9.2](../../../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei)).
 - Halten Sie mit SQLite `[DatabaseSettings] SQLiteTransactionWait` (mitgeliefert 25 Sekunden) unter dem Zeitlimit der
   Anfrage, sonst wird ein wartender Schreiber beendet, bevor der Treiber berichten kann ([SQLite für Hoster](sqlite-fuer-hoster.md)).
 - Der Konfigurationsschritt des Setup-Assistenten kann auf MongoDB ein bis drei Minuten dauern; erhöhen Sie
@@ -155,13 +155,13 @@ Ein PHP der Kommandozeile für Cron und Velocity hat meist eine eigene `php.ini`
 (`opcache.enable_cli=1`), setzt `memory_consumption=256`, `max_accelerated_files=20000`, `interned_strings_buffer=32`,
 `opcache.revalidate_freq=0`, `opcache.file_update_protection=0` und `apc.shm_size=256M`. Die beiden OPcache-Werte
 weichen absichtlich von PHP-FPM ab: Ein Velocity-Worker ist eine lange Anfrage, und mit den Werten von PHP-FPM würde er
-weiter veraltete Cache-Dateien ausliefern ([Kapitel 10.12](../../../../en/us/install/10-after-installing.md#opcache)). Schreiben
+weiter veraltete Cache-Dateien ausliefern ([Kapitel 10.12](../../../installation/10-nach-der-installation.md#opcache)). Schreiben
 Sie Änderungen in `settings/override/velocity.ini.append.php`, nie in die mitgelieferte Datei.
 
 **FrankenPHP** liest keine `php.ini` der Maschine. `settings/velocity.ini`, `[FrankenPHPSettings] IniOptions[]` liefert
 `display_errors=Off`, `log_errors=On`, `memory_limit=512M`, `opcache.enable=1`, `post_max_size=64M` und
 `upload_max_filesize=32M` mit; `PHPIniFile` nennt stattdessen eine eigene `php.ini`
-([Kapitel 8.4](../../../../en/us/install/08-serving-the-site.md#84-frankenphp)).
+([Kapitel 8.4](../../../installation/08-die-website-ausliefern.md#84-frankenphp)).
 
 ## Eine Änderung anwenden
 
@@ -185,5 +185,5 @@ das andere PHP liest.
 - [PHP-Versionen und Erweiterungen](php-versionen-und-erweiterungen.md)
 - [Abstimmung von PHP-FPM](../leistung/abstimmung-von-php-fpm.md) und [OPcache](../leistung/opcache.md)
 - [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md)
-- [Kapitel 2.5: php.ini-Einstellungen](../../../../en/us/install/02-requirements.md#25-phpini-settings)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 2.5: php.ini-Einstellungen](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -46,13 +46,13 @@ mitzureißen.
 Eine Website mit mehreren Knoten braucht einen Datenbankserver. Von den unterstützten Datenbanken in der offiziellen Reihenfolge
 (1. SQLite 3, der Standard · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit
 bekanntermaßen mit zusätzlicher Arbeit möglich, ohne Treiber in 6.0.x) unterstützt jede Engine außer SQLite mehrere Webserver an
-einer Datenbank ([Datenbankunterstützung, auf einen Blick](../../../../en/us/help/database-support.md#at-a-glance)). Der WAL-Modus von SQLite nutzt
+einer Datenbank ([Datenbankunterstützung, auf einen Blick](../../datenbankunterstuetzung.md#auf-einen-blick)). Der WAL-Modus von SQLite nutzt
 gemeinsamen Speicher, alle Prozesse müssen also auf einer Maschine sein; mehrere Webserver, die sich eine Datenbankdatei über NFS
-teilen, werden nicht unterstützt ([Kapitel 9](../../../../en/us/install/09-databases.md#wal-readers-and-the-writer-side-by-side)).
+teilen, werden nicht unterstützt ([Kapitel 9](../../../installation/09-datenbanken.md#wal-leser-und-schreiber-nebeneinander)).
 
 Für leselastige Websites auf MySQL oder MariaDB schickt `site.ini [DatabaseSettings] UseSlaveServer` lesende Abfragen an Replikate
 (`SlaveServerArray[]` und die zugehörigen Schlüssel); der mitgelieferte Wert ist `disabled`
-([Leistung und Skalierung](../../../../en/us/help/database-support.md#performance-and-scaling)).
+([Leistung und Skalierung](../../datenbankunterstuetzung.md#performance-und-skalierung)).
 
 ## Dateien
 
@@ -68,7 +68,7 @@ Knoten behält sein eigenes Verzeichnis `var/`; nur der Mount wird geteilt. Alle
 
 ## Sitzungen
 
-`site.ini [Session] Handler` entscheidet, wo Sitzungen gehalten werden ([Sitzungen](../../../../en/us/guides/sessions.md)):
+`site.ini [Session] Handler` entscheidet, wo Sitzungen gehalten werden ([Sitzungen](../../../anleitungen/sitzungen.md)):
 
 | Handler | Wo | Mehrere Knoten |
 |---|---|---|
@@ -93,7 +93,7 @@ Caches auf einem Knoten die anderen erreicht:
   ein Leeren auf einem Knoten von allen gesehen wird ([Cluster (DFS)](../../../../en/us/features/6.0/multi-site-log-and-cache-paths.md#cluster-dfs)).
 - **Die Caches vor PHP** sind lokal: der HTTP-Cache in `var/<site>/cache/exphttpcache` und der Antwort-Cache von Velocity. Leeren
   Sie sie nach einer Änderung auf jedem Knoten (`./console exp:velocity cache clear` für Velocity;
-  [Caches](../../../../en/us/guides/caches.md)).
+  [Caches](../../../anleitungen/caches.md)).
 - **Ein gemeinsames Cache-Backend.** Die Erweiterung `sevenx_valkey_cache` hält Template-Blöcke, den Content-View-Cache und den
   kompilierten INI-Cache in Redis oder Valkey, was INI-Caches für Cluster sicher macht
   ([sevenx_valkey_cache](../../../../en/us/features/6.0/extensions/sevenx_valkey_cache.md)). Siehe
@@ -105,7 +105,7 @@ Ein Reverse Proxy oder CDN vor allen Knoten ist eine weitere, gemeinsame Cache-S
 ## Der Load Balancer und vertrauenswürdige Proxys
 
 Hinter einem Load Balancer kommt jede Anfrage von der Adresse des Balancers. Exponential glaubt weitergeleiteten Headern nur von
-den Proxys, denen es vertrauen soll ([8.8 Hinter einem Reverse Proxy](../../../../en/us/install/08-serving-the-site.md#88-behind-a-reverse-proxy),
+den Proxys, denen es vertrauen soll ([8.8 Hinter einem Reverse Proxy](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy),
 [Vertrauenswürdige Proxys](../../../../en/us/bc/6.0/trusted-proxies.md)):
 
 ```ini
@@ -140,7 +140,7 @@ Die Adresse `192.0.2.10` oben ist eine Adresse für Dokumentation; verwenden Sie
   `var/` pro Knoten schalten Sie sie auf jedem Knoten ein und aus ([Wartungsmodus](wartungsmodus.md)).
 - **Logs pro Knoten.** Jeder Knoten schreibt sein eigenes `var/log`. Die Fehlerreferenz eines Besuchers steht vielleicht im Log
   eines anderen Knotens als dem, auf den Sie schauen
-  ([Einen Fehler über seine Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md)). Sammeln Sie Logs zentral,
+  ([Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)). Sammeln Sie Logs zentral,
   oder leiten Sie das Prüfprotokoll mit einer Senke weiter (siehe [Sicherheitslog](sicherheitslog.md)).
 - **Überwachung pro Knoten.** Prüfen Sie jeden Knoten direkt und auch die ausbalancierte Adresse
   ([Zustandsprüfungen und Verfügbarkeit](zustandspruefungen-und-verfuegbarkeit.md)).
@@ -161,5 +161,5 @@ Die Adresse `192.0.2.10` oben ist eine Adresse für Dokumentation; verwenden Sie
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md), [Kubernetes](../modelle/kubernetes.md)
 - [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md)
 - [Cache-Schichten](../leistung/cache-schichten.md)
-- [Datenbankunterstützung](../../../../en/us/help/database-support.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Datenbankunterstützung](../../datenbankunterstuetzung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

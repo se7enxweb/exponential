@@ -19,7 +19,7 @@ Server: <name>          Built by: <name>          Date: <date>          Plan(s):
 
 ## Betriebssystem
 
-- [ ] Ein System der Stufe 1 oder 2 aus [Betriebssystemunterstützung](../../../../en/us/help/os-support.md) (zum Beispiel AlmaLinux 9,
+- [ ] Ein System der Stufe 1 oder 2 aus [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) (zum Beispiel AlmaLinux 9,
       Red Hat Enterprise Linux 9 oder 10 und Nachbauten, Debian 12 oder 13, Ubuntu 22.04 oder 24.04).
 - [ ] Sicherheitsupdates eingespielt; über automatische Sicherheitsupdates entschieden.
 - [ ] Zeitsynchronisation läuft; Zeitzone gesetzt.
@@ -31,13 +31,13 @@ Server: <name>          Built by: <name>          Date: <date>          Plan(s):
 - [ ] PHP 8.0 oder später; 8.1 oder später, wenn Velocity Websites ausliefern wird; die Empfehlung ist das neueste 8.x,
       das das System anbietet ([PHP-Versionen und Erweiterungen](../grundlagen/php-versionen-und-erweiterungen.md)).
 - [ ] Die erforderlichen Erweiterungen installiert; die Systemprüfung des Setup-Assistenten oder der Schritt
-      `SystemCheck` von `exp:install` meldet keine fehlende ([Kapitel 2](../../../../en/us/install/02-requirements.md#23-php-extensions)).
+      `SystemCheck` von `exp:install` meldet keine fehlende ([Kapitel 2](../../../installation/02-voraussetzungen.md#23-php-extensions)).
 - [ ] Für Velocity: `sockets`, dazu `pcntl` und `openssl`; `php bin/php/console exp:velocity ext check --allow-root-user`
       listet auf, was fehlt.
 - [ ] `php.ini`: `memory_limit` mindestens 64M, `max_execution_time` 30 oder mehr, `date.timezone` gesetzt, `file_uploads`
       an ([PHP-Einstellungen für Exponential](../grundlagen/php-einstellungen-fuer-exponential.md)).
 - [ ] OPcache für das Web-PHP an ([OPcache](../leistung/opcache.md)).
-- [ ] 64-Bit-PHP (für die Unterstützung von mehr als 30 Sprachen, [Betriebssystemunterstützung](../../../../en/us/help/os-support.md)).
+- [ ] 64-Bit-PHP (für die Unterstützung von mehr als 30 Sprachen, [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)).
 - [ ] Composer 2 installiert ([Composer und Git auf Servern](../grundlagen/composer-und-git-auf-servern.md)).
 - [ ] GD oder `convert` von ImageMagick, beides empfohlen ([Bildverarbeitung und Medien](../grundlagen/bildverarbeitung-und-medien.md)).
 
@@ -46,7 +46,7 @@ Server: <name>          Built by: <name>          Date: <date>          Plan(s):
 - [ ] Die Engine in der offiziellen Reihenfolge gewählt: SQLite 3 (kein Server nötig), PostgreSQL, MongoDB, MariaDB,
       Oracle, MySQL ([Datenbanken in der offiziellen Reihenfolge](../grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md)).
 - [ ] Für eine Server-Engine: eine Version auf oder über dem praktischen Minimum auf
-      [Datenbankunterstützung](../../../../en/us/help/database-support.md#versions-checked-against-the-code).
+      [Datenbankunterstützung](../../datenbankunterstuetzung.md#versionen-am-code-überprüft).
 - [ ] Eine Datenbank und ein Benutzer pro Kunden-Website; kein gemeinsamer Superuser.
 - [ ] Das eigene Backup-Werkzeug der Datenbank getestet ([Datenbank-Backups je Engine](../betrieb/datenbank-backups-je-engine.md)).
 
@@ -57,7 +57,7 @@ Server: <name>          Built by: <name>          Date: <date>          Plan(s):
 - [ ] Mit Velocity: die Engine für die Website auf `qbix` gesetzt (die mitgelieferte Standard-Engine ist der eingebaute
       Server von PHP, für die Entwicklung) ([Velocity für Hoster](../server/velocity-fuer-hoster.md)).
 - [ ] Nur die Asset-Pfade werden als Dateien ausgeliefert; die Rewrite-Regeln aus dem Installationsbuch sind eingerichtet
-      ([Kapitel 8](../../../../en/us/install/08-serving-the-site.md)).
+      ([Kapitel 8](../../../installation/08-die-website-ausliefern.md)).
 
 ## TLS
 
@@ -99,4 +99,4 @@ Server: <name>          Built by: <name>          Date: <date>          Plan(s):
 - [Anforderungen auf einen Blick](../grundlagen/anforderungen-auf-einen-blick.md)
 - [Härtung für Hoster](../sicherheit/haertung-fuer-hoster.md)
 - [Go-Live einer neuen Kunden-Website](checkliste-fuer-den-start-einer-kunden-website.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -168,6 +168,6 @@ Sie liegen in `kernel/classes/packageinstallers/` und fügen der Installation Se
 - [Referenz zu package.xml](referenz-zu-package-xml.md)
 - [Importieren oder installieren](importieren-oder-installieren.md)
 - [Installieren und Deinstallieren](../admin-oberflaeche/installieren-und-deinstallieren.md)
-- [Anleitung zu Paketen, 7. Installieren und Deinstallieren](../../../../en/us/guides/packages.md#7-installing-and-uninstalling)
+- [Anleitung zu Paketen, 7. Installieren und Deinstallieren](../../../anleitungen/pakete.md#7-installieren-und-deinstallieren)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

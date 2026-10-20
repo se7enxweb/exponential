@@ -30,7 +30,7 @@ und schwer zu beweisen“. Messen Sie, was Sie beobachten können, erfinden Sie 
 | Issues, die Sie bestätigt haben, wurden behoben | GitHub |
 | Menschen kommen wieder zu Ihren Treffen | Ihre eigene Zählung, ohne Namen |
 
-[Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md#measuring-what-you-can-actually-see) nennt ähnliche
+[Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md#messen-was-sie-tatsächlich-sehen-können) nennt ähnliche
 Messgrößen für Organisationen.
 
 ## Was Sie nicht messen sollten
@@ -55,4 +55,4 @@ Next quarter:   <1-3 goals>
 - [Ihre Beiträge festhalten](ihre-beitraege-festhalten.md)
 - [Ein 90-Tage-Plan für Fürsprecher](ein-90-tage-plan.md)
 - [Ehrlichkeit und Genauigkeit](ehrlichkeit-und-genauigkeit.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

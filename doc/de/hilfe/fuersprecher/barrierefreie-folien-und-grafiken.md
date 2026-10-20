@@ -70,7 +70,7 @@ Räumen, auf kleinen Telefonen und für Menschen, die in einer Zweitsprache lese
 - Fügen Sie Alternativtext hinzu, wo die Plattform es erlaubt.
 - Verwenden Sie die Produktnamen korrekt ([Kurzkarte zu den Namensregeln](kurzkarte-namensregeln.md)).
 - Verwenden Sie Logos nicht auf eine Weise, die die Inhaber nicht erlaubt haben; die Quellen legen keine Logoregeln für
-  Dritte fest ([Marken- und Namensregeln, Was die Quellen nicht entscheiden](../../../en/us/help/business/brand-and-naming-rules.md#what-the-sources-do-not-decide)).
+  Dritte fest ([Marken- und Namensregeln, Was die Quellen nicht entscheiden](../geschaeft/marken-und-namensregeln.md#was-die-quellen-nicht-entscheiden)).
 
 ## Checkliste
 
@@ -91,4 +91,4 @@ Räumen, auf kleinen Telefonen und für Menschen, die in einer Zweitsprache lese
 - [Für Barrierefreiheit eintreten](fuer-barrierefreiheit-eintreten.md)
 - [Einen Screencast aufnehmen](einen-screencast-aufnehmen.md)
 - [Folienplan für einen 20-Minuten-Vortrag](folienplan-20-minuten-vortrag.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

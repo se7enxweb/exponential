@@ -12,7 +12,7 @@ type: help
 Sie werden selten selbst ein Log lesen, aber Sie sollten wissen, was die Logs beantworten können, denn das ändert, was
 Sie anfordern, wenn etwas schiefgeht. Diese Seite ist die Übersicht für Betreiber. Die Werkzeuge des Administrators sind
 unter [Der Log-Viewer](../../../../en/us/features/6.0/log-viewer.md) und
-[Einen Fehler anhand seiner Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md) beschrieben.
+[Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md) beschrieben.
 
 ## Zwei Arten von Aufzeichnungen
 
@@ -22,13 +22,13 @@ unter [Der Log-Viewer](../../../../en/us/features/6.0/log-viewer.md) und
 | Das Prüfprotokoll | Wer was getan hat: Anmeldungen, Inhaltsänderungen, Einstellungen, Deployments, Bestellungen | Der Reiter **Audit** ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md)) |
 
 Die Logs erklären einen Fehler; das Prüfprotokoll erklärt oft seine Ursache: „Eine Bearbeitung, eine Veröffentlichung
-oder eine Einstellungsänderung direkt vor dem Fehler ist oft die Ursache“ ([Einen Fehler anhand seiner Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md)).
+oder eine Einstellungsänderung direkt vor dem Fehler ist oft die Ursache“ ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)).
 
 ## Die Fehlerreferenz
 
 Wenn auf der Website etwas schiefgeht, sieht der Besucher **Something went wrong on our side** mit einer Referenz wie
 `ERR-0123456789` am unteren Rand. „Der Fehler wurde bereits protokolliert; mit der Referenz findet ein Administrator
-genau diesen Moment in den Logs“ ([Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)).
+genau diesen Moment in den Logs“ ([Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)).
 
 Was das für Sie bedeutet:
 
@@ -43,7 +43,7 @@ Was das für Sie bedeutet:
 
 Logs können E-Mail- und IP-Adressen enthalten. Der Log-Viewer maskiert sie standardmäßig; nur ein Benutzer mit der
 Richtlinie `setup/unmasklogs` kann die Maskierung für sich selbst ausschalten, und ein geteilter Permalink ist immer
-maskiert ([Einen Fehler anhand seiner Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md)). Das
+maskiert ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)). Das
 Prüfprotokoll kürzt Adressen, hasht Sitzungen und zeichnet nie Passwörter, Tokens oder Geheimnisse auf
 ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md)).
 
@@ -59,7 +59,7 @@ jemanden weiter, der sie nicht braucht. Wie lange Logs und Prüfprotokoll-Eintr�
 | `setup/unmasklogs` | Die Maskierung für sich selbst ausschalten |
 | `audit/read`, `audit/manage` | Das Prüfprotokoll lesen und verwalten; in einer neuen Installation hat nur die Rolle Administrator diese Richtlinien |
 
-Quellen: [Einen Fehler anhand seiner Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md),
+Quellen: [Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md),
 [Der Leitfaden zum Prüfprotokoll](../../../../en/us/bc/6.0/audit.md). Geben Sie diese Rechte nur den Personen, die Probleme
 beantworten.
 
@@ -76,4 +76,4 @@ beantworten.
 - [Logs und Fehlerreferenzen (für Unternehmen)](../../../../en/us/help/businesses/reliability/logs-and-error-references.md)
 - [Prüfprotokoll für den Betrieb](../../../../en/us/help/businesses/reliability/audit-trail-for-operations.md)
 - [Log-Viewer und Rotation (für Hoster)](../../hosting/betrieb/log-viewer-und-log-rotation.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

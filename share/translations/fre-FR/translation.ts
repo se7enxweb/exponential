@@ -74422,6 +74422,126 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Pour les organisations et les personnes qui exploitent leur propre site sur Exponential : équipe, publication, commerce, maintenance, croissance et partenaires.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Manuel utilisateur</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Une question par page : qui peut le faire, les étapes, ce qui peut mal tourner et où en lire davantage.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Fichiers du projet</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Fichier du projet</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Ce fichier fait partie du code source d'Exponential et est distribué avec lui sous la %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Télécharger le DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>Livres numériques</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Générés à partir des thèmes publiés chaque fois que l'un d'eux est publié, et conservés avec leurs versions précédentes.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichier</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Taille</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Mis à jour</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Tout télécharger en DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Thèmes d'aide en retard de relecture</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>La date de relecture est dépassée, ou le thème est en relecture depuis plus de %days jours sans modification.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>État</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>En retard</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Date de relecture %date dépassée depuis %days jours</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>En relecture depuis %days jours sans modification</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Modifier</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Changer l'état</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown thèmes en retard sur %count sont affichés. ./console exp:help:content review les liste tous.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Avant de commencer</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Étapes</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Résultat</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Et ensuite</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Situation</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Origine</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Solution</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Accueil de l&apos;aide</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

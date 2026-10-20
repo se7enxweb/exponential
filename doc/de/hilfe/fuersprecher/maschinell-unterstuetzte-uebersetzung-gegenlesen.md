@@ -26,7 +26,7 @@ Lateinische und Klingonische „der schnellste Gewinn“. Sie müssen nicht entw
 ## Einrichten
 
 - Eine Installation, die Sie kontrollieren ([Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md)).
-- Stellen Sie Ihre eigene Oberflächensprache im Feld **Oberfläche** der rechten Spalte um ([Sprachen](../../../en/us/help/languages.md)).
+- Stellen Sie Ihre eigene Oberflächensprache im Feld **Oberfläche** der rechten Spalte um ([Sprachen](../sprachen.md)).
 - Wenn sich Texte nicht ändern, leert ein Administrator den Übersetzungscache
   (`php bin/php/ezcache.php --clear-tag=i18n --allow-root-user`, laut Abschnitt 8).
 
@@ -88,4 +88,4 @@ Glossary decisions:
 - [Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md)
 - [Einen Beitrags-Sprint vorschlagen](einen-beitrags-sprint-vorschlagen.md)
 - [Sprachen in Exponential](../../../en/us/languages.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

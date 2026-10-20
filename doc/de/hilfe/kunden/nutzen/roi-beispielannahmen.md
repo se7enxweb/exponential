@@ -105,4 +105,4 @@ Dinge, die real sind, sich aber schwer beziffern lassen und neben den Zahlen in 
 - [ROI-Arbeitsblatt](roi-arbeitsblatt.md)
 - [Durchgerechnetes Beispiel: ein kleiner Shop](../../../../en/us/help/businesses/costs/worked-example-small-store.md)
 - [Return on Investment von Stabilität](../../../../en/us/help/businesses/costs/roi-of-stability.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

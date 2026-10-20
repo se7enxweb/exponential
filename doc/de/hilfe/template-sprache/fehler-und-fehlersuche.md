@@ -302,4 +302,4 @@ Seite [Fehlersuche in Templates](../../../en/us/help/designers/templates/templat
 - [Häufige Fehler in Templates](../../../en/us/help/designers/templates/common-template-mistakes.md)
 - [Der Template-Compiler](der-template-compiler.md)
 - [Fehlersuche und Logs](../../../en/us/help/creators/app-creators/debugging-and-logs.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -28,11 +28,11 @@ Die eigenen Menüs und Einstellungen von LiteSpeed werden hier nicht beschrieben
 |---|---|
 | `README.md`, Abschnitt „The traditional options“ | LiteSpeed und OpenLiteSpeed haben eine mit `.htaccess` kompatible Rewrite-Engine, die Apache-Regeln in den meisten Fällen direkt liest |
 | `README.md`, Abschnitt darüber, wann ein klassischer Server noch die richtige Antwort ist | wo das Hosting keinen langlebigen Prozess erlaubt, ist Apache oder LiteSpeed mit `.htaccess` die Antwort |
-| [Unterstützung von Betriebssystemen, Webserver](../../../../en/us/help/os-support.md#web-servers) | LiteSpeed und OpenLiteSpeed: **Stufe 3**, sollte funktionieren; liest die Rewrite-Regeln von Apache in den meisten Fällen |
-| [Unterstützung von Betriebssystemen, PHP-SAPIs](../../../../en/us/help/os-support.md#php-sapis) | LiteSpeed (`litespeed`, LSAPI): die eigene SAPI von LiteSpeed |
+| [Unterstützung von Betriebssystemen, Webserver](../../betriebssystemunterstuetzung.md#webserver) | LiteSpeed und OpenLiteSpeed: **Stufe 3**, sollte funktionieren; liest die Rewrite-Regeln von Apache in den meisten Fällen |
+| [Unterstützung von Betriebssystemen, PHP-SAPIs](../../betriebssystemunterstuetzung.md#php-sapis) | LiteSpeed (`litespeed`, LSAPI): die eigene SAPI von LiteSpeed |
 | `lib/ezutils/classes/ezexecution.php` | unter LiteSpeed (lsapi) läuft die Shutdown-Funktion im Verzeichnis der PHP-Binärdatei, das `open_basedir` nicht erlaubt; der Kernel kommt damit zurecht |
 
-Stufe 3 bedeutet eine begründete Erwartung, kein Testergebnis ([Die vier Stufen](../../../../en/us/help/os-support.md#the-four-tiers)): Das Projekt hat
+Stufe 3 bedeutet eine begründete Erwartung, kein Testergebnis ([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)): Das Projekt hat
 Exponential in seinen eigenen Tests nicht auf LiteSpeed laufen sehen. „In den meisten Fällen“ ist die ehrliche Formulierung; testen Sie
 Ihre eigene LiteSpeed-Version.
 
@@ -47,9 +47,9 @@ Ihre eigene LiteSpeed-Version.
 
    Nutzen Sie stattdessen `.htaccess_root_static` nur, wenn die Website einen erzeugten statischen Cache ausliefert
    ([Statischer Cache](../leistung/statischer-cache.md)).
-3. **PHP:** 8.0 oder neuer mit den erforderlichen Erweiterungen ([Kapitel 2](../../../../en/us/install/02-requirements.md#23-php-extensions)),
+3. **PHP:** 8.0 oder neuer mit den erforderlichen Erweiterungen ([Kapitel 2](../../../installation/02-voraussetzungen.md#23-php-extensions)),
    `memory_limit` mindestens 64M (die Untergrenze des Setup-Assistenten; geben Sie der Produktion mehr), `date.timezone` gesetzt,
-   `file_uploads` an ([Kapitel 2, Einstellungen der php.ini](../../../../en/us/install/02-requirements.md#25-phpini-settings)).
+   `file_uploads` an ([Kapitel 2, Einstellungen der php.ini](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)).
 4. **Beschreibbare Verzeichnisse:** `var/` und die Verzeichnisse unter `settings/`, von einem Benutzer geschrieben
    ([Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md)).
 5. **Installieren** Sie mit dem Setup-Assistenten im Browser, wenn der Kunde keine Shell hat, oder mit `exp:install` oder dem Kickstarter,
@@ -59,11 +59,11 @@ Ihre eigene LiteSpeed-Version.
 
 - Die SAPI ist `litespeed` (LSAPI). Das PHP für das Web und das PHP für die Kommandozeile werden getrennt konfiguriert und sind oft
   verschiedene Builds: Geben Sie beiden dieselbe Version und dieselben Erweiterungen
-  ([Kapitel 2, PHP für Kommandozeile und Web](../../../../en/us/install/02-requirements.md#command-line-and-web-php)).
+  ([Kapitel 2, PHP für Kommandozeile und Web](../../../installation/02-voraussetzungen.md#php-auf-der-kommandozeile-und-im-web)).
 - Der optionale Test des Setup-Assistenten möchte `open_basedir` leer. Shared Hosting setzt es oft; der Kernel kommt bereits mit dem
   Shutdown-Verzeichnis von LSAPI unter `open_basedir` zurecht, aber andere Funktionen (zum Beispiel der Vorlade-Lauf im Hintergrund, der
   `proc_open`, `setsid` und die PHP-Binärdatei braucht) können dadurch verweigert werden
-  ([Caches vorladen, Abschnitt 7](../../../../en/us/guides/preloading-caches.md#7-when-something-does-not-behave-as-expected)).
+  ([Caches vorladen, Abschnitt 7](../../../anleitungen/caches-vorwaermen.md#7-wenn-sich-etwas-nicht-wie-erwartet-verhält)).
 - Exponential erkennt den Server, unter dem es läuft: Der Systembericht (`expSystemReport::serverKind()`) ordnet eine SAPI von LiteSpeed
   als `other` ein, und die Debug-Leiste nennt mit `Served by` den Server, die SAPI und den Port sowie `not by Velocity`, sodass
   Support-Mitarbeitende auf einen Blick sehen, was geantwortet hat.
@@ -77,7 +77,7 @@ Führen Sie zuerst die vier Prüfungen des Routings aus [Webserver und Engines](
 | Die Startseite, eine Inhaltsseite und `/user/login` antworten | das Rewrite auf `index.php` funktioniert |
 | `/api/` erreicht `index_rest.php` und `/content/treemenu` erreicht `index_treemenu.php` | die beiden anderen Front-Controller von `.htaccess_root` |
 | Ein hochgeladenes Bild wird angezeigt, eine hochgeladene Datei lässt sich herunterladen | Speicherpfade und `content/download` |
-| `.php` unterhalb der Wurzel antwortet mit 404 | keine PHP-Datei läuft, weil ihr Pfad angefragt wurde ([Kapitel 8](../../../../en/us/install/08-serving-the-site.md#82-how-a-request-is-served)) |
+| `.php` unterhalb der Wurzel antwortet mit 404 | keine PHP-Datei läuft, weil ihr Pfad angefragt wurde ([Kapitel 8](../../../installation/08-die-website-ausliefern.md#82-wie-eine-anfrage-beantwortet-wird)) |
 | Ein Cronjob läuft aus der Crontab des Kunden | `runcronjobs.php` unter dem PHP der Kommandozeile ([Cronjobs](../betrieb/cronjobs.md)) |
 | Ein Leeren des Caches unter **Setup > Caches** funktioniert | `var/` ist für das Web-PHP beschreibbar |
 
@@ -86,7 +86,7 @@ Führen Sie zuerst die vier Prüfungen des Routings aus [Webserver und Engines](
 Velocity ist ein langlebiger Prozess; auf Shared Hosting mit LiteSpeed ist das meist nicht erlaubt. Auf einem LiteSpeed-Server, den Sie
 kontrollieren, kann Velocity daneben auf eigenen Ports laufen, und der LiteSpeed-Server kann als Reverse Proxy dienen, in derselben Form
 wie mit Apache oder nginx ([Velocity neben Apache oder nginx](velocity-neben-apache-oder-nginx.md)). Dem Proxy muss vertraut werden, und er
-muss `X-Forwarded-Proto` setzen ([Kapitel 8, Hinter einem Reverse Proxy](../../../../en/us/install/08-serving-the-site.md#88-behind-a-reverse-proxy)).
+muss `X-Forwarded-Proto` setzen ([Kapitel 8, Hinter einem Reverse Proxy](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy)).
 
 ## Checkliste
 
@@ -103,5 +103,5 @@ muss `X-Forwarded-Proto` setzen ([Kapitel 8, Hinter einem Reverse Proxy](../../.
 - [Apache mit PHP-FPM](apache-mit-php-fpm.md)
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
-- [Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

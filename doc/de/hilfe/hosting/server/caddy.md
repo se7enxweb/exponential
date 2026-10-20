@@ -27,7 +27,7 @@ umsetzen muss und was die Quellen bieten und was nicht.
 | | FrankenPHP (über `exp:velocity`) | Caddy mit PHP-FPM |
 |---|---|---|
 | Was es ist | Caddy mit eingebautem PHP, als eine Binärdatei mit geprüfter Prüfsumme heruntergeladen (`README.md`) | der Webserver Caddy, der Anfragen an einen PHP-FPM-Pool weitergibt |
-| Status | produktionsreife alternative Engine | Stufe 3, sollte funktionieren ([Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md#web-servers)) |
+| Status | produktionsreife alternative Engine | Stufe 3, sollte funktionieren ([Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#webserver)) |
 | Konfiguration | ein Caddyfile, bei jedem Start aus `settings/velocity.ini` **erzeugt** | ein Caddyfile, das Sie schreiben |
 | Vom Projekt ausgeliefert | ja, gesteuert über `exp:velocity` | keine Konfiguration wird ausgeliefert |
 
@@ -38,7 +38,7 @@ Für einen Hoster, der Caddy mag, ist FrankenPHP der Weg, den das Projekt dokume
 
 `exp:velocity` schreibt `var/vc/frankenphp/run/Caddyfile` bei jedem `start`, `graceful` und `restart`, prüft es mit
 `frankenphp validate`, bevor es das alte ersetzt, und steuert den Server über die Admin-API von Caddy auf einem Socket, der nur dem
-Eigentümer gehört ([Kapitel 8, FrankenPHP](../../../../en/us/install/08-serving-the-site.md#84-frankenphp)). Der Kopf der Datei sagt, dass sie jedes
+Eigentümer gehört ([Kapitel 8, FrankenPHP](../../../installation/08-die-website-ausliefern.md#84-frankenphp)). Der Kopf der Datei sagt, dass sie jedes
 Mal neu geschrieben wird; bearbeiten Sie sie also nie, sondern setzen Sie Ihre eigenen Direktiven in eine Datei, die
 `[FrankenPHPSettings] SiteInclude` nennt und die in jeden Site-Block importiert wird
 ([FrankenPHP als Web-Engine von Exponential](../../../../en/us/bc/6.0/frankenphp.md)).
@@ -51,7 +51,7 @@ php bin/php/console exp:velocity ctl validate  --engine=frankenphp --allow-root-
 ## Caddy mit PHP-FPM
 
 Die Quellen beschreiben diese Einrichtung in einer Zeile: `php_fastcgi` und ein Rewrite auf `index.php`
-([Unterstützung von Betriebssystemen](../../../../en/us/help/os-support.md#web-servers)), und die Tabelle der klassischen Server im README nennt `rewrite`,
+([Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#webserver)), und die Tabelle der klassischen Server im README nennt `rewrite`,
 `handle` und `try_files` von Caddy. Mit Exponential wird kein Caddyfile für PHP-FPM ausgeliefert; die Konfiguration schreiben und testen
 also Sie, wie bei nginx.
 
@@ -107,4 +107,4 @@ HTTPS war: direkt (`HTTPS` an PHP übergeben) oder von einem vertrauenswürdigen
 - [nginx mit PHP-FPM](nginx-mit-php-fpm.md)
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
 - [Velocity-Engines](../../../../en/us/bc/6.0/velocity-engines.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

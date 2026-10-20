@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Betreiber, die möchten, dass Neuigkeiten, Veranstaltungen oder Folgen Menschen über Feed-Reader,
 Partnerwebsites und Podcast-Verzeichnisse erreichen. Exponential veröffentlicht Feeds aus Inhalten und kann die Feeds
-anderer Websites in Inhalte einlesen ([RSS-Feeds](../../../../en/us/guides/rss-feeds.md)). Der Administrator richtet sie ein;
+anderer Websites in Inhalte einlesen ([RSS-Feeds](../../../anleitungen/rss-feeds.md)). Der Administrator richtet sie ein;
 Sie entscheiden, wofür jeder Feed da ist, und halten ihn am Leben.
 
 ## Inhalt
@@ -24,7 +24,7 @@ Sie entscheiden, wofür jeder Feed da ist, und halten ihn am Leben.
 
 ## Was die Website veröffentlichen und lesen kann
 
-Aus [RSS-Feeds](../../../../en/us/guides/rss-feeds.md):
+Aus [RSS-Feeds](../../../anleitungen/rss-feeds.md):
 
 - Ein **Export** ist ein Feed, den diese Website unter `/rss/feed/<address>` veröffentlicht. Er listet die neuesten
   Objekte unterhalb seiner **Quellen** (Orte, jeweils mit einer Klasse und optional ihren Unterelementen), als RSS 1.0,
@@ -45,7 +45,7 @@ Aus [RSS-Feeds](../../../../en/us/guides/rss-feeds.md):
 | Wer nutzt ihn? | listen Sie die Partnerwebsites auf, die ihn einbinden, damit Sie sie über Änderungen informieren können |
 
 > **Warnung**
-> Wird ein Export entfernt, antwortet seine Adresse seinen Lesern nicht mehr ([RSS-Feeds](../../../../en/us/guides/rss-feeds.md)).
+> Wird ein Export entfernt, antwortet seine Adresse seinen Lesern nicht mehr ([RSS-Feeds](../../../anleitungen/rss-feeds.md)).
 > Bevor Sie einen Feed entfernen oder umbenennen, informieren Sie die Websites und Personen, die ihn nutzen.
 
 ## Ein Podcast
@@ -73,7 +73,7 @@ eigenen Websites. Bevor Sie einen anfordern:
 
 - Haben Sie das Recht, die Inhalte erneut zu veröffentlichen?
 - Wohin sollen die Elemente, und wer prüft sie?
-- Ein entfernter Import behält die Elemente, die er angelegt hat ([RSS-Feeds](../../../../en/us/guides/rss-feeds.md)); die
+- Ein entfernter Import behält die Elemente, die er angelegt hat ([RSS-Feeds](../../../anleitungen/rss-feeds.md)); die
   Feed-Liste kann aufräumen, was ein Import angelegt hat ([RSS, Podcast und die Feed-Liste](../../../../en/us/features/6.0/rss-podcast-and-feed-list.md)).
 
 Für das Teilen in beide Richtungen zwischen Ihren eigenen Installationen siehe
@@ -88,12 +88,12 @@ Jedes Quartal:
       ([RSS, Podcast und die Feed-Liste](../../../../en/us/features/6.0/rss-podcast-and-feed-list.md)).
 - [ ] **Setup > RSS**, Filter **Need attention**: Beheben oder stilllegen, was aufgelistet ist.
 - [ ] Importe: Das neueste importierte Element ist aktuell; wenn nicht, läuft der Cronjob `rssimport` vielleicht nicht
-      ([Cronjobs](../../../../en/us/guides/cronjobs.md)).
+      ([Cronjobs](../../../anleitungen/cronjobs.md)).
 - [ ] Podcast: Das Verzeichnis zeigt die neueste Folge.
 
 ## Verwandte Seiten
 
-- [RSS-Feeds](../../../../en/us/guides/rss-feeds.md)
+- [RSS-Feeds](../../../anleitungen/rss-feeds.md)
 - [RSS-Feeds für Ihre Website](../../../../en/us/help/creators/website-creators/rss-feeds-for-your-site.md)
 - [Feeds für Neuerwerbungen](../../../../en/us/help/businesses/libraries/feeds-for-new-acquisitions.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

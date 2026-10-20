@@ -52,19 +52,19 @@ NOTES
 
 | Punkt | Wo | Lesen Sie |
 |---|---|---|
-| Wartungsmodus | **Setup > Wartung** | [Wartungsmodus](../../../../../en/us/guides/maintenance-mode.md) |
+| Wartungsmodus | **Setup > Wartung** | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) |
 | Pausierte Cron-Teile | **Setup > Cronjobs** | [Cronjob-Teile pausieren](../../../../../en/us/features/6.0/cronjob-pause.md) |
-| Fehlerreferenzen | **Setup > Logdateien**, Feld **Fehlerreferenz** | [Einen Fehler anhand seiner Referenz finden](../../../../../en/us/guides/finding-an-error-by-its-reference.md) |
+| Fehlerreferenzen | **Setup > Logdateien**, Feld **Fehlerreferenz** | [Einen Fehler anhand seiner Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md) |
 | Die Fehler des letzten Tages | **Setup > Logdateien > Fehlerübersicht** | [Der Log-Viewer](../../../../../en/us/features/6.0/log-viewer.md) |
 | Wer was getan hat | Das Prüfprotokoll; es hält Anmeldungen, Inhaltsänderungen, Schreibvorgänge in Einstellungen, das Leeren von Caches, Deployments, Bestellungen und Änderungen der Mehrwertsteuer fest | [Das Prüfprotokoll](../../../../../en/us/features/6.0/audit-trail.md) |
-| Inhalte verloren oder geändert | Versionen und der Papierkorb | [Veröffentlichen und Versionen](../../../../../en/us/help/publishing-and-versions.md) |
+| Inhalte verloren oder geändert | Versionen und der Papierkorb | [Veröffentlichen und Versionen](../../../veroeffentlichen-und-versionen.md) |
 | Eine Wiederherstellung | Hoster | [Aus einem Backup wiederherstellen](../../../hosting/runbooks/aus-einem-backup-wiederherstellen.md) |
 | Eine kompromittierte Website | Hoster | [Kompromittierte Website](../../../hosting/runbooks/kompromittierte-website.md) |
 
 ## An das Projekt melden
 
 - **Ein Sicherheitsproblem** in Exponential wird vertraulich an security@se7enx.com gemeldet, nie in einem öffentlichen
-  Tracker (`SECURITY.md`, [Wenn etwas schiefgeht](../../../../../en/us/help/when-something-goes-wrong.md)). Lassen Sie Passwörter,
+  Tracker (`SECURITY.md`, [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md)). Lassen Sie Passwörter,
   Geheimnisse und personenbezogene Daten weg.
 - **Ein Fehler** in Exponential geht an <https://github.com/se7enxweb/exponential/issues>. Die Meldeseite der Hilfe in der
   Administration, `/exphelp/report`, füllt das Issue vor und listet die zu kopierenden Diagnosedaten, nie Passwörter,
@@ -94,7 +94,7 @@ Reported to the project: no / bug # ______ / security report sent ________
 ## Verwandte Seiten
 
 - [Vorfallreaktion für kleine Teams](../../../../../en/us/help/businesses/reliability/incident-response-for-small-teams.md)
-- [Wenn etwas schiefgeht](../../../../../en/us/help/when-something-goes-wrong.md)
+- [Wenn etwas schiefgeht](../../../wenn-etwas-schiefgeht.md)
 - [Tägliche Checkliste](taeglich.md)
 - [Checklisten für Betreiber](README.md)
-- [Freie Dokumentation](../../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

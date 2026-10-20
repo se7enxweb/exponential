@@ -69,4 +69,4 @@ Site/server: <name>        Month: <yyyy-mm>        Checked by: <name>
 - [Überblick über die Überwachung](../betrieb/ueberblick-ueber-die-ueberwachung.md)
 - [Checkliste für die Sicherheitsprüfung](checkliste-fuer-die-sicherheitspruefung.md)
 - [SLA-Optionen](../geschaeft/sla-optionen-fuer-exponential-hosting.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

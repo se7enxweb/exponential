@@ -807,7 +807,13 @@ This page is about driving the engine from Exponential. What the engine is, how 
 
 The access rules in "Views and who may open them" above are the ones `exp:velocity` writes into the engine's configuration; they can be stricter than the engine's own defaults described in the control panel page.
 
-**Demo mode under Velocity.** Velocity's workers inherit the environment of the server process. For a public demo, put `EXP_DEMO_MODE=1` into the environment of whatever runs `exp:velocity start` (the unit's `Environment=`, see [`velocity-demo-mode.conf`](../../examples/demo-mode/velocity-demo-mode.conf)); `/etc/vc/envvars` is not exported to the workers. A restart or deploy from a shell starts the new server with that shell's environment, so a shell without the variable switches demo mode off. [Demo mode](demo-mode.md).
+**Demo mode under Velocity.** Velocity's workers inherit the environment of the server process, and the server exports
+what `/etc/vc/envvars` sets into it when it starts, as Apache's `/etc/apache2/envvars` is sourced before `apache2`.
+For a public demo, add `export EXP_DEMO_MODE=1` to `/etc/vc/envvars`; restarts and deploys from any shell keep it. A
+value in the environment that starts the server (the unit's `Environment=`, see
+[`velocity-demo-mode.conf`](../../examples/demo-mode/velocity-demo-mode.conf)) wins over the file. The file cannot set
+`PATH`, `LD_*`, `PHPRC` and the other loader and shell variables ([on-disk layout](velocity-ondisk-layout.md)).
+[Demo mode](demo-mode.md).
 
 ## Related pages
 

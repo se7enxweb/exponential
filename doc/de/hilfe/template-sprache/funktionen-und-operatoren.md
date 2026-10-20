@@ -172,4 +172,4 @@ und in der Referenz zu [foreach](referenz-der-kontrollstrukturen.md#foreach) ver
 - [Referenz der Funktionen](../../../en/us/help/designers/templates/function-reference.md) und [Referenz der Operatoren](../../../en/us/help/designers/templates/operator-reference.md)
 - [Template-Operatoren schreiben](../../../en/us/help/creators/app-creators/template-operators.md)
 - [Ein eigener Template-Operator](../../../en/us/examples/cookbook/custom-template-operator.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

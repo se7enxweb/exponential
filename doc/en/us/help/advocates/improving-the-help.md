@@ -30,7 +30,7 @@ pull request like any other ([Develop with Git](../develop-with-git.md#contribut
    ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 5. Propose the change and open the pull request. Say in one sentence what was wrong and how you checked.
 
-Every pull request is merged, and the contributor's commits are kept
+Every pull request is merged; while it is open, its author squashes and rebases it onto `main` as the reviews ask
 ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)).
 
 ## The thorough way: a clone

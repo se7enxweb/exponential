@@ -12,7 +12,8 @@ type: help
 
 This page is for journalists, editors and creators who want the official press material of Exponential. It describes
 the press kit published on the project website, quotes its usage guidelines, and tells you which parts to complete or
-correct from this help. It was written after downloading and opening the kit on **18 October 2026**.
+correct from this help. It was written after downloading and opening the kit on **18 October 2026**; on **19 October
+2026** the page still offered the same download, version 1.0.0, and its text had not changed.
 
 ## Contents
 
@@ -91,9 +92,9 @@ or take your own screenshots ([Taking your own screenshots](taking-your-own-scre
 
 The kit is dated June 2026. The repository has moved on since, and for release facts the repository wins:
 
-| The kit says | The repository says (18 October 2026) | Source |
+| The kit says | The repository says (19 October 2026) | Source |
 |---|---|---|
-| Current stable 6.0.13 | The newest release is 6.0.14 (7 June 2026); 6.0.15 is in development | [The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md) |
+| Current stable 6.0.13 | The newest release is 6.0.14 (7 June 2026); the current line, 6.0.15, is in development and had no release tag on 19 October 2026 | [The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md) |
 | 6.0.14 "Experimental" with MongoDB support | 6.0.14 is a release; MongoDB 8 as a database arrived on 1 June 2026 | [Who is 7x?, timeline](../who-is-7x.md#nearly-thirty-years-the-timeline) |
 | "stewarded by 7x (se7enxweb) since 1998" | The copyright notice of 7x and the Foundation starts in 1998; 7x was founded as Brookins Consulting in 2001; its project was launched in December 2023 | [7x in three stages: 2014, 2022, 2023](7x-in-three-stages.md) |
 | "Founded 1998 (as eZ Publish steward)" | eZ Systems developed eZ Publish from 1999; 7x took over leadership in 2023 | [Timeline for reporters](timeline-for-reporters.md) |

@@ -22,7 +22,7 @@ Währungseinstellungen sind davon getrennt: Die Währungsliste (**Shop**, `shop/
 
 | Was sich ändert | Wer es üblicherweise tut | Wo |
 |---|---|---|
-| Der Preis eines Produkts | Produktredaktion oder Eigentümer | Das Bearbeitungsformular des Produkts ([Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md)) |
+| Der Preis eines Produkts | Produktredaktion oder Eigentümer | Das Bearbeitungsformular des Produkts ([Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md)) |
 | Viele Preise auf einmal | Partner oder Administrator, oder die Redaktion einzeln | In den Shop-Ansichten gibt es keinen Editor für Massenänderungen von Preisen |
 | Welche Währungen aktiv sind | Eigentümer | `shop/currencylist`, `shop/editcurrency` |
 | Wechselkurse und automatische Preise | Eigentümer oder Administrator | Die Aktualisierungs-Schaltflächen der Währungsliste |
@@ -34,9 +34,9 @@ Währungseinstellungen sind davon getrennt: Die Währungsliste (**Shop**, `shop/
    (`shop/productsoverview`) zeigt die Produkte einer Klasse mit ihren Preisen und hilft beim Erstellen der Liste.
 2. **Legen Sie den Zeitpunkt fest.** Preise ändern sich in dem Moment, in dem das bearbeitete Produkt veröffentlicht
    wird. Für eine Änderung um Mitternacht verwenden Sie die zeitgesteuerte Veröffentlichung, wenn Ihre Website sie
-   hat ([Workflows](../../../../en/us/guides/workflows.md)).
+   hat ([Workflows](../../../anleitungen/workflows.md)).
 3. **Bearbeiten** Sie die Produkte. Mit Entwürfen können mehrere Personen die Änderungen vorbereiten, ohne dass Kunden
-   sie sehen ([Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md)).
+   sie sehen ([Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md)).
 4. **Prüfen** Sie das Ergebnis (siehe unten).
 5. **Informieren** Sie das Team und, falls nötig, Ihre Kunden.
 
@@ -85,7 +85,7 @@ Die Währungsliste hat die Aktionen **Auto-Umrechnungsfaktoren aktualisieren** u
 - [ ] Kampagnenseiten und Newsletter, die Preise nennen, sind aktualisiert.
 
 Wenn die öffentliche Website noch den alten Preis zeigt, kommt die Seite möglicherweise aus einem Cache. Fragen Sie
-Ihren Administrator, bevor während geschäftiger Zeiten Caches geleert werden ([Caches](../../../../en/us/guides/caches.md)).
+Ihren Administrator, bevor während geschäftiger Zeiten Caches geleert werden ([Caches](../../../anleitungen/caches.md)).
 
 ## Verwandte Seiten
 
@@ -93,4 +93,4 @@ Ihren Administrator, bevor während geschäftiger Zeiten Caches geleert werden (
 - [USt-Typen und USt-Regeln](ust-typen-und-ust-regeln.md)
 - [Rabatte](rabatte.md)
 - [Produkte, Preise und Mehrwertsteuer](../../../../en/us/help/creators/website-creators/products-prices-and-vat.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -60,12 +60,12 @@ Reported to the partner team on: ____/____/______
   Projekts steht unter der GFDL 1.3 oder später und sein Code unter der GPL v2 oder später ([Lizenzierung für Partner](lizenzierung-fuer-partner.md)).
 - Schreiben Sie als Sie selbst oder Ihr Unternehmen, nie als 7x oder die Foundation.
 - Verlinken Sie auf die Hilfe und die offiziellen Quellen, statt sie ohne Nennung zu kopieren
-  ([Freie Dokumentation](../../../en/us/help/free-documentation.md)).
+  ([Freie Dokumentation](../freie-dokumentation.md)).
 - Melden Sie die Aktivität im selben Monat ([Ihre Partneraktivität erfassen](partneraktivitaet-erfassen.md)).
 
 ## Verwandte Seiten
 
 - [Das Punktesystem](das-punktesystem.md)
 - [Open-Source-Werte in der täglichen Partnerarbeit](open-source-werte.md)
-- [Unterstützer: hier beginnen](../../../en/us/help/supporters/supporters-start-here.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Unterstützer: hier beginnen](../unterstuetzer/unterstuetzer-hier-beginnen.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

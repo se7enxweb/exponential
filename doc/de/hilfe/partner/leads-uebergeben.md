@@ -63,5 +63,5 @@ weiterzugeben. Das verbessert die nächste Empfehlung.
 
 - [Empfehlungen und Leads](empfehlungen-und-leads.md)
 - [Pre-Sales-Unterstützung](pre-sales-unterstuetzung.md)
-- [Zusammenarbeiten](../../../en/us/help/leadership/working-together.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Zusammenarbeiten](../fuehrung/zusammenarbeiten.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

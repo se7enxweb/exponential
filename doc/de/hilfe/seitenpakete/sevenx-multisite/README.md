@@ -26,7 +26,7 @@ Installerskript schreibt und was Sie haben, wenn die Installation fertig ist.
 `sevenx_multisite` ist ein Seitenpaket (`<type value="site" />` in seiner `package.xml`) vom Hersteller `7x`. Seine Zusammenfassung im Paket
 ist `MultiSite Default Installation`, und der Paketindex von 6.0.15 führt es als `7x MultiSite Default Installation`. Es ist das Paket, das
 `exp:install --package` und `exp:kickstarter ini --yes` installieren, wenn nichts anderes gewählt ist (siehe
-[4.3 Seitenpakete](../../../../en/us/install/04-choosing-an-install-method.md#43-site-packages-what-is-installed)). Es richtet zwei öffentliche Websites
+[4.3 Seitenpakete](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird)). Es richtet zwei öffentliche Websites
 in einer Installation ein, **Fit & Healthy** und **Bold Agency**, plus die Siteaccesses der Administration, der Redaktion und (wenn die
 Erweiterung `exp_adminui` vorhanden ist) der Admin UI, mit Seitenlayouts aus den Erweiterungen `explayouts`.
 
@@ -96,4 +96,4 @@ liegen auf dem Paketserver unter `exponential/6.0/6.0.15/`, zum Beispiel
 - [cjw_multisite](../cjw-multisite/README.md)
 - [Seitenpakete für Hoster](../../hosting/bereitstellung/seitenpakete-fuer-hoster.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

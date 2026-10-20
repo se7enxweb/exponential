@@ -82,5 +82,5 @@ MY PLEDGE AS AN EXPONENTIAL ADVOCATE
 
 - [Ehrlichkeit und Genauigkeit](ehrlichkeit-und-genauigkeit.md)
 - [Was ein Fürsprecher ist](was-ein-fuersprecher-ist.md)
-- [Eine Leitungsrolle übernehmen, Gewohnheiten einer guten Community-Leitung](../../../en/us/help/leadership/becoming-a-community-leader.md#habits-of-a-good-community-leader)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Leitungsrolle übernehmen, Gewohnheiten einer guten Community-Leitung](../fuehrung/community-leiter-werden.md#gewohnheiten-einer-guten-führungsperson-in-der-community)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

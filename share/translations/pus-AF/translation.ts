@@ -73259,5 +73259,125 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>د هغو سازمانونو او کسانو لپاره چې خپل سایټ په Exponential چلوي: ټیم، خپرونه، سوداګري، ساتنه، وده او شریکان.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>د کارن لارښود</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>په هره پاڼه کې یوه پوښتنه: څوک یې کولی شي، ګامونه، څه ممکن غلط شي او نور چیرته ولولئ.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>د پروژې فایلونه</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>د پروژې فایل</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>دا فایل د Exponential د سرچینې کوډ برخه ده او ورسره د %license لاندې وېشل کېږي.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>DITA ښکته کول</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>برېښنايي کتابونه</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>له خپرو شويو موضوعګانو څخه هر ځل جوړېږي چې يو يې خپور شي، او د پخوانيو نسخو سره ساتل کېږي.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فايل</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>اندازه</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>تازه شوی</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>ټول د DITA په توګه ښکته کول</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>د مرستې هغه موضوعګانې چې بياکتنه يې ځنډېدلې</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>د بياکتنې نېټه تېره شوې، يا موضوع له %days ورځو ډېر پرته له بدلون د بياکتنې په حال کې ده.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>ځنډېدلی</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کړنې</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>د بياکتنې نېټه %date، %days ورځې مخکې تېره شوه</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>%days ورځې پرته له بدلون د بياکتنې په حال کې</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>سمول</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>حالت ټاکل</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>له %count ځنډېدلو موضوعګانو څخه %shown ښودل شوي. ./console exp:help:content review ټول ښيي.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>مخکې له پيلولو</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>ګامونه</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>پايله</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>بيا څه وکړئ</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>شرط</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>لامل</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>حل</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>د مرستې پیل</translation>
+    </message>
 </context>
 </TS>

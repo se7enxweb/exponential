@@ -44,8 +44,8 @@ bisherigen Kunden.
 
 | Frage | Wer antwortet | Wie |
 |---|---|---|
-| „Ich habe mein Passwort vergessen“ | Der Kunde selbst | Über die Passwort-Zurücksetzung der Website ([Konten und Anmeldung](../../../../en/us/help/accounts-and-sign-in.md)) |
-| „Ich habe die Aktivierungs-E-Mail nie bekommen“ | Shop-Leitung oder Administrator | Das Konto unter **Benutzer** prüfen; siehe [Konten und Anmeldung](../../../../en/us/help/accounts-and-sign-in.md) |
+| „Ich habe mein Passwort vergessen“ | Der Kunde selbst | Über die Passwort-Zurücksetzung der Website ([Konten und Anmeldung](../../konten-und-anmeldung.md)) |
+| „Ich habe die Aktivierungs-E-Mail nie bekommen“ | Shop-Leitung oder Administrator | Das Konto unter **Benutzer** prüfen; siehe [Konten und Anmeldung](../../konten-und-anmeldung.md) |
 | „Ändern Sie meine E-Mail-Adresse“ | Der Kunde in seinem Profil oder ein Administrator | Konto bearbeiten |
 | „Schicken Sie mir keine Angebote mehr“ | Der Kunde, über den Link in der E-Mail oder die Einstellungsseite | [E-Mail-Einstellungen](../../../../en/us/features/6.0/mail-preferences.md) |
 | „Löschen Sie mein Konto und meine Daten“ | Der Eigentümer entscheidet, ein Administrator handelt | [DSGVO-Anfragen](dsgvo-anfragen.md) |
@@ -73,7 +73,7 @@ ihren Beleg-Link behalten, wenn dauerhafte Belege eingeschaltet sind ([Rechnunge
 ## Verwandte Seiten
 
 - [Kundenkonten und Gastbestellung für Unternehmen](../../../../en/us/help/businesses/stores/customer-accounts-and-guest-checkout.md)
-- [Konten und Anmeldung](../../../../en/us/help/accounts-and-sign-in.md)
+- [Konten und Anmeldung](../../konten-und-anmeldung.md)
 - [DSGVO-Anfragen](dsgvo-anfragen.md)
 - [Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

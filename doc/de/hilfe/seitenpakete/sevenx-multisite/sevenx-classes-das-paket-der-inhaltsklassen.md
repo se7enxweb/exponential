@@ -132,4 +132,4 @@ Klassen Artikel, Bild und Produkt ein Attribut für Sternebewertungen (27.02.202
 - [Pakettypen](../grundlagen/pakettypen.md)
 - [Installationselemente und Handler](../grundlagen/installationselemente-und-handler.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

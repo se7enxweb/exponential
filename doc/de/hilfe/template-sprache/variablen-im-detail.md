@@ -226,4 +226,4 @@ zu übergeben, gibt es die persistente Variable ([Die persistente Variable](../.
 - [Variablen und def](../../../en/us/help/designers/templates/variables-and-def.md)
 - [cond und first_set](../../../en/us/help/designers/templates/cond-and-first-set.md)
 - [def](../../../en/us/examples/template-functions/def.md), [set](../../../en/us/examples/template-functions/set.md), [undef](../../../en/us/examples/template-functions/undef.md), [let](../../../en/us/examples/template-functions/let.md), [default](../../../en/us/examples/template-functions/default.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

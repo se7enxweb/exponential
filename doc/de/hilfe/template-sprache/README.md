@@ -70,4 +70,4 @@ für Designer und den [Grundlagen der TPL-Syntax](../../../en/us/help/designers/
 - [Template-Operatoren](../../../en/us/help/template-operators/README.md): jeder Operator, Fetch-Aliase, Fetch-Funktionen
 - [Templates für Designer](../../../en/us/help/designers/templates/templates-overview.md)
 - [Referenz der Funktionen](../../../en/us/help/designers/templates/function-reference.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

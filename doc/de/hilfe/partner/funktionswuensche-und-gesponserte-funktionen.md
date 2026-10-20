@@ -23,8 +23,8 @@ Diese Seite ist für Partner, deren Kunden etwas brauchen, das Exponential noch 
 
 Die Sponsorenstufen wurden am 18. Oktober 2026 auf den Seiten von GitHub Sponsors <https://github.com/sponsors/se7enxweb>
 und <https://github.com/sponsors/exponentialcms> gelesen; maßgeblich sind die aktuellen Seiten. Details:
-[7x auf GitHub sponsern](../../../en/us/help/sponsors/sponsoring-7x.md) und
-[Die Exponential Foundation sponsern](../../../en/us/help/sponsors/sponsoring-the-foundation.md).
+[7x auf GitHub sponsern](../sponsoren/7x-sponsern.md) und
+[Die Exponential Foundation sponsern](../sponsoren/die-foundation-sponsern.md).
 
 Die Sponsorenseite des Projekts sagt: „Sponsoren profitieren vom direkten Zugang zum 7x-Team, und ihre Funktionen werden berücksichtigt“ (<https://exponential.earth/about/project/sponsors>). „Berücksichtigt“ ist das richtige Wort
 gegenüber Kunden: Finanzierung erhöht die Priorität; sie kauft keine Garantie, es sei denn, ein schriftlicher Vertrag
@@ -50,5 +50,5 @@ allgemeine Funktionen unter der GPL veröffentlicht werden dürfen
 
 - [An der Roadmap mitwirken](an-der-roadmap-mitwirken.md)
 - [Code zurückgeben](code-zurueckgeben.md)
-- [Was Sponsoring finanziert](../../../en/us/help/sponsors/what-sponsorship-funds.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Was Sponsoring finanziert](../sponsoren/was-sponsoring-finanziert.md)
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

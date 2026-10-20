@@ -38,7 +38,7 @@ Proxys) steht auf [Mehrere Web-Knoten](mehrere-web-knoten.md).
 | `eZDFSFileHandler` | Dateien auf einem gemeinsamen NFS-Mount, ihre Metadaten in einer Datenbanktabelle, Caches auf jeden Server kopiert | mehrere Webserver, die eine Website ausliefern |
 
 Die älteren Handler `eZDBFileHandler` und `eZFS2FileHandler` wurden entfernt; eine Website, die sie noch nutzt, wird so
-umgezogen, wie in [Kapitel 14, der Cluster](../../../../en/us/install/14-migrating-from-4x.md#the-cluster) beschrieben.
+umgezogen, wie in [Kapitel 14, der Cluster](../../../installation/14-migration-von-4x.md#der-cluster) beschrieben.
 
 > **Hinweis**
 > Ein einzelner Server braucht keinen Cluster-Datei-Handler, wie groß er auch ist. Clustering ist für eine Website, die
@@ -68,7 +68,7 @@ dedizierter MySQL-Server bei großen Websites die Leistung deutlich verbessern k
 | `eZDFSFileHandlerPostgresqlBackend` | das Paket `ezpostgresqlcluster` |
 | `eZDFSFileHandlerOracleBackend` | die Erweiterung `ezoracle` |
 
-Quelle: [15.17 Cluster und DFS](../../../../en/us/install/15-migrating-from-5x-legacy.md#1517-cluster-and-dfs) und die in
+Quelle: [15.17 Cluster und DFS](../../../installation/15-migration-von-5x-legacy.md#1517-cluster-und-dfs) und die in
 `config.php-RECOMMENDED` aufgeführten Backends (`dfsmysqli`, `dfspostgres`, `dfsoracle`). Auch die Speicherseite lässt sich
 ersetzen: `[eZDFSClusteringSettings] DFSBackend` nennt eine Klasse, die `eZDFSFileHandlerDFSBackendInterface` implementiert
 ([Konfigurierbares Backend für den DFS-Cluster](../../../../en/us/features/5.4/configurable_dfs_cluster_backend.md)).
@@ -77,7 +77,7 @@ ersetzen: `[eZDFSClusteringSettings] DFSBackend` nennt eine Klasse, die `eZDFSFi
 > Die eigene Datenbank der Website und die Metadaten-Datenbank des Clusters sind getrennte Entscheidungen. Eine Website auf
 > PostgreSQL kann ihre Inhalte in PostgreSQL behalten; die Cluster-Tabelle braucht eines der Backends oben. SQLite kann
 > überhaupt nicht die Datenbank einer Website mit mehreren Servern sein: Sein WAL-Modus braucht jeden Prozess auf einer
-> Maschine ([Kapitel 9](../../../../en/us/install/09-databases.md#wal-readers-and-the-writer-side-by-side)).
+> Maschine ([Kapitel 9](../../../installation/09-datenbanken.md#wal-leser-und-schreiber-nebeneinander)).
 
 ## Ihn einrichten
 
@@ -108,7 +108,7 @@ ersetzen: `[eZDFSClusteringSettings] DFSBackend` nennt eine Klasse, die `eZDFSFi
 5. **Richten Sie die Rewrite-Regeln für Dateien auf `index_cluster.php`** und geben Sie ihr ihre Konstanten (nächster Abschnitt).
 
 Bei einem Upgrade spielen Sie die Datei `dbupdate-cluster-...` jedes Schritts ein, der eine hat
-([11.3 Die Update-Dateien](../../../../en/us/install/11-upgrading.md#113-the-update-files)).
+([11.3 Die Update-Dateien](../../../installation/11-aktualisieren.md#113-die-update-dateien)).
 
 ## Dateien ausliefern: index_cluster.php
 
@@ -139,7 +139,7 @@ RewriteRule ^/var_cache/([^/]+/)?cache/(texttoimage|public)/.* /index_cluster.ph
 | `php bin/php/clusterpurge.php` | entfernt abgelaufene Cluster-Dateien physisch | `--scopes=...`, `--expiry=<days>` (Standard 30), `--dry-run`, `--iteration-sleep`, `--iteration-limit`, `--memory-monitoring` |
 
 Führen Sie `dfscleanup.php` zuerst mit `-S` und `-B` aus und lesen Sie das Ergebnis, bevor Sie `-D` hinzufügen
-([15.17](../../../../en/us/install/15-migrating-from-5x-legacy.md#1517-cluster-and-dfs)). `clusterpurge.php` ist auch der Cronjob-Teil
+([15.17](../../../installation/15-migration-von-5x-legacy.md#1517-cluster-und-dfs)). `clusterpurge.php` ist auch der Cronjob-Teil
 `cluster_maintenance`; die mitgelieferten `cronjob.ini [AdminSettings] ForbiddenParts[]` halten ihn von den Schaltflächen auf
 **Setup > Cronjobs** fern, weil er zerstörerisch ist und in die Hände eines Administrators an einer Shell gehört
 ([Cronjobs](cronjobs.md)).
@@ -174,5 +174,5 @@ Führen Sie `dfscleanup.php` zuerst mit `-S` und `-B` aus und lesen Sie das Erge
 - [Was gesichert werden muss](backups-was-gesichert-werden-muss.md)
 - [Datenbanken in der offiziellen Reihenfolge](../grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md)
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
-- [Datenbankunterstützung](../../../../en/us/help/database-support.md), [Betriebssystemunterstützung](../../../../en/us/help/os-support.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Datenbankunterstützung](../../datenbankunterstuetzung.md), [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -20,7 +20,7 @@ In Exponential ist ein Produkt ein Inhalt einer Klasse mit einem Preisfeld (`ezp
 ([Einen Shop betreiben: Überblick](../../../../en/us/help/creators/website-creators/shop-overview.md)). Für das Team bedeutet das:
 
 - die Produktredaktion verwendet denselben Editor, dieselben Entwürfe, Versionen und dieselbe Vorschau wie für jede
-  andere Seite ([Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md), [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md));
+  andere Seite ([Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md), [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md));
 - eine falsche Änderung lässt sich rückgängig machen, indem man zu einer früheren Version zurückkehrt;
 - Produkte können an mehreren Stellen des Menüs zugleich stehen (ein Objekt, mehrere Orte), sodass Ordner wie „Neu“
   und „Sale“ keine Kopien brauchen.
@@ -29,14 +29,14 @@ In Exponential ist ein Produkt ein Inhalt einer Klasse mit einem Preisfeld (`ezp
 
 | Aufgabe | Wer | Was benötigt wird |
 |---|---|---|
-| Produkttexte, Bilder, Optionen | Produktredaktion | Inhalte in den Produktordnern anlegen und bearbeiten ([Rollen und Richtlinien](../../../../en/us/guides/roles-and-policies.md)) |
+| Produkttexte, Bilder, Optionen | Produktredaktion | Inhalte in den Produktordnern anlegen und bearbeiten ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)) |
 | Preise an Produkten | Produktredaktion oder Eigentümer | Inhalte bearbeiten; der Preis ist ein Feld des Produkts |
 | USt-Typen, Produktkategorien, Währungen | Eigentümer | `shop/setup` (`kernel/shop/module.php`) |
 | Neue Felder in der Produktklasse | Partner oder Administrator | Klassenbearbeitung unter **Setup > Klassen** |
 | Katalogprüfungen | Shop-Leitung | `shop/administrate` für das Dashboard |
 
 Entscheiden Sie, ob Preisänderungen einen Freigabeschritt durchlaufen. Wenn ja, kann Ihr Administrator einen
-Freigabe-Workflow für die Produktordner einrichten ([Workflows](../../../../en/us/guides/workflows.md)).
+Freigabe-Workflow für die Produktordner einrichten ([Workflows](../../../anleitungen/workflows.md)).
 
 ## Regelmäßige Katalogprüfungen
 
@@ -58,10 +58,10 @@ jedes Mal:
 
 | Situation | Ein gängiger Ansatz | Wie |
 |---|---|---|
-| Für ein paar Tage nicht vorrätig | Seite stehen lassen, einen Hinweis in den Text schreiben | Das Produkt bearbeiten ([Inhalte anlegen und bearbeiten](../../../../en/us/help/editing-content.md)) |
-| Länger nicht vorrätig | Das Produkt verbergen, sodass es aus Listen und Suche verschwindet | [Ein Element verbergen](../../../../en/us/help/publishing-and-versions.md#hide-an-item) |
+| Für ein paar Tage nicht vorrätig | Seite stehen lassen, einen Hinweis in den Text schreiben | Das Produkt bearbeiten ([Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md)) |
+| Länger nicht vorrätig | Das Produkt verbergen, sodass es aus Listen und Suche verschwindet | [Ein Element verbergen](../../veroeffentlichen-und-versionen.md#ein-objekt-verstecken) |
 | Saisonales Sortiment | Am Ende der Saison verbergen, im nächsten Jahr wieder einblenden | Verbergen und einblenden; Preise und Texte bleiben erhalten |
-| Endgültig eingestellt | Verbergen oder in einen Archivordner verschieben; nur entfernen, wenn Sie sicher sind | [Entfernen und wiederherstellen](../../../../en/us/help/publishing-and-versions.md#remove-and-restore) |
+| Endgültig eingestellt | Verbergen oder in einen Archivordner verschieben; nur entfernen, wenn Sie sicher sind | [Entfernen und wiederherstellen](../../veroeffentlichen-und-versionen.md#entfernen-und-wiederherstellen) |
 
 > **Hinweis**
 > Bevor ein Produkt entfernt oder verborgen wird, listet die Administration die Seiten auf, die darauf verweisen
@@ -98,4 +98,4 @@ Mehrere ausgewählte Unterelemente lassen sich in einem Schritt kopieren ([Ausge
 - [Produktklassen und Katalog (für Unternehmen)](../../../../en/us/help/businesses/stores/product-classes-and-catalog.md)
 - [Suche und Navigation im Shop](../../../../en/us/help/businesses/stores/store-search-and-navigation.md)
 - [Produkte, Preise und Mehrwertsteuer](../../../../en/us/help/creators/website-creators/products-prices-and-vat.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

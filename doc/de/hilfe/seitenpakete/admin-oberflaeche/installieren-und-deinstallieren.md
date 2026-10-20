@@ -100,9 +100,9 @@ zu deinstallieren.“
 ## Verwandte Seiten
 
 - [Pakete in der Administration](README.md)
-- [Pakete, Abschnitt 7](../../../../en/us/guides/packages.md#7-installing-and-uninstalling)
+- [Pakete, Abschnitt 7](../../../anleitungen/pakete.md#7-installieren-und-deinstallieren)
 - [Importieren oder installieren](../grundlagen/importieren-oder-installieren.md)
 - [Installationselemente und Handler](../grundlagen/installationselemente-und-handler.md)
 - [In ein Paket hineinsehen, es mit Ihrer Website vergleichen](../../../../en/us/features/6.0/package-compare-and-import.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

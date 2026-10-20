@@ -130,7 +130,7 @@ A buyer's team can read it before they buy, translate it and improve it.
 | Each extension has its own repository under `github.com/se7enxweb`, its own releases and changelog | [Who is 7x?](../who-is-7x.md#the-extension-ecosystem) |
 | The product family: Exponential 6, Exponential Basic, Exponential Platform 3.2.9, Exponential Platform Legacy, Exponential Platform Nexus, Exponential Platform DXP, Exponential Velocity, Exponential Intelligence, Exponential Layouts, AdminUI and the help system | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#the-product-family-at-a-glance) |
 | Work of other open source companies is built in and credited: Netgen (layouts concept), Mugo Web (LoveStack features), CJW Network (newsletter) | [Who is 7x?](../who-is-7x.md#contributors-and-friends-of-the-project) |
-| Every pull request is merged, and contributors' commits are kept as they wrote them | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#contributors-and-pull-requests) |
+| Every pull request is merged, under its author's name; while it is open, the author squashes and rebases it onto `main` as the reviews ask | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#contributors-and-pull-requests) |
 | The project gives back upstream, for example security pull requests to Zeta Components | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to) |
 
 How to phrase it for a buyer: "Nothing you need is hidden behind a commercial edition. The kernel, the extensions

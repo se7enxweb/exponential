@@ -164,4 +164,4 @@ Pakete bringen auch alles mit, was unter [Was nicht geprüft wird](#was-nicht-ge
 - [Ein Paket vor der Veröffentlichung prüfen](ein-paket-vor-der-veroeffentlichung-pruefen.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

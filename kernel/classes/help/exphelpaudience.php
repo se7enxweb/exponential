@@ -21,6 +21,10 @@
  * It also gives pages whose own title is unclear a clearer title and summary ([TitleSettings], pageTitle() and
  * pageSummary()); a page's front matter title and summary always win.
  *
+ * And it gives pages their place in the page tree, the folder lists and the category lists where the settings name
+ * one ([TreeSettings] PageOrder[<page id>], pageOrder()): this wins over a page's front matter order, so pages that
+ * cannot carry front matter (the project files, plain text) can be placed too.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
@@ -74,7 +78,8 @@ class expHelpAudience
     /** The categories, in their dashboard order, with names and icons */
     const CATEGORIES = array(
         'getting-started' => array( 'name' => 'Getting started', 'icon' => 'signpost-split' ),
-        'editing'         => array( 'name' => 'Editing content', 'icon' => 'pencil-square' ),
+        'manual'          => array( 'name' => 'User manual', 'icon' => 'question-circle' ),
+        'editing'       => array( 'name' => 'Editing content', 'icon' => 'pencil-square' ),
         'media'           => array( 'name' => 'Images and media', 'icon' => 'images' ),
         'publishing'      => array( 'name' => 'Publishing', 'icon' => 'journal-check' ),
         'search'          => array( 'name' => 'Search', 'icon' => 'search' ),
@@ -110,27 +115,30 @@ class expHelpAudience
         'features'        => array( 'name' => 'Features', 'icon' => 'stars' ),
         'development'     => array( 'name' => 'Development', 'icon' => 'code-square' ),
         'install-upgrade' => array( 'name' => 'Installation and upgrades', 'icon' => 'box-seam' ),
+        'project-files'   => array( 'name' => 'Project files', 'icon' => 'git' ),
         'release-notes'   => array( 'name' => 'Release notes', 'icon' => 'journal-text' ),
         'history'         => array( 'name' => 'History', 'icon' => 'clock-history' ),
         'reference'       => array( 'name' => 'Reference', 'icon' => 'collection' ),
+        'extensions'      => array( 'name' => 'Extensions', 'icon' => 'puzzle' ),
     );
 
     /** The page types and their names */
     const TYPES = array(
         'help' => 'Help', 'guide' => 'Guide', 'feature' => 'Feature', 'bc' => 'Upgrade note', 'install' => 'Installation',
         'changelog' => 'Changelog', 'specification' => 'Specification', 'history' => 'History', 'example' => 'Example',
-        'reference' => 'Reference',
+        'reference' => 'Reference', 'extension' => 'Extension documentation', 'project' => 'Project file',
     );
 
     /** [TypeSettings] PathRules[] by default */
     const TYPE_RULES = array(
         'doc/en/us/help/*;help', 'doc/en/us/guides/*;guide', 'doc/en/us/features/*;feature', 'doc/en/us/bc/*;bc', 'doc/changelogs/*;changelog',
         'doc/en/us/install/*;install', 'doc/en/us/INSTALL.md;install', 'doc/en/us/specifications/*;specification', 'doc/en/us/history/*;history',
-        'doc/en/us/examples/*;example', '*;reference',
+        'doc/en/us/examples/*;example', 'extension/*;extension', '*;reference',
     );
 
     /** [AudienceSettings] PathRules[] by default */
     const AUDIENCE_RULES = array(
+        'doc/en/us/help/manual/*;editor,admin,user',
         'doc/en/us/help/leadership/*;project-manager',
         'doc/en/us/help/business/*;sales-marketing',
         'doc/en/us/help/partners/*;partner',
@@ -170,11 +178,13 @@ class expHelpAudience
     const AUDIENCE_DEFAULTS = array(
         'help' => 'editor,user', 'guide' => 'admin', 'feature' => 'admin,developer', 'bc' => 'developer,admin',
         'install' => 'admin,developer', 'changelog' => 'admin,developer', 'specification' => 'developer',
-        'history' => 'developer', 'example' => 'developer', 'reference' => 'developer,admin',
+        'history' => 'developer', 'example' => 'developer', 'reference' => 'developer,admin', 'project' => 'developer,admin',
+        'extension' => 'editor,admin,developer',
     );
 
     /** [CategorySettings] PathRules[] by default */
     const CATEGORY_RULES = array(
+        'doc/en/us/help/manual/*;manual',
         'doc/en/us/help/leadership/*;leadership',
         'doc/en/us/help/business/*;business',
         'doc/en/us/help/partners/*;partnership',
@@ -217,7 +227,24 @@ class expHelpAudience
     const CATEGORY_DEFAULTS = array(
         'help' => 'getting-started', 'guide' => 'administration', 'feature' => 'features', 'bc' => 'install-upgrade',
         'install' => 'install-upgrade', 'changelog' => 'release-notes', 'specification' => 'development',
-        'history' => 'history', 'example' => 'development', 'reference' => 'reference',
+        'history' => 'history', 'example' => 'development', 'reference' => 'reference', 'project' => 'project-files',
+        'extension' => 'extensions',
+    );
+
+    /** [TreeSettings] PageOrder[] by default: page id => order (the top level of the page tree) */
+    const PAGE_ORDER = array(
+        'project/README.md' => 0,
+        'INSTALL.md' => 10,
+        'languages.md' => 20,
+        'branch-overview.md' => 30,
+        'release-overview' => 40,
+        'project/SECURITY.md' => 50,
+        'project/CONTRIBUTING.md' => 100,
+        'project/COPYRIGHT.md' => 110,
+        'README-LICENSE.md' => 120,
+        'LICENSE-GFDL-1.3.txt' => 130,
+        'project/LICENSE.md' => 140,
+        'glossary.md' => 9999,
     );
 
     /** @var array the configuration: audiences, categories, types, typeRules, audienceRules, audienceDefaults, categoryRules, categoryDefaults */
@@ -268,6 +295,9 @@ class expHelpAudience
                     }, ARRAY_FILTER_USE_BOTH );
             if ( is_array( $rules = $get( 'TitleSettings', 'TitleRules' ) ) && $rules )
                 $config['titleRules'] = array_values( $rules );
+            // present (even emptied with PageOrder[]): the settings replace the built-in order
+            if ( is_array( $orders = $get( 'TreeSettings', 'PageOrder' ) ) )
+                $config['pageOrder'] = self::orderMap( $orders );
         }
         return new self( $config );
     }
@@ -322,7 +352,28 @@ class expHelpAudience
             'audienceDefaults' => self::AUDIENCE_DEFAULTS, 'categoryRules' => self::CATEGORY_RULES,
             'categoryDefaults' => self::CATEGORY_DEFAULTS,
             'titles' => array(), 'summaries' => array(), 'titleRules' => array(),
+            'pageOrder' => self::PAGE_ORDER,
         );
+    }
+
+    /**
+     * The valid entries of a PageOrder[] setting: a page id (no leading or trailing slash, no "..") => an integer.
+     *
+     * @param array $orders page id => order, as the settings give it (strings)
+     * @return array page id => int
+     */
+    public static function orderMap( array $orders )
+    {
+        $map = array();
+        foreach ( $orders as $id => $order )
+        {
+            $id = trim( (string)$id );
+            if ( $id === '' || $id[0] === '/' || substr( $id, -1 ) === '/' || in_array( '..', explode( '/', $id ), true ) )
+                continue;
+            if ( is_int( $order ) || ( is_string( $order ) && preg_match( '/^\s*-?\d{1,9}\s*$/', $order ) ) )
+                $map[$id] = (int)$order;
+        }
+        return $map;
     }
 
     /**
@@ -465,6 +516,20 @@ class expHelpAudience
         if ( isset( $this->config['summaries'][$path] ) && trim( $this->config['summaries'][$path] ) !== '' )
             return trim( $this->config['summaries'][$path] );
         return (string)$summary;
+    }
+
+    /**
+     * The place of a page in the page tree, the folder lists and the category lists: [TreeSettings] PageOrder[<page
+     * id>] when the settings name the page, else the order given (its front matter order, or the default).
+     *
+     * @param string $id the page id (its path below the language directory, project/README.md, ext/<name>/...)
+     * @param int $order
+     * @return int
+     */
+    public function pageOrder( $id, $order )
+    {
+        $id = (string)$id;
+        return isset( $this->config['pageOrder'][$id] ) && is_int( $this->config['pageOrder'][$id] ) ? $this->config['pageOrder'][$id] : (int)$order;
     }
 
     /**

@@ -21,8 +21,8 @@ Site: <domain>        Customer: <customer>        Go-live: <date>        Checked
 ## Konten und Passwörter
 
 - [ ] Das bei der Installation gesetzte Administratorpasswort ist kein Standardpasswort und nur den Personen bekannt, die
-      es brauchen ([Das Standard-Administratorpasswort](../../../../en/us/help/default-administrator-password.md),
-      [Das Administratorpasswort ändern](../../../../en/us/help/change-the-admin-password.md)).
+      es brauchen ([Das Standard-Administratorpasswort](../../standard-administratorpasswort.md),
+      [Das Administratorpasswort ändern](../../administratorpasswort-aendern.md)).
 - [ ] Testkonten, die während der Entwicklung angelegt wurden, sind entfernt oder deaktiviert.
 - [ ] Jeder Redakteur hat ein persönliches Konto; niemand teilt sich das Administratorkonto.
 - [ ] Über die zweistufige Anmeldung für Administratoren entschieden ([Zweistufige Anmeldung](../sicherheit/zweistufige-anmeldung.md)).
@@ -96,5 +96,5 @@ Site: <domain>        Customer: <customer>        Go-live: <date>        Checked
 
 - [Checkliste für einen neuen Server](checkliste-fuer-einen-neuen-server.md)
 - [Checkliste für die Sicherheitsprüfung](checkliste-fuer-die-sicherheitspruefung.md)
-- [Kapitel 10: Nach der Installation](../../../../en/us/install/10-after-installing.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 10: Nach der Installation](../../../installation/10-nach-der-installation.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

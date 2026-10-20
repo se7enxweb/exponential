@@ -46,12 +46,12 @@ Themen, die an dokumentierte Fakten gebunden sind, altern gut:
 | „Was in <Release> neu ist“ | [Über ein Release schreiben](ueber-ein-release-schreiben.md) |
 | „Diesen Monat in der Geschichte von Exponential“ | [Beiträge zur Geschichte schreiben](beitraege-zur-geschichte-schreiben.md) |
 | „Unsere Sprache ist vollständig: wie wir sie gegengelesen haben“ | [Eine maschinell unterstützte Übersetzung gegenlesen](maschinell-unterstuetzte-uebersetzung-gegenlesen.md) |
-| „Mein erster Pull Request“ | [Mit Git entwickeln](../../../en/us/help/develop-with-git.md) |
+| „Mein erster Pull Request“ | [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | „Warum wir Open Source sponsern“ | [Für nachhaltige Finanzierung eintreten](fuer-nachhaltige-finanzierung-eintreten.md) |
 | Ein Problem, das Sie gelöst haben, Schritt für Schritt | Ihre eigene Arbeit, mit den Hilfeseiten, die Sie genutzt haben |
 
-Mehr Ideen mit einem Redaktionskalender: [Die Community wachsen lassen](../../../en/us/help/business/growing-the-community.md#a-content-calendar-template)
-und [Fallstudien und Content-Marketing, Themen, die wahr bleiben](../../../en/us/help/business/case-studies-and-content-marketing.md#topics-that-stay-true).
+Mehr Ideen mit einem Redaktionskalender: [Die Community wachsen lassen](../geschaeft/die-community-wachsen-lassen.md#eine-vorlage-für-einen-redaktionskalender)
+und [Fallstudien und Content-Marketing, Themen, die wahr bleiben](../geschaeft/fallstudien-und-content-marketing.md#themen-die-wahr-bleiben).
 
 ## Aufbau
 
@@ -124,4 +124,4 @@ Written for Exponential <6.0.x>, checked on <date>.
 - [Ein Tutorial schreiben, das funktioniert](ein-tutorial-schreiben.md)
 - [Auf Share und Projects veröffentlichen](auf-share-und-projects-veroeffentlichen.md)
 - [Quellen zitieren und Ihre Texte lizenzieren](quellen-zitieren-und-texte-lizenzieren.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

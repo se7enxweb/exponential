@@ -21,8 +21,8 @@ nicht sagen.
 | Rolle im Projekt | „7x hat 2023 die Leitung des Projekts und seiner Entwicklung, seines Supports, seiner Verbreitung und des Wachstums der Community übernommen“ (README.md) | „Dieses Projekt wird von der Exponential Foundation betrieben“ (<https://exponential.earth/about/project>) |
 | GitHub Sponsors | <https://github.com/sponsors/se7enxweb> | <https://github.com/sponsors/exponentialcms> |
 
-Hintergrund zu beiden: [Wer ist 7x?](../../../en/us/help/who-is-7x.md) und
-[Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md).
+Hintergrund zu beiden: [Wer ist 7x?](../wer-ist-7x.md) und
+[Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md).
 
 ## Was die Quellen über das Partnerprogramm sagen
 
@@ -62,7 +62,7 @@ Fragen sind daher **von der Foundation noch festzulegen**:
 | Sich bewerben, die Stufe wechseln, verlängern | Dem Partnerteam bei 7x (<https://exponential.earth/partner/contact-us>) | [Wie Sie sich bewerben](wie-sie-sich-bewerben.md) |
 | Nach Rechnungen für das Partner-Abonnement fragen | 7x (dem Verkäufer im Shop) | [Partnertarife und Preise](partnertarife-und-preise.md) |
 | Technischen Support im Rahmen Ihres Tarifs erhalten | 7x, über Ihre GitHub-Issue-Tickets | [Ein Support-Ticket als Partner eröffnen](support-ticket-eroeffnen.md) |
-| Das Open-Source-Projekt finanziell unterstützen | Der Foundation und 7x | [Sponsoren: hier beginnen](../../../en/us/help/sponsors/sponsors-start-here.md) |
+| Das Open-Source-Projekt finanziell unterstützen | Der Foundation und 7x | [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md) |
 | Code, Dokumentation, Übersetzungen beitragen | Dem Projekt auf GitHub | [Code zurückgeben](code-zurueckgeben.md) |
 
 ## Verwandte Seiten
@@ -70,4 +70,4 @@ Fragen sind daher **von der Foundation noch festzulegen**:
 - [Mit 7x zusammenarbeiten](mit-7x-zusammenarbeiten.md)
 - [Mit der Exponential Foundation zusammenarbeiten](mit-der-foundation-zusammenarbeiten.md)
 - [Governance: wer was entscheidet](governance-und-entscheidungen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

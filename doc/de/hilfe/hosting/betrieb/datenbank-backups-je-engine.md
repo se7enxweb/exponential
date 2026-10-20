@@ -13,14 +13,14 @@ Diese Seite ist für Systemadministratoren, die die Datenbanken gehosteter Expon
 Sie beantwortet: welcher Befehl jede unterstützte Datenbank konsistent sichert, während die Website läuft, wie Sie die Kopie
 prüfen, wie Sie sie wiederherstellen und worauf Sie bei jeder Engine achten müssen.
 
-Die Befehle sind die aus [Datenbankunterstützung, Backup und Wiederherstellung](../../../../en/us/help/database-support.md#backup-and-restore),
-[10.9 Backups und Wiederherstellung](../../../../en/us/install/10-after-installing.md#109-backups-and-restore) und den Abschnitten zu den
-einzelnen Engines in [Kapitel 9](../../../../en/us/install/09-databases.md). Benutzer- und Datenbanknamen unten sind Platzhalter
+Die Befehle sind die aus [Datenbankunterstützung, Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung),
+[10.9 Backups und Wiederherstellung](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung) und den Abschnitten zu den
+einzelnen Engines in [Kapitel 9](../../../installation/09-datenbanken.md). Benutzer- und Datenbanknamen unten sind Platzhalter
 (`exponential`); verwenden Sie Ihre eigenen.
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
 > 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlicher Arbeit möglich (in 6.0.x gibt es keinen Treiber). Siehe [Datenbankunterstützung](../../../../en/us/help/database-support.md)
+> zusätzlicher Arbeit möglich (in 6.0.x gibt es keinen Treiber). Siehe [Datenbankunterstützung](../../datenbankunterstuetzung.md)
 > und [Datenbanken in der offiziellen Reihenfolge](../grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md).
 
 ## Inhalt
@@ -59,7 +59,7 @@ ihr gehören.
 
 **Sichern Sie mit dem Online-Backup, nie durch Kopieren.** Kopieren Sie nie eine Datenbankdatei, die in Benutzung ist: Eine
 Kopie, die während eines Schreibvorgangs oder ohne ihre Datei `-wal` erstellt wird, kann inkonsistent sein
-([SQLite: Backup und Wiederherstellung](../../../../en/us/install/09-databases.md#sqlite-backup-and-restore)).
+([SQLite: Backup und Wiederherstellung](../../../installation/09-datenbanken.md#sqlite-sicherung-und--wiederherstellung)).
 
 ```bash
 sqlite3 var/storage/sqlite3/exponential.db ".backup '/backup/exponential-$(date +%F).db'"
@@ -86,7 +86,7 @@ legen Sie das Backup an ihre Stelle, korrigieren Sie Eigentümer und Modus und s
 
 > **Hinweis**
 > Ein SQLite-Backup braucht zuerst Speicherplatz auf derselben Maschine. Halten Sie Platz für die doppelte Größe der Datenbank
-> für `VACUUM` und Backups frei ([Eine SQLite-Website überwachen](../../../../en/us/install/09-databases.md#monitoring-a-sqlite-site)).
+> für `VACUUM` und Backups frei ([Eine SQLite-Website überwachen](../../../installation/09-datenbanken.md#überwachung-einer-sqlite-site)).
 
 ## 2. PostgreSQL
 
@@ -99,7 +99,7 @@ pg_restore -U exponential -d exponential --clean exponential.dump
 Replikation und eigener Wiederherstellung zu einem Zeitpunkt; richten Sie diese mit der Dokumentation von PostgreSQL ein, wenn
 ein Tarif die Wiederherstellung zu einem Moment zwischen zwei Dumps verspricht. Prüfen Sie nach der Wiederherstellung in eine
 frische Datenbank die Sequenzen: Der Kernel liest neue IDs aus Sequenzen mit dem Namen `<table>_<column>_seq`
-([Sequenzen](../../../../en/us/install/09-databases.md#sequences)).
+([Sequenzen](../../../installation/09-datenbanken.md#sequenzen)).
 
 ## 3. MongoDB
 
@@ -111,8 +111,8 @@ mongorestore --uri="mongodb://exponential@localhost:27017/exponential" --drop /b
 Das Werkzeug ist unter [mongodump](https://www.mongodb.com/docs/database-tools/mongodump/) beschrieben. Legen Sie nach einer
 Wiederherstellung auf einem neuen Server die Indizes aus `bin/mongodb/create_indexes.js` an; ohne sie durchsuchen Abfragen von
 Teilbäumen und das Nachschlagen von URL-Aliasen ganze Collections
-([Leistung und Skalierung](../../../../en/us/help/database-support.md#performance-and-scaling)). Lesen Sie die
-[Grenzen von MongoDB](../../../../en/us/help/database-support.md#mongodb-limits), bevor Sie es anbieten.
+([Leistung und Skalierung](../../datenbankunterstuetzung.md#performance-und-skalierung)). Lesen Sie die
+[Grenzen von MongoDB](../../datenbankunterstuetzung.md#grenzen-von-mongodb), bevor Sie es anbieten.
 
 ## 4. MariaDB
 
@@ -123,7 +123,7 @@ mariadb -u exponential -p exponential < exponential.sql
 
 `--single-transaction` ergibt einen konsistenten Dump von InnoDB-Tabellen, ohne sie zu sperren. MariaDB läuft mit demselben
 Treiber wie MySQL; der Installer legt die Tabellen als InnoDB an, wenn der Server es anbietet, und die Datenbank sollte in
-`utf8mb4` angelegt werden ([Zeichensatz und Speicher-Engine](../../../../en/us/install/09-databases.md#character-set-and-storage-engine)).
+`utf8mb4` angelegt werden ([Zeichensatz und Speicher-Engine](../../../installation/09-datenbanken.md#zeichensatz-und-speicher-engine)).
 Stellen Sie in eine Datenbank wieder her, die genauso angelegt wurde, in `utf8mb4`.
 
 ## 5. Oracle
@@ -137,7 +137,7 @@ php bin/php/console ext:ezoracle:datapump --help
 
 `ezoracle` liefert außerdem die Befehle `health`, `gather-stats`, `recompile`, `purge-recyclebin`, `sequence-sync` und andere mit,
 sowie die Cronjob-Teile `ezoracle` (nächtlich) und `ezoraclehealth` (stündlich), die nichts tun, bis sie in
-`ezoracle.ini [CronjobSettings]` aktiviert werden ([9.6 Wartung](../../../../en/us/install/09-databases.md#maintenance)). Stimmen Sie
+`ezoracle.ini [CronjobSettings]` aktiviert werden ([9.6 Wartung](../../../installation/09-datenbanken.md#wartung)). Stimmen Sie
 Oracle-Backups mit dem Datenbankadministrator des Kunden ab; die meisten Oracle-Websites haben bereits ein Backup-Verfahren.
 
 ## 6. MySQL
@@ -155,7 +155,7 @@ anderen empfiehlt.
 
 In Exponential 6.0.x gibt es keinen Treiber, also gibt es über Exponential nichts zu sichern. Es ist derzeit bekanntermaßen mit
 zusätzlicher Arbeit möglich; siehe
-[Microsoft SQL Server: mit zusätzlicher Arbeit möglich](../../../../en/us/help/database-support.md#microsoft-sql-server-possible-with-additional-work)
+[Microsoft SQL Server: mit zusätzlicher Arbeit möglich](../../datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand)
 und [Stand von Microsoft SQL Server](../grundlagen/stand-von-microsoft-sql-server.md).
 
 ## Passwörter und Berechtigungen
@@ -171,7 +171,7 @@ und [Stand von Microsoft SQL Server](../grundlagen/stand-von-microsoft-sql-serve
 Um eine Website zwischen SQL-Engines umzuziehen (SQLite, PostgreSQL, MariaDB, MySQL und Oracle mit `ezoracle`), erstellen Sie
 mit `bin/php/ezsqldumpschema.php --format=generic --output-array --output-types=all` einen Dump in eine `.dba`-Datei und laden
 ihn mit `bin/php/ezsqlinsertschema.php --insert-types=all`, wobei Sie die Engine mit `--type` wählen
-([Eine Website auf eine andere Datenbank umziehen](../../../../en/us/help/database-support.md#moving-a-site-to-another-database)). Das ist ein
+([Eine Website auf eine andere Datenbank umziehen](../../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen)). Das ist ein
 Werkzeug für Migrationen, kein Ersatz für das eigene Backup der Engine.
 
 ## Checkliste
@@ -191,5 +191,5 @@ Werkzeug für Migrationen, kein Ersatz für das eigene Backup der Engine.
   [MongoDB für Hoster](../grundlagen/mongodb-fuer-hoster.md), [MariaDB für Hoster](../grundlagen/mariadb-fuer-hoster.md),
   [Oracle für Hoster](../grundlagen/oracle-fuer-hoster.md), [MySQL für Hoster](../grundlagen/mysql-fuer-hoster.md)
 - [Die Datenbank-Engine wechseln](../migrationen/die-datenbank-engine-einer-kunden-website-wechseln.md)
-- [Datenbankunterstützung](../../../../en/us/help/database-support.md), [Betriebssystemunterstützung](../../../../en/us/help/os-support.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Datenbankunterstützung](../../datenbankunterstuetzung.md), [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

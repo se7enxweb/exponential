@@ -28,9 +28,9 @@ Verwenden Sie nur diese, damit alle sie gleich verstehen:
 | Status | Bedeutung | Wo Sie ihn auf der Website prüfen |
 |---|---|---|
 | Idee | nicht begonnen | noch nirgends |
-| In Arbeit | ein Entwurf existiert | *Meine Entwürfe* der zuständigen Person ([Meine Entwürfe und meine ausstehenden Elemente](../../../../en/us/guides/drafts-and-pending.md)) |
+| In Arbeit | ein Entwurf existiert | *Meine Entwürfe* der zuständigen Person ([Meine Entwürfe und meine ausstehenden Elemente](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)) |
 | In Prüfung | zur Veröffentlichung geschickt, von einer Freigabe zurückgehalten | *Meine Warteliste* der freigebenden Person |
-| Geplant | von einem Workflow bis zu einem Datum zurückgehalten | **Setup > Workflow-Prozesse** ([Workflows](../../../../en/us/guides/workflows.md)) |
+| Geplant | von einem Workflow bis zu einem Datum zurückgehalten | **Setup > Workflow-Prozesse** ([Workflows](../../../anleitungen/workflows.md)) |
 | Veröffentlicht | auf der Website | die Seite des Elements |
 | Verworfen | wird nicht veröffentlicht | der Entwurf wird verworfen |
 
@@ -87,5 +87,5 @@ Goal (one sentence): ________________________________________________
 
 - [Redaktionskalender](redaktionskalender.md)
 - [Zeitgesteuertes Veröffentlichen](zeitgesteuertes-veroeffentlichen.md)
-- [Projektvorlagen](../../../../en/us/help/leadership/project-templates.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Projektvorlagen](../../fuehrung/projektvorlagen.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -58,4 +58,4 @@ Gehen Sie direkt zur [Checkliste für das Onboarding](checkliste-fuer-das-onboar
 - [Checkliste für die Bewerbung](checkliste-fuer-die-bewerbung.md)
 - [Die Partnerschaftsvereinbarung in einfachen Worten](die-partnerschaftsvereinbarung.md)
 - [Anforderungen an Partner](anforderungen-an-partner.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

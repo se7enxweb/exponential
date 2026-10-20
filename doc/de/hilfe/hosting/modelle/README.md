@@ -40,37 +40,37 @@ Zurück zu [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.m
 ## Was in jedem Modell gleich ist
 
 Welches Modell auch immer: Eine Exponential-Website braucht dieselben wenigen Dinge
-([Kapitel 2: Anforderungen](../../../../en/us/install/02-requirements.md)):
+([Kapitel 2: Anforderungen](../../../installation/02-voraussetzungen.md)):
 
 - **PHP 8.0 oder später** (8.1 oder später für Exponential Velocity) mit den erforderlichen Erweiterungen;
 - **eine Datenbank** der sechs unterstützten, in der offiziellen Reihenfolge: 1. SQLite 3 (der Standard) · 2. PostgreSQL ·
   3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit
-  möglich; in 6.0.x hat es keinen Treiber ([Datenbankunterstützung](../../../../en/us/help/database-support.md));
+  möglich; in 6.0.x hat es keinen Treiber ([Datenbankunterstützung](../../datenbankunterstuetzung.md));
 - **beschreibbaren Speicher** für `var/` und die Verzeichnisse unter `settings/`, die das Setup schreibt;
 - **einen Weg, HTTP auszuliefern**: Exponential Velocity, FrankenPHP über Velocity oder einen klassischen Webserver wie
-  Apache oder nginx mit PHP-FPM ([Kapitel 8](../../../../en/us/install/08-serving-the-site.md));
+  Apache oder nginx mit PHP-FPM ([Kapitel 8](../../../installation/08-die-website-ausliefern.md));
 - **Cron** oder einen anderen Planer für `runcronjobs.php`
-  ([Kapitel 10, Cronjobs](../../../../en/us/install/10-after-installing.md#103-cronjobs)).
+  ([Kapitel 10, Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs)).
 
 Ein vollständiges Backup besteht in jedem Modell aus der Datenbank **und** den Dateien `var/storage`, `settings/override`
-und `settings/siteaccess` ([Backup und Wiederherstellung](../../../../en/us/help/database-support.md#backup-and-restore)).
+und `settings/siteaccess` ([Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung)).
 
 ## Was sich zwischen den Modellen ändert
 
 | Frage | Warum sie für Exponential zählt |
 |---|---|
 | Darf der Kunde einen lang laufenden Prozess ausführen? | Velocity und FrankenPHP brauchen einen; Apache oder nginx mit PHP-FPM nicht. Shared Hosting erlaubt es meist nicht (`README.md`). |
-| Gibt es Shell-Zugang? | Ohne ihn ist der Setup-Assistent im Browser der Installer ([Kapitel 4](../../../../en/us/install/04-choosing-an-install-method.md#45-which-method-for-which-situation)). |
+| Gibt es Shell-Zugang? | Ohne ihn ist der Setup-Assistent im Browser der Installer ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md#45-welche-methode-für-welche-situation)). |
 | Ist das Dateisystem persistent? | `var/` enthält Uploads, Caches, Logs und, mit SQLite, die Datenbank selbst. |
-| Liefern mehrere Maschinen eine Website aus? | Dann scheidet SQLite aus, und ein Datenbankserver, gemeinsamer Speicher für `var/storage` und gemeinsame Sitzungen sind nötig ([Container, Cloud und Hosting-Panels](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels)). |
-| Müssen Kunden voneinander abgeschottet sein? | Ein PHP-FPM-Pool oder eine Velocity-Instanz pro Website, jeweils als eigener Benutzer des Betriebssystems ([Kapitel 8](../../../../en/us/install/08-serving-the-site.md#81-the-choice-in-one-table)). |
+| Liefern mehrere Maschinen eine Website aus? | Dann scheidet SQLite aus, und ein Datenbankserver, gemeinsamer Speicher für `var/storage` und gemeinsame Sitzungen sind nötig ([Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels)). |
+| Müssen Kunden voneinander abgeschottet sein? | Ein PHP-FPM-Pool oder eine Velocity-Instanz pro Website, jeweils als eigener Benutzer des Betriebssystems ([Kapitel 8](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)). |
 | Wer führt Updates und Backups aus? | Sie, der Kunde oder beide; das macht aus Hosting Managed Hosting. |
 
 > **Hinweis**
 > Die Quellen ordnen die Hosting-Modelle über das Betriebssystem und das Panel in Stufen ein, nicht über das Modell
 > selbst: Virtuelle Maschinen in der Cloud sind gewöhnliche Linux-Maschinen, Stufe 2 oder 3 nach ihrer Distribution;
 > Kubernetes und Angebote als Platform as a Service sind Stufe 3, eine begründete Erwartung, kein Testergebnis
-> ([Die vier Stufen](../../../../en/us/help/os-support.md#the-four-tiers)).
+> ([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)).
 
 ## Wo Sie weiterlesen
 
@@ -83,7 +83,7 @@ und `settings/siteaccess` ([Backup und Wiederherstellung](../../../../en/us/help
 ## Verwandte Seiten
 
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
-- [Hosting, Datenbank und Betriebssystem wählen](../../../../en/us/help/leadership/choosing-hosting-database-and-os.md): dieselbe
+- [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md): dieselbe
   Entscheidung aus Sicht der Projektleitung.
-- [Betriebssystemunterstützung](../../../../en/us/help/os-support.md) und [Datenbankunterstützung](../../../../en/us/help/database-support.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) und [Datenbankunterstützung](../../datenbankunterstuetzung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

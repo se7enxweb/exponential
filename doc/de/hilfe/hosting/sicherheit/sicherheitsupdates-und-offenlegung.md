@@ -13,7 +13,7 @@ Diese Seite ist für die Sicherheitsverantwortlichen und die Systemadministrator
 halten, und für Support-Mitarbeitende, die eine Meldung über eine mögliche Schwachstelle erhalten. Sie sagt, welche Versionen unterstützt
 werden, wie eine Korrektur eine Website erreicht und wie Sie ein Problem melden. Die Richtlinie selbst ist die
 [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) des Repositorys; die Routine für Updates ist
-[13.15 Aktuell bleiben](../../../../en/us/install/13-security-hardening.md#1315-keeping-up-to-date).
+[13.15 Aktuell bleiben](../../../installation/13-sicherheitshaertung.md#1315-auf-dem-neuesten-stand-bleiben).
 
 ## Inhalt
 
@@ -68,8 +68,8 @@ Versionsverwaltung jeder Website, damit das Ergebnis auf jeder Maschine dasselbe
 
 ## Updates ausrollen
 
-1. **Lesen Sie den Changelog und die Hinweise zum Upgrade** des Release ([Upgrades](../../../../en/us/guides/upgrading.md),
-   [Kapitel 11](../../../../en/us/install/11-upgrading.md)).
+1. **Lesen Sie den Changelog und die Hinweise zum Upgrade** des Release ([Upgrades](../../../anleitungen/aktualisieren.md),
+   [Kapitel 11](../../../installation/11-aktualisieren.md)).
 2. **Aktualisieren Sie zuerst eine Kopie** (eine Staging-Kopie der Website des Kunden oder eine repräsentative Test-Website).
 3. **Dann die Live-Website**: `composer update <package>`, die Datenbank-Updates, die das Release nennt, dann
    `php bin/php/console exp:velocity deploy` (oder Autoloads, Leeren des Caches und ein Neuladen von PHP-FPM von Hand).
@@ -96,7 +96,7 @@ php bin/php/checkmanifest.php --all --extensions    # also extensions with their
 ```
 
 Eine veränderte Datei des Kernels, die niemand geändert hat, verdient einen Blick; siehe [Kompromittierte Website](../runbooks/kompromittierte-website.md)
-([Die Upgrade-Prüfung](../../../../en/us/guides/upgrade-check.md)).
+([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)).
 
 ## Alles andere, was Updates braucht
 
@@ -126,7 +126,7 @@ Melden Sie Sicherheitsprobleme **vertraulich**, nie in einem öffentlichen Issue
 Lassen Sie Passwörter, Geheimnisse und personenbezogene Daten weg, auch die des Kunden, dessen Website das Problem gezeigt hat. Die
 meldende Person erfährt, ob die Meldung angenommen wird, und wird auf dem Laufenden gehalten, während eine Korrektur vorbereitet wird; ein
 angenommenes Problem wird auf `main` korrigiert und mit der nächsten Version 6.0.x veröffentlicht. Probleme in einer Erweiterung von
-Dritten gehen an deren Betreuer; die [Seite zum Melden](../../../../en/us/help/when-something-goes-wrong.md#security-problems) der Hilfe erklärt die
+Dritten gehen an deren Betreuer; die [Seite zum Melden](../../wenn-etwas-schiefgeht.md#sicherheitsprobleme) der Hilfe erklärt die
 Tracker.
 
 ## Kunden informieren
@@ -151,7 +151,7 @@ Wenn ein Release ein Sicherheitsproblem korrigiert, kann ein Hoster wählen:
 
 - [Sicherheit für Hoster: Überblick](README.md)
 - [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)
-- [Sicherheitshärtung: Eine Schwachstelle melden](../../../../en/us/help/security-hardening.md#reporting-a-vulnerability)
+- [Sicherheitshärtung: Eine Schwachstelle melden](../../sicherheitshaertung.md#eine-schwachstelle-melden)
 - [Mit dem Projekt und 7x zusammenarbeiten](../geschaeft/mit-dem-projekt-und-7x-zusammenarbeiten.md)
 - [Kunden-Websites aktualisieren](../betrieb/kunden-websites-aktualisieren.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

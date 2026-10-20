@@ -13,7 +13,7 @@ Diese Seite ist für Produktmanager und Systemadministratoren bei einem Hosting-
 Exponential-Websites nur die eingebaute Suche oder einen optionalen Solr-Suchserver bekommen, und die das eine oder das
 andere betreiben. Sie beantwortet: wie die eingebaute Suche funktioniert und was sie braucht, wann indiziert wird, wie
 Sie den Index neu aufbauen und was Solr über die Erweiterung eZ Find umfasst. Quellen:
-[Kapitel 10.8](../../../../en/us/install/10-after-installing.md#108-search-indexing-and-image-handling),
+[Kapitel 10.8](../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung),
 `settings/site.ini [SearchSettings]`, `settings/solr.ini` und
 [Befehle zur Serversteuerung](../../../../en/us/features/6.0/web-server-and-solr-commands.md).
 
@@ -76,7 +76,7 @@ php bin/php/updatesearchindex.php --clean --allow-root-user      # --clean remov
 ```
 
 Führen Sie es als Benutzer der Website aus, und auf einer großen Website in einer ruhigen Stunde. Mit eZ Find indizieren
-Sie mit den eigenen Werkzeugen der Erweiterung neu ([Kapitel 14](../../../../en/us/install/14-migrating-from-4x.md)).
+Sie mit den eigenen Werkzeugen der Erweiterung neu ([Kapitel 14](../../../installation/14-migration-von-4x.md)).
 
 ## Solr über eZ Find
 
@@ -89,7 +89,7 @@ php bin/php/ezpgenerateautoloads.php -e
 ```
 
 dann `ActiveExtensions[]=ezfind` in `settings/override/site.ini.append.php`, leeren Sie den INI-Cache und starten Sie
-Velocity neu, wenn es die Website ausliefert ([Kapitel 3.5](../../../../en/us/install/03-getting-the-code.md#35-extensions-are-composer-packages)).
+Velocity neu, wenn es die Website ausliefert ([Kapitel 3.5](../../../installation/03-den-code-beschaffen.md#35-extensions-sind-composer-pakete)).
 Dieses Repository gibt nicht an, welche Solr-Versionen eZ Find braucht; entnehmen Sie das dem eigenen Repository der
 Erweiterung, bevor Sie Solr anbieten, statt es anzunehmen.
 
@@ -160,9 +160,9 @@ Optionen, aus denen ein Hoster wählen kann:
 
 ## Verwandte Seiten
 
-- [Kapitel 10.8: Suchindizierung und Bildverarbeitung](../../../../en/us/install/10-after-installing.md#108-search-indexing-and-image-handling)
-- [Suchen](../../../../en/us/help/searching.md) (für Redakteure)
+- [Kapitel 10.8: Suchindizierung und Bildverarbeitung](../../../installation/10-nach-der-installation.md#108-suchindex-und-bildverarbeitung)
+- [Suchen](../../suchen.md) (für Redakteure)
 - [Cronjobs](../betrieb/cronjobs.md) und [Zustandsprüfungen und Verfügbarkeit](../betrieb/zustandspruefungen-und-verfuegbarkeit.md)
 - [Befehle zur Serversteuerung](../../../../en/us/features/6.0/web-server-and-solr-commands.md)
 - [Composer und Git auf Servern](composer-und-git-auf-servern.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -26,8 +26,8 @@ vorzuleben, was Sie veröffentlichen.
 |---|---|---|
 | Sicherheitslücken vertraulich melden | Damit Korrekturen vor dem Missbrauch kommen | [Sicherheitsmeldungen bleiben vertraulich](sicherheitsmeldungen-bleiben-vertraulich.md) |
 | Auf das neueste 6.0.x aktualisieren | Veröffentlichte Tags werden „durch ein Upgrade auf das neueste 6.0.x behoben“ | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
-| Der Checkliste zur Härtung folgen | Die meisten Vorfälle entstehen durch die Art, wie eine Website betrieben wird | [Sicherheitshärtung](../../../en/us/help/security-hardening.md#checklist) |
-| Die zweistufige Anmeldung einschalten | Gestohlene Passwörter allein reichen dann nicht mehr | [Zweistufige Anmeldung](../../../en/us/guides/two-factor-login.md) |
+| Der Checkliste zur Härtung folgen | Die meisten Vorfälle entstehen durch die Art, wie eine Website betrieben wird | [Sicherheitshärtung](../sicherheitshaertung.md#checkliste) |
+| Die zweistufige Anmeldung einschalten | Gestohlene Passwörter allein reichen dann nicht mehr | [Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md) |
 | Nie Geheimnisse teilen | Schlüssel und Passwörter gelangen über Screenshots und Issues nach außen | [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md) |
 
 ## Leben Sie es in Ihrem eigenen Material vor
@@ -35,7 +35,7 @@ vorzuleben, was Sie veröffentlichen.
 - Beispiele verwenden Platzhalter (`<your-password>`), nie echt wirkende Zugangsdaten.
 - Screenshots zeigen keine Schlüssel, Einstellungsdateien oder Serveradressen.
 - Tutorials, die etwas installieren, sagen: „Ändern Sie das erzeugte Passwort und löschen Sie
-  `var/log/initial-admin-password`“ ([Das Standardpasswort des Administrators](../../../en/us/help/default-administrator-password.md)).
+  `var/log/initial-admin-password`“ ([Das Standardpasswort des Administrators](../standard-administratorpasswort.md)).
 - Tutorials, die den Server berühren, erwähnen die Anleitung zur Härtung.
 - Empfehlen Sie nie, eine Sicherheitsfunktion abzuschalten, „damit es funktioniert“; suchen Sie den dokumentierten Weg.
 
@@ -49,15 +49,15 @@ vorzuleben, was Sie veröffentlichen.
 
 | Sie fragen | Verweisen Sie auf |
 |---|---|
-| „Wo fange ich an?“ | [Sicherheitshärtung](../../../en/us/help/security-hardening.md) und [Kapitel 13 des Installationsbuchs](../../../en/us/install/13-security-hardening.md) |
+| „Wo fange ich an?“ | [Sicherheitshärtung](../sicherheitshaertung.md) und [Kapitel 13 des Installationsbuchs](../../installation/13-sicherheitshaertung.md) |
 | „Wie sehe ich Angriffe?“ | [Request-Logs](../../../en/us/features/6.0/request-logs.md), [Das Prüfprotokoll](../../../en/us/features/6.0/audit-trail.md) |
 | „Wie setze ich eine CSP durch?“ | [Content Security Policy, Auf Durchsetzung umstellen](../../../en/us/features/6.0/content-security-policy.md#switching-to-enforce-step-by-step) |
-| „Kann ein Schutzschild davor sitzen?“ | [Ein Schutzschild davor: request-shield](../../../en/us/help/security-hardening.md#a-shield-in-front-request-shield) |
-| „Wie aktualisieren wir sicher?“ | [Upgrade](../../../en/us/install/11-upgrading.md) |
+| „Kann ein Schutzschild davor sitzen?“ | [Ein Schutzschild davor: request-shield](../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield) |
+| „Wie aktualisieren wir sicher?“ | [Upgrade](../../installation/11-aktualisieren.md) |
 
 ## Verwandte Seiten
 
 - [Gesprächspunkte: Sicherheit](gespraechspunkte-sicherheit.md)
 - [Einwand: „Ist Open Source sicher?“](einwand-sicherheit-von-open-source.md)
 - [Sicherheitsmeldungen bleiben vertraulich](sicherheitsmeldungen-bleiben-vertraulich.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

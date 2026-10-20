@@ -48,7 +48,7 @@ Tragen Sie die Zeiten und Reaktionszeiten aus Ihren Vereinbarungen ein ([Vorlage
 | Ein Fehler in Exponential | <https://github.com/se7enxweb/exponential/issues> | Öffentlich; meist von Ihrem Partner gemeldet ([GitHub-Issues](../gesund-halten/github-issues.md)) |
 | Ein Fehler in Exponential Velocity | <https://github.com/se7enxweb/exponential-velocity/issues> | Öffentlich |
 | Das Projekt und die Community | <https://github.com/se7enxweb/exponential-community/issues> | Öffentlich |
-| Fragen | Die Foren und Chats der Community ([Support erhalten](../../../../en/us/help/project/getting-support.md)) | Keine zugesagte Antwortzeit |
+| Fragen | Die Foren und Chats der Community ([Support erhalten](../../projekt/unterstuetzung-erhalten.md)) | Keine zugesagte Antwortzeit |
 | Bezahlter Support | 7x ([Mit 7x und dem Projekt zusammenarbeiten](mit-7x-und-dem-projekt-zusammenarbeiten.md)) | Im Rahmen eines Vertrags |
 
 ## Fakten, die griffbereit sein sollten
@@ -74,4 +74,4 @@ Tragen Sie die Zeiten und Reaktionszeiten aus Ihren Vereinbarungen ein ([Vorlage
 - [Wann Sie wen anrufen](wann-sie-wen-anrufen.md)
 - [Wenn die Website nicht erreichbar ist](../gesund-halten/wenn-die-website-nicht-erreichbar-ist.md)
 - [Vorlage für Vorfallnotizen](../gesund-halten/vorlage-vorfallnotizen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

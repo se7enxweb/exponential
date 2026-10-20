@@ -26,12 +26,12 @@ Aus `SECURITY.md` im Wurzelverzeichnis der Installation:
 
 In einfachen Worten: **Bleiben Sie auf dem neuesten Release 6.0.x.** Eine ältere 6.0.x ist nicht abgeschnitten, aber
 eine Korrektur erreicht Sie erst, wenn Sie innerhalb der Linie aktualisieren. Eine Website auf 5.x oder älter braucht
-ein Upgrade-Projekt; [Upgrade](../../../../en/us/guides/upgrading.md) hat einen Teil für jede Ausgangsversion.
+ein Upgrade-Projekt; [Upgrade](../../../anleitungen/aktualisieren.md) hat einen Teil für jede Ausgangsversion.
 
 ## Die Version Ihrer Website herausfinden
 
 - In der Administration: **Setup > Systeminformationen** nennt die Version
-  ([Systeminformationen](../../../../en/us/guides/system-information.md)).
+  ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 - **Info > Über** listet die Version von Exponential und von jeder Erweiterung
   ([Die Seiten Über und Copyright](../../../../en/us/features/6.0/about-and-package-pages.md)).
 - Fragen Sie Ihren Anbieter: Ein Anbieter, der ein Verzeichnis der Websites seiner Kunden führt, kann sofort antworten
@@ -53,7 +53,7 @@ Release eine Sicherheitskorrektur enthält.** Vereinbaren Sie mit Ihrem Anbieter
 Exponential läuft auf PHP, und PHP-Versionen haben ihre eigenen Unterstützungszeiträume. Aus der Seite zur
 Release-Linie für Unternehmen: PHP 7.4 nur bis 6.0.7; PHP 8.0 ist die älteste unterstützte; 8.1 bis 8.5 werden
 unterstützt, und Exponential Velocity braucht 8.1 oder neuer. **Setup > Systeminformationen** warnt, wenn die
-Sicherheitsunterstützung des laufenden PHP-Zweigs beendet ist ([Systeminformationen](../../../../en/us/guides/system-information.md)).
+Sicherheitsunterstützung des laufenden PHP-Zweigs beendet ist ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 Fragen Sie Ihren Hoster, welche PHP-Versionen er anbietet und wann er eine einstellt.
 
 ## Erweiterungen haben eigene Versionen
@@ -82,6 +82,6 @@ aktualisiert wird, kommt aus Ihrem Vertrag mit Ihrem Anbieter oder mit 7x.
 
 - [Wie Updates funktionieren](wie-updates-funktionieren.md)
 - [Upgrades mit Ihrem Anbieter](upgrades-mit-ihrem-anbieter.md)
-- [Release- und Upgrade-Planung](../../../../en/us/help/leadership/release-and-upgrade-planning.md)
-- [Wer ist 7x?](../../../../en/us/help/who-is-7x.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md)
+- [Wer ist 7x?](../../wer-ist-7x.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

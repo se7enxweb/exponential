@@ -78516,6 +78516,42 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Deutsch</translation>
     </message>
     <message>
+        <source>Reading in:</source>
+        <translation>Lesesprache:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Die Wahl einer Sprache ändert die Sprache der gesamten Oberfläche.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count von %total Seiten</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>Die Hilfe in anderen Sprachen</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Original auf %language öffnen</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Sie lesen das Original dieser Seite auf %language.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Zurück zur Seite auf %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Diese Seite ist eine Übersetzung.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Original auf %language lesen</translation>
+    </message>
+    <message>
         <source>Search</source>
         <translation>Suche</translation>
     </message>
@@ -80262,6 +80298,126 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Für Organisationen und Menschen, die ihre eigene Site mit Exponential betreiben: Team, Veröffentlichen, Commerce, Pflege, Wachstum und Partner.</translation>
+    </message>
+    <message>
+        <source>User manual</source>
+        <translation>Benutzerhandbuch</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Eine Frage pro Seite: wer es darf, die Schritte, was schiefgehen kann und wo Sie mehr lesen.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Projektdateien</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projektdatei</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Diese Datei ist Teil des Quellcodes von Exponential und wird mit ihm unter der %license verbreitet.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>DITA herunterladen</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-Books</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Aus den freigegebenen Themen erstellt, jedes Mal, wenn eines von ihnen freigegeben wird, und mit ihren früheren Versionen aufbewahrt.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Aktualisiert</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Alles als DITA herunterladen</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Hilfethemen mit überfälliger Prüfung</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Das Prüfdatum ist überschritten, oder das Thema ist seit mehr als %days Tagen ohne Änderung in Prüfung.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Überfällig</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Prüfdatum %date vor %days Tagen überschritten</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>Seit %days Tagen ohne Änderung in Prüfung</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Status setzen</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>%shown von %count überfälligen Themen werden angezeigt. ./console exp:help:content review listet alle auf.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Bevor Sie beginnen</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Schritte</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ergebnis</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Wie es weitergeht</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Bedingung</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Ursache</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Abhilfe</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Hilfe-Startseite</translation>
     </message>
 </context>
 <context>

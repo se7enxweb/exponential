@@ -17,10 +17,10 @@ Schritt nennt, wer ihn lesen sollte; bei einem Blog mit einer einzigen Person si
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
 | 1 | [Blogs: hier beginnen](blogs-hier-beginnen.md) | Alle | Wie ein Blog mit Exponential läuft |
-| 2 | [Im Editor anmelden](../../../../en/us/help/logging-into-the-editor.md) | Autoren | Wo man sich anmeldet |
-| 3 | [Inhalte bearbeiten](../../../../en/us/help/editing-content.md) | Autoren | Einen Beitrag schreiben |
-| 4 | [Veröffentlichen und Versionen](../../../../en/us/help/publishing-and-versions.md) | Autoren | Veröffentlichen, ändern und zurückgehen |
-| 5 | [Medien und Uploads](../../../../en/us/help/media-and-uploads.md) | Autoren | Bilder in Beiträgen |
+| 2 | [Im Editor anmelden](../../anmelden-im-editor.md) | Autoren | Wo man sich anmeldet |
+| 3 | [Inhalte bearbeiten](../../inhalte-bearbeiten.md) | Autoren | Einen Beitrag schreiben |
+| 4 | [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md) | Autoren | Veröffentlichen, ändern und zurückgehen |
+| 5 | [Medien und Uploads](../../medien-und-uploads.md) | Autoren | Bilder in Beiträgen |
 | 6 | [Konten, Passwörter und zweistufige Anmeldung](../alltag/konten-passwoerter-und-zweistufige-anmeldung.md) | Autoren | Ein sicheres Konto |
 
 ## Der erste Monat: der Rhythmus
@@ -54,4 +54,4 @@ Lesen Sie die Schritte 1, 4, 7 und 8: wie der Blog läuft, wie das Veröffentlic
 
 - [Blogs: hier beginnen](blogs-hier-beginnen.md)
 - [Lesepfad für Kunden](../lesepfad-fuer-kunden.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

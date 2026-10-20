@@ -29,7 +29,7 @@ lizenziert unter der GNU Free Documentation License 1.3 oder später ([Die Lizen
 
 ## Was Leser dürfen
 
-Aus [Freie Dokumentation](../../../en/us/help/free-documentation.md#what-you-can-do): sie lesen und studieren, kopieren und teilen,
+Aus [Freie Dokumentation](../freie-dokumentation.md#was-sie-tun-dürfen): sie lesen und studieren, kopieren und teilen,
 übersetzen, anpassen und verbessern und das Ergebnis teilen, mit anderen Werken kombinieren und zitieren, jeweils unter
 den Bedingungen der Lizenz. Sagen Sie das den Menschen; viele nehmen an, Dokumentation sei „alle Rechte vorbehalten“.
 
@@ -48,10 +48,10 @@ den Bedingungen der Lizenz. Sagen Sie das den Menschen; viele nehmen an, Dokumen
 - Laden Sie Sprecher anderer Sprachen ein, Hilfeseiten zu übersetzen ([Bei Übersetzungen helfen](bei-uebersetzungen-helfen.md)).
 - Sagen Sie Lehrenden, dass sie die Seiten im Unterricht nutzen dürfen ([Vor einer Benutzergruppe oder Klasse präsentieren](vor-benutzergruppe-oder-klasse-praesentieren.md)).
 - Verweisen Sie auch auf das ältere freie Material: den Spiegel der Schulungsbücher und „Learning eZ Publish“ unter der GFDL
-  ([Orte der Community](../../../en/us/help/who-is-the-exponential-foundation.md#community-places)).
+  ([Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community)).
 
 ## Verwandte Seiten
 
 - [Gesprächspunkte: die Hilfe und freie Dokumentation](gespraechspunkte-hilfe-und-freie-dokumentation.md)
 - [Die Hilfe verbessern](die-hilfe-verbessern.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

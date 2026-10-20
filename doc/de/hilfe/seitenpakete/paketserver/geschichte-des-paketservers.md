@@ -17,7 +17,7 @@ Commits), [se7enxweb/sevenx-ezpackage](https://github.com/se7enxweb/sevenx-ezpac
 `settings/package.ini` im Kernel und den Changelogs in `doc/changelogs/6.0/`. Die Betreffzeilen der Commits sind hier ins Deutsche
 übertragen.
 
-Der Hersteller, der all das pflegt, 7x, hieß früher **Brookins Consulting**; siehe [Wer ist 7x?](../../../../en/us/help/who-is-7x.md). Exponential ist aus
+Der Hersteller, der all das pflegt, 7x, hieß früher **Brookins Consulting**; siehe [Wer ist 7x?](../../wer-ist-7x.md). Exponential ist aus
 einem Content-Management-System hervorgegangen, das sein Hersteller nach fast 18 Jahren eingestellt hat.
 
 ## Inhalt
@@ -160,6 +160,6 @@ Von den 341 Commits des Repositorys des Servers wurden 8 unter dem Namen Brookin
 - [Der Paketserver](README.md)
 - [Was auf dem Paketserver liegt](was-auf-dem-paketserver-liegt.md)
 - [Der Paketserver auf GitHub](der-paketserver-auf-github.md)
-- [Wer ist 7x?](../../../../en/us/help/who-is-7x.md)
-- [Wer ist die Exponential Foundation?](../../../../en/us/help/who-is-the-exponential-foundation.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Wer ist 7x?](../../wer-ist-7x.md)
+- [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

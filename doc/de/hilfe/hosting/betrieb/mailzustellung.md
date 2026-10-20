@@ -17,7 +17,7 @@ bereitstellen muss und wie Sie eine Testkopie davon abhalten, echte Mail zu vers
 ![Status der Benachrichtigungen: ausstehende Benachrichtigungen und die letzten Läufe](../../../../en/us/help/images/hosting/notification-status.webp)
 
 Die Einstellungen stehen in `settings/site.ini [MailSettings]`; die Schritt-für-Schritt-Anleitung ist
-[10.4 Mail: der Datei-Transport und echter Versand](../../../../en/us/install/10-after-installing.md#104-mail-the-file-transport-and-real-sending).
+[10.4 Mail: der Datei-Transport und echter Versand](../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand).
 Einwilligung, Abmeldung und Bounces stehen auf [Einwilligung und Bounces bei Mails](einwilligung-und-bounces-bei-mails.md).
 
 ## Inhalt
@@ -35,7 +35,7 @@ Einwilligung, Abmeldung und Bounces stehen auf [Einwilligung und Bounces bei Mai
 Exponential versendet Mail bei Passwortänderungen und -zurücksetzungen, Registrierungen, Formularen mit einem E-Mail-Empfänger,
 Benachrichtigungen und Newslettern. Jede Mail passiert die **Mail-Sperre** in `eZMailTransport::send()`, welcher Transport auch
 genutzt wird; die Sperre prüft optionale Mail gegen die Einstellungen des Empfängers
-([E-Mail-Einstellungen](../../../../en/us/guides/mail-preferences-administrator.md)). Benachrichtigungen werden vom Cronjob-Teil
+([E-Mail-Einstellungen](../../../anleitungen/mail-einstellungen-administrator.md)). Benachrichtigungen werden vom Cronjob-Teil
 `frequent` versendet; Mail, die von ihnen abhängt, geht also nur raus, wenn Cron läuft ([Cronjobs](cronjobs.md)).
 
 ## Die drei Transporte
@@ -87,7 +87,7 @@ EmailSender=noreply@example.com
 
 ## Was der Hoster bereitstellen muss
 
-Aus [10.4](../../../../en/us/install/10-after-installing.md#104-mail-the-file-transport-and-real-sending): Mail, die echte Postfächer
+Aus [10.4](../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand): Mail, die echte Postfächer
 erreichen soll, braucht eine Absenderadresse einer Domain, die Sie kontrollieren, mit SPF-Einträgen (und vorzugsweise DKIM und
 DMARC), die den sendenden Server erlauben, für jede Adressfamilie, von der der Server sendet: Wenn der Server über IPv6 sendet
 und der SPF-Eintrag nur IPv4-Adressen nennt, lehnen große Anbieter die Mail ab.
@@ -159,5 +159,5 @@ und lesen Sie das Log des Mailservers. **Setup > Systeminformationen** hat eine 
 - [Cronjobs](cronjobs.md)
 - [Checkliste für den Start einer Kunden-Website](../checklisten/checkliste-fuer-den-start-einer-kunden-website.md)
 - [Compliance und DSGVO](../sicherheit/compliance-und-dsgvo.md)
-- [E-Mail-Einstellungen: einrichten und betreiben](../../../../en/us/guides/mail-preferences-administrator.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [E-Mail-Einstellungen: einrichten und betreiben](../../../anleitungen/mail-einstellungen-administrator.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

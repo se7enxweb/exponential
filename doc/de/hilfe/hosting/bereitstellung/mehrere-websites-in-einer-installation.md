@@ -23,7 +23,7 @@ Website getrennt gehalten werden können und wann getrennte Installationen besse
 ## Siteaccesses kurz gesagt
 
 Ein **Siteaccess** ist ein Weg in die Installation: ein Name, ein Satz von Einstellungen in `settings/siteaccess/<name>/` und eine Regel,
-welche Anfragen er beantwortet ([10.2](../../../../en/us/install/10-after-installing.md#102-siteaccesses-and-site-addresses)). Der Installer legt
+welche Anfragen er beantwortet ([10.2](../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)). Der Installer legt
 mindestens den öffentlichen Siteaccess und die Administration an (und mit `exp:install` einen Siteaccess für Redakteure). Weitere
 öffentliche Siteaccesses können weitere Websites, Sprachen oder Designs aus demselben Inhalts-Repository ausliefern.
 
@@ -58,7 +58,7 @@ Name den richtigen Siteaccess erreicht. Der Hostname, den der Browser sendet, mu
 und in Kleinbuchstaben.
 
 Hinter einem Proxy oder Load Balancer führen Sie ihn in `site.ini [HTTPHeaderSettings] TrustedProxies[]` auf, sonst sieht die Website
-Schema und Adresse des Proxys ([10.2](../../../../en/us/install/10-after-installing.md#102-siteaccesses-and-site-addresses)).
+Schema und Adresse des Proxys ([10.2](../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)).
 
 ## Logs und Caches pro Website
 
@@ -93,5 +93,5 @@ Installationen für **verschiedene Kunden**.
 
 - [Seitenpakete](seitenpakete-fuer-hoster.md)
 - [Trennung von Mandanten](../sicherheit/trennung-von-mandanten.md)
-- [Kapitel 10: Nach der Installation](../../../../en/us/install/10-after-installing.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 10: Nach der Installation](../../../installation/10-nach-der-installation.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

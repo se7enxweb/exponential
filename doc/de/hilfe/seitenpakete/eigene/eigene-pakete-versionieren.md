@@ -112,4 +112,4 @@ und [Nur die letzte Stelle zählt](../../../../en/us/help/designers/distribution
 - [Paketlizenzen und Versionen](../../../../en/us/features/6.0/package-licenses-and-versions.md)
 - [Eine Versionsnummer wählen](../../../../en/us/help/designers/distribution/choosing-a-version-number.md)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

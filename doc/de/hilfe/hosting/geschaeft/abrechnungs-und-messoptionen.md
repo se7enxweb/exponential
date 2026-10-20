@@ -93,7 +93,7 @@ nur Antworten „nicht gefunden“ und verdächtige Anfragen fest ([Anfrage-Logs
 | 6. MySQL | den Tabellenstatus / das Information Schema des Servers |
 
 Wo die Datenbank auf einem geteilten Server liegt, messen Sie pro Datenbank (oder Schema) und bewahren die Messung mit der
-Rechnung auf. Mehr zu jeder Engine: [Datenbankunterstützung](../../../../en/us/help/database-support.md).
+Rechnung auf. Mehr zu jeder Engine: [Datenbankunterstützung](../../datenbankunterstuetzung.md).
 
 ## Dienste abrechnen
 
@@ -121,4 +121,4 @@ Dienste, die eine natürliche Einheit haben:
 - [Hosting-Tarife gestalten](hosting-tarife-gestalten.md)
 - [Aufbau des Speichers](../betrieb/aufbau-des-speichers.md)
 - [Speicher, CPU und Festplatte dimensionieren](../grundlagen/speicher-cpu-und-festplatte-dimensionieren.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

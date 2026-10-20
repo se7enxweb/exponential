@@ -23,12 +23,12 @@ Hosting-Partner, der dem Programm beitritt, ergänzt diese Landschaft um sein ei
 | PHP | 8.0 bis 8.5 für die Linie 6.0.15; Velocity braucht 8.1 oder später | `doc/en/us/install/02-requirements.md` |
 | PHP-Erweiterungen | Unter anderem `dom`, `xsl`, `mbstring`, `iconv`, `intl`, `zlib` und eine Datenbankerweiterung | ebenda |
 | php.ini | `memory_limit` 64M oder mehr, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an | ebenda |
-| Datenbank | SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL, in dieser Reihenfolge der Präferenz | [Datenbankunterstützung](../../../en/us/help/database-support.md) |
-| Betriebssystem | Siehe die Stufen | [Betriebssystemunterstützung](../../../en/us/help/os-support.md) |
-| Engine | Velocity (empfohlen), FrankenPHP oder ein Webserver mit PHP-FPM | [Wer ist die Exponential Foundation?](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-velocity) |
+| Datenbank | SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL, in dieser Reihenfolge der Präferenz | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
+| Betriebssystem | Siehe die Stufen | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md) |
+| Engine | Velocity (empfohlen), FrankenPHP oder ein Webserver mit PHP-FPM | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
 | Kommandozeile | PHP-CLI mit derselben Version und denselben Erweiterungen wie das Web-PHP, für Cronjobs und Skripte | `doc/en/us/install/02-requirements.md` |
-| Sicherheit | TLS, Sicherheits-Header, Trennung der Benutzer, kein offen erreichbarer Installer | [Sicherheitshärtung](../../../en/us/help/security-hardening.md) |
-| Backups | Datenbank und Speicher, Wiederherstellung getestet | [Datenbankunterstützung](../../../en/us/help/database-support.md#backup-and-restore) |
+| Sicherheit | TLS, Sicherheits-Header, Trennung der Benutzer, kein offen erreichbarer Installer | [Sicherheitshärtung](../sicherheitshaertung.md) |
+| Backups | Datenbank und Speicher, Wiederherstellung getestet | [Datenbankunterstützung](../datenbankunterstuetzung.md#backup-und-wiederherstellung) |
 
 Die ausführliche Checkliste: [Technische Checkliste für Hosting-Partner](technische-checkliste-fuer-hosting-partner.md).
 
@@ -50,11 +50,11 @@ wofür zuständig ist: Server und PHP (Hoster), Anwendung und ihre Erweiterungen
 
 - Melden Sie umgebungsspezifische Fehler mit genauen Versionen ([Fehler gut melden](fehler-gut-melden.md)).
 - Dokumentieren Sie als Tutorial, was auf Ihrer Plattform funktioniert (Betriebssystem, Control Panel, Container); das
-  Projekt pflegt eine Seite [Betriebssystemunterstützung](../../../en/us/help/os-support.md), die mit solchen Berichten wächst.
+  Projekt pflegt eine Seite [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), die mit solchen Berichten wächst.
 
 ## Verwandte Seiten
 
 - [Technische Checkliste für Hosting-Partner](technische-checkliste-fuer-hosting-partner.md)
-- [Hosting, Datenbank und Betriebssystem wählen](../../../en/us/help/leadership/choosing-hosting-database-and-os.md)
+- [Hosting, Datenbank und Betriebssystem wählen](../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
 - [Partnerprofile](partnerprofile.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -29,9 +29,9 @@ lebt, und erklären, warum es Funktionen gibt.
 | [Die Geschichte](../../../en/us/history/README.md) | „Die Geschichte jeder Änderung ... seit Beginn der Ära von se7enxweb im Dezember 2023“, Monat für Monat |
 | [Das Änderungsbuch](../../../en/us/history/ledger/README.md) | Die vollständige Aufzeichnung der Commits pro Repository |
 | [Das Ökosystem](../../../en/us/history/ecosystem.md) | Änderungen in den verwandten Repositorys |
-| [Wer ist 7x?, Fast dreißig Jahre](../../../en/us/help/who-is-7x.md#nearly-thirty-years-the-timeline) | Die lange Zeitleiste |
-| [Wer ist 7x?, Die Jahre von eZ Publish](../../../en/us/help/who-is-7x.md#the-ez-publish-years-1999-to-2021) | Die Jahre vor 2021 |
-| [Zeitleiste](../../../en/us/help/who-is-the-exponential-foundation.md#timeline) | Wichtige Daten mit Quellen |
+| [Wer ist 7x?, Fast dreißig Jahre](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) | Die lange Zeitleiste |
+| [Wer ist 7x?, Die Jahre von eZ Publish](../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021) | Die Jahre vor 2021 |
+| [Zeitleiste](../wer-ist-die-exponential-foundation.md#zeitleiste) | Wichtige Daten mit Quellen |
 | `git log` in einem Klon | Jeder Commit seit 2002 |
 
 Jede Monatsseite beginnt mit **In short** und endet mit verwandten Seiten; jede Änderung trägt ihren Commit-Hash, den
@@ -46,7 +46,7 @@ Leser mit `git show <hash>` öffnen können ([Die Geschichte, Kurz gesagt](../..
 | „Der Monat, in dem das Produkt seinen Namen bekam“ | [August 2025](../../../en/us/history/2025/2025-08.md) |
 | „Von PHP 7 zu PHP 8.5“ | [April 2025](../../../en/us/history/2025/2025-04.md), [Dezember 2025](../../../en/us/history/2025/2025-12.md) |
 | „Die Geschichte von Velocity“ | [Chronik von Velocity](../../../en/us/history/velocity/README.md) |
-| „Ein Jahr Releases“ | [Wer ist 7x?, Die Releases 6.0.x](../../../en/us/help/who-is-7x.md#the-60x-releases) |
+| „Ein Jahr Releases“ | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
 | „Der erste Beitrag von außen“ | [Dezember 2023](../../../en/us/history/2023/2023-12.md) |
 
 ## Wie Sie einen schreiben
@@ -82,7 +82,7 @@ The full month: <link to the month page>. Every change of that time is in the le
 - **Der alte Name nur in der Vergangenheitsform**: „als die Software noch eZ Publish hieß“
   ([Richtig über die Geschichte schreiben](richtig-ueber-die-geschichte-schreiben.md)).
 - **Nennen Sie Menschen nur so, wie es die Quellen tun.** In der Geschichte und unter
-  [Wer ist 7x?](../../../en/us/help/who-is-7x.md#contributors-and-friends-of-the-project) genannte Beitragende dürfen so genannt werden wie
+  [Wer ist 7x?](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) genannte Beitragende dürfen so genannt werden wie
   dort; fügen Sie keine privaten Details hinzu.
 - **Keine Spekulation** darüber, warum jemand etwas getan hat, es sei denn, eine Quelle sagt es.
 - **Respektieren Sie frühere Unternehmen.** Die Arbeit von eZ Systems ist Teil des Codes; sprechen Sie mit Respekt davon
@@ -93,4 +93,4 @@ The full month: <link to the month page>. Every change of that time is in the le
 - [Gesprächspunkte: Langlebigkeit und Geschichte](gespraechspunkte-langlebigkeit-und-geschichte.md)
 - [Über ein Release schreiben](ueber-ein-release-schreiben.md)
 - [Die Geschichte von Exponential](../../../en/us/history/README.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

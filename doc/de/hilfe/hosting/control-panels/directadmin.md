@@ -28,15 +28,15 @@ Kombination testen, bevor Sie sie verkaufen.
 
 ## Was die Quellen sagen
 
-DirectAdmin erscheint in den Quellen an genau zwei Stellen, beide in [Betriebssystemunterstützung](../../../../en/us/help/os-support.md):
+DirectAdmin erscheint in den Quellen an genau zwei Stellen, beide in [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md):
 
 - In der Tabelle der Stufe 3, in einer Zeile gemeinsam mit cPanel: „EasyApache (EA-PHP 8.x), PHP pro Konto“ als Grund, warum die
   Zeile funktionieren sollte, und „Shared Hosting kann lang laufende Prozesse verbieten, sodass Velocity womöglich nicht erlaubt ist;
   nutzen Sie Apache oder LiteSpeed mit `.htaccess`“ als das, worauf zu achten ist. Der Punkt, der für DirectAdmin gilt, ist ein PHP 8.x
-  pro Konto ([Stufe 3](../../../../en/us/help/os-support.md#tier-3-expected-to-work)).
+  pro Konto ([Stufe 3](../../betriebssystemunterstuetzung.md#stufe-3-voraussichtlich-lauffähig)).
 - In „Container, Cloud und Hosting-Panels“: cPanel und DirectAdmin sind Stufe 3; auf Shared Hosting ohne Shell-Zugang ist der
   Setup-Assistent im Browser der Installer
-  ([Container, Cloud und Hosting-Panels](../../../../en/us/help/os-support.md#containers-cloud-and-hosting-panels)).
+  ([Container, Cloud und Hosting-Panels](../../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels)).
 
 Stufe 3 ist eine begründete Erwartung, kein Testergebnis. Niemand im Projekt hat Exponential auf DirectAdmin laufen sehen.
 
@@ -46,11 +46,11 @@ Beantworten Sie diese für Ihren eigenen Server-Aufbau, bevor Sie eine Produktbe
 
 | Frage | Warum sie für Exponential zählt |
 |---|---|
-| Welche PHP-Versionen 8.x kann ein Konto wählen, und sind `intl` und `xsl` eingebaut? | beide sind kritische Tests des Setup-Assistenten ([2.4](../../../../en/us/install/02-requirements.md#24-the-setup-wizards-system-check)) |
-| Läuft PHP als eigener Benutzer des Kontos (PHP-FPM pro Konto oder Gleichwertiges)? | die Regel eines Benutzers für `var/` und die Abschottung zwischen Konten ([8.7.2](../../../../en/us/install/08-serving-the-site.md#872-one-user-or-one-group)) |
+| Welche PHP-Versionen 8.x kann ein Konto wählen, und sind `intl` und `xsl` eingebaut? | beide sind kritische Tests des Setup-Assistenten ([2.4](../../../installation/02-voraussetzungen.md#24-der-systemtest-des-setup-assistenten)) |
+| Läuft PHP als eigener Benutzer des Kontos (PHP-FPM pro Konto oder Gleichwertiges)? | die Regel eines Benutzers für `var/` und die Abschottung zwischen Konten ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)) |
 | Welcher Webserver liefert die Konten aus, und liest er `.htaccess`? | die Rewrite-Regeln werden als `.htaccess_root` mitgeliefert |
 | Ist `open_basedir` pro Konto gesetzt? | der Assistent warnt nur, aber Werkzeuge, die nach Binärdateien des Systems suchen, sind betroffen ([ezupdate](../../../../en/us/features/6.0/extensions/ezupdate.md)) |
-| Welche Funktionen stehen in `disable_functions`? | die Seite Cronjobs braucht `proc_open`, `exec` und `posix_kill` ([Cronjobs](../../../../en/us/guides/cronjobs.md#2-before-you-start)) |
+| Welche Funktionen stehen in `disable_functions`? | die Seite Cronjobs braucht `proc_open`, `exec` und `posix_kill` ([Cronjobs](../../../anleitungen/cronjobs.md#2-bevor-sie-beginnen)) |
 | Erhalten Konten eine Shell? | Composer und die Konsole brauchen eine; ohne sie installiert der Setup-Assistent |
 | Auf welchen Datenbankservern können Konten Datenbanken anlegen? | die offizielle Reihenfolge und ihre praktischen Mindestwerte |
 
@@ -59,9 +59,9 @@ Beantworten Sie diese für Ihren eigenen Server-Aufbau, bevor Sie eine Produktbe
 | Aufgabe | Was Exponential braucht | Details |
 |---|---|---|
 | PHP-Version | 8.0 oder später für Web und Kommandozeile, in beiden dieselben Erweiterungen | [PHP-Auswahl und FPM-Pools](php-auswahl-und-fpm-pools.md) |
-| PHP-Einstellungen | `memory_limit` 64M oder mehr, `max_execution_time` 30 oder mehr, `date.timezone`, `file_uploads`, `allow_url_fopen`; Upload-Größen für die Dateien der Redakteure | [2.5](../../../../en/us/install/02-requirements.md#25-phpini-settings) |
-| Document Root | das Wurzelverzeichnis der Installation, wo `index.php` liegt | [8.5.1](../../../../en/us/install/08-serving-the-site.md#851-step-by-step) |
-| Rewrite-Regeln | `.htaccess` aus `.htaccess_root` kopiert | [13.2](../../../../en/us/install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out) |
+| PHP-Einstellungen | `memory_limit` 64M oder mehr, `max_execution_time` 30 oder mehr, `date.timezone`, `file_uploads`, `allow_url_fopen`; Upload-Größen für die Dateien der Redakteure | [2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini) |
+| Document Root | das Wurzelverzeichnis der Installation, wo `index.php` liegt | [8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt) |
+| Rewrite-Regeln | `.htaccess` aus `.htaccess_root` kopiert | [13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf) |
 | Datenbank | in der offiziellen Reihenfolge: 1. SQLite 3 (kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich | [Datenbanken und Benutzer](datenbanken-und-benutzer.md) |
 | Cron | `runcronjobs.php` mit dem PHP des Kontos, alle paar Minuten für `frequent` | [Cron und Shell-Zugang](cron-und-shell-zugang.md) |
 | Zertifikat | HTTPS für jeden Namen der Website, Umleitung von HTTP | [TLS-Zertifikate in Panels](tls-zertifikate-in-panels.md) |
@@ -73,11 +73,11 @@ Die Quellen sagen nicht, welchen Webserver ein DirectAdmin-Server betreibt. Was 
 | Server | Stand in den Quellen |
 |---|---|
 | Apache httpd 2.4 mit PHP-FPM | Stufe 1; Regeln in `.htaccess_root` |
-| nginx mit PHP-FPM | Stufe 2; der Server-Block ist abgeleitet, nicht mitgeliefert ([8.6](../../../../en/us/install/08-serving-the-site.md#86-nginx-with-php-fpm)) |
+| nginx mit PHP-FPM | Stufe 2; der Server-Block ist abgeleitet, nicht mitgeliefert ([8.6](../../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm)) |
 | LiteSpeed, OpenLiteSpeed | Stufe 3; liest die Rewrite-Regeln von Apache in den meisten Fällen |
-| nginx vor Apache | Apache liest `.htaccess`; setzen Sie die Einstellungen für vertrauenswürdige Proxys wie bei jedem vorgeschalteten Proxy ([13.10](../../../../en/us/install/13-security-hardening.md#1310-behind-a-proxy-trusted-headers)) |
+| nginx vor Apache | Apache liest `.htaccess`; setzen Sie die Einstellungen für vertrauenswürdige Proxys wie bei jedem vorgeschalteten Proxy ([13.10](../../../installation/13-sicherheitshaertung.md#1310-hinter-einem-proxy-vertrauenswürdige-header)) |
 
-Quelle: [Webserver](../../../../en/us/help/os-support.md#web-servers). Wenn Konten nur von nginx ausgeliefert werden, kann ein Konto `.htaccess`
+Quelle: [Webserver](../../betriebssystemunterstuetzung.md#webserver). Wenn Konten nur von nginx ausgeliefert werden, kann ein Konto `.htaccess`
 nicht nutzen; der abgeleitete Server-Block muss dann Teil der Serverkonfiguration sein, die Sie verwalten.
 
 ## Ein Testplan
@@ -91,7 +91,7 @@ nicht nutzen; der abgeleitete Server-Block muss dann Teil der Serverkonfiguratio
 | Sichern und in ein zweites Konto wiederherstellen | die wiederhergestellte Website funktioniert |
 | Zwei Konten auf einem Server | das PHP keines der Konten kann `settings/override` des anderen lesen |
 
-Melden Sie einen erfolgreichen Lauf dem Projekt, damit die Stufe aufrücken kann ([Die vier Stufen](../../../../en/us/help/os-support.md#the-four-tiers)).
+Melden Sie einen erfolgreichen Lauf dem Projekt, damit die Stufe aufrücken kann ([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)).
 
 ## Checkliste
 
@@ -105,5 +105,5 @@ Melden Sie einen erfolgreichen Lauf dem Projekt, damit die Stufe aufrücken kann
 
 - [Control Panels: Überblick](README.md), [cPanel](cpanel.md)
 - [Shared Hosting](../modelle/shared-hosting.md), [Trennung von Mandanten](../sicherheit/trennung-von-mandanten.md)
-- [Betriebssystemunterstützung](../../../../en/us/help/os-support.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

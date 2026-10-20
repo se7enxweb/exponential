@@ -26,7 +26,7 @@ Zurück zu [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.m
 ## Die Hebel, in der Reihenfolge ihrer Wirkung
 
 Das Installationsbuch führt sie in dieser Reihenfolge auf
-([Kapitel 10, Abschnitt 10.12](../../../../en/us/install/10-after-installing.md#1012-performance-tuning)):
+([Kapitel 10, Abschnitt 10.12](../../../installation/10-nach-der-installation.md#1012-performance-tuning)):
 
 1. **Mit Velocity ausliefern** und seinem Antwort-Cache. Eine zwischengespeicherte anonyme Seite wird ohne PHP beantwortet;
    persistente Worker halten die Anwendung, die Datenbankverbindung und die kompilierten Dateien warm.
@@ -35,7 +35,7 @@ Das Installationsbuch führt sie in dieser Reihenfolge auf
 3. **OPcache.**
 4. **APCu** für die Speicherstufe des Antwort-Caches von Velocity und den SQL-Abfrage-Cache im Modus `shared`.
 5. **Der SQL-Abfrage-Cache** (`querycache.ini [QueryCacheSettings] Mode=request` oder `shared`), auf Ihrer Website gemessen.
-6. **Die Datenbank** ([Kapitel 9](../../../../en/us/install/09-databases.md)).
+6. **Die Datenbank** ([Kapitel 9](../../../installation/09-datenbanken.md)).
 
 Das README fügt einen Punkt hinzu, der für Hoster zählt, die Apache oder nginx behalten: Der größte Teil der Geschwindigkeit kam von
 Korrekturen an Exponential und am Cache, nicht vom Prozessmodell des Servers; Exponential 6.0.15+ ist auch unter Apache oder Nginx
@@ -87,6 +87,6 @@ das selbst; betrachten Sie sie als Beispiele dafür, was zu messen ist, nicht al
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
 - [Webserver und Engines](../server/README.md)
 - [Langsame Website](../runbooks/langsame-website.md)
-- [Caches](../../../../en/us/guides/caches.md)
-- [Benchmark von Exponential](../../../../en/us/guides/benchmarking.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Caches](../../../anleitungen/caches.md)
+- [Benchmark von Exponential](../../../anleitungen/benchmarking.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

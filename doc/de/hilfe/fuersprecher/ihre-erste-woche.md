@@ -36,8 +36,8 @@ Kanäle und haben bereits mindestens zwei Menschen geholfen.
 
 Lesen Sie in dieser Reihenfolge:
 
-1. [Wer ist die Exponential Foundation?, Kurz gesagt](../../../en/us/help/who-is-the-exponential-foundation.md#in-short)
-2. [Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short)
+1. [Wer ist die Exponential Foundation?, Kurz gesagt](../wer-ist-die-exponential-foundation.md#kurz-gesagt)
+2. [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt)
 3. [Die Produktfamilie kennen](die-produktfamilie-kennen.md)
 4. [Die Geschichte von Exponential in zwei Minuten](die-geschichte-in-zwei-minuten.md)
 
@@ -53,13 +53,13 @@ Datenbankserver ([Exponential mit einem Befehl installieren](../../../en/us/feat
 ./console exp:install              # installs the site on SQLite
 ```
 
-Folgen Sie dann [Erste Schritte](../../../en/us/help/getting-started.md) und dem [Rundgang durch die Administration](../../../en/us/help/admin-tour.md).
+Folgen Sie dann [Erste Schritte](../erste-schritte.md) und dem [Rundgang durch die Administration](../rundgang-durch-die-administration.md).
 Öffnen Sie die Hilfe mit dem „?“ in der Kopfzeile.
 
 > **Warnung**
 > Der Installer gibt ein erzeugtes Administratorpasswort aus und schreibt es in `var/log/initial-admin-password`.
 > Ändern Sie es nach der ersten Anmeldung und löschen Sie diese Datei
-> ([Das Standardpasswort des Administrators](../../../en/us/help/default-administrator-password.md)). Veröffentlichen Sie es nirgends.
+> ([Das Standardpasswort des Administrators](../standard-administratorpasswort.md)). Veröffentlichen Sie es nirgends.
 
 **Erledigt, wenn** Sie einen Inhalt bearbeitet und veröffentlicht und ein Layout im Layouts-Editor geöffnet haben.
 
@@ -99,7 +99,7 @@ geprüft haben.
 Finden Sie eine Sache in der Hilfe, die Sie diese Woche verwirrt hat: einen Tippfehler, einen fehlenden Schritt, einen
 veralteten Satz. Korrigieren Sie sie mit **Auf GitHub bearbeiten** und eröffnen Sie einen Pull Request
 ([Die Hilfe verbessern](die-hilfe-verbessern.md)). Jeder Pull Request wird übernommen
-([Wie das Projekt wächst](../../../en/us/help/who-is-the-exponential-foundation.md#how-the-project-grows)).
+([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)).
 
 ## Tag 7: die nächsten 90 Tage planen
 
@@ -126,4 +126,4 @@ Day 7  90-day plan           [ ] written   [ ] contribution log started
 - [Fürsprecher: hier beginnen](fuersprecher-hier-beginnen.md)
 - [Ein 90-Tage-Plan für Fürsprecher](ein-90-tage-plan.md)
 - [Checklisten für Fürsprecher](checklisten-fuer-fuersprecher.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

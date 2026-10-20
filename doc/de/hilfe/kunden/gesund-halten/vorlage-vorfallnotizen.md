@@ -74,8 +74,8 @@ INCIDENT NOTES                                    Reference: <your own number or
 
 | Fakt | Quelle |
 |---|---|
-| Genaue Zeiten von Deployments, Einstellungsänderungen, Ein- und Ausschalten der Wartung | Der Kanal `system` des Prüfprotokolls; Umschaltungen der Wartung werden als `system.maintenance.change` festgehalten ([Wartungsmodus](../../../../en/us/guides/maintenance-mode.md), [Prüfprotokoll für den Betrieb](../../../../en/us/help/businesses/reliability/audit-trail-for-operations.md)) |
-| Der technische Fehler hinter einer Referenz | **Setup > Logdateien**, Feld **Fehlerreferenz** ([Einen Fehler anhand seiner Referenz finden](../../../../en/us/guides/finding-an-error-by-its-reference.md)) |
+| Genaue Zeiten von Deployments, Einstellungsänderungen, Ein- und Ausschalten der Wartung | Der Kanal `system` des Prüfprotokolls; Umschaltungen der Wartung werden als `system.maintenance.change` festgehalten ([Wartungsmodus](../../../anleitungen/wartungsmodus.md), [Prüfprotokoll für den Betrieb](../../../../en/us/help/businesses/reliability/audit-trail-for-operations.md)) |
+| Der technische Fehler hinter einer Referenz | **Setup > Logdateien**, Feld **Fehlerreferenz** ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)) |
 | Wer sich angemeldet oder Inhalte geändert hat | Das Prüfprotokoll ([Das Prüfprotokoll](../../../../en/us/features/6.0/audit-trail.md)) |
 | Verfügbarkeit und Zeitpunkte von Alarmen | Ihre externe Überwachung ([Überwachung](ueberwachung.md)) |
 | Reaktionszeiten | Das Ticketsystem Ihres Anbieters |
@@ -89,7 +89,7 @@ Bitten Sie Ihren Administrator oder Hoster nach dem Vorfall um diese Fakten; Sie
 ## Nach der Auswertung
 
 Übernehmen Sie die Maßnahmen in Ihre regelmäßige Routine: die [Zuverlässigkeits-Scorecard](../../../../en/us/help/businesses/reliability/reliability-scorecard.md)
-und das [Risikoregister](../../../../en/us/help/leadership/risk-management.md). Wenn der Vorfall Sie Geld gekostet hat, hilft Ihnen das
+und das [Risikoregister](../../fuehrung/risikomanagement.md). Wenn der Vorfall Sie Geld gekostet hat, hilft Ihnen das
 [Arbeitsblatt zu den Kosten von Ausfällen](../../../../en/us/help/businesses/costs/cost-of-downtime-worksheet.md), für die nächste
 Vertragsverhandlung eine Zahl zu nennen.
 
@@ -98,4 +98,4 @@ Vertragsverhandlung eine Zahl zu nennen.
 - [Wenn die Website nicht erreichbar ist](wenn-die-website-nicht-erreichbar-ist.md)
 - [Probleme melden](probleme-melden.md)
 - [Ihren Anbieter jedes Jahr überprüfen](../partner-und-hoster/anbieter-jedes-jahr-ueberpruefen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

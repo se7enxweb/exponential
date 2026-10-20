@@ -22,12 +22,12 @@ Sprache. Die Planung einer mehrsprachigen Website behandelt
 
 | Bedarf | Was ihn trägt | Wo es erklärt wird |
 |---|---|---|
-| Jedes Element in mehreren Sprachen | Übersetzungen jedes Inhaltselements, mit einer Hauptsprache | [Sprachen](../../../../en/us/help/languages.md), [Inhaltssprachen](../../../../en/us/guides/content-languages.md) |
+| Jedes Element in mehreren Sprachen | Übersetzungen jedes Inhaltselements, mit einer Hauptsprache | [Sprachen](../../sprachen.md), [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
 | Jede Sprache mit eigener Adresse | Siteaccesses, zugeordnet über Host oder Pfad, und Sprach-URLs | [Sprachumschalter und Sprach-URLs](../../../../en/us/help/creators/website-creators/language-switcher-and-language-urls.md) |
 | Arabisch, Hebräisch und andere Sprachen mit Schreibrichtung von rechts nach links | Unterstützung für die Schreibrichtung von rechts nach links in der Website und in der Administration | [Von rechts nach links](../../../../en/us/features/6.0/right-to-left.md), [Märkte mit Schreibrichtung von rechts nach links](../../../../en/us/help/businesses/multilingual/right-to-left-markets.md) |
 | Datum, Währungen und Formate pro Land | Locales | [Währungen, Datums- und Zahlenformate](../../../../en/us/help/businesses/multilingual/currencies-dates-and-formats.md) |
 | Hilfe beim Übersetzen | Exponential Intelligence: „Translate“ pro Feld und Übersetzungsabgleich über die Auftragswarteschlange, wenn sich die Quelle geändert hat | `README.md` („Exponential Intelligence“), [Unterstützte Übersetzung](../../../../en/us/help/businesses/multilingual/assisted-translation-with-exponential-intelligence.md) |
-| Eine Administration in der Sprache der Redaktion | Die Administration in vielen Sprachen (die Übersetzungsdateien in `share/translations/`) | [Sprachen](../../../../en/us/help/languages.md#the-language-of-the-administration) |
+| Eine Administration in der Sprache der Redaktion | Die Administration in vielen Sprachen (die Übersetzungsdateien in `share/translations/`) | [Sprachen](../../sprachen.md#die-sprache-der-administration) |
 
 ## Entscheiden Sie zuerst diese vier Dinge
 
@@ -62,4 +62,4 @@ Folgen Sie dem [Lesepfad für mehrsprachige Websites](lesepfad-mehrsprachige-web
 - [Übersetzungs-Workflow (Unternehmen)](../../../../en/us/help/businesses/multilingual/translation-workflow.md)
 - [Checkliste für Mehrsprachigkeit (Unternehmen)](../../../../en/us/help/businesses/multilingual/multilingual-checklist.md)
 - [Mehrsprachige Websites (Website-Ersteller)](../../../../en/us/help/creators/website-creators/multilingual-sites.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

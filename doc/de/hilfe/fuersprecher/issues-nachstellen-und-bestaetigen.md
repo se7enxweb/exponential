@@ -61,7 +61,7 @@ On the current main (<commit>) this no longer happens; on <older version> it doe
 ```
 
 Lassen Sie Passwörter, Schlüssel, Serverpfade und personenbezogene Daten weg
-([Wenn etwas schiefgeht](../../../en/us/help/when-something-goes-wrong.md#a-good-bug-description)). Nutzen Sie eine Reaktion statt
+([Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#eine-gute-fehlerbeschreibung)). Nutzen Sie eine Reaktion statt
 Kommentaren mit „+1“ ([GitHub für Fürsprecher](github-fuer-fuersprecher.md)).
 
 ## Verwandte Seiten
@@ -69,4 +69,4 @@ Kommentaren mit „+1“ ([GitHub für Fürsprecher](github-fuer-fuersprecher.md
 - [Fehler gut melden](fehler-gut-melden.md)
 - [Die Entwicklungslinie testen](die-entwicklungslinie-testen.md)
 - [Einen Beitrags-Sprint vorschlagen](einen-beitrags-sprint-vorschlagen.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

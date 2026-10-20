@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Betreiber, deren Website eine App, eine andere Website oder ein internes System versorgen wird.
 Mit der REST-API können Programme Inhalte lesen und, in Version 2, anlegen, aktualisieren und löschen, als JSON über
-HTTP ([REST-API v1 und v2](../../../../en/us/guides/rest-api-v1-and-v2.md)). Sie müssen die Routen nicht lesen; Sie müssen
+HTTP ([REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)). Sie müssen die Routen nicht lesen; Sie müssen
 wissen, was das für Kontrolle und Sicherheit bedeutet.
 
 ## Inhalt
@@ -24,7 +24,7 @@ wissen, was das für Kontrolle und Sicherheit bedeutet.
 
 ## In Kürze
 
-Aus [REST-API v1 und v2](../../../../en/us/guides/rest-api-v1-and-v2.md):
+Aus [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md):
 
 - Eine einzige Erweiterung liefert sie aus: `ezprestapi`. Das ältere `ezprestapiprovider` ist veraltet; sein letztes
   Release ist eine Kompatibilitätsschicht über `ezprestapi`.
@@ -42,7 +42,7 @@ Die Sicht für Unternehmen steht unter [REST-API v1 und v2 für Unternehmen](../
 |---|---|
 | Was ein Programm lesen oder ändern darf | die Richtlinien des Kontos, als das es handelt; ein Programm erhält nie mehr als dieses Konto |
 | Welche Inhalte öffentlich sind | dieselben Sektionen und Rollen wie bei der Website: Inhalte, die anonyme Besucher nicht lesen dürfen, werden an anonyme Anfragen nicht ausgeliefert |
-| Wer Schlüssel erzeugen darf | die Richtlinie `apikey/create` ([Persönliche API-Schlüssel](../../../../en/us/guides/api-keys.md)) |
+| Wer Schlüssel erzeugen darf | die Richtlinie `apikey/create` ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)) |
 | Was ein Schlüssel darf | Bereiche (Scopes), die bei seiner Erzeugung gewählt werden, nie über die Richtlinien des Besitzers hinaus |
 | Den Zugriff beenden | den Schlüssel widerrufen; das wirkt bei der nächsten Anfrage auf jedem Server |
 | Nachweise | jeder erzeugte, widerrufene, erstmals verwendete oder abgewiesene Schlüssel steht als `access.apikey.*` im Prüfprotokoll |
@@ -63,7 +63,7 @@ Aus [Apps und API-Schlüssel](../../../../en/us/help/businesses/mobile-and-headl
 | Ein Skript, das die Remote-Dienste nutzt | ein Token für Remote-Dienste ([Remote-Dienste (expservices)](remote-dienste-expservices.md)) |
 
 Schlüssel werden **einmal** angezeigt, wenn sie erzeugt werden; gespeichert wird nur ein Hash, sodass niemand einen
-Schlüssel erneut anzeigen kann, nicht einmal ein Administrator ([Persönliche API-Schlüssel](../../../../en/us/guides/api-keys.md)).
+Schlüssel erneut anzeigen kann, nicht einmal ein Administrator ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
 Bewahren Sie sie im Geheimnisspeicher des Programms auf, nie in einem Dokument oder einer E-Mail.
 
 ## Fragen vor dem Live-Gang
@@ -80,13 +80,13 @@ Weitere Fragen stehen unter [Eine Integration planen](eine-integration-planen.md
 ## Einmal im Jahr
 
 - Administratoren sehen jeden Schlüssel unter **Setup > oAuth-Verwaltung > API-Schlüssel**, mit Suche und Filtern;
-  widerrufen Sie die, die niemand braucht ([Persönliche API-Schlüssel](../../../../en/us/guides/api-keys.md)).
+  widerrufen Sie die, die niemand braucht ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
 - Beziehen Sie die Konten der Integrationen in die [Zugriffsüberprüfung](../../../../en/us/help/businesses/security/access-reviews.md) ein.
 - Fragen Sie den Partner, ob ein Upgrade etwas für API-Clients ändert.
 
 ## Verwandte Seiten
 
-- [REST-API v1 und v2](../../../../en/us/guides/rest-api-v1-and-v2.md)
+- [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
 - [Headless mit der REST-API](../../../../en/us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md)
 - [Mobil und Apps](mobil-und-apps.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

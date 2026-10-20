@@ -91,5 +91,5 @@ kommt, welche Einstellungen eine Installation darauf richten und was ohne ihn zu
 - [Ein eigenes Seitenpaket erstellen](../eigene/README.md)
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Glossar](../glossar-der-seitenpakete.md)
-- [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../../en/us/install/04-choosing-an-install-method.md#43-site-packages-what-is-installed)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Eine Installationsmethode wählen, 4.3 Seitenpakete](../../../installation/04-installationsweg-waehlen.md#43-site-pakete-was-installiert-wird)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

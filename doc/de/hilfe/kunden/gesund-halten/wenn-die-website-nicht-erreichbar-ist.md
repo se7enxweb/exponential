@@ -78,6 +78,6 @@ vermuteten Einbruch handelt; löschen Sie selbst nichts ([Kompromittierte Websit
 ## Verwandte Seiten
 
 - [Überwachung](ueberwachung.md)
-- [Wenn etwas schiefgeht](../../../../en/us/help/when-something-goes-wrong.md)
+- [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
 - [Runbooks für Hoster](../../hosting/runbooks/README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

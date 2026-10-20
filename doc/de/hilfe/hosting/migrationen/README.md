@@ -41,15 +41,15 @@ Hoster: die Bewertung, der Plan, der Umzug, die Prüfungen und die Zuständigkei
 
 ## Die Migrationskapitel des Installationsbuchs
 
-- [Kapitel 14: Migration von der Linie 4.x](../../../../en/us/install/14-migrating-from-4x.md)
-- [Kapitel 15: Migration vom Legacy-Stack 5.x](../../../../en/us/install/15-migrating-from-5x-legacy.md)
-- [Kapitel 16: Migration von eZ Platform und Ibexa](../../../../en/us/install/16-migrating-from-ez-platform-and-ibexa.md)
-- [Kapitel 17: Referenz zur Migration](../../../../en/us/install/17-migration-reference.md)
-- [Kapitel 11: Upgrade](../../../../en/us/install/11-upgrading.md)
+- [Kapitel 14: Migration von der Linie 4.x](../../../installation/14-migration-von-4x.md)
+- [Kapitel 15: Migration vom Legacy-Stack 5.x](../../../installation/15-migration-von-5x-legacy.md)
+- [Kapitel 16: Migration von eZ Platform und Ibexa](../../../installation/16-migration-von-ez-platform-und-ibexa.md)
+- [Kapitel 17: Referenz zur Migration](../../../installation/17-migrationsreferenz.md)
+- [Kapitel 11: Upgrade](../../../installation/11-aktualisieren.md)
 
 ## Verwandte Seiten
 
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
 - [Wiederherstellung und Wiederherstellungstests](../betrieb/wiederherstellung-und-wiederherstellungstests.md)
 - [Checkliste für den Start einer Kunden-Website](../checklisten/checkliste-fuer-den-start-einer-kunden-website.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -147,8 +147,8 @@ Wenn eines davon fehlt: [Probleme mit dem Demomodus](../runbooks/probleme-mit-de
 
 - [Demomodus: der Hinweis zum Upgrade](../../../../en/us/bc/6.0/demo-mode.md)
 - [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md), [Probleme mit dem Demomodus](../runbooks/probleme-mit-dem-demomodus.md),
-  [Häufige Fragen zum Demomodus](../../../../en/us/help/demo-mode-faq.md)
+  [Häufige Fragen zum Demomodus](../../demomodus-faq.md)
 - [Beispiele für den Demomodus](../../../../en/us/examples/demo-mode/README.md)
 - [LiteSpeed und OpenLiteSpeed](litespeed-und-openlitespeed.md), [Plesk](../control-panels/plesk.md)
 - [exp:install für Hoster](../bereitstellung/exp-install-fuer-hoster.md), [Cronjobs](../betrieb/cronjobs.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

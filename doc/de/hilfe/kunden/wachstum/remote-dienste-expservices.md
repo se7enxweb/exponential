@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Betreiber, deren Partner oder eigenes Personal Arbeit auf der Website automatisieren möchte: ein
 Skript, das jede Nacht Produkte importiert, ein Dashboard, das Zahlen liest, ein Portal-Frontend, eine Desktop- oder
 Smartphone-App für Redakteure. Die Erweiterung `expservices` macht aus den Funktionen der Administration über tausend
-benannte Dienste, die über HTTP aufgerufen werden und mit JSON antworten ([Remote-Dienste und Apps](../../../../en/us/guides/remote-services-and-apps.md)).
+benannte Dienste, die über HTTP aufgerufen werden und mit JSON antworten ([Remote-Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)).
 Sie ist Teil der Standarddistribution.
 
 ## Inhalt
@@ -87,7 +87,7 @@ nutzen würden, bevor Sie sie brauchen.
 
 ## Verwandte Seiten
 
-- [Remote-Dienste und Apps](../../../../en/us/guides/remote-services-and-apps.md)
+- [Remote-Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)
 - [Remote-Dienste für Unternehmen](../../../../en/us/help/businesses/mobile-and-headless/remote-services.md)
 - [Eine Integration planen](eine-integration-planen.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

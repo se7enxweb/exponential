@@ -148,6 +148,6 @@ sevenx_multisite ezownerchange aktiviert (15. Oktober 2026).
 - [Das Skript des Multisite-Installers](../sevenx-multisite/das-skript-des-multisite-installers.md)
 - [Korrekturen nach der Installation](../sevenx-multisite/korrekturen-nach-der-installation-von-sevenx-multisite.md)
 - [Die Installerskripte von CJW](../cjw-multisite/die-installerskripte-von-cjw-multisite.md)
-- [Installationsskripte von Paketen](../../../../en/us/install/04-choosing-an-install-method.md#package-install-scripts-the-multi-site-installer)
+- [Installationsskripte von Paketen](../../../installation/04-installationsweg-waehlen.md#installationsskripte-der-pakete-der-multi-site-installer)
 - [Seitenpakete: hier beginnen](../README.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

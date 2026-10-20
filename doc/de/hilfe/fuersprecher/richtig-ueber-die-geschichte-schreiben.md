@@ -25,12 +25,12 @@ andere Unternehmen und einen alten Produktnamen. Sie richtig darzustellen ist ei
 | Tatsache | Quelle |
 |---|---|
 | Die Codebasis wurde von eZ Systems als eZ Publish entwickelt; ihr Copyright von 1999 bis 2014 bleibt im Code | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
-| eZ Publish wurde von seinem Hersteller nach fast achtzehn Jahren eingestellt | [Exponential 6](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
-| „Die Plattform, die ursprünglich als eZ Publish bekannt war, erreichte 2021 das Ende ihrer Lebensdauer. Wir haben weitergemacht.“ | [Zeitleiste](../../../en/us/help/who-is-the-exponential-foundation.md#timeline) |
-| 7x, früher Brookins Consulting, hat 2023 die Leitung übernommen | [Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short) |
-| 6.0.0 erschien am 1. Januar 2024, damals noch unter dem Namen eZ Publish | [Zeitleiste](../../../en/us/help/who-is-the-exponential-foundation.md#timeline) |
+| eZ Publish wurde von seinem Hersteller nach fast achtzehn Jahren eingestellt | [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
+| „Die Plattform, die ursprünglich als eZ Publish bekannt war, erreichte 2021 das Ende ihrer Lebensdauer. Wir haben weitergemacht.“ | [Zeitleiste](../wer-ist-die-exponential-foundation.md#zeitleiste) |
+| 7x, früher Brookins Consulting, hat 2023 die Leitung übernommen | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
+| 6.0.0 erschien am 1. Januar 2024, damals noch unter dem Namen eZ Publish | [Zeitleiste](../wer-ist-die-exponential-foundation.md#zeitleiste) |
 | Das Produkt wurde am 11. und 12. August 2025 zu Exponential | ebenda |
-| „Dieses Projekt steht in keiner Verbindung zur ursprünglichen Software eZ Publish oder ihrem ursprünglichen Entwickler, eZ Systems oder Ibexa“ | [Wer ist 7x?, Kurz gesagt](../../../en/us/help/who-is-7x.md#in-short) |
+| „Dieses Projekt steht in keiner Verbindung zur ursprünglichen Software eZ Publish oder ihrem ursprünglichen Entwickler, eZ Systems oder Ibexa“ | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
 
 ## Formulierungen, die Sie verwenden
 
@@ -53,7 +53,7 @@ andere Unternehmen und einen alten Produktnamen. Sie richtig darzustellen ist ei
 | „tot“, „aufgegeben“ über die Produkte des ursprünglichen Herstellers | Respektlos und ungenau; sagen Sie „eingestellt“ |
 | Spekulationen, warum der Hersteller aufgehört hat | Keine Quelle |
 
-Quelle dieser Regeln: [Marken- und Namensregeln, Der alte Name](../../../en/us/help/business/brand-and-naming-rules.md#the-old-name-ez-publish-only-as-history).
+Quelle dieser Regeln: [Marken- und Namensregeln, Der alte Name](../geschaeft/marken-und-namensregeln.md#der-alte-name-ez-publish-nur-als-geschichte).
 
 ## Umformulierungen
 
@@ -66,17 +66,17 @@ Quelle dieser Regeln: [Marken- und Namensregeln, Der alte Name](../../../en/us/h
 
 ## Respekt vor früherer Arbeit
 
-Hunderte Menschen haben die Codebasis vor Exponential gebaut ([Beitragende und Freunde des Projekts](../../../en/us/help/who-is-7x.md#contributors-and-friends-of-the-project)).
+Hunderte Menschen haben die Codebasis vor Exponential gebaut ([Beitragende und Freunde des Projekts](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
 Das Copyright von eZ Systems bleibt im Code. Sprechen Sie mit Dankbarkeit von dieser Arbeit. Das Projekt nennt andere
 beim Namen (Netgen, Mugo Web, CJW Network), und das sollten Sie auch tun
 ([Andere Projekte und Unternehmen respektieren](andere-projekte-respektieren.md)).
 
 Bezeichner im Code mit `eZ` (`eZContentObject`, `eZINI`) sind nicht der Produktname und ändern sich nie
-([Bezeichner im Code bleiben, wie sie sind](../../../en/us/help/business/brand-and-naming-rules.md#code-identifiers-stay-as-they-are)).
+([Bezeichner im Code bleiben, wie sie sind](../geschaeft/marken-und-namensregeln.md#bezeichner-im-code-bleiben-wie-sie-sind)).
 
 ## Verwandte Seiten
 
 - [Kurzkarte zu den Namensregeln](kurzkarte-namensregeln.md)
 - [Gesprächspunkte: Langlebigkeit und Geschichte](gespraechspunkte-langlebigkeit-und-geschichte.md)
 - [Beiträge zur Geschichte schreiben](beitraege-zur-geschichte-schreiben.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

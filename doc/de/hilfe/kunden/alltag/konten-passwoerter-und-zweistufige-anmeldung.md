@@ -10,8 +10,8 @@ type: help
 # Konten, Passwörter und zweistufige Anmeldung
 
 Diese Seite ist für den Betreiber oder die Leitung, die die Kontenregeln für das Team festlegt. Die Klicks für jede
-Person stehen unter [Ihr Konto und die Anmeldung](../../../../en/us/help/accounts-and-sign-in.md); die Einrichtung für den
-Administrator unter [Zwei-Faktor-Anmeldung](../../../../en/us/guides/two-factor-login.md). Hier finden Sie, was zu entscheiden
+Person stehen unter [Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md); die Einrichtung für den
+Administrator unter [Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md). Hier finden Sie, was zu entscheiden
 und was zu prüfen ist.
 
 ## Inhalt
@@ -50,7 +50,7 @@ Website eine Grenze setzt.
 ## Zweistufige Anmeldung: optional oder verpflichtend
 
 Die zweistufige Anmeldung kommt mit der Erweiterung `sevenx_authentication_2fa`: Nach dem Passwort folgt ein
-sechsstelliger Code aus einer Authenticator-App oder ein per E-Mail gesendeter Code ([Zwei-Faktor-Anmeldung](../../../../en/us/guides/two-factor-login.md)).
+sechsstelliger Code aus einer Authenticator-App oder ein per E-Mail gesendeter Code ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 
 | Einstellung (`[General] Enforce2FA`) | Was Ihr Team erlebt |
 |---|---|
@@ -64,18 +64,18 @@ ohne Telefon in der Hand überrascht wird.
 
 > **Hinweis**
 > Eine später angelegte Rolle braucht die Richtlinien `user2fa/setup` und `user2fa/verify`, bevor ihre Benutzer die
-> zweistufige Anmeldung einrichten können ([Zwei-Faktor-Anmeldung](../../../../en/us/guides/two-factor-login.md)). Sagen Sie
+> zweistufige Anmeldung einrichten können ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)). Sagen Sie
 > Ihrem Administrator Bescheid, wenn Sie eine neue Rolle anfordern.
 
 ## Wenn etwas schiefgeht
 
 | Situation | Was zu tun ist |
 |---|---|
-| Jemand hat sein Passwort vergessen | die Person nutzt „Passwort vergessen?“ auf der Anmeldeseite ([Ihr Konto und die Anmeldung](../../../../en/us/help/accounts-and-sign-in.md)) |
-| Jemand hat sein Telefon verloren | ein Administrator setzt das Feld *Zweistufige Anmeldung* des Benutzers auf *E-Mail one-time code* oder *Deaktiviert* und veröffentlicht; die Person richtet die App neu ein ([Zwei-Faktor-Anmeldung](../../../../en/us/guides/two-factor-login.md)) |
+| Jemand hat sein Passwort vergessen | die Person nutzt „Passwort vergessen?“ auf der Anmeldeseite ([Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md)) |
+| Jemand hat sein Telefon verloren | ein Administrator setzt das Feld *Zweistufige Anmeldung* des Benutzers auf *E-Mail one-time code* oder *Deaktiviert* und veröffentlicht; die Person richtet die App neu ein ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)) |
 | Ein Konto ist nach fehlgeschlagenen Anmeldungen gesperrt | wer die Konten verwaltet, nutzt **Entsperren** unter Benutzerkonten prüfen ([Benutzerkonten prüfen](../../../../en/us/features/6.0/user-hygiene.md)) |
 | Niemand kann sich mehr als Administrator anmelden | Ihr Hoster oder Partner setzt das Passwort über die Kommandozeile zurück ([Ein Benutzerpasswort zurücksetzen](../../../../en/us/features/6.0/reset-user-password.md)) |
-| Sie vermuten, dass jemand anderes ein Konto benutzt hat | deaktivieren Sie es, und bitten Sie dann den Administrator, sich das Prüfprotokoll anzusehen ([Sicherheit und Prüfprotokoll](../../../../en/us/guides/security-and-audit.md)) |
+| Sie vermuten, dass jemand anderes ein Konto benutzt hat | deaktivieren Sie es, und bitten Sie dann den Administrator, sich das Prüfprotokoll anzusehen ([Sicherheit und Prüfprotokoll](../../../anleitungen/sicherheit-und-audit.md)) |
 
 ## Was Sie jedes Quartal prüfen sollten
 
@@ -83,11 +83,11 @@ ohne Telefon in der Hand überrascht wird.
 - [ ] Filter **Gesperrt**: jede Sperre nachvollzogen.
 - [ ] Jeder Administrator hat die zweistufige Anmeldung eingeschaltet.
 - [ ] Das Standard-Administratorpasswort der Installation wurde längst geändert
-      ([Das Admin-Passwort ändern](../../../../en/us/help/change-the-admin-password.md)).
+      ([Das Admin-Passwort ändern](../../administratorpasswort-aendern.md)).
 
 ## Verwandte Seiten
 
-- [Ihr Konto und die Anmeldung](../../../../en/us/help/accounts-and-sign-in.md)
+- [Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md)
 - [Benutzerkonten und Passwörter](../../../../en/us/help/businesses/security/user-accounts-and-passwords.md)
 - [Zwei-Faktor und Anmeldung für Intranets](../../../../en/us/help/businesses/intranets/two-factor-and-sign-in.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

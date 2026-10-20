@@ -162,4 +162,4 @@ getrenntes Thema des Clusterings ([Clustering und gemeinsamer Speicher](../betri
 - [Mehrere Web-Knoten](../betrieb/mehrere-web-knoten.md)
 - [Caches leeren und vorwärmen](caches-leeren-und-vorwaermen.md)
 - [sevenx_valkey_cache](../../../../en/us/features/6.0/extensions/sevenx_valkey_cache.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

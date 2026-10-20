@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber und die Chefredaktion, die entscheiden, was mit Inhalten geschieht, die nicht mehr
 aktuell sind. Exponential bietet mehrere Stufen zwischen „auf der Website“ und „endgültig weg“; die richtige Wahl
 hält Historie, Adressen und Suchergebnisse in Ordnung. Die Klicks stehen unter
-[Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md).
+[Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md).
 
 ## Inhalt
 
@@ -33,14 +33,14 @@ hält Historie, Adressen und Suchergebnisse in Ordnung. Die Klicks stehen unter
 | In den Papierkorb entfernen | nein | nein | ja, wiederherstellen |
 | Aus dem Papierkorb löschen | nein | nein | **nein** |
 
-Quellen: [Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md),
+Quellen: [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md),
 [Weiterleitungen und verschobene Inhalte](../../../../en/us/help/creators/website-creators/redirects-and-moved-content.md).
 
 ## Verbergen
 
 Ein verborgenes Element bleibt in der Administration, wird aber auf der Website nicht angezeigt, und auch nichts
 darunter. Verwenden Sie das für Inhalte, die nicht fertig sind oder eine Zeit lang nicht gebraucht werden
-([Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md#hide-an-item)). Ihr Administrator
+([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md#ein-objekt-verstecken)). Ihr Administrator
 kann Elemente auch automatisch zu einem im Element gespeicherten Datum verbergen lassen ([Zeitgesteuertes Veröffentlichen](zeitgesteuertes-veroeffentlichen.md)).
 
 ## Ein Archivbereich
@@ -50,9 +50,9 @@ Für Inhalte, die öffentlich zugänglich bleiben sollen (alte Pressemitteilunge
 
 - Wenn Inhalte dorthin verschoben werden, funktioniert ihre alte Adresse weiter: Der alte Pfad leitet weiter.
 - Liegt der Archivordner in einer **Sektion**, die anonyme Besucher nicht lesen dürfen, wird er zum internen Archiv;
-  dürfen Besucher sie lesen, ist es ein öffentliches Archiv ([Sektionen](../../../../en/us/guides/sections.md)).
+  dürfen Besucher sie lesen, ist es ein öffentliches Archiv ([Sektionen](../../../anleitungen/sektionen.md)).
 - Objektzustände können Inhalte als archiviert kennzeichnen, ohne sie zu verschieben, zur Verwendung durch Rollen und
-  Templates ([Objektzustände](../../../../en/us/guides/object-states.md)).
+  Templates ([Objektzustände](../../../anleitungen/objektzustaende.md)).
 
 Fragen Sie Ihren Website-Ersteller, welche dieser Möglichkeiten zu Ihrer Website passt; das Verschieben von Inhalten
 zwischen Sektionen kann ändern, wer sie sehen darf.
@@ -61,7 +61,7 @@ zwischen Sektionen kann ändern, wer sie sehen darf.
 
 **Entfernen** verschiebt ein Element mit allem, was darunter liegt, in den Papierkorb. Hat ein Element mehr als einen
 Ort, bleibt es beim Entfernen eines Ortes an seinen anderen Orten erhalten; es kommt erst in den Papierkorb, wenn sein
-letzter Ort entfernt wird ([Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md#remove-and-restore)).
+letzter Ort entfernt wird ([Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md#entfernen-und-wiederherstellen)).
 
 Der Papierkorb listet jedes Element mit der Angabe, wer es wann entfernt hat und wo es lag, mit Filtern nach Benutzer,
 Typ und Datum ([Die Ansicht des Papierkorbs](../../../../en/us/bc/6.0/trash.md)). **Wiederherstellen** bringt ein Element
@@ -95,7 +95,7 @@ Tragen Sie hier Ihren Zeitraum ein: `Items stay in the trash for at least ____ b
 
 ## Verwandte Seiten
 
-- [Veröffentlichen, Versionen und der Papierkorb](../../../../en/us/help/publishing-and-versions.md)
+- [Veröffentlichen, Versionen und der Papierkorb](../../veroeffentlichen-und-versionen.md)
 - [Inhalts-Audits](inhalts-audits.md)
 - [Der Inhaltsfinder](../../../../en/us/features/6.0/content-finder.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

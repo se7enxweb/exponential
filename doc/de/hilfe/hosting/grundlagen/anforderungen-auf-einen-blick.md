@@ -13,7 +13,7 @@ type: help
 Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei einem Hosting-Anbieter, die die Anforderungen von
 Exponential 6.0.x an einer Stelle brauchen, und für Produktmanager, die prüfen müssen, ob ein Tarif es ausführen kann.
 Sie beantwortet: was ein Server haben muss, was nur empfohlen ist und welcher Teil der Software jedes Element prüft. Das
-vollständige Kapitel mit jeder Begründung ist [Kapitel 2 des Installationsbuchs, Anforderungen](../../../../en/us/install/02-requirements.md);
+vollständige Kapitel mit jeder Begründung ist [Kapitel 2 des Installationsbuchs, Anforderungen](../../../installation/02-voraussetzungen.md);
 diese Seite ist seine Zusammenfassung für Hoster.
 
 ## Inhalt
@@ -43,12 +43,12 @@ diese Seite ist seine Zusammenfassung für Hoster.
 | Beschreibbare Verzeichnisse | `var/`, `settings/` und die anderen, die der Assistent auflistet | ein Benutzer oder eine Gruppe für jeden Prozess | kritischer Test `directory_permissions` |
 | Kommandozeile | eine Shell mit demselben PHP wie im Web | ja, für Composer, Cron und die Konsole | Sie |
 
-Quellen: [Kapitel 2, die Checkliste](../../../../en/us/install/02-requirements.md#21-the-checklist) und `composer.json`.
+Quellen: [Kapitel 2, die Checkliste](../../../installation/02-voraussetzungen.md#21-die-checkliste) und `composer.json`.
 
 > **Hinweis**
 > Die Unterstützung für PHP 8.0 ist neu in der Linie 6.0.15. Die veröffentlichten Tags `v6.0.8` bis `v6.0.14` verlangen
 > in ihrer `composer.json` PHP 8.1; ein Server mit PHP 8.0 installiert daher die Linie 6.0.15
-> ([Kapitel 3](../../../../en/us/install/03-getting-the-code.md#31-versions-tags-and-branches)).
+> ([Kapitel 3](../../../installation/03-den-code-beschaffen.md#31-versionen-tags-und-branches)).
 
 ## Erforderliche PHP-Erweiterungen
 
@@ -79,7 +79,7 @@ Die vollständige Liste, die empfohlenen Erweiterungen und die Paketnamen je Sys
 | 5. Oracle | `oci8` | 19c |
 | 6. MySQL | `mysqli` | ein Release, das der Hersteller noch unterstützt |
 
-Die praktischen Mindestwerte stammen aus [Datenbankunterstützung](../../../../en/us/help/database-support.md#versions-checked-against-the-code);
+Die praktischen Mindestwerte stammen aus [Datenbankunterstützung](../../datenbankunterstuetzung.md#versionen-am-code-überprüft);
 der Setup-Assistent akzeptiert ältere Untergrenzen, die kein Versprechen sind. Details je Engine stehen auf
 [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md).
 
@@ -88,7 +88,7 @@ der Setup-Assistent akzeptiert ältere Untergrenzen, die kein Versprechen sind. 
 Die Seite **Systemtest** des Setup-Assistenten führt die kritischen Tests aus `settings/site.ini`, `[SetupSettings]
 CriticalTests`, mit ihren Parametern aus `settings/setup.ini` aus. Der Kickstarter und `exp:install` führen dieselben
 Tests in ihrem Schritt `SystemCheck` aus. Ein Fehler hält die Installation an und gibt Ursache und Abhilfe aus, bei
-Berechtigungen die genauen Befehle `chmod` und `chown` ([Kapitel 2.4](../../../../en/us/install/02-requirements.md#24-the-setup-wizards-system-check)).
+Berechtigungen die genauen Befehle `chmod` und `chown` ([Kapitel 2.4](../../../installation/02-voraussetzungen.md#24-der-systemtest-des-setup-assistenten)).
 
 | Kritischer Test | Prüft |
 |---|---|
@@ -130,7 +130,7 @@ composer --version              # Composer 2, and the PHP it runs with
 Vergleichen Sie `php -v` und `php -m` mit den PHP-Informationen des PHP des Webservers: Auf Servern mit mehreren
 PHP-Versionen unterscheiden sie sich oft. Mit installiertem Velocity-Paket vergleicht `php bin/php/console exp:velocity ext check`
 die Maschine mit der Erweiterungsausstattung, die Velocity erwartet, und `exp:velocity ext install-hint <extension>` gibt
-den Paketbefehl für das System aus ([Kapitel 2.3](../../../../en/us/install/02-requirements.md#finding-what-is-missing)).
+den Paketbefehl für das System aus ([Kapitel 2.3](../../../installation/02-voraussetzungen.md#herausfinden-was-fehlt)).
 
 ## Checkliste
 
@@ -148,6 +148,6 @@ den Paketbefehl für das System aus ([Kapitel 2.3](../../../../en/us/install/02-
 - [PHP-Versionen und Erweiterungen](php-versionen-und-erweiterungen.md) und [PHP-Einstellungen für Exponential](php-einstellungen-fuer-exponential.md)
 - [Datenbanken in der offiziellen Reihenfolge](datenbanken-in-der-offiziellen-reihenfolge.md)
 - [Checkliste für einen neuen Server](../checklisten/checkliste-fuer-einen-neuen-server.md)
-- [Kapitel 2: Anforderungen](../../../../en/us/install/02-requirements.md)
-- [Betriebssystemunterstützung](../../../../en/us/help/os-support.md) und [Datenbankunterstützung](../../../../en/us/help/database-support.md)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Kapitel 2: Anforderungen](../../../installation/02-voraussetzungen.md)
+- [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md) und [Datenbankunterstützung](../../datenbankunterstuetzung.md)
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

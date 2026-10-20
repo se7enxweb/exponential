@@ -74473,5 +74473,125 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Dla organizacji i osób prowadzących własną witrynę na Exponential: zespół, publikowanie, handel, utrzymanie, rozwój i partnerzy.</translation>
     </message>
+    <message>
+        <source>User manual</source>
+        <translation>Podręcznik użytkownika</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Jedno pytanie na stronę: kto może to zrobić, kroki, co może pójść nie tak i gdzie przeczytać więcej.</translation>
+    </message>
+    <message>
+        <source>Project files</source>
+        <translation>Pliki projektu</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Plik projektu</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Ten plik jest częścią kodu źródłowego Exponential i jest z nim rozpowszechniany na warunkach %license.</translation>
+    </message>
+    <message>
+        <source>Download DITA</source>
+        <translation>Pobierz DITA</translation>
+    </message>
+    <message>
+        <source>E-books</source>
+        <translation>E-booki</translation>
+    </message>
+    <message>
+        <source>Built from the released topics each time one of them is released, and kept with their earlier versions.</source>
+        <translation>Tworzone z wydanych tematów za każdym razem, gdy jeden z nich zostanie wydany, i przechowywane wraz z wcześniejszymi wersjami.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Plik</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Rozmiar</translation>
+    </message>
+    <message>
+        <source>Updated</source>
+        <translation>Zaktualizowano</translation>
+    </message>
+    <message>
+        <source>Download all as DITA</source>
+        <translation>Pobierz wszystko jako DITA</translation>
+    </message>
+    <message>
+        <source>Help topics overdue for review</source>
+        <translation>Tematy pomocy z zaległym przeglądem</translation>
+    </message>
+    <message>
+        <source>The review date has passed, or the topic has been in Review for more than %days days without a change.</source>
+        <translation>Data przeglądu minęła albo temat jest w przeglądzie od ponad %days dni bez zmian.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stan</translation>
+    </message>
+    <message>
+        <source>Overdue</source>
+        <translation>Zaległe</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcje</translation>
+    </message>
+    <message>
+        <source>Review date %date passed %days days ago</source>
+        <translation>Data przeglądu %date minęła %days dni temu</translation>
+    </message>
+    <message>
+        <source>In Review for %days days without a change</source>
+        <translation>W przeglądzie od %days dni bez zmian</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edytuj</translation>
+    </message>
+    <message>
+        <source>Set state</source>
+        <translation>Ustaw stan</translation>
+    </message>
+    <message>
+        <source>%shown of %count overdue topics are listed. ./console exp:help:content review lists them all.</source>
+        <translation>Wyświetlono %shown z %count zaległych tematów. ./console exp:help:content review wyświetla wszystkie.</translation>
+    </message>
+    <message>
+        <source>Before you begin</source>
+        <translation>Zanim zaczniesz</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Kroki</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wynik</translation>
+    </message>
+    <message>
+        <source>What to do next</source>
+        <translation>Co dalej</translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation>Warunek</translation>
+    </message>
+    <message>
+        <source>Cause</source>
+        <translation>Przyczyna</translation>
+    </message>
+    <message>
+        <source>Remedy</source>
+        <translation>Rozwiązanie</translation>
+    </message>
+    <message>
+        <source>Help Start</source>
+        <translation>Start pomocy</translation>
+    </message>
 </context>
 </TS>

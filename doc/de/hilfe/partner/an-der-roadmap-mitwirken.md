@@ -28,7 +28,7 @@ Diese Seite ist für Partner, die beeinflussen möchten, was als Nächstes gebau
 | Platinum: „Einfluss auf die Roadmap“ und „Einbindung der Leitung“ (so formuliert auf der Seite why) | Platinum / höchste Stufe | Seite why |
 | Funktionswünsche als öffentliche Issues | Alle | <https://github.com/se7enxweb/exponential/issues> |
 | Pull Requests mit funktionierendem Code | Alle | CONTRIBUTING.md |
-| Stufen von 7x bei GitHub Sponsors mit Einfluss auf den Produkt-Backlog | Sponsoren | [7x auf GitHub sponsern](../../../en/us/help/sponsors/sponsoring-7x.md) |
+| Stufen von 7x bei GitHub Sponsors mit Einfluss auf den Produkt-Backlog | Sponsoren | [7x auf GitHub sponsern](../sponsoren/7x-sponsern.md) |
 
 ## Einen Wunsch formulieren, der umgesetzt wird
 
@@ -56,4 +56,4 @@ Der stärkste Wunsch kommt mit einem Beitrag: einem Prototyp, Tests oder einer F
 - [Funktionswünsche und gesponserte Funktionen](funktionswuensche-und-gesponserte-funktionen.md)
 - [Governance: wer was entscheidet](governance-und-entscheidungen.md)
 - [Code zurückgeben](code-zurueckgeben.md)
-- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

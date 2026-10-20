@@ -166,4 +166,4 @@ ohne Rückfragen.
 - [Composer und Git auf Servern](../grundlagen/composer-und-git-auf-servern.md)
 - [Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md)
 - [ezupdate](../../../../en/us/features/6.0/extensions/ezupdate.md) (Referenz der Funktion)
-- [Freie Dokumentation](../../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+- [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
