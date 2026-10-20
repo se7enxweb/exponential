@@ -3199,7 +3199,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-09ad341a8ea834d972e3d3684212f822  doc/changelogs/6.0/6.0.15.md
+8dc836417b2fbd167f4e3b6893e95619  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -4357,7 +4357,7 @@ caf60908b53ecf82087e9a61ba87f97f  doc/eng-us/examples/ini-settings/error/README.
 4877ec3124ccf0a66889006fa25409cb  doc/eng-us/examples/ini-settings/exphelp/ContentSettings.md
 af20763130c6ec5d439924e9e747972a  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
 3d307f778430f1bdd6462b040e20299c  doc/eng-us/examples/ini-settings/exphelp/DashboardSettings.md
-ffd8b7d7b373cf120f04c962487a2e42  doc/eng-us/examples/ini-settings/exphelp/DocLanguages.md
+1e29ec1fbd8bbcdf1bc7abdd208b9936  doc/eng-us/examples/ini-settings/exphelp/DocLanguages.md
 d90c4b76334567ebaf3f6d751de9f417  doc/eng-us/examples/ini-settings/exphelp/FeaturedSettings.md
 0e61eddfd553bb8e7338120de2a880bb  doc/eng-us/examples/ini-settings/exphelp/HelpSettings.md
 42e8b33211a2ac4880d8382ee98f878b  doc/eng-us/examples/ini-settings/exphelp/IndexSettings.md
@@ -6183,7 +6183,7 @@ fc2b56700373f008957be7c84a6a8e8e  doc/eng-us/features/6.0/ezpm-package-manager-c
 389c1290b79eb9a673acb4c2a85b2f88  doc/eng-us/features/6.0/file-consistency-check.md
 e255d3ea95bcc2539dda2feeec0a5a14  doc/eng-us/features/6.0/form-expired-page.md
 8c5c33dddc81c5e6f444b9029806c644  doc/eng-us/features/6.0/help-content.md
-53e21810028d8c44d9c0a3408a6d84b3  doc/eng-us/features/6.0/help-system.md
+47abf0346ba409b4695b572ccf0bd09b  doc/eng-us/features/6.0/help-system.md
 4766a599386d8ddaca93749fc18239b1  doc/eng-us/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 0c40e75f2ef4cebe007a6fda76679666  doc/eng-us/features/6.0/install-in-one-command.md
@@ -14492,7 +14492,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 b3e716ccb04cbecf2af6189088c6a0ff  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-c7a7ab25df078583726381e427318cd9  settings/exphelp.ini
+23729a2aa34f538f6cbddac4f42a1433  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
