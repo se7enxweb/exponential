@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[Preset_template_work]` von `settings/debugbar.ini`, mit 3 Einstellung(en).
 
-> --------------------------------------------------------------------- presets  
+> --------------------------------------------------------------------- Vorlagen  
 
 Bearbeiten Sie `settings/debugbar.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

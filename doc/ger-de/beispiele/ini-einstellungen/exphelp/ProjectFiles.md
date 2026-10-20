@@ -19,21 +19,21 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> The project files (expHelpProjectFiles; doc/eng-us/features/6.0/help-system.md, "Project files"): the Markdown files  
-> of the repository outside doc/ that document the project itself (README.md, INSTALL.md, SECURITY.md,  
-> CONTRIBUTING.md, CODE\_OF\_CONDUCT.md, COPYRIGHT.md, LICENSE.md, the README.md of bin/, design/ and kernel/  
-> directories). Each has the id project/<path in the repository> (/exphelp/viewer/project/README.md;  
-> /exphelp/viewer/README.md redirects there) and  
-> is a page at the top of the page tree, next to the folders, not in a folder of its own. They are English only and  
-> not translated, like doc/changelogs/: a reader of another language sees them with the note that the page is not  
-> translated.  
-> Not to be changed by any setting here or in an override: only files git tracks are shown (the git index, "git  
-> ls-files" or the release manifest, never the directory: a private note in the root that is not committed is never  
-> shown, searched or linked), never a file in a place .gitignore ignores, only Markdown, never a hidden file or a file  
-> in a hidden directory (.github/ included), and never below doc/, extension/ (the extensions' documentation is the  
-> category Extensions), a tests/ directory anywhere, var/, vendor/, settings/override/, settings/siteaccess/ or  
+> Die Projektdateien (expHelpProjectFiles; doc/eng-us/features/6.0/help-system.md, "Project files"): die Markdown-Dateien  
+> des Repositorys außerhalb von doc/, die das Projekt selbst dokumentieren (README.md, INSTALL.md, SECURITY.md,  
+> CONTRIBUTING.md, CODE\_OF\_CONDUCT.md, COPYRIGHT.md, LICENSE.md, die README.md der Verzeichnisse bin/, design/ und kernel/).  
+> Jede hat die ID project/<Pfad im Repository> (/exphelp/viewer/project/README.md;  
+> /exphelp/viewer/README.md leitet dorthin weiter) und  
+> ist eine Seite auf der obersten Ebene des Seitenbaums, neben den Ordnern, nicht in einem eigenen Ordner. Sie sind nur englisch und  
+> werden nicht übersetzt, wie doc/changelogs/: Ein Leser einer anderen Sprache sieht sie mit dem Hinweis, dass die Seite nicht  
+> übersetzt ist.  
+> Durch keine Einstellung hier oder in einem Override änderbar: Es werden nur Dateien angezeigt, die git versioniert (der git-Index, "git  
+> ls-files" oder das Release-Manifest, nie das Verzeichnis: eine private Notiz in der Wurzel, die nicht committet ist, wird nie  
+> angezeigt, durchsucht oder verlinkt), nie eine Datei an einer Stelle, die .gitignore ignoriert, nur Markdown, nie eine versteckte Datei oder eine Datei  
+> in einem versteckten Verzeichnis (.github/ eingeschlossen) und nie unter doc/, extension/ (die Dokumentation der Erweiterungen ist die  
+> Kategorie Erweiterungen), irgendeinem Verzeichnis tests/, var/, vendor/, settings/override/, settings/siteaccess/ oder  
 > node\_modules/.  
-> enabled: the help shows them; disabled: none  
+> enabled: Die Hilfe zeigt sie; disabled: keine  
 
 Standard: `enabled`.
 
@@ -47,7 +47,7 @@ Enabled=enabled
 
 ## Include
 
-> Shell patterns on the path in the repository: "\*" stays inside a directory, "\*\*" crosses directories  
+> Shell-Muster auf den Pfad im Repository: "\*" bleibt innerhalb eines Verzeichnisses, "\*\*" überquert Verzeichnisse  
 
 Standard: eine Liste mit 4: `*.md`, `bin/**/README.md`, `design/*/README.md`, `kernel/**/README.md`.
 
@@ -66,7 +66,7 @@ Include[]=kernel/**/README.md
 
 ## Exclude
 
-> Left out although Include\[\] matches: test fixtures and the copies of other projects (a JavaScript library's README)  
+> Ausgelassen, obwohl Include\[\] passt: Testdaten und die Kopien anderer Projekte (die README einer JavaScript-Bibliothek)  
 
 Standard: eine Liste mit 5: `**/fixtures/**`, `**/_fixtures/**`, `**/javascript/**`, `**/third-party/**`, `**/thirdparty/**`.
 
@@ -86,8 +86,8 @@ Exclude[]=**/thirdparty/**
 
 ## Category
 
-> Their category, page type and audiences (\[CategorySettings\], \[TypeSettings\], \[AudienceSettings\]); a file's own front  
-> matter wins. AudienceRules\[\]: "<pattern>;<audiences>", the first match wins, else Audiences\[\]  
+> Ihre Kategorie, ihr Seitentyp und ihre Zielgruppen (\[CategorySettings\], \[TypeSettings\], \[AudienceSettings\]); das eigene Front  
+> Matter einer Datei gewinnt. AudienceRules\[\]: "<pattern>;<audiences>", der erste Treffer gewinnt, sonst Audiences\[\]  
 
 Standard: `project-files`.
 
@@ -148,7 +148,7 @@ AudienceRules[]=LICENSE.md;admin,developer,partner,businesses
 
 ## LicenseName
 
-> The license of the project files: the notice under each of them names it and links its page (a page id)  
+> Die Lizenz der Projektdateien: Der Hinweis unter jeder nennt sie und verlinkt ihre Seite (eine Seiten-ID)  
 
 Standard: `GNU General Public License, version 2 (or any later version)`.
 

@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/ezxml.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## HandlerClass
 
-> Which output handler to use, ezxhtml is the default  
-> ezplain can be used to see raw xml data.  
+> Welcher Ausgabe-Handler verwendet wird, ezxhtml ist der Standard  
+> mit ezplain lassen sich die rohen XML-Daten ansehen.  
 
 Standard: `eZXHTMLXMLOutput`.
 

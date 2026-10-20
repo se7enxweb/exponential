@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[ErrorSettings-kernel]` von `settings/error.ini`, mit 5 Einstellung(en).
 
-> Error handling for kernel errors  
+> Fehlerbehandlung für Fehler des Kernels  
 
 Bearbeiten Sie `settings/error.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,12 +21,12 @@ Bearbeiten Sie `settings/error.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## ErrorHandler
 
-> A list of error codes and which handler to use for it  
-> Overrides DefaultErrorHandler  
-> Example:  
-> What to do when a module does not exists, use either displayerror or redirect  
+> Eine Liste von Fehlercodes und des dafür zu verwendenden Handlers  
+> Überschreibt DefaultErrorHandler  
+> Beispiel:  
+> Was zu tun ist, wenn ein Modul nicht existiert: displayerror oder redirect  
 > ErrorHandler\[20\]=displayerror  
-> Set access denied to embed login  
+> Bei verweigertem Zugriff die Anmeldung einbetten  
 
 Standard: ein Hash mit 1: `1=embed`.
 
@@ -42,11 +42,11 @@ ErrorHandler[1]=embed
 
 ## RedirectURL
 
-> A list of error codes and the url for redirection.  
-> Redirection tells the browser to choose another url for display.  
-> Overrides DefaultRedirectURL  
-> Example:  
-> Redirect to user/login if access was denied  
+> Eine Liste von Fehlercodes und der URL zur Weiterleitung.  
+> Die Weiterleitung sagt dem Browser, eine andere URL anzuzeigen.  
+> Überschreibt DefaultRedirectURL  
+> Beispiel:  
+> Auf user/login weiterleiten, wenn der Zugriff verweigert wurde  
 > RedirectURL\[1\]=/user/login  
 
 Standard: eine leere Liste.
@@ -62,12 +62,12 @@ RedirectURL[]
 
 ## RerunURL
 
-> A list of error codes and the url for rerunning.  
-> Rerunning means executing another module and view  
-> as though that module was specified in the browser url.  
-> Overrides DefaultRerunURL  
-> Example:  
-> Rerun user/login if access was denied  
+> Eine Liste von Fehlercodes und der URL zum erneuten Ausführen.  
+> Erneutes Ausführen heißt, ein anderes Modul und eine andere Ansicht auszuführen,  
+> als wäre dieses Modul in der Browser-URL angegeben.  
+> Überschreibt DefaultRerunURL  
+> Beispiel:  
+> user/login erneut ausführen, wenn der Zugriff verweigert wurde  
 > RerunURL\[1\]=/user/login  
 
 Standard: eine leere Liste.
@@ -83,13 +83,13 @@ RerunURL[]
 
 ## EmbedURL
 
-> A list of error codes and the url for embedding.  
-> Embedding means running the module as in rerun but  
-> the result of the module is sent to the error template  
-> and embedded.  
-> Overrides DefaultEmbedURL  
-> Example:  
-> Embed user/login if access was denied  
+> Eine Liste von Fehlercodes und der URL zum Einbetten.  
+> Einbetten heißt, das Modul wie bei rerun auszuführen, aber  
+> das Ergebnis des Moduls wird an das Fehler-Template geschickt  
+> und eingebettet.  
+> Überschreibt DefaultEmbedURL  
+> Beispiel:  
+> user/login einbetten, wenn der Zugriff verweigert wurde  
 > EmbedURL\[1\]=/user/login  
 
 Standard: ein Hash mit 1: `1=/user/login`.
@@ -106,13 +106,13 @@ EmbedURL[1]=/user/login
 
 ## HTTPError
 
-> Defines the HTTP error code to use for the specified Exponential error code.  
-> The definition is HTTPError\[Exponential error code\]=HTTP error code.  
-> The HTTP error code must be defined with a HTTPError-code group as seen below.  
-> Example:  
-> Add 404 for module not found error  
+> Legt den HTTP-Fehlercode fest, der für den angegebenen Fehlercode von Exponential verwendet wird.  
+> Die Definition ist HTTPError\[Exponential error code\]=HTTP error code.  
+> Der HTTP-Fehlercode muss mit einer Gruppe HTTPError-code wie unten definiert sein.  
+> Beispiel:  
+> 404 für den Fehler Modul nicht gefunden hinzufügen  
 > HTTPError\[20\]=404  
-> 301 = moved permanently  
+> 301 = dauerhaft verschoben  
 
 Standard: ein Hash mit 8: `1=401`, `2=404`, `3=404`, `4=301`, `6=403`, `20=404`, `21=404`, `22=404`.
 

@@ -19,19 +19,19 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Providers
 
-> Context help: the "?" link in the header of the administration opens the page that answers "help for this page"  
-> (expHelpContextRegistry; doc/eng-us/features/6.0/help-system.md, "Context help"). One entry per key:  
+> Kontexthilfe: Der Link „?“ im Kopf der Administration öffnet die Seite, die „Hilfe zu dieser Seite“ beantwortet  
+> (expHelpContextRegistry; doc/eng-us/features/6.0/help-system.md, "Context help"). Ein Eintrag pro Schlüssel:  
 >   Map\[<module>/<view>\]=<page id>\[#<heading anchor>\]  
->   Map\[<module>\]=...                     every view of the module without an entry of its own  
->   Map\[<design>:<module>/<view>\]=...     only in that design (admin4l, editor, admin, adminui ...); wins over the  
->   Map\[<design>:<module>\]=...            same key without a design  
-> A page id is the path below doc/eng-us/, the same in every language (ext/<extension>/<path> for an extension's doc directory, \[IndexSettings\]  
-> ExtensionDocDirs\[\]); the anchor is the heading's anchor as the viewer makes it. The lookup: Providers\[\], then  
-> design:module/view, module/view, design:module, module, then the help dashboard. An entry whose page the help does  
-> not serve (not written yet, not git-tracked, outside doc/) is skipped, so the next key answers.  
-> Extensions register the help of their own modules in their settings/exphelp.ini.append.php in the same way.  
-> Classes implementing expHelpContextProviderInterface, asked before the map, in this order  
-> Help topics maintained as content answer first for the keys of \[ContentSettings\] ContextHelpIds\[\]  
+>   Map\[<module>\]=...                     jede Ansicht des Moduls ohne eigenen Eintrag  
+>   Map\[<design>:<module>/<view>\]=...     nur in diesem Design (admin4l, editor, admin, adminui ...); gewinnt gegen den  
+>   Map\[<design>:<module>\]=...            gleichen Schlüssel ohne Design  
+> Eine Seiten-ID ist der Pfad unter doc/eng-us/, in jeder Sprache gleich (ext/<extension>/<path> für das doc-Verzeichnis einer Erweiterung, \[IndexSettings\]  
+> ExtensionDocDirs\[\]); der Anker ist der Anker der Überschrift, wie ihn der Viewer bildet. Die Suche: Providers\[\], dann  
+> design:module/view, module/view, design:module, module, dann das Dashboard der Hilfe. Ein Eintrag, dessen Seite die Hilfe  
+> nicht ausliefert (noch nicht geschrieben, nicht von git versioniert, außerhalb von doc/), wird übersprungen, sodass der nächste Schlüssel antwortet.  
+> Erweiterungen registrieren die Hilfe ihrer eigenen Module auf dieselbe Weise in ihrer settings/exphelp.ini.append.php.  
+> Klassen, die expHelpContextProviderInterface implementieren, vor der Zuordnung gefragt, in dieser Reihenfolge  
+> Als Inhalt gepflegte Hilfethemen antworten zuerst für die Schlüssel aus \[ContentSettings\] ContextHelpIds\[\]  
 
 Standard: eine Liste mit 1: `expHelpContentProvider`.
 
@@ -47,7 +47,7 @@ Providers[]=expHelpContentProvider
 
 ## CheckPages
 
-> enabled: an entry counts only when the help index serves its page; disabled: syntax checks only (faster)  
+> enabled: Ein Eintrag zählt nur, wenn der Index der Hilfe seine Seite ausliefert; disabled: nur Syntaxprüfungen (schneller)  
 
 Standard: `enabled`.
 
@@ -61,9 +61,9 @@ CheckPages=enabled
 
 ## MenuTopics
 
-> The header's Help menu (the "?" button): how many topics related to the page it lists (the module's other  
-> entries of this map, then \[FeaturedSettings\] PageList\[\]), and its quick links, key => page id\[#anchor\] or an  
-> exphelp view. The kernel's keys are named in the menu's template; an extension's own key shows the page's title.  
+> Das Hilfe-Menü im Kopf (die Schaltfläche „?“): wie viele Themen zur Seite es auflistet (die anderen Einträge  
+> des Moduls in dieser Zuordnung, dann \[FeaturedSettings\] PageList\[\]), und seine Schnelllinks, Schlüssel => Seiten-ID\[#Anker\] oder eine  
+> exphelp-Ansicht. Die Schlüssel des Kernels sind im Template des Menüs benannt; der eigene Schlüssel einer Erweiterung zeigt den Titel der Seite.  
 
 Standard: `6`.
 
@@ -95,15 +95,15 @@ MenuLinks[git]=install/03-getting-the-code.md#b-git-clone-and-composer-install
 
 ## Map
 
-> Content  
-> Content model  
-> Users and access  
+> Inhalte  
+> Inhaltsmodell  
+> Benutzer und Zugriff  
 > Setup  
-> admin4l: the administration drawn by admin layouts  
-> The editor siteaccess (SiteDesign=editor): the pages written for editors, before the administrators' guides  
-> Modules of extensions that ship without help entries of their own (an extension's exphelp.ini.append.php wins over  
-> these: it is read after this file)  
-> The database manager of sevenx\_dse (module dse)  
+> admin4l: die mit Admin-Layouts gezeichnete Administration  
+> Der Siteaccess editor (SiteDesign=editor): die für Redakteure geschriebenen Seiten, vor den Anleitungen für Administratoren  
+> Module von Erweiterungen, die ohne eigene Hilfeeinträge ausgeliefert werden (die exphelp.ini.append.php einer Erweiterung gewinnt gegen  
+> diese: Sie wird nach dieser Datei gelesen)  
+> Der Datenbankmanager von sevenx\_dse (Modul dse)  
 
 Standard: ein Hash mit 131: `content=guides/content-model-and-editing.md`, `content/dashboard=help/admin-tour.md`, `content/view=help/editing-content.md`, `content/edit=help/editing-content.md`, `content/multiedit=guides/content-model-and-editing.md#6-edit-many-items-in-one-form-multi-node-edit`, `content/versionview=guides/content-history.md`, `content/history=guides/content-history.md`, `content/draft=guides/drafts-and-pending.md#1-my-drafts`, `content/pendinglist=guides/drafts-and-pending.md#2-my-pending-items`, `content/trash=guides/content-model-and-editing.md#7-the-trash`, `content/restore=guides/content-model-and-editing.md#7-the-trash`, `content/bookmark=guides/bookmarks.md` ....
 

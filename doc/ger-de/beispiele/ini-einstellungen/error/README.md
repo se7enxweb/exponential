@@ -12,28 +12,28 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/error.ini`: 7 Blöcke, 22 Einstellungen.
 
-> Exponential configuration file for error handling  
+> Exponential-Konfigurationsdatei für die Fehlerbehandlung  
 >
-> NOTE: It is not recommended to edit these files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/error.ini.append or  
->       settings/override/error.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
-> The following error codes for kernel is currently defined  
-> 1  - Access denied  
-> 2  - Object not found  
-> 3  - Object not available  
-> 4  - Object has moved  
-> 5  - Language not found  
-> 6  - Form token refused (a POST without, or with a wrong, form token);  
->      always shown on the spot as HTTP 403 (design:error/kernel/6.tpl),  
->      ErrorHandler/RedirectURL/RerunURL do not apply to it  
-> 20 - Module not found  
-> 21 - Module view not found  
-> 22 - Module or view disabled  
-> 50 - No DB connection  
+> HINWEIS: Es wird nicht empfohlen, diese Dateien direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/error.ini.append oder  
+>       settings/override/error.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
+> Die folgenden Fehlercodes des Kernels sind derzeit definiert  
+> 1  - Zugriff verweigert  
+> 2  - Objekt nicht gefunden  
+> 3  - Objekt nicht verfügbar  
+> 4  - Objekt wurde verschoben  
+> 5  - Sprache nicht gefunden  
+> 6  - Formular-Token abgelehnt (ein POST ohne oder mit falschem Formular-Token);  
+>      immer sofort als HTTP 403 angezeigt (design:error/kernel/6.tpl),  
+>      ErrorHandler/RedirectURL/RerunURL gelten dafür nicht  
+> 20 - Modul nicht gefunden  
+> 21 - Modulansicht nicht gefunden  
+> 22 - Modul oder Ansicht deaktiviert  
+> 50 - Keine Datenbankverbindung  
 
 | Block | Einstellungen |
 |---|---|

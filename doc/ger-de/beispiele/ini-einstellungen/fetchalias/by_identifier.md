@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[by_identifier]` von `settings/fetchalias.ini`, mit 3 Einstellung(en).
 
-> usage : fetch\_alias(by\_identifier, hash(attr\_id, <unique text> ))  
+> Verwendung: fetch\_alias(by\_identifier, hash(attr\_id, <unique text> ))  
 
 Bearbeiten Sie `settings/fetchalias.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -21,10 +21,10 @@ Bearbeiten Sie `settings/ezxml.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## TagPresets
 
-> Defines presets of allowed tags, currently only used by Online Editor 5.0  
-> to have different type of editors(aka it only limits the visible buttons,  
-> not what you can copy/past or manually enter in code editor)  
-> Setting is selectable in class/edit if TagPreset has values.  
+> Legt Vorlagen erlaubter Tags fest, derzeit nur vom Online Editor 5.0 verwendet,  
+> um verschiedene Arten von Editoren zu haben (d. h. es begrenzt nur die sichtbaren Schaltflächen,  
+> nicht, was Sie kopieren/einfügen oder im Code-Editor von Hand eingeben können)  
+> Die Einstellung ist in class/edit wählbar, wenn TagPreset Werte hat.  
 
 Standard: eine leere Liste.
 

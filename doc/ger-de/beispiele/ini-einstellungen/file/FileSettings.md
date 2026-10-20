@@ -12,11 +12,11 @@ generated: exp:help:examples
 Der Block `[FileSettings]` von `settings/file.ini`, mit 4 Einstellung(en).
 
 > Repositories\[\]=kernel/classes  
-> A list of extensions which have binaryhandlers  
-> It's common to create a settings/file.ini.append.php file  
-> in your extension and add the extension name to automatically  
-> get handlers from the extension when it's turned on.  
-> Handlers need to be placed in the extension subdir "binaryhandlers".  
+> Eine Liste der Erweiterungen, die Binary-Handler haben  
+> Üblicherweise legt man in der Erweiterung eine Datei settings/file.ini.append.php  
+> an und trägt den Namen der Erweiterung ein, um automatisch  
+> die Handler der Erweiterung zu erhalten, wenn sie eingeschaltet ist.  
+> Die Handler müssen im Unterverzeichnis "binaryhandlers" der Erweiterung liegen.  
 > ExtensionRepositories\[\]  
 
 Bearbeiten Sie `settings/file.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
@@ -27,9 +27,9 @@ Bearbeiten Sie `settings/file.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## SystemUserCheck
 
-> (UNIX only) Whether to check if the user executing an eZScript is the same  
-> as defined in the SystemUser setting. When the users don't match, the  
-> script execution will be stopped.  
+> (Nur UNIX) Ob geprüft wird, ob der Benutzer, der ein eZScript ausführt, derselbe  
+> ist wie in der Einstellung SystemUser. Stimmen die Benutzer nicht überein, wird die  
+> Ausführung des Skripts angehalten.  
 
 Standard: `disabled`.
 
@@ -55,8 +55,8 @@ RequiredSystemUser=www-data
 
 ## Handlers
 
-> Generic gzip handler, uses the zlib or shell handlers to do the job  
-> Specific gzip handler, either using the zlib extension or gzip shell command  
+> Allgemeiner gzip-Handler, verwendet für die Arbeit die zlib- oder Shell-Handler  
+> Bestimmter gzip-Handler, entweder mit der Erweiterung zlib oder dem Shell-Befehl gzip  
 
 Standard: ein Hash mit 3: `gzip=ezgzipcompressionhandler`, `gzipzlib=ezgzipzlibcompressionhandler`, `gzipshell=ezgzipshellcompressionhandler`.
 
@@ -74,8 +74,8 @@ Handlers[gzipshell]=ezgzipshellcompressionhandler
 
 ## FileExtensionBlackList
 
-> The file extension blacklist is used to validate uploaded files.  
-> File types on the blacklist are rejected, for security or other reasons.  
+> Die Sperrliste der Dateiendungen dient zur Prüfung hochgeladener Dateien.  
+> Dateitypen auf der Sperrliste werden abgelehnt, aus Sicherheits- oder anderen Gründen.  
 
 Standard: eine Liste mit 7: `php`, `php3`, `phar`, `phpt`, `pht`, `phtml`, `pgif`.
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/icon.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Repository
 
-> Where to look for icons, relative to Exponential  
+> Wo nach Symbolen gesucht wird, relativ zu Exponential  
 
 Standard: `share/icons`.
 
@@ -33,9 +33,9 @@ Repository=share/icons
 
 ## Theme
 
-> Which theme to use as current for all icon types  
-> If you wish to have a different theme per type you  
-> can set this variable in the INI group for the type.  
+> Welches Theme für alle Symboltypen als aktuelles verwendet wird  
+> Wenn Sie pro Typ ein anderes Theme wollen,  
+> können Sie diese Variable in der INI-Gruppe des Typs setzen.  
 
 Standard: `crystal`.
 
@@ -49,7 +49,7 @@ Theme=crystal
 
 ## StandardTheme
 
-> The standard theme. It is used as fallback theme if an icon is not available in the current theme.  
+> Das Standard-Theme. Es dient als Ausweich-Theme, wenn ein Symbol im aktuellen Theme nicht verfügbar ist.  
 
 Standard: `crystal`.
 
@@ -63,12 +63,12 @@ StandardTheme=crystal
 
 ## DesignTheme
 
-> Additional themes to search before falling back to the standard theme.  
+> Zusätzliche Themes, die durchsucht werden, bevor auf das Standard-Theme zurückgefallen wird.  
 > AdditionalThemeList\[\]  
-> The icon theme of a design. While the design is the siteaccess's SiteDesign (site.ini \[DesignSettings\]), its theme  
-> replaces Theme, and Theme is searched right after it, so a key the design's theme does not map keeps the icon it  
-> had. A type's own Theme (\[ClassIcons\] Theme etc.) still wins. An empty value turns it off for that design, an empty  
-> DesignTheme\[\] for every design. A design of your own built on admin4 needs its own entry.  
+> Das Symbol-Theme eines Designs. Solange das Design das SiteDesign des Siteaccess ist (site.ini \[DesignSettings\]), ersetzt sein Theme  
+> Theme, und Theme wird direkt danach durchsucht, sodass ein Schlüssel, den das Theme des Designs nicht zuordnet, das Symbol behält, das er  
+> hatte. Das eigene Theme eines Typs (\[ClassIcons\] Theme usw.) gewinnt weiterhin. Ein leerer Wert schaltet es für dieses Design ab, ein leeres  
+> DesignTheme\[\] für jedes Design. Ein eigenes, auf admin4 aufbauendes Design braucht einen eigenen Eintrag.  
 
 Standard: ein Hash mit 2: `admin4=bootstrap-icons`, `admin4l=bootstrap-icons`.
 
@@ -85,8 +85,8 @@ DesignTheme[admin4l]=bootstrap-icons
 
 ## Size
 
-> Wanted size of icons, the size is not checked and is expected  
-> to be just a string which should be a directory in the theme  
+> Gewünschte Größe der Symbole; die Größe wird nicht geprüft und soll  
+> einfach eine Zeichenkette sein, die einem Verzeichnis im Theme entspricht  
 
 Standard: `normal`.
 

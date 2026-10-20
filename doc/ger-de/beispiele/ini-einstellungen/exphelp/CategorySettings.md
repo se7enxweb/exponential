@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Categories
 
-> The sections of the help, in dashboard order. A page's category: its front matter (category: editing), else the  
-> first PathRules\[\] that matches, else TypeDefaults\[<type>\]  
+> Die Bereiche der Hilfe, in der Reihenfolge des Dashboards. Die Kategorie einer Seite: ihr Front Matter (category: editing), sonst die  
+> erste passende Regel aus PathRules\[\], sonst TypeDefaults\[<type>\]  
 
 Standard: eine Liste mit 45: `getting-started`, `manual`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `build-two-ways`, `shortcuts`, `support` ....
 
@@ -90,7 +90,7 @@ CategoryNames[theme-extensions]=Theme extensions
 
 ## CategoryIcons
 
-> Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
+> Symbolnamen; jeder muss eine Klasse .a4-bi-<name> in stylesheets/components.css haben  
 
 Standard: ein Hash mit 45: `getting-started=signpost-split`, `manual=question-circle`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `build-two-ways=signpost-split`, `shortcuts=input-cursor-text`, `support=info-circle` ....
 
@@ -126,7 +126,7 @@ CategoryIcons[theme-extensions]=puzzle
 
 ## PathRules
 
-> <pattern>;<category>, first match wins  
+> <pattern>;<category>, der erste Treffer gewinnt  
 
 Standard: eine Liste mit 80: `doc/eng-us/help/manual/*;manual`, `doc/eng-us/help/leadership/*;leadership`, `doc/eng-us/help/business/*;business`, `doc/eng-us/help/partners/*;partnership`, `doc/eng-us/help/advocates/*;advocacy`, `doc/eng-us/help/designers/templates/*;templates`, `doc/eng-us/help/designers/*;theme-design`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creation`, `doc/eng-us/help/creators/website-creators/*;website-creation`, `doc/eng-us/help/creators/*;website-creation`, `doc/eng-us/help/supporters/*;supporting` ....
 
@@ -162,7 +162,7 @@ PathRules[]=doc/eng-us/help/build-two-ways/*;build-two-ways
 
 ## TypeDefaults
 
-> <type> => <category>, when nothing else says  
+> <type> => <category>, wenn sonst nichts etwas sagt  
 
 Standard: ein Hash mit 14: `help=getting-started`, `guide=administration`, `feature=features`, `bc=install-upgrade`, `install=install-upgrade`, `changelog=release-notes`, `specification=development`, `history=history`, `example=examples`, `generated=examples`, `reference=reference`, `project=project-files` ....
 

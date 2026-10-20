@@ -35,7 +35,7 @@ Handler=ezdefault
 
 ## Alias
 
-> Allows for overriding a handler with another  
+> Erlaubt, einen Handler durch einen anderen zu ersetzen  
 
 Standard: eine leere Liste.
 

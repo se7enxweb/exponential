@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> Help maintained as content (doc/eng-us/features/6.0/help-content.md): topics, manuals, figures and the glossary as content  
-> of the site, created by ./console exp:help:content. Nothing here matters until that command ran.  
-> disabled: exphelp/topic, exphelp/manual and exphelp/context are 404 and the help shows no topics  
+> Als Inhalt gepflegte Hilfe (doc/eng-us/features/6.0/help-content.md): Themen, Handbücher, Abbildungen und das Glossar als Inhalte  
+> der Website, angelegt von ./console exp:help:content. Nichts hier zählt, bevor dieser Befehl gelaufen ist.  
+> disabled: exphelp/topic, exphelp/manual und exphelp/context sind 404, und die Hilfe zeigt keine Themen  
 
 Standard: `enabled`.
 
@@ -35,8 +35,8 @@ Enabled=enabled
 
 ## ParentNode
 
-> Where the folder "Help" (remote\_id help-root) is created: media (default), content, users, or a remote\_id. Not in  
-> the site's content tree: help must not show up in its menus, listings and feeds.  
+> Wo der Ordner „Hilfe“ (remote\_id help-root) angelegt wird: media (Standard), content, users oder eine remote\_id. Nicht im  
+> Inhaltsbaum der Website: Die Hilfe darf nicht in ihren Menüs, Listen und Feeds auftauchen.  
 
 Standard: `media`.
 
@@ -50,8 +50,8 @@ ParentNode=media
 
 ## Audiences
 
-> The audience options of the help\_\* classes, in their stored order. ONLY APPEND: ezselection stores the position of  
-> an option, so a reordered list gives every topic another audience. The command appends missing ones.  
+> Die Zielgruppenoptionen der Klassen help\_\*, in ihrer gespeicherten Reihenfolge. NUR ANHÄNGEN: ezselection speichert die Position  
+> einer Option, eine umsortierte Liste gibt also jedem Thema eine andere Zielgruppe. Der Befehl hängt fehlende an.  
 
 Standard: eine Liste mit 4: `Visitors`, `Members`, `Editors`, `Administrators`.
 
@@ -70,7 +70,7 @@ Audiences[]=Administrators
 
 ## PublicAudiences
 
-> The audiences whose topics are public (section help\_public, readable without login when Released)  
+> Die Zielgruppen, deren Themen öffentlich sind (Sektion help\_public, ohne Anmeldung lesbar, wenn freigegeben)  
 
 Standard: eine Liste mit 1: `Visitors`.
 
@@ -86,7 +86,7 @@ PublicAudiences[]=Visitors
 
 ## Platforms
 
-> The platform options (only append)  
+> Die Plattformoptionen (nur anhängen)  
 
 Standard: eine Liste mit 3: `Web`, `Admin`, `Mobile`.
 
@@ -104,7 +104,7 @@ Platforms[]=Mobile
 
 ## Areas
 
-> The areas of help\_ids (area.topic\[.variant\]); the validator warns about any other  
+> Die Bereiche der help\_ids (area.topic\[.variant\]); der Validator warnt bei jedem anderen  
 
 Standard: eine Liste mit 8: `account`, `content`, `media`, `search`, `users`, `setup`, `privacy`, `help`.
 
@@ -127,7 +127,7 @@ Areas[]=help
 
 ## AudienceMap
 
-> The help's audience (editor, admin, developer, user) of each audience option, in lower case  
+> Die Zielgruppe der Hilfe (editor, admin, developer, user) jeder Zielgruppenoption, in Kleinbuchstaben  
 
 Standard: ein Hash mit 4: `visitors=user`, `members=user`, `editors=editor`, `administrators=admin`.
 
@@ -146,7 +146,7 @@ AudienceMap[administrators]=admin
 
 ## ContextHelpIds
 
-> Context help by help\_id: the "?" Help control of these pages opens the Released topic (keys as \[ContextHelp\] Map\[\])  
+> Kontexthilfe nach help\_id: Das Hilfe-Element „?“ dieser Seiten öffnet das freigegebene Thema (Schlüssel wie in \[ContextHelp\] Map\[\])  
 
 Standard: ein Hash mit 2: `content/edit=content.publish-article`, `content/history=content.versions`.
 
@@ -163,12 +163,12 @@ ContextHelpIds[content/history]=content.versions
 
 ## AnonymousContextHelp
 
-> The help\_ids other clients open (a mobile app, a site's JavaScript), so "exp:help:content check" reports one that no  
-> topic has or whose topic is not Released (client.help-id-unknown, client.help-id-not-released). None by default.  
+> Die help\_ids, die andere Clients öffnen (eine mobile App, das JavaScript einer Website), damit "exp:help:content check" eine meldet, die kein  
+> Thema hat oder deren Thema nicht Released ist (client.help-id-unknown, client.help-id-not-released). Standardmäßig keine.  
 > ClientHelpIds\[\]  
 > ClientHelpIds\[\]=account.log-in  
-> enabled: the roles step of exp:help:content also gives Anonymous exphelp/context, so the JSON of public, Released  
-> topics can be read without login. Off by default: a security-relevant choice of each site.  
+> enabled: Der Rollenschritt von exp:help:content gibt auch Anonymous exphelp/context, sodass das JSON öffentlicher, freigegebener  
+> Themen ohne Anmeldung gelesen werden kann. Standardmäßig aus: eine sicherheitsrelevante Entscheidung jeder Website.  
 
 Standard: `disabled`.
 
@@ -182,10 +182,10 @@ AnonymousContextHelp=disabled
 
 ## EbooksOnRelease
 
-> enabled: when an object of the help is set to Released, the e-books (EPUB, PDF) of every Released manual that  
-> contains it are built again and stored as file objects below E-books (remote\_id help-ebooks), a new version when  
-> the book changed (expHelpContentEbooks::onStateAssign(), called when states are assigned).  
-> disabled: only ./console exp:help:content ebooks stores them.  
+> enabled: Wird ein Objekt der Hilfe auf Released gesetzt, werden die E-Books (EPUB, PDF) jedes freigegebenen Handbuchs, das  
+> es enthält, neu gebaut und als Dateiobjekte unter E-Books (remote\_id help-ebooks) gespeichert, eine neue Version, wenn  
+> sich das Buch geändert hat (expHelpContentEbooks::onStateAssign(), beim Zuweisen von Zuständen aufgerufen).  
+> disabled: Nur ./console exp:help:content ebooks speichert sie.  
 
 Standard: `enabled`.
 
@@ -199,9 +199,9 @@ EbooksOnRelease=enabled
 
 ## ReviewMaxDays
 
-> Overdue reviews, listed on the help's dashboard to who can edit the topic or assign its state, and by  
-> ./console exp:help:content review: a topic whose review date has passed, or that has been in Review longer than  
-> ReviewMaxDays days since it last changed (the kernel keeps no date of a state change).  
+> Überfällige Prüfungen, auf dem Dashboard der Hilfe für die aufgeführt, die das Thema bearbeiten oder seinen Zustand zuweisen können, und von  
+> ./console exp:help:content review: ein Thema, dessen Prüfdatum verstrichen ist oder das länger als  
+> ReviewMaxDays Tage seit seiner letzten Änderung in Review ist (der Kernel speichert kein Datum einer Zustandsänderung).  
 
 Standard: `14`.
 
@@ -215,7 +215,7 @@ ReviewMaxDays=14
 
 ## ReviewListLimit
 
-> At most this many overdue topics on the dashboard (the rest are counted)  
+> Höchstens so viele überfällige Themen auf dem Dashboard (der Rest wird gezählt)  
 
 Standard: `10`.
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## PageList
 
-> Page ids (paths below doc/eng-us/) shown first on the dashboard  
+> Seiten-IDs (Pfade unter doc/eng-us/), die auf dem Dashboard zuerst angezeigt werden  
 
 Standard: eine Liste mit 17: `help/getting-started.md`, `help/admin-tour.md`, `help/editing-content.md`, `help/who-is-7x.md`, `help/who-is-the-exponential-foundation.md`, `help/publishing-and-versions.md`, `help/accounts-and-sign-in.md`, `help/when-something-goes-wrong.md`, `help/develop-with-git.md`, `help/leadership/project-managers-start-here.md`, `help/business/sales-and-marketing-start-here.md`, `help/leadership/leadership-reading-path.md` ....
 

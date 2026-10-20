@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> exphelp/audience/<audience>: a landing page per audience (expHelpLanding, doc/eng-us/features/6.0/help-system.md "Landing  
-> pages"). enabled: the dashboard's audience cards open it; disabled: the view is a 404 and the cards open the search.  
+> exphelp/audience/<audience>: eine Startseite pro Zielgruppe (expHelpLanding, doc/eng-us/features/6.0/help-system.md "Landing  
+> pages"). enabled: Die Zielgruppenkarten des Dashboards öffnen sie; disabled: Die Ansicht ist 404, und die Karten öffnen die Suche.  
 
 Standard: `enabled`.
 
@@ -34,12 +34,12 @@ Enabled=enabled
 
 ## Blocks
 
-> The blocks of every landing page, in order. \[Landing\_<audience>\] Blocks\[\] replaces the list for one audience.  
->   hero: name, summary, a search box and buttons    start: the reading path ("start here")  
->   boxes: info boxes, pages with their summaries    categories: a search button per category  
->   key: the key pages                               latest: recently updated pages for the audience  
->   related: related audiences                       commits: the latest commits of the project (\[CommitFeedSettings\])  
->   support: the Support Exponential block (\[SupportSettings\])  
+> Die Blöcke jeder Startseite, in Reihenfolge. \[Landing\_<audience>\] Blocks\[\] ersetzt die Liste für eine Zielgruppe.  
+>   hero: Name, Zusammenfassung, ein Suchfeld und Schaltflächen    start: der Lesepfad („hier beginnen“)  
+>   boxes: Infoboxen, Seiten mit ihren Zusammenfassungen           categories: eine Suchschaltfläche pro Kategorie  
+>   key: die wichtigsten Seiten                                    latest: kürzlich aktualisierte Seiten für die Zielgruppe  
+>   related: verwandte Zielgruppen                                 commits: die neuesten Commits des Projekts (\[CommitFeedSettings\])  
+>   support: der Block Exponential unterstützen (\[SupportSettings\])  
 
 Standard: eine Liste mit 7: `hero`, `start`, `boxes`, `categories`, `key`, `latest`, `related`.
 
@@ -61,7 +61,7 @@ Blocks[]=related
 
 ## StartLimit
 
-> How many pages a list shows when the index fills it (a list given in \[Landing\_<audience>\] is shown as it is)  
+> Wie viele Seiten eine Liste zeigt, wenn der Index sie füllt (eine in \[Landing\_<audience>\] angegebene Liste wird so gezeigt, wie sie ist)  
 
 Standard: `6`.
 
@@ -111,7 +111,7 @@ LatestLimit=8
 
 ## ExcludeTypes
 
-> Page types the automatic lists never pick (they are reached through the search and the categories)  
+> Seitentypen, die die automatischen Listen nie wählen (sie werden über die Suche und die Kategorien erreicht)  
 
 Standard: eine Liste mit 5: `changelog`, `history`, `bc`, `specification`, `catalogue`.
 

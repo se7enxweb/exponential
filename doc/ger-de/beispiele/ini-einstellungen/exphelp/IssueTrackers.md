@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## TrackerList
 
-> Where errors are reported (exphelp/report). Each tracker has \[Tracker\_<key>\] Name, Description, URL (the GitHub  
-> issue list, https://github.com/<owner>/<repository>/issues; anything else is ignored) and NewIssueURL.  
+> Wohin Fehler gemeldet werden (exphelp/report). Jeder Tracker hat \[Tracker\_<key>\] Name, Description, URL (die Issue-Liste auf GitHub,  
+> https://github.com/<owner>/<repository>/issues; alles andere wird ignoriert) und NewIssueURL.  
 
 Standard: eine Liste mit 3: `software`, `velocity`, `community`.
 
@@ -38,8 +38,8 @@ TrackerList[]=community
 
 ## ExtensionOwners
 
-> An active extension whose website (extension.xml, ezinfo.php, composer.json or its git origin) is a GitHub  
-> repository of one of these owners is offered as a tracker of its own on the report page  
+> Eine aktive Erweiterung, deren Website (extension.xml, ezinfo.php, composer.json oder ihr git-Origin) ein GitHub-  
+> Repository eines dieser Eigentümer ist, wird auf der Meldeseite als eigener Tracker angeboten  
 
 Standard: eine Liste mit 1: `se7enxweb`.
 
@@ -55,7 +55,7 @@ ExtensionOwners[]=se7enxweb
 
 ## BundledExtensions
 
-> Extensions shipped inside the kernel's repository: their errors go to the software tracker  
+> Erweiterungen, die im Repository des Kernels ausgeliefert werden: Ihre Fehler gehen an den Tracker der Software  
 
 Standard: eine Liste mit 4: `expservices`, `ezformtoken`, `ezjscore`, `ezoe`.
 
@@ -74,7 +74,7 @@ BundledExtensions[]=ezoe
 
 ## ExtensionListLimit
 
-> The most active extensions named in the environment summary (the rest is counted)  
+> Die aktivsten Erweiterungen, die in der Zusammenfassung der Umgebung genannt werden (der Rest wird gezählt)  
 
 Standard: `60`.
 
@@ -88,7 +88,7 @@ ExtensionListLimit=60
 
 ## CommunityLinks
 
-> Where to ask before reporting, <label>|<https URL>  
+> Wo man vor einer Meldung fragen kann, <label>|<https URL>  
 
 Standard: eine Liste mit 3: `Exponential community forums|https://share.exponential.earth/forums`, `Telegram community chat|https://t.me/exponentialcms`, `Exponential documentation|https://exponential.doc.exponential.earth/Exponential`.
 

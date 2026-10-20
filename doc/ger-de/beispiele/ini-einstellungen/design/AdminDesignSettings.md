@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/design.ini` nie selbst: Ein Update ersetzt die Datei. S
 
 ## ShowCommunityLinks
 
-> admin4: the footer's "Evaluate Exponential / Become a member of the Exponential Community" line.  
-> enabled shows it; disabled (the default) leaves it out. A template can also set $show\_community\_links.  
+> admin4: die Zeile „Exponential bewerten / Mitglied der Exponential-Community werden“ in der Fußzeile.  
+> enabled zeigt sie; disabled (der Standard) lässt sie weg. Ein Template kann auch $show\_community\_links setzen.  
 
 Standard: `disabled`.
 
@@ -34,9 +34,9 @@ ShowCommunityLinks=disabled
 
 ## TopMenuIcons
 
-> admin4: the icons before the tabs of the header's main menu (menu.ini \[Topmenu\_<tab>\] Icon, a name of IconList\[\]).  
-> enabled (default) draws them; disabled shows the names alone. An extension's tab sets Icon= in its own  
-> menu.ini.append.php, and a siteaccess or extension may override any tab's Icon there.  
+> admin4: die Symbole vor den Reitern des Hauptmenüs im Kopf (menu.ini \[Topmenu\_<tab>\] Icon, ein Name aus IconList\[\]).  
+> enabled (Standard) zeichnet sie; disabled zeigt nur die Namen. Der Reiter einer Erweiterung setzt Icon= in ihrer eigenen  
+> menu.ini.append.php, und ein Siteaccess oder eine Erweiterung kann dort das Icon jedes Reiters überschreiben.  
 
 Standard: `enabled`.
 
@@ -50,10 +50,10 @@ TopMenuIcons=enabled
 
 ## IconList
 
-> admin4: the icons a setting may name (menu.ini LinkIcons\[\] of a menu drawn as tiles, the Setup overview). Each name  
-> has a mask rule .a4-bi-<name> in components.css (a Bootstrap Icons 1.13.2 SVG in share/icons/bootstrap-icons/svg/);  
-> a name not listed here draws the plug icon. An extension that ships an icon of its own adds its SVG, a rule  
-> .a4-bi-<name> in a stylesheet of BackendCSSFileList\[\] and IconList\[\]=<name> in its design.ini.append.php  
+> admin4: die Symbole, die eine Einstellung nennen darf (menu.ini LinkIcons\[\] eines als Kacheln gezeichneten Menüs, die Setup-Übersicht). Jeder Name  
+> hat eine Masken-Regel .a4-bi-<name> in components.css (ein SVG von Bootstrap Icons 1.13.2 in share/icons/bootstrap-icons/svg/);  
+> ein hier nicht aufgeführter Name zeichnet das Stecker-Symbol. Eine Erweiterung, die ein eigenes Symbol mitliefert, fügt ihr SVG, eine Regel  
+> .a4-bi-<name> in einem Stylesheet aus BackendCSSFileList\[\] und IconList\[\]=<name> in ihrer design.ini.append.php hinzu  
 > (doc/eng-us/features/6.0/admin4-design.md, "Setup overview").  
 
 Standard: eine Liste mit 137: `123`, `archive`, `arrow-90deg-up`, `arrow-bar-down`, `arrow-bar-up`, `arrow-clockwise`, `arrow-counterclockwise`, `arrow-down`, `arrow-down-up`, `arrow-down-right`, `arrow-up`, `arrow-up-circle` ....

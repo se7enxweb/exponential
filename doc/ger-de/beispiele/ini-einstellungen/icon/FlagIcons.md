@@ -21,7 +21,7 @@ Bearbeiten Sie `settings/icon.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Repository
 
-> Where to look for flag icons, relative to Exponential  
+> Wo nach Flaggensymbolen gesucht wird, relativ zu Exponential  
 
 Standard: `share/icons`.
 
@@ -35,7 +35,7 @@ Repository=share/icons
 
 ## Theme
 
-> Which theme to use for flags  
+> Welches Theme für Flaggen verwendet wird  
 
 Standard: `flags`.
 
@@ -49,7 +49,7 @@ Theme=flags
 
 ## IconFormat
 
-> The suffix for all icon files, .e.g eng-GB.gif  
+> Die Endung aller Symboldateien, z. B. eng-GB.gif  
 
 Standard: `gif`.
 

@@ -11,21 +11,21 @@ generated: exp:help:examples
 
 Der Block `[HTTPError-404]` von `settings/error.ini`, mit 2 Einstellung(en).
 
-> Definition for the HTTP error code 404.  
-> It's possible to specify more error codes by creating a group called  
-> HTTPError followed by a - (dash) and the HTTP error code.  
-> The group most contain the HTTPName variable, if not the error code  
-> is not issued to the browser.  
-> Note: The HTTPName must be contain the correct string for the  
->       specific HTTP error code.  
+> Definition des HTTP-Fehlercodes 404.  
+> Weitere Fehlercodes lassen sich angeben, indem man eine Gruppe  
+> HTTPError, gefolgt von einem - (Bindestrich) und dem HTTP-Fehlercode, anlegt.  
+> Die Gruppe muss die Variable HTTPName enthalten, sonst wird der Fehlercode  
+> nicht an den Browser gesendet.  
+> Hinweis: HTTPName muss die korrekte Zeichenkette für den  
+>       jeweiligen HTTP-Fehlercode enthalten.  
 >
-> HeaderList\[\] adds response headers to the error page, one per entry:  
-> HeaderList\[<header name>\]=<value>. They are sent after the status lines,  
-> and stored with the page in the content view cache, so a cached error page  
-> sends them again. A name that is not a valid header name, or a value with a  
-> line break, is left out with a warning. HeaderList\[Status\]=<text> is read  
-> as HTTPName when HTTPName is not set. Empty by default: nothing is added.  
-> Example:  
+> HeaderList\[\] fügt der Fehlerseite Antwort-Header hinzu, einen pro Eintrag:  
+> HeaderList\[<header name>\]=<value>. Sie werden nach den Statuszeilen gesendet  
+> und mit der Seite im View-Cache der Inhalte gespeichert, sodass eine gecachte Fehlerseite  
+> sie erneut sendet. Ein Name, der kein gültiger Header-Name ist, oder ein Wert mit einem  
+> Zeilenumbruch wird mit einer Warnung ausgelassen. HeaderList\[Status\]=<text> wird  
+> als HTTPName gelesen, wenn HTTPName nicht gesetzt ist. Standardmäßig leer: Nichts wird hinzugefügt.  
+> Beispiel:  
 > HeaderList\[Cache-Control\]=public, must-revalidate, max-age=300  
 
 Bearbeiten Sie `settings/error.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:

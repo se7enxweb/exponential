@@ -12,25 +12,25 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/i18n.ini`: 2 Blöcke, 9 Einstellungen.
 
-> Exponential configuration file for internationalization (i18n).  
-> Used for settings defaults for internal encoding and codepage conversion.  
+> Exponential-Konfigurationsdatei für die Internationalisierung (i18n).  
+> Wird für die Standards der internen Kodierung und der Umwandlung von Codepages verwendet.  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/i18n.ini.append or  
->       settings/override/i18n.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
-> # This file should not change it's default encoding which is iso-8859-1.  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/i18n.ini.append oder  
+>       settings/override/i18n.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
+> # Diese Datei sollte ihre Standardkodierung iso-8859-1 nicht ändern.  
 >
-> Charset defines the internal charset for the site,  
->  use UTF-8 for multilingual sites or a specific charset for monolingual sites  
-> Set HTTPCharset to something if you know that the internal charset is not  
-> supported by browser or has a wrong name(for instance UTF8 is a wrong unicode name  
->                                          for browsers while UTF-8 is correct)  
-> MBStringExtension defines whether to use the mbstring extension in PHP,  
->  the extension will only be used if it's available and this variable is set to enabled  
+> Charset legt den internen Zeichensatz der Website fest,  
+>  verwenden Sie UTF-8 für mehrsprachige Websites oder einen bestimmten Zeichensatz für einsprachige Websites  
+> Setzen Sie HTTPCharset, wenn Sie wissen, dass der interne Zeichensatz vom  
+> Browser nicht unterstützt wird oder einen falschen Namen hat (zum Beispiel ist UTF8 für Browser ein falscher  
+>                                          Unicode-Name, UTF-8 dagegen korrekt)  
+> MBStringExtension legt fest, ob die PHP-Erweiterung mbstring verwendet wird,  
+>  die Erweiterung wird nur verwendet, wenn sie verfügbar ist und diese Variable auf enabled steht  
 
 | Block | Einstellungen |
 |---|---|

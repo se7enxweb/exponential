@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/httpcache.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Enabled
 
-> enabled or disabled. The early exit and Velocity only serve what exists, and  
-> nothing is stored while this is disabled.  
+> enabled oder disabled. Der frühe Ausstieg und Velocity liefern nur aus, was existiert, und  
+> solange dies disabled ist, wird nichts gespeichert.  
 
 Standard: `disabled`.
 
@@ -34,10 +34,10 @@ Enabled=disabled
 
 ## CachedSiteAccesses
 
-> Siteaccesses whose pages are cached. Matched by host, by URI (URIMatchType  
-> element or map) or by host and URI (host\_uri); a siteaccess found by another  
-> rule (port, servervar, index, the text and regexp types) is never served  
-> early, since that cannot be known before the kernel starts.  
+> Siteaccesses, deren Seiten gecacht werden. Erkannt über den Host, über die URI (URIMatchType  
+> element oder map) oder über Host und URI (host\_uri); ein Siteaccess, der über eine andere  
+> Regel gefunden wird (port, servervar, index, die Typen text und regexp), wird nie früh  
+> ausgeliefert, weil sich das nicht wissen lässt, bevor der Kernel startet.  
 
 Standard: eine Liste mit 1: `site`.
 
@@ -53,7 +53,7 @@ CachedSiteAccesses[]=site
 
 ## MaxAge
 
-> Seconds a cached page may be served at most, even if nothing purged it.  
+> Sekunden, die eine gecachte Seite höchstens ausgeliefert werden darf, auch wenn nichts sie gelöscht hat.  
 
 Standard: `3600`.
 
@@ -67,8 +67,8 @@ MaxAge=3600
 
 ## StaleWhileRevalidate
 
-> Seconds an expired (not purged) page may still be served, marked STALE, while  
-> one request renders it again. 0 serves nothing expired.  
+> Sekunden, die eine abgelaufene (nicht gelöschte) Seite noch ausgeliefert werden darf, als STALE markiert, während  
+> eine Anfrage sie neu rendert. 0 liefert nichts Abgelaufenes aus.  
 
 Standard: `60`.
 
@@ -82,12 +82,12 @@ StaleWhileRevalidate=60
 
 ## TagHeader
 
-> The purge tags of each page (its nodes, objects and layouts) in one response  
-> header, for a purging proxy in front that reads them, or to see them while  
-> debugging: xkey (Varnish xkey vmod), Surrogate-Key (Fastly), Cache-Tag  
-> (Cloudflare), or another header name. disabled (the default) sends none:  
-> the tags name internal ids, so no visitor should see them otherwise.  
-> ProxyHeaders=enabled, the setting before this one, still means xkey.  
+> Die Lösch-Tags jeder Seite (ihre Knoten, Objekte und Layouts) in einem Antwort-  
+> Header, für einen vorgelagerten löschenden Proxy, der sie liest, oder um sie beim  
+> Debuggen zu sehen: xkey (Varnish-xkey-vmod), Surrogate-Key (Fastly), Cache-Tag  
+> (Cloudflare) oder ein anderer Header-Name. disabled (der Standard) sendet keinen:  
+> Die Tags nennen interne IDs, also sollte sie sonst kein Besucher sehen.  
+> ProxyHeaders=enabled, die Einstellung vor dieser, bedeutet weiterhin xkey.  
 
 Standard: `disabled`.
 
@@ -101,7 +101,7 @@ TagHeader=disabled
 
 ## APCu
 
-> Keep hot entries in APCu in front of the files (when APCu is usable).  
+> Häufig genutzte Einträge in APCu vor den Dateien halten (wenn APCu nutzbar ist).  
 
 Standard: `enabled`.
 
@@ -115,7 +115,7 @@ APCu=enabled
 
 ## MaxBodySize
 
-> Largest page body, in bytes, that is stored.  
+> Größter Seiteninhalt in Bytes, der gespeichert wird.  
 
 Standard: `2097152`.
 
@@ -129,9 +129,9 @@ MaxBodySize=2097152
 
 ## QueryStringParameters
 
-> Query string parameters a cached page may carry. A request with any other  
-> parameter is not cached (every random query string would add an entry).  
-> Exponential passes view parameters in the path, /(offset)/10.  
+> Query-Parameter, die eine gecachte Seite tragen darf. Eine Anfrage mit einem anderen  
+> Parameter wird nicht gecacht (jede zufällige Query-Zeichenkette würde einen Eintrag hinzufügen).  
+> Exponential übergibt View-Parameter im Pfad, /(offset)/10.  
 
 Standard: eine leere Liste.
 
@@ -146,13 +146,13 @@ QueryStringParameters[]
 
 ## ContentChangePurges
 
-> What a content change purges. A whole page also holds what the view cache  
-> never did (the pagelayout's menus, layout blocks that run queries), and the  
-> tags of a change cannot name all of those yet.  
->   all  - every cached page (safe; the default)  
->   tags - only pages tagged with the changed objects, their nodes and parents,  
->          and pages with layout blocks that run queries (their items are tagged)  
-> Changes made in the layout editor always purge every page.  
+> Was eine Inhaltsänderung löscht. Eine ganze Seite enthält auch, was der View-Cache  
+> nie enthielt (die Menüs des Pagelayouts, Layout-Blöcke, die Abfragen ausführen), und die  
+> Tags einer Änderung können all das noch nicht benennen.  
+>   all  - jede gecachte Seite (sicher; der Standard)  
+>   tags - nur Seiten, die mit den geänderten Objekten, ihren Knoten und Elternknoten getaggt sind,  
+>          und Seiten mit Layout-Blöcken, die Abfragen ausführen (ihre Einträge sind getaggt)  
+> Änderungen im Layout-Editor löschen immer jede Seite.  
 
 Standard: `all`.
 

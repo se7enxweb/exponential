@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/debugbar.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Settings
 
-> The settings, in the order the bar lists them inside a group  
+> Die Einstellungen, in der Reihenfolge, in der die Leiste sie innerhalb einer Gruppe auflistet  
 
 Standard: eine Liste mit 37: `debug_output`, `debug_mode`, `debug_redirection`, `display_debug_warnings`, `debug_log_only`, `display_included_files`, `always_log`, `deprecated_log`, `script_debug_output`, `debug_toolbar`, `debug_bar_theme`, `debug_by_ip` ....
 
@@ -55,7 +55,7 @@ Settings[]=template_show_method_debug
 
 ## Groups
 
-> Groups, in the order the bar shows them  
+> Gruppen, in der Reihenfolge, in der die Leiste sie zeigt  
 
 Standard: eine Liste mit 9: `output`, `access`, `templates`, `sql`, `regional`, `mail`, `conditions`, `caching`, `extensions`.
 
@@ -101,7 +101,7 @@ GroupNames[extensions]=Extensions
 
 ## DiscoverBlocks
 
-> Blocks whose every variable is a bool setting of the bar: <file>;<block>;<group>  
+> Blöcke, deren jede Variable eine bool-Einstellung der Leiste ist: <file>;<block>;<group>  
 
 Standard: eine Liste mit 1: `debug.ini;GeneralCondition;conditions`.
 
@@ -117,9 +117,9 @@ DiscoverBlocks[]=debug.ini;GeneralCondition;conditions
 
 ## ExtensionDiscovery
 
-> Extension debug switches: in every active extension's settings/\*.ini and \*.ini.append.php, a  
-> variable whose name matches DiscoveryPattern and whose value is enabled/disabled or true/false  
-> becomes a bool setting of the group extensions, unless the registry already has it.  
+> Debug-Schalter von Erweiterungen: In settings/\*.ini und \*.ini.append.php jeder aktiven Erweiterung wird eine  
+> Variable, deren Name auf DiscoveryPattern passt und deren Wert enabled/disabled oder true/false ist,  
+> zu einer bool-Einstellung der Gruppe extensions, außer das Register hat sie schon.  
 
 Standard: `enabled`.
 
@@ -145,7 +145,7 @@ DiscoveryPattern=/debug/i
 
 ## DiscoveryExclude
 
-> <extension> or <extension>;<file> (e.g. ezjscore;ezjscore.ini) to leave out  
+> <extension> oder <extension>;<file> (z. B. ezjscore;ezjscore.ini), die ausgelassen werden  
 
 Standard: eine leere Liste.
 
@@ -160,7 +160,7 @@ DiscoveryExclude[]
 
 ## Presets
 
-> Presets, applied from the bar (each value a separate, undoable write)  
+> Vorlagen, aus der Leiste angewendet (jeder Wert ein eigener, rückgängig machbarer Schreibvorgang)  
 
 Standard: eine Liste mit 4: `template_work`, `sql_tuning`, `everything`, `off`.
 
@@ -179,11 +179,11 @@ Presets[]=off
 
 ## Thresholds
 
-> The colours of the live summary: <warn>;<high>  
-> SQL query cache hit rate of the request in percent: amber BELOW the first, red below the second  
-> (also amber when a write made every result stale, red in shared mode without APCu)  
-> Memory of OPcache and APCu in use, in percent (shown only to users with setup or cache rights; APCu is shared by  
-> every site of the PHP pool, and the query cache stops adding results below 25 % free, its ApcuReserve)  
+> Die Farben der Live-Zusammenfassung: <warn>;<high>  
+> Trefferquote des SQL-Abfrage-Caches der Anfrage in Prozent: gelb UNTER dem ersten, rot unter dem zweiten  
+> (auch gelb, wenn ein Schreibvorgang jedes Ergebnis veraltet gemacht hat, rot im gemeinsamen Modus ohne APCu)  
+> Belegter Speicher von OPcache und APCu in Prozent (nur für Benutzer mit Setup- oder Cache-Rechten angezeigt; APCu teilen sich  
+> alle Websites des PHP-Pools, und der Abfrage-Cache fügt unter 25 % frei keine Ergebnisse mehr hinzu, seine ApcuReserve)  
 
 Standard: ein Hash mit 8: `time_ms=500;1500`, `sql_count=100;300`, `sql_ms=200;800`, `memory_mb=64;192`, `templates=150;400`, `querycache_hit_rate=50;10`, `opcache_memory=80;95`, `apcu_memory=75;90`.
 
@@ -206,9 +206,9 @@ Thresholds[apcu_memory]=75;90
 
 ## Panels
 
-> Panels of extensions: a tab each after Memory, a chip in the summary and data in the page's JSON. An  
-> extension adds an id here and names its class (expDebugBarPanelInterface) in \[Panel\_<id>\] Class=; the  
-> class decides who may see the panel. Guide: doc/eng-us/bc/6.0/debug-bar.md, "Panels of extensions".  
+> Panels von Erweiterungen: je ein Reiter nach Speicher, ein Chip in der Zusammenfassung und Daten im JSON der Seite. Eine  
+> Erweiterung fügt hier eine ID hinzu und nennt ihre Klasse (expDebugBarPanelInterface) in \[Panel\_<id>\] Class=; die  
+> Klasse entscheidet, wer das Panel sehen darf. Anleitung: doc/eng-us/bc/6.0/debug-bar.md, "Panels of extensions".  
 >   Panels\[\]=mypanel  
 >   \[Panel\_mypanel\]  
 >   Class=myExtensionDebugBarPanel  
@@ -226,8 +226,8 @@ Panels[]
 
 ## RenderTree
 
-> The template tree of the Rendering tab: every template the page rendered, nested, with the file the overrides chose  
-> and its time (at most 2000). Recorded only while debug output is on; disabled leaves it out.  
+> Der Template-Baum des Reiters Rendern: jedes Template, das die Seite gerendert hat, verschachtelt, mit der Datei, die die Overrides gewählt haben,  
+> und ihrer Zeit (höchstens 2000). Nur aufgezeichnet, solange die Debug-Ausgabe an ist; disabled lässt ihn weg.  
 
 Standard: `enabled`.
 
@@ -241,9 +241,9 @@ RenderTree=enabled
 
 ## Theme
 
-> The looks of the bar: default (light chips) or toolbar (a dark, compact toolbar with an icon in each block, the  
-> request's HTTP status and module/view in the first block, and a block's details in a popup above it). The panel  
-> above the bar is the same in both. Any other value is default.  
+> Das Aussehen der Leiste: default (helle Chips) oder toolbar (eine dunkle, kompakte Werkzeugleiste mit einem Symbol in jedem Block, dem  
+> HTTP-Status der Anfrage und Modul/Ansicht im ersten Block und den Details eines Blocks in einem Popup darüber). Das Panel  
+> über der Leiste ist in beiden gleich. Jeder andere Wert ist default.  
 
 Standard: `default`.
 
@@ -257,7 +257,7 @@ Theme=default
 
 ## LogFile
 
-> The write log, in var/<site>/log/ (one JSON object per line)  
+> Das Schreibprotokoll, in var/<site>/log/ (ein JSON-Objekt pro Zeile)  
 
 Standard: `debugbar.log`.
 
@@ -271,7 +271,7 @@ LogFile=debugbar.log
 
 ## LogListLimit
 
-> Entries the bar lists  
+> Einträge, die die Leiste auflistet  
 
 Standard: `20`.
 

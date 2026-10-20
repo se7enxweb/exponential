@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[PdfSettings]` von `settings/exphelp.ini`, mit 8 Einstellung(en).
 
-> "Download as PDF" of a help page (exphelp/pdf/<page id>, ./console exp:help pdf <page id>), drawn by the kernel's  
-> own PDF library (lib/ezpdf); nothing outside the installation is called. Files are cached in <help cache>/pdf.  
+> „Als PDF herunterladen“ einer Hilfeseite (exphelp/pdf/<page id>, ./console exp:help pdf <page id>), gezeichnet von der eigenen  
+> PDF-Bibliothek des Kernels (lib/ezpdf); nichts außerhalb der Installation wird aufgerufen. Die Dateien werden in <help cache>/pdf gecacht.  
 
 Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -22,7 +22,7 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> false hides the button and makes exphelp/pdf a 404  
+> false blendet die Schaltfläche aus und macht exphelp/pdf zu 404  
 
 Standard: `true`.
 
@@ -36,7 +36,7 @@ Enabled=true
 
 ## PageSize
 
-> A4 or Letter  
+> A4 oder Letter  
 
 Standard: `A4`.
 
@@ -50,9 +50,9 @@ PageSize=A4
 
 ## FontFiles
 
-> TrueType (.ttf) fonts: of each list the first file that exists is used (a relative path is taken from the install  
-> root). A TrueType font draws every character it has (embedded as a composite font, the text stays selectable).  
-> With no regular font found the PDF core fonts are used and text is transliterated to Windows-1252.  
+> TrueType-Schriften (.ttf): Aus jeder Liste wird die erste vorhandene Datei verwendet (ein relativer Pfad gilt ab dem Wurzelverzeichnis  
+> der Installation). Eine TrueType-Schrift zeichnet jedes Zeichen, das sie hat (als zusammengesetzte Schrift eingebettet, der Text bleibt markierbar).  
+> Wird keine normale Schrift gefunden, werden die PDF-Grundschriften verwendet und der Text nach Windows-1252 transliteriert.  
 
 Standard: eine Liste mit 4: `/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf`, `/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf`, `/usr/share/fonts/TTF/DejaVuSans.ttf`, `/usr/share/fonts/dejavu/DejaVuSans.ttf`.
 
@@ -122,7 +122,7 @@ BoldItalicFontFiles[]=/usr/share/fonts/dejavu/DejaVuSans-BoldOblique.ttf
 
 ## MonoFontFiles
 
-> Monospace for code; without one the core font Courier is used (and the regular font for what Courier lacks)  
+> Festbreitenschrift für Code; ohne eine wird die Grundschrift Courier verwendet (und die normale Schrift für das, was Courier fehlt)  
 
 Standard: eine Liste mit 4: `/usr/share/fonts/dejavu-sans-mono-fonts/DejaVuSansMono.ttf`, `/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf`, `/usr/share/fonts/TTF/DejaVuSansMono.ttf`, `/usr/share/fonts/dejavu/DejaVuSansMono.ttf`.
 
@@ -141,7 +141,7 @@ MonoFontFiles[]=/usr/share/fonts/dejavu/DejaVuSansMono.ttf
 
 ## FallbackFontFiles
 
-> Characters the regular font lacks (Chinese, Japanese, Korean ...); loaded only when a page needs it  
+> Zeichen, die der normalen Schrift fehlen (Chinesisch, Japanisch, Koreanisch ...); nur geladen, wenn eine Seite sie braucht  
 
 Standard: eine Liste mit 3: `/usr/share/fonts/google-droid-sans-fonts/DroidSansFallbackFull.ttf`, `/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf`, `/usr/share/fonts/google-noto-cjk/NotoSansCJK-Regular.ttc`.
 

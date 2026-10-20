@@ -13,7 +13,7 @@ Der Block `[ezxhtml]` von `settings/ezxml.ini`, mit 2 Einstellung(en).
 
 > TagPresets\[full\]=All tags  
 > TagPresets\[mini\]=Just formatting allowed  
-> Handler specific options  
+> Optionen für den jeweiligen Handler  
 
 Bearbeiten Sie `settings/ezxml.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -23,8 +23,8 @@ Bearbeiten Sie `settings/ezxml.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## RenderParagraphInTableCells
 
-> Determines to insert <p> tag inside a table cell in the output or not  
-> if there is only one <paragraph> tag inside a cell.  
+> Legt fest, ob in der Ausgabe ein Tag <p> in eine Tabellenzelle eingefügt wird,  
+> wenn sich nur ein Tag <paragraph> in der Zelle befindet.  
 
 Standard: `enabled`.
 
@@ -38,8 +38,8 @@ RenderParagraphInTableCells=enabled
 
 ## ShowURLAliasForProtectedLinks
 
-> Show URL alias for links the current user does not have read access to.  
-> If disabled (recommended) the link will be /content/view/full/\[nodeID\] instead.  
+> Den URL-Alias für Links zeigen, auf die der aktuelle Benutzer keinen Lesezugriff hat.  
+> Wenn deaktiviert (empfohlen), ist der Link stattdessen /content/view/full/\[nodeID\].  
 
 Standard: `disabled`.
 

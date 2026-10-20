@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/file.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ClusterEvents
 
-> Enables/Disables dedicated cluster events listening  
-> If enabled, the cluster file handler will use a dedicated listener object  
-> to respond to cluster events.  
-> Can be used to add a cache layer (e.g. Memcached or Redis) in the cluster backend  
-> and thus reduce cluster database load.  
-> Only supported by eZDFSFileHandler MySQLi backend at the moment.  
+> Aktiviert/deaktiviert einen eigenen Listener für Cluster-Ereignisse  
+> Wenn aktiviert, verwendet der Cluster-Datei-Handler ein eigenes Listener-Objekt,  
+> um auf Cluster-Ereignisse zu reagieren.  
+> Lässt sich verwenden, um eine Cache-Schicht (z. B. Memcached oder Redis) in das Cluster-Backend einzufügen  
+> und so die Last der Cluster-Datenbank zu senken.  
+> Derzeit nur vom MySQLi-Backend von eZDFSFileHandler unterstützt.  
 
 Standard: `disabled`.
 
@@ -38,8 +38,8 @@ ClusterEvents=disabled
 
 ## Listener
 
-> Class to use as cluster events listener  
-> This class must implement eZClusterEventListener interface  
+> Klasse, die als Listener für Cluster-Ereignisse verwendet wird  
+> Diese Klasse muss die Schnittstelle eZClusterEventListener implementieren  
 
 Standard: leer.
 

@@ -19,17 +19,17 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Default
 
-> The languages of the documentation (expHelpLanguage; doc/eng-us/bc/6.0/translated-documentation.md). Each language  
-> has a directory below doc/ named by its Exponential locale code in lower case: doc/eng-us/ (eng-US) is the  
-> original, a translation lives in doc/<locale>/ (doc/ger-de/ for ger-DE) with the same relative paths, or with  
-> translated file names listed in doc/<locale>/.paths.json ("translated path": "path below doc/eng-us/"). A page id  
-> is its path below doc/eng-us/ in every language, so a help address shows the same page in each language. Files  
-> directly below doc/ in no language directory (doc/changelogs/) are not translated.  
-> The reader's language is the locale of the interface (site.ini \[RegionalSettings\] Locale, set by the  
-> administration's language switch), lower cased: ger-DE reads doc/ger-de/. A locale without a directory of its own  
-> uses an alias of Map\[\], else the first directory of its language (ger-AT -> ger-de), else Default; a page the  
-> reader's language does not have yet is shown in Default, with a note.  
-> The original language, and the language of a locale that has no directory  
+> Die Sprachen der Dokumentation (expHelpLanguage; doc/eng-us/bc/6.0/translated-documentation.md). Jede Sprache  
+> hat ein Verzeichnis unter doc/, benannt nach ihrem Locale-Code von Exponential in Kleinbuchstaben: doc/eng-us/ (eng-US) ist das  
+> Original, eine Übersetzung liegt in doc/<locale>/ (doc/ger-de/ für ger-DE) mit denselben relativen Pfaden oder mit  
+> übersetzten Dateinamen, aufgeführt in doc/<locale>/.paths.json ("übersetzter Pfad": "Pfad unter doc/eng-us/"). Eine Seiten-ID  
+> ist in jeder Sprache ihr Pfad unter doc/eng-us/, eine Hilfeadresse zeigt also in jeder Sprache dieselbe Seite. Dateien  
+> direkt unter doc/ in keinem Sprachverzeichnis (doc/changelogs/) werden nicht übersetzt.  
+> Die Sprache des Lesers ist die Locale der Oberfläche (site.ini \[RegionalSettings\] Locale, gesetzt über die  
+> Sprachumschaltung der Administration), in Kleinbuchstaben: ger-DE liest doc/ger-de/. Eine Locale ohne eigenes Verzeichnis  
+> verwendet einen Alias aus Map\[\], sonst das erste Verzeichnis ihrer Sprache (ger-AT -> ger-de), sonst Default; eine Seite, die die  
+> Sprache des Lesers noch nicht hat, wird in Default angezeigt, mit einem Hinweis.  
+> Die Originalsprache und die Sprache einer Locale, die kein Verzeichnis hat  
 
 Standard: `eng-us`.
 
@@ -43,7 +43,7 @@ Default=eng-us
 
 ## Directories
 
-> The language directories the help reads (the default first); a directory that does not exist yet is fine  
+> Die Sprachverzeichnisse, die die Hilfe liest (das Standardverzeichnis zuerst); ein Verzeichnis, das es noch nicht gibt, ist in Ordnung  
 
 Standard: eine Liste mit 2: `eng-us`, `ger-de`.
 
@@ -60,7 +60,7 @@ Directories[]=ger-de
 
 ## Map
 
-> Optional aliases, locale => directory, for a locale that should read another locale's directory  
+> Optionale Aliase, Locale => Verzeichnis, für eine Locale, die das Verzeichnis einer anderen Locale lesen soll  
 
 Standard: ein Hash mit 3: `eng-GB=eng-us`, `ger-AT=ger-de`, `ger-CH=ger-de`.
 
@@ -78,7 +78,7 @@ Map[ger-CH]=ger-de
 
 ## Names
 
-> Directory => the language's name in English (translated in kernel/exphelp for the "not translated yet" note)  
+> Verzeichnis => der englische Name der Sprache (übersetzt in kernel/exphelp für den Hinweis „noch nicht übersetzt“)  
 
 Standard: ein Hash mit 2: `eng-us=English`, `ger-de=German`.
 
@@ -95,8 +95,8 @@ Names[ger-de]=German
 
 ## Legacy
 
-> The directories of 6.0.14 and before => today's: an old address (exphelp/viewer/en/us/<id>, exphelp/viewer/doc/en/us/<id>,  
-> exphelp/viewer/de/<translated path>, /(lang)/en-us) still finds its page. No file is read from an old directory.  
+> Die Verzeichnisse von 6.0.14 und früher => die heutigen: Eine alte Adresse (exphelp/viewer/en/us/<id>, exphelp/viewer/doc/en/us/<id>,  
+> exphelp/viewer/de/<translated path>, /(lang)/en-us) findet ihre Seite weiterhin. Aus einem alten Verzeichnis wird keine Datei gelesen.  
 
 Standard: ein Hash mit 2: `en/us=eng-us`, `de=ger-de`.
 

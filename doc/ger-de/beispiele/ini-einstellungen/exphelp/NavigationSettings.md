@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## FoldedFolders
 
-> Folder names in the navigation tree, <page id of the folder, its path below doc/eng-us/> => <name> (else the title of the folder's README)  
+> Ordnernamen im Navigationsbaum, <Seiten-ID des Ordners, sein Pfad unter doc/eng-us/> => <name> (sonst der Titel der README des Ordners)  
 > FolderNames\[examples/cookbook\]=Cookbook  
-> Folded folders: the tree shows their overview link and page count, and lists their pages (and those of the  
-> folders below them) only while a page inside is open. For the generated reference examples, which would otherwise  
-> add thousands of links to every page of the help. Paths below doc/eng-us/; a folder without a README is never folded.  
-> The government task pages: six groups of step-by-step tasks below doc/eng-us/help/government/tasks/  
+> Eingeklappte Ordner: Der Baum zeigt ihren Übersichtslink und die Zahl ihrer Seiten und listet ihre Seiten (und die der  
+> Ordner darunter) nur auf, solange eine Seite darin geöffnet ist. Für die generierten Referenzbeispiele, die sonst  
+> jeder Seite der Hilfe Tausende Links hinzufügen würden. Pfade unter doc/eng-us/; ein Ordner ohne README wird nie eingeklappt.  
+> Die Aufgabenseiten für Behörden: sechs Gruppen von Schritt-für-Schritt-Aufgaben unter doc/eng-us/help/government/tasks/  
 
 Standard: eine Liste mit 12: `examples/template-operators`, `examples/template-functions`, `examples/fetch-functions`, `examples/module-views`, `examples/policies`, `examples/ini-settings`, `examples/datatypes`, `examples/workflow-events`, `examples/cronjobs`, `examples/commands`, `examples/extension-points`, `help/government/tasks`.
 

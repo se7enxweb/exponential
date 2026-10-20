@@ -12,25 +12,25 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/debugbar.ini`: 42 Blöcke, 288 Einstellungen.
 
-> The registry of the Exp Debug bar (the pinned bar at the bottom of a page with debug output).  
-> Guide: doc/eng-us/bc/6.0/debug-bar.md  
+> Das Register der Exp-Debug-Leiste (die angeheftete Leiste am unteren Rand einer Seite mit Debug-Ausgabe).  
+> Anleitung: doc/eng-us/bc/6.0/debug-bar.md  
 >
-> Every setting the bar shows and changes is one \[Setting\_<id>\] block:  
+> Jede Einstellung, die die Leiste zeigt und ändert, ist ein Block \[Setting\_<id>\]:  
 >
 >   \[Setting\_<id>\]  
->   File=site.ini            the INI file  
->   Block=DebugSettings      its block  
->   Variable=DebugOutput     its variable  
+>   File=site.ini            die INI-Datei  
+>   Block=DebugSettings      ihr Block  
+>   Variable=DebugOutput     ihre Variable  
 >   Type=bool                bool | enum | list | text | iplist | userlist  
 >   Label=Debug output  
->   Group=output             one of \[DebugBarSettings\] Groups\[\]  
+>   Group=output             eine aus \[DebugBarSettings\] Groups\[\]  
 >   Help=One sentence on what it does.  
->   Values\[\]                 enum only: the values it may take  
->   On=enabled               bool only: the words written for on and off; default: the words the  
->   Off=disabled             setting's own default uses (enabled/disabled or true/false)  
+>   Values\[\]                 nur enum: die Werte, die sie annehmen darf  
+>   On=enabled               nur bool: die für an und aus geschriebenen Wörter; Standard: die Wörter, die der  
+>   Off=disabled             eigene Standard der Einstellung verwendet (enabled/disabled oder true/false)  
 >
-> Every write goes through the exp:ini engine (expIniEditor): line by line, with a backup, keeping  
-> the file's owner. An extension adds its own settings in its settings/debugbar.ini.append.php:  
+> Jeder Schreibvorgang läuft über die Engine von exp:ini (expIniEditor): Zeile für Zeile, mit Sicherung, unter Beibehaltung  
+> des Eigentümers der Datei. Eine Erweiterung fügt ihre eigenen Einstellungen in ihrer settings/debugbar.ini.append.php hinzu:  
 >
 >   \[DebugBarSettings\]  
 >   Settings\[\]=myext\_debug  

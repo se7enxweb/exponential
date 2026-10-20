@@ -12,16 +12,16 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/fetchalias.ini`: 8 Blöcke, 27 Einstellungen.
 
-> Exponential fetch alias configuration file.  
+> Exponential-Konfigurationsdatei für Fetch-Aliase.  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/fetchalias.ini.append.php  
->       for more security in non-virtualhost modes  
-> fetch\_alias is to used as a replacement for fetch for often used fetch functions  
->             or to simplify complicated fetch functions.  
-> General syntax  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/fetchalias.ini.append.php an,  
+>       für mehr Sicherheit im Modus ohne virtuellen Host  
+> fetch\_alias dient als Ersatz für fetch bei häufig verwendeten Fetch-Funktionen  
+>             oder zur Vereinfachung komplizierter Fetch-Funktionen.  
+> Allgemeine Syntax  
 >
 > \[<parameter>\]         # name of first parameter in fetch\_alias  
 > Module=          # which module to use  

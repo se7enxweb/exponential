@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[Setting_debug_by_ip]` von `settings/debugbar.ini`, mit 7 Einstellung(en).
 
-> --------------------------------------------------------------------- who gets debug  
+> --------------------------------------------------------------------- wer Debug-Ausgabe erhält  
 
 Bearbeiten Sie `settings/debugbar.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

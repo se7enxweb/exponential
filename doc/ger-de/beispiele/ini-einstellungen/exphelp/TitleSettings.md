@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Titles
 
-> A clearer title and summary for pages whose own title is unclear: a raw file name, "README", a bare version, the  
-> first line of a source code comment, or the same title as another page. A page's front matter title or summary  
-> always wins; this is for files that have none (plain text, the inherited documentation) and must keep their name  
-> because other files refer to them. Keys are paths relative to the installation root.  
+> Ein klarerer Titel und eine klarere Zusammenfassung für Seiten, deren eigener Titel unklar ist: ein bloßer Dateiname, "README", eine bloße Version, die  
+> erste Zeile eines Quelltextkommentars oder derselbe Titel wie eine andere Seite. Titel oder Zusammenfassung aus dem Front Matter einer Seite  
+> gewinnen immer; dies ist für Dateien, die keines haben (reiner Text, die geerbte Dokumentation) und ihren Namen behalten müssen,  
+> weil andere Dateien auf sie verweisen. Die Schlüssel sind Pfade relativ zum Wurzelverzeichnis der Installation.  
 > Titles\[<path>\]=<title>  
 
 Standard: ein Hash mit 46: `doc/eng-us/standards/header.txt=Source file header template (inherited, 4.1)`, `doc/eng-us/bc/5.90/README.md=Upgrade notes for the 5.90 series (2017.08 and later)`, `doc/eng-us/features/5.90/README.md=Features of the 5.90 series (2017.08 and later)`, `doc/eng-us/bc/6.0/love/CHANGELOG.md=LoveStack features: changelog`, `doc/eng-us/bc/6.0/love/FEATURES.md=LoveStack features: the feature list`, `doc/eng-us/bc/6.0/love/GETTING_STARTED.md=LoveStack features: getting started`, `doc/eng-us/bc/6.0/love/TESTING.md=LoveStack features: testing`, `doc/eng-us/bc/6.0/content-jobs.md=Content jobs: upgrade notes`, `doc/eng-us/bc/6.0/debug-bar.md=The Exp Debug bar: upgrade notes`, `doc/eng-us/bc/4.4/changes-4.4.0.txt=Changes to BC and behavior in version 4.4.0`, `doc/changelogs/2.9/CHANGELOG-2.9-1=Changes in 2.9-1 (first release)`, `doc/changelogs/2.9/CHANGELOG-2.9-2=Changes from 2.9-1 to 2.9-2` ....
@@ -59,7 +59,7 @@ Titles[doc/changelogs/4.7/CHANGELOG-4.6.0-to-4.7.0.txt]=Changes from 4.6.0 to 4.
 
 ## Summaries
 
-> Summaries\[<path>\]=<one sentence for the cards and the search results>  
+> Summaries\[<path>\]=<ein Satz für die Karten und die Suchergebnisse>  
 
 Standard: ein Hash mit 3: `doc/eng-us/standards/header.txt=The copyright and license header that every PHP file of the inherited 4.x code base started with, kept as the historical template; new files use the docblock header described in the coding standards.`, `doc/eng-us/specifications/trunk/personal_trashcan/functional_requirements.txt=Why restoring folders from the shared trash is hard, and the requirements for a trash can per user.`, `doc/changelogs/3.3/unstable/CHANGELOG-desc-3.3.0-2=This release summary file is empty in the original distribution.`.
 
@@ -77,9 +77,9 @@ Summaries[doc/changelogs/3.3/unstable/CHANGELOG-desc-3.3.0-2]=This release summa
 
 ## TitleRules
 
-> <pattern>;<template>, first match wins, for pages without a Titles\[\] entry. Placeholders: {title} (the page's own  
-> title), {name} (its file name, humanized), {fileversion} (the version at the end of the file name) and {dirversion}  
-> (the nearest version directory)  
+> <pattern>;<template>, der erste Treffer gewinnt, für Seiten ohne Eintrag in Titles\[\]. Platzhalter: {title} (der eigene  
+> Titel der Seite), {name} (ihr Dateiname, lesbar gemacht), {fileversion} (die Version am Ende des Dateinamens) und {dirversion}  
+> (das nächste Versionsverzeichnis)  
 
 Standard: eine Liste mit 2: `doc/changelogs/*/CHANGELOG-desc-*;Release {fileversion} summary: {title}`, `doc/eng-us/features/*/event.*;{title} ({dirversion})`.
 

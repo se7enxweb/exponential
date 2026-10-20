@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## ResultLimit
 
-> Results per page (the JSON view takes limit=, at most 50)  
+> Ergebnisse pro Seite (die JSON-Ansicht nimmt limit=, höchstens 50)  
 
 Standard: `20`.
 
@@ -33,7 +33,7 @@ ResultLimit=20
 
 ## TitleBoost
 
-> Score weights of a match in the title, a heading and the text  
+> Gewichte eines Treffers im Titel, in einer Überschrift und im Text  
 
 Standard: `8`.
 
@@ -71,7 +71,7 @@ BodyBoost=1
 
 ## PathBoost
 
-> ... in the page's path (features/6.0/maintenance-mode.md: "maintenance", "mode") and its front matter keywords  
+> ... im Pfad der Seite (features/6.0/maintenance-mode.md: "maintenance", "mode") und in den Schlüsselwörtern ihres Front Matter  
 
 Standard: `2`.
 
@@ -97,7 +97,7 @@ KeywordBoost=4
 
 ## TitleMatchBoost
 
-> Factor for a page whose title holds every word of the query  
+> Faktor für eine Seite, deren Titel jedes Wort der Anfrage enthält  
 
 Standard: `1.4`.
 
@@ -111,11 +111,11 @@ TitleMatchBoost=1.4
 
 ## TypeBoost
 
-> Factor per page type (expHelpDocumentIndex types): help pages and guides rank above reference material with the  
-> same words, changelogs and history below it  
-> The generated reference examples (doc/eng-us/examples/, ./console exp:help:examples): thousands of short pages that  
-> repeat setting, operator and view names; below the written pages that explain the same words  
-> the generated pattern catalogue (doc/eng-us/standards/patterns/) lists thousands of class names: below the written pages  
+> Faktor pro Seitentyp (Typen von expHelpDocumentIndex): Hilfeseiten und Anleitungen stehen über Referenzmaterial mit  
+> denselben Wörtern, Changelogs und Historie darunter  
+> Die generierten Referenzbeispiele (doc/eng-us/examples/, ./console exp:help:examples): Tausende kurzer Seiten, die  
+> Namen von Einstellungen, Operatoren und Ansichten wiederholen; unter den geschriebenen Seiten, die dieselben Wörter erklären  
+> der generierte Musterkatalog (doc/eng-us/standards/patterns/) listet Tausende Klassennamen auf: unter den geschriebenen Seiten  
 
 Standard: ein Hash mit 7: `help=1.5`, `guide=1.3`, `specification=0.8`, `changelog=0.45`, `history=0.6`, `generated=0.5`, `catalogue=0.5`.
 
@@ -137,7 +137,7 @@ TypeBoost[catalogue]=0.5
 
 ## VersionBoost
 
-> Factor per major version for pages below a version directory (features/3.8/, bc/4.1/): older releases rank lower  
+> Faktor pro Hauptversion für Seiten unter einem Versionsverzeichnis (features/3.8/, bc/4.1/): ältere Releases stehen weiter unten  
 
 Standard: ein Hash mit 3: `3=0.5`, `4=0.6`, `5=0.75`.
 
@@ -155,9 +155,9 @@ VersionBoost[5]=0.75
 
 ## AudienceBoost
 
-> Factor per audience for the pages that are for it (the lowest when a page has several); not applied while the  
-> search is filtered to that audience. The trainers' lessons repeat the subjects of the editor and administrator pages,  
-> so they rank below them in a general search and on their own under the Trainers filter.  
+> Faktor pro Zielgruppe für die Seiten, die für sie sind (der niedrigste, wenn eine Seite mehrere hat); nicht angewendet, solange die  
+> Suche auf diese Zielgruppe gefiltert ist. Die Lektionen der Trainer wiederholen die Themen der Seiten für Redakteure und Administratoren,  
+> sie stehen also in einer allgemeinen Suche darunter und für sich allein unter dem Filter Trainer.  
 
 Standard: ein Hash mit 1: `trainer=0.6`.
 
@@ -173,7 +173,7 @@ AudienceBoost[trainer]=0.6
 
 ## StopWords
 
-> Words that are not indexed (an empty list keeps the built-in English and German list)  
+> Wörter, die nicht indiziert werden (eine leere Liste behält die eingebaute englische und deutsche Liste)  
 
 Standard: eine leere Liste.
 

@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/file.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## FileHandler
 
-> Cluster file handler.  
-> Since 4.1 name of the filehandlers have changed  
-> you may choose between :  
+> Cluster-Datei-Handler.  
+> Seit 4.1 haben sich die Namen der Datei-Handler geändert  
+> Sie können wählen zwischen:  
 > - eZFSFileHandler  
->   standard file handler  
+>   Standard-Datei-Handler  
 > - eZDFSFileHandler  
->   distributed filesystem handler with a DB overlay. Required for NFS based  
->   architectures  
-> and it is case sensitive  
+>   Handler für verteilte Dateisysteme mit einer Datenbankschicht. Erforderlich für NFS-basierte  
+>   Architekturen  
+> Groß- und Kleinschreibung wird beachtet  
 
 Standard: `eZFSFileHandler`.
 
@@ -41,22 +41,22 @@ FileHandler=eZFSFileHandler
 
 ## NonExistantStaleCacheHandling
 
-> DEPRECATED  
-> If you want to use your own cluster file handler located in an extension  
-> then you should add the extension name to the list below.  
-> In that case the handler will be searched for in the following directory:  
+> VERALTET  
+> Wenn Sie einen eigenen Cluster-Datei-Handler aus einer Erweiterung verwenden wollen,  
+> fügen Sie den Namen der Erweiterung der Liste unten hinzu.  
+> Dann wird der Handler im folgenden Verzeichnis gesucht:  
 > extension/<your\_extension>/clusterfilehandlers  
 > ExtensionDirectories\[\]  
-> Defines what happens when a requested cache file is already being generated  
-> and no expired cache file exists (for instance if the content is new)  
-> Two possible values:  
->   - wait: places the process in a wait loop for a limited time until the file  
->           is done generating. This is the default value  
->   - generate: let the requesting process generate its own data without storing  
->               the result  
-> The key of this array defined the type of cache impacted by the setting. Three  
-> cache types are allowed here: viewcache, cacheblock and misc (any cache that is  
-> not viewcache nor cacheblock).  
+> Legt fest, was geschieht, wenn eine angeforderte Cache-Datei gerade erzeugt wird  
+> und keine abgelaufene Cache-Datei existiert (zum Beispiel bei neuem Inhalt)  
+> Zwei mögliche Werte:  
+>   - wait: lässt den Prozess für begrenzte Zeit in einer Warteschleife, bis die Datei  
+>           fertig erzeugt ist. Das ist der Standard  
+>   - generate: lässt den anfragenden Prozess seine eigenen Daten erzeugen, ohne das  
+>               Ergebnis zu speichern  
+> Der Schlüssel dieses Arrays legt die Art des betroffenen Caches fest. Drei  
+> Cache-Arten sind hier erlaubt: viewcache, cacheblock und misc (jeder Cache, der  
+> weder viewcache noch cacheblock ist).  
 
 Standard: ein Hash mit 3: `viewcache=wait`, `cacheblock=wait`, `misc=wait`.
 

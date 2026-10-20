@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Roots
 
-> The directories (relative to the installation root) whose git-tracked files the help shows. Nothing outside them  
-> is ever read or served.  
+> Die Verzeichnisse (relativ zum Wurzelverzeichnis der Installation), deren von git versionierte Dateien die Hilfe zeigt. Nichts außerhalb  
+> wird je gelesen oder ausgeliefert.  
 
 Standard: eine Liste mit 1: `doc`.
 
@@ -36,11 +36,11 @@ Roots[]=doc
 
 ## ActiveExtensionDocs
 
-> enabled: the documentation of every active extension is shown too, found when the help looks (an extension  
-> switched on or off is added or left out at once): the files of extension/<name>/doc tracked by the extension's own  
-> repository (or listed in its share/filelist.md5), and its README, CHANGELOG, LICENSE ... (ExtensionTopFiles\[\]).  
-> Their pages have the id ext/<name>/<path below doc> (ext/<name>/README.md for a top file), in the folder and  
-> category "Extensions" and on exphelp/extensions. disabled: only the extensions of ExtensionDocDirs\[\].  
+> enabled: Die Dokumentation jeder aktiven Erweiterung wird ebenfalls angezeigt, gefunden, wenn die Hilfe nachsieht (eine Erweiterung,  
+> die ein- oder ausgeschaltet wird, kommt sofort hinzu oder fällt weg): die Dateien von extension/<name>/doc, die das eigene  
+> Repository der Erweiterung versioniert (oder ihre share/filelist.md5 aufführt), und ihre README, CHANGELOG, LICENSE ... (ExtensionTopFiles\[\]).  
+> Ihre Seiten haben die ID ext/<name>/<path below doc> (ext/<name>/README.md für eine Datei der obersten Ebene), im Ordner und in der  
+> Kategorie „Erweiterungen“ und auf exphelp/extensions. disabled: nur die Erweiterungen aus ExtensionDocDirs\[\].  
 
 Standard: `enabled`.
 
@@ -54,7 +54,7 @@ ActiveExtensionDocs=enabled
 
 ## ExtensionDocDirs
 
-> Extensions whose doc directory is shown whether active or not, as <extension name>. Empty: none.  
+> Erweiterungen, deren doc-Verzeichnis angezeigt wird, ob aktiv oder nicht, als <extension name>. Leer: keine.  
 
 Standard: eine leere Liste.
 
@@ -69,9 +69,9 @@ ExtensionDocDirs[]
 
 ## ExtensionTopFiles
 
-> The files at the top of an extension's directory that are shown besides its doc/ (shell patterns, without case);  
-> nothing else outside doc/ is ever read. PHP and other source files are never shown: only DocumentSuffixes\[\] (and  
-> text files without a suffix that do not start like a program, #! or <?) are pages.  
+> Die Dateien auf der obersten Ebene des Verzeichnisses einer Erweiterung, die neben ihrem doc/ angezeigt werden (Shell-Muster, ohne Beachtung der Groß-/Kleinschreibung);  
+> sonst wird außerhalb von doc/ nie etwas gelesen. PHP- und andere Quelldateien werden nie angezeigt: Nur DocumentSuffixes\[\] (und  
+> Textdateien ohne Endung, die nicht wie ein Programm beginnen, #! oder <?) sind Seiten.  
 
 Standard: eine Liste mit 6: `README*`, `CHANGELOG*`, `LICENSE*`, `INSTALL*`, `USAGE*`, `COPYING*`.
 
@@ -92,8 +92,8 @@ ExtensionTopFiles[]=COPYING*
 
 ## AllowlistSources
 
-> Where the list of git-tracked files comes from, first one that answers: the .git index (read in PHP, no program  
-> is started), \`git ls-files\`, and share/filelist.md5 for an installation without .git  
+> Woher die Liste der von git versionierten Dateien kommt, die erste, die antwortet: der .git-Index (in PHP gelesen, es wird kein Programm  
+> gestartet), \`git ls-files\` und share/filelist.md5 für eine Installation ohne .git  
 
 Standard: eine Liste mit 3: `gitindex`, `gitcommand`, `manifest`.
 
@@ -111,7 +111,7 @@ AllowlistSources[]=manifest
 
 ## DocumentSuffixes
 
-> The suffixes of pages  
+> Die Endungen von Seiten  
 
 Standard: eine Liste mit 4: `md`, `markdown`, `txt`, `rst`.
 
@@ -130,7 +130,7 @@ DocumentSuffixes[]=rst
 
 ## PlainTextWithoutSuffix
 
-> enabled: files without a suffix (the old changelogs) are pages too, as plain text  
+> enabled: Dateien ohne Endung (die alten Changelogs) sind ebenfalls Seiten, als reiner Text  
 
 Standard: `enabled`.
 
@@ -144,7 +144,7 @@ PlainTextWithoutSuffix=enabled
 
 ## AssetSuffixes
 
-> The suffixes of images the asset view serves  
+> Die Endungen der Bilder, die die Asset-Ansicht ausliefert  
 
 Standard: eine Liste mit 5: `png`, `jpg`, `jpeg`, `gif`, `webp`.
 
@@ -164,9 +164,9 @@ AssetSuffixes[]=webp
 
 ## ExcludePatterns
 
-> Never served, even when tracked (shell patterns on the path relative to the installation root; a pattern without  
-> "/" also matches the file name): generated documentation, HTML, SVG (it can carry scripts) and PHP, and  
-> doc/README.md (the list of the language directories for readers of the repository; the help chooses the language)  
+> Nie ausgeliefert, auch wenn versioniert (Shell-Muster auf den Pfad relativ zum Wurzelverzeichnis der Installation; ein Muster ohne  
+> "/" passt auch auf den Dateinamen): erzeugte Dokumentation, HTML, SVG (es kann Skripte enthalten) und PHP, und  
+> doc/README.md (die Liste der Sprachverzeichnisse für Leser des Repositorys; die Hilfe wählt die Sprache)  
 
 Standard: eine Liste mit 6: `doc/eng-us/doxygen/*`, `doc/README.md`, `*.html`, `*.htm`, `*.svg`, `*.php`.
 
@@ -187,7 +187,7 @@ ExcludePatterns[]=*.php
 
 ## MaxFileSize
 
-> Bytes; larger files are left out  
+> Bytes; größere Dateien werden ausgelassen  
 
 Standard: `2097152`.
 
@@ -201,9 +201,9 @@ MaxFileSize=2097152
 
 ## StatFiles
 
-> enabled: every request compares the size and time of each listed file with the cached index, so an edited page  
-> shows at once. disabled: only the git index, the manifest and the settings are compared (faster on big doc trees;  
-> run "./console exp:help index" after changing a page without a commit)  
+> enabled: Jede Anfrage vergleicht Größe und Zeit jeder aufgeführten Datei mit dem gecachten Index, sodass eine bearbeitete Seite  
+> sofort erscheint. disabled: Nur der git-Index, das Manifest und die Einstellungen werden verglichen (schneller bei großen doc-Bäumen;  
+> führen Sie "./console exp:help index" aus, nachdem Sie eine Seite ohne Commit geändert haben)  
 
 Standard: `enabled`.
 
@@ -217,11 +217,11 @@ StatFiles=enabled
 
 ## StatFilesInterval
 
-> With StatFiles enabled: seconds for which that comparison, once made, is reused by every request and process (it is  
-> kept in the help cache directory). Thousands of listed files make it the most expensive part of a help request,  
-> about 25 ms behind PHP-FPM and 0.5 s under Velocity. An edited page then shows within this many seconds; a page  
-> added or removed changes the git index and shows at once, and "./console exp:help index" always looks again.  
-> 0: compare on every request  
+> Mit aktiviertem StatFiles: Sekunden, für die dieser Vergleich, einmal gemacht, von jeder Anfrage und jedem Prozess wiederverwendet wird (er wird  
+> im Cache-Verzeichnis der Hilfe gehalten). Tausende aufgeführte Dateien machen ihn zum teuersten Teil einer Hilfeanfrage,  
+> etwa 25 ms hinter PHP-FPM und 0.5 s unter Velocity. Eine bearbeitete Seite erscheint dann innerhalb so vieler Sekunden; eine  
+> hinzugefügte oder entfernte Seite ändert den git-Index und erscheint sofort, und "./console exp:help index" sieht immer neu nach.  
+> 0: bei jeder Anfrage vergleichen  
 
 Standard: `5`.
 
@@ -235,8 +235,8 @@ StatFilesInterval=5
 
 ## GitHistory
 
-> enabled: when git can be run, the index reads the history of the roots once per build, for each page's  
-> "last changed" date and the dashboard's recent changes. disabled: the file times are used, no recent changes  
+> enabled: Wenn git ausgeführt werden kann, liest der Index die Historie der Wurzeln einmal pro Aufbau, für das Datum  
+> „zuletzt geändert“ jeder Seite und die neuen Änderungen des Dashboards. disabled: Die Dateizeiten werden verwendet, keine neuen Änderungen  
 
 Standard: `enabled`.
 

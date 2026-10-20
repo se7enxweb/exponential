@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[children]` von `settings/fetchalias.ini`, mit 3 Einstellung(en).
 
-> Fetch children  
+> Unterknoten holen  
 
 Bearbeiten Sie `settings/fetchalias.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

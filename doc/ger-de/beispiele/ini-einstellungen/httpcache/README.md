@@ -12,9 +12,9 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/httpcache.ini`: 1 Blöcke, 9 Einstellungen.
 
-> The role-aware HTTP cache: rendered content views kept per permission  
-> context and served before the kernel boots (config.php early exit) or from  
-> Exponential Velocity's parent. Off by default; see  
+> Der rollenbewusste HTTP-Cache: gerenderte Inhaltsansichten, pro Berechtigungs-  
+> kontext gehalten und ausgeliefert, bevor der Kernel startet (früher Ausstieg in config.php), oder vom  
+> Elternprozess von Exponential Velocity. Standardmäßig aus; siehe  
 > kernel/private/classes/httpcache/.  
 
 | Block | Einstellungen |

@@ -11,24 +11,24 @@ generated: exp:help:examples
 
 Der Block `[ExtensionSettings]` von `settings/icon.ini`, mit 1 Einstellung(en).
 
-> Here you can override or add new sizes, allthough you must make  
-> sure all used themes have these sizes defined.  
-> Each size refers to the name of the subdirectory  
-> of the icon theme. If the name contains two numbers with an  
-> x in between it will be considered to be the width and height  
-> of the icon, if not no size is will be given  
+> Hier können Sie Größen überschreiben oder neue hinzufügen; Sie müssen aber  
+> sicherstellen, dass alle verwendeten Themes diese Größen definieren.  
+> Jede Größe bezieht sich auf den Namen des Unterverzeichnisses  
+> des Symbol-Themes. Enthält der Name zwei Zahlen mit einem  
+> x dazwischen, gelten sie als Breite und Höhe  
+> des Symbols, sonst wird keine Größe angegeben  
 >
-> If you create a theme this variable must be present  
-> Allowed syntaxes are:  
-> Here the subpath will be the width and height setting  
+> Wenn Sie ein Theme anlegen, muss diese Variable vorhanden sein  
+> Erlaubte Schreibweisen sind:  
+> Hier ist der Unterpfad die Einstellung für Breite und Höhe  
 > Sizes\[<identifier>\]=<width>x<height>  
-> e.g.  
+> z. B.  
 > Sizes\[normal\]=32x32  
 >
-> Here the subpath will be used for fetching the icon  
-> while width and height are used for size  
+> Hier wird der Unterpfad zum Holen des Symbols verwendet,  
+> Breite und Höhe für die Größe  
 > Sizes\[<identifier>\]=<width>x<height>;<subpath>  
-> e.g.  
+> z. B.  
 > Sizes\[normal\]=32x32;normal-icons  
 >
 > Sizes\[\]  
@@ -36,55 +36,55 @@ Der Block `[ExtensionSettings]` von `settings/icon.ini`, mit 1 Einstellung(en).
 > Sizes\[small\]=16x16  
 > Sizes\[large\]=48x48  
 > \[MimeIcons\]  
-> The theme for mime-icons, overrides default  
+> Das Theme für MIME-Symbole, überschreibt den Standard  
 > Theme=crystal  
-> The size for mime-icons, overrides default  
+> Die Größe für MIME-Symbole, überschreibt den Standard  
 > Size=normal  
-> Mapping from a mimetype to it's icon file, the whole filename  
-> must be included  
-> Specifying just the group of the mimetype is also possible  
+> Zuordnung eines MIME-Typs zu seiner Symboldatei, der ganze Dateiname  
+> muss angegeben werden  
+> Nur die Gruppe des MIME-Typs anzugeben ist auch möglich  
 >
-> Each theme will define this mapping variable  
+> Jedes Theme definiert diese Zuordnungsvariable  
 > MimeMap\[\]  
 > \[ClassIcons\]  
-> The theme for class-icons, overrides default  
+> Das Theme für Klassensymbole, überschreibt den Standard  
 > Theme=crystal  
-> The size for class-icons, overrides default  
+> Die Größe für Klassensymbole, überschreibt den Standard  
 > Size=normal  
-> Mapping from a class identifier to it's icon file,  
-> the whole filename must be included  
+> Zuordnung eines Klassenbezeichners zu seiner Symboldatei,  
+> der ganze Dateiname muss angegeben werden  
 >
-> Each theme will define this mapping variable  
+> Jedes Theme definiert diese Zuordnungsvariable  
 > ClassMap\[\]  
 > \[ClassGroupIcons\]  
-> The theme for classgroup-icons, overrides default  
+> Das Theme für Symbole von Klassengruppen, überschreibt den Standard  
 > Theme=crystal  
-> The size for classgroup-icons, overrides default  
+> Die Größe für Symbole von Klassengruppen, überschreibt den Standard  
 > Size=normal  
-> Mapping from a class group identifier to it's icon file,  
-> the whole filename must be included  
+> Zuordnung eines Bezeichners einer Klassengruppe zu seiner Symboldatei,  
+> der ganze Dateiname muss angegeben werden  
 >
-> Each theme will define this mapping variable  
+> Jedes Theme definiert diese Zuordnungsvariable  
 > ClassGroupMap\[\]  
 > \[Icons\]  
-> The theme for standard icons, overrides default  
+> Das Theme für Standardsymbole, überschreibt den Standard  
 > Theme=crystal  
-> The size for standard icons, overrides default  
+> Die Größe für Standardsymbole, überschreibt den Standard  
 > Size=normal  
-> Mapping from a icon identifier to it's icon file,  
-> the whole filename must be included  
+> Zuordnung eines Symbolbezeichners zu seiner Symboldatei,  
+> der ganze Dateiname muss angegeben werden  
 >
-> Each theme will define this mapping variable  
+> Jedes Theme definiert diese Zuordnungsvariable  
 > IconMap\[\]  
 > \[ActionIcons\]  
-> The theme for action icons, overrides default  
+> Das Theme für Aktionssymbole, überschreibt den Standard  
 > Theme=ezadmin  
-> The size for standard icons, overrides default  
+> Die Größe für Standardsymbole, überschreibt den Standard  
 > Size=normal  
-> Mapping from a icon identifier to it's icon file,  
-> the whole filename must be included  
+> Zuordnung eines Symbolbezeichners zu seiner Symboldatei,  
+> der ganze Dateiname muss angegeben werden  
 >
-> Each theme will define this mapping variable  
+> Jedes Theme definiert diese Zuordnungsvariable  
 > ActionMap\[\]  
 
 Bearbeiten Sie `settings/icon.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
@@ -95,9 +95,9 @@ Bearbeiten Sie `settings/icon.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## IconExtensions
 
-> A list of extensions which contain icon themes (under extension/<name>/icons).  
-> When an extension is listed here the kernel icon operators will search it  
-> before falling back to the default share/icons repository.  
+> Eine Liste der Erweiterungen, die Symbol-Themes enthalten (unter extension/<name>/icons).  
+> Ist eine Erweiterung hier aufgeführt, durchsuchen die Symbol-Operatoren des Kernels sie,  
+> bevor sie auf das Standard-Repository share/icons zurückfallen.  
 
 Standard: eine leere Liste.
 

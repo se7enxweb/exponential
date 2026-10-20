@@ -19,22 +19,22 @@ Bearbeiten Sie `settings/i18n.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## FallbackRules
 
-> FallbackLanguages defines the available translation fallbacks  
-> of the QT ( .ts ) translation files. If the this no translation available  
-> for e.g. ger-CH the ger-DE translation file will be requested for the translation.  
-> It is looked up for the kernel and for every extension on its own: esl-MX has a  
-> kernel translation of its own, and takes esl-ES only for the extensions that have  
-> no esl-MX one. Every country of a language with a translation falls back to it,  
-> so its administration is in that language (tested in expUISwitchLanguageProviderTest).  
-> A fallback can have a fallback of its own: FallbackLanguages\[esl-AR\]=esl-MX with  
-> FallbackLanguages\[esl-MX\]=esl-ES makes the chain esl-AR, esl-MX, esl-ES, tried in  
-> that order for each translation root. eng-GB and untranslated mean the source  
-> texts and end a chain. ./console exp:i18n fallbacks shows every chain, and  
-> ./console exp:i18n check finds cycles and missing targets (doc/eng-us/languages.md).  
+> FallbackLanguages legt die verfügbaren Übersetzungs-Fallbacks  
+> der QT-Übersetzungsdateien (.ts) fest. Gibt es keine Übersetzung  
+> für z. B. ger-CH, wird die Übersetzungsdatei ger-DE angefordert.  
+> Das wird für den Kernel und für jede Erweiterung einzeln nachgeschlagen: esl-MX hat eine  
+> eigene Kernel-Übersetzung und nimmt esl-ES nur für die Erweiterungen, die  
+> keine für esl-MX haben. Jedes Land einer Sprache mit einer Übersetzung fällt auf sie zurück,  
+> sodass seine Administration in dieser Sprache ist (getestet in expUISwitchLanguageProviderTest).  
+> Ein Fallback kann selbst einen Fallback haben: FallbackLanguages\[esl-AR\]=esl-MX mit  
+> FallbackLanguages\[esl-MX\]=esl-ES ergibt die Kette esl-AR, esl-MX, esl-ES, in  
+> dieser Reihenfolge für jede Übersetzungswurzel versucht. eng-GB und untranslated bedeuten die Quell-  
+> texte und beenden eine Kette. ./console exp:i18n fallbacks zeigt jede Kette, und  
+> ./console exp:i18n check findet Zyklen und fehlende Ziele (doc/eng-us/languages.md).  
 >
-> FallbackLanguages\[\] always decides first. Then the classes of FallbackRules\[\]  
-> (implementing expI18nFallbackRuleInterface, for extensions), then, when enabled,  
-> the automatic fallback.  
+> FallbackLanguages\[\] entscheidet immer zuerst. Dann die Klassen aus FallbackRules\[\]  
+> (die expI18nFallbackRuleInterface implementieren, für Erweiterungen), dann, wenn aktiviert,  
+> der automatische Fallback.  
 
 Standard: eine leere Liste.
 
@@ -49,10 +49,10 @@ FallbackRules[]
 
 ## AutomaticLanguageFallback
 
-> AutomaticLanguageFallback: a locale with no translation of its own and no  
-> FallbackLanguages\[\] entry falls back to the most complete translation of the  
-> same language (fre-NC to fre-FR), so a new country locale needs no line here.  
-> enabled (default) or disabled.  
+> AutomaticLanguageFallback: Eine Locale ohne eigene Übersetzung und ohne  
+> Eintrag in FallbackLanguages\[\] fällt auf die vollständigste Übersetzung derselben  
+> Sprache zurück (fre-NC auf fre-FR), eine neue Länder-Locale braucht hier also keine Zeile.  
+> enabled (Standard) oder disabled.  
 
 Standard: `enabled`.
 
@@ -66,8 +66,8 @@ AutomaticLanguageFallback=enabled
 
 ## AutomaticFallbackExclude
 
-> Languages (eng) or locales (chi-MO) that never fall back automatically. English  
-> is the language of the source texts.  
+> Sprachen (eng) oder Locales (chi-MO), die nie automatisch zurückfallen. Englisch  
+> ist die Sprache der Quelltexte.  
 
 Standard: eine Liste mit 1: `eng`.
 
@@ -83,7 +83,7 @@ AutomaticFallbackExclude[]=eng
 
 ## FallbackMaxDepth
 
-> The most steps of a chain (1 to 16); a longer one is cut and reported.  
+> Die meisten Schritte einer Kette (1 bis 16); eine längere wird abgeschnitten und gemeldet.  
 
 Standard: `4`.
 
@@ -97,9 +97,9 @@ FallbackMaxDepth=4
 
 ## FallbackMode
 
-> first (default): each translation root loads the first file of the chain it has.  
-> merge: it loads every file of the chain, the most general first, so the messages  
-> a translation lacks (esl-MX) are taken from the next one (esl-ES).  
+> first (Standard): Jede Übersetzungswurzel lädt die erste Datei der Kette, die sie hat.  
+> merge: Sie lädt jede Datei der Kette, die allgemeinste zuerst, sodass die Meldungen,  
+> die einer Übersetzung fehlen (esl-MX), aus der nächsten genommen werden (esl-ES).  
 
 Standard: `first`.
 

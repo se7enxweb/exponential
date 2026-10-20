@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[Setting_regional_debug]` von `settings/debugbar.ini`, mit 7 Einstellung(en).
 
-> --------------------------------------------------------------------- translations  
+> --------------------------------------------------------------------- Übersetzungen  
 
 Bearbeiten Sie `settings/debugbar.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

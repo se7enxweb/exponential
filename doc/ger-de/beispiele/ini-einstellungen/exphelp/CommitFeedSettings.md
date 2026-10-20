@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> The latest commits of the project on the developers' landing page (block commits, expHelpCommitFeed). The server  
-> reads the feed (never the browser), at most once per CacheTTL seconds, and pages through the commits it has seen.  
+> Die neuesten Commits des Projekts auf der Startseite der Entwickler (Block commits, expHelpCommitFeed). Der Server  
+> liest den Feed (nie der Browser), höchstens einmal pro CacheTTL Sekunden, und blättert durch die Commits, die er gesehen hat.  
 > enabled|disabled  
 
 Standard: `enabled`.
@@ -35,7 +35,7 @@ Enabled=enabled
 
 ## FeedURL
 
-> The Atom feed of the commits (https only)  
+> Der Atom-Feed der Commits (nur https)  
 
 Standard: `https://github.com/se7enxweb/exponential/commits/main.atom`.
 
@@ -49,7 +49,7 @@ FeedURL=https://github.com/se7enxweb/exponential/commits/main.atom
 
 ## CommitBaseURL
 
-> A commit's page: this address followed by its 40-character hash; and the whole history  
+> Die Seite eines Commits: diese Adresse, gefolgt von seinem 40-stelligen Hash; und die ganze Historie  
 
 Standard: `https://github.com/se7enxweb/exponential/commit/`.
 
@@ -75,7 +75,7 @@ HistoryURL=https://github.com/se7enxweb/exponential/commits/main
 
 ## CacheTTL
 
-> Seconds between two reads of the feed; seconds a read may take; seconds before a failed read is tried again  
+> Sekunden zwischen zwei Abrufen des Feeds; Sekunden, die ein Abruf dauern darf; Sekunden, bis ein fehlgeschlagener Abruf erneut versucht wird  
 
 Standard: `600`.
 
@@ -113,7 +113,7 @@ RetryAfter=120
 
 ## MaxCommits
 
-> How many commits the cache keeps (the feed holds the newest 20; each read adds the new ones), and per page  
+> Wie viele Commits der Cache behält (der Feed enthält die neuesten 20; jeder Abruf fügt die neuen hinzu), und pro Seite  
 
 Standard: `500`.
 

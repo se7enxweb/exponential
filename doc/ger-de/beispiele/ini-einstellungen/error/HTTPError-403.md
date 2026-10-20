@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[HTTPError-403]` von `settings/error.ini`, mit 2 Einstellung(en).
 
-> Definition of the HTTP error code 403  
-> Forbidden (a refused form token)  
+> Definition des HTTP-Fehlercodes 403  
+> Verboten (ein abgelehntes Formular-Token)  
 
 Bearbeiten Sie `settings/error.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

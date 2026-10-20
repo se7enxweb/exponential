@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/design.ini` nie selbst: Ein Update ersetzt die Datei. S
 
 ## DesignExtensions
 
-> A list of extensions which have design data  
-> It's common to create a settings/design.ini.append file  
-> in your extension and add the extension name to automatically  
-> get design from the extension when it's turned on.  
+> Eine Liste der Erweiterungen, die Design-Daten haben  
+> Üblicherweise legt man in der Erweiterung eine Datei settings/design.ini.append  
+> an und trägt den Namen der Erweiterung ein, um automatisch  
+> das Design der Erweiterung zu erhalten, wenn sie eingeschaltet ist.  
 
 Standard: eine leere Liste.
 

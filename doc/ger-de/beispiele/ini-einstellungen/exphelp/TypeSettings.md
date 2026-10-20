@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## PathRules
 
-> What kind of page a file is: its front matter (type: guide), else the first rule that matches.  
-> <pattern>;<type>, first match wins  
+> Welche Art von Seite eine Datei ist: ihr Front Matter (type: guide), sonst die erste passende Regel.  
+> <pattern>;<type>, der erste Treffer gewinnt  
 
 Standard: eine Liste mit 14: `doc/eng-us/help/*;help`, `doc/eng-us/guides/*;guide`, `doc/eng-us/features/*;feature`, `doc/eng-us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/eng-us/install/*;install`, `doc/eng-us/INSTALL.md;install`, `doc/eng-us/specifications/*;specification`, `doc/eng-us/history/*;history`, `doc/eng-us/release-overview;history`, `doc/eng-us/examples/*;example`, `doc/eng-us/standards/patterns/*;catalogue` ....
 

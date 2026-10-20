@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[HTTPError-301]` von `settings/error.ini`, mit 2 Einstellung(en).
 
-> Definition of the HTTP error code 301  
-> URL moved permanently  
+> Definition des HTTP-Fehlercodes 301  
+> URL dauerhaft verschoben  
 
 Bearbeiten Sie `settings/error.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

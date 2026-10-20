@@ -12,12 +12,12 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/exphelp.ini`: 46 Blöcke, 199 Einstellungen.
 
-> The help system of the administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset and  
-> exphelp/report (doc/eng-us/features/6.0/help-system.md). It shows the git-tracked text and Markdown files under doc/,  
-> rendered safely, searchable and filtered by audience. Policy exphelp/read; Anonymous does not have it.  
+> Das Hilfesystem der Administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset und  
+> exphelp/report (doc/eng-us/features/6.0/help-system.md). Es zeigt die von git versionierten Text- und Markdown-Dateien unter doc/,  
+> sicher gerendert, durchsuchbar und nach Zielgruppe gefiltert. Richtlinie exphelp/read; Anonymous hat sie nicht.  
 >
-> Extensions add their own settings in extension/<ext>/settings/exphelp.ini.append.php: context help entries  
-> (\[ContextHelp\]), featured pages, and (opt-in, below) their own doc directory.  
+> Erweiterungen fügen ihre eigenen Einstellungen in extension/<ext>/settings/exphelp.ini.append.php hinzu: Einträge der Kontexthilfe  
+> (\[ContextHelp\]), hervorgehobene Seiten und (wahlweise, unten) ihr eigenes doc-Verzeichnis.  
 
 | Block | Einstellungen |
 |---|---|

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Email
 
-> Security issues are never reported in a public tracker (SECURITY.md)  
+> Sicherheitsprobleme werden nie in einem öffentlichen Tracker gemeldet (SECURITY.md)  
 
 Standard: `security@se7enx.com`.
 
@@ -45,7 +45,7 @@ PolicyURL=https://github.com/se7enxweb/exponential/blob/main/SECURITY.md
 
 ## AdvisoryURL
 
-> GitHub's private vulnerability reporting form (only the maintainers see the report)  
+> Das private Formular von GitHub zum Melden von Schwachstellen (nur die Maintainer sehen die Meldung)  
 
 Standard: `https://github.com/se7enxweb/exponential/security/advisories/new`.
 

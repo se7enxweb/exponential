@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[PassThroughSettings]` von `settings/file.ini`, mit 2 Einstellung(en).
 
-> Optional DB table name caches should be stored to  
-> This is useful for staging use cases where the storage entries and DB are shared  
-> across different Exponential installations, but the caches should not.  
+> Optionaler Name der Datenbanktabelle, in der Caches gespeichert werden sollen  
+> Nützlich für Staging, wenn Speichereinträge und Datenbank  
+> zwischen verschiedenen Exponential-Installationen geteilt werden, die Caches aber nicht.  
 > MetaDataTableNameCache=  
 
 Bearbeiten Sie `settings/file.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
@@ -24,8 +24,8 @@ Bearbeiten Sie `settings/file.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## DefaultContentDisposition
 
-> The default value for mime types not specified using ContentDisposition  
-> is "attachment". Possible values are attachment or inline.  
+> Der Standardwert für MIME-Typen, die nicht über ContentDisposition angegeben sind,  
+> ist "attachment". Mögliche Werte sind attachment oder inline.  
 
 Standard: `attachment`.
 

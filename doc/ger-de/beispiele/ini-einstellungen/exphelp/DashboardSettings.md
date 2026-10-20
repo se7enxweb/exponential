@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## RecentLimit
 
-> How many recent changes below the roots the dashboard lists  
+> Wie viele neue Änderungen unter den Wurzeln das Dashboard auflistet  
 
 Standard: `8`.
 
@@ -33,7 +33,7 @@ RecentLimit=8
 
 ## AudiencePageLimit
 
-> How many pages each audience card lists  
+> Wie viele Seiten jede Zielgruppenkarte auflistet  
 
 Standard: `4`.
 
@@ -47,7 +47,7 @@ AudiencePageLimit=4
 
 ## AudienceExcludeTypes
 
-> Page types the audience cards never list (they are found through the search and the categories)  
+> Seitentypen, die die Zielgruppenkarten nie auflisten (sie werden über die Suche und die Kategorien gefunden)  
 
 Standard: eine Liste mit 6: `changelog`, `history`, `bc`, `specification`, `generated`, `catalogue`.
 

@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/extendedattributefilter.ini`: 0 Blöcke, 0 Einstellungen.
 
-> Exponential extended attribute filter configuration file.  
+> Exponential-Konfigurationsdatei für erweiterte Attributfilter.  
 
 | Block | Einstellungen |
 |---|---|

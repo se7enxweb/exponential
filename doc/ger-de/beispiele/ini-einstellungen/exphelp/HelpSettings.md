@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> enabled|true: the module answers; false: every exphelp view is a 404 and the Help buttons are not shown  
+> enabled|true: Das Modul antwortet; false: Jede exphelp-Ansicht ist 404, und die Hilfe-Schaltflächen werden nicht angezeigt  
 
 Standard: `true`.
 
@@ -33,7 +33,7 @@ Enabled=true
 
 ## CacheDir
 
-> The directory below the cache directory (var/<site>/cache/<CacheDir>) for the index and the search index  
+> Das Verzeichnis unter dem Cache-Verzeichnis (var/<site>/cache/<CacheDir>) für den Index und den Suchindex  
 
 Standard: `exphelp`.
 
@@ -47,7 +47,7 @@ CacheDir=exphelp
 
 ## EditBaseURL
 
-> The "Edit on GitHub" link of a page: this URL followed by the page's repository path (doc/...); empty: no link  
+> Der Link „Auf GitHub bearbeiten“ einer Seite: diese URL, gefolgt vom Repository-Pfad der Seite (doc/...); leer: kein Link  
 
 Standard: `https://github.com/se7enxweb/exponential/blob/main/`.
 

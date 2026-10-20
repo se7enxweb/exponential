@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Audiences
 
-> editor: writes and publishes content; admin: runs the site; developer: builds on it; user: a site's visitor or  
-> member; project-manager: plans and leads projects built on it; sales-marketing: presents, sells and promotes it  
-> and grows its community; partner: a company that builds, hosts or sells with Exponential; advocate: a community  
-> advocate (street team); designer: designs themes and templates, builds, ships and maintains extensions;  
-> hosting: a hosting company; app-creator / website-creator: builds applications / websites with it; supporter:  
-> helps the project grow; sponsor: funds it (doc/eng-us/help/<folder>/ of each in PathRules\[\] below). Who a page is for:  
-> its front matter (audience: editor, admin), else the first PathRules\[\]  
-> that matches, else its file name (...-developer.md) or opening lines ("for editors"), else TypeDefaults\[<type>\].  
-> The order here is the order of the dashboard's audience cards and the search filters.  
+> editor: schreibt und veröffentlicht Inhalte; admin: betreibt die Website; developer: baut darauf auf; user: Besucher oder  
+> Mitglied einer Website; project-manager: plant und leitet darauf gebaute Projekte; sales-marketing: präsentiert, verkauft und bewirbt es  
+> und lässt seine Community wachsen; partner: ein Unternehmen, das mit Exponential baut, hostet oder verkauft; advocate: ein Fürsprecher  
+> der Community (Street Team); designer: gestaltet Themes und Templates, baut, liefert und pflegt Erweiterungen;  
+> hosting: ein Hosting-Unternehmen; app-creator / website-creator: baut Anwendungen / Websites damit; supporter:  
+> hilft dem Projekt zu wachsen; sponsor: finanziert es (doc/eng-us/help/<folder>/ von jedem in PathRules\[\] unten). Für wen eine Seite ist:  
+> ihr Front Matter (audience: editor, admin), sonst die erste passende Regel aus PathRules\[\],  
+> sonst ihr Dateiname (...-developer.md) oder ihre ersten Zeilen ("for editors"), sonst TypeDefaults\[<type>\].  
+> Die Reihenfolge hier ist die der Zielgruppenkarten des Dashboards und der Suchfilter.  
 
 Standard: eine Liste mit 19: `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator` ....
 
@@ -93,7 +93,7 @@ AudienceNames[trainer]=Trainers
 
 ## AudienceIcons
 
-> Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
+> Symbolnamen; jeder muss eine Klasse .a4-bi-<name> in stylesheets/components.css haben  
 
 Standard: ein Hash mit 19: `editor=pencil`, `admin=shield-lock`, `developer=code-square`, `user=person`, `project-manager=diagram-3`, `sales-marketing=graph-up-arrow`, `partner=building`, `advocate=people`, `designer=palette`, `hosting=database`, `app-creator=phone`, `website-creator=globe` ....
 
@@ -127,7 +127,7 @@ AudienceIcons[trainer]=easel
 
 ## PathRules
 
-> <pattern>;<audience,audience>, first match wins ("\*" also matches "/")  
+> <pattern>;<audience,audience>, der erste Treffer gewinnt ("\*" passt auch auf "/")  
 
 Standard: eine Liste mit 78: `doc/eng-us/help/manual/*;editor,admin,user`, `doc/eng-us/help/leadership/*;project-manager`, `doc/eng-us/help/business/*;sales-marketing`, `doc/eng-us/help/partners/*;partner`, `doc/eng-us/help/advocates/*;advocate`, `doc/eng-us/help/designers/*;designer`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creator`, `doc/eng-us/help/creators/website-creators/*;website-creator`, `doc/eng-us/help/creators/*;app-creator,website-creator`, `doc/eng-us/help/supporters/*;supporter`, `doc/eng-us/help/sponsors/*;sponsor` ....
 
@@ -163,8 +163,8 @@ PathRules[]=doc/eng-us/help/extension-development/*;developer,designer
 
 ## TypeDefaults
 
-> <type> => <audience,audience>, when nothing else says  
-> an active extension's own documentation (extension/<name>/doc, its README ...)  
+> <type> => <audience,audience>, wenn sonst nichts etwas sagt  
+> die eigene Dokumentation einer aktiven Erweiterung (extension/<name>/doc, ihre README ...)  
 
 Standard: ein Hash mit 14: `help=editor,user`, `guide=admin`, `feature=admin,developer`, `bc=developer,admin`, `install=admin,developer`, `changelog=admin,developer`, `specification=developer`, `history=developer`, `example=developer,admin`, `generated=developer,admin`, `reference=developer,admin`, `project=developer,admin` ....
 

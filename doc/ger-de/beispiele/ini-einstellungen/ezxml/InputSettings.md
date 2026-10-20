@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/ezxml.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## HandlerClass
 
-> Which input handler to use, ezsimplified is the default  
+> Welcher Eingabe-Handler verwendet wird, ezsimplified ist der Standard  
 
 Standard: `eZSimplifiedXMLInput`.
 
@@ -33,7 +33,7 @@ HandlerClass=eZSimplifiedXMLInput
 
 ## AliasClasses
 
-> Allows for overriding a handler with another  
+> Erlaubt, einen Handler durch einen anderen zu ersetzen  
 
 Standard: eine leere Liste.
 
@@ -49,9 +49,9 @@ AliasClasses[]
 ## TrimSpaces
 
 > AliasClasses\[eZSimplifiedXMLInput\]=myXMLInputHandler  
-> Trim whitespaces in the input or not  
-> 'true' - spaces in the beginning of the line are trimmed.  
-> 'false'- all spaces stay in their place  
+> Leerzeichen in der Eingabe abschneiden oder nicht  
+> 'true' - Leerzeichen am Zeilenanfang werden abgeschnitten.  
+> 'false'- alle Leerzeichen bleiben an ihrem Platz  
 
 Standard: `true`.
 
@@ -65,8 +65,8 @@ TrimSpaces=true
 
 ## AllowMultipleSpaces
 
-> 'false' - spaces sequences are converted to a single space character.  
-> 'true'  - all spaces are stored in XML.  
+> 'false' - Folgen von Leerzeichen werden in ein einzelnes Leerzeichen umgewandelt.  
+> 'true'  - alle Leerzeichen werden im XML gespeichert.  
 
 Standard: `false`.
 
@@ -80,8 +80,8 @@ AllowMultipleSpaces=false
 
 ## AllowNumericEntities
 
-> Allow foreign characters (from another charsets) to be stored as numeric  
-> entities.  
+> Erlaubt, fremde Zeichen (aus anderen Zeichensätzen) als numerische  
+> Entitäten zu speichern.  
 
 Standard: `false`.
 
@@ -95,12 +95,12 @@ AllowNumericEntities=false
 
 ## SupplementaryCharacters
 
-> Characters above U+FFFF (emoji, mathematical letters such as U+1D538) in  
-> rich text: 'enabled' keeps them, 'disabled' replaces them as XML characters  
-> that are not allowed (a space on saving). 'auto' keeps them unless the  
-> database is MySQL or MariaDB on a connection charset other than utf8mb4  
-> (\[DatabaseSettings\] Charset=utf-8 connects as utf8, which cannot store them:  
-> they would become "????", or the save would fail in strict SQL mode).  
+> Zeichen über U+FFFF (Emoji, mathematische Buchstaben wie U+1D538) in  
+> Rich Text: 'enabled' behält sie, 'disabled' ersetzt sie wie in XML  
+> nicht erlaubte Zeichen (beim Speichern durch ein Leerzeichen). 'auto' behält sie, außer die  
+> Datenbank ist MySQL oder MariaDB mit einem anderen Verbindungszeichensatz als utf8mb4  
+> (\[DatabaseSettings\] Charset=utf-8 verbindet als utf8, das sie nicht speichern kann:  
+> Sie würden zu "????", oder das Speichern schlüge im strikten SQL-Modus fehl).  
 
 Standard: `auto`.
 

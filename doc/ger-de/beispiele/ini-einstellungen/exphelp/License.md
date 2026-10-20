@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> The license of the documentation the help shows (doc/eng-us/README-LICENSE.md, doc/eng-us/help/free-documentation.md).  
-> Every help page, the dashboard, the print view and the PDF carry its notice; the name stays untranslated.  
+> Die Lizenz der Dokumentation, die die Hilfe zeigt (doc/eng-us/README-LICENSE.md, doc/eng-us/help/free-documentation.md).  
+> Jede Hilfeseite, das Dashboard, die Druckansicht und das PDF tragen ihren Hinweis; der Name bleibt unübersetzt.  
 
 Standard: `true`.
 
@@ -120,8 +120,8 @@ TextURL=https://www.gnu.org/licenses/fdl-1.3.txt
 
 ## TextPage
 
-> Help page ids (paths below doc/eng-us/): the unmodified license text, the copyright and permission notice,  
-> and the plain explanation for readers  
+> Seiten-IDs der Hilfe (Pfade unter doc/eng-us/): der unveränderte Lizenztext, der Urheberrechts- und Erlaubnishinweis  
+> und die einfache Erklärung für Leser  
 
 Standard: `LICENSE-GFDL-1.3.txt`.
 
@@ -183,9 +183,9 @@ CopyrightHolder=7x & Exponential Foundation and the Exponential contributors
 
 ## OtherLicensePathRules
 
-> Pages the project does not hold the copyright of and does not relicense: the documentation inherited  
-> from the original software (eZ Systems AS, 1999 - 2014). They keep the terms of the repository's  
-> LICENSE and show the notice below instead. <pattern> on the doc/ path, "\*" also matches "/".  
+> Seiten, deren Urheberrecht das Projekt nicht hält und die es nicht neu lizenziert: die von der  
+> ursprünglichen Software geerbte Dokumentation (eZ Systems AS, 1999 - 2014). Sie behalten die Bedingungen der  
+> LICENSE des Repositorys und zeigen stattdessen den Hinweis unten. <pattern> auf den Pfad in doc/, "\*" passt auch auf "/".  
 
 Standard: eine Liste mit 9: `doc/eng-us/features/[2-5].*`, `doc/eng-us/bc/[2-5].*`, `doc/eng-us/specifications/[2-5].*`, `doc/eng-us/specifications/trunk/*`, `doc/changelogs/[2-5].*`, `doc/changelogs/README.md`, `doc/eng-us/shop/*`, `doc/eng-us/release-overview`, `doc/eng-us/standards/header.txt`.
 

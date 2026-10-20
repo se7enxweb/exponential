@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/design.ini` nie selbst: Ein Update ersetzt die Datei. S
 
 ## JavaScriptList
 
-> List of JavaScript files to include in pagelayout  
-> DEPRECATED in favor of \[Frontend|Backend\]JavaScriptList\[\]  
+> Liste der JavaScript-Dateien, die in das Pagelayout eingebunden werden  
+> VERALTET zugunsten von \[Frontend|Backend\]JavaScriptList\[\]  
 
 Standard: eine leere Liste.
 
@@ -36,7 +36,7 @@ JavaScriptList[]
 ## FrontendJavaScriptList
 
 > JavaScriptList\[\]=tools/ezjsselection.js  
-> Same as above for frontend designs  
+> Wie oben, für Frontend-Designs  
 
 Standard: eine leere Liste.
 
@@ -51,10 +51,10 @@ FrontendJavaScriptList[]
 
 ## BackendJavaScriptList
 
-> Same as above for backend (admin) designs. The tables, uploads, dialogs, date fields, collapsing menus and  
-> sticky toolbars run on Exponential UI (extension expui adds exp::\* to this list).  
-> leftmenu\_widthcontrol.js is the column grip of design/admin, whose page\_leftmenu.tpl loads it itself; admin4 has  
-> its own in ezadmin\_menubar.js and does not ship the file. Do not add it here.  
+> Wie oben, für Backend-Designs (Administration). Die Tabellen, Uploads, Dialoge, Datumsfelder, ausklappbaren Menüs und  
+> festen Werkzeugleisten laufen auf Exponential UI (die Erweiterung expui fügt dieser Liste exp::\* hinzu).  
+> leftmenu\_widthcontrol.js ist der Spaltengriff von design/admin, dessen page\_leftmenu.tpl es selbst lädt; admin4 hat  
+> seinen eigenen in ezadmin\_menubar.js und liefert die Datei nicht mit. Fügen Sie es hier nicht hinzu.  
 
 Standard: eine Liste mit 5: `tools/ezjsselection.js`, `lib/ezjslibimagepreloader.js`, `popupmenu/ezpopupmenu.js`, `contentstructuremenu_dynamic.js`, `ezadmin_menubar.js`.
 

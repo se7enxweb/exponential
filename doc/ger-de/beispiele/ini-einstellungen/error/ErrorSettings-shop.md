@@ -11,11 +11,11 @@ generated: exp:help:examples
 
 Der Block `[ErrorSettings-shop]` von `settings/error.ini`, mit 5 Einstellung(en).
 
-> Allow the default Exponential 500 error message to be overridden  
-> Note: this will not work with siteaccess settings, will only be global (settings/override/error.ini.append.php), because of how early this is registered  
+> Erlaubt, die Standard-Fehlermeldung 500 von Exponential zu überschreiben  
+> Hinweis: Das funktioniert nicht mit Siteaccess-Einstellungen, nur global (settings/override/error.ini.append.php), weil es so früh registriert wird  
 > FatalErrorHandler=CustomFatalErrorHandlerClass::FatalErrorHandlerFunction  
-> Error handling for shop errors  
-> See the kernel errors for details on usage  
+> Fehlerbehandlung für Fehler des Shops  
+> Zur Verwendung siehe die Fehler des Kernels  
 
 Bearbeiten Sie `settings/error.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[comments]` von `settings/fetchalias.ini`, mit 4 Einstellung(en).
 
-> Fetch article comments  
+> Kommentare zu Artikeln holen  
 
 Bearbeiten Sie `settings/fetchalias.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

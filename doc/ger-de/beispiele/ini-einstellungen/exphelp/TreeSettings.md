@@ -19,16 +19,16 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## PageOrder
 
-> The place of a page in the page tree (/exphelp/contents and the sidebar of every page), the folder lists and the  
-> category lists. Pages are sorted by their order, then by title; a page's order is its front matter "order", else 0  
-> for a folder's README.md/index.md and 1000 for any other page. An entry here wins over the front matter, so the  
-> pages that cannot carry front matter (the project files, plain text pages) can be placed too. Folders still come  
-> before the pages of their level.  
-> Keys are page ids: the path below the language directory (INSTALL.md, glossary.md, release-overview),  
-> project/<path> for a project file, ext/<extension>/<path> for an extension's page. The id is the same in every  
-> language, so one entry places the page and its translations. PageOrder\[\] alone (empty) clears this list.  
-> The top level of the tree is placed here and only here: its pages carry no front matter order of their own  
-> (glossary.md keeps order 9999 in its front matter, the same as here). The same list is the built-in default  
+> Der Platz einer Seite im Seitenbaum (/exphelp/contents und die Seitenleiste jeder Seite), in den Ordnerlisten und den  
+> Kategorielisten. Seiten werden nach ihrer Reihenfolge, dann nach Titel sortiert; die Reihenfolge einer Seite ist "order" aus ihrem Front Matter, sonst 0  
+> für die README.md/index.md eines Ordners und 1000 für jede andere Seite. Ein Eintrag hier gewinnt gegen das Front Matter, sodass auch die  
+> Seiten platziert werden können, die kein Front Matter tragen können (die Projektdateien, Seiten mit reinem Text). Ordner stehen weiterhin  
+> vor den Seiten ihrer Ebene.  
+> Die Schlüssel sind Seiten-IDs: der Pfad unter dem Sprachverzeichnis (INSTALL.md, glossary.md, release-overview),  
+> project/<path> für eine Projektdatei, ext/<extension>/<path> für die Seite einer Erweiterung. Die ID ist in jeder  
+> Sprache gleich, ein Eintrag platziert also die Seite und ihre Übersetzungen. PageOrder\[\] allein (leer) leert diese Liste.  
+> Die oberste Ebene des Baums wird hier und nur hier platziert: Ihre Seiten tragen keine eigene Reihenfolge im Front Matter  
+> (glossary.md behält order 9999 in seinem Front Matter, wie hier). Dieselbe Liste ist der eingebaute Standard  
 > (expHelpAudience::PAGE\_ORDER).  
 > PageOrder\[<page id>\]=<integer>  
 

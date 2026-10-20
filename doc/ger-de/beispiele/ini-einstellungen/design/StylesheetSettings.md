@@ -43,10 +43,10 @@ ClassesCSS=stylesheets/t02/classes-colors.css
 
 ## CSSFileList
 
-> A list of CSS file to always include in the pagelayout  
-> This can be filled in by extensions to provide styles  
-> that are not in the standard themes.  
-> DEPRECATED in favor of \[Frontend|Backend\]CSSFileList\[\]  
+> Eine Liste von CSS-Dateien, die immer in das Pagelayout eingebunden werden  
+> Erweiterungen können sie befüllen, um Styles bereitzustellen,  
+> die nicht in den Standard-Themes sind.  
+> VERALTET zugunsten von \[Frontend|Backend\]CSSFileList\[\]  
 
 Standard: eine leere Liste.
 
@@ -61,7 +61,7 @@ CSSFileList[]
 
 ## FrontendCSSFileList
 
-> Same as above for frontend designs  
+> Wie oben, für Frontend-Designs  
 
 Standard: eine leere Liste.
 
@@ -76,9 +76,9 @@ FrontendCSSFileList[]
 
 ## BackendCSSFileList
 
-> Same as above for backend (admin) designs. The tables, uploads, dialogs, date fields, collapsing menus and  
-> sticky toolbars run on Exponential UI (extension expui adds exp::\* to this list). admin3 loads its responsive.css  
-> itself (page\_head\_style.tpl); the list used to name it for every admin design.  
+> Wie oben, für Backend-Designs (Administration). Die Tabellen, Uploads, Dialoge, Datumsfelder, ausklappbaren Menüs und  
+> festen Werkzeugleisten laufen auf Exponential UI (die Erweiterung expui fügt dieser Liste exp::\* hinzu). admin3 lädt seine responsive.css  
+> selbst (page\_head\_style.tpl); früher nannte die Liste sie für jedes Administrations-Design.  
 
 Standard: eine leere Liste.
 
@@ -93,11 +93,11 @@ BackendCSSFileList[]
 
 ## AdminComponentCSSFileList
 
-> The administration's shared component classes (.a4-\*) and its module stylesheets, loaded by the admin, admin3  
-> and admin4 designs after their own stylesheets and before BackendCSSFileList, so the packer bundles and caches  
-> them with the rest and an extension still has the last word. Every module stylesheet is listed here by name:  
-> one bundle for every admin page, cached once. The admin's templates carry no CSS of their own (no <style>, no  
-> style=""); see doc/eng-us/bc/6.0/admin4-styling.md. An extension adds its file to BackendCSSFileList, not here.  
+> Die gemeinsamen Komponentenklassen der Administration (.a4-\*) und ihre Modul-Stylesheets, von den Designs admin, admin3  
+> und admin4 nach ihren eigenen Stylesheets und vor BackendCSSFileList geladen, sodass der Packer sie  
+> mit dem Rest bündelt und cacht und eine Erweiterung trotzdem das letzte Wort hat. Jedes Modul-Stylesheet steht hier mit Namen:  
+> ein Bündel für jede Administrationsseite, einmal gecacht. Die Templates der Administration tragen kein eigenes CSS (kein <style>, kein  
+> style=""); siehe doc/eng-us/bc/6.0/admin4-styling.md. Eine Erweiterung fügt ihre Datei BackendCSSFileList hinzu, nicht hier.  
 
 Standard: eine Liste mit 7: `components.css`, `modules/setup.css`, `modules/content.css`, `modules/people.css`, `modules/structure.css`, `modules/workflow.css`, `modules/help.css`.
 

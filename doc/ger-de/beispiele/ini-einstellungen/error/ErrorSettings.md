@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[ErrorSettings]` von `settings/error.ini`, mit 4 Einstellung(en).
 
-> Global error settings which are used for all error types  
-> A specific error type group is defined with ErrorSettings followed  
-> by a - (dash) and the error type name, e.g. ErrorSettting-kernel  
+> Globale Fehlereinstellungen, die für alle Fehlertypen gelten  
+> Eine Gruppe für einen bestimmten Fehlertyp wird mit ErrorSettings, gefolgt  
+> von einem - (Bindestrich) und dem Namen des Fehlertyps definiert, z. B. ErrorSettting-kernel  
 
 Bearbeiten Sie `settings/error.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -23,18 +23,18 @@ Bearbeiten Sie `settings/error.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## DefaultErrorHandler
 
-> Static pages for failures outside the template engine (lib/ezutils/classes/ezexecution.php):  
-> StaticErrorPage\[500\], StaticErrorPage\[503\], StaticErrorPage\[default\], and one per known error  
-> case, shown instead of the general page when the installation explains the failure:  
->   StaticErrorPage\[dependencies\]  the Composer libraries (vendor/) are missing; placeholders  
->   {status} {title} {message} {steps} {repair} {reference} {home} {detail}. Unset: a built-in page.  
+> Statische Seiten für Fehler außerhalb der Template-Engine (lib/ezutils/classes/ezexecution.php):  
+> StaticErrorPage\[500\], StaticErrorPage\[503\], StaticErrorPage\[default\] und eine pro bekanntem Fehler-  
+> fall, angezeigt statt der allgemeinen Seite, wenn die Installation den Fehler erklärt:  
+>   StaticErrorPage\[dependencies\]  die Composer-Bibliotheken (vendor/) fehlen; Platzhalter  
+>   {status} {title} {message} {steps} {repair} {reference} {home} {detail}. Nicht gesetzt: eine eingebaute Seite.  
 > StaticErrorPage\[dependencies\]=design/standard/errors/dependencies.html  
-> Which handler to use, possible handlers are:  
-> displayerror - Displays a text explaining the error  
-> redirect     - Redirect to a specific url  
-> rerun        - Rerun a module/view on the page, specified by a url  
-> embed        - Run a module/view and embed the results on the  
->                same page used in displayerror  
+> Welcher Handler verwendet wird, mögliche Handler sind:  
+> displayerror - zeigt einen Text, der den Fehler erklärt  
+> redirect     - leitet auf eine bestimmte URL weiter  
+> rerun        - führt ein Modul/eine Ansicht auf der Seite erneut aus, angegeben durch eine URL  
+> embed        - führt ein Modul/eine Ansicht aus und bettet die Ergebnisse auf  
+>                derselben Seite ein, die displayerror verwendet  
 
 Standard: `displayerror`.
 

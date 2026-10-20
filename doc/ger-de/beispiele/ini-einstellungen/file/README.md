@@ -12,15 +12,15 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/file.ini`: 6 Blöcke, 23 Einstellungen.
 
-> Exponential configuration file for file handling  
+> Exponential-Konfigurationsdatei für den Umgang mit Dateien  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/file.ini.append or  
->       settings/override/file.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/file.ini.append oder  
+>       settings/override/file.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
 
 | Block | Einstellungen |
 |---|---|

@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> The "Support Exponential" block at the bottom of the help dashboard and on the landing pages that list the block  
-> support: GitHub Sponsors of 7x and of the Exponential Foundation. enabled|disabled  
+> Der Block „Exponential unterstützen“ unten auf dem Dashboard der Hilfe und auf den Startseiten, die den Block  
+> support aufführen: GitHub Sponsors von 7x und der Exponential Foundation. enabled|disabled  
 
 Standard: `enabled`.
 
@@ -58,7 +58,7 @@ Text=Exponential is free software. Every new feature, help page, extension, them
 
 ## MorePage
 
-> The help page that explains what sponsorship pays for ('' or a missing page: no link)  
+> Die Hilfeseite, die erklärt, wofür das Sponsoring bezahlt ('' oder eine fehlende Seite: kein Link)  
 
 Standard: `help/sponsors/what-sponsorship-funds.md`.
 
@@ -72,8 +72,8 @@ MorePage=help/sponsors/what-sponsorship-funds.md
 
 ## Organizations
 
-> The organizations, in order; each has a \[SupportOrganization\_<id>\] group: Name, URL (https), Button, Page (its page  
-> in the help), Mission and Funds\[\] (what its funding pays for). Texts are translated in kernel/exphelp.  
+> Die Organisationen, in Reihenfolge; jede hat eine Gruppe \[SupportOrganization\_<id>\]: Name, URL (https), Button, Page (ihre Seite  
+> in der Hilfe), Mission und Funds\[\] (wofür ihre Finanzierung bezahlt). Die Texte werden in kernel/exphelp übersetzt.  
 
 Standard: eine Liste mit 2: `7x`, `foundation`.
 

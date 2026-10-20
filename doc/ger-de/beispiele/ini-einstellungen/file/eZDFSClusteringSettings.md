@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[eZDFSClusteringSettings]` von `settings/file.ini`, mit 12 Einstellung(en).
 
-> DFS Cluster Handler settings  
+> Einstellungen des DFS-Cluster-Handlers  
 
 Bearbeiten Sie `settings/file.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,8 +21,8 @@ Bearbeiten Sie `settings/file.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## MountPointPath
 
-> Path to the NFS mount point  
-> Can be relative to the Exponential root, or absolute  
+> Pfad zum NFS-Mountpunkt  
+> Kann relativ zum Wurzelverzeichnis von Exponential oder absolut sein  
 
 Standard: leer.
 
@@ -36,11 +36,11 @@ MountPointPath=
 
 ## DBBackend
 
-> Database backend  
-> Available options:  
+> Datenbank-Backend  
+> Verfügbare Optionen:  
 > - MySQLi: eZDFSFileHandlerMySQLiBackend  
 > - PostgreSQL: eZDFSFileHandlerPostgresqlBackend  
-> - Oracle: eZDFSFileHandlerOracleBackend (requires the ezoracle extension)  
+> - Oracle: eZDFSFileHandlerOracleBackend (erfordert die Erweiterung ezoracle)  
 
 Standard: `eZDFSFileHandlerMySQLiBackend`.
 
@@ -162,8 +162,8 @@ DBExecuteRetries=20
 
 ## MaxCopyRetries
 
-> Max number of times a dfs file is tried to be copied.  
-> Increase this value if you find files like expiryXYZtmp.php with 0 byte size  
+> Wie oft höchstens versucht wird, eine DFS-Datei zu kopieren.  
+> Erhöhen Sie diesen Wert, wenn Sie Dateien wie expiryXYZtmp.php mit 0 Byte Größe finden  
 
 Standard: `5`.
 
