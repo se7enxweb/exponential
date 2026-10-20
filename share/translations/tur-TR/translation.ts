@@ -73266,5 +73266,17 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Kendi sitesini Exponential üzerinde işleten kuruluşlar ve kişiler için: ekip, yayıncılık, ticaret, bakım, büyüme ve iş ortakları.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Proje dosyaları</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Proje dosyası</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Bu dosya Exponential kaynak kodunun bir parçasıdır ve onunla birlikte %license kapsamında dağıtılır.</translation>
+    </message>
 </context>
 </TS>

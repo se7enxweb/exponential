@@ -1,6 +1,7 @@
 {* The license notice under every help page (doc/en/us/README-LICENSE.md, exphelp.ini [License]): the documentation is free
    documentation under the license named in exphelp.ini, with links to the license in the help, on the web and to
-   doc/en/us/help/free-documentation.md. Inherited pages (OtherLicensePathRules[]), an extension's pages and the license text
+   doc/en/us/help/free-documentation.md. Inherited pages (OtherLicensePathRules[]), an extension's pages, the project files
+   (project/README.md ..., the license of the software) and the license text
    itself get the notice that is true for them. It is printed with the page (help.css keeps it in print).
    Variables: license_page_id (page id below doc/; empty for a help page that is not a document: search, report).
    The same file is in design/admin and design/admin4. *}
@@ -11,6 +12,13 @@
     <h2 class="a4-help-license-title" id="exphelp-license-title"><span class="a4-icon a4-bi-journal-check" aria-hidden="true"></span>{'Documentation license'|i18n( $lic_ctx )}</h2>
     {if $lic.extension|ne( '' )}
     <p>{'This page is part of the documentation of the extension %extension and is distributed under the license of that extension.'|i18n( $lic_ctx,, hash( '%extension', $lic.extension ) )|wash}</p>
+    {elseif and( is_set( $lic.project ), $lic.project )}
+    <p>{'This file is part of the source code of Exponential and is distributed with it under the %license.'|i18n( $lic_ctx,, hash( '%license', $lic.project_license_name ) )|wash}</p>
+    {if and( $lic.project_license_page|ne( '' ), $lic.id|ne( $lic.project_license_page ) )}
+    <ul class="a4-help-license-links">
+        <li><a href={concat( 'exphelp/viewer/', $lic.project_license_page )|ezurl} rel="license"><span class="a4-icon a4-bi-file-earmark" aria-hidden="true"></span>{'Read the license'|i18n( $lic_ctx )}</a></li>
+    </ul>
+    {/if}
     {elseif $lic.free|not}
     <p>{'This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.'|i18n( $lic_ctx,, hash( '%license', $lic.name, '%other', $lic.other_name ) )|wash}</p>
     {if $lic.other_copyright|ne( '' )}<p class="a4-help-license-copy">{$lic.other_copyright|wash}</p>{/if}
