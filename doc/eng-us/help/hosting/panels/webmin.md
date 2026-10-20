@@ -62,7 +62,7 @@ no separate web server and serves HTTPS itself
 
 ## Order of work
 
-1. **PHP** 8.1 or later (8.0 if Velocity is not used) with the required extensions, for web and command line alike.
+1. **PHP** 8.0 or later (Velocity included) with the required extensions, for web and command line alike.
 2. **Database**, in the official order: 1. SQLite 3 (the default, no server) · 2. PostgreSQL · 3. MongoDB ·
    4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server is known to be possible with additional work at this time.
    Create the database and its user before installing ([Databases and users](databases-and-users.md)).

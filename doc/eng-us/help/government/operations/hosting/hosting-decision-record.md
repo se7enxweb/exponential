@@ -38,7 +38,7 @@ explained. Fill it in once per site and keep it with the site's documentation. T
 |---|---|---|---|---|---|
 | Hosting location and model | own data center; government or sovereign cloud; virtual machine; containers; Kubernetes (tier 3); managed hosting | | | | [On-premise hosting](on-premise-hosting.md), [Government and sovereign cloud hosting](government-and-sovereign-cloud.md) |
 | Operating system | tier 1 or 2 recommended | | | | [Operating system support](../../../os-support.md) |
-| PHP version | 8.0 or later; 8.1 or later for Velocity | | | | [PHP versions and extensions](../../../hosting/basics/php-versions-and-extensions.md) |
+| PHP version | 8.0 or later, Velocity included | | | | [PHP versions and extensions](../../../hosting/basics/php-versions-and-extensions.md) |
 | Database | 1. SQLite 3 · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL | | | | [Choosing a database in the official order](database-choice-in-the-official-order.md) |
 | Web server or engine | Velocity (recommended); FrankenPHP; Apache or nginx with PHP-FPM | | | | [Web server choices](web-server-choices.md) |
 | TLS termination | the engine; the web server; a central proxy | | | | [TLS and HTTPS](../../../hosting/security/tls-and-https.md) |

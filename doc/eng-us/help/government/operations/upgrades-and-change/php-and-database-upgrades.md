@@ -25,7 +25,7 @@ a schedule set by the operating system or the cloud provider. The hosting runboo
 
 | Component | Support | Source |
 |---|---|---|
-| PHP 8.0 | the oldest supported; Velocity does not run on it | [Requirements](../../../../install/02-requirements.md) |
+| PHP 8.0 | the oldest supported; Velocity runs on it from its release 0.0.4.54 | [Requirements](../../../../install/02-requirements.md) |
 | PHP 8.1 to 8.5 | supported, Velocity included | the same |
 | PHP 7.4 | a site that must stay on it stays on 6.0.7 | [Upgrading, Part B](../../../../guides/upgrading.md#part-b-from-54-or-590-to-exponential-600) |
 | Databases | SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, with practical minimums | [Databases in the official order](../../../hosting/basics/databases-in-the-official-order.md) |

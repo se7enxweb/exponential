@@ -24,7 +24,7 @@ class Pdf extends \Exponential\Runnable\ModuleView
         if ( !\expHelpPdf::isEnabled() )
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
 
-        $id = \expHelp::requestedId( $Params, $_GET );
+        $id = \expHelp::requestedId( $Params );
         $pdf = $id === '' ? null : \expHelpPdf::forPage( $id, \eZSys::serverURL() );
         if ( $pdf === null )
             return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );

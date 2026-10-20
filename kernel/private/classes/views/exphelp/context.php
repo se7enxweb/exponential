@@ -26,7 +26,7 @@ class Context extends \Exponential\Runnable\ModuleView
         if ( !\expHelp::isEnabled() || !\expHelpContentProvider::isEnabled() )
             self::send( 404, array( 'error' => 'not_found' ) );
 
-        $id = \expHelp::requestedId( $Params, $_GET );
+        $id = \expHelp::requestedId( $Params );
         $provider = \expHelpContentProvider::instance();
         $data = null;
         if ( strpos( $id, 'manual/' ) === 0 )

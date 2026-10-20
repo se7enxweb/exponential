@@ -31,6 +31,7 @@ ends with a practical: diagnosing prepared faults with the site-down and slow-si
 | [5.2 The log viewer and log rotation](log-viewer-and-rotation.md) | 45 min | Follow and search logs, use permalinks, preview a prune |
 | [5.3 Request logs and the security log](request-and-security-logs.md) | 40 min | Read 404 and probe lines, draft a classifier exclude |
 | [5.4 Runbooks for a site that is down or slow](runbooks-site-down-and-slow.md) | 45 min | Diagnose a prepared fault and write an incident note |
+| [5.5 The system card](system-card-exercise.md) (optional) | 25 min | Read a server with `exp:expfetch`, act on its hints, follow it with `--watch`, compare two `exp:info --json` |
 
 ## Preparing this module
 

@@ -36,6 +36,7 @@ read top to bottom.
 2. [An implementation project playbook](implementation-project-playbook.md)
 3. [Support levels and response times](support-levels-and-response-times.md)
 4. [Keeping customer sites current](keeping-customers-current.md)
+5. [Verifying a customer installation](verifying-a-customer-installation.md)
 
 ## Developer
 

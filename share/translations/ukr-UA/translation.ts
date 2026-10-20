@@ -71561,10 +71561,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Центр довідки</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Початок довідки</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Чим ми можемо допомогти?</translation>
     </message>

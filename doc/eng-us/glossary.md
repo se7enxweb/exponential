@@ -86,6 +86,9 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **Exp Debug bar**: a bar on pages that shows queries, time and template information to administrators. [Exp Debug bar](features/6.0/exp-debug-bar.md).
 - **exp (prefix)**: a code prefix 7x uses strategically, with intent, to build the Exponential brand and to assign ownership of an extension or solution to the Exponential project and the Exponential Foundation (`explayouts`, `expai`, `expHelpAudience`); new kernel code uses it. [Naming prefixes: sevenx and exp](standards/naming-prefixes-sevenx-and-exp.md).
 - **exp:** the prefix of the console commands that run `bin/php/*.php` scripts. [Console](bc/6.0/console.md).
+- **exp:about**: the **system card** plus the project: what Exponential is, the license, links, how to contribute. [The system card](features/6.0/system-card.md#expabout-the-card-and-the-project).
+- **exp:expfetch**: the console command that draws the **system card**: the Exponential "e" next to the facts of the installation, its engine and its machine, with health hints. [The system card](features/6.0/system-card.md).
+- **exp:info**: the **system card** plus an inventory: extensions and versions, siteaccesses, settings, cronjobs, caches, help coverage. [The system card](features/6.0/system-card.md#expinfo-the-card-and-an-inventory).
 - **exp:ini**: the command that reads and writes **INI** settings in every scope. [exp:ini](features/6.0/exp-ini-command.md).
 - **exp_enhanced_link**: the extension that provides the enhanced link field type. [exp_enhanced_link](features/6.0/extensions/exp_enhanced_link.md).
 - **explayouts**: the extensions that bring layouts, blocks, zones and rules to the admin. [Exponential Layouts](bc/6.0/LAYOUTS.md), [explayouts_ui](features/6.0/extensions/explayouts_ui.md), [API specification](specifications/6.0/explayouts-ui-api.md).
@@ -244,6 +247,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **suppression list**: the addresses that get no optional e-mail (bounces, complaints, requests), stored only as salted hashes (`exp:mail:suppression`). [Administrator's guide](guides/mail-preferences-administrator.md).
 - **swark**: an extension with many template operators and workflow events. [swark](features/6.0/extensions/swark.md).
 - **syndication**: the extension for export and import feeds. [syndication](features/6.0/extensions/syndication.md), [specification](specifications/6.0/syndication.md).
+- **system card**: what `exp:expfetch`, `exp:info` and `exp:about` show, and the name of their code (`expSysCard*`, `syscard.ini`): facts from **providers**, health hints, themes and logos. [The system card](features/6.0/system-card.md).
 
 ## T
 

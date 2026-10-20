@@ -51,7 +51,7 @@
         <h1 id="help-dash-title">{'How can we help?'|i18n( $help_ctx )}</h1>
         <p class="a4-help-hero-sub">{'Guides and reference for everyone who works with this installation, written from the documentation of its own version.'|i18n( $help_ctx )}</p>
 
-        <form class="a4-help-search" action={$help_search_action|ezurl} method="get" role="search" data-exphelp-search data-exphelp-endpoint={$help_search_action|ezurl}>
+        <form class="a4-help-search" action={$help_search_action|ezurl} method="post" role="search" data-exphelp-search data-exphelp-endpoint={$help_search_action|ezurl}>
             <div class="a4-help-search-box">
                 <div class="a4-help-search-field">
                     <span class="a4-icon a4-bi-search" aria-hidden="true"></span>

@@ -50,6 +50,7 @@ This page is for advocates who want everything at hand. Bookmark it.
 [Giving demos](giving-demos-as-an-advocate.md), [Lightning talk script](lightning-talk-script.md),
 [Twenty-minute talk](twenty-minute-talk-slide-outline.md), [Workshop](hands-on-workshop-outline.md),
 [User group or class](presenting-at-a-user-group-or-class.md), [Live demo safety](live-demo-safety.md),
+[The system card in demos](the-system-card-in-demos.md),
 [Screencast](recording-a-screencast.md), [Accessible slides](accessible-slides-and-visuals.md),
 and the click-by-click [Demo scripts](../business/demo-scripts.md).
 

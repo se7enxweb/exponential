@@ -76,6 +76,7 @@ Exponential Foundation reviews your content before you publish it, and these pag
 | [Demo script: five-minute overview](demo-script-five-minute-overview.md), [editor tour](demo-script-editor-tour.md), [Exponential Layouts](demo-script-layouts.md) | Show editing and the page builder |
 | [Demo script: Exponential Intelligence](demo-script-exponential-intelligence.md), [Velocity](demo-script-velocity.md) | Show the writing assistant and the application server |
 | [Demo script: install from zero](demo-script-install-from-zero.md), [administrator tour](demo-script-administrator-tour.md) | Show installing and running a site |
+| [The system card in demos](../advocates/the-system-card-in-demos.md) | Open with `./console exp:about`: the "e", the installation and the project on one screen |
 | [Tutorial series plan](tutorial-series-plan.md), [Podcast episode outlines](podcast-episode-outlines.md) | Plan a series |
 
 ### Safety, privacy and accessibility

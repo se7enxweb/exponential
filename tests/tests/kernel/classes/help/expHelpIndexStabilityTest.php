@@ -38,9 +38,9 @@ class expHelpIndexStabilityTest extends PHPUnit\Framework\TestCase
         if ( $rc !== 0 )
             $this->markTestSkipped( 'git is not available' );
         $this->base = dirname( __DIR__, 5 ) . '/var/tmp/phpunit-exphelp-stability-' . getmypid() . '-' . bin2hex( random_bytes( 4 ) );
-        mkdir( $this->base . '/install/doc/help', 0777, true );
-        file_put_contents( $this->base . '/install/doc/help/start.md', "# Start\n\nText about publishing.\n" );
-        file_put_contents( $this->base . '/install/doc/help/other.md', "# Other\n\nMore text.\n" );
+        mkdir( $this->base . '/install/doc/eng-us/help', 0777, true );
+        file_put_contents( $this->base . '/install/doc/eng-us/help/start.md', "# Start\n\nText about publishing.\n" );
+        file_put_contents( $this->base . '/install/doc/eng-us/help/other.md', "# Other\n\nMore text.\n" );
         mkdir( $this->base . '/install/lib', 0777, true );
         file_put_contents( $this->base . '/install/lib/code.php', "<?php\n" );
         $this->git( 'init -q' );
@@ -126,13 +126,13 @@ class expHelpIndexStabilityTest extends PHPUnit\Framework\TestCase
     {
         $signature = $this->index()->signature();
 
-        file_put_contents( $this->base . '/install/doc/help/start.md', "# Start\n\nText about publishing, longer now.\n" );
+        file_put_contents( $this->base . '/install/doc/eng-us/help/start.md', "# Start\n\nText about publishing, longer now.\n" );
         clearstatcache();
         $changed = $this->index()->signature();
         $this->assertNotSame( $signature, $changed, 'a changed page' );
 
-        file_put_contents( $this->base . '/install/doc/help/new.md', "# New\n\nA new page.\n" );
-        $this->git( 'add doc/help/new.md' );
+        file_put_contents( $this->base . '/install/doc/eng-us/help/new.md', "# New\n\nA new page.\n" );
+        $this->git( 'add doc/eng-us/help/new.md' );
         clearstatcache();
         $added = $this->index()->signature();
         $this->assertNotSame( $changed, $added, 'an added page' );
@@ -151,8 +151,8 @@ class expHelpIndexStabilityTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 2, $first->documents() );
         $old = $first->signature();
 
-        file_put_contents( $this->base . '/install/doc/help/new.md', "# New\n\nA new page.\n" );
-        $this->git( 'add doc/help/new.md' );
+        file_put_contents( $this->base . '/install/doc/eng-us/help/new.md', "# New\n\nA new page.\n" );
+        $this->git( 'add doc/eng-us/help/new.md' );
         clearstatcache();
 
         // another process builds: it holds the lock (flock locks belong to the open file, so this handle conflicts)
@@ -178,8 +178,8 @@ class expHelpIndexStabilityTest extends PHPUnit\Framework\TestCase
         $this->assertNotEmpty( $search->search( 'publishing' )['results'] );
         $this->assertCount( 1, glob( $cache . '/search-*.php' ) );
 
-        file_put_contents( $this->base . '/install/doc/help/new.md', "# New\n\nAnother page.\n" );
-        $this->git( 'add doc/help/new.md' );
+        file_put_contents( $this->base . '/install/doc/eng-us/help/new.md', "# New\n\nAnother page.\n" );
+        $this->git( 'add doc/eng-us/help/new.md' );
         clearstatcache();
         $lock = fopen( $cache . '/search.lock', 'c' );
         $this->assertTrue( flock( $lock, LOCK_EX | LOCK_NB ) );

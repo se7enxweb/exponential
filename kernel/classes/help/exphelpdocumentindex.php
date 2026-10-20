@@ -1135,7 +1135,7 @@ class expHelpDocumentIndex
         if ( $dir === null || $this->data === null )
             return false;
         $current = self::pageTitlesData( $dir );
-        if ( is_array( $current ) && isset( $current['signature'] ) && $current['signature'] === $this->data['signature'] )
+        if ( is_array( $current ) && isset( $current['signature'], $current['pages'] ) && $current['signature'] === $this->data['signature'] )
             return true;
         $titles = array();
         foreach ( $this->data['documents'] as $id => $document )
@@ -1146,7 +1146,9 @@ class expHelpDocumentIndex
                 continue;
             $titles[(string)$id] = isset( $document['title'] ) && is_scalar( $document['title'] ) ? (string)$document['title'] : '';
         }
-        return $this->store( self::PAGE_TITLES_FILE, array( 'signature' => $this->data['signature'], 'titles' => $titles ), self::PAGE_TITLES_FILE );
+        // 'pages' is the number of pages of the index, generated ones included: what ./console exp:help index reports
+        return $this->store( self::PAGE_TITLES_FILE, array( 'signature' => $this->data['signature'], 'pages' => count( $this->data['documents'] ),
+                                                            'titles' => $titles ), self::PAGE_TITLES_FILE );
     }
 
     /**
@@ -1161,6 +1163,22 @@ class expHelpDocumentIndex
     {
         $data = self::pageTitlesData( $dir === null ? self::defaultCacheDir() : $dir );
         return is_array( $data ) && isset( $data['titles'] ) && is_array( $data['titles'] ) ? $data['titles'] : null;
+    }
+
+    /**
+     * The number of pages of the last index loaded (every page, the generated reference examples too: the number
+     * ./console exp:help index reports), from the small file pageTitles() reads, and the signature of that index.
+     * Null when there is no such file, or it was written before it carried the number.
+     *
+     * @param string|null $dir the cache directory, default the installation's
+     * @return array|null array( 'pages' => int, 'signature' => string )
+     */
+    public static function pageCount( $dir = null )
+    {
+        $data = self::pageTitlesData( $dir === null ? self::defaultCacheDir() : $dir );
+        if ( !is_array( $data ) || !isset( $data['pages'] ) || !is_int( $data['pages'] ) )
+            return null;
+        return array( 'pages' => $data['pages'], 'signature' => isset( $data['signature'] ) ? (string)$data['signature'] : '' );
     }
 
     /**

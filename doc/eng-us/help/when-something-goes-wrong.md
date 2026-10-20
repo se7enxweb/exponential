@@ -75,7 +75,9 @@ you know to that issue instead of opening a new one.
 - **The environment**: the Exponential version, the PHP version, the web server (Exponential Velocity, Apache or
   nginx with PHP-FPM, FrankenPHP), the database and the administration design. The **Report an error** page and
   **Setup** > **System information** (**Copy report as text**) give you this summary; both leave out passwords,
-  keys and server paths.
+  keys and server paths. On the command line, `./console exp:info --plain --no-logo` (or `--json`) gives the same
+  and more (every extension with its version, the engine, the caches): it never prints a password, key, token,
+  database user or full database address, so you can paste it as it is ([The system card](../features/6.0/system-card.md)).
 - **Log lines** around the time, if an administrator can get them; remove anything private first.
 
 Never put passwords, keys, session cookies, database addresses, or the personal data of customers or users into a

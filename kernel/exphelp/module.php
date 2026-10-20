@@ -8,13 +8,16 @@
  *
  *   exphelp/dashboard              the help start page: search, audiences, featured pages, recent changes, trackers
  *   exphelp/audience/<audience>    the landing page of an audience (expHelpLanding)
- *   exphelp/viewer/<page id>       one page; <page id> is its path below doc/ (features/6.0/help-system.md); ?p= too
+ *   exphelp/viewer/<page id>       one page; <page id> is its path below doc/ (features/6.0/help-system.md);
+ *                                  (lang)/<key> shows it in another language (the English original)
  *   exphelp/contents               every help page as one tree (all folders open), with a filter box
  *   exphelp/extensions[/<name>]    the documentation of the active extensions: the list, or one extension's pages
- *   exphelp/search/(q)/<words>/(category)/<id>/...  search, or browse without (q); format=json: the client's JSON
+ *   exphelp/search/(q)/<words>/(category)/<id>/...  search, or browse without (q); (format)/json: the client's JSON
  *   exphelp/asset/<path>           an image below doc/, with its content type (only git-tracked files)
  *   exphelp/pdf/<page id>          the page as a PDF file to download (expHelpPdf)
  *   exphelp/report                 how to report an error: which tracker, a prefilled issue, safe diagnostics
+ *
+ * Every option is a view parameter (/(name)/value), never a GET query parameter.
  *
  * Policy function read; Anonymous is not given it. An unknown or refused path is a 404.
  *
@@ -44,12 +47,14 @@ $ViewList['audience'] = array(
     'unordered_params' => array( 'offset' => 'Offset',
                                  'merges' => 'Merges' ) );
 
-// The page is the rest of the address (exphelp/viewer/features/6.0/help-system.md) or GET p
+// The page is the rest of the address (exphelp/viewer/features/6.0/help-system.md); (lang)/<key> shows it in another
+// language for this request (exphelp/viewer/features/6.0/help-system.md/(lang)/eng-us)
 $ViewList['viewer'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'viewer.php',
     'functions' => array( 'read' ),
-    'params' => array() );
+    'params' => array(),
+    'unordered_params' => array( 'lang' => 'Language' ) );
 
 // Every help page as one tree, all folders open, with a filter box
 $ViewList['contents'] = array(
@@ -60,8 +65,8 @@ $ViewList['contents'] = array(
 
 // View parameters (q)/(category)/(audience)/(type)/(extension)/(offset)/(limit)/(format), canonical order:
 // expHelp::searchUrl(). (extension)/<name> limits it to the documentation of one extension.
-// Without (q) it browses the pages the filters allow. A GET ?q=... is redirected to the canonical address; JSON
-// (format=json or Accept: application/json) takes both forms and is never redirected.
+// Without (q) it browses the pages the filters allow. The search form without scripts is a POST, redirected to the
+// canonical address; JSON ((format)/json or Accept: application/json) is never redirected. No GET query parameters.
 $ViewList['search'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'search.php',
@@ -84,26 +89,27 @@ $ViewList['extensions'] = array(
     'functions' => array( 'read' ),
     'params' => array( 'Extension' ) );
 
-// The file is the rest of the address (exphelp/asset/images/foo.png) or GET p
+// The file is the rest of the address (exphelp/asset/images/foo.png)
 $ViewList['asset'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'asset.php',
     'functions' => array( 'read' ),
     'params' => array() );
 
-// The page as a PDF file to download: the rest of the address (exphelp/pdf/help/getting-started.md) or GET p
+// The page as a PDF file to download: the rest of the address (exphelp/pdf/help/getting-started.md)
 $ViewList['pdf'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'pdf.php',
     'functions' => array( 'read' ),
     'params' => array() );
 
-// GET tracker (software|project|community)
+// (tracker)/<software|velocity|community|extension key>: the tracker chosen (the posted form may choose it too)
 $ViewList['report'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'report.php',
     'functions' => array( 'read' ),
-    'params' => array() );
+    'params' => array(),
+    'unordered_params' => array( 'tracker' => 'Tracker' ) );
 
 // Help maintained as content (doc/eng-us/features/6.0/help-content.md): a topic by its help_id, rendered
 // (exphelp/topic/content.publish-article); what the user may see is decided by content/read and the state
@@ -113,12 +119,14 @@ $ViewList['topic'] = array(
     'functions' => array( 'read' ),
     'params' => array() );
 
-// A manual of help maintained as content by its remote_id: its table of contents (exphelp/manual/help-manual-editors)
+// A manual of help maintained as content by its remote_id: its table of contents (exphelp/manual/help-manual-editors);
+// (format)/<epub|pdf|dita> downloads it (exphelp/manual/<remote_id>/(format)/pdf, every manual: exphelp/manual/(format)/dita)
 $ViewList['manual'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'manual.php',
     'functions' => array( 'read' ),
-    'params' => array() );
+    'params' => array(),
+    'unordered_params' => array( 'format' => 'Format' ) );
 
 // Context help as JSON for other clients: exphelp/context/<help_id> and exphelp/context/manual/<remote_id>, with
 // an ETag. Its own function, so a site can give it to readers without giving them the help of the administration

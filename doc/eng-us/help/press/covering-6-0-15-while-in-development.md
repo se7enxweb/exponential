@@ -76,7 +76,7 @@ release date. Source: <link to the 6.0.15 changelog>.
 | "6.0.15, due this autumn" | "6.0.15 has no announced release date." |
 | "The new release includes ..." | "The development line includes ..." |
 | "6.0.15 stable" | "the 6.0.15 line" |
-| "Everyone gets Velocity in the next update." | "Velocity is a separate package that Exponential suggests" ([Getting the code](../../install/03-getting-the-code.md#34-the-optional-velocity-package)) |
+| "Everyone gets Velocity in the next update." | "Velocity is a separate package that Exponential's `composer.json` requires at `~0.0.4.54`" ([Getting the code](../../install/03-getting-the-code.md#34-the-velocity-package)) |
 | "Feature X will be in 6.0.15 for sure." | "Feature X is in the development line today"; lines can still change before a tag |
 
 If you install the development line for a review, say so and follow

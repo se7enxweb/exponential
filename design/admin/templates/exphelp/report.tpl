@@ -102,7 +102,7 @@
         {/if}
 
         {if $help_ext|count|gt( 0 )}
-        <form class="a4-card a4-help-issue-extension" method="get" action={$help_report|ezurl}>
+        <form class="a4-card a4-help-issue-extension" method="post" action={$help_report|ezurl}>
             <div class="a4-help-issue-tracker-head">
                 <span class="a4-help-tile is-small" aria-hidden="true"><span class="a4-icon a4-bi-puzzle"></span></span>
                 <h3>{'An extension'|i18n( $help_ctx )}</h3>

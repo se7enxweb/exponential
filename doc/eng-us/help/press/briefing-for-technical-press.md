@@ -50,7 +50,7 @@ your interview time on design decisions. Facts are as of 18 October 2026; check 
 
 | Engine | Status in the documentation | Source |
 |---|---|---|
-| Exponential Velocity | "recommended for every stage; tier 1"; PHP 8.1+ | [Operating system support, Web servers](../os-support.md#web-servers) |
+| Exponential Velocity | "recommended for every stage; tier 1"; PHP 8.0+ | [Operating system support, Web servers](../os-support.md#web-servers) |
 | Apache httpd 2.4 with PHP-FPM | tier 1, "the classic setup and shared hosting" | Same table |
 | FrankenPHP | "production-ready alternative" | Same table |
 | nginx with PHP-FPM | tier 2 | Same table |

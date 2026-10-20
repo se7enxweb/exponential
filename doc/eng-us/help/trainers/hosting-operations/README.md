@@ -31,7 +31,7 @@ deploy a change, run cron, monitor the site, restore it from a backup and measur
 | Format | Classroom or online; hands-on on a terminal |
 | Level | Intermediate to advanced |
 | Prerequisites | [Site administration](../site-administrators/README.md) (at least the modules on caches, cronjobs, logs and upgrades); Linux command line, a web server and PHP basics |
-| Lab | One Linux machine or virtual machine per learner with root access, PHP 8.1 or later, Composer 2 and Git; a training installation made with `php bin/php/console exp:install` and served with `exp:velocity start`; for lessons 1.2, 1.3 and 3.3 also Apache or nginx with PHP-FPM and a MariaDB or PostgreSQL server |
+| Lab | One Linux machine or virtual machine per learner with root access, PHP 8.0 or later, Composer 2 and Git; a training installation made with `php bin/php/console exp:install` and served with `exp:velocity start`; for lessons 1.2, 1.3 and 3.3 also Apache or nginx with PHP-FPM and a MariaDB or PostgreSQL server |
 
 ## Modules
 

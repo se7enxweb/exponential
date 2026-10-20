@@ -59,7 +59,7 @@ server and shared storage ([High availability overview](../availability/high-ava
 
 | Need | Why | Detail |
 |---|---|---|
-| PHP 8 (8.1 or later for Velocity), command line and web | the application and its cronjobs | [PHP versions and extensions](../../../hosting/basics/php-versions-and-extensions.md) |
+| PHP 8 (8.0 or later, Velocity included), command line and web | the application and its cronjobs | [PHP versions and extensions](../../../hosting/basics/php-versions-and-extensions.md) |
 | Persistent storage for `var/` and `settings/override` | uploads, logs, the audit trail, the SQLite database | [Storage layout](../../../hosting/operations/storage-layout.md) |
 | A database, if not SQLite | one of the supported engines; a managed database service is fine if it is one of them | [Database choice in the official order](database-choice-in-the-official-order.md) |
 | A scheduler | `runcronjobs.php` every few minutes, or Velocity's own scheduler | [Cron jobs](../../../hosting/operations/cron-jobs.md) |
