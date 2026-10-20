@@ -32,8 +32,17 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
 5. Keep the file manifest current: every added, changed or removed file updates its line in `share/filelist.md5`
    (`make manifest-fix`); `make hooks` installs the pre-commit hook that checks it.
 6. Make sure the tests pass, update the documentation, push to your fork and open a pull request.
+7. Make sure a signed Contributor Licensing Agreement is on file with 7x
+   ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). When the partner company
+   has the rights to its developers' work, the company signs it or gives its permission (CLA, section 6); one
+   signature covers all future contributions.
 
 ## What happens next
+
+- A kernel contribution is merged only once its signed CLA has been received. 7x and the Exponential Foundation
+  require it for every code contribution to the core kernel, in any form (pull request, patch, issue or mail). The
+  agreement is a non-exclusive license: the partner keeps its copyright. It does not affect the partner's own custom
+  extensions or its customers' sites.
 
 - "Every pull request is merged, and its commits are kept as the contributor wrote them and never rewritten"
   (`doc/en/us/bc/6.0/ci.md`). What needs fixing is fixed in commits on top.
