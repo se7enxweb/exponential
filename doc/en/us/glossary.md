@@ -1,3 +1,7 @@
+---
+title: Glossary
+order: 9999
+---
 # Glossary
 
 Every term the documentation uses, in one line, with a link to the page that teaches it. Terms are in alphabetical
