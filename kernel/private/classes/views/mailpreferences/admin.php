@@ -97,7 +97,7 @@ class Admin extends Page
         $none = $t( '(not set)' );
         $facts = array(
             array( 'label' => $t( 'Mail gate' ), 'value' => $status['gate'] === 'enabled' ? $t( 'On' ) : $t( 'Off' ) ),
-            array( 'label' => $t( 'Organisation in the footer' ), 'value' => $status['footer']['organisation_name'] !== ''
+            array( 'label' => $t( 'Organization in the footer' ), 'value' => $status['footer']['organisation_name'] !== ''
                    ? $status['footer']['organisation_name'] . ( isset( $status['footer']['organisation_name_source'] ) && $status['footer']['organisation_name_source'] === 'site' ? ' (' . $t( 'the site name' ) . ')' : '' )
                    : $none ),
             array( 'label' => $t( 'Postal address in the footer' ), 'value' => $status['footer']['organisation_address'] !== '' ? $status['footer']['organisation_address'] : $none ),

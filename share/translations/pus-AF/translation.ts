@@ -24468,7 +24468,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د بارولو په ترتیب، له هغې نسخې سره چې د هغوی extension.xml، ezinfo.php یا composer.json یې وايي</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>د هغوی لیکوال، جوازونه او وېب‌سایټونه دلته دي</translation>
     </message>
     <message>
@@ -26540,7 +26540,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د XML متن د وتو چلوونکی</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>د معلوماتو د راټولولو چلند</translation>
     </message>
     <message>
@@ -27052,7 +27052,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>په یوه ډیزاین کې یوه کېنډۍ، چې د ډیزاین د لړۍ له لارې موندل کېږي نه دا چې چېرته نومول شوې وي.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>یوازې امستنې. له INI پرته هېڅ نه لیکل کېږي، او چلند بدلېږي.</translation>
     </message>
     <message>
@@ -27843,7 +27843,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -27959,7 +27959,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>څه پکې دي، د کلاس سکرېپټ څنګه وچلول شي، او مخکې له هغه چې په داسې سایټ چلول شي چې منځپانګه لري، څه باید وشي.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -27975,7 +27975,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. په تلواله توګه فعال: هغه غځونه چې د جواز دوتنه نه لري، د هغه په اړه هېڅ نه وايي چې څنګه کارول کېدی شي.</translation>
     </message>
     <message>
@@ -28146,7 +28146,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -28518,7 +28518,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>کوم ستون څه ساتي، او که ستونونه بس نه وي نو یو خپل جدول به څنګه ښکاري.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -28538,7 +28538,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. په تلواله توګه فعال: هغه غځونه چې د جواز دوتنه نه لري، د هغه په اړه هېڅ نه وايي چې څنګه کارول کېدی شي.</translation>
     </message>
     <message>
@@ -28594,7 +28594,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ساده متن یوه لنډه کرښه. دا د پاڼو په سرلیکونو، لېستونو، د مدیریت په پینل او د هر هغه څیز په URL کې راځي چې پرې نومول شوی، نو باید متن وي نه نښه‌ګذاري (markup).</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>ایا دغه د ډېټا ډول هېڅ د لړلیک کولو ارزښت لري. د هر هغه څه لپاره False چې ارزښت یې د کلمو په توګه هېڅ مانا نه لري - یو رنګ، یو پېژند، یوه نښه (flag).</translation>
     </message>
     <message>
@@ -28697,7 +28697,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -28885,7 +28885,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د autoloads یو فولډر له یو ثبت شوي عملګر (operator) سره، د غځولو لپاره چمتو.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -28905,7 +28905,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. په تلواله توګه فعال: هغه غځونه چې د جواز دوتنه نه لري، د هغه په اړه هېڅ نه وايي چې څنګه کارول کېدی شي.</translation>
     </message>
     <message>
@@ -28992,7 +28992,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -29524,7 +29524,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>هغه ini چې د تلوالې پر ځای همدا کلاس نوموي.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -29548,7 +29548,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. په تلواله توګه فعال: هغه غځونه چې د جواز دوتنه نه لري، د هغه په اړه هېڅ نه وايي چې څنګه کارول کېدی شي.</translation>
     </message>
     <message>
@@ -30407,7 +30407,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -30527,7 +30527,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>یو لید څنګه پرانیستل کېږي، په $Params کې څه دي، $Result څه لېږدولی شي، او له یوه لید دننه یوه تګلاره څنګه وکتل شي.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -30547,7 +30547,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. په تلواله توګه فعال: هغه غځونه چې د جواز دوتنه نه لري، د هغه په اړه هېڅ نه وايي چې څنګه کارول کېدی شي.</translation>
     </message>
     <message>
@@ -30730,7 +30730,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -30906,7 +30906,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>share/db_schema.dba چې جدولونه تشریح کوي، څو نصبونکی او د همغږۍ کتنه پرې خبر وي.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -30926,7 +30926,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. په تلواله توګه فعال: هغه غځونه چې د جواز دوتنه نه لري، د هغه په اړه هېڅ نه وايي چې څنګه کارول کېدی شي.</translation>
     </message>
     <message>
@@ -31037,7 +31037,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -31145,7 +31145,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د څه بدیل جوړ شوی، ولې بدیل او نه کوم سپک څه، او په هر اپګرېډ کې باید څه وشي.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -31161,7 +31161,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. بدیل د کرنل کوډ لري، نو دا چې د کوم جواز لاندې دی، فرعي موضوع نه ده.</translation>
     </message>
     <message>
@@ -31360,7 +31360,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -31452,7 +31452,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د انځور هره ځانګړنه یو ځل خوندي کېږي او په هغومره اندازو وړاندې کېږي څومره چې بل نومونه شته. کېنډۍ یو یې د نوم له مخې غواړي؛ دوتنه لومړی ځل چې وغوښتل شي جوړېږي او ساتل کېږي. د بل نوم زیاتول تر هغه هېڅ لګښت نه لري چې څه یې وغواړي، او د داسې یوه لرې کول چې منځپانګه یې لا هم غواړي، مات انځورونه پرېږدي.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>کرنل څو درجن شیان اعلانوي کله چې پېښېږي - یو کش پاکېږي، یوه غوښتنه رارسېږي، یو ځواب د لېږلو په درشل کې دی - او هر هغه څه چې اوري، بلل کېږي. دا د چلند د زیاتولو تر ټولو سپکه لاره ده: نه ماډیول، نه چلوونکی، نه د ځای په ځای کولو لپاره کلاس، یوازې یوه static طریقه چې کله څه پېښ شي، چلېږي.</translation>
     </message>
     <message>
@@ -31512,7 +31512,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>یو مستطیل پرې کوي. د اندازې له بدلون سره یو ځای، په دغه ډول د ټاکلې اندازې thumbnail پرته له ګډوډۍ جوړېږي.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>رنګ ترې باسي.</translation>
     </message>
     <message>
@@ -31524,7 +31524,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>انځور تاووي. د هېچا په کار نه راځي، او په هره هغه بېلګه کې شته چې کله هم لیکل شوې.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>په نومول شوي یا hex رنګ کې یوه پوله.</translation>
     </message>
     <message>
@@ -31648,7 +31648,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>هره امستنه څه کوي، ولې هلته ده چېرته چې ده، او مخکې له دغه چې اغېز وکړي، څه باید پاک شي.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -31664,7 +31664,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. په تلواله توګه فعال: هغه غځونه چې د جواز دوتنه نه لري، د هغه په اړه هېڅ نه وايي چې څنګه کارول کېدی شي.</translation>
     </message>
     <message>
@@ -31907,7 +31907,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>هغه څه چې کرنل یې اعلانوي څو بل څوک یې پلي کړي، سره له دغه چې هر یو څو طریقې غواړي او څه یې لا دمخه پلي کوي. هغه چې ډېرې طریقې او یو پلي کوونکی لري، ژورې اوبه دي.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>هر هغه ټکی چې کرنل د کار پر مهال اعلانوي، له سرچینې کوډ څخه راټول شوی نه دا چې لېست شوی وي. د filter پېښه هغه څه کاروي چې یو اورېدونکی یې بېرته ورکوي، نو هغه چې د ارزښت بېرته ورکول هېر کړي، ارزښت له منځه وړي؛ د notify پېښه یې له پامه غورځوي. د چلند د زیاتولو تر ټولو سپکه لاره: نه ماډیول، نه چلوونکی، نه د ځای پر ځای کولو لپاره کلاس.</translation>
     </message>
     <message>
@@ -31995,7 +31995,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>هېڅ کار نه دی پاتې. دا ځکه لېست شوی چې پاڼه یو بشپړ انځور وړاندې کړي، نه یوازې د تېروتنو لېست.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>که تاسو د چلند د بدلولو لپاره ځای لټوئ، دا هغه ځایونه دي چې تر اوسه هېچا نه دي نیولي.</translation>
     </message>
     <message>
@@ -32182,7 +32182,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -32330,7 +32330,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>هر شی په کېنډۍ کې څنګه ښکاري، څه ورته سپارل کېږي، او څنګه یې له یوه سکرېپټ څخه پرته له کومې پاڼې وازمویئ.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -32350,7 +32350,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. په تلواله توګه فعال: هغه غځونه چې د جواز دوتنه نه لري، د هغه په اړه هېڅ نه وايي چې څنګه کارول کېدی شي.</translation>
     </message>
     <message>
@@ -32548,7 +32548,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>جواز</translation>
     </message>
     <message>
@@ -32848,7 +32848,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>په readme کې د workflow_cron په اړه یوه یادونه، چې هغه پېښه چلوي چې ځان یې وروسته کړی وي.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>هغه څه چې د مدیریت پینل یې لولي ترڅو د غځونې نوم، نسخه او جواز وښيي.</translation>
     </message>
     <message>
@@ -32868,7 +32868,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>د ایډیټر پاتې شوني او د جوړونې پایلې له زېرمتون څخه بهر ساتي.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>د جواز هغه متن چې لاندې نومول شوی. په تلواله توګه فعال: هغه غځونه چې د جواز دوتنه نه لري، د هغه په اړه هېڅ نه وايي چې څنګه کارول کېدی شي.</translation>
     </message>
     <message>
@@ -48755,7 +48755,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation>هغه څه چې کرنل یې اعلانوي څو بل څوک یې پلي کړي، سره له دغه چې هر یو څو طریقې غواړي او څه یې لا دمخه پلي کوي. هغه چې ډېرې طریقې او یو پلي کوونکی لري، ژورې اوبه دي.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>هر هغه ټکی چې کرنل د کار پر مهال اعلانوي، له سرچینې کوډ څخه راټول شوی نه دا چې لېست شوی وي. د filter پېښه هغه څه کاروي چې یو اورېدونکی یې بېرته ورکوي، نو هغه چې د ارزښت بېرته ورکول هېر کړي، ارزښت له منځه وړي؛ د notify پېښه یې له پامه غورځوي. د چلند د زیاتولو تر ټولو سپکه لاره: نه ماډیول، نه چلوونکی، نه د ځای پر ځای کولو لپاره کلاس.</translation>
     </message>
     <message>
@@ -50573,7 +50573,7 @@ See the requirements page for more information.</source>
         <translation>هېڅ.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>د سازمان نوم</translation>
     </message>
     <message>
@@ -58447,7 +58447,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>هېڅ کار نه دی پاتې. دا ځکه لېست شوی چې پاڼه یو بشپړ انځور وړاندې کړي، نه یوازې د تېروتنو لېست.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>که تاسو د چلند د بدلولو لپاره ځای لټوئ، دا هغه ځایونه دي چې تر اوسه هېچا نه دي نیولي.</translation>
     </message>
     <message>
@@ -58867,11 +58867,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>امستنه &quot;%setting&quot; یو لېست دی، خو د هغې لپاره هېڅ ارزښت نه دی ورکړل شوی.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>د ټاکلو لپاره هېڅ جواز نه دی ټاکل شوی. یو جواز په package.ini [LicenseSettings] LicenseList کې زیات کړئ.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>جواز «%licence» له هغو جوازونو څخه نه دی چې په package.ini [LicenseSettings] کې ټاکل شوي. یو له لېست څخه وټاکئ.</translation>
     </message>
     <message>
@@ -68596,7 +68596,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>کارېدونکې امستنې</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>امستنې په mailpreferences.ini کې دي؛ سازمان، د پوستې پته، د bounce برېښنالیک صندوق او د سایټ راز د امستنو په یوه بدیل (override) کې ځای لري.</translation>
     </message>
     <message>
@@ -68788,7 +68788,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>بند</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>په پښورقه کې سازمان</translation>
     </message>
     <message>
@@ -68924,11 +68924,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>د لېږونکي جزییات</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>هر اختیاري برېښنالیک ښيي چې څوک یې لېږي او د هغه د پوستې پته، لکه څنګه چې قانون غواړي. که د سازمان نوم نه وي، د سایټ نوم کارول کېږي.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>د سازمان نوم</translation>
     </message>
     <message>
@@ -69664,7 +69664,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>جدول %table نشته: د ډېټابېس تازه کول وچلوئ.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>د برېښنالیک د پښورقې د پوستې پته تشه ده: هغه په دغه پاڼه کې د «د لېږونکي جزییات» لاندې ولیکئ (mailpreferences/admin/status). قانون په هر اختیاري برېښنالیک کې سازمان او د هغه د پوستې پته غواړي؛ تر هغه وخته برېښنالیک بې له هغې لېږل کېږي.</translation>
     </message>
     <message>

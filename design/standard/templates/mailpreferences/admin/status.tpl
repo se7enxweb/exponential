@@ -30,10 +30,10 @@
 {if is_set( $sender )}
     <section class="mp-card" id="mp-sender">
         <h2>{'Sender details'|i18n( 'design/admin/mailpreferences' )}</h2>
-        <p class="mp-hint">{'Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.'|i18n( 'design/admin/mailpreferences' )}</p>
+        <p class="mp-hint">{'Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.'|i18n( 'design/admin/mailpreferences' )}</p>
         <form method="post" action={'mailpreferences/admin/status'|ezurl}>
             <div class="mp-field">
-                <label for="mp-sender-name">{'Organisation name'|i18n( 'design/admin/mailpreferences' )}</label>
+                <label for="mp-sender-name">{'Organization name'|i18n( 'design/admin/mailpreferences' )}</label>
                 <input type="text" id="mp-sender-name" name="OrganisationName" value="{$sender.name_setting|wash}" placeholder="{$sender.site_name|wash}" maxlength="255" />
             </div>
             <div class="mp-field">
@@ -53,7 +53,7 @@
             <div><dt>{$fact.label|wash}</dt><dd>{$fact.value|wash}</dd></div>
 {/foreach}
         </dl>
-        <p class="mp-hint">{'The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.'|i18n( 'design/admin/mailpreferences' )}</p>
+        <p class="mp-hint">{'The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.'|i18n( 'design/admin/mailpreferences' )}</p>
     </section>
 {/if}
 

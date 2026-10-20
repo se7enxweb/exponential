@@ -44,8 +44,7 @@ class expLoveStackFixture
             $db->exec( $sql );
             $db->exec( 'COMMIT' );
         }
-        // The version Exponential writes on installation (cleandata.sql may carry an older one)
-        $db->exec( "UPDATE ezsite_data SET value='6.0.15stable' WHERE name='ezpublish-version'" );
+        // cleandata.sql already carries the version Exponential writes on installation (6.0.15stable)
         if ( $loveStack )
             self::applyLoveStackSteps( $db );
         else

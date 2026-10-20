@@ -24468,7 +24468,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>yükleme sırasıyla, extension.xml, ezinfo.php veya composer.json dosyalarında belirtilen sürümle</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Yazarları, lisansları ve web siteleri şurada:</translation>
     </message>
     <message>
@@ -26540,7 +26540,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>XML metin çıkış işleyicisi</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Bilgi toplama davranışı</translation>
     </message>
     <message>
@@ -27052,7 +27052,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Bir tasarımdaki, herhangi bir yerde adı verilerek değil, tasarım zinciri üzerinden bulunan bir şablon.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Yalnızca ayarlar. INI dışında hiçbir şey yazılmaz ve davranış değişir.</translation>
     </message>
     <message>
@@ -27843,7 +27843,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -27959,7 +27959,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>İçinde neler olduğu, sınıf betiğinin nasıl çalıştırılacağı ve içerik barındıran bir sitede çalıştırılmadan önce neler yapılması gerektiği.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -27975,7 +27975,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Aşağıda adı verilen lisans metni. Varsayılan olarak açık: lisans dosyası olmayan bir uzantı, nasıl kullanılabileceği hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
@@ -28146,7 +28146,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -28518,7 +28518,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Hangi sütunun neyi tuttuğu ve sütunlar yetmezse kendine ait bir tablonun nasıl görünmesi gerektiği.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -28538,7 +28538,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Aşağıda adı verilen lisans metni. Varsayılan olarak açık: lisans dosyası olmayan bir uzantı, nasıl kullanılabileceği hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
@@ -28594,7 +28594,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Kısa bir düz metin satırı. Sayfa başlıklarında, listelerde, yönetim arayüzünde ve onunla adlandırılan her nesnenin url&apos;sinde yer alır; bu nedenle biçimlendirme değil, metin olmalıdır.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Bu veri türünün dizinlenmeye değip değmediği. Değeri sözcük olarak bir anlam taşımayan her şey için false: bir renk, bir kimlik, bir bayrak.</translation>
     </message>
     <message>
@@ -28697,7 +28697,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -28885,7 +28885,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Kayıtlı bir işleç içeren, genişletilmeye hazır bir autoloads dizini.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -28905,7 +28905,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Aşağıda adı verilen lisans metni. Varsayılan olarak açık: lisans dosyası olmayan bir uzantı, nasıl kullanılabileceği hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
@@ -28992,7 +28992,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -29524,7 +29524,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Bu sınıfı varsayılanın yerine adlandıran ini dosyası.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -29548,7 +29548,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Aşağıda adı verilen lisans metni. Varsayılan olarak açık: lisans dosyası olmayan bir uzantı, nasıl kullanılabileceği hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
@@ -30407,7 +30407,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -30527,7 +30527,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Bir görünüme nasıl ulaşıldığı, $Params içinde ne olduğu, $Result&apos;ın ne taşıyabileceği ve bir görünümün içinden bir ilkenin nasıl denetleneceği.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -30547,7 +30547,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Aşağıda adı verilen lisans metni. Varsayılan olarak açık: lisans dosyası olmayan bir uzantı, nasıl kullanılabileceği hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
@@ -30730,7 +30730,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -30906,7 +30906,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Tabloları tanımlayan share/db_schema.dba; böylece yükleyici ve tutarlılık denetimi onlardan haberdar olur.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -30926,7 +30926,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Aşağıda adı verilen lisans metni. Varsayılan olarak açık: lisans dosyası olmayan bir uzantı, nasıl kullanılabileceği hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
@@ -31037,7 +31037,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -31145,7 +31145,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Neyin geçersiz kılındığı, neden daha hafif bir şey yerine geçersiz kılma seçildiği ve her yükseltmede ne yapılması gerektiği.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -31161,7 +31161,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Aşağıda adı verilen lisans metni. Bir geçersiz kılma çekirdek kodu taşır; bu nedenle hangi lisansla lisanslandığı sonradan düşünülecek bir konu değildir.</translation>
     </message>
     <message>
@@ -31360,7 +31360,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -31452,7 +31452,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Her resim özniteliği bir kez depolanır ve diğer ad sayısı kadar boyutta sunulur. Bir şablon birini adıyla ister; dosya ilk istendiğinde oluşturulur ve saklanır. Bir diğer ad eklemek, bir şey onu isteyene kadar hiçbir şeye mal olmaz; içeriğin hâlâ istediği birini kaldırmak ise bozuk resimler bırakır.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Çekirdek birkaç düzine şeyi gerçekleştikçe duyurur (bir önbelleğin temizlenmesi, bir isteğin gelmesi, bir yanıtın gönderilmek üzere olması) ve dinleyen her şey çağrılır. Davranış eklemenin en hafif yolu budur: modül yok, işleyici yok, yerine konacak sınıf yok; yalnızca bir şey olduğunda çalışan statik bir yöntem.</translation>
     </message>
     <message>
@@ -31512,7 +31512,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Bir dikdörtgen keser. Ölçeklendirmeyle birlikte, sabit boyutlu bir küçük resim bozulma olmadan bu şekilde oluşturulur.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Rengi kaldırır.</translation>
     </message>
     <message>
@@ -31524,7 +31524,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Resmi döndürerek büker. Kimsenin işine yaramaz ve şimdiye kadar yazılmış her örnekte bulunur.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Adlandırılmış veya onaltılık bir renkte kenarlık.</translation>
     </message>
     <message>
@@ -31648,7 +31648,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Her ayarın ne yaptığı, neden bulunduğu yerde olduğu ve etkili olmadan önce nelerin temizlenmesi gerektiği.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -31664,7 +31664,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Aşağıda adı verilen lisans metni. Varsayılan olarak açık: lisans dosyası olmayan bir uzantı, nasıl kullanılabileceği hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
@@ -31907,7 +31907,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Çekirdeğin başkasının uygulaması için bildirdikleri; her birinin kaç yöntem istediği ve onu zaten neyin uyguladığı ile birlikte. Çok yöntemli ve tek uygulamalı olanlar derin sulardır.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Çekirdeğin çalışırken duyurduğu her nokta; listelenmek yerine kaynak koddan toplanmıştır. Bir filtre olayı, dinleyicinin döndürdüğünü kullanır; bu nedenle değeri döndürmeyi unutan bir dinleyici onu yok eder. Bir bildirim olayı ise onu yok sayar. Davranış eklemenin en hafif yolu budur: modül yok, işleyici yok, değiştirilecek sınıf yok.</translation>
     </message>
     <message>
@@ -31995,7 +31995,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Yapılacak bir şey yok. Sayfanın yalnızca bir hata listesi değil, eksiksiz bir tablo sunması için listelenmiştir.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Davranışı değiştirmek için bir yer arıyorsanız, bunlar henüz kimsenin sahiplenmediği yerlerdir.</translation>
     </message>
     <message>
@@ -32182,7 +32182,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -32330,7 +32330,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Her şeyin bir şablonda nasıl göründüğü, kendisine ne teslim edildiği ve hiçbir sayfa kullanmadan bir betikten nasıl denenebileceği.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -32350,7 +32350,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Aşağıda adı verilen lisans metni. Varsayılan olarak açık: lisans dosyası olmayan bir uzantı, nasıl kullanılabileceği hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
@@ -32548,7 +32548,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Sürüm</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lisans</translation>
     </message>
     <message>
@@ -32848,7 +32848,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Benioku dosyasında, kendini erteleyen bir olayı çalıştıran workflow_cron hakkında bir not.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Yönetim arayüzünün uzantı adını, sürümünü ve lisansını göstermek için okuduğu dosya.</translation>
     </message>
     <message>
@@ -32868,7 +32868,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <translation>Düzenleyici artıklarını ve derleme çıktısını depodan uzak tutar.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Aşağıda adı verilen lisans metni. Varsayılan olarak açık: lisans dosyası olmayan bir uzantı, nasıl kullanılabileceği hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
@@ -48755,7 +48755,7 @@ Varsayılan kod, seçtiğiniz temel parametrelerden oluşturuldu.</translation>
         <translation>Çekirdeğin başkasının uygulaması için bildirdikleri; her birinin kaç yöntem istediği ve onu zaten neyin uyguladığı ile birlikte. Çok yöntemli ve tek uygulamalı olanlar derin sulardır.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Çekirdeğin çalışırken duyurduğu her nokta; listelenmek yerine kaynak koddan toplanmıştır. Bir filtre olayı, dinleyicinin döndürdüğünü kullanır; bu nedenle değeri döndürmeyi unutan bir dinleyici onu yok eder. Bir bildirim olayı ise onu yok sayar. Davranış eklemenin en hafif yolu budur: modül yok, işleyici yok, değiştirilecek sınıf yok.</translation>
     </message>
     <message>
@@ -50573,7 +50573,7 @@ Daha fazla bilgi için gereksinimler sayfasına bakın.</translation>
         <translation>Yok.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Kuruluş adı</translation>
     </message>
     <message>
@@ -58447,7 +58447,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Yapılacak bir şey yok. Sayfanın yalnızca bir hata listesi değil, eksiksiz bir tablo sunması için listelenmiştir.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Davranışı değiştirmek için bir yer arıyorsanız, bunlar henüz kimsenin sahiplenmediği yerlerdir.</translation>
     </message>
     <message>
@@ -58867,11 +58867,11 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>&quot;%setting&quot; ayarı bir liste, ancak bunun için hiçbir değer verilmedi.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Seçilebilecek bir lisans yapılandırılmamış. package.ini [LicenseSettings] LicenseList ayarına bir lisans ekleyin.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>&quot;%licence&quot; lisansı, package.ini [LicenseSettings] içinde yapılandırılmış lisanslardan biri değil. Listeden birini seçin.</translation>
     </message>
     <message>
@@ -68596,7 +68596,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Kullanılan ayarlar</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Ayarlar mailpreferences.ini dosyasındadır; kuruluş, posta adresi, geri dönen e-posta kutusu ve site gizli anahtarı bir ayar geçersiz kılmasına aittir.</translation>
     </message>
     <message>
@@ -68788,7 +68788,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Kapalı</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Alt bilgideki kuruluş</translation>
     </message>
     <message>
@@ -68924,11 +68924,11 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Gönderen bilgileri</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Yasanın gerektirdiği gibi, her isteğe bağlı e-posta göndereni ve posta adresini belirtir. Kuruluş adı yoksa site adı kullanılır.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Kuruluş adı</translation>
     </message>
     <message>
@@ -69664,7 +69664,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>%table tablosu eksik: veritabanı güncellemesini çalıştırın.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>E-posta alt bilgisinin posta adresi boş: bu sayfada &quot;Gönderen bilgileri&quot; altında girin (mailpreferences/admin/status). Yasa, her isteğe bağlı e-postada kuruluşun ve posta adresinin yer almasını gerektirir; o zamana kadar e-postalar bu bilgi olmadan gönderilir.</translation>
     </message>
     <message>

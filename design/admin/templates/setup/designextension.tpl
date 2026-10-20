@@ -90,7 +90,7 @@
 
 <div class="a4-setup-wz-row">
 <div class="a4-field">
-    <label for="dewLicence">{'Licence'|i18n( 'design/admin/setup/rad/designextension' )}</label>
+    <label for="dewLicence">{'License'|i18n( 'design/admin/setup/rad/designextension' )}</label>
     {include uri='design:setup/rad_licence_select.tpl' select_id='dewLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 <div class="a4-field">

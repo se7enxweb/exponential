@@ -24479,7 +24479,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>in ordine onerandi, cum versione quam extension.xml, ezinfo.php aut composer.json earum declarat</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Auctores, licentiae et situs earum sunt in</translation>
     </message>
     <message>
@@ -26551,7 +26551,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Tractator exitus textus XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Mos collectionis notitiae</translation>
     </message>
     <message>
@@ -27063,7 +27063,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Formula in designatione, per catenam designationum inventa potius quam alicubi nominata.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Optiones tantum. Nihil nisi ini scribitur, et agendi ratio mutatur.</translation>
     </message>
     <message>
@@ -27854,7 +27854,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -27970,7 +27970,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Quid insit, quomodo scriptum classis exsequendum sit, et quid faciendum sit antequam in situ cum contentis exsequatur.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -27986,7 +27986,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Textus licentiae infra nominatae. Praedefinite activum: extensio sine fasciculo licentiae nihil dicit de modo quo adhiberi licet.</translation>
     </message>
     <message>
@@ -28157,7 +28157,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -28529,7 +28529,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Quae columna quid teneat, et qualis tabula propria esse debeat si columnae non sufficiunt.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -28549,7 +28549,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Textus licentiae infra nominatae. Praedefinite activum: extensio sine fasciculo licentiae nihil dicit de modo quo adhiberi licet.</translation>
     </message>
     <message>
@@ -28605,7 +28605,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Brevis linea textus simplicis. In titulis paginarum, in enumerationibus, in interfacie administrationis et in URL omnis rei ab eo nominatae invenitur, ergo textus esse debet, non notatio.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Utrum hoc genus datorum omnino in indicem referri dignum sit. False pro omni re cuius valor ut verba nihil significat - color, identificator, vexillum.</translation>
     </message>
     <message>
@@ -28708,7 +28708,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -28896,7 +28896,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Directorium autoloads cum operatore registrato, ad augendum paratum.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -28916,7 +28916,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Textus licentiae infra nominatae. Praedefinite activum: extensio sine fasciculo licentiae nihil dicit de modo quo adhiberi licet.</translation>
     </message>
     <message>
@@ -29003,7 +29003,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -29535,7 +29535,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Fasciculus ini qui hanc classem loco praedefiniti nominat.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -29559,7 +29559,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Textus licentiae infra nominatae. Praedefinite activum: extensio sine fasciculo licentiae nihil dicit de modo quo adhiberi licet.</translation>
     </message>
     <message>
@@ -30418,7 +30418,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -30538,7 +30538,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Quomodo visio attingatur, quid in $Params sit, quid $Result ferre possit, et quomodo regula intra visionem probetur.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -30558,7 +30558,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Textus licentiae infra nominatae. Praedefinite activum: extensio sine fasciculo licentiae nihil dicit de modo quo adhiberi licet.</translation>
     </message>
     <message>
@@ -30741,7 +30741,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -30917,7 +30917,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>share/db_schema.dba tabulas describens, ut institutor et probatio constantiae eas noverint.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -30937,7 +30937,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Textus licentiae infra nominatae. Praedefinite activum: extensio sine fasciculo licentiae nihil dicit de modo quo adhiberi licet.</translation>
     </message>
     <message>
@@ -31048,7 +31048,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -31156,7 +31156,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Quid substitutum sit, cur substitutio potius quam aliquid levius, et quid in omni renovatione faciendum sit.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -31172,7 +31172,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Textus licentiae infra nominatae. Substitutio codicem nuclei fert, ergo sub qua licentia sit res secundaria non est.</translation>
     </message>
     <message>
@@ -31371,7 +31371,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -31463,7 +31463,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Omne attributum imaginis semel servatur et in tot magnitudinibus ministratur quot cognomina sunt. Formula unum nomine petit; fasciculus primum fit cum petitur et servatur. Cognomen addere nihil constat donec aliquid id petit, et removere id quod contenta adhuc petunt imagines fractas relinquit.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Nucleus aliquot duodenas res nuntiat dum fiunt - promptuarium purgatum, petitionem advenientem, responsionem mox mittendam - et quidquid auscultat vocatur. Haec via levissima est mores addendi: nullus modulus, nullus tractator, nulla classis substituenda, tantum methodus statica quae exsequitur cum aliquid fit.</translation>
     </message>
     <message>
@@ -31523,7 +31523,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Rectangulum exsecat. Cum mutatione magnitudinis coniunctum sic imaguncula fixae magnitudinis sine distortione fit.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Colorem detrahit.</translation>
     </message>
     <message>
@@ -31535,7 +31535,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Imaginem torquet. Nemini utile, et in omni exemplo umquam scripto.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Margo colore nominato vel hexadecimali.</translation>
     </message>
     <message>
@@ -31659,7 +31659,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Quid quaeque optio faciat, cur ubi est sit, et quid purgandum sit antequam valeat.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -31675,7 +31675,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Textus licentiae infra nominatae. Praedefinite activum: extensio sine fasciculo licentiae nihil dicit de modo quo adhiberi licet.</translation>
     </message>
     <message>
@@ -31918,7 +31918,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Quod nucleus declarat ut alius impleat, cum numero methodorum quas quodque postulat et eo quod iam id implet. Ea cum multis methodis et una impletione aqua profunda sunt.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Omne punctum quod nucleus dum operatur nuntiat, e fonte everritum potius quam enumeratum. Eventus filtri adhibet quod auscultator reddit, ergo is qui valorem reddere obliviscitur eum delet; eventus notificationis id neglegit. Via levissima quae est mores addendi: nullus modulus, nullus tractator, nulla classis substituenda.</translation>
     </message>
     <message>
@@ -32006,7 +32006,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Nihil faciendum. Enumeratur ut pagina imago plena sit potius quam tantum index vitiorum.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Si locum quaeris ubi mores mutes, haec sunt loca quae nemo adhuc sibi vindicavit.</translation>
     </message>
     <message>
@@ -32193,7 +32193,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -32341,7 +32341,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Qualis quaeque res in formula appareat, quid ei tradatur, et quomodo eam ex scripto experiaris nulla pagina prope adhibita.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -32361,7 +32361,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Textus licentiae infra nominatae. Praedefinite activum: extensio sine fasciculo licentiae nihil dicit de modo quo adhiberi licet.</translation>
     </message>
     <message>
@@ -32559,7 +32559,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Versio</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentia</translation>
     </message>
     <message>
@@ -32859,7 +32859,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Nota in README de workflow_cron, quod eventum se ipsum differentem exsequitur.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Quod interfacies administrationis legit ut nomen, versionem et licentiam extensionis ostendat.</translation>
     </message>
     <message>
@@ -32879,7 +32879,7 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Reliquias editorum et producta compilationis extra repositorium tenet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Textus licentiae infra nominatae. Praedefinite activum: extensio sine fasciculo licentiae nihil dicit de modo quo adhiberi licet.</translation>
     </message>
     <message>
@@ -48766,7 +48766,7 @@ Codex praedefinitus ex parametris fundamentalibus quos elegisti factus est.</tra
         <translation>Quod nucleus declarat ut alius impleat, cum numero methodorum quas quodque postulat et eo quod iam id implet. Ea cum multis methodis et una impletione aqua profunda sunt.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Omne punctum quod nucleus dum operatur nuntiat, e fonte everritum potius quam enumeratum. Eventus filtri adhibet quod auscultator reddit, ergo is qui valorem reddere obliviscitur eum delet; eventus notificationis id neglegit. Via levissima quae est mores addendi: nullus modulus, nullus tractator, nulla classis substituenda.</translation>
     </message>
     <message>
@@ -50584,7 +50584,7 @@ Plura vide in pagina postulatorum.</translation>
         <translation>Nullae.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Nomen ordinationis</translation>
     </message>
     <message>
@@ -58434,7 +58434,7 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Nihil faciendum. Enumeratur ut pagina imago plena sit potius quam tantum index vitiorum.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Si locum quaeris ubi mores mutes, haec sunt loca quae nemo adhuc sibi vindicavit.</translation>
     </message>
     <message>
@@ -58854,11 +58854,11 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Optio &quot;%setting&quot; index est, sed nulli valores ei dati sunt.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Nulla licentia ad eligendum configurata est. Adde unam in package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Licentia &quot;%licence&quot; non est ex licentiis in package.ini [LicenseSettings] configuratis. Unam ex indice elige.</translation>
     </message>
     <message>
@@ -68583,7 +68583,7 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Optiones adhibitae</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Optiones sunt in mailpreferences.ini; ordo, inscriptio postalis, capsa epistularum repulsarum et secretum situs ad substitutionem optionum pertinent.</translation>
     </message>
     <message>
@@ -68775,7 +68775,7 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Inactivum</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Ordinatio in pede epistulae</translation>
     </message>
     <message>
@@ -68911,11 +68911,11 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Singula missoris</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Quaeque epistula facultativa nominat quis eam mittat et inscriptionem eius postalem, ut lex postulat. Sine nomine ordinationis nomen situs adhibetur.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Nomen ordinationis</translation>
     </message>
     <message>
@@ -69651,7 +69651,7 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Tabula %table deest: renovationem basis datorum exsequere.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>Inscriptio postalis pedis epistulae vacua est: eam sub &quot;Singula missoris&quot; in hac pagina insere (mailpreferences/admin/status). Lex ordinationem eiusque inscriptionem postalem in quaque epistula facultativa postulat; interea epistulae sine ea mittuntur.</translation>
     </message>
     <message>

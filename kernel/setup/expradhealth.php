@@ -585,7 +585,7 @@ class expRADHealth
                 $contract['source'],
                 ezpI18n::tr( 'kernel/setup/rad', 'An extension point nobody here has taken up. Nothing is wrong with it; it is simply unused.' ),
                 array( ezpI18n::tr( 'kernel/setup/rad', 'Nothing to do. It is listed so that the page is a complete picture rather than only a list of faults.' ),
-                       ezpI18n::tr( 'kernel/setup/rad', 'If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.' ) ) );
+                       ezpI18n::tr( 'kernel/setup/rad', 'If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.' ) ) );
         }
 
         return $findings;

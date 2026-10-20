@@ -23696,7 +23696,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <translation>in laadvolgorde, met de versie die hun extension.xml, ezinfo.php of composer.json vermeldt</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Hun auteurs, licenties en websites staan op</translation>
     </message>
     <message>
@@ -24898,7 +24898,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <translation>Uitvoerhandler voor XML-tekst</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Gedrag bij het verzamelen van informatie</translation>
     </message>
     <message>
@@ -25410,7 +25410,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <translation>Een template in een design, gevonden via de designketen in plaats van ergens bij naam genoemd.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Alleen instellingen. Er wordt niets anders geschreven dan INI, en het gedrag verandert.</translation>
     </message>
     <message>
@@ -26205,7 +26205,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -26577,7 +26577,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <translation>Welke kolom wat bevat, en hoe een eigen tabel eruit zou moeten zien als de kolommen niet volstaan.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -26597,7 +26597,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Standaard aan: een extensie zonder licentiebestand zegt niets over hoe die mag worden gebruikt.</translation>
     </message>
     <message>
@@ -26653,7 +26653,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <translation>Een korte regel platte tekst. Die komt terecht in paginatitels, in lijsten, in het beheer en in de URL van elk object dat ernaar wordt genoemd, dus het moet tekst zijn en geen opmaakcode.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Of dit datatype überhaupt het indexeren waard is. False voor alles waarvan de waarde als woorden niets betekent - een kleur, een ID, een vlag.</translation>
     </message>
     <message>
@@ -41719,7 +41719,7 @@ De standaardcode is gemaakt op basis van de basisparameters die je hebt gekozen.
         <translation>Wat de kernel declareert zodat iemand anders het implementeert, met hoeveel methoden elk vraagt en wat het al implementeert. Die met veel methoden en één implementatie zijn het diepe water.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Elk punt dat de kernel tijdens het werk aankondigt, uit de broncode opgeveegd in plaats van opgesomd. Een filtergebeurtenis gebruikt wat een listener teruggeeft, dus een listener die vergeet de waarde terug te geven, vernietigt die; een notify-gebeurtenis negeert het. De lichtste manier die er is om gedrag toe te voegen: geen module, geen handler, geen klasse om te vervangen.</translation>
     </message>
     <message>
@@ -43617,7 +43617,7 @@ Zie de pagina met systeemeisen voor meer informatie.</translation>
         <translation>Geen.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Naam van de organisatie</translation>
     </message>
     <message>
@@ -53399,7 +53399,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -53515,7 +53515,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Wat erin zit, hoe je het klassescript uitvoert en wat je moet doen voordat het op een site met inhoud wordt uitgevoerd.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -53531,7 +53531,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Standaard aan: een extensie zonder licentiebestand zegt niets over hoe die mag worden gebruikt.</translation>
     </message>
     <message>
@@ -53618,7 +53618,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -53806,7 +53806,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Een map autoloads met een geregistreerde operator, klaar om uit te breiden.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -53826,7 +53826,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Standaard aan: een extensie zonder licentiebestand zegt niets over hoe die mag worden gebruikt.</translation>
     </message>
     <message>
@@ -53913,7 +53913,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -54445,7 +54445,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>De INI die deze klasse noemt in plaats van de standaard.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -54469,7 +54469,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Standaard aan: een extensie zonder licentiebestand zegt niets over hoe die mag worden gebruikt.</translation>
     </message>
     <message>
@@ -55328,7 +55328,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -55448,7 +55448,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Hoe een weergave wordt bereikt, wat er in $Params staat, wat $Result mag bevatten en hoe je vanuit een weergave een beleidsregel controleert.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -55468,7 +55468,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Standaard aan: een extensie zonder licentiebestand zegt niets over hoe die mag worden gebruikt.</translation>
     </message>
     <message>
@@ -55651,7 +55651,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -55827,7 +55827,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>share/db_schema.dba die de tabellen beschrijft, zodat de installer en de consistentiecontrole ervan weten.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -55847,7 +55847,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Standaard aan: een extensie zonder licentiebestand zegt niets over hoe die mag worden gebruikt.</translation>
     </message>
     <message>
@@ -55958,7 +55958,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -56066,7 +56066,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Wat is overschreven, waarom een override in plaats van iets lichters, en wat er bij elke upgrade moet gebeuren.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -56082,7 +56082,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Een override bevat kernelcode, dus onder welke licentie die valt, is geen bijzaak.</translation>
     </message>
     <message>
@@ -56281,7 +56281,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -56373,7 +56373,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Elk afbeeldingsattribuut wordt één keer opgeslagen en geleverd in zoveel formaten als er aliassen zijn. Een template vraagt er een op naam; het bestand wordt gemaakt de eerste keer dat erom wordt gevraagd en bewaard. Een alias toevoegen kost niets totdat iets erom vraagt, en er een verwijderen waar inhoud nog om vraagt, laat kapotte afbeeldingen achter.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>De kernel kondigt een paar dozijn dingen aan terwijl ze gebeuren - een cache die wordt geleegd, een request dat binnenkomt, een antwoord dat op het punt staat te worden verzonden - en alles wat luistert, wordt aangeroepen. Het is de lichtste manier om gedrag toe te voegen: geen module, geen handler, geen klasse om te vervangen, alleen een statische methode die draait als er iets gebeurt.</translation>
     </message>
     <message>
@@ -56433,7 +56433,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Snijdt een rechthoek uit. In combinatie met schalen maak je zo een miniatuur met een vast formaat zonder vervorming.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Haalt de kleur eruit.</translation>
     </message>
     <message>
@@ -56445,7 +56445,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Verdraait de afbeelding. Voor niemand nuttig, en in elk voorbeeld dat ooit is geschreven.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Een rand in een benoemde of hexadecimale kleur.</translation>
     </message>
     <message>
@@ -56569,7 +56569,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Wat elke instelling doet, waarom die staat waar die staat en wat er moet worden geleegd voordat die effect heeft.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -56585,7 +56585,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Standaard aan: een extensie zonder licentiebestand zegt niets over hoe die mag worden gebruikt.</translation>
     </message>
     <message>
@@ -56828,7 +56828,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Wat de kernel declareert zodat iemand anders het implementeert, met hoeveel methoden elk vraagt en wat het al implementeert. Die met veel methoden en één implementatie zijn het diepe water.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Elk punt dat de kernel tijdens het werk aankondigt, uit de broncode opgeveegd in plaats van opgesomd. Een filtergebeurtenis gebruikt wat een listener teruggeeft, dus een listener die vergeet de waarde terug te geven, vernietigt die; een notify-gebeurtenis negeert het. De lichtste manier die er is om gedrag toe te voegen: geen module, geen handler, geen klasse om te vervangen.</translation>
     </message>
     <message>
@@ -56916,7 +56916,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Niets te doen. Het wordt vermeld zodat de pagina een volledig beeld geeft in plaats van alleen een lijst met fouten.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Als je een plek zoekt om gedrag te wijzigen, zijn dit de plekken die nog niemand heeft geclaimd.</translation>
     </message>
     <message>
@@ -57103,7 +57103,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -57251,7 +57251,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Hoe elk ding er in een template uitziet, wat het krijgt en hoe je het vanuit een script uitprobeert zonder dat er een pagina aan te pas komt.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -57271,7 +57271,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Standaard aan: een extensie zonder licentiebestand zegt niets over hoe die mag worden gebruikt.</translation>
     </message>
     <message>
@@ -57386,7 +57386,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Versie</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
@@ -57686,7 +57686,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Een opmerking in de readme over workflow_cron, dat een gebeurtenis uitvoert die zichzelf heeft uitgesteld.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Wat de beheerinterface leest om de naam, versie en licentie van de extensie te tonen.</translation>
     </message>
     <message>
@@ -57706,7 +57706,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Houdt restanten van editors en builduitvoer buiten de repository.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>De licentietekst die hieronder wordt genoemd. Standaard aan: een extensie zonder licentiebestand zegt niets over hoe die mag worden gebruikt.</translation>
     </message>
     <message>
@@ -59667,7 +59667,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Niets te doen. Het wordt vermeld zodat de pagina een volledig beeld geeft in plaats van alleen een lijst met fouten.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Als je een plek zoekt om gedrag te wijzigen, zijn dit de plekken die nog niemand heeft geclaimd.</translation>
     </message>
     <message>
@@ -60087,11 +60087,11 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>De instelling &quot;%setting&quot; is een lijst, maar er zijn geen waarden voor opgegeven.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Er is geen licentie geconfigureerd om uit te kiezen. Voeg er een toe aan package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>De licentie &quot;%licence&quot; is geen van de licenties die in package.ini [LicenseSettings] zijn geconfigureerd. Kies er een uit de lijst.</translation>
     </message>
     <message>
@@ -69816,7 +69816,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Gebruikte instellingen</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>De instellingen staan in mailpreferences.ini; de organisatie, het postadres, de bounce-mailbox en het sitegeheim horen in een instellingenoverride.</translation>
     </message>
     <message>
@@ -70008,7 +70008,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Uit</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organisatie in de voettekst</translation>
     </message>
     <message>
@@ -70144,11 +70144,11 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Afzendergegevens</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Elke optionele e-mail vermeldt wie hem verstuurt en het postadres, zoals de wet vereist. Zonder naam van de organisatie wordt de sitenaam gebruikt.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Naam van de organisatie</translation>
     </message>
     <message>
@@ -70884,7 +70884,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>De tabel %table ontbreekt: voer de database-update uit.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>Het postadres in de voettekst van de e-mail is leeg: vul het op deze pagina in onder &quot;Gegevens afzender&quot; (mailpreferences/admin/status). De wet vereist de organisatie en haar postadres in elke optionele e-mail; tot die tijd wordt e-mail zonder verstuurd.</translation>
     </message>
     <message>

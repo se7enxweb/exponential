@@ -24479,7 +24479,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>lI&apos;meH mIwDaq, extension.xml, ezinfo.php pagh composer.json ghItlhDaj ja&apos;bogh chovnatlh je</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>ghItlhwI&apos;pu&apos;chaj, chaw&apos; ghItlhmeychaj, yoSmeychaj je Dalegh, Daq:</translation>
     </message>
     <message>
@@ -26551,7 +26551,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>XML ghItlh &apos;angmeH SeHwI&apos;</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>boSghach vang</translation>
     </message>
     <message>
@@ -27063,7 +27063,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>mIllogh nabDaq mIw &apos;echlet, mIllogh nab tlhegh vegh tu&apos;lu&apos;bogh, Daq ponglu&apos;be&apos;bogh.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>DuHmey neH. ini neH ghItlhlu&apos;, &apos;ej vang choHlu&apos;.</translation>
     </message>
     <message>
@@ -27854,7 +27854,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -27970,7 +27970,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngaSbogh Dochmey, chay&apos; buv ngoq ghItlh QapmoHlu&apos;, &apos;ej De&apos; ghajbogh yoSDaq QapmoHlu&apos;pa&apos; nuq vangnISlu&apos;.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -27986,7 +27986,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. motlh chu&apos;lu&apos;ta&apos;: chaw&apos; ghItlh Hutlhbogh chelwI&apos;, chay&apos; lo&apos;laH vay&apos; &apos;e&apos; ja&apos;be&apos;.</translation>
     </message>
     <message>
@@ -28157,7 +28157,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -28529,7 +28529,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>tut Hoch ngaSbogh, &apos;ej yapbe&apos;chugh tutmey, tetlhDaj qach.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -28549,7 +28549,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. motlh chu&apos;lu&apos;ta&apos;: chaw&apos; ghItlh Hutlhbogh chelwI&apos;, chay&apos; lo&apos;laH vay&apos; &apos;e&apos; ja&apos;be&apos;.</translation>
     </message>
     <message>
@@ -28605,7 +28605,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>nap ghItlh tlhegh ngaj. nav pongmeyDaq, tetlhmeyDaq, loHmeH jIHDaq, &apos;ej ponglu&apos;bogh Doch Hoch URLDaq ghoS; vaj ghItlh &apos;oHnIS, per ngoq &apos;oHbe&apos;.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>tlhegh Seghvam nejmeH tetlhDaq lannISlu&apos;&apos;a&apos;. mu&apos;mey rur QIjbe&apos;bogh ngoD HochvaD ghobe&apos; - rItlh, ngu&apos;meH mI&apos;, joqwI&apos;.</translation>
     </message>
     <message>
@@ -28708,7 +28708,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -28896,7 +28896,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>autoloads ghItlh pa&apos;, qonlu&apos;pu&apos;bogh vangwI&apos; ghajbogh; DachelmeH ghuS.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -28916,7 +28916,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. motlh chu&apos;lu&apos;ta&apos;: chaw&apos; ghItlh Hutlhbogh chelwI&apos;, chay&apos; lo&apos;laH vay&apos; &apos;e&apos; ja&apos;be&apos;.</translation>
     </message>
     <message>
@@ -29003,7 +29003,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -29535,7 +29535,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>motlh buv Daq buvvam pongbogh INI ghItlh.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -29559,7 +29559,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. motlh chu&apos;lu&apos;ta&apos;: chaw&apos; ghItlh Hutlhbogh chelwI&apos;, chay&apos; lo&apos;laH vay&apos; &apos;e&apos; ja&apos;be&apos;.</translation>
     </message>
     <message>
@@ -30418,7 +30418,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -30538,7 +30538,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chay&apos; Qorwagh naw&apos;lu&apos;, $Params ngaSbogh, $Result qenglaHbogh, &apos;ej Qorwagh qoDvo&apos; chay&apos; chaw&apos; chut &apos;ollu&apos;.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -30558,7 +30558,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. motlh chu&apos;lu&apos;ta&apos;: chaw&apos; ghItlh Hutlhbogh chelwI&apos;, chay&apos; lo&apos;laH vay&apos; &apos;e&apos; ja&apos;be&apos;.</translation>
     </message>
     <message>
@@ -30741,7 +30741,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -30917,7 +30917,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>share/db_schema.dba, tetlhmey Delbogh; vaj tetlhmey Sov jomwI&apos; rapghach &apos;olghach je.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -30937,7 +30937,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. motlh chu&apos;lu&apos;ta&apos;: chaw&apos; ghItlh Hutlhbogh chelwI&apos;, chay&apos; lo&apos;laH vay&apos; &apos;e&apos; ja&apos;be&apos;.</translation>
     </message>
     <message>
@@ -31048,7 +31048,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -31156,7 +31156,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>nIvlu&apos;pu&apos;bogh, qatlh nIvwI&apos; lo&apos;lu&apos; &apos;ej He nap lo&apos;lu&apos;be&apos;, &apos;ej Dubghach HochDaq vangnISlu&apos;bogh.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -31172,7 +31172,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. ngoq botlh ngoq qeng nIvwI&apos;; vaj chaw&apos; ghItlh potlh.</translation>
     </message>
     <message>
@@ -31371,7 +31371,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -31463,7 +31463,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>mIllogh buv tlhegh Hoch wa&apos;logh pollu&apos;, &apos;ej pong latlh HochvaD wa&apos; tInghach noblu&apos;. mIw &apos;echlet wa&apos; tlhob pongvo&apos;; wa&apos;DIch tlhoblu&apos;DI&apos;, ghItlh chenmoHlu&apos; &apos;ej pollu&apos;. pong latlh Dachelchugh, vay&apos; tlhobpa&apos; pagh DIl; &apos;ach De&apos; tlhobtaHbogh pong latlh Dateqchugh, ghorlu&apos;pu&apos;bogh mIlloghmey ratlh.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>wanI&apos;mey law&apos; ja&apos; ngoq botlh qaSDI&apos; - De&apos; polwI&apos; chImmoHlu&apos;, tlhobghach paw, jangghach ngeHlu&apos;pa&apos; - &apos;ej Qoybogh Hoch rI&apos;lu&apos;. ruch DachelmeH He ngeDqu&apos; &apos;oH: ngoq &apos;ay&apos; pagh, ruQwI&apos; pagh, tamlu&apos;bogh buv pagh; wanI&apos; qaSDI&apos; Qapbogh buv ngoq mIw neH.</translation>
     </message>
     <message>
@@ -31523,7 +31523,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>loS reD &apos;ay&apos; pe&apos;. tInghach choHghach tlhej, mIllogh QIHbe&apos;taHvIS tInghach rap mIlloghHom chenmoHmeH mIw &apos;oH.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>rItlh teq.</translation>
     </message>
     <message>
@@ -31535,7 +31535,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>mIllogh tlhe&apos;moH. pagh vaD lI&apos;be&apos;, &apos;ach &apos;angmeH ghItlh Hoch ghItlhlu&apos;pu&apos;bogh Daq tu&apos;lu&apos;.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>ponglu&apos;bogh rItlh pagh hex rItlh ghajbogh HeH.</translation>
     </message>
     <message>
@@ -31659,7 +31659,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>DuH Hoch vangbogh, qatlh DaqDajDaq ngaS, &apos;ej Qappa&apos; chImmoHnISlu&apos;bogh.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -31675,7 +31675,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. motlh chu&apos;lu&apos;ta&apos;: chaw&apos; ghItlh Hutlhbogh chelwI&apos;, chay&apos; lo&apos;laH vay&apos; &apos;e&apos; ja&apos;be&apos;.</translation>
     </message>
     <message>
@@ -31918,7 +31918,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>latlh ta&apos;meH ngoq botlh ja&apos;bogh: Hoch ngoq mIwmey &apos;ar poQ, &apos;ej DaH ta&apos;bogh. ngoq mIwmey law&apos; ghajbogh &apos;ach wa&apos; ta&apos;ghach neH ghajbogh: bIQ jaQ &apos;oH.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>QaptaHvIS ngoq botlh ja&apos;bogh Daq Hoch; Halvo&apos; boSlu&apos;, tetlhlu&apos;be&apos;. Say&apos;moHwI&apos; wanI&apos;, QoywI&apos; nobqa&apos;bogh lo&apos;; vaj ngoD nobqa&apos; &apos;e&apos; lIjbogh QoywI&apos;, ngoD Qaw&apos;. ghuHmoHmeH wanI&apos; ngoD buSHa&apos;. ruch DachelmeH He ngeDqu&apos;: ngoq &apos;ay&apos; pagh, ruQwI&apos; pagh, tamlu&apos;bogh buv pagh.</translation>
     </message>
     <message>
@@ -32006,7 +32006,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>vangnISbogh pagh. tetlhlu&apos;; vaj Qaghmey tetlh neH &apos;oHbe&apos; navvam; mIllogh naQ &apos;oH.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>ta&apos; DachoHmeH Daq Danejchugh, Daqmeyvam wej lajpu&apos; vay&apos;.</translation>
     </message>
     <message>
@@ -32193,7 +32193,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -32341,7 +32341,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>mIw &apos;echletDaq Doch Hoch qach, Suqbogh, &apos;ej nav Sumbe&apos;taHvIS, ngoq ghItlhvo&apos; chay&apos; DanIDlaH.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -32361,7 +32361,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. motlh chu&apos;lu&apos;ta&apos;: chaw&apos; ghItlh Hutlhbogh chelwI&apos;, chay&apos; lo&apos;laH vay&apos; &apos;e&apos; ja&apos;be&apos;.</translation>
     </message>
     <message>
@@ -32559,7 +32559,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>chovnatlh</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>chaw&apos; ghItlh</translation>
     </message>
     <message>
@@ -32859,7 +32859,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>readme ghItlhDaq workflow_cron ghItlhHom; lumpu&apos;bogh wanI&apos; QapmoHbogh &apos;oH.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>chelwI&apos; pong, chovnatlh, chaw&apos; ghItlh je &apos;angmeH loHmeH jIH laDbogh.</translation>
     </message>
     <message>
@@ -32879,7 +32879,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngoq pa&apos;Daq choHwI&apos; veQ chenmoHghach Dochmey je ghoSmoHbe&apos;.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>bIngDaq ponglu&apos;bogh chaw&apos; ghItlh. motlh chu&apos;lu&apos;ta&apos;: chaw&apos; ghItlh Hutlhbogh chelwI&apos;, chay&apos; lo&apos;laH vay&apos; &apos;e&apos; ja&apos;be&apos;.</translation>
     </message>
     <message>
@@ -48766,7 +48766,7 @@ DuHmey Dalo&apos;bogh, wIvta&apos;bogh, vo&apos; ngoq motlh chenmoHlu&apos;ta&ap
         <translation>latlh ta&apos;meH ngoq botlh ja&apos;bogh: Hoch ngoq mIwmey &apos;ar poQ, &apos;ej DaH ta&apos;bogh. ngoq mIwmey law&apos; ghajbogh &apos;ach wa&apos; ta&apos;ghach neH ghajbogh: bIQ jaQ &apos;oH.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>QaptaHvIS ngoq botlh ja&apos;bogh Daq Hoch; Halvo&apos; boSlu&apos;, tetlhlu&apos;be&apos;. Say&apos;moHwI&apos; wanI&apos;, QoywI&apos; nobqa&apos;bogh lo&apos;; vaj ngoD nobqa&apos; &apos;e&apos; lIjbogh QoywI&apos;, ngoD Qaw&apos;. ghuHmoHmeH wanI&apos; ngoD buSHa&apos;. ruch DachelmeH He ngeDqu&apos;: ngoq &apos;ay&apos; pagh, ruQwI&apos; pagh, tamlu&apos;bogh buv pagh.</translation>
     </message>
     <message>
@@ -50584,7 +50584,7 @@ latlh De&apos; DaneHchugh, poQghachmey nav yIlegh.</translation>
         <translation>pagh.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>ghom pong</translation>
     </message>
     <message>
@@ -58434,7 +58434,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>vangnISbogh pagh. tetlhlu&apos;; vaj Qaghmey tetlh neH &apos;oHbe&apos; navvam; mIllogh naQ &apos;oH.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>ta&apos; DachoHmeH Daq Danejchugh, Daqmeyvam wej lajpu&apos; vay&apos;.</translation>
     </message>
     <message>
@@ -58854,11 +58854,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>&quot;%setting&quot; DuH tetlh &apos;oH, &apos;ach &apos;oHvaD ngoDmey nobbe&apos;lu&apos;.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>wIvmeH chaw&apos; ghItlh SeHlu&apos;be&apos;. package.ini [LicenseSettings] LicenseList DaqDaq wa&apos; yIchel.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>&quot;%licence&quot; chaw&apos; ghItlh package.ini [LicenseSettings] DaqDaq SeHlu&apos;bogh chaw&apos; ghItlhmey ngaSbe&apos;. tetlhvo&apos; wa&apos; yIwIv.</translation>
     </message>
     <message>
@@ -68583,7 +68583,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>lo&apos;lu&apos;bogh DuHmey</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>mailpreferences.ini ghItlhDaq DuHmey tu&apos;lu&apos;; yejHaD, nav QIn Daq, cheghbogh QIn &apos;aplo&apos;, yoS pegh je DuHmey nIvwI&apos;Daq lan.</translation>
     </message>
     <message>
@@ -68775,7 +68775,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>chu&apos;Ha&apos;lu&apos;ta&apos;</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>QIn bIng tlheghDaq yejHaD</translation>
     </message>
     <message>
@@ -68911,11 +68911,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ngeHwI&apos; De&apos;</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>poQlu&apos;be&apos;bogh De&apos;wI&apos; QIn Hoch ngeHwI&apos; nav QIn DaqDaj je pong, chut poQmo&apos;. yejHaD pong tu&apos;lu&apos;be&apos;chugh, yoS pong lo&apos;lu&apos;.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>ghom pong</translation>
     </message>
     <message>
@@ -69651,7 +69651,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>%table tetlh tu&apos;lu&apos;be&apos;: De&apos; pa&apos; chu&apos;moHghach yIQapmoH.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>chIm QIn bIng tlhegh nav QIn Daq: navvamDaq &quot;ngeHwI&apos; De&apos;&quot; &apos;ay&apos;Daq yIghItlh (mailpreferences/admin/status). poQlu&apos;be&apos;bogh De&apos;wI&apos; QIn HochDaq yejHaD nav QIn DaqDaj je poQ chut; ghItlhlu&apos;pa&apos;, Hutlhbogh De&apos;wI&apos; QIn ngeHlu&apos;.</translation>
     </message>
     <message>

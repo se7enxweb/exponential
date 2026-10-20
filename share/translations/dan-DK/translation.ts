@@ -24682,7 +24682,7 @@ Navigeringsdel</translation>
         <translation>i indlæsningsrækkefølge med den version, som deres extension.xml, ezinfo.php eller composer.json angiver</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Deres forfattere, licenser og websteder står på</translation>
     </message>
     <message>
@@ -26761,7 +26761,7 @@ Exponential-version</translation>
         <translation>Outputhandler til XML-tekst</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Adfærd ved informationsindsamling</translation>
     </message>
     <message>
@@ -27273,7 +27273,7 @@ Exponential-version</translation>
         <translation>En skabelon i et design, fundet via designkæden i stedet for ved at være nævnt nogen steder.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Kun indstillinger. Der skrives intet andet end INI, og adfærden ændres.</translation>
     </message>
     <message>
@@ -28064,7 +28064,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -28180,7 +28180,7 @@ Exponential-version</translation>
         <translation>Hvad den indeholder, hvordan klassescriptet køres, og hvad du skal gøre, før det køres på et site med indhold.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -28196,7 +28196,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licensteksten, der er angivet nedenfor. Slået til som standard: en udvidelse uden licensfil siger intet om, hvordan den må bruges.</translation>
     </message>
     <message>
@@ -28367,7 +28367,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -28739,7 +28739,7 @@ Exponential-version</translation>
         <translation>Hvilken kolonne indeholder hvad, og hvordan en egen tabel skulle se ud, hvis kolonnerne ikke er nok.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -28759,7 +28759,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licensteksten, der er angivet nedenfor. Slået til som standard: en udvidelse uden licensfil siger intet om, hvordan den må bruges.</translation>
     </message>
     <message>
@@ -28815,7 +28815,7 @@ Exponential-version</translation>
         <translation>En kort linje ren tekst. Den ender i sidetitler, i lister, i administrationen og i URL'en for hvert objekt, der navngives efter den, så den skal være tekst og ikke markup.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Om denne datatype overhovedet er værd at indeksere. False for alt, hvis værdi intet betyder som ord - en farve, et id, et flag.</translation>
     </message>
     <message>
@@ -28918,7 +28918,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -29106,7 +29106,7 @@ Exponential-version</translation>
         <translation>En autoloads-mappe med en registreret operator, klar til at blive udvidet.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -29126,7 +29126,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licensteksten, der er angivet nedenfor. Slået til som standard: en udvidelse uden licensfil siger intet om, hvordan den må bruges.</translation>
     </message>
     <message>
@@ -29213,7 +29213,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -29745,7 +29745,7 @@ Exponential-version</translation>
         <translation>INI'en, der navngiver denne klasse i stedet for standarden.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -29769,7 +29769,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licensteksten, der er angivet nedenfor. Slået til som standard: en udvidelse uden licensfil siger intet om, hvordan den må bruges.</translation>
     </message>
     <message>
@@ -30628,7 +30628,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -30748,7 +30748,7 @@ Exponential-version</translation>
         <translation>Hvordan en visning nås, hvad der er i $Params, hvad $Result må indeholde, og hvordan en politik kontrolleres inde fra en visning.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -30768,7 +30768,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licensteksten, der er angivet nedenfor. Slået til som standard: en udvidelse uden licensfil siger intet om, hvordan den må bruges.</translation>
     </message>
     <message>
@@ -30951,7 +30951,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -31127,7 +31127,7 @@ Exponential-version</translation>
         <translation>share/db_schema.dba, der beskriver tabellerne, så installationsprogrammet og konsistenskontrollen kender dem.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -31147,7 +31147,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licensteksten, der er angivet nedenfor. Slået til som standard: en udvidelse uden licensfil siger intet om, hvordan den må bruges.</translation>
     </message>
     <message>
@@ -31258,7 +31258,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -31366,7 +31366,7 @@ Exponential-version</translation>
         <translation>Hvad der blev tilsidesat, hvorfor en tilsidesættelse i stedet for noget lettere, og hvad der skal gøres ved hver opgradering.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -31382,7 +31382,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Licensteksten, der er angivet nedenfor. En tilsidesættelse indeholder kernekode, så hvilken licens den er underlagt, er ikke en eftertanke.</translation>
     </message>
     <message>
@@ -31581,7 +31581,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -31673,7 +31673,7 @@ Exponential-version</translation>
         <translation>Hver billedattribut gemmes én gang og leveres i lige så mange størrelser, som der er aliasser. En skabelon beder om én ved navn; filen laves første gang, der bedes om den, og gemmes. At tilføje et alias koster intet, før noget beder om det, og fjernes et, som indhold stadig beder om, efterlades ødelagte billeder.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Kernen annoncerer et par dusin ting, efterhånden som de sker - en cache, der ryddes, en anmodning, der ankommer, et svar, der skal til at blive sendt - og alt, der lytter, kaldes. Det er den letteste måde at tilføje adfærd på: intet modul, ingen handler, ingen klasse at erstatte, blot en statisk metode, der køres, når noget sker.</translation>
     </message>
     <message>
@@ -31733,7 +31733,7 @@ Exponential-version</translation>
         <translation>Skærer et rektangel ud. Kombineret med en skalering er det måden, et miniaturebillede i fast størrelse laves uden forvrængning.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Fjerner farven.</translation>
     </message>
     <message>
@@ -31745,7 +31745,7 @@ Exponential-version</translation>
         <translation>Vrider billedet. Til ingen nytte for nogen og med i alle eksempler, der nogensinde er skrevet.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>En kant i en navngivet farve eller hex-farve.</translation>
     </message>
     <message>
@@ -31869,7 +31869,7 @@ Exponential-version</translation>
         <translation>Hvad hver indstilling gør, hvorfor den ligger, hvor den ligger, og hvad der skal ryddes, før den træder i kraft.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -31885,7 +31885,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licensteksten, der er angivet nedenfor. Slået til som standard: en udvidelse uden licensfil siger intet om, hvordan den må bruges.</translation>
     </message>
     <message>
@@ -32128,7 +32128,7 @@ Exponential-version</translation>
         <translation>Det, kernen erklærer, så nogen andre kan implementere det, med hvor mange metoder hver kræver, og hvad der allerede implementerer det. Dem med mange metoder og én implementering er det dybe vand.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Hvert punkt, kernen annoncerer, mens den arbejder, fundet i kildekoden i stedet for listet. En filterhændelse bruger det, en lytter returnerer, så en lytter, der glemmer at returnere værdien, ødelægger den; en notify-hændelse ignorerer den. Den letteste måde, der findes, at tilføje adfærd på: intet modul, ingen handler, ingen klasse at erstatte.</translation>
     </message>
     <message>
@@ -32216,7 +32216,7 @@ Exponential-version</translation>
         <translation>Intet at gøre. Den er med, så siden giver et komplet billede i stedet for kun en liste over fejl.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Hvis du leder efter et sted at ændre adfærd, er disse de steder, ingen har gjort krav på endnu.</translation>
     </message>
     <message>
@@ -32403,7 +32403,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -32551,7 +32551,7 @@ Exponential-version</translation>
         <translation>Hvordan hver ting ser ud i en skabelon, hvad den får, og hvordan den afprøves fra et script uden en side i nærheden.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -32571,7 +32571,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licensteksten, der er angivet nedenfor. Slået til som standard: en udvidelse uden licensfil siger intet om, hvordan den må bruges.</translation>
     </message>
     <message>
@@ -32769,7 +32769,7 @@ Exponential-version</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
@@ -33069,7 +33069,7 @@ Exponential-version</translation>
         <translation>En note i readme om workflow_cron, som er det, der kører en hændelse, der har udskudt sig selv.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Det, administrationsgrænsefladen læser for at vise udvidelsens navn, version og licens.</translation>
     </message>
     <message>
@@ -33089,7 +33089,7 @@ Exponential-version</translation>
         <translation>Holder editorrester og byggeoutput ude af repositoriet.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Licensteksten, der er angivet nedenfor. Slået til som standard: en udvidelse uden licensfil siger intet om, hvordan den må bruges.</translation>
     </message>
     <message>
@@ -49005,7 +49005,7 @@ Standardkoden er lavet ud fra de grundlæggende parametre, du har valgt.</transl
         <translation>Det, kernen erklærer, så nogen andre kan implementere det, med hvor mange metoder hver kræver, og hvad der allerede implementerer det. Dem med mange metoder og én implementering er det dybe vand.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Hvert punkt, kernen annoncerer, mens den arbejder, fundet i kildekoden i stedet for listet. En filterhændelse bruger det, en lytter returnerer, så en lytter, der glemmer at returnere værdien, ødelægger den; en notify-hændelse ignorerer den. Den letteste måde, der findes, at tilføje adfærd på: intet modul, ingen handler, ingen klasse at erstatte.</translation>
     </message>
     <message>
@@ -50830,7 +50830,7 @@ Se siden med krav for at få flere oplysninger.</translation>
         <translation>Ingen.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Organisationens navn</translation>
     </message>
     <message>
@@ -58844,7 +58844,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Intet at gøre. Den er med, så siden giver et komplet billede i stedet for kun en liste over fejl.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Hvis du leder efter et sted at ændre adfærd, er disse de steder, ingen har gjort krav på endnu.</translation>
     </message>
     <message>
@@ -59264,11 +59264,11 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Indstillingen &quot;%setting&quot; er en liste, men der blev ikke angivet nogen værdier for den.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Der er ikke konfigureret nogen licens at vælge imellem. Tilføj en i package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Licensen &quot;%licence&quot; er ikke en af de licenser, der er konfigureret i package.ini [LicenseSettings]. Vælg en fra listen.</translation>
     </message>
     <message>
@@ -68993,7 +68993,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Indstillinger i brug</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Indstillingerne står i mailpreferences.ini; organisationen, postadressen, postkassen til returmails og sitets hemmelighed hører hjemme i en tilsidesættelse af indstillingerne.</translation>
     </message>
     <message>
@@ -69185,7 +69185,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Fra</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organisation i sidefoden</translation>
     </message>
     <message>
@@ -69321,11 +69321,11 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Afsenderoplysninger</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Hver valgfri e-mail angiver, hvem der sender den, og afsenderens postadresse, som loven kræver. Uden et organisationsnavn bruges sitets navn.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Organisationens navn</translation>
     </message>
     <message>

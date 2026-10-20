@@ -125,10 +125,10 @@ abstract class expExtensionWizard
         $licence = isset( $settings['licence'] ) ? $settings['licence'] : '';
 
         if ( $licence === '' )
-            return array( 'licence' => ezpI18n::tr( 'kernel/setup/rad', 'No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.' ) );
+            return array( 'licence' => ezpI18n::tr( 'kernel/setup/rad', 'No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.' ) );
 
         if ( !eZPackageLicense::isAllowed( $licence ) )
-            return array( 'licence' => ezpI18n::tr( 'kernel/setup/rad', 'The licence "%licence" is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.', null, array( '%licence' => $licence ) ) );
+            return array( 'licence' => ezpI18n::tr( 'kernel/setup/rad', 'The license "%licence" is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.', null, array( '%licence' => $licence ) ) );
 
         return array();
     }

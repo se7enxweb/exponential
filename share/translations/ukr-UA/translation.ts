@@ -24476,7 +24476,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>у порядку завантаження, з версією, яку вказує їхній extension.xml, ezinfo.php або composer.json</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Їхні автори, ліцензії та вебсайти наведено на</translation>
     </message>
     <message>
@@ -26548,7 +26548,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Обробник виведення тексту XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Поведінка збирання інформації</translation>
     </message>
     <message>
@@ -27060,7 +27060,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Шаблон у дизайні, знайдений через ланцюжок дизайнів, а не тому, що його десь названо.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Лише налаштування. Пишеться тільки INI, і поведінка змінюється.</translation>
     </message>
     <message>
@@ -27851,7 +27851,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -27967,7 +27967,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Що в ньому є, як запустити скрипт класу і що зробити, перш ніж запускати його на сайті, де вже є вміст.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -27983,7 +27983,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Текст ліцензії, названої нижче. Типово ввімкнено: розширення без файлу ліцензії нічого не каже про те, як ним можна користуватися.</translation>
     </message>
     <message>
@@ -28154,7 +28154,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -28526,7 +28526,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Який стовпець що містить і якою мала б бути власна таблиця, якщо стовпців не вистачає.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -28546,7 +28546,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Текст ліцензії, названої нижче. Типово ввімкнено: розширення без файлу ліцензії нічого не каже про те, як ним можна користуватися.</translation>
     </message>
     <message>
@@ -28602,7 +28602,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Короткий рядок простого тексту. Він потрапляє в заголовки сторінок, списки, адмінку й url кожного об&apos;єкта, названого ним, тож це має бути текст, а не розмітка.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Чи варто взагалі індексувати цей тип даних. False для всього, значення чого нічого не означає як слова, — колір, id, прапорець.</translation>
     </message>
     <message>
@@ -28705,7 +28705,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -28893,7 +28893,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Каталог autoloads із зареєстрованим оператором, готовий до розширення.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -28913,7 +28913,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Текст ліцензії, названої нижче. Типово ввімкнено: розширення без файлу ліцензії нічого не каже про те, як ним можна користуватися.</translation>
     </message>
     <message>
@@ -29000,7 +29000,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -29532,7 +29532,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Файл ini, що називає цей клас замість стандартного.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -29556,7 +29556,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Текст ліцензії, названої нижче. Типово ввімкнено: розширення без файлу ліцензії нічого не каже про те, як ним можна користуватися.</translation>
     </message>
     <message>
@@ -30415,7 +30415,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -30535,7 +30535,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Як дістатися до подання, що є в $Params, що може містити $Result і як перевірити політику зсередини подання.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -30555,7 +30555,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Текст ліцензії, названої нижче. Типово ввімкнено: розширення без файлу ліцензії нічого не каже про те, як ним можна користуватися.</translation>
     </message>
     <message>
@@ -30738,7 +30738,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -30914,7 +30914,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>share/db_schema.dba з описом таблиць, щоб інсталятор і перевірка узгодженості знали про них.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -30934,7 +30934,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Текст ліцензії, названої нижче. Типово ввімкнено: розширення без файлу ліцензії нічого не каже про те, як ним можна користуватися.</translation>
     </message>
     <message>
@@ -31045,7 +31045,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -31153,7 +31153,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Що перевизначено, чому перевизначення, а не щось легше, і що треба робити під час кожного оновлення.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -31169,7 +31169,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Текст ліцензії, названої нижче. Перевизначення містить код ядра, тож ліцензія — не другорядне питання.</translation>
     </message>
     <message>
@@ -31368,7 +31368,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -31460,7 +31460,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Кожен атрибут зображення зберігається один раз і віддається в стількох розмірах, скільки є псевдонімів. Шаблон запитує один за назвою; файл створюється під час першого запиту й зберігається. Додавання псевдоніма нічого не коштує, доки його ніхто не запитає, а вилучення такого, який вміст ще запитує, залишає зламані зображення.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Ядро оголошує кілька десятків подій, коли вони стаються, — очищення кешу, надходження запиту, відповідь, яка ось-ось буде надіслана, — і викликається все, що слухає. Це найлегший спосіб додати поведінку: без модуля, без обробника, без класу для заміни, лише статичний метод, що виконується, коли щось стається.</translation>
     </message>
     <message>
@@ -31520,7 +31520,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Вирізає прямокутник. У поєднанні з масштабуванням так створюють мініатюру фіксованого розміру без спотворень.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Прибирає колір.</translation>
     </message>
     <message>
@@ -31532,7 +31532,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Закручує зображення. Нікому не потрібне, але є в кожному колись написаному прикладі.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Рамка іменованого або шістнадцяткового кольору.</translation>
     </message>
     <message>
@@ -31656,7 +31656,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Що робить кожне налаштування, чому воно там, де є, і що потрібно очистити, перш ніж воно почне діяти.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -31672,7 +31672,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Текст ліцензії, названої нижче. Типово ввімкнено: розширення без файлу ліцензії нічого не каже про те, як ним можна користуватися.</translation>
     </message>
     <message>
@@ -31915,7 +31915,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Що ядро оголошує для реалізації кимось іншим, зі скількома методами кожен вимагає і що вже його реалізує. Ті, що мають багато методів і одну реалізацію, — це глибокі води.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Кожна точка, яку ядро оголошує під час роботи, зібрана з вихідного коду, а не з переліку. Подія-фільтр використовує те, що повертає слухач, тож слухач, який забуває повернути значення, знищує його; подія-сповіщення його ігнорує. Найлегший спосіб додати поведінку: без модуля, без обробника, без класу для заміни.</translation>
     </message>
     <message>
@@ -32003,7 +32003,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Нічого робити не потрібно. Це наведено, щоб сторінка давала повну картину, а не лише список помилок.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Якщо ви шукаєте, де змінити поведінку, — ось місця, яких ще ніхто не зайняв.</translation>
     </message>
     <message>
@@ -32190,7 +32190,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -32338,7 +32338,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Як кожен елемент виглядає в шаблоні, що йому передається і як випробувати його зі скрипту без жодної сторінки.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -32358,7 +32358,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Текст ліцензії, названої нижче. Типово ввімкнено: розширення без файлу ліцензії нічого не каже про те, як ним можна користуватися.</translation>
     </message>
     <message>
@@ -32556,7 +32556,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Ліцензія</translation>
     </message>
     <message>
@@ -32856,7 +32856,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Примітка в readme про workflow_cron — саме він виконує подію, яка відклала себе.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Те, що читає інтерфейс адміністрування, щоб показати назву, версію й ліцензію розширення.</translation>
     </message>
     <message>
@@ -32876,7 +32876,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не пускає залишки редактора й результати збирання до репозиторію.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Текст ліцензії, названої нижче. Типово ввімкнено: розширення без файлу ліцензії нічого не каже про те, як ним можна користуватися.</translation>
     </message>
     <message>
@@ -48763,7 +48763,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Що ядро оголошує для реалізації кимось іншим, зі скількома методами кожен вимагає і що вже його реалізує. Ті, що мають багато методів і одну реалізацію, — це глибокі води.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Кожна точка, яку ядро оголошує під час роботи, зібрана з вихідного коду, а не з переліку. Подія-фільтр використовує те, що повертає слухач, тож слухач, який забуває повернути значення, знищує його; подія-сповіщення його ігнорує. Найлегший спосіб додати поведінку: без модуля, без обробника, без класу для заміни.</translation>
     </message>
     <message>
@@ -50581,7 +50581,7 @@ See the requirements page for more information.</source>
         <translation>Немає.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Назва організації</translation>
     </message>
     <message>
@@ -58431,7 +58431,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Нічого робити не потрібно. Це наведено, щоб сторінка давала повну картину, а не лише список помилок.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Якщо ви шукаєте, де змінити поведінку, — ось місця, яких ще ніхто не зайняв.</translation>
     </message>
     <message>
@@ -58851,11 +58851,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Налаштування «%setting» є списком, але значень для нього не вказано.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Не налаштовано жодної ліцензії для вибору. Додайте її до package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Ліцензія «%licence» не входить до ліцензій, налаштованих у package.ini [LicenseSettings]. Виберіть одну зі списку.</translation>
     </message>
     <message>
@@ -68568,7 +68568,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Чинні налаштування</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Налаштування містяться в mailpreferences.ini; організація, поштова адреса, скринька для повернених листів і секрет сайту мають бути в перевизначенні налаштувань.</translation>
     </message>
     <message>
@@ -68760,7 +68760,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Вимкнено</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Організація в нижньому колонтитулі</translation>
     </message>
     <message>
@@ -68896,11 +68896,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Дані відправника</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Кожен необов&apos;язковий лист зазначає, хто його надсилає, і поштову адресу відправника, як того вимагає закон. Якщо назву організації не вказано, використовується назва сайту.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Назва організації</translation>
     </message>
     <message>
@@ -69636,7 +69636,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Таблиця %table відсутня: запустіть оновлення бази даних.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>Поштова адреса в нижньому колонтитулі листів порожня: введіть її в розділі «Дані відправника» на цій сторінці (mailpreferences/admin/status). Закон вимагає назву організації та її поштову адресу в кожному необов&apos;язковому листі; доти листи надсилаються без неї.</translation>
     </message>
     <message>

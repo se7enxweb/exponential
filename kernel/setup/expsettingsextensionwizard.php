@@ -59,7 +59,7 @@ class expSettingsExtensionWizard extends expExtensionWizard
             'ini'     => 'site.ini',
             'default' => false,
             'summary' => 'A callback on something the kernel announces.',
-            'what'    => 'The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.',
+            'what'    => 'The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.',
             'note'    => 'Two kinds of event. A notify event tells you something happened and ignores what you return. A filter event hands you a value and uses what you give back, so a filter listener that forgets to return the value destroys it.' ),
 
         'viewcache' => array(
@@ -133,10 +133,10 @@ class expSettingsExtensionWizard extends expExtensionWizard
             'geometry/scaleheightdownonly'  => array( 'takes' => 'height',       'what' => 'The same, but never enlarges.' ),
             'geometry/scalepercent'         => array( 'takes' => 'x;y',          'what' => 'Scales by a percentage rather than to a size.' ),
             'geometry/crop'                 => array( 'takes' => 'x;y;w;h',      'what' => 'Cuts a rectangle out. Combined with a scale this is how a fixed size thumbnail is made without distortion.' ),
-            'colorspace/gray'               => array( 'takes' => '',             'what' => 'Takes the colour out.' ),
+            'colorspace/gray'               => array( 'takes' => '',             'what' => 'Takes the color out.' ),
             'colorspace/transparent'        => array( 'takes' => '',             'what' => 'Keeps transparency through the conversion. Without it a transparent png can come out with a black background.' ),
             'filter/swirl'                  => array( 'takes' => 'degrees',      'what' => 'Twists the image. Of no use to anybody, and in every example ever written.' ),
-            'border/color'                  => array( 'takes' => 'colour',       'what' => 'A border in a named or hex colour.' ),
+            'border/color'                  => array( 'takes' => 'colour',       'what' => 'A border in a named or hex color.' ),
             'flatten'                       => array( 'takes' => '',             'what' => 'Flattens layers into one. Needed for some source formats before anything else will work.' ),
         );
     }
@@ -279,7 +279,7 @@ class expSettingsExtensionWizard extends expExtensionWizard
                 'default' => true ),
             'ezinfo' => array(
                 'label' => 'ezinfo.php',
-                'description' => 'What the admin interface reads to show the extension name, version and licence.',
+                'description' => 'What the admin interface reads to show the extension name, version and license.',
                 'default' => true ),
             'extension_xml' => array(
                 'label' => 'extension.xml',
@@ -295,7 +295,7 @@ class expSettingsExtensionWizard extends expExtensionWizard
                 'default' => true ),
             'licence' => array(
                 'label' => 'LICENSE',
-                'description' => 'The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.',
+                'description' => 'The license text named below. On by default: an extension with no license file says nothing about how it may be used.',
                 'default' => true ),
         ) );
     }

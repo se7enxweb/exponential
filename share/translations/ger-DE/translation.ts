@@ -27697,7 +27697,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>in Ladereihenfolge, mit der Version, die ihre extension.xml, ezinfo.php oder composer.json angibt</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>Ihre Autoren, Lizenzen und Websites stehen unter</translation>
     </message>
     <message>
@@ -29765,7 +29765,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>XML-Text-Ausgabehandler</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Verhalten der Informationssammlung</translation>
     </message>
     <message>
@@ -30277,7 +30277,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Ein Template in einem Design, das über die Design-Kette gefunden wird statt dadurch, dass es irgendwo benannt ist.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Nur Einstellungen. Es wird nichts als INI geschrieben, und das Verhalten ändert sich.</translation>
     </message>
     <message>
@@ -31076,7 +31076,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -31176,7 +31176,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Was darin enthalten ist, wie das Klassenskript ausgeführt wird und was zu tun ist, bevor es auf einer Website mit Inhalten ausgeführt wird.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -31192,7 +31192,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
     <message>
@@ -31379,7 +31379,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -31747,7 +31747,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Welche Spalte was enthält und wie eine eigene Tabelle aussehen müsste, wenn die Spalten nicht ausreichen.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -31767,7 +31767,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
     <message>
@@ -31823,7 +31823,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Eine kurze Zeile reinen Texts. Sie landet in Seitentiteln, in Listen, in der Administration und in der URL jedes danach benannten Objekts, muss also Text und kein Markup sein.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Ob dieser Datentyp überhaupt indexiert werden sollte. False für alles, dessen Wert als Wörter nichts bedeutet - eine Farbe, eine ID, ein Flag.</translation>
     </message>
     <message>
@@ -31934,7 +31934,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -32114,7 +32114,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Ein autoloads-Verzeichnis mit einem registrierten Operator, bereit zum Erweitern.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -32134,7 +32134,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
     <message>
@@ -32221,7 +32221,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -32753,7 +32753,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Die INI, die diese Klasse anstelle der Standardklasse benennt.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -32777,7 +32777,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
     <message>
@@ -33636,7 +33636,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -33728,7 +33728,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Was überschrieben wurde, warum ein Override statt etwas Leichterem, und was bei jedem Upgrade zu tun ist.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -33744,7 +33744,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Der unten genannte Lizenztext. Ein Override enthält Kernel-Code; unter welcher Lizenz er steht, ist also keine Nebensache.</translation>
     </message>
     <message>
@@ -33927,7 +33927,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -34103,7 +34103,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>share/db_schema.dba, das die Tabellen beschreibt, damit der Installer und die Konsistenzprüfung sie kennen.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -34123,7 +34123,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
     <message>
@@ -34250,7 +34250,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -34370,7 +34370,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Wie ein View erreicht wird, was in $Params steht, was $Result enthalten darf und wie man darin eine Richtlinie prüft.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -34390,7 +34390,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
     <message>
@@ -34605,7 +34605,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Was der Kernel deklariert, damit jemand anderes es implementiert, mit der Anzahl der Methoden, die jedes verlangt, und dem, was es bereits implementiert. Die mit vielen Methoden und einer Implementierung sind das tiefe Wasser.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Jede Stelle, die der Kernel bei seiner Arbeit ankündigt, aus dem Quelltext zusammengesucht statt aufgelistet. Ein Filter-Ereignis verwendet, was ein Listener zurückgibt, sodass einer, der die Rückgabe des Werts vergisst, ihn vernichtet; ein Notify-Ereignis ignoriert ihn. Der leichteste Weg, Verhalten hinzuzufügen: kein Modul, kein Handler, keine zu ersetzende Klasse.</translation>
     </message>
     <message>
@@ -34693,7 +34693,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Nichts zu tun. Es wird aufgeführt, damit die Seite ein vollständiges Bild ergibt statt nur einer Liste von Fehlern.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Wenn Sie eine Stelle suchen, um Verhalten zu ändern: dies sind die Stellen, die noch niemand beansprucht hat.</translation>
     </message>
     <message>
@@ -34912,7 +34912,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -35004,7 +35004,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Jedes Bildattribut wird einmal gespeichert und in so vielen Größen ausgeliefert, wie es Aliase gibt. Ein Template fordert eine beim Namen an; die Datei wird beim ersten Anfordern erzeugt und aufbewahrt. Einen Alias hinzuzufügen kostet nichts, bis etwas danach fragt, und einen zu entfernen, nach dem Inhalte noch fragen, hinterlässt kaputte Bilder.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Der Kernel kündigt ein paar Dutzend Dinge an, während sie geschehen - ein Cache wird geleert, eine Anfrage trifft ein, eine Antwort wird gleich gesendet -, und alles, was zuhört, wird aufgerufen. Es ist der leichteste Weg, Verhalten hinzuzufügen: kein Modul, kein Handler, keine zu ersetzende Klasse, nur eine statische Methode, die läuft, wenn etwas geschieht.</translation>
     </message>
     <message>
@@ -35064,7 +35064,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Schneidet ein Rechteck aus. Zusammen mit einer Skalierung entsteht so ein Vorschaubild fester Größe ohne Verzerrung.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Nimmt die Farbe heraus.</translation>
     </message>
     <message>
@@ -35076,7 +35076,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Verdreht das Bild. Für niemanden von Nutzen und in jedem je geschriebenen Beispiel.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Ein Rahmen in einer benannten oder hexadezimalen Farbe.</translation>
     </message>
     <message>
@@ -35200,7 +35200,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Was jede Einstellung tut, warum sie dort steht, wo sie steht, und was geleert werden muss, bevor sie wirkt.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -35216,7 +35216,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
     <message>
@@ -35415,7 +35415,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -35559,7 +35559,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Wie jedes Ding in einem Template aussieht, was es übergeben bekommt und wie man es aus einem Skript ausprobiert, ganz ohne Seite.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -35579,7 +35579,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
     <message>
@@ -35785,7 +35785,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -36077,7 +36077,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Ein Hinweis in der Readme auf workflow_cron, das ein Ereignis ausführt, das sich selbst zurückgestellt hat.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
     </message>
     <message>
@@ -36097,7 +36097,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
     <message>
@@ -55317,7 +55317,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
         <translation>Was der Kernel deklariert, damit jemand anderes es implementiert, mit der Anzahl der Methoden, die jedes verlangt, und dem, was es bereits implementiert. Die mit vielen Methoden und einer Implementierung sind das tiefe Wasser.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Jede Stelle, die der Kernel bei seiner Arbeit ankündigt, aus dem Quelltext zusammengesucht statt aufgelistet. Ein Filter-Ereignis verwendet, was ein Listener zurückgibt, sodass einer, der die Rückgabe des Werts vergisst, ihn vernichtet; ein Notify-Ereignis ignoriert ihn. Der leichteste Weg, Verhalten hinzuzufügen: kein Modul, kein Handler, keine zu ersetzende Klasse.</translation>
     </message>
     <message>
@@ -57504,7 +57504,7 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Keine.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Name der Organisation</translation>
     </message>
     <message>
@@ -68069,7 +68069,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Nichts zu tun. Es wird aufgeführt, damit die Seite ein vollständiges Bild ergibt statt nur einer Liste von Fehlern.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Wenn Sie eine Stelle suchen, um Verhalten zu ändern: dies sind die Stellen, die noch niemand beansprucht hat.</translation>
     </message>
     <message>
@@ -68489,11 +68489,11 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Die Einstellung "%setting" ist eine Liste, aber es wurden keine Werte dafür angegeben.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Es ist keine Lizenz zur Auswahl konfiguriert. Tragen Sie eine in package.ini [LicenseSettings] LicenseList ein.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Die Lizenz „%licence“ ist keine der in package.ini [LicenseSettings] konfigurierten Lizenzen. Wählen Sie eine aus der Liste.</translation>
     </message>
     <message>
@@ -74411,7 +74411,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Verwendete Einstellungen</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Die Einstellungen stehen in mailpreferences.ini; Organisation, Postanschrift, Bounce-Postfach und das Geheimnis der Website gehören in eine Einstellungsüberschreibung (override).</translation>
     </message>
     <message>
@@ -74603,7 +74603,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Aus</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organisation in der Fußzeile</translation>
     </message>
     <message>
@@ -74739,11 +74739,11 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Absenderangaben</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Jede optionale E-Mail nennt, wer sie sendet, und dessen Postanschrift, wie es das Gesetz verlangt. Ohne Namen der Organisation wird der Name der Website verwendet.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Name der Organisation</translation>
     </message>
     <message>
@@ -75479,7 +75479,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Die Tabelle %table fehlt: Führen Sie das Datenbank-Update aus.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>Die Postanschrift der E-Mail-Fußzeile ist leer: Tragen Sie sie unter „Absenderangaben“ auf dieser Seite ein (mailpreferences/admin/status). Das Gesetz verlangt die Organisation und ihre Postanschrift in jeder optionalen E-Mail; bis dahin wird ohne sie gesendet.</translation>
     </message>
     <message>

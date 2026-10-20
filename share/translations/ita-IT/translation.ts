@@ -23815,7 +23815,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>in ordine di caricamento, con la versione indicata dal loro extension.xml, ezinfo.php o composer.json</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>I loro autori, licenze e siti web si trovano in</translation>
     </message>
     <message>
@@ -25017,7 +25017,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Handler di output del testo XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>Comportamento della raccolta di informazioni</translation>
     </message>
     <message>
@@ -25529,7 +25529,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Un template in un design, trovato tramite la catena dei design anziché perché viene nominato da qualche parte.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>Solo impostazioni. Non si scrive nulla tranne gli ini, e il comportamento cambia.</translation>
     </message>
     <message>
@@ -26324,7 +26324,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -26696,7 +26696,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Quale colonna contiene cosa, e come dovrebbe essere una tabella propria se le colonne non bastano.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -26716,7 +26716,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Il testo della licenza indicata sotto. Attivo per impostazione predefinita: un&apos;estensione senza file di licenza non dice nulla su come può essere usata.</translation>
     </message>
     <message>
@@ -26772,7 +26772,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Una breve riga di testo semplice. Finisce nei titoli delle pagine, negli elenchi, nell&apos;amministrazione e nell&apos;URL di ogni oggetto che ne prende il nome, quindi deve essere testo e non markup.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>Se vale la pena indicizzare questo tipo di dato. False per tutto ciò il cui valore non significa nulla come parole: un colore, un ID, un flag.</translation>
     </message>
     <message>
@@ -41904,7 +41904,7 @@ Il codice predefinito è stato ricavato dai parametri di base che hai scelto.</t
         <translation>Ciò che il kernel dichiara perché qualcun altro lo implementi, con quanti metodi richiede ciascuno e cosa lo implementa già. Quelli con molti metodi e una sola implementazione sono le acque profonde.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Ogni punto che il kernel annuncia mentre lavora, ricavato dal sorgente anziché elencato. Un evento filter usa ciò che un listener restituisce, quindi uno che dimentica di restituire il valore lo distrugge; un evento notify lo ignora. Il modo più leggero che esista per aggiungere un comportamento: nessun modulo, nessun gestore, nessuna classe da sostituire.</translation>
     </message>
     <message>
@@ -43806,7 +43806,7 @@ Consulta la pagina dei requisiti per maggiori informazioni.</translation>
         <translation>Nessuna.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Nome dell&apos;organizzazione</translation>
     </message>
     <message>
@@ -53581,7 +53581,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -53697,7 +53697,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Cosa contiene, come eseguire lo script della classe e cosa fare prima di eseguirlo su un sito che contiene già contenuti.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -53713,7 +53713,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Il testo della licenza indicata sotto. Attivo per impostazione predefinita: un&apos;estensione senza file di licenza non dice nulla su come può essere usata.</translation>
     </message>
     <message>
@@ -53800,7 +53800,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -53988,7 +53988,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Una directory autoloads con un operatore registrato, pronta per essere estesa.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -54008,7 +54008,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Il testo della licenza indicata sotto. Attivo per impostazione predefinita: un&apos;estensione senza file di licenza non dice nulla su come può essere usata.</translation>
     </message>
     <message>
@@ -54095,7 +54095,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -54627,7 +54627,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Il file INI che indica questa classe al posto di quella predefinita.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -54651,7 +54651,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Il testo della licenza indicata sotto. Attivo per impostazione predefinita: un&apos;estensione senza file di licenza non dice nulla su come può essere usata.</translation>
     </message>
     <message>
@@ -55510,7 +55510,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -55630,7 +55630,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Come si raggiunge una vista, cosa contiene $Params, cosa può contenere $Result e come controllare una politica dall&apos;interno di una vista.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -55650,7 +55650,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Il testo della licenza indicata sotto. Attivo per impostazione predefinita: un&apos;estensione senza file di licenza non dice nulla su come può essere usata.</translation>
     </message>
     <message>
@@ -55833,7 +55833,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -56009,7 +56009,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>share/db_schema.dba che descrive le tabelle, così che l&apos;installer e il controllo di coerenza le conoscano.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -56029,7 +56029,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Il testo della licenza indicata sotto. Attivo per impostazione predefinita: un&apos;estensione senza file di licenza non dice nulla su come può essere usata.</translation>
     </message>
     <message>
@@ -56140,7 +56140,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -56248,7 +56248,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Cosa è stato sostituito, perché un override e non qualcosa di più leggero, e cosa bisogna fare a ogni aggiornamento.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -56264,7 +56264,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>Il testo della licenza indicata sotto. Un override contiene codice del kernel, quindi la licenza con cui è distribuito non è un dettaglio secondario.</translation>
     </message>
     <message>
@@ -56463,7 +56463,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -56555,7 +56555,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Ogni attributo immagine viene memorizzato una sola volta e servito in tante dimensioni quanti sono gli alias. Un template ne chiede uno per nome; il file viene creato la prima volta che viene richiesto e poi conservato. Aggiungere un alias non costa nulla finché qualcosa non lo richiede, e rimuoverne uno che i contenuti richiedono ancora lascia immagini rotte.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>Il kernel annuncia qualche decina di cose mentre accadono - una cache che viene svuotata, una richiesta che arriva, una risposta che sta per essere inviata - e chiunque sia in ascolto viene chiamato. È il modo più leggero per aggiungere un comportamento: nessun modulo, nessun gestore, nessuna classe da sostituire, solo un metodo statico che viene eseguito quando succede qualcosa.</translation>
     </message>
     <message>
@@ -56615,7 +56615,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Ritaglia un rettangolo. Combinato con un ridimensionamento, è così che si crea una miniatura di dimensione fissa senza distorsioni.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>Rimuove il colore.</translation>
     </message>
     <message>
@@ -56627,7 +56627,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Distorce l&apos;immagine a vortice. Non serve a nessuno, ed è in ogni esempio mai scritto.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>Un bordo in un colore con nome o esadecimale.</translation>
     </message>
     <message>
@@ -56751,7 +56751,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Cosa fa ogni impostazione, perché si trova dove si trova e cosa va svuotato prima che abbia effetto.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -56767,7 +56767,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Il testo della licenza indicata sotto. Attivo per impostazione predefinita: un&apos;estensione senza file di licenza non dice nulla su come può essere usata.</translation>
     </message>
     <message>
@@ -57010,7 +57010,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Ciò che il kernel dichiara perché qualcun altro lo implementi, con quanti metodi richiede ciascuno e cosa lo implementa già. Quelli con molti metodi e una sola implementazione sono le acque profonde.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>Ogni punto che il kernel annuncia mentre lavora, ricavato dal sorgente anziché elencato. Un evento filter usa ciò che un listener restituisce, quindi uno che dimentica di restituire il valore lo distrugge; un evento notify lo ignora. Il modo più leggero che esista per aggiungere un comportamento: nessun modulo, nessun gestore, nessuna classe da sostituire.</translation>
     </message>
     <message>
@@ -57098,7 +57098,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Niente da fare. È elencato perché la pagina sia un quadro completo anziché solo un elenco di errori.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Se cerchi un punto in cui modificare il comportamento, questi sono i posti che nessuno ha ancora occupato.</translation>
     </message>
     <message>
@@ -57285,7 +57285,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -57433,7 +57433,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Come appare ogni cosa in un template, cosa riceve e come provarla da uno script senza nessuna pagina nei paraggi.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -57453,7 +57453,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Il testo della licenza indicata sotto. Attivo per impostazione predefinita: un&apos;estensione senza file di licenza non dice nulla su come può essere usata.</translation>
     </message>
     <message>
@@ -57568,7 +57568,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Versione</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
@@ -57868,7 +57868,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Una nota nel readme su workflow_cron, che è ciò che esegue un evento che si è rimandato.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>Ciò che l&apos;interfaccia di amministrazione legge per mostrare nome, versione e licenza dell&apos;estensione.</translation>
     </message>
     <message>
@@ -57888,7 +57888,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Tiene fuori dal repository i residui dell&apos;editor e i risultati della build.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>Il testo della licenza indicata sotto. Attivo per impostazione predefinita: un&apos;estensione senza file di licenza non dice nulla su come può essere usata.</translation>
     </message>
     <message>
@@ -59849,7 +59849,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Niente da fare. È elencato perché la pagina sia un quadro completo anziché solo un elenco di errori.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>Se cerchi un punto in cui modificare il comportamento, questi sono i posti che nessuno ha ancora occupato.</translation>
     </message>
     <message>
@@ -60269,11 +60269,11 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>L&apos;impostazione &quot;%setting&quot; è un elenco, ma non sono stati indicati valori.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Non è configurata nessuna licenza tra cui scegliere. Aggiungine una in package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>La licenza &quot;%licence&quot; non è tra le licenze configurate in package.ini [LicenseSettings]. Scegline una dall&apos;elenco.</translation>
     </message>
     <message>
@@ -69998,7 +69998,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Impostazioni in uso</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>Le impostazioni si trovano in mailpreferences.ini; l&apos;organizzazione, l&apos;indirizzo postale, la casella per i messaggi respinti e il segreto del sito vanno in un override delle impostazioni.</translation>
     </message>
     <message>
@@ -70190,7 +70190,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Disattivato</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>Organizzazione nel piè di pagina</translation>
     </message>
     <message>
@@ -70326,11 +70326,11 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Dati del mittente</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>Ogni e-mail facoltativa indica chi la invia e il suo indirizzo postale, come richiesto dalla legge. Senza un nome dell&apos;organizzazione viene usato il nome del sito.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>Nome dell&apos;organizzazione</translation>
     </message>
     <message>
@@ -71066,7 +71066,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Manca la tabella %table: esegui l&apos;aggiornamento del database.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>L&apos;indirizzo postale del piè di pagina delle e-mail è vuoto: inseriscilo in &quot;Dati del mittente&quot; in questa pagina (mailpreferences/admin/status). La legge richiede l&apos;organizzazione e il suo indirizzo postale in ogni e-mail facoltativa; fino ad allora le e-mail vengono inviate senza.</translation>
     </message>
     <message>

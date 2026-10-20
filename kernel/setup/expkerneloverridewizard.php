@@ -160,7 +160,7 @@ class expKernelOverrideWizard extends expExtensionWizard
                 'default' => true ),
             'ezinfo' => array(
                 'label' => 'ezinfo.php',
-                'description' => 'What the admin interface reads to show the extension name, version and licence.',
+                'description' => 'What the admin interface reads to show the extension name, version and license.',
                 'default' => true ),
             'extension_xml' => array(
                 'label' => 'extension.xml',
@@ -176,7 +176,7 @@ class expKernelOverrideWizard extends expExtensionWizard
                 'default' => true ),
             'licence' => array(
                 'label' => 'LICENSE',
-                'description' => 'The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.',
+                'description' => 'The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.',
                 'default' => true ),
         );
     }

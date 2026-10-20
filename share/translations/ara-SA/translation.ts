@@ -24476,7 +24476,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>بترتيب التحميل، مع الإصدار الذي يذكره extension.xml أو ezinfo.php أو composer.json الخاص بها</translation>
     </message>
     <message>
-        <source>Their authors, licences and websites are on</source>
+        <source>Their authors, licenses and websites are on</source>
         <translation>مؤلفوها وتراخيصها ومواقعها موجودة في</translation>
     </message>
     <message>
@@ -26548,7 +26548,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>معالج إخراج نص XML</translation>
     </message>
     <message>
-        <source>Information collection behaviour</source>
+        <source>Information collection behavior</source>
         <translation>سلوك جمع المعلومات</translation>
     </message>
     <message>
@@ -27060,7 +27060,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>قالب في تصميم، يُعثر عليه عبر سلسلة التصاميم بدلًا من تسميته في أي مكان.</translation>
     </message>
     <message>
-        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <source>Settings only. Nothing is written but ini, and the behavior changes.</source>
         <translation>إعدادات فقط. لا يُكتب سوى ini، ويتغير السلوك.</translation>
     </message>
     <message>
@@ -27851,7 +27851,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -27967,7 +27967,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>ما يحتويه، وكيفية تشغيل البرنامج النصي للفئة، وما يجب فعله قبل تشغيله على موقع فيه محتوى.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -27983,7 +27983,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>نص الترخيص المسمّى أدناه. مفعّل افتراضيًا: الامتداد الذي لا يحوي ملف ترخيص لا يقول شيئًا عن كيفية استخدامه.</translation>
     </message>
     <message>
@@ -28154,7 +28154,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -28526,7 +28526,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>أيّ عمود يحمل ماذا، وكيف يجب أن يبدو جدول خاص إن لم تكفِ الأعمدة.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -28546,7 +28546,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>نص الترخيص المسمّى أدناه. مفعّل افتراضيًا: الامتداد الذي لا يحوي ملف ترخيص لا يقول شيئًا عن كيفية استخدامه.</translation>
     </message>
     <message>
@@ -28602,7 +28602,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>سطر قصير من نص عادي. ينتهي في عناوين الصفحات، وفي القوائم، وفي الإدارة، وفي عنوان URL لكل كائن يُسمّى به، لذا يجب أن يكون نصًا لا ترميزًا.</translation>
     </message>
     <message>
-        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a color, an id, a flag.</source>
         <translation>ما إذا كان نوع البيانات هذا يستحق الفهرسة أصلًا. القيمة false لكل ما لا تعني قيمته شيئًا ككلمات - لون، أو معرّف، أو علامة.</translation>
     </message>
     <message>
@@ -28705,7 +28705,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -28893,7 +28893,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>مجلد autoloads فيه عامل مسجّل، جاهز للتوسيع.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -28913,7 +28913,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>نص الترخيص المسمّى أدناه. مفعّل افتراضيًا: الامتداد الذي لا يحوي ملف ترخيص لا يقول شيئًا عن كيفية استخدامه.</translation>
     </message>
     <message>
@@ -29000,7 +29000,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -29532,7 +29532,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>ملف ini الذي يسمّي هذه الفئة بدلًا من الافتراضية.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -29556,7 +29556,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>نص الترخيص المسمّى أدناه. مفعّل افتراضيًا: الامتداد الذي لا يحوي ملف ترخيص لا يقول شيئًا عن كيفية استخدامه.</translation>
     </message>
     <message>
@@ -30415,7 +30415,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -30535,7 +30535,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>كيف يُوصل إلى عرض، وما في $Params، وما يمكن أن يحمله $Result، وكيف يُفحص سياسة من داخله.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -30555,7 +30555,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>نص الترخيص المسمّى أدناه. مفعّل افتراضيًا: الامتداد الذي لا يحوي ملف ترخيص لا يقول شيئًا عن كيفية استخدامه.</translation>
     </message>
     <message>
@@ -30738,7 +30738,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -30914,7 +30914,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>share/db_schema.dba الذي يصف الجداول، كي يعرف عنها المثبّت وفحص الاتساق.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -30934,7 +30934,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>نص الترخيص المسمّى أدناه. مفعّل افتراضيًا: الامتداد الذي لا يحوي ملف ترخيص لا يقول شيئًا عن كيفية استخدامه.</translation>
     </message>
     <message>
@@ -31045,7 +31045,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -31153,7 +31153,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>ما الذي تم تجاوزه، ولماذا تجاوز بدلًا من شيء أخف، وما يجب فعله عند كل ترقية.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -31169,7 +31169,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <source>The license text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
         <translation>نص الترخيص المسمّى أدناه. يحمل التجاوز شيفرة من نواة النظام، لذا فترخيصه ليس أمرًا ثانويًا.</translation>
     </message>
     <message>
@@ -31368,7 +31368,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -31460,7 +31460,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>كل سمة صورة تُخزَّن مرة واحدة وتُقدَّم بعدد من الأحجام بعدد الأسماء المستعارة. يطلب القالب أحدها بالاسم؛ ويُنشأ الملف في أول مرة يُطلب فيها ويُحتفظ به. إضافة اسم مستعار لا تكلّف شيئًا حتى يطلبه شيء ما، وإزالة اسم لا يزال المحتوى يطلبه تترك صورًا معطّلة.</translation>
     </message>
     <message>
-        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behavior: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
         <translation>تعلن نواة النظام بضع عشرات من الأشياء عند حدوثها - مسح ذاكرة مؤقتة، أو وصول طلب، أو استجابة على وشك الإرسال - ويُستدعى كل ما يستمع. إنها أخف طريقة لإضافة سلوك: لا وحدة، ولا معالج، ولا فئة للاستبدال، مجرد دالة ساكنة تعمل عندما يحدث شيء.</translation>
     </message>
     <message>
@@ -31520,7 +31520,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يقصّ مستطيلًا. مع تغيير الحجم، هكذا تُصنع صورة مصغّرة بحجم ثابت دون تشويه.</translation>
     </message>
     <message>
-        <source>Takes the colour out.</source>
+        <source>Takes the color out.</source>
         <translation>يزيل اللون.</translation>
     </message>
     <message>
@@ -31532,7 +31532,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يلوي الصورة. لا فائدة منه لأحد، وموجود في كل مثال كُتب على الإطلاق.</translation>
     </message>
     <message>
-        <source>A border in a named or hex colour.</source>
+        <source>A border in a named or hex color.</source>
         <translation>حدّ بلون مسمّى أو سداسي عشري.</translation>
     </message>
     <message>
@@ -31656,7 +31656,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>ما يفعله كل إعداد، ولماذا هو حيث هو، وما يجب مسحه قبل أن يسري.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -31672,7 +31672,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>نص الترخيص المسمّى أدناه. مفعّل افتراضيًا: الامتداد الذي لا يحوي ملف ترخيص لا يقول شيئًا عن كيفية استخدامه.</translation>
     </message>
     <message>
@@ -31915,7 +31915,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>ما تعلنه نواة النظام لينفّذه غيرها، مع عدد الدوال التي يطلبها كل منها وما ينفّذه أصلًا. التي فيها دوال كثيرة وتنفيذ واحد هي المياه العميقة.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>كل نقطة تعلنها نواة النظام أثناء عملها، مستخرجة من الشيفرة المصدرية لا مسرودة. حدث التصفية يستخدم ما يعيده المستمع، فالمستمع الذي ينسى إعادة القيمة يُتلفها؛ أما حدث الإشعار فيتجاهلها. أخف طريقة موجودة لإضافة سلوك: لا وحدة، ولا معالج، ولا فئة للاستبدال.</translation>
     </message>
     <message>
@@ -32003,7 +32003,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>لا شيء يُفعل. مدرج كي تكون الصفحة صورة كاملة لا مجرد قائمة أخطاء.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>إذا كنت تبحث عن مكان لتغيير السلوك، فهذه هي الأماكن التي لم يتبنّها أحد بعد.</translation>
     </message>
     <message>
@@ -32190,7 +32190,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -32338,7 +32338,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>كيف يبدو كل شيء في القالب، وما يُسلَّم له، وكيف تجرّبه من برنامج نصي دون أي صفحة قريبة منه.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -32358,7 +32358,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>نص الترخيص المسمّى أدناه. مفعّل افتراضيًا: الامتداد الذي لا يحوي ملف ترخيص لا يقول شيئًا عن كيفية استخدامه.</translation>
     </message>
     <message>
@@ -32556,7 +32556,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>الإصدار</translation>
     </message>
     <message>
-        <source>Licence</source>
+        <source>License</source>
         <translation>الترخيص</translation>
     </message>
     <message>
@@ -32856,7 +32856,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>ملاحظة في ملف readme حول workflow_cron، وهي ما يشغّل الحدث الذي أجّل نفسه.</translation>
     </message>
     <message>
-        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <source>What the admin interface reads to show the extension name, version and license.</source>
         <translation>ما تقرؤه واجهة الإدارة لعرض اسم الامتداد وإصداره وترخيصه.</translation>
     </message>
     <message>
@@ -32876,7 +32876,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>يُبقي بقايا المحررات ومخرجات البناء خارج المستودع.</translation>
     </message>
     <message>
-        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <source>The license text named below. On by default: an extension with no license file says nothing about how it may be used.</source>
         <translation>نص الترخيص المسمّى أدناه. مفعّل افتراضيًا: الامتداد الذي لا يحوي ملف ترخيص لا يقول شيئًا عن كيفية استخدامه.</translation>
     </message>
     <message>
@@ -48763,7 +48763,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation>ما تعلنه نواة النظام لينفّذه غيرها، مع عدد الدوال التي يطلبها كل منها وما ينفّذه أصلًا. التي فيها دوال كثيرة وتنفيذ واحد هي المياه العميقة.</translation>
     </message>
     <message>
-        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behavior: no module, no handler, no class to replace.</source>
         <translation>كل نقطة تعلنها نواة النظام أثناء عملها، مستخرجة من الشيفرة المصدرية لا مسرودة. حدث التصفية يستخدم ما يعيده المستمع، فالمستمع الذي ينسى إعادة القيمة يُتلفها؛ أما حدث الإشعار فيتجاهلها. أخف طريقة موجودة لإضافة سلوك: لا وحدة، ولا معالج، ولا فئة للاستبدال.</translation>
     </message>
     <message>
@@ -50581,7 +50581,7 @@ See the requirements page for more information.</source>
         <translation>لا شيء.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>اسم المؤسسة</translation>
     </message>
     <message>
@@ -58463,7 +58463,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>لا شيء يُفعل. مدرج كي تكون الصفحة صورة كاملة لا مجرد قائمة أخطاء.</translation>
     </message>
     <message>
-        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <source>If you are looking for somewhere to change behavior, these are the places nobody has claimed yet.</source>
         <translation>إذا كنت تبحث عن مكان لتغيير السلوك، فهذه هي الأماكن التي لم يتبنّها أحد بعد.</translation>
     </message>
     <message>
@@ -58883,11 +58883,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>الإعداد &quot;%setting&quot; قائمة، لكن لم تُقدَّم له أي قيم.</translation>
     </message>
     <message>
-        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <source>No license is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
         <translation>لم يُهيَّأ أي ترخيص للاختيار منه. أضف ترخيصًا إلى package.ini [LicenseSettings] LicenseList.</translation>
     </message>
     <message>
-        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <source>The license &quot;%licence&quot; is not one of the licenses configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>الترخيص &quot;%licence&quot; ليس من التراخيص المكوَّنة في package.ini [LicenseSettings]. اختر واحدًا من القائمة.</translation>
     </message>
     <message>
@@ -68612,7 +68612,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>الإعدادات المستخدمة</translation>
     </message>
     <message>
-        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <source>The settings are in mailpreferences.ini; the organization, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
         <translation>الإعدادات موجودة في mailpreferences.ini؛ أما المؤسسة والعنوان البريدي وصندوق البريد المرتد وسر الموقع فتنتمي إلى تجاوز للإعدادات.</translation>
     </message>
     <message>
@@ -68804,7 +68804,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>متوقف</translation>
     </message>
     <message>
-        <source>Organisation in the footer</source>
+        <source>Organization in the footer</source>
         <translation>المؤسسة في التذييل</translation>
     </message>
     <message>
@@ -68940,11 +68940,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>تفاصيل المرسل</translation>
     </message>
     <message>
-        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organization name the site name is used.</source>
         <translation>تذكر كل رسالة بريد اختيارية من يرسلها وعنوانه البريدي، كما يقتضي القانون. وبدون اسم مؤسسة يُستخدم اسم الموقع.</translation>
     </message>
     <message>
-        <source>Organisation name</source>
+        <source>Organization name</source>
         <translation>اسم المؤسسة</translation>
     </message>
     <message>
@@ -69680,7 +69680,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>الجدول %table مفقود: شغّل تحديث قاعدة البيانات.</translation>
     </message>
     <message>
-        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
         <translation>العنوان البريدي في تذييل الرسائل فارغ: أدخله تحت &quot;بيانات المرسل&quot; في هذه الصفحة (mailpreferences/admin/status). يشترط القانون ذكر المؤسسة وعنوانها البريدي في كل رسالة اختيارية؛ وتُرسل الرسائل دونه حتى ذلك الحين.</translation>
     </message>
     <message>

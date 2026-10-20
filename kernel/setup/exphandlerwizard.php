@@ -1279,7 +1279,7 @@ class expHandlerWizard extends expExtensionWizard
                 'default' => true ),
             'ezinfo' => array(
                 'label' => 'ezinfo.php',
-                'description' => 'What the admin interface reads to show the extension name, version and licence.',
+                'description' => 'What the admin interface reads to show the extension name, version and license.',
                 'default' => true ),
             'extension_xml' => array(
                 'label' => 'extension.xml',
@@ -1303,7 +1303,7 @@ class expHandlerWizard extends expExtensionWizard
                 'default' => true ),
             'licence' => array(
                 'label' => 'LICENSE',
-                'description' => 'The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.',
+                'description' => 'The license text named below. On by default: an extension with no license file says nothing about how it may be used.',
                 'default' => true ),
         );
     }
