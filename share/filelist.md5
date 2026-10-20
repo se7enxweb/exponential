@@ -621,9 +621,6 @@ b98a7c218a38250106490e10a0ab12a1  design/admin/templates/page_head_style_inline.
 1e3fad39578f09875830943b5d52a7c3  design/admin/templates/page_header.tpl
 658df4da89d3c912a6bc9a3335604445  design/admin/templates/page_leftmenu.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin/templates/page_login_copyright.tpl
-1bf2256ccd6061ee7f354a26834937c1  design/admin/templates/page_menuheadenabled.tpl
-9f4f8bdbbdfbfd8c6d873c03eded7ef6  design/admin/templates/page_menuheadgray.tpl
-4306b7f17fbb890306fdc57c9be45664  design/admin/templates/page_menuheadselected.tpl
 4374c91bec94059d38165298dde75856  design/admin/templates/page_search.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
