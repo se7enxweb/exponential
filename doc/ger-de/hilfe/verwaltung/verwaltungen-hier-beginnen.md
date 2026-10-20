@@ -70,8 +70,8 @@ verantwortungsvoll.
 | [Datenschutz](datenschutz/README.md) | DSGVO-Funktionen, Datenminimierung, Aufbewahrung, Einwilligungsnachweise, Löschung; andere Rechtsordnungen allgemein eingeordnet |
 | [Schriftgut und Archivierung](../../../eng-us/help/government/records-and-archiving/README.md) | Versionen, Verlauf, Archivieren von Bekanntmachungen, Aufbewahrungspläne, Exporte, Erhalt von URLs |
 | [Offene Daten](../../../eng-us/help/government/open-data/README.md) | Datensätze mit Metadaten, Lizenzen und stabilen URLs veröffentlichen, und die vorhandenen APIs und Feeds |
-| [Transparenz und Informationsfreiheit](../../../eng-us/help/government/transparency-and-foi/README.md) | Proaktive Veröffentlichung, Offenlegungsprotokolle, Veröffentlichungspläne, Beschlussregister |
-| [Sprachen](../../../eng-us/help/government/languages/README.md) | Amtssprachen, Übersetzungsabläufe, Schreibrichtung von rechts nach links, einfache Sprache |
+| [Transparenz und Informationsfreiheit](transparenz-und-informationsfreiheit/README.md) | Proaktive Veröffentlichung, Offenlegungsprotokolle, Veröffentlichungspläne, Beschlussregister |
+| [Sprachen](sprachen/README.md) | Amtssprachen, Übersetzungsabläufe, Schreibrichtung von rechts nach links, einfache Sprache |
 | [Souveränität](souveraenitaet/README.md) | Selbstbetrieb, Datenstandort, Open-Source-Lizenzierung und -Beschaffung, Vermeiden von Anbieterabhängigkeit |
 | [Websites für öffentliche Dienstleistungen bauen](../../../eng-us/help/government/building/README.md) | Leistungskataloge, Formulare, Bürgerkonten, Nachrichten und Warnungen, Veranstaltungen, Dokumente, Suche, Karten, Newsletter, Multisite, Intranets, Extranets |
 | [Betrieb](../../../eng-us/help/government/operations/README.md) | Hosting im eigenen Haus und in der Verwaltungscloud, Verfügbarkeit, Datensicherungen, Überwachung, Vorfälle, Aktualisierungen, Änderungsmanagement, Rollen der Mitarbeitenden, redaktionelle Abläufe |
@@ -99,8 +99,8 @@ verantwortungsvoll.
 | Koordination Barrierefreiheit | den [Standards zur Barrierefreiheit](../../../eng-us/standards/accessibility.md), dann [Barrierefreiheit](../../../eng-us/help/government/accessibility/README.md) |
 | Informationssicherheitsbeauftragte | den [Sicherheitsstandards](../../../eng-us/standards/security.md), der [Sicherheitshärtung](../sicherheitshaertung.md), dann [Sicherheit](../../../eng-us/help/government/security/README.md) |
 | Datenschutzbeauftragte | den [Datenschutzstandards](../../../eng-us/standards/privacy.md), dann [Datenschutz](datenschutz/README.md) |
-| Schriftgutverwaltung oder zuständig für Informationsfreiheit | [Schriftgut und Archivierung](../../../eng-us/help/government/records-and-archiving/README.md) und [Transparenz und Informationsfreiheit](../../../eng-us/help/government/transparency-and-foi/README.md) |
-| Leitung Übersetzung oder Kommunikation | [Sprachen](../../../eng-us/help/government/languages/README.md), einschließlich einfacher Sprache |
+| Schriftgutverwaltung oder zuständig für Informationsfreiheit | [Schriftgut und Archivierung](../../../eng-us/help/government/records-and-archiving/README.md) und [Transparenz und Informationsfreiheit](transparenz-und-informationsfreiheit/README.md) |
+| Leitung Übersetzung oder Kommunikation | [Sprachen](sprachen/README.md), einschließlich einfacher Sprache |
 | ein IT-Betriebsteam | dem [Betrieb](../../../eng-us/help/government/operations/README.md) und der [Hilfe zum Hosting](../hosting/hosting-anbieter-hier-beginnen.md), die Server ausführlich behandelt |
 | Redakteurin oder Redakteur | den [Aufgaben](../../../eng-us/help/government/tasks/README.md) und [Inhalte bearbeiten](../inhalte-bearbeiten.md) |
 | Trainerin oder Trainer | [Trainer: hier beginnen](../../../eng-us/help/trainers/trainers-start-here.md) und [Schulung für eine öffentliche Stelle](../../../eng-us/help/government/procurement/training/README.md) |
