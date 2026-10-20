@@ -342,7 +342,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 623c9833355a4c65569507e84d4c0a4c  design/admin/stylesheets/modules/content.css
-3224f2c0c7d0ee9691831b4cde9955e4  design/admin/stylesheets/modules/help.css
+ce3ed14011edf256e4d3f0d4ef0e01a5  design/admin/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin/stylesheets/modules/structure.css
@@ -518,7 +518,7 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
 1ae6b7f9469df4b15dcb089417a818fe  design/admin/templates/exphelp/audience.tpl
 5032d64e415857430a19063aef097bc2  design/admin/templates/exphelp/contents.tpl
-ee0c604cba2c427ba5afddc4c3524432  design/admin/templates/exphelp/dashboard.tpl
+95a6b6eaf1e1a7b5f1d1ea72fafd7fd3  design/admin/templates/exphelp/dashboard.tpl
 67a36240784ea91d9f97cfefa57c0e0c  design/admin/templates/exphelp/extensions.tpl
 195444e1d458fc63037504f5e846281c  design/admin/templates/exphelp/manual.tpl
 77db075b95942d32e2c5fed41ce61892  design/admin/templates/exphelp/parts/dashboard_about.tpl
@@ -1078,7 +1078,7 @@ fef6201f7a8970ad72c4e5d3fc5147ce  design/admin4/stylesheets/content.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 623c9833355a4c65569507e84d4c0a4c  design/admin4/stylesheets/modules/content.css
-3224f2c0c7d0ee9691831b4cde9955e4  design/admin4/stylesheets/modules/help.css
+ce3ed14011edf256e4d3f0d4ef0e01a5  design/admin4/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin4/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin4/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin4/stylesheets/modules/structure.css
@@ -1276,7 +1276,7 @@ b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
 1ae6b7f9469df4b15dcb089417a818fe  design/admin4/templates/exphelp/audience.tpl
 5032d64e415857430a19063aef097bc2  design/admin4/templates/exphelp/contents.tpl
-ee0c604cba2c427ba5afddc4c3524432  design/admin4/templates/exphelp/dashboard.tpl
+95a6b6eaf1e1a7b5f1d1ea72fafd7fd3  design/admin4/templates/exphelp/dashboard.tpl
 67a36240784ea91d9f97cfefa57c0e0c  design/admin4/templates/exphelp/extensions.tpl
 195444e1d458fc63037504f5e846281c  design/admin4/templates/exphelp/manual.tpl
 77db075b95942d32e2c5fed41ce61892  design/admin4/templates/exphelp/parts/dashboard_about.tpl
@@ -3201,7 +3201,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-0ed8ea13fa39319971400bf606691a7d  doc/changelogs/6.0/6.0.15.md
+adc11fc40ab201f89ca770a5bdaec01a  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3353,7 +3353,7 @@ e03549b98a5316616e86c5e6aea94193  doc/eng-us/bc/6.0/extension-package-secret-che
 3e618c514bc8d65abe2b013edfbb1e12  doc/eng-us/bc/6.0/ezoe-tinymce8.md
 02f9c4098af6775e9b9fc4a0553bf473  doc/eng-us/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 4182afe4de0ebf523b622ca208b721fe  doc/eng-us/bc/6.0/file-modes.md
-3bbbff30477bfacbec83ea2e3cb4f975  doc/eng-us/bc/6.0/frankenphp.md
+0b23ba818c48d726f017791245d3dc2e  doc/eng-us/bc/6.0/frankenphp.md
 f50494600c581d6f79cb3b05c1b6c120  doc/eng-us/bc/6.0/hardening.md
 c096765a30ac8ef624ea0dee89dec81c  doc/eng-us/bc/6.0/help-content-dita-ebooks-reviews.md
 574676e730c70304294db7266381f8b6  doc/eng-us/bc/6.0/http-caching.md
@@ -5199,7 +5199,7 @@ c5372c779493958fc20e53bc58a8da58  doc/eng-us/examples/ini-settings/velocity/Fran
 31bb07d03e092d7f9fe6457b2f9d7887  doc/eng-us/examples/ini-settings/velocity/LayoutSettings.md
 3d249d054c344f6fdcdab3b6f2e2c962  doc/eng-us/examples/ini-settings/velocity/LogSettings.md
 c7dbe99a7f67d43525df9c7a60c19d68  doc/eng-us/examples/ini-settings/velocity/PHPServerSettings.md
-07448c820469b04346bbe0eceebaaf12  doc/eng-us/examples/ini-settings/velocity/PHPSettings.md
+63c470d0bcaaaa9eb685c7359471400a  doc/eng-us/examples/ini-settings/velocity/PHPSettings.md
 6b3e775d27e76b11da5e8f6a5b519dc3  doc/eng-us/examples/ini-settings/velocity/README.md
 d7a2c4539a500dda0b02d78172b1e37c  doc/eng-us/examples/ini-settings/velocity/ServerSettings.md
 f724fedc8fdf2ba9feef32b164b09b00  doc/eng-us/examples/ini-settings/velocity/WatchdogSettings.md
@@ -6282,7 +6282,7 @@ dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
 aeab614b104ddc5b03384aa3e24a56d5  doc/eng-us/features/6.0/velocity-control-panel.md
 40fc877ab6272ca916936ec4b376d6c9  doc/eng-us/features/6.0/velocity-discovery-federation-and-deploy.md
 55fd0aecd9ad30def3c4562f313ede48  doc/eng-us/features/6.0/velocity-https-certificates.md
-4e0474174b8ff4f2af00a08fbd3ccfc2  doc/eng-us/features/6.0/velocity-opcode-cache-and-profile.md
+cc71d64b97c0f06c54e0977eeff760fb  doc/eng-us/features/6.0/velocity-opcode-cache-and-profile.md
 8ececd72a30eb4be5e39acae31c7fc26  doc/eng-us/features/6.0/velocity-packages-and-binaries.md
 740a2076f41fd7d1f27a47ac0ddf81d7  doc/eng-us/features/6.0/velocity-persistent-worker-server.md
 3a7ae794d1a2417e7e9e941778fa9222  doc/eng-us/features/6.0/velocity-q-shell.md
@@ -8704,7 +8704,7 @@ abd97de027333f9a7e75eaf88ac99db6  doc/eng-us/help/hosting/basics/microsoft-sql-s
 dc1e83272797fdc139619663ef1237cc  doc/eng-us/help/hosting/basics/mysql-for-hosts.md
 27113faa4b04d75321ad1fdc46b97c07  doc/eng-us/help/hosting/basics/operating-systems-for-hosts.md
 02d4a2798582e48ea6685b34e92e3ec5  doc/eng-us/help/hosting/basics/oracle-for-hosts.md
-7edd1f4b0ecb415e99c9d2e580b7e54c  doc/eng-us/help/hosting/basics/php-settings-for-exponential.md
+40fbd679715b1517102b90f5f89c8c9a  doc/eng-us/help/hosting/basics/php-settings-for-exponential.md
 b02278847781ce76b6255c84aba7cd46  doc/eng-us/help/hosting/basics/php-versions-and-extensions.md
 5c07c90f5679bd5b2a7ee90500b0821c  doc/eng-us/help/hosting/basics/postgresql-for-hosts.md
 a5600502067ee3dbe11279d00a074dff  doc/eng-us/help/hosting/basics/requirements-at-a-glance.md
@@ -14595,7 +14595,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-83b579e5672d5d81acbc4704707cfa22  settings/velocity.ini
+115ef4b8cc68875d136bedd0bc84fd7b  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
@@ -15538,7 +15538,7 @@ ed1234aa427025390b186bf68774b685  tests/tests/design/AdminFormErrorsTest.php
 32f9d6fe78017afe3382814f71cb124e  tests/tests/design/AdminFormLabelsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
 a473ae5da1336c436df67200b19ab55d  tests/tests/design/AdminHeaderTest.php
-a17f98bb54f4291a2028307ea74aea7e  tests/tests/design/AdminHelpFrameClassScopeTest.php
+8aa3887e5c845ddb8c8d3b843b2b4e65  tests/tests/design/AdminHelpFrameClassScopeTest.php
 3db40fcd5528d2caec0149d7ed92795b  tests/tests/design/AdminHelpScriptTest.php
 4a5fcc0b1d057a2dda804741118daea8  tests/tests/design/AdminHelpViewParametersOnlyTest.php
 8df6b3e23c1da3aea5c7d5b745158627  tests/tests/design/AdminI18nStringTagsTest.php
