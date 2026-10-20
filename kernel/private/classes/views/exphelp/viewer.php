@@ -23,8 +23,8 @@ namespace Exponential\View\Kernel\Exphelp
 
 class Viewer extends \Exponential\Runnable\ModuleView
 {
-    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images; 4: anchors map to the shown language's headings; 5: the language directories eng-us, ger-de) */
-    const RENDER_VERSION = 5;
+    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images; 4: anchors map to the shown language's headings; 5: the language directories eng-us, ger-de; 6: external images from their local copy, exphelp/image) */
+    const RENDER_VERSION = 6;
 
     public function run( array $scope )
     {
@@ -251,7 +251,8 @@ class Viewer extends \Exponential\Runnable\ModuleView
         $markdown = isset( $document['suffix'] ) && in_array( $document['suffix'], array( 'md', 'markdown' ), true );
         $dir = rtrim( (string)$index->cacheDir(), '/' ) . '/render';
         // the siteaccess prefix is in the links, so it is part of the key
-        $file = $dir . '/' . sha1( self::RENDER_VERSION . "\0" . $index->signature() . "\0" . $id . "\0" . \eZSys::indexDir() . "\0" . md5( (string)$source ) ) . '.json';
+        $file = $dir . '/' . sha1( self::RENDER_VERSION . "\0" . $index->signature() . "\0" . $id . "\0" . \eZSys::indexDir() . "\0" . md5( (string)$source )
+                                   . "\0" . self::remoteImagesSignature() ) . '.json';
         if ( is_file( $file ) )
         {
             $cached = json_decode( (string)@file_get_contents( $file ), true );
@@ -290,7 +291,20 @@ class Viewer extends \Exponential\Runnable\ModuleView
             'image_resolver' => array( 'expHelpLinks', 'sizedImage' ),
             // an image of another site that the siteaccess's policy blocks is shown as a link (README.md's GitHub images)
             'image_sources' => \expContentSecurityPolicy::imageSources(),
+            // ... unless exp:help index stored a copy of it: then the copy, served by exphelp/image
+            'remote_images' => class_exists( 'expHelpRemoteImages' ) ? array( new \expHelpRemoteImages(), 'resolve' ) : null,
             'source_path' => (string)$sourcePath ) );
+    }
+
+    /**
+     * Part of the render cache key: a page cached with a link to an external image renders again once the index
+     * has stored its copy.
+     *
+     * @return string
+     */
+    public static function remoteImagesSignature()
+    {
+        return class_exists( 'expHelpRemoteImages' ) ? ( new \expHelpRemoteImages() )->signature() : '';
     }
 }
 

@@ -13,6 +13,7 @@
  *   exphelp/extensions[/<name>]    the documentation of the active extensions: the list, or one extension's pages
  *   exphelp/search/(q)/<words>/(category)/<id>/...  search, or browse without (q); format=json: the client's JSON
  *   exphelp/asset/<path>           an image below doc/, with its content type (only git-tracked files)
+ *   exphelp/image/(id)/<sha256>    the local copy of an external image a page shows, stored by exp:help index
  *   exphelp/pdf/<page id>          the page as a PDF file to download (expHelpPdf)
  *   exphelp/report                 how to report an error: which tracker, a prefilled issue, safe diagnostics
  *
@@ -90,6 +91,15 @@ $ViewList['asset'] = array(
     'script' => 'asset.php',
     'functions' => array( 'read' ),
     'params' => array() );
+
+// The local copy of an external image a page shows, stored by exp:help index: the view parameter
+// (id)/<sha256 of its address>, never GET (expHelpRemoteImages)
+$ViewList['image'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'image.php',
+    'functions' => array( 'read' ),
+    'params' => array(),
+    'unordered_params' => array( 'id' => 'Id' ) );
 
 // The page as a PDF file to download: the rest of the address (exphelp/pdf/help/getting-started.md) or GET p
 $ViewList['pdf'] = array(

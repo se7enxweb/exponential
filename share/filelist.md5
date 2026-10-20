@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 c8191c02442f94715f5fe1b979261faa  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-54769940253eb91947f3b58a09e40f23  autoload/ezp_kernel.php
+58fd7dce30f8c540b8aab2893255a662  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3201,7 +3201,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-7ed1398d65cd06f6a477897ee0478e8a  doc/changelogs/6.0/6.0.15.md
+953b71a44cc68bf826c987b3dba3f288  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6203,7 +6203,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 446d6517eb057accf74399d2ec1557cf  doc/eng-us/features/6.0/help-content.md
-13ed42481efbc061110a0b83b07288b8  doc/eng-us/features/6.0/help-system.md
+e3fb86180dc51e3d8a83d5c387e8ef03  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 787c261dc26c379dbf5d19058093d261  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 695c0016c5a385b9902ba21c168a66ce  doc/eng-us/features/6.0/install-in-one-command.md
@@ -13007,7 +13007,7 @@ fdb7fca31ced7db107593e2c23056ee2  kernel/classes/help/content/exphelpcontenteboo
 76c95ab6db140a4516e4320aa888839a  kernel/classes/help/content/exphelpcontentexport.php
 55f92f1a206b102c012d371f1dd5f36a  kernel/classes/help/content/exphelpcontentinstaller.php
 3b94473a8041ad398f2b49b184ddd6bb  kernel/classes/help/content/exphelpcontentpackage.php
-3f9b805011487fe8b53db67df6c2d606  kernel/classes/help/content/exphelpcontentprovider.php
+41de444b7d805e0435839a7816a05e42  kernel/classes/help/content/exphelpcontentprovider.php
 ac511aa456e80d00093d0b638a2c7e3a  kernel/classes/help/content/exphelpcontentrepository.php
 e1152c3d56925c2ed77bf537e343d44c  kernel/classes/help/content/exphelpcontentreview.php
 98660e143f3b7e33599761fe4d3dd9ef  kernel/classes/help/content/exphelpcontentschema.php
@@ -13032,7 +13032,7 @@ da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinte
 cf446fca58833273b9ed1de03365679e  kernel/classes/help/exphelplicense.php
 6eb352c3dd568a1a708b0518ef552379  kernel/classes/help/exphelplinkcheck.php
 ef6a7583e07a1fe331d53c774d93c327  kernel/classes/help/exphelplinks.php
-2a9a967d4dec3131a2d87d0cd06c9637  kernel/classes/help/exphelpmarkdownrenderer.php
+6f11569e46ac6be01dda6ae43b6dda86  kernel/classes/help/exphelpmarkdownrenderer.php
 49922b87b0a898c5486f7cb66943e6da  kernel/classes/help/exphelpnavigation.php
 aa7d848a480aad552b21c7f8b1463207  kernel/classes/help/exphelppdf.php
 2c5541b07210503b242739e8b83b19ed  kernel/classes/help/exphelppdfcanvas.php
@@ -13041,6 +13041,7 @@ aee83b97ef10c018a999fc83feb68f39  kernel/classes/help/exphelppdfwriter.php
 61657e73c198af717fbfac518a9e78a1  kernel/classes/help/exphelpprojectfiles.php
 7040601f170d784b39ec006f577da0a4  kernel/classes/help/exphelpreadpolicygrant.php
 d2f0e7555803b18f5d0730de851c5980  kernel/classes/help/exphelprecordrenderer.php
+b74a1fbf720b8938fb0e0493b490e645  kernel/classes/help/exphelpremoteimages.php
 d72ed70b575b9bbf50a994556d5b6abf  kernel/classes/help/exphelpsearch.php
 9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
 6d83d4078ed5276344500f0f0dec4da5  kernel/classes/ini/actions/expiniaction.php
@@ -13353,8 +13354,9 @@ a2a9ae5e6dd5ab23cb83ed0fd1606500  kernel/exphelp/audience.php
 33c62fa0038f1bfd6b29e6f51f2d6366  kernel/exphelp/dashboard.php
 8101cc420d3c2c5b05a79dd2d4d7fbb1  kernel/exphelp/extensions.php
 c2066003cc94cc7d44dac4693fbe9867  kernel/exphelp/function_definition.php
+ded43b590bfe7b99e55cc2e00fc1df9d  kernel/exphelp/image.php
 fc67521117b25e7ce1433d2b552d4032  kernel/exphelp/manual.php
-7056759c78f115c69bdf0da3ab78f7ac  kernel/exphelp/module.php
+5db28a58d0b832a639268540edcd3b26  kernel/exphelp/module.php
 f9fcf4f5b710f16c292c09884d75ef1b  kernel/exphelp/pdf.php
 c3904f3716fb24778f06643d1bfb3953  kernel/exphelp/report.php
 33b75eddef2deafae77d21a52ebd716e  kernel/exphelp/search.php
@@ -13464,7 +13466,7 @@ fc100209dee85f836a6d9ed383e3a0c1  kernel/private/classes/commands/collaborations
 072c61113b02311ea154c708f79e3e8c  kernel/private/classes/commands/convertprice2multiprice.php
 5e242e01ae17e9af4730a1dfa8c42a71  kernel/private/classes/commands/dfscleanup.php
 629cddb79ec70350f282b31fd6fe7387  kernel/private/classes/commands/expcontentjob.php
-7f08f1edc62287afa92415fa21ec2826  kernel/private/classes/commands/exphelp.php
+7454fdd05a72f8378dd7173255b9e426  kernel/private/classes/commands/exphelp.php
 5aae3542c5add78b69755ac4b8219943  kernel/private/classes/commands/exphelpcontent.php
 22275db5add84f4cafc34bc38643cebd  kernel/private/classes/commands/exphelpexamples.php
 532ba01b895e20eab4ad19d93c091358  kernel/private/classes/commands/explogs.php
@@ -13730,12 +13732,13 @@ dae6b4492866c932a7da53ed250c830f  kernel/private/classes/views/exphelp/contents.
 189113fbdaf67f253951a330f5d8fb6c  kernel/private/classes/views/exphelp/context.php
 24b757c8d063be6d7189f446a82e4510  kernel/private/classes/views/exphelp/dashboard.php
 f38f485c0eb6d3ea64d7c9ec294ef33a  kernel/private/classes/views/exphelp/extensions.php
+b4736cae3fc7f5ca712b2ddc512f82da  kernel/private/classes/views/exphelp/image.php
 a8c5f2463375fe721dae666ad1b619dc  kernel/private/classes/views/exphelp/manual.php
 b79ba0c3dcca4de1a1becc455e99b9d9  kernel/private/classes/views/exphelp/pdf.php
 2686046f268eaaa9eec4315e9aa1fb63  kernel/private/classes/views/exphelp/report.php
 29fd2068b97f9cf7f52f6169ad03e751  kernel/private/classes/views/exphelp/search.php
 5bfea81b80bdb691dbe3b0880a7264e3  kernel/private/classes/views/exphelp/topic.php
-a5b718054acae4f9cc986ac8fafb9460  kernel/private/classes/views/exphelp/viewer.php
+0b5bf8a4e8d949fd4cb33394fac97b4e  kernel/private/classes/views/exphelp/viewer.php
 fe0f835accff4b0fab6b692539d4d1b1  kernel/private/classes/views/ezinfo/about.php
 6b83629a5884d62bd1ab252501a7e88c  kernel/private/classes/views/ezinfo/copyright.php
 6b068b315af351ad5985598cfc5f3ec5  kernel/private/classes/views/ezinfo/isalive.php
@@ -16143,6 +16146,7 @@ b33f7662af4ec33ba73bccf286d6b0d4  tests/tests/kernel/classes/help/expHelpPdfTest
 84323ff02193037437748b236e525ac3  tests/tests/kernel/classes/help/expHelpProjectFilesTest.php
 c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 4f25918ec9e72e0507962b20d24233b6  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
+a5cbd6f6d778cd7432f702b933033f3f  tests/tests/kernel/classes/help/expHelpRemoteImagesTest.php
 c6e73304dfc317b383e271cdd00cab68  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php
 41726599964dc05529c6180acaeef567  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 66f45986e6d0a6db9811c5310289cbc2  tests/tests/kernel/classes/help/expHelpSearchHrefTest.php
