@@ -73113,10 +73113,6 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Hjälpcenter</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Hjälpstart</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Hur kan vi hjälpa dig?</translation>
     </message>
@@ -74683,6 +74679,78 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Help Start</source>
         <translation>Hjälpstart</translation>
+    </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Den här sidan är inte översatt till %reader ännu. Den visas på %original.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Engelska</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Tyska</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Läsespråk:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>När du väljer ett språk byts språket i hela administrationen.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count av %total sidor</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>Hjälpen på andra språk</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Öppna originalet på %language</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Du läser originalet av den här sidan på %language.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Tillbaka till sidan på %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Den här sidan är en översättning.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Läs originalet på %language</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>Dokumentationen som de aktiva tilläggen har med sig: deras guider, README, ändringslogg och licens.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Sök i dokumentationen för %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Inget aktivt tillägg har med sig egen dokumentation.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Bara dokumentationen för tillägget %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Dess sidor</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Sök i hela hjälpen</translation>
     </message>
 </context>
 </TS>

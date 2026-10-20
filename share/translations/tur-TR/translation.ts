@@ -71815,10 +71815,6 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Yardım merkezi</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Yardım başlangıcı</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Size nasıl yardımcı olabiliriz?</translation>
     </message>
@@ -73385,6 +73381,78 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Help Start</source>
         <translation>Yardım başlangıcı</translation>
+    </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Bu sayfa henüz %reader diline çevrilmedi. Sayfa %original dilinde gösteriliyor.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>İngilizce</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Almanca</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Okuma dili:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Bir dil seçmek tüm yönetim panelinin dilini değiştirir.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %total sayfadan %count</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>Diğer dillerde yardım</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>%language özgün sürümü aç</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Bu sayfanın %language özgün sürümünü okuyorsunuz.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>%language sayfaya geri dön</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Bu sayfa bir çeviridir.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>%language özgün sürümü oku</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>Etkin uzantıların beraberinde getirdiği belgeler: kılavuzları, README, değişiklik günlüğü ve lisans.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>%extension belgelerinde ara</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Hiçbir etkin uzantı kendi belgelerini getirmiyor.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Yalnızca %extension uzantısının belgeleri.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Sayfaları</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Tüm yardımda ara</translation>
     </message>
 </context>
 </TS>

@@ -13,7 +13,7 @@
 {* The Help menu: the same "?" as a menu button (aria-expanded, aria-controls) in the place of the link, as the site
    menu's globe (parts/a4_header_site.tpl); admin4.js shows the button and hides the link, so without the script the
    link stays and opens the help of the page. Its panel: a search of the help (exphelp/search; the view answers the
-   GET form with its canonical address), the Help center right below it, the help of this page, the topics related
+   posted form with its canonical address), the Help center right below it, the help of this page, the topics related
    to it and the quick links (fetch exphelp/context_menu, from the small list of served pages, never the index; drawn
    once per page and module in the header's cache block, keyed by $a4_help.key). Arrow keys, Home, End and Esc as in
    the site menu; the keys follow this order. *}
@@ -49,7 +49,7 @@
             <span class="a4-sr-only">{$a4_help_menu_label|wash}</span>
         </button>
         <div id="a4-help-menu" class="a4-site-menu a4-help-menu" hidden>
-            <form class="a4-help-menu-search" action={'/exphelp/search'|ezurl} method="get" role="search">
+            <form class="a4-help-menu-search" action={'/exphelp/search'|ezurl} method="post" role="search">
                 <label class="a4-sr-only" for="a4-help-menu-q">{'Search the help'|i18n( 'kernel/exphelp' )|wash}</label>
                 <input type="search" id="a4-help-menu-q" class="a4-input" name="q" maxlength="200" autocomplete="off" placeholder="{'Search the help'|i18n( 'kernel/exphelp' )|wash}" />
                 <button type="submit" class="a4-btn">{'Search'|i18n( 'kernel/exphelp' )|wash}</button>

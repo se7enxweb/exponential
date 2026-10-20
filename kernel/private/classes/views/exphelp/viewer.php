@@ -10,7 +10,7 @@
  * page: en-US, de-DE), help_page_dir (ltr, rtl), help_fallback (the page is not translated into the reader's language yet and is shown in
  * another), help_reader_language and help_page_language (their names, translated), help_reading (the "Reading in"
  * control, expHelp::reading()), help_original_url, help_original_language and help_original_view (readingVariables():
- * ?lang=eng-us shows the English original of a page to a reader of another language). An address that names a file
+ * /(lang)/eng-us shows the English original of a page to a reader of another language). An address that names a file
  * (doc/eng-us/<id>, ger-de/<translated path>, and the old doc/en/us/<id>, en/us/<id>, de/<translated path>) redirects to the page id.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -33,15 +33,17 @@ class Viewer extends \Exponential\Runnable\ModuleView
         if ( !\expHelp::isEnabled() )
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
 
-        $id = \expHelp::requestedId( $Params, $_GET );
+        $id = \expHelp::requestedId( $Params );
         if ( $id === '' )
             return $Module->redirectTo( \expHelp::url( 'dashboard' ) );
 
         $readerIndex = \expHelpDocumentIndex::instance();
         $index = $readerIndex;
-        // ?lang=eng-us (the old en-us too): the page in another language for this request (the English original of a translated page)
+        // /(lang)/eng-us (the old en-us too): the page in another language for this request (the English original of a
+        // translated page). A view parameter only, never ?lang=
+        $viewParameters = isset( $Params['UserParameters'] ) && is_array( $Params['UserParameters'] ) ? $Params['UserParameters'] : array();
         $original = method_exists( 'expHelp', 'requestedLanguage' )
-            ? \expHelp::requestedLanguage( $_GET, $readerIndex->languages(), $readerIndex->language() ) : null;
+            ? \expHelp::requestedLanguage( $viewParameters, $readerIndex->languages(), $readerIndex->language() ) : null;
         if ( $original !== null )
             $index = \expHelpDocumentIndex::forLanguage( $original, $readerIndex->languages() );
         $document = $index->document( $id );
@@ -151,14 +153,14 @@ class Viewer extends \Exponential\Runnable\ModuleView
 
     /**
      * The template variables of the "Reading in" control and of the original: help_reading (expHelp::reading(), false
-     * in a worker started before it existed), help_original_url (the page in the default language, ?lang=<key>,
+     * in a worker started before it existed), help_original_url (the page in the default language, /(lang)/<key>,
      * for a reader of another language; '' otherwise), help_original_language (its name), help_original_view (false,
      * or hash( name, reader_name, back_url ) when this request shows the page in another language than the reader's).
      *
      * @param \expHelpDocumentIndex $readerIndex the index of the reader's language
      * @param array $document the page shown
      * @param string $id
-     * @param string|null $original the language this request shows instead of the reader's (?lang=)
+     * @param string|null $original the language this request shows instead of the reader's (/(lang)/)
      * @return array
      */
     public static function readingVariables( $readerIndex, array $document, $id, $original )

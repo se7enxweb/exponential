@@ -71724,10 +71724,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -73293,6 +73289,30 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Help Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

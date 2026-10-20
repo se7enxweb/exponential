@@ -72486,10 +72486,6 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Hjælpecenter</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Hjælpens start</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Hvordan kan vi hjælpe?</translation>
     </message>
@@ -74056,6 +74052,78 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Help Start</source>
         <translation>Hjælpens start</translation>
+    </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Denne side er endnu ikke oversat til %reader. Den vises på %original.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Engelsk</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Tysk</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Læsesprog:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Når du vælger et sprog, skifter hele administrationen sprog.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count af %total sider</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>Hjælpen på andre sprog</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Åbn originalen på %language</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Du læser originalen af denne side på %language.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Tilbage til siden på %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Denne side er en oversættelse.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Læs originalen på %language</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>Den dokumentation, de aktive udvidelser har med: deres vejledninger, README, ændringslog og licens.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Søg i dokumentationen til %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Ingen aktiv udvidelse har sin egen dokumentation med.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Kun dokumentationen til udvidelsen %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Dens sider</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Søg i hele hjælpen</translation>
     </message>
 </context>
 </TS>

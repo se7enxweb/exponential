@@ -56,7 +56,7 @@ und die `README.md` im Wurzelverzeichnis (wann ein klassischer Server noch die r
 |---|---|---|
 | Dürfen Kunden einen lang laufenden Prozess ausführen? | nein | Apache oder LiteSpeed mit `.htaccess` oder nginx mit PHP-FPM; Velocity ist meist nicht möglich ([Shared Hosting](shared-hosting.md)) |
 | Braucht die Website mehr als eine Maschine, die in die Datenbank schreibt? | ja | ein Datenbankserver, zuerst PostgreSQL; nicht SQLite ([Datenbankunterstützung](../../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge)) |
-| Ist das PHP der Maschine älter als 8.1? | ja, zum Beispiel das mitgelieferte PHP 8.0 von Red Hat Enterprise Linux 9 | ein klassischer Webserver; Velocity braucht 8.1 ([Kapitel 2](../../../installation/02-voraussetzungen.md#22-php)) |
+| Ist das PHP der Maschine 8.0? | ja, zum Beispiel das mitgelieferte PHP 8.0 von Red Hat Enterprise Linux 9 | jeder Webserver; Velocity läuft ab seinem Release 0.0.4.54 unter 8.0 ([Kapitel 2](../../../installation/02-voraussetzungen.md#php-80-und-red-hat-enterprise-linux)) |
 | Müssen Kunden auf Ebene des Betriebssystems abgeschottet sein? | ja | ein PHP-FPM-Pool oder eine Velocity-Instanz pro Website, jeweils als eigener Benutzer ([Abschottung](#abschottung-zwischen-kunden)) |
 | Hat der Kunde Shell-Zugang? | nein | der Setup-Assistent im Browser installiert die Website ([Kapitel 4](../../../installation/04-installationsweg-waehlen.md#45-welche-methode-für-welche-situation)) |
 
@@ -65,7 +65,7 @@ und die `README.md` im Wurzelverzeichnis (wann ein klassischer Server noch die r
 Das Projekt empfiehlt Exponential Velocity für jede Phase; FrankenPHP ist eine produktionsreife Alternative; Apache und
 nginx mit PHP-FPM sind die klassischen Einrichtungen. Kapitel 8 nennt die Fälle, in denen ein klassischer Server die bessere
 Antwort ist: wenn Ihr Hosting keine lang laufenden Prozesse erlaubt, wenn Sie bereits ein abgestimmtes Apache oder nginx
-betreiben, das Sie behalten möchten, wenn die Maschine nur PHP 8.0 hat oder wenn mehrere Kunden auf einer Maschine
+betreiben, das Sie behalten möchten, oder wenn mehrere Kunden auf einer Maschine
 voneinander auf Ebene des Betriebssystems abgeschottet sein müssen
 ([8.1 Die Wahl in einer Tabelle](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle)).
 

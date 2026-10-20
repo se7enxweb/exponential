@@ -68,13 +68,14 @@ class expHelpSearchViewParametersTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 1, $state['limit'] );
     }
 
-    public function testGetFormRequestsAreRedirectedJsonNever()
+    public function testPostedFormRequestsAreRedirectedGetNever()
     {
-        $this->assertTrue( Search::redirectsGet( array( 'q' => '', 'audience' => '', 'category' => 'layouts', 'type' => '' ), 'GET' ) );
-        $this->assertTrue( Search::redirectsGet( array( 'q' => 'x' ), 'head' ) );
-        $this->assertFalse( Search::redirectsGet( array(), 'GET' ), 'the canonical address itself' );
-        $this->assertFalse( Search::redirectsGet( array( 'unrelated' => '1' ), 'GET' ) );
-        $this->assertFalse( Search::redirectsGet( array( 'q' => 'x' ), 'POST' ) );
+        $this->assertTrue( Search::redirectsPost( array( 'q' => '', 'audience' => '', 'category' => 'layouts', 'type' => '' ), 'POST' ) );
+        $this->assertTrue( Search::redirectsPost( array( 'q' => 'x' ), 'post' ) );
+        $this->assertFalse( Search::redirectsPost( array(), 'POST' ), 'no search field' );
+        $this->assertFalse( Search::redirectsPost( array( 'unrelated' => '1' ), 'POST' ) );
+        $this->assertFalse( Search::redirectsPost( array( 'q' => 'x' ), 'GET' ), 'a query string is never read' );
+        $this->assertFalse( Search::redirectsPost( array( 'q' => 'x' ), 'HEAD' ) );
 
         // the address the owner's example form request goes to
         $get = array( 'q' => '', 'audience' => '', 'category' => 'layouts', 'type' => '' );
@@ -84,10 +85,19 @@ class expHelpSearchViewParametersTest extends PHPUnit\Framework\TestCase
         $state = Search::state( array_merge( Search::viewParameters( array() ), Search::getState( $get ) ), self::$known );
         $this->assertSame( '/exphelp/search/(q)/upload+image/(audience)/editor/(offset)/20', expHelp::searchUrl( $state ) );
 
-        $this->assertTrue( Search::wantsJson( array(), array( 'format' => 'json', 'q' => 'x' ), array() ) );
-        $this->assertTrue( Search::wantsJson( array( 'format' => 'json' ), array(), array() ) );
-        $this->assertTrue( Search::wantsJson( array(), array( 'q' => 'x' ), array( 'HTTP_ACCEPT' => 'application/json' ) ) );
-        $this->assertFalse( Search::wantsJson( array(), array( 'q' => 'x' ), array( 'HTTP_ACCEPT' => 'text/html,application/json;q=0.9' ) ) );
+        $this->assertTrue( Search::wantsJson( array( 'format' => 'json' ), array() ) );
+        $this->assertTrue( Search::wantsJson( array(), array( 'HTTP_ACCEPT' => 'application/json' ) ) );
+        $this->assertFalse( Search::wantsJson( array(), array( 'HTTP_ACCEPT' => 'text/html,application/json;q=0.9' ) ) );
+        // ?format=json is not read
+        $_GET['format'] = 'json';
+        try
+        {
+            $this->assertFalse( Search::wantsJson( Search::viewParameters( array() ), array() ) );
+        }
+        finally
+        {
+            unset( $_GET['format'] );
+        }
     }
 
     public function testExtensionLimitsTheSearch()
@@ -151,15 +161,15 @@ class expHelpSearchViewParametersTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * The canonical redirect is sent by the view itself: a module redirect gets the request's query string appended by
-     * the kernel (ezpKernelWeb::appendRequestQuery()), so /search?q=x went to /search/(q)/x?q=x and redirected to itself
-     * until the browser gave up.
+     * The canonical redirect of the posted form is sent by the view itself (a module redirect gets the request's query
+     * string appended by the kernel, ezpKernelWeb::appendRequestQuery()), and the view never reads $_GET.
      */
     public function testTheCanonicalRedirectDoesNotCarryTheQueryString()
     {
         $source = file_get_contents( __DIR__ . '/../../../../../kernel/private/classes/views/exphelp/search.php' );
         $this->assertStringNotContainsString( 'return $Module->redirectTo(', $source );
-        $this->assertStringContainsString( "\\eZHTTPTool::redirect( \$target, array(), '302 Found', false );", $source );
+        $this->assertStringContainsString( "\\eZHTTPTool::redirect( \$target, array(), '303 See Other', false );", $source );
+        $this->assertStringNotContainsString( '$_GET', $source );
         $this->assertStringContainsString( '\eZExecution::cleanExit();', $source );
         // the target never holds a query string of its own
         $state = Search::state( array_merge( Search::viewParameters( array() ), Search::getState( array( 'q' => 'img', 'category' => '' ) ) ), self::$known );

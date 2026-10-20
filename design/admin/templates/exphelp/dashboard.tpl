@@ -51,7 +51,7 @@
         <h1 id="help-dash-title">{'How can we help?'|i18n( $help_ctx )}</h1>
         <p class="a4-help-hero-sub">{'Guides and reference for everyone who works with this installation, written from the documentation of its own version.'|i18n( $help_ctx )}</p>
 
-        <form class="a4-help-search" action={$help_search_action|ezurl} method="get" role="search" data-exphelp-search data-exphelp-endpoint={$help_search_action|ezurl}>
+        <form class="a4-help-search" action={$help_search_action|ezurl} method="post" role="search" data-exphelp-search data-exphelp-endpoint={$help_search_action|ezurl}>
             <div class="a4-help-search-box">
                 <div class="a4-help-search-field">
                     <span class="a4-icon a4-bi-search" aria-hidden="true"></span>
@@ -81,6 +81,9 @@
             <li><strong>{$help_audience_ids|count}</strong> {'audiences'|i18n( $help_ctx )}</li>
         </ul>
         {/if}
+
+        {* quick access to the master help index (exphelp/contents), the same button as the viewer sidebar *}
+        <p class="a4-help-hero-actions"><a class="a4-btn a4-btn-small" href={'exphelp/contents'|ezurl}><span class="a4-icon a4-bi-list-ul" aria-hidden="true"></span> {'Browse all help'|i18n( 'kernel/exphelp' )}</a></p>
     </section>
 
     {* ---- Who makes Exponential (parts/dashboard_about.tpl) ---- *}

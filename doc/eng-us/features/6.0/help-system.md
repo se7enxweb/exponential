@@ -381,9 +381,14 @@ help, its mission and `Funds[]`. `Enabled=disabled` removes the block.
   `/exphelp/search/(q)/publish`, `/exphelp/search/(category)/layouts/(audience)/editor`, with `(type)`,
   `(extension)` (the documentation of one extension), `(offset)` and `(limit)` as well. Without `(q)` the page lists every page the filters allow (browse mode); with no
   parameter at all it lists all pages. The dashboard's audience cards, topics and chips, the category and audience
-  of a page and the search forms all link to these addresses. An old address with `?q=...&category=...` is
-  redirected to its canonical form; the JSON answer for the instant search (`format=json` or
-  `Accept: application/json`) accepts both forms and is never redirected.
+  of a page and the search forms all link to these addresses. Every option of the help is a view parameter
+  (`/(name)/value`), never a GET query parameter: `?q=`, `?format=`, `?lang=` and the like are not read, with no
+  fallback and no redirect. The search form without JavaScript is sent with POST and redirected (303) to the
+  canonical address; the JSON answer for the instant search (`/(format)/json`, or `Accept: application/json`) is
+  never redirected, and the help script asks for it as
+  `/exphelp/search/(q)/<words>/(category)/<id>/(limit)/20/(format)/json`. The other options work the same way:
+  `/exphelp/viewer/<page id>/(lang)/eng-us`, `/exphelp/manual/<remote_id>/(format)/pdf`,
+  `/exphelp/report/(tracker)/<key>`.
 - **Help menu**: the "?" in the header of admin4 and admin4l (and of the classic admin) opens a menu with a search
   field, "Help for this page", up to `[ContextHelp] MenuTopics` related topics, the links of
   `[ContextHelp] MenuLinks[]` and "Open the Help center". Without JavaScript the "?" is a link to the help for the
@@ -457,6 +462,11 @@ below the written pages (`[SearchSettings] TypeBoost[generated]`) and stays off 
 The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change. A rebuild
 also removes what the older index left: the other `index-<signature>.php` files and the cached navigation trees
 (`nav/`) and rendered pages (`render/`) written before it, so the cache holds only what the current index uses.
+The signature of the index covers the listed help files (their paths, sizes and times), the commit each repository
+is at and the settings, not the git index file itself: `git status`, or a commit or checkout that changes no help
+file, keeps the index, the search index and the rendered pages. A new index is built by one process at a time; the
+other requests use the newest index already in the cache until it is ready (the search index likewise), instead
+of each building its own. Removed versions are also dropped from OPcache, so its memory is reclaimed.
 
 ## Languages and accessibility
 
@@ -497,8 +507,8 @@ Directories[]` that has pages and that the interface language switch can choose 
 administration, and comes back to the same page. Below it, how much of the help each translation has ("German: 120
 of 7,265 pages", `expHelpDocumentIndex::languageCoverage()`, counted from the file list without reading a page). A
 translated page links to its English original, and so does the note of a page that is not translated yet: the
-original is the same address with `?lang=eng-us` (the directory name; the old keys `en-us` and `de` are still
-accepted), which shows the page in that language for the one request, with a link back to the reader's language.
+original is the same address with the view parameter `/(lang)/eng-us` (the directory name; the old keys `en-us`
+and `de` are still accepted; a `?lang=` query parameter is not read), which shows the page in that language for the one request, with a link back to the reader's language.
 
 In a right-to-left interface language (Hebrew, Arabic) the pages are mirrored: the navigation tree, the contents
 and the previous/next links swap sides and their arrows turn, while paths, code and the diagnostics stay left to

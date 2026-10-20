@@ -24,7 +24,7 @@
     </header>
 
     {if $help_extension}
-    <form class="a4-help-search a4-help-search-wide" action={'/exphelp/search'|ezurl} method="get" role="search" data-exphelp-search data-exphelp-endpoint={'/exphelp/search'|ezurl} data-exphelp-canonical-base={'/exphelp/search'|ezurl}>
+    <form class="a4-help-search a4-help-search-wide" action={'/exphelp/search'|ezurl} method="post" role="search" data-exphelp-search data-exphelp-endpoint={'/exphelp/search'|ezurl} data-exphelp-canonical-base={'/exphelp/search'|ezurl}>
         <div class="a4-help-search-field">
             <span class="a4-icon a4-bi-search" aria-hidden="true"></span>
             <label class="a4-sr-only" for="help-ext-q">{'Search the documentation of %extension'|i18n( $help_ctx,, hash( '%extension', $help_extension.name ) )|wash}</label>

@@ -19,7 +19,7 @@
  * A language that is not in Directories[] is read in the default language.
  *
  * Until 6.0.15 the directories were doc/en/us/ and doc/de/. LEGACY_DIRECTORIES names them, so an old address
- * (exphelp/viewer/en/us/<id>, doc/en/us/<id>, de/<translated path>, ?lang=en-us) still finds its page.
+ * (exphelp/viewer/en/us/<id>, doc/en/us/<id>, de/<translated path>, /(lang)/en-us) still finds its page.
  *
  *   $languages = expHelpLanguage::fromIni();
  *   $languages->forLocale( 'ger-DE' );                  // 'ger-de'
@@ -27,7 +27,7 @@
  *   $languages->split( 'doc/ger-de/anleitungen/caches.md' ); // array( 'ger-de', 'anleitungen/caches.md' )
  *   $languages->canonical( 'ger-de', 'anleitungen/caches.md' ); // 'guides/caches.md'
  *   $languages->translated( 'ger-de', 'guides/caches.md' );     // 'anleitungen/caches.md'
- *   $languages->resolveDirectory( 'en-us' );            // 'eng-us' (a ?lang= value, old or new)
+ *   $languages->resolveDirectory( 'en-us' );            // 'eng-us' (a /(lang)/ value, old or new)
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -202,7 +202,7 @@ class expHelpLanguage
 
     /**
      * The configured directory a value names, old or new: a directory (eng-us), a locale (ger-DE), an old directory
-     * (en/us, de) or its ?lang= key (en-us). Null when it names no configured directory. For ?lang= and old
+     * (en/us, de) or its /(lang)/ key (en-us). Null when it names no configured directory. For /(lang)/ and old
      * addresses; the files are only ever read from the configured directories.
      *
      * @param mixed $value
@@ -768,7 +768,7 @@ class expHelpLanguage
     }
 
     /**
-     * A directory as a file name part and ?lang= value: eng-us stays eng-us (an old en/us was en-us).
+     * A directory as a file name part and /(lang)/ value: eng-us stays eng-us (an old en/us was en-us).
      *
      * @param string $directory
      * @return string

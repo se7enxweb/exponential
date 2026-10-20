@@ -27,7 +27,7 @@ class Topic extends \Exponential\Runnable\ModuleView
         if ( !\expHelp::isEnabled() || !\expHelpContentProvider::isEnabled() )
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
 
-        $helpId = \expHelp::requestedId( $Params, $_GET );
+        $helpId = \expHelp::requestedId( $Params );
         if ( $helpId === '' )
             return $Module->redirectTo( \expHelp::url( 'dashboard' ) );
 

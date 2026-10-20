@@ -56,7 +56,7 @@ Entwicklungsserver von PHP).
 
 | Bedarf | Detail |
 |---|---|
-| PHP | 8.1 oder neuer; das Engine-Paket verlangt es (`"php": ">=8.1"`) |
+| PHP | 8.0 oder neuer; das Engine-Paket verlangt es (`"php": ">=8.0"` ab dem Release 0.0.4.54, davor `>=8.1`); das Standard-PHP 8.0 von RHEL 9 führt es aus ([Kapitel 2](../../../installation/02-voraussetzungen.md#php-80-und-red-hat-enterprise-linux)) |
 | PHP-Erweiterungen | `sockets` (vom Paket verlangt), `pcntl` und `posix` (Worker forken, ihren Benutzer wechseln), `openssl` (HTTPS) |
 | Ein langlebiger Prozess | vom Tarif erlaubt; Shared Hosting erlaubt meist keinen |
 | Root oder hohe Ports | Ports unter 1024 brauchen root; als root gestartet, behält nur der Elternprozess es |
