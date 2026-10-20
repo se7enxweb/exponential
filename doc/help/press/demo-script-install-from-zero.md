@@ -101,6 +101,8 @@ Install in one command: <link to "Installing Exponential in one command">
 Change the generated password after the first sign-in: <link to "The default administrator password">
 ```
 
+**Installing on camera for a public demo.** If viewers will sign in to the result, install with `EXP_DEMO_MODE=1` in front of the command: the published password is kept as given, and the administration shows a **Demo mode** banner afterwards. Do not show the variable as something every site should set. [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Setting up a demo installation](setting-up-a-demo-installation.md)

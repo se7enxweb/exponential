@@ -71,6 +71,7 @@ The tiers come from [Operating system support](../../os-support.md#web-servers).
 | [Velocity HTTPS certificates](velocity-https-certificates.md) | Your own certificates, Let's Encrypt, the self-signed stand-in, HSTS |
 | [FrankenPHP](frankenphp.md) | The verified binary, its embedded PHP and its limits |
 | [Velocity beside Apache or nginx](velocity-beside-apache-or-nginx.md) | Running both on the same files, behind a proxy or during a migration |
+| [Recipe: run a public demo on LiteSpeed and Plesk](run-a-public-demo-on-litespeed-and-plesk.md) | A public demo in demo mode (`EXP_DEMO_MODE=1`), rebuilt from the current code every two hours |
 
 ## What every setup has in common
 

@@ -171,6 +171,8 @@ Set `PhpFpmService` to the service name to fix it, or to `disabled` when Velocit
 - [ ] `exp:velocity deploy --dry-run` names the right PHP-FPM service.
 - [ ] Panel restrictions documented with their effects.
 
+**Demo mode in a pool.** A public demo can get its environment variable from its own pool: `env[EXP_DEMO_MODE] = 1` (it works with `clear_env = yes`), then reload that version's master. Never in a pool other sites share. [Demo mode for hosts](../security/demo-mode-for-hosts.md), [`php-fpm-pool-demo.conf`](../../../examples/demo-mode/php-fpm-pool-demo.conf).
+
 ## Related pages
 
 - [Control panels: overview](README.md), [Plesk](plesk.md)

@@ -43,6 +43,8 @@ the documentation is [doc/glossary.md](../../glossary.md).
 | Watchdog | an optional systemd timer that starts Velocity again after a crash; `exp:velocity watchdog install` | [Velocity will not start](runbooks/velocity-will-not-start.md) |
 | Worker | a Velocity process that keeps the application in memory and serves requests | [Velocity workers and pools](servers/velocity-workers-and-pools.md) |
 
+**Demo mode** - A public demo's state, switched on by the environment variable `EXP_DEMO_MODE=1` for the site's processes: administrator passwords cannot be changed or reset, the installers accept the published password, the administration shows a banner. Never for a customer's real site. [Demo mode for hosts](security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Hosting companies: start here](hosting-companies-start-here.md)

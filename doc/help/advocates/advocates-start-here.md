@@ -224,6 +224,8 @@ Then follow [Your first week as an advocate](your-first-week-as-an-advocate.md).
 - In the help, search with the audience filter **Advocates**, or open **All pages** and the folder of the advocates.
 - Every page has **Edit on GitHub**: if something here is wrong or missing, fix it. That is advocacy too.
 
+**Demo mode.** Public demos run in demo mode (`EXP_DEMO_MODE=1`): a published administrator sign-in that nobody can change. Explain it accurately: it protects only administrator passwords, and it must never be on a real site. [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [The advocacy ladder](the-advocacy-ladder.md)

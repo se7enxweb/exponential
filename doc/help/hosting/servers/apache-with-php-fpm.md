@@ -194,6 +194,8 @@ add those rules to the administration vhost. See [Static cache](../performance/s
 - [ ] The four routing checks of [Web servers and engines](README.md#what-every-setup-has-in-common) pass.
 - [ ] Support knows which FPM unit serves the site (`exp:velocity deploy --no-velocity --dry-run`).
 
+**Demo mode with Apache and PHP-FPM.** For a public demo, `SetEnv EXP_DEMO_MODE 1` in its virtual host or `.htaccess` reaches PHP-FPM as a FastCGI parameter through `mod_proxy_fcgi`, which `getenv()` reads; `env[EXP_DEMO_MODE] = 1` in the demo's pool does the same. [Demo mode examples](../../../examples/demo-mode/README.md), [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Choosing a web server](choosing-a-web-server.md)

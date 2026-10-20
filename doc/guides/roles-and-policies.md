@@ -277,6 +277,8 @@ siteaccesses; a user without it is sent back to the application with `error=acce
 - Every template is in `design/admin` and `design/admin4`; the look is `role/exp_style.tpl`, scoped to `.exp-roles`.
   No shared stylesheet is changed.
 
+**Demo mode and the Administrator role.** On a public demo (environment variable `EXP_DEMO_MODE=1`) an account whose roles give unlimited access to every module and function, as the role **Administrator** does, counts as an administrator: its password cannot be changed or reset. Accounts with limited roles keep the usual password rules. [Demo mode](../bc/6.0/demo-mode.md).
+
 ## Related pages
 
 - [Roles: policy IDs, sorting and order buttons](../features/6.0/role-policy-order.md)

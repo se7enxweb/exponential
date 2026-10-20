@@ -175,6 +175,8 @@ GenerateKeys=disabled` and the keys provided in settings/override yourself.
 - [ ] `audit/read` held only by the roles that need it.
 - [ ] Disk space for live files and archives monitored; `OnWriteFailure` decided.
 
+**Demo mode events.** `system.demo.mode` (warning, always recorded) marks each process that started with `EXP_DEMO_MODE=1`; refused administrator password changes and resets carry the reason `demo_mode`. On a customer's site either one is an incident. [Demo mode for hosts](demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Security for hosts: overview](README.md)

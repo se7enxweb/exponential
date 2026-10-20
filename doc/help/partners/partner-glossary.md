@@ -41,6 +41,8 @@ This page is for anyone who meets an unfamiliar term in the partner pages.
 | **Upstream** | The original project of code you use or changed | [Contributing extensions back upstream](contributing-extensions-back.md) |
 | **To be defined by the Foundation** | A question the published sources do not answer yet | [Governance: who decides what](governance-and-decisions.md) |
 
+**Demo mode** - The setting of a public demo, through the environment variable `EXP_DEMO_MODE=1`: its published administrator password cannot be changed or reset. [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Partner FAQ](partner-faq.md)

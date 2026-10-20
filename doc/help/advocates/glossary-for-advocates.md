@@ -74,6 +74,8 @@ technical glossary is [the glossary](../../glossary.md); the product and organiz
 | eZpedia | The community encyclopedia |
 | Advocate | A person who helps others find, use and contribute to Exponential ([What an advocate is](what-an-advocate-is.md)) |
 
+**Demo mode** - How a public demo keeps its published administrator sign-in working: with `EXP_DEMO_MODE=1` nobody can change or reset an administrator password. Never on a real site. [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [The glossary](../../glossary.md)

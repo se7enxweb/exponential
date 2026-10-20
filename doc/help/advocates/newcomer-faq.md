@@ -44,6 +44,8 @@ proves it. Check the source before you answer: facts change with releases.
 | How can I help? | Answer a question, fix a help page, translate, report bugs | [The advocacy ladder](the-advocacy-ladder.md) |
 | Can I pay someone to build my site? | Yes, any provider; 7x is one | [Services and hosting](../who-is-7x.md#services-and-hosting) |
 
+**Why does the demo say "Demo mode"?** The public demo publishes its administrator password and runs in demo mode, so nobody can change or reset it and the next visitor can still sign in. It is rebuilt from the current code every few hours. [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Welcoming newcomers](welcoming-newcomers.md)

@@ -199,6 +199,8 @@ The development server runs Velocity next to Plesk's Apache on the same installa
 - [ ] Certificate in Plesk, redirect to HTTPS on; export renewed after each renewal if Velocity or FrankenPHP uses it.
 - [ ] Web server logs added to the log viewer.
 
+**A public demo on Plesk.** Set `EXP_DEMO_MODE=1` for the demo's subscription only: `SetEnv EXP_DEMO_MODE 1` in its `.htaccess` (Apache or LiteSpeed) or its **Additional Apache directives**, or `env[EXP_DEMO_MODE] = 1` through the domain's PHP-FPM settings, and a `EXP_DEMO_MODE=1` line in its **Scheduled Tasks**. Plesk runs each PHP version with its own FPM master: reload the one of the domain's version. Step by step: [Recipe: run a public demo on LiteSpeed and Plesk](../servers/run-a-public-demo-on-litespeed-and-plesk.md).
+
 ## Related pages
 
 - [Control panels: overview](README.md)

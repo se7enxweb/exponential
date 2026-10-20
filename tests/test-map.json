@@ -1905,10 +1905,12 @@
       "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],
     "kernel/private/classes/views/user/password.php": [
-      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+      "tests/tests/kernel/classes/user/expDemoModeTest.php",
+      "tests/tests/design/DemoModeUserTemplatesTest.php"
     ],
     "kernel/private/classes/views/user/forgotpassword.php": [
-      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+      "tests/tests/kernel/classes/user/expDemoModeTest.php",
+      "tests/tests/design/DemoModeUserTemplatesTest.php"
     ],
     "kernel/private/classes/commands/resetuserpassword.php": [
       "tests/tests/kernel/classes/user/expDemoModeTest.php"
@@ -1949,6 +1951,24 @@
     "kernel/setup/steps/ezstep_site_admin.php": [
       "tests/tests/kernel/classes/user/expDemoModeTest.php",
       "tests/tests/kernel/classes/user/expWeakPasswordListTest.php"
+    ],
+    "design/*/templates/user/forgotpassword.tpl": [
+      "tests/tests/design/DemoModeUserTemplatesTest.php"
+    ],
+    "design/*/templates/user/password.tpl": [
+      "tests/tests/design/DemoModeUserTemplatesTest.php"
+    ],
+    "design/*/override/templates/user/forgotpassword.tpl": [
+      "tests/tests/design/DemoModeUserTemplatesTest.php"
+    ],
+    "design/*/override/templates/user/password.tpl": [
+      "tests/tests/design/DemoModeUserTemplatesTest.php"
+    ],
+    "extension/*/design/*/templates/user/forgotpassword.tpl": [
+      "tests/tests/design/DemoModeUserTemplatesTest.php"
+    ],
+    "extension/*/design/*/templates/user/password.tpl": [
+      "tests/tests/design/DemoModeUserTemplatesTest.php"
     ]
   },
   "generated": {

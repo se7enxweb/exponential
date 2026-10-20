@@ -807,6 +807,8 @@ This page is about driving the engine from Exponential. What the engine is, how 
 
 The access rules in "Views and who may open them" above are the ones `exp:velocity` writes into the engine's configuration; they can be stricter than the engine's own defaults described in the control panel page.
 
+**Demo mode under Velocity.** Velocity's workers inherit the environment of the server process. For a public demo, put `EXP_DEMO_MODE=1` into the environment of whatever runs `exp:velocity start` (the unit's `Environment=`, see [`velocity-demo-mode.conf`](../../examples/demo-mode/velocity-demo-mode.conf)); `/etc/vc/envvars` is not exported to the workers. A restart or deploy from a shell starts the new server with that shell's environment, so a shell without the variable switches demo mode off. [Demo mode](demo-mode.md).
+
 ## Related pages
 
 - [Velocity: running Exponential in a persistent-worker web server](../../features/6.0/velocity-persistent-worker-server.md)

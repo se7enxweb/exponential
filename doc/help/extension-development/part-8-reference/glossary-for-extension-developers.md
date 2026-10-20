@@ -59,6 +59,8 @@ Part 8, reference 34, the last page of the book. The terms of Exponential develo
 | view parameter | a `(name)/value` pair in a URL | [View parameters](../part-3-extension-developer/view-parameters.md) |
 | workflow, workflow event | a list of steps run by a trigger, and one step | [The eZWorkflowType API](ezworkflowtype-api.md) |
 
+**Demo mode** - `EXP_DEMO_MODE=1` in the environment: administrator passwords cannot be changed or reset (the `expDemoMode` API, the store guard in `eZUser::store()`), and the installers accept the published demo password. [Demo mode for developers](demo-mode-for-developers.md).
+
 ## Related pages
 
 - Previous: [expservices: remote services for extensions](expservices.md)

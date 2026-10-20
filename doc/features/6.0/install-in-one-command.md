@@ -130,6 +130,8 @@ stopped on (`eZSiteInstaller::abortedStep()`).
   package's `SiteURL` kept.
 - **Maintenance mode** wraps every run: see [Maintenance mode](maintenance-mode.md).
 
+**Public demos.** `EXP_DEMO_MODE=1 ./console exp:install --password=publishing` installs the published demo password as given; in demo mode a well-known or short administrator password (`publish` too) is kept, an empty one is still refused. Keep the variable for the running site. [Demo mode](../../bc/6.0/demo-mode.md), [Recipe: run a public demo on LiteSpeed and Plesk](../../help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md).
+
 ## Related pages
 
 - [Kickstarter: install a whole site from one file](kickstarter-cli.md) (the file-driven variant of the same installer), [Kickstarter on the command line](../../bc/6.0/kickstartercli.md)

@@ -105,6 +105,8 @@ build a template from a site you already run ([6.2.1](../../../install/06-kickst
   run ([4.6](../../../install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)).
 - Deliver and remove `var/log/initial-admin-password` if a password was generated.
 
+**A public demo.** With `EXP_DEMO_MODE=1` in the environment of `exp:kickstarter run`, a well-known or short `[site_admin] Password` (`publish`, `publishing`) is installed as given instead of being replaced; an empty one is still replaced. The run's child process inherits the variable. [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [exp:install for hosts](exp-install.md)

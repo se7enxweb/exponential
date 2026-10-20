@@ -51,6 +51,8 @@ project rebuilds its demo installations on a schedule, so visitors always see a 
   ([Security hardening](../../security-hardening.md)).
 - Do not put customer data or private material on a demo.
 
+**Demo sites with a published sign-in.** Run them in demo mode (`EXP_DEMO_MODE=1`), so visitors cannot change the administrator password. A theme that overrides `user/forgotpassword.tpl` or `user/password.tpl` should show the kernel's notice (`demo_mode_text`, `demo_mode_locked`, read with `first_set()`). [Demo mode for developers](../../extension-development/part-8-reference/demo-mode-for-developers.md).
+
 ## Related pages
 
 - [Demos that sell](../sales/demos-that-sell.md)

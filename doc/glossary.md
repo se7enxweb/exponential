@@ -282,6 +282,8 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 - **zygote**: a helper process of **Velocity** that forks new **workers** so they inherit no visitor connections. [Velocity worker pool](specifications/6.0/velocity-worker-pool.md).
 
+**Demo mode** - The state of an installation whose processes have the environment variable `EXP_DEMO_MODE=1`: a public demo. Administrator passwords cannot be changed or reset, the installers accept the published demo password, and the administration shows a banner. Never on a real site. [Demo mode](bc/6.0/demo-mode.md).
+
 ## Related pages
 
 - [Guides: the learning path](guides/README.md)

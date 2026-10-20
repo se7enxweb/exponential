@@ -89,6 +89,10 @@ Server: <name>          Built by: <name>          Date: <date>          Plan(s):
 - [ ] A backup of the test site is restored on another machine.
 - [ ] The test installation is removed, or kept as a reference site that is not public.
 
+**Demo mode.**
+
+- [ ] No server-wide `EXP_DEMO_MODE` (`/etc/environment`, a global `SetEnv`, the default PHP-FPM pool, a base image): demo mode is set per public demo only ([Demo mode for hosts](../security/demo-mode-for-hosts.md)).
+
 ## Related pages
 
 - [Requirements at a glance](../basics/requirements-at-a-glance.md)

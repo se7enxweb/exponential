@@ -78,3 +78,7 @@ in the environment's variant file. See [The admin4 design](admin4-design.md#sett
 `tests/tests/lib/ezutils/eZINIEnvironmentTest.php` (lib suite): the order of the files per layer, a variant without
 its standard file, unchanged files and cache file name without an environment, a cache file per environment, name
 checks and variant paths.
+
+## Demo mode is not an environment setting
+
+The environment name (`EXP_ENV`, a constant in `config.env.php`) selects settings files. Demo mode is something else: the environment variable `EXP_DEMO_MODE=1` of the server's processes, with no constant and no INI setting, so it never travels with a copy of `config.php` or `settings/`. [Demo mode](../../bc/6.0/demo-mode.md), [Environment variables](../../guides/environment-variables.md).

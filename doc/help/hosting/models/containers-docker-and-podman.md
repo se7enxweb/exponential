@@ -157,6 +157,8 @@ What the chapter explains about it:
 - [ ] Entry point with the "already installed" test; secrets from the environment, not the image.
 - [ ] Cron, logs and backups defined.
 
+**A public demo in a container.** Give the demo service `EXP_DEMO_MODE=1` (`-e`, `--env-file` or `env_file:`; [`docker-demo.env`](../../../examples/demo-mode/docker-demo.env)), never a base image other sites use. With PHP-FPM inside, keep `clear_env = no` or set `env[EXP_DEMO_MODE] = 1` in the pool. [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Kubernetes](kubernetes.md), [Platform as a service](platform-as-a-service.md)

@@ -18,6 +18,11 @@
    The environment name (EXP_ENV) is not set here but in config.env.php, which
    is read before this file and stays out of version control. See
    config.env.php.example.
+
+   Demo mode is not set here either, and cannot be: it comes only from the
+   environment variable EXP_DEMO_MODE=1 of the server's processes, for public
+   demos. A constant of that name in this file does nothing. See
+   doc/bc/6.0/demo-mode.md and doc/guides/environment-variables.md.
 */
 
 /*

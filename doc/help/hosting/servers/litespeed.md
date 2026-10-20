@@ -97,6 +97,8 @@ must be trusted and must set `X-Forwarded-Proto` ([Chapter 8, Behind a reverse p
 - [ ] `open_basedir` effects on preload and other background runs are known and documented for support.
 - [ ] After each upgrade, `.htaccess` is refreshed from the new `.htaccess_root`.
 
+**Demo mode on LiteSpeed.** LiteSpeed reads `SetEnv` in `.htaccess` like Apache and passes it to `lsphp`: `SetEnv EXP_DEMO_MODE 1` in a public demo's `.htaccess` switches demo mode on for its web requests, and `security.log` then shows `demo/mode on ... sapi=litespeed`. [Recipe: run a public demo on LiteSpeed and Plesk](run-a-public-demo-on-litespeed-and-plesk.md).
+
 ## Related pages
 
 - [Apache with PHP-FPM](apache-with-php-fpm.md)

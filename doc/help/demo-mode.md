@@ -78,7 +78,8 @@ would otherwise refuse as too well-known or too short (`publish` or `publishing`
 
 ## Related pages
 
-- [Demo mode for hosts](hosting/security/demo-mode-for-hosts.md)
+- [Demo mode for hosts](hosting/security/demo-mode-for-hosts.md), [Demo mode FAQ](demo-mode-faq.md),
+  [Demo mode problems](hosting/runbooks/demo-mode-problems.md)
 - [Demo mode for developers](extension-development/part-8-reference/demo-mode-for-developers.md)
 - [Demo mode: the upgrade note](../bc/6.0/demo-mode.md)
 - [The default administrator password](default-administrator-password.md),

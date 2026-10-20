@@ -86,6 +86,8 @@ that page, or skips it when the section says `Continue=true`"
 fill in the database page with the database it created, so the customer never sees the database password. Remove the
 file after the install; it holds passwords in clear text.
 
+**A public demo through the wizard.** The setup wizard reads `EXP_DEMO_MODE=1` from the web server's PHP (for example `SetEnv` in `.htaccess`); its **Site administrator** page then shows a **Demo mode** note and accepts the published password, also `publish`. [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [One-click installers](one-click-installers.md)

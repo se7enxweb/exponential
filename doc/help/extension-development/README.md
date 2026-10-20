@@ -76,6 +76,8 @@ what the wizard wrote and can work without it.
 - The product is **Exponential**. It continues the code base of eZ Publish, which its creator discontinued after
   almost 18 years; kernel identifiers such as `eZINI` and file names such as `ezinfo.php` keep their historical names.
 
+**Demo mode.** Code that sets or changes user passwords should respect demo mode (`EXP_DEMO_MODE=1` on public demos): [Demo mode for developers](part-8-reference/demo-mode-for-developers.md).
+
 ## Related pages
 
 - [Develop with Git: grow from user to developer](../develop-with-git.md)

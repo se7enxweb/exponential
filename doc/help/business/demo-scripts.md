@@ -302,6 +302,8 @@ Proposed next step: <a workshop / a test installation for your team / a measurem
 Use the [feature map](feature-highlights-for-customers.md#the-map-need-feature-where-to-show-it-proof) to find the place
 to show any other need.
 
+**On a public demo.** The **Demo mode** banner at the top of the administration is expected: it tells viewers the administrator password is published and cannot be changed. Mention it if asked; skip **Change password** in the script, since it is refused there. [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Feature highlights mapped to customer needs](feature-highlights-for-customers.md)

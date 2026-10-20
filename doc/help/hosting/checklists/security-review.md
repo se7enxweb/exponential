@@ -76,6 +76,10 @@ Site: <domain>        Reviewer: <name>        Date: <date>        Reason: <go-li
       ([Security updates and disclosure](../security/security-updates-and-disclosure.md)).
 - [ ] Your own incident procedure is current ([Compromised site](../runbooks/compromised-site.md)).
 
+**Demo mode.**
+
+- [ ] `grep -r EXP_DEMO_MODE` over the PHP-FPM pools, virtual hosts, `.htaccess` files, systemd units and drop-ins, crontabs, `/etc/environment` and container definitions finds only the configuration of public demos; no production site has a `demo/mode` line in `security.log` or a `system.demo.mode` audit event ([Demo mode for hosts](../security/demo-mode-for-hosts.md)).
+
 ## Related pages
 
 - [Security review summary for leaders](../../leadership/accessibility-security-and-compliance-checklists.md)

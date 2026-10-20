@@ -196,6 +196,8 @@ My project manager:     <role contact in your team>
 Next pipeline sync:     <date>
 ```
 
+**Sending prospects to a demo.** The public demo runs in demo mode: prospects sign in with the published administrator password and cannot change it, so every prospect finds it working. Do not present demo mode as a security feature of real sites; it is only for demos. [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Positioning and value proposition](positioning-and-value-proposition.md)

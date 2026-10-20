@@ -150,6 +150,8 @@ item is open for editing it is grayed out: store or discard the draft first. Whe
 
 More: [Security hardening](security-hardening.md).
 
+**Demo sites.** A public demo publishes its administrator sign-in and runs in demo mode: you can sign in with the published password, but you cannot change or reset it, and **Forgot your password?** sends no mail for an administrator. [Demo mode](demo-mode.md).
+
 ## Learn more
 
 - [Logging into the Editor](logging-into-the-editor.md)

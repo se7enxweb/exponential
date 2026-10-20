@@ -126,6 +126,8 @@ project ... and the row moves up" ([The four tiers](../../os-support.md#the-four
 - [ ] Certificate and HTTPS redirect.
 - [ ] The test plan passed on your platform.
 
+**A public demo on cPanel.** Set `EXP_DEMO_MODE=1` for the demo's account only: `SetEnv EXP_DEMO_MODE 1` in the site's `.htaccess` (Apache or LiteSpeed), and `EXP_DEMO_MODE=1` on its own line at the top of the account's cron jobs. [Demo mode for hosts](../security/demo-mode-for-hosts.md), [Demo mode examples](../../../examples/demo-mode/README.md).
+
 ## Related pages
 
 - [Control panels: overview](README.md), [DirectAdmin](directadmin.md)

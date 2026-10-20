@@ -782,3 +782,7 @@ https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Insta
 | The administrator password is lost | As root: `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`; otherwise authorize with another administrator (`-a <login> -ap <password>`). See [Reset a user password](features/6.0/reset-user-password.md). |
 
 More: [Repairing an installation](bc/6.0/repair.md), [Maintenance mode](features/6.0/maintenance-mode.md).
+
+## Public demos: demo mode
+
+A public demo whose administrator sign-in is published runs with the environment variable `EXP_DEMO_MODE=1`. Every installer (setup wizard, kickstarter, `exp:install`) then installs the published administrator password as given, also a well-known or short one such as `publish` or `publishing` (never an empty one), and afterwards nobody can change or reset an administrator password while the variable is set. Never set it for a real site. See [Demo mode](bc/6.0/demo-mode.md) and the [demo mode examples](examples/demo-mode/README.md).

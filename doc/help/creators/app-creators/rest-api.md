@@ -78,6 +78,8 @@ filter, request, result and response filters) are listed with their settings in
 [Extension points](../../../bc/6.0/rad-extension-points.md#rest-provider). Check permissions in every controller action;
 the framework authenticates, it does not authorize.
 
+**Testing against a public demo.** A demo runs in demo mode: password changes and resets for administrator accounts answer HTTP 403 ("This installation is a public demo: ..."); everything else works as on any site. [Demo mode FAQ](../../demo-mode-faq.md).
+
 ## Related pages
 
 - [OAuth and API keys](oauth-and-api-keys.md)

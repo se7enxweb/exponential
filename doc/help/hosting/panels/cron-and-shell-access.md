@@ -155,6 +155,8 @@ More in [Cronjobs, Troubleshooting](../../../guides/cronjobs.md#17-troubleshooti
 - [ ] `proc_open`, `exec`, `posix_kill` decision documented for the Cronjobs page.
 - [ ] Shell access policy per plan written down.
 
+**Cron on a public demo.** The demo's cron jobs need the same `EXP_DEMO_MODE=1` as its web requests: one line at the top of the crontab (or the panel's cron environment), as in [`crontab-demo`](../../../examples/demo-mode/crontab-demo). [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Control panels: overview](README.md)

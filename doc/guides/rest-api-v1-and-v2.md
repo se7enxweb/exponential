@@ -289,6 +289,8 @@ the route's URL generation, and the feed view handler of the Zeta Components MVC
 (`ezcMvcFeedViewHandler`), which the distribution does not install. Use the `list` route, or the site's RSS export,
 until it is fixed.
 
+**Demo mode.** On a public demo (environment variable `EXP_DEMO_MODE=1`) the web services refuse to change or reset the password of an administrator: `expaccount.reset`, `expaccount.changePassword` and `expuser.setPassword` answer HTTP 403 with the reason, and `expaccount.forgotRequest` sends no key and gives the same answer as for any address. [Demo mode](../bc/6.0/demo-mode.md).
+
 ## Related pages
 
 - [Personal API keys](api-keys.md): making, using and revoking a key; the permission table of the REST interface

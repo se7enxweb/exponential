@@ -25,6 +25,7 @@ book's troubleshooting chapter ([Chapter 12](../../../install/12-troubleshooting
 | [PHP upgrade](php-upgrade.md) | a planned move to a newer PHP version |
 | [Certificate expiry](certificate-expiry.md) | HTTPS warnings, or a certificate about to expire |
 | [Velocity will not start](velocity-will-not-start.md) | the Velocity engine does not come up |
+| [Demo mode problems](demo-mode-problems.md) | demo mode does not show, a demo build fails with a generated password, or demo mode shows on a real site |
 
 ## Rules for every incident
 

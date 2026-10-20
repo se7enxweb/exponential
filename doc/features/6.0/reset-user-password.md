@@ -66,6 +66,8 @@ The login given with `-a` and `-ap` must authenticate and must hold the `Adminis
 A password given on the command line is visible in the process list and in your shell history. Prefer `-g` and change
 the password in the admin after the first sign-in, or clear the history afterwards.
 
+**Demo mode.** With the environment variable `EXP_DEMO_MODE=1` (a public demo) the command refuses to reset the password of an administrator, also with `--allow-root-user`: it prints "This installation is a public demo: the passwords of administrators cannot be changed or reset." and exits with status 1. Other accounts are reset as usual. A demo does not need it after the installation: `exp:install` installs the published password as given in demo mode. [Demo mode](../../bc/6.0/demo-mode.md).
+
 ## Related pages
 
 - [The August 2026 security patches (sign-in checks)](../../specifications/6.0/security-hardening-2026-08.md)

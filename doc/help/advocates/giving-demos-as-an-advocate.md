@@ -116,6 +116,8 @@ Ask and share:   share.exponential.earth/forums   t.me/exponentialcms
 
 Then answer questions. If you do not know: "I will find the source and post it."
 
+**Demos the audience signs in to.** Run them in demo mode (`EXP_DEMO_MODE=1`): the administrator password you show cannot be changed by a participant. Rebuild or reinstall afterwards, since demo mode protects nothing else. [Live demo safety](live-demo-safety.md), [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Live demo safety](live-demo-safety.md)

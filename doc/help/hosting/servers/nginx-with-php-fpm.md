@@ -177,6 +177,8 @@ What can go wrong:
 - [ ] The checks above pass.
 - [ ] The upgrade checklist includes comparing the block with `.htaccess_root`.
 
+**Demo mode with nginx.** nginx passes nothing of its own environment to PHP: for a public demo add `fastcgi_param EXP_DEMO_MODE 1;` where its server block hands requests to PHP-FPM, or `env[EXP_DEMO_MODE] = 1` to its pool. [`nginx-fastcgi-demo.conf`](../../../examples/demo-mode/nginx-fastcgi-demo.conf), [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Apache with PHP-FPM](apache-with-php-fpm.md)

@@ -131,6 +131,8 @@ Engine-specific notes are in [7.9](../../../install/07-console-install.md#79-exa
 database pages of this section, from [SQLite for hosts](../basics/sqlite-for-hosts.md) to
 [MySQL for hosts](../basics/mysql-for-hosts.md).
 
+**Provisioning a public demo.** `EXP_DEMO_MODE=1 ./console exp:install --password=<the published password> ...` installs the published administrator password as given, also a well-known or short one (`publish`, `publishing`); without the variable it is replaced by a generated one in `var/log/initial-admin-password`, which a demo build should treat as a failure. Never provision a customer's site with the variable. [Recipe: run a public demo on LiteSpeed and Plesk](../servers/run-a-public-demo-on-litespeed-and-plesk.md).
+
 ## Related pages
 
 - [One-click installers](one-click-installers.md)

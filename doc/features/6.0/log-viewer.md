@@ -627,3 +627,7 @@ Numeric settings are kept within safe bounds whatever the file says (for example
   safety, the regular expression limit, the search, the rate limit and the actions on throwaway files; the keys and
   the configured logs (`expLogKeyTest`), the permalinks and the old links (`expLogPermalinkTest`), the web server's
   formats (`expLogWebServerFormatsTest`).
+
+## Demo mode lines
+
+On a public demo (environment variable `EXP_DEMO_MODE=1`) every process writes one `demo/mode on pid=<pid> sapi=<sapi> ...` line to `security.log`, in the request classifier's format, so **Setup > Log files** groups them under `demo/mode`. On a real site such a line means the variable reached it. [Demo mode](../../bc/6.0/demo-mode.md).

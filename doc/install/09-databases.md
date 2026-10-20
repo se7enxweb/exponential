@@ -1036,6 +1036,8 @@ how the Oracle and MongoDB support were added. The work list (a driver on `sqlsr
 lacks, a schema handler, SQL and update files, installer entries, tests) is in
 [Database support](../help/database-support.md#microsoft-sql-server-possible-with-additional-work).
 
+**SQLite for public demos.** SQLite is the usual database of a public demo that is rebuilt from scratch every few hours: `EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password=<the published password>` installs one in about a minute, with nothing to drop between builds. Demo mode itself does not depend on the database engine ([Demo mode](../bc/6.0/demo-mode.md)).
+
 ## References
 
 In this repository:

@@ -171,6 +171,8 @@ need logrotate, since the kernel does not write them ([10.10](../../../install/1
 - [ ] Log health shows no files the web server cannot write.
 - [ ] Web server logs are configured in the viewer where support staff need them.
 
+**Demo mode in Setup > Log files.** `security.log` groups the lines of processes running in demo mode as `demo/mode`; one line per process, so a busy demo adds a line per new worker, not per request. [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Request logs](request-logs.md), [Security log](security-log.md)

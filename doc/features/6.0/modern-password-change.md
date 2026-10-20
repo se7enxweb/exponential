@@ -127,3 +127,7 @@ The page gets new template variables, all optional: `$password_changed`, `$passw
 `$error_summary`, `$field_ids`, `$min_length`, `$password_js_config_json` and a few more. Old templates keep
 working unchanged. The variables and the `data-exp-password-*` hooks of the shared script are listed in
 [the compatibility note](../../bc/6.0/user-password-change.md).
+
+## Demo mode
+
+On a public demo (environment variable `EXP_DEMO_MODE=1`) the page refuses to change the password of an administrator: it shows "This installation is a public demo: the passwords of administrators cannot be changed or reset." before anything is typed (`demo_mode_locked`, `demo_mode_text`) and in the error summary after a post, and nothing is changed. A design that overrides `user/password.tpl` shows the notice with `first_set( $demo_mode_locked, false() )`. [Demo mode](../../bc/6.0/demo-mode.md).

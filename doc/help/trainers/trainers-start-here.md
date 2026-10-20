@@ -120,6 +120,8 @@ how to find out who your learners are.
   folder of the trainers.
 - Every page has **Edit on GitHub**: if a lesson is wrong or a step changed, fix it for every trainer after you.
 
+**Training on a shared demo.** A training installation that every participant signs in to as an administrator can run in demo mode (`EXP_DEMO_MODE=1`), so no participant can lock the others out by changing the password; reinstall it between courses. [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Course catalogue](course-catalogue.md)

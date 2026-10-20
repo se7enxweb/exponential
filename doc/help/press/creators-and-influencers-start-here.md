@@ -113,6 +113,8 @@ Exponential Foundation reviews your content before you publish it, and these pag
 
 Where a source exists, the pages above link it. Where it does not, say "the sources do not say".
 
+**Recording on a public demo.** A demo whose sign-in is published shows a yellow **Demo mode** banner in the administration; that is expected, and its administrator password cannot be changed. For a demo of your own that viewers sign in to, see [Setting up a demo installation](setting-up-a-demo-installation.md#a-demo-that-others-sign-in-to) and the [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Press, media and influencers: start here](press-start-here.md)

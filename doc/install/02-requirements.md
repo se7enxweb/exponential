@@ -414,6 +414,8 @@ Read Velocity's memory as the control panel shows it, the proportional set size 
 the resident set size of each forked worker counts the memory they share again and again, and adds up to far more
 than the machine really uses.
 
+**Environment variables.** Exponential reads a few environment variables, listed in [Environment variables](../guides/environment-variables.md). One of them, `EXP_DEMO_MODE=1`, marks an installation as a public demo ([Demo mode](../bc/6.0/demo-mode.md)); a production server must not set it for any process of a real site.
+
 ## References
 
 In this repository:

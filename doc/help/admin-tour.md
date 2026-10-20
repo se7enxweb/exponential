@@ -269,6 +269,8 @@ and its zone. **Back** returns to the editor.
 Which pages use a layout is decided by its **mappings**; see
 [Which pages use a layout](layouts-editor.md#which-pages-use-a-layout).
 
+**Demo mode.** On a public demonstration site every page of the administration starts with a yellow **Demo mode** banner. It means anyone may know the administrator password and that it cannot be changed there; do not enter anything private. [Demo mode](demo-mode.md).
+
 ## Next steps
 
 - [Creating and editing content](editing-content.md)

@@ -291,6 +291,8 @@ The idea and the draft handling come from LoveStack (Mugo Web, commit 826e1d4647
 - [ ] Two-factor on for administrators
 - [ ] `exp:user-login-check` reports every login belongs to one account, and the login index is unique
 
+**Demo mode in the audit and the logs.** While the environment variable `EXP_DEMO_MODE=1` is set, every process records once the audit event `system.demo.mode` (warning, always on) and a `demo/mode` line in `var/log/security.log`, and each refused administrator password change or reset is `access.user.password.change.failed` or `access.user.password.reset.failed` with the reason `demo_mode`. On a production site any of these means the variable reached it. [Demo mode](../bc/6.0/demo-mode.md).
+
 ## Related pages
 
 - The threats one by one, and request-shield in front: [Security hardening](../help/security-hardening.md); the administrator account: [Change the administrator password](../help/change-the-admin-password.md), [The default administrator password](../help/default-administrator-password.md).

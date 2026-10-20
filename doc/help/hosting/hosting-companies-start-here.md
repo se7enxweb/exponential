@@ -142,6 +142,8 @@ A plan for a team that is about to add Exponential to its offer.
 - **Other hosts and partners.** The Partners section of this help describes the partner programs; the community
   places are listed on [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#community-places).
 
+**Public demos.** Hosting a public demo of Exponential, with a published administrator sign-in? Run it in demo mode (`EXP_DEMO_MODE=1` for that site only): [Demo mode for hosts](security/demo-mode-for-hosts.md), [Recipe: run a public demo on LiteSpeed and Plesk](servers/run-a-public-demo-on-litespeed-and-plesk.md), [Demo mode problems](runbooks/demo-mode-problems.md).
+
 ## Related pages
 
 - [Choosing hosting, database and operating system](../leadership/choosing-hosting-database-and-os.md) (for project managers)

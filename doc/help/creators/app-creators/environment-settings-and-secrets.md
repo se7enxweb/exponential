@@ -61,6 +61,8 @@ Ship the key in your extension's `expdemo.ini` as an empty value with a comment,
 - [ ] Each environment has its own keys; production keys are never on development machines.
 - [ ] A leaked key can be revoked without a code change.
 
+**Demo mode.** The environment variable `EXP_DEMO_MODE=1` belongs to public demos only: an app that talks to a demo gets HTTP 403 when it tries to change or reset an administrator's password. [Environment variables](../../../guides/environment-variables.md), [Demo mode](../../../bc/6.0/demo-mode.md).
+
 ## Related pages
 
 - [Settings and INI files in your application](settings-and-ini-files.md)

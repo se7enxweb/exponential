@@ -694,6 +694,8 @@ ErrorFile=cronjobs/error.log
 4 variables in [AdminSettings] of cronjob.ini in effect
 ```
 
+**Cronjobs on a public demo.** On a demo running in demo mode, give the cron jobs the same environment as the web server: put `EXP_DEMO_MODE=1` on its own line at the top of the crontab (example: [`crontab-demo`](../examples/demo-mode/crontab-demo)). Each cronjob process then records `demo/mode ... sapi=cli` once in `var/log/security.log`. [Demo mode](../bc/6.0/demo-mode.md).
+
 ## References
 
 - Feature page: [Cronjobs console](../features/6.0/cronjobs-console.md)

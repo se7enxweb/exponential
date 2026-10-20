@@ -78,6 +78,10 @@ Source: [Security hardening](../security-hardening.md), `doc/install/13-security
 - [ ] A staging copy for each customer site to test Exponential releases ([Testing releases](testing-releases.md))
 - [ ] A documented path to the next PHP version before the current one ends its support
 
+**Demo mode.**
+
+- [ ] Public demos run in demo mode (`EXP_DEMO_MODE=1` in the demo's own pool, virtual host, unit and crontab); no customer site has the variable, and `demo/mode` lines in a customer's `security.log` raise an alert ([Demo mode for hosts](../hosting/security/demo-mode-for-hosts.md)).
+
 ## Related pages
 
 - [Hosting partners](hosting-partners.md)

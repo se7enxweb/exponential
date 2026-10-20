@@ -82,3 +82,7 @@ Each one goes through the vendor's own migration pages point by point and says w
 - [Backwards compatibility notes for 6.0](../bc/6.0/): what changed and what a site has to do about it, per topic.
 - [Changelogs](../changelogs/6.0/): what each 6.0.x release changed.
 - [The project README](../../README.md): an overview of Exponential and its features.
+
+## Public demos
+
+Installing a **public demo**, whose administrator sign-in is published? Set the environment variable `EXP_DEMO_MODE=1` for the installation and for every PHP process of the demo afterwards: the installers then accept the published password (`publish`, `publishing`), and administrator passwords cannot be changed or reset. Chapters 5, 6, 7 and 13 have a note each; the whole story is [Demo mode](../bc/6.0/demo-mode.md), the setup on a server [Recipe: run a public demo on LiteSpeed and Plesk](../help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md).

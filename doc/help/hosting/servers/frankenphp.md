@@ -163,6 +163,8 @@ php bin/php/console exp:velocity ctl version   --engine=frankenphp --allow-root-
 - [ ] `Workers` left at the default or set from a measurement.
 - [ ] Plans that rely on the response cache use `qbix` instead.
 
+**Demo mode under FrankenPHP.** Set `EXP_DEMO_MODE=1` in the environment of the FrankenPHP process (its unit, or the environment Velocity starts it with) for a public demo only. [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Velocity for hosts](velocity-for-hosts.md)

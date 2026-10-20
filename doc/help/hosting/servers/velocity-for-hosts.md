@@ -257,6 +257,8 @@ From [Chapter 8, Checklist](../../../install/08-serving-the-site.md#89-checklist
 - [ ] The panel password set, `Remote` left disabled, a dashboard token stored in your secrets store.
 - [ ] `var/` and `settings/` writable by the one user that runs PHP; no root-owned files in `var/`.
 
+**Demo mode under Velocity.** Workers inherit the server's environment: put `EXP_DEMO_MODE=1` into the unit that starts Velocity ([`velocity-demo-mode.conf`](../../../examples/demo-mode/velocity-demo-mode.conf)) and restart through it. `/etc/vc/envvars` is not exported to the workers, and `exp:velocity restart` or `deploy` from a shell without the variable switches demo mode off. [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Velocity workers and pools](velocity-workers-and-pools.md)

@@ -81,6 +81,8 @@ and regenerate the autoloads. Call it as `<root>/ezjscore/call/expmyext::itemNam
 - The ezjscore policy `ezjscore/call` still applies ([ezjscore server functions reference](ezjscore-server-functions-reference.md)).
 - Never return passwords, tokens or personal data a caller does not need.
 
+**Demo mode.** In demo mode (`EXP_DEMO_MODE=1`) the password methods refuse administrators: `requireAcceptablePassword()` throws HTTP 403 with `expDemoMode::refusalText()`, and `expaccount.forgotRequest` makes no key for an administrator. A service of your own that changes passwords should ask `expDemoMode::protectsPassword()` first. [Demo mode for developers](demo-mode-for-developers.md).
+
 ## Related pages
 
 - Previous: [The help system for extensions](help-system-for-extensions.md)

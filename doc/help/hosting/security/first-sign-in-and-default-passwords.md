@@ -137,6 +137,8 @@ be an attack. Keep this procedure next to the restore procedure, and test it.
 - [ ] Migrated sites: administrator password replaced with `exp:resetuserpassword`.
 - [ ] Break-glass procedure written down and tested.
 
+**Public demos.** A demo that publishes its sign-in runs with `EXP_DEMO_MODE=1`: the installers keep the published password (`publish`, `publishing`) as given, and nobody can change or reset an administrator password while the variable is set. This is the one case where a known administrator password is intended. [Demo mode for hosts](demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Security for hosts: overview](README.md)

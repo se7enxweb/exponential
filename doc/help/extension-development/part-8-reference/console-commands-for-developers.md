@@ -72,6 +72,8 @@ Every script in an active extension's `bin/php/` (and its command classes) appea
 - `-s <siteaccess>` runs a command in a siteaccess's settings.
 - Most commands that change data have `--dry-run`; use it first.
 
+**Demo mode and the console.** With `EXP_DEMO_MODE=1` in the shell, every command prints `Demo mode is on (EXP_DEMO_MODE=1) ...` on standard error and records `demo/mode ... sapi=cli` once; `exp:resetuserpassword` refuses administrators, and `exp:install` and the kickstarter keep a well-known or short administrator password. [Demo mode for developers](demo-mode-for-developers.md).
+
 ## Related pages
 
 - Previous: [INI files an extension author meets](ini-files-for-extension-authors.md)

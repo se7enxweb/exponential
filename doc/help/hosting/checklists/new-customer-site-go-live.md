@@ -85,6 +85,10 @@ Site: <domain>        Customer: <customer>        Go-live: <date>        Checked
 - [ ] The SLA and the backup retention are confirmed in writing.
 - [ ] The site's record is complete: versions, database engine, engine, extensions, contacts.
 
+**Demo mode.**
+
+- [ ] Demo mode off: `EXP_DEMO_MODE` is set for none of the site's processes (pool, virtual host, `.htaccess`, unit, crontab); no **Demo mode** banner in the administration; no `demo/mode` line in `var/log/security.log` ([Demo mode for hosts](../security/demo-mode-for-hosts.md)).
+
 ## Related pages
 
 - [New server checklist](new-server.md)

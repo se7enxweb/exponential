@@ -95,6 +95,8 @@ read-only. A copy with invented content is better.
 - [Giving demos as an advocate](../../../advocates/giving-demos-as-an-advocate.md)
 - [Demo scripts](../../../business/demo-scripts.md): click-by-click demos of 5, 15 and 45 minutes.
 
+**Demo mode for shared sign-ins.** When participants share a published administrator sign-in, run the installation in demo mode (`EXP_DEMO_MODE=1`): the password cannot be changed or reset during the session. It does not undo other changes; reinstall afterwards. [Demo mode FAQ](../../../demo-mode-faq.md).
+
 ## Related pages
 
 - [Module 4: Delivering a course](README.md)

@@ -1303,6 +1303,8 @@ What can go wrong behind a proxy:
 
 ---
 
+**A public demo.** A demo whose administrator sign-in is published needs the environment variable `EXP_DEMO_MODE=1` in the PHP of every server that serves it: `SetEnv EXP_DEMO_MODE 1` (Apache, LiteSpeed), `env[EXP_DEMO_MODE] = 1` (PHP-FPM pool), `fastcgi_param EXP_DEMO_MODE 1` (nginx) or the environment of the unit that starts Velocity. Ready-made files: [Demo mode examples](../examples/demo-mode/README.md); background: [Demo mode](../bc/6.0/demo-mode.md).
+
 ## 8.10 References
 
 In this repository:

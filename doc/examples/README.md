@@ -39,6 +39,7 @@ The rules for writing code (naming, file layout, security, templates without inl
 | [IIS](web-servers/iis.md) | `web.config` with URL Rewrite |
 | [PHP-FPM](web-servers/php-fpm.md) | A pool for one site |
 | [Velocity](web-servers/velocity.md) | `velocity.ini` overrides, the `/etc/vc` tree and a systemd unit |
+| [Demo mode](demo-mode/README.md) | `EXP_DEMO_MODE=1` for a public demo: `.htaccess`, virtual host, PHP-FPM pool, nginx, a systemd drop-in, a crontab, a container environment and a rebuild script |
 
 `staticcache_offload.conf` adds rules that serve pages from the static cache directly. See
 [Apache .htaccess](web-servers/apache-htaccess.md).

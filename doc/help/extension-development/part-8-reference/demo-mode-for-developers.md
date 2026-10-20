@@ -107,6 +107,10 @@ does: only there does `eZUser::validatePassword()` accept it, and only while dem
   page shows the mode of the request that filled the cache.
 - `user/password.tpl` gets `demo_mode_locked` and `demo_mode_text`, `user/forgotpassword.tpl` `demo_mode_text` and
   `demo_mode_refused`, `setup/init/site_admin.tpl` `demo_mode`. All are optional: use `first_set()`.
+- A design that overrides `user/forgotpassword.tpl` or `user/password.tpl` must show the notice in its own markup,
+  without inline CSS, for example
+  `{if first_set( $demo_mode_text, '' )|ne( '' )}<div class="warning"><p>{$demo_mode_text|wash}</p></div>{/if}`.
+  `tests/tests/design/DemoModeUserTemplatesTest.php` checks every such override in the tree.
 
 ## Persistent workers
 
@@ -131,7 +135,8 @@ as a pure function.
 ## Related pages
 
 - [Demo mode: the upgrade note](../../../bc/6.0/demo-mode.md)
-- [Demo mode](../../demo-mode.md) (administrators), [Demo mode for hosts](../../hosting/security/demo-mode-for-hosts.md)
+- [Demo mode](../../demo-mode.md) (administrators), [Demo mode for hosts](../../hosting/security/demo-mode-for-hosts.md),
+  [Demo mode FAQ](../../demo-mode-faq.md), [Demo mode problems](../../hosting/runbooks/demo-mode-problems.md)
 - [eZUser and access checks](ezuser-and-access.md)
 - [Security in extensions](../part-3-extension-developer/security-in-extensions.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

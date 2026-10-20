@@ -131,6 +131,8 @@ first sign-in.
 
 ![My notification settings: the parts of the site you follow and how often you get mail about them](images/accounts/notification-settings.webp)
 
+**On a public demo** (a **Demo mode** banner in the administration) the passwords of administrator accounts cannot be changed or reset; other accounts work as usual. [Demo mode](demo-mode.md).
+
 ## Learn more
 
 - [Two-step sign-in](../guides/two-factor-login.md), for administrators who set it up.

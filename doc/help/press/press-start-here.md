@@ -172,6 +172,8 @@ Longer and shorter versions you may copy are on [Boilerplate descriptions you ma
 - Each page has **Edit on GitHub**. If a fact here is wrong or out of date, tell us there or on the
   [community issue tracker](https://github.com/se7enxweb/exponential-community/issues).
 
+**Public demos.** The project's public demo runs in demo mode: you can sign in with the published administrator password, and nobody can change it, so it keeps working for the next visitor. A yellow **Demo mode** banner says so in the administration. [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Exponential in brief](exponential-in-brief.md)

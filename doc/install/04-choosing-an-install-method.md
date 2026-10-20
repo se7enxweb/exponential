@@ -373,6 +373,8 @@ tail -n 20 var/log/setup.log
 
 ---
 
+**Installing a public demo.** Every method works for a public demo whose administrator password is published: run it with the environment variable `EXP_DEMO_MODE=1` and give the published password; the installers then install it as given, also `publish` or `publishing`. For a demo rebuilt on a schedule, `exp:install` on SQLite is the usual choice ([Recipe: run a public demo on LiteSpeed and Plesk](../help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md), [Demo mode](../bc/6.0/demo-mode.md)).
+
 ## References
 
 In this repository:

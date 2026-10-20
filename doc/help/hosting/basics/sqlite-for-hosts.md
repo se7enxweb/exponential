@@ -183,6 +183,8 @@ Database size is rarely the reason. See [Changing the database engine](../migrat
 - [ ] Backups with `.backup` or `VACUUM INTO`, checked with `PRAGMA integrity_check`.
 - [ ] Monitoring for "database is busy" in `var/log/error.log`.
 
+**Public demos on SQLite.** A demo rebuilt every few hours fits SQLite well: each build installs a fresh database file with `exp:install --db=sqlite` in demo mode (`EXP_DEMO_MODE=1`), and the old build is removed with its file. [Recipe: run a public demo on LiteSpeed and Plesk](../servers/run-a-public-demo-on-litespeed-and-plesk.md).
+
 ## Related pages
 
 - [Databases in the official order](databases-in-the-official-order.md)

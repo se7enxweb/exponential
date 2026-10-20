@@ -102,7 +102,9 @@ script must not write the variable into `config.php`, `settings/` or anything th
 
 ## Related pages
 
-- [Demo mode](../../demo-mode.md) (for administrators)
+- [Demo mode](../../demo-mode.md) (for administrators), [Demo mode FAQ](../../demo-mode-faq.md)
+- [Recipe: run a public demo on LiteSpeed and Plesk](../servers/run-a-public-demo-on-litespeed-and-plesk.md),
+  [Demo mode problems](../runbooks/demo-mode-problems.md), [Demo mode examples](../../../examples/demo-mode/README.md)
 - [Demo mode: the upgrade note](../../../bc/6.0/demo-mode.md)
 - [First sign-in and default passwords](first-sign-in-and-default-passwords.md)
 - [Hardening for hosts](hardening-for-hosts.md), [Security for hosts: overview](README.md)

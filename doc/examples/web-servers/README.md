@@ -66,6 +66,8 @@ Run the same requests against your own server with the commands in
   content cache without starting PHP (`.htaccess_root_static` is `.htaccess_root` with them already in place).
 - [`../README.md`](../README.md): every example of the documentation.
 
+**Public demos.** The settings that switch demo mode on for each of these servers (`EXP_DEMO_MODE=1`) are in [Demo mode examples](../demo-mode/README.md).
+
 ## Related pages
 
 - [Chapter 8, Serving the site](../../install/08-serving-the-site.md): Velocity, Apache, nginx and FrankenPHP step by step.

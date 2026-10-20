@@ -303,6 +303,8 @@ When you report a problem, include the version (`php bin/php/console --version`)
 version, the engine that serves the site, the exact message and the matching lines of `var/log/error.log`. Remove
 passwords and personal data from logs before you share them.
 
+**Demo mode.** A **Demo mode** banner, an administrator password that cannot be changed ("This installation is a public demo: the passwords of administrators cannot be changed or reset."), or an installer that keeps a well-known password: the process has the environment variable `EXP_DEMO_MODE=1`. On a demo that is intended; on a real site remove the variable. A demo whose banner is missing, or whose build fails because the installer generated a password: [Demo mode problems](../help/hosting/runbooks/demo-mode-problems.md).
+
 ## References
 
 In this repository:

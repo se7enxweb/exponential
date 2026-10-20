@@ -203,6 +203,8 @@ engine current as well: [Security updates and disclosure](security-updates-and-d
 The setting-by-setting go-live list is [13.16](../../../install/13-security-hardening.md#1316-go-live-checklist);
 the recurring review is the [Security review checklist](../checklists/security-review.md).
 
+**Demo mode stays off.** `EXP_DEMO_MODE=1` installs and keeps a known administrator password; set it only for a public demo's own pool, virtual host or unit, never server-wide or in a template, and alert on `demo/mode` lines in the `security.log` of customer sites. [Demo mode for hosts](demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [Security for hosts: overview](README.md)

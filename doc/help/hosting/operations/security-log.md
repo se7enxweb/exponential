@@ -147,6 +147,8 @@ From the project's own checklist ([Security hardening](../../security-hardening.
 - [ ] The audit key file is in every backup.
 - [ ] Someone reviews the digest of `security.log` weekly.
 
+**`demo/mode` lines.** Every process that starts with the environment variable `EXP_DEMO_MODE=1` writes one line: `demo/mode on pid=<pid> sapi=<sapi> EXP_DEMO_MODE=1: ...`. On a public demo that is expected; on any other site it means demo mode reached it: alert on it. [Demo mode problems](../runbooks/demo-mode-problems.md).
+
 ## Related pages
 
 - [Request logs](request-logs.md)

@@ -141,6 +141,8 @@ The troubleshooting section of the guide covers more cases: [Cronjobs, section 1
 - [ ] On several nodes, only one node runs the crontab.
 - [ ] Runbooks for maintenance windows say which parts to pause.
 
+**Cron on a public demo.** A demo in demo mode needs `EXP_DEMO_MODE=1` in its crontab too, or its cronjobs run with demo mode off. Each cronjob process then logs `demo/mode ... sapi=cli` once in `security.log`. [`crontab-demo`](../../../examples/demo-mode/crontab-demo), [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+
 ## Related pages
 
 - [The cronjob console](cronjob-console.md)

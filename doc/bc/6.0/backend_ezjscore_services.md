@@ -2406,6 +2406,8 @@ The background jobs for large operations: list and follow them, estimate whether
 Total: 350 content services in 15 domains (112 writes).
 <!-- expservices-content:end -->
 
+**Demo mode.** With the environment variable `EXP_DEMO_MODE=1` (a public demo) the account and user services refuse to change or reset an administrator's password: HTTP 403 with "This installation is a public demo: the passwords of administrators cannot be changed or reset." for `expaccount.reset`, `expaccount.changePassword` and `expuser.setPassword`; no key and no mail for an administrator from `expaccount.forgotRequest`. [Demo mode](demo-mode.md).
+
 ## Related pages
 
 - [Remote services (expservices) feature page](../../features/6.0/remote-services-expservices.md)

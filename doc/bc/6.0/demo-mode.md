@@ -32,6 +32,7 @@ demo on purpose. Nothing changes there.
 10. [For developers](#for-developers)
 11. [Compatibility](#compatibility)
 12. [Tests](#tests)
+13. [Where else demo mode is documented](#where-else-demo-mode-is-documented)
 
 ## What demo mode does
 
@@ -216,6 +217,13 @@ swaps the new site in. With demo mode it should set the variable twice:
 The variable belongs only to the demo's own user and virtual host. The script must not write it into `config.php`,
 `settings/` or anything else that is copied to other sites.
 
+That is how the project's always-current demo runs since 19 October 2026, on LiteSpeed with `lsphp`: its build script
+exports `EXP_DEMO_MODE=1` for every step, `exp:install` takes the published password as given, a generated password
+fails the build (the old reset step is gone), and each build's `.htaccess` gets `SetEnv EXP_DEMO_MODE 1`;
+`security.log` shows `demo/mode on ... sapi=litespeed`, and the sign-in and forgot-password pages show the notice. The
+generic shape: [Recipe: run a public demo on LiteSpeed and Plesk](../../help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md)
+and [`install-demo-sqlite.sh`](../../examples/demo-mode/install-demo-sqlite.sh).
+
 ## For developers
 
 - `expDemoMode::enabled()`: the mode is on (`EXP_DEMO_MODE` is exactly `1`); read on every call.
@@ -255,10 +263,68 @@ The variable belongs only to the demo's own user and virtual host. The script mu
   audit catalogue and the catalogues.
 - `expAuditRecordTest` counts the new audit event.
 
+## Where else demo mode is documented
+
+Every page below says what it needs to about demo mode and links back here.
+
+- **For each audience:** [Demo mode](../../help/demo-mode.md) (administrators), [Demo mode FAQ](../../help/demo-mode-faq.md),
+  [Demo mode for hosts](../../help/hosting/security/demo-mode-for-hosts.md),
+  [Demo mode for developers](../../help/extension-development/part-8-reference/demo-mode-for-developers.md).
+- **Recipes and troubleshooting:** [Recipe: run a public demo on LiteSpeed and Plesk](../../help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md),
+  [Runbook: demo mode problems](../../help/hosting/runbooks/demo-mode-problems.md),
+  [Demo mode examples](../../examples/demo-mode/README.md) (`.htaccess`, virtual host, PHP-FPM pool, nginx, systemd
+  drop-in, crontab, container environment, a rebuild script), [Environment variables](../../guides/environment-variables.md).
+- **Installation:** [the overview](../../INSTALL.md), [the chapters' index](../../install/README.md),
+  [2 Requirements](../../install/02-requirements.md), [4 Choosing an install method](../../install/04-choosing-an-install-method.md),
+  [5 Setup wizard](../../install/05-setup-wizard.md), [6 Kickstarter](../../install/06-kickstarter.md),
+  [7 exp:install](../../install/07-console-install.md), [8 Serving the site](../../install/08-serving-the-site.md),
+  [9 Databases](../../install/09-databases.md), [10 After installing](../../install/10-after-installing.md),
+  [11 Upgrading](../../install/11-upgrading.md), [12 Troubleshooting](../../install/12-troubleshooting.md),
+  [13 Security hardening](../../install/13-security-hardening.md), [Installing in one command](../../features/6.0/install-in-one-command.md).
+- **Upgrading and settings:** [Upgrading](../../guides/upgrading.md), [Environment settings](../../features/6.0/environment-settings.md),
+  `config.php-RECOMMENDED` and `config.env.php.example` (demo mode is not a constant),
+  [Well-known passwords are refused](weak-passwords-and-reset-key-lifetime.md).
+- **Users, passwords and roles:** [Changing your password](../../features/6.0/modern-password-change.md),
+  [Reset a user password](../../features/6.0/reset-user-password.md), [Roles and policies](../../guides/roles-and-policies.md),
+  [Change the administrator password](../../help/change-the-admin-password.md),
+  [The default administrator password](../../help/default-administrator-password.md),
+  [Accounts and sign-in](../../help/accounts-and-sign-in.md), [Logging into the admin](../../help/logging-into-the-admin.md).
+- **Security, audit and logs:** [Audit](audit.md), [Security and audit](../../guides/security-and-audit.md),
+  [Log viewer](../../features/6.0/log-viewer.md), [Security hardening](../../help/security-hardening.md),
+  [Hardening for hosts](../../help/hosting/security/hardening-for-hosts.md),
+  [Audit trail for hosts](../../help/hosting/security/audit-trail.md), [security.log](../../help/hosting/operations/security-log.md),
+  [First sign-in and default passwords](../../help/hosting/security/first-sign-in-and-default-passwords.md).
+- **Servers, panels and cron:** [Velocity engines](velocity-engines.md), [Velocity for hosts](../../help/hosting/servers/velocity-for-hosts.md),
+  [LiteSpeed](../../help/hosting/servers/litespeed.md), [Apache with PHP-FPM](../../help/hosting/servers/apache-with-php-fpm.md),
+  [nginx with PHP-FPM](../../help/hosting/servers/nginx-with-php-fpm.md), [FrankenPHP](../../help/hosting/servers/frankenphp.md),
+  [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md),
+  [PHP selection and FPM pools](../../help/hosting/panels/php-selection-and-fpm-pools.md),
+  [Cron and shell access](../../help/hosting/panels/cron-and-shell-access.md), [Cron jobs](../../help/hosting/operations/cron-jobs.md),
+  [Cronjobs](../../guides/cronjobs.md), [Containers](../../help/hosting/models/containers-docker-and-podman.md),
+  [SQLite for hosts](../../help/hosting/basics/sqlite-for-hosts.md), the hosting checklists
+  ([new server](../../help/hosting/checklists/new-server.md), [go-live](../../help/hosting/checklists/new-customer-site-go-live.md),
+  [security review](../../help/hosting/checklists/security-review.md)), and provisioning with
+  [exp:install](../../help/hosting/provisioning/exp-install.md), [the kickstarter](../../help/hosting/provisioning/kickstarter.md)
+  and [the setup wizard](../../help/hosting/provisioning/setup-wizard-on-shared-hosting.md).
+- **Web services and developers:** [Services](backend_ezjscore_services.md), [REST API](../../guides/rest-api-v1-and-v2.md),
+  [expservices](../../help/extension-development/part-8-reference/expservices.md),
+  [eZUser and access](../../help/extension-development/part-8-reference/ezuser-and-access.md),
+  [Console commands](../../help/extension-development/part-8-reference/console-commands-for-developers.md).
+- **Glossaries:** [Glossary](../../glossary.md), [for hosts](../../help/hosting/glossary-for-hosts.md),
+  [for extension developers](../../help/extension-development/part-8-reference/glossary-for-extension-developers.md),
+  [for advocates](../../help/advocates/glossary-for-advocates.md), [for partners](../../help/partners/partner-glossary.md).
+- **Press, advocates, trainers, partners and sales:** [Setting up a demo installation](../../help/press/setting-up-a-demo-installation.md),
+  [Press: start here](../../help/press/press-start-here.md), [Live demo safety](../../help/advocates/live-demo-safety.md),
+  [Advocates: start here](../../help/advocates/advocates-start-here.md), [Newcomer FAQ](../../help/advocates/newcomer-faq.md),
+  [Trainers: start here](../../help/trainers/trainers-start-here.md), [Partners: start here](../../help/partners/partners-start-here.md),
+  [Sales and marketing: start here](../../help/business/sales-and-marketing-start-here.md), [Demo scripts](../../help/business/demo-scripts.md),
+  [Demo sites for designers](../../help/designers/distribution/demo-sites.md).
+
 ## Related pages
 
 - [Demo mode](../../help/demo-mode.md) (administrators), [Demo mode for hosts](../../help/hosting/security/demo-mode-for-hosts.md),
-  [Demo mode for developers](../../help/extension-development/part-8-reference/demo-mode-for-developers.md)
+  [Demo mode for developers](../../help/extension-development/part-8-reference/demo-mode-for-developers.md),
+  [Demo mode FAQ](../../help/demo-mode-faq.md), [Demo mode problems](../../help/hosting/runbooks/demo-mode-problems.md)
 - [Well-known passwords are refused](weak-passwords-and-reset-key-lifetime.md)
 - [Chapter 13: Security hardening for production](../../install/13-security-hardening.md)
 - [Setting up a demo installation](../../help/press/setting-up-a-demo-installation.md)

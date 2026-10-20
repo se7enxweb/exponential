@@ -290,6 +290,8 @@ rendered by old code is not served again.
 A published release can not be changed; the way to get a fix is the next version. To see what a version holds, open
 its changelog: [6.0.0 to 6.0.15](../changelogs/6.0/6.0.15.md).
 
+**Demo mode (6.0.15).** The environment variable `EXP_DEMO_MODE=1` marks a public demo; without it nothing changes. Upgrading a demo: keep the variable for the web server, cron and console, and check the banner afterwards. Upgrading a real site: make sure the variable is set for none of its processes. [Demo mode](../bc/6.0/demo-mode.md).
+
 ## Related pages
 
 - [Getting started](getting-started.md): a clean install of the same version, for a test copy.

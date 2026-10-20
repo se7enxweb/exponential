@@ -106,6 +106,8 @@ go further than editing content, to change templates, try a fix or build a site 
 [Develop with Git](develop-with-git.md): it shows the recommended way to install Exponential as Git clones with their
 full history, step by step, and how to send your improvements back to the project.
 
+**A Demo mode banner?** On a public demo the administration shows a yellow **Demo mode** banner: the administrator password is published, and administrator passwords cannot be changed or reset. See [Demo mode](demo-mode.md).
+
 ## Next steps
 
 - [A tour of the administration](admin-tour.md)

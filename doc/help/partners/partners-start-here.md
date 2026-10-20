@@ -108,6 +108,8 @@ published sources stop and the Exponential Foundation still has to decide.
 | Technical questions | Forums <https://share.exponential.earth/forums>, Telegram <https://t.me/exponentialcms> | <https://exponential.earth/about/project> |
 | A security problem | security@se7enx.com, privately | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
 
+**Public demos for prospects.** A demo with a published sign-in runs in demo mode (`EXP_DEMO_MODE=1`) so the sign-in keeps working. [Demo mode for hosts](../hosting/security/demo-mode-for-hosts.md), [Demo mode FAQ](../demo-mode-faq.md).
+
 ## Related pages
 
 - [Supporters: start here](../supporters/supporters-start-here.md)

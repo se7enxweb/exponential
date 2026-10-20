@@ -95,6 +95,8 @@ tracker. Send it privately to **security@se7enx.com**, or use GitHub's private v
 repository. Say which version you run, what an attacker could do, and how to reproduce it. The full policy is in the
 file `SECURITY.md` at the root of the installation.
 
+**"This installation is a public demo".** That message, or a **Demo mode** banner, means the site runs in demo mode on purpose: administrator passwords cannot be changed or reset there. If it shows on a real site, tell the people who run the server at once. [Demo mode FAQ](demo-mode-faq.md), [Demo mode problems](hosting/runbooks/demo-mode-problems.md).
+
 ## Asking for help
 
 For questions that are not bugs ("how do I ...?"), the community is the right place: the

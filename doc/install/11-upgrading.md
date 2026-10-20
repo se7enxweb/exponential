@@ -490,6 +490,8 @@ More in [chapter 12](12-troubleshooting.md).
 A published release never changes; a fix always comes as the next version. To see what a version holds, open its
 changelog: [6.0.0 to 6.0.15](../changelogs/6.0/6.0.15.md).
 
+**Demo mode (6.0.15).** Nothing changes on an upgraded site unless the environment variable `EXP_DEMO_MODE=1` is set, which is only for public demos. After upgrading a production server, check that no process of a real site has it (`grep -r EXP_DEMO_MODE` over the PHP-FPM pools, virtual hosts, `.htaccess` files, service units and crontabs). [Demo mode](../bc/6.0/demo-mode.md).
+
 ## References
 
 In this repository:

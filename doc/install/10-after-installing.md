@@ -924,6 +924,8 @@ list is in [chapter 12](12-troubleshooting.md).
 | A change works for a few reloads, then the old page returns | a cache in front of PHP was cleared before PHP ran the new code | [10.6](#106-caches), "The order after a code change" |
 | Errors about files that cannot be written after maintenance work | a script ran as `root` and left root-owned files in `var/` | [chapter 12](12-troubleshooting.md#123-permissions-and-ownership) |
 
+**On a public demo** (environment variable `EXP_DEMO_MODE=1`) the steps above about changing the administrator password do not apply: the published password is meant to stay, and in demo mode it cannot be changed or reset. Instead check that the **Demo mode** banner shows in the administration and that `var/log/security.log` has `demo/mode` lines for the web server and cron ([Demo mode](../bc/6.0/demo-mode.md), [Demo mode problems](../help/hosting/runbooks/demo-mode-problems.md)).
+
 ## References
 
 In this repository:

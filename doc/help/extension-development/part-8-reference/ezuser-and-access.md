@@ -89,6 +89,8 @@ user cannot open ([Context menus and admin integration](../part-4-upgrading/cont
   administrators can assign it.
 - Signing a user in from code (`eZUser::loginUser()`) is for login handlers; an ordinary extension never does it.
 
+**Demo mode.** `eZUser::store()` keeps the stored password of an administrator while `EXP_DEMO_MODE=1`; ask `expDemoMode::protectsPassword( $user )` before changing a password so the user gets the reason. [Demo mode for developers](demo-mode-for-developers.md).
+
 ## Related pages
 
 - Previous: [eZContentClass and its attributes](ezcontentclass.md)
