@@ -3,7 +3,7 @@ title: How to apply
 audience: partner
 category: partnership
 order: 160
-summary: The application process of the Exponential Partner Program step by step - preparation, the application form, review and decision times, signing the agreement, buying the subscription and activation - and what to do if an application is not approved.
+summary: The application process of the Exponential Partner Program step by step - preparation, the application form, review and decision times, buying the subscription, signing the agreement and activation - and what to do if an application is not approved.
 keywords: apply, application, form, review, decision, agreement, contract, subscription, store, activation, reapply, 180 days
 type: help
 ---
@@ -31,14 +31,13 @@ Use the [Application checklist](application-checklist.md) to prepare what the fo
 | 1 | Fill in the application form at <https://exponential.earth/partner/apply> | "Fill out the contact form with details about your company, team, and project experience." |
 | 2 | Add supporting information | "Include examples of past work, relevant certifications, and a brief statement on why you want to partner with us." |
 | 3 | Review | "The Exponential Partner Team will review the application and may contact you to discuss further. The partner team will notify of their decision within 10 working days." The same page also says "within 5–10 business days". |
-| 4 | Sign the agreement | "If your application is approved. Please review and sign the attached contract" and send it as the apply page says (<https://exponential.earth/partner/apply>). |
-| 5 | Buy the subscription | "You will then need to purchase the partnership from the 7x store": <https://my.se7enx.com/store/exponential-partners> |
+| 4 | Buy the subscription | Pay first: purchase the partnership in the 7x store, <https://my.se7enx.com/store/exponential-partners> |
+| 5 | Sign the agreement | Then sign: "Please review and sign the attached contract" and e-mail it to <partners@exponential.earth> |
 | 6 | Activation | "Once we receive your signed agreement and confirm your subscription, your partnership will be activated." |
 
 > **Note**
-> The top of the apply page lists the order "purchase your partner subscription, then sign the partnership
-> agreement"; the detailed steps further down say sign first, then purchase. Ask the partner team which order they
-> want before you pay.
+> The order is pay first, then sign, even where an older program page lists the steps the other way round. The
+> partner team's address is <partners@exponential.earth>.
 
 ## If the application is not approved
 
@@ -51,10 +50,11 @@ Go straight to the [Onboarding checklist](onboarding-checklist.md) and [Your fir
 
 ## Contacts
 
+- The partner team: <partners@exponential.earth>, also for the signed agreement.
 - The contact form <https://exponential.earth/partner/contact-us>.
-- The program pages name two different e-mail addresses for the partner team and for the signed contract; which one
-  is right is [to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed). Until then use the form,
-  or ask through it where to send the contract.
+
+The partner website with a partner dashboard is planned for mid-2027. Please become a partner today to speed up our
+growth rate and land new features faster.
 
 ## Related pages
 

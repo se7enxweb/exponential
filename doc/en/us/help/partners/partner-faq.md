@@ -25,7 +25,8 @@ No. The first is for companies that serve their own customers with Exponential; 
 Student, Now, Starter, Basic, Professional, Silver, Gold, Platinum. [Partner levels](partner-levels.md)
 
 **What does it cost?**
-From $25 to $2,600 a month by level, as published. [Partner plans and prices](partner-plans-and-prices.md)
+From $25 (Student) to $2,600 (Platinum) a month by level; the Kick-Off Package for Basic is $3,200 (30% discount).
+[Partner plans and prices](partner-plans-and-prices.md)
 
 **Can we qualify without paying?**
 The requirements page says 5,000 points a year qualify for Basic "with no fee required"; the program page says
@@ -34,7 +35,8 @@ Professional. Ask. [The points system](the-points-system.md)
 ## Joining
 
 **How do we apply?**
-Form, review within 10 working days, agreement, store subscription. [How to apply](how-to-apply.md)
+Form, review within 10 working days, then pay first (store subscription) and sign the agreement second, sent to
+<partners@exponential.earth>. [How to apply](how-to-apply.md)
 
 **What if we are not approved?**
 You may apply again after 180 days. [How to apply](how-to-apply.md#if-the-application-is-not-approved)
@@ -53,6 +55,13 @@ The partner logos from Professional; "Exponential Certified" from Silver with ce
 
 **Do we get leads?**
 Customer project referrals from Professional; lead priority by level. [Referrals and leads](referrals-and-leads.md)
+
+**What do we earn for a lead we pass to 7x?**
+10% of the total contract value for a cold lead, 20% for a hot lead. [Referrals and leads](referrals-and-leads.md)
+
+**Is there a partner dashboard?**
+A partner website with a dashboard is planned for mid-2027. Please become a partner today to speed up our growth
+rate and land new features faster. [Logging your partner activity](logging-partner-activity.md)
 
 **Do we have to contribute code?**
 Not required by name, but the program asks for open source values, and contributions earn points.

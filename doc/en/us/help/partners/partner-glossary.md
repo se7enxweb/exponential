@@ -22,16 +22,16 @@ This page is for anyone who meets an unfamiliar term in the partner pages.
 | **Points** | The program's measure of activity; about 1 point per minute of work or per dollar of revenue | [The points system](the-points-system.md) |
 | **Revenue requirement** | Revenue a partner must generate per quarter or year for higher levels | [Partner requirements](partner-requirements.md) |
 | **Guidance meeting** | A meeting with 7x included per level | [Partner meetings](partner-meetings-and-briefings.md) |
-| **K.O.P.** | Kick-Off Package: program fee, book, online training, certification and 8 h support | [Partner plans and prices](partner-plans-and-prices.md) |
+| **K.O.P.** | Kick-Off Package for Basic: program fee, book, online training, certification and 8 h support, $3,200 (30% discount) | [Partner plans and prices](partner-plans-and-prices.md) |
 | **Certification** | Developer, Design, Solution (WCMS) or Sales; required from Silver | [Certifications](certifications.md) |
 | **Exponential Certified** | The logo certified Silver, Gold and Platinum partners may use | [Logos and marks](partner-logos-and-marks.md) |
 | **Lead priority** | The order in which partners receive leads (1 = highest) | [Referrals and leads](referrals-and-leads.md) |
-| **Cold lead / hot lead** | A first contact / a "customer ready to purchase" | [Referrals and leads](referrals-and-leads.md) |
+| **Cold lead / hot lead** | A first contact (10% commission) / a "customer ready to purchase" (20% commission) | [Referrals and leads](referrals-and-leads.md) |
 | **Pre-sales support** | Help from 7x with offers and tenders, from Professional | [Pre-sales support](pre-sales-support.md) |
 | **White label** | 7x services delivered under the partner's brand, from Professional | [White-label 7x services](white-label-services.md) |
 | **OEM** | Reselling your own product based on Exponential | [OEM and reselling](oem-and-reselling.md) |
 | **Co-marketing** | Joint marketing with 7x; a budget for Gold and Platinum | [Co-marketing](co-marketing.md) |
-| **Partner Center / Partner Dashboard** | The program's tools for logging activity and seeing points (not online on 18 October 2026) | [Logging your partner activity](logging-partner-activity.md) |
+| **Partner Center / Partner Dashboard** | The program's tools for logging activity and seeing points; the partner website and dashboard are planned for mid-2027 | [Logging your partner activity](logging-partner-activity.md) |
 | **Powered by Exponential** | A credit on a site that runs Exponential | [Showing "Powered by Exponential"](powered-by-exponential.md) |
 | **GPL** | GNU General Public License, v2 or later: the code's license | [Licensing for partners](licensing-for-partners.md) |
 | **GFDL** | GNU Free Documentation License 1.3 or later: the documentation's license | [Free documentation](../free-documentation.md) |

@@ -59,7 +59,7 @@ therefore **to be defined by the Foundation**:
 
 | You want to | Talk to | Page |
 |---|---|---|
-| Apply, change level, renew | The partner team at 7x (<https://exponential.earth/partner/contact-us>) | [How to apply](how-to-apply.md) |
+| Apply, change level, renew | The partner team at 7x (<partners@exponential.earth>, or <https://exponential.earth/partner/contact-us>) | [How to apply](how-to-apply.md) |
 | Ask about invoices for the partner subscription | 7x (the store seller) | [Partner plans and prices](partner-plans-and-prices.md) |
 | Get technical support under your plan | 7x, through your GitHub issue tickets | [Opening a partner support ticket](opening-a-partner-support-ticket.md) |
 | Support the open source project financially | The Foundation, and 7x | [Sponsors: start here](../sponsors/sponsors-start-here.md) |

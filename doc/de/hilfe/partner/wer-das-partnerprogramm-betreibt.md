@@ -59,7 +59,7 @@ Fragen sind daher **von der Foundation noch festzulegen**:
 
 | Sie möchten | Sprechen Sie mit | Seite |
 |---|---|---|
-| Sich bewerben, die Stufe wechseln, verlängern | Dem Partnerteam bei 7x (<https://exponential.earth/partner/contact-us>) | [Wie Sie sich bewerben](wie-sie-sich-bewerben.md) |
+| Sich bewerben, die Stufe wechseln, verlängern | Dem Partnerteam bei 7x (<partners@exponential.earth> oder <https://exponential.earth/partner/contact-us>) | [Wie Sie sich bewerben](wie-sie-sich-bewerben.md) |
 | Nach Rechnungen für das Partner-Abonnement fragen | 7x (dem Verkäufer im Shop) | [Partnertarife und Preise](partnertarife-und-preise.md) |
 | Technischen Support im Rahmen Ihres Tarifs erhalten | 7x, über Ihre GitHub-Issue-Tickets | [Ein Support-Ticket als Partner eröffnen](support-ticket-eroeffnen.md) |
 | Das Open-Source-Projekt finanziell unterstützen | Der Foundation und 7x | [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md) |

@@ -34,7 +34,7 @@ mit dieser Codebasis. Die ganze Geschichte: [Wer ist 7x?](../wer-ist-7x.md).
 
 | Zweck | Kontakt |
 |---|---|
-| Partnerprogramm | Das Partnerteam, über <https://exponential.earth/partner/contact-us> |
+| Partnerprogramm | Das Partnerteam: <partners@exponential.earth> oder das Formular unter <https://exponential.earth/partner/contact-us> |
 | Dienstleistungen und Allgemeines | <https://se7enx.com/contact> |
 | Sicherheit | security@se7enx.com |
 | Technischer Support im Rahmen Ihres Tarifs | GitHub-Issue-Tickets ([Ein Support-Ticket als Partner eröffnen](support-ticket-eroeffnen.md)) |

@@ -30,11 +30,10 @@ Sources, all read 18 October 2026: <https://exponential.earth/partner/program>,
 <https://exponential.earth/partner/benefits>.
 
 > **Note**
-> The program-levels page lists seven levels (without Now); the benefits, requirements and why pages list eight
-> (with Now). The why page also describes "Professional" last, as "Strategic Expert Partners ... Top-tier alliance",
-> while every other page places Professional between Basic and Silver. This help follows the order of the price
-> table: Student, Now, Starter, Basic, Professional, Silver, Gold, Platinum. Confirm with the partner team which
-> description applies to your level.
+> The benefits page is the current statement of the levels: eight levels, in the order Student, Now, Starter,
+> Basic, Professional, Silver, Gold, Platinum, at $25, $45, $175, $300, $500, $800, $1,000 and $2,600 a month
+> ([Partner plans and prices](partner-plans-and-prices.md)). Older pages of the program list seven levels (without
+> Now) or place Professional last; where they differ, the benefits page applies.
 
 ## The three stages
 

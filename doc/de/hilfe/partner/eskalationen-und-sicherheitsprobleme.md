@@ -19,7 +19,7 @@ Das Programm veröffentlicht kein Eskalationsverfahren. Eine sinnvolle Leiter, a
 | Schritt | Wann | Wie |
 |---|---|---|
 | 1 | Die Reaktionszeit Ihrer Stufe ist überschritten | Kommentieren Sie das Ticket mit dem Zeitpunkt der Eröffnung und Ihrer Stufe |
-| 2 | Die Auswirkung auf den Produktivbetrieb hält an | Schreiben Sie dem Partnerteam (<https://exponential.earth/partner/contact-us>) mit dem Link zum Ticket |
+| 2 | Die Auswirkung auf den Produktivbetrieb hält an | Schreiben Sie dem Partnerteam (<partners@exponential.earth>) mit dem Link zum Ticket |
 | 3 | Bringen Sie es ins nächste Beratungstreffen ein oder bitten Sie um ein früheres | [Partnertreffen](partnertreffen-und-briefings.md) |
 | 4 | Sie brauchen jetzt garantierte Hilfe | Kaufen Sie bezahlten Support bei 7x (<https://exponential.earth/support>) |
 

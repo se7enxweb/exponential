@@ -25,18 +25,18 @@ read on 18 October 2026 from the pages under <https://exponential.earth/partner>
 | Ways in | Program fee, or qualifying through 5,000 points a year | [The points system](the-points-system.md) |
 | Higher levels need | Revenue per quarter, points per year, certifications from Silver | [Partner requirements](partner-requirements.md) |
 | Benefits | Revenue opportunities, visibility, meetings, tickets, discounts, referrals, co-marketing, roadmap requests | [Partner benefits](partner-benefits.md) |
-| Joining | Apply, review, sign the agreement, buy the subscription | [How to apply](how-to-apply.md) |
+| Joining | Apply, review, pay for the subscription, then sign the agreement | [How to apply](how-to-apply.md) |
 | Term | One year; standing reviewed 30 days before the end; upgrades immediately | [Renewals, upgrades and downgrades](renewals-upgrades-and-downgrades.md) |
 | Contract | Independent companies, 30-day termination notice, disputes in Seattle, Washington | [The partnership agreement](the-partnership-agreement.md) |
-| Contact | The partner team, through <https://exponential.earth/partner/contact-us> | [Working with 7x](working-with-7x.md) |
+| Contact | The partner team: <partners@exponential.earth>, or the form at <https://exponential.earth/partner/contact-us> | [Working with 7x](working-with-7x.md) |
 
 ## The path through the program
 
 ```text
-  Interest ──► Apply (form) ──► Review (up to 10 working days) ──► Sign agreement
+  Interest ──► Apply (form) ──► Review (up to 10 working days) ──► Buy subscription (7x store)
                                        │                                 │
                                        └─ not approved: reapply          ▼
-                                          after 180 days         Buy subscription (7x store)
+                                          after 180 days         Sign agreement
                                                                          │
                                                                          ▼
   Renew yearly ◄── Level reviewed (points, revenue, certifications) ◄── Active partner

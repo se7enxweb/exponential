@@ -54,21 +54,14 @@ S = Student, N = Now, St = Starter, B = Basic, P = Professional, Si = Silver, G 
 | Auf Abonnementprodukte | 4 % | 4 % | 4 % | 4 % | 4 % | 15 % | 20 % | 25 % |
 | Auf Wissensprodukte | 20 % + K.O.P. | 20 % + K.O.P. | 20 % + K.O.P. | 20 % + K.O.P. | 20 % + K.O.P. | 20 % | 20 % | 20 % |
 
-K.O.P. ist das Kick-Off Package; siehe [Partnertarife und Preise](partnertarife-und-preise.md).
+K.O.P. ist das Kick-Off Package für Basic: „Programmgebühr, Buch, Online-Schulung, Zertifizierung und 8 Std. Support“
+für 3.200 $ (30 % Rabatt) ([Partnertarife und Preise](partnertarife-und-preise.md#das-kick-off-package)).
 
-## Wo die Programmseite abweicht
+## Provision für Lead-Empfehlungen
 
-Die Programmseite hat eine älter wirkende Tabelle für Starter bis Platinum. Unterschiede, die Sie kennen sollten:
-
-| Punkt | Seite der Vorteile | Programmseite |
-|---|---|---|
-| Gemeinsames Marketing | Ab Silver | Ab Professional |
-| Zusätzliche Sichtbarkeit | Ab Basic | Gold und Platinum |
-| Co-Marketing | Budget bis 5 %, Gold und Platinum | „Co-Marketing-Investition von 7x“, Gold und Platinum |
-| Rabatt auf Dienstleistungen | 0/0/5/10/15/20 % (Starter bis Platinum) | 0/0/10/10/15/20 % |
-| Rabatt auf Abonnements | 4/4/4/15/20/25 % | 5/5/15/15/20/25 % |
-
-Betrachten Sie die Seite der Vorteile als die neuere Aussage und lassen Sie sich die Werte schriftlich bestätigen.
+Partner, die einen Lead an 7x weitergeben, erhalten **10 %** des gesamten Vertragswerts für einen kalten Lead und
+**20 %** für einen heißen Lead (ein Kunde, der bereit ist, bei 7x zu kaufen). Wie Sie einen Lead übergeben:
+[Empfehlungen und Leads](empfehlungen-und-leads.md).
 
 ## Jeden Vorteil nutzen
 

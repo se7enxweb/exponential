@@ -25,7 +25,8 @@ Managed-Dienstleistung von 7x für Ihre eigene Website. [Auf einen Blick](partne
 Student, Now, Starter, Basic, Professional, Silver, Gold, Platinum. [Partnerstufen](partnerstufen.md)
 
 **Was kostet es?**
-Je nach Stufe von 25 $ bis 2.600 $ im Monat, wie veröffentlicht. [Partnertarife und Preise](partnertarife-und-preise.md)
+Je nach Stufe von 25 $ (Student) bis 2.600 $ (Platinum) im Monat; das Kick-Off Package für Basic kostet 3.200 $
+(30 % Rabatt). [Partnertarife und Preise](partnertarife-und-preise.md)
 
 **Können wir uns ohne Zahlung qualifizieren?**
 Die Seite der Anforderungen sagt, 5.000 Punkte im Jahr qualifizieren für Basic „ohne Gebühr“; die
@@ -34,7 +35,8 @@ Programmseite nennt Professional. Fragen Sie nach. [Das Punktesystem](das-punkte
 ## Beitreten
 
 **Wie bewerben wir uns?**
-Formular, Prüfung innerhalb von 10 Arbeitstagen, Vereinbarung, Abonnement im Shop. [Wie Sie sich bewerben](wie-sie-sich-bewerben.md)
+Formular, Prüfung innerhalb von 10 Arbeitstagen, dann erst bezahlen (Abonnement im Shop) und danach die Vereinbarung
+unterzeichnen, gesendet an <partners@exponential.earth>. [Wie Sie sich bewerben](wie-sie-sich-bewerben.md)
 
 **Was, wenn wir nicht angenommen werden?**
 Sie können sich nach 180 Tagen erneut bewerben. [Wie Sie sich bewerben](wie-sie-sich-bewerben.md#wenn-die-bewerbung-nicht-angenommen-wird)
@@ -53,6 +55,13 @@ Die Partnerlogos ab Professional; „Exponential Certified“ ab Silver mit Zert
 
 **Bekommen wir Leads?**
 Empfehlungen von Kundenprojekten ab Professional; Lead-Priorität je nach Stufe. [Empfehlungen und Leads](empfehlungen-und-leads.md)
+
+**Was erhalten wir für einen Lead, den wir an 7x weitergeben?**
+10 % des gesamten Vertragswerts für einen kalten Lead, 20 % für einen heißen Lead. [Empfehlungen und Leads](empfehlungen-und-leads.md)
+
+**Gibt es ein Partner-Dashboard?**
+Eine Partner-Website mit Dashboard ist für Mitte 2027 geplant. Bitte werden Sie noch heute Partner, damit wir schneller
+wachsen und neue Funktionen früher liefern können. [Ihre Partneraktivität erfassen](partneraktivitaet-erfassen.md)
 
 **Müssen wir Code beitragen?**
 Nicht ausdrücklich verlangt, aber das Programm fordert Open-Source-Werte, und Beiträge bringen Punkte.

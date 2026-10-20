@@ -16,7 +16,7 @@ Wissen öffentlich, wo es anderen hilft.
 
 | Zweck | Kanal | Öffentlich? | Quelle |
 |---|---|---|---|
-| Ihre Partnerschaft: Bewerbung, Stufe, Rechnungen, Vereinbarung | Das Partnerteam, über <https://exponential.earth/partner/contact-us> | Nein | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
+| Ihre Partnerschaft: Bewerbung, Stufe, Rechnungen, Vereinbarung | Das Partnerteam: <partners@exponential.earth> oder das Formular unter <https://exponential.earth/partner/contact-us> | Nein | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
 | Technischer Support im Rahmen Ihres Tarifs | GitHub-Issue-Tickets, je nach Stufe | Hängt vom Repository ab | <https://exponential.earth/partner/benefits> |
 | Ein Fehler in der Software | <https://github.com/se7enxweb/exponential/issues> | Ja | README, [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md) |
 | Das Projekt, die Community oder die Websites | <https://github.com/se7enxweb/exponential-community/issues> | Ja | README |

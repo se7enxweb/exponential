@@ -10,8 +10,9 @@ type: help
 # Partner benefits in detail
 
 This page is for partners who want to know exactly what each level gives and how to put each benefit to work. The
-tables copy <https://exponential.earth/partner/benefits> as read on 18 October 2026; where the program page
-(<https://exponential.earth/partner/program>) says something different, both are shown.
+tables copy <https://exponential.earth/partner/benefits> as read on 18 October 2026. The benefits page is the current
+statement of the levels, discounts, lead priority and benefits; where an older page of the program
+(<https://exponential.earth/partner/program>) shows a different table, the benefits page applies.
 
 ## Core benefits for all partners
 
@@ -54,24 +55,13 @@ S = Student, N = Now, St = Starter, B = Basic, P = Professional, Si = Silver, G 
 | On subscription products | 4% | 4% | 4% | 4% | 4% | 15% | 20% | 25% |
 | On knowledge products | 20% + K.O.P. | 20% + K.O.P. | 20% + K.O.P. | 20% + K.O.P. | 20% + K.O.P. | 20% | 20% | 20% |
 
-K.O.P. is the Kick-Off Package; its price is [to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed).
+K.O.P. is the Kick-Off Package for Basic: "program fee, book, online training, certification, and 8h support for
+$3,200 (30% discount)" ([Partner plans and prices](partner-plans-and-prices.md#the-kick-off-package)).
 
-## Where the program page differs
+## Lead referral commission
 
-The program page has an older-looking table for Starter to Platinum. Differences to be aware of:
-
-| Item | Benefits page | Program page |
-|---|---|---|
-| Joint marketing | From Silver | From Professional |
-| Extra visibility | From Basic | Gold and Platinum |
-| Co-marketing | Budget up to 5%, Gold and Platinum | "Co-marketing investment from 7x", Gold and Platinum |
-| Services discount | 0/0/5/10/15/20% (Starter to Platinum) | 0/0/10/10/15/20% |
-| Subscription discount | 4/4/4/15/20/25% | 5/5/15/15/20/25% |
-
-Treat the benefits page as the newer statement, and confirm in writing.
-
-The lead referral commission and the Kick-Off Package price differ between the pages too; both values are listed,
-with a "to be confirmed" note, in [Values still to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed).
+Partners who pass a lead to 7x earn **10%** of the total contract value for a cold lead and **20%** for a hot lead
+(a customer ready to purchase from 7x). How to hand a lead over: [Referrals and leads](referrals-and-leads.md).
 
 ## Making each benefit work
 

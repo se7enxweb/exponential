@@ -27,7 +27,7 @@ Plan the year so the review has something to show.
 
 | Measure | Why | Where to get it |
 |---|---|---|
-| Points earned | Decides your level | Your own log and the Partner Dashboard when online ([Logging your partner activity](logging-partner-activity.md)) |
+| Points earned | Decides your level | Your own log and the Partner Dashboard once the partner website is online, planned for mid-2027 ([Logging your partner activity](logging-partner-activity.md)) |
 | Revenue counted by the program | Required from Professional | The partner team |
 | Customer sites on a supported release | Shows you keep customers safe | Your own inventory ([Keeping customer sites current](keeping-customers-current.md)) |
 | Contributions merged | Shows you give back | GitHub |

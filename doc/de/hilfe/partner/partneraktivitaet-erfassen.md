@@ -21,11 +21,12 @@ Die Seite der Anforderungen (<https://exponential.earth/partner/requirements>, g
 - **Von Ihnen eingereicht:** „Externe Aktivitäten (z. B. Veranstaltungen, Kundenprojekte, Presseberichte) müssen über das Partner Center mit einem kurzen Meldeformular eingereicht werden.“
 - **Fortschritt:** „Ihren Fortschritt und Ihren aktuellen Punktestand können Sie jederzeit in Ihrem Partner Dashboard verfolgen.“
 
-> **Warnung**
-> Am 18. Oktober 2026 lieferten die verlinkten Adressen <https://exponential.earth/partner-center> und
-> <https://exponential.earth/partner/dashboard> „nicht gefunden“. Bis sie online sind, senden Sie Ihre Aktivität über
-> <https://exponential.earth/partner/contact-us> an das Partnerteam und führen Sie Ihre eigenen Aufzeichnungen. Wie
-> Punkte ohne das Partner Center gutgeschrieben werden, ist nicht angegeben: noch festzulegen.
+> **Hinweis**
+> Das Partner Center und das Partner Dashboard, die die Programmseiten nennen, sind noch nicht online: Eine
+> Partner-Website mit einem Partner-Dashboard ist für Mitte 2027 geplant. Bis dahin senden Sie Ihre Aktivität an das
+> Partnerteam unter <partners@exponential.earth> (oder über <https://exponential.earth/partner/contact-us>) und führen
+> Ihre eigenen Aufzeichnungen. Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
+> früher liefern können ([Wie Sie sich bewerben](wie-sie-sich-bewerben.md)).
 
 ## Was Sie einreichen und welche Nachweise Sie geben
 

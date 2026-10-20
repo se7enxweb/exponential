@@ -19,8 +19,12 @@ Abschnitt für Abschnitt durch, wie er am Ende von <https://exponential.earth/pa
 
 ## Wie der Vertrag verwendet wird
 
-„Dieser Vertrag muss unterzeichnet und per E-Mail an 7x gesendet werden“ (die Adresse steht auf der Programmseite), und er ist „gültig, solange die Anforderungen erfüllt sind. 7x kann bei Verstößen kündigen“ (Programmseite). Die
+„Dieser Vertrag muss unterzeichnet und per E-Mail an 7x gesendet werden“, an <partners@exponential.earth>, und er ist „gültig, solange die Anforderungen erfüllt sind. 7x kann bei Verstößen kündigen“ (Programmseite). Die
 Vertragsparteien sind 7x und Ihr Unternehmen.
+
+Die Reihenfolge ist **erst bezahlen, dann unterschreiben**: Nach der Annahme Ihrer Bewerbung kaufen Sie das
+Partnerabonnement im Shop von 7x, dann unterschreiben Sie die Vereinbarung und senden sie per E-Mail an
+<partners@exponential.earth> ([Wie Sie sich bewerben](wie-sie-sich-bewerben.md)).
 
 ## Abschnitt für Abschnitt
 
@@ -43,10 +47,12 @@ Vertragsparteien sind 7x und Ihr Unternehmen.
 
 ## Fragen vor der Unterzeichnung
 
-- [ ] Welche Fassung der Stufen, Preise und Anforderungen ist Teil des Vertrags? (Die Seiten widersprechen sich
-      stellenweise; siehe [Das Punktesystem](das-punktesystem.md).)
+- [ ] Welche Fassung der Stufen, Preise und Anforderungen ist Teil des Vertrags? Stufen, Preise und Vorteile sind
+      die der Seite der Vorteile ([Partnertarife und Preise](partnertarife-und-preise.md)); zu den Punkten siehe
+      [Das Punktesystem](das-punktesystem.md).
 - [ ] Welche Reaktionszeiten gelten für unsere Stufe, und zu welchen Zeiten und in welcher Zeitzone?
-- [ ] Wie werden Provisionen berechnet, gemeldet und gezahlt (die offiziellen Bedingungen: <https://exponential.earth/partner/benefits>)?
+- [ ] Wie werden Provisionen gemeldet und gezahlt? Die Sätze sind 10 % des gesamten Vertragswerts für einen kalten
+      und 20 % für einen heißen Lead ([Empfehlungen und Leads](empfehlungen-und-leads.md)).
 - [ ] Was genau dürfen wir auf unserer Stufe mit den Logos tun?
 - [ ] Welches Recht gilt für den Vertrag, neben dem Gerichtsort?
 - [ ] Wie werden personenbezogene Daten beim Austausch von Leads behandelt ([Kundendaten schützen](kundendaten-schuetzen.md))?
