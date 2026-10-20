@@ -236,7 +236,7 @@ front (`kernel/private README`), so no two entries read the same.
 - **Ids**: `project/<path in the repository>`: `/exphelp/viewer/project/README.md`,
   `/exphelp/viewer/project/bin/php/README.md`. An address with the path alone (`/exphelp/viewer/README.md`)
   redirects to the id. The prefix `project/` is reserved for them.
-- **Links**: a link of a documentation page to a project file (`[README](../../../../../README.md)` from
+- **Links**: a link of a documentation page to a project file (`[README](../../../../README.md)` from
   `doc/eng-us/features/6.0/`) opens it in the help, not on GitHub; a link of `README.md` into the documentation
   (`doc/eng-us/guides/caches.md`) opens the help page. Links are resolved against the file, as GitHub resolves them,
   so the same Markdown works in both places.

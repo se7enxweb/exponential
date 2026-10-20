@@ -17,7 +17,7 @@ a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 2be200c53a4092b09d569bb711ebfe9c  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 b7034e90e1a71f18582da6f6945a14d0  CODE_OF_CONDUCT.md
-e21ad622262e506c400c730b7dffcb4f  CONTRIBUTING.md
+5d89dbb18e3851040c06a4e89d5c06ea  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
@@ -6184,7 +6184,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 446d6517eb057accf74399d2ec1557cf  doc/eng-us/features/6.0/help-content.md
-2d1a8d3c097a0ce155b4704e4914c255  doc/eng-us/features/6.0/help-system.md
+13ed42481efbc061110a0b83b07288b8  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 787c261dc26c379dbf5d19058093d261  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 695c0016c5a385b9902ba21c168a66ce  doc/eng-us/features/6.0/install-in-one-command.md
@@ -6357,7 +6357,7 @@ a5137fdd11e1a617f892ff22e5750a0b  doc/eng-us/help/advocates/a-90-day-advocate-pl
 3abf222bf6f3979455b0fbe7ca676139  doc/eng-us/help/advocates/a-table-at-someone-elses-event.md
 f1c99d54fd7d0f2a3e89455bba457a59  doc/eng-us/help/advocates/accessible-slides-and-visuals.md
 3a5716bbc1e6c5128e44d587599ff9d7  doc/eng-us/help/advocates/advocate-checklists.md
-7a81ef6bad5719b38129fafec7fe49bb  doc/eng-us/help/advocates/advocate-conduct-and-ethics.md
+1c51072c5d8fa800211ee0a48eca2b57  doc/eng-us/help/advocates/advocate-conduct-and-ethics.md
 17dc777d19906578347f3b4b3038bed4  doc/eng-us/help/advocates/advocate-faq.md
 fcd6771b79c62841d665ccff6d4ed734  doc/eng-us/help/advocates/advocate-reading-path.md
 aed1dc2f1e225d47b9b49c1fc8db0279  doc/eng-us/help/advocates/advocate-toolkit.md
@@ -9427,7 +9427,7 @@ bb52a34266ba4c31370ffba7689b2afb  doc/eng-us/help/partners/naming-and-brand-for-
 b4e111bed7a00afe8da73af4b273b9ca  doc/eng-us/help/partners/open-source-values-for-partners.md
 703ae4c872ade7cb7ac8c3f21b8625d2  doc/eng-us/help/partners/opening-a-partner-support-ticket.md
 1073454ea0a555fa3eccef2d18f32481  doc/eng-us/help/partners/partner-benefits.md
-e2b29fb470d14b49831cd81dde50be5f  doc/eng-us/help/partners/partner-code-of-conduct.md
+c202acfa33c81c0472522773a14ccc46  doc/eng-us/help/partners/partner-code-of-conduct.md
 a0f6381ecfc0d24d315b0311a8987be8  doc/eng-us/help/partners/partner-directories.md
 d0492c0c0c82e9d89fdfa471d34237a3  doc/eng-us/help/partners/partner-faq.md
 aa9d08e21e6b396c18d8bf6e24691789  doc/eng-us/help/partners/partner-glossary.md
@@ -9622,7 +9622,7 @@ a3fdc4ca39b73e915ccae9e0bde82110  doc/eng-us/help/press/writing-about-the-commun
 61a020971043323372adb5b3563602f6  doc/eng-us/help/project/README.md
 69bd78be134e7e9a2457b81203afad76  doc/eng-us/help/project/about-the-project.md
 19c75802e045f8b274f16ad5a4921da0  doc/eng-us/help/project/build-with-exponential.md
-f5ee8bf34d83a9557821fe3081ae4179  doc/eng-us/help/project/code-of-conduct.md
+7e9c5a5b9bd4d9a1a93a6eee6ac8915b  doc/eng-us/help/project/code-of-conduct.md
 93600db52dc1e7dceac498622bcfd27e  doc/eng-us/help/project/community-channels.md
 8ac166086eaf53a331956f9c6b16e161  doc/eng-us/help/project/contribute-to-the-project.md
 70acb01cfeb58d8b7d087225768c6827  doc/eng-us/help/project/documentation-sources.md

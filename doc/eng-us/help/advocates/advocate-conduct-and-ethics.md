@@ -22,7 +22,7 @@ that the other advocate pages apply, points to the project's code of conduct, an
 
 ## The code of conduct
 
-The project's code of conduct is [CODE_OF_CONDUCT.md](../../../../../CODE_OF_CONDUCT.md): the Contributor Covenant 2.1
+The project's code of conduct is [CODE_OF_CONDUCT.md](../../../../CODE_OF_CONDUCT.md): the Contributor Covenant 2.1
 with Exponential additions, one of them for trainers and advocates. It applies to you in every community space and
 whenever you speak for Exponential. [The Exponential code of conduct](../project/code-of-conduct.md) explains it in
 short; report a problem to <community@se7enx.com>, and the Exponential Foundation decides.

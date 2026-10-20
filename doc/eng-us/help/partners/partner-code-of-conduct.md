@@ -12,7 +12,7 @@ type: help
 This page is for everyone who works for a partner company. It states the conduct the program expects.
 
 > **Note**
-> Partners follow the project's code of conduct, [CODE_OF_CONDUCT.md](../../../../../CODE_OF_CONDUCT.md): the
+> Partners follow the project's code of conduct, [CODE_OF_CONDUCT.md](../../../../CODE_OF_CONDUCT.md): the
 > Contributor Covenant 2.1 with Exponential additions, one of them for partners and commercial conduct
 > ([The Exponential code of conduct](../project/code-of-conduct.md)). Report a problem to <community@se7enx.com>; the
 > Exponential Foundation decides. The rules below apply that code to partner work and collect what the program and

@@ -12,7 +12,7 @@ type: help
 
 This page is for everyone who takes part in Exponential: contributors and maintainers, partners, trainers and
 advocates, and everyone in the community spaces. It explains the project's code of conduct in short. The binding text
-is the file [CODE_OF_CONDUCT.md](../../../../../CODE_OF_CONDUCT.md) in the root of the repository (also on
+is the file [CODE_OF_CONDUCT.md](../../../../CODE_OF_CONDUCT.md) in the root of the repository (also on
 [GitHub](https://github.com/se7enxweb/exponential/blob/main/CODE_OF_CONDUCT.md)); where this page and the file differ,
 the file applies.
 
@@ -91,7 +91,7 @@ requests, issues or answers, and never post an unverified security report in pub
 Contributions to the core kernel need a signed CLA before they are merged. By signing it and submitting a kernel
 contribution, you assign the copyright in that contribution to 7x; your own custom extensions are not affected. Sign
 only for work you have the right to assign. Details:
-[CONTRIBUTING.md, Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+[CONTRIBUTING.md, Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ### Trainers and advocates
 
@@ -108,7 +108,7 @@ of the person who reports are respected. The **Exponential Foundation** decides
 ([Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md)).
 
 A security vulnerability is not a conduct report: report it privately as `SECURITY.md` describes
-([SECURITY.md](../../../../../SECURITY.md)).
+([SECURITY.md](../../../../SECURITY.md)).
 
 ## What can happen after a report
 
