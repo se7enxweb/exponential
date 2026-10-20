@@ -14,7 +14,7 @@ The shipped settings of `settings/syscard.ini`: 16 blocks, 103 settings.
 
 > The system card of the console: ./console exp:expfetch, and its larger forms exp:info (an inventory) and exp:about  
 > (the project). The card is built from providers, one class per group of facts, drawn next to the Exponential "e"  
-> (doc/en/us/features/6.0/system-card.md).  
+> (doc/eng-us/features/6.0/system-card.md).  
 >
 > Extensions add their own settings in extension/<ext>/settings/syscard.ini.append.php: a provider  
 > (ProviderClasses\[\]=myExtSysCardProvider), a theme (\[Theme-<name>\] and Themes\[\]=<name>), a logo directory  

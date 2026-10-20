@@ -44,7 +44,7 @@ class expSysCardPhpProvider extends expSysCardBaseProvider
             {
                 $severity = expSysCardFact::ERROR;
                 $support = 'security support ended ' . $ends[$branch];
-                $hint = sprintf( 'PHP %s has had no security fixes since %s: upgrade to a supported branch (doc/en/us/help/os-support.md).', $branch, $ends[$branch] );
+                $hint = sprintf( 'PHP %s has had no security fixes since %s: upgrade to a supported branch (doc/eng-us/help/os-support.md).', $branch, $ends[$branch] );
             }
             elseif ( $days <= $warnDays )
             {

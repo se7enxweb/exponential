@@ -313,11 +313,11 @@ class expSysCardProvidersTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'at least 2.0 MiB', $sizes['caches.dir:template']->value );
         $this->assertSame( 'caches', $sizes['caches.dir:template']->section );
 
-        $help = $this->byKey( ( new expSysCardHelpProvider() )->collect( $this->context( array( 'help.state' => array( 'pages' => 7083, 'current' => false, 'languages' => array( 'en/us', 'de' ) ),
-                                                                                              'help.coverage' => array( 'en/us' => array( 'pages' => 7083, 'total' => 7083 ), 'de' => array( 'pages' => 785, 'total' => 7083 ) ) ), 'info' ) ) );
-        $this->assertSame( '7,083 pages, en/us de (index stale)', $help['help.state']->value );
+        $help = $this->byKey( ( new expSysCardHelpProvider() )->collect( $this->context( array( 'help.state' => array( 'pages' => 7083, 'current' => false, 'languages' => array( 'eng-us', 'ger-de' ) ),
+                                                                                              'help.coverage' => array( 'eng-us' => array( 'pages' => 7083, 'total' => 7083 ), 'ger-de' => array( 'pages' => 785, 'total' => 7083 ) ) ), 'info' ) ) );
+        $this->assertSame( '7,083 pages, eng-us ger-de (index stale)', $help['help.state']->value );
         $this->assertSame( expSysCardFact::WARN, $help['help.state']->severity );
-        $this->assertSame( '785 / 7,083 pages (11%)', $help['help.coverage:de']->value );
+        $this->assertSame( '785 / 7,083 pages (11%)', $help['help.coverage:ger-de']->value );
         $off = $this->byKey( ( new expSysCardHelpProvider() )->collect( $this->context( array( 'ini' => array( 'exphelp.ini' => array( 'HelpSettings' => array( 'Enabled' => 'false' ) ) ) ) ) ) );
         $this->assertSame( 'off', $off['help.state']->value );
 

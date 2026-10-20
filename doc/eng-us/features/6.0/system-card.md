@@ -121,7 +121,7 @@ Demo mode: off
 Debug: off
 Mail: sendmail
 Caches: view, templates on; static off
-Help: 7,083 pages, en/us de
+Help: 7,083 pages, eng-us ger-de
 Cronjobs: last run 4 min ago, 14 parts
 Composer: 105 packages, all consistent
 ```
@@ -165,8 +165,8 @@ exphelp: 96 MiB
 ini: 1.4 MiB
 
 [Help]
-Help en/us: 7,083 / 7,083 pages (100%)
-Help de: 785 / 7,083 pages (11%)
+Help eng-us: 7,083 / 7,083 pages (100%)
+Help ger-de: 785 / 7,083 pages (11%)
 
 [Cronjobs]
 default: unpublish, rssimport, indexcontent, hide, internal_drafts_cleanup
@@ -621,5 +621,5 @@ in Exponential: the template `fetch()` functions, the fetch definitions of modul
 - [Health checks and uptime](../../help/hosting/operations/health-checks-and-uptime.md)
 - [System information](../../guides/system-information.md)
 - [The help system](help-system.md)
-- [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

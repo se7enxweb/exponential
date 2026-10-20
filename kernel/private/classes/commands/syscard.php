@@ -4,7 +4,7 @@
  * @alias exp:info
  * @alias exp:about
  *
- * File containing the command of exp:expfetch, exp:info and exp:about (doc/en/us/features/6.0/system-card.md).
+ * File containing the command of exp:expfetch, exp:info and exp:about (doc/eng-us/features/6.0/system-card.md).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

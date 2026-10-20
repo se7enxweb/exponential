@@ -48,7 +48,7 @@ class expSysCardCronProvider extends expSysCardBaseProvider
 
         if ( $last === 0 )
             $fact = $this->fact( 'last', 'Cronjobs', 'no run found, ' . count( $parts ) . ' parts', expSysCardFact::INFO,
-                                 'No cronjob run was found: add runcronjobs.php to the crontab (doc/en/us/guides/cronjobs.md), or the cleanup, notification and search index jobs never run.' );
+                                 'No cronjob run was found: add runcronjobs.php to the crontab (doc/eng-us/guides/cronjobs.md), or the cleanup, notification and search index jobs never run.' );
         else
         {
             $old = $context->now - $last > self::STALE;
