@@ -79,7 +79,7 @@ API: `eZForgotPassword::lifetime()`, `isExpiredAt( $time, $lifetime, $now )`, `i
 - `eZStepSiteAdmin::isWeakDefaultPassword()` keeps its name and now uses the shared list;
   `eZStepSiteAdmin::kickstartPasswordProblem()` and `minAdminPasswordLength()` are new.
 - **Public demos:** with the environment variable `EXP_DEMO_MODE=1` the installers accept a well-known administrator
-  password (the length rule stays), so a demo can install the password it publishes; administrator passwords then
+  password of any length (an empty one is still refused), so a demo can install the password it publishes; administrator passwords then
   cannot be changed or reset. Only for public demos: [Demo mode](demo-mode.md).
 
 ## Tests

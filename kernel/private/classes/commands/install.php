@@ -40,8 +40,9 @@ class Install extends \Exponential\Runnable\Command
         // the same rules as the kickstarter (eZStepSiteAdmin::kickstartPasswordProblem(), expWeakPasswordList)
         if ( \eZStepSiteAdmin::isWeakDefaultPassword( $password ) )
             return 'well-known';
+        // in demo mode (EXP_DEMO_MODE=1) no length is too short (eZStepSiteAdmin::isTooShortAdminPassword())
         $min = \eZStepSiteAdmin::minAdminPasswordLength();
-        if ( strlen( $password ) < $min )
+        if ( \eZStepSiteAdmin::isTooShortAdminPassword( $password ) )
             return "shorter than $min characters";
         return null;
     }

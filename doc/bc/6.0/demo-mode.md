@@ -44,8 +44,8 @@ While `EXP_DEMO_MODE=1`:
   public demo: the passwords of administrators cannot be changed or reset."
 - **Every other account keeps every rule**: an editor or a visitor who registered changes and resets their own password
   as usual, and new passwords are still checked against the list of well-known ones.
-- **The installers accept a well-known administrator password**, such as the one the demo publishes. Only the
-  administrator password of a new installation is concerned, and the length rule still applies
+- **The installers accept the demo password**: a well-known administrator password of any length, such as `publish`
+  or `publishing`. Only the administrator password of a new installation is concerned; an empty one is still refused
   ([The installers accept the demo password](#the-installers-accept-the-demo-password)).
 - **The administration shows a banner** on every page (admin4, admin4l and the classic admin): "Demo mode. This
   installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be
@@ -93,22 +93,25 @@ Not affected: signing in (an existing password is never refused), and the hash u
 
 ## The installers accept the demo password
 
-Every installer asks one function whether an administrator password may be installed:
-`eZStepSiteAdmin::isWeakDefaultPassword()`. That is the setup wizard, the kickstarter (`kickstart.ini`), `exp:install`
-(`bin/php/install.php`) and every demo installer built on them. In demo mode it accepts a well-known password. Exactly:
+Every installer asks the same functions whether an administrator password may be installed:
+`eZStepSiteAdmin::isWeakDefaultPassword()` (the well-known list) and `eZStepSiteAdmin::isTooShortAdminPassword()`
+(`[UserSettings] MinPasswordLength`, 10 as shipped). That is the setup wizard, the kickstarter (`kickstart.ini`),
+`exp:install` (`bin/php/install.php`) and every demo installer built on them. In demo mode both accept the demo
+password. Exactly:
 
-- **Relaxed:** the check against the list of well-known passwords (`expWeakPasswordList`, with its variants), for the
-  administrator password of a new installation only.
-- **Not relaxed:** an empty password is still refused (the kickstarter and `exp:install` generate one); the length
-  rule `[UserSettings] MinPasswordLength` (10 as shipped) still applies; and every other account, and every password
-  set after the installation, is checked as before.
+- **Relaxed:** the check against the list of well-known passwords (`expWeakPasswordList`, with its variants) and the
+  minimum length, for the administrator password of a new installation only. The installation stores it inside
+  `expDemoMode::installing()` and `expDemoMode::settingInstallationAdministratorPassword()`; only there does
+  `eZUser::validatePassword()` let a password shorter than `MinPasswordLength` through.
+- **Not relaxed:** an empty password is still refused (the kickstarter and `exp:install` generate one, the wizard asks
+  again); every other account the installation creates, every password set after the installation and every form
+  (`user/password`, registration, the user edit form, the console, the web services) keep `MinPasswordLength`, the
+  `[PasswordSettings]` rules and the well-known list.
 
-So a demo can install `publishing` (ten characters, well-known) as it is. The classic `publish` (seven characters) is
-still too short with the shipped settings; a demo that wants it lowers `MinPasswordLength` in its own settings, with
-the consequences that has for every account.
+So a demo can install `publish` (seven characters, the classic) or `publishing` as it is, with the shipped settings.
 
-The setup wizard says on its administrator page that demo mode is on and what it means. The installation itself sets
-the administrator password inside `expDemoMode::installing()`, so the store guard lets it through.
+The setup wizard says on its administrator page that demo mode is on and what it means. The installation's store of
+the administrator password goes through the store guard because it runs inside `expDemoMode::installing()`.
 
 ## Why it cannot be switched on by accident
 
@@ -204,7 +207,7 @@ swaps the new site in. With demo mode it should set the variable twice:
    ```
 
    The reset step after the installation (`exp:resetuserpassword`) is then no longer needed, and in demo mode it is
-   refused anyway. The password must still be at least `MinPasswordLength` characters long.
+   refused anyway. Any non-empty password works, also the seven-character `publish`.
 2. **For the running site,** in the environment of the demo's PHP (its PHP-FPM pool, LiteSpeed's `lsphp`
    environment or the virtual host's `SetEnv`) and in the crontab of the demo's user, so the banner shows and the
    administrator password cannot be changed between two rebuilds. The preloader run after the swap

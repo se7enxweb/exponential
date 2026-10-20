@@ -73,7 +73,7 @@ nobody can turn it on by accident or by mistake. The people who run the server s
 on [Demo mode for hosts](hosting/security/demo-mode-for-hosts.md).
 
 During the installation of a demo, demo mode also lets the installer accept the published demo password, which it
-would otherwise refuse as too well-known. The details are in the upgrade note
+would otherwise refuse as too well-known or too short (`publish` or `publishing`). The details are in the upgrade note
 [Demo mode: EXP_DEMO_MODE=1](../bc/6.0/demo-mode.md).
 
 ## Related pages

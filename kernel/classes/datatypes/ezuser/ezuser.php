@@ -3500,6 +3500,11 @@ WHERE user_id = '" . $userID . "' AND
     {
         $ini = eZINI::instance();
         $minPasswordLength = $ini->variable( 'UserSettings', 'MinPasswordLength' );
+        // Demo mode (EXP_DEMO_MODE=1): the installation's own administrator password may be short (publish); only
+        // inside expDemoMode::installing() and settingInstallationAdministratorPassword(), never an empty one
+        if ( is_string( $password ) && trim( $password ) !== '' && class_exists( 'expDemoMode' )
+             && expDemoMode::acceptsShortInstallationAdministratorPassword() )
+            return true;
         if ( $password !== false and
              $password !== null and
              strlen( $password ) >= (int) $minPasswordLength )

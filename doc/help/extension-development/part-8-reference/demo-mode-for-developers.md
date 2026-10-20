@@ -93,9 +93,11 @@ class_exists( 'expDemoMode' ) ? expDemoMode::installing( $set ) : $set();
 The scope ends when the callable returns or throws, so it never reaches the next request of a persistent worker.
 Never call `installing()` from code a visitor can reach.
 
-To accept the demo password, ask `eZStepSiteAdmin::isWeakDefaultPassword()` and
-`eZStepSiteAdmin::kickstartPasswordProblem()`, as the kernel's installers do: in demo mode they accept a well-known
-password (never an empty one, and the length rule stays).
+To accept the demo password, ask `eZStepSiteAdmin::isWeakDefaultPassword()`, `isTooShortAdminPassword()` and
+`kickstartPasswordProblem()`, as the kernel's installers do: in demo mode they accept a well-known password of any
+length (never an empty one). To store a password shorter than `MinPasswordLength`, set it inside both
+`expDemoMode::installing()` and `expDemoMode::settingInstallationAdministratorPassword()`, as `eZStepCreateSites`
+does: only there does `eZUser::validatePassword()` accept it, and only while demo mode is on.
 
 ## Templates
 

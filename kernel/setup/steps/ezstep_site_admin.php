@@ -45,8 +45,8 @@ class eZStepSiteAdmin extends eZStepInstaller
      * WeakPasswordList[] and WeakPasswordFile). The installers always check, whatever WeakPasswordCheck says.
      *
      * In demo mode (the environment variable EXP_DEMO_MODE=1, expDemoMode, doc/bc/6.0/demo-mode.md) a well-known
-     * password is accepted, so a public demo can install the password it publishes; an empty one never is, and the
-     * length rule (minAdminPasswordLength()) still applies. This is the one place every installer asks (setup
+     * password is accepted, so a public demo can install the password it publishes; an empty one never is (the
+     * length: isTooShortAdminPassword()). This is the one place every installer asks (setup
      * wizard, kickstarter, exp:install and the demo installers built on them), and it only concerns the
      * administrator password of a new installation.
      *
@@ -98,9 +98,24 @@ class eZStepSiteAdmin extends eZStepInstaller
             return 'empty';
         if ( self::isWeakDefaultPassword( $password ) )
             return 'well-known';
-        if ( strlen( $password ) < self::minAdminPasswordLength() )
+        if ( self::isTooShortAdminPassword( $password ) )
             return 'too short';
         return null;
+    }
+
+    /**
+     * Whether an administrator password of a new installation is shorter than minAdminPasswordLength(). In demo mode
+     * (EXP_DEMO_MODE=1, doc/bc/6.0/demo-mode.md) no length is too short, so a public demo can install the short
+     * password it publishes (publish); an empty password is refused by the callers before they ask.
+     *
+     * @param mixed $password
+     * @return bool
+     */
+    public static function isTooShortAdminPassword( $password )
+    {
+        if ( self::demoModeAcceptsWellKnown() )
+            return false;
+        return strlen( (string)$password ) < self::minAdminPasswordLength();
     }
 
     /**
@@ -182,8 +197,9 @@ class eZStepSiteAdmin extends eZStepInstaller
         {
             $this->Error[] = self::PASSWORD_MISSMATCH;
         }
-        else if ( !eZUser::validatePassword( trim( $posted['password1'] ) ) )
+        else if ( !self::demoModeAcceptsWellKnown() && !eZUser::validatePassword( trim( $posted['password1'] ) ) )
         {
+            // (demo mode, EXP_DEMO_MODE=1: no length is too short for the administrator of a new installation)
             $this->Error[] = self::PASSWORD_TOO_SHORT;
         }
         else if ( self::isWeakDefaultPassword( $posted['password1'] ) )

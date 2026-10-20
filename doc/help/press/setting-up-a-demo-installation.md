@@ -128,8 +128,8 @@ Full table: [The console install, What can go wrong](../../install/07-console-in
 A recording on your own machine needs nothing more. A demo on the internet whose administrator sign-in you publish
 (so viewers can try it themselves) is a **public demo**: run it with the environment variable `EXP_DEMO_MODE=1`.
 
-- Install with the variable, so `exp:install` keeps the password you publish instead of generating one (it must still
-  be at least ten characters):
+- Install with the variable, so `exp:install` keeps the password you publish instead of generating one (any length,
+  `publish` included; an empty one is refused):
 
   ```bash
   EXP_DEMO_MODE=1 php bin/php/console exp:install --password='<the password you publish>'

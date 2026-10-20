@@ -2165,7 +2165,14 @@ language_locale='eng-GB'";
                 return false;
             }
 
-            $userAccount->setInformation( 14, 'admin', $admin['email'], $admin['password'], $admin['password'] );
+            // demo mode (EXP_DEMO_MODE=1): the published demo password may be shorter than MinPasswordLength
+            $setAdminPassword = function () use ( $userAccount, $admin ) {
+                $userAccount->setInformation( 14, 'admin', $admin['email'], $admin['password'], $admin['password'] );
+            };
+            if ( class_exists( 'expDemoMode' ) )
+                expDemoMode::settingInstallationAdministratorPassword( $setAdminPassword );
+            else
+                $setAdminPassword();
             $dataMap['user_account']->setContent( $userAccount );
             $dataMap['user_account']->store();
             $publishAdmin = true;

@@ -16,8 +16,9 @@
  *    services and, as the last line, eZUser::store(), which keeps the stored password of an administrator whatever
  *    the caller did (guardStore()). The installers themselves set the administrator password inside installing();
  *  - the installers (setup wizard, kickstarter, exp:install and the demo installers built on them) accept a
- *    well-known administrator password such as the demo's published one (eZStepSiteAdmin::isWeakDefaultPassword());
- *    the length rule ([UserSettings] MinPasswordLength) still applies, and every other account keeps every rule;
+ *    well-known administrator password of any length, such as the demo's published publish or publishing
+ *    (eZStepSiteAdmin::isWeakDefaultPassword(), isTooShortAdminPassword(), settingInstallationAdministratorPassword());
+ *    an empty one never, and every other account keeps every rule;
  *  - the administration shows a banner (template operator exp_demo_mode()), and each process records once that the
  *    mode is on: var/log/security.log and the audit event system.demo.mode (announce()).
  *
@@ -42,6 +43,9 @@ class expDemoMode
 
     /** @var int depth of installing() calls in progress */
     protected static $installing = 0;
+
+    /** @var int depth of settingInstallationAdministratorPassword() calls in progress */
+    protected static $adminPassword = 0;
 
     /** @var string|null the process (pid) whose start was recorded by announce() */
     protected static $announcedFor = null;
@@ -178,6 +182,39 @@ class expDemoMode
     public static function isInstalling()
     {
         return self::$installing > 0;
+    }
+
+    /**
+     * Runs the installation's own setting of the administrator password (the setup wizard, the kickstarter and
+     * exp:install, through eZStepCreateSites): in demo mode, inside installing(), eZUser::validatePassword() then
+     * accepts a non-empty password of any length, so the demo's published password (publish) is installed. Every
+     * other account and every later password change keep MinPasswordLength. The scope ends with the call.
+     *
+     * @param callable $code
+     * @return mixed what $code returns
+     */
+    public static function settingInstallationAdministratorPassword( $code )
+    {
+        self::$adminPassword++;
+        try
+        {
+            return $code();
+        }
+        finally
+        {
+            self::$adminPassword--;
+        }
+    }
+
+    /**
+     * Whether eZUser::validatePassword() lets a short (non-empty) password through: demo mode is on and the
+     * installation is setting its administrator password (installing() and settingInstallationAdministratorPassword()).
+     *
+     * @return bool
+     */
+    public static function acceptsShortInstallationAdministratorPassword()
+    {
+        return self::$adminPassword > 0 && self::isInstalling() && self::enabled();
     }
 
     /**

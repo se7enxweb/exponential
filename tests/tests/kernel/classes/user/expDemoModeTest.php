@@ -13,8 +13,8 @@
  *  DM-04  The store guard's decision: a new account, an unchanged password, a non-administrator and installing()
  *         pass; a changed administrator password does not, and only while the mode is on
  *  DM-05  installing() is a scope: nested, and it ends on an exception too
- *  DM-06  The installers: a well-known administrator password is accepted only in demo mode; an empty one never is,
- *         and the length rule still applies (setup wizard, kickstarter and exp:install share the check)
+ *  DM-06  The installers: a well-known administrator password is accepted only in demo mode; an empty one never is
+ *         (setup wizard, kickstarter and exp:install share the check)
  *  DM-07  announce() records once per process, and nothing when the mode is off
  *  DM-08  The template operator exp_demo_mode() follows the environment and is registered
  *  DM-09  The banner: one partial in design/admin and design/admin4 (admin4l falls back to admin4), the shared
@@ -23,6 +23,8 @@
  *  DM-10  Every password path asks demo mode: user/password, forgot-password (request and link), the user account
  *         form, exp:resetuserpassword, the web services, the password operations and eZUser::store(); the
  *         installation sets the administrator password inside installing()
+ *  DM-12  The short demo password (publish) is accepted by the installers only in demo mode, and by the account's
+ *         length rule only while the installation sets its administrator password; an empty one never
  *  DM-11  The audit knows system.demo.mode (always on), and the refusal and banner texts are in every complete
  *         kernel catalogue
  *
@@ -254,7 +256,6 @@ class expDemoModeTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( eZStepSiteAdmin::isWeakDefaultPassword( '   ' ) );
         $this->assertTrue( eZStepSiteAdmin::isWeakDefaultPassword( null ) );
         $this->assertSame( 'empty', eZStepSiteAdmin::kickstartPasswordProblem( '' ) );
-        $this->assertSame( 'too short', eZStepSiteAdmin::kickstartPasswordProblem( substr( 'publish', 0, max( 1, $min - 1 ) ) ) );
         // the forms' check (every other account) is not relaxed
         $this->assertTrue( expWeakPasswordList::instance()->isWeak( $demoPassword ) );
 
@@ -264,6 +265,57 @@ class expDemoModeTest extends PHPUnit\Framework\TestCase
         // the setup wizard says so on its page
         $this->assertStringContainsString( "'demo_mode', self::demoModeAcceptsWellKnown()", self::file( 'kernel/setup/steps/ezstep_site_admin.php' ) );
         $this->assertStringContainsString( 'first_set( $demo_mode, false() )', self::file( 'design/standard/templates/setup/init/site_admin.tpl' ) );
+    }
+
+    // ------------------------------------------------------------------ DM-12
+
+    public function testTheInstallersAcceptTheShortDemoPasswordOnlyInDemoModeAndTheInstallingScope()
+    {
+        // the classic demo password: well-known and shorter than MinPasswordLength (10 as shipped)
+        $short = 'publish';
+        $min = eZStepSiteAdmin::minAdminPasswordLength();
+        $this->assertLessThan( $min, strlen( $short ), 'the shipped MinPasswordLength is longer than the demo password' );
+
+        // without demo mode: refused by every installer, and by the length rule of the account
+        $this->assertNotNull( eZStepSiteAdmin::kickstartPasswordProblem( $short ), 'kickstarter' );
+        $this->assertNotNull( \Exponential\Command\Kernel\Install::passwordProblem( $short ), 'exp:install' );
+        $this->assertTrue( eZStepSiteAdmin::isTooShortAdminPassword( $short ) );
+        $this->assertFalse( eZUser::validatePassword( $short ) );
+        $this->assertFalse( expDemoMode::installing( function () use ( $short ) {
+            return expDemoMode::settingInstallationAdministratorPassword( function () use ( $short ) { return eZUser::validatePassword( $short ); } );
+        } ), 'the scopes alone do not open the length without demo mode' );
+
+        self::setMode( '1' );
+        // demo mode: the installers' checks (wizard, kickstarter, exp:install) accept it
+        $this->assertFalse( eZStepSiteAdmin::isTooShortAdminPassword( $short ) );
+        $this->assertNull( eZStepSiteAdmin::kickstartPasswordProblem( $short ), 'kickstarter' );
+        $this->assertNull( \Exponential\Command\Kernel\Install::passwordProblem( $short ), 'exp:install' );
+        // the account's length rule opens only inside both scopes (the installation setting the administrator)
+        $this->assertFalse( eZUser::validatePassword( $short ), 'every other account and every later change' );
+        $this->assertFalse( expDemoMode::installing( function () use ( $short ) { return eZUser::validatePassword( $short ); } ),
+                            'installing() alone (other accounts the installation creates)' );
+        $this->assertFalse( expDemoMode::settingInstallationAdministratorPassword( function () use ( $short ) { return eZUser::validatePassword( $short ); } ),
+                            'outside an installation' );
+        $inside = expDemoMode::installing( function () use ( $short ) {
+            return expDemoMode::settingInstallationAdministratorPassword( function () use ( $short ) {
+                return array( eZUser::validatePassword( $short ), eZUser::validatePassword( '' ), eZUser::validatePassword( '   ' ),
+                              eZUser::validatePassword( false ), eZUser::validatePassword( null ) );
+            } );
+        } );
+        $this->assertSame( array( true, false, false, false, false ), $inside, 'the short one is accepted, an empty one never' );
+        $this->assertFalse( expDemoMode::acceptsShortInstallationAdministratorPassword(), 'the scope ended' );
+        $this->assertFalse( eZUser::validatePassword( $short ) );
+        // an empty one stays refused by every installer
+        $this->assertSame( 'empty', eZStepSiteAdmin::kickstartPasswordProblem( '' ) );
+        $this->assertSame( 'empty', eZStepSiteAdmin::kickstartPasswordProblem( '  ' ) );
+        $this->assertTrue( eZStepSiteAdmin::isWeakDefaultPassword( '' ), 'exp:install' );
+        // the form rules of every account stay
+        $this->assertNotSame( array(), expPasswordPolicy::instance()->accountErrors( $short ) );
+
+        // the paths: the wizard's step, exp:install and the installation's own setting of the password
+        $this->assertStringContainsString( '!self::demoModeAcceptsWellKnown() && !eZUser::validatePassword(', self::file( 'kernel/setup/steps/ezstep_site_admin.php' ) );
+        $this->assertStringContainsString( '\eZStepSiteAdmin::isTooShortAdminPassword( $password )', self::file( 'kernel/private/classes/commands/install.php' ) );
+        $this->assertStringContainsString( 'expDemoMode::settingInstallationAdministratorPassword( $setAdminPassword )', self::file( 'kernel/setup/steps/ezstep_create_sites.php' ) );
     }
 
     // ------------------------------------------------------------------ DM-07

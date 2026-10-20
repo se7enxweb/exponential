@@ -58,14 +58,16 @@ the PHP workers, so it is not the place for `EXP_DEMO_MODE`.
 ## Installing a demo
 
 Set the variable for the installation too. The installers (setup wizard, kickstarter, `exp:install`) then accept the
-published administrator password even though it is a well-known word, instead of replacing it with a random one:
+published administrator password even though it is a well-known word and shorter than `MinPasswordLength`, instead
+of replacing it with a random one:
 
 ```sh
 EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password='<the published demo password>' ...
 ```
 
-The password must still be at least `[UserSettings] MinPasswordLength` characters long (10 as shipped), so a
-ten-character word such as `publishing` works and the seven-character `publish` does not. Do not reset the password
+Any non-empty password works, so both `publish` (seven characters) and `publishing` do; an empty one is still
+refused. Only the administrator password of the new installation is relaxed: every other account keeps
+`[UserSettings] MinPasswordLength` (10 as shipped) and the well-known list. Do not reset the password
 after the installation with `exp:resetuserpassword`: in demo mode that is refused, and it is no longer needed.
 
 A demo that is rebuilt on a schedule (every few hours, from the current code) does this in its build script: install

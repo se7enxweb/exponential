@@ -452,7 +452,7 @@ Administrator (login: admin)
                          one such as publish or admin; otherwise a generated
                          one replaces it and the summary says so. With
                          EXP_DEMO_MODE=1 in the environment (a public demo,
-                         doc/bc/6.0/demo-mode.md) a well-known one is kept
+                         doc/bc/6.0/demo-mode.md) a well-known or short one is kept
   --random-password      generate a strong one (24 characters of the bcrypt
                          alphabet ./A-Za-z0-9), shown once at the end and
                          written to var/log/initial-admin-password

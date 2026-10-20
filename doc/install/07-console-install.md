@@ -339,8 +339,8 @@ A public demonstration site publishes its administrator password. With the envir
 EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password='publishing' --url=https://demo.example.com
 ```
 
-Only the well-known check is relaxed: an empty `--password` is still refused and one shorter than `MinPasswordLength`
-is still replaced. Keep the variable in the environment of the demo's PHP, cron jobs and console afterwards: while it is
+Only the administrator password of the new installation is relaxed: a well-known one and one shorter than
+`MinPasswordLength` (`--password='publish'` too) are installed as given, an empty `--password` is still refused. Keep the variable in the environment of the demo's PHP, cron jobs and console afterwards: while it is
 set, nobody can change or reset an administrator password, and the administration shows a **Demo mode** banner. A
 reset with `exp:resetuserpassword` after the installation is not needed, and is refused in demo mode. Never set it
 for a real site. All of it: [Demo mode](../bc/6.0/demo-mode.md).
