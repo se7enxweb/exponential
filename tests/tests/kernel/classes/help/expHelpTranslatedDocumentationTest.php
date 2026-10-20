@@ -18,6 +18,13 @@
  *  TD-08  the search of a translation finds the translated text and the original's untranslated pages, never the
  *         original of a translated page
  *  TD-09  a translated page is classified by the settings' path rules of the page it translates
+ *  TD-10  path maps (.paths.json, .dirnames.json) merge as a union: sorted, the same file whatever the order, a
+ *         conflict kept from the first map and reported, a git conflict read as its two sides; directory names
+ *         follow .dirnames.json
+ *  TD-11  how much of the help each language has, the "Reading in" choices of the switch, and ?lang= for the original
+ *  TD-12  a translated page rendered from its file reaches the images and pages of the original's directory
+ *  TD-13  an anchor written for another language's version of a page maps to the shown page's heading at the same
+ *         position, when rendered and in the link check, in both directions
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -385,5 +392,197 @@ class expHelpTranslatedDocumentationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'partnership', $page['category'] );
         $this->assertSame( 'doc/en/us/help/partners/program.md', $german->rulePath( 'doc/de/hilfe/partner/programm.md' ) );
         $this->assertSame( 'doc/changelogs/6.0.md', $german->rulePath( 'doc/changelogs/6.0.md' ) );
+    }
+
+    /** TD-10 */
+    public function testPathMapsMergeAsAUnion()
+    {
+        $ours = array( 'hilfe/start.md' => 'help/start.md', 'hilfe/suchen.md' => 'help/searching.md' );
+        $theirs = array( 'hilfe/suchen.md' => 'help/searching.md', 'anleitungen/caches.md' => 'guides/caches.md' );
+        $merge = expHelpLanguage::mergePathMaps( array( $ours, $theirs ) );
+        $this->assertSame( array( 'anleitungen/caches.md' => 'guides/caches.md', 'hilfe/start.md' => 'help/start.md',
+                                  'hilfe/suchen.md' => 'help/searching.md' ), $merge['map'], 'every entry of both, sorted' );
+        $this->assertSame( array(), $merge['conflicts'] );
+        $this->assertSame( $merge['map'], expHelpLanguage::mergePathMaps( array( $theirs, $ours ) )['map'], 'the order of the sides does not matter' );
+        $this->assertSame( expHelpLanguage::encodePathMap( $merge['map'] ),
+                           expHelpLanguage::encodePathMap( expHelpLanguage::mergePathMaps( array( $theirs, $ours ) )['map'] ), 'byte for byte' );
+
+        // a key with two values and a page under two names: the first map wins, both are reported
+        $merge = expHelpLanguage::mergePathMaps( array( array( 'hilfe/a.md' => 'help/a.md' ),
+                                                        array( 'hilfe/a.md' => 'help/b.md', 'hilfe/a2.md' => 'help/a.md' ) ) );
+        $this->assertSame( array( 'hilfe/a.md' => 'help/a.md' ), $merge['map'] );
+        $this->assertCount( 2, $merge['conflicts'] );
+        // malformed entries are left out and reported
+        $merge = expHelpLanguage::mergePathMaps( array( array( '../x.md' => 'help/x.md', 'hilfe/y.md' => 7, 'hilfe/z.md' => 'help//z.md', 'ok.md' => 'help/ok.md' ), 'nonsense' ) );
+        $this->assertSame( array( 'ok.md' => 'help/ok.md' ), $merge['map'] );
+        $this->assertCount( 4, $merge['invalid'] );
+
+        // the file is sorted, one entry per line, slashes unescaped, final newline
+        $this->assertSame( "{\n    \"a/b.md\": \"x/y.md\",\n    \"b.md\": \"z.md\"\n}\n", expHelpLanguage::encodePathMap( array( 'b.md' => 'z.md', 'a/b.md' => 'x/y.md' ) ) );
+        $this->assertSame( "{}\n", expHelpLanguage::encodePathMap( array() ) );
+
+        // a file git left with conflict markers is read as its two sides, with or without a diff3 base
+        $conflicted = "{\n    \"a.md\": \"help/a.md\",\n<<<<<<< HEAD\n    \"b.md\": \"help/b.md\",\n=======\n    \"c.md\": \"help/c.md\",\n>>>>>>> origin/main\n    \"d.md\": \"help/d.md\"\n}\n";
+        $sides = expHelpLanguage::decodeMapSides( $conflicted );
+        $this->assertSame( array( 'a.md' => 'help/a.md', 'b.md' => 'help/b.md', 'd.md' => 'help/d.md' ), $sides[0] );
+        $this->assertSame( array( 'a.md' => 'help/a.md', 'c.md' => 'help/c.md', 'd.md' => 'help/d.md' ), $sides[1] );
+        $this->assertSame( array( 'a.md', 'b.md', 'c.md', 'd.md' ), array_keys( expHelpLanguage::mergePathMaps( $sides )['map'] ) );
+        $diff3 = "{\n<<<<<<< ours\n    \"b.md\": \"help/b.md\",\n    \"z.md\": \"help/z.md\"\n||||||| base\n    \"z.md\": \"help/z.md\"\n=======\n    \"c.md\": \"help/c.md\",\n    \"z.md\": \"help/z.md\"\n>>>>>>> theirs\n}\n";
+        $this->assertSame( array( 'b.md', 'c.md', 'z.md' ), array_keys( expHelpLanguage::mergePathMaps( expHelpLanguage::decodeMapSides( $diff3 ) )['map'] ) );
+        // the last entry of a side that lost its comma, or kept one too many, is read all the same
+        $commas = "{\n<<<<<<< HEAD\n    \"b.md\": \"help/b.md\"\n=======\n    \"c.md\": \"help/c.md\",\n>>>>>>> theirs\n}\n";
+        $sides = expHelpLanguage::decodeMapSides( $commas );
+        $this->assertSame( array( 'b.md' => 'help/b.md' ), $sides[0] );
+        $this->assertSame( array( 'c.md' => 'help/c.md' ), $sides[1] );
+        $this->assertSame( array( '{"a":"b"}' ), expHelpLanguage::conflictSides( '{"a":"b"}' ), 'no markers: the file itself' );
+
+        // every directory is named as .dirnames.json says, or keeps its name
+        $dirnames = array( 'help' => 'hilfe', 'guides' => 'anleitungen' );
+        $this->assertSame( array(), expHelpLanguage::pathsAgainstDirnames(
+            array( 'hilfe/start.md' => 'help/start.md', 'anleitungen/caches.md' => 'guides/caches.md', 'readme.md' => 'README.md',
+                   'hilfe/install/x.md' => 'help/install/x.md' ), $dirnames ) );
+        $this->assertCount( 2, expHelpLanguage::pathsAgainstDirnames(
+            array( 'help/start.md' => 'help/start.md', 'hilfe/anleitung/x.md' => 'help/guides/x.md' ), $dirnames ) );
+    }
+
+    /** TD-12 */
+    public function testTranslatedPageReachesTheOriginalsImagesWhenRendered()
+    {
+        $resolver = function ( $src, $id ) { return '/asset/' . $src; };
+        $markdown = "![Shot](../../en/us/help/img/shot.png) and [the original](../../en/us/help/other.md)\n";
+        $options = array( 'image_resolver' => $resolver, 'link_resolver' => $resolver );
+        // from the page id (help/start.md) the path climbs above the documentation root: refused
+        $byId = ( new expHelpMarkdownRenderer( $options ) )->render( $markdown, 'help/start.md' );
+        $this->assertStringNotContainsString( '<img', $byId['html'] );
+        // from the file the page was read from (doc/de/hilfe/start.md) it stays inside the installation: resolved
+        $byFile = ( new expHelpMarkdownRenderer( $options + array( 'source_path' => 'doc/de/hilfe/start.md' ) ) )->render( $markdown, 'help/start.md' );
+        $this->assertStringContainsString( '<img class="a4-help-img" src="/asset/../../en/us/help/img/shot.png"', $byFile['html'] );
+        $this->assertStringContainsString( 'href="/asset/../../en/us/help/other.md"', $byFile['html'] );
+        // and a path that leaves the installation is refused all the same
+        $out = ( new expHelpMarkdownRenderer( $options + array( 'source_path' => 'doc/de/hilfe/start.md' ) ) )->render( "![x](../../../../etc/passwd)\n", 'help/start.md' );
+        $this->assertStringNotContainsString( '<img', $out['html'] );
+        // the viewer's resolvers turn the file into the original's asset id
+        $german = self::index( 'de' );
+        expHelpDocumentIndex::setInstance( $german );
+        try
+        {
+            $this->assertSame( 'help/img/shot.png', expHelpLinks::resolveId( '../../en/us/help/img/shot.png', 'help/start.md' ) );
+        }
+        finally
+        {
+            expHelpDocumentIndex::setInstance( null );
+        }
+    }
+
+    /** TD-13 */
+    public function testAnchorsMapToTheShownLanguagesHeadings()
+    {
+        $root = self::$root . '/td13';
+        $files = array(
+            'doc/en/us/help/a.md' => "# Anchors\n\n## First part\n\nText.\n\n## Second part\n\nText.\n",
+            'doc/en/us/help/b.md' => "# Linking\n\nSee [the second part](a.md#second-part) and [nothing](a.md#no-such-part).\n",
+            'doc/de/hilfe/a.md' => "# Anker\n\n## Erster Teil\n\nText.\n\n## Zweiter Teil\n\nText.\n",
+            'doc/de/hilfe/c.md' => "# Verweise\n\nSiehe [den zweiten Teil](a.md#zweiter-teil).\n",
+            'doc/en/us/help/c.md' => "# Links\n\nSee [the second part](a.md#second-part).\n",
+            'doc/en/us/help/d.md' => "# Uneven\n\n## Only part\n",
+            'doc/de/hilfe/d.md' => "# Ungleich\n\n## Einziger Teil\n\n## Noch ein Teil\n",
+            'doc/de/.paths.json' => json_encode( array( 'hilfe/a.md' => 'help/a.md', 'hilfe/c.md' => 'help/c.md', 'hilfe/d.md' => 'help/d.md' ) ),
+        );
+        foreach ( $files as $path => $content )
+        {
+            @mkdir( dirname( $root . '/' . $path ), 0777, true );
+            file_put_contents( $root . '/' . $path, $content );
+        }
+        $tracked = array_keys( $files );
+        sort( $tracked );
+        $index = function ( $language ) use ( $root, $tracked ) {
+            $languages = new expHelpLanguage( array( 'default' => 'en/us', 'directories' => array( 'en/us', 'de' ) ), $root );
+            return new expHelpDocumentIndex( new expHelpAllowlist( array( 'root' => $root, 'roots' => array( 'doc' ), 'tracked' => $tracked ) ),
+                                             array( 'cache_dir' => false, 'git_history' => false, 'languages' => $languages, 'language' => $language ) );
+        };
+        $german = $index( 'de' );
+        $english = $index( 'en/us' );
+        // an English page (b, not translated) links an English anchor of a translated page: the German heading
+        $this->assertSame( 'zweiter-teil', $german->anchorOf( 'help/a.md', 'second-part' ) );
+        $this->assertSame( 'zweiter-teil', $german->anchorOf( 'help/a.md', 'zweiter-teil' ), 'an anchor the page has stays' );
+        $this->assertSame( 'no-such-part', $german->anchorOf( 'help/a.md', 'no-such-part' ), 'an unknown anchor stays' );
+        // the other way: a German anchor on the English page (the original, or a fallback)
+        $this->assertSame( 'second-part', $english->anchorOf( 'help/a.md', 'zweiter-teil' ) );
+        // versions with a different number of headings are not mapped
+        $this->assertSame( 'only-part', $german->anchorOf( 'help/d.md', 'only-part' ) );
+        $this->assertSame( 'zweiter-teil', $german->anchorOf( 'help/x.md', 'zweiter-teil' ), 'an unknown page keeps it' );
+
+        // at render time and in the link check
+        expHelpDocumentIndex::setInstance( $german );
+        try
+        {
+            $this->assertStringEndsWith( '/exphelp/viewer/help/a.md#zweiter-teil', (string)expHelpLinks::link( 'a.md#second-part', 'help/b.md' ) );
+            $check = new expHelpLinkCheck( $german );
+            $problems = $check->check( 'help/b.md' );
+            $anchors = array_values( array_filter( $problems, function ( $p ) { return $p['problem'] === 'anchor'; } ) );
+            $this->assertCount( 1, $anchors, 'only the unknown anchor is reported: ' . json_encode( $problems ) );
+            $this->assertStringEndsWith( '#no-such-part', $anchors[0]['resolved'] );
+        }
+        finally
+        {
+            expHelpDocumentIndex::setInstance( null );
+        }
+        expHelpDocumentIndex::setInstance( $english );
+        try
+        {
+            $this->assertStringEndsWith( '/exphelp/viewer/help/a.md#second-part', (string)expHelpLinks::link( 'a.md#zweiter-teil', 'help/b.md' ) );
+        }
+        finally
+        {
+            expHelpDocumentIndex::setInstance( null );
+        }
+    }
+
+    /** TD-11 */
+    public function testReadingLanguageCoverageAndChoices()
+    {
+        $languages = self::languages();
+        $coverage = self::index( 'de' )->languageCoverage();
+        // English has every page; German two of them (hilfe/start.md and hilfe/partner/programm.md)
+        $this->assertSame( array( 'pages' => 3, 'total' => 3 ), $coverage['en/us'] );
+        $this->assertSame( array( 'pages' => 2, 'total' => 3 ), $coverage['de'] );
+        $this->assertSame( $coverage, self::index( 'en/us' )->languageCoverage(), 'the same from every language' );
+
+        $labels = array( 'eng-GB' => 'English (United Kingdom)', 'eng-US' => 'English (United States)', 'ger-DE' => 'Deutsch (Deutschland)', 'fre-FR' => 'Français (France)' );
+        $reading = expHelp::readingChoices( $languages, 'de', $coverage, array_keys( $labels ), $labels, 'ger-DE', 'eng-GB' );
+        $this->assertTrue( $reading['can_switch'] );
+        $this->assertSame( 'language', $reading['provider'] );
+        $this->assertSame( array( 'English', 'Deutsch' ), array_column( $reading['choices'], 'label' ), 'the languages\' own names, without the country' );
+        $this->assertSame( array( 'eng-GB', 'ger-DE' ), array_column( $reading['choices'], 'locale' ), 'English: the siteaccess\'s own English locale' );
+        $this->assertSame( array( false, true ), array_column( $reading['choices'], 'current' ) );
+        $this->assertSame( array( 'en-US', 'de' ), array_column( $reading['choices'], 'lang' ) );
+        $this->assertSame( array( array( 'directory' => 'de', 'name' => 'German', 'pages' => 2, 'total' => 3 ) ), $reading['coverage'] );
+
+        // the current locale wins for its own language: a reader on eng-US stays on eng-US
+        $reading = expHelp::readingChoices( $languages, 'en/us', $coverage, array_keys( $labels ), $labels, 'eng-US', 'eng-GB' );
+        $this->assertSame( array( 'eng-US', 'ger-DE' ), array_column( $reading['choices'], 'locale' ) );
+        // no translated page yet: German is not offered, and one language is no switch
+        $none = array( 'en/us' => array( 'pages' => 3, 'total' => 3 ), 'de' => array( 'pages' => 0, 'total' => 3 ) );
+        $reading = expHelp::readingChoices( $languages, 'en/us', $none, array_keys( $labels ), $labels, 'eng-GB', 'eng-GB' );
+        $this->assertSame( array( 'en/us' ), array_column( $reading['choices'], 'directory' ) );
+        $this->assertFalse( $reading['can_switch'] );
+        $this->assertSame( array(), $reading['coverage'] );
+        // a user without the switch sees the language only
+        $reading = expHelp::readingChoices( $languages, 'de', $coverage, array(), array(), 'ger-DE', 'eng-GB' );
+        $this->assertFalse( $reading['can_switch'] );
+        $this->assertSame( array( 'de' ), array_column( $reading['choices'], 'directory' ), 'the reader\'s language is always listed' );
+        $this->assertSame( 'German', $reading['choices'][0]['label'] );
+        // a language no allowed locale maps to is not offered
+        $reading = expHelp::readingChoices( $languages, 'en/us', $coverage, array( 'eng-GB', 'fre-FR' ), $labels, 'eng-GB', 'eng-GB' );
+        $this->assertSame( array( 'en/us' ), array_column( $reading['choices'], 'directory' ) );
+        $this->assertFalse( $reading['can_switch'] );
+
+        // ?lang=en-us asks for the original; the reader's own language, an unknown one or a malformed value is no request
+        $this->assertSame( 'en/us', expHelp::requestedLanguage( array( 'lang' => 'en-us' ), $languages, 'de' ) );
+        $this->assertNull( expHelp::requestedLanguage( array( 'lang' => 'de' ), $languages, 'de' ) );
+        $this->assertNull( expHelp::requestedLanguage( array( 'lang' => 'fr' ), $languages, 'de' ) );
+        $this->assertNull( expHelp::requestedLanguage( array( 'lang' => array( 'en-us' ) ), $languages, 'de' ) );
+        $this->assertNull( expHelp::requestedLanguage( array( 'lang' => '../en-us' ), $languages, 'de' ) );
+        $this->assertNull( expHelp::requestedLanguage( array(), $languages, 'de' ) );
     }
 }

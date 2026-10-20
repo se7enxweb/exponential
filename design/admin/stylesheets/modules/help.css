@@ -264,6 +264,53 @@
 .a4-help-stats li { display: inline-flex; align-items: center; gap: var(--a4-space-2); }
 .a4-help-stats strong { color: var(--a4-ink); font-size: var(--a4-text-l); font-variant-numeric: tabular-nums; }
 
+/* "Reading in: English / Deutsch" (parts/reading_language.tpl): the reader's language, a segmented switch that posts
+   to uiswitch/set, and how much of the help each translation has. Centred in the dashboard's hero, at the end of
+   the viewer's bar. */
+.a4-help-reading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--a4-space-2) var(--a4-space-3);
+  margin: var(--a4-space-3) 0;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-help-viewer-bar .a4-help-reading { flex: 1 1 100%; justify-content: flex-start; margin: 0; }
+.a4-help-reading-label { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
+.a4-help-reading-form { display: inline-flex; margin: 0; }
+.a4-help-reading-list {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  overflow: hidden;
+}
+.a4-help-reading-list > li + li { border-inline-start: 1px solid var(--a4-line); }
+.a4-help-reading-option {
+  min-height: 28px;
+  margin: 0;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 0;
+  background-color: transparent;
+  color: var(--a4-ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.a4-help-reading-option:hover { background-color: var(--a4-soft); color: var(--a4-accent-text); }
+.a4-help-reading-option:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
+.a4-help-reading-option[aria-current="true"] { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); cursor: default; }
+.a4-help-reading-current { color: var(--a4-ink); }
+.a4-help-reading-coverage { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-3); margin: 0; padding: 0; list-style: none; font-variant-numeric: tabular-nums; }
+.a4-help-reading-about { color: var(--a4-accent-text); }
+/* the link between a translated page and its English original */
+.a4-help-original { display: flex; align-items: center; gap: var(--a4-space-1); margin: 0 0 var(--a4-space-4); }
+
 /* ---- search results (exphelp.js draws them; the search page renders the same markup without the script) ------ */
 
 .a4-help-search-box { position: relative; }
@@ -1735,6 +1782,7 @@
   .a4-help-filter > input:checked + span,
   .a4-help-topics__list a.a4-tag.is-current,
   .a4-help-pager__page.is-current { outline: 2px solid Highlight; }
+  .a4-help-reading-option[aria-current="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
 }
 
 /* ---- documentation license (O): the notice under every help page and the dashboard's free documentation block --

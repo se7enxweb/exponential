@@ -19,7 +19,8 @@ in it, and the English page where no translation exists yet, with a note that sa
 7. [Translated file names: .paths.json](#translated-file-names-pathsjson)
 8. [Settings](#settings)
 9. [The command line](#the-command-line)
-10. [Tests](#tests)
+10. [Several translators: merging .paths.json and .dirnames.json](#several-translators-merging-pathsjson-and-dirnamesjson)
+11. [Tests](#tests)
 
 ## What moved
 
@@ -109,6 +110,13 @@ Every help address from before the move keeps working unchanged, because the ids
 Links inside a page are resolved against the file the page was read from, as GitHub resolves them. A German page
 that links to `../hilfe/suchen.md` opens the page that file translates, in the reader's language.
 
+An anchor in a link is written for one language's version of the target (`guides/x.md#cross-engine-notes` in an
+English page), but the reader may see the other version, whose headings have other anchors. A translation keeps the
+headings of its original in the same order, so the help maps the anchor by position: the n-th heading of the version
+the link was written for is the n-th heading of the version shown (`expHelpDocumentIndex::anchorOf()`). It does so
+when the page is rendered and in `exp:help check`, from English to a translation and back; an anchor the shown page
+has itself, or versions with a different number of headings, are left as they are.
+
 ## Adding a translation
 
 1. Add the directory to `exphelp.ini [DocLanguages] Directories[]` (in an override, or in the kernel's file for a
@@ -118,7 +126,9 @@ that links to `../hilfe/suchen.md` opens the page that file translates, in the r
    and commit them: the help shows only git-tracked files.
 3. Translate as many pages as you like; every page you have not translated yet is shown in English.
 4. Images: an image the translation does not have is taken from `doc/en/us/`. Put a translated screenshot at the same
-   relative path to use it instead.
+   relative path to use it instead. A page with a translated file name links the original's image by its path from
+   the file, as GitHub does (`![...](../../en/us/help/images/x.webp)` in `doc/de/hilfe/x.md`): links and images of a
+   page are resolved from the file it was read from, so they may climb above the page's id.
 
 A directory below `doc/` named by a two letter language code that `Directories[]` does not list (`doc/fr/`) is not
 read, so a translation can be prepared in the repository before it is switched on.
@@ -175,6 +185,37 @@ entry that names a directory `Directories[]` does not list is ignored.
   many pages are translated and how many are shown in English. `--language=de` builds only that language.
 - `./console exp:help search`, `show`, `check` and `pdf` read the default language, or the one of `--language=`.
 - `./console exp:help pdf doc/en/us/guides/caches.md` accepts a file name as well as an id.
+- `./console exp:help maps --language=de` checks the path map and the directory name map of a translation (see
+  below); `--fix` writes them back merged and sorted.
+
+## Several translators: merging .paths.json and .dirnames.json
+
+A translation that translates its file names keeps two maps in its directory:
+
+- `.paths.json`: translated path => path below `doc/en/us/` (read by the help, see above);
+- `.dirnames.json`: English directory name => translated directory name (`{"help": "hilfe", "guides":
+  "anleitungen"}`). The help does not read it; it keeps translators who work in parallel on one name per directory,
+  so the pages of `help/` all land in `hilfe/`.
+
+Both are written the same way: a JSON object, keys sorted, one entry per line, a final newline
+(`expHelpLanguage::encodePathMap()`). Two translators who add entries in different places then merge without a
+conflict, and when git does stop at one, the rule is the union of both sides:
+
+```bash
+git merge origin/main                                  # conflict in doc/de/.paths.json
+./console exp:help maps --language=de --fix            # both sides of the conflict, merged and sorted
+./console exp:help maps --language=de --fix --paths=my-paths.json --dirnames=my-dirnames.json   # and a list of your own
+./console exp:help maps --language=de                  # check: PASS, or what is wrong
+git add doc/de/.paths.json doc/de/.dirnames.json
+```
+
+`--fix` reads both sides of the conflict markers git left in the file (also with a diff3 base section, and when the
+comma of a side's last line was lost or doubled), adds the maps of `--paths=` and `--dirnames=`, and writes the union
+(`expHelpLanguage::mergePathMaps()`). An entry is never lost silently: a path that the two sides give different
+values keeps the file's own value (our side) and is reported as a `CONFLICT`, and so is a page that two translated
+paths name (its id would name two files). The check reports, besides, a translated path that is not a file, an
+original that is not a page, and a translated path whose directories are not named as `.dirnames.json` says (each
+directory either has its translated name or keeps its English one). It exits with 1 when anything is wrong.
 
 ## Tests
 
@@ -188,4 +229,12 @@ entry that names a directory `Directories[]` does not list is ignored.
 - TD-05: the path map in both directions, malformed entries left out, file names turned into ids;
 - TD-06 to TD-09: the index of a translation serves translated pages and marks the fallbacks, the original's index
   never reads a translation, the same id names the same page in every language, links resolve against the file, the
-  search is per language, and a translation is classified like its original.
+  search is per language, and a translation is classified like its original;
+- TD-10: the path maps merge as a union (sorted, the same file whatever the order, a conflict kept from the first map
+  and reported, a git conflict read as its two sides) and directory names follow `.dirnames.json`;
+- TD-11: how much of the help each language has, the choices of the "Reading in" switch, and `?lang=` for the
+  original;
+- TD-12: a translated page is rendered from its file, so its links and images reach the original's directory
+  (`../../en/us/help/images/x.webp` from `doc/de/hilfe/x.md`);
+- TD-13: an anchor written for another language's version of a page maps to the shown page's heading at the same
+  position, when the page is rendered and in the link check, in both directions.
