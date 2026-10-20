@@ -387,7 +387,7 @@ class expDemoModeTest extends PHPUnit\Framework\TestCase
         $needles = array(
             'design/admin' => array( "{include uri='design:parts/exp_demo_mode_banner.tpl'}" ),
             'design/admin4' => array( "{include uri='design:page_mainarea.tpl'}" ),
-            'design/admin4l' => array( "{include uri='design:page_mainarea.tpl'}", "{if \$admin_layout}{include uri='design:parts/exp_demo_mode_banner.tpl'}" ),
+            'design/admin4l' => array( "{include uri='design:page_mainarea.tpl'}" ),
         );
         foreach ( $needles as $design => $list )
         {
@@ -408,10 +408,12 @@ class expDemoModeTest extends PHPUnit\Framework\TestCase
                 $this->assertGreaterThan( 0, $found, "$design: $needle" );
             }
         }
-        // admin4l with a layout: every main zone has the banner in front of it
+        // admin4l with a layout: the main zone draws the main area (the module result block, or the zone's own
+        // fallback), so the banner comes from page_mainarea.tpl once; the pagelayout must not add a second one
         $admin4l = self::file( 'design/admin4l/templates/pagelayout.tpl' );
-        $this->assertSame( substr_count( $admin4l, "zone_identifier='main'" ),
-                           substr_count( $admin4l, "{include uri='design:parts/exp_demo_mode_banner.tpl'}{include uri='design:explayouts/admin_zone.tpl' layout=\$admin_layout zone_identifier='main'}" ) );
+        $this->assertStringNotContainsString( 'exp_demo_mode_banner', $admin4l );
+        $this->assertStringContainsString( "{include uri='design:page_mainarea.tpl'}", self::file( 'design/admin4l/templates/explayouts/block/admin_module_result.tpl' ) );
+        $this->assertStringContainsString( "zone_identifier|eq( 'main' ), \$has_result|not )}{include uri='design:page_mainarea.tpl'}", self::file( 'design/admin4l/templates/explayouts/admin_zone.tpl' ) );
     }
 
     // ------------------------------------------------------------------ DM-10

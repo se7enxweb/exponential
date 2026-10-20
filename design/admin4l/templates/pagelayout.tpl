@@ -167,9 +167,9 @@
 
                 <!-- begin::Main Section -->
                 {if $main_wrapped}
-                    <div id="a4-main" role="main" tabindex="-1">{if $admin_layout}{include uri='design:parts/exp_demo_mode_banner.tpl'}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main'}{else}{include uri='design:page_mainarea.tpl'}{/if}</div>
+                    <div id="a4-main" role="main" tabindex="-1">{if $admin_layout}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main'}{else}{include uri='design:page_mainarea.tpl'}{/if}</div>
                 {elseif $hide_left_menu}
-                    {if $admin_layout}{include uri='design:parts/exp_demo_mode_banner.tpl'}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main'}{else}{include uri='design:page_mainarea.tpl'}{/if}
+                    {if $admin_layout}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main'}{else}{include uri='design:page_mainarea.tpl'}{/if}
                 {else}
                     <div id="maincolumn" class="content-wrapper">
                         {* Pr uri Path/Left menu cache (dosn't use ignore_content_expiry because of content structure menu  ) *}
@@ -188,7 +188,7 @@
                                     </div>
 
                                     <!-- Maincontent START -->
-                                    {if $admin_layout}{include uri='design:parts/exp_demo_mode_banner.tpl'}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main'}{else}{include uri='design:page_mainarea.tpl'}{/if}
+                                    {if $admin_layout}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main'}{else}{include uri='design:page_mainarea.tpl'}{/if}
                                     <!-- Maincontent END -->
                                     {if $admin_layout}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main_bottom'}{/if}
                                 </div>
