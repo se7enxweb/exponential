@@ -41,8 +41,8 @@ vorbereiten, durchführen und auswerten, mit Material, das korrekt, barrierefrei
 | [2. Die Übungsumgebung aufbauen](modul-02-die-uebungsumgebung-aufbauen/README.md) | 8 | 5 Std. 15 Min. | Baut Schulungsinstallationen auf, stellt sie bereit, befüllt sie und setzt sie zurück |
 | [3. Einen Kurs gestalten](modul-03-einen-kurs-gestalten/README.md) | 6 | 4 Std. 5 Min. | Formuliert Lernziele, gliedert einen Kurs und plant seine Zeit, schreibt Übungen |
 | [4. Einen Kurs durchführen](modul-04-durchfuehren/README.md) | 6 | 4 Std. 15 Min. | Gestaltet die erste Stunde, führt sicher vor, behebt Fehler, sorgt für Sicherheit |
-| [5. Barrierefreiheit und Inklusion](../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md) | 4 | 2 Std. 30 Min. | Macht Materialien und Einheiten barrierefrei |
-| [6. Prüfung und Nachbereitung](../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/README.md) | 5 | 2 Std. 40 Min. | Prüft das Gelernte, bewertet fair, sammelt Feedback, fasst nach |
+| [5. Barrierefreiheit und Inklusion](modul-05-barrierefreiheit-und-inklusion/README.md) | 4 | 2 Std. 30 Min. | Macht Materialien und Einheiten barrierefrei |
+| [6. Prüfung und Nachbereitung](modul-06-pruefung-und-nachbereitung/README.md) | 5 | 2 Std. 40 Min. | Prüft das Gelernte, bewertet fair, sammelt Feedback, fasst nach |
 
 ## Lesepfad
 

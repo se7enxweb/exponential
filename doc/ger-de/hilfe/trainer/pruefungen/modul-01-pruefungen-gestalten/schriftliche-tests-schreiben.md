@@ -116,7 +116,7 @@ Schreiben Sie vier Fragen zur Seite [Veröffentlichen, Versionen und der Papierk
 <summary>Antworten</summary>
 
 1. Eine Quellenangabe der Hilfeseite, idealerweise des Abschnitts, die sie belegt
-   ([Quizfragen und praktische Aufgaben](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/quizzes-and-practical-tasks.md)).
+   ([Quizfragen und praktische Aufgaben](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/quizze-und-praktische-aufgaben.md)).
 2. **B.** Es ist ein echtes Missverständnis; der Entwurf wird verworfen, und die veröffentlichte Version bleibt
    ([Veröffentlichen, Versionen und der Papierkorb](../../../veroeffentlichen-und-versionen.md#veröffentlichen)).
 3. Raten ist in der Hälfte der Fälle richtig; die Begründung zeigt Verständnis.
@@ -127,7 +127,7 @@ Schreiben Sie vier Fragen zur Seite [Veröffentlichen, Versionen und der Papierk
 
 ## Weiterführende Literatur
 
-- [Das Verständnis im Unterricht prüfen](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/checking-understanding-during-class.md):
+- [Das Verständnis im Unterricht prüfen](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/verstaendnis-im-kurs-pruefen.md):
   kurze Prüfungen, die auf den Abschlusstest vorbereiten.
 - [Das Hilfe-Center als Ihr Lehrbuch](../../train-the-trainer/modul-01-den-unterricht-vorbereiten/das-hilfe-center-als-ihr-lehrbuch.md):
   wo die Seiten stehen, die Sie zitieren.

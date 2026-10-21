@@ -28,7 +28,7 @@ darüber getäuscht, was sie ist. Diese Lektion liefert den Plan, dem jede Prüf
 | Dauer | 45 Minuten (20 Präsentation, 25 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Trainer, die Teilnehmende am Ende eines Kurses prüfen |
-| Voraussetzungen | [Quizfragen und praktische Aufgaben](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/quizzes-and-practical-tasks.md) in Train the Trainer |
+| Voraussetzungen | [Quizfragen und praktische Aufgaben](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/quizze-und-praktische-aufgaben.md) in Train the Trainer |
 
 ## Lernziele
 
@@ -135,7 +135,7 @@ Beispiel [Redakteure 101](../../redakteure-101/README.md).
 <summary>Antworten</summary>
 
 1. Mit einem Lernziel des Kurses
-   ([Quizfragen und praktische Aufgaben](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/quizzes-and-practical-tasks.md)).
+   ([Quizfragen und praktische Aufgaben](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/quizze-und-praktische-aufgaben.md)).
 2. **B.** Es ist eine Fähigkeit mit einem prüfbaren Ergebnis; eine schriftliche Frage kann das „Warum“ ergänzen
    ([Caches](../../../../anleitungen/caches.md)).
 3. Zu Beginn des Kurses, zusammen mit den anderen Regeln.

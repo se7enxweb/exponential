@@ -52,7 +52,7 @@ Nach dieser Lektion können die Teilnehmenden:
 3. **Feedback an die Gruppe** (2 Minuten). Fragen, die die meisten Teilnehmenden falsch beantwortet haben, weisen auf
    den Kurs hin, nicht auf die Teilnehmenden. Gehen Sie sie mit der ganzen Gruppe durch, mit der zitierten Seite auf
    dem Projektor, und ändern Sie den Kurs beim nächsten Mal
-   ([Feedback sammeln](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md)).
+   ([Feedback sammeln](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/feedback-sammeln.md)).
 4. **Datenschutz** (2 Minuten). Übergeben Sie die Ergebnisse allen Teilnehmenden einzeln und vertraulich. Ein
    Arbeitgeber erhält sie nur, wenn die Teilnehmenden vor dem Kurs zugestimmt haben. Bewahren Sie den Eintrag auf, den
    Sie brauchen (Name, Kurs, Datum, Ergebnis), und löschen Sie den Rest.
@@ -113,7 +113,7 @@ Schreiben Sie Feedback zu einer gedachten Arbeit, die mit dem Bewertungsraster a
 1. Gezeigt, fehlt, als Nächstes.
 2. Eine Hilfeseite oder einen Abschnitt zum Lesen und eine Sache zum Ausprobieren auf einer Schulungsinstallation.
 3. Auf eine Lücke im Kurs oder eine unklare Frage; ändern Sie den Kurs oder die Frage
-   ([Feedback sammeln](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md)).
+   ([Feedback sammeln](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/feedback-sammeln.md)).
 4. Die Teilnehmerin selbst; ein Arbeitgeber nur, wenn sie vor dem Kurs zugestimmt hat.
 5. Korrigieren Sie die Punktzahl und den Lösungsschlüssel; melden Sie die Seite, wenn sie unklar ist.
 
@@ -121,9 +121,9 @@ Schreiben Sie Feedback zu einer gedachten Arbeit, die mit dem Bewertungsraster a
 
 ## Weiterführende Literatur
 
-- [Nach dem Kurs](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/after-the-course.md): Nachrichten zur
+- [Nach dem Kurs](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/nach-dem-kurs.md): Nachrichten zur
   Nachbereitung und was aufzubewahren ist.
-- [Feedback sammeln](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md): Feedback der
+- [Feedback sammeln](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/feedback-sammeln.md): Feedback der
   Teilnehmenden an den Trainer.
 - [Trainer-Werkzeugkasten](../../trainer-werkzeugkasten.md): die Vorlage für die Nachricht zur Nachbereitung.
 

@@ -26,7 +26,7 @@ Fähigkeit sichtbar werden kann, und lässt die Fähigkeit selbst unverändert.
 | Dauer | 40 Minuten (15 Präsentation, 25 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Trainer, die gemischte Gruppen prüfen |
-| Voraussetzungen | [Lektion 1.1](faire-pruefungen-gestalten.md), [Nachteilsausgleich und inklusive Praxis](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accommodations-and-inclusive-practice.md) |
+| Voraussetzungen | [Lektion 1.1](faire-pruefungen-gestalten.md), [Nachteilsausgleich und inklusive Praxis](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/nachteilsausgleich-und-inklusive-praxis.md) |
 
 ## Lernziele
 
@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 1. **Die Regel** (3 Minuten). „Ändern Sie die Bedingungen (Zeit, Format), nicht die gemessene Fähigkeit“
-   ([Nachteilsausgleich und inklusive Praxis](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accommodations-and-inclusive-practice.md)).
+   ([Nachteilsausgleich und inklusive Praxis](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/nachteilsausgleich-und-inklusive-praxis.md)).
    Lautet das Lernziel „einen Artikel veröffentlichen“, ist zusätzliche Zeit ein Nachteilsausgleich; die Aufgabe für
    die Teilnehmerin zu erledigen, ist es nicht.
 2. **Schriftliche Tests** (4 Minuten). Zusätzliche Zeit (üblich ist ein Viertel oder die Hälfte mehr); der Test als
@@ -51,7 +51,7 @@ Nach dieser Lektion können die Teilnehmenden:
    Teilnehmende, die in einer Zweitsprache arbeiten.
 3. **Praktische Aufgaben** (5 Minuten). Das Design Admin 4 der Administration lässt sich allein mit der Tastatur, bei
    starkem Zoom und im Dunkelmodus bedienen
-   ([Mit der barrierefreien Administration unterrichten](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/teaching-with-the-accessible-administration.md),
+   ([Mit der barrierefreien Administration unterrichten](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/mit-der-barrierefreien-administration-unterrichten.md),
    [Tastenkürzel](../../../tastenkuerzel.md)). Lassen Sie die Teilnehmenden ihre Einstellungen vornehmen, bevor die
    Zeit läuft. Geben Sie mindestens jede Stunde eine Pause.
 4. **Sprache** (3 Minuten). Kann die Administration in der Sprache der Teilnehmenden angezeigt werden, erlauben Sie es
@@ -114,7 +114,7 @@ Bereiten Sie den Nachteilsausgleich für eine praktische Aufgabe auf Ihrer Schul
 <summary>Antworten</summary>
 
 1. Ändern Sie die Bedingungen, nicht die gemessene Fähigkeit
-   ([Nachteilsausgleich und inklusive Praxis](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accommodations-and-inclusive-practice.md)).
+   ([Nachteilsausgleich und inklusive Praxis](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/nachteilsausgleich-und-inklusive-praxis.md)).
 2. **B.** Die anderen ändern oder entfernen die Fähigkeit.
 3. Vor der Prüfung, auf derselben Schulungsinstallation.
 4. Löschen Sie sie; bewahren Sie sie nicht länger als den Kurs auf.
@@ -124,9 +124,9 @@ Bereiten Sie den Nachteilsausgleich für eine praktische Aufgabe auf Ihrer Schul
 
 ## Weiterführende Literatur
 
-- [Barrierefreie Kursmaterialien](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accessible-course-materials.md):
+- [Barrierefreie Kursmaterialien](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/barrierefreie-kursmaterialien.md):
   Testbögen, die Screenreader und Zoom nutzen können.
-- [Mit der barrierefreien Administration unterrichten](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/teaching-with-the-accessible-administration.md):
+- [Mit der barrierefreien Administration unterrichten](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/mit-der-barrierefreien-administration-unterrichten.md):
   die Tastatur- und Anzeigefunktionen.
 - [Tastenkürzel](../../../tastenkuerzel.md): jedes Tastenkürzel der Administration.
 

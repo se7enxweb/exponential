@@ -168,7 +168,7 @@ Auf Ihrer Schulungsinstallation. `D` steht für `extension/training_theme/design
 - [Rechts-nach-links-Websites](../../../../../eng-us/help/creators/website-creators/right-to-left-sites.md): die Seite der öffentlichen
   Website.
 - [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md): Inhalte in mehreren Sprachen.
-- [Sprachen und Rechts-nach-links in der Schulung](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/languages-and-right-to-left-in-class.md):
+- [Sprachen und Rechts-nach-links in der Schulung](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/sprachen-und-rechts-nach-links-im-kurs.md):
   mit Rechts-nach-links-Sprachen unterrichten.
 
 ## Verwandte Seiten

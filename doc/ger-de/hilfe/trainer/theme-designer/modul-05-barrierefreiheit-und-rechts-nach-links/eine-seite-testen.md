@@ -136,7 +136,7 @@ Partners.
   vollständige Routine und was nach dem Start zu tun ist.
 - [Prüfung der Barrierefreiheit bei jedem Release](../../../../../eng-us/help/designers/lifecycle/accessibility-audit-per-release.md): dieselbe
   Routine als Teil jedes Theme-Releases.
-- [Barrierefreie Kursmaterialien](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accessible-course-materials.md):
+- [Barrierefreie Kursmaterialien](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/barrierefreie-kursmaterialien.md):
   das eigene Material des Trainers.
 
 ## Verwandte Seiten

@@ -73,7 +73,7 @@ Jeder Kursüberblick listet kürzere Zeitpläne auf, die aus seinen Modulen zusa
 4. Führen Sie die Module nach ihren Zeitplänen durch; prüfen Sie das Verständnis mit den Quizfragen und den
    erwarteten Ergebnissen.
 5. Sammeln Sie Feedback und verbessern Sie den Kurs
-   ([Feedback sammeln](../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md)).
+   ([Feedback sammeln](train-the-trainer/modul-06-pruefung-und-nachbereitung/feedback-sammeln.md)).
 
 ## Verwandte Seiten
 

@@ -18,7 +18,7 @@ Das Exponential-Partnerprogramm nennt Zertifizierungen für Partnerteams (Develo
 deren Lehrplan, Prüfungsformat und Prüfer sind nicht veröffentlicht ([Zertifizierungen](../partner/zertifizierungen.md)).
 Die Kurse hier sind nicht diese Zertifizierungen. Prüfungen und Zertifikate, die Sie ausstellen, sind Ihre eigenen;
 sagen Sie das auch darauf
-([Teilnahmebescheinigungen in Ihrem eigenen Namen](../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md)).
+([Teilnahmebescheinigungen in Ihrem eigenen Namen](train-the-trainer/modul-06-pruefung-und-nachbereitung/teilnahmebescheinigungen.md)).
 
 **Darf ich diese Seiten in einem kostenpflichtigen Kurs verwenden?**
 Ja. Die Dokumentation ist freie Dokumentation unter der GNU FDL 1.3 oder später; Kopien dürfen kostenlos oder gegen
@@ -75,11 +75,11 @@ Es wird vertraulich gemeldet, wie `SECURITY.md` es beschreibt, niemals in einem 
 
 **Meine Teilnehmenden sprechen eine andere Sprache.**
 Stellen Sie die **Sprache der Oberfläche** der Administration um und prüfen Sie ihren Vollständigkeitswert
-([Lektion 5.3](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/languages-and-right-to-left-in-class.md)).
+([Lektion 5.3](train-the-trainer/modul-05-barrierefreiheit-und-inklusion/sprachen-und-rechts-nach-links-im-kurs.md)).
 
 **Wie mache ich den Kurs barrierefrei?**
 Barrierefreie Handouts, die Tastatur- und Anzeigefunktionen des Designs Admin 4 und Nachteilsausgleiche, die im Voraus
-geplant sind ([Modul 5](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md)).
+geplant sind ([Modul 5](train-the-trainer/modul-05-barrierefreiheit-und-inklusion/README.md)).
 
 **Wie lange dauert jeder Kurs?**
 Siehe den [Kurskatalog](kurskatalog.md); jede Modulseite hat einen Zeitplan.

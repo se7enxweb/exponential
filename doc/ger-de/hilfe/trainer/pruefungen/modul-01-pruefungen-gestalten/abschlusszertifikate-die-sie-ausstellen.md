@@ -28,7 +28,7 @@ und die Prüfung, und es behauptet nichts darüber hinaus.
 | Dauer | 30 Minuten (10 Präsentation, 20 Übung) |
 | Niveau | Einsteiger |
 | Zielgruppe | Trainer und Schulungsorganisationen |
-| Voraussetzungen | [Teilnahmebescheinigungen im eigenen Namen](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md) |
+| Voraussetzungen | [Teilnahmebescheinigungen im eigenen Namen](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/teilnahmebescheinigungen.md) |
 
 ## Lernziele
 
@@ -117,7 +117,7 @@ Schreiben Sie das Abschlusszertifikat für eine Teilnehmerin, die die Prüfung v
 <summary>Antworten</summary>
 
 1. Teilnahme: Die Person war anwesend. Abschluss: Die Person hat die Prüfung bestanden
-   ([Teilnahmebescheinigungen](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md)).
+   ([Teilnahmebescheinigungen](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/teilnahmebescheinigungen.md)).
 2. Der Trainer oder die Schulungsorganisation, in eigenem Namen.
 3. **C.** Die anderen beanspruchen einen offiziellen Status, der nicht dokumentiert ist
    ([Aussagen, die Sie nicht machen dürfen](../../../fuersprecher/aussagen-die-sie-nicht-machen-duerfen.md)).
@@ -128,7 +128,7 @@ Schreiben Sie das Abschlusszertifikat für eine Teilnehmerin, die die Prüfung v
 
 ## Weiterführende Literatur
 
-- [Teilnahmebescheinigungen im eigenen Namen](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md):
+- [Teilnahmebescheinigungen im eigenen Namen](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/teilnahmebescheinigungen.md):
   die grundlegende Bescheinigung.
 - [Marken- und Namensregeln](../../../geschaeft/marken-und-namensregeln.md): wie der Produktname geschrieben wird.
 - [Zertifizierungen](../../../partner/zertifizierungen.md): was das Partnerprogramm veröffentlicht.

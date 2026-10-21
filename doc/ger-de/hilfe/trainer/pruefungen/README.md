@@ -48,9 +48,9 @@ Bewertungsraster einheitlich bewerten, hilfreiches Feedback geben und ein ehrlic
 | [1. Prüfungen gestalten](modul-01-pruefungen-gestalten/README.md) | 7 | 4 Std. 40 Min. | Faire Gestaltung, belegte Schlüssel, Bewertungsraster, Nachteilsausgleiche, Sitzungen, Feedback, Zertifikate |
 | [2. Die redaktionellen Kurse prüfen](modul-02-redaktionelle-kurse/README.md) | 6 | 5 Std. 25 Min. | Tests und Aufgaben für Redakteure, Exponential Layouts und Exponential Intelligence |
 | [3. Die Administrationskurse prüfen](modul-03-administrationskurse/README.md) | 6 | 6 Std. 25 Min. | Tests und Aufgaben für Website-Administration, Suche und Multisite |
-| [4. Die technischen Kurse prüfen](../../../../eng-us/help/trainers/assessments/module-04-technical-courses/README.md) | 6 | 7 Std. 15 Min. | Tests und Aufgaben für Entwickler, Theme-Design sowie Hosting und Betrieb |
-| [5. Die Kurse zu Newsletter und Migration prüfen](../../../../eng-us/help/trainers/assessments/module-05-newsletter-and-migration/README.md) | 4 | 4 Std. 45 Min. | Tests und Aufgaben für Newsletter (ohne E-Mail-Versand) und Migration zu Exponential |
-| [6. Abschlussprojekte](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/README.md) | 7 | 1 Std. 25 Min. Lektionen; Abschlussprojekte je 1 bis 2 Tage | Planung, fünf Aufgabenstellungen für Abschlussprojekte mit Bewertungsrastern, Moderation |
+| [4. Die technischen Kurse prüfen](modul-04-technische-kurse/README.md) | 6 | 7 Std. 15 Min. | Tests und Aufgaben für Entwickler, Theme-Design sowie Hosting und Betrieb |
+| [5. Die Kurse zu Newsletter und Migration prüfen](modul-05-newsletter-und-migration/README.md) | 4 | 4 Std. 45 Min. | Tests und Aufgaben für Newsletter (ohne E-Mail-Versand) und Migration zu Exponential |
+| [6. Abschlussprojekte](modul-06-abschlussprojekte/README.md) | 7 | 1 Std. 25 Min. Lektionen; Abschlussprojekte je 1 bis 2 Tage | Planung, fünf Aufgabenstellungen für Abschlussprojekte mit Bewertungsrastern, Moderation |
 
 Die Dauer der Module 2 bis 5 ist die Summe aller ihrer Tests und Aufgaben; eine Gruppe absolviert nur die für ihren
 Kurs.
@@ -59,24 +59,24 @@ Kurs.
 
 | Kurs | Schriftlicher Test | Praktische Aufgabe | Abschlussprojekt |
 |---|---|---|---|
-| Redakteure 101 und 201 | [2.1](modul-02-redaktionelle-kurse/redakteure-schriftlicher-test.md) | [2.2](modul-02-redaktionelle-kurse/redakteure-praktische-aufgabe.md) | [6.2](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-editorial-site.md) |
-| Exponential Layouts | [2.3](modul-02-redaktionelle-kurse/layouts-schriftlicher-test.md) | [2.4](modul-02-redaktionelle-kurse/layouts-praktische-aufgabe.md) | [6.2](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-editorial-site.md) |
-| Exponential Intelligence | [2.5](modul-02-redaktionelle-kurse/intelligence-schriftlicher-test.md) | [2.6](modul-02-redaktionelle-kurse/intelligence-praktische-aufgabe.md) | [6.2](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-editorial-site.md) |
-| Website-Administration | [3.1](modul-03-administrationskurse/website-administratoren-schriftlicher-test.md) | [3.2](modul-03-administrationskurse/website-administratoren-praktische-aufgabe.md) | [6.3](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-site-operations.md) |
-| Suche | [3.3](modul-03-administrationskurse/suche-schriftlicher-test.md) | [3.4](modul-03-administrationskurse/suche-praktische-aufgabe.md) | [6.3](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-site-operations.md), [6.6](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-multisite-launch.md) |
-| Multisite und Seitenpakete | [3.5](modul-03-administrationskurse/multisite-schriftlicher-test.md) | [3.6](modul-03-administrationskurse/multisite-praktische-aufgabe.md) | [6.6](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-multisite-launch.md) |
-| Entwickler | [4.1](../../../../eng-us/help/trainers/assessments/module-04-technical-courses/developers-written-test.md) | [4.2](../../../../eng-us/help/trainers/assessments/module-04-technical-courses/developers-practical-task.md) | [6.4](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-extension-and-theme.md) |
-| Theme-Design | [4.3](../../../../eng-us/help/trainers/assessments/module-04-technical-courses/theme-designers-written-test.md) | [4.4](../../../../eng-us/help/trainers/assessments/module-04-technical-courses/theme-designers-practical-task.md) | [6.4](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-extension-and-theme.md) |
-| Hosting und Betrieb | [4.5](../../../../eng-us/help/trainers/assessments/module-04-technical-courses/hosting-operations-written-test.md) | [4.6](../../../../eng-us/help/trainers/assessments/module-04-technical-courses/hosting-operations-practical-task.md) | [6.3](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-site-operations.md) |
-| Newsletter | [5.1](../../../../eng-us/help/trainers/assessments/module-05-newsletter-and-migration/newsletter-written-test.md) | [5.2](../../../../eng-us/help/trainers/assessments/module-05-newsletter-and-migration/newsletter-practical-task.md) | [6.6](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-multisite-launch.md) |
-| Migration zu Exponential | [5.3](../../../../eng-us/help/trainers/assessments/module-05-newsletter-and-migration/migration-written-test.md) | [5.4](../../../../eng-us/help/trainers/assessments/module-05-newsletter-and-migration/migration-practical-task.md) | [6.5](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/capstone-migration-project.md) |
+| Redakteure 101 und 201 | [2.1](modul-02-redaktionelle-kurse/redakteure-schriftlicher-test.md) | [2.2](modul-02-redaktionelle-kurse/redakteure-praktische-aufgabe.md) | [6.2](modul-06-abschlussprojekte/abschlussprojekt-redaktionelle-website.md) |
+| Exponential Layouts | [2.3](modul-02-redaktionelle-kurse/layouts-schriftlicher-test.md) | [2.4](modul-02-redaktionelle-kurse/layouts-praktische-aufgabe.md) | [6.2](modul-06-abschlussprojekte/abschlussprojekt-redaktionelle-website.md) |
+| Exponential Intelligence | [2.5](modul-02-redaktionelle-kurse/intelligence-schriftlicher-test.md) | [2.6](modul-02-redaktionelle-kurse/intelligence-praktische-aufgabe.md) | [6.2](modul-06-abschlussprojekte/abschlussprojekt-redaktionelle-website.md) |
+| Website-Administration | [3.1](modul-03-administrationskurse/website-administratoren-schriftlicher-test.md) | [3.2](modul-03-administrationskurse/website-administratoren-praktische-aufgabe.md) | [6.3](modul-06-abschlussprojekte/abschlussprojekt-website-betrieb.md) |
+| Suche | [3.3](modul-03-administrationskurse/suche-schriftlicher-test.md) | [3.4](modul-03-administrationskurse/suche-praktische-aufgabe.md) | [6.3](modul-06-abschlussprojekte/abschlussprojekt-website-betrieb.md), [6.6](modul-06-abschlussprojekte/abschlussprojekt-multisite-start.md) |
+| Multisite und Seitenpakete | [3.5](modul-03-administrationskurse/multisite-schriftlicher-test.md) | [3.6](modul-03-administrationskurse/multisite-praktische-aufgabe.md) | [6.6](modul-06-abschlussprojekte/abschlussprojekt-multisite-start.md) |
+| Entwickler | [4.1](modul-04-technische-kurse/entwickler-schriftlicher-test.md) | [4.2](modul-04-technische-kurse/entwickler-praktische-aufgabe.md) | [6.4](modul-06-abschlussprojekte/abschlussprojekt-erweiterung-und-theme.md) |
+| Theme-Design | [4.3](modul-04-technische-kurse/theme-designer-schriftlicher-test.md) | [4.4](modul-04-technische-kurse/theme-designer-praktische-aufgabe.md) | [6.4](modul-06-abschlussprojekte/abschlussprojekt-erweiterung-und-theme.md) |
+| Hosting und Betrieb | [4.5](modul-04-technische-kurse/hosting-betrieb-schriftlicher-test.md) | [4.6](modul-04-technische-kurse/hosting-betrieb-praktische-aufgabe.md) | [6.3](modul-06-abschlussprojekte/abschlussprojekt-website-betrieb.md) |
+| Newsletter | [5.1](modul-05-newsletter-und-migration/newsletter-schriftlicher-test.md) | [5.2](modul-05-newsletter-und-migration/newsletter-praktische-aufgabe.md) | [6.6](modul-06-abschlussprojekte/abschlussprojekt-multisite-start.md) |
+| Migration zu Exponential | [5.3](modul-05-newsletter-und-migration/migration-schriftlicher-test.md) | [5.4](modul-05-newsletter-und-migration/migration-praktische-aufgabe.md) | [6.5](modul-06-abschlussprojekte/abschlussprojekt-migrationsprojekt.md) |
 
 ## Lesepfad
 
 Für einen Trainer, der sich darauf vorbereitet, einen Kurs zu prüfen:
 
-1. [Quizfragen und praktische Aufgaben](../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/quizzes-and-practical-tasks.md)
-   und [Teilnahmebescheinigungen im eigenen Namen](../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md)
+1. [Quizfragen und praktische Aufgaben](../train-the-trainer/modul-06-pruefung-und-nachbereitung/quizze-und-praktische-aufgaben.md)
+   und [Teilnahmebescheinigungen im eigenen Namen](../train-the-trainer/modul-06-pruefung-und-nachbereitung/teilnahmebescheinigungen.md)
    in Train the Trainer: die Kurzfassung dieses Kurses.
 2. [Zertifizierungen](../../partner/zertifizierungen.md) und
    [Aussagen, die Sie nicht machen dürfen](../../fuersprecher/aussagen-die-sie-nicht-machen-duerfen.md): warum Ihre Prüfung Ihre eigene
@@ -86,8 +86,8 @@ Für einen Trainer, der sich darauf vorbereitet, einen Kurs zu prüfen:
    Prüfen Sie jede zitierte Seite gegen die Version, die Sie unterrichten.
 5. Der Test und die Aufgabe für Ihren Kurs in den Modulen 2 bis 5 (siehe die Tabelle oben). Erledigen Sie die
    praktische Aufgabe selbst auf einer Schulungsinstallation und stoppen Sie die Zeit.
-6. Wenn Sie ein längeres Programm durchführen: [Lektion 6.1](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/planning-capstone-projects.md),
-   das Abschlussprojekt für Ihre Gruppe und [Lektion 6.7](../../../../eng-us/help/trainers/assessments/module-06-capstone-projects/reviewing-and-moderating-results.md).
+6. Wenn Sie ein längeres Programm durchführen: [Lektion 6.1](modul-06-abschlussprojekte/abschlussprojekte-planen.md),
+   das Abschlussprojekt für Ihre Gruppe und [Lektion 6.7](modul-06-abschlussprojekte/ergebnisse-pruefen-und-abgleichen.md).
 7. [Kurzkarte für die Übungsumgebung](../kurzkarte-fuer-die-uebungsumgebung.md) und [Trainer-Werkzeugkasten](../trainer-werkzeugkasten.md): Befehle
    und Vorlagen für den Tag.
 

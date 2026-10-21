@@ -100,8 +100,8 @@ zeigt, wie Sie herausfinden, wer Ihre Teilnehmenden sind.
    Exponential Foundation ist die gemeinnützige Organisation; der alte Name ist Geschichte
    ([Namen und Geschichte im Unterricht](train-the-trainer/modul-01-den-unterricht-vorbereiten/namen-und-geschichte-im-unterricht.md)).
 5. **Bleiben Sie barrierefrei und ehrlich.** Barrierefreie Materialien
-   ([Modul 5](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md)) und kein Anspruch auf eine
-   offizielle Zertifizierung ([Teilnahmebescheinigungen](../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md)).
+   ([Modul 5](train-the-trainer/modul-05-barrierefreiheit-und-inklusion/README.md)) und kein Anspruch auf eine
+   offizielle Zertifizierung ([Teilnahmebescheinigungen](train-the-trainer/modul-06-pruefung-und-nachbereitung/teilnahmebescheinigungen.md)).
 
 ## Seiten anderer Zielgruppen, die Sie nutzen werden
 

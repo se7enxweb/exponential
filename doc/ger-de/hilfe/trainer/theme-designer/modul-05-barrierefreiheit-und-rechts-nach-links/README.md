@@ -59,7 +59,7 @@ Administration.
 ## Verwandte Seiten
 
 - [Modul 4: Die Administration gestalten](../modul-04-die-administration-gestalten/README.md)
-- [Barrierefreiheit und Inklusion (Train the Trainer, Modul 5)](../../../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md)
+- [Barrierefreiheit und Inklusion (Train the Trainer, Modul 5)](../../train-the-trainer/modul-05-barrierefreiheit-und-inklusion/README.md)
 - [Theme-Design: Kursüberblick](../README.md)
 - [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

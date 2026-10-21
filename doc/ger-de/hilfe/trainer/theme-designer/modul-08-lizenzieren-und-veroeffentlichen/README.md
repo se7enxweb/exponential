@@ -40,7 +40,7 @@ Modul endet der Kurs.
   Rechtsberatung ist.
 - Für Lektion 8.3 die Exponential-Version der Übungsumgebung (von der Seite „Über“, `/ezinfo/about`) an der Tafel.
 - Lassen Sie am Ende von Lektion 8.3 10 Minuten für das Feedback zum Kurs
-  ([Feedback einholen](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/collecting-feedback.md)).
+  ([Feedback einholen](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/feedback-sammeln.md)).
 
 ## Zeitplan
 

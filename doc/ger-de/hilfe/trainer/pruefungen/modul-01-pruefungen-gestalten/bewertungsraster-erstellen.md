@@ -129,7 +129,7 @@ verstecken Sie dann den Artikel.“
 
 ## Weiterführende Literatur
 
-- [Quizfragen und praktische Aufgaben](../../../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/quizzes-and-practical-tasks.md):
+- [Quizfragen und praktische Aufgaben](../../train-the-trainer/modul-06-pruefung-und-nachbereitung/quizze-und-praktische-aufgaben.md):
   die Kurzfassung dieser Lektion.
 - [Übungen schreiben, die funktionieren](../../train-the-trainer/modul-03-einen-kurs-gestalten/uebungen-schreiben-die-funktionieren.md):
   Aufgaben mit prüfbaren Ergebnissen.
