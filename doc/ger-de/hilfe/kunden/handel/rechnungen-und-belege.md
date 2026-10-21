@@ -40,7 +40,7 @@ Rechnungen in einem Buchhaltungssystem gehören zu den Dingen, die der Shop eine
 überlässt ([Einen Shop betreiben: Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md)). Die Views des
 Shop-Moduls (`kernel/shop/module.php`) enthalten weder eine Rechnungsansicht noch eine Rechnungsnummerierung, keine
 Gutschriften und keinen Export der Bestellungen in eine Tabellendatei
-([Was der eingebaute Shop leistet](../../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md)).
+([Was der eingebaute Shop leistet](../../unternehmen/shops/was-der-eingebaute-shop-kann.md)).
 
 ## Rechnungen in der Praxis
 
@@ -65,7 +65,7 @@ Was Sie auch wählen: Halten Sie fest, wer Rechnungen erstellt, aus welchen Date
 ## Das Beleg-Geheimnis
 
 Beleg-Adressen werden mit `shop.ini [OrderReceiptSettings] Secret` signiert. Wird das Geheimnis geändert, ändert sich
-jede Beleg-Adresse, und Links in alten E-Mails funktionieren nicht mehr ([Bestellbelege und Bestellbestätigung für Unternehmen](../../../../eng-us/help/businesses/stores/order-receipts-and-confirmation-mail.md)).
+jede Beleg-Adresse, und Links in alten E-Mails funktionieren nicht mehr ([Bestellbelege und Bestellbestätigung für Unternehmen](../../unternehmen/shops/bestellbelege-und-bestaetigungsmails.md)).
 
 - [ ] Ihr Partner hat es einmal gesetzt, außerhalb der ausgelieferten Einstellungsdatei, und zusammen mit Ihren anderen Geheimnissen festgehalten.
 - [ ] Niemand ändert es im Rahmen eines routinemäßigen Updates.
@@ -74,6 +74,6 @@ jede Beleg-Adresse, und Links in alten E-Mails funktionieren nicht mehr ([Bestel
 
 - [Bestellbestätigung per E-Mail](bestellbestaetigung-per-e-mail.md)
 - [Dauerhafte Bestellbelege](../../../../eng-us/features/6.0/order-receipts.md)
-- [Bestellbelege und Bestellbestätigung für Unternehmen](../../../../eng-us/help/businesses/stores/order-receipts-and-confirmation-mail.md)
+- [Bestellbelege und Bestellbestätigung für Unternehmen](../../unternehmen/shops/bestellbelege-und-bestaetigungsmails.md)
 - [Shop-Berichte](shop-berichte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

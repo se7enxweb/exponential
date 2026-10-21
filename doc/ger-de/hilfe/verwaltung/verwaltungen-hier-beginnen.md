@@ -130,7 +130,7 @@ verantwortungsvoll.
 - [Websiteersteller: hier beginnen](../../../eng-us/help/creators/website-creators/website-creators-start-here.md)
 - [Anwendungsentwickler: hier beginnen](../../../eng-us/help/creators/app-creators/app-creators-start-here.md)
 - [Partner](../partner/partner-hier-beginnen.md), um einen Supportanbieter zu finden
-- [Unternehmen: hier beginnen](../../../eng-us/help/businesses/businesses-start-here.md), der Begleitbereich für Unternehmen, gemeinnützige Organisationen und Verbände
+- [Unternehmen: hier beginnen](../unternehmen/unternehmen-hier-beginnen.md), der Begleitbereich für Unternehmen, gemeinnützige Organisationen und Verbände
 - [Sicherheitshärtung](../sicherheitshaertung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

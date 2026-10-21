@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für den Eigentümer und die Shop-Leitung. In Warenkörben und auf Wunschzetteln zeigen Kunden ihr
 Interesse, bevor sie kaufen, und einige Einstellungen bestimmen, wie sich beide verhalten. Diese Seite erklärt, worauf
 Sie achten sollten und was Sie Ihren Partner fragen; der Wunschzettel selbst ist unter
-[Rabatte und Wunschzettel für Unternehmen](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md) beschrieben, die Schritte
-an der Kasse unter [Warenkorb und Bestellablauf](../../../../eng-us/help/businesses/stores/basket-and-checkout-flow.md).
+[Rabatte und Wunschzettel für Unternehmen](../../unternehmen/shops/rabatte-und-wunschlisten.md) beschrieben, die Schritte
+an der Kasse unter [Warenkorb und Bestellablauf](../../unternehmen/shops/warenkorb-und-bestellablauf.md).
 
 ## Warenkörbe im Dashboard
 
@@ -58,7 +58,7 @@ Bereinigung findet also nur statt, wenn die Cronjobs laufen ([Cronjobs](../../..
 
 Mit dem Wunschzettel (`shop/wishlist`, Richtlinie `shop/buy`) können angemeldete Kunden Produkte für später
 aufbewahren. Er gehört zum Benutzerkonto, und zum Hinzufügen ist ein registrierter, angemeldeter Benutzer nötig
-([Rabatte und Wunschzettel für Unternehmen](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md)). Das Design Ihrer
+([Rabatte und Wunschzettel für Unternehmen](../../unternehmen/shops/rabatte-und-wunschlisten.md)). Das Design Ihrer
 Website braucht die Schaltfläche **Add to wishlist** und einen Link zum Wunschzettel.
 
 | Frage des Betreibers | Antwort |
@@ -73,13 +73,13 @@ Der Wunschzettel ist ein guter Grund, Konten anzubieten, wenn Ihre Produkte gut 
 ## Personenbezogene Daten
 
 Warenkörbe sind an eine Sitzung gebunden und Wunschzettel an einen Benutzer (`ezbasket`, `ezwishlist`), wie unter
-[Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md) aufgeführt.
+[Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md) aufgeführt.
 Berücksichtigen Sie sie, wenn Sie die Daten Ihres Shops in Ihrer Datenschutzerklärung beschreiben.
 
 ## Verwandte Seiten
 
-- [Warenkorb und Bestellablauf](../../../../eng-us/help/businesses/stores/basket-and-checkout-flow.md)
-- [Rabatte und Wunschzettel für Unternehmen](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md)
+- [Warenkorb und Bestellablauf](../../unternehmen/shops/warenkorb-und-bestellablauf.md)
+- [Rabatte und Wunschzettel für Unternehmen](../../unternehmen/shops/rabatte-und-wunschlisten.md)
 - [Shop-Berichte](shop-berichte.md)
 - [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

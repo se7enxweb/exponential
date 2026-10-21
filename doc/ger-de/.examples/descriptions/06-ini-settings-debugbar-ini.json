@@ -1,0 +1,850 @@
+{
+    "ini:settings/debugbar.ini": {
+        "en": "The registry of the Exp Debug bar (the pinned bar at the bottom of a page with debug output).\nGuide: doc/eng-us/bc/6.0/debug-bar.md\n\nEvery setting the bar shows and changes is one [Setting_<id>] block:\n\n  [Setting_<id>]\n  File=site.ini            the INI file\n  Block=DebugSettings      its block\n  Variable=DebugOutput     its variable\n  Type=bool                bool | enum | list | text | iplist | userlist\n  Label=Debug output\n  Group=output             one of [DebugBarSettings] Groups[]\n  Help=One sentence on what it does.\n  Values[]                 enum only: the values it may take\n  On=enabled               bool only: the words written for on and off; default: the words the\n  Off=disabled             setting's own default uses (enabled/disabled or true/false)\n\nEvery write goes through the exp:ini engine (expIniEditor): line by line, with a backup, keeping\nthe file's owner. An extension adds its own settings in its settings/debugbar.ini.append.php:\n\n  [DebugBarSettings]\n  Settings[]=myext_debug\n  [Setting_myext_debug]\n  File=myext.ini\n  ...",
+        "de": "Das Register der Exp-Debug-Leiste (die angeheftete Leiste am unteren Rand einer Seite mit Debug-Ausgabe).\nAnleitung: doc/eng-us/bc/6.0/debug-bar.md\n\nJede Einstellung, die die Leiste zeigt und ändert, ist ein Block [Setting_<id>]:\n\n  [Setting_<id>]\n  File=site.ini            die INI-Datei\n  Block=DebugSettings      ihr Block\n  Variable=DebugOutput     ihre Variable\n  Type=bool                bool | enum | list | text | iplist | userlist\n  Label=Debug output\n  Group=output             eine aus [DebugBarSettings] Groups[]\n  Help=One sentence on what it does.\n  Values[]                 nur enum: die Werte, die sie annehmen darf\n  On=enabled               nur bool: die für an und aus geschriebenen Wörter; Standard: die Wörter, die der\n  Off=disabled             eigene Standard der Einstellung verwendet (enabled/disabled oder true/false)\n\nJeder Schreibvorgang läuft über die Engine von exp:ini (expIniEditor): Zeile für Zeile, mit Sicherung, unter Beibehaltung\ndes Eigentümers der Datei. Eine Erweiterung fügt ihre eigenen Einstellungen in ihrer settings/debugbar.ini.append.php hinzu:\n\n  [DebugBarSettings]\n  Settings[]=myext_debug\n  [Setting_myext_debug]\n  File=myext.ini\n  ..."
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] DiscoverBlocks": {
+        "en": "Blocks whose every variable is a bool setting of the bar: <file>;<block>;<group>",
+        "de": "Blöcke, deren jede Variable eine bool-Einstellung der Leiste ist: <file>;<block>;<group>"
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] DiscoveryExclude": {
+        "en": "<extension> or <extension>;<file> (e.g. ezjscore;ezjscore.ini) to leave out",
+        "de": "<extension> oder <extension>;<file> (z. B. ezjscore;ezjscore.ini), die ausgelassen werden"
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] ExtensionDiscovery": {
+        "en": "Extension debug switches: in every active extension's settings/*.ini and *.ini.append.php, a\nvariable whose name matches DiscoveryPattern and whose value is enabled/disabled or true/false\nbecomes a bool setting of the group extensions, unless the registry already has it.",
+        "de": "Debug-Schalter von Erweiterungen: In settings/*.ini und *.ini.append.php jeder aktiven Erweiterung wird eine\nVariable, deren Name auf DiscoveryPattern passt und deren Wert enabled/disabled oder true/false ist,\nzu einer bool-Einstellung der Gruppe extensions, außer das Register hat sie schon."
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] Groups": {
+        "en": "Groups, in the order the bar shows them",
+        "de": "Gruppen, in der Reihenfolge, in der die Leiste sie zeigt"
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] LogFile": {
+        "en": "The write log, in var/<site>/log/ (one JSON object per line)",
+        "de": "Das Schreibprotokoll, in var/<site>/log/ (ein JSON-Objekt pro Zeile)"
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] LogListLimit": {
+        "en": "Entries the bar lists",
+        "de": "Einträge, die die Leiste auflistet"
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] Panels": {
+        "en": "Panels of extensions: a tab each after Memory, a chip in the summary and data in the page's JSON. An\nextension adds an id here and names its class (expDebugBarPanelInterface) in [Panel_<id>] Class=; the\nclass decides who may see the panel. Guide: doc/eng-us/bc/6.0/debug-bar.md, \"Panels of extensions\".\n  Panels[]=mypanel\n  [Panel_mypanel]\n  Class=myExtensionDebugBarPanel",
+        "de": "Panels von Erweiterungen: je ein Reiter nach Speicher, ein Chip in der Zusammenfassung und Daten im JSON der Seite. Eine\nErweiterung fügt hier eine ID hinzu und nennt ihre Klasse (expDebugBarPanelInterface) in [Panel_<id>] Class=; die\nKlasse entscheidet, wer das Panel sehen darf. Anleitung: doc/eng-us/bc/6.0/debug-bar.md, \"Panels of extensions\".\n  Panels[]=mypanel\n  [Panel_mypanel]\n  Class=myExtensionDebugBarPanel"
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] Presets": {
+        "en": "Presets, applied from the bar (each value a separate, undoable write)",
+        "de": "Vorlagen, aus der Leiste angewendet (jeder Wert ein eigener, rückgängig machbarer Schreibvorgang)"
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] RenderTree": {
+        "en": "The template tree of the Rendering tab: every template the page rendered, nested, with the file the overrides chose\nand its time (at most 2000). Recorded only while debug output is on; disabled leaves it out.",
+        "de": "Der Template-Baum des Reiters Rendern: jedes Template, das die Seite gerendert hat, verschachtelt, mit der Datei, die die Overrides gewählt haben,\nund ihrer Zeit (höchstens 2000). Nur aufgezeichnet, solange die Debug-Ausgabe an ist; disabled lässt ihn weg."
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] Settings": {
+        "en": "The settings, in the order the bar lists them inside a group",
+        "de": "Die Einstellungen, in der Reihenfolge, in der die Leiste sie innerhalb einer Gruppe auflistet"
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] Theme": {
+        "en": "The looks of the bar: default (light chips) or toolbar (a dark, compact toolbar with an icon in each block, the\nrequest's HTTP status and module/view in the first block, and a block's details in a popup above it). The panel\nabove the bar is the same in both. Any other value is default.",
+        "de": "Das Aussehen der Leiste: default (helle Chips) oder toolbar (eine dunkle, kompakte Werkzeugleiste mit einem Symbol in jedem Block, dem\nHTTP-Status der Anfrage und Modul/Ansicht im ersten Block und den Details eines Blocks in einem Popup darüber). Das Panel\nüber der Leiste ist in beiden gleich. Jeder andere Wert ist default."
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] Thresholds": {
+        "en": "The colours of the live summary: <warn>;<high>\nSQL query cache hit rate of the request in percent: amber BELOW the first, red below the second\n(also amber when a write made every result stale, red in shared mode without APCu)\nMemory of OPcache and APCu in use, in percent (shown only to users with setup or cache rights; APCu is shared by\nevery site of the PHP pool, and the query cache stops adding results below 25 % free, its ApcuReserve)",
+        "de": "Die Farben der Live-Zusammenfassung: <warn>;<high>\nTrefferquote des SQL-Abfrage-Caches der Anfrage in Prozent: gelb UNTER dem ersten, rot unter dem zweiten\n(auch gelb, wenn ein Schreibvorgang jedes Ergebnis veraltet gemacht hat, rot im gemeinsamen Modus ohne APCu)\nBelegter Speicher von OPcache und APCu in Prozent (nur für Benutzer mit Setup- oder Cache-Rechten angezeigt; APCu teilen sich\nalle Websites des PHP-Pools, und der Abfrage-Cache fügt unter 25 % frei keine Ergebnisse mehr hinzu, seine ApcuReserve)"
+    },
+    "ini:settings/debugbar.ini [Preset_template_work]": {
+        "en": "--------------------------------------------------------------------- presets",
+        "de": "--------------------------------------------------------------------- Vorlagen"
+    },
+    "ini:settings/debugbar.ini [Setting_condition_debug]": {
+        "en": "--------------------------------------------------------------------- conditions, REST, caching",
+        "de": "--------------------------------------------------------------------- Bedingungen, REST, Caching"
+    },
+    "ini:settings/debugbar.ini [Setting_debug_by_ip]": {
+        "en": "--------------------------------------------------------------------- who gets debug",
+        "de": "--------------------------------------------------------------------- wer Debug-Ausgabe erhält"
+    },
+    "ini:settings/debugbar.ini [Setting_debug_output]": {
+        "en": "--------------------------------------------------------------------- debug output",
+        "de": "--------------------------------------------------------------------- Debug-Ausgabe"
+    },
+    "ini:settings/debugbar.ini [Setting_mail_debug_sending]": {
+        "en": "--------------------------------------------------------------------- mail",
+        "de": "--------------------------------------------------------------------- Mail"
+    },
+    "ini:settings/debugbar.ini [Setting_regional_debug]": {
+        "en": "--------------------------------------------------------------------- translations",
+        "de": "--------------------------------------------------------------------- Übersetzungen"
+    },
+    "ini:settings/debugbar.ini [Setting_sql_output]": {
+        "en": "--------------------------------------------------------------------- database",
+        "de": "--------------------------------------------------------------------- Datenbank"
+    },
+    "ini:settings/debugbar.ini [Setting_template_debug]": {
+        "en": "--------------------------------------------------------------------- templates",
+        "de": "--------------------------------------------------------------------- Templates"
+    },
+    "ini:settings/design.ini": {
+        "en": "Exponential configuration file for designs\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/design.ini.append or\n      settings/override/design.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für Designs\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/design.ini.append oder\n      settings/override/design.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/design.ini [AdminDesignSettings] IconList": {
+        "en": "admin4: the icons a setting may name (menu.ini LinkIcons[] of a menu drawn as tiles, the Setup overview). Each name\nhas a mask rule .a4-bi-<name> in components.css (a Bootstrap Icons 1.13.2 SVG in share/icons/bootstrap-icons/svg/);\na name not listed here draws the plug icon. An extension that ships an icon of its own adds its SVG, a rule\n.a4-bi-<name> in a stylesheet of BackendCSSFileList[] and IconList[]=<name> in its design.ini.append.php\n(doc/eng-us/features/6.0/admin4-design.md, \"Setup overview\").",
+        "de": "admin4: die Symbole, die eine Einstellung nennen darf (menu.ini LinkIcons[] eines als Kacheln gezeichneten Menüs, die Setup-Übersicht). Jeder Name\nhat eine Masken-Regel .a4-bi-<name> in components.css (ein SVG von Bootstrap Icons 1.13.2 in share/icons/bootstrap-icons/svg/);\nein hier nicht aufgeführter Name zeichnet das Stecker-Symbol. Eine Erweiterung, die ein eigenes Symbol mitliefert, fügt ihr SVG, eine Regel\n.a4-bi-<name> in einem Stylesheet aus BackendCSSFileList[] und IconList[]=<name> in ihrer design.ini.append.php hinzu\n(doc/eng-us/features/6.0/admin4-design.md, \"Setup overview\")."
+    },
+    "ini:settings/design.ini [AdminDesignSettings] ShowCommunityLinks": {
+        "en": "admin4: the footer's \"Evaluate Exponential / Become a member of the Exponential Community\" line.\nenabled shows it; disabled (the default) leaves it out. A template can also set $show_community_links.",
+        "de": "admin4: die Zeile „Exponential bewerten / Mitglied der Exponential-Community werden“ in der Fußzeile.\nenabled zeigt sie; disabled (der Standard) lässt sie weg. Ein Template kann auch $show_community_links setzen."
+    },
+    "ini:settings/design.ini [AdminDesignSettings] TopMenuIcons": {
+        "en": "admin4: the icons before the tabs of the header's main menu (menu.ini [Topmenu_<tab>] Icon, a name of IconList[]).\nenabled (default) draws them; disabled shows the names alone. An extension's tab sets Icon= in its own\nmenu.ini.append.php, and a siteaccess or extension may override any tab's Icon there.",
+        "de": "admin4: die Symbole vor den Reitern des Hauptmenüs im Kopf (menu.ini [Topmenu_<tab>] Icon, ein Name aus IconList[]).\nenabled (Standard) zeichnet sie; disabled zeigt nur die Namen. Der Reiter einer Erweiterung setzt Icon= in ihrer eigenen\nmenu.ini.append.php, und ein Siteaccess oder eine Erweiterung kann dort das Icon jedes Reiters überschreiben."
+    },
+    "ini:settings/design.ini [ExtensionSettings] DesignExtensions": {
+        "en": "A list of extensions which have design data\nIt's common to create a settings/design.ini.append file\nin your extension and add the extension name to automatically\nget design from the extension when it's turned on.",
+        "de": "Eine Liste der Erweiterungen, die Design-Daten haben\nÜblicherweise legt man in der Erweiterung eine Datei settings/design.ini.append\nan und trägt den Namen der Erweiterung ein, um automatisch\ndas Design der Erweiterung zu erhalten, wenn sie eingeschaltet ist."
+    },
+    "ini:settings/design.ini [JavaScriptSettings] BackendJavaScriptList": {
+        "en": "Same as above for backend (admin) designs. The tables, uploads, dialogs, date fields, collapsing menus and\nsticky toolbars run on Exponential UI (extension expui adds exp::* to this list).\nleftmenu_widthcontrol.js is the column grip of design/admin, whose page_leftmenu.tpl loads it itself; admin4 has\nits own in ezadmin_menubar.js and does not ship the file. Do not add it here.",
+        "de": "Wie oben, für Backend-Designs (Administration). Die Tabellen, Uploads, Dialoge, Datumsfelder, ausklappbaren Menüs und\nfesten Werkzeugleisten laufen auf Exponential UI (die Erweiterung expui fügt dieser Liste exp::* hinzu).\nleftmenu_widthcontrol.js ist der Spaltengriff von design/admin, dessen page_leftmenu.tpl es selbst lädt; admin4 hat\nseinen eigenen in ezadmin_menubar.js und liefert die Datei nicht mit. Fügen Sie es hier nicht hinzu."
+    },
+    "ini:settings/design.ini [JavaScriptSettings] FrontendJavaScriptList": {
+        "en": "JavaScriptList[]=tools/ezjsselection.js\nSame as above for frontend designs",
+        "de": "JavaScriptList[]=tools/ezjsselection.js\nWie oben, für Frontend-Designs"
+    },
+    "ini:settings/design.ini [JavaScriptSettings] JavaScriptList": {
+        "en": "List of JavaScript files to include in pagelayout\nDEPRECATED in favor of [Frontend|Backend]JavaScriptList[]",
+        "de": "Liste der JavaScript-Dateien, die in das Pagelayout eingebunden werden\nVERALTET zugunsten von [Frontend|Backend]JavaScriptList[]"
+    },
+    "ini:settings/design.ini [StylesheetSettings] AdminComponentCSSFileList": {
+        "en": "The administration's shared component classes (.a4-*) and its module stylesheets, loaded by the admin, admin3\nand admin4 designs after their own stylesheets and before BackendCSSFileList, so the packer bundles and caches\nthem with the rest and an extension still has the last word. Every module stylesheet is listed here by name:\none bundle for every admin page, cached once. The admin's templates carry no CSS of their own (no <style>, no\nstyle=\"\"); see doc/eng-us/bc/6.0/admin4-styling.md. An extension adds its file to BackendCSSFileList, not here.",
+        "de": "Die gemeinsamen Komponentenklassen der Administration (.a4-*) und ihre Modul-Stylesheets, von den Designs admin, admin3\nund admin4 nach ihren eigenen Stylesheets und vor BackendCSSFileList geladen, sodass der Packer sie\nmit dem Rest bündelt und cacht und eine Erweiterung trotzdem das letzte Wort hat. Jedes Modul-Stylesheet steht hier mit Namen:\nein Bündel für jede Administrationsseite, einmal gecacht. Die Templates der Administration tragen kein eigenes CSS (kein <style>, kein\nstyle=\"\"); siehe doc/eng-us/bc/6.0/admin4-styling.md. Eine Erweiterung fügt ihre Datei BackendCSSFileList hinzu, nicht hier."
+    },
+    "ini:settings/design.ini [StylesheetSettings] BackendCSSFileList": {
+        "en": "Same as above for backend (admin) designs. The tables, uploads, dialogs, date fields, collapsing menus and\nsticky toolbars run on Exponential UI (extension expui adds exp::* to this list). admin3 loads its responsive.css\nitself (page_head_style.tpl); the list used to name it for every admin design.",
+        "de": "Wie oben, für Backend-Designs (Administration). Die Tabellen, Uploads, Dialoge, Datumsfelder, ausklappbaren Menüs und\nfesten Werkzeugleisten laufen auf Exponential UI (die Erweiterung expui fügt dieser Liste exp::* hinzu). admin3 lädt seine responsive.css\nselbst (page_head_style.tpl); früher nannte die Liste sie für jedes Administrations-Design."
+    },
+    "ini:settings/design.ini [StylesheetSettings] CSSFileList": {
+        "en": "A list of CSS file to always include in the pagelayout\nThis can be filled in by extensions to provide styles\nthat are not in the standard themes.\nDEPRECATED in favor of [Frontend|Backend]CSSFileList[]",
+        "de": "Eine Liste von CSS-Dateien, die immer in das Pagelayout eingebunden werden\nErweiterungen können sie befüllen, um Styles bereitzustellen,\ndie nicht in den Standard-Themes sind.\nVERALTET zugunsten von [Frontend|Backend]CSSFileList[]"
+    },
+    "ini:settings/design.ini [StylesheetSettings] FrontendCSSFileList": {
+        "en": "Same as above for frontend designs",
+        "de": "Wie oben, für Frontend-Designs"
+    },
+    "ini:settings/error.ini": {
+        "en": "Exponential configuration file for error handling\n\nNOTE: It is not recommended to edit these files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/error.ini.append or\n      settings/override/error.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).\nThe following error codes for kernel is currently defined\n1  - Access denied\n2  - Object not found\n3  - Object not available\n4  - Object has moved\n5  - Language not found\n6  - Form token refused (a POST without, or with a wrong, form token);\n     always shown on the spot as HTTP 403 (design:error/kernel/6.tpl),\n     ErrorHandler/RedirectURL/RerunURL do not apply to it\n20 - Module not found\n21 - Module view not found\n22 - Module or view disabled\n50 - No DB connection",
+        "de": "Exponential-Konfigurationsdatei für die Fehlerbehandlung\n\nHINWEIS: Es wird nicht empfohlen, diese Dateien direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/error.ini.append oder\n      settings/override/error.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden).\nDie folgenden Fehlercodes des Kernels sind derzeit definiert\n1  - Zugriff verweigert\n2  - Objekt nicht gefunden\n3  - Objekt nicht verfügbar\n4  - Objekt wurde verschoben\n5  - Sprache nicht gefunden\n6  - Formular-Token abgelehnt (ein POST ohne oder mit falschem Formular-Token);\n     immer sofort als HTTP 403 angezeigt (design:error/kernel/6.tpl),\n     ErrorHandler/RedirectURL/RerunURL gelten dafür nicht\n20 - Modul nicht gefunden\n21 - Modulansicht nicht gefunden\n22 - Modul oder Ansicht deaktiviert\n50 - Keine Datenbankverbindung"
+    },
+    "ini:settings/error.ini [ErrorSettings-kernel]": {
+        "en": "Error handling for kernel errors",
+        "de": "Fehlerbehandlung für Fehler des Kernels"
+    },
+    "ini:settings/error.ini [ErrorSettings-kernel] EmbedURL": {
+        "en": "A list of error codes and the url for embedding.\nEmbedding means running the module as in rerun but\nthe result of the module is sent to the error template\nand embedded.\nOverrides DefaultEmbedURL\nExample:\nEmbed user/login if access was denied\nEmbedURL[1]=/user/login",
+        "de": "Eine Liste von Fehlercodes und der URL zum Einbetten.\nEinbetten heißt, das Modul wie bei rerun auszuführen, aber\ndas Ergebnis des Moduls wird an das Fehler-Template geschickt\nund eingebettet.\nÜberschreibt DefaultEmbedURL\nBeispiel:\nuser/login einbetten, wenn der Zugriff verweigert wurde\nEmbedURL[1]=/user/login"
+    },
+    "ini:settings/error.ini [ErrorSettings-kernel] ErrorHandler": {
+        "en": "A list of error codes and which handler to use for it\nOverrides DefaultErrorHandler\nExample:\nWhat to do when a module does not exists, use either displayerror or redirect\nErrorHandler[20]=displayerror\nSet access denied to embed login",
+        "de": "Eine Liste von Fehlercodes und des dafür zu verwendenden Handlers\nÜberschreibt DefaultErrorHandler\nBeispiel:\nWas zu tun ist, wenn ein Modul nicht existiert: displayerror oder redirect\nErrorHandler[20]=displayerror\nBei verweigertem Zugriff die Anmeldung einbetten"
+    },
+    "ini:settings/error.ini [ErrorSettings-kernel] HTTPError": {
+        "en": "Defines the HTTP error code to use for the specified Exponential error code.\nThe definition is HTTPError[Exponential error code]=HTTP error code.\nThe HTTP error code must be defined with a HTTPError-code group as seen below.\nExample:\nAdd 404 for module not found error\nHTTPError[20]=404\n301 = moved permanently",
+        "de": "Legt den HTTP-Fehlercode fest, der für den angegebenen Fehlercode von Exponential verwendet wird.\nDie Definition ist HTTPError[Exponential error code]=HTTP error code.\nDer HTTP-Fehlercode muss mit einer Gruppe HTTPError-code wie unten definiert sein.\nBeispiel:\n404 für den Fehler Modul nicht gefunden hinzufügen\nHTTPError[20]=404\n301 = dauerhaft verschoben"
+    },
+    "ini:settings/error.ini [ErrorSettings-kernel] RedirectURL": {
+        "en": "A list of error codes and the url for redirection.\nRedirection tells the browser to choose another url for display.\nOverrides DefaultRedirectURL\nExample:\nRedirect to user/login if access was denied\nRedirectURL[1]=/user/login",
+        "de": "Eine Liste von Fehlercodes und der URL zur Weiterleitung.\nDie Weiterleitung sagt dem Browser, eine andere URL anzuzeigen.\nÜberschreibt DefaultRedirectURL\nBeispiel:\nAuf user/login weiterleiten, wenn der Zugriff verweigert wurde\nRedirectURL[1]=/user/login"
+    },
+    "ini:settings/error.ini [ErrorSettings-kernel] RerunURL": {
+        "en": "A list of error codes and the url for rerunning.\nRerunning means executing another module and view\nas though that module was specified in the browser url.\nOverrides DefaultRerunURL\nExample:\nRerun user/login if access was denied\nRerunURL[1]=/user/login",
+        "de": "Eine Liste von Fehlercodes und der URL zum erneuten Ausführen.\nErneutes Ausführen heißt, ein anderes Modul und eine andere Ansicht auszuführen,\nals wäre dieses Modul in der Browser-URL angegeben.\nÜberschreibt DefaultRerunURL\nBeispiel:\nuser/login erneut ausführen, wenn der Zugriff verweigert wurde\nRerunURL[1]=/user/login"
+    },
+    "ini:settings/error.ini [ErrorSettings-shop]": {
+        "en": "Allow the default Exponential 500 error message to be overridden\nNote: this will not work with siteaccess settings, will only be global (settings/override/error.ini.append.php), because of how early this is registered\nFatalErrorHandler=CustomFatalErrorHandlerClass::FatalErrorHandlerFunction\nError handling for shop errors\nSee the kernel errors for details on usage",
+        "de": "Erlaubt, die Standard-Fehlermeldung 500 von Exponential zu überschreiben\nHinweis: Das funktioniert nicht mit Siteaccess-Einstellungen, nur global (settings/override/error.ini.append.php), weil es so früh registriert wird\nFatalErrorHandler=CustomFatalErrorHandlerClass::FatalErrorHandlerFunction\nFehlerbehandlung für Fehler des Shops\nZur Verwendung siehe die Fehler des Kernels"
+    },
+    "ini:settings/error.ini [ErrorSettings]": {
+        "en": "Global error settings which are used for all error types\nA specific error type group is defined with ErrorSettings followed\nby a - (dash) and the error type name, e.g. ErrorSettting-kernel",
+        "de": "Globale Fehlereinstellungen, die für alle Fehlertypen gelten\nEine Gruppe für einen bestimmten Fehlertyp wird mit ErrorSettings, gefolgt\nvon einem - (Bindestrich) und dem Namen des Fehlertyps definiert, z. B. ErrorSettting-kernel"
+    },
+    "ini:settings/error.ini [ErrorSettings] DefaultErrorHandler": {
+        "en": "Static pages for failures outside the template engine (lib/ezutils/classes/ezexecution.php):\nStaticErrorPage[500], StaticErrorPage[503], StaticErrorPage[default], and one per known error\ncase, shown instead of the general page when the installation explains the failure:\n  StaticErrorPage[dependencies]  the Composer libraries (vendor/) are missing; placeholders\n  {status} {title} {message} {steps} {repair} {reference} {home} {detail}. Unset: a built-in page.\nStaticErrorPage[dependencies]=design/standard/errors/dependencies.html\nWhich handler to use, possible handlers are:\ndisplayerror - Displays a text explaining the error\nredirect     - Redirect to a specific url\nrerun        - Rerun a module/view on the page, specified by a url\nembed        - Run a module/view and embed the results on the\n               same page used in displayerror",
+        "de": "Statische Seiten für Fehler außerhalb der Template-Engine (lib/ezutils/classes/ezexecution.php):\nStaticErrorPage[500], StaticErrorPage[503], StaticErrorPage[default] und eine pro bekanntem Fehler-\nfall, angezeigt statt der allgemeinen Seite, wenn die Installation den Fehler erklärt:\n  StaticErrorPage[dependencies]  die Composer-Bibliotheken (vendor/) fehlen; Platzhalter\n  {status} {title} {message} {steps} {repair} {reference} {home} {detail}. Nicht gesetzt: eine eingebaute Seite.\nStaticErrorPage[dependencies]=design/standard/errors/dependencies.html\nWelcher Handler verwendet wird, mögliche Handler sind:\ndisplayerror - zeigt einen Text, der den Fehler erklärt\nredirect     - leitet auf eine bestimmte URL weiter\nrerun        - führt ein Modul/eine Ansicht auf der Seite erneut aus, angegeben durch eine URL\nembed        - führt ein Modul/eine Ansicht aus und bettet die Ergebnisse auf\n               derselben Seite ein, die displayerror verwendet"
+    },
+    "ini:settings/error.ini [HTTPError-301]": {
+        "en": "Definition of the HTTP error code 301\nURL moved permanently",
+        "de": "Definition des HTTP-Fehlercodes 301\nURL dauerhaft verschoben"
+    },
+    "ini:settings/error.ini [HTTPError-401]": {
+        "en": "Definition of the HTTP error code 401\nAuthorization Required",
+        "de": "Definition des HTTP-Fehlercodes 401\nAutorisierung erforderlich"
+    },
+    "ini:settings/error.ini [HTTPError-403]": {
+        "en": "Definition of the HTTP error code 403\nForbidden (a refused form token)",
+        "de": "Definition des HTTP-Fehlercodes 403\nVerboten (ein abgelehntes Formular-Token)"
+    },
+    "ini:settings/error.ini [HTTPError-404]": {
+        "en": "Definition for the HTTP error code 404.\nIt's possible to specify more error codes by creating a group called\nHTTPError followed by a - (dash) and the HTTP error code.\nThe group most contain the HTTPName variable, if not the error code\nis not issued to the browser.\nNote: The HTTPName must be contain the correct string for the\n      specific HTTP error code.\n\nHeaderList[] adds response headers to the error page, one per entry:\nHeaderList[<header name>]=<value>. They are sent after the status lines,\nand stored with the page in the content view cache, so a cached error page\nsends them again. A name that is not a valid header name, or a value with a\nline break, is left out with a warning. HeaderList[Status]=<text> is read\nas HTTPName when HTTPName is not set. Empty by default: nothing is added.\nExample:\nHeaderList[Cache-Control]=public, must-revalidate, max-age=300",
+        "de": "Definition des HTTP-Fehlercodes 404.\nWeitere Fehlercodes lassen sich angeben, indem man eine Gruppe\nHTTPError, gefolgt von einem - (Bindestrich) und dem HTTP-Fehlercode, anlegt.\nDie Gruppe muss die Variable HTTPName enthalten, sonst wird der Fehlercode\nnicht an den Browser gesendet.\nHinweis: HTTPName muss die korrekte Zeichenkette für den\n      jeweiligen HTTP-Fehlercode enthalten.\n\nHeaderList[] fügt der Fehlerseite Antwort-Header hinzu, einen pro Eintrag:\nHeaderList[<header name>]=<value>. Sie werden nach den Statuszeilen gesendet\nund mit der Seite im View-Cache der Inhalte gespeichert, sodass eine gecachte Fehlerseite\nsie erneut sendet. Ein Name, der kein gültiger Header-Name ist, oder ein Wert mit einem\nZeilenumbruch wird mit einer Warnung ausgelassen. HeaderList[Status]=<text> wird\nals HTTPName gelesen, wenn HTTPName nicht gesetzt ist. Standardmäßig leer: Nichts wird hinzugefügt.\nBeispiel:\nHeaderList[Cache-Control]=public, must-revalidate, max-age=300"
+    },
+    "ini:settings/exphelp.ini": {
+        "en": "The help system of the administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset and\nexphelp/report (doc/eng-us/features/6.0/help-system.md). It shows the git-tracked text and Markdown files under doc/,\nrendered safely, searchable and filtered by audience. Policy exphelp/read; Anonymous does not have it.\n\nExtensions add their own settings in extension/<ext>/settings/exphelp.ini.append.php: context help entries\n([ContextHelp]), featured pages, and (opt-in, below) their own doc directory.",
+        "de": "Das Hilfesystem der Administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset und\nexphelp/report (doc/eng-us/features/6.0/help-system.md). Es zeigt die von git versionierten Text- und Markdown-Dateien unter doc/,\nsicher gerendert, durchsuchbar und nach Zielgruppe gefiltert. Richtlinie exphelp/read; Anonymous hat sie nicht.\n\nErweiterungen fügen ihre eigenen Einstellungen in extension/<ext>/settings/exphelp.ini.append.php hinzu: Einträge der Kontexthilfe\n([ContextHelp]), hervorgehobene Seiten und (wahlweise, unten) ihr eigenes doc-Verzeichnis."
+    },
+    "ini:settings/exphelp.ini [AudienceSettings] AudienceIcons": {
+        "en": "Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css",
+        "de": "Symbolnamen; jeder muss eine Klasse .a4-bi-<name> in stylesheets/components.css haben"
+    },
+    "ini:settings/exphelp.ini [AudienceSettings] Audiences": {
+        "en": "editor: writes and publishes content; admin: runs the site; developer: builds on it; user: a site's visitor or\nmember; project-manager: plans and leads projects built on it; sales-marketing: presents, sells and promotes it\nand grows its community; partner: a company that builds, hosts or sells with Exponential; advocate: a community\nadvocate (street team); designer: designs themes and templates, builds, ships and maintains extensions;\nhosting: a hosting company; app-creator / website-creator: builds applications / websites with it; supporter:\nhelps the project grow; sponsor: funds it (doc/eng-us/help/<folder>/ of each in PathRules[] below). Who a page is for:\nits front matter (audience: editor, admin), else the first PathRules[]\nthat matches, else its file name (...-developer.md) or opening lines (\"for editors\"), else TypeDefaults[<type>].\nThe order here is the order of the dashboard's audience cards and the search filters.",
+        "de": "editor: schreibt und veröffentlicht Inhalte; admin: betreibt die Website; developer: baut darauf auf; user: Besucher oder\nMitglied einer Website; project-manager: plant und leitet darauf gebaute Projekte; sales-marketing: präsentiert, verkauft und bewirbt es\nund lässt seine Community wachsen; partner: ein Unternehmen, das mit Exponential baut, hostet oder verkauft; advocate: ein Fürsprecher\nder Community (Street Team); designer: gestaltet Themes und Templates, baut, liefert und pflegt Erweiterungen;\nhosting: ein Hosting-Unternehmen; app-creator / website-creator: baut Anwendungen / Websites damit; supporter:\nhilft dem Projekt zu wachsen; sponsor: finanziert es (doc/eng-us/help/<folder>/ von jedem in PathRules[] unten). Für wen eine Seite ist:\nihr Front Matter (audience: editor, admin), sonst die erste passende Regel aus PathRules[],\nsonst ihr Dateiname (...-developer.md) oder ihre ersten Zeilen (\"for editors\"), sonst TypeDefaults[<type>].\nDie Reihenfolge hier ist die der Zielgruppenkarten des Dashboards und der Suchfilter."
+    },
+    "ini:settings/exphelp.ini [AudienceSettings] PathRules": {
+        "en": "<pattern>;<audience,audience>, first match wins (\"*\" also matches \"/\")",
+        "de": "<pattern>;<audience,audience>, der erste Treffer gewinnt (\"*\" passt auch auf \"/\")"
+    },
+    "ini:settings/exphelp.ini [AudienceSettings] TypeDefaults": {
+        "en": "<type> => <audience,audience>, when nothing else says\nan active extension's own documentation (extension/<name>/doc, its README ...)",
+        "de": "<type> => <audience,audience>, wenn sonst nichts etwas sagt\ndie eigene Dokumentation einer aktiven Erweiterung (extension/<name>/doc, ihre README ...)"
+    },
+    "ini:settings/exphelp.ini [CategorySettings] Categories": {
+        "en": "The sections of the help, in dashboard order. A page's category: its front matter (category: editing), else the\nfirst PathRules[] that matches, else TypeDefaults[<type>]",
+        "de": "Die Bereiche der Hilfe, in der Reihenfolge des Dashboards. Die Kategorie einer Seite: ihr Front Matter (category: editing), sonst die\nerste passende Regel aus PathRules[], sonst TypeDefaults[<type>]"
+    },
+    "ini:settings/exphelp.ini [CategorySettings] PathRules": {
+        "en": "<pattern>;<category>, first match wins",
+        "de": "<pattern>;<category>, der erste Treffer gewinnt"
+    },
+    "ini:settings/exphelp.ini [CategorySettings] TypeDefaults": {
+        "en": "<type> => <category>, when nothing else says",
+        "de": "<type> => <category>, wenn sonst nichts etwas sagt"
+    },
+    "ini:settings/exphelp.ini [CommitFeedSettings] CacheTTL": {
+        "en": "Seconds between two reads of the feed; seconds a read may take; seconds before a failed read is tried again",
+        "de": "Sekunden zwischen zwei Abrufen des Feeds; Sekunden, die ein Abruf dauern darf; Sekunden, bis ein fehlgeschlagener Abruf erneut versucht wird"
+    },
+    "ini:settings/exphelp.ini [CommitFeedSettings] CommitBaseURL": {
+        "en": "A commit's page: this address followed by its 40-character hash; and the whole history",
+        "de": "Die Seite eines Commits: diese Adresse, gefolgt von seinem 40-stelligen Hash; und die ganze Historie"
+    },
+    "ini:settings/exphelp.ini [CommitFeedSettings] Enabled": {
+        "en": "The latest commits of the project on the developers' landing page (block commits, expHelpCommitFeed). The server\nreads the feed (never the browser), at most once per CacheTTL seconds, and pages through the commits it has seen.\nenabled|disabled",
+        "de": "Die neuesten Commits des Projekts auf der Startseite der Entwickler (Block commits, expHelpCommitFeed). Der Server\nliest den Feed (nie der Browser), höchstens einmal pro CacheTTL Sekunden, und blättert durch die Commits, die er gesehen hat.\nenabled|disabled"
+    },
+    "ini:settings/exphelp.ini [CommitFeedSettings] FeedURL": {
+        "en": "The Atom feed of the commits (https only)",
+        "de": "Der Atom-Feed der Commits (nur https)"
+    },
+    "ini:settings/exphelp.ini [CommitFeedSettings] MaxCommits": {
+        "en": "How many commits the cache keeps (the feed holds the newest 20; each read adds the new ones), and per page",
+        "de": "Wie viele Commits der Cache behält (der Feed enthält die neuesten 20; jeder Abruf fügt die neuen hinzu), und pro Seite"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] AnonymousContextHelp": {
+        "en": "The help_ids other clients open (a mobile app, a site's JavaScript), so \"exp:help:content check\" reports one that no\ntopic has or whose topic is not Released (client.help-id-unknown, client.help-id-not-released). None by default.\nClientHelpIds[]\nClientHelpIds[]=account.log-in\nenabled: the roles step of exp:help:content also gives Anonymous exphelp/context, so the JSON of public, Released\ntopics can be read without login. Off by default: a security-relevant choice of each site.",
+        "de": "Die help_ids, die andere Clients öffnen (eine mobile App, das JavaScript einer Website), damit \"exp:help:content check\" eine meldet, die kein\nThema hat oder deren Thema nicht Released ist (client.help-id-unknown, client.help-id-not-released). Standardmäßig keine.\nClientHelpIds[]\nClientHelpIds[]=account.log-in\nenabled: Der Rollenschritt von exp:help:content gibt auch Anonymous exphelp/context, sodass das JSON öffentlicher, freigegebener\nThemen ohne Anmeldung gelesen werden kann. Standardmäßig aus: eine sicherheitsrelevante Entscheidung jeder Website."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] Areas": {
+        "en": "The areas of help_ids (area.topic[.variant]); the validator warns about any other",
+        "de": "Die Bereiche der help_ids (area.topic[.variant]); der Validator warnt bei jedem anderen"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] AudienceMap": {
+        "en": "The help's audience (editor, admin, developer, user) of each audience option, in lower case",
+        "de": "Die Zielgruppe der Hilfe (editor, admin, developer, user) jeder Zielgruppenoption, in Kleinbuchstaben"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] Audiences": {
+        "en": "The audience options of the help_* classes, in their stored order. ONLY APPEND: ezselection stores the position of\nan option, so a reordered list gives every topic another audience. The command appends missing ones.",
+        "de": "Die Zielgruppenoptionen der Klassen help_*, in ihrer gespeicherten Reihenfolge. NUR ANHÄNGEN: ezselection speichert die Position\neiner Option, eine umsortierte Liste gibt also jedem Thema eine andere Zielgruppe. Der Befehl hängt fehlende an."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] ContextHelpIds": {
+        "en": "Context help by help_id: the \"?\" Help control of these pages opens the Released topic (keys as [ContextHelp] Map[])",
+        "de": "Kontexthilfe nach help_id: Das Hilfe-Element „?“ dieser Seiten öffnet das freigegebene Thema (Schlüssel wie in [ContextHelp] Map[])"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] EbooksOnRelease": {
+        "en": "enabled: when an object of the help is set to Released, the e-books (EPUB, PDF) of every Released manual that\ncontains it are built again and stored as file objects below E-books (remote_id help-ebooks), a new version when\nthe book changed (expHelpContentEbooks::onStateAssign(), called when states are assigned).\ndisabled: only ./console exp:help:content ebooks stores them.",
+        "de": "enabled: Wird ein Objekt der Hilfe auf Released gesetzt, werden die E-Books (EPUB, PDF) jedes freigegebenen Handbuchs, das\nes enthält, neu gebaut und als Dateiobjekte unter E-Books (remote_id help-ebooks) gespeichert, eine neue Version, wenn\nsich das Buch geändert hat (expHelpContentEbooks::onStateAssign(), beim Zuweisen von Zuständen aufgerufen).\ndisabled: Nur ./console exp:help:content ebooks speichert sie."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] Enabled": {
+        "en": "Help maintained as content (doc/eng-us/features/6.0/help-content.md): topics, manuals, figures and the glossary as content\nof the site, created by ./console exp:help:content. Nothing here matters until that command ran.\ndisabled: exphelp/topic, exphelp/manual and exphelp/context are 404 and the help shows no topics",
+        "de": "Als Inhalt gepflegte Hilfe (doc/eng-us/features/6.0/help-content.md): Themen, Handbücher, Abbildungen und das Glossar als Inhalte\nder Website, angelegt von ./console exp:help:content. Nichts hier zählt, bevor dieser Befehl gelaufen ist.\ndisabled: exphelp/topic, exphelp/manual und exphelp/context sind 404, und die Hilfe zeigt keine Themen"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] ParentNode": {
+        "en": "Where the folder \"Help\" (remote_id help-root) is created: media (default), content, users, or a remote_id. Not in\nthe site's content tree: help must not show up in its menus, listings and feeds.",
+        "de": "Wo der Ordner „Hilfe“ (remote_id help-root) angelegt wird: media (Standard), content, users oder eine remote_id. Nicht im\nInhaltsbaum der Website: Die Hilfe darf nicht in ihren Menüs, Listen und Feeds auftauchen."
+    },
+    "ini:settings/exphelp.ini [ContentSettings] Platforms": {
+        "en": "The platform options (only append)",
+        "de": "Die Plattformoptionen (nur anhängen)"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] PublicAudiences": {
+        "en": "The audiences whose topics are public (section help_public, readable without login when Released)",
+        "de": "Die Zielgruppen, deren Themen öffentlich sind (Sektion help_public, ohne Anmeldung lesbar, wenn freigegeben)"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] ReviewListLimit": {
+        "en": "At most this many overdue topics on the dashboard (the rest are counted)",
+        "de": "Höchstens so viele überfällige Themen auf dem Dashboard (der Rest wird gezählt)"
+    },
+    "ini:settings/exphelp.ini [ContentSettings] ReviewMaxDays": {
+        "en": "Overdue reviews, listed on the help's dashboard to who can edit the topic or assign its state, and by\n./console exp:help:content review: a topic whose review date has passed, or that has been in Review longer than\nReviewMaxDays days since it last changed (the kernel keeps no date of a state change).",
+        "de": "Überfällige Prüfungen, auf dem Dashboard der Hilfe für die aufgeführt, die das Thema bearbeiten oder seinen Zustand zuweisen können, und von\n./console exp:help:content review: ein Thema, dessen Prüfdatum verstrichen ist oder das länger als\nReviewMaxDays Tage seit seiner letzten Änderung in Review ist (der Kernel speichert kein Datum einer Zustandsänderung)."
+    },
+    "ini:settings/exphelp.ini [ContextHelp] CheckPages": {
+        "en": "enabled: an entry counts only when the help index serves its page; disabled: syntax checks only (faster)",
+        "de": "enabled: Ein Eintrag zählt nur, wenn der Index der Hilfe seine Seite ausliefert; disabled: nur Syntaxprüfungen (schneller)"
+    },
+    "ini:settings/exphelp.ini [ContextHelp] Map": {
+        "en": "Content\nContent model\nUsers and access\nSetup\nadmin4l: the administration drawn by admin layouts\nThe editor siteaccess (SiteDesign=editor): the pages written for editors, before the administrators' guides\nModules of extensions that ship without help entries of their own (an extension's exphelp.ini.append.php wins over\nthese: it is read after this file)\nThe database manager of sevenx_dse (module dse)",
+        "de": "Inhalte\nInhaltsmodell\nBenutzer und Zugriff\nSetup\nadmin4l: die mit Admin-Layouts gezeichnete Administration\nDer Siteaccess editor (SiteDesign=editor): die für Redakteure geschriebenen Seiten, vor den Anleitungen für Administratoren\nModule von Erweiterungen, die ohne eigene Hilfeeinträge ausgeliefert werden (die exphelp.ini.append.php einer Erweiterung gewinnt gegen\ndiese: Sie wird nach dieser Datei gelesen)\nDer Datenbankmanager von sevenx_dse (Modul dse)"
+    },
+    "ini:settings/exphelp.ini [ContextHelp] MenuTopics": {
+        "en": "The header's Help menu (the \"?\" button): how many topics related to the page it lists (the module's other\nentries of this map, then [FeaturedSettings] PageList[]), and its quick links, key => page id[#anchor] or an\nexphelp view. The kernel's keys are named in the menu's template; an extension's own key shows the page's title.",
+        "de": "Das Hilfe-Menü im Kopf (die Schaltfläche „?“): wie viele Themen zur Seite es auflistet (die anderen Einträge\ndes Moduls in dieser Zuordnung, dann [FeaturedSettings] PageList[]), und seine Schnelllinks, Schlüssel => Seiten-ID[#Anker] oder eine\nexphelp-Ansicht. Die Schlüssel des Kernels sind im Template des Menüs benannt; der eigene Schlüssel einer Erweiterung zeigt den Titel der Seite."
+    },
+    "ini:settings/exphelp.ini [ContextHelp] Providers": {
+        "en": "Context help: the \"?\" link in the header of the administration opens the page that answers \"help for this page\"\n(expHelpContextRegistry; doc/eng-us/features/6.0/help-system.md, \"Context help\"). One entry per key:\n  Map[<module>/<view>]=<page id>[#<heading anchor>]\n  Map[<module>]=...                     every view of the module without an entry of its own\n  Map[<design>:<module>/<view>]=...     only in that design (admin4l, editor, admin, adminui ...); wins over the\n  Map[<design>:<module>]=...            same key without a design\nA page id is the path below doc/eng-us/, the same in every language (ext/<extension>/<path> for an extension's doc directory, [IndexSettings]\nExtensionDocDirs[]); the anchor is the heading's anchor as the viewer makes it. The lookup: Providers[], then\ndesign:module/view, module/view, design:module, module, then the help dashboard. An entry whose page the help does\nnot serve (not written yet, not git-tracked, outside doc/) is skipped, so the next key answers.\nExtensions register the help of their own modules in their settings/exphelp.ini.append.php in the same way.\nClasses implementing expHelpContextProviderInterface, asked before the map, in this order\nHelp topics maintained as content answer first for the keys of [ContentSettings] ContextHelpIds[]",
+        "de": "Kontexthilfe: Der Link „?“ im Kopf der Administration öffnet die Seite, die „Hilfe zu dieser Seite“ beantwortet\n(expHelpContextRegistry; doc/eng-us/features/6.0/help-system.md, \"Context help\"). Ein Eintrag pro Schlüssel:\n  Map[<module>/<view>]=<page id>[#<heading anchor>]\n  Map[<module>]=...                     jede Ansicht des Moduls ohne eigenen Eintrag\n  Map[<design>:<module>/<view>]=...     nur in diesem Design (admin4l, editor, admin, adminui ...); gewinnt gegen den\n  Map[<design>:<module>]=...            gleichen Schlüssel ohne Design\nEine Seiten-ID ist der Pfad unter doc/eng-us/, in jeder Sprache gleich (ext/<extension>/<path> für das doc-Verzeichnis einer Erweiterung, [IndexSettings]\nExtensionDocDirs[]); der Anker ist der Anker der Überschrift, wie ihn der Viewer bildet. Die Suche: Providers[], dann\ndesign:module/view, module/view, design:module, module, dann das Dashboard der Hilfe. Ein Eintrag, dessen Seite die Hilfe\nnicht ausliefert (noch nicht geschrieben, nicht von git versioniert, außerhalb von doc/), wird übersprungen, sodass der nächste Schlüssel antwortet.\nErweiterungen registrieren die Hilfe ihrer eigenen Module auf dieselbe Weise in ihrer settings/exphelp.ini.append.php.\nKlassen, die expHelpContextProviderInterface implementieren, vor der Zuordnung gefragt, in dieser Reihenfolge\nAls Inhalt gepflegte Hilfethemen antworten zuerst für die Schlüssel aus [ContentSettings] ContextHelpIds[]"
+    },
+    "ini:settings/exphelp.ini [DashboardSettings] AudienceExcludeTypes": {
+        "en": "Page types the audience cards never list (they are found through the search and the categories)",
+        "de": "Seitentypen, die die Zielgruppenkarten nie auflisten (sie werden über die Suche und die Kategorien gefunden)"
+    },
+    "ini:settings/exphelp.ini [DashboardSettings] AudiencePageLimit": {
+        "en": "How many pages each audience card lists",
+        "de": "Wie viele Seiten jede Zielgruppenkarte auflistet"
+    },
+    "ini:settings/exphelp.ini [DashboardSettings] RecentLimit": {
+        "en": "How many recent changes below the roots the dashboard lists",
+        "de": "Wie viele neue Änderungen unter den Wurzeln das Dashboard auflistet"
+    },
+    "ini:settings/exphelp.ini [DocLanguages] Default": {
+        "en": "The languages of the documentation (expHelpLanguage; doc/eng-us/bc/6.0/translated-documentation.md). Each language\nhas a directory below doc/ named by its Exponential locale code in lower case: doc/eng-us/ (eng-US) is the\noriginal, a translation lives in doc/<locale>/ (doc/ger-de/ for ger-DE) with the same relative paths, or with\ntranslated file names listed in doc/<locale>/.paths.json (\"translated path\": \"path below doc/eng-us/\"). A page id\nis its path below doc/eng-us/ in every language, so a help address shows the same page in each language. Files\ndirectly below doc/ in no language directory (doc/changelogs/) are not translated.\nThe reader's language is the locale of the interface (site.ini [RegionalSettings] Locale, set by the\nadministration's language switch), lower cased: ger-DE reads doc/ger-de/. A locale without a directory of its own\nuses an alias of Map[], else the first directory of its language (ger-AT -> ger-de), else Default; a page the\nreader's language does not have yet is shown in Default, with a note.\nThe original language, and the language of a locale that has no directory",
+        "de": "Die Sprachen der Dokumentation (expHelpLanguage; doc/eng-us/bc/6.0/translated-documentation.md). Jede Sprache\nhat ein Verzeichnis unter doc/, benannt nach ihrem Locale-Code von Exponential in Kleinbuchstaben: doc/eng-us/ (eng-US) ist das\nOriginal, eine Übersetzung liegt in doc/<locale>/ (doc/ger-de/ für ger-DE) mit denselben relativen Pfaden oder mit\nübersetzten Dateinamen, aufgeführt in doc/<locale>/.paths.json (\"übersetzter Pfad\": \"Pfad unter doc/eng-us/\"). Eine Seiten-ID\nist in jeder Sprache ihr Pfad unter doc/eng-us/, eine Hilfeadresse zeigt also in jeder Sprache dieselbe Seite. Dateien\ndirekt unter doc/ in keinem Sprachverzeichnis (doc/changelogs/) werden nicht übersetzt.\nDie Sprache des Lesers ist die Locale der Oberfläche (site.ini [RegionalSettings] Locale, gesetzt über die\nSprachumschaltung der Administration), in Kleinbuchstaben: ger-DE liest doc/ger-de/. Eine Locale ohne eigenes Verzeichnis\nverwendet einen Alias aus Map[], sonst das erste Verzeichnis ihrer Sprache (ger-AT -> ger-de), sonst Default; eine Seite, die die\nSprache des Lesers noch nicht hat, wird in Default angezeigt, mit einem Hinweis.\nDie Originalsprache und die Sprache einer Locale, die kein Verzeichnis hat"
+    },
+    "ini:settings/exphelp.ini [DocLanguages] Directories": {
+        "en": "The language directories the help reads (the default first); a directory that does not exist yet is fine",
+        "de": "Die Sprachverzeichnisse, die die Hilfe liest (das Standardverzeichnis zuerst); ein Verzeichnis, das es noch nicht gibt, ist in Ordnung"
+    },
+    "ini:settings/exphelp.ini [DocLanguages] Legacy": {
+        "en": "The directories of 6.0.14 and before => today's: an old address (exphelp/viewer/en/us/<id>, exphelp/viewer/doc/en/us/<id>,\nexphelp/viewer/de/<translated path>, /(lang)/en-us) still finds its page. No file is read from an old directory.",
+        "de": "Die Verzeichnisse von 6.0.14 und früher => die heutigen: Eine alte Adresse (exphelp/viewer/en/us/<id>, exphelp/viewer/doc/en/us/<id>,\nexphelp/viewer/de/<translated path>, /(lang)/en-us) findet ihre Seite weiterhin. Aus einem alten Verzeichnis wird keine Datei gelesen."
+    },
+    "ini:settings/exphelp.ini [DocLanguages] Map": {
+        "en": "Optional aliases, locale => directory, for a locale that should read another locale's directory",
+        "de": "Optionale Aliase, Locale => Verzeichnis, für eine Locale, die das Verzeichnis einer anderen Locale lesen soll"
+    },
+    "ini:settings/exphelp.ini [DocLanguages] Names": {
+        "en": "Directory => the language's name in English (translated in kernel/exphelp for the \"not translated yet\" note)",
+        "de": "Verzeichnis => der englische Name der Sprache (übersetzt in kernel/exphelp für den Hinweis „noch nicht übersetzt“)"
+    },
+    "ini:settings/exphelp.ini [FeaturedSettings] PageList": {
+        "en": "Page ids (paths below doc/eng-us/) shown first on the dashboard",
+        "de": "Seiten-IDs (Pfade unter doc/eng-us/), die auf dem Dashboard zuerst angezeigt werden"
+    },
+    "ini:settings/exphelp.ini [HelpSettings] CacheDir": {
+        "en": "The directory below the cache directory (var/<site>/cache/<CacheDir>) for the index and the search index",
+        "de": "Das Verzeichnis unter dem Cache-Verzeichnis (var/<site>/cache/<CacheDir>) für den Index und den Suchindex"
+    },
+    "ini:settings/exphelp.ini [HelpSettings] EditBaseURL": {
+        "en": "The \"Edit on GitHub\" link of a page: this URL followed by the page's repository path (doc/...); empty: no link",
+        "de": "Der Link „Auf GitHub bearbeiten“ einer Seite: diese URL, gefolgt vom Repository-Pfad der Seite (doc/...); leer: kein Link"
+    },
+    "ini:settings/exphelp.ini [HelpSettings] Enabled": {
+        "en": "enabled|true: the module answers; false: every exphelp view is a 404 and the Help buttons are not shown",
+        "de": "enabled|true: Das Modul antwortet; false: Jede exphelp-Ansicht ist 404, und die Hilfe-Schaltflächen werden nicht angezeigt"
+    },
+    "ini:settings/exphelp.ini [IndexSettings] ActiveExtensionDocs": {
+        "en": "enabled: the documentation of every active extension is shown too, found when the help looks (an extension\nswitched on or off is added or left out at once): the files of extension/<name>/doc tracked by the extension's own\nrepository (or listed in its share/filelist.md5), and its README, CHANGELOG, LICENSE ... (ExtensionTopFiles[]).\nTheir pages have the id ext/<name>/<path below doc> (ext/<name>/README.md for a top file), in the folder and\ncategory \"Extensions\" and on exphelp/extensions. disabled: only the extensions of ExtensionDocDirs[].",
+        "de": "enabled: Die Dokumentation jeder aktiven Erweiterung wird ebenfalls angezeigt, gefunden, wenn die Hilfe nachsieht (eine Erweiterung,\ndie ein- oder ausgeschaltet wird, kommt sofort hinzu oder fällt weg): die Dateien von extension/<name>/doc, die das eigene\nRepository der Erweiterung versioniert (oder ihre share/filelist.md5 aufführt), und ihre README, CHANGELOG, LICENSE ... (ExtensionTopFiles[]).\nIhre Seiten haben die ID ext/<name>/<path below doc> (ext/<name>/README.md für eine Datei der obersten Ebene), im Ordner und in der\nKategorie „Erweiterungen“ und auf exphelp/extensions. disabled: nur die Erweiterungen aus ExtensionDocDirs[]."
+    },
+    "ini:settings/exphelp.ini [IndexSettings] AllowlistSources": {
+        "en": "Where the list of git-tracked files comes from, first one that answers: the .git index (read in PHP, no program\nis started), `git ls-files`, and share/filelist.md5 for an installation without .git",
+        "de": "Woher die Liste der von git versionierten Dateien kommt, die erste, die antwortet: der .git-Index (in PHP gelesen, es wird kein Programm\ngestartet), `git ls-files` und share/filelist.md5 für eine Installation ohne .git"
+    },
+    "ini:settings/exphelp.ini [IndexSettings] AssetSuffixes": {
+        "en": "The suffixes of images the asset view serves",
+        "de": "Die Endungen der Bilder, die die Asset-Ansicht ausliefert"
+    },
+    "ini:settings/exphelp.ini [IndexSettings] DocumentSuffixes": {
+        "en": "The suffixes of pages",
+        "de": "Die Endungen von Seiten"
+    },
+    "ini:settings/exphelp.ini [IndexSettings] ExcludePatterns": {
+        "en": "Never served, even when tracked (shell patterns on the path relative to the installation root; a pattern without\n\"/\" also matches the file name): generated documentation, HTML, SVG (it can carry scripts) and PHP, and\ndoc/README.md (the list of the language directories for readers of the repository; the help chooses the language)",
+        "de": "Nie ausgeliefert, auch wenn versioniert (Shell-Muster auf den Pfad relativ zum Wurzelverzeichnis der Installation; ein Muster ohne\n\"/\" passt auch auf den Dateinamen): erzeugte Dokumentation, HTML, SVG (es kann Skripte enthalten) und PHP, und\ndoc/README.md (die Liste der Sprachverzeichnisse für Leser des Repositorys; die Hilfe wählt die Sprache)"
+    },
+    "ini:settings/exphelp.ini [IndexSettings] ExtensionDocDirs": {
+        "en": "Extensions whose doc directory is shown whether active or not, as <extension name>. Empty: none.",
+        "de": "Erweiterungen, deren doc-Verzeichnis angezeigt wird, ob aktiv oder nicht, als <extension name>. Leer: keine."
+    },
+    "ini:settings/exphelp.ini [IndexSettings] ExtensionTopFiles": {
+        "en": "The files at the top of an extension's directory that are shown besides its doc/ (shell patterns, without case);\nnothing else outside doc/ is ever read. PHP and other source files are never shown: only DocumentSuffixes[] (and\ntext files without a suffix that do not start like a program, #! or <?) are pages.",
+        "de": "Die Dateien auf der obersten Ebene des Verzeichnisses einer Erweiterung, die neben ihrem doc/ angezeigt werden (Shell-Muster, ohne Beachtung der Groß-/Kleinschreibung);\nsonst wird außerhalb von doc/ nie etwas gelesen. PHP- und andere Quelldateien werden nie angezeigt: Nur DocumentSuffixes[] (und\nTextdateien ohne Endung, die nicht wie ein Programm beginnen, #! oder <?) sind Seiten."
+    },
+    "ini:settings/exphelp.ini [IndexSettings] GitHistory": {
+        "en": "enabled: when git can be run, the index reads the history of the roots once per build, for each page's\n\"last changed\" date and the dashboard's recent changes. disabled: the file times are used, no recent changes",
+        "de": "enabled: Wenn git ausgeführt werden kann, liest der Index die Historie der Wurzeln einmal pro Aufbau, für das Datum\n„zuletzt geändert“ jeder Seite und die neuen Änderungen des Dashboards. disabled: Die Dateizeiten werden verwendet, keine neuen Änderungen"
+    },
+    "ini:settings/exphelp.ini [IndexSettings] MaxFileSize": {
+        "en": "Bytes; larger files are left out",
+        "de": "Bytes; größere Dateien werden ausgelassen"
+    },
+    "ini:settings/exphelp.ini [IndexSettings] PlainTextWithoutSuffix": {
+        "en": "enabled: files without a suffix (the old changelogs) are pages too, as plain text",
+        "de": "enabled: Dateien ohne Endung (die alten Changelogs) sind ebenfalls Seiten, als reiner Text"
+    },
+    "ini:settings/exphelp.ini [IndexSettings] Roots": {
+        "en": "The directories (relative to the installation root) whose git-tracked files the help shows. Nothing outside them\nis ever read or served.",
+        "de": "Die Verzeichnisse (relativ zum Wurzelverzeichnis der Installation), deren von git versionierte Dateien die Hilfe zeigt. Nichts außerhalb\nwird je gelesen oder ausgeliefert."
+    },
+    "ini:settings/exphelp.ini [IndexSettings] StatFiles": {
+        "en": "enabled: every request compares the size and time of each listed file with the cached index, so an edited page\nshows at once. disabled: only the git index, the manifest and the settings are compared (faster on big doc trees;\nrun \"./console exp:help index\" after changing a page without a commit)",
+        "de": "enabled: Jede Anfrage vergleicht Größe und Zeit jeder aufgeführten Datei mit dem gecachten Index, sodass eine bearbeitete Seite\nsofort erscheint. disabled: Nur der git-Index, das Manifest und die Einstellungen werden verglichen (schneller bei großen doc-Bäumen;\nführen Sie \"./console exp:help index\" aus, nachdem Sie eine Seite ohne Commit geändert haben)"
+    },
+    "ini:settings/exphelp.ini [IndexSettings] StatFilesInterval": {
+        "en": "With StatFiles enabled: seconds for which that comparison, once made, is reused by every request and process (it is\nkept in the help cache directory). Thousands of listed files make it the most expensive part of a help request,\nabout 25 ms behind PHP-FPM and 0.5 s under Velocity. An edited page then shows within this many seconds; a page\nadded or removed changes the git index and shows at once, and \"./console exp:help index\" always looks again.\n0: compare on every request",
+        "de": "Mit aktiviertem StatFiles: Sekunden, für die dieser Vergleich, einmal gemacht, von jeder Anfrage und jedem Prozess wiederverwendet wird (er wird\nim Cache-Verzeichnis der Hilfe gehalten). Tausende aufgeführte Dateien machen ihn zum teuersten Teil einer Hilfeanfrage,\netwa 25 ms hinter PHP-FPM und 0.5 s unter Velocity. Eine bearbeitete Seite erscheint dann innerhalb so vieler Sekunden; eine\nhinzugefügte oder entfernte Seite ändert den git-Index und erscheint sofort, und \"./console exp:help index\" sieht immer neu nach.\n0: bei jeder Anfrage vergleichen"
+    },
+    "ini:settings/exphelp.ini [IssueTrackers] BundledExtensions": {
+        "en": "Extensions shipped inside the kernel's repository: their errors go to the software tracker",
+        "de": "Erweiterungen, die im Repository des Kernels ausgeliefert werden: Ihre Fehler gehen an den Tracker der Software"
+    },
+    "ini:settings/exphelp.ini [IssueTrackers] CommunityLinks": {
+        "en": "Where to ask before reporting, <label>|<https URL>",
+        "de": "Wo man vor einer Meldung fragen kann, <label>|<https URL>"
+    },
+    "ini:settings/exphelp.ini [IssueTrackers] ExtensionListLimit": {
+        "en": "The most active extensions named in the environment summary (the rest is counted)",
+        "de": "Die aktivsten Erweiterungen, die in der Zusammenfassung der Umgebung genannt werden (der Rest wird gezählt)"
+    },
+    "ini:settings/exphelp.ini [IssueTrackers] ExtensionOwners": {
+        "en": "An active extension whose website (extension.xml, ezinfo.php, composer.json or its git origin) is a GitHub\nrepository of one of these owners is offered as a tracker of its own on the report page",
+        "de": "Eine aktive Erweiterung, deren Website (extension.xml, ezinfo.php, composer.json oder ihr git-Origin) ein GitHub-\nRepository eines dieser Eigentümer ist, wird auf der Meldeseite als eigener Tracker angeboten"
+    },
+    "ini:settings/exphelp.ini [IssueTrackers] TrackerList": {
+        "en": "Where errors are reported (exphelp/report). Each tracker has [Tracker_<key>] Name, Description, URL (the GitHub\nissue list, https://github.com/<owner>/<repository>/issues; anything else is ignored) and NewIssueURL.",
+        "de": "Wohin Fehler gemeldet werden (exphelp/report). Jeder Tracker hat [Tracker_<key>] Name, Description, URL (die Issue-Liste auf GitHub,\nhttps://github.com/<owner>/<repository>/issues; alles andere wird ignoriert) und NewIssueURL."
+    },
+    "ini:settings/exphelp.ini [LandingSettings] Blocks": {
+        "en": "The blocks of every landing page, in order. [Landing_<audience>] Blocks[] replaces the list for one audience.\n  hero: name, summary, a search box and buttons    start: the reading path (\"start here\")\n  boxes: info boxes, pages with their summaries    categories: a search button per category\n  key: the key pages                               latest: recently updated pages for the audience\n  related: related audiences                       commits: the latest commits of the project ([CommitFeedSettings])\n  support: the Support Exponential block ([SupportSettings])",
+        "de": "Die Blöcke jeder Startseite, in Reihenfolge. [Landing_<audience>] Blocks[] ersetzt die Liste für eine Zielgruppe.\n  hero: Name, Zusammenfassung, ein Suchfeld und Schaltflächen    start: der Lesepfad („hier beginnen“)\n  boxes: Infoboxen, Seiten mit ihren Zusammenfassungen           categories: eine Suchschaltfläche pro Kategorie\n  key: die wichtigsten Seiten                                    latest: kürzlich aktualisierte Seiten für die Zielgruppe\n  related: verwandte Zielgruppen                                 commits: die neuesten Commits des Projekts ([CommitFeedSettings])\n  support: der Block Exponential unterstützen ([SupportSettings])"
+    },
+    "ini:settings/exphelp.ini [LandingSettings] Enabled": {
+        "en": "exphelp/audience/<audience>: a landing page per audience (expHelpLanding, doc/eng-us/features/6.0/help-system.md \"Landing\npages\"). enabled: the dashboard's audience cards open it; disabled: the view is a 404 and the cards open the search.",
+        "de": "exphelp/audience/<audience>: eine Startseite pro Zielgruppe (expHelpLanding, doc/eng-us/features/6.0/help-system.md \"Landing\npages\"). enabled: Die Zielgruppenkarten des Dashboards öffnen sie; disabled: Die Ansicht ist 404, und die Karten öffnen die Suche."
+    },
+    "ini:settings/exphelp.ini [LandingSettings] ExcludeTypes": {
+        "en": "Page types the automatic lists never pick (they are reached through the search and the categories)",
+        "de": "Seitentypen, die die automatischen Listen nie wählen (sie werden über die Suche und die Kategorien erreicht)"
+    },
+    "ini:settings/exphelp.ini [LandingSettings] StartLimit": {
+        "en": "How many pages a list shows when the index fills it (a list given in [Landing_<audience>] is shown as it is)",
+        "de": "Wie viele Seiten eine Liste zeigt, wenn der Index sie füllt (eine in [Landing_<audience>] angegebene Liste wird so gezeigt, wie sie ist)"
+    },
+    "ini:settings/exphelp.ini [Landing_editor]": {
+        "en": "One group per audience, all settings optional. Page ids are paths below doc/eng-us/ (the same in every language); a page that is not in the help (not\nwritten yet, hidden) is left out. Empty lists are filled from the index: featured pages first, then help pages and\nguides in their order.\n  StartPage=<page id>        the \"Start here\" button\n  ReadingPath[]=<page id>    the reading path, in order\n  InfoPages[]=<page id>      the info boxes\n  KeyPages[]=<page id>       the key pages\n  Categories[]=<category>    the categories with a search button (default: every category with pages for it)\n  Related[]=<audience>       related audiences\n  Summary=<sentence>         instead of the built-in one (translated in kernel/exphelp when the catalogue has it)\n  Blocks[]=<block>           instead of [LandingSettings] Blocks[]",
+        "de": "Eine Gruppe pro Zielgruppe, alle Einstellungen optional. Seiten-IDs sind Pfade unter doc/eng-us/ (in jeder Sprache gleich); eine Seite, die nicht in der Hilfe ist (noch nicht\ngeschrieben, verborgen), wird ausgelassen. Leere Listen werden aus dem Index gefüllt: zuerst hervorgehobene Seiten, dann Hilfeseiten und\nAnleitungen in ihrer Reihenfolge.\n  StartPage=<page id>        die Schaltfläche „Hier beginnen“\n  ReadingPath[]=<page id>    der Lesepfad, in Reihenfolge\n  InfoPages[]=<page id>      die Infoboxen\n  KeyPages[]=<page id>       die wichtigsten Seiten\n  Categories[]=<category>    die Kategorien mit einer Suchschaltfläche (Standard: jede Kategorie mit Seiten dafür)\n  Related[]=<audience>       verwandte Zielgruppen\n  Summary=<sentence>         statt der eingebauten (in kernel/exphelp übersetzt, wenn der Katalog sie hat)\n  Blocks[]=<block>           statt [LandingSettings] Blocks[]"
+    },
+    "ini:settings/exphelp.ini [License] Enabled": {
+        "en": "The license of the documentation the help shows (doc/eng-us/README-LICENSE.md, doc/eng-us/help/free-documentation.md).\nEvery help page, the dashboard, the print view and the PDF carry its notice; the name stays untranslated.",
+        "de": "Die Lizenz der Dokumentation, die die Hilfe zeigt (doc/eng-us/README-LICENSE.md, doc/eng-us/help/free-documentation.md).\nJede Hilfeseite, das Dashboard, die Druckansicht und das PDF tragen ihren Hinweis; der Name bleibt unübersetzt."
+    },
+    "ini:settings/exphelp.ini [License] OrLater": {
+        "en": "\"or any later version published by the Free Software Foundation\"",
+        "de": "\"or any later version published by the Free Software Foundation\""
+    },
+    "ini:settings/exphelp.ini [License] OtherLicensePathRules": {
+        "en": "Pages the project does not hold the copyright of and does not relicense: the documentation inherited\nfrom the original software (eZ Systems AS, 1999 - 2014). They keep the terms of the repository's\nLICENSE and show the notice below instead. <pattern> on the doc/ path, \"*\" also matches \"/\".",
+        "de": "Seiten, deren Urheberrecht das Projekt nicht hält und die es nicht neu lizenziert: die von der\nursprünglichen Software geerbte Dokumentation (eZ Systems AS, 1999 - 2014). Sie behalten die Bedingungen der\nLICENSE des Repositorys und zeigen stattdessen den Hinweis unten. <pattern> auf den Pfad in doc/, \"*\" passt auch auf \"/\"."
+    },
+    "ini:settings/exphelp.ini [License] TextPage": {
+        "en": "Help page ids (paths below doc/eng-us/): the unmodified license text, the copyright and permission notice,\nand the plain explanation for readers",
+        "de": "Seiten-IDs der Hilfe (Pfade unter doc/eng-us/): der unveränderte Lizenztext, der Urheberrechts- und Erlaubnishinweis\nund die einfache Erklärung für Leser"
+    },
+    "ini:settings/exphelp.ini [NavigationSettings] FoldedFolders": {
+        "en": "Folder names in the navigation tree, <page id of the folder, its path below doc/eng-us/> => <name> (else the title of the folder's README)\nFolderNames[examples/cookbook]=Cookbook\nFolded folders: the tree shows their overview link and page count, and lists their pages (and those of the\nfolders below them) only while a page inside is open. For the generated reference examples, which would otherwise\nadd thousands of links to every page of the help. Paths below doc/eng-us/; a folder without a README is never folded.\nThe government task pages: six groups of step-by-step tasks below doc/eng-us/help/government/tasks/",
+        "de": "Ordnernamen im Navigationsbaum, <Seiten-ID des Ordners, sein Pfad unter doc/eng-us/> => <name> (sonst der Titel der README des Ordners)\nFolderNames[examples/cookbook]=Cookbook\nEingeklappte Ordner: Der Baum zeigt ihren Übersichtslink und die Zahl ihrer Seiten und listet ihre Seiten (und die der\nOrdner darunter) nur auf, solange eine Seite darin geöffnet ist. Für die generierten Referenzbeispiele, die sonst\njeder Seite der Hilfe Tausende Links hinzufügen würden. Pfade unter doc/eng-us/; ein Ordner ohne README wird nie eingeklappt.\nDie Aufgabenseiten für Behörden: sechs Gruppen von Schritt-für-Schritt-Aufgaben unter doc/eng-us/help/government/tasks/"
+    },
+    "ini:settings/exphelp.ini [PdfSettings]": {
+        "en": "\"Download as PDF\" of a help page (exphelp/pdf/<page id>, ./console exp:help pdf <page id>), drawn by the kernel's\nown PDF library (lib/ezpdf); nothing outside the installation is called. Files are cached in <help cache>/pdf.",
+        "de": "„Als PDF herunterladen“ einer Hilfeseite (exphelp/pdf/<page id>, ./console exp:help pdf <page id>), gezeichnet von der eigenen\nPDF-Bibliothek des Kernels (lib/ezpdf); nichts außerhalb der Installation wird aufgerufen. Die Dateien werden in <help cache>/pdf gecacht."
+    },
+    "ini:settings/exphelp.ini [PdfSettings] Enabled": {
+        "en": "false hides the button and makes exphelp/pdf a 404",
+        "de": "false blendet die Schaltfläche aus und macht exphelp/pdf zu 404"
+    },
+    "ini:settings/exphelp.ini [PdfSettings] FallbackFontFiles": {
+        "en": "Characters the regular font lacks (Chinese, Japanese, Korean ...); loaded only when a page needs it",
+        "de": "Zeichen, die der normalen Schrift fehlen (Chinesisch, Japanisch, Koreanisch ...); nur geladen, wenn eine Seite sie braucht"
+    },
+    "ini:settings/exphelp.ini [PdfSettings] FontFiles": {
+        "en": "TrueType (.ttf) fonts: of each list the first file that exists is used (a relative path is taken from the install\nroot). A TrueType font draws every character it has (embedded as a composite font, the text stays selectable).\nWith no regular font found the PDF core fonts are used and text is transliterated to Windows-1252.",
+        "de": "TrueType-Schriften (.ttf): Aus jeder Liste wird die erste vorhandene Datei verwendet (ein relativer Pfad gilt ab dem Wurzelverzeichnis\nder Installation). Eine TrueType-Schrift zeichnet jedes Zeichen, das sie hat (als zusammengesetzte Schrift eingebettet, der Text bleibt markierbar).\nWird keine normale Schrift gefunden, werden die PDF-Grundschriften verwendet und der Text nach Windows-1252 transliteriert."
+    },
+    "ini:settings/exphelp.ini [PdfSettings] MonoFontFiles": {
+        "en": "Monospace for code; without one the core font Courier is used (and the regular font for what Courier lacks)",
+        "de": "Festbreitenschrift für Code; ohne eine wird die Grundschrift Courier verwendet (und die normale Schrift für das, was Courier fehlt)"
+    },
+    "ini:settings/exphelp.ini [PdfSettings] PageSize": {
+        "en": "A4 or Letter",
+        "de": "A4 oder Letter"
+    },
+    "ini:settings/exphelp.ini [ProjectFiles] Category": {
+        "en": "Their category, page type and audiences ([CategorySettings], [TypeSettings], [AudienceSettings]); a file's own front\nmatter wins. AudienceRules[]: \"<pattern>;<audiences>\", the first match wins, else Audiences[]",
+        "de": "Ihre Kategorie, ihr Seitentyp und ihre Zielgruppen ([CategorySettings], [TypeSettings], [AudienceSettings]); das eigene Front\nMatter einer Datei gewinnt. AudienceRules[]: \"<pattern>;<audiences>\", der erste Treffer gewinnt, sonst Audiences[]"
+    },
+    "ini:settings/exphelp.ini [ProjectFiles] Enabled": {
+        "en": "The project files (expHelpProjectFiles; doc/eng-us/features/6.0/help-system.md, \"Project files\"): the Markdown files\nof the repository outside doc/ that document the project itself (README.md, INSTALL.md, SECURITY.md,\nCONTRIBUTING.md, CODE_OF_CONDUCT.md, COPYRIGHT.md, LICENSE.md, the README.md of bin/, design/ and kernel/\ndirectories). Each has the id project/<path in the repository> (/exphelp/viewer/project/README.md;\n/exphelp/viewer/README.md redirects there) and\nis a page at the top of the page tree, next to the folders, not in a folder of its own. They are English only and\nnot translated, like doc/changelogs/: a reader of another language sees them with the note that the page is not\ntranslated.\nNot to be changed by any setting here or in an override: only files git tracks are shown (the git index, \"git\nls-files\" or the release manifest, never the directory: a private note in the root that is not committed is never\nshown, searched or linked), never a file in a place .gitignore ignores, only Markdown, never a hidden file or a file\nin a hidden directory (.github/ included), and never below doc/, extension/ (the extensions' documentation is the\ncategory Extensions), a tests/ directory anywhere, var/, vendor/, settings/override/, settings/siteaccess/ or\nnode_modules/.\nenabled: the help shows them; disabled: none",
+        "de": "Die Projektdateien (expHelpProjectFiles; doc/eng-us/features/6.0/help-system.md, \"Project files\"): die Markdown-Dateien\ndes Repositorys außerhalb von doc/, die das Projekt selbst dokumentieren (README.md, INSTALL.md, SECURITY.md,\nCONTRIBUTING.md, CODE_OF_CONDUCT.md, COPYRIGHT.md, LICENSE.md, die README.md der Verzeichnisse bin/, design/ und kernel/).\nJede hat die ID project/<Pfad im Repository> (/exphelp/viewer/project/README.md;\n/exphelp/viewer/README.md leitet dorthin weiter) und\nist eine Seite auf der obersten Ebene des Seitenbaums, neben den Ordnern, nicht in einem eigenen Ordner. Sie sind nur englisch und\nwerden nicht übersetzt, wie doc/changelogs/: Ein Leser einer anderen Sprache sieht sie mit dem Hinweis, dass die Seite nicht\nübersetzt ist.\nDurch keine Einstellung hier oder in einem Override änderbar: Es werden nur Dateien angezeigt, die git versioniert (der git-Index, \"git\nls-files\" oder das Release-Manifest, nie das Verzeichnis: eine private Notiz in der Wurzel, die nicht committet ist, wird nie\nangezeigt, durchsucht oder verlinkt), nie eine Datei an einer Stelle, die .gitignore ignoriert, nur Markdown, nie eine versteckte Datei oder eine Datei\nin einem versteckten Verzeichnis (.github/ eingeschlossen) und nie unter doc/, extension/ (die Dokumentation der Erweiterungen ist die\nKategorie Erweiterungen), irgendeinem Verzeichnis tests/, var/, vendor/, settings/override/, settings/siteaccess/ oder\nnode_modules/.\nenabled: Die Hilfe zeigt sie; disabled: keine"
+    },
+    "ini:settings/exphelp.ini [ProjectFiles] Exclude": {
+        "en": "Left out although Include[] matches: test fixtures and the copies of other projects (a JavaScript library's README)",
+        "de": "Ausgelassen, obwohl Include[] passt: Testdaten und die Kopien anderer Projekte (die README einer JavaScript-Bibliothek)"
+    },
+    "ini:settings/exphelp.ini [ProjectFiles] Include": {
+        "en": "Shell patterns on the path in the repository: \"*\" stays inside a directory, \"**\" crosses directories",
+        "de": "Shell-Muster auf den Pfad im Repository: \"*\" bleibt innerhalb eines Verzeichnisses, \"**\" überquert Verzeichnisse"
+    },
+    "ini:settings/exphelp.ini [ProjectFiles] LicenseName": {
+        "en": "The license of the project files: the notice under each of them names it and links its page (a page id)",
+        "de": "Die Lizenz der Projektdateien: Der Hinweis unter jeder nennt sie und verlinkt ihre Seite (eine Seiten-ID)"
+    },
+    "ini:settings/exphelp.ini [SearchSettings] AudienceBoost": {
+        "en": "Factor per audience for the pages that are for it (the lowest when a page has several); not applied while the\nsearch is filtered to that audience. The trainers' lessons repeat the subjects of the editor and administrator pages,\nso they rank below them in a general search and on their own under the Trainers filter.",
+        "de": "Faktor pro Zielgruppe für die Seiten, die für sie sind (der niedrigste, wenn eine Seite mehrere hat); nicht angewendet, solange die\nSuche auf diese Zielgruppe gefiltert ist. Die Lektionen der Trainer wiederholen die Themen der Seiten für Redakteure und Administratoren,\nsie stehen also in einer allgemeinen Suche darunter und für sich allein unter dem Filter Trainer."
+    },
+    "ini:settings/exphelp.ini [SearchSettings] PathBoost": {
+        "en": "... in the page's path (features/6.0/maintenance-mode.md: \"maintenance\", \"mode\") and its front matter keywords",
+        "de": "... im Pfad der Seite (features/6.0/maintenance-mode.md: \"maintenance\", \"mode\") und in den Schlüsselwörtern ihres Front Matter"
+    },
+    "ini:settings/exphelp.ini [SearchSettings] ResultLimit": {
+        "en": "Results per page (the JSON view takes limit=, at most 50)",
+        "de": "Ergebnisse pro Seite (die JSON-Ansicht nimmt limit=, höchstens 50)"
+    },
+    "ini:settings/exphelp.ini [SearchSettings] StopWords": {
+        "en": "Words that are not indexed (an empty list keeps the built-in English and German list)",
+        "de": "Wörter, die nicht indiziert werden (eine leere Liste behält die eingebaute englische und deutsche Liste)"
+    },
+    "ini:settings/exphelp.ini [SearchSettings] TitleBoost": {
+        "en": "Score weights of a match in the title, a heading and the text",
+        "de": "Gewichte eines Treffers im Titel, in einer Überschrift und im Text"
+    },
+    "ini:settings/exphelp.ini [SearchSettings] TitleMatchBoost": {
+        "en": "Factor for a page whose title holds every word of the query",
+        "de": "Faktor für eine Seite, deren Titel jedes Wort der Anfrage enthält"
+    },
+    "ini:settings/exphelp.ini [SearchSettings] TypeBoost": {
+        "en": "Factor per page type (expHelpDocumentIndex types): help pages and guides rank above reference material with the\nsame words, changelogs and history below it\nThe generated reference examples (doc/eng-us/examples/, ./console exp:help:examples): thousands of short pages that\nrepeat setting, operator and view names; below the written pages that explain the same words\nthe generated pattern catalogue (doc/eng-us/standards/patterns/) lists thousands of class names: below the written pages",
+        "de": "Faktor pro Seitentyp (Typen von expHelpDocumentIndex): Hilfeseiten und Anleitungen stehen über Referenzmaterial mit\ndenselben Wörtern, Changelogs und Historie darunter\nDie generierten Referenzbeispiele (doc/eng-us/examples/, ./console exp:help:examples): Tausende kurzer Seiten, die\nNamen von Einstellungen, Operatoren und Ansichten wiederholen; unter den geschriebenen Seiten, die dieselben Wörter erklären\nder generierte Musterkatalog (doc/eng-us/standards/patterns/) listet Tausende Klassennamen auf: unter den geschriebenen Seiten"
+    },
+    "ini:settings/exphelp.ini [SearchSettings] VersionBoost": {
+        "en": "Factor per major version for pages below a version directory (features/3.8/, bc/4.1/): older releases rank lower",
+        "de": "Faktor pro Hauptversion für Seiten unter einem Versionsverzeichnis (features/3.8/, bc/4.1/): ältere Releases stehen weiter unten"
+    },
+    "ini:settings/exphelp.ini [SecuritySettings] AdvisoryURL": {
+        "en": "GitHub's private vulnerability reporting form (only the maintainers see the report)",
+        "de": "Das private Formular von GitHub zum Melden von Schwachstellen (nur die Maintainer sehen die Meldung)"
+    },
+    "ini:settings/exphelp.ini [SecuritySettings] Email": {
+        "en": "Security issues are never reported in a public tracker (SECURITY.md)",
+        "de": "Sicherheitsprobleme werden nie in einem öffentlichen Tracker gemeldet (SECURITY.md)"
+    },
+    "ini:settings/exphelp.ini [SupportSettings] Enabled": {
+        "en": "The \"Support Exponential\" block at the bottom of the help dashboard and on the landing pages that list the block\nsupport: GitHub Sponsors of 7x and of the Exponential Foundation. enabled|disabled",
+        "de": "Der Block „Exponential unterstützen“ unten auf dem Dashboard der Hilfe und auf den Startseiten, die den Block\nsupport aufführen: GitHub Sponsors von 7x und der Exponential Foundation. enabled|disabled"
+    },
+    "ini:settings/exphelp.ini [SupportSettings] MorePage": {
+        "en": "The help page that explains what sponsorship pays for ('' or a missing page: no link)",
+        "de": "Die Hilfeseite, die erklärt, wofür das Sponsoring bezahlt ('' oder eine fehlende Seite: kein Link)"
+    },
+    "ini:settings/exphelp.ini [SupportSettings] Organizations": {
+        "en": "The organizations, in order; each has a [SupportOrganization_<id>] group: Name, URL (https), Button, Page (its page\nin the help), Mission and Funds[] (what its funding pays for). Texts are translated in kernel/exphelp.",
+        "de": "Die Organisationen, in Reihenfolge; jede hat eine Gruppe [SupportOrganization_<id>]: Name, URL (https), Button, Page (ihre Seite\nin der Hilfe), Mission und Funds[] (wofür ihre Finanzierung bezahlt). Die Texte werden in kernel/exphelp übersetzt."
+    },
+    "ini:settings/exphelp.ini [TitleSettings] Summaries": {
+        "en": "Summaries[<path>]=<one sentence for the cards and the search results>",
+        "de": "Summaries[<path>]=<ein Satz für die Karten und die Suchergebnisse>"
+    },
+    "ini:settings/exphelp.ini [TitleSettings] TitleRules": {
+        "en": "<pattern>;<template>, first match wins, for pages without a Titles[] entry. Placeholders: {title} (the page's own\ntitle), {name} (its file name, humanized), {fileversion} (the version at the end of the file name) and {dirversion}\n(the nearest version directory)",
+        "de": "<pattern>;<template>, der erste Treffer gewinnt, für Seiten ohne Eintrag in Titles[]. Platzhalter: {title} (der eigene\nTitel der Seite), {name} (ihr Dateiname, lesbar gemacht), {fileversion} (die Version am Ende des Dateinamens) und {dirversion}\n(das nächste Versionsverzeichnis)"
+    },
+    "ini:settings/exphelp.ini [TitleSettings] Titles": {
+        "en": "A clearer title and summary for pages whose own title is unclear: a raw file name, \"README\", a bare version, the\nfirst line of a source code comment, or the same title as another page. A page's front matter title or summary\nalways wins; this is for files that have none (plain text, the inherited documentation) and must keep their name\nbecause other files refer to them. Keys are paths relative to the installation root.\nTitles[<path>]=<title>",
+        "de": "Ein klarerer Titel und eine klarere Zusammenfassung für Seiten, deren eigener Titel unklar ist: ein bloßer Dateiname, \"README\", eine bloße Version, die\nerste Zeile eines Quelltextkommentars oder derselbe Titel wie eine andere Seite. Titel oder Zusammenfassung aus dem Front Matter einer Seite\ngewinnen immer; dies ist für Dateien, die keines haben (reiner Text, die geerbte Dokumentation) und ihren Namen behalten müssen,\nweil andere Dateien auf sie verweisen. Die Schlüssel sind Pfade relativ zum Wurzelverzeichnis der Installation.\nTitles[<path>]=<title>"
+    },
+    "ini:settings/exphelp.ini [TreeSettings] PageOrder": {
+        "en": "The place of a page in the page tree (/exphelp/contents and the sidebar of every page), the folder lists and the\ncategory lists. Pages are sorted by their order, then by title; a page's order is its front matter \"order\", else 0\nfor a folder's README.md/index.md and 1000 for any other page. An entry here wins over the front matter, so the\npages that cannot carry front matter (the project files, plain text pages) can be placed too. Folders still come\nbefore the pages of their level.\nKeys are page ids: the path below the language directory (INSTALL.md, glossary.md, release-overview),\nproject/<path> for a project file, ext/<extension>/<path> for an extension's page. The id is the same in every\nlanguage, so one entry places the page and its translations. PageOrder[] alone (empty) clears this list.\nThe top level of the tree is placed here and only here: its pages carry no front matter order of their own\n(glossary.md keeps order 9999 in its front matter, the same as here). The same list is the built-in default\n(expHelpAudience::PAGE_ORDER).\nPageOrder[<page id>]=<integer>",
+        "de": "Der Platz einer Seite im Seitenbaum (/exphelp/contents und die Seitenleiste jeder Seite), in den Ordnerlisten und den\nKategorielisten. Seiten werden nach ihrer Reihenfolge, dann nach Titel sortiert; die Reihenfolge einer Seite ist \"order\" aus ihrem Front Matter, sonst 0\nfür die README.md/index.md eines Ordners und 1000 für jede andere Seite. Ein Eintrag hier gewinnt gegen das Front Matter, sodass auch die\nSeiten platziert werden können, die kein Front Matter tragen können (die Projektdateien, Seiten mit reinem Text). Ordner stehen weiterhin\nvor den Seiten ihrer Ebene.\nDie Schlüssel sind Seiten-IDs: der Pfad unter dem Sprachverzeichnis (INSTALL.md, glossary.md, release-overview),\nproject/<path> für eine Projektdatei, ext/<extension>/<path> für die Seite einer Erweiterung. Die ID ist in jeder\nSprache gleich, ein Eintrag platziert also die Seite und ihre Übersetzungen. PageOrder[] allein (leer) leert diese Liste.\nDie oberste Ebene des Baums wird hier und nur hier platziert: Ihre Seiten tragen keine eigene Reihenfolge im Front Matter\n(glossary.md behält order 9999 in seinem Front Matter, wie hier). Dieselbe Liste ist der eingebaute Standard\n(expHelpAudience::PAGE_ORDER).\nPageOrder[<page id>]=<integer>"
+    },
+    "ini:settings/exphelp.ini [TypeSettings] PathRules": {
+        "en": "What kind of page a file is: its front matter (type: guide), else the first rule that matches.\n<pattern>;<type>, first match wins",
+        "de": "Welche Art von Seite eine Datei ist: ihr Front Matter (type: guide), sonst die erste passende Regel.\n<pattern>;<type>, der erste Treffer gewinnt"
+    },
+    "ini:settings/extendedattributefilter.ini": {
+        "en": "Exponential extended attribute filter configuration file.",
+        "de": "Exponential-Konfigurationsdatei für erweiterte Attributfilter."
+    },
+    "ini:settings/ezxml.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/ezxml.ini.append or\n      settings/override/ezxml.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/ezxml.ini.append oder\n      settings/override/ezxml.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/ezxml.ini [InputSettings] AliasClasses": {
+        "en": "Allows for overriding a handler with another",
+        "de": "Erlaubt, einen Handler durch einen anderen zu ersetzen"
+    },
+    "ini:settings/ezxml.ini [InputSettings] AllowMultipleSpaces": {
+        "en": "'false' - spaces sequences are converted to a single space character.\n'true'  - all spaces are stored in XML.",
+        "de": "'false' - Folgen von Leerzeichen werden in ein einzelnes Leerzeichen umgewandelt.\n'true'  - alle Leerzeichen werden im XML gespeichert."
+    },
+    "ini:settings/ezxml.ini [InputSettings] AllowNumericEntities": {
+        "en": "Allow foreign characters (from another charsets) to be stored as numeric\nentities.",
+        "de": "Erlaubt, fremde Zeichen (aus anderen Zeichensätzen) als numerische\nEntitäten zu speichern."
+    },
+    "ini:settings/ezxml.ini [InputSettings] HandlerClass": {
+        "en": "Which input handler to use, ezsimplified is the default",
+        "de": "Welcher Eingabe-Handler verwendet wird, ezsimplified ist der Standard"
+    },
+    "ini:settings/ezxml.ini [InputSettings] SupplementaryCharacters": {
+        "en": "Characters above U+FFFF (emoji, mathematical letters such as U+1D538) in\nrich text: 'enabled' keeps them, 'disabled' replaces them as XML characters\nthat are not allowed (a space on saving). 'auto' keeps them unless the\ndatabase is MySQL or MariaDB on a connection charset other than utf8mb4\n([DatabaseSettings] Charset=utf-8 connects as utf8, which cannot store them:\nthey would become \"????\", or the save would fail in strict SQL mode).",
+        "de": "Zeichen über U+FFFF (Emoji, mathematische Buchstaben wie U+1D538) in\nRich Text: 'enabled' behält sie, 'disabled' ersetzt sie wie in XML\nnicht erlaubte Zeichen (beim Speichern durch ein Leerzeichen). 'auto' behält sie, außer die\nDatenbank ist MySQL oder MariaDB mit einem anderen Verbindungszeichensatz als utf8mb4\n([DatabaseSettings] Charset=utf-8 verbindet als utf8, das sie nicht speichern kann:\nSie würden zu \"????\", oder das Speichern schlüge im strikten SQL-Modus fehl)."
+    },
+    "ini:settings/ezxml.ini [InputSettings] TrimSpaces": {
+        "en": "AliasClasses[eZSimplifiedXMLInput]=myXMLInputHandler\nTrim whitespaces in the input or not\n'true' - spaces in the beginning of the line are trimmed.\n'false'- all spaces stay in their place",
+        "de": "AliasClasses[eZSimplifiedXMLInput]=myXMLInputHandler\nLeerzeichen in der Eingabe abschneiden oder nicht\n'true' - Leerzeichen am Zeilenanfang werden abgeschnitten.\n'false'- alle Leerzeichen bleiben an ihrem Platz"
+    },
+    "ini:settings/ezxml.ini [OutputSettings] AliasClasses": {
+        "en": "HandlerClass=eZPlainXMLOutput",
+        "de": "HandlerClass=eZPlainXMLOutput"
+    },
+    "ini:settings/ezxml.ini [OutputSettings] HandlerClass": {
+        "en": "Which output handler to use, ezxhtml is the default\nezplain can be used to see raw xml data.",
+        "de": "Welcher Ausgabe-Handler verwendet wird, ezxhtml ist der Standard\nmit ezplain lassen sich die rohen XML-Daten ansehen."
+    },
+    "ini:settings/ezxml.ini [TagSettings]": {
+        "en": "AliasClasses[eZXHTMLXMLOutput]=eZPlainXMLOutput",
+        "de": "AliasClasses[eZXHTMLXMLOutput]=eZPlainXMLOutput"
+    },
+    "ini:settings/ezxml.ini [TagSettings] TagPresets": {
+        "en": "Defines presets of allowed tags, currently only used by Online Editor 5.0\nto have different type of editors(aka it only limits the visible buttons,\nnot what you can copy/past or manually enter in code editor)\nSetting is selectable in class/edit if TagPreset has values.",
+        "de": "Legt Vorlagen erlaubter Tags fest, derzeit nur vom Online Editor 5.0 verwendet,\num verschiedene Arten von Editoren zu haben (d. h. es begrenzt nur die sichtbaren Schaltflächen,\nnicht, was Sie kopieren/einfügen oder im Code-Editor von Hand eingeben können)\nDie Einstellung ist in class/edit wählbar, wenn TagPreset Werte hat."
+    },
+    "ini:settings/ezxml.ini [ezxhtml]": {
+        "en": "TagPresets[full]=All tags\nTagPresets[mini]=Just formatting allowed\nHandler specific options",
+        "de": "TagPresets[full]=All tags\nTagPresets[mini]=Just formatting allowed\nOptionen für den jeweiligen Handler"
+    },
+    "ini:settings/ezxml.ini [ezxhtml] RenderParagraphInTableCells": {
+        "en": "Determines to insert <p> tag inside a table cell in the output or not\nif there is only one <paragraph> tag inside a cell.",
+        "de": "Legt fest, ob in der Ausgabe ein Tag <p> in eine Tabellenzelle eingefügt wird,\nwenn sich nur ein Tag <paragraph> in der Zelle befindet."
+    },
+    "ini:settings/ezxml.ini [ezxhtml] ShowURLAliasForProtectedLinks": {
+        "en": "Show URL alias for links the current user does not have read access to.\nIf disabled (recommended) the link will be /content/view/full/[nodeID] instead.",
+        "de": "Den URL-Alias für Links zeigen, auf die der aktuelle Benutzer keinen Lesezugriff hat.\nWenn deaktiviert (empfohlen), ist der Link stattdessen /content/view/full/[nodeID]."
+    },
+    "ini:settings/fetchalias.ini": {
+        "en": "Exponential fetch alias configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/fetchalias.ini.append.php\n      for more security in non-virtualhost modes\nfetch_alias is to used as a replacement for fetch for often used fetch functions\n            or to simplify complicated fetch functions.\nGeneral syntax\n\n[<parameter>]         # name of first parameter in fetch_alias\nModule=          # which module to use\nFunctionName=    # name of function defined in kernel/<module>/function_definition.php\nParameter[key]=<value>  # key is the name of the parameter defined for the function in kernel/<module>/function_definition.php\n                        # value is the key of the hash entry in fetch_alias\nConstant[key]=<value>   # key is the name of the parameter defined for the function in kernel/<module>/function_definition.php\n                        # value is a constant defined in this ini file. use ; to separate elements if the value is supposed to be an array",
+        "de": "Exponential-Konfigurationsdatei für Fetch-Aliase.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/fetchalias.ini.append.php an,\n      für mehr Sicherheit im Modus ohne virtuellen Host\nfetch_alias dient als Ersatz für fetch bei häufig verwendeten Fetch-Funktionen\n            oder zur Vereinfachung komplizierter Fetch-Funktionen.\nAllgemeine Syntax\n\n[<parameter>]         # name of first parameter in fetch_alias\nModule=          # which module to use\nFunctionName=    # name of function defined in kernel/<module>/function_definition.php\nParameter[key]=<value>  # key is the name of the parameter defined for the function in kernel/<module>/function_definition.php\n                        # value is the key of the hash entry in fetch_alias\nConstant[key]=<value>   # key is the name of the parameter defined for the function in kernel/<module>/function_definition.php\n                        # value is a constant defined in this ini file. use ; to separate elements if the value is supposed to be an array"
+    },
+    "ini:settings/fetchalias.ini [by_identifier]": {
+        "en": "usage : fetch_alias(by_identifier, hash(attr_id, <unique text> ))",
+        "de": "Verwendung: fetch_alias(by_identifier, hash(attr_id, <unique text> ))"
+    },
+    "ini:settings/fetchalias.ini [children]": {
+        "en": "Fetch children",
+        "de": "Unterknoten holen"
+    },
+    "ini:settings/fetchalias.ini [children_count]": {
+        "en": "Count children",
+        "de": "Unterknoten zählen"
+    },
+    "ini:settings/fetchalias.ini [comments]": {
+        "en": "Fetch article comments",
+        "de": "Kommentare zu Artikeln holen"
+    },
+    "ini:settings/fetchalias.ini [news_list]": {
+        "en": "usage : fetch_alias(news_list)",
+        "de": "Verwendung: fetch_alias(news_list)"
+    },
+    "ini:settings/fetchalias.ini [object]": {
+        "en": "usage : fetch_alias(object, hash(id, <object_id>))",
+        "de": "Verwendung: fetch_alias(object, hash(id, <object_id>))"
+    },
+    "ini:settings/fetchalias.ini [reviews]": {
+        "en": "Fetch product reviews",
+        "de": "Produktbewertungen holen"
+    },
+    "ini:settings/fetchalias.ini [subtree]": {
+        "en": "Fetch subtree",
+        "de": "Teilbaum holen"
+    },
+    "ini:settings/file.ini": {
+        "en": "Exponential configuration file for file handling\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/file.ini.append or\n      settings/override/file.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für den Umgang mit Dateien\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/file.ini.append oder\n      settings/override/file.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/file.ini [ClusterEventsSettings] ClusterEvents": {
+        "en": "Enables/Disables dedicated cluster events listening\nIf enabled, the cluster file handler will use a dedicated listener object\nto respond to cluster events.\nCan be used to add a cache layer (e.g. Memcached or Redis) in the cluster backend\nand thus reduce cluster database load.\nOnly supported by eZDFSFileHandler MySQLi backend at the moment.",
+        "de": "Aktiviert/deaktiviert einen eigenen Listener für Cluster-Ereignisse\nWenn aktiviert, verwendet der Cluster-Datei-Handler ein eigenes Listener-Objekt,\num auf Cluster-Ereignisse zu reagieren.\nLässt sich verwenden, um eine Cache-Schicht (z. B. Memcached oder Redis) in das Cluster-Backend einzufügen\nund so die Last der Cluster-Datenbank zu senken.\nDerzeit nur vom MySQLi-Backend von eZDFSFileHandler unterstützt."
+    },
+    "ini:settings/file.ini [ClusterEventsSettings] Listener": {
+        "en": "Class to use as cluster events listener\nThis class must implement eZClusterEventListener interface",
+        "de": "Klasse, die als Listener für Cluster-Ereignisse verwendet wird\nDiese Klasse muss die Schnittstelle eZClusterEventListener implementieren"
+    },
+    "ini:settings/file.ini [ClusteringSettings] FileHandler": {
+        "en": "Cluster file handler.\nSince 4.1 name of the filehandlers have changed\nyou may choose between :\n- eZFSFileHandler\n  standard file handler\n- eZDFSFileHandler\n  distributed filesystem handler with a DB overlay. Required for NFS based\n  architectures\nand it is case sensitive",
+        "de": "Cluster-Datei-Handler.\nSeit 4.1 haben sich die Namen der Datei-Handler geändert\nSie können wählen zwischen:\n- eZFSFileHandler\n  Standard-Datei-Handler\n- eZDFSFileHandler\n  Handler für verteilte Dateisysteme mit einer Datenbankschicht. Erforderlich für NFS-basierte\n  Architekturen\nGroß- und Kleinschreibung wird beachtet"
+    },
+    "ini:settings/file.ini [ClusteringSettings] NonExistantStaleCacheHandling": {
+        "en": "DEPRECATED\nIf you want to use your own cluster file handler located in an extension\nthen you should add the extension name to the list below.\nIn that case the handler will be searched for in the following directory:\nextension/<your_extension>/clusterfilehandlers\nExtensionDirectories[]\nDefines what happens when a requested cache file is already being generated\nand no expired cache file exists (for instance if the content is new)\nTwo possible values:\n  - wait: places the process in a wait loop for a limited time until the file\n          is done generating. This is the default value\n  - generate: let the requesting process generate its own data without storing\n              the result\nThe key of this array defined the type of cache impacted by the setting. Three\ncache types are allowed here: viewcache, cacheblock and misc (any cache that is\nnot viewcache nor cacheblock).",
+        "de": "VERALTET\nWenn Sie einen eigenen Cluster-Datei-Handler aus einer Erweiterung verwenden wollen,\nfügen Sie den Namen der Erweiterung der Liste unten hinzu.\nDann wird der Handler im folgenden Verzeichnis gesucht:\nextension/<your_extension>/clusterfilehandlers\nExtensionDirectories[]\nLegt fest, was geschieht, wenn eine angeforderte Cache-Datei gerade erzeugt wird\nund keine abgelaufene Cache-Datei existiert (zum Beispiel bei neuem Inhalt)\nZwei mögliche Werte:\n  - wait: lässt den Prozess für begrenzte Zeit in einer Warteschleife, bis die Datei\n          fertig erzeugt ist. Das ist der Standard\n  - generate: lässt den anfragenden Prozess seine eigenen Daten erzeugen, ohne das\n              Ergebnis zu speichern\nDer Schlüssel dieses Arrays legt die Art des betroffenen Caches fest. Drei\nCache-Arten sind hier erlaubt: viewcache, cacheblock und misc (jeder Cache, der\nweder viewcache noch cacheblock ist)."
+    },
+    "ini:settings/file.ini [FileSettings]": {
+        "en": "Repositories[]=kernel/classes\nA list of extensions which have binaryhandlers\nIt's common to create a settings/file.ini.append.php file\nin your extension and add the extension name to automatically\nget handlers from the extension when it's turned on.\nHandlers need to be placed in the extension subdir \"binaryhandlers\".\nExtensionRepositories[]",
+        "de": "Repositories[]=kernel/classes\nEine Liste der Erweiterungen, die Binary-Handler haben\nÜblicherweise legt man in der Erweiterung eine Datei settings/file.ini.append.php\nan und trägt den Namen der Erweiterung ein, um automatisch\ndie Handler der Erweiterung zu erhalten, wenn sie eingeschaltet ist.\nDie Handler müssen im Unterverzeichnis \"binaryhandlers\" der Erweiterung liegen.\nExtensionRepositories[]"
+    },
+    "ini:settings/file.ini [FileSettings] FileExtensionBlackList": {
+        "en": "The file extension blacklist is used to validate uploaded files.\nFile types on the blacklist are rejected, for security or other reasons.",
+        "de": "Die Sperrliste der Dateiendungen dient zur Prüfung hochgeladener Dateien.\nDateitypen auf der Sperrliste werden abgelehnt, aus Sicherheits- oder anderen Gründen."
+    },
+    "ini:settings/file.ini [FileSettings] Handlers": {
+        "en": "Generic gzip handler, uses the zlib or shell handlers to do the job\nSpecific gzip handler, either using the zlib extension or gzip shell command",
+        "de": "Allgemeiner gzip-Handler, verwendet für die Arbeit die zlib- oder Shell-Handler\nBestimmter gzip-Handler, entweder mit der Erweiterung zlib oder dem Shell-Befehl gzip"
+    },
+    "ini:settings/file.ini [FileSettings] SystemUserCheck": {
+        "en": "(UNIX only) Whether to check if the user executing an eZScript is the same\nas defined in the SystemUser setting. When the users don't match, the\nscript execution will be stopped.",
+        "de": "(Nur UNIX) Ob geprüft wird, ob der Benutzer, der ein eZScript ausführt, derselbe\nist wie in der Einstellung SystemUser. Stimmen die Benutzer nicht überein, wird die\nAusführung des Skripts angehalten."
+    },
+    "ini:settings/file.ini [PassThroughSettings]": {
+        "en": "Optional DB table name caches should be stored to\nThis is useful for staging use cases where the storage entries and DB are shared\nacross different Exponential installations, but the caches should not.\nMetaDataTableNameCache=",
+        "de": "Optionaler Name der Datenbanktabelle, in der Caches gespeichert werden sollen\nNützlich für Staging, wenn Speichereinträge und Datenbank\nzwischen verschiedenen Exponential-Installationen geteilt werden, die Caches aber nicht.\nMetaDataTableNameCache="
+    },
+    "ini:settings/file.ini [PassThroughSettings] DefaultContentDisposition": {
+        "en": "The default value for mime types not specified using ContentDisposition\nis \"attachment\". Possible values are attachment or inline.",
+        "de": "Der Standardwert für MIME-Typen, die nicht über ContentDisposition angegeben sind,\nist \"attachment\". Mögliche Werte sind attachment oder inline."
+    },
+    "ini:settings/file.ini [eZDFSClusteringSettings]": {
+        "en": "DFS Cluster Handler settings",
+        "de": "Einstellungen des DFS-Cluster-Handlers"
+    },
+    "ini:settings/file.ini [eZDFSClusteringSettings] DBBackend": {
+        "en": "Database backend\nAvailable options:\n- MySQLi: eZDFSFileHandlerMySQLiBackend\n- PostgreSQL: eZDFSFileHandlerPostgresqlBackend\n- Oracle: eZDFSFileHandlerOracleBackend (requires the ezoracle extension)",
+        "de": "Datenbank-Backend\nVerfügbare Optionen:\n- MySQLi: eZDFSFileHandlerMySQLiBackend\n- PostgreSQL: eZDFSFileHandlerPostgresqlBackend\n- Oracle: eZDFSFileHandlerOracleBackend (erfordert die Erweiterung ezoracle)"
+    },
+    "ini:settings/file.ini [eZDFSClusteringSettings] MaxCopyRetries": {
+        "en": "Max number of times a dfs file is tried to be copied.\nIncrease this value if you find files like expiryXYZtmp.php with 0 byte size",
+        "de": "Wie oft höchstens versucht wird, eine DFS-Datei zu kopieren.\nErhöhen Sie diesen Wert, wenn Sie Dateien wie expiryXYZtmp.php mit 0 Byte Größe finden"
+    },
+    "ini:settings/file.ini [eZDFSClusteringSettings] MountPointPath": {
+        "en": "Path to the NFS mount point\nCan be relative to the Exponential root, or absolute",
+        "de": "Pfad zum NFS-Mountpunkt\nKann relativ zum Wurzelverzeichnis von Exponential oder absolut sein"
+    },
+    "ini:settings/httpcache.ini": {
+        "en": "The role-aware HTTP cache: rendered content views kept per permission\ncontext and served before the kernel boots (config.php early exit) or from\nExponential Velocity's parent. Off by default; see\nkernel/private/classes/httpcache/.",
+        "de": "Der rollenbewusste HTTP-Cache: gerenderte Inhaltsansichten, pro Berechtigungs-\nkontext gehalten und ausgeliefert, bevor der Kernel startet (früher Ausstieg in config.php), oder vom\nElternprozess von Exponential Velocity. Standardmäßig aus; siehe\nkernel/private/classes/httpcache/."
+    },
+    "ini:settings/httpcache.ini [HttpCacheSettings] APCu": {
+        "en": "Keep hot entries in APCu in front of the files (when APCu is usable).",
+        "de": "Häufig genutzte Einträge in APCu vor den Dateien halten (wenn APCu nutzbar ist)."
+    },
+    "ini:settings/httpcache.ini [HttpCacheSettings] CachedSiteAccesses": {
+        "en": "Siteaccesses whose pages are cached. Matched by host, by URI (URIMatchType\nelement or map) or by host and URI (host_uri); a siteaccess found by another\nrule (port, servervar, index, the text and regexp types) is never served\nearly, since that cannot be known before the kernel starts.",
+        "de": "Siteaccesses, deren Seiten gecacht werden. Erkannt über den Host, über die URI (URIMatchType\nelement oder map) oder über Host und URI (host_uri); ein Siteaccess, der über eine andere\nRegel gefunden wird (port, servervar, index, die Typen text und regexp), wird nie früh\nausgeliefert, weil sich das nicht wissen lässt, bevor der Kernel startet."
+    },
+    "ini:settings/httpcache.ini [HttpCacheSettings] ContentChangePurges": {
+        "en": "What a content change purges. A whole page also holds what the view cache\nnever did (the pagelayout's menus, layout blocks that run queries), and the\ntags of a change cannot name all of those yet.\n  all  - every cached page (safe; the default)\n  tags - only pages tagged with the changed objects, their nodes and parents,\n         and pages with layout blocks that run queries (their items are tagged)\nChanges made in the layout editor always purge every page.",
+        "de": "Was eine Inhaltsänderung löscht. Eine ganze Seite enthält auch, was der View-Cache\nnie enthielt (die Menüs des Pagelayouts, Layout-Blöcke, die Abfragen ausführen), und die\nTags einer Änderung können all das noch nicht benennen.\n  all  - jede gecachte Seite (sicher; der Standard)\n  tags - nur Seiten, die mit den geänderten Objekten, ihren Knoten und Elternknoten getaggt sind,\n         und Seiten mit Layout-Blöcken, die Abfragen ausführen (ihre Einträge sind getaggt)\nÄnderungen im Layout-Editor löschen immer jede Seite."
+    },
+    "ini:settings/httpcache.ini [HttpCacheSettings] Enabled": {
+        "en": "enabled or disabled. The early exit and Velocity only serve what exists, and\nnothing is stored while this is disabled.",
+        "de": "enabled oder disabled. Der frühe Ausstieg und Velocity liefern nur aus, was existiert, und\nsolange dies disabled ist, wird nichts gespeichert."
+    },
+    "ini:settings/httpcache.ini [HttpCacheSettings] MaxAge": {
+        "en": "Seconds a cached page may be served at most, even if nothing purged it.",
+        "de": "Sekunden, die eine gecachte Seite höchstens ausgeliefert werden darf, auch wenn nichts sie gelöscht hat."
+    },
+    "ini:settings/httpcache.ini [HttpCacheSettings] MaxBodySize": {
+        "en": "Largest page body, in bytes, that is stored.",
+        "de": "Größter Seiteninhalt in Bytes, der gespeichert wird."
+    },
+    "ini:settings/httpcache.ini [HttpCacheSettings] QueryStringParameters": {
+        "en": "Query string parameters a cached page may carry. A request with any other\nparameter is not cached (every random query string would add an entry).\nExponential passes view parameters in the path, /(offset)/10.",
+        "de": "Query-Parameter, die eine gecachte Seite tragen darf. Eine Anfrage mit einem anderen\nParameter wird nicht gecacht (jede zufällige Query-Zeichenkette würde einen Eintrag hinzufügen).\nExponential übergibt View-Parameter im Pfad, /(offset)/10."
+    },
+    "ini:settings/httpcache.ini [HttpCacheSettings] StaleWhileRevalidate": {
+        "en": "Seconds an expired (not purged) page may still be served, marked STALE, while\none request renders it again. 0 serves nothing expired.",
+        "de": "Sekunden, die eine abgelaufene (nicht gelöschte) Seite noch ausgeliefert werden darf, als STALE markiert, während\neine Anfrage sie neu rendert. 0 liefert nichts Abgelaufenes aus."
+    },
+    "ini:settings/httpcache.ini [HttpCacheSettings] TagHeader": {
+        "en": "The purge tags of each page (its nodes, objects and layouts) in one response\nheader, for a purging proxy in front that reads them, or to see them while\ndebugging: xkey (Varnish xkey vmod), Surrogate-Key (Fastly), Cache-Tag\n(Cloudflare), or another header name. disabled (the default) sends none:\nthe tags name internal ids, so no visitor should see them otherwise.\nProxyHeaders=enabled, the setting before this one, still means xkey.",
+        "de": "Die Lösch-Tags jeder Seite (ihre Knoten, Objekte und Layouts) in einem Antwort-\nHeader, für einen vorgelagerten löschenden Proxy, der sie liest, oder um sie beim\nDebuggen zu sehen: xkey (Varnish-xkey-vmod), Surrogate-Key (Fastly), Cache-Tag\n(Cloudflare) oder ein anderer Header-Name. disabled (der Standard) sendet keinen:\nDie Tags nennen interne IDs, also sollte sie sonst kein Besucher sehen.\nProxyHeaders=enabled, die Einstellung vor dieser, bedeutet weiterhin xkey."
+    },
+    "ini:settings/i18n.ini": {
+        "en": "Exponential configuration file for internationalization (i18n).\nUsed for settings defaults for internal encoding and codepage conversion.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/i18n.ini.append or\n      settings/override/i18n.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).\n# This file should not change it's default encoding which is iso-8859-1.\n\nCharset defines the internal charset for the site,\n use UTF-8 for multilingual sites or a specific charset for monolingual sites\nSet HTTPCharset to something if you know that the internal charset is not\nsupported by browser or has a wrong name(for instance UTF8 is a wrong unicode name\n                                         for browsers while UTF-8 is correct)\nMBStringExtension defines whether to use the mbstring extension in PHP,\n the extension will only be used if it's available and this variable is set to enabled",
+        "de": "Exponential-Konfigurationsdatei für die Internationalisierung (i18n).\nWird für die Standards der internen Kodierung und der Umwandlung von Codepages verwendet.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/i18n.ini.append oder\n      settings/override/i18n.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden).\n# Diese Datei sollte ihre Standardkodierung iso-8859-1 nicht ändern.\n\nCharset legt den internen Zeichensatz der Website fest,\n verwenden Sie UTF-8 für mehrsprachige Websites oder einen bestimmten Zeichensatz für einsprachige Websites\nSetzen Sie HTTPCharset, wenn Sie wissen, dass der interne Zeichensatz vom\nBrowser nicht unterstützt wird oder einen falschen Namen hat (zum Beispiel ist UTF8 für Browser ein falscher\n                                         Unicode-Name, UTF-8 dagegen korrekt)\nMBStringExtension legt fest, ob die PHP-Erweiterung mbstring verwendet wird,\n die Erweiterung wird nur verwendet, wenn sie verfügbar ist und diese Variable auf enabled steht"
+    },
+    "ini:settings/i18n.ini [TranslationSettings] AutomaticFallbackExclude": {
+        "en": "Languages (eng) or locales (chi-MO) that never fall back automatically. English\nis the language of the source texts.",
+        "de": "Sprachen (eng) oder Locales (chi-MO), die nie automatisch zurückfallen. Englisch\nist die Sprache der Quelltexte."
+    },
+    "ini:settings/i18n.ini [TranslationSettings] AutomaticLanguageFallback": {
+        "en": "AutomaticLanguageFallback: a locale with no translation of its own and no\nFallbackLanguages[] entry falls back to the most complete translation of the\nsame language (fre-NC to fre-FR), so a new country locale needs no line here.\nenabled (default) or disabled.",
+        "de": "AutomaticLanguageFallback: Eine Locale ohne eigene Übersetzung und ohne\nEintrag in FallbackLanguages[] fällt auf die vollständigste Übersetzung derselben\nSprache zurück (fre-NC auf fre-FR), eine neue Länder-Locale braucht hier also keine Zeile.\nenabled (Standard) oder disabled."
+    },
+    "ini:settings/i18n.ini [TranslationSettings] FallbackMaxDepth": {
+        "en": "The most steps of a chain (1 to 16); a longer one is cut and reported.",
+        "de": "Die meisten Schritte einer Kette (1 bis 16); eine längere wird abgeschnitten und gemeldet."
+    },
+    "ini:settings/i18n.ini [TranslationSettings] FallbackMode": {
+        "en": "first (default): each translation root loads the first file of the chain it has.\nmerge: it loads every file of the chain, the most general first, so the messages\na translation lacks (esl-MX) are taken from the next one (esl-ES).",
+        "de": "first (Standard): Jede Übersetzungswurzel lädt die erste Datei der Kette, die sie hat.\nmerge: Sie lädt jede Datei der Kette, die allgemeinste zuerst, sodass die Meldungen,\ndie einer Übersetzung fehlen (esl-MX), aus der nächsten genommen werden (esl-ES)."
+    },
+    "ini:settings/i18n.ini [TranslationSettings] FallbackRules": {
+        "en": "FallbackLanguages defines the available translation fallbacks\nof the QT ( .ts ) translation files. If the this no translation available\nfor e.g. ger-CH the ger-DE translation file will be requested for the translation.\nIt is looked up for the kernel and for every extension on its own: esl-MX has a\nkernel translation of its own, and takes esl-ES only for the extensions that have\nno esl-MX one. Every country of a language with a translation falls back to it,\nso its administration is in that language (tested in expUISwitchLanguageProviderTest).\nA fallback can have a fallback of its own: FallbackLanguages[esl-AR]=esl-MX with\nFallbackLanguages[esl-MX]=esl-ES makes the chain esl-AR, esl-MX, esl-ES, tried in\nthat order for each translation root. eng-GB and untranslated mean the source\ntexts and end a chain. ./console exp:i18n fallbacks shows every chain, and\n./console exp:i18n check finds cycles and missing targets (doc/eng-us/languages.md).\n\nFallbackLanguages[] always decides first. Then the classes of FallbackRules[]\n(implementing expI18nFallbackRuleInterface, for extensions), then, when enabled,\nthe automatic fallback.",
+        "de": "FallbackLanguages legt die verfügbaren Übersetzungs-Fallbacks\nder QT-Übersetzungsdateien (.ts) fest. Gibt es keine Übersetzung\nfür z. B. ger-CH, wird die Übersetzungsdatei ger-DE angefordert.\nDas wird für den Kernel und für jede Erweiterung einzeln nachgeschlagen: esl-MX hat eine\neigene Kernel-Übersetzung und nimmt esl-ES nur für die Erweiterungen, die\nkeine für esl-MX haben. Jedes Land einer Sprache mit einer Übersetzung fällt auf sie zurück,\nsodass seine Administration in dieser Sprache ist (getestet in expUISwitchLanguageProviderTest).\nEin Fallback kann selbst einen Fallback haben: FallbackLanguages[esl-AR]=esl-MX mit\nFallbackLanguages[esl-MX]=esl-ES ergibt die Kette esl-AR, esl-MX, esl-ES, in\ndieser Reihenfolge für jede Übersetzungswurzel versucht. eng-GB und untranslated bedeuten die Quell-\ntexte und beenden eine Kette. ./console exp:i18n fallbacks zeigt jede Kette, und\n./console exp:i18n check findet Zyklen und fehlende Ziele (doc/eng-us/languages.md).\n\nFallbackLanguages[] entscheidet immer zuerst. Dann die Klassen aus FallbackRules[]\n(die expI18nFallbackRuleInterface implementieren, für Erweiterungen), dann, wenn aktiviert,\nder automatische Fallback."
+    },
+    "ini:settings/icon.ini": {
+        "en": "Exponential configuration file for icons\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/icon.ini.append or\n      settings/override/icon.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für Symbole\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/icon.ini.append oder\n      settings/override/icon.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/icon.ini [ExtensionSettings]": {
+        "en": "Here you can override or add new sizes, allthough you must make\nsure all used themes have these sizes defined.\nEach size refers to the name of the subdirectory\nof the icon theme. If the name contains two numbers with an\nx in between it will be considered to be the width and height\nof the icon, if not no size is will be given\n\nIf you create a theme this variable must be present\nAllowed syntaxes are:\nHere the subpath will be the width and height setting\nSizes[<identifier>]=<width>x<height>\ne.g.\nSizes[normal]=32x32\n\nHere the subpath will be used for fetching the icon\nwhile width and height are used for size\nSizes[<identifier>]=<width>x<height>;<subpath>\ne.g.\nSizes[normal]=32x32;normal-icons\n\nSizes[]\nSizes[normal]=32x32\nSizes[small]=16x16\nSizes[large]=48x48\n[MimeIcons]\nThe theme for mime-icons, overrides default\nTheme=crystal\nThe size for mime-icons, overrides default\nSize=normal\nMapping from a mimetype to it's icon file, the whole filename\nmust be included\nSpecifying just the group of the mimetype is also possible\n\nEach theme will define this mapping variable\nMimeMap[]\n[ClassIcons]\nThe theme for class-icons, overrides default\nTheme=crystal\nThe size for class-icons, overrides default\nSize=normal\nMapping from a class identifier to it's icon file,\nthe whole filename must be included\n\nEach theme will define this mapping variable\nClassMap[]\n[ClassGroupIcons]\nThe theme for classgroup-icons, overrides default\nTheme=crystal\nThe size for classgroup-icons, overrides default\nSize=normal\nMapping from a class group identifier to it's icon file,\nthe whole filename must be included\n\nEach theme will define this mapping variable\nClassGroupMap[]\n[Icons]\nThe theme for standard icons, overrides default\nTheme=crystal\nThe size for standard icons, overrides default\nSize=normal\nMapping from a icon identifier to it's icon file,\nthe whole filename must be included\n\nEach theme will define this mapping variable\nIconMap[]\n[ActionIcons]\nThe theme for action icons, overrides default\nTheme=ezadmin\nThe size for standard icons, overrides default\nSize=normal\nMapping from a icon identifier to it's icon file,\nthe whole filename must be included\n\nEach theme will define this mapping variable\nActionMap[]",
+        "de": "Hier können Sie Größen überschreiben oder neue hinzufügen; Sie müssen aber\nsicherstellen, dass alle verwendeten Themes diese Größen definieren.\nJede Größe bezieht sich auf den Namen des Unterverzeichnisses\ndes Symbol-Themes. Enthält der Name zwei Zahlen mit einem\nx dazwischen, gelten sie als Breite und Höhe\ndes Symbols, sonst wird keine Größe angegeben\n\nWenn Sie ein Theme anlegen, muss diese Variable vorhanden sein\nErlaubte Schreibweisen sind:\nHier ist der Unterpfad die Einstellung für Breite und Höhe\nSizes[<identifier>]=<width>x<height>\nz. B.\nSizes[normal]=32x32\n\nHier wird der Unterpfad zum Holen des Symbols verwendet,\nBreite und Höhe für die Größe\nSizes[<identifier>]=<width>x<height>;<subpath>\nz. B.\nSizes[normal]=32x32;normal-icons\n\nSizes[]\nSizes[normal]=32x32\nSizes[small]=16x16\nSizes[large]=48x48\n[MimeIcons]\nDas Theme für MIME-Symbole, überschreibt den Standard\nTheme=crystal\nDie Größe für MIME-Symbole, überschreibt den Standard\nSize=normal\nZuordnung eines MIME-Typs zu seiner Symboldatei, der ganze Dateiname\nmuss angegeben werden\nNur die Gruppe des MIME-Typs anzugeben ist auch möglich\n\nJedes Theme definiert diese Zuordnungsvariable\nMimeMap[]\n[ClassIcons]\nDas Theme für Klassensymbole, überschreibt den Standard\nTheme=crystal\nDie Größe für Klassensymbole, überschreibt den Standard\nSize=normal\nZuordnung eines Klassenbezeichners zu seiner Symboldatei,\nder ganze Dateiname muss angegeben werden\n\nJedes Theme definiert diese Zuordnungsvariable\nClassMap[]\n[ClassGroupIcons]\nDas Theme für Symbole von Klassengruppen, überschreibt den Standard\nTheme=crystal\nDie Größe für Symbole von Klassengruppen, überschreibt den Standard\nSize=normal\nZuordnung eines Bezeichners einer Klassengruppe zu seiner Symboldatei,\nder ganze Dateiname muss angegeben werden\n\nJedes Theme definiert diese Zuordnungsvariable\nClassGroupMap[]\n[Icons]\nDas Theme für Standardsymbole, überschreibt den Standard\nTheme=crystal\nDie Größe für Standardsymbole, überschreibt den Standard\nSize=normal\nZuordnung eines Symbolbezeichners zu seiner Symboldatei,\nder ganze Dateiname muss angegeben werden\n\nJedes Theme definiert diese Zuordnungsvariable\nIconMap[]\n[ActionIcons]\nDas Theme für Aktionssymbole, überschreibt den Standard\nTheme=ezadmin\nDie Größe für Standardsymbole, überschreibt den Standard\nSize=normal\nZuordnung eines Symbolbezeichners zu seiner Symboldatei,\nder ganze Dateiname muss angegeben werden\n\nJedes Theme definiert diese Zuordnungsvariable\nActionMap[]"
+    },
+    "ini:settings/icon.ini [ExtensionSettings] IconExtensions": {
+        "en": "A list of extensions which contain icon themes (under extension/<name>/icons).\nWhen an extension is listed here the kernel icon operators will search it\nbefore falling back to the default share/icons repository.",
+        "de": "Eine Liste der Erweiterungen, die Symbol-Themes enthalten (unter extension/<name>/icons).\nIst eine Erweiterung hier aufgeführt, durchsuchen die Symbol-Operatoren des Kernels sie,\nbevor sie auf das Standard-Repository share/icons zurückfallen."
+    },
+    "ini:settings/icon.ini [FlagIcons]": {
+        "en": "IconExtensions[]=myiconsextension",
+        "de": "IconExtensions[]=myiconsextension"
+    },
+    "ini:settings/icon.ini [FlagIcons] IconFormat": {
+        "en": "The suffix for all icon files, .e.g eng-GB.gif",
+        "de": "Die Endung aller Symboldateien, z. B. eng-GB.gif"
+    },
+    "ini:settings/icon.ini [FlagIcons] Repository": {
+        "en": "Where to look for flag icons, relative to Exponential",
+        "de": "Wo nach Flaggensymbolen gesucht wird, relativ zu Exponential"
+    },
+    "ini:settings/icon.ini [FlagIcons] Theme": {
+        "en": "Which theme to use for flags",
+        "de": "Welches Theme für Flaggen verwendet wird"
+    },
+    "ini:settings/icon.ini [IconSettings] DesignTheme": {
+        "en": "Additional themes to search before falling back to the standard theme.\nAdditionalThemeList[]\nThe icon theme of a design. While the design is the siteaccess's SiteDesign (site.ini [DesignSettings]), its theme\nreplaces Theme, and Theme is searched right after it, so a key the design's theme does not map keeps the icon it\nhad. A type's own Theme ([ClassIcons] Theme etc.) still wins. An empty value turns it off for that design, an empty\nDesignTheme[] for every design. A design of your own built on admin4 needs its own entry.",
+        "de": "Zusätzliche Themes, die durchsucht werden, bevor auf das Standard-Theme zurückgefallen wird.\nAdditionalThemeList[]\nDas Symbol-Theme eines Designs. Solange das Design das SiteDesign des Siteaccess ist (site.ini [DesignSettings]), ersetzt sein Theme\nTheme, und Theme wird direkt danach durchsucht, sodass ein Schlüssel, den das Theme des Designs nicht zuordnet, das Symbol behält, das er\nhatte. Das eigene Theme eines Typs ([ClassIcons] Theme usw.) gewinnt weiterhin. Ein leerer Wert schaltet es für dieses Design ab, ein leeres\nDesignTheme[] für jedes Design. Ein eigenes, auf admin4 aufbauendes Design braucht einen eigenen Eintrag."
+    },
+    "ini:settings/icon.ini [IconSettings] Repository": {
+        "en": "Where to look for icons, relative to Exponential",
+        "de": "Wo nach Symbolen gesucht wird, relativ zu Exponential"
+    },
+    "ini:settings/icon.ini [IconSettings] Size": {
+        "en": "Wanted size of icons, the size is not checked and is expected\nto be just a string which should be a directory in the theme",
+        "de": "Gewünschte Größe der Symbole; die Größe wird nicht geprüft und soll\neinfach eine Zeichenkette sein, die einem Verzeichnis im Theme entspricht"
+    },
+    "ini:settings/icon.ini [IconSettings] StandardTheme": {
+        "en": "The standard theme. It is used as fallback theme if an icon is not available in the current theme.",
+        "de": "Das Standard-Theme. Es dient als Ausweich-Theme, wenn ein Symbol im aktuellen Theme nicht verfügbar ist."
+    },
+    "ini:settings/icon.ini [IconSettings] Theme": {
+        "en": "Which theme to use as current for all icon types\nIf you wish to have a different theme per type you\ncan set this variable in the INI group for the type.",
+        "de": "Welches Theme für alle Symboltypen als aktuelles verwendet wird\nWenn Sie pro Typ ein anderes Theme wollen,\nkönnen Sie diese Variable in der INI-Gruppe des Typs setzen."
+    }
+}

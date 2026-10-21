@@ -16,7 +16,7 @@ sehen Leser in der Zwischenzeit? Eine mehrsprachige Website gut zu betreiben hei
 
 Diese Seite ist für den Betreiber einer solchen Website, die Übersetzungskoordination und die Redaktion in jeder
 Sprache. Die Planung einer mehrsprachigen Website behandelt
-[Mehrsprachige Websites für Unternehmen](../../../../eng-us/help/businesses/multilingual/README.md).
+[Mehrsprachige Websites für Unternehmen](../../unternehmen/mehrsprachig/README.md).
 
 ## Was Exponential einer mehrsprachigen Website bietet
 
@@ -24,9 +24,9 @@ Sprache. Die Planung einer mehrsprachigen Website behandelt
 |---|---|---|
 | Jedes Element in mehreren Sprachen | Übersetzungen jedes Inhaltselements, mit einer Hauptsprache | [Sprachen](../../sprachen.md), [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
 | Jede Sprache mit eigener Adresse | Siteaccesses, zugeordnet über Host oder Pfad, und Sprach-URLs | [Sprachumschalter und Sprach-URLs](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md) |
-| Arabisch, Hebräisch und andere Sprachen mit Schreibrichtung von rechts nach links | Unterstützung für die Schreibrichtung von rechts nach links in der Website und in der Administration | [Von rechts nach links](../../../../eng-us/features/6.0/right-to-left.md), [Märkte mit Schreibrichtung von rechts nach links](../../../../eng-us/help/businesses/multilingual/right-to-left-markets.md) |
-| Datum, Währungen und Formate pro Land | Locales | [Währungen, Datums- und Zahlenformate](../../../../eng-us/help/businesses/multilingual/currencies-dates-and-formats.md) |
-| Hilfe beim Übersetzen | Exponential Intelligence: „Translate“ pro Feld und Übersetzungsabgleich über die Auftragswarteschlange, wenn sich die Quelle geändert hat | `README.md` („Exponential Intelligence“), [Unterstützte Übersetzung](../../../../eng-us/help/businesses/multilingual/assisted-translation-with-exponential-intelligence.md) |
+| Arabisch, Hebräisch und andere Sprachen mit Schreibrichtung von rechts nach links | Unterstützung für die Schreibrichtung von rechts nach links in der Website und in der Administration | [Von rechts nach links](../../../../eng-us/features/6.0/right-to-left.md), [Märkte mit Schreibrichtung von rechts nach links](../../unternehmen/mehrsprachig/maerkte-mit-rechts-nach-links-schrift.md) |
+| Datum, Währungen und Formate pro Land | Locales | [Währungen, Datums- und Zahlenformate](../../unternehmen/mehrsprachig/waehrungen-datumsangaben-und-formate.md) |
+| Hilfe beim Übersetzen | Exponential Intelligence: „Translate“ pro Feld und Übersetzungsabgleich über die Auftragswarteschlange, wenn sich die Quelle geändert hat | `README.md` („Exponential Intelligence“), [Unterstützte Übersetzung](../../unternehmen/mehrsprachig/unterstuetzte-uebersetzung-mit-exponential-intelligence.md) |
 | Eine Administration in der Sprache der Redaktion | Die Administration in vielen Sprachen (die Übersetzungsdateien in `share/translations/`) | [Sprachen](../../sprachen.md#die-sprache-der-administration) |
 
 ## Entscheiden Sie zuerst diese vier Dinge
@@ -59,7 +59,7 @@ Folgen Sie dem [Lesepfad für mehrsprachige Websites](lesepfad-mehrsprachige-web
 ## Verwandte Seiten
 
 - [Lesepfad für mehrsprachige Websites](lesepfad-mehrsprachige-websites.md)
-- [Übersetzungs-Workflow (Unternehmen)](../../../../eng-us/help/businesses/multilingual/translation-workflow.md)
-- [Checkliste für Mehrsprachigkeit (Unternehmen)](../../../../eng-us/help/businesses/multilingual/multilingual-checklist.md)
+- [Übersetzungs-Workflow (Unternehmen)](../../unternehmen/mehrsprachig/uebersetzungsablauf.md)
+- [Checkliste für Mehrsprachigkeit (Unternehmen)](../../unternehmen/mehrsprachig/checkliste-mehrsprachigkeit.md)
 - [Mehrsprachige Websites (Website-Ersteller)](../../../../eng-us/help/creators/website-creators/multilingual-sites.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -1,0 +1,142 @@
+{
+    "datatype:ezauthor": {
+        "en": "Authors",
+        "de": "Autoren"
+    },
+    "datatype:ezbinaryfile": {
+        "en": "File",
+        "de": "Datei"
+    },
+    "datatype:ezboolean": {
+        "en": "Checkbox",
+        "de": "Kontrollkästchen"
+    },
+    "datatype:ezcountry": {
+        "en": "Country",
+        "de": "Land"
+    },
+    "datatype:ezdate": {
+        "en": "Date",
+        "de": "Datum"
+    },
+    "datatype:ezdatetime": {
+        "en": "Date and time",
+        "de": "Datum und Zeit"
+    },
+    "datatype:ezemail": {
+        "en": "Email",
+        "de": "E-Mail"
+    },
+    "datatype:ezenum": {
+        "en": "Enum",
+        "de": "Aufzählung"
+    },
+    "datatype:ezfloat": {
+        "en": "Float",
+        "de": "Fließkommawert"
+    },
+    "datatype:ezidentifier": {
+        "en": "Identifier",
+        "de": "Bezeichner"
+    },
+    "datatype:ezimage": {
+        "en": "Image",
+        "de": "Bild"
+    },
+    "datatype:ezinisetting": {
+        "en": "Ini Setting",
+        "de": "Ini Einstellung"
+    },
+    "datatype:ezinteger": {
+        "en": "Integer",
+        "de": "Ganzzahl"
+    },
+    "datatype:ezisbn": {
+        "en": "ISBN",
+        "de": "ISBN"
+    },
+    "datatype:ezkeyword": {
+        "en": "Keywords",
+        "de": "Schlüsselwörter"
+    },
+    "datatype:ezmatrix": {
+        "en": "Matrix",
+        "de": "Matrix"
+    },
+    "datatype:ezmedia": {
+        "en": "Media",
+        "de": "Mediendatei"
+    },
+    "datatype:ezmultioption": {
+        "en": "Multi-option",
+        "de": "Mehrfachoption"
+    },
+    "datatype:ezmultioption2": {
+        "en": "Multi-option2",
+        "de": "Mehrfachoption 2"
+    },
+    "datatype:ezmultiprice": {
+        "en": "Multi-price",
+        "de": "Multi-Preis"
+    },
+    "datatype:ezobjectrelation": {
+        "en": "Object relation",
+        "de": "Objekt Verknüpfung"
+    },
+    "datatype:ezobjectrelationlist": {
+        "en": "Object relations",
+        "de": "Objekt Vernüpfungsliste"
+    },
+    "datatype:ezoption": {
+        "en": "Option",
+        "de": "Option"
+    },
+    "datatype:ezpackage": {
+        "en": "Package",
+        "de": "Paket"
+    },
+    "datatype:ezprice": {
+        "en": "Price",
+        "de": "Preis"
+    },
+    "datatype:ezproductcategory": {
+        "en": "Product category",
+        "de": "Produkt Kategorie"
+    },
+    "datatype:ezrangeoption": {
+        "en": "Range option",
+        "de": "Wertebereich Option"
+    },
+    "datatype:ezselection": {
+        "en": "Selection",
+        "de": "Auswahlliste"
+    },
+    "datatype:ezstring": {
+        "en": "Text line",
+        "de": "Textzeile"
+    },
+    "datatype:ezsubtreesubscription": {
+        "en": "Subtree subscription",
+        "de": "Abonnement des Zweiges"
+    },
+    "datatype:eztext": {
+        "en": "Text block",
+        "de": "Textabschnitt"
+    },
+    "datatype:eztime": {
+        "en": "Time",
+        "de": "Zeit"
+    },
+    "datatype:ezurl": {
+        "en": "URL",
+        "de": "URL"
+    },
+    "datatype:ezuser": {
+        "en": "User account",
+        "de": "Benutzerkonto"
+    },
+    "datatype:ezxmltext": {
+        "en": "XML block",
+        "de": "XML Block"
+    }
+}

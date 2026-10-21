@@ -117,5 +117,5 @@ Veröffentlichen ([Workflows](../../anleitungen/workflows.md)).
 
 - [FAQ für Kunden](faq-fuer-kunden.md)
 - [Glossar für Hoster](../hosting/glossar-fuer-hoster.md)
-- [Glossar für Unternehmen](../../../eng-us/help/businesses/businesses-glossary.md)
+- [Glossar für Unternehmen](../unternehmen/glossar-fuer-unternehmen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

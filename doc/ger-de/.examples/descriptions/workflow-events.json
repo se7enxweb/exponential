@@ -1,0 +1,26 @@
+{
+    "workflow-event:ezapprove": {
+        "en": "Approve",
+        "de": "Freigeben"
+    },
+    "workflow-event:ezfinishuserregister": {
+        "en": "Finish User Registration",
+        "de": "Benutzerregistrierung abschließen"
+    },
+    "workflow-event:ezmultiplexer": {
+        "en": "Multiplexer",
+        "de": "Multiplexer"
+    },
+    "workflow-event:ezpaymentgateway": {
+        "en": "Payment Gateway",
+        "de": "Zahlungs-Gateway"
+    },
+    "workflow-event:ezsimpleshipping": {
+        "en": "Simple shipping",
+        "de": "Einfacher Versand"
+    },
+    "workflow-event:ezwaituntildate": {
+        "en": "Wait until date",
+        "de": "Bis Datum warten"
+    }
+}

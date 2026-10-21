@@ -1,0 +1,53 @@
+---
+title: /csp/report
+audience: developer, admin
+category: examples
+summary: "Die Ansicht csp/report: ihre Adresse, Parameter und die Richtlinienfunktionen, die sie braucht."
+keywords: Modul, Ansicht, csp, report, csp/report, module, view, URL
+type: generated
+generated: exp:help:examples
+---
+# /csp/report
+
+Eine Ansicht des Moduls `csp`, definiert in `kernel/csp/module.php` und ausgeführt von `kernel/csp/report.php`.
+
+## Adresse
+
+```text
+/csp/report
+```
+
+## Wer sie öffnen darf
+
+Aufgeführt in `settings/site.ini` `[RoleSettings] PolicyOmitList[]`: Es wird keine Richtlinie geprüft, jeder darf sie öffnen.
+Die Ansicht nennt keine Richtlinienfunktion, daher braucht der Benutzer eine Richtlinie für das ganze Modul: `csp/*` (jede Funktion des Moduls) in einer der Rollen, die ihm zugewiesen sind.
+
+## Details
+
+| Schlüssel | Wert |
+|---|---|
+| Navigationsbereich | `ezsetupnavigationpart` |
+
+## Beispiel
+
+Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adresse in Anführungszeichen); die Parameterwerte sind Platzhalter:
+
+```tpl
+<a href={'/csp/report'|ezurl}>csp/report</a>
+```
+
+Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:
+
+```php
+return $Module->redirectTo( '/csp/report' );
+```
+
+## Siehe auch
+
+- [Alle Ansichten von csp](README.md)
+- [Die Richtlinien von csp](../../richtlinien/csp.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
+
+---
+
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/csp/module.php`, `kernel/csp/report.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

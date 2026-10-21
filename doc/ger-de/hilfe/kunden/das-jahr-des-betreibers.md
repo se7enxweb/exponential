@@ -65,5 +65,5 @@ Beginn des Schuljahres.
 - [Checklisten für Betreiber](nutzen/checklisten/README.md)
 - [Lesepfad für Kunden](lesepfad-fuer-kunden.md)
 - [Ihre ersten 30 Tage als Website-Betreiber](ihre-ersten-30-tage.md)
-- [Monatliche Checkliste für den Betrieb (Unternehmen)](../../../eng-us/help/businesses/templates/monthly-operations-checklist.md)
+- [Monatliche Checkliste für den Betrieb (Unternehmen)](../unternehmen/vorlagen/monatliche-betriebscheckliste.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -10,7 +10,7 @@ type: help
 # Newsletter-Routine
 
 Diese Seite ist für die Autoren, freigebenden Personen und Versender eines Newsletters und für den Betreiber, der
-möchte, dass er zuverlässig läuft. Sie macht aus [Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md)
+möchte, dass er zuverlässig läuft. Sie macht aus [Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md)
 eine Routine, die Sie kopieren können. Die Einrichtung und die Entscheidungen stehen unter [Newsletter](newsletter.md).
 
 ## Inhalt
@@ -23,7 +23,7 @@ eine Routine, die Sie kopieren können. Die Einrichtung und die Entscheidungen s
 
 ## Jede Ausgabe
 
-Aus [Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md):
+Aus [Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md):
 
 | Schritt | Wer | Wo |
 |---|---|---|
@@ -54,14 +54,14 @@ Hinweise, die Ärger ersparen:
 - [ ] Die Testgruppe hat sie erhalten, und jemand hat sie auf dem Smartphone gelesen.
 - [ ] Die Ausgabe ist freigegeben (falls verlangt) und geplant.
 - [ ] Während und nach dem Versand ist jemand im Dienst, nicht auf dem Heimweg
-      ([Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md)).
+      ([Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md)).
 
 Die ersten drei stammen aus der Checkliste für Website-Ersteller
 ([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md)).
 
 ## Wenn etwas nicht hinausgehen soll
 
-Erst stoppen, später erklären. Die Seite [Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md)
+Erst stoppen, später erklären. Die Seite [Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md)
 beschreibt, wie Sie einen Versand abbrechen, der nicht hinausgehen soll. Dann:
 
 1. Teilen Sie dem Betreiber und dem Listenverantwortlichen mit, was an wen hinausgegangen ist, soweit das Archiv es zeigt.
@@ -73,10 +73,10 @@ beschreibt, wie Sie einen Versand abbrechen, der nicht hinausgehen soll. Dann:
 | Ansehen | Warum | Lesen Sie |
 |---|---|---|
 | Die Problemliste im Newsletter-Dashboard | Probleme bei Transport, Cron und Konfiguration | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
-| Bounces, Blacklist und Sperrliste | eine saubere Liste hält die Zustellung gesund | [Bounces und Listenpflege](../../../../eng-us/help/businesses/newsletters/bounces-and-list-hygiene.md) |
-| An- und Abmeldungen | wächst die Liste, und warum gehen Menschen? | [Listen und Abonnements](../../../../eng-us/help/businesses/newsletters/lists-and-subscriptions.md) |
-| Statistik, wo Abonnenten eingewilligt haben | welche Artikel geöffnet wurden | [Opt-in und Einwilligung](../../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md) |
-| Wiederkehrende Versände | liefen wie erwartet; Läufe, die ausfielen, während Cron stand, werden nicht nachgeholt | [Ausgaben schreiben und versenden](../../../../eng-us/help/businesses/newsletters/writing-and-sending-editions.md) |
+| Bounces, Blacklist und Sperrliste | eine saubere Liste hält die Zustellung gesund | [Bounces und Listenpflege](../../unternehmen/newsletter/bounces-und-listenpflege.md) |
+| An- und Abmeldungen | wächst die Liste, und warum gehen Menschen? | [Listen und Abonnements](../../unternehmen/newsletter/listen-und-abonnements.md) |
+| Statistik, wo Abonnenten eingewilligt haben | welche Artikel geöffnet wurden | [Opt-in und Einwilligung](../../unternehmen/newsletter/opt-in-und-einwilligung.md) |
+| Wiederkehrende Versände | liefen wie erwartet; Läufe, die ausfielen, während Cron stand, werden nicht nachgeholt | [Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md) |
 
 ## Checkliste zum Kopieren
 
@@ -92,6 +92,6 @@ Writer: ______________   Approver: ______________   Sender: ______________
 ## Verwandte Seiten
 
 - [Newsletter](newsletter.md)
-- [Newsletter-Checkliste](../../../../eng-us/help/businesses/newsletters/newsletter-checklist.md)
+- [Newsletter-Checkliste](../../unternehmen/newsletter/checkliste-newsletter.md)
 - [Redaktionskalender](../alltag/redaktionskalender.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

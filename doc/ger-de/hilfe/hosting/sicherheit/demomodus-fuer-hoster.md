@@ -108,5 +108,5 @@ Das Skript darf die Variable nicht in `config.php`, `settings/` oder irgendetwas
 - [Demomodus: der Hinweis zum Upgrade](../../../../eng-us/bc/6.0/demo-mode.md)
 - [Erste Anmeldung und Standardpasswörter](erste-anmeldung-und-standardpasswoerter.md)
 - [Härtung für Hoster](haertung-fuer-hoster.md), [Sicherheit für Hoster: Überblick](README.md)
-- [Eine Demo-Installation einrichten](../../../../eng-us/help/press/setting-up-a-demo-installation.md)
+- [Eine Demo-Installation einrichten](../../presse/eine-demo-installation-einrichten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
