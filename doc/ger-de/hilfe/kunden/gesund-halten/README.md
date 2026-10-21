@@ -16,7 +16,7 @@ Team dafür zuständig sein sollte, was zu prüfen ist und was Sie die Leute fra
 
 Eine gesunde Website beruht auf fünf Gewohnheiten, die auch die Seiten zur Zuverlässigkeit für Unternehmen nennen:
 aktuell bleiben, sichern und die Wiederherstellung testen, Zugänge knapp halten, die Website beobachten und wissen, was
-an einem schlechten Tag zu tun ist ([Zuverlässigkeit für Unternehmen](../../../../eng-us/help/businesses/reliability/README.md)).
+an einem schlechten Tag zu tun ist ([Zuverlässigkeit für Unternehmen](../../unternehmen/zuverlaessigkeit/README.md)).
 
 ## Die Seiten in diesem Ordner
 
@@ -74,7 +74,7 @@ solange alle wissen, wer.
 ## Verwandte Seiten
 
 - [Partner und Hoster](../partner-und-hoster/README.md)
-- [Zuverlässigkeit für Unternehmen](../../../../eng-us/help/businesses/reliability/README.md)
+- [Zuverlässigkeit für Unternehmen](../../unternehmen/zuverlaessigkeit/README.md)
 - [Eine Website betreiben](../../../anleitungen/betrieb-einer-website.md)
 - [Wenn etwas schiefgeht](../../wenn-etwas-schiefgeht.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

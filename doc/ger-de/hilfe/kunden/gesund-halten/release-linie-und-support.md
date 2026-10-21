@@ -11,7 +11,7 @@ type: help
 
 Diese Seite beantwortet die drei Fragen des Betreibers zu Versionen: Welche Version betreiben wir, wird sie noch
 gepflegt, und was müssen wir tun, um gepflegt zu bleiben? Die vollständige Richtlinie für Unternehmen steht unter
-[Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md); diese Seite ist
+[Release-Linie und Support-Richtlinie](../../unternehmen/zuverlaessigkeit/release-linie-und-support-richtlinie.md); diese Seite ist
 die Kurzfassung mit den Dingen, die zu prüfen sind.
 
 ## Was gepflegt wird
@@ -66,7 +66,7 @@ verwendet und ob jede noch gepflegt wird.
 ## Was das Projekt nicht veröffentlicht
 
 Keinen Release-Kalender, kein Ende-der-Unterstützung-Datum für 6.0 und kein Service Level Agreement
-([Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md)). Die einzige
+([Release-Linie und Support-Richtlinie](../../unternehmen/zuverlaessigkeit/release-linie-und-support-richtlinie.md)). Die einzige
 Zusage zur Reaktionszeit in den eigenen Dateien des Projekts ist eine erste Antwort auf eine vertrauliche
 Sicherheitsmeldung „innerhalb eines Werktags“ (`SECURITY.md`). Jedes andere Versprechen, etwa wie schnell Ihre Website
 aktualisiert wird, kommt aus Ihrem Vertrag mit Ihrem Anbieter oder mit 7x.

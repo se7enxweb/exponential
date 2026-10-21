@@ -13,7 +13,7 @@ Diese Seite ist für den Betreiber, der eine zweite Marke, eine regionale Websit
 Installation möchte, die die Organisation bereits betreibt. Eine Exponential-Installation kann viele Websites
 ausliefern: Jede ist ein **Siteaccess**, ein Zugang zur Installation mit eigenem Namen, eigener Adresse, Sprachliste,
 eigenem Design und eigener Startseite, wobei Code und Datenbank meist gemeinsam genutzt werden
-([Eine Installation, viele Websites](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md)). Ihr Partner und Ihr
+([Eine Installation, viele Websites](../../unternehmen/multisite/eine-installation-viele-websites.md)). Ihr Partner und Ihr
 Hoster erledigen die technischen Schritte; Sie liefern die Entscheidungen, die Domain und die Inhalte.
 
 ## Inhalt
@@ -35,7 +35,7 @@ Hoster erledigen die technischen Schritte; Sie liefern die Entscheidungen, die D
 
 ## Was das Unternehmen organisieren muss
 
-Aus [Eine Installation, viele Websites](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md):
+Aus [Eine Installation, viele Websites](../../unternehmen/multisite/eine-installation-viele-websites.md):
 
 - [ ] **Domainnamen**: registriert und auf den Server zeigend.
 - [ ] **Zertifikate**: Jeder Hostname, den die Marke verwendet, ist durch HTTPS abgedeckt.
@@ -62,14 +62,14 @@ Ein Testhost oder eine Staging-Adresse lässt Sie die Marke sehen, bevor sie öf
 ## Teams und gemeinsame Inhalte
 
 - Jede Marke hat ihre eigene Startseite und ihr eigenes Menü; Redakteure arbeiten im Ordner der Marke, und Rollen
-  können sie dort halten ([Eine Installation, viele Websites](../../../../eng-us/help/businesses/multisite/one-installation-many-sites.md)).
+  können sie dort halten ([Eine Installation, viele Websites](../../unternehmen/multisite/eine-installation-viele-websites.md)).
 - Inhalte lassen sich bewusst zwischen Marken teilen, über einen zweiten Ort oder über Beziehungen
-  ([Gemeinsame Inhalte über Marken hinweg](../../../../eng-us/help/businesses/multisite/shared-content-across-brands.md)).
+  ([Gemeinsame Inhalte über Marken hinweg](../../unternehmen/multisite/inhalte-zwischen-marken-teilen.md)).
 - Jede Marke kann ihr eigenes Design haben, aufgebaut auf der Fallback-Kette der Designs
-  ([Designs pro Marke](../../../../eng-us/help/businesses/multisite/per-brand-designs.md)).
+  ([Designs pro Marke](../../unternehmen/multisite/ein-design-pro-marke.md)).
 - Einstellungen, Logs und Caches lassen sich pro Website trennen
-  ([Einstellungen und Logs pro Website](../../../../eng-us/help/businesses/multisite/per-site-settings-and-logs.md)).
-- Links zwischen den Marken: [Website-übergreifende Links](../../../../eng-us/help/businesses/multisite/cross-site-links.md).
+  ([Einstellungen und Logs pro Website](../../unternehmen/multisite/einstellungen-logs-und-caches-pro-website.md)).
+- Links zwischen den Marken: [Website-übergreifende Links](../../unternehmen/multisite/links-zwischen-ihren-websites.md).
 
 Aktualisieren Sie das [Arbeitsblatt für Teamrollen](../alltag/arbeitsblatt-teamrollen.md): wer welche Marke
 bearbeitet, wer freigibt.
@@ -80,11 +80,11 @@ bearbeitet, wer freigibt.
 - [ ] Suchstatistiken werden im neuen öffentlichen Siteaccess aufgezeichnet, wenn Sie sie verwenden.
 - [ ] Die Sitemap der neuen Marke wird erzeugt und eingereicht ([XML-Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)).
 - [ ] Backups und Überwachung umfassen den neuen Hostnamen; fragen Sie Ihren Hoster.
-- [ ] Die vollständige [Checkliste für mehrere Marken](../../../../eng-us/help/businesses/multisite/multi-brand-checklist.md) ist erledigt.
+- [ ] Die vollständige [Checkliste für mehrere Marken](../../unternehmen/multisite/checkliste-fuer-mehrere-marken.md) ist erledigt.
 
 ## Verwandte Seiten
 
-- [Planung mehrerer Marken](../../../../eng-us/help/businesses/multisite/multi-brand-planning.md)
+- [Planung mehrerer Marken](../../unternehmen/multisite/mehrere-marken-planen.md)
 - [Multisite in einer Installation für Hoster](../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md)
 - [Multisite- und mehrsprachige Projekte planen](../../fuehrung/multisite-und-mehrsprachigkeit-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

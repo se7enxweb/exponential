@@ -92,5 +92,5 @@ Ein Fehler dort steht auf jeder Seite. Überlassen Sie es einer einzigen zustän
 
 - [Der Layouts-Editor](../../layout-editor.md)
 - [Checkliste für Kampagnen-Landingpages](checkliste-kampagnen-landingpages.md)
-- [Kampagnen und Landingpages für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/campaigns-and-landing-pages.md)
+- [Kampagnen und Landingpages für gemeinnützige Organisationen](../../unternehmen/gemeinnuetzige/kampagnen-und-landingpages.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

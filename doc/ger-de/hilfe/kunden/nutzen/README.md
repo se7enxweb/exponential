@@ -12,8 +12,8 @@ type: help
 Dieser Bereich ist für Organisationen, die bereits eine Website mit Exponential betreiben und wissen und steigern möchten,
 was sie ihnen bringt. Er ist für den Betreiber, die Leitung, die für das Budget verantwortlich ist, und alle, die mit dem
 Hoster oder Partner sprechen. Die Seiten, die Ihnen bei der Entscheidung für Exponential helfen, stehen im Bereich für
-Unternehmen ([Gesamtbetriebskosten](../../../../eng-us/help/businesses/costs/total-cost-of-ownership.md),
-[Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)); hier messen und verbessern Sie
+Unternehmen ([Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md),
+[Vorlage für ein ROI-Arbeitsblatt](../../unternehmen/vorlagen/vorlage-roi-arbeitsblatt.md)); hier messen und verbessern Sie
 eine Website, die bereits Ihnen gehört.
 
 ## Messen und entscheiden
@@ -54,7 +54,7 @@ eine Website, die bereits Ihnen gehört.
 
 ## Verwandte Seiten
 
-- [Gesamtbetriebskosten](../../../../eng-us/help/businesses/costs/total-cost-of-ownership.md)
-- [Return on Investment von Stabilität](../../../../eng-us/help/businesses/costs/roi-of-stability.md)
+- [Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md)
+- [Return on Investment von Stabilität](../../unternehmen/kosten/rendite-der-stabilitaet.md)
 - [Ihren Shop betreiben](../handel/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

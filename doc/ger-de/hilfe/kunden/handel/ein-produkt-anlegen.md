@@ -17,7 +17,7 @@ und [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md); d
 ## Bevor Sie beginnen
 
 - [ ] Der Produktordner, in den es gehört, existiert (ein Ordner pro Kategorie ist die übliche Struktur,
-  [Produktklassen und Katalog](../../../../eng-us/help/businesses/stores/product-classes-and-catalog.md)).
+  [Produktklassen und Katalog](../../unternehmen/shops/produktklassen-und-katalog.md)).
 - [ ] Sie haben die Berechtigung, in diesem Ordner Inhalte der Produktklasse anzulegen.
 - [ ] Texte, Bilder und der Preis sind abgestimmt. Preise und Mehrwertsteuer entscheidet der Eigentümer, nicht die Redaktion.
 - [ ] Die Artikelnummer stimmt mit der in Ihrer Buchhaltung oder Lagerliste überein.
@@ -27,7 +27,7 @@ und [Veröffentlichen und Versionen](../../veroeffentlichen-und-versionen.md); d
 Die Felder hängen davon ab, wie Ihre Produktklasse aufgebaut ist. In der Demo-Installation unter
 <https://alpha.se7enx.com> hat die Klasse Product einen Namen, eine Artikelnummer, eine Kurzbeschreibung, eine
 Beschreibung, einen Preis, Bilder, zusätzliche Optionen, Tags, eine Sternebewertung, Metadaten und eine
-Tabelle mit technischen Daten ([Produktklassen und Katalog](../../../../eng-us/help/businesses/stores/product-classes-and-catalog.md)). Ihre eigene Klasse kann abweichen.
+Tabelle mit technischen Daten ([Produktklassen und Katalog](../../unternehmen/shops/produktklassen-und-katalog.md)). Ihre eigene Klasse kann abweichen.
 
 | Feld (typisch) | Ausfüllen | Prüfen |
 |---|---|---|
@@ -44,7 +44,7 @@ Tabelle mit technischen Daten ([Produktklassen und Katalog](../../../../eng-us/h
 ## Preis und Mehrwertsteuer
 
 Bei einem Preis in einer einzigen Währung (`ezprice`) nennt jeder Preis einen USt-Typ und gibt an, ob der Betrag die
-Mehrwertsteuer enthält ([Preise und Währungen](../../../../eng-us/help/businesses/stores/prices-and-currencies.md)).
+Mehrwertsteuer enthält ([Preise und Währungen](../../unternehmen/shops/preise-und-waehrungen.md)).
 
 - [ ] Der USt-Typ ist der richtige für dieses Produkt, oder „Determined by VAT charging rules“, wenn Ihr Shop
   USt-Regeln verwendet (der Name kommt aus `settings/shop.ini [VATSettings] DynamicVatTypeName`).
@@ -91,6 +91,6 @@ Person, sobald die Redaktion veröffentlicht ([Workflows](../../../anleitungen/w
 
 - [Produkte und Katalog](produkte-und-katalog.md)
 - [Inhalte anlegen und bearbeiten](../../inhalte-bearbeiten.md)
-- [Produktklassen und Katalog (für Unternehmen)](../../../../eng-us/help/businesses/stores/product-classes-and-catalog.md)
+- [Produktklassen und Katalog (für Unternehmen)](../../unternehmen/shops/produktklassen-und-katalog.md)
 - [Produkte, Preise und Mehrwertsteuer](../../../../eng-us/help/creators/website-creators/products-prices-and-vat.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

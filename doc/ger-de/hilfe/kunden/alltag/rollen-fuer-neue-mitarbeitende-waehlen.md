@@ -35,10 +35,10 @@ eine Sektion, einen Teilbaum oder eine Sprache einschränken lässt ([Rollen und
 
 | Neue Person | Anzufordernde Gruppe und Rolle | Einschränkungen |
 |---|---|---|
-| Redakteur in einer Abteilung | die Gruppe der Redakteure mit der Rolle Editor | zugewiesen mit einer Einschränkung auf Teilbaum oder Sektion der Abteilung ([Abteilungen, Rollen und Sektionen](../../../../eng-us/help/businesses/intranets/departments-roles-and-sections.md)) |
+| Redakteur in einer Abteilung | die Gruppe der Redakteure mit der Rolle Editor | zugewiesen mit einer Einschränkung auf Teilbaum oder Sektion der Abteilung ([Abteilungen, Rollen und Sektionen](../../unternehmen/intranets/abteilungen-rollen-und-sektionen.md)) |
 | Nachwuchsautor oder Praktikant | die Gruppe der Redakteure, nicht unter den *Ausgenommenen Benutzergruppen* der Freigabe, sodass ihre Versionen auf eine freigebende Person warten | wie oben, in einer Sektion, die die Freigabe abdeckt |
 | Freigebende Person oder Chefredaktion | in die Gruppe der freigebenden Personen des Freigabe-Workflows aufgenommen | die betroffenen Sektionen des Workflows ([Workflows](../../../anleitungen/workflows.md)) |
-| Übersetzer oder Agentur | eine Übersetzerrolle | Bearbeiten, Übersetzen und Anlegen nach Sprache eingeschränkt ([Übersetzungs-Workflow](../../../../eng-us/help/businesses/multilingual/translation-workflow.md)) |
+| Übersetzer oder Agentur | eine Übersetzerrolle | Bearbeiten, Übersetzen und Anlegen nach Sprache eingeschränkt ([Übersetzungs-Workflow](../../unternehmen/mehrsprachig/uebersetzungsablauf.md)) |
 | Person, die Kontaktformulare beantwortet | eine Rolle mit `infocollector/read` | sonst nichts ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)) |
 | Shop-Personal | eine Shop-Rolle, die Ihr Partner eingerichtet hat | der Teil des Baums, der zum Shop gehört ([Shop-Dashboard](../../../../eng-us/features/6.0/store-dashboard.md)) |
 | Vorübergehende Hilfe | die kleinste der obigen | ein Enddatum in Ihren eigenen Notizen, siehe [Ausscheiden von Mitarbeitenden](ausscheiden-von-mitarbeitenden.md) |
@@ -73,7 +73,7 @@ Requested by: ______________   Approved by (site owner): ______________
 ```
 
 Bewahren Sie die Anfrage auf: Sie ist der Nachweis, mit dem Sie bei der jährlichen
-[Zugriffsüberprüfung](../../../../eng-us/help/businesses/security/access-reviews.md) vergleichen.
+[Zugriffsüberprüfung](../../unternehmen/sicherheit/zugriffspruefungen.md) vergleichen.
 
 ## Verwandte Seiten
 

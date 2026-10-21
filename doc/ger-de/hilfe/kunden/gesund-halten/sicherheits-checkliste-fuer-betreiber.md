@@ -86,5 +86,5 @@ Open actions: ____ (who, by when)
 
 - [Sicherheitsgrundlagen](sicherheitsgrundlagen.md)
 - [Sicherheitsüberprüfung (für Hoster)](../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md)
-- [Zugriffsüberprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)
+- [Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

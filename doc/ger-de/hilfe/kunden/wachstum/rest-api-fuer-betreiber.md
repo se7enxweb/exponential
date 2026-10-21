@@ -34,7 +34,7 @@ Aus [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md):
 - Programme authentifizieren sich mit einem OAuth2-Token oder einem persönlichen API-Schlüssel, gesendet als
   `Authorization: Bearer expk_...`.
 
-Die Sicht für Unternehmen steht unter [REST-API v1 und v2 für Unternehmen](../../../../eng-us/help/businesses/mobile-and-headless/rest-api-v1-and-v2-for-businesses.md).
+Die Sicht für Unternehmen steht unter [REST-API v1 und v2 für Unternehmen](../../unternehmen/mobil-und-headless/rest-api-v1-und-v2-fuer-unternehmen.md).
 
 ## Was unter Ihrer Kontrolle bleibt
 
@@ -54,7 +54,7 @@ Die Sicht für Unternehmen steht unter [REST-API v1 und v2 für Unternehmen](../
 
 ## Welche Zugangsdaten für welches Programm
 
-Aus [Apps und API-Schlüssel](../../../../eng-us/help/businesses/mobile-and-headless/apps-and-api-keys.md):
+Aus [Apps und API-Schlüssel](../../unternehmen/mobil-und-headless/apps-und-api-schluessel.md):
 
 | Programm | Zugangsdaten |
 |---|---|
@@ -81,12 +81,12 @@ Weitere Fragen stehen unter [Eine Integration planen](eine-integration-planen.md
 
 - Administratoren sehen jeden Schlüssel unter **Setup > oAuth-Verwaltung > API-Schlüssel**, mit Suche und Filtern;
   widerrufen Sie die, die niemand braucht ([Persönliche API-Schlüssel](../../../anleitungen/api-schluessel.md)).
-- Beziehen Sie die Konten der Integrationen in die [Zugriffsüberprüfung](../../../../eng-us/help/businesses/security/access-reviews.md) ein.
+- Beziehen Sie die Konten der Integrationen in die [Zugriffsüberprüfung](../../unternehmen/sicherheit/zugriffspruefungen.md) ein.
 - Fragen Sie den Partner, ob ein Upgrade etwas für API-Clients ändert.
 
 ## Verwandte Seiten
 
 - [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md)
-- [Headless mit der REST-API](../../../../eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md)
+- [Headless mit der REST-API](../../unternehmen/mobil-und-headless/headless-mit-der-rest-api.md)
 - [Mobil und Apps](mobil-und-apps.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

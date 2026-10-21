@@ -79,6 +79,6 @@ wünschen ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
 
 - [Tägliche Shop-Routine](taegliche-shop-routine.md)
 - [Monatliche Shop-Checkliste](monatliche-shop-checkliste.md)
-- [Shop-Dashboard und Berichte für Unternehmen](../../../../eng-us/help/businesses/stores/store-dashboard-and-reports.md)
+- [Shop-Dashboard und Berichte für Unternehmen](../../unternehmen/shops/shop-uebersicht-und-berichte.md)
 - [Wöchentliche Checkliste für die ganze Website](../nutzen/checklisten/woechentlich.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
