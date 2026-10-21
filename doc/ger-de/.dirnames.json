@@ -3,6 +3,7 @@
     "6.0": "6.0",
     "admin-gui": "admin-oberflaeche",
     "advocates": "fuersprecher",
+    "app-creators": "anwendungsentwickler",
     "basics": "grundlagen",
     "bc": "bc",
     "build": "bauen",
@@ -11,6 +12,7 @@
     "checklists": "checklisten",
     "cjw-multisite": "cjw-multisite",
     "commerce": "handel",
+    "creators": "ersteller",
     "customers": "kunden",
     "day-to-day": "alltag",
     "ecosystem": "oekosystem",
@@ -77,5 +79,6 @@
     "types": "typen",
     "value": "nutzen",
     "velocity": "velocity",
+    "website-creators": "website-ersteller",
     "your-own": "eigene"
 }
