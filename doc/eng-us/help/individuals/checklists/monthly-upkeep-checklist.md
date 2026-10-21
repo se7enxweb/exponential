@@ -1,7 +1,7 @@
 ---
 title: Monthly upkeep checklist
 audience: individual, customer, website-creator
-category: website-creation
+category: personal-sites
 order: 1653
 summary: The hour-a-month checklist for one person running an Exponential site - updates, backups and an off-site copy, accounts, comments and forms, broken links, errors, renewals, content freshness and a short note of what you did, plus the twice-yearly and yearly extras.
 keywords: monthly, upkeep, maintenance, checklist, routine, updates, backups, accounts, spam, links, logs, renewals, content review, restore test, individual

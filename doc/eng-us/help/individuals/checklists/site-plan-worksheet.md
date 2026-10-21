@@ -1,7 +1,7 @@
 ---
 title: Site plan worksheet
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1651
 summary: A fill-in worksheet one person completes before installing Exponential for a personal site, portfolio, blog, family site or club site - purpose, readers, pages, private parts, accounts, features, hosting, budget, upkeep and the deputy - with links to the page behind each question.
 keywords: worksheet, site plan, template, planning, purpose, readers, pages, privacy, accounts, features, hosting, budget, upkeep, deputy, individual

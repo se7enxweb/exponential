@@ -1,7 +1,7 @@
 ---
 title: Events and calendars for clubs
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1714
 summary: How a volunteer publishes meetings, matches, concerts and outings on an Exponential club site with the shipped Event, Event calendar and Multicalendar classes - calendar or program view, public and members-only events, sign-ups, maps, announcing, and what is not built in (tickets, calendar export).
 keywords: events, calendar, Event class, Event calendar, Multicalendar, program view, meetings, matches, concerts, members only events, sign-up, ezgmaplocation, map, announce, ticketing, iCal, club

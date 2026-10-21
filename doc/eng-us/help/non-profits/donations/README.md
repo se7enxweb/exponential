@@ -1,7 +1,7 @@
 ---
 title: Donations
 audience: non-profit, businesses, customer
-category: business-solutions
+category: non-profits
 order: 10
 summary: What a non-profit can do about online donations with Exponential - there is no dedicated donation module, so the practical routes are a link to an external donation platform or fixed donation items in the built-in shop with the ezpaypal or ezauthorize gateway - and the pages of this folder that walk through each route, the giving page and donor trust.
 keywords: donations, donate, fundraising, giving page, no donation module, external donation platform, shop, ezpaypal, ezauthorize, PayPal, Authorize.Net, recurring giving, receipts, donor trust

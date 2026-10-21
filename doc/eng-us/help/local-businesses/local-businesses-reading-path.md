@@ -1,7 +1,7 @@
 ---
 title: Local businesses reading path
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 4
 summary: The suggested order for reading the local businesses section - four stages from deciding to launching to running the site, with three shorter paths for a restaurant, a trade and a shop that sells online, and the time each stage takes.
 keywords: reading path, reading order, local business, restaurant, trades, shop, getting started, launch, running, path

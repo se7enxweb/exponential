@@ -1,7 +1,7 @@
 ---
 title: Forms, polls and sign-ups
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1715
 summary: How a volunteer collects sign-ups, answers and votes on an Exponential club or family site with the information collector - the shipped Feedback form and Poll classes, form types in collect.ini, one vote per user for polls, where submissions are stored, mail to a receiver, spam protection and privacy.
 keywords: forms, sign-up, registration form, poll, vote, survey, Feedback form, Poll class, information collector, collect.ini, form types, submissions, collected information, mail receiver, CAPTCHA, privacy, club

@@ -1,7 +1,7 @@
 ---
 title: Accessibility for non-profits
 audience: non-profit, government, editor, website-creator
-category: business-solutions
+category: non-profits
 order: 10
 summary: Why accessibility matters especially for non-profits, what Exponential provides (template guidance, image fields that can require alternative text, the admin4 administration designed against WCAG 2.2 AA and rated Partly complies by the project) and what stays with your organization, with the pages of this folder and links to the government, website creator and editor accessibility pages.
 keywords: accessibility, non-profit, WCAG 2.2, inclusion, disabled people, alternative text, admin4, Partly complies, accessibility statement, testing, editors, documents, campaigns

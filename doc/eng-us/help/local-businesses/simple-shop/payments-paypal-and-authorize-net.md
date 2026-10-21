@@ -1,7 +1,7 @@
 ---
 title: "Payments: PayPal and Authorize.Net"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 43
 summary: How a local business takes payments in the Exponential shop - PayPal through ezpaypal (in the standard distribution, a redirect to PayPal) and card payments through ezauthorize (Authorize.Net, an on-site card form, a suggested package) - what each means for card security, what the business arranges with the provider, testing, and other options.
 keywords: payment, PayPal, ezpaypal, Authorize.Net, ezauthorize, card payments, redirect, PCI, payment provider, fees, test mode, sandbox, local business

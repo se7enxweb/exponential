@@ -1,7 +1,7 @@
 ---
 title: Non-profits reading path
 audience: non-profit, businesses, government
-category: business-solutions
+category: non-profits
 order: 2
 summary: The order in which to read the non-profits section - five stages from understanding what Exponential offers, through planning and funding, donations and volunteers, publishing and transparency, to running the site for years - with a short path for busy directors and a path for the technical volunteer.
 keywords: reading path, order, learning path, non-profit, stages, director, fundraiser, volunteer coordinator, treasurer, technical volunteer

@@ -1,7 +1,7 @@
 ---
 title: Open data, RSS and REST
 audience: non-profit, government, website-creator, app-creator
-category: business-solutions
+category: non-profits
 order: 60
 summary: How a non-profit shares its publications and registers in machine-readable form from Exponential - RSS 2.0 and Atom feeds of news and publications, CSV, JSON and XML exports of content kept as registers, the REST API (ezprestapi, v1 and v2) with authentication by default and what to decide before opening it to anonymous readers, and licensing what you share.
 keywords: open data, RSS, Atom, feeds, export, CSV, JSON, XML, xrowextract, REST API, ezprestapi, OAuth2, API keys, RequireAuthentication, anonymous, license, re-use, funders, networks, researchers

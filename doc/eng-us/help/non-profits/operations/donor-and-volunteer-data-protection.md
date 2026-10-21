@@ -1,7 +1,7 @@
 ---
 title: Donor and volunteer data protection
 audience: non-profit, businesses, admin, government
-category: business-solutions
+category: non-profits
 order: 40
 summary: Protecting the personal data of donors, volunteers, beneficiaries and subscribers on a non-profit's Exponential site - where it lives (form submissions, user accounts, orders, newsletter subscriptions, logs, exports, backups), who may see it, collecting less, retention and deletion, requests from people, processors, and security basics. Basics, not legal advice.
 keywords: data protection, privacy, GDPR, personal data, donors, volunteers, beneficiaries, subscribers, collected information, orders, retention, deletion, right of access, right to erasure, processors, privacy notice, two-factor login

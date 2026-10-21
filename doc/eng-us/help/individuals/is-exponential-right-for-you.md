@@ -1,7 +1,7 @@
 ---
 title: Is Exponential right for you?
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1505
 summary: Honest questions that help one person decide whether to run a personal site, portfolio, blog, family site or club site on Exponential - where it is a good fit, where a simpler tool or a hosted service is better, and what it asks of you.
 keywords: fit, decide, evaluate, individual, personal site, blog, portfolio, family site, club site, alternatives, hosted service, effort, skills, time, self-hosting

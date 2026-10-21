@@ -1,7 +1,7 @@
 ---
 title: Drafts, versions and publishing explained
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 12
 summary: Why nothing you type reaches visitors until you publish, what a draft, a pending version and an archived version are, why the old text is never lost, and how approvals fit in - explained with a letter-writing comparison.
 keywords: draft, version, publish, send for publishing, pending, archived, approval, workflow, store draft, discard draft, my drafts, explained, safe editing

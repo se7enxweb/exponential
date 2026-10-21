@@ -1,7 +1,7 @@
 ---
 title: Adding a link
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 27
 summary: Add a link in the text of an Exponential page - to another page of your own site (with Browse, so it never breaks) or to another website - write link text people understand, remove a link, and find broken links.
 keywords: link, hyperlink, insert link, browse, external link, internal link, link text, unlink, broken links, new window, beginner

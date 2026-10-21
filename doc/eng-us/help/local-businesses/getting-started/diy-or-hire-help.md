@@ -1,7 +1,7 @@
 ---
 title: Doing it yourself or hiring help
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 13
 summary: An honest comparison for small business owners - which website tasks an owner can do with Exponential after a short introduction, which need a technical person, the three common arrangements, and the signs that it is time to get help.
 keywords: do it yourself, DIY, hire, freelancer, partner, agency, small business, tasks, skills, editing, setup, hosting, updates

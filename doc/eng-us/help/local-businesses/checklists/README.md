@@ -1,7 +1,7 @@
 ---
 title: "Checklists for local businesses"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 90
 summary: Every checklist for local business websites on Exponential in one place - the launch checklist, the checklists inside the other pages of this section, a short checklist before a holiday and one for moving premises, and the related store and owner checklists.
 keywords: checklists, launch checklist, holiday checklist, moving premises, local SEO checklist, routine, store checklist, local business

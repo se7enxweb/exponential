@@ -1,7 +1,7 @@
 ---
 title: Personal sites
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1600
 summary: The section for people who want a personal home page on Exponential - who you are, what you do, what you have written or made and how to reach you - with planning, a weekend build, an about page and contact form, and writing for your own site.
 keywords: personal site, home page, personal website, about me, CV, resume, contact form, individual, weekend, planning, writing

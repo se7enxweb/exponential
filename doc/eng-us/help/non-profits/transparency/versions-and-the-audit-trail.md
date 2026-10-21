@@ -1,7 +1,7 @@
 ---
 title: Versions and the audit trail
 audience: non-profit, admin, editor, government
-category: business-solutions
+category: non-profits
 order: 50
 summary: How a non-profit uses Exponential's version history and tamper-evident audit trail for accountability - what each records, how many versions are kept (45 by default, per class configurable), comparing and restoring versions, what the audit trail records and protects, who may read it (audit/read), verifying it, and where both stop being a complete record.
 keywords: versions, version history, compare, restore, VersionManagement, 45 versions, audit trail, tamper-evident, hash chain, audit/read, exp:audit verify, accountability, evidence, who changed what

@@ -1,7 +1,7 @@
 ---
 title: Individuals reading path
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1504
 summary: The pages an individual reads, in order, from deciding whether Exponential fits to running a personal site, portfolio, blog, family site or club site alone for years - with the time each step takes and what you have at the end of it.
 keywords: reading path, order, learning, individual, first day, first week, first month, personal site, blog, portfolio, family site, club site, launch, upkeep

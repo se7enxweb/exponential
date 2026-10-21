@@ -1,7 +1,7 @@
 ---
 title: Using the writing assistant
 audience: non-technical, editor
-category: getting-started
+category: plain-language
 order: 32
 summary: Use Exponential Intelligence, the optional writing assistant, in plain steps - where its buttons are, what Write, Rewrite, Translate, Suggest and Improve do, why it never publishes on its own, what it may cost, and how to check what it wrote.
 keywords: writing assistant, AI, Exponential Intelligence, expai, write, rewrite, translate, suggest, improve, draft, check, cost, beginner

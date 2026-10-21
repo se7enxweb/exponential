@@ -1,7 +1,7 @@
 ---
 title: The site and the administration
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 13
 summary: One Exponential installation with several doors - the public site, the administration, often a simpler Editor, sometimes a second language or a second site - what each door is for, why signing in to one does not sign you in to another, and how to find your addresses.
 keywords: site, administration, admin, editor, siteaccess, address, URL, sign in, front end, back end, multisite, language site, explained

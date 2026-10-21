@@ -1,7 +1,7 @@
 ---
 title: Showing your location on a map
 audience: local-business, businesses, customer, website-creator
-category: business-solutions
+category: local-business
 order: 31
 summary: Two ways to show a local business's location on an Exponential site - the ezgmaplocation datatype (a point stored on content, Google Maps with an API key) and the Map block of the layouts editor (Google with a key, OpenStreetMap without) - with setup steps, what needs an API key, privacy and a checklist.
 keywords: map, location, ezgmaplocation, Google Maps, API key, OpenStreetMap, map block, layouts editor, latitude, longitude, directions, privacy, Content Security Policy

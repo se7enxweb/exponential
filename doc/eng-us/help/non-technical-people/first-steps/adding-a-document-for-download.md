@@ -1,7 +1,7 @@
 ---
 title: Adding a document for download
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 26
 summary: Put a PDF, a spreadsheet or another file on an Exponential site so visitors can download it - upload it as a File item, give it a clear title, link to it from a page - and how to replace it with a newer version without breaking links.
 keywords: document, download, PDF, file, upload, file item, replace file, newer version, link to a file, annual report, form, beginner

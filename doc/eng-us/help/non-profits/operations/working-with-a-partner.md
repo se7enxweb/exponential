@@ -1,7 +1,7 @@
 ---
 title: Working with a partner
 audience: non-profit, businesses, partner, project-manager
-category: business-solutions
+category: non-profits
 order: 70
 summary: How a non-profit finds, chooses and works with an Exponential partner - what partners do, the published partner levels as a signal of experience, the plain fact that the partner program publishes no non-profit pricing or discount, questions to ask, agreements, keeping ownership of your site, and how a non-profit can contribute back to the project.
 keywords: partner, implementation partner, hosting partner, partner levels, partner program, non-profit pricing, discount, pro bono, choosing a partner, questions, support agreement, SLA, ownership, contributing back

@@ -1,7 +1,7 @@
 ---
 title: Editing images with ezie
 audience: individual, editor
-category: website-creation
+category: personal-sites
 order: 1613
 summary: How one person uses the ezie image editor inside the Exponential edit form to crop, flip, rotate, pixelate, adjust contrast and brightness, convert to black and white or sepia, and add a watermark - what it is good for, how saving works, and when to use a desktop program instead.
 keywords: ezie, image editor, crop, rotate, flip, watermark, contrast, brightness, black and white, sepia, pixelate, portfolio, edit form, GD, ImageMagick

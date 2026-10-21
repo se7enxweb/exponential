@@ -1,7 +1,7 @@
 ---
 title: About page and contact form
 audience: individual, website-creator, editor
-category: website-creation
+category: personal-sites
 order: 1603
 summary: How one person writes an About page that works and sets up a contact form with the shipped Feedback form class - where messages are stored and mailed, how to keep your mail address private, how to stop spam and what to tell visitors about the data the form collects.
 keywords: about page, contact form, feedback form, information collector, recipient, mail address, spam, CAPTCHA, form token, privacy notice, collected information, personal site

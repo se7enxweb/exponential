@@ -1,7 +1,7 @@
 ---
 title: Multilingual non-profit sites
 audience: non-profit, government, editor, website-creator
-category: business-solutions
+category: non-profits
 order: 40
 summary: How a non-profit serves people in several languages on Exponential with a small team - deciding which content to translate first, content languages and a siteaccess per language, fallbacks for untranslated pages, the language switcher, volunteer translators limited by language, translation drafts from Exponential Intelligence reviewed by a person, right-to-left scripts, the 62-language limit and plain language.
 keywords: multilingual, languages, translation, content languages, siteaccess, SiteLanguageList, fallback, language switcher, translators, volunteer translators, Exponential Intelligence, right-to-left, 62 languages, plain language, community languages

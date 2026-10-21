@@ -1,7 +1,7 @@
 ---
 title: Family sites
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1700
 summary: The section for people who run a private site for their family on Exponential - photos, news, recipes and family history behind a sign-in - with planning, private areas through sections and roles, inviting relatives, dates of birth, and privacy, and the honest limits.
 keywords: family site, private site, family photos, family news, family history, genealogy, private area, sign-in, sections, roles, invite, relatives, birthday, privacy, children

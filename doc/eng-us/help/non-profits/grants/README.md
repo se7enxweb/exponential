@@ -1,7 +1,7 @@
 ---
 title: Grants and the website
 audience: non-profit, businesses, government, project-manager
-category: business-solutions
+category: non-profits
 order: 10
 summary: How a non-profit fits its Exponential website into grant work - a website project paid for by a grant, the technical section of a proposal, honest budget lines for hosting and maintenance, and outcome reports backed by evidence the site records itself. There is no grant management module; this folder says what the site does and does not supply.
 keywords: grants, grant-funded project, proposal, budget, hosting budget, maintenance budget, outcome report, evidence, funder, foundation, non-profit

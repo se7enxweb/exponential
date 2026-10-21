@@ -1,7 +1,7 @@
 ---
 title: A members area for volunteers
 audience: non-profit, website-creator, businesses, editor
-category: business-solutions
+category: non-profits
 order: 50
 summary: Building a volunteers-only area on a non-profit's Exponential site - accounts by invitation or registration with e-mail verification, a Volunteers user group and role, a section Anonymous may not read, protected downloads of guides and rotas, news and events for volunteers, and what is not built in (shift scheduling, hours tracking).
 keywords: members area, volunteers area, volunteers only, user registration, user/register, VerifyUserType, DefaultUserPlacement, user group, role, section, content/read, protected downloads, rota, guides

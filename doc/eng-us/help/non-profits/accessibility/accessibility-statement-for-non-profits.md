@@ -1,7 +1,7 @@
 ---
 title: Accessibility statement for non-profits
 audience: non-profit, government, editor, project-manager
-category: business-solutions
+category: non-profits
 order: 40
 summary: How a non-profit writes and maintains an honest accessibility statement for its Exponential site - what it contains, how to describe the software's part without overstating it (the project rates admin4 Partly complies and publishes no VPAT or ACR), known issues, a feedback route, a review date, and an outline to fill in.
 keywords: accessibility statement, honesty, WCAG 2.2, Partly complies, known issues, feedback, contact, review date, outline, non-profit, conformance, VPAT, ACR

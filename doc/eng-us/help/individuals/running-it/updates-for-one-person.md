@@ -1,7 +1,7 @@
 ---
 title: Updates for one person
 audience: individual, customer, website-creator
-category: website-creation
+category: personal-sites
 order: 1642
 summary: How one person keeps an Exponential site current - what an update covers, where releases are announced, security fixes first, the update steps with a backup and maintenance mode, the update tools in the administration (upgrade check, ezupdate, git_manager), PHP versions, and what to do if an update goes wrong.
 keywords: updates, upgrades, security fixes, releases, composer, git, upgrade check, ezupdate, git_manager, maintenance mode, backup, PHP version, rollback, individual

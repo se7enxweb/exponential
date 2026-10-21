@@ -1,7 +1,7 @@
 ---
 title: Adding a picture
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 25
 summary: Put a picture on an Exponential site in plain steps - upload it to the media library or straight from the edit form, write a good alternative text, use it in an article or inside the text - and what to do when an upload is refused.
 keywords: add picture, image, photo, upload, media library, alternative text, alt text, insert image, image size, file too large, beginner

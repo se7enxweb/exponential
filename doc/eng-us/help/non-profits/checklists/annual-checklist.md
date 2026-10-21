@@ -1,7 +1,7 @@
 ---
 title: Non-profit annual checklist
 audience: non-profit, businesses, project-manager, admin
-category: business-solutions
+category: non-profits
 order: 40
 summary: The yearly review of a non-profit's Exponential site for the director or board - budget and grants, host and partner, release line and PHP, restore test and audit verification, access review, data protection and retention, accessibility test and statement, annual publications and governance pages, content audit, and goals for the next year.
 keywords: annual checklist, yearly review, board, budget, grants, host review, partner review, release line, PHP, restore test, exp:audit verify, access review, data protection, accessibility statement, annual publications, content audit, goals

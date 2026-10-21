@@ -1,7 +1,7 @@
 ---
 title: Roles and permissions explained
 audience: non-technical, editor, customer, user
-category: getting-started
+category: plain-language
 order: 14
 summary: Why what you can do in Exponential depends on your role and not on your skill, the four roles a standard installation starts with, what groups and sections add, and how to ask for more (or less) access - with a key-ring comparison.
 keywords: role, permission, policy, access, user group, section, Anonymous, Member, Editor, Administrator, access denied, grayed out, explained

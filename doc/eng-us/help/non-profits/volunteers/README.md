@@ -1,7 +1,7 @@
 ---
 title: Volunteers
 audience: non-profit, businesses, editor, website-creator
-category: business-solutions
+category: non-profits
 order: 10
 summary: Everything a non-profit does with volunteers on its Exponential site - recruiting them with an information collector form protected by a form token and hCaptcha or reCAPTCHA, processing applications, a members area for active volunteers, and volunteers who edit the site safely with roles, sections, approval, versions and two-factor login.
 keywords: volunteers, volunteer recruitment, sign-up form, information collector, hcaptcha, recaptcha, enhancedezbinaryfile, applications, members area, volunteer editors, roles, training

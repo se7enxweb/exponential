@@ -1,7 +1,7 @@
 ---
 title: Restaurant orders and what is not built in
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 45
 summary: What a restaurant, cafe or takeaway can do with an Exponential site - menu pages, specials, vouchers, catering requests, a pre-order shop for collection - and what is not built in - table reservations, delivery time slots, kitchen tickets, table ordering, POS connection - with the usual ways to fill each gap.
 keywords: restaurant, cafe, takeaway, menu, online ordering, table reservation, delivery, kitchen, POS, vouchers, catering, allergens, outside service, local business

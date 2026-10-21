@@ -1,7 +1,7 @@
 ---
 title: Training volunteer editors
 audience: non-profit, editor, trainer, businesses
-category: business-solutions
+category: non-profits
 order: 70
 summary: A practical plan for training volunteers to edit a non-profit's Exponential site - before the session, a 90-minute first session built on the admin tour with your own content, house rules, a one-page cheat sheet, the first weeks with approval, follow-up, and help pages to hand out - written for coordinators with no training background.
 keywords: training, volunteer editors, onboarding, first session, admin tour, house rules, cheat sheet, editing content, accessibility, approval, notifications, help pages

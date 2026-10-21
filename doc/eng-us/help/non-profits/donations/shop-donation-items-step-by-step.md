@@ -1,7 +1,7 @@
 ---
 title: Shop donation items, step by step
 audience: non-profit, businesses, website-creator, admin
-category: business-solutions
+category: non-profits
 order: 40
 summary: Building donation items in Exponential's built-in shop - fixed-amount products of the shipped product class, VAT as your accountant advises, the ezpaypal gateway (paymentgateways.ini, paypal.ini Business, sandbox, the checkout workflow) or ezauthorize, order receipts, the store dashboard check, the tests to run and the weekly routine - with the limits stated plainly.
 keywords: shop donation, donation product, fixed amount, product class, ezprice, ezpaypal, ezauthorize, paymentgateways.ini, paypal.ini, sandbox, shop_checkout, workflow, order receipts, store dashboard, PaymentMadeOrderStatusID

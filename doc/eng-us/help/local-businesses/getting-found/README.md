@@ -1,7 +1,7 @@
 ---
 title: "Getting found: local search for small businesses"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 20
 summary: How people nearby find a small business online and what Exponential contributes - local search basics, page titles and descriptions with xrowmetadata, sitemaps with bcgooglesitemaps, robots.txt, readable addresses, the structured data that exists, outside business listings and visitor numbers.
 keywords: local SEO, search engine optimization, getting found, xrowmetadata, bcgooglesitemaps, sitemap, robots.txt, nice URLs, structured data, JSON-LD, business listing, analytics

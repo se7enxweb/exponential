@@ -1,7 +1,7 @@
 ---
 title: Seasonal changes
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 82
 summary: Handling the seasons of a local business on its Exponential site - public holidays, summer and winter hours, the busy season, a seasonal menu or range, closing for a season - with drafts prepared ahead, date-based publishing, a seasonal front page by layout rule, and a season-by-season planner.
 keywords: seasonal changes, seasons, holidays, summer hours, winter hours, busy season, seasonal menu, closed for the season, drafts, scheduled publishing, layout rule, local business

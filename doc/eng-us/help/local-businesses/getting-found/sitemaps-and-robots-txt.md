@@ -1,7 +1,7 @@
 ---
 title: Sitemaps and robots.txt for a local business
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 23
 summary: What an XML sitemap and robots.txt do for a small business site, how Exponential produces them with bcgooglesitemaps and the shipped robots.txt, what to ask your builder for, and how to check both yourself in a browser.
 keywords: sitemap, XML sitemap, bcgooglesitemaps, robots.txt, cron job, search engines, webmaster tools, crawl, local business

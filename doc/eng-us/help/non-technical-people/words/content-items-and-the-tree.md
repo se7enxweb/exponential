@@ -1,7 +1,7 @@
 ---
 title: Content items and the tree
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 11
 summary: Why everything on an Exponential site is a content item of some type, how items are arranged in a tree like folders on a computer, what fields are, and how one item can appear in two places - explained with everyday comparisons.
 keywords: content item, object, content type, class, field, attribute, tree, folder, sub items, location, content structure, media library, explained

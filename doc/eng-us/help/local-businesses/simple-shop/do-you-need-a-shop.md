@@ -1,7 +1,7 @@
 ---
 title: Do you need a shop?
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 41
 summary: Questions that help a local business decide whether selling online is worth it - who would buy, what they would buy, who handles orders, payments, VAT and returns - with the lighter alternatives (an enquiry form, a price list, vouchers only) and a decision table.
 keywords: online shop, decision, should I sell online, vouchers, gift cards, enquiry form, price list, click and collect, small business, workload, local business

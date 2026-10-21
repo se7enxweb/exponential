@@ -1,7 +1,7 @@
 ---
 title: Finding your way around
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 22
 summary: A plain-language map of the Exponential administration - the dashboard, the tabs at the top, the tree on the left, an item's page and its buttons, the right column - and the three places you will use every day.
 keywords: dashboard, tabs, content structure, media, tree, left column, right column, item page, buttons, my drafts, orientation, beginner

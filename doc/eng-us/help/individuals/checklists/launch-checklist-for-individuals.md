@@ -1,7 +1,7 @@
 ---
 title: Launch checklist for individuals
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1652
 summary: The checklist one person works through on the day an Exponential personal site, portfolio, blog, family site or club site goes live - accounts and security, content, address and HTTPS, forms and mail, permissions, search engines, backups and the first week after launch.
 keywords: launch, go live, checklist, launch day, accounts, password, two-factor, HTTPS, domain, forms, mail, permissions, private area, search engines, sitemap, backup, individual

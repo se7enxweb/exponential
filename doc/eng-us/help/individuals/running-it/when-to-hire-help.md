@@ -1,7 +1,7 @@
 ---
 title: When to hire help
 audience: individual, customer
-category: website-creation
+category: personal-sites
 order: 1646
 summary: How one person decides which parts of running an Exponential site to do alone and which to pay for - tasks that suit a partner or freelancer, the warning signs, how to describe a small job, what to ask, keeping ownership of your site and data, and free help from the community.
 keywords: hire help, partner, freelancer, developer, small job, migration, templates, mail delivery, server, budget, community, questions to ask, ownership, access, individual

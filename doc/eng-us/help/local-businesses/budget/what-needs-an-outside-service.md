@@ -1,7 +1,7 @@
 ---
 title: What needs an outside service
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 74
 summary: The plain list for local businesses of what Exponential does not do by itself - business listings on map and search platforms, appointment booking, table reservations, restaurant ordering, POS integration, stock, coupon codes, map tiles, CAPTCHA, payment processing, mail delivery, analytics - with what was searched, the usual way to fill each gap and who to ask.
 keywords: outside service, not built in, booking, appointments, reservations, online ordering, POS, point of sale, Google Business Profile, business listing, map provider, CAPTCHA, payment provider, integration, local business

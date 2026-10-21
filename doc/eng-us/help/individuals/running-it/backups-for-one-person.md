@@ -1,7 +1,7 @@
 ---
 title: Backups for one person
 audience: individual, customer, website-creator
-category: website-creation
+category: personal-sites
 order: 1641
 summary: A backup routine one person can keep for an Exponential site - what to copy (database and files together), backups from the administration with git_manager, the command-line way for SQLite and other databases, keeping copies off the server, encryption, and the restore test that proves it works.
 keywords: backup, restore, database, SQLite, var/storage, settings, git_manager, Setup Backup, encryption, offsite, restore test, maintenance mode, retention, individual

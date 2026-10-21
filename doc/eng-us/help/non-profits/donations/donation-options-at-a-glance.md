@@ -1,7 +1,7 @@
 ---
 title: Donation options at a glance
 audience: non-profit, businesses, project-manager
-category: business-solutions
+category: non-profits
 order: 20
 summary: A side-by-side comparison of the ways a non-profit can take donations with an Exponential site - an external donation platform, shop items with ezpaypal (redirect to PayPal) and shop items with ezauthorize (an on-site card form to Authorize.Net) - by setup effort, free amounts, recurring giving, card data, visibility, receipts and fees, with a decision table.
 keywords: donation options, comparison, external platform, ezpaypal, ezauthorize, PayPal, Authorize.Net, redirect gateway, on-site card form, PCI, recurring giving, free amount, decision

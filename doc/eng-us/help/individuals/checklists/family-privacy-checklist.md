@@ -1,7 +1,7 @@
 ---
 title: Family privacy checklist
 audience: individual, customer
-category: website-creation
+category: personal-sites
 order: 1654
 summary: The checklist one person works through before a family site on Exponential goes live and once a year after - agreements with relatives, what never goes online, children and photos, accounts and two-step sign-in, the private area tested as a stranger, feeds, backups, outside services and removal requests.
 keywords: family privacy, checklist, family site, children, photos, consent, location data, accounts, two-factor, private area, test as visitor, RSS, backups, encryption, outside services, removal

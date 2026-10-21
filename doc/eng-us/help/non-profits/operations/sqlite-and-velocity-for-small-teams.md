@@ -1,7 +1,7 @@
 ---
 title: SQLite and Velocity for small teams
 audience: non-profit, admin, hosting, businesses
-category: business-solutions
+category: non-profits
 order: 30
 summary: The two Exponential choices that make a non-profit's site cheap to run - SQLite, the default database that keeps the whole site in one file with no database server, and Velocity, the bundled web server that needs nothing beyond PHP - with what each saves, their limits (one writer at a time, usually not on shared hosting, no forked worker pool on Windows), backups, and when to choose something else.
 keywords: SQLite, Velocity, small team, database server, one file, one writer, backup, sqlite3 .backup, web server, exp:velocity, shared hosting, VPS, PHP 8.0, limits, low cost

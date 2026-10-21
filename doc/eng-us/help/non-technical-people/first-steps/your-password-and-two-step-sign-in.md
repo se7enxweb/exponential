@@ -1,7 +1,7 @@
 ---
 title: Your password and two-step sign-in
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 33
 summary: Keep your Exponential account safe in plain steps - change your password, choose a good one, turn on two-step sign-in with an app or e-mail codes, and what to do when you lose your phone.
 keywords: password, change password, strong password, password manager, two-step sign-in, 2FA, authenticator app, TOTP, e-mail code, lost phone, account security, beginner

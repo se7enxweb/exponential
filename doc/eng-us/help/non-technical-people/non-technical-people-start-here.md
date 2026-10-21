@@ -1,7 +1,7 @@
 ---
 title: Non-technical people: start here
 audience: non-technical, editor, customer, user
-category: getting-started
+category: plain-language
 order: 1
 summary: The landing page for people who are not technical and want to use, run or pay for an Exponential site: plain words first, how-tos without a command line, how to choose hosting, what to hand to a host or partner, and where every page of this section is.
 keywords: non-technical, beginner, plain language, no command line, no code, glossary, first steps, hosting choices, who does what, getting help, site owner, volunteer, small team

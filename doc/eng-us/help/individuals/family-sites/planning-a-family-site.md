@@ -1,7 +1,7 @@
 ---
 title: Planning a family site
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1701
 summary: How to plan a private family site on Exponential before building it - fully private or partly public, who gets an account, who may post, what never goes online, the tree, the classes, and the agreements to make with relatives first.
 keywords: family site, planning, private, public, accounts, relatives, children, consent, photos, structure, content tree, classes, roles, agreements, house rules

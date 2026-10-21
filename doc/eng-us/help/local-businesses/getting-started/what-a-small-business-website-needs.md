@@ -1,7 +1,7 @@
 ---
 title: What a small business website needs
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 11
 summary: The five jobs a local business website does - be found, answer the basic questions, build trust, take contact, and sometimes sell - with the Exponential feature or outside service behind each and what you can leave out at the start.
 keywords: small business website, local business, requirements, be found, opening hours, contact, trust, sell online, minimum website

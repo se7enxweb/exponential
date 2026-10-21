@@ -1,7 +1,7 @@
 ---
 title: Titles and descriptions with xrowmetadata
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 22
 summary: Writing the title and description that appear in search results for each page of a local business site - what xrowmetadata adds to the edit form, what is shown when the fields are empty, writing tips with examples, and the sharing image for social networks.
 keywords: xrowmetadata, meta title, meta description, search result snippet, Open Graph, sharing image, keywords, editor, local business

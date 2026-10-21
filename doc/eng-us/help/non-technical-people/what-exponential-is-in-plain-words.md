@@ -1,7 +1,7 @@
 ---
 title: What Exponential is, in plain words
 audience: non-technical, customer, user
-category: getting-started
+category: plain-language
 order: 5
 summary: A description of Exponential for people who are not technical - what it does, what it does not do, who makes it, what it costs and what you need around it - without a single technical term that is not explained.
 keywords: what is Exponential, plain language, content management system, CMS, free software, no license fee, who makes it, what it costs, what it does not do, hosting, partner

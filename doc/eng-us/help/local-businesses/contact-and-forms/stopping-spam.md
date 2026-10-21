@@ -1,7 +1,7 @@
 ---
 title: Stopping spam
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 52
 summary: Keeping spam out of a local business's contact and request forms on Exponential - form tokens that are on by default, adding reCAPTCHA or hCaptcha (both need keys from the provider), which to choose, privacy notes, and what to do when spam still gets through.
 keywords: spam, CAPTCHA, reCAPTCHA, hCaptcha, ezformtoken, form token, API keys, bots, contact form spam, privacy, local business

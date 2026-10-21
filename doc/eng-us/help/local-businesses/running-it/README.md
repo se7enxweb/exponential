@@ -1,7 +1,7 @@
 ---
 title: "Running it: a local business website after launch"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 80
 summary: Keeping a local business website on Exponential useful and safe after launch - a weekly, monthly and yearly routine that fits a busy owner, seasonal changes, and backups, updates, accounts and security in plain words.
 keywords: running a website, routine, weekly, monthly, yearly, seasonal changes, backups, updates, security, accounts, staff, local business

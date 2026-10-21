@@ -1,7 +1,7 @@
 ---
 title: Handover checklist when someone leaves
 audience: non-technical, customer, editor
-category: getting-started
+category: plain-language
 order: 64
 summary: What to do when a person who works on an Exponential site leaves - hand over their drafts and knowledge, disable their account rather than delete it, move responsibilities and contacts, and check the registrar and provider logins they held.
 keywords: someone leaves, handover, offboarding, disable account, drafts, responsibilities, contacts, registrar login, volunteer leaves, non-technical

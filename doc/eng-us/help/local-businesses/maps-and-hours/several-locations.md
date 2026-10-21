@@ -1,7 +1,7 @@
 ---
 title: Several locations
 audience: local-business, businesses, customer, website-creator
-category: business-solutions
+category: local-business
 order: 34
 summary: Showing two or more branches, a market stall or a mobile service on one Exponential site - one location object per address with its own hours and map point, a locations folder, a nearest-location list with the ezgmaplocation filter, and when a second site makes sense.
 keywords: several locations, branches, multiple locations, market stall, mobile service, area served, locations folder, ezgmaplocation, distance filter, multisite, local business

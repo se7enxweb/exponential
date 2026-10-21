@@ -1,7 +1,7 @@
 ---
 title: Learning with the Student level
 audience: individual, partner, website-creator
-category: website-creation
+category: personal-sites
 order: 1647
 summary: For individuals who want to learn Exponential properly - students, teachers and self-taught learners - what the Student level of the partner program is as published, what you can learn with your own site and the free documentation, a learning plan, and how learning turns into contribution and paid work.
 keywords: learning, Student level, student partner, education, teacher, school, university, self-taught, partner program, Now level, contributing, portfolio, training, individual

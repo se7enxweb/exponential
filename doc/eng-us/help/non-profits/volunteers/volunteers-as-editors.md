@@ -1,7 +1,7 @@
 ---
 title: Volunteers as editors
 audience: non-profit, editor, admin, businesses
-category: business-solutions
+category: non-profits
 order: 60
 summary: How a non-profit lets volunteers edit its Exponential site without risking it - one account per person, groups and roles limited by section, approval before publishing with the cronjob it needs, two-step sign-in with sevenx_authentication_2fa, versions and the trash to undo mistakes, the audit trail, layouts editing one at a time, and pages only staff may change.
 keywords: volunteer editors, roles, groups, section limitation, approval workflow, pending, cronjob, two-factor login, sevenx_authentication_2fa, versions, trash, audit trail, layouts drafts, house rules

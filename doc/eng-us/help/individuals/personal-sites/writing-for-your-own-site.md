@@ -1,7 +1,7 @@
 ---
 title: Writing for your own site
 audience: individual, editor, website-creator
-category: website-creation
+category: personal-sites
 order: 1604
 summary: Practical writing advice for one person publishing on Exponential - titles, intros and bodies that work on screens and in feeds, links, images and alternative text, page addresses, updating old pages, and using drafts and versions as a safety net.
 keywords: writing, web writing, title, intro, summary, body, headings, links, alternative text, accessibility, URL, update, drafts, versions, personal site, blog

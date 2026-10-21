@@ -1,7 +1,7 @@
 ---
 title: Privacy for your family
 audience: individual, customer
-category: website-creation
+category: personal-sites
 order: 1705
 summary: The privacy decisions behind a family site on Exponential - what never goes online, children and consent, photos and their metadata, how private a private area really is, search engines, backups that contain family data, outside services, removal requests and what to do after a mistake.
 keywords: privacy, family, children, consent, photos, location data, EXIF, private area, search engines, robots, backups, personal data, GDPR, removal, leak, family site

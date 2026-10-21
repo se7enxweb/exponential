@@ -1,7 +1,7 @@
 ---
 title: Board and minutes pages
 audience: non-profit, editor, website-creator, government
-category: business-solutions
+category: non-profits
 order: 40
 summary: Publishing a non-profit's board, governance and meetings on Exponential - a board page with consent from members, a meeting class of your own (no meeting class ships) with agendas, papers and minutes below it, a structure per year, board-only papers in a section with its own role, scheduled publication, corrections and a checklist.
 keywords: board, trustees, directors, governance, minutes, agendas, meetings, meeting class, board papers, board-only section, role, scheduled publication, corrections, bylaws

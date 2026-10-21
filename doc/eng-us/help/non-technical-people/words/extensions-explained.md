@@ -1,7 +1,7 @@
 ---
 title: Extensions explained
 audience: non-technical, customer, editor
-category: getting-started
+category: plain-language
 order: 16
 summary: What extensions, designs, themes and templates are, a plain list of add-ons that ship with Exponential and what each does for a non-technical person, what is not available as an extension, and how to ask for one.
 keywords: extension, add-on, plugin, design, theme, template, newsletter, maps, two-step sign-in, CAPTCHA, writing assistant, layouts, shop, what is not included, explained

@@ -1,7 +1,7 @@
 ---
 title: Low-budget hosting
 audience: non-profit, businesses, hosting, admin
-category: business-solutions
+category: non-profits
 order: 20
 summary: Choosing hosting for a non-profit's Exponential site on a small budget - what any host must provide, shared hosting, a small virtual server and managed hosting compared by money, time and skills, trying everything on a laptop first with one install command, questions to ask a host, and where saving money becomes expensive - with no prices invented.
 keywords: hosting, low budget, cheap hosting, shared hosting, VPS, managed hosting, requirements, PHP, SQLite, Velocity, exp:install, questions for a host, false economies, non-profit

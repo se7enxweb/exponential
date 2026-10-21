@@ -1,7 +1,7 @@
 ---
 title: Individuals FAQ
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1502
 summary: Short, honest answers to the questions people ask before and while running a personal site, portfolio, blog, family site or club site on Exponential alone - cost, hosting, comments, importing, privacy, mail, backups, updates and when to get help.
 keywords: FAQ, questions, individual, personal site, blog, portfolio, family site, club, cost, free, hosting, SQLite, comments, WordPress, import, privacy, mail, backups, updates, two-factor, AI

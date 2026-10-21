@@ -1,7 +1,7 @@
 ---
 title: What exists and what does not
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1506
 summary: A plain feature map for individuals - what ships with Exponential for personal sites, portfolios, blogs, family sites and club sites, what needs an optional extension, what needs an outside service, and what does not exist at all, each with its source.
 keywords: features, limits, what exists, not built in, comments, ezcomments, importer, WordPress, birthday reminders, ticketing, membership fees, domain, mail, autorss, syndication, ezpm, outside service, extension

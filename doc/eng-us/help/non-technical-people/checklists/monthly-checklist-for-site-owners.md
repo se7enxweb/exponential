@@ -1,7 +1,7 @@
 ---
 title: Monthly checklist for site owners
 audience: non-technical, customer
-category: getting-started
+category: plain-language
 order: 63
 summary: A thirty-minute monthly routine for the non-technical owner of an Exponential site - content up to date, forms answered, people and accounts, updates and backups confirmed by the provider, broken links, and a yearly block - without touching anything technical.
 keywords: monthly checklist, site owner, routine, maintenance, updates, backups, accounts, forms, broken links, yearly review, non-technical

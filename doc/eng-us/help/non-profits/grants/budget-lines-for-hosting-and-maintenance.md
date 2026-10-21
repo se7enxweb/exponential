@@ -1,7 +1,7 @@
 ---
 title: Budget lines for hosting and maintenance
 audience: non-profit, businesses, project-manager, hosting
-category: business-solutions
+category: non-profits
 order: 40
 summary: The budget lines a non-profit should plan for an Exponential website, during a grant and in the years after it - what is zero (license), what is never zero (hosting, domain, updates, backups, people's time), what is optional (partner support, translation, mail delivery, payment fees) - with no invented prices, and links to the cost pages for the arithmetic.
 keywords: budget, budget lines, hosting cost, maintenance cost, grant budget, running costs, domain, backups, updates, partner support, translation, volunteer time, in-kind, treasurer

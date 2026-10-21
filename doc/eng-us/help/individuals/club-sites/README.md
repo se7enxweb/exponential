@@ -1,7 +1,7 @@
 ---
 title: Club sites
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1710
 summary: The section for people who run the site of a club, a team or a hobby group on Exponential, usually as a volunteer - members and registration, a members' area, newsletters with cjw_newsletter, events, forms, polls and forums, sharing the work, and what is not built in (dues, tickets).
 keywords: club site, club, team, hobby group, society, volunteers, members, registration, members area, newsletter, cjw_newsletter, events, calendar, forms, polls, forums, sign-up, dues, tickets

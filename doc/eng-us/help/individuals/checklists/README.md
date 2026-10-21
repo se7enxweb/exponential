@@ -1,7 +1,7 @@
 ---
 title: Checklists for individuals
 audience: individual, customer, website-creator
-category: website-creation
+category: personal-sites
 order: 1650
 summary: Printable checklists and a worksheet for one person running a site on Exponential - a site plan worksheet before you start, a launch checklist, a monthly upkeep checklist and a family privacy checklist - each linking to the page that explains every line.
 keywords: checklists, worksheet, launch checklist, monthly upkeep, family privacy, site plan, printable, individual, routine

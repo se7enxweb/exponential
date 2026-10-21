@@ -1,7 +1,7 @@
 ---
 title: Translating a page
 audience: non-technical, editor
-category: getting-started
+category: plain-language
 order: 34
 summary: Add a page in another language on an Exponential site in plain steps - choose the new language and the one to copy from, translate every field, publish - and why a translation may not show on the site yet.
 keywords: translate, translation, language, new translation, multilingual, second language, translate based on, not shown, beginner

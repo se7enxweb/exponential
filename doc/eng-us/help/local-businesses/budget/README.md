@@ -1,7 +1,7 @@
 ---
 title: "Budget: what a local business website costs"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 70
 summary: The budget pages for a small business website on Exponential - the cost picture without invented prices, a worked example where every number is labeled an example assumption, a worksheet for your own numbers, and the list of things that need an outside service.
 keywords: budget, cost, price, small business, worksheet, worked example, example assumptions, outside services, license fee, hosting, partner, local business

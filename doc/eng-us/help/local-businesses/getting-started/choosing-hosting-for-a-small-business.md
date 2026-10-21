@@ -1,7 +1,7 @@
 ---
 title: Choosing hosting for a small business
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 15
 summary: Hosting options for a small business website on Exponential in plain words - shared hosting, a managed host, a small virtual server or the partner's servers - what each means for you, what Exponential needs from a server, and the questions to ask before signing.
 keywords: hosting, web hosting, small business, managed hosting, VPS, shared hosting, SQLite, PHP, HTTPS, backups, requirements, host

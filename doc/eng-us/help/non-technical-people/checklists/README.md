@@ -1,7 +1,7 @@
 ---
 title: Checklists for non-technical people
 audience: non-technical, editor, customer
-category: getting-started
+category: plain-language
 order: 60
 summary: Short checklists in plain language for the people who use and own an Exponential site - the first day, before you publish, every month, when someone leaves, and accessibility - to print or copy and tick off.
 keywords: checklists, first day, before publishing, monthly, handover, someone leaves, accessibility, tick off, print, non-technical

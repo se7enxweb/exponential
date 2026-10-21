@@ -1,7 +1,7 @@
 ---
 title: Non-profits: start here
 audience: non-profit, businesses, government
-category: business-solutions
+category: non-profits
 order: 1
 summary: The landing page for charities, foundations, community organizations and other non-profits that run their website on Exponential - what exists for grants, donations, volunteers, accessibility, transparency, newsletters, events and languages, what does not exist and needs an outside service, how to keep costs low, and where every page of this section is.
 keywords: non-profit, nonprofit, charity, foundation, NGO, community organization, start here, grants, donations, volunteers, accessibility, transparency, annual report, board minutes, newsletter, events, multilingual, low budget, SQLite, Velocity, data protection, partner

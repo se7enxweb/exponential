@@ -1,7 +1,7 @@
 ---
 title: Handling messages and privacy
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 55
 summary: What a local business does with the messages that arrive through its Exponential forms - reading them in the mailbox and in Collected information, answering, exporting, deleting old submissions, the privacy note, requests from people about their data, and a simple retention routine. Basics, not legal advice.
 keywords: form submissions, collected information, privacy, GDPR, data protection, retention, delete, export, privacy note, personal data, local business

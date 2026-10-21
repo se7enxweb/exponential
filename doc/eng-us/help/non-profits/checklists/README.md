@@ -1,7 +1,7 @@
 ---
 title: Non-profit checklists
 audience: non-profit, businesses, project-manager, editor
-category: business-solutions
+category: non-profits
 order: 10
 summary: The checklists a non-profit uses to launch and run its Exponential site - a launch checklist, a monthly checklist, an annual checklist and a data protection checklist - with how to use them, who signs them, and the related checklists in the Businesses, Customers and Government sections.
 keywords: checklists, launch checklist, monthly checklist, annual checklist, data protection checklist, routine, sign-off, non-profit, operations

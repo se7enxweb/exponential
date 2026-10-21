@@ -1,7 +1,7 @@
 ---
 title: Local businesses glossary
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 3
 summary: The words a local business owner meets when getting a website on Exponential, explained in plain language - from administration, alias and API key to siteaccess, sitemap, structured data, VAT type and workflow - each with a link to the page that uses it.
 keywords: glossary, terms, definitions, local business, API key, CAPTCHA, content class, datatype, information collector, sitemap, siteaccess, URL alias, VAT, workflow

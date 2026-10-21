@@ -1,7 +1,7 @@
 ---
 title: Non-profits glossary
 audience: non-profit, businesses, government, editor
-category: business-solutions
+category: non-profits
 order: 95
 summary: The words a non-profit meets when it runs its website on Exponential, explained in plain language - from administration interface, audit trail and CAPTCHA to information collector, object state, role, section, siteaccess, SQLite, Velocity and version - each with the page that explains it in full.
 keywords: glossary, terms, words, definitions, non-profit, administration interface, audit trail, CAPTCHA, class, collected information, cronjob, double opt-in, extension, information collector, layout, object, role, section, siteaccess, SQLite, Velocity, version

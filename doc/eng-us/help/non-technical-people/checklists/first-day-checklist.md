@@ -1,7 +1,7 @@
 ---
 title: First day checklist
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 61
 summary: Everything a non-technical person does on the first day with a new Exponential account - addresses, sign-in, password, two-step sign-in, a look around, a practice change, an undo, and the contacts to write down.
 keywords: first day, checklist, new account, onboarding, sign in, password, two-step, practice, bookmarks, contacts, non-technical

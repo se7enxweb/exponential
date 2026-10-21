@@ -1,7 +1,7 @@
 ---
 title: Ratings and reviews
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 54
 summary: What Exponential offers a local business for customer opinions - ezstarrating star ratings (1 to 5 stars per object, one vote per session, no written text), comments with the shipped comment class, and why written reviews usually live on outside platforms - with moderation, honesty rules and a checklist.
 keywords: reviews, ratings, star rating, ezstarrating, comments, testimonials, moderation, outside platforms, trust, local business

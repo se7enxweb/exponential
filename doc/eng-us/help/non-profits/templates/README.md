@@ -1,7 +1,7 @@
 ---
 title: Non-profit templates and worksheets
 audience: non-profit, businesses, project-manager
-category: business-solutions
+category: non-profits
 order: 10
 summary: Worksheets a non-profit fills in when it plans and runs an Exponential website - a grant budget worksheet, a volunteer form field worksheet, a roles and permissions worksheet and an outline for the annual publications page - each ready to copy into a document or spreadsheet, with the pages that explain the choices.
 keywords: templates, worksheets, forms to fill in, grant budget, volunteer form fields, roles, permissions, annual publications, outline, non-profit, planning

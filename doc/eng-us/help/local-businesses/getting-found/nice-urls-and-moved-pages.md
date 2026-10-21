@@ -1,7 +1,7 @@
 ---
 title: Nice URLs and moved pages
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 24
 summary: How Exponential makes readable page addresses from page names, what happens to the old address when a page is renamed or moved, short addresses for flyers and signs, and the care to take when replacing an old website.
 keywords: nice URLs, URL alias, address, redirect, renamed page, moved page, short URL, flyer, QR code, old website, wildcards, local business

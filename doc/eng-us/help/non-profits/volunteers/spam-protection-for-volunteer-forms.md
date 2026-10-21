@@ -1,7 +1,7 @@
 ---
 title: Spam protection for volunteer forms
 audience: non-profit, website-creator, admin, businesses
-category: business-solutions
+category: non-profits
 order: 30
 summary: Keeping spam out of a non-profit's volunteer and contact forms on Exponential - the ezformtoken form token that is active by default, choosing between the hcaptcha and recaptcha datatypes, keys in override files, the privacy and Content Security Policy consequences of a CAPTCHA, its accessible alternative, e-mail verification for registrations and cleaning up spam in bulk.
 keywords: spam, CAPTCHA, hCaptcha, reCAPTCHA, hcaptcha, recaptcha, ezformtoken, form token, CSRF, privacy, Content Security Policy, accessibility, VerifyUserType, bulk removal, volunteer form

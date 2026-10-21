@@ -1,7 +1,7 @@
 ---
 title: Annual publications as downloads
 audience: non-profit, editor, website-creator, government
-category: business-solutions
+category: non-profits
 order: 20
 summary: Publishing a non-profit's annual review, annual filings, financial statements and policies on an Exponential site as file downloads - the file class and content/download, a folder per year, stable addresses, format and size shown, searchable PDFs, an HTML summary, scheduled publication, corrections without silent replacement, and old years kept findable.
 keywords: annual review, annual publications, filings, 501(c)(3), Form 990, charity accounts, file class, ezbinaryfile, content/download, downloads, PDF, search inside files, stable URLs, corrections, archive

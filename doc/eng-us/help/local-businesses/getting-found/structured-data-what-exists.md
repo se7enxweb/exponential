@@ -1,7 +1,7 @@
 ---
 title: "Structured data: what exists"
 audience: local-business, businesses, customer, website-creator
-category: business-solutions
+category: local-business
 order: 25
 summary: What schema.org structured data (JSON-LD) Exponential and its shipped themes print today - breadcrumbs, articles, recipes, the content license - and what a local business would have to add for a LocalBusiness block with address and opening hours, as template work by a builder.
 keywords: structured data, schema.org, JSON-LD, LocalBusiness, opening hours specification, breadcrumbs, rich results, xrowmetadata, sevenx_themes_media, local business

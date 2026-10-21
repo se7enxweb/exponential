@@ -1,7 +1,7 @@
 ---
 title: Events and specials
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 61
 summary: Announcing events, daily specials and seasonal offers on a local business site - the event and event calendar classes from ezwebin, specials as articles that appear and disappear on a date, a seasonal landing page with a layout rule, front page blocks, and what is not built in (tickets, iCal, recurring events).
 keywords: events, specials, offers, daily special, event calendar, ezwebin, scheduled publishing, wait until date, hide at a date, layout rule, front page, local business

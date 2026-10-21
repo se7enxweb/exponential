@@ -1,7 +1,7 @@
 ---
 title: Annual publications page outline
 audience: non-profit, businesses, editor, website-creator
-category: business-solutions
+category: non-profits
 order: 50
 summary: An outline to copy for the page where a non-profit publishes its annual review, financial statements, filings and governance documents on Exponential - the structure by year, what each entry shows (title, year, format, size, a short summary), accessibility, corrections and a checklist for the yearly update.
 keywords: annual review, annual publications, financial statements, accounts, filings, governance documents, page outline, downloads, file class, by year, PDF, accessibility, transparency

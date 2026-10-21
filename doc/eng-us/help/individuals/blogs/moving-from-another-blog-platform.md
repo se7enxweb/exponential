@@ -1,7 +1,7 @@
 ---
 title: Moving from another blog platform
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1626
 summary: An honest guide for individuals who want to move a blog from WordPress or another platform to Exponential - there is no one-click importer; the documented path is an export, a conversion script and an import tool - with three realistic options for one person, effort drivers and a checklist.
 keywords: migration, move blog, import, WordPress, WXR, Blogger, Medium, site builder, export, xrowextract, ezcsvimport, RSS import, redirects, permalinks, comments, images, importer

@@ -1,7 +1,7 @@
 ---
 title: Processing volunteer applications
 audience: non-profit, editor, businesses, admin
-category: business-solutions
+category: non-profits
 order: 40
 summary: The volunteer coordinator's routine with Exponential's collected information - who may read applications (infocollector/read), the overview with its figures, reading one application, answering, exporting to CSV safely, removing applications on a schedule, and what the audit trail records - with a weekly routine and a retention plan.
 keywords: volunteer applications, collected information, infocollector/read, Export CSV, remove selected, retention, audit trail, coordinator, weekly routine, personal data, reply

@@ -1,7 +1,7 @@
 ---
 title: "A simple shop for a local business"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 40
 summary: The pages for a local business that wants to sell a little online with the shop built into Exponential - deciding whether a shop is worth it, a small catalog, PayPal and Authorize.Net payments, VAT, shipping and pickup, and what restaurants need that is not built in - linking to the full store guides.
 keywords: simple shop, small shop, online store, vouchers, gift cards, built-in shop, ezpaypal, ezauthorize, VAT, shipping, pickup, click and collect, restaurant, local business

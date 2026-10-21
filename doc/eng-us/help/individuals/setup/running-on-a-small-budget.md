@@ -1,7 +1,7 @@
 ---
 title: Running on a small budget
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1633
 summary: How one person keeps the cost and the moving parts of an Exponential site low - no license fee, SQLite instead of a database server, one small machine, Velocity or a common web server, caching, few extensions, and a worksheet for your own yearly costs without invented prices.
 keywords: budget, cost, cheap, low cost, free software, no license fee, SQLite, Velocity, shared hosting, VPS, small server, caching, extensions, yearly cost, worksheet, individual

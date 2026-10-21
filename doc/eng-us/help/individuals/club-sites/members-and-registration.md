@@ -1,7 +1,7 @@
 ---
 title: Members and registration
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1712
 summary: How a volunteer lets club members sign up and sign in on Exponential - the registration pages, activation by mail, the Members group and Member role of the default package, approving new members, a members' area, what members may do, passwords and two-step sign-in, and keeping the member list tidy.
 keywords: members, registration, sign up, user/register, activation, VerifyUserType, DefaultUserPlacement, Members group, Member role, approve members, members area, password reset, two-factor, member list, club

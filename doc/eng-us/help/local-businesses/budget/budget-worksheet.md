@@ -1,7 +1,7 @@
 ---
 title: Budget worksheet
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 73
 summary: A fill-in worksheet for the website budget of a local business on Exponential - one-time costs, yearly costs, outside services, own time, shop extras, totals over three years and a break-even line - with a column for the source of every number.
 keywords: budget worksheet, template, cost, quotes, small business, three years, break-even, own time, outside services, local business

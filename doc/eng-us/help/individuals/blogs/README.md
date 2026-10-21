@@ -1,7 +1,7 @@
 ---
 title: Blogs
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1620
 summary: The section for people who run a blog on Exponential by themselves or with a friend - the shipped Blog and Blog post classes, writing and scheduling, tags, comments, RSS feeds and moving from another platform, with the honest limits of each.
 keywords: blog, blogging, Blog class, Blog post class, posts, scheduling, tags, eztags, comments, Comment class, RSS, Atom, feeds, WordPress, migration, individual

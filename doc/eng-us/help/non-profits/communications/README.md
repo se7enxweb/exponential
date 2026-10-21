@@ -1,7 +1,7 @@
 ---
 title: Communications for non-profits
 audience: non-profit, businesses, editor, sales-marketing
-category: business-solutions
+category: non-profits
 order: 10
 summary: How a non-profit keeps in touch with supporters, volunteers and the people it serves through its Exponential site - the cjw_newsletter supporter newsletter, events with the ezwebin event classes, several languages, and campaign and appeal pages with Exponential Layouts - and what is not built in.
 keywords: communications, supporters, newsletter, cjw_newsletter, events, event calendar, multilingual, languages, campaigns, appeals, Exponential Layouts, non-profit

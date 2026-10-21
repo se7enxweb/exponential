@@ -1,7 +1,7 @@
 ---
 title: Before you publish checklist
 audience: non-technical, editor
-category: getting-started
+category: plain-language
 order: 62
 summary: A two-minute checklist to run before pressing Send for publishing in Exponential - facts, spelling, title and intro, links, pictures and their alternative text, documents, personal data, the right place and language - and a check afterwards on the site.
 keywords: before publishing, checklist, proofread, facts, links, alternative text, personal data, preview, quality, non-technical

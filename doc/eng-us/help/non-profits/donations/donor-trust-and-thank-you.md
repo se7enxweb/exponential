@@ -1,7 +1,7 @@
 ---
 title: Donor trust and thank-you
 audience: non-profit, businesses, editor, admin
-category: business-solutions
+category: non-profits
 order: 60
 summary: What makes donors trust a non-profit's Exponential site and come back - HTTPS everywhere, a privacy notice that names every processor, protected administrator accounts, a thank-you page, honest receipts (the shop's order receipt is not a tax receipt), follow-up by newsletter only with consent, and handling donor data with care.
 keywords: donor trust, HTTPS, privacy notice, two-factor login, thank-you page, receipts, tax receipt, follow-up, newsletter consent, donor data, stewardship

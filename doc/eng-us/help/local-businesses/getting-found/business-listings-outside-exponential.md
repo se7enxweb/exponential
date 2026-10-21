@@ -1,7 +1,7 @@
 ---
 title: Business listings outside Exponential
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 26
 summary: Your profile on map and search platforms, review sites and directories is created and kept up to date on those platforms, not in Exponential - what to put there, how to keep it in step with the website, who should own the accounts, and a yearly routine.
 keywords: business listing, business profile, map platform, directory, reviews, local search, name address phone, opening hours, outside service, Google Business Profile

@@ -1,7 +1,7 @@
 ---
 title: Newsletters for local businesses
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 62
 summary: A newsletter for the regulars of a local business with cjw_newsletter, which ships with Exponential - double opt-in sign-up, editions as content, sending by cron, unsubscribe, what it needs from the host (mail, cron, a bounce mailbox), a realistic sending rhythm and what to write.
 keywords: newsletter, cjw_newsletter, mailing list, regulars, double opt-in, consent, unsubscribe, edition, cron, mail delivery, bounce, local business

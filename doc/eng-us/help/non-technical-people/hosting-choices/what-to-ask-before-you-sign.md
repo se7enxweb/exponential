@@ -1,7 +1,7 @@
 ---
 title: What to ask before you sign
 audience: non-technical, customer
-category: getting-started
+category: plain-language
 order: 43
 summary: The questions a non-technical person asks a host, developer or partner before signing for an Exponential site, in plain words, with what a good answer sounds like and what should make you careful - updates, backups, ownership, support, data protection and leaving.
 keywords: questions, contract, agreement, before you sign, host, developer, partner, updates, backups, ownership, support, data protection, exit, warning signs, non-technical

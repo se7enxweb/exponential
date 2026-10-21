@@ -1,7 +1,7 @@
 ---
 title: Writing and scheduling posts
 audience: individual, editor, customer
-category: website-creation
+category: personal-sites
 order: 1622
 summary: How one person writes, publishes and schedules blog posts on Exponential - the Blog post fields, drafts and preview, the publication date field, publishing at a later date with the Wait until date workflow, unpublishing at a date, and why all scheduling depends on cron.
 keywords: blog post, writing, publishing, schedule, publish later, publication date, unpublish date, Wait until date, workflow, cron, drafts, preview, versions, editorial calendar

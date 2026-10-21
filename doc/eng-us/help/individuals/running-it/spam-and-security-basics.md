@@ -1,7 +1,7 @@
 ---
 title: Spam and security basics
 audience: individual, customer, website-creator
-category: website-creation
+category: personal-sites
 order: 1645
 summary: The security and anti-spam basics one person can keep up on an Exponential site - the administrator account, passwords and two-step sign-in, form tokens and CAPTCHA for forms, comments and registration, what anonymous visitors may create, updates, logs, and what to do when something looks wrong.
 keywords: security, spam, bots, CAPTCHA, reCAPTCHA, hCaptcha, ezformtoken, form token, registration spam, comment spam, passwords, two-factor, administrator, permissions, updates, logs, hardening, individual

@@ -1,7 +1,7 @@
 ---
 title: Domain name and e-mail
 audience: non-technical, customer
-category: getting-started
+category: plain-language
 order: 45
 summary: Who provides your domain name and your e-mail - not Exponential, but a registrar and a mail provider - why the domain must be in your own name, what DNS changes when you move, and why the site's own e-mails (password resets, form notifications) need working mail.
 keywords: domain name, registrar, DNS, e-mail, mailbox, mail provider, ownership, renewal, outgoing mail, password reset, form notification, non-technical

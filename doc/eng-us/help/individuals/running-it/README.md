@@ -1,7 +1,7 @@
 ---
 title: Running it alone
 audience: individual, customer, website-creator
-category: website-creation
+category: personal-sites
 order: 1640
 summary: The small routines that keep an Exponential site healthy when one person runs it - backups, updates, two-step sign-in, spam and security basics, the optional writing assistant, knowing when to hire help, and learning more through the Student partner level.
 keywords: running a site, upkeep, maintenance, backups, updates, two-factor, security, spam, writing assistant, expai, hire help, partner, Student level, individual, routine

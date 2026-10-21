@@ -1,7 +1,7 @@
 ---
 title: Grant budget worksheet
 audience: non-profit, businesses, project-manager
-category: business-solutions
+category: non-profits
 order: 20
 summary: A fill-in worksheet for the website part of a grant budget - one-off project lines, recurring lines for each year including the years after the grant, optional lines, volunteer time as in-kind, and a summary - with every line explained in the budget lines page and no prices filled in.
 keywords: grant budget worksheet, budget template, website budget, hosting, maintenance, in-kind, volunteer time, recurring costs, one-off costs, treasurer, grant writer

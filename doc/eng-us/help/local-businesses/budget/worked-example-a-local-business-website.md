@@ -1,7 +1,7 @@
 ---
 title: "Worked example: a local business website"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 72
 summary: A three-year cost calculation for an invented local business website on Exponential - setup, hosting, updates, outside services and the owner's time - in which every number is an example assumption in neutral currency units, followed by a simple break-even check and what to change for your business.
 keywords: worked example, cost calculation, example assumptions, break-even, small business, three years, hosting, setup, owner time, local business

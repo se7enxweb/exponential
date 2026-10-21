@@ -1,7 +1,7 @@
 ---
 title: Planning a club site
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1711
 summary: How a volunteer plans a club or hobby group site on Exponential with the committee - purpose, public and members-only parts, who does what, the tree and classes, mail and cron needs, money questions, and a plan that survives the volunteer moving on.
 keywords: club site, planning, committee, volunteers, public, members only, tree, classes, events, newsletter, forms, mail, cron, hosting, budget, handover, continuity

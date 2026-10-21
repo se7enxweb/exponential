@@ -1,7 +1,7 @@
 ---
 title: Accessible campaigns and documents
 audience: non-profit, editor, sales-marketing, government
-category: business-solutions
+category: non-profits
 order: 30
 summary: Making a non-profit's fundraising appeals, campaign landing pages, annual publications, PDFs, videos, images with text and newsletters accessible on Exponential - what to check in a Layouts campaign page, how to publish documents with an HTML alternative, captions, contrast in campaign colors, and a pre-launch campaign test.
 keywords: accessible campaigns, landing pages, Layouts, PDFs, documents, annual publications, captions, video, images of text, contrast, newsletter accessibility, campaign test, fundraising appeal

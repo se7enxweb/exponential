@@ -1,7 +1,7 @@
 ---
 title: Private areas with roles and sections
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1702
 summary: How one person makes a family or member area private on Exponential - how sections and the Anonymous role decide what visitors see, the Restricted section and the Members and Partners groups the default package creates, a private area step by step, a fully private site with RequireUserLogin, and how to test it as a stranger.
 keywords: private area, members only, sections, Restricted section, Standard section, Anonymous role, roles, policies, content/read, user groups, Members, Partners, RequireUserLogin, family site, test as visitor, search engines

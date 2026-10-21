@@ -1,7 +1,7 @@
 ---
 title: Opening hours without a special datatype
 audience: local-business, businesses, customer, website-creator
-category: business-solutions
+category: local-business
 order: 32
 summary: Exponential has no opening-hours datatype; three ways to model opening hours with what ships - a text block in one shared object, a small opening hours class with time and matrix fields, or a table in rich text - with the trade-offs, the fields to use and how to show the hours in the footer and on the contact page.
 keywords: opening hours, business hours, no datatype, eztime, ezmatrix, eztext, content class, footer, contact page, model, local business, restaurant, shop

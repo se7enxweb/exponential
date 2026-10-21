@@ -1,7 +1,7 @@
 ---
 title: Backups and updates routine
 audience: non-profit, admin, hosting, businesses
-category: business-solutions
+category: non-profits
 order: 50
 summary: The short routine that keeps a non-profit's Exponential site from expensive failures - backups of the database and storage with a tested restore (sqlite3 .backup for SQLite), applying Exponential, extension and PHP updates on a copy first, cron, logs, the upgrade check, and a calendar with a name next to each task.
 keywords: backups, restore test, sqlite3 .backup, storage, updates, upgrades, PHP updates, security fixes, cron, logs, log viewer, upgrade check, maintenance mode, routine, calendar, non-profit

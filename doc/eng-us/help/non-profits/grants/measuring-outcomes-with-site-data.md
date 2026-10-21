@@ -1,7 +1,7 @@
 ---
 title: Measuring outcomes with site data
 audience: non-profit, businesses, project-manager, admin
-category: business-solutions
+category: non-profits
 order: 60
 summary: What an Exponential site counts by itself (form submissions, newsletter subscriptions, view counts, search statistics, shop figures, the audit trail), what is off by default and must be switched on before the period you report on, what needs an analytics service such as bcwebsitestatistics, and the consent questions that come with it.
 keywords: measuring, metrics, outcomes, KPIs, view counts, search statistics, LogSearchStats, updateviewcount, analytics, bcwebsitestatistics, consent, audit trail, non-profit

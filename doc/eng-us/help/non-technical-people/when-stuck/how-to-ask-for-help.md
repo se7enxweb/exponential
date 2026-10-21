@@ -1,7 +1,7 @@
 ---
 title: How to ask for help
 audience: non-technical, editor, user, customer
-category: getting-started
+category: plain-language
 order: 53
 summary: How a non-technical person asks for help with an Exponential site so it gets fixed fast - a message template, what never to send, where free community help is, when paid support makes sense, and how a problem in the software itself reaches the project.
 keywords: ask for help, support, describe a problem, message template, community, forums, chat, paid support, bug report, GitHub, what not to send, non-technical

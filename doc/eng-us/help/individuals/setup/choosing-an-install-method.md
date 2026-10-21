@@ -1,7 +1,7 @@
 ---
 title: Choosing an install method for one person
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1631
 summary: Which of Exponential's three install methods suits an individual - the setup wizard for shared hosting without a shell, exp:install for a quick start on your own computer or a small server, the kickstarter for repeatable installs - with the options that matter for a personal site and the mistakes to avoid.
 keywords: install, install method, setup wizard, exp:install, console install, kickstarter, kickstart.ini, SQLite, dry run, shared hosting, FTP, no shell, first install, individual

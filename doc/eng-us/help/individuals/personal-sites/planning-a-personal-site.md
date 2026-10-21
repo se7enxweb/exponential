@@ -1,7 +1,7 @@
 ---
 title: Planning a personal site
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1601
 summary: How to plan a personal site before installing anything - its purpose, its readers, a page list, what you will and will not publish about yourself, the content classes you need and a realistic maintenance rhythm, with a worked example.
 keywords: planning, personal site, purpose, audience, readers, page list, content tree, sitemap, privacy, personal information, classes, rhythm, worksheet

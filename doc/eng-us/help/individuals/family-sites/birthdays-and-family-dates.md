@@ -1,7 +1,7 @@
 ---
 title: Birthdays and family dates
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1704
 summary: What Exponential offers for recording birthdays, anniversaries and family gatherings - the birthday extension's ezbirthday datatype, which stores a date of birth and nothing more, the Event and Event calendar classes for gatherings, what is not available (no reminders, no greeting mails), and the privacy of dates of birth.
 keywords: birthday, ezbirthday, birthday extension, date of birth, anniversaries, family dates, event, event calendar, reminders, greetings, CSV export, xrowextract, privacy, family site

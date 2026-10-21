@@ -1,7 +1,7 @@
 ---
 title: "Maps and hours: where and when you are open"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 30
 summary: The pages for showing a local business's location and opening hours on an Exponential site - the ezgmaplocation datatype and the layouts map block, API keys and privacy, modeling opening hours without a special datatype, holiday and seasonal hours, and several locations.
 keywords: map, location, ezgmaplocation, map block, Google Maps, OpenStreetMap, API key, opening hours, holiday hours, seasonal hours, several locations, branches

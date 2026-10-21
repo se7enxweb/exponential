@@ -1,7 +1,7 @@
 ---
 title: Photos that sell
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 63
 summary: Photos for a local business website - what to photograph, taking them with a phone, uploading one or many at once, how Exponential makes sized variations automatically, file formats, alternative texts, permission from people in the picture, and a photo checklist.
 keywords: photos, images, image variations, aliases, upload, multi-upload, ezmultiupload, image editor, ezie, alternative text, WebP, file formats, permission, local business

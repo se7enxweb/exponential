@@ -1,7 +1,7 @@
 ---
 title: When you are stuck
 audience: non-technical, editor, user, customer
-category: getting-started
+category: plain-language
 order: 50
 summary: What a non-technical person does when something in Exponential looks wrong - check whether it is an error at all, read the message, know who to call and describe the problem so it gets fixed fast.
 keywords: stuck, problem, error, something wrong, help, who to call, report, describe a problem, non-technical

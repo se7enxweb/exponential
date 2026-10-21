@@ -1,7 +1,7 @@
 ---
 title: The writing assistant
 audience: individual, customer, editor
-category: website-creation
+category: personal-sites
 order: 1644
 summary: What Exponential Intelligence (expai) can do for one person writing a blog, a portfolio or a club site - drafts only, never publishing; what it needs (a provider key or a local model, set up in the settings); where your text goes; costs and limits; and when not to use it, for example on private family content.
 keywords: writing assistant, Exponential Intelligence, expai, AI, drafts, provider key, API key, Anthropic, OpenAI-compatible, Ollama, local model, alt text, costs, limits, privacy, data policy, individual

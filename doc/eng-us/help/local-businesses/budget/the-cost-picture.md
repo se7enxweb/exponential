@@ -1,7 +1,7 @@
 ---
 title: The cost picture
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 71
 summary: Every cost line of a small business website on Exponential - one-time setup, yearly hosting, updates and support, outside services, your own time, and the extras of a shop - with what makes each line bigger or smaller, and no invented prices.
 keywords: cost, budget, setup cost, hosting cost, maintenance, support, outside services, own time, shop costs, payment fees, small business, local business

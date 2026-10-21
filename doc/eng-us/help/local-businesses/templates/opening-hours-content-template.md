@@ -1,7 +1,7 @@
 ---
 title: Opening hours content template
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 97
 summary: Ready-to-fill texts for opening hours on a local business site - regular hours as a text block or matrix rows, split hours, appointment-only times, holiday and closure notices, seasonal hours and emergency notes - written the same way every time and easy to translate.
 keywords: opening hours template, business hours text, notice template, holiday notice, closure notice, seasonal hours, matrix, text block, local business

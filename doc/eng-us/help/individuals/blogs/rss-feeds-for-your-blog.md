@@ -1,7 +1,7 @@
 ---
 title: RSS feeds for your blog
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1625
 summary: How one person gives a blog an RSS or Atom feed with the built-in RSS exports under Setup > RSS - sources, field mapping, format, the feed address, autodiscovery, podcasts, the optional autorss extension, and why the syndication extension is something else.
 keywords: RSS, Atom, feed, RSS export, Setup RSS, rss/feed, autodiscovery, feed reader, podcast, autorss, syndication, blog, subscribe

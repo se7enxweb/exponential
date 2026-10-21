@@ -1,7 +1,7 @@
 ---
 title: Making a page with Layouts
 audience: non-technical, editor
-category: getting-started
+category: plain-language
 order: 31
 summary: Arrange a page with Exponential Layouts in plain steps - open a layout, add a block by dragging it into a zone, fill in its content, move or delete it, and publish - for sites that use Layouts, with what to leave to a site builder.
 keywords: layouts, page builder, drag and drop, block, zone, landing page, publish layout, draft, discard, beginner

@@ -1,7 +1,7 @@
 ---
 title: Three ways to get a site
 audience: non-technical, customer
-category: getting-started
+category: plain-language
 order: 41
 summary: The three realistic ways for a non-technical person to get an Exponential site - managed hosting, a host together with a developer, or an Exponential Partner - what each one means for your time, your money and your risk, and how to choose.
 keywords: get a site, managed hosting, shared hosting, developer, freelancer, partner, 7x, hosting partner, implementation partner, choose, non-technical

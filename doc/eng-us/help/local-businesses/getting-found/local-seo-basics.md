@@ -1,7 +1,7 @@
 ---
 title: Local SEO basics
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 21
 summary: What search engines need from the website of a local business - name, address and phone the same everywhere, the town and trade in titles and text, one page per service, a contact page, fast pages on phones - with the Exponential feature behind each step and a checklist.
 keywords: local SEO, local search, name address phone, NAP, title, description, service pages, town, location page, sitemap, mobile, page speed, checklist

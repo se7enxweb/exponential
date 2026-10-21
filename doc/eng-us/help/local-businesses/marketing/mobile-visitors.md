@@ -1,7 +1,7 @@
 ---
 title: Mobile visitors
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 65
 summary: What visitors on phones need from a local business site - the five facts at the top, a dialable phone number, a directions link, readable hours, fast pages, forms that work with a thumb - what the responsive default design gives, and a test any owner can run on their own phone.
 keywords: mobile, phones, responsive design, sevenx_themes_simple, click to call, directions, page speed, mobile forms, test plan, local business

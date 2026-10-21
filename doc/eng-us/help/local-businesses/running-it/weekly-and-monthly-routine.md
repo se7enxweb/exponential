@@ -1,7 +1,7 @@
 ---
 title: Weekly and monthly routine
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 81
 summary: A website routine sized for a busy local business owner - fifteen minutes a week (hours, specials, messages, a look at the front page), an hour a month (form test, search terms, links, photos, platforms), and a yearly review with the host or partner - with tick boxes.
 keywords: routine, weekly checklist, monthly checklist, yearly review, maintenance, opening hours, specials, form test, search statistics, broken links, local business

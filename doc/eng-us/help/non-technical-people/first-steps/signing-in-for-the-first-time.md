@@ -1,7 +1,7 @@
 ---
 title: Signing in for the first time
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 21
 summary: Sign in to the Exponential administration or Editor for the first time, step by step in plain words - the address, the form, two-step sign-in, a forgotten password - and what each message means if it does not work.
 keywords: sign in, log in, first time, address, username, password, e-mail, two-step, forgot password, locked, cookies, sign out, beginner

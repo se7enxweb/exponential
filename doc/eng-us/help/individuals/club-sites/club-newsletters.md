@@ -1,7 +1,7 @@
 ---
 title: Club newsletters
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1713
 summary: How a volunteer sends a club newsletter with the cjw_newsletter extension that ships with Exponential - lists, double opt-in subscriptions, writing an edition, test sends, sending by cron, bounces and unsubscribes, what the server must provide, and what the extension does not do.
 keywords: newsletter, club newsletter, cjw_newsletter, mailing list, subscribe, double opt-in, unsubscribe, edition, test send, cron, mail delivery, SMTP, bounces, blacklist, archive, consent

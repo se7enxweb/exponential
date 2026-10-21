@@ -1,7 +1,7 @@
 ---
 title: "Local businesses: start here"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 1
 summary: The landing page for small and single-location businesses - shops, restaurants, cafes, trades, salons and practices - that want a website people find, trust and use, with a realistic cost picture, local search, maps, opening hours, a simple shop, contact forms, newsletters and a plain list of what needs an outside service.
 keywords: local business, small business, single location, shop, restaurant, cafe, trades, salon, practice, local SEO, map, opening hours, contact form, simple shop, newsletter, budget, partner, freelancer, start here

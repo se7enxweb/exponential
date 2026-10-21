@@ -1,7 +1,7 @@
 ---
 title: Sharing the work with volunteers
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1716
 summary: How the one volunteer who runs a club site on Exponential stops being the only one - roles for editors and a deputy administrator, approval before publishing, a small handbook, two-step sign-in, and a handover that works when volunteers change.
 keywords: volunteers, sharing work, editors, roles, Editor role, deputy, approval workflow, handbook, handover, continuity, two-factor, passwords, club, committee, bus factor

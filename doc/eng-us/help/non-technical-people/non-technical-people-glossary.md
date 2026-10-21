@@ -1,7 +1,7 @@
 ---
 title: Glossary for non-technical people
 audience: non-technical, editor, customer, user
-category: getting-started
+category: plain-language
 order: 2
 summary: Every word you meet in the Exponential administration and in conversations with a host or developer, explained in one or two plain sentences, grouped by where you meet it, with a link to the page that explains more.
 keywords: glossary, words, vocabulary, plain language, definitions, content item, object, draft, version, publish, trash, section, role, cache, extension, hosting, domain, HTTPS, backup, update, siteaccess, layout, block

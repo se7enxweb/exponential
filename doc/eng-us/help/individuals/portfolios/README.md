@@ -1,7 +1,7 @@
 ---
 title: Portfolios
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1610
 summary: The section for photographers, illustrators, designers and other makers who show their work on Exponential - galleries, uploading many images at once, editing images in the browser with ezie, image variations, and the limits to know about.
 keywords: portfolio, gallery, photography, illustration, artwork, images, image variations, ezie, image editor, ezmultiupload, multi-upload, watermark, rating, ezstarrating, tags, individual

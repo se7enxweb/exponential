@@ -1,7 +1,7 @@
 ---
 title: Inviting family members
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1703
 summary: How one person gives relatives access to a private family site on Exponential - creating accounts yourself or letting relatives register, placing them in the right group, first sign-in and password reset, help for less technical relatives, two-step sign-in, and disabling an account quietly.
 keywords: invite, family members, relatives, accounts, create user, registration, user group, DefaultUserPlacement, activation mail, password, forgot password, disable account, two-factor, family site

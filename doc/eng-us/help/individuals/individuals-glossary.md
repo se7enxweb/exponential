@@ -1,7 +1,7 @@
 ---
 title: Individuals glossary
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1503
 summary: The words you meet when you run a personal site, portfolio, blog, family site or club site on Exponential, each explained in one or two plain sentences with a link to the page that explains it in full.
 keywords: glossary, words, terms, individual, class, object, node, section, role, siteaccess, site package, theme, image variation, alias, RSS export, SQLite, Velocity, cron, DNS, HTTPS, two-factor

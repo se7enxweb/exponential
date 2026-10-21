@@ -1,7 +1,7 @@
 ---
 title: Comments on your blog
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1623
 summary: How comments work on an Exponential blog - the shipped Comment class, the enable comments checkbox, who may comment by default, how to restrict comments to signed-in readers, holding comments for review, fighting spam, and what is not available (no ezcomments, no threads).
 keywords: comments, Comment class, enable_comments, blog comments, anonymous comments, moderation, approval, spam, CAPTCHA, hCaptcha, reCAPTCHA, form token, ezcomments, permissions, content/create, personal data

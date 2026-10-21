@@ -1,7 +1,7 @@
 ---
 title: What you never have to do
 audience: non-technical, customer, editor
-category: getting-started
+category: plain-language
 order: 6
 summary: The technical jobs around an Exponential site - installing, updating, backups, the domain, HTTPS, templates, extensions and the command line - who does each of them for you, and what you ask for so you know it was done.
 keywords: no command line, no code, who does what, installation, updates, backups, domain, HTTPS, templates, extensions, Composer, host, developer, partner, division of work

@@ -1,7 +1,7 @@
 ---
 title: Accessibility checklist in plain words
 audience: non-technical, editor, customer
-category: getting-started
+category: plain-language
 order: 65
 summary: What editors and owners of an Exponential site can do for visitors with disabilities without any technical knowledge - alternative texts, headings, link texts, plain language, documents, color and video - and what belongs to the designer or developer.
 keywords: accessibility, checklist, alternative text, headings, link text, plain language, PDF, color, contrast, video captions, screen reader, non-technical

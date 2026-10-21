@@ -1,7 +1,7 @@
 ---
 title: External donation platform, step by step
 audience: non-profit, businesses, editor, website-creator
-category: business-solutions
+category: non-profits
 order: 30
 summary: Building the simplest donation route on an Exponential site - choosing a donation platform, a Donate page, a Donate button in the header or with the Layouts Button block, links from campaign pages, telling donors they leave the site, the privacy notice, a return thank-you page, embedding only what your Content Security Policy allows, and testing.
 keywords: external donation platform, donate button, donate page, link, Layouts button block, ezurl, embed, iframe, Content Security Policy, thank-you page, privacy notice, testing

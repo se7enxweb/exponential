@@ -1,7 +1,7 @@
 ---
 title: Backups, updates and security
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 83
 summary: What the owner of a local business must know about the safety of an Exponential site without being technical - backups and a yearly restore test, keeping Exponential updated, HTTPS, accounts and two-step sign-in, roles for staff, what to do when staff come and go, and when something goes wrong.
 keywords: backups, restore, updates, security, HTTPS, accounts, passwords, two-factor, two-step sign-in, roles, staff, offboarding, incident, local business

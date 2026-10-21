@@ -1,7 +1,7 @@
 ---
 title: Volunteer sign-up form, step by step
 audience: non-profit, website-creator, editor, businesses
-category: business-solutions
+category: non-profits
 order: 20
 summary: Building a volunteer sign-up form in Exponential from start to finish - a class with information collector attributes, the form object on a Volunteer page, the receiver and mail, a redirect to a thank-you page, a CAPTCHA, optional file uploads with enhancedezbinaryfile, the text next to the form, and the tests to run logged out.
 keywords: volunteer form, sign-up form, information collector, class, attributes, feedback_form, receiver, recipient, EmailReceiver, collect.ini, Display=redirect, thank-you page, CAPTCHA, enhancedezbinaryfile, testing

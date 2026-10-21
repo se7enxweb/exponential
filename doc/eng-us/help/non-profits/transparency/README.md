@@ -1,7 +1,7 @@
 ---
 title: Transparency for non-profits
 audience: non-profit, government, businesses, editor
-category: business-solutions
+category: non-profits
 order: 10
 summary: How a non-profit uses its Exponential site to be open about money, governance and decisions - annual publications and financial documents as downloads, board and minutes pages, version history and the tamper-evident audit trail as accountability, and open data through RSS feeds, exports and the REST API - with what the software provides and what remains your own process.
 keywords: transparency, accountability, annual publications, financial statements, 501(c)(3), charity filings, board, minutes, governance, versions, audit trail, open data, RSS, REST API, trust

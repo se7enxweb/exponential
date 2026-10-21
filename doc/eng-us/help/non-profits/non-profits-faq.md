@@ -1,7 +1,7 @@
 ---
 title: Non-profits FAQ
 audience: non-profit, businesses, government
-category: business-solutions
+category: non-profits
 order: 90
 summary: Short answers, each with its source, to the questions directors, fundraisers, volunteer coordinators and treasurers of non-profits ask about running their site on Exponential - cost, donations, grants, volunteers, accessibility, transparency, newsletters, events, languages, hosting, data protection and partners.
 keywords: FAQ, questions, non-profit, charity, cost, license fee, donations, donate button, recurring giving, grants, volunteers, accessibility, annual report, minutes, newsletter, events, languages, hosting, SQLite, Velocity, GDPR, partner discount

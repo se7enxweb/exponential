@@ -1,7 +1,7 @@
 ---
 title: Grant outcomes for funders
 audience: non-profit, businesses, project-manager, editor
-category: business-solutions
+category: non-profits
 order: 50
 summary: How a non-profit turns what its Exponential site records into the outcome section a funder asks for at the end of a grant - collecting figures from collected information, newsletter lists, view counts, search statistics and the audit trail, exporting them without exposing personal data, and an outline with a place for each piece of evidence.
 keywords: grant outcomes, outcome statement, evidence, figures, CSV export, collected information, newsletter subscribers, view counts, audit trail, funder, impact

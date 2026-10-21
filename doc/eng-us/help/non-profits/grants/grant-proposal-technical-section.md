@@ -1,7 +1,7 @@
 ---
 title: The technical section of a grant proposal
 audience: non-profit, businesses, project-manager, sales-marketing
-category: business-solutions
+category: non-profits
 order: 30
 summary: How to write the technology part of a grant proposal for an Exponential website in plain language a reviewer understands - platform, license and ownership, hosting, accessibility, data protection, languages and sustainability - with sentences you can adapt and the source page that backs each claim.
 keywords: grant proposal, technical section, platform description, open source, GPL, sustainability, hosting, accessibility, data protection, languages, reviewer, funder

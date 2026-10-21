@@ -1,7 +1,7 @@
 ---
 title: Hosting choices
 audience: non-technical, customer
-category: getting-started
+category: plain-language
 order: 40
 summary: How a non-technical person gets an Exponential site running without doing the technical part - the three ways to get a site, what a host does, what to ask before signing, how to compare costs, the domain name and e-mail, and moving to a new host.
 keywords: hosting choices, host, managed hosting, partner, developer, freelancer, costs, contract, domain, e-mail, moving host, non-technical

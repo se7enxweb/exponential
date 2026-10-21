@@ -1,7 +1,7 @@
 ---
 title: Events and calendars for non-profits
 audience: non-profit, businesses, editor, website-creator
-category: business-solutions
+category: non-profits
 order: 30
 summary: What a non-profit can do with events on Exponential - the event, event_calendar and multicalendar classes shipped as ezwebin packages, calendar and program views, public and volunteers-only events, sign-up with an information collector form, maps with ezgmaplocation, announcing events, paid tickets through the shop - and the plain list of what is not built in (ticketing with seat limits, iCal export, recurring events, reminders).
 keywords: events, event calendar, multicalendar, ezwebin, event class, from_time, to_time, calendar view, program view, sign-up form, fundraising event, volunteers-only events, ezgmaplocation, map, tickets, iCal, recurring events

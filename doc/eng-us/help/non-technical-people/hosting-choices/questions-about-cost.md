@@ -1,7 +1,7 @@
 ---
 title: Questions about cost
 audience: non-technical, customer
-category: getting-started
+category: plain-language
 order: 44
 summary: What an Exponential site costs a non-technical owner, without invented prices - the cost lines, what you never pay for, how to compare two offers fairly, a simple yearly budget worksheet and the warning signs in an offer.
 keywords: cost, price, budget, hosting fee, maintenance, no license fee, compare offers, worksheet, yearly budget, hidden costs, non-technical

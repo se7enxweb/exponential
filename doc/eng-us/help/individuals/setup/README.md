@@ -1,7 +1,7 @@
 ---
 title: Setup for individuals
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1630
 summary: The setup decisions one person makes for a personal site, portfolio, blog, family site or club site on Exponential, in order - install method, site package and theme, a small budget, shared hosting or a small server, and the domain name and HTTPS that are arranged outside Exponential.
 keywords: setup, install, install method, setup wizard, exp:install, kickstarter, site package, theme, budget, SQLite, Velocity, shared hosting, VPS, domain, DNS, HTTPS, certificate

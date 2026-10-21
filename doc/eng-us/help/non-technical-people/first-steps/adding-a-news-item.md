@@ -1,7 +1,7 @@
 ---
 title: Adding a news item
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 24
 summary: Create a new article in Exponential - a news item, a blog post or an announcement - in the right folder, with a title, an introduction, the text and a picture, and publish it now or keep it for later.
 keywords: add news, new article, create new, blog post, announcement, news folder, title, intro, body, picture, publish, beginner

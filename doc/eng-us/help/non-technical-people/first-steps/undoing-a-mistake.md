@@ -1,7 +1,7 @@
 ---
 title: Undoing a mistake
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 28
 summary: Every way to undo a mistake in Exponential, in plain steps - discard a draft, go back to an earlier version, compare versions, restore a removed item from the trash - and the few things that cannot be undone.
 keywords: undo, mistake, go back, earlier version, previous version, restore, trash, discard draft, compare versions, manage versions, cannot be undone, beginner

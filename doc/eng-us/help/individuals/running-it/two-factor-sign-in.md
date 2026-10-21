@@ -1,7 +1,7 @@
 ---
 title: Two-factor sign-in
 audience: individual, customer, website-creator
-category: website-creation
+category: personal-sites
 order: 1643
 summary: How one person protects the administrator account and the accounts of relatives or club volunteers with two-step sign-in from sevenx_authentication_2fa - authenticator app or code by mail, setting it up, making it optional or required, a lost phone, and the settings involved.
 keywords: two-factor, two-step sign-in, 2FA, TOTP, authenticator app, e-mail code, sevenx_authentication_2fa, Enforce2FA, user2fa, lost phone, account security, administrator, individual

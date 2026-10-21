@@ -1,7 +1,7 @@
 ---
 title: Non-profit data protection checklist
 audience: non-profit, businesses, admin, government
-category: business-solutions
+category: non-profits
 order: 50
 summary: A data protection checklist for a non-profit's Exponential site, to work through at launch, yearly and whenever a form or service is added - inventory, minimization, access and two-factor login, retention and deletion, consent for newsletters, processors in the privacy notice, requests from people, exports and backups, and incidents. Basics, not legal advice.
 keywords: data protection checklist, privacy checklist, GDPR, inventory, minimization, access, two-factor login, retention, deletion, consent, double opt-in, processors, privacy notice, requests, exports, backups, incidents, non-profit

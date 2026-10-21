@@ -1,7 +1,7 @@
 ---
 title: A personal site in a weekend
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1602
 summary: A step-by-step weekend plan for one person to build a small personal site on Exponential - install on your own computer with SQLite, create the pages, add images and a contact form, adjust the look, and prepare the move to a host.
 keywords: weekend, step by step, personal site, first site, install, SQLite, exp:install, pages, images, contact form, theme, publish, go live

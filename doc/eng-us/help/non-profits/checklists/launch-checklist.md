@@ -1,7 +1,7 @@
 ---
 title: Non-profit launch checklist
 audience: non-profit, businesses, project-manager, website-creator
-category: business-solutions
+category: non-profits
 order: 20
 summary: The checklist a non-profit works through before its Exponential site goes live - ownership and access, hosting, HTTPS and cron, backups with a tested restore, donations, volunteer and contact forms, newsletter, accessibility, transparency pages, privacy notice and data protection, editors trained, measurements switched on, and sign-off.
 keywords: launch checklist, go-live, relaunch, ownership, hosting, HTTPS, cron, backups, restore test, donations, forms, CAPTCHA, newsletter, accessibility, privacy notice, training, measurements, sign-off, non-profit

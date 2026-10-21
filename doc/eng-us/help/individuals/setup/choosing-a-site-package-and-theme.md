@@ -1,7 +1,7 @@
 ---
 title: Choosing a site package and theme
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1632
 summary: Which site package and theme an individual should start from on Exponential - the default sevenx_multisite and its clean variant, the simpler sevenx_site, the older ezwebin, ezflow and ezdemo packages, the themes behind them including sevenx_themes_simple and sevenx_themes_media, and how much you can change without programming.
 keywords: site package, theme, design, sevenx_multisite, sevenx_multisite_clean, sevenx_site, ezwebin, ezflow, ezdemo, plain_site, sevenx_themes_simple, sevenx_themes_media, look and feel, branding, templates, individual

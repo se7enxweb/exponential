@@ -1,7 +1,7 @@
 ---
 title: Building an image gallery
 audience: individual, website-creator, editor
-category: website-creation
+category: personal-sites
 order: 1611
 summary: Step by step, how one person builds a portfolio gallery with the shipped Gallery and Image classes - the tree, the cover image, captions and alternative text, sort order, tags and ratings, and what to check before showing it to anyone.
 keywords: gallery, image gallery, portfolio, Gallery class, Image class, caption, alternative text, cover image, sort order, tags, rating, ezstarrating, series, photography

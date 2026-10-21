@@ -1,7 +1,7 @@
 ---
 title: Working with a local partner or freelancer
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 14
 summary: How a small business finds and works with a local partner or freelancer for an Exponential website - what to ask before hiring, what to get in writing, the accounts and files you keep yourself, the handover, and a request template to send.
 keywords: partner, freelancer, agency, web designer, hiring, quote, contract, handover, accounts, passwords, ownership, local business

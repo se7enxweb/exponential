@@ -1,7 +1,7 @@
 ---
 title: Domain names and HTTPS
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1635
 summary: What an individual arranges outside Exponential to give a site its own address and the lock in the browser - buying a domain from a registrar, pointing DNS at the server, telling Exponential its address, getting a certificate from the host or through Velocity's Let's Encrypt support, mail records, and renewals.
 keywords: domain name, registrar, DNS, A record, AAAA record, CNAME, nameserver, HTTPS, TLS, certificate, Let's Encrypt, Velocity, SiteURL, siteaccess, host, mail, SPF, renewal, individual

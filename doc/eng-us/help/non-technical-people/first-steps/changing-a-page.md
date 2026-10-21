@@ -1,7 +1,7 @@
 ---
 title: Changing a page
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 23
 summary: Change the text of an existing page in Exponential and publish it, in numbered steps without jargon - find the page, press Edit, change a field, preview, publish or keep as draft - with what to do when the form will not publish.
 keywords: change a page, edit, update text, publish, send for publishing, store draft, discard draft, preview, required field, rich text, beginner

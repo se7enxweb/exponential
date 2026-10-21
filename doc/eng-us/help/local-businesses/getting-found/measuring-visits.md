@@ -1,7 +1,7 @@
 ---
 title: Measuring visits
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 27
 summary: How a small business finds out whether the website brings customers - what Exponential records by itself (site search terms, view counts, shop statistics, form submissions), adding an analytics service with bcwebsitestatistics, privacy and consent, and five numbers worth watching.
 keywords: analytics, statistics, visits, bcwebsitestatistics, Google Analytics, search statistics, form submissions, shop statistics, privacy, consent, measuring, local business

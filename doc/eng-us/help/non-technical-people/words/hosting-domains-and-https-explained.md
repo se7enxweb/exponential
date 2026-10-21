@@ -1,7 +1,7 @@
 ---
 title: Hosting, domains and HTTPS explained
 audience: non-technical, customer
-category: getting-started
+category: plain-language
 order: 17
 summary: The three things every website needs besides Exponential - a server to run on, a domain name to be found at and HTTPS for the padlock - explained with a house comparison, who provides each, how they connect, and what to keep in your own hands.
 keywords: hosting, host, server, domain name, registrar, DNS, HTTPS, certificate, padlock, e-mail, database, SQLite, explained, ownership

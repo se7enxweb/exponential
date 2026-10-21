@@ -1,7 +1,7 @@
 ---
 title: Reading path for non-technical people
 audience: non-technical, editor, customer, user
-category: getting-started
+category: plain-language
 order: 4
 summary: Every page of the non-technical people section in a sensible order, in three tracks - for people who edit, for people who own or pay for a site, and for people who do not have a site yet - with the time each step takes.
 keywords: reading path, order, learning path, track, editor, owner, new site, beginner, non-technical

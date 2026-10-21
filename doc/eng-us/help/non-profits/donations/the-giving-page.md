@@ -1,7 +1,7 @@
 ---
 title: The giving page
 audience: non-profit, businesses, editor
-category: business-solutions
+category: non-profits
 order: 50
 summary: What a non-profit's donation page on an Exponential site should say and show - purpose, a concrete example, the button above the fold and at the end, who you are, where the money goes with a link to the annual publications, other ways to give, privacy and accessibility - with a page outline, writing tips and a checklist editors can use.
 keywords: giving page, donate page, donation page, fundraising copy, call to action, button, trust, annual publications, other ways to give, bank transfer, accessibility, editor

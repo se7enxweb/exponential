@@ -1,7 +1,7 @@
 ---
 title: "Marketing for local businesses"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 60
 summary: The pages for bringing customers back and drawing new ones with an Exponential site - events and specials, newsletters with cjw_newsletter, photos that show your work, a second or third language for visitors from abroad, and making the site work on phones.
 keywords: marketing, events, specials, offers, newsletter, cjw_newsletter, photos, images, multilingual, tourists, mobile, phones, local business

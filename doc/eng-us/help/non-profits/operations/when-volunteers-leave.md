@@ -1,7 +1,7 @@
 ---
 title: When volunteers leave
 audience: non-profit, admin, businesses, editor
-category: business-solutions
+category: non-profits
 order: 60
 summary: What a non-profit does on its Exponential site when a volunteer, staff member or board member leaves - deactivating the account (Check user accounts, and the opt-in Deactivate and move), removing group membership, changing content ownership, handing over passwords and knowledge, reading the audit trail, and a checklist - so the site never depends on one person.
 keywords: offboarding, volunteer leaves, account deactivation, Check user accounts, Deactivate and move, user hygiene, group membership, content owner, handover, administrator password, audit trail, knowledge transfer

@@ -1,7 +1,7 @@
 ---
 title: Tags and categories
 audience: individual, website-creator, editor
-category: website-creation
+category: personal-sites
 order: 1624
 summary: How one person organizes blog posts and portfolio items by topic on Exponential - folders as categories, the keyword field (ezkeyword) the shipped classes use for tags, the eztags extension for a controlled vocabulary, and the habits that keep a tag list useful for years.
 keywords: tags, categories, keywords, ezkeyword, eztags, folders, topics, taxonomy, vocabulary, blog, portfolio, archive, navigation

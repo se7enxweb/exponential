@@ -1,7 +1,7 @@
 ---
 title: Image variations for portfolios
 audience: individual, website-creator
-category: website-creation
+category: personal-sites
 order: 1614
 summary: What image variations (aliases) are, which ones ship in settings/image.ini, how a portfolio uses them for thumbnails, gallery views and large views, how to add a larger alias for your work, quality and formats, and what to do after changing one.
 keywords: image variations, image alias, image.ini, reference, small, medium, large, original, thumbnails, quality, WebP, responsive images, portfolio, ImageMagick, GD, cache

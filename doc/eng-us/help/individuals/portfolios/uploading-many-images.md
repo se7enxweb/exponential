@@ -1,7 +1,7 @@
 ---
 title: Uploading many images
 audience: individual, editor, website-creator
-category: website-creation
+category: personal-sites
 order: 1612
 summary: How to bring dozens or hundreds of images into a portfolio at once with the multi-upload page of ezmultiupload - which classes offer it, which file types a gallery accepts, the ZIP import, preparing files first, and the work that remains after the upload.
 keywords: multi-upload, ezmultiupload, upload many files, bulk upload, ZIP import, gallery, folder, file types, image size, file names, alternative text, portfolio

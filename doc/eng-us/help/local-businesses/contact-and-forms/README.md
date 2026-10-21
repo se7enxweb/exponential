@@ -1,7 +1,7 @@
 ---
 title: "Contact and forms for local businesses"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 50
 summary: The pages for how customers reach a local business through its Exponential site - a contact form with the information collector, spam protection with form tokens, reCAPTCHA or hCaptcha, quote and request forms, star ratings and comments, and handling messages with care for privacy.
 keywords: contact form, information collector, feedback form, spam, CAPTCHA, recaptcha, hcaptcha, ezformtoken, quote request, ratings, ezstarrating, comments, privacy, local business

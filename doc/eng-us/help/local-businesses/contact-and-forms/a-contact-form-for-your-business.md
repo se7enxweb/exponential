@@ -1,7 +1,7 @@
 ---
 title: A contact form for your business
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 51
 summary: A contact form for a local business on Exponential from the owner's side - the fields worth asking for, where the mail goes, the thank-you page, what the builder sets up with the information collector, testing it logged out, and keeping it working.
 keywords: contact form, feedback form, information collector, EmailReceiver, thank you page, fields, mail delivery, test, local business

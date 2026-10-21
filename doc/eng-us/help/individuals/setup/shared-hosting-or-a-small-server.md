@@ -1,7 +1,7 @@
 ---
 title: Shared hosting or a small server
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1634
 summary: Where one person's Exponential site should run - shared hosting with Apache or LiteSpeed and the setup wizard, a small virtual server with Velocity or PHP-FPM, or a machine at home - what works where according to the project's sources, what to ask a host, and the work each choice leaves to you.
 keywords: shared hosting, VPS, virtual server, small server, home server, Velocity, Apache, LiteSpeed, nginx, PHP-FPM, .htaccess, cron, mail, shell, FTP, hosting questions, individual

@@ -1,7 +1,7 @@
 ---
 title: "Getting started: local business websites"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 10
 summary: The first decisions for a small or single-location business planning a website on Exponential - what the site needs, which pages to plan, whether to do it yourself or hire help, working with a local partner or freelancer, and choosing hosting.
 keywords: local business, getting started, planning, pages, do it yourself, freelancer, partner, hosting, small business website

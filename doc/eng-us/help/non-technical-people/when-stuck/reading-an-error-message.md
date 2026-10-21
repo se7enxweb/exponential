@@ -1,7 +1,7 @@
 ---
 title: Reading an error message
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 52
 summary: What the messages of Exponential mean in plain words - permission messages that are not errors, "not found", edit conflicts, form messages, and real errors with an ERR reference - and exactly what to note and pass on.
 keywords: error message, ERR reference, access denied, not found, could not be displayed, something went wrong, form error, what it means, non-technical

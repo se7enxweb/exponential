@@ -1,7 +1,7 @@
 ---
 title: Holiday and seasonal hours
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 33
 summary: Holiday closures, summer hours and other exceptions on a local business site - edited by hand, prepared in advance with scheduled publishing and hiding at a date, shown as a notice, and kept in step with outside listings - with a yearly planner.
 keywords: holiday hours, seasonal hours, closed, public holiday, summer hours, notice, scheduled publishing, wait until date, hide at a date, layout rule, local business

@@ -1,7 +1,7 @@
 ---
 title: First steps
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 20
 summary: Short how-tos in plain language for the everyday jobs in the Exponential administration - sign in, find your way, change a page, add news, pictures, documents and links, undo, hide, search, build a page with Layouts, use the writing assistant, protect your account and translate.
 keywords: first steps, how-to, beginner, sign in, change a page, add news, add a picture, add a document, add a link, undo, hide, remove, search, layouts, writing assistant, password, two-step sign-in, translate

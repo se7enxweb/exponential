@@ -1,7 +1,7 @@
 ---
 title: FAQ for non-technical people
 audience: non-technical, editor, customer, user
-category: getting-started
+category: plain-language
 order: 3
 summary: Short, plain answers to the questions non-technical people ask most about Exponential - whether they can break the site, whether they need to code, what it costs, who installs it, what happens when they make a mistake, and where to get help.
 keywords: FAQ, questions, answers, beginner, break the site, code, cost, install, mistake, help, non-technical

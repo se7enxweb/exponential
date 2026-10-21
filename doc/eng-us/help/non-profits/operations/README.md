@@ -1,7 +1,7 @@
 ---
 title: Operations for non-profits
 audience: non-profit, businesses, admin, hosting
-category: business-solutions
+category: non-profits
 order: 10
 summary: Running a non-profit's Exponential site for years on a small budget - hosting choices, SQLite and Velocity for small teams, protecting donor and volunteer data, a backup and update routine, handling volunteers who leave, and working with a partner (the partner program publishes no non-profit pricing) - with who usually does each job.
 keywords: operations, running costs, hosting, SQLite, Velocity, backups, updates, data protection, donor data, volunteer data, offboarding, partner, maintenance, small team, non-profit

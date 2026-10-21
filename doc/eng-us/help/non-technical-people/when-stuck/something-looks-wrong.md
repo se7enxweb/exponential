@@ -1,7 +1,7 @@
 ---
 title: Something looks wrong
 audience: non-technical, editor, user, customer
-category: getting-started
+category: plain-language
 order: 51
 summary: A plain-language list of the most common "something looks wrong" situations on an Exponential site - old content, missing pages, grayed-out buttons, a page that will not load, a site that is down - with the likely cause and what you can do yourself before calling anyone.
 keywords: something wrong, old content, page missing, button grayed out, site down, slow, cannot sign in, cannot publish, troubleshooting, non-technical

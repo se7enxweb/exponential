@@ -1,7 +1,7 @@
 ---
 title: Caches explained
 audience: non-technical, editor, customer
-category: getting-started
+category: plain-language
 order: 15
 summary: Why a site keeps ready-made copies of its pages, why that sometimes shows an old page after you published, what you can safely do about it from the browser, and when to ask somebody else - with a bakery comparison.
 keywords: cache, old page, stale page, clear cache, refresh, reload, browser cache, CDN, speed, explained

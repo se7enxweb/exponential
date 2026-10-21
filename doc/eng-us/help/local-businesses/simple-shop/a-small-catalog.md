@@ -1,7 +1,7 @@
 ---
 title: A small catalog
 audience: local-business, businesses, customer, editor
-category: business-solutions
+category: local-business
 order: 42
 summary: Setting up and keeping a small product catalog for a local business with the shipped product class - products, vouchers and gift cards, options such as sizes, photos and descriptions, sold-out and seasonal items, and a product checklist.
 keywords: catalog, products, product class, vouchers, gift cards, options, price, photos, sold out, seasonal products, ezprice, ezoption, local business

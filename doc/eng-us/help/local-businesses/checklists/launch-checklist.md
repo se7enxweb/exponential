@@ -1,7 +1,7 @@
 ---
 title: Launch checklist for a local business website
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 91
 summary: Everything a local business checks before its Exponential website goes public - content and the five basic facts, hours and map, forms and spam protection, search basics, phones, privacy and legal pages, shop if any, accounts, backups and the day after launch.
 keywords: launch checklist, go live, before launch, local business, content, forms, sitemap, robots.txt, mobile, privacy, backups, accounts

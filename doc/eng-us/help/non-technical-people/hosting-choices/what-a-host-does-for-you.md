@@ -1,7 +1,7 @@
 ---
 title: What a host does for you
 audience: non-technical, customer
-category: getting-started
+category: plain-language
 order: 42
 summary: The jobs a hosting company can take off a non-technical person's hands for an Exponential site - server, HTTPS, updates, backups, monitoring, mail - which of them are often not included, and how to find out what your host really does.
 keywords: host, hosting company, what is included, server, HTTPS, updates, backups, monitoring, mail, cron, support, not included, non-technical

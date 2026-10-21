@@ -1,7 +1,7 @@
 ---
 title: Quote and request forms
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 53
 summary: Forms beyond "contact us" for local businesses on Exponential - quote requests for trades, catering and cake orders, callback requests, event and course sign-ups, appointment requests (not bookings) - with the fields to use, the information collector's form types, and where a form is not enough.
 keywords: quote request, request form, callback, catering, custom order, sign-up, appointment request, information collector, poll, feedback, file upload, trades, local business

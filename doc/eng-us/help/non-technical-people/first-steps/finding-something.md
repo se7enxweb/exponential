@@ -1,7 +1,7 @@
 ---
 title: Finding something
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 30
 summary: Find any page, picture or file in the Exponential administration - by words with Search, with Advanced search filters, by its address with the Content finder, or by clicking through the tree - and why a brand-new item may not be found yet.
 keywords: find, search, advanced search, content finder, address, tree, not found, new item, beginner

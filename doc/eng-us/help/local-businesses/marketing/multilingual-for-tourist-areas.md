@@ -1,7 +1,7 @@
 ---
 title: Multilingual for tourist areas
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 64
 summary: A second or third language for a local business in a tourist area - which pages to translate first, how Exponential shows languages and gives each its own addresses, what happens when a translation is missing, who translates, help from Exponential Intelligence for drafts, and keeping hours and notices in every language.
 keywords: multilingual, languages, translation, tourists, visitors, second language, language switcher, siteaccess, language addresses, Exponential Intelligence, local business

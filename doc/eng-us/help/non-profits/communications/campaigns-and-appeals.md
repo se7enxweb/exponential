@@ -1,7 +1,7 @@
 ---
 title: Campaigns and appeals
 audience: non-profit, businesses, editor, sales-marketing
-category: business-solutions
+category: non-profits
 order: 50
 summary: Running a fundraising appeal or awareness campaign on a non-profit's Exponential site - planning one goal and one action, a campaign layout in Exponential Layouts, a layout rule with a time condition that switches it on and off, the warning about mistyped conditions, connecting to donations, volunteers and the newsletter, measuring, and what to do after the campaign.
 keywords: campaign, appeal, fundraising appeal, awareness campaign, Exponential Layouts, layout rule, time condition, landing page, call to action, donate button, newsletter, measuring, archive

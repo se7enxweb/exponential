@@ -1,7 +1,7 @@
 ---
 title: Accessibility basics for non-profits
 audience: non-profit, editor, website-creator, government
-category: business-solutions
+category: non-profits
 order: 20
 summary: The accessibility essentials for a small non-profit team running an Exponential site, in priority order - templates with landmarks, skip link, focus and contrast; alternative text, headings and link texts in content; accessible forms and CAPTCHAs; plain language; testing with the keyboard and an automated checker; and a small routine that keeps the site accessible.
 keywords: accessibility basics, priorities, small team, templates, landmarks, skip link, focus, contrast, alternative text, headings, link text, forms, CAPTCHA, plain language, keyboard testing, axe, routine

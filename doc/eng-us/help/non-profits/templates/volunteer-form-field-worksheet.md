@@ -1,7 +1,7 @@
 ---
 title: Volunteer form field worksheet
 audience: non-profit, businesses, website-creator, editor
-category: business-solutions
+category: non-profits
 order: 30
 summary: A worksheet to design a volunteer sign-up form before anyone builds it - each field with its purpose, datatype, whether it is required, who reads it and how long it is kept - plus the receiver, thank-you page, spam protection, file uploads and the text shown next to the form, ready to hand to the website creator.
 keywords: volunteer form, worksheet, form design, fields, datatype, ezstring, ezemail, ezselection, ezboolean, eztext, enhancedezbinaryfile, required, retention, data minimization, CAPTCHA, receiver

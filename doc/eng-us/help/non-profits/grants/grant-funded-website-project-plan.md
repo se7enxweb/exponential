@@ -1,7 +1,7 @@
 ---
 title: Grant-funded website project plan
 audience: non-profit, businesses, project-manager, government
-category: business-solutions
+category: non-profits
 order: 20
 summary: A project plan for a website paid for by a grant - goals tied to the mission, phases from discovery to handover, deliverables a funder can verify, the roles a non-profit needs, a timeline, risks and what happens after the grant ends - with every Exponential step linked to the page that explains it.
 keywords: grant-funded project, project plan, phases, deliverables, milestones, timeline, roles, risks, handover, sustainability, website relaunch, non-profit

@@ -1,7 +1,7 @@
 ---
 title: Website brief for a local business
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 96
 summary: A fill-in brief for a local business website on Exponential - the business, goals, pages, hours and locations, forms, shop, languages, outside services, who edits, hosting and support, budget and dates - ready to send to partners and freelancers for comparable quotes.
 keywords: website brief, template, requirements, quote request, small business, local business, pages, forms, shop, languages, hosting, budget

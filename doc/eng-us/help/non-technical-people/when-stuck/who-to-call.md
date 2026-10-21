@@ -1,7 +1,7 @@
 ---
 title: Who to call
 audience: non-technical, customer, editor
-category: getting-started
+category: plain-language
 order: 54
 summary: A fill-in contact sheet for an Exponential site and a plain table of which problem goes to whom - your administrator, developer, host, registrar, mail provider, partner or the community - so you know whom to call before something goes wrong.
 keywords: who to call, contacts, contact sheet, escalation, administrator, developer, host, registrar, partner, community, emergency, non-technical

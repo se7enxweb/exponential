@@ -1,7 +1,7 @@
 ---
 title: Starting a blog
 audience: individual, website-creator, editor
-category: website-creation
+category: personal-sites
 order: 1621
 summary: How one person sets up a blog on Exponential with the shipped Blog and Blog post classes - where it lives in the tree, the blog's name and description, the first posts, addresses, a feed, the menu and the decisions to make before the first reader arrives.
 keywords: start a blog, set up blog, Blog class, Blog post, first post, blog name, description, URL, menu, feed, comments decision, tags list, about the author

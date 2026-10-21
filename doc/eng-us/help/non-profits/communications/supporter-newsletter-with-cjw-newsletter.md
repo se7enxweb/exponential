@@ -1,7 +1,7 @@
 ---
 title: Supporter newsletter with cjw_newsletter
 audience: non-profit, businesses, editor, admin
-category: business-solutions
+category: non-profits
 order: 20
 summary: Running a non-profit's supporter and volunteer newsletters with cjw_newsletter in Exponential - systems, lists and editions as content, double opt-in, a rehearsal that writes mail to files, switching to real sending, the cron parts, bounces and the blacklist, consent and one-click unsubscribe, and a monthly routine - with links to the full newsletter pages.
 keywords: newsletter, supporter newsletter, cjw_newsletter, lists, editions, double opt-in, subscribe, unsubscribe, cron, mail queue, file transport, SMTP, bounces, blacklist, consent, volunteers list

@@ -1,7 +1,7 @@
 ---
 title: Individuals: start here
 audience: individual, website-creator, customer
-category: website-creation
+category: personal-sites
 order: 1
 summary: The landing page for people who run a website of their own on Exponential - a personal site, a portfolio, a blog, a family site or a club site - on a small budget, mostly alone: what Exponential gives you, what it does not, and where every page of this section is.
 keywords: individual, personal site, portfolio, blog, family site, club site, hobby, small budget, SQLite, Velocity, shared hosting, gallery, comments, RSS, privacy, two-factor, backups, updates, start here

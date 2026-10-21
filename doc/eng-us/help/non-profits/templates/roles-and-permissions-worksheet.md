@@ -1,7 +1,7 @@
 ---
 title: Roles and permissions worksheet
 audience: non-profit, businesses, admin, project-manager
-category: business-solutions
+category: non-profits
 order: 40
 summary: A worksheet for deciding who in a non-profit may do what on its Exponential site - the jobs (author, editor, approver, layouts editor, form processor, account manager, translator, administrator), the shipped roles Anonymous, Member, Editor and Administrator, limits by section, subtree and language, two-factor login, and a yearly review - with one row per person or group.
 keywords: roles, permissions, worksheet, Editor, Administrator, Member, Anonymous, section limitation, subtree, language, infocollector/read, user/hygiene, two-factor login, approval workflow, volunteers, staff

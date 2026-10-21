@@ -1,7 +1,7 @@
 ---
 title: "Templates for local businesses"
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 95
 summary: Fill-in templates for local business websites on Exponential - a website brief to send to partners, an opening hours content template with notice texts, and the related worksheets and agreement templates elsewhere in the help.
 keywords: templates, website brief, opening hours template, worksheet, request template, agreement template, local business

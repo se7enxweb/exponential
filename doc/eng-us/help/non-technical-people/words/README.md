@@ -1,7 +1,7 @@
 ---
 title: Words explained
 audience: non-technical, editor, customer, user
-category: getting-started
+category: plain-language
 order: 10
 summary: The ideas behind the screens of Exponential, one idea per page and without jargon - content items and the tree, drafts and publishing, the site and the administration, roles, caches, extensions, and hosting with domains and HTTPS.
 keywords: words, ideas, concepts, explained, plain language, content item, tree, draft, publish, roles, permissions, cache, extension, hosting, domain, HTTPS

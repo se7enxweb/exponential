@@ -1,7 +1,7 @@
 ---
 title: Planning your pages
 audience: local-business, businesses, customer, website-creator
-category: business-solutions
+category: local-business
 order: 12
 summary: A page list for a local business site - shop, restaurant, trades, salon or practice - with the content class behind each page, where opening hours and contact details live so they are written once, and how to keep the tree small.
 keywords: page plan, site map, content tree, content classes, restaurant menu, services page, team page, opening hours, contact page, local business, folder, article

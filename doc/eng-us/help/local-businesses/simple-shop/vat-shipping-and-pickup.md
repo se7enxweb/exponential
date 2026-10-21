@@ -1,7 +1,7 @@
 ---
 title: VAT, shipping and pickup
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 44
 summary: VAT and delivery for a local business shop on Exponential - VAT types and rules, prices shown with tax, the flat simple shipping workflow, pickup in the shop with the Ready for pickup status, local delivery by your own staff, and what needs a shipping handler.
 keywords: VAT, sales tax, VAT types, VAT rules, shipping, flat shipping, ezsimpleshipping, pickup, click and collect, local delivery, Ready for pickup, shipping handler, local business

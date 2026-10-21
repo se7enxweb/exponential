@@ -1,7 +1,7 @@
 ---
 title: Moving to a new host
 audience: non-technical, customer
-category: getting-started
+category: plain-language
 order: 46
 summary: The owner's part of moving an Exponential site to a new host, as a plain checklist - before, on the day and after - with what the old and new host do, how to keep e-mail and the domain safe, and when to let go of the old site.
 keywords: move host, migration, new host, change hosting, export, DNS, e-mail, maintenance window, checklist, old host, non-technical

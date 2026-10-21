@@ -1,7 +1,7 @@
 ---
 title: Non-profit monthly checklist
 audience: non-profit, businesses, admin, editor
-category: business-solutions
+category: non-profits
 order: 30
 summary: The monthly routine for a non-profit's Exponential site, in about an hour - backups and updates, cron and logs, the Donate link and donations, forms and spam, newsletter, accounts of people who left, content freshness, figures for funders, and a short note of what was done.
 keywords: monthly checklist, routine, backups, updates, cron, logs, donate link, donations, forms, spam, newsletter, accounts, content freshness, figures, non-profit, operations

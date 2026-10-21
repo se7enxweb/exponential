@@ -1,7 +1,7 @@
 ---
 title: Hiding and removing
 audience: non-technical, editor, user
-category: getting-started
+category: plain-language
 order: 29
 summary: Take something off an Exponential site - hide it for a while without losing it, or remove it to the trash - how to choose between the two, what happens to the items below it, and how to bring it back.
 keywords: hide, unhide, remove, delete, trash, take offline, seasonal page, archive, visibility, restore, beginner

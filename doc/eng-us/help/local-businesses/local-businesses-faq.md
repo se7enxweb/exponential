@@ -1,7 +1,7 @@
 ---
 title: Local businesses FAQ
 audience: local-business, businesses, customer
-category: business-solutions
+category: local-business
 order: 2
 summary: Short answers to the questions owners of shops, restaurants, trades, salons and practices ask about a website on Exponential - cost, doing it yourself, maps, opening hours, local search, forms and spam, reviews, selling, booking, newsletters, languages and running it - each with a link to the full page.
 keywords: FAQ, questions, local business, small business, cost, opening hours, map, local SEO, booking, reviews, shop, newsletter, languages, hosting

@@ -1,7 +1,7 @@
 ---
 title: Financial documents
 audience: non-profit, businesses, editor, government
-category: business-solutions
+category: non-profits
 order: 30
 summary: Which financial information a non-profit commonly publishes on its Exponential site (financial statements, where donations go, grant spending, executive pay where required, fundraising costs) and how - documents by year, an HTML summary with accessible tables, a register kept as content, privacy and confidentiality checks before publishing, approval, and what Exponential does not do (no accounting, no automatic figures).
 keywords: financial documents, financial statements, accounts, budget, where donations go, grant spending, fundraising costs, salaries, register, tables, privacy, confidentiality, approval, accountability, treasurer
