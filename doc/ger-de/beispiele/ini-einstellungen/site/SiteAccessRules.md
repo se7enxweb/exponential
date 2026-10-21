@@ -11,12 +11,12 @@ generated: exp:help:examples
 
 Der Block `[SiteAccessRules]` von `settings/site.ini`, mit 2 Einstellung(en).
 
-> If you disable some modules or part of a module you can use the  
-> SiteAccessRules group, this defines a list of rules which are  
-> run in order.  
+> Wenn Sie manche Module oder Teile eines Moduls abschalten, können Sie die  
+> Gruppe SiteAccessRules verwenden; sie legt eine Liste von Regeln fest, die  
+> der Reihe nach ausgeführt werden.  
 >
-> The following is an example of how to disable content/search  
-> and the rss module  
+> Das Folgende ist ein Beispiel, wie man content/search  
+> und das Modul rss abschaltet  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -39,9 +39,9 @@ Rules[]
 
 ## DisabledModuleResult
 
-> What a module switched off by the rules answers: notfound (the page of a  
-> module that does not exist, 404, so nothing tells that it is there) or  
-> disabled (the "disabled" page, error 22).  
+> Was ein durch die Regeln abgeschaltetes Modul antwortet: notfound (die Seite eines  
+> Moduls, das nicht existiert, 404, sodass nichts verrät, dass es da ist) oder  
+> disabled (die Seite „deaktiviert“, Fehler 22).  
 
 Standard: `notfound`.
 

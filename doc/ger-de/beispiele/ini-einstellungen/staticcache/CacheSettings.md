@@ -11,15 +11,15 @@ generated: exp:help:examples
 
 Der Block `[CacheSettings]` von `settings/staticcache.ini`, mit 9 Einstellung(en).
 
-> Exponential configuration file.  
+> Exponential-Konfigurationsdatei.  
 >
-> NOTE: It is not recommended to edit this file directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/staticcache.ini.append or  
->       settings/override/staticcache.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/staticcache.ini.append oder  
+>       settings/override/staticcache.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
 
 Bearbeiten Sie `settings/staticcache.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -29,14 +29,14 @@ Bearbeiten Sie `settings/staticcache.ini` nie selbst: Ein Update ersetzt die Dat
 
 ## HostName
 
-> The host to fetch pages from when generating the cache.  
+> Der Host, von dem beim Erzeugen des Caches Seiten geholt werden.  
 >
-> Leave this empty. It is deprecated since 4.4 and empty is the correct  
-> value: each siteaccess is then fetched from its own  
-> site.ini.\[SiteSettings\].SiteURL, which is what a multi site installation  
-> needs. It shipped as "localhost" for years, which sent every fetch to  
-> whatever the web server answers for that name - usually the hosting  
-> panel's placeholder, never this site - and the run failed silently.  
+> Lassen Sie dies leer. Es ist seit 4.4 veraltet, und leer ist der richtige  
+> Wert: Jeder Siteaccess wird dann von seiner eigenen  
+> site.ini.\[SiteSettings\].SiteURL geholt, was eine Multisite-Installation  
+> braucht. Jahrelang wurde "localhost" ausgeliefert, was jeden Abruf an das schickte,  
+> was der Webserver für diesen Namen antwortet, meist den Platzhalter des Hosting-  
+> Panels, nie diese Website, und der Lauf schlug still fehl.  
 
 Standard: leer.
 
@@ -50,11 +50,11 @@ HostName=
 
 ## SourceProtocol
 
-> The protocol used to fetch pages, http or https.  
+> Das Protokoll, mit dem Seiten geholt werden, http oder https.  
 >
-> http is fine on a site that redirects to https, because the fetch follows  
-> redirects. Set https where plain http is refused outright rather than  
-> redirected.  
+> http genügt bei einer Website, die auf https weiterleitet, weil der Abruf  
+> Weiterleitungen folgt. Setzen Sie https, wo einfaches http glatt abgelehnt statt  
+> weitergeleitet wird.  
 
 Standard: `http`.
 
@@ -68,12 +68,12 @@ SourceProtocol=http
 
 ## StaticStorageDir
 
-> Where generated pages are written, relative to the var directory of the  
-> siteaccess unless the path is absolute or already begins with var/.  
+> Wo die erzeugten Seiten geschrieben werden, relativ zum var-Verzeichnis des  
+> Siteaccess, außer der Pfad ist absolut oder beginnt schon mit var/.  
 >
-> The default therefore resolves to var/<site>/static, alongside  
-> var/<site>/cache and var/<site>/storage. Generated pages are cache and  
-> belong with the rest of it, not in the installation root.  
+> Der Standard ergibt daher var/<site>/static, neben  
+> var/<site>/cache und var/<site>/storage. Erzeugte Seiten sind Cache und  
+> gehören zu dessen Rest, nicht in das Wurzelverzeichnis der Installation.  
 
 Standard: `static`.
 
@@ -87,9 +87,9 @@ StaticStorageDir=static
 
 ## MaxCacheDepth
 
-> Urls deeper than this many segments are never cached, and never refreshed  
-> when an editor publishes. The old default of 3 allowed two path segments,  
-> which excludes most of a real content tree.  
+> URLs mit mehr Segmenten werden nie gecacht und nie aktualisiert,  
+> wenn ein Redakteur veröffentlicht. Der alte Standard von 3 erlaubte zwei Pfadsegmente,  
+> was den Großteil eines echten Inhaltsbaums ausschließt.  
 
 Standard: `12`.
 
@@ -103,8 +103,8 @@ MaxCacheDepth=12
 
 ## CachedURLArray
 
-> A list of url's to cache. You can use the \* wildcard to include a whole  
-> subtree. A bare /\* caches the entire site, subject to MaxCacheDepth.  
+> Eine Liste der zu cachenden URLs. Mit dem Platzhalter \* schließen Sie einen ganzen  
+> Teilbaum ein. Ein bloßes /\* cacht die ganze Website, begrenzt durch MaxCacheDepth.  
 
 Standard: eine Liste mit 2: `/`, `/*`.
 
@@ -121,12 +121,12 @@ CachedURLArray[]=/*
 
 ## CachedSiteAccesses
 
-> A list of site accesses to generate static content for.  
+> Eine Liste der Siteaccesses, für die statische Inhalte erzeugt werden.  
 >
-> Left empty, the siteaccesses this installation serves are used: every  
-> entry of site.ini.\[SiteAccessSettings\].RelatedSiteAccessList except those  
-> that require a login, whose pages are per user and must not be shared.  
-> Name siteaccesses here to override that.  
+> Wenn leer, werden die Siteaccesses verwendet, die diese Installation bedient: jeder  
+> Eintrag aus site.ini.\[SiteAccessSettings\].RelatedSiteAccessList außer denen,  
+> die eine Anmeldung erfordern, deren Seiten pro Benutzer sind und nicht geteilt werden dürfen.  
+> Nennen Sie hier Siteaccesses, um das zu überschreiben.  
 
 Standard: eine leere Liste.
 
@@ -141,8 +141,8 @@ CachedSiteAccesses[]
 
 ## AlwaysUpdateArray
 
-> A list of locations that will be updated whenever an object is published. You  
-> can NOT use a wildcard here.  
+> Eine Liste von Orten, die bei jeder Veröffentlichung eines Objekts aktualisiert werden. Sie  
+> können hier KEINE Platzhalter verwenden.  
 
 Standard: eine Liste mit 1: `/`.
 
@@ -158,7 +158,7 @@ AlwaysUpdateArray[]=/
 
 ## CronjobCacheClear
 
-> Defer cache generation to cronjob.  
+> Die Erzeugung des Caches auf den Cronjob verschieben.  
 
 Standard: `disabled`.
 
@@ -172,8 +172,8 @@ CronjobCacheClear=disabled
 
 ## AppendGeneratedTime
 
-> Controls whenever <!-- Generated: YYY-MM-DD HH:MM:SS --> comment  
-> should be appended into the generated static cache file.  
+> Steuert, ob der Kommentar <!-- Generated: YYY-MM-DD HH:MM:SS -->  
+> an die erzeugte Datei des statischen Caches angehängt wird.  
 
 Standard: `true`.
 

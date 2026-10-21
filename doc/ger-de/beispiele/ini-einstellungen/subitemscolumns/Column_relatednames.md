@@ -103,7 +103,7 @@ Description=The names of the first related objects you may read, by name.
 
 ## Limit
 
-> The most names shown  
+> Die meisten angezeigten Namen  
 
 Standard: `10`.
 

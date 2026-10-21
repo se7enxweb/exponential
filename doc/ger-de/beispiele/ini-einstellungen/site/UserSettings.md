@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## MaxNumberOfFailedLogin
 
-> The possibility to deny login after MaxNumberOfFailedLogin failed login attempts.  
-> Max number of failed login attempts.  
-> If the max number is '0' the possibility will be disabled  
+> Die Möglichkeit, die Anmeldung nach MaxNumberOfFailedLogin fehlgeschlagenen Anmeldeversuchen zu verweigern.  
+> Höchstzahl fehlgeschlagener Anmeldeversuche.  
+> Ist die Höchstzahl '0', ist diese Möglichkeit deaktiviert  
 
 Standard: `0`.
 
@@ -35,7 +35,7 @@ MaxNumberOfFailedLogin=0
 
 ## TrustedIPList
 
-> An array with IP addresses or networks which will be always allowed to login after a few failed login attempts.  
+> Ein Array mit IP-Adressen oder Netzen, die sich nach einigen fehlgeschlagenen Anmeldeversuchen immer anmelden dürfen.  
 
 Standard: eine leere Liste.
 
@@ -52,7 +52,7 @@ TrustedIPList[]
 
 > TrustedIPList\[\]=192.0.0.42  
 > TrustedIPList\[\]=192.0.0.0/27  
-> If true and failed login attempts of current user execeed MaxNumberOfFailedLogin the user will get a message.  
+> Wenn true und die fehlgeschlagenen Anmeldeversuche des aktuellen Benutzers MaxNumberOfFailedLogin überschreiten, erhält der Benutzer eine Meldung.  
 
 Standard: `false`.
 
@@ -66,7 +66,7 @@ ShowMessageIfExceeded=false
 
 ## MinPasswordLength
 
-> Minimum password length  
+> Mindestlänge des Passworts  
 
 Standard: `10`.
 
@@ -80,14 +80,14 @@ MinPasswordLength=10
 
 ## WeakPasswordCheck
 
-> Refuse a well-known or common password (expWeakPasswordList: "admin", "password",  
-> "qwerty", "123456", the software's own names and the like, with their simple  
-> variants: case, digits and symbols at the ends, letter swaps such as "p@ssw0rd",  
-> common endings, a word typed twice; also keyboard runs and repeated characters).  
-> Checked for every new password: user/password, registration, the user edit form,  
-> exp:resetuserpassword and the web services. Signing in with an existing password  
-> is never refused. The installers (setup wizard, kickstarter, exp:install) always  
-> check, whatever this says. disabled: only the length and \[PasswordSettings\] count.  
+> Ein bekanntes oder häufiges Passwort ablehnen (expWeakPasswordList: "admin", "password",  
+> "qwerty", "123456", die eigenen Namen der Software und Ähnliches, mit ihren einfachen  
+> Varianten: Groß-/Kleinschreibung, Ziffern und Symbole an den Enden, Buchstabentausch wie "p@ssw0rd",  
+> häufige Endungen, ein doppelt getipptes Wort; außerdem Tastaturfolgen und wiederholte Zeichen).  
+> Geprüft für jedes neue Passwort: user/password, Registrierung, das Bearbeitungsformular des Benutzers,  
+> exp:resetuserpassword und die Webdienste. Die Anmeldung mit einem vorhandenen Passwort  
+> wird nie abgelehnt. Die Installer (Setup-Assistent, Kickstarter, exp:install) prüfen immer,  
+> egal was hier steht. disabled: Nur die Länge und \[PasswordSettings\] zählen.  
 
 Standard: `enabled`.
 
@@ -101,11 +101,11 @@ WeakPasswordCheck=enabled
 
 ## WeakPasswordFile
 
-> More words to refuse, one per line, in their base form (variants are refused too)  
+> Weitere abzulehnende Wörter, eines pro Zeile, in ihrer Grundform (Varianten werden ebenfalls abgelehnt)  
 > WeakPasswordList\[\]  
 > WeakPasswordList\[\]=ourcompanyname  
-> A file with more words, one per line (# starts a comment), relative to the  
-> installation root or absolute; read once per process while it is unchanged  
+> Eine Datei mit weiteren Wörtern, eines pro Zeile (# beginnt einen Kommentar), relativ zum  
+> Wurzelverzeichnis der Installation oder absolut; einmal pro Prozess gelesen, solange sie unverändert ist  
 > WeakPasswordFile=settings/weak-passwords.txt  
 
 Standard: leer.
@@ -120,10 +120,10 @@ WeakPasswordFile=
 
 ## ForgotPasswordKeyLifetime
 
-> Seconds a "Forgot your password?" link works after it was sent (3600: one hour).  
-> An expired link is refused with its own message; expired links are removed on  
-> the next visit of user/forgotpassword. 0: a link works until it is used (the  
-> behavior before 6.0.15).  
+> Sekunden, die ein Link „Passwort vergessen?“ nach dem Versand funktioniert (3600: eine Stunde).  
+> Ein abgelaufener Link wird mit einer eigenen Meldung abgelehnt; abgelaufene Links werden beim  
+> nächsten Aufruf von user/forgotpassword entfernt. 0: Ein Link funktioniert, bis er verwendet wird (das  
+> Verhalten vor 6.0.15).  
 
 Standard: `3600`.
 
@@ -137,8 +137,8 @@ ForgotPasswordKeyLifetime=3600
 
 ## GeneratePasswordIfEmpty
 
-> If true it will automatically generate a password if it is empty  
-> and email it to the user.  
+> Wenn true, wird automatisch ein Passwort erzeugt, wenn es leer ist,  
+> und dem Benutzer per E-Mail gesendet.  
 
 Standard: `true`.
 
@@ -164,8 +164,8 @@ GeneratePasswordLength=16
 
 ## AnonymousUserID
 
-> The ID of the anonymous user, this user will  
-> be used for everyone who is not logged in.  
+> Die ID des anonymen Benutzers; dieser Benutzer wird  
+> für jeden verwendet, der nicht angemeldet ist.  
 
 Standard: `10`.
 
@@ -179,7 +179,7 @@ AnonymousUserID=10
 
 ## DefaultUserPlacement
 
-> Where to store newly self registered users  
+> Wo neu selbst registrierte Benutzer gespeichert werden  
 
 Standard: `12`.
 
@@ -193,9 +193,9 @@ DefaultUserPlacement=12
 
 ## DefaultSectionID
 
-> Which section to place newly self registered users  
-> (Using 0 means that the user will get the section ID  
->  from its new location)  
+> In welche Sektion neu selbst registrierte Benutzer kommen  
+> (0 bedeutet, dass der Benutzer die Sektions-ID  
+>  von seiner neuen Platzierung erhält)  
 
 Standard: `0`.
 
@@ -209,12 +209,12 @@ DefaultSectionID=0
 
 ## RegistrationFeedback
 
-> What kind of feedback is sent back to the site for newly created  
-> users. Use a semi-colon separated list of feedback types.  
-> Only email is supported nativly, set to blank to disable.  
-> Example on setting up custom feedback type:  
-> 'registrationFeedback' function will be used on the class, look in  
-> kernel/user/register.php for how the email code is implemented!  
+> Welche Art von Rückmeldung für neu angelegte Benutzer an die Website gesendet  
+> wird. Verwenden Sie eine durch Semikolons getrennte Liste von Rückmeldungsarten.  
+> Nativ wird nur email unterstützt; leer schaltet es ab.  
+> Beispiel für das Einrichten einer eigenen Rückmeldungsart:  
+> Die Funktion 'registrationFeedback' wird an der Klasse verwendet; wie der E-Mail-Code umgesetzt ist,  
+> sehen Sie in kernel/user/register.php!  
 > \[RegistrationFeedback\_<custom\_type>\]  
 > Class=<custom\_type\_class\_name>  
 > #File is optional, autoload will be used if not set  
@@ -232,8 +232,8 @@ RegistrationFeedback=email
 
 ## RegistrationEmail
 
-> Where to send email of newly registered users if no  
-> email\_receiver is returned by user/registrationfeedback.tpl  
+> Wohin die E-Mail über neu registrierte Benutzer gesendet wird, wenn  
+> user/registrationfeedback.tpl keinen email\_receiver zurückgibt  
 
 Standard: leer.
 
@@ -247,12 +247,12 @@ RegistrationEmail=
 
 ## VerifyUserType
 
-> Type of verification for user registration, email is only  
-> type supported nativly, set to blank to disable.  
-> Example on how to set up custom verification:  
-> 'verifyUser' function will be used on the class, look in  
-> kernel/user/register.php for how the email code is implemented!  
-> return value of function decides if user mail should be sent or not.  
+> Art der Prüfung bei der Benutzerregistrierung; nativ wird nur email  
+> unterstützt, leer schaltet es ab.  
+> Beispiel für das Einrichten einer eigenen Prüfung:  
+> Die Funktion 'verifyUser' wird an der Klasse verwendet; wie der E-Mail-Code umgesetzt ist,  
+> sehen Sie in kernel/user/register.php!  
+> Der Rückgabewert der Funktion entscheidet, ob die Mail an den Benutzer gesendet wird.  
 > \[VerifyUserType\_<custom\_type>\]  
 > Class=<custom\_type\_class\_name>  
 > #File is optional, autoload will be used if not set  
@@ -270,8 +270,8 @@ VerifyUserType=email
 
 ## PasswordInRegistrationEmail
 
-> If set to enabled, user password would be send in the registration email  
-> This password WON'T be stored in plain text  
+> Wenn auf enabled gesetzt, wird das Passwort des Benutzers in der Registrierungsmail gesendet  
+> Dieses Passwort wird NICHT im Klartext gespeichert  
 
 Standard: `disabled`.
 
@@ -285,8 +285,8 @@ PasswordInRegistrationEmail=disabled
 
 ## EmailRegistrationInfo
 
-> If set to disabled, the registration confirmation mail won't be sent to the user  
-> that created the account  
+> Wenn auf disabled gesetzt, wird die Bestätigungsmail der Registrierung nicht an den Benutzer gesendet,  
+> der das Konto angelegt hat  
 
 Standard: `enabled`.
 
@@ -300,10 +300,10 @@ EmailRegistrationInfo=enabled
 
 ## ActivationByAdministratorSendsApprovalMail
 
-> Whether Activate on Users > Unactivated users (user/unactivated) sends the  
-> activated user the "registration approved" mail (user/registrationapproved.tpl),  
-> as the user's own activation link does. disabled activates silently.  
-> EmailRegistrationInfo=disabled switches that mail off everywhere.  
+> Ob Aktivieren unter Benutzer > Nicht aktivierte Benutzer (user/unactivated) dem  
+> aktivierten Benutzer die Mail „Registrierung genehmigt“ sendet (user/registrationapproved.tpl),  
+> wie es der eigene Aktivierungslink des Benutzers tut. disabled aktiviert ohne Mail.  
+> EmailRegistrationInfo=disabled schaltet diese Mail überall ab.  
 
 Standard: `enabled`.
 
@@ -317,12 +317,12 @@ ActivationByAdministratorSendsApprovalMail=enabled
 
 ## RegistrationAdminLinks
 
-> The administrator's "New user registered" mail (RegistrationFeedback=email,  
-> user/registrationfeedback.tpl) carries signed links to the administration:  
-> view the account, approve (activate) it, reject (remove) it, and the approval  
-> item when a workflow holds it. Each opens user/registration, which asks the  
-> signed-in administrator to confirm. Guide: doc/eng-us/features/6.0/registration-admin-links.md  
-> enabled or disabled (the mail then has no links)  
+> Die Mail „Neuer Benutzer registriert“ an den Administrator (RegistrationFeedback=email,  
+> user/registrationfeedback.tpl) enthält signierte Links zur Administration:  
+> das Konto ansehen, es genehmigen (aktivieren), es ablehnen (entfernen) und den Freigabe-  
+> eintrag, wenn ein Workflow es zurückhält. Jeder öffnet user/registration, das den  
+> angemeldeten Administrator um Bestätigung bittet. Anleitung: doc/eng-us/features/6.0/registration-admin-links.md  
+> enabled oder disabled (die Mail hat dann keine Links)  
 
 Standard: `enabled`.
 
@@ -336,9 +336,9 @@ RegistrationAdminLinks=enabled
 
 ## RegistrationAdminBaseURL
 
-> The address of the administration the links point to, e.g.  
-> https://admin.example.com or https://www.example.com/admin. Empty: https:// and  
-> the SiteURL of RegistrationAdminSiteAccess, else that siteaccess's address.  
+> Die Adresse der Administration, auf die die Links zeigen, z. B.  
+> https://admin.example.com oder https://www.example.com/admin. Leer: https:// und  
+> die SiteURL von RegistrationAdminSiteAccess, sonst die Adresse dieses Siteaccess.  
 
 Standard: leer.
 
@@ -352,8 +352,8 @@ RegistrationAdminBaseURL=
 
 ## RegistrationAdminSiteAccess
 
-> The administration siteaccess. Empty: the siteaccess whose \[SiteSettings\]  
-> FrontSiteAccess is this one, else admin.  
+> Der Administrations-Siteaccess. Leer: der Siteaccess, dessen \[SiteSettings\]  
+> FrontSiteAccess dieser ist, sonst admin.  
 
 Standard: leer.
 
@@ -367,8 +367,8 @@ RegistrationAdminSiteAccess=
 
 ## RegistrationActionTTL
 
-> How long a link works, in seconds (604800 = 7 days). Approve and reject links  
-> work once.  
+> Wie lange ein Link funktioniert, in Sekunden (604800 = 7 Tage). Links zum Genehmigen und Ablehnen  
+> funktionieren einmal.  
 
 Standard: `604800`.
 
@@ -382,8 +382,8 @@ RegistrationActionTTL=604800
 
 ## RegisterAutoLogin
 
-> If set to disabled, the user will not be automatically logged in while registering  
-> even if the user is automatically activated  
+> Wenn auf disabled gesetzt, wird der Benutzer bei der Registrierung nicht automatisch angemeldet,  
+> auch wenn er automatisch aktiviert wird  
 
 Standard: `enabled`.
 
@@ -397,7 +397,7 @@ RegisterAutoLogin=enabled
 
 ## UserClassID
 
-> Which content class to use for user creation  
+> Welche Inhaltsklasse zum Anlegen von Benutzern verwendet wird  
 
 Standard: `4`.
 
@@ -411,7 +411,7 @@ UserClassID=4
 
 ## UserGroupClassID
 
-> Which content class to use for user group creation  
+> Welche Inhaltsklasse zum Anlegen von Benutzergruppen verwendet wird  
 
 Standard: `3`.
 
@@ -425,8 +425,8 @@ UserGroupClassID=3
 
 ## UserClassGroupID
 
-> Which class group that has user classes, controls which classes  
-> is shown on the user navigation part. If empty all classes are used.  
+> Welche Klassengruppe die Benutzerklassen enthält; steuert, welche Klassen  
+> im Navigationsbereich der Benutzer angezeigt werden. Wenn leer, werden alle Klassen verwendet.  
 
 Standard: `2`.
 
@@ -440,7 +440,7 @@ UserClassGroupID=2
 
 ## UserCreatorID
 
-> Which user is considered the creator  
+> Welcher Benutzer als Ersteller gilt  
 
 Standard: `14`.
 
@@ -454,11 +454,11 @@ UserCreatorID=14
 
 ## DeactivateAndMove
 
-> "Deactivate and move" (doc/eng-us/features/6.0/user-hygiene.md): enabled offers, on a user's page, in the context menu  
-> and on Users > Check user accounts, to disable accounts and bring all their locations together in one hidden  
-> user group without roles, remembering where they were, and to move them back on reactivation; a way to retire  
-> accounts without removing them (users never go to the trash). disabled (the default) shows nothing and creates  
-> nothing. Needs the policy user/deactivate.  
+> „Deaktivieren und verschieben“ (doc/eng-us/features/6.0/user-hygiene.md): enabled bietet auf der Seite eines Benutzers, im Kontextmenü  
+> und unter Benutzer > Benutzerkonten prüfen an, Konten zu deaktivieren und alle ihre Platzierungen in einer verborgenen  
+> Benutzergruppe ohne Rollen zusammenzuführen, sich zu merken, wo sie waren, und sie beim Reaktivieren zurückzuverschieben; eine Möglichkeit,  
+> Konten stillzulegen, ohne sie zu entfernen (Benutzer kommen nie in den Papierkorb). disabled (der Standard) zeigt nichts und legt  
+> nichts an. Braucht die Richtlinie user/deactivate.  
 
 Standard: `disabled`.
 
@@ -472,9 +472,9 @@ DeactivateAndMove=disabled
 
 ## DeactivatedUserGroupNodeID
 
-> The node of that group. Empty: the user group with the remote id exp\_deactivated\_users\_group, created below  
-> content.ini \[NodeSettings\] UserRootNode on first use (or beforehand by bin/php/ezcreatedeactivatedusergroup.php).  
-> A node id set here that does not exist stops the action; it is never replaced by a new group.  
+> Der Knoten dieser Gruppe. Leer: die Benutzergruppe mit der Remote-ID exp\_deactivated\_users\_group, bei der ersten Verwendung unter  
+> content.ini \[NodeSettings\] UserRootNode angelegt (oder vorab mit bin/php/ezcreatedeactivatedusergroup.php).  
+> Eine hier gesetzte Knoten-ID, die nicht existiert, hält die Aktion an; sie wird nie durch eine neue Gruppe ersetzt.  
 
 Standard: leer.
 
@@ -488,16 +488,16 @@ DeactivatedUserGroupNodeID=
 
 ## HashType
 
-> Use either md5\_password, md5\_user, md5\_site or plaintext  
-> md5\_password generates password hash from password only.  
-> md5\_user generates password hash from user and password.  
-> md5\_site generates password hash from site, user and password  
-> plaintext does not generate a hash but has the password as it is, this is not  
-> recommended since it is a huge security risk.  
-> bcrypt generates hash from password only  
-> php\_default uses whichever method PHP deems appropriate (currently bcrypt, as of PHP 5.5)  
-> note: password hashes generated with md5\_site will not work after  
->       changing the site name.  
+> Verwenden Sie md5\_password, md5\_user, md5\_site oder plaintext  
+> md5\_password erzeugt den Passwort-Hash nur aus dem Passwort.  
+> md5\_user erzeugt den Passwort-Hash aus Benutzer und Passwort.  
+> md5\_site erzeugt den Passwort-Hash aus Website, Benutzer und Passwort  
+> plaintext erzeugt keinen Hash, sondern speichert das Passwort, wie es ist; das wird nicht  
+> empfohlen, weil es ein großes Sicherheitsrisiko ist.  
+> bcrypt erzeugt den Hash nur aus dem Passwort  
+> php\_default verwendet die Methode, die PHP für angemessen hält (derzeit bcrypt, seit PHP 5.5)  
+> Hinweis: Mit md5\_site erzeugte Passwort-Hashes funktionieren nach  
+>       einer Änderung des Website-Namens nicht mehr.  
 
 Standard: `php_default`.
 
@@ -511,8 +511,8 @@ HashType=php_default
 
 ## SiteName
 
-> What SiteName should be used when hashing the user\_password  
-> with the 'md5\_site' HashType  
+> Welcher SiteName beim Hashen von user\_password  
+> mit dem HashType 'md5\_site' verwendet wird  
 
 Standard: `ez.no`.
 
@@ -526,10 +526,10 @@ SiteName=ez.no
 
 ## UpdateHash
 
-> true means update hash to HashType if it differs when logging in  
-> This is useful if you're upgrading from an older Exponential site  
-> or another system that uses mysql as password type, it will then  
-> update the hash to whather is set.  
+> true bedeutet, den Hash bei der Anmeldung auf HashType zu aktualisieren, wenn er abweicht  
+> Nützlich bei einem Upgrade von einer älteren Exponential-Website  
+> oder einem anderen System, das mysql als Passworttyp verwendet; der  
+> Hash wird dann auf das aktualisiert, was gesetzt ist.  
 
 Standard: `true`.
 
@@ -543,8 +543,8 @@ UpdateHash=true
 
 ## AuthenticateMatch
 
-> Authenticate match, a list of authenticate fields to use  
-> Available are login and email  
+> Abgleich für die Authentifizierung, eine Liste der zu verwendenden Felder  
+> Verfügbar sind login und email  
 
 Standard: `login;email`.
 
@@ -558,10 +558,10 @@ AuthenticateMatch=login;email
 
 ## RequireUniqueEmail
 
-> Controls whether a unique email is required for all users,  
-> if set to true and email is set in AuthenticateMatch then only  
-> one email address instance is allowed on the site.  
-> Set to false to disable it  
+> Steuert, ob für alle Benutzer eine eindeutige E-Mail-Adresse erforderlich ist;  
+> wenn true und email in AuthenticateMatch gesetzt ist, ist auf der Website nur  
+> ein Vorkommen jeder E-Mail-Adresse erlaubt.  
+> Auf false setzen, um es abzuschalten  
 
 Standard: `true`.
 
@@ -575,9 +575,9 @@ RequireUniqueEmail=true
 
 ## RequireConfirmEmail
 
-> since 4.5, Controls whether users are required to confirm their emails  
-> If set to true, users must retype their emails when registering  
-> or editing their profiles  
+> Seit 4.5; steuert, ob Benutzer ihre E-Mail-Adresse bestätigen müssen  
+> Wenn true, müssen Benutzer ihre E-Mail-Adresse bei der Registrierung  
+> oder beim Bearbeiten ihres Profils erneut eingeben  
 
 Standard: `false`.
 
@@ -591,8 +591,8 @@ RequireConfirmEmail=false
 
 ## UseSpecialCharacters
 
-> Controls whether special characters are allowed in passwords in additional to  
-> characters in the range a-z, A-Z and 0-9.  
+> Steuert, ob in Passwörtern zusätzlich zu den Zeichen im Bereich a-z, A-Z und 0-9  
+> Sonderzeichen erlaubt sind.  
 
 Standard: `false`.
 
@@ -606,8 +606,8 @@ UseSpecialCharacters=false
 
 ## UserNameValidationRegex
 
-> Custom validation of user login name  
-> Will only affect new users, and existing users when they edit their credentials  
+> Eigene Prüfung des Anmeldenamens  
+> Betrifft nur neue Benutzer und vorhandene Benutzer, wenn sie ihre Zugangsdaten bearbeiten  
 
 Standard: eine leere Liste.
 
@@ -647,10 +647,10 @@ DefaultUserNameValidationErrorText=User login name did not validate!
 
 ## LogoutRedirect
 
-> Enable these two lines if your MySQL database is not using the utf8mb4 character set.  
+> Aktivieren Sie diese beiden Zeilen, wenn Ihre MySQL-Datenbank nicht den Zeichensatz utf8mb4 verwendet.  
 > UserNameValidationRegex\[utf8mb4\]=%(?:\\xF0\[\\x90-\\xBF\]\[\\x80-\\xBF\]{2}|\[\\xF1-\\xF3\]\[\\x80-\\xBF\]{3}|\\xF4\[\\x80-\\x8F\]\[\\x80-\\xBF\]{2})%xs  
 > UserNameValidationErrorText\[utf8mb4\]=The username cannot contain 4-byte characters.  
-> Examples of validation  
+> Beispiele für Prüfungen  
 > UserNameValidationRegex\[sw\]=/^\\s/  
 > UserNameValidationErrorText\[sw\]=The username cannot start with a whitespace.  
 > UserNameValidationRegex\[ew\]=/\\s$/  
@@ -661,16 +661,16 @@ DefaultUserNameValidationErrorText=User login name did not validate!
 > UserNameValidationErrorText\[lb\]=The username cannot contain line breaks.  
 > UserNameValidationRegex\[t\]=/\\t/  
 > UserNameValidationErrorText\[t\]=The username cannot contain tabs.  
-> Alternative example only allowing 'word' charthers  
+> Alternatives Beispiel, das nur 'Wort'-Zeichen erlaubt  
 > UserNameValidationRegex\[w\]=/\\W/  
 > UserNameValidationErrorText\[w\]=The username can only contain a-z, digits or underline.  
-> Or  
+> Oder  
 > UserNameValidationRegex\[wh\]=/\[^A-Za-z0-9\_-\]/  
 > UserNameValidationErrorText\[wh\]=The username can only contain a-z, digits, underline or hyphen.  
-> While testing add this at the end, just remember to remove it when your done..  
+> Fügen Sie beim Testen dies am Ende hinzu, und denken Sie daran, es zu entfernen, wenn Sie fertig sind.  
 > UserNameValidationRegex\[test\]=/\\w/  
 > UserNameValidationErrorText\[test\]=The username seems to be ok!  
-> Which url to redirect after a logout  
+> Auf welche URL nach einer Abmeldung weitergeleitet wird  
 
 Standard: `/user/login`.
 
@@ -684,7 +684,7 @@ LogoutRedirect=/user/login
 
 ## RedirectOnLogoutWithLastAccessURI
 
-> Use the LastAccessURI to decide where to redirect the user on logout  
+> Die LastAccessURI verwenden, um zu entscheiden, wohin der Benutzer beim Abmelden weitergeleitet wird  
 
 Standard: `disabled`.
 
@@ -698,11 +698,11 @@ RedirectOnLogoutWithLastAccessURI=disabled
 
 ## LoginHandler
 
-> Text attribute of class 'User' that contains URI where to redirect  
-> the user to after login.  
+> Textattribut der Klasse 'User', das die URI enthält, auf die  
+> der Benutzer nach der Anmeldung weitergeleitet wird.  
 > LoginRedirectionUriAttribute\[user\]=front\_page\_uri  
-> Text attribute of class 'User group' that contains URI where  
-> to redirect the user belonging to this group to after login.  
+> Textattribut der Klasse 'User group', das die URI enthält, auf die  
+> ein Benutzer dieser Gruppe nach der Anmeldung weitergeleitet wird.  
 > LoginRedirectionUriAttribute\[group\]=front\_page\_uri  
 
 Standard: eine Liste mit 1: `standard`.
@@ -721,7 +721,7 @@ LoginHandler[]=standard
 
 > LoginHandler\[\]=LDAP  
 > LoginHandler\[\]=textfile  
-> Defines the available single sign on handlers.  
+> Legt die verfügbaren Single-Sign-on-Handler fest.  
 
 Standard: eine leere Liste.
 
@@ -736,9 +736,9 @@ SingleSignOnHandlerArray[]
 
 ## ExtensionDirectory
 
-> Extension directories for login handlers. Login handler must be placed in  
-> extension/<extension\_directory>/login\_handler/<login\_handler|lowercase>user.php,  
-> and class should be named eZ<login\_handler>User  
+> Erweiterungsverzeichnisse für Login-Handler. Ein Login-Handler muss in  
+> extension/<extension\_directory>/login\_handler/<login\_handler|lowercase>user.php liegen,  
+> und die Klasse sollte eZ<login\_handler>User heißen  
 
 Standard: eine leere Liste.
 

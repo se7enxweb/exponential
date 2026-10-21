@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[SearchSettings]` von `settings/site.ini`, mit 14 Einstellung(en).
 
-> Settings for the search engine framework in Exponential  
+> Einstellungen für das Suchmaschinen-Framework von Exponential  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -33,12 +33,12 @@ SearchEngine=eZSearchEngine
 
 ## SearchViewHandling
 
-> How the search and advanced search page works,  
-> by default the search view does the search but it's  
-> possible to do the search in pure template code.  
-> Possible values are:  
-> default - The view code does the search and passes result to template  
-> template - The template does the search and passes the result back to the view code  
+> Wie die Seiten Suche und erweiterte Suche arbeiten;  
+> standardmäßig führt die Suchansicht die Suche aus, sie lässt sich aber auch  
+> rein im Template-Code ausführen.  
+> Mögliche Werte sind:  
+> default - Der Code der Ansicht führt die Suche aus und übergibt das Ergebnis an das Template  
+> template - Das Template führt die Suche aus und gibt das Ergebnis an den Code der Ansicht zurück  
 
 Standard: `default`.
 
@@ -52,10 +52,10 @@ SearchViewHandling=default
 
 ## LogSearchStats
 
-> Whether to log search stats or not  
-> The search statistics store every search phrase a visitor typed, which can  
-> hold personal data. Disabled by default; enable it in an override when the  
-> statistics in the admin interface are needed.  
+> Ob Suchstatistiken protokolliert werden  
+> Die Suchstatistik speichert jeden Suchbegriff, den ein Besucher eingegeben hat, was  
+> personenbezogene Daten enthalten kann. Standardmäßig deaktiviert; aktivieren Sie sie in einem Override, wenn die  
+> Statistik in der Administrationsoberfläche gebraucht wird.  
 
 Standard: `disabled`.
 
@@ -69,8 +69,8 @@ LogSearchStats=disabled
 
 ## MaximumSearchLimit
 
-> The upper value for search limits fetched from HTTP Post variables  
-> This is needed to avoid users on a site to have ridiciously huge limits  
+> Der Höchstwert für Suchgrenzen, die aus HTTP-POST-Variablen geholt werden  
+> Nötig, damit Benutzer einer Website keine lächerlich großen Grenzen angeben  
 
 Standard: `30`.
 
@@ -84,9 +84,9 @@ MaximumSearchLimit=30
 
 ## MaximumSearchTextWords
 
-> The search views (content/search and content/advancedsearch) search for at most this many words  
-> and characters of a search text and cut a longer one; every word is a clause of the search engine's  
-> query, and with too many of them the search fails instead of giving results (eZ Find: too many clauses)  
+> Die Suchansichten (content/search und content/advancedsearch) suchen nach höchstens so vielen Wörtern  
+> und Zeichen eines Suchtextes und kürzen einen längeren; jedes Wort ist eine Klausel der Abfrage der Suchmaschine,  
+> und bei zu vielen davon scheitert die Suche, statt Ergebnisse zu liefern (eZ Find: too many clauses)  
 
 Standard: `16`.
 
@@ -112,11 +112,11 @@ MaximumSearchTextLength=1024
 
 ## AllowEmptySearch
 
-> Controls whether empty searches are allowed, by default it is disabled  
-> since those kind of searches will take a lot of resources.  
-> If empty searching is enabled you must make sure your template  
-> submits enough limitations to the search, if not expect to really  
-> slow down your site  
+> Steuert, ob leere Suchen erlaubt sind; standardmäßig deaktiviert,  
+> weil solche Suchen viele Ressourcen brauchen.  
+> Ist die leere Suche aktiviert, müssen Sie sicherstellen, dass Ihr Template  
+> genug Einschränkungen an die Suche übergibt, sonst müssen Sie damit rechnen, dass  
+> Ihre Website deutlich langsamer wird  
 
 Standard: `disabled`.
 
@@ -130,8 +130,8 @@ AllowEmptySearch=disabled
 
 ## EnableWildcard
 
-> Enable or disable wildcard support for search. Note that enabling wildcard search  
-> might heavily influence the performance of the system.  
+> Platzhalter in der Suche aktivieren oder deaktivieren. Beachten Sie, dass die Platzhaltersuche  
+> die Leistung des Systems stark beeinflussen kann.  
 
 Standard: `false`.
 
@@ -145,7 +145,7 @@ EnableWildcard=false
 
 ## MinCharacterWildcard
 
-> Set minimum number of characters in wildcard search  
+> Mindestzahl der Zeichen in einer Platzhaltersuche setzen  
 
 Standard: `3`.
 
@@ -159,7 +159,7 @@ MinCharacterWildcard=3
 
 ## StopWordThresholdValue
 
-> Only use stop words if total objects is greater than StopWordThresholdValue  
+> Stoppwörter nur verwenden, wenn die Gesamtzahl der Objekte größer als StopWordThresholdValue ist  
 
 Standard: `100`.
 
@@ -173,7 +173,7 @@ StopWordThresholdValue=100
 
 ## StopWordThresholdPercent
 
-> Do not search words which are present in more than StopWordThresholdPercent % of total objects  
+> Wörter, die in mehr als StopWordThresholdPercent % aller Objekte vorkommen, nicht suchen  
 
 Standard: `60`.
 
@@ -187,9 +187,9 @@ StopWordThresholdPercent=60
 
 ## DelayedIndexing
 
-> Controls whether objects are indexed when they are published, or delayed  
-> and processed later by a cronjob, can be set class based via 'classbased'  
-> In this case DelayedIndexingClassList should be set with class identifiers  
+> Steuert, ob Objekte beim Veröffentlichen indiziert werden oder verzögert  
+> und später von einem Cronjob verarbeitet; lässt sich mit 'classbased' nach Klassen setzen  
+> Dann sollte DelayedIndexingClassList mit Klassenbezeichnern gesetzt sein  
 
 Standard: `disabled`.
 
@@ -203,7 +203,7 @@ DelayedIndexing=disabled
 
 ## DelayedIndexingClassList
 
-> List of class identifiers to use delayed indexing with.  
+> Liste der Klassenbezeichner, für die die verzögerte Indizierung verwendet wird.  
 
 Standard: eine leere Liste.
 
@@ -218,8 +218,8 @@ DelayedIndexingClassList[]
 
 ## ExtensionDirectories
 
-> Search extension path list. Add extension name where the search plug-in is  
-> located to this list.  
+> Liste der Pfade von Such-Erweiterungen. Fügen Sie dieser Liste den Namen der Erweiterung hinzu, in der das Such-Plugin  
+> liegt.  
 
 Standard: eine leere Liste.
 

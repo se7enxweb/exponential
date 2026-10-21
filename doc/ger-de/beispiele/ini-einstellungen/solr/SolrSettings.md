@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/solr.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> Master switch. While false, exp:solr reports "not configured" and refuses to  
-> start, whatever else is set below.  
+> Hauptschalter. Solange false, meldet exp:solr „nicht konfiguriert“ und weigert sich zu  
+> starten, egal was unten sonst gesetzt ist.  
 
 Standard: `false`.
 
@@ -34,10 +34,10 @@ Enabled=false
 
 ## Url
 
-> A running Solr to talk to, base URL including scheme and port, no trailing  
-> path, e.g. http://127.0.0.1:8983 . When set, exp:solr status pings it and  
-> start/stop report that the instance is managed externally (a remote Solr is  
-> not this command's to start or stop).  
+> Ein laufendes Solr, mit dem gesprochen wird, Basis-URL mit Schema und Port, ohne nachfolgenden  
+> Pfad, z. B. http://127.0.0.1:8983 . Wenn gesetzt, pingt exp:solr status es an, und  
+> start/stop melden, dass die Instanz extern verwaltet wird (ein entferntes Solr zu starten oder zu stoppen  
+> ist nicht Sache dieses Befehls).  
 
 Standard: leer.
 
@@ -51,9 +51,9 @@ Url=
 
 ## BinaryPath
 
-> The Solr control binary for a Solr installed on THIS machine, e.g.  
-> /opt/solr/bin/solr . When set (and Url is empty) exp:solr start/stop/restart  
-> manage that local process with its own start/stop subcommands.  
+> Die Steuerdatei von Solr für ein auf DIESEM Rechner installiertes Solr, z. B.  
+> /opt/solr/bin/solr . Wenn gesetzt (und Url leer ist), verwalten exp:solr start/stop/restart  
+> diesen lokalen Prozess mit dessen eigenen Unterbefehlen start/stop.  
 
 Standard: leer.
 
@@ -67,8 +67,8 @@ BinaryPath=
 
 ## Host
 
-> The local instance's bind host and port (used with BinaryPath, and to build a  
-> ping URL when Url is empty).  
+> Host und Port, an die die lokale Instanz bindet (mit BinaryPath verwendet und um eine  
+> Ping-URL zu bilden, wenn Url leer ist).  
 
 Standard: `127.0.0.1`.
 
@@ -94,8 +94,8 @@ Port=8983
 
 ## DataDir
 
-> Solr home / data directory for the local instance. Left empty, Solr's own  
-> default applies.  
+> Solr-Home-/Datenverzeichnis der lokalen Instanz. Wenn leer, gilt der eigene  
+> Standard von Solr.  
 
 Standard: leer.
 
@@ -109,8 +109,8 @@ DataDir=
 
 ## RunDir
 
-> Where exp:solr keeps this installation's Solr pid, logs and (optional) data,  
-> mirroring the Velocity on-disk layout (var/vc/<engine>/...).  
+> Wo exp:solr die PID, die Logs und (optional) die Daten des Solr dieser Installation hält,  
+> nach dem Vorbild der Struktur von Velocity auf der Festplatte (var/vc/<engine>/...).  
 
 Standard: `var/vc/solr/run`.
 
@@ -136,7 +136,7 @@ LogDir=var/vc/solr/log
 
 ## StartTimeout
 
-> How long to wait (seconds) for the port to answer after a start.  
+> Wie lange (Sekunden) nach einem Start gewartet wird, bis der Port antwortet.  
 
 Standard: `60`.
 

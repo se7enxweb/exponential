@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ReadonlySettingList
 
-> Use 'ReadonlySettingList' to set read-only settings.  
-> usage:  
-> for specific setting:  
+> Mit 'ReadonlySettingList' setzen Sie schreibgeschützte Einstellungen.  
+> Verwendung:  
+> für eine bestimmte Einstellung:  
 >   ini-filename/section\_name/setting\_name  
-> for all settings in section:  
+> für alle Einstellungen eines Abschnitts:  
 >   ini-filename/section\_name/\*  
-> for all settings in ini-file:  
+> für alle Einstellungen einer INI-Datei:  
 >   ini-filename/\*  
 
 Standard: eine Liste mit 3: `template.ini/PHP/PHPOperatorList`, `image.ini/ImageMagick/ExecutablePath`, `image.ini/ImageMagick/Executable`.
@@ -44,12 +44,12 @@ ReadonlySettingList[]=image.ini/ImageMagick/Executable
 
 ## DynamicTemplateMode
 
-> Dynamic ini template operator  
-> Changes global setting for ezini and ezini\_hasvariable template  
-> operators for the default setting of 'dynamic' parameter  
-> When enabled these calls are not compiled as ini values into  
-> templates, but read dynamically  
-> Note: only read during template compilation  
+> Dynamischer INI-Template-Operator  
+> Ändert die globale Einstellung der Template-Operatoren ezini und ezini\_hasvariable  
+> für den Standardwert des Parameters 'dynamic'  
+> Wenn aktiviert, werden diese Aufrufe nicht als INI-Werte in die  
+> Templates kompiliert, sondern dynamisch gelesen  
+> Hinweis: nur während der Template-Kompilierung gelesen  
 
 Standard: `disabled`.
 

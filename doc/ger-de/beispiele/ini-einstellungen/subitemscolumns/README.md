@@ -12,46 +12,46 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/subitemscolumns.ini`: 129 Blöcke, 990 Einstellungen.
 
-> The columns of the admin subitems list ("Table options" on content/view/full/<node id>).  
-> One \[Column\_<key>\] block per column; the key is what presets, defaults and saved choices use.  
-> Which columns are visible by default, the presets and the CSV export are set in subitems.ini.  
-> Guide: doc/eng-us/bc/6.0/subitems-table-options.md  
+> Die Spalten der Liste der Unterelemente der Administration („Tabellenoptionen“ auf content/view/full/<node id>).  
+> Ein Block \[Column\_<key>\] pro Spalte; der Schlüssel ist das, was Vorlagen, Standards und gespeicherte Auswahlen verwenden.  
+> Welche Spalten standardmäßig sichtbar sind, die Vorlagen und der CSV-Export werden in subitems.ini gesetzt.  
+> Anleitung: doc/eng-us/bc/6.0/subitems-table-options.md  
 >
-> A block names exactly one of:  
->   Builtin=true         one of the 15 columns the list renders itself from the node (the keys  
+> Ein Block nennt genau eines von:  
+>   Builtin=true         eine der 15 Spalten, die die Liste selbst aus dem Knoten rendert (die Schlüssel  
 >                        thumbnail, name, visibility, type, modifier, modified, published,  
 >                        translations, section, nodeid, noderemoteid, objectid, objectremoteid,  
->                        objectstate, priority); the server never computes them. Only Name, Group,  
->                        Order, Description, Copy, Align and Policy\[\] may be changed here.  
->   Class=<class>        a subclass of expSubitemsColumn, constructed with ( key, settings ).  
->                        The shipped families (expSubitemsNodeColumn, expSubitemsObjectColumn ...)  
->                        pick their column with Field=<name>.  
->   Handler=<class>::<method>   a static method ( eZContentObjectTreeNode $node, array $settings,  
->                        expSubitemsColumn $column ) that returns the value.  
->   Template=design:subitems/columns/<name>.tpl   a template that gets $node, $column (this block  
->                        as a hash) and $key; its output is the cell, its text the value.  
-> Settings of every block:  
->   Name=                the column's name (translated in context design/admin/node/view/full)  
+>                        objectstate, priority); der Server berechnet sie nie. Nur Name, Group,  
+>                        Order, Description, Copy, Align und Policy\[\] lassen sich hier ändern.  
+>   Class=<class>        eine Unterklasse von expSubitemsColumn, erzeugt mit ( key, settings ).  
+>                        Die ausgelieferten Familien (expSubitemsNodeColumn, expSubitemsObjectColumn ...)  
+>                        wählen ihre Spalte mit Field=<name>.  
+>   Handler=<class>::<method>   eine statische Methode ( eZContentObjectTreeNode $node, array $settings,  
+>                        expSubitemsColumn $column ), die den Wert zurückgibt.  
+>   Template=design:subitems/columns/<name>.tpl   ein Template, das $node, $column (diesen Block  
+>                        als Hash) und $key erhält; seine Ausgabe ist die Zelle, sein Text der Wert.  
+> Einstellungen jedes Blocks:  
+>   Name=                der Name der Spalte (übersetzt im Kontext design/admin/node/view/full)  
 >   Group=               Basic, Node, Object, Version, Location, URLs, SEO, Dates, People,  
 >                        Relations, Translations, Workflow, Users, Media, Technical, Custom  
->                        (translated like Name=)  
+>                        (übersetzt wie Name=)  
 >   Type=                text, html, number, date, datetime, bool, link, code, list, image  
->                        (how the default cell and CSV text are made; html = trusted markup)  
->   SortField=           a subTree() sort field the list can sort the column by: path, path\_string,  
+>                        (wie die Standardzelle und der CSV-Text gebildet werden; html = vertrauenswürdiges Markup)  
+>   SortField=           ein Sortierfeld von subTree(), nach dem die Liste die Spalte sortieren kann: path, path\_string,  
 >                        published, modified, section, depth, class\_identifier, class\_name,  
 >                        priority, name, modified\_subnode, node\_id, contentobject\_id, visibility,  
->                        or attribute:<class>/<attribute>. Empty: not sortable.  
->   Policy\[\]             module/function entries the user must all have to see the column at all  
->                        (it is then neither offered, computed nor sent).  
->   Description=         the help text in Table options; says what the column costs when it costs  
->                        (translated like Name=).  
->   Copy=true            a click on the cell copies its value.  
->   Align=right          right aligned (numbers).  
->   Order=               the position in Table options, and among the defaults.  
-> Every value is computed only for the visible columns, only for the rows of the current page.  
+>                        oder attribute:<class>/<attribute>. Leer: nicht sortierbar.  
+>   Policy\[\]             Einträge module/function, die der Benutzer alle haben muss, um die Spalte überhaupt zu sehen  
+>                        (sie wird sonst weder angeboten noch berechnet noch gesendet).  
+>   Description=         der Hilfetext in den Tabellenoptionen; sagt, was die Spalte kostet, wenn sie etwas kostet  
+>                        (übersetzt wie Name=).  
+>   Copy=true            ein Klick auf die Zelle kopiert ihren Wert.  
+>   Align=right          rechtsbündig (Zahlen).  
+>   Order=               die Position in den Tabellenoptionen und unter den Standards.  
+> Jeder Wert wird nur für die sichtbaren Spalten berechnet, nur für die Zeilen der aktuellen Seite.  
 > ---------------------------------------------------------------------------------------------  
-> Basic: the 15 built-in columns (their defaults live in expSubitemsBuiltinColumn; repeated here  
-> so they can be read and adjusted in one place)  
+> Basic: die 15 eingebauten Spalten (ihre Standards liegen in expSubitemsBuiltinColumn; hier wiederholt,  
+> damit sie an einer Stelle gelesen und angepasst werden können)  
 
 | Block | Einstellungen |
 |---|---|

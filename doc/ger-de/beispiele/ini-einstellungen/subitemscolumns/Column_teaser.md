@@ -12,8 +12,8 @@ generated: exp:help:examples
 Der Block `[Column_teaser]` von `settings/subitemscolumns.ini`, mit 8 Einstellung(en).
 
 > ---------------------------------------------------------------------------------------------  
-> Custom: examples of the three kinds of custom column (see the guide, "Adding a column in  
-> 3 minutes"). Copy one, give it a key of your own, and change what it does.  
+> Custom: Beispiele der drei Arten eigener Spalten (siehe die Anleitung, "Adding a column in  
+> 3 minutes"). Kopieren Sie eines, geben Sie ihm einen eigenen Schlüssel und ändern Sie, was es tut.  
 
 Bearbeiten Sie `settings/subitemscolumns.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -95,7 +95,7 @@ Description=The first words of the intro, description or body (a template column
 
 ## Attributes
 
-> Attribute identifiers tried in this order  
+> Attributbezeichner, in dieser Reihenfolge versucht  
 
 Standard: eine Liste mit 4: `intro`, `short_description`, `description`, `body`.
 
@@ -114,7 +114,7 @@ Attributes[]=body
 
 ## Length
 
-> The most characters shown  
+> Die meisten angezeigten Zeichen  
 
 Standard: `120`.
 

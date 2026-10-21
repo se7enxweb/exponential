@@ -19,33 +19,33 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## CommonINIFileList
 
-> The ini files offered at the top of the drop-down on setup > view settings,  
-> above a separator, before the rest in alphabetical order. This installation  
-> has just over a hundred ini files, and hunting down one of the dozen that are  
-> actually read every day is the whole of the problem.  
+> Die INI-Dateien, die oben im Auswahlfeld unter Setup > Einstellungen ansehen angeboten werden,  
+> über einem Trenner, vor den übrigen in alphabetischer Reihenfolge. Diese Installation  
+> hat gut hundert INI-Dateien, und eine der etwa zwölf zu finden, die  
+> tatsächlich jeden Tag gelesen werden, ist das ganze Problem.  
 >
-> The order is by how much each file is really used here, counted three ways:  
-> how many override files exist for it, how often the php reads it, and how  
-> often the templates read it. Anything listed that this installation does not  
-> have is passed over, so a shortened install shows a shorter list rather than  
-> dead entries.  
+> Die Reihenfolge richtet sich danach, wie viel jede Datei hier wirklich verwendet wird, auf drei Arten gezählt:  
+> wie viele Override-Dateien es für sie gibt, wie oft das PHP sie liest und wie  
+> oft die Templates sie lesen. Alles Aufgeführte, was diese Installation nicht  
+> hat, wird übergangen, eine verkleinerte Installation zeigt also eine kürzere Liste statt  
+> toter Einträge.  
 >
-> Add to it freely: this is a convenience, and nothing depends on it.  
-> The master file: everything about the site and its siteaccesses.  
-> Datatypes, versioning, the tree, view caching.  
-> Designs, stylesheets, javascript and where they are looked for.  
-> The template override rules - which template answers for which content.  
-> The site menus.  
-> The administration tree menu on the left.  
-> Modules, their views and who may reach them.  
-> The template engine: caching, compilation, debug.  
-> Image aliases and the conversion rules behind them.  
-> The tabs and controls of the administration interface.  
-> The content browser: what each browse button starts on and may pick.  
-> Workflows and the events they are built from.  
-> What runs on which cron schedule.  
-> File and cluster handling, where var files live.  
-> Charsets and translations.  
+> Ergänzen Sie sie nach Belieben: Dies ist eine Bequemlichkeit, und nichts hängt davon ab.  
+> Die Hauptdatei: alles über die Website und ihre Siteaccesses.  
+> Datentypen, Versionierung, der Baum, View-Caching.  
+> Designs, Stylesheets, JavaScript und wo nach ihnen gesucht wird.  
+> Die Regeln der Template-Overrides: welches Template für welche Inhalte antwortet.  
+> Die Menüs der Website.  
+> Das Baummenü der Administration links.  
+> Module, ihre Ansichten und wer sie erreichen darf.  
+> Die Template-Engine: Caching, Kompilierung, Debugging.  
+> Bild-Aliase und die Umwandlungsregeln dahinter.  
+> Die Reiter und Bedienelemente der Administrationsoberfläche.  
+> Der Inhaltsbrowser: wo jede Durchsuchen-Schaltfläche beginnt und was sie wählen darf.  
+> Workflows und die Ereignisse, aus denen sie bestehen.  
+> Was nach welchem Cron-Zeitplan läuft.  
+> Umgang mit Dateien und dem Cluster, wo die var-Dateien liegen.  
+> Zeichensätze und Übersetzungen.  
 
 Standard: eine Liste mit 15: `site.ini`, `content.ini`, `design.ini`, `override.ini`, `menu.ini`, `contentstructuremenu.ini`, `module.ini`, `template.ini`, `image.ini`, `admininterface.ini`, `browse.ini`, `workflow.ini` ....
 
@@ -75,17 +75,17 @@ CommonINIFileList[]=i18n.ini
 
 ## MaskedNameList
 
-> Settings whose values the settings pages (settings/view, settings/edit) never  
-> show: only whether they are set or empty. A setting is a secret when its name  
-> matches an entry of MaskedNameList\[\] and none of UnmaskedNameList\[\], or when  
-> it is one exp:ini and the audit log mask (Password, Secret, Token, Salt,  
-> ...Key, Credential: these cannot be switched off here). An entry without '\*'  
-> is found anywhere in the name, ignoring case ("password" matches  
-> TransportPassword); a capitalised single word ("Key", "DSN") must be the  
-> whole name; an entry with '\*' is a pattern for the whole name and keeps case  
-> ("\*Key" matches LicenseKey, not Monkey). A password inside any value  
-> (scheme://user:password@host, password=... in a connection string) is masked  
-> as well, and a secret's value is never searched.  
+> Einstellungen, deren Werte die Einstellungsseiten (settings/view, settings/edit) nie  
+> zeigen: nur, ob sie gesetzt oder leer sind. Eine Einstellung ist ein Geheimnis, wenn ihr Name  
+> auf einen Eintrag aus MaskedNameList\[\] und auf keinen aus UnmaskedNameList\[\] passt, oder wenn  
+> sie eine ist, die exp:ini und das Audit-Log maskieren (Password, Secret, Token, Salt,  
+> ...Key, Credential: diese lassen sich hier nicht abschalten). Ein Eintrag ohne '\*'  
+> wird überall im Namen gefunden, ohne Beachtung der Groß-/Kleinschreibung ("password" passt auf  
+> TransportPassword); ein großgeschriebenes einzelnes Wort ("Key", "DSN") muss der  
+> ganze Name sein; ein Eintrag mit '\*' ist ein Muster für den ganzen Namen und beachtet die Groß-/Kleinschreibung  
+> ("\*Key" passt auf LicenseKey, nicht auf Monkey). Ein Passwort in einem beliebigen Wert  
+> (scheme://user:password@host, password=... in einer Verbindungszeichenkette) wird ebenfalls  
+> maskiert, und der Wert eines Geheimnisses wird nie durchsucht.  
 
 Standard: eine Liste mit 17: `password`, `passwd`, `passphrase`, `secret`, `token`, `salt`, `credential`, `privatekey`, `apikey`, `Key`, `*Key`, `*_key` ....
 
@@ -117,7 +117,7 @@ MaskedNameList[]=*DSN
 
 ## UnmaskedNameList
 
-> Names the entries above would match that are not secrets (whole names).  
+> Namen, auf die die Einträge oben passen würden, die aber keine Geheimnisse sind (ganze Namen).  
 
 Standard: eine Liste mit 11: `SortKey`, `CacheKey`, `PrimaryKey`, `ForeignKey`, `IndexKey`, `ShortcutKey`, `HotKey`, `GroupKey`, `SectionKey`, `LanguageKey`, `IdKey`.
 
@@ -143,8 +143,8 @@ UnmaskedNameList[]=IdKey
 
 ## MaskRevealLastCharacters
 
-> Show the last characters of a secret (at most 4) so two values can be told  
-> apart, and only of a value at least four times that long. 0 shows none.  
+> Die letzten Zeichen eines Geheimnisses zeigen (höchstens 4), damit sich zwei Werte  
+> unterscheiden lassen, und nur bei einem Wert, der mindestens viermal so lang ist. 0 zeigt keine.  
 
 Standard: `0`.
 
@@ -158,10 +158,10 @@ MaskRevealLastCharacters=0
 
 ## RestartSettingList
 
-> Settings a running Velocity server reads only when it starts: after a change  
-> the settings page says to restart it (exp:velocity restart). A file, a  
-> file/block or a file/block/setting. Every other setting reaches PHP-FPM and  
-> Velocity on their next request, because a write clears the INI cache.  
+> Einstellungen, die ein laufender Velocity-Server nur beim Start liest: Nach einer Änderung  
+> sagt die Einstellungsseite, dass er neu gestartet werden muss (exp:velocity restart). Eine Datei, eine  
+> Datei/ein Block oder eine Datei/ein Block/eine Einstellung. Jede andere Einstellung erreicht PHP-FPM und  
+> Velocity bei ihrer nächsten Anfrage, weil ein Schreibvorgang den INI-Cache leert.  
 
 Standard: eine Liste mit 5: `velocity.ini`, `site.ini/ExtensionSettings`, `site.ini/DatabaseSettings`, `site.ini/FileSettings/VarDir`, `file.ini/ClusteringSettings`.
 

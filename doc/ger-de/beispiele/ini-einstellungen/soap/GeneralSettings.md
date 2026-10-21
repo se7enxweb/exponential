@@ -43,9 +43,9 @@ Logging=disabled # not supported yet.
 
 ## UseDefaultAccess
 
-> If enabled, the instance's default siteaccess will always be used.  
-> If disabled, the matched siteaccess (host, port, etc) will be used, allowing  
-> the usage of soap when multiple exponential websites are hosted on one instance  
+> Wenn aktiviert, wird immer der Standard-Siteaccess der Instanz verwendet.  
+> Wenn deaktiviert, wird der erkannte Siteaccess (Host, Port usw.) verwendet, was  
+> SOAP ermöglicht, wenn mehrere Exponential-Websites auf einer Instanz gehostet werden  
 
 Standard: `enabled`.
 

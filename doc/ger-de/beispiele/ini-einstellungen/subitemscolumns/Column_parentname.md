@@ -12,7 +12,7 @@ generated: exp:help:examples
 Der Block `[Column_parentname]` von `settings/subitemscolumns.ini`, mit 7 Einstellung(en).
 
 > ---------------------------------------------------------------------------------------------  
-> Location: the object's other places in the tree  
+> Location: die anderen Plätze des Objekts im Baum  
 
 Bearbeiten Sie `settings/subitemscolumns.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

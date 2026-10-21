@@ -12,7 +12,7 @@ generated: exp:help:examples
 Der Block `[Column_statusbadge]` von `settings/subitemscolumns.ini`, mit 6 Einstellung(en).
 
 > ---------------------------------------------------------------------------------------------  
-> Workflow: states, pending versions and what you may do  
+> Workflow: Zustände, ausstehende Versionen und was Sie tun dürfen  
 
 Bearbeiten Sie `settings/subitemscolumns.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -12,8 +12,8 @@ generated: exp:help:examples
 Der Block `[Column_userlogin]` von `settings/subitemscolumns.ini`, mit 9 Einstellung(en).
 
 > ---------------------------------------------------------------------------------------------  
-> Users: user accounts (rows below a user group; empty for anything else). Personal data, so  
-> every column needs a policy.  
+> Users: Benutzerkonten (Zeilen unter einer Benutzergruppe; für alles andere leer). Personenbezogene Daten, daher  
+> braucht jede Spalte eine Richtlinie.  
 
 Bearbeiten Sie `settings/subitemscolumns.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

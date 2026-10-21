@@ -11,21 +11,21 @@ generated: exp:help:examples
 
 Der Block `[SiteDataSettings]` von `settings/site.ini`, mit 1 Einstellung(en).
 
-> Besides the site the globe opens, a siteaccess is listed only where the  
-> signed-in user may log in (user/login and its SiteAccess limitation, as the  
-> login checks it).  
-> The header's cache-blocks are keyed by the list and the request; a changed  
-> SiteName, Locale or SiteDesign of a listed siteaccess shows once the template  
-> caches of the administration siteaccess are cleared.  
-> Site data: the name/value rows of the table ezsite\_data (eZSiteData), such as  
-> ezpublish-version. Setup > Site data (setup/sitedata, policy setup/system\_info)  
-> lists them. Templates read a row with  
+> Neben der Website, die der Globus öffnet, wird ein Siteaccess nur aufgeführt, wo sich der  
+> angemeldete Benutzer anmelden darf (user/login und seine Einschränkung SiteAccess, wie die  
+> Anmeldung sie prüft).  
+> Die Cache-Blöcke des Kopfes werden nach der Liste und der Anfrage unterschieden; ein geänderter  
+> SiteName, Locale oder SiteDesign eines aufgeführten Siteaccess erscheint, sobald die Template-  
+> Caches des Administrations-Siteaccess geleert sind.  
+> Website-Daten: die Name/Wert-Zeilen der Tabelle ezsite\_data (eZSiteData), etwa  
+> ezpublish-version. Setup > Website-Daten (setup/sitedata, Richtlinie setup/system\_info)  
+> listet sie auf. Templates lesen eine Zeile mit  
 >   fetch( 'content', 'site\_data', hash( 'name', 'my-flag' ) )  
-> (the eZSiteData object, so .value is the value; false for a name not listed  
-> here or not stored), but only the names listed here, as whole names: nothing  
-> is readable until a name is added. Read only: templates never write a row.  
-> Portions derived from LoveStack (mugoweb/ezpublish-legacy, commits a679a13176  
-> and 94b7b6c239), Copyright (C) Mugo Web, GPL v2.  
+> (das Objekt eZSiteData, .value ist also der Wert; false für einen Namen, der hier nicht aufgeführt  
+> oder nicht gespeichert ist), aber nur die hier aufgeführten Namen, als ganze Namen: Nichts  
+> ist lesbar, bis ein Name hinzugefügt wird. Nur lesend: Templates schreiben nie eine Zeile.  
+> Teile aus LoveStack übernommen (mugoweb/ezpublish-legacy, Commits a679a13176  
+> und 94b7b6c239), Copyright (C) Mugo Web, GPL v2.  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

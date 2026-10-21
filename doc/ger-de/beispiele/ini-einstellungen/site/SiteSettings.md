@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## SiteName
 
-> Name of the site, will be used in default templates in titles.  
+> Name der Website, wird in den Standard-Templates in Titeln verwendet.  
 
 Standard: `Exponential`.
 
@@ -33,8 +33,8 @@ SiteName=Exponential
 
 ## SiteURL
 
-> URL of site, often used to link to site in emails etc.  
-> must not start with http:// and must not end with /, eg:  
+> URL der Website, oft verwendet, um in E-Mails usw. auf die Website zu verlinken;  
+> darf nicht mit http:// beginnen und nicht mit / enden, z. B.:  
 > SiteURL=example.com  
 > SiteURL=example.com/french  
 > SiteURL=example.com/index.php/english  
@@ -51,7 +51,7 @@ SiteURL=example.com
 
 ## SiteDescription
 
-> Description (Short) of the site, will be used in templates in head html.  
+> (Kurze) Beschreibung der Website, wird in Templates im HTML-Kopf verwendet.  
 
 Standard: `This is an Exponential website about online shopping!`.
 
@@ -65,13 +65,13 @@ SiteDescription=This is an Exponential website about online shopping!
 
 ## MetaDataArray
 
-> The parts of the url that is used for siteaccess mathing  
-> if any, needed for reverse lookups. Will use siteaccess name  
-> if undefined and current matching type is uri.  
-> Note: can not be defined in ActiveAccessExtension settings  
-> eg: SiteUriParts\[\]=english  
+> Die Teile der URL, die für die Erkennung des Siteaccess verwendet werden,  
+> falls vorhanden, nötig für die Rückwärtssuche. Verwendet den Namen des Siteaccess,  
+> wenn nicht definiert und die aktuelle Abgleichsart uri ist.  
+> Hinweis: kann nicht in den Einstellungen von ActiveAccessExtension definiert werden  
+> z. B.: SiteUriParts\[\]=english  
 > SiteUriParts\[\]  
-> List of metadata to set in pagelayout  
+> Liste der Metadaten, die im Pagelayout gesetzt werden  
 
 Standard: ein Hash mit 4: `author=Exponential`, `copyright=Exponential`, `description=Content Management System`, `keywords=cms, publish, e-commerce, content management, development framework`.
 
@@ -90,7 +90,7 @@ MetaDataArray[keywords]=cms, publish, e-commerce, content management, developmen
 
 ## IndexPage
 
-> Which page to show when the root index (/) is accessed  
+> Welche Seite angezeigt wird, wenn der Wurzel-Index (/) aufgerufen wird  
 
 Standard: `/content/view/full/2/`.
 
@@ -104,8 +104,8 @@ IndexPage=/content/view/full/2/
 
 ## ErrorHandler
 
-> What to do when a module does not exists, use either defaultpage or displayerror  
-> If defaultpage is used, the DefaultPage will be shown when an error occured  
+> Was zu tun ist, wenn ein Modul nicht existiert; verwenden Sie defaultpage oder displayerror  
+> Bei defaultpage wird bei einem Fehler die DefaultPage angezeigt  
 
 Standard: `displayerror`.
 
@@ -119,7 +119,7 @@ ErrorHandler=displayerror
 
 ## DefaultPage
 
-> The default page to show, e.g. after user login this will be used for default redirection  
+> Die anzuzeigende Standardseite; z. B. wird sie nach der Anmeldung eines Benutzers als Standardweiterleitung verwendet  
 
 Standard: `/content/view/full/2/`.
 
@@ -133,8 +133,8 @@ DefaultPage=/content/view/full/2/
 
 ## DefaultAccess
 
-> Default access is needed when uri type matching is done, this is  
-> because with empty urls it's not possible to fetch the access  
+> Der Standardzugriff ist beim URI-Abgleich nötig, weil sich  
+> bei leeren URLs der Zugriff nicht ermitteln lässt  
 
 Standard: `admin`.
 
@@ -148,10 +148,10 @@ DefaultAccess=admin
 
 ## FrontSiteAccess
 
-> The site an admin siteaccess belongs to: its "Open the site" and "View on  
-> site" links (template operator siteaccess\_url() without a parameter) go to  
-> this siteaccess. Set it in the admin siteaccess's site.ini.append.php when one  
-> installation serves several sites, each with its own admin. Empty: DefaultAccess.  
+> Die Website, zu der ein Administrations-Siteaccess gehört: Seine Links „Website öffnen“ und „Auf der  
+> Website ansehen“ (Template-Operator siteaccess\_url() ohne Parameter) führen zu  
+> diesem Siteaccess. Setzen Sie ihn in der site.ini.append.php des Administrations-Siteaccess, wenn eine  
+> Installation mehrere Websites bedient, jede mit eigener Administration. Leer: DefaultAccess.  
 
 Standard: leer.
 
@@ -165,8 +165,8 @@ FrontSiteAccess=
 
 ## LoginPage
 
-> How the login page should be handled, use embedded to show inside default pagelayout  
-> or custom for loginpagelayout.tpl  
+> Wie die Anmeldeseite behandelt wird: embedded zeigt sie im Standard-Pagelayout,  
+> custom verwendet loginpagelayout.tpl  
 
 Standard: `custom`.
 
@@ -180,9 +180,9 @@ LoginPage=custom
 
 ## SSLPort
 
-> The SSL port, the default should be OK for most sites but can be  
-> changed if different. If the port is detect all redirects will  
-> be done with https protocol.  
+> Der SSL-Port; der Standard sollte für die meisten Websites passen, kann aber  
+> geändert werden, wenn er abweicht. Wird der Port erkannt, laufen alle Weiterleitungen  
+> mit dem Protokoll https.  
 
 Standard: `443`.
 
@@ -196,7 +196,7 @@ SSLPort=443
 
 ## SSLProxyServerName
 
-> If you are using a SSL Proxy you will need to enter here the name of the proxy server  
+> Wenn Sie einen SSL-Proxy verwenden, geben Sie hier den Namen des Proxyservers ein  
 
 Standard: `localhost`.
 
@@ -210,9 +210,9 @@ SSLProxyServerName=localhost
 
 ## SiteList
 
-> A list of sites this server provides, this usually the  
-> siteaccess for the user view when installing multiple packages.  
-> e.g.  
+> Eine Liste der Websites, die dieser Server bereitstellt; meist der  
+> Siteaccess für die Benutzeransicht, wenn mehrere Pakete installiert werden.  
+> z. B.  
 > SiteList\[\]=news  
 > SiteList\[\]=plain  
 
@@ -229,8 +229,8 @@ SiteList[]
 
 ## 64bitCompatibilityMode
 
-> Enables/Disables 64bit compatibility mode.  
-> Affects some php's functions like crc32.  
+> Aktiviert/deaktiviert den 64-Bit-Kompatibilitätsmodus.  
+> Betrifft manche PHP-Funktionen wie crc32.  
 
 Standard: `enabled`.
 
@@ -244,8 +244,8 @@ Standard: `enabled`.
 
 ## HTTPAUTHServerVariable
 
-> Use this variable on FASTCGI/CGI setups to define the Server variable name of the HTTP authentication string.  
-> Only Webdav and SOAP interfaces have a dependency on this setting.  
+> Legt bei FastCGI-/CGI-Einrichtungen den Namen der Servervariable mit der Zeichenkette der HTTP-Authentifizierung fest.  
+> Nur die Schnittstellen WebDAV und SOAP hängen von dieser Einstellung ab.  
 
 Standard: `Authorization`.
 
@@ -259,10 +259,10 @@ HTTPAUTHServerVariable=Authorization
 
 ## AdditionalLoginFormActionURL
 
-> Use this setting to specify additional URL for login and then use it in your login template  
-> to perform login action to other site then the current one. For example from user site you  
-> can login directly to the admin interfase. Note that standard Exponential templates do not  
-> support this feature.  
+> Mit dieser Einstellung geben Sie eine zusätzliche URL für die Anmeldung an, die Sie dann in Ihrem Anmelde-Template  
+> verwenden, um die Anmeldung an einer anderen als der aktuellen Website auszuführen. Zum Beispiel können Sie sich von der Benutzer-Website  
+> direkt an der Administrationsoberfläche anmelden. Beachten Sie, dass die Standard-Templates von Exponential  
+> diese Funktion nicht unterstützen.  
 
 Standard: leer.
 
@@ -276,8 +276,8 @@ AdditionalLoginFormActionURL=
 
 ## AllowedRedirectHosts
 
-> Array of allowed hosts for redirects with full URL from Exponential modules.  
-> Note: Current host and configured hosts (HostMatchMapItems/HostUriMatchMapItems) are always considered trusted  
+> Array der Hosts, die für Weiterleitungen mit voller URL aus Modulen von Exponential erlaubt sind.  
+> Hinweis: Der aktuelle Host und die konfigurierten Hosts (HostMatchMapItems/HostUriMatchMapItems) gelten immer als vertrauenswürdig  
 
 Standard: eine leere Liste.
 
@@ -293,11 +293,11 @@ AllowedRedirectHosts[]
 ## DisallowedReturnViews
 
 > AllowedRedirectHosts\[\]=www.sometrustedhost.com  
-> Module views that "back to where you came from" never returns to: Cancel and Discard of user/edit,  
-> user/password, user/setting, section/edit, state edits, role/edit, class/edit and class/groupedit, which go to  
-> the page the form names (RedirectIfDiscarded) or the page viewed last. These views act on a POST, end the  
-> session or start a download, so a GET there shows nothing or does something. The running view itself is  
-> always skipped. See doc/eng-us/features/6.0/safe-redirects.md  
+> Modulansichten, zu denen „zurück, woher Sie kamen“ nie zurückkehrt: Abbrechen und Verwerfen von user/edit,  
+> user/password, user/setting, section/edit, Bearbeitungen von Zuständen, role/edit, class/edit und class/groupedit, die zu  
+> der Seite gehen, die das Formular nennt (RedirectIfDiscarded), oder zur zuletzt angesehenen Seite. Diese Ansichten handeln auf einen POST, beenden die  
+> Sitzung oder starten einen Download, ein GET dort zeigt also nichts oder tut etwas. Die laufende Ansicht selbst wird  
+> immer übersprungen. Siehe doc/eng-us/features/6.0/safe-redirects.md  
 
 Standard: eine Liste mit 14: `content/action`, `content/removeobject`, `content/removenode`, `content/removeassignment`, `content/removeeditversion`, `content/download`, `user/logout`, `user/login`, `user/activate`, `user/success`, `user/forgotpassword`, `user/register` ....
 

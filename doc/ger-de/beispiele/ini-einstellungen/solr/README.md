@@ -12,20 +12,20 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/solr.ini`: 1 Blöcke, 9 Einstellungen.
 
-> Exponential Solr search server settings.  
+> Einstellungen des Suchservers Solr für Exponential.  
 >
-> Solr is OPTIONAL. Out of the box this installation uses the built-in eZ search  
-> index (bin/php/updatesearchindex.php); Solr is only used once it is installed  
-> and enabled here. The exp:solr command reads this file to decide whether Solr  
-> is configured, and, when it is, how to reach or run it.  
+> Solr ist OPTIONAL. Ab Werk verwendet diese Installation den eingebauten  
+> Suchindex von eZ (bin/php/updatesearchindex.php); Solr wird erst verwendet, wenn es installiert  
+> und hier aktiviert ist. Der Befehl exp:solr liest diese Datei, um zu entscheiden, ob Solr  
+> konfiguriert ist, und, wenn ja, wie es zu erreichen oder auszuführen ist.  
 >
-> Enable Solr by setting Enabled=true and either:  
->   - Url  = the base URL of an already-running (local or remote) Solr, or  
->   - BinaryPath = the Solr control binary on this machine (e.g. /opt/solr/bin/solr),  
->     with Host, Port and DataDir for the local instance.  
+> Aktivieren Sie Solr, indem Sie Enabled=true setzen und entweder:  
+>   - Url  = die Basis-URL eines bereits laufenden (lokalen oder entfernten) Solr oder  
+>   - BinaryPath = die Steuerdatei von Solr auf diesem Rechner (z. B. /opt/solr/bin/solr),  
+>     mit Host, Port und DataDir für die lokale Instanz.  
 >
-> Override per installation in settings/override/solr.ini.append.php; never edit  
-> the packaged file for a single machine.  
+> Überschreiben Sie dies pro Installation in settings/override/solr.ini.append.php; bearbeiten Sie nie  
+> die ausgelieferte Datei für einen einzelnen Rechner.  
 
 | Block | Einstellungen |
 |---|---|

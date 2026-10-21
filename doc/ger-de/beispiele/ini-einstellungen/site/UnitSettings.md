@@ -11,18 +11,18 @@ generated: exp:help:examples
 
 Der Block `[UnitSettings]` von `settings/site.ini`, mit 2 Einstellung(en).
 
-> Example mapping between translation siteaccesses and the name to use for the  
-> language switcher link, e.g. the name which will be used when making links to  
-> these siteaccesses.  
-> Example: TranslationSA\[<name of siteaccess>\]=<name of language switcher link, pointing to this siteaccess>  
+> Beispielzuordnung zwischen Übersetzungs-Siteaccesses und dem Namen, der für den  
+> Link der Sprachumschaltung verwendet wird, also dem Namen, der beim Verlinken auf  
+> diese Siteaccesses verwendet wird.  
+> Beispiel: TranslationSA\[<name of siteaccess>\]=<name of language switcher link, pointing to this siteaccess>  
 > TranslationSA\[\]  
 > TranslationSA\[eng\]=English  
 > TranslationSA\[nor\]=Norwegian  
 > TranslationSA\[fre\]=French  
-> Example mapping between languages and siteaccess, mapping is done by convention if not defined  
-> like eg: eng-GB => eng  
-> In both cases sa name needs to be present in \[SiteAccessSettings\]\\RelatedSiteAccessList\[\]  
-> Example: LanguageSA\[<language>\]=<name of siteaccess>  
+> Beispielzuordnung zwischen Sprachen und Siteaccess; ist sie nicht definiert, wird nach Konvention zugeordnet,  
+> z. B. eng-GB => eng  
+> In beiden Fällen muss der Name des Siteaccess in \[SiteAccessSettings\]\\RelatedSiteAccessList\[\] stehen  
+> Beispiel: LanguageSA\[<language>\]=<name of siteaccess>  
 > LanguageSA\[\]  
 > LanguageSA\[eng-GB\]=site1\_eng  
 > LanguageSA\[nor-NB\]=site1\_nor  
@@ -36,7 +36,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## BinaryUnits
 
-> List of units which acts as binary measures  
+> Liste der Einheiten, die als binäre Maße gelten  
 
 Standard: `byte;bit`.
 
@@ -50,8 +50,8 @@ BinaryUnits=byte;bit
 
 ## UseSIUnits
 
-> True means use Ki, Mi etc. for binary measures instead of K, M etc.  
-> This is good if you want to follow proper naming standards.  
+> True bedeutet, für binäre Maße Ki, Mi usw. statt K, M usw. zu verwenden.  
+> Das ist gut, wenn Sie den korrekten Benennungsstandards folgen wollen.  
 
 Standard: `false`.
 

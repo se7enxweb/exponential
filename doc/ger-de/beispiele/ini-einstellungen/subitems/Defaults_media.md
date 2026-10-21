@@ -11,13 +11,13 @@ generated: exp:help:examples
 
 Der Block `[Defaults_media]` von `settings/subitems.ini`, mit 3 Einstellung(en).
 
-> Defaults per place: the columns shown by default under some parents (before the user saves a  
-> choice of their own). The first block that matches wins, in the order of this file:  
+> Standards pro Ort: die Spalten, die unter manchen Elternknoten standardmäßig angezeigt werden (bevor der Benutzer  
+> eine eigene Wahl speichert). Der erste passende Block gewinnt, in der Reihenfolge dieser Datei:  
 > \[Defaults\_<id>\]  
-> Subtree\[\]                 node ids: matches when the parent is one of them or lies below one  
-> ParentClassIdentifiers\[\]  class identifiers: matches when the parent is of one of them  
-> Columns\[\]                 the visible columns, in order  
-> The media library (content.ini \[NodeSettings\] MediaRootNode=43); the list's former media defaults  
+> Subtree\[\]                 Knoten-IDs: passt, wenn der Elternknoten einer davon ist oder darunter liegt  
+> ParentClassIdentifiers\[\]  Klassenbezeichner: passt, wenn der Elternknoten zu einer davon gehört  
+> Columns\[\]                 die sichtbaren Spalten, in Reihenfolge  
+> Die Medienbibliothek (content.ini \[NodeSettings\] MediaRootNode=43); die früheren Medienstandards der Liste  
 
 Bearbeiten Sie `settings/subitems.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

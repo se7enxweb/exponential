@@ -21,9 +21,9 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## AutoloadPathList
 
-> A list of directories to look for eztemplateautoload.php files  
-> These files will be used to automatically load in template functions and operators  
-> You can new ones if you create custom template code.  
+> Eine Liste von Verzeichnissen, in denen nach Dateien eztemplateautoload.php gesucht wird  
+> Diese Dateien werden verwendet, um Template-Funktionen und -Operatoren automatisch zu laden  
+> Sie können neue hinzufügen, wenn Sie eigenen Template-Code erstellen.  
 
 Standard: eine Liste mit 4: `lib/eztemplate/classes/`, `kernel/common/`, `lib/ezpdf/classes/`, `kernel/private/eztemplate/`.
 
@@ -42,9 +42,9 @@ AutoloadPathList[]=kernel/private/eztemplate/
 
 ## ExtensionAutoloadPath
 
-> A list of extensions which have template autoloads.  
-> Only specify the extension name, not the path.  
-> The extension must contain a subdirectory called autoloads.  
+> Eine Liste der Erweiterungen, die Template-Autoloads haben.  
+> Geben Sie nur den Namen der Erweiterung an, nicht den Pfad.  
+> Die Erweiterung muss ein Unterverzeichnis namens autoloads enthalten.  
 
 Standard: eine leere Liste.
 
@@ -59,9 +59,9 @@ ExtensionAutoloadPath[]
 
 ## Debug
 
-> Enabled to see which template files are loaded or disabled to supress debug  
-> Warning: Will add debug xhtml comments to your source code, including mails!  
-> Note: No debug on templates starting with <!DOCTYPE to not trigger quirks mode!  
+> enabled, um zu sehen, welche Template-Dateien geladen werden, oder disabled, um das Debugging zu unterdrücken  
+> Warnung: Fügt Ihrem Quelltext Debug-Kommentare in XHTML hinzu, auch in Mails!  
+> Hinweis: Kein Debugging bei Templates, die mit <!DOCTYPE beginnen, um den Quirks-Modus nicht auszulösen!  
 
 Standard: `disabled`.
 
@@ -75,8 +75,8 @@ Debug=disabled
 
 ## ShowXHTMLCode
 
-> If enabled will add code to display the template name in the browser  
-> If Debug is disabled then nothing happens  
+> Wenn aktiviert, wird Code hinzugefügt, der den Template-Namen im Browser anzeigt  
+> Ist Debug deaktiviert, geschieht nichts  
 
 Standard: `enabled`.
 
@@ -90,11 +90,11 @@ ShowXHTMLCode=enabled
 
 ## ShowMethodDebug
 
-> Whether to show debug of functions and operators when  
-> processing nodes.  
-> This only meant for kernel developers to check which  
-> operators and functions are called.  
-> Note: Will only work when template compiler is off  
+> Ob beim Verarbeiten von Knoten das Debugging von Funktionen und Operatoren  
+> angezeigt wird.  
+> Das ist nur für Kernel-Entwickler gedacht, um zu prüfen, welche  
+> Operatoren und Funktionen aufgerufen werden.  
+> Hinweis: Funktioniert nur, wenn der Template-Compiler aus ist  
 
 Standard: `disabled`.
 
@@ -108,8 +108,8 @@ ShowMethodDebug=disabled
 
 ## ShowUsedTemplates
 
-> If enabled will add a table with templates used to render a page.  
-> DebugOutput should be enabled too.  
+> Wenn aktiviert, wird eine Tabelle der zum Rendern einer Seite verwendeten Templates hinzugefügt.  
+> DebugOutput sollte ebenfalls aktiviert sein.  
 
 Standard: `disabled`.
 
@@ -123,12 +123,12 @@ ShowUsedTemplates=disabled
 
 ## ShowTemplatePathComments
 
-> If enabled, wraps every rendered template in HTML comments naming its path,  
-> e.g. <!-- START design/media/templates/pagelayout/footer.tpl --> ... <!-- STOP ... -->  
-> This mirrors the Symfony/Twig debug output and makes layout debugging and block  
-> tracking possible in the legacy pipeline. Works with the template compiler on or off.  
-> Development only: it injects markup into every template's output, so it must stay  
-> disabled in production and on any siteaccess serving JSON, XML or RSS.  
+> Wenn aktiviert, wird jedes gerenderte Template in HTML-Kommentare eingeschlossen, die seinen Pfad nennen,  
+> z. B. <!-- START design/media/templates/pagelayout/footer.tpl --> ... <!-- STOP ... -->  
+> Das entspricht der Debug-Ausgabe von Symfony/Twig und macht das Debuggen von Layouts und das Verfolgen von Blöcken  
+> in der Legacy-Pipeline möglich. Funktioniert mit ein- oder ausgeschaltetem Template-Compiler.  
+> Nur für die Entwicklung: Es fügt in die Ausgabe jedes Templates Markup ein, muss also in Produktion  
+> und in jedem Siteaccess, der JSON, XML oder RSS ausliefert, deaktiviert bleiben.  
 
 Standard: `disabled`.
 
@@ -142,8 +142,8 @@ ShowTemplatePathComments=disabled
 
 ## NodeTreeCaching
 
-> Determines whether the internal node tree should be cached, by enabling this the loading  
-> and parsing of templates is significantly reduced.  
+> Legt fest, ob der interne Knotenbaum gecacht wird; das reduziert das Laden  
+> und Parsen von Templates deutlich.  
 
 Standard: `disabled`.
 
@@ -157,10 +157,10 @@ NodeTreeCaching=disabled
 
 ## TemplateCompile
 
-> Determines whether the templates should be compiled to PHP code, by enabling this the loading  
-> and parsing of templates is omitted and template processing is significantly reduced.  
-> Note: The first time the templates are compiled it will take a long time, use the  
->       bin/php/eztc.php script to prepare all your templates.  
+> Legt fest, ob die Templates zu PHP-Code kompiliert werden; dann entfallen das Laden  
+> und Parsen der Templates, und die Template-Verarbeitung wird deutlich reduziert.  
+> Hinweis: Das erste Kompilieren der Templates dauert lange; verwenden Sie das  
+>       Skript bin/php/eztc.php, um alle Ihre Templates vorzubereiten.  
 
 Standard: `enabled`.
 
@@ -174,7 +174,7 @@ TemplateCompile=enabled
 
 ## ShareCompiledTemplates
 
-> If you share compiled templates with other site accesses  
+> Ob Sie kompilierte Templates mit anderen Siteaccesses teilen  
 
 Standard: `disabled`.
 
@@ -188,7 +188,7 @@ ShareCompiledTemplates=disabled
 
 ## SharedCompiledTemplatesDir
 
-> Where to store shared compiled templates  
+> Wo gemeinsam genutzte kompilierte Templates gespeichert werden  
 
 Standard: leer.
 
@@ -202,8 +202,8 @@ SharedCompiledTemplatesDir=
 
 ## TemplateOptimization
 
-> Controls whether further optimizations should be performed on compiled  
-> templates  
+> Steuert, ob an kompilierten Templates weitere Optimierungen  
+> vorgenommen werden  
 
 Standard: `enabled`.
 
@@ -217,7 +217,7 @@ TemplateOptimization=enabled
 
 ## UseFormatting
 
-> Controls whether to include formatting in compiled templates or not.  
+> Steuert, ob kompilierte Templates Formatierung enthalten.  
 
 Standard: `disabled`.
 
@@ -231,9 +231,9 @@ UseFormatting=disabled
 
 ## TemplateCache
 
-> Controls all template base caching mechanisms, if disabled they will never be  
-> used.  
-> The elements currently controlled by this is:  
+> Steuert alle auf Templates beruhenden Cache-Mechanismen; wenn deaktiviert, werden sie nie  
+> verwendet.  
+> Die Elemente, die dies derzeit steuert, sind:  
 > - cache-block  
 
 Standard: `enabled`.
@@ -248,11 +248,11 @@ TemplateCache=enabled
 
 ## DelayedCacheBlockCleanup
 
-> Controls whether expired cache-blocks with 'subtree\_expiry' parameter will  
-> be removed from disk immediately or not.  
-> If enabled it should increase performance of large sites but you should remove  
-> expired caches manually or using cronjob 'cronjobs/subtreeexpirycleanup.php'.  
-> Since 4.6, this cronjob is not activated by default.  
+> Steuert, ob abgelaufene Cache-Blöcke mit dem Parameter 'subtree\_expiry'  
+> sofort von der Festplatte entfernt werden.  
+> Wenn aktiviert, sollte das die Leistung großer Websites verbessern, Sie sollten abgelaufene  
+> Caches dann aber von Hand oder mit dem Cronjob 'cronjobs/subtreeexpirycleanup.php' entfernen.  
+> Seit 4.6 ist dieser Cronjob standardmäßig nicht aktiviert.  
 
 Standard: `disabled`.
 
@@ -266,8 +266,8 @@ DelayedCacheBlockCleanup=disabled
 
 ## TemplateCompression
 
-> Controls whether compiled templates should be stored gzip compressed on disk.  
-> This drastically reduces disk usage.  
+> Steuert, ob kompilierte Templates gzip-komprimiert auf der Festplatte gespeichert werden.  
+> Das reduziert den Speicherbedarf drastisch.  
 
 Standard: `disabled`.
 
@@ -281,13 +281,13 @@ TemplateCompression=disabled
 
 ## DevelopmentMode
 
-> Controls if development is enabled or not.  
-> When enabled the system will perform more checks like modification time on  
-> compiled vs source file and will reduce need for clearing template compiled  
-> files.  
-> Note: Live sites should not have this enabled since it increases file access  
->       and can be slower.  
-> Note: When switching this setting the template compiled files must be cleared.  
+> Steuert, ob der Entwicklungsmodus aktiviert ist.  
+> Wenn aktiviert, führt das System mehr Prüfungen durch, etwa der Änderungszeit von  
+> kompilierter gegenüber Quelldatei, und das Leeren kompilierter Template-Dateien wird seltener  
+> nötig.  
+> Hinweis: Live-Websites sollten dies nicht aktiviert haben, weil es die Dateizugriffe erhöht  
+>       und langsamer sein kann.  
+> Hinweis: Beim Umschalten dieser Einstellung müssen die kompilierten Template-Dateien geleert werden.  
 
 Standard: `disabled`.
 
@@ -301,11 +301,11 @@ DevelopmentMode=disabled
 
 ## CompileComments
 
-> NOTE:  
-> The following settings are for template compilation development only  
-> and are not useful for normal sites.  
+> HINWEIS:  
+> Die folgenden Einstellungen dienen nur der Entwicklung der Template-Kompilierung  
+> und sind für normale Websites nicht nützlich.  
 >
-> Whether to include comments inside cache files or not.  
+> Ob Kommentare in die Cache-Dateien aufgenommen werden.  
 
 Standard: `disabled`.
 
@@ -319,7 +319,7 @@ CompileComments=disabled
 
 ## CompileAccumulators
 
-> Whether to include debug accumulators.  
+> Ob Debug-Akkumulatoren eingebunden werden.  
 
 Standard: `disabled`.
 
@@ -333,7 +333,7 @@ CompileAccumulators=disabled
 
 ## CompileTimingPoints
 
-> Whether to include debug timing points.  
+> Ob Debug-Zeitpunkte eingebunden werden.  
 
 Standard: `disabled`.
 
@@ -347,8 +347,8 @@ CompileTimingPoints=disabled
 
 ## CompileResourceFallback
 
-> Whether to fallback code for resource handling  
-> Should not be needed unless one has to debug the compilation process  
+> Ob Ausweichcode für die Behandlung von Ressourcen verwendet wird  
+> Sollte nicht nötig sein, außer man muss den Kompilierungsprozess debuggen  
 
 Standard: `disabled`.
 
@@ -362,8 +362,8 @@ CompileResourceFallback=disabled
 
 ## CompileNodePlacements
 
-> If disabled the template compilation will not include placement information for nodes  
-> The placement information is used to display line and column numbers for warnings and errors.  
+> Wenn deaktiviert, enthält die Template-Kompilierung keine Positionsangaben für Knoten  
+> Die Positionsangaben dienen dazu, Zeilen- und Spaltennummern für Warnungen und Fehler anzuzeigen.  
 
 Standard: `enabled`.
 
@@ -377,8 +377,8 @@ CompileNodePlacements=enabled
 
 ## CompileExecution
 
-> If disabled the template compilation files will only be generated but  
-> not executed, this means that the normal template process is used for the result.  
+> Wenn deaktiviert, werden die Dateien der Template-Kompilierung nur erzeugt, aber  
+> nicht ausgeführt; für das Ergebnis wird also der normale Template-Prozess verwendet.  
 
 Standard: `enabled`.
 
@@ -392,8 +392,8 @@ CompileExecution=enabled
 
 ## CompileAlwaysGenerate
 
-> If enabled the templates are always compiled even if a  
-> sufficient cache already exists.  
+> Wenn aktiviert, werden die Templates immer kompiliert, auch wenn schon ein  
+> ausreichender Cache existiert.  
 
 Standard: `disabled`.
 
@@ -407,14 +407,14 @@ CompileAlwaysGenerate=disabled
 
 ## CompileIncludeNodeTree
 
-> An array with node trees to include in the compiled template file.  
-> Including them will increase the size of the cache files and  
-> is only useful for template compilation development.  
-> Possible entries are:  
-> transformed - The tree after node transformation has been done  
-> static      - The tree after static extraction has been done  
-> combined    - The tree after static element combines has been done  
-> original    - The originally parsed tree  
+> Ein Array mit Knotenbäumen, die in die kompilierte Template-Datei aufgenommen werden.  
+> Das vergrößert die Cache-Dateien und  
+> ist nur für die Entwicklung der Template-Kompilierung nützlich.  
+> Mögliche Einträge sind:  
+> transformed - der Baum nach der Transformation der Knoten  
+> static      - der Baum nach der statischen Extraktion  
+> combined    - der Baum nach dem Zusammenfassen statischer Elemente  
+> original    - der ursprünglich geparste Baum  
 
 Standard: eine leere Liste.
 

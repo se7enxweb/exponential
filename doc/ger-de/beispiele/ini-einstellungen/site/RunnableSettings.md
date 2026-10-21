@@ -43,28 +43,28 @@ Implementation[]
 
 ## Listeners
 
-> Listeners of the runnables' events, in the form of \[Event\] Listeners\[\]:  
+> Listener der Ereignisse der Runnables, in der Form von \[Event\] Listeners\[\]:  
 > Listeners\[\]=<event>@<callback>  
-> The events, <kind> being command, cronjob or view:  
->   runnable/<kind>/before   notified with ( $runnable, $class, $scope ) before run()  
->   runnable/<kind>/after    filters the result: ( $result, $runnable, $class, $scope ),  
->                            returns the result to use  
-> eg:  
+> Die Ereignisse, wobei <kind> command, cronjob oder view ist:  
+>   runnable/<kind>/before   benachrichtigt mit ( $runnable, $class, $scope ) vor run()  
+>   runnable/<kind>/after    filtert das Ergebnis: ( $result, $runnable, $class, $scope ),  
+>                            gibt das zu verwendende Ergebnis zurück  
+> z. B.:  
 > Listeners\[\]=runnable/view/after@myViewTimer::after  
-> These are attached for the runnables in every context, the command line too  
-> (\[Event\] Listeners\[\] is attached to web requests only).  
-> A command is created before its script has read the siteaccess and extension  
-> settings, so Implementation\[\] and Listeners\[\] for a command are read from  
-> settings/site.ini and settings/override/site.ini.append.php only.  
+> Diese werden für die Runnables in jedem Kontext angehängt, auch auf der Kommandozeile  
+> (\[Event\] Listeners\[\] wird nur an Web-Anfragen angehängt).  
+> Ein Befehl wird erzeugt, bevor sein Skript die Siteaccess- und Erweiterungs-  
+> einstellungen gelesen hat, daher werden Implementation\[\] und Listeners\[\] für einen Befehl nur aus  
+> settings/site.ini und settings/override/site.ini.append.php gelesen.  
 >
-> runcronjobs.php asks one more filter before the scripts of a part run, after the  
-> siteaccess and extension settings are loaded (its listener may come from either):  
->   cronjob/part/run         ( true, $part, $siteaccess, $scripts, $single ); return  
->                            true to run the part, anything else leaves it out. $part  
->                            is '' for \[CronjobSettings\] and for --script; $single is  
->                            true for --script, whose one file name is in $scripts  
+> runcronjobs.php fragt einen weiteren Filter, bevor die Skripte eines Teils laufen, nachdem die  
+> Siteaccess- und Erweiterungseinstellungen geladen sind (sein Listener kann aus beiden kommen):  
+>   cronjob/part/run         ( true, $part, $siteaccess, $scripts, $single ); geben Sie  
+>                            true zurück, um den Teil auszuführen; alles andere lässt ihn aus. $part  
+>                            ist '' für \[CronjobSettings\] und für --script; $single ist  
+>                            true für --script, dessen einziger Dateiname in $scripts steht  
 > Listeners\[\]=cronjob/part/run@myCronjobStop::partRun  
-> Guide: doc/eng-us/features/6.0/cronjob-part-filter.md  
+> Anleitung: doc/eng-us/features/6.0/cronjob-part-filter.md  
 
 Standard: eine leere Liste.
 

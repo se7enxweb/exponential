@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/soap.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## SOAPExtensions
 
-> Extensions for SOAP functions.  
-> SOAP functions must be registered under soap/initialize.php  
+> Erweiterungen für SOAP-Funktionen.  
+> SOAP-Funktionen müssen unter soap/initialize.php registriert sein  
 
 Standard: eine leere Liste.
 

@@ -118,7 +118,7 @@ Description=The public site's title for the item's page, worked out as its pagel
 
 ## SiteAccess
 
-> The public siteaccess; empty: site.ini \[SiteSettings\] DefaultAccess  
+> Der öffentliche Siteaccess; leer: site.ini \[SiteSettings\] DefaultAccess  
 
 Standard: leer.
 
@@ -132,8 +132,8 @@ SiteAccess=
 
 ## TitleFormat
 
-> The rule of the public design: name = "<meta title or name> - <SiteName>" (the media design),  
-> path = "<name> / <parent> / ... - <SiteName>" (design/standard and ezwebin page\_head.tpl)  
+> Die Regel des öffentlichen Designs: name = "<meta title or name> - <SiteName>" (das Design media),  
+> path = "<name> / <parent> / ... - <SiteName>" (design/standard und page\_head.tpl von ezwebin)  
 
 Standard: `name`.
 

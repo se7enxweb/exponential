@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[TipAFriend]` von `settings/site.ini`, mit 3 Einstellung(en).
 
-> Settings control amount of mails  allowed to to be sent to one email address  
+> Die Einstellungen steuern, wie viele Mails an eine E-Mail-Adresse gesendet werden dürfen  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -45,10 +45,10 @@ TimeFrame=1
 
 ## FromEmail
 
-> in hours  
-> Email used as sender email in tipafriend mails, this is needed when you use  
-> smtp servers with closed relaying  
-> Assign a non-empty value to FromEmail for it to be used as from address.  
+> in Stunden  
+> E-Mail-Adresse, die in Mails von tipafriend als Absender verwendet wird; nötig, wenn Sie  
+> SMTP-Server mit geschlossenem Relay verwenden  
+> Weisen Sie FromEmail einen nicht leeren Wert zu, damit sie als Absenderadresse verwendet wird.  
 
 Standard: leer.
 

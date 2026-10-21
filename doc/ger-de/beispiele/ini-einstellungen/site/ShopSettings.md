@@ -19,28 +19,28 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ClearBasketOnCheckout
 
-> This settings controls when the basket is cleared.  
-> It can contain the following values:  
-> - disabled - Means that the basket is cleared when the shop/checkout  
->              trigger is done. In practice this means when a user  
->              has payed the product and payment system is finished.  
->              This is the default value since it means the user can  
->              cancel the order and go back to the shop with the  
->              basket still intact.  
-> - enabled - Means to clear the basket as soon as the user clicks  
->             confirm in the shop/confirmorder trigger. This may  
->             needed by some payment system, check the documentation  
->             for the system to see if this needs to be enabled.  
->             The inpact on the users is that the basket will not be  
->             available when the payment is cancelled.  
+> Diese Einstellung steuert, wann der Warenkorb geleert wird.  
+> Sie kann folgende Werte enthalten:  
+> - disabled - Der Warenkorb wird geleert, wenn der Auslöser shop/checkout  
+>              fertig ist. In der Praxis also, wenn ein Benutzer  
+>              das Produkt bezahlt hat und das Bezahlsystem fertig ist.  
+>              Das ist der Standard, weil der Benutzer dann die  
+>              Bestellung abbrechen und mit intaktem Warenkorb  
+>              zum Shop zurückkehren kann.  
+> - enabled - Der Warenkorb wird geleert, sobald der Benutzer  
+>             im Auslöser shop/confirmorder auf Bestätigen klickt. Das kann  
+>             für manche Bezahlsysteme nötig sein; prüfen Sie in der Dokumentation  
+>             des Systems, ob dies aktiviert werden muss.  
+>             Für die Benutzer bedeutet das, dass der Warenkorb nicht mehr  
+>             verfügbar ist, wenn die Zahlung abgebrochen wird.  
 >
-> To put it in context the entire checkout process consists of these triggers:  
-> - shop/confirmorder - The user shown the total price with shipping  
->                       and other calculations. When the user clicks  
->                       confirm the shop/checkout trigger is started.  
-> - shop/checkout     - Starts a new temporary order and runs any payment  
->                       methods (or other workflows). Once it is done  
->                       the order is activated and the basket is cleared.  
+> Zur Einordnung: Der ganze Bezahlvorgang besteht aus diesen Auslösern:  
+> - shop/confirmorder - Dem Benutzer wird der Gesamtpreis mit Versand  
+>                       und anderen Berechnungen gezeigt. Klickt der Benutzer  
+>                       auf Bestätigen, wird der Auslöser shop/checkout gestartet.  
+> - shop/checkout     - Startet eine neue vorläufige Bestellung und führt die Bezahl-  
+>                       methoden (oder andere Workflows) aus. Wenn das fertig ist,  
+>                       wird die Bestellung aktiviert und der Warenkorb geleert.  
 
 Standard: `disabled`.
 
@@ -54,10 +54,10 @@ ClearBasketOnCheckout=disabled
 
 ## ClearBasketOnLogout
 
-> This settings is used when a user logs out.  
-> It can contain the following values:  
-> - disabled - Means that the basket will NOT be cleared when a user logs out.  
-> - enabled  - Means that the basket will be cleared when a user logs out.  
+> Diese Einstellung wird verwendet, wenn sich ein Benutzer abmeldet.  
+> Sie kann folgende Werte enthalten:  
+> - disabled - Der Warenkorb wird beim Abmelden eines Benutzers NICHT geleert.  
+> - enabled  - Der Warenkorb wird beim Abmelden eines Benutzers geleert.  
 
 Standard: `disabled`.
 
@@ -71,11 +71,11 @@ ClearBasketOnLogout=disabled
 
 ## RedirectAfterAddToBasket
 
-> Controls what happens after an item is added to the basket  
-> It can contain one of these entries:  
-> - basket - Redirect back to the basket to show the newly added item  
-> - reload - Redirect back to where the user was previously, this allows  
->            the user to continue shopping.  
+> Steuert, was geschieht, nachdem ein Artikel in den Warenkorb gelegt wurde  
+> Sie kann einen dieser Einträge enthalten:  
+> - basket - zurück zum Warenkorb weiterleiten, um den neu hinzugefügten Artikel zu zeigen  
+> - reload - dorthin zurückleiten, wo der Benutzer zuvor war, damit  
+>            er weiter einkaufen kann.  
 
 Standard: `basket`.
 
@@ -89,8 +89,8 @@ RedirectAfterAddToBasket=basket
 
 ## SendOrderEmail
 
-> Controls if we should send an order confirmation email to admin and the user or not  
-> when an order is completed and confirmed.  
+> Steuert, ob eine Bestellbestätigung per E-Mail an Administrator und Benutzer gesendet wird,  
+> wenn eine Bestellung abgeschlossen und bestätigt ist.  
 
 Standard: `enabled`.
 

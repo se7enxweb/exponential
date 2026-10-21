@@ -115,7 +115,7 @@ Description=The path visitors use on the public siteaccess: the URL alias withou
 
 ## SiteAccess
 
-> The public siteaccess; empty: site.ini \[SiteSettings\] DefaultAccess  
+> Der öffentliche Siteaccess; leer: site.ini \[SiteSettings\] DefaultAccess  
 
 Standard: leer.
 

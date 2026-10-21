@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## RememberMeTimeout
 
-> "Remember me" feature of the login.  
-> Number of seconds a session cookie will last,  
-> if an user wants to store current session to the cookie  
-> should click on "Remember me" checkbox on login page.  
-> Empty or 0 means this ability will be disabled and CookieTimeout will be used.  
+> Die Funktion „Angemeldet bleiben“ der Anmeldung.  
+> Sekunden, die ein Sitzungs-Cookie hält,  
+> wenn ein Benutzer die aktuelle Sitzung im Cookie speichern will und  
+> auf der Anmeldeseite das Kontrollkästchen „Angemeldet bleiben“ anklickt.  
+> Leer oder 0 bedeutet, dass diese Möglichkeit deaktiviert ist und CookieTimeout verwendet wird.  
 
 Standard: leer.
 
@@ -37,11 +37,11 @@ RememberMeTimeout=
 
 ## Handler
 
-> Exponential legacy session handler (class name) : not applicable if using the symfony stack  
-> When empty uses ezpSessionHandlerPHP, a session handler that lets php remain in control  
-> of the session handling (def: files, as defined by session.save\_handler in php.ini)  
-> To get back old behavior for logged in/anonymous count & session clearing, use ezpSessionHandlerDB  
-> and enable ForceStart setting.  
+> Sitzungs-Handler von Exponential Legacy (Klassenname): nicht anwendbar mit dem Symfony-Stack  
+> Wenn leer, wird ezpSessionHandlerPHP verwendet, ein Sitzungs-Handler, der PHP die Kontrolle  
+> über die Sitzungsverwaltung lässt (Standard: files, wie in session.save\_handler in php.ini festgelegt)  
+> Um das alte Verhalten für die Zählung angemeldeter/anonymer Benutzer und das Leeren von Sitzungen zurückzuerhalten, verwenden Sie ezpSessionHandlerDB  
+> und aktivieren Sie die Einstellung ForceStart.  
 
 Standard: leer.
 
@@ -55,8 +55,8 @@ Handler=
 
 ## SessionTimeout
 
-> Number of seconds a session will last, 3 days is standard  
-> Overwrites session.gc\_maxlifetime when used with ezpSessionHandlerPHP  
+> Sekunden, die eine Sitzung hält; 3 Tage sind Standard  
+> Überschreibt session.gc\_maxlifetime, wenn ezpSessionHandlerPHP verwendet wird  
 
 Standard: `259200`.
 
@@ -70,8 +70,8 @@ SessionTimeout=259200
 
 ## ActivityTimeout
 
-> # DB (ezpSessionHandlerDB) Handler specific settings  
-> Number of seconds before a session is considered inactive/logged out, 1 hour is standard  
+> # Einstellungen speziell für den Handler DB (ezpSessionHandlerDB)  
+> Sekunden, bis eine Sitzung als inaktiv/abgemeldet gilt; 1 Stunde ist Standard  
 
 Standard: `3600`.
 
@@ -85,9 +85,9 @@ ActivityTimeout=3600
 
 ## ForceStart
 
-> # Backward compatibility settings: not applicable if using the symfony stack  
-> Makes session always start even if not needed (for anonymous users that just browse the site)  
-> by default it will not start before it is used  
+> # Einstellungen zur Rückwärtskompatibilität: nicht anwendbar mit dem Symfony-Stack  
+> Lässt die Sitzung immer starten, auch wenn sie nicht gebraucht wird (für anonyme Benutzer, die nur die Website besuchen)  
+> standardmäßig startet sie erst, wenn sie verwendet wird  
 
 Standard: `disabled`.
 
@@ -101,11 +101,11 @@ ForceStart=disabled
 
 ## SessionNameHandler
 
-> Decides how the name of the session value is handled.  
-> Possible values are:  
-> default - Let PHP decide the session name, this also rules  
->           out the possiblity for per-siteaccess sessions.  
-> custom  - Use SessionNamePrefix for name. per-siteaccess sessions are possible.  
+> Entscheidet, wie der Name des Sitzungswerts behandelt wird.  
+> Mögliche Werte sind:  
+> default - PHP entscheidet über den Sitzungsnamen; das schließt auch  
+>           Sitzungen pro Siteaccess aus.  
+> custom  - SessionNamePrefix als Name verwenden; Sitzungen pro Siteaccess sind möglich.  
 
 Standard: `default`.
 
@@ -119,10 +119,10 @@ SessionNameHandler=default
 
 ## SessionNamePrefix
 
-> The name of the session ID, is prefixed with the current  
-> siteaccess to provide login per siteaccess.  
-> Only alphanumeric characters are allowed (ref: php.net/session\_name)  
-> Note: Will only work if SessionNameHandler is set to custom  
+> Dem Namen der Sitzungs-ID wird der aktuelle  
+> Siteaccess vorangestellt, um eine Anmeldung pro Siteaccess zu ermöglichen.  
+> Nur alphanumerische Zeichen sind erlaubt (siehe php.net/session\_name)  
+> Hinweis: Funktioniert nur, wenn SessionNameHandler auf custom steht  
 
 Standard: `eZSESSID`.
 
@@ -136,10 +136,10 @@ SessionNamePrefix=eZSESSID
 
 ## SessionNamePerSiteAccess
 
-> Whether the session name should be unique per siteaccess.  
-> By enabling this you will be able to get one unique login per siteaccess.  
-> Session name is md5 encoded to avoid issues with non alphanumeric characters.  
-> Note: Will only work if SessionNameHandler is set to custom  
+> Ob der Sitzungsname pro Siteaccess eindeutig sein soll.  
+> Wenn Sie das aktivieren, erhalten Sie pro Siteaccess eine eigene Anmeldung.  
+> Der Sitzungsname ist md5-kodiert, um Probleme mit nicht alphanumerischen Zeichen zu vermeiden.  
+> Hinweis: Funktioniert nur, wenn SessionNameHandler auf custom steht  
 
 Standard: `enabled`.
 
@@ -153,34 +153,34 @@ SessionNamePerSiteAccess=enabled
 
 ## CookieAlwaysAddToHttpResponse
 
-> # Optional settings for override php.ini session cookie settings  
->  Lifetime of the session cookie, defined in seconds.  
->  Leaving the field empty or undefined means to use the default PHP setting  
->  - PHP setting: session.cookie\_lifetime  
+> # Optionale Einstellungen zum Überschreiben der Sitzungs-Cookie-Einstellungen aus php.ini  
+>  Lebensdauer des Sitzungs-Cookies in Sekunden.  
+>  Ein leeres oder nicht definiertes Feld bedeutet die Standardeinstellung von PHP  
+>  - PHP-Einstellung: session.cookie\_lifetime  
 > CookieTimeout=<int>  
-> Example for 6 minutes  
+> Beispiel für 6 Minuten  
 > CookieTimeout=360  
->  Path on the domain where the cookie will work. Use a single slash ('/') for all paths on the domain.  
->  - PHP setting: session.cookie\_path  
+>  Pfad auf der Domain, auf dem das Cookie gilt. Ein einzelner Schrägstrich ('/') für alle Pfade der Domain.  
+>  - PHP-Einstellung: session.cookie\_path  
 > CookiePath=<string>  
->  Cookie domain, for example 'www.php.net'. To make cookies visible on all subdomains then the  
->  domain must be prefixed with a dot like '.php.net'.  
->  - PHP setting: session.cookie\_domain  
+>  Cookie-Domain, zum Beispiel 'www.php.net'. Um Cookies auf allen Subdomains sichtbar zu machen, muss der  
+>  Domain ein Punkt vorangestellt sein, etwa '.php.net'.  
+>  - PHP-Einstellung: session.cookie\_domain  
 > CookieDomain=<string>  
->  If <true> cookie will only be sent over secure connections. <auto>, the  
->  default, marks it Secure whenever the request itself came over HTTPS.  
+>  Bei <true> wird das Cookie nur über sichere Verbindungen gesendet. <auto>, der  
+>  Standard, markiert es als Secure, sobald die Anfrage selbst über HTTPS kam.  
 > CookieSecure=auto|false|true  
->  Tells browser to not allow scripts to access cookie. Default: true.  
+>  Sagt dem Browser, Skripten keinen Zugriff auf das Cookie zu erlauben. Standard: true.  
 > CookieHttponly=true|false  
->  SameSite attribute of the session cookie: Lax (default), Strict, None  
->  (only honoured together with Secure) or empty to send none.  
->  The older name SameSite (used by LoveStack) is still read when CookieSameSite is not set,  
->  and noted once per request as deprecated (var/log/deprecated.log); rename it to CookieSameSite.  
+>  Attribut SameSite des Sitzungs-Cookies: Lax (Standard), Strict, None  
+>  (nur zusammen mit Secure beachtet) oder leer, um keines zu senden.  
+>  Der ältere Name SameSite (von LoveStack verwendet) wird weiterhin gelesen, wenn CookieSameSite nicht gesetzt ist,  
+>  und einmal pro Anfrage als veraltet vermerkt (var/log/deprecated.log); benennen Sie ihn in CookieSameSite um.  
 > CookieSameSite=Lax  
->  enabled sends the session cookie with every response, not only when the session starts, for a load balancer  
->  that keeps a user on one server by the session id in the cookie. Same name, value and flags as the session  
->  cookie; only once a session is running, never to a visitor without one. Such a response is sent with  
->  Cache-Control: private, so no shared cache (proxy, CDN, service worker) keeps the session id. Default: disabled.  
+>  enabled sendet das Sitzungs-Cookie mit jeder Antwort, nicht nur beim Start der Sitzung, für einen Lastverteiler,  
+>  der einen Benutzer über die Sitzungs-ID im Cookie auf einem Server hält. Gleicher Name, Wert und gleiche Flags wie das Sitzungs-  
+>  Cookie; nur sobald eine Sitzung läuft, nie an einen Besucher ohne eine. Eine solche Antwort wird mit  
+>  Cache-Control: private gesendet, damit kein gemeinsamer Cache (Proxy, CDN, Service Worker) die Sitzungs-ID behält. Standard: disabled.  
 
 Standard: `disabled`.
 
@@ -194,10 +194,10 @@ CookieAlwaysAddToHttpResponse=disabled
 
 ## BasketCleanup
 
-> Controls how baskets are cleaned up when session expires.  
-> It can take on these values:  
-> - cronjob - Cleanup values in a cronjob, Note: runcronjobs.php must be run  
-> - pageload - Cleanup on pageload when the session expires (Controlled by PHP)  
+> Steuert, wie Warenkörbe aufgeräumt werden, wenn die Sitzung abläuft.  
+> Mögliche Werte:  
+> - cronjob - Aufräumen in einem Cronjob; Hinweis: runcronjobs.php muss ausgeführt werden  
+> - pageload - Aufräumen beim Laden einer Seite, wenn die Sitzung abläuft (von PHP gesteuert)  
 
 Standard: `cronjob`.
 
@@ -211,8 +211,8 @@ BasketCleanup=cronjob
 
 ## BasketCleanupTime
 
-> Controls the number of seconds the cleanup can run  
-> The default is 2 minutes  
+> Steuert, wie viele Sekunden das Aufräumen laufen darf  
+> Standard sind 2 Minuten  
 
 Standard: `120`.
 
@@ -226,8 +226,8 @@ BasketCleanupTime=120
 
 ## BasketCleanupIdleTime
 
-> Controls how many seconds the cleanup will stay idle between  
-> operations. This can be increased to help keep the load down  
+> Steuert, wie viele Sekunden das Aufräumen zwischen  
+> Operationen pausiert. Ein höherer Wert hilft, die Last niedrig zu halten  
 
 Standard: `2`.
 
@@ -241,9 +241,9 @@ BasketCleanupIdleTime=2
 
 ## BasketCleanupFetchLimit
 
-> The maximum number of basket entries it will fetch in one batch  
-> Can be increased to improve the amount of time it uses for each  
-> cronjob run or decreased to reduce memory usage and load on server.  
+> Die Höchstzahl der Warenkorbeinträge, die in einem Stapel geholt werden  
+> Kann erhöht werden, um die Zeit pro  
+> Cronjob-Lauf zu verbessern, oder verringert, um Speicherverbrauch und Serverlast zu senken.  
 
 Standard: `3000`.
 
@@ -257,9 +257,9 @@ BasketCleanupFetchLimit=3000
 
 ## BasketCleanupAverageFrequency
 
-> Controls how often baskets are cleaned up in the cronjob  
-> A value of 10 means it will clean up in average 1 out of  
-> 10 times.  
+> Steuert, wie oft Warenkörbe im Cronjob aufgeräumt werden  
+> Ein Wert von 10 bedeutet, dass im Durchschnitt bei 1 von  
+> 10 Läufen aufgeräumt wird.  
 
 Standard: `10`.
 

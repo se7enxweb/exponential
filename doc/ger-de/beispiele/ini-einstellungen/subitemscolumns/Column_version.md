@@ -12,7 +12,7 @@ generated: exp:help:examples
 Der Block `[Column_version]` von `settings/subitemscolumns.ini`, mit 8 Einstellung(en).
 
 > ---------------------------------------------------------------------------------------------  
-> Version: the object's versions (all version columns of a row share one query)  
+> Version: die Versionen des Objekts (alle Versionsspalten einer Zeile teilen sich eine Abfrage)  
 
 Bearbeiten Sie `settings/subitemscolumns.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

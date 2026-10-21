@@ -11,11 +11,11 @@ generated: exp:help:examples
 
 Der Block `[Preset_seo]` von `settings/subitems.ini`, mit 2 Einstellung(en).
 
-> Presets: a named set of visible columns everybody can choose in Table options. Users save their  
-> own presets next to these (in their preferences); a user preset cannot take an INI preset's id.  
-> \[Preset\_<id>\]   id: a-z, 0-9, \_ and -  
-> Name=           the name shown (translated with the context design/admin/node/view/full)  
-> Columns\[\]       the visible columns, in order  
+> Vorlagen: ein benannter Satz sichtbarer Spalten, den alle in den Tabellenoptionen wählen können. Benutzer speichern ihre  
+> eigenen Vorlagen neben diesen (in ihren Einstellungen); eine Benutzervorlage kann nicht die ID einer INI-Vorlage annehmen.  
+> \[Preset\_<id>\]   id: a-z, 0-9, \_ und -  
+> Name=           der angezeigte Name (übersetzt im Kontext design/admin/node/view/full)  
+> Columns\[\]       die sichtbaren Spalten, in Reihenfolge  
 
 Bearbeiten Sie `settings/subitems.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

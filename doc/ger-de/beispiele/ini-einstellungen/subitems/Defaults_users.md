@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[Defaults_users]` von `settings/subitems.ini`, mit 3 Einstellung(en).
 
-> The users tree (content.ini \[NodeSettings\] UserRootNode=5); the list's former user defaults  
+> Der Benutzerbaum (content.ini \[NodeSettings\] UserRootNode=5); die früheren Benutzerstandards der Liste  
 
 Bearbeiten Sie `settings/subitems.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

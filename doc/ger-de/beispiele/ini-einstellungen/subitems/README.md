@@ -12,16 +12,16 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/subitems.ini`: 7 Blöcke, 21 Einstellungen.
 
-> The admin subitems list ("Table options"): which columns are shown by default, the presets  
-> everybody can choose, the defaults per place, the automatic attribute columns and the CSV  
-> export. The columns themselves are defined in subitemscolumns.ini (\[Column\_<key>\] blocks).  
-> Guide: doc/eng-us/bc/6.0/subitems-table-options.md  
+> Die Liste der Unterelemente der Administration („Tabellenoptionen“): welche Spalten standardmäßig angezeigt werden, die Vorlagen,  
+> die alle wählen können, die Standards pro Ort, die automatischen Attributspalten und der CSV-  
+> Export. Die Spalten selbst sind in subitemscolumns.ini definiert (Blöcke \[Column\_<key>\]).  
+> Anleitung: doc/eng-us/bc/6.0/subitems-table-options.md  
 >
-> Column keys used below: the 15 built-in columns (thumbnail, name, visibility, type, modifier,  
+> Unten verwendete Spaltenschlüssel: die 15 eingebauten Spalten (thumbnail, name, visibility, type, modifier,  
 > modified, published, translations, section, nodeid, noderemoteid, objectid, objectremoteid,  
-> objectstate, priority), every \[Column\_<key>\] of subitemscolumns.ini, and the automatic  
-> attribute columns attr:<class identifier>/<attribute identifier>. Unknown keys are ignored, and  
-> a column the user may not see (its Policy\[\]) is left out wherever it is named.  
+> objectstate, priority), jedes \[Column\_<key>\] aus subitemscolumns.ini und die automatischen  
+> Attributspalten attr:<class identifier>/<attribute identifier>. Unbekannte Schlüssel werden ignoriert, und  
+> eine Spalte, die der Benutzer nicht sehen darf (ihre Policy\[\]), entfällt überall, wo sie genannt wird.  
 
 | Block | Einstellungen |
 |---|---|

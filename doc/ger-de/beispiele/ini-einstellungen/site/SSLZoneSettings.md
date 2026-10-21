@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[SSLZoneSettings]` von `settings/site.ini`, mit 3 Einstellung(en).
 
-> Settings for SSL zones  
-> For more information please look at doc/eng-us/features/3.8/ssl\_zones.txt.  
+> Einstellungen für SSL-Zonen  
+> Weitere Informationen in doc/eng-us/features/3.8/ssl\_zones.txt.  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -22,7 +22,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## SSLZones
 
-> Enable/disable the SSL zones functionality.  
+> Die Funktion der SSL-Zonen aktivieren/deaktivieren.  
 
 Standard: `disabled`.
 
@@ -36,10 +36,10 @@ SSLZones=disabled
 
 ## SSLSubtrees
 
-> Content subtrees we must use SSL for.  
-> (currently, only content/view and content/edit respect this setting)  
+> Inhalts-Teilbäume, für die SSL verwendet werden muss.  
+> (derzeit beachten nur content/view und content/edit diese Einstellung)  
 >
-> Examples:  
+> Beispiele:  
 > SSLSubtrees\[\]=/news  
 > SSLSubtrees\[\]=/polls  
 
@@ -56,20 +56,20 @@ SSLSubtrees[]
 
 ## ModuleViewAccessMode
 
-> Default access mode is plain HTTP.  
+> Der Standard-Zugriffsmodus ist einfaches HTTP.  
 >
-> Define a view as 'ssl' to force HTTPS access mode for this view.  
-> If a view is defined as 'keep' then access mode is unknown  
-> for this view, and the previous access mode is kept.  
+> Definieren Sie eine Ansicht als 'ssl', um für diese Ansicht den Zugriffsmodus HTTPS zu erzwingen.  
+> Ist eine Ansicht als 'keep' definiert, ist der Zugriffsmodus für diese  
+> Ansicht unbekannt, und der vorherige Zugriffsmodus bleibt.  
 >
-> Define a view as 'nossl' to force HTTP for this module. Further  
-> SSL redirections will be ignored  
+> Definieren Sie eine Ansicht als 'nossl', um für dieses Modul HTTP zu erzwingen. Weitere  
+> SSL-Weiterleitungen werden ignoriert  
 >
-> Examples:  
+> Beispiele:  
 > ModuleViewAccessMode\[shop/add\]=ssl  
 > ModuleViewAccessMode\[shop/basket\]=ssl  
 >
-> Do not remove this line unless you know what you're doing:  
+> Entfernen Sie diese Zeile nur, wenn Sie wissen, was Sie tun:  
 
 Standard: ein Hash mit 2: `content/*=keep`, `layout/*=keep`.
 

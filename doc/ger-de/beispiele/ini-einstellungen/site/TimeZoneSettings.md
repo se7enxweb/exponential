@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## TimeZone
 
-> Override this value to set timezone to other than OS default.  
-> See /usr/share/zoneinfo/zone.tab for possible values ( 3rd column ).  
-> Example: TimeZone=America/Antigua  
+> Überschreiben Sie diesen Wert, um eine andere Zeitzone als die des Betriebssystems zu setzen.  
+> Mögliche Werte siehe /usr/share/zoneinfo/zone.tab ( 3. Spalte ).  
+> Beispiel: TimeZone=America/Antigua  
 >
-> Notice: This will not work on threaded web servers or on Windows.  
->         Use only with Apache 1.3 or 2.0 prefork on \*nix.  
+> Hinweis: Funktioniert nicht auf Webservern mit Threads oder unter Windows.  
+>         Nur mit Apache 1.3 oder 2.0 prefork unter \*nix verwenden.  
 
 Standard: leer.
 

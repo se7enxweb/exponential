@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/subitems.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## DefaultColumns
 
-> The columns shown by default, in this order, wherever no \[Defaults\_\*\] block below matches and  
-> the user has not saved a choice of their own. These are the list's former defaults for the  
-> content tree (admininterface.ini \[SubItems\] VisibleColumns\[ezcontentnavigationpart\]).  
+> Die standardmäßig angezeigten Spalten, in dieser Reihenfolge, überall, wo kein Block \[Defaults\_\*\] unten passt und  
+> der Benutzer keine eigene Wahl gespeichert hat. Das sind die früheren Standards der Liste für den  
+> Inhaltsbaum (admininterface.ini \[SubItems\] VisibleColumns\[ezcontentnavigationpart\]).  
 
 Standard: eine Liste mit 4: `name`, `published`, `translations`, `priority`.
 
@@ -40,10 +40,10 @@ DefaultColumns[]=priority
 
 ## AttributeColumns
 
-> enabled: Table options also offers one column per attribute of the classes present among the  
-> parent's children (key attr:<class>/<attribute>, group "Attributes: <class name>"), no INI  
-> needed. The value is the attribute's title, else its text; sortable when the datatype sorts.  
-> disabled: only the columns of subitemscolumns.ini.  
+> enabled: Die Tabellenoptionen bieten außerdem eine Spalte pro Attribut der Klassen an, die unter den  
+> Unterknoten des Elternknotens vorkommen (Schlüssel attr:<class>/<attribute>, Gruppe „Attribute: <class name>“), ohne  
+> INI. Der Wert ist der Titel des Attributs, sonst sein Text; sortierbar, wenn der Datentyp sortiert.  
+> disabled: nur die Spalten aus subitemscolumns.ini.  
 
 Standard: `enabled`.
 
@@ -57,8 +57,8 @@ AttributeColumns=enabled
 
 ## AttributeColumnsExcludedDataTypes
 
-> Datatypes never offered as attribute columns. ezuser's text holds the login, e-mail and  
-> password hash, so it is excluded; the user columns of subitemscolumns.ini show what is safe.  
+> Datentypen, die nie als Attributspalten angeboten werden. Der Text von ezuser enthält Login, E-Mail und  
+> Passwort-Hash, daher ist er ausgeschlossen; die Benutzerspalten aus subitemscolumns.ini zeigen, was sicher ist.  
 
 Standard: eine Liste mit 1: `ezuser`.
 
@@ -74,10 +74,10 @@ AttributeColumnsExcludedDataTypes[]=ezuser
 
 ## AttributeColumnsDataTypePolicy
 
-> Policies an attribute column of a datatype needs, as module/function, several separated by ;  
-> (all must be granted). Without an entry an attribute column needs nothing beyond content/read  
-> on the rows.  
-> Example: only users who may edit users see e-mail attributes  
+> Richtlinien, die eine Attributspalte eines Datentyps braucht, als module/function, mehrere durch ; getrennt  
+> (alle müssen gewährt sein). Ohne Eintrag braucht eine Attributspalte nichts außer content/read  
+> auf den Zeilen.  
+> Beispiel: Nur Benutzer, die Benutzer bearbeiten dürfen, sehen E-Mail-Attribute  
 > AttributeColumnsDataTypePolicy\[ezemail\]=user/register  
 
 Standard: eine leere Liste.
@@ -93,7 +93,7 @@ AttributeColumnsDataTypePolicy[]
 
 ## CSVExport
 
-> enabled: Table options has "Export CSV", the view content/subitemsexport/<node id> exists.  
+> enabled: Die Tabellenoptionen haben „CSV exportieren“, die Ansicht content/subitemsexport/<node id> existiert.  
 
 Standard: `enabled`.
 
@@ -107,7 +107,7 @@ CSVExport=enabled
 
 ## CSVLimit
 
-> The most rows one CSV export writes.  
+> Die meisten Zeilen, die ein CSV-Export schreibt.  
 
 Standard: `5000`.
 
@@ -121,7 +121,7 @@ CSVLimit=5000
 
 ## PageSizes
 
-> The page sizes Table options offers (a custom size can still be typed in).  
+> Die Seitengrößen, die die Tabellenoptionen anbieten (eine eigene Größe lässt sich weiterhin eingeben).  
 
 Standard: eine Liste mit 4: `10`, `25`, `50`, `100`.
 

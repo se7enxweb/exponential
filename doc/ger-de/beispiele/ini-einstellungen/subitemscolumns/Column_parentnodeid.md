@@ -12,7 +12,7 @@ generated: exp:help:examples
 Der Block `[Column_parentnodeid]` von `settings/subitemscolumns.ini`, mit 9 Einstellung(en).
 
 > ---------------------------------------------------------------------------------------------  
-> Node: the location itself and its children  
+> Node: die Platzierung selbst und ihre Unterknoten  
 
 Bearbeiten Sie `settings/subitemscolumns.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

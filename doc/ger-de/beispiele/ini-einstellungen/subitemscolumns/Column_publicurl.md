@@ -127,7 +127,7 @@ SiteAccess=
 
 ## Scheme
 
-> Scheme put before SiteURL when it has none: https or http  
+> Schema, das SiteURL vorangestellt wird, wenn sie keines hat: https oder http  
 
 Standard: `https`.
 

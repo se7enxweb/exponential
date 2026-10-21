@@ -12,7 +12,7 @@ generated: exp:help:examples
 Der Block `[Column_relatedcount]` von `settings/subitemscolumns.ini`, mit 8 Einstellung(en).
 
 > ---------------------------------------------------------------------------------------------  
-> Relations  
+> Relations: Verknüpfungen  
 
 Bearbeiten Sie `settings/subitemscolumns.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

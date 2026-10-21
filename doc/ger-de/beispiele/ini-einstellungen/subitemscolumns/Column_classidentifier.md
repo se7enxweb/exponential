@@ -12,7 +12,7 @@ generated: exp:help:examples
 Der Block `[Column_classidentifier]` von `settings/subitemscolumns.ini`, mit 9 Einstellung(en).
 
 > ---------------------------------------------------------------------------------------------  
-> Object: the content object, its class and section  
+> Object: das Inhaltsobjekt, seine Klasse und Sektion  
 
 Bearbeiten Sie `settings/subitemscolumns.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

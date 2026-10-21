@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## PageLayout
 
-> The pagelayout to use for first time setups  
+> Das Pagelayout für die Ersteinrichtung  
 
 Standard: `setup_pagelayout.tpl`.
 
@@ -33,7 +33,7 @@ PageLayout=setup_pagelayout.tpl
 
 ## CriticalTests
 
-> List of tests to be run, critical tests must pass for the setup to continue  
+> Liste der auszuführenden Tests; kritische Tests müssen bestehen, damit das Setup weitergeht  
 
 Standard: `directory_permissions;phpversion;database_extensions;image_conversion;safe_mode;memory_limit;execution_time;magic_quotes_runtime;allow_url_fopen;php_session;file_upload;zlib_extension;dom_extension;iconv_extension;mbstring_extension;intl_extension;xsl_extension;timezone;ezcversion`.
 
@@ -71,11 +71,11 @@ OverrideSiteDesign=standard
 
 ## AllowWizardOnInstalledSite
 
-> The setup wizard (setup/init) on a site that is already installed: disabled  
-> shows a page that says so and changes nothing. enabled is for development  
-> only: the wizard then runs after a confirm page, and the site goes into  
-> maintenance mode once that page is posted. Reinstalling a site is done with  
-> the kickstarter or a fresh installation.  
+> Der Setup-Assistent (setup/init) auf einer bereits installierten Website: disabled  
+> zeigt eine Seite, die das sagt, und ändert nichts. enabled ist nur für die Entwicklung:  
+> Der Assistent läuft dann nach einer Bestätigungsseite, und die Website geht in den  
+> Wartungsmodus, sobald diese Seite abgeschickt ist. Eine Website wird mit dem  
+> Kickstarter oder einer frischen Installation neu installiert.  
 
 Standard: `disabled`.
 
