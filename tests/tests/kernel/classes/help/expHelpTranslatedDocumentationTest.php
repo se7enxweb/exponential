@@ -52,6 +52,7 @@ class expHelpTranslatedDocumentationTest extends PHPUnit\Framework\TestCase
 
     /** Files that describe the move itself and name the old paths on purpose */
     const DESCRIBE_THE_MOVE = array( 'doc/eng-us/bc/6.0/translated-documentation.md',
+                                     'doc/ger-de/bc/6.0/uebersetzte-dokumentation.md',
                                      'tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php' );
 
     /** Files that name doc/en/us or doc/de on purpose: the old directories the help still answers for */
