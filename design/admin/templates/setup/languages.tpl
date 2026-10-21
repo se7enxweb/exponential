@@ -117,7 +117,7 @@
     <h2 class="a4-h2" id="languages-list-title">{'Locales'|i18n( 'design/admin/setup/languages' )} <span class="a4-meta">{'%count shown'|i18n( 'design/admin/setup/languages',, hash( '%count', $language_rows|count ) )|wash}</span></h2>
 </div>
 
-<form method="get" action={'/setup/languages'|ezurl} class="a4-filterbar">
+<form method="post" action={'/setup/languages'|ezurl} class="a4-filterbar">
     <label for="languages-show">{'Show'|i18n( 'design/admin/setup/languages' )}</label>
     <select id="languages-show" name="Show" class="a4-input">
         <option value=""{if $language_show|eq( '' )} selected="selected"{/if}>{'All locales'|i18n( 'design/admin/setup/languages' )}</option>

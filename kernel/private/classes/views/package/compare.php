@@ -83,14 +83,11 @@ class Compare extends \Exponential\Runnable\ModuleView
                 $url .= '/(item)/' . $state['item'];
             return $url;
         };
-        // Not $module->redirectTo(): the kernel adds the request's query string to every module redirect,
-        // and the filter form's own fields would bring the next request straight back here
+        // Not $module->redirectTo(): the kernel adds the request's query string to every module redirect.
+        // Every redirect of this view answers a POST: 303 See Other (expViewParameters::redirect()).
         $redirect = function ( $target )
         {
-            // Without HTML escaping: the address goes into the Location header, where &amp; would stay &amp;
-            \eZURI::transformURI( $target, false, 'full', false );
-            \eZHTTPTool::redirect( $target, array(), '302 Found', false );
-            \eZExecution::cleanExit();
+            \expViewParameters::redirect( $target );
         };
 
         $rawState = $userParameters;
@@ -98,14 +95,15 @@ class Compare extends \Exponential\Runnable\ModuleView
             $rawState['search'] = rawurldecode( $rawState['search'] );
         $state = $normalise( $rawState );
 
-        // The filter form submits GET fields; they are answered with one redirect to the same state as view
-        // parameters, a changed filter starting on the first page with nothing opened (the sorting is kept)
-        if ( $http->hasGetVariable( 'CompareApply' ) )
+        // The filter form is sent with POST (CompareApply and its fields); it is answered with a 303 to the same state
+        // as view parameters, a changed filter starting on the first page with nothing opened (the sorting is kept).
+        // The options are view parameters only: a query string is never read.
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'CompareApply', 'CompareFilter', 'CompareClass', 'CompareSearch', 'CompareLimit' ) ) )
         {
-            $get = function ( $name, $fallback ) use ( $http ) { return $http->hasGetVariable( $name ) ? $http->getVariable( $name ) : $fallback; };
+            $post = function ( $name, $fallback ) { return isset( $_POST[$name] ) && is_scalar( $_POST[$name] ) ? (string)$_POST[$name] : $fallback; };
             $redirect( $compareURL( $normalise( array(
-                'filter' => $get( 'CompareFilter', $state['filter'] ), 'class' => $get( 'CompareClass', '' ), 'search' => $get( 'CompareSearch', '' ),
-                'limit' => $get( 'CompareLimit', '50' ), 'sort' => $state['sort'], 'dir' => $state['dir'],
+                'filter' => $post( 'CompareFilter', $state['filter'] ), 'class' => $post( 'CompareClass', '' ), 'search' => $post( 'CompareSearch', '' ),
+                'limit' => $post( 'CompareLimit', '50' ), 'sort' => $state['sort'], 'dir' => $state['dir'],
             ) ) ) );
         }
 

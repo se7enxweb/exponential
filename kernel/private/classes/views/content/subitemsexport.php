@@ -2,8 +2,8 @@
 /**
  * The view content/subitemsexport/<NodeID>: the admin subitems list of a node as a CSV download.
  *
- * GET columns=a,b,c (column keys, in order; default: the user's saved choice for the node, else
- * its default columns), sort=<column key> and order=0|1. Every child the user can read, up to
+ * View parameters /(columns)/a,b,c (column keys, in order; default: the user's saved choice for the node, else
+ * its default columns), /(sort)/<column key> and /(order)/0|1 (a ?columns= query string is not read). Every child the user can read, up to
  * [SubitemsSettings] CSVLimit in subitems.ini; only the columns the user may see.
  * Guide: doc/eng-us/bc/6.0/subitems-table-options.md
  *
@@ -41,8 +41,7 @@ class Subitemsexport extends \Exponential\Runnable\ModuleView
         if ( !$parent->canRead() )
             return $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
 
-        $http = \eZHTTPTool::instance();
-        $keys = $http->hasGetVariable( 'columns' ) && is_string( $http->getVariable( 'columns' ) ) ? $http->getVariable( 'columns' ) : '';
+        $keys = (string)\expViewParameters::get( $Params, 'columns', 'Columns' );
         if ( trim( $keys ) === '' )
         {
             $pref = \expSubitemsPreference::forPart( \expSubitemsPreference::load(),
@@ -55,8 +54,8 @@ class Subitemsexport extends \Exponential\Runnable\ModuleView
         if ( !$columns )
             $columns = $registry->resolveColumns( array( 'name', 'nodeid' ), $parent, true );
 
-        $sortKey = $http->hasGetVariable( 'sort' ) && is_string( $http->getVariable( 'sort' ) ) ? $http->getVariable( 'sort' ) : '';
-        $ascending = $http->hasGetVariable( 'order' ) && (string)$http->getVariable( 'order' ) === '1';
+        $sortKey = (string)\expViewParameters::get( $Params, 'sort', 'Sort' );
+        $ascending = \expViewParameters::get( $Params, 'order', 'Order' ) === '1';
 
         $fileName = \expSubitemsCSVExport::fileName( $parent->attribute( 'name' ) );
 

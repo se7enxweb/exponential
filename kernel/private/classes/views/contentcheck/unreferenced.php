@@ -2,7 +2,9 @@
 /**
  * The contentcheck/unreferenced view (doc/eng-us/features/6.0/content-checks.md, "Unreferenced objects"): the published
  * objects below a node (contentcheck/unreferenced/<node id>) that nothing refers to, filtered by class, sorted and
- * paged, with a form that posts the ticked ones to contentcheck/trash. Needs the policy contentcheck/unreferenced;
+ * paged, with a form that posts the ticked ones to contentcheck/trash. The options are view parameters only: (class) (a
+ * comma list of class ids), (sort), (order), (containers)/1, (selectall)/1 and (offset); a query string is not read.
+ * The filter form is posted and answered with a 303 to that address. Needs the policy contentcheck/unreferenced;
  * answers on administration siteaccesses only.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -18,6 +20,9 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
     /** The session variable the trash view leaves its outcome in */
     const FEEDBACK = 'ContentCheckTrashFeedback';
 
+    /** The fields of the filter form (posted, then answered with a 303 to the view parameters) */
+    const FORM_FIELDS = array( 'NodeID', 'ClassID', 'Sort', 'Order', 'Containers', 'ClassChoice' );
+
     /** The preference that holds the chosen page size (its position in the sizes) */
     const LIMIT_PREFERENCE = 'admin_contentcheck_list_limit';
 
@@ -30,15 +35,15 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
 
         $http = \eZHTTPTool::instance();
         list( $limit, $limitChoice, $limitChoices ) = \expAdminPagination::chosen( 'contentcheck/unreferenced', self::LIMIT_PREFERENCE );
-        $input = array();
-        foreach ( array( 'ClassID', 'Sort', 'Order', 'Containers' ) as $name )
-        {
-            if ( $http->hasGetVariable( $name ) )
-                $input[$name] = $http->getVariable( $name );
-        }
+        // the options are view parameters (/(class)/5,12/(sort)/modified/(order)/desc/(containers)/1); the filter form
+        // is posted and answered with a 303 to that address
+        $posted = \expViewParameters::redirectsPost( $_POST, self::FORM_FIELDS );
+        $input = $posted ? \expContentCheck::postedInput( $_POST, self::FORM_FIELDS )
+                         : \expContentCheck::viewInput( $Params, array( 'ClassID' => array( 'class', true ), 'Sort' => array( 'sort', false ),
+                                                                         'Order' => array( 'order', false ), 'Containers' => array( 'containers', false ) ) );
         // the form's node, else the address's, else the user's last choice, which it becomes (expContentCheckScope)
         $input['NodeID'] = \expContentCheckScope::resolve( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,
-                                                          $http->hasGetVariable( 'NodeID' ) ? $http->getVariable( 'NodeID' ) : null );
+                                                          $posted && isset( $input['NodeID'] ) ? $input['NodeID'] : null );
         // only the asset classes can be listed, so only they are offered as a filter
         $classNames = array();
         foreach ( \expContentCheckUnreferenced::assetClasses() as $identifier )
@@ -53,11 +58,13 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
             $classOptions[] = array( 'id' => $id, 'name' => $name );
 
         // "Select all" and "Select none" are submit buttons of the filter form (ClassChoice): no JavaScript needed
-        $choice = $http->hasGetVariable( 'ClassChoice' ) ? $http->getVariable( 'ClassChoice' ) : '';
+        $choice = $posted && isset( $input['ClassChoice'] ) && is_string( $input['ClassChoice'] ) ? $input['ClassChoice'] : '';
         $input['ClassID'] = self::classChoice( $input, array_keys( $classNames ), $choice === 'all', $choice === 'none' );
-        $input['Offset'] = \expAdminPagination::offset( $Params );
+        $input['Offset'] = $posted ? 0 : \expAdminPagination::offset( $Params );
         $input['Limit'] = $limit;
         $params = \expContentCheckUnreferenced::parameters( $input, self::rootNodeID() );
+        if ( $posted )
+            \expViewParameters::redirect( '/contentcheck/unreferenced/' . (int)$params['node_id'] . self::querySuffix( $params ) );
 
         $feedback = null;
         if ( $http->hasSessionVariable( self::FEEDBACK ) )
@@ -85,7 +92,7 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'limit_choices', $limitChoices );
         $tpl->setVariable( 'limit_preference', self::LIMIT_PREFERENCE );
         $tpl->setVariable( 'feedback', $feedback );
-        $tpl->setVariable( 'select_all', $http->hasGetVariable( 'SelectAll' ) && $http->getVariable( 'SelectAll' ) === '1' );
+        $tpl->setVariable( 'select_all', \expViewParameters::get( $Params, 'selectall' ) === '1' );
         $tpl->setVariable( 'can_trash', \expContentCheck::hasPolicy( 'contentcheck', 'trash' ) );
         $tpl->setVariable( 'batch_limit', \expContentCheckTrash::batchLimit() );
         $tpl->setVariable( 'form_token', \expContentCheck::formToken() );
@@ -127,21 +134,15 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The query string that keeps the filters and the order on the pages of the list.
+     * The view parameters that keep the filters and the order on the pages of the list.
      *
      * @param array $params from expContentCheckUnreferenced::parameters()
-     * @return string starting with ? (it always carries the order)
+     * @return string "/(class)/.../(sort)/.../(order)/..." (it always carries the order)
      */
     public static function querySuffix( array $params )
     {
-        $query = array();
-        foreach ( $params['class_ids'] as $classID )
-            $query[] = 'ClassID%5B%5D=' . (int)$classID;
-        $query[] = 'Sort=' . rawurlencode( $params['sort'] );
-        $query[] = 'Order=' . rawurlencode( $params['order'] );
-        if ( $params['containers'] )
-            $query[] = 'Containers=1';
-        return '?' . implode( '&', $query );
+        return \expContentCheck::viewSuffix( array( 'class' => array_map( 'intval', $params['class_ids'] ), 'sort' => $params['sort'],
+                                                    'order' => $params['order'], 'containers' => $params['containers'] ? '1' : '' ) );
     }
 }
 

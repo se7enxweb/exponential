@@ -22,11 +22,15 @@ class Languages extends \Exponential\Runnable\ModuleView
     public function run( array $scope )
     {
         $Params = $scope['Params'];
-        $http = \eZHTTPTool::instance();
+        // The filter form without scripts is sent with POST and answered 303 with its address, setup/languages/(show)/<kind>;
+        // the options are view parameters only, a query string is never read.
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'Show' ) ) )
+        {
+            $posted = \expViewParameters::posted( $_POST, 'Show' );
+            \expViewParameters::redirect( 'setup/languages' . \expViewParameters::suffix( array( 'show' => in_array( $posted, self::KINDS, true ) ? $posted : '' ) ) );
+        }
 
-        $show = isset( $Params['Show'] ) ? (string)$Params['Show'] : '';
-        if ( $http->hasGetVariable( 'Show' ) )
-            $show = (string)$http->getVariable( 'Show' );
+        $show = (string)\expViewParameters::get( $Params, 'show', 'Show' );
         $show = in_array( $show, self::KINDS, true ) ? $show : '';
         $locale = isset( $Params['Locale'] ) ? (string)$Params['Locale'] : '';
         if ( !preg_match( \expI18nFallbackResolver::LOCALE_PATTERN, $locale ) )

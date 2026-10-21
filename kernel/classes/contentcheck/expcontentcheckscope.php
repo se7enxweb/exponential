@@ -3,7 +3,7 @@
  * File containing the expContentCheckScope class.
  *
  * The start location of the content checks (doc/eng-us/features/6.0/content-checks.md, "Where a check starts"): any node,
- * from the whole tree (node 1) to one folder. A check takes it from its filter form (GET NodeID), else from the
+ * from the whole tree (node 1) to one folder. A check takes it from its posted filter form (NodeID), else from the
  * address (contentcheck/<view>/<node id>), else from the signed-in user's preference admin_contentcheck_scope,
  * else the content tree's top node (content.ini [NodeSettings] RootNode). A node given in the form or the address
  * becomes the preference, so the next check opens where the last one was.
@@ -77,7 +77,7 @@ class expContentCheckScope
      * Only whole positive numbers are read.
      *
      * @param mixed $addressNodeID the view parameter NodeID (null: none)
-     * @param mixed $formNodeID GET NodeID (null: none)
+     * @param mixed $formNodeID the posted form's NodeID (null: none)
      * @param int|null $default null: content.ini RootNode
      * @return array array( 'node_id' => int, 'given' => bool: from the form or the address )
      */
@@ -222,7 +222,7 @@ class expContentCheckScope
      *
      * @param int $nodeID the start location
      * @param string $view the view the selector belongs to (its links and the picker return there)
-     * @param array $keep GET fields the scope links keep, e.g. array( 'Show' => 'problems' ) (only plain names and values)
+     * @param array $keep view parameters the scope links keep, e.g. array( 'show' => 'problems' ) (only plain names and values)
      * @return array hash( node_id, node_name, path, view, query, presets => list of hash( key, node_id, name, label, path,
      *               current ), sites => hash( parent_id, parent_label, items => list of hash( node_id, name, current,
      *               within ), more, more_url ), browse_url )
@@ -339,21 +339,21 @@ class expContentCheckScope
     }
 
     /**
-     * The query the scope links keep: plain field names with plain values only.
+     * The view parameters the scope links keep: plain lower case names with plain values only.
      *
-     * @param array $keep
-     * @return string '' or '?Name=value&...'
+     * @param array $keep e.g. array( 'show' => 'problems' )
+     * @return string '' or '/(name)/value...'
      */
     public static function query( array $keep )
     {
         $clean = array();
         foreach ( $keep as $name => $value )
         {
-            if ( is_string( $name ) && preg_match( '/^[A-Za-z][A-Za-z0-9_]{0,40}$/', $name ) && $name !== 'NodeID'
+            if ( is_string( $name ) && preg_match( '/^[a-z][a-z0-9_]{0,40}$/', $name ) && $name !== 'nodeid'
                  && is_scalar( $value ) && preg_match( '/^[A-Za-z0-9_\-]{1,40}$/', (string)$value ) )
                 $clean[$name] = (string)$value;
         }
-        return $clean ? '?' . http_build_query( $clean, '', '&' ) : '';
+        return expViewParameters::suffix( $clean );
     }
 
     /**

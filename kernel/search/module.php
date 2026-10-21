@@ -17,6 +17,6 @@ $ViewList["stats"] = array(
     "default_navigation_part" => 'ezsetupnavigationpart',
     'single_post_actions' => array( 'ResetSearchStatsButton' => 'ResetSearchStats' ),
     "params" => array( ),
-    "unordered_params" => array( "offset" => "Offset" ) );
+    "unordered_params" => array( "offset" => "Offset", "sort" => "Sort", "show" => "Show", "q" => "Query" ) );
 
 ?>

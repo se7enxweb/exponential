@@ -4,8 +4,9 @@
  * background) with who started them, the operation, source and target, state, progress, items, start time,
  * duration and server, filters by state, type and user, sorting, paging, totals per state, and the Cancel and
  * Resume actions. A user sees the jobs they started; with the content/jobs policy, /(all)/1 lists everybody's.
- * Query parameters: state, type, user (a user id, all jobs only), sort (created|started|duration|items|state),
- * order (asc|desc), offset.
+ * View parameters: /(state)/, /(type)/, /(user)/ (a user id, all jobs only), /(sort)/ (created|started|duration|items|
+ * state), /(order)/ (asc|desc), /(offset)/. A ?state= in the address is not read; the filter form is sent with POST and
+ * answered with a 303 to the canonical /(name)/value address.
  * Guide: doc/eng-us/bc/6.0/content-jobs.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -47,8 +48,17 @@ class Jobs extends \Exponential\Runnable\ModuleView
                 return $Module->redirectTo( $listURL );
         }
 
-        $get = function ( $name, $allowed = null ) use ( $http ) {
-            $v = $http->hasGetVariable( $name ) ? (string) $http->getVariable( $name ) : '';
+        $fields = array( 'state' => 'State', 'type' => 'Type', 'user' => 'User', 'sort' => 'Sort', 'order' => 'Order', 'offset' => 'Offset' );
+        // the filter form without scripts (POST): to the canonical address
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'state', 'type', 'user', 'sort', 'order' ) ) )
+        {
+            $posted = array();
+            foreach ( array( 'state', 'type', 'user', 'sort', 'order' ) as $name )
+                $posted[$name] = \expViewParameters::posted( $_POST, $name );
+            return \expViewParameters::redirect( $listURL . \expViewParameters::suffix( $posted ) );
+        }
+        $get = function ( $name, $allowed = null ) use ( $Params, $fields ) {
+            $v = (string) \expViewParameters::get( $Params, $name, $fields[$name] );
             return ( $allowed === null || in_array( $v, $allowed, true ) ) ? $v : '';
         };
         $states = array( 'queued', 'running', 'done', 'failed', 'cancelled' );
@@ -121,8 +131,10 @@ class Jobs extends \Exponential\Runnable\ModuleView
         }
         usort( $userList, function ( $a, $b ) { return strcasecmp( $a['name'], $b['name'] ); } );
 
-        $query = array_filter( array( 'state' => $filter['state'], 'type' => $filter['type'],
-                                      'user' => $filter['user'] ?: '', 'sort' => $filter['sort'], 'order' => $filter['order'] ) );
+        // addresses as view parameters: the filters (no sort, no offset), and the page without its offset
+        $filterURL = $listURL . \expViewParameters::suffix( array( 'state' => $filter['state'], 'type' => $filter['type'],
+                                                                   'user' => $filter['user'] ?: '' ) );
+        $pageURL = $filterURL . \expViewParameters::suffix( array( 'sort' => $filter['sort'], 'order' => $filter['order'] ) );
 
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'jobs', $list );
@@ -130,7 +142,8 @@ class Jobs extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'offset', $offset );
         $tpl->setVariable( 'page', self::PAGE );
         $tpl->setVariable( 'filter', $filter );
-        $tpl->setVariable( 'query', http_build_query( $query ) );
+        $tpl->setVariable( 'filter_url', $filterURL );
+        $tpl->setVariable( 'page_url', $pageURL );
         $tpl->setVariable( 'base_url', $listURL );
         $tpl->setVariable( 'totals', $totals );
         $tpl->setVariable( 'states', $states );

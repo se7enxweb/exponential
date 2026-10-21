@@ -83,6 +83,11 @@ be used to guess one.
 
 Tick **Only settings changed from the default** to hide everything that still has its default value.
 
+The search, the filter and the comparison are kept in the address as view parameters, so the result can be bookmarked:
+`settings/view/<siteaccess>/<file>/(q)/RootNode/(scope)/all/(changed)/1/(compare)/<siteaccess>`. A search that is not
+plain text (one with `/`, for a path) travels as `~` and its base64url. The form is sent with POST and answered with a
+303 to that address; a query string such as `?q=` is not read.
+
 ## 5. Compare two siteaccesses
 
 Pick a siteaccess in **Compare with siteaccess** and click **Show**. The page lists only the settings of the file

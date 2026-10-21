@@ -38,18 +38,19 @@ class Staticcachestream extends \Exponential\Runnable\ModuleView
         require_once 'kernel/setup/expstaticcacherunner.php';
 
         $Module = $Params['Module'];
-        $http = \eZHTTPTool::instance();
-
         // Read before any output: once the stream is open there is nowhere to report a
-        // bad parameter to except the stream itself.
-        $siteaccess = $http->hasVariable( 'SiteAccess' ) ? (string)$http->variable( 'SiteAccess' ) : '';
-        $maxPages = $http->hasVariable( 'MaxPages' ) ? (int)$http->variable( 'MaxPages' ) : 2500;
-        $maxDepth = $http->hasVariable( 'MaxDepth' ) ? (int)$http->variable( 'MaxDepth' ) : 12;
-        $maxPages = max( 1, min( 10000, $maxPages ) );
-        $maxDepth = max( 0, min( 30, $maxDepth ) );
-        // A regeneration replaces what is there. Passing Purge=0 adds to it instead,
+        // bad parameter to except the stream itself. The options are view parameters
+        // (/(siteaccess)/<name>/(maxpages)/<n>/(maxdepth)/<n>/(purge)/0), never a query string:
+        // EventSource can only GET, and the address is the request.
+        $siteaccess = (string)\expViewParameters::get( $scope['Params'], 'siteaccess', 'SiteAccess' );
+        $maxPages = \expViewParameters::get( $scope['Params'], 'maxpages', 'MaxPages' );
+        $maxDepth = \expViewParameters::get( $scope['Params'], 'maxdepth', 'MaxDepth' );
+        $maxPages = max( 1, min( 10000, $maxPages === false ? 2500 : (int)$maxPages ) );
+        $maxDepth = max( 0, min( 30, $maxDepth === false ? 12 : (int)$maxDepth ) );
+        // A regeneration replaces what is there. Passing (purge)/0 adds to it instead,
         // which is what a second, deeper pass over the same site wants.
-        $purge = $http->hasVariable( 'Purge' ) ? (bool)(int)$http->variable( 'Purge' ) : true;
+        $purge = \expViewParameters::get( $scope['Params'], 'purge', 'Purge' );
+        $purge = $purge === false ? true : (bool)(int)$purge;
 
         // Only a siteaccess this installation can actually cache may be named, so the
         // parameter cannot be used to point the generator somewhere else.
