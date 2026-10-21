@@ -3,7 +3,7 @@ title: Einen Blocktyp hinzufügen
 audience: designer, developer
 category: build-two-ways
 order: 530
-summary: Einen neuen Blocktyp anlegen, den Redakteure in jedes Layout ziehen können; eine Blockdefinition in der explayouts.ini, eine vorhandene oder neue Handler-Klasse und ein Template, mit der Zurücksetz-Falle von AvailableBlocks[] und einem getesteten Beispiel, dem Notice-Block.
+summary: Einen neuen Blocktyp anlegen, den Redakteure in jedes Layout ziehen können; eine Blockdefinition in der explayouts.ini, eine vorhandene oder neue Handler-Klasse und ein Template, mit der Stelle, an der AvailableBlocks[] gelesen wird, und einem getesteten Beispiel, dem Notice-Block.
 keywords: Blocktyp, Blockdefinition, BlockDefinition, AvailableBlocks, Handler, expLayoutsTextBlockHandler, getParameters, explayouts.ini, neuer Block, Notice, Palette, mysite, block type, block definition, handler, new block, palette
 type: help
 ---
@@ -53,12 +53,16 @@ Category=basic
 | `HasCollection=1` | der Block hat Einträge (wie List) |
 | `IsContainer=1` und `Placeholders[]` | der Block enthält andere Blöcke (wie Column) |
 
-**Die Zurücksetz-Falle.** `extension/explayouts/settings/explayouts.ini.append.php` beginnt seine Liste mit
-`AvailableBlocks[]`, was alles leert, was vorher gelesen wurde. Auf der Testkopie, mit `mysite` vor `explayouts` gelesen,
-hatte die Palette kein Notice; `exp:ini where explayouts.ini/BlockSettings/AvailableBlocks admin` zeigte den Grund. Setzen
-Sie `mysite` an die **erste** Stelle in `ActiveExtensions[]`, wird seine Datei nach der von `explayouts` gelesen, und die
-Zeile bleibt erhalten ([Ihre eigene Design-Erweiterung](eigene-design-erweiterung.md)). Der Siteaccess-Ordner einer
-Erweiterung (`settings/siteaccess/admin/`) half nicht: Er wurde vor den Haupteinstellungen der Erweiterungen gelesen.
+**Wo die Zeile zählt.** Seit explayouts 1.4.42 beginnt die eigene `explayouts.ini.append.php` von explayouts
+`AvailableBlocks[]` (ebenso `AvailableQueries[]`, `SiteAccessMatch[]` und `AllowedTemplateRoots[]`) nicht mehr mit einer
+Rücksetzzeile. Das `AvailableBlocks[]=notice` Ihrer Erweiterung bleibt erhalten, wo auch immer die Erweiterung in
+`ActiveExtensions[]` steht: Für Blöcke spielt die Position keine Rolle mehr, und ein doppelt aufgeführter Block wird
+einmal angeboten (`./console exp:ini where explayouts.ini/BlockSettings/AvailableBlocks admin` zeigt die wirksame
+Liste). Um die ganze Liste zu ersetzen, schreiben Sie die Rücksetzzeile dorthin, wo sie nach allen Erweiterungen
+gelesen wird: in `settings/override/explayouts.ini.append.php` oder einen Siteaccess
+(`./console exp:ini clear explayouts.ini/BlockSettings/AvailableBlocks[] <scope>`). Für Template-Overrides und
+`DesignExtensions[]` zählt die Reihenfolge der Erweiterungen weiterhin
+([Ihre eigene Design-Erweiterung](eigene-design-erweiterung.md)).
 
 ## 2. Der Handler
 

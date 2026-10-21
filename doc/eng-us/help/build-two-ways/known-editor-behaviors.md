@@ -3,7 +3,7 @@ title: Known editor behaviors
 audience: editor, website-creator, admin, designer, developer
 category: build-two-ways
 order: 280
-summary: Behaviors of the Layouts editor and its tools seen while writing these pages on Exponential 6.0.15+, each with what was observed and how to work with it - view type changes, item positions, search in the content browser, imports and the page cache, and broken helper scripts.
+summary: Behaviors of the Layouts editor and its tools seen while writing these pages on Exponential 6.0.15+, each with what was observed and how to work with it - view type changes, item positions, search in the content browser, template blocks in the header and footer, and the import and helper command behaviors fixed since explayouts_core 1.0.10 and explayouts 1.4.42.
 keywords: known issues, behaviors, layouts editor, view type not saved, js-skip-on-change, collection item position, content browser search, import cache, block_list, layout_info, collection_list, workaround
 type: help
 ---
@@ -37,21 +37,27 @@ browsing with **Open** found the articles.
 
 **Work with it:** browse the tree; the search depends on the installation's search setup.
 
-## A command-line import keeps the old page in the cache
+## A command-line import purges the page cache
 
-**Seen:** `exp:layouts import ... --strategy=overwrite --publish` wrote and published the layout, but pages kept coming
-from the page cache (`X-Exp-Cache: HIT`) with the old blocks. Publishing in the editor purged them by itself
-(`MISS (purged)`).
+**Fixed:** since explayouts_core 1.0.10, an `exp:layouts import` that publishes a layout (`--publish`) or writes a rule
+purges every page of the page cache itself, on the command line too, as publishing in the editor does. Clearing the
+content cache by hand after a command-line import is no longer needed. Drafts, dry runs and refused imports purge
+nothing.
 
-**Work with it:** after a command-line import, `./console exp:cache clear --tag=content`.
+## The explayouts helper commands run on their own
 
-## Some explayouts helper commands stop with an error
+**Fixed:** since explayouts 1.4.42, `./console ext:explayouts:block_list <layout_id>`, `layout_info <id>`,
+`collection_list <block_id>`, `layout_copy`, `layout_list`, `rule_list <layout_id>` and `share_create` (and the other
+helpers of `extension/explayouts/bin/php`) run on their own; they no longer end with `Class "..." not found`.
+`-s <siteaccess>` picks the siteaccess. `./console ext:explayouts:layout_info 2` prints, among others:
 
-**Seen:** `./console ext:explayouts:block_list <id>`, `layout_info`, `collection_list`, `layout_copy`,
-`layout_list`, `rule_list` and `share_create` (all `ext:explayouts:...`) ended with `PHP Fatal error: Uncaught Error: Class "..." not found`.
+```text
+ID:          2
+Identifier:  fd0aa7af77a85a03bf1080018f5db1dc
+Name:        Header / Footer
+```
 
-**Work with it:** use `./console exp:layouts list` and `exp:layouts export --only=<identifier>` (the archive's
-`layouts.json` has zones, blocks, parameters and items).
+`exp:layouts` stays the tool for export and import.
 
 ## Template blocks in the header and footer zones
 

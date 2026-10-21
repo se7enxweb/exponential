@@ -3,7 +3,7 @@ title: Layouts exportieren und importieren
 audience: admin, developer, website-creator, designer, hosting
 category: build-two-ways
 order: 600
-summary: Layouts zwischen Installationen übertragen, unter Versionsverwaltung halten und ein Layout zurücksetzen; exp:layouts list, export und import mit Probeläufen und Strategien, das Format der .zip und der nach einem Import auf der Kommandozeile zu leerende Cache. Echte Ausgaben.
+summary: Layouts zwischen Installationen übertragen, unter Versionsverwaltung halten und ein Layout zurücksetzen; exp:layouts list, export und import mit Probeläufen und Strategien, das Format der .zip und der Seiten-Cache nach einem Import auf der Kommandozeile. Echte Ausgaben.
 keywords: exp:layouts, Layouts exportieren, Layouts importieren, Layouts-Zip, Probelauf, Strategie skip overwrite copy, publish, Zurücksetzen, Versionsverwaltung, Staging zu Produktion, Verweise, export layouts, import layouts, layouts zip, dry run, strategy, rollback, version control, staging to production, references
 type: help
 ---
@@ -102,10 +102,11 @@ Dry run: nothing was written.
 
 ## Nach einem Import auf der Kommandozeile
 
-Auf der Testkopie schrieb ein Import mit `--strategy=overwrite --publish` das Layout und gab
-`1 items written; 0 resolver cache entries removed.` aus, aber die Artikelseiten kamen mit den alten Blöcken weiterhin aus
-dem Seiten-Cache (`X-Exp-Cache: HIT`), bis `./console exp:cache clear --tag=content` lief. Leeren Sie nach einem Import auf
-der Kommandozeile die Inhalts-Caches. (Das Veröffentlichen im Editor hat sie von selbst geleert.)
+Seit explayouts_core 1.0.10 leert ein Import, der ein Layout veröffentlicht (`--publish`) oder eine Regel schreibt,
+selbst jede Seite des Seiten-Cache, auch auf der Kommandozeile, so wie das Veröffentlichen im Editor. Den Inhalts-Cache
+nach einem Import auf der Kommandozeile von Hand zu leeren ist nicht mehr nötig. Entwürfe, Probeläufe und abgelehnte
+Importe leeren nichts. Der Import endet weiterhin mit der Zeile `N items written; M resolver cache entries removed.`
+(zum Beispiel `1 items written; 0 resolver cache entries removed.`).
 
 ## Verwandte Seiten
 

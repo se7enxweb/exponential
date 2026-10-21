@@ -32,10 +32,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/page_head_script.tpl` Zeile 10:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/page_head_script.tpl` Zeile 21:
 
 ```tpl
-{ezscript_load( array( 'a4_url.js' ) )}
+{ezscript_load( $admin_backend_script_list )}
 ```
 
 ## Siehe auch

@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # rest.ini
 
-The shipped settings of `settings/rest.ini`: 15 blocks, 37 settings.
+The shipped settings of `settings/rest.ini`: 16 blocks, 47 settings.
 
 > Exponential configuration file for modules  
 >
@@ -32,7 +32,8 @@ The shipped settings of `settings/rest.ini`: 15 blocks, 37 settings.
 | [ezp7xRestContentController_viewContent_OutputSettings](ezp7xRestContentController_viewContent_OutputSettings.md) | 1 |
 | [CacheSettings](CacheSettings.md) | 5 |
 | [Authentication](Authentication.md) | 4 |
-| [OAuthSettings](OAuthSettings.md) | 2 |
+| [OAuthSettings](OAuthSettings.md) | 5 |
+| [CorsSettings](CorsSettings.md) | 7 |
 | [ApiKeySettings](ApiKeySettings.md) | 13 |
 | [RouteSettings](RouteSettings.md) | 2 |
 | [PreRoutingFilters](PreRoutingFilters.md) | 1 |

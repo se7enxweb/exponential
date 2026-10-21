@@ -31,7 +31,7 @@ StartPage=help/accounts-and-sign-in.md
 
 ## Related
 
-Standard: eine Liste mit 1: `editor`.
+Standard: eine Liste mit 2: `editor`, `non-technical`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -40,6 +40,7 @@ Standard: eine Liste mit 1: `editor`.
 # ein leeres "Related[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 Related[]
 Related[]=editor
+Related[]=non-technical
 */ ?>
 ```
 

@@ -28,7 +28,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/setup/info.tpl` line 163:
+The first use in the templates of this installation, `design/admin/templates/setup/info.tpl` line 164:
 
 ```tpl
 {if $function[0]|is_object()}

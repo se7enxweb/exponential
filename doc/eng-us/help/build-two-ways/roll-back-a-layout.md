@@ -3,7 +3,7 @@ title: Roll a layout back
 audience: admin, website-creator, editor, developer
 category: build-two-ways
 order: 610
-summary: Take a safety copy of a layout before you change it and put it back afterwards with exp:layouts - export, change, import with overwrite and publish, clear the content cache. Worked through on the shared layout Prefooter.
+summary: Take a safety copy of a layout before you change it and put it back afterwards with exp:layouts - export, change, import with overwrite and publish, which purges the page cache. Worked through on the shared layout Prefooter.
 keywords: rollback, undo layout, restore layout, backup layout, exp:layouts export, import overwrite publish, safety copy, layout history
 type: help
 ---
@@ -18,7 +18,7 @@ taken before the change is a way back that works from the command line, on any i
 2. [Make the change](#2-make-the-change)
 3. [Roll back: preview](#3-roll-back-preview)
 4. [Roll back: write](#4-roll-back-write)
-5. [Clear the content cache](#5-clear-the-content-cache)
+5. [The page cache](#5-the-page-cache)
 
 ## 1. Before the change: export
 
@@ -71,14 +71,11 @@ three original articles again and none of the added blocks.
 
 Without `--publish` the imported version becomes a draft, to check in the editor before publishing.
 
-## 5. Clear the content cache
+## 5. The page cache
 
-The import does not purge the page cache. On the test copy the article pages still showed the changed prefooter
-(`X-Exp-Cache: HIT`) until:
-
-```text
-./console exp:cache clear --tag=content
-```
+Since explayouts_core 1.0.10 the import with `--publish` purges every page of the page cache itself, so the article
+pages show the restored prefooter on their next view; no cache has to be cleared by hand. An import without
+`--publish`, a dry run or a refused import purges nothing.
 
 ## Related pages
 

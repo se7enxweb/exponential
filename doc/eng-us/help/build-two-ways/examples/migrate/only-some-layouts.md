@@ -29,7 +29,7 @@ Move the new campaign layouts, nothing else.
 1. `./console exp:layouts export --only=spring_campaign --output=campaign.zip` (the shared layouts it links to are always included; add more with `--shared=`).
 2. `./console exp:layouts import campaign.zip --dry-run` and read the States (`new`, `identical`, `changed`, `conflicting`).
 3. Run it again without `--dry-run`, with the `--strategy` you chose and `--publish` if the result should be live at once.
-4. `./console exp:cache clear --tag=content` (a command-line import does not purge the page cache).
+4. Nothing to clear by hand: since explayouts_core 1.0.10 an import with `--publish` purges the page cache itself.
 
 ## Which to choose
 

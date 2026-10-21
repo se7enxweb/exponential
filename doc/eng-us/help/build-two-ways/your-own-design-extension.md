@@ -58,7 +58,7 @@ was measured on the test copy:
 |---|---|---|
 | appended at the end (what `exp:ini add` does) | `mysite` listed before `sevenx_themes_media` | the theme's templates win; the override is ignored |
 | placed before `sevenx_themes_media` | `mysite` listed after the theme | your templates win |
-| placed first | `mysite` listed last | your templates win, and your `explayouts.ini` is read after Layouts' own (needed for new block types) |
+| placed first | `mysite` listed last | your templates win |
 
 The rule behind it: the extensions are read in the reverse order of `ActiveExtensions[]`, and in
 `DesignExtensions[]` the last one listed wins. So an extension listed **earlier** in `ActiveExtensions[]` wins over

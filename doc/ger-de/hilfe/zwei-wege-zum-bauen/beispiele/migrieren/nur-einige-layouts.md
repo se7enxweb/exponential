@@ -29,7 +29,7 @@ Die neuen Kampagnen-Layouts übertragen, sonst nichts.
 1. `./console exp:layouts export --only=spring_campaign --output=campaign.zip` (die gemeinsamen Layouts, mit denen es verknüpft ist, sind immer dabei; weitere fügen Sie mit `--shared=` hinzu).
 2. `./console exp:layouts import campaign.zip --dry-run` und die Zustände lesen (`new`, `identical`, `changed`, `conflicting`).
 3. Noch einmal ohne `--dry-run` ausführen, mit der gewählten `--strategy` und `--publish`, wenn das Ergebnis sofort live sein soll.
-4. `./console exp:cache clear --tag=content` (ein Import auf der Kommandozeile leert den Seiten-Cache nicht).
+4. Von Hand ist nichts zu leeren: Seit explayouts_core 1.0.10 leert ein Import mit `--publish` den Seiten-Cache selbst.
 
 ## Welchen Weg Sie wählen
 
