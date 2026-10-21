@@ -10,7 +10,7 @@ type: help
 # Ein Antragsformular für Informationsfreiheit einrichten
 
 Diese Aufgabe richtet sich an Site-Ersteller und Administratoren. Hintergrund:
-[Ein Antragsformular mit dem Information Collector](../../transparenz-und-informationsfreiheit/ein-antragsformular-mit-dem-information-collector.md).
+[Ein Antragsformular mit dem Informationssammler](../../transparenz-und-informationsfreiheit/ein-antragsformular-mit-dem-informationssammler.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.

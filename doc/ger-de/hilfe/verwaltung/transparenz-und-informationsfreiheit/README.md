@@ -3,8 +3,8 @@ title: Transparenz und Informationsfreiheit
 audience: government, project-manager, editor, admin, website-creator
 category: public-sector
 order: 10
-summary: Der Bereich Transparenz der Hilfe für Verwaltungen - proaktive Veröffentlichung, Veröffentlichungspläne, Offenlegungsprotokolle, Antragsformulare, Schwärzung, Sitzungen, Beschlüsse, Ausgaben, Freigabe, Versionsgeschichte und der Audit-Trail in Exponential, mit offen benannten Lücken.
-keywords: Transparenz, Informationsfreiheit, Informationsfreiheitsgesetz, IFG, Informationszugang, Offenlegungsprotokoll, Veröffentlichungsplan, Rechenschaft, Audit-Trail, Versionsgeschichte, Übersicht, transparency, freedom of information, FOI, FOIA, access to information, disclosure log, publication scheme, accountability, index
+summary: Der Bereich Transparenz der Hilfe für Verwaltungen - proaktive Veröffentlichung, Veröffentlichungspläne, Offenlegungsprotokolle, Antragsformulare, Schwärzung, Sitzungen, Beschlüsse, Ausgaben, Freigabe, Versionsgeschichte und das Prüfprotokoll in Exponential, mit offen benannten Lücken.
+keywords: Transparenz, Informationsfreiheit, Informationsfreiheitsgesetz, IFG, Informationszugang, Offenlegungsprotokoll, Veröffentlichungsplan, Rechenschaft, Prüfprotokoll, Versionsgeschichte, Übersicht, transparency, freedom of information, FOI, FOIA, access to information, disclosure log, publication scheme, accountability, index
 type: help
 ---
 # Transparenz und Informationsfreiheit
@@ -30,7 +30,7 @@ Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md).
 | [Proaktive Veröffentlichung](proaktive-veroeffentlichung.md) | Wie Sie regelmäßig veröffentlichen, bevor jemand fragt |
 | [Veröffentlichungspläne](veroeffentlichungsplaene.md) | Wie Sie einen Wegweiser zu den Informationen erstellen, die Sie veröffentlichen |
 | [Offenlegungsprotokolle](offenlegungsprotokolle.md) | Wie Sie herausgegebene Auskünfte ohne Daten der Antragsteller veröffentlichen |
-| [Ein Antragsformular mit dem Informationssammler](ein-antragsformular-mit-dem-information-collector.md) | Wie Sie ein Online-Antragsformular erstellen |
+| [Ein Antragsformular mit dem Informationssammler](ein-antragsformular-mit-dem-informationssammler.md) | Wie Sie ein Online-Antragsformular erstellen |
 | [Anträge aus gesammelten Informationen bearbeiten](antraege-aus-gesammelten-informationen-bearbeiten.md) | Wie Sie Einsendungen lesen, exportieren und entfernen |
 | [Schwärzen ist Handarbeit](schwaerzen-ist-handarbeit.md) | Warum Schwärzungen außerhalb von Exponential stattfinden und wie Sie sie prüfen |
 | [Eine Auskunft nach Informationsfreiheitsrecht veröffentlichen](eine-auskunft-nach-informationsfreiheitsrecht-veroeffentlichen.md) | Schritt für Schritt vom beantworteten Antrag bis zum Protokolleintrag |
@@ -39,7 +39,7 @@ Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md).
 | [Sitzungsunterlagen, Tagesordnungen und Protokolle](sitzungsunterlagen-tagesordnungen-und-protokolle.md) | Wie Sie Sitzungen von Räten und Ausschüssen veröffentlichen |
 | [Beschlussregister](beschlussregister.md) | Wie Sie ein öffentliches Register der Beschlüsse führen |
 | [Versionsgeschichte als Rechenschaft](versionsgeschichte-als-rechenschaft.md) | Was die Versionsgeschichte beweist und wo sie endet |
-| [Der Audit-Trail für „wer hat was geändert“](der-audit-trail-fuer-wer-was-geaendert-hat.md) | Wie Sie herausfinden, wer was getan hat, und beweisen, dass die Aufzeichnung unversehrt ist |
+| [Das Prüfprotokoll für „wer hat was geändert“](der-audit-trail-fuer-wer-was-geaendert-hat.md) | Wie Sie herausfinden, wer was getan hat, und beweisen, dass die Aufzeichnung unversehrt ist |
 | [Versionen länger aufbewahren](versionen-laenger-aufbewahren.md) | Wie Sie die Versionsgrenzen für aktenrelevante Klassen anheben |
 | [Zeitgesteuertes Veröffentlichen und Sperrfristen](zeitgesteuertes-veroeffentlichen-und-sperrfristen.md) | Wie Sie zu einem festen Zeitpunkt veröffentlichen und nach einem Datum verbergen |
 | [Veröffentlichte Informationen zurücknehmen und berichtigen](veroeffentlichte-informationen-zuruecknehmen-und-berichtigen.md) | Berichtigungen, Verbergen, Entfernen und Fehler |
@@ -52,7 +52,7 @@ Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md).
 1. Führungskräfte und Zuständige: „Auf einen Blick“, „Proaktive Veröffentlichung“, „Offenlegungsprotokolle“,
    „Schwärzen ist Handarbeit“, „Versionsgeschichte als Rechenschaft“, die Checkliste.
 2. Websiteersteller und Administratoren: „Ein Antragsformular“, „Freigabe vor dem Veröffentlichen“, „Versionen länger
-   aufbewahren“, „Zeitgesteuertes Veröffentlichen und Sperrfristen“, „Der Audit-Trail“.
+   aufbewahren“, „Zeitgesteuertes Veröffentlichen und Sperrfristen“, „Das Prüfprotokoll“.
 3. Redaktionen: „Eine Auskunft veröffentlichen“, „Sitzungsunterlagen“, „Beschlussregister“, „Zurücknehmen und
    berichtigen“.
 
@@ -65,7 +65,7 @@ ungeeignet. Jede Seite sagt, wie Sie mit diesen Grenzen arbeiten.
 ## Verwandte Seiten
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
-- [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)
 - [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
