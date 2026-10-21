@@ -20,7 +20,7 @@ Diese Seite ist für Designer, die eine Kopie des Themes eines anderen unter eig
 | Sie die Wartungsarbeit teilen wollen | Sie schneller ausliefern müssen, als das Original prüfen kann |
 
 Ein Fork für die privaten Änderungen eines Kunden lässt sich oft besser als kleine Erweiterung lösen, die das Original
-überschreibt ([Anpassung und White-Label-Arbeit](../../../../eng-us/help/designers/sales/customization-and-white-label.md)).
+überschreibt ([Anpassung und White-Label-Arbeit](../verkauf/anpassung-und-white-label.md)).
 
 ## Schritt für Schritt
 

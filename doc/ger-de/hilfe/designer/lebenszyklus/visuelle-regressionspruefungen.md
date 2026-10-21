@@ -41,7 +41,7 @@ Mit diesen Breiten prüft das Projekt Exponential seine eigenen Seiten.
 ## Verwandte Seiten
 
 - [Screenshots für ein Theme](../veroeffentlichung/screenshots-fuer-ein-theme.md)
-- [Checkliste: Dunkelmodus](../../../../eng-us/help/designers/theme-design/checklist-dark-mode.md)
+- [Checkliste: Dunkelmodus](../theme-design/checkliste-dunkelmodus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

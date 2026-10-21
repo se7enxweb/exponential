@@ -37,10 +37,10 @@ Release-Issue und haken Sie sie ab.
 
 ## Designqualität
 
-- [ ] Checkliste Barrierefreiheit bestanden ([Checkliste: Barrierefreiheit](../../../../eng-us/help/designers/theme-design/checklist-accessibility.md)).
-- [ ] Kein Inline-CSS oder -JavaScript; die CSP-Checkliste bestanden ([Checkliste: CSP](../../../../eng-us/help/designers/theme-design/checklist-csp.md)).
-- [ ] Heller und dunkler Modus, 200 % Zoom und eine Telefonbreite geprüft ([Checkliste: Dunkelmodus](../../../../eng-us/help/designers/theme-design/checklist-dark-mode.md)).
-- [ ] Templates maskieren die Ausgabe ([Checkliste: Code-Review für Templates](../../../../eng-us/help/designers/theme-design/checklist-code-review-for-templates.md)).
+- [ ] Checkliste Barrierefreiheit bestanden ([Checkliste: Barrierefreiheit](../theme-design/checkliste-barrierefreiheit.md)).
+- [ ] Kein Inline-CSS oder -JavaScript; die CSP-Checkliste bestanden ([Checkliste: CSP](../theme-design/checkliste-csp.md)).
+- [ ] Heller und dunkler Modus, 200 % Zoom und eine Telefonbreite geprüft ([Checkliste: Dunkelmodus](../theme-design/checkliste-dunkelmodus.md)).
+- [ ] Templates maskieren die Ausgabe ([Checkliste: Code-Review für Templates](../theme-design/checkliste-code-review-fuer-templates.md)).
 
 ## Repository
 
@@ -52,7 +52,7 @@ Wenn jedes Kästchen abgehakt ist, fahren Sie mit [Checkliste: vor der Veröffen
 ## Verwandte Seiten
 
 - [Fehlersuche bei Theme-Erweiterungen](fehlersuche-bei-theme-erweiterungen.md)
-- [Checkliste: Theme-Start](../../../../eng-us/help/designers/theme-design/checklist-theme-launch.md)
+- [Checkliste: Theme-Start](../theme-design/checkliste-theme-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

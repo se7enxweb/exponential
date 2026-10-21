@@ -43,7 +43,7 @@ Dateien von jQuery 3.7.1, Migrate 3.4.1 und jQuery UI 1.10.3 wurden am 14. Oktob
 
 ## Verwandte Seiten
 
-- [jQuery in Designs](../../../../eng-us/help/designers/theme-design/jquery-in-designs.md)
+- [jQuery in Designs](../theme-design/jquery-in-designs.md)
 - [Abhängigkeiten aktuell halten](abhaengigkeiten-aktualisieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

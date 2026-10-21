@@ -61,7 +61,7 @@ im Starter-Siteaccess gelesen, sodass die Formulare des Themes keine andere Webs
 
 ## Verwandte Seiten
 
-- [Designs in einer Multisite-Installation](../../../../eng-us/help/designers/theme-design/designs-in-multisite.md)
+- [Designs in einer Multisite-Installation](../theme-design/designs-in-einer-multisite-installation.md)
 - [Einstellungsdateien in einer Erweiterung](einstellungsdateien-in-einer-erweiterung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

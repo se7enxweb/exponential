@@ -57,7 +57,7 @@ sehen.
 
 ## Verwandte Seiten
 
-- [Demos, die verkaufen](../../../../eng-us/help/designers/sales/demos-that-sell.md)
+- [Demos, die verkaufen](../verkauf/demos-die-verkaufen.md)
 - [Demo-Skripte](../../geschaeft/demo-drehbuecher.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

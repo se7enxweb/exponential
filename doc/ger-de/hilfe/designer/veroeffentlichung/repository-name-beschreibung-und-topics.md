@@ -59,7 +59,7 @@ Eigenschaften (`responsive-design`, `accessibility`, `dark-mode`), den Zweck (`b
 ## Verwandte Seiten
 
 - [Ein README, das erklärt und verkauft](ein-readme-das-erklaert-und-verkauft.md)
-- [Die Produktseite eines Themes schreiben](../../../../eng-us/help/designers/sales/product-page.md)
+- [Die Produktseite eines Themes schreiben](../verkauf/produktseite.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

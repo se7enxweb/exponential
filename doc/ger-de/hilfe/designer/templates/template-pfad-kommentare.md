@@ -60,7 +60,7 @@ Kommentare um die Elemente, sodass Sie von jedem Element zu seinem Template hina
 ## Verwandte Seiten
 
 - [Template-Debugging](template-debugging.md)
-- [Ein Design debuggen](../../../../eng-us/help/designers/theme-design/debugging-a-design.md)
+- [Ein Design debuggen](../theme-design/ein-design-debuggen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

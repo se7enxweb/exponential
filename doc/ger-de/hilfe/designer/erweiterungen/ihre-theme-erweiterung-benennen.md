@@ -41,7 +41,7 @@ Name der Erweiterung und Design-Name dürfen sich unterscheiden. `cjw_themes_jum
 
 - **Stellen Sie Ihre Organisation voran**, damit zwei Themes nie kollidieren: `acme_themes_harbor`, nicht `harbor`.
 - **Halten Sie den Produktnamen aus dem Namen Ihres Themes heraus.** Ein Theme ist nicht „Exponential Harbor“; es ist
-  „Harbor, ein Theme für Exponential“. Siehe [Namen und Marken](../../../../eng-us/help/designers/sales/names-and-trademarks.md) und
+  „Harbor, ein Theme für Exponential“. Siehe [Namen und Marken](../verkauf/namen-und-marken.md) und
   [Marken- und Namensregeln](../../geschaeft/marken-und-namensregeln.md).
 - **`sevenx` und `exp` sind die Präfixe von 7x.** Die eigenen Themes von 7x heißen `sevenx_themes_*`, weil `sevenx` das
   offizielle öffentliche PHP-Code-Präfix von 7x ist (ein Name kann nicht mit einer Ziffer beginnen, also kann „7x“ keines

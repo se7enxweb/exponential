@@ -59,7 +59,7 @@ geschrieben).
 
 - [Setup > Extensions: Ladereihenfolge und sicheres Speichern](../../../../eng-us/features/6.0/extension-loading-order.md)
 - [Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)
-- [Override-Reihenfolge](../../../../eng-us/help/designers/templates/override-ordering.md)
+- [Override-Reihenfolge](../templates/override-reihenfolge.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

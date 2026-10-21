@@ -28,7 +28,7 @@ Datenbankabfragen klein.
 4. **Bevorzugen Sie, was Sie schon haben.** Im Pagelayout enthält `$module_result.content_info` Klasse, Knoten-ID, Tiefe
    und URL-Alias der Seite ohne Fetch.
 5. **Cachen Sie, was für viele Besucher gleich ist**: Menüs und Fußzeilen in Cache-Blöcken ([Cache-Block](cache-block.md)).
-6. **Halten Sie Vollansichten cachebar**, damit der View-Cache sie ausliefert ([Caching für Designer](../../../../eng-us/help/designers/theme-design/caching-for-designers.md)).
+6. **Halten Sie Vollansichten cachebar**, damit der View-Cache sie ausliefert ([Caching für Designer](../theme-design/caching-fuer-designer.md)).
 
 ## Attribute, die abrufen
 

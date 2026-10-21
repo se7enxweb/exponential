@@ -40,7 +40,7 @@ Kopieren Sie das Original in Ihr Design und ändern Sie Markup und Klassen um di
 ## Beschriftungen und Fehler
 
 - Das Template der Bearbeitungsseite (`content/edit.tpl` und `content/edit_attribute.tpl`) gibt die Beschriftungen der
-  Felder aus; halten Sie jede Beschriftung an ihre Eingabe gebunden ([Barrierefreie Formulare](../../../../eng-us/help/designers/theme-design/accessible-forms.md)).
+  Felder aus; halten Sie jede Beschriftung an ihre Eingabe gebunden ([Barrierefreie Formulare](../theme-design/barrierefreie-formulare.md)).
 - Prüfmeldungen kommen aus `content/edit_validation.tpl`; platzieren Sie sie dort, wo Nutzer sie sehen, und setzen Sie den
   Fokus auf die Zusammenfassung.
 

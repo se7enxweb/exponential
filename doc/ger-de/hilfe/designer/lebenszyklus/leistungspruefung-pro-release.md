@@ -35,7 +35,7 @@ Live-Website.
 
 ## Verwandte Seiten
 
-- [Bildleistung](../../../../eng-us/help/designers/theme-design/image-performance.md)
+- [Bildleistung](../theme-design/bildleistung.md)
 - [Benchmarking](../../../anleitungen/benchmarking.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

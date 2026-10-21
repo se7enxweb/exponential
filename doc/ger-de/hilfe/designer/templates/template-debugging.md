@@ -10,7 +10,7 @@ type: help
 # Template-Debugging
 
 Diese Seite ist für Designer, deren Template nicht tut, was sie erwarten. Sie listet die Werkzeuge vom schnellsten zum
-tiefsten auf. Bei „meine Änderung erscheint nicht“ beginnen Sie mit [Ein Design debuggen](../../../../eng-us/help/designers/theme-design/debugging-a-design.md)
+tiefsten auf. Bei „meine Änderung erscheint nicht“ beginnen Sie mit [Ein Design debuggen](../theme-design/ein-design-debuggen.md)
 (Caches); bei „welches Template ist das“ mit [Template-Pfadkommentare](template-pfad-kommentare.md).
 
 ## Inhalt

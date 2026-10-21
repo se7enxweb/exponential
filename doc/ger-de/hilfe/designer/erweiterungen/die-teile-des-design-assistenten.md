@@ -41,7 +41,7 @@ und laden keine Stylesheets oder Skripte:
 
 2. **Die Dateien ausgeben.** Die erzeugten Templates rufen `ezcss_require` und `ezscript_require` auf, die Dateien nur
    sammeln; nichts gibt sie aus. Fügen Sie `{ezcss_load()}` am Ende von `page_head.tpl` und `{ezscript_load()}` direkt
-   vor `</body>` in `pagelayout.tpl` hinzu ([Die Operatoren ezcss und ezscript](../../../../eng-us/help/designers/theme-design/ezcss-and-ezscript-operators.md)).
+   vor `</body>` in `pagelayout.tpl` hinzu ([Die Operatoren ezcss und ezscript](../theme-design/die-operatoren-ezcss-und-ezscript.md)).
 3. **Der Zeichensatz.** Ersetzen Sie die erzeugte Zeile `<meta charset=...>`, die `utf-8` mit `extract_left( 0 )` aus
    der Locale baut und nur zufällig funktioniert, durch ein einfaches `<meta charset="utf-8" />`.
 

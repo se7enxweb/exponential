@@ -19,7 +19,7 @@ per privater Mail.
 | Fehler und Funktionswünsche | Die Issues des Repositorys | `https://github.com/se7enxweb/cjw_themes_jumper/issues` |
 | Fragen und Hilfe | Ein Forum oder Chat | Das Forum **Extensions** oder **Setup & design** auf share.exponential.earth |
 | Sicherheitsprobleme | Eine vertrauliche Adresse, nie ein öffentliches Issue | [Eine Sicherheitsrichtlinie für ein Theme](sicherheitsrichtlinie-fuer-ein-theme.md) |
-| Bezahlter Support | Ihre eigene Kontaktseite | [Support-Angebote](../../../../eng-us/help/designers/sales/support-offerings.md) |
+| Bezahlter Support | Ihre eigene Kontaktseite | [Support-Angebote](../verkauf/support-angebote.md) |
 
 Die Organisation `se7enxweb` führt in ihrem Repository `.github` eine `SUPPORT.md`, die kommerziellen Support vom
 Community-Support trennt; sie ist ein nützliches Vorbild.

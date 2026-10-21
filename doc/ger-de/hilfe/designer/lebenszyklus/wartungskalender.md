@@ -33,7 +33,7 @@ ignoriert wird.
 ## Verwandte Seiten
 
 - [Checkliste: ein Wartungszyklus](checkliste-ein-wartungszyklus.md)
-- [Wartungsabonnements](../../../../eng-us/help/designers/sales/maintenance-subscriptions.md)
+- [Wartungsabonnements](../verkauf/wartungsabonnements.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

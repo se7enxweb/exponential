@@ -44,7 +44,7 @@ Benutzerklasse mit `attribute_edit_gui` ([Bearbeitungstemplates von Datentypen](
 ```
 
 Verwenden Sie auf der Seite zum Ändern des Passworts `autocomplete="new-password"`. Zeigen Sie Fehler neben den Feldern und in
-einer Zusammenfassung ([Barrierefreie Formulare](../../../../eng-us/help/designers/theme-design/accessible-forms.md)). Die Seite „Passwort vergessen“ darf nicht
+einer Zusammenfassung ([Barrierefreie Formulare](../theme-design/barrierefreie-formulare.md)). Die Seite „Passwort vergessen“ darf nicht
 verraten, ob zu einer Adresse ein Konto existiert; die Templates des Kernels wurden dafür geändert, behalten Sie ihre
 Formulierung.
 

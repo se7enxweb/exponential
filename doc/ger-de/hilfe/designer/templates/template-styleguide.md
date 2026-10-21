@@ -52,7 +52,7 @@ Gewohnheiten, denen die mitgelieferten Designs folgen.
 - HTML5: keine XHTML-Schrägstriche (`<br>`, nicht `<br />`), kein `type` an `<script>`- und `<style>`-Links (das Release 6.0.3
   von ezwebin hat sie aus 57 Dateien entfernt).
 - Semantische Elemente (`<article>`, `<nav>`, `<main>`, `<time>`), eine `h1`, Überschriften in Reihenfolge.
-- Kein `<style>`, kein `style=""`, keine Inline-Skripte oder `on*=`-Handler ([CSP-sicheres Design](../../../../eng-us/help/designers/theme-design/csp-safe-design.md)).
+- Kein `<style>`, kein `style=""`, keine Inline-Skripte oder `on*=`-Handler ([CSP-sicheres Design](../theme-design/csp-sicheres-design.md)).
 - Klassen beschreiben die Komponente, nicht das Aussehen (`.teaser-title`, nicht `.big-red`).
 
 ## Formatierung
@@ -66,7 +66,7 @@ Gewohnheiten, denen die mitgelieferten Designs folgen.
 ## Verwandte Seiten
 
 - [Häufige Template-Fehler](haeufige-template-fehler.md)
-- [Checkliste: Code-Review für Templates](../../../../eng-us/help/designers/theme-design/checklist-code-review-for-templates.md)
+- [Checkliste: Code-Review für Templates](../theme-design/checkliste-code-review-fuer-templates.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

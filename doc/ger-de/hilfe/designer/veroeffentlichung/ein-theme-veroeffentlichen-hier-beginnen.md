@@ -81,7 +81,7 @@ nächsten Release behoben. Lesen Sie vor Ihrem ersten Release [Ein gepushter Tag
 
 ## Verwandte Seiten
 
-- [Themes und Dienstleistungen verkaufen: hier beginnen](../../../../eng-us/help/designers/sales/selling-start-here.md)
+- [Themes und Dienstleistungen verkaufen: hier beginnen](../verkauf/verkaufen-hier-beginnen.md)
 - [Der Lebenszyklus der Wartung: hier beginnen](../lebenszyklus/lebenszyklus-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

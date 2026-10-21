@@ -55,7 +55,7 @@ das Design zeichnet es.
 Vergleichen Sie mit dem Template des Feedback-Formulars des Designs, auf dem Sie aufbauen (`full/feedback_form.tpl` von
 ezwebin, die Formulare des Designs media), um die genauen versteckten Felder und das Include für die Prüfung zu sehen, die
 Ihre Installation verwendet. Die mitgelieferten collect-Templates geben Eingaben ohne IDs aus; geben Sie Ihren Kopien IDs,
-damit die Beschriftungen oben funktionieren ([Barrierefreie Formulare](../../../../eng-us/help/designers/theme-design/accessible-forms.md)).
+damit die Beschriftungen oben funktionieren ([Barrierefreie Formulare](../theme-design/barrierefreie-formulare.md)).
 
 ## Nach dem Absenden
 
@@ -74,7 +74,7 @@ damit die Beschriftungen oben funktionieren ([Barrierefreie Formulare](../../../
 ## Barrierefreiheit
 
 Beschriftungen, Pflichtkennzeichnungen im Text, eine Fehlerzusammenfassung mit Links zu den Feldern, `autocomplete` bei
-persönlichen Feldern ([Barrierefreie Formulare](../../../../eng-us/help/designers/theme-design/accessible-forms.md)).
+persönlichen Feldern ([Barrierefreie Formulare](../theme-design/barrierefreie-formulare.md)).
 
 ## Verwandte Seiten
 

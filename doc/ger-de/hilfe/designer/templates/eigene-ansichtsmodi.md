@@ -54,7 +54,7 @@ Der Modus braucht kein besonderes Präfix, aber vermeiden Sie Namen, die der Ker
 </div>
 ```
 
-Templates von Layout-Blöcken können ihre Einträge ebenfalls in Ihrem Modus zeichnen ([Block-Ansichtstemplates](../../../../eng-us/help/designers/theme-design/block-view-templates.md)).
+Templates von Layout-Blöcken können ihre Einträge ebenfalls in Ihrem Modus zeichnen ([Block-Ansichtstemplates](../theme-design/block-ansichtstemplates.md)).
 
 ## Per URL
 

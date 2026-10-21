@@ -36,7 +36,7 @@ das Lesen der Lizenz. Dies ist keine Rechtsberatung.
 Laden Sie Schriften, Icons und Skripte aus dem eigenen Design-Ordner des Themes. Ein CDN bringt bei jedem Besuch einen
 Dritten ins Spiel (eine Datenschutzfrage für Besucher) und braucht zusätzliche Einträge in einer Content Security
 Policy; die Richtlinie der Administration von Exponential erlaubt standardmäßig nur `'self'`. Siehe
-[Externe Ressourcen und CDNs](../../../../eng-us/help/designers/theme-design/external-resources-and-cdns.md).
+[Externe Ressourcen und CDNs](../theme-design/externe-ressourcen-und-cdns.md).
 
 ## Schritt für Schritt
 
@@ -50,7 +50,7 @@ Policy; die Richtlinie der Administration von Exponential erlaubt standardmäßi
 ## Verwandte Seiten
 
 - [Creative Commons für Bilder](creative-commons-fuer-bilder.md)
-- [Schriften in einem Design](../../../../eng-us/help/designers/theme-design/fonts-in-a-design.md)
+- [Schriften in einem Design](../theme-design/schriften-in-einem-design.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

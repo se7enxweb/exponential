@@ -83,7 +83,7 @@ Ein Link zu einem Knoten: `$node.url_alias|ezurl`. Ein Link zu einer View mit Pa
 
 ## Verwandte Seiten
 
-- [Bilder in einem Design](../../../../eng-us/help/designers/theme-design/images-in-a-design.md)
+- [Bilder in einem Design](../theme-design/bilder-in-einem-design.md)
 - [Wash und Maskierung](wash-und-maskierung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -27,7 +27,7 @@ muss jedes Release das so halten.
 
    Erwartet: keine Ausgabe.
 4. **Externe Ressourcen**: Alles, was nicht von der Website selbst ausgeliefert wird (Schriften, Skripte, Bilder), braucht
-   einen Eintrag in der Richtlinie und einen Grund; ziehen Sie Selbsthosting vor ([Externe Ressourcen und CDNs](../../../../eng-us/help/designers/theme-design/external-resources-and-cdns.md)).
+   einen Eintrag in der Richtlinie und einen Grund; ziehen Sie Selbsthosting vor ([Externe Ressourcen und CDNs](../theme-design/externe-ressourcen-und-cdns.md)).
 5. **Interaktive Teile** (Menüs, Galerien, Formulare, Karten) funktionieren, wenn die Richtlinie auf dem Test-Siteaccess
    durchgesetzt wird.
 
@@ -38,7 +38,7 @@ wenn es stimmt.
 
 ## Verwandte Seiten
 
-- [Checkliste: CSP](../../../../eng-us/help/designers/theme-design/checklist-csp.md)
+- [Checkliste: CSP](../theme-design/checkliste-csp.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -56,7 +56,7 @@ solange dieser Siteaccess läuft ([Siteaccess-Einstellungen in einem Theme](site
 
 ## Verwandte Seiten
 
-- [Designs und Siteaccesses](../../../../eng-us/help/designers/theme-design/designs-and-siteaccesses.md)
+- [Designs und Siteaccesses](../theme-design/designs-und-siteaccesses.md)
 - [Das Design registrieren](das-design-registrieren.md)
 - [Einstellungsdateien in einer Erweiterung](einstellungsdateien-in-einer-erweiterung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

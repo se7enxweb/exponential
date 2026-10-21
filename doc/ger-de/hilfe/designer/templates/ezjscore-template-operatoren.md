@@ -21,7 +21,7 @@ Exponential. Sie sind in `extension/ezjscore/autoloads/eztemplateautoload.php` r
 ## Packer-Operatoren
 
 `ezscript`, `ezscript_require`, `ezscript_load`, `ezscriptfiles`, `ezcss`, `ezcss_require`, `ezcss_load`, `ezcssfiles`:
-siehe [Die Operatoren ezcss und ezscript](../../../../eng-us/help/designers/theme-design/ezcss-and-ezscript-operators.md) und
+siehe [Die Operatoren ezcss und ezscript](../theme-design/die-operatoren-ezcss-und-ezscript.md) und
 [Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md).
 
 ## Kodieren für Skripte

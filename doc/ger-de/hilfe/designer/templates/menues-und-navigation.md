@@ -85,7 +85,7 @@ Das Menü ist für alle mit denselben Rollen auf derselben Seite gleich:
 ```
 
 ([Cache-Block](cache-block.md)). Menüs der ezwebin-Familie werden stattdessen mit `menu.ini [SelectedMenu]` eingerichtet
-([Das Design ezwebin als Grundlage](../../../../eng-us/help/designers/theme-design/ezwebin-as-a-base.md)).
+([Das Design ezwebin als Grundlage](../theme-design/ezwebin-als-grundlage.md)).
 
 ## Kleine Bildschirme
 
@@ -97,7 +97,7 @@ eine Liste von Links, die das Skript einklappt).
 
 - [Brotkrumennavigation](brotkrumen.md)
 - [Knoten und Listen abrufen](knoten-und-listen-abrufen.md)
-- [Tastatur und Fokus](../../../../eng-us/help/designers/theme-design/keyboard-and-focus.md)
+- [Tastatur und Fokus](../theme-design/tastatur-und-fokus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -32,7 +32,7 @@ Softwarelizenzen auskennt.
 | Schriften, Icons und Bibliotheken anderer | Was ihre Urheber gewählt haben; Sie müssen sich daran halten | [Schriften, Icons und Bibliotheken Dritter](schriften-icons-und-bibliotheken-dritter.md) |
 
 Und wenn Sie Geld verdienen wollen: [Kommerzielle Bedingungen neben der GPL](kommerzielle-bedingungen-neben-der-gpl.md) und
-[Die GPL und der Verkauf](../../../../eng-us/help/designers/sales/gpl-and-selling.md).
+[Die GPL und der Verkauf](../verkauf/gpl-und-verkauf.md).
 
 ## Die Lizenzen, die die Assistenten anbieten
 

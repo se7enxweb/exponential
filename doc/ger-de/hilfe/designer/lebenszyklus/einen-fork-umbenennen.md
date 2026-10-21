@@ -34,7 +34,7 @@ die Menschen auszulöschen, die das Original gemacht haben, nicht, und es ist un
 ## Nicht tun
 
 - Andeuten, dass der ursprüngliche Autor oder das Projekt Exponential Ihren Fork billigt.
-- Den Namen des Originals als Namen Ihres Produkts verwenden ([Namen und Marken](../../../../eng-us/help/designers/sales/names-and-trademarks.md)).
+- Den Namen des Originals als Namen Ihres Produkts verwenden ([Namen und Marken](../verkauf/namen-und-marken.md)).
 - Die Historie umschreiben, um die ursprünglichen Autoren aus Commits zu entfernen.
 
 ## Schritt für Schritt

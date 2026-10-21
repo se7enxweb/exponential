@@ -52,7 +52,7 @@ Sicherheit, Changelog, Danksagungen. Beschränken Sie die Installation auf Befeh
 ## Verwandte Seiten
 
 - [Screenshots für ein Theme](screenshots-fuer-ein-theme.md)
-- [Die Produktseite eines Themes schreiben](../../../../eng-us/help/designers/sales/product-page.md)
+- [Die Produktseite eines Themes schreiben](../verkauf/produktseite.md)
 - [Positionierung und Nutzenversprechen](../../geschaeft/positionierung-und-nutzenversprechen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

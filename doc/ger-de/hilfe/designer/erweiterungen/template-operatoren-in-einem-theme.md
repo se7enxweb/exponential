@@ -86,7 +86,7 @@ die Datei wie in Schritt 2 unten hinzu.
 
 ## Verwandte Seiten
 
-- [Operatoren im Überblick](../../../../eng-us/help/designers/templates/operators-overview.md)
+- [Operatoren im Überblick](../templates/operatoren-ueberblick.md)
 - [RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

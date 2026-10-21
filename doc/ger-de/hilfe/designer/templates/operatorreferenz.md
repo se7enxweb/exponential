@@ -73,7 +73,7 @@ Registriert in `kernel/common/eztemplateautoload.php`:
 | `installation_name`, `is_production_system` | der Name der Installation und ob sie produktiv ist |
 | `audit_label` | Beschriftungen des Audit-Protokolls |
 | `exp_environment`, `exp_environment_badge` | die Umgebung (Entwicklung, Staging, Produktion) und ihre Plakette |
-| `csp_nonce` | die Nonce der Content Security Policy der Anfrage ([CSP-sicheres Design](../../../../eng-us/help/designers/theme-design/csp-safe-design.md)) |
+| `csp_nonce` | die Nonce der Content Security Policy der Anfrage ([CSP-sicheres Design](../theme-design/csp-sicheres-design.md)) |
 
 `kernel/private/eztemplate/eztemplateautoload.php` fügt `language_switcher` hinzu.
 

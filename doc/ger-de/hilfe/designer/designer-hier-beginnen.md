@@ -38,21 +38,21 @@ dieser Hilfe steht.
    die **Design-Kaskade**, und nimmt die erste Datei, die er findet ([Die Design-Kaskade](../../../eng-us/help/designers/theme-design/the-design-cascade.md)).
 3. Das **Pagelayout** rahmt jede Seite um das Ergebnis des Moduls ein ([Das Pagelayout](../../../eng-us/help/designers/theme-design/the-pagelayout.md)).
 4. **Templates** in der Sprache TPL stellen Inhalte dar, und **Overrides** wählen ein Template je Klasse, Knoten oder
-   Sektion ([Templates im Überblick](../../../eng-us/help/designers/templates/templates-overview.md), [Override-Grundlagen](../../../eng-us/help/designers/templates/override-ini-basics.md)).
+   Sektion ([Templates im Überblick](templates/templates-ueberblick.md), [Override-Grundlagen](templates/override-grundlagen.md)).
 5. Stylesheets und Skripte erreichen den Browser von ezjscore **gepackt**, ohne Inline-Code
-   ([Stylesheets laden](../../../eng-us/help/designers/theme-design/loading-stylesheets.md), [CSP-sicheres Design](../../../eng-us/help/designers/theme-design/csp-safe-design.md)).
+   ([Stylesheets laden](../../../eng-us/help/designers/theme-design/loading-stylesheets.md), [CSP-sicheres Design](theme-design/csp-sicheres-design.md)).
 
 ## Ihre erste Woche
 
 ### Tag 1: sich umsehen
 
-- [ ] Lesen Sie [Was ein Design ist](../../../eng-us/help/designers/theme-design/what-a-design-is.md) und [Designs und Siteaccesses](../../../eng-us/help/designers/theme-design/designs-and-siteaccesses.md).
+- [ ] Lesen Sie [Was ein Design ist](../../../eng-us/help/designers/theme-design/what-a-design-is.md) und [Designs und Siteaccesses](theme-design/designs-und-siteaccesses.md).
 - [ ] Sehen Sie sich [Die Themes, die mit Exponential kommen](../../../eng-us/help/designers/theme-design/themes-on-alpha.md) an; öffnen Sie die `pagelayout.tpl` eines Themes.
 
 ### Tag 2: die Template-Sprache
 
-- [ ] [TPL-Syntax: Grundlagen](../../../eng-us/help/designers/templates/tpl-syntax-basics.md), [Variablen und def](../../../eng-us/help/designers/templates/variables-and-def.md),
-      [Foreach-Schleifen](../../../eng-us/help/designers/templates/foreach-loops.md), [Wash und Maskierung](../../../eng-us/help/designers/templates/wash-and-escaping.md).
+- [ ] [TPL-Syntax: Grundlagen](templates/tpl-syntax-grundlagen.md), [Variablen und def](templates/variablen-und-def.md),
+      [Foreach-Schleifen](templates/foreach-schleifen.md), [Wash und Maskierung](templates/wash-und-maskierung.md).
 
 ### Tag 3: Ihr eigenes Theme
 
@@ -60,23 +60,23 @@ dieser Hilfe steht.
 
 ### Tag 4: Inhalte und Overrides
 
-- [ ] Rufen Sie eine Liste ab ([Fetch-Grundlagen](../../../eng-us/help/designers/templates/fetch-basics.md)) und überschreiben Sie eine Vollansicht
+- [ ] Rufen Sie eine Liste ab ([Fetch-Grundlagen](templates/fetch-grundlagen.md)) und überschreiben Sie eine Vollansicht
       ([Tutorial: eine Vollansicht überschreiben](../../../eng-us/help/designers/theme-design/tutorial-override-a-full-view.md)).
 
 ### Tag 5: Qualität
 
 - [ ] Fügen Sie den Dunkelmodus hinzu ([Tutorial: Dunkelmodus hinzufügen](../../../eng-us/help/designers/theme-design/tutorial-add-dark-mode.md)) und gehen
-      Sie Ihre Seiten mit der [Checkliste Barrierefreiheit](../../../eng-us/help/designers/theme-design/checklist-accessibility.md) durch.
+      Sie Ihre Seiten mit der [Checkliste Barrierefreiheit](theme-design/checkliste-barrierefreiheit.md) durch.
 
 ## Die sechs Bereiche
 
 | Bereich | Was er abdeckt | Beginnen Sie mit |
 |---|---|---|
 | Theme-Design | Designs, Kaskade, Pagelayout, CSS und JS, Bilder und Schriften, Responsive Design, Barrierefreiheit, Dunkelmodus, rechts nach links, CSP, Leistung, Layout-Editor | [Die Design-Kaskade](../../../eng-us/help/designers/theme-design/the-design-cascade.md) |
-| Templates | die Sprache TPL, Operatoren und Funktionen, Inhalte abrufen, Ansichtsmodi, Overrides, Debugging | [Templates im Überblick](../../../eng-us/help/designers/templates/templates-overview.md) |
+| Templates | die Sprache TPL, Operatoren und Funktionen, Inhalte abrufen, Ansichtsmodi, Overrides, Debugging | [Templates im Überblick](templates/templates-ueberblick.md) |
 | Theme-Erweiterungen | Metadaten, Einstellungen, Paketierung, die RAD-Assistenten für Designs und Pakete | [Theme-Erweiterungen: hier beginnen](erweiterungen/theme-erweiterungen-hier-beginnen.md) |
 | Veröffentlichung | Repositories, Versionen, Releases, Packagist, Lizenzen, Veröffentlichen | [Ein Theme veröffentlichen: hier beginnen](veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md) |
-| Verkauf | Themes und Dienstleistungen verkaufen | [Themes und Dienstleistungen verkaufen: hier beginnen](../../../eng-us/help/designers/sales/selling-start-here.md) |
+| Verkauf | Themes und Dienstleistungen verkaufen | [Themes und Dienstleistungen verkaufen: hier beginnen](verkauf/verkaufen-hier-beginnen.md) |
 | Lebenszyklus der Wartung | Kompatibilität, Upgrades, Sicherheit, Abkündigung, Lebensende, Forks | [Der Lebenszyklus der Wartung: hier beginnen](lebenszyklus/lebenszyklus-hier-beginnen.md) |
 
 ## Tutorials
@@ -95,13 +95,13 @@ dieser Hilfe steht.
 
 ## Checklisten
 
-[Theme-Start](../../../eng-us/help/designers/theme-design/checklist-theme-launch.md) ·
-[Barrierefreiheit](../../../eng-us/help/designers/theme-design/checklist-accessibility.md) ·
-[Leistung](../../../eng-us/help/designers/theme-design/checklist-performance.md) ·
-[CSP](../../../eng-us/help/designers/theme-design/checklist-csp.md) ·
-[Dunkelmodus](../../../eng-us/help/designers/theme-design/checklist-dark-mode.md) ·
-[Rechts nach links](../../../eng-us/help/designers/theme-design/checklist-right-to-left.md) ·
-[Code-Review für Templates](../../../eng-us/help/designers/theme-design/checklist-code-review-for-templates.md) ·
+[Theme-Start](theme-design/checkliste-theme-start.md) ·
+[Barrierefreiheit](theme-design/checkliste-barrierefreiheit.md) ·
+[Leistung](theme-design/checkliste-leistung.md) ·
+[CSP](theme-design/checkliste-csp.md) ·
+[Dunkelmodus](theme-design/checkliste-dunkelmodus.md) ·
+[Rechts nach links](theme-design/checkliste-rechts-nach-links.md) ·
+[Code-Review für Templates](theme-design/checkliste-code-review-fuer-templates.md) ·
 [Die Theme-Erweiterung ist bereit](erweiterungen/checkliste-theme-erweiterung-bereit.md)
 
 ## Regeln, die jedes Design befolgt
@@ -109,7 +109,7 @@ dieser Hilfe steht.
 - Ihr Design liegt in Ihrer eigenen Erweiterung; mitgelieferte Designs werden nie bearbeitet, nur überschrieben.
 - Kein `<style>`, kein `style=""`, keine Inline-Skripte und keine `on*=`-Handler ([Kein Inline-CSS](../../../eng-us/help/designers/theme-design/no-inline-css.md),
   [Kein Inline-JavaScript](../../../eng-us/help/designers/theme-design/no-inline-javascript.md)).
-- Farben, Abstände und Schriften kommen aus Tokens, mit einem dunklen Wert für jede Farbe ([Design-Tokens](../../../eng-us/help/designers/theme-design/design-tokens.md)).
+- Farben, Abstände und Schriften kommen aus Tokens, mit einem dunklen Wert für jede Farbe ([Design-Tokens](theme-design/design-tokens.md)).
 - Jeder ausgegebene Wert wird mit wash behandelt, jeder Oberflächentext läuft durch `i18n`.
 - Getestet im hellen und dunklen Modus, bei 1440 px, bei 960 px mit Skalierung 2 (200 % Zoom) und bei 375 px, mit der Tastatur.
 - Keine `?v=`-Versionsparameter an Asset-Links ([Keine Versionsparameter an Asset-Links](../../../eng-us/help/designers/theme-design/no-version-queries-on-asset-links.md)).
@@ -117,7 +117,7 @@ dieser Hilfe steht.
 ## Alle Seiten
 
 Der Index aller Designer-Seiten, Bereich für Bereich: [Designer-Hilfe, alle Seiten](../../../eng-us/help/designers/README.md). Die Begriffe erklärt:
-[Design-Glossar](../../../eng-us/help/designers/theme-design/design-glossary.md).
+[Design-Glossar](theme-design/design-glossar.md).
 
 ## Verwandte Seiten
 

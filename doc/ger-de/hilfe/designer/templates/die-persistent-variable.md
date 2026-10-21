@@ -53,7 +53,7 @@ Cache-Treffer verloren.
 
 - `ezcss_require` und `ezscript_require` verwenden die persistent variable, um Listen von Stylesheets und Skripten zu übergeben.
 - `ezpagedata_set( 'key', value )` und `ezpagedata_append` der Erweiterung ezwebin schreiben hinein, und `ezpagedata()` liest
-  sie zurück ([Das Design ezwebin als Grundlage](../../../../eng-us/help/designers/theme-design/ezwebin-as-a-base.md)).
+  sie zurück ([Das Design ezwebin als Grundlage](../theme-design/ezwebin-als-grundlage.md)).
 
 ## Beispiele in den mitgelieferten Designs
 

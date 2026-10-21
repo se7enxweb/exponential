@@ -83,7 +83,7 @@ Kontext korrekt maskiert:
 - **Einstellungen vertrauen**: Werte aus INI-Dateien werden von vielen Templates ausgegeben; maskieren Sie auch sie.
 
 Eine Content Security Policy ist die zweite Verteidigungslinie, wenn ein Template das Maskieren vergisst, kein Ersatz dafür
-([CSP-sicheres Design](../../../../eng-us/help/designers/theme-design/csp-safe-design.md)).
+([CSP-sicheres Design](../theme-design/csp-sicheres-design.md)).
 
 ## Verwandte Seiten
 

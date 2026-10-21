@@ -10,7 +10,7 @@ type: help
 # Inline-Skripte und -Styles entfernen
 
 Diese Seite ist für Designer, die ein Theme betreuen, das geschrieben wurde, bevor Content Security Policies üblich waren.
-Wie CSP-sichere Templates gehen, steht in [CSP-sicheres Design](../../../../eng-us/help/designers/theme-design/csp-safe-design.md),
+Wie CSP-sichere Templates gehen, steht in [CSP-sicheres Design](../theme-design/csp-sicheres-design.md),
 [Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md) und [Kein Inline-CSS](../../../../eng-us/help/designers/theme-design/no-inline-css.md);
 diese Seite ist die Migrationsroutine.
 
@@ -45,7 +45,7 @@ Die Themes von 7x haben diese Migration in ihren Releases vom 17. Oktober 2026 v
 ## Verwandte Seiten
 
 - [Eine CSP-Prüfung bei jedem Release](csp-pruefung-pro-release.md)
-- [Checkliste: CSP](../../../../eng-us/help/designers/theme-design/checklist-csp.md)
+- [Checkliste: CSP](../theme-design/checkliste-csp.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

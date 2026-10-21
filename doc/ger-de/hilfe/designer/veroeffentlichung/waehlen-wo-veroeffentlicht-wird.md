@@ -44,7 +44,7 @@ Was jede Community-Website bietet, wurde am 18. Oktober 2026 geprüft; siehe
 | Passt zur GPL und zur Community | Passt zu Arbeit für einen Kunden, die Sie nicht veröffentlichen dürfen |
 
 Arbeit für einen Kunden gehört dem, den der Vertrag nennt. Veröffentlichen Sie sie nur mit diesem Recht
-([Verträge und Bedingungen](../../../../eng-us/help/designers/sales/contracts-and-terms.md)).
+([Verträge und Bedingungen](../verkauf/vertraege-und-bedingungen.md)).
 
 ## Seitenpakete: tragen Sie sie bei
 
@@ -57,7 +57,7 @@ beginnen. Wie: [Ihr Seitenpaket beitragen](../../seitenpakete/ihr-seitenpaket-be
 ## Verwandte Seiten
 
 - [Composer-Paket oder .ezpkg](../erweiterungen/composer-oder-ezpkg.md)
-- [Wo Exponential-Themes heute zu finden sind](../../../../eng-us/help/designers/sales/where-themes-are-found.md)
+- [Wo Exponential-Themes heute zu finden sind](../verkauf/wo-themes-zu-finden-sind.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

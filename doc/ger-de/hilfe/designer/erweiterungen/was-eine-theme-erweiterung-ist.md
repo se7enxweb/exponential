@@ -71,7 +71,7 @@ Hauptsache ist.
 
 ## Verwandte Seiten
 
-- [Design-Erweiterungen](../../../../eng-us/help/designers/theme-design/design-extensions.md)
+- [Design-Erweiterungen](../theme-design/design-erweiterungen.md)
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../../anleitungen/extensions.md)
 - [Theme-Erweiterungen: hier beginnen](theme-erweiterungen-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

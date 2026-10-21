@@ -17,7 +17,7 @@ haben; ein Template, das sie ohne Maskierung ausgibt, lässt jemanden Skripte in
 
 | Problem | Beispiel | Korrektur |
 |---|---|---|
-| Ausgabe nicht maskiert | `{$node.name}` in HTML | `{$node.name\|wash}` ([Wash und Maskierung](../../../../eng-us/help/designers/templates/wash-and-escaping.md)) |
+| Ausgabe nicht maskiert | `{$node.name}` in HTML | `{$node.name\|wash}` ([Wash und Maskierung](../templates/wash-und-maskierung.md)) |
 | Für den falschen Kontext maskiert | Nur für JavaScript maskiert, aber der Wert landet in HTML | Für jeden Kontext maskieren, den er durchläuft |
 | Werte in Inline-Skripten | Ein Titel, in einen Skriptblock geschrieben | In einem `data-*`-Attribut übergeben; kein Inline-Skript |
 | Besuchereingaben in URLs | Ein Suchbegriff in einem Link | Für die URL maskieren, dann für HTML |
@@ -45,7 +45,7 @@ address or a title ran in the popup.“ Der Wert lief durch zwei Kontexte, also 
 ## Verwandte Seiten
 
 - [Sicherheitsmeldungen bearbeiten](sicherheitsmeldungen-bearbeiten.md)
-- [Checkliste: Code-Review für Templates](../../../../eng-us/help/designers/theme-design/checklist-code-review-for-templates.md)
+- [Checkliste: Code-Review für Templates](../theme-design/checkliste-code-review-fuer-templates.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

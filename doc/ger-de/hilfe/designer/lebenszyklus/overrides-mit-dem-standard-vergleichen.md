@@ -42,7 +42,7 @@ Klasse, statt allgemeine zu kopieren, und verwenden Sie wo möglich die Design-K
 ## Verwandte Seiten
 
 - [Upgrade-Test Schritt für Schritt](upgrade-test-schritt-fuer-schritt.md)
-- [Override-Grundlagen](../../../../eng-us/help/designers/templates/override-ini-basics.md)
+- [Override-Grundlagen](../templates/override-grundlagen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

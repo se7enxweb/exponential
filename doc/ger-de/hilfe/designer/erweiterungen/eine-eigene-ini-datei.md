@@ -40,7 +40,7 @@ die für Open Graph als Artikel gelten, aus `cjw_jumper.ini [OpenGraph] ArticleC
    {def $count = ezini( 'FrontPage', 'TeaserCount', 'mytheme.ini' )}
    ```
 
-   Siehe [Der Operator ezini](../../../../eng-us/help/designers/templates/ezini-operator.md).
+   Siehe [Der Operator ezini](../templates/der-ezini-operator.md).
 
 3. Lesen Sie sie in PHP (einem Operator oder einem Modul des Themes):
 

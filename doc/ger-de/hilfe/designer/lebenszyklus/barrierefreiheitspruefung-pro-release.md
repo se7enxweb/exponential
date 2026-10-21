@@ -11,8 +11,8 @@ type: help
 
 Diese Seite ist für Designer, die ein Theme betreuen. Barrierefreiheit verschlechtert sich leise: eine neue Farbe, ein
 neuer Icon-Link ohne Namen. Eine kurze Prüfung pro Release fängt das ab. Wie Sie barrierefrei gestalten, erklären
-[Grundlagen der Barrierefreiheit für Themes](../../../../eng-us/help/designers/theme-design/accessibility-basics-for-themes.md) und
-[Checkliste: Barrierefreiheit](../../../../eng-us/help/designers/theme-design/checklist-accessibility.md).
+[Grundlagen der Barrierefreiheit für Themes](../theme-design/barrierefreiheit-grundlagen-fuer-themes.md) und
+[Checkliste: Barrierefreiheit](../theme-design/checkliste-barrierefreiheit.md).
 
 ## Die Routine
 
@@ -21,7 +21,7 @@ neuer Icon-Link ohne Namen. Eine kurze Prüfung pro Release fängt das ab. Wie S
 2. **Durchgang mit der Tastatur**: Gehen Sie mit der Tabulatortaste durch die Startseite, einen Artikel und ein
    Formular. Der Fokus ist immer sichtbar; nichts hält ihn fest.
 3. **Zoom**: Bei 200 % fließt der Inhalt ohne waagerechtes Scrollen um ([Testen bei Zoomstufen](../../../../eng-us/help/designers/theme-design/testing-at-zoom-levels.md)).
-4. **Kontrast** neuer Farben: Text mindestens 4,5:1 ([Farbkontrast](../../../../eng-us/help/designers/theme-design/color-contrast.md)).
+4. **Kontrast** neuer Farben: Text mindestens 4,5:1 ([Farbkontrast](../theme-design/farbkontrast.md)).
 5. **Namen**: Jeder Link und jede Schaltfläche hat einen zugänglichen Namen, jedes Bild einen passenden Alternativtext.
 
 ## Festhalten und beheben

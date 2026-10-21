@@ -53,7 +53,7 @@ veröffentlichen, schon.
 
 ## Verwandte Seiten
 
-- [Die GPL und der Verkauf](../../../../eng-us/help/designers/sales/gpl-and-selling.md)
+- [Die GPL und der Verkauf](../verkauf/gpl-und-verkauf.md)
 - [Lizenzen für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

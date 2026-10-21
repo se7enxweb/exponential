@@ -10,7 +10,7 @@ type: help
 # Kommerzielle Bedingungen neben der GPL
 
 Diese Seite ist für Designer, die mit einem Theme Geld verdienen wollen. Sie beschreibt Optionen so, wie die GPL
-allgemein verstanden wird; fragen Sie für Ihre Verträge einen Anwalt. Preise behandelt [Preismodelle](../../../../eng-us/help/designers/sales/pricing-models.md).
+allgemein verstanden wird; fragen Sie für Ihre Verträge einen Anwalt. Preise behandelt [Preismodelle](../verkauf/preismodelle.md).
 
 ## Wofür Sie nach der GPL Geld verlangen dürfen
 
@@ -46,8 +46,8 @@ allgemein verstanden wird; fragen Sie für Ihre Verträge einen Anwalt. Preise b
 
 ## Verwandte Seiten
 
-- [Die GPL und der Verkauf: was erlaubt ist](../../../../eng-us/help/designers/sales/gpl-and-selling.md)
-- [Lizenzmodelle als Optionen](../../../../eng-us/help/designers/sales/licensing-models.md)
+- [Die GPL und der Verkauf: was erlaubt ist](../verkauf/gpl-und-verkauf.md)
+- [Lizenzmodelle als Optionen](../verkauf/lizenzmodelle.md)
 - [Lizenzen für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -52,7 +52,7 @@ sodass die ersten Besucher nach einem Deployment nicht für die Kompilierung bez
 
 ## Verwandte Seiten
 
-- [Caching für Designer](../../../../eng-us/help/designers/theme-design/caching-for-designers.md)
+- [Caching für Designer](../theme-design/caching-fuer-designer.md)
 - [Der Packer-Cache und Deployments](../../../../eng-us/help/designers/theme-design/packer-cache-and-deploy.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

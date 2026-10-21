@@ -42,7 +42,7 @@ Seite auch nutzen können, um die Ursache eines Problems zu finden.
 
 | Fehler | Anzeichen | Korrektur |
 |---|---|---|
-| Benutzerdaten in einer Vollansicht im View-Cache | ein Besucher sieht den Namen eines anderen | in das Pagelayout verschieben oder den Cache variieren ([Caching für Designer](../../../../eng-us/help/designers/theme-design/caching-for-designers.md)) |
+| Benutzerdaten in einer Vollansicht im View-Cache | ein Besucher sieht den Namen eines anderen | in das Pagelayout verschieben oder den Cache variieren ([Caching für Designer](../theme-design/caching-fuer-designer.md)) |
 | ein Cache-Block ohne die aktuelle Seite in seinen Schlüsseln | das Menü markiert die falsche Seite | `$module_result.uri` oder die Knoten-ID zu den Schlüsseln hinzufügen |
 | `csp_nonce()` in gecachter Ausgabe | Skripte bei späteren Besuchen blockiert | Skriptdateien; Nonce nur außerhalb von Caches |
 | `currentdate()` oder `rand()` in gecachter Ausgabe | Datum oder Zufallswert eingefroren | außerhalb gecachter Teile berechnen |
@@ -62,7 +62,7 @@ Seite auch nutzen können, um die Ursache eines Problems zu finden.
 | Fehler | Anzeichen | Korrektur |
 |---|---|---|
 | ein Template in `design/standard` oder einem mitgelieferten Theme bearbeiten | Änderung beim Upgrade verloren | es in Ihr Design kopieren ([Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)) |
-| ein neues Template oder ein neuer Override erscheint nicht | altes Template weiter verwendet oder leerer Inhaltsbereich | `template-override` leeren ([Ein Design debuggen](../../../../eng-us/help/designers/theme-design/debugging-a-design.md)) |
+| ein neues Template oder ein neuer Override erscheint nicht | altes Template weiter verwendet oder leerer Inhaltsbereich | `template-override` leeren ([Ein Design debuggen](../theme-design/ein-design-debuggen.md)) |
 | ein Override mit einem Tippfehler in `MatchFile` | Regel ignoriert, Eintrag im Fehlerlog | den Pfad unter `override/templates/` prüfen |
 | zwei Overrides für dieselbe Quelle | der falsche gewinnt | `Priority` ([Override-Reihenfolge](override-reihenfolge.md)) |
 

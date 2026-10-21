@@ -47,7 +47,7 @@ Beispiel: `parts/teaser.tpl` wird durch `parts/card.tpl` ersetzt.
 ## Verwandte Seiten
 
 - [Einem Theme eine eigene Einstellungsdatei geben](../erweiterungen/eine-eigene-ini-datei.md)
-- [Der Operator ezini](../../../../eng-us/help/designers/templates/ezini-operator.md)
+- [Der Operator ezini](../templates/der-ezini-operator.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

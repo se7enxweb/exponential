@@ -71,7 +71,7 @@ und Vollansichten für die Lebensdauer ihres View-Cache:
 ## Verwandte Seiten
 
 - [Variablen und def](variablen-und-def.md)
-- [Caching für Designer](../../../../eng-us/help/designers/theme-design/caching-for-designers.md)
+- [Caching für Designer](../theme-design/caching-fuer-designer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

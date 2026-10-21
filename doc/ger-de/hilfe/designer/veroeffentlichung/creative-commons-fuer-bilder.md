@@ -45,7 +45,7 @@ All diese Lizenzen sind in `package.ini [LicenseSettings]` eingerichtet, sodass 
 ## Verwandte Seiten
 
 - [Schriften, Icons und Bibliotheken Dritter](schriften-icons-und-bibliotheken-dritter.md)
-- [Bilder und Schriften unter eigenen Lizenzen](../../../../eng-us/help/designers/sales/assets-under-separate-licenses.md)
+- [Bilder und Schriften unter eigenen Lizenzen](../verkauf/bilder-und-schriften-unter-eigenen-lizenzen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

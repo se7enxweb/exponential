@@ -10,7 +10,7 @@ type: help
 # Die Ordnerstruktur einer Theme-Erweiterung
 
 Diese Seite ist für Designer, die wissen wollen, wohin jede Datei eines Themes gehört. Wie die Ordner unter
-`design/<name>/` im Einzelnen gegliedert sind, erklärt [Aufbau des Design-Verzeichnisses](../../../../eng-us/help/designers/theme-design/design-directory-layout.md).
+`design/<name>/` im Einzelnen gegliedert sind, erklärt [Aufbau des Design-Verzeichnisses](../theme-design/aufbau-des-design-verzeichnisses.md).
 
 ## Der vollständige Baum
 

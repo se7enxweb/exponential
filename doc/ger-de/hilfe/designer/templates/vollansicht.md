@@ -79,7 +79,7 @@ Die Vollansicht wird im View-Cache gespeichert (`CachedViewModes` enthält `full
 
 - nichts Besucherspezifisches darin (Namen, Warenkörbe, „Sie sind angemeldet“);
 - auf `currentdate()` beruhende Ausgabe ist bis zur nächsten Veröffentlichung eingefroren; setzen Sie bei Bedarf ein kurzes
-  `cache_ttl` ([Caching für Designer](../../../../eng-us/help/designers/theme-design/caching-for-designers.md)).
+  `cache_ttl` ([Caching für Designer](../theme-design/caching-fuer-designer.md)).
 
 ## Eine Vollansicht pro Klasse
 

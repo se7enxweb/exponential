@@ -69,7 +69,7 @@ sind Eingaben von Redakteuren. Geben Sie jedem Attribut mit `first_set` einen si
 ## Verwandte Seiten
 
 - [Rich-Text-Templates](rich-text-templates.md)
-- [Designs und Siteaccesses](../../../../eng-us/help/designers/theme-design/designs-and-siteaccesses.md)
+- [Designs und Siteaccesses](../theme-design/designs-und-siteaccesses.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -70,7 +70,7 @@ Kommende Termine, die nächsten zuerst:
 ```
 
 Hinweis: `currentdate()` in einem Template im View-Cache ist auf den Zeitpunkt des Cachens eingefroren; eine Vollansicht,
-die kommende Termine zeigt, sollte ein kurzes `cache_ttl` setzen ([Caching für Designer](../../../../eng-us/help/designers/theme-design/caching-for-designers.md)).
+die kommende Termine zeigt, sollte ein kurzes `cache_ttl` setzen ([Caching für Designer](../theme-design/caching-fuer-designer.md)).
 
 ## Verwandte Seiten
 

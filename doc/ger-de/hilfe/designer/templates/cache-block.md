@@ -98,7 +98,7 @@ Pagelayout der Administration baut einen Benutzer-Hash aus Rollen- und Einschrä
 
 ## Verwandte Seiten
 
-- [Caching für Designer](../../../../eng-us/help/designers/theme-design/caching-for-designers.md)
+- [Caching für Designer](../theme-design/caching-fuer-designer.md)
 - [Run-once](run-once.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
