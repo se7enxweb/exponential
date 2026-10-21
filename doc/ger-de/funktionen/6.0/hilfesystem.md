@@ -294,6 +294,41 @@ Commit, der eine Datei hinzufügt, tut das von selbst, weil sich der git-Index �
 `tests/tests/kernel/classes/help/expHelpProjectFilesTest.php` deckt das ab (ohne Datenbank), unter anderem, dass eine
 nicht verfolgte Notiz im Wurzelverzeichnis nie indiziert wird.
 
+## Externe Bilder
+
+Eine Seite kann ein Bild einer anderen Website zeigen: `README.md` bettet seine Screenshots von
+`github.com/user-attachments` ein, als `![alt](https://...)` oder
+`<img width="1200" height="693" alt="..." src="https://...">`. Die Content Security Policy der Administration erlaubt
+Bilder nur von `'self'` (`img-src 'self' data: blob:`), deshalb zeigt die Hilfe eine **lokale Kopie**, und die Policy
+bleibt, wie sie ist:
+
+- **Beim Indizieren** findet `./console exp:help index` jedes `https://`-Bild, auf das die Seiten verweisen (in jeder
+  Sprache), und speichert eine Kopie als `var/<site>/cache/exphelp/images/<id>.<suffix>`, wobei `<id>` der SHA-256 der
+  Adresse ist (`expHelpRemoteImages`). Ein einmal gespeichertes Bild wird nicht erneut abgerufen. `--no-images`
+  überspringt diesen Schritt; der Bericht listet jedes Bild auf, das nicht gespeichert werden konnte, und den Grund.
+- **Das Abrufen ist vorsichtig**: nur `https://`, auch für jede Weiterleitung (höchstens 5; GitHub leitet
+  user-attachments an eine signierte Speicheradresse weiter); nie ein Host mit einer privaten, Loopback-,
+  Link-Local- oder reservierten Adresse (die Adresse wird einmal aufgelöst und die Verbindung an sie gebunden);
+  höchstens 5 MB; 15 Sekunden Zeitlimit; nur PNG, JPEG, GIF und WebP, und nur, wenn die Bytes den Typ haben, den der
+  Server nennt. SVG wird nie gespeichert. Während eine Seite angezeigt wird, wird nichts abgerufen.
+- **Die Dateien** werden atomar mit `site.ini [FileSettings] StorageFilePermissions` geschrieben, wie der Rest des
+  Hilfe-Caches, sodass PHP-FPM (der Benutzer der Website) und Velocity (root) sie beide lesen können, gleich wer den
+  Index gebaut hat.
+- **Ausliefern**: `exphelp/image/(id)/<sha256>` (Richtlinie `exphelp/read`) sendet die Kopie mit ihrem Inhaltstyp,
+  `X-Content-Type-Options: nosniff`, `Content-Security-Policy: default-src 'none'` und
+  `Cache-Control: private, max-age=31536000, immutable`. Die ID ist ein View-Parameter, nie ein GET-Parameter; alles
+  andere (eine andere Form, ein weiterer Pfad, eine ID ohne Kopie) ergibt einen 404.
+- **In der Seite** ist das Bild ein `<img>` mit dieser lokalen Adresse. `width`, `height` und `alt` eines `<img>`-Tags
+  bleiben als Attribute erhalten (nie ein Inline-Style); ein Markdown-Bild erhält die Größe der Kopie. Ein Bild ohne
+  Kopie bleibt der beschriftete Link „Bild auf <host>: <alt>“ (in einem neuen Tab geöffnet), sodass die Seite nie
+  eine Anfrage stellt, die die Policy blockiert. Ein Host, den die Policy selbst erlaubt (`Directives[img-src]`,
+  `AdditionalSources[]`), wird ebenfalls aus seiner Kopie gezeigt, wenn es eine gibt.
+- Die dargestellten Seiten werden mit dem Zustand des Bildverzeichnisses im Schlüssel zwischengespeichert, sodass
+  eine Seite ihre Bilder nach dem nächsten `exp:help index` zeigt, ohne dass ein Cache geleert werden muss.
+
+`tests/tests/kernel/classes/help/expHelpRemoteImagesTest.php` deckt das ab (ohne Datenbank, ohne Netzwerk: ein
+nachgebildeter Abrufer).
+
 ## Einstiegsseiten der Zielgruppen
 
 Jede Zielgruppe hat ihre eigene Einstiegsseite, `exphelp/audience/<audience>` (zum Beispiel
@@ -453,7 +488,7 @@ an der Seite oder den Einstellungen erzeugt eine neue Datei.
 Die Beispiele unterhalb von `doc/eng-us/examples/`, die aus dem Code generiert werden (Template-Operatoren,
 Fetch-Funktionen, Modulansichten, Richtlinien, INI-Einstellungen, Datentypen, Workflow-Ereignisse, Cronjobs,
 Konsolenbefehle, Erweiterungspunkte), schreibt `./console exp:help:examples`; `--check` meldet Seiten, die nicht
-aktuell sind. Siehe [Beispiele](../../../eng-us/examples/README.md#how-the-generated-pages-are-made). Sie haben den Seitentyp
+aktuell sind. Siehe [Beispiele](../../beispiele/README.md#so-entstehen-die-generierten-seiten). Sie haben den Seitentyp
 `generated`, der unter den geschriebenen Seiten eingestuft wird (`[SearchSettings] TypeBoost[generated]`) und nicht auf
 den Zielgruppenkarten des Dashboards erscheint.
 
@@ -513,8 +548,9 @@ auf allem, was die Tastatur bedient, und einen Hinweis bei jedem Link, der ein n
 Hilfesuche, und die Sofortergebnisse werden Screenreadern angesagt.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

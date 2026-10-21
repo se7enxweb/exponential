@@ -16,7 +16,7 @@ muss jedes Release das so halten.
 ## Die Routine
 
 1. **Richtlinie an, nur melden**, für den Test-Siteaccess (`site.ini [ContentSecurityPolicy] Mode=report-only` in den
-   Einstellungen dieses Siteaccess; siehe [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+   Einstellungen dieses Siteaccess; siehe [Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 2. **Gehen Sie die Seitenliste durch**, mit geöffneter Browserkonsole. Erwartet: keine CSP-Meldungen. Verwenden Sie
    `ReportURI`, um Meldungen aus einer längeren Sitzung zu sammeln.
 3. **Durchsuchen Sie den Diff** des Releases nach Inline-Code:
@@ -42,8 +42,9 @@ wenn es stimmt.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

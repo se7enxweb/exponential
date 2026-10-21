@@ -94,7 +94,7 @@ Match[class_identifier]=note
 
 Die Einstellungen einer Erweiterung je Siteaccess in `settings/siteaccess/<name>/` werden gelesen, wenn die
 Erweiterung in `ActiveExtensions[]` steht; siehe
-[Einstellungen je Website in Erweiterungen](../../../eng-us/features/6.0/multi-site-ini-overrides.md).
+[Einstellungen je Website in Erweiterungen](../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).
 
 ## 4. Die Caches leeren und prüfen
 
@@ -121,7 +121,7 @@ Zuordnungsschlüssel sind die, die `eZNodeviewfunctions::generateNodeViewData()`
 **Design > Template-Editor** legt dieselbe Regel und Datei für Sie an: Öffnen Sie `node/view/full.tpl`, klicken Sie
 auf **Neues Überschreib-Template** und wählen Sie die Klasse. Der Editor schreibt
 `settings/siteaccess/<siteaccess>/override.ini.append.php` (nicht in Ihre Erweiterung) und legt vor dem Schreiben eine
-Kopie an. Siehe [Template-Editor](../../../eng-us/features/6.0/template-editor-overrides.md).
+Kopie an. Siehe [Template-Editor](../../funktionen/6.0/template-editor-ueberschreibungen.md).
 
 ## Häufige Fehler
 
@@ -130,7 +130,7 @@ Kopie an. Siehe [Template-Editor](../../../eng-us/features/6.0/template-editor-o
 | Die Seite zeigt das alte Template | der Cache `template-override`; oder eine andere, früher in der Reihenfolge stehende Regel passt zuerst |
 | Die Seite ist leer, mit dem Layout drumherum | `MatchFile` nennt eine Datei, die nicht in `override/templates/` eines Designs liegt, das der Siteaccess verwendet |
 | Die Regel wirkt für jeden Siteaccess, auch die Administration | sie steht in `settings/override.ini.append.php` der Erweiterung statt in `settings/siteaccess/<name>/` |
-| Die Regeln zweier Erweiterungen kommen sich in die Quere | derselbe Blockname; oder die Reihenfolge von `ActiveExtensions[]` entscheidet: [Ladereihenfolge der Erweiterungen](../../../eng-us/features/6.0/extension-loading-order.md) |
+| Die Regeln zweier Erweiterungen kommen sich in die Quere | derselbe Blockname; oder die Reihenfolge von `ActiveExtensions[]` entscheidet: [Ladereihenfolge der Erweiterungen](../../funktionen/6.0/ladereihenfolge-der-extensions.md) |
 
 ## Abgeleitet aus
 
@@ -141,9 +141,9 @@ Kopie an. Siehe [Template-Editor](../../../eng-us/features/6.0/template-editor-o
 ## Verwandte Seiten
 
 - [Kochbuch](README.md)
-- [Templates und Design](../../anleitungen/templates-und-design.md), [Template-Editor](../../../eng-us/features/6.0/template-editor-overrides.md)
+- [Templates und Design](../../anleitungen/templates-und-design.md), [Template-Editor](../../funktionen/6.0/template-editor-ueberschreibungen.md)
 - [Template-Operatoren](../template-operatoren/README.md) und [Fetch-Funktionen](../fetch-funktionen/README.md)
 - [Ein eigener Template-Operator](eigener-template-operator.md), [Caching](caching.md)
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

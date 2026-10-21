@@ -42,8 +42,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) und
-[Newsletter mit cjw_newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md).
+Quelle: [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) und
+[Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md).
 
 1. **Zuerst ein Satz** (2 Minuten). „Ausgaben sind Inhalte, Abonnenten sind Datensätze, und Cron erledigt den
    Versand.“ Schreiben Sie ihn an die Tafel und kommen Sie am Ende darauf zurück.
@@ -86,7 +86,7 @@ Rest.
 
 **Woher kommt diese Erweiterung?** Sie wurde zwischen 2007 und 2015 vom CJW Network und Partnern geschrieben und im
 August 2026 vom Projekt se7enxweb für PHP 8.5 und Exponential 6 übernommen, laut der
-[Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md).
+[Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md).
 
 ### Stolperfallen
 
@@ -137,9 +137,9 @@ Sie ändern nichts.
 <details>
 <summary>Antworten</summary>
 
-1. System, Liste, Ausgabe, Artikel ([Newsletter mit cjw_newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#the-parts)).
+1. System, Liste, Ausgabe, Artikel ([Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#die-bestandteile)).
 2. **B.** Eine Liste; Systeme fassen nur Listen zusammen.
-3. Nur bestätigte oder angenommene Abonnenten ([Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#statuses)).
+3. Nur bestätigte oder angenommene Abonnenten ([Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#status)).
 4. Er baut die Mail-Warteschlange auf: ein Eintrag pro Abonnent für jeden fälligen Versand ([Spezifikation](../../../../spezifikationen/6.0/cjw_newsletter.md#cronjob-teile)).
 5. **Falsch.** Die Sperrliste hat Vorrang vor jeder Liste.
 
@@ -147,9 +147,9 @@ Sie ändern nichts.
 
 ## Weiterführende Informationen
 
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md): die
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md): die
   Bestandteile und was sich in den Releases von Exponential 6 geändert hat.
-- [Newsletter mit cjw_newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md): die Sicht
+- [Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md): die Sicht
   des Website-Erstellers auf dieselben Bestandteile.
 - [Spezifikation: die Erweiterung cjw_newsletter](../../../../spezifikationen/6.0/cjw_newsletter.md): jede Ansicht,
   jeder Befehl und jeder Cronjob-Teil.
@@ -158,13 +158,13 @@ Sie ändern nichts.
 
 - [Modul 1: Erste Schritte](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -3,8 +3,8 @@ title: Wo personenbezogene Daten in Exponential liegen
 audience: government, admin, project-manager, developer
 category: public-sector
 order: 40
-summary: Eine Bestandsaufnahme für öffentliche Stellen über die Orte, an denen eine Exponential-Installation personenbezogene Daten speichert - Benutzerkonten, Besuche, Sitzungen, Formulareinsendungen, E-Mail-Einstellungen und Einwilligungsprotokoll, Newsletter-Daten, Audit-Trail, Protokolle, Suchbegriffe, Bestellungen, Inhalte und Datensicherungen - mit dem Werkzeug, das jeden davon liest, exportiert oder entfernt.
-keywords: personenbezogene Daten, Datenbestand, Datenlandkarte, Benutzerkonten, ezuser, ezuservisit, Sitzungen, Informationssammlung, Einwilligungsprotokoll, Newsletter, Audit-Trail, Protokolle, Suchstatistiken, Bestellungen, Datensicherungen, Verzeichnis von Verarbeitungstätigkeiten, öffentlicher Sektor, personal data, data inventory, data map, records of processing
+summary: Eine Bestandsaufnahme für öffentliche Stellen über die Orte, an denen eine Exponential-Installation personenbezogene Daten speichert - Benutzerkonten, Besuche, Sitzungen, Formulareinsendungen, E-Mail-Einstellungen und Einwilligungsprotokoll, Newsletter-Daten, Prüfprotokoll, Protokolle, Suchbegriffe, Bestellungen, Inhalte und Datensicherungen - mit dem Werkzeug, das jeden davon liest, exportiert oder entfernt.
+keywords: personenbezogene Daten, Datenbestand, Datenlandkarte, Benutzerkonten, ezuser, ezuservisit, Sitzungen, Informationssammlung, Einwilligungsprotokoll, Newsletter, Prüfprotokoll, Protokolle, Suchstatistiken, Bestellungen, Datensicherungen, Verzeichnis von Verarbeitungstätigkeiten, öffentlicher Sektor, personal data, data inventory, data map, records of processing
 type: reference
 ---
 # Wo personenbezogene Daten in Exponential liegen
@@ -35,7 +35,7 @@ Verzeichnis von Verarbeitungstätigkeiten, für Auskunftsanträge und für den A
 | E-Mail-Einstellungen und Einwilligungsprotokoll | Adresse, Entscheidungen, Einwilligungsverlauf mit IP-Adresse | Setup > E-Mail-Einstellungen; `exp:mail:preferences export` | `exp:mail:preferences erase` | Einwilligungsprotokoll 1095 Tage für Personen, die nicht mehr da sind |
 | Sperrliste | gesalzener Hash einer Adresse | Prüfen durch Eingabe der Adresse | Aufheben | standardmäßig unbegrenzt |
 | Newsletter (cjw_newsletter, falls aktiv) | Abonnenten, Status, Statistiken pro Person mit Einwilligung | Newsletter-Benutzerliste, Abonnentenexport | Löschung der Person; Newsletter-Werkzeuge | je nach Erweiterung |
-| Audit-Trail | Handelnde, gekürzte Adressen, Handlungen an Benutzern | Reiter Audit; `exp:audit export --subject-user=<id>` | nicht gelöscht; nach 90 Tagen pseudonymisiert | 90 Tage live, 730 archiviert |
+| Prüfprotokoll | Handelnde, gekürzte Adressen, Handlungen an Benutzern | Reiter Audit; `exp:audit export --subject-user=<id>` | nicht gelöscht; nach 90 Tagen pseudonymisiert | 90 Tage live, 730 archiviert |
 | Protokolle (`404.log`, `security.log`, `auth.log`, `error.log` ...) | maskierte Adressen, User-Agents, URLs | Setup > Logdateien (maskiert) | Rotation und Bereinigung | 30 / 90 / 30 Tage für 404, Sicherheit, CSP; andere nur nach Größe |
 | Suchstatistiken | Suchbegriffe, die Besucher eingegeben haben | Setup > Suchstatistiken | Statistik zurücksetzen | keine; standardmäßig aus |
 | Shop-Bestellungen (falls genutzt) | Kundendaten | Shop-Ansichten | Shop-Werkzeuge | keine |
@@ -44,11 +44,11 @@ Verzeichnis von Verarbeitungstätigkeiten, für Auskunftsanträge und für den A
 | Versionen | frühere Versionen von Inhalten | Seite der Versionen | Versionen entfernen | Grenze der Versionsgeschichte |
 | Datensicherungen | alles oben Genannte | Ihr Sicherungssystem | Ihre Rotation | Ihre Rotation |
 
-Quellen: [Datenschutzstandards](../../../../eng-us/standards/privacy.md), [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md),
+Quellen: [Datenschutzstandards](../../../standards/datenschutz.md), [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md),
 [Sitzungen](../../../anleitungen/sitzungen.md), [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md),
-[E-Mail-Einstellungen für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md), [Audit](../../../../eng-us/bc/6.0/audit.md),
-[Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md), [URLs und Suchstatistiken](../../../anleitungen/urls-und-aliase.md#5-suchstatistiken),
-[Die Ansicht des Papierkorbs](../../../../eng-us/bc/6.0/trash.md).
+[E-Mail-Einstellungen für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md), [Audit](../../../bc/6.0/audit.md),
+[Protokollrotation](../../../funktionen/6.0/log-rotation.md), [URLs und Suchstatistiken](../../../anleitungen/urls-und-aliase.md#5-suchstatistiken),
+[Die Ansicht des Papierkorbs](../../../bc/6.0/papierkorb.md).
 
 ## Orte außerhalb von Exponential
 
@@ -68,14 +68,15 @@ eine Zeile in Ihrem Verzeichnis von Verarbeitungstätigkeiten.
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Die DSGVO und Exponential](dsgvo-zuordnung.md)
 - [Verantwortlicher, Auftragsverarbeiter und die Software](verantwortlicher-auftragsverarbeiter-und-exponential.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

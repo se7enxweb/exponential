@@ -14,8 +14,10 @@ A view of the `contentfinder` module, defined in `kernel/contentfinder/module.ph
 ## Address
 
 ```text
-/contentfinder/search
+/contentfinder/search/(text)/<Text>/(type)/<Type>
 ```
+
+Unordered parameters, in any order as `/(name)/value`: `(text)` sets `Text`, `(type)` sets `Type`.
 
 ## Who may open it
 
@@ -37,6 +39,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/contentfinder/search'|ezurl}>contentfinder/search</a>
+<a href={concat( '/contentfinder/search/(text)/', 1 )|ezurl}>contentfinder/search</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

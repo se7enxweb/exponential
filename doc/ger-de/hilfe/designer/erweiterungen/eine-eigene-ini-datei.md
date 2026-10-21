@@ -55,8 +55,10 @@ die für Open Graph als Artikel gelten, aus `cjw_jumper.ini [OpenGraph] ArticleC
    ./console exp:ini where mytheme.ini/FrontPage/TeaserCount --allow-root-user
    ```
 
-5. Sagen Sie Nutzern im README, wie sie den Wert überschreiben: in `settings/override/mytheme.ini.append.php` oder in einem
-   Siteaccess-Ordner, nie in der eigenen Datei des Themes (ein Update würde sie überschreiben).
+5. Sagen Sie Nutzern im README, wie sie den Wert überschreiben: in `settings/override/mytheme.ini.append.php`, nie in
+   der eigenen Datei des Themes (ein Update würde sie überschreiben). Ein Siteaccess-Ordner wirkt nicht für einen
+   Schlüssel, den die Datei des Themes setzt, denn die `settings/` der Erweiterungen werden nach den
+   Siteaccess-Einstellungen gelesen und gewinnen.
 
 ## Bewährte Praxis
 
@@ -70,12 +72,13 @@ die für Open Graph als Artikel gelten, aus `cjw_jumper.ini [OpenGraph] ArticleC
 ## Verwandte Seiten
 
 - [Einstellungsdateien in einer Erweiterung](einstellungsdateien-in-einer-erweiterung.md)
-- [Einstellungen auf der Kommandozeile ändern](../../../../eng-us/features/6.0/exp-ini-command.md)
+- [Einstellungen auf der Kommandozeile ändern](../../../funktionen/6.0/exp-ini-befehl.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

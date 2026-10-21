@@ -35,7 +35,7 @@ Stellen Sie eine Frage: „Was möchten Sie mit Exponential tun?“
 | Sie sagen | Sie sind | Als Nächstes |
 |---|---|---|
 | „Ich bearbeite Inhalte auf unserer Website“ | Redakteur | [Hilfe für Redakteure und Benutzer](../README.md), [Erste Schritte](../erste-schritte.md) |
-| „Ich möchte es ausprobieren“ | Jemand, der bewertet | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| „Ich möchte es ausprobieren“ | Jemand, der bewertet | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | „Wir betreiben eine alte Website aus der Zeit von eZ Publish“ | Administrator mit einer Migration | [Migration von 4.x](../../installation/14-migration-von-4x.md), [Upgrade](../../installation/11-aktualisieren.md) |
 | „Ich bin PHP-Entwickler“ | Entwickler | [Gesprächspunkte für Entwickler](gespraechspunkte-fuer-entwickler.md), [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | „Ich möchte helfen“ | Künftige beitragende Person | [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md) |
@@ -84,3 +84,11 @@ der Administration (die Schaltfläche „?“) hat eine Seite Erste Schritte, un
 - [Häufige Fragen von Neuen](faq-fuer-neue.md)
 - [Auf die richtige Hilfeseite verweisen](auf-die-richtige-hilfeseite-verweisen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -6,7 +6,7 @@ Site, die Wahl einer Datenbank und den gesunden Betrieb der Site danach, bis hin
 Absicherung. Jedes Kapitel steht für sich und endet mit Verweisen auf die ergänzende Dokumentation in diesem
 Repository und auf die offiziellen Quellen außerhalb davon.
 
-Wenig Zeit? [Die Kurzanleitung zur Installation](../../eng-us/INSTALL.md) enthält den Schnellstart und verweist zurück auf die
+Wenig Zeit? [Die Kurzanleitung zur Installation](../INSTALL.md) enthält den Schnellstart und verweist zurück auf die
 Kapitel hier.
 
 ## Inhalt
@@ -16,7 +16,7 @@ Kapitel hier.
 | Kapitel | Inhalt |
 |---|---|
 | [1. Einführung: Was Sie installieren](01-einfuehrung.md) | Der Kernel, Extensions, Siteaccesses (site, admin, editor) und Designs; die drei Installationsmethoden; Konventionen und Glossar |
-| [2. Voraussetzungen](02-voraussetzungen.md) | PHP 8.0 bis 8.5, jede PHP-Erweiterung und wozu sie dient, die php.ini-Einstellungen, die das Setup prüft, Datenbanken, Composer, Webserver, Betriebssysteme, Dimensionierung; die Übersichten [Datenbankunterstützung](../../eng-us/help/database-support.md) und [Unterstützte Betriebssysteme](../../eng-us/help/os-support.md) |
+| [2. Voraussetzungen](02-voraussetzungen.md) | PHP 8.0 bis 8.5, jede PHP-Erweiterung und wozu sie dient, die php.ini-Einstellungen, die das Setup prüft, Datenbanken, Composer, Webserver, Betriebssysteme, Dimensionierung; die Übersichten [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md) und [Unterstützte Betriebssysteme](../hilfe/betriebssystemunterstuetzung.md) |
 | [3. Den Code beschaffen](03-den-code-beschaffen.md) | Versionen und Tags, Git-Klone mit Historie (empfohlen), `composer create-project`, Installation unter PHP 8.0 bis 8.3, das Velocity-Paket, Extensions als Pakete, ein Rundgang durch das Installationsverzeichnis |
 
 ### Teil II: Installieren
@@ -68,7 +68,7 @@ Exponential sich unterscheidet.
 
 | Ihre Situation | Lesen Sie |
 |---|---|
-| Eine erste Testinstallation auf einem Laptop | [Kurzanleitung](../../eng-us/INSTALL.md), dann die Kapitel [3](03-den-code-beschaffen.md) und [7](07-installation-ueber-die-konsole.md) |
+| Eine erste Testinstallation auf einem Laptop | [Kurzanleitung](../INSTALL.md), dann die Kapitel [3](03-den-code-beschaffen.md) und [7](07-installation-ueber-die-konsole.md) |
 | Eine Produktiv-Site auf einem Server, ohne separaten Webserver | Kapitel [2](02-voraussetzungen.md), [3](03-den-code-beschaffen.md), [5](05-setup-assistent.md) oder [6](06-kickstarter.md), [8](08-die-website-ausliefern.md) (Velocity), [9](09-datenbanken.md) (SQLite), [10](10-nach-der-installation.md), [13](13-sicherheitshaertung.md) |
 | Eine Produktiv-Site hinter Apache oder nginx mit MySQL oder PostgreSQL | Kapitel [2](02-voraussetzungen.md), [3](03-den-code-beschaffen.md), [5](05-setup-assistent.md) oder [6](06-kickstarter.md), [8](08-die-website-ausliefern.md), [9](09-datenbanken.md), [10](10-nach-der-installation.md), [13](13-sicherheitshaertung.md) |
 | Unbeaufsichtigte Installationen in CI oder Containern | Kapitel [4](04-installationsweg-waehlen.md), [6](06-kickstarter.md), [7](07-installation-ueber-die-konsole.md) |
@@ -92,5 +92,13 @@ Sie installieren eine **öffentliche Demo**, deren Administrator-Anmeldung verö
 Umgebungsvariable `EXP_DEMO_MODE=1` für die Installation und danach für jeden PHP-Prozess der Demo: Die Installer
 akzeptieren dann das veröffentlichte Passwort (`publish`, `publishing`), und Administratorpasswörter können weder
 geändert noch zurückgesetzt werden. Die Kapitel 5, 6, 7 und 13 enthalten je einen Hinweis dazu; die ganze Geschichte
-steht unter [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md), die Einrichtung auf einem Server unter
-[Rezept: eine öffentliche Demo unter LiteSpeed und Plesk betreiben](../../eng-us/help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md).
+steht unter [Demo-Modus](../bc/6.0/demomodus.md), die Einrichtung auf einem Server unter
+[Rezept: eine öffentliche Demo unter LiteSpeed und Plesk betreiben](../hilfe/hosting/server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

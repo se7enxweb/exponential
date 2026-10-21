@@ -10,8 +10,8 @@ type: help
 # Audit-Einträge als Nachweis
 
 Diese Seite richtet sich an Administratoren, Zuständige für Schriftgut und Ermittelnde. Wenn ein Beschluss, eine
-Veröffentlichung oder eine Kontoänderung strittig ist, kann der Audit-Trail zeigen, wer wann was getan hat. Sein Wert
-als Nachweis hängt davon ab, wie die Einträge ausgewählt, geprüft und übergeben werden ([Audit](../../../../eng-us/bc/6.0/audit.md)).
+Veröffentlichung oder eine Kontoänderung strittig ist, kann das Prüfprotokoll zeigen, wer wann was getan hat. Sein Wert
+als Nachweis hängt davon ab, wie die Einträge ausgewählt, geprüft und übergeben werden ([Audit](../../../bc/6.0/audit.md)).
 
 ![Das Audit-Dashboard: der Zustand der Hash-Ketten, die Ereignisse und die Sicherheitsereignisse](../../../../eng-us/help/images/government/gov-audit-dash.webp)
 
@@ -55,7 +55,7 @@ Verwenden Sie die Filter der Konsole (als Lesezeichen speicherbar) oder den Befe
 
 Bewahren Sie die Ausgabe zusammen mit dem Nachweis auf. Eine **gebrochene** Kette ist selbst ein Befund: Bearbeiten Sie
 nichts und vergleichen Sie mit den Kopien, die den Server verlassen haben
-([Audit-Leitfaden 4.4](../../../../eng-us/bc/6.0/audit.md#44-verify-and-restore)).
+([Audit-Leitfaden 4.4](../../../bc/6.0/audit.md#44-prüfen-und-wiederherstellen)).
 
 ## Exportieren
 
@@ -74,7 +74,7 @@ nichts und vergleichen Sie mit den Kopien, die den Server verlassen haben
 Halten Sie fest: wer exportiert hat, wann, den Befehl oder Filter, den ausgegebenen sha256, wo die Datei abgelegt
 wurde, und jede Übergabe. Bewahren Sie die Datei auf schreibgeschützten Medien oder in einem System auf, das Ihre
 Rechtsberatung akzeptiert. Geben Sie der empfangenden Stelle die Ausgabe der Prüfung und bei Bedarf die öffentliche
-Beschreibung der Hash-Kette ([5.3](../../../../eng-us/bc/6.0/audit.md#53-the-hash-chain-and-what-verification-finds)).
+Beschreibung der Hash-Kette ([5.3](../../../bc/6.0/audit.md#53-die-hash-kette-und-was-die-prüfung-findet)).
 
 ## Was das Audit nicht zeigt
 
@@ -87,14 +87,15 @@ Beschreibung der Hash-Kette ([5.3](../../../../eng-us/bc/6.0/audit.md#53-the-has
 
 ## Verwandte Seiten
 
-- [Audit](../../../../eng-us/bc/6.0/audit.md)
+- [Audit](../../../bc/6.0/audit.md)
 - [Langfristige Aufbewahrung von Audit-Einträgen](langfristige-aufbewahrung-von-audit-eintraegen.md)
 - [Versionen und Inhaltsgeschichte](versionen-und-inhaltsgeschichte.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

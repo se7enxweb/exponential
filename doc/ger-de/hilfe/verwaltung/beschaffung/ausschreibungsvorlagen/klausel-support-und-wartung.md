@@ -75,7 +75,7 @@ M.10 Reporting. Monthly report as set out in <service levels clause>.
 | Integrationen | <Liste> | |
 | Inhalte | <nein / Stunden für redaktionellen Support> | eigene Arbeit der Redaktion |
 | Hosting-Plattform | <ja, wenn gehostet> | siehe Hosting-Klausel |
-| Fragen der Redaktion („Wie mache ich …“) | <ja / begrenzt> | die Hilfe im Produkt beantwortet viele ([Hilfesystem](../../../../../eng-us/features/6.0/help-system.md)) |
+| Fragen der Redaktion („Wie mache ich …“) | <ja / begrenzt> | die Hilfe im Produkt beantwortet viele ([Hilfesystem](../../../../funktionen/6.0/hilfesystem.md)) |
 
 ## Eskalation über den Lieferanten hinaus
 

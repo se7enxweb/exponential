@@ -196,11 +196,11 @@ server-side answer to the same request     0.36 ms
 Daher wird die Seite aus dem eigenen Speicher des Browsers beantwortet und das Netzwerk danach gefragt. Regeln:
 
 - nur Navigationen per GET vom selben Ursprung;
-- nie eine Seite, die mit einem Session-Cookie abgerufen wurde;
+- nie eine Seite, die mit einem Sitzungs-Cookie abgerufen wurde;
 - nie etwas anderes als 200;
 - nie `/admin`, `/user`, `/explayouts_ui` oder `/api`.
 
-Erscheint ein Session-Cookie, meldet das Skript der Seite den Worker ab und leert seinen Cache, statt ihn einem
+Erscheint ein Sitzungs-Cookie, meldet das Skript der Seite den Worker ab und leert seinen Cache, statt ihn einem
 Besucher die Seite eines anderen ausliefern zu lassen.
 
 **Notschalter:** Liefern Sie `index.js` als `self.registration.unregister()` aus. Jeder Browser entfernt ihn bei seiner
@@ -239,10 +239,10 @@ Die Einstellungen, die diese Konfiguration nachbilden, stehen in `settings/veloc
 
 ## Verwandte Seiten
 
-- [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
-- [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) und [Velocity-Engines](velocity-engines.md)
+- [Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md)
+- [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) und [Velocity-Engines](velocity-engines.md)
 - [Middle-Out-Kompression](middle-out-kompression.md) und [HTTP-Caching für anonyme Besucher](http-caching.md)
-- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../../eng-us/features/6.0/cache-clear-rename-aside.md)
+- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../funktionen/6.0/cache-leeren-durch-umbenennen.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

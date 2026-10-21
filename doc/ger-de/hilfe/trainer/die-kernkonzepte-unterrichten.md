@@ -12,7 +12,7 @@ type: help
 Jeder Exponential-Kurs, ob für Redakteure, Administratoren oder Entwickler, beruht auf demselben Dutzend Ideen.
 Teilnehmende, die sie früh verstehen, begreifen alles Weitere schneller; wer sie verpasst, stellt in jedem Modul
 dieselbe Frage. Diese Seite gibt Trainern einen einfachen Satz pro Konzept, ein Bild, das im Unterricht funktioniert,
-und eine einstündige Einheit, die sie alle vermittelt. Die Definitionen folgen dem [Glossar](../../../eng-us/glossary.md).
+und eine einstündige Einheit, die sie alle vermittelt. Die Definitionen folgen dem [Glossar](../../glossar.md).
 
 ## Die Konzepte
 
@@ -29,7 +29,7 @@ und eine einstündige Einheit, die sie alle vermittelt. Die Definitionen folgen 
 | **Siteaccess** | Ein Zugang zur Website (über URL, Host oder Port) mit eigenen Einstellungen und eigenem Design, etwa `site` und `admin` | Mehrere Türen in dasselbe Gebäude | Die Adressleiste: `/admin`, der Host des Editors |
 | **Design und Template** | Ein Design ist eine Sammlung von Templates, Styles und Bildern; ein Template ist eine `.tpl`-Datei, die einen Teil einer Seite zeichnet | Das Drucklayout einer Zeitschrift | Das Aussehen der öffentlichen Website |
 | **Erweiterung** | Ein Paket, das Funktionen hinzufügt oder ändert, ohne den Kernel zu verändern | Ein Zusatzmodul für eine Maschine | **Setup > Extensions** |
-| **INI-Einstellungen** | Einstellungsdateien in Blöcken aus `Key=Value`, gelesen in dieser Reihenfolge: Standardwerte, Erweiterungen, Siteaccess, Override | Werkseinstellungen, darüber lokale Anpassungen | `settings/`, `exp:ini` |
+| **INI-Einstellungen** | Einstellungsdateien in Blöcken aus `Key=Value`, gelesen in dieser Reihenfolge, eine spätere Datei gewinnt: Standardwerte, Siteaccess, Erweiterungen, Override | Werkseinstellungen, darüber lokale Anpassungen | `settings/`, `exp:ini` |
 
 Zwei Unterscheidungen bringen Teilnehmende am häufigsten durcheinander; sagen Sie sie zweimal:
 
@@ -55,7 +55,7 @@ Zwei Unterscheidungen bringen Teilnehmende am häufigsten durcheinander; sagen S
 
 Für Redakteure hören Sie nach 0:45 auf und nutzen die letzten 15 Minuten für Fragen. Für Entwickler erweitern Sie
 0:50 um einen Blick auf `settings/site.ini` und `php bin/php/console exp:ini`
-([exp:ini](../../../eng-us/features/6.0/exp-ini-command.md)).
+([exp:ini](../../funktionen/6.0/exp-ini-befehl.md)).
 
 ## Praktische Übung
 
@@ -89,7 +89,7 @@ sagen, was eine Richtlinie der Rolle Editor erlaubt, und auf den Siteaccess-Teil
    (ein ausgefülltes Formular).
 2. Ein Objekt, zwei Knoten.
 3. Nein. Entwurf ist ein Status einer Version; Objektzustände sind Kennzeichnungen aus einer Objektzustandsgruppe
-   ([Glossar](../../../eng-us/glossary.md)).
+   ([Glossar](../../glossar.md)).
 4. Nichts; eine Rolle gewährt erst dann Zugriff, wenn sie Benutzern oder Gruppen zugewiesen ist
    ([Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)).
 5. Zum Beispiel `site` und `admin` (und auf neuen Installationen der Siteaccess des Editors).
@@ -98,7 +98,7 @@ sagen, was eine Richtlinie der Rolle Editor erlaubt, und auf den Siteaccess-Teil
 
 ## Weiterführende Literatur
 
-- [Glossar](../../../eng-us/glossary.md): jeder Begriff mit einem Link auf die Seite, die ihn erklärt.
+- [Glossar](../../glossar.md): jeder Begriff mit einem Link auf die Seite, die ihn erklärt.
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md)
 - [Erste Schritte](../erste-schritte.md) und [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md)
 
@@ -109,9 +109,9 @@ sagen, was eine Richtlinie der Rolle Editor erlaubt, und auf den Siteaccess-Teil
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

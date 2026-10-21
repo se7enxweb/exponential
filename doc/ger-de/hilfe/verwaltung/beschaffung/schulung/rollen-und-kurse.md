@@ -37,22 +37,22 @@ zeigt, wie beide zusammenkommen.
 
 | Rolle | Muss | Soll | Optional |
 |---|---|---|---|
-| Gelegentliche Redaktion (aktualisiert einige Seiten) | [Editors 101](../../../trainer/redakteure-101/README.md), Module 1 bis 6, oder der [Tag für die Redaktion](../../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/editors-day.md) | der Rest von Editors 101 | |
-| Regelmäßige Redaktion (veröffentlicht jede Woche) | Editors 101 | [Editors 201](../../../../../eng-us/help/trainers/editors-201/README.md) | [Exponential Layouts](../../../../../eng-us/help/trainers/layouts/README.md) |
-| Freigebende oder leitende Redaktion | Editors 101 | Editors 201, besonders [Modul 5: Freigaben und Zusammenarbeit](../../../../../eng-us/help/trainers/editors-201/module-05-approvals-and-collaboration/README.md) und [Modul 4: Objektzustände](../../../../../eng-us/help/trainers/editors-201/module-04-object-states/README.md) | |
-| Übersetzende | Editors 101 | Editors 201, [Modul 1: Übersetzungen und Sprachen](../../../../../eng-us/help/trainers/editors-201/module-01-translations-and-languages/README.md) | |
+| Gelegentliche Redaktion (aktualisiert einige Seiten) | [Editors 101](../../../trainer/redakteure-101/README.md), Module 1 bis 6, oder der [Tag für die Redaktion](../../../trainer/workshops/modul-02-eintaegige-programme/tag-fuer-redakteure.md) | der Rest von Editors 101 | |
+| Regelmäßige Redaktion (veröffentlicht jede Woche) | Editors 101 | [Editors 201](../../../trainer/redakteure-201/README.md) | [Exponential Layouts](../../../trainer/layouts/README.md) |
+| Freigebende oder leitende Redaktion | Editors 101 | Editors 201, besonders [Modul 5: Freigaben und Zusammenarbeit](../../../trainer/redakteure-201/modul-05-freigaben-und-zusammenarbeit/README.md) und [Modul 4: Objektzustände](../../../trainer/redakteure-201/modul-04-objektzustaende/README.md) | |
+| Übersetzende | Editors 101 | Editors 201, [Modul 1: Übersetzungen und Sprachen](../../../trainer/redakteure-201/modul-01-uebersetzungen-und-sprachen/README.md) | |
 | Seitengestaltung (Landingpages) | Editors 101 | Exponential Layouts | |
-| Newsletter-Redaktion | Editors 101 | [Newsletter](../../../../../eng-us/help/trainers/newsletter/README.md), Pfad für die Redaktion | |
-| Ansprechperson für Barrierefreiheit im Redaktionsteam | Editors 201, [Modul 8: Qualität und Barrierefreiheit](../../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md) | | [Exponential Intelligence](../../../../../eng-us/help/trainers/exponential-intelligence/README.md), wo die Website es nutzt |
+| Newsletter-Redaktion | Editors 101 | [Newsletter](../../../trainer/newsletter/README.md), Pfad für die Redaktion | |
+| Ansprechperson für Barrierefreiheit im Redaktionsteam | Editors 201, [Modul 8: Qualität und Barrierefreiheit](../../../trainer/redakteure-201/modul-08-qualitaet-und-barrierefreiheit/README.md) | | [Exponential Intelligence](../../../trainer/exponential-intelligence/README.md), wo die Website es nutzt |
 
 ## Administrative und technische Rollen
 
 | Rolle | Muss | Soll | Optional |
 |---|---|---|---|
-| Administration der Website | Editors 101, Module 1 bis 3; [Administration der Website](../../../trainer/website-administratoren/README.md) | [Suche](../../../../../eng-us/help/trainers/search/README.md) | [Multisite und Website-Pakete](../../../../../eng-us/help/trainers/multisite-and-packages/README.md) für mehrere Websites |
+| Administration der Website | Editors 101, Module 1 bis 3; [Administration der Website](../../../trainer/website-administratoren/README.md) | [Suche](../../../trainer/suche/README.md) | [Multisite und Website-Pakete](../../../trainer/multisite-und-pakete/README.md) für mehrere Websites |
 | Sicherheits- oder Audit-Beauftragte | Administration der Website, [Modul 7: Protokolle und das Audit-Protokoll](../../../trainer/website-administratoren/modul-07-logs-und-das-audit-protokoll/README.md) und [Modul 8: Sicherheit](../../../trainer/website-administratoren/modul-08-sicherheit/README.md) | | |
-| Systemadministration oder Hosting-Personal | Administration der Website (Caches, Cronjobs, Protokolle, Upgrades); [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) | | |
-| PHP-Entwicklung | [Entwickler](../../../trainer/entwickler/README.md) | | [Migration zu Exponential](../../../../../eng-us/help/trainers/migration/README.md) |
+| Systemadministration oder Hosting-Personal | Administration der Website (Caches, Cronjobs, Protokolle, Upgrades); [Hosting und Betrieb](../../../trainer/hosting-betrieb/README.md) | | |
+| PHP-Entwicklung | [Entwickler](../../../trainer/entwickler/README.md) | | [Migration zu Exponential](../../../trainer/migration/README.md) |
 | Design oder Frontend-Entwicklung | [Theme-Design](../../../trainer/theme-designer/README.md) | sein [Modul 5: Barrierefreiheit und rechts nach links](../../../trainer/theme-designer/modul-05-barrierefreiheit-und-rechts-nach-links/README.md) ist für öffentliche Websites ein Muss | |
 | Mitglied eines Migrationsteams | Administration der Website (ausgewählte Module), Migration zu Exponential | Entwickler | |
 
@@ -60,7 +60,7 @@ zeigt, wie beide zusammenkommen.
 
 | Rolle | Muss | Soll | Optional |
 |---|---|---|---|
-| Projektleitung, Product Owner | [Halber Tag für Entscheidungsträger](../../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/decision-makers-half-day.md) | Editors 101, Module 1 bis 3 | |
+| Projektleitung, Product Owner | [Halber Tag für Entscheidungsträger](../../../trainer/workshops/modul-02-eintaegige-programme/halber-tag-fuer-entscheider.md) | Editors 101, Module 1 bis 3 | |
 | Servicedesk (First-Level-Support für die Redaktion) | Editors 101 | Editors 201 | Administration der Website, Module 1 bis 2 |
 | Interne Trainerinnen und Trainer | [Train the Trainer](../../../trainer/train-the-trainer/README.md), dann der Kurs, den sie unterrichten werden | [Prüfungen](../../../trainer/pruefungen/README.md) | |
 
@@ -93,8 +93,9 @@ eingehalten wurde.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

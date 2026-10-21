@@ -67,13 +67,13 @@ ausprobieren** zeigt, auf welchen Platzhalter eine Adresse passt, ohne etwas zu 
 
 Weiterleitungen für Host und Schema gehören in den Webserver oder in Velocity, bevor Exponential läuft: `http` auf
 `https`, `example.com` auf `www.example.com`. Siehe [Livegang: Hosts und HTTPS](livegang-hosts-und-https.md) und
-[Velocity-HTTPS-Zertifikate](../../../../eng-us/features/6.0/velocity-https-certificates.md).
+[Velocity-HTTPS-Zertifikate](../../../funktionen/6.0/velocity-https-zertifikate.md).
 
 ## Sichere Weiterleitungen in der Anwendung
 
 Formulare und Schaltflächen, die Besucher "dorthin zurück, woher sie kamen" schicken, folgen nur Adressen der Website
 selbst, sodass ein Angreifer sie nicht nutzen kann, um Besucher anderswohin zu schicken
-([Sichere Weiterleitungen](../../../../eng-us/features/6.0/safe-redirects.md)). Verwenden Sie in Ihrem eigenen Code dieselben
+([Sichere Weiterleitungen](../../../funktionen/6.0/sichere-weiterleitungen.md)). Verwenden Sie in Ihrem eigenen Code dieselben
 Funktionen ([Formulare, CSRF und HTTP-Eingaben](../anwendungsentwickler/formulare-csrf-und-http-eingaben.md)).
 
 ## Checkliste
@@ -93,8 +93,8 @@ Funktionen ([Formulare, CSRF und HTTP-Eingaben](../anwendungsentwickler/formular
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

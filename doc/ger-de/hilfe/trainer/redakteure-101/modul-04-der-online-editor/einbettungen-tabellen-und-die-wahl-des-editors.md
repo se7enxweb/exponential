@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md).
+Quelle: [Der Online-Editor auf Basis von TinyMCE 8](../../../../funktionen/6.0/online-editor-tinymce8.md).
 
 1. **Einbetten** (6 Minuten). Setzen Sie in **Body** den Cursor in einen leeren Absatz und klicken Sie auf die
    Schaltfläche zum Einbetten (**Objekt einbetten**). Der Dialog durchsucht die Elemente der Website, mit einem
@@ -138,7 +138,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article*.
 1. Doppelklicken Sie auf die Einbettung und ändern Sie ihre Größe im Dialog.
 2. Er lädt eine neue Datei hoch, erstellt daraus ein Element und bettet es in den Text ein.
 3. **Falsch.** Beide Engines speichern denselben Text
-   ([Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md)).
+   ([Der Online-Editor auf Basis von TinyMCE 8](../../../../funktionen/6.0/online-editor-tinymce8.md)).
 4. Drei beliebige von: Größe, Breite, Rahmen, Klasse, Zusammenfassung, Beschriftung.
 5. **B.** Die Seite **Online-Editor** (`/ezoe/engine`) oder der Schalter **Editor** unter dem Feld, wo die Website ihn
    anzeigt.
@@ -147,7 +147,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article*.
 
 ## Weiterführende Literatur
 
-- [Der Online-Editor auf Basis von TinyMCE 8](../../../../../eng-us/features/6.0/online-editor-tinymce8.md): Einbettungen,
+- [Der Online-Editor auf Basis von TinyMCE 8](../../../../funktionen/6.0/online-editor-tinymce8.md): Einbettungen,
   Tabellen, Engines und Einstellungen.
 - [ezoe und TinyMCE 8](../../../../bc/6.0/ezoe-tinymce8.md): die Referenz für Administratoren.
 - [Bilder, Medien und Uploads](../../../medien-und-uploads.md): wohin hochgeladene Dateien kommen.
@@ -160,9 +160,9 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article*.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

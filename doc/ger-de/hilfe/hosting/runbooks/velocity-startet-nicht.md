@@ -3,7 +3,7 @@ title: "Runbook: Velocity startet nicht"
 audience: hosting, admin
 category: hosting
 order: 90
-summary: Was zu tun ist, wenn die Engine Exponential Velocity nicht hochkommt oder nicht antwortet - ihren Status und ihr Konsolen-Log lesen, dann die üblichen Ursachen (Port belegt, fehlendes Paket oder fehlende PHP-Erweiterung, Engine-Archiv, Zertifikat, Rechte, ein hängender Neustart) mit der Abhilfe für jede.
+summary: Was zu tun ist, wenn der Server Exponential Velocity nicht hochkommt oder nicht antwortet - seinen Status und sein Konsolen-Log lesen, dann die üblichen Ursachen (Port belegt, fehlendes Paket oder fehlende PHP-Erweiterung, Engine-Archiv, Zertifikat, Rechte, ein hängender Neustart) mit der Abhilfe für jede.
 keywords: Runbook, Velocity, startet nicht, qbix, exp:velocity status, console.log, Port belegt, läuft bereits, Engine-Archiv, EnginePhar, sockets, pcntl, Zertifikat, Ports 80 443, root, Watchdog, Neustart, kill, runbook, will not start, port in use, already running, engine archive, certificate, watchdog, restart
 type: help
 ---
@@ -92,3 +92,11 @@ den Server nicht unten lässt. Wenn ein Neustart nicht fertig wird:
 - [Velocity-Worker und Pools](../server/velocity-worker-und-pools.md)
 - [Website nicht erreichbar](website-nicht-erreichbar.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

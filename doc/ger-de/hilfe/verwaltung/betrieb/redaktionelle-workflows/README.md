@@ -11,7 +11,7 @@ type: help
 
 Dieser Ordner richtet sich an Webverantwortliche, Chefredaktionen und Administratoren, die entscheiden, wie Inhalte vom Entwurf auf die
 öffentliche Website einer öffentlichen Stelle gelangen. Exponential bietet Freigabe-Workflows, Objektzustände, eine Versionsgeschichte und
-einen Audit-Trail; diese Seiten zeigen, wie Sie sie zu einem dokumentierten redaktionellen Prozess verbinden, und sagen klar, wo Sie einen
+ein Prüfprotokoll; diese Seiten zeigen, wie Sie sie zu einem dokumentierten redaktionellen Prozess verbinden, und sagen klar, wo Sie einen
 eigenen Prozess brauchen. Die zugrunde liegenden Leitfäden sind [Workflows](../../../../anleitungen/workflows.md),
 [Meine Entwürfe und meine ausstehenden Elemente](../../../../anleitungen/entwuerfe-und-ausstehende-objekte.md) und [Objektzustände](../../../../anleitungen/objektzustaende.md).
 
@@ -56,14 +56,15 @@ Nach oben: [Exponential im öffentlichen Sektor betreiben](../README.md). Die Ei
 
 ## Verwandte Seiten
 - [Personen und Berechtigungen](../personen-und-berechtigungen/README.md)
-- [Einen Freigabe-Workflow für eine Sektion einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-an-approval-workflow-for-a-section.md)
-- [Kurs Redaktion 101](../../../../../eng-us/help/trainers/editors-101/README.md)
+- [Einen Freigabe-Workflow für eine Sektion einrichten](../../aufgaben/personen-und-berechtigungen/einen-freigabe-workflow-fuer-eine-sektion-einrichten.md)
+- [Kurs Redaktion 101](../../../trainer/redakteure-101/README.md)
 - [Veröffentlichen und Versionen (Hilfe)](../../../veroeffentlichen-und-versionen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

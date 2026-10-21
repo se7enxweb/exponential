@@ -34,11 +34,11 @@ prüfen sollten, bevor Sie ein gemeinsames Laufwerk ins Intranet verlagern.
 In Exponential ist ein Dokument ein Inhaltsobjekt der Klasse **File**, deren Feld `file` den Datentyp `ezbinaryfile`
 verwendet. Uploads von Dateien, die keine Bilder sind, werden zu File-Objekten, weil `settings/upload.ini`
 `DefaultClass=file` setzt
-([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#how-a-download-works)).
+([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#wie-ein-download-funktioniert)).
 
 Für das Unternehmen bedeutet das: Ein Dokument hat alles, was andere Inhalte haben: einen Titel, einen Platz im Baum,
 eine Sektion, einen Eigentümer, Versionen, Übersetzungen und eine URL. Es kann mit den Seiten verknüpft werden, die es
-erwähnen ([Relationen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
+erwähnen ([Relationen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
 
 ## Downloads beachten Berechtigungen
 
@@ -50,7 +50,7 @@ Sektion lesen dürfen, selbst wenn jemand den Link per Mail herumschickt.
 > **Warnung**
 > Verlinken Sie Dokumente nicht direkt aus dem Speicherverzeichnis (`var/.../storage/`). Das umgeht die
 > Berechtigungsprüfung
-> ([Dateien und Downloads, Protected downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#protected-downloads)).
+> ([Dateien und Downloads, Protected downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#geschützte-downloads)).
 
 ## Eine Bibliothek strukturieren
 
@@ -60,7 +60,7 @@ Sektion lesen dürfen, selbst wenn jemand den Link per Mail herumschickt.
 | Dokumente für eine Abteilung | ein Ordner, der der Sektion dieser Abteilung zugewiesen ist ([Abteilungen, Rollen und Sektionen](abteilungen-rollen-und-sektionen.md)) |
 | Ein Dokument, das auf mehrere Seiten gehört | ein File-Objekt, mit den Seiten verknüpft oder mit einem zweiten Ort |
 | Ausgemusterte Dokumente, zum Nachschlagen aufbewahrt | in eine Archivsektion verschieben, die nur die Verantwortlichen lesen |
-| Themen über Abteilungen hinweg | Tags mit `eztags` ([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)) |
+| Themen über Abteilungen hinweg | Tags mit `eztags` ([Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)) |
 
 Benennen Sie Ordner danach, was Mitarbeiter suchen („Reisen und Spesen“), nicht nach der Abteilung, die sie
 verantwortet; die Zuständigkeit drückt die Sektion aus.
@@ -79,18 +79,18 @@ verantwortet; die Zuständigkeit drückt die Sektion aus.
   veröffentlicht wird ([Benachrichtigungen für Mitarbeiter](benachrichtigungen-fuer-mitarbeiter.md)).
 - **Upload-Grenzen.** `upload_max_filesize` und `post_max_size` von PHP begrenzen, was Redakteure hochladen können;
   vereinbaren Sie die größte Dateigröße mit der Person, die den Server betreibt
-  ([Dateien und Downloads, Large files](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#large-files)).
+  ([Dateien und Downloads, Large files](../../ersteller/website-ersteller/dateien-und-downloads.md#große-dateien)).
 
 ## Viele Dateien hineinbekommen
 
 | Werkzeug | Was es tut | Quelle |
 |---|---|---|
-| **Mehrere Dateien hochladen** (`ezmultiupload`) | mehrere Dateien wählen oder ablegen; jede wird unter dem aktuellen Ordner zu einem Objekt der richtigen Klasse | [ezmultiupload](../../../../eng-us/features/6.0/extensions/ezmultiupload.md) |
+| **Mehrere Dateien hochladen** (`ezmultiupload`) | mehrere Dateien wählen oder ablegen; jede wird unter dem aktuellen Ordner zu einem Objekt der richtigen Klasse | [ezmultiupload](../../../funktionen/6.0/erweiterungen/ezmultiupload.md) |
 | Upload im Editor | eine Datei nach der anderen über den Editor oder die Medien-Bibliothek | [Medien und Uploads](../../medien-und-uploads.md) |
-| Skripte und Importe | Entwickler können für eine Migration Inhalte im Code anlegen | [Inhalte im Code anlegen](../../../../eng-us/help/creators/app-creators/creating-content-in-code.md) |
+| Skripte und Importe | Entwickler können für eine Migration Inhalte im Code anlegen | [Inhalte im Code anlegen](../../ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md) |
 
 Hochgeladene Bilder werden seit dem 12. Oktober 2026 anhand ihres Inhalts geprüft, nicht nur anhand ihrer Endung
-([Verhaltensänderungen 2026-10](../../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)).
+([Verhaltensänderungen 2026-10](../../../bc/6.0/verhaltensaenderungen-2026-10.md)).
 
 ## Wörter in Dateien finden
 
@@ -106,7 +106,7 @@ installiert sein. Mit Solr über `ezfind` können auch Dateiinhalte indiziert we
   Beispiel ein Handbuch, das als Seiten gepflegt wird ([PDF-Exporte](../../../anleitungen/pdf-exporte.md)).
 - **OpenDocument.** Die Erweiterung `ezodf` importiert eine Datei `.odt` aus OpenOffice oder LibreOffice Writer als
   Inhaltsobjekt und exportiert Objekte zurück in Writer-Dokumente; sie braucht OpenOffice oder LibreOffice 2.4 oder
-  neuer auf dem Server ([ezodf](../../../../eng-us/features/6.0/extensions/ezodf.md)).
+  neuer auf dem Server ([ezodf](../../../funktionen/6.0/erweiterungen/ezodf.md)).
 
 ## WebDAV
 
@@ -128,16 +128,16 @@ testen, bevor Sie es zusagen.
 
 ## Verwandte Seiten
 
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
-- [Die Medien-Bibliothek ordnen](../../../../eng-us/help/creators/website-creators/organizing-the-media-library.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
+- [Die Medien-Bibliothek ordnen](../../ersteller/website-ersteller/die-medienbibliothek-organisieren.md)
 - [Dateien mit Partnern teilen](../extranets/dateien-mit-partnern-teilen.md)
 - [Suche im Intranet](suche-im-intranet.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

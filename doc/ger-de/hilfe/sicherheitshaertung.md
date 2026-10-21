@@ -135,7 +135,7 @@ Entwicklung) ist der einzige Weg daran vorbei, und selbst dann ist eine Bestäti
 Installer schreibt `[SiteAccessSettings] CheckValidity=false`. Mit `[ConfigurationSettings] ManagedByDeployment=enabled`
 kann die Administration den Assistenten überhaupt nicht ausführen, keine Einstellungen oder Templates bearbeiten, keine
 Erweiterungen aktivieren und keine Pakete installieren
-([Konfiguration durch das Deployment verwaltet](../../eng-us/features/6.0/managed-by-deployment.md)).
+([Konfiguration durch das Deployment verwaltet](../funktionen/6.0/durch-deployment-verwaltet.md)).
 
 **Härten.** Behalten Sie `CheckValidity=false` und `AllowWizardOnInstalledSite=disabled` bei. Entfernen Sie
 `kickstart.ini` und `var/log/initial-admin-password` nach der Installation. Schalten Sie `ManagedByDeployment` auf den
@@ -157,7 +157,7 @@ die im Browser Skript ausführt (SVG, HTML), oder eine riesige oder fehlerhafte 
   fileinfo von PHP und vergleicht ihn mit `image.ini [ImageUploadSettings] AllowedMIMETypes[]`.
 - SVG-Dateien werden nie so gespeichert, wie sie hochgeladen wurden: `expSvgSanitizer` behält nur, was als sicher
   bekannt ist, und die gespeicherte Datei wird mit Headern ausgeliefert, die verhindern, dass sie etwas ausführt
-  ([SVG-Bilder](../../eng-us/bc/6.0/svg-images.md)).
+  ([SVG-Bilder](../bc/6.0/svg-bilder.md)).
 - Paket-Uploads brauchen die `package`-Richtlinien, und `ManagedByDeployment` sperrt sie.
 
 **Härten.** Halten Sie die Rewrite-Regeln nach jedem Upgrade aktuell (`.htaccess_root` oder der daraus abgeleitete
@@ -195,7 +195,7 @@ und AdminUI sind so geschrieben, dass sie unter einer durchgesetzten Richtlinie 
 Sites aus. Lesen Sie die Berichte und setzen Sie dann `Mode=enforce` auf dem Administrations-Siteaccess; das klassische
 Design bleibt über `ReportOnlyDesigns[]` im Report-Only-Modus. Verfahren Sie ebenso mit den öffentlichen Siteaccesses,
 sobald Ihre Designs und Erweiterungen nichts mehr melden
-([Content Security Policy](../../eng-us/features/6.0/content-security-policy.md)). Entwickler: Maskieren Sie jede Ausgabe, bauen
+([Content Security Policy](../funktionen/6.0/content-security-policy.md)). Entwickler: Maskieren Sie jede Ausgabe, bauen
 Sie in PHP nie HTML aus Anfragedaten und legen Sie Skripte in Dateien ab.
 
 ### Cross-Site Request Forgery (CSRF)
@@ -222,7 +222,7 @@ abweisen, bevor PHP läuft.
 **Härten (Entwickler).** Verwenden Sie `eZPersistentObject` und die Content-API; wenn SQL unvermeidlich ist,
 `$db->escapeString()` für jede Zeichenkette und `(int)` für jede Zahl; übergeben Sie Anfragedaten nie ohne
 `escapeshellarg()` an eine Shell. Erzeugen Sie Erweiterungen neu, die mit den RAD-Assistenten vor deren Korrektur
-erstellt wurden ([Härtungshinweise zu 6.0.13](../../eng-us/bc/6.0/hardening.md), [RAD-Werkzeuge: Sicherheit](../../eng-us/bc/6.0/rad-security.md),
+erstellt wurden ([Härtungshinweise zu 6.0.13](../bc/6.0/haertung.md), [RAD-Werkzeuge: Sicherheit](../bc/6.0/rad-sicherheit.md),
 [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md)).
 
 ### Sitzungsübernahme
@@ -237,14 +237,14 @@ Anfrage.
 
 **Härten.** `CookieSecure=true` auf einer reinen HTTPS-Site, ein kürzeres `SessionTimeout`, ein eigenes Sitzungscookie
 pro Siteaccess (`SessionNameHandler=custom`), `session.use_strict_mode=1` in PHP
-([13.7](../installation/13-sicherheitshaertung.md#137-sessions-und-cookies)). Nach einer vermuteten Kompromittierung: Ändern
+([13.7](../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)). Nach einer vermuteten Kompromittierung: Ändern
 Sie das Passwort und entfernen Sie alle Sitzungen (**Setup** > **Sitzungen**, mit dem Datenbank-Session-Handler).
 
 ### Offene Weiterleitungen und Phishing über Ihre Domain
 
 **Eingebaut.** Jedes Weiterleitungsziel, das von außerhalb des Codes kommt (ein Formularfeld, die Sitzung, ein
 URL-Parameter), einschließlich derer der Anmeldung und der Zwei-Faktor-Anmeldung, durchläuft die
-[Regeln für sichere Weiterleitungen](../../eng-us/features/6.0/safe-redirects.md) (`eZRedirectManager`): Ein Ziel auf einem
+[Regeln für sichere Weiterleitungen](../funktionen/6.0/sichere-weiterleitungen.md) (`eZRedirectManager`): Ein Ziel auf einem
 anderen Host als dem der Site selbst oder `[SiteSettings] AllowedRedirectHosts` wird abgewiesen, ebenso Ziele mit
 `javascript:` und `data:` und die üblichen Kodierungstricks.
 
@@ -345,8 +345,8 @@ Log im anderen wiederfinden lässt. Eine Anfrage, die der Schutzschild abweist, 
 nicht in `security.log`; im Monitor-Modus kann dieselbe Sondierung in beiden Logs stehen. Der HTTP-Cache von Exponential
 arbeitet mit ihr zusammen: Eine Anfrage, die der Schutzschild mit `allow-uncached` markiert (ein ausgedachter Pfad oder
 Parameter), wird beantwortet, aber nie gespeichert, sodass zufällige Adressen den Cache nicht füllen können
-([HTTP-Cache: Mit vorgeschaltetem request-shield](../../eng-us/bc/6.0/httpcache.md#with-request-shield-in-front)).
-Einzelheiten: [Request-Logs: request-shield und der Klassifizierer](../../eng-us/features/6.0/request-logs.md#request-shield-and-the-classifier).
+([HTTP-Cache: Mit vorgeschaltetem request-shield](../bc/6.0/httpcache.md#mit-vorgeschaltetem-request-shield)).
+Einzelheiten: [Request-Logs: request-shield und der Klassifizierer](../funktionen/6.0/anfrageprotokolle.md#request-shield-und-der-klassifizierer).
 
 ### Installation
 
@@ -435,7 +435,7 @@ Härtung ohne Beobachtung verzögert nur den Moment, in dem Sie von einem Angrif
 | das Audit-Protokoll | Anmeldungen und Fehlversuche, Passwortänderungen und -rücksetzungen, Änderungen an Rollen und Einstellungen, entfernte Inhalte, ausgeführte Befehle; per Hash verkettet | **Audit**, `./console exp:audit tail`, `exp:audit verify` |
 | `var/log/auth.log` | jeden Schritt der Zwei-Faktor-Anmeldung (nie einen Code oder ein Geheimnis) | **Setup** > **Logs** |
 | `var/log/csp.log` | Verstöße gegen die Content Security Policy | **CSP reports** (`csp/report`) |
-| `error.log`, die Logs des Webservers | Fehler mit einer Referenz-ID | **Setup** > **Logs** ([Log-Anzeige](../../eng-us/features/6.0/log-viewer.md)) |
+| `error.log`, die Logs des Webservers | Fehler mit einer Referenz-ID | **Setup** > **Logs** ([Log-Anzeige](../funktionen/6.0/log-betrachter.md)) |
 | das Log von request-shield | seine Entscheidungen | seine Live-Ansicht unter `/rs/` |
 
 Tun Sie mindestens Folgendes:
@@ -451,7 +451,7 @@ Tun Sie mindestens Folgendes:
 
 Der Request-Klassifizierer klassifiziert nur: Wegen eines Urteils wird nichts blockiert. Blockieren ist die Aufgabe des
 vorgeschalteten Schutzschilds, des Webservers oder eines Listeners, den Sie in
-`requestclassifier.ini [ClassifierSettings] Listeners[]` registrieren ([Request-Logs](../../eng-us/features/6.0/request-logs.md)).
+`requestclassifier.ini [ClassifierSettings] Listeners[]` registrieren ([Request-Logs](../funktionen/6.0/anfrageprotokolle.md)).
 
 ## Checkliste
 
@@ -490,8 +490,16 @@ Passwörter, Geheimnisse und personenbezogene Daten weg. Die Richtlinie und die 
   [Das Standardpasswort des Administrators](standard-administratorpasswort.md)
 - [Sicherheitsvorgaben vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md),
   [die Sicherheitspatches vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md)
-- [Content Security Policy](../../eng-us/features/6.0/content-security-policy.md), [Request-Logs](../../eng-us/features/6.0/request-logs.md),
-  [Log-Anzeige](../../eng-us/features/6.0/log-viewer.md), [Audit](../../eng-us/bc/6.0/audit.md), [Wartungsmodus](../anleitungen/wartungsmodus.md)
+- [Content Security Policy](../funktionen/6.0/content-security-policy.md), [Request-Logs](../funktionen/6.0/anfrageprotokolle.md),
+  [Log-Anzeige](../funktionen/6.0/log-betrachter.md), [Audit](../bc/6.0/audit.md), [Wartungsmodus](../anleitungen/wartungsmodus.md)
 - OWASP [Top Ten](https://owasp.org/projects/top-ten) und
   [Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html);
   NIST [SP 800-63B-4](https://pages.nist.gov/800-63-4/sp800-63b.html)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

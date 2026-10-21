@@ -16,7 +16,7 @@ Das Modul definiert keine Richtlinienfunktionen: Eine Rolle braucht `search/*` f
 ## Siehe auch
 
 - [Die Richtlinien aller Module](README.md)
-- [Die Ansichten von search](../modulansichten/search/README.md)
+- [Die Ansichten von search](../modulansichten/suche/README.md)
 - [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)
 
 ---

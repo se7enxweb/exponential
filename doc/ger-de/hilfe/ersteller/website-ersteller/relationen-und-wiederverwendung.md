@@ -103,7 +103,7 @@ die der Besucher lesen darf; `ignore_visibility` steuert versteckte Inhalte.
 ## Verwandte Inhalte sicher entfernen
 
 Bevor ein Objekt entfernt oder versteckt wird, prüft die Administration die Rückwärtsrelationen und warnt, wenn andere
-Inhalte darauf verweisen ([Prüfung der Rückwärtsrelationen](../../../../eng-us/features/6.0/reverse-relation-check.md)). Prüfen Sie
+Inhalte darauf verweisen ([Prüfung der Rückwärtsrelationen](../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)). Prüfen Sie
 diese Liste, bevor Sie bestätigen: Ein entferntes Bild hinterlässt eine Lücke in jedem Artikel, der es eingebettet hat.
 
 ## Verwandte Seiten
@@ -115,8 +115,8 @@ diese Liste, bevor Sie bestätigen: Ein entferntes Bild hinterlässt eine Lücke
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

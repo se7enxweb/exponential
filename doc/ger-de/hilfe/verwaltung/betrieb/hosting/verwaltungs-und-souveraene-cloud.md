@@ -34,13 +34,13 @@ Exponential ist eine PHP-Anwendung. Sie nimmt keinen Kontakt zum Hersteller auf,
 keinen eigenen Cloud-Dienst, von dem eine Website abhängt. Die Administration liefert ihre Skripte lokal aus: jQuery
 und die anderen Skripte der Administration werden aus der Installation geladen, nicht aus einem CDN
 (`ezjscore.ini [eZJSCore] LoadFromCDN=disabled`), und das Design admin4 lädt keine Webschriften oder Skripte von
-anderen Hosts ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)). Virtuelle Maschinen in der Cloud sind
+anderen Hosts ([Datenschutzstandards](../../../../standards/datenschutz.md)). Virtuelle Maschinen in der Cloud sind
 „gewöhnliche Linux-Maschinen, in der Stufe ihrer Distribution“
 ([Betriebssysteme für Hosts](../../../hosting/grundlagen/betriebssysteme-fuer-hoster.md)).
 
 Einige Erweiterungen, die mit dem Code ausgeliefert werden, nehmen Kontakt zu Dritten auf, sobald Sie sie aktivieren
 (Statistiken, Captchas, Anmeldung über soziale Netzwerke). Sie sind ausgeschaltet, bis eine Website sie einschaltet;
-die Liste steht in den [Datenschutzstandards](../../../../../eng-us/standards/privacy.md). Prüfen Sie `ActiveExtensions[]` vor
+die Liste steht in den [Datenschutzstandards](../../../../standards/datenschutz.md). Prüfen Sie `ActiveExtensions[]` vor
 dem Livegang.
 
 ## Welches Hosting-Modell passt
@@ -65,7 +65,7 @@ brauchen einen Datenbankserver und gemeinsamen Speicher
 | Bedarf | Warum | Einzelheiten |
 |---|---|---|
 | PHP 8 (8.0 oder neuer, Velocity eingeschlossen), Kommandozeile und Web | die Anwendung und ihre Cronjobs | [PHP-Versionen und -Erweiterungen](../../../hosting/grundlagen/php-versionen-und-erweiterungen.md) |
-| Dauerhafter Speicher für `var/` und `settings/override` | hochgeladene Dateien, Logs, der Audit-Trail, die SQLite-Datenbank | [Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md) |
+| Dauerhafter Speicher für `var/` und `settings/override` | hochgeladene Dateien, Logs, das Prüfprotokoll, die SQLite-Datenbank | [Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md) |
 | Eine Datenbank, wenn nicht SQLite | eine der unterstützten Engines; ein verwalteter Datenbankdienst ist in Ordnung, wenn er eine davon ist | [Datenbankwahl in der offiziellen Reihenfolge](datenbankwahl-in-der-offiziellen-reihenfolge.md) |
 | Ein Zeitplaner | `runcronjobs.php` alle paar Minuten oder der eigene Zeitplaner von Velocity | [Cronjobs](../../../hosting/betrieb/cronjobs.md) |
 | Ausgehende E-Mail | Passwort- und Benachrichtigungs-E-Mails | [E-Mail-Zustellung](../../../hosting/betrieb/mailzustellung.md) |
@@ -118,8 +118,9 @@ Sorgen Sie dafür, dass das so bleibt:
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

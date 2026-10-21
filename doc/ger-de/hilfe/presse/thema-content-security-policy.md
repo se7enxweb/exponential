@@ -29,7 +29,7 @@ wie Sie es genau beschreiben.
 
 „Eine strikte Richtlinie (`script-src 'self'`, kein `'unsafe-inline'`) bedeutet, dass ein Skript, das über einen
 gespeicherten oder reflektierten Wert in eine Seite eingeschleust wird, nicht läuft, selbst wenn ein Template vergisst,
-es zu maskieren“ ([Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md)). Um eine solche Richtlinie
+es zu maskieren“ ([Content Security Policy](../../funktionen/6.0/content-security-policy.md)). Um eine solche Richtlinie
 möglich zu machen, wurden die Administrationsdesigns admin4 und admin4l so geändert, dass sie „kein Inline-`<script>`,
 kein `on...=`-Attribut, keinen `javascript:`-Link, kein `style=""`-Attribut und kein `<style>`-Element“ enthalten
 ([Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#16-october-2026-the-administration-runs-without-inline-scripts-handlers-and-styles)).
@@ -52,8 +52,8 @@ Alles in der Entwicklungslinie 6.0.15, die nicht erschienen ist.
 
 | Fakt | Quelle |
 |---|---|
-| Standardmäßig ist die Richtlinie „in der Administration nur meldend und auf den Websites aus“. | [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md) |
-| Die mitgelieferte Richtlinie erlaubt Skripte und Styles nur von der Website selbst (`'self'`) und blockiert Plugins (`object-src 'none'`). | [Content Security Policy, Einstellungen](../../../eng-us/features/6.0/content-security-policy.md#settings) |
+| Standardmäßig ist die Richtlinie „in der Administration nur meldend und auf den Websites aus“. | [Content Security Policy](../../funktionen/6.0/content-security-policy.md) |
+| Die mitgelieferte Richtlinie erlaubt Skripte und Styles nur von der Website selbst (`'self'`) und blockiert Plugins (`object-src 'none'`). | [Content Security Policy, Einstellungen](../../funktionen/6.0/content-security-policy.md#einstellungen) |
 | Im Modus „nur melden“ meldet der Browser, was er blockieren würde, und blockiert nichts. | ebenda |
 | Das Zurücknehmen nach dem Durchsetzen ist eine Einstellung: `Mode=report-only`. | [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#17-october-2026-enforcing-the-content-security-policy) |
 | Der Online-Editor fällt von TinyMCE 3 auf TinyMCE 8 zurück, wo eine strikte Richtlinie durchgesetzt wird. | ebenda |
@@ -104,15 +104,15 @@ Sicherheitsregel hinter der neuen Administration von Exponential“.
 ## Verwandte Seiten
 
 - [Thema: Sicherheit](thema-sicherheit.md)
-- [Content Security Policy (Funktionsseite)](../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy (Funktionsseite)](../../funktionen/6.0/content-security-policy.md)
 - [Gesprächspunkte: Sicherheit](../fuersprecher/gespraechspunkte-sicherheit.md)
 - [Funktionsthemen: Übersicht](themenbeitraege-uebersicht.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

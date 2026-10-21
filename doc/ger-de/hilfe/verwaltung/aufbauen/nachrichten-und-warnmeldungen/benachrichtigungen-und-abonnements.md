@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Site-Ersteller, die Menschen Teilen einer Site des öffentlichen Sektors
 per E-Mail folgen lassen. Das Benachrichtigungssystem von Exponential schreibt Kontoinhabern, wenn unter einem Element,
 dem sie folgen, Inhalte veröffentlicht werden. Quellen:
-[Benachrichtigungen: die Anleitung für Benutzer](../../../../../eng-us/features/6.0/notifications.md) und
+[Benachrichtigungen: die Anleitung für Benutzer](../../../../funktionen/6.0/benachrichtigungen.md) und
 [Benachrichtigungen für Administratoren](../../../../anleitungen/benachrichtigungen-administrator.md).
 
 ## Inhalt
@@ -55,7 +55,7 @@ in Ihren Templates an.
    ([Mail an Empfänger](../formulare/mail-an-empfaenger.md#testen-ohne-versand)).
 5. Beschränken Sie optional, welche Klassen Benachrichtigungsereignisse erzeugen, damit Bilder und Banner Folgenden
    keine Mails senden
-   ([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md#notifications-for-some-classes-only)).
+   ([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md#benachrichtigungen-nur-für-einige-klassen)).
 
 ## Redakteure und Korrekturen
 
@@ -63,7 +63,7 @@ Wo `notification.ini [NotificationSettings] PublishWithoutNotification=enabled` 
 `content/publish_without_notification` hat, bietet das Bearbeitungsformular **Ohne Benachrichtigung veröffentlichen**:
 Die Version wird veröffentlicht, aber Folgende erhalten keine Mail. Verwenden Sie das für Tippfehler, nicht für
 Änderungen, von denen Menschen wissen müssen
-([Ohne Benachrichtigung veröffentlichen](../../../../../eng-us/features/6.0/publish-without-notification.md)).
+([Ohne Benachrichtigung veröffentlichen](../../../../funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md)).
 
 ## Grenzen
 
@@ -76,7 +76,7 @@ Die Version wird veröffentlicht, aber Folgende erhalten keine Mail. Verwenden S
 
 Benachrichtigungsmails sind ein Dienst, den die Person gewählt hat; sie werden in den Kategorien der
 E-Mail-Einstellungen aufgeführt, wo Ihre Site sie verwendet
-([E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md)).
+([E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md)).
 
 ## Verwandte Seiten
 
@@ -86,8 +86,9 @@ E-Mail-Einstellungen aufgeführt, wo Ihre Site sie verwendet
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -88,7 +88,7 @@ Die hier genannten Bearbeitungsprüfungen sind die Antwort des Kernels. Eine Erw
 eigenen Regeln ändern (weitere Bearbeiter eines Entwurfs, durch einen Zustand gesperrte Objekte), mit einem Listener
 des Filters `content/edit/access`, den jede Bearbeitungsprüfung von `content/edit`, `content/history`,
 `content/removeeditversion`, `content/versionview`, `content/multiedit` und der REST-Schnittstelle fragt: siehe
-[Filter für Zugriff und Ansichts-Cache](../../../eng-us/features/6.0/access-and-cache-filters.md).
+[Filter für Zugriff und Ansichts-Cache](../../funktionen/6.0/zugriffs-und-cache-filter.md).
 
 ## Prüfen
 

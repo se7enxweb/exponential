@@ -25,14 +25,14 @@ Beides sind gute Geschichten.
 
 | Sagen Sie | Quelle |
 |---|---|
-| „Die Dokumentation steckt in der Administration: ein Hilfe-Center, eine Suche und eine Hilfe-Schaltfläche auf jeder Seite, die die Seite zu diesem Bildschirm öffnet.“ | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
-| „Die Hilfe zeigt die Dokumentation aus dem Ordner `doc/` des Repositorys, sodass sich Dokumentation und Code gemeinsam ändern.“ | [Das Hilfesystem, Was sie zeigt](../../../eng-us/features/6.0/help-system.md#what-it-shows-and-what-never) |
-| „Seiten werden nach Zielgruppen gefiltert: Redakteure, Administratoren, Entwickler, Benutzer und mehr.“ | [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
-| „Jede Seite lässt sich sauber drucken oder als PDF herunterladen, erzeugt auf dem Server, ohne externen Dienst.“ | [Hilfesystem, Drucken und PDF](../../../eng-us/features/6.0/help-system.md#print-and-pdf) |
-| „Die Hilfe ist freie Dokumentation unter der GNU FDL 1.3 oder später: kopieren, übersetzen, verbessern.“ | [Freie Dokumentation](../freie-dokumentation.md), [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) |
+| „Die Dokumentation steckt in der Administration: ein Hilfe-Center, eine Suche und eine Hilfe-Schaltfläche auf jeder Seite, die die Seite zu diesem Bildschirm öffnet.“ | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
+| „Die Hilfe zeigt die Dokumentation aus dem Ordner `doc/` des Repositorys, sodass sich Dokumentation und Code gemeinsam ändern.“ | [Das Hilfesystem, Was sie zeigt](../../funktionen/6.0/hilfesystem.md#was-sie-zeigt-und-was-nie) |
+| „Seiten werden nach Zielgruppen gefiltert: Redakteure, Administratoren, Entwickler, Benutzer und mehr.“ | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
+| „Jede Seite lässt sich sauber drucken oder als PDF herunterladen, erzeugt auf dem Server, ohne externen Dienst.“ | [Hilfesystem, Drucken und PDF](../../funktionen/6.0/hilfesystem.md#drucken-und-pdf) |
+| „Die Hilfe ist freie Dokumentation unter der GNU FDL 1.3 oder später: kopieren, übersetzen, verbessern.“ | [Freie Dokumentation](../freie-dokumentation.md), [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
 | „Jede Seite hat **Auf GitHub bearbeiten**; eine Korrektur ist nur einen Pull Request entfernt.“ | [Freie Dokumentation, Anderen helfen](../freie-dokumentation.md#anderen-helfen) |
-| „Erweiterungen können ihre eigene Hilfe mitbringen.“ | [Hilfe aus Erweiterungen](../../../eng-us/features/6.0/help-system.md#help-from-extensions) |
-| „Die Hilfe wird nie Besuchern gezeigt, die nicht angemeldet sind.“ | [Wer sie lesen darf](../../../eng-us/features/6.0/help-system.md#who-may-read-it) |
+| „Erweiterungen können ihre eigene Hilfe mitbringen.“ | [Hilfe aus Erweiterungen](../../funktionen/6.0/hilfesystem.md#hilfe-aus-extensions) |
+| „Die Hilfe wird nie Besuchern gezeigt, die nicht angemeldet sind.“ | [Wer sie lesen darf](../../funktionen/6.0/hilfesystem.md#wer-sie-lesen-darf) |
 
 ## In einer Minute zeigen
 
@@ -50,7 +50,7 @@ Beides sind gute Geschichten.
 | Die offizielle Dokumentationswebsite | [doc.exponential.earth](https://doc.exponential.earth/) | [Orte der Community](../wer-ist-die-exponential-foundation.md#orte-der-community) |
 | eZpedia | [ezpedia.exponential.earth](https://ezpedia.exponential.earth/) | ebenda |
 | Schulungsbücher | [Spiegel auf GitHub](https://github.com/se7enxweb/mirror.exponential.se7enx.com) | ebenda |
-| Die Geschichte, Monat für Monat | [Die Geschichte](../../../eng-us/history/README.md) | in `doc/` |
+| Die Geschichte, Monat für Monat | [Die Geschichte](../../geschichte/README.md) | in `doc/` |
 
 ## Warum freie Dokumentation wichtig ist
 
@@ -58,7 +58,7 @@ Beides sind gute Geschichten.
   Unternehmen kann sie in sein Intranet stellen ([Freie Dokumentation, Was Sie tun dürfen](../freie-dokumentation.md#was-sie-tun-dürfen)).
 - **Übersetzungen können überall entstehen.** Eine Community kann die Hilfe in ihre Sprache übersetzen und teilen.
 - **Korrekturen kommen zurück.** Eine Änderung wird unter derselben Lizenz angenommen, sodass die Verbesserung für alle
-  frei bleibt ([Zur Dokumentation beitragen](../../../eng-us/README-LICENSE.md#contributing-to-the-documentation)).
+  frei bleibt ([Zur Dokumentation beitragen](../../README-LIZENZ.md#zur-dokumentation-beitragen)).
 
 ## Sagen Sie nicht
 
@@ -72,5 +72,5 @@ Beides sind gute Geschichten.
 
 - [Für freie Dokumentation eintreten](fuer-freie-dokumentation-eintreten.md)
 - [Die Hilfe verbessern](die-hilfe-verbessern.md)
-- [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)
+- [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

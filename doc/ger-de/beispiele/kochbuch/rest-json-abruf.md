@@ -186,7 +186,7 @@ curl -s -H "X-Exp-Token: $EXP_TOKEN" 'https://example.com/ezjscore/call/expsyste
 
 Eine Anfrage mit Token braucht für Schreibzugriffe POST, aber kein Formular-Token. Ein eigener Dienst erweitert
 `expServiceBase` und meldet sich in `public static $services` an; siehe
-[Backend-Dienste über ezjscore](../../../eng-us/bc/6.0/backend_ezjscore_services.md#writing-a-service).
+[Backend-Dienste über ezjscore](../../bc/6.0/backend-dienste-ueber-ezjscore.md#einen-dienst-schreiben).
 
 ## 3. Die REST-API
 
@@ -233,10 +233,10 @@ ausgeführt.
 ## Verwandte Seiten
 
 - [Kochbuch](README.md)
-- [Entfernte Dienste: die ganze Administration als HTTP-API](../../../eng-us/features/6.0/remote-services-expservices.md)
+- [Entfernte Dienste: die ganze Administration als HTTP-API](../../funktionen/6.0/entfernte-dienste-expservices.md)
 - [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md), [Persönliche API-Schlüssel](../../anleitungen/api-schluessel.md)
-- [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy](../../funktionen/6.0/content-security-policy.md)
 - [Fetch-Funktionen](../fetch-funktionen/README.md) (dieselben Daten in Templates) und [Richtlinienfunktionen](../richtlinien/README.md)
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

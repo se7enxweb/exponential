@@ -28,7 +28,7 @@ Nutzen Sie diese Tabelle, um Ihren Aufbewahrungsplan in Einstellungen umzusetzen
 
 | Daten | Mechanismus | Voreinstellung | Einstellung |
 |---|---|---|---|
-| Audit-Trail | täglicher Cronjob-Teil: archivieren, bereinigen | 90 Tage live, 730 archiviert (Kanal read 30/90) | `[AuditChannel_<channel>] LiveDays`, `ArchiveDays` |
+| Prüfprotokoll | täglicher Cronjob-Teil: archivieren, bereinigen | 90 Tage live, 730 archiviert (Kanal read 30/90) | `[AuditChannel_<channel>] LiveDays`, `ArchiveDays` |
 | Audit-Index | täglich | Zeilen 730 Tage aufbewahrt, nach 90 pseudonymisiert | `[AuditIndexSettings] KeepDays`, `[AuditPrivacySettings] PseudonymiseAfterDays` |
 | `404.log`, `security.log`, `csp.log` | Bereinigung nach Alter | 30, 90, 30 Tage | `logviewer.ini [RotationSettings] MaxAgeDays[<key>]` |
 | Andere Kernel-Protokolle | Rotation nur nach Größe | 2 MB, 3 Archive; keine Altersgrenze | `site.ini [FileSettings] LogFileMaxSize`, `LogFileRotateCount`, `LogFileMaxAge`; pro Protokoll `MaxAgeDays[<key>]` |
@@ -38,7 +38,7 @@ Nutzen Sie diese Tabelle, um Ihren Aufbewahrungsplan in Einstellungen umzusetzen
 | Sitzungen | Ablauf | 3 Tage | `site.ini [Session] SessionTimeout` |
 | Inhaltsversionen | wenn eine neue Version die Grenze überschreitet, wird die älteste archivierte Version entfernt | 45 pro Objekt (75 für Klasse 1) | `content.ini [VersionManagement]` |
 
-Quellen: [Audit-Leitfaden 4.3](../../../../eng-us/bc/6.0/audit.md#43-retention), [Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md),
+Quellen: [Audit-Leitfaden 4.3](../../../bc/6.0/audit.md#43-aufbewahrung), [Protokollrotation](../../../funktionen/6.0/log-rotation.md),
 [E-Mail-Einstellungen: Aufbewahrung](../../../anleitungen/mail-einstellungen-administrator.md#9-aufbewahrung-und-der-cronjob),
 [Sitzungen](../../../anleitungen/sitzungen.md), [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md).
 
@@ -74,8 +74,9 @@ Quellen: [Audit-Leitfaden 4.3](../../../../eng-us/bc/6.0/audit.md#43-retention),
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

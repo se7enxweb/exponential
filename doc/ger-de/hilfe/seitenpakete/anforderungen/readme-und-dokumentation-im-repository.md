@@ -72,14 +72,14 @@ Eine `README.md` im Wurzelverzeichnis des Repositorys. Sie sollte in dieser Reih
 8. **Wo Probleme gemeldet werden und wie man beiträgt.**
 
 Wie Sie den werbenden Teil gut schreiben, steht auf
-[Ein README, das erklärt und überzeugt](../../../../eng-us/help/designers/distribution/readme-that-explains-and-sells.md).
+[Ein README, das erklärt und überzeugt](../../designer/veroeffentlichung/ein-readme-das-erklaert-und-verkauft.md).
 
 ## Die Datei LICENSE
 
 Eine Datei `LICENSE` im Wurzelverzeichnis mit dem vollständigen Text der Lizenz, derselben Lizenz wie `<licence>` und `documents/LICENCE` in
 jedem Paket. Für die GPL Version 2 oder neuer, die Lizenz von Exponential und der ausgelieferten Pakete, ist das der Text der GNU GPL v2. Der
 Dateiname und der vollständige Text lassen GitHub und Packagist die Lizenz erkennen, was der kurze Hinweis in `documents/LICENCE` nicht tut.
-Details: [Die Datei LICENSE eines Themes](../../../../eng-us/help/designers/extensions/license-file.md) und [Lizenz und Dokumente](lizenz-und-dokumente.md).
+Details: [Die Datei LICENSE eines Themes](../../designer/erweiterungen/die-license-datei.md) und [Lizenz und Dokumente](lizenz-und-dokumente.md).
 
 ## Changelog und Release-Hinweise
 
@@ -88,8 +88,8 @@ der Commits seit dem letzten Release. Die Repositorys von 7x schreiben Betreffze
 `Removed:` und `Renamed:`, was eine solche Datei leicht zusammenstellen lässt. Kopieren Sie die Zeilen, die für einen Administrator zählen,
 in den neuen `<changelog><entry>` jedes Pakets ([Einträge im Changelog](eintraege-im-changelog.md)).
 
-Siehe [Eine Changelog-Datei führen](../../../../eng-us/help/designers/distribution/keeping-a-changelog-file.md) und
-[Release-Hinweise schreiben](../../../../eng-us/help/designers/distribution/writing-release-notes.md).
+Siehe [Eine Changelog-Datei führen](../../designer/veroeffentlichung/eine-changelog-datei-fuehren.md) und
+[Release-Hinweise schreiben](../../designer/veroeffentlichung/release-notes-schreiben.md).
 
 ## Einstellungen des Repositorys
 
@@ -98,7 +98,7 @@ Siehe [Eine Changelog-Datei führen](../../../../eng-us/help/designers/distribut
 - [ ] Topics, die helfen, es zu finden.
 - [ ] Issues eingeschaltet, damit Probleme dort gemeldet werden können, wo die Quelle liegt.
 
-[Name, Beschreibung und Topics des Repositorys](../../../../eng-us/help/designers/distribution/repository-name-description-topics.md) behandelt die
+[Name, Beschreibung und Topics des Repositorys](../../designer/veroeffentlichung/repository-name-beschreibung-und-topics.md) behandelt die
 Entscheidungen.
 
 ## Checkliste
@@ -122,3 +122,11 @@ Entscheidungen.
 - [Ein Seitenpaket forken](../eigene/ein-seitenpaket-forken.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

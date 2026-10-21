@@ -13,7 +13,7 @@ Diese Seite richtet sich an Redakteurinnen und Redakteure und an die Trainerinne
 Template lässt sich einmal barrierefrei bauen; Inhalte werden jeden Tag geschrieben, und die meisten Probleme mit der
 Barrierefreiheit auf einer Live-Website gehen auf sie zurück. Die Erklärung des Projekts sagt dasselbe: Alternativtext,
 Reihenfolge der Überschriften und Linktext in veröffentlichten Inhalten hängen von der Redaktion ab
-([Standards zur Barrierefreiheit: bekannte Lücken](../../../../eng-us/standards/accessibility.md#known-gaps)). Jede der folgenden
+([Standards zur Barrierefreiheit: bekannte Lücken](../../../standards/barrierefreiheit.md#bekannte-lücken)). Jede der folgenden
 Gewohnheiten verweist auf eine Seite dieses Bereichs mit weiteren Einzelheiten.
 
 ## Inhalt
@@ -49,10 +49,10 @@ Für einfache Sprache in der öffentlichen Kommunikation ist die Leitlinie der U
   ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - **Vorschau** vor dem Veröffentlichen, in der Sprache und dem Siteaccess Ihrer Wahl.
 - **Inhaltsprüfungen** finden Einbettungen und Links, die auf entfernte oder verborgene Inhalte zeigen
-  ([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+  ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 - **Optional**: Wo die Erweiterung Exponential Intelligence aktiviert ist, schlägt eine Schaltfläche **Write alt text**
   (Alternativtext schreiben) einen Alternativtext zur Prüfung vor, und ein Bericht listet Bilder ohne einen auf
-  ([Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md)). Das Bild wird nach der Datenrichtlinie der
+  ([Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md)). Das Bild wird nach der Datenrichtlinie der
   Website an einen KI-Anbieter gesendet; Ihre Organisation entscheidet, ob das erlaubt ist.
 
 ## Eine Checkliste vor dem Veröffentlichen
@@ -71,12 +71,13 @@ Für einfache Sprache in der öffentlichen Kommunikation ist die Leitlinie der U
 
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md)
 - [Bilder, Medien und Uploads](../../medien-und-uploads.md)
-- [Barrierefreiheit für Website-Ersteller: Was die Redaktion steuert](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md#what-editors-control)
+- [Barrierefreiheit für Website-Ersteller: Was die Redaktion steuert](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md#was-die-redaktion-steuert)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

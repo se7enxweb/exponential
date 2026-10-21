@@ -73,7 +73,7 @@ einfach: Die andere Stelle darf sie nutzen und ändern. Wenn Sie sie dem Projekt
 
 Die GNU Free Documentation License 1.3 oder später. Sie dürfen diese Hilfe kopieren, anpassen, übersetzen und neu
 veröffentlichen, auch in Ihren eigenen Handbüchern, wenn Sie die Hinweise beibehalten
-([Freie Dokumentation](../../freie-dokumentation.md), [Die Lizenz dieser Dokumentation](../../../../eng-us/README-LICENSE.md)).
+([Freie Dokumentation](../../freie-dokumentation.md), [Die Lizenz dieser Dokumentation](../../../README-LIZENZ.md)).
 
 ## Verwandte Seiten
 

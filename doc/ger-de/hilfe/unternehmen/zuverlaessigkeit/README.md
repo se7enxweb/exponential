@@ -36,7 +36,7 @@ alle drei ab:
 - **Das Produkt**: eine langlebige Release-Linie, veröffentlichte Versionen, die sich nie ändern, ein unterstützter
   PHP-Bereich und eine gepflegte Sicherheitsrichtlinie
   ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
-- **Die mitgelieferten Werkzeuge**: Health-Checks, Logs mit Fehlerreferenzen, ein manipulationssicherer Audit-Trail,
+- **Die mitgelieferten Werkzeuge**: Health-Checks, Logs mit Fehlerreferenzen, ein manipulationssicheres Prüfprotokoll,
   Wartungsmodus, eine Upgrade-Prüfung, Caches, der Server Exponential Velocity und sein Watchdog.
 - **Die Gewohnheiten**: Backups, die gezielt wiederhergestellt werden, Monitoring, das jemand liest, Aktualisierungen,
   die geprobt werden, und ein Notfallplan, der zu einem kleinen Team passt.
@@ -66,7 +66,7 @@ alle drei ab:
 | [Verfügbarkeit in der Praxis](verfuegbarkeit-in-der-praxis.md) | Die Routine, die eine Website Woche für Woche verfügbar hält |
 | [Health-Checks und Monitoring](health-checks-und-monitoring.md) | Was Sie von außen und von innen beobachten und mit welchen Befehlen |
 | [Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md) | Wie aus dem „Etwas ist schiefgelaufen“ eines Kunden eine Log-Zeile wird, mit der Sie arbeiten können |
-| [Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md) | Wer was geändert hat, und der Nachweis, dass die Aufzeichnung nicht bearbeitet wurde |
+| [Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md) | Wer was geändert hat, und der Nachweis, dass die Aufzeichnung nicht bearbeitet wurde |
 | [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md) | Was Sie sichern, wie und wie oft |
 | [Wiederherstellungsübungen](wiederherstellungsuebungen.md) | Wie Sie beweisen, dass ein Backup funktioniert, bevor Sie es brauchen |
 | [Velocity für Unternehmen](velocity-fuer-unternehmen.md) | Was der mitgelieferte Anwendungsserver einem Unternehmen bringt, in einfachen Worten |
@@ -111,7 +111,7 @@ alle drei ab:
       einem anderen Rechner wiederhergestellt ([Betrieb einer Site, die wöchentliche Checkliste](../../../anleitungen/betrieb-einer-website.md#10-eine-wöchentliche-checkliste)).
 - [ ] Die Cronjobs laufen, und **Setup > Systeminformationen** zeigt keine fehlgeschlagene Zustandsprüfung.
 - [ ] Jede Aktualisierung beginnt mit einem Backup und der Upgrade-Prüfung, innerhalb eines Wartungsfensters.
-- [ ] Zwei Personen wissen, wo die Logs, der Audit-Trail und die Backups liegen.
+- [ ] Zwei Personen wissen, wo die Logs, das Prüfprotokoll und die Backups liegen.
 
 ## Benachbarte Bereiche
 
@@ -124,7 +124,7 @@ alle drei ab:
 - [Hosting und Partner auswählen](../auswahl/README.md): wer die Server für Sie betreibt.
 - [Vorlagen für Unternehmen](../vorlagen/README.md): Checklisten zum Kopieren, darunter eine monatliche
   Betriebs-Checkliste.
-- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 - Die technische Seite für Hosting-Mitarbeiter: [Betrieb](../../hosting/betrieb/README.md) und
   [Runbooks für Hoster: Überblick](../../hosting/runbooks/README.md).
 - Für Führungskräfte: [Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md) und
@@ -138,8 +138,8 @@ alle drei ab:
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

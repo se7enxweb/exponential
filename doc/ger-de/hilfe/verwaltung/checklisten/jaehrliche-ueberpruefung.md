@@ -11,7 +11,7 @@ type: help
 
 Diese Checkliste richtet sich einmal im Jahr an die Verantwortlichen der Website, die Website-Administration und das
 Vertragsmanagement einer öffentlichen Stelle. Sie sammelt die jährlichen Aufgaben aus
-[Eine Website über einen mehrjährigen Vertrag aktuell halten](../../../../eng-us/help/government/procurement/lifecycle/keeping-a-site-current.md) und
+[Eine Website über einen mehrjährigen Vertrag aktuell halten](../beschaffung/lebenszyklus/eine-website-aktuell-halten.md) und
 verweist auf die ausführlichen Checklisten.
 
 ## Inhalt
@@ -25,11 +25,11 @@ verweist auf die ausführlichen Checklisten.
 
 ## Software und Plattform
 
-- [ ] Die Website läuft auf einer unterstützten Version 6.0.x (`SECURITY.md`; [Unterstützte Versionen](../../../../eng-us/help/government/procurement/lifecycle/supported-versions.md)); notieren Sie die Version aus **Setup > Systeminformationen**.
-- [ ] Jede Erweiterung ist aktuell; die Info-Seite listet die Versionen auf ([Info- und Paketseiten](../../../../eng-us/features/6.0/about-and-package-pages.md)).
-- [ ] PHP, Datenbank und Betriebssystem erhalten Sicherheitsupdates ([Unterstützung von PHP und Plattform](../../../../eng-us/help/government/procurement/lifecycle/php-and-platform-support.md)).
+- [ ] Die Website läuft auf einer unterstützten Version 6.0.x (`SECURITY.md`; [Unterstützte Versionen](../beschaffung/lebenszyklus/unterstuetzte-versionen.md)); notieren Sie die Version aus **Setup > Systeminformationen**.
+- [ ] Jede Erweiterung ist aktuell; die Info-Seite listet die Versionen auf ([Info- und Paketseiten](../../../funktionen/6.0/info-und-paketseiten.md)).
+- [ ] PHP, Datenbank und Betriebssystem erhalten Sicherheitsupdates ([Unterstützung von PHP und Plattform](../beschaffung/lebenszyklus/php-und-plattformunterstuetzung.md)).
 - [ ] **Setup > Upgrade-Prüfung** zeigt keine unerwarteten geänderten Dateien ([Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)).
-- [ ] Die Aktualisierungsarbeiten des nächsten Jahres stehen im Haushalt ([Aktualisierungen im Haushalt planen](../../../../eng-us/help/government/procurement/lifecycle/planning-upgrades-in-the-budget.md)).
+- [ ] Die Aktualisierungsarbeiten des nächsten Jahres stehen im Haushalt ([Aktualisierungen im Haushalt planen](../beschaffung/lebenszyklus/upgrades-im-haushalt-planen.md)).
 
 ## Sicherheit und Datenschutz
 
@@ -40,12 +40,12 @@ verweist auf die ausführlichen Checklisten.
 
 ## Barrierefreiheit
 
-- [ ] Wichtige Seiten und Templates erneut getestet ([Barrierefreiheit testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+- [ ] Wichtige Seiten und Templates erneut getestet ([Barrierefreiheit testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)).
 - [ ] Erklärung zur Barrierefreiheit überprüft und datiert; Rückmeldungen aus dem letzten Jahr beantwortet ([Checkliste Barrierefreiheit](checkliste-barrierefreiheit.md)).
 
 ## Inhalte und Schriftgut
 
-- [ ] Inhaltsprüfungen sauber: Links, Relationen, nicht referenzierte Objekte, fehlende Dateien ([Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md), [Fehlende Dateien](../../../anleitungen/fehlende-dateien.md)).
+- [ ] Inhaltsprüfungen sauber: Links, Relationen, nicht referenzierte Objekte, fehlende Dateien ([Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md), [Fehlende Dateien](../../../anleitungen/fehlende-dateien.md)).
 - [ ] Veraltete Seiten geprüft, aktualisiert oder entfernt; Verantwortliche pro Sektion bestätigt.
 - [ ] Schriftgut exportiert und abgegeben, wie Ihr Plan es verlangt ([Checkliste Schriftgut](checkliste-schriftgut.md)).
 - [ ] Fehlende Übersetzungen nachverfolgt ([Checkliste Mehrsprachigkeit](checkliste-mehrsprachigkeit.md)).
@@ -59,22 +59,23 @@ verweist auf die ausführlichen Checklisten.
 
 ## Menschen und Verträge
 
-- [ ] Neue Mitarbeitende geschult; Schulungsmaterial nach Aktualisierungen angepasst ([Schulung in der Beschaffung](../../../../eng-us/help/government/procurement/training/README.md)).
+- [ ] Neue Mitarbeitende geschult; Schulungsmaterial nach Aktualisierungen angepasst ([Schulung in der Beschaffung](../beschaffung/schulung/README.md)).
 - [ ] Service-Level eingehalten; Berichte der Dienstleister erhalten.
-- [ ] Vertragsenden und Kündigungsfristen notiert ([Das Ende eines Vertrags](../../../../eng-us/help/government/procurement/lifecycle/end-of-a-contract.md)).
+- [ ] Vertragsenden und Kündigungsfristen notiert ([Das Ende eines Vertrags](../beschaffung/lebenszyklus/ende-eines-vertrags.md)).
 - [ ] Ausstiegsplan aktualisiert und ein Exporttest durchgeführt ([Bereitschaft für den Ausstieg](bereitschaft-fuer-den-ausstieg.md)).
 - [ ] Die Dokumentation der Website ist aktuell und liegt bei Ihrer Organisation.
 
 ## Verwandte Seiten
 
 - [Checklisten für Verwaltungen](README.md)
-- [Eine Website über einen mehrjährigen Vertrag aktuell halten](../../../../eng-us/help/government/procurement/lifecycle/keeping-a-site-current.md)
+- [Eine Website über einen mehrjährigen Vertrag aktuell halten](../beschaffung/lebenszyklus/eine-website-aktuell-halten.md)
 - [Monatlicher Betrieb (für Hoster)](../../hosting/checklisten/checkliste-fuer-den-monatlichen-betrieb.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

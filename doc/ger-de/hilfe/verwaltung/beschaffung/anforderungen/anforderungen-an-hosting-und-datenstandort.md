@@ -59,9 +59,9 @@ Füllen Sie die Lücken nach Ihrem eigenen Bedarf aus; diese Hilfe schlägt kein
 | Betriebssysteme | Stufen von „tested here“ bis „not possible today“ ([Unterstützung von Betriebssystemen](../../../betriebssystemunterstuetzung.md)) |
 | PHP | 8.0 ist die älteste unterstützte Version; 8.5 die neueste getestete ([Anforderungen](../../../../installation/02-voraussetzungen.md)) |
 | Mehrere Webknoten | Brauchen einen Datenbankserver und gemeinsamen Speicher ([Mehrere Webknoten](../../../hosting/betrieb/mehrere-web-knoten.md)) |
-| HTTPS auf Velocity | Zertifikatsverwaltung einschließlich ACME ([HTTPS-Zertifikate von Velocity](../../../../../eng-us/features/6.0/velocity-https-certificates.md)) |
+| HTTPS auf Velocity | Zertifikatsverwaltung einschließlich ACME ([HTTPS-Zertifikate von Velocity](../../../../funktionen/6.0/velocity-https-zertifikate.md)) |
 | Die Administration beschränken | [Die Administration beschränken](../../../hosting/sicherheit/die-administration-einschraenken.md) |
-| Ausgehende Verbindungen im Produkt | **Setup > Updates and packages** holt Composer-Pakete von Paketservern; E-Mails gehen an den konfigurierten Transport; Erweiterungen wie Analyse oder CAPTCHA kontaktieren bei Aktivierung Dritte ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)) |
+| Ausgehende Verbindungen im Produkt | **Setup > Updates and packages** holt Composer-Pakete von Paketservern; E-Mails gehen an den konfigurierten Transport; Erweiterungen wie Analyse oder CAPTCHA kontaktieren bei Aktivierung Dritte ([Datenschutzstandards](../../../../standards/datenschutz.md)) |
 
 ## Wo personenbezogene Daten und Schlüssel liegen
 
@@ -90,8 +90,9 @@ Die Antwort eines Bieters auf HOS-01 sollte all das abdecken, aus
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -14,10 +14,12 @@ A view of the `content` module, defined in `kernel/content/module.php` and run b
 ## Address
 
 ```text
-/content/job/<JobID>
+/content/job/<JobID>/(json)/<Json>/(log)/<Log>
 ```
 
 Ordered parameters, in this order after the view name: `JobID`.
+
+Unordered parameters, in any order as `/(name)/value`: `(json)` sets `Json`, `(log)` sets `Log`.
 
 ## Who may open it
 
@@ -40,6 +42,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/content/job/1'|ezurl}>content/job</a>
+<a href={concat( '/content/job/1/(json)/', 1 )|ezurl}>content/job</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

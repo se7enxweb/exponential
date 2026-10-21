@@ -31,7 +31,7 @@ schließen diese Tür größtenteils. Jeder Abschnitt sagt, was Exponential bere
 
 | Entscheidung | Standard | Empfehlung zur Überlegung | Quelle |
 |---|---|---|---|
-| Mindestlänge des Passworts | 10 in einer neuen Installation | länger, zum Beispiel 15, wie der Härtungsleitfaden vorschlägt | [Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md) |
+| Mindestlänge des Passworts | 10 in einer neuen Installation | länger, zum Beispiel 15, wie der Härtungsleitfaden vorschlägt | [Ihr Passwort ändern](../../../funktionen/6.0/moderne-passwortaenderung.md) |
 | Gängige Passwörter ablehnen | an (`WeakPasswordCheck=enabled`) | eingeschaltet lassen | dieselbe |
 | Weitere Regeln (Ziffern, Sonderzeichen, nicht der Benutzername) | aus | `ForbidLogin` und `ForbidCurrentPassword` einschalten | dieselbe |
 | Zweistufige Anmeldung | Benutzer entscheiden sich selbst dafür | für Administratoren und Redakteure verlangen | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
@@ -49,7 +49,7 @@ schließen diese Tür größtenteils. Jeder Abschnitt sagt, was Exponential bere
 - Dieselben Regeln gelten für jedes Formular, das ein Passwort setzt: Registrierung, Bearbeitung des Kontos, die Seite
   zum Ändern und die Kommandozeile.
 
-Quelle: [Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md#the-rules). Passwörter werden als
+Quelle: [Ihr Passwort ändern](../../../funktionen/6.0/moderne-passwortaenderung.md#die-regeln). Passwörter werden als
 bcrypt-Hashes gespeichert ([Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung)).
 
 ## Zweistufige Anmeldung
@@ -77,26 +77,26 @@ Die Sicht für Intranets steht in [Zweistufige Anmeldung für Intranets](../intr
 
 ## Wenn ein Passwort geändert oder vergessen wird
 
-Aus [Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md):
+Aus [Ihr Passwort ändern](../../../funktionen/6.0/moderne-passwortaenderung.md):
 
 - Die Seite zum Ändern listet die Anforderungen auf und meldet jedes Problem neben seinem Feld.
-- Nach einer Änderung bleibt der Benutzer mit einer neuen Session-ID angemeldet; andere Sessions auf anderen Geräten
+- Nach einer Änderung bleibt der Benutzer mit einer neuen Sitzungs-ID angemeldet; andere Sitzungen auf anderen Geräten
   werden bei ihrer nächsten Anfrage abgemeldet. Das geschieht auch, wenn ein Administrator das Passwort ändert.
 - Eine E-Mail „Ihr Passwort wurde geändert“ geht an die Adresse des Kontos. Sie enthält nie das Passwort, und niemand
   kann sie ausschalten.
-- Jede Änderung und jede abgelehnte Änderung wird im Audit-Trail festgehalten, nie das Passwort selbst.
+- Jede Änderung und jede abgelehnte Änderung wird im Prüfprotokoll festgehalten, nie das Passwort selbst.
 - „Passwort vergessen?“ antwortet für jede Adresse gleich, verrät also nicht, welche Konten existieren
   ([Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung)).
 
 Ein Administrator, der keinen Zugang mehr hat, kann auf der Kommandozeile ein neues Passwort setzen
-([Ein Benutzerpasswort zurücksetzen](../../../../eng-us/features/6.0/reset-user-password.md)).
+([Ein Benutzerpasswort zurücksetzen](../../../funktionen/6.0/benutzerpasswort-zuruecksetzen.md)).
 
 ## Administratorkonten
 
 - Kein Installer von Exponential 6 lässt das alte Standardpasswort bestehen
   ([Das Standard-Administratorpasswort](../../standard-administratorpasswort.md)).
 - Geben Sie jedem Administrator ein persönliches Konto und stellen Sie die gemeinsam genutzte Anmeldung `admin` ein,
-  damit der Audit-Trail zeigt, wer was getan hat ([Das Administratorpasswort ändern](../../administratorpasswort-aendern.md#kontenhygiene)).
+  damit das Prüfprotokoll zeigt, wer was getan hat ([Das Administratorpasswort ändern](../../administratorpasswort-aendern.md#kontenhygiene)).
 - Halten Sie die Zahl der Administratoren klein; geben Sie anderen Rollen mit nur dem, was sie brauchen
   ([Zugriffsprüfungen](zugriffspruefungen.md)).
 - Erwägen Sie einen eigenen Hostnamen oder eine Netzwerkbeschränkung für die Administration
@@ -109,7 +109,7 @@ von Tagen (standardmäßig 180) nicht gesehen wurden, deaktiviert, gesperrt oder
 oder eine E-Mail-Adresse teilen. Ausgewählte Konten lassen sich in einem Schritt deaktivieren, aktivieren oder
 entsperren, und die Liste lässt sich als CSV exportieren. Nichts auf der Seite entfernt ein Konto; eine optionale
 Einstellung **Deaktivieren und verschieben** verschiebt deaktivierte Konten in eine verborgene Gruppe ohne Rollen
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 Tun Sie das mindestens einmal im Jahr und jedes Mal, wenn jemand geht: [Zugriffsprüfungen](zugriffspruefungen.md) enthält
 die Schritte.
@@ -139,8 +139,8 @@ Approved by: [name, role]   Next review: [date]
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für die Leitung der Katalogisierung und den Website-Ersteller, die vereinbaren, wie Einträge gespeichert
 werden. Sie zeigt, wie ein typischer Eintrag auf eine Inhaltsklasse abgebildet wird, welcher mitgelieferte Datentyp zu
 jedem Feld passt und wie Einträge mit Personen und Sammlungen zusammenhängen. Die allgemeinen Regeln stehen unter
-[Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md); diese Seite wendet sie
+[Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md); diese Seite wendet sie
 auf Kataloge an.
 
 ## Inhalt
@@ -30,8 +30,8 @@ auf Kataloge an.
 
 In Exponential ist jede Art von Eintrag eine **Inhaltsklasse** (zum Beispiel „Buch“), jeder Eintrag ein
 **Inhaltsobjekt** dieser Klasse und jedes Feld ein **Attribut** mit einem **Datentyp**, der bestimmt, was es speichert
-und wie es bearbeitet wird ([Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)).
-Das Produkt liefert 35 Datentypen mit ([Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md));
+und wie es bearbeitet wird ([Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)).
+Das Produkt liefert 35 Datentypen mit ([Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md));
 Erweiterungen fügen weitere hinzu, etwa das Tag-Feld von `eztags`.
 
 ## Ein Eintrag Feld für Feld
@@ -42,7 +42,7 @@ Eine durchgearbeitete Zuordnung für einen Bucheintrag. Passen Sie die Kennungen
 |---|---|---|
 | Titel | `ezstring` (Textzeile) | Kurzer Text, im Objektnamen verwendet |
 | Untertitel | `ezstring` | Optional |
-| ISBN | `ezisbn` | Ein mitgelieferter Datentyp für ISBNs ([Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md#the-shipped-datatypes)) |
+| ISBN | `ezisbn` | Ein mitgelieferter Datentyp für ISBNs ([Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md#die-mitgelieferten-datentypen)) |
 | Andere Kennungen (Signatur, Inventarnummer) | `ezstring` oder `ezidentifier` | Nicht übersetzbar |
 | Urheber (Autoren, Herausgeber) | `ezobjectrelationlist` | Mehrere verknüpfte Person-Objekte, in Reihenfolge |
 | Verlag | `ezobjectrelation` oder `ezstring` | Eine Relation, wenn Sie Verlage beschreiben, sonst eine Textzeile |
@@ -59,7 +59,7 @@ Eine durchgearbeitete Zuordnung für einen Bucheintrag. Passen Sie die Kennungen
 Die Tabelle „choosing by need“ der Anleitung für Website-Ersteller nennt dieselben Entscheidungen mit Alternativen, zum
 Beispiel „A date to sort or filter by: `ezdate` or `ezdatetime`“ und „Several related items (authors, related
 articles): `ezobjectrelationlist`“
-([Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md#choosing-by-need)).
+([Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md#nach-bedarf-wählen)).
 
 > **Tipp**
 > Fragen Sie bei jedem Feld: „Wird jemand danach sortieren, filtern oder stöbern?“ Wenn ja, geben Sie ihm einen
@@ -70,22 +70,22 @@ articles): `ezobjectrelationlist`“
 Modellieren Sie Urheber als eigene Klasse (Person, Organization) und verknüpfen Sie Einträge mit ihnen. Dann:
 
 - listet eine Personenseite über umgekehrte Relationen alles auf, was die Person geschrieben hat („everything that
-  points to this object“, [Relationen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md#reverse-relations));
+  points to this object“, [Relationen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md#rückwärtsrelationen));
 - wird eine Korrektur an einem Namen einmal vorgenommen;
 - kann die Person eigene Felder tragen (Daten, Biografie, Porträt).
 
 Relationsfelder können einschränken, welche Klassen gewählt werden dürfen, sodass Redakteure im Feld Urheber nur eine
 Person wählen können (Optionen des Datentyps,
-[Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#attribute-settings)).
+[Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#attributeinstellungen)).
 
 ## Sammlungen und Reihen
 
 Eine Sammlung, eine Reihe oder ein Regal ist ein **Container**: eine Klasse, deren Objekte Unterelemente haben. Einträge
 liegen dann unterhalb ihrer Sammlung im Inhaltsbaum, was das Menü und die URLs ergibt
-([Ihr Inhaltsmodell entwerfen, Containers and children](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md#containers-and-children)).
+([Ihr Inhaltsmodell entwerfen, Containers and children](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md#container-und-unterelemente)).
 Ein Eintrag, der zu mehreren Sammlungen gehört, kann zusätzliche Orte haben oder stattdessen von jeder Sammlung aus
 verknüpft werden. Themen, die quer durch Sammlungen gehen, gehören in Tags, nicht in den Baum
-([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md#when-to-use-tags)).
+([Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md#wann-sie-tags-verwenden)).
 
 ## Pflicht, durchsuchbar und übersetzbar
 
@@ -96,7 +96,7 @@ verknüpft werden. Themen, die quer durch Sammlungen gehen, gehören in Tags, ni
 | Übersetzbar | Titel und Zusammenfassungen, wenn Sie in mehreren Sprachen beschreiben; nicht ISBN, Daten oder Signaturen |
 | Kategorie | Felder in Tabs gruppieren: Beschreibung, Kennungen, Dateien, Intern |
 
-Quelle: [Inhaltsklassen für Websites, Attribute settings](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#attribute-settings).
+Quelle: [Inhaltsklassen für Websites, Attribute settings](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#attributeinstellungen).
 Bildfelder können einen Alternativtext verlangen, was die Barrierefreiheit von Covern und Scans unterstützt.
 
 ## Namen und Adressen von Einträgen
@@ -104,14 +104,14 @@ Bildfelder können einen Alternativtext verlangen, was die Barrierefreiheit von 
 Das **Muster für den Objektnamen** bildet den Namen jedes Eintrags aus seinen Feldern, zum Beispiel `<title>` oder
 `<short_title|title>` (das erste, das nicht leer ist). Das **Muster für den URL-Alias** bildet die Adresse; leer
 bedeutet den Objektnamen
-([Inhaltsklassen für Websites, Class settings](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#class-settings)).
+([Inhaltsklassen für Websites, Class settings](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#klasseneinstellungen)).
 Lesbare Adressen helfen Lesern und Suchmaschinen; siehe
-[URL-Aliase und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md).
+[URL-Aliase und sprechende URLs](../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md).
 
 ## Das Modell später ändern
 
 Manche Änderungen sind bei einem laufenden Katalog sicher, andere nicht
-([Eine Klasse auf einer laufenden Website ändern](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md#changing-a-class-on-a-live-site)):
+([Eine Klasse auf einer laufenden Website ändern](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md#eine-klasse-auf-einer-live-website-ändern)):
 
 | Änderung | Sicher? |
 |---|---|
@@ -139,14 +139,14 @@ Entwicklungskopie und übertragen Sie sie als Paket.
 
 - [Bibliotheken und Kataloge](README.md)
 - [Katalog planen](katalog-planen.md)
-- [Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md)
+- [Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md)
 - [Inhaltsmodell und Bearbeitung (Anleitung)](../../../anleitungen/inhaltsmodell-und-bearbeitung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

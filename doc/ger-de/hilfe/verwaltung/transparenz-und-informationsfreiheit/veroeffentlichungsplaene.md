@@ -45,12 +45,12 @@ Für jede Informationsart sagt ein Veröffentlichungsplan üblicherweise:
 4. Lassen Sie die Vollansicht des Ordners die Unterobjekte mit ihrer Zusammenfassung und ihrem Link auflisten.
 
 Da jeder Eintrag ein Objekt ist, hat er Versionen, lässt sich in jede Inhaltssprache übersetzen, und Änderungen stehen
-im Audit-Trail ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+im Prüfprotokoll ([Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md), [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Eine Klasse für die Einträge
 
 Legen Sie unter **Setup > Klassen** eine Klasse `scheme_entry` an
-([Inhaltsklassen für Websites](../../../../eng-us/help/creators/website-creators/content-classes-for-websites.md)):
+([Inhaltsklassen für Websites](../../ersteller/website-ersteller/inhaltsklassen-fuer-websites.md)):
 
 | Attribut | Datentyp | Hinweis |
 |---|---|---|
@@ -64,7 +64,7 @@ Legen Sie unter **Setup > Klassen** eine Klasse `scheme_entry` an
 | Zuletzt geprüft | Datum | wird auf der Seite ausgegeben |
 
 Objektrelationen halten Links korrekt, wenn das Ziel verschoben wird, weil sie auf das Objekt zeigen, nicht auf eine
-Adresse ([Relationen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
+Adresse ([Relationen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
 
 ## Ihn genau halten
 
@@ -84,13 +84,14 @@ Adresse ([Relationen und Wiederverwendung](../../../../eng-us/help/creators/webs
 ## Verwandte Seiten
 
 - [Proaktive Veröffentlichung](proaktive-veroeffentlichung.md)
-- [Relationen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)
-- [Link- und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)
+- [Relationen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)
+- [Link- und Inhaltsprüfungen](../../ersteller/website-ersteller/link-und-inhaltspruefungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

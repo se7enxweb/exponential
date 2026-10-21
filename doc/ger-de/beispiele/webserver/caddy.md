@@ -167,7 +167,7 @@ teilt, ist das, was Velocity mit seiner Engine `frankenphp` ausliefert.
 
 - [FrankenPHP](frankenphp.md): dasselbe Routing mit in den Server eingebautem PHP.
 - [Kapitel 8, Abschnitt 8.4: FrankenPHP](../../installation/08-die-website-ausliefern.md#84-frankenphp) und
-  [FrankenPHP als Web-Engine von Exponential](../../../eng-us/bc/6.0/frankenphp.md) (auf Englisch).
+  [FrankenPHP als Web-Engine von Exponential](../../bc/6.0/frankenphp.md) (auf Englisch).
 - [Kapitel 13, Abschnitt 13.2: Was der Webserver niemals ausliefern darf](../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf).
 - [PHP-FPM-Pool](php-fpm.md), [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert werden.

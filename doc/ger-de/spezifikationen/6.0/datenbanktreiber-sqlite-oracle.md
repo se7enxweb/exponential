@@ -9,5 +9,5 @@ Diese Seite wurde verschoben. Ihr Inhalt wurde in zwei Seiten zusammengeführt, 
 
 ## Verwandte Seiten
 
-- [SQLite-Datenbankunterstützung](../../../eng-us/features/6.0/sqlite-database.md), [SQLite-Transaktionen](../../../eng-us/bc/6.0/sqlite-transactions.md)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- [SQLite-Datenbankunterstützung](../../funktionen/6.0/sqlite-datenbank.md), [SQLite-Transaktionen](../../bc/6.0/sqlite-transaktionen.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik Oktober 2026](../../geschichte/2026/2026-10.md)

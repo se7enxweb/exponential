@@ -45,7 +45,7 @@ verknüpft ([Aufbau einer Dokumentenbibliothek](aufbau-einer-dokumentenbibliothe
 | Ein Schlagwortbaum für die ganze Site | Dokumente, Nachrichten und Leistungen teilen sich Themen |
 | Geschlossenes Vokabular für Dokumente | **Limit by tags subtree** am Attribut; Redakteure wählen, das Webteam fügt Schlagworte hinzu |
 | Synonyme | für die Wörter, die Menschen verwenden ([Lebenslagen und Themen](../leistungskatalog/lebenslagen-und-themen.md)) |
-| Schlagwortseiten | `/tags/view/<tag>` listet alles mit dem Schlagwort ([Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)) |
+| Schlagwortseiten | `/tags/view/<tag>` listet alles mit dem Schlagwort ([Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)) |
 
 ## Metadaten für Suchmaschinen
 
@@ -69,12 +69,13 @@ Quellprogramm, denn Suchmaschinen zeigen bei einem PDF-Treffer den eigenen Titel
 
 - [Dokumente und Publikationen](README.md)
 - [Versionen von Dokumenten](versionen-von-dokumenten.md)
-- [eztags](../../../../../eng-us/features/6.0/extensions/eztags.md)
+- [eztags](../../../../funktionen/6.0/erweiterungen/eztags.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

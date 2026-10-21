@@ -33,7 +33,7 @@ ein Upgrade-Projekt; [Upgrade](../../../anleitungen/aktualisieren.md) hat einen 
 - In der Administration: **Setup > Systeminformationen** nennt die Version
   ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 - **Info > Über** listet die Version von Exponential und von jeder Erweiterung
-  ([Die Seiten Über und Copyright](../../../../eng-us/features/6.0/about-and-package-pages.md)).
+  ([Die Seiten Über und Copyright](../../../funktionen/6.0/info-und-paketseiten.md)).
 - Fragen Sie Ihren Anbieter: Ein Anbieter, der ein Verzeichnis der Websites seiner Kunden führt, kann sofort antworten
   ([Kunden aktuell halten](../../partner/kunden-websites-aktuell-halten.md)).
 
@@ -59,7 +59,7 @@ Fragen Sie Ihren Hoster, welche PHP-Versionen er anbietet und wann er eine einst
 ## Erweiterungen haben eigene Versionen
 
 Jede Erweiterung trägt ihre eigene Version, angezeigt unter **Setup > Extensions** und **Info > Über**
-([Liste der Erweiterungen](../../../../eng-us/features/6.0/extension-list-and-downloads.md)). Eine Erweiterung, die nicht mehr
+([Liste der Erweiterungen](../../../funktionen/6.0/extension-liste-und-downloads.md)). Eine Erweiterung, die nicht mehr
 gepflegt wird, kann ein Upgrade aufhalten. Fragen Sie Ihren Anbieter einmal im Jahr, welche Erweiterungen die Website
 verwendet und ob jede noch gepflegt wird.
 
@@ -85,3 +85,11 @@ aktualisiert wird, kommt aus Ihrem Vertrag mit Ihrem Anbieter oder mit 7x.
 - [Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md)
 - [Wer ist 7x?](../../wer-ist-7x.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

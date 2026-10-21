@@ -44,7 +44,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: `kernel/classes/ezpersistentobject.php` (die Definition ist oberhalb von `definition()` dokumentiert),
-[Standards für Datenbanken und SQL](../../../../../eng-us/standards/databases-and-sql.md#the-ezdb-rules-for-safe-sql) und
+[Standards für Datenbanken und SQL](../../../../standards/datenbanken-und-sql.md#die-ezdb-regeln-für-sicheres-sql) und
 Kernel-Klassen, die sie verwenden, etwa `kernel/classes/ezrole.php`.
 
 1. **Die Definition** (6 Minuten). Gehen Sie `mysiteGreeting::definition()` durch: Jedes Feld hat einen `name` (den
@@ -211,9 +211,9 @@ Auf der Entwicklungsinstallation auf SQLite, in `extension/mysite_hello`.
 
 ## Weiterführende Literatur
 
-- [Standards für Datenbanken und SQL](../../../../../eng-us/standards/databases-and-sql.md): sicheres SQL, Dialekte, Schemas.
+- [Standards für Datenbanken und SQL](../../../../standards/datenbanken-und-sql.md): sicheres SQL, Dialekte, Schemas.
 - [Datenbankunterstützung](../../../datenbankunterstuetzung.md): auf welchen Datenbanken Exponential läuft.
-- [SQLite als Datenbank](../../../../../eng-us/features/6.0/sqlite-database.md).
+- [SQLite als Datenbank](../../../../funktionen/6.0/sqlite-datenbank.md).
 
 ## Verwandte Seiten
 
@@ -223,9 +223,9 @@ Auf der Entwicklungsinstallation auf SQLite, in `extension/mysite_hello`.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

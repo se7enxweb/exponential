@@ -123,7 +123,7 @@ WeakPasswordFile=settings/weak-passwords.txt   # one word per line, # for commen
 
 `WeakPasswordCheck=disabled` schaltet die Prüfung für die Formulare ab; die Installer prüfen immer. Ein bestehendes
 Passwort wird bei der Anmeldung nie abgelehnt: Die Liste greift, wenn ein Passwort gesetzt wird. Einzelheiten:
-[der Upgrade-Hinweis](../../eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md).
+[der Upgrade-Hinweis](../bc/6.0/schwache-passwoerter-und-gueltigkeit-von-reset-links.md).
 
 ## Die mitgelieferte Datenbank-Grundausstattung: publish
 
@@ -208,3 +208,11 @@ Die Schritte, und warum `UserCreatorID` wichtig ist, stehen unter
   [Kapitel 5: der Einrichtungsassistent](../installation/05-setup-assistent.md), [Kapitel 6: der Kickstarter](../installation/06-kickstarter.md),
   [Kapitel 7: die Konsoleninstallation](../installation/07-installation-ueber-die-konsole.md)
 - [Kapitel 13: Sicherheitshärtung für die Produktion](../installation/13-sicherheitshaertung.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -13,7 +13,7 @@ Diese Seite richtet sich an die Fachkraft für Barrierefreiheit in einem Bewertu
 Barrierefreiheit der **Software** (die Administration, die die Redaktion verwendet) von der Barrierefreiheit der
 **Website** (die öffentlichen Seiten, die Bürgerinnen und Bürger nutzen), gibt an, was die Dokumentation von Exponential
 für beide belegt, und listet die Tests auf, die Sie selbst durchführen können. Die Fakten stammen aus
-[Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md); diese Seite wertet deren Statusangaben nie auf.
+[Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md); diese Seite wertet deren Statusangaben nie auf.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -45,22 +45,22 @@ Vereinigten Staaten gilt [Section 508](https://www.section508.gov/) für Bundesb
 
 | Standard | Status in der Dokumentation | Genannte Nachweise |
 |---|---|---|
-| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Stufe AA | **Partly complies** (admin4 und admin4l gegen AA-Kriterien entworfen und durch Regressionstests abgesichert) | Designtests in `tests/tests/design/` für Beschriftungen, Landmarks, Fehler, Kontrast im hellen und dunklen Modus, Tastatur, Zielgröße |
-| [WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/) | **Partly complies** für admin4/admin4l | Muster für Reiter, Aufklappen und Menüs an Template-Quellen getestet |
-| EN 301 549 v3.2.1 | **Unverified** | keine Bewertung gegen die Norm; Abschnitt 11.8 (Autorenwerkzeuge) nicht überprüft |
-| Section 508 | **Unverified** | kein VPAT und kein Accessibility Conformance Report |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Stufe AA | **Teilweise erfüllt** (admin4 und admin4l gegen AA-Kriterien entworfen und durch Regressionstests abgesichert) | Designtests in `tests/tests/design/` für Beschriftungen, Landmarks, Fehler, Kontrast im hellen und dunklen Modus, Tastatur, Zielgröße |
+| [WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/) | **Teilweise erfüllt** für admin4/admin4l | Muster für Reiter, Aufklappen und Menüs an Template-Quellen getestet |
+| EN 301 549 v3.2.1 | **Nicht geprüft** | keine Bewertung gegen die Norm; Abschnitt 11.8 (Autorenwerkzeuge) nicht geprüft |
+| Section 508 | **Nicht geprüft** | kein VPAT und kein Accessibility Conformance Report |
 
 Manuelle axe-Läufe und ihre Ergebnisse sind im [Changelog von 6.0.15](../../../../../changelogs/6.0/6.0.15.md)
 festgehalten; axe läuft nicht in der CI.
 
 ## Was nicht belegt ist
 
-Aus den bekannten Lücken der [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md):
+Aus den bekannten Lücken der [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md):
 
 - Designs öffentlicher Websites (standard, base, plain, die Websitepakete und Themes) sind **nicht geprüft**.
 - Die klassische Administration und admin3 sind nicht von den Tests für Kontrast, Landmarks und Formularfehler
   abgedeckt.
-- Der Online-Editor (Integrationen von TinyMCE) ist **Unverified**.
+- Der Online-Editor (Integrationen von TinyMCE) ist **nicht geprüft**.
 - Separat ausgelieferte Erweiterungen werden einzeln überprüft; es gibt keine Gesamterklärung.
 - Es gibt keine Bewertung nach WCAG-EM, kein VPAT und keinen Accessibility Conformance Report.
 - Mit dem Produkt wird keine Vorlage für eine Erklärung zur Barrierefreiheit ausgeliefert.
@@ -72,8 +72,8 @@ des Produkts. Halten Sie es als nicht belegte Behauptung fest.
 ## Was der Bieter liefern soll
 
 1. Einen Plan zur Barrierefreiheit für das öffentliche Design: die Kriterien von WCAG 2.2 AA, die es anstrebt, und wie
-   es sie testet ([Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md),
-   [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)).
+   es sie testet ([Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md),
+   [Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)).
 2. Einen Konformitätsbericht für die gelieferte Website, erstellt mit einer Methode wie
    [WCAG-EM](https://www.w3.org/TR/WCAG-EM/), vor der Abnahme.
 3. Einen Entwurf einer Erklärung zur Barrierefreiheit für die Website, nach dem
@@ -81,7 +81,7 @@ des Produkts. Halten Sie es als nicht belegte Behauptung fest.
 4. Welches Administrationsdesign Ihre Redaktion verwenden wird (admin4 ist das getestete), und jede Erweiterung, die das
    Angebot hinzufügt, mit eigenen Nachweisen zur Barrierefreiheit.
 5. Schulung der Redaktion zu barrierefreien Inhalten
-   ([Editors 201, Qualität und Barrierefreiheit](../../../../../eng-us/help/trainers/editors-201/README.md)).
+   ([Editors 201, Qualität und Barrierefreiheit](../../../trainer/redakteure-201/README.md)).
 
 ## Tests, die Sie selbst durchführen können
 
@@ -105,13 +105,14 @@ des Produkts. Halten Sie es als nicht belegte Behauptung fest.
 ## Verwandte Seiten
 - [Bewertung: Übersicht](README.md)
 - [Beschaffung: Übersicht](../README.md)
-- [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)
-- [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md)
+- [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)
+- [Das Design admin4](../../../../funktionen/6.0/admin4-design.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -41,7 +41,7 @@ dieselbe Disziplin auf Ihre Berichterstattung an.
 | PHP-Versionen | README, „What version of PHP is required“ |
 | Datenbanken | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Betriebssysteme | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
-| Sprachen, Rechts-nach-links | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| Sprachen, Rechts-nach-links | [Sprachen in Exponential](../../sprachen.md) |
 | Inhaltsmodell | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
 | Multisite | [Thema: Multisite](thema-multisite.md) |
 | Eingebauter Shop | README, „Main Exponential features“ |
@@ -96,8 +96,8 @@ Offenlegung          <Ihre Beziehung zu jedem Produkt>
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

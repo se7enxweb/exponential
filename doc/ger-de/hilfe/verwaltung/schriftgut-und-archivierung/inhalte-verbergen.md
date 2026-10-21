@@ -39,7 +39,7 @@ In der Administration, beim Eintrag: die Aktion **Verstecken** (oder **Verstecke
 ## Sehen, was versteckt ist
 
 admin4 kennzeichnet die Sichtbarkeit auf einen Blick
-([Das Design admin4: Sichtbarkeit und Kontostatus](../../../../eng-us/features/6.0/admin4-design.md#visibility-and-account-status)):
+([Das Design admin4: Sichtbarkeit und Kontostatus](../../../funktionen/6.0/admin4-design.md#sichtbarkeit-und-kontostatus)):
 
 | Kennzeichen | Bedeutung |
 |---|---|
@@ -68,13 +68,14 @@ Bekanntmachungen archivieren“.
 ## Verwandte Seiten
 
 - [Alte Bekanntmachungen archivieren](alte-bekanntmachungen-archivieren.md)
-- [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
+- [Das Design admin4](../../../funktionen/6.0/admin4-design.md)
 - [Inhalte bearbeiten](../../inhalte-bearbeiten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -18,7 +18,7 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 
 | Fragen Sie | Eine gute Antwort |
 |---|---|
-| Welche Erweiterungen verwendet die Website, und wer pflegt jede davon? | Eine Liste mit Versionen; **Setup > Extensions** zeigt sie an ([Liste der Erweiterungen](../../../../eng-us/features/6.0/extension-list-and-downloads.md)) |
+| Welche Erweiterungen verwendet die Website, und wer pflegt jede davon? | Eine Liste mit Versionen; **Setup > Extensions** zeigt sie an ([Liste der Erweiterungen](../../../funktionen/6.0/extension-liste-und-downloads.md)) |
 | Welche Teile sind individuell: Templates, Designs, Erweiterungen, Inhaltsklassen? | Eine Liste, und wo der Code aufbewahrt wird |
 | Haben Sie Dateien von Exponential selbst geändert? | Im Idealfall keine; jede Änderung wird in einer Versionsverwaltung gehalten und erscheint in der Upgrade-Prüfung ([Upgrade-Prüfung und Dateikonsistenz](../../unternehmen/zuverlaessigkeit/upgrade-pruefung-und-dateikonsistenz.md)) |
 | Wo wird der Code unserer Website aufbewahrt? | Ein Git-Repository, das Ihnen gehört oder das Sie kopieren können ([Einen Partner auswählen](../../unternehmen/auswahl/einen-partner-auswaehlen.md)) |
@@ -72,3 +72,11 @@ Vertrags und einmal im Jahr. Für die Auswahl eines neuen Partners stehen die au
 - [Einen Partner auswählen](../partner-und-hoster/einen-partner-auswaehlen.md)
 - [Ihren Anbieter jedes Jahr überprüfen](../partner-und-hoster/anbieter-jedes-jahr-ueberpruefen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

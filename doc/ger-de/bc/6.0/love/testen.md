@@ -20,7 +20,7 @@ php vendor/bin/phpunit --group database tests/tests/kernel/content/eZAuditLocati
 ```
 
 Um nur die Tests der Dateien auszuführen, die eine Änderung berührt hat (statt der ganzen Suite), siehe
-[nur die Tests einer Änderung ausführen](../../../../eng-us/features/6.0/quality-checks.md#run-only-the-tests-of-a-change):
+[nur die Tests einer Änderung ausführen](../../../funktionen/6.0/qualitaetspruefungen.md#nur-die-tests-einer-änderung-ausführen):
 `tests/test-map.json` ordnet Quelldateien, Templates und Skripte den Tests zu, die sie abdecken.
 
 Ein Test prüft jeden Standardwert, den eine aktualisierte Website behält, sodass eine spätere Änderung eine Funktion
@@ -31,13 +31,13 @@ L07, L08, L10, L13, L14, L18, L19, L22, L23, L27, L29, L30, L32, L33).
 
 Pfade sind relativ zu `tests/tests/`.
 
-### Sicherheit und Sessions
+### Sicherheit und Sitzungen
 
 | ID | Test | Was er prüft |
 |---|---|---|
 | L01 | `extension/ezjscore/ezjscServerRouterPolicyTest.php` | `ezjscnode` wird ohne *ezjscore / call* abgelehnt, wenn `RequirePolicy=enabled` gilt, mit der Richtlinie erlaubt, unverändert bei `disabled` oder ohne Einstellung; 403 nur, wenn jeder Aufruf aus diesem Grund abgelehnt wird |
 | L02 | `kernel/classes/expPolicyOmitListTest.php`, `kernel/content/eZLoginTemplatesRegisterLinkTest.php` | `PolicyOmitListExclude[]` nimmt einen Eintrag heraus, nachdem jede Datei zusammengeführt ist; jedes Anmelde-Template fragt `can_open`, bevor es den Link zum Registrieren zeigt |
-| L03 | `kernel/classes/eZUserLogoutTest.php` | nach dem Abmelden sind die Session und ihre ID weg, über jeden Handler, und das Cookie ist mit demselben Pfad, derselben Domain, `Secure`, `HttpOnly`, `SameSite` abgelaufen; eine weiterlaufende Session wird nicht zurückgeschrieben |
+| L03 | `kernel/classes/eZUserLogoutTest.php` | nach dem Abmelden sind die Sitzung und ihre ID weg, über jeden Handler, und das Cookie ist mit demselben Pfad, derselben Domain, `Secure`, `HttpOnly`, `SameSite` abgelaufen; eine weiterlaufende Sitzung wird nicht zurückgeschrieben |
 | L04 | `kernel/classes/expUserLoginIntegrityTest.php` | Duplikate gefunden (auch nach Groß- und Kleinschreibung), der Index abgelehnt, solange es Duplikate gibt, und danach hinzugefügt |
 | L05 | `kernel/classes/expImageUploadValidatorTest.php`, `extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php` | JPEG, PNG, GIF, WebP, AVIF akzeptiert; eine PHP-Datei namens `.jpg` abgelehnt; SVG abgelehnt, sofern nicht aufgeführt; der AJAX-Uploader lehnt ab, bevor er speichert |
 | L06 | `kernel/classes/packages/eZStylePackageCreatorTest.php` | Vorschaubilder von Paketen und Bilder von Styles anhand ihres Inhalts geprüft |

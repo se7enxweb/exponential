@@ -55,7 +55,7 @@ PHP line (Exponential 6)                    Symfony line (Exponential Platform)
 „Legacy“ und „Nexus“ betreiben Exponential 6 neben Symfony; „Platform 3.2.9“ und „DXP“ nicht
 ([Die Plattform-Linie](../wer-ist-7x.md#die-platform-linie-exponential-platform-legacy-nexus-und-dxp)). Eine Ausnahme:
 Die Nexus-Linie 1.3.0.x für Platform v5 und der v5-Starter haben keinen Legacy-Kernel
-([Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md)).
+([Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md)).
 
 ## Stand am 18. Oktober 2026
 
@@ -63,7 +63,7 @@ Die Nexus-Linie 1.3.0.x für Platform v5 und der v5-Starter haben keinen Legacy-
 |---|---|---|
 | Exponential 6 | 6.0.14 veröffentlicht am 7. Juni 2026; 6.0.15 in Entwicklung | [Release-Übersicht](../../../eng-us/release-overview) |
 | Exponential Basic | v2.4.0.3 | Beschreibung des Repositorys |
-| Velocity | Teil von Exponential seit dem 22. September 2026; das README nennt es als erforderlich in `~0.0.4.54` | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) |
+| Velocity | Teil von Exponential seit dem 22. September 2026; das README nennt es als erforderlich in `~0.0.4.54` | [Chronik von Velocity](../../geschichte/velocity/README.md) |
 | Intelligence, Layouts, AdminUI | Vom Kernel verlangt seit der Linie 6.0.15 | composer.json |
 | Platform DXP | „Stable; Open Source“ | seine composer.json |
 | Nexus-Starter | „Currently In Public Beta“ | die Beschreibung seines Repositorys |
@@ -91,8 +91,8 @@ Genaue Schreibweisen und Kurzformen: [Kurzreferenz zu Namen für Nachrichtenreda
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -28,7 +28,7 @@ mkdir -p extension/expexample/settings \
 
 Der Ordnername ist der Name der Erweiterung: Kleinbuchstaben, Ziffern und Unterstriche. Neuer Code in diesem Projekt
 beginnt mit `exp`; die eigenen Erweiterungen von 7x verwenden `sevenx` oder `exp`, und Ihre eigene Erweiterung
-verwendet Ihr eigenes Präfix ([Namenspräfixe: sevenx und exp](../../../eng-us/standards/naming-prefixes-sevenx-and-exp.md)).
+verwendet Ihr eigenes Präfix ([Namenspräfixe: sevenx und exp](../../standards/namenspraefixe-sevenx-und-exp.md)).
 
 ## 2. ezinfo.php
 
@@ -233,10 +233,10 @@ Gedächtnis, und verschieben Sie niemals einen Tag, der bereits gepusht wurde. D
 - [Kochbuch](README.md) und [Beispiele](../README.md)
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../anleitungen/extensions.md)
 - [Extension-Metadaten](../../spezifikationen/6.0/extension-metadaten.md),
-  [Ladereihenfolge der Erweiterungen](../../../eng-us/features/6.0/extension-loading-order.md),
+  [Ladereihenfolge der Erweiterungen](../../funktionen/6.0/ladereihenfolge-der-extensions.md),
   [Platzierungen von Einstellungs-Overrides](../../spezifikationen/6.0/ini-override-platzierungen.md)
-- [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md): ein Assistent, der dieses Gerüst für Sie schreibt
+- [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md): ein Assistent, der dieses Gerüst für Sie schreibt
 - [INI-Einstellungen](../ini-einstellungen/README.md) und [Erweiterungspunkte](../erweiterungspunkte/README.md)
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

@@ -68,7 +68,7 @@ Neben dem Zeitplan erstellen Sie direkt vor jeder riskanten Änderung ein Backup
 - **einem Upgrade** von Exponential: Der Datenbankschritt lässt sich nicht durch Zurücklegen von Dateien rückgängig machen
   ([11.1](../../../installation/11-aktualisieren.md#111-bevor-sie-beginnen));
 - **einem Composer-Update oder einer Paketinstallation** aus der Administration: ezupdate bittet Sie zu bestätigen, dass ein
-  Backup existiert, bevor Sie **Install updates** wählen ([ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md));
+  Backup existiert, bevor Sie **Install updates** wählen ([ezupdate](../../../funktionen/6.0/erweiterungen/ezupdate.md));
 - **einem Wechsel der Datenbank-Engine** ([Eine Website auf eine andere Datenbank umziehen](../../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen));
 - **einer Wiederherstellung**: Sichern Sie zuerst den aktuellen Zustand, damit eine falsche Wiederherstellung rückgängig
   gemacht werden kann.
@@ -92,9 +92,9 @@ stimmen Sie also beides aufeinander ab:
 | Archive von `404.log` / `security.log` | `logviewer.ini [RotationSettings]` | nach 30 / 90 Tagen bereinigt |
 | Archive anderer Logs | `site.ini [FileSettings] LogFileRotateCount`, `LogFileMaxAge` | 3 Archive, keine Altersgrenze |
 
-Quellen: [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md),
+Quellen: [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md),
 [E-Mail-Einstellungen, Aufbewahrung](../../../anleitungen/mail-einstellungen-administrator.md#9-aufbewahrung-und-der-cronjob),
-[Anfrage-Logs](../../../../eng-us/features/6.0/request-logs.md), [Log-Rotation](../../../../eng-us/features/6.0/log-rotation.md).
+[Anfrage-Logs](../../../funktionen/6.0/anfrageprotokolle.md), [Log-Rotation](../../../funktionen/6.0/log-rotation.md).
 Die Sicherheitsseiten besprechen, was diese Werte für eine Datenschutzrichtlinie bedeuten:
 [Aufbewahrung von Logs und Daten](../sicherheit/aufbewahrung-von-logs-und-daten.md).
 
@@ -138,3 +138,11 @@ Versprechen, die die Plattform nicht von selbst hält:
 - [Compliance und DSGVO](../sicherheit/compliance-und-dsgvo.md)
 - [Monatlicher Betrieb](../checklisten/checkliste-fuer-den-monatlichen-betrieb.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

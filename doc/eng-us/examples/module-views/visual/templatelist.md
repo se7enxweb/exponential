@@ -14,10 +14,10 @@ A view of the `visual` module, defined in `kernel/visual/module.php` and run by 
 ## Address
 
 ```text
-/visual/templatelist/(offset)/<Offset>
+/visual/templatelist/(offset)/<Offset>/(filter)/<Filter>
 ```
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(filter)` sets `Filter`.
 
 ## Who may open it
 

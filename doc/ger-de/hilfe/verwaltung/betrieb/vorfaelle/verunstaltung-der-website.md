@@ -3,8 +3,8 @@ title: Verunstaltung der Website
 audience: government, admin, project-manager
 category: public-sector
 order: 50
-summary: Runbook für eine öffentliche Website, die Inhalte zeigt, die niemand freigegeben hat - mit dem Wartungsmodus eindämmen, herausfinden, ob es über ein Konto (Audit-Trail) oder über die Dateien (Prüfung der Dateikonsistenz) geschah, wiederherstellen und kommunizieren.
-keywords: Verunstaltung, gehackte Website, nicht autorisierte Inhalte, Vandalismus, Kompromittierung, Wartungsmodus, Audit-Trail, checkmanifest, Dateiintegrität, Wiederherstellung, Versionsverlauf, Vorfall, defacement, hacked site, unauthorized content, vandalism, compromise, maintenance mode, audit trail, file integrity, restore, version history, incident
+summary: Runbook für eine öffentliche Website, die Inhalte zeigt, die niemand freigegeben hat - mit dem Wartungsmodus eindämmen, herausfinden, ob es über ein Konto (Prüfprotokoll) oder über die Dateien (Prüfung der Dateikonsistenz) geschah, wiederherstellen und kommunizieren.
+keywords: Verunstaltung, gehackte Website, nicht autorisierte Inhalte, Vandalismus, Kompromittierung, Wartungsmodus, Prüfprotokoll, checkmanifest, Dateiintegrität, Wiederherstellung, Versionsverlauf, Vorfall, defacement, hacked site, unauthorized content, vandalism, compromise, maintenance mode, audit trail, file integrity, restore, version history, incident
 type: help
 ---
 # Verunstaltung der Website
@@ -42,7 +42,7 @@ Sichern Sie Beweise, bevor Sie etwas ändern (Dateien, Datenbank-Dump, `var/log/
 | Wurden Rollen geändert? | die Warnung `admin_role_granted`; Audit-Kanal `access` | ein Konto mit ausgeweiteten Rechten |
 | Haben sich Kernel-Dateien geändert? | `php bin/php/checkmanifest.php --all --extensions` | die Dateien |
 | Gibt es unerwartete PHP-Dateien dort, wo PHP schreiben kann? | `find var/storage -name '*.php'` | die Dateien |
-| Ist der Audit-Trail unversehrt? | `./console exp:audit verify --allow-root-user` | Manipulation |
+| Ist das Prüfprotokoll unversehrt? | `./console exp:audit verify --allow-root-user` | Manipulation |
 
 ## Verunstaltete Inhalte: reparieren
 
@@ -77,14 +77,15 @@ Hosting-Runbooks.
 
 ## Verwandte Seiten
 - [Upgrade-Prüfung als Überwachung](../ueberwachung/upgrade-pruefung-als-ueberwachung.md)
-- [Prüfung des Audit-Trails](../ueberwachung/pruefung-des-audit-trails.md)
+- [Prüfung des Prüfprotokolls](../ueberwachung/pruefung-des-audit-trails.md)
 - [Massenhafter Inhaltsfehler](massenhafter-inhaltsfehler.md)
 - [Sicherheitshärtung](../../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

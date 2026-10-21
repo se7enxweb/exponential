@@ -74,7 +74,7 @@ Für einen Hosting-Anbieter heißt das:
 - **Shared Hosting**: Apache (oder LiteSpeed) mit `.htaccess` und einem PHP-FPM-Pool pro Konto.
 - **VPS und dediziert**: Velocity als Standard; Apache oder nginx, wenn ein Panel die Maschine verwaltet oder der Kunde es
   möchte. Beide können während einer Migration nebeneinander auf denselben Dateien laufen.
-- **Container und Kubernetes**: Velocity als Prozess des Containers, da es keinen getrennten Webserver braucht und HTTPS
+- **Container und Kubernetes**: Velocity als Prozess des Containers, da er keinen getrennten Webserver braucht und HTTPS
   selbst ausliefert; oder ein Webserver-Container vor PHP-FPM.
 
 Details: [Einen Webserver wählen](../server/einen-webserver-waehlen.md) und
@@ -147,3 +147,11 @@ Risks accepted:     <for example a tier 3 system>
 - [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
 - [Hosting-Tarife gestalten](../geschaeft/hosting-tarife-gestalten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

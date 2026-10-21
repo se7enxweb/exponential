@@ -45,7 +45,7 @@ Wer diese Aufgabe besteht, hat gezeigt, dass er Folgendes kann:
 ### So führen Sie sie durch
 
 1. **Vorher**: Schalten Sie den Assistenten auf der Schulungsinstallation ein, wie in
-   [expai: Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md#switch-it-on) beschrieben: die
+   [expai: Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md#einschalten) beschrieben: die
    Erweiterung für den Siteaccess der Administration aktiv, der Schlüssel in
    `settings/override/expai.ini.append.php`, die Tabellen angelegt, die Richtlinien `expai/write` und `ezjscore/call`
    für die Rolle der Teilnehmenden und die Cronjob-Teile `expqueue` und `expai` bei Bedarf von Hand ausgeführt. Setzen
@@ -133,19 +133,19 @@ Fragen für die Nachbesprechung nach der Bewertung.
 <summary>Antworten</summary>
 
 1. Sie. Der Assistent veröffentlicht nie von sich aus
-   ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#in-short)).
+   ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt)).
 2. Ein Modell kann flüssigen Text schreiben, der falsch ist; die Redakteurin bleibt verantwortlich für das, was
    veröffentlicht wird.
 3. Nichts änderte sich, bis Sie veröffentlicht haben; Vorschläge ändern nichts, bis sie angenommen und gespeichert sind
    ([Inhalte erstellen und bearbeiten](../../../inhalte-bearbeiten.md#exponential-intelligence)).
 4. Im Audit, Kanal `ai`, und im Nutzungsprotokoll, das nur Benutzer-IDs enthält
-   ([expai](../../../../../eng-us/features/6.0/extensions/expai.md#for-administrators)).
+   ([expai](../../../../funktionen/6.0/erweiterungen/expai.md#für-administratoren)).
 
 </details>
 
 ## Weiterführende Literatur
 
-- [expai: Exponential Intelligence](../../../../../eng-us/features/6.0/extensions/expai.md): was vor dem Unterricht
+- [expai: Exponential Intelligence](../../../../funktionen/6.0/erweiterungen/expai.md): was vor dem Unterricht
   einzuschalten ist.
 - [Eine Prüfungssitzung durchführen](../modul-01-pruefungen-gestalten/eine-pruefung-durchfuehren.md): ausgefallene
   Übungsumgebungen und verlorene Zeit.
@@ -159,9 +159,9 @@ Fragen für die Nachbesprechung nach der Bewertung.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -84,7 +84,7 @@ Seiten behalten ihren Platz im Index“
 **Was muss gesichert werden?**
 Die Datenbank und die Dateien (`var/storage`, `settings/override`, `settings/siteaccess`, Ihre eigenen Erweiterungen und
 Designs), zur selben Zeit gesichert
-([Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md#what-to-back-up)). Siehe
+([Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md#was-gesichert-wird)). Siehe
 [Backups, die sich wiederherstellen lassen](backups-die-sich-wiederherstellen-lassen.md).
 
 **Woher wissen wir, dass unsere Backups funktionieren?**
@@ -160,9 +160,9 @@ Anfrage ([Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehle
 [Logs und Fehlerreferenzen](logs-und-fehlerreferenzen.md).
 
 **Wer hat diese Einstellung geändert, und wann?**
-Der Audit-Trail zeichnet geschriebene Einstellungen, Deployments, geleerte Caches, Wartung und Änderungen an Inhalten auf
-und kann nachweisen, dass die Aufzeichnung nicht verändert wurde ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
-Siehe [Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md).
+Das Prüfprotokoll zeichnet geschriebene Einstellungen, Deployments, geleerte Caches, Wartung und Änderungen an Inhalten auf
+und kann nachweisen, dass die Aufzeichnung nicht verändert wurde ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
+Siehe [Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md).
 
 **Die Website ist nicht erreichbar. Wo fangen wir an?**
 Mit Ihrem Störungsplan und dem Runbook für eine nicht erreichbare Website. Siehe
@@ -182,8 +182,8 @@ Melden Sie ihn im öffentlichen Tracker; Sicherheitsprobleme gehen vertraulich a
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

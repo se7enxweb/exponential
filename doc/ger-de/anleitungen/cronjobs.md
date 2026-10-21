@@ -12,7 +12,7 @@ und jede Ausgabe ist echt: Sie wurde am 5. Oktober 2026 auf dem Demonstrationsse
 Die Bildschirmfotos zeigen dieselbe Seite, in einer Breite von 1500 Pixeln im hellen Modus des Designs admin4;
 um sie zu erstellen, wurde nichts ausgeführt, angehalten oder geleert.
 
-[Anleitungen](README.md) · Funktionsreferenz: [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md) · Im
+[Anleitungen](README.md) · Funktionsreferenz: [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md) · Im
 Installationshandbuch: [10.3 Cronjobs](../installation/10-nach-der-installation.md#103-cronjobs) · Kürzere Einführung:
 [Betrieb einer Site, Abschnitt 3](betrieb-einer-website.md#3-cronjobs-ausführen)
 
@@ -280,7 +280,7 @@ Jede Karte zeigt von oben:
   das gerade laufende Skript und lässt den Rest aus); **Alle Teile anhalten** in der Statusleiste tut
   dasselbe für jeden Teil. Eine Notiz, die in *Notiz zum Anhalten oder Fortsetzen* eingegeben wird, wird mit dem als Nächstes gedrückten Knopf gespeichert und
   erscheint beim Teil, unter **Pausen** und in der Meldung von `runcronjobs.php`. Siehe
-  [Cronjob-Teile anhalten](../../eng-us/features/6.0/cronjob-pause.md).
+  [Cronjob-Teile anhalten](../funktionen/6.0/cronjobs-pausieren.md).
 - **Zeitplan** oder **Vorgeschlagener Zeitplan** für einen Teil, den nichts ausführt: der Zeitplan in Worten für die gängigen Formen und der
   Cron-Ausdruck daneben. *Jede Minute*, *Alle 5 Minuten*, *Stündlich zur Minute 17*, *Alle 6 Stunden zur Minute
   0* und *Täglich um 03:30* werden in Worten angegeben; alles andere (`0 8 * * 1-5`) wird als Ausdruck gezeigt, der
@@ -354,7 +354,7 @@ der Wörter *error*, *fatal*, *exception*, *failed*, *failure* oder *warning* en
 auf den Karten berücksichtigt diese, die Tabelle zeigt die neuesten 20.
 
 Jede Ausführung eines Cronjob-Teils wird außerdem im Audit-Protokoll als `system.cronjob.run` (oder `system.cronjob.fail`) erfasst,
-egal wer sie gestartet hat: siehe das [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md).
+egal wer sie gestartet hat: siehe das [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md).
 
 ## 11. Skripte, die kein Teil ausführt, und wie Sie eines aktivieren
 
@@ -376,7 +376,7 @@ Scripts[]=session_gc.php
 ```
 
 Leeren Sie den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini --allow-root-user`) und laden Sie die Seite neu: Die Karte
-*Sessions* erscheint, *Nicht geplant*, mit einem vorgeschlagenen Zeitplan von stündlich zur Minute 0. Abschnitt 12 plant sie ein.
+*Sitzungen* erscheint, *Nicht geplant*, mit einem vorgeschlagenen Zeitplan von stündlich zur Minute 0. Abschnitt 12 plant sie ein.
 
 Ein eigenes Skript gehört in `cronjobs/` Ihrer Extension, wobei die Extension in
 `[CronjobSettings] ExtensionDirectories[]` genannt ist. Geben Sie seinem Kopf eine `@description`-Zeile; die Seite, die Suche und
@@ -680,7 +680,7 @@ es sie gibt. Die Texte der Seite sind in `ger-DE` übersetzt.
 | `admininterface.ini` | `PaginationSettings` | `ItemsPerPage[setup/cronjobs]` | `25` | Teil-Karten pro Seite |
 | `menu.ini` | `Leftmenu_setup` | `Links[cronjobs]`, `LinkNames[cronjobs]`, `PolicyList_cronjobs[]` | `setup/cronjobs`, `Cronjobs`, `setup/managecronjobs` | Der Menüeintrag und wer ihn sieht |
 
-Ändern Sie sie mit [exp:ini](../../eng-us/features/6.0/exp-ini-command.md), zum Beispiel
+Ändern Sie sie mit [exp:ini](../funktionen/6.0/exp-ini-befehl.md), zum Beispiel
 `./console exp:ini set cronjob.ini/AdminSettings/PhpCliPath /opt/plesk/php/8.5/bin/php global` (der Geltungsbereich `global`
 schreibt nach `settings/override`), und leeren Sie danach den INI-Cache. `./console exp:ini list cronjob.ini/AdminSettings` zeigt, was gilt:
 
@@ -694,25 +694,33 @@ ErrorFile=cronjobs/error.log
 4 variables in [AdminSettings] of cronjob.ini in effect
 ```
 
-**Cronjobs auf einer öffentlichen Demo.** Geben Sie auf einer Demo im Demo-Modus den Cronjobs dieselbe Umgebung wie dem Webserver: Setzen Sie `EXP_DEMO_MODE=1` in eine eigene Zeile ganz oben in die Crontab (Beispiel: [`crontab-demo`](../../eng-us/examples/demo-mode/crontab-demo)). Jeder Cronjob-Prozess schreibt dann einmal `demo/mode ... sapi=cli` in `var/log/security.log`. [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
+**Cronjobs auf einer öffentlichen Demo.** Geben Sie auf einer Demo im Demo-Modus den Cronjobs dieselbe Umgebung wie dem Webserver: Setzen Sie `EXP_DEMO_MODE=1` in eine eigene Zeile ganz oben in die Crontab (Beispiel: [`crontab-demo`](../../eng-us/examples/demo-mode/crontab-demo)). Jeder Cronjob-Prozess schreibt dann einmal `demo/mode ... sapi=cli` in `var/log/security.log`. [Demo-Modus](../bc/6.0/demomodus.md).
 
 ## Quellen
 
-- Funktionsseite: [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md)
+- Funktionsseite: [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md)
 - Installationshandbuch: [10.3 Cronjobs](../installation/10-nach-der-installation.md#103-cronjobs) (die ausgelieferten Teile und Skripte, eine
   vollständige Crontab), [10.10 Protokolle und Protokollrotation](../installation/10-nach-der-installation.md#1010-logs-und-log-rotation)
 - Anleitungen: [Betrieb einer Site](betrieb-einer-website.md#3-cronjobs-ausführen),
   [Benachrichtigungen: ausführen und Probleme beheben](benachrichtigungen-administrator.md),
   [E-Mail-Einstellungen: einrichten und ausführen](mail-einstellungen-administrator.md)
-- Die Konsole: [Exponential-Konsole](../../eng-us/bc/6.0/console.md#cronjob-parts-and-the-crontab-added-june-2026)
-- Für Entwickler: [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md),
+- Die Konsole: [Exponential-Konsole](../bc/6.0/konsole.md#cronjob-teile-und-die-crontab-hinzugefügt-im-juni-2026)
+- Für Entwickler: [Befehle, Cronjob-Teile und Modulansichten als Klassen](../bc/6.0/cli-cronjob-und-view-abstraktionen.md),
   [die Spezifikation](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
-- Verwandte Funktionen: [Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md), [Velocity-Scheduler](../../eng-us/features/6.0/velocity-scheduler.md),
-  [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md), [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md),
-  [Seitengrößen](../../eng-us/bc/6.0/pagination-settings.md)
+- Verwandte Funktionen: [Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md), [Velocity-Scheduler](../funktionen/6.0/velocity-zeitplaner.md),
+  [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md), [Wartungsmodus](../funktionen/6.0/wartungsmodus.md),
+  [Seitengrößen](../bc/6.0/einstellungen-fuer-seitengroessen.md)
 - Code: `kernel/setup/expcronjobrunner.php` (Teile, Starten, Verlauf, Crontab, Zeitpläne),
   `kernel/private/classes/views/setup/cronjobs.php` und `cronjobsstream.php` (die Ansichten),
   `kernel/private/classes/commands/runcronjobs.php` (`runcronjobs.php`), `kernel/classes/ezruncronjobs.php` (die
   Skriptsperre), `design/admin4/templates/setup/cronjobs.tpl` (die Seite; dieselbe Datei in `design/admin`)
 - Tests: `tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php` (Zeitpläne in Worten, nächste Ausführungen, Befehle,
   Beschreibungen)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

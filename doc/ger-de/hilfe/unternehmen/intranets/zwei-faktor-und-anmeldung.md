@@ -31,12 +31,12 @@ Anleitungen für die Arbeit. Sie ist ein Überblick, keine Rechts- oder Prüfung
 
 | Schicht | Standardmäßig an | Wo sie eingestellt wird | Anleitung |
 |---|---|---|---|
-| Mindestlänge des Passworts 10 und eine Prüfung auf schwache Passwörter | ja (`MinPasswordLength=10`, `WeakPasswordCheck=enabled` in `settings/site.ini`) | `[UserSettings]` | [Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md) |
+| Mindestlänge des Passworts 10 und eine Prüfung auf schwache Passwörter | ja (`MinPasswordLength=10`, `WeakPasswordCheck=enabled` in `settings/site.ini`) | `[UserSettings]` | [Ihr Passwort ändern](../../../funktionen/6.0/moderne-passwortaenderung.md) |
 | Weitere Passwortregeln (Großbuchstabe, Ziffer, Sonderzeichen ...) | nein, jede Regel ist standardmäßig aus | `site.ini [PasswordSettings]` | dieselbe |
 | Andere Sitzungen nach einer Passwortänderung abgemeldet | ja (`EndOtherSessions=enabled`) | `[PasswordSettings]` | dieselbe |
 | Sperre nach N fehlgeschlagenen Anmeldungen | nein (`MaxNumberOfFailedLogin=0`) | `[UserSettings]` | [Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung) |
 | Zweistufige Anmeldung | Erweiterung, freiwillig | `sevenxauthentication2fa.ini` | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
-| Ablauf von Passwörtern | Erweiterung `ezmbpaex` | ihre eigenen Einstellungen | [ezmbpaex](../../../../eng-us/features/6.0/extensions/ezmbpaex.md) |
+| Ablauf von Passwörtern | Erweiterung `ezmbpaex` | ihre eigenen Einstellungen | [ezmbpaex](../../../funktionen/6.0/erweiterungen/ezmbpaex.md) |
 | Netzwerkbeschränkungen | Webserver | Apache, nginx, ein VPN | [Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md#einschränkungen-im-netzwerk) |
 
 ## Passwortregeln
@@ -45,7 +45,7 @@ Seit 6.0.15 gelten dieselben Regeln für jedes Formular, das ein Passwort setzt:
 Benutzerkontos, die Seite zum Ändern des Passworts und der Konsolenbefehl `bin/php/resetuserpassword.php`. Eine
 Passwortänderung schickt dem Benutzer eine Mail „Your password was changed“ ohne das Passwort und meldet die anderen
 Sitzungen des Benutzers bei ihrer nächsten Anfrage ab
-([Ihr Passwort ändern](../../../../eng-us/features/6.0/modern-password-change.md#in-short)).
+([Ihr Passwort ändern](../../../funktionen/6.0/moderne-passwortaenderung.md#kurz-gefasst)).
 
 `site.ini [PasswordSettings]` fügt Regeln hinzu, alle standardmäßig aus, damit eine aktualisierte Website die Regeln
 behält, die sie hatte: `RequireLowercase`, `RequireUppercase`, `RequireDigit`, `RequireSymbol`, `MinCharacterClasses`,
@@ -57,7 +57,7 @@ Mitarbeitern meist mehr als komplizierte.
 `site.ini [UserSettings] MaxNumberOfFailedLogin` sperrt ein Konto nach so vielen fehlgeschlagenen Versuchen. Es wird
 als `0` ausgeliefert, was aus bedeutet. `TrustedIPList[]` kann Büroadressen ausnehmen. Gesperrte Konten werden unter
 **Benutzer > Benutzerkonten prüfen** aufgelistet und gesammelt entsperrt
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md#the-filters)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md#die-filter)).
 
 > **Warnung**
 > Setzen Sie `MaxNumberOfFailedLogin` in einem Intranet, das aus dem Internet erreichbar ist, auf einen Wert, der zu
@@ -68,7 +68,7 @@ als `0` ausgeliefert, was aus bedeutet. `TrustedIPList[]` kann Büroadressen aus
 
 Die Erweiterung `sevenx_authentication_2fa` (in `composer.json` aufgeführt) fügt nach dem Passwort einen zweiten
 Schritt hinzu: einen sechsstelligen Code aus einer Authenticator-App (TOTP, RFC 6238) oder einen per E-Mail
-verschickten Code ([sevenx_authentication_2fa](../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md)).
+verschickten Code ([sevenx_authentication_2fa](../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md)).
 
 Was Mitarbeiter sehen ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md#was-ein-benutzer-sieht)):
 
@@ -102,28 +102,28 @@ Dieselbe Erweiterung enthält Social-Login-Handler für Google, Facebook, Twitte
 beschrieben als Gerüste, die zum Anpassen bereitstehen, sowie einen Kommandozeilen-Generator für weitere
 OAuth-Anbieter. Social Login ist aus, bis `[SocialLogin] Enabled=enabled` gesetzt ist; ein Benutzer, der sich so
 anmeldet, durchläuft trotzdem seinen eigenen zweiten Schritt
-([sevenx_authentication_2fa, Use it](../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md#use-it)). Für ein
+([sevenx_authentication_2fa, Use it](../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md#verwenden)). Für ein
 Mitarbeiter-Intranet ist ein Firmenverzeichnis meist die bessere Quelle für Konten
 ([Verzeichnisanmeldung und LDAP](verzeichnisanmeldung-und-ldap.md)).
 
 ## Ablauf von Passwörtern
 
 `ezmbpaex` legt fest, wie lange ein Passwort gültig ist, kann vor dem Ablauf per Mail warnen und neue Passwörter gegen
-einen regulären Ausdruck prüfen ([ezmbpaex](../../../../eng-us/features/6.0/extensions/ezmbpaex.md)). Ob ein erzwungener Ablauf
+einen regulären Ausdruck prüfen ([ezmbpaex](../../../funktionen/6.0/erweiterungen/ezmbpaex.md)). Ob ein erzwungener Ablauf
 zu Ihrer Richtlinie passt, entscheidet Ihr Sicherheitsbeauftragter.
 
 ## Sitzungen und Abmelden
 
 Eine Sitzung endet `site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Nutzung; der Standard ist 259200,
-drei Tage. Administratoren können sehen, wer sich kürzlich angemeldet hat, und mit dem Datenbank-Sitzungshandler
+drei Tage. Administratoren können sehen, wer sich kürzlich angemeldet hat, und mit dem Datenbank-Session-Handler
 Sitzungen einzeln entfernen ([Sitzungen](../../../anleitungen/sitzungen.md)). Kürzere Zeitlimits passen zu gemeinsam
 genutzten Computern.
 
 ## Aufzeichnungen der Anmeldungen
 
-Der Audit-Trail zeichnet in seinem Kanal `access` Anmeldungen, fehlgeschlagene Anmeldungen, Kontosperren,
+Das Prüfprotokoll zeichnet in seinem Kanal `access` Anmeldungen, fehlgeschlagene Anmeldungen, Kontosperren,
 Rollenzuordnungen und das Zurücksetzen von Passwörtern auf
-([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md#what-is-recorded)). Die zweistufige Anmeldung schreibt jeden
+([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md#was-aufgezeichnet-wird)). Die zweistufige Anmeldung schreibt jeden
 Schritt in `var/log/auth.log`, nie einen Code oder ein Geheimnis.
 
 ## Entscheidungen für das Intranet
@@ -147,8 +147,8 @@ Schritt in `var/log/auth.log`, nie einen Code oder ein Geheimnis.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

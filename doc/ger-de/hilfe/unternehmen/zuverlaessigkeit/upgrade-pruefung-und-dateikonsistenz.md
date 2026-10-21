@@ -13,7 +13,7 @@ Diese Seite richtet sich an Führungskräfte, die einen Nachweis wollen, dass di
 zu dem Release passen, von dem sie glauben, dass es läuft, und an den Administrator, der die Prüfungen ausführt. Sie
 erklärt, was die Upgrade-Prüfung vergleicht, was jeder Befund für ein Unternehmen bedeutet und wann Sie sie ausführen.
 Die vollständige Anleitung ist [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md); das Manifest dahinter beschreibt
-[Prüfung der Dateikonsistenz](../../../../eng-us/features/6.0/file-consistency-check.md).
+[Prüfung der Dateikonsistenz](../../../funktionen/6.0/dateikonsistenzpruefung.md).
 
 ![Die Upgrade-Prüfung mit den Prüfungen der Datei- und Datenbankkonsistenz](../../../../eng-us/help/images/help/bu-upgrade.webp)
 
@@ -33,7 +33,7 @@ Die vollständige Anleitung ist [Die Upgrade-Prüfung](../../../anleitungen/upgr
 Jedes Release von Exponential liefert eine Liste der Prüfsummen seiner Dateien mit, `share/filelist.md5`. Die
 Upgrade-Prüfung vergleicht die Installation mit dieser Liste und mit dem Schema des Releases. Für ein Unternehmen
 beantwortet das Ergebnis drei Fragen
-([Prüfung der Dateikonsistenz, warum Sie sie wollen](../../../../eng-us/features/6.0/file-consistency-check.md#why-you-want-it)):
+([Prüfung der Dateikonsistenz, warum Sie sie wollen](../../../funktionen/6.0/dateikonsistenzpruefung.md#warum-sie-das-wollen)):
 
 - **Vor einer Aktualisierung**: Hat jemand Release-Dateien von Hand geändert, die eine Aktualisierung überschreiben
   würde?
@@ -125,8 +125,8 @@ Aus [Die Upgrade-Prüfung, Sicherheit](../../../anleitungen/upgrade-pruefung.md#
 
 - Beide Prüfungen und alle Downloads lesen nur; die Seite hat keine Schaltfläche, die eine Datei schreibt oder die
   Datenbank ändert.
-- Jeder Lauf und jeder Download wird im Audit-Trail als `system.upgrade.run` festgehalten, mit dem Ergebnis und der
-  Anzahl der Unterschiede ([Audit-Trail für den Betrieb](audit-trail-fuer-den-betrieb.md)).
+- Jeder Lauf und jeder Download wird im Prüfprotokoll als `system.upgrade.run` festgehalten, mit dem Ergebnis und der
+  Anzahl der Unterschiede ([Prüfprotokoll für den Betrieb](audit-trail-fuer-den-betrieb.md)).
 
 ## Checkliste
 
@@ -141,13 +141,13 @@ Aus [Die Upgrade-Prüfung, Sicherheit](../../../anleitungen/upgrade-pruefung.md#
 
 - [Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md)
 - [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md)
-- [Prüfung der Dateikonsistenz](../../../../eng-us/features/6.0/file-consistency-check.md)
+- [Prüfung der Dateikonsistenz](../../../funktionen/6.0/dateikonsistenzpruefung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

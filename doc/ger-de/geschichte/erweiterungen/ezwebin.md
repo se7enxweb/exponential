@@ -1,8 +1,8 @@
 # ezwebin (Design Website Interface): Chronik
 
-Das Design Website Interface erhielt Anfang 2024 Paket-Updates und im Juli 2026 eine Bereinigung für HTML5. Die Überarbeitung im September und Oktober machte es übersetzbar, korrigierte die Seite „Passwort vergessen“ und die Titel der Fehlerseiten, machte es auf Oracle lauffähig und ersetzte YUI. Releases 6.0.0 bis 6.0.16. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ezwebin.md).
+Das Design Website Interface erhielt Anfang 2024 Paket-Updates und im Juli 2026 eine Bereinigung für HTML5. Die Überarbeitung im September und Oktober machte es übersetzbar, korrigierte die Seite „Passwort vergessen“ und die Titel der Fehlerseiten, machte es auf Oracle lauffähig und ersetzte YUI. Releases 6.0.0 bis 6.0.16. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ezwebin.md).
 
-Diese Seite führt **jede der 33 Änderungen** des Repositorys `ezwebin` zwischen 2023-12-24 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezwebin.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezwebin.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ezwebin.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 33 Änderungen** des Repositorys `ezwebin` zwischen 2023-12-24 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezwebin.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezwebin.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ezwebin.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -109,7 +109,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ezwebin.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ezwebin.md)
 - [Release Notes](../../../changelogs/extensions/ezwebin.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ezwebin.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

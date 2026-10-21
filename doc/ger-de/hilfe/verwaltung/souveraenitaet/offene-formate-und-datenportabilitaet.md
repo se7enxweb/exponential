@@ -30,15 +30,15 @@ welchem Format, und worauf Sie achten sollten.
 | Hochgeladene Dateien und Bilder | Dateien unter `var/<site>/storage/` | ja, als Dateien; ihre Namen sind in der Datenbank Objekten zugeordnet |
 | Einstellungen | INI-Dateien in `settings/` und `extension/*/settings/` | ja, reiner Text |
 | Templates | `.tpl`-Textdateien | ja, reiner Text |
-| Übersetzungen der Oberfläche | Qt-Linguist-XML (`.ts`) | ja ([Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md)) |
-| Audit-Einträge | Dateien mit JSON-Zeilen, mit Manifesten archiviert | ja ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Übersetzungen der Oberfläche | Qt-Linguist-XML (`.ts`) | ja ([Standards zur Internationalisierung](../../../standards/internationalisierung.md)) |
+| Audit-Einträge | Dateien mit JSON-Zeilen, mit Manifesten archiviert | ja ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 
 ## Exportformate
 
 | Format | Woher | Dokumentation |
 |---|---|---|
-| CSV, JSON, XML pro Klasse | `xrowextract` | [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md) |
-| CSV pro Klasse von der Kommandozeile | `exp:ezcsvexport` | [exp:ezcsvexport](../../../../eng-us/examples/commands/ezcsvexport.md) |
+| CSV, JSON, XML pro Klasse | `xrowextract` | [xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md) |
+| CSV pro Klasse von der Kommandozeile | `exp:ezcsvexport` | [exp:ezcsvexport](../../../beispiele/befehle/ezcsvexport.md) |
 | JSON über HTTP | REST-API | [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md) |
 | `.ezpkg`-Pakete (Klassen, Inhalte, Erweiterungen) | Setup > Pakete | [Pakete](../../../anleitungen/pakete.md) |
 | `.dba`-Datenbank-Dumps, unabhängig von der Datenbank | `bin/php/ezsqldumpschema.php` | [Datenbankunterstützung](../../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen) |
@@ -58,7 +58,7 @@ größte Einzelaufgabe.
 Der interne Zeichensatz ist UTF-8 (`settings/i18n.ini [CharacterSettings] Charset=utf-8`). Unter MySQL und MariaDB
 verwendet eine Standardverbindung das 3-Byte-`utf8`; Zeichen oberhalb von U+FFFF brauchen `utf8mb4`, das die
 Administration einrichtet
-([Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md#4-byte-characters-on-mysql-and-mariadb)).
+([Standards zur Internationalisierung](../../../standards/internationalisierung.md#4-byte-zeichen-unter-mysql-und-mariadb)).
 SQLite und PostgreSQL speichern vollständiges Unicode.
 
 ## Portabilität bewahren
@@ -73,12 +73,13 @@ SQLite und PostgreSQL speichern vollständiges Unicode.
 
 - [Inhalte und Pakete exportieren](inhalte-und-pakete-exportieren.md)
 - [Datenbankunterstützung](../../datenbankunterstuetzung.md)
-- [Standards zur Internationalisierung](../../../../eng-us/standards/internationalization.md)
+- [Standards zur Internationalisierung](../../../standards/internationalisierung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

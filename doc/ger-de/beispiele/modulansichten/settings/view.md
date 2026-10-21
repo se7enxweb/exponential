@@ -14,10 +14,12 @@ Eine Ansicht des Moduls `settings`, definiert in `kernel/settings/module.php` un
 ## Adresse
 
 ```text
-/settings/view/<SiteAccess>/<INIFile>
+/settings/view/<SiteAccess>/<INIFile>/(q)/<Query>/(scope)/<Scope>/(changed)/<Changed>/(compare)/<Compare>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `SiteAccess`, `INIFile`.
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(q)` setzt `Query`, `(scope)` setzt `Scope`, `(changed)` setzt `Changed`, `(compare)` setzt `Compare`.
 
 ## Wer sie öffnen darf
 
@@ -35,6 +37,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/settings/view/siteaccess/inifile'|ezurl}>settings/view</a>
+<a href={concat( '/settings/view/siteaccess/inifile/(q)/', 1 )|ezurl}>settings/view</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

@@ -33,9 +33,9 @@ Pull Request, dass PHP 8.0 noch startet ([PHP-Versionen](../wer-ist-die-exponent
 
 | Was | Wann | Quelle |
 |---|---|---|
-| PHP 8 im Setup-Assistenten | Dezember 2023 | [Dezember 2023](../../../eng-us/history/2023/2023-12.md) |
-| PHP 8.4 dazu, PHP 7 raus (6.0.7 das letzte für 7.4) | April 2025 | [April 2025](../../../eng-us/history/2025/2025-04.md) |
-| PHP 8.5 unterstützt | Dezember 2025 | [Dezember 2025](../../../eng-us/history/2025/2025-12.md) |
+| PHP 8 im Setup-Assistenten | Dezember 2023 | [Dezember 2023](../../geschichte/2023/2023-12.md) |
+| PHP 8.4 dazu, PHP 7 raus (6.0.7 das letzte für 7.4) | April 2025 | [April 2025](../../geschichte/2025/2025-04.md) |
+| PHP 8.5 unterstützt | Dezember 2025 | [Dezember 2025](../../geschichte/2025/2025-12.md) |
 
 ## Fakten, die Sie drucken können
 
@@ -43,7 +43,7 @@ Pull Request, dass PHP 8.0 noch startet ([PHP-Versionen](../wer-ist-die-exponent
 |---|---|
 | PHP 8.0 bis 8.5 unterstützt, Velocity eingeschlossen (ab seinem Release 0.0.4.54) | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | `composer.json` erlaubt bis zu PHP 8.8 | ebenda |
-| CI auf PHP 8.1 bis 8.5, Startprüfung mit PHP 8.0 | [CI](../../../eng-us/bc/6.0/ci.md) |
+| CI auf PHP 8.1 bis 8.5, Startprüfung mit PHP 8.0 | [CI](../../bc/6.0/ci.md) |
 | 7x pflegt gepatchte Forks der Zeta Components und hat Sicherheits-Pull-Requests an das Ursprungsprojekt geschickt | [Der PHP-Stack, auf dem es steht](../wer-ist-die-exponential-foundation.md#der-php-stack-auf-dem-es-steht-und-dem-es-etwas-zurückgibt) |
 
 ## Was Sie nicht behaupten sollten
@@ -68,8 +68,8 @@ Pull Request, dass PHP 8.0 noch startet ([PHP-Versionen](../wer-ist-die-exponent
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

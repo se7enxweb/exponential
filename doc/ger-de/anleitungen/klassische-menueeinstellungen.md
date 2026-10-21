@@ -11,7 +11,7 @@ wurde am 6. Oktober 2026 gegen den Code dieses Repositorys geprüft, und jedes T
 einer echten Installation gerendert.
 
 [Anleitungen](README.md) · Siehe auch: [Templates und Design](templates-und-design.md) ·
-[Exponential Layouts](../../eng-us/bc/6.0/LAYOUTS.md)
+[Exponential Layouts](../bc/6.0/layouts.md)
 
 ## Kurz gesagt
 
@@ -390,3 +390,11 @@ Siteaccess an, ob sie dort von Bedeutung ist.
 - Templates: `design/base/templates/pagelayout.tpl`, `design/base/templates/menu/*.tpl`,
   `extension/ezwebin/design/ezwebin/templates/menu/*.tpl`, `lib/eztemplate/classes/eztemplatemenufunction.php`,
   `extension/ezwebin/autoloads/ezpagedata.php`
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

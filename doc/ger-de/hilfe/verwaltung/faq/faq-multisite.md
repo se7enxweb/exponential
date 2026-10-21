@@ -11,7 +11,7 @@ type: help
 
 Diese Seite beantwortet die Fragen öffentlicher Stellen, wenn eine Organisation mehrere Websites betreibt oder viele
 Abteilungen auf einer Website veröffentlichen. Die Antworten stammen aus
-[Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md) und den Funktionsseiten zu Multisite.
+[Multisite einrichten](../../ersteller/website-ersteller/multisite-einrichten.md) und den Funktionsseiten zu Multisite.
 
 ## Inhalt
 
@@ -26,19 +26,19 @@ Abteilungen auf einer Website veröffentlichen. Die Antworten stammen aus
 ## Kann eine Installation mehrere Websites betreiben?
 
 Ja. Jede Website wird über ihren eigenen Siteaccess erreicht, erkannt nach Host, Pfad oder Port
-([Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md),
-[Siteaccess-Erkennung nach Host und Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)).
+([Multisite einrichten](../../ersteller/website-ersteller/multisite-einrichten.md),
+[Siteaccess-Erkennung nach Host und Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)).
 
 ## Kann jede Website ihr eigenes Design und ihre eigenen Sprachen haben?
 
 Ja: Einstellungen pro Siteaccess wählen Design, Sprachen und weitere Einstellungen
-([INI-Overrides für mehrere Websites](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)).
+([INI-Overrides für mehrere Websites](../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md)).
 
 ## Können Websites Inhalte und Benutzer teilen?
 
 Ja. Sie teilen ein Inhaltsrepository und einen Benutzerbestand; ein Objekt kann über Platzierungen auf mehreren
 Websites erscheinen, und ein Benutzer kann sich dort anmelden, wo seine Rollen es erlauben
-([Relationen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
+([Relationen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
 
 ## Kann jede Abteilung nur ihre eigenen Inhalte bearbeiten?
 
@@ -49,12 +49,12 @@ Ja, mit Sektionen und Rollen, die auf eine Sektion oder einen Teilbaum beschrän
 ## Sind Protokolle und Caches pro Website getrennt?
 
 Das können sie sein: Pfade für Protokolle und Caches lassen sich pro Website festlegen
-([Pfade für Protokolle und Caches bei mehreren Websites](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)).
+([Pfade für Protokolle und Caches bei mehreren Websites](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)).
 
 ## Kann eine Website auf eine andere verlinken?
 
 Ja, mit websiteübergreifenden Links, die auf den richtigen Host aufgelöst werden
-([Websiteübergreifende Links in einer Multisite](../../../../eng-us/features/6.0/multisite-cross-site-links.md)).
+([Websiteübergreifende Links in einer Multisite](../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)).
 
 ## Eine Installation oder mehrere?
 
@@ -62,18 +62,19 @@ Eine Installation spart Aktualisierungen und Hosting und macht das Teilen leicht
 Risiken, Rechte und Release-Zeitpläne. Für Hoster ist beides beschrieben
 ([Multisite in einer Installation](../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md),
 [Isolation von Mandanten](../../hosting/sicherheit/trennung-von-mandanten.md)). Für beides gibt es Schulungen
-([Multisite und Seitenpakete](../../../../eng-us/help/trainers/multisite-and-packages/README.md)).
+([Multisite und Seitenpakete](../../trainer/multisite-und-pakete/README.md)).
 
 ## Verwandte Seiten
 
 - [FAQ für Verwaltungen](README.md)
-- [Multisite einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)
+- [Multisite einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)
 - [Eine Abteilung einführen](../checklisten/eine-abteilung-einfuehren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Projektleitungen und Vertragsmanagement einer öffentlichen Stelle, die angeben müssen,
 welche Version der Software sie betreiben, und verstehen müssen, was eine neue Version bedeutet. Sie erklärt die
-Release-Richtlinie von Exponential in einfachen Worten. Die Quellen sind [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md) und
+Release-Richtlinie von Exponential in einfachen Worten. Die Quellen sind [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md) und
 [`SECURITY.md`](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md).
 
 ## Inhalt
@@ -37,7 +37,7 @@ Release-Richtlinie von Exponential in einfachen Worten. Die Quellen sind [Quellc
 „Ein veröffentlichter Tag wird nie geändert: Eine Korrektur für ein Problem in `v6.0.14` oder einem früheren Tag
 erreicht Sie als nächstes Release, nicht als korrigierte Kopie des alten“ (`SECURITY.md`). Der Grund ist technisch und
 eine Frage des Vertrauens: Composer und Packagist lesen einen Tag einmal und speichern, was sie gefunden haben, ein
-verschobener Tag ergäbe also zwei verschiedene Pakete unter einer Versionsnummer ([Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md#tags-are-permanent)).
+verschobener Tag ergäbe also zwei verschiedene Pakete unter einer Versionsnummer ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#tags-sind-dauerhaft)).
 
 Für eine öffentliche Stelle heißt das:
 
@@ -53,13 +53,13 @@ Für eine öffentliche Stelle heißt das:
 | Letzte Stelle | das Release innerhalb der Linie | 6.0.14, dann 6.0.15 |
 
 Die letzte Stelle zählt weiter: Nach `.9` kommt `.10`, nie ein Sprung einer höheren Stelle; das Anheben einer höheren
-Stelle ist eine eigene Entscheidung darüber, was das Release bedeutet ([Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md#choosing-the-next-version-number)).
+Stelle ist eine eigene Entscheidung darüber, was das Release bedeutet ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#die-nächste-versionsnummer-wählen)).
 Die Version des Kernels steht in `lib/version.php`. Veröffentlichte Kernel-Tags reichen von `v6.0.0` bis `v6.0.14`, und
-6.0.15 ist in Entwicklung ([Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md#the-kernels-versions)).
+6.0.15 ist in Entwicklung ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#die-versionen-des-kernels)).
 
 Welche Version eine Website betreibt, sehen Sie unter **Setup > Systeminformationen** (`/setup/info`)
 ([Systeminformationen](../../../../anleitungen/systeminformationen.md)) oder auf der About-Seite, die auch die Version jeder
-Erweiterung auflistet ([About- und Paketseiten](../../../../../eng-us/features/6.0/about-and-package-pages.md)).
+Erweiterung auflistet ([About- und Paketseiten](../../../../funktionen/6.0/info-und-paketseiten.md)).
 
 ## Wo jede Änderung festgehalten wird
 
@@ -71,7 +71,7 @@ Erweiterung auflistet ([About- und Paketseiten](../../../../../eng-us/features/6
 | Die Geschichte hinter den Änderungen seit Dezember 2023 | [die Geschichte](../../../../geschichte/README.md) |
 
 Einträge im Changelog sind nach Added, Updated, Removed und Renamed gruppiert und aus der Commit-Historie
-zusammengestellt. Ein Lieferant kann Ihnen damit sagen, was ein Upgrade ändert ([Ein Changelog lesen](../../../../../eng-us/help/press/reading-a-changelog.md) erklärt,
+zusammengestellt. Ein Lieferant kann Ihnen damit sagen, was ein Upgrade ändert ([Ein Changelog lesen](../../../presse/ein-changelog-lesen.md) erklärt,
 wie man eines liest).
 
 ## Das in einem Vertrag nutzen
@@ -86,7 +86,7 @@ wie man eines liest).
 
 ## Bekannte Lücken
 
-Die Seite zu den Standards nennt sie ([Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md#known-gaps)):
+Die Seite zu den Standards nennt sie ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#bekannte-lücken)):
 
 - Commits und Tags sind **nicht signiert**;
 - die Regeln für Merges und gegen Force-Push sind nur Richtlinie; `main` hat keinen Branch-Schutz;
@@ -100,12 +100,13 @@ wie ein Lieferant sie ausgleichen würde (zum Beispiel durch Prüfung der Prüfs
 
 - [Der Lebenszyklus des Produkts](README.md)
 - [Unterstützte Versionen](unterstuetzte-versionen.md)
-- [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md)
+- [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

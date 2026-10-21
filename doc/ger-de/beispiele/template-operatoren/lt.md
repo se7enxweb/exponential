@@ -30,10 +30,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/content/jobs.tpl` Zeile 99:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/content/jobs.tpl` Zeile 100:
 
 ```tpl
-{if lt( sum( $offset, $page ), $count )}<a href={concat( $base_url, '?', $query, '&offset=', sum( $offset, $page ) )|ezurl}>{'Older'|i18n( 'design/admin/content/job' )}</a>{/if}
+{if lt( sum( $offset, $page ), $count )}<a href={concat( $page_url, '/(offset)/', sum( $offset, $page ) )|ezurl}>{'Older'|i18n( 'design/admin/content/job' )}</a>{/if}
 ```
 
 ## Siehe auch

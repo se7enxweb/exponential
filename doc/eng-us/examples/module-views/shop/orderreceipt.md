@@ -14,10 +14,12 @@ A view of the `shop` module, defined in `kernel/shop/module.php` and run by `ker
 ## Address
 
 ```text
-/shop/orderreceipt/<Token>
+/shop/orderreceipt/<Token>/(download)/<Download>
 ```
 
 Ordered parameters, in this order after the view name: `Token`.
+
+Unordered parameters, in any order as `/(name)/value`: `(download)` sets `Download`.
 
 ## Who may open it
 
@@ -36,6 +38,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/shop/orderreceipt/token'|ezurl}>shop/orderreceipt</a>
+<a href={concat( '/shop/orderreceipt/token/(download)/', 1 )|ezurl}>shop/orderreceipt</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

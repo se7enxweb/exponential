@@ -27,19 +27,19 @@ können.
 
 | Bedarf | Funktion | Wo | Dokumentation |
 |---|---|---|---|
-| Eine Datei zum Herunterladen anbieten | Dateiobjekt mit einem Feld `ezbinaryfile`; Download über `content/download` | Inhaltsstruktur, jeder Ordner | [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
+| Eine Datei zum Herunterladen anbieten | Dateiobjekt mit einem Feld `ezbinaryfile`; Download über `content/download` | Inhaltsstruktur, jeder Ordner | [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md) |
 | Viele Dateien auf einmal hochladen | Dateien hochladen (`ezmultiupload`) | Medienbibliothek > Dateien hochladen | [Medien und Uploads](../../medien-und-uploads.md) |
-| Lesbare, dauerhafte Adressen | URL-Aliasse aus dem Namen; alte Aliasse leiten nach Umbenennen oder Verschieben weiter | automatisch; Reiter URL-Aliasse eines Knotens | [Weiterleitungen und verschobene Inhalte](../../../../eng-us/help/creators/website-creators/redirects-and-moved-content.md) |
+| Lesbare, dauerhafte Adressen | URL-Aliasse aus dem Namen; alte Aliasse leiten nach Umbenennen oder Verschieben weiter | automatisch; Reiter URL-Aliasse eines Knotens | [Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md) |
 | Ein Dokument aus vielen Seiten | PDF-Export eines Teilbaums | Setup > PDF-Export | [PDF-Exporte](../../../anleitungen/pdf-exporte.md) |
-| Eine Liste von Datensätzen | Ein Ordner, dessen Unterobjekte Datensatzseiten sind, als Liste angezeigt | Ihr Design | [Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md) |
+| Eine Liste von Datensätzen | Ein Ordner, dessen Unterobjekte Datensatzseiten sind, als Liste angezeigt | Ihr Design | [Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md) |
 
 ## Beschreiben
 
 | Bedarf | Funktion | Dokumentation |
 |---|---|---|
-| Felder für Titel, Beschreibung, Herausgeber, Lizenz, Daten | Eine eigene Inhaltsklasse aus Datentypen wie Textzeile, Textabschnitt, Datum, Auswahl, URL, Datei | [Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md) |
-| Themen und Schlagworte | Tags mit der Erweiterung `eztags` | [Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md) |
-| Seitentitel, Beschreibung, kanonischer Link | Metadatenfeld von `xrowmetadata` | [xrowmetadata](../../../../eng-us/features/6.0/extensions/xrowmetadata.md) |
+| Felder für Titel, Beschreibung, Herausgeber, Lizenz, Daten | Eine eigene Inhaltsklasse aus Datentypen wie Textzeile, Textabschnitt, Datum, Auswahl, URL, Datei | [Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md) |
+| Themen und Schlagworte | Tags mit der Erweiterung `eztags` | [Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md) |
+| Seitentitel, Beschreibung, kanonischer Link | Metadatenfeld von `xrowmetadata` | [xrowmetadata](../../../funktionen/6.0/erweiterungen/xrowmetadata.md) |
 | Sprachen der Beschreibung | Inhaltssprachen und Übersetzungen | [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md) |
 
 ## Schnittstellen für Maschinen
@@ -48,16 +48,16 @@ können.
 |---|---|---|---|
 | „Was ist neu“ | RSS-Export eines Ordners | RSS 1.0, RSS 2.0, Atom | [RSS-Feeds](../../../anleitungen/rss-feeds.md) |
 | Inhalte per Programm lesen | REST-API v1 und v2 (`ezprestapi`) | JSON | [REST-API v1 und v2](../../../anleitungen/rest-api-v1-und-v2.md) |
-| Massenexport von Inhalten | Reiter Export von `xrowextract` | CSV, JSON, XML | [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md) |
-| Massenexport von der Kommandozeile | `exp:ezcsvexport` | CSV, eine Datei pro Klasse | [exp:ezcsvexport](../../../../eng-us/examples/commands/ezcsvexport.md) |
-| Sitemaps für Suchmaschinen | Cronjobs von `xrowmetadata` und `bcgooglesitemaps` | XML-Sitemap | [Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md) |
+| Massenexport von Inhalten | Reiter Export von `xrowextract` | CSV, JSON, XML | [xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md) |
+| Massenexport von der Kommandozeile | `exp:ezcsvexport` | CSV, eine Datei pro Klasse | [exp:ezcsvexport](../../../beispiele/befehle/ezcsvexport.md) |
+| Sitemaps für Suchmaschinen | Cronjobs von `xrowmetadata` und `bcgooglesitemaps` | XML-Sitemap | [Sitemaps](../../ersteller/website-ersteller/sitemaps.md) |
 
 ## Vertrauenswürdig bleiben
 
 | Bedarf | Funktion | Dokumentation |
 |---|---|---|
 | Sehen, was sich wann geändert hat | Versionen jedes Objekts, mit Vergleich | [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md) |
-| Sehen, wer es geändert hat | Der Audit-Trail, standardmäßig eingeschaltet | [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Sehen, wer es geändert hat | Das Prüfprotokoll, standardmäßig eingeschaltet | [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 | Prüfung vor dem Veröffentlichen | Freigabe-Workflow | [Workflows](../../../anleitungen/workflows.md) |
 | Nur das Datenteam darf Datensätze veröffentlichen | Rollen, beschränkt nach Sektion oder Teilbaum | [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
 
@@ -85,8 +85,9 @@ Datensatzklasse entwerfen“, „Datensätze lizenzieren“ und „Stabile URLs 
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

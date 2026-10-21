@@ -26,7 +26,7 @@ Sie mit den Fällen umgehen, die Inline-CSS zu brauchen scheinen.
 - Eine Content Security Policy mit `style-src 'self'` blockiert Inline-Stile ([CSP-sicheres Design](csp-sicheres-design.md)).
 - Inline-CSS wird nicht gepackt oder zwischengespeichert und mit jeder Seite erneut gesendet.
 - Kopien laufen auseinander: Die Administration hatte einmal 55 Templates mit eigenen `<style>`-Blöcken, vier verschiedene Akzentfarben
-  und Dutzende weiße Karten, die den dunklen Modus ignorierten (die Geschichte steht in [Gestaltung der Administration](../../../../eng-us/bc/6.0/admin4-styling.md),
+  und Dutzende weiße Karten, die den dunklen Modus ignorierten (die Geschichte steht in [Gestaltung der Administration](../../../bc/6.0/admin4-gestaltung.md),
   „Why“).
 - Inline-Stile schlagen Regeln aus Stylesheets, sodass ein Theme das Element nicht mehr neu gestalten kann.
 
@@ -90,8 +90,9 @@ Bei Admin-Designs schlägt `tests/tests/design/AdminStylingRulesTest.php` bei je
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

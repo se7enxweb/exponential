@@ -11,7 +11,7 @@ type: help
 
 Wer als Hoster auf einem Server ein Terminal öffnet, möchte einen Bildschirm, der sagt, was dort läuft und was nicht
 stimmt. Diese Lektion vermittelt die Systemkarte, `./console exp:expfetch`, und ihre zwei größeren Formen. Sie passt
-nach Lektion 5.1 oder als Aufwärmübung zu Beginn eines Tages. Referenz: [Die Systemkarte](../../../../../eng-us/features/6.0/system-card.md).
+nach Lektion 5.1 oder als Aufwärmübung zu Beginn eines Tages. Referenz: [Die Systemkarte](../../../../funktionen/6.0/systemkarte.md).
 
 ## Auf einen Blick
 
@@ -78,12 +78,12 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ## Weiterführende Informationen
 
-- [Die Systemkarte](../../../../../eng-us/features/6.0/system-card.md): jede Option, die Hinweise und die Einstellungen.
-- [Die Systemkarte für Hoster](../../../../../eng-us/help/hosting/operations/system-card-for-hosts.md)
+- [Die Systemkarte](../../../../funktionen/6.0/systemkarte.md): jede Option, die Hinweise und die Einstellungen.
+- [Die Systemkarte für Hoster](../../../hosting/betrieb/systemkarte-fuer-hoster.md)
 
 ## Verwandte Seiten
 
 - [Modul 5: Monitoring und Logs](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

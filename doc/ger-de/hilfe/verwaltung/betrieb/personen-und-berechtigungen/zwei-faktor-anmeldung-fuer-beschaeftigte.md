@@ -54,13 +54,13 @@ Einstellungen und Richtlinien stehen im Abschnitt des Leitfadens [Einschalten](.
 5. **Prüfen** Sie: Melden Sie sich als Testbenutzer an; ein falscher Code wird abgewiesen und erfasst; `var/log/auth.log` enthält jeden
    Schritt, nie einen Code.
 
-Vorgehensweise: [Die zweistufige Anmeldung für Beschäftigte einschalten](../../../../../eng-us/help/government/tasks/people-and-permissions/turn-on-two-step-sign-in-for-staff.md).
+Vorgehensweise: [Die zweistufige Anmeldung für Beschäftigte einschalten](../../aufgaben/personen-und-berechtigungen/die-zweistufige-anmeldung-fuer-mitarbeiter-einschalten.md).
 
 ## Verlorene Telefone und neue Geräte
 
 Ein Administrator öffnet das Objekt des Benutzers, setzt das Feld *Zweistufige Anmeldung* auf *Einmalcode per E-Mail* oder *Deaktiviert* und
 veröffentlicht; der Benutzer meldet sich an und richtet die App erneut ein
-([Einem Benutzer helfen, der sein Telefon verloren hat](../../../../../eng-us/help/government/tasks/people-and-permissions/help-a-user-who-lost-their-phone.md)). Prüfen Sie
+([Einem Benutzer helfen, der sein Telefon verloren hat](../../aufgaben/personen-und-berechtigungen/einem-benutzer-helfen-der-sein-telefon-verloren-hat.md)). Prüfen Sie
 zuvor die Identität der Person über Ihren normalen Service-Desk-Prozess: Einen zweiten Faktor auf Anfrage eines nicht verifizierten Anrufers
 zurückzusetzen, hebt ihn auf.
 
@@ -79,12 +79,13 @@ zurückzusetzen, hebt ihn auf.
 - [Pflege der Benutzerkonten](pflege-von-benutzerkonten.md)
 - [Grundsätze der geringsten Rechte](prinzip-der-geringsten-rechte.md)
 - [Zwei-Faktor-Anmeldung (Hosting)](../../../hosting/sicherheit/zweistufige-anmeldung.md)
-- [Extension für Zwei-Faktor- und Social-Login](../../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md)
+- [Extension für Zwei-Faktor- und Social-Login](../../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

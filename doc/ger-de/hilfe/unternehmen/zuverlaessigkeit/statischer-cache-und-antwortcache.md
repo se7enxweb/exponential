@@ -38,14 +38,14 @@ unterschiedlich und haben unterschiedliche Kosten. Das Gesamtbild finden Sie unt
 | Geleert durch | `exp:velocity cache clear` | `php bin/php/cache.php static clear` |
 
 Quellen: `settings/velocity.ini`, [Cache-Schichten](../../hosting/leistung/cache-schichten.md#die-schichten-auf-einen-blick),
-[Generator für den statischen Cache](../../../../eng-us/features/6.0/static-cache-generator.md),
+[Generator für den statischen Cache](../../../funktionen/6.0/generator-fuer-den-statischen-cache.md),
 [Betrieb einer Site, den statischen Cache einschalten](../../../anleitungen/betrieb-einer-website.md#4-den-statischen-cache-einschalten).
 
 ## Der Antwortcache von Velocity
 
 Er „hält gerenderte öffentliche Seiten vor und beantwortet wiederholte Anfragen im Serverprozess, bevor ein Worker
 ausgewählt wird, sodass ein Treffer überhaupt keinen Worker kostet“
-([Antwortcache von Velocity](../../../../eng-us/features/6.0/velocity-response-cache.md)). Er verhält sich wie ein kleiner
+([Antwortcache von Velocity](../../../funktionen/6.0/velocity-antwort-cache.md)). Er verhält sich wie ein kleiner
 Reverse Proxy. Die Funktionen, die die Verfügbarkeit schützen:
 
 | Funktion | Was sie für Sie tut |
@@ -72,7 +72,7 @@ Entwickler, welche Seiten nie gecacht werden dürfen und wie sie das mitteilen.
 „Der statische Cache speichert öffentliche Seiten als einfache Dateien, die der Webserver ausliefern kann, ohne
 Exponential zu starten“ ([Betrieb einer Site](../../../anleitungen/betrieb-einer-website.md#4-den-statischen-cache-einschalten)). Er
 passt zu Websites mit überwiegend öffentlichen, selten geänderten Seiten
-([Generator für den statischen Cache](../../../../eng-us/features/6.0/static-cache-generator.md)).
+([Generator für den statischen Cache](../../../funktionen/6.0/generator-fuer-den-statischen-cache.md)).
 
 So wird er eingeschaltet, in Grundzügen:
 
@@ -89,9 +89,9 @@ Suchen und angemeldete Besucher bekommen immer die Live-Seite.
 > Die Anleitung für Website-Ersteller empfiehlt, den statischen Cache ausgeschaltet zu lassen, solange Sie ihn nicht
 > brauchen: Ist er eingeschaltet, erzeugt eine Veröffentlichung die betroffenen Seiten über HTTP innerhalb der Anfrage
 > des Redakteurs neu, was das Veröffentlichen verlangsamt hat
-> ([Statischer Cache und Antwortcache von Velocity](../../../../eng-us/help/creators/website-creators/static-cache-and-velocity.md#leave-the-static-cache-off)).
+> ([Statischer Cache und Antwortcache von Velocity](../../ersteller/website-ersteller/statischer-cache-und-velocity.md#lassen-sie-den-statischen-cache-ausgeschaltet)).
 > Seit dem 1. Oktober 2026 ruft eine Veröffentlichung jede Seite nur einmal und mehrere gleichzeitig ab
-> ([Generator für den statischen Cache](../../../../eng-us/features/6.0/static-cache-generator.md#refreshing-on-publish-once-each-in-parallel-2026-10-01)),
+> ([Generator für den statischen Cache](../../../funktionen/6.0/generator-fuer-den-statischen-cache.md#erneuern-beim-veröffentlichen-jede-einmal-parallel-01102026)),
 > doch die Kosten wachsen weiterhin mit der Zahl der Seiten, die eine Veröffentlichung betrifft. Messen Sie an einer
 > Kopie Ihrer Website.
 
@@ -111,7 +111,7 @@ Beide Caches sind nur für anonyme Seiten gedacht, und beide schützen persönli
 
 - Der Antwortcache überspringt jede Anfrage mit einem Header `Authorization` oder einem Sitzungs-Cookie und jede
   Antwort, die ein Cookie setzt oder `private` oder `no-store` angibt
-  ([Antwortcache von Velocity](../../../../eng-us/features/6.0/velocity-response-cache.md#what-is-kept)).
+  ([Antwortcache von Velocity](../../../funktionen/6.0/velocity-antwort-cache.md#was-behalten-wird)).
 - Der statische Cache antwortet nur bei einem einfachen `GET` oder `HEAD` ohne Query-String und ohne Sitzung aus einer
   Datei.
 
@@ -123,7 +123,7 @@ sie entsprechend kennzeichnen.
 
 - Nach einer Änderung an Template, Stylesheet oder Einstellungen:
   `php bin/php/console exp:velocity cache clear --allow-root-user`. `exp:velocity deploy` leert ihn als letzten Schritt
-  ([Statischer Cache und Antwortcache von Velocity](../../../../eng-us/help/creators/website-creators/static-cache-and-velocity.md#after-a-change)).
+  ([Statischer Cache und Antwortcache von Velocity](../../ersteller/website-ersteller/statischer-cache-und-velocity.md#nach-einer-änderung)).
 - Dateien des statischen Caches werden beim Veröffentlichen aktualisiert; alle entfernen Sie mit
   `php bin/php/cache.php static clear --allow-root-user`.
 - Prüfen Sie, dass der Antwortcache funktioniert: Eine zweite anonyme Anfrage nach derselben Seite trägt einen Header
@@ -149,8 +149,8 @@ sie entsprechend kennzeichnen.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

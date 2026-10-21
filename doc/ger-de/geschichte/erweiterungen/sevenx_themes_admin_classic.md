@@ -1,8 +1,8 @@
 # sevenx_themes_admin_classic (Umschalter für das Admin-Design): Chronik
 
-Der Umschalter für das Admin-Design wurde am 20. Juni 2026 veröffentlicht (0.2.0 bis 0.2.4), mit Release Notes je Version und einer kleinen Anpassung der Toolbar am nächsten Tag. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx_themes_admin_classic.md).
+Der Umschalter für das Admin-Design wurde am 20. Juni 2026 veröffentlicht (0.2.0 bis 0.2.4), mit Release Notes je Version und einer kleinen Anpassung der Toolbar am nächsten Tag. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx_themes_admin_classic.md).
 
-Diese Seite führt **jede der 7 Änderungen** des Repositorys `sevenx_themes_admin_classic` zwischen 2026-06-20 und 2026-06-21 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx_themes_admin_classic.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/sevenx_themes_admin_classic.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx_themes_admin_classic.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 7 Änderungen** des Repositorys `sevenx_themes_admin_classic` zwischen 2026-06-20 und 2026-06-21 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx_themes_admin_classic.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/sevenx_themes_admin_classic.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx_themes_admin_classic.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -36,7 +36,7 @@ Der Monat über alle Erweiterungen: [Juni 2026](monate/2026-06.md). [Änderungsv
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx_themes_admin_classic.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx_themes_admin_classic.md)
 - [Release Notes](../../../changelogs/extensions/sevenx_themes_admin_classic.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx_themes_admin_classic.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

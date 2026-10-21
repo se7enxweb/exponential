@@ -3,16 +3,16 @@ title: "Rollenentwurf: Prüfer"
 audience: government, admin, project-manager
 category: public-sector
 order: 90
-summary: Eine nur lesende Rolle für die interne Revision, Informationssicherheitsbeauftragte und Schriftgutverantwortliche - der Audit-Trail nach Kanal, maskierte Logs, Rollenseiten und Versionsgeschichte - ohne jedes Recht, Inhalte, Einstellungen oder den Nachweis selbst zu ändern.
+summary: Eine nur lesende Rolle für die interne Revision, Informationssicherheitsbeauftragte und Schriftgutverantwortliche - das Prüfprotokoll nach Kanal, maskierte Logs, Rollenseiten und Versionsgeschichte - ohne jedes Recht, Inhalte, Einstellungen oder den Nachweis selbst zu ändern.
 keywords: Prüfer, interne Revision, Informationssicherheitsbeauftragte, nur lesende Rolle, audit/read, Einschränkung Channel, Audit-Export, setup/logs, maskierte Logs, Beleg, Rechenschaft, Rollenentwurf, auditor, internal audit, information security officer, read-only role, Channel limitation, audit export, masked logs, evidence, accountability, role design
 type: help
 ---
 # Rollenentwurf: Prüfer
 
 Diese Seite richtet sich an Administratoren, die einer internen Revision, einer oder einem Informationssicherheitsbeauftragten oder
-den Schriftgutverantwortlichen Zugang zu den Belegen geben müssen, ohne jedes Recht, sie zu ändern. Der Audit-Trail von Exponential
+den Schriftgutverantwortlichen Zugang zu den Belegen geben müssen, ohne jedes Recht, sie zu ändern. Das Prüfprotokoll von Exponential
 ist dafür gemacht: zwei Richtlinien, `audit/read` (optional nach Kanal eingeschränkt) und `audit/manage`, und ein Log-Viewer, der
-personenbezogene Daten standardmäßig maskiert ([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md#who-may-look), [Log-Viewer](../../../../../eng-us/features/6.0/log-viewer.md#who-may-use-it)).
+personenbezogene Daten standardmäßig maskiert ([Prüfprotokoll](../../../../funktionen/6.0/pruefprotokoll.md#wer-hineinsehen-darf), [Log-Viewer](../../../../funktionen/6.0/log-betrachter.md#wer-ihn-verwenden-darf)).
 
 ## Inhalt
 1. [Was eine Prüferin oder ein Prüfer sehen muss](#was-eine-prüferin-oder-ein-prüfer-sehen-muss)
@@ -71,23 +71,24 @@ nicht zu dieser Rolle.
 
 - **Audit > Export** (`/audit/export`) schreibt den Filter der Konsole als CSV, JSON Lines oder JSON: **Jetzt herunterladen**
   liefert ihn direkt aus, **Im Hintergrund exportieren** bereitet eine große Datei vor, die nur der anfordernde Benutzer herunterladen
-  kann. CSV-Exporte werden selbst im Audit-Trail erfasst.
+  kann. CSV-Exporte werden selbst im Prüfprotokoll erfasst.
 - Auf der Kommandozeile kann ein Administrator `./console exp:audit verify --allow-root-user` ausführen und die Ausgabe zusammen mit dem
-  Export übergeben, als Beleg, dass die Kette intakt war ([Überprüfung des Audit-Trails](../ueberwachung/pruefung-des-audit-trails.md)).
+  Export übergeben, als Beleg, dass die Kette intakt war ([Überprüfung des Prüfprotokolls](../ueberwachung/pruefung-des-audit-trails.md)).
 - Personenbezogene Daten: Das Audit kürzt Adressen, hasht Sitzungen, entfernt Werte aus Abfragen und erfasst nie Passwörter oder Tokens
-  ([Audit-Trail, „Warum Sie ihn wollen“](../../../../../eng-us/features/6.0/audit-trail.md#why-you-want-it)). Exporte können dennoch
+  ([Prüfprotokoll, „Warum Sie es wollen“](../../../../funktionen/6.0/pruefprotokoll.md#warum-sie-es-wollen)). Exporte können dennoch
   Benutzernamen enthalten; behandeln Sie sie nach Ihren Datenschutzregeln.
 
 ## Verwandte Seiten
-- [Einer prüfenden Person Lesezugriff auf den Audit-Trail geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-an-auditor-read-access-to-the-audit-trail.md)
-- [Audit-Einträge für eine Prüfung exportieren](../../../../../eng-us/help/government/tasks/operations/export-audit-records-for-an-auditor.md)
+- [Einer prüfenden Person Lesezugriff auf das Prüfprotokoll geben](../../aufgaben/personen-und-berechtigungen/einem-pruefer-lesezugriff-auf-das-audit-protokoll-geben.md)
+- [Audit-Einträge für eine Prüfung exportieren](../../aufgaben/betrieb/audit-eintraege-fuer-einen-pruefer-exportieren.md)
 - [Audit-Alarme](../ueberwachung/audit-warnungen.md)
 - [Leitfaden zu Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md#3-das-audit-protokoll-lesen-5-minuten)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

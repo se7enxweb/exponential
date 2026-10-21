@@ -24,10 +24,10 @@ des Shops darauf.
 | Daten | Export | Löschung | Quelle |
 |---|---|---|---|
 | E-Mail-Einstellungen und Einwilligung | Der eigene Download der Person; `./console exp:mail:preferences export --email=<address>` | `./console exp:mail:preferences erase --email=<address> --yes` (Einwilligungsprotokoll anonymisiert, Widerruf als Nachweis aufbewahrt) | [Compliance und DSGVO](../../hosting/sicherheit/compliance-und-dsgvo.md) |
-| Benutzerkonto | Unter **Benutzer** einsehen | Den Benutzer entfernen: endgültig, kein Papierkorb, löscht die E-Mail-Einstellungen | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
-| Bestellungen | Die Bestellungen eines Kunden in der Bestellansicht des Kunden; jeder Beleg als heruntergeladene Datei | Archivieren (`shop/archiveorder`) oder entfernen (`shop/removeorder`) | `kernel/shop/module.php`, [Dauerhafte Bestellbelege](../../../../eng-us/features/6.0/order-receipts.md) |
+| Benutzerkonto | Unter **Benutzer** einsehen | Den Benutzer entfernen: endgültig, kein Papierkorb, löscht die E-Mail-Einstellungen | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
+| Bestellungen | Die Bestellungen eines Kunden in der Bestellansicht des Kunden; jeder Beleg als heruntergeladene Datei | Archivieren (`shop/archiveorder`) oder entfernen (`shop/removeorder`) | `kernel/shop/module.php`, [Dauerhafte Bestellbelege](../../../funktionen/6.0/bestellbelege.md) |
 | Formulareinsendungen | **Setup > Gesammelte Informationen**, CSV-Export | Dieselbe Seite: Sammlungen entfernen | [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md) |
-| Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | Die Benutzerliste von `cjw_newsletter` | [cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md) |
+| Newsletter-Abonnenten | Die Administration von `cjw_newsletter` | Die Benutzerliste von `cjw_newsletter` | [cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md) |
 | Prüfprotokoll-Einträge | `exp:audit export --subject-user=<id>` | Nicht einzeln; für die Aufbewahrungsfrist aufbewahrt, personenbezogene Felder pseudonymisiert | [Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md) |
 | Warenkörbe | Nicht nötig | Vom Cronjob `basket_cleanup.php` entfernt | `settings/cronjob.ini` |
 | Backups | Ihr Hoster | Verfallen gemäß Ihrer Backup-Aufbewahrung | [Backups: was gesichert werden muss](../../hosting/betrieb/backups-was-gesichert-werden-muss.md) |
@@ -87,3 +87,11 @@ Mehrere Arten von Daten werden von Cronjobs entfernt, mit Fristen, die Sie ände
 - [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md)
 - [Aufbewahrung von Logs und Daten für Hoster](../../hosting/sicherheit/aufbewahrung-von-logs-und-daten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

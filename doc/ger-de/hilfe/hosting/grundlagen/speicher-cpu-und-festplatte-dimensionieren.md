@@ -33,13 +33,13 @@ sagt dasselbe: Die Dokumentation nennt wenige harte Zahlen, und das Buch erfinde
 | PHP `memory_limit`, Untergrenze des Installers | 64M | `settings/setup.ini`, `[memory_limit] MinMemoryLimit` |
 | PHP `memory_limit`, Zustandsprüfung | unter 128M ein Fehler, unter 256M eine Warnung | [Systeminformationen](../../../anleitungen/systeminformationen.md#3-zustandsprüfungen) |
 | PHP `memory_limit` unter FrankenPHP | 512M mitgeliefert | `settings/velocity.ini`, `[FrankenPHPSettings] IniOptions[]` |
-| Ein Velocity-Worker | etwa 10 MB privater Speicher (gemessen) | `settings/velocity.ini`; [Velocity-Webserver](../../../../eng-us/features/6.0/velocity-web-server.md) |
+| Ein Velocity-Worker | etwa 10 MB privater Speicher (gemessen) | `settings/velocity.ini`; [Velocity-Webserver](../../../funktionen/6.0/velocity-webserver.md) |
 | Velocity-Pool | `Workers=4` mitgeliefert; der eigene Standard der Engine ist, was in den RAM passt, höchstens 8 pro Kern und 64, nie weniger als 4 | `settings/velocity.ini`, [Kapitel 2.10](../../../installation/02-voraussetzungen.md#210-arbeitsspeicher-cpu-und-festplatte) |
 | OPcache | `memory_consumption=256`, `max_accelerated_files=20000`, `interned_strings_buffer=32` | Kapitel 10.12 und `velocity.ini [PHPSettings]` |
 | APCu für Velocity | `apc.shm_size=256M` (reserviert, nicht genutzt, bis er sich füllt) | `velocity.ini [PHPSettings]` |
 | SQLite-Seitencache | bis zu 64 MB pro Prozess, der die Datenbank geöffnet hat; 256 MB Memory Map | [Datenbankunterstützung](../../datenbankunterstuetzung.md#performance-und-skalierung) |
 | SQLite `VACUUM` | etwa die doppelte Größe der Datenbank als freier Speicherplatz | [Kapitel 9.2](../../../installation/09-datenbanken.md#analyze-vacuum-und-die-wal-datei) |
-| Eine MongoDB-Installation | RAM mindestens 512 MB, empfohlen 2 GB; Festplatte mindestens 2 GB, empfohlen 10 GB | [Referenz zur Portierung](../../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md), Abschnitt 24.1 |
+| Eine MongoDB-Installation | RAM mindestens 512 MB, empfohlen 2 GB; Festplatte mindestens 2 GB, empfohlen 10 GB | [Referenz zur Portierung](../../../bc/6.0/mongodb-kernel-unterstuetzung.md), Abschnitt 24.1 |
 | Freier Speicherplatz, Zustandsprüfung | unter 1 GB oder 5 % ein Fehler; unter 5 GB oder 10 % eine Warnung | [Systeminformationen](../../../anleitungen/systeminformationen.md#3-zustandsprüfungen) |
 | Log-Rotation | jedes Log wird bei `LogFileMaxSize=2097152` (2 MB) rotiert, `LogFileRotateCount=3` werden behalten | `settings/site.ini`, `[FileSettings]` |
 | Ein Kernel-Klon mit Historie | etwa 370 MB | [Kapitel 3.2](../../../installation/03-den-code-beschaffen.md#a-git-clone-und-composer-install-empfohlen) |
@@ -81,7 +81,7 @@ Was auf einem Server mit Exponential-Websites Arbeitsspeicher verbraucht:
   ([Kapitel 10.12](../../../installation/10-nach-der-installation.md#1012-performance-tuning)).
 - **OPcache zählt.** Unter Velocity ließ `opcache.file_update_protection` über 0 ein Rendering etwa das Vierfache der
   CPU kosten, die es unter PHP-FPM braucht; die mitgelieferte `velocity.ini` setzt es auf 0
-  ([Opcode-Cache von Velocity](../../../../eng-us/features/6.0/velocity-opcode-cache-and-profile.md)).
+  ([Opcode-Cache von Velocity](../../../funktionen/6.0/velocity-opcode-cache-und-profil.md)).
 - **FrankenPHP**-Threads sind standardmäßig doppelt so viele wie CPU-Kerne, wenn `[FrankenPHPSettings] Workers` leer ist.
 - **Cron und Bildarbeit** bringen Lastspitzen: Bildvarianten werden bei der ersten Verwendung erzeugt, und die Cronjobs
   laufen nach Zeitplan.
@@ -91,7 +91,7 @@ Was auf einem Server mit Exponential-Websites Arbeitsspeicher verbraucht:
 | Was wächst | Wo | Wie Sie es im Griff behalten |
 |---|---|---|
 | Hochgeladene Dateien und Bildvarianten | `var/storage` (pro Website `var/<site>/storage`) | wächst mit den Inhalten; der Hauptfaktor für die Festplatte eines Tarifs |
-| Caches | `var/cache` (pro Website `var/<site>/cache`) | werden geleert und neu aufgebaut; können auf einem Dateisystem im Arbeitsspeicher liegen ([Pfade bei mehreren Websites](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)) |
+| Caches | `var/cache` (pro Website `var/<site>/cache`) | werden geleert und neu aufgebaut; können auf einem Dateisystem im Arbeitsspeicher liegen ([Pfade bei mehreren Websites](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)) |
 | Logs | `var/log`, `var/vc/` für Velocity | Rotation (`LogFileMaxSize`, `LogFileRotateCount`, `LogFileCompress`), dazu logrotate des Systems für Cron-Logs |
 | Die SQLite-Datenbank | `var/storage/sqlite3/` | Platz für die doppelte Größe der Datenbank, für `VACUUM` und Backups |
 | Backups | idealerweise außerhalb der Maschine | nie nur auf derselben Festplatte |
@@ -113,7 +113,7 @@ du -sh var/storage var/cache var/log
 `exp:benchmark` ruft die Startseite, Menüseiten, die Suchseite und die Anmeldeseite der Administration ab und gibt
 Median, p90 und p99 aus; gegenüber anderen Hosts ist es standardmäßig zurückhaltend ([Benchmarking](../../../anleitungen/benchmarking.md)).
 `exp:system:info` gibt die Fakten und Zustandsprüfungen von **Setup > Systeminformationen** aus (Speichergrenze, OPcache
-und APCu, Festplatte, Arbeitsspeicher und Last der Maschine). Das [Kontrollzentrum](../../../../eng-us/features/6.0/velocity-control-panel.md)
+und APCu, Festplatte, Arbeitsspeicher und Last der Maschine). Das [Kontrollzentrum](../../../funktionen/6.0/velocity-control-panel.md)
 von Velocity zeigt den Speicher des Pools.
 
 > **Tipp**
@@ -150,3 +150,11 @@ kann, jede mit den Befehlen oben messbar:
 - [Hosting-Tarife gestalten](../geschaeft/hosting-tarife-gestalten.md)
 - [Kapitel 2.10: Arbeitsspeicher, CPU und Festplatte](../../../installation/02-voraussetzungen.md#210-arbeitsspeicher-cpu-und-festplatte)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

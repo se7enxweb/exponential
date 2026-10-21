@@ -37,7 +37,7 @@ Tagen) und sofort, wenn er gelesen worden sein könnte
 
    Der neue Schlüssel wird aktiv; alte Schlüssel bleiben für die Archive, die sie signiert haben;
    `system.audit.key.rotate` wird aufgezeichnet. Der Befehl leert den INI-Cache.
-3. Starten Sie Velocity neu, wenn es läuft, damit kein Worker weiter mit dem alten Schlüssel signiert:
+3. Starten Sie Velocity neu, wenn er läuft, damit kein Worker weiter mit dem alten Schlüssel signiert:
    `./console exp:velocity restart --allow-root-user`.
 4. Sichern Sie `settings/override/audit.ini.append.php` erneut.
 5. In einem Cluster kopieren Sie die Schlüsseldatei identisch auf jeden Server.
@@ -54,14 +54,15 @@ noch gebraucht werden. Der Pseudonym-Schlüssel ist ein anderer Schlüssel und w
 
 ## Verwandte Seiten
 
-- [Integrität und Verifikation des Audits](../../../../../eng-us/help/government/security/audit-integrity-and-verification.md)
-- [Geheimnisse in settings/override](../../../../../eng-us/help/government/security/secrets-in-settings-override.md)
+- [Integrität und Verifikation des Audits](../../sicherheit/audit-integritaet-und-pruefung.md)
+- [Geheimnisse in settings/override](../../sicherheit/geheimnisse-in-settings-override.md)
 - [Langfristige Aufbewahrung des Audits](../../schriftgut-und-archivierung/langfristige-aufbewahrung-von-audit-eintraegen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

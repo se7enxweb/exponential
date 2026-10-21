@@ -25,14 +25,14 @@ vermittelt ([Kurskatalog](../../../trainer/kurskatalog.md)).
 
 | Rolle | Tut | Kompetenzen | Kurs |
 |---|---|---|---|
-| Redaktion (in den Abteilungen) | schreibt und aktualisiert Seiten | die Administration, Entwürfe, Versionen, Bilder, barrierefreie Inhalte | [Editors 101](../../../trainer/redakteure-101/README.md), [Editors 201](../../../../../eng-us/help/trainers/editors-201/README.md) |
-| Webmanagement | redaktionelle Standards, Freigaben, Struktur | Inhaltsmodell, Workflows, Objektzustände, Sprachen | Editors 201, [Exponential Layouts](../../../../../eng-us/help/trainers/layouts/README.md) |
+| Redaktion (in den Abteilungen) | schreibt und aktualisiert Seiten | die Administration, Entwürfe, Versionen, Bilder, barrierefreie Inhalte | [Editors 101](../../../trainer/redakteure-101/README.md), [Editors 201](../../../trainer/redakteure-201/README.md) |
+| Webmanagement | redaktionelle Standards, Freigaben, Struktur | Inhaltsmodell, Workflows, Objektzustände, Sprachen | Editors 201, [Exponential Layouts](../../../trainer/layouts/README.md) |
 | Administration der Website | Benutzer, Rollen, Sektionen, Caches, Cronjobs, Protokolle, Audit | Administration einer Installation, grundlegende Kommandozeile | [Administration der Website](../../../trainer/website-administratoren/README.md) |
-| Systemadministration | Server, PHP, Datenbank, Sicherungen, Überwachung, Updates | Linux, Webserver, Datenbanken | [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) |
+| Systemadministration | Server, PHP, Datenbank, Sicherungen, Überwachung, Updates | Linux, Webserver, Datenbanken | [Hosting und Betrieb](../../../trainer/hosting-betrieb/README.md) |
 | Entwicklung (im Haus oder beim Lieferanten) | Templates, Erweiterungen, Integrationen | PHP, Git, die Template-Sprache | [Entwickler](../../../trainer/entwickler/README.md), [Theme-Design](../../../trainer/theme-designer/README.md) |
 | Sicherheitsbeauftragte | Härtung, Überprüfungen, Sicherheitsvorfälle | Sicherheitspraxis | [Leitfaden zu Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md) |
-| Datenschutzbeauftragte | Einwilligung, Aufbewahrung, Anfragen | Datenschutzrecht, die Datenschutzfunktionen | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) |
-| Verantwortliche für Barrierefreiheit | Tests, Erklärung, Coaching der Redaktion | WCAG, Testmethoden | [Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
+| Datenschutzbeauftragte | Einwilligung, Aufbewahrung, Anfragen | Datenschutzrecht, die Datenschutzfunktionen | [Datenschutzstandards](../../../../standards/datenschutz.md) |
+| Verantwortliche für Barrierefreiheit | Tests, Erklärung, Coaching der Redaktion | WCAG, Testmethoden | [Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
 
 ## Im Haus oder eingekauft
 
@@ -70,7 +70,7 @@ schreibt auch danach Inhalte; zählen Sie den Unterschied.
 - Personalwechsel: Planen Sie die Einarbeitung neuer Redaktionsmitglieder (siehe den Ordner zur Schulung der
   Beschaffung).
 - Dokumentation in der Administration: Die Hilfe öffnet sich über die Schaltfläche „?“ und ist auf einer neuen
-  Installation für die Redaktion lesbar ([Hilfesystem](../../../../../eng-us/features/6.0/help-system.md)).
+  Installation für die Redaktion lesbar ([Hilfesystem](../../../../funktionen/6.0/hilfesystem.md)).
 - Das Kursmaterial ist freie Dokumentation; Sie dürfen es in Ihre eigene Schulung übernehmen und anpassen
   ([Freie Dokumentation](../../../freie-dokumentation.md)).
 
@@ -87,8 +87,9 @@ schreibt auch danach Inhalte; zählen Sie den Unterschied.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

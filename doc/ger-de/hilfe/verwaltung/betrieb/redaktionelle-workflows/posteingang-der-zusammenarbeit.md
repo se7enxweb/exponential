@@ -44,7 +44,7 @@ dürfen ([Entwürfe und ausstehende Elemente](../../../../anleitungen/entwuerfe-
 
 ## Was die Autorin oder der Autor sieht
 
-- Nach **Veröffentlichen** wartet die Version; **Meine ausstehenden Elemente** listet sie unter „Von Ihnen geschickt“ mit dem Stand ihrer
+- Nach **Zur Veröffentlichung schicken** wartet die Version; **Meine ausstehenden Elemente** listet sie unter „Von Ihnen geschickt“ mit dem Stand ihrer
   Freigabe und wer freigibt.
 - Nach **Ablehnen** ist die Version wieder ein Entwurf unter **Meine Entwürfe**; der Kommentar steht bei der Freigabe.
 - Nach **Freigeben** und dem Cronjob ist der Inhalt veröffentlicht und verschwindet aus der Liste der ausstehenden Elemente.
@@ -69,13 +69,14 @@ nicht angezeigt werden“. Freigebende brauchen daher eine Rolle mit dem Modul `
 ## Verwandte Seiten
 - [Entwürfe und ausstehende Elemente](entwuerfe-und-wartende-elemente.md)
 - [Überblick über Freigabe-Workflows](freigabe-workflows-im-ueberblick.md)
-- [Einer freigebenden Person Rechte geben](../../../../../eng-us/help/government/tasks/people-and-permissions/give-an-approver-rights.md)
-- [Kurs Redaktion 101](../../../../../eng-us/help/trainers/editors-101/README.md)
+- [Einer freigebenden Person Rechte geben](../../aufgaben/personen-und-berechtigungen/einem-freigebenden-rechte-geben.md)
+- [Kurs Redaktion 101](../../../trainer/redakteure-101/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

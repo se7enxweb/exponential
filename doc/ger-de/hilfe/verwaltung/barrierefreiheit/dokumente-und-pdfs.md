@@ -59,7 +59,7 @@ Nennen Sie im Link auf der Seite Format und Größe: „Ratsprotokoll, 12. Mai (
 ## Der eingebaute PDF-Export
 
 **Setup > PDF-Export** erzeugt ein PDF eines Knotens oder eines Teils des Baums, einmalig oder bei Bedarf
-([PDF-Exporte](../../../anleitungen/pdf-exporte.md), [PDF-Export](../../../../eng-us/features/6.0/pdf-export.md)). Das Repository
+([PDF-Exporte](../../../anleitungen/pdf-exporte.md), [PDF-Export](../../../funktionen/6.0/pdf-export.md)). Das Repository
 dokumentiert für diesen Export keine Tags und keine Unterstützung von PDF/UA; behandeln Sie seine Ausgabe daher als
 ungetaggtes PDF: nützlich zum Drucken und Archivieren, aber nicht als barrierefreie Fassung Ihrer Inhalte. Behalten Sie
 die Webseiten als primäre, barrierefreie Form.
@@ -75,13 +75,14 @@ die Webseiten als primäre, barrierefreie Form.
 ## Verwandte Seiten
 
 - [Barrierefreie Inhalte für die Redaktion](barrierefreie-inhalte-fuer-die-redaktion.md)
-- [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
+- [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)
 - [Bilder, Medien und Uploads](../../medien-und-uploads.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

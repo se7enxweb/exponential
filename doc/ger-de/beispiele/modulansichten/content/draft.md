@@ -14,10 +14,10 @@ Eine Ansicht des Moduls `content`, definiert in `kernel/content/module.php` und 
 ## Adresse
 
 ```text
-/content/draft/(offset)/<Offset>
+/content/draft/(offset)/<Offset>/(q)/<Query>
 ```
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`, `(q)` setzt `Query`.
 
 ## Wer sie öffnen darf
 

@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren bei Hosting-Unternehmen, die FrankenP
 beantwortet: was FrankenPHP in Exponential ist, wie es installiert und geprüft wird, was sein eingebettetes PHP braucht, wie es sich mit
 der eigenen Engine von Velocity vergleicht und was zuerst schiefgeht. Die Quellen sind
 [Kapitel 8, Abschnitt 8.4](../../../installation/08-die-website-ausliefern.md#84-frankenphp) und
-[FrankenPHP als Web-Engine von Exponential](../../../../eng-us/bc/6.0/frankenphp.md).
+[FrankenPHP als Web-Engine von Exponential](../../../bc/6.0/frankenphp.md).
 
 ## Inhalt
 
@@ -35,7 +35,7 @@ jede Anfrage beginnt mit einem sauberen Zustand wie unter PHP-FPM. Der Worker-Mo
 Kernel den Zustand einer Anfrage in globalen Variablen hält und eine Anfrage in die nächste durchsickern würde.
 
 `exp:frankenphp <verb>` ist dasselbe wie `exp:velocity <verb> --engine=frankenphp`
-([Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md)).
+([Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md)).
 
 ## FrankenPHP oder die Engine qbix von Velocity
 
@@ -51,7 +51,7 @@ Kernel den Zustand einer Anfrage in globalen Variablen hält und eine Anfrage in
 | Zu pflegendes PHP der Maschine und PHP-FPM | das PHP der Maschine | keines für das Ausliefern (die Konsole nutzt weiterhin das PHP der Maschine) |
 
 Wählen Sie FrankenPHP, wenn Sie eine geprüfte Binärdatei mit TLS und HTTP/2 und eine Trennung pro Anfrage wie bei PHP-FPM wollen. Wählen
-Sie `qbix`, wenn Sie persistente Worker und den Antwort-Cache wollen ([Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md)).
+Sie `qbix`, wenn Sie persistente Worker und den Antwort-Cache wollen ([Velocity-Engines](../../../bc/6.0/velocity-engines.md)).
 
 ## Installieren und starten
 
@@ -70,7 +70,7 @@ php bin/php/console exp:velocity status --all --allow-root-user
 - `install --from=<file>` installiert eine kopierte Datei auf einer Maschine ohne Zugriff auf GitHub, auf dieselbe Weise geprüft.
 - Wurde ein Release upstream neu erstellt und passt der Pin nicht mehr, scheitert die Installation mit einem Unterschied im SHA-256. Die
   Quellseite beschreibt, wie Sie den veröffentlichten Digest prüfen und den Pin in einer Überschreibung setzen
-  ([FrankenPHP, Abschnitt 2.4](../../../../eng-us/bc/6.0/frankenphp.md#24-if-the-pin-is-stale--the-re-cut-release-procedure-the-gotcha-we-hit)).
+  ([FrankenPHP, Abschnitt 2.4](../../../bc/6.0/frankenphp.md#24-wenn-der-pin-veraltet-ist--das-vorgehen-bei-einem-neu-geschnittenen-release-die-falle-in-die-wir-gerieten)).
   Schalten Sie die Prüfung nie aus, um eine Installation durchzubringen.
 
 Ausgelieferte Ports: `8089` für HTTP und `8444` für HTTPS (`[FrankenPHPSettings] Port`, `HTTPSPort`), sodass es für Tests neben der
@@ -89,7 +89,7 @@ Ausgelieferte `[FrankenPHPSettings] IniOptions[]`: `display_errors=Off`, `log_er
 > Die Falle, der Hoster zuerst begegnen: Mit `[DatabaseSettings] Server=localhost` verbinden sich die Treiber für MariaDB und MySQL über
 > einen Socket, dessen Pfad normalerweise aus der `php.ini` kommt. Das eingebettete PHP hat keine, die Verbindung scheitert, und die
 > Website zeigt `An unexpected error has occurred.` Setzen Sie den Socket ausdrücklich, oder verbinden Sie sich über TCP mit
-> `Server=127.0.0.1` ([FrankenPHP, Abschnitt 6.1](../../../../eng-us/bc/6.0/frankenphp.md#61-the-mysql-socket-fix-the-key-gotcha)).
+> `Server=127.0.0.1` ([FrankenPHP, Abschnitt 6.1](../../../bc/6.0/frankenphp.md#61-die-korrektur-für-den-mysql-socket-die-wichtigste-falle)).
 
 ```ini
 # settings/override/velocity.ini.append.php
@@ -112,7 +112,7 @@ passt; sonst ist ein eigener Build nötig.
 `SpareWorkers` fügt unter Last Threads hinzu. Diese fallen **nicht** auf `[ServerSettings]` zurück. Gemessen auf einer Testinstallation mit
 12 Kernen waren mehr Threads als das unter hoher Last langsamer: Bei 64 gleichzeitigen Anfragen schafften 12 bis 48 Threads etwa 10 % mehr
 Arbeit als 96 oder 590, mit bis zu 24 % weniger CPU pro Seite
-([FrankenPHP, Threads](../../../../eng-us/bc/6.0/frankenphp.md#threads-classic-mode)). Setzen Sie `Workers` erst ausdrücklich, nachdem Sie Ihre
+([FrankenPHP, Threads](../../../bc/6.0/frankenphp.md#threads-klassischer-modus)). Setzen Sie `Workers` erst ausdrücklich, nachdem Sie Ihre
 eigenen Seiten gemessen haben.
 
 FrankenPHP ist ein Go-Programm; `GOMEMLIMIT` und `GOMAXPROCS` sind Umgebungsvariablen des Prozesses, der `exp:velocity start` ausführt,
@@ -169,5 +169,13 @@ php bin/php/console exp:velocity ctl version   --engine=frankenphp --allow-root-
 - [Velocity für Hoster](velocity-fuer-hoster.md)
 - [Caddy](caddy.md)
 - [Einen Webserver wählen](einen-webserver-waehlen.md)
-- [FrankenPHP als Web-Engine von Exponential](../../../../eng-us/bc/6.0/frankenphp.md)
+- [FrankenPHP als Web-Engine von Exponential](../../../bc/6.0/frankenphp.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

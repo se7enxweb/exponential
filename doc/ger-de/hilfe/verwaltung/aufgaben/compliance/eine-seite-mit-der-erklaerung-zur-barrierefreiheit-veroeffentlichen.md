@@ -10,9 +10,9 @@ type: help
 # Eine Seite mit der Erklärung zur Barrierefreiheit veröffentlichen
 
 Für Redakteure und Projektleiter, sobald der Text der Erklärung genehmigt ist. Exponential liefert kein Template für die
-Erklärung mit ([Standards zur Barrierefreiheit: EN 301 549](../../../../../eng-us/standards/accessibility.md#en-301-549));
+Erklärung mit ([Standards zur Barrierefreiheit: EN 301 549](../../../../standards/barrierefreiheit.md#en-301-549));
 schreiben Sie den Text nach der Gliederung in
-[Eine Erklärung zur Barrierefreiheit schreiben](../../../../../eng-us/help/government/accessibility/writing-an-accessibility-statement.md) oder nach dem
+[Eine Erklärung zur Barrierefreiheit schreiben](../../barrierefreiheit/eine-erklaerung-zur-barrierefreiheit-schreiben.md) oder nach dem
 Muster Ihres Landes.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -41,7 +41,7 @@ Muster Ihres Landes.
    (oder den in Ihrem Land üblichen Pfad); oder einen globalen Alias unter **Setup > URL-Übersetzer**.
 3. Fügen Sie einen Weg für Rückmeldungen hinzu: eine E-Mail-Adresse im Text und, wenn Sie möchten, ein mit dem
    Informationssammler gebautes Formular (die mitgelieferte Klasse Feedback form), dessen Einsendungen den Koordinator
-   erreichen ([Ein Kontaktformular bauen](../../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)).
+   erreichen ([Ein Kontaktformular bauen](../../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)).
 4. Verlinken Sie die Seite aus der Fußzeile jeder Seite (Pagelayout oder gemeinsame Fußzeile) und aus der Sitemap.
 5. Veröffentlichen Sie.
 
@@ -60,14 +60,15 @@ Muster Ihres Landes.
 
 ## Verwandte Seiten
 
-- [Eine Erklärung zur Barrierefreiheit schreiben](../../../../../eng-us/help/government/accessibility/writing-an-accessibility-statement.md)
-- [Überwachung und Rückmeldungen](../../../../../eng-us/help/government/accessibility/monitoring-and-feedback.md)
+- [Eine Erklärung zur Barrierefreiheit schreiben](../../barrierefreiheit/eine-erklaerung-zur-barrierefreiheit-schreiben.md)
+- [Überwachung und Rückmeldungen](../../barrierefreiheit/ueberwachung-und-rueckmeldungen.md)
 - [URLs erhalten](../../schriftgut-und-archivierung/urls-erhalten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

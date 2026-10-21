@@ -83,8 +83,8 @@ Exponential Platform kernel on Symfony 5.1/5.4 LTS (full-stack, single kernel �
 (4.6.x, PHP 7.4 bis 8.5, Symfony 5.4) und `se7enxweb/exponential-platform-dxp-skeleton` mit dem Metapaket
 `se7enxweb/exponential-platform-dxp` (Platform v5, PHP 8.3 oder neuer, Symfony 7.4). Die vollständige Paketliste steht in
 der [Paketübersicht der Plattform](../spezifikationen/6.0/platform-paketzuordnung.md); die Nexus-Linien werden in
-[Exponential Platform Nexus](../../eng-us/features/6.0/platform-nexus-starter.md) vorgestellt und die Skeletons auf der Seite
-[DXP-Skeleton](../../eng-us/features/6.0/platform-dxp-skeleton.md).
+[Exponential Platform Nexus](../funktionen/6.0/plattform-nexus-starter.md) vorgestellt und die Skeletons auf der Seite
+[DXP-Skeleton](../funktionen/6.0/plattform-dxp-skeleton.md).
 
 Drei Tatsachen entscheiden, wie eine Migration zu diesen Zielen funktioniert:
 
@@ -97,7 +97,7 @@ Drei Tatsachen entscheiden, wie eine Migration zu diesen Zielen funktioniert:
    `EzSystems\...` (2.5, 3.3); `se7enxweb/admin-ui` lädt `Ibexa\AdminUi\` automatisch, die v5-Bundles sind als
    `Ibexa\Bundle\Core\IbexaCoreBundle` usw. registriert. Eigener Code, der für dieselbe Generation geschrieben wurde, läuft
    unverändert. Geändert haben sich die Namen der Konsolenbefehle, das Branding, der Lizenzwortlaut und die
-   Datenbank-Installer ([Paket-Forks und Umbenennungen von Befehlen](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)).
+   Datenbank-Installer ([Paket-Forks und Umbenennungen von Befehlen](../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)).
 3. **Nexus baut auf der Open-Source-Edition auf.** Seine `config/bundles.php` (Nexus 5) registriert die Bundles für
    Ibexa Core, die Legacy-Suchmaschine, Solr, den HTTP-Cache, REST, GraphQL, die Administrationsoberfläche, RichText,
    Matrix, den Query-Feldtyp, Cron, Messenger und die Design-Engine, dazu Netgen Layouts und etwa 25 weitere
@@ -144,7 +144,7 @@ lesen kann; ob daneben ein Symfony-Stack weiterläuft, ist eine zweite Entscheid
 | Redakteure, die die Symfony-Administration kennen | Dieselbe Generation der Administrationsoberfläche | Die Legacy-Administration (Design `admin3`), ein anderes Werkzeug |
 | Ein Team, das INI, TPL und Legacy-Extensions kennt | Muss den Symfony-Stack lernen | Arbeitet mit dem, was es kennt |
 | Server mit PHP 8.0 oder 8.1 | Nexus 1.0.0.x / 1.1.0.x (oder die Platform-3.x-Forks) | Ganz 6.0 |
-| PHP 8.4 oder 8.5 | Nexus 1.3.0.x (braucht 8.4) oder ältere Linien mit den [Framework-Forks](../../eng-us/features/6.0/platform-php85-framework-forks.md) | Ganz 6.0 |
+| PHP 8.4 oder 8.5 | Nexus 1.3.0.x (braucht 8.4) oder ältere Linien mit den [Framework-Forks](../funktionen/6.0/plattform-php85-framework-forks.md) | Ganz 6.0 |
 | Ein Server ohne separaten Webserver, SQLite unter Last | Nexus 5 kann mit SQLite laufen (Standard für die Entwicklung) | Velocity und der SQLite-Treiber sind Produktionsfunktionen ([Kapitel 8](08-die-website-ausliefern.md), [Kapitel 9](09-datenbanken.md)) |
 | Geringstes Risiko für eine Live-Site | Am höchsten: dieselbe Generation, ein Paketaustausch | Höchster Aufwand: eine Daten- und Template-Migration |
 | Beide Welten für einen Übergang | Nexus 1.0.0.x, 1.1.0.x und 1.2.0.x oder Platform Legacy betreiben beide Kernel auf einer Datenbank | Dieselben Produkte, von der anderen Seite gesehen |
@@ -167,7 +167,7 @@ Exponential abweicht.
 
 | Seite des Herstellers | Abgedeckt in | Wo Exponential abweicht |
 |---|---|---|
-| [Migration vom 4.x- und 5.x-Legacy-Stack (Seite des Herstellers)](https://doc.ibexa.co/en/5.0/update_and_migration/migrate_to_ibexa_dxp/migrating_from_ez_publish/) (vom 4.x/5.x-Legacy-Stack zum Symfony-Stack) | [16.5.11](#16511-hinweise-je-quellversion), [16.6](#166-weg-b-hinunter-zum-legacy-kernel-von-exponential-60) | Der Hersteller sagt, den Symfony-Stack Seite an Seite mit dem Legacy-Kernel zu betreiben, sei wegen XmlText, des Page-Felds und des Schemas „practically impossible“. Die Branches der se7enxweb-Legacy-Bridge behalten das Legacy-Schema für 2.5, 3.3, 4.6 und v5 bei ([Legacy Bridge](../../eng-us/features/6.0/legacy-bridge.md)), und Exponential 6.0 ist selbst ein gepflegtes Ziel; die Richtung lässt sich also umkehren |
+| [Migration vom 4.x- und 5.x-Legacy-Stack (Seite des Herstellers)](https://doc.ibexa.co/en/5.0/update_and_migration/migrate_to_ibexa_dxp/migrating_from_ez_publish/) (vom 4.x/5.x-Legacy-Stack zum Symfony-Stack) | [16.5.11](#16511-hinweise-je-quellversion), [16.6](#166-weg-b-hinunter-zum-legacy-kernel-von-exponential-60) | Der Hersteller sagt, den Symfony-Stack Seite an Seite mit dem Legacy-Kernel zu betreiben, sei wegen XmlText, des Page-Felds und des Schemas „practically impossible“. Die Branches der se7enxweb-Legacy-Bridge behalten das Legacy-Schema für 2.5, 3.3, 4.6 und v5 bei ([Legacy Bridge](../funktionen/6.0/legacy-bridge.md)), und Exponential 6.0 ist selbst ein gepflegtes Ziel; die Richtung lässt sich also umkehren |
 | [Migration vom 5.x-Platform-Stack (Seite des Herstellers)](https://doc.ibexa.co/en/5.0/update_and_migration/migrate_to_ibexa_dxp/migrating_from_ez_publish_platform/) (5.4 / 2014.11 nach 1.7, dann 1.13, dann 2.x) | [16.5.11](#16511-hinweise-je-quellversion), [16.6.5](#1665-konfiguration-siteaccess-yaml-zu-ini) (Bild-Aliase), [16.7](#167-häufige-probleme) | Der Legacy-Kernel akzeptiert die Sortierfelder 6 und 7, XmlText, die ezflow-Page und Star Rating, die der Hersteller als nicht unterstützt aufführt; auf der Legacy-Seite muss für sie nichts konvertiert werden |
 | [Häufige Migrationsprobleme](https://doc.ibexa.co/en/5.0/update_and_migration/migrate_to_ibexa_dxp/common_issues/) | [16.7](#167-häufige-probleme) | Befehlsnamen tragen auf Exponential Platform v5 das Präfix `exponential:` |
 | [Ibexa DXP aktualisieren](https://doc.ibexa.co/en/5.0/update_and_migration/update_ibexa_dxp/), [von 1.13 und 2.x](https://doc.ibexa.co/en/5.0/update_and_migration/from_1.x_2.x/update_from_1.x_2.x/), [Anwendung auf 2.5](https://doc.ibexa.co/en/5.0/update_and_migration/from_1.x_2.x/update_app_to_2.5/), [Datenbank auf 2.5](https://doc.ibexa.co/en/5.0/update_and_migration/from_1.x_2.x/update_db_to_2.5/) | [16.5.2](#1652-die-quelle-auf-die-letzte-release-ihrer-linie-bringen), [16.5.11](#16511-hinweise-je-quellversion) | Pakete von Exponential Platform 2.5 kommen von se7enxweb, nicht von `updates.ez.no` |
@@ -364,7 +364,7 @@ Die Reihenfolge der Arbeit, auf einer Kopie des Projekts:
    ```
 
 4. Verlangen Sie Tags, nicht die Aliase für Entwicklungs-Branches, die am 2026-03-26 hinzugefügt und wieder entfernt
-   wurden (Schritt 2 von [Paket-Forks und Umbenennungen von Befehlen](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)).
+   wurden (Schritt 2 von [Paket-Forks und Umbenennungen von Befehlen](../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)).
 5. Installieren Sie die Flex-Rezepte, auf die das Skeleton verweist: Die Exponential-Skeletons stellen den Endpunkt
    `se7enxweb/sevenx-recipes` vor die Upstream-Rezepte, sodass die Rezepte die fork-bewussten sind.
 6. `php bin/console cache:clear`, danach der Asset-Build Ihrer Generation (Webpack Encore: `yarn install` und das
@@ -372,8 +372,8 @@ Die Reihenfolge der Arbeit, auf einer Kopie des Projekts:
 
 Versionsbedingungen: PHP ist die erste Hürde. Nexus `1.3.0.x` verweigert PHP unter 8.4; das v5-Skeleton unter 8.3; das
 4.6-Skeleton akzeptiert 7.4 bis 8.5; die 3.x-Forks 7.3 bis 8.5. Unter PHP 8.4 oder 8.5 brauchen die älteren Stacks die
-[Framework-Forks](../../eng-us/features/6.0/platform-php85-framework-forks.md), und der Layouts-2.0-Stack braucht den
-[Fork von layouts-core](../../eng-us/features/6.0/platform-layouts-core-fork.md). Die PHP-Migrationsanleitungen des Herstellers
+[Framework-Forks](../funktionen/6.0/plattform-php85-framework-forks.md), und der Layouts-2.0-Stack braucht den
+[Fork von layouts-core](../funktionen/6.0/plattform-layouts-core-fork.md). Die PHP-Migrationsanleitungen des Herstellers
 ([8.0](https://www.php.net/manual/en/migration80.php) bis [8.5](https://www.php.net/manual/en/migration85.php)) gelten
 für Ihren eigenen Code wie überall.
 
@@ -507,7 +507,7 @@ Auch die Feldtyp-Bezeichner werden in 5.0 umbenannt (`ezstring` zu `ibexa_string
 Feld-Templates folgen den neuen Namen (`{% block ezstring_field %}` wird zu `{% block ibexa_string_field %}`).
 
 **SQLite.** Die Exponential-Installer können eine Plattform-Datenbank in SQLite anlegen (3.x- und 4.6-Kernel-Forks,
-v5-Core; [SQLite für Exponential Platform](../../eng-us/features/6.0/platform-sqlite-install.md)). Ein Upgrade-Skript für SQLite
+v5-Core; [SQLite für Exponential Platform](../funktionen/6.0/plattform-sqlite-installation.md)). Ein Upgrade-Skript für SQLite
 gibt es weder im Upstream noch in den Exponential-Repositorys: Um eine SQLite-Datenbank über eine Generation hinweg zu
 bringen, konvertieren Sie sie mit den Konvertierungsrezepten der Skeleton-Anleitung nach MySQL oder PostgreSQL,
 aktualisieren Sie sie dort und konvertieren Sie sie zurück, wenn Sie möchten.
@@ -521,7 +521,7 @@ einer Neuinstallation; eine migrierte Datenbank erhält diese Tabellen über [16
 ### 16.5.7 Administration, Twig, Feldtypen, REST und GraphQL
 
 **Administration.** Die Administrationsoberfläche ist die des Upstreams der jeweiligen Generation, unter v5 als
-„Exponential Platform DXP“ gebrandet (`se7enxweb/admin-ui`, [Administrationsoberfläche der Plattform](../../eng-us/features/6.0/platform-admin-ui-fork.md)).
+„Exponential Platform DXP“ gebrandet (`se7enxweb/admin-ui`, [Administrationsoberfläche der Plattform](../funktionen/6.0/plattform-admin-ui-fork.md)).
 Nexus 5 liefert sie unter `/adminui/` aus (Siteaccess `adminui`); prüfen Sie Ihre eigene Siteaccess-Liste, denn die
 Siteaccess-Namen von Nexus (`fh_eng`, `bold_eng`, `bold_ger`, `adminui`) sind die der Demo. Eigene Tabs und Menüs der
 Administration sowie die Konfiguration des Universal Discovery Widget ziehen um wie im Upstream: 3.0 änderte die
@@ -604,7 +604,7 @@ User-Context-Header in `X-User-Context-Hash` und den Purge auf `PURGEKEY` mit `x
 Nexus 1.0.0.x führt zusätzlich die Legacy-Cronjobs über die Bridge aus (`ngsite.cron`:
 `bin/console ezpublish:legacy:script runcronjobs.php`). Unter v5 ist der Messenger-Transport `MESSENGER_TRANSPORT_DSN`;
 Nexus 5 liefert `doctrine://default?auto_setup=0` aus, und unter SQLite setzen Sie `sync://`, weil der
-Doctrine-Transport eine zweite Verbindung verlangt ([SQLite für Exponential Platform](../../eng-us/features/6.0/platform-sqlite-install.md)).
+Doctrine-Transport eine zweite Verbindung verlangt ([SQLite für Exponential Platform](../funktionen/6.0/plattform-sqlite-installation.md)).
 
 **Benutzer und Passwort-Hashes.** Die Hash-Typen sind in jeder Generation und im Legacy-Kernel gleich nummeriert:
 
@@ -1130,8 +1130,8 @@ die eine Regel, die eine Portierung, wenn man sie vergisst, in eine Cross-Site-S
 | `nglayouts_render_zone`, ein Layout | `fetch( 'explayouts', 'resolve_layout', hash() )` und `{include uri='design:explayouts/layout.tpl' layout=$layout}` |
 
 Mit `se7enxweb/ngsymfonytools` und der Legacy Bridge kann ein TPL-Template während eines Übergangs auch ein
-Twig-Template einbinden (`symfony_include`); siehe [Site-Bundles](../../eng-us/features/6.0/platform-site-bundles.md) und
-[ngsymfonytools](../../eng-us/features/6.0/extensions/ngsymfonytools.md). Zum Template-System selbst lesen Sie die
+Twig-Template einbinden (`symfony_include`); siehe [Site-Bundles](../funktionen/6.0/plattform-site-bundles.md) und
+[ngsymfonytools](../funktionen/6.0/erweiterungen/ngsymfonytools.md). Zum Template-System selbst lesen Sie die
 [Anleitung zu Templates und Design](../anleitungen/templates-und-design.md).
 
 ### 16.6.7 Eine durchgeführte Portierung: Netgen Layouts und die Media Site
@@ -1146,8 +1146,8 @@ den Legacy-Kernel 6.0 portiert. Das Vorgehen, in der Reihenfolge, in der es durc
    auf `explayouts_*`-Tabellen statt Doctrine auf `nglayouts_*`, Block- und Layout-Typen in `explayouts.ini` statt in
    YAML, Block-Templates in der Design-Kaskade statt in Twig, Regeln, die `expLayoutsResolver` auflöst, und der Editor
    als Legacy-Modul. „The port follows the Netgen Layouts data shape, so a Netgen XML/JSON export can be
-   imported with minimal transformation“ ([Exponential Layouts](../../eng-us/bc/6.0/LAYOUTS.md#migration-and-parity),
-   [Import und Export](../../eng-us/bc/6.0/LAYOUTS.md#import-export-and-share-links)).
+   imported with minimal transformation“ ([Exponential Layouts](../bc/6.0/layouts.md#migration-und-gleichwertigkeit),
+   [Import und Export](../bc/6.0/layouts.md#import-export-und-freigabelinks)).
 2. **Die Daten zogen über ihre IDs um.** Regeln, Collections und manuelle Collection-Einträge verweisen per ID auf
    Inhalte und Orte, daher wurden die IDs zusammen mit den Inhalten konsistent übernommen (und dort neu zugeordnet, wo
    sie sich ändern mussten); ein Layout-Block zeigt dann nach dem Umzug dieselben Inhalte.
@@ -1157,11 +1157,11 @@ den Legacy-Kernel 6.0 portiert. Das Vorgehen, in der Reihenfolge, in der es durc
    Syntax, nicht die Semantik (Rendern von Feldern, Bild-Aliase, Maskierung, die Fetch-Logik hinter Query-Typen).
 4. **RichText blieb DocBook** und wird gerendert, wie in [16.6.3](#1663-feldtypen) beschrieben.
 5. **Gemeinsame Layouts und verknüpfte Zonen** (Kopfbereich, Fußbereich, Pre-Footer) wurden als gemeinsame Layouts neu
-   aufgebaut, auf deren Zonen andere Layouts verweisen ([Exponential Layouts](../../eng-us/bc/6.0/LAYOUTS.md#shared-layouts-and-linked-zones)).
+   aufgebaut, auf deren Zonen andere Layouts verweisen ([Exponential Layouts](../bc/6.0/layouts.md#gemeinsame-layouts-und-verknüpfte-zonen)).
 
-Lesen Sie [Exponential Layouts](../../eng-us/bc/6.0/LAYOUTS.md) zum Datenmodell und zum Editor, die
+Lesen Sie [Exponential Layouts](../bc/6.0/layouts.md) zum Datenmodell und zum Editor, die
 [API des Layout-Editors](../spezifikationen/6.0/explayouts-ui-api.md) zur JSON-Schnittstelle und den
-[Fork von layouts-core](../../eng-us/features/6.0/platform-layouts-core-fork.md) zur Symfony-Seite.
+[Fork von layouts-core](../funktionen/6.0/plattform-layouts-core-fork.md) zur Symfony-Seite.
 
 ### 16.6.8 Einen Symfony-Stack neben dem Legacy-Kernel behalten
 
@@ -1180,7 +1180,7 @@ erscheinen auf beiden Seiten. Wählen Sie den Branch der Bridge, der zur Plattfo
 Die Wurzel der Konfiguration ist `ez_publish_legacy:` (`enabled`, `root_dir`, `legacy_aware_routes`,
 `clear_all_spi_cache_from_legacy`, `clear_all_spi_cache_on_symfony_clear_cache` und je Siteaccess `legacy_mode` sowie
 `templating.view_layout` / `module_layout`), die Befehle stehen in [16.5.4](#1654-namen-der-konsolenbefehle), Installation
-und Caching auf der Seite zur [Legacy Bridge](../../eng-us/features/6.0/legacy-bridge.md) und in ihrer
+und Caching auf der Seite zur [Legacy Bridge](../funktionen/6.0/legacy-bridge.md) und in ihrer
 [Spezifikation](../spezifikationen/6.0/legacy-bridge-bundle.md). Auf einer 5.0-Datenbank braucht die Legacy-Hälfte die
 Tabellennamen aus Schritt 2 von [16.6.4](#1664-die-datenbank-schritt-für-schritt).
 
@@ -1317,24 +1317,24 @@ In diesem Repository:
 
 - [11. Upgrade](11-aktualisieren.md) (die Update-Dateien von 6.0), [9. Datenbanken](09-datenbanken.md), [8. Die Site ausliefern](08-die-website-ausliefern.md), [1. Einführung](01-einfuehrung.md).
 - Kapitel dieses Teils: [14. Migration von der 4.x-Linie](14-migration-von-4x.md), [15. Migration vom 5.x-Legacy-Stack](15-migration-von-5x-legacy.md), [17. Migrationsreferenz](17-migrationsreferenz.md).
-- Plattform: [Paket-Forks und Umbenennungen von Befehlen](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md),
+- Plattform: [Paket-Forks und Umbenennungen von Befehlen](../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md),
   [Paketübersicht der Plattform](../spezifikationen/6.0/platform-paketzuordnung.md),
   [Namen der Konsolenbefehle der Plattform](../spezifikationen/6.0/platform-konsolenbefehle.md),
   [SQLite-Installer der Plattform](../spezifikationen/6.0/platform-sqlite-installer.md),
-  [Exponential Platform Nexus](../../eng-us/features/6.0/platform-nexus-starter.md),
-  [DXP-Skeleton](../../eng-us/features/6.0/platform-dxp-skeleton.md),
-  [Administrationsoberfläche der Plattform](../../eng-us/features/6.0/platform-admin-ui-fork.md),
-  [Layouts auf der Plattform](../../eng-us/features/6.0/platform-layouts-core-fork.md),
-  [Framework-Forks für PHP 8.4 / 8.5](../../eng-us/features/6.0/platform-php85-framework-forks.md),
-  [Site-Bundles](../../eng-us/features/6.0/platform-site-bundles.md),
-  [SQLite für Exponential Platform](../../eng-us/features/6.0/platform-sqlite-install.md).
-- Legacy Bridge: [Legacy Bridge](../../eng-us/features/6.0/legacy-bridge.md), [Spezifikation des Bundles](../spezifikationen/6.0/legacy-bridge-bundle.md), [ngsymfonytools](../../eng-us/features/6.0/extensions/ngsymfonytools.md).
-- Layouts: [Exponential Layouts](../../eng-us/bc/6.0/LAYOUTS.md), [API des Layout-Editors](../spezifikationen/6.0/explayouts-ui-api.md).
+  [Exponential Platform Nexus](../funktionen/6.0/plattform-nexus-starter.md),
+  [DXP-Skeleton](../funktionen/6.0/plattform-dxp-skeleton.md),
+  [Administrationsoberfläche der Plattform](../funktionen/6.0/plattform-admin-ui-fork.md),
+  [Layouts auf der Plattform](../funktionen/6.0/plattform-layouts-core-fork.md),
+  [Framework-Forks für PHP 8.4 / 8.5](../funktionen/6.0/plattform-php85-framework-forks.md),
+  [Site-Bundles](../funktionen/6.0/plattform-site-bundles.md),
+  [SQLite für Exponential Platform](../funktionen/6.0/plattform-sqlite-installation.md).
+- Legacy Bridge: [Legacy Bridge](../funktionen/6.0/legacy-bridge.md), [Spezifikation des Bundles](../spezifikationen/6.0/legacy-bridge-bundle.md), [ngsymfonytools](../funktionen/6.0/erweiterungen/ngsymfonytools.md).
+- Layouts: [Exponential Layouts](../bc/6.0/layouts.md), [API des Layout-Editors](../spezifikationen/6.0/explayouts-ui-api.md).
 - [Anleitung zu Templates und Design](../anleitungen/templates-und-design.md).
 - Changelogs und Geschichte: [Exponential Platform Nexus](../../changelogs/extensions/exponential-platform-nexus.md),
   [Exponential Platform Legacy](../../changelogs/extensions/exponential-platform-legacy.md),
   [XmlText-Feldtyp](../../changelogs/extensions/ezplatform-xmltext-fieldtype.md),
-  [Geschichte der Legacy Bridge](../../eng-us/history/ecosystem/legacyBridge.md).
+  [Geschichte der Legacy Bridge](../geschichte/oekosystem/legacyBridge.md).
 - Code: `share/db_schema.dba`, `kernel/sql/*/`, `bin/php/ezsqldiff.php`, `update/database/*/6.0/`,
   `kernel/classes/datatypes/ezuser/ezuser.php` (Hash-Typen), `kernel/classes/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput.php`,
   `settings/site.ini`, `settings/content.ini`, `settings/image.ini`.
@@ -1403,3 +1403,11 @@ Frameworks und PHP:
   [PostgreSQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html).
 
 [Inhalt](README.md) · Zurück: [15. Migration vom 5.x-Legacy-Stack](15-migration-von-5x-legacy.md) · Weiter: [17. Migrationsreferenz](17-migrationsreferenz.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -11,8 +11,8 @@ type: help
 
 **Wer:** der Vertragsverantwortliche, mit dem Site-Administrator, der jeden Punkt prüfen wird. **Wann:** während der
 Übergabezeit am Ende eines Vertrags. Hintergrund:
-[Übergabe der Dokumentation](../../../../../eng-us/help/government/procurement/exit-plans/documentation-handover.md),
-[Das Ende eines Vertrags](../../../../../eng-us/help/government/procurement/lifecycle/end-of-a-contract.md).
+[Übergabe der Dokumentation](../../beschaffung/ausstiegsplaene/uebergabe-der-dokumentation.md),
+[Das Ende eines Vertrags](../../beschaffung/lebenszyklus/ende-eines-vertrags.md).
 
 ## Inhalt
 
@@ -25,7 +25,7 @@ type: help
 ## Bevor Sie beginnen
 
 - Der Ausstiegsplan und die Dokumentationsklausel des Vertrags
-  ([Klausel zur Dokumentation](../../../../../eng-us/help/government/procurement/tender-templates/documentation-clause.md)).
+  ([Klausel zur Dokumentation](../../beschaffung/ausschreibungsvorlagen/klausel-dokumentation.md)).
 - Benannte Personen auf Ihrer Seite, die jeden Teil entgegennehmen und prüfen.
 
 ## Schritte
@@ -74,8 +74,9 @@ Dokumentation, die Ihre Organisation besitzt und getestet hat, genug, damit ein 
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

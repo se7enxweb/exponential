@@ -44,13 +44,13 @@ Cron versendet. Referenz: [Cronjobs](../../../../anleitungen/cronjobs.md); Sicht
   mehr als zwei Tage zurückliegt.
 - Shell: `./console crontab:list` zeigt die installierten Zeilen; `php runcronjobs.php --list --allow-root-user` die
   Teile.
-- Audit-Trail: Jeder Lauf ist `system.cronjob.run` oder `system.cronjob.fail`, gleich wer ihn gestartet hat.
+- Prüfprotokoll: Jeder Lauf ist `system.cronjob.run` oder `system.cronjob.fail`, gleich wer ihn gestartet hat.
 
 ## Pausen
 
 Ein Teil kann während eines Releases oder einer Migration auf **Setup > Cronjobs** angehalten werden (**Anhalten**,
 **Alle Teile anhalten**); ein angehaltener Teil wird von jedem Ausführungsprogramm ausgelassen, und die Karte zeigt,
-seit wann, von wem und warum ([Cronjob-Teile anhalten](../../../../../eng-us/features/6.0/cronjob-pause.md)). Die Überwachung
+seit wann, von wem und warum ([Cronjob-Teile anhalten](../../../../funktionen/6.0/cronjobs-pausieren.md)). Die Überwachung
 sollte „angehalten“ als Zustand behandeln, der täglich gemeldet wird: Eine nach einem Wartungsfenster vergessene Pause
 stoppt Freigaben und Warnungen unbemerkt.
 
@@ -68,18 +68,19 @@ stoppt Freigaben und Warnungen unbemerkt.
 - Führen Sie bei mehreren Webservern jeden Teil nur auf einem Server aus, und denken Sie daran, dass Pausendateien auf
   jedem Server lokal sind, sofern `cronjob.ini [PauseSettings] Directory` nicht auf ein gemeinsames Verzeichnis zeigt.
 - Unter Velocity kann dessen eigener Scheduler die Teile statt des System-Crons starten
-  ([Velocity-Scheduler](../../../../../eng-us/features/6.0/velocity-scheduler.md)).
+  ([Velocity-Scheduler](../../../../funktionen/6.0/velocity-zeitplaner.md)).
 
 ## Verwandte Seiten
-- [Prüfen, ob die Cronjobs laufen](../../../../../eng-us/help/government/tasks/operations/check-that-cronjobs-run.md)
-- [Einen Cronjob-Teil von Hand ausführen](../../../../../eng-us/help/government/tasks/operations/run-a-cronjob-part-by-hand.md)
+- [Prüfen, ob die Cronjobs laufen](../../aufgaben/betrieb/pruefen-ob-die-cronjobs-laufen.md)
+- [Einen Cronjob-Teil von Hand ausführen](../../aufgaben/betrieb/einen-teil-der-cronjobs-von-hand-ausfuehren.md)
 - [Workflow-Fehlerbehebung](../redaktionelle-workflows/workflow-fehlerbehebung.md)
-- [Cronjob-Konsole](../../../../../eng-us/features/6.0/cronjobs-console.md)
+- [Cronjob-Konsole](../../../../funktionen/6.0/cronjobs-in-der-konsole.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -104,7 +104,7 @@ Wo jeder Teil erklärt wird:
 | 1, 2 | [Rendite der Stabilität](../kosten/rendite-der-stabilitaet.md), [Vorlage: ROI-Arbeitsblatt](vorlage-roi-arbeitsblatt.md) |
 | 3 | [Arbeitsblatt: Kosten eines Ausfalls](../kosten/arbeitsblatt-kosten-eines-ausfalls.md), [Störungsbehandlung für kleine Teams](../zuverlaessigkeit/stoerungsbehandlung-fuer-kleine-teams.md) |
 | 4 | [Budget für Aktualisierungen und Wartung](../kosten/budget-fuer-aktualisierungen-und-wartung.md), [Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md) |
-| 5 | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md), [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md), [Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md) |
+| 5 | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md), [Benutzerkonten und Passwörter](../sicherheit/benutzerkonten-und-passwoerter.md), [Content Security Policy](../../../funktionen/6.0/content-security-policy.md) |
 | 6 | [Personenbezogene Daten in Exponential](../sicherheit/personenbezogene-daten-in-exponential.md), [Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md) |
 | 7 | [Wiederherstellungsübungen](../zuverlaessigkeit/wiederherstellungsuebungen.md) |
 | 8 | [Checklisten für Barrierefreiheit, Sicherheit und Compliance](../../fuehrung/checklisten-barrierefreiheit-sicherheit-und-compliance.md) |
@@ -142,8 +142,8 @@ Budget für das nächste Jahr: einmalig ______ laufend ______
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

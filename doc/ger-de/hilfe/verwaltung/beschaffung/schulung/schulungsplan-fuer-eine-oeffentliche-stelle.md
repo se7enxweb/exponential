@@ -54,18 +54,18 @@ Die Matrix, die jeder Gruppe Kurse zuordnet, steht auf der Seite „Rollen und K
 | Kurs | Für | Länge (Lektionen, ohne Pausen) |
 |---|---|---|
 | [Editors 101](../../../trainer/redakteure-101/README.md) | neue Redaktion | 27 Lektionen, etwa 19,5 Stunden |
-| [Editors 201](../../../../../eng-us/help/trainers/editors-201/README.md) | Redaktion, die jede Woche veröffentlicht | 23 Lektionen, etwa 16 Stunden |
-| [Exponential Layouts](../../../../../eng-us/help/trainers/layouts/README.md) | Redaktion und Website-Ersteller, die Seiten mit Blöcken bauen | 23 Lektionen, etwa 17,5 Stunden |
+| [Editors 201](../../../trainer/redakteure-201/README.md) | Redaktion, die jede Woche veröffentlicht | 23 Lektionen, etwa 16 Stunden |
+| [Exponential Layouts](../../../trainer/layouts/README.md) | Redaktion und Website-Ersteller, die Seiten mit Blöcken bauen | 23 Lektionen, etwa 17,5 Stunden |
 | [Administration der Website](../../../trainer/website-administratoren/README.md) | Personen, die eine Website betreiben | 48 Lektionen, etwa 30 Stunden |
-| [Hosting und Betrieb](../../../../../eng-us/help/trainers/hosting-operations/README.md) | Systemadministration | 28 Lektionen, etwa 20 Stunden |
-| [Suche](../../../../../eng-us/help/trainers/search/README.md) | Administration und Entwicklung | 20 Lektionen, etwa 10 Stunden |
-| [Multisite und Website-Pakete](../../../../../eng-us/help/trainers/multisite-and-packages/README.md) | Administration mehrerer Websites | 26 Lektionen, etwa 22 Stunden |
-| [Newsletter](../../../../../eng-us/help/trainers/newsletter/README.md) | Redaktion und Administration, die Newsletter versenden | 20 Lektionen, etwa 16 Stunden |
+| [Hosting und Betrieb](../../../trainer/hosting-betrieb/README.md) | Systemadministration | 28 Lektionen, etwa 20 Stunden |
+| [Suche](../../../trainer/suche/README.md) | Administration und Entwicklung | 20 Lektionen, etwa 10 Stunden |
+| [Multisite und Website-Pakete](../../../trainer/multisite-und-pakete/README.md) | Administration mehrerer Websites | 26 Lektionen, etwa 22 Stunden |
+| [Newsletter](../../../trainer/newsletter/README.md) | Redaktion und Administration, die Newsletter versenden | 20 Lektionen, etwa 16 Stunden |
 | [Entwickler](../../../trainer/entwickler/README.md) | PHP-Entwicklung | 52 Lektionen, etwa 44 Stunden |
 | [Theme-Design](../../../trainer/theme-designer/README.md) | Design und Frontend-Entwicklung | 30 Lektionen, etwa 24 Stunden |
-| [Migration zu Exponential](../../../../../eng-us/help/trainers/migration/README.md) | Teams von Migrationsprojekten | 25 Lektionen, etwa 22,5 Stunden |
+| [Migration zu Exponential](../../../trainer/migration/README.md) | Teams von Migrationsprojekten | 25 Lektionen, etwa 22,5 Stunden |
 | [Train the Trainer](../../../trainer/train-the-trainer/README.md) | Personen, die unterrichten werden | 34 Lektionen, etwa 21 Stunden |
-| [Workshops und Bootcamps](../../../../../eng-us/help/trainers/workshops/README.md) | Gruppen, die ein kompaktes Programm brauchen | Programme von einem halben bis zu fünf Tagen |
+| [Workshops und Bootcamps](../../../trainer/workshops/README.md) | Gruppen, die ein kompaktes Programm brauchen | Programme von einem halben bis zu fünf Tagen |
 
 Die Längen sind die, die der Katalog nennt. Jede Kursübersicht führt außerdem kürzere Zeitpläne auf, die aus ihren
 Modulen gebildet sind.
@@ -74,7 +74,7 @@ Modulen gebildet sind.
 
 | Zeitpunkt im Projekt | Schulung |
 |---|---|
-| Vor der Ausschreibung | ein halber Tag für Entscheidungsträger ([Halber Tag für Entscheidungsträger](../../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/decision-makers-half-day.md)), damit das Gremium das Produkt kennt |
+| Vor der Ausschreibung | ein halber Tag für Entscheidungsträger ([Halber Tag für Entscheidungsträger](../../../trainer/workshops/modul-02-eintaegige-programme/halber-tag-fuer-entscheider.md)), damit das Gremium das Produkt kennt |
 | Während des Baus | Administration der Website für das zentrale Team; Entwickler und Theme-Design für die hauseigene Entwicklung |
 | Zwei bis vier Wochen vor dem Livegang | Editors 101 für jedes Redaktionsmitglied, das zum Start veröffentlicht; die Migration der Inhalte dient oft zugleich als Übung |
 | Kurz nach dem Livegang | Exponential Layouts für die Seitengestaltung; Newsletter, wenn die Website welche versendet |
@@ -114,7 +114,7 @@ Assessment: <written test / practical task>            Review of this plan: ever
 ```
 
 Bauen Sie das Lab mit der [Lab-Kurzkarte](../../../trainer/kurzkarte-fuer-die-uebungsumgebung.md) auf; eine Schulungsinstallation auf
-SQLite braucht keinen Datenbankserver ([Exponential mit einem Befehl installieren](../../../../../eng-us/features/6.0/install-in-one-command.md)).
+SQLite braucht keinen Datenbankserver ([Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 ## Fallstricke
 
@@ -135,8 +135,9 @@ SQLite braucht keinen Datenbankserver ([Exponential mit einem Befehl installiere
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -12,8 +12,8 @@ type: help
 `fetch( module, function, hash( ... ) )` ist der Weg, auf dem ein Template Daten liest: Inhalte, Benutzer, Sections,
 Ihre eigenen Tabellen. Diese Seite verfolgt einen Aufruf durch den Code und zeigt, wie eine Erweiterung
 Fetch-Funktionen hinzufügt oder ändert. Die Parameter jeder Fetch-Funktion dieser Installation stehen in der
-[Referenz der Fetch-Funktionen](../../../eng-us/examples/fetch-functions/README.md); eine erste eigene Fetch-Funktion wird
-Schritt für Schritt in [Eine eigene Fetch-Funktion schreiben](../../../eng-us/help/creators/app-creators/writing-a-fetch-function.md)
+[Referenz der Fetch-Funktionen](../../beispiele/fetch-funktionen/README.md); eine erste eigene Fetch-Funktion wird
+Schritt für Schritt in [Eine eigene Fetch-Funktion schreiben](../ersteller/anwendungsentwickler/eine-eigene-fetch-funktion-schreiben.md)
 geschrieben.
 
 ## Inhalt
@@ -346,14 +346,15 @@ Ergebnis.
 
 - [Fetch-Aliase](fetch-aliase.md)
 - [Execute-Operatoren](execute-operatoren.md): die Operatoren `fetch` und `fetch_alias`
-- [Referenz der Fetch-Funktionen](../../../eng-us/examples/fetch-functions/README.md)
-- [Eine eigene Fetch-Funktion schreiben](../../../eng-us/help/creators/app-creators/writing-a-fetch-function.md)
-- [Fetch-Funktionen: Daten in Templates lesen](../../../eng-us/help/creators/app-creators/fetch-functions.md)
+- [Referenz der Fetch-Funktionen](../../beispiele/fetch-funktionen/README.md)
+- [Eine eigene Fetch-Funktion schreiben](../ersteller/anwendungsentwickler/eine-eigene-fetch-funktion-schreiben.md)
+- [Fetch-Funktionen: Daten in Templates lesen](../ersteller/anwendungsentwickler/fetch-funktionen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

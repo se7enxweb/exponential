@@ -30,7 +30,7 @@ Das Produkt wurde am 11. August 2025 umbenannt, „auf ausdrücklichen Wunsch vo
 nach fast 18 Jahren eingestellt hat. Verwenden Sie den alten Namen nur für diese Geschichte, zum Beispiel: „Wir bauen
 seit den Zeiten von eZ Publish Websites auf dieser Codebasis.“ Verwenden Sie ihn nie, um das heutige Produkt zu
 verkaufen. Klassennamen wie `eZContentObject` im Code sind Bezeichner, nicht der Produktname, und bleiben, wie sie sind
-([Das Produkt heißt Exponential](../../../eng-us/features/6.0/rebranding-to-exponential.md)).
+([Das Produkt heißt Exponential](../../funktionen/6.0/umbenennung-in-exponential.md)).
 
 Das Projekt erklärt: „Dieses Projekt steht in keiner Verbindung zur ursprünglichen Software eZ Publish oder ihrem ursprünglichen Entwickler, eZ Systems oder Ibexa“ (<https://exponential.earth/about/project>). Deuten Sie nichts anderes an.
 

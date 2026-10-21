@@ -28,12 +28,12 @@ Ein Video, eine Aufgabe. Gute Themen sind Aufgaben, die die Hilfe bereits beschr
 
 | Thema | Länge | Hilfeseite zum Verlinken |
 |---|---|---|
-| Exponential mit einem Befehl installieren | 3 Min. | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Exponential mit einem Befehl installieren | 3 Min. | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Einen Artikel veröffentlichen und Versionen vergleichen | 3 Min. | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
 | Eine Seite mit dem Layouts-Editor bauen | 4 Min. | [Der Layouts-Editor](../layout-editor.md) |
 | Einen Inhalt übersetzen | 2 Min. | [Sprachen](../sprachen.md) |
 | Die zweistufige Anmeldung einschalten | 2 Min. | [Ihr Konto und die Anmeldung](../konten-und-anmeldung.md) |
-| Ihre erste Erweiterung mit den RAD-Werkzeugen | 6 Min. | [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md) |
+| Ihre erste Erweiterung mit den RAD-Werkzeugen | 6 Min. | [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md) |
 | Eine Hilfeseite mit Auf GitHub bearbeiten korrigieren | 3 Min. | [Die Hilfe verbessern](die-hilfe-verbessern.md) |
 
 ## Ein Skript schreiben
@@ -96,3 +96,11 @@ Mehr: [Barrierefreie Folien und Grafiken](barrierefreie-folien-und-grafiken.md).
 - [Sicherheit bei Live-Demos](sicherheit-bei-live-demos.md)
 - [Vorlagen für Beiträge in sozialen Medien](vorlagen-fuer-soziale-medien.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

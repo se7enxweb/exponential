@@ -51,9 +51,22 @@ it; the default requires a user. For public front ends, use a read-only integrat
 
 ## Rich text, images and links
 
-- `OutputFormat=xhtml` gives rendered XHTML of rich text fields (`renderedOutput`), so the front end does not parse the
-  internal XML.
-- Images: fields carry the original and the aliases; define aliases for your front end's sizes
+- Each REST field has `type`, `identifier`, `value`, `id` and `classattribute_id`. A rich text field's `value` is plain
+  text: its rendered output with the tags stripped.
+- `OutputFormat=xhtml` adds `renderedOutput`: the whole node rendered by templates, in view mode `rest`, inside the
+  template set in `rest.ini [<controller>_viewContent_OutputSettings] Template` (`rest_pagelayout.tpl`). The shipped
+  `rest_pagelayout.tpl` is only a placeholder page; override it, and add a `node/view/rest.tpl`, in your design to get
+  markup you can use.
+- Images: an image field's REST `value` is only the path of the original file, relative to the site root (for
+  example `var/<site>/storage/images/.../name.jpg`); it carries no aliases, no size and no alternative text. To get
+  alias URLs today:
+  - call the expservices image domain, `ezjscore/call/expimage::url::<node id>::<attribute>::<alias>` for one alias
+    (the file is generated when missing) or `expimage::urls::<node id>::<attribute>` for every configured alias, each
+    with `url`, `absolute_url`, width, height and MIME type ([Remote services](remote-services-expservices.md)); or
+  - write them into your `rest` view template (`$node.data_map.<attribute>.content.<alias>.url`) and read
+    `renderedOutput`.
+
+  Define aliases for your front end's sizes in `image.ini`
   ([Images and image variations](../website-creators/images-and-image-variations.md)).
 - Links inside rich text point to site addresses; map them to your front end's routes by URL alias or node ID.
 

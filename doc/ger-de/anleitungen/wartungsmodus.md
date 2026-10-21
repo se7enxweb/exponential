@@ -16,7 +16,7 @@ zeigen dieselbe Seite im hellen Modus des Designs admin4; die Bilder „im Wartu
 Seite mit einem Beispielzustand erzeugt, weil die Demonstrationssite für diese Anleitung nie vom Netz genommen wurde.
 Die Adresse des Betrachters darin ist die Dokumentationsadresse 203.0.113.10.
 
-[Anleitungen](README.md) · Funktionsreferenz: [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md) · Im
+[Anleitungen](README.md) · Funktionsreferenz: [Wartungsmodus](../funktionen/6.0/wartungsmodus.md) · Im
 Installationshandbuch: [Wartungsfenster](../installation/10-nach-der-installation.md#wartungsfenster) ·
 Verwandte Anleitung: [Cronjobs](cronjobs.md)
 
@@ -348,7 +348,7 @@ Gut zu wissen:
   anzeigt, wenn beide sich unterscheiden. „Meine eigene Adresse“ auf der Seite verwendet die Vorstellung der
   Administration von Ihrer Adresse (`eZSys::clientIP()`), und diese wird gespeichert.
 - **Es gibt keine Zulassungsliste nach Benutzer.** Angemeldet zu sein lässt auf der öffentlichen Site niemanden
-  durch: Über den Wartungsmodus wird entschieden, bevor die Session gelesen wird. Geben Sie Testern Zugang über ihre
+  durch: Über den Wartungsmodus wird entschieden, bevor die Sitzung gelesen wird. Geben Sie Testern Zugang über ihre
   Adresse, oder lassen Sie sie über die Vorschau der Administration schauen.
 - **Durchgelassen zu werden heißt: die vollständige Site**, mit ihren Caches. Ein zugelassener Besucher sieht
   womöglich Seiten, die vor dem Fenster gespeichert wurden (Abschnitt 9).
@@ -537,7 +537,7 @@ Adressen selbst). Die Seite listet die letzten acht auf, neueste zuerst, aus dem
 Die Liste braucht `audit / read` für den Kanal `system` und den Index des Audits. Ohne sie sagt der Abschnitt das
 stattdessen („Um die Änderungen zu lesen, ist das Recht audit/read für den Kanal system nötig.“, „Der Audit-Index ist
 nicht verfügbar, ...“). Der Index wird von der Cronjob-Gruppe `frequent` gefüllt, sodass es einige Minuten dauern
-kann, bis eine Änderung erscheint; siehe [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md).
+kann, bis eine Änderung erscheint; siehe [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md).
 
 ## 14. Abläufe Schritt für Schritt
 
@@ -613,7 +613,7 @@ Nach dem Ausschalten:
 | **Einrichtungsassistent läuft**, nachdem der Assistent geschlossen wurde | Die Frist des Assistenten (30 Minuten nach seiner letzten Anfrage) ist noch nicht abgelaufen | Warten Sie die im Banner angezeigte Frist ab, oder schalten Sie aus. |
 | Die REST-API antwortet mit 503 | Die API ist ebenfalls ein Front-Controller | Lassen Sie die Adressen der API-Clients zu, oder halten Sie das Fenster kurz. |
 | Cronjobs sind während des Fensters fehlgeschlagen | Sie liefen weiter gegen eine Site, die gerade geändert wurde | Halten Sie die Crontab für das Fenster an (Abschnitt 10); führen Sie die Teile danach über **Setup > Cronjobs** erneut aus. |
-| **Letzte Änderungen** sagt, der Audit-Index sei nicht verfügbar | Die Tabellen des Audit-Index fehlen, oder der Cronjob `frequent` läuft nicht | Siehe [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md); die Konsole listet die Ereignisse in der Zwischenzeit aus den Dateien auf. |
+| **Letzte Änderungen** sagt, der Audit-Index sei nicht verfügbar | Die Tabellen des Audit-Index fehlen, oder der Cronjob `frequent` läuft nicht | Siehe [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md); die Konsole listet die Ereignisse in der Zwischenzeit aus den Dateien auf. |
 | Der Vorschaurahmen bleibt leer | Der Browser blockiert `srcdoc`-Rahmen, oder die Seite des Themes ist kein gültiges HTML | Öffnen Sie `errors/maintenance.html` des Themes direkt in einem Browser. |
 
 ## 16. Alle Optionen und Felder
@@ -644,14 +644,14 @@ Nach dem Ausschalten:
 
 ## Quellen
 
-- [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md): die Funktionsreferenz.
+- [Wartungsmodus](../funktionen/6.0/wartungsmodus.md): die Funktionsreferenz.
 - [Wartungsfenster](../installation/10-nach-der-installation.md#wartungsfenster): der kurze Eintrag im
   Installationshandbuch.
 - [Cronjobs](cronjobs.md): Jobs rund um ein Fenster anhalten und ausführen.
-- [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md): die Konsole, der Index, der Kanal `system`.
-- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../eng-us/features/6.0/velocity-persistent-worker-server.md):
+- [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md): die Konsole, der Index, der Kanal `system`.
+- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md):
   der Antwort-Cache und seine Pausendatei.
-- [Kickstarter](../../eng-us/features/6.0/kickstarter-cli.md) und der [Setup-Assistent](../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md):
+- [Kickstarter](../funktionen/6.0/kickstarter-cli.md) und der [Setup-Assistent](../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md):
   Installationen, die den Wartungsmodus selbst halten.
 - [Bereitstellung](bereitstellung.md): eine Änderung ausliefern.
 - Code: `kernel/classes/expmaintenance.php` (die Prüfung, die Markierungsdatei, die Seite, die Caches),
@@ -660,3 +660,11 @@ Nach dem Ausschalten:
   `share/maintenance.html`, `index.php`, `index_rest.php`, `index_treemenu.php`; Tests in
   `tests/tests/kernel/classes/setup/MaintenancePageTest.php` und `MaintenanceRunTest.php`.
 - RFC 9110, Abschnitt 15.6.4 (503 Service Unavailable) und Abschnitt 10.2.3 (Retry-After).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

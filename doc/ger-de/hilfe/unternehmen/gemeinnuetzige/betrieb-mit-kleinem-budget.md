@@ -50,7 +50,7 @@ Es gibt keine Gebühr pro Redakteur, pro Website oder pro Sprache, die Sie budge
 
 SQLite 3 ist die erste Datenbank in der offiziellen Reihenfolge und der Standard. „Mit SQLite läuft eine vollständige
 Exponential-Website aus einer Datei auf der Platte, ohne Datenbankserver, der installiert, konfiguriert oder abgesichert
-werden müsste“ ([Unterstützung für SQLite-Datenbanken](../../../../eng-us/features/6.0/sqlite-database.md)). Für eine kleine
+werden müsste“ ([Unterstützung für SQLite-Datenbanken](../../../funktionen/6.0/sqlite-datenbank.md)). Für eine kleine
 gemeinnützige Organisation bedeutet das einen Dienst weniger, den man bezahlen, patchen und sichern muss.
 
 Kennen Sie ihre Grenze: „SQLite erlaubt jeweils nur einen Schreibenden. Viele Redakteure, die im selben Moment
@@ -69,14 +69,14 @@ liegt meist gut darunter. Ein späterer Wechsel ist möglich; siehe
 
 Exponential Velocity, der mitgelieferte Server, „braucht außer PHP nichts Installiertes“ (README, Requirements), was zu
 einem kleinen virtuellen Server passt. Was eine Website von jedem Hoster braucht, steht in
-[Hosting für eine Website](../../../../eng-us/help/creators/website-creators/hosting-for-a-website.md); siehe auch
+[Hosting für eine Website](../../ersteller/website-ersteller/hosting-fuer-eine-website.md); siehe auch
 [Hosting auswählen](../auswahl/hosting-auswaehlen.md).
 
 ## Günstig anfangen
 
 `./console exp:install` „installiert das Multisite-Paket auf **SQLite**, in `eng-US`“, mit einer Website und einer
 Administration, und gibt die Anmeldeadressen aus
-([Exponential mit einem Befehl installieren](../../../../eng-us/features/6.0/install-in-one-command.md)). Ein Ehrenamtlicher kann
+([Exponential mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)). Ein Ehrenamtlicher kann
 so das ganze Produkt auf einem Laptop ausprobieren, bevor irgendetwas gekauft wird.
 
 Die mitgelieferten `ezwebin`-Klassen (Artikel, Veranstaltung, Veranstaltungskalender, Feedback-Formular, Datei, Ordner,
@@ -87,17 +87,17 @@ Frontpage, Blog) decken die meisten Seiten einer gemeinnützigen Organisation oh
 
 Die meisten teuren Vorfälle auf kleinen Websites kommen von fehlenden Backups, nicht eingespielten Updates und davon,
 dass niemand hinschaut. Die Routine für Website-Ersteller ist kurz
-([Ihre Website pflegen](../../../../eng-us/help/creators/website-creators/maintaining-your-website.md)):
+([Ihre Website pflegen](../../ersteller/website-ersteller/ihre-website-pflegen.md)):
 
 - [ ] **Backups** von Datenbank und Speicher, mit einer tatsächlich getesteten Wiederherstellung. Bei SQLite sichern Sie
       mit `sqlite3 <file> ".backup <target>"`, „nicht indem Sie die Datei kopieren, während die Website beschäftigt ist“
-      ([Unterstützung für SQLite-Datenbanken](../../../../eng-us/features/6.0/sqlite-database.md#limits-and-good-practice),
-      [Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
+      ([Unterstützung für SQLite-Datenbanken](../../../funktionen/6.0/sqlite-datenbank.md#grenzen-und-gute-praxis),
+      [Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 - [ ] **Updates** von Exponential, Erweiterungen und PHP, zuerst auf einer Kopie getestet
-      ([Updates und Upgrades](../../../../eng-us/help/creators/website-creators/updates-and-upgrades.md)).
+      ([Updates und Upgrades](../../ersteller/website-ersteller/updates-und-aktualisierungen.md)).
 - [ ] **Cron** läuft, damit Newsletter, Indexierung und Aufräumarbeiten stattfinden ([Cronjobs](../../../anleitungen/cronjobs.md)).
-- [ ] **Logs** werden monatlich angesehen ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
-- [ ] **Konten** ausgeschiedener Ehrenamtlicher werden deaktiviert ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+- [ ] **Logs** werden monatlich angesehen ([Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
+- [ ] **Konten** ausgeschiedener Ehrenamtlicher werden deaktiviert ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 Setzen Sie einen Namen und ein Datum neben jede Zeile; siehe die [Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md).
 
@@ -123,7 +123,7 @@ Wer auch immer die Administratorrolle innehat: Sorgen Sie dafür, dass eine zwei
   [Sicherheitsupdates und Offenlegung](../sicherheit/sicherheitsupdates-und-offenlegung.md).
 - **Eine Person weiß alles.** Wenn sie geht, ist die Website verwaist.
 - **Newsletter von einer nicht authentifizierten Domain versenden.** Die Mails landen im Spam, und die Unterstützer
-  sehen sie nie ([Zustellung der Newsletter-Mails](../newsletter/zustellung-der-newsletter-mails.md#absenderdomain-und-ruf)).
+  sehen sie nie ([Zustellung der Newsletter-Mails](../newsletters/zustellung-der-newsletter-mails.md#absenderdomain-und-ruf)).
 - **Unbegrenzte anonyme Uploads.** Die Platte läuft voll, und die Backups wachsen
   ([Ehrenamtliche und Anmeldeformulare](ehrenamtliche-und-anmeldeformulare.md#das-anhängen-einer-datei-erlauben)).
 
@@ -143,8 +143,8 @@ Beispielannahme gekennzeichnet ist, die Sie durch Ihre eigenen Zahlen ersetzen:
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

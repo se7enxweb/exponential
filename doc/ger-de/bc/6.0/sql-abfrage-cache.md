@@ -28,13 +28,13 @@ jeder neuen Zeile), die Uhr (`SYSDATE`, `SYSTIMESTAMP`), die SCN, `SYS_GUID`, `S
 (`DECLARE ...`, `BEGIN ... END;`) zählt als Schreibvorgang, dessen Tabellen sich nicht lesen lassen: Er lässt jedes
 Ergebnis veralten.
 
-### Session-Einstellungen (Oracle `ALTER SESSION`)
+### Sitzungseinstellungen (Oracle `ALTER SESSION`)
 
 ezoracle führt bei jeder Verbindung ein `ALTER SESSION SET` aus (`initializeSession()`): das Zahlenformat
 (`NLS_NUMERIC_CHARACTERS`), die Semantik der Zeichenlänge (`NLS_LENGTH_SEMANTICS`), `CURSOR_SHARING` und mit
 `site.ini [DatabaseSettings] OracleCaseInsensitive=enabled` außerdem `NLS_COMP=LINGUISTIC` und `NLS_SORT`. Eine
 solche Anweisung ist **kein Schreibvorgang**. Ihre Parameter werden Teil des Schlüssels jeder Anweisung dieser
-Verbindung, sodass ein Ergebnis nur einer Verbindung geantwortet wird, deren Session dieselben Einstellungen hat, und
+Verbindung, sodass ein Ergebnis nur einer Verbindung geantwortet wird, deren Sitzung dieselben Einstellungen hat, und
 jede Verbindung einer Installation, die dieselbe Anweisung ausführt, teilt die Ergebnisse über Anfragen hinweg (auch
 mit `OracleCaseInsensitive`).
 
@@ -43,12 +43,12 @@ mit `OracleCaseInsensitive`).
 | `SET` nur von Parametern `NLS_*`, `CURSOR_SHARING`, `TIME_ZONE` | kein Schreibvorgang; die Werte gehen in den Schlüssel der Verbindung ein (Namen und Werte ohne Anführungszeichen in Großbuchstaben, der letzte Wert eines Parameters gewinnt) |
 | `SET` von irgendetwas anderem, allein oder darunter gemischt (`CURRENT_SCHEMA`, `EDITION`, `CONTAINER`, `EVENTS` ...), jede andere Form (`ENABLE PARALLEL DML`), eine zweite Anweisung nach `;` | ein Schreibvorgang, dessen Tabellen sich nicht lesen lassen: jedes Ergebnis veraltet |
 
-Die Session-Parameter werden pro Treiberobjekt gehalten (eine `WeakMap`), nicht pro Anfrage: Ein persistenter
-Worker, der seine Verbindung behält, behält seine Session. `eZDBQueryCache::sessionSettings( $sql )` gibt zurück, was
+Die Sitzungsparameter werden pro Treiberobjekt gehalten (eine `WeakMap`), nicht pro Anfrage: Ein persistenter
+Worker, der seine Verbindung behält, behält seine Sitzung. `eZDBQueryCache::sessionSettings( $sql )` gibt zurück, was
 eine Anweisung setzt (oder null), `eZDBQueryCache::sessionKey( $db )`, was der Schlüssel einer Verbindung trägt (''
 für MySQL, PostgreSQL, SQLite).
 
-Die anderen Treiber setzen ihre Session über die Client-Bibliothek (`mysqli_set_charset()`, der Connection-String),
+Die anderen Treiber setzen ihre Sitzung über die Client-Bibliothek (`mysqli_set_charset()`, der Connection-String),
 nicht über `query()`; ein `SET ...` oder `PRAGMA ...`, das doch `query()` erreicht, ist für den Cache kein
 Schreibvorgang und ändert den Schlüssel nicht.
 
@@ -62,7 +62,7 @@ Modus `shared` sendet eine warme Seite **überhaupt keine Anweisung** an die Dat
 
 Dieselben Seiten direkt nacheinander mit `Mode=off` und `Mode=shared`, auf einer Testinstallation. Ein Query-String
 hält den HTTP-Cache heraus, sodass jede Anfrage ein vollständiges Rendering ist. `ab -c 8`, 80 Anfragen anonym und 40
-angemeldet; „allein“ ist eine Anfrage, während nichts anderes läuft (Median aus 5). Angemeldet ist eine Session eines
+angemeldet; „allein“ ist eine Anfrage, während nichts anderes läuft (Median aus 5). Angemeldet ist eine Sitzung eines
 Administrators.
 
 | Seite | Besucher | Aus: Seiten/s | Shared: Seiten/s | Gewinn | Aus: allein | Shared: allein | SQL aus → shared |
@@ -82,7 +82,7 @@ Seite).
 Hinweise zum Lesen der Tabelle:
 
 - Die Bereiche sind zwei Läufe (2026-09-27, 02:3x und 02:4x); die Zeilen angemeldeter Benutzer einer.
-- Angemeldet teilen sich acht gleichzeitige Anfragen **eine** Session, und die Session-Sperre von PHP führt sie
+- Angemeldet teilen sich acht gleichzeitige Anfragen **eine** Sitzung, und die Sitzungssperre von PHP führt sie
   nacheinander aus: p50 ist etwa achtmal „allein“ (aus 1,9 s, shared 0,45 s auf `/fitness`). Verschiedene Benutzer
   warten nicht aufeinander; „allein“ ist, was ein angemeldeter Besucher spürt.
 - Was von einem Rendering bleibt, sind Templates und PHP. Für die Seiten, die der HTTP-Cache speichern kann, ist ein
@@ -345,7 +345,7 @@ mit dem ersten Blick darauf. Der Bericht selbst liest keinen Zustand und setzt k
 | Not cached | Anweisungen, die nicht beantwortet und nicht gespeichert wurden, dann eine Zeile *Not cached: reason* pro Grund: *inside a transaction*, *statement (volatile or tables not readable)*, *excluded table* (`ExcludeTables`), *temporary table*, *catalogue table*, *more rows than MaxRows* (dieser zählt außerdem als Fehlschlag) |
 | Writes | Schreibvorgänge, die der Cache gesehen hat (jeder lässt die Tabellen veralten, die er nennt) |
 | Database time saved (estimated) | die Summe der Zeit, die jede Anweisung bei ihrem Speichern der Datenbank samt Abholen ihrer Zeilen gekostet hat, über die Treffer; eine obere Schätzung. Einträge, die gespeichert wurden, bevor das festgehalten wurde, fügen „+ n hits on entries without a duration“ hinzu. Dann ihr Anteil an der Seite: `186 ms = 186 % of the page so far (100 ms; without the cache about 286 ms, 3 times as long)`; der Faktor erst ab 100 %, wo ein Anteil allein wie ein Teil der Seite gelesen würde. Der Chip der Exp-Debug-Leiste gibt denselben Anteil an, `QC 83 % · -186 ms (186 %)`, und denselben Satz in seinem Titel |
-| Made everything stale | bis zu 20 Schreibvorgänge, deren Tabellen sich nicht lesen lassen (ein PL/SQL-Block, `CALL`, ein `ALTER SESSION`, das keine [Session-Einstellung](#session-einstellungen-oracle-alter-session) ist ...), dann „... and n more“ |
+| Made everything stale | bis zu 20 Schreibvorgänge, deren Tabellen sich nicht lesen lassen (ein PL/SQL-Block, `CALL`, ein `ALTER SESSION`, das keine [Sitzungseinstellung](#sitzungseinstellungen-oracle-alter-session) ist ...), dann „... and n more“ |
 
 Der Bericht zählt, was seit seinem Beginn geschehen ist: ab der ersten Anweisung der Anfrage mit eingeschalteter
 Debug-Ausgabe oder erneut ab der ersten Anweisung nach `eZDebug::reset()`. Seine Zähler sind seine eigenen, daher
@@ -472,8 +472,8 @@ APCu-Einträge laufen innerhalb von `MaxAge` ab und werden nie gelesen, solange 
 | QC-16 | Oracle: Ein `ALTER SESSION SET` von `NLS_*`, `CURSOR_SHARING`, `TIME_ZONE` (die Anweisung, die ezoracle beim Verbinden ausführt, mit oder ohne `OracleCaseInsensitive`) schreibt nichts; jedes andere `ALTER SESSION` (`CURRENT_SCHEMA`, `CONTAINER`, `EVENTS`, `ENABLE ...`, eine zweite Anweisung) lässt alles veralten |
 | QC-17 | Mit eingeschalteter Debug-Ausgabe: die Akkumulatoren der Gruppe *Query cache*, ein Zeitpunkt, der Bericht unten als Text und HTML (maskiert) mit Treffern, Fehlschlägen, Trefferquote, Gründen und den Schreibvorgängen, die alles veralten ließen |
 | QC-18 | Ohne Debug-Ausgabe oder mit `Report=disabled` kein Akkumulator, kein Bericht |
-| QC-19 | Oracle: Ein Ergebnis wird den nächsten Verbindungen mit denselben Session-Einstellungen geantwortet, und das Verbinden erhöht keine Generation, auch mit `NLS_COMP`/`NLS_SORT` |
-| QC-20 | Oracle: Ein Ergebnis wird nie einer Session mit anderen Einstellungen geantwortet (`NLS_SORT=GERMAN` gegenüber `BINARY_CI`); ein späteres `ALTER SESSION` gibt der Verbindung ihren neuen Schlüssel; mit `Mode=off` wird nichts vermerkt |
+| QC-19 | Oracle: Ein Ergebnis wird den nächsten Verbindungen mit denselben Sitzungseinstellungen geantwortet, und das Verbinden erhöht keine Generation, auch mit `NLS_COMP`/`NLS_SORT` |
+| QC-20 | Oracle: Ein Ergebnis wird nie einer Sitzung mit anderen Einstellungen geantwortet (`NLS_SORT=GERMAN` gegenüber `BINARY_CI`); ein späteres `ALTER SESSION` gibt der Verbindung ihren neuen Schlüssel; mit `Mode=off` wird nichts vermerkt |
 | QC-21 | Literale werden unter beiden Regeln für Anführungszeichen maskiert (`''`, `\'`, `'C:\'`, nicht abgeschlossen), und kein Teil davon erreicht den Bericht, auch aus einer Anweisung, die länger als 4 KB ist |
 | QC-22 | Nach `eZDebug::reset()` im selben Prozess beginnen der Bericht, seine eigenen Zähler und der Zeitpunkt erneut; `flushStats()` lässt sie in Ruhe; die nächste Anfrage trägt nichts mit; bei ausgeschalteter Debug-Ausgabe wird nichts registriert |
 | QC-23 | `debugSnapshot()`: die Zahlen des Berichts (seine eigenen Zähler) mit eingeschalteter Debug-Ausgabe, null ohne |
@@ -531,9 +531,9 @@ Profilers für eine Testanfrage nennt die Anweisungen; keine Zeile bedeutet, das
 
 ## Verwandte Seiten
 
-- [Verhaltensänderungen, 16. bis 30. September 2026: SQL-Abfrage-Cache](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md#sql-query-cache-querycacheini) (Abfrage vor dem Parsen, Schlüssel mit `xxh128`, Katalog nie gecacht)
+- [Verhaltensänderungen, 16. bis 30. September 2026: SQL-Abfrage-Cache](verhaltensaenderungen-2026-09b.md#sql-abfrage-cache-querycacheini) (Abfrage vor dem Parsen, Schlüssel mit `xxh128`, Katalog nie gecacht)
 - [HTTP-Cache](httpcache.md)
-- [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) und der [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
-- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../../eng-us/features/6.0/cache-clear-rename-aside.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) und der [Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md)
+- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../funktionen/6.0/cache-leeren-durch-umbenennen.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

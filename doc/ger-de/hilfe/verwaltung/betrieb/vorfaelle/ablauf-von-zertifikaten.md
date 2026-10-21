@@ -35,8 +35,8 @@ ist oder nicht zu seinem Schlüssel passt.
 
 ## Unter Velocity
 
-Velocity prüft ein Zertifikat, bevor es es verwendet, und lässt ein selbstsigniertes Zertifikat einspringen, bis das
-echte verwendbar ist ([Velocity: HTTPS und Zertifikate](../../../../../eng-us/features/6.0/velocity-https-certificates.md)).
+Velocity prüft ein Zertifikat, bevor er es verwendet, und lässt ein selbstsigniertes Zertifikat einspringen, bis das
+echte verwendbar ist ([Velocity: HTTPS und Zertifikate](../../../../funktionen/6.0/velocity-https-zertifikate.md)).
 
 ```bash
 ./console exp:velocity ssl show --allow-root-user
@@ -47,7 +47,7 @@ Der laufende Server übernimmt eine Erneuerung innerhalb einer Minute, ohne Neus
 Erneuerung in einem Hintergrundjob mit wachsenden Pausen nach einem Fehlschlag; wenn sie immer wieder scheitert, prüfen
 Sie, ob Port 80 aus dem Internet erreichbar ist und DNS auf den Server zeigt. Mit eigenen Dateien legen Sie das neue
 Paar an seinen Platz und prüfen mit `ssl show`
-([Ein HTTPS-Zertifikat in Velocity erneuern](../../../../../eng-us/help/government/tasks/operations/renew-an-https-certificate-in-velocity.md)).
+([Ein HTTPS-Zertifikat in Velocity erneuern](../../aufgaben/betrieb/ein-https-zertifikat-in-velocity-erneuern.md)).
 
 ## Unter Apache, nginx oder einem Control Panel
 
@@ -71,15 +71,16 @@ stattdessen.
   planen Sie die manuelle Erneuerung dann frühzeitig.
 
 ## Verwandte Seiten
-- [Velocity auf Let's Encrypt umstellen](../../../../../eng-us/help/government/tasks/operations/switch-velocity-to-lets-encrypt.md)
+- [Velocity auf Let's Encrypt umstellen](../../aufgaben/betrieb/velocity-auf-lets-encrypt-umstellen.md)
 - [TLS und HTTPS (Hosting)](../../../hosting/sicherheit/tls-und-https.md)
 - [Velocity-HTTPS-Zertifikate (Hosting)](../../../hosting/server/https-zertifikate-in-velocity.md)
 - [Website nicht erreichbar](website-nicht-erreichbar.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

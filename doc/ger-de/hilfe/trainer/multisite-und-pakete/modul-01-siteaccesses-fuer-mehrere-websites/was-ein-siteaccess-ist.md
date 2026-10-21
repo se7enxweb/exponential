@@ -45,7 +45,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 Quellen: [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site),
 [Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md) und
-[Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md).
+[Einstellungen über die Kommandozeile ändern: exp:ini](../../../../bc/6.0/console-exp-ini.md).
 
 1. **Die Definition** (5 Minuten). Schreiben Sie an die Tafel: *Siteaccess = Name + Einstellungen in
    `settings/siteaccess/<name>/` + eine Regel, welche Anfragen er beantwortet.* Jede Installation hat mindestens einen
@@ -58,8 +58,8 @@ Quellen: [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-na
    sagt genau das), und `MatchOrder` die Reihenfolge der Regeln (`uri;host;port` im Auslieferungszustand). `[SiteSettings]
    DefaultAccess` ist der Siteaccess, der antwortet, wenn keine Regel gegriffen hat.
 3. **Die Ladereihenfolge** (6 Minuten). Zeichnen Sie vier Kästen von unten nach oben: die Kernel-Voreinstellungen in
-   `settings/*.ini`, die Einstellungen aktiver Erweiterungen, `settings/siteaccess/<name>/` und `settings/override/`,
-   das das letzte Wort hat. Ein einfacher Wert nimmt die letzte Datei, die ihn setzt; Arrays addieren sich, sofern
+   `settings/*.ini`, `settings/siteaccess/<name>/`, die Einstellungen aktiver Erweiterungen (sie gewinnen gegenüber
+   dem Siteaccess) und `settings/override/`, das das letzte Wort hat. Ein einfacher Wert nimmt die letzte Datei, die ihn setzt; Arrays addieren sich, sofern
    eine Datei sie nicht mit einer leeren Zeile `Name[]` zurücksetzt. Modul 3 ergänzt dieses Bild um die
    Override-Verzeichnisse pro Website in Website-Erweiterungen.
 4. **Live ansehen** (4 Minuten). Führen Sie `exp:ini where` am Beamer aus (Schritt 5 der Übung) und lesen Sie die
@@ -182,24 +182,24 @@ Wurzelverzeichnis (dem, das `index.php` enthält).
 
 - [10.2 Siteaccesses und Website-Adressen](../../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site):
   die Referenz für dieses Modul.
-- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../../eng-us/bc/6.0/console-exp-ini.md): jede Aktion und jeder
+- [Einstellungen über die Kommandozeile ändern: exp:ini](../../../../bc/6.0/console-exp-ini.md): jede Aktion und jeder
   Scope.
 - [Multisite auf einer Installation](../../../hosting/bereitstellung/mehrere-websites-in-einer-installation.md): die Sicht des
   Hosters.
-- [Mehrere Websites in einer Installation einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md): die Sicht
+- [Mehrere Websites in einer Installation einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md): die Sicht
   der Website-Ersteller.
 
 ## Verwandte Seiten
 
 - [Modul 1: Siteaccesses für mehrere Websites](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -111,7 +111,7 @@ hinzugefügt, nichts wird geändert oder entfernt.
 **Opt-in:** `exphelp.ini [ContentSettings] AnonymousContextHelp=enabled` (Standard `disabled`) lässt den Rollenschritt
 Anonymous zusätzlich `exphelp/context` geben, sodass das JSON **öffentlicher, veröffentlichter** Themen ohne Anmeldung
 gelesen werden kann (eine öffentliche Site, eine mobile App). Ohne diese Einstellung braucht der Endpunkt eine Anmeldung
-(Session oder die Token-Anmeldung der Site) und die Richtlinie.
+(Sitzung oder die Token-Anmeldung der Site) und die Richtlinie.
 
 ## Der Validator
 
@@ -408,8 +408,9 @@ Ausgabe kommt) und `expHelpContentReview` (überfällige Prüfungen). Ansichten:
 `expHelpContentTranslationsTest.php`.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

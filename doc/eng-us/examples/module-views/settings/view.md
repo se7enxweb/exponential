@@ -14,10 +14,12 @@ A view of the `settings` module, defined in `kernel/settings/module.php` and run
 ## Address
 
 ```text
-/settings/view/<SiteAccess>/<INIFile>
+/settings/view/<SiteAccess>/<INIFile>/(q)/<Query>/(scope)/<Scope>/(changed)/<Changed>/(compare)/<Compare>
 ```
 
 Ordered parameters, in this order after the view name: `SiteAccess`, `INIFile`.
+
+Unordered parameters, in any order as `/(name)/value`: `(q)` sets `Query`, `(scope)` sets `Scope`, `(changed)` sets `Changed`, `(compare)` sets `Compare`.
 
 ## Who may open it
 
@@ -35,6 +37,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/settings/view/siteaccess/inifile'|ezurl}>settings/view</a>
+<a href={concat( '/settings/view/siteaccess/inifile/(q)/', 1 )|ezurl}>settings/view</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

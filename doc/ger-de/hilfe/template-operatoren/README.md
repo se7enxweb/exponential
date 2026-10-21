@@ -11,7 +11,7 @@ type: help
 
 Ein Operator nimmt einen Wert entgegen und gibt einen zurück: `{$node.name|wash}`, `{sum( 2, 3 )}`, `{fetch( 'content', 'node', hash( 'node_id', 89 ) )}`.
 Operatoren stammen aus der Template-Bibliothek (`lib/eztemplate/`), dem Kernel (`kernel/common/` und verwandten Verzeichnissen) und den
-aktiven Erweiterungen; auf alpha registriert die Engine 400 davon. Dieser Abschnitt umfasst 47 Seiten:
+aktiven Erweiterungen; auf alpha registriert die Engine 401 davon. Dieser Abschnitt umfasst 47 Seiten:
 
 - das [Operatorenverzeichnis](operatorenverzeichnis.md) von A bis Z, das zum Abschnitt jedes Operators führt;
 - eine Seite je Operatorfamilie, mit den Parametern, der Eingabe, dem Rückgabewert und mindestens einem Beispiel jedes Operators,
@@ -21,12 +21,12 @@ aktiven Erweiterungen; auf alpha registriert die Engine 400 davon. Dieser Abschn
   Templates;
 - [OW Simple Operator](owsimpleoperator.md), die Erweiterung, mit der sich kleine Operatoren schnell schreiben lassen.
 
-Die generierten Seiten unter [Beispiele: Template-Operatoren](../../../eng-us/examples/template-operators/README.md) führen jeden
+Die generierten Seiten unter [Beispiele: Template-Operatoren](../../beispiele/template-operatoren/README.md) führen jeden
 Operator mit seiner Parameterliste aus dem Code und seiner ersten Verwendung in einem mitgelieferten Template auf.
 
 ## Verzeichnisse
 
-- [Operatorenverzeichnis](operatorenverzeichnis.md): Alle 400 Template-Operatoren, die in den Siteaccesses site und admin von alpha registriert sind, von A bis Z, jeweils mit der Familienseite, die seine Parameter, seinen Rückgabewert und seine Beispiele dokumentiert, der Klasse, die ihn bedient, und der Herkunft dieser Klasse.
+- [Operatorenverzeichnis](operatorenverzeichnis.md): Alle 401 Template-Operatoren, die in den Siteaccesses site und admin von alpha registriert sind, von A bis Z, jeweils mit der Familienseite, die seine Parameter, seinen Rückgabewert und seine Beispiele dokumentiert, der Klasse, die ihn bedient, und der Herkunft dieser Klasse.
 
 ## Operatoren der Template-Bibliothek
 
@@ -59,7 +59,7 @@ Operator mit seiner Parameterliste aus dem Code und seiner ersten Verwendung in 
 - [Text-Hilfsoperatoren des Kernels](text-hilfsoperatoren-des-kernels.md): Fünf kleine Kernel-Operatoren - alphabet, autolink, simpletags, eztoc und month_overview - mit ihren Parametern, den Einstellungen, die sie lesen, was sie maskieren und was nicht, und auf alpha gerenderten Beispielen.
 - [Präferenz-, Modul-, Paket- und PDF-Operatoren](weitere-kernel-operatoren.md): Die Kernel-Operatoren ezpreference, ezmodule, module_params und ezpackage und der Bibliotheksoperator pdf - was jeder liest, seine Parameter, was er zurückgibt, welche davon Nebenwirkungen haben - mit auf alpha gerenderten Beispielen.
 - [Siteaccess-Operatoren](siteaccess-operatoren.md): Die Kernel-Operatoren, die die Siteaccesses einer Installation kennen - siteaccess_url, siteaccess_menu, siteaccess_menu_key und language_switcher - mit ihren Parametern, den Einstellungen dahinter, ihrer Rückgabe, ihrer Kompilierung und Beispielen, die auf alpha mit drei verschiedenen Siteaccesses gerendert wurden.
-- [Installations-, Umgebungs-, Audit- und CSP-Operatoren](operatoren-des-exponential-kernels.md): Sechs Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label und csp_nonce - mit den Einstellungen, die sie lesen, ihrer Rückgabe, der Cache-Regel für csp_nonce und auf alpha gerenderten Beispielen.
+- [Installations-, Umgebungs-, Audit- und CSP-Operatoren](operatoren-des-exponential-kernels.md): Sieben Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce und view_parameter - mit den Einstellungen, die sie lesen, ihrer Rückgabe, der Cache-Regel für csp_nonce und auf alpha gerenderten Beispielen.
 
 ## Operatoren von Erweiterungen
 
@@ -98,13 +98,14 @@ Operator mit seiner Parameterliste aus dem Code und seiner ersten Verwendung in 
 ## Verwandte Seiten
 
 - [Die Template-Sprache](../template-sprache/README.md)
-- [Überblick über die Operatoren für Designer](../../../eng-us/help/designers/templates/operators-overview.md)
-- [Template-Operatoren schreiben](../../../eng-us/help/creators/app-creators/template-operators.md) (für Anwendungsentwickler)
+- [Überblick über die Operatoren für Designer](../designer/vorlagen/operatoren-ueberblick.md)
+- [Template-Operatoren schreiben](../ersteller/anwendungsentwickler/template-operatoren-schreiben.md) (für Anwendungsentwickler)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

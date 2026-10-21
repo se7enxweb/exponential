@@ -24,7 +24,7 @@ Dieser Bereich enthält Beispiele, die Sie in eine echte Installation übernehme
   abgeleitet ist, die der Code mitbringt. Die Liste steht unten.
 
 Die Regeln für das Schreiben von Code (Benennung, Dateiaufbau, Sicherheit, Templates ohne Inline-Styles oder
--Skripte) stehen in [Standards und Muster](../../eng-us/standards/README.md). Dieser Bereich zeigt sie in der Anwendung
+-Skripte) stehen in [Standards und Muster](../standards/README.md). Dieser Bereich zeigt sie in der Anwendung
 und wiederholt sie nicht.
 
 ## Webserver und Hosting
@@ -144,9 +144,9 @@ Methode `area<Name>()` und einen Eintrag in `AREAS`.
 
 ## Verwandte Seiten
 
-- [Standards und Muster](../../eng-us/standards/README.md): die Regeln, denen die Beispiele folgen.
+- [Standards und Muster](../standards/README.md): die Regeln, denen die Beispiele folgen.
 - [Die Website ausliefern](../installation/08-die-website-ausliefern.md) und [Sicherheitshärtung](../installation/13-sicherheitshaertung.md).
 - [Templates und Design](../anleitungen/templates-und-design.md), [Rollen und Richtlinien](../anleitungen/rollen-und-richtlinien.md),
   [Workflows](../anleitungen/workflows.md), [Cronjobs](../anleitungen/cronjobs.md).
-- [Das Hilfesystem](../../eng-us/features/6.0/help-system.md).
+- [Das Hilfesystem](../funktionen/6.0/hilfesystem.md).
 - [Freie Dokumentation](../hilfe/freie-dokumentation.md): Diese Seite dürfen Sie frei kopieren, übersetzen und verbessern.

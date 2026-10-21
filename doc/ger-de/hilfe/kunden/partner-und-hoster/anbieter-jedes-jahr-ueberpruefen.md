@@ -26,7 +26,7 @@ Fragen, eine einfache Bewertung und ein Protokoll.
 | Backups | Protokolle der Wiederherstellungstests | [Wiederherstellungstest](../gesund-halten/wiederherstellungstest.md) |
 | Sicherheit | Ihre vierteljährlichen Sicherheitsüberprüfungen | [Sicherheits-Checkliste für Betreiber](../gesund-halten/sicherheits-checkliste-fuer-betreiber.md) |
 | Änderungen | Änderungsanfragen: Schätzung gegenüber tatsächlichem Aufwand, pünktlich oder nicht | [Änderungsanfragen](aenderungsanfragen.md) |
-| Deployments und Wartung | Der Kanal `system` des Prüfprotokolls listet Deployments und Wartungsfenster | [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
+| Deployments und Wartung | Der Kanal `system` des Prüfprotokolls listet Deployments und Wartungsfenster | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 ## Fragen Sie ihn
 
@@ -83,3 +83,11 @@ Next review:        ____
 - [Was Sie Ihren Hoster fragen sollten](../gesund-halten/was-sie-ihren-hoster-fragen-sollten.md)
 - [Was Sie Ihren Partner fragen sollten](../gesund-halten/was-sie-ihren-partner-fragen-sollten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -43,7 +43,7 @@ Zurückziehen **entfernt** Inhalte; die meisten öffentlichen Stellen bevorzugen
    ein ganzer Teilbaum auf einmal mit „Auch für alles unterhalb dieses Knotens“).
 3. Nach der Prüfung einer Seite setzen sie **Geprüft** (oder bearbeiten die Seite und setzen **Aktuell**).
 4. Schränken Sie optional `state/assign` mit `NewState` ein, sodass nur inhaltlich Verantwortliche **Geprüft** setzen dürfen.
-5. Jede Änderung wird im Audit-Trail als `content.object.state` erfasst, und das ist Ihr Prüfnachweis.
+5. Jede Änderung wird im Prüfprotokoll als `content.object.state` erfasst, und das ist Ihr Prüfnachweis.
 
 Zustände haben kein Datum: Jemand, oder Ihr eigener Code, setzt **Prüfung fällig**. Exponential tut das nicht zeitgesteuert.
 
@@ -82,12 +82,13 @@ Für Inhalte mit einem natürlichen Ende (ein Beteiligungsverfahren, eine vorüb
 - [Verantwortung für Inhalte](verantwortung-fuer-inhalte.md)
 - [Redaktionskalender](redaktionskalender.md)
 - [Objektzustände in Berechtigungen](../personen-und-berechtigungen/objektzustaende-in-berechtigungen.md)
-- [Eine Zustandsgruppe für Prüfungen einrichten](../../../../../eng-us/help/government/tasks/people-and-permissions/set-up-a-review-state-group.md)
+- [Eine Zustandsgruppe für Prüfungen einrichten](../../aufgaben/personen-und-berechtigungen/eine-zustandsgruppe-fuer-die-pruefung-einrichten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

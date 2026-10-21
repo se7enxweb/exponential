@@ -38,7 +38,7 @@ ausgeschlossen) oder **bewertet** wird (bessere Antworten erhalten mehr Punkte).
 | sie sich mit Ja oder Nein prüfen lässt | Sie vergleichen wollen, wie gut Bieter sie erfüllen |
 
 Eine Mindestanforderung, die niemand belegen kann, schließt jeden Bieter aus. Ein Beispiel: „Das Produkt hat ein
-veröffentlichtes VPAT“ würde Exponential ausschließen, weil es keines gibt ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#section-508)).
+veröffentlichtes VPAT“ würde Exponential ausschließen, weil es keines gibt ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md#section-508)).
 „Der Bieter liefert vor der Abnahme einen Accessibility Conformance Report für die gelieferte Website“ kann ein Bieter
 erfüllen, der die Arbeit leistet, unabhängig vom Produkt.
 
@@ -56,11 +56,11 @@ erfüllen, der die Arbeit leistet, unabhängig vom Produkt.
 
 | Kriterium | Warum es im öffentlichen Sektor zählt | Nachweise zu Exponential, die in einem Angebot zu erwarten sind |
 |---|---|---|
-| Barrierefreiheit | öffentliche Stellen sind oft gesetzlich verpflichtet, barrierefreie Websites zu veröffentlichen | [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md) und der Plan des Bieters für das öffentliche Design |
-| Sicherheit | öffentliche Websites sind Ziele; oft gelten Sicherheitspflichten | [Sicherheitsstandards](../../../../../eng-us/standards/security.md), [Sicherheitshärtung](../../../sicherheitshaertung.md) |
-| Datenschutz | personenbezogene Daten von Bürgerinnen und Bürgern | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) |
-| Sprachen | Amts- oder Minderheitensprachen, Schriften von rechts nach links | [Internationalisierung](../../../../../eng-us/standards/internationalization.md), [Rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md) |
-| Redaktioneller Workflow | Freigaben, Versionen, Rechenschaft | [Workflows](../../../../anleitungen/workflows.md), [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Barrierefreiheit | öffentliche Stellen sind oft gesetzlich verpflichtet, barrierefreie Websites zu veröffentlichen | [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md) und der Plan des Bieters für das öffentliche Design |
+| Sicherheit | öffentliche Websites sind Ziele; oft gelten Sicherheitspflichten | [Sicherheitsstandards](../../../../standards/sicherheit.md), [Sicherheitshärtung](../../../sicherheitshaertung.md) |
+| Datenschutz | personenbezogene Daten von Bürgerinnen und Bürgern | [Datenschutzstandards](../../../../standards/datenschutz.md) |
+| Sprachen | Amts- oder Minderheitensprachen, Schriften von rechts nach links | [Internationalisierung](../../../../standards/internationalisierung.md), [Rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md) |
+| Redaktioneller Workflow | Freigaben, Versionen, Rechenschaft | [Workflows](../../../../anleitungen/workflows.md), [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | Freiheit beim Hosting und Speicherort der Daten | wo Daten gespeichert werden | [Hosting: ein Modell wählen](../../../hosting/modelle/ein-hosting-modell-waehlen.md) |
 | Ausstieg und Portabilität | die Möglichkeit, den Lieferanten zu wechseln | [Von Exponential migrieren](../../../../installation/migration/exponential-verlassen.md) |
 | Support und Kontinuität | eine Website lebt jahrelang | [Support erhalten](../../../projekt/unterstuetzung-erhalten.md), `SECURITY.md` |
@@ -71,7 +71,7 @@ erfüllen, der die Arbeit leistet, unabhängig vom Produkt.
 Gewichten Sie Kriterien in dem Wissen, welche ein Bieter belegen kann:
 
 - **Durch das Repository belegt**: Funktionen, Einstellungen, Tests, Release-Richtlinie, Exportwerkzeuge, der Status jedes
-  Standards (Complies, Partly complies, Unverified), wie in [Standards: wie der Status zu lesen ist](../../../../../eng-us/standards/README.md#how-to-read-the-status) festgelegt.
+  Standards (Erfüllt, Teilweise erfüllt, Nicht geprüft), wie in [Standards: wie der Status zu lesen ist](../../../../standards/README.md#wie-sie-den-status-lesen) festgelegt.
 - **Nicht durch das Repository belegt**: ein VPAT oder Accessibility Conformance Report, eine Bewertung nach OWASP ASVS,
   ein externer Penetrationstest, eine Bewertung nach EN 301 549, veröffentlichte SLAs des Projekts ([SLA-Optionen](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md)
   hält fest, dass das Projekt keine veröffentlicht). Diese müssen vom Bieter kommen oder Teil der Vertragsleistung sein.
@@ -109,8 +109,9 @@ Approved by: <name, role, date>
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

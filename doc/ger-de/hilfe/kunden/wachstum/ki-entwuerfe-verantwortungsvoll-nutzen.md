@@ -42,7 +42,7 @@ ihn wie jede andere Version ([Freigabe und Prüfung](../alltag/freigabe-und-prue
 - [ ] Bei einer Änderung an einer bestehenden Seite: **Vergleichen** Sie den Entwurf auf der Versionsseite mit der
       veröffentlichten Version, damit Sie genau sehen, was sich geändert hat ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - [ ] Bei Massenarbeit in Vector: Prüfen Sie jede Änderung pro Feld, bevor etwas geschrieben wird, und nutzen Sie
-      danach **What changed** mit Zurücknehmen ([expai](../../../../eng-us/features/6.0/extensions/expai.md)).
+      danach **What changed** mit Zurücknehmen ([expai](../../../funktionen/6.0/erweiterungen/expai.md)).
 
 ## Worum Sie nicht bitten sollten
 
@@ -55,7 +55,7 @@ ihn wie jede andere Version ([Freigabe und Prüfung](../alltag/freigabe-und-prue
 ## Bilder und Alternativtexte
 
 Der Assistent kann mithilfe eines Bildmodells Alternativtexte für Bilder vorschlagen, und ein Bericht „Missing alt
-text“ kann Vorschläge für einen Teilbaum in die Warteschlange stellen ([expai](../../../../eng-us/features/6.0/extensions/expai.md)).
+text“ kann Vorschläge für einen Teilbaum in die Warteschlange stellen ([expai](../../../funktionen/6.0/erweiterungen/expai.md)).
 Behandeln Sie einen Vorschlag als Entwurf: Sagt er, was in **diesem** Zusammenhang wichtig ist, und vermeidet er es zu
 raten, wer eine Person auf dem Foto ist?
 
@@ -80,7 +80,7 @@ schreiben Sie es in die Richtlinie unten und wenden Sie es einheitlich an.
 | Das Dashboard des Assistenten: Kosten, Anfragen, Entwürfe, Grenzen | Budget und ungewöhnliche Nutzung |
 | Entwürfe, die er geschrieben hat und die nie veröffentlicht wurden | vergeudete Arbeit oder unklare Briefings |
 | Korrekturen nach dem Veröffentlichen von KI-unterstützten Seiten | wo die Prüfung versagt hat |
-| Der Prüfprotokoll-Kanal `ai`, mit dem Administrator | wer ihn wofür genutzt hat ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)) |
+| Der Prüfprotokoll-Kanal `ai`, mit dem Administrator | wer ihn wofür genutzt hat ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)) |
 
 ## Vorlage für eine Richtlinie
 
@@ -104,3 +104,11 @@ AI DRAFTS POLICY for ______________________   Agreed on: __________   Owner: ___
 - [Entwürfe, Versionen und Rückgängigmachen](../alltag/entwuerfe-versionen-und-rueckgaengig.md)
 - [Personenbezogene Daten in Exponential](../../unternehmen/sicherheit/personenbezogene-daten-in-exponential.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

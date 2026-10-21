@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Führungskräfte, die die Administration in den Sprachen anbieten
 müssen, in denen ihre Mitarbeitenden arbeiten. Die Oberflächentexte stehen in Übersetzungsdateien,
 `share/translations/<locale>/translation.ts`, und im Verzeichnis `translations/` jeder Erweiterung
-([Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md)).
+([Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md)).
 
 ![Oberflächensprachen: jede Locale der Administration und wie vollständig ihre Übersetzung ist](../../../../eng-us/help/images/government/gov-interface-languages.webp)
 
@@ -28,12 +28,12 @@ müssen, in denen ihre Mitarbeitenden arbeiten. Die Oberflächentexte stehen in 
 
 `share/translations/` enthält ein Verzeichnis pro Übersetzung (und `untranslated`, die Vorlage). Die Vollständigkeit
 jeder Übersetzung, gemessen an den Texten, die der Kernel und seine Designs heute verwenden, steht in einer Tabelle in
-[Sprachen in Exponential, Abschnitt 4](../../../../eng-us/languages.md#4-every-administration-translation). Planen Sie nicht mit
+[Sprachen in Exponential, Abschnitt 4](../../../sprachen.md#4-alle-übersetzungen-der-administrationsoberfläche). Planen Sie nicht mit
 einer Zahl aus dem Gedächtnis: Prüfen Sie diese Tabelle für das aktuelle Release.
 
 ## Unterstützungsstufen
 
-Aus [Sprachen in Exponential, Abschnitt 2](../../../../eng-us/languages.md#2-support-levels):
+Aus [Sprachen in Exponential, Abschnitt 2](../../../sprachen.md#2-unterstützungsstufen):
 
 | Stufe | Bedeutung |
 |---|---|
@@ -68,18 +68,19 @@ php bin/php/ezchecktranslation.php fre-FR    # statistics of one translation
 
 **Setup > Oberflächensprachen** (`/setup/languages`) zeigt jede Locale mit der Übersetzung, die sie anzeigt, und deren
 Abdeckung. Übersetzungen werden mit Qt Linguist oder einem beliebigen XML-Editor bearbeitet; die Schritte stehen in
-[Sprachen in Exponential, Abschnitt 8](../../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation).
+[Sprachen in Exponential, Abschnitt 8](../../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen).
 
 ## Verwandte Seiten
 
 - [Rechts nach links in der Administration](rechts-nach-links-in-der-administration.md)
-- [Liste der Oberflächensprachen](../../../../eng-us/features/6.0/ui-switch-languages.md)
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
+- [Liste der Oberflächensprachen](../../../funktionen/6.0/ui-umschalter-sprachen.md)
+- [Sprachen in Exponential](../../../sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

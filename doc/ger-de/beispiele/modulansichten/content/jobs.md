@@ -14,10 +14,10 @@ Eine Ansicht des Moduls `content`, definiert in `kernel/content/module.php` und 
 ## Adresse
 
 ```text
-/content/jobs/(all)/<All>
+/content/jobs/(all)/<All>/(state)/<State>/(type)/<Type>/(user)/<User>/(sort)/<Sort>/(order)/<Order>/(offset)/<Offset>
 ```
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(all)` setzt `All`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(all)` setzt `All`, `(state)` setzt `State`, `(type)` setzt `Type`, `(user)` setzt `User`, `(sort)` setzt `Sort`, `(order)` setzt `Order`, `(offset)` setzt `Offset`.
 
 ## Wer sie öffnen darf
 

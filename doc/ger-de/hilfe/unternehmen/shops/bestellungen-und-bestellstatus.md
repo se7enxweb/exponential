@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Shop-Verantwortliche und an die Personen, die Bestellungen bearbeiten. Sie erklärt, wo
 Bestellungen erscheinen, was jeder mitgelieferte Bestellstatus bedeutet, wie Sie damit Ihren eigenen Ablauf abbilden
 und wie Sie einschränken, wer einen Status ändern darf. Die Referenz ist
-[Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md).
+[Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md).
 
 ## Inhalt
 
@@ -38,12 +38,12 @@ und wie Sie einschränken, wer einen Status ändern darf. Die Referenz ist
 
 Quelle: `kernel/shop/module.php`. Die Bestellliste lässt sich nach jeder Spalte sortieren (ID, Kunde, beide Summen,
 Zeit, Status), und die Sortierung bleibt in der Adresse erhalten, sodass ein Link wie „größte Bestellungen zuerst“ als
-Lesezeichen gespeichert werden kann ([Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)).
+Lesezeichen gespeichert werden kann ([Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md)).
 
 ## Die mitgelieferten Status
 
 Seit 6.0.15 hat jede neue Installation und jede Installation nach dem Datenbank-Update auf 6.0.15 siebzehn Status
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md#order-statuses-for-the-whole-lifecycle)).
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md#bestellstatus-für-den-ganzen-lebenszyklus)).
 Die Administration zeigt sie unter ihren englischen Namen:
 
 | Phase | Status (ID) |
@@ -93,7 +93,7 @@ unter [Zahlungen mit PayPal](zahlungen-mit-paypal.md) steht, wie Sie ihn auf die
 Status mit einer ID unter 1000 sind intern und können nicht versehentlich entfernt werden; eigene Status beginnen bei
 1000. Status werden unter `shop/status` verwaltet (Richtlinie `shop/edit_status`). Wenn Sie vor 6.0.15 eine der Nummern
 4 bis 17 für einen eigenen Status verwendet haben, prüfen Sie nach dem Update die Statusliste
-([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md#upgrading-an-existing-shop)).
+([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md#einen-bestehenden-shop-aktualisieren)).
 
 ## Wer einen Status ändern darf
 
@@ -104,8 +104,8 @@ Einen Status zu ändern erfordert `shop/setstatus`, das zwei Beschränkungen hat
 - **Kundenservice**: darf Bestellungen auf Return requested und Returned setzen;
 - **Inhaber**: darf jeden Status setzen, auch Refunded.
 
-Jede Änderung wird im Statusverlauf der Bestellung festgehalten (`kernel/classes/ezorderstatushistory.php`), und der
-Audit-Trail zeichnet Handelsereignisse auf ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)). Rollen werden wie unter
+Jede Änderung wird im Statusverlauf der Bestellung festgehalten (`kernel/classes/ezorderstatushistory.php`), und das
+Prüfprotokoll zeichnet Handelsereignisse auf ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)). Rollen werden wie unter
 [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) beschrieben eingerichtet.
 
 > **Hinweis**
@@ -128,15 +128,15 @@ Kunden auf. Beide brauchen `shop/administrate`. Das Dashboard zählt neue, wiede
 
 ## Verwandte Seiten
 
-- [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
+- [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)
 - [Bestellbelege und Bestätigungsmails](bestellbelege-und-bestaetigungsmails.md)
 - [Einen Shop im Alltag betreiben](einen-shop-im-alltag-betreiben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

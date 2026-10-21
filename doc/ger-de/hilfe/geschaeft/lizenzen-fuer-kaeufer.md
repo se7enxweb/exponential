@@ -46,7 +46,7 @@ der Käufer das prüfen?
   Professional License is no longer available.“ (README, „License“) - die Nutzung unter der GNU GPL ist kostenlos, und
   die Professional License gibt es nicht mehr.
 - **Die Dokumentation**, einschließlich dieser Seite, steht unter der **GNU Free Documentation License 1.3 oder jeder
-  späteren Version** ([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)).
+  späteren Version** ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)).
 - **Käufer dürfen** die Software nutzen, untersuchen, ändern, selbst hosten und weitergeben, unter den Bedingungen
   der Lizenz.
 - **Wenn sie sie weitergeben** (Kopien verbreiten, geändert oder nicht), erhalten die Empfänger dieselben Freiheiten
@@ -58,12 +58,12 @@ der Käufer das prüfen?
 |---|---|---|
 | Exponential 6 (der Kernel) | GNU GPL v2 oder höher (`GPL-2.0-or-later`) | `COPYRIGHT.md`, `LICENSE.md`, `composer.json` |
 | Beiträge zum Kernel | Dieselbe: „any modifications made to the project are also released under the same GPLv2 or later license“ | `CONTRIBUTING.md` |
-| Die Dokumentation in `doc/` (6.x) | GNU FDL 1.3 oder höher, ohne unveränderliche Abschnitte, ohne Vorderseitentexte, ohne Rückseitentexte | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md) |
-| Ältere, von eZ Systems übernommene Dokumentation | Die Bedingungen, mit denen sie kam, die GPL v2 des Repositorys | [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md#older-pages-with-their-own-terms) |
+| Die Dokumentation in `doc/` (6.x) | GNU FDL 1.3 oder höher, ohne unveränderliche Abschnitte, ohne Vorderseitentexte, ohne Rückseitentexte | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |
+| Ältere, von eZ Systems übernommene Dokumentation | Die Bedingungen, mit denen sie kam, die GPL v2 des Repositorys | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md#ältere-seiten-mit-eigenen-bedingungen) |
 | Exponential Velocity | MIT | seine `composer.json` ([Wer ist 7x?](../wer-ist-7x.md#open-source-lizenzen)) |
 | Exponential Platform DXP (Metapaket) | „GPL-2.0-or-later or proprietary“ | seine `composer.json` ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#exponential-platform-dxp)) |
 | Exponential Basic | GNU GPLv2+ | Beschreibung des Repositorys ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#exponential-basic)) |
-| Jede Erweiterung | Angegeben in ihrer eigenen `ezinfo.php` und `extension.xml`, angezeigt unter Info > Über | [Die Seiten „Über“ und „Copyright“](../../../eng-us/features/6.0/about-and-package-pages.md) |
+| Jede Erweiterung | Angegeben in ihrer eigenen `ezinfo.php` und `extension.xml`, angezeigt unter Info > Über | [Die Seiten „Über“ und „Copyright“](../../funktionen/6.0/info-und-paketseiten.md) |
 
 ## Die Software: GNU GPL v2 oder höher
 
@@ -138,7 +138,7 @@ Was das in der Praxis bedeutet, als Fragen, die Sie mit Ihrem Berater klären so
 
 > **Hinweis**
 > Die GPL v2 enthält keine Klausel zu Software, die über ein Netzwerk genutzt wird. Die Lizenzliste des Paketsystems
-> bietet für Ihre eigenen Pakete auch die Lizenzen `AGPL-3.0` an, die eine solche Klausel haben ([Paketlizenzen](../../../eng-us/features/6.0/package-licenses-and-versions.md));
+> bietet für Ihre eigenen Pakete auch die Lizenzen `AGPL-3.0` an, die eine solche Klausel haben ([Paketlizenzen](../../funktionen/6.0/paketlizenzen-und-versionen.md));
 > Exponential selbst steht nicht unter der AGPL.
 
 ## Die Dokumentation: GNU FDL 1.3 oder höher
@@ -164,10 +164,10 @@ diesen Seiten ausgehen, übersetzt und angepasst, solange es freie Dokumentation
 
 - Jede **Erweiterung** gibt ihre Lizenz in `ezinfo.php` und `extension.xml` an; die Seite „Über“ führt alle in einer
   sortierbaren Tabelle auf, mit einer Tabelle **Software von Drittanbietern** der enthaltenen Komponenten, ihrer
-  Versionen und Lizenzen ([Die Seiten „Über“ und „Copyright“](../../../eng-us/features/6.0/about-and-package-pages.md)).
+  Versionen und Lizenzen ([Die Seiten „Über“ und „Copyright“](../../funktionen/6.0/info-und-paketseiten.md)).
 - **Pakete**, die in der Administration erstellt werden, wählen ihre Lizenz aus einer Liste, die GPL, LGPL, AGPL, MIT,
   GFDL, Creative Commons, Gemeinfreiheit und eine proprietäre Option enthält; der Standard ist `GPL-2.0-or-later`
-  ([Paketlizenzen und Semantic Versioning](../../../eng-us/features/6.0/package-licenses-and-versions.md)).
+  ([Paketlizenzen und Semantic Versioning](../../funktionen/6.0/paketlizenzen-und-versionen.md)).
 - **Exponential Velocity** steht unter der MIT-Lizenz, einer freizügigen Lizenz.
 - **Exponential Platform DXP** gibt in seiner `composer.json` „GPL-2.0-or-later or proprietary“ an. Die Quellen
   erklären die proprietäre Option nicht; braucht ein Käufer sie, muss er 7x fragen.
@@ -181,7 +181,7 @@ wird.
 |---|---|
 | „Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.“ | `COPYRIGHT.md` |
 | „Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved.“ | `COPYRIGHT.md` |
-| „Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors“ | die Dokumentation ([Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md)) |
+| „Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors“ | die Dokumentation ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)) |
 
 „All rights reserved“ in einem Vermerk hebt die Erlaubnisse der GPL nicht auf; die Lizenz gewährt sie zusätzlich zum
 Copyright. Übernehmen Sie diese Vermerke genau, wenn Sie sie zitieren.
@@ -199,7 +199,7 @@ Copyright. Übernehmen Sie diese Vermerke genau, wenn Sie sie zitieren.
 
 Die GPL kommt ohne Gewährleistung. Die Abschnitte 11 und 12 von `LICENSE.md` („NO WARRANTY“) schließen Gewährleistung
 und Haftung aus, soweit das Gesetz es erlaubt, und die Seite „Copyright“ der Administration zeigt den
-Gewährleistungsausschluss ([Die Seiten „Über“ und „Copyright“](../../../eng-us/features/6.0/about-and-package-pages.md#read-the-copyright-page)).
+Gewährleistungsausschluss ([Die Seiten „Über“ und „Copyright“](../../funktionen/6.0/info-und-paketseiten.md#die-seite-copyright-lesen)).
 Ein Käufer, der eine Gewährleistung, eine garantierte Reaktionszeit oder eine Haftungsdeckung braucht, erhält sie über
 einen Vertrag mit einem Lieferanten; Abschnitt 1 der GPL erlaubt ausdrücklich, „warranty protection in exchange for a
 fee“ anzubieten, also Gewährleistung gegen Gebühr. Die einzige Zusage zur Reaktionszeit in den eigenen Dateien des
@@ -230,7 +230,7 @@ day“, innerhalb eines Werktags.
 | Dürfen wir die Hilfe in unser Handbuch übernehmen? | Ja, unter den Bedingungen der GNU FDL 1.3. | [Freie Dokumentation](../freie-dokumentation.md) |
 | Wer hält das Copyright? | 7x & Exponential Foundation, für 1999 bis 2014 zusammen mit eZ Systems AS. | `COPYRIGHT.md` |
 | Bleibt ein Beitrag von uns unserer? | Sie bleiben Urheber; Sie veröffentlichen den Beitrag unter der GPL v2 oder höher. | `CONTRIBUTING.md` |
-| Steht jeder Teil unter der GPL? | Der Kernel ja; prüfen Sie Erweiterungen und verwandte Produkte unter Info > Über. Velocity steht unter MIT. | [Die Seiten „Über“ und „Copyright“](../../../eng-us/features/6.0/about-and-package-pages.md) |
+| Steht jeder Teil unter der GPL? | Der Kernel ja; prüfen Sie Erweiterungen und verwandte Produkte unter Info > Über. Velocity steht unter MIT. | [Die Seiten „Über“ und „Copyright“](../../funktionen/6.0/info-und-paketseiten.md) |
 
 ## Eine Lizenzübersicht für den Einkauf
 
@@ -257,6 +257,6 @@ Notes              This summary is not legal advice. License texts: LICENSE.md, 
 - [Exponential sachlich vergleichen](exponential-sachlich-vergleichen.md)
 - [Marken- und Namensregeln](marken-und-namensregeln.md)
 - [Risikomanagement für Exponential-Projekte](../fuehrung/risikomanagement.md)
-- [Die Lizenz dieser Dokumentation](../../../eng-us/README-LICENSE.md), [Die Seiten „Über“ und „Copyright“](../../../eng-us/features/6.0/about-and-package-pages.md)
+- [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md), [Die Seiten „Über“ und „Copyright“](../../funktionen/6.0/info-und-paketseiten.md)
 - Die Lizenztexte im Web: [GNU GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), [GNU FDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

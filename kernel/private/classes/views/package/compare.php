@@ -72,7 +72,7 @@ class Compare extends \Exponential\Runnable\ModuleView
             if ( $state['class'] !== '' )
                 $url .= '/(class)/' . $state['class'];
             if ( $state['search'] !== '' )
-                $url .= '/(search)/' . rawurlencode( rawurlencode( $state['search'] ) );
+                $url .= '/(search)/' . \expViewParameters::encode( $state['search'] );
             if ( $state['sort'] !== '' )
                 $url .= '/(sort)/' . $state['sort'] . '/(dir)/' . $state['dir'];
             if ( $state['limit'] !== '50' )
@@ -91,8 +91,9 @@ class Compare extends \Exponential\Runnable\ModuleView
         };
 
         $rawState = $userParameters;
+        // the search as expViewParameters::encode() writes it, or encoded twice as before (rawurldecode())
         if ( isset( $rawState['search'] ) )
-            $rawState['search'] = rawurldecode( $rawState['search'] );
+            $rawState['search'] = \expViewParameters::decode( rawurldecode( $rawState['search'] ) );
         $state = $normalise( $rawState );
 
         // The filter form is sent with POST (CompareApply and its fields); it is answered with a 303 to the same state

@@ -31,7 +31,7 @@ Datenschutzrecht Ihres Landes oder des Landes Ihres Kunden).
 
 | Ort | Risiko | Vorbeugung |
 |---|---|---|
-| Support-Tickets und Fehler-Issues | Logs mit E-Mail-Adressen, Session-IDs | Logs vor dem Einfügen bereinigen ([Ein Support-Ticket als Partner eröffnen](support-ticket-eroeffnen.md)) |
+| Support-Tickets und Fehler-Issues | Logs mit E-Mail-Adressen, Sitzungs-IDs | Logs vor dem Einfügen bereinigen ([Ein Support-Ticket als Partner eröffnen](support-ticket-eroeffnen.md)) |
 | Screenshots | Namen in Listen, Benutzermenüs | Ein Testkonto verwenden; unkenntlich machen oder zuschneiden |
 | Datenbank-Dumps zur Fehlersuche | Ganze Benutzertabellen | Eine Nachstellung teilen, keinen Dump |
 | Staging-Kopien | Daten echter Benutzer auf einem schwächer geschützten Server | Anonymisieren; Staging wie den Produktivbetrieb schützen |
