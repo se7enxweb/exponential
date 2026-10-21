@@ -6182,7 +6182,7 @@ cb7b4a785e49764ddfc2a91a2295decb  doc/eng-us/features/6.0/extensions/AdminAid.md
 5409537e822b55c82dc6953a412d57d6  doc/eng-us/features/6.0/extensions/bccie.md
 802cfcb8988f3257992676935a2cf9f3  doc/eng-us/features/6.0/extensions/bcgooglesitemaps.md
 40867538617a1d8fa8ad1a3d86c769b7  doc/eng-us/features/6.0/extensions/bcwebsitestatistics.md
-32ab5f4f08cdc4b6e09f4805dd71c2e9  doc/eng-us/features/6.0/extensions/birthday.md
+e6c85996c733f9d4740d5d1079e9d5ea  doc/eng-us/features/6.0/extensions/birthday.md
 66aa73b5abbc2bb145e50efd93a6d867  doc/eng-us/features/6.0/extensions/cjw-exponential-media-site-data.md
 e25953f03d485479cdc3121f061eb25b  doc/eng-us/features/6.0/extensions/cjw_newsletter.md
 bfe9e78152ce569fc06e3a263c2483b8  doc/eng-us/features/6.0/extensions/enhancedezbinaryfile.md
@@ -7370,6 +7370,7 @@ fa8b40a55ca9efdd310547017d6b97aa  doc/eng-us/help/creators/website-creators/shar
 f17cc0cad1dd7bb22fb944619f923259  doc/eng-us/help/creators/website-creators/spam-protection-for-forms.md
 a61232174861c54ab40db57e242058f1  doc/eng-us/help/creators/website-creators/static-cache-and-velocity.md
 900bb255d4976be4fd5b68031fa6131b  doc/eng-us/help/creators/website-creators/statistics-and-analytics.md
+df44da3a5cc924aad9b8ec52798c3888  doc/eng-us/help/creators/website-creators/storing-a-date-of-birth.md
 c090a617ff83d9aa266b01a60790daf4  doc/eng-us/help/creators/website-creators/structuring-the-content-tree.md
 76dc7bf12f569fae66986ec9e7346f9e  doc/eng-us/help/creators/website-creators/stylesheets-and-scripts.md
 ad1c624217173974ac31d9ecc287733e  doc/eng-us/help/creators/website-creators/svg-and-image-formats.md
