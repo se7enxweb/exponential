@@ -6,6 +6,10 @@
 
 {include uri='design:page_head_exp.tpl'}
 
+{* admin4: a4SafeURL(), the check before a script follows an address from data; loaded before the scripts of the
+   list below and the page scripts, which call it *}
+{ezscript_load( array( 'a4_url.js' ) )}
+
 {if $load_javascript_list}
  {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}
 {else}

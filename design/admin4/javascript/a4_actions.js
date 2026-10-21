@@ -89,7 +89,7 @@
             var form = formOf(el);
             if (form) form.submit();
         } else if (el.hasAttribute('data-a4-navigate-on-change')) {
-            if (el.value) window.location.href = el.value;
+            if (el.value && window.a4SafeURL && window.a4SafeURL(el.value, 'a4_actions')) window.location.href = el.value;
         }
         if (el.hasAttribute('data-a4-reset-field')) {
             var field = document.getElementById(el.getAttribute('data-a4-reset-field'));

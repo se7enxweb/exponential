@@ -6,6 +6,9 @@
 
 {include uri='design:page_head_exp.tpl'}
 
+{* a4SafeURL(), the check before a script follows an address from data (javascript/a4_url.js), loaded before the list *}
+{ezscript_load( array( 'a4_url.js' ) )}
+
 {if $load_javascript_list}
  {* BackendJavaScriptList names ezadmin_menubar.js, the sidebar toggle of the admin3 and admin4 designs; this
     design (and admin2, which uses it) has no such file and no sidebar, so it is left out instead of being looked for *}
