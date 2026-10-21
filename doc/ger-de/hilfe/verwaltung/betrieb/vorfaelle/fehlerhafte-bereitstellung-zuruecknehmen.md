@@ -11,7 +11,7 @@ type: help
 
 Dieses Runbook richtet sich an die Administration und die Entwicklung, wenn direkt nach einer Bereitstellung oder einer
 Aktualisierung Fehler auftreten. Die Ursache liegt fast immer in dieser Änderung. Hintergrund zur Planung:
-[Planung der Rücknahme](../../../../../eng-us/help/government/operations/upgrades-and-change/rollback-planning.md).
+[Planung der Rücknahme](../aktualisierungen-und-aenderungen/planung-der-ruecknahme.md).
 
 ## Inhalt
 1. [Bestätigen](#bestätigen)
@@ -74,7 +74,7 @@ bearbeitet wurden, gehen verloren: Sagen Sie der Redaktion, was sie neu machen m
 - Dokumentieren Sie: was ausgefallen ist, wann, dass die Rücknahme erfolgt ist, die Auswirkungen auf die Nutzenden. Der
   Änderungsbeirat braucht das, bevor die Änderung erneut versucht wird.
 - Reproduzieren Sie den Fehler vor dem nächsten Versuch auf dem Staging-System
-  ([Staging und Freigabe](../../../../../eng-us/help/government/operations/upgrades-and-change/staging-and-approval.md)).
+  ([Staging und Freigabe](../aktualisierungen-und-aenderungen/staging-und-freigabe.md)).
 
 ## Verwandte Seiten
 - [Eine PHP-Änderung bereitstellen](../../../../../eng-us/help/government/tasks/operations/deploy-a-php-change.md)

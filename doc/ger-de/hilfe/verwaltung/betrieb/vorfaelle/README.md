@@ -56,7 +56,7 @@ Nach oben: [Exponential im öffentlichen Sektor betreiben](../README.md). Die Ei
 
 ## Verwandte Seiten
 - [Überwachung](../ueberwachung/README.md)
-- [Datensicherung und Wiederherstellung](../../../../../eng-us/help/government/operations/backups-and-recovery/README.md)
+- [Datensicherung und Wiederherstellung](../datensicherung-und-wiederherstellung/README.md)
 - [Wenn etwas schiefgeht (Hilfe)](../../../wenn-etwas-schiefgeht.md)
 - [Sicherheitshärtung](../../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

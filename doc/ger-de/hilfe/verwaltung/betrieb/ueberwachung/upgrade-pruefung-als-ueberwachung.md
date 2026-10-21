@@ -61,7 +61,7 @@ Die Überwachung ist nur nützlich, wenn „nichts geändert“ der Normalzustan
 - Hochgeladene Dateien in `var/storage`.
 
 ## Verwandte Seiten
-- [Upgrade-Prüfung vorher und nachher](../../../../../eng-us/help/government/operations/upgrades-and-change/upgrade-check-before-and-after.md)
+- [Upgrade-Prüfung vorher und nachher](../aktualisierungen-und-aenderungen/upgrade-pruefung-vorher-und-nachher.md)
 - [Verunstaltung der Website](../vorfaelle/verunstaltung-der-website.md)
 - [Die Konsistenz nach einer Aktualisierung prüfen](../../../../../eng-us/help/government/tasks/operations/check-upgrade-consistency.md)
 - [Kompromittierte Website (Hosting-Runbook)](../../../hosting/runbooks/kompromittierte-website.md)

@@ -31,7 +31,7 @@ weit Sie gehen. Die Einzelheiten stehen auf den Hosting-Seiten
 Fragen Sie zuerst, was die Organisation leisten muss: wie lange die Website nicht verfügbar sein darf, zu welchen
 Zeiten, und wie viel aktueller Inhalt nach einem Ausfall verloren gehen darf. Das sind organisatorische
 Entscheidungen, beschrieben unter [Verfügbarkeitsziele und Service-Level](verfuegbarkeitsziele-und-service-level.md)
-und [RPO und RTO als Entscheidungen](../../../../../eng-us/help/government/operations/backups-and-recovery/rpo-and-rto-as-decisions.md). Das Projekt veröffentlicht
+und [RPO und RTO als Entscheidungen](../datensicherung-und-wiederherstellung/rpo-und-rto-als-entscheidungen.md). Das Projekt veröffentlicht
 kein Service-Level und keine Verfügbarkeitszahl für die Software selbst; die Zahlen, die Sie zusagen, stammen aus
 Ihrer eigenen Architektur und Ihren eigenen Tests.
 
@@ -45,7 +45,7 @@ Ihrer eigenen Architektur und Ihren eigenen Tests.
 | Der Watchdog von Velocity | startet die Engine nach einem Absturz oder einem Abbruch wegen Speichermangels neu | [Velocity für Teams im öffentlichen Sektor](../hosting/velocity-fuer-teams-im-oeffentlichen-sektor.md) |
 | Antwort-Cache und HTTP-Cache | anonyme Seiten werden auch bei Lastspitzen beantwortet | [Velocity-Antwort-Cache und HTTP-Cache](velocity-antwortcache-und-http-cache.md) |
 | Wartungsmodus | eine klare 503-Seite mit `Retry-After` während geplanter Arbeiten | [Wartungsmodus und geplante Ausfallzeiten](wartungsmodus-und-geplante-ausfallzeiten.md) |
-| Schnelle Wiederherstellung | eine getestete Datensicherung bringt die Website auf einer anderen Maschine zurück | [Wiederherstellung testen](../../../../../eng-us/help/government/operations/backups-and-recovery/restore-testing.md) |
+| Schnelle Wiederherstellung | eine getestete Datensicherung bringt die Website auf einer anderen Maschine zurück | [Wiederherstellung testen](../datensicherung-und-wiederherstellung/wiederherstellungstests.md) |
 
 Was ein Server nicht leistet: das Überstehen eines Ausfalls von Hardware, Festplatte, Rechenzentrum oder Netzwerk.
 Eine kalte Reservemaschine mit getesteten Wiederherstellungen reicht oft für eine öffentliche Stelle, deren Pflicht
@@ -106,7 +106,7 @@ dokumentierte Weg, wenn ein zweiter Webserver nötig ist
 ## Verwandte Seiten
 
 - [Verfügbarkeit](README.md): Übersicht dieses Ordners
-- [Notfallwiederherstellungsplan](../../../../../eng-us/help/government/operations/backups-and-recovery/disaster-recovery-plan.md)
+- [Notfallwiederherstellungsplan](../datensicherung-und-wiederherstellung/notfallwiederherstellungsplan.md)
 - [SLA-Optionen](../../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md) für die Sicht eines Dienstleisters auf Verfügbarkeitszusagen
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

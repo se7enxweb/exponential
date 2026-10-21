@@ -101,7 +101,7 @@ Container erleichtern manche Pflichten des öffentlichen Sektors, wenn Sie sie d
   Einstellungen oder Templates in einen Container schreiben kann, der ersetzt werden wird
   ([Konfiguration unter Versionsverwaltung](konfiguration-unter-versionskontrolle.md)).
 - **Datensicherungen sind weiterhin nötig.** Ein Snapshot eines Volumes ist keine getestete Datensicherung; folgen Sie
-  [Was zu sichern ist](../../../../../eng-us/help/government/operations/backups-and-recovery/what-to-back-up.md).
+  [Was zu sichern ist](../datensicherung-und-wiederherstellung/was-gesichert-werden-muss.md).
 
 ## Checkliste
 

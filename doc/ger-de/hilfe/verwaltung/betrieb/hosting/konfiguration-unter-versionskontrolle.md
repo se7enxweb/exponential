@@ -96,7 +96,7 @@ Halten Sie Datenbankpasswörter und erzeugte Schlüssel aus dem Repository herau
 
 Ein verbreitetes Muster ist eine kleine, nicht versionierte Einstellungsdatei pro Umgebung für die Zugangsdaten, die
 aus Ihrem Speicher für Geheimnisse bereitgestellt wird. Sichern Sie diese Dateien separat
-([Schlüssel und Geheimnisse in Datensicherungen](../../../../../eng-us/help/government/operations/backups-and-recovery/keys-and-secrets-in-backups.md)).
+([Schlüssel und Geheimnisse in Datensicherungen](../datensicherung-und-wiederherstellung/schluessel-und-geheimnisse-in-datensicherungen.md)).
 
 ## Nachvollziehbarkeit
 
@@ -105,7 +105,7 @@ geprüften Commit geändert hat. Exponential steuert seinen Teil bei: Der Audit-
 Einstellungen, das Leeren von Caches, Bereitstellungen und Paketinstallationen im Kanal `system` auf
 ([Audit-Trail](../../../../../eng-us/features/6.0/audit-trail.md)). Zusammen erlauben sie Ihnen, die Frage einer Prüferin oder
 eines Prüfers zu beantworten: „Wer hat diese Einstellung geändert, und war das freigegeben?“ Der Änderungsprozess
-selbst ist unter [Änderungsmanagement und Änderungsbeiräte](../../../../../eng-us/help/government/operations/upgrades-and-change/change-management-and-advisory-boards.md)
+selbst ist unter [Änderungsmanagement und Änderungsbeiräte](../aktualisierungen-und-aenderungen/aenderungsmanagement-und-aenderungsbeiraete.md)
 beschrieben.
 
 ## Checkliste
@@ -119,7 +119,7 @@ beschrieben.
 ## Verwandte Seiten
 
 - [Hosting](README.md): Übersicht dieses Ordners
-- [Durch die Bereitstellung verwaltet](../../../../../eng-us/help/government/operations/upgrades-and-change/managed-by-deployment.md) in den Seiten zu Änderungen
+- [Durch die Bereitstellung verwaltet](../aktualisierungen-und-aenderungen/verwaltet-durch-bereitstellung.md) in den Seiten zu Änderungen
 - [Änderungen bereitstellen](../../../hosting/betrieb/aenderungen-ausrollen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

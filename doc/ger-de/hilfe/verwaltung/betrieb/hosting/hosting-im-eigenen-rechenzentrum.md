@@ -43,7 +43,7 @@ schreibt. Die vollständige Liste steht unter
 | Beschreibbare Verzeichnisse | `var/` und die überschreibenden Einstellungen | [Aufbau des Speichers](../../../hosting/betrieb/aufbau-des-speichers.md) |
 | Cron | führt die Cronjob-Teile aus (Veröffentlichung, Workflows, das Audit) | [Cronjobs](../../../hosting/betrieb/cronjobs.md) |
 | Ausgehende E-Mail | Benachrichtigungen, Passwort-E-Mails, Newsletter | [E-Mail-Zustellung](../../../hosting/betrieb/mailzustellung.md) |
-| Datensicherungen und Überwachung | Ihre eigenen Systeme | [Datensicherung und Wiederherstellung](../../../../../eng-us/help/government/operations/backups-and-recovery/README.md), Abschnitt Überwachung dieser Betriebsseiten |
+| Datensicherungen und Überwachung | Ihre eigenen Systeme | [Datensicherung und Wiederherstellung](../datensicherung-und-wiederherstellung/README.md), Abschnitt Überwachung dieser Betriebsseiten |
 
 Bevor Sie etwas installieren, prüfen Sie eine Maschine mit dem Befehl, den das Projekt bereitstellt; er listet die
 PHP-Erweiterungen auf, die die Installation verlangt, und gibt den Installationsbefehl für Ihr System aus:
@@ -106,7 +106,7 @@ Datenbank und wem die Anwendung gehört.
   [Übersicht zur Hochverfügbarkeit](../verfuegbarkeit/hochverfuegbarkeit-im-ueberblick.md), bevor Sie mehr versprechen, als eine
   Maschine leisten kann.
 - **Kopien außer Haus sind Ihre Aufgabe.** Eine Datensicherung im selben Raum wie der Server übersteht keinen Brand
-  und kein Hochwasser; siehe [Externe und verschlüsselte Kopien](../../../../../eng-us/help/government/operations/backups-and-recovery/offsite-and-encrypted-copies.md).
+  und kein Hochwasser; siehe [Externe und verschlüsselte Kopien](../datensicherung-und-wiederherstellung/externe-und-verschluesselte-kopien.md).
 - **Standardmäßig gibt es keinen Supportvertrag eines Herstellers.** Das Projekt veröffentlicht keine
   Service-Level-Vereinbarung; Supportmöglichkeiten sind unter [Wer ist 7x?](../../../wer-ist-7x.md) beschrieben.
 

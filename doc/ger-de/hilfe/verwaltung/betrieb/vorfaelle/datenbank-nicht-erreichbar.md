@@ -84,7 +84,7 @@ Standby-Server ersetzt das nicht.
 ## Verwandte Seiten
 - [Website nicht erreichbar](website-nicht-erreichbar.md)
 - [Lese-Replikate](../verfuegbarkeit/lese-replikate.md)
-- [Datensicherungen je Datenbank-Engine](../../../../../eng-us/help/government/operations/backups-and-recovery/backups-per-database-engine.md)
+- [Datensicherungen je Datenbank-Engine](../datensicherung-und-wiederherstellung/datensicherungen-je-datenbank-engine.md)
 - [Kapitel Datenbanken](../../../../installation/09-datenbanken.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

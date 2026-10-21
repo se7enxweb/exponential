@@ -69,7 +69,7 @@ letzte Zeile einer Datei beschädigen kann; Abschnitt 5.3 des Leitfadens erklär
   rückgängig machbar.
 - Die Signaturschlüssel liegen in `settings/override/audit.ini.append.php`; sichern Sie sie getrennt und halten Sie sie
   von Personen fern, die die Dateien verändern könnten
-  ([Schlüssel und Geheimnisse in Datensicherungen](../../../../../eng-us/help/government/operations/backups-and-recovery/keys-and-secrets-in-backups.md)).
+  ([Schlüssel und Geheimnisse in Datensicherungen](../datensicherung-und-wiederherstellung/schluessel-und-geheimnisse-in-datensicherungen.md)).
 - `OnWriteFailure=continue` (Standard) lässt die Website weiterlaufen, wenn das Audit nicht schreiben kann; `refuse`
   verweigert sicherheitsrelevante Aktionen, solange in ihren Kanal nicht geschrieben werden kann. Wählen Sie nach Ihrer
   Risikobereitschaft.
@@ -77,7 +77,7 @@ letzte Zeile einer Datei beschädigen kann; Abschnitt 5.3 des Leitfadens erklär
 ## Verwandte Seiten
 - [Den Audit-Trail prüfen](../../../../../eng-us/help/government/tasks/operations/verify-the-audit-trail.md)
 - [Audit-Warnungen](audit-warnungen.md)
-- [Audit-Trail-Archive und Datensicherungen](../../../../../eng-us/help/government/operations/backups-and-recovery/audit-trail-archives-and-backups.md)
+- [Audit-Trail-Archive und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)
 - [Rollenentwurf: Prüfende](../personen-und-berechtigungen/rollenentwurf-pruefende.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -55,7 +55,7 @@ Person alles freigibt, bevor es öffentlich ist ([Rollenentwurf: Freigebende](ro
 ## Eine Rolle für einen Dienstleister für Entwicklung oder Gestaltung
 
 Arbeit an Templates und Code gehört in die Versionsverwaltung und auf eine Testkopie, nicht in die Produktion: Wenn
-[Durch Bereitstellung verwaltete Konfiguration](../../../../../eng-us/help/government/operations/upgrades-and-change/managed-by-deployment.md) eingeschaltet ist, sind der
+[Durch Bereitstellung verwaltete Konfiguration](../aktualisierungen-und-aenderungen/verwaltet-durch-bereitstellung.md) eingeschaltet ist, sind der
 Template-Editor und die Einstellungsseiten auf der Live-Website ohnehin gesperrt. In der Produktion braucht ein solcher Dienstleister meist
 höchstens:
 

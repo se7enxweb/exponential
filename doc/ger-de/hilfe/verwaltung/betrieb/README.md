@@ -34,10 +34,10 @@ Pflichten zur Kontinuität, Prüfungen und die Erwartung, dass alles dokumentier
 |---|---|
 | [Hosting](hosting/README.md) | Wo und wie Exponential betrieben wird: im eigenen Rechenzentrum, in einer Behörden- oder souveränen Cloud, in Containern; welche Datenbank, welcher Webserver; getrennte Umgebungen und eine eigene Administration; wo Daten liegen. |
 | [Verfügbarkeit](verfuegbarkeit/README.md) | Die Website erreichbar halten: mehrere Webserver, gemeinsamer Speicher, Datenbank-Replikate, die Caches vor PHP, geplante Ausfallzeiten mit dem Wartungsmodus, Kapazität. |
-| [Datensicherung und Wiederherstellung](../../../../eng-us/help/government/operations/backups-and-recovery/README.md) | Was je Datenbank-Engine zu sichern ist; Wiederherstellungstests; ein Plan zur Notfallwiederherstellung; Wiederherstellungszeitpunkt und Wiederherstellungsdauer als Entscheidungen Ihrer Organisation. |
+| [Datensicherung und Wiederherstellung](datensicherung-und-wiederherstellung/README.md) | Was je Datenbank-Engine zu sichern ist; Wiederherstellungstests; ein Plan zur Notfallwiederherstellung; Wiederherstellungszeitpunkt und Wiederherstellungsdauer als Entscheidungen Ihrer Organisation. |
 | [Überwachung](ueberwachung/README.md) | Der Log-Viewer, die Fehlerübersicht und der Zustand der Logs, die Anfrage-Logs (`404.log`, `security.log`), CSP-Berichte, Audit-Warnungen, Cronjobs, Systeminformationen und externe Verfügbarkeitsprüfungen. |
 | [Vorfälle](vorfaelle/README.md) | Runbooks für schlechte Tage: Website ausgefallen, Datenbank nicht erreichbar, verunstaltete Seiten, ein kompromittiertes Konto, Fluten von Sondierungsanfragen, eine fehlgeschlagene Bereitstellung, ein massenhafter Inhaltsfehler, veraltete Caches, Probleme mit E-Mails. |
-| [Aktualisierungen und Änderungen](../../../../eng-us/help/government/operations/upgrades-and-change/README.md) | Sicher aktualisieren, unveränderliche Releases, Änderungsbeiräte, Staging und Freigabe, durch die Bereitstellung verwaltete Konfiguration, Rücknahme. |
+| [Aktualisierungen und Änderungen](aktualisierungen-und-aenderungen/README.md) | Sicher aktualisieren, unveränderliche Releases, Änderungsbeiräte, Staging und Freigabe, durch die Bereitstellung verwaltete Konfiguration, Rücknahme. |
 | [Personen und Berechtigungen](personen-und-berechtigungen/README.md) | Rollen, Richtlinien und Einschränkungen; Rollenentwürfe nach dem Prinzip der geringsten Rechte für Webteams, Redaktionen der Fachbereiche, Freigebende, Prüfende und externe Dienstleister; Eintritt, Wechsel und Austritt; Anmeldung in zwei Schritten; Überprüfung der Zugänge. |
 | [Redaktionelle Workflows](../../../../eng-us/help/government/operations/editorial-workflows/README.md) | Freigabe vor dem Veröffentlichen, der Posteingang für die Zusammenarbeit, das Vier-Augen-Prinzip, rechtliche Prüfung, mehrsprachige Freigaben, ein Notfall-Umgehungsweg, der dokumentiert bleibt, Verantwortung für Inhalte. |
 
@@ -54,11 +54,11 @@ Zwei Aufgabenordner enthalten kurze, nummerierte Abläufe, die auf die Ordner ob
 ## Lesereihenfolge
 
 1. **Neu im Betrieb von Exponential:** [Hosting](hosting/README.md), danach
-   [Datensicherung und Wiederherstellung](../../../../eng-us/help/government/operations/backups-and-recovery/README.md) und [Überwachung](ueberwachung/README.md).
+   [Datensicherung und Wiederherstellung](datensicherung-und-wiederherstellung/README.md) und [Überwachung](ueberwachung/README.md).
 2. **Vorbereitung auf den Livegang:** [Personen und Berechtigungen](personen-und-berechtigungen/README.md) und
    [Redaktionelle Workflows](../../../../eng-us/help/government/operations/editorial-workflows/README.md), damit Zugänge und Freigaben vom ersten Tag an stimmen.
 3. **Den Dienst betreiben:** [Vorfälle](vorfaelle/README.md) und
-   [Aktualisierungen und Änderungen](../../../../eng-us/help/government/operations/upgrades-and-change/README.md), mit den
+   [Aktualisierungen und Änderungen](aktualisierungen-und-aenderungen/README.md), mit den
    [Betriebsaufgaben](../../../../eng-us/help/government/tasks/operations/README.md) griffbereit.
 4. **Planung für Wachstum oder strengere Kontinuitätspflichten:** [Verfügbarkeit](verfuegbarkeit/README.md).
 

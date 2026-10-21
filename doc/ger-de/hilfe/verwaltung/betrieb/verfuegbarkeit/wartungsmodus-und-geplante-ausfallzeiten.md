@@ -77,7 +77,7 @@ protokolliert ([Anleitung zum Wartungsmodus](../../../../anleitungen/wartungsmod
 | Einplanen | im Änderungskalender, freigegeben vom Änderungsbeirat, außerhalb der Hauptzeiten des Dienstes |
 | Ankündigen | auf der Website, in den Kanälen, die Ihre Organisation nutzt, mit Datum, Uhrzeit und erwartetem Ende |
 | Abhängigkeiten prüfen | Online-Formulare, Terminbuchungen oder Newsletter, die nicht verfügbar sein werden; andere Dienste, die auf die Website verlinken |
-| Vorbereiten | eine Datensicherung, eine Shell auf dem Server, der Plan für die Rücknahme ([Wartungsfenster](../../../../../eng-us/help/government/operations/upgrades-and-change/maintenance-windows.md)) |
+| Vorbereiten | eine Datensicherung, eine Shell auf dem Server, der Plan für die Rücknahme ([Wartungsfenster](../aktualisierungen-und-aenderungen/wartungsfenster.md)) |
 | Durchführen | einschalten, arbeiten, von einer zugelassenen Adresse prüfen, ausschalten |
 | Abschließen | `curl` erhält für alle 200; Caches vor der Website geleert; das Änderungsticket aktualisiert |
 
@@ -86,7 +86,7 @@ ein Job nicht laufen darf, während Sie die Website ändern (ein Import, ein Neu
 
 ## Was der Wartungsmodus nicht tut
 
-- Er erstellt keine Datensicherung; erstellen Sie zuerst eine ([Was zu sichern ist](../../../../../eng-us/help/government/operations/backups-and-recovery/what-to-back-up.md)).
+- Er erstellt keine Datensicherung; erstellen Sie zuerst eine ([Was zu sichern ist](../datensicherung-und-wiederherstellung/was-gesichert-werden-muss.md)).
 - Er hält keine Cronjobs an.
 - Er ist lokal auf die `var/maintenance.json` einer Installation beschränkt: Bei mehreren Webservern schalten Sie ihn
   auf jedem Knoten ein.

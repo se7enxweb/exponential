@@ -80,7 +80,7 @@ Halten Sie die Lücke im Audit-Trail in Ihren Notizen zum Vorfall fest: Prüfend
   ([Systeminformationen und Zustandsprüfungen](../ueberwachung/systeminformationen-und-zustandspruefungen.md)).
 - Aufbewahrung je Log festgelegt ([Aufbewahrung und Rotation von Logs](../ueberwachung/aufbewahrung-und-rotation-von-protokollen.md)).
 - Datensicherungen auf eine andere Festplatte oder ein anderes System geschrieben
-  ([Externe und verschlüsselte Kopien](../../../../../eng-us/help/government/operations/backups-and-recovery/offsite-and-encrypted-copies.md)).
+  ([Externe und verschlüsselte Kopien](../datensicherung-und-wiederherstellung/externe-und-verschluesselte-kopien.md)).
 - Festplattenwarnungen Ihres Überwachungssystems auf jedem Datenträger.
 
 ## Verwandte Seiten

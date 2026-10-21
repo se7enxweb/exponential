@@ -91,7 +91,7 @@ Schreiben Sie die Fristen in Ihren Aufbewahrungsplan und konfigurieren Sie sie i
 
 ## Verwandte Seiten
 - [Logs rotieren und bereinigen](../../../../../eng-us/help/government/tasks/operations/rotate-and-prune-logs.md)
-- [Audit-Trail-Archive und Datensicherungen](../../../../../eng-us/help/government/operations/backups-and-recovery/audit-trail-archives-and-backups.md)
+- [Audit-Trail-Archive und Datensicherungen](../datensicherung-und-wiederherstellung/audit-trail-archive-und-datensicherungen.md)
 - [Datenschutzstandard](../../../../../eng-us/standards/privacy.md)
 - [Fehlerübersicht und Zustand der Logs](fehleruebersicht-und-zustand-der-logs.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

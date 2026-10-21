@@ -83,7 +83,7 @@ und einem Halt beim ersten Fehler:
 
 Hängen Sie die Ausgabe des Probelaufs an den Änderungsantrag an; sie listet genau auf, was der echte Lauf tun wird.
 Einzelheiten: [Bereitstellen](../../../../anleitungen/bereitstellung.md) und die Seiten zu Änderungen in diesem Bereich, zum
-Beispiel [Staging und Freigabe](../../../../../eng-us/help/government/operations/upgrades-and-change/staging-and-approval.md).
+Beispiel [Staging und Freigabe](../aktualisierungen-und-aenderungen/staging-und-freigabe.md).
 
 ## Logs und Status
 

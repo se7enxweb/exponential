@@ -40,7 +40,7 @@ Im Wartungsmodus antwortet jede Seite mit `503 Service Unavailable` mit `Retry-A
 entweder die Überwachung für das angekündigte Fenster, oder akzeptieren Sie ein 503 mit `Retry-After`, solange
 `php bin/php/maintenance.php status` meldet, dass die Wartung eingeschaltet ist, und lösen Sie eine Warnung aus, wenn das
 Fenster länger dauert als angekündigt: Die Wartung endet nie von selbst
-([Wartungsfenster](../../../../../eng-us/help/government/operations/upgrades-and-change/maintenance-windows.md)). Statische Dateien werden weiterhin ausgeliefert,
+([Wartungsfenster](../aktualisierungen-und-aenderungen/wartungsfenster.md)). Statische Dateien werden weiterhin ausgeliefert,
 eine Prüfung auf ein Bild bleibt während der Wartung also grün.
 
 ## Zertifikate

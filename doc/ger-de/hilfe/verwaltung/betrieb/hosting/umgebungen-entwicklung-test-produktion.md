@@ -31,7 +31,7 @@ in welcher Umgebung sie arbeiten. Die Funktionsseite ist
 Änderungsbeiräte im öffentlichen Sektor verlangen meist, dass eine Änderung auf einer Testkopie funktionierend gesehen
 wird, bevor sie die Produktion erreicht. Exponential unterstützt das mit denselben Code- und Einstellungsdateien auf
 jeder Maschine, ergänzt um eine kleine Variante pro Maschine für das, was sich unterscheiden muss (Datenbank, E-Mail,
-Debug-Ausgabe). Die Schritte der Freigabe stehen unter [Staging und Freigabe](../../../../../eng-us/help/government/operations/upgrades-and-change/staging-and-approval.md).
+Debug-Ausgabe). Die Schritte der Freigabe stehen unter [Staging und Freigabe](../aktualisierungen-und-aenderungen/staging-und-freigabe.md).
 
 ## Die Umgebung benennen
 
@@ -122,8 +122,8 @@ dürfen, erstellen Sie Testinhalte separat, statt die Produktion zu kopieren.
 ## Verwandte Seiten
 
 - [Hosting](README.md): Übersicht dieses Ordners
-- [Auf einem Testserver wiederherstellen](../../../../../eng-us/help/government/operations/backups-and-recovery/restoring-to-a-test-server.md)
-- [Staging und Freigabe](../../../../../eng-us/help/government/operations/upgrades-and-change/staging-and-approval.md)
+- [Auf einem Testserver wiederherstellen](../datensicherung-und-wiederherstellung/wiederherstellung-auf-einem-testserver.md)
+- [Staging und Freigabe](../aktualisierungen-und-aenderungen/staging-und-freigabe.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

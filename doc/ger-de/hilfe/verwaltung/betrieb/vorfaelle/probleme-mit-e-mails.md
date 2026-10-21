@@ -78,7 +78,7 @@ sendet, braucht seine IPv6-Adresse ebenfalls im SPF-Eintrag.
    ([Umgebungen: Entwicklung, Test und Produktion](../hosting/umgebungen-entwicklung-test-produktion.md)).
 
 ## Verwandte Seiten
-- [Wiederherstellung auf einem Testserver](../../../../../eng-us/help/government/operations/backups-and-recovery/restoring-to-a-test-server.md)
+- [Wiederherstellung auf einem Testserver](../datensicherung-und-wiederherstellung/wiederherstellung-auf-einem-testserver.md)
 - [Umgebungsspezifische Einstellungen einrichten](../../../../../eng-us/help/government/tasks/operations/set-up-environment-specific-settings.md)
 - [E-Mail-Einstellungen (Funktion)](../../../../../eng-us/features/6.0/mail-preferences.md)
 - [E-Mail-Zustellung (Hosting)](../../../hosting/betrieb/mailzustellung.md)

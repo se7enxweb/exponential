@@ -46,7 +46,7 @@ wird.
 | Wiederherstellungszeit (RTO) | die Website ist innerhalb dieser Zeit nach einem Ausfall wieder da | Verantwortliche für den Dienst, mit der IT |
 | Sicherheitsupdates | eine veröffentlichte Sicherheitskorrektur wird innerhalb einer Frist eingespielt | Sicherheitsbeauftragte und IT |
 
-RPO und RTO werden unter [RPO und RTO als Entscheidungen](../../../../../eng-us/help/government/operations/backups-and-recovery/rpo-and-rto-as-decisions.md) behandelt.
+RPO und RTO werden unter [RPO und RTO als Entscheidungen](../datensicherung-und-wiederherstellung/rpo-und-rto-als-entscheidungen.md) behandelt.
 
 ## Wovon jede Zusage abhängt
 
@@ -55,9 +55,9 @@ RPO und RTO werden unter [RPO und RTO als Entscheidungen](../../../../../eng-us/
 | Verfügbarkeit | Maschinen, Netzwerk, Engine, Datenbank und wie viele einzelne Ausfallpunkte bleiben | [Überblick über Hochverfügbarkeit](hochverfuegbarkeit-im-ueberblick.md) |
 | Wartungsfenster | dem Änderungskalender; dem Wartungsmodus | [Wartungsmodus und geplante Ausfallzeiten](wartungsmodus-und-geplante-ausfallzeiten.md) |
 | Reaktionszeit des Supports | Personalausstattung und Bereitschaftsregelungen, nicht der Software | Ihr Servicedesk |
-| Wiederherstellungspunkt | Häufigkeit der Datensicherung, Datenbankreplikation | [Sicherungspläne und Aufbewahrung](../../../../../eng-us/help/government/operations/backups-and-recovery/backup-schedules-and-retention.md) |
-| Wiederherstellungszeit | einer getesteten Wiederherstellung und ihrer gemessenen Dauer | [Wiederherstellung testen](../../../../../eng-us/help/government/operations/backups-and-recovery/restore-testing.md) |
-| Sicherheitsupdates | dem Verfolgen der Releases; einem getesteten Weg zur Aktualisierung | [Sicherheitsupdates und Offenlegung](../../../../../eng-us/help/government/operations/upgrades-and-change/security-updates-and-disclosure.md) |
+| Wiederherstellungspunkt | Häufigkeit der Datensicherung, Datenbankreplikation | [Sicherungspläne und Aufbewahrung](../datensicherung-und-wiederherstellung/sicherungsplaene-und-aufbewahrung.md) |
+| Wiederherstellungszeit | einer getesteten Wiederherstellung und ihrer gemessenen Dauer | [Wiederherstellung testen](../datensicherung-und-wiederherstellung/wiederherstellungstests.md) |
+| Sicherheitsupdates | dem Verfolgen der Releases; einem getesteten Weg zur Aktualisierung | [Sicherheitsupdates und Offenlegung](../aktualisierungen-und-aenderungen/sicherheitsaktualisierungen-und-offenlegung.md) |
 
 Versprechen Sie nie eine Wiederherstellungszeit, die Sie nicht in einem Test gemessen haben: „Nennen Sie die
 Wiederherstellungszeit, die Sie in einem Test gemessen haben, nicht eine, die Sie erhoffen“
@@ -97,7 +97,7 @@ Typische Ausschlüsse in einem internen Ziel oder einem Vertrag, zur Anpassung:
 
 - [Verfügbarkeit](README.md): Übersicht dieses Ordners
 - [Support-Stufen](../../../hosting/geschaeft/support-stufen-fuer-exponential-hosting.md)
-- [Notfallwiederherstellungsplan](../../../../../eng-us/help/government/operations/backups-and-recovery/disaster-recovery-plan.md)
+- [Notfallwiederherstellungsplan](../datensicherung-und-wiederherstellung/notfallwiederherstellungsplan.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -42,7 +42,7 @@ und Pflichten zur Kontinuität.
 3. Richten Sie die Website sicher ein: [Umgebungen](umgebungen-entwicklung-test-produktion.md), [getrennte Administration](administrations-und-oeffentliche-siteaccesses-trennen.md), [Härtung](den-host-haerten.md), [Konfigurationskontrolle](konfiguration-unter-versionskontrolle.md).
 4. Dokumentieren Sie es: [Speicherort der Daten](datenstandort-und-was-wo-gespeichert-wird.md) und die [Entscheidungsdokumentation](hosting-entscheidungsprotokoll.md).
 
-Fahren Sie danach mit [Verfügbarkeit](../verfuegbarkeit/README.md) und [Datensicherung und Wiederherstellung](../../../../../eng-us/help/government/operations/backups-and-recovery/README.md) fort.
+Fahren Sie danach mit [Verfügbarkeit](../verfuegbarkeit/README.md) und [Datensicherung und Wiederherstellung](../datensicherung-und-wiederherstellung/README.md) fort.
 
 ## Verwandte Seiten
 

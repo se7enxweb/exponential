@@ -84,7 +84,7 @@ aus.
 - **Konsistenz nach einem Vorfall.** Führen Sie nach einem Vorfall und vor einer Migration `dfscleanup.php -S` und
   `-B` aus.
 - **Datensicherungen.** Sichern Sie den NFS-Export und die Metadatendatenbank gemeinsam, im selben Zeitfenster wie die
-  Datenbank der Website ([Was zu sichern ist](../../../../../eng-us/help/government/operations/backups-and-recovery/what-to-back-up.md)).
+  Datenbank der Website ([Was zu sichern ist](../datensicherung-und-wiederherstellung/was-gesichert-werden-muss.md)).
 - **Aktualisierungen.** Spielen Sie die Datei `dbupdate-cluster-...` jedes Aktualisierungsschritts ein, der eine
   solche hat ([11 Aktualisieren](../../../../installation/11-aktualisieren.md)).
 

@@ -54,7 +54,7 @@ Sichern Sie Beweise, bevor Sie etwas ändern (Dateien, Datenbank-Dump, `var/log/
    und stellen Sie sie wieder her.
 4. Viele Elemente betroffen: Erwägen Sie stattdessen, die Datenbank aus der letzten sauberen Datensicherung
    wiederherzustellen, und nehmen Sie den Verlust legitimer Änderungen seitdem in Kauf
-   ([Planung der Rücknahme](../../../../../eng-us/help/government/operations/upgrades-and-change/rollback-planning.md)).
+   ([Planung der Rücknahme](../aktualisierungen-und-aenderungen/planung-der-ruecknahme.md)).
 
 ## Verunstaltete Dateien: neu aufbauen
 

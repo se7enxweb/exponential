@@ -62,7 +62,7 @@ bringt sie zurück.
 
 Wenn die genauen Werkzeuge den Fehler nicht rückgängig machen können, stellen Sie die letzte Datensicherung von vor dem
 Fehler wieder her, zuerst auf einem Testserver, um zu prüfen, ob sie enthält, was Sie brauchen
-([Wiederherstellung auf einem Testserver](../../../../../eng-us/help/government/operations/backups-and-recovery/restoring-to-a-test-server.md)). Möglichkeiten: die
+([Wiederherstellung auf einem Testserver](../datensicherung-und-wiederherstellung/wiederherstellung-auf-einem-testserver.md)). Möglichkeiten: die
 Produktion vollständig wiederherstellen (und dabei jede legitime Änderung seit der Datensicherung verlieren) oder die
 verlorenen Inhalte von Hand oder mit einem Paketexport aus der wiederhergestellten Kopie zurückkopieren. Entscheiden
 Sie das mit den Verantwortlichen für den Dienst.
@@ -77,7 +77,7 @@ Sie das mit den Verantwortlichen für den Dienst.
 ## Verwandte Seiten
 - [Versionsverlauf und Nachvollziehbarkeit](../../../../../eng-us/help/government/operations/editorial-workflows/version-history-and-accountability.md)
 - [Verunstaltung der Website](verunstaltung-der-website.md)
-- [Planung der Rücknahme](../../../../../eng-us/help/government/operations/upgrades-and-change/rollback-planning.md)
+- [Planung der Rücknahme](../aktualisierungen-und-aenderungen/planung-der-ruecknahme.md)
 - [Veröffentlichen und Versionen (Hilfe)](../../../veroeffentlichen-und-versionen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

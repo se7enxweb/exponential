@@ -48,7 +48,7 @@ ergänzen die Sicht des öffentlichen Sektors: Pflichten zur Aufrechterhaltung d
    [Datenbankverfügbarkeit](hochverfuegbarkeit-der-datenbank.md) und [Lese-Replikate](lese-replikate.md).
 4. Lesen Sie [Der statische Cache](statischer-cache.md) nur, wenn jemand danach fragt.
 
-Weiter mit [Datensicherung und Wiederherstellung](../../../../../eng-us/help/government/operations/backups-and-recovery/README.md); Entscheidungen zum Hosting stehen unter [Hosting](../hosting/README.md).
+Weiter mit [Datensicherung und Wiederherstellung](../datensicherung-und-wiederherstellung/README.md); Entscheidungen zum Hosting stehen unter [Hosting](../hosting/README.md).
 
 ## Verwandte Seiten
 

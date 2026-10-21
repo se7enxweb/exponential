@@ -63,7 +63,7 @@ Richtlinie erlaubt.
    abdeckt.
 2. Arbeiten Sie die Gruppen der Fehlerübersicht mit der Entwicklung ab, bis nur noch akzeptierte Quellen übrig sind.
 3. Schalten Sie den Siteaccess auf dem Staging-System auf `Mode=enforce`, testen Sie, dann über Ihren Änderungsprozess
-   auf der Produktion ([Änderungsmanagement und Änderungsbeiräte](../../../../../eng-us/help/government/operations/upgrades-and-change/change-management-and-advisory-boards.md)).
+   auf der Produktion ([Änderungsmanagement und Änderungsbeiräte](../aktualisierungen-und-aenderungen/aenderungsmanagement-und-aenderungsbeiraete.md)).
 4. Behalten Sie `ReportEndpoint=enabled` bei: Nach der Durchsetzung zeigen die Berichte, was blockiert wurde.
 5. Die Rücknahme ist eine Einstellungsänderung zurück auf `report-only`.
 

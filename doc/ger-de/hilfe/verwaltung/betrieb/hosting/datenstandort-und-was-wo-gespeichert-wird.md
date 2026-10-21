@@ -90,7 +90,7 @@ grep -rn "ActiveExtensions" settings/override/site.ini.append.php
 Regeln zur Datenresidenz gelten üblicherweise auch für Kopien:
 
 - **Datensicherungen** enthalten die Datenbank, den Speicher, den Audit-Trail und `settings/override`; bewahren Sie sie
-  an einem freigegebenen Standort auf ([Externe und verschlüsselte Kopien](../../../../../eng-us/help/government/operations/backups-and-recovery/offsite-and-encrypted-copies.md)).
+  an einem freigegebenen Standort auf ([Externe und verschlüsselte Kopien](../datensicherung-und-wiederherstellung/externe-und-verschluesselte-kopien.md)).
 - **Testkopien**, die aus der Produktion erstellt werden, enthalten echte personenbezogene Daten
   ([Umgebungen für Entwicklung, Test und Produktion](umgebungen-entwicklung-test-produktion.md)).
 - **Exporte**: Audit-Exporte, CSV-Exporte von Konten (**Benutzer > Benutzerkonten prüfen**), Exporte von

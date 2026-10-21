@@ -48,8 +48,8 @@ Hoster steht unter [Einen Webserver wählen](../../../hosting/server/einen-webse
 | Konfigurationskontrolle | Versionsverwaltung; `ManagedByDeployment` | | | | [Konfiguration unter Versionsverwaltung](konfiguration-unter-versionskontrolle.md) |
 | Anzahl der Webserver | einer; mehrere hinter einem Load Balancer | | | | [Übersicht zur Hochverfügbarkeit](../verfuegbarkeit/hochverfuegbarkeit-im-ueberblick.md) |
 | Caches vor PHP | Antwort-Cache von Velocity; HTTP-Cache; statischer Cache (ausgeschaltet ausgeliefert) | | | | [Antwort-Cache von Velocity und HTTP-Cache](../verfuegbarkeit/velocity-antwortcache-und-http-cache.md) |
-| Datensicherungen | was, wie oft, wo, wie lange | | | | [Was zu sichern ist](../../../../../eng-us/help/government/operations/backups-and-recovery/what-to-back-up.md) |
-| Wiederherstellungsziele | RPO und RTO, wie von der Organisation entschieden | | | | [RPO und RTO als Entscheidungen](../../../../../eng-us/help/government/operations/backups-and-recovery/rpo-and-rto-as-decisions.md) |
+| Datensicherungen | was, wie oft, wo, wie lange | | | | [Was zu sichern ist](../datensicherung-und-wiederherstellung/was-gesichert-werden-muss.md) |
+| Wiederherstellungsziele | RPO und RTO, wie von der Organisation entschieden | | | | [RPO und RTO als Entscheidungen](../datensicherung-und-wiederherstellung/rpo-und-rto-als-entscheidungen.md) |
 | E-Mail | sendmail, SMTP, Datei (Test) | | | | [E-Mail-Zustellung](../../../hosting/betrieb/mailzustellung.md) |
 | Suche | eingebaut; Solr über ezfind | | | | [Such-Backends](../../../hosting/grundlagen/such-backends.md) |
 | Speicherort der Daten | Inventar jedes Orts, an dem Daten liegen | | | | [Speicherort der Daten und was wo gespeichert wird](datenstandort-und-was-wo-gespeichert-wird.md) |

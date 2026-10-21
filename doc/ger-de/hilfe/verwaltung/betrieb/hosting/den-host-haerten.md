@@ -43,7 +43,7 @@ Prüfungen unten dauern wenige Minuten, und ihre Ausgabe ist ein guter Nachweis 
 | Die Administration | eigener Hostname und Netzwerkbeschränkung | [Die Administration von der öffentlichen Website trennen](administrations-und-oeffentliche-siteaccesses-trennen.md) |
 | Der Einrichtungsassistent | geschlossen: `CheckValidity=false` in `settings/override/site.ini.append.php` | [13.5](../../../../installation/13-sicherheitshaertung.md#135-der-administrations-siteaccess) |
 | Velocity | Worker nicht als root, Passwort des Panels gesetzt, Dashboard nicht aus der Ferne erreichbar | [13.12](../../../../installation/13-sicherheitshaertung.md#1312-velocity-spezifische-härtung) |
-| Auf dem neuesten Stand bleiben | Sicherheits-Releases eingespielt | [Sicherheitsupdates und Offenlegung](../../../../../eng-us/help/government/operations/upgrades-and-change/security-updates-and-disclosure.md) |
+| Auf dem neuesten Stand bleiben | Sicherheits-Releases eingespielt | [Sicherheitsupdates und Offenlegung](../aktualisierungen-und-aenderungen/sicherheitsaktualisierungen-und-offenlegung.md) |
 
 ```bash
 curl -sI https://www.example.gov/ | grep -i -E 'x-content-type|x-frame|referrer|permissions|content-security'
@@ -79,7 +79,7 @@ Prüfen Sie nach jedem als root ausgeführten Befehl den Eigentümer neuer Datei
 Geheimnis für die E-Mail-Präferenzen ([13.3](../../../../installation/13-sicherheitshaertung.md#133-geheimnisse-in-settingsoverride)).
 Beschränken Sie, wer es auf dem Server lesen kann, halten Sie es aus der Versionsverwaltung heraus oder verschlüsseln
 Sie es dort, und behandeln Sie Datensicherungen, die es enthalten, als vertraulich (siehe
-[Schlüssel und Geheimnisse in Datensicherungen](../../../../../eng-us/help/government/operations/backups-and-recovery/keys-and-secrets-in-backups.md)). Velocity
+[Schlüssel und Geheimnisse in Datensicherungen](../datensicherung-und-wiederherstellung/schluessel-und-geheimnisse-in-datensicherungen.md)). Velocity
 bewahrt private Schlüssel von Zertifikaten in seinem Konfigurationsbaum mit dem Modus `0600` auf.
 
 ## Zuordnung zu Ihrer Sicherheitsgrundlinie

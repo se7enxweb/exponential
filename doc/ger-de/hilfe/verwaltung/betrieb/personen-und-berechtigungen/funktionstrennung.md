@@ -63,7 +63,7 @@ ein Prozess die Software absichern muss.
   Hash-Kette und signierte Manifeste zeigen das, und ein externes Ziel bewahrt eine Kopie auf
   ([Überprüfung des Audit-Trails](../ueberwachung/pruefung-des-audit-trails.md)).
 - **Die Freigabe von Einstellungsänderungen** liegt außerhalb von Exponential: Legen Sie Einstellungen in die Versionsverwaltung und sperren Sie
-  sie auf der Live-Website mit [ManagedByDeployment](../../../../../eng-us/help/government/operations/upgrades-and-change/managed-by-deployment.md), damit Änderungen durch Ihren
+  sie auf der Live-Website mit [ManagedByDeployment](../aktualisierungen-und-aenderungen/verwaltet-durch-bereitstellung.md), damit Änderungen durch Ihren
   Änderungsbeirat gehen.
 
 ## Kleine Teams
@@ -76,7 +76,7 @@ damit ein Prüfer sieht, dass er entschieden und nicht übersehen wurde.
 ## Verwandte Seiten
 - [Rollen, Richtlinien und Einschränkungen](rollen-richtlinien-und-einschraenkungen.md)
 - [Überprüfung der Administrationszugänge](ueberpruefung-administrativer-zugaenge.md)
-- [Änderungsmanagement und Änderungsbeiräte](../../../../../eng-us/help/government/operations/upgrades-and-change/change-management-and-advisory-boards.md)
+- [Änderungsmanagement und Änderungsbeiräte](../aktualisierungen-und-aenderungen/aenderungsmanagement-und-aenderungsbeiraete.md)
 - [Leitfaden zu Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

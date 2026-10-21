@@ -69,7 +69,7 @@ brauchen einen Datenbankserver und gemeinsamen Speicher
 | Eine Datenbank, wenn nicht SQLite | eine der unterstützten Engines; ein verwalteter Datenbankdienst ist in Ordnung, wenn er eine davon ist | [Datenbankwahl in der offiziellen Reihenfolge](datenbankwahl-in-der-offiziellen-reihenfolge.md) |
 | Ein Zeitplaner | `runcronjobs.php` alle paar Minuten oder der eigene Zeitplaner von Velocity | [Cronjobs](../../../hosting/betrieb/cronjobs.md) |
 | Ausgehende E-Mail | Passwort- und Benachrichtigungs-E-Mails | [E-Mail-Zustellung](../../../hosting/betrieb/mailzustellung.md) |
-| Snapshots oder Sicherungsspeicher an einem zweiten Standort | Kontinuität | [Datensicherung und Wiederherstellung](../../../../../eng-us/help/government/operations/backups-and-recovery/README.md) |
+| Snapshots oder Sicherungsspeicher an einem zweiten Standort | Kontinuität | [Datensicherung und Wiederherstellung](../datensicherung-und-wiederherstellung/README.md) |
 
 Eine Plattform mit schreibgeschütztem oder flüchtigem Dateisystem braucht `var/` auf dauerhaftem Speicher; siehe
 [Platform as a Service](../../../hosting/modelle/platform-as-a-service.md).
@@ -87,7 +87,7 @@ beschriebenen Pflichten tragen kann.
 | Welche PHP-Versionen und -Erweiterungen können wir installieren, und wie schnell werden Sicherheitsupdates eingespielt? | die Software braucht PHP 8 mit festgelegten Erweiterungen |
 | Können wir einen langlebigen Prozess (Velocity) betreiben und Ports binden? | entscheidet zwischen Velocity und einem herkömmlichen Webserver ([Wahl des Webservers](wahl-des-webservers.md)) |
 | Wird ein verwaltetes PostgreSQL, MariaDB oder MySQL angeboten, in welchen Versionen? | die unterstützten Engines und ihre Mindestversionen stehen in [Datenbankunterstützung](../../../datenbankunterstuetzung.md) |
-| Wie werden Snapshots aufbewahrt, wie lange und an einem zweiten Standort? | Ihre Entscheidungen zur Wiederherstellung ([RPO und RTO als Entscheidungen](../../../../../eng-us/help/government/operations/backups-and-recovery/rpo-and-rto-as-decisions.md)) |
+| Wie werden Snapshots aufbewahrt, wie lange und an einem zweiten Standort? | Ihre Entscheidungen zur Wiederherstellung ([RPO und RTO als Entscheidungen](../datensicherung-und-wiederherstellung/rpo-und-rto-als-entscheidungen.md)) |
 | Können wir am Vertragsende alles (Festplatten, Datenbank-Dumps) in Standardformaten exportieren? | Ausstiegsstrategie |
 
 ## Die Möglichkeit zum Wechsel erhalten

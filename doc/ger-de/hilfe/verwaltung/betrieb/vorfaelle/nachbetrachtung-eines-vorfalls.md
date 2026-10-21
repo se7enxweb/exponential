@@ -60,9 +60,9 @@ mit Verweisen in diesen Bereich:
 | Befund | Maßnahme |
 |---|---|
 | Stundenlang hat es niemand bemerkt | eine Prüfung von außen ergänzen ([Externe Verfügbarkeitsüberwachung](../ueberwachung/externe-verfuegbarkeitsueberwachung.md)) |
-| Die Wiederherstellung dauerte zu lange | Wiederherstellungstests einplanen ([Wiederherstellungstests](../../../../../eng-us/help/government/operations/backups-and-recovery/restore-testing.md)) |
+| Die Wiederherstellung dauerte zu lange | Wiederherstellungstests einplanen ([Wiederherstellungstests](../datensicherung-und-wiederherstellung/wiederherstellungstests.md)) |
 | Zu viele Personen mit vollem Zugriff | Überprüfung der Zugänge ([Überprüfung administrativer Zugänge](../personen-und-berechtigungen/ueberpruefung-administrativer-zugaenge.md)) |
-| Eine Änderung hat die Produktion beschädigt | Staging-Schritt ([Staging und Freigabe](../../../../../eng-us/help/government/operations/upgrades-and-change/staging-and-approval.md)) |
+| Eine Änderung hat die Produktion beschädigt | Staging-Schritt ([Staging und Freigabe](../aktualisierungen-und-aenderungen/staging-und-freigabe.md)) |
 | Beweise fehlen | längere Aufbewahrung ([Aufbewahrung und Rotation von Logs](../ueberwachung/aufbewahrung-und-rotation-von-protokollen.md)) |
 
 ## Die Dokumentation
@@ -74,7 +74,7 @@ veröffentlichen Sie eine kurze öffentliche Zusammenfassung, wenn Ihre Organisa
 ## Verwandte Seiten
 - [Grundlagen der Vorfallsbehandlung](grundlagen-der-vorfallsbehandlung.md)
 - [Meldung von Datenschutzverletzungen](meldung-von-datenschutzverletzungen.md)
-- [Notfallwiederherstellungsplan](../../../../../eng-us/help/government/operations/backups-and-recovery/disaster-recovery-plan.md)
+- [Notfallwiederherstellungsplan](../datensicherung-und-wiederherstellung/notfallwiederherstellungsplan.md)
 - [Hosting-Runbooks](../../../hosting/runbooks/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
