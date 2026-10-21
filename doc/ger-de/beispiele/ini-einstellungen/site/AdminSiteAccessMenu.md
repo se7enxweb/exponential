@@ -24,8 +24,15 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 > ihren Adressen. Ihr erster Eintrag öffnet die Website, wie es der Globus tat; die  
 > anderen sind in Websites und Administrationen gruppiert, und der verwendete Siteaccess  
 > ist markiert. Nur für angemeldete Benutzer. Die Adressen werden so ermittelt wie  
-> von siteaccess\_url() (MatchOrder, URIMatchType, HostMatchMapItems, SiteURL),  
-> mit Schema, Host und Port der Anfrage.  
+> von siteaccess\_url(), mit dem Schema der Anfrage: Jeder Siteaccess erhält  
+> die erste Adresse, die die Zuordnungsregeln (host\_uri, host und uri, in der  
+> Reihenfolge von MatchOrder) zu ihm zurückführen, ohne dass ein Teil des Pfads übrig  
+> bleibt. Der Reihe nach versucht: dieser Host mit seinem Eintrag in HostUriMatchMapItems  
+> oder seinem URI-Element, seine eigene \[SiteSettings\] SiteURL, ein Host, den  
+> HostMatchMapItems ihm gibt, dann einer seiner host\_uri-Einträge auf einem anderen Host.  
+> Lässt sich für keine davon zeigen, dass sie dorthin führt, gilt wie bisher sein  
+> URI-Element auf diesem Host (sonst seine SiteURL, wie sie eingetragen ist, sonst  
+> dieser Host).  
 > Aus den Einstellungen des Administrations-Siteaccess gelesen.  
 >
 > enabled oder disabled; disabled lässt den Globus einen einfachen Link zur Website sein  
