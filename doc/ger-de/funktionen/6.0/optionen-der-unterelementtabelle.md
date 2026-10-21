@@ -108,7 +108,7 @@ nennt Abfrageanzahlen und Zeiten für 10, 50 und 100 Zeilen.
 Die Unterelementtabelle selbst ist `exp::datatable`. Ihr Lader ist `ezajaxsubitems_expdatatable.js`, mit einer Kopie in
 `design/admin` und einer in `design/admin4`; ändern Sie beide zusammen. Dieselben Spalten werden von `expsubitems_svc` als
 entfernte Dienste bereitgestellt; die Serverfunktionen sind `expSubitemsServerFunctions` (siehe
-[entfernte Dienste](../../../eng-us/features/6.0/remote-services-expservices.md)).
+[entfernte Dienste](entfernte-dienste-expservices.md)).
 
 ## Verwandte Seiten
 

@@ -78,7 +78,7 @@ Alle Zugangstypen einer Kickstart-Installation registrieren die Siteaccesses `si
 
 Ein Knoten, dessen Ausgangssprache fehlt oder dessen serialisierter Attributknoten fehlt, wird vom Export von
 Inhaltspaketen übersprungen, statt den Lauf zu beenden (`752adad843`, `8af48c1e59`). Siehe
-[ezpm](../../../eng-us/features/6.0/ezpm-package-manager-cli.md).
+[ezpm](ezpm-paketmanager-cli.md).
 
 ## Verwandte Seiten
 

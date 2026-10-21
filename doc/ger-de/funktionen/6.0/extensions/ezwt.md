@@ -4,7 +4,7 @@ Diese Seite ist für Designer, die einem öffentlichen Website-Design das Bearbe
 Toolbar LS“) ist die Bearbeitungsleiste, die ein angemeldeter Redakteur auf der öffentlichen Website sieht: bearbeiten,
 verschieben, entfernen, hier anlegen, Unterelemente sortieren, den Zustand ändern, ein Dokument hochladen oder
 exportieren. Sie benötigt `ezjscore`. [ezwebin](ezwebin.md), [ezflow](ezflow.md), [ezdemo](ezdemo.md) und das
-[Simple-Theme](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md) bauen alle auf ihr auf.
+[Simple-Theme](sevenx_themes_simple.md) bauen alle auf ihr auf.
 
 ## In Ihr Design einbauen
 

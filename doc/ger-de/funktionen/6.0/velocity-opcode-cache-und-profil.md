@@ -80,7 +80,7 @@ tail -n 3 var/tmp/opcache_profile.log
 
 - [Velocity-Server mit dauerhaften Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
 - [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
-- [Generator für den statischen Cache](../../../eng-us/features/6.0/static-cache-generator.md)
+- [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Hinweise zur Aktualisierung der Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)
 - [Einstellungen und Programme der Velocity-Engine](../../spezifikationen/6.0/velocity-engine-einstellungen.md)
 - [Worker-Pool und Kompatibilitätsschicht von Velocity](../../spezifikationen/6.0/velocity-worker-pool.md)

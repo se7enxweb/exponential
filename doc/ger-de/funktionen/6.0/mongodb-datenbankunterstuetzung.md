@@ -90,7 +90,7 @@ In denselben Wochen behoben (`e0d617f28e`, `93cdd0cf47`, `7773850ade`):
 ## Verwandte Seiten
 
 - [MongoDB-Unterstützung im Kernel (Referenz der Portierung)](../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
-- [Unterstützung für die Datenbank SQLite](../../../eng-us/features/6.0/sqlite-database.md), [Spezifikation des SQLite-Treibers](../../spezifikationen/6.0/sqlite3-datenbanktreiber.md)
+- [Unterstützung für die Datenbank SQLite](sqlite-datenbank.md), [Spezifikation des SQLite-Treibers](../../spezifikationen/6.0/sqlite3-datenbanktreiber.md)
 - [Datenbanktreiber und Installer: SQLite, PostgreSQL, MySQL und Oracle, 16. bis 30. September 2026](../../spezifikationen/6.0/datenbanktreiber-2026-09.md)
 - [Paketinstallation in Teilschritten](paketinstallation-in-teilschritten.md)
 - [Changelog 6.0.14](../../../changelogs/6.0/6.0.14.md)

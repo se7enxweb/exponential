@@ -79,7 +79,7 @@ Nur der Dateisystem-Handler (`eZFSFileHandler`) benennt um. Ein Cache im Cluster
 ## Verwandte Seiten
 
 - [Cache-Konsole](../../../eng-us/bc/6.0/cache-console.md) (`exp:cache`)
-- [Generator für den statischen Cache](../../../eng-us/features/6.0/static-cache-generator.md), [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
+- [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md), [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
 - [Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

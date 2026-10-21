@@ -56,7 +56,7 @@ Richtlinienprüfungen wie die Seite. Der Menüeintrag ist `settings/menu.ini` `L
   verweisender Seiten und sagt, wie viele es noch gab. Ein Verweis auf etwas, das keine Seite ist (ein Anker, ein
   Fragment), wird nicht mehr als defekt gemeldet.
 - **Ein Aufrufer kann die geholten Seiten behalten.** Der Generator für den statischen Cache verwendet das, um sie zu
-  speichern (siehe [Generator für den statischen Cache](../../../eng-us/features/6.0/static-cache-generator.md)).
+  speichern (siehe [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)).
 
 ## Es läuft im Hintergrund
 
@@ -84,7 +84,7 @@ gestreamte Antworten puffert, verhielt sich genauso. Der neue Weg funktioniert h
 ## Verwandte Seiten
 
 - [Vorlader für den Website-Cache](../../../eng-us/bc/6.0/preload.md) (die Ausgabe lesen, Einsatz mit cron, Fehlersuche)
-- [HTTP/2 und Vorwärmen des Caches](../../../eng-us/bc/6.0/http2-and-cache-warming.md), [Generator für den statischen Cache](../../../eng-us/features/6.0/static-cache-generator.md)
+- [HTTP/2 und Vorwärmen des Caches](../../../eng-us/bc/6.0/http2-and-cache-warming.md), [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [September 2026, erste Hälfte: Seiten vorladen](../../../eng-us/history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [die Korrekturen vom 15. September](../../../eng-us/history/2026/2026-09a.md#15-september-paging-everywhere)
 

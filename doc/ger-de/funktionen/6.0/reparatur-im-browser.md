@@ -62,7 +62,7 @@ php bin/php/exprepair.php --disable   # writes Enabled=false and an empty KeyHas
 ## Verwandte Seiten
 
 - [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md)
-- [Dateikonsistenzprüfung](../../../eng-us/features/6.0/file-consistency-check.md)
+- [Dateikonsistenzprüfung](dateikonsistenzpruefung.md)
 - [Velocity und der Opcode-Cache](velocity-opcode-cache-und-profil.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

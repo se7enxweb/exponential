@@ -60,7 +60,7 @@ Kernels aus, nicht zur Datei dieser Extension.
 ## Verwandte Seiten
 
 - [jQuery 4 in der Administrationsoberfläche, und YUI ist weg](../jquery4-und-entfernung-von-yui.md)
-- [Entfernte Dienste (expservices)](../../../../eng-us/features/6.0/remote-services-expservices.md)
+- [Entfernte Dienste (expservices)](../entfernte-dienste-expservices.md)
 - [Backend-Dienste von ezjscore](../../../../eng-us/bc/6.0/backend_ezjscore_services.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Chronik](../../../../eng-us/history/extensions/ezjscore.md) und [Versionshinweise](../../../../changelogs/extensions/ezjscore.md)

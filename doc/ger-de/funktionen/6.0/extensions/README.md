@@ -19,7 +19,7 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 | [exp_enhanced_link](exp_enhanced_link.md) | erweiterter Link-Datentyp |
 | [ezgmaplocation](ezgmaplocation.md) | Datentyp für Kartenstandorte |
 | [ezstarrating](ezstarrating.md) | Sternebewertungen |
-| [eztags](../../../../eng-us/features/6.0/extensions/eztags.md) | Tags |
+| [eztags](eztags.md) | Tags |
 | [hcaptcha](hcaptcha.md) | Datentyp für hCaptcha |
 | [ngclasslist](ngclasslist.md) | Datentyp für Klassenlisten |
 | [recaptcha](recaptcha.md) | Datentyp für reCAPTCHA |
@@ -49,7 +49,7 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 | [ezwebin](ezwebin.md) | Design Website Interface |
 | [ezwebin-ezpackage](ezwebin-ezpackage.md) | Installationspakete von ezwebin |
 | [sevenx_themes_admin_classic](sevenx_themes_admin_classic.md) | Umschalter des Admin-Designs |
-| [sevenx_themes_simple](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md) | das Simple-Theme |
+| [sevenx_themes_simple](sevenx_themes_simple.md) | das Simple-Theme |
 
 ## Shop, Newsletter und Besucher
 
@@ -83,9 +83,9 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 | [expqueue](expqueue.md) | die Auftragswarteschlange für Hintergrundarbeit von Extensions |
 | [ezupdate](../../../../eng-us/features/6.0/extensions/ezupdate.md) | Aktualisierungen und Pakete |
 | [git_manager](../../../../eng-us/features/6.0/extensions/git_manager.md) | Git-Dashboard und Sicherungen |
-| [sevenx_authentication_2fa](../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md) | Zwei-Faktor- und Social-Login |
+| [sevenx_authentication_2fa](sevenx_authentication_2fa.md) | Zwei-Faktor- und Social-Login |
 | [sevenx_dse](sevenx_dse.md) | Database Source Editor |
-| [sevenx_valkey_cache](../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md) | Cache in Redis und Valkey |
+| [sevenx_valkey_cache](sevenx_valkey_cache.md) | Cache in Redis und Valkey |
 
 ## Template-Helfer
 

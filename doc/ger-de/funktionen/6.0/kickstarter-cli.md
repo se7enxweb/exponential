@@ -68,11 +68,11 @@ Protokoll ab.
 
 - [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md): braucht keine `kickstart.ini`
 - [Standardwerte einer sauberen Installation](standardwerte-einer-sauberen-installation.md)
-- [ezpm, der Paketmanager auf der Kommandozeile](../../../eng-us/features/6.0/ezpm-package-manager-cli.md): installiert einzelne Pakete
+- [ezpm, der Paketmanager auf der Kommandozeile](ezpm-paketmanager-cli.md): installiert einzelne Pakete
 - [Eine Paketinstallation, die große Pakete übersteht](paketinstallation-in-teilschritten.md)
 - [In ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](../../../eng-us/features/6.0/package-compare-and-import.md)
 - [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md)
-- [Generator für den statischen Cache](../../../eng-us/features/6.0/static-cache-generator.md)
+- [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Installer-Protokolle und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Verhaltensänderungen von Juli und August 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

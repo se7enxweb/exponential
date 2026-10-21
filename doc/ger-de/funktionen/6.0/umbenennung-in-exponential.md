@@ -32,7 +32,7 @@ und Pfade unverändert.
 3. Laden Sie PHP-FPM neu, damit die neue `lib/version.php` gesehen wird. Die Konstante `EDITION` lautet `Exponential`;
    die Klasse heißt ab 6.0.15 `ExponentialSDK`.
 4. Wenn Sie eine eigene Dateiliste für die Aktualisierungsprüfung pflegen, erzeugen Sie sie neu (siehe
-   [Dateikonsistenzprüfung](../../../eng-us/features/6.0/file-consistency-check.md)).
+   [Dateikonsistenzprüfung](dateikonsistenzpruefung.md)).
 
 ## Was sich geändert hat
 
@@ -65,7 +65,7 @@ Ein Template, das Sie 2012 geschrieben haben, funktioniert also weiter.
 
 - [Eine saubere Installation, die zu Shared Hosting passt und Exponential sagt](standardwerte-einer-sauberen-installation.md)
 - [Info- und Copyright-Seiten](info-und-paketseiten.md), [Paketlizenzen und Semantic Versioning](paketlizenzen-und-versionen.md)
-- [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Dateikonsistenzprüfung](../../../eng-us/features/6.0/file-consistency-check.md)
+- [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Dateikonsistenzprüfung](dateikonsistenzpruefung.md)
 - [Changelog 6.0.10](../../../changelogs/6.0/6.0.10.md)
 - Chronik: [August 2025](../../../eng-us/history/2025/2025-08.md), [Juli 2025](../../../eng-us/history/2025/2025-07.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md)
 

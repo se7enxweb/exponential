@@ -12,7 +12,7 @@ Es erweitert [ezwt](ezwt.md) (die Website-Werkzeugleiste) und benötigt `ezjscor
 Extension für Exponential; 6.0.16 (2. Oktober 2026) ist aktuell.
 
 Für eine neue Website zeigt [ezdemo](ezdemo.md) das Design mit Demo-Inhalten, und das
-[Simple-Theme](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md) ist eine leichtere Alternative auf Grundlage derselben Klassen.
+[Simple-Theme](sevenx_themes_simple.md) ist eine leichtere Alternative auf Grundlage derselben Klassen.
 
 ## Eine Website auf das aktuelle Release aktualisieren
 

@@ -89,7 +89,7 @@ Aktualisierung die Liste der Bestellstatus des Shops.
 ## Verwandte Seiten
 
 - [Bestellbelege](bestellbelege.md), [Sortierung der Bestellliste](sortierung-der-bestellliste.md), [Name der Warenkorbansicht im Shop](../../../eng-us/bc/6.0/shop-basket-view-name.md)
-- [Navigation der Administrationsoberfläche: der oberste Knoten und die Reiter](../../../eng-us/features/6.0/admin-content-tree-top-node.md) (der Reiter Shop)
+- [Navigation der Administrationsoberfläche: der oberste Knoten und die Reiter](oberster-knoten-des-inhaltsbaums-im-admin.md) (der Reiter Shop)
 - [Installer-Protokolle und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

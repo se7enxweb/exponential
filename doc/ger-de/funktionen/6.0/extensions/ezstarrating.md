@@ -45,7 +45,7 @@ Zu 6.0.3:
 
 ## Verwandte Seiten
 
-- [sevenx_themes_simple](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md): Die Bewertungsansicht des Simple-Themes lädt das jQuery-Skript
+- [sevenx_themes_simple](sevenx_themes_simple.md): Die Bewertungsansicht des Simple-Themes lädt das jQuery-Skript
 - [Backend-Dienste von ezjscore](../../../../eng-us/bc/6.0/backend_ezjscore_services.md)
 - [Velocity-Engines](../../../../eng-us/bc/6.0/velocity-engines.md)
 - [Chronik](../../../../eng-us/history/extensions/ezstarrating.md) und [Versionshinweise](../../../../changelogs/extensions/ezstarrating.md)
