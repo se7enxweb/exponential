@@ -388,7 +388,7 @@ dbe5def951f76a833fe3992eb68bf430  design/admin/templates/class/exp_list_script.t
 06850be333353d9dd80636d5d7cf527d  design/admin/templates/class/select_language.tpl
 0968be0f253ab2b80b5c43d2aab0827b  design/admin/templates/class/templates.tpl
 831d2c3b05d77eb493de4ae71e3846c2  design/admin/templates/class/translations.tpl
-42ea0b2e6fbb000416a1b8e998199575  design/admin/templates/class/view.tpl
+f5dc69d471e0b6eed124b1be1435a6e0  design/admin/templates/class/view.tpl
 4581eb88f3baec539c96d289d36131b4  design/admin/templates/class/window_controls.tpl
 03a840054c5ab652032b65fa93bd3e2a  design/admin/templates/class/windows.tpl
 480c83b0bac58273d014cac3af49ca33  design/admin/templates/collaboration/group/view/list.tpl
@@ -575,6 +575,7 @@ db0ae3da5ecb1909d187f2b74b25947e  design/admin/templates/notification/handler/ez
 b5c832d529e7ed9b2c32be06badaf57a  design/admin/templates/notification/removeresult.tpl
 bad8545e8a97034967109a6e5b74543e  design/admin/templates/notification/runfilter.tpl
 d01bbc72014abdbc972a2a2245c13083  design/admin/templates/notification/settings.tpl
+d71ca23597b73fa3a9678fdeac1fbeef  design/admin/templates/notification/status.tpl
 67b919e7f0138b2336de502eaf162770  design/admin/templates/oauthadmin/delete_confirmation.tpl
 299f4894744d48800e170ca089309e1a  design/admin/templates/oauthadmin/edit.tpl
 3ffa5900d52c4e875c0f77e2f60b73df  design/admin/templates/oauthadmin/key_revoke_confirmation.tpl
@@ -706,7 +707,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin/templates/settings/exp_origin.tpl
 afea2c896730f8b9142080fee6e1ebdd  design/admin/templates/setup/designextension.tpl
 11f0aa0693cddbf698731e7dc5e1e576  design/admin/templates/setup/extensions.tpl
 e7c49888f84d392e3d9c0fac2a8ed395  design/admin/templates/setup/handlerextension.tpl
-ba678756abb0296740b2303d50234c06  design/admin/templates/setup/info.tpl
+cc82868ee22239552798df4538949be4  design/admin/templates/setup/info.tpl
 b6cd17ce32f4503e4efa3de4023ae532  design/admin/templates/setup/kerneloverride.tpl
 26834e98fce147b8eb87749da5233252  design/admin/templates/setup/languages.tpl
 bb038cf7a9fdc88514696d5cf6ce35a9  design/admin/templates/setup/logs.tpl
@@ -1126,7 +1127,7 @@ ce3b91619885f77dcd20a2a20ec07d2f  design/admin4/templates/class/grouplist.tpl
 06850be333353d9dd80636d5d7cf527d  design/admin4/templates/class/select_language.tpl
 0968be0f253ab2b80b5c43d2aab0827b  design/admin4/templates/class/templates.tpl
 8eee0867bd7296f075e74e6a4d708c91  design/admin4/templates/class/translations.tpl
-2f822872021ccbeb8d8c376f7917c2a6  design/admin4/templates/class/view.tpl
+7ada7eb4dc4f1b21e26acb474c8a6173  design/admin4/templates/class/view.tpl
 287cedb6f59889a93ee22e4cdf92ddff  design/admin4/templates/class/window_controls.tpl
 03a840054c5ab652032b65fa93bd3e2a  design/admin4/templates/class/windows.tpl
 ecda0ad69c9b183cee1135ab0f1af39c  design/admin4/templates/collaboration/group/view/list.tpl
@@ -1489,7 +1490,7 @@ b19bea8949b01eb13fbddf1ef40fb06b  design/admin4/templates/setup/contentextension
 dddca14898250d79c04a924be8a93168  design/admin4/templates/setup/designextension.tpl
 f05c99b45e66c3df695d4b315c7ae1b0  design/admin4/templates/setup/extensions.tpl
 499ac5c3d06675c2c30b7be31bdaf2d7  design/admin4/templates/setup/handlerextension.tpl
-150ac5ce290ba91f1f879a303f30eb3e  design/admin4/templates/setup/info.tpl
+bd83335042f92294b1b2bcb95070f4da  design/admin4/templates/setup/info.tpl
 3c64396c201ce7fc624bac2464b38930  design/admin4/templates/setup/kerneloverride.tpl
 26834e98fce147b8eb87749da5233252  design/admin4/templates/setup/languages.tpl
 bb038cf7a9fdc88514696d5cf6ce35a9  design/admin4/templates/setup/logs.tpl
@@ -20623,7 +20624,7 @@ ce9600aa8d2d9a4d05280d8739b41630  kernel/common/ezpi18n.php
 f96a90033dfa982c5532d6e86250f804  kernel/common/ezpsiteaccessurloperator.php
 017b674d3da82376774e263117ee3ce8  kernel/common/ezsimpletagsoperator.php
 7d8a5a3184eadfd4d955dc09d8bcf50f  kernel/common/eztemplateautoload.php
-5bd855003c810187b6d3b2b35b650ae5  kernel/common/eztemplatedesignresource.php
+9ceb4c9f830f1adb379fb9ebcd1aad62  kernel/common/eztemplatedesignresource.php
 9a8a326aaf46c622ad345e92a192ab41  kernel/common/eztemplatesstatisticsreporter.php
 b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
 c1b77acfcb295ee03ada1972e12a84d6  kernel/common/eztopmenuoperator.php
@@ -21153,7 +21154,7 @@ f86ea06247131f9bb463f3ca72c6b0a7  kernel/private/classes/views/setup/cronjobsstr
 5957a06fa0d58e7749c8a3409cf46e3d  kernel/private/classes/views/setup/extensions.php
 d20e53a9eb38c6817005501482fff8ab  kernel/private/classes/views/setup/ezsetup.php
 ae11e7010436d30804244b58f892c156  kernel/private/classes/views/setup/handlerextension.php
-fa104229cacb6d0503e74fc57f21b836  kernel/private/classes/views/setup/info.php
+d498fd598cbd04c6c8082cd27e4a1c8b  kernel/private/classes/views/setup/info.php
 145b00435bed599bec736dee0133ebc6  kernel/private/classes/views/setup/kerneloverride.php
 13fe24ae58def29446be495e0332940f  kernel/private/classes/views/setup/languages.php
 05deb174a40b531102c80330b7cfd599  kernel/private/classes/views/setup/logs.php
@@ -23179,6 +23180,7 @@ a259b36c8795f576c46cb9b5ea46ea25  tests/tests/extension/maps/expMapAddressEscapi
 14ed0fd86bd419c3abc2e81c07d0cdc0  tests/tests/extension/sevenx_dse/fixtures/adminneo_runs_to_end.php
 89b118c6d391cbf19c7af686e98794a2  tests/tests/extension/sevenx_dse/fixtures/adminneo_throws_other.php
 f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
+d8aef2fead647bf588799e969b3627e3  tests/tests/kernel/classes/SiteAccessDesignAndAdminViewWarningsTest.php
 94e110c5205488d8c6b08cfe9136eeca  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
 80f2b4056adbe4f9240733cdcfd4d5d9  tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php
 633325175e872eb956f557b4c8948323  tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
