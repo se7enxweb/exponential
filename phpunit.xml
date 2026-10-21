@@ -145,6 +145,16 @@
         </testsuite>
 
         <!--
+          ezprestapi: the extension serves REST API v1 and v2 without the deprecated ezprestapiprovider (no class of
+          the provider named, constants and route actions declared, rest.ini maps to its own provider). Reads the
+          extension's files only; no kernel, database or siteaccess.
+          Run: php vendor/bin/phpunit - -testsuite ezprestapi
+        -->
+        <testsuite name="ezprestapi">
+            <directory suffix="Test.php">tests/tests/extension/ezprestapi</directory>
+        </testsuite>
+
+        <!--
           expservices: the service layer called like the ezjscore router does (content, users, commerce, community,
           media, misc, core). Live database of the admin siteaccess, throwaway rows the tests remove again, never a
           test database. Without an installed site (CI) every class is skipped by ezpLiveInstallation::requireOrSkip().
