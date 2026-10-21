@@ -81,7 +81,7 @@ Die Änderung im Oktober ging weiter zu jQuery 4. Die Dateien 3.7.1 und Migrate 
 ## Verwandte Seiten
 
 - [Entfernung von YUI (Schritte zur Aktualisierung)](../../../eng-us/bc/6.0/yui-removal.md)
-- [ezjscore](extensions/ezjscore.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md), [Exp-Debug-Leiste](../../../eng-us/features/6.0/exp-debug-bar.md)
+- [ezjscore](extensions/ezjscore.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md), [Exp-Debug-Leiste](exp-debug-leiste.md)
 - [Online-Editor: TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md)
 - [Die Sicherheitspatches vom August 2026](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)

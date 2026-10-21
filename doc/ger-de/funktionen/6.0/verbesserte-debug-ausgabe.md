@@ -1,6 +1,6 @@
 # Debug-Ausgabe, die Sie auf einen Blick lesen und gestalten können
 
-Diese Seite ist in [Die Exp-Debug-Leiste](../../../eng-us/features/6.0/exp-debug-bar.md#the-classic-debug-block-heading-section-ids-and-phone-sized-output-607) aufgegangen, die jetzt den klassischen Debug-Block (die Überschrift nennt ihren Schalter, Abschnitts-IDs, responsives Layout, die Tabelle `[DebugSettings]`) neben der Debug-Leiste enthält.
+Diese Seite ist in [Die Exp-Debug-Leiste](exp-debug-leiste.md#der-klassische-debug-block-überschrift-abschnitts-ids-und-ausgabe-in-telefongröße-607) aufgegangen, die jetzt den klassischen Debug-Block (die Überschrift nennt ihren Schalter, Abschnitts-IDs, responsives Layout, die Tabelle `[DebugSettings]`) neben der Debug-Leiste enthält.
 
 Siehe auch: [Referenz der Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md), [Chronik: Januar 2025](../../../eng-us/history/2025/2025-01.md).
 

@@ -139,7 +139,7 @@ Diese E-Mails wurden auf einer Testinstallation erstellt und in Dateien geschrie
 | Der Inhalt ist verborgen oder unsichtbar | Verborgene Inhalte werden nicht angekündigt |
 | Sie haben eine Zusammenfassung gewählt | Nachrichten warten auf die Stunde der Zusammenfassung |
 | Es ist eine Aktualisierung einer alten Version | Nur die aktuelle Version wird angekündigt |
-| Der Redakteur hat ohne Benachrichtigung veröffentlicht | Korrekturen lassen sich veröffentlichen, ohne die Abonnenten zu informieren, wo die Website das erlaubt ([Veröffentlichen ohne Benachrichtigung](../../../eng-us/features/6.0/publish-without-notification.md)) |
+| Der Redakteur hat ohne Benachrichtigung veröffentlicht | Korrekturen lassen sich veröffentlichen, ohne die Abonnenten zu informieren, wo die Website das erlaubt ([Veröffentlichen ohne Benachrichtigung](veroeffentlichen-ohne-benachrichtigung.md)) |
 | Noch ist nichts gelaufen | E-Mails werden vom Benachrichtigungs-Cronjob gesendet; fragen Sie Ihren Administrator |
 | Ihr Konto ist abgeschaltet oder hat keine Adresse | |
 

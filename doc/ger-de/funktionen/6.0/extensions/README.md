@@ -31,11 +31,11 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 |---|---|
 | [expai](expai.md) | Exponential Intelligence, der Schreibassistent der Administrationsoberfläche (nur Entwürfe) |
 | [explayouts-Suite](../../../../eng-us/bc/6.0/LAYOUTS.md) | Exponential Layouts: Layouts, Zonen, Blöcke, Regeln und gemeinsame Layouts (die Anleitung) |
-| [explayouts_ui](../../../../eng-us/features/6.0/extensions/explayouts_ui.md) | die Admin-Bildschirme für Layouts |
+| [explayouts_ui](explayouts_ui.md) | die Admin-Bildschirme für Layouts |
 | [explayouts_ui_api](../../../../eng-us/features/6.0/extensions/explayouts_ui_api.md) | der Layout-Editor |
 | [ezautosave](ezautosave.md) | automatisches Speichern von Entwürfen |
 | [ezflow](ezflow.md) | Seiten, Zonen und Blöcke |
-| [ezie](../../../../eng-us/features/6.0/extensions/ezie.md) | Bildeditor |
+| [ezie](ezie.md) | Bildeditor |
 | [ezmultiupload](ezmultiupload.md) | Hochladen mehrerer Dateien |
 | [ezodf](ezodf.md) | Import und Export von OpenDocument |
 | [ezoe](ezoe.md) | Repository des Online-Editors |

@@ -56,7 +56,7 @@ wie Sie sie geschrieben haben (anders als `eZINI::save()`, das die ganze Datei n
 
 Aktionen und Anbieter von Geltungsbereichen sind Klassen, die in `settings/ini.ini` `[IniCommandSettings]` registriert
 sind. **Setup > RAD** unter `/setup/radsurvey/(show)/inicommand` listet jede mit ihrem Eigentümer auf. Dieselbe
-Editorklasse (`expIniEditor`) steht hinter dem Reiter für Einstellungen der [Debug-Leiste](../../../eng-us/features/6.0/exp-debug-bar.md).
+Editorklasse (`expIniEditor`) steht hinter dem Reiter für Einstellungen der [Debug-Leiste](exp-debug-leiste.md).
 
 ## Verwandte Seiten
 

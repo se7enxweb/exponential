@@ -20,7 +20,7 @@ Hilfe, die die Debug-Ausgabe von Symfony und Twig gibt. Hinzugefügt am 30. Juli
    ShowTemplatePathComments=enabled
    ```
 
-   Oder schalten Sie es in der [Exp-Debug-Leiste](../../../eng-us/features/6.0/exp-debug-bar.md) in der Gruppe Templates um (Einstellung „Template
+   Oder schalten Sie es in der [Exp-Debug-Leiste](exp-debug-leiste.md) in der Gruppe Templates um (Einstellung „Template
    path comments“, `settings/debugbar.ini [Setting_template_path_comments]`), die denselben Schlüssel schreibt.
 
 2. Leeren Sie den Template-Cache, denn kompilierte Templates enthalten die Prüfung:
@@ -70,7 +70,7 @@ welchem Template und in welcher Zeile das Problem steckt, nicht nur, dass es ein
 
 ## Verwandte Seiten
 
-- [Exp-Debug-Leiste](../../../eng-us/features/6.0/exp-debug-bar.md), [Referenz der Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md)
+- [Exp-Debug-Leiste](exp-debug-leiste.md), [Referenz der Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md)
 - [Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](../../../eng-us/features/6.0/template-editor-overrides.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [Juli 2026](../../../eng-us/history/2026/2026-07.md), [August 2026](../../../eng-us/history/2026/2026-08.md)
