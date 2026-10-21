@@ -55,7 +55,7 @@ the file manifest `share/filelist.md5` as the list of tracked files.
 
 Markdown is rendered safely: raw HTML is escaped, links with `javascript:` and similar schemes are dropped, links to
 other pages become help links, external links open with `rel="noopener"`, and images come only from `doc/` or from
-`https://` addresses. The pages need no inline script or style, so they work under the administration's Content
+`https://` addresses (shown from a local copy, see "External images"). The pages need no inline script or style, so they work under the administration's Content
 Security Policy.
 
 ## Settings: exphelp.ini
@@ -276,6 +276,38 @@ Exclude[]=**/fixtures/**
 change, `./console exp:help index --rebuild` builds the index and search again (a commit that adds a file does it on
 its own, because the git index changes). `tests/tests/kernel/classes/help/expHelpProjectFilesTest.php` covers it (no
 database), among others that an untracked root note is never indexed.
+
+## External images
+
+A page can show an image of another site: `README.md` embeds its screenshots from `github.com/user-attachments`, as
+`![alt](https://...)` or `<img width="1200" height="693" alt="..." src="https://...">`. The administration's Content
+Security Policy allows images from `'self'` only (`img-src 'self' data: blob:`), so the help shows a **local copy**
+and the policy stays as it is:
+
+- **At index time**, `./console exp:help index` finds every `https://` image the pages reference (in every language)
+  and stores a copy as `var/<site>/cache/exphelp/images/<id>.<suffix>`, where `<id>` is the SHA-256 of the address
+  (`expHelpRemoteImages`). An image stored once is not fetched again. `--no-images` skips this step; the report lists
+  each image that could not be stored and why.
+- **Fetching is careful**: `https://` only, also for every redirect (at most 5; GitHub sends user-attachments on to a
+  signed storage address); never a host with a private, loopback, link-local or reserved address (the address is
+  resolved once and the connection pinned to it); at most 5 MB; a 15 second timeout; only PNG, JPEG, GIF and WebP,
+  and only when the bytes are of the type the server names. SVG is never stored. Nothing is fetched while a page is
+  shown.
+- **The files** are written atomically with `site.ini [FileSettings] StorageFilePermissions`, like the rest of the
+  help cache, so PHP-FPM (the site user) and Velocity (root) can both read them whichever ran the index.
+- **Serving**: `exphelp/image/(id)/<sha256>` (policy `exphelp/read`) sends the copy with its content type,
+  `X-Content-Type-Options: nosniff`, `Content-Security-Policy: default-src 'none'` and
+  `Cache-Control: private, max-age=31536000, immutable`. The id is a view parameter, never a GET parameter; anything
+  else (another form, a further path, an id with no copy) is a 404.
+- **In the page** the image is an `<img>` with that local address. The `width`, `height` and `alt` of an `<img>` tag
+  are kept as attributes (never an inline style); a Markdown image gets the size of the copy. An image with no copy
+  stays the labeled link "Image on <host>: <alt>" (opened in a new tab), so the page never makes a request the
+  policy blocks. A host the policy itself allows (`Directives[img-src]`, `AdditionalSources[]`) is shown from its
+  copy too when there is one.
+- The rendered pages are cached with the state of the image directory in the key, so a page shows its images after
+  the next `exp:help index` without clearing a cache.
+
+`tests/tests/kernel/classes/help/expHelpRemoteImagesTest.php` covers it (no database, no network: a fake fetcher).
 
 ## Landing pages of the audiences
 
