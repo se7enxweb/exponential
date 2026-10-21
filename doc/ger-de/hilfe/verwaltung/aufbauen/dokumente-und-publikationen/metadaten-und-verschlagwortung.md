@@ -44,14 +44,14 @@ verknüpft ([Aufbau einer Dokumentenbibliothek](aufbau-einer-dokumentenbibliothe
 |---|---|
 | Ein Schlagwortbaum für die ganze Site | Dokumente, Nachrichten und Leistungen teilen sich Themen |
 | Geschlossenes Vokabular für Dokumente | **Limit by tags subtree** am Attribut; Redakteure wählen, das Webteam fügt Schlagworte hinzu |
-| Synonyme | für die Wörter, die Menschen verwenden ([Lebenslagen und Themen](../../../../../eng-us/help/government/building/service-catalog/life-events-and-topics.md)) |
+| Synonyme | für die Wörter, die Menschen verwenden ([Lebenslagen und Themen](../leistungskatalog/lebenslagen-und-themen.md)) |
 | Schlagwortseiten | `/tags/view/<tag>` listet alles mit dem Schlagwort ([Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)) |
 
 ## Metadaten für Suchmaschinen
 
 Ein Attribut Metadaten (`xrowmetadata`) in der Klasse Publication gibt der Seite einen Titel und eine Beschreibung für
 Suchergebnisse und Linkvorschauen
-([Metadaten und Teilen in sozialen Netzwerken](../../../../../eng-us/help/government/building/news-and-alerts/metadata-and-social-sharing.md)). PDF-Dateien tragen
+([Metadaten und Teilen in sozialen Netzwerken](../nachrichten-und-warnmeldungen/metadaten-und-teilen-in-sozialen-netzwerken.md)). PDF-Dateien tragen
 ihre eigenen Metadaten (Titel, Autor, Sprache) in den Dateieigenschaften: Setzen Sie sie vor dem Export im
 Quellprogramm, denn Suchmaschinen zeigen bei einem PDF-Treffer den eigenen Titel der Datei.
 

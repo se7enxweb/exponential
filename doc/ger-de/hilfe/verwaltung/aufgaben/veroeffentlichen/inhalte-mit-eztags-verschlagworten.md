@@ -58,7 +58,7 @@ Administration unter **Tags** verwaltet wird
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Lebenslagen und Themen](../../../../../eng-us/help/government/building/service-catalog/life-events-and-topics.md)
+- [Lebenslagen und Themen](../../aufbauen/leistungskatalog/lebenslagen-und-themen.md)
 - [eztags](../../../../../eng-us/features/6.0/extensions/eztags.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

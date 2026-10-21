@@ -63,7 +63,7 @@ protokolliert.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Änderungen mit Benachrichtigungen verfolgen](aenderungen-mit-benachrichtigungen-verfolgen.md)
-- [Benachrichtigungen und Abonnements](../../../../../eng-us/help/government/building/news-and-alerts/notifications-and-subscriptions.md)
+- [Benachrichtigungen und Abonnements](../../aufbauen/nachrichten-und-warnmeldungen/benachrichtigungen-und-abonnements.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -13,7 +13,7 @@ Diese Seite ist für Redakteure in Bereitschaft, die Besucher jetzt über eine S
 informieren müssen. Exponential hat kein eingebautes Warnbanner; Sites zeigen Warnmeldungen mit einem Ordner für
 Bekanntmachungen, den die Startseite (oder jede Seite) auflistet, oder mit einem Block im Layout-Editor. Wie Ihre Site
 das macht, wurde beim Aufbau entschieden
-([Das Muster für dringende Bekanntmachungen](../../../../../eng-us/help/government/building/news-and-alerts/urgent-notices-pattern.md)).
+([Das Muster für dringende Bekanntmachungen](../../aufbauen/nachrichten-und-warnmeldungen/das-muster-fuer-dringende-bekanntmachungen.md)).
 
 ## Inhalt
 

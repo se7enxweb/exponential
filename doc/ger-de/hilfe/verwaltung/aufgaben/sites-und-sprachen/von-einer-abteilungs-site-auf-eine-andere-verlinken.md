@@ -10,7 +10,7 @@ type: help
 # Von einer Abteilungs-Site auf eine andere verlinken
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund:
-[Links zwischen Abteilungs-Sites](../../../../../eng-us/help/government/building/multisite/links-between-department-sites.md).
+[Links zwischen Abteilungs-Sites](../../aufbauen/multisite/links-zwischen-abteilungs-sites.md).
 
 ## Bevor Sie beginnen
 

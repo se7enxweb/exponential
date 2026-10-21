@@ -36,7 +36,7 @@ wie das Objekt, das es enthält: Seine Sektion, sein Ort und die Rollen entschei
 |---|---|
 | Dokumente nur für Mitarbeiter oder Mitglieder | eine Sektion, die Anonymous nicht lesen darf; eine Rolle mit `content/read` für diese Sektion, der Gruppe zugewiesen ([Sektionen, 13.1](../../../../anleitungen/sektionen.md#131-ein-mitgliederbereich)) |
 | Dokumente für eine Partnergruppe | eine Einschränkung auf einen Teilbaum bei `content/read` für diese Gruppe |
-| Ein Dokument, das bis zu einem Datum verfügbar ist | `hide.php` mit einem Datum zum Verstecken, oder verschieben Sie es in eine geschlossene Sektion ([Archiv und Ablauf](../../../../../eng-us/help/government/building/news-and-alerts/archive-and-expiry.md)) |
+| Ein Dokument, das bis zu einem Datum verfügbar ist | `hide.php` mit einem Datum zum Verstecken, oder verschieben Sie es in eine geschlossene Sektion ([Archiv und Ablauf](../nachrichten-und-warnmeldungen/archiv-und-ablauf.md)) |
 
 Verlinken Sie nie direkt einen gespeicherten Dateipfad (`var/.../storage/...`); das umgeht die Prüfung.
 

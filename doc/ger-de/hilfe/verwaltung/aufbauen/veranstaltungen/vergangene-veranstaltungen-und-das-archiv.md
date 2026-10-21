@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Site-Ersteller, Administratoren und Redakteure, die entscheiden, was mit Veranstaltungen
 nach ihrem Termin geschieht. Kalender füllen sich; vergangene Veranstaltungen werden entweder zu einem nützlichen
 Nachweis oder zu Ballast. Die genannten Funktionen sind in [Cronjobs](../../../../anleitungen/cronjobs.md) und
-[Archiv und Ablauf](../../../../../eng-us/help/government/building/news-and-alerts/archive-and-expiry.md) dokumentiert.
+[Archiv und Ablauf](../nachrichten-und-warnmeldungen/archiv-und-ablauf.md) dokumentiert.
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -78,7 +78,7 @@ Nehmen Sie Veranstaltungen, die Sie behalten möchten, aus, indem Sie sie in ein
 
 - [Veranstaltungen](README.md)
 - [Absagen und Änderungen](absagen-und-aenderungen.md)
-- [Archiv und Ablauf](../../../../../eng-us/help/government/building/news-and-alerts/archive-and-expiry.md)
+- [Archiv und Ablauf](../nachrichten-und-warnmeldungen/archiv-und-ablauf.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

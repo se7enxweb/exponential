@@ -10,7 +10,7 @@ type: help
 # Eine Seite zwischen zwei Sites teilen
 
 Diese Aufgabe richtet sich an Redakteure in einer Multisite-Installation. Hintergrund:
-[Gemeinsame Inhalte über Sites hinweg](../../../../../eng-us/help/government/building/multisite/shared-content-across-sites.md).
+[Gemeinsame Inhalte über Sites hinweg](../../aufbauen/multisite/gemeinsame-inhalte-ueber-sites-hinweg.md).
 
 ## Bevor Sie beginnen
 

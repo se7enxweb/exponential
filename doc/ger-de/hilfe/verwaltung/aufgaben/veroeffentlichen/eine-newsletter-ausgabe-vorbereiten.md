@@ -66,7 +66,7 @@ gegangen ist.
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Newsletter (Nachrichten und Warnmeldungen)](../../../../../eng-us/help/government/building/news-and-alerts/newsletters.md)
+- [Newsletter (Nachrichten und Warnmeldungen)](../../aufbauen/nachrichten-und-warnmeldungen/newsletter.md)
 - [Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

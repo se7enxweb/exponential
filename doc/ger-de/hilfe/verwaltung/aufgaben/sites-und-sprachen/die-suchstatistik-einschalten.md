@@ -10,7 +10,7 @@ type: help
 # Die Suchstatistik einschalten
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund:
-[Suchstatistik und Datenschutz](../../../../../eng-us/help/government/building/search/search-statistics-and-privacy.md).
+[Suchstatistik und Datenschutz](../../aufbauen/suche/suchstatistik-und-datenschutz.md).
 
 ## Schritte
 

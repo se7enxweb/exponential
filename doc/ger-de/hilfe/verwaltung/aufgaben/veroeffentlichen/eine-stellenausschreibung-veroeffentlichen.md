@@ -51,7 +51,7 @@ nicht hat, verwenden Sie einen Artikel in einem Ordner für Stellenangebote mit 
 
 | Möglichkeit | Wie |
 |---|---|
-| Automatisch | wenn das Web-Team `hide.php` auf das Fristattribut der Klasse eingestellt hat (`HideDateAttributeList[ng_job_position]=application_deadline`), wird die Ausschreibung beim nächsten Lauf nach der Frist versteckt ([Archiv und Ablauf](../../../../../eng-us/help/government/building/news-and-alerts/archive-and-expiry.md)) |
+| Automatisch | wenn das Web-Team `hide.php` auf das Fristattribut der Klasse eingestellt hat (`HideDateAttributeList[ng_job_position]=application_deadline`), wird die Ausschreibung beim nächsten Lauf nach der Frist versteckt ([Archiv und Ablauf](../../aufbauen/nachrichten-und-warnmeldungen/archiv-und-ablauf.md)) |
 | Von Hand | **Verstecken / Zeigen** am Tag der Frist ([Eine Seite vorübergehend verstecken](eine-seite-voruebergehend-verstecken.md)) |
 
 Halten Sie abgeschlossene Ausschreibungen versteckt, statt sie zu entfernen, wenn Ihre Regeln zur Schriftgutverwaltung

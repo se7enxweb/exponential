@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Redakteure, die Besucher von der Website zu einem System schicken, in dem sie etwas beantragen,
 bezahlen oder buchen. Die Seite erklärt, das externe System wickelt den Vorgang ab
-([Auf Online-Vorgänge verlinken](../../../../../eng-us/help/government/building/service-catalog/linking-to-online-transactions.md)).
+([Auf Online-Vorgänge verlinken](../../aufbauen/leistungskatalog/auf-online-verfahren-verlinken.md)).
 
 ## Inhalt
 

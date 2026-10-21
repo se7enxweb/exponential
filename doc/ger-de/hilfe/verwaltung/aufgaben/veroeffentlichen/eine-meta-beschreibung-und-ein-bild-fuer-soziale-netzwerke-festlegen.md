@@ -13,7 +13,7 @@ Diese Seite ist für Redakteure, die möchten, dass eine Seite in Suchergebnisse
 Klassen haben ein Feld **Meta Data** (der Datentyp `xrowmetadata`) mit einem Titel, Schlüsselwörtern, einer
 Beschreibung, einem Canonical-Link und, seit 1.3.6, einem Open-Graph-Bild
 ([xrowmetadata](../../../../../eng-us/features/6.0/extensions/xrowmetadata.md),
-[Metadaten und Teilen in sozialen Netzwerken](../../../../../eng-us/help/government/building/news-and-alerts/metadata-and-social-sharing.md)).
+[Metadaten und Teilen in sozialen Netzwerken](../../aufbauen/nachrichten-und-warnmeldungen/metadaten-und-teilen-in-sozialen-netzwerken.md)).
 
 ## Inhalt
 

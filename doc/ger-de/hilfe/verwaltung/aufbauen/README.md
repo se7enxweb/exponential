@@ -25,16 +25,16 @@ geprüft, und jede Lücke wird benannt.
 
 | Ordner | Die Antwort in einer Zeile |
 |---|---|
-| [Leistungskatalog](../../../../eng-us/help/government/building/service-catalog/README.md) | Eine Klasse für Leistungen, Seiten in einfacher Sprache, Lebenslagen und Themen, Auffindbarkeit, Ansprechpartner, Links zu Online-Verfahren, Pflege |
+| [Leistungskatalog](leistungskatalog/README.md) | Eine Klasse für Leistungen, Seiten in einfacher Sprache, Lebenslagen und Themen, Auffindbarkeit, Ansprechpartner, Links zu Online-Verfahren, Pflege |
 | [Formulare](formulare/README.md) | Der Information Collector, barrierefreie Formulare, Spamschutz und Drittanbieter, CSRF-Token, Anhänge, Mail, Aufbewahrung, Beteiligungsverfahren und Umfragen |
 | [Bürgerkonten](buergerkonten/README.md) | Registrierung, Anmeldung und Sitzungen, zweistufige Anmeldung, Passwortregeln, Kontenhygiene, Deaktivierung und Entfernung, Support |
-| [Nachrichten und Warnmeldungen](../../../../eng-us/help/government/building/news-and-alerts/README.md) | Nachrichtenartikel, dringende Bekanntmachungen, RSS, Benachrichtigungen, Newsletter, Pressemitteilungen, Archiv und Ablauf, Metadaten |
+| [Nachrichten und Warnmeldungen](nachrichten-und-warnmeldungen/README.md) | Nachrichtenartikel, dringende Bekanntmachungen, RSS, Benachrichtigungen, Newsletter, Pressemitteilungen, Archiv und Ablauf, Metadaten |
 | [Veranstaltungen](veranstaltungen/README.md) | Was mitgeliefert wird (Event, Event calendar, Multicalendar), Kalenderansichten, Listen kommender Termine, Anmeldungen, Änderungen, Barrierefreiheit, Archiv |
 | [Dokumente und Publikationen](dokumente-und-publikationen/README.md) | Dateien, eine Dokumentenbibliothek, Versionen, Metadaten, PDF-Export, barrierefreie Dokumente, OpenDocument, Download-Berechtigungen |
-| [Suche](../../../../eng-us/help/government/building/search/README.md) | Die eingebaute Suchmaschine, durchsuchbare Felder, Solr mit ezfind, Statistiken und die damit verbundenen Datenschutzpflichten |
-| [Karten](../../../../eng-us/help/government/building/maps/README.md) | Das Feld `ezgmaplocation` mit Google Maps und was es nicht gibt |
-| [Newsletter](../../../../eng-us/help/government/building/newsletters/README.md) | cjw_newsletter, Double-Opt-in, Probe, Listenpflege, Abmeldung mit einem Klick |
-| [Multisite](../../../../eng-us/help/government/building/multisite/README.md) | Eine Installation für viele Abteilungen: Sites, Designs, gemeinsame Inhalte, Rollen, Betrieb |
+| [Suche](suche/README.md) | Die eingebaute Suchmaschine, durchsuchbare Felder, Solr mit ezfind, Statistiken und die damit verbundenen Datenschutzpflichten |
+| [Karten](karten/README.md) | Das Feld `ezgmaplocation` mit Google Maps und was es nicht gibt |
+| [Newsletter](newsletter/README.md) | cjw_newsletter, Double-Opt-in, Probe, Listenpflege, Abmeldung mit einem Klick |
+| [Multisite](multisite/README.md) | Eine Installation für viele Abteilungen: Sites, Designs, gemeinsame Inhalte, Rollen, Betrieb |
 | [Intranets](intranets/README.md) | Ein Siteaccess nur für Mitarbeiter, Sektionen und Rollen, Anmeldeoptionen, Sitzungen |
 | [Extranets](extranets/README.md) | Auftragnehmer und Partner mit Zugang nur zu ihren eigenen Inhalten, Konten und deren Ende |
 

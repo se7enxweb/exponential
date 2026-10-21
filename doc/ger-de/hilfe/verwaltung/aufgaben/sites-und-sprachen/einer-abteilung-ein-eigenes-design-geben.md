@@ -9,7 +9,7 @@ type: help
 ---
 # Einer Abteilung ein eigenes Design geben
 
-Diese Aufgabe richtet sich an Site-Ersteller. Hintergrund: [Designs je Site](../../../../../eng-us/help/government/building/multisite/per-site-designs.md)
+Diese Aufgabe richtet sich an Site-Ersteller. Hintergrund: [Designs je Site](../../aufbauen/multisite/designs-je-site.md)
 und [Designs und die Fallback-Kette](../../../../../eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md).
 
 ## Bevor Sie beginnen

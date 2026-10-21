@@ -68,7 +68,7 @@ diese Seite gibt eine kurze Methode.
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Die Dienstleistungsseite und einfache Sprache](../../../../../eng-us/help/government/building/service-catalog/service-page-and-plain-language.md)
+- [Die Dienstleistungsseite und einfache Sprache](../../aufbauen/leistungskatalog/die-leistungsseite-und-einfache-sprache.md)
 - [Einen PDF-Bericht mit barrierefreier Zusammenfassung hochladen](einen-pdf-bericht-mit-barrierefreier-zusammenfassung-hochladen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

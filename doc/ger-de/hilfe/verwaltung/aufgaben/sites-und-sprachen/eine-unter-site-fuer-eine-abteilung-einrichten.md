@@ -10,7 +10,7 @@ type: help
 # Eine Unter-Site für eine Abteilung einrichten
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund:
-[Eine Abteilungs-Site hinzufügen](../../../../../eng-us/help/government/building/multisite/adding-a-department-site.md).
+[Eine Abteilungs-Site hinzufügen](../../aufbauen/multisite/eine-abteilungs-site-hinzufuegen.md).
 
 ## Bevor Sie beginnen
 

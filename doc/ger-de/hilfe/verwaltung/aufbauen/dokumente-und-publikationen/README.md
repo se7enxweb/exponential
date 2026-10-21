@@ -62,7 +62,7 @@ eine Webseite. Die übliche Praxis im öffentlichen Sektor:
 
 ## Verwandte Seiten
 
-- [Einen Leistungskatalog aufbauen](../../../../../eng-us/help/government/building/service-catalog/README.md)
+- [Einen Leistungskatalog aufbauen](../leistungskatalog/README.md)
 - [Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
 - [Medien und Uploads](../../../medien-und-uploads.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

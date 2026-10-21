@@ -78,7 +78,7 @@ Veranstaltungen).
 ## Ein Feed mit Veranstaltungen
 
 Ein RSS-Export des Kalenderordners, Klasse Event, mit dem Titel aus `short_title` und der Beschreibung aus `text`
-(**Setup > RSS**, [RSS-Feeds](../../../../../eng-us/help/government/building/news-and-alerts/rss-feeds.md)). RSS ordnet Elemente nach Veröffentlichung, nicht nach
+(**Setup > RSS**, [RSS-Feeds](../nachrichten-und-warnmeldungen/rss-feeds.md)). RSS ordnet Elemente nach Veröffentlichung, nicht nach
 Datum der Veranstaltung; sagen Sie das dort, wo Sie ihn anbieten. Ein iCalendar-Feed wird nicht mitgeliefert.
 
 ## Verwandte Seiten

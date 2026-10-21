@@ -74,7 +74,7 @@ Entwurf); bearbeiten Sie sie dann und schicken Sie sie erneut.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Pressemitteilung veröffentlichen](eine-pressemitteilung-veroeffentlichen.md)
-- [Pressemitteilungen: Sperrfrist](../../../../../eng-us/help/government/building/news-and-alerts/press-releases.md#embargo)
+- [Pressemitteilungen: Sperrfrist](../../aufbauen/nachrichten-und-warnmeldungen/pressemitteilungen.md#sperrfrist)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

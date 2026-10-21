@@ -10,7 +10,7 @@ type: help
 # Eine Pressemitteilung veröffentlichen
 
 Diese Seite ist für Pressereferenten, die Mitteilungen auf der Website veröffentlichen. Sie funktioniert mit einer
-Klasse Press release (wie in [Pressemitteilungen](../../../../../eng-us/help/government/building/news-and-alerts/press-releases.md)) oder mit der
+Klasse Press release (wie in [Pressemitteilungen](../../aufbauen/nachrichten-und-warnmeldungen/pressemitteilungen.md)) oder mit der
 mitgelieferten Klasse Article. Für eine Mitteilung, die zu einer festen Zeit erscheinen muss, siehe
 [Eine Nachricht zeitgesteuert veröffentlichen](eine-nachricht-zeitgesteuert-veroeffentlichen.md).
 
@@ -44,7 +44,7 @@ mitgelieferten Klasse Article. Für eine Mitteilung, die zu einer festen Zeit er
 
 - [ ] Die Mitteilung erscheint abgemeldet oben in der Liste der Pressemitteilungen.
 - [ ] Der RSS-Feed für Medien listet sie, sobald der Feed das nächste Mal geschrieben wird
-  ([RSS-Feeds](../../../../../eng-us/help/government/building/news-and-alerts/rss-feeds.md)).
+  ([RSS-Feeds](../../aufbauen/nachrichten-und-warnmeldungen/rss-feeds.md)).
 - [ ] Die Bilder erscheinen mit Alternativtext (prüfen Sie es mit dem Barrierefreiheits-Inspektor des Browsers oder
   einem Screenreader).
 - [ ] Wenn sie zur Freigabe ging: **Meine ausstehenden Elemente** zeigt sie, bis sie freigegeben ist.
@@ -63,7 +63,7 @@ mitgelieferten Klasse Article. Für eine Mitteilung, die zu einer festen Zeit er
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Nachricht zeitgesteuert veröffentlichen](eine-nachricht-zeitgesteuert-veroeffentlichen.md)
-- [Nachrichtenartikel](../../../../../eng-us/help/government/building/news-and-alerts/news-articles.md)
+- [Nachrichtenartikel](../../aufbauen/nachrichten-und-warnmeldungen/nachrichtenartikel.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

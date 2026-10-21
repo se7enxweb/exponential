@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Redakteure, die Öffnungszeiten, Schließungen oder Kontaktdaten ändern. Wenn die Site
 Kontaktinformationen in Objekten für Kontaktstellen hält, die von Dienstleistungsseiten aus verknüpft sind, ändern Sie
-sie einmal ([Kontaktstellen und Dienststellen](../../../../../eng-us/help/government/building/service-catalog/contact-points-and-offices.md)). Wo die
+sie einmal ([Kontaktstellen und Dienststellen](../../aufbauen/leistungskatalog/ansprechpartner-und-dienststellen.md)). Wo die
 Angaben in Seiten eingetippt wurden, müssen Sie jede finden und ändern.
 
 ## Inhalt

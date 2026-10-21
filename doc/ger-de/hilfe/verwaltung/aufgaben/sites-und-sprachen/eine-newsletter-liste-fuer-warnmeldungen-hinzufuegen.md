@@ -10,7 +10,7 @@ type: help
 # Eine Newsletter-Liste für Warnmeldungen hinzufügen
 
 Diese Aufgabe richtet sich an Administratoren und Redakteure. Hintergrund:
-[Listen für Warnmeldungen zu öffentlichen Bekanntmachungen](../../../../../eng-us/help/government/building/newsletters/alert-lists-for-public-notices.md).
+[Listen für Warnmeldungen zu öffentlichen Bekanntmachungen](../../aufbauen/newsletter/listen-fuer-warnmeldungen-zu-oeffentlichen-bekanntmachungen.md).
 
 ## Bevor Sie beginnen
 

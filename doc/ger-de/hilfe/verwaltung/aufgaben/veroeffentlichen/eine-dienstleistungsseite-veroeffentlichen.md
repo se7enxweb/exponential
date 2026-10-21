@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Redakteure, die Dienstleistungsseiten schreiben: wie man einen Parkausweis erhält, eine Geburt
 anmeldet, einen Zuschuss beantragt. Sie verwendet eine Klasse Service, wie sie in
-[Dienstleistungen modellieren](../../../../../eng-us/help/government/building/service-catalog/modeling-services.md) gebaut wird; wenn Ihre Site für
+[Dienstleistungen modellieren](../../aufbauen/leistungskatalog/leistungen-modellieren.md) gebaut wird; wenn Ihre Site für
 Dienstleistungen Artikel verwendet, folgen Sie derselben Reihenfolge mit Überschriften im Text.
 
 ## Inhalt
@@ -63,8 +63,8 @@ Dienstleistungen Artikel verwendet, folgen Sie derselben Reihenfolge mit Übersc
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Die Dienstleistungsseite und einfache Sprache](../../../../../eng-us/help/government/building/service-catalog/service-page-and-plain-language.md)
-- [Dienstleistungen aktuell halten](../../../../../eng-us/help/government/building/service-catalog/keeping-services-current.md)
+- [Die Dienstleistungsseite und einfache Sprache](../../aufbauen/leistungskatalog/die-leistungsseite-und-einfache-sprache.md)
+- [Dienstleistungen aktuell halten](../../aufbauen/leistungskatalog/leistungen-aktuell-halten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -10,7 +10,7 @@ type: help
 # Die Suche in Dokumenten einrichten
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund:
-[In Dokumenten suchen](../../../../../eng-us/help/government/building/search/searching-inside-documents.md).
+[In Dokumenten suchen](../../aufbauen/suche/in-dokumenten-suchen.md).
 
 ## Bevor Sie beginnen
 

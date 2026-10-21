@@ -13,7 +13,7 @@ Diese Seite ist für Redakteure, die Bekanntmachungen veröffentlichen, die für
 Bauantrag, eine Straßensperrung, eine amtliche Bekanntmachung), und für den Administrator, der das automatische
 Verstecken einmal einrichtet. Exponential versteckt Inhalte nach einem Datum mit dem Cronjob `hide.php`; er braucht
 ein Datumsattribut an der Klasse und eine Einstellung ([Cronjobs](../../../../anleitungen/cronjobs.md),
-[Archiv und Ablauf](../../../../../eng-us/help/government/building/news-and-alerts/archive-and-expiry.md)).
+[Archiv und Ablauf](../../aufbauen/nachrichten-und-warnmeldungen/archiv-und-ablauf.md)).
 
 ## Inhalt
 
@@ -75,7 +75,7 @@ Objektzustände und Sektionen beenden Inhalte nicht von sich aus nach Datum; nur
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine dringende Warnmeldung auf der Startseite veröffentlichen](eine-dringende-warnmeldung-auf-der-startseite-veroeffentlichen.md)
-- [Archiv und Ablauf](../../../../../eng-us/help/government/building/news-and-alerts/archive-and-expiry.md)
+- [Archiv und Ablauf](../../aufbauen/nachrichten-und-warnmeldungen/archiv-und-ablauf.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

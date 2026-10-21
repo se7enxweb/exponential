@@ -61,7 +61,7 @@ Richtlinie `rss/edit`, und der Siteaccess für Redakteure bietet das RSS-Modul n
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [RSS-Feeds (Aufbau)](../../../../../eng-us/help/government/building/news-and-alerts/rss-feeds.md)
+- [RSS-Feeds (Aufbau)](../../aufbauen/nachrichten-und-warnmeldungen/rss-feeds.md)
 - [Änderungen mit Benachrichtigungen verfolgen](aenderungen-mit-benachrichtigungen-verfolgen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -52,7 +52,7 @@ und [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md), der Anfang 
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
 
 - [ ] Ist ein Formular das richtige Werkzeug, oder gehört der Antrag in ein Fall- oder Verfahrenssystem? Siehe
-  [Auf Online-Verfahren verlinken](../../../../../eng-us/help/government/building/service-catalog/linking-to-online-transactions.md#when-a-simple-form-is-enough).
+  [Auf Online-Verfahren verlinken](../leistungskatalog/auf-online-verfahren-verlinken.md#wann-ein-einfaches-formular-genügt).
 - [ ] Welche Felder braucht der Zweck, und nicht mehr?
 - [ ] Wer liest die Einsendungen, und wer hat `infocollector/read`?
 - [ ] Wie lange werden Einsendungen aufbewahrt, und wer entfernt sie?
@@ -66,7 +66,7 @@ Die allgemeinen Anleitungen:
 
 ## Verwandte Seiten
 
-- [Einen Leistungskatalog aufbauen](../../../../../eng-us/help/government/building/service-catalog/README.md)
+- [Einen Leistungskatalog aufbauen](../leistungskatalog/README.md)
 - [Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)
 - [Sicherheitshärtung](../../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

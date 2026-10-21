@@ -11,8 +11,8 @@ type: help
 
 Diese Aufgabe richtet sich an Administratoren (Einrichtung) und Redakteure (Standorte). Die einzige mitgelieferte
 Kartenfunktion ist `ezgmaplocation`, die Google Maps verwendet, einen Drittanbieter; lesen Sie zuerst
-[Karten und Datenschutz](../../../../../eng-us/help/government/building/maps/maps-and-privacy.md). Hintergrund:
-[Kartenstandorte mit ezgmaplocation](../../../../../eng-us/help/government/building/maps/map-locations-with-ezgmaplocation.md).
+[Karten und Datenschutz](../../aufbauen/karten/karten-und-datenschutz.md). Hintergrund:
+[Kartenstandorte mit ezgmaplocation](../../aufbauen/karten/kartenstandorte-mit-ezgmaplocation.md).
 
 ## Schritte für Administratoren
 
@@ -46,7 +46,7 @@ dem Entfernungsfilter gebaut ist, findet die Servicestelle.
 
 ## Verwandte Seiten
 
-- [Was es für Karten gibt](../../../../../eng-us/help/government/building/maps/what-exists-for-maps.md)
+- [Was es für Karten gibt](../../aufbauen/karten/was-es-fuer-karten-gibt.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

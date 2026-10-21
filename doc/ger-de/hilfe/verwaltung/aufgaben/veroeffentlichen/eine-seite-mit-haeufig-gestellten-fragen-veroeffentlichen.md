@@ -62,7 +62,7 @@ veralteten Kopie der Site.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Zusammenfassung in einfacher Sprache schreiben](eine-zusammenfassung-in-einfacher-sprache-schreiben.md)
-- [Dienstleistungen finden](../../../../../eng-us/help/government/building/service-catalog/finding-services.md)
+- [Dienstleistungen finden](../../aufbauen/leistungskatalog/leistungen-finden.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
