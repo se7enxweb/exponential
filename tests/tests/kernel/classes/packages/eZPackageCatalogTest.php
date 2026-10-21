@@ -229,7 +229,7 @@ class eZPackageCatalogTest extends PHPUnit\Framework\TestCase
         $list = 'Exponential\\View\\Kernel\\Package\\ListView';
         $this->assertSame( '/package/list', $list::listURI( '' ) );
         $this->assertSame( '/package/list/7x', $list::listURI( '7x' ) );
-        $this->assertSame( '/package/list/7x/(search)/demo%2520content%252F/(type)/site/(sort)/size/offset/25',
+        $this->assertSame( '/package/list/7x/(search)/demo%20content~2F/(type)/site/(sort)/size/offset/25',
                            $list::listURI( '7x', array( 'search' => 'demo content/', 'type' => 'site', 'sort' => 'size', 'dir' => 'desc' ), 25 ) );
         $this->assertSame( '/package/list/(sort)/size/(dir)/asc', $list::listURI( '', array( 'sort' => 'size', 'dir' => 'asc' ) ) );
         $this->assertSame( '/package/list', $list::listURI( '', array( 'type' => '../x', 'state' => 'a/b', 'sort' => 'evil' ) ) );

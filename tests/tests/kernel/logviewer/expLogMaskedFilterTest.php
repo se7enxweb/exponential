@@ -87,7 +87,7 @@ class expLogMaskedFilterTest extends PHPUnit\Framework\TestCase
         array_shift( $parts );
         $params = array();
         for ( $i = 0; $i + 1 < count( $parts ); $i += 2 )
-            $params[trim( $parts[$i], '()' )] = $parts[$i + 1];
+            $params[trim( $parts[$i], '()' )] = urldecode( $parts[$i + 1] ); // as the kernel decodes the address
         return expLogPermalink::state( $params, true );
     }
 

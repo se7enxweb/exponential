@@ -14,12 +14,12 @@ A view of the `user` module, defined in `kernel/user/module.php` and run by `ker
 ## Address
 
 ```text
-/user/unactivated/<SortField>/<SortOrder>/(offset)/<Offset>
+/user/unactivated/<SortField>/<SortOrder>/(offset)/<Offset>/(q)/<Query>
 ```
 
 Ordered parameters, in this order after the view name: `SortField`, `SortOrder`.
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(q)` sets `Query`.
 
 ## Who may open it
 

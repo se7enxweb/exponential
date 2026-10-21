@@ -3,7 +3,7 @@ title: Operator index
 audience: developer, designer, app-creator
 category: development
 order: 10
-summary: All 400 template operators registered on alpha's site and admin siteaccesses, A to Z, each with the family page that documents its parameters, return value and examples, the class that serves it and where that class comes from.
+summary: All 401 template operators registered on alpha's site and admin siteaccesses, A to Z, each with the family page that documents its parameters, return value and examples, the class that serves it and where that class comes from.
 keywords: operator index, template operators, A-Z, all operators, operator list, which class, extension operators
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 Every template operator that the template engine registers on alpha's `site` and `admin` siteaccesses, read from
 the engine itself (`eZTemplate::factory()` with all its autoload files, then every operator object loaded and
-asked for its parameters). 400 names; 5 of them only on `admin`. The class is the one that serves the
+asked for its parameters). 401 names; 5 of them only on `admin`. The class is the one that serves the
 name after the autoload files are read; for names that two classes register, see
 [Registration order and overrides](registration-order-and-overrides.md#the-names-registered-twice-on-alpha).
 
@@ -515,6 +515,7 @@ first use in a shipped template. Operators of an extension exist only where that
 |---|---|---|---|
 | `variable_names` | [Swark operators: request and system](swark-operators-request-and-system.md#variable_names) | `SwarkVariableNamesOperator` (extension swark) | site, admin |
 | `video_thumbnail` |  | `sevenxThemesMediaOperators` (extension sevenx_themes_media) | site, admin |
+| `view_parameter` ([generated](../../examples/template-operators/view_parameter.md)) | [Installation, environment, audit and CSP operators](exponential-kernel-operators.md#view_parameter) | `expViewParameterOperator` (kernel/common) | site, admin |
 | `vsprintf` ([generated](../../examples/template-operators/vsprintf.md)) | [PHP string functions: encode and format](php-string-functions-encode-and-format.md#sprintf-and-vsprintf) | `eZTemplateStringsOperator` (lib/eztemplate/classes) | site, admin |
 
 ## W

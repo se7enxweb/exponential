@@ -387,7 +387,7 @@ $ViewList['logsfeed'] = array(
     'ui_context' => 'ajax',
     'default_navigation_part' => 'ezsetupnavigationpart',
     'params' => array(),
-    // the options as view parameters, never a query string (values as expLogPermalink::encode() writes them)
+    // the options as view parameters, never a query string (values as expViewParameters::encode() writes them)
     'unordered_params' => array( 'action' => 'action', 'file' => 'file', 'offset' => 'offset', 'ino' => 'ino', 'unmask' => 'unmask',
                                  'q' => 'q', 'regex' => 'regex', 'case' => 'case', 'levels' => 'levels', 'from' => 'from',
                                  'to' => 'to', 'siteaccess' => 'siteaccess', 'uri' => 'uri', 'ip' => 'ip',

@@ -14,12 +14,12 @@ A view of the `package` module, defined in `kernel/package/module.php` and run b
 ## Address
 
 ```text
-/package/list/<RepositoryID>/(offset)/<Offset>
+/package/list/<RepositoryID>/(offset)/<Offset>/(search)/<Search>/(type)/<Type>/(state)/<State>/(sort)/<Sort>/(dir)/<Dir>
 ```
 
 Ordered parameters, in this order after the view name: `RepositoryID`.
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(search)` sets `Search`, `(type)` sets `Type`, `(state)` sets `State`, `(sort)` sets `Sort`, `(dir)` sets `Dir`.
 
 ## Who may open it
 

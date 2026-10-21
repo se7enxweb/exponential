@@ -31,7 +31,7 @@ StartPage=help/trainers/trainers-start-here.md
 
 ## Related
 
-Default: a list of 4: `editor`, `admin`, `developer`, `designer`.
+Default: a list of 5: `editor`, `admin`, `developer`, `designer`, `student`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +43,7 @@ Related[]=editor
 Related[]=admin
 Related[]=developer
 Related[]=designer
+Related[]=student
 */ ?>
 ```
 

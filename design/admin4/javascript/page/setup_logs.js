@@ -10,8 +10,9 @@
  *
  * The address is a permalink (setup/logs/view/<key>/(name)/value, expLogPermalink): the script keeps it in step with
  * the view (history.replaceState): (follow)/0 while paused, (wrap)/1 with wrapped lines, (offset)/N for the focused
- * entry; it honors them on load. A value is written as the server writes it: every character other than A-Z a-z 0-9
- * _ . , - as ~ and the two hex digits of each of its UTF-8 bytes. "Copy permalink" copies the link without the
+ * entry; it honors them on load. A value is written as the server writes it (window.a4ViewParameter.encode(),
+ * a4_url.js, as expViewParameters::encode()): "/", "(", ")", "~", "%", "+" and the like as ~ and two hex digits, the
+ * rest readable. "Copy permalink" copies the link without the
  * unmasked choice, and with the request and client address filters as the masks show them (data-share-url).
  *
  * The values from the template are the data-* attributes of #log-script, the data it starts from the JSON of
@@ -55,19 +56,9 @@
         finder: data( 'finder-url' ), template: slash( data( 'template-url' ) ), audit: slash( data( 'audit-url' ) ),
         permalink: data( 'permalink-url' ), share: data( 'share-url' ), base: data( 'base-url' )
     };
-    // a value of a permalink, as expLogPermalink::encode() writes it
+    // a value of a permalink, as every view parameter is written (expViewParameters::encode(), a4_url.js)
     var encodeValue = function ( value ) {
-        var out = '';
-        var bytes = unescape( encodeURIComponent( String( value ) ) );
-        for ( var i = 0; i < bytes.length; i++ )
-        {
-            var c = bytes.charAt( i );
-            if ( /[A-Za-z0-9_.,\-]/.test( c ) )
-                out += c;
-            else
-                out += '~' + ( '0' + bytes.charCodeAt( i ).toString( 16 ).toUpperCase() ).slice( -2 );
-        }
-        return out;
+        return window.a4ViewParameter.encode( value );
     };
     // the permalink of the view without the parameters the script writes itself
     var VIEW_PARAMS = /\/\((follow|wrap|offset|unmask)\)\/[^\/]*/g;
@@ -196,7 +187,7 @@
                 return urls.node ? urls.node + encodeURIComponent( value ) : '';
             case 'object':
             case 'user':
-                return urls.finder ? urls.finder + '/(type)/object/(text)/' + encodeURIComponent( value ) : '';
+                return urls.finder ? urls.finder + '/(type)/object/(text)/' + encodeValue( value ) : '';
             case 'class':
                 m = /^(\d+)\|/.exec( value );
                 return m && urls.klass ? urls.klass + m[1] : '';
@@ -746,7 +737,7 @@
             {
                 var a = document.createElement( 'a' );
                 a.className = 'a4-btn a4-btn-small';
-                a.href = urls.audit + '(from)/' + encodeURIComponent( r.json.audit.from ) + '/(to)/' + encodeURIComponent( r.json.audit.to );
+                a.href = urls.audit + '(from)/' + encodeValue( r.json.audit.from ) + '/(to)/' + encodeValue( r.json.audit.to );
                 a.textContent = text( 'audit' );
                 detailActions.appendChild( a );
             }

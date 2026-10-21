@@ -21,10 +21,11 @@ fact comes from this documentation, the code or a real installation; when the so
 with it.
 
 > **Note**
-> The assessments in these courses are your material as a trainer. The Exponential Partner Program names
-> certifications for partner teams (Developer, Design, Solution, Sales), but their syllabus, exams and examiners are
-> not published ([Certifications](../partners/certifications.md)), and these courses are not those certifications.
-> Never present a course, an assessment or a certificate of yours as an official certification.
+> The assessments in these courses are your material as a trainer. Official Exponential certifications are planned,
+> part of the project's future plans for the community, partners, Exponential developers and students; they are not
+> available yet ([Certifications and certificates](../students/certifications-and-certificates.md)). Until then,
+> certificates you issue are in your own name, and these courses are not those certifications. Never present a course,
+> an assessment or a certificate of yours as an official certification.
 
 ## Contents
 

@@ -58,8 +58,8 @@ Sources: [10.2 Siteaccesses and site addresses](../../../../install/10-after-ins
    says exactly that), and `MatchOrder` the order of the rules (`uri;host;port` as shipped). `[SiteSettings]
    DefaultAccess` is the siteaccess that answers when no rule matched.
 3. **The load order** (6 minutes). Draw four boxes from bottom to top: the kernel defaults in `settings/*.ini`,
-   the settings of active extensions, `settings/siteaccess/<name>/`, and `settings/override/`, which has the last
-   word. A plain value takes the last file that sets it; arrays add up unless a file resets them with an empty
+   `settings/siteaccess/<name>/`, the settings of active extensions (they win over the siteaccess), and
+   `settings/override/`, which has the last word. A plain value takes the last file that sets it; arrays add up unless a file resets them with an empty
    `Name[]` line. Module 3 adds the per-site override directories of site extensions to this picture.
 4. **Seeing it live** (4 minutes). Run `exp:ini where` on the projector (step 5 of the exercise) and read the
    numbered list aloud: it is the load order, printed for one setting.

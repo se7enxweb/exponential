@@ -8,11 +8,19 @@
  *  VP-02  their module.php declares the options as unordered_params
  *  VP-03  their templates of every design build no "?name=" option string and have no GET form
  *  VP-04  their scripts build no "?name=" option string
+ *  VP-05  their values travel in one encoding (expViewParameters::encode()): the views write none by hand (no base64url,
+ *         no double rawurlencode(), no expLogPermalink::encode()), the templates write a free value with the operator
+ *         view_parameter (never urlencode), the scripts with window.a4ViewParameter.encode() (never encodeURIComponent
+ *         alone after a "/(name)/")
+ *  VP-06  a4_url.js is the same file in admin and admin4, and its window.a4ViewParameter writes exactly what
+ *         expViewParameters::encode() writes and decodes it back (in node; skipped without node outside CI)
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
+
+require_once __DIR__ . '/AdminNodeBinary.php';
 
 class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
 {
@@ -193,5 +201,68 @@ class AdminViewParametersOnlyTest extends PHPUnit\Framework\TestCase
                 if ( preg_match( self::QUERY_OPTION, $line ) )
                     $hits[] = self::relative( $file ) . ':' . ( $n + 1 ) . ': ' . trim( $line );
         $this->assertSame( array(), $hits );
+    }
+
+    /** VP-05 */
+    public function testValuesTravelInOneEncoding()
+    {
+        $hits = array();
+        foreach ( self::viewFiles() as $file )
+            foreach ( file( $file ) as $n => $line )
+                if ( preg_match( '/rawurlencode\(\s*rawurlencode\(|base64_encode\(|expLogPermalink::encode\(/', $line ) )
+                    $hits[] = self::relative( $file ) . ':' . ( $n + 1 ) . ': ' . trim( $line );
+        foreach ( self::files( 'templates', self::TEMPLATES ) as $file )
+            foreach ( file( $file ) as $n => $line )
+                if ( preg_match( '/\/\([a-z_]+\)\/[\'"][^}]*\|(?:raw)?urlencode/', $line ) )
+                    $hits[] = self::relative( $file ) . ':' . ( $n + 1 ) . ': ' . trim( $line );
+        foreach ( self::files( 'javascript', self::SCRIPTS ) as $file )
+            foreach ( file( $file ) as $n => $line )
+                if ( preg_match( '/\/\([a-z_]+\)\/[\'"]\s*\+\s*encodeURIComponent\(/', $line ) )
+                    $hits[] = self::relative( $file ) . ':' . ( $n + 1 ) . ': ' . trim( $line );
+        $this->assertSame( array(), $hits, 'write view parameter values with expViewParameters::encode()/suffix(), view_parameter or a4ViewParameter.encode()' );
+
+        // the free values of the converted views use the shared encoding
+        $root = self::root();
+        foreach ( array( 'design/admin/templates/settings/view.tpl', 'design/admin4/templates/settings/view.tpl' ) as $tpl )
+            $this->assertStringContainsString( "'/(q)/', \$hit.name|view_parameter", file_get_contents( "$root/$tpl" ), $tpl );
+        foreach ( array( 'design/admin/javascript/page/setup_logs.js', 'design/admin4/javascript/page/setup_logs.js' ) as $js )
+            $this->assertStringContainsString( 'window.a4ViewParameter.encode( value )', file_get_contents( "$root/$js" ), $js );
+        $this->assertStringContainsString( '\\expViewParameters::encode(', file_get_contents( "$root/kernel/private/classes/views/contentfinder/search.php" ) );
+        $this->assertStringContainsString( 'expViewParameters::encode(', file_get_contents( "$root/kernel/classes/logviewer/explogpermalink.php" ) );
+    }
+
+    /** VP-06 */
+    public function testTheScriptHelperWritesTheKernelEncoding()
+    {
+        $root = self::root();
+        $this->assertFileEquals( "$root/design/admin/javascript/a4_url.js", "$root/design/admin4/javascript/a4_url.js" );
+        $node = AdminNodeBinary::require();
+        $values = array( 'editor', 'example.com/a', '/var/site/storage/images/a/b (1).jpg', 'https://www.example.com/News?x=1&y=2#top',
+                         '(q)', '~', '~2F', 'with space', 'a+b', '100%', '%2F', 'Müller', '日本語 テスト', "emoji \u{1F600}", '.', '..',
+                         '...', 'back\\slash', "tab\there", "line\nbreak", 'quote " and \' too', '<b>&amp;</b>', 'a,b:c@d=e!f*g', 'x;y$z', '' );
+        $dir = sys_get_temp_dir() . '/vp06-' . getmypid() . '-' . mt_rand();
+        mkdir( $dir );
+        $harness = "global.window = {};\nrequire(" . json_encode( "$root/design/admin4/javascript/a4_url.js" ) . ");\n"
+                 . "const values = JSON.parse(require('fs').readFileSync(process.argv[2], 'utf8'));\n"
+                 . "process.stdout.write(JSON.stringify(values.map((v) => { const e = window.a4ViewParameter.encode(v); return [e, window.a4ViewParameter.decode(decodeURIComponent(e))]; })));\n";
+        file_put_contents( "$dir/h.js", $harness );
+        file_put_contents( "$dir/values.json", json_encode( $values ) );
+        try
+        {
+            $out = shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( "$dir/h.js" ) . ' ' . escapeshellarg( "$dir/values.json" ) . ' 2>&1' );
+        }
+        finally
+        {
+            @unlink( "$dir/h.js" );
+            @unlink( "$dir/values.json" );
+            @rmdir( $dir );
+        }
+        $got = json_decode( (string)$out, true );
+        $this->assertIsArray( $got, (string)$out );
+        foreach ( $values as $i => $value )
+        {
+            $this->assertSame( expViewParameters::encode( $value ), $got[$i][0], "encode: $value" );
+            $this->assertSame( $value, $got[$i][1], "decode: $value" );
+        }
     }
 }

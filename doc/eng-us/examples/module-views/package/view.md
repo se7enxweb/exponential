@@ -14,10 +14,12 @@ A view of the `package` module, defined in `kernel/package/module.php` and run b
 ## Address
 
 ```text
-/package/view/<ViewMode>/<PackageName>/<RepositoryID>
+/package/view/<ViewMode>/<PackageName>/<RepositoryID>/(type)/<Type>/(search)/<Search>/(limit)/<Limit>/(offset)/<Offset>/(file)/<File>/(as)/<As>
 ```
 
 Ordered parameters, in this order after the view name: `ViewMode`, `PackageName`, `RepositoryID`.
+
+Unordered parameters, in any order as `/(name)/value`: `(type)` sets `Type`, `(search)` sets `Search`, `(limit)` sets `Limit`, `(offset)` sets `Offset`, `(file)` sets `File`, `(as)` sets `As`.
 
 ## Who may open it
 
@@ -40,6 +42,7 @@ A link in a template (`ezurl` adds the siteaccess and quotes the address); the p
 
 ```tpl
 <a href={'/package/view/viewmode/packagename/1'|ezurl}>package/view</a>
+<a href={concat( '/package/view/viewmode/packagename/1/(type)/', 1 )|ezurl}>package/view</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:

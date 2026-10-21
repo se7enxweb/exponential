@@ -315,6 +315,28 @@ class expHelpLandingPagesTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'editor', 'admin', 'hosting', 'partner' ) as $rel )
             $this->assertMatchesRegularExpression( '/^Related\[\]=' . $rel . '\s*$/m', $customer );
         $this->assertSame( '/exphelp/audience/customer', expHelpLanding::url( 'customer' ) );
+        // the audiences of #645: each has its landing group and summary, and overlapping audiences relate both ways
+        $this->assertGreaterThanOrEqual( 41, count( $m[1] ) );
+        foreach ( array( 'community' => array( 'advocate', 'supporter', 'sponsor' ), 'ecosystem' => array( 'community', 'partner', 'developer' ),
+                         'php-developer' => array( 'developer', 'app-creator' ), 'theme-designer' => array( 'designer' ),
+                         'reseller' => array( 'partner', 'hosting', 'sales-marketing' ), 'bundler' => array( 'partner', 'hosting' ),
+                         'ai-agents' => array( 'developer' ), 'software-engineer' => array( 'developer', 'php-developer' ),
+                         'adopter' => array( 'customer', 'businesses', 'project-manager' ), 'mobile-app-developer' => array( 'app-creator' ),
+                         'web-framework-developer' => array( 'php-developer', 'developer' ), 'cms-developer' => array( 'developer', 'designer' ),
+                         'dxp-developer' => array( 'developer' ), 'ecommerce' => array( 'customer', 'businesses' ),
+                         'integrator' => array( 'partner', 'developer' ), 'dba' => array( 'admin', 'hosting' ), 'podcaster' => array( 'press' ),
+                         'non-profit' => array( 'businesses', 'government' ), 'local-business' => array( 'businesses', 'customer' ),
+                         'individual' => array( 'website-creator', 'customer' ), 'non-technical' => array( 'editor', 'customer', 'user' ),
+                         'student' => array( 'trainer' ) ) as $id => $overlaps )
+        {
+            $this->assertContains( $id, $m[1] );
+            $this->assertArrayHasKey( $id, expHelpLanding::SUMMARIES );
+            foreach ( $overlaps as $rel )
+            {
+                $this->assertMatchesRegularExpression( '/^Related\[\]=' . preg_quote( $rel, '/' ) . '\s*$/m', self::iniSection( 'Landing_' . $id ), $id . ' -> ' . $rel );
+                $this->assertMatchesRegularExpression( '/^Related\[\]=' . preg_quote( $id, '/' ) . '\s*$/m', self::iniSection( 'Landing_' . $rel ), $rel . ' -> ' . $id );
+            }
+        }
         $feed = self::iniSection( 'CommitFeedSettings' );
         $this->assertStringContainsString( "\nFeedURL=https://github.com/se7enxweb/exponential/commits/main.atom\n", $feed );
         $this->assertStringContainsString( "\nCacheTTL=600\n", $feed );

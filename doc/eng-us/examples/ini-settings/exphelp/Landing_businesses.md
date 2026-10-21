@@ -31,7 +31,7 @@ StartPage=help/businesses/businesses-start-here.md
 
 ## Related
 
-Default: a list of 4: `partner`, `hosting`, `project-manager`, `website-creator`.
+Default: a list of 8: `partner`, `hosting`, `project-manager`, `website-creator`, `adopter`, `ecommerce`, `non-profit`, `local-business`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +43,10 @@ Related[]=partner
 Related[]=hosting
 Related[]=project-manager
 Related[]=website-creator
+Related[]=adopter
+Related[]=ecommerce
+Related[]=non-profit
+Related[]=local-business
 */ ?>
 ```
 
