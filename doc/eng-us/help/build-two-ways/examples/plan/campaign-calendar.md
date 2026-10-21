@@ -3,8 +3,8 @@ title: "Plan campaigns with start and end dates"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1017
-summary: A mapping can have a Time condition (from, to); plan campaign layouts with it, knowing the resolver remembers answers for up to an hour.
-keywords: campaign, time condition, start date, end date, seasonal, mapping, resolver cache, CacheTTL
+summary: A mapping can have a Time condition (from, to); plan campaign layouts with it: since explayouts 1.4.42 the layout switches at the start and the end, without lag.
+keywords: campaign, time condition, start date, end date, seasonal, mapping, resolver cache, page cache, MaxAge
 type: help
 ---
 # Plan campaigns with start and end dates
@@ -23,7 +23,7 @@ A campaign layout that takes over a page from one date to another.
 ## In the Layouts editor
 
 1. **New mapping** offers the condition **Time** next to Siteaccess, Class, Query parameter and Route parameter.
-2. The resolver checks the time against `from` and `to`, then remembers the answer per path and siteaccess for `[ResolverSettings] CacheTTL` (3600 seconds on this installation).
+2. The resolver checks the time against `from` and `to`. Since explayouts 1.4.42 it remembers that answer only until the condition's next start or end, not for `[ResolverSettings] CacheTTL`; when that moment is within the page cache's `[HttpCacheSettings] MaxAge` (3600 seconds), the page is kept out of the page caches (`Cache-Control: private, no-store`). A range that is over is cached normally.
 
 ## With templates
 
@@ -31,7 +31,7 @@ A campaign layout that takes over a page from one date to another.
 
 ## Which to choose
 
-Plan the switch with up to an hour of overlap, or switch by hand (enable the new mapping, disable the old one) at the moment it must happen.
+Plan the switch with the Time condition: it switches at its start and end, without lag.
 
 ## Check
 

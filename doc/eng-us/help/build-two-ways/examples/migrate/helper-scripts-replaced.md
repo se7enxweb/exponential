@@ -3,7 +3,7 @@ title: "Use exp:layouts instead of the old helper scripts"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1512
-summary: Several ext:explayouts:* helpers (block_list, layout_info, layout_copy, layout_list, rule_list, share_create, collection_list) stopped with a class-not-found error; exp:layouts covers listing and transfer.
+summary: The ext:explayouts:* helpers (block_list, layout_info, layout_copy, layout_list, rule_list, share_create, collection_list) run on their own again since explayouts 1.4.42; exp:layouts stays the tool for export and import.
 keywords: helper scripts, exp:layouts, layout_copy, migration, known issues
 type: help
 ---
@@ -27,10 +27,11 @@ Scripts written against the old helpers keep working.
 ## On the command line
 
 1. Listing: `exp:layouts list`. Details: `exp:layouts export --only=<identifier>` and read `layouts.json`. Copying: export and `import --strategy=copy`.
+2. Since explayouts 1.4.42 the `ext:explayouts:*` helpers run on their own again (`-s <siteaccess>` picks the siteaccess): `./console ext:explayouts:layout_info 2` prints `ID:          2`, `Identifier:  fd0aa7af77a85a03bf1080018f5db1dc`, `Name:        Header / Footer`.
 
 ## Which to choose
 
-Move scripts to `exp:layouts` now.
+`exp:layouts` for export, import and copies between installations; the helpers for a quick look at one layout, block or collection.
 
 ## Check
 

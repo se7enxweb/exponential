@@ -3,7 +3,7 @@ title: Add a block type
 audience: designer, developer
 category: build-two-ways
 order: 530
-summary: Create a new block type editors can drag into any layout - a block definition in explayouts.ini, an existing or new handler class, and a template - with the reset trap of AvailableBlocks[] and a tested example, the Notice block.
+summary: Create a new block type editors can drag into any layout - a block definition in explayouts.ini, an existing or new handler class, and a template - with where AvailableBlocks[] is read and a tested example, the Notice block.
 keywords: block type, block definition, BlockDefinition, AvailableBlocks, handler, expLayoutsTextBlockHandler, getParameters, explayouts.ini, new block, Notice, palette, mysite
 type: help
 ---
@@ -53,12 +53,14 @@ Category=basic
 | `HasCollection=1` | the block has items (like List) |
 | `IsContainer=1` and `Placeholders[]` | the block holds other blocks (like Column) |
 
-**The reset trap.** `extension/explayouts/settings/explayouts.ini.append.php` starts its list with
-`AvailableBlocks[]`, which empties everything read before it. On the test copy, with `mysite` read before
-`explayouts`, the palette had no Notice; `exp:ini where explayouts.ini/BlockSettings/AvailableBlocks admin` showed
-why. Placing `mysite` **first** in `ActiveExtensions[]` makes its file read after `explayouts`, and the line survives
-([Your own design extension](your-own-design-extension.md)). An extension's siteaccess folder
-(`settings/siteaccess/admin/`) did not help: it was read before the extensions' main settings.
+**Where the line counts.** Since explayouts 1.4.42, explayouts' own `explayouts.ini.append.php` no longer starts
+`AvailableBlocks[]` (nor `AvailableQueries[]`, `SiteAccessMatch[]` and `AllowedTemplateRoots[]`) with a reset line. Your
+extension's `AvailableBlocks[]=notice` is kept wherever the extension is listed in `ActiveExtensions[]`: for blocks the
+position no longer matters, and a block listed twice is offered once
+(`./console exp:ini where explayouts.ini/BlockSettings/AvailableBlocks admin` shows the list in effect). To replace the
+whole list, write the reset line where it is read after every extension: `settings/override/explayouts.ini.append.php`
+or a siteaccess (`./console exp:ini clear explayouts.ini/BlockSettings/AvailableBlocks[] <scope>`). The extension order
+still matters for template overrides and `DesignExtensions[]` ([Your own design extension](your-own-design-extension.md)).
 
 ## 2. The handler
 
