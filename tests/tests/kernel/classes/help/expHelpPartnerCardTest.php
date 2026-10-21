@@ -14,6 +14,8 @@
  *         render cache key moved with it
  *  PC-06  design: the card's CSS is in stylesheets/modules/help.css of admin and admin4 (identical), only tokens
  *  PC-07  the PDF writer prints the card as a box with its title and its links
+ *  PC-08  a German page shown to an English reader (/(lang)/ger-de) keeps its buttons: its links resolve in its own
+ *         language's index; links that name no page leave the sentence as text
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -158,7 +160,11 @@ class expHelpPartnerCardTest extends PHPUnit\Framework\TestCase
         $x = self::xpath( $html );
         $this->assertSame( 1, $x->query( '//section[' . self::cls( 'a4-help-partner' ) . ']' )->length );
         $this->assertStringNotContainsString( 'javascript:', $html );
-        $this->assertSame( 1, $x->query( '//div[' . self::cls( 'a4-help-partner-actions' ) . ']/a' )->length );
+        // a link that leads nowhere: no buttons, the sentence stays in the text as written (its links as text)
+        $this->assertSame( 0, $x->query( '//div[' . self::cls( 'a4-help-partner-actions' ) . ']' )->length );
+        $text = self::text( $x->query( '//section//p' )->item( 0 ) );
+        $this->assertStringEndsWith( 'Start with Partners: start here and How to apply.', $text );
+        $this->assertSame( 1, $x->query( '//section//p/a' )->length, 'the link that resolves is still a link' );
         $this->assertSame( 0, $x->query( '//*[@style]' )->length );
 
         $md = str_replace( '(../partners/how-to-apply.md)', '(https://example.com/apply)', self::EN );
@@ -228,6 +234,86 @@ class expHelpPartnerCardTest extends PHPUnit\Framework\TestCase
         // the renderer writes no inline CSS, ever (the admin's Content Security Policy forbids it)
         $source = file_get_contents( $root . '/kernel/classes/help/exphelpmarkdownrenderer.php' );
         $this->assertDoesNotMatchRegularExpression( '/style=\\\\?["\']/', $source );
+    }
+
+    /** PC-08 */
+    public function testGermanPageShownToAnotherReaderKeepsItsButtons()
+    {
+        $root = sys_get_temp_dir() . '/exphelp-pcard-' . bin2hex( random_bytes( 6 ) );
+        $files = array(
+            'doc/eng-us/help/designers/designers-start-here.md' => "# Designers\n\nText.\n",
+            'doc/eng-us/help/partners/partners-start-here.md' => "# Partners\n",
+            'doc/eng-us/help/partners/how-to-apply.md' => "# Apply\n",
+            'doc/ger-de/hilfe/designer/designer-hier-beginnen.md' => "# Designer\n\nText.\n\n" . self::DE,
+            'doc/ger-de/hilfe/partner/partner-hier-beginnen.md' => "# Partner\n",
+            'doc/ger-de/hilfe/partner/wie-sie-sich-bewerben.md' => "# Bewerben\n",
+            'doc/ger-de/.paths.json' => json_encode( array(
+                'hilfe/designer/designer-hier-beginnen.md' => 'help/designers/designers-start-here.md',
+                'hilfe/partner/partner-hier-beginnen.md' => 'help/partners/partners-start-here.md',
+                'hilfe/partner/wie-sie-sich-bewerben.md' => 'help/partners/how-to-apply.md' ) ),
+        );
+        $tracked = array_keys( $files );
+        sort( $tracked );
+        foreach ( $files as $path => $content )
+        {
+            @mkdir( dirname( $root . '/' . $path ), 0777, true );
+            file_put_contents( $root . '/' . $path, $content );
+        }
+        $languages = new expHelpLanguage( array( 'default' => 'eng-us', 'directories' => array( 'eng-us', 'ger-de' ),
+                                                 'map' => array( 'eng-US' => 'eng-us', 'ger-DE' => 'ger-de' ),
+                                                 'names' => array( 'eng-us' => 'English', 'ger-de' => 'German' ) ), $root );
+        $index = function ( $language ) use ( $root, $tracked, $languages ) {
+            $allowlist = new expHelpAllowlist( array( 'root' => $root, 'roots' => array( 'doc' ), 'tracked' => $tracked ) );
+            return new expHelpDocumentIndex( $allowlist, array( 'cache_dir' => false, 'git_history' => false,
+                                                                'languages' => $languages, 'language' => $language ) );
+        };
+        $english = $index( 'eng-us' );
+        $german = $index( 'ger-de' );
+        $id = 'help/designers/designers-start-here.md';
+        $renderGerman = function () use ( $german, $id ) {
+            $document = $german->document( $id );
+            $renderer = new expHelpMarkdownRenderer( array( 'partner_card' => true, 'source_path' => $document['path'],
+                'link_resolver' => static function ( $href, $current ) {
+                    $target = expHelpLinks::resolveId( preg_replace( '/#.*$/', '', $href ), $current );
+                    return $target === null || expHelpDocumentIndex::instance()->document( $target ) === null ? null : '/admin/exphelp/viewer/' . $target;
+                } ) );
+            return $renderer->render( $german->source( $id ), $id )['html'];
+        };
+        try
+        {
+            $this->assertSame( 'doc/ger-de/hilfe/designer/designer-hier-beginnen.md', $german->document( $id )['path'] );
+            // an English reader's index resolves the German page's links against the English file: they name no page
+            expHelpDocumentIndex::setInstance( $english );
+            $x = self::xpath( $renderGerman() );
+            $this->assertSame( 0, $x->query( '//a[' . self::cls( 'a4-btn' ) . ']' )->length, 'no buttons to nowhere' );
+            $this->assertStringEndsWith( 'Beginnen Sie mit Partner: hier beginnen und Wie Sie sich bewerben.', self::text( $x->query( '//section//p' )->item( 0 ) ) );
+            // the page's own language, as the viewer now renders it: the German buttons, to the pages they name
+            expHelpDocumentIndex::setInstance( $german );
+            $x = self::xpath( $renderGerman() );
+            $buttons = $x->query( '//div[' . self::cls( 'a4-help-partner-actions' ) . ']/a[' . self::cls( 'a4-btn' ) . ']' );
+            $this->assertSame( 2, $buttons->length );
+            $this->assertSame( 'Partner: hier beginnen', self::text( $buttons->item( 0 ) ) );
+            $this->assertSame( '/admin/exphelp/viewer/help/partners/partners-start-here.md', $buttons->item( 0 )->getAttribute( 'href' ) );
+            $this->assertSame( 'Wie Sie sich bewerben', self::text( $buttons->item( 1 ) ) );
+            $this->assertSame( '/admin/exphelp/viewer/help/partners/how-to-apply.md', $buttons->item( 1 )->getAttribute( 'href' ) );
+            $this->assertSame( $german, expHelpDocumentIndex::fixedInstance() );
+        }
+        finally
+        {
+            expHelpDocumentIndex::setInstance( null );
+            foreach ( array_reverse( $tracked ) as $path )
+                @unlink( $root . '/' . $path );
+            foreach ( array( 'doc/eng-us/help/designers', 'doc/eng-us/help/partners', 'doc/eng-us/help', 'doc/eng-us',
+                             'doc/ger-de/hilfe/designer', 'doc/ger-de/hilfe/partner', 'doc/ger-de/hilfe', 'doc/ger-de', 'doc', '' ) as $dir )
+                @rmdir( rtrim( $root . '/' . $dir, '/' ) );
+        }
+        $this->assertNull( expHelpDocumentIndex::fixedInstance() );
+
+        // the viewer renders a page in its own language's index (/(lang)/ger-de for an English reader), then restores it
+        $viewer = file_get_contents( self::root() . '/kernel/private/classes/views/exphelp/viewer.php' );
+        $this->assertStringContainsString( '\expHelpDocumentIndex::setInstance( $index );', $viewer );
+        $this->assertStringContainsString( '\expHelpDocumentIndex::setInstance( $fixed );', $viewer );
+        $this->assertMatchesRegularExpression( '/const RENDER_VERSION = ([8-9]|[1-9][0-9]);/', $viewer );
     }
 
     /** PC-07 */

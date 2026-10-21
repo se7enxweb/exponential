@@ -23,8 +23,8 @@ namespace Exponential\View\Kernel\Exphelp
 
 class Viewer extends \Exponential\Runnable\ModuleView
 {
-    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images; 4: anchors map to the shown language's headings; 5: the language directories eng-us, ger-de; 6: external images from their local copy, exphelp/image; 7: the Become an Exponential Partner block as a card) */
-    const RENDER_VERSION = 7;
+    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images; 4: anchors map to the shown language's headings; 5: the language directories eng-us, ger-de; 6: external images from their local copy, exphelp/image; 7: the Become an Exponential Partner block as a card; 8: a page in another language than the reader's resolves its links in its own) */
+    const RENDER_VERSION = 8;
 
     public function run( array $scope )
     {
@@ -262,7 +262,22 @@ class Viewer extends \Exponential\Runnable\ModuleView
                 return $cached;
         }
         $renderer = self::renderer( isset( $document['path'] ) ? (string)$document['path'] : '' );
-        $rendered = $markdown ? $renderer->render( $source, $id ) : $renderer->renderPlainText( $source, $id );
+        // the links resolve through expHelpDocumentIndex::instance() (expHelpLinks), which is the reader's language:
+        // a page shown in another one (/(lang)/ger-de) must resolve them in its own, or its relative links, written
+        // for its own files (../partner/partner-hier-beginnen.md), name no page and are shown as text
+        $fixed = \expHelpDocumentIndex::fixedInstance();
+        $swap = $index instanceof \expHelpDocumentIndex && $index !== ( $fixed !== null ? $fixed : \expHelpDocumentIndex::instance() );
+        if ( $swap )
+            \expHelpDocumentIndex::setInstance( $index );
+        try
+        {
+            $rendered = $markdown ? $renderer->render( $source, $id ) : $renderer->renderPlainText( $source, $id );
+        }
+        finally
+        {
+            if ( $swap )
+                \expHelpDocumentIndex::setInstance( $fixed );
+        }
         if ( !is_dir( $dir ) )
             \eZDir::mkdir( $dir, false, true );
         if ( is_dir( $dir ) && is_writable( $dir ) )

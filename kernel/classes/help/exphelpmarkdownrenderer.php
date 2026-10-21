@@ -1029,7 +1029,12 @@ class expHelpMarkdownRenderer
             // only when that sentence is a short lead-in to its links ("Start with A and B.")
             $sentence = $cut === null ? '' : substr( $body, $cut );
             $rest = trim( preg_replace( '/\[([^\[\]\n]{1,200})\]\(([^()\s]{1,2048})\)/', '', $sentence ) );
-            if ( $cut !== null && mb_strlen( $rest, 'UTF-8' ) <= 60 )
+            // ... and only when every link of it leads somewhere: otherwise the sentence stays text, as written
+            $resolved = true;
+            foreach ( $links[2] as $target )
+                $resolved = $resolved && $this->resolveUrl( $target[0] ) !== null;
+            // (no other link-like text left in it, such as a target with parentheses the pattern does not take)
+            if ( $cut !== null && mb_strlen( $rest, 'UTF-8' ) <= 60 && $resolved && strpbrk( $rest, '[]()' ) === false )
             {
                 foreach ( $links[1] as $n => $label )
                     $buttons[] = array( $label[0], $links[2][$n][0] );
