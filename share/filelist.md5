@@ -11053,8 +11053,8 @@ dd8219b03d60ce0dbee6e5abe1289f20  doc/eng-us/standards/patterns/workflow-event.m
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-4b55f75c24350f6d4e9a0b0b4bc84e94  doc/ger-de/.dirnames.json
-21766a61774812e2c4f9cbcf205d956d  doc/ger-de/.paths.json
+62763d105649f928b93ac4adc7a09e65  doc/ger-de/.dirnames.json
+617bab8171c84e9f036a893c3c64f9a0  doc/ger-de/.paths.json
 2ba7d4102f729a5fa7d53ff750a2cf06  doc/ger-de/anleitungen/README.md
 95eb47bc5b1798896d9e44d00dbd7314  doc/ger-de/anleitungen/aktualisieren.md
 88e9d7a7e41c216d27d0d009da451c34  doc/ger-de/anleitungen/api-schluessel.md
@@ -11207,7 +11207,8 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 326e663fb38dfeb92e0568eb3a5971f9  doc/ger-de/bc/6.0/yui-entfernung.md
 da99b8d1713272be3450e79753f452be  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 3448f36855e91d32b969c21d74efd16b  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
-2378b5c11d403b8ebc8cfc09c31d6e08  doc/ger-de/hilfe/README.md
+220672a8ee88e61d3f893a2e25fff044  doc/ger-de/funktionen/6.0/README.md
+54a284e326791f4692f8f1a98720064e  doc/ger-de/hilfe/README.md
 17181371b1ec62d72304b5801035eda9  doc/ger-de/hilfe/administratorpasswort-aendern.md
 0b573ee6fbadb5b2bd5e57e7cc1a94e1  doc/ger-de/hilfe/anmelden-im-editor.md
 1c99f0ce2aea8e1dd929b00fefd300ec  doc/ger-de/hilfe/anmelden-in-der-administration.md
@@ -11934,7 +11935,7 @@ d06d768981065d30cef40661bc55a0a9  doc/ger-de/hilfe/partner/was-ein-exponential-p
 cd6aa8402726f62ca3ceb76acf44d8f6  doc/ger-de/hilfe/partner/zertifizierungen.md
 6d1b7def49d223d062a97ff5d6867c63  doc/ger-de/hilfe/projekt/README.md
 ee40fc49ef5c2a54701cc7fef4a30d8e  doc/ger-de/hilfe/projekt/community-kanaele.md
-ec3c5b818ad60443733c2d63eb0c8c40  doc/ger-de/hilfe/projekt/faq.md
+43f3d1797bc002c9b3a9e671486919f8  doc/ger-de/hilfe/projekt/faq.md
 280ca2821b41170bd526840b680a7459  doc/ger-de/hilfe/projekt/geben-und-spenden.md
 98488dcb0c68e99d53740ecac5f24453  doc/ger-de/hilfe/projekt/lizenz-faq.md
 136fef9e5566d305ccfdcedb479e0b63  doc/ger-de/hilfe/projekt/mit-exponential-bauen.md
@@ -12128,6 +12129,7 @@ a0ed27df0e986c461ff779b73659e5f5  doc/ger-de/hilfe/unterstuetzer/testen-und-fehl
 b3333b942116e5f2d484b73f527c381c  doc/ger-de/hilfe/unterstuetzer/unterstuetzer-faq.md
 e2576a4642690fad0e3e5da48b338796  doc/ger-de/hilfe/unterstuetzer/unterstuetzer-hier-beginnen.md
 646c739c277ff66eede852339d1a9429  doc/ger-de/hilfe/unterstuetzer/wege-exponential-zu-unterstuetzen.md
+e31de05a5e59b2ce1ef9e504eaf3185b  doc/ger-de/hilfe/velocity-ist-teil-von-exponential-6-0-15.md
 124fae89b57478b958b8e6bc5db617ad  doc/ger-de/hilfe/veroeffentlichen-und-versionen.md
 7f83f55caf68ad54c7d696684af096fb  doc/ger-de/hilfe/wenn-etwas-schiefgeht.md
 8bff90ec9e6e9ef1f806ce44176d19b8  doc/ger-de/hilfe/wer-ist-7x.md
