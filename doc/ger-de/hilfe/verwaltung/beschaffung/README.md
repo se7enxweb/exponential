@@ -50,8 +50,8 @@ Ausstiegsplänen in diesem Bereich zeigt, wie Sie es im Vertrag aufrechterhalten
 
 | Teil | Er beantwortet |
 |---|---|
-| [Anforderungen](../../../../eng-us/help/government/procurement/requirements/README.md) | Wie Sie prüfbare Anforderungen an ein öffentliches CMS schreiben und welche Nachweise das Repository für jede liefert |
-| [Ausschreibungsvorlagen](../../../../eng-us/help/government/procurement/tender-templates/README.md) | Klauseltexte für eine Ausschreibung oder Angebotsaufforderung, mit anzupassenden Platzhaltern |
+| [Anforderungen](anforderungen/README.md) | Wie Sie prüfbare Anforderungen an ein öffentliches CMS schreiben und welche Nachweise das Repository für jede liefert |
+| [Ausschreibungsvorlagen](ausschreibungsvorlagen/README.md) | Klauseltexte für eine Ausschreibung oder Angebotsaufforderung, mit anzupassenden Platzhaltern |
 | [Bewertung](bewertung/README.md) | Checklisten, Bewertungsbögen, Demo-Skripte, ein Plan für einen Proof of Concept und Referenzprüfungen |
 | [Gesamtbetriebskosten](../../../../eng-us/help/government/procurement/total-cost-of-ownership/README.md) | Ein Kostenmodell mit Kategorien und durchgerechneten Beispielen, deren Zahlen alle als Annahmen gekennzeichnet sind |
 | [Ausstiegspläne](ausstiegsplaene/README.md) | Wie Sie das Ende eines Vertrags planen: Exportformate, Übergabe, Übergang und Klauseln gegen Lock-in |
@@ -60,9 +60,9 @@ Ausstiegsplänen in diesem Bereich zeigt, wie Sie es im Vertrag aufrechterhalten
 
 ## Lesereihenfolge
 
-1. Beginnen Sie mit den [Anforderungen](../../../../eng-us/help/government/procurement/requirements/README.md): Eine Ausschreibung ist nur so gut wie ihre
+1. Beginnen Sie mit den [Anforderungen](anforderungen/README.md): Eine Ausschreibung ist nur so gut wie ihre
    Anforderungen.
-2. Machen Sie daraus mit den [Ausschreibungsvorlagen](../../../../eng-us/help/government/procurement/tender-templates/README.md) Klauseln.
+2. Machen Sie daraus mit den [Ausschreibungsvorlagen](ausschreibungsvorlagen/README.md) Klauseln.
 3. Bereiten Sie das Gremium mit der [Bewertung](bewertung/README.md) vor, bevor die Angebote eingehen.
 4. Vergleichen Sie Angebote nach den [Gesamtbetriebskosten](../../../../eng-us/help/government/procurement/total-cost-of-ownership/README.md), nicht nach dem Preis
    des ersten Jahres.
