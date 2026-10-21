@@ -28,7 +28,7 @@ Listen, Banner, Menüs und Kampagnen Woche für Woche ändern und Fehler beheben
 15. [Einen vorübergehenden Hinweis aufstellen](voruebergehender-hinweis.md): Ein Alert-Block in der Zone post_header der Seite, nach dem Ereignis wieder entfernt.
 16. [Den hervorgehobenen Eintrag eines Rasters wechseln](hervorgehobenen-eintrag-wechseln.md): In einer grid_featured-Liste ist der erste Eintrag der große: Ziehen Sie einen anderen Eintrag nach oben.
 17. [Die Anzahl der Spalten eines Rasters ändern](spaltenzahl-aendern.md): Number of columns im Reiter Design: 2, 3, 4 oder 6.
-18. [Eine Liste von Raster auf Liste umstellen](von-raster-auf-liste-umstellen.md): View type im Reiter Design, mit der Eigenheit, dass die Änderung erst mit der nächsten Änderung eines anderen Felds gespeichert wird.
+18. [Eine Liste von Raster auf Liste umstellen](von-raster-auf-liste-umstellen.md): View type im Reiter Design; vor explayouts_ui_api 1.3.29 wurde die Änderung erst mit der nächsten Änderung eines anderen Felds gespeichert.
 19. [Einem Abschnitt eine Hintergrundfarbe geben](hintergrundfarbe-setzen.md): Set background color im Reiter Design; der Wrapper erhält bg-color-<color>.
 20. [Die Abstände eines Abschnitts anpassen](abstaende-anpassen.md): Use vertical whitespace on top and bottom (Reiter Design) statt Spacer-Blöcken verwenden.
 21. [Einen misslungenen Entwurf verwerfen](misslungenen-entwurf-verwerfen.md): Verwerfen entfernt den Entwurf; das veröffentlichte Layout bleibt unberührt.

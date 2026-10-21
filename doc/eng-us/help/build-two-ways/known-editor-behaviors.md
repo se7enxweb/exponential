@@ -12,23 +12,28 @@ type: help
 Each entry was observed on a copy of a live installation while writing this help. They are reported so you know what
 to expect; check the release notes of your version, as they may be fixed there.
 
-## A view type change alone is not saved
+## A view type change alone is not saved (fixed in explayouts_ui_api 1.3.29)
 
 **Seen:** on the Design tab, choosing another **View type** changed the form, but the draft kept the old view type;
 after **Publish layout** the block was unchanged. The select carries the class `js-skip-on-change`, which the editor's
-script uses to skip saving on that change.
+script uses to skip saving on that change. explayouts_ui_api 1.3.28 saved most view types; 1.3.29 also saves a list's
+view types that leave no item view type to choose (`list_zigzag`, `list_accordion`, a view type of your own, such as
+`list_compact`).
 
-**Work with it:** after choosing the view type, change any other field of the same form (type and delete a character
-in **CSS class**): the whole form is saved, view type included. The block header then shows the new view type in
-capitals.
+**Work with it:** update explayouts_ui_api to 1.3.29 or later. On an older version, after choosing the view type,
+change any other field of the same form (type and delete a character in **CSS class**): the whole form is saved, view
+type included. Either way, the block header shows the saved view type in capitals.
 
-## Two items with position 0
+## Two items with position 0 (fixed in explayouts_ui_api 1.3.29)
 
 **Seen:** after **+ Add items** added a fourth article to a manual collection of three, the published collection had
-positions 0, 0, 1, 2 (the new item and the first one both 0). The page showed all four.
+positions 0, 0, 1, 2 (the new item and the first one both 0). The page showed all four. The editor sends every chosen
+item at the collection's offset, and each was stored at exactly that position.
 
-**Work with it:** if the order on the site is not the order in the editor, drag the items once more into the order
-you want before publishing.
+**Work with it:** update explayouts_ui_api to 1.3.29 or later: each new item gets a position of its own, the new items
+come first in the order you chose them, and moving an item moves the ones in between. Positions that were shared
+before are sorted out on the next change to that collection. On an older version, drag the items once more into the
+order you want before publishing.
 
 ## The content browser's search
 

@@ -12,24 +12,30 @@ type: help
 Jeder Eintrag wurde beim Schreiben dieser Hilfe auf einer Kopie einer Live-Installation beobachtet. Sie werden genannt,
 damit Sie wissen, was Sie erwartet; prüfen Sie die Release Notes Ihrer Version, denn dort können sie behoben sein.
 
-## Eine Änderung nur des Ansichtstyps wird nicht gespeichert
+## Eine Änderung nur des Ansichtstyps wird nicht gespeichert (behoben in explayouts_ui_api 1.3.29)
 
 **Beobachtet:** Im Reiter **Design** änderte die Auswahl eines anderen **Ansichtstyps** das Formular, aber der Entwurf
 behielt den alten Ansichtstyp; nach **Layout veröffentlichen** war der Block unverändert. Die Auswahlliste trägt die
 Klasse `js-skip-on-change`, mit der das Skript des Editors das Speichern bei dieser Änderung überspringt.
+explayouts_ui_api 1.3.28 speicherte die meisten Ansichtstypen; 1.3.29 speichert auch die Ansichtstypen einer Liste, bei
+denen kein Ansichtstyp der Elemente zur Wahl bleibt (`list_zigzag`, `list_accordion`, ein eigener wie `list_compact`).
 
-**Umgang damit:** Ändern Sie nach der Auswahl des Ansichtstyps ein beliebiges anderes Feld desselben Formulars (tippen
-und löschen Sie ein Zeichen in **CSS class**): Dann wird das ganze Formular gespeichert, samt Ansichtstyp. Der Blockkopf
-zeigt anschließend den neuen Ansichtstyp in Großbuchstaben.
+**Umgang damit:** Aktualisieren Sie explayouts_ui_api auf 1.3.29 oder neuer. In einer älteren Version ändern Sie nach
+der Auswahl des Ansichtstyps ein beliebiges anderes Feld desselben Formulars (tippen und löschen Sie ein Zeichen in
+**CSS class**): Dann wird das ganze Formular gespeichert, samt Ansichtstyp. In beiden Fällen zeigt der Blockkopf den
+gespeicherten Ansichtstyp in Großbuchstaben.
 
-## Zwei Einträge mit Position 0
+## Zwei Einträge mit Position 0 (behoben in explayouts_ui_api 1.3.29)
 
 **Beobachtet:** Nachdem **+ Elemente hinzufügen** einer manuellen Sammlung mit drei Artikeln einen vierten hinzugefügt
 hatte, hatte die veröffentlichte Sammlung die Positionen 0, 0, 1, 2 (der neue Eintrag und der erste beide 0). Die Seite
-zeigte alle vier.
+zeigte alle vier. Der Editor schickt jeden gewählten Eintrag mit dem Offset der Sammlung, und jeder wurde genau an
+dieser Position gespeichert.
 
-**Umgang damit:** Wenn die Reihenfolge auf der Site nicht der im Editor entspricht, ziehen Sie die Einträge vor dem
-Veröffentlichen noch einmal in die gewünschte Reihenfolge.
+**Umgang damit:** Aktualisieren Sie explayouts_ui_api auf 1.3.29 oder neuer: Jeder neue Eintrag erhält eine eigene
+Position, die neuen Einträge stehen vorn in der gewählten Reihenfolge, und das Verschieben eines Eintrags verschiebt
+die dazwischen. Positionen, die vorher geteilt waren, werden bei der nächsten Änderung der Sammlung bereinigt. In einer
+älteren Version ziehen Sie die Einträge vor dem Veröffentlichen noch einmal in die gewünschte Reihenfolge.
 
 ## Die Suche im Content Browser
 

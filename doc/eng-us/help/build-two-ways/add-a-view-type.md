@@ -84,9 +84,10 @@ belong to the other view types (columns, item view type).
 
 ![The Design tab with View type list_compact](images/vt-01-design-tab-list-compact.webp)
 
-**Note:** on the test copy, changing only the view type did not save the block; the change was stored together with
-the next change of another field (here a key typed and deleted in **CSS class**). Check the block header: it shows the
-saved view type in capitals, here `LIST_COMPACT`.
+**Note:** before explayouts_ui_api 1.3.29, changing only the view type to one like this, which leaves no item view
+type to choose, did not save the block; the change was stored together with the next change of another field (on the
+test copy a key typed and deleted in **CSS class**). From 1.3.29 the change is saved at once. Check the block header:
+it shows the saved view type in capitals, here `LIST_COMPACT`.
 
 ![The block now shows LIST_COMPACT in its header and the items as a list](images/vt-02-draft-list-compact.webp)
 
