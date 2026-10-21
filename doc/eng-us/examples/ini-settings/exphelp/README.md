@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # exphelp.ini
 
-The shipped settings of `settings/exphelp.ini`: 46 blocks, 199 settings.
+The shipped settings of `settings/exphelp.ini`: 68 blocks, 243 settings.
 
 > The help system of the administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset and  
 > exphelp/report (doc/eng-us/features/6.0/help-system.md). It shows the git-tracked text and Markdown files under doc/,  
@@ -52,6 +52,28 @@ The shipped settings of `settings/exphelp.ini`: 46 blocks, 199 settings.
 | [Landing_businesses](Landing_businesses.md) | 2 |
 | [Landing_government](Landing_government.md) | 2 |
 | [Landing_customer](Landing_customer.md) | 2 |
+| [Landing_community](Landing_community.md) | 2 |
+| [Landing_ecosystem](Landing_ecosystem.md) | 2 |
+| [Landing_php-developer](Landing_php-developer.md) | 2 |
+| [Landing_theme-designer](Landing_theme-designer.md) | 2 |
+| [Landing_reseller](Landing_reseller.md) | 2 |
+| [Landing_bundler](Landing_bundler.md) | 2 |
+| [Landing_ai-agents](Landing_ai-agents.md) | 2 |
+| [Landing_software-engineer](Landing_software-engineer.md) | 2 |
+| [Landing_adopter](Landing_adopter.md) | 2 |
+| [Landing_mobile-app-developer](Landing_mobile-app-developer.md) | 2 |
+| [Landing_web-framework-developer](Landing_web-framework-developer.md) | 2 |
+| [Landing_cms-developer](Landing_cms-developer.md) | 2 |
+| [Landing_dxp-developer](Landing_dxp-developer.md) | 2 |
+| [Landing_ecommerce](Landing_ecommerce.md) | 2 |
+| [Landing_integrator](Landing_integrator.md) | 2 |
+| [Landing_dba](Landing_dba.md) | 2 |
+| [Landing_podcaster](Landing_podcaster.md) | 2 |
+| [Landing_non-profit](Landing_non-profit.md) | 2 |
+| [Landing_local-business](Landing_local-business.md) | 2 |
+| [Landing_individual](Landing_individual.md) | 2 |
+| [Landing_non-technical](Landing_non-technical.md) | 2 |
+| [Landing_student](Landing_student.md) | 2 |
 | [CommitFeedSettings](CommitFeedSettings.md) | 9 |
 | [SupportSettings](SupportSettings.md) | 5 |
 | [SupportOrganization_7x](SupportOrganization_7x.md) | 6 |

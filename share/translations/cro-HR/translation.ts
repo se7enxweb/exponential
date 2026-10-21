@@ -20669,8 +20669,8 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>INI postavke</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Svaka INI datoteka čita se u slojevima: najprije settings/&lt;file&gt;.ini, zatim datoteke aktivnih proširenja i pristupa web-mjestu, a potom settings/override. Kasnija datoteka ima prednost: zamjenjuje jednostavnu vrijednost i nadopunjuje niz, osim ako ga najprije isprazni. Ova stranica prikazuje vrijednost na snazi, datoteku iz koje dolazi i svaku datoteku koja je postavlja. Lozinke, ključevi, tokeni i druge tajne nikad se ne prikazuju.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Svaka INI datoteka čita se u slojevima: najprije settings/&lt;file&gt;.ini, zatim ActiveAccessExtensions, zatim pristup web-mjestu (najprije proširenja, settings/siteaccess posljednji), zatim ActiveExtensions, a potom settings/override. Kasnija datoteka ima prednost: zamjenjuje jednostavnu vrijednost i nadopunjuje niz, osim ako ga najprije isprazni. Ova stranica prikazuje vrijednost na snazi, datoteku iz koje dolazi i svaku datoteku koja je postavlja. Lozinke, ključevi, tokeni i druge tajne nikad se ne prikazuju.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>
@@ -74501,6 +74501,398 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>Search the whole help</source>
         <translation>Pretraži cijelu pomoć</translation>
+    </message>
+    <message>
+        <source>Community</source>
+        <translation>Zajednica</translation>
+    </message>
+    <message>
+        <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>
+        <translation>Koristite, promovirajte i gradite s Exponentialom diljem svijeta: sudjelovanje, kanali, događanja, kodeks ponašanja i doprinosi.</translation>
+    </message>
+    <message>
+        <source>The Exponential community: taking part, channels, events, the code of conduct and contributing.</source>
+        <translation>Zajednica Exponentiala: sudjelovanje, kanali, događanja, kodeks ponašanja i doprinosi.</translation>
+    </message>
+    <message>
+        <source>Ecosystem</source>
+        <translation>Ekosustav</translation>
+    </message>
+    <message>
+        <source>The wider Exponential world in the PHP stack: its products, extensions, distributions, partners, users and creators.</source>
+        <translation>Širi svijet Exponentiala u PHP okruženju: njegovi proizvodi, proširenja, distribucije, partneri, korisnici i stvaratelji.</translation>
+    </message>
+    <message>
+        <source>The Exponential ecosystem in the PHP stack: products, extensions, distributions, partners, users and creators.</source>
+        <translation>Ekosustav Exponentiala u PHP okruženju: proizvodi, proširenja, distribucije, partneri, korisnici i stvaratelji.</translation>
+    </message>
+    <message>
+        <source>PHP Developers</source>
+        <translation>PHP programeri</translation>
+    </message>
+    <message>
+        <source>Work on Exponential in PHP: the kernel and its classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>Radite na Exponentialu u PHP-u: jezgra i njezine klase, automatsko učitavanje, naredbeni redak, Composer, testovi i standardi kodiranja.</translation>
+    </message>
+    <message>
+        <source>PHP development</source>
+        <translation>PHP razvoj</translation>
+    </message>
+    <message>
+        <source>PHP development on Exponential: the kernel, classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>PHP razvoj na Exponentialu: jezgra, klase, automatsko učitavanje, naredbeni redak, Composer, testovi i standardi kodiranja.</translation>
+    </message>
+    <message>
+        <source>Theme designers</source>
+        <translation>Dizajneri tema</translation>
+    </message>
+    <message>
+        <source>Design themes for Exponential: designs and overrides, templates, stylesheets and assets, packaging a theme and keeping it current.</source>
+        <translation>Dizajnirajte teme za Exponential: dizajni i nadjačavanja, predlošci, stilske datoteke i resursi, pakiranje teme i njezino održavanje.</translation>
+    </message>
+    <message>
+        <source>Resellers</source>
+        <translation>Preprodavači</translation>
+    </message>
+    <message>
+        <source>Resell Exponential and the services around it: hosting, support and implementation packages, pricing, licensing and partners.</source>
+        <translation>Preprodajte Exponential i usluge oko njega: paketi smještaja, podrške i implementacije, cijene, licenciranje i partneri.</translation>
+    </message>
+    <message>
+        <source>Reselling</source>
+        <translation>Preprodaja</translation>
+    </message>
+    <message>
+        <source>Reselling Exponential: service packages, hosting and support, pricing, licensing and working with partners.</source>
+        <translation>Preprodaja Exponentiala: paketi usluga, smještaj i podrška, cijene, licenciranje i suradnja s partnerima.</translation>
+    </message>
+    <message>
+        <source>Bundlers</source>
+        <translation>Pakeri</translation>
+    </message>
+    <message>
+        <source>Bundle Exponential: distributions, site packages, extensions and installers, with their versions, licenses and updates.</source>
+        <translation>Pakirajte Exponential: distribucije, paketi web-mjesta, proširenja i instalacijski programi, s njihovim verzijama, licencama i ažuriranjima.</translation>
+    </message>
+    <message>
+        <source>Bundles and distributions</source>
+        <translation>Paketi i distribucije</translation>
+    </message>
+    <message>
+        <source>Bundling Exponential: distributions, site packages, extensions, installers, versions and licenses.</source>
+        <translation>Pakiranje Exponentiala: distribucije, paketi web-mjesta, proširenja, instalacijski programi, verzije i licence.</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic</source>
+        <translation>UI, agenti i agentski rad</translation>
+    </message>
+    <message>
+        <source>Work with AI and agents in Exponential: the writing assistant expai, agent access through the APIs, agentic workflows and safety.</source>
+        <translation>Radite s umjetnom inteligencijom i agentima u Exponentialu: asistent za pisanje expai, pristup agenata putem API-ja, agentski tijekovi rada i sigurnost.</translation>
+    </message>
+    <message>
+        <source>AI and agents</source>
+        <translation>UI i agenti</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic work with Exponential: the writing assistant expai, the APIs, workflows and safety.</source>
+        <translation>UI, agenti i agentski rad s Exponentialom: asistent za pisanje expai, API-ji, tijekovi rada i sigurnost.</translation>
+    </message>
+    <message>
+        <source>Software Engineers</source>
+        <translation>Softverski inženjeri</translation>
+    </message>
+    <message>
+        <source>Engineer software on Exponential: architecture, the request cycle, caching, testing, quality gates and maintainability.</source>
+        <translation>Razvijajte softver na Exponentialu: arhitektura, ciklus zahtjeva, predmemoriranje, testiranje, provjere kvalitete i održivost koda.</translation>
+    </message>
+    <message>
+        <source>Software engineering</source>
+        <translation>Softversko inženjerstvo</translation>
+    </message>
+    <message>
+        <source>Software engineering on Exponential: architecture, the request cycle, caching, testing and quality.</source>
+        <translation>Softversko inženjerstvo na Exponentialu: arhitektura, ciklus zahtjeva, predmemoriranje, testiranje i kvaliteta.</translation>
+    </message>
+    <message>
+        <source>Adopters</source>
+        <translation>Novi korisnici</translation>
+    </message>
+    <message>
+        <source>Adopt Exponential: evaluate it, plan the move, migrate content, train your team and run it with confidence.</source>
+        <translation>Uvedite Exponential: procijenite ga, isplanirajte prelazak, prenesite sadržaj, obučite svoj tim i vodite ga s povjerenjem.</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential</source>
+        <translation>Uvođenje Exponentiala</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential: evaluation, planning, migration, training and running it.</source>
+        <translation>Uvođenje Exponentiala: procjena, planiranje, migracija, obuka i rad.</translation>
+    </message>
+    <message>
+        <source>Mobile App Developers</source>
+        <translation>Razvojni programeri mobilnih aplikacija</translation>
+    </message>
+    <message>
+        <source>Build mobile apps on Exponential content: the REST APIs, authentication, content as JSON, images and caching.</source>
+        <translation>Gradite mobilne aplikacije na sadržaju Exponentiala: REST API-ji, autentifikacija, sadržaj kao JSON, slike i predmemoriranje.</translation>
+    </message>
+    <message>
+        <source>Mobile apps</source>
+        <translation>Mobilne aplikacije</translation>
+    </message>
+    <message>
+        <source>Mobile apps on Exponential content: the REST APIs, authentication, JSON content, images and caching.</source>
+        <translation>Mobilne aplikacije na sadržaju Exponentiala: REST API-ji, autentifikacija, JSON sadržaj, slike i predmemoriranje.</translation>
+    </message>
+    <message>
+        <source>Web Framework Developers</source>
+        <translation>Razvojni programeri web okvira</translation>
+    </message>
+    <message>
+        <source>Combine Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Kombinirajte Exponential s web okvirima: Composer, API-ji, ugradnja sadržaja i paralelni rad.</translation>
+    </message>
+    <message>
+        <source>Web frameworks</source>
+        <translation>Web okviri</translation>
+    </message>
+    <message>
+        <source>Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential s web okvirima: Composer, API-ji, ugradnja sadržaja i paralelni rad.</translation>
+    </message>
+    <message>
+        <source>CMS Developers</source>
+        <translation>Razvojni programeri CMS-a</translation>
+    </message>
+    <message>
+        <source>Develop on a content management system: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Razvijajte na sustavu za upravljanje sadržajem: klase sadržaja, predlošci, tijekovi rada, dozvole, više web-mjesta i jezici.</translation>
+    </message>
+    <message>
+        <source>CMS development</source>
+        <translation>Razvoj CMS-a</translation>
+    </message>
+    <message>
+        <source>CMS development with Exponential: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Razvoj CMS-a s Exponentialom: klase sadržaja, predlošci, tijekovi rada, dozvole, više web-mjesta i jezici.</translation>
+    </message>
+    <message>
+        <source>DXP Developers</source>
+        <translation>Razvojni programeri DXP-a</translation>
+    </message>
+    <message>
+        <source>Develop for Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL, and how it differs from Exponential 6.</source>
+        <translation>Razvijajte za Exponential Platform DXP: Symfony distribucija, njezino administratorsko sučelje, REST i GraphQL te po čemu se razlikuje od Exponentiala 6.</translation>
+    </message>
+    <message>
+        <source>DXP development</source>
+        <translation>Razvoj DXP-a</translation>
+    </message>
+    <message>
+        <source>Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL APIs, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP: Symfony distribucija, njezino administratorsko sučelje, REST i GraphQL API-ji te po čemu se razlikuje od Exponentiala 6.</translation>
+    </message>
+    <message>
+        <source>E-commerce</source>
+        <translation>E-trgovina</translation>
+    </message>
+    <message>
+        <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
+        <translation>Prodajte na mreži s Exponentialom: trgovina, proizvodi i cijene, PDV, narudžbe, plaćanja i svakodnevno vođenje trgovine.</translation>
+    </message>
+    <message>
+        <source>E-commerce with Exponential: the shop, products, prices, VAT, orders and payments.</source>
+        <translation>E-trgovina s Exponentialom: trgovina, proizvodi, cijene, PDV, narudžbe i plaćanja.</translation>
+    </message>
+    <message>
+        <source>Integrators</source>
+        <translation>Integratori</translation>
+    </message>
+    <message>
+        <source>Connect Exponential to other systems: the REST APIs, RSS feeds, imports and exports, and search.</source>
+        <translation>Povežite Exponential s drugim sustavima: REST API-ji, RSS izvori, uvoz i izvoz te pretraživanje.</translation>
+    </message>
+    <message>
+        <source>Integration</source>
+        <translation>Integracija</translation>
+    </message>
+    <message>
+        <source>Integrating Exponential with other systems: the APIs, feeds, imports, exports and search.</source>
+        <translation>Integracija Exponentiala s drugim sustavima: API-ji, izvori, uvoz, izvoz i pretraživanje.</translation>
+    </message>
+    <message>
+        <source>Database Administrators</source>
+        <translation>Administratori baza podataka</translation>
+    </message>
+    <message>
+        <source>Run the database behind Exponential: the supported databases, schema and upgrades, backups and restores, and performance.</source>
+        <translation>Vodite bazu podataka iza Exponentiala: podržane baze podataka, shema i nadogradnje, sigurnosne kopije i vraćanje te performanse.</translation>
+    </message>
+    <message>
+        <source>Database administration</source>
+        <translation>Administracija baza podataka</translation>
+    </message>
+    <message>
+        <source>Database administration for Exponential: the supported databases, schema, upgrades, backups and performance.</source>
+        <translation>Administracija baza podataka za Exponential: podržane baze podataka, shema, nadogradnje, sigurnosne kopije i performanse.</translation>
+    </message>
+    <message>
+        <source>Podcasters, radio and streaming</source>
+        <translation>Podcasteri, radio i streaming</translation>
+    </message>
+    <message>
+        <source>Publish podcasts, radio and streams with Exponential: audio and video, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Objavljujte podcaste, radio i prijenose s Exponentialom: zvuk i video, izvori, ugradnje, bilješke epizoda, raspored i prava.</translation>
+    </message>
+    <message>
+        <source>Podcasting and streaming</source>
+        <translation>Podcasting i streaming</translation>
+    </message>
+    <message>
+        <source>Podcasts, radio and streaming with Exponential: audio and video media, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Podcasti, radio i streaming s Exponentialom: audio i video mediji, izvori, ugradnje, bilješke epizoda, raspored i prava.</translation>
+    </message>
+    <message>
+        <source>Non-profits</source>
+        <translation>Neprofitne organizacije</translation>
+    </message>
+    <message>
+        <source>Run the website of a non-profit on Exponential: members and volunteers, fundraising pages, accessibility, transparency and small budgets.</source>
+        <translation>Vodite web-mjesto neprofitne organizacije na Exponentialu: članovi i volonteri, stranice za prikupljanje sredstava, pristupačnost, transparentnost i mali proračuni.</translation>
+    </message>
+    <message>
+        <source>Non-profit organizations</source>
+        <translation>Neprofitne organizacije</translation>
+    </message>
+    <message>
+        <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
+        <translation>Exponential za neprofitne organizacije: članovi, volonteri, stranice za prikupljanje sredstava, pristupačnost i transparentnost.</translation>
+    </message>
+    <message>
+        <source>Local businesses</source>
+        <translation>Lokalna poduzeća</translation>
+    </message>
+    <message>
+        <source>Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.</source>
+        <translation>Dovedite lokalno poduzeće na mrežu s Exponentialom: radno vrijeme, stranice s lokacijom i kontaktom, lokalno pretraživanje, jednostavna trgovina i mali proračun.</translation>
+    </message>
+    <message>
+        <source>Local business</source>
+        <translation>Lokalno poslovanje</translation>
+    </message>
+    <message>
+        <source>Exponential for local businesses: opening hours, location pages, local search and a simple shop.</source>
+        <translation>Exponential za lokalna poduzeća: radno vrijeme, stranice s lokacijom, lokalno pretraživanje i jednostavna trgovina.</translation>
+    </message>
+    <message>
+        <source>Individuals</source>
+        <translation>Pojedinci</translation>
+    </message>
+    <message>
+        <source>Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.</source>
+        <translation>Izradite vlastito web-mjesto s Exponentialom: osobno web-mjesto, portfelj, blog, web-mjesto obitelji ili kluba, korak po korak.</translation>
+    </message>
+    <message>
+        <source>Personal sites</source>
+        <translation>Osobna web-mjesta</translation>
+    </message>
+    <message>
+        <source>Personal sites with Exponential: portfolios, blogs, family and club sites.</source>
+        <translation>Osobna web-mjesta s Exponentialom: portfelji, blogovi, web-mjesta obitelji i klubova.</translation>
+    </message>
+    <message>
+        <source>Non-technical people</source>
+        <translation>Netehnički korisnici</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.</source>
+        <translation>Exponential jednostavnim jezikom: bez naredbenog retka, odabir smještaja, pojmovi na koje ćete naići i jednostavne upute.</translation>
+    </message>
+    <message>
+        <source>Plain-language help</source>
+        <translation>Pomoć jednostavnim jezikom</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
+        <translation>Exponential jednostavnim jezikom: upute bez naredbenog retka, odabir smještaja i pojmovnik.</translation>
+    </message>
+    <message>
+        <source>Students and learners</source>
+        <translation>Studenti i polaznici</translation>
+    </message>
+    <message>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Naučite Exponential: putovi učenja, vaše prvo web-mjesto, studijski projekti, planirane certifikacije i partnerska razina Student.</translation>
+    </message>
+    <message>
+        <source>Learning Exponential</source>
+        <translation>Učenje Exponentiala</translation>
+    </message>
+    <message>
+        <source>Learning Exponential: learning paths, first sites, study projects and certifications.</source>
+        <translation>Učenje Exponentiala: putovi učenja, prva web-mjesta, studijski projekti i certifikacije.</translation>
+    </message>
+    <message>
+        <source>Use and run Exponential</source>
+        <translation>Korištenje i vođenje Exponentiala</translation>
+    </message>
+    <message>
+        <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
+        <translation>Urednici, administratori, razvojni programeri i korisnici te svi s vlastitim web-mjestom.</translation>
+    </message>
+    <message>
+        <source>Organizations</source>
+        <translation>Organizacije</translation>
+    </message>
+    <message>
+        <source>Businesses, public bodies and non-profits, and the people who lead and sell their projects.</source>
+        <translation>Poduzeća, javna tijela i neprofitne organizacije te ljudi koji vode i prodaju njihove projekte.</translation>
+    </message>
+    <message>
+        <source>Build with Exponential</source>
+        <translation>Gradnja s Exponentialom</translation>
+    </message>
+    <message>
+        <source>Designers, developers and engineers who build sites, themes, applications and integrations.</source>
+        <translation>Dizajneri, razvojni programeri i inženjeri koji grade web-mjesta, teme, aplikacije i integracije.</translation>
+    </message>
+    <message>
+        <source>Host, sell and partner</source>
+        <translation>Smještaj, prodaja i partnerstvo</translation>
+    </message>
+    <message>
+        <source>Partners, hosting companies, resellers and bundlers who bring Exponential to their customers.</source>
+        <translation>Partneri, tvrtke za smještaj web-mjesta, preprodavači i pakeri koji donose Exponential svojim klijentima.</translation>
+    </message>
+    <message>
+        <source>Community and learning</source>
+        <translation>Zajednica i učenje</translation>
+    </message>
+    <message>
+        <source>The community and the ecosystem, supporters and sponsors, the media, trainers and students.</source>
+        <translation>Zajednica i ekosustav, podupiratelji i sponzori, mediji, treneri i studenti.</translation>
+    </message>
+    <message>
+        <source>Exponential Partners contribute financially to the sustained future of the project, contribute code and more back to the project, and engage directly with 7x and the Exponential Foundation.</source>
+        <translation>Partneri Exponentiala financijski pridonose održivoj budućnosti projekta, vraćaju projektu kod i više te izravno surađuju sa 7x i Exponential Foundation.</translation>
+    </message>
+    <message>
+        <source>Exponential Community members use, contribute to, promote and develop software using Exponential worldwide.</source>
+        <translation>Članovi zajednice Exponentiala diljem svijeta koriste Exponential, pridonose mu, promoviraju ga i s njim razvijaju softver.</translation>
+    </message>
+    <message>
+        <source>The greater ecosystem extends beyond the community to cover all aspects of the Exponential world within the PHP stack: its users and creators.</source>
+        <translation>Širi ekosustav seže izvan zajednice i obuhvaća sve aspekte svijeta Exponentiala u PHP okruženju: njegove korisnike i stvaratelje.</translation>
+    </message>
+    <message>
+        <source>%count audiences</source>
+        <translation>Broj publika: %count</translation>
+    </message>
+    <message>
+        <source>More audiences</source>
+        <translation>Više publika</translation>
     </message>
 </context>
 </TS>

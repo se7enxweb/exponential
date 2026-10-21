@@ -9,8 +9,8 @@ type: help
 ---
 # Lesson 1.4: The settings page
 
-Exponential is configured with INI files, read in layers: the defaults, extensions, the siteaccess, and the global
-override. The settings page (**Setup > Ini settings**) shows for each setting the value in effect, the file it comes
+Exponential is configured with INI files, read in layers: the defaults, the siteaccess, the active extensions (which win over the siteaccess),
+and the global override, which wins over everything. The settings page (**Setup > Ini settings**) shows for each setting the value in effect, the file it comes
 from and every file that sets it. It is the safest way for a new administrator to look at configuration, and it can
 also change a setting.
 

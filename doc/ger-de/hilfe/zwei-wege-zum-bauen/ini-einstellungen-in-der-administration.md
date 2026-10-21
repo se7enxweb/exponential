@@ -28,8 +28,11 @@ Wählen Sie die **INI-Datei** und den **Siteaccess**, dann **Einstellungen anzei
 ![Die Seite Einstellungen mit der Auswahl von INI-Datei und Siteaccess und der Schaltfläche Einstellungen anzeigen](../../../eng-us/help/build-two-ways/images/hm-11-settings-pick-file.webp)
 
 Die Seite erklärt, wie Einstellungen funktionieren: *Jede INI-Datei wird in Schichten gelesen: zuerst settings/&lt;file&gt;.ini,
-dann die Dateien der aktiven Extensions und des Siteaccess, dann settings/override. Eine spätere Datei gewinnt: Sie ersetzt
-einen einfachen Wert und ergänzt ein Array, außer sie leert es zuerst.* Geheimnisse (Passwörter, Schlüssel, Tokens) werden nie angezeigt.
+dann die ActiveAccessExtensions, dann der Siteaccess (zuerst die Extensions, settings/siteaccess zuletzt), dann die
+ActiveExtensions, dann settings/override. Eine spätere Datei gewinnt: Sie ersetzt einen einfachen Wert und ergänzt ein
+Array, außer sie leert es zuerst.* Geheimnisse (Passwörter, Schlüssel, Tokens) werden nie angezeigt. Eine Einstellung in
+einer aktiven Extension schlägt also dieselbe Einstellung in settings/siteaccess/&lt;siteaccess&gt;; nur settings/override
+schlägt die Extension.
 
 ## Die Schichten lesen
 

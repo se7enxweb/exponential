@@ -313,6 +313,8 @@ PHP-FPM, damit eine von altem Code gerenderte Seite nicht erneut ausgeliefert wi
 Eine veröffentlichte Release kann nicht geändert werden; der Weg zu einer Korrektur ist die nächste Version. Um zu
 sehen, was eine Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](../../changelogs/6.0/6.0.15.md).
 
+**USt-Regeln (6.0.15).** An der Berechnung der Umsatzsteuer ändert sich nichts. USt-Regeln werden nur angewendet, wenn `shop.ini [VATSettings] Handler` einen Handler nennt (`ezdefault`), und die ausgelieferte `settings/shop.ini` nennt weiterhin keinen. Ein Shop, dessen Regeln nie angewendet wurden, sieht jetzt einen Hinweis unter **Store > VAT rules**; um sie anzuwenden, setzen Sie `Handler=ezdefault` in `settings/override/shop.ini.append.php`, stellen sicher, dass das Land des Kunden beim Checkout bekannt ist, und testen eine Bestellung, bevor Sie live gehen.
+
 **Demo-Modus (6.0.15).** Die Umgebungsvariable `EXP_DEMO_MODE=1` kennzeichnet eine öffentliche Demo; ohne sie ändert sich nichts. Upgrade einer Demo: Behalten Sie die Variable für den Webserver, Cron und die Konsole bei, und prüfen Sie danach das Banner. Upgrade einer echten Site: Stellen Sie sicher, dass die Variable für keinen ihrer Prozesse gesetzt ist. [Demo-Modus](../bc/6.0/demomodus.md).
 
 ## Siehe auch

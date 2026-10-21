@@ -54,10 +54,24 @@ Ihrem Server.
 
 ## Rich Text, Bilder und Links
 
-- `OutputFormat=xhtml` liefert gerendertes XHTML der Rich-Text-Felder (`renderedOutput`), sodass das Frontend das
-  interne XML nicht parsen muss.
-- Bilder: Die Felder enthalten das Original und die Varianten; definieren Sie Bildvarianten für die Größen Ihres
-  Frontends ([Bilder und Bildvarianten](../website-ersteller/bilder-und-bildvarianten.md)).
+- Jedes REST-Feld hat `type`, `identifier`, `value`, `id` und `classattribute_id`. Der `value` eines Rich-Text-Felds
+  ist reiner Text: seine gerenderte Ausgabe ohne Tags.
+- `OutputFormat=xhtml` ergänzt `renderedOutput`: den ganzen Knoten, von Templates gerendert, im View-Modus `rest`,
+  innerhalb des Templates aus `rest.ini [<Controller>_viewContent_OutputSettings] Template` (`rest_pagelayout.tpl`).
+  Das mitgelieferte `rest_pagelayout.tpl` ist nur eine Platzhalterseite; überschreiben Sie es in Ihrem Design und
+  ergänzen Sie ein `node/view/rest.tpl`, um brauchbares Markup zu erhalten.
+- Bilder: Der REST-`value` eines Bildfelds ist nur der Pfad der Originaldatei, relativ zum Wurzelverzeichnis der
+  Website (zum Beispiel `var/<site>/storage/images/.../name.jpg`); er enthält keine Bildvarianten, keine Größe und
+  keinen Alternativtext. Adressen der Bildvarianten erhalten Sie heute so:
+  - über die Bilddomäne von expservices, `ezjscore/call/expimage::url::<Knoten-ID>::<Attribut>::<Variante>` für eine
+    Variante (die Datei wird erzeugt, wenn sie fehlt) oder `expimage::urls::<Knoten-ID>::<Attribut>` für alle
+    konfigurierten Varianten, jeweils mit `url`, `absolute_url`, Breite, Höhe und MIME-Typ
+    ([Entfernte Dienste mit expservices](entfernte-dienste-expservices.md)); oder
+  - indem Sie sie in Ihr `rest`-View-Template schreiben (`$node.data_map.<Attribut>.content.<Variante>.url`) und
+    `renderedOutput` lesen.
+
+  Definieren Sie Bildvarianten für die Größen Ihres Frontends in `image.ini`
+  ([Bilder und Bildvarianten](../website-ersteller/bilder-und-bildvarianten.md)).
 - Links im Rich Text zeigen auf Adressen der Website; bilden Sie sie per URL-Alias oder Knoten-ID auf die Routen Ihres
   Frontends ab.
 

@@ -20734,8 +20734,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>הגדרות INI</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>כל קובץ INI נקרא בשכבות: קודם settings/&lt;file&gt;.ini, אחר כך הקבצים של ההרחבות הפעילות ושל גישת האתר, ולבסוף settings/override. קובץ מאוחר יותר גובר: הוא מחליף ערך פשוט, ומוסיף למערך אלא אם הוא מרוקן אותו קודם. עמוד זה מציג את הערך שבתוקף, את הקובץ שממנו הוא מגיע ואת כל הקבצים שקובעים אותו. סיסמאות, מפתחות, טוקנים וסודות אחרים לעולם אינם מוצגים.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>כל קובץ INI נקרא בשכבות: קודם settings/&lt;file&gt;.ini, אחר כך ActiveAccessExtensions, אחר כך גישת האתר (קודם ההרחבות, settings/siteaccess אחרון), אחר כך ActiveExtensions, ולבסוף settings/override. קובץ מאוחר יותר גובר: הוא מחליף ערך פשוט, ומוסיף למערך אלא אם הוא מרוקן אותו קודם. עמוד זה מציג את הערך שבתוקף, את הקובץ שממנו הוא מגיע ואת כל הקבצים שקובעים אותו. סיסמאות, מפתחות, טוקנים וסודות אחרים לעולם אינם מוצגים.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>
@@ -73245,6 +73245,398 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Search the whole help</source>
         <translation>חיפוש בכל העזרה</translation>
+    </message>
+    <message>
+        <source>Community</source>
+        <translation>קהילה</translation>
+    </message>
+    <message>
+        <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>
+        <translation>השתמשו ב-Exponential, קדמו אותו ובנו איתו ברחבי העולם: השתתפות, הערוצים, אירועים, קוד ההתנהגות ותרומות.</translation>
+    </message>
+    <message>
+        <source>The Exponential community: taking part, channels, events, the code of conduct and contributing.</source>
+        <translation>קהילת Exponential: השתתפות, ערוצים, אירועים, קוד ההתנהגות ותרומות.</translation>
+    </message>
+    <message>
+        <source>Ecosystem</source>
+        <translation>אקוסיסטם</translation>
+    </message>
+    <message>
+        <source>The wider Exponential world in the PHP stack: its products, extensions, distributions, partners, users and creators.</source>
+        <translation>עולם Exponential הרחב בסביבת PHP: המוצרים, ההרחבות, ההפצות, השותפים, המשתמשים והיוצרים שלו.</translation>
+    </message>
+    <message>
+        <source>The Exponential ecosystem in the PHP stack: products, extensions, distributions, partners, users and creators.</source>
+        <translation>האקוסיסטם של Exponential בסביבת PHP: מוצרים, הרחבות, הפצות, שותפים, משתמשים ויוצרים.</translation>
+    </message>
+    <message>
+        <source>PHP Developers</source>
+        <translation>מפתחי PHP</translation>
+    </message>
+    <message>
+        <source>Work on Exponential in PHP: the kernel and its classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>עבדו על Exponential ב-PHP: הליבה והמחלקות שלה, טעינה אוטומטית, שורת הפקודה, Composer, בדיקות ותקני קוד.</translation>
+    </message>
+    <message>
+        <source>PHP development</source>
+        <translation>פיתוח PHP</translation>
+    </message>
+    <message>
+        <source>PHP development on Exponential: the kernel, classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>פיתוח PHP על Exponential: הליבה, מחלקות, טעינה אוטומטית, שורת הפקודה, Composer, בדיקות ותקני קוד.</translation>
+    </message>
+    <message>
+        <source>Theme designers</source>
+        <translation>מעצבי ערכות נושא</translation>
+    </message>
+    <message>
+        <source>Design themes for Exponential: designs and overrides, templates, stylesheets and assets, packaging a theme and keeping it current.</source>
+        <translation>עצבו ערכות נושא ל-Exponential: עיצובים ודריסות, תבניות, גיליונות סגנון ומשאבים, אריזת ערכת נושא ושמירתה עדכנית.</translation>
+    </message>
+    <message>
+        <source>Resellers</source>
+        <translation>משווקים חוזרים</translation>
+    </message>
+    <message>
+        <source>Resell Exponential and the services around it: hosting, support and implementation packages, pricing, licensing and partners.</source>
+        <translation>מכרו מחדש את Exponential ואת השירותים סביבו: חבילות אחסון, תמיכה והטמעה, תמחור, רישוי ושותפים.</translation>
+    </message>
+    <message>
+        <source>Reselling</source>
+        <translation>מכירה חוזרת</translation>
+    </message>
+    <message>
+        <source>Reselling Exponential: service packages, hosting and support, pricing, licensing and working with partners.</source>
+        <translation>מכירה חוזרת של Exponential: חבילות שירות, אחסון ותמיכה, תמחור, רישוי ועבודה עם שותפים.</translation>
+    </message>
+    <message>
+        <source>Bundlers</source>
+        <translation>אורזי חבילות</translation>
+    </message>
+    <message>
+        <source>Bundle Exponential: distributions, site packages, extensions and installers, with their versions, licenses and updates.</source>
+        <translation>ארזו את Exponential: הפצות, חבילות אתר, הרחבות ומתקינים, עם הגרסאות, הרישיונות והעדכונים שלהם.</translation>
+    </message>
+    <message>
+        <source>Bundles and distributions</source>
+        <translation>חבילות והפצות</translation>
+    </message>
+    <message>
+        <source>Bundling Exponential: distributions, site packages, extensions, installers, versions and licenses.</source>
+        <translation>אריזת Exponential: הפצות, חבילות אתר, הרחבות, מתקינים, גרסאות ורישיונות.</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic</source>
+        <translation>בינה מלאכותית, סוכנים ועבודה סוכנית</translation>
+    </message>
+    <message>
+        <source>Work with AI and agents in Exponential: the writing assistant expai, agent access through the APIs, agentic workflows and safety.</source>
+        <translation>עבדו עם בינה מלאכותית וסוכנים ב-Exponential: עוזר הכתיבה expai, גישת סוכנים דרך ה-API, תהליכי עבודה סוכניים ובטיחות.</translation>
+    </message>
+    <message>
+        <source>AI and agents</source>
+        <translation>בינה מלאכותית וסוכנים</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic work with Exponential: the writing assistant expai, the APIs, workflows and safety.</source>
+        <translation>בינה מלאכותית, סוכנים ועבודה סוכנית עם Exponential: עוזר הכתיבה expai, ה-API, תהליכי עבודה ובטיחות.</translation>
+    </message>
+    <message>
+        <source>Software Engineers</source>
+        <translation>מהנדסי תוכנה</translation>
+    </message>
+    <message>
+        <source>Engineer software on Exponential: architecture, the request cycle, caching, testing, quality gates and maintainability.</source>
+        <translation>פתחו תוכנה על Exponential: ארכיטקטורה, מחזור הבקשה, מטמון, בדיקות, בקרות איכות ותחזוקתיות.</translation>
+    </message>
+    <message>
+        <source>Software engineering</source>
+        <translation>הנדסת תוכנה</translation>
+    </message>
+    <message>
+        <source>Software engineering on Exponential: architecture, the request cycle, caching, testing and quality.</source>
+        <translation>הנדסת תוכנה על Exponential: ארכיטקטורה, מחזור הבקשה, מטמון, בדיקות ואיכות.</translation>
+    </message>
+    <message>
+        <source>Adopters</source>
+        <translation>מאמצים</translation>
+    </message>
+    <message>
+        <source>Adopt Exponential: evaluate it, plan the move, migrate content, train your team and run it with confidence.</source>
+        <translation>אמצו את Exponential: העריכו אותו, תכננו את המעבר, העבירו תוכן, הדריכו את הצוות והפעילו אותו בביטחון.</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential</source>
+        <translation>אימוץ Exponential</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential: evaluation, planning, migration, training and running it.</source>
+        <translation>אימוץ Exponential: הערכה, תכנון, הגירה, הדרכה ותפעול.</translation>
+    </message>
+    <message>
+        <source>Mobile App Developers</source>
+        <translation>מפתחי אפליקציות מובייל</translation>
+    </message>
+    <message>
+        <source>Build mobile apps on Exponential content: the REST APIs, authentication, content as JSON, images and caching.</source>
+        <translation>בנו אפליקציות מובייל על תוכן Exponential: ממשקי REST API, אימות, תוכן כ-JSON, תמונות ומטמון.</translation>
+    </message>
+    <message>
+        <source>Mobile apps</source>
+        <translation>אפליקציות מובייל</translation>
+    </message>
+    <message>
+        <source>Mobile apps on Exponential content: the REST APIs, authentication, JSON content, images and caching.</source>
+        <translation>אפליקציות מובייל על תוכן Exponential: ממשקי REST API, אימות, תוכן JSON, תמונות ומטמון.</translation>
+    </message>
+    <message>
+        <source>Web Framework Developers</source>
+        <translation>מפתחי מסגרות ווב</translation>
+    </message>
+    <message>
+        <source>Combine Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>שלבו את Exponential עם מסגרות ווב: Composer, ה-API, הטמעת תוכן והפעלתם זה לצד זה.</translation>
+    </message>
+    <message>
+        <source>Web frameworks</source>
+        <translation>מסגרות ווב</translation>
+    </message>
+    <message>
+        <source>Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential עם מסגרות ווב: Composer, ה-API, הטמעת תוכן והפעלתם זה לצד זה.</translation>
+    </message>
+    <message>
+        <source>CMS Developers</source>
+        <translation>מפתחי CMS</translation>
+    </message>
+    <message>
+        <source>Develop on a content management system: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>פתחו על מערכת לניהול תוכן: מחלקות תוכן, תבניות, תהליכי עבודה, הרשאות, ריבוי אתרים ושפות.</translation>
+    </message>
+    <message>
+        <source>CMS development</source>
+        <translation>פיתוח CMS</translation>
+    </message>
+    <message>
+        <source>CMS development with Exponential: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>פיתוח CMS עם Exponential: מחלקות תוכן, תבניות, תהליכי עבודה, הרשאות, ריבוי אתרים ושפות.</translation>
+    </message>
+    <message>
+        <source>DXP Developers</source>
+        <translation>מפתחי DXP</translation>
+    </message>
+    <message>
+        <source>Develop for Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL, and how it differs from Exponential 6.</source>
+        <translation>פתחו עבור Exponential Platform DXP: הפצת Symfony, ממשק הניהול שלה, REST ו-GraphQL, ובמה היא שונה מ-Exponential 6.</translation>
+    </message>
+    <message>
+        <source>DXP development</source>
+        <translation>פיתוח DXP</translation>
+    </message>
+    <message>
+        <source>Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL APIs, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP: הפצת Symfony, ממשק הניהול שלה, ממשקי REST ו-GraphQL, ובמה היא שונה מ-Exponential 6.</translation>
+    </message>
+    <message>
+        <source>E-commerce</source>
+        <translation>מסחר אלקטרוני</translation>
+    </message>
+    <message>
+        <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
+        <translation>מכרו ברשת עם Exponential: החנות, מוצרים ומחירים, מע״מ, הזמנות, תשלומים וניהול החנות יום-יום.</translation>
+    </message>
+    <message>
+        <source>E-commerce with Exponential: the shop, products, prices, VAT, orders and payments.</source>
+        <translation>מסחר אלקטרוני עם Exponential: החנות, מוצרים, מחירים, מע״מ, הזמנות ותשלומים.</translation>
+    </message>
+    <message>
+        <source>Integrators</source>
+        <translation>אינטגרטורים</translation>
+    </message>
+    <message>
+        <source>Connect Exponential to other systems: the REST APIs, RSS feeds, imports and exports, and search.</source>
+        <translation>חברו את Exponential למערכות אחרות: ממשקי REST API, הזנות RSS, ייבוא וייצוא, וחיפוש.</translation>
+    </message>
+    <message>
+        <source>Integration</source>
+        <translation>אינטגרציה</translation>
+    </message>
+    <message>
+        <source>Integrating Exponential with other systems: the APIs, feeds, imports, exports and search.</source>
+        <translation>שילוב Exponential עם מערכות אחרות: ה-API, הזנות, ייבוא, ייצוא וחיפוש.</translation>
+    </message>
+    <message>
+        <source>Database Administrators</source>
+        <translation>מנהלי מסדי נתונים</translation>
+    </message>
+    <message>
+        <source>Run the database behind Exponential: the supported databases, schema and upgrades, backups and restores, and performance.</source>
+        <translation>תפעלו את מסד הנתונים שמאחורי Exponential: מסדי הנתונים הנתמכים, סכמה ושדרוגים, גיבויים ושחזורים, וביצועים.</translation>
+    </message>
+    <message>
+        <source>Database administration</source>
+        <translation>ניהול מסדי נתונים</translation>
+    </message>
+    <message>
+        <source>Database administration for Exponential: the supported databases, schema, upgrades, backups and performance.</source>
+        <translation>ניהול מסדי נתונים עבור Exponential: מסדי הנתונים הנתמכים, סכמה, שדרוגים, גיבויים וביצועים.</translation>
+    </message>
+    <message>
+        <source>Podcasters, radio and streaming</source>
+        <translation>פודקאסטרים, רדיו וסטרימינג</translation>
+    </message>
+    <message>
+        <source>Publish podcasts, radio and streams with Exponential: audio and video, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>פרסמו פודקאסטים, רדיו ושידורים עם Exponential: אודיו ווידאו, הזנות, הטמעות, הערות פרק, תזמון וזכויות.</translation>
+    </message>
+    <message>
+        <source>Podcasting and streaming</source>
+        <translation>פודקאסטים וסטרימינג</translation>
+    </message>
+    <message>
+        <source>Podcasts, radio and streaming with Exponential: audio and video media, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>פודקאסטים, רדיו וסטרימינג עם Exponential: מדיית אודיו ווידאו, הזנות, הטמעות, הערות פרק, תזמון וזכויות.</translation>
+    </message>
+    <message>
+        <source>Non-profits</source>
+        <translation>עמותות</translation>
+    </message>
+    <message>
+        <source>Run the website of a non-profit on Exponential: members and volunteers, fundraising pages, accessibility, transparency and small budgets.</source>
+        <translation>נהלו את אתר העמותה ב-Exponential: חברים ומתנדבים, דפי גיוס תרומות, נגישות, שקיפות ותקציבים קטנים.</translation>
+    </message>
+    <message>
+        <source>Non-profit organizations</source>
+        <translation>ארגונים ללא מטרות רווח</translation>
+    </message>
+    <message>
+        <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
+        <translation>Exponential לעמותות: חברים, מתנדבים, דפי גיוס תרומות, נגישות ושקיפות.</translation>
+    </message>
+    <message>
+        <source>Local businesses</source>
+        <translation>עסקים מקומיים</translation>
+    </message>
+    <message>
+        <source>Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.</source>
+        <translation>העלו עסק מקומי לרשת עם Exponential: שעות פתיחה, דפי מיקום ויצירת קשר, חיפוש מקומי, חנות פשוטה ותקציב קטן.</translation>
+    </message>
+    <message>
+        <source>Local business</source>
+        <translation>עסק מקומי</translation>
+    </message>
+    <message>
+        <source>Exponential for local businesses: opening hours, location pages, local search and a simple shop.</source>
+        <translation>Exponential לעסקים מקומיים: שעות פתיחה, דפי מיקום, חיפוש מקומי וחנות פשוטה.</translation>
+    </message>
+    <message>
+        <source>Individuals</source>
+        <translation>אנשים פרטיים</translation>
+    </message>
+    <message>
+        <source>Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.</source>
+        <translation>בנו אתר משלכם עם Exponential: אתר אישי, תיק עבודות, בלוג, אתר משפחה או מועדון, צעד אחר צעד.</translation>
+    </message>
+    <message>
+        <source>Personal sites</source>
+        <translation>אתרים אישיים</translation>
+    </message>
+    <message>
+        <source>Personal sites with Exponential: portfolios, blogs, family and club sites.</source>
+        <translation>אתרים אישיים עם Exponential: תיקי עבודות, בלוגים, אתרי משפחה ומועדון.</translation>
+    </message>
+    <message>
+        <source>Non-technical people</source>
+        <translation>אנשים ללא רקע טכני</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.</source>
+        <translation>Exponential בשפה פשוטה: בלי שורת פקודה, בחירת אחסון, המילים שתפגשו ומדריכים פשוטים.</translation>
+    </message>
+    <message>
+        <source>Plain-language help</source>
+        <translation>עזרה בשפה פשוטה</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
+        <translation>Exponential בשפה פשוטה: מדריכים בלי שורת הפקודה, בחירות אחסון ומילון מונחים.</translation>
+    </message>
+    <message>
+        <source>Students and learners</source>
+        <translation>סטודנטים ולומדים</translation>
+    </message>
+    <message>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>למדו את Exponential: מסלולי למידה, האתר הראשון שלכם, פרויקטי לימוד, הסמכות מתוכננות ורמת השותפות Student.</translation>
+    </message>
+    <message>
+        <source>Learning Exponential</source>
+        <translation>לימוד Exponential</translation>
+    </message>
+    <message>
+        <source>Learning Exponential: learning paths, first sites, study projects and certifications.</source>
+        <translation>לימוד Exponential: מסלולי למידה, אתרים ראשונים, פרויקטי לימוד והסמכות.</translation>
+    </message>
+    <message>
+        <source>Use and run Exponential</source>
+        <translation>שימוש ב-Exponential והפעלתו</translation>
+    </message>
+    <message>
+        <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
+        <translation>עורכים, מנהלי מערכת, מפתחים ומשתמשים, וכל מי שיש לו אתר משלו.</translation>
+    </message>
+    <message>
+        <source>Organizations</source>
+        <translation>ארגונים</translation>
+    </message>
+    <message>
+        <source>Businesses, public bodies and non-profits, and the people who lead and sell their projects.</source>
+        <translation>עסקים, גופים ציבוריים ועמותות, והאנשים שמובילים ומוכרים את הפרויקטים שלהם.</translation>
+    </message>
+    <message>
+        <source>Build with Exponential</source>
+        <translation>בנייה עם Exponential</translation>
+    </message>
+    <message>
+        <source>Designers, developers and engineers who build sites, themes, applications and integrations.</source>
+        <translation>מעצבים, מפתחים ומהנדסים שבונים אתרים, ערכות נושא, יישומים ואינטגרציות.</translation>
+    </message>
+    <message>
+        <source>Host, sell and partner</source>
+        <translation>אחסון, מכירה ושותפות</translation>
+    </message>
+    <message>
+        <source>Partners, hosting companies, resellers and bundlers who bring Exponential to their customers.</source>
+        <translation>שותפים, חברות אחסון, משווקים חוזרים ואורזי חבילות שמביאים את Exponential ללקוחות שלהם.</translation>
+    </message>
+    <message>
+        <source>Community and learning</source>
+        <translation>קהילה ולמידה</translation>
+    </message>
+    <message>
+        <source>The community and the ecosystem, supporters and sponsors, the media, trainers and students.</source>
+        <translation>הקהילה והאקוסיסטם, תומכים ונותני חסות, המדיה, מדריכים וסטודנטים.</translation>
+    </message>
+    <message>
+        <source>Exponential Partners contribute financially to the sustained future of the project, contribute code and more back to the project, and engage directly with 7x and the Exponential Foundation.</source>
+        <translation>השותפים של Exponential תורמים כספית לעתידו המתמשך של הפרויקט, מחזירים לפרויקט קוד ועוד ועובדים ישירות עם 7x ועם Exponential Foundation.</translation>
+    </message>
+    <message>
+        <source>Exponential Community members use, contribute to, promote and develop software using Exponential worldwide.</source>
+        <translation>חברי קהילת Exponential ברחבי העולם משתמשים ב-Exponential, תורמים לו, מקדמים אותו ומפתחים איתו תוכנה.</translation>
+    </message>
+    <message>
+        <source>The greater ecosystem extends beyond the community to cover all aspects of the Exponential world within the PHP stack: its users and creators.</source>
+        <translation>האקוסיסטם הרחב חורג מעבר לקהילה ומקיף את כל היבטי עולם Exponential בסביבת PHP: המשתמשים והיוצרים שלו.</translation>
+    </message>
+    <message>
+        <source>%count audiences</source>
+        <translation>%count קהלים</translation>
+    </message>
+    <message>
+        <source>More audiences</source>
+        <translation>קהלים נוספים</translation>
     </message>
 </context>
 <context>

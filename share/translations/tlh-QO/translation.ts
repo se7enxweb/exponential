@@ -20735,8 +20735,8 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>INI DuHmey</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>INI ghItlh Hoch laDlu&apos;, mIw tlheghDaq: wa&apos;DIch settings/&lt;file&gt;.ini, ghIq chu&apos;lu&apos;ta&apos;bogh chelwI&apos;mey yoS lojmIt je ghItlhmey, ghIq settings/override. Qav ghItlh Qap: ngoD nap tam, &apos;ej tetlhDaq chel, wa&apos;DIch tetlh chImmoHbe&apos;chugh. QaptaHbogh ngoD, ngoD Hal ghItlh, lanbogh ghItlh Hoch je &apos;ang navvam. pegh mu&apos;mey, ngaQHa&apos;moHwI&apos;mey, mu&apos;Hommey, peghmey latlh je not &apos;anglu&apos;.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>INI ghItlh Hoch laDlu&apos;, mIw tlheghDaq: wa&apos;DIch settings/&lt;file&gt;.ini, ghIq ActiveAccessExtensions, ghIq yoS lojmIt (wa&apos;DIch chelwI&apos;mey, Qav settings/siteaccess), ghIq ActiveExtensions, ghIq settings/override. Qav ghItlh Qap: ngoD nap tam, &apos;ej tetlhDaq chel, wa&apos;DIch tetlh chImmoHbe&apos;chugh. QaptaHbogh ngoD, ngoD Hal ghItlh, lanbogh ghItlh Hoch je &apos;ang navvam. pegh mu&apos;mey, ngaQHa&apos;moHwI&apos;mey, mu&apos;Hommey, peghmey latlh je not &apos;anglu&apos;.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>
@@ -73214,6 +73214,398 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Search the whole help</source>
         <translation>Hoch QaH yInej</translation>
+    </message>
+    <message>
+        <source>Community</source>
+        <translation>ghom</translation>
+    </message>
+    <message>
+        <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>
+        <translation>qo' Hoch Daq Exponential yIlo', yIDel, yIchenmoH je: muvghach, ghItlh He, yInmey, ghom chut, nobmey je.</translation>
+    </message>
+    <message>
+        <source>The Exponential community: taking part, channels, events, the code of conduct and contributing.</source>
+        <translation>Exponential ghom: muvghach, ghItlh He, yInmey, ghom chut, nobmey je.</translation>
+    </message>
+    <message>
+        <source>Ecosystem</source>
+        <translation>yInroH</translation>
+    </message>
+    <message>
+        <source>The wider Exponential world in the PHP stack: its products, extensions, distributions, partners, users and creators.</source>
+        <translation>PHP qachDaq Exponential qo' tIn: Doch, chelwI'mey, ngevmey, jupma'pu', lo'wI'pu', chenmoHwI'pu' je.</translation>
+    </message>
+    <message>
+        <source>The Exponential ecosystem in the PHP stack: products, extensions, distributions, partners, users and creators.</source>
+        <translation>PHP qachDaq Exponential yInroH: Doch, chelwI'mey, ngevmey, jupma'pu', lo'wI'pu', chenmoHwI'pu' je.</translation>
+    </message>
+    <message>
+        <source>PHP Developers</source>
+        <translation>PHP chenmoHwI'pu'</translation>
+    </message>
+    <message>
+        <source>Work on Exponential in PHP: the kernel and its classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>PHP Hol Exponential yIvum: botlh 'ej Segh, autoload, ra'wI' tlhegh, Composer, waHmey, ngoq chutmey je.</translation>
+    </message>
+    <message>
+        <source>PHP development</source>
+        <translation>PHP chenmoHghach</translation>
+    </message>
+    <message>
+        <source>PHP development on Exponential: the kernel, classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>Exponential Daq PHP chenmoHghach: botlh, Segh, autoload, ra'wI' tlhegh, Composer, waHmey, ngoq chutmey je.</translation>
+    </message>
+    <message>
+        <source>Theme designers</source>
+        <translation>nagh beQ HaqwI'pu'</translation>
+    </message>
+    <message>
+        <source>Design themes for Exponential: designs and overrides, templates, stylesheets and assets, packaging a theme and keeping it current.</source>
+        <translation>Exponential nagh beQmey yInab: nabmey tamghachmey je, nagh beQ chenmoHwI', Hew mIwmey, jo je, nagh beQ yIvay' 'ej ghu' yIQorgh.</translation>
+    </message>
+    <message>
+        <source>Resellers</source>
+        <translation>ngevwI'pu'</translation>
+    </message>
+    <message>
+        <source>Resell Exponential and the services around it: hosting, support and implementation packages, pricing, licensing and partners.</source>
+        <translation>Exponential 'ej QaHghachmey nIqHom yIngevqa': Qum 'aD, QaH, chenmoHghach vay'mey, 'Iq, chaw' jupma'pu' je.</translation>
+    </message>
+    <message>
+        <source>Reselling</source>
+        <translation>ngevqa'ghach</translation>
+    </message>
+    <message>
+        <source>Reselling Exponential: service packages, hosting and support, pricing, licensing and working with partners.</source>
+        <translation>Exponential ngevqa'ghach: QaHghach vay'mey, Qum 'aD QaH je, 'Iq, chaw', jupma'pu' tlhej vum je.</translation>
+    </message>
+    <message>
+        <source>Bundlers</source>
+        <translation>vay' tlhonwI'pu'</translation>
+    </message>
+    <message>
+        <source>Bundle Exponential: distributions, site packages, extensions and installers, with their versions, licenses and updates.</source>
+        <translation>Exponential yItlhon: ngevmey, Daq vay'mey, chelwI'mey, jomwI'mey je, mI'mey, chaw'mey, chu'qa'ghachmey je.</translation>
+    </message>
+    <message>
+        <source>Bundles and distributions</source>
+        <translation>vay'mey ngevmey je</translation>
+    </message>
+    <message>
+        <source>Bundling Exponential: distributions, site packages, extensions, installers, versions and licenses.</source>
+        <translation>Exponential tlhonghach: ngevmey, Daq vay'mey, chelwI'mey, jomwI'mey, mI'mey, chaw'mey je.</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic</source>
+        <translation>De'wI' Qub, ghoqwI'pu', ghoqwI' vum je</translation>
+    </message>
+    <message>
+        <source>Work with AI and agents in Exponential: the writing assistant expai, agent access through the APIs, agentic workflows and safety.</source>
+        <translation>Exponential Daq De'wI' Qub ghoqwI'pu' je tlhej yIvum: ghItlhmeH QaHwI' expai, API vegh ghoqwI' 'el, ghoqwI' vum mIwmey, Hung je.</translation>
+    </message>
+    <message>
+        <source>AI and agents</source>
+        <translation>De'wI' Qub ghoqwI'pu' je</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic work with Exponential: the writing assistant expai, the APIs, workflows and safety.</source>
+        <translation>De'wI' Qub, ghoqwI'pu', ghoqwI' vum je Exponential tlhej: ghItlhmeH QaHwI' expai, API, vum mIwmey, Hung je.</translation>
+    </message>
+    <message>
+        <source>Software Engineers</source>
+        <translation>ghun 'enteySyIn pu'</translation>
+    </message>
+    <message>
+        <source>Engineer software on Exponential: architecture, the request cycle, caching, testing, quality gates and maintainability.</source>
+        <translation>Exponential Daq ghun yIchenmoH: qach nab, tlhob mIw, pol, waHghach, pov ngaQmey, QorghlaHghach je.</translation>
+    </message>
+    <message>
+        <source>Software engineering</source>
+        <translation>ghun 'enteySyInghach</translation>
+    </message>
+    <message>
+        <source>Software engineering on Exponential: architecture, the request cycle, caching, testing and quality.</source>
+        <translation>Exponential Daq ghun 'enteySyInghach: qach nab, tlhob mIw, pol, waHghach, pov je.</translation>
+    </message>
+    <message>
+        <source>Adopters</source>
+        <translation>lajwI'pu'</translation>
+    </message>
+    <message>
+        <source>Adopt Exponential: evaluate it, plan the move, migrate content, train your team and run it with confidence.</source>
+        <translation>Exponential yIlaj: yIwuq, choHghach yInab, ngaSwI' yIghoS, ghomlIj yIghojmoH, yIQorgh 'ej yIvoq.</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential</source>
+        <translation>Exponential lajghach</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential: evaluation, planning, migration, training and running it.</source>
+        <translation>Exponential lajghach: wuqghach, nab, ghoSghach, ghojmoHghach, QorghtaHghach je.</translation>
+    </message>
+    <message>
+        <source>Mobile App Developers</source>
+        <translation>ghun ngaj chenmoHwI'pu'</translation>
+    </message>
+    <message>
+        <source>Build mobile apps on Exponential content: the REST APIs, authentication, content as JSON, images and caching.</source>
+        <translation>Exponential ngaSwI' Daq ghun ngaj yIchenmoH: REST API, 'ol, JSON ngaSwI', mIllogh, pol je.</translation>
+    </message>
+    <message>
+        <source>Mobile apps</source>
+        <translation>ghun ngaj</translation>
+    </message>
+    <message>
+        <source>Mobile apps on Exponential content: the REST APIs, authentication, JSON content, images and caching.</source>
+        <translation>Exponential ngaSwI' Daq ghun ngaj: REST API, 'ol, JSON ngaSwI', mIllogh, pol je.</translation>
+    </message>
+    <message>
+        <source>Web Framework Developers</source>
+        <translation>De'wI' Qum qach chenmoHwI'pu'</translation>
+    </message>
+    <message>
+        <source>Combine Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential De'wI' Qum qachmey tlhej yIrar: Composer, API, ngaSwI' yIlan, Hoch tlhoQ yIQorgh.</translation>
+    </message>
+    <message>
+        <source>Web frameworks</source>
+        <translation>De'wI' Qum qachmey</translation>
+    </message>
+    <message>
+        <source>Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>De'wI' Qum qachmey tlhej Exponential: Composer, API, ngaSwI' langhach, Hoch tlhoQ QorghtaHghach je.</translation>
+    </message>
+    <message>
+        <source>CMS Developers</source>
+        <translation>CMS chenmoHwI'pu'</translation>
+    </message>
+    <message>
+        <source>Develop on a content management system: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>ngaSwI' loHmeH pat Daq yIchenmoH: ngaSwI' Segh, chenmoHwI', vum mIwmey, chaw'mey, law' Daq, Holmey je.</translation>
+    </message>
+    <message>
+        <source>CMS development</source>
+        <translation>CMS chenmoHghach</translation>
+    </message>
+    <message>
+        <source>CMS development with Exponential: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Exponential tlhej CMS chenmoHghach: ngaSwI' Segh, chenmoHwI', vum mIwmey, chaw'mey, law' Daq, Holmey je.</translation>
+    </message>
+    <message>
+        <source>DXP Developers</source>
+        <translation>DXP chenmoHwI'pu'</translation>
+    </message>
+    <message>
+        <source>Develop for Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP yIchenmoH: Symfony ngev, loHmeH HaSta, REST GraphQL je, Exponential 6 vo' chay' pIm.</translation>
+    </message>
+    <message>
+        <source>DXP development</source>
+        <translation>DXP chenmoHghach</translation>
+    </message>
+    <message>
+        <source>Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL APIs, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP: Symfony ngev, loHmeH HaSta, REST GraphQL API je, Exponential 6 vo' chay' pIm.</translation>
+    </message>
+    <message>
+        <source>E-commerce</source>
+        <translation>De'wI' Suy'</translation>
+    </message>
+    <message>
+        <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
+        <translation>Exponential tlhej yIngev: Suy' Daq, Doch 'Iq je, Suy' 'Iq, ra'mey, DIlmey, Hoch jaj Suy' QorghtaHghach je.</translation>
+    </message>
+    <message>
+        <source>E-commerce with Exponential: the shop, products, prices, VAT, orders and payments.</source>
+        <translation>Exponential tlhej De'wI' Suy': Suy' Daq, Doch, 'Iq, Suy' 'Iq, ra'mey, DIlmey je.</translation>
+    </message>
+    <message>
+        <source>Integrators</source>
+        <translation>rarwI'pu'</translation>
+    </message>
+    <message>
+        <source>Connect Exponential to other systems: the REST APIs, RSS feeds, imports and exports, and search.</source>
+        <translation>Exponential latlh patmey yIrar: REST API, RSS ghItlh He, ghoS 'ej mej, nejghach je.</translation>
+    </message>
+    <message>
+        <source>Integration</source>
+        <translation>rarghach</translation>
+    </message>
+    <message>
+        <source>Integrating Exponential with other systems: the APIs, feeds, imports, exports and search.</source>
+        <translation>Exponential latlh patmey rarghach: API, ghItlh He, ghoS, mej, nejghach je.</translation>
+    </message>
+    <message>
+        <source>Database Administrators</source>
+        <translation>De' qawHaq loHwI'pu'</translation>
+    </message>
+    <message>
+        <source>Run the database behind Exponential: the supported databases, schema and upgrades, backups and restores, and performance.</source>
+        <translation>Exponential De' qawHaq yIQorgh: De' qawHaq lo'laHbogh, mIw 'ej chu'qa'ghach, ngoq ta'mey 'ej chu'qa'ghach, Do je.</translation>
+    </message>
+    <message>
+        <source>Database administration</source>
+        <translation>De' qawHaq loHghach</translation>
+    </message>
+    <message>
+        <source>Database administration for Exponential: the supported databases, schema, upgrades, backups and performance.</source>
+        <translation>Exponential De' qawHaq loHghach: De' qawHaq lo'laHbogh, mIw, chu'qa'ghach, ngoq ta'mey, Do je.</translation>
+    </message>
+    <message>
+        <source>Podcasters, radio and streaming</source>
+        <translation>ja'wI' QIch, rIn'a' rIn'a' je</translation>
+    </message>
+    <message>
+        <source>Publish podcasts, radio and streams with Exponential: audio and video, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Exponential tlhej QIch, rIn'a', rIn'a' ghItlh je yIchenmoH: wab mIllogh je, ghItlh He, lanmey, ja' qonwI', poH nab, chaw'mey je.</translation>
+    </message>
+    <message>
+        <source>Podcasting and streaming</source>
+        <translation>QIch rIn'a' je</translation>
+    </message>
+    <message>
+        <source>Podcasts, radio and streaming with Exponential: audio and video media, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Exponential tlhej QIch, rIn'a', rIn'a' ghItlh je: wab mIllogh je, ghItlh He, lanmey, ja' qonwI', poH nab, chaw'mey je.</translation>
+    </message>
+    <message>
+        <source>Non-profits</source>
+        <translation>Huch nejbe'bogh ghommey</translation>
+    </message>
+    <message>
+        <source>Run the website of a non-profit on Exponential: members and volunteers, fundraising pages, accessibility, transparency and small budgets.</source>
+        <translation>Huch nejbe'bogh ghom Daq Exponential tlhej yIQorgh: ghom ngaj QaHwI'pu' je, Huch boSmeH Daqmey, naDev 'elghach, leghlaHghach, Huch mach je.</translation>
+    </message>
+    <message>
+        <source>Non-profit organizations</source>
+        <translation>Huch nejbe'bogh ghommey</translation>
+    </message>
+    <message>
+        <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
+        <translation>Huch nejbe'bogh ghommey Exponential: ghom ngaj, QaHwI'pu', Huch boSmeH Daqmey, naDev 'elghach, leghlaHghach je.</translation>
+    </message>
+    <message>
+        <source>Local businesses</source>
+        <translation>Daq Suy'mey</translation>
+    </message>
+    <message>
+        <source>Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.</source>
+        <translation>Exponential tlhej Daq Suy' yIchu': poSmoH rep, Daq ja'chuqmeH Daqmey je, Daq nejghach, Suy' Daq nap, Huch mach je.</translation>
+    </message>
+    <message>
+        <source>Local business</source>
+        <translation>Daq Suy'</translation>
+    </message>
+    <message>
+        <source>Exponential for local businesses: opening hours, location pages, local search and a simple shop.</source>
+        <translation>Daq Suy'mey Exponential: poSmoH rep, Daq Daqmey, Daq nejghach, Suy' Daq nap je.</translation>
+    </message>
+    <message>
+        <source>Individuals</source>
+        <translation>nuvpu'</translation>
+    </message>
+    <message>
+        <source>Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.</source>
+        <translation>Exponential tlhej Datu' yIchenmoH: nuv Daq, vum qonwI', ghItlh mIw, qorDu' Daq ghom Daq ghap, mIw tlhIH.</translation>
+    </message>
+    <message>
+        <source>Personal sites</source>
+        <translation>nuv Daqmey</translation>
+    </message>
+    <message>
+        <source>Personal sites with Exponential: portfolios, blogs, family and club sites.</source>
+        <translation>Exponential tlhej nuv Daqmey: vum qonwI', ghItlh mIw, qorDu' ghom Daqmey je.</translation>
+    </message>
+    <message>
+        <source>Non-technical people</source>
+        <translation>QaQ De'wI' Sovbe'bogh nuvpu'</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.</source>
+        <translation>Exponential Hol nap: ra'wI' tlhegh pagh, Qum 'aD yIwIv, mu'mey DaghomlI'bogh, mIw nap je.</translation>
+    </message>
+    <message>
+        <source>Plain-language help</source>
+        <translation>Hol nap QaH</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
+        <translation>Exponential Hol nap: ra'wI' tlhegh Hutlhbogh mIw, Qum 'aD wIvmey, mu' ghItlh je.</translation>
+    </message>
+    <message>
+        <source>Students and learners</source>
+        <translation>ghojwI'pu'</translation>
+    </message>
+    <message>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential yIghoj: ghojmeH He, wa'DIch DaqlIj, ghojmeH vay'mey, nablu'bogh ngoq ta'mey, ghojwI' jupma' patlh je.</translation>
+    </message>
+    <message>
+        <source>Learning Exponential</source>
+        <translation>Exponential ghojghach</translation>
+    </message>
+    <message>
+        <source>Learning Exponential: learning paths, first sites, study projects and certifications.</source>
+        <translation>Exponential ghojghach: ghojmeH He, wa'DIch Daqmey, ghojmeH vay'mey, ngoq ta'mey je.</translation>
+    </message>
+    <message>
+        <source>Use and run Exponential</source>
+        <translation>Exponential yIlo' 'ej yIQorgh</translation>
+    </message>
+    <message>
+        <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
+        <translation>ghItlhwI'pu', loHwI'pu', chenmoHwI'pu', lo'wI'pu' je, 'ej Daq ghajbogh Hoch.</translation>
+    </message>
+    <message>
+        <source>Organizations</source>
+        <translation>ghommey</translation>
+    </message>
+    <message>
+        <source>Businesses, public bodies and non-profits, and the people who lead and sell their projects.</source>
+        <translation>malja'mey, qum ghommey, Huch nejbe'bogh ghommey je, 'ej vay'meychaj DevwI'pu' ngevwI'pu' je.</translation>
+    </message>
+    <message>
+        <source>Build with Exponential</source>
+        <translation>Exponential tlhej yIchenmoH</translation>
+    </message>
+    <message>
+        <source>Designers, developers and engineers who build sites, themes, applications and integrations.</source>
+        <translation>nagh beQ chenmoHwI'pu', chenmoHwI'pu', 'enteySyIn pu' je: Daqmey, nagh beQmey, ghunmey, rarghachmey je chenmoH.</translation>
+    </message>
+    <message>
+        <source>Host, sell and partner</source>
+        <translation>Qum 'aD, ngev, jupma' je</translation>
+    </message>
+    <message>
+        <source>Partners, hosting companies, resellers and bundlers who bring Exponential to their customers.</source>
+        <translation>jupma'pu', Qum 'aD ghommey, ngevwI'pu', vay' tlhonwI'pu' je: je'wI'pu'chaj Daq Exponential qem.</translation>
+    </message>
+    <message>
+        <source>Community and learning</source>
+        <translation>ghom ghojghach je</translation>
+    </message>
+    <message>
+        <source>The community and the ecosystem, supporters and sponsors, the media, trainers and students.</source>
+        <translation>ghom yInroH je, QaHwI'pu' Huch nobwI'pu' je, De'ghom, ghojmoHwI'pu', ghojwI'pu' je.</translation>
+    </message>
+    <message>
+        <source>Exponential Partners contribute financially to the sustained future of the project, contribute code and more back to the project, and engage directly with 7x and the Exponential Foundation.</source>
+        <translation>Exponential jupma'pu' vay' ghu' 'eb ret Huch nob, ngoq latlh je vay' Daq nobqa', 7x Exponential Foundation je tlhej vum.</translation>
+    </message>
+    <message>
+        <source>Exponential Community members use, contribute to, promote and develop software using Exponential worldwide.</source>
+        <translation>Exponential ghom ngaj qo' Hoch Daq Exponential lo', nob, Del, ghun chenmoH je.</translation>
+    </message>
+    <message>
+        <source>The greater ecosystem extends beyond the community to cover all aspects of the Exponential world within the PHP stack: its users and creators.</source>
+        <translation>yInroH tIn ghom vegh 'oH 'ej PHP qachDaq Exponential qo' Hoch Hap: lo'wI'pu' chenmoHwI'pu' je.</translation>
+    </message>
+    <message>
+        <source>%count audiences</source>
+        <translation>%count ghotpu' Segh</translation>
+    </message>
+    <message>
+        <source>More audiences</source>
+        <translation>latlh ghotpu' Segh</translation>
     </message>
 </context>
 <context>

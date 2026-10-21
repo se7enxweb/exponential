@@ -26,11 +26,33 @@
                                   'supporter', 'Supporters'|i18n( 'kernel/exphelp' ),
                                   'sponsor', 'Sponsors'|i18n( 'kernel/exphelp' ),
                                   'customer', 'Customers'|i18n( 'kernel/exphelp' ),
+                                  'community', 'Community'|i18n( 'kernel/exphelp' ),
+                                  'ecosystem', 'Ecosystem'|i18n( 'kernel/exphelp' ),
+                                  'php-developer', 'PHP Developers'|i18n( 'kernel/exphelp' ),
+                                  'theme-designer', 'Theme designers'|i18n( 'kernel/exphelp' ),
+                                  'reseller', 'Resellers'|i18n( 'kernel/exphelp' ),
+                                  'bundler', 'Bundlers'|i18n( 'kernel/exphelp' ),
+                                  'ai-agents', 'AI, agents and agentic'|i18n( 'kernel/exphelp' ),
+                                  'software-engineer', 'Software Engineers'|i18n( 'kernel/exphelp' ),
+                                  'adopter', 'Adopters'|i18n( 'kernel/exphelp' ),
+                                  'mobile-app-developer', 'Mobile App Developers'|i18n( 'kernel/exphelp' ),
+                                  'web-framework-developer', 'Web Framework Developers'|i18n( 'kernel/exphelp' ),
+                                  'cms-developer', 'CMS Developers'|i18n( 'kernel/exphelp' ),
+                                  'dxp-developer', 'DXP Developers'|i18n( 'kernel/exphelp' ),
+                                  'ecommerce', 'E-commerce'|i18n( 'kernel/exphelp' ),
+                                  'integrator', 'Integrators'|i18n( 'kernel/exphelp' ),
+                                  'dba', 'Database Administrators'|i18n( 'kernel/exphelp' ),
+                                  'podcaster', 'Podcasters, radio and streaming'|i18n( 'kernel/exphelp' ),
+                                  'non-profit', 'Non-profits'|i18n( 'kernel/exphelp' ),
+                                  'local-business', 'Local businesses'|i18n( 'kernel/exphelp' ),
+                                  'individual', 'Individuals'|i18n( 'kernel/exphelp' ),
+                                  'non-technical', 'Non-technical people'|i18n( 'kernel/exphelp' ),
+                                  'student', 'Students and learners'|i18n( 'kernel/exphelp' ),
                                   'government', 'Governments'|i18n( 'kernel/exphelp' ),
                                   'businesses', 'Businesses'|i18n( 'kernel/exphelp' ),
                                   'press', 'Press, media and influencers'|i18n( 'kernel/exphelp' ),
                                   'trainer', 'Trainers'|i18n( 'kernel/exphelp' ) )
-     $help_audience_icons = hash( 'editor', 'pencil-square', 'admin', 'gear', 'developer', 'code-square', 'user', 'person', 'project-manager', 'diagram-3', 'sales-marketing', 'graph-up-arrow', 'partner', 'building', 'advocate', 'people', 'designer', 'palette', 'hosting', 'database', 'app-creator', 'phone', 'website-creator', 'globe', 'supporter', 'star', 'sponsor', 'piggy-bank', 'customer', 'person-check', 'government', 'bank', 'businesses', 'briefcase', 'press', 'megaphone', 'trainer', 'easel' )
+     $help_audience_icons = hash( 'editor', 'pencil-square', 'admin', 'gear', 'developer', 'code-square', 'user', 'person', 'project-manager', 'diagram-3', 'sales-marketing', 'graph-up-arrow', 'partner', 'building', 'advocate', 'people', 'designer', 'palette', 'hosting', 'database', 'app-creator', 'phone', 'website-creator', 'globe', 'supporter', 'star', 'sponsor', 'piggy-bank', 'customer', 'person-check', 'government', 'bank', 'businesses', 'briefcase', 'press', 'megaphone', 'trainer', 'easel', 'community', 'chat-left-dots', 'ecosystem', 'globe2', 'php-developer', 'terminal', 'theme-designer', 'brush', 'reseller', 'tag', 'bundler', 'box-seam', 'ai-agents', 'cpu', 'software-engineer', 'tools', 'adopter', 'check2-square', 'mobile-app-developer', 'phone-flip', 'web-framework-developer', 'diagram-2', 'cms-developer', 'file-earmark-code', 'dxp-developer', 'display', 'ecommerce', 'tags', 'integrator', 'plug', 'dba', 'table', 'podcaster', 'collection-play', 'non-profit', 'people', 'local-business', 'geo-alt', 'individual', 'person-circle', 'non-technical', 'chat-square-text', 'student', 'book' )
      $help_q = cond( and( is_set( $help_search ), is_set( $help_search.query ) ), $help_search.query, '' )
      $help_browse = and( is_set( $help_search.mode ), $help_search.mode|eq( 'browse' ) )
      $help_f = cond( is_set( $help_filters ), $help_filters, hash() )

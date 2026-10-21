@@ -144,7 +144,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 
 ## I
 
-- **INI file** (INI-Datei): eine Einstellungsdatei (`site.ini`, `content.ini`, ...) in Blöcken von `Key=Value`; gelesen in der Reihenfolge: Standards, Extensions, Siteaccess, Überschreibung. [Platzierungen von INI-Überschreibungen](spezifikationen/6.0/ini-override-platzierungen.md), [exp:ini](funktionen/6.0/exp-ini-befehl.md).
+- **INI file** (INI-Datei): eine Einstellungsdatei (`site.ini`, `content.ini`, ...) in Blöcken von `Key=Value`; gelesen in der Reihenfolge, eine spätere Datei gewinnt: Standards, Siteaccess, Extensions, Überschreibung. [Platzierungen von INI-Überschreibungen](spezifikationen/6.0/ini-override-platzierungen.md), [exp:ini](funktionen/6.0/exp-ini-befehl.md).
 - **install type** (Installationstyp): ein benannter Installer der **Exponential Platform** (`exponential-oss`, `ibexa-oss`, `exponential-media`, `exponential-cjw`), ausgeführt mit `exponential:install <type>`. [SQLite-Installer der Plattform](spezifikationen/6.0/platform-sqlite-installer.md).
 - **installation name** (Installationsname): der Name, der auf Seiten außerhalb der Produktion angezeigt wird, damit Staging nie für die Produktion gehalten wird. [Installationsname](funktionen/6.0/installationsname-in-seiten.md).
 - **installer / install** (Installer): `./console exp:install` installiert eine ganze Website mit einem Befehl. [Installation mit einem Befehl](funktionen/6.0/installation-mit-einem-befehl.md).
