@@ -1,0 +1,926 @@
+{
+    "ini:settings/site.ini [RunnableSettings] Listeners": {
+        "en": "Listeners of the runnables' events, in the form of [Event] Listeners[]:\nListeners[]=<event>@<callback>\nThe events, <kind> being command, cronjob or view:\n  runnable/<kind>/before   notified with ( $runnable, $class, $scope ) before run()\n  runnable/<kind>/after    filters the result: ( $result, $runnable, $class, $scope ),\n                           returns the result to use\neg:\nListeners[]=runnable/view/after@myViewTimer::after\nThese are attached for the runnables in every context, the command line too\n([Event] Listeners[] is attached to web requests only).\nA command is created before its script has read the siteaccess and extension\nsettings, so Implementation[] and Listeners[] for a command are read from\nsettings/site.ini and settings/override/site.ini.append.php only.\n\nruncronjobs.php asks one more filter before the scripts of a part run, after the\nsiteaccess and extension settings are loaded (its listener may come from either):\n  cronjob/part/run         ( true, $part, $siteaccess, $scripts, $single ); return\n                           true to run the part, anything else leaves it out. $part\n                           is '' for [CronjobSettings] and for --script; $single is\n                           true for --script, whose one file name is in $scripts\nListeners[]=cronjob/part/run@myCronjobStop::partRun\nGuide: doc/eng-us/features/6.0/cronjob-part-filter.md",
+        "de": "Listener der Ereignisse der Runnables, in der Form von [Event] Listeners[]:\nListeners[]=<event>@<callback>\nDie Ereignisse, wobei <kind> command, cronjob oder view ist:\n  runnable/<kind>/before   benachrichtigt mit ( $runnable, $class, $scope ) vor run()\n  runnable/<kind>/after    filtert das Ergebnis: ( $result, $runnable, $class, $scope ),\n                           gibt das zu verwendende Ergebnis zurück\nz. B.:\nListeners[]=runnable/view/after@myViewTimer::after\nDiese werden für die Runnables in jedem Kontext angehängt, auch auf der Kommandozeile\n([Event] Listeners[] wird nur an Web-Anfragen angehängt).\nEin Befehl wird erzeugt, bevor sein Skript die Siteaccess- und Erweiterungs-\neinstellungen gelesen hat, daher werden Implementation[] und Listeners[] für einen Befehl nur aus\nsettings/site.ini und settings/override/site.ini.append.php gelesen.\n\nruncronjobs.php fragt einen weiteren Filter, bevor die Skripte eines Teils laufen, nachdem die\nSiteaccess- und Erweiterungseinstellungen geladen sind (sein Listener kann aus beiden kommen):\n  cronjob/part/run         ( true, $part, $siteaccess, $scripts, $single ); geben Sie\n                           true zurück, um den Teil auszuführen; alles andere lässt ihn aus. $part\n                           ist '' für [CronjobSettings] und für --script; $single ist\n                           true für --script, dessen einziger Dateiname in $scripts steht\nListeners[]=cronjob/part/run@myCronjobStop::partRun\nAnleitung: doc/eng-us/features/6.0/cronjob-part-filter.md"
+    },
+    "ini:settings/site.ini [SSLZoneSettings]": {
+        "en": "Settings for SSL zones\nFor more information please look at doc/eng-us/features/3.8/ssl_zones.txt.",
+        "de": "Einstellungen für SSL-Zonen\nWeitere Informationen in doc/eng-us/features/3.8/ssl_zones.txt."
+    },
+    "ini:settings/site.ini [SSLZoneSettings] ModuleViewAccessMode": {
+        "en": "Default access mode is plain HTTP.\n\nDefine a view as 'ssl' to force HTTPS access mode for this view.\nIf a view is defined as 'keep' then access mode is unknown\nfor this view, and the previous access mode is kept.\n\nDefine a view as 'nossl' to force HTTP for this module. Further\nSSL redirections will be ignored\n\nExamples:\nModuleViewAccessMode[shop/add]=ssl\nModuleViewAccessMode[shop/basket]=ssl\n\nDo not remove this line unless you know what you're doing:",
+        "de": "Der Standard-Zugriffsmodus ist einfaches HTTP.\n\nDefinieren Sie eine Ansicht als 'ssl', um für diese Ansicht den Zugriffsmodus HTTPS zu erzwingen.\nIst eine Ansicht als 'keep' definiert, ist der Zugriffsmodus für diese\nAnsicht unbekannt, und der vorherige Zugriffsmodus bleibt.\n\nDefinieren Sie eine Ansicht als 'nossl', um für dieses Modul HTTP zu erzwingen. Weitere\nSSL-Weiterleitungen werden ignoriert\n\nBeispiele:\nModuleViewAccessMode[shop/add]=ssl\nModuleViewAccessMode[shop/basket]=ssl\n\nEntfernen Sie diese Zeile nur, wenn Sie wissen, was Sie tun:"
+    },
+    "ini:settings/site.ini [SSLZoneSettings] SSLSubtrees": {
+        "en": "Content subtrees we must use SSL for.\n(currently, only content/view and content/edit respect this setting)\n\nExamples:\nSSLSubtrees[]=/news\nSSLSubtrees[]=/polls",
+        "de": "Inhalts-Teilbäume, für die SSL verwendet werden muss.\n(derzeit beachten nur content/view und content/edit diese Einstellung)\n\nBeispiele:\nSSLSubtrees[]=/news\nSSLSubtrees[]=/polls"
+    },
+    "ini:settings/site.ini [SSLZoneSettings] SSLZones": {
+        "en": "Enable/disable the SSL zones functionality.",
+        "de": "Die Funktion der SSL-Zonen aktivieren/deaktivieren."
+    },
+    "ini:settings/site.ini [SearchSettings]": {
+        "en": "Settings for the search engine framework in Exponential",
+        "de": "Einstellungen für das Suchmaschinen-Framework von Exponential"
+    },
+    "ini:settings/site.ini [SearchSettings] AllowEmptySearch": {
+        "en": "Controls whether empty searches are allowed, by default it is disabled\nsince those kind of searches will take a lot of resources.\nIf empty searching is enabled you must make sure your template\nsubmits enough limitations to the search, if not expect to really\nslow down your site",
+        "de": "Steuert, ob leere Suchen erlaubt sind; standardmäßig deaktiviert,\nweil solche Suchen viele Ressourcen brauchen.\nIst die leere Suche aktiviert, müssen Sie sicherstellen, dass Ihr Template\ngenug Einschränkungen an die Suche übergibt, sonst müssen Sie damit rechnen, dass\nIhre Website deutlich langsamer wird"
+    },
+    "ini:settings/site.ini [SearchSettings] DelayedIndexing": {
+        "en": "Controls whether objects are indexed when they are published, or delayed\nand processed later by a cronjob, can be set class based via 'classbased'\nIn this case DelayedIndexingClassList should be set with class identifiers",
+        "de": "Steuert, ob Objekte beim Veröffentlichen indiziert werden oder verzögert\nund später von einem Cronjob verarbeitet; lässt sich mit 'classbased' nach Klassen setzen\nDann sollte DelayedIndexingClassList mit Klassenbezeichnern gesetzt sein"
+    },
+    "ini:settings/site.ini [SearchSettings] DelayedIndexingClassList": {
+        "en": "List of class identifiers to use delayed indexing with.",
+        "de": "Liste der Klassenbezeichner, für die die verzögerte Indizierung verwendet wird."
+    },
+    "ini:settings/site.ini [SearchSettings] EnableWildcard": {
+        "en": "Enable or disable wildcard support for search. Note that enabling wildcard search\nmight heavily influence the performance of the system.",
+        "de": "Platzhalter in der Suche aktivieren oder deaktivieren. Beachten Sie, dass die Platzhaltersuche\ndie Leistung des Systems stark beeinflussen kann."
+    },
+    "ini:settings/site.ini [SearchSettings] ExtensionDirectories": {
+        "en": "Search extension path list. Add extension name where the search plug-in is\nlocated to this list.",
+        "de": "Liste der Pfade von Such-Erweiterungen. Fügen Sie dieser Liste den Namen der Erweiterung hinzu, in der das Such-Plugin\nliegt."
+    },
+    "ini:settings/site.ini [SearchSettings] LogSearchStats": {
+        "en": "Whether to log search stats or not\nThe search statistics store every search phrase a visitor typed, which can\nhold personal data. Disabled by default; enable it in an override when the\nstatistics in the admin interface are needed.",
+        "de": "Ob Suchstatistiken protokolliert werden\nDie Suchstatistik speichert jeden Suchbegriff, den ein Besucher eingegeben hat, was\npersonenbezogene Daten enthalten kann. Standardmäßig deaktiviert; aktivieren Sie sie in einem Override, wenn die\nStatistik in der Administrationsoberfläche gebraucht wird."
+    },
+    "ini:settings/site.ini [SearchSettings] MaximumSearchLimit": {
+        "en": "The upper value for search limits fetched from HTTP Post variables\nThis is needed to avoid users on a site to have ridiciously huge limits",
+        "de": "Der Höchstwert für Suchgrenzen, die aus HTTP-POST-Variablen geholt werden\nNötig, damit Benutzer einer Website keine lächerlich großen Grenzen angeben"
+    },
+    "ini:settings/site.ini [SearchSettings] MaximumSearchTextWords": {
+        "en": "The search views (content/search and content/advancedsearch) search for at most this many words\nand characters of a search text and cut a longer one; every word is a clause of the search engine's\nquery, and with too many of them the search fails instead of giving results (eZ Find: too many clauses)",
+        "de": "Die Suchansichten (content/search und content/advancedsearch) suchen nach höchstens so vielen Wörtern\nund Zeichen eines Suchtextes und kürzen einen längeren; jedes Wort ist eine Klausel der Abfrage der Suchmaschine,\nund bei zu vielen davon scheitert die Suche, statt Ergebnisse zu liefern (eZ Find: too many clauses)"
+    },
+    "ini:settings/site.ini [SearchSettings] MinCharacterWildcard": {
+        "en": "Set minimum number of characters in wildcard search",
+        "de": "Mindestzahl der Zeichen in einer Platzhaltersuche setzen"
+    },
+    "ini:settings/site.ini [SearchSettings] SearchViewHandling": {
+        "en": "How the search and advanced search page works,\nby default the search view does the search but it's\npossible to do the search in pure template code.\nPossible values are:\ndefault - The view code does the search and passes result to template\ntemplate - The template does the search and passes the result back to the view code",
+        "de": "Wie die Seiten Suche und erweiterte Suche arbeiten;\nstandardmäßig führt die Suchansicht die Suche aus, sie lässt sich aber auch\nrein im Template-Code ausführen.\nMögliche Werte sind:\ndefault - Der Code der Ansicht führt die Suche aus und übergibt das Ergebnis an das Template\ntemplate - Das Template führt die Suche aus und gibt das Ergebnis an den Code der Ansicht zurück"
+    },
+    "ini:settings/site.ini [SearchSettings] StopWordThresholdPercent": {
+        "en": "Do not search words which are present in more than StopWordThresholdPercent % of total objects",
+        "de": "Wörter, die in mehr als StopWordThresholdPercent % aller Objekte vorkommen, nicht suchen"
+    },
+    "ini:settings/site.ini [SearchSettings] StopWordThresholdValue": {
+        "en": "Only use stop words if total objects is greater than StopWordThresholdValue",
+        "de": "Stoppwörter nur verwenden, wenn die Gesamtzahl der Objekte größer als StopWordThresholdValue ist"
+    },
+    "ini:settings/site.ini [Session] ActivityTimeout": {
+        "en": "# DB (ezpSessionHandlerDB) Handler specific settings\nNumber of seconds before a session is considered inactive/logged out, 1 hour is standard",
+        "de": "# Einstellungen speziell für den Handler DB (ezpSessionHandlerDB)\nSekunden, bis eine Sitzung als inaktiv/abgemeldet gilt; 1 Stunde ist Standard"
+    },
+    "ini:settings/site.ini [Session] BasketCleanup": {
+        "en": "Controls how baskets are cleaned up when session expires.\nIt can take on these values:\n- cronjob - Cleanup values in a cronjob, Note: runcronjobs.php must be run\n- pageload - Cleanup on pageload when the session expires (Controlled by PHP)",
+        "de": "Steuert, wie Warenkörbe aufgeräumt werden, wenn die Sitzung abläuft.\nMögliche Werte:\n- cronjob - Aufräumen in einem Cronjob; Hinweis: runcronjobs.php muss ausgeführt werden\n- pageload - Aufräumen beim Laden einer Seite, wenn die Sitzung abläuft (von PHP gesteuert)"
+    },
+    "ini:settings/site.ini [Session] BasketCleanupAverageFrequency": {
+        "en": "Controls how often baskets are cleaned up in the cronjob\nA value of 10 means it will clean up in average 1 out of\n10 times.",
+        "de": "Steuert, wie oft Warenkörbe im Cronjob aufgeräumt werden\nEin Wert von 10 bedeutet, dass im Durchschnitt bei 1 von\n10 Läufen aufgeräumt wird."
+    },
+    "ini:settings/site.ini [Session] BasketCleanupFetchLimit": {
+        "en": "The maximum number of basket entries it will fetch in one batch\nCan be increased to improve the amount of time it uses for each\ncronjob run or decreased to reduce memory usage and load on server.",
+        "de": "Die Höchstzahl der Warenkorbeinträge, die in einem Stapel geholt werden\nKann erhöht werden, um die Zeit pro\nCronjob-Lauf zu verbessern, oder verringert, um Speicherverbrauch und Serverlast zu senken."
+    },
+    "ini:settings/site.ini [Session] BasketCleanupIdleTime": {
+        "en": "Controls how many seconds the cleanup will stay idle between\noperations. This can be increased to help keep the load down",
+        "de": "Steuert, wie viele Sekunden das Aufräumen zwischen\nOperationen pausiert. Ein höherer Wert hilft, die Last niedrig zu halten"
+    },
+    "ini:settings/site.ini [Session] BasketCleanupTime": {
+        "en": "Controls the number of seconds the cleanup can run\nThe default is 2 minutes",
+        "de": "Steuert, wie viele Sekunden das Aufräumen laufen darf\nStandard sind 2 Minuten"
+    },
+    "ini:settings/site.ini [Session] CookieAlwaysAddToHttpResponse": {
+        "en": "# Optional settings for override php.ini session cookie settings\n Lifetime of the session cookie, defined in seconds.\n Leaving the field empty or undefined means to use the default PHP setting\n - PHP setting: session.cookie_lifetime\nCookieTimeout=<int>\nExample for 6 minutes\nCookieTimeout=360\n Path on the domain where the cookie will work. Use a single slash ('/') for all paths on the domain.\n - PHP setting: session.cookie_path\nCookiePath=<string>\n Cookie domain, for example 'www.php.net'. To make cookies visible on all subdomains then the\n domain must be prefixed with a dot like '.php.net'.\n - PHP setting: session.cookie_domain\nCookieDomain=<string>\n If <true> cookie will only be sent over secure connections. <auto>, the\n default, marks it Secure whenever the request itself came over HTTPS.\nCookieSecure=auto|false|true\n Tells browser to not allow scripts to access cookie. Default: true.\nCookieHttponly=true|false\n SameSite attribute of the session cookie: Lax (default), Strict, None\n (only honoured together with Secure) or empty to send none.\n The older name SameSite (used by LoveStack) is still read when CookieSameSite is not set,\n and noted once per request as deprecated (var/log/deprecated.log); rename it to CookieSameSite.\nCookieSameSite=Lax\n enabled sends the session cookie with every response, not only when the session starts, for a load balancer\n that keeps a user on one server by the session id in the cookie. Same name, value and flags as the session\n cookie; only once a session is running, never to a visitor without one. Such a response is sent with\n Cache-Control: private, so no shared cache (proxy, CDN, service worker) keeps the session id. Default: disabled.",
+        "de": "# Optionale Einstellungen zum Überschreiben der Sitzungs-Cookie-Einstellungen aus php.ini\n Lebensdauer des Sitzungs-Cookies in Sekunden.\n Ein leeres oder nicht definiertes Feld bedeutet die Standardeinstellung von PHP\n - PHP-Einstellung: session.cookie_lifetime\nCookieTimeout=<int>\nBeispiel für 6 Minuten\nCookieTimeout=360\n Pfad auf der Domain, auf dem das Cookie gilt. Ein einzelner Schrägstrich ('/') für alle Pfade der Domain.\n - PHP-Einstellung: session.cookie_path\nCookiePath=<string>\n Cookie-Domain, zum Beispiel 'www.php.net'. Um Cookies auf allen Subdomains sichtbar zu machen, muss der\n Domain ein Punkt vorangestellt sein, etwa '.php.net'.\n - PHP-Einstellung: session.cookie_domain\nCookieDomain=<string>\n Bei <true> wird das Cookie nur über sichere Verbindungen gesendet. <auto>, der\n Standard, markiert es als Secure, sobald die Anfrage selbst über HTTPS kam.\nCookieSecure=auto|false|true\n Sagt dem Browser, Skripten keinen Zugriff auf das Cookie zu erlauben. Standard: true.\nCookieHttponly=true|false\n Attribut SameSite des Sitzungs-Cookies: Lax (Standard), Strict, None\n (nur zusammen mit Secure beachtet) oder leer, um keines zu senden.\n Der ältere Name SameSite (von LoveStack verwendet) wird weiterhin gelesen, wenn CookieSameSite nicht gesetzt ist,\n und einmal pro Anfrage als veraltet vermerkt (var/log/deprecated.log); benennen Sie ihn in CookieSameSite um.\nCookieSameSite=Lax\n enabled sendet das Sitzungs-Cookie mit jeder Antwort, nicht nur beim Start der Sitzung, für einen Lastverteiler,\n der einen Benutzer über die Sitzungs-ID im Cookie auf einem Server hält. Gleicher Name, Wert und gleiche Flags wie das Sitzungs-\n Cookie; nur sobald eine Sitzung läuft, nie an einen Besucher ohne eine. Eine solche Antwort wird mit\n Cache-Control: private gesendet, damit kein gemeinsamer Cache (Proxy, CDN, Service Worker) die Sitzungs-ID behält. Standard: disabled."
+    },
+    "ini:settings/site.ini [Session] ForceStart": {
+        "en": "# Backward compatibility settings: not applicable if using the symfony stack\nMakes session always start even if not needed (for anonymous users that just browse the site)\nby default it will not start before it is used",
+        "de": "# Einstellungen zur Rückwärtskompatibilität: nicht anwendbar mit dem Symfony-Stack\nLässt die Sitzung immer starten, auch wenn sie nicht gebraucht wird (für anonyme Benutzer, die nur die Website besuchen)\nstandardmäßig startet sie erst, wenn sie verwendet wird"
+    },
+    "ini:settings/site.ini [Session] Handler": {
+        "en": "Exponential legacy session handler (class name) : not applicable if using the symfony stack\nWhen empty uses ezpSessionHandlerPHP, a session handler that lets php remain in control\nof the session handling (def: files, as defined by session.save_handler in php.ini)\nTo get back old behavior for logged in/anonymous count & session clearing, use ezpSessionHandlerDB\nand enable ForceStart setting.",
+        "de": "Sitzungs-Handler von Exponential Legacy (Klassenname): nicht anwendbar mit dem Symfony-Stack\nWenn leer, wird ezpSessionHandlerPHP verwendet, ein Sitzungs-Handler, der PHP die Kontrolle\nüber die Sitzungsverwaltung lässt (Standard: files, wie in session.save_handler in php.ini festgelegt)\nUm das alte Verhalten für die Zählung angemeldeter/anonymer Benutzer und das Leeren von Sitzungen zurückzuerhalten, verwenden Sie ezpSessionHandlerDB\nund aktivieren Sie die Einstellung ForceStart."
+    },
+    "ini:settings/site.ini [Session] RememberMeTimeout": {
+        "en": "\"Remember me\" feature of the login.\nNumber of seconds a session cookie will last,\nif an user wants to store current session to the cookie\nshould click on \"Remember me\" checkbox on login page.\nEmpty or 0 means this ability will be disabled and CookieTimeout will be used.",
+        "de": "Die Funktion „Angemeldet bleiben“ der Anmeldung.\nSekunden, die ein Sitzungs-Cookie hält,\nwenn ein Benutzer die aktuelle Sitzung im Cookie speichern will und\nauf der Anmeldeseite das Kontrollkästchen „Angemeldet bleiben“ anklickt.\nLeer oder 0 bedeutet, dass diese Möglichkeit deaktiviert ist und CookieTimeout verwendet wird."
+    },
+    "ini:settings/site.ini [Session] SessionNameHandler": {
+        "en": "Decides how the name of the session value is handled.\nPossible values are:\ndefault - Let PHP decide the session name, this also rules\n          out the possiblity for per-siteaccess sessions.\ncustom  - Use SessionNamePrefix for name. per-siteaccess sessions are possible.",
+        "de": "Entscheidet, wie der Name des Sitzungswerts behandelt wird.\nMögliche Werte sind:\ndefault - PHP entscheidet über den Sitzungsnamen; das schließt auch\n          Sitzungen pro Siteaccess aus.\ncustom  - SessionNamePrefix als Name verwenden; Sitzungen pro Siteaccess sind möglich."
+    },
+    "ini:settings/site.ini [Session] SessionNamePerSiteAccess": {
+        "en": "Whether the session name should be unique per siteaccess.\nBy enabling this you will be able to get one unique login per siteaccess.\nSession name is md5 encoded to avoid issues with non alphanumeric characters.\nNote: Will only work if SessionNameHandler is set to custom",
+        "de": "Ob der Sitzungsname pro Siteaccess eindeutig sein soll.\nWenn Sie das aktivieren, erhalten Sie pro Siteaccess eine eigene Anmeldung.\nDer Sitzungsname ist md5-kodiert, um Probleme mit nicht alphanumerischen Zeichen zu vermeiden.\nHinweis: Funktioniert nur, wenn SessionNameHandler auf custom steht"
+    },
+    "ini:settings/site.ini [Session] SessionNamePrefix": {
+        "en": "The name of the session ID, is prefixed with the current\nsiteaccess to provide login per siteaccess.\nOnly alphanumeric characters are allowed (ref: php.net/session_name)\nNote: Will only work if SessionNameHandler is set to custom",
+        "de": "Dem Namen der Sitzungs-ID wird der aktuelle\nSiteaccess vorangestellt, um eine Anmeldung pro Siteaccess zu ermöglichen.\nNur alphanumerische Zeichen sind erlaubt (siehe php.net/session_name)\nHinweis: Funktioniert nur, wenn SessionNameHandler auf custom steht"
+    },
+    "ini:settings/site.ini [Session] SessionTimeout": {
+        "en": "Number of seconds a session will last, 3 days is standard\nOverwrites session.gc_maxlifetime when used with ezpSessionHandlerPHP",
+        "de": "Sekunden, die eine Sitzung hält; 3 Tage sind Standard\nÜberschreibt session.gc_maxlifetime, wenn ezpSessionHandlerPHP verwendet wird"
+    },
+    "ini:settings/site.ini [SettingsViewSettings] CommonINIFileList": {
+        "en": "The ini files offered at the top of the drop-down on setup > view settings,\nabove a separator, before the rest in alphabetical order. This installation\nhas just over a hundred ini files, and hunting down one of the dozen that are\nactually read every day is the whole of the problem.\n\nThe order is by how much each file is really used here, counted three ways:\nhow many override files exist for it, how often the php reads it, and how\noften the templates read it. Anything listed that this installation does not\nhave is passed over, so a shortened install shows a shorter list rather than\ndead entries.\n\nAdd to it freely: this is a convenience, and nothing depends on it.\nThe master file: everything about the site and its siteaccesses.\nDatatypes, versioning, the tree, view caching.\nDesigns, stylesheets, javascript and where they are looked for.\nThe template override rules - which template answers for which content.\nThe site menus.\nThe administration tree menu on the left.\nModules, their views and who may reach them.\nThe template engine: caching, compilation, debug.\nImage aliases and the conversion rules behind them.\nThe tabs and controls of the administration interface.\nThe content browser: what each browse button starts on and may pick.\nWorkflows and the events they are built from.\nWhat runs on which cron schedule.\nFile and cluster handling, where var files live.\nCharsets and translations.",
+        "de": "Die INI-Dateien, die oben im Auswahlfeld unter Setup > Einstellungen ansehen angeboten werden,\nüber einem Trenner, vor den übrigen in alphabetischer Reihenfolge. Diese Installation\nhat gut hundert INI-Dateien, und eine der etwa zwölf zu finden, die\ntatsächlich jeden Tag gelesen werden, ist das ganze Problem.\n\nDie Reihenfolge richtet sich danach, wie viel jede Datei hier wirklich verwendet wird, auf drei Arten gezählt:\nwie viele Override-Dateien es für sie gibt, wie oft das PHP sie liest und wie\noft die Templates sie lesen. Alles Aufgeführte, was diese Installation nicht\nhat, wird übergangen, eine verkleinerte Installation zeigt also eine kürzere Liste statt\ntoter Einträge.\n\nErgänzen Sie sie nach Belieben: Dies ist eine Bequemlichkeit, und nichts hängt davon ab.\nDie Hauptdatei: alles über die Website und ihre Siteaccesses.\nDatentypen, Versionierung, der Baum, View-Caching.\nDesigns, Stylesheets, JavaScript und wo nach ihnen gesucht wird.\nDie Regeln der Template-Overrides: welches Template für welche Inhalte antwortet.\nDie Menüs der Website.\nDas Baummenü der Administration links.\nModule, ihre Ansichten und wer sie erreichen darf.\nDie Template-Engine: Caching, Kompilierung, Debugging.\nBild-Aliase und die Umwandlungsregeln dahinter.\nDie Reiter und Bedienelemente der Administrationsoberfläche.\nDer Inhaltsbrowser: wo jede Durchsuchen-Schaltfläche beginnt und was sie wählen darf.\nWorkflows und die Ereignisse, aus denen sie bestehen.\nWas nach welchem Cron-Zeitplan läuft.\nUmgang mit Dateien und dem Cluster, wo die var-Dateien liegen.\nZeichensätze und Übersetzungen."
+    },
+    "ini:settings/site.ini [SettingsViewSettings] MaskRevealLastCharacters": {
+        "en": "Show the last characters of a secret (at most 4) so two values can be told\napart, and only of a value at least four times that long. 0 shows none.",
+        "de": "Die letzten Zeichen eines Geheimnisses zeigen (höchstens 4), damit sich zwei Werte\nunterscheiden lassen, und nur bei einem Wert, der mindestens viermal so lang ist. 0 zeigt keine."
+    },
+    "ini:settings/site.ini [SettingsViewSettings] MaskedNameList": {
+        "en": "Settings whose values the settings pages (settings/view, settings/edit) never\nshow: only whether they are set or empty. A setting is a secret when its name\nmatches an entry of MaskedNameList[] and none of UnmaskedNameList[], or when\nit is one exp:ini and the audit log mask (Password, Secret, Token, Salt,\n...Key, Credential: these cannot be switched off here). An entry without '*'\nis found anywhere in the name, ignoring case (\"password\" matches\nTransportPassword); a capitalised single word (\"Key\", \"DSN\") must be the\nwhole name; an entry with '*' is a pattern for the whole name and keeps case\n(\"*Key\" matches LicenseKey, not Monkey). A password inside any value\n(scheme://user:password@host, password=... in a connection string) is masked\nas well, and a secret's value is never searched.",
+        "de": "Einstellungen, deren Werte die Einstellungsseiten (settings/view, settings/edit) nie\nzeigen: nur, ob sie gesetzt oder leer sind. Eine Einstellung ist ein Geheimnis, wenn ihr Name\nauf einen Eintrag aus MaskedNameList[] und auf keinen aus UnmaskedNameList[] passt, oder wenn\nsie eine ist, die exp:ini und das Audit-Log maskieren (Password, Secret, Token, Salt,\n...Key, Credential: diese lassen sich hier nicht abschalten). Ein Eintrag ohne '*'\nwird überall im Namen gefunden, ohne Beachtung der Groß-/Kleinschreibung (\"password\" passt auf\nTransportPassword); ein großgeschriebenes einzelnes Wort (\"Key\", \"DSN\") muss der\nganze Name sein; ein Eintrag mit '*' ist ein Muster für den ganzen Namen und beachtet die Groß-/Kleinschreibung\n(\"*Key\" passt auf LicenseKey, nicht auf Monkey). Ein Passwort in einem beliebigen Wert\n(scheme://user:password@host, password=... in einer Verbindungszeichenkette) wird ebenfalls\nmaskiert, und der Wert eines Geheimnisses wird nie durchsucht."
+    },
+    "ini:settings/site.ini [SettingsViewSettings] RestartSettingList": {
+        "en": "Settings a running Velocity server reads only when it starts: after a change\nthe settings page says to restart it (exp:velocity restart). A file, a\nfile/block or a file/block/setting. Every other setting reaches PHP-FPM and\nVelocity on their next request, because a write clears the INI cache.",
+        "de": "Einstellungen, die ein laufender Velocity-Server nur beim Start liest: Nach einer Änderung\nsagt die Einstellungsseite, dass er neu gestartet werden muss (exp:velocity restart). Eine Datei, eine\nDatei/ein Block oder eine Datei/ein Block/eine Einstellung. Jede andere Einstellung erreicht PHP-FPM und\nVelocity bei ihrer nächsten Anfrage, weil ein Schreibvorgang den INI-Cache leert."
+    },
+    "ini:settings/site.ini [SettingsViewSettings] UnmaskedNameList": {
+        "en": "Names the entries above would match that are not secrets (whole names).",
+        "de": "Namen, auf die die Einträge oben passen würden, die aber keine Geheimnisse sind (ganze Namen)."
+    },
+    "ini:settings/site.ini [SetupSettings] AllowWizardOnInstalledSite": {
+        "en": "The setup wizard (setup/init) on a site that is already installed: disabled\nshows a page that says so and changes nothing. enabled is for development\nonly: the wizard then runs after a confirm page, and the site goes into\nmaintenance mode once that page is posted. Reinstalling a site is done with\nthe kickstarter or a fresh installation.",
+        "de": "Der Setup-Assistent (setup/init) auf einer bereits installierten Website: disabled\nzeigt eine Seite, die das sagt, und ändert nichts. enabled ist nur für die Entwicklung:\nDer Assistent läuft dann nach einer Bestätigungsseite, und die Website geht in den\nWartungsmodus, sobald diese Seite abgeschickt ist. Eine Website wird mit dem\nKickstarter oder einer frischen Installation neu installiert."
+    },
+    "ini:settings/site.ini [SetupSettings] CriticalTests": {
+        "en": "List of tests to be run, critical tests must pass for the setup to continue",
+        "de": "Liste der auszuführenden Tests; kritische Tests müssen bestehen, damit das Setup weitergeht"
+    },
+    "ini:settings/site.ini [SetupSettings] PageLayout": {
+        "en": "The pagelayout to use for first time setups",
+        "de": "Das Pagelayout für die Ersteinrichtung"
+    },
+    "ini:settings/site.ini [ShopSettings] ClearBasketOnCheckout": {
+        "en": "This settings controls when the basket is cleared.\nIt can contain the following values:\n- disabled - Means that the basket is cleared when the shop/checkout\n             trigger is done. In practice this means when a user\n             has payed the product and payment system is finished.\n             This is the default value since it means the user can\n             cancel the order and go back to the shop with the\n             basket still intact.\n- enabled - Means to clear the basket as soon as the user clicks\n            confirm in the shop/confirmorder trigger. This may\n            needed by some payment system, check the documentation\n            for the system to see if this needs to be enabled.\n            The inpact on the users is that the basket will not be\n            available when the payment is cancelled.\n\nTo put it in context the entire checkout process consists of these triggers:\n- shop/confirmorder - The user shown the total price with shipping\n                      and other calculations. When the user clicks\n                      confirm the shop/checkout trigger is started.\n- shop/checkout     - Starts a new temporary order and runs any payment\n                      methods (or other workflows). Once it is done\n                      the order is activated and the basket is cleared.",
+        "de": "Diese Einstellung steuert, wann der Warenkorb geleert wird.\nSie kann folgende Werte enthalten:\n- disabled - Der Warenkorb wird geleert, wenn der Auslöser shop/checkout\n             fertig ist. In der Praxis also, wenn ein Benutzer\n             das Produkt bezahlt hat und das Bezahlsystem fertig ist.\n             Das ist der Standard, weil der Benutzer dann die\n             Bestellung abbrechen und mit intaktem Warenkorb\n             zum Shop zurückkehren kann.\n- enabled - Der Warenkorb wird geleert, sobald der Benutzer\n            im Auslöser shop/confirmorder auf Bestätigen klickt. Das kann\n            für manche Bezahlsysteme nötig sein; prüfen Sie in der Dokumentation\n            des Systems, ob dies aktiviert werden muss.\n            Für die Benutzer bedeutet das, dass der Warenkorb nicht mehr\n            verfügbar ist, wenn die Zahlung abgebrochen wird.\n\nZur Einordnung: Der ganze Bezahlvorgang besteht aus diesen Auslösern:\n- shop/confirmorder - Dem Benutzer wird der Gesamtpreis mit Versand\n                      und anderen Berechnungen gezeigt. Klickt der Benutzer\n                      auf Bestätigen, wird der Auslöser shop/checkout gestartet.\n- shop/checkout     - Startet eine neue vorläufige Bestellung und führt die Bezahl-\n                      methoden (oder andere Workflows) aus. Wenn das fertig ist,\n                      wird die Bestellung aktiviert und der Warenkorb geleert."
+    },
+    "ini:settings/site.ini [ShopSettings] ClearBasketOnLogout": {
+        "en": "This settings is used when a user logs out.\nIt can contain the following values:\n- disabled - Means that the basket will NOT be cleared when a user logs out.\n- enabled  - Means that the basket will be cleared when a user logs out.",
+        "de": "Diese Einstellung wird verwendet, wenn sich ein Benutzer abmeldet.\nSie kann folgende Werte enthalten:\n- disabled - Der Warenkorb wird beim Abmelden eines Benutzers NICHT geleert.\n- enabled  - Der Warenkorb wird beim Abmelden eines Benutzers geleert."
+    },
+    "ini:settings/site.ini [ShopSettings] RedirectAfterAddToBasket": {
+        "en": "Controls what happens after an item is added to the basket\nIt can contain one of these entries:\n- basket - Redirect back to the basket to show the newly added item\n- reload - Redirect back to where the user was previously, this allows\n           the user to continue shopping.",
+        "de": "Steuert, was geschieht, nachdem ein Artikel in den Warenkorb gelegt wurde\nSie kann einen dieser Einträge enthalten:\n- basket - zurück zum Warenkorb weiterleiten, um den neu hinzugefügten Artikel zu zeigen\n- reload - dorthin zurückleiten, wo der Benutzer zuvor war, damit\n           er weiter einkaufen kann."
+    },
+    "ini:settings/site.ini [ShopSettings] SendOrderEmail": {
+        "en": "Controls if we should send an order confirmation email to admin and the user or not\nwhen an order is completed and confirmed.",
+        "de": "Steuert, ob eine Bestellbestätigung per E-Mail an Administrator und Benutzer gesendet wird,\nwenn eine Bestellung abgeschlossen und bestätigt ist."
+    },
+    "ini:settings/site.ini [SiteAccessRules]": {
+        "en": "If you disable some modules or part of a module you can use the\nSiteAccessRules group, this defines a list of rules which are\nrun in order.\n\nThe following is an example of how to disable content/search\nand the rss module",
+        "de": "Wenn Sie manche Module oder Teile eines Moduls abschalten, können Sie die\nGruppe SiteAccessRules verwenden; sie legt eine Liste von Regeln fest, die\nder Reihe nach ausgeführt werden.\n\nDas Folgende ist ein Beispiel, wie man content/search\nund das Modul rss abschaltet"
+    },
+    "ini:settings/site.ini [SiteAccessRules] DisabledModuleResult": {
+        "en": "What a module switched off by the rules answers: notfound (the page of a\nmodule that does not exist, 404, so nothing tells that it is there) or\ndisabled (the \"disabled\" page, error 22).",
+        "de": "Was ein durch die Regeln abgeschaltetes Modul antwortet: notfound (die Seite eines\nModuls, das nicht existiert, 404, sodass nichts verrät, dass es da ist) oder\ndisabled (die Seite „deaktiviert“, Fehler 22)."
+    },
+    "ini:settings/site.ini [SiteAccessSettings] AnonymousAccessList": {
+        "en": "A list of module or module/views that don't require user login\nadmin4's mega menu (user/megamenu/<tab>) answers its script itself: a visitor who is not signed in\ngets a bare 403 (X-Exp-Mega: signed-out) instead of the sign-in page with a 200. The view checks the\nsign-in, the siteaccess and the tab on its own (see PolicyOmitList[] below).\nBrowsers send the reports of the Content Security Policy without signing in; csp/report takes them on every\nsiteaccess, the administration included (doc/eng-us/features/6.0/content-security-policy.md, \"Reports\").",
+        "de": "Eine Liste von Modulen oder Modulen/Ansichten, die keine Anmeldung erfordern\nDas Mega-Menü von admin4 (user/megamenu/<tab>) beantwortet sein Skript selbst: Ein nicht angemeldeter Besucher\nerhält ein bloßes 403 (X-Exp-Mega: signed-out) statt der Anmeldeseite mit 200. Die Ansicht prüft die\nAnmeldung, den Siteaccess und den Reiter selbst (siehe PolicyOmitList[] unten).\nBrowser senden die Berichte der Content Security Policy ohne Anmeldung; csp/report nimmt sie in jedem\nSiteaccess an, die Administration eingeschlossen (doc/eng-us/features/6.0/content-security-policy.md, \"Reports\")."
+    },
+    "ini:settings/site.ini [SiteAccessSettings] AvailableSiteAccessList": {
+        "en": "A list over current active siteaccesses",
+        "de": "Eine Liste der aktuell aktiven Siteaccesses"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] CheckValidity": {
+        "en": "Set to true if you want the setup system to be activated",
+        "de": "Auf true setzen, wenn das Setup-System aktiviert werden soll"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] DefaultHostUriRedirect": {
+        "en": "# This example will match on example.com/nor\nHostUriMatchMapItems[]=example.com;nor;example_nor\n# This example will match on example.com/eng & www.example.com/eng\nHostUriMatchMapItems[]=example.com;eng;example_eng;end\n# This example will match on example.com/eng & example.com.localhost/eng\nHostUriMatchMapItems[]=example.com;eng;example_eng;start\n# This example will match on example.com/eng, www.example.com/eng & example.com.localhost/eng\nHostUriMatchMapItems[]=example.com;eng;example_eng;part\n# This example will match on example.com\nHostUriMatchMapItems[]=example.com;;examle\nThe siteaccess of an address that no probe of MatchOrder matches, where\nDefaultAccess would apply: typically the address without siteaccess or language\nsegment (example.com/), with any MatchOrder (uri, host_uri, ...). Chosen by host\nand by the languages the browser accepts (Accept-Language, the most wanted first).\nEach entry is hostname;uri;accessname[;method[;language]]: method as for\nHostUriMatchMapItems, empty or \"default\" for HostUriMatchMethodDefault; an empty\nhostname with part matches any host; language such as \"de\" also matches regional\nforms (de-CH). The first entry for the host whose language the browser accepts\nwins, else the first entry for the host without a language.\nA GET or HEAD request is sent on (302), once, to the same address with the uri\npart, the address kept as it was asked for: example.com/ goes to example.com/ger,\nexample.com/news/an-article to example.com/ger/news/an-article, with the query.\nThat needs a probe that takes the address with the uri part for that siteaccess\n(else it would come back here); without one, for other requests, or with\nDefaultHostUriRedirect=disabled the page is shown at the address itself, its\nlinks carrying the uri part. An address a probe matches (/ger/..., /admin/...)\nis never sent on. The Location is a path on the host that was asked\n(/ger/news?x=1), built from the index file and the uri part of the entry, so\nRemoveSiteAccessIfDefaultAccess does not shorten it into a loop.\nWhen the browser's language can change the answer for the host (an entry names\na language, and the entries lead to more than one siteaccess or uri part, or no\nentry applies without a language), the redirect, a page shown this way and the\ndefault siteaccess answering for other browsers vary by Accept-Language: they are\nsent with Vary: Accept-Language and Cache-Control: private, and neither the HTTP\ncache nor its early exit keeps or serves them. An entry naming a siteaccess that\nis not in AvailableSiteAccessList is ignored (and logged). Pages kept by the\nstatic cache or the HTTP cache before an entry was added are served without the\nredirect until those caches are cleared.\nA site matched by the URL (MatchOrder=uri) with the language siteaccess ger:\n  DefaultHostUriMatchMapItems[]=;ger;ger;part\nA site matched by host and uri, German and English by the browser:\n  HostUriMatchMapItems[]=example.com;de;site_de\n  HostUriMatchMapItems[]=example.com;en;site_en\n  DefaultHostUriMatchMapItems[]=example.com;de;site_de;;de\n  DefaultHostUriMatchMapItems[]=example.com;en;site_en",
+        "de": "# This example will match on example.com/nor\nHostUriMatchMapItems[]=example.com;nor;example_nor\n# This example will match on example.com/eng & www.example.com/eng\nHostUriMatchMapItems[]=example.com;eng;example_eng;end\n# This example will match on example.com/eng & example.com.localhost/eng\nHostUriMatchMapItems[]=example.com;eng;example_eng;start\n# This example will match on example.com/eng, www.example.com/eng & example.com.localhost/eng\nHostUriMatchMapItems[]=example.com;eng;example_eng;part\n# This example will match on example.com\nHostUriMatchMapItems[]=example.com;;examle\nDer Siteaccess einer Adresse, auf die keine Prüfung aus MatchOrder passt, wo\nDefaultAccess gelten würde: typischerweise die Adresse ohne Siteaccess- oder Sprach-\nsegment (example.com/), mit jedem MatchOrder (uri, host_uri, ...). Gewählt nach Host\nund nach den Sprachen, die der Browser akzeptiert (Accept-Language, die gewünschteste zuerst).\nJeder Eintrag ist hostname;uri;accessname[;method[;language]]: method wie bei\nHostUriMatchMapItems, leer oder \"default\" für HostUriMatchMethodDefault; ein leerer\nHostname mit part passt auf jeden Host; eine Sprache wie \"de\" passt auch auf regionale\nFormen (de-CH). Der erste Eintrag für den Host, dessen Sprache der Browser akzeptiert,\ngewinnt, sonst der erste Eintrag für den Host ohne Sprache.\nEine GET- oder HEAD-Anfrage wird einmal (302) an dieselbe Adresse mit dem URI-\nTeil weitergeleitet, die Adresse bleibt, wie sie angefragt wurde: example.com/ geht nach example.com/ger,\nexample.com/news/an-article nach example.com/ger/news/an-article, mit der Query.\nDas braucht eine Prüfung, die die Adresse mit dem URI-Teil für diesen Siteaccess annimmt\n(sonst käme sie hierher zurück); ohne eine, bei anderen Anfragen oder mit\nDefaultHostUriRedirect=disabled wird die Seite an der Adresse selbst angezeigt, ihre\nLinks tragen den URI-Teil. Eine Adresse, auf die eine Prüfung passt (/ger/..., /admin/...),\nwird nie weitergeleitet. Die Location ist ein Pfad auf dem angefragten Host\n(/ger/news?x=1), gebildet aus der Index-Datei und dem URI-Teil des Eintrags, sodass\nRemoveSiteAccessIfDefaultAccess ihn nicht zu einer Schleife kürzt.\nWenn die Sprache des Browsers die Antwort für den Host ändern kann (ein Eintrag nennt\neine Sprache, und die Einträge führen zu mehr als einem Siteaccess oder URI-Teil, oder kein\nEintrag gilt ohne Sprache), variieren die Weiterleitung, eine so angezeigte Seite und der\nStandard-Siteaccess, der für andere Browser antwortet, nach Accept-Language: Sie werden\nmit Vary: Accept-Language und Cache-Control: private gesendet, und weder der HTTP-\nCache noch sein früher Ausstieg behält oder liefert sie. Ein Eintrag, der einen Siteaccess nennt, der\nnicht in AvailableSiteAccessList steht, wird ignoriert (und protokolliert). Seiten, die der\nstatische Cache oder der HTTP-Cache behalten hat, bevor ein Eintrag hinzugefügt wurde, werden ohne die\nWeiterleitung ausgeliefert, bis diese Caches geleert sind.\nEine über die URL erkannte Website (MatchOrder=uri) mit dem Sprach-Siteaccess ger:\n  DefaultHostUriMatchMapItems[]=;ger;ger;part\nEine über Host und URI erkannte Website, Deutsch und Englisch nach Browser:\n  HostUriMatchMapItems[]=example.com;de;site_de\n  HostUriMatchMapItems[]=example.com;en;site_en\n  DefaultHostUriMatchMapItems[]=example.com;de;site_de;;de\n  DefaultHostUriMatchMapItems[]=example.com;en;site_en"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] DetectMobileDevice": {
+        "en": "Whether to detect mobile devices or not",
+        "de": "Ob mobile Geräte erkannt werden"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] ForceVirtualHost": {
+        "en": "Set to true if you want to force VirualHost mode (with RewriteRules in apache)\nIf this is set to true nonVirtualHost mode will not work correctly",
+        "de": "Auf true setzen, wenn Sie den Modus VirtualHost erzwingen wollen (mit RewriteRules in Apache)\nWenn true, funktioniert der Modus ohne virtuellen Host nicht korrekt"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] HostMatchMethod": {
+        "en": "Add array entries here if you chose HostMatchType=map\nEach entry consists of the hostname;accessname[;start|end|part|strict]\nThe last optional part is the host matching method of the entry, as for\nhost_uri: strict (the host as listed), start (the host begins with it, so a\ntest host example.com.test.local is matched by example.com), end or part.\nWithout it HostMatchMethod below applies. As for host_uri, the static cache\nonly knows strict matching. Every method compares host names without regard to\ncase and to a trailing dot, ignores the port of the request unless the entry\nnames one (example.com:8080), and takes a name written in Unicode\n(münchen.example) for the ASCII form browsers send (xn--mnchen-3ya.example).\nstart and part also take hosts you did not mean (example.com.anything): use\nthem only where the web server answers for your own hosts alone.\nHostMatchMapItems[]=example.com;user\nHostMatchMapItems[]=admin.example.com;admin\nHostMatchMapItems[]=example.com;user;start",
+        "de": "Fügen Sie hier Array-Einträge hinzu, wenn Sie HostMatchType=map gewählt haben\nJeder Eintrag besteht aus hostname;accessname[;start|end|part|strict]\nDer letzte, optionale Teil ist die Methode des Host-Abgleichs des Eintrags, wie bei\nhost_uri: strict (der Host wie aufgeführt), start (der Host beginnt damit, ein\nTest-Host example.com.test.local passt also auf example.com), end oder part.\nOhne ihn gilt HostMatchMethod unten. Wie bei host_uri kennt der statische Cache\nnur den strikten Abgleich. Jede Methode vergleicht Hostnamen ohne Beachtung der\nGroß-/Kleinschreibung und eines abschließenden Punkts, ignoriert den Port der Anfrage, außer der Eintrag\nnennt einen (example.com:8080), und nimmt einen in Unicode geschriebenen Namen\n(münchen.example) für die ASCII-Form, die Browser senden (xn--mnchen-3ya.example).\nstart und part nehmen auch Hosts an, die Sie nicht gemeint haben (example.com.anything): Verwenden Sie\nsie nur, wo der Webserver allein für Ihre eigenen Hosts antwortet.\nHostMatchMapItems[]=example.com;user\nHostMatchMapItems[]=admin.example.com;admin\nHostMatchMapItems[]=example.com;user;start"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] HostMatchType": {
+        "en": "MatchOrder : host\nUse either disabled, map, element, text or regexp",
+        "de": "MatchOrder : host\nVerwenden Sie disabled, map, element, text oder regexp"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] HostUriMatchMethodDefault": {
+        "en": "MatchOrder : host_uri\nAdd array entries here if you use MatchOrder host_uri\nEach entry consists of the hostname;uri;accessname[;start|end|part|strict]\nLast optional paramter controls host matching method, 'strict' by default\n\nNote: Only strict matching is supported by static cache, reason is the rewrite\n      rules needs a strict convention between host/uri & match (basis for folder name).\n      Uri part is also optional, so you can do pure host matching with this as well.\n      Empty hostname parts are not possible.\n\nOrdering: Exponential searches HostUriMatchMapItems[] from top to bottom, so place\n          more specific entries at the top and entries with empty uri parts at the bottom.\nChange HostUriMatchMethodDefault to one of these options to chenge default value",
+        "de": "MatchOrder : host_uri\nFügen Sie hier Array-Einträge hinzu, wenn Sie MatchOrder host_uri verwenden\nJeder Eintrag besteht aus hostname;uri;accessname[;start|end|part|strict]\nDer letzte, optionale Parameter steuert die Methode des Host-Abgleichs, standardmäßig 'strict'\n\nHinweis: Der statische Cache unterstützt nur den strikten Abgleich, weil die Rewrite-\n      Regeln eine strikte Konvention zwischen Host/URI und Treffer brauchen (Grundlage für den Ordnernamen).\n      Der URI-Teil ist ebenfalls optional, so lässt sich damit auch reiner Host-Abgleich machen.\n      Leere Hostnamen-Teile sind nicht möglich.\n\nReihenfolge: Exponential durchsucht HostUriMatchMapItems[] von oben nach unten; setzen Sie also\n          spezifischere Einträge nach oben und Einträge mit leerem URI-Teil nach unten.\nÄndern Sie HostUriMatchMethodDefault auf eine dieser Optionen, um den Standardwert zu ändern"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] MatchOrder": {
+        "en": "An array of access types which are tried, possible entries are: host, host_uri, uri, port and servervar",
+        "de": "Ein Array der Zugriffsarten, die versucht werden; mögliche Einträge sind: host, host_uri, uri, port und servervar"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] MobileDeviceDetectCookieTimeout": {
+        "en": "Number of seconds a session cookie will last",
+        "de": "Sekunden, die ein Sitzungs-Cookie hält"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] MobileDeviceFilterClass": {
+        "en": "Mobile device filter class name.\nDefault implementation uses RegExp to match against User Agent string as well as against User Agent codes\nSee [SiteAccessSettings].MobileUserAgentRegexps array for the list of available RegExps\nand [SiteAccessSettings].MobileUserAgentCodes value for the list of available codes",
+        "de": "Klassenname des Filters für mobile Geräte.\nDie Standardimplementierung prüft per RegExp gegen die User-Agent-Zeichenkette und gegen User-Agent-Codes\nDie verfügbaren RegExps stehen im Array [SiteAccessSettings].MobileUserAgentRegexps\nund die verfügbaren Codes im Wert [SiteAccessSettings].MobileUserAgentCodes"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] MobileSiteAccessList": {
+        "en": "List of available siteaccesses capable to handle mobile devices",
+        "de": "Liste der verfügbaren Siteaccesses, die mobile Geräte bedienen können"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] MobileSiteAccessURL": {
+        "en": "URL address to the mobile devices optimized interface",
+        "de": "URL der für mobile Geräte optimierten Oberfläche"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] MobileUserAgentCodes": {
+        "en": "List of various codes to match against User String",
+        "de": "Liste verschiedener Codes, die gegen die User-Zeichenkette geprüft werden"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] MobileUserAgentRegexps": {
+        "en": "List of available regular expressions to match against User Agent\nKey is a User Agent alias which helps to determine the device or mobile OS in the template",
+        "de": "Liste der verfügbaren regulären Ausdrücke, die gegen den User-Agent geprüft werden\nDer Schlüssel ist ein User-Agent-Alias, der im Template das Gerät oder das mobile Betriebssystem bestimmen hilft"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] NormalizeSANames": {
+        "en": "Enabling non automatic conversion of siteaccess names\nNormalizeSANames=enabled - for backward compability (all non alpha characters are converted to underscore)\nRedirectOnNormalize=enabled - when transformation occurs, the page will hold a 301 status",
+        "de": "Aktiviert die nicht automatische Umwandlung von Siteaccess-Namen\nNormalizeSANames=enabled - für Rückwärtskompatibilität (alle nicht alphabetischen Zeichen werden in Unterstriche umgewandelt)\nRedirectOnNormalize=enabled - wenn eine Umwandlung erfolgt, hat die Seite den Status 301"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] PathPrefix": {
+        "en": "Another siteaccess whose extension siteaccess settings this one uses as well\n(extension/<ext>/settings/siteaccess/<that siteaccess>, and the extension's\nsettings/override it brings along), below the ones an extension ships for this\nsiteaccess itself. A translation siteaccess made from the user siteaccess sets\nit to that siteaccess, so it renders with the same design and extension\nsettings in its own language. Read from this siteaccess's own\nsettings/siteaccess/<name>/site.ini.append.php only, because the extension\nsettings are placed before the siteaccess settings are merged.\nExtensionSettingsSiteAccess=site\nHides this part from the start of the url alias\nIf you use this setting, you also need to use the PathPrefix setting in logfile.ini.",
+        "de": "Ein anderer Siteaccess, dessen Siteaccess-Einstellungen der Erweiterungen dieser ebenfalls verwendet\n(extension/<ext>/settings/siteaccess/<that siteaccess> und das settings/override\nder Erweiterung, das er mitbringt), unter denen, die eine Erweiterung für diesen\nSiteaccess selbst mitliefert. Ein Übersetzungs-Siteaccess, der aus dem Benutzer-Siteaccess erstellt wurde, setzt\nihn auf diesen Siteaccess, damit er mit demselben Design und denselben Erweiterungs-\neinstellungen in seiner eigenen Sprache rendert. Nur aus der eigenen\nsettings/siteaccess/<name>/site.ini.append.php dieses Siteaccess gelesen, weil die Erweiterungs-\neinstellungen eingeordnet werden, bevor die Siteaccess-Einstellungen zusammengeführt sind.\nExtensionSettingsSiteAccess=site\nBlendet diesen Teil am Anfang des URL-Alias aus\nWenn Sie diese Einstellung verwenden, müssen Sie auch die Einstellung PathPrefix in logfile.ini verwenden."
+    },
+    "ini:settings/site.ini [SiteAccessSettings] PathPrefixExclude": {
+        "en": "Which URLs to exclude from being affected by PathPrefix setting.\nURLs containing the specified texts after siteaccess name will not be affected by PathPrefix",
+        "de": "Welche URLs von der Einstellung PathPrefix ausgenommen werden.\nURLs, die nach dem Namen des Siteaccess die angegebenen Texte enthalten, sind von PathPrefix nicht betroffen"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] RelatedSiteAccessList": {
+        "en": "A list of related siteaccesses sharing the same database",
+        "de": "Eine Liste verwandter Siteaccesses, die dieselbe Datenbank teilen"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] RemoveSiteAccessIfDefaultAccess": {
+        "en": "Wheter to add siteaccess to the url if current siteaccess\nis the same as default siteaccess. Changing this setting will\nrequire clearing the cache.\n\nThis setting also works with host_uri matching removing uri part\nfrom url if it's default siteacces. In this case, make sure\nhost name without url part goes to same siteaccess in your\nmatch order chain.\n\nFor instance if the default siteaccess is 'en' and you enable\nthis you can access the siteacccess with 'index.php' instead of\n'index.php/en/'.",
+        "de": "Ob der Siteaccess zur URL hinzugefügt wird, wenn der aktuelle Siteaccess\nderselbe wie der Standard-Siteaccess ist. Eine Änderung dieser Einstellung\nerfordert das Leeren des Caches.\n\nDiese Einstellung funktioniert auch mit dem Abgleich host_uri und entfernt den URI-Teil\naus der URL, wenn es der Standard-Siteaccess ist. Sorgen Sie dann dafür, dass\nder Hostname ohne URL-Teil in Ihrer Kette aus MatchOrder zum selben Siteaccess\nführt.\n\nIst zum Beispiel der Standard-Siteaccess 'en' und Sie aktivieren\ndies, erreichen Sie den Siteaccess mit 'index.php' statt mit\n'index.php/en/'."
+    },
+    "ini:settings/site.ini [SiteAccessSettings] RequireUserLogin": {
+        "en": "Set the true if you don't want anonymous access to your site",
+        "de": "Auf true setzen, wenn Sie keinen anonymen Zugriff auf Ihre Website wollen"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] ServerVariableName": {
+        "en": "DefaultHostUriMatchMapItems[]=example.com;ger;example_ger;default;de\nDefaultHostUriMatchMapItems[]=example.com;eng;example_eng;default;en\nDefaultHostUriMatchMapItems[]=example.com;eng;example_eng\nMatchOrder : servervar\nSet name of server variable used to match a siteaccess",
+        "de": "DefaultHostUriMatchMapItems[]=example.com;ger;example_ger;default;de\nDefaultHostUriMatchMapItems[]=example.com;eng;example_eng;default;en\nDefaultHostUriMatchMapItems[]=example.com;eng;example_eng\nMatchOrder : servervar\nDen Namen der Servervariable setzen, über die ein Siteaccess erkannt wird"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] ShowHiddenNodes": {
+        "en": "PathPrefixExclude[]=media\nPathPrefixExclude[]=users\nThe kind of this siteaccess as Setup > System information shows it (admin, editor, login, site or a name of\nyour own). Not set: worked out from its designs and RequireUserLogin.\nSiteAccessType=\nWhether to show hidden nodes\nIf set to false, user is not able to see any hidden nodes\nShould be overriden for particular siteaccesses",
+        "de": "PathPrefixExclude[]=media\nPathPrefixExclude[]=users\nDie Art dieses Siteaccess, wie Setup > Systeminformationen sie zeigt (admin, editor, login, site oder ein eigener\nName). Nicht gesetzt: aus seinen Designs und RequireUserLogin ermittelt.\nSiteAccessType=\nOb verborgene Knoten angezeigt werden\nWenn false, kann der Benutzer keine verborgenen Knoten sehen\nSollte für bestimmte Siteaccesses überschrieben werden"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] URIMatchMapItems": {
+        "en": "URIMatchSubtextPre=\nURIMatchSubtextPost=\nAdd array entries here if you chose URIMatchType=map\nEach entry consists of the uri;accessname",
+        "de": "URIMatchSubtextPre=\nURIMatchSubtextPost=\nFügen Sie hier Array-Einträge hinzu, wenn Sie URIMatchType=map gewählt haben\nJeder Eintrag besteht aus uri;accessname"
+    },
+    "ini:settings/site.ini [SiteAccessSettings] URIMatchType": {
+        "en": "MatchOrder : uri\nPossible values: disabled, map, element, text or regexp\ndisabled - turns off uri matching\nmap - match URL using URIMatchMapItems array\nelement  - maps a url element to a siteaccess name\ntext - match URL using pre or post sub-strings (URIMatchSubtextPre, URIMatchSubtextPost)\nregexp   - match against a regexp and extract a portion of it",
+        "de": "MatchOrder : uri\nMögliche Werte: disabled, map, element, text oder regexp\ndisabled - schaltet den URI-Abgleich ab\nmap - URL über das Array URIMatchMapItems abgleichen\nelement  - ordnet ein URL-Element einem Siteaccess-Namen zu\ntext - URL über Teilzeichenketten davor oder danach abgleichen (URIMatchSubtextPre, URIMatchSubtextPost)\nregexp   - gegen einen regulären Ausdruck abgleichen und einen Teil davon herausziehen"
+    },
+    "ini:settings/site.ini [SiteDataSettings]": {
+        "en": "Besides the site the globe opens, a siteaccess is listed only where the\nsigned-in user may log in (user/login and its SiteAccess limitation, as the\nlogin checks it).\nThe header's cache-blocks are keyed by the list and the request; a changed\nSiteName, Locale or SiteDesign of a listed siteaccess shows once the template\ncaches of the administration siteaccess are cleared.\nSite data: the name/value rows of the table ezsite_data (eZSiteData), such as\nezpublish-version. Setup > Site data (setup/sitedata, policy setup/system_info)\nlists them. Templates read a row with\n  fetch( 'content', 'site_data', hash( 'name', 'my-flag' ) )\n(the eZSiteData object, so .value is the value; false for a name not listed\nhere or not stored), but only the names listed here, as whole names: nothing\nis readable until a name is added. Read only: templates never write a row.\nPortions derived from LoveStack (mugoweb/ezpublish-legacy, commits a679a13176\nand 94b7b6c239), Copyright (C) Mugo Web, GPL v2.",
+        "de": "Neben der Website, die der Globus öffnet, wird ein Siteaccess nur aufgeführt, wo sich der\nangemeldete Benutzer anmelden darf (user/login und seine Einschränkung SiteAccess, wie die\nAnmeldung sie prüft).\nDie Cache-Blöcke des Kopfes werden nach der Liste und der Anfrage unterschieden; ein geänderter\nSiteName, Locale oder SiteDesign eines aufgeführten Siteaccess erscheint, sobald die Template-\nCaches des Administrations-Siteaccess geleert sind.\nWebsite-Daten: die Name/Wert-Zeilen der Tabelle ezsite_data (eZSiteData), etwa\nezpublish-version. Setup > Website-Daten (setup/sitedata, Richtlinie setup/system_info)\nlistet sie auf. Templates lesen eine Zeile mit\n  fetch( 'content', 'site_data', hash( 'name', 'my-flag' ) )\n(das Objekt eZSiteData, .value ist also der Wert; false für einen Namen, der hier nicht aufgeführt\noder nicht gespeichert ist), aber nur die hier aufgeführten Namen, als ganze Namen: Nichts\nist lesbar, bis ein Name hinzugefügt wird. Nur lesend: Templates schreiben nie eine Zeile.\nTeile aus LoveStack übernommen (mugoweb/ezpublish-legacy, Commits a679a13176\nund 94b7b6c239), Copyright (C) Mugo Web, GPL v2."
+    },
+    "ini:settings/site.ini [SiteSettings] 64bitCompatibilityMode": {
+        "en": "Enables/Disables 64bit compatibility mode.\nAffects some php's functions like crc32.",
+        "de": "Aktiviert/deaktiviert den 64-Bit-Kompatibilitätsmodus.\nBetrifft manche PHP-Funktionen wie crc32."
+    },
+    "ini:settings/site.ini [SiteSettings] AdditionalLoginFormActionURL": {
+        "en": "Use this setting to specify additional URL for login and then use it in your login template\nto perform login action to other site then the current one. For example from user site you\ncan login directly to the admin interfase. Note that standard Exponential templates do not\nsupport this feature.",
+        "de": "Mit dieser Einstellung geben Sie eine zusätzliche URL für die Anmeldung an, die Sie dann in Ihrem Anmelde-Template\nverwenden, um die Anmeldung an einer anderen als der aktuellen Website auszuführen. Zum Beispiel können Sie sich von der Benutzer-Website\ndirekt an der Administrationsoberfläche anmelden. Beachten Sie, dass die Standard-Templates von Exponential\ndiese Funktion nicht unterstützen."
+    },
+    "ini:settings/site.ini [SiteSettings] AllowedRedirectHosts": {
+        "en": "Array of allowed hosts for redirects with full URL from Exponential modules.\nNote: Current host and configured hosts (HostMatchMapItems/HostUriMatchMapItems) are always considered trusted",
+        "de": "Array der Hosts, die für Weiterleitungen mit voller URL aus Modulen von Exponential erlaubt sind.\nHinweis: Der aktuelle Host und die konfigurierten Hosts (HostMatchMapItems/HostUriMatchMapItems) gelten immer als vertrauenswürdig"
+    },
+    "ini:settings/site.ini [SiteSettings] DefaultAccess": {
+        "en": "Default access is needed when uri type matching is done, this is\nbecause with empty urls it's not possible to fetch the access",
+        "de": "Der Standardzugriff ist beim URI-Abgleich nötig, weil sich\nbei leeren URLs der Zugriff nicht ermitteln lässt"
+    },
+    "ini:settings/site.ini [SiteSettings] DefaultPage": {
+        "en": "The default page to show, e.g. after user login this will be used for default redirection",
+        "de": "Die anzuzeigende Standardseite; z. B. wird sie nach der Anmeldung eines Benutzers als Standardweiterleitung verwendet"
+    },
+    "ini:settings/site.ini [SiteSettings] DisallowedReturnViews": {
+        "en": "AllowedRedirectHosts[]=www.sometrustedhost.com\nModule views that \"back to where you came from\" never returns to: Cancel and Discard of user/edit,\nuser/password, user/setting, section/edit, state edits, role/edit, class/edit and class/groupedit, which go to\nthe page the form names (RedirectIfDiscarded) or the page viewed last. These views act on a POST, end the\nsession or start a download, so a GET there shows nothing or does something. The running view itself is\nalways skipped. See doc/eng-us/features/6.0/safe-redirects.md",
+        "de": "AllowedRedirectHosts[]=www.sometrustedhost.com\nModulansichten, zu denen „zurück, woher Sie kamen“ nie zurückkehrt: Abbrechen und Verwerfen von user/edit,\nuser/password, user/setting, section/edit, Bearbeitungen von Zuständen, role/edit, class/edit und class/groupedit, die zu\nder Seite gehen, die das Formular nennt (RedirectIfDiscarded), oder zur zuletzt angesehenen Seite. Diese Ansichten handeln auf einen POST, beenden die\nSitzung oder starten einen Download, ein GET dort zeigt also nichts oder tut etwas. Die laufende Ansicht selbst wird\nimmer übersprungen. Siehe doc/eng-us/features/6.0/safe-redirects.md"
+    },
+    "ini:settings/site.ini [SiteSettings] ErrorHandler": {
+        "en": "What to do when a module does not exists, use either defaultpage or displayerror\nIf defaultpage is used, the DefaultPage will be shown when an error occured",
+        "de": "Was zu tun ist, wenn ein Modul nicht existiert; verwenden Sie defaultpage oder displayerror\nBei defaultpage wird bei einem Fehler die DefaultPage angezeigt"
+    },
+    "ini:settings/site.ini [SiteSettings] FrontSiteAccess": {
+        "en": "The site an admin siteaccess belongs to: its \"Open the site\" and \"View on\nsite\" links (template operator siteaccess_url() without a parameter) go to\nthis siteaccess. Set it in the admin siteaccess's site.ini.append.php when one\ninstallation serves several sites, each with its own admin. Empty: DefaultAccess.",
+        "de": "Die Website, zu der ein Administrations-Siteaccess gehört: Seine Links „Website öffnen“ und „Auf der\nWebsite ansehen“ (Template-Operator siteaccess_url() ohne Parameter) führen zu\ndiesem Siteaccess. Setzen Sie ihn in der site.ini.append.php des Administrations-Siteaccess, wenn eine\nInstallation mehrere Websites bedient, jede mit eigener Administration. Leer: DefaultAccess."
+    },
+    "ini:settings/site.ini [SiteSettings] HTTPAUTHServerVariable": {
+        "en": "Use this variable on FASTCGI/CGI setups to define the Server variable name of the HTTP authentication string.\nOnly Webdav and SOAP interfaces have a dependency on this setting.",
+        "de": "Legt bei FastCGI-/CGI-Einrichtungen den Namen der Servervariable mit der Zeichenkette der HTTP-Authentifizierung fest.\nNur die Schnittstellen WebDAV und SOAP hängen von dieser Einstellung ab."
+    },
+    "ini:settings/site.ini [SiteSettings] IndexPage": {
+        "en": "Which page to show when the root index (/) is accessed",
+        "de": "Welche Seite angezeigt wird, wenn der Wurzel-Index (/) aufgerufen wird"
+    },
+    "ini:settings/site.ini [SiteSettings] LoginPage": {
+        "en": "How the login page should be handled, use embedded to show inside default pagelayout\nor custom for loginpagelayout.tpl",
+        "de": "Wie die Anmeldeseite behandelt wird: embedded zeigt sie im Standard-Pagelayout,\ncustom verwendet loginpagelayout.tpl"
+    },
+    "ini:settings/site.ini [SiteSettings] MetaDataArray": {
+        "en": "The parts of the url that is used for siteaccess mathing\nif any, needed for reverse lookups. Will use siteaccess name\nif undefined and current matching type is uri.\nNote: can not be defined in ActiveAccessExtension settings\neg: SiteUriParts[]=english\nSiteUriParts[]\nList of metadata to set in pagelayout",
+        "de": "Die Teile der URL, die für die Erkennung des Siteaccess verwendet werden,\nfalls vorhanden, nötig für die Rückwärtssuche. Verwendet den Namen des Siteaccess,\nwenn nicht definiert und die aktuelle Abgleichsart uri ist.\nHinweis: kann nicht in den Einstellungen von ActiveAccessExtension definiert werden\nz. B.: SiteUriParts[]=english\nSiteUriParts[]\nListe der Metadaten, die im Pagelayout gesetzt werden"
+    },
+    "ini:settings/site.ini [SiteSettings] SSLPort": {
+        "en": "The SSL port, the default should be OK for most sites but can be\nchanged if different. If the port is detect all redirects will\nbe done with https protocol.",
+        "de": "Der SSL-Port; der Standard sollte für die meisten Websites passen, kann aber\ngeändert werden, wenn er abweicht. Wird der Port erkannt, laufen alle Weiterleitungen\nmit dem Protokoll https."
+    },
+    "ini:settings/site.ini [SiteSettings] SSLProxyServerName": {
+        "en": "If you are using a SSL Proxy you will need to enter here the name of the proxy server",
+        "de": "Wenn Sie einen SSL-Proxy verwenden, geben Sie hier den Namen des Proxyservers ein"
+    },
+    "ini:settings/site.ini [SiteSettings] SiteDescription": {
+        "en": "Description (Short) of the site, will be used in templates in head html.",
+        "de": "(Kurze) Beschreibung der Website, wird in Templates im HTML-Kopf verwendet."
+    },
+    "ini:settings/site.ini [SiteSettings] SiteList": {
+        "en": "A list of sites this server provides, this usually the\nsiteaccess for the user view when installing multiple packages.\ne.g.\nSiteList[]=news\nSiteList[]=plain",
+        "de": "Eine Liste der Websites, die dieser Server bereitstellt; meist der\nSiteaccess für die Benutzeransicht, wenn mehrere Pakete installiert werden.\nz. B.\nSiteList[]=news\nSiteList[]=plain"
+    },
+    "ini:settings/site.ini [SiteSettings] SiteName": {
+        "en": "Name of the site, will be used in default templates in titles.",
+        "de": "Name der Website, wird in den Standard-Templates in Titeln verwendet."
+    },
+    "ini:settings/site.ini [SiteSettings] SiteURL": {
+        "en": "URL of site, often used to link to site in emails etc.\nmust not start with http:// and must not end with /, eg:\nSiteURL=example.com\nSiteURL=example.com/french\nSiteURL=example.com/index.php/english",
+        "de": "URL der Website, oft verwendet, um in E-Mails usw. auf die Website zu verlinken;\ndarf nicht mit http:// beginnen und nicht mit / enden, z. B.:\nSiteURL=example.com\nSiteURL=example.com/french\nSiteURL=example.com/index.php/english"
+    },
+    "ini:settings/site.ini [TemplateSettings]": {
+        "en": "AllowedDeletionDirs[]=/var/share/somedir",
+        "de": "AllowedDeletionDirs[]=/var/share/somedir"
+    },
+    "ini:settings/site.ini [TemplateSettings] AutoloadPathList": {
+        "en": "A list of directories to look for eztemplateautoload.php files\nThese files will be used to automatically load in template functions and operators\nYou can new ones if you create custom template code.",
+        "de": "Eine Liste von Verzeichnissen, in denen nach Dateien eztemplateautoload.php gesucht wird\nDiese Dateien werden verwendet, um Template-Funktionen und -Operatoren automatisch zu laden\nSie können neue hinzufügen, wenn Sie eigenen Template-Code erstellen."
+    },
+    "ini:settings/site.ini [TemplateSettings] CompileAccumulators": {
+        "en": "Whether to include debug accumulators.",
+        "de": "Ob Debug-Akkumulatoren eingebunden werden."
+    },
+    "ini:settings/site.ini [TemplateSettings] CompileAlwaysGenerate": {
+        "en": "If enabled the templates are always compiled even if a\nsufficient cache already exists.",
+        "de": "Wenn aktiviert, werden die Templates immer kompiliert, auch wenn schon ein\nausreichender Cache existiert."
+    },
+    "ini:settings/site.ini [TemplateSettings] CompileComments": {
+        "en": "NOTE:\nThe following settings are for template compilation development only\nand are not useful for normal sites.\n\nWhether to include comments inside cache files or not.",
+        "de": "HINWEIS:\nDie folgenden Einstellungen dienen nur der Entwicklung der Template-Kompilierung\nund sind für normale Websites nicht nützlich.\n\nOb Kommentare in die Cache-Dateien aufgenommen werden."
+    },
+    "ini:settings/site.ini [TemplateSettings] CompileExecution": {
+        "en": "If disabled the template compilation files will only be generated but\nnot executed, this means that the normal template process is used for the result.",
+        "de": "Wenn deaktiviert, werden die Dateien der Template-Kompilierung nur erzeugt, aber\nnicht ausgeführt; für das Ergebnis wird also der normale Template-Prozess verwendet."
+    },
+    "ini:settings/site.ini [TemplateSettings] CompileIncludeNodeTree": {
+        "en": "An array with node trees to include in the compiled template file.\nIncluding them will increase the size of the cache files and\nis only useful for template compilation development.\nPossible entries are:\ntransformed - The tree after node transformation has been done\nstatic      - The tree after static extraction has been done\ncombined    - The tree after static element combines has been done\noriginal    - The originally parsed tree",
+        "de": "Ein Array mit Knotenbäumen, die in die kompilierte Template-Datei aufgenommen werden.\nDas vergrößert die Cache-Dateien und\nist nur für die Entwicklung der Template-Kompilierung nützlich.\nMögliche Einträge sind:\ntransformed - der Baum nach der Transformation der Knoten\nstatic      - der Baum nach der statischen Extraktion\ncombined    - der Baum nach dem Zusammenfassen statischer Elemente\noriginal    - der ursprünglich geparste Baum"
+    },
+    "ini:settings/site.ini [TemplateSettings] CompileNodePlacements": {
+        "en": "If disabled the template compilation will not include placement information for nodes\nThe placement information is used to display line and column numbers for warnings and errors.",
+        "de": "Wenn deaktiviert, enthält die Template-Kompilierung keine Positionsangaben für Knoten\nDie Positionsangaben dienen dazu, Zeilen- und Spaltennummern für Warnungen und Fehler anzuzeigen."
+    },
+    "ini:settings/site.ini [TemplateSettings] CompileResourceFallback": {
+        "en": "Whether to fallback code for resource handling\nShould not be needed unless one has to debug the compilation process",
+        "de": "Ob Ausweichcode für die Behandlung von Ressourcen verwendet wird\nSollte nicht nötig sein, außer man muss den Kompilierungsprozess debuggen"
+    },
+    "ini:settings/site.ini [TemplateSettings] CompileTimingPoints": {
+        "en": "Whether to include debug timing points.",
+        "de": "Ob Debug-Zeitpunkte eingebunden werden."
+    },
+    "ini:settings/site.ini [TemplateSettings] Debug": {
+        "en": "Enabled to see which template files are loaded or disabled to supress debug\nWarning: Will add debug xhtml comments to your source code, including mails!\nNote: No debug on templates starting with <!DOCTYPE to not trigger quirks mode!",
+        "de": "enabled, um zu sehen, welche Template-Dateien geladen werden, oder disabled, um das Debugging zu unterdrücken\nWarnung: Fügt Ihrem Quelltext Debug-Kommentare in XHTML hinzu, auch in Mails!\nHinweis: Kein Debugging bei Templates, die mit <!DOCTYPE beginnen, um den Quirks-Modus nicht auszulösen!"
+    },
+    "ini:settings/site.ini [TemplateSettings] DelayedCacheBlockCleanup": {
+        "en": "Controls whether expired cache-blocks with 'subtree_expiry' parameter will\nbe removed from disk immediately or not.\nIf enabled it should increase performance of large sites but you should remove\nexpired caches manually or using cronjob 'cronjobs/subtreeexpirycleanup.php'.\nSince 4.6, this cronjob is not activated by default.",
+        "de": "Steuert, ob abgelaufene Cache-Blöcke mit dem Parameter 'subtree_expiry'\nsofort von der Festplatte entfernt werden.\nWenn aktiviert, sollte das die Leistung großer Websites verbessern, Sie sollten abgelaufene\nCaches dann aber von Hand oder mit dem Cronjob 'cronjobs/subtreeexpirycleanup.php' entfernen.\nSeit 4.6 ist dieser Cronjob standardmäßig nicht aktiviert."
+    },
+    "ini:settings/site.ini [TemplateSettings] DevelopmentMode": {
+        "en": "Controls if development is enabled or not.\nWhen enabled the system will perform more checks like modification time on\ncompiled vs source file and will reduce need for clearing template compiled\nfiles.\nNote: Live sites should not have this enabled since it increases file access\n      and can be slower.\nNote: When switching this setting the template compiled files must be cleared.",
+        "de": "Steuert, ob der Entwicklungsmodus aktiviert ist.\nWenn aktiviert, führt das System mehr Prüfungen durch, etwa der Änderungszeit von\nkompilierter gegenüber Quelldatei, und das Leeren kompilierter Template-Dateien wird seltener\nnötig.\nHinweis: Live-Websites sollten dies nicht aktiviert haben, weil es die Dateizugriffe erhöht\n      und langsamer sein kann.\nHinweis: Beim Umschalten dieser Einstellung müssen die kompilierten Template-Dateien geleert werden."
+    },
+    "ini:settings/site.ini [TemplateSettings] ExtensionAutoloadPath": {
+        "en": "A list of extensions which have template autoloads.\nOnly specify the extension name, not the path.\nThe extension must contain a subdirectory called autoloads.",
+        "de": "Eine Liste der Erweiterungen, die Template-Autoloads haben.\nGeben Sie nur den Namen der Erweiterung an, nicht den Pfad.\nDie Erweiterung muss ein Unterverzeichnis namens autoloads enthalten."
+    },
+    "ini:settings/site.ini [TemplateSettings] NodeTreeCaching": {
+        "en": "Determines whether the internal node tree should be cached, by enabling this the loading\nand parsing of templates is significantly reduced.",
+        "de": "Legt fest, ob der interne Knotenbaum gecacht wird; das reduziert das Laden\nund Parsen von Templates deutlich."
+    },
+    "ini:settings/site.ini [TemplateSettings] ShareCompiledTemplates": {
+        "en": "If you share compiled templates with other site accesses",
+        "de": "Ob Sie kompilierte Templates mit anderen Siteaccesses teilen"
+    },
+    "ini:settings/site.ini [TemplateSettings] SharedCompiledTemplatesDir": {
+        "en": "Where to store shared compiled templates",
+        "de": "Wo gemeinsam genutzte kompilierte Templates gespeichert werden"
+    },
+    "ini:settings/site.ini [TemplateSettings] ShowMethodDebug": {
+        "en": "Whether to show debug of functions and operators when\nprocessing nodes.\nThis only meant for kernel developers to check which\noperators and functions are called.\nNote: Will only work when template compiler is off",
+        "de": "Ob beim Verarbeiten von Knoten das Debugging von Funktionen und Operatoren\nangezeigt wird.\nDas ist nur für Kernel-Entwickler gedacht, um zu prüfen, welche\nOperatoren und Funktionen aufgerufen werden.\nHinweis: Funktioniert nur, wenn der Template-Compiler aus ist"
+    },
+    "ini:settings/site.ini [TemplateSettings] ShowTemplatePathComments": {
+        "en": "If enabled, wraps every rendered template in HTML comments naming its path,\ne.g. <!-- START design/media/templates/pagelayout/footer.tpl --> ... <!-- STOP ... -->\nThis mirrors the Symfony/Twig debug output and makes layout debugging and block\ntracking possible in the legacy pipeline. Works with the template compiler on or off.\nDevelopment only: it injects markup into every template's output, so it must stay\ndisabled in production and on any siteaccess serving JSON, XML or RSS.",
+        "de": "Wenn aktiviert, wird jedes gerenderte Template in HTML-Kommentare eingeschlossen, die seinen Pfad nennen,\nz. B. <!-- START design/media/templates/pagelayout/footer.tpl --> ... <!-- STOP ... -->\nDas entspricht der Debug-Ausgabe von Symfony/Twig und macht das Debuggen von Layouts und das Verfolgen von Blöcken\nin der Legacy-Pipeline möglich. Funktioniert mit ein- oder ausgeschaltetem Template-Compiler.\nNur für die Entwicklung: Es fügt in die Ausgabe jedes Templates Markup ein, muss also in Produktion\nund in jedem Siteaccess, der JSON, XML oder RSS ausliefert, deaktiviert bleiben."
+    },
+    "ini:settings/site.ini [TemplateSettings] ShowUsedTemplates": {
+        "en": "If enabled will add a table with templates used to render a page.\nDebugOutput should be enabled too.",
+        "de": "Wenn aktiviert, wird eine Tabelle der zum Rendern einer Seite verwendeten Templates hinzugefügt.\nDebugOutput sollte ebenfalls aktiviert sein."
+    },
+    "ini:settings/site.ini [TemplateSettings] ShowXHTMLCode": {
+        "en": "If enabled will add code to display the template name in the browser\nIf Debug is disabled then nothing happens",
+        "de": "Wenn aktiviert, wird Code hinzugefügt, der den Template-Namen im Browser anzeigt\nIst Debug deaktiviert, geschieht nichts"
+    },
+    "ini:settings/site.ini [TemplateSettings] TemplateCache": {
+        "en": "Controls all template base caching mechanisms, if disabled they will never be\nused.\nThe elements currently controlled by this is:\n- cache-block",
+        "de": "Steuert alle auf Templates beruhenden Cache-Mechanismen; wenn deaktiviert, werden sie nie\nverwendet.\nDie Elemente, die dies derzeit steuert, sind:\n- cache-block"
+    },
+    "ini:settings/site.ini [TemplateSettings] TemplateCompile": {
+        "en": "Determines whether the templates should be compiled to PHP code, by enabling this the loading\nand parsing of templates is omitted and template processing is significantly reduced.\nNote: The first time the templates are compiled it will take a long time, use the\n      bin/php/eztc.php script to prepare all your templates.",
+        "de": "Legt fest, ob die Templates zu PHP-Code kompiliert werden; dann entfallen das Laden\nund Parsen der Templates, und die Template-Verarbeitung wird deutlich reduziert.\nHinweis: Das erste Kompilieren der Templates dauert lange; verwenden Sie das\n      Skript bin/php/eztc.php, um alle Ihre Templates vorzubereiten."
+    },
+    "ini:settings/site.ini [TemplateSettings] TemplateCompression": {
+        "en": "Controls whether compiled templates should be stored gzip compressed on disk.\nThis drastically reduces disk usage.",
+        "de": "Steuert, ob kompilierte Templates gzip-komprimiert auf der Festplatte gespeichert werden.\nDas reduziert den Speicherbedarf drastisch."
+    },
+    "ini:settings/site.ini [TemplateSettings] TemplateOptimization": {
+        "en": "Controls whether further optimizations should be performed on compiled\ntemplates",
+        "de": "Steuert, ob an kompilierten Templates weitere Optimierungen\nvorgenommen werden"
+    },
+    "ini:settings/site.ini [TemplateSettings] UseFormatting": {
+        "en": "Controls whether to include formatting in compiled templates or not.",
+        "de": "Steuert, ob kompilierte Templates Formatierung enthalten."
+    },
+    "ini:settings/site.ini [TimeZoneSettings] TimeZone": {
+        "en": "Override this value to set timezone to other than OS default.\nSee /usr/share/zoneinfo/zone.tab for possible values ( 3rd column ).\nExample: TimeZone=America/Antigua\n\nNotice: This will not work on threaded web servers or on Windows.\n        Use only with Apache 1.3 or 2.0 prefork on *nix.",
+        "de": "Überschreiben Sie diesen Wert, um eine andere Zeitzone als die des Betriebssystems zu setzen.\nMögliche Werte siehe /usr/share/zoneinfo/zone.tab ( 3. Spalte ).\nBeispiel: TimeZone=America/Antigua\n\nHinweis: Funktioniert nicht auf Webservern mit Threads oder unter Windows.\n        Nur mit Apache 1.3 oder 2.0 prefork unter *nix verwenden."
+    },
+    "ini:settings/site.ini [TipAFriend]": {
+        "en": "Settings control amount of mails  allowed to to be sent to one email address",
+        "de": "Die Einstellungen steuern, wie viele Mails an eine E-Mail-Adresse gesendet werden dürfen"
+    },
+    "ini:settings/site.ini [TipAFriend] FromEmail": {
+        "en": "in hours\nEmail used as sender email in tipafriend mails, this is needed when you use\nsmtp servers with closed relaying\nAssign a non-empty value to FromEmail for it to be used as from address.",
+        "de": "in Stunden\nE-Mail-Adresse, die in Mails von tipafriend als Absender verwendet wird; nötig, wenn Sie\nSMTP-Server mit geschlossenem Relay verwenden\nWeisen Sie FromEmail einen nicht leeren Wert zu, damit sie als Absenderadresse verwendet wird."
+    },
+    "ini:settings/site.ini [URLTranslator] DecodeOnce": {
+        "en": "Decode the request URL once (enabled) instead of twice (disabled, the shipped value).\nThe address is URL decoded when the request starts, and eZURI decodes it again, so an\nencoded \"+\" in a path, as in /(foo)/bar%2Bbar, reaches a view as \"bar bar\" instead of\n\"bar+bar\". With enabled it arrives as \"bar+bar\", and an eZURI made from a string takes\nthat string as decoded text (PHP code with an encoded URL passes $decode = true to\nnew eZURI()). Addresses with an encoded \"%\" or \"+\" in a path element or a view\nparameter then reach the view differently, so check them before you switch it on.\nSet it in settings/override/site.ini.append.php: the address is read before the\nsiteaccess is known.",
+        "de": "Die URL der Anfrage einmal (enabled) statt zweimal (disabled, der ausgelieferte Wert) dekodieren.\nDie Adresse wird beim Start der Anfrage URL-dekodiert, und eZURI dekodiert sie erneut, sodass ein\nkodiertes \"+\" in einem Pfad wie /(foo)/bar%2Bbar eine Ansicht als \"bar bar\" statt als\n\"bar+bar\" erreicht. Mit enabled kommt es als \"bar+bar\" an, und ein aus einer Zeichenkette erzeugtes eZURI nimmt\ndiese Zeichenkette als dekodierten Text (PHP-Code mit einer kodierten URL übergibt $decode = true an\nnew eZURI()). Adressen mit einem kodierten \"%\" oder \"+\" in einem Pfadelement oder einem View-\nParameter erreichen die Ansicht dann anders; prüfen Sie sie also, bevor Sie es einschalten.\nSetzen Sie es in settings/override/site.ini.append.php: Die Adresse wird gelesen, bevor der\nSiteaccess bekannt ist."
+    },
+    "ini:settings/site.ini [URLTranslator] FilterClasses": {
+        "en": "List of classes you want to call as an eZURLALiasFilter",
+        "de": "Liste der Klassen, die Sie als eZURLALiasFilter aufrufen wollen"
+    },
+    "ini:settings/site.ini [URLTranslator] LoadOnPartialAliasPath": {
+        "en": "Path to load when accessing a partial alias\nFor example, when there is a redirect from /path/one/two but the user accesses /path/one\nBy default this loads the homepage, but you can set it to load a 404 page for example",
+        "de": "Pfad, der beim Aufruf eines teilweisen Alias geladen wird\nZum Beispiel, wenn es eine Weiterleitung von /path/one/two gibt, der Benutzer aber /path/one aufruft\nStandardmäßig wird die Startseite geladen, Sie können aber zum Beispiel eine 404-Seite laden lassen"
+    },
+    "ini:settings/site.ini [URLTranslator] MaximumWildcardIterations": {
+        "en": "Controls how many times the wildcard matches can iterate.\nThe wildcard matcher system will iterate if the translated\nurl is not a complete url, this allows urls lookup to be\nrecursive and is required for proper subtree history.",
+        "de": "Steuert, wie oft die Platzhalter-Treffer iterieren dürfen.\nDas Platzhaltersystem iteriert, wenn die übersetzte\nURL keine vollständige URL ist; das erlaubt eine rekursive\nSuche nach URLs und ist für eine korrekte Historie von Teilbäumen nötig."
+    },
+    "ini:settings/site.ini [URLTranslator] NodeTranslation": {
+        "en": "OBSOLETE: Use Translation setting instead\nEnable this if you want to percieve the url as a path element\nfor the node tree. By entering the path in the url and ending it\nwith a .html you will get the correct node.",
+        "de": "VERALTET: Verwenden Sie stattdessen die Einstellung Translation\nAktivieren Sie dies, wenn Sie die URL als Pfadelement\ndes Knotenbaums auffassen wollen. Geben Sie den Pfad in der URL ein und beenden Sie ihn\nmit .html, um den richtigen Knoten zu erhalten."
+    },
+    "ini:settings/site.ini [URLTranslator] TrailingCleanup": {
+        "en": "In the IRI transformation (TransformationGroup=urlalias_iri), also treat the double\nquote as a reserved character (enabled), so it becomes a word separator and is\nstripped at the beginning and end of an alias like \"!\", dots and separators already\nare. disabled (the shipped value) keeps today's aliases. Existing aliases stay as\nthey are until their object is published again.",
+        "de": "In der IRI-Transformation (TransformationGroup=urlalias_iri) auch das doppelte\nAnführungszeichen als reserviertes Zeichen behandeln (enabled), sodass es zum Worttrenner wird und\nam Anfang und Ende eines Alias entfernt wird, wie schon \"!\", Punkte und Trennzeichen.\ndisabled (der ausgelieferte Wert) behält die heutigen Aliase. Vorhandene Aliase bleiben,\nwie sie sind, bis ihr Objekt erneut veröffentlicht wird."
+    },
+    "ini:settings/site.ini [URLTranslator] TranslatableSystemUrls": {
+        "en": "Controls if custom url translations should be disabled for system urls where\nfirst part of url is defined in module.ini Modulelist, eg. 'content'",
+        "de": "Steuert, ob eigene URL-Übersetzungen für System-URLs deaktiviert werden, deren\nerster Teil in module.ini Modulelist definiert ist, z. B. 'content'"
+    },
+    "ini:settings/site.ini [URLTranslator] Translation": {
+        "en": "Controls whether the url translation is enabled or not.\nWith url translation enabled you can enter the path of content object\nin the url like my/nice/path and get the content object.\nAlso the url translation allows for custom translations of urls\nUse either enabled or disabled",
+        "de": "Steuert, ob die URL-Übersetzung aktiviert ist.\nMit aktivierter URL-Übersetzung können Sie den Pfad eines Inhaltsobjekts\nin der URL eingeben, etwa my/nice/path, und erhalten das Inhaltsobjekt.\nAußerdem erlaubt die URL-Übersetzung eigene Übersetzungen von URLs\nVerwenden Sie enabled oder disabled"
+    },
+    "ini:settings/site.ini [URLTranslator] UrlAliasNameLimit": {
+        "en": "Uncomment this to get the new-style url aliases with Unicode support\nTransformationGroup=urlalias_iri\nUncomment this to get the old-style url aliases\nTransformationGroup=urlalias_compat\nLength limit on urlAliasName, the limit pr path item in the url.\nSet to 0 to disable.",
+        "de": "Entfernen Sie den Kommentar, um URL-Aliase neuen Stils mit Unicode-Unterstützung zu erhalten\nTransformationGroup=urlalias_iri\nEntfernen Sie den Kommentar, um URL-Aliase alten Stils zu erhalten\nTransformationGroup=urlalias_compat\nLängengrenze für urlAliasName, die Grenze pro Pfadelement der URL.\nAuf 0 setzen, um sie abzuschalten."
+    },
+    "ini:settings/site.ini [URLTranslator] WildcardTranslation": {
+        "en": "Controls whether wildcard translation is to be used or not\nIf enabled wilcard translations will be used if a normal\ntranslation is not available and it is also used to remember\nold sub trees. It's recommended to have this enabled\nunless you have problems with it.",
+        "de": "Steuert, ob die Platzhalter-Übersetzung verwendet wird\nWenn aktiviert, werden Platzhalter-Übersetzungen verwendet, wenn keine normale\nÜbersetzung verfügbar ist, und sie dienen auch dazu, sich an\nalte Teilbäume zu erinnern. Es wird empfohlen, dies aktiviert zu lassen,\nsofern Sie keine Probleme damit haben."
+    },
+    "ini:settings/site.ini [URLTranslator] WordSeparator": {
+        "en": "Type of word separator for url aliases, can be one of:\ndash - Use a dash\nunderscore - Use an underscore\nspace - Use a space\nAny other value returns in a dash",
+        "de": "Art des Worttrenners für URL-Aliase, kann eines sein von:\ndash - einen Bindestrich verwenden\nunderscore - einen Unterstrich verwenden\nspace - ein Leerzeichen verwenden\nJeder andere Wert ergibt einen Bindestrich"
+    },
+    "ini:settings/site.ini [UnitSettings]": {
+        "en": "Example mapping between translation siteaccesses and the name to use for the\nlanguage switcher link, e.g. the name which will be used when making links to\nthese siteaccesses.\nExample: TranslationSA[<name of siteaccess>]=<name of language switcher link, pointing to this siteaccess>\nTranslationSA[]\nTranslationSA[eng]=English\nTranslationSA[nor]=Norwegian\nTranslationSA[fre]=French\nExample mapping between languages and siteaccess, mapping is done by convention if not defined\nlike eg: eng-GB => eng\nIn both cases sa name needs to be present in [SiteAccessSettings]\\RelatedSiteAccessList[]\nExample: LanguageSA[<language>]=<name of siteaccess>\nLanguageSA[]\nLanguageSA[eng-GB]=site1_eng\nLanguageSA[nor-NB]=site1_nor\nLanguageSA[fre-FR]=site1_fre",
+        "de": "Beispielzuordnung zwischen Übersetzungs-Siteaccesses und dem Namen, der für den\nLink der Sprachumschaltung verwendet wird, also dem Namen, der beim Verlinken auf\ndiese Siteaccesses verwendet wird.\nBeispiel: TranslationSA[<name of siteaccess>]=<name of language switcher link, pointing to this siteaccess>\nTranslationSA[]\nTranslationSA[eng]=English\nTranslationSA[nor]=Norwegian\nTranslationSA[fre]=French\nBeispielzuordnung zwischen Sprachen und Siteaccess; ist sie nicht definiert, wird nach Konvention zugeordnet,\nz. B. eng-GB => eng\nIn beiden Fällen muss der Name des Siteaccess in [SiteAccessSettings]\\RelatedSiteAccessList[] stehen\nBeispiel: LanguageSA[<language>]=<name of siteaccess>\nLanguageSA[]\nLanguageSA[eng-GB]=site1_eng\nLanguageSA[nor-NB]=site1_nor\nLanguageSA[fre-FR]=site1_fre"
+    },
+    "ini:settings/site.ini [UnitSettings] BinaryUnits": {
+        "en": "List of units which acts as binary measures",
+        "de": "Liste der Einheiten, die als binäre Maße gelten"
+    },
+    "ini:settings/site.ini [UnitSettings] UseSIUnits": {
+        "en": "True means use Ki, Mi etc. for binary measures instead of K, M etc.\nThis is good if you want to follow proper naming standards.",
+        "de": "True bedeutet, für binäre Maße Ki, Mi usw. statt K, M usw. zu verwenden.\nDas ist gut, wenn Sie den korrekten Benennungsstandards folgen wollen."
+    },
+    "ini:settings/site.ini [UserSettings] ActivationByAdministratorSendsApprovalMail": {
+        "en": "Whether Activate on Users > Unactivated users (user/unactivated) sends the\nactivated user the \"registration approved\" mail (user/registrationapproved.tpl),\nas the user's own activation link does. disabled activates silently.\nEmailRegistrationInfo=disabled switches that mail off everywhere.",
+        "de": "Ob Aktivieren unter Benutzer > Nicht aktivierte Benutzer (user/unactivated) dem\naktivierten Benutzer die Mail „Registrierung genehmigt“ sendet (user/registrationapproved.tpl),\nwie es der eigene Aktivierungslink des Benutzers tut. disabled aktiviert ohne Mail.\nEmailRegistrationInfo=disabled schaltet diese Mail überall ab."
+    },
+    "ini:settings/site.ini [UserSettings] AnonymousUserID": {
+        "en": "The ID of the anonymous user, this user will\nbe used for everyone who is not logged in.",
+        "de": "Die ID des anonymen Benutzers; dieser Benutzer wird\nfür jeden verwendet, der nicht angemeldet ist."
+    },
+    "ini:settings/site.ini [UserSettings] AuthenticateMatch": {
+        "en": "Authenticate match, a list of authenticate fields to use\nAvailable are login and email",
+        "de": "Abgleich für die Authentifizierung, eine Liste der zu verwendenden Felder\nVerfügbar sind login und email"
+    },
+    "ini:settings/site.ini [UserSettings] DeactivateAndMove": {
+        "en": "\"Deactivate and move\" (doc/eng-us/features/6.0/user-hygiene.md): enabled offers, on a user's page, in the context menu\nand on Users > Check user accounts, to disable accounts and bring all their locations together in one hidden\nuser group without roles, remembering where they were, and to move them back on reactivation; a way to retire\naccounts without removing them (users never go to the trash). disabled (the default) shows nothing and creates\nnothing. Needs the policy user/deactivate.",
+        "de": "„Deaktivieren und verschieben“ (doc/eng-us/features/6.0/user-hygiene.md): enabled bietet auf der Seite eines Benutzers, im Kontextmenü\nund unter Benutzer > Benutzerkonten prüfen an, Konten zu deaktivieren und alle ihre Platzierungen in einer verborgenen\nBenutzergruppe ohne Rollen zusammenzuführen, sich zu merken, wo sie waren, und sie beim Reaktivieren zurückzuverschieben; eine Möglichkeit,\nKonten stillzulegen, ohne sie zu entfernen (Benutzer kommen nie in den Papierkorb). disabled (der Standard) zeigt nichts und legt\nnichts an. Braucht die Richtlinie user/deactivate."
+    },
+    "ini:settings/site.ini [UserSettings] DeactivatedUserGroupNodeID": {
+        "en": "The node of that group. Empty: the user group with the remote id exp_deactivated_users_group, created below\ncontent.ini [NodeSettings] UserRootNode on first use (or beforehand by bin/php/ezcreatedeactivatedusergroup.php).\nA node id set here that does not exist stops the action; it is never replaced by a new group.",
+        "de": "Der Knoten dieser Gruppe. Leer: die Benutzergruppe mit der Remote-ID exp_deactivated_users_group, bei der ersten Verwendung unter\ncontent.ini [NodeSettings] UserRootNode angelegt (oder vorab mit bin/php/ezcreatedeactivatedusergroup.php).\nEine hier gesetzte Knoten-ID, die nicht existiert, hält die Aktion an; sie wird nie durch eine neue Gruppe ersetzt."
+    },
+    "ini:settings/site.ini [UserSettings] DefaultSectionID": {
+        "en": "Which section to place newly self registered users\n(Using 0 means that the user will get the section ID\n from its new location)",
+        "de": "In welche Sektion neu selbst registrierte Benutzer kommen\n(0 bedeutet, dass der Benutzer die Sektions-ID\n von seiner neuen Platzierung erhält)"
+    },
+    "ini:settings/site.ini [UserSettings] DefaultUserPlacement": {
+        "en": "Where to store newly self registered users",
+        "de": "Wo neu selbst registrierte Benutzer gespeichert werden"
+    },
+    "ini:settings/site.ini [UserSettings] EmailRegistrationInfo": {
+        "en": "If set to disabled, the registration confirmation mail won't be sent to the user\nthat created the account",
+        "de": "Wenn auf disabled gesetzt, wird die Bestätigungsmail der Registrierung nicht an den Benutzer gesendet,\nder das Konto angelegt hat"
+    },
+    "ini:settings/site.ini [UserSettings] ExtensionDirectory": {
+        "en": "Extension directories for login handlers. Login handler must be placed in\nextension/<extension_directory>/login_handler/<login_handler|lowercase>user.php,\nand class should be named eZ<login_handler>User",
+        "de": "Erweiterungsverzeichnisse für Login-Handler. Ein Login-Handler muss in\nextension/<extension_directory>/login_handler/<login_handler|lowercase>user.php liegen,\nund die Klasse sollte eZ<login_handler>User heißen"
+    },
+    "ini:settings/site.ini [UserSettings] ForgotPasswordKeyLifetime": {
+        "en": "Seconds a \"Forgot your password?\" link works after it was sent (3600: one hour).\nAn expired link is refused with its own message; expired links are removed on\nthe next visit of user/forgotpassword. 0: a link works until it is used (the\nbehavior before 6.0.15).",
+        "de": "Sekunden, die ein Link „Passwort vergessen?“ nach dem Versand funktioniert (3600: eine Stunde).\nEin abgelaufener Link wird mit einer eigenen Meldung abgelehnt; abgelaufene Links werden beim\nnächsten Aufruf von user/forgotpassword entfernt. 0: Ein Link funktioniert, bis er verwendet wird (das\nVerhalten vor 6.0.15)."
+    },
+    "ini:settings/site.ini [UserSettings] GeneratePasswordIfEmpty": {
+        "en": "If true it will automatically generate a password if it is empty\nand email it to the user.",
+        "de": "Wenn true, wird automatisch ein Passwort erzeugt, wenn es leer ist,\nund dem Benutzer per E-Mail gesendet."
+    },
+    "ini:settings/site.ini [UserSettings] HashType": {
+        "en": "Use either md5_password, md5_user, md5_site or plaintext\nmd5_password generates password hash from password only.\nmd5_user generates password hash from user and password.\nmd5_site generates password hash from site, user and password\nplaintext does not generate a hash but has the password as it is, this is not\nrecommended since it is a huge security risk.\nbcrypt generates hash from password only\nphp_default uses whichever method PHP deems appropriate (currently bcrypt, as of PHP 5.5)\nnote: password hashes generated with md5_site will not work after\n      changing the site name.",
+        "de": "Verwenden Sie md5_password, md5_user, md5_site oder plaintext\nmd5_password erzeugt den Passwort-Hash nur aus dem Passwort.\nmd5_user erzeugt den Passwort-Hash aus Benutzer und Passwort.\nmd5_site erzeugt den Passwort-Hash aus Website, Benutzer und Passwort\nplaintext erzeugt keinen Hash, sondern speichert das Passwort, wie es ist; das wird nicht\nempfohlen, weil es ein großes Sicherheitsrisiko ist.\nbcrypt erzeugt den Hash nur aus dem Passwort\nphp_default verwendet die Methode, die PHP für angemessen hält (derzeit bcrypt, seit PHP 5.5)\nHinweis: Mit md5_site erzeugte Passwort-Hashes funktionieren nach\n      einer Änderung des Website-Namens nicht mehr."
+    },
+    "ini:settings/site.ini [UserSettings] LoginHandler": {
+        "en": "Text attribute of class 'User' that contains URI where to redirect\nthe user to after login.\nLoginRedirectionUriAttribute[user]=front_page_uri\nText attribute of class 'User group' that contains URI where\nto redirect the user belonging to this group to after login.\nLoginRedirectionUriAttribute[group]=front_page_uri",
+        "de": "Textattribut der Klasse 'User', das die URI enthält, auf die\nder Benutzer nach der Anmeldung weitergeleitet wird.\nLoginRedirectionUriAttribute[user]=front_page_uri\nTextattribut der Klasse 'User group', das die URI enthält, auf die\nein Benutzer dieser Gruppe nach der Anmeldung weitergeleitet wird.\nLoginRedirectionUriAttribute[group]=front_page_uri"
+    },
+    "ini:settings/site.ini [UserSettings] LogoutRedirect": {
+        "en": "Enable these two lines if your MySQL database is not using the utf8mb4 character set.\nUserNameValidationRegex[utf8mb4]=%(?:\\xF0[\\x90-\\xBF][\\x80-\\xBF]{2}|[\\xF1-\\xF3][\\x80-\\xBF]{3}|\\xF4[\\x80-\\x8F][\\x80-\\xBF]{2})%xs\nUserNameValidationErrorText[utf8mb4]=The username cannot contain 4-byte characters.\nExamples of validation\nUserNameValidationRegex[sw]=/^\\s/\nUserNameValidationErrorText[sw]=The username cannot start with a whitespace.\nUserNameValidationRegex[ew]=/\\s$/\nUserNameValidationErrorText[ew]=The username cannot end with a whitespace.\nUserNameValidationRegex[rw]=/\\s+/\nUserNameValidationErrorText[rw]=The username cannot contain repeated whitespace.\nUserNameValidationRegex[lb]=/\\n|\\r/\nUserNameValidationErrorText[lb]=The username cannot contain line breaks.\nUserNameValidationRegex[t]=/\\t/\nUserNameValidationErrorText[t]=The username cannot contain tabs.\nAlternative example only allowing 'word' charthers\nUserNameValidationRegex[w]=/\\W/\nUserNameValidationErrorText[w]=The username can only contain a-z, digits or underline.\nOr\nUserNameValidationRegex[wh]=/[^A-Za-z0-9_-]/\nUserNameValidationErrorText[wh]=The username can only contain a-z, digits, underline or hyphen.\nWhile testing add this at the end, just remember to remove it when your done..\nUserNameValidationRegex[test]=/\\w/\nUserNameValidationErrorText[test]=The username seems to be ok!\nWhich url to redirect after a logout",
+        "de": "Aktivieren Sie diese beiden Zeilen, wenn Ihre MySQL-Datenbank nicht den Zeichensatz utf8mb4 verwendet.\nUserNameValidationRegex[utf8mb4]=%(?:\\xF0[\\x90-\\xBF][\\x80-\\xBF]{2}|[\\xF1-\\xF3][\\x80-\\xBF]{3}|\\xF4[\\x80-\\x8F][\\x80-\\xBF]{2})%xs\nUserNameValidationErrorText[utf8mb4]=The username cannot contain 4-byte characters.\nBeispiele für Prüfungen\nUserNameValidationRegex[sw]=/^\\s/\nUserNameValidationErrorText[sw]=The username cannot start with a whitespace.\nUserNameValidationRegex[ew]=/\\s$/\nUserNameValidationErrorText[ew]=The username cannot end with a whitespace.\nUserNameValidationRegex[rw]=/\\s+/\nUserNameValidationErrorText[rw]=The username cannot contain repeated whitespace.\nUserNameValidationRegex[lb]=/\\n|\\r/\nUserNameValidationErrorText[lb]=The username cannot contain line breaks.\nUserNameValidationRegex[t]=/\\t/\nUserNameValidationErrorText[t]=The username cannot contain tabs.\nAlternatives Beispiel, das nur 'Wort'-Zeichen erlaubt\nUserNameValidationRegex[w]=/\\W/\nUserNameValidationErrorText[w]=The username can only contain a-z, digits or underline.\nOder\nUserNameValidationRegex[wh]=/[^A-Za-z0-9_-]/\nUserNameValidationErrorText[wh]=The username can only contain a-z, digits, underline or hyphen.\nFügen Sie beim Testen dies am Ende hinzu, und denken Sie daran, es zu entfernen, wenn Sie fertig sind.\nUserNameValidationRegex[test]=/\\w/\nUserNameValidationErrorText[test]=The username seems to be ok!\nAuf welche URL nach einer Abmeldung weitergeleitet wird"
+    },
+    "ini:settings/site.ini [UserSettings] MaxNumberOfFailedLogin": {
+        "en": "The possibility to deny login after MaxNumberOfFailedLogin failed login attempts.\nMax number of failed login attempts.\nIf the max number is '0' the possibility will be disabled",
+        "de": "Die Möglichkeit, die Anmeldung nach MaxNumberOfFailedLogin fehlgeschlagenen Anmeldeversuchen zu verweigern.\nHöchstzahl fehlgeschlagener Anmeldeversuche.\nIst die Höchstzahl '0', ist diese Möglichkeit deaktiviert"
+    },
+    "ini:settings/site.ini [UserSettings] MinPasswordLength": {
+        "en": "Minimum password length",
+        "de": "Mindestlänge des Passworts"
+    },
+    "ini:settings/site.ini [UserSettings] PasswordInRegistrationEmail": {
+        "en": "If set to enabled, user password would be send in the registration email\nThis password WON'T be stored in plain text",
+        "de": "Wenn auf enabled gesetzt, wird das Passwort des Benutzers in der Registrierungsmail gesendet\nDieses Passwort wird NICHT im Klartext gespeichert"
+    },
+    "ini:settings/site.ini [UserSettings] RedirectOnLogoutWithLastAccessURI": {
+        "en": "Use the LastAccessURI to decide where to redirect the user on logout",
+        "de": "Die LastAccessURI verwenden, um zu entscheiden, wohin der Benutzer beim Abmelden weitergeleitet wird"
+    },
+    "ini:settings/site.ini [UserSettings] RegisterAutoLogin": {
+        "en": "If set to disabled, the user will not be automatically logged in while registering\neven if the user is automatically activated",
+        "de": "Wenn auf disabled gesetzt, wird der Benutzer bei der Registrierung nicht automatisch angemeldet,\nauch wenn er automatisch aktiviert wird"
+    },
+    "ini:settings/site.ini [UserSettings] RegistrationActionTTL": {
+        "en": "How long a link works, in seconds (604800 = 7 days). Approve and reject links\nwork once.",
+        "de": "Wie lange ein Link funktioniert, in Sekunden (604800 = 7 Tage). Links zum Genehmigen und Ablehnen\nfunktionieren einmal."
+    },
+    "ini:settings/site.ini [UserSettings] RegistrationAdminBaseURL": {
+        "en": "The address of the administration the links point to, e.g.\nhttps://admin.example.com or https://www.example.com/admin. Empty: https:// and\nthe SiteURL of RegistrationAdminSiteAccess, else that siteaccess's address.",
+        "de": "Die Adresse der Administration, auf die die Links zeigen, z. B.\nhttps://admin.example.com oder https://www.example.com/admin. Leer: https:// und\ndie SiteURL von RegistrationAdminSiteAccess, sonst die Adresse dieses Siteaccess."
+    },
+    "ini:settings/site.ini [UserSettings] RegistrationAdminLinks": {
+        "en": "The administrator's \"New user registered\" mail (RegistrationFeedback=email,\nuser/registrationfeedback.tpl) carries signed links to the administration:\nview the account, approve (activate) it, reject (remove) it, and the approval\nitem when a workflow holds it. Each opens user/registration, which asks the\nsigned-in administrator to confirm. Guide: doc/eng-us/features/6.0/registration-admin-links.md\nenabled or disabled (the mail then has no links)",
+        "de": "Die Mail „Neuer Benutzer registriert“ an den Administrator (RegistrationFeedback=email,\nuser/registrationfeedback.tpl) enthält signierte Links zur Administration:\ndas Konto ansehen, es genehmigen (aktivieren), es ablehnen (entfernen) und den Freigabe-\neintrag, wenn ein Workflow es zurückhält. Jeder öffnet user/registration, das den\nangemeldeten Administrator um Bestätigung bittet. Anleitung: doc/eng-us/features/6.0/registration-admin-links.md\nenabled oder disabled (die Mail hat dann keine Links)"
+    },
+    "ini:settings/site.ini [UserSettings] RegistrationAdminSiteAccess": {
+        "en": "The administration siteaccess. Empty: the siteaccess whose [SiteSettings]\nFrontSiteAccess is this one, else admin.",
+        "de": "Der Administrations-Siteaccess. Leer: der Siteaccess, dessen [SiteSettings]\nFrontSiteAccess dieser ist, sonst admin."
+    },
+    "ini:settings/site.ini [UserSettings] RegistrationEmail": {
+        "en": "Where to send email of newly registered users if no\nemail_receiver is returned by user/registrationfeedback.tpl",
+        "de": "Wohin die E-Mail über neu registrierte Benutzer gesendet wird, wenn\nuser/registrationfeedback.tpl keinen email_receiver zurückgibt"
+    },
+    "ini:settings/site.ini [UserSettings] RegistrationFeedback": {
+        "en": "What kind of feedback is sent back to the site for newly created\nusers. Use a semi-colon separated list of feedback types.\nOnly email is supported nativly, set to blank to disable.\nExample on setting up custom feedback type:\n'registrationFeedback' function will be used on the class, look in\nkernel/user/register.php for how the email code is implemented!\n[RegistrationFeedback_<custom_type>]\nClass=<custom_type_class_name>\n#File is optional, autoload will be used if not set\nFile=<custom_type_file_path>",
+        "de": "Welche Art von Rückmeldung für neu angelegte Benutzer an die Website gesendet\nwird. Verwenden Sie eine durch Semikolons getrennte Liste von Rückmeldungsarten.\nNativ wird nur email unterstützt; leer schaltet es ab.\nBeispiel für das Einrichten einer eigenen Rückmeldungsart:\nDie Funktion 'registrationFeedback' wird an der Klasse verwendet; wie der E-Mail-Code umgesetzt ist,\nsehen Sie in kernel/user/register.php!\n[RegistrationFeedback_<custom_type>]\nClass=<custom_type_class_name>\n#File is optional, autoload will be used if not set\nFile=<custom_type_file_path>"
+    },
+    "ini:settings/site.ini [UserSettings] RequireConfirmEmail": {
+        "en": "since 4.5, Controls whether users are required to confirm their emails\nIf set to true, users must retype their emails when registering\nor editing their profiles",
+        "de": "Seit 4.5; steuert, ob Benutzer ihre E-Mail-Adresse bestätigen müssen\nWenn true, müssen Benutzer ihre E-Mail-Adresse bei der Registrierung\noder beim Bearbeiten ihres Profils erneut eingeben"
+    },
+    "ini:settings/site.ini [UserSettings] RequireUniqueEmail": {
+        "en": "Controls whether a unique email is required for all users,\nif set to true and email is set in AuthenticateMatch then only\none email address instance is allowed on the site.\nSet to false to disable it",
+        "de": "Steuert, ob für alle Benutzer eine eindeutige E-Mail-Adresse erforderlich ist;\nwenn true und email in AuthenticateMatch gesetzt ist, ist auf der Website nur\nein Vorkommen jeder E-Mail-Adresse erlaubt.\nAuf false setzen, um es abzuschalten"
+    },
+    "ini:settings/site.ini [UserSettings] ShowMessageIfExceeded": {
+        "en": "TrustedIPList[]=192.0.0.42\nTrustedIPList[]=192.0.0.0/27\nIf true and failed login attempts of current user execeed MaxNumberOfFailedLogin the user will get a message.",
+        "de": "TrustedIPList[]=192.0.0.42\nTrustedIPList[]=192.0.0.0/27\nWenn true und die fehlgeschlagenen Anmeldeversuche des aktuellen Benutzers MaxNumberOfFailedLogin überschreiten, erhält der Benutzer eine Meldung."
+    },
+    "ini:settings/site.ini [UserSettings] SingleSignOnHandlerArray": {
+        "en": "LoginHandler[]=LDAP\nLoginHandler[]=textfile\nDefines the available single sign on handlers.",
+        "de": "LoginHandler[]=LDAP\nLoginHandler[]=textfile\nLegt die verfügbaren Single-Sign-on-Handler fest."
+    },
+    "ini:settings/site.ini [UserSettings] SiteName": {
+        "en": "What SiteName should be used when hashing the user_password\nwith the 'md5_site' HashType",
+        "de": "Welcher SiteName beim Hashen von user_password\nmit dem HashType 'md5_site' verwendet wird"
+    },
+    "ini:settings/site.ini [UserSettings] TrustedIPList": {
+        "en": "An array with IP addresses or networks which will be always allowed to login after a few failed login attempts.",
+        "de": "Ein Array mit IP-Adressen oder Netzen, die sich nach einigen fehlgeschlagenen Anmeldeversuchen immer anmelden dürfen."
+    },
+    "ini:settings/site.ini [UserSettings] UpdateHash": {
+        "en": "true means update hash to HashType if it differs when logging in\nThis is useful if you're upgrading from an older Exponential site\nor another system that uses mysql as password type, it will then\nupdate the hash to whather is set.",
+        "de": "true bedeutet, den Hash bei der Anmeldung auf HashType zu aktualisieren, wenn er abweicht\nNützlich bei einem Upgrade von einer älteren Exponential-Website\noder einem anderen System, das mysql als Passworttyp verwendet; der\nHash wird dann auf das aktualisiert, was gesetzt ist."
+    },
+    "ini:settings/site.ini [UserSettings] UseSpecialCharacters": {
+        "en": "Controls whether special characters are allowed in passwords in additional to\ncharacters in the range a-z, A-Z and 0-9.",
+        "de": "Steuert, ob in Passwörtern zusätzlich zu den Zeichen im Bereich a-z, A-Z und 0-9\nSonderzeichen erlaubt sind."
+    },
+    "ini:settings/site.ini [UserSettings] UserClassGroupID": {
+        "en": "Which class group that has user classes, controls which classes\nis shown on the user navigation part. If empty all classes are used.",
+        "de": "Welche Klassengruppe die Benutzerklassen enthält; steuert, welche Klassen\nim Navigationsbereich der Benutzer angezeigt werden. Wenn leer, werden alle Klassen verwendet."
+    },
+    "ini:settings/site.ini [UserSettings] UserClassID": {
+        "en": "Which content class to use for user creation",
+        "de": "Welche Inhaltsklasse zum Anlegen von Benutzern verwendet wird"
+    },
+    "ini:settings/site.ini [UserSettings] UserCreatorID": {
+        "en": "Which user is considered the creator",
+        "de": "Welcher Benutzer als Ersteller gilt"
+    },
+    "ini:settings/site.ini [UserSettings] UserGroupClassID": {
+        "en": "Which content class to use for user group creation",
+        "de": "Welche Inhaltsklasse zum Anlegen von Benutzergruppen verwendet wird"
+    },
+    "ini:settings/site.ini [UserSettings] UserNameValidationRegex": {
+        "en": "Custom validation of user login name\nWill only affect new users, and existing users when they edit their credentials",
+        "de": "Eigene Prüfung des Anmeldenamens\nBetrifft nur neue Benutzer und vorhandene Benutzer, wenn sie ihre Zugangsdaten bearbeiten"
+    },
+    "ini:settings/site.ini [UserSettings] VerifyUserType": {
+        "en": "Type of verification for user registration, email is only\ntype supported nativly, set to blank to disable.\nExample on how to set up custom verification:\n'verifyUser' function will be used on the class, look in\nkernel/user/register.php for how the email code is implemented!\nreturn value of function decides if user mail should be sent or not.\n[VerifyUserType_<custom_type>]\nClass=<custom_type_class_name>\n#File is optional, autoload will be used if not set\nFile=<custom_type_file_path>",
+        "de": "Art der Prüfung bei der Benutzerregistrierung; nativ wird nur email\nunterstützt, leer schaltet es ab.\nBeispiel für das Einrichten einer eigenen Prüfung:\nDie Funktion 'verifyUser' wird an der Klasse verwendet; wie der E-Mail-Code umgesetzt ist,\nsehen Sie in kernel/user/register.php!\nDer Rückgabewert der Funktion entscheidet, ob die Mail an den Benutzer gesendet wird.\n[VerifyUserType_<custom_type>]\nClass=<custom_type_class_name>\n#File is optional, autoload will be used if not set\nFile=<custom_type_file_path>"
+    },
+    "ini:settings/site.ini [UserSettings] WeakPasswordCheck": {
+        "en": "Refuse a well-known or common password (expWeakPasswordList: \"admin\", \"password\",\n\"qwerty\", \"123456\", the software's own names and the like, with their simple\nvariants: case, digits and symbols at the ends, letter swaps such as \"p@ssw0rd\",\ncommon endings, a word typed twice; also keyboard runs and repeated characters).\nChecked for every new password: user/password, registration, the user edit form,\nexp:resetuserpassword and the web services. Signing in with an existing password\nis never refused. The installers (setup wizard, kickstarter, exp:install) always\ncheck, whatever this says. disabled: only the length and [PasswordSettings] count.",
+        "de": "Ein bekanntes oder häufiges Passwort ablehnen (expWeakPasswordList: \"admin\", \"password\",\n\"qwerty\", \"123456\", die eigenen Namen der Software und Ähnliches, mit ihren einfachen\nVarianten: Groß-/Kleinschreibung, Ziffern und Symbole an den Enden, Buchstabentausch wie \"p@ssw0rd\",\nhäufige Endungen, ein doppelt getipptes Wort; außerdem Tastaturfolgen und wiederholte Zeichen).\nGeprüft für jedes neue Passwort: user/password, Registrierung, das Bearbeitungsformular des Benutzers,\nexp:resetuserpassword und die Webdienste. Die Anmeldung mit einem vorhandenen Passwort\nwird nie abgelehnt. Die Installer (Setup-Assistent, Kickstarter, exp:install) prüfen immer,\negal was hier steht. disabled: Nur die Länge und [PasswordSettings] zählen."
+    },
+    "ini:settings/site.ini [UserSettings] WeakPasswordFile": {
+        "en": "More words to refuse, one per line, in their base form (variants are refused too)\nWeakPasswordList[]\nWeakPasswordList[]=ourcompanyname\nA file with more words, one per line (# starts a comment), relative to the\ninstallation root or absolute; read once per process while it is unchanged\nWeakPasswordFile=settings/weak-passwords.txt",
+        "de": "Weitere abzulehnende Wörter, eines pro Zeile, in ihrer Grundform (Varianten werden ebenfalls abgelehnt)\nWeakPasswordList[]\nWeakPasswordList[]=ourcompanyname\nEine Datei mit weiteren Wörtern, eines pro Zeile (# beginnt einen Kommentar), relativ zum\nWurzelverzeichnis der Installation oder absolut; einmal pro Prozess gelesen, solange sie unverändert ist\nWeakPasswordFile=settings/weak-passwords.txt"
+    },
+    "ini:settings/site.ini [eZINISettings] DynamicTemplateMode": {
+        "en": "Dynamic ini template operator\nChanges global setting for ezini and ezini_hasvariable template\noperators for the default setting of 'dynamic' parameter\nWhen enabled these calls are not compiled as ini values into\ntemplates, but read dynamically\nNote: only read during template compilation",
+        "de": "Dynamischer INI-Template-Operator\nÄndert die globale Einstellung der Template-Operatoren ezini und ezini_hasvariable\nfür den Standardwert des Parameters 'dynamic'\nWenn aktiviert, werden diese Aufrufe nicht als INI-Werte in die\nTemplates kompiliert, sondern dynamisch gelesen\nHinweis: nur während der Template-Kompilierung gelesen"
+    },
+    "ini:settings/site.ini [eZINISettings] ReadonlySettingList": {
+        "en": "Use 'ReadonlySettingList' to set read-only settings.\nusage:\nfor specific setting:\n  ini-filename/section_name/setting_name\nfor all settings in section:\n  ini-filename/section_name/*\nfor all settings in ini-file:\n  ini-filename/*",
+        "de": "Mit 'ReadonlySettingList' setzen Sie schreibgeschützte Einstellungen.\nVerwendung:\nfür eine bestimmte Einstellung:\n  ini-filename/section_name/setting_name\nfür alle Einstellungen eines Abschnitts:\n  ini-filename/section_name/*\nfür alle Einstellungen einer INI-Datei:\n  ini-filename/*"
+    },
+    "ini:settings/soap.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/soap.ini.append or\n      settings/override/soap.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/soap.ini.append oder\n      settings/override/soap.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/soap.ini [ExtensionSettings] SOAPExtensions": {
+        "en": "Extensions for SOAP functions.\nSOAP functions must be registered under soap/initialize.php",
+        "de": "Erweiterungen für SOAP-Funktionen.\nSOAP-Funktionen müssen unter soap/initialize.php registriert sein"
+    },
+    "ini:settings/soap.ini [GeneralSettings] UseDefaultAccess": {
+        "en": "If enabled, the instance's default siteaccess will always be used.\nIf disabled, the matched siteaccess (host, port, etc) will be used, allowing\nthe usage of soap when multiple exponential websites are hosted on one instance",
+        "de": "Wenn aktiviert, wird immer der Standard-Siteaccess der Instanz verwendet.\nWenn deaktiviert, wird der erkannte Siteaccess (Host, Port usw.) verwendet, was\nSOAP ermöglicht, wenn mehrere Exponential-Websites auf einer Instanz gehostet werden"
+    },
+    "ini:settings/solr.ini": {
+        "en": "Exponential Solr search server settings.\n\nSolr is OPTIONAL. Out of the box this installation uses the built-in eZ search\nindex (bin/php/updatesearchindex.php); Solr is only used once it is installed\nand enabled here. The exp:solr command reads this file to decide whether Solr\nis configured, and, when it is, how to reach or run it.\n\nEnable Solr by setting Enabled=true and either:\n  - Url  = the base URL of an already-running (local or remote) Solr, or\n  - BinaryPath = the Solr control binary on this machine (e.g. /opt/solr/bin/solr),\n    with Host, Port and DataDir for the local instance.\n\nOverride per installation in settings/override/solr.ini.append.php; never edit\nthe packaged file for a single machine.",
+        "de": "Einstellungen des Suchservers Solr für Exponential.\n\nSolr ist OPTIONAL. Ab Werk verwendet diese Installation den eingebauten\nSuchindex von eZ (bin/php/updatesearchindex.php); Solr wird erst verwendet, wenn es installiert\nund hier aktiviert ist. Der Befehl exp:solr liest diese Datei, um zu entscheiden, ob Solr\nkonfiguriert ist, und, wenn ja, wie es zu erreichen oder auszuführen ist.\n\nAktivieren Sie Solr, indem Sie Enabled=true setzen und entweder:\n  - Url  = die Basis-URL eines bereits laufenden (lokalen oder entfernten) Solr oder\n  - BinaryPath = die Steuerdatei von Solr auf diesem Rechner (z. B. /opt/solr/bin/solr),\n    mit Host, Port und DataDir für die lokale Instanz.\n\nÜberschreiben Sie dies pro Installation in settings/override/solr.ini.append.php; bearbeiten Sie nie\ndie ausgelieferte Datei für einen einzelnen Rechner."
+    },
+    "ini:settings/solr.ini [SolrSettings] BinaryPath": {
+        "en": "The Solr control binary for a Solr installed on THIS machine, e.g.\n/opt/solr/bin/solr . When set (and Url is empty) exp:solr start/stop/restart\nmanage that local process with its own start/stop subcommands.",
+        "de": "Die Steuerdatei von Solr für ein auf DIESEM Rechner installiertes Solr, z. B.\n/opt/solr/bin/solr . Wenn gesetzt (und Url leer ist), verwalten exp:solr start/stop/restart\ndiesen lokalen Prozess mit dessen eigenen Unterbefehlen start/stop."
+    },
+    "ini:settings/solr.ini [SolrSettings] DataDir": {
+        "en": "Solr home / data directory for the local instance. Left empty, Solr's own\ndefault applies.",
+        "de": "Solr-Home-/Datenverzeichnis der lokalen Instanz. Wenn leer, gilt der eigene\nStandard von Solr."
+    },
+    "ini:settings/solr.ini [SolrSettings] Enabled": {
+        "en": "Master switch. While false, exp:solr reports \"not configured\" and refuses to\nstart, whatever else is set below.",
+        "de": "Hauptschalter. Solange false, meldet exp:solr „nicht konfiguriert“ und weigert sich zu\nstarten, egal was unten sonst gesetzt ist."
+    },
+    "ini:settings/solr.ini [SolrSettings] Host": {
+        "en": "The local instance's bind host and port (used with BinaryPath, and to build a\nping URL when Url is empty).",
+        "de": "Host und Port, an die die lokale Instanz bindet (mit BinaryPath verwendet und um eine\nPing-URL zu bilden, wenn Url leer ist)."
+    },
+    "ini:settings/solr.ini [SolrSettings] RunDir": {
+        "en": "Where exp:solr keeps this installation's Solr pid, logs and (optional) data,\nmirroring the Velocity on-disk layout (var/vc/<engine>/...).",
+        "de": "Wo exp:solr die PID, die Logs und (optional) die Daten des Solr dieser Installation hält,\nnach dem Vorbild der Struktur von Velocity auf der Festplatte (var/vc/<engine>/...)."
+    },
+    "ini:settings/solr.ini [SolrSettings] StartTimeout": {
+        "en": "How long to wait (seconds) for the port to answer after a start.",
+        "de": "Wie lange (Sekunden) nach einem Start gewartet wird, bis der Port antwortet."
+    },
+    "ini:settings/solr.ini [SolrSettings] Url": {
+        "en": "A running Solr to talk to, base URL including scheme and port, no trailing\npath, e.g. http://127.0.0.1:8983 . When set, exp:solr status pings it and\nstart/stop report that the instance is managed externally (a remote Solr is\nnot this command's to start or stop).",
+        "de": "Ein laufendes Solr, mit dem gesprochen wird, Basis-URL mit Schema und Port, ohne nachfolgenden\nPfad, z. B. http://127.0.0.1:8983 . Wenn gesetzt, pingt exp:solr status es an, und\nstart/stop melden, dass die Instanz extern verwaltet wird (ein entferntes Solr zu starten oder zu stoppen\nist nicht Sache dieses Befehls)."
+    },
+    "ini:settings/staticcache.ini [CacheSettings]": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this file directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/staticcache.ini.append or\n      settings/override/staticcache.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/staticcache.ini.append oder\n      settings/override/staticcache.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/staticcache.ini [CacheSettings] AlwaysUpdateArray": {
+        "en": "A list of locations that will be updated whenever an object is published. You\ncan NOT use a wildcard here.",
+        "de": "Eine Liste von Orten, die bei jeder Veröffentlichung eines Objekts aktualisiert werden. Sie\nkönnen hier KEINE Platzhalter verwenden."
+    },
+    "ini:settings/staticcache.ini [CacheSettings] AppendGeneratedTime": {
+        "en": "Controls whenever <!-- Generated: YYY-MM-DD HH:MM:SS --> comment\nshould be appended into the generated static cache file.",
+        "de": "Steuert, ob der Kommentar <!-- Generated: YYY-MM-DD HH:MM:SS -->\nan die erzeugte Datei des statischen Caches angehängt wird."
+    },
+    "ini:settings/staticcache.ini [CacheSettings] CachedSiteAccesses": {
+        "en": "A list of site accesses to generate static content for.\n\nLeft empty, the siteaccesses this installation serves are used: every\nentry of site.ini.[SiteAccessSettings].RelatedSiteAccessList except those\nthat require a login, whose pages are per user and must not be shared.\nName siteaccesses here to override that.",
+        "de": "Eine Liste der Siteaccesses, für die statische Inhalte erzeugt werden.\n\nWenn leer, werden die Siteaccesses verwendet, die diese Installation bedient: jeder\nEintrag aus site.ini.[SiteAccessSettings].RelatedSiteAccessList außer denen,\ndie eine Anmeldung erfordern, deren Seiten pro Benutzer sind und nicht geteilt werden dürfen.\nNennen Sie hier Siteaccesses, um das zu überschreiben."
+    },
+    "ini:settings/staticcache.ini [CacheSettings] CachedURLArray": {
+        "en": "A list of url's to cache. You can use the * wildcard to include a whole\nsubtree. A bare /* caches the entire site, subject to MaxCacheDepth.",
+        "de": "Eine Liste der zu cachenden URLs. Mit dem Platzhalter * schließen Sie einen ganzen\nTeilbaum ein. Ein bloßes /* cacht die ganze Website, begrenzt durch MaxCacheDepth."
+    },
+    "ini:settings/staticcache.ini [CacheSettings] CronjobCacheClear": {
+        "en": "Defer cache generation to cronjob.",
+        "de": "Die Erzeugung des Caches auf den Cronjob verschieben."
+    },
+    "ini:settings/staticcache.ini [CacheSettings] HostName": {
+        "en": "The host to fetch pages from when generating the cache.\n\nLeave this empty. It is deprecated since 4.4 and empty is the correct\nvalue: each siteaccess is then fetched from its own\nsite.ini.[SiteSettings].SiteURL, which is what a multi site installation\nneeds. It shipped as \"localhost\" for years, which sent every fetch to\nwhatever the web server answers for that name - usually the hosting\npanel's placeholder, never this site - and the run failed silently.",
+        "de": "Der Host, von dem beim Erzeugen des Caches Seiten geholt werden.\n\nLassen Sie dies leer. Es ist seit 4.4 veraltet, und leer ist der richtige\nWert: Jeder Siteaccess wird dann von seiner eigenen\nsite.ini.[SiteSettings].SiteURL geholt, was eine Multisite-Installation\nbraucht. Jahrelang wurde \"localhost\" ausgeliefert, was jeden Abruf an das schickte,\nwas der Webserver für diesen Namen antwortet, meist den Platzhalter des Hosting-\nPanels, nie diese Website, und der Lauf schlug still fehl."
+    },
+    "ini:settings/staticcache.ini [CacheSettings] MaxCacheDepth": {
+        "en": "Urls deeper than this many segments are never cached, and never refreshed\nwhen an editor publishes. The old default of 3 allowed two path segments,\nwhich excludes most of a real content tree.",
+        "de": "URLs mit mehr Segmenten werden nie gecacht und nie aktualisiert,\nwenn ein Redakteur veröffentlicht. Der alte Standard von 3 erlaubte zwei Pfadsegmente,\nwas den Großteil eines echten Inhaltsbaums ausschließt."
+    },
+    "ini:settings/staticcache.ini [CacheSettings] SourceProtocol": {
+        "en": "The protocol used to fetch pages, http or https.\n\nhttp is fine on a site that redirects to https, because the fetch follows\nredirects. Set https where plain http is refused outright rather than\nredirected.",
+        "de": "Das Protokoll, mit dem Seiten geholt werden, http oder https.\n\nhttp genügt bei einer Website, die auf https weiterleitet, weil der Abruf\nWeiterleitungen folgt. Setzen Sie https, wo einfaches http glatt abgelehnt statt\nweitergeleitet wird."
+    },
+    "ini:settings/staticcache.ini [CacheSettings] StaticStorageDir": {
+        "en": "Where generated pages are written, relative to the var directory of the\nsiteaccess unless the path is absolute or already begins with var/.\n\nThe default therefore resolves to var/<site>/static, alongside\nvar/<site>/cache and var/<site>/storage. Generated pages are cache and\nbelong with the rest of it, not in the installation root.",
+        "de": "Wo die erzeugten Seiten geschrieben werden, relativ zum var-Verzeichnis des\nSiteaccess, außer der Pfad ist absolut oder beginnt schon mit var/.\n\nDer Standard ergibt daher var/<site>/static, neben\nvar/<site>/cache und var/<site>/storage. Erzeugte Seiten sind Cache und\ngehören zu dessen Rest, nicht in das Wurzelverzeichnis der Installation."
+    },
+    "ini:settings/subitems.ini": {
+        "en": "The admin subitems list (\"Table options\"): which columns are shown by default, the presets\neverybody can choose, the defaults per place, the automatic attribute columns and the CSV\nexport. The columns themselves are defined in subitemscolumns.ini ([Column_<key>] blocks).\nGuide: doc/eng-us/bc/6.0/subitems-table-options.md\n\nColumn keys used below: the 15 built-in columns (thumbnail, name, visibility, type, modifier,\nmodified, published, translations, section, nodeid, noderemoteid, objectid, objectremoteid,\nobjectstate, priority), every [Column_<key>] of subitemscolumns.ini, and the automatic\nattribute columns attr:<class identifier>/<attribute identifier>. Unknown keys are ignored, and\na column the user may not see (its Policy[]) is left out wherever it is named.",
+        "de": "Die Liste der Unterelemente der Administration („Tabellenoptionen“): welche Spalten standardmäßig angezeigt werden, die Vorlagen,\ndie alle wählen können, die Standards pro Ort, die automatischen Attributspalten und der CSV-\nExport. Die Spalten selbst sind in subitemscolumns.ini definiert (Blöcke [Column_<key>]).\nAnleitung: doc/eng-us/bc/6.0/subitems-table-options.md\n\nUnten verwendete Spaltenschlüssel: die 15 eingebauten Spalten (thumbnail, name, visibility, type, modifier,\nmodified, published, translations, section, nodeid, noderemoteid, objectid, objectremoteid,\nobjectstate, priority), jedes [Column_<key>] aus subitemscolumns.ini und die automatischen\nAttributspalten attr:<class identifier>/<attribute identifier>. Unbekannte Schlüssel werden ignoriert, und\neine Spalte, die der Benutzer nicht sehen darf (ihre Policy[]), entfällt überall, wo sie genannt wird."
+    },
+    "ini:settings/subitems.ini [Defaults_media]": {
+        "en": "Defaults per place: the columns shown by default under some parents (before the user saves a\nchoice of their own). The first block that matches wins, in the order of this file:\n[Defaults_<id>]\nSubtree[]                 node ids: matches when the parent is one of them or lies below one\nParentClassIdentifiers[]  class identifiers: matches when the parent is of one of them\nColumns[]                 the visible columns, in order\nThe media library (content.ini [NodeSettings] MediaRootNode=43); the list's former media defaults",
+        "de": "Standards pro Ort: die Spalten, die unter manchen Elternknoten standardmäßig angezeigt werden (bevor der Benutzer\neine eigene Wahl speichert). Der erste passende Block gewinnt, in der Reihenfolge dieser Datei:\n[Defaults_<id>]\nSubtree[]                 Knoten-IDs: passt, wenn der Elternknoten einer davon ist oder darunter liegt\nParentClassIdentifiers[]  Klassenbezeichner: passt, wenn der Elternknoten zu einer davon gehört\nColumns[]                 die sichtbaren Spalten, in Reihenfolge\nDie Medienbibliothek (content.ini [NodeSettings] MediaRootNode=43); die früheren Medienstandards der Liste"
+    },
+    "ini:settings/subitems.ini [Defaults_users]": {
+        "en": "The users tree (content.ini [NodeSettings] UserRootNode=5); the list's former user defaults",
+        "de": "Der Benutzerbaum (content.ini [NodeSettings] UserRootNode=5); die früheren Benutzerstandards der Liste"
+    },
+    "ini:settings/subitems.ini [Preset_seo]": {
+        "en": "Presets: a named set of visible columns everybody can choose in Table options. Users save their\nown presets next to these (in their preferences); a user preset cannot take an INI preset's id.\n[Preset_<id>]   id: a-z, 0-9, _ and -\nName=           the name shown (translated with the context design/admin/node/view/full)\nColumns[]       the visible columns, in order",
+        "de": "Vorlagen: ein benannter Satz sichtbarer Spalten, den alle in den Tabellenoptionen wählen können. Benutzer speichern ihre\neigenen Vorlagen neben diesen (in ihren Einstellungen); eine Benutzervorlage kann nicht die ID einer INI-Vorlage annehmen.\n[Preset_<id>]   id: a-z, 0-9, _ und -\nName=           der angezeigte Name (übersetzt im Kontext design/admin/node/view/full)\nColumns[]       die sichtbaren Spalten, in Reihenfolge"
+    },
+    "ini:settings/subitems.ini [SubitemsSettings] AttributeColumns": {
+        "en": "enabled: Table options also offers one column per attribute of the classes present among the\nparent's children (key attr:<class>/<attribute>, group \"Attributes: <class name>\"), no INI\nneeded. The value is the attribute's title, else its text; sortable when the datatype sorts.\ndisabled: only the columns of subitemscolumns.ini.",
+        "de": "enabled: Die Tabellenoptionen bieten außerdem eine Spalte pro Attribut der Klassen an, die unter den\nUnterknoten des Elternknotens vorkommen (Schlüssel attr:<class>/<attribute>, Gruppe „Attribute: <class name>“), ohne\nINI. Der Wert ist der Titel des Attributs, sonst sein Text; sortierbar, wenn der Datentyp sortiert.\ndisabled: nur die Spalten aus subitemscolumns.ini."
+    },
+    "ini:settings/subitems.ini [SubitemsSettings] AttributeColumnsDataTypePolicy": {
+        "en": "Policies an attribute column of a datatype needs, as module/function, several separated by ;\n(all must be granted). Without an entry an attribute column needs nothing beyond content/read\non the rows.\nExample: only users who may edit users see e-mail attributes\nAttributeColumnsDataTypePolicy[ezemail]=user/register",
+        "de": "Richtlinien, die eine Attributspalte eines Datentyps braucht, als module/function, mehrere durch ; getrennt\n(alle müssen gewährt sein). Ohne Eintrag braucht eine Attributspalte nichts außer content/read\nauf den Zeilen.\nBeispiel: Nur Benutzer, die Benutzer bearbeiten dürfen, sehen E-Mail-Attribute\nAttributeColumnsDataTypePolicy[ezemail]=user/register"
+    },
+    "ini:settings/subitems.ini [SubitemsSettings] AttributeColumnsExcludedDataTypes": {
+        "en": "Datatypes never offered as attribute columns. ezuser's text holds the login, e-mail and\npassword hash, so it is excluded; the user columns of subitemscolumns.ini show what is safe.",
+        "de": "Datentypen, die nie als Attributspalten angeboten werden. Der Text von ezuser enthält Login, E-Mail und\nPasswort-Hash, daher ist er ausgeschlossen; die Benutzerspalten aus subitemscolumns.ini zeigen, was sicher ist."
+    },
+    "ini:settings/subitems.ini [SubitemsSettings] CSVExport": {
+        "en": "enabled: Table options has \"Export CSV\", the view content/subitemsexport/<node id> exists.",
+        "de": "enabled: Die Tabellenoptionen haben „CSV exportieren“, die Ansicht content/subitemsexport/<node id> existiert."
+    },
+    "ini:settings/subitems.ini [SubitemsSettings] CSVLimit": {
+        "en": "The most rows one CSV export writes.",
+        "de": "Die meisten Zeilen, die ein CSV-Export schreibt."
+    },
+    "ini:settings/subitems.ini [SubitemsSettings] DefaultColumns": {
+        "en": "The columns shown by default, in this order, wherever no [Defaults_*] block below matches and\nthe user has not saved a choice of their own. These are the list's former defaults for the\ncontent tree (admininterface.ini [SubItems] VisibleColumns[ezcontentnavigationpart]).",
+        "de": "Die standardmäßig angezeigten Spalten, in dieser Reihenfolge, überall, wo kein Block [Defaults_*] unten passt und\nder Benutzer keine eigene Wahl gespeichert hat. Das sind die früheren Standards der Liste für den\nInhaltsbaum (admininterface.ini [SubItems] VisibleColumns[ezcontentnavigationpart])."
+    },
+    "ini:settings/subitems.ini [SubitemsSettings] PageSizes": {
+        "en": "The page sizes Table options offers (a custom size can still be typed in).",
+        "de": "Die Seitengrößen, die die Tabellenoptionen anbieten (eine eigene Größe lässt sich weiterhin eingeben)."
+    },
+    "ini:settings/subitemscolumns.ini": {
+        "en": "The columns of the admin subitems list (\"Table options\" on content/view/full/<node id>).\nOne [Column_<key>] block per column; the key is what presets, defaults and saved choices use.\nWhich columns are visible by default, the presets and the CSV export are set in subitems.ini.\nGuide: doc/eng-us/bc/6.0/subitems-table-options.md\n\nA block names exactly one of:\n  Builtin=true         one of the 15 columns the list renders itself from the node (the keys\n                       thumbnail, name, visibility, type, modifier, modified, published,\n                       translations, section, nodeid, noderemoteid, objectid, objectremoteid,\n                       objectstate, priority); the server never computes them. Only Name, Group,\n                       Order, Description, Copy, Align and Policy[] may be changed here.\n  Class=<class>        a subclass of expSubitemsColumn, constructed with ( key, settings ).\n                       The shipped families (expSubitemsNodeColumn, expSubitemsObjectColumn ...)\n                       pick their column with Field=<name>.\n  Handler=<class>::<method>   a static method ( eZContentObjectTreeNode $node, array $settings,\n                       expSubitemsColumn $column ) that returns the value.\n  Template=design:subitems/columns/<name>.tpl   a template that gets $node, $column (this block\n                       as a hash) and $key; its output is the cell, its text the value.\nSettings of every block:\n  Name=                the column's name (translated in context design/admin/node/view/full)\n  Group=               Basic, Node, Object, Version, Location, URLs, SEO, Dates, People,\n                       Relations, Translations, Workflow, Users, Media, Technical, Custom\n                       (translated like Name=)\n  Type=                text, html, number, date, datetime, bool, link, code, list, image\n                       (how the default cell and CSV text are made; html = trusted markup)\n  SortField=           a subTree() sort field the list can sort the column by: path, path_string,\n                       published, modified, section, depth, class_identifier, class_name,\n                       priority, name, modified_subnode, node_id, contentobject_id, visibility,\n                       or attribute:<class>/<attribute>. Empty: not sortable.\n  Policy[]             module/function entries the user must all have to see the column at all\n                       (it is then neither offered, computed nor sent).\n  Description=         the help text in Table options; says what the column costs when it costs\n                       (translated like Name=).\n  Copy=true            a click on the cell copies its value.\n  Align=right          right aligned (numbers).\n  Order=               the position in Table options, and among the defaults.\nEvery value is computed only for the visible columns, only for the rows of the current page.\n---------------------------------------------------------------------------------------------\nBasic: the 15 built-in columns (their defaults live in expSubitemsBuiltinColumn; repeated here\nso they can be read and adjusted in one place)",
+        "de": "Die Spalten der Liste der Unterelemente der Administration („Tabellenoptionen“ auf content/view/full/<node id>).\nEin Block [Column_<key>] pro Spalte; der Schlüssel ist das, was Vorlagen, Standards und gespeicherte Auswahlen verwenden.\nWelche Spalten standardmäßig sichtbar sind, die Vorlagen und der CSV-Export werden in subitems.ini gesetzt.\nAnleitung: doc/eng-us/bc/6.0/subitems-table-options.md\n\nEin Block nennt genau eines von:\n  Builtin=true         eine der 15 Spalten, die die Liste selbst aus dem Knoten rendert (die Schlüssel\n                       thumbnail, name, visibility, type, modifier, modified, published,\n                       translations, section, nodeid, noderemoteid, objectid, objectremoteid,\n                       objectstate, priority); der Server berechnet sie nie. Nur Name, Group,\n                       Order, Description, Copy, Align und Policy[] lassen sich hier ändern.\n  Class=<class>        eine Unterklasse von expSubitemsColumn, erzeugt mit ( key, settings ).\n                       Die ausgelieferten Familien (expSubitemsNodeColumn, expSubitemsObjectColumn ...)\n                       wählen ihre Spalte mit Field=<name>.\n  Handler=<class>::<method>   eine statische Methode ( eZContentObjectTreeNode $node, array $settings,\n                       expSubitemsColumn $column ), die den Wert zurückgibt.\n  Template=design:subitems/columns/<name>.tpl   ein Template, das $node, $column (diesen Block\n                       als Hash) und $key erhält; seine Ausgabe ist die Zelle, sein Text der Wert.\nEinstellungen jedes Blocks:\n  Name=                der Name der Spalte (übersetzt im Kontext design/admin/node/view/full)\n  Group=               Basic, Node, Object, Version, Location, URLs, SEO, Dates, People,\n                       Relations, Translations, Workflow, Users, Media, Technical, Custom\n                       (übersetzt wie Name=)\n  Type=                text, html, number, date, datetime, bool, link, code, list, image\n                       (wie die Standardzelle und der CSV-Text gebildet werden; html = vertrauenswürdiges Markup)\n  SortField=           ein Sortierfeld von subTree(), nach dem die Liste die Spalte sortieren kann: path, path_string,\n                       published, modified, section, depth, class_identifier, class_name,\n                       priority, name, modified_subnode, node_id, contentobject_id, visibility,\n                       oder attribute:<class>/<attribute>. Leer: nicht sortierbar.\n  Policy[]             Einträge module/function, die der Benutzer alle haben muss, um die Spalte überhaupt zu sehen\n                       (sie wird sonst weder angeboten noch berechnet noch gesendet).\n  Description=         der Hilfetext in den Tabellenoptionen; sagt, was die Spalte kostet, wenn sie etwas kostet\n                       (übersetzt wie Name=).\n  Copy=true            ein Klick auf die Zelle kopiert ihren Wert.\n  Align=right          rechtsbündig (Zahlen).\n  Order=               die Position in den Tabellenoptionen und unter den Standards.\nJeder Wert wird nur für die sichtbaren Spalten berechnet, nur für die Zeilen der aktuellen Seite.\n---------------------------------------------------------------------------------------------\nBasic: die 15 eingebauten Spalten (ihre Standards liegen in expSubitemsBuiltinColumn; hier wiederholt,\ndamit sie an einer Stelle gelesen und angepasst werden können)"
+    },
+    "ini:settings/subitemscolumns.ini [Column_classidentifier]": {
+        "en": "---------------------------------------------------------------------------------------------\nObject: the content object, its class and section",
+        "de": "---------------------------------------------------------------------------------------------\nObject: das Inhaltsobjekt, seine Klasse und Sektion"
+    },
+    "ini:settings/subitemscolumns.ini [Column_hasimage]": {
+        "en": "---------------------------------------------------------------------------------------------\nMedia: images and files",
+        "de": "---------------------------------------------------------------------------------------------\nMedia: Bilder und Dateien"
+    },
+    "ini:settings/subitemscolumns.ini [Column_initiallanguage]": {
+        "en": "---------------------------------------------------------------------------------------------\nTranslations",
+        "de": "---------------------------------------------------------------------------------------------\nTranslations: Übersetzungen"
+    },
+    "ini:settings/subitemscolumns.ini [Column_modifiedsubnode]": {
+        "en": "---------------------------------------------------------------------------------------------\nDates",
+        "de": "---------------------------------------------------------------------------------------------\nDates: Daten"
+    },
+    "ini:settings/subitemscolumns.ini [Column_owner]": {
+        "en": "---------------------------------------------------------------------------------------------\nPeople",
+        "de": "---------------------------------------------------------------------------------------------\nPeople: Personen"
+    },
+    "ini:settings/subitemscolumns.ini [Column_pagetitle]": {
+        "en": "---------------------------------------------------------------------------------------------\nSEO",
+        "de": "---------------------------------------------------------------------------------------------\nSEO"
+    },
+    "ini:settings/subitemscolumns.ini [Column_pagetitle] SiteAccess": {
+        "en": "The public siteaccess; empty: site.ini [SiteSettings] DefaultAccess",
+        "de": "Der öffentliche Siteaccess; leer: site.ini [SiteSettings] DefaultAccess"
+    },
+    "ini:settings/subitemscolumns.ini [Column_pagetitle] TitleFormat": {
+        "en": "The rule of the public design: name = \"<meta title or name> - <SiteName>\" (the media design),\npath = \"<name> / <parent> / ... - <SiteName>\" (design/standard and ezwebin page_head.tpl)",
+        "de": "Die Regel des öffentlichen Designs: name = \"<meta title or name> - <SiteName>\" (das Design media),\npath = \"<name> / <parent> / ... - <SiteName>\" (design/standard und page_head.tpl von ezwebin)"
+    },
+    "ini:settings/subitemscolumns.ini [Column_parentname]": {
+        "en": "---------------------------------------------------------------------------------------------\nLocation: the object's other places in the tree",
+        "de": "---------------------------------------------------------------------------------------------\nLocation: die anderen Plätze des Objekts im Baum"
+    },
+    "ini:settings/subitemscolumns.ini [Column_parentnodeid]": {
+        "en": "---------------------------------------------------------------------------------------------\nNode: the location itself and its children",
+        "de": "---------------------------------------------------------------------------------------------\nNode: die Platzierung selbst und ihre Unterknoten"
+    },
+    "ini:settings/subitemscolumns.ini [Column_publicurl] Scheme": {
+        "en": "Scheme put before SiteURL when it has none: https or http",
+        "de": "Schema, das SiteURL vorangestellt wird, wenn sie keines hat: https oder http"
+    },
+    "ini:settings/subitemscolumns.ini [Column_relatedcount]": {
+        "en": "---------------------------------------------------------------------------------------------\nRelations",
+        "de": "---------------------------------------------------------------------------------------------\nRelations: Verknüpfungen"
+    },
+    "ini:settings/subitemscolumns.ini [Column_relatednames] Limit": {
+        "en": "The most names shown",
+        "de": "Die meisten angezeigten Namen"
+    },
+    "ini:settings/subitemscolumns.ini [Column_searchwords]": {
+        "en": "---------------------------------------------------------------------------------------------\nTechnical",
+        "de": "---------------------------------------------------------------------------------------------\nTechnical: Technisches"
+    },
+    "ini:settings/subitemscolumns.ini [Column_statusbadge]": {
+        "en": "---------------------------------------------------------------------------------------------\nWorkflow: states, pending versions and what you may do",
+        "de": "---------------------------------------------------------------------------------------------\nWorkflow: Zustände, ausstehende Versionen und was Sie tun dürfen"
+    },
+    "ini:settings/subitemscolumns.ini [Column_teaser]": {
+        "en": "---------------------------------------------------------------------------------------------\nCustom: examples of the three kinds of custom column (see the guide, \"Adding a column in\n3 minutes\"). Copy one, give it a key of your own, and change what it does.",
+        "de": "---------------------------------------------------------------------------------------------\nCustom: Beispiele der drei Arten eigener Spalten (siehe die Anleitung, \"Adding a column in\n3 minutes\"). Kopieren Sie eines, geben Sie ihm einen eigenen Schlüssel und ändern Sie, was es tut."
+    },
+    "ini:settings/subitemscolumns.ini [Column_teaser] Attributes": {
+        "en": "Attribute identifiers tried in this order",
+        "de": "Attributbezeichner, in dieser Reihenfolge versucht"
+    },
+    "ini:settings/subitemscolumns.ini [Column_teaser] Length": {
+        "en": "The most characters shown",
+        "de": "Die meisten angezeigten Zeichen"
+    },
+    "ini:settings/subitemscolumns.ini [Column_urlalias]": {
+        "en": "---------------------------------------------------------------------------------------------\nURLs",
+        "de": "---------------------------------------------------------------------------------------------\nURLs"
+    },
+    "ini:settings/subitemscolumns.ini [Column_userlogin]": {
+        "en": "---------------------------------------------------------------------------------------------\nUsers: user accounts (rows below a user group; empty for anything else). Personal data, so\nevery column needs a policy.",
+        "de": "---------------------------------------------------------------------------------------------\nUsers: Benutzerkonten (Zeilen unter einer Benutzergruppe; für alles andere leer). Personenbezogene Daten, daher\nbraucht jede Spalte eine Richtlinie."
+    },
+    "ini:settings/subitemscolumns.ini [Column_version]": {
+        "en": "---------------------------------------------------------------------------------------------\nVersion: the object's versions (all version columns of a row share one query)",
+        "de": "---------------------------------------------------------------------------------------------\nVersion: die Versionen des Objekts (alle Versionsspalten einer Zeile teilen sich eine Abfrage)"
+    }
+}

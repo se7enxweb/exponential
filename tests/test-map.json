@@ -1901,6 +1901,9 @@
     "kernel/private/classes/commands/exphelpexamples.php": [
       "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php"
     ],
+    "kernel/classes/help/exphelpexamplestranslation.php": [
+      "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php"
+    ],
     "kernel/classes/expdemomode.php": [
       "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],

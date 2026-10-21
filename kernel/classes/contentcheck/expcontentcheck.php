@@ -370,6 +370,68 @@ class expContentCheck
         $field = defined( 'ezxFormToken::FORM_FIELD' ) ? ezxFormToken::FORM_FIELD : 'ezxform_token';
         return isset( $post[$field] ) && self::matches( $post[$field], (string)ezxFormToken::getToken() );
     }
+
+    /**
+     * The options of a check from its view parameters, shaped as the fields of its filter form: a list field
+     * (Kind[]) from a comma list ((kind)/deleted,trash), and the value "none" of a list field as "<Field>Choice=none"
+     * (the button "Select none"). The address is the only source: a query string is not read.
+     *
+     * @param array $params the view's $Params
+     * @param array $fields form field => array( view parameter name, is a list )
+     * @return array form field => value, only those the address gives
+     */
+    public static function viewInput( array $params, array $fields )
+    {
+        $input = array();
+        foreach ( $fields as $field => $spec )
+        {
+            $value = expViewParameters::get( $params, $spec[0] );
+            if ( $value === false || $value === '' )
+                continue;
+            if ( empty( $spec[1] ) )
+                $input[$field] = $value;
+            else if ( $value === 'none' )
+                $input[$field . 'Choice'] = 'none';
+            else
+                $input[$field] = preg_split( '/\s*,\s*/', $value, -1, PREG_SPLIT_NO_EMPTY );
+        }
+        return $input;
+    }
+
+    /**
+     * The fields of a posted filter form that a check reads (the same names as viewInput() gives).
+     *
+     * @param array $post usually $_POST
+     * @param string[] $fields
+     * @return array
+     */
+    public static function postedInput( array $post, array $fields )
+    {
+        $input = array();
+        foreach ( $fields as $field )
+        {
+            if ( isset( $post[$field] ) && ( is_scalar( $post[$field] ) || is_array( $post[$field] ) ) )
+                $input[$field] = $post[$field];
+        }
+        return $input;
+    }
+
+    /**
+     * The address part of a check's options: "/(name)/value" each, a list joined with "," (expViewParameters).
+     *
+     * @param array $options name => scalar or list
+     * @return string
+     */
+    public static function viewSuffix( array $options )
+    {
+        foreach ( $options as $name => $value )
+        {
+            if ( is_array( $value ) )
+                $options[$name] = implode( ',', array_map( 'strval', array_filter( $value, 'is_scalar' ) ) );
+        }
+        // a comma is fine in a path: keep the lists readable
+        return str_replace( '%2C', ',', expViewParameters::suffix( $options ) );
+    }
 }
 
 ?>

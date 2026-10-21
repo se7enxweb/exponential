@@ -20,12 +20,14 @@ $Module = array( 'name' => 'ContentFinder',
 
 $ViewList = array();
 
-// The search form and the results (GET: SearchText, SearchType)
+// The search form and the results. The options are view parameters only: (text) (plain, or "~" and base64url for a
+// path or a URL) and (type). The form is posted (SearchText, SearchType) and answered with a 303 to that address.
 $ViewList['search'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'search.php',
     'functions' => array( 'search' ),
-    'params' => array() );
+    'params' => array(),
+    'unordered_params' => array( 'text' => 'Text', 'type' => 'Type' ) );
 
 // An action on a result: POST only; first the confirmation page, then the action
 $ViewList['action'] = array(

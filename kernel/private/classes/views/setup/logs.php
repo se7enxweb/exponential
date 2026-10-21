@@ -5,9 +5,11 @@
  * the search form, and the actions that are switched on. The page's script (page/setup_logs.js) follows the file
  * through setup/logsfeed, short requests only.
  *
- * GET: file (path relative to the root), and the search: q, regex, case, levels[], from, to, siteaccess, uri, ip,
- * reference, rotations, scope (file | kernel | all), cursor; unmask=1 (only with setup/unmasklogs); done, ok (the
- * outcome of an action, to show).
+ * The view is a permalink, setup/logs/view/<key>/(name)/value (expLogPermalink): the search (search, regex, case,
+ * level, from, to, siteaccess, uri, ip, reference, rotations, scope, cursor), (archive)/N, (unmask)/1 (only with
+ * setup/unmasklogs), (done), (ok) (the outcome of an action, to show). Options are view parameters only, a query
+ * string is never read. The search form and the file chooser without JavaScript POST key (or file) and the criteria
+ * (q, regex, case, levels[], ...) with the form token, and are answered 303 with the permalink.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -19,9 +21,70 @@ namespace Exponential\View\Kernel\Setup
 
 class Logs extends \Exponential\Runnable\ModuleView
 {
-    /** The fields of the old query string (setup/logs?file=...&q=...) that a redirect carries into the permalink */
-    const LEGACY_FIELDS = array( 'q', 'regex', 'case', 'levels', 'from', 'to', 'siteaccess', 'uri', 'ip', 'reference', 'scope',
-                                 'rotations', 'cursor', 'offset', 'follow', 'wrap', 'unmask', 'done', 'ok' );
+    /** The fields of the posted search form (and the file chooser) that the 303 carries into the permalink */
+    const FORM_FIELDS = array( 'q', 'regex', 'case', 'levels', 'from', 'to', 'siteaccess', 'uri', 'ip', 'reference', 'scope',
+                               'rotations', 'cursor', 'unmask' );
+
+    /**
+     * The permalink a posted search form or file chooser asks for: key (and rotation), or file (an id of the
+     * navigator), with the criteria of the form. Null when the log does not exist or may not be opened.
+     *
+     * @param array $post usually $_POST
+     * @param \expLogFileLocator $locator
+     * @return string|null setup/logs/view/<key>/(name)/value...
+     */
+    public static function postedPermalink( array $post, $locator )
+    {
+        $in = array();
+        foreach ( self::FORM_FIELDS as $field )
+            if ( isset( $post[$field] ) )
+                $in[$field] = $post[$field];
+        $state = \expLogPermalink::state( $in, false );
+        if ( isset( $post['key'] ) && is_string( $post['key'] ) && $post['key'] !== '' )
+        {
+            $rotation = isset( $post['rotation'] ) && is_scalar( $post['rotation'] ) ? (int)$post['rotation'] : 0;
+            if ( $locator->resolveKey( $post['key'], $rotation ) === null )
+                return null;
+            $state['rotation'] = $rotation;
+            return \expLogPermalink::build( $post['key'], $state );
+        }
+        $file = isset( $post['file'] ) && is_string( $post['file'] ) ? $locator->resolve( $post['file'] ) : null;
+        if ( $file === null )
+            return null;
+        $state['rotation'] = $file['rotation'];
+        return \expLogPermalink::build( $file['key'], $state );
+    }
+
+    /**
+     * The search of a view as view parameters of the feed (setup/logsfeed): "/(file)/<id>/(q)/..." with every value
+     * written as a permalink writes it (expLogPermalink::encode()), never a query string.
+     *
+     * @param string $fileID
+     * @param array $criteria expLogSearch::criteria() plus from_text and to_text
+     * @param string $scope
+     * @param bool $rotations
+     * @param bool $unmasked
+     * @return string
+     */
+    public static function feedSearchSuffix( $fileID, array $criteria, $scope, $rotations, $unmasked )
+    {
+        $pairs = array( 'file' => (string)$fileID );
+        foreach ( array( 'q', 'siteaccess', 'uri', 'ip', 'reference' ) as $name )
+            $pairs[$name] = isset( $criteria[$name] ) && is_scalar( $criteria[$name] ) ? (string)$criteria[$name] : '';
+        $pairs['regex'] = !empty( $criteria['regex'] ) ? '1' : '';
+        $pairs['case'] = !empty( $criteria['case'] ) ? '1' : '';
+        $pairs['levels'] = !empty( $criteria['levels'] ) ? implode( ',', (array)$criteria['levels'] ) : '';
+        $pairs['from'] = isset( $criteria['from_text'] ) ? (string)$criteria['from_text'] : '';
+        $pairs['to'] = isset( $criteria['to_text'] ) ? (string)$criteria['to_text'] : '';
+        $pairs['scope'] = (string)$scope;
+        $pairs['rotations'] = $rotations ? '1' : '';
+        $pairs['unmask'] = $unmasked ? '1' : '';
+        $suffix = '';
+        foreach ( $pairs as $name => $value )
+            if ( $value !== '' )
+                $suffix .= '/(' . $name . ')/' . \expLogPermalink::encode( $value );
+        return $suffix;
+    }
 
     public function run( array $scope )
     {
@@ -34,49 +97,15 @@ class Logs extends \Exponential\Runnable\ModuleView
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
         $locator = new \expLogFileLocator( $config );
 
-        // The old links (?file=<path>) and the search form without JavaScript (?key=...&q=...): the same view as a
-        // permalink. 301 for an old link, 303 for a form.
-        if ( !empty( $_GET ) && ( isset( $_GET['file'] ) || isset( $_GET['key'] ) ) )
+        // The search form and the file chooser without JavaScript are sent with POST (the form token included) and
+        // answered 303 with the permalink of what was asked for. The options are view parameters only: a query
+        // string (?file=, ?key=, ?q= ...) is never read.
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'key', 'file' ) ) )
         {
-            $legacy = isset( $_GET['file'] ) && !isset( $_GET['key'] );
-            $in = array();
-            foreach ( self::LEGACY_FIELDS as $field )
-                if ( isset( $_GET[$field] ) )
-                    $in[$field] = $_GET[$field];
-            $state = \expLogPermalink::state( $in, false );
-            $target = null;
-            if ( $legacy )
-            {
-                $file = is_string( $_GET['file'] ) ? $locator->resolve( $_GET['file'] ) : null;
-                if ( $file !== null )
-                {
-                    $state['rotation'] = $file['rotation'];
-                    $target = \expLogPermalink::build( $file['key'], $state );
-                }
-            }
-            else
-            {
-                // the archive asked for: archive=N (rotation=N is the same)
-                $archive = isset( $_GET['archive'] ) && is_scalar( $_GET['archive'] ) ? (int)$_GET['archive']
-                           : ( isset( $_GET['rotation'] ) && is_scalar( $_GET['rotation'] ) ? (int)$_GET['rotation'] : 0 );
-                if ( is_string( $_GET['key'] ) && $locator->resolveKey( $_GET['key'], $archive ) !== null )
-                {
-                    $state['rotation'] = $archive;
-                    $target = \expLogPermalink::build( (string)$_GET['key'], $state );
-                }
-            }
-            if ( $target !== null )
-            {
-                $url = '/' . $target;
-                \eZURI::transformURI( $url );
-                if ( method_exists( '\eZExecution', 'discardOutputBuffers' ) )
-                    \eZExecution::discardOutputBuffers();
-                header( $legacy ? 'HTTP/1.1 301 Moved Permanently' : 'HTTP/1.1 303 See Other' );
-                header( 'Location: ' . $url );
-                header( 'Cache-Control: no-store' );
-                \eZExecution::cleanExit();
-            }
-            return $this->notFound( $Module );
+            $target = self::postedPermalink( $_POST, $locator );
+            if ( $target === null )
+                return $this->notFound( $Module );
+            \expViewParameters::redirect( $target );
         }
 
         // setup/logs/view/<key>/(name)/value...; setup/logs alone opens the default log
@@ -173,6 +202,15 @@ class Logs extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'log_searching', $searching );
         $tpl->setVariable( 'log_criteria', $criteria + array( 'from_text' => isset( $in['from'] ) && is_scalar( $in['from'] ) ? (string)$in['from'] : '',
                                                               'to_text' => isset( $in['to'] ) && is_scalar( $in['to'] ) ? (string)$in['to'] : '' ) );
+        // the search for the feed (view parameters by file id) and the link to more results (the permalink with the cursor)
+        $criteriaText = $criteria + array( 'from_text' => isset( $in['from'] ) && is_scalar( $in['from'] ) ? (string)$in['from'] : '',
+                                           'to_text' => isset( $in['to'] ) && is_scalar( $in['to'] ) ? (string)$in['to'] : '' );
+        $tpl->setVariable( 'log_feed_search', $file !== null ? self::feedSearchSuffix( $file['id'], $criteriaText, $scopeName, $rotations, $viewer->unmasked() ) : '' );
+        $tpl->setVariable( 'log_more_url', $file !== null && $search !== null && !empty( $search['cursor'] )
+                                           ? \expLogPermalink::build( $file['key'], array( 'rotation' => $file['rotation'], 'scope' => $scopeName, 'rotations' => $rotations,
+                                                                                           'cursor' => (string)$search['cursor'], 'unmask' => $viewer->unmasked() ) + $state,
+                                                                      array( 'done', 'ok', 'wrap' ) )
+                                           : '' );
         $tpl->setVariable( 'log_scope', $scopeName );
         $tpl->setVariable( 'log_rotations', $rotations );
         $tpl->setVariable( 'log_levels', \expLogParser::$levels );

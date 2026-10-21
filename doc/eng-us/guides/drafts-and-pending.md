@@ -28,7 +28,7 @@ repository on 6 October 2026; the files are named in [References](#references).
 | Part | What it shows |
 | --- | --- |
 | Figures | Your drafts, those of new objects, those not modified for 30 days (or the age chosen), translations, classes |
-| Find | A search over the name, the location and the class (`?q=`) |
+| Find | A search over the name, the location and the class (`/(q)/<text>`, a view parameter; the form is posted and answered with a 303 to that address) |
 | Filters | Translation and class (when there is more than one), age (any, 7, 30, 90, 365 days), order (last modified, oldest, name, class) |
 | Cards | Name, class, location (or "New, to be published below ..."), translation, version, created, modified and its age; **Edit**, **View** (with `content/versionread`) and **Remove**, confirmed in place |
 | Bottom bar | **Remove selected** (the confirmation names the ticked drafts), **Remove old drafts** (choose the age; the count is shown), **Remove all**, each confirmed in place |

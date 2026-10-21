@@ -23,7 +23,9 @@ $ViewList['list'] = array(
     'post_action_parameters' => array( 'ChangeRepository' => array( 'RepositoryID' => 'RepositoryID' ),
                                        'RemovePackage' => array( 'PackageSelection' => 'PackageSelection' ),
                                        'ConfirmRemovePackage' => array( 'PackageSelection' => 'PackageSelection' ) ),
-    "unordered_params" => array( "offset" => "Offset" ),
+    // the list's options are view parameters, never a query string; the filter form is a POST answered with a 303
+    "unordered_params" => array( "offset" => "Offset", 'search' => 'Search', 'type' => 'Type', 'state' => 'State',
+                                 'sort' => 'Sort', 'dir' => 'Dir' ),
     'params' => array( 'RepositoryID' ) );
 
 $ViewList['upload'] = array(
@@ -75,6 +77,10 @@ $ViewList['view'] = array(
                                     'ExportButton' => 'Export',
                                     // the package's validation (expPackageJson::validateDirectory()), shown on the page
                                     'ValidateButton' => 'Validate' ),
+    // the contents browser's options (package/view/full), never a query string; its filter form is a POST
+    // answered with a 303
+    'unordered_params' => array( 'type' => 'Type', 'search' => 'Search', 'limit' => 'Limit', 'offset' => 'Offset',
+                                 'file' => 'File', 'as' => 'As' ),
     'params' => array( 'ViewMode', 'PackageName', 'RepositoryID' ) );
 
 // package/viewfile/<PackageName>/<FileIndex>: one raw file out of a package's own directory (the
@@ -103,6 +109,9 @@ $ViewList['compare'] = array(
                                     'ImportViewedButton' => 'ImportViewed',
                                     'ConfirmImportButton' => 'ConfirmImport',
                                     'CancelImportButton' => 'CancelImport' ),
+    // never a query string; the filter form is a POST answered with a 303
+    'unordered_params' => array( 'filter' => 'Filter', 'class' => 'Class', 'search' => 'Search', 'sort' => 'Sort',
+                                 'dir' => 'Dir', 'limit' => 'Limit', 'offset' => 'Offset', 'item' => 'Item' ),
     'params' => array( 'PackageName' ) );
 
 $ViewList['install'] = array(

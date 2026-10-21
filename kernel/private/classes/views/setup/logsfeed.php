@@ -4,7 +4,9 @@
  * script, one short request each, never held open (so a Velocity worker or a PHP-FPM child is busy for the
  * milliseconds of one read, not for as long as a page stays open).
  *
- * GET (or POST) action:
+ * The options are view parameters, setup/logsfeed/(action)/tail/(file)/<id>/(offset)/<n>..., each value written as a
+ * permalink writes it (expLogPermalink::encode(): "~2F" for "/"), or fields of a POST; a query string is never read.
+ * (action):
  *   tail       file, offset (-1: the end), ino      what the file gained since the offset
  *   search     file, scope, rotations, cursor, and the criteria (q, regex, case, levels, from, to, siteaccess, uri, ip)
  *   related    file, offset                         the lines of the same request, and the audit window
@@ -27,9 +29,13 @@ class Logsfeed extends \Exponential\Runnable\ModuleView
     public function run( array $scope )
     {
         $http = \eZHTTPTool::instance();
-        $get = function ( $name, $default = '' ) use ( $http ) {
-            if ( $http->hasGetVariable( $name ) )
-                return $http->getVariable( $name );
+        $Params = isset( $scope['Params'] ) && is_array( $scope['Params'] ) ? $scope['Params'] : array();
+        // the options are view parameters (/(action)/tail/(file)/<id>..., values written as a permalink writes them,
+        // expLogPermalink::encode()) or fields of a POST; a query string is never read
+        $get = function ( $name, $default = '' ) use ( $http, $Params ) {
+            $value = \expViewParameters::get( $Params, $name, $name );
+            if ( $value !== false )
+                return \expLogPermalink::decode( $value );
             if ( $http->hasPostVariable( $name ) )
                 return $http->postVariable( $name );
             return $default;

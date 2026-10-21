@@ -4,7 +4,7 @@
 
    Variables: files (from expContentCheckFiles::section(): result (node, rows of the page, count, offset, checked,
    incomplete, error), params (node_id, problems, versions), select_all, can_fix, actions, max_items, form_token,
-   token_field, feedback, storage_dir), page_uri, filter_suffix (the page's query string, with the missing files
+   token_field, feedback, storage_dir), page_uri, filter_suffix (the page's view parameters, with the missing files
    asked for), limit, limit_choices, limit_preference. The pages are (file_offset) in the address, apart from the
    relations' own. With contentcheck/fixfiles the ticked rows (or one row's button) are posted to
    contentcheck/fixfiles, which shows what will happen and asks for a confirmation first. The same file is in

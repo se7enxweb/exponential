@@ -1,6 +1,6 @@
 {* The users who registered and never activated their account (user/unactivated).
 
-   How many there are, a search by login, e-mail or name (?q=), the order (registration date, login, e-mail, name,
+   How many there are, a search by login, e-mail or name (/(q)/..., the search form is posted and answered with the address), the order (registration date, login, e-mail, name,
    either way round; the view parameters SortField and SortOrder), the paging, and one row per user with the age of
    the registration (old ones marked). Three actions on the ticked users, each confirmed in place: activate (the
    account works at once, as if the user had clicked the link), send the activation mail again (with a new link; the
@@ -98,7 +98,7 @@
 
 <section aria-labelledby="unact-find-title">
 <h2 class="a4-sr-only" id="unact-find-title">{'Find users'|i18n( 'design/admin/user/unactivated' )}</h2>
-<form class="a4-filterbar" method="get" action={concat( $uri, $sort_part )|ezurl} role="search">
+<form class="a4-filterbar" method="post" action={concat( $uri, $sort_part )|ezurl} role="search">
     <div class="a4-field a4-field-wide">
         <label for="unact-search">{'Find a registration'|i18n( 'design/admin/user/unactivated' )}</label>
         <div class="a4-searchrow">

@@ -31,7 +31,7 @@
 {/if}
 
 <div class="block">
-<form method="get" action={'contentfinder/search'|ezurl} class="a4-contentfinder-form" role="search">
+<form method="post" action={'contentfinder/search'|ezurl} class="a4-contentfinder-form" role="search">
     <div class="a4-contentfinder-text">
         <label for="exp-cf-text">{'Id, path or URL'|i18n( 'kernel/contentfinder' )}</label>
         <input type="text" class="box" id="exp-cf-text" name="SearchText" value="{$search_text|wash}" maxlength="1024" autocomplete="off" spellcheck="false" required="required" />
