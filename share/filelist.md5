@@ -17,7 +17,7 @@ fe07d4527019a2f7527aba8b09d4634c  .htaccess_root
 35ec6a4f64582da7d8b9014f92e28d22  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 b7034e90e1a71f18582da6f6945a14d0  CODE_OF_CONDUCT.md
-5d89dbb18e3851040c06a4e89d5c06ea  CONTRIBUTING.md
+7f633edbac0ce0ba02f84af70e552b85  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
@@ -7152,7 +7152,7 @@ a923ed9a58a0dc3c71df4094789c0889  doc/eng-us/help/community/community-reading-pa
 4446c5352a26010e434390f36e4ff636  doc/eng-us/help/community/contributing/contributing-code.md
 31e5d0b4e9fb7de95f73329394f336ba  doc/eng-us/help/community/contributing/contributing-documentation-and-help-pages.md
 6f0ed03fbd750fd8caaf8061f2230689  doc/eng-us/help/community/contributing/contributing-translations.md
-f5e9b134212949bf1011c017e2c9d293  doc/eng-us/help/community/contributing/filing-a-bug.md
+320879fb4041f6a18d5a6d5c73c679d3  doc/eng-us/help/community/contributing/filing-a-bug.md
 2cd84000fd72bc5c9d94cee35643aed5  doc/eng-us/help/community/contributing/reviewing-and-being-reviewed.md
 f42d7252cae36cd3451c04f23efe3ec2  doc/eng-us/help/community/contributing/sharing-extensions-and-themes.md
 9d90787b2b647d586df23c48071eaf3e  doc/eng-us/help/community/contributing/testing-releases.md
@@ -10451,7 +10451,7 @@ a3fdc4ca39b73e915ccae9e0bde82110  doc/eng-us/help/press/writing-about-the-commun
 8ac166086eaf53a331956f9c6b16e161  doc/eng-us/help/project/contribute-to-the-project.md
 70acb01cfeb58d8b7d087225768c6827  doc/eng-us/help/project/documentation-sources.md
 75f102018a1dcf5ef9baa9043cedaec5  doc/eng-us/help/project/faq.md
-1cb75794f1497c4ea87bc8de066da9b8  doc/eng-us/help/project/getting-support.md
+41934db57b1ecbc2400e1854e3ada66e  doc/eng-us/help/project/getting-support.md
 1200d882566c888a6e20b01114ba8bb4  doc/eng-us/help/project/give-and-donate.md
 21f20175cb9d6fec6d97c0aa257abb6b  doc/eng-us/help/project/licensing-faq.md
 cba5c7b13a2bfa723c8f55d1381a392f  doc/eng-us/help/project/roadmap.md
@@ -11419,7 +11419,7 @@ b2d5d75778dd42e9008b5bbb1d929515  doc/eng-us/help/web-framework-developers/url-a
 5705660267772847d9f5dd00c10f5519  doc/eng-us/help/web-framework-developers/when-to-choose-exponential.md
 4f3c4ae4817f4548b802da90f18fea3d  doc/eng-us/help/web-framework-developers/workflows-triggers-and-domain-events.md
 0c260bcddb094d8fdc3d0accc90beff5  doc/eng-us/help/web-framework-developers/your-first-module-step-by-step.md
-3653c9af5a596f1f71d001f873d9272a  doc/eng-us/help/when-something-goes-wrong.md
+bc999ddbb0a6d30bfcbdc220860a092b  doc/eng-us/help/when-something-goes-wrong.md
 41d2d30a45dc76ab38ee8ce12b3479c3  doc/eng-us/help/who-is-7x.md
 7daa0544ebea02956174030dcdb629e3  doc/eng-us/help/who-is-the-exponential-foundation.md
 bd70793577c80633bb67f709e2477c2a  doc/eng-us/history/2023/2023-12.md

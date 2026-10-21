@@ -60,6 +60,36 @@ tracker to use, and the **Report an error** page of this help prepares the issue
 never posted in public: send them privately as
 [When something goes wrong](../when-something-goes-wrong.md#security-problems) explains.
 
+## Negative features
+
+Not everything that looks like a bug is one. Some behavior is a deliberate choice that simply does not suit every
+installation, and some is open to interpretation: two reasonable people read the same documentation and expect
+different results. Engineers call a behavior like this a **negative feature**: it can feel like a defect from one
+side, yet it exists on purpose, often to protect security, backward compatibility, performance, or the many sites
+that already depend on it working exactly as it does today.
+
+Examples of what can be a negative feature rather than a bug:
+
+- a setting that is off by default because turning it on would change existing sites (for instance prices, URLs or
+  permissions);
+- a limit or refusal that guards against misuse, such as a check that rejects input other sites never send;
+- an old behavior that extensions, templates or integrations rely on, even if a new design would choose differently;
+- a difference between what you expected and what the documentation actually promises.
+
+What this means for an issue or a pull request:
+
+- **Explain the why, not only the what.** Describe your use case, what the current behavior costs you, and who else
+  it affects. A change to a negative feature is weighed against every installation that depends on it.
+- **Expect discussion.** Such a change may need extensive justification, and a pull request may go through several
+  rounds of review and revision before it is accepted and merged. That is normal, not a rejection.
+- **Prefer an option over a new default.** A proposal that keeps today's behavior as the default and adds a setting,
+  a hook or an extension point for the new one is much easier to accept than one that changes everyone's site.
+- **Ask first if you are unsure.** A short question in the community before you write code saves you a long review.
+
+If a maintainer answers that something works as intended, the reason is usually written down in the documentation,
+the changelog or the code. You can still propose a change: the project wants to hear why the current behavior does
+not work for you.
+
 ## Paid help from 7x
 
 When you cannot wait, or you need someone to do the work, the support page recommends hiring **7x**, the company that
