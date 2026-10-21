@@ -21,6 +21,10 @@ Every command and code sample in the book was checked against the kernel it desc
 settings it names exist, the PHP samples pass `php -l`, and the template samples were rendered by the template engine.
 When a page states a fact, it names the file or the page where the fact comes from.
 
+Official Exponential certifications are planned, part of the project's future plans for the community, partners,
+Exponential developers and students; they are not available yet
+([Certifications and certificates](../students/certifications-and-certificates.md)).
+
 ## Developing on the whole stack: Velocity is part of Exponential 6.0.15
 
 As of 6.0.15 the Velocity Internet / Web Application Server is part of Exponential: the root `composer.json` requires
