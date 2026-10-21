@@ -1610,7 +1610,7 @@ af2f1d52c94386c896c27f6be7c1d2ad  design/admin4/templates/workflow/grouplist.tpl
 0019ba1ce1c2547ebe4ce7c859c86851  design/admin4/templates/workflow/processlist.tpl
 ea9d2f821f900d127eb72e998c8be47c  design/admin4/templates/workflow/view.tpl
 d0360cfda82bd890f2b0368f53a8141f  design/admin4/templates/workflow/workflowlist.tpl
-14afe23eaa9aa8bb6b9302eeb32a2311  design/admin4l/templates/explayouts/admin_zone.tpl
+812792863cd9403360b5240534057425  design/admin4l/templates/explayouts/admin_zone.tpl
 3d0d0e55b78d7ec1a771bee80b897008  design/admin4l/templates/explayouts/block/admin_bookmarks.tpl
 bd8bbeb157adb74c7b3f3d9e0a4a563e  design/admin4l/templates/explayouts/block/admin_breadcrumb.tpl
 f78a198bf9da2ffad2f5ac7a884abf38  design/admin4l/templates/explayouts/block/admin_clear_cache.tpl
@@ -1634,7 +1634,7 @@ f1bb365da04942b2a7c6e659a681a87d  design/admin4l/templates/explayouts/block/admi
 00dc6fc9a64cbb17ffcdd7be6133b9a8  design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl
 435fa478e336ab853226197df0b70fc2  design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
-6de529b8873135665ea6f8dd1644be8a  design/admin4l/templates/pagelayout.tpl
+1cb205f33732058b9b2f7615f827f3a4  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -3328,7 +3328,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/eng-us/bc/5.90/relation_indexing.md
 34025040def37fd2b9af02fe4ea8d322  doc/eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
 26fb0c7c82a5aa83bee59e3ee0c5d1fc  doc/eng-us/bc/6.0/admin4-styling.md
-e101242c403b860ecda6eb961d8f7659  doc/eng-us/bc/6.0/admin4l.md
+a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
 04a8047a63b17b583bee880327dc4c51  doc/eng-us/bc/6.0/audit.md
 135fd8831f5dd0b8dbba0ba6b7b04166  doc/eng-us/bc/6.0/backend_ezjscore_services.md
@@ -6124,7 +6124,7 @@ f591dfeee412831cbf4c9ec450c93dc6  doc/eng-us/features/6.0/admin-links-follow-per
 a47dfcc6efe2e2c9c161f250da461f72  doc/eng-us/features/6.0/admin3-responsive-admin.md
 a29a680e52b85935874388c9c6d885bd  doc/eng-us/features/6.0/admin3-sidebar-width-and-font-size.md
 bb96fcb8886154e1d967170a27b2c660  doc/eng-us/features/6.0/admin4-design.md
-fcaa1e593d281cd549d24fc941855008  doc/eng-us/features/6.0/admin4l.md
+c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
 4e6288e58d6f4884e2c040b863cbb545  doc/eng-us/features/6.0/adminneo-database-manager.md
 64d6c14e6630ba2fab70560d20ccab11  doc/eng-us/features/6.0/audit-trail.md
 ad4b2afdcaccafc35da62044d0a0fc5f  doc/eng-us/features/6.0/benchmark.md
@@ -19438,7 +19438,7 @@ b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
-0f61a66b5e0996561766fc594dec3781  tests/tests/design/Admin4lReviewTest.php
+48f0934cad170c262fb8061786724f64  tests/tests/design/Admin4lReviewTest.php
 a573d6be2008dff11934660944ca4b8a  tests/tests/design/AdminBaseStylesheetsTest.php
 59ec01ce80314b5d77be3007f4a32b66  tests/tests/design/AdminBrowseCurrentNodeTest.php
 759fe4ff4c2d9fc1985f080528d04c2f  tests/tests/design/AdminCardsTest.php

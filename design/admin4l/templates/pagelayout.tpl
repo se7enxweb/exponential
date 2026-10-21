@@ -40,7 +40,7 @@
     {if $a4_help}{set $a4_help_key = $a4_help.key}{/if}
     {undef $a4_help_params}
     {* admin4l: the admin layout for this page. The safety switch is explayouts.ini [AdminLayoutSettings]
-       Enabled=enabled|disabled: anything but "enabled" gives the plain admin4 page. When no layout resolves, or
+       Enabled=enabled|disabled (read by the fetch function admin_layouts_enabled, which also needs a siteaccess of SiteAccessMatch[]): anything but "enabled" gives the plain admin4 page. When no layout resolves, or
        the resolved layout has no blocks, the page is admin4's too, and a zone that renders nothing is drawn
        from admin4's own template (the zone fallback below). *}
     {def $admin_layout      = false()
@@ -48,7 +48,7 @@
          $admin_layout_type = ''
          $admin_mp          = module_params()
          $zone_html         = ''}
-    {if and( ezini_hasvariable( 'AdminLayoutSettings', 'Enabled', 'explayouts.ini' ), eq( ezini( 'AdminLayoutSettings', 'Enabled', 'explayouts.ini' ), 'enabled' ) )}
+    {if fetch( 'explayouts', 'admin_layouts_enabled' )}
         {set $admin_layout = fetch( 'explayouts', 'resolve_admin_layout', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )}
         {if and( is_array( $admin_layout ), is_set( $admin_layout.block_count ), $admin_layout.block_count|gt( 0 ) )}
             {set $admin_layout_id   = concat( $admin_layout.id, '-', fetch( 'explayouts', 'admin_layout_cache_key', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )|implode( '-' ) )
