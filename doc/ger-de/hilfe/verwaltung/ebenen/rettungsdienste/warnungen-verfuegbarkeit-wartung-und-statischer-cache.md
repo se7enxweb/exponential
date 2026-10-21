@@ -109,7 +109,7 @@ Diese Punkte abzudecken gehört zu Ihrem Hosting- und Betriebskonzept
 
 - [Rettungsdienste](README.md)
 - [Statischer Cache und Velocity](../../../../../eng-us/help/creators/website-creators/static-cache-and-velocity.md)
-- [Warnungen in vielen Sprachen und in einfacher Sprache](../../../../../eng-us/help/government/levels/public-health/alerts-multilingual-and-plain-language.md)
+- [Warnungen in vielen Sprachen und in einfacher Sprache](../oeffentliche-gesundheit/warnungen-mehrsprachig-und-in-einfacher-sprache.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -47,7 +47,7 @@ allgemeine Praxis im öffentlichen Sektor wieder, und die Zuständigkeiten unter
 Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs für Verwaltungen,
 [Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
 Bietet Ihre Region eine gemeinsame Plattform an, lesen Sie auch
-[Gemeinsame Dienste für die Kommunen einer Region](../../../../../eng-us/help/government/levels/regional-and-state/shared-services-for-municipalities.md).
+[Gemeinsame Dienste für die Kommunen einer Region](../laender-und-regionen/gemeinsame-dienste-fuer-kommunen.md).
 
 ## Was die Kommunalverwaltung besonders macht
 
@@ -66,7 +66,7 @@ Redakteure ([Der Editor-Siteaccess](../../../anmelden-im-editor.md)).
 ## Verwandte Seiten
 
 - [Verwaltungsebenen](../README.md)
-- [Länder und Regionen](../../../../../eng-us/help/government/levels/regional-and-state/README.md)
+- [Länder und Regionen](../laender-und-regionen/README.md)
 - [Was Sie bauen können](../../../../../eng-us/help/creators/website-creators/what-you-can-build.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

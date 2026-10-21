@@ -33,14 +33,14 @@ veröffentlichen, geben allgemeine Praxis im öffentlichen Sektor wieder, keine 
 | Ordner | Umfasst | Ebenenspezifische Seite |
 |---|---|---|
 | [Nationale Regierung](national/README.md) | Ministerien, Ressorts, zentrale Regierungsportale | viele Ministerien auf einer Plattform |
-| [Länder und Regionen](../../../../eng-us/help/government/levels/regional-and-state/README.md) | Bundesländer, Bundesstaaten, Provinzen, Regionen, Kreise | gemeinsame Dienste für die Kommunen einer Region |
+| [Länder und Regionen](laender-und-regionen/README.md) | Bundesländer, Bundesstaaten, Provinzen, Regionen, Kreise | gemeinsame Dienste für die Kommunen einer Region |
 | [Kommunen](kommunen/README.md) | Städte, Gemeinden, Gemeinderäte, Bezirke | Ratssitzungen und örtliche Dienstleistungen |
 | [Behörden](behoerden/README.md) | Regulierungsbehörden, Aufsichtsbehörden, nachgeordnete und ausgegliederte Stellen | Leitfäden, Programme und regulierte Akteure |
-| [Öffentliche Bibliotheken](../../../../eng-us/help/government/levels/public-libraries/README.md) | öffentliche und Gemeindebibliotheken, Bibliotheksverbünde | Veranstaltungen und Kataloge, verlinkt statt nachgebaut |
-| [Schulen und Hochschulen](../../../../eng-us/help/government/levels/schools-and-universities/README.md) | Schulen, Schulbezirke, Fachhochschulen, Universitäten | Intranets und Subsites von Fachbereichen |
+| [Öffentliche Bibliotheken](oeffentliche-bibliotheken/README.md) | öffentliche und Gemeindebibliotheken, Bibliotheksverbünde | Veranstaltungen und Kataloge, verlinkt statt nachgebaut |
+| [Schulen und Hochschulen](schulen-und-hochschulen/README.md) | Schulen, Schulbezirke, Fachhochschulen, Universitäten | Intranets und Subsites von Fachbereichen |
 | [Gerichte](gerichte/README.md) | Gerichte und Spruchkörper | Entscheidungen mit Sorgfalt für personenbezogene Daten veröffentlichen |
-| [Parlamente](../../../../eng-us/help/government/levels/parliaments/README.md) | Parlamente, Versammlungen, Räte als Gesetzgeber | Tagesordnungen, Gesetzentwürfe und Abstimmungsergebnisse |
-| [Öffentliche Gesundheit](../../../../eng-us/help/government/levels/public-health/README.md) | Gesundheitsämter und Behörden des öffentlichen Gesundheitsdienstes | Warnungen, viele Sprachen und einfache Sprache |
+| [Parlamente](parlamente/README.md) | Parlamente, Versammlungen, Räte als Gesetzgeber | Tagesordnungen, Gesetzentwürfe und Abstimmungsergebnisse |
+| [Öffentliche Gesundheit](oeffentliche-gesundheit/README.md) | Gesundheitsämter und Behörden des öffentlichen Gesundheitsdienstes | Warnungen, viele Sprachen und einfache Sprache |
 | [Rettungsdienste](rettungsdienste/README.md) | Feuerwehr, Rettungsdienst, Katastrophenschutz, Krisenmanagement | Warnungen, Verfügbarkeit, Wartungsmodus und statischer Cache |
 
 ## Was jeder Ordner beantwortet

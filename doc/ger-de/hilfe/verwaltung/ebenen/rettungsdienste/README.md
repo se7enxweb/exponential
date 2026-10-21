@@ -49,7 +49,7 @@ Bevölkerung, Rundfunk und Telefonnetze liegen außerhalb von Exponential.
 Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs für Verwaltungen,
 [Verwaltungen: hier beginnen](../../../../../eng-us/help/government/government-start-here.md), ist der Ausgangspunkt für alle Leserinnen und Leser.
 Gesundheitswarnungen behandelt
-[Warnungen in vielen Sprachen und in einfacher Sprache](../../../../../eng-us/help/government/levels/public-health/alerts-multilingual-and-plain-language.md).
+[Warnungen in vielen Sprachen und in einfacher Sprache](../oeffentliche-gesundheit/warnungen-mehrsprachig-und-in-einfacher-sprache.md).
 
 ## Was Rettungsdienste besonders macht
 
@@ -64,7 +64,7 @@ Gesundheitswarnungen behandelt
 ## Verwandte Seiten
 
 - [Verwaltungsebenen](../README.md)
-- [Öffentliche Gesundheit](../../../../../eng-us/help/government/levels/public-health/README.md)
+- [Öffentliche Gesundheit](../oeffentliche-gesundheit/README.md)
 - [Wartungsmodus](../../../../anleitungen/wartungsmodus.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
