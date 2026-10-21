@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Redakteure, die ein veröffentlichtes Dokument aktualisieren müssen: ein korrigiertes Formular, eine
 überarbeitete Richtlinie, einen Bericht mit einer berichtigten Tabelle. Wenn Sie das Datei-Objekt bearbeiten und eine
 neue Datei wählen, behält es seine Adresse, sodass jede Seite, die es verknüpft, und jeder externe Link weiter
-funktionieren ([Versionen von Dokumenten](../../../../../eng-us/help/government/building/documents-and-publications/versions-of-documents.md)).
+funktionieren ([Versionen von Dokumenten](../../aufbauen/dokumente-und-publikationen/versionen-von-dokumenten.md)).
 
 ## Inhalt
 
@@ -52,7 +52,7 @@ funktionieren ([Versionen von Dokumenten](../../../../../eng-us/help/government/
 |---|---|
 | Die neue Datei als neues Objekt hochladen und das alte stehen lassen | Links zeigen weiter auf die alte Datei; bearbeiten Sie das bestehende Objekt |
 | Ist die alte Datei noch herunterladbar? | archivierte Versionen sind nicht öffentlich: Das Herunterladen einer anderen als der veröffentlichten Version braucht `content/versionread` |
-| Die vorherige Datei muss vernichtet werden (personenbezogene Daten, rechtliche Gründe) | entfernen Sie nach dem Ersetzen die archivierten Versionen ([Versionen von Dokumenten](../../../../../eng-us/help/government/building/documents-and-publications/versions-of-documents.md#removing-a-file-that-must-not-stay)) |
+| Die vorherige Datei muss vernichtet werden (personenbezogene Daten, rechtliche Gründe) | entfernen Sie nach dem Ersetzen die archivierten Versionen ([Versionen von Dokumenten](../../aufbauen/dokumente-und-publikationen/versionen-von-dokumenten.md#eine-datei-entfernen-die-nicht-bleiben-darf)) |
 | Ein gespeicherter PDF-Export enthält den alten Inhalt | erzeugen Sie ihn neu ([Ein Handbuch als PDF-Export veröffentlichen](ein-handbuch-als-pdf-export-veroeffentlichen.md)) |
 | Browser oder Cache zeigen die alte Datei | laden Sie neu; fragen Sie das Web-Team nach Caches vor der Site |
 
@@ -60,7 +60,7 @@ funktionieren ([Versionen von Dokumenten](../../../../../eng-us/help/government/
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Einen PDF-Bericht mit barrierefreier Zusammenfassung hochladen](einen-pdf-bericht-mit-barrierefreier-zusammenfassung-hochladen.md)
-- [Dateien und die Klasse File](../../../../../eng-us/help/government/building/documents-and-publications/files-and-the-file-class.md)
+- [Dateien und die Klasse File](../../aufbauen/dokumente-und-publikationen/dateien-und-die-klasse-file.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

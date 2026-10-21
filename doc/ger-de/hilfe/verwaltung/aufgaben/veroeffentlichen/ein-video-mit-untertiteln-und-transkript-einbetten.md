@@ -71,7 +71,7 @@ Videoplattform ein.
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Barrierefreie Informationen zu Veranstaltungen](../../../../../eng-us/help/government/building/events/accessible-event-information.md)
+- [Barrierefreie Informationen zu Veranstaltungen](../../aufbauen/veranstaltungen/barrierefreie-informationen-zu-veranstaltungen.md)
 - [SVG und Bildformate](../../../../../eng-us/help/creators/website-creators/svg-and-image-formats.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -13,7 +13,7 @@ Diese Seite ist für Redakteure, die Formulareinsendungen bearbeiten. Exponentia
 entfernt; es gibt kein automatisches Löschen. Das planmäßige Entfernen sorgt dafür, dass personenbezogene Daten nur so
 lange wie nötig aufbewahrt werden
 ([Gesammelte Informationen, 3](../../../../anleitungen/gesammelte-informationen.md#3-sammlungen-entfernen),
-[Aufbewahrung gesammelter Informationen](../../../../../eng-us/help/government/building/forms/retention-of-collected-information.md)).
+[Aufbewahrung gesammelter Informationen](../../aufbauen/formulare/aufbewahrung-gesammelter-informationen.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.

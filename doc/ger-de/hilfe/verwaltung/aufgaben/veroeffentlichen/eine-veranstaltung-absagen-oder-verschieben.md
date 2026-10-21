@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Redakteure, die eine bereits veröffentlichte Veranstaltung absagen oder verschieben müssen.
 Behalten Sie die Seite: Die Menschen haben den Link. Machen Sie die Änderung deutlich und informieren Sie dann die
-Angemeldeten. Hintergrund: [Absagen und Änderungen](../../../../../eng-us/help/government/building/events/cancellations-and-changes.md).
+Angemeldeten. Hintergrund: [Absagen und Änderungen](../../aufbauen/veranstaltungen/absagen-und-aenderungen.md).
 
 ## Inhalt
 
@@ -66,7 +66,7 @@ Angemeldeten. Hintergrund: [Absagen und Änderungen](../../../../../eng-us/help/
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Veranstaltung veröffentlichen](eine-veranstaltung-veroeffentlichen.md)
-- [Vergangene Veranstaltungen und das Archiv](../../../../../eng-us/help/government/building/events/past-events-archive.md)
+- [Vergangene Veranstaltungen und das Archiv](../../aufbauen/veranstaltungen/vergangene-veranstaltungen-und-das-archiv.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

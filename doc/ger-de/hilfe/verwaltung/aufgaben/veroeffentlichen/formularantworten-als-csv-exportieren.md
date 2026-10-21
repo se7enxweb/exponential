@@ -61,7 +61,7 @@ neuesten zuerst.
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Formulareinsendungen lesen und exportieren](../../../../../eng-us/help/creators/website-creators/form-submissions.md)
-- [Aufbewahrung gesammelter Informationen](../../../../../eng-us/help/government/building/forms/retention-of-collected-information.md)
+- [Aufbewahrung gesammelter Informationen](../../aufbauen/formulare/aufbewahrung-gesammelter-informationen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

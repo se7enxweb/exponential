@@ -10,7 +10,7 @@ type: help
 # Verwaiste Konten von Auftragnehmern prüfen und deaktivieren
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund:
-[Verwaiste Konten überprüfen](../../../../../eng-us/help/government/building/extranets/reviewing-stale-accounts.md).
+[Verwaiste Konten überprüfen](../../aufbauen/extranets/verwaiste-konten-ueberpruefen.md).
 
 ## Schritte
 
@@ -38,7 +38,7 @@ Der Filter **Deaktiviert** zeigt nun die Konten; sie können sich nicht anmelden
 ## Verwandte Seiten
 
 - [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)
-- [Den Zugang beenden](../../../../../eng-us/help/government/building/extranets/ending-access.md)
+- [Den Zugang beenden](../../aufbauen/extranets/den-zugang-beenden.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

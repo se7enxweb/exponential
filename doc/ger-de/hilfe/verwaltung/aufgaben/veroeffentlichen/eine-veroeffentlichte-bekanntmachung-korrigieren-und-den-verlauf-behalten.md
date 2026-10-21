@@ -57,7 +57,7 @@ Speichern ist eine Version ([Veröffentlichen, Versionen und der Papierkorb](../
 | Fallstrick | So vermeiden Sie ihn |
 |---|---|
 | Eine Tatsache, nach der Menschen gehandelt haben, stillschweigend korrigieren | fügen Sie bei Tatsachen immer einen Korrekturhinweis hinzu |
-| Die alte Version entfernen, um den Fehler zu verbergen | der Verlauf gehört zur Rechenschaft; entfernen Sie Versionen nur aus rechtlichen Gründen, etwa bei unrechtmäßig veröffentlichten personenbezogenen Daten ([Versionen von Dokumenten](../../../../../eng-us/help/government/building/documents-and-publications/versions-of-documents.md#removing-a-file-that-must-not-stay)) |
+| Die alte Version entfernen, um den Fehler zu verbergen | der Verlauf gehört zur Rechenschaft; entfernen Sie Versionen nur aus rechtlichen Gründen, etwa bei unrechtmäßig veröffentlichten personenbezogenen Daten ([Versionen von Dokumenten](../../aufbauen/dokumente-und-publikationen/versionen-von-dokumenten.md#eine-datei-entfernen-die-nicht-bleiben-darf)) |
 | Den offenen Entwurf einer anderen Person bearbeiten | die Seite **Möglicher Bearbeitungs-Konflikt** erscheint; setzen Sie Ihren eigenen Entwurf fort oder legen Sie einen **Neuer Entwurf** an |
 | Die falsche Sprache | wählen Sie die Sprache vor **Bearbeiten**; korrigieren Sie jede Übersetzung |
 

@@ -10,8 +10,8 @@ type: help
 # Auftragnehmern Zugang zum Extranet geben
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund:
-[Benutzergruppen und Sektionen für Extranets](../../../../../eng-us/help/government/building/extranets/user-groups-and-sections-for-extranets.md) und
-[Einem Auftragnehmer Zugang geben](../../../../../eng-us/help/government/building/extranets/giving-a-contractor-access.md).
+[Benutzergruppen und Sektionen für Extranets](../../aufbauen/extranets/benutzergruppen-und-sektionen-fuer-extranets.md) und
+[Einem Auftragnehmer Zugang geben](../../aufbauen/extranets/einem-auftragnehmer-zugang-geben.md).
 
 ## Bevor Sie beginnen
 

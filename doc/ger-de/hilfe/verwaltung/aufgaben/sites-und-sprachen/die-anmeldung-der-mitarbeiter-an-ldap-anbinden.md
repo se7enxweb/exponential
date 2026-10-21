@@ -9,7 +9,7 @@ type: help
 ---
 # Die Anmeldung der Mitarbeiter an LDAP anbinden
 
-Diese Aufgabe richtet sich an Administratoren. Hintergrund: [Anmeldung über LDAP](../../../../../eng-us/help/government/building/intranets/ldap-sign-in.md).
+Diese Aufgabe richtet sich an Administratoren. Hintergrund: [Anmeldung über LDAP](../../aufbauen/intranets/anmeldung-ueber-ldap.md).
 
 ## Bevor Sie beginnen
 
@@ -51,7 +51,7 @@ Diese Aufgabe richtet sich an Administratoren. Hintergrund: [Anmeldung über LDA
 
 ## Verwandte Seiten
 
-- [Anmeldeoptionen für Mitarbeiter](../../../../../eng-us/help/government/building/intranets/sign-in-options-for-staff.md)
+- [Anmeldeoptionen für Mitarbeiter](../../aufbauen/intranets/anmeldeoptionen-fuer-mitarbeiter.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

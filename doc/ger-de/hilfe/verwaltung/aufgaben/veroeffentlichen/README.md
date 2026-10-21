@@ -117,7 +117,7 @@ Hilfe für Behörden; fragen Sie Ihr Web-Team, wo Ihre Site davon abweicht.
 | [Eine Seite aktualisieren, die alte Inhalte zeigt](eine-seite-aktualisieren-die-alte-inhalte-zeigt.md) | **Cache leeren** am Knoten; fragen Sie das Web-Team nach anderen Caches |
 
 Nach oben: [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md). Für die Planung lesen Sie
-[Verwaltungsebenen](../../../../../eng-us/help/government/levels/README.md); für die Einrichtung die [Aufbau-Anleitungen](../../../../../eng-us/help/government/building/README.md).
+[Verwaltungsebenen](../../../../../eng-us/help/government/levels/README.md); für die Einrichtung die [Aufbau-Anleitungen](../../aufbauen/README.md).
 
 ## Verwandte Seiten
 

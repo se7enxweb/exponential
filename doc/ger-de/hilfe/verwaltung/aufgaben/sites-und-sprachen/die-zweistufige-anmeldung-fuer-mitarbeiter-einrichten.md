@@ -10,7 +10,7 @@ type: help
 # Die zweistufige Anmeldung für Mitarbeiter einrichten
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund: [Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)
-und [Zweistufige Anmeldung für Mitarbeiter](../../../../../eng-us/help/government/building/intranets/two-step-sign-in-for-staff.md).
+und [Zweistufige Anmeldung für Mitarbeiter](../../aufbauen/intranets/zweistufige-anmeldung-fuer-mitarbeiter.md).
 
 ## Schritte
 
@@ -47,7 +47,7 @@ nach der Einrichtung wird bei jeder Anmeldung ein Code abgefragt. Fünf falsche 
 
 ## Verwandte Seiten
 
-- [Anmeldeoptionen für Mitarbeiter](../../../../../eng-us/help/government/building/intranets/sign-in-options-for-staff.md)
+- [Anmeldeoptionen für Mitarbeiter](../../aufbauen/intranets/anmeldeoptionen-fuer-mitarbeiter.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

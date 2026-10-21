@@ -10,7 +10,7 @@ type: help
 # Ein Beteiligungsverfahren veröffentlichen und Antworten sammeln
 
 Diese Seite ist für Redakteure, die auf der Website ein Beteiligungsverfahren eröffnen. Sie nutzt eine Klasse
-Consultation mit Sammelfeldern, wie in [Beteiligungsverfahren und Umfragen](../../../../../eng-us/help/government/building/forms/consultations-and-polls.md)
+Consultation mit Sammelfeldern, wie in [Beteiligungsverfahren und Umfragen](../../aufbauen/formulare/beteiligungsverfahren-und-umfragen.md)
 beschrieben; die Antworten werden unter **Setup > Gesammelte Informationen** gespeichert
 ([Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md)).
 
@@ -64,7 +64,7 @@ beschrieben; die Antworten werden unter **Setup > Gesammelte Informationen** ges
 | Fallstrick | So vermeiden Sie ihn |
 |---|---|
 | Mehr personenbezogene Daten erfragen als nötig | Name und Adresse nur, wenn das Beteiligungsverfahren sie erfordert |
-| Eine lange Antwort geht verloren, weil das Formular abgelaufen ist | bitten Sie die Menschen, von langen Antworten eine Kopie zu behalten; die Seite „Formular abgelaufen“ sagt, dass nichts gespeichert wurde ([CSRF-Formulartoken](../../../../../eng-us/help/government/building/forms/csrf-form-tokens.md)) |
+| Eine lange Antwort geht verloren, weil das Formular abgelaufen ist | bitten Sie die Menschen, von langen Antworten eine Kopie zu behalten; die Seite „Formular abgelaufen“ sagt, dass nichts gespeichert wurde ([CSRF-Formulartoken](../../aufbauen/formulare/csrf-formular-token.md)) |
 | Einzelne Antworten ohne Erlaubnis veröffentlichen | fragen Sie im Formular, ob eine Antwort veröffentlicht werden darf |
 | Späte Antworten nach dem Schluss | vermerken Sie sie; der Sammler selbst setzt das Datum nicht durch |
 
@@ -72,7 +72,7 @@ beschrieben; die Antworten werden unter **Setup > Gesammelte Informationen** ges
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Umfrage veröffentlichen](eine-umfrage-veroeffentlichen.md)
-- [Barrierefreie Formulare](../../../../../eng-us/help/government/building/forms/accessible-forms.md)
+- [Barrierefreie Formulare](../../aufbauen/formulare/barrierefreie-formulare.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

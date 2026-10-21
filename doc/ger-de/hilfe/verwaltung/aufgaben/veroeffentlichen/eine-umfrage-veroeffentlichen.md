@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Redakteure, die eine schnelle Frage stellen („Welcher Tag passt Ihnen für die Aufräumaktion?“).
 Die mitgelieferte Klasse **Poll** (`poll`) hat eine Optionsliste; jede Antwort wird als Sammlung gespeichert, und
 `collect.ini` behandelt Umfragen besonders: keine E-Mail je Stimme, eine Antwort je Benutzer, Ergebnisse nach der
-Abstimmung ([Beteiligungsverfahren und Umfragen](../../../../../eng-us/help/government/building/forms/consultations-and-polls.md)).
+Abstimmung ([Beteiligungsverfahren und Umfragen](../../aufbauen/formulare/beteiligungsverfahren-und-umfragen.md)).
 
 ## Inhalt
 
@@ -56,7 +56,7 @@ Abstimmung ([Beteiligungsverfahren und Umfragen](../../../../../eng-us/help/gove
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Grundlagen des Informationssammlers](../../../../../eng-us/help/government/building/forms/information-collector-basics.md)
+- [Grundlagen des Informationssammlers](../../aufbauen/formulare/grundlagen-des-information-collectors.md)
 - [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

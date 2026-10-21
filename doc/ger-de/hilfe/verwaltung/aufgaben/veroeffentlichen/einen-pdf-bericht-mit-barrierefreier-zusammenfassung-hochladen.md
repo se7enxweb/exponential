@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Redakteure, die Berichte, Pläne und andere lange Dokumente veröffentlichen. Veröffentlichen Sie
 eine Zusammenfassung in HTML mit angehängtem PDF: Die Suche findet die Zusammenfassung, alle können sie lesen, und die
 Adresse bleibt beständig, wenn die Datei ersetzt wird
-([Barrierefreie Dokumente](../../../../../eng-us/help/government/building/documents-and-publications/accessible-documents.md)).
+([Barrierefreie Dokumente](../../aufbauen/dokumente-und-publikationen/barrierefreie-dokumente.md)).
 
 ## Inhalt
 
@@ -62,8 +62,8 @@ Adresse bleibt beständig, wenn die Datei ersetzt wird
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Dateien und die Klasse File](../../../../../eng-us/help/government/building/documents-and-publications/files-and-the-file-class.md)
-- [Struktur der Dokumentenbibliothek](../../../../../eng-us/help/government/building/documents-and-publications/document-library-structure.md)
+- [Dateien und die Klasse File](../../aufbauen/dokumente-und-publikationen/dateien-und-die-klasse-file.md)
+- [Struktur der Dokumentenbibliothek](../../aufbauen/dokumente-und-publikationen/aufbau-einer-dokumentenbibliothek.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -10,8 +10,8 @@ type: help
 # Einen Intranet-Siteaccess für Mitarbeiter einrichten
 
 Diese Aufgabe richtet sich an Administratoren. Hintergrund:
-[Ein Siteaccess nur für Mitarbeiter](../../../../../eng-us/help/government/building/intranets/a-staff-only-siteaccess.md) und
-[Sektionen und Rollen für Intranet-Inhalte](../../../../../eng-us/help/government/building/intranets/sections-and-roles-for-intranet-content.md).
+[Ein Siteaccess nur für Mitarbeiter](../../aufbauen/intranets/ein-siteaccess-nur-fuer-mitarbeiter.md) und
+[Sektionen und Rollen für Intranet-Inhalte](../../aufbauen/intranets/sektionen-und-rollen-fuer-intranet-inhalte.md).
 
 ## Bevor Sie beginnen
 
@@ -53,7 +53,7 @@ Diese Aufgabe richtet sich an Administratoren. Hintergrund:
 
 ## Verwandte Seiten
 
-- [Intranets für Mitarbeiter mit Exponential](../../../../../eng-us/help/government/building/intranets/staff-intranets-with-exponential.md)
+- [Intranets für Mitarbeiter mit Exponential](../../aufbauen/intranets/intranets-fuer-mitarbeiter-mit-exponential.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Redakteure, die ein Handbuch oder einen Leitfaden als Webseiten pflegen und davon ein druckbares
 PDF anbieten möchten. **Setup > PDF-Export** erstellt ein PDF aus einem Quellknoten und, bei einem Baum-Export, aus den
 Knoten darunter der Klassen, die Sie markieren ([PDF-Exporte](../../../../anleitungen/pdf-exporte.md),
-[PDF-Export (Aufbau)](../../../../../eng-us/help/government/building/documents-and-publications/pdf-export.md)). Er braucht die Richtlinie `pdf/edit`,
+[PDF-Export (Aufbau)](../../aufbauen/dokumente-und-publikationen/pdf-export.md)). Er braucht die Richtlinie `pdf/edit`,
 die meist Administratoren erhalten.
 
 ## Inhalt
@@ -62,7 +62,7 @@ Nachdem sich das Handbuch geändert hat: **Neu erzeugen** auf der Karte.
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
-- [Barrierefreie Dokumente](../../../../../eng-us/help/government/building/documents-and-publications/accessible-documents.md)
+- [Barrierefreie Dokumente](../../aufbauen/dokumente-und-publikationen/barrierefreie-dokumente.md)
 - [Die Funktion PDF-Export](../../../../../eng-us/features/6.0/pdf-export.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

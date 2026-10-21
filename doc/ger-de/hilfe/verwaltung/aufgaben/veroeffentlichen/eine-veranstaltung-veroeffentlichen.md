@@ -11,9 +11,9 @@ type: help
 
 Diese Seite ist für Redakteure, die Veranstaltungen in den Kalender der Site eintragen. Sie verwendet die
 mitgelieferte Klasse **Event** (Short title, Full title, Text, Category, From Time, To Time) innerhalb eines
-**Event calendar** ([Was für Veranstaltungen mitgeliefert wird](../../../../../eng-us/help/government/building/events/what-ships.md)); Ihre Site hat
+**Event calendar** ([Was für Veranstaltungen mitgeliefert wird](../../aufbauen/veranstaltungen/was-fuer-veranstaltungen-mitgeliefert-wird.md)); Ihre Site hat
 vielleicht zusätzliche Felder wie Ort, Zielgruppe oder Buchung
-([Eine Klasse für Veranstaltungen modellieren](../../../../../eng-us/help/government/building/events/modeling-an-event-class.md)).
+([Eine Klasse für Veranstaltungen modellieren](../../aufbauen/veranstaltungen/eine-klasse-fuer-veranstaltungen-modellieren.md)).
 
 ## Inhalt
 
@@ -27,7 +27,7 @@ vielleicht zusätzliche Felder wie Ort, Zielgruppe oder Buchung
 - Sie kennen den Kalender, in den die Veranstaltung gehört (einen je Site oder je Abteilung).
 - Sie haben: Datum und Uhrzeit (Beginn und Ende), Ort mit Adresse, worum es geht, für wen, Kosten, Buchung und die
   Barrierefreiheit des Veranstaltungsorts
-  ([Barrierefreie Informationen zu Veranstaltungen](../../../../../eng-us/help/government/building/events/accessible-event-information.md)).
+  ([Barrierefreie Informationen zu Veranstaltungen](../../aufbauen/veranstaltungen/barrierefreie-informationen-zu-veranstaltungen.md)).
 - Ihre Rolle darf im Kalender Veranstaltungen anlegen (die Standardrolle Editor darf `event` unter `event_calendar`
   anlegen).
 
@@ -56,16 +56,16 @@ vielleicht zusätzliche Felder wie Ort, Zielgruppe oder Buchung
 
 | Fallstrick | So vermeiden Sie ihn |
 |---|---|
-| Datum und Uhrzeit nur auf einem Plakatbild | die Fakten gehören in den Text ([Barrierefreie Informationen zu Veranstaltungen](../../../../../eng-us/help/government/building/events/accessible-event-information.md)) |
+| Datum und Uhrzeit nur auf einem Plakatbild | die Fakten gehören in den Text ([Barrierefreie Informationen zu Veranstaltungen](../../aufbauen/veranstaltungen/barrierefreie-informationen-zu-veranstaltungen.md)) |
 | Kein To Time bei einer langen Veranstaltung | Listen kommender Veranstaltungen lassen sie womöglich fallen, sobald sie beginnt; setzen Sie das Ende |
 | Eine wiederkehrende Veranstaltung | jeder Termin ist ein eigenes Event; kopieren Sie das erste ([Eine Seite als Ausgangspunkt kopieren](eine-seite-als-ausgangspunkt-kopieren.md)) |
-| Anmeldungen per E-Mail an eine persönliche Adresse | verwenden Sie ein Team-Postfach oder ein Anmeldeformular ([Anmeldungen zu Veranstaltungen](../../../../../eng-us/help/government/building/events/registrations-for-events.md)) |
+| Anmeldungen per E-Mail an eine persönliche Adresse | verwenden Sie ein Team-Postfach oder ein Anmeldeformular ([Anmeldungen zu Veranstaltungen](../../aufbauen/veranstaltungen/anmeldungen-zu-veranstaltungen.md)) |
 
 ## Verwandte Seiten
 
 - [Aufgaben zum Veröffentlichen](README.md)
 - [Eine Veranstaltung absagen oder verschieben](eine-veranstaltung-absagen-oder-verschieben.md)
-- [Kalenderansichten](../../../../../eng-us/help/government/building/events/calendar-views.md)
+- [Kalenderansichten](../../aufbauen/veranstaltungen/kalenderansichten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
