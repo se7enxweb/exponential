@@ -3,13 +3,13 @@ title: Ihre Blöcke gestalten
 audience: designer, developer
 category: build-two-ways
 order: 560
-summary: Wohin im Theme Fit & Healthy das CSS für Ihre eigenen Blöcke, Ansichtstypen und Template-Blöcke gehört (seine Stylesheet-Liste steht in pagelayout/head/style.tpl, nicht in design.ini) und wie Sie Ihre Datei hinzufügen, damit sie mit denen des Themes gepackt wird. Vorher und nachher getestet.
+summary: Wohin im Theme Fit & Healthy das CSS für Ihre eigenen Blöcke, Ansichtstypen und Template-Blöcke gehört (das Theme listet seine eigenen Dateien in pagelayout/head/style.tpl und lädt danach, was Erweiterungen in der design.ini hinzufügen) und wie Sie Ihre Datei hinzufügen, damit sie mit denen des Themes gepackt wird. Vorher und nachher getestet.
 keywords: CSS, Stylesheet, Gestaltung, ezcss_load, style.tpl, CSSFileList, Packer, ezjscore, mysite.css, Design-Stylesheets, Block-Styles, stylesheet, styling, packer, design stylesheets, block styles
 type: help
 ---
 # Ihre Blöcke gestalten
 
-Neues Markup braucht CSS. Im Theme Fit & Healthy liegt der Ort dafür nicht dort, wo Sie zuerst suchen würden.
+Neues Markup braucht CSS. Im Theme Fit & Healthy kommt es in ein Stylesheet Ihrer Erweiterung, das wie bei jedem anderen Design in der `design.ini` steht.
 
 ## Inhalt
 
@@ -20,23 +20,29 @@ Neues Markup braucht CSS. Im Theme Fit & Healthy liegt der Ort dafür nicht dort
 
 ## Wo das Theme seine Stylesheets listet
 
-Das Media-Design lädt sein CSS in `pagelayout/head/style.tpl` mit einem einzigen Aufruf:
+Das Media-Design lädt sein eigenes CSS in `pagelayout/head/style.tpl`, in der Reihenfolge, die es braucht:
 
 ```smarty
-{ezcss_load( array( 'inter.css',
-                    'explayouts_standard/grid.css',
-                    'index.css',
-                    ...
-                    'exp-mobile-layout.css' ) )}
+{def $media_css_own = array( 'inter.css',
+                             'explayouts_standard/grid.css',
+                             'index.css',
+                             ...
+                             'exp-mobile-layout.css' )}
 ```
 
-`ezcss_load` (ezjscore) packt die Dateien in eine einzige Datei unter `var/<site>/cache/public/stylesheets/` und verlinkt sie.
-Die Pfade werden über den Design-Fallback aufgelöst, `mysite.css` wird also in
-`extension/mysite/design/media/stylesheets/mysite.css` gefunden.
+Danach lädt es jeden Eintrag von `[StylesheetSettings] CSSFileList[]` und `FrontendCSSFileList[]` der `design.ini`, den
+Erweiterungen hinzufügen, in dieser Reihenfolge und jede Datei einmal, und übergibt die ganze Liste einem einzigen
+`ezcss_load`-Aufruf. `ezcss_load` (ezjscore) packt die Dateien in eine einzige Datei unter
+`var/<site>/cache/public/stylesheets/` und verlinkt sie. Die Pfade werden über den Design-Fallback aufgelöst,
+`mysite.css` wird also in `extension/mysite/design/media/stylesheets/mysite.css` gefunden.
 
-Auf der Testkopie hat `CSSFileList[]=mysite.css` in `[StylesheetSettings]` der `design.ini` (wie es die eigene
-`design.ini.append.php` des Themes für seine Dateien macht) die Datei **nicht** in das gepackte CSS der Seite gebracht:
-Das Seitenlayout dieses Themes liest diese Liste nicht.
+Die Einträge, die das Media-Design ersetzt, werden nie geladen: die Basis-Styles des Simple-Themes (`main.css`,
+`main.res.css`, Font Awesome, `magnific-popup.css`, `websitetoolbar.css`) und die ausgemusterten Dateien des Themes. Sie
+stehen in `MediaReplacedCSSFileList[]` in der `design.ini.append.php` des Themes.
+
+Vor sevenx_themes_media 1.5.74 hat das Seitenlayout `CSSFileList[]` und `FrontendCSSFileList[]` gar nicht gelesen, und
+der einzige Weg war eine Kopie von `style.tpl`. Diese Kopie funktioniert weiterhin, folgt aber der eigenen Liste des
+Themes nicht mehr, wenn das Theme sie ändert.
 
 ## Ihr Stylesheet hinzufügen
 
@@ -50,16 +56,17 @@ Das Seitenlayout dieses Themes liest diese Liste nicht.
    .notice-warning { border-left-color: #b45309; background: #fffbeb; }
    ```
 
-2. Kopieren Sie `pagelayout/head/style.tpl` aus dem Theme nach `extension/mysite/design/media/templates/pagelayout/head/style.tpl`
-   und fügen Sie Ihre Datei am Ende der Liste hinzu:
+2. Tragen Sie sie in `extension/mysite/settings/design.ini.append.php` ein:
 
-   ```smarty
-                       'exp-mobile-layout.css',
-                       'mysite.css' ) )}
+   ```ini
+   [StylesheetSettings]
+   FrontendCSSFileList[]=mysite.css
    ```
 
-3. Leeren Sie **Template & Inhalt** (`./console exp:cache clear --tag=template,content`): Das leert auch die gepackten Dateien
-   (`ezjscore-packer`).
+   Sie kommt in dieselbe gepackte Datei, nach den Dateien des Themes.
+
+3. Leeren Sie die Caches **INI** und **Template & Inhalt** (`./console exp:cache clear --tag=ini,template,content`): Das
+   leert auch die gepackten Dateien (`ezjscore-packer`).
 
 ## Prüfen
 
