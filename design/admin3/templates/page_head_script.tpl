@@ -14,3 +14,7 @@
 {else}
  {ezscript_load( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js' ) )}
 {/if}
+{* The small actions of the pages (submit on change, confirmations, select all, ...), declared in data-a4-* attributes
+   instead of on...= attributes (doc/eng-us/features/6.0/content-security-policy.md); javascript/a4_actions.js is the
+   same file as admin4's *}
+{ezscript_load( array( 'a4_actions.js' ) )}

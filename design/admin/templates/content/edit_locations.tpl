@@ -37,7 +37,7 @@
 <table class="list" cellspacing="0" >
 <tr>
 {* JB TODO: The alt/title fields should get different text descriptions when they are disabled *}
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" onclick="ezjs_toggleCheckboxes( document.editform, 'AssignmentIDSelection[]' ); return false;" /></th>
+    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" data-a4-toggle-checkboxes="AssignmentIDSelection[]" data-a4-form="editform" /></th>
     <th>{'Location'|i18n( 'design/admin/content/edit' )}</th>
     <th>{'Sub items'|i18n( 'design/admin/content/edit' )}</th>
     <th>{'Sorting of sub items'|i18n( 'design/admin/content/edit' )}</th>
