@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## AskUpdateInventory
 
-> enabled: count the packages that do not agree between composer.json, composer.lock and vendor/ (ezupdate's  
-> inventory, local files only, when the ezupdate extension is active)  
+> enabled: die Pakete zählen, die zwischen composer.json, composer.lock und vendor/ nicht übereinstimmen (das Inventar von ezupdate,  
+> nur lokale Dateien, wenn die Erweiterung ezupdate aktiv ist)  
 
 Standard: `enabled`.
 
@@ -34,7 +34,7 @@ AskUpdateInventory=enabled
 
 ## CacheTime
 
-> Seconds the count is kept in the cache directory (var/<site>/cache/syscard/); 0 keeps nothing  
+> Sekunden, die die Zahl im Cache-Verzeichnis (var/<site>/cache/syscard/) behalten wird; 0 behält nichts  
 
 Standard: `3600`.
 

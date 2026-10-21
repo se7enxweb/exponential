@@ -19,23 +19,23 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## PhpFpmService
 
-> exp:velocity deploy: everything a PHP code change needs, in order.  
+> exp:velocity deploy: alles, was eine Änderung am PHP-Code braucht, in Reihenfolge.  
 >
-> The PHP-FPM service it reloads, so the web server in front of this  
-> installation (Apache, nginx) runs the new code too:  
+> Der PHP-FPM-Dienst, den es neu lädt, damit auch der Webserver vor dieser  
+> Installation (Apache, nginx) den neuen Code ausführt:  
 >
->   auto       find it: the FPM pool named after this installation's hosting  
->              domain (/var/www/vhosts/<domain>/..., as Plesk names pools), or  
->              one whose configuration names this installation's directory.  
->              Looked for in /opt/plesk/php/\*/etc/php-fpm.d (Plesk, service  
+>   auto       ihn finden: der FPM-Pool, benannt nach der Hosting-Domain dieser Installation  
+>              (/var/www/vhosts/<domain>/..., wie Plesk Pools benennt), oder  
+>              einer, dessen Konfiguration das Verzeichnis dieser Installation nennt.  
+>              Gesucht in /opt/plesk/php/\*/etc/php-fpm.d (Plesk, Dienst  
 >              plesk-php<XY>-fpm), /etc/php-fpm.d (php-fpm), /etc/php/\*/fpm/pool.d  
->              (php<X.Y>-fpm) and /etc/opt/remi/php\*/php-fpm.d (php<XY>-php-fpm).  
->   disabled   reload nothing; for an installation served by Velocity alone.  
->   <unit>     that systemd service, or several, comma-separated.  
+>              (php<X.Y>-fpm) und /etc/opt/remi/php\*/php-fpm.d (php<XY>-php-fpm).  
+>   disabled   nichts neu laden; für eine Installation, die nur Velocity bedient.  
+>   <unit>     dieser systemd-Dienst, oder mehrere, durch Kommas getrennt.  
 >
-> It is a reload (systemctl reload): the master re-reads its code and replaces  
-> its workers as each finishes, so no request is dropped. Needs root; run as  
-> anyone else, the step is skipped with a note naming the service.  
+> Es ist ein Neuladen (systemctl reload): Der Master liest seinen Code neu und ersetzt  
+> seine Worker, sobald jeder fertig ist, sodass keine Anfrage verloren geht. Braucht root; von  
+> jemand anderem ausgeführt, wird der Schritt mit einem Hinweis übersprungen, der den Dienst nennt.  
 
 Standard: `auto`.
 
@@ -49,25 +49,25 @@ PhpFpmService=auto
 
 ## PhpFpmReload
 
-> Whether that reload is done at all:  
+> Ob dieses Neuladen überhaupt geschieht:  
 >
->   auto       only when needed. When the pool's OPcache revalidates the files  
->              (opcache.validate\_timestamps on, revalidate\_freq at most 60 s,  
->              read from the php-fpm binary and the pool file), every changed  
->              PHP file is recompiled within revalidate\_freq seconds; the step  
->              waits that long instead of reloading. Without OPcache it waits  
->              for nothing.  
->   always     reload every time (as before).  
->   never      neither reload nor wait.  
+>   auto       nur bei Bedarf. Wenn der OPcache des Pools die Dateien neu prüft  
+>              (opcache.validate\_timestamps an, revalidate\_freq höchstens 60 s,  
+>              aus der php-fpm-Binärdatei und der Pool-Datei gelesen), wird jede geänderte  
+>              PHP-Datei innerhalb von revalidate\_freq Sekunden neu kompiliert; der Schritt  
+>              wartet so lange, statt neu zu laden. Ohne OPcache wartet er  
+>              auf nichts.  
+>   always     jedes Mal neu laden (wie bisher).  
+>   never      weder neu laden noch warten.  
 >
-> A reload is not free, and not for this site alone: the master asks every  
-> child of every pool to finish its request and starts no new child until the  
-> last one has (up to process\_control\_timeout, 300 s on Plesk). Each request  
-> that arrives in between waits for the longest one running on any site of  
-> that PHP version: one open 25 s event stream made the next page wait 22 s,  
-> and a long request elsewhere turned waiting requests into 504s (#374).  
-> deploy --fpm-reload forces a reload: after a php.ini or pool change, a new  
-> PHP extension, or PHP files removed or renamed in place.  
+> Ein Neuladen ist nicht umsonst, und nicht nur für diese Website: Der Master bittet jedes  
+> Kind jedes Pools, seine Anfrage abzuschließen, und startet kein neues Kind, bis das  
+> letzte das getan hat (bis zu process\_control\_timeout, 300 s bei Plesk). Jede Anfrage,  
+> die dazwischen eintrifft, wartet auf die längste, die auf einer Website dieser  
+> PHP-Version läuft: Ein offener Event-Stream von 25 s ließ die nächste Seite 22 s warten,  
+> und eine lange Anfrage anderswo machte aus wartenden Anfragen 504 (#374).  
+> deploy --fpm-reload erzwingt ein Neuladen: nach einer Änderung an php.ini oder am Pool, einer neuen  
+> PHP-Erweiterung oder an Ort und Stelle entfernten oder umbenannten PHP-Dateien.  
 
 Standard: `auto`.
 
@@ -81,12 +81,12 @@ PhpFpmReload=auto
 
 ## WarmUpURL
 
-> Pages requested once each, one after the other, by a background process at  
-> the end of a deploy, so the first visitor does not wait while the templates  
-> are compiled and the INI, override, translation, design and packed-file  
-> caches are rebuilt (and several first visitors do not rebuild them at the  
-> same time). Anonymous requests: a site's front page, an admin's login page.  
-> The deploy does not wait for them. Empty: no warm-up.  
+> Seiten, die am Ende eines Deployments von einem Hintergrundprozess je einmal nacheinander  
+> angefordert werden, damit der erste Besucher nicht wartet, während die Templates  
+> kompiliert und die Caches für INI, Override, Übersetzung, Design und gepackte Dateien  
+> neu aufgebaut werden (und nicht mehrere erste Besucher sie gleichzeitig  
+> neu aufbauen). Anonyme Anfragen: die Startseite einer Website, die Anmeldeseite einer Administration.  
+> Das Deployment wartet nicht auf sie. Leer: kein Vorwärmen.  
 >
 > WarmUpURL\[\]=https://www.example.com/  
 > WarmUpURL\[\]=https://www.example.com/admin/user/login  

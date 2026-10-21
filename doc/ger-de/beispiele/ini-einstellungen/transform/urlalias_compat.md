@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[urlalias_compat]` von `settings/transform.ini`, mit 3 Einstellung(en).
 
-> Old rules used by the url alias system (nice urls), the rules  
-> ensures that the text is transformed to ascii equivalent  
-> characters. The most important rules are the transliteration  
-> lowercase and diacritical removal.  
+> Alte Regeln des URL-Alias-Systems (schöne URLs); die Regeln  
+> sorgen dafür, dass der Text in gleichwertige ASCII-  
+> Zeichen umgewandelt wird. Die wichtigsten Regeln sind Transliteration,  
+> Kleinschreibung und das Entfernen diakritischer Zeichen.  
 
 Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -24,7 +24,7 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Files
 
-> Extra transformation files for urlalias  
+> Zusätzliche Umwandlungsdateien für urlalias  
 
 Standard: eine leere Liste.
 
@@ -39,7 +39,7 @@ Files[]
 
 ## Extensions
 
-> Extensions that have transformation files when urlalias is used  
+> Erweiterungen, die Umwandlungsdateien für urlalias haben  
 
 Standard: eine leere Liste.
 
@@ -54,8 +54,8 @@ Extensions[]
 
 ## Commands
 
-> The commands to use for search  
-> This is the old-style of urls with lowercase only and underscore for separators,  
+> Die für die Suche verwendeten Befehle  
+> Das ist die alte Form der URLs, nur in Kleinbuchstaben und mit Unterstrich als Trenner,  
 
 Standard: eine Liste mit 7: `normalize`, `transform`, `decompose`, `transliterate`, `diacritical`, `lowercase`, `url_cleanup_compat`.
 

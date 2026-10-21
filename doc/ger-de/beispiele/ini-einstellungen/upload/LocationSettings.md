@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/upload.ini` nie selbst: Ein Update ersetzt die Datei. S
 
 ## ClassList
 
-> A list of class identifiers that should be included in the location dropdown  
+> Eine Liste der Klassenbezeichner, die in das Auswahlfeld für den Ort aufgenommen werden  
 
 Standard: eine Liste mit 1: `folder`.
 
@@ -35,11 +35,11 @@ ClassList[]=folder
 
 ## RootNode
 
-> Which root node to fetch locations from  
-> Either use a node ID or a node path (e.g. media )  
-> - content - The content structure  
-> - users   - The user tree  
-> - media   - Media tree for images, files and media  
+> Von welchem Wurzelknoten die Orte geholt werden  
+> Verwenden Sie eine Knoten-ID oder einen Knotenpfad (z. B. media )  
+> - content - die Inhaltsstruktur  
+> - users   - der Benutzerbaum  
+> - media   - der Medienbaum für Bilder, Dateien und Medien  
 
 Standard: `media`.
 
@@ -53,8 +53,8 @@ RootNode=media
 
 ## MaxDepth
 
-> The maximum number of levels to look for objects  
-> A depth of 1 means direct descendants  
+> Die Höchstzahl der Ebenen, in denen nach Objekten gesucht wird  
+> Eine Tiefe von 1 bedeutet direkte Nachkommen  
 
 Standard: `3`.
 
@@ -68,9 +68,9 @@ MaxDepth=3
 
 ## MaxItems
 
-> The maxium number of elements in the drop down  
-> Setting it too high might slow down the system and make the dropdown hard to use.  
-> A number between 10 to 30 is OK.  
+> Die Höchstzahl der Elemente im Auswahlfeld  
+> Ein zu hoher Wert kann das System verlangsamen und das Auswahlfeld schwer bedienbar machen.  
+> Eine Zahl zwischen 10 und 30 ist in Ordnung.  
 
 Standard: `30`.
 

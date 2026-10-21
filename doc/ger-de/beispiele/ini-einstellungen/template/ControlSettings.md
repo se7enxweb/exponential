@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/template.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## DisplayWarnings
 
-> Whether warnings from the template engine should be displayed  
-> on the page or not.  
-> Note: Debug warnings are always shown if debug is on.  
+> Ob Warnungen der Template-Engine auf der Seite  
+> angezeigt werden.  
+> Hinweis: Debug-Warnungen werden bei eingeschaltetem Debugging immer angezeigt.  
 
 Standard: `disabled`.
 
@@ -35,9 +35,9 @@ DisplayWarnings=disabled
 
 ## AllowUserVariables
 
-> User defined parameter.  
-> Ex: http://example.com/developer/(poll\_option)/5  
-> will store poll\_option 5 into the $view\_parameters.poll\_option in the template  
+> Benutzerdefinierter Parameter.  
+> Bsp.: http://example.com/developer/(poll\_option)/5  
+> speichert poll\_option 5 im Template in $view\_parameters.poll\_option  
 
 Standard: `true`.
 
@@ -51,7 +51,7 @@ AllowUserVariables=true
 
 ## MaxLevel
 
-> Max level of template nesting to avoid infinite recursion  
+> Höchste Verschachtelungstiefe von Templates, um endlose Rekursion zu vermeiden  
 
 Standard: `40`.
 

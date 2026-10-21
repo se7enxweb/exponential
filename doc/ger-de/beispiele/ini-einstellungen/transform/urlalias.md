@@ -11,11 +11,11 @@ generated: exp:help:examples
 
 Der Block `[urlalias]` von `settings/transform.ini`, mit 3 Einstellung(en).
 
-> Rule for URLAlias without support for IRI.  
-> Any unicode character not supported by the URI spec will be  
-> transformed or removed to produce.  
+> Regel für URL-Aliase ohne IRI-Unterstützung.  
+> Jedes Unicode-Zeichen, das die URI-Spezifikation nicht unterstützt, wird  
+> umgewandelt oder entfernt.  
 >
-> Note: This was the old behaviour in Exponential.  
+> Hinweis: Dies war das alte Verhalten von Exponential.  
 
 Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -25,7 +25,7 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Files
 
-> Extra transformation files for urlalias  
+> Zusätzliche Umwandlungsdateien für urlalias  
 
 Standard: eine leere Liste.
 
@@ -40,7 +40,7 @@ Files[]
 
 ## Extensions
 
-> Extensions that have transformation files when urlalias is used  
+> Erweiterungen, die Umwandlungsdateien für urlalias haben  
 
 Standard: eine leere Liste.
 
@@ -55,7 +55,7 @@ Extensions[]
 
 ## Commands
 
-> The commands to use for search  
+> Die für die Suche verwendeten Befehle  
 
 Standard: eine Liste mit 7: `normalize`, `transform`, `decompose`, `transliterate`, `diacritical`, `lowercase`, `url_cleanup`.
 

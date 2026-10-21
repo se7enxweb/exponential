@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/uiswitch.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Class
 
-> The design of the administration interface: site.ini \[DesignSettings\] SiteDesign and  
-> AdditionalSiteDesignList\[\] for this user's requests. Policy: uiswitch/design.  
+> Das Design der Administrationsoberfläche: site.ini \[DesignSettings\] SiteDesign und  
+> AdditionalSiteDesignList\[\] für die Anfragen dieses Benutzers. Richtlinie: uiswitch/design.  
 
 Standard: `expUISwitchDesignProvider`.
 
@@ -46,14 +46,14 @@ Enabled=true
 
 ## AllowedValues
 
-> The designs a user may choose, in toolbar order. A design is offered only when it has a  
-> DesignChain\[\] entry below and the design exists (design/<design>, or design/<design> of an active  
-> design extension); the siteaccess's own SiteDesign is always offered and choosing it clears the  
-> switch. adminui needs the exp\_adminui extension active on the siteaccess (its design is then a  
-> design extension), admin\_classic the sevenx\_themes\_admin\_classic extension. Every design offered  
-> must render the right toolbar (toolbar/full/admin\_ui\_switch.tpl),  
-> or a user who chose it cannot choose again. The current designs come first, the older ones  
-> (AdminUI and the classic designs, labelled "(older)") last.  
+> Die Designs, die ein Benutzer wählen darf, in der Reihenfolge der Werkzeugleiste. Ein Design wird nur angeboten, wenn es unten einen  
+> Eintrag DesignChain\[\] hat und das Design existiert (design/<design> oder design/<design> einer aktiven  
+> Design-Erweiterung); das eigene SiteDesign des Siteaccess wird immer angeboten, und seine Wahl hebt den  
+> Schalter auf. adminui braucht die im Siteaccess aktive Erweiterung exp\_adminui (ihr Design ist dann eine  
+> Design-Erweiterung), admin\_classic die Erweiterung sevenx\_themes\_admin\_classic. Jedes angebotene Design  
+> muss die rechte Werkzeugleiste rendern (toolbar/full/admin\_ui\_switch.tpl),  
+> sonst kann ein Benutzer, der es gewählt hat, nicht erneut wählen. Die aktuellen Designs kommen zuerst, die älteren  
+> (AdminUI und die klassischen Designs, als „(älter)“ beschriftet) zuletzt.  
 
 Standard: eine Liste mit 6: `admin4l`, `admin4`, `admin3`, `adminui`, `admin`, `admin_classic`.
 
@@ -74,8 +74,8 @@ AllowedValues[]=admin_classic
 
 ## DesignChain
 
-> The fallback designs each choice runs with (AdditionalSiteDesignList\[\]), separated by ";",  
-> most specific first. Empty: the design and the standard design only.  
+> Die Ausweich-Designs, mit denen jede Wahl läuft (AdditionalSiteDesignList\[\]), durch ";" getrennt,  
+> das spezifischste zuerst. Leer: nur das Design und das Standard-Design.  
 
 Standard: ein Hash mit 6: `admin4l=admin4;admin3;admin2;admin`, `admin4=admin3;admin2;admin`, `adminui=admin4l;admin4;admin3;admin2;admin`, `admin3=admin2;admin`, `admin=`, `admin_classic=admin`.
 
@@ -96,7 +96,7 @@ DesignChain[admin_classic]=admin
 
 ## DesignLabel
 
-> The names shown in the toolbar (translated in the context kernel/uiswitch).  
+> Die in der Werkzeugleiste angezeigten Namen (übersetzt im Kontext kernel/uiswitch).  
 
 Standard: ein Hash mit 6: `admin4l=Admin 4 (layouts)`, `admin4=Admin 4`, `adminui=AdminUI (older)`, `admin3=Admin 3`, `admin=Classic (older)`, `admin_classic=Classic, server-rendered (older)`.
 
@@ -117,8 +117,8 @@ DesignLabel[admin_classic]=Classic, server-rendered (older)
 
 ## RememberPreference
 
-> enabled: the choice is also kept in the user's preferences and comes back at the next sign-in.  
-> disabled (default): it ends with the session, at logout.  
+> enabled: Die Wahl wird auch in den Einstellungen des Benutzers gehalten und kehrt bei der nächsten Anmeldung zurück.  
+> disabled (Standard): Sie endet mit der Sitzung, beim Abmelden.  
 
 Standard: `disabled`.
 

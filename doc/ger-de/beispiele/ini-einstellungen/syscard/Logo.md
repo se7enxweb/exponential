@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Logo
 
-> The drawings: <Logo>-big.txt, <Logo>-small.txt, <Logo>-mini.txt (and .ascii.txt), wordmark.txt, in these  
-> directories (the last listed is looked in first)  
+> Die Zeichnungen: <Logo>-big.txt, <Logo>-small.txt, <Logo>-mini.txt (und .ascii.txt), wordmark.txt, in diesen  
+> Verzeichnissen (das zuletzt aufgeführte wird zuerst durchsucht)  
 
 Standard: `e`.
 

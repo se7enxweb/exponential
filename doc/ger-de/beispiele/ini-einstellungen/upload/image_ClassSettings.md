@@ -11,24 +11,24 @@ generated: exp:help:examples
 
 Der Block `[image_ClassSettings]` von `settings/upload.ini`, mit 3 Einstellung(en).
 
-> Consists of the class identifier name with \_ClassSettings appended  
-> This example is the for 'image' identifier.  
+> Besteht aus dem Namen des Klassenbezeichners mit angehängtem \_ClassSettings  
+> Dieses Beispiel ist für den Bezeichner 'image'.  
 > \[image\_ClassSettings\]  
 >
-> The class attribute identifier which will get the file data  
+> Der Bezeichner des Klassenattributs, das die Dateidaten erhält  
 > FileAttribute=image  
 >
-> The class attribute identifier which will get the name,  
-> the name is calculated using NamePattern  
+> Der Bezeichner des Klassenattributs, das den Namen erhält;  
+> der Name wird mit NamePattern berechnet  
 > NameAttribute=name  
 >
-> A pattern that defines the name of the object, it is  
-> contains text and tags enclosed in < and >.  
-> Available tags are:  
-> - original\_filename:        The filename of the uploaded file like it was on the locale machine  
-> - original\_filename\_base:   Like original\_filename but has just the base of the name (i.e no suffix)  
-> - original\_filename\_suffix: Like original\_filename but has just suffix  
-> - mime\_type:                The detected MIME-Type of the file  
+> Ein Muster, das den Namen des Objekts festlegt; es  
+> enthält Text und Tags in < und >.  
+> Verfügbare Tags sind:  
+> - original\_filename:        der Dateiname der hochgeladenen Datei, wie er auf dem lokalen Rechner war  
+> - original\_filename\_base:   wie original\_filename, aber nur der Stamm des Namens (d. h. ohne Endung)  
+> - original\_filename\_suffix: wie original\_filename, aber nur die Endung  
+> - mime\_type:                der erkannte MIME-Typ der Datei  
 > NamePattern=<original\_filename\_base>  
 
 Bearbeiten Sie `settings/upload.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:

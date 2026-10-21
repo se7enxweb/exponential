@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[greek]` von `settings/transform.ini`, mit 2 Einstellung(en).
 
-> Special transformations for greek  
+> Besondere Umwandlungen für Griechisch  
 
 Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,7 +21,7 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Files
 
-> Extra transformation files for greek  
+> Zusätzliche Umwandlungsdateien für Griechisch  
 
 Standard: eine Liste mit 1: `greek.tr`.
 
@@ -37,7 +37,7 @@ Files[]=greek.tr
 
 ## Extensions
 
-> Extensions that have transformation files when greek is used  
+> Erweiterungen, die Umwandlungsdateien für Griechisch haben  
 
 Standard: eine leere Liste.
 

@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## SecuritySupportEnds
 
-> The end of security support of each PHP branch (https://www.php.net/supported-versions.php). A branch past its  
-> date is an error on the card, one within WarnDays a warning.  
+> Das Ende der Sicherheitsunterstützung jedes PHP-Zweigs (https://www.php.net/supported-versions.php). Ein Zweig nach seinem  
+> Datum ist auf der Karte ein Fehler, einer innerhalb von WarnDays eine Warnung.  
 
 Standard: ein Hash mit 7: `7.4=2022-11-28`, `8.0=2023-11-26`, `8.1=2025-12-31`, `8.2=2026-12-31`, `8.3=2027-12-31`, `8.4=2028-12-31`, `8.5=2029-12-31`.
 

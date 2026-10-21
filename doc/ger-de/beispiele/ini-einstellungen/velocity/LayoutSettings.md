@@ -19,20 +19,20 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## ConfDir
 
-> Where the server's configuration lives, laid out like Debian's /etc/apache2  
-> (see doc/eng-us/bc/6.0/velocity-ondisk-layout.md):  
+> Wo die Konfiguration des Servers liegt, aufgebaut wie /etc/apache2 bei Debian  
+> (siehe doc/eng-us/bc/6.0/velocity-ondisk-layout.md):  
 >   vc.conf, ports.conf, envvars  
->   mods-available/  -> mods-enabled/   engine modules  
->   conf-available/  -> conf-enabled/   shared snippets  
->   sites-available/ -> sites-enabled/  one file per installation  
-> Written from these settings on every start and used when, merged the way  
-> the server merges, it is exactly the configuration generated -- otherwise  
-> the single file var/tmp/velocity-server.json is used, as before.  
+>   mods-available/  -> mods-enabled/   Engine-Module  
+>   conf-available/  -> conf-enabled/   gemeinsame Schnipsel  
+>   sites-available/ -> sites-enabled/  eine Datei pro Installation  
+> Bei jedem Start aus diesen Einstellungen geschrieben und verwendet, wenn sie, so zusammengeführt,  
+> wie der Server zusammenführt, genau die erzeugte Konfiguration ist; sonst wird wie bisher  
+> die einzelne Datei var/tmp/velocity-server.json verwendet.  
 >
-> auto      /etc/vc if it exists or can be created, else an existing  
->           /etc/qbix, else var/vc/qbix/etc in this installation (default)  
-> disabled  the single file only  
-> <path>    that directory  
+> auto      /etc/vc, wenn es existiert oder angelegt werden kann, sonst ein vorhandenes  
+>           /etc/qbix, sonst var/vc/qbix/etc in dieser Installation (Standard)  
+> disabled  nur die einzelne Datei  
+> <path>    dieses Verzeichnis  
 
 Standard: `auto`.
 
@@ -46,8 +46,8 @@ ConfDir=auto
 
 ## StateDir
 
-> Extended information about each site (root, paths, when it was migrated):  
-> /var/lib/vc when the configuration is in /etc/vc, else var/vc/qbix/lib.  
+> Erweiterte Informationen über jede Website (Wurzel, Pfade, wann sie migriert wurde):  
+> /var/lib/vc, wenn die Konfiguration in /etc/vc liegt, sonst var/vc/qbix/lib.  
 
 Standard: `auto`.
 
@@ -61,7 +61,7 @@ StateDir=auto
 
 ## SiteName
 
-> This installation's name in sites-available; default: the host of  
+> Der Name dieser Installation in sites-available; Standard: der Host aus  
 > site.ini \[SiteSettings\] SiteURL.  
 
 Standard: leer.

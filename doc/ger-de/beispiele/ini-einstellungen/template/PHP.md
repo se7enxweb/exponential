@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/template.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## PHPOperatorList
 
-> A list with php functions and their equivalent template operator names  
-> Giving the operators a different name from the PHP functions  
-> are recommended, that way you ensure that all operators follow  
-> the same naming guidelines. It also means that you can change the  
-> php function later on without doing template changes.  
-> Note: Only one parameter (the value) is supported and php function must  
->       return result by value and not by reference.  
-> RFC 3986 encoding: a space becomes %20 (urlencode gives +), for path segments and  
-> for values another system decodes with rawurldecode  
+> Eine Liste von PHP-Funktionen und den Namen ihrer gleichwertigen Template-Operatoren  
+> Es wird empfohlen, den Operatoren einen anderen Namen als den PHP-Funktionen  
+> zu geben; so stellen Sie sicher, dass alle Operatoren denselben  
+> Benennungsregeln folgen. Außerdem können Sie dann die  
+> PHP-Funktion später ändern, ohne Templates zu ändern.  
+> Hinweis: Nur ein Parameter (der Wert) wird unterstützt, und die PHP-Funktion muss  
+>       das Ergebnis als Wert und nicht als Referenz zurückgeben.  
+> Kodierung nach RFC 3986: Ein Leerzeichen wird zu %20 (urlencode ergibt +), für Pfadsegmente und  
+> für Werte, die ein anderes System mit rawurldecode dekodiert  
 
 Standard: ein Hash mit 4: `urlencode=urlencode`, `urldecode=urldecode`, `rawurlencode=rawurlencode`, `rawurldecode=rawurldecode`.
 

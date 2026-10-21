@@ -12,11 +12,11 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/wordmatch.ini`: 10 Blöcke, 10 Einstellungen.
 
-> Exponential configuration file for content copied from word document  
+> Exponential-Konfigurationsdatei für aus Word-Dokumenten kopierte Inhalte  
 >
-> Syntax under each tag block: MatString\[$className\]=$matchString, could  
-> be multiple lines.  
-> Example:  
+> Syntax unter jedem Tag-Block: MatString\[$className\]=$matchString, kann  
+> mehrzeilig sein.  
+> Beispiel:  
 > -------------------------------------------------------------------  
 > \[td\]  
 > MatchString\[tdBlue\]=mso-shading: white; mso-pattern: gray-20 black  

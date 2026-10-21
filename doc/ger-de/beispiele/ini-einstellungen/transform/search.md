@@ -13,69 +13,69 @@ Der Block `[search]` von `settings/transform.ini`, mit 3 Einstellung(en).
 
 > \[<group>\]  
 > Rules\[\]=<command>(<option>\[,<option>\])  
-> or  
+> oder  
 > Rules\[\]=<command>  
 >
-> Commands:  
+> Befehle:  
 > normalize  
-> - Normalizes multiple characters with similar meaning to one type  
-> - Looks for rule named <parameter>\_normalize for each parameter  
-> - If no parameters are used it will find all normalize rules  
+> - Fasst mehrere Zeichen mit ähnlicher Bedeutung zu einer Art zusammen  
+> - Sucht für jeden Parameter eine Regel namens <parameter>\_normalize  
+> - Ohne Parameter findet er alle Normalisierungsregeln  
 >
 > search\_normalize  
-> - Runs normalization rules required for search engine  
-> - Looks for rule named <parameter>\_search\_normalize for each parameter  
-> - If no parameters are used it will find all search rules  
+> - Führt die für die Suchmaschine nötigen Normalisierungsregeln aus  
+> - Sucht für jeden Parameter eine Regel namens <parameter>\_search\_normalize  
+> - Ohne Parameter findet er alle Suchregeln  
 >
 > transform  
-> - Transforms one type of character into another  
-> - Looks for rule named <parameter1>\_to\_<parameter2>  
-> - If no parameters are used it will find all transformation rules  
+> - Wandelt eine Zeichenart in eine andere um  
+> - Sucht eine Regel namens <parameter1>\_to\_<parameter2>  
+> - Ohne Parameter findet er alle Umwandlungsregeln  
 >
 > decompose  
-> - Turns special characters into strings representing the character  
-> - Looks for rule named <parameter>\_decompose for each parameter  
-> - If no parameters are used it will find all decompose rules  
+> - Wandelt Sonderzeichen in Zeichenketten um, die das Zeichen darstellen  
+> - Sucht für jeden Parameter eine Regel namens <parameter>\_decompose  
+> - Ohne Parameter findet er alle Zerlegungsregeln  
 >
 > lowercase  
-> - Turns characters into their lowercase variant if possible  
-> - Looks for rule named <parameter>\_lowercase for each parameter  
-> - If no parameters are used it will find all lowercase rules  
+> - Wandelt Zeichen, wenn möglich, in ihre Kleinbuchstabenform um  
+> - Sucht für jeden Parameter eine Regel namens <parameter>\_lowercase  
+> - Ohne Parameter findet er alle Regeln für Kleinbuchstaben  
 >
 > uppercase  
-> - Turns characters into their uppercase variant if possible  
-> - Looks for rule named <parameter>\_uppercase for each parameter  
-> - If no parameters are used it will find all uppercase rules  
+> - Wandelt Zeichen, wenn möglich, in ihre Großbuchstabenform um  
+> - Sucht für jeden Parameter eine Regel namens <parameter>\_uppercase  
+> - Ohne Parameter findet er alle Regeln für Großbuchstaben  
 >
 > transliterate  
-> - Converts from one type of charset to another by finding similar  
->   characters or strings  
-> - Looks for rule named <parameter1>\_transliterate\_<parameter2>  
-> - If no parameters are used it will find all transliteration rules  
+> - Wandelt von einem Zeichensatz in einen anderen um, indem er ähnliche  
+>   Zeichen oder Zeichenketten findet  
+> - Sucht eine Regel namens <parameter1>\_transliterate\_<parameter2>  
+> - Ohne Parameter findet er alle Transliterationsregeln  
 >
 > diacritical  
-> - Removes diacriticals from characters  
-> - Looks for rule named <parameter>\_diacritical for each parameter  
-> - If no parameters are used it will find all diacritical rules  
+> - Entfernt diakritische Zeichen  
+> - Sucht für jeden Parameter eine Regel namens <parameter>\_diacritical  
+> - Ohne Parameter findet er alle Regeln für diakritische Zeichen  
 >
 > rule  
-> - Runs custom transformation rule  
-> - Looks for rule named <parameter> for each parameter  
-> - If no parameters are used it will do nothing  
+> - Führt eine eigene Umwandlungsregel aus  
+> - Sucht für jeden Parameter eine Regel namens <parameter>  
+> - Ohne Parameter tut er nichts  
 >
-> Special commands:  
+> Besondere Befehle:  
 > url\_cleanup  
-> - Performs cleanups to make the text presentable in a URL  
+> - Bereinigt den Text, damit er in einer URL darstellbar ist  
 >
 > identifier\_cleanup  
-> - Performs cleanups to make the text usable as an identifier  
+> - Bereinigt den Text, damit er als Bezeichner verwendbar ist  
 >
 > search\_cleanup:  
-> - Performs cleanup to make the text parsable by the search engine  
-> - Looks for rule named <parameter>\_search\_cleanup for each parameter  
-> Rules used by the search engine, these rules ensures that  
-> the index or search text is normalized in such way  
-> to make it easier for the engine to work with it.  
+> - Bereinigt den Text, damit die Suchmaschine ihn parsen kann  
+> - Sucht für jeden Parameter eine Regel namens <parameter>\_search\_cleanup  
+> Regeln der Suchmaschine; diese Regeln sorgen dafür, dass  
+> der Index- oder Suchtext so normalisiert wird,  
+> dass die Suchmaschine leichter damit arbeiten kann.  
 
 Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -85,7 +85,7 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Files
 
-> Extra transformation files for search  
+> Zusätzliche Umwandlungsdateien für die Suche  
 
 Standard: eine Liste mit 1: `search.tr`.
 
@@ -101,7 +101,7 @@ Files[]=search.tr
 
 ## Extensions
 
-> Extensions that have transformation files when search is used  
+> Erweiterungen, die Umwandlungsdateien für die Suche haben  
 
 Standard: eine leere Liste.
 
@@ -116,7 +116,7 @@ Extensions[]
 
 ## Commands
 
-> The commands to use for search  
+> Die für die Suche verwendeten Befehle  
 > Commands\[\]=transform  
 
 Standard: eine Liste mit 8: `decompose`, `normalize`, `diacritical`, `search_normalize`, `lowercase`, `transform(inverted,normal)`, `transform(math,ascii)`, `search_cleanup`.

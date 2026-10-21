@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/uiswitch.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Class
 
-> The display language of the interface: site.ini \[RegionalSettings\] Locale for this user's requests  
-> (translations, date and number formats). Policy: uiswitch/language.  
+> Die Anzeigesprache der Oberfläche: site.ini \[RegionalSettings\] Locale für die Anfragen dieses Benutzers  
+> (Übersetzungen, Datums- und Zahlenformate). Richtlinie: uiswitch/language.  
 
 Standard: `expUISwitchLanguageProvider`.
 
@@ -46,12 +46,12 @@ Enabled=true
 
 ## GroupList
 
-> The languages a user may choose, shown grouped: first the groups of GroupList\[\] in their order (each  
-> GroupValues\_<group>\[\] in the order given, ranked by how many administrators worldwide need them; why the  
-> defaults are what they are: doc/eng-us/features/6.0/ui-switch-languages.md), then every offered language A-Z by its  
-> name. A locale is offered only when share/locale/<locale>.ini exists; the siteaccess's own Locale is always  
-> offered and choosing it clears the switch. A language without a translation of the interface keeps English  
-> texts with its own date and number formats, and says so in the list ("no translation yet").  
+> Die Sprachen, die ein Benutzer wählen darf, gruppiert angezeigt: zuerst die Gruppen aus GroupList\[\] in ihrer Reihenfolge (jede  
+> GroupValues\_<group>\[\] in der angegebenen Reihenfolge, nach der Zahl der Administratoren weltweit geordnet, die sie brauchen; warum die  
+> Standards so sind, wie sie sind: doc/eng-us/features/6.0/ui-switch-languages.md), dann jede angebotene Sprache von A bis Z nach ihrem  
+> Namen. Eine Locale wird nur angeboten, wenn share/locale/<locale>.ini existiert; die eigene Locale des Siteaccess wird immer  
+> angeboten, und ihre Wahl hebt den Schalter auf. Eine Sprache ohne Übersetzung der Oberfläche behält englische  
+> Texte mit ihren eigenen Datums- und Zahlenformaten und sagt das in der Liste („noch keine Übersetzung“).  
 
 Standard: eine Liste mit 3: `english`, `major`, `regional`.
 
@@ -69,7 +69,7 @@ GroupList[]=regional
 
 ## GroupLabel
 
-> The group headings (translated in the context kernel/uiswitch/language).  
+> Die Überschriften der Gruppen (übersetzt im Kontext kernel/uiswitch/language).  
 
 Standard: ein Hash mit 3: `english=English`, `major=Major world languages`, `regional=Regional variants`.
 
@@ -160,9 +160,9 @@ GroupValues_regional[]=ara-EG
 
 ## AllLanguages
 
-> enabled: every locale of share/locale (without the format variants such as eng-GB@euro) is offered and listed  
-> A-Z after the groups ("All languages"). disabled: only the groups and AllowedValues\[\]; those no group names are  
-> listed A-Z as "More languages".  
+> enabled: Jede Locale aus share/locale (ohne die Formatvarianten wie eng-GB@euro) wird angeboten und  
+> nach den Gruppen von A bis Z aufgeführt („Alle Sprachen“). disabled: nur die Gruppen und AllowedValues\[\]; die, die keine Gruppe nennt, werden  
+> von A bis Z als „Weitere Sprachen“ aufgeführt.  
 
 Standard: `enabled`.
 
@@ -176,8 +176,8 @@ AllLanguages=enabled
 
 ## ListUntranslated
 
-> enabled: languages without a translation of the interface (share/translations/<locale>/translation.ts) are  
-> offered too, marked "no translation yet". disabled: only English and the translated languages.  
+> enabled: Sprachen ohne Übersetzung der Oberfläche (share/translations/<locale>/translation.ts) werden  
+> ebenfalls angeboten, als „noch keine Übersetzung“ markiert. disabled: nur Englisch und die übersetzten Sprachen.  
 
 Standard: `enabled`.
 
@@ -191,9 +191,9 @@ ListUntranslated=enabled
 
 ## AllowedValues
 
-> More locales to offer, outside the groups (a format variant such as eng-GB@euro, or a list of its own when  
-> GroupList\[\] is empty and AllLanguages=disabled). A test language (TestLanguage=true in its locale file, such as  
-> Lorem Ipsum, qlo-ZZ) is never in a group or in the A-Z list of AllLanguages; only naming it here offers it.  
+> Weitere anzubietende Locales außerhalb der Gruppen (eine Formatvariante wie eng-GB@euro oder eine eigene Liste, wenn  
+> GroupList\[\] leer ist und AllLanguages=disabled). Eine Testsprache (TestLanguage=true in ihrer Locale-Datei, etwa  
+> Lorem Ipsum, qlo-ZZ) steht nie in einer Gruppe oder in der Liste von A bis Z von AllLanguages; nur wer sie hier nennt, bietet sie an.  
 
 Standard: eine leere Liste.
 
@@ -208,8 +208,8 @@ AllowedValues[]
 
 ## RememberPreference
 
-> enabled: the choice is also kept in the user's preferences and comes back at the next sign-in.  
-> disabled (default): it ends with the session, at logout.  
+> enabled: Die Wahl wird auch in den Einstellungen des Benutzers gehalten und kehrt bei der nächsten Anmeldung zurück.  
+> disabled (Standard): Sie endet mit der Sitzung, beim Abmelden.  
 
 Standard: `disabled`.
 

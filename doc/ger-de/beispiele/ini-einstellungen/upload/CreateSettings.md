@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/upload.ini` nie selbst: Ein Update ersetzt die Datei. S
 
 ## MimeClassMap
 
-> Maps from a mime-type or mime-group to a class identifier  
+> Ordnet einem MIME-Typ oder einer MIME-Gruppe einen Klassenbezeichner zu  
 
 Standard: ein Hash mit 7: `image=image`, `video/quicktime=quicktime`, `video/x-msvideo=windows_media`, `video/vnd.rn-realvideo=real_video`, `application/vnd.rn-realmedia=real_video`, `application/x-shockwave-flash=flash`, `video/mp4=video`.
 
@@ -41,18 +41,18 @@ MimeClassMap[video/mp4]=video
 
 ## MimeUploadHandlerMap
 
-> Maps from MIME-Type to the name of an upload handler  
-> If the handler is found for the given MIME-Type it will be  
-> used instead of the normal attribute based upload.  
-> The syntax is  
+> Ordnet einem MIME-Typ den Namen eines Upload-Handlers zu  
+> Wird für den angegebenen MIME-Typ ein Handler gefunden, wird er  
+> statt des normalen attributbasierten Uploads verwendet.  
+> Die Syntax ist  
 > MimeUploadHandlerMap\[<mime-type>\]=<handler\_identifier>  
-> The <handler\_identifier> will be used for the class name as well  
-> as the filename of the PHP file.  
-> The <mime\_type> can either be specified by the full MIME-Type like  
+> Der <handler\_identifier> wird sowohl als Klassenname als auch  
+> als Dateiname der PHP-Datei verwendet.  
+> Der <mime\_type> lässt sich entweder mit dem vollen MIME-Typ angeben, etwa  
 > MimeUploadHandlerMap\[image/jpeg\]  
-> with just the group  
+> oder nur mit der Gruppe  
 > MimeUploadHandlerMap\[image\]  
-> By using just the group the handler can take care of a whole set of mime-types  
+> Mit nur der Gruppe kann der Handler eine ganze Reihe von MIME-Typen übernehmen  
 
 Standard: eine leere Liste.
 
@@ -67,11 +67,11 @@ MimeUploadHandlerMap[]
 
 ## DefaultClass
 
-> Example of OpenOffice.org handling  
+> Beispiel für die Behandlung von OpenOffice.org  
 > MimeUploadHandlerMap\[application/vnd.sun.xml.writer\]=ezopenofficeupload  
-> The system will then look for ezopenofficeupload.php  
-> The class for all files that are not recognized.  
-> The default is to use the file class  
+> Das System sucht dann nach ezopenofficeupload.php  
+> Die Klasse für alle Dateien, die nicht erkannt werden.  
+> Standard ist die Klasse file  
 
 Standard: `file`.
 

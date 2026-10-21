@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Settings
 
-> The settings exp:info shows, as <file>/<block>/<name>. A setting whose name looks like a secret (password, key,  
-> token, user, login ...) is never shown, even when it is listed here.  
+> Die Einstellungen, die exp:info zeigt, als <file>/<block>/<name>. Eine Einstellung, deren Name wie ein Geheimnis aussieht (password, key,  
+> token, user, login ...), wird nie angezeigt, auch wenn sie hier aufgeführt ist.  
 
 Standard: eine Liste mit 18: `site.ini/SiteSettings/SiteName`, `site.ini/SiteSettings/DefaultAccess`, `site.ini/SiteAccessSettings/MatchOrder`, `site.ini/RegionalSettings/Locale`, `site.ini/RegionalSettings/SiteLanguageList`, `site.ini/TimeZoneSettings/TimeZone`, `site.ini/ContentSettings/ViewCaching`, `site.ini/ContentSettings/StaticCache`, `site.ini/TemplateSettings/TemplateCompile`, `site.ini/TemplateSettings/TemplateCache`, `site.ini/DebugSettings/DebugOutput`, `site.ini/MailSettings/Transport` ....
 

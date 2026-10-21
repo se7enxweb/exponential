@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## AskVersion
 
-> enabled: connect once and ask the server for its version; disabled: show the type and host from site.ini only  
+> enabled: einmal verbinden und den Server nach seiner Version fragen; disabled: nur Typ und Host aus site.ini zeigen  
 
 Standard: `enabled`.
 

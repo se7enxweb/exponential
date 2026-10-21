@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Repository
 
-> Where to look for transformation files.  
-> The files all end in .tr  
+> Wo nach Umwandlungsdateien gesucht wird.  
+> Die Dateien enden alle auf .tr  
 
 Standard: `share/transformations`.
 
@@ -34,7 +34,7 @@ Repository=share/transformations
 
 ## Files
 
-> The standard transformation files to load  
+> Die zu ladenden Standard-Umwandlungsdateien  
 
 Standard: eine Liste mit 2: `basic.tr`, `ascii.tr`.
 
@@ -51,7 +51,7 @@ Files[]=ascii.tr
 
 ## Extensions
 
-> Extensions that have transformation files  
+> Erweiterungen, die Umwandlungsdateien haben  
 
 Standard: eine leere Liste.
 
@@ -66,8 +66,8 @@ Extensions[]
 
 ## Groups
 
-> The available transformation groups  
-> each group can define the rules it uses  
+> Die verfügbaren Umwandlungsgruppen;  
+> jede Gruppe kann die Regeln festlegen, die sie verwendet  
 
 Standard: eine Liste mit 7: `search`, `urlalias_iri`, `urlalias`, `urlalias_compat`, `identifier`, `uppercase`, `lowercase`.
 
@@ -89,15 +89,15 @@ Groups[]=lowercase
 
 ## Charsets
 
-> Maps from a charset to the unicode group  
-> The group identifier can be used to load certain  
-> extra transformation files when that charset is used.  
-> Each entry consists of:  
+> Ordnet einem Zeichensatz die Unicode-Gruppe zu  
+> Über den Gruppenbezeichner lassen sich bestimmte  
+> zusätzliche Umwandlungsdateien laden, wenn dieser Zeichensatz verwendet wird.  
+> Jeder Eintrag besteht aus:  
 > <charset>;<group>  
-> The latin group  
-> The cyrrilic group  
-> The greek group  
-> The hebrew group  
+> Die lateinische Gruppe  
+> Die kyrillische Gruppe  
+> Die griechische Gruppe  
+> Die hebräische Gruppe  
 
 Standard: eine Liste mit 53: `iso-8859-1;latin`, `iso-8859-2;latin`, `iso-8859-3;latin`, `iso-8859-4;latin`, `iso-8859-9;latin`, `iso-8859-10;latin`, `iso-8859-13;latin`, `iso-8859-14;latin`, `iso-8859-15;latin`, `cp437;latin`, `cp775;latin`, `cp850;latin` ....
 

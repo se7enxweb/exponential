@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Enabled
 
-> manual uses the certificate and key below. Leave Enabled=false to serve  
-> plain HTTP only.  
+> manual verwendet das Zertifikat und den Schlüssel unten. Lassen Sie Enabled=false, um nur  
+> einfaches HTTP auszuliefern.  
 
 Standard: `false`.
 
@@ -58,15 +58,15 @@ Key=
 
 ## HSTSMaxAge
 
-> Strict-Transport-Security on every answer sent over HTTPS: static files,  
-> the server's own pages and the scripts' answers, unless an answer carries  
-> one already. Never over plain HTTP. In seconds; 0 sends none.  
+> Strict-Transport-Security bei jeder über HTTPS gesendeten Antwort: statische Dateien,  
+> die eigenen Seiten des Servers und die Antworten der Skripte, sofern eine Antwort nicht  
+> schon einen trägt. Nie über einfaches HTTP. In Sekunden; 0 sendet keinen.  
 >
-> 300 is what the Apache and nginx front ends of this installation send. A  
-> browser that has seen it refuses plain HTTP to this host name, on every  
-> port, for that long, and keeps doing so after the setting is lowered: raise  
-> it (a year is 31536000) only once every name of the site is served over  
-> HTTPS for good.  
+> 300 ist das, was die Frontends Apache und nginx dieser Installation senden. Ein  
+> Browser, der ihn gesehen hat, verweigert einfaches HTTP für diesen Hostnamen, auf jedem  
+> Port, so lange, und tut das auch weiter, nachdem die Einstellung gesenkt wurde: Erhöhen Sie  
+> ihn (ein Jahr sind 31536000) erst, wenn jeder Name der Website dauerhaft über  
+> HTTPS ausgeliefert wird.  
 
 Standard: `300`.
 
@@ -80,7 +80,7 @@ HSTSMaxAge=300
 
 ## HSTSIncludeSubDomains
 
-> Also for every subdomain of the host (enabled or disabled).  
+> Auch für jede Subdomain des Hosts (enabled oder disabled).  
 
 Standard: `disabled`.
 
@@ -94,8 +94,8 @@ HSTSIncludeSubDomains=disabled
 
 ## HSTSPreload
 
-> Ask to be put on the browsers' preload lists (enabled or disabled). Needs  
-> HSTSIncludeSubDomains and a max-age of at least a year to be accepted.  
+> Darum bitten, in die Preload-Listen der Browser aufgenommen zu werden (enabled oder disabled). Braucht  
+> HSTSIncludeSubDomains und ein max-age von mindestens einem Jahr, um akzeptiert zu werden.  
 
 Standard: `disabled`.
 

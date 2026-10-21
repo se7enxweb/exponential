@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[SimpleShippingWorkflow]` von `settings/workflow.ini`, mit 2 Einstellung(en).
 
-> Setting for shipping cost for the simple shipping workflow  
+> Einstellung der Versandkosten für den Workflow Einfacher Versand  
 
 Bearbeiten Sie `settings/workflow.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

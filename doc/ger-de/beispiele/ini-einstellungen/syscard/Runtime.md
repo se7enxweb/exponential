@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## TotalBudget
 
-> The seconds all providers together may take; the ones left after that show "n/a (time)"  
+> Die Sekunden, die alle Provider zusammen brauchen dürfen; die danach übrigen zeigen "n/a (time)"  
 
 Standard: `6`.
 
@@ -33,9 +33,9 @@ TotalBudget=6
 
 ## Isolation
 
-> enabled: each provider runs in a child process that is ended when its budget is spent, so one that hangs (a  
-> database that does not answer, a stalled disk) shows "n/a (timeout)" and never hangs the card (needs the pcntl and  
-> posix extensions of the command-line PHP; without them the providers keep their budget themselves)  
+> enabled: Jeder Provider läuft in einem Kindprozess, der beendet wird, wenn sein Budget aufgebraucht ist, sodass einer, der hängt (eine  
+> Datenbank, die nicht antwortet, eine blockierte Festplatte), "n/a (timeout)" zeigt und die Karte nie aufhält (braucht die Erweiterungen pcntl und  
+> posix des Kommandozeilen-PHP; ohne sie halten die Provider ihr Budget selbst ein)  
 
 Standard: `enabled`.
 

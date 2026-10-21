@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[hebrew]` von `settings/transform.ini`, mit 2 Einstellung(en).
 
-> Special transformations for hebrew  
+> Besondere Umwandlungen für Hebräisch  
 
 Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,7 +21,7 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Files
 
-> Extra transformation files for hebrew  
+> Zusätzliche Umwandlungsdateien für Hebräisch  
 
 Standard: eine Liste mit 1: `hebrew.tr`.
 
@@ -37,7 +37,7 @@ Files[]=hebrew.tr
 
 ## Extensions
 
-> Extensions that have transformation files when hebrew is used  
+> Erweiterungen, die Umwandlungsdateien für Hebräisch haben  
 
 Standard: eine leere Liste.
 

@@ -11,16 +11,16 @@ generated: exp:help:examples
 
 Der Block `[urlalias_iri]` von `settings/transform.ini`, mit 3 Einstellung(en).
 
-> Rules used by the url alias system (nice urls), the rules  
-> ensures that the text is transformed to ascii equivalent  
-> characters. The most important rules are the transliteration  
-> lowercase and diacritical removal.  
-> Rule for URLAlias with support for IRI.  
+> Regeln des URL-Alias-Systems (schöne URLs); die Regeln  
+> sorgen dafür, dass der Text in gleichwertige ASCII-  
+> Zeichen umgewandelt wird. Die wichtigsten Regeln sind Transliteration,  
+> Kleinschreibung und das Entfernen diakritischer Zeichen.  
+> Regel für URL-Aliase mit IRI-Unterstützung.  
 > http://www.w3.org/International/O-URL-and-ident.html  
 >
-> This is highly recommended for most modern sites.  
+> Das wird für die meisten modernen Websites dringend empfohlen.  
 >
-> Note: Remember to use utf-8 as your characters set for your site and database  
+> Hinweis: Verwenden Sie utf-8 als Zeichensatz für Ihre Website und Datenbank  
 
 Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -30,7 +30,7 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Files
 
-> Extra transformation files for urlalias  
+> Zusätzliche Umwandlungsdateien für urlalias  
 
 Standard: eine leere Liste.
 
@@ -45,7 +45,7 @@ Files[]
 
 ## Extensions
 
-> Extensions that have transformation files when urlalias is used  
+> Erweiterungen, die Umwandlungsdateien für urlalias haben  
 
 Standard: eine leere Liste.
 
@@ -60,9 +60,9 @@ Extensions[]
 
 ## Commands
 
-> The commands to use for search  
-> Perform IRI cleanup only, this means that almost all unicode characters  
-> are allowed in urls, the exceptions are: space, ampersand and semi-colon.  
+> Die für die Suche verwendeten Befehle  
+> Nur die IRI-Bereinigung ausführen; damit sind in URLs fast alle Unicode-Zeichen  
+> erlaubt, die Ausnahmen sind: Leerzeichen, Und-Zeichen und Semikolon.  
 
 Standard: eine Liste mit 1: `url_cleanup_iri`.
 

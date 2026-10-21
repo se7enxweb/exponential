@@ -11,11 +11,11 @@ generated: exp:help:examples
 
 Der Block `[identifier]` von `settings/transform.ini`, mit 3 Einstellung(en).
 
-> Rules used by identifiers in Exponential in general.  
-> The rules ensures that the text is transformed to  
-> ascii equivalent characters.  
-> The most important rules are the transliteration lowercase and  
-> diacritical removal.  
+> Regeln, die allgemein für Bezeichner in Exponential gelten.  
+> Die Regeln sorgen dafür, dass der Text in gleichwertige  
+> ASCII-Zeichen umgewandelt wird.  
+> Die wichtigsten Regeln sind Transliteration, Kleinschreibung und  
+> das Entfernen diakritischer Zeichen.  
 
 Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -25,7 +25,7 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Files
 
-> Extra transformation files for identifiers  
+> Zusätzliche Umwandlungsdateien für Bezeichner  
 
 Standard: eine leere Liste.
 
@@ -40,7 +40,7 @@ Files[]
 
 ## Extensions
 
-> Extensions that have transformation files when identifiers are used  
+> Erweiterungen, die Umwandlungsdateien für Bezeichner haben  
 
 Standard: eine leere Liste.
 
@@ -55,7 +55,7 @@ Extensions[]
 
 ## Commands
 
-> The commands to use for identifiers  
+> Die für Bezeichner verwendeten Befehle  
 
 Standard: eine Liste mit 7: `normalize`, `transform`, `decompose`, `transliterate`, `diacritical`, `lowercase`, `identifier_cleanup`.
 

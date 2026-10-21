@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[latin]` von `settings/transform.ini`, mit 2 Einstellung(en).
 
-> Special transformations for latin (latin1, latin extended-a, latin extended-b)  
+> Besondere Umwandlungen für Lateinisch (latin1, latin extended-a, latin extended-b)  
 
 Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,7 +21,7 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Files
 
-> Extra transformation files for latin  
+> Zusätzliche Umwandlungsdateien für Lateinisch  
 
 Standard: eine Liste mit 1: `latin.tr`.
 
@@ -37,7 +37,7 @@ Files[]=latin.tr
 
 ## Extensions
 
-> Extensions that have transformation files when latin is used  
+> Erweiterungen, die Umwandlungsdateien für Lateinisch haben  
 
 Standard: eine leere Liste.
 

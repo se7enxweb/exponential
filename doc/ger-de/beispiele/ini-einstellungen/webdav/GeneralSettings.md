@@ -43,8 +43,8 @@ Logging=disabled
 
 ## StartNode
 
-> Custom start node for WebDAV operations.  
-> By default it is /site/Content (NodeID 2).  
+> Eigener Startknoten für WebDAV-Operationen.  
+> Standardmäßig ist es /site/Content (Knoten-ID 2).  
 
 Standard: `2`.
 
@@ -58,8 +58,8 @@ StartNode=2
 
 ## FolderClasses
 
-> List of classes that should always be seen as a folder.  
-> By default, if a class contains an image attribute it is seen as an image.  
+> Liste der Klassen, die immer als Ordner gelten sollen.  
+> Standardmäßig gilt eine Klasse mit einem Bildattribut als Bild.  
 
 Standard: eine Liste mit 1: `folder`.
 

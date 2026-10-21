@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/workflow.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## RepositoryDirectories
 
-> A list of directories to check for workflow eventtypes  
+> Eine Liste der Verzeichnisse, in denen nach Workflow-Ereignistypen gesucht wird  
 
 Standard: eine Liste mit 1: `kernel/classes/workflowtypes`.
 
@@ -35,10 +35,10 @@ RepositoryDirectories[]=kernel/classes/workflowtypes
 
 ## ExtensionDirectories
 
-> A list of extensions which have workflow events  
-> It's common to create a settings/workflow.ini.append file  
-> in your extension and add the extension name to automatically  
-> get workflow events from the extension when it's turned on.  
+> Eine Liste der Erweiterungen, die Workflow-Ereignisse haben  
+> Üblicherweise legt man in der Erweiterung eine Datei settings/workflow.ini.append  
+> an und trägt den Namen der Erweiterung ein, um automatisch  
+> die Workflow-Ereignisse der Erweiterung zu erhalten, wenn sie eingeschaltet ist.  
 
 Standard: eine leere Liste.
 
@@ -53,8 +53,8 @@ ExtensionDirectories[]
 
 ## AvailableEventTypes
 
-> A list of events, each entry consists of the group  
-> and the name with a \_ as separator  
+> Eine Liste von Ereignissen; jeder Eintrag besteht aus der Gruppe  
+> und dem Namen mit \_ als Trenner  
 
 Standard: eine Liste mit 6: `event_ezapprove`, `event_ezwaituntildate`, `event_ezsimpleshipping`, `event_ezmultiplexer`, `event_ezpaymentgateway`, `event_ezfinishuserregister`.
 

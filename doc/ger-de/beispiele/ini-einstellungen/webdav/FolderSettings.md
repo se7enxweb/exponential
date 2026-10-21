@@ -13,11 +13,11 @@ Der Block `[FolderSettings]` von `settings/webdav.ini`, mit 1 Einstellung(en).
 
 > FolderClasses\[\]=article  
 > FolderClasses\[\]=your\_custom\_class  
-> DEPRECATED: WebDAV will use the settings in upload.ini  
+> VERALTET: WebDAV verwendet die Einstellungen aus upload.ini  
 >
-> This setting reveales the ID of the folder class.  
-> In addition, it is also used to determine which  
-> attribute to use when creating/naming/renaming the folder.  
+> Diese Einstellung verrät die ID der Ordnerklasse.  
+> Außerdem bestimmt sie, welches  
+> Attribut beim Anlegen, Benennen und Umbenennen des Ordners verwendet wird.  
 
 Bearbeiten Sie `settings/webdav.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

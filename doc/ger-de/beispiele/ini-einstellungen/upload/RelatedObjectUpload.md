@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[RelatedObjectUpload]` von `settings/upload.ini`, mit 1 Einstellung(en).
 
-> Example of action, the group name is named just what the action is named  
+> Beispiel einer Aktion; die Gruppe heißt genauso wie die Aktion  
 > \[ExampleAction\]  
 > # The navigation part to use for the page (optional)  
 > NavigationPartIdentifier=ezcontentnavigationpart  
@@ -27,7 +27,7 @@ Der Block `[RelatedObjectUpload]` von `settings/upload.ini`, mit 1 Einstellung(e
 > # content, users, media, setup  
 > ParentNodes\[\]  
 > ParentNodes\[\]=media  
-> Action used when uploading a new file as related object  
+> Aktion beim Hochladen einer neuen Datei als verknüpftes Objekt  
 
 Bearbeiten Sie `settings/upload.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

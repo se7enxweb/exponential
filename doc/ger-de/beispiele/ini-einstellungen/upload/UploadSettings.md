@@ -31,8 +31,8 @@ DefaultReturnType=NodeID
 
 ## AliasList
 
-> A map of node aliases to node ids, here it's possible to define custom alias names  
-> It maps from the alias name to a node ID  
+> Eine Zuordnung von Knoten-Aliasen zu Knoten-IDs; hier lassen sich eigene Alias-Namen definieren  
+> Sie ordnet dem Alias-Namen eine Knoten-ID zu  
 
 Standard: eine leere Liste.
 

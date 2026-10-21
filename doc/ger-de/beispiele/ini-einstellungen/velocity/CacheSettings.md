@@ -19,19 +19,19 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Enabled
 
-> The server's response cache, in front of the workers. A hit is answered by  
-> the parent process -- no fork, no PHP, no database. Measured on this  
-> installation, anonymous front page: about 3,500 req/s from the cache  
-> against 27 rendered.  
+> Der Antwort-Cache des Servers, vor den Workern. Einen Treffer beantwortet  
+> der Elternprozess: kein Fork, kein PHP, keine Datenbank. Gemessen auf dieser  
+> Installation, anonyme Startseite: etwa 3.500 Anfragen/s aus dem Cache  
+> gegenüber 27 gerenderten.  
 >
-> The settings further down that used to live in \[ServerSettings\] as  
+> Die Einstellungen weiter unten, die früher in \[ServerSettings\] als  
 > CacheSkipCookies, CacheStaleWhileRevalidate, CacheNotFoundSeconds,  
-> MinifyCachedHtml and MiddleOutCompression still work there; a value here  
-> wins.  
+> MinifyCachedHtml und MiddleOutCompression standen, funktionieren dort weiterhin; ein Wert hier  
+> gewinnt.  
 >
-> Needs qbix-webserver v0.0.4.26 or later: older versions matched the session  
-> cookie by its exact name, never recognised eZSESSID<digest>, and served a  
-> signed-in visitor's pages to everybody.  
+> Braucht qbix-webserver v0.0.4.26 oder später: Ältere Versionen erkannten das Sitzungs-  
+> cookie an seinem genauen Namen, erkannten eZSESSID<digest> nie und lieferten die Seiten  
+> eines angemeldeten Besuchers an alle aus.  
 
 Standard: `enabled`.
 
@@ -45,14 +45,14 @@ Enabled=enabled
 
 ## DefaultTtl
 
-> Seconds an anonymous page is kept. Exponential sends  
-> Cache-Control: no-cache, must-revalidate, which the server does not treat as  
-> a refusal, so a page is stored only when it has a lifetime -- its own  
-> max-age, or this. 0 caches only responses that bring their own.  
+> Sekunden, die eine anonyme Seite behalten wird. Exponential sendet  
+> Cache-Control: no-cache, must-revalidate, was der Server nicht als  
+> Ablehnung behandelt; eine Seite wird also nur gespeichert, wenn sie eine Lebensdauer hat, ihr  
+> eigenes max-age oder dieses. 0 cacht nur Antworten, die ihre eigene mitbringen.  
 >
-> The trade: a visitor may see a page up to this old, and a page that differs  
-> between anonymous visitors without a cookie telling them apart would be  
-> shared between them. Signed-in visitors are never served from the cache.  
+> Der Preis: Ein Besucher sieht eine Seite eventuell bis zu so alt, und eine Seite, die sich  
+> zwischen anonymen Besuchern ohne ein sie unterscheidendes Cookie unterscheidet, würde  
+> zwischen ihnen geteilt. Angemeldete Besucher werden nie aus dem Cache bedient.  
 
 Standard: `30`.
 
@@ -66,9 +66,9 @@ DefaultTtl=30
 
 ## Dir
 
-> Where entries too large for shared memory are kept. Relative paths resolve  
-> against the installation root. Left to itself the server would put them in  
-> files/cache/reverse of the directory above the document root.  
+> Wo Einträge gehalten werden, die für den gemeinsamen Speicher zu groß sind. Relative Pfade gelten  
+> ab dem Wurzelverzeichnis der Installation. Sich selbst überlassen, würde der Server sie in  
+> files/cache/reverse des Verzeichnisses über dem Dokumentenverzeichnis legen.  
 
 Standard: `var/cache/qbix-reverse`.
 
@@ -82,8 +82,8 @@ Dir=var/cache/qbix-reverse
 
 ## APCu
 
-> Small responses in APCu, shared by every worker; larger ones on disk.  
-> APCuMaxSize is the size limit in bytes, 0 leaves the server's 65536.  
+> Kleine Antworten in APCu, gemeinsam für jeden Worker; größere auf der Festplatte.  
+> APCuMaxSize ist die Größengrenze in Bytes, 0 belässt die 65536 des Servers.  
 
 Standard: `enabled`.
 
@@ -109,9 +109,9 @@ APCuMaxSize=0
 
 ## SweepEvery
 
-> Clearing expired entries off the disk, every SweepEvery seconds (0 switches  
-> it off). SweepMaxAge removes anything older than that regardless of its own  
-> lifetime -- without it, a response that says max-age=31536000 stays a year.  
+> Abgelaufene Einträge von der Festplatte räumen, alle SweepEvery Sekunden (0 schaltet  
+> es ab). SweepMaxAge entfernt alles, was älter ist, unabhängig von seiner eigenen  
+> Lebensdauer; ohne es bleibt eine Antwort mit max-age=31536000 ein Jahr lang.  
 
 Standard: `300`.
 
@@ -137,8 +137,8 @@ SweepMaxAge=86400
 
 ## FileMode
 
-> Permissions, octal, as in \[LogSettings\]. A cached page is what an anonymous  
-> visitor sees, but nothing else on the machine needs to read it.  
+> Berechtigungen, oktal, wie in \[LogSettings\]. Eine gecachte Seite ist das, was ein anonymer  
+> Besucher sieht, aber sonst muss sie auf dem Rechner niemand lesen.  
 
 Standard: `0640`.
 
@@ -164,14 +164,14 @@ DirMode=0750
 
 ## SkipCookies
 
-> Which cookies mean "this response is personal, do not cache it", matched as  
-> a prefix. Empty means the session cookie plus is\_logged\_in, which the kernel  
-> sets for signed-in visitors for exactly this purpose. The session cookie's  
-> name follows \[Session\] SessionNameHandler in site.ini: with "default" PHP  
-> names it (PHPSESSID); with "custom" it is SessionNamePrefix, which as a  
-> prefix also covers every siteaccess's <prefix><digest>.  
+> Welche Cookies bedeuten „diese Antwort ist persönlich, nicht cachen“, als  
+> Präfix verglichen. Leer bedeutet das Sitzungs-Cookie plus is\_logged\_in, das der Kernel  
+> genau zu diesem Zweck für angemeldete Besucher setzt. Der Name des Sitzungs-Cookies  
+> folgt \[Session\] SessionNameHandler in site.ini: Mit "default" benennt PHP  
+> es (PHPSESSID); mit "custom" ist es SessionNamePrefix, das als  
+> Präfix auch <prefix><digest> jedes Siteaccess abdeckt.  
 >
-> To name them yourself, list every one -- a list replaces the default:  
+> Um sie selbst zu benennen, führen Sie jedes auf; eine Liste ersetzt den Standard:  
 >   SkipCookies\[\]  
 >   SkipCookies\[\]=PHPSESSID  
 >   SkipCookies\[\]=is\_logged\_in  
@@ -188,8 +188,8 @@ SkipCookies=
 
 ## StaleWhileRevalidate
 
-> Seconds an expired page may still be served while one request renders the  
-> replacement, so that an expiry does not send every visitor to PHP at once.  
+> Sekunden, die eine abgelaufene Seite noch ausgeliefert werden darf, während eine Anfrage den  
+> Ersatz rendert, damit ein Ablauf nicht alle Besucher auf einmal zu PHP schickt.  
 
 Standard: `60`.
 
@@ -203,11 +203,11 @@ StaleWhileRevalidate=60
 
 ## NotFoundSeconds
 
-> Seconds a 404 is remembered, so a crawler walking dead links does not run the  
-> full rendering path for each. 0 (the default) remembers none: every 404  
-> reaches PHP, as under Apache, so 404.log and the request classifier  
-> (security.log) see each one -- a 404 answered from the cache was seen once a  
-> minute at most. A 404 the kernel marks private, no-store is never kept anyway.  
+> Sekunden, die eine 404 gemerkt wird, damit ein Crawler, der tote Links abläuft, nicht für jeden den  
+> ganzen Renderweg ausführt. 0 (der Standard) merkt sich keine: Jede 404  
+> erreicht PHP, wie unter Apache, sodass 404.log und der Anfrage-Klassifizierer  
+> (security.log) jede sehen; eine aus dem Cache beantwortete 404 wurde höchstens einmal pro  
+> Minute gesehen. Eine 404, die der Kernel als private, no-store markiert, wird ohnehin nie behalten.  
 
 Standard: `0`.
 
@@ -221,11 +221,11 @@ NotFoundSeconds=0
 
 ## HonorRequestNoCache
 
-> A request carrying Cache-Control: no-cache (or Pragma: no-cache) is sent to  
-> PHP instead of being answered from the cache, and the answer is stored again.  
-> A browser's ordinary reload (max-age=0) is still answered from the cache.  
-> Needs exponential-velocity with Q.web.cache.honorRequestNoCache; older  
-> versions ignore it.  
+> Eine Anfrage mit Cache-Control: no-cache (oder Pragma: no-cache) wird an  
+> PHP geschickt, statt aus dem Cache beantwortet zu werden, und die Antwort wird erneut gespeichert.  
+> Ein gewöhnliches Neuladen im Browser (max-age=0) wird weiterhin aus dem Cache beantwortet.  
+> Braucht exponential-velocity mit Q.web.cache.honorRequestNoCache; ältere  
+> Versionen ignorieren es.  
 
 Standard: `enabled`.
 
@@ -239,7 +239,7 @@ HonorRequestNoCache=enabled
 
 ## MinifyHtml
 
-> Collapse the templates' indentation in stored pages: 27 % smaller documents.  
+> Die Einrückung der Templates in gespeicherten Seiten zusammenfassen: 27 % kleinere Dokumente.  
 
 Standard: `enabled`.
 
@@ -253,8 +253,8 @@ MinifyHtml=enabled
 
 ## MiddleOutCompression
 
-> Compress stored entries against a shared dictionary. Measured and left off:  
-> entries are stored already gzipped, and a dictionary cannot shrink that.  
+> Gespeicherte Einträge gegen ein gemeinsames Wörterbuch komprimieren. Gemessen und aus gelassen:  
+> Einträge werden schon gzip-komprimiert gespeichert, und ein Wörterbuch kann das nicht verkleinern.  
 
 Standard: `disabled`.
 

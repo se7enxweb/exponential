@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## DefaultWidth
 
-> The width when the terminal does not say (COLUMNS, stty); --width= wins  
+> Die Breite, wenn das Terminal sie nicht nennt (COLUMNS, stty); --width= gewinnt  
 
 Standard: `80`.
 
@@ -33,7 +33,7 @@ DefaultWidth=80
 
 ## Wordmark
 
-> The wordmark "EXPONENTIAL" under the big logo, when the terminal is wide enough  
+> Der Schriftzug "EXPONENTIAL" unter dem großen Logo, wenn das Terminal breit genug ist  
 
 Standard: `enabled`.
 
@@ -47,7 +47,7 @@ Wordmark=enabled
 
 ## ColorBars
 
-> The palette rows and the gradient bar at the end of the card (only with colors)  
+> Die Palettenzeilen und der Verlaufsbalken am Ende der Karte (nur mit Farben)  
 
 Standard: `enabled`.
 
@@ -61,7 +61,7 @@ ColorBars=enabled
 
 ## Hints
 
-> The Hints block at the end of the card  
+> Der Block Hinweise am Ende der Karte  
 
 Standard: `enabled`.
 
@@ -75,7 +75,7 @@ Hints=enabled
 
 ## Charset
 
-> auto (UTF-8 locale: block art and dots; else ASCII), unicode or ascii  
+> auto (UTF-8-Locale: Blockgrafik und Punkte; sonst ASCII), unicode oder ascii  
 
 Standard: `auto`.
 

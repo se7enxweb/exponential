@@ -19,17 +19,17 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Port
 
-> The frankenphp engine (ServerSettings Engine=frankenphp, or --engine=frankenphp):  
-> the production engine.  
+> Die Engine frankenphp (ServerSettings Engine=frankenphp oder --engine=frankenphp):  
+> die Produktions-Engine.  
 >
-> FrankenPHP is one self-contained file: the Caddy web server, PHP and its  
-> extensions. It runs in classic mode -- a pool of PHP threads in one process,  
-> each request starting from a clean state, as under php-fpm -- so the Qbix  
-> server's ForkPerRequest and KeepGlobals do not apply to it. Workers is the  
-> number of PHP threads; SpareWorkers more are started under load.  
-> This engine's own address and pool. Empty = the \[ServerSettings\] value;  
-> set, so that it can run beside the other engines. Workers is the number of  
-> PHP threads.  
+> FrankenPHP ist eine eigenständige Datei: der Webserver Caddy, PHP und seine  
+> Erweiterungen. Es läuft im klassischen Modus (ein Pool von PHP-Threads in einem Prozess,  
+> jede Anfrage beginnt mit einem sauberen Zustand, wie unter php-fpm), daher gelten  
+> ForkPerRequest und KeepGlobals des Qbix-Servers dafür nicht. Workers ist die  
+> Zahl der PHP-Threads; unter Last werden SpareWorkers weitere gestartet.  
+> Die eigene Adresse und der eigene Pool dieser Engine. Leer = der Wert aus \[ServerSettings\];  
+> gesetzt, damit sie neben den anderen Engines laufen kann. Workers ist die Zahl der  
+> PHP-Threads.  
 
 Standard: `8089`.
 
@@ -55,17 +55,17 @@ HTTPSPort=8444
 
 ## HTTPS
 
-> HTTPS on HTTPSPort beside plain HTTP on Port -- on by default, so a  
-> development machine has https:// from the first start. It uses  
-> \[HTTPSSettings\] Certificate and Key when both are set; with both empty it  
-> makes a self-signed certificate for this machine (localhost, 127.0.0.1, ::1,  
-> the host name) in var/vc/frankenphp/tls/, valid a year and renewed a month  
-> before it runs out. A browser warns about that one: fine for development and  
-> behind a reverse proxy, not for visitors -- a public site names its  
-> certificate here or terminates TLS in front. When the self-signed one cannot  
-> be made (no openssl extension) the server starts with plain HTTP and says  
-> why. \`start --no-https\` leaves it off for one start, \`start --https\` insists  
-> on it; disabled switches it off for good.  
+> HTTPS auf HTTPSPort neben einfachem HTTP auf Port, standardmäßig an, sodass ein  
+> Entwicklungsrechner ab dem ersten Start https:// hat. Es verwendet  
+> \[HTTPSSettings\] Certificate und Key, wenn beide gesetzt sind; sind beide leer,  
+> erzeugt es ein selbstsigniertes Zertifikat für diesen Rechner (localhost, 127.0.0.1, ::1,  
+> der Hostname) in var/vc/frankenphp/tls/, ein Jahr gültig und einen Monat  
+> vor Ablauf erneuert. Ein Browser warnt davor: in Ordnung für die Entwicklung und  
+> hinter einem Reverse-Proxy, nicht für Besucher; eine öffentliche Website nennt ihr  
+> Zertifikat hier oder beendet TLS davor. Wenn sich das selbstsignierte nicht  
+> erzeugen lässt (keine Erweiterung openssl), startet der Server mit einfachem HTTP und sagt,  
+> warum. \`start --no-https\` lässt es für einen Start aus, \`start --https\` besteht  
+> darauf; disabled schaltet es dauerhaft ab.  
 
 Standard: `enabled`.
 
@@ -91,13 +91,13 @@ Host=
 
 ## Workers
 
-> PHP threads, and extra threads started under load (num\_threads and  
-> max\_threads). Empty = twice the CPU cores and no extra, FrankenPHP's own  
-> default -- never the Qbix server's \[ServerSettings\] Workers, which counts  
-> processes, most of them idle, where these are threads that all run at once.  
-> More threads than that makes heavy load slower: 64 concurrent rendered pages  
-> did 16.0 req/s at 12-48 threads on a 12-core machine and 14.6 at 96 or 590,  
-> with 24% more CPU per page at 590 (measured 2026-09-26).  
+> PHP-Threads und zusätzliche Threads, die unter Last gestartet werden (num\_threads und  
+> max\_threads). Leer = das Doppelte der CPU-Kerne und keine zusätzlichen, der eigene Standard von FrankenPHP;  
+> nie \[ServerSettings\] Workers des Qbix-Servers, das Prozesse zählt,  
+> die meisten davon untätig, wo dies Threads sind, die alle gleichzeitig laufen.  
+> Mehr Threads als das machen hohe Last langsamer: 64 gleichzeitig gerenderte Seiten  
+> schafften 16,0 Anfragen/s bei 12-48 Threads auf einem Rechner mit 12 Kernen und 14,6 bei 96 oder 590,  
+> mit 24 % mehr CPU pro Seite bei 590 (gemessen am 2026-09-26).  
 
 Standard: leer.
 
@@ -135,10 +135,10 @@ DocumentRoot=
 
 ## Version
 
-> The release \`exp:velocity install\` downloads, and the checksums it insists  
-> on. Moving to a new release means changing Version and every Sha256\[\] line  
-> together; the files are named after the version, so the old binary stays  
-> next to the new one and going back is only this setting.  
+> Das Release, das \`exp:velocity install\` herunterlädt, und die Prüfsummen, auf denen es  
+> besteht. Der Wechsel zu einem neuen Release bedeutet, Version und jede Zeile Sha256\[\]  
+> gemeinsam zu ändern; die Dateien sind nach der Version benannt, die alte Binärdatei bleibt also  
+> neben der neuen, und zurück geht es nur über diese Einstellung.  
 
 Standard: `1.12.7`.
 
@@ -152,16 +152,16 @@ Version=1.12.7
 
 ## Variant
 
-> Which build of that release, on Linux:  
+> Welcher Build dieses Releases, unter Linux:  
 >
->   gnu       linked against glibc. The default: glibc's allocator is faster  
->             than musl's under PHP, and it can load .so extensions (oci8 ...).  
->             Needs glibc 2.17 or later -- any distribution but Alpine.  
->   musl      fully static, needs nothing from the system; for Alpine.  
->   mimalloc  musl with the mimalloc allocator (x86\_64 only).  
+>   gnu       gegen glibc gelinkt. Der Standard: Der Allokator von glibc ist unter PHP schneller  
+>             als der von musl, und er kann .so-Erweiterungen laden (oci8 ...).  
+>             Braucht glibc 2.17 oder später, jede Distribution außer Alpine.  
+>   musl      vollständig statisch, braucht nichts vom System; für Alpine.  
+>   mimalloc  musl mit dem Allokator mimalloc (nur x86\_64).  
 >
-> macOS always gets the one build there is. The official builds carry the PHP  
-> version the project chose for that release (1.12.x: PHP 8.5).  
+> macOS erhält immer den einen Build, den es gibt. Die offiziellen Builds enthalten die PHP-  
+> Version, die das Projekt für dieses Release gewählt hat (1.12.x: PHP 8.5).  
 
 Standard: `gnu`.
 
@@ -175,9 +175,9 @@ Variant=gnu
 
 ## BinaryPath
 
-> An own binary instead of the download: another PHP version, extra Caddy  
-> modules, a distribution package. Nothing is downloaded then, and it is  
-> checked against BinarySha256 only when that is set.  
+> Eine eigene Binärdatei statt des Downloads: eine andere PHP-Version, zusätzliche Caddy-  
+> Module, ein Paket der Distribution. Dann wird nichts heruntergeladen, und sie wird  
+> nur gegen BinarySha256 geprüft, wenn das gesetzt ist.  
 
 Standard: leer.
 
@@ -203,7 +203,7 @@ BinarySha256=
 
 ## BinaryDir
 
-> Where install puts the binary. Relative paths resolve against the root.  
+> Wohin install die Binärdatei legt. Relative Pfade gelten ab dem Wurzelverzeichnis.  
 
 Standard: `var/vc/frankenphp/bin`.
 
@@ -217,7 +217,7 @@ BinaryDir=var/vc/frankenphp/bin
 
 ## AutoInstall
 
-> Install on the first start when the binary is missing.  
+> Beim ersten Start installieren, wenn die Binärdatei fehlt.  
 
 Standard: `enabled`.
 
@@ -231,8 +231,8 @@ AutoInstall=enabled
 
 ## DownloadUrl
 
-> Where the binary comes from. {version} and {asset} are filled in. ApiUrl is  
-> read only by install --trust-github-digest, for a version with no Sha256.  
+> Woher die Binärdatei kommt. {version} und {asset} werden ausgefüllt. ApiUrl wird  
+> nur von install --trust-github-digest gelesen, für eine Version ohne Sha256.  
 
 Standard: `https://github.com/php/frankenphp/releases/download/v{version}/{asset}`.
 
@@ -258,8 +258,8 @@ ApiUrl=https://api.github.com/repos/php/frankenphp/releases/tags/v{version}
 
 ## Sha256
 
-> SHA-256 of every release asset of Version, from the digests GitHub publishes.  
-> A download that does not match is deleted, never run.  
+> SHA-256 jedes Release-Assets von Version, aus den Digests, die GitHub veröffentlicht.  
+> Ein Download, der nicht passt, wird gelöscht, nie ausgeführt.  
 
 Standard: ein Hash mit 7: `frankenphp-linux-x86_64=378fbac43deb0585be0ad554769fe52421d1391f2cc8ca87e6201a12c5671d47`, `frankenphp-linux-x86_64-gnu=cfc17817a29895891eff5f564492dd614ed185275d25783b0f8045bc2e3f8ce2`, `frankenphp-linux-x86_64-mimalloc=8c20f12bd8177016b5e3592ba81eb3ba9e5ce217c674f078b7dcf186f987c784`, `frankenphp-linux-aarch64=a4973cdf7f23b84e8ab509638952d4ed364425967e9cdee4a1abcf2d956239c9`, `frankenphp-linux-aarch64-gnu=0118b41f4c0aa921b255d015a65dc1050e3746b7400c63e2312f50ad12a89676`, `frankenphp-mac-arm64=9f7c83fb13f61cd81c54eefb3cae9676df62bfe7af1b1fd8959a5c52665eac82`, `frankenphp-mac-x86_64=c42caa8269f1403dc539ae18d48030abe288ac7345b7606364f6ed93c6b10bdf`.
 
@@ -281,10 +281,10 @@ Sha256[frankenphp-mac-x86_64]=c42caa8269f1403dc539ae18d48030abe288ac7345b7606364
 
 ## AdminAddress
 
-> Caddy's admin API, which stop and graceful use. auto is a unix socket at  
-> var/vc/frankenphp/run/admin.sock (owner-only, no port to clash), or localhost on the  
-> HTTP port + 10000 when the installation's path is too long for a socket.  
-> Otherwise unix/<path> or localhost:<port>.  
+> Die Admin-API von Caddy, die stop und graceful verwenden. auto ist ein Unix-Socket unter  
+> var/vc/frankenphp/run/admin.sock (nur für den Eigentümer, kein Port, der kollidiert), oder localhost auf dem  
+> HTTP-Port + 10000, wenn der Pfad der Installation für einen Socket zu lang ist.  
+> Sonst unix/<path> oder localhost:<port>.  
 
 Standard: `auto`.
 
@@ -298,7 +298,7 @@ AdminAddress=auto
 
 ## ConfigFile
 
-> The generated configuration, the pid file and the server's console output.  
+> Die erzeugte Konfiguration, die PID-Datei und die Konsolenausgabe des Servers.  
 
 Standard: `var/vc/frankenphp/run/Caddyfile`.
 
@@ -336,10 +336,10 @@ LogFile=var/vc/frankenphp/run/console.log
 
 ## LogDir
 
-> Access and error log: access.log and error.log in LogDir (empty =  
-> var/vc/frankenphp/log), or the paths given. A directory of its own  
-> because Caddy writes JSON: switching engines does not leave one file in two  
-> formats. LogSettings Enabled and FileMode apply.  
+> Zugriffs- und Fehlerlog: access.log und error.log in LogDir (leer =  
+> var/vc/frankenphp/log) oder die angegebenen Pfade. Ein eigenes Verzeichnis,  
+> weil Caddy JSON schreibt: Ein Wechsel der Engine hinterlässt keine Datei in zwei  
+> Formaten. Enabled und FileMode aus LogSettings gelten.  
 
 Standard: leer.
 
@@ -377,11 +377,11 @@ ErrorLog=
 
 ## Compression
 
-> Compress responses for clients that ask: the codecs to offer, in order of  
-> preference, from zstd, br and gzip; or disabled. Caddy compresses nothing  
-> unless told to, and skips small bodies and types that do not shrink  
-> (images, archives). Without it the front page went out at 95.7 KB here;  
-> gzipped it is about 10 KB.  
+> Antworten für Clients komprimieren, die danach fragen: die anzubietenden Codecs, in der Reihenfolge der  
+> Bevorzugung, aus zstd, br und gzip; oder disabled. Caddy komprimiert nichts,  
+> sofern es nicht dazu aufgefordert wird, und überspringt kleine Inhalte und Typen, die nicht schrumpfen  
+> (Bilder, Archive). Ohne das ging die Startseite hier mit 95,7 KB hinaus;  
+> gzip-komprimiert sind es etwa 10 KB.  
 
 Standard: `zstd br gzip`.
 
@@ -395,9 +395,9 @@ Compression=zstd br gzip
 
 ## SiteInclude
 
-> A Caddyfile fragment imported into every site block, for directives of your  
-> own (headers, redirects, extra routes). The generated file is rewritten on  
-> every start and must not be edited.  
+> Ein Caddyfile-Fragment, das in jeden Site-Block importiert wird, für eigene Direktiven  
+> (Header, Weiterleitungen, zusätzliche Routen). Die erzeugte Datei wird bei  
+> jedem Start neu geschrieben und darf nicht bearbeitet werden.  
 
 Standard: leer.
 
@@ -411,8 +411,8 @@ SiteInclude=
 
 ## PHPIniFile
 
-> A php.ini for the server. The binary reads none of the machine's own, so  
-> without one PHP runs on its compiled-in defaults plus the options below.  
+> Eine php.ini für den Server. Die Binärdatei liest keine der eigenen des Rechners, ohne  
+> eine läuft PHP also mit seinen einkompilierten Standards plus den Optionen unten.  
 
 Standard: leer.
 
@@ -426,10 +426,10 @@ PHPIniFile=
 
 ## IniOptions
 
-> Interpreter settings, after \[PHPSettings\] IniOptions\[\] (a later key wins).  
-> These stand in for the php.ini the binary does not read: without them PHP  
-> shows errors to visitors and stops at 128M. The opcode cache needs no  
-> revalidate\_freq=0 here -- every request has its own request time.  
+> Interpreter-Einstellungen, nach \[PHPSettings\] IniOptions\[\] (ein späterer Schlüssel gewinnt).  
+> Sie ersetzen die php.ini, die die Binärdatei nicht liest: Ohne sie zeigt PHP  
+> Besuchern Fehler und hört bei 128M auf. Der Opcode-Cache braucht hier kein  
+> revalidate\_freq=0: Jede Anfrage hat ihre eigene Anfragezeit.  
 
 Standard: eine Liste mit 6: `display_errors=Off`, `log_errors=On`, `memory_limit=512M`, `opcache.enable=1`, `post_max_size=64M`, `upload_max_filesize=32M`.
 
@@ -450,7 +450,7 @@ IniOptions[]=upload_max_filesize=32M
 
 ## ExtraOptions
 
-> Extra options for \`frankenphp run\`, appended verbatim.  
+> Zusätzliche Optionen für \`frankenphp run\`, unverändert angehängt.  
 
 Standard: eine leere Liste.
 

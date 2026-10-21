@@ -19,18 +19,18 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Port
 
-> The php engine (ServerSettings Engine=php, the shipped default, or  
-> --engine=php): the development engine, PHP's built-in web server,  
+> Die Engine php (ServerSettings Engine=php, der ausgelieferte Standard, oder  
+> --engine=php): die Entwicklungs-Engine, der eingebaute Webserver von PHP,  
 > \`php -S Host:Port -t DocumentRoot bin/php/velocity-router.php\`.  
 >
-> The PHP manual calls it a development server, and it is one: plain HTTP  
-> only, no reload (graceful restarts it), files sent without a cache lifetime,  
-> the request log on its console (LogFile below). Workers becomes  
-> PHP\_CLI\_SERVER\_WORKERS, so that many requests are served at once (Linux  
-> only; elsewhere one at a time). It runs with this PHP's php.ini and  
-> extensions plus \[PHPSettings\] IniOptions\[\]; keep Host at 127.0.0.1.  
-> This engine's own address. Empty = the \[ServerSettings\] value; set, so that  
-> it can run beside the other engines. Workers becomes PHP\_CLI\_SERVER\_WORKERS.  
+> Das PHP-Handbuch nennt ihn einen Entwicklungsserver, und er ist einer: nur einfaches HTTP,  
+> kein Neuladen (graceful startet ihn neu), Dateien ohne Cache-Lebensdauer gesendet,  
+> das Anfrage-Log auf seiner Konsole (LogFile unten). Workers wird zu  
+> PHP\_CLI\_SERVER\_WORKERS, sodass so viele Anfragen gleichzeitig bedient werden (nur  
+> Linux; anderswo eine nach der anderen). Er läuft mit der php.ini und den  
+> Erweiterungen dieses PHP plus \[PHPSettings\] IniOptions\[\]; lassen Sie Host auf 127.0.0.1.  
+> Die eigene Adresse dieser Engine. Leer = der Wert aus \[ServerSettings\]; gesetzt, damit  
+> sie neben den anderen Engines laufen kann. Workers wird zu PHP\_CLI\_SERVER\_WORKERS.  
 
 Standard: `8087`.
 
@@ -80,7 +80,7 @@ DocumentRoot=
 
 ## PHPBinary
 
-> Another PHP binary than the one running exp:velocity. Empty = the same.  
+> Eine andere PHP-Binärdatei als die, die exp:velocity ausführt. Leer = dieselbe.  
 
 Standard: leer.
 
@@ -94,8 +94,8 @@ PHPBinary=
 
 ## PidFile
 
-> The built-in server prints each request and PHP's errors to its console;  
-> this is where that goes -- its access and error log in one.  
+> Der eingebaute Server gibt jede Anfrage und die Fehler von PHP auf seiner Konsole aus;  
+> dorthin geht das, sein Zugriffs- und Fehlerlog in einem.  
 
 Standard: `var/vc/php/run/server.pid`.
 
@@ -121,7 +121,7 @@ LogFile=var/vc/php/log/server.log
 
 ## ExtraOptions
 
-> Extra arguments for php, appended after the router, verbatim.  
+> Zusätzliche Argumente für php, unverändert nach dem Router angehängt.  
 
 Standard: eine leere Liste.
 

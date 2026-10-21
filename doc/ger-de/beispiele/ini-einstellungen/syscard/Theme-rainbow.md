@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[Theme-rainbow]` von `settings/syscard.ini`, mit 16 Einstellung(en).
 
-> A theme: a #RRGGBB color per role (empty: the terminal's own color). Logo and LogoShade shade the "e" from the top  
-> to the bottom; Accent is the title and the section headings; Gradient\[\] the wordmark and the gradient bar, across  
-> the columns or the lines (GradientDirection). <Role>16= names the basic color for a 16-color terminal (black, red,  
-> green, yellow, blue, magenta, cyan, white, bright-<name>) when the nearest one would look wrong.  
+> Ein Theme: eine Farbe #RRGGBB pro Rolle (leer: die eigene Farbe des Terminals). Logo und LogoShade schattieren das „e“ von oben  
+> nach unten; Accent ist der Titel und die Abschnittsüberschriften; Gradient\[\] der Schriftzug und der Verlaufsbalken, über  
+> die Spalten oder die Zeilen (GradientDirection). <Role>16= nennt die Grundfarbe für ein Terminal mit 16 Farben (black, red,  
+> green, yellow, blue, magenta, cyan, white, bright-<name>), wenn die nächstliegende falsch aussähe.  
 
 Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## TextFile
 
-> The text of exp:about: blocks of "@ <section> | <heading> | from <source>", paragraphs and "- Label: value" rows  
+> Der Text von exp:about: Blöcke aus "@ <section> | <heading> | from <source>", Absätzen und Zeilen "- Label: value"  
 
 Standard: `share/syscard/about.txt`.
 

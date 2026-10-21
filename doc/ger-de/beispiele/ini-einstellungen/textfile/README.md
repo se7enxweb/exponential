@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/textfile.ini`: 1 Blöcke, 11 Einstellungen.
 
-> Exponential configuration file for the textfile based login handler  
+> Exponential-Konfigurationsdatei für den Login-Handler auf Basis einer Textdatei  
 
 | Block | Einstellungen |
 |---|---|

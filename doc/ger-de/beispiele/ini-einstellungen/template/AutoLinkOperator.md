@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/template.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## MaxCharacters
 
-> The maximum number of characters to show in autolink  
-> links. Specify the maxium with a number or turn it  
-> off by having an empty string as the value.  
-> If the link string is longer than the max value it will be shortened  
+> Die Höchstzahl der Zeichen, die in autolink-  
+> Links angezeigt werden. Geben Sie das Maximum als Zahl an oder schalten Sie es  
+> mit einer leeren Zeichenkette als Wert ab.  
+> Ist die Zeichenkette des Links länger als der Höchstwert, wird sie gekürzt  
 
 Standard: `72`.
 
@@ -36,11 +36,11 @@ MaxCharacters=72
 
 ## Methods
 
-> Maximum 72 characters  
+> Höchstens 72 Zeichen  
 > MaxCharacters=72  
-> No shortening of characters  
+> Keine Kürzung der Zeichen  
 > MaxCharacters=  
-> A list of URL methods or protocols that should be matched  
+> Eine Liste von URL-Methoden oder Protokollen, die erkannt werden sollen  
 
 Standard: eine Liste mit 6: `http`, `https`, `ftp`, `ftps`, `webdav`, `webdavs`.
 

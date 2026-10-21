@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[uppercase]` von `settings/transform.ini`, mit 3 Einstellung(en).
 
-> Rules which makes character into uppercase  
-> These rules works in similar way to strtoupper in PHP but will  
-> work regardless of locale used.  
+> Regeln, die Zeichen in Großbuchstaben umwandeln  
+> Diese Regeln arbeiten ähnlich wie strtoupper in PHP, funktionieren aber  
+> unabhängig von der verwendeten Locale.  
 
 Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -23,7 +23,7 @@ Bearbeiten Sie `settings/transform.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Files
 
-> Extra transformation files for identifiers  
+> Zusätzliche Umwandlungsdateien für Bezeichner  
 
 Standard: eine leere Liste.
 
@@ -38,7 +38,7 @@ Files[]
 
 ## Extensions
 
-> Extensions that have transformation files when identifiers are used  
+> Erweiterungen, die Umwandlungsdateien für Bezeichner haben  
 
 Standard: eine leere Liste.
 
@@ -53,7 +53,7 @@ Extensions[]
 
 ## Commands
 
-> The commands to use for identifiers  
+> Die für Bezeichner verwendeten Befehle  
 
 Standard: eine Liste mit 1: `uppercase`.
 

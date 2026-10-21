@@ -12,15 +12,15 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/template.ini`: 7 Blöcke, 16 Einstellungen.
 
-> Exponential configuration file for eZTemplate  
+> Exponential-Konfigurationsdatei für eZTemplate  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/template.ini.append or  
->       settings/override/template.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/template.ini.append oder  
+>       settings/override/template.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
 
 | Block | Einstellungen |
 |---|---|

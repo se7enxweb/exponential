@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## StopTimeout
 
-> How long stop and restart wait for a graceful stop. The qbix engine's  
-> processes still there after it -- every process of this installation, found  
-> by the script it runs and the log it writes to, not only the pid files --  
-> are then killed (SIGKILL), and restart reports success only once a new  
-> server answers an HTTP request. The frankenphp and php engines report that  
-> the server did not stop.  
+> Wie lange stop und restart auf ein sauberes Beenden warten. Die Prozesse der Engine qbix,  
+> die danach noch da sind (jeder Prozess dieser Installation, gefunden  
+> über das Skript, das er ausführt, und das Log, in das er schreibt, nicht nur über die PID-Dateien),  
+> werden dann beendet (SIGKILL), und restart meldet Erfolg erst, wenn ein neuer  
+> Server eine HTTP-Anfrage beantwortet. Die Engines frankenphp und php melden, dass  
+> der Server nicht angehalten hat.  
 
 Standard: `15`.
 
@@ -38,10 +38,10 @@ StopTimeout=15
 
 ## ShutdownTimeout
 
-> The qbix server's own bound on a graceful stop (Q.webserver.shutdownTimeout):  
-> after this many seconds it is killed with every process it started, even  
-> when it is blocked where no signal but SIGKILL reaches it. Keep it below  
-> StopTimeout. 0 leaves the stop unbounded.  
+> Die eigene Grenze des qbix-Servers für ein sauberes Beenden (Q.webserver.shutdownTimeout):  
+> Nach so vielen Sekunden wird er mit jedem von ihm gestarteten Prozess beendet, auch  
+> wenn er dort blockiert ist, wo ihn kein Signal außer SIGKILL erreicht. Halten Sie den Wert unter  
+> StopTimeout. 0 lässt das Beenden unbegrenzt.  
 
 Standard: `12`.
 
@@ -55,12 +55,12 @@ ShutdownTimeout=12
 
 ## DetachedRestart
 
-> restart (and the restart step of deploy) runs as one detached unit: its own  
-> session (setsid) and, as root under systemd, a transient scope  
-> vc-restart-<date>-<token>, so a caller killed between the stop and the start  
-> no longer leaves the server down. The caller waits and prints the outcome as  
-> before. While it runs, restart-in-progress.json lies next to the pid file.  
-> disabled: restart in the calling process, as before.  
+> restart (und der Neustart-Schritt von deploy) läuft als eine abgekoppelte Einheit: eigene  
+> Sitzung (setsid) und, als root unter systemd, ein flüchtiger Scope  
+> vc-restart-<date>-<token>, sodass ein Aufrufer, der zwischen Stopp und Start beendet wird,  
+> den Server nicht mehr unten lässt. Der Aufrufer wartet und gibt das Ergebnis wie  
+> bisher aus. Solange es läuft, liegt restart-in-progress.json neben der PID-Datei.  
+> disabled: Neustart im aufrufenden Prozess, wie bisher.  
 
 Standard: `enabled`.
 
@@ -74,8 +74,8 @@ DetachedRestart=enabled
 
 ## ExtraOptions
 
-> Extra options appended to the command line verbatim. The qbix engine only;  
-> the frankenphp engine has \[FrankenPHPSettings\] ExtraOptions\[\].  
+> Zusätzliche Optionen, die unverändert an die Befehlszeile angehängt werden. Nur die Engine qbix;  
+> die Engine frankenphp hat \[FrankenPHPSettings\] ExtraOptions\[\].  
 
 Standard: eine leere Liste.
 

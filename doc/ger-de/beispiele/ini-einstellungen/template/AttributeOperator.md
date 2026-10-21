@@ -11,12 +11,12 @@ generated: exp:help:examples
 
 Der Block `[AttributeOperator]` von `settings/template.ini`, mit 2 Einstellung(en).
 
-> To create custom tag list send the name of this list as the first parameter to  
-> simpletags, e.g simpletags( 'mytags' ), then create a list named TagList\_<yourname>  
-> where <yourname> is the name of the tag list  
-> Example:  
+> Um eine eigene Tag-Liste zu erstellen, übergeben Sie den Namen dieser Liste als ersten Parameter an  
+> simpletags, z. B. simpletags( 'mytags' ), und legen dann eine Liste namens TagList\_<yourname> an,  
+> wobei <yourname> der Name der Tag-Liste ist  
+> Beispiel:  
 > TagList\_mytags\[\]  
-> Configuration for the 'attribute' template operator  
+> Konfiguration des Template-Operators 'attribute'  
 
 Bearbeiten Sie `settings/template.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

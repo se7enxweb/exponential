@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Enabled
 
-> The server's own access and error log, one line per request and one per  
-> fault. LogFile above is only what the process prints to the console.  
+> Das eigene Zugriffs- und Fehlerlog des Servers, eine Zeile pro Anfrage und eine pro  
+> Fehler. LogFile oben ist nur das, was der Prozess auf der Konsole ausgibt.  
 >
-> On, because without it the server writes nothing at all: no access log,  
-> no error log, no record of a single request.  
+> An, weil der Server ohne es gar nichts schreibt: kein Zugriffslog,  
+> kein Fehlerlog, keine Aufzeichnung einer einzigen Anfrage.  
 
 Standard: `enabled`.
 
@@ -37,14 +37,14 @@ Enabled=enabled
 
 ## Dir
 
-> The qbix engine's log directory; relative paths resolve against the  
-> installation root. Everything Velocity writes for one server is kept  
-> together below var/vc/<engine>/: log/ (the frankenphp engine's is  
-> \[FrankenPHPSettings\] LogDir, the php engine's \[PHPServerSettings\] LogFile),  
-> run/ (pid file, console output, generated configuration, admin socket), and  
-> for qbix the configuration tree etc/ and lib/, for frankenphp bin/, tls/ and  
-> caddy/. Until 2026-09 this was var/log/qbix; an installation that sets Dir  
-> keeps its own.  
+> Das Log-Verzeichnis der Engine qbix; relative Pfade gelten ab dem  
+> Wurzelverzeichnis der Installation. Alles, was Velocity für einen Server schreibt, wird  
+> unter var/vc/<engine>/ zusammengehalten: log/ (das der Engine frankenphp ist  
+> \[FrankenPHPSettings\] LogDir, das der Engine php \[PHPServerSettings\] LogFile),  
+> run/ (PID-Datei, Konsolenausgabe, erzeugte Konfiguration, Admin-Socket) und  
+> für qbix der Konfigurationsbaum etc/ und lib/, für frankenphp bin/, tls/ und  
+> caddy/. Bis 2026-09 war dies var/log/qbix; eine Installation, die Dir setzt,  
+> behält ihr eigenes.  
 
 Standard: `var/vc/qbix/log`.
 
@@ -58,11 +58,11 @@ Dir=var/vc/qbix/log
 
 ## AccessName
 
-> The file names. Empty names them after the default siteaccess  
-> (\[SiteSettings\] DefaultAccess in site.ini): site-access.log and  
-> site-error.log for a siteaccess called "site", which keeps several  
-> installations apart in one directory. Rotation puts the date in front of  
-> the extension, so site-access.log becomes site-access.2026-09-24.log.  
+> Die Dateinamen. Leer benennt sie nach dem Standard-Siteaccess  
+> (\[SiteSettings\] DefaultAccess in site.ini): site-access.log und  
+> site-error.log für einen Siteaccess namens "site", was mehrere  
+> Installationen in einem Verzeichnis auseinanderhält. Die Rotation setzt das Datum vor  
+> die Endung, aus site-access.log wird also site-access.2026-09-24.log.  
 
 Standard: leer.
 
@@ -88,15 +88,15 @@ ErrorName=
 
 ## Format
 
-> The access line.  
+> Die Zugriffszeile.  
 >
->   combined   what Apache and nginx write, for tools that read those. The  
->              default here.  
->   qbix       combined, plus the time the response took. The server's own  
->              default.  
->   common     combined without referrer and user agent.  
+>   combined   was Apache und nginx schreiben, für Werkzeuge, die diese lesen. Hier der  
+>              Standard.  
+>   qbix       combined, plus die Zeit, die die Antwort brauchte. Der eigene  
+>              Standard des Servers.  
+>   common     combined ohne Referrer und User-Agent.  
 >
-> Anything else is taken as a format string, with %{Host}i and the like.  
+> Alles andere wird als Format-Zeichenkette genommen, mit %{Host}i und Ähnlichem.  
 
 Standard: `combined`.
 
@@ -110,9 +110,9 @@ Format=combined
 
 ## FileMode
 
-> Permissions of the log files, octal. Empty leaves them to the umask. An  
-> access log names the people who visited, so it is not for every account on  
-> the machine to read.  
+> Berechtigungen der Logdateien, oktal. Leer überlässt sie der Umask. Ein  
+> Zugriffslog nennt die Menschen, die die Website besucht haben, es ist also nicht für jedes Konto  
+> auf dem Rechner zum Lesen da.  
 
 Standard: `0640`.
 
@@ -126,13 +126,13 @@ FileMode=0640
 
 ## DirMode
 
-> Permissions of the log directory, octal, applied to one that already exists  
-> as well. Empty leaves it to the umask, which in practice is 0755 -- anyone  
-> could list the files, and 0640 on each of them hides only their contents.  
-> 0750 goes with 0640. For a group that shares the logs, 2770 with a FileMode  
-> of 0660: the setgid bit passes the group on to new files, it does not give  
-> the group write access. chmod needs ownership, so a directory another user  
-> created keeps its mode, and the server says so on start.  
+> Berechtigungen des Log-Verzeichnisses, oktal, auch auf ein schon vorhandenes angewendet.  
+> Leer überlässt es der Umask, was in der Praxis 0755 ist: Jeder  
+> könnte die Dateien auflisten, und 0640 auf jeder verbirgt nur ihren Inhalt.  
+> 0750 passt zu 0640. Für eine Gruppe, die die Logs teilt, 2770 mit einem FileMode  
+> von 0660: Das setgid-Bit gibt die Gruppe an neue Dateien weiter, es gibt  
+> der Gruppe keinen Schreibzugriff. chmod braucht den Besitz, ein Verzeichnis, das ein anderer Benutzer  
+> angelegt hat, behält also seinen Modus, und der Server sagt das beim Start.  
 
 Standard: `0750`.
 

@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/workflow.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## AvailableOperationList
 
-> List of available trigger operations.  
-> Other extra available operations  
-> Note that the code which is used to  
-> implement them may be changed if needed  
-> we will not apply BC rules for these ones  
+> Liste der verfügbaren Operationen für Auslöser.  
+> Weitere verfügbare Operationen  
+> Beachten Sie, dass der Code, der  
+> sie umsetzt, bei Bedarf geändert werden kann;  
+> für diese gelten keine Regeln zur Rückwärtskompatibilität  
 > AvailableOperationList\[\]=content\_sort  
 > AvailableOperationList\[\]=content\_move  
 > AvailableOperationList\[\]=content\_swap  

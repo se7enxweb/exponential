@@ -19,16 +19,16 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Token
 
-> Who may open the server's own views: /Q/dashboard, /Q/stats, /Q/metrics,  
-> the full /Q/health and /Q/phpinfo. By default only this machine.  
+> Wer die eigenen Ansichten des Servers öffnen darf: /Q/dashboard, /Q/stats, /Q/metrics,  
+> das volle /Q/health und /Q/phpinfo. Standardmäßig nur dieser Rechner.  
 >
-> Token      a secret; when set, it is required from anywhere (?token=...,  
->            "Authorization: Bearer ...") and opens them remotely. Generate  
->            one with: php -r 'echo bin2hex(random\_bytes(24));'  
-> Remote     enabled lets them be opened remotely WITHOUT a token -- only  
->            for a port that a firewall already restricts to trusted  
->            addresses. /Q/phpinfo stays local-only without a token, as it  
->            shows the server process's environment.  
+> Token      ein Geheimnis; wenn gesetzt, wird es von überall verlangt (?token=...,  
+>            "Authorization: Bearer ...") und öffnet sie aus der Ferne. Erzeugen Sie  
+>            eines mit: php -r 'echo bin2hex(random\_bytes(24));'  
+> Remote     enabled lässt sie OHNE Token aus der Ferne öffnen, nur  
+>            für einen Port, den eine Firewall bereits auf vertrauenswürdige  
+>            Adressen beschränkt. /Q/phpinfo bleibt ohne Token nur lokal, da es  
+>            die Umgebung des Serverprozesses zeigt.  
 
 Standard: leer.
 

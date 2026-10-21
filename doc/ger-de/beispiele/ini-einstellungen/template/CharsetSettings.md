@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/template.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## DefaultTemplateCharset
 
-> The charset to use if no charset is specified in the template  
+> Der Zeichensatz, der verwendet wird, wenn im Template keiner angegeben ist  
 
 Standard: `utf-8`.
 
@@ -33,9 +33,9 @@ DefaultTemplateCharset=utf-8
 
 ## DefaultTemplateLocale
 
-> The locale to use for character manipulations if no locale is specified in  
-> the template. (C is a special locale meaning 7-bit ASCII). Examples for this  
-> setting include "german", "de\_DE.ISO-8859-1"; depending on your operating  
+> Die Locale für Zeichenoperationen, wenn im Template keine angegeben ist.  
+> (C ist eine besondere Locale und bedeutet 7-Bit-ASCII). Beispiele für diese  
+> Einstellung sind "german", "de\_DE.ISO-8859-1"; abhängig von Ihrem Betriebs-  
 > system.  
 
 Standard: leer.
@@ -50,9 +50,9 @@ DefaultTemplateLocale=
 
 ## AutoConvertOnSave
 
-> The following setting will autoconvert the template to the HTTPCharset as set  
-> in i18n.ini:CharacterSettings:HTTPCharset when saving a template file from  
-> the admin interface, and add or adjust the template header when required.  
+> Die folgende Einstellung wandelt das Template beim Speichern einer Template-Datei aus  
+> der Administrationsoberfläche automatisch in den HTTPCharset aus  
+> i18n.ini:CharacterSettings:HTTPCharset um und fügt den Template-Kopf bei Bedarf hinzu oder passt ihn an.  
 
 Standard: `enabled`.
 

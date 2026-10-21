@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/template.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## EmailDotText
 
-> Replacements strings for the . and @ in an email  
-> Used to display emails in a way that SPAM engines  
-> cannot fetch automatically  
+> Ersatzzeichenketten für . und @ in einer E-Mail-Adresse  
+> Dient dazu, E-Mail-Adressen so anzuzeigen, dass SPAM-Programme  
+> sie nicht automatisch auslesen können  
 
 Standard: `.`.
 

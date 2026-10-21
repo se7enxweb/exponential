@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Default
 
-> The theme used without --theme=  
+> Das ohne --theme= verwendete Theme  
 
 Standard: `rainbow`.
 

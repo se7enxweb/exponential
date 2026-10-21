@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[DecimalPrefixes]` von `settings/units.ini`, mit 20 Einstellung(en).
 
-> Each entry is an array with the factor value and the symbol  
-> The factor used for calculating values in the power of 10  
+> Jeder Eintrag ist ein Array mit dem Faktor und dem Symbol  
+> Der Faktor für die Berechnung von Werten in Zehnerpotenzen  
 
 Bearbeiten Sie `settings/units.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

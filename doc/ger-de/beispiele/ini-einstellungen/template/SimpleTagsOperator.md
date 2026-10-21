@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[SimpleTagsOperator]` von `settings/template.ini`, mit 3 Einstellung(en).
 
-> Configuration for the 'simpletags' template operator  
+> Konfiguration des Template-Operators 'simpletags'  
 
 Bearbeiten Sie `settings/template.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,8 +21,8 @@ Bearbeiten Sie `settings/template.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Extensions
 
-> A list of extension which should be examined for  
-> extra includes  
+> Eine Liste der Erweiterungen, die auf zusätzliche  
+> Einbindungen untersucht werden  
 
 Standard: eine leere Liste.
 
@@ -37,10 +37,10 @@ Extensions[]
 
 ## IncludeList
 
-> A list of PHP files that should be included when the  
-> 'simpletags' operator is used.  
-> It will look in kernel/classes/simpletags or the simpletags  
-> subdirectory of an extension (must be defined in Extensions)  
+> Eine Liste von PHP-Dateien, die eingebunden werden, wenn der  
+> Operator 'simpletags' verwendet wird.  
+> Es wird in kernel/classes/simpletags oder im Unterverzeichnis simpletags  
+> einer Erweiterung gesucht (muss in Extensions definiert sein)  
 
 Standard: eine leere Liste.
 
@@ -55,9 +55,9 @@ IncludeList[]
 
 ## TagList
 
-> The default setting for everything that is considered normal text,  
-> ie. text not inside tags.  
-> Defines literal, strong and emphasize tags  
+> Die Standardeinstellung für alles, was als normaler Text gilt,  
+> d. h. Text außerhalb von Tags.  
+> Definiert die Tags literal, strong und emphasize  
 
 Standard: ein Hash mit 5: `text=;;htmlspecialchars,nl2br`, `literal=<pre>;</pre>;htmlspecialchars`, `code=<pre class="code">;</pre>;htmlspecialchars`, `strong=<b>;</b>;htmlspecialchars,nl2br`, `emphasize=<i>;</i>;htmlspecialchars,nl2br`.
 

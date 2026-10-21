@@ -12,16 +12,16 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/syscard.ini`: 16 Blöcke, 103 Einstellungen.
 
-> The system card of the console: ./console exp:expfetch, and its larger forms exp:info (an inventory) and exp:about  
-> (the project). The card is built from providers, one class per group of facts, drawn next to the Exponential "e"  
+> Die Systemkarte der Konsole: ./console exp:expfetch und ihre größeren Formen exp:info (ein Inventar) und exp:about  
+> (das Projekt). Die Karte wird aus Providern gebaut, eine Klasse pro Gruppe von Fakten, gezeichnet neben dem „e“ von Exponential  
 > (doc/eng-us/features/6.0/system-card.md).  
 >
-> Extensions add their own settings in extension/<ext>/settings/syscard.ini.append.php: a provider  
-> (ProviderClasses\[\]=myExtSysCardProvider), a theme (\[Theme-<name>\] and Themes\[\]=<name>), a logo directory  
-> (Directories\[\]=extension/<ext>/share/syscard/logos) or more settings for exp:info (Settings\[\]=...).  
+> Erweiterungen fügen ihre eigenen Einstellungen in extension/<ext>/settings/syscard.ini.append.php hinzu: einen Provider  
+> (ProviderClasses\[\]=myExtSysCardProvider), ein Theme (\[Theme-<name>\] und Themes\[\]=<name>), ein Logo-Verzeichnis  
+> (Directories\[\]=extension/<ext>/share/syscard/logos) oder weitere Einstellungen für exp:info (Settings\[\]=...).  
 >
-> The card never shows a password, a key, a token or a full database address: a fact named like one is dropped and  
-> a value that carries one is masked, whatever a provider returns.  
+> Die Karte zeigt nie ein Passwort, einen Schlüssel, ein Token oder eine vollständige Datenbankadresse: Ein so benannter Fakt entfällt, und  
+> ein Wert, der eines enthält, wird maskiert, egal was ein Provider zurückgibt.  
 
 | Block | Einstellungen |
 |---|---|

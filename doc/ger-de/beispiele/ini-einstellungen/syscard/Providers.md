@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## ProviderClasses
 
-> The providers, in the order their facts are shown. A provider says itself which cards it belongs to: the ones  
-> of exp:expfetch are on all three cards, the inventory ones only on exp:info, the project ones only on exp:about.  
+> Die Provider, in der Reihenfolge, in der ihre Fakten angezeigt werden. Ein Provider sagt selbst, zu welchen Karten er gehört: Die  
+> von exp:expfetch stehen auf allen drei Karten, die des Inventars nur auf exp:info, die des Projekts nur auf exp:about.  
 
 Standard: eine Liste mit 16: `expSysCardExponentialProvider`, `expSysCardHostProvider`, `expSysCardPhpProvider`, `expSysCardVelocityProvider`, `expSysCardWebServerProvider`, `expSysCardDatabaseProvider`, `expSysCardSiteProvider`, `expSysCardCacheProvider`, `expSysCardHelpProvider`, `expSysCardCronProvider`, `expSysCardComposerProvider`, `expSysCardExtensionsProvider` ....
 
@@ -51,7 +51,7 @@ ProviderClasses[]=expSysCardAboutProvider
 
 ## Enabled
 
-> Switch a provider off by its id (exponential, host, php, velocity, webserver, database, site, caches, help, cron,  
+> Einen Provider über seine ID abschalten (exponential, host, php, velocity, webserver, database, site, caches, help, cron,  
 > composer, extensions, siteaccess, settings, queue, about): Enabled\[velocity\]=disabled  
 
 Standard: eine leere Liste.
@@ -67,8 +67,8 @@ Enabled[]
 
 ## Priority
 
-> Change when a provider runs (the higher, the earlier; when the total budget is spent, the lowest are left out)  
-> and how many seconds it may take: Priority\[help\]=90, Budget\[database\]=5  
+> Ändern, wann ein Provider läuft (je höher, desto früher; ist das Gesamtbudget aufgebraucht, entfallen die niedrigsten),  
+> und wie viele Sekunden er brauchen darf: Priority\[help\]=90, Budget\[database\]=5  
 
 Standard: eine leere Liste.
 

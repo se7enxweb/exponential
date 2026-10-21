@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/textfile.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## TextFileEnabled
 
-> Set to true if use the textfile login handler  
+> Auf true setzen, wenn der Login-Handler textfile verwendet wird  
 
 Standard: `true`.
 
@@ -33,7 +33,7 @@ TextFileEnabled=true
 
 ## FileName
 
-> textFile name  
+> Name der Textdatei  
 
 Standard: leer.
 
@@ -47,10 +47,10 @@ FileName=
 
 ## FilePath
 
-> Where to find the text file,could be any directory under your Exponential  
-> root directory. If the FilePath is root, the file should be saved under  
-> Exponential root directory.  
-> Example: FilePath=var  
+> Wo die Textdatei liegt; kann jedes Verzeichnis unter dem Wurzelverzeichnis von Exponential  
+> sein. Ist FilePath die Wurzel, muss die Datei im  
+> Wurzelverzeichnis von Exponential gespeichert sein.  
+> Beispiel: FilePath=var  
 
 Standard: `root`.
 
@@ -64,8 +64,8 @@ FilePath=root
 
 ## FileFieldSeparator
 
-> Could be tab, ';', ',', '\\' or other string separator  
-> Example: FileFieldSeparator=;  
+> Kann ein Tabulator, ';', ',', '\\' oder ein anderes Trennzeichen sein  
+> Beispiel: FileFieldSeparator=;  
 
 Standard: `tab`.
 
@@ -93,8 +93,8 @@ DefaultUserGroupType=id
 
 ## DefaultUserGroup
 
-> Default place to store users from textfile. Could be object id or group name,  
-> depends on DefaultUserGroupType.  
+> Standardort für Benutzer aus der Textdatei. Kann die Objekt-ID oder der Gruppenname sein,  
+> je nach DefaultUserGroupType.  
 
 Standard: `11`.
 
@@ -108,7 +108,7 @@ DefaultUserGroup=11
 
 ## LoginAttribute
 
-> Field column nr for login.  
+> Spaltennummer des Feldes für das Login.  
 
 Standard: `1`.
 
@@ -122,7 +122,7 @@ LoginAttribute=1
 
 ## PasswordAttribute
 
-> Field column nr for password.  
+> Spaltennummer des Feldes für das Passwort.  
 
 Standard: `3`.
 
@@ -136,7 +136,7 @@ PasswordAttribute=3
 
 ## FirstNameAttribute
 
-> Field column nr for First name.  
+> Spaltennummer des Feldes für den Vornamen.  
 
 Standard: `4`.
 
@@ -150,7 +150,7 @@ FirstNameAttribute=4
 
 ## LastNameAttribute
 
-> Field column nr for Last name.  
+> Spaltennummer des Feldes für den Nachnamen.  
 
 Standard: `5`.
 
@@ -164,7 +164,7 @@ LastNameAttribute=5
 
 ## EmailAttribute
 
-> Field column nr for email  
+> Spaltennummer des Feldes für die E-Mail  
 
 Standard: `2`.
 

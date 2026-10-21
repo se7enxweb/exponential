@@ -19,32 +19,32 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Engine
 
-> The server start, stop and status drive when no --engine is given:  
+> Der Server, den start, stop und status steuern, wenn kein --engine angegeben ist:  
 >
->   php         PHP's own built-in web server (php -S), with the PHP that runs  
->               exp:velocity. For development: nothing to install and nothing  
->               it could lack, but no TLS and no reload. The shipped default,  
->               because it always works. See \[PHPServerSettings\].  
->   frankenphp  FrankenPHP, the Caddy web server with PHP built in, as one  
->               binary that \`exp:velocity install\` downloads. The  
->               production-ready alternative.  
->               See \[FrankenPHPSettings\].  
->   qbix        the bundled Qbix server (vendor/se7enxweb/exponential-velocity,  
->               formerly vendor/se7enxweb/qbix-webserver; either is found), a  
->               PHP process with persistent or per-request workers. The  
->               recommended engine for every stage -- development, alpha,  
->               beta, demo, stable and production -- and the fastest.  
+>   php         der eingebaute Webserver von PHP (php -S), mit dem PHP, das  
+>               exp:velocity ausführt. Für die Entwicklung: nichts zu installieren und nichts,  
+>               was fehlen könnte, aber kein TLS und kein Neuladen. Der ausgelieferte Standard,  
+>               weil er immer funktioniert. Siehe \[PHPServerSettings\].  
+>   frankenphp  FrankenPHP, der Webserver Caddy mit eingebautem PHP, als eine  
+>               Binärdatei, die \`exp:velocity install\` herunterlädt. Die  
+>               produktionsreife Alternative.  
+>               Siehe \[FrankenPHPSettings\].  
+>   qbix        der mitgelieferte Qbix-Server (vendor/se7enxweb/exponential-velocity,  
+>               früher vendor/se7enxweb/qbix-webserver; beide werden gefunden), ein  
+>               PHP-Prozess mit dauerhaften Workern oder Workern pro Anfrage. Die  
+>               empfohlene Engine für jede Stufe (Entwicklung, Alpha,  
+>               Beta, Demo, Stable und Produktion) und die schnellste.  
 >
-> Set qbix here for any site; frankenphp is the production-ready  
-> alternative. The verbs are the same for every  
-> engine, and --engine=<name> (or --all) reaches the others for one command.  
+> Setzen Sie hier qbix für jede Website; frankenphp ist die produktionsreife  
+> Alternative. Die Verben sind für jede  
+> Engine gleich, und --engine=<name> (oder --all) erreicht die anderen für einen Befehl.  
 >
-> The engines can run side by side, for tests: each has a port of its own  
-> (php 8087, qbix 8088 below, frankenphp 8089), a pid file and logs of its own.  
-> \[FrankenPHPSettings\] and \[PHPServerSettings\] may set Port, HTTPSPort, Host,  
-> Workers, SpareWorkers and DocumentRoot for their engine; left empty, the  
-> value here applies. Settings only one server has are reported by \`status\`  
-> when they are set for another. See doc/eng-us/bc/6.0/velocity-engines.md.  
+> Die Engines können zum Testen nebeneinander laufen: Jede hat einen eigenen Port  
+> (php 8087, qbix 8088 unten, frankenphp 8089), eine eigene PID-Datei und eigene Logs.  
+> \[FrankenPHPSettings\] und \[PHPServerSettings\] dürfen Port, HTTPSPort, Host,  
+> Workers, SpareWorkers und DocumentRoot für ihre Engine setzen; leer gelassen, gilt der  
+> Wert hier. Einstellungen, die nur ein Server hat, meldet \`status\`,  
+> wenn sie für einen anderen gesetzt sind. Siehe doc/eng-us/bc/6.0/velocity-engines.md.  
 
 Standard: `php`.
 
@@ -58,16 +58,16 @@ Engine=php
 
 ## ScriptPath
 
-> The Qbix server's script. Relative paths resolve against the installation  
-> root. The qbix engine only; Port, HTTPSPort, Host and Workers below are the  
-> qbix engine's, and the others' when their own blocks leave them empty.  
-> From Exponential Velocity 0.0.4.41 the engine keeps the server in  
-> sbin/qbixserver.php (its qbixctl and qbixconsole in sbin/ too, its shell in  
-> bin/), and qbixserver.php at the top of the package is a forwarder that runs  
-> it in the same process: the value below works with the engine before and  
-> after that release, and sbin/qbixserver.php may be named instead (the other  
-> path is used when the one named is not there). A server started by either  
-> path is this installation's for status, stop and restart.  
+> Das Skript des Qbix-Servers. Relative Pfade gelten ab dem Wurzelverzeichnis der  
+> Installation. Nur die Engine qbix; Port, HTTPSPort, Host und Workers unten sind die der  
+> Engine qbix und die der anderen, wenn deren eigene Blöcke sie leer lassen.  
+> Ab Exponential Velocity 0.0.4.41 hält die Engine den Server in  
+> sbin/qbixserver.php (ihr qbixctl und qbixconsole ebenfalls in sbin/, ihre Shell in  
+> bin/), und qbixserver.php oben im Paket ist eine Weiterleitung, die ihn  
+> im selben Prozess ausführt: Der Wert unten funktioniert mit der Engine vor und  
+> nach diesem Release, und sbin/qbixserver.php kann stattdessen genannt werden (der andere  
+> Pfad wird verwendet, wenn der genannte nicht da ist). Ein über einen der beiden Pfade gestarteter Server  
+> gehört für status, stop und restart zu dieser Installation.  
 
 Standard: `vendor/se7enxweb/exponential-velocity/qbixserver.php`.
 
@@ -81,8 +81,8 @@ ScriptPath=vendor/se7enxweb/exponential-velocity/qbixserver.php
 
 ## DocumentRoot
 
-> Document root handed to the server. Empty means the installation root,  
-> which is where index.php lives.  
+> An den Server übergebenes Dokumentenverzeichnis. Leer bedeutet das Wurzelverzeichnis der Installation,  
+> wo index.php liegt.  
 
 Standard: leer.
 
@@ -96,15 +96,15 @@ DocumentRoot=
 
 ## FollowSymlinks
 
-> Serve files that a symbolic link inside the document root leads to outside  
-> of it. disabled refuses them: the qbix engine answers 403, the php engine  
-> 404. A link placed in the document root -- by an upload, an installer or a  
-> shared asset tree -- would otherwise hand out whatever it points at.  
-> enabled is for installations that link on purpose, such as extensions  
-> linked in from a shared checkout or var/storage on another disk. A path  
-> that climbs out with ../ is refused either way, and neither engine ever  
-> serves a .php file as a file. The frankenphp engine always follows links  
-> (Caddy's file server has no switch for it).  
+> Dateien ausliefern, zu denen ein symbolischer Link im Dokumentenverzeichnis außerhalb davon  
+> führt. disabled lehnt sie ab: Die Engine qbix antwortet mit 403, die Engine php mit  
+> 404. Ein im Dokumentenverzeichnis abgelegter Link (durch einen Upload, einen Installer oder einen  
+> gemeinsamen Asset-Baum) würde sonst ausliefern, worauf er zeigt.  
+> enabled ist für Installationen, die absichtlich verlinken, etwa Erweiterungen,  
+> die aus einem gemeinsamen Checkout verlinkt sind, oder var/storage auf einer anderen Festplatte. Ein Pfad,  
+> der mit ../ hinausklettert, wird in beiden Fällen abgelehnt, und keine Engine liefert je  
+> eine .php-Datei als Datei aus. Die Engine frankenphp folgt Links immer  
+> (der Dateiserver von Caddy hat dafür keinen Schalter).  
 
 Standard: `disabled`.
 
@@ -118,9 +118,9 @@ FollowSymlinks=disabled
 
 ## Host
 
-> Bind address. 127.0.0.1 keeps the server reachable only through a tunnel or  
-> a reverse proxy, which is the right default: this server has no HTTP auth  
-> of its own and serves the whole document root.  
+> Bindeadresse. 127.0.0.1 hält den Server nur über einen Tunnel oder  
+> einen Reverse-Proxy erreichbar, was der richtige Standard ist: Dieser Server hat keine eigene HTTP-  
+> Authentifizierung und liefert das ganze Dokumentenverzeichnis aus.  
 
 Standard: `127.0.0.1`.
 
@@ -158,18 +158,18 @@ HTTPSPort=8080
 
 ## User
 
-> The user and group the workers run as when the server is started as root  
-> (the qbix engine; Apache's User and Group). The server process itself stays  
-> root -- it binds the ports and reads the certificate -- and every worker gives  
-> root up before it runs any of the application, so what the site writes  
-> (image variations, caches, sessions) belongs to the site's user, as it does  
-> under Apache and PHP-FPM, and not to root.  
+> Der Benutzer und die Gruppe, als die die Worker laufen, wenn der Server als root gestartet wird  
+> (die Engine qbix; User und Group von Apache). Der Serverprozess selbst bleibt  
+> root (er bindet die Ports und liest das Zertifikat), und jeder Worker gibt  
+> root ab, bevor er irgendetwas der Anwendung ausführt, sodass das, was die Website schreibt  
+> (Bildvarianten, Caches, Sitzungen), dem Benutzer der Website gehört, wie  
+> unter Apache und PHP-FPM, und nicht root.  
 >
-> Empty: VC\_RUN\_USER / VC\_RUN\_GROUP from the environment or /etc/vc/envvars,  
-> else the owner and group of the document root. When the document root  
-> itself belongs to root the workers stay root, with a warning. A user or  
-> group that does not exist stops the start. root is refused unless  
-> AllowRootWorkers=enabled. Names or numeric ids (#10009).  
+> Leer: VC\_RUN\_USER / VC\_RUN\_GROUP aus der Umgebung oder /etc/vc/envvars,  
+> sonst Eigentümer und Gruppe des Dokumentenverzeichnisses. Wenn das Dokumentenverzeichnis  
+> selbst root gehört, bleiben die Worker root, mit einer Warnung. Ein Benutzer oder  
+> eine Gruppe, die nicht existiert, hält den Start an. root wird abgelehnt, außer bei  
+> AllowRootWorkers=enabled. Namen oder numerische IDs (#10009).  
 
 Standard: leer.
 
@@ -207,9 +207,9 @@ AllowRootWorkers=disabled
 
 ## Workers
 
-> Explicit, always. Left to itself the server sizes the pool from the machine  
-> and can choose a number so large it accepts connections and answers none.  
-> With SpareWorkers set this is the most the pool grows to, not what it runs.  
+> Immer ausdrücklich. Sich selbst überlassen, bemisst der Server den Pool nach dem Rechner  
+> und kann eine Zahl wählen, die so groß ist, dass er Verbindungen annimmt und keine beantwortet.  
+> Mit gesetztem SpareWorkers ist dies das Höchste, auf das der Pool wächst, nicht das, was er ausführt.  
 
 Standard: `4`.
 
@@ -223,11 +223,11 @@ Workers=4
 
 ## SpareWorkers
 
-> Dynamic pool. Workers to keep running when quiet; more are forked when all  
-> of them are busy, up to Workers, and retired again after IdleWorkerTimeout  
-> seconds without a request. Each worker holds ~10 MB of real memory of its  
-> own from the moment it is forked, idle or not, so a large fixed pool pays  
-> for workers that never serve anything. 0 = fixed pool (all Workers, always).  
+> Dynamischer Pool. Worker, die im Ruhezustand laufen; mehr werden geforkt, wenn alle  
+> beschäftigt sind, bis zu Workers, und nach IdleWorkerTimeout  
+> Sekunden ohne Anfrage wieder stillgelegt. Jeder Worker hält ab dem Fork ~10 MB echten  
+> eigenen Speicher, untätig oder nicht, ein großer fester Pool bezahlt also  
+> für Worker, die nie etwas bedienen. 0 = fester Pool (alle Workers, immer).  
 
 Standard: `0`.
 
@@ -253,19 +253,19 @@ IdleWorkerTimeout=60
 
 ## Instances
 
-> How many servers to run on the same ports (the qbix engine only). A server  
-> answers cached pages in its own process, about 0.3 ms of CPU a page, so one  
-> server is bounded by one core: ~3,500 cached pages a second measured on a  
-> 12-core machine. With more than one, every instance listens on the same ports  
-> with SO\_REUSEPORT and the kernel spreads connections across them: two  
-> measured 6,600-6,900, four 12,200-13,100. Renders are not faster; they are  
-> bounded by the workers.  
+> Wie viele Server auf denselben Ports laufen (nur die Engine qbix). Ein Server  
+> beantwortet gecachte Seiten in seinem eigenen Prozess, etwa 0,3 ms CPU pro Seite, ein  
+> Server ist also durch einen Kern begrenzt: ~3.500 gecachte Seiten pro Sekunde, gemessen auf einem  
+> Rechner mit 12 Kernen. Bei mehr als einem lauscht jede Instanz mit  
+> SO\_REUSEPORT auf denselben Ports, und der Kernel verteilt die Verbindungen auf sie: zwei  
+> maßen 6.600-6.900, vier 12.200-13.100. Rendern wird nicht schneller; es ist  
+> durch die Worker begrenzt.  
 >
-> Each instance has its own worker pool: Workers and SpareWorkers above are  
-> per instance, so divide them by Instances to keep the same memory. Each has  
-> its own pid file and log beside PidFile and LogFile (server.pid,  
-> server.1.pid, ...). graceful reloads them one at a time, so the port keeps  
-> answering. Linux and the BSDs only.  
+> Jede Instanz hat ihren eigenen Worker-Pool: Workers und SpareWorkers oben gelten  
+> pro Instanz, teilen Sie sie also durch Instances, um denselben Speicher zu behalten. Jede hat  
+> ihre eigene PID-Datei und ihr eigenes Log neben PidFile und LogFile (server.pid,  
+> server.1.pid, ...). graceful lädt sie einzeln neu, sodass der Port weiter  
+> antwortet. Nur Linux und die BSDs.  
 
 Standard: `1`.
 
@@ -279,11 +279,11 @@ Instances=1
 
 ## Nice
 
-> The priority (nice value, -20 to 19) the server and its workers run at,  
-> whatever the caller of start, restart or deploy runs at: a deploy started  
-> under nice -n 19 used to leave every worker at 19. Lowering it below the  
-> caller's needs root. inherit keeps the caller's value (the old behavior).  
-> exp:velocity status reports a running parent at another value.  
+> Die Priorität (Nice-Wert, -20 bis 19), mit der der Server und seine Worker laufen,  
+> egal mit welchem Wert der Aufrufer von start, restart oder deploy läuft: Ein Deployment, das  
+> unter nice -n 19 gestartet wurde, ließ früher jeden Worker auf 19. Ihn unter den Wert  
+> des Aufrufers zu senken braucht root. inherit behält den Wert des Aufrufers (das alte Verhalten).  
+> exp:velocity status meldet einen laufenden Elternprozess mit einem anderen Wert.  
 
 Standard: `5`.
 
@@ -297,13 +297,13 @@ Nice=5
 
 ## StatTtl
 
-> How long a worker may keep what it knows about files -- whether a path  
-> exists, a file's mtime and size -- across requests, in seconds (at most 10),  
-> the way opcache.revalidate\_freq does for compiles. 0 forgets at the end of  
-> every request. Changes the worker makes itself, clearstatcache() and a  
-> program it runs (ImageMagick) are seen at once either way; only a change made  
-> by another process -- another worker, Apache on the same files, an editor --  
-> can take up to this long to show. 1 measured 13% less CPU per rendered page.  
+> Wie lange ein Worker behalten darf, was er über Dateien weiß (ob ein Pfad  
+> existiert, mtime und Größe einer Datei), über Anfragen hinweg, in Sekunden (höchstens 10),  
+> so wie opcache.revalidate\_freq es für Kompilierungen tut. 0 vergisst es am Ende  
+> jeder Anfrage. Änderungen, die der Worker selbst macht, clearstatcache() und ein  
+> Programm, das er ausführt (ImageMagick), werden in beiden Fällen sofort gesehen; nur eine Änderung  
+> eines anderen Prozesses (ein anderer Worker, Apache auf denselben Dateien, ein Editor)  
+> kann bis zu so lange brauchen, um sichtbar zu werden. 1 maß 13 % weniger CPU pro gerenderter Seite.  
 
 Standard: `0`.
 
@@ -317,14 +317,14 @@ StatTtl=0
 
 ## Zygote
 
-> Fork workers after the start from a zygote -- a process forked before the  
-> server accepted its first connection -- instead of from the server itself.  
-> A worker forked from the server inherits every open TLS connection and cannot  
-> close it (that would end it for the server too), so under load each one kept  
-> visitors' connections open until it retired: up to 50 in CLOSE-WAIT after a  
-> 20-second burst here. enabled, disabled, or empty for the engine's default  
-> (enabled). Needs PHP's sockets extension; if the zygote fails, workers are  
-> forked from the server as before.  
+> Worker nach dem Start aus einer Zygote forken (einem Prozess, der geforkt wurde, bevor der  
+> Server seine erste Verbindung angenommen hat) statt aus dem Server selbst.  
+> Ein aus dem Server geforkter Worker erbt jede offene TLS-Verbindung und kann sie nicht  
+> schließen (das würde sie auch für den Server beenden), daher hielt unter Last jeder  
+> die Verbindungen der Besucher offen, bis er stillgelegt wurde: bis zu 50 in CLOSE-WAIT nach einem  
+> 20-sekündigen Ansturm hier. enabled, disabled oder leer für den Standard der Engine  
+> (enabled). Braucht die PHP-Erweiterung sockets; scheitert die Zygote, werden die Worker  
+> wie bisher aus dem Server geforkt.  
 
 Standard: leer.
 
@@ -338,10 +338,10 @@ Zygote=
 
 ## Brand
 
-> Product name shown across the served /Q/ views: the dashboard  
-> heading and title, the docs chrome, the panel, the manifest. Empty  
-> keeps the server's own default ("Qbix Server"); an installation  
-> that names itself overrides this in settings/override/velocity.ini.  
+> Produktname in den ausgelieferten /Q/-Ansichten: Überschrift und Titel  
+> des Dashboards, der Rahmen der Doku, das Panel, das Manifest. Leer  
+> behält den eigenen Standard des Servers ("Qbix Server"); eine Installation,  
+> die sich selbst benennt, überschreibt dies in settings/override/velocity.ini.  
 
 Standard: leer.
 
@@ -355,8 +355,8 @@ Brand=
 
 ## BrandUrl
 
-> Where the brand name links (the product's home), and the maintainer  
-> credit. All optional; empty shows plain text with no link.  
+> Wohin der Markenname verlinkt (die Startseite des Produkts), und die Nennung des  
+> Maintainers. Alles optional; leer zeigt einfachen Text ohne Link.  
 
 Standard: leer.
 
@@ -394,15 +394,15 @@ MaintainerUrl=
 
 ## BrandMark
 
-> Icon and link preview of the /Q/ views (favicon, home-screen icons, web app  
-> manifest, the image a shared link shows). All optional.  
->   BrandMark        the letter on the drawn icon (default: the brand's first)  
->   BrandColor       the letter's colour, #rgb or #rrggbb  
->   BrandAccent      the colour of the speed streaks beside it  
->   BrandBackground  the icon tile and theme colour  
->   BrandIcon        an image file used instead of the drawn mark (.svg/.png/.ico)  
->   BrandOgImage     a 1200x630 PNG/JPEG used instead of the drawn preview  
->   BrandDescription one line for link previews and the manifest  
+> Symbol und Linkvorschau der /Q/-Ansichten (Favicon, Startbildschirm-Symbole, Web-App-  
+> Manifest, das Bild, das ein geteilter Link zeigt). Alles optional.  
+>   BrandMark        der Buchstabe auf dem gezeichneten Symbol (Standard: der erste der Marke)  
+>   BrandColor       die Farbe des Buchstabens, #rgb oder #rrggbb  
+>   BrandAccent      die Farbe der Geschwindigkeitsstreifen daneben  
+>   BrandBackground  die Kachel des Symbols und die Theme-Farbe  
+>   BrandIcon        eine Bilddatei statt des gezeichneten Zeichens (.svg/.png/.ico)  
+>   BrandOgImage     ein PNG/JPEG mit 1200x630 statt der gezeichneten Vorschau  
+>   BrandDescription eine Zeile für Linkvorschauen und das Manifest  
 
 Standard: leer.
 
@@ -488,58 +488,58 @@ BrandDescription=
 
 ## PreloadWarmup
 
-> Load the kernel and render a page in the parent before forking, so workers  
-> share it copy-on-write instead of each building it. 'enabled' or 'disabled'.  
+> Den Kernel laden und eine Seite im Elternprozess rendern, bevor geforkt wird, damit die Worker  
+> sie per Copy-on-Write teilen, statt sie jeweils aufzubauen. 'enabled' oder 'disabled'.  
 >
-> STATUS: left DISABLED. Do not enable on a site with real content without the  
-> regression pass below -- it has broken a different feature at each attempt.  
+> STATUS: DEAKTIVIERT gelassen. Aktivieren Sie es auf einer Website mit echten Inhalten nicht ohne den  
+> Regressionsdurchgang unten; es hat bei jedem Versuch eine andere Funktion beschädigt.  
 >
-> The warm-up shares the warmed arena (~21 MB/worker vs ~209) and, with the  
-> comprehensive static reset below, renders correct, styled pages with correct  
-> breadcrumbs. But that reset -- resetting every user-class static -- also broke  
-> the ezjscore AJAX endpoint (/ezjscore/call/...), so the "load more" buttons  
-> returned 502; skipping the ezjsc\* classes did not fix it, the fatal was in  
-> another reset. That is the fourth distinct feature the warm-up has broken  
-> (wrong pages, missing CSS, wrong breadcrumb, dead load-more), each surfacing  
-> only after the last was fixed. The render-in-parent approach couples too much  
-> of eZ's request-time static state to share safely by resetting it; a viable  
-> warm-up needs a different mechanism (e.g. snapshotting the pool BEFORE the  
-> render, an engine change) and a regression suite that exercises EVERY feature,  
-> AJAX included. Its memory saving is not the constraint that matters here --  
-> the throughput and event-loop ceilings arrive first -- so it is off.  
+> Das Vorwärmen teilt die vorgewärmte Arena (~21 MB/Worker gegenüber ~209) und rendert mit dem  
+> umfassenden Zurücksetzen der statischen Eigenschaften unten korrekte, gestaltete Seiten mit korrekten  
+> Brotkrumenpfaden. Aber dieses Zurücksetzen (jede statische Eigenschaft der Benutzerklassen) zerstörte  
+> auch den AJAX-Endpunkt von ezjscore (/ezjscore/call/...), sodass die Schaltflächen „Mehr laden“  
+> 502 zurückgaben; die Klassen ezjsc\* auszulassen half nicht, der fatale Fehler lag in  
+> einem anderen Zurücksetzen. Das ist die vierte verschiedene Funktion, die das Vorwärmen beschädigt hat  
+> (falsche Seiten, fehlendes CSS, falscher Brotkrumenpfad, totes „Mehr laden“), jede trat  
+> erst auf, nachdem die vorige behoben war. Der Ansatz, im Elternprozess zu rendern, koppelt zu viel  
+> vom statischen Anfragezustand von eZ, um ihn durch Zurücksetzen sicher zu teilen; ein brauchbares  
+> Vorwärmen braucht einen anderen Mechanismus (z. B. einen Schnappschuss des Pools VOR dem  
+> Rendern, eine Änderung der Engine) und eine Regressionssuite, die JEDE Funktion prüft,  
+> AJAX eingeschlossen. Die Speicherersparnis ist hier nicht die entscheidende Grenze,  
+> der Durchsatz und die Grenzen der Event-Schleife kommen zuerst, daher ist es aus.  
 >
-> The path here was long. Clearing request globals by name fixed three bugs  
-> (routing, the template override map, ezjscore's CSS "loaded" flag) but a  
-> fourth kept surfacing: the home page read a frozen current-node and showed the  
-> wrong breadcrumb. Naming leaks did not converge, so bin/php/velocity-warmup.php  
-> now does the opposite: after rendering it resets EVERY user-class static  
-> property to its declared default -- the state a freshly bootstrapped worker  
-> has -- and clears the request globals, keeping only the pure config and type  
-> registries (eZINI, eZDataType, eZWorkflowType, eZModule, eZExtension, eZLocale,  
-> eZCharsetInfo, eZTextCodec). Those are expensive to rebuild and hold no request  
-> state; resetting them too timed pages out and doubled memory. Everything else  
-> -- template engine, design resolver, content-class caches, the current node --  
-> is reset, which is what finally cleared the breadcrumb and any future leak of  
-> the same kind. The database is closed before the fork.  
+> Der Weg hierher war lang. Das Leeren der Anfrage-Globals nach Namen behob drei Fehler  
+> (Routing, die Zuordnung der Template-Overrides, das CSS-Flag „geladen“ von ezjscore), aber ein  
+> vierter tauchte immer wieder auf: Die Startseite las einen eingefrorenen aktuellen Knoten und zeigte den  
+> falschen Brotkrumenpfad. Lecks zu benennen konvergierte nicht, daher macht bin/php/velocity-warmup.php  
+> jetzt das Gegenteil: Nach dem Rendern setzt es JEDE statische Eigenschaft der Benutzerklassen  
+> auf ihren deklarierten Standard zurück (den Zustand, den ein frisch gestarteter Worker  
+> hat) und leert die Anfrage-Globals, wobei nur die reinen Konfigurations- und Typ-  
+> register behalten werden (eZINI, eZDataType, eZWorkflowType, eZModule, eZExtension, eZLocale,  
+> eZCharsetInfo, eZTextCodec). Diese sind teuer neu aufzubauen und enthalten keinen Anfrage-  
+> zustand; sie ebenfalls zurückzusetzen ließ Seiten in Zeitüberschreitungen laufen und verdoppelte den Speicher. Alles andere  
+> (Template-Engine, Design-Auflöser, Caches der Inhaltsklassen, der aktuelle Knoten)  
+> wird zurückgesetzt, was den Brotkrumenpfad und jedes künftige Leck derselben Art schließlich behob. Die  
+> Datenbank wird vor dem Fork geschlossen.  
 >
-> Verify after any change: several distinct urls return distinct content, each  
-> carries a resolving stylesheet, the home page has NO breadcrumb, and a deep  
-> page has its OWN correct breadcrumb. That last pair is the test that catches  
-> the current-node leak.  
+> Prüfen Sie nach jeder Änderung: mehrere verschiedene URLs liefern verschiedene Inhalte, jede  
+> trägt ein auflösbares Stylesheet, die Startseite hat KEINEN Brotkrumenpfad, und eine tiefe  
+> Seite hat ihren EIGENEN korrekten Brotkrumenpfad. Dieses letzte Paar ist der Test, der  
+> das Leck des aktuellen Knotens findet.  
 >
-> It renders a representative page in the parent so workers inherit the warmed  
-> Zend arena copy-on-write: measured ~17-24 MB private per warm worker with it,  
-> versus ~209 MB without. The parent's render leaves eZ request state behind,  
-> which the pool's snapshot would otherwise freeze as every worker's baseline,  
-> so bin/php/velocity-warmup.php clears it after rendering: the request-routing  
-> globals (or every url served the front page), the template override cache map  
-> (or other page types lost their CSS), and ezjscore's packer "already loaded"  
-> static (or packer-loaded stylesheets, e.g. the search page, were skipped).  
-> The database is closed before the fork, so no worker shares the connection.  
+> Es rendert eine repräsentative Seite im Elternprozess, damit die Worker die vorgewärmte  
+> Zend-Arena per Copy-on-Write erben: gemessen ~17-24 MB privat pro warmem Worker damit,  
+> gegenüber ~209 MB ohne. Das Rendern im Elternprozess hinterlässt Anfragezustand von eZ,  
+> den der Schnappschuss des Pools sonst als Grundlage jedes Workers einfrieren würde,  
+> daher leert bin/php/velocity-warmup.php ihn nach dem Rendern: die Globals des Anfrage-Routings  
+> (sonst lieferte jede URL die Startseite), die Zuordnung des Template-Override-Caches  
+> (sonst verloren andere Seitentypen ihr CSS) und die statische Eigenschaft „bereits geladen“ des Packers von ezjscore  
+> (sonst wurden vom Packer geladene Stylesheets, z. B. der Suchseite, übersprungen).  
+> Die Datenbank wird vor dem Fork geschlossen, sodass kein Worker die Verbindung teilt.  
 >
-> If you change what the warm-up renders or how it resets, re-verify BEFORE  
-> trusting it: several distinct urls must return distinct content AND each must  
-> carry a resolving stylesheet.  
+> Wenn Sie ändern, was das Vorwärmen rendert oder wie es zurücksetzt, prüfen Sie erneut, BEVOR  
+> Sie ihm vertrauen: Mehrere verschiedene URLs müssen verschiedene Inhalte liefern UND jede muss  
+> ein auflösbares Stylesheet tragen.  
 
 Standard: `disabled`.
 
@@ -553,40 +553,40 @@ PreloadWarmup=disabled
 
 ## ForkPerRequest
 
-> How long a worker lives.  
+> Wie lange ein Worker lebt.  
 >
->   enabled    one request per worker, then the parent forks a fresh one.  
->              Nothing a request leaves behind can reach the next, as under  
->              php-fpm, and KeepGlobals has nothing left to do. The default  
->              until 2026-09-30.  
->   disabled   persistent workers: each serves requests until it has served  
->              the server's maxRequests, with the request's state cleared in  
->              between. This is what KeepGlobals below exists for. The  
->              shipped default since 2026-09-30 (approved that day), for the  
->              reasons at the end of this comment.  
+>   enabled    eine Anfrage pro Worker, dann forkt der Elternprozess einen frischen.  
+>              Nichts, was eine Anfrage zurücklässt, kann die nächste erreichen, wie unter  
+>              php-fpm, und KeepGlobals hat nichts mehr zu tun. Der Standard  
+>              bis 2026-09-30.  
+>   disabled   dauerhafte Worker: Jeder bedient Anfragen, bis er die  
+>              maxRequests des Servers erreicht hat, wobei der Zustand der Anfrage  
+>              dazwischen geleert wird. Dafür gibt es KeepGlobals unten. Der  
+>              ausgelieferte Standard seit 2026-09-30 (an diesem Tag genehmigt), aus den  
+>              Gründen am Ende dieses Kommentars.  
 >
-> Measured on an installation of the demo site, rendered front page, sixteen  
-> workers, sixteen concurrent, the two modes alternated three times on the  
-> same server code: 23.6-23.9 req/s with a fresh worker per request against  
-> 17.5-19.8 with persistent ones, p99 0.97-1.10s against 1.35-1.49s. Clearing  
-> a used worker cost more than forking a new one.  
+> Gemessen auf einer Installation der Demo-Website, gerenderte Startseite, sechzehn  
+> Worker, sechzehn gleichzeitig, die beiden Modi dreimal abgewechselt mit demselben  
+> Servercode: 23,6-23,9 Anfragen/s mit einem frischen Worker pro Anfrage gegenüber  
+> 17,5-19,8 mit dauerhaften, p99 0,97-1,10 s gegenüber 1,35-1,49 s. Einen  
+> benutzten Worker zu leeren kostete mehr, als einen neuen zu forken.  
 >
-> Needs a server that can carry headers and run the request's shutdown  
-> functions in this mode -- qbix-webserver v0.0.4.25 or later. On older  
-> versions a sign-in is accepted and then forgotten: the response carries  
-> neither the session cookie nor the redirect.  
+> Braucht einen Server, der in diesem Modus Header übertragen und die Shutdown-  
+> Funktionen der Anfrage ausführen kann, qbix-webserver v0.0.4.25 oder später. Bei älteren  
+> Versionen wird eine Anmeldung angenommen und dann vergessen: Die Antwort trägt  
+> weder das Sitzungs-Cookie noch die Weiterleitung.  
 >
-> Set to disabled on 2026-09-30, for the time one request takes rather than  
-> how many sixteen concurrent ones get through. A fresh worker starts every  
-> request cold: a new database connection (40-70 ms on Oracle, where a  
-> persistent one is reused in 0.5 ms), empty stat and realpath caches, and  
-> nothing the kernel keeps per process. Signed-in admin pages took 256-284 ms  
-> against Apache's 60 ms; with persistent workers 73-80 ms, and a publish went  
-> from 2.0 s to 1.4 s. The state a request leaves is cleared after the response  
-> has gone out, so it costs the next request nothing on a quiet server.  
-> Persistent workers need the server to set REQUEST\_TIME\_FLOAT per request  
-> (the kernel keys per-request caches on it), which it does from the  
-> 2026-09-30 engine fix on (Velocity v0.0.4.42 or later).  
+> Am 2026-09-30 auf disabled gesetzt, wegen der Zeit, die eine Anfrage braucht, und nicht wegen  
+> der Zahl, die sechzehn gleichzeitige schaffen. Ein frischer Worker beginnt jede  
+> Anfrage kalt: eine neue Datenbankverbindung (40-70 ms bei Oracle, wo eine  
+> dauerhafte in 0,5 ms wiederverwendet wird), leere stat- und realpath-Caches und  
+> nichts, was der Kernel pro Prozess behält. Angemeldete Administrationsseiten brauchten 256-284 ms  
+> gegenüber 60 ms bei Apache; mit dauerhaften Workern 73-80 ms, und ein Veröffentlichen ging  
+> von 2,0 s auf 1,4 s. Der Zustand, den eine Anfrage hinterlässt, wird geleert, nachdem die Antwort  
+> hinausgegangen ist, er kostet die nächste Anfrage auf einem ruhigen Server also nichts.  
+> Dauerhafte Worker brauchen einen Server, der REQUEST\_TIME\_FLOAT pro Anfrage setzt  
+> (der Kernel unterscheidet seine Caches pro Anfrage danach), was er ab der  
+> Korrektur der Engine vom 2026-09-30 tut (Velocity v0.0.4.42 oder später).  
 
 Standard: `disabled`.
 
@@ -600,15 +600,15 @@ ForkPerRequest=disabled
 
 ## StreamTimeout
 
-> Streaming responses (Server-Sent Events). A response with Content-Type  
-> text/event-stream or X-Accel-Buffering: no is sent piece by piece, on every  
-> flush, from the persistent workers too (Velocity after v0.0.4.48; older  
-> engines send it whole at the end and ignore these settings).  
+> Streaming-Antworten (Server-Sent Events). Eine Antwort mit Content-Type  
+> text/event-stream oder X-Accel-Buffering: no wird Stück für Stück gesendet, bei jedem  
+> flush, auch von den dauerhaften Workern (Velocity ab v0.0.4.48; ältere  
+> Engines senden sie am Ende ganz und ignorieren diese Einstellungen).  
 >
-> StreamTimeout: seconds a stream, or a request with Accept: text/event-stream  
-> before its first byte, may run instead of the request timeout (30 s);  
-> then the stream ends cleanly and an EventSource reconnects. 0 = no limit.  
-> Empty = the engine's default, 300.  
+> StreamTimeout: Sekunden, die ein Stream oder eine Anfrage mit Accept: text/event-stream  
+> vor ihrem ersten Byte laufen darf, statt der Zeitgrenze der Anfrage (30 s);  
+> dann endet der Stream sauber, und eine EventSource verbindet sich neu. 0 = keine Grenze.  
+> Leer = der Standard der Engine, 300.  
 
 Standard: leer.
 
@@ -622,11 +622,11 @@ StreamTimeout=
 
 ## StreamShare
 
-> Each open stream holds one worker. StreamShare is the share of Workers that  
-> event streams may hold at once (engine default 0.25, at least one);  
-> MaxStreams the same as a number of workers, used instead when above 0. Past  
-> the cap an event stream is answered 503 with Retry-After, so pages always  
-> keep the rest of the pool. Empty = the engine's default.  
+> Jeder offene Stream hält einen Worker. StreamShare ist der Anteil von Workers, den  
+> Event-Streams gleichzeitig halten dürfen (Standard der Engine 0.25, mindestens einer);  
+> MaxStreams dasselbe als Zahl von Workern, stattdessen verwendet, wenn über 0. Über  
+> der Grenze wird ein Event-Stream mit 503 und Retry-After beantwortet, sodass Seiten immer  
+> den Rest des Pools behalten. Leer = der Standard der Engine.  
 
 Standard: leer.
 
@@ -652,9 +652,9 @@ MaxStreams=
 
 ## RetryWithin
 
-> Seconds after a request reached its worker within which a GET whose worker  
-> died without answering is run again, once (never an event stream, never a  
-> response that had started). Empty = the engine's default, 10.  
+> Sekunden, nachdem eine Anfrage ihren Worker erreicht hat, innerhalb derer ein GET, dessen Worker  
+> ohne Antwort gestorben ist, erneut ausgeführt wird, einmal (nie ein Event-Stream, nie eine  
+> Antwort, die schon begonnen hatte). Leer = der Standard der Engine, 10.  
 
 Standard: leer.
 
@@ -668,26 +668,26 @@ RetryWithin=
 
 ## EnginePhar
 
-> Run the engine from an archive instead of the files on disk.  
+> Die Engine aus einem Archiv statt aus den Dateien auf der Festplatte ausführen.  
 >
-> The bootstrap loads the engine out of dist/engine.phar only when the  
-> EXP\_ENGINE\_PHAR environment variable names an archive that exists. Nothing  
-> used to set it, so the archive could be built and inspected but never run --  
-> testing it meant exporting the variable by hand into whatever started the  
-> server, and Setup > System information could only ever say "Individual files  
-> on disk".  
+> Der Bootstrap lädt die Engine nur dann aus dist/engine.phar, wenn die  
+> Umgebungsvariable EXP\_ENGINE\_PHAR ein vorhandenes Archiv nennt. Nichts  
+> setzte sie früher, das Archiv ließ sich also bauen und untersuchen, aber nie ausführen;  
+> es zu testen hieß, die Variable von Hand in das zu exportieren, was den  
+> Server startete, und Setup > Systeminformationen konnte immer nur "Individual files  
+> on disk" sagen.  
 >
->   disabled   the files on disk. The default, and what a normal install wants.  
->   enabled    dist/engine.phar, wherever expPhar puts it.  
->   <path>     that archive, relative to the installation root or absolute.  
+>   disabled   die Dateien auf der Festplatte. Der Standard und das, was eine normale Installation will.  
+>   enabled    dist/engine.phar, wo immer expPhar es ablegt.  
+>   <path>     dieses Archiv, relativ zum Wurzelverzeichnis der Installation oder absolut.  
 >
-> Build or refresh the archive first with bin/php/phar.php build. A path that  
-> does not exist stops the server from starting rather than quietly falling  
-> back, because a silent fall back is indistinguishable from success.  
+> Bauen oder erneuern Sie das Archiv zuerst mit bin/php/phar.php build. Ein Pfad, der  
+> nicht existiert, hält den Server vom Start ab, statt still  
+> zurückzufallen, weil ein stilles Zurückfallen nicht von Erfolg zu unterscheiden ist.  
 >
-> Measured on this installation, an archive was within noise of the files on  
-> disk once the opcode cache was warm. It is worth having for distribution and  
-> for knowing the engine is exactly what was built, not for speed.  
+> Gemessen auf dieser Installation lag ein Archiv bei warmem Opcode-Cache im Rauschen  
+> der Dateien auf der Festplatte. Es lohnt sich für die Verteilung und  
+> um zu wissen, dass die Engine genau das ist, was gebaut wurde, nicht für die Geschwindigkeit.  
 
 Standard: `disabled`.
 
@@ -701,15 +701,15 @@ EnginePhar=disabled
 
 ## StaticMaxAge
 
-> How long a browser may keep a stylesheet, script or image without asking  
-> again, in seconds. 0 leaves the server's own default, which permits caching  
-> and then makes the client revalidate anyway -- so a page with 41 assets costs  
-> 41 conditional requests on every view.  
+> Wie lange ein Browser ein Stylesheet, Skript oder Bild behalten darf, ohne erneut  
+> zu fragen, in Sekunden. 0 belässt den eigenen Standard des Servers, der Caching erlaubt  
+> und den Client dann trotzdem neu prüfen lässt, sodass eine Seite mit 41 Assets  
+> bei jedem Aufruf 41 bedingte Anfragen kostet.  
 >
-> A year is what the other web server in front of this installation already  
-> sends for the same files. The trade is that a file replaced in place is not  
-> noticed until the lifetime expires; clear a browser's cache, or lower this,  
-> while working on a stylesheet.  
+> Ein Jahr ist das, was der andere Webserver vor dieser Installation für dieselben  
+> Dateien schon sendet. Der Preis ist, dass eine an Ort und Stelle ersetzte Datei nicht  
+> bemerkt wird, bis die Lebensdauer abläuft; leeren Sie den Cache eines Browsers oder senken Sie dies,  
+> während Sie an einem Stylesheet arbeiten.  
 
 Standard: `31536000`.
 
@@ -723,18 +723,18 @@ StaticMaxAge=31536000
 
 ## HTTP2
 
-> Speak HTTP/2 to clients that ask for it during the TLS handshake.  
+> Mit Clients, die beim TLS-Handshake danach fragen, HTTP/2 sprechen.  
 >
-> A page on this installation references 41 assets. Over HTTP/1.1 a browser  
-> fetches them about six at a time in waves; over HTTP/2 they share one  
-> connection. Measured here, asset delivery was 393-418ms against 85-104ms  
-> through a front end that spoke it, on identical bytes.  
+> Eine Seite dieser Installation verweist auf 41 Assets. Über HTTP/1.1 holt ein Browser  
+> sie in Wellen zu etwa sechs auf einmal; über HTTP/2 teilen sie sich eine  
+> Verbindung. Hier gemessen, dauerte die Auslieferung der Assets 393-418 ms gegenüber 85-104 ms  
+> über ein Frontend, das es sprach, bei identischen Bytes.  
 >
-> The protocol is agreed during the handshake and a client does not fall back  
-> afterwards, so a fault would be a page that never arrives rather than one  
-> that arrives slowly. That is why the server answers any stream still open  
-> with a readable page instead of closing silently, and why this is a switch  
-> rather than the default.  
+> Das Protokoll wird beim Handshake vereinbart, und ein Client fällt  
+> danach nicht zurück; ein Fehler wäre also eine Seite, die nie ankommt, statt einer,  
+> die langsam ankommt. Deshalb beantwortet der Server jeden noch offenen Stream  
+> mit einer lesbaren Seite, statt still zu schließen, und deshalb ist dies ein Schalter  
+> und nicht der Standard.  
 
 Standard: `enabled`.
 
@@ -748,10 +748,10 @@ HTTP2=enabled
 
 ## HTTP2ErrorImage
 
-> The picture on that page. Empty uses the one the server draws, which is  
-> inline and needs no second request -- the page appears exactly when the  
-> connection carrying it is unreliable. Point this at an svg, png or jpg to  
-> change it, or set the server's own errorPage.image to "none" for no picture.  
+> Das Bild auf dieser Seite. Leer verwendet das, das der Server zeichnet, das  
+> eingebettet ist und keine zweite Anfrage braucht: Die Seite erscheint genau dann, wenn die  
+> Verbindung, die sie trägt, unzuverlässig ist. Zeigen Sie auf ein svg, png oder jpg, um  
+> es zu ändern, oder setzen Sie errorPage.image des Servers auf "none" für kein Bild.  
 
 Standard: leer.
 
@@ -765,17 +765,17 @@ HTTP2ErrorImage=
 
 ## ResponseHeaders
 
-> Headers added to every answer the server builds itself: static files,  
-> resized images, its own error pages, redirects and 304 answers. The same  
-> four the Apache and nginx front ends of this installation send on every  
-> answer ("Header always set", "add\_header ... always"), which the server did  
-> not send on a static file at all. One "Name: value" per line. A header an  
-> answer already carries is never replaced or sent twice. An empty list  
-> (ResponseHeaders\[\] alone) adds none.  
+> Header, die jeder Antwort hinzugefügt werden, die der Server selbst baut: statische Dateien,  
+> skalierte Bilder, seine eigenen Fehlerseiten, Weiterleitungen und 304-Antworten. Dieselben  
+> vier, die die Frontends Apache und nginx dieser Installation bei jeder  
+> Antwort senden ("Header always set", "add\_header ... always"), was der Server bei einer  
+> statischen Datei gar nicht sendete. Ein "Name: value" pro Zeile. Ein Header, den eine  
+> Antwort schon trägt, wird nie ersetzt oder doppelt gesendet. Eine leere Liste  
+> (ResponseHeaders\[\] allein) fügt keine hinzu.  
 >
-> Framing headers (Content-Length, Content-Type, Connection, Date ...) cannot  
-> be set here, and Strict-Transport-Security has its own setting, HSTSMaxAge  
-> in \[HTTPSSettings\], because it must never go out over plain HTTP.  
+> Framing-Header (Content-Length, Content-Type, Connection, Date ...) lassen sich hier nicht  
+> setzen, und Strict-Transport-Security hat eine eigene Einstellung, HSTSMaxAge  
+> in \[HTTPSSettings\], weil es nie über einfaches HTTP hinausgehen darf.  
 
 Standard: eine Liste mit 4: `X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy: camera=(), microphone=(), payment=(), usb=()`.
 
@@ -794,11 +794,11 @@ ResponseHeaders[]=Permissions-Policy: camera=(), microphone=(), payment=(), usb=
 
 ## ResponseHeadersOnScripts
 
-> Also add them to what index.php, index\_rest.php and index\_treemenu.php  
-> answer, each one only when the script did not send that header itself: a  
-> page that sets its own X-Frame-Options keeps it. The kernel sends these four  
-> on its pages already; REST answers and the tree menu carry none of their  
-> own. enabled or disabled.  
+> Sie auch dem hinzufügen, was index.php, index\_rest.php und index\_treemenu.php  
+> antworten, jeden nur, wenn das Skript diesen Header nicht selbst gesendet hat: Eine  
+> Seite, die ihr eigenes X-Frame-Options setzt, behält es. Der Kernel sendet diese vier  
+> auf seinen Seiten schon; REST-Antworten und das Baummenü tragen keine  
+> eigenen. enabled oder disabled.  
 
 Standard: `enabled`.
 

@@ -12,15 +12,15 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/wordtoimage.ini`: 1 Blöcke, 3 Einstellungen.
 
-> Exponential configuration file for word to image conversions.  
+> Exponential-Konfigurationsdatei für die Umwandlung von Wörtern in Bilder.  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/wordtoimage.ini.append or  
->       settings/override/wordtoimage.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/wordtoimage.ini.append oder  
+>       settings/override/wordtoimage.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
 
 | Block | Einstellungen |
 |---|---|

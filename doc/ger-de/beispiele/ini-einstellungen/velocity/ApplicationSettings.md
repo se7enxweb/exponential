@@ -19,21 +19,21 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## KeepGlobals
 
-> Globals the application keeps between requests.  
+> Globals, die die Anwendung zwischen Anfragen behält.  
 >
-> A registry filled by a file the kernel reaches with include\_once cannot be  
-> refilled once cleared, because include\_once will not run that file again.  
-> Four registries in this kernel are built that way -- datatypes, workflow  
-> events, notification events and payment gateways -- and clearing one leaves  
-> a worker unable to resolve it for the rest of its life.  
+> Ein Register, das von einer Datei befüllt wird, die der Kernel mit include\_once erreicht, lässt sich  
+> nach dem Leeren nicht neu befüllen, weil include\_once diese Datei nicht erneut ausführt.  
+> Vier Register dieses Kernels werden so aufgebaut (Datentypen, Workflow-  
+> Ereignisse, Benachrichtigungsereignisse und Zahlungs-Gateways), und das Leeren eines davon lässt  
+> einen Worker für den Rest seines Lebens unfähig, es aufzulösen.  
 >
-> Those are facts about the kernel, so they are exp:velocity's built-in  
-> defaults (expVelocity::DEFAULT\_KEEP\_GLOBALS) and need no setting. This list  
-> ADDS to them, as does --keep-global=Name\[,Name\] on start, restart and  
-> command; each name is kept once. \`exp:velocity command\` shows the result.  
+> Das sind Tatsachen über den Kernel, sie sind also die eingebauten  
+> Standards von exp:velocity (expVelocity::DEFAULT\_KEEP\_GLOBALS) und brauchen keine Einstellung. Diese Liste  
+> ERGÄNZT sie, ebenso --keep-global=Name\[,Name\] bei start, restart und  
+> command; jeder Name wird einmal behalten. \`exp:velocity command\` zeigt das Ergebnis.  
 >
-> Nothing else belongs here. Request-scoped globals must be cleared, and  
-> keeping one leaks a request into the next.  
+> Sonst gehört nichts hierher. Globals mit Anfrage-Gültigkeit müssen geleert werden, und  
+> eines zu behalten lässt eine Anfrage in die nächste durchsickern.  
 
 Standard: eine leere Liste.
 
@@ -48,8 +48,8 @@ KeepGlobals[]
 
 ## KeepGlobalsDefaults
 
-> enabled (default) keeps the built-in list; disabled starts from nothing,  
-> for a kernel that does not build those registries.  
+> enabled (Standard) behält die eingebaute Liste; disabled beginnt bei nichts,  
+> für einen Kernel, der diese Register nicht aufbaut.  
 
 Standard: `enabled`.
 

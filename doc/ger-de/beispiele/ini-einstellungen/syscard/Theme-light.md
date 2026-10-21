@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[Theme-light]` von `settings/syscard.ini`, mit 18 Einstellung(en).
 
-> For a terminal with a light background: darker colors  
+> Für ein Terminal mit hellem Hintergrund: dunklere Farben  
 
 Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

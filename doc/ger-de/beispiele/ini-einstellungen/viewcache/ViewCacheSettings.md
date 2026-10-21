@@ -19,19 +19,19 @@ Bearbeiten Sie `settings/viewcache.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## ClearRelationTypes
 
-> Determines which types of related objects will be choosen to clear view cache  
-> when publishing current object.  
-> Possible values are:  
-> common                    - common relations made on object level  
-> embedded                  - embedded objects  
-> linked                    - linked objects  
-> attribute                 - relations made with attributes of 'object relation' or  
->                             'object relations' datatypes  
-> reverse\_common            - reverse common relations (objects that relate the one currently  
->                             being published) on object level  
-> reverse\_embedded          - objects that have current object as embedded  
-> reverse\_linked            - objects that have linked current object  
-> reverse\_attribute         - objects that have current object as related in their attributes.  
+> Legt fest, welche Arten verknüpfter Objekte gewählt werden, um beim Veröffentlichen des aktuellen Objekts  
+> den View-Cache zu leeren.  
+> Mögliche Werte sind:  
+> common                    - allgemeine Verknüpfungen auf Objektebene  
+> embedded                  - eingebettete Objekte  
+> linked                    - verlinkte Objekte  
+> attribute                 - Verknüpfungen über Attribute der Datentypen 'object relation' oder  
+>                             'object relations'  
+> reverse\_common            - umgekehrte allgemeine Verknüpfungen (Objekte, die mit dem gerade  
+>                             veröffentlichten verknüpft sind) auf Objektebene  
+> reverse\_embedded          - Objekte, die das aktuelle Objekt eingebettet haben  
+> reverse\_linked            - Objekte, die das aktuelle Objekt verlinkt haben  
+> reverse\_attribute         - Objekte, die das aktuelle Objekt in ihren Attributen als verknüpft haben.  
 
 Standard: eine Liste mit 3: `common`, `reverse_common`, `reverse_embedded`.
 
@@ -49,15 +49,15 @@ ClearRelationTypes[]=reverse_embedded
 
 ## SmartCacheClear
 
-> Controls the smart viewcache handler, use enabled, disabled or exclusive.  
-> When the handler is disabled the system will clear the viewcache  
-> for all published nodes of the current object, its parent(s), reverse  
-> related objects and objects with same keywords (if any).  
-> When enabled it will in addition try to follow the rules set in viewcache.ini  
-> for more advanced relations between objects. e.g. to clear a forum  
-> listing when a new topic or reply is posted.  
-> When exclusive, settings for specific classes are used exclusively  
-> (if defined), instead of in addition to the default settings.  
+> Steuert den intelligenten Handler des View-Caches; verwenden Sie enabled, disabled oder exclusive.  
+> Ist der Handler deaktiviert, leert das System den View-Cache  
+> aller veröffentlichten Knoten des aktuellen Objekts, seines Elternknotens (seiner Elternknoten), umgekehrt  
+> verknüpfter Objekte und Objekte mit denselben Schlüsselwörtern (falls vorhanden).  
+> Wenn aktiviert, versucht es zusätzlich, den in viewcache.ini gesetzten Regeln  
+> für komplexere Beziehungen zwischen Objekten zu folgen, z. B. um eine Forums-  
+> liste zu leeren, wenn ein neues Thema oder eine Antwort gepostet wird.  
+> Bei exclusive werden die Einstellungen für bestimmte Klassen ausschließlich verwendet  
+> (falls definiert), statt zusätzlich zu den Standardeinstellungen.  
 
 Standard: `disabled`.
 
@@ -71,10 +71,10 @@ SmartCacheClear=disabled
 
 ## KeywordNodesCacheClearLimit
 
-> The maximum number of linked keyword nodes to go trough  
-> when looking for objects that needs to have its cache cleared.  
-> Set to integer to activate, 0 to disable keyword clearing globally  
-> or disabled to not have any limit at all (default value)  
+> Die Höchstzahl verlinkter Schlüsselwort-Knoten, die durchgegangen werden,  
+> wenn nach Objekten gesucht wird, deren Cache geleert werden muss.  
+> Setzen Sie eine Ganzzahl zum Aktivieren, 0, um das Leeren nach Schlüsselwörtern global abzuschalten,  
+> oder disabled für gar keine Grenze (Standardwert)  
 
 Standard: `disabled`.
 

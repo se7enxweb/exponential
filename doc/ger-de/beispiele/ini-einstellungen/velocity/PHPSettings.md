@@ -19,61 +19,61 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## IniOptions
 
-> Interpreter settings for the server process, one per line, exactly as they  
-> would be written after -d.  
+> Interpreter-Einstellungen für den Serverprozess, eine pro Zeile, genau so, wie sie  
+> nach -d geschrieben würden.  
 >
-> The opcode cache is here because /etc/php.d/99-no-opcache-cli.ini disables it  
-> for every command-line PHP on this machine. That file is a system-wide  
-> decision affecting every site on the box and is deliberately left alone; this  
-> asks for the cache for this process only.  
+> Der Opcode-Cache steht hier, weil /etc/php.d/99-no-opcache-cli.ini ihn  
+> für jedes Kommandozeilen-PHP auf diesem Rechner abschaltet. Diese Datei ist eine systemweite  
+> Entscheidung, die jede Website auf dem Rechner betrifft, und bleibt bewusst unangetastet; dies  
+> verlangt den Cache nur für diesen Prozess.  
 >
-> Measured on a content page, four workers, requests round-robined between  
-> servers so that drift during the run hits all of them equally:  
+> Gemessen auf einer Inhaltsseite, vier Worker, Anfragen reihum zwischen den  
+> Servern verteilt, damit Schwankungen während des Laufs alle gleich treffen:  
 >
->   none (today)              526.6 ms    1.9 req/s     baseline  
+>   keiner (heute)            526.6 ms    1.9 req/s     Basis  
 >   opcache                   390.8 ms    2.6 req/s    +25.8%  
->   + no timestamp checks     390.0 ms    2.6 req/s    +25.9%  
+>   + keine Zeitstempelprüfung 390.0 ms   2.6 req/s    +25.9%  
 >   + interned strings 32M    387.4 ms    2.6 req/s    +26.4%  
 >   + tracing JIT             416.7 ms    2.4 req/s    +20.9%  
 >
-> So: the cache alone is the win. Timestamp checks cost nothing measurable and  
-> are worth keeping, because turning them off means an edited file is ignored  
-> until the service restarts. Tracing JIT is slower than no JIT on this  
-> workload and is deliberately absent.  
+> Also: Der Cache allein ist der Gewinn. Zeitstempelprüfungen kosten nichts Messbares und  
+> sind es wert, behalten zu werden, weil ihr Abschalten bedeutet, dass eine bearbeitete Datei ignoriert wird,  
+> bis der Dienst neu startet. Tracing JIT ist bei dieser Last langsamer als kein JIT  
+> und fehlt bewusst.  
 >
-> The timestamp checks only happen with revalidate\_freq=0. The cache compares  
-> timestamps once revalidate\_freq seconds of request time have passed, and a  
-> command-line process takes that time once, when it starts; every worker  
-> inherits it from the parent. With the default of 2 no worker ever looked  
-> again, so a PHP file the kernel rewrites under the same name -- expiry.php,  
-> the content language cache, compiled templates -- was served as it was when  
-> a worker first compiled it, until the service restarted. A cache clear from  
-> the command line then did nothing. With 0 the file is checked on every  
-> include, which costs nothing measurable here: the server takes a stat of each  
-> include anyway.  
-> Memory: 512 MB for scripts and 64 MB for interned strings. The help center's index files are 18-24 MB each  
-> per language, and with 256/32 the interned strings buffer was full after a few help requests (measured on  
-> alpha, 2026-10-20: 32.0 of 32.0 MB, 141.6 of 256 MB used three minutes after a restart). The memory is  
-> shared by every worker of an instance and reserved, not used, until it fills.  
-> file\_update\_protection=0 for the same reason: the cache does not keep a script  
-> changed less than file\_update\_protection seconds before the REQUEST's start,  
-> and a worker's request started when the worker did. Every file written after  
-> that -- the INI caches, the override caches, the compiled templates, all  
-> regenerated after a deploy or a cache clear -- counted as "too new" for the  
-> worker's whole life and was compiled again on every include: the cache served  
-> 2.7% of includes (PHP-FPM, a fresh request each time: 97%) and a rendered page  
-> took about four times the CPU of PHP-FPM. The protection is there so that a  
-> file still being written is not kept; the server already sees to that itself,  
-> against the time of each include: it reads an include whole (readWhole) and  
-> drops the cache's copy of a file changed in the last two seconds (RACY\_SECONDS).  
-> APCu for the server process. The command-line default is 32 MB, where the  
-> PHP-FPM pool beside it on this machine has 1,232 MB. Velocity keeps its  
-> response cache's memory tier in APCu, and the SQL query cache  
-> (querycache.ini Mode=shared) its results: in 32 MB the two evicted each  
-> other. Measured on the demonstration server (2026-09-27): with 32 MB the query cache held ~300  
-> results at a 51 % hit rate and a rendered front page cost 727 ms of CPU  
-> (13 pages a second); with 256 MB, 303 ms (29-31 pages a second). The  
-> memory is reserved, not used, until it fills.  
+> Die Zeitstempelprüfungen geschehen nur mit revalidate\_freq=0. Der Cache vergleicht  
+> Zeitstempel, sobald revalidate\_freq Sekunden Anfragezeit vergangen sind, und ein  
+> Kommandozeilenprozess nimmt diese Zeit einmal, beim Start; jeder Worker  
+> erbt sie vom Elternprozess. Mit dem Standard von 2 sah kein Worker je  
+> wieder nach, sodass eine PHP-Datei, die der Kernel unter demselben Namen neu schreibt (expiry.php,  
+> der Cache der Inhaltssprachen, kompilierte Templates), so ausgeliefert wurde, wie sie war, als  
+> ein Worker sie zuerst kompilierte, bis der Dienst neu startete. Ein Leeren des Caches von  
+> der Kommandozeile bewirkte dann nichts. Mit 0 wird die Datei bei jedem  
+> include geprüft, was hier nichts Messbares kostet: Der Server macht ohnehin ein stat jedes  
+> include.  
+> Speicher: 512 MB für Skripte und 64 MB für interned strings. Die Indexdateien des Hilfecenters sind je 18-24 MB  
+> pro Sprache, und mit 256/32 war der Puffer der interned strings nach einigen Hilfeanfragen voll (gemessen auf  
+> alpha, 2026-10-20: 32.0 von 32.0 MB, 141.6 von 256 MB belegt drei Minuten nach einem Neustart). Der Speicher wird  
+> von jedem Worker einer Instanz geteilt und reserviert, nicht belegt, bis er sich füllt.  
+> file\_update\_protection=0 aus demselben Grund: Der Cache behält kein Skript, das  
+> weniger als file\_update\_protection Sekunden vor dem Start der ANFRAGE geändert wurde,  
+> und die Anfrage eines Workers begann, als der Worker begann. Jede danach geschriebene Datei  
+> (die INI-Caches, die Override-Caches, die kompilierten Templates, alle  
+> nach einem Deployment oder einem Leeren des Caches neu erzeugt) galt für das ganze  
+> Leben des Workers als „zu neu“ und wurde bei jedem include neu kompiliert: Der Cache lieferte  
+> 2,7 % der includes (PHP-FPM, jedes Mal eine frische Anfrage: 97 %), und eine gerenderte Seite  
+> brauchte etwa das Vierfache der CPU von PHP-FPM. Der Schutz ist dazu da, dass eine  
+> Datei, die noch geschrieben wird, nicht behalten wird; dafür sorgt der Server schon selbst,  
+> gegen die Zeit jedes include: Er liest ein include ganz (readWhole) und  
+> verwirft die Kopie des Caches von einer Datei, die in den letzten zwei Sekunden geändert wurde (RACY\_SECONDS).  
+> APCu für den Serverprozess. Der Kommandozeilen-Standard ist 32 MB, wo der  
+> PHP-FPM-Pool daneben auf diesem Rechner 1.232 MB hat. Velocity hält die Speicherstufe  
+> seines Antwort-Caches in APCu und der SQL-Abfrage-Cache  
+> (querycache.ini Mode=shared) seine Ergebnisse: In 32 MB verdrängten sich die beiden  
+> gegenseitig. Gemessen auf dem Demonstrationsserver (2026-09-27): Mit 32 MB hielt der Abfrage-Cache ~300  
+> Ergebnisse bei 51 % Trefferquote, und eine gerenderte Startseite kostete 727 ms CPU  
+> (13 Seiten pro Sekunde); mit 256 MB 303 ms (29-31 Seiten pro Sekunde). Der  
+> Speicher wird reserviert, nicht belegt, bis er sich füllt.  
 
 Standard: eine Liste mit 7: `opcache.enable_cli=1`, `opcache.memory_consumption=512`, `opcache.max_accelerated_files=20000`, `opcache.interned_strings_buffer=64`, `opcache.revalidate_freq=0`, `opcache.file_update_protection=0`, `apc.shm_size=256M`.
 

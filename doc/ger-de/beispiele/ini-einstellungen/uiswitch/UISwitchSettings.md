@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/uiswitch.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Enabled
 
-> true | false. Off: no choice is offered or applied anywhere.  
+> true | false. Aus: Nirgends wird eine Wahl angeboten oder angewendet.  
 
 Standard: `true`.
 
@@ -33,9 +33,9 @@ Enabled=true
 
 ## SiteAccessList
 
-> The siteaccesses where the choices work. Empty: every siteaccess whose design list has an  
-> administration design (admin, admin2, admin3, admin4, admin4l, adminui; the editor and adminui  
-> siteaccesses fall back to them). Never a public site.  
+> Die Siteaccesses, in denen die Auswahlen wirken. Leer: jeder Siteaccess, dessen Design-Liste ein  
+> Administrations-Design enthält (admin, admin2, admin3, admin4, admin4l, adminui; die Siteaccesses editor und adminui  
+> fallen auf sie zurück). Nie eine öffentliche Website.  
 
 Standard: eine leere Liste.
 
@@ -50,8 +50,8 @@ SiteAccessList[]
 
 ## ProviderList
 
-> The providers, in toolbar order. Each needs a \[UISwitch\_<identifier>\] group with Class=, and gets  
-> the policy function uiswitch/<identifier>.  
+> Die Provider, in der Reihenfolge der Werkzeugleiste. Jeder braucht eine Gruppe \[UISwitch\_<identifier>\] mit Class= und erhält  
+> die Richtlinienfunktion uiswitch/<identifier>.  
 
 Standard: eine Liste mit 2: `language`, `design`.
 

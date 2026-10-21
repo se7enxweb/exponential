@@ -19,20 +19,20 @@ Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## Interval
 
-> exp:velocity watchdog: a safety net that starts the default engine again  
-> when it is down and nobody meant it to be (a restart whose caller was killed  
-> between the stop and the start, a crash, an out-of-memory kill). Off until  
-> \`exp:velocity watchdog install\` (root, systemd) writes <UnitName>.service  
-> and .timer and conf-available/<name>.conf in the configuration tree, enables  
-> that file (conf-enabled) and starts the timer. Values in the enabled file win  
-> over these. \`exp:velocity conf disable watchdog\` pauses it; \`watchdog remove\`  
-> takes it out; \`watchdog status\` and var/log/velocity-watchdog.log say what it  
-> did. It starts the engine only when no process of it runs, nobody stopped it  
-> (exp:velocity stop/kill leave stopped.json beside the pid file) and no  
-> restart is under way (restart-in-progress.json); it never touches a server  
-> that runs, whether it answers or not.  
+> exp:velocity watchdog: ein Sicherheitsnetz, das die Standard-Engine erneut startet,  
+> wenn sie unten ist und niemand das wollte (ein Neustart, dessen Aufrufer  
+> zwischen Stopp und Start beendet wurde, ein Absturz, ein Beenden wegen Speichermangels). Aus, bis  
+> \`exp:velocity watchdog install\` (root, systemd) <UnitName>.service  
+> und .timer und conf-available/<name>.conf im Konfigurationsbaum schreibt,  
+> diese Datei aktiviert (conf-enabled) und den Timer startet. Werte in der aktivierten Datei gewinnen  
+> gegen diese. \`exp:velocity conf disable watchdog\` pausiert ihn; \`watchdog remove\`  
+> nimmt ihn heraus; \`watchdog status\` und var/log/velocity-watchdog.log sagen, was er  
+> getan hat. Er startet die Engine nur, wenn kein Prozess von ihr läuft, niemand sie angehalten hat  
+> (exp:velocity stop/kill hinterlassen stopped.json neben der PID-Datei) und kein  
+> Neustart im Gange ist (restart-in-progress.json); einen laufenden Server fasst er nie an,  
+> ob er antwortet oder nicht.  
 >
-> Seconds between checks (15 to 3600).  
+> Sekunden zwischen den Prüfungen (15 bis 3600).  
 
 Standard: `45`.
 
@@ -46,9 +46,9 @@ Interval=45
 
 ## RestartTimeout
 
-> Seconds a restart may take before its marker no longer holds the watchdog  
-> back (a marker whose process is gone never does). Also how long a held  
-> LockFile may keep a server that is down from being started.  
+> Sekunden, die ein Neustart dauern darf, bevor seine Markierung den Watchdog nicht mehr  
+> zurückhält (eine Markierung, deren Prozess nicht mehr da ist, tut das nie). Auch, wie lange eine gehaltene  
+> LockFile einen Server, der unten ist, vom Start abhalten darf.  
 
 Standard: `300`.
 
@@ -62,7 +62,7 @@ RestartTimeout=300
 
 ## Backoff
 
-> After three starts in a row that failed, seconds to wait before the next.  
+> Nach drei gescheiterten Starts in Folge Sekunden Wartezeit vor dem nächsten.  
 
 Standard: `600`.
 
@@ -76,8 +76,8 @@ Backoff=600
 
 ## LockFile
 
-> A lock file (flock) that, while held, means "something is deploying, wait":  
-> a deploy queue of the installation. Empty: none.  
+> Eine Sperrdatei (flock), die, solange sie gehalten wird, „es wird gerade ausgerollt, warten“ bedeutet:  
+> eine Deployment-Warteschlange der Installation. Leer: keine.  
 
 Standard: leer.
 
@@ -91,7 +91,7 @@ LockFile=
 
 ## UnitName
 
-> The systemd unit's name; give each installation on a host its own.  
+> Der Name der systemd-Unit; geben Sie jeder Installation auf einem Host ihren eigenen.  
 
 Standard: `vc-watchdog`.
 
@@ -105,7 +105,7 @@ UnitName=vc-watchdog
 
 ## UnitDir
 
-> Where the unit files are written.  
+> Wohin die Unit-Dateien geschrieben werden.  
 
 Standard: `/etc/systemd/system`.
 

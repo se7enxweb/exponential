@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/syscard.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Titles
 
-> Titles of the sections, by id: Titles\[engine\]=Engine  
+> Titel der Abschnitte, nach ID: Titles\[engine\]=Engine  
 
 Standard: eine leere Liste.
 
