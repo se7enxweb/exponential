@@ -31,7 +31,7 @@ StartPage=help/customers/customers-start-here.md
 
 ## Related
 
-Default: a list of 5: `editor`, `admin`, `businesses`, `hosting`, `partner`.
+Default: a list of 10: `editor`, `admin`, `businesses`, `hosting`, `partner`, `adopter`, `ecommerce`, `local-business`, `individual`, `non-technical`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -44,6 +44,11 @@ Related[]=admin
 Related[]=businesses
 Related[]=hosting
 Related[]=partner
+Related[]=adopter
+Related[]=ecommerce
+Related[]=local-business
+Related[]=individual
+Related[]=non-technical
 */ ?>
 ```
 
