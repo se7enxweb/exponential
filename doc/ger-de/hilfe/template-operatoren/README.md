@@ -11,7 +11,7 @@ type: help
 
 Ein Operator nimmt einen Wert entgegen und gibt einen zurück: `{$node.name|wash}`, `{sum( 2, 3 )}`, `{fetch( 'content', 'node', hash( 'node_id', 89 ) )}`.
 Operatoren stammen aus der Template-Bibliothek (`lib/eztemplate/`), dem Kernel (`kernel/common/` und verwandten Verzeichnissen) und den
-aktiven Erweiterungen; auf alpha registriert die Engine 400 davon. Dieser Abschnitt umfasst 47 Seiten:
+aktiven Erweiterungen; auf alpha registriert die Engine 401 davon. Dieser Abschnitt umfasst 47 Seiten:
 
 - das [Operatorenverzeichnis](operatorenverzeichnis.md) von A bis Z, das zum Abschnitt jedes Operators führt;
 - eine Seite je Operatorfamilie, mit den Parametern, der Eingabe, dem Rückgabewert und mindestens einem Beispiel jedes Operators,
@@ -26,7 +26,7 @@ Operator mit seiner Parameterliste aus dem Code und seiner ersten Verwendung in 
 
 ## Verzeichnisse
 
-- [Operatorenverzeichnis](operatorenverzeichnis.md): Alle 400 Template-Operatoren, die in den Siteaccesses site und admin von alpha registriert sind, von A bis Z, jeweils mit der Familienseite, die seine Parameter, seinen Rückgabewert und seine Beispiele dokumentiert, der Klasse, die ihn bedient, und der Herkunft dieser Klasse.
+- [Operatorenverzeichnis](operatorenverzeichnis.md): Alle 401 Template-Operatoren, die in den Siteaccesses site und admin von alpha registriert sind, von A bis Z, jeweils mit der Familienseite, die seine Parameter, seinen Rückgabewert und seine Beispiele dokumentiert, der Klasse, die ihn bedient, und der Herkunft dieser Klasse.
 
 ## Operatoren der Template-Bibliothek
 
@@ -59,7 +59,7 @@ Operator mit seiner Parameterliste aus dem Code und seiner ersten Verwendung in 
 - [Text-Hilfsoperatoren des Kernels](text-hilfsoperatoren-des-kernels.md): Fünf kleine Kernel-Operatoren - alphabet, autolink, simpletags, eztoc und month_overview - mit ihren Parametern, den Einstellungen, die sie lesen, was sie maskieren und was nicht, und auf alpha gerenderten Beispielen.
 - [Präferenz-, Modul-, Paket- und PDF-Operatoren](weitere-kernel-operatoren.md): Die Kernel-Operatoren ezpreference, ezmodule, module_params und ezpackage und der Bibliotheksoperator pdf - was jeder liest, seine Parameter, was er zurückgibt, welche davon Nebenwirkungen haben - mit auf alpha gerenderten Beispielen.
 - [Siteaccess-Operatoren](siteaccess-operatoren.md): Die Kernel-Operatoren, die die Siteaccesses einer Installation kennen - siteaccess_url, siteaccess_menu, siteaccess_menu_key und language_switcher - mit ihren Parametern, den Einstellungen dahinter, ihrer Rückgabe, ihrer Kompilierung und Beispielen, die auf alpha mit drei verschiedenen Siteaccesses gerendert wurden.
-- [Installations-, Umgebungs-, Audit- und CSP-Operatoren](operatoren-des-exponential-kernels.md): Sechs Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label und csp_nonce - mit den Einstellungen, die sie lesen, ihrer Rückgabe, der Cache-Regel für csp_nonce und auf alpha gerenderten Beispielen.
+- [Installations-, Umgebungs-, Audit- und CSP-Operatoren](operatoren-des-exponential-kernels.md): Sieben Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce und view_parameter - mit den Einstellungen, die sie lesen, ihrer Rückgabe, der Cache-Regel für csp_nonce und auf alpha gerenderten Beispielen.
 
 ## Operatoren von Erweiterungen
 

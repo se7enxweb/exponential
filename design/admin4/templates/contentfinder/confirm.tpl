@@ -72,7 +72,7 @@
 </form>
 {/if}
 
-<p><a href={concat( 'contentfinder/search/(type)/object/(text)/', $plan.object_id )|ezurl}>{'Back to the finder'|i18n( 'kernel/contentfinder' )}</a></p>
+<p><a href={concat( 'contentfinder/search/(type)/object/(text)/', $plan.object_id|view_parameter )|ezurl}>{'Back to the finder'|i18n( 'kernel/contentfinder' )}</a></p>
 
 {* DESIGN: Content END *}</div></div></div>
 </div>

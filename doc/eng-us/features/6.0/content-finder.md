@@ -124,9 +124,11 @@ for one path or prefix; the page says when there were more.
 
 ## The address of a search
 
-A search is an address with view parameters, `contentfinder/search/(type)/object/(text)/58`: `(text)` is the text
-(plain when it is made of letters, digits, spaces and `. _ : @ , + = -`, else `~` and its base64url, as for a path or a
-URL) and `(type)` the type (none for *auto*). The form is sent with POST and answered with a 303 to that address; a
+A search is an address with view parameters, `contentfinder/search/(type)/object/(text)/58`: `(text)` is the text,
+written as every view parameter is (`/` as `~2F`, `(` and `)` as `~28` and `~29`, the rest readable:
+`(text)/example.com~2Fnews`, see
+[how a value travels](../../guides/urls-and-aliases.md#9-view-parameters-how-a-value-travels-in-an-address); a link of
+before, `~` and a base64url, is still read) and `(type)` the type (none for *auto*). The form is sent with POST and answered with a 303 to that address; a
 query string such as `?SearchText=` is not read.
 
 ## Who may use it

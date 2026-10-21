@@ -7,6 +7,16 @@
  * them into an address, and answers a filter form sent with POST (the form without scripts) with a 303 to the
  * canonical /(name)/value address of what was asked for. A ?name= in the address is never read.
  *
+ * A value travels in ONE reversible encoding (encode(), decode()): the characters the address cannot carry as they
+ * are - "/" (Apache refuses %2F, and the kernel decodes the whole path before it splits it), "(" and ")" (a segment
+ * "(name)" starts a view parameter), "~" (the escape itself), "%" and "+" (the kernel decodes the address twice), "\",
+ * "?", "#" and control characters - are written "~" and two hexadecimal digits, "~2F" for "/"; a value that is only
+ * "." or ".." is written "~2E" or "~2E~2E" (a browser would resolve it). Everything else stays readable: letters,
+ * digits, spaces and other text are percent-encoded as usual (and shown as text by a browser). get() and text()
+ * return the decoded value; the templates write a value with the operator view_parameter, the admin scripts with
+ * window.a4ViewParameter.encode() (a4_url.js). The "~XX" form is the one the log viewer (expLogPermalink) and
+ * visual/templatelist wrote before, so their links keep working.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
@@ -17,16 +27,22 @@ class expViewParameters
     /** The longest text a view parameter carries (a search) */
     const MAX_TEXT = 200;
 
+    /** The characters encode() writes as "~XX": the escape itself, those the address or the kernel would change */
+    const ESCAPED = '/[~\/()%+\\\\?#\x00-\x1F\x7F]/';
+
+    /** Percent-encoded characters encode() writes back as they are: safe in a path segment and readable */
+    const READABLE = array( '%2C' => ',', '%3A' => ':', '%40' => '@', '%3D' => '=', '%21' => '!', '%2A' => '*' );
+
     /**
-     * One view parameter of a request: the declared variable of module.php's unordered_params when the view
-     * declares it, else the user parameter of that name.
+     * One view parameter of a request as the address carries it (not decoded, see get()): the declared variable of
+     * module.php's unordered_params when the view declares it, else the user parameter of that name.
      *
      * @param array $params the view's $Params
      * @param string $name the parameter as it is written in the address, e.g. 'q' for /(q)/...
      * @param string|false $variable the unordered_params variable, e.g. 'Query'; false: only the user parameter
      * @return string|false false when the request does not give it
      */
-    public static function get( array $params, $name, $variable = false )
+    public static function raw( array $params, $name, $variable = false )
     {
         if ( $variable !== false && isset( $params[$variable] ) && is_scalar( $params[$variable] ) && $params[$variable] !== false )
             return (string)$params[$variable];
@@ -35,7 +51,21 @@ class expViewParameters
     }
 
     /**
-     * A text option (a search) off the request: get() trimmed and made fit for an address (text()).
+     * One view parameter of a request, decoded (decode()): raw() as the value that was encoded.
+     *
+     * @param array $params the view's $Params
+     * @param string $name
+     * @param string|false $variable
+     * @return string|false false when the request does not give it
+     */
+    public static function get( array $params, $name, $variable = false )
+    {
+        $value = self::raw( $params, $name, $variable );
+        return $value === false ? false : self::decode( $value );
+    }
+
+    /**
+     * A text option (a search) off the request: get() (decoded) and cleaned (clean()).
      *
      * @param array $params
      * @param string $name
@@ -49,8 +79,8 @@ class expViewParameters
     }
 
     /**
-     * A text as it can travel as a view parameter: "/", "(", ")" and control characters as spaces, white space
-     * collapsed and trimmed, at most MAX_TEXT characters.
+     * A text option made tidy: control characters as spaces, white space collapsed and trimmed, at most MAX_TEXT
+     * characters. "/", "(", ")" and the rest stay: encode() writes them so that they survive the address.
      *
      * @param mixed $value
      * @param int $max
@@ -60,14 +90,14 @@ class expViewParameters
     {
         if ( !is_scalar( $value ) )
             return '';
-        $value = preg_replace( '/[\/()\x00-\x1F\x7F]+/u', ' ', (string)$value );
+        $value = preg_replace( '/[\x00-\x1F\x7F]+/u', ' ', (string)$value );
         $value = trim( preg_replace( '/\s+/u', ' ', (string)$value ) );
         return function_exists( 'mb_substr' ) ? mb_substr( $value, 0, $max, 'UTF-8' ) : substr( $value, 0, $max );
     }
 
     /**
      * The address part of a set of options: "/(name)/value" for each one that is not '' (or false or null), in the
-     * order given. Values are cleaned (clean()) and encoded.
+     * order given. Values are cleaned (clean()) and encoded (encode()).
      *
      * @param array $options name => value
      * @return string '' when there is none
@@ -84,9 +114,56 @@ class expViewParameters
             $value = self::clean( $value );
             if ( $value === '' )
                 continue;
-            $suffix .= '/(' . $name . ')/' . rawurlencode( $value );
+            $suffix .= '/(' . $name . ')/' . self::encode( $value );
         }
         return $suffix;
+    }
+
+    /**
+     * A value as the kernel hands it to a view after it decoded the address (what raw() returns): every character
+     * of ESCAPED as "~" and its two hexadecimal digits, and a value of only "." or ".." as "~2E" each.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    public static function escape( $value )
+    {
+        if ( !is_scalar( $value ) )
+            return '';
+        $value = (string)$value;
+        if ( $value === '.' || $value === '..' )
+            return str_repeat( '~2E', strlen( $value ) );
+        return preg_replace_callback( self::ESCAPED, function ( $m ) {
+            return '~' . strtoupper( bin2hex( $m[0] ) );
+        }, $value );
+    }
+
+    /**
+     * A value as one segment of an address (/(name)/<value>): escape(), then percent-encoded, with , : @ = ! * kept
+     * readable. Reversible: the kernel's decoding (once or twice) gives escape()'s string, decode() the value.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    public static function encode( $value )
+    {
+        return strtr( rawurlencode( self::escape( $value ) ), self::READABLE );
+    }
+
+    /**
+     * A value as it was before encode(): every "~" and two hexadecimal digits (either case) as that byte; a "~"
+     * without them stays.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    public static function decode( $value )
+    {
+        if ( !is_scalar( $value ) )
+            return '';
+        return preg_replace_callback( '/~([0-9A-Fa-f]{2})/', function ( $m ) {
+            return chr( (int)hexdec( $m[1] ) );
+        }, (string)$value );
     }
 
     /**

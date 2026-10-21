@@ -3,8 +3,8 @@ title: Installation, environment, audit and CSP operators
 audience: developer, designer, app-creator
 category: development
 order: 370
-summary: Six operators the Exponential kernel added - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label and csp_nonce - with the settings they read, what they return, the caching rule for csp_nonce, and examples rendered on alpha.
-keywords: installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce, EXP_ENV, EzInstallationName, ProductionInstallationList, AdminEnvironment, Content Security Policy, nonce, audit
+summary: Seven operators the Exponential kernel added - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce and view_parameter - with the settings they read, what they return, the caching rule for csp_nonce, and examples rendered on alpha.
+keywords: installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce, view_parameter, view parameters, EXP_ENV, EzInstallationName, ProductionInstallationList, AdminEnvironment, Content Security Policy, nonce, audit
 type: help
 ---
 # Installation, environment, audit and CSP operators
@@ -18,12 +18,14 @@ These operators belong to the current Exponential kernel and are registered in
 | `exp_environment`, `exp_environment_badge` | `expEnvironmentOperator`, `kernel/common/expenvironmentoperator.php` |
 | `audit_label` | `expAuditTemplateOperator`, `kernel/classes/audit/console/expaudittemplateoperator.php` |
 | `csp_nonce` | `expContentSecurityPolicyOperator`, `kernel/common/expcontentsecuritypolicyoperator.php` |
+| `view_parameter` | `expViewParameterOperator`, `kernel/common/expviewparameteroperator.php` |
 
 ## Contents
 
 1. [The operators](#the-operators): [installation_name](#installation_name),
    [is_production_system](#is_production_system), [exp_environment](#exp_environment),
-   [exp_environment_badge](#exp_environment_badge), [audit_label](#audit_label), [csp_nonce](#csp_nonce)
+   [exp_environment_badge](#exp_environment_badge), [audit_label](#audit_label), [csp_nonce](#csp_nonce),
+   [view_parameter](#view_parameter)
 2. [Examples](#examples)
 
 ## The operators
@@ -112,6 +114,24 @@ The nonce is the same for every call within one request and new for every reques
 `cache-block` or a view-cached template**: the cached copy would carry the nonce of another request and the browser
 would block the script. Better still, move the script into a file loaded through the design's script list, which
 needs no nonce.
+
+### view_parameter
+
+Generated page: [view_parameter](../../examples/template-operators/view_parameter.md).
+
+- **Input:** a text or a number. **Parameters:** none.
+- **Returns:** the value as the value of a view parameter, `/(name)/<value>`, written as every view writes it
+  (`expViewParameters::encode()`, `kernel/classes/expviewparameters.php`): `/` as `~2F`, `(` and `)` as `~28` and
+  `~29`, `~` as `~7E`, `%` and `+` as `~25` and `~2B`, the rest readable (a space `%20`). An array gives an empty
+  string.
+
+```tpl
+<a href={concat( 'settings/view/', $siteaccess, '/', $file, '/(q)/', $name|view_parameter )|ezurl}>...</a>
+```
+
+The view reads the value back with `expViewParameters::get()`. Never write a view parameter with `|urlencode`:
+Apache refuses the `%2F` it makes of a slash, and the kernel's second decoding turns `%2B` into a space. The
+encoding and its rules: [View parameters: how a value travels in an address](../../guides/urls-and-aliases.md#9-view-parameters-how-a-value-travels-in-an-address).
 
 ## Examples
 

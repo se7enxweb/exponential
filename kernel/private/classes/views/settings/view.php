@@ -71,7 +71,7 @@ class View extends \Exponential\Runnable\ModuleView
         // answered with a 303 to that address.
         if ( $settingFile !== null && \expViewParameters::redirectsPost( $_POST, self::FORM_FIELDS ) )
             \expViewParameters::redirect( self::viewURI( $currentSiteAccess, $settingFile, $_POST, $siteAccessList ) );
-        $options = self::options( array( 'q' => \Exponential\View\Kernel\Contentfinder\Search::textFromParameter( \expViewParameters::get( $Params, 'q', 'Query' ) ),
+        $options = self::options( array( 'q' => \Exponential\View\Kernel\Contentfinder\Search::textFromParameter( \expViewParameters::raw( $Params, 'q', 'Query' ) ),
                                          'scope' => \expViewParameters::get( $Params, 'scope', 'Scope' ),
                                          'changed' => \expViewParameters::get( $Params, 'changed', 'Changed' ),
                                          'compare' => \expViewParameters::get( $Params, 'compare', 'Compare' ) ), $siteAccessList );
@@ -197,7 +197,8 @@ class View extends \Exponential\Runnable\ModuleView
 
     /**
      * The address of the page with its options: settings/view/<siteaccess>/<file>/(q)/.../(scope)/all/(changed)/1/(compare)/...
-     * The search text is plain, or "~" and its base64url when it is not (Contentfinder\Search::textParameter()).
+     * Every value is written as expViewParameters::encode() writes it ("~2F" for "/"); the "~" and base64url search of
+     * before is still read (Contentfinder\Search::textFromParameter()).
      *
      * @param string $siteAccess checked
      * @param string $file checked
@@ -211,9 +212,6 @@ class View extends \Exponential\Runnable\ModuleView
         if ( $options['compare'] === $siteAccess )
             $options['compare'] = '';
         $uri = '/settings/view/' . $siteAccess . '/' . $file;
-        if ( $options['q'] !== '' )
-            $uri .= '/(q)/' . \Exponential\View\Kernel\Contentfinder\Search::textParameter( $options['q'] );
-        unset( $options['q'] );
         return $uri . \expViewParameters::suffix( $options );
     }
 

@@ -3,8 +3,8 @@ title: Operatoren für Installation, Umgebung, Audit und CSP
 audience: developer, designer, app-creator
 category: development
 order: 370
-summary: Sechs Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label und csp_nonce - mit den Einstellungen, die sie lesen, ihren Rückgabewerten, der Caching-Regel für csp_nonce und Beispielen, die auf alpha gerendert wurden.
-keywords: installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce, EXP_ENV, EzInstallationName, ProductionInstallationList, AdminEnvironment, Content Security Policy, Nonce, Audit, Installationsname, Produktivsystem, Umgebung, Umgebungsabzeichen, environment, badge
+summary: Sieben Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce und view_parameter - mit den Einstellungen, die sie lesen, ihren Rückgabewerten, der Caching-Regel für csp_nonce und Beispielen, die auf alpha gerendert wurden.
+keywords: installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce, view_parameter, View-Parameter, EXP_ENV, EzInstallationName, ProductionInstallationList, AdminEnvironment, Content Security Policy, Nonce, Audit, Installationsname, Produktivsystem, Umgebung, Umgebungsabzeichen, environment, badge
 type: help
 ---
 # Operatoren für Installation, Umgebung, Audit und CSP
@@ -18,12 +18,14 @@ Diese Operatoren gehören zum aktuellen Exponential-Kernel und werden in
 | `exp_environment`, `exp_environment_badge` | `expEnvironmentOperator`, `kernel/common/expenvironmentoperator.php` |
 | `audit_label` | `expAuditTemplateOperator`, `kernel/classes/audit/console/expaudittemplateoperator.php` |
 | `csp_nonce` | `expContentSecurityPolicyOperator`, `kernel/common/expcontentsecuritypolicyoperator.php` |
+| `view_parameter` | `expViewParameterOperator`, `kernel/common/expviewparameteroperator.php` |
 
 ## Inhalt
 
 1. [Die Operatoren](#die-operatoren): [installation_name](#installation_name),
    [is_production_system](#is_production_system), [exp_environment](#exp_environment),
-   [exp_environment_badge](#exp_environment_badge), [audit_label](#audit_label), [csp_nonce](#csp_nonce)
+   [exp_environment_badge](#exp_environment_badge), [audit_label](#audit_label), [csp_nonce](#csp_nonce),
+   [view_parameter](#view_parameter)
 2. [Beispiele](#beispiele)
 
 ## Die Operatoren
@@ -112,6 +114,25 @@ Die Nonce ist bei jedem Aufruf innerhalb einer Anfrage gleich und bei jeder Anfr
 eines `cache-block` oder eines im View-Cache gespeicherten Templates aus**: Die zwischengespeicherte Kopie trüge die
 Nonce einer anderen Anfrage, und der Browser würde das Skript blockieren. Noch besser verschieben Sie das Skript in eine
 Datei, die über die Skriptliste des Designs geladen wird; sie braucht keine Nonce.
+
+### view_parameter
+
+Generierte Seite: [view_parameter](../../../eng-us/examples/template-operators/view_parameter.md).
+
+- **Eingabe:** ein Text oder eine Zahl. **Parameter:** keine.
+- **Rückgabe:** der Wert als Wert eines View-Parameters, `/(name)/<wert>`, so geschrieben, wie jede Ansicht ihn
+  schreibt (`expViewParameters::encode()`, `kernel/classes/expviewparameters.php`): `/` als `~2F`, `(` und `)` als
+  `~28` und `~29`, `~` als `~7E`, `%` und `+` als `~25` und `~2B`, der Rest lesbar (ein Leerzeichen `%20`). Ein
+  Array ergibt eine leere Zeichenkette.
+
+```tpl
+<a href={concat( 'settings/view/', $siteaccess, '/', $file, '/(q)/', $name|view_parameter )|ezurl}>...</a>
+```
+
+Die Ansicht liest den Wert mit `expViewParameters::get()` zurück. Schreiben Sie einen View-Parameter nie mit
+`|urlencode`: Apache lehnt das `%2F` ab, das daraus für einen Schrägstrich wird, und die zweite Dekodierung des
+Kernels macht aus `%2B` ein Leerzeichen. Die Kodierung und ihre Regeln:
+[View-Parameter: wie ein Wert in der Adresse reist](../../anleitungen/urls-und-aliase.md#9-view-parameter-wie-ein-wert-in-der-adresse-reist).
 
 ## Beispiele
 

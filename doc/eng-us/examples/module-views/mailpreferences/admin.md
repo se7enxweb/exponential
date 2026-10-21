@@ -14,12 +14,12 @@ A view of the `mailpreferences` module, defined in `kernel/mailpreferences/modul
 ## Address
 
 ```text
-/mailpreferences/admin/<Page>/<ID>/(offset)/<Offset>
+/mailpreferences/admin/<Page>/<ID>/(offset)/<Offset>/(export)/<Export>/(person)/<Person>/(category)/<Category>/(source)/<Source>/(from)/<From>/(to)/<To>/(q)/<Q>
 ```
 
 Ordered parameters, in this order after the view name: `Page`, `ID`.
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(export)` sets `Export`, `(person)` sets `Person`, `(category)` sets `Category`, `(source)` sets `Source`, `(from)` sets `From`, `(to)` sets `To`, `(q)` sets `Q`.
 
 ## Who may open it
 

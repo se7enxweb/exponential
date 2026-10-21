@@ -45,8 +45,9 @@ aufgetreten: Jeder Server hat sein eigenes `var/log`.
 
 Ohne Referenz suchen Sie stattdessen nach Zeit und Adresse: **Von** und **Bis** einige Minuten um die Meldung herum,
 die Adresse unter **Anfrage**, die Stufen **Fehler** und **Warnung**, Bereich **Alle Kernel-Logs**. Als Permalink:
-`/setup/logs/view/error/(level)/error,warning/(from)/2026-10-17T01~3A00/(to)/2026-10-17T01~3A10/(uri)/~2Fshop/(scope)/kernel`
-(ein `:` wird in einem Wert zu `~3A` und ein `/` zu `~2F`, siehe [Permalinks](../../eng-us/features/6.0/log-viewer.md#permalinks)).
+`/setup/logs/view/error/(level)/error,warning/(from)/2026-10-17T01:00/(to)/2026-10-17T01:10/(uri)/~2Fshop/(scope)/kernel`
+(ein `/` wird in einem Wert zu `~2F`, siehe [Permalinks](../../eng-us/features/6.0/log-viewer.md#permalinks); ein
+früher geschriebener Link mit `~3A` für `:` wird genauso gelesen).
 
 Sind die Webserver-Logs des Servers konfiguriert ([Webserver-Logs](../../eng-us/features/6.0/log-viewer.md#web-server-logs)),
 zeigt `/setup/logs/view/webserver-access` mit demselben Zeitraum die Anfrage so, wie der Webserver sie gesehen hat:

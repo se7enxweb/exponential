@@ -3,7 +3,7 @@ title: Operatorenverzeichnis
 audience: developer, designer, app-creator
 category: development
 order: 10
-summary: Alle 400 Template-Operatoren, die auf den Siteaccesses site und admin von alpha registriert sind, von A bis Z, jeweils mit der Seite ihrer Familie, die Parameter, Rückgabewert und Beispiele dokumentiert, der Klasse, die den Operator bereitstellt, und der Herkunft dieser Klasse.
+summary: Alle 401 Template-Operatoren, die auf den Siteaccesses site und admin von alpha registriert sind, von A bis Z, jeweils mit der Seite ihrer Familie, die Parameter, Rückgabewert und Beispiele dokumentiert, der Klasse, die den Operator bereitstellt, und der Herkunft dieser Klasse.
 keywords: Operatorenverzeichnis, Template-Operatoren, A-Z, alle Operatoren, Liste der Operatoren, welche Klasse, Operatoren von Erweiterungen, operator index, template operators, all operators, operator list, extension operators
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 Alle Template-Operatoren, die die Template-Engine auf den Siteaccesses `site` und `admin` von alpha registriert, aus
 der Engine selbst gelesen (`eZTemplate::factory()` mit allen Autoload-Dateien, danach jedes Operatorobjekt geladen
-und nach seinen Parametern gefragt). 400 Namen, davon 5 nur auf `admin`. Angegeben ist die Klasse, die den Namen
+und nach seinen Parametern gefragt). 401 Namen, davon 5 nur auf `admin`. Angegeben ist die Klasse, die den Namen
 bereitstellt, nachdem die Autoload-Dateien gelesen sind; zu Namen, die zwei Klassen registrieren, siehe
 [Registrierungsreihenfolge und Überschreibungen](registrierungsreihenfolge-und-ueberschreibungen.md#die-auf-alpha-doppelt-registrierten-namen).
 
@@ -516,6 +516,7 @@ Erweiterung aktiv ist.
 |---|---|---|---|
 | `variable_names` | [Swark-Operatoren: Anfrage und System](swark-operatoren-anfrage-und-system.md#variable_names) | `SwarkVariableNamesOperator` (Erweiterung swark) | site, admin |
 | `video_thumbnail` |  | `sevenxThemesMediaOperators` (Erweiterung sevenx_themes_media) | site, admin |
+| `view_parameter` ([generiert](../../../eng-us/examples/template-operators/view_parameter.md)) | [Operatoren für Installation, Umgebung, Audit und CSP](operatoren-des-exponential-kernels.md#view_parameter) | `expViewParameterOperator` (kernel/common) | site, admin |
 | `vsprintf` ([generiert](../../../eng-us/examples/template-operators/vsprintf.md)) | [PHP-Zeichenkettenfunktionen: kodieren und formatieren](php-zeichenkettenfunktionen-kodieren-und-formatieren.md#sprintf-und-vsprintf) | `eZTemplateStringsOperator` (lib/eztemplate/classes) | site, admin |
 
 ## W
