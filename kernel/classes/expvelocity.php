@@ -1041,6 +1041,35 @@ class expVelocity
     }
 
     /**
+     * Whether the instances share one opcode cache and one APCu: [ServerSettings]
+     * SharedInstances (enabled unless set to disabled), with more than one
+     * instance and an engine that forks them (Exponential Velocity 0.0.4.56,
+     * Q.webserver.instances).
+     *
+     * Started one by one, every instance set PHP up on its own, so each had a
+     * cache of compiled scripts and an APCu segment of its own: a script was
+     * compiled once per instance, and a query result the kernel keeps in APCu
+     * (ezdbQueryCache) was missed and paid for once per instance -- the
+     * administration dashboard, whose queries take about two seconds, took
+     * two seconds on each of the four instances after every change it
+     * depends on. The engine now starts the first instance and forks the
+     * others from it before any of them binds a port, so all of them share
+     * what PHP set up. Each still writes its own pid file (server.pid,
+     * server.1.pid ...); the output of all of them goes to the first one's
+     * log.
+     *
+     * @return bool
+     */
+    public function sharedInstances()
+    {
+        if ( $this->instances() < 2 )
+            return false;
+        if ( strtolower( trim( (string)$this->setting( 'ServerSettings', 'SharedInstances', 'enabled' ) ) ) === 'disabled' )
+            return false;
+        return is_file( $this->engineDir() . '/src/Q/WebServer/Instances.php' );
+    }
+
+    /**
      * An instance's own file beside the first one's: server.pid, server.1.pid,
      * server.2.pid ... (instance 0 keeps the configured name, so a single
      * server is unchanged).
@@ -1069,6 +1098,9 @@ class expVelocity
      */
     public function logFile( $instance = 0 )
     {
+        // shared instances are forked from the first one and write to its output
+        if ( $instance > 0 && $this->sharedInstances() )
+            $instance = 0;
         return self::instancePath( $this->absolute( $this->setting( 'ServerSettings', 'LogFile', 'var/vc/qbix/run/console.log' ) ), $instance );
     }
 
@@ -2056,9 +2088,12 @@ class expVelocity
             $webserver['shutdownTimeout'] = $shutdown;
 
         $config = array( 'Q' => array( 'web' => $web, 'compat' => $compat ) );
-        // [ServerSettings] Instances > 1: every instance shares the ports.
+        // [ServerSettings] Instances > 1: every instance shares the ports, and,
+        // forked by the engine from the first, its compiled scripts and APCu.
         if ( $this->instances() > 1 )
             $webserver['reusePort'] = true;
+        if ( $this->sharedInstances() )
+            $webserver['instances'] = $this->instances();
 
         if ( $webserver )
             $config['Q']['webserver'] = $webserver;
@@ -2674,7 +2709,16 @@ class expVelocity
         // from this process's own value to the setting.
         $nice = $this->startNicePrefix();
         $instances = $this->instances();
-        for ( $i = 0; $i < $instances; $i++ )
+        // Shared instances: one start, the engine forks the others. Never as an
+        // instance itself: a start made from inside a worker (the panel's
+        // restart) inherits the variable that names one.
+        $launches = $instances;
+        if ( $this->sharedInstances() )
+        {
+            $launches = 1;
+            $environment .= 'QBIX_FORKED_INSTANCE= ';
+        }
+        for ( $i = 0; $i < $launches; $i++ )
         {
             // The same command for every instance but its own pid file and log.
             $own = $arguments;

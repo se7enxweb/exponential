@@ -240,6 +240,49 @@ class expVelocityStopRestartTest extends ezpTestCase
     }
 
     /**
+     * Shared instances (SharedInstances, an engine that forks them): one
+     * start, every instance with its pid file and the same shared memory
+     * (APCu and the opcode cache map the same segment), none the child of
+     * another, one log; stop ends them all and restart brings all back.
+     */
+    public function testSharedInstancesShareTheirMemory()
+    {
+        $velocity = $this->engine( 2 );
+        if ( !$velocity->sharedInstances() )
+            $this->markTestSkipped( 'the engine at ' . $velocity->engineDir() . ' does not fork its instances (before 0.0.4.56)' );
+        $this->assertSame( $velocity->logFile( 0 ), $velocity->logFile( 1 ), 'one log for all of them' );
+        $parents = $this->started( $velocity );
+        $this->assertCount( 2, $parents );
+        $this->assertNotSame( $parents[0], $parents[1] );
+        $parentOf = function ( $pid ) {
+            $stat = (string)@file_get_contents( '/proc/' . (int)$pid . '/stat' );
+            return (int)explode( ' ', substr( $stat, strrpos( $stat, ')' ) + 2 ) )[1];
+        };
+        $this->assertNotSame( $parents[0], $parentOf( $parents[1] ), 'the second is not a child of the first' );
+        $shared = function ( $pid ) {
+            $inodes = array();
+            foreach ( (array)@file( '/proc/' . (int)$pid . '/maps' ) as $line )
+            {
+                $f = preg_split( '/\s+/', trim( $line ) );
+                if ( isset( $f[5] ) && substr( $f[1], 3, 1 ) === 's' && $f[4] !== '0' )
+                    $inodes[$f[4]] = true;
+            }
+            return array_keys( $inodes );
+        };
+        $this->assertNotEmpty( array_intersect( $shared( $parents[0] ), $shared( $parents[1] ) ),
+            'both map the same shared memory' );
+
+        $result = $this->restart( $velocity );
+        $this->assertTrue( $result['ok'], $result['message'] . "\n" . $this->log( $velocity ) );
+        $now = $velocity->parentIDs();
+        $this->assertCount( 2, $now );
+        $this->assertSame( array(), array_values( array_intersect( $now, $parents ) ), 'only new parents' );
+        $this->assertTrue( $velocity->stop()['ok'] );
+        $this->assertSame( array(), $velocity->processIDs() );
+        $this->assertSame( array(), $velocity->listeningPorts(), 'the port is free' );
+    }
+
+    /**
      * Failure A of 2026-10-07, as near as a test gets: a parent that accepts
      * nothing and acts on no signal it can catch (stopped here; blocked in
      * futex_do_wait there). status says so; stop ends it with SIGKILL after
