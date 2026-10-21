@@ -41,7 +41,7 @@ HiddenTabs[]
 
 > Liste der Bezeichner zusätzlicher Reiter  
 > AdditionalTabs\[\]=customtab  
-> Das Prüfprotokoll eines Knotens (doc/eng-us/bc/6.0/audit.md, "Placement"), nur mit audit/read  
+> Das Audit-Protokoll eines Knotens (doc/eng-us/bc/6.0/audit.md, "Placement"), nur mit audit/read  
 
 Standard: eine Liste mit 3: `roles`, `policies`, `audit`.
 

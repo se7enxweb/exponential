@@ -14,10 +14,10 @@ Eine Ansicht des Moduls `search`, definiert in `kernel/search/module.php` und au
 ## Adresse
 
 ```text
-/search/stats/(offset)/<Offset>
+/search/stats/(offset)/<Offset>/(sort)/<Sort>/(show)/<Show>/(q)/<Query>
 ```
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`, `(sort)` setzt `Sort`, `(show)` setzt `Show`, `(q)` setzt `Query`.
 
 ## Wer sie öffnen darf
 

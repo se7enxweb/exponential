@@ -3,7 +3,7 @@ title: site.ini [Session]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [Session] in site.ini: RememberMeTimeout, Handler, SessionTimeout, ActivityTimeout, ForceStart, SessionNameHandler, SessionNamePrefix, SessionNamePerSiteAccess ..."
-keywords: Einstellung, site.ini, Sitzung, INI, setting, RememberMeTimeout, Handler, SessionTimeout, ActivityTimeout, ForceStart, SessionNameHandler, SessionNamePrefix, SessionNamePerSiteAccess, CookieAlwaysAddToHttpResponse, BasketCleanup, BasketCleanupTime, BasketCleanupIdleTime, BasketCleanupFetchLimit, BasketCleanupAverageFrequency
+keywords: Einstellung, site.ini, Session, INI, setting, RememberMeTimeout, Handler, SessionTimeout, ActivityTimeout, ForceStart, SessionNameHandler, SessionNamePrefix, SessionNamePerSiteAccess, CookieAlwaysAddToHttpResponse, BasketCleanup, BasketCleanupTime, BasketCleanupIdleTime, BasketCleanupFetchLimit, BasketCleanupAverageFrequency
 type: generated
 generated: exp:help:examples
 ---

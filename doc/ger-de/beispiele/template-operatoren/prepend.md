@@ -30,7 +30,7 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin3/templates/page_head_script.tpl` Zeile 10:
+Die erste Verwendung in den Templates dieser Installation, `design/admin3/templates/page_head_script.tpl` Zeile 14:
 
 ```tpl
 {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}

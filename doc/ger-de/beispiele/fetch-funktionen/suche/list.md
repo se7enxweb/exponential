@@ -1,39 +1,45 @@
 ---
-title: fetch( 'search', 'list_count' )
+title: fetch( 'search', 'list' )
 audience: developer, admin
 category: examples
-summary: "Die Fetch-Funktion list_count des Moduls search: 0 Parameter, 0 erforderlich."
-keywords: Fetch-Funktion, fetch, search, list_count, fetch function, template
+summary: "Die Fetch-Funktion list des Moduls search: 2 Parameter, 0 erforderlich."
+keywords: Fetch-Funktion, fetch, search, list, fetch function, template
 type: generated
 generated: exp:help:examples
 ---
-# fetch( 'search', 'list_count' )
+# fetch( 'search', 'list' )
 
-Definiert in `kernel/search/function_definition.php`; sie ruft `eZSearchFunctionCollection::fetchSearchListCount()` auf (`kernel/search/ezsearchfunctioncollection.php`).
+Definiert in `kernel/search/function_definition.php`; sie ruft `eZSearchFunctionCollection::fetchSearchList()` auf (`kernel/search/ezsearchfunctioncollection.php`).
 Operationstyp: read.
 
 ## Parameter
 
-Keine.
+| Parameter | Typ | Erforderlich | Standard |
+|---|---|---|---|
+| `offset` | integer | nein | `false` |
+| `limit` | integer | nein | `false` |
 
 ## Beispiel
 
 In einem Template (die Werte sind Platzhalter vom Typ des jeweiligen Parameters):
 
 ```tpl
-{def $result = fetch( 'search', 'list_count' )}
+{def $result = fetch( 'search', 'list', hash( 'offset', 1 ) )}
+{* mit jedem Parameter *}
+{def $all = fetch( 'search', 'list', hash( 'offset', 1,
+                                      'limit', 1 ) )}
 ```
 
 In PHP dieselbe Funktion über den Function-Handler (`lib/ezutils/classes/ezfunctionhandler.php`):
 
 ```php
-$result = eZFunctionHandler::execute( 'search', 'list_count', array() );
+$result = eZFunctionHandler::execute( 'search', 'list', array( 'offset' => 1 ) );
 ```
 
 ## Siehe auch
 
 - [Alle Fetch-Funktionen von search](README.md)
-- [Die Ansichten des Moduls search](../../modulansichten/search/README.md)
+- [Die Ansichten des Moduls search](../../modulansichten/suche/README.md)
 - [Der Template-Operator fetch](../../template-operatoren/fetch.md)
 
 ---
