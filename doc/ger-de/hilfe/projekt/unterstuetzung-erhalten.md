@@ -63,6 +63,43 @@ Sie verwenden, und die Seite **Fehler melden** dieser Hilfe bereitet das Issue f
 werden nie öffentlich gemeldet: Schicken Sie sie vertraulich, wie
 [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md#sicherheitsprobleme) erklärt.
 
+## Negative Funktionen
+
+Nicht alles, was wie ein Fehler aussieht, ist einer. Manches Verhalten ist eine bewusste Entscheidung, die einfach
+nicht zu jeder Installation passt, und manches ist Auslegungssache: Zwei vernünftige Menschen lesen dieselbe
+Dokumentation und erwarten verschiedene Ergebnisse. Fachleute nennen ein solches Verhalten eine **negative Funktion**
+(englisch „negative feature“): Von einer Seite aus wirkt es wie ein Mangel, und doch gibt es es mit Absicht, oft zum
+Schutz der Sicherheit, der Abwärtskompatibilität, der Leistung oder der vielen Sites, die sich schon heute genau auf
+dieses Verhalten verlassen.
+
+Beispiele für etwas, das eher eine negative Funktion als ein Fehler sein kann:
+
+- eine Einstellung, die standardmäßig aus ist, weil das Einschalten bestehende Sites verändern würde (zum Beispiel
+  Preise, URLs oder Berechtigungen);
+- eine Grenze oder Ablehnung, die vor Missbrauch schützt, etwa eine Prüfung, die Eingaben zurückweist, die andere
+  Sites nie senden;
+- ein altes Verhalten, auf das sich Erweiterungen, Templates oder Anbindungen verlassen, auch wenn ein neuer Entwurf
+  anders entscheiden würde;
+- ein Unterschied zwischen dem, was Sie erwartet haben, und dem, was die Dokumentation tatsächlich zusagt.
+
+Was das für ein Issue oder einen Pull Request bedeutet:
+
+- **Erklären Sie das Warum, nicht nur das Was.** Beschreiben Sie Ihren Anwendungsfall, was Sie das heutige Verhalten
+  kostet und wen es sonst betrifft. Eine Änderung an einer negativen Funktion wird gegen jede Installation
+  abgewogen, die sich darauf verlässt.
+- **Rechnen Sie mit Diskussion.** Eine solche Änderung kann eine ausführliche Begründung brauchen, und ein Pull
+  Request kann mehrere Runden der Prüfung und Überarbeitung durchlaufen, bevor er angenommen und zusammengeführt
+  wird. Das ist normal und keine Ablehnung.
+- **Eine Option ist besser als ein neuer Standard.** Ein Vorschlag, der das heutige Verhalten als Standard behält und
+  für das neue eine Einstellung, einen Hook oder einen Erweiterungspunkt hinzufügt, lässt sich viel leichter
+  annehmen als einer, der die Site aller verändert.
+- **Fragen Sie zuerst, wenn Sie unsicher sind.** Eine kurze Frage in der Community, bevor Sie Code schreiben, erspart
+  Ihnen eine lange Prüfung.
+
+Antwortet ein Maintainer, dass etwas wie beabsichtigt funktioniert, steht der Grund meist in der Dokumentation, im
+Änderungsprotokoll oder im Code. Sie können trotzdem eine Änderung vorschlagen: Das Projekt möchte hören, warum das
+heutige Verhalten für Sie nicht passt.
+
 ## Bezahlte Hilfe von 7x
 
 Wenn Sie nicht warten können oder jemanden brauchen, der die Arbeit erledigt, empfiehlt die Support-Seite, **7x** zu

@@ -29,6 +29,9 @@ Seite macht daraus eine Routine.
 2. Ist es ein Sicherheitsproblem? Dann vertraulich ([Sicherheitsmeldungen bleiben vertraulich](sicherheitsmeldungen-bleiben-vertraulich.md)).
 3. Durchsuchen Sie den Tracker; wenn es ihn schon gibt, ergänzen Sie dort, was Sie wissen.
 4. Können Sie ihn auf einer frischen Installation nachstellen? Wenn nicht, liegt es vielleicht an der Einrichtung der Website.
+5. Könnte das Verhalten beabsichtigt oder Auslegungssache sein? Dann ist es vielleicht eine negative Funktion, auf die
+   sich andere Sites verlassen; eine Änderung braucht eine klare Begründung und oft mehrere Runden der Prüfung, und
+   eine Option ist besser als ein neuer Standard ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Die Teile eines guten Berichts
 

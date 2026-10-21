@@ -23,7 +23,11 @@ GitHub pull requests. The binding rules are in `CONTRIBUTING.md`; this page puts
 ## Before you write code
 
 1. **Check for an issue.** Search the tracker; if your change fixes a known issue, mention it. For a larger feature,
-   open an issue first and describe the idea, so you do not build something that cannot be merged.
+   open an issue first and describe the idea, so you do not build something that cannot be merged. Do the same when
+   the behavior you want to change may be deliberate or open to interpretation: such a
+   [negative feature](../../project/getting-support.md#negative-features) is something other sites rely on, so the
+   change needs a clear justification, works best as an option rather than a new default, and may take several
+   rounds of review before it is accepted.
 2. **Fork and clone**: `git clone https://github.com/your-username/exponential.git`, then `composer install`
    (`CONTRIBUTING.md`, "Getting Started").
 3. **Install the hooks** with `make hooks`: the pre-commit hook checks the manifest, the PHP syntax and the code

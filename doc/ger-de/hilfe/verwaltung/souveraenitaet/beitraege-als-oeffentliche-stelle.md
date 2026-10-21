@@ -80,6 +80,11 @@ Inhalte, personenbezogene Daten oder Geheimnisse ([Fehler als Partner melden](..
 dieselben Regeln passen für alle). Sicherheitsprobleme gehen vertraulich an die Adresse in der SECURITY.md des
 Projekts, nicht in ein öffentliches Issue.
 
+Bedenken Sie dabei, dass manches Verhalten beabsichtigt oder Auslegungssache ist und andere Stellen und Sites sich
+darauf verlassen. Eine Änderung daran braucht eine klare Begründung und kann mehrere Runden der Prüfung brauchen, bevor
+sie angenommen wird; eine Option ist dann besser als ein neuer Standard
+([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+
 ## Es von Dienstleistern verlangen
 
 Schreiben Sie in Verträge, dass allgemeine Verbesserungen, die ein Dienstleister für Sie entwickelt, mit Ihrer

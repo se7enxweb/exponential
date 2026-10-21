@@ -296,7 +296,10 @@ not worked. More in [Cache console](../bc/6.0/cache-console.md) and [Operating a
   the [behaviour change notes](../bc/6.0/) and the [glossary](../glossary.md).
 - The online manual: [https://exponential.doc.exponential.earth/](https://exponential.doc.exponential.earth/).
 - Report a bug: the [Exponential issue tracker](https://github.com/se7enxweb/exponential/issues), or the
-  [community issue tracker](https://github.com/se7enxweb/exponential-community/issues).
+  [community issue tracker](https://github.com/se7enxweb/exponential-community/issues). Some installer or
+  setting behavior that looks wrong is deliberate, and other sites depend on it: changing such a
+  [negative feature](../help/project/getting-support.md#negative-features) needs a clear justification and several
+  rounds of review.
 - Report a security issue privately, as [SECURITY.md](../../../SECURITY.md) describes, never in a public issue.
 - Forums: [share.exponential.earth/forums](https://share.exponential.earth/forums).
 

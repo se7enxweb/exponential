@@ -64,6 +64,9 @@ From `CONTRIBUTING.md` in the root of the kernel ([Contributors guidelines](../.
 before it accepts a commit or pull request, sometimes hundreds of revisions ... it is not a judgment of you."
 
 - Answer every review comment in the pull request, with a change or a reason.
+- If a reviewer says the behavior you changed is a
+  [negative feature](../project/getting-support.md#negative-features), deliberate or open to interpretation and
+  relied on by other sites, explain your use case and offer the change as an option rather than a new default.
 - Squash and rebase your pull request onto `main` while it is open, as 7x requires; force-push only to your own pull
   request branch ([Develop with Git](../develop-with-git.md#contribute-a-change-with-a-pull-request)).
 - Every review round is a free lesson from experienced developers. Note what you learned in your

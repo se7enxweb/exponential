@@ -61,6 +61,9 @@ tracker; other active extensions from the project's GitHub organization are offe
 - **Usually your administrator or partner files it**, after they confirmed it is not local. Editors can still use the
   page to see what information a good report needs.
 - **Search first.** If the problem is already known, add what you know to that issue instead of opening a new one.
+- **Ask whether it is deliberate.** Behavior that looks wrong to you may be a
+  [negative feature](../../project/getting-support.md#negative-features) other sites depend on; changing it needs a
+  clear justification and can take several rounds of review.
 - **Check the text before submitting.** The diagnostics leave out secrets, but your own description might not: remove
   customer names, e-mail addresses and anything private.
 

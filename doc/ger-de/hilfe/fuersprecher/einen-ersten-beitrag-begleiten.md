@@ -80,6 +80,9 @@ Fixes #<issue number> (if there is one)
 ```
 
 Erklären Sie, dass Prüfende Dinge in Commits obendrauf korrigieren können; das ist normal und keine Ablehnung.
+Bereiten Sie die Person auch darauf vor, dass manches, was wie ein Fehler aussieht, beabsichtigt ist und andere Sites
+sich darauf verlassen: Eine solche Änderung braucht eine klare Begründung und mehrere Runden der Prüfung, und eine
+Option kommt besser an als ein neuer Standard ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Nach der Übernahme
 

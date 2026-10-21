@@ -59,6 +59,11 @@ jeden Pull-Request und behält die Commits der Mitwirkenden so, wie sie geschrie
 wird darauf aufbauend korrigiert
 ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#mitwirkende-und-pull-requests)).
 
+Nicht jeder gemeldete Fehler ist einer: Manches Verhalten ist beabsichtigt oder Auslegungssache, und andere Sites
+verlassen sich darauf. Eine Korrektur daran braucht eine klare Begründung, kann mehrere Runden der Prüfung brauchen,
+bevor sie angenommen und zusammengeführt wird, und kommt als Option meist besser an als ein neuer Standard
+([Negative Funktionen](unterstuetzung-erhalten.md#negative-funktionen)).
+
 ### Die Lizenz Ihres Beitrags
 
 Tragen Sie zu denselben Bedingungen bei wie alle anderen: unter der GNU GPL Version 2 oder später. Die FAQ der

@@ -45,6 +45,7 @@ allgemeine Funktionen unter der GPL veröffentlicht werden dürfen
 | Allgemein, aber groß | Besprechen Sie sie zuerst in einem Issue, dann finanzieren oder bauen Sie sie mit anderen |
 | Spezifisch für einen Kunden | Bauen Sie sie als Kundenerweiterung; drücken Sie sie nicht in den Kernel |
 | Dringend und kritisch | Bezahlte Entwicklung mit einer schriftlichen Vereinbarung |
+| Eine Änderung an beabsichtigtem Verhalten, auf das sich andere Sites verlassen | Begründen Sie sie klar, rechnen Sie mit mehreren Prüfrunden und schlagen Sie eine Option statt eines neuen Standards vor ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)) |
 
 ## Verwandte Seiten
 

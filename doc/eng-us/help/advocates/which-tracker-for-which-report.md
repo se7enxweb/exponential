@@ -32,6 +32,7 @@ wrong place waits or gets lost. The list of trackers comes from
 | A "how do I ...?" question | [Forums](https://share.exponential.earth/forums) or [Telegram](https://t.me/exponentialcms) | Yes |
 | A problem of one site's setup (its own templates, server, hosting) | The site's administrator or provider first | Depends |
 | A wrong or unclear help page | A pull request with **Edit on GitHub**, or an issue in Exponential | Yes |
+| Behavior that works as designed but not as the reporter wants | Read [Negative features](../project/getting-support.md#negative-features) first; then an issue that justifies the change clearly, ideally as an option, and expects several review rounds | Yes |
 
 ## Examples
 

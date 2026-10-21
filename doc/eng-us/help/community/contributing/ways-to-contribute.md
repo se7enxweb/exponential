@@ -50,7 +50,9 @@ one abandoned.
 
 If you do not know where to begin, do this: use the software for a week, note every place where you got stuck, and
 turn the most annoying one into a bug report or a help page fix.
-[Your first contribution](your-first-contribution.md) shows how.
+[Your first contribution](your-first-contribution.md) shows how. Where you got stuck on behavior that may be deliberate
+or open to interpretation, read [Negative features](../../project/getting-support.md#negative-features) first: other
+sites may depend on it, so a change needs a clear justification and is best proposed as an option.
 
 ## Related pages
 

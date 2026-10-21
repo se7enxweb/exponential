@@ -85,6 +85,9 @@ The project's code of conduct is the Contributor Covenant 2.1 with Exponential a
 
 - Bugs, feature requests and discussions go to the issue tracker, with its templates; the help's **Report an error**
   page prepares a safe summary of the installation ([When something goes wrong](../when-something-goes-wrong.md)).
+- Some reported bugs are [negative features](../project/getting-support.md#negative-features): deliberate behavior,
+  or behavior open to interpretation, that other sites depend on. Changing one needs a clear justification, is best
+  proposed as an option rather than a new default, and may take several rounds of review before it is merged.
 - A security problem goes privately to the address in `SECURITY.md`, never into a public issue or pull request.
 
 ## Related pages

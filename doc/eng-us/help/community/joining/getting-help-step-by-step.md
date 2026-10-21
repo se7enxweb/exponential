@@ -25,7 +25,7 @@ Free help and paid help both exist. This page shows the order that gets most peo
 | 2 | [The documentation](https://doc.exponential.earth/) and [eZpedia](https://ezpedia.exponential.earth/) | Reference, tutorials, community tricks | A conversation |
 | 3 | The [forums](https://share.exponential.earth/forums) | Answers from people who had the same problem; a record others can find | A guaranteed answer or answer time |
 | 4 | Telegram, Discord or Slack ([Where people meet](where-people-meet.md)) | Quick back-and-forth | A record that stays findable |
-| 5 | An issue on the right tracker ([Filing a bug](../contributing/filing-a-bug.md)) | A fix for everyone, when it is a bug | Help with how to use a feature |
+| 5 | An issue on the right tracker ([Filing a bug](../contributing/filing-a-bug.md)) | A fix for everyone, when it is a bug | Help with how to use a feature; a quick change to deliberate behavior other sites depend on ([Negative features](../../project/getting-support.md#negative-features)), which needs a clear justification and several rounds of review |
 | 6 | Paid support from 7x or a partner | Someone who is responsible for an answer | Free work |
 
 ## Free and paid support

@@ -57,6 +57,9 @@ extensions shipped inside it, and everything else in this repository" (`CONTRIBU
   ([The code of conduct](../joining/the-code-of-conduct.md)).
 - **No secrets or personal data** in issues, pull requests, examples or screenshots.
 - **Security problems are private** (`SECURITY.md`).
+- **Some bugs are negative features.** Behavior that is deliberate or open to interpretation, and that other sites
+  depend on, changes only with a clear justification, preferably as an option rather than a new default, and often
+  after several rounds of review ([Negative features](../../project/getting-support.md#negative-features)).
 
 ## Related pages
 

@@ -28,6 +28,9 @@ habits make that time count, for them and for you.
 - **Expect many review rounds on the kernel.** 7x reviews a commit or pull request in many more rounds than usual,
   sometimes hundreds of revisions; be ready to revise your change until it is simple to accept
   ([Code reviews](../../../../../CONTRIBUTING.md#code-reviews)).
+- **Treat a negative feature with care.** If the behavior you change is deliberate or open to interpretation, other
+  sites may depend on it. Justify the change, offer it as an option rather than a new default, and expect more
+  rounds before it is merged ([Negative features](../../project/getting-support.md#negative-features)).
 - **Squash and rebase while the pull request is open.** 7x requires a kernel pull request to be squashed into
   logical commits (usually one) and rebased onto `main` before the merge: `git fetch origin`,
   `git rebase -i origin/main`, `git push --force-with-lease` to your pull request branch only. After the merge,

@@ -93,6 +93,9 @@ darauf warten. Die eigenen Erweiterungen der Teilnehmenden sind nicht betroffen
 - **Geheimnisse im Commit.** `settings/override/` und `settings/siteaccess/` können Passwörter enthalten; committen
   Sie sie niemals. Prüfen Sie vor jedem Commit `git diff --cached --name-only`.
 - **Ein Pull Request, der vieles tut.** Teilen Sie ihn auf; kleine Pull Requests werden schneller geprüft.
+- **Eine negative Funktion „korrigieren“.** Manches Verhalten ist beabsichtigt oder Auslegungssache, und andere Sites
+  verlassen sich darauf. Eine Änderung daran braucht eine klare Begründung und mehrere Review-Runden; eine Option ist
+  besser als ein neuer Standard ([Negative Funktionen](../../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Praktische Übung
 

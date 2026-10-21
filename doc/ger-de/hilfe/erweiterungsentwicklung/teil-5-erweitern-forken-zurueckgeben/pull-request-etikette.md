@@ -29,6 +29,10 @@ unbezahlt. Diese Gewohnheiten sorgen dafür, dass diese Zeit etwas bringt, für 
 - **Bedanken Sie sich.** Für das Review, für das Übernehmen, für das Projekt.
 - **Erwähnen Sie, was nicht von Ihnen stammt.** Ein Test, der schon auf main fehlschlägt, eine Warnung, die schon
   vorher da war. Nennen Sie es, damit niemand denkt, Sie hätten es verursacht.
+- **Rechnen Sie mit negativen Funktionen.** Was Ihnen wie ein Fehler vorkommt, kann beabsichtigt oder Auslegungssache
+  sein, und andere Sites verlassen sich darauf, in Exponential wie in jedem anderen Projekt. Begründen Sie eine solche
+  Änderung klar, erwarten Sie mehrere Runden der Prüfung und schlagen Sie lieber eine Option vor als einen neuen
+  Standard ([Negative Funktionen](../../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 - **Rechnen Sie beim Kernel mit vielen Review-Runden.** 7x prüft einen Commit oder Pull Request in viel mehr Runden als
   üblich, manchmal in Hunderten von Überarbeitungen; seien Sie bereit, Ihre Änderung so lange zu überarbeiten, bis sie
   einfach anzunehmen ist ([Code reviews](../../../../../CONTRIBUTING.md#code-reviews), auf Englisch).

@@ -314,6 +314,11 @@ Wenn Sie ein Problem melden, geben Sie die Version (`php bin/php/console --versi
 Version, die Engine, die die Site ausliefert, die genaue Meldung und die passenden Zeilen aus `var/log/error.log` an.
 Entfernen Sie Passwörter und personenbezogene Daten aus Logs, bevor Sie sie weitergeben.
 
+Manches, was wie ein Fehler aussieht, ist beabsichtigtes Verhalten oder Auslegungssache, auf das sich andere Sites
+verlassen. Eine Änderung daran braucht eine klare Begründung und kann mehrere Runden der Prüfung brauchen; eine
+Option ist besser als ein neuer Standard
+([Negative Funktionen](../hilfe/projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+
 **Demo-Modus.** Ein Banner **Demo-Modus**, ein Administratorpasswort, das sich nicht ändern lässt („Diese Installation ist eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.“), oder ein Installationsprogramm, das ein allgemein bekanntes Passwort beibehält: Der Prozess hat die Umgebungsvariable `EXP_DEMO_MODE=1`. Bei einer Demo ist das so gewollt; auf einer echten Site entfernen Sie die Variable. Eine Demo, deren Banner fehlt oder deren Build fehlschlägt, weil das Installationsprogramm ein Passwort erzeugt hat: [Probleme mit dem Demo-Modus](../hilfe/hosting/runbooks/probleme-mit-dem-demomodus.md).
 
 ## Referenzen

@@ -46,6 +46,10 @@ ist die Standarddatenbank, eine Entwicklungsinstallation braucht also keinen Dat
 - Er wird begutachtet. „Jeder Pull-Request wird gemergt, und seine Commits bleiben so erhalten, wie der Mitwirkende
   sie geschrieben hat, und werden niemals umgeschrieben“ (`doc/eng-us/bc/6.0/ci.md`); was geändert werden muss, wird in
   Commits darüber geändert.
+- Soll Ihr Pull-Request ein Verhalten ändern, das beabsichtigt oder Auslegungssache ist, handelt es sich um eine
+  negative Funktion, auf die sich andere Sites verlassen. Dann braucht er eine klare Begründung und oft mehrere
+  Runden der Prüfung; eine Option kommt besser an als ein neuer Standard
+  ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Lizenz
 

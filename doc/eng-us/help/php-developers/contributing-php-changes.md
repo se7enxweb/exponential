@@ -98,7 +98,10 @@ Prefixes: `Added: `, `Updated: `, `Fixed: `, `Removed: `, `Renamed: `. The commi
 
 1. Push your branch to your fork and open a pull request to `main`; tick the CLA checkbox of the template.
 2. **Expect many review rounds.** The project reviews more than usual before it accepts a change; each round makes the
-   change easier to accept. Answer every comment in the pull request, with a change or a reason.
+   change easier to accept. Answer every comment in the pull request, with a change or a reason. A change to a
+   [negative feature](../project/getting-support.md#negative-features), behavior that is deliberate or open to
+   interpretation and that other sites depend on, needs a clear justification and goes in more easily as an option
+   than as a new default.
 3. **Keep it small and focused**: a fix and a refactoring are two pull requests.
 4. **Squash and rebase while it is open.** Fold the fixups of each round into logical commits and rebase onto the current
    `main`; force-push only your pull request branch (`git push --force-with-lease`).

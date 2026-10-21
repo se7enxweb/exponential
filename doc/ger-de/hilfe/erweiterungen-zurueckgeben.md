@@ -239,6 +239,11 @@ zeigt. Antwortet der ursprüngliche Autor nicht mehr, forken Sie sie respektvoll
 Copyright und die Lizenz bei und nennen Sie den Autor in der README
 ([Erweiterungen an das Upstream-Projekt zurückgeben](partner/erweiterungen-zurueckgeben.md)).
 
+Ist das, was Sie korrigieren möchten, beabsichtigtes Verhalten oder Auslegungssache, verlassen sich andere Sites
+vielleicht darauf, in Exponential wie in jeder anderen Erweiterung. Eine solche Änderung braucht eine klare Begründung
+und oft mehrere Runden der Prüfung, und eine Option ist besser als ein neuer Standard
+([Negative Funktionen](projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+
 ## Verwandte Seiten
 
 - [Mit Git entwickeln](mit-git-entwickeln.md) und [Mit Git aktualisieren](mit-git-aktualisieren.md): Arbeiten Sie mit Klonen,

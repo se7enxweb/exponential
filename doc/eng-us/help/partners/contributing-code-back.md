@@ -50,6 +50,10 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
   (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` to your pull request branch only);
   once it is merged, `main`'s history is never rewritten, and later fixes come as new pull requests
   (`doc/eng-us/bc/6.0/ci.md`).
+- A fix that changes behavior your customer saw as a bug, but other installations rely on (a
+  [negative feature](../project/getting-support.md#negative-features)), needs a clear justification and may go through
+  several rounds of review before it is accepted and merged. Keeping today's default and adding an option is easier to
+  accept.
 - CI checks syntax, the manifest, commit messages, code style, PHPStan and the tests on supported PHP versions
   (`doc/eng-us/bc/6.0/ci.md`).
 - "By contributing, you agree that your contributions will be licensed under the GNU General Public License, version

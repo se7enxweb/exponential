@@ -44,6 +44,7 @@ may be published under the GPL ([Open source values in daily partner work](open-
 | General but large | Discuss in an issue first, then fund or build it with others |
 | Specific to one customer | Build it as a customer extension; do not push it into the kernel |
 | Urgent and critical | Paid development with a written agreement |
+| A change to existing, deliberate behavior | Treat it as a [negative feature](../project/getting-support.md#negative-features): other sites depend on it, so justify it clearly, expect several rounds of review, and propose an option rather than a new default |
 
 ## Related pages
 

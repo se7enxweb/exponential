@@ -27,6 +27,9 @@ einer Korrektur, die alle Ihre Kunden schützt.
 - [ ] Stellen Sie den Fehler auf einer sauberen Installation eines aktuellen Release nach, möglichst ohne den Code Ihres Kunden.
 - [ ] Durchsuchen Sie offene und geschlossene Issues.
 - [ ] Notieren Sie die genauen Versionen: Exponential, PHP, Datenbank, Engine, Erweiterungen.
+- [ ] Fragen Sie sich, ob das Verhalten beabsichtigt oder Auslegungssache sein könnte. Eine solche negative Funktion
+  zu ändern braucht eine klare Begründung und oft mehrere Prüfrunden, weil andere Sites sich darauf verlassen; eine
+  Option ist besser als ein neuer Standard ([Negative Funktionen](../projekt/unterstuetzung-erhalten.md#negative-funktionen)).
 
 ## Was hineingehört
 
