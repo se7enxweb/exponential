@@ -28,7 +28,7 @@ type: help
 4. Wählen Sie den Block aus, öffnen Sie den Reiter **Design** und setzen Sie **Ansichtstyp** auf `list_numbered`.
 5. **Layout veröffentlichen**. Die Seiten, die das Layout verwenden, zeigen den Block beim nächsten Aufruf.
 
-Wird nur der Ansichtstyp geändert, wird nichts gespeichert, bis sich ein anderes Feld ändert ([Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)).
+Vor explayouts_ui_api 1.3.29 wurde nichts gespeichert, wenn nur der Ansichtstyp geändert wurde, bis sich ein anderes Feld änderte ([Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)).
 
 ## Mit Templates
 

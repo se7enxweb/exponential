@@ -24,7 +24,7 @@ Put the most read article first.
 
 1. Select the List, drag the items by their handles in **Items**, **Publish layout**.
 
-On the test copy one addition left two items with position 0; if the site order differs from the editor, drag once more ([Known editor behaviors](../../known-editor-behaviors.md)).
+Before explayouts_ui_api 1.3.29, one addition could leave two items with position 0; on such a version, if the site order differs from the editor, drag once more ([Known editor behaviors](../../known-editor-behaviors.md)).
 
 ## With templates
 

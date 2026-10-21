@@ -28,7 +28,7 @@ Change lists, banners, menus and campaigns week by week, and recover from mistak
 15. [Put up a temporary notice](temporary-notice.md): An Alert block in the page's post_header zone, removed again after the event.
 16. [Rotate the featured item of a grid](rotate-the-featured-item.md): In a grid_featured list, the first item is the large one: drag another item to the top.
 17. [Change the number of columns of a grid](change-columns.md): Number of columns on the Design tab: 2, 3, 4 or 6.
-18. [Change a list from grid to list](change-a-view-type.md): View type on the Design tab - with the quirk that the change is stored with the next change of another field.
+18. [Change a list from grid to list](change-a-view-type.md): View type on the Design tab; before explayouts_ui_api 1.3.29 the change was stored only with the next change of another field.
 19. [Give a section a background color](change-a-background.md): Set background color on the Design tab; the wrapper gets bg-color-<color>.
 20. [Adjust the spacing of a section](adjust-spacing.md): Use vertical whitespace on top and bottom (Design tab) instead of Spacer blocks.
 21. [Throw away a draft that went wrong](discard-a-bad-draft.md): Discard removes the draft; the published layout is untouched.

@@ -3,7 +3,7 @@ title: "Eine Liste von Raster auf Liste umstellen"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1317
-summary: View type im Reiter Design, mit der Eigenheit, dass die Änderung erst mit der nächsten Änderung eines anderen Felds gespeichert wird.
+summary: View type im Reiter Design; vor explayouts_ui_api 1.3.29 wurde die Änderung erst mit der nächsten Änderung eines anderen Felds gespeichert.
 keywords: Ansichtstyp, Raster zu Liste, Reiter Design, Eigenheit, Pflege, view type, grid to list, Design tab, quirk, maintenance
 type: help
 ---
@@ -23,7 +23,7 @@ Das Rezeptraster wird zu einer einfachen Liste.
 ## Im Layout-Editor
 
 1. Wählen Sie die Liste aus, dann **Design**, **Ansichtstyp** `list`.
-2. Ändern Sie einmal ein anderes Feld (tippen und löschen Sie ein Zeichen in **CSS class**), damit das Formular gespeichert wird.
+2. Die Änderung wird sofort gespeichert (vor explayouts_ui_api 1.3.29: ändern Sie einmal ein anderes Feld, etwa ein in **CSS class** getipptes und wieder gelöschtes Zeichen, damit das Formular gespeichert wird).
 3. Prüfen Sie, dass der Blockkopf `LIST` zeigt, und klicken Sie auf **Layout veröffentlichen**.
 
 ## Mit Templates
@@ -32,7 +32,7 @@ Das Rezeptraster wird zu einer einfachen Liste.
 
 ## Welchen Weg Sie wählen
 
-Design-Option; beachten Sie die Eigenheit beim Speichern.
+Design-Option; beachten Sie bei explayouts_ui_api vor 1.3.29 die Eigenheit beim Speichern.
 
 ## Prüfen
 

@@ -22,7 +22,7 @@ Ein Aussehen aufräumen, das das neue Design nicht hat.
 
 ## Im Layout-Editor
 
-1. Stellen Sie jeden gefundenen Block auf einen anderen Ansichtstyp um (beachten Sie die Eigenheit beim Speichern).
+1. Stellen Sie jeden gefundenen Block auf einen anderen Ansichtstyp um (beachten Sie bei explayouts_ui_api vor 1.3.29 die Eigenheit beim Speichern).
 
 ## Mit einem Export und Einstellungen
 

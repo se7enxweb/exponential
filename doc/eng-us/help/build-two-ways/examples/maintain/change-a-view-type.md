@@ -3,7 +3,7 @@ title: "Change a list from grid to list"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1317
-summary: View type on the Design tab - with the quirk that the change is stored with the next change of another field.
+summary: View type on the Design tab; before explayouts_ui_api 1.3.29 the change was stored only with the next change of another field.
 keywords: view type, grid to list, Design tab, quirk, maintenance
 type: help
 ---
@@ -23,7 +23,7 @@ The recipe grid becomes a plain list.
 ## In the Layouts editor
 
 1. Select the List, **Design**, **View type** `list`.
-2. Change another field once (type and delete a character in **CSS class**), so the form is saved.
+2. The change is saved at once (before explayouts_ui_api 1.3.29: change another field once, such as a character typed and deleted in **CSS class**, so the form is saved).
 3. Check the block header shows `LIST`, **Publish layout**.
 
 ## With templates
@@ -32,7 +32,7 @@ The recipe grid becomes a plain list.
 
 ## Which to choose
 
-Design option; mind the save quirk.
+Design option; on explayouts_ui_api before 1.3.29 mind the save quirk.
 
 ## Check
 
