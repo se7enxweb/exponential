@@ -94,8 +94,8 @@ selten einen eigenen Handler: `expLayoutsContainerBlockHandler` mit `IsContainer
 ## Verwandte Seiten
 
 - [Block-Ansichtstemplates](block-ansichtstemplates.md)
-- [Layout-Blöcke gestalten](../../../../eng-us/help/designers/theme-design/styling-layout-blocks.md)
-- [Layouts für Designer](../../../../eng-us/help/designers/theme-design/layouts-for-designers.md)
+- [Layout-Blöcke gestalten](layout-bloecke-gestalten.md)
+- [Layouts für Designer](layouts-fuer-designer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

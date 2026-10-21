@@ -74,7 +74,7 @@ Ein Administrator kann eine solche Regel stattdessen auf die Datei Ihres Designs
 ## Verwandte Seiten
 
 - [Bilder in einem Design](bilder-in-einem-design.md)
-- [SVG-Bilder](../../../../eng-us/help/designers/theme-design/svg-images.md)
+- [SVG-Bilder](svg-bilder.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

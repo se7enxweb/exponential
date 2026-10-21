@@ -71,7 +71,7 @@ sauberen ersten Commit.
 
 ## Was meist als Nächstes geändert werden muss
 
-- Der Kopf des Pagelayouts: das Laden von Stylesheets und Skripten ([Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md)).
+- Der Kopf des Pagelayouts: das Laden von Stylesheets und Skripten ([Stylesheets laden](../theme-design/stylesheets-laden.md)).
 - Der Beispiel-Override für `article` ([Override-Grundlagen](../templates/override-grundlagen.md)).
 - `ezinfo.php` und `extension.xml`: Website und Copyright.
 

@@ -97,8 +97,8 @@ Siehe [Bildaliase](bildaliase.md).
 - Jedes `<img>` hat ein `alt`. Dekorative Bilder bekommen `alt=""`; bedeutungstragende Bilder eine kurze Beschreibung. Bei
   Inhaltsbildern ist der Alternativtext des Bildfelds Aufgabe des Redakteurs; geben Sie ihn mit `|wash` aus.
 - Geben Sie `width` und `height` an (oder ein CSS-`aspect-ratio`), damit die Seite nicht springt, während Bilder laden
-  ([CLS und LCP messen](../../../../eng-us/help/designers/theme-design/measuring-cls-and-lcp.md)).
-- Verwenden Sie SVG für Logos und Symbole, moderne Formate für Fotos ([SVG-Bilder](../../../../eng-us/help/designers/theme-design/svg-images.md), [Bild-Performance](bildleistung.md)).
+  ([CLS und LCP messen](cls-und-lcp-messen.md)).
+- Verwenden Sie SVG für Logos und Symbole, moderne Formate für Fotos ([SVG-Bilder](svg-bilder.md), [Bild-Performance](bildleistung.md)).
 
 ## Verwandte Seiten
 

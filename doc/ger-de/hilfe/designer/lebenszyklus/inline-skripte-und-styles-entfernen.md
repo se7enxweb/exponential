@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Designer, die ein Theme betreuen, das geschrieben wurde, bevor Content Security Policies üblich waren.
 Wie CSP-sichere Templates gehen, steht in [CSP-sicheres Design](../theme-design/csp-sicheres-design.md),
-[Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md) und [Kein Inline-CSS](../../../../eng-us/help/designers/theme-design/no-inline-css.md);
+[Kein Inline-JavaScript](../theme-design/kein-inline-javascript.md) und [Kein Inline-CSS](../theme-design/kein-inline-css.md);
 diese Seite ist die Migrationsroutine.
 
 ## Warum jetzt

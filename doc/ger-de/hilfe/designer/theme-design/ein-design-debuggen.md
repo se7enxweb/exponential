@@ -70,7 +70,7 @@ Gehen Sie diese Punkte der Reihe nach durch:
    `override/templates/` für die `MatchFile` eines Overrides). Ein Tippfehler in `MatchFile` wird als
    „Custom match file: path '...' not found in any resource“ ins Fehlerprotokoll geschrieben.
 4. **Die Kaskade.** Ein weiter oben stehendes Design kann dieselbe Datei haben. Die Kommentare mit Template-Pfaden zeigen, welche Kopie
-   gewonnen hat ([Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)).
+   gewonnen hat ([Die Design-Kaskade](die-design-kaskade.md)).
 5. **Die Reihenfolge der Overrides.** Eine andere Regel für dieselbe `Source` kann zuerst passen. Regeln werden nach `Priority`
    versucht (niedrigste zuerst; ohne `Priority` ganz am Ende), und der erste Treffer gewinnt ([Reihenfolge der Overrides](../templates/override-reihenfolge.md)).
 6. **Die Erweiterung.** Ist die Design-Erweiterung für diesen Siteaccess aktiv und in `DesignExtensions[]` aufgeführt?
@@ -82,7 +82,7 @@ Gehen Sie diese Punkte der Reihe nach durch:
    am Namen erkennen.
 2. Das Admin-Pagelayout speichert den Link auf die gepackte Datei in einem Cache-Block. Leeren Sie nach einer CSS-Änderung in einem
    Admin-Design auch `template-block` (ein Deploy mit `--packer` tut das).
-3. Der Browser kann die alte Datei halten: Laden Sie hart neu. Fügen Sie Links kein `?v=` hinzu ([Keine Versionsabfragen an Asset-Links](../../../../eng-us/help/designers/theme-design/no-version-queries-on-asset-links.md)).
+3. Der Browser kann die alte Datei halten: Laden Sie hart neu. Fügen Sie Links kein `?v=` hinzu ([Keine Versionsabfragen an Asset-Links](keine-versionsparameter-an-asset-links.md)).
 
 ## Syntaxfehler in Templates
 

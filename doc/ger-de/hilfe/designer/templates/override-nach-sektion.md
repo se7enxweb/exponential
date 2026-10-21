@@ -58,7 +58,7 @@ seinem Seiten-Wrapper auf dieselbe Weise eine Klasse `section_id_<n>` hinzu.
 ## Verwandte Seiten
 
 - [Override-Match-Schlüssel](override-match-schluessel.md)
-- [Pagelayout-Variablen](../../../../eng-us/help/designers/theme-design/pagelayout-variables.md)
+- [Pagelayout-Variablen](../theme-design/pagelayout-variablen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

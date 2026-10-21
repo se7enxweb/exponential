@@ -50,7 +50,7 @@ einem Paket oder Skript angelegt werden.
 
 ## Alternativen
 
-- **Ein Layout** für die Seite, wenn Redakteure ihre Struktur ändern können sollen ([Layouts für Designer](../../../../eng-us/help/designers/theme-design/layouts-for-designers.md)).
+- **Ein Layout** für die Seite, wenn Redakteure ihre Struktur ändern können sollen ([Layouts für Designer](../theme-design/layouts-fuer-designer.md)).
 - **Eine eigene Klasse** (zum Beispiel `frontpage`), wenn mehrere Seiten das besondere Aussehen teilen.
 - **Eine Sektion**, wenn sich ein ganzer Bereich unterscheidet ([Override nach Sektion](override-nach-sektion.md)).
 

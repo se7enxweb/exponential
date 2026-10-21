@@ -65,7 +65,7 @@ einer Änderung, mit geleerten Caches und noch einmal mit warmen.
 ## Verwandte Seiten
 
 - [Knoten und Listen abrufen](knoten-und-listen-abrufen.md)
-- [Theme-Leistung](../../../../eng-us/help/designers/theme-design/theme-performance.md)
+- [Theme-Leistung](../theme-design/theme-leistung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

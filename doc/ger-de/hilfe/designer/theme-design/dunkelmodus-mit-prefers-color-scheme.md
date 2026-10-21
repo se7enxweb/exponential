@@ -79,7 +79,7 @@ selbst auf, und die Stylesheets lesen nur `html[data-a4-theme="dark"]`, sodass j
 ## Verwandte Seiten
 
 - [Dunkler Modus im Überblick](dunkelmodus-ueberblick.md)
-- [Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](../../../../eng-us/help/designers/theme-design/theme-toggle-pre-paint-guard.md)
+- [Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](theme-umschalter-und-pre-paint-guard.md)
 - [Checkliste: dunkler Modus](checkliste-dunkelmodus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

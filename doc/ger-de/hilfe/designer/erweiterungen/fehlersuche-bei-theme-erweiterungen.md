@@ -24,7 +24,7 @@ Anzeichen, lesen Sie die Ursache, wenden Sie die Abhilfe an. Für Probleme inner
 | „Unknown template operator“ für den Operator des Themes | `autoloads/eztemplateautoload.php` oder `ExtensionAutoloadPath[]` fehlt | [Template-Operatoren in einem Theme](template-operatoren-in-einem-theme.md) |
 | Eine neue PHP-Klasse wird nicht gefunden | Autoload-Array nicht neu erzeugt oder PHP-Dienst nicht neu geladen | `php bin/php/ezpgenerateautoloads.php -e`, dann PHP-FPM oder Velocity neu laden |
 | Texte des Themes bleiben englisch | `TranslationExtensions[]` fehlt, oder der Übersetzungs-Cache | [Übersetzungen in einem Theme](uebersetzungen-in-einem-theme.md) |
-| Ein geändertes Stylesheet erreicht den Browser nicht | Das gepackte Stylesheet ist im Cache | Packer- und Template-Block-Cache leeren ([Packer-Cache und Deployment](../../../../eng-us/help/designers/theme-design/packer-cache-and-deploy.md)); den Browser hart neu laden |
+| Ein geändertes Stylesheet erreicht den Browser nicht | Das gepackte Stylesheet ist im Cache | Packer- und Template-Block-Cache leeren ([Packer-Cache und Deployment](../theme-design/packer-cache-und-deployment.md)); den Browser hart neu laden |
 | Das Exportieren des Themes wird verweigert | Das Exportieren ist aus, oder die Geheimnisprüfung hat etwas gefunden | [Eine Erweiterung als Paket exportieren](eine-erweiterung-als-paket-exportieren.md), [Die Geheimnisprüfung](geheimnispruefung-vor-dem-paketieren.md) |
 | Hochladen Ihres Pakets: „existiert bereits“ | Ein Paket dieses Namens liegt auf dieser Installation | Das alte dort entfernen oder Ihres umbenennen |
 

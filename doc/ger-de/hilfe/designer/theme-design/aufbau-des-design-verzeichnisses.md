@@ -55,7 +55,7 @@ Jede andere Anfrage geht an `index.php`. Also:
 
 > **Hinweis**
 > Gepackte Stylesheets und Skripte werden aus `var/<site>/cache/public/` ausgeliefert, das die Regeln ebenfalls durchlassen; in der
-> Produktion lädt der Browser also meist die Ausgabe des Packers, nicht Ihre Originaldateien. Siehe [Der Packer](../../../../eng-us/help/designers/theme-design/the-packer.md).
+> Produktion lädt der Browser also meist die Ausgabe des Packers, nicht Ihre Originaldateien. Siehe [Der Packer](der-packer.md).
 
 ## In templates/
 
@@ -64,7 +64,7 @@ Pfade:
 
 | Pfad | Was es ist |
 |---|---|
-| `pagelayout.tpl` | der Rahmen jeder Seite ([Das Pagelayout](../../../../eng-us/help/designers/theme-design/the-pagelayout.md)) |
+| `pagelayout.tpl` | der Rahmen jeder Seite ([Das Pagelayout](das-pagelayout.md)) |
 | `node/view/<viewmode>.tpl` | wie ein Knoten in einem View-Modus gezeigt wird: `full.tpl`, `line.tpl`, `embed.tpl`, `embed-inline.tpl` ... |
 | `content/view/<viewmode>.tpl` | wie ein Inhaltsobjekt (ohne Knoten) gezeigt wird |
 | `content/datatype/view/<datatype>.tpl` | wie ein Feld eines Datentyps gezeigt wird, z. B. `ezstring.tpl`, `ezimage.tpl` |
@@ -128,9 +128,9 @@ darüberliegenden Design zu überschreiben und in den Kommentaren mit Template-P
 
 ## Verwandte Seiten
 
-- [Was ein Design ist](../../../../eng-us/help/designers/theme-design/what-a-design-is.md)
-- [Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)
-- [Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md)
+- [Was ein Design ist](was-ein-design-ist.md)
+- [Die Design-Kaskade](die-design-kaskade.md)
+- [Stylesheets laden](stylesheets-laden.md)
 - [Schriften in einem Design](schriften-in-einem-design.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

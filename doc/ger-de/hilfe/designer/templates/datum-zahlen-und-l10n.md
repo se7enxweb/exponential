@@ -77,7 +77,7 @@ berechnet werden.
 ## Verwandte Seiten
 
 - [Der Operator i18n](der-i18n-operator.md)
-- [Tutorial: ein Theme internationalisieren](../../../../eng-us/help/designers/theme-design/tutorial-internationalize-a-theme.md)
+- [Tutorial: ein Theme internationalisieren](../theme-design/tutorial-ein-theme-internationalisieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

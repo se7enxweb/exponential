@@ -20,13 +20,13 @@ Artikel und einer Liste, einmal direkt nach dem Leeren der Caches und noch einma
 
 ## Im Browser
 
-- [ ] Eine Stylesheet-Anfrage vom Design (gepackt) ([Der Packer](../../../../eng-us/help/designers/theme-design/the-packer.md)).
-- [ ] Höchstens zwei Skript-Anfragen; nicht kritische Skripte verzögert ([JavaScript laden](../../../../eng-us/help/designers/theme-design/loading-javascript.md)).
+- [ ] Eine Stylesheet-Anfrage vom Design (gepackt) ([Der Packer](der-packer.md)).
+- [ ] Höchstens zwei Skript-Anfragen; nicht kritische Skripte verzögert ([JavaScript laden](javascript-laden.md)).
 - [ ] Kein Skript im Kopf, das das Rendern blockiert, außer einem winzigen Schutz vor dem ersten Zeichnen.
 - [ ] Schriften selbst gehostet, `font-display: swap`, wenige Schnitte ([Schriften in einem Design](schriften-in-einem-design.md)).
 - [ ] Bilder in Aliassen nahe der angezeigten Größe, `srcset`, wo Größen variieren ([Bild-Performance](bildleistung.md)).
 - [ ] Bilder unterhalb des ersten Bildschirms lazy; das Hauptbild nicht lazy.
-- [ ] Breite und Höhe an Bildern und Einbettungen; CLS höchstens 0,05 ([CLS und LCP messen](../../../../eng-us/help/designers/theme-design/measuring-cls-and-lcp.md)).
+- [ ] Breite und Höhe an Bildern und Einbettungen; CLS höchstens 0,05 ([CLS und LCP messen](cls-und-lcp-messen.md)).
 - [ ] Keine Anfrage an Drittanbieter vor der Einwilligung ([Externe Ressourcen und CDNs](externe-ressourcen-und-cdns.md)).
 - [ ] Seitenspezifisches CSS und JS nur von den Templates angefordert, die es brauchen.
 
@@ -50,7 +50,7 @@ Halten Sie sie beim Start fest; vergleichen Sie nach jeder Veröffentlichung des
 
 ## Verwandte Seiten
 
-- [Performance von Themes](../../../../eng-us/help/designers/theme-design/theme-performance.md)
+- [Performance von Themes](theme-leistung.md)
 - [Checkliste: Start eines Themes](checkliste-theme-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -76,7 +76,7 @@ Kopfbereich (die Startseite) gar keine Brotkrumen. Wählen Sie, was zur Website 
 ## Verwandte Seiten
 
 - [Module result und content info](module-result-und-content-info.md)
-- [Landmarks und Überschriften](../../../../eng-us/help/designers/theme-design/landmarks-and-headings.md)
+- [Landmarks und Überschriften](../theme-design/landmarks-und-ueberschriften.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

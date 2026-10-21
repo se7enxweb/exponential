@@ -50,7 +50,7 @@ Information Collectors) und `$persistent_variable`.
 
 (Prüfen Sie die Attributbezeichner Ihrer Klassen. `parts/exp_content_direction.tpl` ist der Teil des Kernels, der aus dem
 Locale-Code in `exp_locale_code` ` lang="..." dir="rtl"` für Inhalte von rechts nach links ausgibt und sonst nichts; siehe
-[Rechts-nach-links-Designs](../../../../eng-us/help/designers/theme-design/right-to-left-designs.md).)
+[Rechts-nach-links-Designs](../theme-design/rechts-nach-links-designs.md).)
 
 ## Kinder und Blättern
 
@@ -84,7 +84,7 @@ Die Vollansicht wird im View-Cache gespeichert (`CachedViewModes` enthält `full
 ## Eine Vollansicht pro Klasse
 
 Das Standard-`node/view/full.tpl` ist allgemein; geben Sie jeder Klasse mit Overrides ihre eigene
-([Tutorial: eine Vollansicht überschreiben](../../../../eng-us/help/designers/theme-design/tutorial-override-a-full-view.md)).
+([Tutorial: eine Vollansicht überschreiben](../theme-design/tutorial-eine-vollansicht-ueberschreiben.md)).
 
 ## Verwandte Seiten
 

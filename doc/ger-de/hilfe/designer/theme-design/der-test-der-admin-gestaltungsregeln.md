@@ -53,7 +53,7 @@ php vendor/bin/phpunit --testsuite design
 
 Beheben Sie das Template oder das Stylesheet, nie den Test:
 
-- **Inline-CSS**: Verschieben Sie die Regel in ein Stylesheet ([Kein Inline-CSS](../../../../eng-us/help/designers/theme-design/no-inline-css.md)); ein Wert pro Element wird
+- **Inline-CSS**: Verschieben Sie die Regel in ein Stylesheet ([Kein Inline-CSS](kein-inline-css.md)); ein Wert pro Element wird
   zu einer Klasse (für Prozentwerte `.a4-pct-0` bis `.a4-pct-100`) oder zu einem `data-*`-Attribut.
 - **Ein direkter Farbwert**: Verwenden Sie das Token mit dieser Rolle ([admin4-Token](admin4-tokens.md)).
 - **Kein dunkler Wert**: Fügen Sie ihn dem dunklen Block in beiden Kopien von `components.css` hinzu.

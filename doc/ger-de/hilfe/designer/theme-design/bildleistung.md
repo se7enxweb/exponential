@@ -35,13 +35,13 @@ Schicken Sie nie ein Bild mit 1600 px in eine Karte mit 300 px. Definieren Sie A
 ## Den Platz reservieren
 
 Die Attribute `width` und `height` (der Alias liefert beide) oder ein CSS-`aspect-ratio` lassen den Browser den Kasten reservieren,
-bevor das Bild ankommt, sodass Text nicht springt ([CLS und LCP messen](../../../../eng-us/help/designers/theme-design/measuring-cls-and-lcp.md)).
+bevor das Bild ankommt, sodass Text nicht springt ([CLS und LCP messen](cls-und-lcp-messen.md)).
 
 ## Formate
 
 - Fotos: JPEG oder WebP und AVIF, wo Ihr Bildkonverter sie erzeugt; `settings/image.ini [ImageUploadSettings] AllowedMIMETypes[]`
   führt `image/webp` und `image/avif` als hochladbare Typen auf.
-- Logos, Symbole, Diagramme: SVG ([SVG-Bilder](../../../../eng-us/help/designers/theme-design/svg-images.md)).
+- Logos, Symbole, Diagramme: SVG ([SVG-Bilder](svg-bilder.md)).
 - Keine Bilder von Text: Verwenden Sie echten Text mit einem Webfont.
 
 ## Ein vollständiges Beispiel
@@ -65,7 +65,7 @@ Lassen Sie beim ersten Bild einer Vollansicht `loading="lazy"` weg und fügen Si
 
 - [Bildaliase](bildaliase.md)
 - [Bilder in einem Design](bilder-in-einem-design.md)
-- [Performance von Themes](../../../../eng-us/help/designers/theme-design/theme-performance.md)
+- [Performance von Themes](theme-leistung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

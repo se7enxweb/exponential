@@ -68,7 +68,7 @@ Halten Sie die Liste kurz und im README Ihres Themes dokumentiert, damit Adminis
 
 - [Schriften in einem Design](schriften-in-einem-design.md)
 - [jQuery in Designs](jquery-in-designs.md)
-- [Performance von Themes](../../../../eng-us/help/designers/theme-design/theme-performance.md)
+- [Performance von Themes](theme-leistung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

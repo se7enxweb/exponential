@@ -51,7 +51,7 @@ Formulierung.
 ## Der angemeldete Zustand im Rahmen
 
 Im Pagelayout sagt `$current_user.is_logged_in`, ob ein Besucher angemeldet ist; `$current_user.contentobject.name` ist sein
-Name. Verlinken Sie `/user/login`, `/user/logout` und `/user/edit` mit `ezurl` ([Pagelayout-Variablen](../../../../eng-us/help/designers/theme-design/pagelayout-variables.md)).
+Name. Verlinken Sie `/user/login`, `/user/logout` und `/user/edit` mit `ezurl` ([Pagelayout-Variablen](../theme-design/pagelayout-variablen.md)).
 
 ## Caching
 

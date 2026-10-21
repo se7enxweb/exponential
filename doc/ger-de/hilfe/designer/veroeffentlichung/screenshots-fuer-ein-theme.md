@@ -48,7 +48,7 @@ dunklen Modus; dieselben Größen zu verwenden, lässt Nutzer vergleichen.
 ## Verwandte Seiten
 
 - [Eine Demo-Website betreiben](demo-websites.md)
-- [Testen bei Zoomstufen](../../../../eng-us/help/designers/theme-design/testing-at-zoom-levels.md)
+- [Testen bei Zoomstufen](../theme-design/testen-bei-zoomstufen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

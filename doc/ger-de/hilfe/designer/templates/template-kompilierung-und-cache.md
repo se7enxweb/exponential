@@ -42,7 +42,7 @@ Cache-Blöcke (disabled: nie verwendet).
 `[TemplateSettings] DevelopmentMode=enabled` lässt die Template-Engine die Zeiten von kompilierten und Quelldateien
 vergleichen, sodass bearbeitete Templates ohne Leeren des Caches neu kompiliert werden (der Kommentar in `settings/site.ini`
 warnt, dass das Dateizugriffe hinzufügt und nicht für Live-Websites ist). Es stellt auch den Packer auf Stufe 0
-([Der Packer](../../../../eng-us/help/designers/theme-design/the-packer.md)). Schalten Sie es nur auf einem Entwicklungs-Siteaccess ein und leeren Sie beim
+([Der Packer](../theme-design/der-packer.md)). Schalten Sie es nur auf einem Entwicklungs-Siteaccess ein und leeren Sie beim
 Umschalten die kompilierten Templates.
 
 ## Vorkompilieren
@@ -53,7 +53,7 @@ sodass die ersten Besucher nach einem Deployment nicht für die Kompilierung bez
 ## Verwandte Seiten
 
 - [Caching für Designer](../theme-design/caching-fuer-designer.md)
-- [Der Packer-Cache und Deployments](../../../../eng-us/help/designers/theme-design/packer-cache-and-deploy.md)
+- [Der Packer-Cache und Deployments](../theme-design/packer-cache-und-deployment.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

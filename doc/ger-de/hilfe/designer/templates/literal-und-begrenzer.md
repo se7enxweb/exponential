@@ -41,8 +41,8 @@ Innerhalb eines literal-Blocks können Sie keine Variable ausgeben; schließen S
 ## Meist: nicht nötig
 
 Die meisten Klammern in alten Templates sind CSS oder JavaScript, das in das Template geschrieben wurde. In aktuellen Designs
-liegt dieser Code in Dateien unter `stylesheets/` und `javascript/` ([Kein Inline-CSS](../../../../eng-us/help/designers/theme-design/no-inline-css.md),
-[Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md)); JSON für Skripte kommt aus `json_encode`. Das eigene
+liegt dieser Code in Dateien unter `stylesheets/` und `javascript/` ([Kein Inline-CSS](../theme-design/kein-inline-css.md),
+[Kein Inline-JavaScript](../theme-design/kein-inline-javascript.md)); JSON für Skripte kommt aus `json_encode`. Das eigene
 `node/view/full.tpl` des Kernels zeigt noch den alten Stil mit `{literal}` um ein Skript, was neue Templates genau vermeiden.
 
 ## Verwandte Seiten

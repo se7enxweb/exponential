@@ -33,13 +33,13 @@ in die Hände von Designern legen lässt. Templates werden bei ihrem ersten Lauf
 
 | Art | Beispielpfad | Aufgerufen von |
 |---|---|---|
-| Pagelayout | `pagelayout.tpl` | dem Kernel, um jede Seite ([Das Pagelayout](../../../../eng-us/help/designers/theme-design/the-pagelayout.md)) |
+| Pagelayout | `pagelayout.tpl` | dem Kernel, um jede Seite ([Das Pagelayout](../theme-design/das-pagelayout.md)) |
 | View-Templates für Knoten | `node/view/full.tpl`, `node/view/line.tpl` | Inhaltsansichten, `node_view_gui` ([Ansichtsmodi](ansichtsmodi.md)) |
 | Override-Templates | `override/templates/full/article.tpl` | Regeln in `override.ini` ([Override-Grundlagen](override-grundlagen.md)) |
 | Datentyp-Templates | `content/datatype/view/ezstring.tpl` | `attribute_view_gui` ([Ansichtstemplates von Datentypen](datentyp-ansichtstemplates.md)) |
 | Modul-Templates | `user/login.tpl`, `content/search.tpl` | Views von Modulen |
 | Teile | `pagelayout/header.tpl`, `parts/teaser.tpl` | `{include}` aus anderen Templates |
-| Templates für Layout-Blöcke | `explayouts/block/list.tpl` | der Layout-Engine ([Layouts für Designer](../../../../eng-us/help/designers/theme-design/layouts-for-designers.md)) |
+| Templates für Layout-Blöcke | `explayouts/block/list.tpl` | der Layout-Engine ([Layouts für Designer](../theme-design/layouts-fuer-designer.md)) |
 
 ## Die Sprache auf einem Bildschirm
 
@@ -68,7 +68,7 @@ in die Hände von Designern legen lässt. Templates werden bei ihrem ersten Lauf
 ## Woher Templates ihre Daten bekommen
 
 - **Variablen, die der Aufrufer setzt**: Eine Vollansicht bekommt `$node`; ein Datentyp-Template bekommt `$attribute`; das
-  Pagelayout bekommt `$module_result` und `$site` ([Pagelayout-Variablen](../../../../eng-us/help/designers/theme-design/pagelayout-variables.md)).
+  Pagelayout bekommt `$module_result` und `$site` ([Pagelayout-Variablen](../theme-design/pagelayout-variablen.md)).
 - **Fetch-Funktionen**: `fetch( 'content', 'list', ... )`, `fetch( 'user', 'current_user' )`, `fetch( 'explayouts', ... )`
   ([Fetch-Grundlagen](fetch-grundlagen.md)).
 - **Einstellungen**: `ezini( 'Section', 'Setting', 'file.ini' )` ([Der Operator ezini](der-ezini-operator.md)).

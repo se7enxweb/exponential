@@ -104,7 +104,7 @@ SiteDesign=example
 ## Verwandte Seiten
 
 - [Designs und Siteaccesses](designs-und-siteaccesses.md)
-- [Tutorial: zwei Websites, zwei Designs](../../../../eng-us/help/designers/theme-design/tutorial-two-sites-two-designs.md)
+- [Tutorial: zwei Websites, zwei Designs](tutorial-zwei-websites-zwei-designs.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

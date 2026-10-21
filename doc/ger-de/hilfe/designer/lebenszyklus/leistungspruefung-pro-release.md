@@ -10,8 +10,8 @@ type: help
 # Eine Leistungsprüfung bei jedem Release
 
 Diese Seite ist für Designer, die ein Theme betreuen. Die Leistung verschlechtert sich von Release zu Release, wenn sie
-nicht gemessen wird. Wie Sie ein schnelles Theme bauen, steht in [Theme-Leistung](../../../../eng-us/help/designers/theme-design/theme-performance.md)
-und [CLS und LCP messen](../../../../eng-us/help/designers/theme-design/measuring-cls-and-lcp.md).
+nicht gemessen wird. Wie Sie ein schnelles Theme bauen, steht in [Theme-Leistung](../theme-design/theme-leistung.md)
+und [CLS und LCP messen](../theme-design/cls-und-lcp-messen.md).
 
 ## Was Sie messen
 

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Designer, die Pagelayouts und ihre Teile schreiben. `$module_result` ist alles, was die View eines
 Moduls über die Seite meldet, die sie erzeugt hat. Die vollständige Liste der Schlüssel steht in
-[Pagelayout-Variablen](../../../../eng-us/help/designers/theme-design/pagelayout-variables.md); diese Seite zeigt, wie Sie sie verwenden.
+[Pagelayout-Variablen](../theme-design/pagelayout-variablen.md); diese Seite zeigt, wie Sie sie verwenden.
 
 ## Inhalt
 
@@ -59,8 +59,8 @@ Fehlerseiten einen lesbaren Titel zu geben ([Fehler-Templates](fehler-templates.
 
 ## Verwandte Seiten
 
-- [Pagelayout-Variablen](../../../../eng-us/help/designers/theme-design/pagelayout-variables.md)
-- [Das Pagelayout](../../../../eng-us/help/designers/theme-design/the-pagelayout.md)
+- [Pagelayout-Variablen](../theme-design/pagelayout-variablen.md)
+- [Das Pagelayout](../theme-design/das-pagelayout.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

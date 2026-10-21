@@ -139,9 +139,9 @@ in `AdditionalSiteDesignList[]` (siehe [Designs in einer Multisite-Installation]
 
 ## Verwandte Seiten
 
-- [Was ein Design ist](../../../../eng-us/help/designers/theme-design/what-a-design-is.md)
-- [Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)
-- [Ein Design auf einem Siteaccess in der Vorschau ansehen](../../../../eng-us/help/designers/theme-design/previewing-a-design-on-a-siteaccess.md)
+- [Was ein Design ist](was-ein-design-ist.md)
+- [Die Design-Kaskade](die-design-kaskade.md)
+- [Ein Design auf einem Siteaccess in der Vorschau ansehen](design-vorschau-auf-einem-siteaccess.md)
 - [INI-Overrides für mehrere Websites](../../../../eng-us/features/6.0/multi-site-ini-overrides.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

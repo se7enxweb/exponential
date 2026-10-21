@@ -30,18 +30,18 @@ vornherein barrierefrei; eines, das sie falsch macht, können Redakteure nicht r
 ## Die zehn Grundlagen
 
 1. **Sprache und Schreibrichtung.** `<html lang="{$site.http_equiv.Content-language|wash}">` und `dir="rtl"` für
-   Sprachen, die von rechts nach links geschrieben werden ([Das Pagelayout](../../../../eng-us/help/designers/theme-design/the-pagelayout.md)).
+   Sprachen, die von rechts nach links geschrieben werden ([Das Pagelayout](das-pagelayout.md)).
 2. **Landmarks und ein einziges `<h1>`.** `<header>`, `<nav>`, `<main id="main">`, `<footer>`; ein `<h1>` pro Seite,
-   Überschriften in der richtigen Reihenfolge ([Landmarks und Überschriften](../../../../eng-us/help/designers/theme-design/landmarks-and-headings.md)).
-3. **Ein Skip-Link** als erstes fokussierbares Element ([Skip-Links](../../../../eng-us/help/designers/theme-design/skip-links.md)).
+   Überschriften in der richtigen Reihenfolge ([Landmarks und Überschriften](landmarks-und-ueberschriften.md)).
+3. **Ein Skip-Link** als erstes fokussierbares Element ([Skip-Links](sprunglinks.md)).
 4. **Sichtbarer Fokus** auf jedem interaktiven Element, nie `outline: none` ohne Ersatz
    ([Tastatur und Fokus](tastatur-und-fokus.md)).
 5. **Kontrast** von mindestens 4,5:1 für Text, 3:1 für großen Text, Symbole und Fokusringe, im hellen und im dunklen Modus
    ([Farbkontrast](farbkontrast.md)).
 6. **Alternativtexte**, ausgegeben aus dem Bildfeld (`|wash`), `alt=""` für Dekoration ([Bilder in einem Design](bilder-in-einem-design.md)).
 7. **Formulare mit Beschriftungen und Fehlermeldungen**, die mit ihren Feldern verknüpft sind ([Barrierefreie Formulare](barrierefreie-formulare.md)).
-8. **Bewegung nur, wenn gewünscht**: Beachten Sie `prefers-reduced-motion` ([Reduzierte Bewegung](../../../../eng-us/help/designers/theme-design/reduced-motion.md)).
-9. **Zoom und Umbruch**: funktioniert bei 200 % und in einem 320 px breiten Viewport ([Testen bei Zoomstufen](../../../../eng-us/help/designers/theme-design/testing-at-zoom-levels.md)).
+8. **Bewegung nur, wenn gewünscht**: Beachten Sie `prefers-reduced-motion` ([Reduzierte Bewegung](reduzierte-bewegung.md)).
+9. **Zoom und Umbruch**: funktioniert bei 200 % und in einem 320 px breiten Viewport ([Testen bei Zoomstufen](testen-bei-zoomstufen.md)).
 10. **Skripte, die ihren Zustand in ARIA halten**: Ein Menüknopf meldet `aria-expanded`, ein Dialog hält den Fokus fest und
     gibt ihn danach zurück.
 

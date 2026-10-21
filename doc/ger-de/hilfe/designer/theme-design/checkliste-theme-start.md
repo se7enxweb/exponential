@@ -24,7 +24,7 @@ Kopieren Sie sie in Ihr Ticket und haken Sie sie ab.
 
 - [ ] Das Design liegt in einer eigenen Erweiterung, registriert mit `DesignExtensions[]` ([Design-Erweiterungen](design-erweiterungen.md)).
 - [ ] `ezinfo.php` und `extension.xml` tragen dieselbe Version, Lizenz und denselben Namen ([ezinfo.php](../erweiterungen/ezinfo-php.md)).
-- [ ] Die Design-Kette des Siteaccess ist beabsichtigt und kurz ([Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)).
+- [ ] Die Design-Kette des Siteaccess ist beabsichtigt und kurz ([Die Design-Kaskade](die-design-kaskade.md)).
 - [ ] Override-Regeln haben eindeutige Abschnittsnamen mit Präfix und, wo die Reihenfolge zählt, eine `Priority`.
 - [ ] Keine Knoten-ids in Einstellungen oder Overrides, die sich zwischen Installationen unterscheiden; stattdessen Remote-ids
   oder Klassen.
@@ -41,7 +41,7 @@ Kopieren Sie sie in Ihr Ticket und haken Sie sie ab.
 
 ## Assets
 
-- [ ] Ein einziges `ezcss_load`, Skripte am Ende des Body oder verzögert ([Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md)).
+- [ ] Ein einziges `ezcss_load`, Skripte am Ende des Body oder verzögert ([Stylesheets laden](stylesheets-laden.md)).
 - [ ] Schriften selbst gehostet, Lizenzen mitgeliefert ([Schriften in einem Design](schriften-in-einem-design.md)).
 - [ ] Favicons und Touch-Icons ([Favicons und Touch-Icons](favicons-und-touch-icons.md)).
 - [ ] Bildaliase für die angezeigten Größen definiert ([Bildaliase](bildaliase.md)).
@@ -59,9 +59,9 @@ Kopieren Sie sie in Ihr Ticket und haken Sie sie ab.
 
 ## Die Umstellung
 
-- [ ] Auf einem Vorschau-Siteaccess mit echten Inhalten getestet ([Ein Design auf einem Siteaccess in der Vorschau ansehen](../../../../eng-us/help/designers/theme-design/previewing-a-design-on-a-siteaccess.md)).
+- [ ] Auf einem Vorschau-Siteaccess mit echten Inhalten getestet ([Ein Design auf einem Siteaccess in der Vorschau ansehen](design-vorschau-auf-einem-siteaccess.md)).
 - [ ] Entwicklungseinstellungen auf dem Live-Siteaccess aus (`DevelopmentMode`, `ShowTemplatePathComments`, Debug-Ausgabe).
-- [ ] Caches nach der Umstellung geleert, einschließlich Packer ([Der Packer-Cache und Deploys](../../../../eng-us/help/designers/theme-design/packer-cache-and-deploy.md)).
+- [ ] Caches nach der Umstellung geleert, einschließlich Packer ([Der Packer-Cache und Deploys](packer-cache-und-deployment.md)).
 - [ ] Die meistbesuchten Seiten direkt nach der Umstellung abgemeldet geöffnet.
 - [ ] Ein Weg zurück: die alten Werte von `SiteDesign` notiert.
 

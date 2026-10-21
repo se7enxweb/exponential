@@ -28,7 +28,7 @@ hat. Sie erklärt das Modell; die Seiten, auf die jeder Abschnitt verweist, zeig
 2. **Zwei Sätze von Werten.** Die Token bekommen helle Werte auf `:root` und dunkle Werte unter einem Selektor oder einer Media Query.
 3. **Ein Schalter am `<html>`.** Ein Attribut wie `data-theme="dark"` wählt den dunklen Satz, oder die Systemeinstellung tut es.
 4. **Kein Aufblitzen.** Das Attribut wird gesetzt, bevor der Browser etwas zeichnet, von einer winzigen Skriptdatei im Kopf
-   ([Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](../../../../eng-us/help/designers/theme-design/theme-toggle-pre-paint-guard.md)).
+   ([Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](theme-umschalter-und-pre-paint-guard.md)).
 
 ## Hell, dunkel und System
 
@@ -62,7 +62,7 @@ sich ändert, während die Seite offen ist). Ohne jede Auswahl kann ein öffentl
 | Ein Umschalter mit hell, dunkel, System | Token, ein Attribut, ein kleines Skript im Kopf und ein Knopf | Besucher wählen; die Auswahl wird gemerkt |
 
 Beginnen Sie mit dem ersten; fügen Sie den Umschalter hinzu, wenn Besucher danach fragen.
-[Tutorial: einen dunklen Modus hinzufügen](../../../../eng-us/help/designers/theme-design/tutorial-add-dark-mode.md) macht beides, Schritt für Schritt.
+[Tutorial: einen dunklen Modus hinzufügen](tutorial-dunkelmodus-hinzufuegen.md) macht beides, Schritt für Schritt.
 
 ## Was ein dunkler Modus nicht ist
 

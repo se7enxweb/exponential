@@ -10,7 +10,7 @@ type: help
 # Die Design-Einstellungen, die ein Theme mitliefert
 
 Diese Seite ist für Designer, die entscheiden, welche Einstellungen sie in ihr Theme setzen und welche sie der Person
-überlassen, die es installiert. Wie Designs aufeinander zurückgreifen, erklärt [Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md);
+überlassen, die es installiert. Wie Designs aufeinander zurückgreifen, erklärt [Die Design-Kaskade](../theme-design/die-design-kaskade.md);
 hier geht es nur darum, **wo jede Einstellung liegt**.
 
 ## Die beteiligten Einstellungen
@@ -21,7 +21,7 @@ hier geht es nur darum, **wo jede Einstellung liegt**.
 | `AdditionalSiteDesignList[]` | `site.ini [DesignSettings]` | leer | Weitere Designs, die vor dem Standard-Design durchsucht werden |
 | `StandardDesign` | `site.ini [DesignSettings]` | `standard` | Der letzte Rückgriff |
 | `DesignExtensions[]` | `design.ini [ExtensionSettings]` | leer | Erweiterungen, die nach Designs durchsucht werden |
-| `FrontendCSSFileList[]`, `FrontendJavaScriptList[]` | `design.ini [StylesheetSettings]`, `[JavaScriptSettings]` | leer | Stylesheets und Skripte, die das öffentliche Pagelayout lädt ([Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md)) |
+| `FrontendCSSFileList[]`, `FrontendJavaScriptList[]` | `design.ini [StylesheetSettings]`, `[JavaScriptSettings]` | leer | Stylesheets und Skripte, die das öffentliche Pagelayout lädt ([Stylesheets laden](../theme-design/stylesheets-laden.md)) |
 
 ## Die empfohlene Aufteilung
 

@@ -108,7 +108,7 @@ Das sind die Regeln der Administration (`doc/eng-us/bc/6.0/admin4-styling.md`), 
 
 - [admin4-Token](admin4-tokens.md)
 - [Dunkler Modus mit prefers-color-scheme](dunkelmodus-mit-prefers-color-scheme.md)
-- [Tutorial: einen dunklen Modus hinzufügen](../../../../eng-us/help/designers/theme-design/tutorial-add-dark-mode.md)
+- [Tutorial: einen dunklen Modus hinzufügen](tutorial-dunkelmodus-hinzufuegen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -81,9 +81,9 @@ Reiter zurück, `aria-expanded` am Reiter), wie im Gestaltungsleitfaden der Admi
 
 ## Verwandte Seiten
 
-- [Skip-Links](../../../../eng-us/help/designers/theme-design/skip-links.md)
+- [Skip-Links](sprunglinks.md)
 - [Barrierefreiheit: Grundlagen für Themes](barrierefreiheit-grundlagen-fuer-themes.md)
-- [Reduzierte Bewegung](../../../../eng-us/help/designers/theme-design/reduced-motion.md)
+- [Reduzierte Bewegung](reduzierte-bewegung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

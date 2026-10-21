@@ -101,8 +101,8 @@ Hilfe ([Theme-Erweiterungen: hier beginnen](../erweiterungen/theme-erweiterungen
 | `sevenx_themes_super` | `sevenx_themes_super` | ein kleines Design mit `site.css` und `site.js` |
 | `ezwebin` | `ezwebin` | das klassische Design website interface, von `site` und `bold` als Rückfall verwendet |
 
-Jede ist auf einer eigenen Seite beschrieben: [Das Theme media](../../../../eng-us/help/designers/theme-design/media-theme-tour.md), [Das Theme simple](../../../../eng-us/help/designers/theme-design/simple-theme-tour.md),
-[Das Theme starter](../../../../eng-us/help/designers/theme-design/starter-theme-tour.md), [Das Theme super](../../../../eng-us/help/designers/theme-design/super-theme-tour.md),
+Jede ist auf einer eigenen Seite beschrieben: [Das Theme media](rundgang-durch-das-media-theme.md), [Das Theme simple](rundgang-durch-das-simple-theme.md),
+[Das Theme starter](rundgang-durch-das-starter-theme.md), [Das Theme super](rundgang-durch-das-super-theme.md),
 [Das Design ezwebin als Basis](ezwebin-als-grundlage.md).
 
 ## Eine Erweiterung, mehrere Designs
@@ -123,9 +123,9 @@ zurückfällt, die Administration eingeschlossen.
 
 ## Verwandte Seiten
 
-- [Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)
+- [Die Design-Kaskade](die-design-kaskade.md)
 - [Der Aufbau des Design-Verzeichnisses](aufbau-des-design-verzeichnisses.md)
-- [Tutorial: eine Theme-Erweiterung anlegen](../../../../eng-us/help/designers/theme-design/tutorial-create-a-theme-extension.md)
+- [Tutorial: eine Theme-Erweiterung anlegen](tutorial-eine-theme-erweiterung-anlegen.md)
 - [Ladereihenfolge der Erweiterungen](../../../../eng-us/features/6.0/extension-loading-order.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

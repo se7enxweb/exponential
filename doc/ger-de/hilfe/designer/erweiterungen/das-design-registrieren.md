@@ -73,7 +73,7 @@ DesignExtensions[]=cjw_themes_jumper
 
 ## Verwandte Seiten
 
-- [Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)
+- [Die Design-Kaskade](../theme-design/die-design-kaskade.md)
 - [Design-Erweiterungen](../theme-design/design-erweiterungen.md)
 - [Ladereihenfolge und welches Theme gewinnt](ladereihenfolge-von-themes.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

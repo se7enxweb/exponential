@@ -59,12 +59,12 @@ gehört:
 ## Regeln debuggen
 
 `fetch( 'explayouts', 'rules_for_node', hash( 'node_id', $node.node_id ) )` listet auf, was zutraf. Der Resolver speichert
-seine Antwort pro Pfad für `explayouts.ini [ResolverSettings] CacheTTL` Sekunden ([Layout-Regeln](../../../../eng-us/help/designers/theme-design/layout-rules.md)).
+seine Antwort pro Pfad für `explayouts.ini [ResolverSettings] CacheTTL` Sekunden ([Layout-Regeln](../theme-design/layout-regeln.md)).
 
 ## Verwandte Seiten
 
-- [Layouts für Designer](../../../../eng-us/help/designers/theme-design/layouts-for-designers.md)
-- [Das Pagelayout](../../../../eng-us/help/designers/theme-design/the-pagelayout.md)
+- [Layouts für Designer](../theme-design/layouts-fuer-designer.md)
+- [Das Pagelayout](../theme-design/das-pagelayout.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

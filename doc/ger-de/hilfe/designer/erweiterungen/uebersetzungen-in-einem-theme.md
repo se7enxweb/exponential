@@ -59,12 +59,12 @@ mit; `sevenx_themes_media` fügt weitere hinzu, zum Beispiel `fre-FR`, `ita-IT`,
   Liste beginnt.
 - Wiederholen Sie dieselbe Nachricht nie zweimal in einem Kontext.
 - Eine Sprache, die von rechts nach links läuft (`heb-IL`, `ara-SA`), verlangt, dass auch das Layout folgt
-  ([Rechts-nach-links-Designs](../../../../eng-us/help/designers/theme-design/right-to-left-designs.md)).
+  ([Rechts-nach-links-Designs](../theme-design/rechts-nach-links-designs.md)).
 
 ## Verwandte Seiten
 
 - [Sprachen](../../sprachen.md)
-- [Tutorial: ein Theme internationalisieren](../../../../eng-us/help/designers/theme-design/tutorial-internationalize-a-theme.md)
+- [Tutorial: ein Theme internationalisieren](../theme-design/tutorial-ein-theme-internationalisieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -10,7 +10,7 @@ type: help
 # Template-Texte übersetzen
 
 Diese Seite ist für Designer, die die Texte eines Themes für die Übersetzung vorbereiten und die Übersetzungen pflegen. Für
-das erste Mal Schritt für Schritt siehe [Tutorial: ein Theme internationalisieren](../../../../eng-us/help/designers/theme-design/tutorial-internationalize-a-theme.md).
+das erste Mal Schritt für Schritt siehe [Tutorial: ein Theme internationalisieren](../theme-design/tutorial-ein-theme-internationalisieren.md).
 
 ## Inhalt
 

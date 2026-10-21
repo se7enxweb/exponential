@@ -27,7 +27,7 @@ Leiste zum Teilen.
 ```
 
 `design:` bedeutet „diesen Pfad unter `templates/` über die Design-Kaskade finden“, sodass ein Design weiter oben in der
-Kette den Teil ersetzen kann, indem es eine Datei an denselben Pfad legt ([Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)).
+Kette den Teil ersetzen kann, indem es eine Datei an denselben Pfad legt ([Die Design-Kaskade](../theme-design/die-design-kaskade.md)).
 
 ## Parameter übergeben
 
@@ -77,7 +77,7 @@ Ein Pfad, der nicht existiert, ist ein Template-Fehler: Stellen Sie sicher, dass
 ## Verwandte Seiten
 
 - [Variablen und def](variablen-und-def.md)
-- [Das Pagelayout](../../../../eng-us/help/designers/theme-design/the-pagelayout.md)
+- [Das Pagelayout](../theme-design/das-pagelayout.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

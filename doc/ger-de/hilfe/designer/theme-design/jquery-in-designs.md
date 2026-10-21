@@ -86,8 +86,8 @@ Erweiterungen).
 
 ## Verwandte Seiten
 
-- [JavaScript laden](../../../../eng-us/help/designers/theme-design/loading-javascript.md)
-- [Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md)
+- [JavaScript laden](javascript-laden.md)
+- [Kein Inline-JavaScript](kein-inline-javascript.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

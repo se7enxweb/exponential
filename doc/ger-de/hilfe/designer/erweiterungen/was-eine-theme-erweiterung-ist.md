@@ -37,7 +37,7 @@ sieht schnell aus, aber:
 
 Eine minimale Theme-Erweiterung hat:
 
-- `design/<design name>/templates/` mit mindestens `pagelayout.tpl` (siehe [Das Pagelayout](../../../../eng-us/help/designers/theme-design/the-pagelayout.md));
+- `design/<design name>/templates/` mit mindestens `pagelayout.tpl` (siehe [Das Pagelayout](../theme-design/das-pagelayout.md));
 - `design/<design name>/stylesheets/`, `javascript/`, `images/`;
 - `settings/design.ini.append.php` mit `DesignExtensions[]=<extension name>`
   ([Das Design registrieren](das-design-registrieren.md));

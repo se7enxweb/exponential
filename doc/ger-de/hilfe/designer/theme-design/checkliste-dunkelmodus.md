@@ -31,7 +31,7 @@ Diese Seite ist für Designer, die einen dunklen Modus prüfen. Hintergrund: [Du
 - [ ] Kein weißer oder heller Kasten auf einer dunklen Seite (Karten, Tabellen, Codeblöcke, Dialoge, Widgets von Drittanbietern).
 - [ ] Textkontrast mindestens 4,5:1 auf jeder dunklen Fläche, auch in Hover- und Auswahlzuständen ([Farbkontrast](farbkontrast.md)).
 - [ ] Rahmen sichtbar, aber nicht grell; Flächen unterscheidbar (Seite, Karte, erhöht).
-- [ ] Logo auf dem dunklen Kopfbereich lesbar ([SVG-Bilder](../../../../eng-us/help/designers/theme-design/svg-images.md)).
+- [ ] Logo auf dem dunklen Kopfbereich lesbar ([SVG-Bilder](svg-bilder.md)).
 - [ ] Symbole folgen der Textfarbe.
 - [ ] Fokusring auf dunklen Flächen sichtbar.
 - [ ] Bei 1440 px und 960 px mit Skalierung 2 geprüft.
@@ -41,7 +41,7 @@ Diese Seite ist für Designer, die einen dunklen Modus prüfen. Hintergrund: [Du
 ## Verhalten
 
 - [ ] Folgt der Systemeinstellung, wenn keine Auswahl getroffen ist, auch wenn sich das System ändert, während die Seite offen ist.
-- [ ] Ein Umschalter (falls vorhanden) bietet hell, dunkel und System, nennt seinen Zustand und ist mit der Tastatur bedienbar ([Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](../../../../eng-us/help/designers/theme-design/theme-toggle-pre-paint-guard.md)).
+- [ ] Ein Umschalter (falls vorhanden) bietet hell, dunkel und System, nennt seinen Zustand und ist mit der Tastatur bedienbar ([Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](theme-umschalter-und-pre-paint-guard.md)).
 - [ ] Kein helles Aufblitzen beim Laden einer Seite im dunklen Modus.
 - [ ] Die Auswahl übersteht Neuladen und Navigation.
 - [ ] Drucken ergibt eine helle Seite.
@@ -50,7 +50,7 @@ Diese Seite ist für Designer, die einen dunklen Modus prüfen. Hintergrund: [Du
 
 ## Verwandte Seiten
 
-- [Tutorial: einen dunklen Modus hinzufügen](../../../../eng-us/help/designers/theme-design/tutorial-add-dark-mode.md)
+- [Tutorial: einen dunklen Modus hinzufügen](tutorial-dunkelmodus-hinzufuegen.md)
 - [Dunkler Modus mit prefers-color-scheme](dunkelmodus-mit-prefers-color-scheme.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

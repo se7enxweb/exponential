@@ -27,7 +27,7 @@ Seite auch nutzen können, um die Ursache eines Problems zu finden.
 | einen Wert ohne `\|wash` ausgeben | HTML aus Inhalten zerstört die Seite; Einschleusen von Skripten möglich | bei der Ausgabe maskieren ([Wash und Maskierung](wash-und-maskierung.md)) |
 | die Ausgabe von Rich Text maskieren | Tags als Text angezeigt | die Ausgabe von `attribute_view_gui` nicht maskieren |
 | doppelt maskieren | `&amp;amp;` auf der Seite | einmal maskieren, am Ende |
-| Inline-`<script>` oder `onclick` | unter einer Content Security Policy blockiert | Skriptdateien ([Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md)) |
+| Inline-`<script>` oder `onclick` | unter einer Content Security Policy blockiert | Skriptdateien ([Kein Inline-JavaScript](../theme-design/kein-inline-javascript.md)) |
 
 ## Daten und Geschwindigkeit
 
@@ -61,7 +61,7 @@ Seite auch nutzen können, um die Ursache eines Problems zu finden.
 
 | Fehler | Anzeichen | Korrektur |
 |---|---|---|
-| ein Template in `design/standard` oder einem mitgelieferten Theme bearbeiten | Änderung beim Upgrade verloren | es in Ihr Design kopieren ([Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)) |
+| ein Template in `design/standard` oder einem mitgelieferten Theme bearbeiten | Änderung beim Upgrade verloren | es in Ihr Design kopieren ([Die Design-Kaskade](../theme-design/die-design-kaskade.md)) |
 | ein neues Template oder ein neuer Override erscheint nicht | altes Template weiter verwendet oder leerer Inhaltsbereich | `template-override` leeren ([Ein Design debuggen](../theme-design/ein-design-debuggen.md)) |
 | ein Override mit einem Tippfehler in `MatchFile` | Regel ignoriert, Eintrag im Fehlerlog | den Pfad unter `override/templates/` prüfen |
 | zwei Overrides für dieselbe Quelle | der falsche gewinnt | `Priority` ([Override-Reihenfolge](override-reihenfolge.md)) |

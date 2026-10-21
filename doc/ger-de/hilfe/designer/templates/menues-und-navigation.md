@@ -90,7 +90,7 @@ Das Menü ist für alle mit denselben Rollen auf derselben Seite gleich:
 ## Kleine Bildschirme
 
 Eine Menüschaltfläche mit `aria-expanded` und `aria-controls`, von einer Skriptdatei umgeschaltet, nie durch Inline-Code
-([Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md)); das Menü bleibt ohne das Skript benutzbar (zum Beispiel
+([Kein Inline-JavaScript](../theme-design/kein-inline-javascript.md)); das Menü bleibt ohne das Skript benutzbar (zum Beispiel
 eine Liste von Links, die das Skript einklappt).
 
 ## Verwandte Seiten

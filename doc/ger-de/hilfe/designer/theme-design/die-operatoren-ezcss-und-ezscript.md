@@ -104,9 +104,9 @@ Fehler.
 
 ## Verwandte Seiten
 
-- [Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md)
-- [JavaScript laden](../../../../eng-us/help/designers/theme-design/loading-javascript.md)
-- [Der Packer](../../../../eng-us/help/designers/theme-design/the-packer.md)
+- [Stylesheets laden](stylesheets-laden.md)
+- [JavaScript laden](javascript-laden.md)
+- [Der Packer](der-packer.md)
 - [ezjscore](../../../../eng-us/features/6.0/extensions/ezjscore.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

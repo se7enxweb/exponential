@@ -53,8 +53,8 @@ Seitentitel, einem `<link rel="stylesheet">` für Ihr Stylesheet und einem `<scr
 erzeugten `page_head.tpl` und `pagelayout.tpl` laden beide, wie die mitgelieferten Designs. Ein Theme, das ein älterer
 Assistent erzeugt hat, hat `CSSFileList[]=site.css` und `JavaScriptList[]=site.js`: Benennen Sie die beiden Zeilen in
 `FrontendCSSFileList[]` und `FrontendJavaScriptList[]` um und stellen Sie sicher, dass Kopf und Layout die
-Frontend-Listen laden ([Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md),
-[JavaScript laden](../../../../eng-us/help/designers/theme-design/loading-javascript.md)).
+Frontend-Listen laden ([Stylesheets laden](../theme-design/stylesheets-laden.md),
+[JavaScript laden](../theme-design/javascript-laden.md)).
 
 ## Einstellungsteile
 

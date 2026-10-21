@@ -62,7 +62,7 @@ eingebettete Galerien hinzu).
 
 Die Klassen des Wrappers sind `object-left`, `object-right`, `object-center` aus `align`, dazu die Klasse des Redakteurs.
 Gestalten Sie sie in Ihrem Stylesheet (mit logischen Eigenschaften für links und rechts auf Seiten von rechts nach links,
-siehe [Logische CSS-Eigenschaften](../../../../eng-us/help/designers/theme-design/logical-css-properties.md)).
+siehe [Logische CSS-Eigenschaften](../theme-design/logische-css-eigenschaften.md)).
 
 ## Verwandte Seiten
 

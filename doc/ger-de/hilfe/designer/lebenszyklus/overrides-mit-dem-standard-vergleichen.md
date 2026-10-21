@@ -37,7 +37,7 @@ Theme), die es ändert. Wird das Original korrigiert, behält Ihre Kopie die alt
 
 Je weniger Templates Sie kopieren, desto weniger gibt es zu vergleichen. Überschreiben Sie lieber ein Template für eine
 Klasse, statt allgemeine zu kopieren, und verwenden Sie wo möglich die Design-Kaskade statt Kopien
-([Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)).
+([Die Design-Kaskade](../theme-design/die-design-kaskade.md)).
 
 ## Verwandte Seiten
 

@@ -109,8 +109,8 @@ Beginnen Sie mit dem Logo, dem Fußbereich und dem Stylesheet; mehr braucht eine
 
 ## Verwandte Seiten
 
-- [Ein Rundgang durch das Theme simple](../../../../eng-us/help/designers/theme-design/simple-theme-tour.md)
-- [Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md)
+- [Ein Rundgang durch das Theme simple](rundgang-durch-das-simple-theme.md)
+- [Die Design-Kaskade](die-design-kaskade.md)
 - [Menüs und Navigation](../templates/menues-und-navigation.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

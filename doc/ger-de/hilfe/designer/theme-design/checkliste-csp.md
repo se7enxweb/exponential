@@ -24,7 +24,7 @@ funktioniert. Hintergrund: [CSP-sicheres Design](csp-sicheres-design.md).
 - [ ] Kein `<script>`-Element mit Code (ein Skript mit `src`, ein JSON-Datenblock und ein `<template>` sind in Ordnung).
 - [ ] Keine Handler-Attribute `on*=`.
 - [ ] Keine `javascript:`-URLs.
-- [ ] Keine `<style>`-Blöcke und keine `style=""`-Attribute ([Kein Inline-CSS](../../../../eng-us/help/designers/theme-design/no-inline-css.md)).
+- [ ] Keine `<style>`-Blöcke und keine `style=""`-Attribute ([Kein Inline-CSS](kein-inline-css.md)).
 - [ ] `csp_nonce()` nur, wo eine Datei wirklich unmöglich ist, und nie in einem Cache-Block oder einem im View-Cache
   gespeicherten Template.
 
@@ -35,7 +35,7 @@ grep -rn -E "<script>|on(click|change|load|submit|input|keyup|keydown|focus|blur
 
 ## Skripte und Stile
 
-- [ ] Jedes Skript ist eine Datei unter `javascript/`, geladen mit den Operatoren von ezjscore ([Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md)).
+- [ ] Jedes Skript ist eine Datei unter `javascript/`, geladen mit den Operatoren von ezjscore ([Kein Inline-JavaScript](kein-inline-javascript.md)).
 - [ ] Werte für Skripte kommen aus `data-*`-Attributen oder Blöcken `<script type="application/json">`.
 - [ ] Code, der vor dem ersten Zeichnen laufen muss, ist eine kleine Datei, die im Kopf geladen wird.
 - [ ] Kein `eval`, kein `new Function` und keine Zeichenketten als Argumente für `setTimeout` in den Skripten des Designs.

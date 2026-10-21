@@ -33,21 +33,21 @@ dieser Hilfe steht.
 ## Das Designsystem in fünf Sätzen
 
 1. Ein **Design** ist ein benannter Ordner mit Templates, Stylesheets, Skripten und Bildern, meist innerhalb einer
-   Erweiterung ([Was ein Design ist](../../../eng-us/help/designers/theme-design/what-a-design-is.md)).
+   Erweiterung ([Was ein Design ist](theme-design/was-ein-design-ist.md)).
 2. Ein **Siteaccess** (ein Zugang zur Installation) nennt seine Designs, und der Kernel durchsucht sie der Reihe nach,
-   die **Design-Kaskade**, und nimmt die erste Datei, die er findet ([Die Design-Kaskade](../../../eng-us/help/designers/theme-design/the-design-cascade.md)).
-3. Das **Pagelayout** rahmt jede Seite um das Ergebnis des Moduls ein ([Das Pagelayout](../../../eng-us/help/designers/theme-design/the-pagelayout.md)).
+   die **Design-Kaskade**, und nimmt die erste Datei, die er findet ([Die Design-Kaskade](theme-design/die-design-kaskade.md)).
+3. Das **Pagelayout** rahmt jede Seite um das Ergebnis des Moduls ein ([Das Pagelayout](theme-design/das-pagelayout.md)).
 4. **Templates** in der Sprache TPL stellen Inhalte dar, und **Overrides** wählen ein Template je Klasse, Knoten oder
    Sektion ([Templates im Überblick](templates/templates-ueberblick.md), [Override-Grundlagen](templates/override-grundlagen.md)).
 5. Stylesheets und Skripte erreichen den Browser von ezjscore **gepackt**, ohne Inline-Code
-   ([Stylesheets laden](../../../eng-us/help/designers/theme-design/loading-stylesheets.md), [CSP-sicheres Design](theme-design/csp-sicheres-design.md)).
+   ([Stylesheets laden](theme-design/stylesheets-laden.md), [CSP-sicheres Design](theme-design/csp-sicheres-design.md)).
 
 ## Ihre erste Woche
 
 ### Tag 1: sich umsehen
 
-- [ ] Lesen Sie [Was ein Design ist](../../../eng-us/help/designers/theme-design/what-a-design-is.md) und [Designs und Siteaccesses](theme-design/designs-und-siteaccesses.md).
-- [ ] Sehen Sie sich [Die Themes, die mit Exponential kommen](../../../eng-us/help/designers/theme-design/themes-on-alpha.md) an; öffnen Sie die `pagelayout.tpl` eines Themes.
+- [ ] Lesen Sie [Was ein Design ist](theme-design/was-ein-design-ist.md) und [Designs und Siteaccesses](theme-design/designs-und-siteaccesses.md).
+- [ ] Sehen Sie sich [Die Themes, die mit Exponential kommen](theme-design/themes-die-mit-exponential-kommen.md) an; öffnen Sie die `pagelayout.tpl` eines Themes.
 
 ### Tag 2: die Template-Sprache
 
@@ -56,23 +56,23 @@ dieser Hilfe steht.
 
 ### Tag 3: Ihr eigenes Theme
 
-- [ ] Folgen Sie auf einer Entwicklungsinstallation dem [Tutorial: eine Theme-Erweiterung anlegen](../../../eng-us/help/designers/theme-design/tutorial-create-a-theme-extension.md).
+- [ ] Folgen Sie auf einer Entwicklungsinstallation dem [Tutorial: eine Theme-Erweiterung anlegen](theme-design/tutorial-eine-theme-erweiterung-anlegen.md).
 
 ### Tag 4: Inhalte und Overrides
 
 - [ ] Rufen Sie eine Liste ab ([Fetch-Grundlagen](templates/fetch-grundlagen.md)) und überschreiben Sie eine Vollansicht
-      ([Tutorial: eine Vollansicht überschreiben](../../../eng-us/help/designers/theme-design/tutorial-override-a-full-view.md)).
+      ([Tutorial: eine Vollansicht überschreiben](theme-design/tutorial-eine-vollansicht-ueberschreiben.md)).
 
 ### Tag 5: Qualität
 
-- [ ] Fügen Sie den Dunkelmodus hinzu ([Tutorial: Dunkelmodus hinzufügen](../../../eng-us/help/designers/theme-design/tutorial-add-dark-mode.md)) und gehen
+- [ ] Fügen Sie den Dunkelmodus hinzu ([Tutorial: Dunkelmodus hinzufügen](theme-design/tutorial-dunkelmodus-hinzufuegen.md)) und gehen
       Sie Ihre Seiten mit der [Checkliste Barrierefreiheit](theme-design/checkliste-barrierefreiheit.md) durch.
 
 ## Die sechs Bereiche
 
 | Bereich | Was er abdeckt | Beginnen Sie mit |
 |---|---|---|
-| Theme-Design | Designs, Kaskade, Pagelayout, CSS und JS, Bilder und Schriften, Responsive Design, Barrierefreiheit, Dunkelmodus, rechts nach links, CSP, Leistung, Layout-Editor | [Die Design-Kaskade](../../../eng-us/help/designers/theme-design/the-design-cascade.md) |
+| Theme-Design | Designs, Kaskade, Pagelayout, CSS und JS, Bilder und Schriften, Responsive Design, Barrierefreiheit, Dunkelmodus, rechts nach links, CSP, Leistung, Layout-Editor | [Die Design-Kaskade](theme-design/die-design-kaskade.md) |
 | Templates | die Sprache TPL, Operatoren und Funktionen, Inhalte abrufen, Ansichtsmodi, Overrides, Debugging | [Templates im Überblick](templates/templates-ueberblick.md) |
 | Theme-Erweiterungen | Metadaten, Einstellungen, Paketierung, die RAD-Assistenten für Designs und Pakete | [Theme-Erweiterungen: hier beginnen](erweiterungen/theme-erweiterungen-hier-beginnen.md) |
 | Veröffentlichung | Repositories, Versionen, Releases, Packagist, Lizenzen, Veröffentlichen | [Ein Theme veröffentlichen: hier beginnen](veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md) |
@@ -83,15 +83,15 @@ dieser Hilfe steht.
 
 | Tutorial | Dauer |
 |---|---|
-| [Eine Theme-Erweiterung anlegen](../../../eng-us/help/designers/theme-design/tutorial-create-a-theme-extension.md) | etwa zwei Stunden |
-| [Eine Vollansicht überschreiben](../../../eng-us/help/designers/theme-design/tutorial-override-a-full-view.md) | 30 Minuten |
-| [Eine Landingpage mit Layouts bauen](../../../eng-us/help/designers/theme-design/tutorial-build-a-landing-page-with-layouts.md) | ein bis zwei Stunden |
-| [Dunkelmodus hinzufügen](../../../eng-us/help/designers/theme-design/tutorial-add-dark-mode.md) | zwei bis vier Stunden |
-| [Ein Theme internationalisieren](../../../eng-us/help/designers/theme-design/tutorial-internationalize-a-theme.md) | ein bis zwei Stunden |
-| [Ein Rechts-nach-links-Theme](../../../eng-us/help/designers/theme-design/tutorial-right-to-left-theme.md) | einen halben Tag |
-| [Ein statisches HTML-Design portieren](../../../eng-us/help/designers/theme-design/tutorial-port-a-static-html-design.md) | etwa einen Tag |
-| [Zwei Websites, zwei Designs](../../../eng-us/help/designers/theme-design/tutorial-two-sites-two-designs.md) | zwei Stunden |
-| [Ein Admin-Modul-Stylesheet hinzufügen](../../../eng-us/help/designers/theme-design/tutorial-add-an-admin-module-stylesheet.md) | eine Stunde |
+| [Eine Theme-Erweiterung anlegen](theme-design/tutorial-eine-theme-erweiterung-anlegen.md) | etwa zwei Stunden |
+| [Eine Vollansicht überschreiben](theme-design/tutorial-eine-vollansicht-ueberschreiben.md) | 30 Minuten |
+| [Eine Landingpage mit Layouts bauen](theme-design/tutorial-eine-landingpage-mit-layouts-bauen.md) | ein bis zwei Stunden |
+| [Dunkelmodus hinzufügen](theme-design/tutorial-dunkelmodus-hinzufuegen.md) | zwei bis vier Stunden |
+| [Ein Theme internationalisieren](theme-design/tutorial-ein-theme-internationalisieren.md) | ein bis zwei Stunden |
+| [Ein Rechts-nach-links-Theme](theme-design/tutorial-ein-rechts-nach-links-theme.md) | einen halben Tag |
+| [Ein statisches HTML-Design portieren](theme-design/tutorial-ein-statisches-html-design-portieren.md) | etwa einen Tag |
+| [Zwei Websites, zwei Designs](theme-design/tutorial-zwei-websites-zwei-designs.md) | zwei Stunden |
+| [Ein Admin-Modul-Stylesheet hinzufügen](theme-design/tutorial-ein-admin-modul-stylesheet-hinzufuegen.md) | eine Stunde |
 
 ## Checklisten
 
@@ -107,16 +107,16 @@ dieser Hilfe steht.
 ## Regeln, die jedes Design befolgt
 
 - Ihr Design liegt in Ihrer eigenen Erweiterung; mitgelieferte Designs werden nie bearbeitet, nur überschrieben.
-- Kein `<style>`, kein `style=""`, keine Inline-Skripte und keine `on*=`-Handler ([Kein Inline-CSS](../../../eng-us/help/designers/theme-design/no-inline-css.md),
-  [Kein Inline-JavaScript](../../../eng-us/help/designers/theme-design/no-inline-javascript.md)).
+- Kein `<style>`, kein `style=""`, keine Inline-Skripte und keine `on*=`-Handler ([Kein Inline-CSS](theme-design/kein-inline-css.md),
+  [Kein Inline-JavaScript](theme-design/kein-inline-javascript.md)).
 - Farben, Abstände und Schriften kommen aus Tokens, mit einem dunklen Wert für jede Farbe ([Design-Tokens](theme-design/design-tokens.md)).
 - Jeder ausgegebene Wert wird mit wash behandelt, jeder Oberflächentext läuft durch `i18n`.
 - Getestet im hellen und dunklen Modus, bei 1440 px, bei 960 px mit Skalierung 2 (200 % Zoom) und bei 375 px, mit der Tastatur.
-- Keine `?v=`-Versionsparameter an Asset-Links ([Keine Versionsparameter an Asset-Links](../../../eng-us/help/designers/theme-design/no-version-queries-on-asset-links.md)).
+- Keine `?v=`-Versionsparameter an Asset-Links ([Keine Versionsparameter an Asset-Links](theme-design/keine-versionsparameter-an-asset-links.md)).
 
 ## Alle Seiten
 
-Der Index aller Designer-Seiten, Bereich für Bereich: [Designer-Hilfe, alle Seiten](../../../eng-us/help/designers/README.md). Die Begriffe erklärt:
+Der Index aller Designer-Seiten, Bereich für Bereich: [Designer-Hilfe, alle Seiten](README.md). Die Begriffe erklärt:
 [Design-Glossar](theme-design/design-glossar.md).
 
 ## Verwandte Seiten

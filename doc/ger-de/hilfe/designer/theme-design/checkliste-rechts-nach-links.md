@@ -10,7 +10,7 @@ type: help
 # Checkliste: rechts nach links
 
 Diese Seite ist für Designer, die ein Design in Sprachen prüfen, die von rechts nach links geschrieben werden. Hintergrund:
-[Designs für rechts nach links](../../../../eng-us/help/designers/theme-design/right-to-left-designs.md).
+[Designs für rechts nach links](rechts-nach-links-designs.md).
 
 ## Inhalt
 
@@ -28,7 +28,7 @@ Diese Seite ist für Designer, die ein Design in Sprachen prüfen, die von recht
 
 ## CSS
 
-- [ ] Keine physischen Eigenschaften `left`/`right` mehr für das Layout ([Logische CSS-Eigenschaften](../../../../eng-us/help/designers/theme-design/logical-css-properties.md)).
+- [ ] Keine physischen Eigenschaften `left`/`right` mehr für das Layout ([Logische CSS-Eigenschaften](logische-css-eigenschaften.md)).
 - [ ] Spiegelregeln (`:where([dir="rtl"])`) für Floats, Hintergrundpositionen, asymmetrische Kurzschreibweisen, Schatten,
   Transformationen.
 - [ ] Nur Richtungssymbole umgedreht (Pfeile, Chevrons, Carets, Antworten, Abmelden); Uhren, Häkchen, Logos nicht.
@@ -55,7 +55,7 @@ Diese Seite ist für Designer, die ein Design in Sprachen prüfen, die von recht
 
 ## Verwandte Seiten
 
-- [Tutorial: ein Theme für rechts nach links](../../../../eng-us/help/designers/theme-design/tutorial-right-to-left-theme.md)
+- [Tutorial: ein Theme für rechts nach links](tutorial-ein-rechts-nach-links-theme.md)
 - [Sprachen von rechts nach links in der Administration](../../../../eng-us/features/6.0/right-to-left.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

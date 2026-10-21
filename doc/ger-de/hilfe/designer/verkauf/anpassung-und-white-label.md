@@ -13,7 +13,7 @@ Diese Seite ist für Designer, die Themes für Kunden anpassen oder für Agentur
 
 ## Anpassungen upgradefähig halten
 
-[Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md) lässt eine kleine Erweiterung ein Basis-Theme überschreiben,
+[Die Design-Kaskade](../theme-design/die-design-kaskade.md) lässt eine kleine Erweiterung ein Basis-Theme überschreiben,
 ohne es zu bearbeiten (Die Design-Kaskade):
 
 1. Lassen Sie das Basis-Theme unberührt.

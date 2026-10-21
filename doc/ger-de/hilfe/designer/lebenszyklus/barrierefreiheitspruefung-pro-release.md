@@ -20,7 +20,7 @@ neuer Icon-Link ohne Namen. Eine kurze Prüfung pro Release fängt das ab. Wie S
    1440 px, 960 px mit 200 % Zoom und 375 px, im hellen und dunklen Modus. Ziel: keine ernsten oder kritischen Probleme.
 2. **Durchgang mit der Tastatur**: Gehen Sie mit der Tabulatortaste durch die Startseite, einen Artikel und ein
    Formular. Der Fokus ist immer sichtbar; nichts hält ihn fest.
-3. **Zoom**: Bei 200 % fließt der Inhalt ohne waagerechtes Scrollen um ([Testen bei Zoomstufen](../../../../eng-us/help/designers/theme-design/testing-at-zoom-levels.md)).
+3. **Zoom**: Bei 200 % fließt der Inhalt ohne waagerechtes Scrollen um ([Testen bei Zoomstufen](../theme-design/testen-bei-zoomstufen.md)).
 4. **Kontrast** neuer Farben: Text mindestens 4,5:1 ([Farbkontrast](../theme-design/farbkontrast.md)).
 5. **Namen**: Jeder Link und jede Schaltfläche hat einen zugänglichen Namen, jedes Bild einen passenden Alternativtext.
 

@@ -35,9 +35,9 @@ Nichts entstehen oder auf einem Design, das diese Installation schon hat, und au
 
 | Wenn Ihr Projekt ... | Beginnen Sie |
 |---|---|
-| sein eigenes vollständiges HTML/CSS von einer Agentur oder aus einem Styleguide hat | von Grund auf ([Tutorial: ein statisches HTML-Design portieren](../../../../eng-us/help/designers/theme-design/tutorial-port-a-static-html-design.md)) |
+| sein eigenes vollständiges HTML/CSS von einer Agentur oder aus einem Styleguide hat | von Grund auf ([Tutorial: ein statisches HTML-Design portieren](tutorial-ein-statisches-html-design-portieren.md)) |
 | die Inhaltsklassen der Standardinstallation verwendet (Artikel, Blog, Ordner, Produkt ...) und schnell ein Ergebnis möchte | auf `simple` |
-| Seiten braucht, die Redakteure aus Blöcken zusammenstellen (Landingpages, Kampagnen) | auf `media` oder `starter` oder von Grund auf mit den Layout-Templates ([Layouts für Designer](../../../../eng-us/help/designers/theme-design/layouts-for-designers.md)) |
+| Seiten braucht, die Redakteure aus Blöcken zusammenstellen (Landingpages, Kampagnen) | auf `media` oder `starter` oder von Grund auf mit den Layout-Templates ([Layouts für Designer](layouts-fuer-designer.md)) |
 | wie eine bestehende Website aussehen muss, die ezwebin verwendet | auf `ezwebin` |
 | eine kleine Broschüren-Website ist | von Grund auf: ein Pagelayout, ein Stylesheet, ein paar Overrides |
 
@@ -96,14 +96,14 @@ dieses Inhaltsmodell verwenden.
 - [ ] Bearbeiten Sie nie die Dateien eines mitgelieferten oder von Composer verwalteten Themes; überschreiben Sie sie
       stattdessen aus Ihrem Design.
 - [ ] Planen Sie dunklen Modus, rechts nach links und Barrierefreiheit ab dem ersten Stylesheet, nicht am Ende
-      ([Design-Token](design-tokens.md), [Designs für rechts nach links](../../../../eng-us/help/designers/theme-design/right-to-left-designs.md),
+      ([Design-Token](design-tokens.md), [Designs für rechts nach links](rechts-nach-links-designs.md),
       [Barrierefreiheit: Grundlagen für Themes](barrierefreiheit-grundlagen-fuer-themes.md)).
 - [ ] Entscheiden Sie früh, ob Seiten mit dem Layout-Editor zusammengestellt werden; das ändert das Pagelayout.
 
 ## Verwandte Seiten
 
-- [Die Themes auf dieser Installation](../../../../eng-us/help/designers/theme-design/themes-on-alpha.md)
-- [Tutorial: eine Theme-Erweiterung anlegen](../../../../eng-us/help/designers/theme-design/tutorial-create-a-theme-extension.md)
+- [Die Themes auf dieser Installation](themes-die-mit-exponential-kommen.md)
+- [Tutorial: eine Theme-Erweiterung anlegen](tutorial-eine-theme-erweiterung-anlegen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

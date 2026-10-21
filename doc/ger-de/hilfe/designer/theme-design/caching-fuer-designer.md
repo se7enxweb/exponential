@@ -91,13 +91,13 @@ einem Knoten etwas veröffentlicht wird). Einzelheiten: [Cache-block](../templat
 | einer Änderung an einem Teil in einem Cache-Block | `--clear-id=template-block` |
 | dem Hinzufügen von Templates oder Overrides | `--clear-id=template-override` |
 
-Die vollständige Tabelle steht in [Der Packer-Cache und Deploys](../../../../eng-us/help/designers/theme-design/packer-cache-and-deploy.md).
+Die vollständige Tabelle steht in [Der Packer-Cache und Deploys](packer-cache-und-deployment.md).
 
 ## Verwandte Seiten
 
 - [Cache-block](../templates/cache-block.md)
 - [Template-Kompilierung und Cache](../templates/template-kompilierung-und-cache.md)
-- [Performance von Themes](../../../../eng-us/help/designers/theme-design/theme-performance.md)
+- [Performance von Themes](theme-leistung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

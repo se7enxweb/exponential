@@ -47,7 +47,7 @@ Sie entsprechen den beiden Stylesheet-Einstellungen von `design.ini [StylesheetS
 ## Verwandte Seiten
 
 - [Der Paketerstellungs-Assistent Schritt für Schritt](paketerstellungs-assistent-schritt-fuer-schritt.md)
-- [Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md)
+- [Stylesheets laden](../theme-design/stylesheets-laden.md)
 - [Der Paket-Assistent](../../../../eng-us/features/6.0/package-wizard.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

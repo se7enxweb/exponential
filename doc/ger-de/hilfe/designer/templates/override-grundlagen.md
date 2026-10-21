@@ -85,7 +85,7 @@ Nachdem Sie eine Regel oder ein Override-Template hinzugefügt haben: `php bin/p
 
 - [Override-Match-Schlüssel](override-match-schluessel.md)
 - [Knoten-Templates nach Klasse](knoten-templates-nach-klasse.md)
-- [Tutorial: eine Vollansicht überschreiben](../../../../eng-us/help/designers/theme-design/tutorial-override-a-full-view.md)
+- [Tutorial: eine Vollansicht überschreiben](../theme-design/tutorial-eine-vollansicht-ueberschreiben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

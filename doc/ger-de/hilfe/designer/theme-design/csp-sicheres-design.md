@@ -43,8 +43,8 @@ Also: Skripte und Stile nur aus Dateien auf demselben Host; kein Inline-`<script
 ## Die drei Regeln für Designs
 
 1. **Kein Inline-JavaScript**: kein `<script>` mit Code, keine `on*=`-Attribute, keine `javascript:`-Links
-   ([Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md)).
-2. **Kein Inline-CSS**: keine `<style>`-Blöcke, keine `style=""`-Attribute ([Kein Inline-CSS](../../../../eng-us/help/designers/theme-design/no-inline-css.md)).
+   ([Kein Inline-JavaScript](kein-inline-javascript.md)).
+2. **Kein Inline-CSS**: keine `<style>`-Blöcke, keine `style=""`-Attribute ([Kein Inline-CSS](kein-inline-css.md)).
 3. **Keine fremden Ursprünge, die Sie nicht eingeplant haben**: Schriften, Skripte, Stile, Frames von anderen Hosts brauchen jeweils
    eine Änderung der Direktiven ([Externe Ressourcen und CDNs](externe-ressourcen-und-cdns.md)).
 
@@ -57,7 +57,7 @@ Also: Skripte und Stile nur aus Dateien auf demselben Host; kein Inline-`<script
 | `<a href="javascript:...">` | einen `<button type="button">` mit einem Listener |
 | `style="width: 40%"` | eine Klasse (`.pct-40`) oder einen `data-`-Wert, den ein Skript in eine Custom Property umwandelt |
 | `<style>` mit Regeln pro Seite | ein Stylesheet, das das View-Template anfordert (`ezcss_require`) |
-| ein Skript im Kopf, das vor dem Zeichnen laufen muss | eine kleine Datei, die mit `ezscript` im Kopf geladen wird ([Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](../../../../eng-us/help/designers/theme-design/theme-toggle-pre-paint-guard.md)) |
+| ein Skript im Kopf, das vor dem Zeichnen laufen muss | eine kleine Datei, die mit `ezscript` im Kopf geladen wird ([Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](theme-umschalter-und-pre-paint-guard.md)) |
 
 ## Die Nonce: die seltene Ausnahme
 
@@ -93,8 +93,8 @@ und `kernel/common/expcontentsecuritypolicyoperator.php`). Deshalb sind Dateien 
 
 ## Verwandte Seiten
 
-- [Kein Inline-CSS](../../../../eng-us/help/designers/theme-design/no-inline-css.md)
-- [Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md)
+- [Kein Inline-CSS](kein-inline-css.md)
+- [Kein Inline-JavaScript](kein-inline-javascript.md)
 - [Checkliste: CSP](checkliste-csp.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

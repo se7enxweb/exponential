@@ -67,7 +67,7 @@ extension/myext/design/admin4/stylesheets/myext-admin.css
 ```
 
 Es wird nach den Komponenten geladen, sodass die Erweiterung bei ihrem eigenen Markup das letzte Wort hat. Siehe
-[Tutorial: ein Admin-Modul-Stylesheet hinzufügen](../../../../eng-us/help/designers/theme-design/tutorial-add-an-admin-module-stylesheet.md).
+[Tutorial: ein Admin-Modul-Stylesheet hinzufügen](tutorial-ein-admin-modul-stylesheet-hinzufuegen.md).
 
 ## Regeln für das CSS selbst
 
@@ -87,7 +87,7 @@ Skalierung 2.
 
 - [admin4-Komponenten](admin4-komponenten.md)
 - [Der Test der Admin-Gestaltungsregeln](der-test-der-admin-gestaltungsregeln.md)
-- [Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md)
+- [Stylesheets laden](stylesheets-laden.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

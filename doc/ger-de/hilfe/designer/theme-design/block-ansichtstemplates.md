@@ -107,15 +107,15 @@ Designs verwenden ihn für Teile, die zur Seite gehören, aber von Redakteuren p
 
 - Maskieren Sie jeden Wert (`|wash`); Blockparameter sind Eingaben von Redakteuren.
 - Behalten Sie das äußere Element mit `data-block-id`: Die Vorschau des Layout-Editors verwendet es.
-- Kein Inline-CSS oder -JavaScript; gestalten Sie über Klassen ([Layout-Blöcke gestalten](../../../../eng-us/help/designers/theme-design/styling-layout-blocks.md)).
+- Kein Inline-CSS oder -JavaScript; gestalten Sie über Klassen ([Layout-Blöcke gestalten](layout-bloecke-gestalten.md)).
 - Eine mit `{def}` in einem eingebundenen Template definierte Variable kann mit der des Einbindenden kollidieren; entfernen Sie
   mit `{undef}`, was Sie definieren.
 
 ## Verwandte Seiten
 
 - [Blockdefinitionen](blockdefinitionen.md)
-- [Layout-Blöcke gestalten](../../../../eng-us/help/designers/theme-design/styling-layout-blocks.md)
-- [Layouts für Designer](../../../../eng-us/help/designers/theme-design/layouts-for-designers.md)
+- [Layout-Blöcke gestalten](layout-bloecke-gestalten.md)
+- [Layouts für Designer](layouts-fuer-designer.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

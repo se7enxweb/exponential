@@ -31,7 +31,7 @@ stehen in alphabetischer Reihenfolge der englischen Fachwörter; jeder verweist 
 Siehe [Cache-block](../templates/cache-block.md).
 
 **Kaskade (Design-Kaskade, cascade).** Die geordnete Liste der Design-Ordner, die der Kernel nach einer Datei durchsucht. Siehe
-[Die Design-Kaskade](../../../../eng-us/help/designers/theme-design/the-design-cascade.md).
+[Die Design-Kaskade](die-design-kaskade.md).
 
 **Klasse (Inhaltsklasse, class).** Der Typ eines Inhaltsobjekts, mit seinen Feldern: Artikel, Ordner, Bild. Templates unterscheiden
 sich oft pro Klasse (`class_identifier`).
@@ -45,7 +45,7 @@ Richtlinie blockiert Inline-Code. Siehe [CSP-sicheres Design](csp-sicheres-desig
 **Datentyp (datatype).** Die Art eines Feldes (Textzeile, Rich Text, Bild, Datum). Jeder hat Ansichts- und Bearbeitungstemplates unter
 `content/datatype/`. Siehe [Ansichtstemplates der Datentypen](../templates/datentyp-ansichtstemplates.md).
 
-**Design.** Ein benannter Ordner mit Templates, Stylesheets, Skripten und Bildern. Siehe [Was ein Design ist](../../../../eng-us/help/designers/theme-design/what-a-design-is.md).
+**Design.** Ein benannter Ordner mit Templates, Stylesheets, Skripten und Bildern. Siehe [Was ein Design ist](was-ein-design-ist.md).
 
 **Design-Erweiterung (design extension).** Eine Erweiterung, die Designs trägt und sich in `DesignExtensions[]` einträgt. Siehe
 [Design-Erweiterungen](design-erweiterungen.md).
@@ -59,10 +59,10 @@ Richtlinie blockiert Inline-Code. Siehe [CSP-sicheres Design](csp-sicheres-desig
 [Der Operator i18n](../templates/der-i18n-operator.md).
 
 **Layout (Layout-Editor).** Eine benannte Anordnung von Zonen mit Blöcken, die einer Seite durch eine Regel zugewiesen wird. Siehe
-[Layouts für Designer](../../../../eng-us/help/designers/theme-design/layouts-for-designers.md).
+[Layouts für Designer](layouts-fuer-designer.md).
 
 **Modulergebnis (module result).** Was eine Modul-View erzeugt hat, in `$module_result`; das Pagelayout gibt dessen `content` aus.
-Siehe [Variablen des Pagelayouts](../../../../eng-us/help/designers/theme-design/pagelayout-variables.md).
+Siehe [Variablen des Pagelayouts](pagelayout-variablen.md).
 
 **Knoten (node).** Ein Ort eines Inhaltsobjekts im Inhaltsbaum. Ein Objekt kann mehrere Knoten haben. Templates von Ansichten erhalten
 `$node`. Siehe [Knoten, Objekte und Attribute](../templates/knoten-objekte-und-attribute.md).
@@ -78,15 +78,15 @@ Siehe [Variablen des Pagelayouts](../../../../eng-us/help/designers/theme-design
 ## P bis Z
 
 **Packer.** Der Teil von ezjscore, der Stylesheets und Skripte zu einer zwischengespeicherten Datei zusammenführt. Siehe
-[Der Packer](../../../../eng-us/help/designers/theme-design/the-packer.md).
+[Der Packer](der-packer.md).
 
-**Pagelayout.** Das äußerste Template, `pagelayout.tpl`, das jede Seite einrahmt. Siehe [Das Pagelayout](../../../../eng-us/help/designers/theme-design/the-pagelayout.md).
+**Pagelayout.** Das äußerste Template, `pagelayout.tpl`, das jede Seite einrahmt. Siehe [Das Pagelayout](das-pagelayout.md).
 
 **Persistente Variable (persistent variable).** Ein Hash, den ein View-Template für das Pagelayout füllt. Siehe
 [Die persistent variable](../templates/die-persistent-variable.md).
 
 **Regel (Layouts, rule).** Die Zuordnung von Anfragen zu einem Layout, mit Zielen, Bedingungen und einer Priorität. Siehe
-[Layout-Regeln](../../../../eng-us/help/designers/theme-design/layout-rules.md).
+[Layout-Regeln](layout-regeln.md).
 
 **Siteaccess.** Ein Zugang zu einer Installation, mit eigenen Einstellungen und Designs. Siehe
 [Designs und Siteaccesses](designs-und-siteaccesses.md).
@@ -107,12 +107,12 @@ Siehe [Design-Token](design-tokens.md).
 **Wash.** Der Operator, der Text für die HTML-Ausgabe maskiert. Siehe [Wash und Maskierung](../templates/wash-und-maskierung.md).
 
 **Zone.** Ein benannter Bereich eines Layouts (`main`, `sidebar`, `footer`), der Blöcke enthält. Siehe
-[Layouttypen und Zonen](../../../../eng-us/help/designers/theme-design/layout-types-and-zones.md).
+[Layouttypen und Zonen](layouttypen-und-zonen.md).
 
 ## Verwandte Seiten
 
 - [Designer: hier beginnen](../designer-hier-beginnen.md)
-- [Was ein Design ist](../../../../eng-us/help/designers/theme-design/what-a-design-is.md)
+- [Was ein Design ist](was-ein-design-ist.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

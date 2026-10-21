@@ -46,7 +46,7 @@ ein 1920 px breiter Bildschirm bei 200 % Zoom, in den Tablet-Bereich fällt: Ver
 - **Eine maximale Zeilenlänge.** Fließtext liest sich am besten mit etwa 60 bis 80 Zeichen pro Zeile; begrenzen Sie Textspalten mit
   `max-width: 70ch`, statt sie dem Bildschirm folgen zu lassen.
 - **Denken Sie an Zoom.** Ein Besucher mit 200 % Zoom auf einem Desktop sieht Ihr Tablet-Layout. Es muss vollständig sein, keine
-  gekürzte Fassung ([Testen bei Zoomstufen](../../../../eng-us/help/designers/theme-design/testing-at-zoom-levels.md)).
+  gekürzte Fassung ([Testen bei Zoomstufen](testen-bei-zoomstufen.md)).
 
 ## Mobile First
 
@@ -84,8 +84,8 @@ media tun) und verwenden Sie überall dieselben Zahlen.
 
 ## Verwandte Seiten
 
-- [Responsives Design](../../../../eng-us/help/designers/theme-design/responsive-design.md)
-- [Layout-Blöcke gestalten](../../../../eng-us/help/designers/theme-design/styling-layout-blocks.md)
+- [Responsives Design](responsive-design.md)
+- [Layout-Blöcke gestalten](layout-bloecke-gestalten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

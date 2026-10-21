@@ -61,8 +61,8 @@ das ein Benutzer wählen kann.
   `structure.css`, `workflow.css`, `help.css`), geladen über `design.ini [StylesheetSettings]
   AdminComponentCSSFileList[]` ([admin4-Modul-Stylesheets](admin4-modul-stylesheets.md)).
 - **Heller, dunkler und Systemmodus.** Ein Skript vor dem ersten Zeichnen (`javascript/a4_head.js`, von
-  `page_head_style.tpl` als Datei geladen) setzt `data-a4-theme` vor dem ersten Zeichnen ([Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](../../../../eng-us/help/designers/theme-design/theme-toggle-pre-paint-guard.md)).
-- **Rechts nach links.** Durchgehend logische CSS-Eigenschaften ([Designs für rechts nach links](../../../../eng-us/help/designers/theme-design/right-to-left-designs.md)).
+  `page_head_style.tpl` als Datei geladen) setzt `data-a4-theme` vor dem ersten Zeichnen ([Der Theme-Umschalter und der Schutz vor dem ersten Zeichnen](theme-umschalter-und-pre-paint-guard.md)).
+- **Rechts nach links.** Durchgehend logische CSS-Eigenschaften ([Designs für rechts nach links](rechts-nach-links-designs.md)).
 - **Bereit für Content Security Policy.** Keine Inline-Skripte oder -Stile in seinen Templates.
 
 ## admin4l: die Administration mit Layouts gezeichnet
@@ -101,7 +101,7 @@ Die Dokumentation für Mitwirkende ist [Gestaltung der Administration](../../../
 
 ## Wie es weitergeht
 
-- Die Admin-Seite einer Erweiterung gestalten: [Tutorial: ein Admin-Modul-Stylesheet hinzufügen](../../../../eng-us/help/designers/theme-design/tutorial-add-an-admin-module-stylesheet.md).
+- Die Admin-Seite einer Erweiterung gestalten: [Tutorial: ein Admin-Modul-Stylesheet hinzufügen](tutorial-ein-admin-modul-stylesheet-hinzufuegen.md).
 - Eine Seite prüfen: [Der Test der Admin-Gestaltungsregeln](der-test-der-admin-gestaltungsregeln.md).
 - Farben: [admin4-Token](admin4-tokens.md).
 

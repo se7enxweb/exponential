@@ -107,8 +107,8 @@ behandeln Lizenzen von Assets Dritter ([Theme-Erweiterungen: hier beginnen](../e
 
 ## Verwandte Seiten
 
-- [Stylesheets laden](../../../../eng-us/help/designers/theme-design/loading-stylesheets.md)
-- [Performance von Themes](../../../../eng-us/help/designers/theme-design/theme-performance.md)
+- [Stylesheets laden](stylesheets-laden.md)
+- [Performance von Themes](theme-leistung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

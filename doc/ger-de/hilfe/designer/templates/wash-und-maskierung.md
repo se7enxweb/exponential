@@ -73,7 +73,7 @@ Kontext korrekt maskiert:
 <script type="application/json" id="mytheme-data">{json_encode( hash( 'title', $node.name ) )}</script>
 ```
 
-([Kein Inline-JavaScript](../../../../eng-us/help/designers/theme-design/no-inline-javascript.md)).
+([Kein Inline-JavaScript](../theme-design/kein-inline-javascript.md)).
 
 ## Fehler
 

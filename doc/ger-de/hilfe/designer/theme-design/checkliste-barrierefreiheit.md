@@ -24,9 +24,9 @@ Artikel, Liste, Suchergebnisse, ein Formular, eine Fehlerseite, eine Layout-Seit
 ## Struktur
 
 - [ ] `lang` am `<html>`, `dir="rtl"` für Sprachen, die von rechts nach links geschrieben werden.
-- [ ] Landmarks: Kopfbereich, Navigation (jede beschriftet), Hauptinhalt, Fußbereich ([Landmarks und Überschriften](../../../../eng-us/help/designers/theme-design/landmarks-and-headings.md)).
+- [ ] Landmarks: Kopfbereich, Navigation (jede beschriftet), Hauptinhalt, Fußbereich ([Landmarks und Überschriften](landmarks-und-ueberschriften.md)).
 - [ ] Ein `h1`; Überschriften ohne übersprungene Ebenen.
-- [ ] Ein Skip-Link als erstes fokussierbares Element, funktionierend ([Skip-Links](../../../../eng-us/help/designers/theme-design/skip-links.md)).
+- [ ] Ein Skip-Link als erstes fokussierbares Element, funktionierend ([Skip-Links](sprunglinks.md)).
 - [ ] Der Seitentitel nennt die Seite, dann die Website.
 
 ## Tastatur und Fokus
@@ -40,8 +40,8 @@ Artikel, Liste, Suchergebnisse, ein Formular, eine Fehlerseite, eine Layout-Seit
 
 - [ ] Textkontrast mindestens 4,5:1 (3:1 für großen Text), hell und dunkel ([Farbkontrast](farbkontrast.md)).
 - [ ] Informationen nicht allein über Farbe (Fehler, Pflichtfelder, Links im Text).
-- [ ] 200 % Zoom und 320 px Breite: nichts geht verloren, kein waagrechtes Scrollen der Seite ([Testen bei Zoomstufen](../../../../eng-us/help/designers/theme-design/testing-at-zoom-levels.md)).
-- [ ] Bewegung beachtet `prefers-reduced-motion`; kein automatisches Abspielen ohne Pause ([Reduzierte Bewegung](../../../../eng-us/help/designers/theme-design/reduced-motion.md)).
+- [ ] 200 % Zoom und 320 px Breite: nichts geht verloren, kein waagrechtes Scrollen der Seite ([Testen bei Zoomstufen](testen-bei-zoomstufen.md)).
+- [ ] Bewegung beachtet `prefers-reduced-motion`; kein automatisches Abspielen ohne Pause ([Reduzierte Bewegung](reduzierte-bewegung.md)).
 - [ ] Erzwungene Farben (Windows-Kontrastmodus): Rahmen, Fokus und Symbole bleiben sichtbar.
 
 ## Inhalte, die das Design ausgibt

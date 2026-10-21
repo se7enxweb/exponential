@@ -76,13 +76,13 @@ siehe [Symbol-Themes in Erweiterungen](../../../../eng-us/features/6.0/icon-them
 - Ein Knopf, der nur ein Symbol zeigt, braucht einen Namen: Text, der für Screenreader sichtbar ist (`<span class="a4-sr-only">` in der
   Administration, anderswo Ihre eigene visuell versteckte Klasse) oder `aria-label`, und meist einen `title` für Mausbenutzer.
 - Symbole, die entlang der Zeile zeigen (Pfeile, Chevrons), werden auf Seiten von rechts nach links gespiegelt; admin4 tut das mit
-  `scale: -1 1` ([Designs für rechts nach links](../../../../eng-us/help/designers/theme-design/right-to-left-designs.md)).
+  `scale: -1 1` ([Designs für rechts nach links](rechts-nach-links-designs.md)).
 - Maskierte Symbole folgen der Textfarbe und behalten daher im dunklen Modus ihren Kontrast.
 
 ## Verwandte Seiten
 
 - [Bilder in einem Design](bilder-in-einem-design.md)
-- [SVG-Bilder](../../../../eng-us/help/designers/theme-design/svg-images.md)
+- [SVG-Bilder](svg-bilder.md)
 - [admin4-Komponenten](admin4-komponenten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -84,7 +84,7 @@ Oder lassen Sie [den Design-Erweiterungs-Assistenten](der-design-erweiterungs-as
 
 ## Verwandte Seiten
 
-- [Tutorial: eine Theme-Erweiterung anlegen](../../../../eng-us/help/designers/theme-design/tutorial-create-a-theme-extension.md)
+- [Tutorial: eine Theme-Erweiterung anlegen](../theme-design/tutorial-eine-theme-erweiterung-anlegen.md)
 - [Was eine Theme-Erweiterung ist](was-eine-theme-erweiterung-ist.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
