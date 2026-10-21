@@ -1,0 +1,117 @@
+---
+title: Migrating content from another CMS
+audience: integrator, developer, project-manager
+category: integration
+order: 320
+summary: Moving the content of another content management system into Exponential as an integration project - inventory, mapping, the import approach, internal links and media, users, redirects for old addresses, rehearsals, the cut-over window, and acceptance.
+keywords: migration, content migration, CMS migration, WordPress, Drupal, TYPO3, legacy CMS, inventory, mapping, import, internal links, media, users, password reset, redirects, URL aliases, wildcards, cut-over, rehearsal, maintenance mode
+type: help
+---
+# Migrating content from another CMS
+
+This page is for integrators who move a site from another content management system into Exponential. A migration is
+an integration that runs a few times instead of every night, but it needs the same discipline: a key per record, a
+dry run, a repeatable import, and a check. Migrations from earlier versions of this code base (4.x, 5.x legacy) are a
+different task, covered by the installation book ([Migrating from 4.x](../../install/14-migrating-from-4x.md)).
+
+## Contents
+
+1. [The phases](#the-phases)
+2. [Inventory and mapping](#inventory-and-mapping)
+3. [The import approach](#the-import-approach)
+4. [Internal links, media and users](#internal-links-media-and-users)
+5. [Old addresses](#old-addresses)
+6. [Rehearsals and cut-over](#rehearsals-and-cut-over)
+7. [Acceptance](#acceptance)
+
+## The phases
+
+| Phase | Result |
+|---|---|
+| 1. Inventory | Counts per content type, languages, media volume, users, URL patterns of the old site |
+| 2. Mapping | One mapping table per class ([template](mapping-content-classes-to-external-data.md#a-mapping-table)) and decisions on what is not migrated |
+| 3. Extract | The old system's content as files (database export, an API dump, XML, CSV) |
+| 4. Import build | A repeatable import keyed by `remote_id` (`<old system>-<type>-<old id>`) |
+| 5. Rehearsals | At least two full runs on a copy, with checks, timed |
+| 6. Content freeze and cut-over | The final run, redirects on, DNS or proxy switched |
+| 7. Acceptance and clean-up | Checks signed off; old system archived |
+
+## Inventory and mapping
+
+Count before you estimate: content items per type and language, the depth of the tree, the number and size of media
+files, the share of rich text with embedded elements (tables, embeds, shortcodes), users and their groups, and the URL
+patterns. Each pattern of embedded markup the old system invented (shortcodes, macros) is a conversion rule to build
+and test.
+
+Agree with the customer what **not** to migrate: outdated news, drafts, revisions, comments, statistics. Every item
+left out saves time in every rehearsal.
+
+## The import approach
+
+| Volume and shape | Approach |
+|---|---|
+| A few hundred pages, simple fields | `xrowextract` import from CSV or JSON with a column mapping and a preview ([page](bulk-data-exchange-with-xrowextract.md)), or `php bin/php/ezcsvimport.php` |
+| Thousands of items, rich text, relations | An import command of your own with `eZContentFunctions` ([Writing an import script](writing-an-import-script.md)) |
+| A tree prepared offline by a tool | A JSON package, installed with `ezpm.php` (`install --as-drafts` for review) ([page](packages-import-and-export.md)) |
+
+Import in dependency order: folders and categories, then media, then content that refers to them, then relations in a
+second pass. Publish without notification. Set `section_id` on create where sections drive access.
+
+## Internal links, media and users
+
+- **Internal links** in rich text point to old addresses. In the conversion, replace each link to a migrated item with
+  a link to the new object (rich text in `ezxmltext` can link to objects and nodes); collect the links you cannot
+  resolve into a report for editors.
+- **Media**: import files first, keyed by remote id, so content can relate to them. Keep the alternative text; the
+  image datatype takes `path|alternative text`.
+- **Users**: import users as user objects with their groups. Password hashes of another system cannot be assumed to
+  work in Exponential; plan a password reset for every migrated account (the forgotten password function, or
+  `php bin/php/resetuserpassword.php` for single accounts), and tell users before the cut-over. Migrate only the users
+  that are still needed.
+
+## Old addresses
+
+Every old address that search engines or other sites know should answer with a permanent redirect:
+
+| Pattern | Use |
+|---|---|
+| A few important pages | **Global URL aliases** that redirect, at Setup > URL aliases ([Links, URL aliases, wildcards](../../guides/urls-and-aliases.md#3-global-url-aliases)) |
+| A whole old path pattern (`/blog/*`) | **URL wildcards** ([same guide](../../guides/urls-and-aliases.md#4-url-wildcards)) |
+| Thousands of individual old ids | A redirect map at the web server, generated by the import from old address to new URL alias |
+
+Generate the redirect list from the import itself: each record knows its old address and, after publishing, its node's
+URL alias.
+
+## Rehearsals and cut-over
+
+- Run the full import at least twice on a copy of production; time it; fix and repeat.
+- Before the final run: freeze content in the old system, pause your other integrations' cronjob parts, and switch
+  maintenance mode on if the new site is already public (`php bin/php/maintenance.php on --message="..." --until=2h`).
+- After the run: rebuild the search index if indexing was delayed (`php bin/php/updatesearchindex.php`), clear the
+  caches ([Caching after imports](caching-after-imports.md)), switch redirects on, switch maintenance mode off, resume
+  cronjob parts.
+
+## Acceptance
+
+- [ ] Counts per class match the inventory (minus what was agreed to leave out).
+- [ ] A sample of pages per class compared side by side with the old site.
+- [ ] No unresolved internal links above the agreed threshold; the report handed to editors.
+- [ ] Every image has its alternative text.
+- [ ] A sample of old addresses answers with a permanent redirect to the right page.
+- [ ] Users can reset their passwords and sign in.
+- [ ] The import can be re-run without duplicates (second run reports only unchanged).
+
+## Related pages
+
+- [Implementation project playbook](../partners/implementation-project-playbook.md)
+- [Integration project playbook](integration-project-playbook.md)
+- [Migration reference](../../install/17-migration-reference.md)
+- [Maintenance mode](../../guides/maintenance-mode.md)
+- [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

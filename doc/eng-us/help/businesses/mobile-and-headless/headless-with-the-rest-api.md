@@ -55,8 +55,11 @@ From [REST API v1 and v2 for applications](../../creators/app-creators/rest-api.
 - **Reads** a node, its children (in pages, with offset and limit), the number of children, and fields, by node or
   object id, at v1 and v2.
 - **Creates and removes** content at v2 only.
-- Gives rich text as rendered XHTML with `OutputFormat=xhtml`, so the app does not have to parse the internal format.
-- Gives images with their original and their aliases; define aliases for the sizes your app needs.
+- Gives a rich text field's value as plain text. `OutputFormat=xhtml` adds the node rendered by templates, which
+  gives markup only once a developer has written the `rest` view templates for it.
+- Gives an image field as the path of its original file only, without the resized versions (aliases). The app asks
+  for alias addresses through the remote services (`expimage::url`, `expimage::urls`); define aliases for the sizes
+  your app needs.
 - **Checks the user's policies** on every read and write, whatever credential was used.
 - **Requires authentication by default**; public front ends use "a read-only integration user" whose key stays on
   your server.
@@ -96,7 +99,7 @@ Include in the brief:
 - [ ] The integration user's role: read only, limited to the folders the app needs.
 - [ ] How editors preview content in the app before publishing.
 - [ ] How the app learns that content changed (polling with limits, or a purge hook on publish).
-- [ ] Image sizes the app needs, so matching aliases are defined.
+- [ ] Image sizes the app needs, so matching aliases are defined, and how the app fetches their addresses.
 - [ ] What the app shows when the API does not answer ([App backend reliability](app-backend-reliability.md)).
 - [ ] That every request goes over HTTPS (`rest.ini [Authentication] RequireHTTPS` can refuse plain HTTP).
 

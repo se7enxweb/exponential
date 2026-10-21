@@ -20724,8 +20724,8 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Mîhengên INI</translation>
     </message>
     <message>
-        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Her pela INI bi qatan tê xwendin: pêşî settings/&lt;file&gt;.ini, paşê pelên pêvekên çalak û yên gihîştina malperê, paşê settings/override. Pelek paşîn bi ser dikeve: ew li şûna nirxeke sade diguherîne, û li array-ekê zêde dike, heke pêşî wê vala neke. Ev rûpel nirxa derbasdar, pela ku jê tê û her pela ku wê datîne nîşan dide. Şîfre, mifte, token û nepeniyên din qet nayên nîşandan.</translation>
+        <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the ActiveAccessExtensions, then the siteaccess (extensions first, settings/siteaccess last), then the ActiveExtensions, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
+        <translation>Her pela INI bi qatan tê xwendin: pêşî settings/&lt;file&gt;.ini, paşê ActiveAccessExtensions, paşê gihîştina malperê (pêşî pêvek, settings/siteaccess dawî), paşê ActiveExtensions, paşê settings/override. Pelek paşîn bi ser dikeve: ew li şûna nirxeke sade diguherîne, û li array-ekê zêde dike, heke pêşî wê vala neke. Ev rûpel nirxa derbasdar, pela ku jê tê û her pela ku wê datîne nîşan dide. Şîfre, mifte, token û nepeniyên din qet nayên nîşandan.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>
@@ -73446,6 +73446,398 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Search the whole help</source>
         <translation>Di hemû alîkariyê de lêgerîn</translation>
+    </message>
+    <message>
+        <source>Community</source>
+        <translation>Civak</translation>
+    </message>
+    <message>
+        <source>Use, promote and build with Exponential worldwide: taking part, the channels, events, the code of conduct and contributing.</source>
+        <translation>Li seranserê cîhanê Exponential bikar bînin, bidin nasîn û pê re ava bikin: beşdarbûn, kanal, bûyer, rêzikên tevgerê û beşdarî.</translation>
+    </message>
+    <message>
+        <source>The Exponential community: taking part, channels, events, the code of conduct and contributing.</source>
+        <translation>Civaka Exponential: beşdarbûn, kanal, bûyer, rêzikên tevgerê û beşdarî.</translation>
+    </message>
+    <message>
+        <source>Ecosystem</source>
+        <translation>Ekosîstem</translation>
+    </message>
+    <message>
+        <source>The wider Exponential world in the PHP stack: its products, extensions, distributions, partners, users and creators.</source>
+        <translation>Cîhana berfirehtir a Exponential di stacka PHP de: berhem, pêvek, belavok, hevkar, bikarhêner û afirînerên wê.</translation>
+    </message>
+    <message>
+        <source>The Exponential ecosystem in the PHP stack: products, extensions, distributions, partners, users and creators.</source>
+        <translation>Ekosîstema Exponential di stacka PHP de: berhem, pêvek, belavok, hevkar, bikarhêner û afirîner.</translation>
+    </message>
+    <message>
+        <source>PHP Developers</source>
+        <translation>Pêşdebirên PHP</translation>
+    </message>
+    <message>
+        <source>Work on Exponential in PHP: the kernel and its classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>Li ser Exponential bi PHP bixebitin: kernel û polên wê, barkirina xweber, rêza fermanan, Composer, test û standardên kodê.</translation>
+    </message>
+    <message>
+        <source>PHP development</source>
+        <translation>Pêşdebirina PHP</translation>
+    </message>
+    <message>
+        <source>PHP development on Exponential: the kernel, classes, autoloads, the command line, Composer, tests and coding standards.</source>
+        <translation>Pêşdebirina PHP li ser Exponential: kernel, pol, barkirina xweber, rêza fermanan, Composer, test û standardên kodê.</translation>
+    </message>
+    <message>
+        <source>Theme designers</source>
+        <translation>Sêwiranerên temayan</translation>
+    </message>
+    <message>
+        <source>Design themes for Exponential: designs and overrides, templates, stylesheets and assets, packaging a theme and keeping it current.</source>
+        <translation>Ji bo Exponential temayan sêwirînin: sêwiran û serdestkirin, şablon, pelên şêwazê û çavkanî, pakkirina temayekê û rojanekirina wê.</translation>
+    </message>
+    <message>
+        <source>Resellers</source>
+        <translation>Firoşkarên dubare</translation>
+    </message>
+    <message>
+        <source>Resell Exponential and the services around it: hosting, support and implementation packages, pricing, licensing and partners.</source>
+        <translation>Exponential û xizmetên li dora wê dîsa bifroşin: pakêtên hostingê, piştgiriyê û bicihanînê, nirxandin, lîsans û hevkar.</translation>
+    </message>
+    <message>
+        <source>Reselling</source>
+        <translation>Firotina dubare</translation>
+    </message>
+    <message>
+        <source>Reselling Exponential: service packages, hosting and support, pricing, licensing and working with partners.</source>
+        <translation>Firotina dubare ya Exponential: pakêtên xizmetê, hosting û piştgirî, nirxandin, lîsans û xebata bi hevkaran re.</translation>
+    </message>
+    <message>
+        <source>Bundlers</source>
+        <translation>Pakêtçêker</translation>
+    </message>
+    <message>
+        <source>Bundle Exponential: distributions, site packages, extensions and installers, with their versions, licenses and updates.</source>
+        <translation>Exponential pak bikin: belavok, pakêtên malperê, pêvek û sazker, bi guhertoyên, lîsans û nûkirinên wan re.</translation>
+    </message>
+    <message>
+        <source>Bundles and distributions</source>
+        <translation>Pakêt û belavok</translation>
+    </message>
+    <message>
+        <source>Bundling Exponential: distributions, site packages, extensions, installers, versions and licenses.</source>
+        <translation>Pakkirina Exponential: belavok, pakêtên malperê, pêvek, sazker, guhertoy û lîsans.</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic</source>
+        <translation>Zekaya çêkirî, ajan û xebata ajanî</translation>
+    </message>
+    <message>
+        <source>Work with AI and agents in Exponential: the writing assistant expai, agent access through the APIs, agentic workflows and safety.</source>
+        <translation>Di Exponential de bi zekaya çêkirî û ajanan re bixebitin: alîkarê nivîsandinê expai, gihîştina ajanan bi API-yan, herikînên karê ajanî û ewlehî.</translation>
+    </message>
+    <message>
+        <source>AI and agents</source>
+        <translation>Zekaya çêkirî û ajan</translation>
+    </message>
+    <message>
+        <source>AI, agents and agentic work with Exponential: the writing assistant expai, the APIs, workflows and safety.</source>
+        <translation>Zekaya çêkirî, ajan û xebata ajanî bi Exponential re: alîkarê nivîsandinê expai, API, herikînên kar û ewlehî.</translation>
+    </message>
+    <message>
+        <source>Software Engineers</source>
+        <translation>Endezyarên nermalavê</translation>
+    </message>
+    <message>
+        <source>Engineer software on Exponential: architecture, the request cycle, caching, testing, quality gates and maintainability.</source>
+        <translation>Li ser Exponential nermalavê çêkin: mîmarî, çerxa daxwazê, cache, test, kontrolên kalîteyê û parastinbûnî.</translation>
+    </message>
+    <message>
+        <source>Software engineering</source>
+        <translation>Endezyariya nermalavê</translation>
+    </message>
+    <message>
+        <source>Software engineering on Exponential: architecture, the request cycle, caching, testing and quality.</source>
+        <translation>Endezyariya nermalavê li ser Exponential: mîmarî, çerxa daxwazê, cache, test û kalîte.</translation>
+    </message>
+    <message>
+        <source>Adopters</source>
+        <translation>Wergir</translation>
+    </message>
+    <message>
+        <source>Adopt Exponential: evaluate it, plan the move, migrate content, train your team and run it with confidence.</source>
+        <translation>Exponential bipejirînin: binirxînin, derbasbûnê plan bikin, naverokê bar bikin, tîma xwe perwerde bikin û bi bawerî bimeşînin.</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential</source>
+        <translation>Pejirandina Exponential</translation>
+    </message>
+    <message>
+        <source>Adopting Exponential: evaluation, planning, migration, training and running it.</source>
+        <translation>Pejirandina Exponential: nirxandin, plankirin, barkirin, perwerde û xebitandin.</translation>
+    </message>
+    <message>
+        <source>Mobile App Developers</source>
+        <translation>Pêşdebirên sepanên mobîl</translation>
+    </message>
+    <message>
+        <source>Build mobile apps on Exponential content: the REST APIs, authentication, content as JSON, images and caching.</source>
+        <translation>Li ser naveroka Exponential sepanên mobîl ava bikin: REST API, rastandin, naverok wek JSON, wêne û cache.</translation>
+    </message>
+    <message>
+        <source>Mobile apps</source>
+        <translation>Sepanên mobîl</translation>
+    </message>
+    <message>
+        <source>Mobile apps on Exponential content: the REST APIs, authentication, JSON content, images and caching.</source>
+        <translation>Sepanên mobîl li ser naveroka Exponential: REST API, rastandin, naveroka JSON, wêne û cache.</translation>
+    </message>
+    <message>
+        <source>Web Framework Developers</source>
+        <translation>Pêşdebirên çarçoveyên webê</translation>
+    </message>
+    <message>
+        <source>Combine Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential bi çarçoveyên webê re bikin yek: Composer, API, bicihkirina naverokê û xebitandina li kêleka hev.</translation>
+    </message>
+    <message>
+        <source>Web frameworks</source>
+        <translation>Çarçoveyên webê</translation>
+    </message>
+    <message>
+        <source>Exponential with web frameworks: Composer, the APIs, embedding content and running them side by side.</source>
+        <translation>Exponential bi çarçoveyên webê re: Composer, API, bicihkirina naverokê û xebitandina li kêleka hev.</translation>
+    </message>
+    <message>
+        <source>CMS Developers</source>
+        <translation>Pêşdebirên CMS</translation>
+    </message>
+    <message>
+        <source>Develop on a content management system: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Li ser pergaleke rêveberiya naverokê pêşve bibin: polên naverokê, şablon, herikînên kar, destûr, pir-malper û ziman.</translation>
+    </message>
+    <message>
+        <source>CMS development</source>
+        <translation>Pêşdebirina CMS</translation>
+    </message>
+    <message>
+        <source>CMS development with Exponential: content classes, templates, workflows, permissions, multisite and languages.</source>
+        <translation>Pêşdebirina CMS bi Exponential re: polên naverokê, şablon, herikînên kar, destûr, pir-malper û ziman.</translation>
+    </message>
+    <message>
+        <source>DXP Developers</source>
+        <translation>Pêşdebirên DXP</translation>
+    </message>
+    <message>
+        <source>Develop for Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL, and how it differs from Exponential 6.</source>
+        <translation>Ji bo Exponential Platform DXP pêşve bibin: belavoka Symfony, navrûya wê ya rêveberiyê, REST û GraphQL, û çi ji Exponential 6 cuda ye.</translation>
+    </message>
+    <message>
+        <source>DXP development</source>
+        <translation>Pêşdebirina DXP</translation>
+    </message>
+    <message>
+        <source>Exponential Platform DXP: the Symfony distribution, its admin UI, REST and GraphQL APIs, and how it differs from Exponential 6.</source>
+        <translation>Exponential Platform DXP: belavoka Symfony, navrûya wê ya rêveberiyê, API-yên REST û GraphQL, û çi ji Exponential 6 cuda ye.</translation>
+    </message>
+    <message>
+        <source>E-commerce</source>
+        <translation>Bazirganiya elektronîk</translation>
+    </message>
+    <message>
+        <source>Sell online with Exponential: the shop, products and prices, VAT, orders, payments and running the store day to day.</source>
+        <translation>Bi Exponential re serhêl bifroşin: dikan, berhem û biha, KDV, ferman, dayîn û meşandina rojane ya dikanê.</translation>
+    </message>
+    <message>
+        <source>E-commerce with Exponential: the shop, products, prices, VAT, orders and payments.</source>
+        <translation>Bazirganiya elektronîk bi Exponential re: dikan, berhem, biha, KDV, ferman û dayîn.</translation>
+    </message>
+    <message>
+        <source>Integrators</source>
+        <translation>Entegrator</translation>
+    </message>
+    <message>
+        <source>Connect Exponential to other systems: the REST APIs, RSS feeds, imports and exports, and search.</source>
+        <translation>Exponential bi pergalên din ve girê bidin: REST API, feedên RSS, anîn û şandin, û lêgerîn.</translation>
+    </message>
+    <message>
+        <source>Integration</source>
+        <translation>Entegrasyon</translation>
+    </message>
+    <message>
+        <source>Integrating Exponential with other systems: the APIs, feeds, imports, exports and search.</source>
+        <translation>Entegrasyona Exponential bi pergalên din re: API, feed, anîn, şandin û lêgerîn.</translation>
+    </message>
+    <message>
+        <source>Database Administrators</source>
+        <translation>Rêveberên databasê</translation>
+    </message>
+    <message>
+        <source>Run the database behind Exponential: the supported databases, schema and upgrades, backups and restores, and performance.</source>
+        <translation>Databasa li pişt Exponential bimeşînin: databasên piştgirîkirî, şema û bilindkirin, paşeqeyd û vegerandin, û performans.</translation>
+    </message>
+    <message>
+        <source>Database administration</source>
+        <translation>Rêveberiya databasê</translation>
+    </message>
+    <message>
+        <source>Database administration for Exponential: the supported databases, schema, upgrades, backups and performance.</source>
+        <translation>Rêveberiya databasê ji bo Exponential: databasên piştgirîkirî, şema, bilindkirin, paşeqeyd û performans.</translation>
+    </message>
+    <message>
+        <source>Podcasters, radio and streaming</source>
+        <translation>Podkasterî, radyo û weşana zindî</translation>
+    </message>
+    <message>
+        <source>Publish podcasts, radio and streams with Exponential: audio and video, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Bi Exponential re podkast, radyo û weşanan biweşînin: deng û vîdeo, feed, bicihkirin, notên beşan, demsazkirin û maf.</translation>
+    </message>
+    <message>
+        <source>Podcasting and streaming</source>
+        <translation>Podkast û weşana zindî</translation>
+    </message>
+    <message>
+        <source>Podcasts, radio and streaming with Exponential: audio and video media, feeds, embeds, show notes, scheduling and rights.</source>
+        <translation>Podkast, radyo û weşana zindî bi Exponential re: medyaya deng û vîdeoyê, feed, bicihkirin, notên beşan, demsazkirin û maf.</translation>
+    </message>
+    <message>
+        <source>Non-profits</source>
+        <translation>Rêxistinên neqezenc</translation>
+    </message>
+    <message>
+        <source>Run the website of a non-profit on Exponential: members and volunteers, fundraising pages, accessibility, transparency and small budgets.</source>
+        <translation>Malpera rêxistineke neqezenc li ser Exponential bimeşînin: endam û dilxwaz, rûpelên berhevkirina bexşan, gihîştinbarî, şefafî û budceyên biçûk.</translation>
+    </message>
+    <message>
+        <source>Non-profit organizations</source>
+        <translation>Rêxistinên neqezenc</translation>
+    </message>
+    <message>
+        <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
+        <translation>Exponential ji bo rêxistinên neqezenc: endam, dilxwaz, rûpelên berhevkirina bexşan, gihîştinbarî û şefafî.</translation>
+    </message>
+    <message>
+        <source>Local businesses</source>
+        <translation>Karsaziyên herêmî</translation>
+    </message>
+    <message>
+        <source>Put a local business online with Exponential: opening hours, location and contact pages, local search, a simple shop and a small budget.</source>
+        <translation>Karsaziyeke herêmî bi Exponential re serhêl bikin: demjimêrên vekirinê, rûpelên cih û têkiliyê, lêgerîna herêmî, dikaneke hêsan û budceyeke biçûk.</translation>
+    </message>
+    <message>
+        <source>Local business</source>
+        <translation>Karsaziya herêmî</translation>
+    </message>
+    <message>
+        <source>Exponential for local businesses: opening hours, location pages, local search and a simple shop.</source>
+        <translation>Exponential ji bo karsaziyên herêmî: demjimêrên vekirinê, rûpelên cih, lêgerîna herêmî û dikaneke hêsan.</translation>
+    </message>
+    <message>
+        <source>Individuals</source>
+        <translation>Kesên takekesî</translation>
+    </message>
+    <message>
+        <source>Build a site of your own with Exponential: a personal site, portfolio, blog, family or club site, step by step.</source>
+        <translation>Bi Exponential re malpera xwe ava bikin: malpereke kesane, portfolyo, blog, malpera malbatê an klûbê, gav bi gav.</translation>
+    </message>
+    <message>
+        <source>Personal sites</source>
+        <translation>Malperên kesane</translation>
+    </message>
+    <message>
+        <source>Personal sites with Exponential: portfolios, blogs, family and club sites.</source>
+        <translation>Malperên kesane bi Exponential re: portfolyo, blog, malperên malbat û klûban.</translation>
+    </message>
+    <message>
+        <source>Non-technical people</source>
+        <translation>Kesên ne teknîkî</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: no command line, choosing hosting, the words you will meet and simple how-tos.</source>
+        <translation>Exponential bi zimanê sade: bê rêza fermanan, hilbijartina hostingê, peyvên ku hûn ê rastî wan werin û rêberên hêsan.</translation>
+    </message>
+    <message>
+        <source>Plain-language help</source>
+        <translation>Alîkarî bi zimanê sade</translation>
+    </message>
+    <message>
+        <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
+        <translation>Exponential bi zimanê sade: rêberên bê rêza fermanan, vebijarkên hostingê û ferhengok.</translation>
+    </message>
+    <message>
+        <source>Students and learners</source>
+        <translation>Xwendekar û hînbûyar</translation>
+    </message>
+    <message>
+        <source>Learn Exponential: learning paths, your first site, study projects, planned certifications and the Student partner level.</source>
+        <translation>Exponential hîn bibin: rêyên hînbûnê, malpera we ya yekem, projeyên xwendinê, sertîfîkayên plankirî û asta hevkariyê Student.</translation>
+    </message>
+    <message>
+        <source>Learning Exponential</source>
+        <translation>Hînbûna Exponential</translation>
+    </message>
+    <message>
+        <source>Learning Exponential: learning paths, first sites, study projects and certifications.</source>
+        <translation>Hînbûna Exponential: rêyên hînbûnê, malperên yekem, projeyên xwendinê û sertîfîka.</translation>
+    </message>
+    <message>
+        <source>Use and run Exponential</source>
+        <translation>Bikaranîn û meşandina Exponential</translation>
+    </message>
+    <message>
+        <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
+        <translation>Edîtor, rêveber, pêşdebir û bikarhêner, û her kesê ku malpera wî/wê heye.</translation>
+    </message>
+    <message>
+        <source>Organizations</source>
+        <translation>Rêxistin</translation>
+    </message>
+    <message>
+        <source>Businesses, public bodies and non-profits, and the people who lead and sell their projects.</source>
+        <translation>Karsazî, dezgehên giştî û rêxistinên neqezenc, û kesên ku projeyên wan birêve dibin û difroşin.</translation>
+    </message>
+    <message>
+        <source>Build with Exponential</source>
+        <translation>Avakirin bi Exponential re</translation>
+    </message>
+    <message>
+        <source>Designers, developers and engineers who build sites, themes, applications and integrations.</source>
+        <translation>Sêwiraner, pêşdebir û endezyarên ku malper, tema, sepan û entegrasyonan ava dikin.</translation>
+    </message>
+    <message>
+        <source>Host, sell and partner</source>
+        <translation>Hosting, firotin û hevkarî</translation>
+    </message>
+    <message>
+        <source>Partners, hosting companies, resellers and bundlers who bring Exponential to their customers.</source>
+        <translation>Hevkar, şirketên hostingê, firoşkarên dubare û pakêtçêkerên ku Exponential digihînin xerîdarên xwe.</translation>
+    </message>
+    <message>
+        <source>Community and learning</source>
+        <translation>Civak û hînbûn</translation>
+    </message>
+    <message>
+        <source>The community and the ecosystem, supporters and sponsors, the media, trainers and students.</source>
+        <translation>Civak û ekosîstem, piştgir û sponsor, medya, perwerdekar û xwendekar.</translation>
+    </message>
+    <message>
+        <source>Exponential Partners contribute financially to the sustained future of the project, contribute code and more back to the project, and engage directly with 7x and the Exponential Foundation.</source>
+        <translation>Hevkarên Exponential bi darayî beşdarî pêşeroja domdar a projeyê dibin, kod û zêdetir li projeyê vedigerînin û rasterast bi 7x û Exponential Foundation re dixebitin.</translation>
+    </message>
+    <message>
+        <source>Exponential Community members use, contribute to, promote and develop software using Exponential worldwide.</source>
+        <translation>Endamên civaka Exponential li seranserê cîhanê Exponential bikar tînin, beşdarî wê dibin, wê didin nasîn û bi wê nermalavê pêşve dibin.</translation>
+    </message>
+    <message>
+        <source>The greater ecosystem extends beyond the community to cover all aspects of the Exponential world within the PHP stack: its users and creators.</source>
+        <translation>Ekosîstema berfirehtir ji civakê wêdetir diçe û hemû aliyên cîhana Exponential di stacka PHP de digire nav xwe: bikarhêner û afirînerên wê.</translation>
+    </message>
+    <message>
+        <source>%count audiences</source>
+        <translation>Temaşevan: %count</translation>
+    </message>
+    <message>
+        <source>More audiences</source>
+        <translation>Temaşevanên din</translation>
     </message>
 </context>
 </TS>

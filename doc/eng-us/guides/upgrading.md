@@ -296,6 +296,12 @@ its changelog: [6.0.0 to 6.0.15](../../changelogs/6.0/6.0.15.md).
 
 **Demo mode (6.0.15).** The environment variable `EXP_DEMO_MODE=1` marks a public demo; without it nothing changes. Upgrading a demo: keep the variable for the web server, cron and console, and check the banner afterwards. Upgrading a real site: make sure the variable is set for none of its processes. [Demo mode](../bc/6.0/demo-mode.md).
 
+**VAT rules (6.0.15).** Nothing changes in how VAT is charged. VAT rules are applied only when
+`shop.ini [VATSettings] Handler` names a handler (`ezdefault`), and the shipped `settings/shop.ini` still names none.
+A store whose rules were never applied now sees a notice on **Store > VAT rules**; to apply them, set
+`Handler=ezdefault` in `settings/override/shop.ini.append.php`, make sure the customer's country is known at checkout,
+and test an order before going live. [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md#21-october-2026-the-vat-rules-page-says-when-no-handler-applies-the-rules).
+
 ## Related pages
 
 - [Getting started](getting-started.md): a clean install of the same version, for a test copy.

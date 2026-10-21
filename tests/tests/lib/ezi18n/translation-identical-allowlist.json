@@ -635,7 +635,8 @@
         "version %v": "Danish word version and a placeholder",
         "version %version": "Danish word version and a placeholder",
         "vertScrollState": "OPML attribute name, code identifier",
-        "xmlUrl": "OPML attribute name, code identifier"
+        "xmlUrl": "OPML attribute name, code identifier",
+        "Integration": "Danish word spelled the same"
     },
     "dut-NL": {
         "#level1 - #level2": "code, file or setting name",
@@ -986,7 +987,8 @@
         "url": "OPML attribute name (code)",
         "vertScrollState": "OPML attribute name (code)",
         "week": "Dutch uses the same word (common in Dutch software)",
-        "xmlUrl": "OPML attribute name (code)"
+        "xmlUrl": "OPML attribute name (code)",
+        "E-commerce": "Dutch spells e-commerce the same; the catalogue uses it throughout"
     },
     "esl-ES": {
         "#level1 - #level2": "format placeholders only",
@@ -1948,7 +1950,9 @@
         "top": "OPML attribute or value name, the same in every language",
         "url": "OPML attribute or value name, the same in every language",
         "vertScrollState": "OPML attribute or value name, the same in every language",
-        "xmlUrl": "OPML attribute or value name, the same in every language"
+        "xmlUrl": "OPML attribute or value name, the same in every language",
+        "Community": "established German term for an open source community, used throughout this catalogue (Exponential Community)",
+        "Integration": "German word spelled the same"
     },
     "heb-IL": {
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -2173,7 +2177,8 @@
         "shell": "same word in Italian",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "Community": "established Italian loanword, used throughout this catalogue (community di Exponential)"
     },
     "kur-TR": {
         "#level1 - #level2": "format placeholders only",
@@ -3145,7 +3150,8 @@
         "version %v": "placeholder and unit text, the same in Swedish",
         "version %version": "placeholder and unit text, the same in Swedish",
         "vertScrollState": "OPML attribute name, code identifier",
-        "xmlUrl": "OPML attribute name, code identifier"
+        "xmlUrl": "OPML attribute name, code identifier",
+        "Integration": "Swedish word spelled the same"
     },
     "tlh-QO": {
         "%ms ms": "SI unit symbol for milliseconds after a number placeholder",

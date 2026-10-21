@@ -29,7 +29,7 @@ und eine einstündige Einheit, die sie alle vermittelt. Die Definitionen folgen 
 | **Siteaccess** | Ein Zugang zur Website (über URL, Host oder Port) mit eigenen Einstellungen und eigenem Design, etwa `site` und `admin` | Mehrere Türen in dasselbe Gebäude | Die Adressleiste: `/admin`, der Host des Editors |
 | **Design und Template** | Ein Design ist eine Sammlung von Templates, Styles und Bildern; ein Template ist eine `.tpl`-Datei, die einen Teil einer Seite zeichnet | Das Drucklayout einer Zeitschrift | Das Aussehen der öffentlichen Website |
 | **Erweiterung** | Ein Paket, das Funktionen hinzufügt oder ändert, ohne den Kernel zu verändern | Ein Zusatzmodul für eine Maschine | **Setup > Extensions** |
-| **INI-Einstellungen** | Einstellungsdateien in Blöcken aus `Key=Value`, gelesen in dieser Reihenfolge: Standardwerte, Erweiterungen, Siteaccess, Override | Werkseinstellungen, darüber lokale Anpassungen | `settings/`, `exp:ini` |
+| **INI-Einstellungen** | Einstellungsdateien in Blöcken aus `Key=Value`, gelesen in dieser Reihenfolge, eine spätere Datei gewinnt: Standardwerte, Siteaccess, Erweiterungen, Override | Werkseinstellungen, darüber lokale Anpassungen | `settings/`, `exp:ini` |
 
 Zwei Unterscheidungen bringen Teilnehmende am häufigsten durcheinander; sagen Sie sie zweimal:
 

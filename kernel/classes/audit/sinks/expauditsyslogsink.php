@@ -21,6 +21,13 @@
  *   tcp|tls  Host:Port, the full record as MSG with octet counting (RFC 6587 / RFC 5425)
  * local, journald and devlog deliver at flush time (a local socket write); udp, tcp and tls through the spool.
  *
+ * Under open_basedir (shared hosting, LiteSpeed or PHP-FPM pools limited to the site folder) the sockets are
+ * outside the allowed paths, and file_exists() on them writes a warning into the error log on every request.
+ * The sink therefore asks pathAllowed() first (open_basedir parsed the way PHP does, cached per process) and
+ * never touches a path open_basedir refuses: local, journald and devlog then go through PHP's own syslog()
+ * (transport "syslog": openlog() with AppName and Facility, the RFC 5424 line without <PRI> as the message).
+ * Without open_basedir nothing changes.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
@@ -44,6 +51,12 @@ class expAuditSyslogSink extends expAuditSinkBase
     /** @var string|null The last error */
     public $lastError = null;
 
+    /** @var string|null open_basedir as the sink sees it; null: ini_get( 'open_basedir' ) (tests set a value) */
+    public static $openBasedir = null;
+
+    /** @var array open_basedir . "\0" . path => bool, per process (Velocity workers are persistent) */
+    protected static $allowedCache = array();
+
     protected function defaults()
     {
         return array( 'Transport' => 'local', 'Host' => '', 'Port' => '514', 'Facility' => 'authpriv',
@@ -63,12 +76,14 @@ class expAuditSyslogSink extends expAuditSinkBase
                 if ( !function_exists( 'socket_create' ) )
                     return 'the PHP extension sockets is missing';
                 return file_exists( self::DEV_LOG ) ? '' : 'no ' . self::DEV_LOG;
+            case 'syslog':
+                return function_exists( 'syslog' ) ? '' : 'PHP syslog() is not available';
             case 'udp':
             case 'tcp':
             case 'tls':
                 return trim( (string)$this->setting( 'Host' ) ) === '' ? "Transport=$t needs a Host" : '';
         }
-        return "unknown Transport '" . $this->setting( 'Transport' ) . "' (local, journald, devlog, udp, tcp, tls)";
+        return "unknown Transport '" . $this->setting( 'Transport' ) . "' (local, journald, devlog, syslog, udp, tcp, tls)";
     }
 
     /** @return string The transport actually used (local resolved) */
@@ -76,13 +91,63 @@ class expAuditSyslogSink extends expAuditSinkBase
     {
         $t = strtolower( trim( (string)$this->setting( 'Transport' ) ) );
         if ( $t === '' || $t === 'local' )
-            return file_exists( self::JOURNAL_SOCKET ) ? 'journald' : 'devlog';
+        {
+            if ( self::pathAllowed( self::JOURNAL_SOCKET ) && file_exists( self::JOURNAL_SOCKET ) )
+                return 'journald';
+            return self::pathAllowed( self::DEV_LOG ) ? 'devlog' : 'syslog';
+        }
+        if ( ( $t === 'journald' && !self::pathAllowed( self::JOURNAL_SOCKET ) ) || ( $t === 'devlog' && !self::pathAllowed( self::DEV_LOG ) ) )
+            return 'syslog';
         return $t;
+    }
+
+    /**
+     * Whether open_basedir lets PHP touch a path, decided without touching it (file_exists() outside open_basedir
+     * writes a warning). Parsed as PHP does: a PATH_SEPARATOR list; an entry ending in '/' is a directory (the
+     * path must be inside it, or be it), any other entry is a prefix; relative entries are taken from the
+     * working directory. No open_basedir: everything is allowed. Cached per process and open_basedir value.
+     *
+     * @param string $path an absolute path
+     * @param string|null $openBasedir null: self::$openBasedir, else ini_get( 'open_basedir' )
+     * @return bool
+     */
+    public static function pathAllowed( $path, $openBasedir = null )
+    {
+        if ( $openBasedir === null )
+            $openBasedir = self::$openBasedir !== null ? self::$openBasedir : (string)ini_get( 'open_basedir' );
+        $openBasedir = (string)$openBasedir;
+        if ( trim( $openBasedir ) === '' )
+            return true;
+        $key = $openBasedir . "\0" . $path;
+        if ( isset( self::$allowedCache[$key] ) )
+            return self::$allowedCache[$key];
+        $allowed = false;
+        foreach ( explode( PATH_SEPARATOR, $openBasedir ) as $entry )
+        {
+            $entry = trim( $entry );
+            if ( $entry === '' )
+                continue;
+            if ( $entry[0] !== '/' && !preg_match( '#^[A-Za-z]:[\\\\/]#', $entry ) )
+                $entry = rtrim( (string)getcwd(), '/' ) . '/' . ( $entry === '.' ? '' : $entry );
+            if ( substr( $entry, -1 ) === '/' || substr( $entry, -1 ) === DIRECTORY_SEPARATOR )
+                $allowed = strpos( $path, $entry ) === 0 || $path === rtrim( $entry, '/' . DIRECTORY_SEPARATOR );
+            else
+                $allowed = strpos( $path, $entry ) === 0;
+            if ( $allowed )
+                break;
+        }
+        return self::$allowedCache[$key] = $allowed;
+    }
+
+    /** Forgets the per-process open_basedir decisions (tests). */
+    public static function resetPathCache()
+    {
+        self::$allowedCache = array();
     }
 
     public function isSpooled()
     {
-        return !in_array( $this->transport(), array( 'journald', 'devlog' ), true );
+        return !in_array( $this->transport(), array( 'journald', 'devlog', 'syslog' ), true );
     }
 
     /** @return string The APP-NAME / journald identifier: printable ASCII, at most 48 characters */
@@ -113,6 +178,8 @@ class expAuditSyslogSink extends expAuditSinkBase
                 $ok = $this->sendUnix( self::JOURNAL_SOCKET, $this->journalDatagram( $r ) );
             elseif ( $t === 'devlog' )
                 $ok = $this->sendUnix( self::DEV_LOG, $this->message( $r ) );
+            elseif ( $t === 'syslog' )
+                $ok = $this->sendPhpSyslog( $r );
             elseif ( $t === 'udp' )
                 $ok = $this->sendUdp( $this->message( $r, false ) );
             if ( !$ok )
@@ -228,6 +295,26 @@ class expAuditSyslogSink extends expAuditSinkBase
             $this->lastError = socket_strerror( socket_last_error( $s ) );
         socket_close( $s );
         return $n === strlen( $datagram );
+    }
+
+    /**
+     * Sends one record through PHP's syslog() (open_basedir refuses the sockets): ident AppName, the sink's
+     * facility, the record's severity, the RFC 5424 line without <PRI> as the message.
+     */
+    protected function sendPhpSyslog( array $r )
+    {
+        if ( !function_exists( 'syslog' ) )
+        {
+            $this->lastError = 'PHP syslog() is not available';
+            return false;
+        }
+        $severity = expAuditTaxonomy::rank( isset( $r['severity'] ) ? $r['severity'] : 'info' );
+        @openlog( $this->appName(), LOG_PID, $this->facility() * 8 );
+        $ok = @syslog( $severity, $this->message( $r, true, false ) );
+        @closelog();
+        if ( !$ok )
+            $this->lastError = 'syslog() failed';
+        return (bool)$ok;
     }
 
     /** Sends one UDP datagram to Host:Port. */

@@ -47,7 +47,12 @@ products are usually clearer.
 |---|---|---|
 | VAT types | **Store > VAT types** (`shop/vattype`) | named percentages: standard, reduced, zero |
 | VAT rules | `shop/vatrules`, `shop/editvatrule` | which VAT type applies by customer country and product category |
-| Settings | `shop.ini [VATSettings]` | `ProductCategoryAttribute`, `UserCountryAttribute`, `RequireUserCountry=true`, `DynamicVatTypeName` |
+| Settings | `shop.ini [VATSettings]` | `Handler` (shipped unset), `ProductCategoryAttribute`, `UserCountryAttribute`, `RequireUserCountry=true`, `DynamicVatTypeName` |
+
+VAT rules take effect only once a VAT handler is set: put `Handler=ezdefault` in `[VATSettings]` of
+`settings/override/shop.ini.append.php`. The shipped `settings/shop.ini` leaves it commented out, because switching it
+on changes checkout on an existing shop (the customer's country becomes required); the **VAT rules** page shows a
+notice while rules exist and no handler applies them.
 
 With VAT rules, choose the VAT type "Determined by VAT charging rules" (`DynamicVatTypeName`) on the price, set which
 attribute holds the product category and which user attribute the country, and the rule for the customer's country

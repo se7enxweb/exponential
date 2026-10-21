@@ -29,7 +29,7 @@ teaches them all. The definitions follow the [glossary](../../glossary.md).
 | **Siteaccess** | One way of reaching the site (by URL, host or port) with its own settings and design, such as `site` and `admin` | Several doors into the same building | The address bar: `/admin`, the editor host |
 | **Design and template** | A design is a set of templates, styles and images; a template is a `.tpl` file that draws part of a page | The print layout of a magazine | The public site's look |
 | **Extension** | A package that adds or changes features without changing the kernel | An add-on module for a machine | **Setup > Extensions** |
-| **INI settings** | Settings files in blocks of `Key=Value`, read in order: defaults, extensions, siteaccess, override | Factory settings, then local adjustments on top | `settings/`, `exp:ini` |
+| **INI settings** | Settings files in blocks of `Key=Value`, read in order, a later file winning: defaults, siteaccess, extensions, override | Factory settings, then local adjustments on top | `settings/`, `exp:ini` |
 
 Two distinctions trip learners up most often; say them twice:
 
