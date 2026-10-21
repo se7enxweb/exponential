@@ -9,8 +9,8 @@ type: help
 ---
 # Lektion 1.4: Die Einstellungsseite
 
-Exponential wird mit INI-Dateien konfiguriert, die in Schichten gelesen werden: die Standardwerte, die Erweiterungen,
-der Siteaccess und der globale Override. Die Einstellungsseite (**Setup > Ini Einstellungen**) zeigt für jede
+Exponential wird mit INI-Dateien konfiguriert, die in Schichten gelesen werden: die Standardwerte, der Siteaccess, die aktiven Erweiterungen (die den
+Siteaccess übersteuern) und der globale Override, der alles übersteuert. Die Einstellungsseite (**Setup > Ini Einstellungen**) zeigt für jede
 Einstellung den wirksamen Wert, die Datei, aus der er stammt, und jede Datei, die ihn setzt. Sie ist für neue
 Administratoren der sicherste Weg, sich die Konfiguration anzusehen, und sie kann eine Einstellung auch ändern.
 
