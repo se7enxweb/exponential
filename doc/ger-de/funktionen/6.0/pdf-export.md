@@ -6,7 +6,7 @@ die sich öffnen lassen, Text, der richtig lesbar ist, Bilder, die auf die Seite
 TrueType-Schrift und eine Fußzeile, die Sie selbst formulieren.
 
 **Aktualisieren Sie?** Führen Sie zuerst die Datenbankaktualisierung aus: siehe
-[Aktualisierung des PDF-Exports](../../../eng-us/bc/6.0/pdf-export.md).
+[Aktualisierung des PDF-Exports](../../bc/6.0/pdf-export.md).
 
 ## Einen Export mit eigener Fußzeile erstellen
 
@@ -71,14 +71,14 @@ Alle Schlüssel stehen in `settings/pdf.ini`, Block `[PDFGeneral]`. Geltungsbere
 | `FontEncoding` | `WinAnsiEncoding` | Welche Glyphe jeder der 256 Plätze einer einfachen Schrift enthält: `WinAnsiEncoding` (windows-1252), `MacRomanEncoding` (mac-roman) oder `StandardEncoding` |
 
 Die Liste der Exporte wird über `admininterface.ini [PaginationSettings] ItemsPerPage[pdf/list]` seitenweise angezeigt
-([Einstellungen zum Blättern](../../../eng-us/bc/6.0/pagination-settings.md)).
+([Einstellungen zum Blättern](../../bc/6.0/einstellungen-fuer-seitengroessen.md)).
 
 ## Verwandte Seiten
 
-- [Aktualisierung des PDF-Exports](../../../eng-us/bc/6.0/pdf-export.md) (Datenbankspalten, geänderte Standards)
+- [Aktualisierung des PDF-Exports](../../bc/6.0/pdf-export.md) (Datenbankspalten, geänderte Standards)
 - [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik: September 2026, erste Hälfte, 14. September](../../../eng-us/history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Chronik: September 2026, erste Hälfte, 14. September](../../geschichte/2026/2026-09a.md#14-september-pdf-rss-und-die-rad-werkzeuge)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -38,14 +38,14 @@ braucht, um weiter zu funktionieren, oder sich ungefragt anders verhält. Insbes
   Reihe, von `doc/eng-us/bc/4.1/` bis `doc/eng-us/bc/6.0/` (84 Seiten in `doc/eng-us/bc/6.0/` zum Zeitpunkt des
   Schreibens). Eine Seite beginnt mit einer Tabelle **Kurz gesagt** mit den Zeilen *Was sich geändert hat*, *Wer
   betroffen ist*, *Wie man es prüft* und *Wie man es behebt*; Beispiele:
-  [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md),
-  [exp:ini](../../../eng-us/bc/6.0/console-exp-ini.md). Änderungen, die viele Bereiche betreffen, werden pro Zeitraum mit einer
+  [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../bc/6.0/cli-cronjob-und-view-abstraktionen.md),
+  [exp:ini](../../bc/6.0/console-exp-ini.md). Änderungen, die viele Bereiche betreffen, werden pro Zeitraum mit einer
   Deployment-Reihenfolge und einer Checklisten-Tabelle gesammelt, zum Beispiel
-  [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md).
+  [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md).
 - **Neues Verhalten sollte optional sein, Fehlerbehebungen müssen es nicht.** Eine neue Funktion kommt ausgeschaltet
   oder mit einem Standard, der das alte Ergebnis beibehält; Beispiele sind die klassenbasierten Ansichten ("der alte Weg
   funktioniert weiterhin", Ansichten als einfache Dateien laufen weiter) und die Optionen der Velocity-Engine in den
-  [Hinweisen zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md) ("Nothing changes
+  [Hinweisen zur Aktualisierung der Velocity-Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md) ("Nothing changes
   by itself. New, opt-in: ...").
 - **Neue Einstellungen müssen einen sicheren Standard haben** in der mitgelieferten `settings/<file>.ini`, dort einen
   Kommentar, einen Abschnitt auf der Funktionsseite in `doc/eng-us/features/6.0/` und eine Zeile im Changelog.
@@ -61,7 +61,7 @@ braucht, um weiter zu funktionieren, oder sich ungefragt anders verhält. Insbes
 - Eine ersetzte API bleibt verfügbar und wird mit dem Ersatz als `@deprecated` markiert (54 `@deprecated`-Tags in
   `kernel/` und `lib/`, zum Beispiel `eZContentObject::contentObjectListRelatingThis()`, ersetzt durch `reverseRelatedObjectList()`, und `eZUser::isLoggedIn()`, das weiterhin funktioniert und über `eZDebug::writeStrict()` einen Veraltungshinweis im Strict-Modus schreibt).
 - Ein umbenannter Befehl behält seinen alten Namen als veralteten Alias, der weiterhin funktioniert
-  ([Forks von Plattformpaketen und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)).
+  ([Forks von Plattformpaketen und Umbenennungen von Befehlen](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)).
 - Eine Entfernung wird im Abschnitt **Removed** des Changelogs und auf einer Seite in `doc/eng-us/bc/` angekündigt.
 
 ### Bekannte Ausnahmen
@@ -70,12 +70,12 @@ braucht, um weiter zu funktionieren, oder sich ungefragt anders verhält. Insbes
   Session-Cookies mit `HttpOnly` und `SameSite`, eine strengere Upload-Prüfung und neue Zugriffsanforderungen für
   einige entfernte Dienste standardmäßig eingeschaltet
   ([Sicherheitsstandards](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md),
-  [Verhaltensänderungen vom 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)).
+  [Verhaltensänderungen vom 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)).
   Sicherheitskorrekturen werden wie Fehlerbehebungen behandelt: standardmäßig eingeschaltet, dokumentiert mit dem Weg,
   sie bewusst rückgängig zu machen.
 - **Konten ohne eine Zeile in `ezuser_setting`** können sich seit August 2026 nicht anmelden, und Überschreibungsblöcke
   folgen seit Juli 2026 `Priority`
-  ([Verhaltensänderungen von Juli und August 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md)).
+  ([Verhaltensänderungen von Juli und August 2026](../../bc/6.0/verhaltensaenderungen-2026-07-08.md)).
 - Aus eZ Publish 4 übernommene `@deprecated`-APIs haben kein Entfernungsdatum; für die Reihe 6.0 ist keine Entfernung
   angekündigt.
 
@@ -167,7 +167,7 @@ Reihenfolge laufen:
 `./console exp:velocity deploy` führt all das in der richtigen Reihenfolge aus (vierzehn Schritte, PASS, FAIL oder SKIP
 pro Schritt, Exit-Status 1 beim ersten Fehler); `--dry-run` zeigt die Schritte, `--kernel` fügt die Klassen-Map des
 Kernels hinzu, `--packer` leert gepackte Skripte und Styles. Einzelheiten:
-[Eine PHP-Änderung ausrollen](../../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
+[Eine PHP-Änderung ausrollen](../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy).
 Eine Änderung an einem Template oder Stylesheet braucht nur die Template-Caches und den Antwort-Cache von Velocity,
 keinen Neustart.
 
@@ -208,4 +208,4 @@ keinen Neustart.
 
 - [Kernel-Architektur](kernel-architektur.md), [Regeln für Schichten und Benennung](schichten-und-benennung.md)
 - [Deployment](../../anleitungen/bereitstellung.md), [Aktualisierung](../../anleitungen/aktualisieren.md), [Die Aktualisierungsprüfung](../../anleitungen/upgrade-pruefung.md)
-- [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md), [Caches](../../anleitungen/caches.md)
+- [Velocity-Engines](../../bc/6.0/velocity-engines.md), [Caches](../../anleitungen/caches.md)

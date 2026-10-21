@@ -3,7 +3,7 @@
 Diese Seite ist für Administratoren, deren Website nicht startet, weil die Composer-Bibliotheken (`vendor/`) fehlen. Bis
 6.0.15 sah ein Besucher dann die rohe Ausgabe von PHP. Jetzt zeigt Exponential eine eigene Seite, die erklärt, was nicht
 stimmt, und einen Administrator die Installation ohne Shell-Sitzung reparieren lässt. Hinzugefügt am 02.10.2026.
-Vollständige Anleitung: [Reparatur](../../../eng-us/bc/6.0/repair.md).
+Vollständige Anleitung: [Reparatur](../../bc/6.0/reparatur.md).
 
 ## In drei Minuten reparieren
 
@@ -64,9 +64,9 @@ php bin/php/exprepair.php --disable   # writes Enabled=false and an empty KeyHas
 - [Wartungsmodus](wartungsmodus.md)
 - [Dateikonsistenzprüfung](dateikonsistenzpruefung.md)
 - [Velocity und der Opcode-Cache](velocity-opcode-cache-und-profil.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- [Chronik Oktober 2026](../../geschichte/2026/2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -107,7 +107,7 @@ Die gemeinsamen Komponenten (`.a4-card`, `.a4-steps`, `.a4-field`, `.a4-table`, 
 aus `stylesheets/modules/structure.css` (der Abschnitt Pakete; in beiden Designs identisch): Die Schrittliste scrollt
 unter 600px in einer Zeile und zeigt nur den Namen des aktuellen Schritts, Felder stehen ab 640px zu zweit, Abbrechen
 sitzt am Ende der Aktionsleiste, die zwei Gruppen der Überprüfung stehen nebeneinander. Nur Tokens, kein Inline-CSS
-([Die Administrationsoberfläche gestalten](../../../eng-us/bc/6.0/admin4-styling.md)).
+([Die Administrationsoberfläche gestalten](../../bc/6.0/admin4-gestaltung.md)).
 
 `tests/tests/design/AdminPackageWizardTest.php` prüft, dass die beiden Designs dieselben Dateien tragen, dass jeder
 Schritt Kopf, Fortschritt und Aktionen verwendet und dass jeder Name der Tabelle oben weiterhin gesendet wird.

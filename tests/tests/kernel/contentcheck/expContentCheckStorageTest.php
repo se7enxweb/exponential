@@ -352,9 +352,9 @@ class expContentCheckStorageTest extends PHPUnit\Framework\TestCase
         $this->assertSame( expContentCheckStorage::PROBLEMS, $p['kinds'] );
         $p = Storage::parameters( array( 'Show' => 'problems', 'Sort' => 'x', 'Order' => 'up', 'Kind' => array( 'owner', 'owner', 'evil', array() ) ) );
         $this->assertSame( array( 'problems', 'size', 'desc', array( 'owner' ) ), array( $p['show'], $p['sort'], $p['order'], $p['kinds'] ) );
-        $this->assertSame( '?Show=problems&Kind%5B%5D=owner', Storage::querySuffix( $p ) );
+        $this->assertSame( '/(show)/problems/(kind)/owner', Storage::querySuffix( $p ) );
         $p = Storage::parameters( array( 'Show' => 'orphans', 'Sort' => 'path' ) );
-        $this->assertSame( '?Show=orphans&Sort=path&Order=asc', Storage::querySuffix( $p ) );
+        $this->assertSame( '/(show)/orphans/(sort)/path/(order)/asc', Storage::querySuffix( $p ) );
 
         $state = array( 'orphans' => array( array( 'p' => 'b', 's' => 5, 'm' => 100 ), array( 'p' => 'a', 's' => 9, 'm' => 300 ), array( 'p' => 'c', 's' => 5, 'm' => 200 ) ) );
         $this->assertSame( array( 'a', 'b', 'c' ), array_column( expContentCheckStorage::sortedOrphans( $state, 'path', 'asc' ), 'p' ) );
@@ -488,8 +488,9 @@ class expContentCheckStorageTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', expContentCheckScope::browseURL( '../x', 2, 2 ) );
 
         // the links keep plain filters only, never NodeID
-        $this->assertSame( '?Show=problems', expContentCheckScope::query( array( 'Show' => 'problems' ) ) );
-        $this->assertSame( '', expContentCheckScope::query( array( 'Show' => '"><script>', 'NodeID' => '5', 'a b' => 'x', 'K' => array( 1 ) ) ) );
+        $this->assertSame( '/(show)/problems', expContentCheckScope::query( array( 'show' => 'problems' ) ) );
+        $this->assertSame( '', expContentCheckScope::query( array( 'Show' => 'problems' ) ), 'view parameter names are lower case' );
+        $this->assertSame( '', expContentCheckScope::query( array( 'show' => '"><script>', 'nodeid' => '5', 'a b' => 'x', 'K' => array( 1 ) ) ) );
         $this->assertSame( '', expContentCheckScope::query( array() ) );
 
         // one shared part in both designs: plain links, the current one marked, no inline CSS, escaped names

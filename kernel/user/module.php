@@ -112,7 +112,7 @@ $ViewList['unactivated'] = array(
     'script' => 'unactivated.php',
     'ui_context' => 'administration',
     'default_navigation_part' => 'ezusernavigationpart',
-    'unordered_params' => array( 'offset' => 'Offset' ),
+    'unordered_params' => array( 'offset' => 'Offset', 'q' => 'Query' ),
     'single_post_actions' => array(
         'ActivateButton' => 'ActivateUsers',
         'RemoveButton' => 'RemoveUsers',

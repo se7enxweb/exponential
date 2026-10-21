@@ -82,11 +82,11 @@ Inhaltspaketen übersprungen, statt den Lauf zu beenden (`752adad843`, `8af48c1e
 
 ## Verwandte Seiten
 
-- [Installation mit einem Befehl: eine Website auf SQLite ohne `kickstart.ini`](installation-mit-einem-befehl.md), [Kickstarter](kickstarter-cli.md), [Referenz der Kickstarter-CLI](../../../eng-us/bc/6.0/kickstartercli.md), [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
+- [Installation mit einem Befehl: eine Website auf SQLite ohne `kickstart.ini`](installation-mit-einem-befehl.md), [Kickstarter](kickstarter-cli.md), [Referenz der Kickstarter-CLI](../../bc/6.0/kickstartercli.md), [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
 - [Was eine neue Installation mitbringt: die Standard-Extensions](standard-extension-auslieferung.md), [eine brauchbare robots.txt ab Werk](robots-txt.md), [Installationsname in Seitentiteln](installationsname-in-seiten.md)
 - [Installer-Protokolle und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md), [SQLite-Installer der Plattform](plattform-sqlite-installation.md)
 - [Das Produkt heißt Exponential](umbenennung-in-exponential.md), [Seiten Über und Copyright](info-und-paketseiten.md), [Paketlizenzen und Semantic Versioning](paketlizenzen-und-versionen.md)
-- Chronik: [Juli 2026](../../../eng-us/history/2026/2026-07.md), [August 2026](../../../eng-us/history/2026/2026-08.md), [September 2025](../../../eng-us/history/2025/2025-09.md), [August 2025](../../../eng-us/history/2025/2025-08.md), [Juli 2025](../../../eng-us/history/2025/2025-07.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md)
+- Chronik: [Juli 2026](../../geschichte/2026/2026-07.md), [August 2026](../../geschichte/2026/2026-08.md), [September 2025](../../geschichte/2025/2025-09.md), [August 2025](../../geschichte/2025/2025-08.md), [Juli 2025](../../geschichte/2025/2025-07.md), [Januar 2025](../../geschichte/2025/2025-01.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

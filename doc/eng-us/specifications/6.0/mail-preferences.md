@@ -240,7 +240,7 @@ removes expired pending rows and turns their categories off, and removes suppres
 | `confirm/<token>` | link | section "Flows" |
 | `request` | none | "Send me a link" |
 | `export/<json|csv>[/(token)/<token>]` | signed in or link | the data download |
-| `admin/<status|categories|suppression|consent|user>[/<id>]` | `mailpreferences/administrate` | the administrator's pages; consent filters `?person=&category=&source=&from=&to=`, `&export=csv` (policy `mailpreferences/export`); `/(offset)/<n>` |
+| `admin/<status|categories|suppression|consent|user>[/<id>]` | `mailpreferences/administrate` | the administrator's pages; consent filters `/(person)/…/(category)/…/(source)/…/(from)/…/(to)/…` (the filter form is posted and answered with 303 to that address), `/(export)/csv` (policy `mailpreferences/export`; a user's page also `/(export)/json`), the user search `/(q)/…`; `/(offset)/<n>`; never query string parameters |
 
 Pages reached by a personal link are sent with `Cache-Control: private, no-store, max-age=0`, `Referrer-Policy: no-referrer`
 and `X-Robots-Tag: noindex, nofollow`. Every page works without JavaScript.

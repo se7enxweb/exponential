@@ -261,8 +261,8 @@ multiedit, die Prüfungen vor den Filtern, die strukturellen Ansichts-Cache-Schl
 
 ## Verwandte Seiten
 
-- [Bearbeitungszugriff auf Objekte, die nie veröffentlicht wurden](../../../eng-us/bc/6.0/draft-edit-access.md)
-- [Erweiterungspunkte](../../../eng-us/bc/6.0/rad-extension-points.md)
+- [Bearbeitungszugriff auf Objekte, die nie veröffentlicht wurden](../../bc/6.0/zugriff-auf-entwuerfe.md)
+- [Erweiterungspunkte](../../bc/6.0/rad-erweiterungspunkte.md)
 - [Leitfaden für Extensions](../../anleitungen/extensions.md)
 
 <!-- exp-partner-block:start -->

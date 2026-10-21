@@ -9,8 +9,8 @@ diesen PHP-Versionen funktionieren.
 | Repository | `se7enxweb/layouts-core` (Fork des Kerns von Netgen Layouts) |
 | Neuestes Tag | `2.0.0-se7enx.1` (19.04.2026) |
 | Upstream-Releases in der Historie | `1.4.10` (06.09.2024), `1.4.11`, `1.4.12`, `1.4.13` (17.12.2025), `2.0.0` (25.02.2026) |
-| Chronik | [layouts-core](../../../eng-us/history/ecosystem/layouts-core.md): 450 Änderungen, eine davon vom Team von se7enxweb |
-| Gegenstück in Exponential 6 | die Extensions `explayouts`, `explayouts_ui`, `explayouts_ui_api`; siehe [Exponential Layouts](../../../eng-us/bc/6.0/LAYOUTS.md) |
+| Chronik | [layouts-core](../../geschichte/oekosystem/layouts-core.md): 450 Änderungen, eine davon vom Team von se7enxweb |
+| Gegenstück in Exponential 6 | die Extensions `explayouts`, `explayouts_ui`, `explayouts_ui_api`; siehe [Exponential Layouts](../../bc/6.0/layouts.md) |
 
 ## Was es ist
 
@@ -76,12 +76,12 @@ wechseln.
 
 ## Verwandte Seiten
 
-- [Exponential Layouts](../../../eng-us/bc/6.0/LAYOUTS.md)
+- [Exponential Layouts](../../bc/6.0/layouts.md)
 - Plattformfunktionen: [Administrationsoberfläche](plattform-admin-ui-fork.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Nexus-Starter](plattform-nexus-starter.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Site-Bundles](plattform-site-bundles.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Legacy Bridge](legacy-bridge.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
 - Spezifikationen: [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [Paketkarte der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md), [Bundle der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md)
-- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)
-- Chronik: [Übersicht über das Ökosystem](../../../eng-us/history/ecosystem.md), [Monate des Ökosystems](../../../eng-us/history/ecosystem/months/2026-04.md), [Änderungsverzeichnis](../../../eng-us/history/ledger/README.md)
+- Chronik: [Übersicht über das Ökosystem](../../geschichte/oekosystem.md), [Monate des Ökosystems](../../geschichte/oekosystem/monate/2026-04.md), [Änderungsverzeichnis](../../geschichte/aenderungsverzeichnis/README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

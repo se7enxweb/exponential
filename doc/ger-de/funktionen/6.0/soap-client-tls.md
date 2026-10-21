@@ -48,7 +48,7 @@ gesetzt ist. Ohne die PHP-Erweiterung curl wird ein Aufruf über HTTPS mit einem
 Klartext an den TLS-Port, worauf kein Server antwortet. Das ist eine Verhaltensänderung: `send()` gibt `0` zurück,
 `ErrorString` sagt, dass HTTPS die PHP-Erweiterung curl braucht, und das Fehlerprotokoll enthält „No SOAP call to
 <server>: HTTPS needs the PHP extension curl, which is not loaded“ (siehe
-[Verhaltensänderungen vom 1. bis 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)). Aufrufe über einfaches
+[Verhaltensänderungen vom 1. bis 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)). Aufrufe über einfaches
 HTTP sind unverändert.
 
 Ohne CA-Datei und ohne `setVerifyPeer()` sendet ein Aufruf, was er vorher sendete: `CURLOPT_SSL_VERIFYPEER` true und

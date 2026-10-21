@@ -72,10 +72,10 @@ Zeile nennt die Anzahl.
 
 - [Sicherheitsstandards vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
 - [Härtung von Datentypen und Eingaben](../../spezifikationen/6.0/datentyp-eingabehaertung.md)
-- [RAD-Sicherheit](../../../eng-us/bc/6.0/rad-security.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [RAD-Sicherheit](../../bc/6.0/rad-sicherheit.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

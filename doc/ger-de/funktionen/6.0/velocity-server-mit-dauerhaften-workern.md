@@ -72,8 +72,8 @@ gleichzeitig laufen können.
 Alles, was Velocity für einen Server schreibt, liegt gemeinsam unter
 `var/vc/<engine>/`: `etc/`, `lib/`, `log/` und `run/` für die Qbix-Engine;
 `bin/`, `caddy/`, `tls/`, `log/` und `run/` für FrankenPHP. Siehe
-[FrankenPHP und der eingebaute Server von PHP](../../../eng-us/bc/6.0/frankenphp.md) und
-[Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md).
+[FrankenPHP und der eingebaute Server von PHP](../../bc/6.0/frankenphp.md) und
+[Velocity-Engines](../../bc/6.0/velocity-engines.md).
 
 ## Einstellungen, die Sie zuerst kennen sollten
 
@@ -91,7 +91,7 @@ bevor es die Server-Konfiguration erstellt, sodass eine Änderung beim nächsten
 | `[ServerSettings]` | `User`, `Group`, `AllowRootWorkers` | leer, leer, `disabled` | Worker geben nach dem Start die Root-Rechte ab und laufen als dieser Benutzer (der Benutzer der Website, wenn leer), sodass Dateien, die sie in `var/` schreiben, der Website gehören und nicht root. |
 | `[ServerSettings]` | `StatTtl` | `0` | Sekunden, die sich ein Worker Ergebnisse von Datei-stat-Aufrufen über Anfragen hinweg merken darf. Mit `1` wurden 13 Prozent weniger CPU pro gerenderter Seite gemessen. |
 | `[ServerSettings]` | `Zygote` | leer | Ob Worker, die nach dem Pool gestartet werden, von der Zygote (hält keine Besucherverbindung) oder vom Server abgespalten werden. Leer behält den Standard der Engine. |
-| `[ServerSettings]` | `EnginePhar` | `disabled` | Die Engine aus `dist/engine.phar` ausführen. Siehe [Engine-Archiv](../../../eng-us/bc/6.0/phar.md). Es macht Seiten nicht schneller. |
+| `[ServerSettings]` | `EnginePhar` | `disabled` | Die Engine aus `dist/engine.phar` ausführen. Siehe [Engine-Archiv](../../bc/6.0/phar.md). Es macht Seiten nicht schneller. |
 | `[ServerSettings]` | `StaticMaxAge` | `31536000` | Sekunden, die ein Browser eine statische Datei behalten darf, ohne erneut nachzufragen. |
 | `[ServerSettings]` | `HTTP2` | `enabled` | HTTP/2 für HTTPS-Verbindungen. |
 | `[ServerSettings]` | `ResponseHeaders[]` | vier Sicherheits-Header | Header, die statischen Dateien, Fehlerseiten, Weiterleitungen und 304-Antworten hinzugefügt werden. |
@@ -136,7 +136,7 @@ zwischen den verglichenen Servern ab, statt sie nacheinander zu messen.
 Velocity arbeitet am besten mit Caches, die vor dem Renderer gestapelt sind.
 
 1. **Browser-Cache** für anonyme Besucher: `StaticMaxAge` und die Seiten-Header
-   (siehe [HTTP-Caching für anonyme Besucher](../../../eng-us/bc/6.0/http-caching.md)).
+   (siehe [HTTP-Caching für anonyme Besucher](../../bc/6.0/http-caching.md)).
 2. **Antwort-Cache des Servers** (`[CacheSettings]`): ganze anonyme Seiten, mit
    `StaleWhileRevalidate=60`, sodass eine ablaufende Seite von einer Anfrage gerendert wird,
    während die anderen die gespeicherte Kopie erhalten, `NotFoundSeconds=0`, sodass jede fehlende
@@ -144,9 +144,9 @@ Velocity arbeitet am besten mit Caches, die vor dem Renderer gestapelt sind.
    dies tut, und `MinifyHtml`.
 3. **Rollenbewusster HTTP-Cache** (`settings/httpcache.ini`, standardmäßig aus):
    gerenderte Seiten, pro Berechtigungskontext gespeichert und beantwortet, bevor der Kernel
-   startet, auch für angemeldete Besucher. Siehe [HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md).
+   startet, auch für angemeldete Besucher. Siehe [HTTP-Cache](../../bc/6.0/httpcache.md).
 4. **SQL-Abfrage-Cache** (`settings/querycache.ini`, standardmäßig `Mode=off`): siehe
-   [SQL-Abfrage-Cache](../../../eng-us/bc/6.0/sql-query-cache.md).
+   [SQL-Abfrage-Cache](../../bc/6.0/sql-abfrage-cache.md).
 5. **Cache-Aufwärmer** (`exp:warm`): durchläuft die veröffentlichten Inhalte als anonymer
    Besucher, damit niemand für das erste Rendern nach einem Ablauf bezahlt.
 
@@ -163,7 +163,7 @@ Leeren Sie nach einer Änderung an einem Template oder Stylesheet jeden Cache:
 ```
 
 Für die Schaltflächen unter **Setup > Caches** auf der Kommandozeile siehe
-[Cache-Konsole](../../../eng-us/bc/6.0/cache-console.md).
+[Cache-Konsole](../../bc/6.0/cache-konsole.md).
 
 ## Eine PHP-Änderung mit einem Befehl ausrollen
 
@@ -175,7 +175,7 @@ Eine PHP-Änderung braucht die Autoloads, die INI- und Template-Caches, das Engi
 ./console exp:velocity deploy --kernel      # a kernel class was added or renamed
 ```
 
-Die Tabelle der Schritte, die Gründe für die Reihenfolge, jede Option und ein Beispiellauf stehen unter [Velocity-Engines: eine PHP-Änderung ausrollen](../../../eng-us/bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
+Die Tabelle der Schritte, die Gründe für die Reihenfolge, jede Option und ein Beispiellauf stehen unter [Velocity-Engines: eine PHP-Änderung ausrollen](../../bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
 
 ## Weitere Befehle
 
@@ -183,7 +183,7 @@ Die Tabelle der Schritte, die Gründe für die Reihenfolge, jede Option und ein 
 |---|---|
 | `./console exp:velocity ssl show` / `ssl renew` | Die Zertifikate anzeigen, die HTTPS verwendet (`--json` für die Überwachung); ein neues selbstsigniertes erzeugen, das ein laufender Server ohne Neustart übernimmt. |
 | `./console exp:velocity ext check` | Meldet, welche PHP-Extensions des Standardsatzes fehlen, mit dem Installationsbefehl für dieses Betriebssystem. |
-| `./console exp:velocity layout` / `layout migrate` | Der Konfigurationsbaum im Stil von Debians Apache. Siehe [Verzeichnisstruktur von Velocity](../../../eng-us/bc/6.0/velocity-ondisk-layout.md). |
+| `./console exp:velocity layout` / `layout migrate` | Der Konfigurationsbaum im Stil von Debians Apache. Siehe [Verzeichnisstruktur von Velocity](../../bc/6.0/velocity-verzeichnisstruktur.md). |
 | `./console exp:velocity site\|conf\|mod enable\|disable <name>` | Aktivieren und deaktivieren wie mit `a2ensite`. |
 | `./console exp:webserver` | Engine-unabhängiges Frontend: konfiguriert beim ersten Start Engine, Port und Document Root. |
 | `./console exp:frankenphp` | Wrapper, der auf die FrankenPHP-Engine festgelegt ist. |
@@ -257,12 +257,12 @@ der Anfrage, wie unter PHP-FPM.
 
 ## Verwandte Seiten
 
-- Anleitungen: [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md), [HTTP/2 und Cache-Aufwärmen](../../../eng-us/bc/6.0/http2-and-cache-warming.md), [Antwort-Cache und Navigations-Cache](../../../eng-us/bc/6.0/response-cache-and-navigation.md), [HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md), [SQL-Abfrage-Cache](../../../eng-us/bc/6.0/sql-query-cache.md)
+- Anleitungen: [Velocity-Engines](../../bc/6.0/velocity-engines.md), [HTTP/2 und Cache-Aufwärmen](../../bc/6.0/http2-und-cache-vorwaermen.md), [Antwort-Cache und Navigations-Cache](../../bc/6.0/antwort-cache-und-navigation.md), [HTTP-Cache](../../bc/6.0/httpcache.md), [SQL-Abfrage-Cache](../../bc/6.0/sql-abfrage-cache.md)
 - Funktionen: [Velocity-Webserver](velocity-webserver.md), [Velocity-Antwort-Cache](velocity-antwort-cache.md), [Opcode-Cache und Profil](velocity-opcode-cache-und-profil.md), [Befehle zur Serversteuerung](befehle-fuer-webserver-und-solr.md), [Wartungsmodus](wartungsmodus.md) (Velocity pausiert seine Caches, solange er eingeschaltet ist)
 - Spezifikationen: [Velocity-Worker-Pool](../../spezifikationen/6.0/velocity-worker-pool.md), [Velocity-Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md), [Sicherheitsvorgaben vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - Changelogs: [6.0.15](../../../changelogs/6.0/6.0.15.md), [Exponential-Velocity-Engine](../../../changelogs/extensions/exponential-velocity.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

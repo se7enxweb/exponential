@@ -140,7 +140,7 @@ Die Seite gehört zur Administration (`ui_context` administration). Sie zeigt:
   nur durch einen POST des Bestätigungsformulars mit **Freigeben** oder **Ablehnen und entfernen** geändert, und das
   Formular trägt das Formular-Token der Session (`ezformtoken`), sodass eine andere Site es nicht für Sie absenden
   kann.
-- **Audit.** Festgehalten im Prüfprotokoll ([Audit-Ereignisse](../../../eng-us/bc/6.0/audit.md)):
+- **Audit.** Festgehalten im Prüfprotokoll ([Audit-Ereignisse](../../bc/6.0/audit.md)):
 
   | Ereignis | Wann |
   |---|---|

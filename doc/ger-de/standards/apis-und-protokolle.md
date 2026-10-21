@@ -55,7 +55,7 @@ Exponential ist ein **Autorisierungsserver** für seine REST-API:
   Jeder erhält eine Client-Kennung, ein Geheimnis und eine Weiterleitungsadresse.
 - Der Autorisierungs-Endpunkt ist die Ansicht `oauth/authorize` (`kernel/private/modules/oauth/authorize.php`). Der
   Benutzer meldet sich an und benötigt die Richtlinie `oauth/authorize`
-  ([Hinweis zur Aktualisierung](../../eng-us/bc/6.0/oauth-authorize-policy.md)). Unbekannte Clients und eine `redirect_uri`, die
+  ([Hinweis zur Aktualisierung](../bc/6.0/oauth-autorisierungsrichtlinie.md)). Unbekannte Clients und eine `redirect_uri`, die
   nicht der Endpunkt des Clients ist, erhalten `400 Bad Request` ohne Weiterleitung (RFC 6749, Abschnitt 4.1.2.1),
   getestet in `tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php`.
 - Der Token-Endpunkt ist `POST /api/auth/v1/oauth/token`
@@ -275,7 +275,7 @@ IETF Atom Syndication Format, RFC 4287 (Dezember 2005). OPML 2.0 listet Feeds au
 - **Import** (`kernel/classes/ezrssimport.php`, Cronjob-Teil `kernel/private/classes/cronjobs/rssimport.php`): RSS
   0.91, 0.92, 1.0 und 2.0, gelesen mit abgewiesenen externen Entitäten und abgeschaltetem Netzwerk (`LIBXML_NONET`).
 - Leitfäden: [RSS-Feeds](../anleitungen/rss-feeds.md), [RSS: Feeds für Apple Podcasts, eine seitenweise Feed-Liste und
-  sicherere Exporte](../features/6.0/rss-podcast-and-feed-list.md), [OPML-Exporte](../../eng-us/bc/6.0/opml.md).
+  sicherere Exporte](../features/6.0/rss-podcast-and-feed-list.md), [OPML-Exporte](../bc/6.0/opml.md).
 - Tests: `tests/tests/kernel/classes/eZRSSExportTest.php`, `eZRSSExportOPMLItemTest.php`.
 
 ### Status
@@ -396,7 +396,7 @@ Das Audit-Log kann seine Einträge an einen Webhook ausliefern (`kernel/classes/
   300 Sekunden abweichen.
 - Auslieferung über einen Spool mit Wiederholungen (`Retries`, `RetryBackoff`); mindestens einmal, dedupliziert über
   die Ereignis-ID.
-- Tests: `tests/tests/kernel/classes/audit/expAuditSinksTest.php`. Dokumentation: [Audit](../../eng-us/bc/6.0/audit.md).
+- Tests: `tests/tests/kernel/classes/audit/expAuditSinksTest.php`. Dokumentation: [Audit](../bc/6.0/audit.md).
 
 ### Status
 
@@ -420,9 +420,9 @@ keines davon wurde für diese Seite gegen die MCP-Spezifikation geprüft. **Nich
 
 - [REST API v1 und v2](../anleitungen/rest-api-v1-und-v2.md), [Persönliche API-Schlüssel](../anleitungen/api-schluessel.md),
   [Entfernte Dienste und Apps](../anleitungen/entfernte-dienste-und-apps.md)
-- [Richtlinie OAuth authorize (Hinweis zur Aktualisierung)](../../eng-us/bc/6.0/oauth-authorize-policy.md)
-- [RSS-Feeds](../anleitungen/rss-feeds.md), [OPML-Exporte](../../eng-us/bc/6.0/opml.md)
+- [Richtlinie OAuth authorize (Hinweis zur Aktualisierung)](../bc/6.0/oauth-autorisierungsrichtlinie.md)
+- [RSS-Feeds](../anleitungen/rss-feeds.md), [OPML-Exporte](../bc/6.0/opml.md)
 - [Zwei-Faktor-Anmeldung](../anleitungen/zwei-faktor-anmeldung.md)
-- [Audit](../../eng-us/bc/6.0/audit.md), [Konformität der Mail-Einstellungen](../spezifikationen/6.0/mail-einstellungen-compliance.md)
+- [Audit](../bc/6.0/audit.md), [Konformität der Mail-Einstellungen](../spezifikationen/6.0/mail-einstellungen-compliance.md)
 - [Standards für Dokumentation und Veröffentlichung](dokumentation-und-veroeffentlichung.md),
   [Datenbank- und SQL-Standards](datenbanken-und-sql.md)

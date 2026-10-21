@@ -103,7 +103,7 @@ und `/Q/phpinfo` sind nach derselben Regel einem Administrator vorbehalten. `/Q/
 
 Dies sind die eigenen Regeln der Engine. Eine Exponential-Installation konfiguriert sie über `settings/velocity.ini` und
 kann strenger sein (zum Beispiel das Panel nur von diesem Rechner aus); siehe „Views and who may open them" in
-[Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md).
+[Velocity-Engines](../../bc/6.0/velocity-engines.md).
 
 Ein nicht angemeldeter Browser wird bei den Verwaltungsansichten zur Panel-Anmeldung umgeleitet und nach der Anmeldung
 zu der Seite zurückgebracht, die er angefordert hatte (Release 0.0.4.28).
@@ -185,9 +185,9 @@ zu bearbeiten. Fehlerseiten sind gestaltete Seiten in klaren Worten für jeden F
 
 - [Q-Shell](velocity-q-shell.md), [HTTPS und Zertifikate](velocity-https-zertifikate.md), [Antwort-Cache](velocity-antwort-cache.md), [Velocity-Webserver](velocity-webserver.md)
 - Spezifikationen: [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md) (die Verwaltungsoberfläche), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (`Q.dashboard`, Branding, Protokollierung)
-- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md) (Zugangsdatenspeicher, Vertrauensregel), [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md) (Ansichten und wer sie aus Exponential öffnen darf)
+- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md) (Zugangsdatenspeicher, Vertrauensregel), [Velocity-Engines](../../bc/6.0/velocity-engines.md) (Ansichten und wer sie aus Exponential öffnen darf)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
-- Geschichte: [Juli 2026](../../../eng-us/history/velocity/2026-07.md) (erstes Panel), [24. September](../../../eng-us/history/velocity/2026-09d.md) (Passwörter, Domains), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md) (SSL, Cache, Zwei-Faktor)
+- Geschichte: [Juli 2026](../../geschichte/velocity/2026-07.md) (erstes Panel), [24. September](../../geschichte/velocity/2026-09d.md) (Passwörter, Domains), [25. bis 30. September](../../geschichte/velocity/2026-09e.md) (SSL, Cache, Zwei-Faktor)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

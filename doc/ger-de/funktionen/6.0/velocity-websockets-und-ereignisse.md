@@ -101,7 +101,7 @@ socket.emit('chat/message', { text: 'hello' }, (res) => console.log('saved', res
 - [Velocity-Webserver](velocity-webserver.md), [Velocity-Zeitplaner](velocity-zeitplaner.md), [Control Panel und Dashboard](velocity-control-panel.md), [Erkennung, Föderation und Deployment](velocity-erkennung-foederation-und-deployment.md)
 - [Worker-Pool und Kompatibilitätsschicht von Velocity](../../spezifikationen/6.0/velocity-worker-pool.md)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
-- Chronik: [Juli 2026](../../../eng-us/history/velocity/2026-07.md) (langlebige Prozesse, socket.io), [August 2026](../../../eng-us/history/velocity/2026-08.md) (socket.io in allen Browsern, Server-Sent Events)
+- Chronik: [Juli 2026](../../geschichte/velocity/2026-07.md) (langlebige Prozesse, socket.io), [August 2026](../../geschichte/velocity/2026-08.md) (socket.io in allen Browsern, Server-Sent Events)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -61,7 +61,7 @@ neu geladen.
 |---|---|---|---|
 | `settings/admininterface.ini` (setzen Sie ihn in `settings/override/admininterface.ini.append.php`) | `[PaginationSettings]` | `ItemsPerPage[visual/templateview]` | 20 (eingebaut; der Schlüssel steht nicht in der ausgelieferten Datei) |
 
-Siehe [Wo die Seitengrößen liegen](../../../eng-us/bc/6.0/pagination-settings.md).
+Siehe [Wo die Seitengrößen liegen](../../bc/6.0/einstellungen-fuer-seitengroessen.md).
 
 Das Speichern übernimmt `ezpTemplateOverrides`, das nur
 `settings/siteaccess/<siteaccess>/override.ini.append.php` ändert. Die Datei wird von der Festplatte gelesen,
@@ -186,9 +186,9 @@ Parameter der Funktion (`kernel/content/function_definition.php`, alle optional)
 
 - [Template-Pfadkommentare](template-pfad-kommentare.md) (sehen, welche Überschreibung geantwortet hat), [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md) (wessen Überschreibung gewinnt)
 - [Seitenaufteilung, Sortierung und Seitengrößen](seitenweise-listen-im-admin.md)
-- [Verhaltensänderungen im Juli und August 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen im Juli und August 2026](../../bc/6.0/verhaltensaenderungen-2026-07-08.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Historie: [Juli 2026](../../../eng-us/history/2026/2026-07.md), [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- Historie: [Juli 2026](../../geschichte/2026/2026-07.md), [16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

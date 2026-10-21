@@ -116,7 +116,7 @@ deckt die Layout-Typen, Muster, Auflösung pro Modul, den Sicherheitsschalter, d
 Cache-Schlüssel und die Generation sowie die Blockdefinitionen und -Templates ab (Live-Einstellungen und -Datenbank,
 nichts wird geschrieben außer der eigenen Cache-Generation des Resolvers).
 
-Siehe [die Verhaltensänderung](../../../eng-us/bc/6.0/admin4l.md) für das, was sich von admin4 unterscheidet, und
+Siehe [die Verhaltensänderung](../../bc/6.0/admin4l.md) für das, was sich von admin4 unterscheidet, und
 [admin4](admin4-design.md) für das Design darunter.
 
 <!-- exp-partner-block:start -->

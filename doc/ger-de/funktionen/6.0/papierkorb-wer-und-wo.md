@@ -1,6 +1,6 @@
 # Der Papierkorb zeigt, wer ein Element gelöscht hat und wo es lag
 
-Diese Seite ist in [Die Papierkorbansicht: wer es gelöscht hat, wo es lag, was darunter liegt](../../../eng-us/bc/6.0/trash.md) aufgegangen, die jetzt die Schritte der Anleitung („Verwenden“), die Spalten, Filter, die Sortierung, die Protokolldatei und die Korrekturen desselben Tages enthält.
+Diese Seite ist in [Die Papierkorbansicht: wer es gelöscht hat, wo es lag, was darunter liegt](../../bc/6.0/papierkorb.md) aufgegangen, die jetzt die Schritte der Anleitung („Verwenden“), die Spalten, Filter, die Sortierung, die Protokolldatei und die Korrekturen desselben Tages enthält.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

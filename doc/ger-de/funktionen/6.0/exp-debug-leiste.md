@@ -4,7 +4,7 @@ Diese Seite ist für Entwickler und Administratoren, die eine Seite untersuchen:
 klassische Debug-Bericht am Ende einer Seite wurde zu einer angehefteten Leiste mit Reitern, einer Live-Zusammenfassung
 und Steuerungen für die Debug-Einstellungen und die Caches, sodass Sie das Debugging einschalten, nachsehen und es wieder
 ausschalten können, ohne eine INI-Datei zu öffnen. Hinzugefügt am 02.10.2026. Referenz mit jeder Serverfunktion und jedem
-Test: [Anleitung zur Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md).
+Test: [Anleitung zur Debug-Leiste](../../bc/6.0/debug-leiste.md).
 
 ## Nur für Sie selbst einschalten
 
@@ -38,7 +38,7 @@ Leiste ist unten angeheftet.
   Fensters abzüglich der Leiste und wird pro Benutzer in der Einstellung `expdebugbar_panel_height` gemerkt, sodass sich
   der Bereich auf der nächsten Seite und in einem anderen Browser in dieser Höhe öffnet. Ohne Anmeldung (die Leiste nach
   IP gezeigt) wird die Höhe im Browser gehalten (Schlüssel `exp-debug-panel-height` in `localStorage`), nie in einer
-  Sitzung. Einzelheiten: [Die Höhe des Bereichs](../../../eng-us/bc/6.0/debug-bar.md#the-panels-height).
+  Sitzung. Einzelheiten: [Die Höhe des Bereichs](../../bc/6.0/debug-leiste.md#die-höhe-des-panels).
 - **Meldungen kopieren** auf dem Reiter Meldungen kopiert die gezeigten Meldungen (mit angewendeten Schaltflächen für die
   Stufe und dem Filterfeld) als einfachen Text in die Zwischenablage: pro Eintrag eine Zeile „Stufe: Quelle“, ein Tab und
   die Zeit, dann die Meldung, mit einer Leerzeile zwischen den Einträgen. Es verwendet die Zwischenablage des Browsers und,
@@ -144,11 +144,11 @@ Einstellungen. Verwenden Sie `DebugByIP` oder `DebugByUser`.
 
 ## Verwandte Seiten
 
-- [Anleitung zur Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md), [ausführbare Klassen](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
+- [Anleitung zur Debug-Leiste](../../bc/6.0/debug-leiste.md), [ausführbare Klassen](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
 - [Der INI-Befehl](exp-ini-befehl.md) (dieselbe Editorklasse), [das Prüfprotokoll](pruefprotokoll.md) (Änderungen an Einstellungen werden protokolliert), [Template-Pfad-Kommentare](template-pfad-kommentare.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - Changelogs: [6.0.4](../../../changelogs/6.0/6.0.4.md), [6.0.7](../../../changelogs/6.0/6.0.7.md), [6.0.10](../../../changelogs/6.0/6.0.10.md), [6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [Oktober 2026](../../../eng-us/history/2026/2026-10.md), [August 2025](../../../eng-us/history/2025/2025-08.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md) (Überschrift und IDs, 6.0.7), [August 2024](../../../eng-us/history/2024/2024-08.md) (responsiver Block, 6.0.4)
+- Chronik: [Oktober 2026](../../geschichte/2026/2026-10.md), [August 2025](../../geschichte/2025/2025-08.md), [Januar 2025](../../geschichte/2025/2025-01.md) (Überschrift und IDs, 6.0.7), [August 2024](../../geschichte/2024/2024-08.md) (responsiver Block, 6.0.4)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

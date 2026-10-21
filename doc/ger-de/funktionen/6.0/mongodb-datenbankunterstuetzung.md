@@ -7,7 +7,7 @@ Datenbanksystemen an. Lesen Sie die Grenzen unten, bevor Sie es für eine Produk
 
 Diese Seite ist der Einstieg. Die vollständige Referenz der Portierung, mit jeder Kernel-Klasse, dem Schema der
 Collections und einem Testplan, ist
-[MongoDB-Unterstützung im Kernel](../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md); lesen Sie dort Abschnitt 24 für
+[MongoDB-Unterstützung im Kernel](../../bc/6.0/mongodb-kernel-unterstuetzung.md); lesen Sie dort Abschnitt 24 für
 eine Installation Schritt für Schritt und Abschnitt 26 für die bekannten Grenzen.
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
@@ -89,12 +89,12 @@ In denselben Wochen behoben (`e0d617f28e`, `93cdd0cf47`, `7773850ade`):
 
 ## Verwandte Seiten
 
-- [MongoDB-Unterstützung im Kernel (Referenz der Portierung)](../../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
+- [MongoDB-Unterstützung im Kernel (Referenz der Portierung)](../../bc/6.0/mongodb-kernel-unterstuetzung.md)
 - [Unterstützung für die Datenbank SQLite](sqlite-datenbank.md), [Spezifikation des SQLite-Treibers](../../spezifikationen/6.0/sqlite3-datenbanktreiber.md)
 - [Datenbanktreiber und Installer: SQLite, PostgreSQL, MySQL und Oracle, 16. bis 30. September 2026](../../spezifikationen/6.0/datenbanktreiber-2026-09.md)
 - [Paketinstallation in Teilschritten](paketinstallation-in-teilschritten.md)
 - [Changelog 6.0.14](../../../changelogs/6.0/6.0.14.md)
-- [Chronik: Juni 2026, erste Hälfte](../../../eng-us/history/2026/2026-06a.md)
+- [Chronik: Juni 2026, erste Hälfte](../../geschichte/2026/2026-06a.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -69,7 +69,7 @@ statt eine zu suchen.
 - [MongoDB-Datenbankunterstützung](mongodb-datenbankunterstuetzung.md) (die Änderungen am Assistenten in denselben Wochen)
 - [Installer-Protokolle und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik: Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)
+- [Chronik: Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

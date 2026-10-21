@@ -88,12 +88,12 @@ Aktualisierung die Liste der Bestellstatus des Shops.
 
 ## Verwandte Seiten
 
-- [Bestellbelege](bestellbelege.md), [Sortierung der Bestellliste](sortierung-der-bestellliste.md), [Name der Warenkorbansicht im Shop](../../../eng-us/bc/6.0/shop-basket-view-name.md)
+- [Bestellbelege](bestellbelege.md), [Sortierung der Bestellliste](sortierung-der-bestellliste.md), [Name der Warenkorbansicht im Shop](../../bc/6.0/view-name-des-shop-warenkorbs.md)
 - [Navigation der Administrationsoberfläche: der oberste Knoten und die Reiter](oberster-knoten-des-inhaltsbaums-im-admin.md) (der Reiter Shop)
 - [Installer-Protokolle und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

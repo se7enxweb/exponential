@@ -32,7 +32,7 @@ grep -n -A40 "^\[PaginationSettings\]" settings/admininterface.ini
 
 Die vollständige Tabelle der Schlüssel, die vier Einstellungen, die älter als der Block sind, und die eine Liste, die
 absichtlich nicht seitenweise angezeigt wird, stehen in
-[Wo die Seitengrößen liegen](../../../eng-us/bc/6.0/pagination-settings.md).
+[Wo die Seitengrößen liegen](../../bc/6.0/einstellungen-fuer-seitengroessen.md).
 
 ## In der Unterelementliste eine eigene Größe wählen
 
@@ -44,8 +44,8 @@ bis 10000, gespeichert als Benutzereinstellung. Siehe
 
 | Liste | Hinweise |
 |---|---|
-| Reiter Platzierungen eines Elements | [Blättern und Sortieren im Reiter Platzierungen](../../../eng-us/bc/6.0/locations-tab-paging-and-sorting.md) |
-| Rollen und die Richtlinien einer Rolle | [Blättern in Rollen und Richtlinien](../../../eng-us/bc/6.0/role-policy-paging.md); die Rollenliste zeigt außerdem die ID der Rolle und sortiert |
+| Reiter Platzierungen eines Elements | [Blättern und Sortieren im Reiter Platzierungen](../../bc/6.0/tab-orte-blaettern-und-sortieren.md) |
+| Rollen und die Richtlinien einer Rolle | [Blättern in Rollen und Richtlinien](../../bc/6.0/seitenweise-anzeige-von-rollen-und-richtlinien.md); die Rollenliste zeigt außerdem die ID der Rolle und sortiert |
 | Die Benutzer und Gruppen einer Rolle | [Seitenweise Rollenzuweisungen](seitenweise-rollenzuweisungen.md): nach Namen sortiert, mit einem Namensfilter; die Rollenliste zählt sie pro Rolle |
 | Klassenliste, Liste der Klassengruppen, Liste der Workflow-Gruppen, Liste der PDF-Exporte | keine wurde vorher seitenweise angezeigt |
 | Rabattgruppen, Bestellstatus, MwSt.-Regeln, Produktkategorien | lasen vorher ihre ganze Liste |
@@ -75,16 +75,16 @@ Außerdem:
 
 Die Module lesen ihre Größe über einen Helfer statt über eine im Modul geschriebene Zahl. Der Helfer liefert den Listen
 außerdem ihre Blätterparameter und die vom Benutzer gewählte Seitengröße. Siehe „Where the reading happens“ in
-[Wo die Seitengrößen liegen](../../../eng-us/bc/6.0/pagination-settings.md).
+[Wo die Seitengrößen liegen](../../bc/6.0/einstellungen-fuer-seitengroessen.md).
 
 ## Verwandte Seiten
 
-- [Wo die Seitengrößen liegen](../../../eng-us/bc/6.0/pagination-settings.md), [Blättern in Rollen und Richtlinien](../../../eng-us/bc/6.0/role-policy-paging.md), [Blättern und Sortieren im Reiter Platzierungen](../../../eng-us/bc/6.0/locations-tab-paging-and-sorting.md)
+- [Wo die Seitengrößen liegen](../../bc/6.0/einstellungen-fuer-seitengroessen.md), [Blättern in Rollen und Richtlinien](../../bc/6.0/seitenweise-anzeige-von-rollen-und-richtlinien.md), [Blättern und Sortieren im Reiter Platzierungen](../../bc/6.0/tab-orte-blaettern-und-sortieren.md)
 - [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md), [Rollen: Richtlinien-IDs, Sortierung und Schaltflächen für die Reihenfolge](reihenfolge-der-richtlinien-einer-rolle.md)
-- [Mehrfachbearbeitung (Elemente aus der Unterelementliste)](../../../eng-us/bc/6.0/multi-node-edit.md)
+- [Mehrfachbearbeitung (Elemente aus der Unterelementliste)](../../bc/6.0/mehrere-elemente-bearbeiten.md)
 - [Sektionen](../../anleitungen/sektionen.md): die Sektionsliste, ihre Seitengröße und die anderen Sektionsseiten
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md) (eigene Seitengröße), [September 2026, erste Hälfte: Blättern überall](../../../eng-us/history/2026/2026-09a.md#15-september-paging-everywhere)
+- Chronik: [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md) (eigene Seitengröße), [September 2026, erste Hälfte: Blättern überall](../../geschichte/2026/2026-09a.md#15-september-überall-seitenweise-anzeige)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

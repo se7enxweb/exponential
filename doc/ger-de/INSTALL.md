@@ -79,8 +79,8 @@ verfolgen, ändern und von dem aus Sie Beiträge zurückgeben können.
 
 | | |
 |---|---|
-| Version | **PHP 8.0 bis 8.5**. `composer.json` deklariert `^8.0` (und akzeptiert spätere 8.x-Versionen). PHP 8.0 ist die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 (und AlmaLinux 9, Rocky Linux 9) Exponential unter Apache, PHP-FPM oder Velocity ausführt. Verwenden Sie das neueste PHP, das Ihr System anbietet. Siehe [Unterstützung für PHP 8.0](../eng-us/bc/6.0/php-8.0-support.md). |
-| Exponential Velocity | läuft ab seinem Release 0.0.4.54 auf **PHP 8.0 bis 8.5** (bis dahin brauchte es 8.1), mit der Extension `sockets` (`pcntl` und `openssl` für den Worker-Pool und HTTPS). Unter RHEL 9 führt das mitgelieferte PHP 8.0 es aus; siehe [Unterstützung für PHP 8.0](../eng-us/bc/6.0/php-8.0-support.md#exponential-velocity-on-php-80). |
+| Version | **PHP 8.0 bis 8.5**. `composer.json` deklariert `^8.0` (und akzeptiert spätere 8.x-Versionen). PHP 8.0 ist die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 (und AlmaLinux 9, Rocky Linux 9) Exponential unter Apache, PHP-FPM oder Velocity ausführt. Verwenden Sie das neueste PHP, das Ihr System anbietet. Siehe [Unterstützung für PHP 8.0](bc/6.0/php-8.0-unterstuetzung.md). |
+| Exponential Velocity | läuft ab seinem Release 0.0.4.54 auf **PHP 8.0 bis 8.5** (bis dahin brauchte es 8.1), mit der Extension `sockets` (`pcntl` und `openssl` für den Worker-Pool und HTTPS). Unter RHEL 9 führt das mitgelieferte PHP 8.0 es aus; siehe [Unterstützung für PHP 8.0](bc/6.0/php-8.0-unterstuetzung.md#exponential-velocity-unter-php-80). |
 | Release-Tags | `v6.0.8` bis `v6.0.14` erfordern PHP 8.1; unter PHP 8.0 installieren Sie die Linie 6.0.15 (`dev-main`, die Composer auch als `6.0.x-dev` kennt), bis deren Tag veröffentlicht ist. |
 | 64-Bit-PHP | nötig für mehr als 30 Sprachen (`composer.json`, `suggest`). |
 | `memory_limit` | mindestens `64M` (Setup-Prüfung `memory_limit`). Starten Sie den Webserver oder PHP-FPM nach dem Bearbeiten von `php.ini` neu. |
@@ -416,7 +416,7 @@ Inhalte erreichbar bleiben.
 - `kickstart.ini` enthält das Datenbankpasswort. Halten Sie die Datei aus der Versionsverwaltung heraus, und entfernen
   oder verschieben Sie sie nach der Installation, wenn der Web-Assistent sie nicht lesen darf.
 
-Vollständige Referenz: [Kickstarter CLI](../eng-us/bc/6.0/kickstartercli.md), [Kickstarter](funktionen/6.0/kickstarter-cli.md).
+Vollständige Referenz: [Kickstarter CLI](bc/6.0/kickstartercli.md), [Kickstarter](funktionen/6.0/kickstarter-cli.md).
 
 ## 7. Installation mit einem Konsolenbefehl
 
@@ -548,7 +548,7 @@ Systemdienst für den Bootvorgang zu installieren; das Engine-Paket liefert eine
 `vendor/se7enxweb/exponential-velocity/service/` mit. Wenn Velocity die Website allein ausliefert, setzen Sie
 `[DeploySettings] PhpFpmService` auf `disabled`.
 
-Mehr dazu: [Velocity-Engines](../eng-us/bc/6.0/velocity-engines.md), [Aufbau auf der Festplatte](../eng-us/bc/6.0/velocity-ondisk-layout.md),
+Mehr dazu: [Velocity-Engines](bc/6.0/velocity-engines.md), [Aufbau auf der Festplatte](bc/6.0/velocity-verzeichnisstruktur.md),
 [persistente Worker](funktionen/6.0/velocity-server-mit-dauerhaften-workern.md), [Deployment](anleitungen/bereitstellung.md).
 
 **FrankenPHP** ist die produktionsreife alternative Engine, die mit denselben Befehlen gesteuert wird:
@@ -619,7 +619,7 @@ anderen Rechner muss dort hinzugefügt werden (zum Beispiel `TrustedProxies[]=10
 `settings/override/site.ini.append.php`), sonst erzeugt die Website hinter einem HTTPS-Proxy `http://`-Links und sieht
 mit `ClientIpByCustomHTTPHeader=X-Forwarded-For` die Adresse des Proxys statt der des Besuchers. Einzelheiten:
 [Kapitel 8](installation/08-die-website-ausliefern.md) und
-[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../eng-us/bc/6.0/trusted-proxies.md).
+[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](bc/6.0/vertrauenswuerdige-proxys.md).
 
 ## 9. SQLite im Produktivbetrieb
 
@@ -688,7 +688,7 @@ Stellen Sie wieder her, indem Sie `backup.db` zurückkopieren, während die Webs
 
 Mehr dazu: [SQLite-Datenbankunterstützung](funktionen/6.0/sqlite-datenbank.md),
 [SQLite-3-Treiber](spezifikationen/6.0/sqlite3-datenbanktreiber.md),
-[SQLite-Transaktionen](../eng-us/bc/6.0/sqlite-transactions.md).
+[SQLite-Transaktionen](bc/6.0/sqlite-transaktionen.md).
 
 ## 10. Nach der Installation
 
@@ -700,7 +700,7 @@ Mehr dazu: [SQLite-Datenbankunterstützung](funktionen/6.0/sqlite-datenbank.md),
    `php bin/php/resetuserpassword.php --allow-root-user -u admin -g` zurückgesetzt (ohne root autorisieren Sie sich mit
    einem anderen Administrator: `-a <login> -ap <password>`).
 2. **Prüfen Sie die Startseite und die Protokolle.** Öffnen Sie die Adresse der Website. Lesen Sie bei einem Fehler
-   `var/log/error.log` und [Eine Installation reparieren](../eng-us/bc/6.0/repair.md).
+   `var/log/error.log` und [Eine Installation reparieren](bc/6.0/reparatur.md).
 3. **Richten Sie die Cronjobs ein.** Sie veröffentlichen geplante Inhalte, versenden Benachrichtigungen und Newsletter
    und räumen auf. Listen Sie die Teile auf und fügen Sie sie dann der Crontab des Website-Benutzers hinzu:
 
@@ -764,8 +764,8 @@ Mehr dazu: [SQLite-Datenbankunterstützung](funktionen/6.0/sqlite-datenbank.md),
    */5 * * * * cd /path/to/installation && php runcronjobs.php -q -s admin expai
    ```
 
-   Was sie tun und jeden weiteren Schritt finden Sie unter [Exponential Intelligence](funktionen/6.0/extensions/expai.md)
-   und [die Job-Warteschlange](funktionen/6.0/extensions/expqueue.md).
+   Was sie tun und jeden weiteren Schritt finden Sie unter [Exponential Intelligence](funktionen/6.0/erweiterungen/expai.md)
+   und [die Job-Warteschlange](funktionen/6.0/erweiterungen/expqueue.md).
 
 Fahren Sie dann mit den Anleitungen fort:
 
@@ -812,8 +812,8 @@ https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Insta
 | Eine Änderung erscheint unter Velocity nicht | Die Worker halten den alten Code: `exp:velocity restart` (oder `deploy`), dann `exp:velocity cache clear`. |
 | Das Administratorpasswort ist verloren | Als root: `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`; andernfalls autorisieren Sie sich mit einem anderen Administrator (`-a <login> -ap <password>`). Siehe [Ein Benutzerpasswort zurücksetzen](funktionen/6.0/benutzerpasswort-zuruecksetzen.md). |
 
-Mehr dazu: [Eine Installation reparieren](../eng-us/bc/6.0/repair.md), [Wartungsmodus](funktionen/6.0/wartungsmodus.md).
+Mehr dazu: [Eine Installation reparieren](bc/6.0/reparatur.md), [Wartungsmodus](funktionen/6.0/wartungsmodus.md).
 
 ## Öffentliche Demos: Demo-Modus
 
-Eine öffentliche Demo, deren Administrator-Anmeldung veröffentlicht ist, läuft mit der Umgebungsvariable `EXP_DEMO_MODE=1`. Jeder Installer (Einrichtungsassistent, Kickstarter, `exp:install`) installiert dann das veröffentlichte Administratorpasswort so, wie es angegeben ist, auch ein allgemein bekanntes oder kurzes wie `publish` oder `publishing` (niemals ein leeres), und danach kann niemand ein Administratorpasswort ändern oder zurücksetzen, solange die Variable gesetzt ist. Setzen Sie sie niemals für eine echte Website. Siehe [Demo-Modus](../eng-us/bc/6.0/demo-mode.md) und die [Beispiele zum Demo-Modus](../eng-us/examples/demo-mode/README.md).
+Eine öffentliche Demo, deren Administrator-Anmeldung veröffentlicht ist, läuft mit der Umgebungsvariable `EXP_DEMO_MODE=1`. Jeder Installer (Einrichtungsassistent, Kickstarter, `exp:install`) installiert dann das veröffentlichte Administratorpasswort so, wie es angegeben ist, auch ein allgemein bekanntes oder kurzes wie `publish` oder `publishing` (niemals ein leeres), und danach kann niemand ein Administratorpasswort ändern oder zurücksetzen, solange die Variable gesetzt ist. Setzen Sie sie niemals für eine echte Website. Siehe [Demo-Modus](bc/6.0/demomodus.md) und die [Beispiele zum Demo-Modus](../eng-us/examples/demo-mode/README.md).

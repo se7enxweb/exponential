@@ -30,7 +30,7 @@ Twig-Frontend, und umgekehrt.
 ## Welche Version für welche Plattform
 
 Das Paket hat eine Linie je Plattformgeneration: Die Linie für Platform 2.5 wird auf `master` getaggt, die späteren
-Linien haben jeweils einen eigenen Branch. Die Tags sind in der [Release-Historie](../../../eng-us/history/ecosystem/legacyBridge.md)
+Linien haben jeweils einen eigenen Branch. Die Tags sind in der [Release-Historie](../../geschichte/oekosystem/legacyBridge.md)
 aufgeführt.
 
 | Branch / Tags | Plattform | Symfony | PHP | Benötigt |
@@ -159,9 +159,9 @@ mit „Could not map database driver“ ab. Siehe [SQLite für die Plattform](pl
 
 - Plattformfunktionen: [Site-Bundles und Twig-Werkzeuge](plattform-site-bundles.md), [Nexus-Starter](plattform-nexus-starter.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Administrationsoberfläche der Plattform](plattform-admin-ui-fork.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
 - Spezifikationen: [Legacy-Bridge-Bundle](../../spezifikationen/6.0/legacy-bridge-bundle.md), [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [Paketübersicht der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md)
-- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennung von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennung von Befehlen](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)
-- Historie: [legacyBridge](../../../eng-us/history/ecosystem/legacyBridge.md) (49 Änderungen, 34 Releases), [ibexa-legacy-bridge---7x](../../../eng-us/history/ecosystem/ibexa-legacy-bridge---7x.md), [site-legacy-bundle](../../../eng-us/history/ecosystem/site-legacy-bundle.md), [exponential-legacy-installer](../../../eng-us/history/ecosystem/exponential-legacy-installer.md), [Überblick über das Ökosystem](../../../eng-us/history/ecosystem.md), [Monate des Ökosystems](../../../eng-us/history/ecosystem/months/2026-04.md), [Änderungsverzeichnis](../../../eng-us/history/ledger/README.md)
+- Historie: [legacyBridge](../../geschichte/oekosystem/legacyBridge.md) (49 Änderungen, 34 Releases), [ibexa-legacy-bridge---7x](../../geschichte/oekosystem/ibexa-legacy-bridge---7x.md), [site-legacy-bundle](../../geschichte/oekosystem/site-legacy-bundle.md), [exponential-legacy-installer](../../geschichte/oekosystem/exponential-legacy-installer.md), [Überblick über das Ökosystem](../../geschichte/oekosystem.md), [Monate des Ökosystems](../../geschichte/oekosystem/monate/2026-04.md), [Änderungsverzeichnis](../../geschichte/aenderungsverzeichnis/README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -60,9 +60,9 @@ user/preferences/set_and_exit/admin_left_menu_size/<value>
 - [Das responsive Admin-Design (admin3)](admin3-responsives-admin.md), [das Design admin4](admin4-design.md)
 - [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md)
 - [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md), [ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md)
-- [Ausgewählte ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
+- [Ausgewählte ausblenden und einblenden](../../bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) (die Linie 6.0.15 hat noch kein Release-Tag)
-- Chronik: [August 2024](../../../eng-us/history/2024/2024-08.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md), [November 2024](../../../eng-us/history/2024/2024-11.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md), [Juni 2025](../../../eng-us/history/2025/2025-06.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)
+- Chronik: [August 2024](../../geschichte/2024/2024-08.md), [Oktober 2024](../../geschichte/2024/2024-10.md), [November 2024](../../geschichte/2024/2024-11.md), [Januar 2025](../../geschichte/2025/2025-01.md), [Juni 2025](../../geschichte/2025/2025-06.md), [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

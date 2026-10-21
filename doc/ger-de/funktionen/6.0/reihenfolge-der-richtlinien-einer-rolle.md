@@ -47,14 +47,14 @@ Richtlinien jetzt in der Reihenfolge ihrer IDs zurück statt nach Modul und Funk
 
 ## Verwandte Seiten
 
-- [Blättern in Rollen und Richtlinien](../../../eng-us/bc/6.0/role-policy-paging.md)
+- [Blättern in Rollen und Richtlinien](../../bc/6.0/seitenweise-anzeige-von-rollen-und-richtlinien.md)
 - [Template-Operatoren für Rollen und Richtlinien](template-operatoren-fuer-rollen-und-richtlinien.md)
 - [Sektionen](../../anleitungen/sektionen.md): die Sektions-Einschränkung, für eine Sektion zugewiesene Rollen und wer Sektionen zuweisen darf (`section/assign` mit `NewSection`)
 - [Objektzustände](../../anleitungen/objektzustaende.md): die Einschränkungen `StateGroup_<identifier>` und `NewState`, mit einem ausgearbeiteten Prüf-Workflow
 - [Blättern in Admin-Listen](seitenweise-listen-im-admin.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [Januar 2026](../../../eng-us/history/2026/2026-01.md), [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- Chronik: [Januar 2026](../../geschichte/2026/2026-01.md), [16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

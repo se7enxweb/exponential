@@ -39,6 +39,9 @@
  *                  imageSources()): an https image of another site they do not allow is shown as a link,
  *                  a.a4-help-ext.a4-help-imglink "Image on <host>: <alt>" (target _blank), so the page makes no
  *                  request the policy blocks. Null (the default): every https image is an <img>.
+ *   remote_images  callable( $href ) => array( 'url', 'width', 'height' ) or null: the local copy of an https image
+ *                  (expHelpRemoteImages::resolve(), stored by exp:help index), shown in its place as an <img> the
+ *                  policy's 'self' allows. Null, or no copy: the image as above (an <img>, or the link).
  *
  * The markup (styled by help.css; the class contract with the viewer and exphelp.js): div.a4-help-body around the
  * page; h1-h6.a4-help-h[id] with a.a4-help-anchor; div.a4-help-code[data-lang][data-label] > pre.a4-help-pre >
@@ -134,6 +137,7 @@ class expHelpMarkdownRenderer
             'id_prefix' => '',
             'source_path' => '',
             'image_sources' => null,
+            'remote_images' => null,
         );
     }
 
@@ -1545,12 +1549,28 @@ class expHelpMarkdownRenderer
         return '<a' . $attrs . '>' . $inner . '</a>';
     }
 
-    protected function renderImage( $alt, $url, $title )
+    protected function renderImage( $alt, $url, $title, array $size = array() )
     {
         $altText = trim( preg_replace( '/\s+/u', ' ', html_entity_decode( strip_tags( $this->renderInline( $alt ) ), ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ) );
         $target = $this->resolveUrl( $url, true );
         if ( $target === null )
             return '<span class="a4-help-deadlink">' . self::escape( $altText ) . '</span>';
+        // an https image the index stored a copy of (exp:help index): the copy, served by the admin itself
+        if ( $target['external'] && is_callable( $this->options['remote_images'] ) )
+        {
+            $local = call_user_func( $this->options['remote_images'], $target['href'] );
+            if ( is_array( $local ) && isset( $local['url'] ) && is_string( $local['url'] ) && $local['url'] !== ''
+                 && preg_match( '/^[A-Za-z][A-Za-z0-9+.-]*:|^\/\//', $local['url'] ) !== 1 )
+                $target = array( 'href' => $local['url'], 'external' => false,
+                                 'width' => isset( $local['width'] ) ? (int)$local['width'] : null,
+                                 'height' => isset( $local['height'] ) ? (int)$local['height'] : null );
+        }
+        // the size an <img> tag gives wins over the file's (README.md: <img width="1200" height="693" ...>)
+        if ( isset( $size['width'] ) || isset( $size['height'] ) )
+        {
+            $target['width'] = isset( $size['width'] ) ? $size['width'] : null;
+            $target['height'] = isset( $size['height'] ) ? $size['height'] : null;
+        }
         if ( $target['external'] && is_array( $this->options['image_sources'] )
              && !expContentSecurityPolicy::sourcesAllowUrl( $this->options['image_sources'], $target['href'] ) )
             return $this->renderImageLink( $altText, $target['href'], $title );
@@ -1559,6 +1579,8 @@ class expHelpMarkdownRenderer
             $html .= ' title="' . self::escape( html_entity_decode( $title, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ) . '"';
         if ( $target['width'] && $target['height'] )
             $html .= ' width="' . (int)$target['width'] . '" height="' . (int)$target['height'] . '"';
+        elseif ( $target['width'] || $target['height'] )
+            $html .= $target['width'] ? ' width="' . (int)$target['width'] . '"' : ' height="' . (int)$target['height'] . '"';
         return $html . ' loading="lazy" decoding="async">';
     }
 
@@ -1637,7 +1659,11 @@ class expHelpMarkdownRenderer
         {
             if ( !isset( $attrs['src'] ) )
                 return array( '', $end );
-            $html = $this->renderImage( isset( $attrs['alt'] ) ? $attrs['alt'] : '', $attrs['src'], isset( $attrs['title'] ) ? $attrs['title'] : '' );
+            $size = array();
+            foreach ( array( 'width', 'height' ) as $dimension )
+                if ( isset( $attrs[$dimension] ) && preg_match( '/^\s*([1-9][0-9]{0,4})\s*(?:px)?\s*$/i', $attrs[$dimension], $n ) === 1 )
+                    $size[$dimension] = (int)$n[1];
+            $html = $this->renderImage( isset( $attrs['alt'] ) ? $attrs['alt'] : '', $attrs['src'], isset( $attrs['title'] ) ? $attrs['title'] : '', $size );
             return array( $html, $end );
         }
         if ( $name === 'a' )

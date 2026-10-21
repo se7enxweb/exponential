@@ -4,13 +4,13 @@ Diese Seite ist für Administratoren, die wissen wollen, was das Datenbankwerkze
 oder die es für sich betreiben. AdminNeo ist ein vollständiges Werkzeug zur Datenbankverwaltung, geschrieben in PHP, ein
 Fork von Adminer. In Exponential erreichen Sie es über die Extension `sevenx_dse`, hinter rollenbasierten
 Berechtigungen, sodass ein Administrator der Website Tabellen ansehen und SQL in derselben Administrationsoberfläche
-ausführen kann wie alles andere. Siehe [sevenx_dse](extensions/sevenx_dse.md) zum Installieren und Verwenden.
+ausführen kann wie alles andere. Siehe [sevenx_dse](erweiterungen/sevenx_dse.md) zum Installieren und Verwenden.
 
 | | |
 |---|---|
 | Repository | `se7enxweb/adminneo` (ein Fork des Projekts AdminNeo, das selbst auf Adminer beruht) |
 | Neuestes Tag | 5.2.1 (07.12.2025); der Hauptbranch des Forks trägt die Entwicklung von 5.3 |
-| Chronik | [adminneo](../../../eng-us/history/ecosystem/adminneo.md): 1.121 Änderungen, die ganze Upstream-Historie vom Fork übernommen (der Fork hat im Verzeichnis keine eigenen Änderungen) |
+| Chronik | [adminneo](../../geschichte/oekosystem/adminneo.md): 1.121 Änderungen, die ganze Upstream-Historie vom Fork übernommen (der Fork hat im Verzeichnis keine eigenen Änderungen) |
 
 ## Was es einem Administrator von Exponential bietet
 
@@ -61,7 +61,7 @@ oben genannten Plugins auf.
 | 5.3 (main, unveröffentlicht) | 2026-03 | Erklärt die Kompatibilität mit PHP 8.5; sicherere Zufallswerte und 256 Bit Entropie in allen Zufallszeichenketten; Unterstützung neuer Systemtabellen im Plugin für Fremdschlüssel; Korrektur des Blätterns in der Auswahltabelle (Issue #181). |
 
 Die monatliche Liste aller 1.121 Änderungen, einschließlich der kleineren Korrekturen an Oberfläche und Treibern, steht in
-der [Historie des Repositorys](../../../eng-us/history/ecosystem/adminneo.md#upstream-history-carried-by-the-fork-by-month).
+der [Historie des Repositorys](../../geschichte/oekosystem/adminneo.md#upstream-geschichte-im-fork-nach-monat).
 
 ## Grenzen
 
@@ -74,12 +74,12 @@ der [Historie des Repositorys](../../../eng-us/history/ecosystem/adminneo.md#ups
 
 ## Verwandte Seiten
 
-- [sevenx_dse](extensions/sevenx_dse.md)
+- [sevenx_dse](erweiterungen/sevenx_dse.md)
 - Plattformfunktionen: [Administrationsoberfläche](plattform-admin-ui-fork.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Nexus-Starter](plattform-nexus-starter.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Site-Bundles](plattform-site-bundles.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Legacy Bridge](legacy-bridge.md)
 - Spezifikationen: [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [Paketkarte der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md), [Bundle der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md)
-- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)
-- Chronik: [Übersicht über das Ökosystem](../../../eng-us/history/ecosystem.md), [Monate des Ökosystems](../../../eng-us/history/ecosystem/months/2026-04.md), [Änderungsverzeichnis](../../../eng-us/history/ledger/README.md)
+- Chronik: [Übersicht über das Ökosystem](../../geschichte/oekosystem.md), [Monate des Ökosystems](../../geschichte/oekosystem/monate/2026-04.md), [Änderungsverzeichnis](../../geschichte/aenderungsverzeichnis/README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

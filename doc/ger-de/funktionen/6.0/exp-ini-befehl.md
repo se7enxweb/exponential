@@ -4,7 +4,7 @@ Diese Seite ist für Administratoren und Entwickler, die INI-Einstellungen ände
 Einstellungen in jedem Geltungsbereich: der globalen Überschreibung, einem Siteaccess, einer Extension, einem
 Extension-Siteaccess. Er bearbeitet Dateien Zeile für Zeile, sodass Kommentare, Leerzeilen und die Reihenfolge bleiben,
 wie Sie sie geschrieben haben (anders als `eZINI::save()`, das die ganze Datei neu schreibt). Hinzugefügt am
-02.10.2026. Vollständige Referenz mit der Ausgabe jeder Aktion: [Konsole exp:ini](../../../eng-us/bc/6.0/console-exp-ini.md).
+02.10.2026. Vollständige Referenz mit der Ausgabe jeder Aktion: [Konsole exp:ini](../../bc/6.0/console-exp-ini.md).
 
 ## Fünf Befehle, die den größten Teil eines Tages abdecken
 
@@ -60,14 +60,14 @@ Editorklasse (`expIniEditor`) steht hinter dem Reiter für Einstellungen der [De
 
 ## Verwandte Seiten
 
-- [Konsole](../../../eng-us/bc/6.0/console.md)
+- [Konsole](../../bc/6.0/konsole.md)
 - [Platzierungen von INI-Überschreibungen](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Audit-Ereignismodell](../../spezifikationen/6.0/audit-ereignismodell.md)
-- [eZINI erhält Kommentare beim Speichern](../../../eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md)
+- [eZINI erhält Kommentare beim Speichern](../../bc/6.0/ezini-behaelt-kommentare.md)
 - [INI-Überschreibungen für mehrere Websites](ini-ueberschreibungen-fuer-mehrere-websites.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md), [Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- Chronik: [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md), [Oktober 2026](../../geschichte/2026/2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

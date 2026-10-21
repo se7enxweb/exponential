@@ -75,7 +75,7 @@ Antworten speichern und wiederverwenden (`Cache-Control`, Validatoren, `Vary`).
   wird von Apache, PHP-FPM und Velocity gemeinsam genutzt. Eine Antwort, die von einem Benutzer abhängt, wird mit
   `Cache-Control: private` markiert, sodass kein gemeinsam genutzter Cache sie behält; dieselbe Regel gilt, wenn das
   Session-Cookie mit jeder Antwort gesendet wird (`[Session] CookieAlwaysAddToHttpResponse`)
-  ([HTTP-Cache](../../eng-us/bc/6.0/httpcache.md)).
+  ([HTTP-Cache](../bc/6.0/httpcache.md)).
 - Purge-Tags für einen vorgeschalteten Cache (Varnish `xkey`, `Surrogate-Key`, `Cache-Tag`) mit `[HttpCacheSettings]
   TagHeader` (standardmäßig aus).
 - `Cache-Control`, `Pragma` und `Expires` pro Pfad mit `[HTTPHeaderSettings] HeaderList[]`.
@@ -155,7 +155,7 @@ insbesondere Custom Properties for Cascading Variables, Media Queries Level 5 (`
 - Keine `<style>`-Blöcke oder `style=""`-Attribute in Admin-Templates; das gesamte CSS liegt in Stylesheet-Dateien,
   gebündelt vom ezjscore-Packer. Durchgesetzt von `tests/tests/design/AdminStylingRulesTest.php` (auch fest kodierte
   Farben und Radien in Modul-Stylesheets schlagen fehl) und verlangt durch eine durchgesetzte CSP `style-src 'self'`
-  ([Styling von admin4](../../eng-us/bc/6.0/admin4-styling.md)).
+  ([Styling von admin4](../bc/6.0/admin4-gestaltung.md)).
 
 **Status.** **Erfüllt** für admin4 und admin4l. Andere Designs: **Nicht verifiziert**.
 
@@ -250,7 +250,7 @@ Format 1.0 (RFC 4287, IETF, 2005).
 RSS 2.0, Atom 1.0, Apple Podcasts (RSS 2.0 mit dem iTunes-Namensraum) oder OPML 2.0 geschrieben. Die Ausgabe für Apple
 Podcasts trägt ein `atom:link rel="self"`. Tests: `tests/tests/kernel/classes/eZRSSExportTest.php`,
 `tests/tests/kernel/classes/security/eZRSSSecurityTest.php`
-([RSS, Podcasts und die Feed-Liste](../funktionen/6.0/rss-podcast-und-feed-liste.md), [OPML-Exporte](../../eng-us/bc/6.0/opml.md)).
+([RSS, Podcasts und die Feed-Liste](../funktionen/6.0/rss-podcast-und-feed-liste.md), [OPML-Exporte](../bc/6.0/opml.md)).
 
 **Status.** **Teilweise erfüllt** (Formate geschrieben; Medientyp für Atom wie oben vermerkt).
 
@@ -271,5 +271,5 @@ werden von den Templates der Extension nicht ausgegeben; ein Site-Design muss si
 
 - [Standards zur Barrierefreiheit](barrierefreiheit.md), [Sicherheitsstandards](sicherheit.md), [Datenschutzstandards](datenschutz.md)
 - [Velocity: HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md)
-- [HTTP-Cache](../../eng-us/bc/6.0/httpcache.md)
-- [Styling von admin4](../../eng-us/bc/6.0/admin4-styling.md)
+- [HTTP-Cache](../bc/6.0/httpcache.md)
+- [Styling von admin4](../bc/6.0/admin4-gestaltung.md)

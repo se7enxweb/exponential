@@ -13,7 +13,7 @@ Diese Seite richtet sich an Entwickler, die Exponential ändern und wissen möch
 und an Administratoren, die beurteilen möchten, wie ein Release überprüft wurde. Sie beantwortet: Welches
 Testframework und welche Suites es gibt, was bei jedem Push und Pull Request läuft, was nur lokal läuft und was nicht
 abgedeckt ist. Die Einzelheiten der Arbeit stehen unter [Qualitätsprüfungen](../funktionen/6.0/qualitaetspruefungen.md) und
-[Continuous Integration](../../eng-us/bc/6.0/ci.md).
+[Continuous Integration](../bc/6.0/ci.md).
 
 ## Zusammenfassung
 
@@ -148,7 +148,7 @@ jeden Autor streng. Getestet durch `tests/tests/bin/githooks/CheckCommitRangeTes
 ## Die Prüfungen vor einem Push
 
 Die Push-Prüfung des Projekts führt die CI-Prüfungen für eine committete Revision in einem sauberen Worktree aus
-([Continuous Integration](../../eng-us/bc/6.0/ci.md), „Die lokalen Prüfungen und die CI“):
+([Continuous Integration](../bc/6.0/ci.md), „Die lokalen Prüfungen und die CI“):
 
 | Prüfung | Kontrolle |
 |---|---|
@@ -195,7 +195,7 @@ Befehle stehen unter [Qualitätsprüfungen](../funktionen/6.0/qualitaetspruefung
 ## Verwandte Seiten
 
 - [Qualitätsprüfungen](../funktionen/6.0/qualitaetspruefungen.md)
-- [Continuous Integration](../../eng-us/bc/6.0/ci.md)
+- [Continuous Integration](../bc/6.0/ci.md)
 - [Codierstandards](programmierstandards.md)
 - [Versionsverwaltung und Releases](versionsverwaltung-und-releases.md)
 - [Standards für PHP, PHP-FIG und Composer](php-und-composer.md)

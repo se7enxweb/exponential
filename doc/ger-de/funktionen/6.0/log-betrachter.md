@@ -421,7 +421,7 @@ Jede Aktion ist ein POST an `setup/logsaction` mit dem Formular-Token; Rotieren,
 Bestätigungsseite, die die Datei, ihre Größe und das, was geschehen wird, nennt. Das Öffnen einer Datei hält
 `system.log.read` einmal pro Datei und Session alle `[ViewerAuditSettings] ReadInterval` Sekunden fest, sodass das
 Verfolgen einer Datei nicht pro Abfrage einen Eintrag schreibt. Die Audit-Namen stehen im Katalog des
-[Prüfprotokolls](../../../eng-us/bc/6.0/audit.md) (Kanal `system`).
+[Prüfprotokolls](../../bc/6.0/audit.md) (Kanal `system`).
 
 ## Logs verwalten
 
@@ -688,7 +688,7 @@ Numerische Einstellungen werden innerhalb sicherer Grenzen gehalten, gleichgült
 
 ## Zeilen des Demo-Modus
 
-Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) schreibt jeder Prozess eine Zeile `demo/mode on pid=<pid> sapi=<sapi> ...` in `security.log`, im Format des Anfrage-Klassifizierers, sodass **Setup > Logdateien** sie unter `demo/mode` gruppiert. Auf einer echten Site bedeutet eine solche Zeile, dass die Variable sie erreicht hat. [Demo-Modus](../../../eng-us/bc/6.0/demo-mode.md).
+Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) schreibt jeder Prozess eine Zeile `demo/mode on pid=<pid> sapi=<sapi> ...` in `security.log`, im Format des Anfrage-Klassifizierers, sodass **Setup > Logdateien** sie unter `demo/mode` gruppiert. Auf einer echten Site bedeutet eine solche Zeile, dass die Variable sie erreicht hat. [Demo-Modus](../../bc/6.0/demomodus.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

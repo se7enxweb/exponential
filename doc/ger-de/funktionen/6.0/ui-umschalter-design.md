@@ -9,7 +9,7 @@ getroffen wurde. Seit dem 15. Oktober 2026.
 
 Die Wahl des Designs ist nach der Sprache der Oberfläche der zweite Provider des [UI-Umschalters](ui-umschalter.md). Die
 Einstellungen werden in [der Anleitung](../../anleitungen/ui-umschalter-design.md) erklärt, die Änderungen am Code in
-[den Hinweisen für Entwickler](../../../eng-us/bc/6.0/ui-switch-design.md).
+[den Hinweisen für Entwickler](../../bc/6.0/ui-umschalter-design.md).
 
 ## Kurz gesagt
 
@@ -136,7 +136,7 @@ Siehe [die Anleitung](../../anleitungen/ui-umschalter-design.md#7-aus--und-einsc
 
 - [UI-Umschalter](ui-umschalter.md): das Framework und die Sprache der Oberfläche
 - [Anleitung: der Umschalter des Administrationsdesigns](../../anleitungen/ui-umschalter-design.md)
-- [Hinweise für Entwickler: der Umschalter des Administrationsdesigns](../../../eng-us/bc/6.0/ui-switch-design.md)
+- [Hinweise für Entwickler: der Umschalter des Administrationsdesigns](../../bc/6.0/ui-umschalter-design.md)
 - [Das Design admin4](admin4-design.md), [admin4l](admin4l.md), [Exponential Admin UI](exp-adminui.md)
 
 <!-- exp-partner-block:start -->

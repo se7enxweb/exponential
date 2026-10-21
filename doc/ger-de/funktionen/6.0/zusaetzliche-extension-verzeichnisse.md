@@ -77,7 +77,7 @@ Benachrichtigungs-Handler, Shop-Manager, Übersetzungen und die Kommandozeilenwe
 (`bin/php/ezpgenerateautoloads.php`, `eztc.php`, `ezimportdbafile.php`, `ezwebincommon.php`, `runcronjobs.php`).
 
 Die vollständige Referenz, mit der Ladereihenfolge der Einstellungen und dem Muster der Website-Extension, steht in
-[Zusätzliche Extension-Verzeichnisse](../../../eng-us/bc/6.0/AdditionalExtensionDirectories.md).
+[Zusätzliche Extension-Verzeichnisse](../../bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md).
 
 ## Grenzen
 
@@ -87,13 +87,13 @@ Die vollständige Referenz, mit der Ladereihenfolge der Einstellungen und dem Mu
 
 ## Verwandte Seiten
 
-- [Zusätzliche Extension-Verzeichnisse (Referenz)](../../../eng-us/bc/6.0/AdditionalExtensionDirectories.md)
+- [Zusätzliche Extension-Verzeichnisse (Referenz)](../../bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md)
 - [Extension-Liste und Downloads](extension-liste-und-downloads.md) (listet Extensions aus jeder Wurzel auf und lädt sie herunter), [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md), [Modulüberschreibung durch Extensions](modulueberschreibung-durch-extensions.md)
 - [Website-spezifische Einstellungen in Extensions](ini-ueberschreibungen-fuer-mehrere-websites.md), [Verzeichnisse und Platzierungen von INI-Überschreibungen](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Icon-Themes in Extensions](icon-themes-in-extensions.md), [Extension-Metadaten](../../spezifikationen/6.0/extension-metadaten.md)
-- [Verhaltensänderungen der Legacy-Extensions (September und Oktober 2026)](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Legacy-Extensions (September und Oktober 2026)](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [Juli 2026](../../../eng-us/history/2026/2026-07.md), [August 2026](../../../eng-us/history/2026/2026-08.md), [Januar 2026](../../../eng-us/history/2026/2026-01.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md), [September 2024](../../../eng-us/history/2024/2024-09.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md)
+- Chronik: [Juli 2026](../../geschichte/2026/2026-07.md), [August 2026](../../geschichte/2026/2026-08.md), [Januar 2026](../../geschichte/2026/2026-01.md), [Oktober 2024](../../geschichte/2024/2024-10.md), [September 2024](../../geschichte/2024/2024-09.md), [Januar 2024, zweite Hälfte](../../geschichte/2024/2024-01b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

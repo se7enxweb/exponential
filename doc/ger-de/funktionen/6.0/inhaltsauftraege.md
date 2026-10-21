@@ -5,12 +5,12 @@ Operation lief früher innerhalb einer Webanfrage und konnte am Zeitlimit, am Sp
 Transaktion scheitern. Ab 6.0.15 bietet die Administrationsoberfläche an, sie als **Inhaltsauftrag** auszuführen: ein
 Worker im Hintergrund, der in Teilschritten arbeitet, nach jedem Teilschritt einen Checkpoint setzt und genau dort
 weitermacht, wo er aufgehört hat, selbst nach einem `kill -9`. Hinzugefügt am 02.10.2026. Vollständige Anleitung,
-einschließlich des Hinzufügens eines eigenen Auftragstyps: [Inhaltsaufträge](../../../eng-us/bc/6.0/content-jobs.md). Seit dem
+einschließlich des Hinzufügens eines eigenen Auftragstyps: [Inhaltsaufträge](../../bc/6.0/inhaltsjobs.md). Seit dem
 12.10.2026 installiert dieselbe Engine auch Pakete im Hintergrund (`packageinstall`) und schreibt große Audit-Exporte in
 eine Datei (`auditexport`); siehe
-[Auftragstypen anderer Teile des Kernels](../../../eng-us/bc/6.0/content-jobs.md#job-types-of-other-parts-of-the-kernel).
+[Auftragstypen anderer Teile des Kernels](../../bc/6.0/inhaltsjobs.md#jobtypen-anderer-teile-des-kernels).
 Eingereihte Arbeit von Extensions (zum Beispiel Exponential Intelligence) läuft in der getrennten
-Auftragswarteschlange [expqueue](extensions/expqueue.md).
+Auftragswarteschlange [expqueue](erweiterungen/expqueue.md).
 
 ## Eine Operation als Auftrag ausführen
 
@@ -77,13 +77,13 @@ Aufträge liegen unter `var/<site var dir>/jobs/content/`; ein Cluster braucht e
 
 ## Verwandte Seiten
 
-- [Der Papierkorb: wer und wo](../../../eng-us/bc/6.0/trash.md)
+- [Der Papierkorb: wer und wo](../../bc/6.0/papierkorb.md)
 - [Objektzustände](../../anleitungen/objektzustaende.md#72-ein-ganzer-teilbaum): einen Zustand für einen Teilbaum setzen, jetzt oder als Auftrag
 - [Spezifikation des Prüfprotokolls](../../spezifikationen/6.0/audit-ereignismodell.md)
 - [Ausführbare Klassen](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- [Chronik Oktober 2026](../../geschichte/2026/2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

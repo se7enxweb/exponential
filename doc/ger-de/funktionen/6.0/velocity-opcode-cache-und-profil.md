@@ -81,13 +81,13 @@ tail -n 3 var/tmp/opcache_profile.log
 - [Velocity-Server mit dauerhaften Workern](velocity-server-mit-dauerhaften-workern.md)
 - [Antwort-Cache von Velocity](velocity-antwort-cache.md)
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
-- [Hinweise zur Aktualisierung der Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)
+- [Hinweise zur Aktualisierung der Velocity-Engines](../../bc/6.0/velocity-engines.md)
 - [Einstellungen und Programme der Velocity-Engine](../../spezifikationen/6.0/velocity-engine-einstellungen.md)
 - [Worker-Pool und Kompatibilitätsschicht von Velocity](../../spezifikationen/6.0/velocity-worker-pool.md)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- [Chronik Oktober 2026](../../geschichte/2026/2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

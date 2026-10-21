@@ -2,7 +2,7 @@
 
 Diese Seite ist für Teams, die ein Projekt mit Exponential Platform 1.x / 2.5 oder Nexus 1.x auf einem aktuellen PHP
 am Leben halten. Für den Kernel von Exponential 6 selbst siehe
-[Unterstützung für PHP 8 im Kernel von Exponential 6](../../../eng-us/bc/6.0/php8.md).
+[Unterstützung für PHP 8 im Kernel von Exponential 6](../../bc/6.0/php8.md).
 
 **Repositorys:** `se7enxweb/symfony`, `se7enxweb/twig`, `se7enxweb/doctrine-bundle` (Repository `DoctrineBundle`),
 `se7enxweb/doctrine-dbal-schema`, `se7enxweb/php-parser` (Repository `PHP-Parser`) sowie die Plattformpakete
@@ -68,13 +68,13 @@ php -v
 
 ## Verwandte Seiten
 
-- [Unterstützung für PHP 8 im Kernel von Exponential 6](../../../eng-us/bc/6.0/php8.md)
-- Tests auf PHP 8: [PHPUnit 10](../../../eng-us/bc/6.0/phpunitv10.md), [PHPUnit 13](../../../eng-us/bc/6.0/phpunitv13.md), [Aufräumen der Testsuite für PHPUnit 13 / PHP 8.4.23](../../../eng-us/bc/6.0/phpunitv13forPHP841.md), [PHP-8-Korrekturen und Tests für `ezpSessionHandlerDB`](../../../eng-us/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md)
+- [Unterstützung für PHP 8 im Kernel von Exponential 6](../../bc/6.0/php8.md)
+- Tests auf PHP 8: [PHPUnit 10](../../bc/6.0/phpunitv10.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md), [Aufräumen der Testsuite für PHPUnit 13 / PHP 8.4.23](../../bc/6.0/phpunitv13-fuer-php841.md), [PHP-8-Korrekturen und Tests für `ezpSessionHandlerDB`](../../bc/6.0/ezpsessionhandlerdb-php8-korrektur-und-tests.md)
 - Plattformfunktionen: [Nexus-Starter](plattform-nexus-starter.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Administrationsoberfläche der Plattform](plattform-admin-ui-fork.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Site-Bundles](plattform-site-bundles.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Legacy Bridge](legacy-bridge.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
 - Spezifikationen: [Paketkarte der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md), [Bundle der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md)
-- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)
-- Chronik: [symfony](../../../eng-us/history/ecosystem/symfony.md), [twig](../../../eng-us/history/ecosystem/twig.md), [DoctrineBundle](../../../eng-us/history/ecosystem/DoctrineBundle.md), [doctrine-dbal-schema](../../../eng-us/history/ecosystem/doctrine-dbal-schema.md), [PHP-Parser](../../../eng-us/history/ecosystem/PHP-Parser.md), [ezpublish-kernel](../../../eng-us/history/ecosystem/ezpublish-kernel.md), [Übersicht über das Ökosystem](../../../eng-us/history/ecosystem.md), [Monate des Ökosystems](../../../eng-us/history/ecosystem/months/2026-04.md), [Änderungsverzeichnis](../../../eng-us/history/ledger/README.md), [April 2025](../../../eng-us/history/2025/2025-04.md), [September 2025](../../../eng-us/history/2025/2025-09.md), [Dezember 2025](../../../eng-us/history/2025/2025-12.md), [Februar 2026](../../../eng-us/history/2026/2026-02.md), [März 2026](../../../eng-us/history/2026/2026-03.md)
+- Chronik: [symfony](../../geschichte/oekosystem/symfony.md), [twig](../../geschichte/oekosystem/twig.md), [DoctrineBundle](../../geschichte/oekosystem/DoctrineBundle.md), [doctrine-dbal-schema](../../geschichte/oekosystem/doctrine-dbal-schema.md), [PHP-Parser](../../geschichte/oekosystem/PHP-Parser.md), [ezpublish-kernel](../../geschichte/oekosystem/ezpublish-kernel.md), [Übersicht über das Ökosystem](../../geschichte/oekosystem.md), [Monate des Ökosystems](../../geschichte/oekosystem/monate/2026-04.md), [Änderungsverzeichnis](../../geschichte/aenderungsverzeichnis/README.md), [April 2025](../../geschichte/2025/2025-04.md), [September 2025](../../geschichte/2025/2025-09.md), [Dezember 2025](../../geschichte/2025/2025-12.md), [Februar 2026](../../geschichte/2026/2026-02.md), [März 2026](../../geschichte/2026/2026-03.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

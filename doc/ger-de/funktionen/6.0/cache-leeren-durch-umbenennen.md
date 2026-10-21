@@ -78,12 +78,12 @@ Nur der Dateisystem-Handler (`eZFSFileHandler`) benennt um. Ein Cache im Cluster
 
 ## Verwandte Seiten
 
-- [Cache-Konsole](../../../eng-us/bc/6.0/cache-console.md) (`exp:cache`)
+- [Cache-Konsole](../../bc/6.0/cache-konsole.md) (`exp:cache`)
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md), [Antwort-Cache von Velocity](velocity-antwort-cache.md)
 - [Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](velocity-server-mit-dauerhaften-workern.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

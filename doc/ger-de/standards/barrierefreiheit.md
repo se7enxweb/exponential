@@ -40,7 +40,7 @@ herausgegeben von der W3C Web Accessibility Initiative. Stufe AA ist die Stufe, 
 
 Die Arbeit konzentriert sich auf das Administrationsdesign **admin4** (`design/admin4/`) und seine Layoutvariante
 **admin4l** (`design/admin4l/`). Sie ist in [das Design admin4](../funktionen/6.0/admin4-design.md) und in der Referenz
-für Mitwirkende [admin4-Styling](../../eng-us/bc/6.0/admin4-styling.md) beschrieben. Die Design-Tests laufen ohne Datenbank in
+für Mitwirkende [admin4-Styling](../bc/6.0/admin4-gestaltung.md) beschrieben. Die Design-Tests laufen ohne Datenbank in
 der Testsuite `design` von `phpunit.xml` (`tests/tests/design/`), die der PHPUnit-Workflow
 (`.github/workflows/phpunit.yml`) mit jeder Suite von `phpunit.xml` ausführt.
 
@@ -55,7 +55,7 @@ der Testsuite `design` von `phpunit.xml` (`tests/tests/design/`), die der PHPUni
 | 1.4.13 Inhalt bei Hover oder Fokus | Tooltips sind mit der Maus erreichbar, bleiben bestehen und lassen sich mit Escape schließen | [Design admin4](../funktionen/6.0/admin4-design.md) |
 | 2.1.1 Tastatur, 2.4.3 Fokusreihenfolge | Knotenreiter folgen dem APG-Reitermuster (Pfeiltasten, Pos1, Ende); der Umschalter des Inhaltsbaums ist eine benannte Schaltfläche mit `aria-expanded`; Kontextmenüs funktionieren mit der Tastatur; die Kopfzeile hat in admin4 und admin4l dieselbe Tab-Reihenfolge | `tests/tests/design/AdminKeyboardTest.php`, `AdminContextMenuTest.php`, `AdminHeaderTabOrderTest.php`; [Tastenkürzel](../hilfe/tastenkuerzel.md) |
 | 2.4.7 Fokus sichtbar | Ein gemeinsamer Fokusring: `.a4-page :focus-visible`, `.a4-focus:focus-visible` und `.a4-btn:focus-visible` in `components.css` (3 px Umriss in `--a4-ring`) | `design/admin4/stylesheets/components.css` |
-| 2.5.8 Zielgröße (Minimum) | Ziele sind mindestens 24 x 24 px groß; wo das gezeichnete Bedienelement kleiner ist, vergrößert ein unsichtbares `::after` das Ziel | [admin4-Styling](../../eng-us/bc/6.0/admin4-styling.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |
+| 2.5.8 Zielgröße (Minimum) | Ziele sind mindestens 24 x 24 px groß; wo das gezeichnete Bedienelement kleiner ist, vergrößert ein unsichtbares `::after` das Ziel | [admin4-Styling](../bc/6.0/admin4-gestaltung.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |
 | 3.1.1 Sprache der Seite | `<html lang="...">` aus dem Locale des Siteaccess in jedem Admin-Seitenlayout | `design/admin4/templates/pagelayout.tpl` |
 | 1.3.2 Bedeutungstragende Reihenfolge (bidirektionaler Text) | Oberflächensprachen, die von rechts nach links geschrieben werden, setzen `dir="rtl"` auf `<html>`; Namen werden mit `<bdi>` isoliert; von links nach rechts gelesene Werte behalten ihre Reihenfolge | [Sprachen mit Schreibrichtung von rechts nach links](../funktionen/6.0/rechts-nach-links.md), `tests/tests/design/AdminRightToLeftTest.php` |
 | Benutzereinstellungen (kein WCAG-Kriterium, unterstützt aber 1.4.3 und 2.3.3) | Heller, dunkler und „System“-Modus (`prefers-color-scheme`, `design/admin4/javascript/a4_head.js`); Regeln `@media (forced-colors: active)` und `@media (prefers-reduced-motion: reduce)` in `design/admin4/stylesheets/admin4.css` | `tests/tests/design/AdminThemeSwitchTest.php` |
@@ -180,7 +180,7 @@ wird.
 
 ## Für Template-Autoren
 
-- Folgen Sie dem [admin4-Styling](../../eng-us/bc/6.0/admin4-styling.md): gemeinsame Komponenten (`.a4-btn`, `.a4-card`,
+- Folgen Sie dem [admin4-Styling](../bc/6.0/admin4-gestaltung.md): gemeinsame Komponenten (`.a4-btn`, `.a4-card`,
   `.a4-sr-only`), nur Tokens, ein dunkler Wert für jedes neue Farb-Token, kein Inline-CSS.
 - Führen Sie nach einer Template-Änderung die Design-Tests aus:
 

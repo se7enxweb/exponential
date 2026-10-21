@@ -109,7 +109,7 @@ Kernel-Modul kann durch eine Extension ersetzt werden
 - Jede Ansicht **muss** die Richtlinienfunktionen, die sie braucht, in `functions` nennen; eine Ansicht ohne sie steht
   jedem Benutzer offen, der die Prüfung des Siteaccess besteht.
 - Neue Ansichten **sollten** als Unterklassen von `ModuleView` geschrieben werden, nicht als einfache Skriptdateien
-  ([Befehle, Cronjob-Teile und Modulansichten als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md),
+  ([Befehle, Cronjob-Teile und Modulansichten als Klassen](../../bc/6.0/cli-cronjob-und-view-abstraktionen.md),
   [Spezifikation](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)).
 
 **Ausnahmen.** Ansichten als einfache Dateien laufen weiterhin (der Kernel behält diesen Weg für Extensions bei).
@@ -198,7 +198,7 @@ Site-spezifische Einstellungen in Extensions beschreibt
 [INI-Überschreibungen für mehrere Sites](../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).
 
 **Erweiterungspunkt.** Jede Extension kann `settings/*.ini.append.php` mitliefern; `./console exp:ini` liest und
-schreibt jeden Geltungsbereich ([exp:ini](../../../eng-us/bc/6.0/console-exp-ini.md)).
+schreibt jeden Geltungsbereich ([exp:ini](../../bc/6.0/console-exp-ini.md)).
 
 **Regel.** Einstellungen **müssen** über `eZINI::instance( '<file>.ini' )` gelesen werden; kein Code in Kernel,
 Bibliotheken oder Befehlen parst INI-Dateien selbst (eine Suche nach `parse_ini_file` und `parse_ini_string` in
@@ -371,7 +371,7 @@ Sie erkennt Befehle zur Laufzeit: `bin/php/<name>.php` wird zu `exp:<name>`, `bi
 `extension/<ext>/bin/php/<name>` zu `ext:<ext>:<name>`, Cronjob-Teile sind `cron:<part>`. Ein Skript kann mit einem
 Tag `@alias` in seinem Docblock zusätzliche Namen deklarieren (`bin/php/exphelp.php` deklariert `@alias exp:help`).
 Der Code eines Kernel-Befehls ist eine Klasse `Exponential\Runnable\Command` in `kernel/private/classes/commands/`.
-Referenz: [Exponential Console](../../../eng-us/bc/6.0/console.md).
+Referenz: [Exponential Console](../../bc/6.0/konsole.md).
 
 **Regel.** Ein Befehl **muss** seinen `--help`-Text und seine Exit-Codes stabil halten (Skripte und Cron hängen davon
 ab) und **sollte** `--dry-run` anbieten, wenn er Daten ändert.
@@ -379,7 +379,7 @@ ab) und **sollte** `--dry-run` anbieten, wenn er Daten ändert.
 ## Server: Velocity, PHP-FPM und FrankenPHP
 
 Der Kernel läuft unter drei Servern, alle gesteuert über `./console exp:velocity` und `settings/velocity.ini`
-([Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md), [Deployment](../../anleitungen/bereitstellung.md)):
+([Velocity-Engines](../../bc/6.0/velocity-engines.md), [Deployment](../../anleitungen/bereitstellung.md)):
 
 | Server | Engine-Wert | Prozessmodell |
 |---|---|---|
@@ -390,7 +390,7 @@ Der Kernel läuft unter drei Servern, alle gesteuert über `./console exp:veloci
 Einzelheiten: [Velocity-Webserver](../../funktionen/6.0/velocity-webserver.md),
 [persistente Worker](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md),
 [Worker-Pool](../../spezifikationen/6.0/velocity-worker-pool.md),
-[Antwort-Cache](../../funktionen/6.0/velocity-antwort-cache.md), [FrankenPHP](../../../eng-us/bc/6.0/frankenphp.md).
+[Antwort-Cache](../../funktionen/6.0/velocity-antwort-cache.md), [FrankenPHP](../../bc/6.0/frankenphp.md).
 
 Regeln, die aus dem persistenten Modell folgen:
 

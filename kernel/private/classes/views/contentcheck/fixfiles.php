@@ -227,7 +227,7 @@ class Fixfiles extends \Exponential\Runnable\ModuleView
     {
         $nodeID = (int)$nodeID > 0 ? (int)$nodeID : Unreferenced::rootNodeID();
         return '/contentcheck/brokenrelations/' . $nodeID .
-               \expContentCheckFiles::querySuffix( '?', \expContentCheckBrokenRelations::KINDS, \expContentCheckFiles::parameters( array(), $nodeID ) );
+               \expContentCheckFiles::querySuffix( '',\expContentCheckBrokenRelations::KINDS, \expContentCheckFiles::parameters( array(), $nodeID ) );
     }
 
     /**

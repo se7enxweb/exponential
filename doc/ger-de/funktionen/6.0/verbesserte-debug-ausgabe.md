@@ -2,7 +2,7 @@
 
 Diese Seite ist in [Die Exp-Debug-Leiste](exp-debug-leiste.md#der-klassische-debug-block-überschrift-abschnitts-ids-und-ausgabe-in-telefongröße-607) aufgegangen, die jetzt den klassischen Debug-Block (die Überschrift nennt ihren Schalter, Abschnitts-IDs, responsives Layout, die Tabelle `[DebugSettings]`) neben der Debug-Leiste enthält.
 
-Siehe auch: [Referenz der Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md), [Chronik: Januar 2025](../../../eng-us/history/2025/2025-01.md).
+Siehe auch: [Referenz der Debug-Leiste](../../bc/6.0/debug-leiste.md), [Chronik: Januar 2025](../../geschichte/2025/2025-01.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

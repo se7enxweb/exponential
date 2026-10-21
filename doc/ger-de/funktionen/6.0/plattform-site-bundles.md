@@ -23,7 +23,7 @@ davon.
 Die Pakete von se7enxweb ersetzen die Upstream-Namen über Deklarationen `replace` von Composer. `site-bundle` deklariert
 `netgen/site-bundle:*` als ersetzt (Commit vom 19.04.2026, Release `3.0.6`), sodass ein Projekt nicht mit dem Fork und
 der Upstream-Kopie nebeneinander installiert enden kann. Siehe die
-[Hinweise zur Aktualisierung](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md).
+[Hinweise zur Aktualisierung](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md).
 
 ## Twig aus einem Legacy-Template aufrufen
 
@@ -79,12 +79,12 @@ Inhaltskonverters hält den alten Schnittstellennamen des Repositorys auf Ibexa 
 
 ## Verwandte Seiten
 
-- Seiten der Extensions: [ngsymfonytools](extensions/ngsymfonytools.md), [ez-support-tools](extensions/ez-support-tools.md), [xrowmetadata](extensions/xrowmetadata.md)
+- Seiten der Extensions: [ngsymfonytools](erweiterungen/ngsymfonytools.md), [ez-support-tools](erweiterungen/ez-support-tools.md), [xrowmetadata](erweiterungen/xrowmetadata.md)
 - Plattformfunktionen: [Nexus-Starter](plattform-nexus-starter.md), [Legacy Bridge](legacy-bridge.md), [Administrationsoberfläche der Plattform](plattform-admin-ui-fork.md), [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
 - Spezifikationen: [Paketkarte der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [Bundle der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md), [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md)
-- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)
-- Chronik: [site-bundle](../../../eng-us/history/ecosystem/site-bundle.md), [site-legacy-bundle](../../../eng-us/history/ecosystem/site-legacy-bundle.md), [ngsymfonytools](../../../eng-us/history/ecosystem/ngsymfonytools.md), [metadata-bundle](../../../eng-us/history/ecosystem/metadata-bundle.md), [mediata-ezpage-fieldtype-bundle-main](../../../eng-us/history/ecosystem/mediata-ezpage-fieldtype-bundle-main.md), [ez-support-tools](../../../eng-us/history/ecosystem/ez-support-tools.md), [Übersicht über das Ökosystem](../../../eng-us/history/ecosystem.md), [Monate des Ökosystems](../../../eng-us/history/ecosystem/months/2026-04.md), [Änderungsverzeichnis](../../../eng-us/history/ledger/README.md)
+- Chronik: [site-bundle](../../geschichte/oekosystem/site-bundle.md), [site-legacy-bundle](../../geschichte/oekosystem/site-legacy-bundle.md), [ngsymfonytools](../../geschichte/oekosystem/ngsymfonytools.md), [metadata-bundle](../../geschichte/oekosystem/metadata-bundle.md), [mediata-ezpage-fieldtype-bundle-main](../../geschichte/oekosystem/mediata-ezpage-fieldtype-bundle-main.md), [ez-support-tools](../../geschichte/oekosystem/ez-support-tools.md), [Übersicht über das Ökosystem](../../geschichte/oekosystem.md), [Monate des Ökosystems](../../geschichte/oekosystem/monate/2026-04.md), [Änderungsverzeichnis](../../geschichte/aenderungsverzeichnis/README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

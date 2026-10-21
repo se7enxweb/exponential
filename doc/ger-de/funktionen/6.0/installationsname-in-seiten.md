@@ -100,7 +100,7 @@ Beispiel: Analytics nur auf der Produktion laden.
 - [Eine saubere Installation, die Exponential sagt](standardwerte-einer-sauberen-installation.md)
 - [INI-Überschreibungen für mehrere Websites](ini-ueberschreibungen-fuer-mehrere-websites.md), [Platzierungen von INI-Überschreibungen](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik: August 2026](../../../eng-us/history/2026/2026-08.md)
+- [Chronik: August 2026](../../geschichte/2026/2026-08.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

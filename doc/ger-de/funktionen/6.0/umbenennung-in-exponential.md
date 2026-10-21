@@ -67,7 +67,7 @@ Ein Template, das Sie 2012 geschrieben haben, funktioniert also weiter.
 - [Info- und Copyright-Seiten](info-und-paketseiten.md), [Paketlizenzen und Semantic Versioning](paketlizenzen-und-versionen.md)
 - [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Dateikonsistenzprüfung](dateikonsistenzpruefung.md)
 - [Changelog 6.0.10](../../../changelogs/6.0/6.0.10.md)
-- Chronik: [August 2025](../../../eng-us/history/2025/2025-08.md), [Juli 2025](../../../eng-us/history/2025/2025-07.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md)
+- Chronik: [August 2025](../../geschichte/2025/2025-08.md), [Juli 2025](../../geschichte/2025/2025-07.md), [Januar 2025](../../geschichte/2025/2025-01.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

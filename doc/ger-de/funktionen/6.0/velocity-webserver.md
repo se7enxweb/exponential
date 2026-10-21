@@ -14,7 +14,7 @@ Die Engine stammt vom Qbix-Webserver und wird als Composer-Paket `se7enxweb/expo
 ## In zwei Minuten starten
 
 Verwenden Sie in einer Exponential-Installation den Konsolenbefehl (alle Verben und `velocity.ini` finden Sie unter
-[Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)):
+[Velocity-Engines](../../bc/6.0/velocity-engines.md)):
 
 ```bash
 ./bin/php/console exp:velocity status --allow-root-user
@@ -37,7 +37,7 @@ den Server mit `php sbin/qbixserver.php --stop` (nutzt die PID-Datei) oder `qbix
   Seiten werden im Serverprozess beantwortet, bevor überhaupt ein Worker gewählt wird; ein Treffer kostet daher etwa
   0,2 bis 0,4 ms CPU-Zeit. Gemessen auf einem Host mit 12 Kernen mit einer Exponential-Startseite über TLS und gzip:
   etwa 2.950 zwischengespeicherte Seiten pro Sekunde von einem Server, etwa 12.000 von vier Servern auf einem Port
-  ([Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)).
+  ([Velocity-Engines](../../bc/6.0/velocity-engines.md)).
 - **Persistente Worker.** Die Anwendung wird einmal in einem Elternprozess geladen. Die Worker werden davon geforkt,
   teilen sich seinen Speicher und werden zwischen den Anfragen in ihren geforkten Zustand zurückversetzt. Siehe
   [Worker-Pool](../../spezifikationen/6.0/velocity-worker-pool.md).
@@ -134,9 +134,9 @@ Die Engine bringt für jeden davon eine Migrationsseite mit. Die wichtigsten Sch
 - [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](velocity-server-mit-dauerhaften-workern.md)
 - Funktionen: [Scheduler](velocity-zeitplaner.md), [statische Dateien und Bilder](velocity-statische-dateien-und-bilder.md), [WebSockets, Events und Räume](velocity-websockets-und-ereignisse.md), [Discovery, Föderation und Deployment](velocity-erkennung-foederation-und-deployment.md), [Pakete und Binärdateien](velocity-pakete-und-binaerdateien.md), [uwebserver](velocity-uwebserver.md)
 - Referenz: [Worker-Pool](../../spezifikationen/6.0/velocity-worker-pool.md), [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (Logging, Branding)
-- Aktualisierung und Betrieb: [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md) (eine Engine wählen und betreiben, eine PHP-Änderung bereitstellen), [Velocity-Verzeichnisstruktur auf dem Datenträger](../../../eng-us/bc/6.0/velocity-ondisk-layout.md) (der Baum `/etc/vc`), [Hinweise zur Aktualisierung der Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
+- Aktualisierung und Betrieb: [Velocity-Engines](../../bc/6.0/velocity-engines.md) (eine Engine wählen und betreiben, eine PHP-Änderung bereitstellen), [Velocity-Verzeichnisstruktur auf dem Datenträger](../../bc/6.0/velocity-verzeichnisstruktur.md) (der Baum `/etc/vc`), [Hinweise zur Aktualisierung der Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
-- Historie: [Velocity-Chronik](../../../eng-us/history/velocity/README.md), [Juli](../../../eng-us/history/velocity/2026-07.md), [August](../../../eng-us/history/velocity/2026-08.md), [September](../../../eng-us/history/velocity/2026-09a.md)
+- Historie: [Velocity-Chronik](../../geschichte/velocity/README.md), [Juli](../../geschichte/velocity/2026-07.md), [August](../../geschichte/velocity/2026-08.md), [September](../../geschichte/velocity/2026-09a.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

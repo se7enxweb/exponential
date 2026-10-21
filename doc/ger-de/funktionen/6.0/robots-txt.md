@@ -67,9 +67,9 @@ unterscheiden müssen.
 ## Verwandte Seiten
 
 - [Eine saubere Installation, die zu Shared Hosting passt](standardwerte-einer-sauberen-installation.md)
-- [bcgooglesitemaps](extensions/bcgooglesitemaps.md), [xrowmetadata](extensions/xrowmetadata.md)
+- [bcgooglesitemaps](erweiterungen/bcgooglesitemaps.md), [xrowmetadata](erweiterungen/xrowmetadata.md)
 - [Changelog 6.0.11](../../../changelogs/6.0/6.0.11.md)
-- [Chronik: September 2025](../../../eng-us/history/2025/2025-09.md)
+- [Chronik: September 2025](../../geschichte/2025/2025-09.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -137,7 +137,7 @@ Befunde.
 - CI: `quality.yml` prüft geänderte Dateien per Lint mit PHP 8.3 (Job `checks`) und jede Datei mit PHP 8.0
   (Job `php80`, `make lint80-all PHP80=php`), beide blockierend.
 
-**Status: Erfüllt.** Siehe [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md) dazu, wie neuere PHP-Funktionen
+**Status: Erfüllt.** Siehe [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md) dazu, wie neuere PHP-Funktionen
 abgesichert werden.
 
 ## Docblock als Dateikopf
@@ -203,7 +203,7 @@ Exponential und zur Exponential Foundation festzulegen.
 
 ### Kein Inline-CSS
 
-Die Regeln stehen in [Gestaltung der Administrationsoberfläche](../../eng-us/bc/6.0/admin4-styling.md) und in `CONTRIBUTING.md`:
+Die Regeln stehen in [Gestaltung der Administrationsoberfläche](../bc/6.0/admin4-gestaltung.md) und in `CONTRIBUTING.md`:
 
 - kein `<style>`-Block und kein Attribut `style=""` in einem Template eines Administrationsdesigns;
 - zuerst die gemeinsamen Komponenten (`.a4-card`, `.a4-btn`, `.a4-table` ...) aus `stylesheets/components.css`;
@@ -265,7 +265,7 @@ Leerzeichen, Unix-Zeilenenden und UTF-8 eingestellt werden; phpcs prüft die ers
 
 - [Benennungspräfixe: sevenx und exp](namenspraefixe-sevenx-und-exp.md)
 - [Qualitätsprüfungen](../funktionen/6.0/qualitaetspruefungen.md)
-- [Gestaltung der Administrationsoberfläche](../../eng-us/bc/6.0/admin4-styling.md)
+- [Gestaltung der Administrationsoberfläche](../bc/6.0/admin4-gestaltung.md)
 - [Content Security Policy](../funktionen/6.0/content-security-policy.md)
 - [Standards für PHP, PHP-FIG und Composer](php-und-composer.md)
 - [Tests und Continuous Integration](tests-und-ci.md)

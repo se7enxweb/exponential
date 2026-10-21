@@ -8,7 +8,7 @@ JavaScript-Frontends tun können, was die Administrationsoberfläche tut: Einste
 Benutzer, Shop, Feeds, Medien, Tags, Layouts und das Audit verwalten. Hinzugefügt am 02.10.2026 (Version 0.1.0 der
 Extension, erster Entwurf).
 
-Vollständiger Katalog und Tabellen pro Domäne: [Anleitung zu den Backend-Diensten](../../../eng-us/bc/6.0/backend_ezjscore_services.md).
+Vollständiger Katalog und Tabellen pro Domäne: [Anleitung zu den Backend-Diensten](../../bc/6.0/backend-dienste-ueber-ezjscore.md).
 
 ## Einen in 30 Sekunden aufrufen
 
@@ -91,12 +91,12 @@ Komponenten, einem Store und einseitigem Datenfluss). Sie rufen die Dienste übe
 
 ## Verwandte Seiten
 
-- [Anleitung zu den Backend-Diensten](../../../eng-us/bc/6.0/backend_ezjscore_services.md), [Spezifikation von expservices](../../spezifikationen/6.0/expservices.md)
+- [Anleitung zu den Backend-Diensten](../../bc/6.0/backend-dienste-ueber-ezjscore.md), [Spezifikation von expservices](../../spezifikationen/6.0/expservices.md)
 - [Das Prüfprotokoll](pruefprotokoll.md), [Audit-Ereignismodell](../../spezifikationen/6.0/audit-ereignismodell.md)
-- [Spalten der Unterelementliste](optionen-der-unterelementtabelle.md) (`expsubitems_svc`), [Online-Editor auf TinyMCE 8](online-editor-tinymce8.md) (`expeditor`), [ezjscore](extensions/ezjscore.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Spalten der Unterelementliste](optionen-der-unterelementtabelle.md) (`expsubitems_svc`), [Online-Editor auf TinyMCE 8](online-editor-tinymce8.md) (`expeditor`), [ezjscore](erweiterungen/ezjscore.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- [Chronik Oktober 2026](../../geschichte/2026/2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

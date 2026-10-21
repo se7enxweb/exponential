@@ -102,10 +102,10 @@ Die Idee stammt von der Community-Extension `bcmemberofrole`.
 
 ## Verwandte Seiten
 
-- [Rollen: Richtlinien-IDs, Sortierung und Schaltflächen für die Reihenfolge](reihenfolge-der-richtlinien-einer-rolle.md), [Blättern in den Bildschirmen für Rollen und Richtlinien](../../../eng-us/bc/6.0/role-policy-paging.md)
+- [Rollen: Richtlinien-IDs, Sortierung und Schaltflächen für die Reihenfolge](reihenfolge-der-richtlinien-einer-rolle.md), [Blättern in den Bildschirmen für Rollen und Richtlinien](../../bc/6.0/seitenweise-anzeige-von-rollen-und-richtlinien.md)
 - [Operatoren für Zeichenketten](template-operatoren-fuer-zeichenketten.md)
 - [Changelog 6.0.12](../../../changelogs/6.0/6.0.12.md)
-- [Chronik: Januar 2026](../../../eng-us/history/2026/2026-01.md)
+- [Chronik: Januar 2026](../../geschichte/2026/2026-01.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

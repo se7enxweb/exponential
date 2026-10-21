@@ -46,7 +46,7 @@ AssignmentsPerPage=100
 Leeren Sie nach der Änderung den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini --allow-root-user`); unter
 Exponential Velocity führen Sie `exp:velocity deploy` aus.
 
-Die übrigen Seitengrößen der Rollenseiten stehen in [Wo die Seitengrößen liegen](../../../eng-us/bc/6.0/pagination-settings.md).
+Die übrigen Seitengrößen der Rollenseiten stehen in [Wo die Seitengrößen liegen](../../bc/6.0/einstellungen-fuer-seitengroessen.md).
 
 ## Die Adresse
 
@@ -106,7 +106,7 @@ der Filter behält; ohne Filter alle), `$assignment_orphan_count`, `$assignment_
 `$assignment_filter_uri_suffix`. `role/list.tpl` erhält `$assignment_counts`.
 
 Ein Design, das `role/view.tpl` überschreibt, zeigt nur die erste Seite, bis es eine Seitennavigation hinzufügt; siehe
-die [Verhaltensänderungen](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md). `design/admin/templates/role/view.tpl` ist das
+die [Verhaltensänderungen](../../bc/6.0/verhaltensaenderungen-2026-10.md). `design/admin/templates/role/view.tpl` ist das
 Beispiel zum Kopieren.
 
 ## Tests

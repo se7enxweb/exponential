@@ -179,7 +179,7 @@
 {* ---- Search and order ---- *}
 <section aria-labelledby="bm-find-title">
 <h2 class="a4-sr-only" id="bm-find-title">{'Find bookmarks'|i18n( 'design/admin/content/bookmark' )}</h2>
-<form class="a4-filterbar" method="get" action={$bp.base_sorted|ezurl} role="search">
+<form class="a4-filterbar" method="post" action={$bp.base_sorted|ezurl} role="search">
     <div class="a4-field">
         <label for="bm-search">{'Find a bookmark'|i18n( 'design/admin/content/bookmark' )}</label>
         <div class="a4-searchrow">

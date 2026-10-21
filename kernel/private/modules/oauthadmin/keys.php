@@ -3,7 +3,7 @@
  * File containing the oauthadmin/keys view definition
  *
  * The personal API keys of every user (doc/eng-us/guides/api-keys.md, "For administrators"): figures, a search over key
- * names, prefixes and owners (?q=), a status filter (/(status)/active|expired|revoked), one user's keys
+ * names, prefixes and owners (/(q)/<text>), a status filter (/(status)/active|expired|revoked), one user's keys
  * (/(user)/<id>), paging, and the selection to revoke (oauthadmin/keyaction asks to confirm).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -20,24 +20,23 @@ $status = isset( $Params['Status'] ) ? (string)$Params['Status'] : '';
 if ( !in_array( $status, array( '', expApiKey::STATUS_ACTIVE, expApiKey::STATUS_EXPIRED, expApiKey::STATUS_REVOKED ), true ) )
     $status = '';
 $userID = isset( $Params['UserID'] ) ? (int)$Params['UserID'] : 0;
-$search = $http->hasGetVariable( 'q' ) ? trim( (string)$http->getVariable( 'q' ) ) : '';
+$search = expViewParameters::text( $Params, 'q', 'Query' );
 if ( function_exists( 'mb_substr' ) )
     $search = mb_substr( $search, 0, 100, 'UTF-8' );
 
-// The filter form is a GET form: its status and user come back as the view's own parameters, so the pager and the
-// links keep them.
-if ( $http->hasGetVariable( 'Status' ) || $http->hasGetVariable( 'UserID' ) )
+// The filter form is posted (q, Status, UserID) and answered with 303 to the view's own parameters,
+// /(status)/.../(user)/.../(q)/..., so the pager and the links keep them. A query string is not read.
+if ( expViewParameters::redirectsPost( $_POST, array( 'q', 'Status', 'UserID' ) ) )
 {
-    $wantStatus = $http->hasGetVariable( 'Status' ) ? (string)$http->getVariable( 'Status' ) : $status;
-    $wantUser = $http->hasGetVariable( 'UserID' ) ? (int)$http->getVariable( 'UserID' ) : $userID;
-    $uri = 'oauthadmin/keys';
-    if ( in_array( $wantStatus, array( expApiKey::STATUS_ACTIVE, expApiKey::STATUS_EXPIRED, expApiKey::STATUS_REVOKED ), true ) )
-        $uri .= '/(status)/' . $wantStatus;
-    if ( $wantUser > 0 )
-        $uri .= '/(user)/' . $wantUser;
-    if ( $search !== '' )
-        $uri .= '?q=' . rawurlencode( $search );
-    return $module->redirectTo( $uri );
+    $wantStatus = isset( $_POST['Status'] ) ? expViewParameters::posted( $_POST, 'Status' ) : $status;
+    $wantUser = isset( $_POST['UserID'] ) ? (int)expViewParameters::posted( $_POST, 'UserID' ) : $userID;
+    $wantSearch = trim( expViewParameters::posted( $_POST, 'q' ) );
+    if ( function_exists( 'mb_substr' ) )
+        $wantSearch = mb_substr( $wantSearch, 0, 100, 'UTF-8' );
+    expViewParameters::redirect( 'oauthadmin/keys' . expViewParameters::suffix( array(
+        'status' => in_array( $wantStatus, array( expApiKey::STATUS_ACTIVE, expApiKey::STATUS_EXPIRED, expApiKey::STATUS_REVOKED ), true ) ? $wantStatus : '',
+        'user' => $wantUser > 0 ? $wantUser : '',
+        'q' => $wantSearch ) ) );
 }
 
 $limit = expAdminPagination::limit( 'oauthadmin/keys', 25 );
@@ -73,7 +72,7 @@ $tpl->setVariable( 'rate_limit', (int)expApiKey::setting( 'RateLimitPerMinute', 
 $tpl->setVariable( 'rate_limit_available', expApiKey::rateLimitAvailable() );
 $tpl->setVariable( 'limit', $limit );
 $tpl->setVariable( 'view_parameters', $viewParameters );
-$tpl->setVariable( 'page_uri_suffix', $search !== '' ? '?q=' . rawurlencode( $search ) : false );
+$tpl->setVariable( 'page_uri_suffix', $search !== '' ? expViewParameters::suffix( array( 'q' => $search ) ) : false );
 $tpl->setVariable( 'redirect_uri', '/' . $module->currentRedirectionURI() );
 // how many keys the confirmation before this page revoked (once)
 $revoked = 0;

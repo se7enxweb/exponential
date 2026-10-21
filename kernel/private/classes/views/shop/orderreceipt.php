@@ -12,7 +12,7 @@
  * The address never expires and can be bookmarked. Its signed token is the
  * key: whoever holds a genuine one sees the receipt, from any browser or
  * device, no sign-in needed (see eZShopReceipt::canView()).
- * ?download=1 answers the same receipt as a self-contained HTML file.
+ * /(download)/1 answers the same receipt as a self-contained HTML file (a view parameter, never ?download=).
  *
  * @copyright Copyright (C) 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -50,7 +50,7 @@ class Orderreceipt extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'order', $order );
         $tpl->setVariable( 'receipt_url', \eZShopReceipt::receiptURL( $order ) );
 
-        if ( $http->hasGetVariable( 'download' ) )
+        if ( \expViewParameters::get( $Params, 'download', 'Download' ) === '1' )
         {
             // A file the customer can keep: the whole receipt with its styles inline,
             // no site navigation, readable offline.

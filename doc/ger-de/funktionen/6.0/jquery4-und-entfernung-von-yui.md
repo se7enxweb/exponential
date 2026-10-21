@@ -7,7 +7,7 @@ Administrationsoberfläche lädt keine YUI-Anfrage mehr. Das installierte ezjsco
 (`extension/ezjscore/ezinfo.php`).
 
 Wenn eine Ihrer Websites oder Extensions noch YUI verwendet, folgen Sie den Schritten zur Aktualisierung in
-[Entfernung von YUI](../../../eng-us/bc/6.0/yui-removal.md).
+[Entfernung von YUI](../../bc/6.0/yui-entfernung.md).
 
 ## Eine Installation in zwei Minuten prüfen
 
@@ -80,13 +80,13 @@ Die Änderung im Oktober ging weiter zu jQuery 4. Die Dateien 3.7.1 und Migrate 
 
 ## Verwandte Seiten
 
-- [Entfernung von YUI (Schritte zur Aktualisierung)](../../../eng-us/bc/6.0/yui-removal.md)
-- [ezjscore](extensions/ezjscore.md), [das Design admin4](admin4-design.md), [Exp-Debug-Leiste](exp-debug-leiste.md)
+- [Entfernung von YUI (Schritte zur Aktualisierung)](../../bc/6.0/yui-entfernung.md)
+- [ezjscore](erweiterungen/ezjscore.md), [das Design admin4](admin4-design.md), [Exp-Debug-Leiste](exp-debug-leiste.md)
 - [Online-Editor: TinyMCE 8](online-editor-tinymce8.md)
 - [Die Sicherheitspatches vom August 2026](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [Oktober 2026](../../../eng-us/history/2026/2026-10.md), [August 2026](../../../eng-us/history/2026/2026-08.md), [März 2024](../../../eng-us/history/2024/2024-03.md)
+- Chronik: [Oktober 2026](../../geschichte/2026/2026-10.md), [August 2026](../../geschichte/2026/2026-08.md), [März 2024](../../geschichte/2024/2024-03.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

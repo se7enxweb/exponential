@@ -4,7 +4,7 @@ audience: user, editor, admin, developer, designer, partner, supporter
 category: project
 order: 10
 summary: Die Antworten der FAQ auf exponential.earth, in eigenen Worten wiedergegeben und mit der Software abgeglichen - was Exponential ist und wie es mit eZ Publish zusammenhängt, warum Sie es wählen sollten, Module, Designs und Distributionen, das Ändern von Kerndateien, Codestandards, Releases und Versionen, PHP-Versionen, der Umzug von WordPress, das Hosting Ihrer ersten Site, die Demo und wo Sie Hilfe bekommen oder selbst helfen können.
-keywords: FAQ, Häufige Fragen, was ist Exponential, warum Exponential, Namensänderung, Modul, Erweiterung, Design, Distribution, Kerndateien, Überschreibung, Codestandards, Release, Version, semantische Versionierung, Migration, Hosting, Demo, Hilfe, beitragen, frequently asked questions, what is Exponential, why Exponential, eZ Publish, name change, Ibexa, module, extension, design, distribution, core files, override, coding standards, release, version, semantic versioning, PHP, WordPress, migration, hosting, demo, help, contribute
+keywords: FAQ, Häufige Fragen, Framework, fertiges Produkt, Webserver, Velocity, was ist Exponential, warum Exponential, Namensänderung, Modul, Erweiterung, Design, Distribution, Kerndateien, Überschreibung, Codestandards, Release, Version, semantische Versionierung, Migration, Hosting, Demo, Hilfe, beitragen, frequently asked questions, what is Exponential, why Exponential, eZ Publish, name change, Ibexa, module, extension, design, distribution, core files, override, coding standards, release, version, semantic versioning, PHP, WordPress, migration, hosting, demo, help, contribute, framework, complete product, web server
 featured: true
 type: help
 ---
@@ -58,6 +58,29 @@ Punkte, die diese Hilfe anhand der Software bestätigen kann:
   Erweiterungen.
 - **Freie Software.** Unter der GPL dürfen Sie sie ausführen, studieren, ändern und weitergeben; niemand kann sie
   Ihnen wegnehmen. Siehe [Fragen zur Lizenz](lizenz-faq.md).
+
+### Ist Exponential ein Framework oder ein fertiges Produkt?
+
+Ein fertiges Produkt. Exponential ist eine vollständige, funktionierende Einheit, nicht nur ein Framework, das Sie
+erst fertigstellen müssen, bevor es etwas tut: Ein einziges `composer install` liefert Ihnen einen Stack für die
+schnelle Anwendungsentwicklung (RAD) von Internetanwendungen, der zugleich ein Content-Management-System, eine
+Digital Experience Platform (der Seitenbaukasten Exponential Layouts, Multisite und mehrsprachige Sites, der
+Schreibassistent Exponential Intelligence) und ein E-Commerce-System ist (Warenkorb, Bestellungen, Zahlungsgateways,
+Bestellbelege und das Shop-Dashboard). Seit 6.0.15 gehört dazu auch ein eigener Internet- und
+Webanwendungsserver, Exponential Velocity. Weil jede Schicht aus einer Quelle kommt, mit einem Installer, einer
+Konsole und einer Dokumentation, kommt der Einsatz von Exponential überall auf der Welt ohne die übliche
+Integrationsarbeit aus. Siehe [Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md).
+
+### Enthält Exponential einen Webserver?
+
+Ja, seit 6.0.15. Der Velocity Internet / Web Application Server ist Teil von Exponential: Die `composer.json` im
+Wurzelverzeichnis verlangt `se7enxweb/exponential-velocity ~0.0.4.54`, sodass jede Installation ihn hat, auf PHP 8.0
+und neuer. Das Projekt nennt das einen Wendepunkt, einen Grundstein und einen Schlussstein: eine neue Stufe der
+Integration von Anwendung und System, die noch mehr Funktionen von Haus aus und standardmäßig ins Kernprodukt bringt.
+Velocity ist die empfohlene Engine für jede Stufe, und FrankenPHP ist eine produktionsreife Alternative; Apache und
+nginx mit PHP-FPM funktionieren weiter wie bisher. Die Befehle lauten `./console exp:velocity deploy`, `start`,
+`restart` und `cache clear`. Siehe [Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md)
+und [Die Website ausliefern](../../installation/08-die-website-ausliefern.md).
 
 ### Wer entwickelt es?
 
@@ -149,7 +172,7 @@ Sie Releases oder jeder Änderung beim Entstehen folgen, zeigt [Mit Git aktualis
 
 ### Welche PHP-Versionen werden unterstützt?
 
-Exponential 6.0.15 läuft unter PHP 8.0 bis 8.5; der Anwendungsserver Velocity braucht 8.1 oder höher
+Exponential 6.0.15 läuft unter PHP 8.0 bis 8.5, und ab seinem Release 0.0.4.54 auch der Anwendungsserver Velocity
 ([Anforderungen](../../installation/02-voraussetzungen.md)). Die Community-Seite der Website nennt für das Release 6.0.14
 „PHP 8.1 bis PHP 8.5“; maßgeblich sind die Anforderungen des Repositorys, die auch PHP 8.0 abdecken.
 

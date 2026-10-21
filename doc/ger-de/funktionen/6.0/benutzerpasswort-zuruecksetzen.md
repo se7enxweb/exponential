@@ -68,15 +68,15 @@ Ein auf der Kommandozeile angegebenes Passwort ist in der Prozessliste und in Ih
 Sie lieber `-g` und ändern Sie das Passwort nach der ersten Anmeldung in der Administrationsoberfläche, oder leeren Sie
 danach die Historie.
 
-**Demo-Modus.** Mit der Umgebungsvariablen `EXP_DEMO_MODE=1` (eine öffentliche Demo) verweigert der Befehl das Zurücksetzen des Passworts eines Administrators, auch mit `--allow-root-user`: Er gibt „This installation is a public demo: the passwords of administrators cannot be changed or reset.“ aus und endet mit Status 1. Andere Konten werden wie gewohnt zurückgesetzt. Eine Demo braucht ihn nach der Installation nicht: `exp:install` installiert im Demo-Modus das veröffentlichte Passwort wie angegeben. [Demo-Modus](../../../eng-us/bc/6.0/demo-mode.md).
+**Demo-Modus.** Mit der Umgebungsvariablen `EXP_DEMO_MODE=1` (eine öffentliche Demo) verweigert der Befehl das Zurücksetzen des Passworts eines Administrators, auch mit `--allow-root-user`: Er gibt „This installation is a public demo: the passwords of administrators cannot be changed or reset.“ aus und endet mit Status 1. Andere Konten werden wie gewohnt zurückgesetzt. Eine Demo braucht ihn nach der Installation nicht: `exp:install` installiert im Demo-Modus das veröffentlichte Passwort wie angegeben. [Demo-Modus](../../bc/6.0/demomodus.md).
 
 ## Verwandte Seiten
 
 - [Die Sicherheitspatches vom August 2026 (Prüfungen bei der Anmeldung)](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md)
 - [Sicherheitsstandards vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)
-- [Exponential-Konsole](../../../eng-us/bc/6.0/console.md)
+- [Exponential-Konsole](../../bc/6.0/konsole.md)
 - [Prüfprotokoll](pruefprotokoll.md)
-- [Chronik: Juli 2026](../../../eng-us/history/2026/2026-07.md)
+- [Chronik: Juli 2026](../../geschichte/2026/2026-07.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

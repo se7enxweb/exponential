@@ -4,7 +4,7 @@ Ein angemeldeter Benutzer der Administrationsoberfläche kann die Sprache wähle
 selbst gezeigt wird, ohne den Siteaccess zu wechseln und ohne die Inhalte zu berühren. Die Wahl sitzt in der rechten
 Werkzeugleiste, direkt nach den Lesezeichen, unter der Überschrift *Oberfläche*. Sie ist die erste Wahl eines kleinen
 Frameworks, des **UI-Umschalters**, das Extensions um eigene Wahlmöglichkeiten erweitern können (siehe
-[die Provider-API](../../../eng-us/bc/6.0/ui-switch.md)).
+[die Provider-API](../../bc/6.0/ui-umschalter.md)).
 
 ## Wo er ist
 
@@ -115,7 +115,7 @@ Absende-Schaltfläche eines gewöhnlichen Formulars, sodass die Wahl genauso fun
 - Nichts aus der Anfrage erreicht einen Dateinamen, einen Pfad oder den Namen einer Einstellung, bevor die Freigabeliste
   es angenommen hat.
 - Jede Änderung wird im Prüfprotokoll als **`access.uiswitch.change`** erfasst (Kanal `access`, Schweregrad info), mit
-  Wert und Siteaccess vorher und nachher. Siehe [den Audit-Katalog](../../../eng-us/bc/6.0/audit.md).
+  Wert und Siteaccess vorher und nachher. Siehe [den Audit-Katalog](../../bc/6.0/audit.md).
 - Eine mit einer Wahl ausgegebene Seite wird nie im rollenbewussten HTTP-Seitencache gespeichert, und der
   Inhaltsansichts-Cache, `{cache-block}` und kompilierte Templates halten sie getrennt von den Seiten der Benutzer ohne
   Wahl.
@@ -131,7 +131,7 @@ Funktion gestartet wurde, zeigt einfach keine Wahl, bis `./console exp:velocity 
 ## Verwandte Seiten
 
 - [Einstellungen des UI-Umschalters](../../anleitungen/ui-umschalter-einstellungen.md): jede Einstellung, eine Sprache hinzufügen, die Werkzeugleiste auf bestehenden Installationen.
-- [Die Provider-API des UI-Umschalters](../../../eng-us/bc/6.0/ui-switch.md): wie eine Extension ihre eigene Wahl hinzufügt.
+- [Die Provider-API des UI-Umschalters](../../bc/6.0/ui-umschalter.md): wie eine Extension ihre eigene Wahl hinzufügt.
 - [Inhaltssprachen](../../anleitungen/inhaltssprachen.md): die Sprachen, in denen Inhalte geschrieben werden.
 - [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md).
 

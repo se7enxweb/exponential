@@ -102,9 +102,9 @@ Geben Sie einer eigenen Aufgabe keinen Namen mit führendem Unterstrich.
 
 - [Velocity-Webserver](velocity-webserver.md), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md)
 - [Cronjobs in der Konsole](cronjobs-in-der-konsole.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
-- [Hinweise zur Aktualisierung der Velocity-Engine (0.0.4.27 bis 0.0.4.42)](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
+- [Hinweise zur Aktualisierung der Velocity-Engine (0.0.4.27 bis 0.0.4.42)](../../bc/6.0/velocity-engine-upgrade-hinweise.md)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
-- Chronik: [Juli 2026](../../../eng-us/history/velocity/2026-07.md) (der Zeitplaner kommt), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md) (Aufgaben geben root ab)
+- Chronik: [Juli 2026](../../geschichte/velocity/2026-07.md) (der Zeitplaner kommt), [25. bis 30. September](../../geschichte/velocity/2026-09e.md) (Aufgaben geben root ab)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

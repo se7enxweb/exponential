@@ -160,7 +160,7 @@ verschoben.
   (die gesendeten Einträge nehmen die Plätze ein, die sie innehatten, siehe `expBookmarkPage::reorderSlots()`), und
   `moveToPosition()` setzt einen Eintrag an eine Stelle. Beide weisen eine ID ab, die nicht dem Benutzer gehört, nicht
   in diesem Ordner liegt oder wiederholt wird.
-- Adressen: `content/bookmark/(folder)/<id>|top/(sort)/name|added|type|modified/(offset)/<n>?q=<text>`. Jedes POST
+- Adressen: `content/bookmark/(folder)/<id>|top/(sort)/name|added|type|modified/(offset)/<n>/(q)/<text>` (View-Parameter; das Suchformular wird per POST gesendet und mit einem 303 auf diese Adresse beantwortet). Jedes POST
   antwortet mit einer Weiterleitung auf denselben Ordner, dieselbe Reihenfolge und dieselbe Suche, mit dem Ergebnis als
   Hinweis.
 - Die POST-Namen sind die, die die Seite schon immer hatte: `RemoveButton`, `AddButton`, `DeleteIDArray[]`,

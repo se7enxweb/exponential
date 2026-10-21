@@ -5,7 +5,7 @@ entscheiden, welchen Editor eine Website verwendet. Exponential 6.0.15 liefert T
 eZ Online Editor aus. TinyMCE 3.5.12 bleibt der Standard, und für bestehende Installationen ändert sich nichts. Die neue
 Engine schreibt dasselbe XHTML, das der Eingabehandler von ezoe liest, sodass das gespeicherte XML mit beiden Engines
 identisch ist und Redakteure hin- und herwechseln können. Hinzugefügt am 02.10.2026.
-Referenz: [ezoe und TinyMCE 8](../../../eng-us/bc/6.0/ezoe-tinymce8.md).
+Referenz: [ezoe und TinyMCE 8](../../bc/6.0/ezoe-tinymce8.md).
 
 ## In einer Minute ausprobieren
 
@@ -132,12 +132,12 @@ und wo der zugehörige Quellcode liegt.
 
 ## Verwandte Seiten
 
-- [ezoe und TinyMCE 8 (bc-Leitfaden)](../../../eng-us/bc/6.0/ezoe-tinymce8.md)
+- [ezoe und TinyMCE 8 (bc-Leitfaden)](../../bc/6.0/ezoe-tinymce8.md)
 - [Remote-Dienste `expeditor`](entfernte-dienste-expservices.md) und die [Spezifikation von expservices](../../spezifikationen/6.0/expservices.md)
-- [ezoe](extensions/ezoe.md), [ezautosave](extensions/ezautosave.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [ezoe](erweiterungen/ezoe.md), [ezautosave](erweiterungen/ezautosave.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- [Chronik Oktober 2026](../../geschichte/2026/2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

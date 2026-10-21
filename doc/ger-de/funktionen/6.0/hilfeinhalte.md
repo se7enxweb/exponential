@@ -1,7 +1,7 @@
 # Hilfe als Inhalt gepflegt
 
 Status: Phase 1 in 6.0.15 (18. Oktober 2026); der DITA-Export, die gespeicherten E-Books und die überfälligen Prüfungen
-am 20. Oktober 2026 ([Hinweis zur Aktualisierung](../../../eng-us/bc/6.0/help-content-dita-ebooks-reviews.md)). Der Plan ist
+am 20. Oktober 2026 ([Hinweis zur Aktualisierung](../../bc/6.0/hilfeinhalte-dita-ebooks-reviews.md)). Der Plan ist
 [help-system.md](../../spezifikationen/6.0/hilfesystem.md), die redaktionellen Regeln stehen im
 [Styleguide der Hilfe](../../spezifikationen/6.0/hilfe-stilrichtlinien.md). Für alle, die die Hilfe schreiben und
 veröffentlichen: [die Hilfe aktuell halten](../../hilfe/hilfethemen-pflegen.md).

@@ -8,7 +8,7 @@ Mehrwertsteuer. Das Protokoll ist standardmäßig eingeschaltet, braucht keine E
 Administrationsoberfläche oder auf der Kommandozeile lesen. Hinzugefügt am 02.10.2026.
 
 Dies ist die Kurzfassung. Die vollständige Referenz (Ereigniskatalog, Datensatzformat, jede Einstellung) ist
-[der Audit-Leitfaden](../../../eng-us/bc/6.0/audit.md).
+[der Audit-Leitfaden](../../bc/6.0/audit.md).
 
 ## Warum Sie es wollen
 
@@ -125,12 +125,12 @@ auf der Kommandozeile als UTC und in der Konsole als Zeit der Website.
   registriert eine Quelle (`audit.ini [AuditSourceSettings] Sources[]`) und erhält für diesen Kanal ein
   Dashboard-Panel, Links, Diagramme, Ereignisdetails und CSV-Spalten; das linke Menü lässt einen Link in einen Kanal
   weg, den der Benutzer nicht lesen darf. Exponential Intelligence zeichnet auf diese Weise im Kanal `ai` auf
-  ([expai](extensions/expai.md)).
+  ([expai](erweiterungen/expai.md)).
 - **Wiederholte Datensätze**: `exp:audit verify` nennt Zeilen, die eine Datensatz-ID wiederholen (`repeated_ids`, vor
   dem 12.10.2026 von geforkten Prozessen geschrieben), als Hinweis; der Index und die Exporte zeigen jeden Datensatz nur
   einmal.
 
-Einzelheiten: [der Audit-Leitfaden](../../../eng-us/bc/6.0/audit.md).
+Einzelheiten: [der Audit-Leitfaden](../../bc/6.0/audit.md).
 
 ## Grenzen und Wissenswertes
 
@@ -142,11 +142,11 @@ Einzelheiten: [der Audit-Leitfaden](../../../eng-us/bc/6.0/audit.md).
 
 ## Verwandte Seiten
 
-- [Der Audit-Leitfaden](../../../eng-us/bc/6.0/audit.md), [Spezifikation des Audits](../../spezifikationen/6.0/audit-ereignismodell.md)
+- [Der Audit-Leitfaden](../../bc/6.0/audit.md), [Spezifikation des Audits](../../spezifikationen/6.0/audit-ereignismodell.md)
 - [Entfernte Audit-Dienste](entfernte-dienste-expservices.md), [Inhalts-Jobs](inhaltsauftraege.md), [die Exp-Debug-Leiste](exp-debug-leiste.md), [der INI-Befehl](exp-ini-befehl.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- [Chronik Oktober 2026](../../geschichte/2026/2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

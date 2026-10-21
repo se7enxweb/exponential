@@ -89,7 +89,7 @@ Nur der Änderungszeitpunkt der Datei zählt. Jeder Eintrag, der zu oder vor die
 Fehltreffer behandelt und bei seiner nächsten Anfrage ersetzt. Jeder Prozess liest den Marker höchstens einmal pro
 Sekunde, sodass jeder Worker und jeder andere Server, der die Datei teilt, ihn innerhalb einer Sekunde sieht. Aus
 Exponential heraus tut `exp:velocity cache clear` dasselbe, und `exp:velocity deploy` ruft es zuletzt auf
-([Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)).
+([Velocity-Engines](../../bc/6.0/velocity-engines.md)).
 
 ## Ablesen: Header und Zustand
 
@@ -178,15 +178,15 @@ ein Treffer nie einen Worker weckt:
 - Die Speicherschicht spart bei großen Seiten etwa 12 Prozent CPU pro Treffer und bei kleinen nichts; messen Sie auf
   Ihrer eigenen Site.
 
-Vollständige Schritte zur Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md).
+Vollständige Schritte zur Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md).
 
 ## Verwandte Seiten
 
 - [Control Panel](velocity-control-panel.md) (Tab Cache), [statische Dateien und Bilder](velocity-statische-dateien-und-bilder.md) (Datei-Caching), [Scheduler](velocity-zeitplaner.md) (die Cache-Bereinigung), [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](velocity-server-mit-dauerhaften-workern.md)
 - Spezifikationen: [Worker-Pool](../../spezifikationen/6.0/velocity-worker-pool.md), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md), [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md) (was nie zwischengespeichert wird)
-- Caching in Exponential: [HTTP-Cache](../../../eng-us/bc/6.0/http-caching.md), [der rollenbewusste HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md), [der Antwort-Cache und wie man dem Netzwerk aus dem Weg geht](../../../eng-us/bc/6.0/response-cache-and-navigation.md), [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)
+- Caching in Exponential: [HTTP-Cache](../../bc/6.0/http-caching.md), [der rollenbewusste HTTP-Cache](../../bc/6.0/httpcache.md), [der Antwort-Cache und wie man dem Netzwerk aus dem Weg geht](../../bc/6.0/antwort-cache-und-navigation.md), [Velocity-Engines](../../bc/6.0/velocity-engines.md)
 - [Changelog: Exponential-Velocity-Engine](../../../changelogs/extensions/exponential-velocity.md)
-- Chronik: [22. September](../../../eng-us/history/velocity/2026-09b.md), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md)
+- Chronik: [22. September](../../geschichte/velocity/2026-09b.md), [25. bis 30. September](../../geschichte/velocity/2026-09e.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

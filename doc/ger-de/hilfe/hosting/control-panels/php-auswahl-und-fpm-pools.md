@@ -31,7 +31,7 @@ Aus [2.2 PHP](../../../installation/02-voraussetzungen.md#22-php):
 
 | PHP | Stand |
 |---|---|
-| 8.0 | die älteste unterstützte Version; läuft unter Apache mit mod_php oder PHP-FPM; Velocity läuft darauf nicht |
+| 8.0 | die älteste unterstützte Version; läuft unter Apache mit mod_php oder PHP-FPM und ab dem Release 0.0.4.54 auch unter Velocity |
 | 8.1 bis 8.4 | unterstützt, einschließlich Velocity |
 | 8.5 | unterstützt; die neueste getestete Version |
 | 7.4 und älter | ab 6.0.8 nicht unterstützt; eine Website, die auf PHP 7.4 bleiben muss, bleibt auf 6.0.7 |
@@ -162,7 +162,7 @@ ausliefert.
 
 ## Checkliste
 
-- [ ] PHP 8.1 oder später angeboten (8.0 nur für Websites, die Velocity nicht nutzen und 6.0.15 oder später betreiben).
+- [ ] PHP 8.0 oder später angeboten (8.0 nur für Websites, die 6.0.15 oder später betreiben; Velocity braucht darauf 0.0.4.54 oder später).
 - [ ] Dieselbe Version und dieselben Erweiterungen für Web und Kommandozeile; Cron und `PhpCliPath` folgen Änderungen der PHP-Version.
 - [ ] Ein Pool pro Website, der als Benutzer der Website läuft.
 - [ ] Pool-Einstellungen und OPcache wie oben; `validate_timestamps` an.

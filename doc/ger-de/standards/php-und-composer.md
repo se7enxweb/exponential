@@ -42,7 +42,7 @@ zwei Jahre Sicherheitskorrekturen.
 - `composer.json` `require`: `"php": "^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"`. Die
   Bereiche für 8.6 bis 8.8 sind vorausschauend; diese Versionen gibt es noch nicht, und sie sind nicht getestet.
 - **PHP 8.0 ist die älteste unterstützte Version**, weil es das Standard-PHP von Red Hat Enterprise Linux 9 ist; siehe
-  [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md). PHP-Funktionen, die neuer als 8.0 sind, werden in
+  [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md). PHP-Funktionen, die neuer als 8.0 sind, werden in
   `lib/phpcompat.php` definiert, das `autoload.php` nur lädt, wenn `PHP_VERSION_ID < 80100`.
 - Exponential Velocity, der Anwendungsserver, läuft ab seinem Release 0.0.4.54 auf PHP 8.0 bis 8.5 und steht mit
   `~0.0.4.54` in `require` (bis dahin brauchte es PHP 8.1 und stand nur in `suggest`).
@@ -172,7 +172,7 @@ JSON-Schema.
   18.10.2026 über die GitHub-API geprüft).
 - Die Push-Prüfung kontrolliert, dass jede Beschränkung `se7enxweb/*` in `composer.json` zu einem Release passt, das
   Packagist bereits listet, bevor `composer update` in der CI daran scheitern würde
-  ([Continuous Integration](../../eng-us/bc/6.0/ci.md), „Die lokalen Prüfungen und die CI“).
+  ([Continuous Integration](../bc/6.0/ci.md), „Die lokalen Prüfungen und die CI“).
 
 **Status: Konform.**
 
@@ -217,8 +217,8 @@ vierteilige Nummern und neue Funktionen in Patch-Releases liegen außerhalb von 
 
 ## Verwandte Seiten
 
-- [Unterstützung für PHP 8.0](../../eng-us/bc/6.0/php-8.0-support.md)
-- [Unterstützung für PHP 8](../../eng-us/bc/6.0/php8.md)
+- [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md)
+- [Unterstützung für PHP 8](../bc/6.0/php8.md)
 - [Codierstandards](programmierstandards.md)
 - [Tests und Continuous Integration](tests-und-ci.md)
 - [Versionsverwaltung und Releases](versionsverwaltung-und-releases.md)

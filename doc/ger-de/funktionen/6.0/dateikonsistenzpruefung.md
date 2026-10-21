@@ -113,7 +113,7 @@ Die vollständigen Einzelheiten der Optionen sind die eigene Hilfe des Skripts: 
 
 - [Paketlizenzen und Semantic Versioning](paketlizenzen-und-versionen.md), [das Produkt heißt Exponential](umbenennung-in-exponential.md)
 - [Changelog 6.0.14](../../../changelogs/6.0/6.0.14.md)
-- Chronik: [April 2026](../../../eng-us/history/2026/2026-04.md), [Mai 2026](../../../eng-us/history/2026/2026-05.md), [Juni 2026, erste Hälfte](../../../eng-us/history/2026/2026-06a.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)
+- Chronik: [April 2026](../../geschichte/2026/2026-04.md), [Mai 2026](../../geschichte/2026/2026-05.md), [Juni 2026, erste Hälfte](../../geschichte/2026/2026-06a.md), [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

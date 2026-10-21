@@ -262,7 +262,7 @@ Datenbank schreibt. Dieselben zwei Dateien dienen SQLite, MySQL, MariaDB, Postgr
 ### Velocity
 
 Exponential Velocity ist der Anwendungsserver, der zusammen mit Exponential entwickelt wird (Paket
-`se7enxweb/exponential-velocity`, das PHP 8.1 oder höher und die Erweiterung `sockets` benötigt). Er lädt die
+`se7enxweb/exponential-velocity`, das ab dem Release 0.0.4.54 PHP 8.0 oder höher und die Erweiterung `sockets` benötigt). Er lädt die
 Anwendung einmal, hält sie in persistenten Workern, hat einen eigenen Antwort-Cache und liefert HTTP und HTTPS selbst
 aus, mit eigenen Zertifikaten. Gesteuert wird er über den Konsolenbefehl `exp:velocity`, der auch zwei weitere
 Engines betreibt: den eingebauten Server von PHP (`php`, für die Entwicklung) und FrankenPHP (`frankenphp`, eine

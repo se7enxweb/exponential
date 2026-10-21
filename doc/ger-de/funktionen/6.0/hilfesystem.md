@@ -478,7 +478,7 @@ Issue-Text, den die Fehlermeldung vorbereitet, bleiben absichtlich auf Englisch,
 Die Hilfeseiten selbst sind die Dokumentation, ein Verzeichnis pro Sprache unterhalb von `doc/`, benannt nach dem
 Locale-Code von Exponential in Kleinbuchstaben: `doc/eng-us/` (`eng-US`) ist das Original, eine Übersetzung ist
 `doc/<locale>/` (`doc/ger-de/` für `ger-DE`; eine künftige französische `doc/fre-fr/`), und `doc/changelogs/` wird
-nicht übersetzt (`expHelpLanguage`; [Übersetzte Dokumentation](../../../eng-us/bc/6.0/translated-documentation.md)). Die Sprache
+nicht übersetzt (`expHelpLanguage`; [Übersetzte Dokumentation](../../bc/6.0/uebersetzte-dokumentation.md)). Die Sprache
 des Lesers ist die Sprache der Oberfläche (`site.ini [RegionalSettings] Locale`, die die Sprachumschaltung setzt): ein
 Alias aus `exphelp.ini [DocLanguages] Map[]` (`eng-GB` auf `eng-us`, `ger-AT` und `ger-CH` auf `ger-de`), sonst das
 Locale in Kleinbuchstaben, wenn `Directories[]` es aufführt, beides versucht für das Locale und für das Locale ohne

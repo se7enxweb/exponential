@@ -101,7 +101,7 @@ $rows = $db->arrayQuery(
   werden, und nur das äußerste Paar sendet `BEGIN` und `COMMIT` (`eZDBInterface::begin()`, `commit()`,
   `TransactionCounter`). `$db->rollback()` rollt die gesamte Transaktion zurück.
 - Die Sicherheitskorrekturen von 6.0.13 (SQL-Injections, behoben mit Integer-Casts und `escapeString()`) sind in
-  [Sicherheitshärtung von 6.0.13](../../eng-us/bc/6.0/hardening.md) beschrieben.
+  [Sicherheitshärtung von 6.0.13](../bc/6.0/haertung.md) beschrieben.
 
 ## Unterschiede der Dialekte, Treiber für Treiber
 
@@ -254,6 +254,6 @@ MySQL 4.1.1, PostgreSQL 8.0, SQLite 3.0.1, MongoDB 4.0, Oracle 19.0).
 - [Der SQLite3-Datenbanktreiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md),
   [Datenbanktreiber und Installer, September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md),
   [SQLite- und Oracle-Treiber](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md)
-- [MongoDB als Datenbank](../funktionen/6.0/mongodb-datenbankunterstuetzung.md), [SQL-Abfrage-Cache](../../eng-us/bc/6.0/sql-query-cache.md)
+- [MongoDB als Datenbank](../funktionen/6.0/mongodb-datenbankunterstuetzung.md), [SQL-Abfrage-Cache](../bc/6.0/sql-abfrage-cache.md)
 - [Kontinuierliche Integration](../spezifikationen/6.0/kontinuierliche-integration.md)
 - [API- und Protokollstandards](apis-und-protokolle.md)

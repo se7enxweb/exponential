@@ -63,7 +63,7 @@ werden im Code-Format geschrieben. Siehe [Regeln zu Marke und Benennung](../hilf
 
 - [Programmierstandards](programmierstandards.md#namenskonventionen)
 - [Regeln zu Schichten und Benennung](architektur/schichten-und-benennung.md)
-- [Autoloads und Benennung von Klassen](../../eng-us/help/extension-development/part-3-extension-developer/autoloads-and-class-naming.md)
-- [Benennung und Marke bei einer Aktualisierung](../../eng-us/help/extension-development/part-4-upgrading/naming-and-branding-during-an-upgrade.md)
+- [Autoloads und Benennung von Klassen](../hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/autoloads-und-klassennamen.md)
+- [Benennung und Marke bei einer Aktualisierung](../hilfe/erweiterungsentwicklung/teil-4-aktualisieren/namen-und-marken-bei-einem-upgrade.md)
 - [Regeln zu Marke und Benennung](../hilfe/geschaeft/marken-und-namensregeln.md)
 - [Glossar](../glossar.md)

@@ -110,16 +110,16 @@ Seite einer Website wird nicht mehr unter dem Präfix einer anderen Website ange
 
 ## Aktualisieren
 
-Die Standards haben sich geändert; siehe [bc: Standards des statischen Caches](../../../eng-us/bc/6.0/static-cache-defaults.md).
+Die Standards haben sich geändert; siehe [bc: Standards des statischen Caches](../../bc/6.0/standardwerte-des-statischen-caches.md).
 
 ## Verwandte Seiten
 
-- [Seiten vorladen](ansicht-websites-vorladen.md), [Befehl Vorlader für den Website-Cache](../../../eng-us/bc/6.0/preload.md)
-- [Cache aus der Konsole](../../../eng-us/bc/6.0/cache-console.md) (Gruppe statischer Cache von `exp:cache`), [HTTP-Caching](../../../eng-us/bc/6.0/http-caching.md)
+- [Seiten vorladen](ansicht-websites-vorladen.md), [Befehl Vorlader für den Website-Cache](../../bc/6.0/preload.md)
+- [Cache aus der Konsole](../../bc/6.0/cache-konsole.md) (Gruppe statischer Cache von `exp:cache`), [HTTP-Caching](../../bc/6.0/http-caching.md)
 - [Velocity und der Opcode-Cache](velocity-opcode-cache-und-profil.md), [Leeren von Caches, das Verzeichnisse beiseiteschiebt](cache-leeren-durch-umbenennen.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [September 2026, erste Hälfte: Caches, die Sie sehen können](../../../eng-us/history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- Chronik: [September 2026, erste Hälfte: Caches, die Sie sehen können](../../geschichte/2026/2026-09a.md#13-september-caches-die-sie-sehen-cronjobs-die-sie-ausführen-können), [Oktober 2026](../../geschichte/2026/2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

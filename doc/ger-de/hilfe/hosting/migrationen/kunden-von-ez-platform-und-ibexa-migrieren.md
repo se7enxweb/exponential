@@ -41,7 +41,7 @@ nicht in einer Umschaltung.
 
 | | Weg A (Symfony-Plattform) | Weg B (Exponential 6.0) |
 |---|---|---|
-| PHP | hängt von der gewählten Nexus-Linie ab; Kapitel 16 nennt das PHP jeder Linie | 8.0 bis 8.5 (8.1 oder später für Velocity) |
+| PHP | hängt von der gewählten Nexus-Linie ab; Kapitel 16 nennt das PHP jeder Linie | 8.0 bis 8.5 (einschließlich Velocity) |
 | Webserver | ein Symfony-Front-Controller unter Apache oder nginx mit PHP-FPM | Velocity, FrankenPHP oder Apache/nginx mit PHP-FPM ([Einen Webserver wählen](../server/einen-webserver-waehlen.md)) |
 | Datenbank | wie die Ausgangsplattform | die sechs von Exponential, in Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | Suche | wie die Ausgangsplattform | siehe [Such-Backends](../grundlagen/such-backends.md) |

@@ -146,9 +146,9 @@ abgegeben, nachdem die Ports offen sind) oder `--allow-root` aus.**
 
 - [Pakete und Binärdateien](velocity-pakete-und-binaerdateien.md), [Velocity-Webserver](velocity-webserver.md) (der Anwendungsserver), [statische Dateien und Bilder](velocity-statische-dateien-und-bilder.md)
 - Spezifikationen: [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (Programme)
-- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md) (die Standards von `0.0.4.42`)
+- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md) (die Standards von `0.0.4.42`)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
-- Chronik: [August 2026](../../../eng-us/history/velocity/2026-08.md) (erster Benchmark-Server in C), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md) (der Neubau)
+- Chronik: [August 2026](../../geschichte/velocity/2026-08.md) (erster Benchmark-Server in C), [25. bis 30. September](../../geschichte/velocity/2026-09e.md) (der Neubau)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

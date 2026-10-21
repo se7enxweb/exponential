@@ -26,7 +26,7 @@ Ein Download ist eine Schaltfläche des Formulars der Seite: Sie sendet `Extensi
 dem Formular-Token. Seit dem 14. Oktober 2026 lädt die Adresse `/setup/extensions/<extension name>/<format>` nichts mehr
 herunter; sie zeigt die Liste. Eine Extension, die einen geheimen Wert oder Schlüsselmaterial enthält, wird nicht
 gepackt, und die Seite sagt, welche Dateien und Einstellungen das verhindert haben
-([die Prüfung auf Geheimnisse](../../../eng-us/bc/6.0/extension-package-secret-check.md)). Die Schaltflächen sind nur da, wenn die
+([die Prüfung auf Geheimnisse](../../bc/6.0/geheimnispruefung-fuer-erweiterungspakete.md)). Die Schaltflächen sind nur da, wenn die
 Extension exportiert werden darf: package.ini `[ExtensionExportSettings] AllowedExtensions[]` führt sie auf (oder `*`),
 und Ihre Rolle hat die Richtlinie `package/export_extension` (außer bei `RequirePolicy=disabled`); andernfalls zeigt die
 Karte den Grund und die Seite einen Hinweis.
@@ -77,7 +77,7 @@ verwendet: `name`, `version`, `mtime`, `mtime_formatted` und das Array `meta` (B
 nimmt die vier Formate an.
 
 Der Gestaltungsvorschlag, der dazu führte, mit den offenen Fragen, wird in
-[EXT_SORT_ORDERS](../../../eng-us/bc/6.0/EXT_SORT_ORDERS.md) aufbewahrt.
+[EXT_SORT_ORDERS](../../bc/6.0/ext-sort-orders.md) aufbewahrt.
 
 ## Grenzen
 
@@ -91,9 +91,9 @@ Der Gestaltungsvorschlag, der dazu führte, mit den offenen Fragen, wird in
 
 - [Setup > Extensions: Ladereihenfolge](ladereihenfolge-der-extensions.md), [zusätzliche Extension-Verzeichnisse](zusaetzliche-extension-verzeichnisse.md)
 - [Extension-Metadaten](../../spezifikationen/6.0/extension-metadaten.md), [Seiten Über und Copyright](info-und-paketseiten.md)
-- [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Pakete vergleichen und importieren](pakete-vergleichen-und-importieren.md), [Extensions, Themes und Pakete](extensions/README.md)
+- [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Pakete vergleichen und importieren](pakete-vergleichen-und-importieren.md), [Extensions, Themes und Pakete](erweiterungen/README.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [August 2026](../../../eng-us/history/2026/2026-08.md), [Juni 2024](../../../eng-us/history/2024/2024-06.md), [März 2024](../../../eng-us/history/2024/2024-03.md), [Februar 2024](../../../eng-us/history/2024/2024-02.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [Januar 2024, erste Hälfte](../../../eng-us/history/2024/2024-01a.md)
+- Chronik: [August 2026](../../geschichte/2026/2026-08.md), [Juni 2024](../../geschichte/2024/2024-06.md), [März 2024](../../geschichte/2024/2024-03.md), [Februar 2024](../../geschichte/2024/2024-02.md), [Januar 2024, zweite Hälfte](../../geschichte/2024/2024-01b.md), [Januar 2024, erste Hälfte](../../geschichte/2024/2024-01a.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

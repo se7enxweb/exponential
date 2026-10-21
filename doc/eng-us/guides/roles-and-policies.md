@@ -24,7 +24,7 @@ groups it is assigned to (the number links to the role page), and its actions: V
 
 - **Find a role**: any part of the name, or the ID. Upper and lower case are the same.
 - **Order**: by name, ID, number of policies or number of assignments. Click the current order again to reverse it.
-  The order and the search are kept in the address (`/role/list/(sort)/policies/(dir)/desc?q=edit`), so you can
+  The order and the search are kept in the address (`/role/list/(sort)/policies/(dir)/desc/(q)/edit`), so you can
   bookmark them. The orders by count are offered up to 500 roles.
 - **Badges**: *Full access* (red), *Can change roles* (amber), *Not assigned* (the role gives nobody anything).
 - **Per page**: the sizes come from `site.ini [RoleSettings] RolesPerPageList`.

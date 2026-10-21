@@ -417,9 +417,9 @@ Die Tests ausführen: `php vendor/bin/phpunit tests/tests/kernel/classes/benchma
 ## Verwandte Seiten
 
 - [Benchmarking von Exponential](../../anleitungen/benchmarking.md): der Leitfaden, vom ersten Lauf bis zur CI-Prüfung.
-- [Konsole](../../../eng-us/bc/6.0/console.md): jeder Befehl.
-- [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md): die Server, die Sie vergleichen möchten.
-- [HTTP-Caching](../../../eng-us/bc/6.0/http-caching.md) und [Cache-Aufwärmung](../../../eng-us/bc/6.0/http2-and-cache-warming.md): was die
+- [Konsole](../../bc/6.0/konsole.md): jeder Befehl.
+- [Velocity-Engines](../../bc/6.0/velocity-engines.md): die Server, die Sie vergleichen möchten.
+- [HTTP-Caching](../../bc/6.0/http-caching.md) und [Cache-Aufwärmung](../../bc/6.0/http2-und-cache-vorwaermen.md): was die
   warmen Zahlen messen.
 
 <!-- exp-partner-block:start -->

@@ -150,9 +150,9 @@ Extensions, Site-Stile).
 - [ezpm: der Paketmanager auf der Kommandozeile](ezpm-paketmanager-cli.md), [Paketinstallation in Teilschritten](paketinstallation-in-teilschritten.md), [Paketlizenzen und -versionen](paketlizenzen-und-versionen.md)
 - [Kickstarter: eine ganze Website aus einer Datei installieren](kickstarter-cli.md), [Installer-Logs und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
 - [Info- und Urheberrechtsseiten](info-und-paketseiten.md), [Übersetzungen und Sprachen](uebersetzungen-und-sprachen.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Geschichte: [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)
+- Geschichte: [16. bis 30. September 2026](../../geschichte/2026/2026-09b.md), [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

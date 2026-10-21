@@ -167,9 +167,9 @@ curl -s -H "Authorization: Bearer $TOKEN" -d '{"command":"uptime"}' https://host
 
 - [Control Panel und Dashboard](velocity-control-panel.md) (die Anmeldung, die die Shell braucht), [Pakete und Binärdateien](velocity-pakete-und-binaerdateien.md) (`vc-qshell`), [Velocity-Webserver](velocity-webserver.md)
 - Spezifikationen: [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (Programme, `qbixconsole`), [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md) (die Administrationsfläche)
-- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md)
+- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md)
 - [Changelog: Exponential-Velocity-Engine](../../../changelogs/extensions/exponential-velocity.md)
-- Chronik: [24. September](../../../eng-us/history/velocity/2026-09d.md), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md)
+- Chronik: [24. September](../../geschichte/velocity/2026-09d.md), [25. bis 30. September](../../geschichte/velocity/2026-09e.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

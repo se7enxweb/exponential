@@ -1,9 +1,9 @@
 # Die Inhalts- und INI-Caches in Redis oder Valkey halten
 
-Diese Seite ist in [sevenx_valkey_cache: Cache-Backend für Redis und Valkey](extensions/sevenx_valkey_cache.md) aufgegangen, die jetzt die Kernel-Hooks
+Diese Seite ist in [sevenx_valkey_cache: Cache-Backend für Redis und Valkey](erweiterungen/sevenx_valkey_cache.md) aufgegangen, die jetzt die Kernel-Hooks
 (Inhaltsansichts-Cache, kompilierter INI-Cache), die Einstellungen, den Template-Block, die Prüfung und die Grenzen an einer Stelle enthält.
 
-Siehe auch: [HTTP-Caching](../../../eng-us/bc/6.0/http-caching.md), [SQL-Abfrage-Cache](../../../eng-us/bc/6.0/sql-query-cache.md), [Juli 2026](../../../eng-us/history/2026/2026-07.md).
+Siehe auch: [HTTP-Caching](../../bc/6.0/http-caching.md), [SQL-Abfrage-Cache](../../bc/6.0/sql-abfrage-cache.md), [Juli 2026](../../geschichte/2026/2026-07.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

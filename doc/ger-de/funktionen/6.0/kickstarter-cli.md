@@ -4,7 +4,7 @@ Diese Seite ist für Administratoren, die dieselbe Website mehr als einmal oder 
 Einrichtungsassistent fragt nach der Datenbank, den Sprachen, dem Website-Paket, dem Administrator und mehr. Der
 Kickstarter nimmt all diese Antworten aus einer Datei, `kickstart.ini`, sodass sich dieselbe Installation mit einem
 Befehl wiederholen lässt. Hinzugefügt am 12. Juli 2026 (`34c17cdbbe`). Vollständige Referenz:
-[Kickstarter-CLI](../../../eng-us/bc/6.0/kickstartercli.md); diese Seite ist die Kurzfassung.
+[Kickstarter-CLI](../../bc/6.0/kickstartercli.md); diese Seite ist die Kurzfassung.
 
 ## In drei Schritten installieren
 
@@ -74,9 +74,9 @@ Protokoll ab.
 - [Standard-Auslieferung der Extensions](standard-extension-auslieferung.md)
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Installer-Protokolle und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
-- [Verhaltensänderungen von Juli und August 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md)
+- [Verhaltensänderungen von Juli und August 2026](../../bc/6.0/verhaltensaenderungen-2026-07-08.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md), [Juli 2026](../../../eng-us/history/2026/2026-07.md), [August 2026](../../../eng-us/history/2026/2026-08.md)
+- Chronik: [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md), [Juli 2026](../../geschichte/2026/2026-07.md), [August 2026](../../geschichte/2026/2026-08.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

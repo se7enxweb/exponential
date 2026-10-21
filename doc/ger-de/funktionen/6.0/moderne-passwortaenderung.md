@@ -56,7 +56,7 @@ Seit 6.0.15 ist eine weitere Regel standardmäßig **an**, in `site.ini [UserSet
 
 Sie gilt nur für neue Passwörter; bei der Anmeldung wird niemand abgewiesen. `WeakPasswordCheck=disabled` stellt die
 bisherigen Regeln wieder her. Einzelheiten:
-[doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md](../../../eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md).
+[doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md](../../bc/6.0/schwache-passwoerter-und-gueltigkeit-von-reset-links.md).
 
 Um eine Regel einzuschalten, verwenden Sie eine Überschreibung, zum Beispiel `settings/override/site.ini.append.php`:
 
@@ -136,11 +136,11 @@ Die Mail läuft über das Mail-Gate in der Kategorie `security`. Ein Benutzer oh
 Die Seite erhält neue Template-Variablen, alle optional: `$password_changed`, `$password_rules`, `$field_errors`,
 `$error_summary`, `$field_ids`, `$min_length`, `$password_js_config_json` und einige mehr. Alte Templates funktionieren
 unverändert weiter. Die Variablen und die Hooks `data-exp-password-*` des gemeinsamen Skripts sind in
-[dem Kompatibilitätshinweis](../../../eng-us/bc/6.0/user-password-change.md) aufgeführt.
+[dem Kompatibilitätshinweis](../../bc/6.0/benutzerpasswort-aendern.md) aufgeführt.
 
 ## Demo-Modus
 
-Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) verweigert die Seite die Änderung des Passworts eines Administrators: Sie zeigt „Diese Installation ist eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.“ bereits vor jeder Eingabe (`demo_mode_locked`, `demo_mode_text`) und nach dem Absenden in der Fehlerzusammenfassung, und es wird nichts geändert. Ein Design, das `user/password.tpl` überschreibt, zeigt den Hinweis mit `first_set( $demo_mode_locked, false() )`. [Demo-Modus](../../../eng-us/bc/6.0/demo-mode.md).
+Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) verweigert die Seite die Änderung des Passworts eines Administrators: Sie zeigt „Diese Installation ist eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.“ bereits vor jeder Eingabe (`demo_mode_locked`, `demo_mode_text`) und nach dem Absenden in der Fehlerzusammenfassung, und es wird nichts geändert. Ein Design, das `user/password.tpl` überschreibt, zeigt den Hinweis mit `first_set( $demo_mode_locked, false() )`. [Demo-Modus](../../bc/6.0/demomodus.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

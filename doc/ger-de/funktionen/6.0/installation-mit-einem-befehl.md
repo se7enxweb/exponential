@@ -130,17 +130,17 @@ abgebrochen hat (`eZSiteInstaller::abortedStep()`).
   erhalten bleibt.
 - **Der Wartungsmodus** umschließt jeden Lauf: siehe [Wartungsmodus](wartungsmodus.md).
 
-**Öffentliche Demos.** `EXP_DEMO_MODE=1 ./console exp:install --password=publishing` installiert das veröffentlichte Demo-Passwort so, wie es angegeben ist; im Demo-Modus wird ein allgemein bekanntes oder kurzes Administratorpasswort (auch `publish`) beibehalten, ein leeres wird weiterhin abgelehnt. Behalten Sie die Variable für die laufende Site bei. [Demo-Modus](../../../eng-us/bc/6.0/demo-mode.md), [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../../hilfe/hosting/server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
+**Öffentliche Demos.** `EXP_DEMO_MODE=1 ./console exp:install --password=publishing` installiert das veröffentlichte Demo-Passwort so, wie es angegeben ist; im Demo-Modus wird ein allgemein bekanntes oder kurzes Administratorpasswort (auch `publish`) beibehalten, ein leeres wird weiterhin abgelehnt. Behalten Sie die Variable für die laufende Site bei. [Demo-Modus](../../bc/6.0/demomodus.md), [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../../hilfe/hosting/server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
 
 ## Verwandte Seiten
 
-- [Kickstarter: eine ganze Site aus einer Datei installieren](kickstarter-cli.md) (die dateigesteuerte Variante desselben Installers), [Kickstarter auf der Kommandozeile](../../../eng-us/bc/6.0/kickstartercli.md)
+- [Kickstarter: eine ganze Site aus einer Datei installieren](kickstarter-cli.md) (die dateigesteuerte Variante desselben Installers), [Kickstarter auf der Kommandozeile](../../bc/6.0/kickstartercli.md)
 - [Das neue Aussehen des Setup-Assistenten und der Siteaccess für Redakteure](einrichtungsassistent-und-editor-siteaccess.md), [Wartungsmodus](wartungsmodus.md)
 - [SQLite-Datenbank](sqlite-datenbank.md), [Datenbanktreiber](../../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md), [Datenbanktreiber und Installer, September 2026](../../spezifikationen/6.0/datenbanktreiber-2026-09.md)
 - [Installer-Logs und Startdaten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Historie: [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md)
+- Historie: [16. bis 30. September 2026](../../geschichte/2026/2026-09b.md), [Januar 2024, zweite Hälfte](../../geschichte/2024/2024-01b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

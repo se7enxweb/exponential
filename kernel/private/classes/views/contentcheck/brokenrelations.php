@@ -4,8 +4,11 @@
  * published content below a node (contentcheck/brokenrelations/<node id>, the content tree's top node without one) that refers
  * to deleted, trashed, hidden or unpublished content, page by page. Read only. Needs the policy
  * contentcheck/brokenrelations; answers on administration siteaccesses only. With the target "Missing files"
- * (Kind[]=missing_file) it also lists the content whose files are missing from the storage and the images with
+ * ((kind)/missing_file) it also lists the content whose files are missing from the storage and the images with
  * missing or stale aliases (expContentCheckFiles, doc "Missing files"), paged on their own ((file_offset) in the address).
+ * The options are view parameters only: (exclude), (kind), (relation) (comma lists, "none" for none ticked), (after),
+ * (problem), (version), (selectall)/1, (file_offset); a query string is not read. The filter form is posted and
+ * answered with a 303 to that address.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -17,6 +20,10 @@ namespace Exponential\View\Kernel\Contentcheck
 
 class Brokenrelations extends \Exponential\Runnable\ModuleView
 {
+    /** The fields of the filter form (posted, then answered with a 303 to the view parameters) */
+    const FORM_FIELDS = array( 'NodeID', 'Exclude', 'Kind', 'Relation', 'KindChoice', 'RelationChoice',
+                               'Problem', 'Version', 'ProblemChoice', 'VersionChoice' );
+
     /** The preference that holds the chosen page size (its position in the sizes) */
     const LIMIT_PREFERENCE = 'admin_contentcheck_broken_limit';
 
@@ -29,24 +36,22 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
 
         $http = \eZHTTPTool::instance();
         list( $limit, $limitChoice, $limitChoices ) = \expAdminPagination::chosen( 'contentcheck/brokenrelations', self::LIMIT_PREFERENCE );
-        $input = array();
-        foreach ( array( 'Exclude', 'Kind', 'Relation', 'After' ) as $name )
-        {
-            if ( $http->hasGetVariable( $name ) )
-                $input[$name] = $http->getVariable( $name );
-        }
-        // the node from the filter form (GET NodeID), else from the address. No redirect to an address with the node:
-        // the kernel carries the query of a request over every module redirect, so the NodeID of the form came back
-        // with the redirect and sent it to the same address again, until the browser gave up (too many redirects)
-        // (expContentCheckScope: the form's node, else the address's, else the user's last choice, which it becomes)
+        // the options are view parameters (/(exclude)/43/(kind)/deleted,trash/(relation)/.../(after)/120, and those of
+        // the missing files: (problem), (version), (selectall)); the filter form is posted and answered with a 303 to
+        // that address (expViewParameters::redirect(), which does not carry a query string over)
+        $posted = \expViewParameters::redirectsPost( $_POST, self::FORM_FIELDS );
+        $input = $posted ? \expContentCheck::postedInput( $_POST, self::FORM_FIELDS ) : self::viewInput( $Params );
+        if ( $posted )
+            unset( $input['After'] );
+        // the form's node, else the address's, else the user's last choice, which it becomes (expContentCheckScope)
         $input['NodeID'] = \expContentCheckScope::resolve( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,
-                                                          $http->hasGetVariable( 'NodeID' ) ? $http->getVariable( 'NodeID' ) : null );
-        // "Select all" / "Select none" of the states and the references (KindChoice, RelationChoice); none ticked
-        // checks every one, as no box ticked does
+                                                          $posted && isset( $input['NodeID'] ) ? $input['NodeID'] : null );
+        // "Select all" / "Select none" of the states and the references (KindChoice, RelationChoice; (kind)/none in the
+        // address); none ticked checks every one, as no box ticked does
         $none = array();
         foreach ( array( 'Kind' => \expContentCheckBrokenRelations::KINDS, 'Relation' => \expContentCheckBrokenRelations::RELATIONS ) as $group => $all )
         {
-            $choice = $http->hasGetVariable( $group . 'Choice' ) ? $http->getVariable( $group . 'Choice' ) : '';
+            $choice = isset( $input[$group . 'Choice'] ) && is_string( $input[$group . 'Choice'] ) ? $input[$group . 'Choice'] : '';
             if ( $choice === 'all' )
                 $input[$group] = $group === 'Kind' && class_exists( 'expContentCheckFiles' ) ? array_merge( $all, array( \expContentCheckFiles::TARGET ) ) : $all;
             else if ( $choice === 'none' )
@@ -66,14 +71,22 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         if ( $files['only'] )
             $params['kinds'] = array();
 
+        if ( $posted )
+        {
+            $suffix = self::querySuffix( $params, $none );
+            if ( $files['enabled'] )
+                $suffix = \expContentCheckFiles::querySuffix( $suffix, $params['kinds'], \expContentCheckFiles::filterParameters( $input, (int)$params['node_id'], $limit ) );
+            \expViewParameters::redirect( '/contentcheck/brokenrelations/' . (int)$params['node_id'] . $suffix );
+        }
+
         $result = $files['only'] ? \expContentCheckFiles::noBrokenRelations( $params['node_id'], $params['after'] ) : \expContentCheckBrokenRelations::scan( $params );
         if ( $result['error'] === 'not_found' )
             return $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-        $filterSuffix = self::querySuffix( $params );
+        $filterSuffix = self::querySuffix( $params, $none );
         $missingFiles = array( 'enabled' => false, 'only' => false, 'storage_dir' => method_exists( 'expContentCheckFiles', 'section' ) ? \eZSys::storageDirectory() : '' );
         if ( $files['enabled'] )
         {
-            $missingFiles = \expContentCheckFiles::section( $_GET, (int)$params['node_id'], $limit, \expAdminPagination::offset( $Params, 'file_offset' ) ) + $files;
+            $missingFiles = \expContentCheckFiles::section( $input,(int)$params['node_id'], $limit, \expAdminPagination::offset( $Params, 'file_offset' ) ) + $files;
             $filterSuffix = \expContentCheckFiles::querySuffix( $filterSuffix, $params['kinds'], $missingFiles['params'] );
         }
 
@@ -98,28 +111,41 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The query string of the filters, without the position (After), which the pages add.
+     * The view parameters of the filters, without the position ((after)), which the pages add.
      *
      * @param array $params from expContentCheckBrokenRelations::parameters()
-     * @return string empty without a filter, else starting with ?
+     * @param string[] $none the groups whose "Select none" was pressed ('Kind', 'Relation'): "none" in the address
+     * @return string empty without a filter, else "/(exclude)/..."
      */
-    public static function querySuffix( array $params )
+    public static function querySuffix( array $params, array $none = array() )
     {
-        $query = array();
+        $options = array();
         if ( $params['exclude'] )
-            $query[] = 'Exclude=' . rawurlencode( implode( ',', $params['exclude'] ) );
-        if ( count( $params['kinds'] ) < count( \expContentCheckBrokenRelations::KINDS ) )
-        {
-            foreach ( $params['kinds'] as $kind )
-                $query[] = 'Kind%5B%5D=' . rawurlencode( $kind );
-        }
-        if ( count( $params['relations'] ) < count( \expContentCheckBrokenRelations::RELATIONS ) )
-        {
-            foreach ( $params['relations'] as $relation )
-                $query[] = 'Relation%5B%5D=' . rawurlencode( $relation );
-        }
-        // no filter, no bare "?" in the links of the page (admin4 review 15.10.2026)
-        return $query ? '?' . implode( '&', $query ) : '';
+            $options['exclude'] = $params['exclude'];
+        if ( in_array( 'Kind', $none, true ) )
+            $options['kind'] = 'none';
+        else if ( count( $params['kinds'] ) < count( \expContentCheckBrokenRelations::KINDS ) )
+            $options['kind'] = $params['kinds'];
+        if ( in_array( 'Relation', $none, true ) )
+            $options['relation'] = 'none';
+        else if ( count( $params['relations'] ) < count( \expContentCheckBrokenRelations::RELATIONS ) )
+            $options['relation'] = $params['relations'];
+        return \expContentCheck::viewSuffix( $options );
+    }
+
+    /**
+     * The options of the address as the fields of the filter form: Exclude, Kind, Relation, After, and the missing
+     * files' Problem, Version, SelectAll ("none" of a list as <Field>Choice=none).
+     *
+     * @param array $Params the view's $Params
+     * @return array
+     */
+    public static function viewInput( array $Params )
+    {
+        return \expContentCheck::viewInput( $Params, array( 'Exclude' => array( 'exclude', false ), 'Kind' => array( 'kind', true ),
+                                                            'Relation' => array( 'relation', true ), 'After' => array( 'after', false ),
+                                                            'Problem' => array( 'problem', true ), 'Version' => array( 'version', true ),
+                                                            'SelectAll' => array( 'selectall', false ) ) );
     }
 }
 

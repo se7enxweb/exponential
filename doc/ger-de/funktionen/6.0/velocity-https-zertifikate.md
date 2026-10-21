@@ -138,9 +138,9 @@ Sichern Sie `ssl/`. Alles darin lässt sich neu erzeugen, außer den ACME-Kontos
 
 - [Control Panel](velocity-control-panel.md) (Reiter SSL und Domains), [Scheduler](velocity-zeitplaner.md) (Erneuerungsjobs), [Webserver Velocity](velocity-webserver.md)
 - Spezifikationen: [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md), [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (Wiederaufnahme von TLS-Sitzungen, `--https-port`)
-- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md), [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md) (`[HTTPSSettings]`)
+- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md), [Velocity-Engines](../../bc/6.0/velocity-engines.md) (`[HTTPSSettings]`)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
-- Geschichte: [24. September](../../../eng-us/history/velocity/2026-09d.md) (Zertifikatssubsystem), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md) (Reiter SSL, Zertifikate pro Domain)
+- Geschichte: [24. September](../../geschichte/velocity/2026-09d.md) (Zertifikatssubsystem), [25. bis 30. September](../../geschichte/velocity/2026-09e.md) (Reiter SSL, Zertifikate pro Domain)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

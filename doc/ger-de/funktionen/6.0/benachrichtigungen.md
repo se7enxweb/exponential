@@ -147,7 +147,7 @@ Diese E-Mails wurden auf einer Testinstallation erstellt und in Dateien geschrie
 
 - [Die Anleitung für Administratoren](../../anleitungen/benachrichtigungen-administrator.md), [die Anleitung für Entwickler](../../anleitungen/benachrichtigungen-entwickler.md)
 - [Die Spezifikation](../../spezifikationen/6.0/benachrichtigungen.md), [die Befehle](../../spezifikationen/6.0/benachrichtigungen-cli.md)
-- [Hinweise zur Aktualisierung](../../../eng-us/bc/6.0/notification-ui-and-commands.md)
+- [Hinweise zur Aktualisierung](../../bc/6.0/benachrichtigungen-oberflaeche-und-befehle.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

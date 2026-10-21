@@ -9,8 +9,8 @@ der Seitengröße und die Tabelle dessen enthält, was die alte Seite falsch mac
 
 - [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md)
 - [Blättern in Admin-Listen](seitenweise-listen-im-admin.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 
 <!-- exp-partner-block:start -->

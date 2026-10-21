@@ -34,7 +34,7 @@ die für alle ihre Siteaccesses oder für eine Sprachgruppe davon gelten.
    ```
 
 4. Laden Sie eine Seite des Siteaccess mit eingeschaltetem INI-Debugging (siehe die
-   [Debug-Leiste](../../../eng-us/bc/6.0/debug-bar.md)) und suchen Sie das `settings/override/` der Extension unter den geladenen
+   [Debug-Leiste](../../bc/6.0/debug-leiste.md)) und suchen Sie das `settings/override/` der Extension unter den geladenen
    Dateien von `site.ini`. Der Platzierungsname einer solchen Einstellung ist `ext-siteaccess-override:<extension>`.
 
 ## Wohin die Dateien gehören
@@ -76,7 +76,7 @@ einige Prüfungen, ob Dateien existieren. Lassen Sie sie aus, sofern Sie nicht v
 - [Spezifikation: Platzierungen von INI-Überschreibungen](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Konsole: exp:ini](exp-ini-befehl.md), [Extensions in mehr als einem Ordner](zusaetzliche-extension-verzeichnisse.md)
 - [Changelog 6.0.12](../../../changelogs/6.0/6.0.12.md)
-- [Chronik: Januar 2026](../../../eng-us/history/2026/2026-01.md)
+- [Chronik: Januar 2026](../../geschichte/2026/2026-01.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

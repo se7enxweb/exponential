@@ -77,7 +77,7 @@ Zwei Korrekturen derselben Tage sind wichtig, wenn Sie FrankenPHP früher betrie
   einen sonst freien Start ab.
 
 Die Gründe und die erzeugte Caddyfile stehen in
-[FrankenPHP und der eingebaute Server von PHP](../../../eng-us/bc/6.0/frankenphp.md).
+[FrankenPHP und der eingebaute Server von PHP](../../bc/6.0/frankenphp.md).
 
 ## exp:solr: ein optionaler Suchserver
 
@@ -112,10 +112,10 @@ Geltungsbereich: die Installation:
 ## Verwandte Seiten
 
 - [Velocity: Exponential in einem Webserver mit dauerhaften Workern betreiben](velocity-server-mit-dauerhaften-workern.md)
-- [FrankenPHP und der eingebaute Server von PHP](../../../eng-us/bc/6.0/frankenphp.md)
-- [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [FrankenPHP und der eingebaute Server von PHP](../../bc/6.0/frankenphp.md)
+- [Velocity-Engines](../../bc/6.0/velocity-engines.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 
 <!-- exp-partner-block:start -->

@@ -334,7 +334,7 @@ alles finden würde.
   umgewandelt.
 - Die REST-Schnittstelle (`expRestContentPermission`) und die Remote-Dienste (`expservices`) entscheiden mit denselben
   `checkAccess()`, `canRead()` und `editAccess()`, sodass Einschränkungen von Extensions auch dort gelten.
-- Der Erweiterungspunkt ist unter **Setup > RAD** und in [Erweiterungspunkte](../../../eng-us/bc/6.0/rad-extension-points.md)
+- Der Erweiterungspunkt ist unter **Setup > RAD** und in [Erweiterungspunkte](../../bc/6.0/rad-erweiterungspunkte.md)
   aufgeführt.
 
 Tests: `ezpContentLimitationTest`, `eZContentPermissionSQLTest`, `eZContentAccessForAnotherUserTest`,
@@ -343,10 +343,10 @@ Tests: `ezpContentLimitationTest`, `eZContentPermissionSQLTest`, `eZContentAcces
 
 ## Verwandte Seiten
 
-- [Erweiterungspunkte](../../../eng-us/bc/6.0/rad-extension-points.md)
+- [Erweiterungspunkte](../../bc/6.0/rad-erweiterungspunkte.md)
 - [Leitfaden zu Extensions](../../anleitungen/extensions.md)
-- [Bearbeitungszugriff auf Objekte, die nie veröffentlicht wurden](../../../eng-us/bc/6.0/draft-edit-access.md)
-- [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Bearbeitungszugriff auf Objekte, die nie veröffentlicht wurden](../../bc/6.0/zugriff-auf-entwuerfe.md)
+- [Verhaltensänderungen vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

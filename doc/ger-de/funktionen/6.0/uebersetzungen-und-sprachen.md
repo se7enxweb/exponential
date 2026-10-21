@@ -101,8 +101,8 @@ Geben Sie ihm `[SiteAccessSettings] ExtensionSettingsSiteAccess=<main siteaccess
 - [Übersetzungen des Paketvergleichs](pakete-vergleichen-und-importieren.md)
 - [Installation mit einem Befehl](installation-mit-einem-befehl.md) (Sprachen einer neuen Installation), [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md) (Übersetzungs-Siteaccesses)
 - [Seiten Über und Copyright](info-und-paketseiten.md)
-- [Verhaltensänderungen vom September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Verhaltensänderungen vom September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 
 <!-- exp-partner-block:start -->

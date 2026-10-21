@@ -8,7 +8,7 @@ URL-Alias übersetzt ist und nachdem die Rollenrichtlinien die Ansicht erlaubt h
 weiterleiten, umschreiben oder protokollieren. Hinzugefügt am 02.10.2026.
 
 Vollständige Anleitung mit jeder Bedingung, Aktion, jedem Fakt und sechzehn Rezepten:
-[Sicherheit der Vollansicht](../../../eng-us/bc/6.0/view_full_security.md).
+[Sicherheit der Vollansicht](../../bc/6.0/sicherheit-von-content-view-full.md).
 
 ## Schnellstart: System-URLs auf ihren Alias schicken
 
@@ -85,13 +85,13 @@ Drei Regeln werden mitgeliefert, alle aus:
 
 ## Verwandte Seiten
 
-- [Härtung](../../../eng-us/bc/6.0/hardening.md)
+- [Härtung](../../bc/6.0/haertung.md)
 - [Das Prüfprotokoll](pruefprotokoll.md)
 - [Objektzustände](../../anleitungen/objektzustaende.md#10-zustände-in-templates-fetches-und-request-regeln): die Zustände, auf die `Conditions[state]` passt
 - [Admin-Links folgen den Berechtigungen](admin-links-folgen-den-berechtigungen.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- [Chronik Oktober 2026](../../geschichte/2026/2026-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

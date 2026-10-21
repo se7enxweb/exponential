@@ -7,7 +7,7 @@
 Diese Seite ist für Administratoren, die die Caches einer Website nach einem Deployment oder dem Leeren eines Caches warm
 haben möchten und als Zugabe eine Liste defekter Links wollen. **Setup > Seiten vorladen** durchläuft jede Seite einer
 Website aus der Administrationsoberfläche und zeigt den Fortschritt live. Es ist das Gegenstück im Browser zum
-Vorlader auf der Kommandozeile, beschrieben in [Vorlader für den Website-Cache](../../../eng-us/bc/6.0/preload.md), und verwendet
+Vorlader auf der Kommandozeile, beschrieben in [Vorlader für den Website-Cache](../../bc/6.0/preload.md), und verwendet
 denselben Crawler.
 
 ## Verwenden
@@ -83,10 +83,10 @@ gestreamte Antworten puffert, verhielt sich genauso. Der neue Weg funktioniert h
 
 ## Verwandte Seiten
 
-- [Vorlader für den Website-Cache](../../../eng-us/bc/6.0/preload.md) (die Ausgabe lesen, Einsatz mit cron, Fehlersuche)
-- [HTTP/2 und Vorwärmen des Caches](../../../eng-us/bc/6.0/http2-and-cache-warming.md), [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
+- [Vorlader für den Website-Cache](../../bc/6.0/preload.md) (die Ausgabe lesen, Einsatz mit cron, Fehlersuche)
+- [HTTP/2 und Vorwärmen des Caches](../../bc/6.0/http2-und-cache-vorwaermen.md), [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [September 2026, erste Hälfte: Seiten vorladen](../../../eng-us/history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [die Korrekturen vom 15. September](../../../eng-us/history/2026/2026-09a.md#15-september-paging-everywhere)
+- Chronik: [September 2026, erste Hälfte: Seiten vorladen](../../geschichte/2026/2026-09a.md#13-september-caches-die-sie-sehen-cronjobs-die-sie-ausführen-können), [die Korrekturen vom 15. September](../../geschichte/2026/2026-09a.md#15-september-überall-seitenweise-anzeige)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

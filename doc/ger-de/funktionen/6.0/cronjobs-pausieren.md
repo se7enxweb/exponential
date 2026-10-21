@@ -90,7 +90,7 @@ kann.
 
 **Audit.** Jedes Anhalten und Fortsetzen wird als `system.cronjob.pause` oder `system.cronjob.resume` aufgezeichnet
 (Objekt: der Teil, `all` oder `global`; `after.note` mit der Notiz, wenn eine angegeben wurde), siehe
-[das Prüfprotokoll](../../../eng-us/bc/6.0/audit.md). Beide sind standardmäßig eingeschaltet, im Kanal `system`.
+[das Prüfprotokoll](../../bc/6.0/audit.md). Beide sind standardmäßig eingeschaltet, im Kanal `system`.
 
 **Eine Notiz.** Die Konsole hat ein Feld, *Notiz zum Anhalten oder Fortsetzen (optional)*, unterhalb der Schaltflächen
 der Werkzeugleiste. Das nächste auf der Seite gedrückte **Anhalten** oder **Fortsetzen** (das eines Teils oder *Alle

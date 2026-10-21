@@ -624,7 +624,7 @@ from the request is ever used as a class, function or template name. ezjscore wr
 - `ezjscore/call/expsubitems::savepreference[::<parent>]`, POST `preference=<json>` (with the form token):
   `{ "visible": [...], "preset": "seo"|null, "page_size": 25, "presets": { "<id>": { "name", "columns" } } }`,
   every key optional; stored for the parent's navigation part.
-- `content/subitemsexport/<parent>?columns=a,b,c&sort=<key>&order=0|1`: the CSV (below).
+- `content/subitemsexport/<parent>/(columns)/a,b,c/(sort)/<key>/(order)/0|1`: the CSV (below).
 
 PHP code can use the same pieces: `expSubitemsColumnRegistry::instance()` (`availableColumns( $parent )`,
 `column( $key, $parent )`, `resolveColumns( $keys, $parent )`, `defaults()`, `presets()`, `sortFor()`), and
@@ -678,7 +678,7 @@ the first 50 and 100 nodes of the content tree.
 
 ## CSV export
 
-**Export CSV** in Table options, or `content/subitemsexport/<parent node id>?columns=a,b,c&sort=<key>&order=0|1`:
+**Export CSV** in Table options, or `content/subitemsexport/<parent node id>/(columns)/a,b,c/(sort)/<key>/(order)/0|1` (view parameters; a `?columns=` query string is not read):
 every child the user may read (up to `CSVLimit`, fetched 100 at a time), the given columns (without
 `columns=`: the user's saved choice, else the defaults), in order; the header row holds the column names.
 UTF-8 with BOM, comma separated, CRLF; cells starting with `=`, `+`, `-` or `@` get a leading `'` so a

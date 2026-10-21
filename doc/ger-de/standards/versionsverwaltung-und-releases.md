@@ -20,7 +20,7 @@ mit [Mit Git entwickeln](../hilfe/mit-git-entwickeln.md).
 | Praxis | Status | Nachweis (kurz) |
 |---|---|---|
 | Ein Entwicklungs-Branch, `main` | **Erfüllt** | Standard-Branch `main`; die CI läuft auf `main`/`master` |
-| Pull Requests werden von ihren Autoren, solange sie offen sind, zusammengefasst und auf `main` rebased und dann mit Merge-Commits gemergt | **Erfüllt** (als Richtlinie) | [Continuous Integration](../../eng-us/bc/6.0/ci.md), „The commit message policy“; Merge-Commits in `git log` |
+| Pull Requests werden von ihren Autoren, solange sie offen sind, zusammengefasst und auf `main` rebased und dann mit Merge-Commits gemergt | **Erfüllt** (als Richtlinie) | [Continuous Integration](../bc/6.0/ci.md), „The commit message policy“; Merge-Commits in `git log` |
 | Unterzeichnete CLA, bevor ein Beitrag zum Kernel gemergt wird | **Erfüllt** (als Richtlinie) | `CONTRIBUTING.md`, „Copyright assignment (CLA)“; CLA-Kontrollkästchen in `.github/PULL_REQUEST_TEMPLATE.md`; keine automatische Prüfung |
 | Kein Force-Push, kein Umschreiben veröffentlichter Historie | **Teilweise erfüllt** | eine Richtlinie; `main` hat keine Branch-Schutzregel (GitHub-API, 18.10.2026) |
 | Präfixe im Commit-Betreff | **Erfüllt** | `.githooks/commit-msg`, `.githooks/check-commit-range`, `quality.yml` |
@@ -46,7 +46,7 @@ mit [Mit Git entwickeln](../hilfe/mit-git-entwickeln.md).
   `git push --force-with-lease` nur auf den Branch des Pull Requests), damit der Merge sauber ist
   ([Code-Reviews](../../../CONTRIBUTING.md#code-reviews)). Nach dem Merge wird die Historie von `main` nie
   umgeschrieben, und spätere Korrekturen kommen als neue Pull Requests
-  ([Continuous Integration](../../eng-us/bc/6.0/ci.md), „The commit message policy“). Ein Commit eines Beitragenden mit
+  ([Continuous Integration](../bc/6.0/ci.md), „The commit message policy“). Ein Commit eines Beitragenden mit
   nicht standardkonformem Betreff ergibt nur eine Warnung, sodass ein gemergter Pull Request `main` nie rot werden
   lässt. `git log --merges` auf `main` zeigt die Merge-Commits.
 - **Ein Beitrag zum Kernel wird gemergt, sobald die CLA seines Autors vorliegt.** 7x und die Exponential Foundation
@@ -180,7 +180,7 @@ Info-Seite die beiden Dateien liest, steht unter [Info- und Paketseiten](../funk
 - Das Neufestlegen der Constraints in der `composer.json` im Wurzelverzeichnis folgt dem Release: Veröffentlichen Sie
   die Extension, prüfen Sie die Version auf Packagist und committen Sie dann den neuen Constraint. Die Push-Prüfung
   lehnt einen Constraint ab, den Packagist noch nicht erfüllen kann
-  ([Continuous Integration](../../eng-us/bc/6.0/ci.md), „Packagist“).
+  ([Continuous Integration](../bc/6.0/ci.md), „Packagist“).
 
 ## Repository-Dateien
 
@@ -209,7 +209,7 @@ Info-Seite die beiden Dateien liest, steht unter [Info- und Paketseiten](../funk
 
 - [Mit Git entwickeln](../hilfe/mit-git-entwickeln.md)
 - [Extensions-Leitfaden](../anleitungen/extensions.md)
-- [Continuous Integration](../../eng-us/bc/6.0/ci.md)
+- [Continuous Integration](../bc/6.0/ci.md)
 - [Tests und Continuous Integration](tests-und-ci.md)
 - [PHP-, PHP-FIG- und Composer-Standards](php-und-composer.md)
 - [Programmierstandards](programmierstandards.md)

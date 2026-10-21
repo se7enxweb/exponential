@@ -6,7 +6,7 @@ Template Text messen, durchsuchen, zuschneiden, vergleichen und formatieren kann
 März 2026 (Release 6.0.13) in der Klasse `eZTemplateStringsOperator`
 (`lib/eztemplate/classes/eztemplatestringsoperator.php`), mit einer PHPUnit-Suite von
 etwa tausend Zeilen (`tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php`,
-siehe [PHPUnit 13](../../../eng-us/bc/6.0/phpunitv13.md)).
+siehe [PHPUnit 13](../../bc/6.0/phpunitv13.md)).
 
 ## Wie ein Operator auf PHP abgebildet wird
 
@@ -62,7 +62,7 @@ Mit Parametern: `addcslashes`, `chunk_split`, `hebrev`, `html_entity_decode`,
 
 Dazu die kreativen Ergänzungen `ristring` und `rstring` und, nur registriert, wenn PHP die Funktionen bereitstellt (8.3
 oder neuer), `str_increment` und `str_decrement` (ohne Parameter). Prüfen Sie die Liste, die Ihre Installation
-tatsächlich hat, mit dem [Operator expinfo](../../../eng-us/bc/6.0/expinfo-operator.md).
+tatsächlich hat, mit dem [Operator expinfo](../../bc/6.0/expinfo-operator.md).
 
 `number_format` folgt PHP: Mit einem Parameter gibt er die Dezimalstellen an; mit drei Dezimalstellen, Dezimalzeichen und
 Tausendertrennzeichen (PHP braucht die letzten beiden zusammen). `sprintf` verwendet die weitergeleitete Zeichenkette
@@ -84,14 +84,14 @@ Operatoren, die schon existierten, behalten ihr altes Verhalten und werden nicht
 Operatornamen sind global. Wenn eine Ihrer Extensions bereits einen Operator mit einem der neuen Namen definiert
 (`strpos`, `substr`, `strlen` und `sprintf` sind die wahrscheinlichen), testen Sie nach der Aktualisierung die Seiten, die
 ihn verwenden: Listen Sie die Operatoren, die eine Installation bereitstellt, mit dem
-[Operator expinfo](../../../eng-us/bc/6.0/expinfo-operator.md) auf und vergleichen Sie.
+[Operator expinfo](../../bc/6.0/expinfo-operator.md) auf und vergleichen Sie.
 
 ## Verwandte Seiten
 
 - [Operatoren für Rollen und Richtlinien](template-operatoren-fuer-rollen-und-richtlinien.md)
-- [Der Operator expinfo](../../../eng-us/bc/6.0/expinfo-operator.md), [PHPUnit 13](../../../eng-us/bc/6.0/phpunitv13.md)
+- [Der Operator expinfo](../../bc/6.0/expinfo-operator.md), [PHPUnit 13](../../bc/6.0/phpunitv13.md)
 - [Changelog 6.0.13](../../../changelogs/6.0/6.0.13.md)
-- [Chronik: März 2026](../../../eng-us/history/2026/2026-03.md)
+- [Chronik: März 2026](../../geschichte/2026/2026-03.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -100,7 +100,7 @@ Namespace `Exponential\Service`), die REST-Schicht (`kernel/private/rest/`, `ker
 `[RunnableSettings]`, `[Event] Listeners[]`), statt Klassen aus `kernel/private` direkt aufzurufen; deren Signaturen
 können sich zwischen Releases ändern. Arbeit, die eine Ansicht, ein Befehl und ein Cronjob-Teil gemeinsam nutzen,
 gehört in eine Dienstklasse, nicht in einen von ihnen
-([Befehle, Cronjob-Teile und Modulansichten als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)).
+([Befehle, Cronjob-Teile und Modulansichten als Klassen](../../bc/6.0/cli-cronjob-und-view-abstraktionen.md)).
 
 ### design/: Darstellung
 
@@ -122,7 +122,7 @@ gehört in eine Dienstklasse, nicht in einen von ihnen
   einzige dauerhafte Eintrag in `EXCEPTIONS` ist `design/admin/templates/pagelayout.tpl` (Spaltenbreiten, die
   angewendet werden, bevor die Seite gezeichnet wird). Der Test prüft außerdem, dass `stylesheets/modules/*.css` nur
   Tokens verwendet und dass `components.css` in `admin` und `admin4` identisch ist. Referenz:
-  [Gestaltung der Administrationsoberfläche](../../../eng-us/bc/6.0/admin4-styling.md).
+  [Gestaltung der Administrationsoberfläche](../../bc/6.0/admin4-gestaltung.md).
 - **Kein Inline-Skript in der Administrationsoberfläche.** Die Administrationsoberfläche läuft unter einer Content
   Security Policy ohne `'unsafe-inline'` (`site.ini [ContentSecurityPolicy]`; in der Administrationsoberfläche
   standardmäßig nur meldend). Von `admin4` und `admin4l` gerenderte Templates enthalten kein Inline-`<script>` mit Code,
@@ -154,7 +154,7 @@ Namespaces `Exponential\Command\Extension\<Ext>`, `Exponential\Cronjob\Extension
 - **Einstellungen werden nur über `eZINI` gelesen.** `eZINI::instance( 'file.ini' )->variable( 'Section', 'Setting' )`.
   Kein Code in `kernel/`, `lib/` oder `bin/` ruft `parse_ini_file()` oder `parse_ini_string()` auf. Einstellungen
   werden mit `./console exp:ini` oder `eZINI::save()` geschrieben, nie durch Zeichenkettenersetzung in einem Skript
-  ([exp:ini](../../../eng-us/bc/6.0/console-exp-ini.md)).
+  ([exp:ini](../../bc/6.0/console-exp-ini.md)).
 - **Debug-Ausgabe über `eZDebug`.** `eZDebug::writeError()`, `writeWarning()`, `writeNotice()`; kein `echo` oder
   `var_dump` bleibt im Kernel-Code zurück.
 - **Übersetzungen über `ezpI18n::tr( $context, $text )`** in PHP und `i18n( $context )` in Templates.
@@ -275,4 +275,4 @@ finden.
 - [Kernel-Architektur](kernel-architektur.md)
 - [Katalog der Entwurfsmuster](../muster/README.md)
 - [Kompatibilität, Releases und Deployment](kompatibilitaet-releases-deployment.md)
-- [Gestaltung der Administrationsoberfläche](../../../eng-us/bc/6.0/admin4-styling.md), [Content Security Policy](../../funktionen/6.0/content-security-policy.md)
+- [Gestaltung der Administrationsoberfläche](../../bc/6.0/admin4-gestaltung.md), [Content Security Policy](../../funktionen/6.0/content-security-policy.md)

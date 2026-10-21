@@ -106,7 +106,7 @@ funktionieren jetzt für jede Option, die einen Wert erwartet.
 ## Ein Skript aktivieren
 
 Nennen Sie es in `[CronjobSettings] Scripts[]` oder in einem Block `[CronjobPart-<name>]` von `cronjob.ini`; siehe
-[Befehle, Cronjob-Teile und Modulansichten als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md).
+[Befehle, Cronjob-Teile und Modulansichten als Klassen](../../bc/6.0/cli-cronjob-und-view-abstraktionen.md).
 
 ## Einstellungen
 
@@ -121,7 +121,7 @@ Nennen Sie es in `[CronjobSettings] Scripts[]` oder in einem Block `[CronjobPart
 | `settings/cronjob.ini` | `PauseSettings` | `Pause`, `Directory` | `enabled`, leer | global | Anhalten von Teilen, siehe [Cronjob-Teile anhalten](cronjobs-pausieren.md) |
 | `settings/cronjob.ini` | `ScriptDocumentation` | `Link[<script>]` | leer | global | Der Link **Doku** eines Skripts, nach seinem Dateinamen: eine URL, ein Pfad unterhalb von `DocumentationBase` oder `none` für keinen Link. Hat Vorrang vor dem Tag `@link` im Kopf des Skripts ([Leitfaden](../../anleitungen/cronjobs.md), Abschnitt 11) |
 | `settings/cronjob.ini` | `ScriptDocumentation` | `DocumentationBase` | leer: `https://github.com/se7enxweb/exponential/blob/main/` | global | Wo ein Pfad in `Link[]` oder `@link` nachgeschlagen wird. Nur Links mit `http` und `https` werden angezeigt |
-| `settings/admininterface.ini` | `PaginationSettings` | `ItemsPerPage[setup/cronjobs]` | siehe [Seitengrößen](../../../eng-us/bc/6.0/pagination-settings.md) | global | Wie viele Karten von Teilen eine Seite zeigt |
+| `settings/admininterface.ini` | `PaginationSettings` | `ItemsPerPage[setup/cronjobs]` | siehe [Seitengrößen](../../bc/6.0/einstellungen-fuer-seitengroessen.md) | global | Wie viele Karten von Teilen eine Seite zeigt |
 
 ## Verwandte Seiten
 
@@ -129,11 +129,11 @@ Nennen Sie es in `[CronjobSettings] Scripts[]` oder in einem Block `[CronjobPart
 - [Cronjob-Teile anhalten](cronjobs-pausieren.md),
   [einen Teil aus einer Extension auslassen (der Filter)](filter-fuer-cronjob-teile.md)
 - Der Workflow-Cronjob (`workflow.php`) und die Prozesse, die er fortsetzt: [Workflows: Freigaben, Auslöser und die Prozesse, die warten](../../anleitungen/workflows.md)
-- [Ausführbare Befehle, Cronjobs und Ansichten (Spezifikation)](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
+- [Ausführbare Befehle, Cronjobs und Ansichten (Spezifikation)](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md), [Befehle, Cronjob-Teile und Modulansichten als Klassen](../../bc/6.0/cli-cronjob-und-view-abstraktionen.md)
 - [Inhaltsjobs](inhaltsauftraege.md), [Velocity-Scheduler](velocity-zeitplaner.md), [Benachrichtigungen (der Cronjob-Teil `notification`)](benachrichtigungen.md)
-- [Cronjob-Teil zur Bereinigung des RSS-Imports](../../../eng-us/bc/6.0/cleanuprss.md), [Konsolenbefehle](../../../eng-us/bc/6.0/console.md)
+- [Cronjob-Teil zur Bereinigung des RSS-Imports](../../bc/6.0/cleanuprss.md), [Konsolenbefehle](../../bc/6.0/konsole.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [September 2026, erste Hälfte: Cronjob-Konsole](../../../eng-us/history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [die Neugestaltung der Seite am 14. September](../../../eng-us/history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools), [Juni 2026, erste Hälfte](../../../eng-us/history/2026/2026-06a.md)
+- Chronik: [September 2026, erste Hälfte: Cronjob-Konsole](../../geschichte/2026/2026-09a.md#13-september-caches-die-sie-sehen-cronjobs-die-sie-ausführen-können), [die Neugestaltung der Seite am 14. September](../../geschichte/2026/2026-09a.md#14-september-pdf-rss-und-die-rad-werkzeuge), [Juni 2026, erste Hälfte](../../geschichte/2026/2026-06a.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -51,7 +51,7 @@ Die Einzelheiten stehen an anderer Stelle und werden hier nicht wiederholt:
   Administrationsoberfläche, eigene Texte übersetzbar machen, die HTML-Sprach-Tags.
 - [Die Wahl der Oberflächensprache](funktionen/6.0/ui-umschalter-sprachen.md): das Auswahlfeld der rechten Werkzeugleiste,
   seine Gruppen, seine A–Z-Liste und die angezeigte Abdeckung.
-- [Die Fallback-Locale eines Inhaltsobjekts](../eng-us/bc/6.0/content-object-fallback-locale.md).
+- [Die Fallback-Locale eines Inhaltsobjekts](bc/6.0/ersatz-locale-fuer-inhaltsobjekte.md).
 
 ## 2. Unterstützungsstufen
 

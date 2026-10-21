@@ -68,9 +68,9 @@ neue Versionen, sodass jede Zeile der Seite Über eine Version, Lizenz und Websi
 - [Pakete vergleichen und importieren](pakete-vergleichen-und-importieren.md), [Paketlizenzen und Semantic Versioning](paketlizenzen-und-versionen.md)
 - [Übersetzungen und Sprachen](uebersetzungen-und-sprachen.md)
 - [Das Produkt heißt Exponential](umbenennung-in-exponential.md), [eine saubere Installation, die zu Shared Hosting passt](standardwerte-einer-sauberen-installation.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md), [August 2025](../../../eng-us/history/2025/2025-08.md), [Juli 2025](../../../eng-us/history/2025/2025-07.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md)
+- Chronik: [16. bis 30. September 2026](../../geschichte/2026/2026-09b.md), [August 2025](../../geschichte/2025/2025-08.md), [Juli 2025](../../geschichte/2025/2025-07.md), [Januar 2025](../../geschichte/2025/2025-01.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -85,11 +85,11 @@ Im ersten Release hieß das Skript `main.js` und musste von Hand eingeschaltet w
 ## Verwandte Seiten
 
 - [Breite und Schriftgröße der linken Seitenleiste](admin3-seitenleistenbreite-und-schriftgroesse.md), [das Design admin4](admin4-design.md)
-- [Ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md), [ausgewählte Unterelemente ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md), [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md)
+- [Ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md), [ausgewählte Unterelemente ausblenden und einblenden](../../bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md), [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md)
 - [Blättern und Seitengrößen](seitenweise-listen-im-admin.md)
-- [Die Entfernung von YUI](../../../eng-us/bc/6.0/yui-removal.md), die alle Admin-Designs auf jQuery umstellte
+- [Die Entfernung von YUI](../../bc/6.0/yui-entfernung.md), die alle Admin-Designs auf jQuery umstellte
 - Changelogs: [6.0.4](../../../changelogs/6.0/6.0.4.md), [6.0.6](../../../changelogs/6.0/6.0.6.md), [6.0.10](../../../changelogs/6.0/6.0.10.md)
-- Chronik: [August 2024](../../../eng-us/history/2024/2024-08.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md), [November 2024](../../../eng-us/history/2024/2024-11.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md), [Juni 2025](../../../eng-us/history/2025/2025-06.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)
+- Chronik: [August 2024](../../geschichte/2024/2024-08.md), [Oktober 2024](../../geschichte/2024/2024-10.md), [November 2024](../../geschichte/2024/2024-11.md), [Januar 2025](../../geschichte/2025/2025-01.md), [Juni 2025](../../geschichte/2025/2025-06.md), [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

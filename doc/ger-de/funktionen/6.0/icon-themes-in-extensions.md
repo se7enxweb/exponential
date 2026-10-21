@@ -90,13 +90,13 @@ Das Theme `crystal-admin` bringt jetzt ein Icon für den Bezeichner der Inhaltsk
 | `settings/icon.ini` | `IconSettings` | `AdditionalThemeList[]` | leer | Installation | Themes, die vor `StandardTheme` durchsucht werden |
 | `settings/icon.ini` | `ExtensionSettings` | `IconExtensions[]` | leer | Installation | Extensions, deren Ordner `icons/` durchsucht wird; die Reihenfolge zählt |
 
-Die vollständige Anleitung mit der Klasse und den Hinweisen zur Aktualisierung ist [Icon-Unterstützung](../../../eng-us/bc/6.0/ICONS.md).
+Die vollständige Anleitung mit der Klasse und den Hinweisen zur Aktualisierung ist [Icon-Unterstützung](../../bc/6.0/symbole.md).
 
 ## Verwandte Seiten
 
-- [Icon-Unterstützung (Anleitung)](../../../eng-us/bc/6.0/ICONS.md)
+- [Icon-Unterstützung (Anleitung)](../../bc/6.0/symbole.md)
 - [Zusätzliche Extension-Verzeichnisse](zusaetzliche-extension-verzeichnisse.md), [das Design admin4](admin4-design.md)
-- [Chronik: Juli 2026](../../../eng-us/history/2026/2026-07.md)
+- [Chronik: Juli 2026](../../geschichte/2026/2026-07.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

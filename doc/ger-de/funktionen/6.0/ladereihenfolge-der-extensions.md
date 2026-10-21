@@ -82,11 +82,11 @@ Extension-Einstellungen platziert werden, bevor die Siteaccess-Einstellungen zus
 
 - [Modulüberschreibung durch Extensions](modulueberschreibung-durch-extensions.md), [INI-Überschreibungen für mehrere Websites](ini-ueberschreibungen-fuer-mehrere-websites.md)
 - [Template-Editor: Überschreibungen anlegen, ordnen und bearbeiten](template-editor-ueberschreibungen.md), [Einrichtungsassistent und Editor-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md)
-- [Extension-Liste: jede Extension sortieren, untersuchen und herunterladen](extension-liste-und-downloads.md), [die Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Extensions, Themes und Pakete](extensions/README.md)
+- [Extension-Liste: jede Extension sortieren, untersuchen und herunterladen](extension-liste-und-downloads.md), [die Standard-Auslieferung der Extensions](standard-extension-auslieferung.md), [Extensions, Themes und Pakete](erweiterungen/README.md)
 - [Extension-Metadaten: `ezinfo.php` und `extension.xml`](../../spezifikationen/6.0/extension-metadaten.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md), [Juni 2024](../../../eng-us/history/2024/2024-06.md), [März 2024](../../../eng-us/history/2024/2024-03.md), [Februar 2024](../../../eng-us/history/2024/2024-02.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [Januar 2024, erste Hälfte](../../../eng-us/history/2024/2024-01a.md)
+- Chronik: [16. bis 30. September 2026](../../geschichte/2026/2026-09b.md), [Juni 2024](../../geschichte/2024/2024-06.md), [März 2024](../../geschichte/2024/2024-03.md), [Februar 2024](../../geschichte/2024/2024-02.md), [Januar 2024, zweite Hälfte](../../geschichte/2024/2024-01b.md), [Januar 2024, erste Hälfte](../../geschichte/2024/2024-01a.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

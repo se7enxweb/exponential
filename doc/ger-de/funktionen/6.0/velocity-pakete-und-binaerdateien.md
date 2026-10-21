@@ -92,7 +92,7 @@ Engine.
 /var/lib/exponential-velocity/          state, owned by qbix
 ```
 
-Alles unter `/etc` ist Konfiguration: Ein Upgrade überschreibt nie eine Datei, die Sie geändert haben. Aktivieren und deaktivieren Sie Sites, Snippets und Module mit `qbixctl ensite`, `dissite`, `enconf`, `disconf`, `enmod`, `dismod` ([Verzeichnisstruktur](../../../eng-us/bc/6.0/velocity-ondisk-layout.md)).
+Alles unter `/etc` ist Konfiguration: Ein Upgrade überschreibt nie eine Datei, die Sie geändert haben. Aktivieren und deaktivieren Sie Sites, Snippets und Module mit `qbixctl ensite`, `dissite`, `enconf`, `disconf`, `enmod`, `dismod` ([Verzeichnisstruktur](../../bc/6.0/velocity-verzeichnisstruktur.md)).
 
 ### Umstieg vom Paket `qbix-webserver`
 
@@ -158,7 +158,7 @@ Eine Plattformmatrix führt das Phar auf Systemen aus, für die es keine Binärd
 
 ## Aus Exponential
 
-`exp:velocity` von Exponential verwendet die Composer-Kopie der Engine; das Paket wird mit dem Rest der Installation installiert; Auswahl und Betrieb beschreibt [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md). Das Engine-Archiv und das eigene Archiv von Exponential sind verschiedene Dinge: siehe [Phar](../../../eng-us/bc/6.0/phar.md).
+`exp:velocity` von Exponential verwendet die Composer-Kopie der Engine; das Paket wird mit dem Rest der Installation installiert; Auswahl und Betrieb beschreibt [Velocity-Engines](../../bc/6.0/velocity-engines.md). Das Engine-Archiv und das eigene Archiv von Exponential sind verschiedene Dinge: siehe [Phar](../../bc/6.0/phar.md).
 
 ## Grenzen
 
@@ -170,9 +170,9 @@ Eine Plattformmatrix führt das Phar auf Systemen aus, für die es keine Binärd
 
 - [uwebserver](velocity-uwebserver.md), [HTTPS und Zertifikate](velocity-https-zertifikate.md), [Q-Shell](velocity-q-shell.md) (`vc-qshell`), [Velocity-Webserver](velocity-webserver.md)
 - Spezifikation: [Engine-Einstellungen](../../spezifikationen/6.0/velocity-engine-einstellungen.md) (Programme und die Struktur von `sbin/` und `bin/`)
-- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md) (Umbenennungen von Paketen und Pfaden), [Verzeichnisstruktur von Velocity](../../../eng-us/bc/6.0/velocity-ondisk-layout.md), [Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)
+- Aktualisierung: [Hinweise zur Aktualisierung der Velocity-Engine](../../bc/6.0/velocity-engine-upgrade-hinweise.md) (Umbenennungen von Paketen und Pfaden), [Verzeichnisstruktur von Velocity](../../bc/6.0/velocity-verzeichnisstruktur.md), [Velocity-Engines](../../bc/6.0/velocity-engines.md)
 - [Changelog: Exponential-Velocity-Engine](../../../changelogs/extensions/exponential-velocity.md)
-- Chronik: [August 2026](../../../eng-us/history/velocity/2026-08.md) (erste Binärdateien), [23. September](../../../eng-us/history/velocity/2026-09c.md) (Plattformmatrix), [24. September](../../../eng-us/history/velocity/2026-09d.md) (Pakete), [25. bis 30. September](../../../eng-us/history/velocity/2026-09e.md) (Umbenennung, `sbin/`)
+- Chronik: [August 2026](../../geschichte/velocity/2026-08.md) (erste Binärdateien), [23. September](../../geschichte/velocity/2026-09c.md) (Plattformmatrix), [24. September](../../geschichte/velocity/2026-09d.md) (Pakete), [25. bis 30. September](../../geschichte/velocity/2026-09e.md) (Umbenennung, `sbin/`)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

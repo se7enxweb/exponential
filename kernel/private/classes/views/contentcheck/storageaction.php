@@ -34,7 +34,7 @@ class Storageaction extends \Exponential\Runnable\ModuleView
 
         $method = isset( $_SERVER['REQUEST_METHOD'] ) ? (string)$_SERVER['REQUEST_METHOD'] : '';
         $decision = self::decide( $method, $_POST, function ( $function ) { return \expContentCheck::hasPolicy( 'contentcheck', $function ); } );
-        $back = '/contentcheck/storage/' . (int)$decision['node_id'] . '?Show=' . rawurlencode( $decision['show'] );
+        $back = '/contentcheck/storage/' . (int)$decision['node_id'] . \expViewParameters::suffix( array( 'show' => $decision['show'] ) );
 
         switch ( $decision['step'] )
         {

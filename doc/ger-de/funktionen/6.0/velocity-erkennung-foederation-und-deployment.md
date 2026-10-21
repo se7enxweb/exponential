@@ -80,7 +80,7 @@ Start erzeugt. Er funktioniert wie `known_hosts` von SSH, ohne Zertifizierungsst
    aus einem Browser.
 
 Exponential-Installationen bringen eine PHP-Änderung stattdessen mit `exp:velocity deploy` aus
-([Velocity-Engines](../../../eng-us/bc/6.0/velocity-engines.md)); `--deploy` ist für Engine-Anwendungen.
+([Velocity-Engines](../../bc/6.0/velocity-engines.md)); `--deploy` ist für Engine-Anwendungen.
 
 ## Mesh (experimentell)
 
@@ -102,9 +102,9 @@ Engine.
 ## Verwandte Seiten
 
 - [Velocity-Webserver](velocity-webserver.md), [WebSockets und Ereignisse](velocity-websockets-und-ereignisse.md), [Velocity-Zeitplaner](velocity-zeitplaner.md), [HTTPS-Zertifikate](velocity-https-zertifikate.md)
-- [Velocity-Engines (Hinweise zur Aktualisierung)](../../../eng-us/bc/6.0/velocity-engines.md)
+- [Velocity-Engines (Hinweise zur Aktualisierung)](../../bc/6.0/velocity-engines.md)
 - [Changelog: Engine Exponential Velocity](../../../changelogs/extensions/exponential-velocity.md)
-- Chronik: [Juli 2026](../../../eng-us/history/velocity/2026-07.md) (API-Erkennung aus Kommentaren, föderierte Anwendungen), [September 2026](../../../eng-us/history/velocity/2026-09d.md) (Signieren)
+- Chronik: [Juli 2026](../../geschichte/velocity/2026-07.md) (API-Erkennung aus Kommentaren, föderierte Anwendungen), [September 2026](../../geschichte/velocity/2026-09d.md) (Signieren)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

@@ -10,8 +10,8 @@ Extension ein Modul mit demselben Namen an, und es wird statt des Kernel-Moduls 
 
 Ersetzen Sie ein ganzes Modul, wenn eine Ansicht mehr braucht, als eine Template-Überschreibung oder ein Ereignis leisten
 kann, zum Beispiel einen Anmeldeablauf mit einem zusätzlichen Schritt oder einen geänderten Warenkorb. Für kleine
-Änderungen sind die [RAD-Erweiterungspunkte](../../../eng-us/bc/6.0/rad-extension-points.md) und Ansichtsklassen
-([Befehle, Cronjob-Teile und Modulansichten als Klassen](../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)) vorzuziehen.
+Änderungen sind die [RAD-Erweiterungspunkte](../../bc/6.0/rad-erweiterungspunkte.md) und Ansichtsklassen
+([Befehle, Cronjob-Teile und Modulansichten als Klassen](../../bc/6.0/cli-cronjob-und-view-abstraktionen.md)) vorzuziehen.
 
 ## So geht es
 
@@ -68,9 +68,9 @@ während die Seite zusammengesetzt wird.
 
 - [Extensions in mehr als einem Ordner](zusaetzliche-extension-verzeichnisse.md)
 - [Ladereihenfolge der Extensions](ladereihenfolge-der-extensions.md)
-- [Verhaltensänderungen der Legacy-Extensions](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Legacy-Extensions](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)
 - Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md) (Reihenfolge der Module), [6.0.5](../../../changelogs/6.0/6.0.5.md) (Korrektur für Robustheit)
-- Chronik: [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [September 2024](../../../eng-us/history/2024/2024-09.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md)
+- Chronik: [Januar 2024, zweite Hälfte](../../geschichte/2024/2024-01b.md), [September 2024](../../geschichte/2024/2024-09.md), [Oktober 2024](../../geschichte/2024/2024-10.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

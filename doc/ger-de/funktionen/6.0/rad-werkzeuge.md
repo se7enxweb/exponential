@@ -35,14 +35,14 @@ Module, Workflow, Speicher, Pakete, Zugriff); 64 haben ein Werkzeug, und 4 sind 
 (`/setup/rad/(show)/docs`). Die Mechanismen sind `directory`, `handler`, `autoload`, `file`, `design`, `ini`,
 `override` und `runnable`. Die Änderung vom 14. September brachte ihn von fünfzehn Punkten auf vierundsechzig von
 vierundsechzig; danach kamen vier Punkte hinzu. Jeder wurde gegen den Quellcode dieser Installation geprüft. Lesen Sie
-den gepflegten Text in [Erweiterungspunkte](../../../eng-us/bc/6.0/rad-extension-points.md).
+den gepflegten Text in [Erweiterungspunkte](../../bc/6.0/rad-erweiterungspunkte.md).
 
 ## Assistenten
 
 Jeder Assistent baut eine **funktionierende Extension**, kein Schnipsel zum Einfügen, und **zeigt jede Datei, die er
 schreiben würde, bevor er eine davon schreibt**. Außerhalb von `extension/<name>` wird nichts geschrieben, eine
 bestehende Extension wird nie überschrieben, und erzeugte Templates maskieren, was sie ausgeben; siehe
-[Sicherheit der RAD-Werkzeuge](../../../eng-us/bc/6.0/rad-security.md).
+[Sicherheit der RAD-Werkzeuge](../../bc/6.0/rad-sicherheit.md).
 
 | Assistent (URL) | Schreibt |
 |---|---|
@@ -73,7 +73,7 @@ Registry-Einträge, die keine Klasse nennen, 1174), weil die Installation und di
 Seite der Übersicht lässt sich mit `/setup/radsurvey/(show)/<section>/(offset)/<n>` verlinken. Jede Zahl ist ein Link
 auf die Einträge dahinter, und jeder Befund sagt, wie er zu beheben ist. Ein Alias wird von einer kaputten Registrierung
 unterschieden, sodass ein gesunder Alias nicht als Fehler gemeldet wird. Die erzeugte Referenz ist
-[Die Erweiterungsfläche](../../../eng-us/bc/6.0/rad-extension-surface.md).
+[Die Erweiterungsfläche](../../bc/6.0/rad-erweiterungsoberflaeche.md).
 
 ## Zustandsprüfung: was konfiguriert ist und nicht funktionieren kann
 
@@ -111,15 +111,15 @@ Installation gezeichnet. Der eine Einstellungseintrag ist der Menülink in `sett
 - Übersicht und Zustandsprüfung lesen die Installation, wie sie auf der Platte liegt; führen Sie nach einer Änderung
   zuerst die Schritte für Autoload und Cache aus.
 - Vier Punkte des Katalogs haben keinen Assistenten: Folgen Sie dem gepflegten Text in
-  [Erweiterungspunkte](../../../eng-us/bc/6.0/rad-extension-points.md).
+  [Erweiterungspunkte](../../bc/6.0/rad-erweiterungspunkte.md).
 
 ## Verwandte Seiten
 
-- [Erweiterungspunkte](../../../eng-us/bc/6.0/rad-extension-points.md), [die Erweiterungsfläche](../../../eng-us/bc/6.0/rad-extension-surface.md), [Sicherheit der RAD-Werkzeuge](../../../eng-us/bc/6.0/rad-security.md)
+- [Erweiterungspunkte](../../bc/6.0/rad-erweiterungspunkte.md), [die Erweiterungsfläche](../../bc/6.0/rad-erweiterungsoberflaeche.md), [Sicherheit der RAD-Werkzeuge](../../bc/6.0/rad-sicherheit.md)
 - [Ausführbare Befehle, Cronjobs und Ansichten (Spezifikation)](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md), [Extension-Metadaten (Spezifikation)](../../spezifikationen/6.0/extension-metadaten.md)
 - [Modulüberschreibung durch Extensions](modulueberschreibung-durch-extensions.md), [zusätzliche Extension-Verzeichnisse](zusaetzliche-extension-verzeichnisse.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik: September 2026, erste Hälfte, 14. September](../../../eng-us/history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Chronik: September 2026, erste Hälfte, 14. September](../../geschichte/2026/2026-09a.md#14-september-pdf-rss-und-die-rad-werkzeuge)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

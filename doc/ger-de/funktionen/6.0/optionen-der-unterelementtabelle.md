@@ -7,7 +7,7 @@ der Inhaltsklassen in der Liste, ohne jede Einstellung. Jeder Benutzer wählt, o
 Administratoren legen Standards und Voreinstellungen fest. Hinzugefügt am 02.10.2026.
 
 Der vollständige Katalog, Leistungszahlen und wie Sie eine Spalte schreiben, stehen in der Anleitung
-[Optionen der Unterelementtabelle](../../../eng-us/bc/6.0/subitems-table-options.md).
+[Optionen der Unterelementtabelle](../../bc/6.0/tabellenoptionen-der-unterelemente.md).
 
 ## Verwenden
 
@@ -34,7 +34,7 @@ Die Liste lädt sofort mit genau so vielen Zeilen neu. Alles andere wird mit ein
 Größe bleibt. Verwenden Sie es für Massenarbeit an genau den Zeilen auf dem Bildschirm (alle auswählen, dann verschieben,
 kopieren oder verbergen), für Exportprüfungen, die einen genauen Ausschnitt brauchen, oder um zu testen, wie sich ein
 Ordner bei einer bestimmten Größe verhält. Die Seitengröße ist eine Benutzereinstellung; siehe
-[Einstellungen zum Blättern](../../../eng-us/bc/6.0/pagination-settings.md). Die Seite „Eigene Anzahl von Einträgen pro Seite“ ist
+[Einstellungen zum Blättern](../../bc/6.0/einstellungen-fuer-seitengroessen.md). Die Seite „Eigene Anzahl von Einträgen pro Seite“ ist
 in dieser aufgegangen.
 
 ## In drei Minuten eine Spalte hinzufügen
@@ -112,13 +112,13 @@ entfernte Dienste bereitgestellt; die Serverfunktionen sind `expSubitemsServerFu
 
 ## Verwandte Seiten
 
-- [Optionen der Unterelementtabelle (Anleitung)](../../../eng-us/bc/6.0/subitems-table-options.md), [Einstellungen zum Blättern](../../../eng-us/bc/6.0/pagination-settings.md)
-- [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md), [ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md), [Ausgewählte ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
+- [Optionen der Unterelementtabelle (Anleitung)](../../bc/6.0/tabellenoptionen-der-unterelemente.md), [Einstellungen zum Blättern](../../bc/6.0/einstellungen-fuer-seitengroessen.md)
+- [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md), [ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md), [Ausgewählte ausblenden und einblenden](../../bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md)
 - [Das responsive Admin-Design (admin3)](admin3-responsives-admin.md), [das Design admin4](admin4-design.md), [Breite und Schriftgröße der linken Seitenleiste](admin3-seitenleistenbreite-und-schriftgroesse.md)
 - [Prüfprotokoll](pruefprotokoll.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [Oktober 2026](../../../eng-us/history/2026/2026-10.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md), [Juni 2025](../../../eng-us/history/2025/2025-06.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md), [November 2024](../../../eng-us/history/2024/2024-11.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md), [August 2024](../../../eng-us/history/2024/2024-08.md)
+- Chronik: [Oktober 2026](../../geschichte/2026/2026-10.md), [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md), [Juni 2025](../../geschichte/2025/2025-06.md), [Januar 2025](../../geschichte/2025/2025-01.md), [November 2024](../../geschichte/2024/2024-11.md), [Oktober 2024](../../geschichte/2024/2024-10.md), [August 2024](../../geschichte/2024/2024-08.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

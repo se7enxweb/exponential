@@ -9,7 +9,7 @@ verwenden: Inhaltsbaum, Bearbeiten von Inhalten, Suche, Inhaltstypen, Benutzer u
 | | |
 |---|---|
 | Repositorys | `se7enxweb/admin-ui` (Platform v5; Repository `admin-ui-7x`, auch als `admin-ui-ibexa` zu sehen), `se7enxweb/admin-ui-assets`, `se7enxweb/fieldtype-richtext`; für die Linie 3.x `se7enxweb/ezplatform-admin-ui`, `se7enxweb/ezplatform-admin-ui-assets`, `se7enxweb/ezplatform-richtext`, `se7enxweb/ezplatform-design-engine`, `se7enxweb/ezplatform-standard-design`, `se7enxweb/ezplatform-alloyeditor-element-width` |
-| Chronik | [admin-ui-7x](../../../eng-us/history/ecosystem/admin-ui-7x.md) · [admin-ui-ibexa](../../../eng-us/history/ecosystem/admin-ui-ibexa.md) · [admin-ui-assets](../../../eng-us/history/ecosystem/admin-ui-assets.md) · [fieldtype-richtext-ibexa](../../../eng-us/history/ecosystem/fieldtype-richtext-ibexa.md) · [ezplatform-admin-ui](../../../eng-us/history/ecosystem/ezplatform-admin-ui.md) · [ezplatform-richtext](../../../eng-us/history/ecosystem/ezplatform-richtext.md) |
+| Chronik | [admin-ui-7x](../../geschichte/oekosystem/admin-ui-7x.md) · [admin-ui-ibexa](../../geschichte/oekosystem/admin-ui-ibexa.md) · [admin-ui-assets](../../geschichte/oekosystem/admin-ui-assets.md) · [fieldtype-richtext-ibexa](../../geschichte/oekosystem/fieldtype-richtext-ibexa.md) · [ezplatform-admin-ui](../../geschichte/oekosystem/ezplatform-admin-ui.md) · [ezplatform-richtext](../../geschichte/oekosystem/ezplatform-richtext.md) |
 
 ## Was ein Benutzer bekommt
 
@@ -53,7 +53,7 @@ Die übrige Historie (mehr als tausend Commits) ist Upstream-Arbeit, die der For
 (`b9575cf69`, 04.02.2025), PHP-8-Typangaben und strikte Typen durchgehend (IBX-9727, 2025), Zuordnung von Icons
 (`1026f2c42`, 05.06.2025), Entfernung von Sass-Deprecations (`c0adbf5b1`, 22.05.2025), Entfernung der BC-Schicht mit
 `class_alias` (`26f130a90`, 05.06.2024) und ein eigenständiges Paket für das Universal Discovery Widget (`15704ef6f`,
-14.12.2023). Die Monatstabellen auf der [Seite des Repositorys](../../../eng-us/history/ecosystem/admin-ui-7x.md) führen die
+14.12.2023). Die Monatstabellen auf der [Seite des Repositorys](../../geschichte/oekosystem/admin-ui-7x.md) führen die
 umfangreichsten Änderungen jedes Monats auf.
 
 ## Releases des Teams von se7enxweb
@@ -89,9 +89,9 @@ Changelog: [Releases der Admin-UI](../../../changelogs/extensions/admin-ui.md).
 
 - Plattformfunktionen: [DXP-Skeleton](plattform-dxp-skeleton.md), [Layouts auf der Plattform](plattform-layouts-core-fork.md), [Nexus-Starter](plattform-nexus-starter.md), [Framework-Forks für PHP 8.5](plattform-php85-framework-forks.md), [Site-Bundles](plattform-site-bundles.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [Legacy Bridge](legacy-bridge.md), [Datenbankverwaltung AdminNeo](adminneo-datenbankverwaltung.md)
 - Spezifikationen: [Namen der Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md), [Paketkarte der Plattform](../../spezifikationen/6.0/platform-paketzuordnung.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md), [Bundle der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md)
-- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- Hinweise zur Aktualisierung: [Paket-Forks und Umbenennungen von Befehlen](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - Changelog: [Changelog der Plattform](../../../changelogs/extensions/exponential-platform.md)
-- Chronik: [Übersicht über das Ökosystem](../../../eng-us/history/ecosystem.md), [Monate des Ökosystems](../../../eng-us/history/ecosystem/months/2026-04.md), [Änderungsverzeichnis](../../../eng-us/history/ledger/README.md)
+- Chronik: [Übersicht über das Ökosystem](../../geschichte/oekosystem.md), [Monate des Ökosystems](../../geschichte/oekosystem/monate/2026-04.md), [Änderungsverzeichnis](../../geschichte/aenderungsverzeichnis/README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

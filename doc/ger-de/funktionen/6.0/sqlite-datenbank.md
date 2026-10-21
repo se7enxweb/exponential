@@ -5,7 +5,7 @@ eine kleine Website auf einem Tarif ohne MySQL betreiben möchten. Mit SQLite l�
 aus einer Datei auf der Platte, ohne einen Datenbankserver, der installiert, konfiguriert oder abgesichert werden muss.
 
 Die Unterstützung für SQLite kam im Januar 2024 (Releases 6.0.1 bis 6.0.3, siehe die
-[Chronik Januar 2024](../../../eng-us/history/2024/2024-01a.md)) und wurde seitdem verfeinert. Alles unten beschreibt den Code, wie
+[Chronik Januar 2024](../../geschichte/2024/2024-01a.md)) und wurde seitdem verfeinert. Alles unten beschreibt den Code, wie
 er jetzt ist; ein Hinweis sagt, wo eine Einstellung in einem späteren Release als der erste Treiber hinzukam.
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Präferenz:** 1. SQLite 3 (der Standard) ·
@@ -98,11 +98,11 @@ ersten Verwendung funktioniert.
 ## Verwandte Seiten
 
 - Spezifikationen: [Datenbanktreiber SQLite3](../../spezifikationen/6.0/sqlite3-datenbanktreiber.md), [Datenbanktreiber und Installer, 16. bis 30. September 2026](../../spezifikationen/6.0/datenbanktreiber-2026-09.md), [Verhalten der Treiber für SQLite und Oracle (Oktober 2026)](../../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md), [SQLite-Installer der Plattform](../../spezifikationen/6.0/platform-sqlite-installer.md)
-- [SQLite: Transaktionen stellen sich für die Schreibsperre an](../../../eng-us/bc/6.0/sqlite-transactions.md)
+- [SQLite: Transaktionen stellen sich für die Schreibsperre an](../../bc/6.0/sqlite-transaktionen.md)
 - [Installation mit einem Befehl](installation-mit-einem-befehl.md), [SQLite für Exponential Platform](plattform-sqlite-installation.md), [MongoDB-Datenbankunterstützung](mongodb-datenbankunterstuetzung.md)
-- [Unterstützung für PHP 8](../../../eng-us/bc/6.0/php8.md) (die Korrekturen zu countable und `is_countable`, die aus den Testläufen mit SQLite kamen)
+- [Unterstützung für PHP 8](../../bc/6.0/php8.md) (die Korrekturen zu countable und `is_countable`, die aus den Testläufen mit SQLite kamen)
 - Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md) (der Treiber), [6.0.13](../../../changelogs/6.0/6.0.13.md) (absolute Pfade, Autoload), [6.0.14](../../../changelogs/6.0/6.0.14.md) (Lesen des Schemas)
-- Chronik: [Januar 2024, erste Hälfte](../../../eng-us/history/2024/2024-01a.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [April 2026](../../../eng-us/history/2026/2026-04.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md) (Entfernen von Indizes)
+- Chronik: [Januar 2024, erste Hälfte](../../geschichte/2024/2024-01a.md), [Januar 2024, zweite Hälfte](../../geschichte/2024/2024-01b.md), [April 2026](../../geschichte/2026/2026-04.md), [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md) (Entfernen von Indizes)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

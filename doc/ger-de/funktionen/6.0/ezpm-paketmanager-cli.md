@@ -26,7 +26,7 @@ php ezpm.php help add
 `php bin/php/console ezpm help add` gibt die Hilfe des Befehls `add` aus; `./console list ezpm` zeigt den einen Eintrag,
 den die Konsole dafür hat (geprüft auf 6.0.15: `ezpm  Create, import, install, list and delete Exponential packages`).
 `ezpm.php` lief bei der Prüfung, die diese Seite geschrieben hat, als Betriebssystembenutzer `root` ohne
-`--allow-root-user`; andere Skripte fragen danach, siehe [die Konsole](../../../eng-us/bc/6.0/console.md).
+`--allow-root-user`; andere Skripte fragen danach, siehe [die Konsole](../../bc/6.0/konsole.md).
 
 Globale Optionen (aus `php ezpm.php help`):
 
@@ -43,7 +43,7 @@ Globale Optionen (aus `php ezpm.php help`):
 
 Befehle: `create`, `add`, `set`, `delete`, `export`, `import`, `install`, `list`, `info`, `help` und seit Oktober 2026
 `convert`, `validate` und `check` für das JSON-Paketformat: `export --format=json`, `install --as-drafts`, siehe
-[das JSON-Paketformat](../../../eng-us/bc/6.0/package-json-format.md).
+[das JSON-Paketformat](../../bc/6.0/package-json-format.md).
 
 ## Einen Teil des Inhaltsbaums verpacken
 
@@ -125,14 +125,14 @@ Was der Installer seit Juli anders macht:
 
 ## Verwandte Seiten
 
-- [Das JSON-Paketformat](../../../eng-us/bc/6.0/package-json-format.md): `export --format=json`, `convert`, `validate`, `check`,
+- [Das JSON-Paketformat](../../bc/6.0/package-json-format.md): `export --format=json`, `convert`, `validate`, `check`,
   `install --as-drafts`
 - [Eine Paketinstallation, die große Pakete übersteht](paketinstallation-in-teilschritten.md) (der Installer im Browser, Juni 2026)
 - [In ein Paket hineinsehen, es mit Ihrer Website vergleichen, einzelne Elemente importieren](pakete-vergleichen-und-importieren.md), [Paketlizenzen und Versionen](paketlizenzen-und-versionen.md)
 - [Kickstarter-CLI](kickstarter-cli.md) (installiert eine ganze Website aus `kickstart.ini`), [Installation mit einem Befehl](installation-mit-einem-befehl.md), [Standardwerte einer sauberen Installation](standardwerte-einer-sauberen-installation.md)
-- [Konsole](../../../eng-us/bc/6.0/console.md), [Verhaltensänderungen von Juli und August 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-07-08.md)
+- [Konsole](../../bc/6.0/konsole.md), [Verhaltensänderungen von Juli und August 2026](../../bc/6.0/verhaltensaenderungen-2026-07-08.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Chronik: [Juli 2026](../../../eng-us/history/2026/2026-07.md), [August 2026](../../../eng-us/history/2026/2026-08.md) (Korrekturen am Export)
+- Chronik: [Juli 2026](../../geschichte/2026/2026-07.md), [August 2026](../../geschichte/2026/2026-08.md) (Korrekturen am Export)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

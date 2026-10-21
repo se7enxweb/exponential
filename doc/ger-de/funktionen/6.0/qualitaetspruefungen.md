@@ -73,7 +73,7 @@ Zwei weitere Teile des Stils:
   `fputcsv()`, Enums, `never`, readonly, `json_validate()`, ...), und keine Funktionen, die spätere Versionen entfernt
   haben oder als veraltet markieren. Eine neuere Funktion ist hinter `function_exists()` in Ordnung oder wenn sie in
   `lib/phpcompat.php` definiert ist, sofern sie sich in PHP schreiben lässt; siehe
-  [Unterstützung für PHP 8.0](../../../eng-us/bc/6.0/php-8.0-support.md). `composer.dev.json` löst die Werkzeuge für PHP 8.0.30 auf.
+  [Unterstützung für PHP 8.0](../../bc/6.0/php-8.0-unterstuetzung.md). `composer.dev.json` löst die Werkzeuge für PHP 8.0.30 auf.
 
 Alte Dateien folgen nicht jeder Regel, deshalb vergleicht die Prüfung die Zahl der Verstöße jeder geänderten Datei mit
 ihrer vorherigen Version und scheitert nur, wenn eine Änderung Verstöße hinzufügt. In der CI ist der Code-Stil vorerst

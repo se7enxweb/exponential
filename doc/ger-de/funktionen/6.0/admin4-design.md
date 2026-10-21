@@ -238,7 +238,7 @@ auf `admin4`, `admin3`, `admin2`, `admin` (`kernel/setup/steps/ezstep_create_sit
   Komponenten von admin4 (`.a4-input`, `.a4-btn`,
   `.a4-check`), die Attributnamen tragen keinen abschließenden Doppelpunkt, und eine gruppierte Eingabe hat keinen
   eigenen grauen Kasten
-  ([Gestaltungsregeln, „Bearbeitungsformulare“](../../../eng-us/bc/6.0/admin4-styling.md#edit-forms)).
+  ([Gestaltungsregeln, „Bearbeitungsformulare“](../../bc/6.0/admin4-gestaltung.md#bearbeitungsformulare)).
 - **Rahmen.** Die Ränder der Seitenspalten sind halbiert (ein Abstand von 16 px). Die Schaltflächen der Seitenleisten
   sitzen an den Fensterrändern auf 48 % der Fensterhöhe; sie sind nach ihrer Spalte benannt („Linke Spalte“, „Rechte
   Spalte“), geben mit `aria-expanded` an, ob sie angezeigt wird, und bei einem schmalen Fenster schließt Escape eine
@@ -249,7 +249,7 @@ auf `admin4`, `admin3`, `admin2`, `admin` (`kernel/setup/steps/ezstep_create_sit
   Der Block Benutzereinstellungen der rechten Spalte (Orte, Wiederbearbeiten) zeigt „an“ und „aus“ als Tabs, wie die
   Tabs der Knotenansicht: der aktuelle Zustand in der Akzenttönung mit einem Balken darunter (die gedrückte
   Schaltfläche eines POST-Formulars, `aria-pressed`), der andere zurückhaltend
-  ([Gestaltungsregeln, „Legacy-Bedienelemente und die Seitenspalten“](../../../eng-us/bc/6.0/admin4-styling.md#legacy-controls-and-the-side-columns)).
+  ([Gestaltungsregeln, „Legacy-Bedienelemente und die Seitenspalten“](../../bc/6.0/admin4-gestaltung.md#alte-bedienelemente-und-die-seitenspalten)).
 - **Linkes Menü.** Die linke Spalte ist die Navigation „Seitenmenü“. Ein langes Menü wird in Gruppen angezeigt: Setup
   in Inhaltsmodell, Website und URLs, Design (solange sein Tab ausgelassen ist), Workflows, Benutzer und Nachrichten,
   Audit (ebenso), System, KI, Updates und zuletzt „Mehr“ für Links ohne Gruppe. Jede Gruppe hat einen kleinen
@@ -1294,7 +1294,7 @@ Community“. Ein Template kann auch `$show_community_links` setzen.
 
 - `AdminComponentCSSFileList[]`: die gemeinsamen `.a4-*`-Komponenten und die Modul-Stylesheets, geladen nach den
   eigenen Stylesheets des Designs und vor `BackendCSSFileList`
-  ([Die Administrationsoberfläche gestalten](../../../eng-us/bc/6.0/admin4-styling.md)).
+  ([Die Administrationsoberfläche gestalten](../../bc/6.0/admin4-gestaltung.md)).
 - `CheckViewAccess=enabled` zeigt einen oberen Tab oder einen Link des linken Menüs nur einem Benutzer, der dessen
   Adresse öffnen kann, geprüft wie die Anfrage selbst; `NoAccessLinks=hidden` lässt einen solchen Link weg
   (`disabled` zeigt seinen Namen ohne Link).
@@ -1371,7 +1371,7 @@ Community“. Ein Template kann auch `$show_community_links` setzen.
 
 ## Für Entwickler
 
-- **Gestaltungsregeln: [Die Administrationsoberfläche gestalten](../../../eng-us/bc/6.0/admin4-styling.md).** Kein
+- **Gestaltungsregeln: [Die Administrationsoberfläche gestalten](../../bc/6.0/admin4-gestaltung.md).** Kein
   `<style>`-Block und kein `style=""`-Attribut
   in einem Template; die gemeinsamen `.a4-*`-Komponenten und `--a4-*`-Tokens (hell und dunkel) aus
   `stylesheets/components.css`; Modul-CSS in `stylesheets/modules/`, geladen über `design.ini`
@@ -1416,16 +1416,16 @@ Community“. Ein Template kann auch `$show_community_links` setzen.
 
 ## Verwandte Seiten
 
-- [Die Administrationsoberfläche gestalten: Komponenten, Tokens, kein Inline-CSS](../../../eng-us/bc/6.0/admin4-styling.md)
-- [Symbole aus Extensions und Symbol-Themes](../../../eng-us/bc/6.0/ICONS.md)
+- [Die Administrationsoberfläche gestalten: Komponenten, Tokens, kein Inline-CSS](../../bc/6.0/admin4-gestaltung.md)
+- [Symbole aus Extensions und Symbol-Themes](../../bc/6.0/symbole.md)
 - [Das responsive Admin-Design (admin3)](admin3-responsives-admin.md), [Breite der linken Seitenleiste und Schriftgröße](admin3-seitenleistenbreite-und-schriftgroesse.md)
 - [Einrichtungsassistent und Redakteurs-Siteaccess](einrichtungsassistent-und-editor-siteaccess.md), [jQuery 4 und die Entfernung von YUI](jquery4-und-entfernung-von-yui.md)
 - [Admin-Links folgen den Berechtigungen](admin-links-folgen-den-berechtigungen.md), [Sortierung der Bestellliste](sortierung-der-bestellliste.md)
-- [Liste der Unterelemente: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md), [ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md), [ausgewählte verstecken und wieder anzeigen](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
-- [admin4l: die aus Layouts aufgebaute Admin-Seite](admin4l.md), [ihre Verhaltensänderung](../../../eng-us/bc/6.0/admin4l.md)
-- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
+- [Liste der Unterelemente: Spalten, Voreinstellungen und CSV-Export](optionen-der-unterelementtabelle.md), [ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md), [ausgewählte verstecken und wieder anzeigen](../../bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md)
+- [admin4l: die aus Layouts aufgebaute Admin-Seite](admin4l.md), [ihre Verhaltensänderung](../../bc/6.0/admin4l.md)
+- [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- Historie: [Oktober 2026](../../../eng-us/history/2026/2026-10.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md), [Juni 2025](../../../eng-us/history/2025/2025-06.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md), [November 2024](../../../eng-us/history/2024/2024-11.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md), [August 2024](../../../eng-us/history/2024/2024-08.md)
+- Historie: [Oktober 2026](../../geschichte/2026/2026-10.md), [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md), [Juni 2025](../../geschichte/2025/2025-06.md), [Januar 2025](../../geschichte/2025/2025-01.md), [November 2024](../../geschichte/2024/2024-11.md), [Oktober 2024](../../geschichte/2024/2024-10.md), [August 2024](../../geschichte/2024/2024-08.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

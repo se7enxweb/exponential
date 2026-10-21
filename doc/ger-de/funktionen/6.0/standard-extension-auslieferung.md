@@ -20,7 +20,7 @@ Der erste Block der Ausgabe ist `suggest`, der zweite `require`. Die aktuellen A
   Stelle freigibt: `~6.0.8` nimmt `6.0.9` und `6.0.10` an, aber nicht `6.1.0`.
 - `require` wird mit dem Produkt installiert. `suggest` ist nur ein Hinweis, den Composer ausgibt; ein vorgeschlagenes
   Paket installieren Sie selbst mit `composer require se7enxweb/<name>`.
-- Die PHP-Anforderung ist `^8.1 || ^8.2 ...` (siehe [Unterstützung für PHP 8](../../../eng-us/bc/6.0/php8.md)).
+- Die PHP-Anforderung ist `^8.1 || ^8.2 ...` (siehe [Unterstützung für PHP 8](../../bc/6.0/php8.md)).
 - Im Dezember 2023 stellte schon das erste Release die Quellen von Paketnamen Dritter (`...-ls` und `...-ls-extension`) auf
   `se7enxweb/<name>` um. Im Januar 2024 wurde jedes Paket umbenannt, sodass kein Trick mit `replace` von Composer nötig
   ist.
@@ -74,11 +74,11 @@ sind. Seitdem ist die Liste um das Layout-System, den Newsletter, die Tags-Exten
 
 ## Verwandte Seiten
 
-- [Extensions, Themes und Pakete](extensions/README.md), [Extension-Liste: sortieren, untersuchen und herunterladen](extension-liste-und-downloads.md), [Ladereihenfolge und sicheres Speichern](ladereihenfolge-der-extensions.md)
+- [Extensions, Themes und Pakete](erweiterungen/README.md), [Extension-Liste: sortieren, untersuchen und herunterladen](extension-liste-und-downloads.md), [Ladereihenfolge und sicheres Speichern](ladereihenfolge-der-extensions.md)
 - [Extension-Metadaten: `ezinfo.php` und `extension.xml`](../../spezifikationen/6.0/extension-metadaten.md)
-- [Das Produkt heißt Exponential](umbenennung-in-exponential.md), [Unterstützung für PHP 8](../../../eng-us/bc/6.0/php8.md)
+- [Das Produkt heißt Exponential](umbenennung-in-exponential.md), [Unterstützung für PHP 8](../../bc/6.0/php8.md)
 - Changelogs, die die Menge der Extensions geändert haben: [6.0.0](../../../changelogs/6.0/6.0.0.md), [6.0.1](../../../changelogs/6.0/6.0.1.md), [6.0.2](../../../changelogs/6.0/6.0.2.md), [6.0.3](../../../changelogs/6.0/6.0.3.md), [6.0.4](../../../changelogs/6.0/6.0.4.md), [6.0.5](../../../changelogs/6.0/6.0.5.md), [6.0.6](../../../changelogs/6.0/6.0.6.md), [6.0.9](../../../changelogs/6.0/6.0.9.md), [6.0.10](../../../changelogs/6.0/6.0.10.md)
-- Chronik: [Dezember 2023](../../../eng-us/history/2023/2023-12.md), [Januar 2024, erste Hälfte](../../../eng-us/history/2024/2024-01a.md), [Januar 2024, zweite Hälfte](../../../eng-us/history/2024/2024-01b.md), [Februar 2024](../../../eng-us/history/2024/2024-02.md), [März 2024](../../../eng-us/history/2024/2024-03.md), [Juni 2024](../../../eng-us/history/2024/2024-06.md)
+- Chronik: [Dezember 2023](../../geschichte/2023/2023-12.md), [Januar 2024, erste Hälfte](../../geschichte/2024/2024-01a.md), [Januar 2024, zweite Hälfte](../../geschichte/2024/2024-01b.md), [Februar 2024](../../geschichte/2024/2024-02.md), [März 2024](../../geschichte/2024/2024-03.md), [Juni 2024](../../geschichte/2024/2024-06.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

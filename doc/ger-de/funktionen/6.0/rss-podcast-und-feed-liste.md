@@ -3,7 +3,7 @@
 Diese Seite ist für Website-Betreiber, die Feeds oder Podcasts veröffentlichen, und für Administratoren von Websites mit
 vielen Feeds. Sie behandelt, was das RSS-Modul in 6.0 im September 2026 hinzubekommen hat: Feeds für Apple Podcasts,
 eine seitenweise Feed-Liste, Feed-Adressen auf der öffentlichen Website und eine sicherere Ausgabe. Das Format OPML hat
-eine eigene Seite, [OPML-Exporte](../../../eng-us/bc/6.0/opml.md).
+eine eigene Seite, [OPML-Exporte](../../bc/6.0/opml.md).
 
 ## Apple Podcasts als Feed-Format
 
@@ -69,7 +69,7 @@ Installation mit Tausenden von Feeds die Seite öffnen kann. Überschriften sort
 Blättern behält die Sortierung. Seitengrößen: `content.ini [RSSListSettings]
 ItemsPerPageList[]` (25, 50, 250), gewählt mit dem Steuerelement *Einträge pro Seite*. Die sortierenden
 Überschriften verwenden dieselben Klassen wie der Reiter Platzierungen, sodass eine sortierte Spalte
-auf beiden gleich markiert ist ([Blättern im Reiter Platzierungen](../../../eng-us/bc/6.0/locations-tab-paging-and-sorting.md)).
+auf beiden gleich markiert ist ([Blättern im Reiter Platzierungen](../../bc/6.0/tab-orte-blaettern-und-sortieren.md)).
 
 ## Feed-Adressen verwenden die öffentliche Website
 
@@ -84,12 +84,12 @@ Outline-Links von OPML werden aus demselben Grund gegen die eigene Website des D
 Was das Modul schreibt, lässt sich nicht mehr gegen den wenden, der es liest:
 Werte werden auf ihrem Weg in die Dokumente maskiert, und die
 Konsistenzprüfungen der Administrationsoberfläche melden kein Problem mehr, gegen das niemand etwas tun kann.
-Einzelheiten und die Testliste stehen im Abschnitt Security von [OPML-Exporte](../../../eng-us/bc/6.0/opml.md).
+Einzelheiten und die Testliste stehen im Abschnitt Security von [OPML-Exporte](../../bc/6.0/opml.md).
 
 ## Aufräumen, was ein Import angelegt hat
 
 Ein RSS-Import fügt pro Eintrag ein Objekt hinzu und entfernt nie eines. Siehe
-[Aufräumen nach RSS-Importen](../../../eng-us/bc/6.0/cleanuprss.md), ein Skript und ein Cronjob-Teil.
+[Aufräumen nach RSS-Importen](../../bc/6.0/cleanuprss.md), ein Skript und ein Cronjob-Teil.
 
 ## Einstellungen auf einen Blick
 
@@ -103,10 +103,10 @@ Prüfen: `grep -n "AvailableVersionList\|OPMLMaxOutlines" settings/site.ini` und
 
 ## Verwandte Seiten
 
-- [OPML-Exporte](../../../eng-us/bc/6.0/opml.md), [Aufräumen nach RSS-Importen](../../../eng-us/bc/6.0/cleanuprss.md), [Spezifikation der Syndikation](../../spezifikationen/6.0/syndikation.md)
+- [OPML-Exporte](../../bc/6.0/opml.md), [Aufräumen nach RSS-Importen](../../bc/6.0/cleanuprss.md), [Spezifikation der Syndikation](../../spezifikationen/6.0/syndikation.md)
 - [Cronjobs in der Konsole](cronjobs-in-der-konsole.md) (der Teil zum Aufräumen nach Importen), [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md) (die RSS-Liste wird seitenweise angezeigt)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
-- [Chronik: September 2026, erste Hälfte, 14. September](../../../eng-us/history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Chronik: September 2026, erste Hälfte, 14. September](../../geschichte/2026/2026-09a.md#14-september-pdf-rss-und-die-rad-werkzeuge)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

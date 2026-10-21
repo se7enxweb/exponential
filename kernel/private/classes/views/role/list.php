@@ -35,6 +35,17 @@ class ListView extends \Exponential\Runnable\ModuleView
 
         $offset = $Params['Offset'];
 
+        // The search form without scripts is posted (q): answered with 303 to its /(q)/... address
+        if ( \expViewParameters::redirectsPost( $_POST, array( 'q' ) ) )
+        {
+            $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
+            $search = \expRolePage::normaliseSearch( \expViewParameters::posted( $_POST, 'q' ) );
+            \expViewParameters::redirect( 'role/list' . \expViewParameters::suffix( array(
+                'sort' => isset( $userParameters['sort'] ) ? $userParameters['sort'] : '',
+                'dir' => isset( $userParameters['dir'] ) ? $userParameters['dir'] : '',
+                'q' => $search ) ) );
+        }
+
         // The page sizes on offer are configured, not written here. The preference
         // stores the position in that list counting from one, which is what it has
         // always stored - the old 1, 2 and 3 still mean the first, second and third
@@ -94,9 +105,9 @@ class ListView extends \Exponential\Runnable\ModuleView
         // Sorted before paging, not in the browser: the list is shown a page at a time, so
         // reordering the rows on screen would sort ten of however many there are. The order
         // comes off the address as (sort)/(dir) - name, id, policies or assigned - and the
-        // search as ?q=, by name or id (expRolePage::listPage()).
+        // search as /(q)/, by name or id (expRolePage::listPage()); never a ?q= query string.
         $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
-        $search = \expRolePage::normaliseSearch( $http->hasGetVariable( 'q' ) ? $http->getVariable( 'q' ) : '' );
+        $search = \expRolePage::normaliseSearch( \expViewParameters::text( $scope['Params'], 'q', 'Query' ) );
 
         $listPage = \expRolePage::listPage( $search,
                                             isset( $userParameters['sort'] ) ? $userParameters['sort'] : 'name',
@@ -116,7 +127,7 @@ class ListView extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'role_summaries', $listPage['summaries'] );
         $tpl->setVariable( 'role_match_count', $listPage['count'] );
         $tpl->setVariable( 'role_search', $search );
-        $tpl->setVariable( 'role_search_suffix', $search === '' ? '' : '?q=' . rawurlencode( $search ) );
+        $tpl->setVariable( 'role_search_suffix', \expViewParameters::suffix( array( 'q' => $search ) ) );
         $tpl->setVariable( 'role_count_sort', $listPage['count_sort'] );
         $tpl->setVariable( 'role_removed', $removedCount );
         // The temporary roles were fetched here and handed to the template, which has
