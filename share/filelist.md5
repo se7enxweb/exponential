@@ -6300,7 +6300,7 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 26ddd0cf40cd46bd777c6a6cd595c001  doc/eng-us/features/6.0/velocity-websockets-and-events.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 772ba7f2425b05709fb0cd77716e96a4  doc/eng-us/features/6.0/web-server-and-solr-commands.md
-997d5b70ead17e96dd51324fb338be6d  doc/eng-us/glossary.md
+0f205f8411ccf82440b38a6a5691bd3d  doc/eng-us/glossary.md
 2a6e3f6d1c33d6562e4c57dc308abe0e  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 999db87a75423e3f7ae175009db335cc  doc/eng-us/guides/benchmarking.md
@@ -6976,7 +6976,7 @@ eea975368396b6c51979334d7cb8010f  doc/eng-us/help/contribute-extensions-back.md
 b8c28f2b5c30565caeda153c09c6e826  doc/eng-us/help/creators/app-creators/app-creator-faq.md
 c93ae043b53f73683b2a4e658f834514  doc/eng-us/help/creators/app-creators/app-creators-reading-path.md
 9dde5017ccd685d3910eece80462743b  doc/eng-us/help/creators/app-creators/app-creators-start-here.md
-7a74ca8d1089863d6e5d3866ba8e1048  doc/eng-us/help/creators/app-creators/architecture-for-app-creators.md
+0df6f28d70e2683b44efb080ee690208  doc/eng-us/help/creators/app-creators/architecture-for-app-creators.md
 169179ce073858f60d98125910c3d398  doc/eng-us/help/creators/app-creators/autoloads-and-class-naming.md
 832ffe006626b2f04024c460b27bdb5f  doc/eng-us/help/creators/app-creators/background-work-patterns.md
 64b3de09f5c64235855a7af21db6b1f2  doc/eng-us/help/creators/app-creators/caching-in-applications.md
@@ -7023,7 +7023,7 @@ dcdba8cd8c4c18000a537ccea46b76eb  doc/eng-us/help/creators/app-creators/packagin
 e6b6e362f3267dec065d9e929d222e50  doc/eng-us/help/creators/app-creators/scaling-applications.md
 7edc1787c3bf9f5772864b8c4a329c77  doc/eng-us/help/creators/app-creators/schema-and-dba-files.md
 0ccc0bf09846bd48b823469b13e0342f  doc/eng-us/help/creators/app-creators/security-for-applications.md
-3e6fe8d6b188492fab5a778fa5fc25ae  doc/eng-us/help/creators/app-creators/settings-and-ini-files.md
+e4012540aa68db99e3edadbbd0292344  doc/eng-us/help/creators/app-creators/settings-and-ini-files.md
 a9d3e9a0d71822b092e076e0b355cc31  doc/eng-us/help/creators/app-creators/symfony-and-the-legacy-bridge.md
 47fdaffe384f1419c199a77a80687504  doc/eng-us/help/creators/app-creators/template-functions-and-includes.md
 313ebc4b3334bfe4f423e10254103103  doc/eng-us/help/creators/app-creators/template-operators.md
@@ -7341,7 +7341,7 @@ d7a44189081dff4961e7b29811e9cfc1  doc/eng-us/help/designers/extensions/package-s
 a2f76fee0827c0617d0a0db0580c1126  doc/eng-us/help/designers/extensions/putting-a-theme-under-git.md
 7cbf1b8de97a32734e8a3ccafa6a179e  doc/eng-us/help/designers/extensions/readme-for-a-theme.md
 e8dd95bbf6d8c1ed0e54e739616061ef  doc/eng-us/help/designers/extensions/registering-the-design.md
-65b6527a5191338170df76504c837933  doc/eng-us/help/designers/extensions/settings-files-in-an-extension.md
+1e093e75442add1912cf336f6b804de8  doc/eng-us/help/designers/extensions/settings-files-in-an-extension.md
 d182e1acab8a82f3a98ad5580c34c706  doc/eng-us/help/designers/extensions/share-folder-assets.md
 43086e809254fd3a0b2a531e3c5f893a  doc/eng-us/help/designers/extensions/site-style-package.md
 325dd2ac251e54840ab82b0e7427ce53  doc/eng-us/help/designers/extensions/siteaccess-settings-in-an-extension.md
@@ -7353,7 +7353,7 @@ dc29b651767a3676b7f24170851d8d0e  doc/eng-us/help/designers/extensions/theme-ext
 0204826e58e937a97bdcff634dc41ab5  doc/eng-us/help/designers/extensions/validating-a-package.md
 9bdfa99c7af01adaa02a4aa95b01d73f  doc/eng-us/help/designers/extensions/what-a-theme-extension-is.md
 bcd496013f918daed328424fbdb66fd0  doc/eng-us/help/designers/extensions/what-an-exponential-package-is.md
-3e8f3848681386e71d00fbde57551a46  doc/eng-us/help/designers/extensions/your-own-ini-file.md
+ae8b81a832b66bbab5cf53db965121f5  doc/eng-us/help/designers/extensions/your-own-ini-file.md
 6377346db89a35e7ae63e35c03df81ba  doc/eng-us/help/designers/lifecycle/accessibility-audit-per-release.md
 6136dfcdee21081c2022abe7bf3431b4  doc/eng-us/help/designers/lifecycle/adopting-an-abandoned-theme.md
 3634005e8368df527e4c62fd362235c0  doc/eng-us/help/designers/lifecycle/announcing-end-of-life.md
@@ -7619,7 +7619,7 @@ c6f96d246cfe92719ae8636bc78a5eaf  doc/eng-us/help/extension-development/part-2-b
 4bc0cab9aa5a56ba979a3194b78898f1  doc/eng-us/help/extension-development/part-2-builder/override-conditions.md
 fb1b2c32e5f2bd4b82e202835b807c60  doc/eng-us/help/extension-development/part-2-builder/sections-roles-and-access-for-builders.md
 e76a6dc36845a62ce6479ba77a70aa56  doc/eng-us/help/extension-development/part-2-builder/settings-in-the-admin.md
-eff9ec5be42bc6b3730814b64e9bef9d  doc/eng-us/help/extension-development/part-2-builder/settings-scopes-and-their-order.md
+110cdf3ce68d9c3a344fdbc5b147db3e  doc/eng-us/help/extension-development/part-2-builder/settings-scopes-and-their-order.md
 ad0167c93ed8937a5d166737609d84fe  doc/eng-us/help/extension-development/part-2-builder/siteaccess-settings.md
 c7e964bc14c240b652c9c01c67c89241  doc/eng-us/help/extension-development/part-2-builder/template-operators-builders-use-most.md
 9f5d4ef258d2901abb7d701bb0b04b18  doc/eng-us/help/extension-development/part-2-builder/template-overrides-basics.md
@@ -10139,10 +10139,10 @@ bb7933fcdf35ff4d400663b812f4f319  doc/eng-us/help/trainers/developers/module-07-
 f86c753333aab687c792e193c9689413  doc/eng-us/help/trainers/developers/module-07-extensions/extension-xml-and-ezinfo.md
 f60356be282bc5b0b8d80ef3487a0017  doc/eng-us/help/trainers/developers/module-07-extensions/loading-order-and-dependencies.md
 34c021fcf07e401b5e374ee43b816eb5  doc/eng-us/help/trainers/developers/module-07-extensions/the-anatomy-of-an-extension.md
-ba551133d8580e34d320397a5cdd0f56  doc/eng-us/help/trainers/developers/module-08-settings-and-siteaccesses/README.md
+8b3381b2662056bd345a11cbabf3aedb  doc/eng-us/help/trainers/developers/module-08-settings-and-siteaccesses/README.md
 0d4a9cad343bbfeb07fb9a5a9aaa65b3  doc/eng-us/help/trainers/developers/module-08-settings-and-siteaccesses/changing-settings-with-exp-ini.md
 4e92679a2eb4235f998ff6e857ef234a  doc/eng-us/help/trainers/developers/module-08-settings-and-siteaccesses/how-settings-are-read.md
-0a0379be1b1c61092432bdaae3084320  doc/eng-us/help/trainers/developers/module-08-settings-and-siteaccesses/settings-of-your-own.md
+53df6eb82ec74f092dca4da59e7f18c9  doc/eng-us/help/trainers/developers/module-08-settings-and-siteaccesses/settings-of-your-own.md
 4ef55cf4d51e35b618fc54be8577a925  doc/eng-us/help/trainers/developers/module-08-settings-and-siteaccesses/siteaccess-settings.md
 6f3be3497b50177412493c376e128c71  doc/eng-us/help/trainers/developers/module-09-the-console-and-persistent-objects/README.md
 36034c6298c82404f93e00262796ac20  doc/eng-us/help/trainers/developers/module-09-the-console-and-persistent-objects/a-command-of-your-own.md
@@ -10372,14 +10372,14 @@ ad0f917ea652d41cb5ca50dfed4f229a  doc/eng-us/help/trainers/multisite-and-package
 edbda3c2329b540c52675c6fa66a9a69  doc/eng-us/help/trainers/multisite-and-packages/module-01-siteaccesses-for-several-sites/a-siteaccess-per-language.md
 3b9eb1d003af4b8864a0af1f5b018109  doc/eng-us/help/trainers/multisite-and-packages/module-01-siteaccesses-for-several-sites/adding-a-second-site.md
 650c18cf8f68f30b9855ab4f387b9894  doc/eng-us/help/trainers/multisite-and-packages/module-01-siteaccesses-for-several-sites/planning-several-sites.md
-ba2315720cb0b236aee226ad6bb73771  doc/eng-us/help/trainers/multisite-and-packages/module-01-siteaccesses-for-several-sites/what-a-siteaccess-is.md
+3bee01c2e11746f9cf860efb607c361d  doc/eng-us/help/trainers/multisite-and-packages/module-01-siteaccesses-for-several-sites/what-a-siteaccess-is.md
 273d5662d869dc7f21aa521fa347cd5b  doc/eng-us/help/trainers/multisite-and-packages/module-02-matching-requests/README.md
 f15c293b2d1a5f3179e3891a396ce27a  doc/eng-us/help/trainers/multisite-and-packages/module-02-matching-requests/host-and-path-and-port-matching.md
 e1410a581560e01bd4a4f0ab6812d0eb  doc/eng-us/help/trainers/multisite-and-packages/module-02-matching-requests/matching-by-host-name.md
 a3b4214c88bea088eefdbb0309fe1b6e  doc/eng-us/help/trainers/multisite-and-packages/module-02-matching-requests/matching-by-url-path.md
 6a417b0958afae115c449b075e3e9667  doc/eng-us/help/trainers/multisite-and-packages/module-02-matching-requests/the-redirect-to-the-language.md
 373050a2a7c894dc4b6fafce50036f38  doc/eng-us/help/trainers/multisite-and-packages/module-03-settings-logs-and-caches-per-site/README.md
-fec3fb5117887344b5eb434f3ff24db2  doc/eng-us/help/trainers/multisite-and-packages/module-03-settings-logs-and-caches-per-site/a-site-in-its-own-extension.md
+fff41b940504705532d5f8da05e0d966  doc/eng-us/help/trainers/multisite-and-packages/module-03-settings-logs-and-caches-per-site/a-site-in-its-own-extension.md
 2b74829aed90318843d6bf871e27a61c  doc/eng-us/help/trainers/multisite-and-packages/module-03-settings-logs-and-caches-per-site/caches-and-the-ini-cache-per-site.md
 1449e8a377509a8adb4146d27ea98a35  doc/eng-us/help/trainers/multisite-and-packages/module-03-settings-logs-and-caches-per-site/logs-per-site.md
 80f93d6b6c09eaaffcb00931852bc2fc  doc/eng-us/help/trainers/multisite-and-packages/module-03-settings-logs-and-caches-per-site/settings-for-every-siteaccess-of-a-site.md
@@ -10512,7 +10512,7 @@ c47c01dcb73f0157fd02affb3231291b  doc/eng-us/help/trainers/site-administrators/m
 bcf1fbe64ac3079dddd424b515966a01  doc/eng-us/help/trainers/site-administrators/module-10-upgrades-extensions-and-packages/the-extensions-page.md
 7e4bdadfe5f22608ce364d22fb19ef4f  doc/eng-us/help/trainers/site-administrators/module-10-upgrades-extensions-and-packages/the-upgrade-check.md
 e53d0396ec0530fbf3206ffe2599d8df  doc/eng-us/help/trainers/site-administrators/module-10-upgrades-extensions-and-packages/updates-with-ezupdate-and-git-manager.md
-440eef6b4e9756ed44a548c19b12bcad  doc/eng-us/help/trainers/teaching-the-core-concepts.md
+a6c01c6b34c8cd9ed303efe7ddc6da0e  doc/eng-us/help/trainers/teaching-the-core-concepts.md
 671d11aa9b02498ec02effa500aed58c  doc/eng-us/help/trainers/theme-designers/README.md
 a5061d1002b5ea179c54655ee8504a98  doc/eng-us/help/trainers/theme-designers/module-01-designs-and-the-fallback-chain/README.md
 b719ebcf5a109cd8f21b6972c30769b7  doc/eng-us/help/trainers/theme-designers/module-01-designs-and-the-fallback-chain/reading-the-chain-of-a-siteaccess.md
@@ -10962,7 +10962,7 @@ b157c3ab90ba4fbce6c8fe089c88636b  doc/eng-us/history/velocity/2026-09d.md
 09fe66cfd7efc177b0979e16d00d9add  doc/eng-us/history/velocity/2026-10.md
 1b26aebfc51d07107cde582d6f105804  doc/eng-us/history/velocity/README.md
 6579cb3af6b13e98420cb492887ed497  doc/eng-us/history/velocity/installers-and-packages.md
-1f389b3d5902ff2f562bd0924b8c69aa  doc/eng-us/install/01-introduction.md
+b68bbf093c5114ba13df0f04efc614d3  doc/eng-us/install/01-introduction.md
 a0237419a9a0faf1b387874abb50760b  doc/eng-us/install/02-requirements.md
 7bea663a2a256f193f28384b0e4e79a2  doc/eng-us/install/03-getting-the-code.md
 28eb992069d12fde6d6c23a4b46bed9d  doc/eng-us/install/04-choosing-an-install-method.md
@@ -11084,7 +11084,7 @@ f215c05198661b115822ecf85b049791  doc/eng-us/specifications/trunk/webdav/design.
 252df4ad929147a4f4291beb83c99f09  doc/eng-us/standards/accessibility.md
 8d189a14b6a389a554147cd1b96e3049  doc/eng-us/standards/apis-and-protocols.md
 76b1855ff6528d0dced746e1ff7e1e5c  doc/eng-us/standards/architecture/compatibility-releases-deployment.md
-0ddceb8d256796c6e6944fc21d5e17b1  doc/eng-us/standards/architecture/kernel-architecture.md
+7cb780b6b347d8eae94a177996e7ef6d  doc/eng-us/standards/architecture/kernel-architecture.md
 c82ccb5029181dda770339fe7005bf37  doc/eng-us/standards/architecture/layering-and-naming.md
 07b816e960351eda7772e822edbe9619  doc/eng-us/standards/coding-standards.md
 d355246fd0485dd8399e0aeb99a66299  doc/eng-us/standards/databases-and-sql.md
@@ -14425,7 +14425,7 @@ dfce835ea41187dc08f7603fdbc6630e  doc/ger-de/geschichte/velocity/2026-09d.md
 b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
-6480d927754f0d5b7f7921be16d49488  doc/ger-de/glossar.md
+e3ad212462012dd2d97c28fca761abae  doc/ger-de/glossar.md
 1f62393efc9d2bb1cb35424dfa6a31de  doc/ger-de/hilfe/README.md
 ce030b6ccdfe4601188003989aa000b7  doc/ger-de/hilfe/administratorpasswort-aendern.md
 1b4ca06dff8c67733d40517a66d087ee  doc/ger-de/hilfe/anmelden-im-editor.md
@@ -14454,10 +14454,10 @@ eac636060b94d935232e917054de6fe5  doc/ger-de/hilfe/designer/erweiterungen/design
 208b166c5c71655cb47c4b1764d32cca  doc/ger-de/hilfe/designer/erweiterungen/die-teile-des-design-assistenten.md
 8d58ced509dafb954147ebd06304e0af  doc/ger-de/hilfe/designer/erweiterungen/ein-paket-pruefen.md
 60cb5b1e6c966f4afdb08fb6223056f1  doc/ger-de/hilfe/designer/erweiterungen/ein-theme-unter-git-stellen.md
-9e670f4369bf45fae1d470c660b5a15d  doc/ger-de/hilfe/designer/erweiterungen/eine-eigene-ini-datei.md
+257719bd5965fc6fae57ae34a6004c5d  doc/ger-de/hilfe/designer/erweiterungen/eine-eigene-ini-datei.md
 0dbbaec22968d0ac36edcae58ba212af  doc/ger-de/hilfe/designer/erweiterungen/eine-erweiterung-als-paket-exportieren.md
 23bcf89d826abaecf56e902b7b873c56  doc/ger-de/hilfe/designer/erweiterungen/eine-theme-erweiterung-aktivieren.md
-b9b4cb7f3e66478e205cd10a4974eed5  doc/ger-de/hilfe/designer/erweiterungen/einstellungsdateien-in-einer-erweiterung.md
+a894ec33bd0c5eaa1f5150ee59b7de81  doc/ger-de/hilfe/designer/erweiterungen/einstellungsdateien-in-einer-erweiterung.md
 9250d1ea64081d21c50546dce8933008  doc/ger-de/hilfe/designer/erweiterungen/exportieren-mit-ezpm.md
 7dd07ae6b4c8f971e5fa2c7c67b95ddd  doc/ger-de/hilfe/designer/erweiterungen/extension-xml.md
 ccbc53ad54242f7a1e3d0c0bf22f57f3  doc/ger-de/hilfe/designer/erweiterungen/ezinfo-php.md
@@ -14754,7 +14754,7 @@ b9f2c654c6e3cae5633f299207573fe8  doc/ger-de/hilfe/erste-schritte.md
 9cc2d2c8827bc2de31f1eb03e3fb51eb  doc/ger-de/hilfe/ersteller/anwendungsentwickler/anwendungen-skalieren.md
 8a1950157ad1fa5637ed07d9167852ad  doc/ger-de/hilfe/ersteller/anwendungsentwickler/anwendungen-testen.md
 5a541328414e86859385e74b3824e343  doc/ger-de/hilfe/ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md
-34bcc488da351a0ead1d5d8eb169a399  doc/ger-de/hilfe/ersteller/anwendungsentwickler/architektur-fuer-anwendungsentwickler.md
+9d1e6e34dbc03478a8c84b5ad61a7fa8  doc/ger-de/hilfe/ersteller/anwendungsentwickler/architektur-fuer-anwendungsentwickler.md
 3017d2c1c1b346cf145f06db7d186909  doc/ger-de/hilfe/ersteller/anwendungsentwickler/aufbau-einer-erweiterung.md
 5e3c75bf61f39ad5e15c5a230b2a70ea  doc/ger-de/hilfe/ersteller/anwendungsentwickler/autoloads-und-klassenbenennung.md
 407109b8e445d1140f7d0072d8e99c7e  doc/ger-de/hilfe/ersteller/anwendungsentwickler/benachrichtigungen-und-mail.md
@@ -14774,7 +14774,7 @@ f30ac051a344889f12882a5d214c3f2a  doc/ger-de/hilfe/ersteller/anwendungsentwickle
 0047f1907c0d12b1230afa508147a99f  doc/ger-de/hilfe/ersteller/anwendungsentwickler/einen-cronjob-teil-schreiben.md
 1f1249e49610991cddf93f4739166b50  doc/ger-de/hilfe/ersteller/anwendungsentwickler/einen-workflow-ereignistyp-schreiben.md
 d501c4798a7d23efa28f7c3639f0ab0f  doc/ger-de/hilfe/ersteller/anwendungsentwickler/eingabepruefung-und-escaping.md
-2a8086eb879b9511dd6387cb42757af1  doc/ger-de/hilfe/ersteller/anwendungsentwickler/einstellungen-und-ini-dateien.md
+157c6e76e9f71a4ce4c0b9dac34b8a04  doc/ger-de/hilfe/ersteller/anwendungsentwickler/einstellungen-und-ini-dateien.md
 8f41f27309ed157ca98fa5119f7968fa  doc/ger-de/hilfe/ersteller/anwendungsentwickler/entfernte-dienste-expservices.md
 c9438d97354f04b93c369d8371aa2eb4  doc/ger-de/hilfe/ersteller/anwendungsentwickler/entwicklungsumgebung.md
 0266311c69f6a8af1044d47982cdd352  doc/ger-de/hilfe/ersteller/anwendungsentwickler/ergebnisse-von-ansichten-und-das-pagelayout.md
@@ -14922,7 +14922,7 @@ d7106e1e3334f4199fdddc280297b259  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 203a4d3a392a8e5d318d679380c24b8d  doc/ger-de/hilfe/erweiterungsentwicklung/teil-2-builder/die-wichtigsten-template-operatoren-fuer-builder.md
 94c50aed49201b30bc15af7555da68d1  doc/ger-de/hilfe/erweiterungsentwicklung/teil-2-builder/eine-website-ohne-code-bauen.md
 0cff26d35922e6c1fa39d420c27c2ef7  doc/ger-de/hilfe/erweiterungsentwicklung/teil-2-builder/einstellungen-in-der-administration.md
-f3d0f0297d3dd4601e4beaa69aa7776d  doc/ger-de/hilfe/erweiterungsentwicklung/teil-2-builder/einstellungsebenen-und-ihre-reihenfolge.md
+24200c1372478a3059ad862ccd6c8ae3  doc/ger-de/hilfe/erweiterungsentwicklung/teil-2-builder/einstellungsebenen-und-ihre-reihenfolge.md
 166bdfa372f08731e13da20b0420172a  doc/ger-de/hilfe/erweiterungsentwicklung/teil-2-builder/erweiterungseinstellungen-fuer-builder.md
 5597e40e5f3aafadbde005d45d47097e  doc/ger-de/hilfe/erweiterungsentwicklung/teil-2-builder/fetch-fuer-builder.md
 6841048d3c972927b519eaf762421b8a  doc/ger-de/hilfe/erweiterungsentwicklung/teil-2-builder/grundlagen-der-template-overrides.md
@@ -15998,7 +15998,7 @@ d11e44acf7ba5230799734b0133b545e  doc/ger-de/hilfe/template-sprache/variablen-im
 44d5e1ccd4c7cce31ba00057fec4d7c6  doc/ger-de/hilfe/template-sprache/was-die-template-sprache-ist.md
 746037edca320dcde5c2fd6e280e5349  doc/ger-de/hilfe/template-sprache/werte-und-literale.md
 7db54410a8783ccca0f62da7a3c73664  doc/ger-de/hilfe/template-sprache/zugriff-auf-attribute.md
-a0ae70e895abdf46b6675fcaeafa6e78  doc/ger-de/hilfe/trainer/die-kernkonzepte-unterrichten.md
+daaf9d7e3b48410526012b75be66b209  doc/ger-de/hilfe/trainer/die-kernkonzepte-unterrichten.md
 017a61a233fc31ef9d65ca9628f7f0c6  doc/ger-de/hilfe/trainer/entwickler/README.md
 e523feb41c6091a594594b6b545192c2  doc/ger-de/hilfe/trainer/entwickler/modul-01-die-entwicklungsinstallation/README.md
 30efaa2c677f6552a4a46812a1c7c1e1  doc/ger-de/hilfe/trainer/entwickler/modul-01-die-entwicklungsinstallation/debug-ausgabe-und-logs.md
@@ -16039,8 +16039,8 @@ b18a148e6b27dbf9c31a431bdac5298b  doc/ger-de/hilfe/trainer/entwickler/modul-07-e
 e8500db8cf5b9de00b7f81fe97fbbf47  doc/ger-de/hilfe/trainer/entwickler/modul-07-erweiterungen/ein-template-operator.md
 4a191152cd804f2c2fd74ba9ad80477a  doc/ger-de/hilfe/trainer/entwickler/modul-07-erweiterungen/extension-xml-und-ezinfo.md
 2d7d372ee6dac194758e68b2fe5d4481  doc/ger-de/hilfe/trainer/entwickler/modul-07-erweiterungen/ladereihenfolge-und-abhaengigkeiten.md
-33e7c6d7401d968b087a226d1087b285  doc/ger-de/hilfe/trainer/entwickler/modul-08-einstellungen-und-siteaccesses/README.md
-81a2d221db67783368b8a2e4f1592c27  doc/ger-de/hilfe/trainer/entwickler/modul-08-einstellungen-und-siteaccesses/eigene-einstellungen.md
+c08f22d4c3cae9275189bf0dc046856b  doc/ger-de/hilfe/trainer/entwickler/modul-08-einstellungen-und-siteaccesses/README.md
+31de742fd531d2a7e741601a0028c561  doc/ger-de/hilfe/trainer/entwickler/modul-08-einstellungen-und-siteaccesses/eigene-einstellungen.md
 565a33cedab2ce06f42b60b5249c8b79  doc/ger-de/hilfe/trainer/entwickler/modul-08-einstellungen-und-siteaccesses/einstellungen-mit-exp-ini-aendern.md
 80fa4907a72a8a711f0369e6b5166d5a  doc/ger-de/hilfe/trainer/entwickler/modul-08-einstellungen-und-siteaccesses/siteaccess-einstellungen.md
 a49dc3b997057d600b43a4323a5d8657  doc/ger-de/hilfe/trainer/entwickler/modul-08-einstellungen-und-siteaccesses/wie-einstellungen-gelesen-werden.md
@@ -16204,7 +16204,7 @@ d4997e7da999d00e02ab279cd561e096  doc/ger-de/hilfe/trainer/multisite-und-pakete/
 778fd109363e972b6dfef4328a864848  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-01-siteaccesses-fuer-mehrere-websites/ein-siteaccess-pro-sprache.md
 0dc5cafa43f9fb8ffebdffd35aa6741b  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-01-siteaccesses-fuer-mehrere-websites/eine-zweite-website-hinzufuegen.md
 d04da106389f4f0af7ea2aceddfec05e  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-01-siteaccesses-fuer-mehrere-websites/mehrere-websites-planen.md
-4ec77cf185f169e53955bc3aa68d48f4  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-01-siteaccesses-fuer-mehrere-websites/was-ein-siteaccess-ist.md
+a9e3f14863d13509f08f38ab16f6c100  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-01-siteaccesses-fuer-mehrere-websites/was-ein-siteaccess-ist.md
 b5d3a773eb03502a976c5de4b3dcb440  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-02-anfragen-zuordnen/README.md
 2151973e1472bb51dee735e9e3feea25  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-02-anfragen-zuordnen/die-weiterleitung-zur-sprache.md
 dce47cb53056aca2132de22863bcbcfd  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-02-anfragen-zuordnen/zuordnung-nach-host-und-pfad-und-port.md
@@ -16212,7 +16212,7 @@ b03424e79cc9f57df5aaba0320c4f6d2  doc/ger-de/hilfe/trainer/multisite-und-pakete/
 29890efbccefdc84ff84a2d4c87db365  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-02-anfragen-zuordnen/zuordnung-nach-url-pfad.md
 33e0cd18a394d474ebcf6f731b6422cb  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-03-einstellungen-logs-und-caches-pro-website/README.md
 93e7e4e67827fb2e9599c6b1feafa959  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-03-einstellungen-logs-und-caches-pro-website/caches-und-der-ini-cache-pro-website.md
-195c1fdff8e557a22f452dcc1e00bebc  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-03-einstellungen-logs-und-caches-pro-website/eine-website-in-einer-eigenen-erweiterung.md
+c99a4979b37235b6feddc67784df06a1  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-03-einstellungen-logs-und-caches-pro-website/eine-website-in-einer-eigenen-erweiterung.md
 78e4fcd5fafcf11137409a516359b4cc  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-03-einstellungen-logs-und-caches-pro-website/einstellungen-fuer-jeden-siteaccess-einer-website.md
 be7ddd01396697bf9508c192ea8cbf08  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-03-einstellungen-logs-und-caches-pro-website/logs-pro-website.md
 04224d3c681a7533d0d04ef0567f2fb1  doc/ger-de/hilfe/trainer/multisite-und-pakete/modul-04-links-zwischen-websites/README.md
@@ -17916,7 +17916,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 bf4112ade1d0697cecac448708ef69ea  doc/ger-de/hilfe/zwei-wege-zum-bauen/wie-die-kopfzeile-aufgebaut-ist.md
 b0189382eae8c8a8e308581bd2eefad3  doc/ger-de/hilfe/zwei-wege-zum-bauen/zuordnung-block-zu-template.md
 1f9f1223a8361795e1a8b774110680eb  doc/ger-de/hilfe/zwei-wege-zum-bauen/zwei-wege-zum-bauen.md
-a0e604e5f126a03b08dc2ad914d03355  doc/ger-de/installation/01-einfuehrung.md
+31c873da0d9d22612cac654656a0764b  doc/ger-de/installation/01-einfuehrung.md
 022fc531ad6117815cc6f0db02f60619  doc/ger-de/installation/02-voraussetzungen.md
 82bb7561c7cf4777de31863aeef2c10f  doc/ger-de/installation/03-den-code-beschaffen.md
 156edaa8c690d1815b2008c9b4115b54  doc/ger-de/installation/04-installationsweg-waehlen.md
@@ -17996,7 +17996,7 @@ c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
 b2225c1b2406f8c1101b4573f27c43bb  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
 cdc68be1cb1c1a7e315f10a4b4dc1b77  doc/ger-de/standards/apis-und-protokolle.md
-96b6c91884cc3a41ab3dd3aa6c5eb43e  doc/ger-de/standards/architektur/kernel-architektur.md
+f4b2034a339ea293b43a42dda7649215  doc/ger-de/standards/architektur/kernel-architektur.md
 8b6b6fca0836e5563e177dc55378dc84  doc/ger-de/standards/architektur/kompatibilitaet-releases-deployment.md
 43a2f1d024a49dcd7669c76add1cc44a  doc/ger-de/standards/architektur/schichten-und-benennung.md
 8916febe41c2dbad8726da4bd03b9d9d  doc/ger-de/standards/barrierefreiheit.md

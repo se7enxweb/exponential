@@ -398,7 +398,7 @@ enthält jeden Begriff der Dokumentation.
 | Match-Wert (match value) | Was einen Siteaccess auswählt: ein URL-Pfad, ein Port oder ein Hostname. Wird während der Installation gewählt; die Namen der Siteaccesses bleiben `site`, `admin` und `editor`. |
 | Design | Eine Sammlung von Templates, Styles und Bildern; ein Siteaccess wählt, welche Designs in welcher Reihenfolge durchsucht werden. |
 | Site-Paket | Das Archiv aus Inhalten, Klassen und Design, das beim Setup installiert wird; standardmäßig `sevenx_multisite`. |
-| INI-Datei | Eine Einstellungsdatei aus `[Block]`- und `Key=Value`-Zeilen; gelesen in der Reihenfolge: Standardwerte, Extensions, Siteaccess, Override. |
+| INI-Datei | Eine Einstellungsdatei aus `[Block]`- und `Key=Value`-Zeilen; gelesen in der Reihenfolge, eine spätere Datei gewinnt: Standardwerte, Siteaccess, Extensions, Override. |
 | Override (Einstellungen) | Eine Datei in `settings/override/` oder `settings/siteaccess/<name>/`, deren Werte die Standardwerte ersetzen. |
 | Setup-Assistent | Der Browser-Installer, aktiv solange `CheckValidity=true` gilt. |
 | Kickstarter | Der Kommandozeilen-Installer, der die Schritte des Assistenten aus `kickstart.ini` beantwortet. |

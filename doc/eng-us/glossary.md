@@ -143,7 +143,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## I
 
-- **INI file**: a settings file (`site.ini`, `content.ini`, ...) in blocks of `Key=Value`; read in order: defaults, extensions, siteaccess, override. [INI override placements](specifications/6.0/ini-override-placements.md), [exp:ini](features/6.0/exp-ini-command.md).
+- **INI file**: a settings file (`site.ini`, `content.ini`, ...) in blocks of `Key=Value`; read in order, a later file winning: defaults, siteaccess, extensions, override. [INI override placements](specifications/6.0/ini-override-placements.md), [exp:ini](features/6.0/exp-ini-command.md).
 - **install type**: a named installer of **Exponential Platform** (`exponential-oss`, `ibexa-oss`, `exponential-media`, `exponential-cjw`) run by `exponential:install <type>`. [Platform SQLite installer](specifications/6.0/platform-sqlite-installer.md).
 - **installation name**: the name shown on non-production pages so staging is never taken for production. [Installation name](features/6.0/installation-name-in-pages.md).
 - **installer / install**: `./console exp:install` installs a whole site in one command. [Install in one command](features/6.0/install-in-one-command.md).
