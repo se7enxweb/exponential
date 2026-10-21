@@ -1,7 +1,7 @@
 ---
 title: Pricing worksheet
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 170
 summary: Fill-in worksheets for pricing a reseller offer - a recurring care or hosting plan, a one-off project, a support contract and a white-label service - from cost floor to final price, with a worked example using placeholder figures.
 keywords: pricing worksheet, worksheet, price calculation, cost floor, margin, monthly price, project price, support price, white label price, worked example

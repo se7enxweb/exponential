@@ -1,7 +1,7 @@
 ---
 title: Kinds of bundles
 audience: bundler, partner, hosting
-category: partnership
+category: bundling
 order: 20
 summary: The ten kinds of Exponential bundles - container images, server and virtual machine images, hosting panel installers, Linux distribution packages, agency starter kits, Platform distributions, site packages, extension bundles, appliances and education or demo bundles - with what each contains, how it installs, how it updates and which page covers it.
 keywords: kinds of bundles, container, Docker, Podman, image, virtual machine, one-click installer, panel, deb, rpm, distribution package, starter kit, Nexus, Legacy, site package, extension bundle, appliance, demo, classroom

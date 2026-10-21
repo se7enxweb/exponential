@@ -1,7 +1,7 @@
 ---
 title: Hosting reseller
 audience: reseller, hosting, partner
-category: partnership
+category: reselling
 order: 70
 summary: How a hosting company or a reseller of hosting builds and sells Exponential hosting plans - what the plan must include technically, which engine and database fit which plan, what to promise and what to leave to the customer, licensing for hosts, and where the hosting section of the help takes over.
 keywords: hosting reseller, hosting plan, shared hosting, VPS, managed hosting, Velocity, PHP-FPM, SQLite, PostgreSQL, isolation, backups, plan design, reseller hosting, white-label hosting

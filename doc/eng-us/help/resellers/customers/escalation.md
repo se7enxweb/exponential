@@ -1,7 +1,7 @@
 ---
 title: Escalation for resellers
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 410
 summary: How a reseller escalates a customer problem it cannot solve alone - inside your company first, then partner support tickets, the partner team, paid 7x support, the public issue tracker for bugs, and security@se7enx.com for vulnerabilities - with what to send and what to tell the customer meanwhile.
 keywords: escalation, escalate, support ticket, partner support, partner team, paid support, issue tracker, bug report, security, security@se7enx.com, vulnerability, customer communication

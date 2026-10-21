@@ -1,7 +1,7 @@
 ---
 title: GPL obligations when you distribute a bundle
 audience: bundler, partner, hosting
-category: partnership
+category: bundling
 order: 110
 summary: What the GNU General Public License, version 2 or later, asks of a bundler who distributes Exponential - license texts, notices, corresponding source code including changes, no extra restrictions - how that applies to images, packages, installers and appliances, and a checklist. Not legal advice.
 keywords: GPL, GPL-2.0-or-later, license, obligations, distribution, source code, corresponding source, notices, written offer, appliance, image, installer, not legal advice

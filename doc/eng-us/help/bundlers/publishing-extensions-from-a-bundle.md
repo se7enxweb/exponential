@@ -1,7 +1,7 @@
 ---
 title: Publishing extensions from a bundle
 audience: bundler, partner, developer
-category: partnership
+category: bundling
 order: 480
 summary: How a bundler turns the generic extensions of a bundle into published extensions - separating them from customer work, metadata and license, a public repository and Packagist, releasing with versions that never move, and announcing and maintaining them.
 keywords: publish extension, Packagist, Composer, ezinfo.php, extension.xml, license, README, release, tag, version, webhook, announce, maintain, bundle

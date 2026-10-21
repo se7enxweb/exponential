@@ -1,7 +1,7 @@
 ---
 title: License texts and notices to ship
 audience: bundler, partner
-category: partnership
+category: bundling
 order: 120
 summary: The exact files and notices a bundle of Exponential carries - LICENSE, LICENSE.md, COPYRIGHT.md, the documentation license, extension license files and your own notices - where recipients can see them in a running installation (Info > About, Info > Copyright), and a notice file template for your bundle.
 keywords: license text, notices, LICENSE, LICENSE.md, COPYRIGHT.md, LICENSE-GFDL-1.3.txt, README-LICENSE.md, Info About, Info Copyright, ezinfo, notice file, attribution

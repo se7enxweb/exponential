@@ -1,7 +1,7 @@
 ---
 title: Case studies for resellers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 340
 summary: How resellers use case studies and customer references to sell hosting, managed sites, products and support - consent first, what a reseller case study shows, the points it earns in the partner program, white-label and OEM cases, and where to publish.
 keywords: case study, case studies, customer reference, reference, consent, proof, points, white label, OEM, publish, template, credibility

@@ -1,7 +1,7 @@
 ---
 title: Contributing bundle fixes back
 audience: bundler, partner, developer
-category: partnership
+category: bundling
 order: 470
 summary: Why and how a bundler sends fixes and improvements upstream instead of carrying them - the contribution workflow of the kernel, the GPL and the Contributor Licensing Agreement, extensions and site packages, documentation, and what to keep private.
 keywords: contribute, upstream, pull request, fork, CONTRIBUTING.md, CLA, GPL, commit message, Added, Updated, Fixed, filelist.md5, extension, site package, documentation, bundle

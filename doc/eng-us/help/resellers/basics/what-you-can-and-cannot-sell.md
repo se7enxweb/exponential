@@ -1,7 +1,7 @@
 ---
 title: What you can and cannot sell
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 20
 summary: A plain list of what a reseller may sell around Exponential - services, products, extensions, 7x services, training, documentation - what needs an agreement with 7x first, and what must never appear in an offer, with the source for each line.
 keywords: what to sell, resell, services, products, extensions, themes, documentation, 7x services, white label, OEM, license, certification, warranty, forbidden claims

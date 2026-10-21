@@ -1,7 +1,7 @@
 ---
 title: Database choices for bundles
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 240
 summary: Which databases a bundle of Exponential 6.0.x can use, in the project's official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), what each needs inside the bundle, how each installer names it, and which database fits which kind of bundle.
 keywords: database, SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL, Microsoft SQL Server, DatabaseImplementation, --db, Type, pdo, sqlite3, pgsql, mysqli, oci8, bundle

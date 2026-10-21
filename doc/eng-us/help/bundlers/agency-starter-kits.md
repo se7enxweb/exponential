@@ -1,7 +1,7 @@
 ---
 title: Agency starter kits
 audience: bundler, developer, project-manager
-category: partnership
+category: bundling
 order: 320
 summary: How an agency bundles Exponential, its extensions, a theme and a site package into a starter kit for new projects - the repository layout, Composer, a reviewed kickstart.ini per environment, its own site package, second extension root, ManagedByDeployment, handover to the customer, and keeping kits current.
 keywords: starter kit, agency, project template, repository, Composer, kickstart.ini, site package, theme, extension_src, AdditionalExtensionDirectories, ManagedByDeployment, handover, bundle

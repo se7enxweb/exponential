@@ -1,7 +1,7 @@
 ---
 title: Hosting panel installers
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 300
 summary: How to bundle Exponential as a one-click install in a hosting control panel or an app installer - which installer to call, the steps around it (account, database, code, install as the account's user, web server rules, cron, password hand-over), safety rules, and what the customer should receive.
 keywords: panel, control panel, one-click installer, app installer, Plesk, cPanel, DirectAdmin, ISPConfig, Webmin, exp:install, setup wizard, database, password, cron, bundle

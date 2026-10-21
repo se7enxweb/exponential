@@ -1,7 +1,7 @@
 ---
 title: File permissions and var/ ownership in a bundle
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 390
 summary: Which directories of a bundled installation must be writable and by whom, the one-user and one-group setups, the hardened file modes to ship instead of the world-writable defaults, the SQLite directory, Velocity's workers, and how to build images so root never owns var/.
 keywords: permissions, ownership, var/, settings, design, extension, chown, chmod, setgid, umask, StorageDirPermissions, StorageFilePermissions, TemporaryPermissions, LogFilePermissions, root, Velocity User, bundle

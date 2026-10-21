@@ -1,7 +1,7 @@
 ---
 title: What reselling means for free software
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 10
 summary: Why you can charge money for offers built on Exponential although the software is free, what the GNU GPL v2 or later allows a reseller, what it asks when you distribute copies, and where the documentation license fits. Not legal advice.
 keywords: GPL, GPL v2 or later, free software, reselling, charge, distribute, source code, copyright notices, license, GFDL, legal advice, no license fee

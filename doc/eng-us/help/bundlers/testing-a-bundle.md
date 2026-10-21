@@ -1,7 +1,7 @@
 ---
 title: Testing a bundle
 audience: bundler, developer
-category: partnership
+category: bundling
 order: 430
 summary: What to test before a bundle release - the build, a clean install with each database and PHP version you claim, the first boot, an offline install, permissions, security checks, integrity, an upgrade from the previous bundle release, and a test matrix and log to keep.
 keywords: test, testing, bundle, test matrix, clean install, dry run, smoke test, setup.log, exit status, checkclasses, checkmanifest, upgrade test, offline, PHP versions, databases

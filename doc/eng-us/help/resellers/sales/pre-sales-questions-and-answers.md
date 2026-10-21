@@ -1,7 +1,7 @@
 ---
 title: Pre-sales questions and answers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 270
 summary: The questions a reseller asks a prospect in discovery, and the questions prospects ask a reseller - license and cost, hosting, databases, languages, multi-site, shop, security, privacy, updates, support, exit - with sourced answers and the page that proves each one.
 keywords: pre-sales, discovery, questions, answers, prospect, requirements, license, cost, hosting, databases, languages, multisite, shop, security, privacy, updates, support, exit, tender

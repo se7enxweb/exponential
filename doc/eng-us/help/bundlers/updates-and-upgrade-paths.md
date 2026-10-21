@@ -1,7 +1,7 @@
 ---
 title: Updates and upgrade paths for bundled installations
 audience: bundler, hosting, admin
-category: partnership
+category: bundling
 order: 420
 summary: How bundled installations get new Exponential releases - the two halves of every update (code and database), the update routes (new image, package manager, Git and Composer, the administration's Git Manager and ezupdate), who does what, how to announce updates, and security releases.
 keywords: update, upgrade, upgrade path, release, security fix, dbupdate, update/database, Git, Composer, Git Manager, ezupdate, image, container, package manager, maintenance mode, bundle

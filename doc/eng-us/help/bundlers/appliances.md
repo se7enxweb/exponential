@@ -1,7 +1,7 @@
 ---
 title: Appliances
 audience: bundler, partner
-category: partnership
+category: bundling
 order: 360
 summary: How to bundle Exponential as a hardware or sealed virtual appliance - what an appliance owes its owner under the GPL, a first-boot setup, updates and security fixes over the appliance's life, backups, support, and an appliance checklist. Not legal advice.
 keywords: appliance, hardware, sealed virtual machine, box, first boot, setup, GPL, source code, updates, security fixes, backup, support, OEM, bundle

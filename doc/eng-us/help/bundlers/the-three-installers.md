@@ -1,7 +1,7 @@
 ---
 title: The three installers, from a bundler's view
 audience: bundler, hosting, developer
-category: partnership
+category: bundling
 order: 190
 summary: The setup wizard, the kickstarter and exp:install run the same install steps; what differs is where the answers come from. Which one a bundle should call, what each writes, how each guards against overwriting a site, and how each handles the administrator password.
 keywords: installer, setup wizard, kickstarter, exp:install, install.php, kickstarter.php, CreateSites, unattended, bundle, dry run, force, maintenance mode, exit status

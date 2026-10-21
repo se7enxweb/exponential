@@ -1,7 +1,7 @@
 ---
 title: Sales process for resellers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 260
 summary: A sales process for reselling Exponential-based offers - from lead to signed contract in seven stages - with what to do and which help page to use at each stage, the documents to prepare, when to involve 7x, and a pipeline record.
 keywords: sales process, pipeline, lead, qualification, discovery, demo, proposal, negotiation, closing, handover to delivery, pre-sales, 7x, stages

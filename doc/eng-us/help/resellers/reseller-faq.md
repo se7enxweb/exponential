@@ -1,7 +1,7 @@
 ---
 title: Reseller FAQ
 audience: reseller, partner, hosting, sales-marketing
-category: partnership
+category: reselling
 order: 510
 summary: Short answers to the questions resellers of Exponential-based offers ask most - licenses and what you may charge, partner levels and prices, commissions, white label and OEM, service levels, naming, demos, documentation, updates and data protection - each with the page that explains it.
 keywords: FAQ, questions, answers, reseller, license, charge, partner level, price, commission, white label, OEM, SLA, naming, demo mode, documentation, updates, GDPR

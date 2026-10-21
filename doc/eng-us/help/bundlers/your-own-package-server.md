@@ -1,7 +1,7 @@
 ---
 title: Your own package server for a bundle
 audience: bundler, hosting, developer
-category: partnership
+category: bundling
 order: 170
 summary: When a bundle needs its own package server or a mirror of the public one, the settings that point an installation at it (RemotePackagesIndexURL, RemotePackagesIndexURLBase, Vendor, ezupdate servers), the warning that your index replaces the public one, and how to keep it current.
 keywords: package server, mirror, index.xml, RemotePackagesIndexURL, RemotePackagesIndexURLBase, AdditionalRemotePackagesIndexURLs, Vendor, ezupdate, server-add, package.ini, override, bundle

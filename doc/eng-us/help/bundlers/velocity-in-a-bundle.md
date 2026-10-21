@@ -1,7 +1,7 @@
 ---
 title: Velocity in a bundle
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 270
 summary: How a bundle serves Exponential with Velocity, the web and application server that is part of Exponential since 6.0.15 - where it comes from (Composer, deb and rpm, Docker images, binaries), the engine setting, users and root, starting at boot, deploying a change, and what to check.
 keywords: Velocity, exponential-velocity, qbix, Engine, velocity.ini, ServerSettings, User, Group, AllowRootWorkers, systemd, exp:velocity start, status, deploy, ext check, deb, rpm, ghcr.io, bundle

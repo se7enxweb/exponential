@@ -1,7 +1,7 @@
 ---
 title: Data protection for resellers
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 430
 summary: How a reseller protects the personal data of its customers and their visitors - your role as a processor, processing terms and subprocessors, what Exponential provides for privacy (consent records, masked logs, retention, erasure) and its known gaps, where data leaks in practice, and a checklist. Not legal advice.
 keywords: data protection, privacy, GDPR, personal data, processor, controller, data processing agreement, subprocessors, consent, retention, erasure, logs, staging, leads, case studies

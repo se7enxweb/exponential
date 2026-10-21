@@ -1,7 +1,7 @@
 ---
 title: Monthly checklist for resellers
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 480
 summary: The monthly routine of a reseller of Exponential-based offers - releases and the site inventory, backups and restore tests, logs and security, support statistics, partner activity, pipeline and invoicing - with a monthly customer report template.
 keywords: monthly checklist, routine, releases, inventory, backups, restore test, logs, security, support statistics, partner tickets, pipeline, invoicing, customer report

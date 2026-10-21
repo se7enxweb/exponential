@@ -1,7 +1,7 @@
 ---
 title: Keeping customers current
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 390
 summary: How a reseller keeps every customer site on the maintained Exponential release and a supported PHP version - what the project supports, a site inventory, the four parts of an update, the tools (ezupdate, the upgrade check, maintenance mode), an update rhythm, pricing upgrades, and talking with customers about them.
 keywords: upgrades, updates, keeping current, release line, 6.0.x, SECURITY.md, PHP versions, inventory, ezupdate, git_manager, upgrade check, maintenance mode, rhythm, pricing, old sites

@@ -1,7 +1,7 @@
 ---
 title: What a bundle is
 audience: bundler, partner
-category: partnership
+category: bundling
 order: 10
 summary: What counts as a bundle of Exponential, the parts every bundle is made of, what changes legally and practically the moment you hand a bundle to someone else, and the questions to answer before you build one.
 keywords: bundle, bundling, distribution, redistribution, image, installer, starter kit, appliance, parts of a bundle, recipient, conveying, GPL

@@ -1,7 +1,7 @@
 ---
 title: Caches and autoloads after building
 audience: bundler, developer, hosting
-category: partnership
+category: bundling
 order: 400
 summary: What a bundle build and an update must refresh - the autoload arrays (ezpgenerateautoloads.php -e, -k, -o, .autoloadignore), the caches (ezcache.php --clear-tag, --clear-id, --clear-all, cache.php), Velocity's workers and response cache, and the documented order after a code change.
 keywords: autoload, ezpgenerateautoloads.php, -e, -k, -o, .autoloadignore, cache, ezcache.php, --clear-tag, --clear-id, --clear-all, --list-tags, cache.php, exp:velocity deploy, response cache, OPcache, order, bundle

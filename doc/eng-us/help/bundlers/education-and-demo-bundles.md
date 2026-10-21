@@ -1,7 +1,7 @@
 ---
 title: Education and demo bundles
 audience: bundler, trainer, sales-marketing
-category: partnership
+category: bundling
 order: 350
 summary: How to bundle Exponential for classrooms, workshops, trade shows and public demos - SQLite and exp:install for speed, the demo content packages, resetting a site between groups, published passwords only with demo mode, offline readiness, and what students and prospects should be told.
 keywords: education, classroom, training, workshop, demo, public demo, trade show, SQLite, exp:install, demo content, reset, kickstarter, EXP_DEMO_MODE, offline, bundle

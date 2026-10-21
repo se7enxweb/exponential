@@ -1,7 +1,7 @@
 ---
 title: Handling objections as a reseller
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 280
 summary: The objections resellers hear - about the software (security, maintenance, longevity, lock-in, skills) and about the reseller itself (why pay for free software, why you and not 7x, what if you disappear) - with answers built only from sources, and the honest answer where the sources say no.
 keywords: objections, objection handling, security, maintained, longevity, lock-in, skills, free software, price, why pay, reseller risk, exit, honest answer

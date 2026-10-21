@@ -1,7 +1,7 @@
 ---
 title: Renewals and churn
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 400
 summary: How a reseller keeps Exponential customers year after year when the GPL lets them leave at any time - renewal timing, the yearly review, price changes, signs of churn, win-back, and a renewal calendar - plus how your own partner renewal fits in.
 keywords: renewals, churn, retention, customer loyalty, yearly review, price change, notice period, exit, win-back, renewal calendar, partner renewal

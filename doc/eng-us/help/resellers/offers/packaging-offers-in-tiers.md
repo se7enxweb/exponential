@@ -1,7 +1,7 @@
 ---
 title: Packaging offers in tiers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 150
 summary: How to package Exponential-based services into three or four clear tiers - what goes into each tier, which differences customers understand, add-ons, what never to put in a tier, and a tier table to copy.
 keywords: tiers, packages, plans, bronze silver gold, starter standard premium, add-ons, offer design, packaging, care plan, hosting plan, bundle

@@ -1,7 +1,7 @@
 ---
 title: Choosing the base of a bundle
 audience: bundler, partner, developer
-category: partnership
+category: bundling
 order: 30
 summary: How to choose what your bundle is built on - Exponential 6 on its own, or a Platform distribution that carries it (Legacy, Nexus) - with the facts that decide it - PHP range, the legacy kernel, the layouts editor, the installer, the database - and a decision table.
 keywords: base, choose, Exponential 6, Legacy distribution, Nexus, Platform, DXP, legacy kernel, Symfony, layouts editor, PHP version, decision

@@ -1,7 +1,7 @@
 ---
 title: Offline bundles
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 180
 summary: How to build a bundle that installs Exponential without internet access - code and Composer packages in the bundle, site packages imported with ezpm before the install, what the installer does when the package server cannot be reached, the dry-run caveat, and a test that proves the bundle works offline.
 keywords: offline, air-gapped, no internet, import, ezpm import, var/storage/packages, local index.xml, dry run, appliance, classroom, bundle

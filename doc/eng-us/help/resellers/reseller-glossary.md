@@ -1,7 +1,7 @@
 ---
 title: Reseller glossary
 audience: reseller, partner, hosting, sales-marketing
-category: partnership
+category: reselling
 order: 520
 summary: The terms used in the reseller pages, from cold lead to white label - licensing, partner program, offer design, technical and contract terms - each defined in a sentence with the page that explains it.
 keywords: glossary, terms, definitions, reseller, GPL, GFDL, OEM, white label, cold lead, hot lead, siteaccess, demo mode, SLA, processor, distribution, partner level

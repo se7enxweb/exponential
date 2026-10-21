@@ -1,7 +1,7 @@
 ---
 title: Bundle worksheet
 audience: bundler, partner
-category: partnership
+category: bundling
 order: 500
 summary: A worksheet to fill in once per bundle and review at every release - identity, base and versions, parts, licenses, installation, database and server, security, updates, support and partnership - with the page that explains each answer.
 keywords: worksheet, template, bundle plan, decision record, versions, licenses, installer, database, web server, security, updates, support, checklist

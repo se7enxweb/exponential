@@ -1,7 +1,7 @@
 ---
 title: Yearly checklist for resellers
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 490
 summary: The yearly review of a reseller business around Exponential - partner level and renewal, cost model and prices, offers and service levels, contracts, PHP versions and extensions across all customer sites, security and data protection reviews, marketing material and giving back to the project.
 keywords: yearly checklist, annual review, partner renewal, partner level, prices, cost model, contracts, PHP versions, extensions, security review, data protection review, marketing material, contribution

@@ -1,7 +1,7 @@
 ---
 title: First boot and install once
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 230
 summary: Why a bundle installs the site at the recipient's first start and never at build time or at every start, the documented "already installed" test, a first-boot sequence with ownership, secrets, the install, the password hand-over and clean-up, and what a bundle must never contain when it leaves your hands.
 keywords: first boot, install once, entry point, already installed, DatabaseSettings, settings/override, idempotent, cloud-init, systemd, container, image, secrets, initial-admin-password

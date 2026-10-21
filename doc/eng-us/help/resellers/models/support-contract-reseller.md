@@ -1,7 +1,7 @@
 ---
 title: Support contract reseller
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 120
 summary: How to sell support contracts for Exponential sites - what a contract covers, severity levels, the three kinds of support behind you (community, partner tickets, paid 7x support), how to staff it so your promises hold, and a contract summary to copy.
 keywords: support contract, support plan, severity, response time, first response, resolution, on call, partner tickets, paid support, community support, escalation, SLA

@@ -1,7 +1,7 @@
 ---
 title: Documentation to ship with a bundle
 audience: bundler, partner
-category: partnership
+category: bundling
 order: 150
 summary: Which documentation a bundle of Exponential carries - the doc/ tree with the built-in help, its GNU FDL 1.3 license and notices, your own guides - what the GFDL lets you do with the help (copy, adapt, translate, sell) and what it asks in return, and a list of pages worth pointing recipients to.
 keywords: documentation, GFDL, GNU Free Documentation License, doc/, help, LICENSE-GFDL-1.3.txt, README-LICENSE.md, manual, adapt, translate, bundle documentation, first steps

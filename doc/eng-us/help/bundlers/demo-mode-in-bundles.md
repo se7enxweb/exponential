@@ -1,7 +1,7 @@
 ---
 title: Demo mode in bundles
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 340
 summary: When a bundle may use demo mode (EXP_DEMO_MODE=1) and when it must never - what it changes, how a demo bundle sets it for every process, installing with a published password, rebuilding on a schedule, and how to keep it out of every bundle meant for real sites.
 keywords: demo mode, EXP_DEMO_MODE, public demo, published password, demo bundle, environment variable, PHP-FPM, Velocity envvars, container, cron, rebuild, banner

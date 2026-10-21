@@ -1,7 +1,7 @@
 ---
 title: Multilingual offers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 230
 summary: How to sell multilingual Exponential sites honestly - translations per content object, a siteaccess per language, 268 locale files and 33 administration translations, right-to-left support, the limit of 62 content languages on 64-bit PHP, what to check before you promise a language, and what to price.
 keywords: multilingual, languages, translation, locale, content language, administration translation, siteaccess per language, right to left, RTL, 62 content languages, 64-bit, machine-assisted translations, pricing

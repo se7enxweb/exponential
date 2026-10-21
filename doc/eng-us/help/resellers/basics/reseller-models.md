@@ -1,7 +1,7 @@
 ---
 title: Reseller models
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 30
 summary: The eight ways to resell around Exponential - hosting reseller, managed service, white label, OEM product, extension and theme bundles, support contracts, training resale and referral only - compared by what you sell, what you need, where the margin comes from and which partner benefit applies.
 keywords: reseller models, business model, hosting reseller, managed service, white label, OEM, extension bundle, theme bundle, support contract, training, referral, commission, agency

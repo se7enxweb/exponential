@@ -1,7 +1,7 @@
 ---
 title: Factual comparisons for resellers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 290
 summary: How a reseller compares Exponential, and its own offer, with alternatives using only properties a buyer can verify - license, self-hosting, databases, PHP versions, release integrity, security process, no lock-in - plus rules for comparing your offer with other resellers' and phrases to use and avoid.
 keywords: comparison, competitor, competitors, factual, verifiable, license, self-hosting, databases, lock-in, comparison grid, phrases, fair comparison, other resellers

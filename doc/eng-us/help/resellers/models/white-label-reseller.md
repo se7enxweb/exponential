@@ -1,7 +1,7 @@
 ---
 title: White-label reseller
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 90
 summary: How a reseller delivers 7x services under its own name - the White-Label 7x Services benefit from the Professional level, the services 7x publishes, the partner discounts that form your margin, the questions to settle in writing, and how to stay honest with the end customer.
 keywords: white label, white-label, 7x services, Professional, discount, margin, subcontractor, hosting, support, development, end customer, transparency

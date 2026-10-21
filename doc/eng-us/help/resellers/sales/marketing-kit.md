@@ -1,7 +1,7 @@
 ---
 title: Marketing kit for resellers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 330
 summary: What a reseller's marketing kit contains and where each piece comes from - positioning, a one-page offer, feature highlights, the license statement, logos you may use, screenshots from your own installation, a demo, case studies, adapted help pages - and the rules for co-marketing with 7x by partner level.
 keywords: marketing kit, sales material, positioning, one-pager, datasheet, feature highlights, logos, screenshots, demo, case study, co-marketing, joint marketing, partner page

@@ -1,7 +1,7 @@
 ---
 title: Documentation you can give your customers
 audience: reseller, partner, trainer
-category: partnership
+category: reselling
 order: 380
 summary: How a reseller hands documentation to its customers - linking to the help, copying pages, and adapting and rebranding them into a customer manual under the GNU Free Documentation License 1.3 - with exactly what the license allows and requires, older pages with other terms, and a manual plan.
 keywords: documentation, customer manual, GFDL, GNU Free Documentation License, copy, adapt, rebrand, translate, notices, license, modified version, history, title, older pages

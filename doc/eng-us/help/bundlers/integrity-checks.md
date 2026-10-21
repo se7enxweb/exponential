@@ -1,7 +1,7 @@
 ---
 title: Integrity checks for a bundle
 audience: bundler, hosting, developer
-category: partnership
+category: bundling
 order: 410
 summary: How a bundler proves the Exponential files in a bundle are the released ones - the file manifest share/filelist.md5, bin/php/checkmanifest.php and its options, the admin's file consistency check, extension manifests, checksums of packages and downloads, and what to do with intentional changes.
 keywords: integrity, manifest, share/filelist.md5, checkmanifest.php, --all, --extensions, --csv, --staged, --fix, file consistency check, upgrade check, SHA256SUMS, checksum, bundle

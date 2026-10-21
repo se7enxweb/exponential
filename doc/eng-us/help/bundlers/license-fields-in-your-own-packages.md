@@ -1,7 +1,7 @@
 ---
 title: License fields in your own packages
 audience: bundler, developer
-category: partnership
+category: bundling
 order: 140
 summary: Where the license of the parts you add to a bundle is written - composer.json, ezinfo.php, extension.xml, package.xml of a site package and your LICENSE file - with the SPDX identifiers Exponential uses, the strict license list in package.ini, how to add your own license to it, and versions in Semantic Versioning.
 keywords: license field, SPDX, composer.json license, ezinfo.php License, extension.xml license, package.xml, package.ini LicenseSettings, DefaultLicense, LicenseList, GPL-2.0-or-later, Semantic Versioning, version

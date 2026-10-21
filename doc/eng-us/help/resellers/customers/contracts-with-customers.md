@@ -1,7 +1,7 @@
 ---
 title: Contracts with customers
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 350
 summary: What a reseller's contract with an end customer for an Exponential-based offer should contain - parties and subcontractors, scope, service levels, license statement, ownership, data processing, security, changes, term and renewal, exit and handover - with a clause checklist. Not legal advice.
 keywords: contract, customer contract, agreement, terms, scope, service levels, license, ownership, data processing, DPA, subcontractors, warranty, liability, term, renewal, termination, exit, handover

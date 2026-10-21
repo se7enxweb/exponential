@@ -1,7 +1,7 @@
 ---
 title: Handing over to a customer or a new provider
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 370
 summary: How a reseller hands a site over at the end of a project or a contract - a complete export (database, var/storage, settings), accounts, domain, custom code with the GPL duties, documentation, the order of steps, deletion afterwards - and why a clean exit is part of a good offer.
 keywords: handover, hand over, exit, offboarding, export, database dump, var/storage, settings/override, settings/siteaccess, domain, accounts, custom code, GPL, deletion, new provider

@@ -1,7 +1,7 @@
 ---
 title: Adding and removing extensions in a bundle
 audience: bundler, developer
-category: partnership
+category: bundling
 order: 100
 summary: How a bundle adds an extension (Composer, autoloads, caches, ActiveExtensions or the site package), how it leaves a required one out, the loading order, extension exports and their secret check, and a checklist for every extension you put in.
 keywords: extension, add extension, remove extension, ActiveExtensions, composer require, composer remove, autoload, loading order, extension export, secret check, AllowedExtensions, bundle

@@ -1,7 +1,7 @@
 ---
 title: Bundler FAQ
 audience: bundler, partner, hosting
-category: partnership
+category: bundling
 order: 520
 summary: Short answers to the questions bundlers ask most - may we sell it, must we publish our code, which version and database, how to avoid default passwords, Docker files, offline installs, updates, branding, support and the partner program - each with the page that explains it.
 keywords: FAQ, questions, bundle, sell, GPL, source code, Docker, version, database, password, offline, update, brand, support, OEM, partner

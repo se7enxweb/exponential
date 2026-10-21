@@ -1,7 +1,7 @@
 ---
 title: Distribution obligations checklist
 audience: reseller, partner, developer
-category: partnership
+category: reselling
 order: 450
 summary: The checklist a reseller works through before handing copies of Exponential to anyone - images, appliances, downloads, OEM products, files a customer takes away - covering license texts, copyright notices, source code, marked changes, extension and component licenses, documentation and naming. Not legal advice.
 keywords: distribution, GPL obligations, license, LICENSE, COPYRIGHT.md, source code, copyright notices, modified files, extensions, third-party components, GFDL, documentation, image, appliance, OEM

@@ -1,7 +1,7 @@
 ---
 title: Bundler reading path
 audience: bundler, partner
-category: partnership
+category: bundling
 order: 540
 summary: Every bundler page in reading order, in seven stages from understanding bundles to life after release, with what each stage answers and a short path for readers in a hurry.
 keywords: reading path, order, bundler pages, stages, learning path, overview, where to start

@@ -1,7 +1,7 @@
 ---
 title: Referral-only reselling
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 50
 summary: How to earn from Exponential without delivering anything yourself - passing leads to 7x for the published lead referral commission of 10% (cold lead) or 20% (hot lead) of the total contract value - with the questions to settle first, a qualification sheet and a record template.
 keywords: referral, referral only, commission, cold lead, hot lead, total contract value, lead, 7x, partner terms, qualification, consent

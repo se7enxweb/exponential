@@ -1,7 +1,7 @@
 ---
 title: "Bundlers: start here"
 audience: bundler, partner, hosting
-category: partnership
+category: bundling
 order: 1
 summary: The landing page for people and companies who bundle Exponential with other software and ship the result - server images, containers, panel installers, distribution packages, agency starter kits, distributions, site packages, extension bundles, appliances and demo bundles. What a bundle is, the rules that matter, a map of every bundler page and reading paths by role.
 keywords: bundler, bundle, bundling, distribution, image, container, appliance, one-click installer, starter kit, site package, extension bundle, packaging, GPL, kickstarter, exp:install, release checklist

@@ -1,7 +1,7 @@
 ---
 title: Demo sites for resellers
 audience: reseller, partner, hosting, sales-marketing
-category: partnership
+category: reselling
 order: 250
 summary: How a reseller runs demo sites for prospects - a private demo you control, or a public demo with a published sign-in in demo mode (the environment variable EXP_DEMO_MODE=1), choosing the site package, rebuilding on a schedule, what demo mode does and does not protect, and a demo site checklist.
 keywords: demo, demo site, public demo, demo mode, EXP_DEMO_MODE, published password, sevenx_multisite, site package, rebuild, prospects, sales demo, trial

@@ -1,7 +1,7 @@
 ---
 title: Versions, tags and pinning in a bundle
 audience: bundler, developer
-category: partnership
+category: bundling
 order: 70
 summary: How Exponential and its extensions are versioned, why a published release tag never changes and what that means for a bundle, how to find the newest release correctly (version sort, not name sort), how the tilde constraints in composer.json behave, and how to version your own bundle.
 keywords: version, tag, release, pin, immutable, Packagist, sort -V, version:refname, tilde, ~, branch alias, dev-main, 6.0.x-dev, bundle version

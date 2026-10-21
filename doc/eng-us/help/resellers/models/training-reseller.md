@@ -1,7 +1,7 @@
 ---
 title: Training reseller
 audience: reseller, partner, trainer
-category: partnership
+category: reselling
 order: 130
 summary: How to resell training around Exponential - editor, administrator and developer courses, workshops and coaching - with what the partner program says about training, the free material you may build courses on under the GNU FDL, how to describe your course honestly, and a course offer sheet.
 keywords: training, course, workshop, coaching, editors, administrators, developers, knowledge products, Kick-Off Package, official training, GFDL, course material, trainers

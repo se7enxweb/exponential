@@ -1,7 +1,7 @@
 ---
 title: Extension bundles
 audience: bundler, developer
-category: partnership
+category: bundling
 order: 330
 summary: How to ship several Exponential extensions as one bundle - a Composer meta package or a documented set, dependencies in extension.xml, loading order, version and license fields that agree, the secret check for exported packages, testing against each Exponential release, and documentation.
 keywords: extension bundle, meta package, Composer, extension.xml, requires, extends, loading order, ActiveExtensions, ezinfo.php, version, license, secret check, test, bundle

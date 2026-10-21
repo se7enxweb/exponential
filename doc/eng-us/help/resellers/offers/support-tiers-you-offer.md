@@ -1,7 +1,7 @@
 ---
 title: Support tiers you offer
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 200
 summary: How a reseller structures the support it sells - the line between hosting support and application support, tier options from basic to development, what each tier needs from your team, how partner support and paid 7x support sit behind your tiers, and a tier sheet to copy.
 keywords: support tiers, support levels, hosting support, application support, managed, development, first line, second line, escalation, partner tickets, tier sheet

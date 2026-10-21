@@ -1,7 +1,7 @@
 ---
 title: A reseller's first 90 days
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 460
 summary: A week-by-week plan for a new reseller of Exponential-based offers - understanding the licenses, choosing a model and a partner level, building and pricing the offer, setting up demo and operations, the first sales and the first customer - with a checklist per month.
 keywords: first 90 days, new reseller, plan, checklist, onboarding, partner level, offer, pricing, demo, operations, first customer, launch

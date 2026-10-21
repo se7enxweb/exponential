@@ -1,7 +1,7 @@
 ---
 title: Naming and brand for resellers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 310
 summary: How resellers name the product, the organizations and their own status correctly - Exponential, 7x, the Exponential Foundation, "Exponential Partner (Level)", when "reseller" may describe you, your own brand next to Exponential, white-label and OEM naming, and wrong-versus-right examples.
 keywords: naming, brand, Exponential, 7x, Exponential Foundation, reseller, Exponential Partner, Distribution profile, white label, OEM, product name, logos, old product name, wording

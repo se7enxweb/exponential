@@ -1,7 +1,7 @@
 ---
 title: Security responsibilities of resellers
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 420
 summary: What a reseller is responsible for in the security of the Exponential sites it sells - the shared responsibility split with the project, hosts and customers, a per-site security checklist, credentials, updates, private disclosure to security@se7enx.com, demo sites, and a short incident plan.
 keywords: security, responsibilities, shared responsibility, hardening, updates, credentials, passwords, two-step sign-in, Content Security Policy, audit trail, vulnerability, security@se7enx.com, incident, demo mode

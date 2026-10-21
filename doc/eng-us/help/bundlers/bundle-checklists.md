@@ -1,7 +1,7 @@
 ---
 title: Bundle checklists
 audience: bundler, hosting, partner
-category: partnership
+category: bundling
 order: 510
 summary: The short checklists of the bundler pages in one place - before you build, the build, the artifact, first boot, the installed site, licenses, the release, after the release - each item linking to the page that explains it.
 keywords: checklist, checklists, bundle, build, artifact, first boot, installed site, licenses, release, after release, review

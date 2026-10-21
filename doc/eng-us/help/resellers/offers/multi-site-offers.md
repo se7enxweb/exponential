@@ -1,7 +1,7 @@
 ---
 title: Multi-site offers
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 220
 summary: How to sell several sites on one Exponential installation - siteaccesses matched by URL, host or port, the sevenx_multisite site package, per-site logs and caches, when separate installations are better, how to define and price "a site", and an offer checklist.
 keywords: multisite, multi-site, siteaccess, several sites, multi-brand, host matching, HostMatchMapItems, sevenx_multisite, per-site settings, logs per site, pricing per site, one installation

@@ -1,7 +1,7 @@
 ---
 title: Getting the code for a bundle
 audience: bundler, developer
-category: partnership
+category: bundling
 order: 60
 summary: The three documented ways to get Exponential's code (git clone and composer install, composer create-project, composer require into your own project), which one suits which kind of bundle, and how to check the result before you build on it.
 keywords: get the code, git clone, composer install, create-project, composer require, --no-dev, --prefer-source, --keep-vcs, ezpublish-legacy, LegacyKernelInstaller, allow-plugins, bundle build

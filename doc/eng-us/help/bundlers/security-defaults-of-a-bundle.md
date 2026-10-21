@@ -1,7 +1,7 @@
 ---
 title: Security defaults of a bundle
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 380
 summary: The security state a bundle should hand over - what Exponential already does by default, the settings a bundle should decide (file modes, debug output, CheckValidity, cookies, HTTPS and headers, trusted proxies, demo mode off), what must never ship, and the go-live checklist of the installation guide applied to bundles.
 keywords: security, defaults, hardening, bundle, CheckValidity, DebugOutput, CookieSecure, HTTPS, HSTS, security headers, TrustedProxies, file permissions, demo mode, ezformtoken, audit, go-live checklist

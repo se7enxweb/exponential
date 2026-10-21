@@ -1,7 +1,7 @@
 ---
 title: Exponential 6 as the base of a bundle
 audience: bundler, developer, hosting
-category: partnership
+category: bundling
 order: 40
 summary: What a bundle built on Exponential 6 already contains before you add anything - the kernel, the extensions the root composer.json requires, Velocity, the default theme and the site packages the installers offer - and how to read and adjust that list.
 keywords: Exponential 6, composer.json, require, suggest, default extensions, Velocity, sevenx_themes_simple, site package, sevenx_multisite, base, distribution

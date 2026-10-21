@@ -1,7 +1,7 @@
 ---
 title: Container images
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 280
 summary: How to bundle Exponential as a Docker or Podman image - the project ships no Dockerfile, so this page gives generic guidance - choosing a base, what goes in the image and what on volumes, the documented entry point that installs once and keeps Velocity running, secrets, the SQLite one-writer rule, and an image checklist.
 keywords: container, Docker, Podman, image, Dockerfile, volume, entry point, exp:install, Velocity, ghcr.io, SQLite, PostgreSQL, secrets, EXP_INSTALL_DB_PASSWORD, bundle

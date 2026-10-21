@@ -1,7 +1,7 @@
 ---
 title: E-commerce offers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 240
 summary: How to sell store offers on the shop built into Exponential - what the shop does (products, prices and currencies, VAT, basket and checkout, orders, dashboard, payment gateways, discounts), the payment extensions, what is not included and must be built or bought, card payments and PCI, and an offer checklist.
 keywords: e-commerce, shop, store, products, basket, checkout, orders, VAT, currencies, payment gateway, PayPal, ezpaypal, ezauthorize, discounts, store dashboard, PCI, not included, stock, coupons

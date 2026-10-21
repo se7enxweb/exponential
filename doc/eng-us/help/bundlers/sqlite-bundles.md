@@ -1,7 +1,7 @@
 ---
 title: SQLite bundles
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 250
 summary: Why SQLite 3, the default database, suits many bundles, what the driver does for concurrent use, the four files and their permissions, the one-writer-host rule, backups, and when a bundle should offer a database server instead.
 keywords: SQLite, SQLite 3, default database, var/storage/sqlite3, WAL, writer-lock, one machine, permissions, backup, appliance, demo, classroom, bundle

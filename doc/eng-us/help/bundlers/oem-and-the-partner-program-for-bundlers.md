@@ -1,7 +1,7 @@
 ---
 title: OEM and the partner program for bundlers
 audience: bundler, partner
-category: partnership
+category: bundling
 order: 490
 summary: What the Exponential Partner Program offers a bundler - the OEM resale opportunity at every level, the Distribution profile, levels and where prices are published, lead commissions, how to join (pay first, then sign), and the questions to ask the partner team about bundles.
 keywords: OEM, OEM resale, partner program, Distribution partner, levels, Student, Now, Starter, Basic, Professional, Silver, Gold, Platinum, prices, commission, cold lead, hot lead, pay first then sign, partners@exponential.earth, bundle

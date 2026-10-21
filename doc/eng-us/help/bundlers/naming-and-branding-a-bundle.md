@@ -1,7 +1,7 @@
 ---
 title: Naming and branding a bundle
 audience: bundler, partner, sales-marketing
-category: partnership
+category: bundling
 order: 450
 summary: How to name and describe a bundle of Exponential honestly - the product names to use, the old name only as history, what a bundle may and may not call itself, code prefixes for your own parts, "Powered by Exponential" credits, and ready-to-use phrases.
 keywords: naming, brand, bundle name, based on Exponential, Exponential 6, 7x, Exponential Foundation, old name, Powered by Exponential, code prefix, sevenx, exp, trademark, description

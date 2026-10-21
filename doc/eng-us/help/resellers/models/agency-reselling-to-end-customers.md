@@ -1,7 +1,7 @@
 ---
 title: Agencies reselling to end customers
 audience: reseller, partner, project-manager
-category: partnership
+category: reselling
 order: 140
 summary: How a web agency resells Exponential-based offers to its own clients - the project, then hosting, care plan, support and training - who owns what at the end, how to buy in what you do not deliver yourself, and the agency's reselling checklist.
 keywords: agency, web agency, end customer, client, project, care plan, maintenance, hosting, white label, subcontracting, ownership, handover, recurring revenue

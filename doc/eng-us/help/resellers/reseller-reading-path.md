@@ -1,7 +1,7 @@
 ---
 title: Reseller reading path
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 500
 summary: Every reseller page in a sensible reading order, in five stages from understanding the licenses to running the business, with the time each stage takes and shorter paths for owners, sales staff and technical staff.
 keywords: reading path, reading order, learning path, resellers, overview, stages, owners, sales, technical staff

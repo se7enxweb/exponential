@@ -1,7 +1,7 @@
 ---
 title: Composer-based bundles
 audience: bundler, developer
-category: partnership
+category: bundling
 order: 80
 summary: How to build a bundle as a Composer project of your own - the root composer.json, the installer plugin, allowing it, your own extensions and repositories, constraints in the style the project uses, the post-install autoload step, and what never to do with Composer in a bundle.
 keywords: Composer, composer.json, bundle, project, require, repositories, allow-plugins, exponential-legacy-installer, ezpublish-legacy, post-install-cmd, ezpgenerateautoloads, --no-dev, tilde, constraints

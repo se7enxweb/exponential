@@ -1,7 +1,7 @@
 ---
 title: Onboarding customers
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 360
 summary: How a reseller onboards a new customer for an Exponential-based offer - the kickoff, collecting facts, setting up or taking over the site, accounts and roles, first backup and restore test, editor training, and the first 30 days - with an onboarding checklist and a welcome letter template.
 keywords: onboarding, new customer, kickoff, welcome, take over, setup, accounts, roles, backup, restore test, training, first 30 days, inventory, checklist

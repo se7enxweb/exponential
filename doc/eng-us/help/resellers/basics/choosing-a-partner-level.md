@@ -1,7 +1,7 @@
 ---
 title: Choosing a partner level for reselling
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 40
 summary: Which Exponential Partner level a reseller needs for each reseller model, with the published prices, the benefits that matter for reselling (OEM resale, white label, pre-sales support, referrals, discounts), the revenue requirements, and the order of paying and signing.
 keywords: partner level, Student, Now, Starter, Basic, Professional, Silver, Gold, Platinum, price, white label, OEM, pre-sales, referrals, discount, revenue requirement, pay first, then sign

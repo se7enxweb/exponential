@@ -1,7 +1,7 @@
 ---
 title: Pricing your offer
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 160
 summary: How resellers set prices for Exponential-based offers when there is no license cost to mark up - cost-based, value-based and market-based pricing, one-off versus recurring prices, what to charge for separately, and how to explain the price to customers.
 keywords: pricing, price, cost-based, value-based, market price, recurring, monthly fee, setup fee, hourly rate, hours bank, no license fee, total cost of ownership

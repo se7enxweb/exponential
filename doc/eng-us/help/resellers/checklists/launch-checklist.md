@@ -1,7 +1,7 @@
 ---
 title: Launch checklist for resellers
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 470
 summary: The checklist a reseller works through before a customer's Exponential site, plan or product goes live - contract and commercial items, technical readiness, security, backups, monitoring, content and accessibility checks, training, documentation and the first day after launch.
 keywords: launch, go-live, checklist, launch checklist, customer site, readiness, security, backups, monitoring, DNS, TLS, training, documentation, Powered by Exponential

@@ -1,7 +1,7 @@
 ---
 title: Web server and engine choices for bundles
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 260
 summary: Which web servers and engines can serve a bundled Exponential - Velocity (recommended), FrankenPHP, Apache, nginx, Caddy, LiteSpeed, IIS with PHP-FPM - the routing rules every one of them must implement, the checked example files to start from, and how to choose for each kind of bundle.
 keywords: web server, engine, Velocity, qbix, FrankenPHP, Apache, nginx, Caddy, LiteSpeed, IIS, PHP-FPM, .htaccess_root, routing, document root, example configuration, bundle

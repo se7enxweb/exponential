@@ -1,7 +1,7 @@
 ---
 title: Bundle release checklist
 audience: bundler, partner
-category: partnership
+category: bundling
 order: 440
 summary: The checklist to work through before a bundle release goes out - versions chosen from what is published, pinned parts, licenses and notices, security defaults, tests, integrity, documentation, the source offer, naming, and publishing a release that will never be changed.
 keywords: release checklist, bundle release, version, tag, immutable, lock file, licenses, notices, source offer, tests, integrity, documentation, naming, publish

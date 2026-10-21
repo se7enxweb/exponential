@@ -1,7 +1,7 @@
 ---
 title: Support boundaries for bundles
 audience: bundler, partner, hosting
-category: partnership
+category: bundling
 order: 460
 summary: Who supports what in a bundle - you, 7x, the community, the authors of extensions - the three kinds of support the project names, how partner support levels fit, how to route bugs and security reports, and a support statement template for your bundle.
 keywords: support, boundaries, responsibility, community support, partner support, 7x, paid support, tickets, response time, bug report, security report, support statement, bundle

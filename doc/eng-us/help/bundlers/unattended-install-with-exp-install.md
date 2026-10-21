@@ -1,7 +1,7 @@
 ---
 title: Unattended install with exp:install
 audience: bundler, hosting, developer
-category: partnership
+category: bundling
 order: 200
 summary: How a bundle installs Exponential with one command - exp:install and its options for database, site, administrator and control, secrets in EXP_INSTALL_DB_PASSWORD, the database action, the generated password file, exit status, logs, and safe patterns for images and installers.
 keywords: exp:install, install.php, unattended, --db, --db-action, --package, --url, --access, --host, --admin-host, --email, --password, --random-password, --force, --dry-run, --print, EXP_INSTALL_DB_PASSWORD, initial-admin-password, exit status

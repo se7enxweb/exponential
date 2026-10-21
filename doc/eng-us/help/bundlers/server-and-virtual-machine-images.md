@@ -1,7 +1,7 @@
 ---
 title: Server and virtual machine images
 audience: bundler, hosting
-category: partnership
+category: bundling
 order: 290
 summary: How to bundle Exponential in a cloud server or virtual machine image - the operating systems the project lists, what to install at build time, what to leave for first boot, the services an image must start (web server or Velocity, cron, backups), and an image checklist.
 keywords: server image, virtual machine, VM, cloud image, marketplace, operating system, tier, first boot, cloud-init, systemd, Velocity, PHP-FPM, cron, backups, bundle

@@ -1,7 +1,7 @@
 ---
 title: Margin and cost worksheet
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 180
 summary: A yearly cost and margin model for a reseller business around Exponential - fixed costs including the partner subscription, cost per customer, break-even number of customers, the effect of partner discounts and referral commissions, and the signs that a margin is too thin.
 keywords: margin, cost, worksheet, break-even, fixed costs, variable costs, partner subscription, discount, commission, profitability, unit economics, yearly model

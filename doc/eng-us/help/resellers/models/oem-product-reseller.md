@@ -1,7 +1,7 @@
 ---
 title: OEM product reseller
 audience: reseller, partner, developer
-category: partnership
+category: reselling
 order: 100
 summary: How to sell your own product built on Exponential - a packaged solution, a hosted product, an appliance or image - under the OEM resale opportunity of the partner program, with the GPL duties of distributing it, how to name it, how to keep it on supported releases, and the questions for the partner team.
 keywords: OEM, OEM product, resale, packaged solution, SaaS, appliance, image, site package, distribution, GPL, source code, product name, support of the core

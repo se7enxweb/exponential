@@ -1,7 +1,7 @@
 ---
 title: Linux distribution packaging
 audience: bundler, hosting, developer
-category: partnership
+category: bundling
 order: 310
 summary: What a Linux distribution packager should know before packaging Exponential as deb or rpm - the project publishes no distribution package of the CMS (Velocity has deb and rpm packages), the installation writes into its own tree, how Composer dependencies relate to distribution policies, what the post-install step should and should not do, and updates.
 keywords: Linux distribution, packaging, deb, rpm, Debian, Ubuntu, Fedora, Enterprise Linux, FHS, /usr/share, /var/lib, Composer, vendor, post-install, Velocity package, bundle

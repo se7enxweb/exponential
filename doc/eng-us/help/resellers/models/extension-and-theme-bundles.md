@@ -1,7 +1,7 @@
 ---
 title: Extension and theme bundles
 audience: reseller, partner, developer, designer
-category: partnership
+category: reselling
 order: 110
 summary: How to resell extensions and themes for Exponential as bundles - your own work, project extensions and third-party ones - with the license check for each part, business models that respect the GPL, what a bundle must contain, versioning against Exponential releases, and support terms.
 keywords: extension bundle, theme bundle, extensions, themes, designs, site package, resell, license, GPL, extension.xml, ezinfo.php, Info About, versioning, support, Composer

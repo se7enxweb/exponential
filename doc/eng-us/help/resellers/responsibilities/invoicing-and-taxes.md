@@ -1,7 +1,7 @@
 ---
 title: Invoicing and taxes for resellers
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 440
 summary: How a reseller writes invoices for Exponential-based offers - service descriptions instead of license lines, one-off and recurring items, referral commission invoices, the partner subscription as a purchase - and the tax questions to take to an accountant. Not tax advice.
 keywords: invoicing, invoice, taxes, VAT, sales tax, accountant, service description, recurring billing, commission, partner subscription, records, not tax advice

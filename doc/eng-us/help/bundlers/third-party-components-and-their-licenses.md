@@ -1,7 +1,7 @@
 ---
 title: Third-party components and their licenses
 audience: bundler, partner, developer
-category: partnership
+category: bundling
 order: 130
 summary: How a bundler finds every component inside a bundle and its license - Composer packages, extensions, JavaScript and CSS libraries, site packages, the runtime and the operating system - how to build the third-party list, and how to spot a license that does not fit. Not legal advice.
 keywords: third-party, licenses, composer licenses, SPDX, extension license, JavaScript library, site package license, operating system, inventory, THIRD-PARTY, compatibility

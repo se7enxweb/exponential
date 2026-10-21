@@ -1,7 +1,7 @@
 ---
 title: The kickstarter for bundles
 audience: bundler, hosting, developer
-category: partnership
+category: bundling
 order: 210
 summary: How a bundle uses the kickstarter - kickstart.ini in the installation root, the ini and run commands with their real options, the sections of the file, DatabaseAction, the registration report a bundle should leave off, the generated password, re-runs and clean-up.
 keywords: kickstarter, kickstart.ini, kickstart.ini-dist, kickstart.ini--example, exp:kickstarter, kickstarter.php, ini, run, --yes, --defaults, --from-installed, --dry-run, --list-steps, --start-step, --stop-step, --force, DatabaseAction, registration, Send

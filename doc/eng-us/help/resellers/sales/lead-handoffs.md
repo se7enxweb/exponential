@@ -1,7 +1,7 @@
 ---
 title: Lead handoffs for resellers
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 300
 summary: How resellers hand leads to 7x and to other partners, and receive leads back - the principles, consent, the hand-off note, response times, conflicts, commission records and closing the loop - building on the partner program's referral terms.
 keywords: lead handoff, hand-off, referral, leads, 7x, partners, consent, hand-off note, commission, cold lead, hot lead, conflict, closing the loop

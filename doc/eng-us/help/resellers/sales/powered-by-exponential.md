@@ -1,7 +1,7 @@
 ---
 title: Showing Powered by Exponential as a reseller
 audience: reseller, partner, sales-marketing
-category: partnership
+category: reselling
 order: 320
 summary: How resellers use a "Powered by Exponential" credit on customer sites, hosting pages and products - the points it earns in the partner program, the customer's consent, honest wording, accessible placement, white-label and OEM cases, and a contract clause to copy.
 keywords: Powered by Exponential, badge, credit, footer, points, customer consent, white label, OEM, accessibility, contract clause, visibility

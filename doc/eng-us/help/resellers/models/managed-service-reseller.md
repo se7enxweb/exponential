@@ -1,7 +1,7 @@
 ---
 title: Managed service reseller
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 80
 summary: How to sell Exponential sites as a managed service - you run, update, back up and watch the site for a monthly fee - with the tasks the service covers, the tools Exponential provides for each, a responsibility matrix to put in the contract, and the costs to price in.
 keywords: managed service, managed site, care plan, maintenance plan, monthly fee, updates, backups, monitoring, ezupdate, upgrade check, maintenance mode, responsibility matrix

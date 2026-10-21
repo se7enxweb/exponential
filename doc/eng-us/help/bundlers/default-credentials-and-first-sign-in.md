@@ -1,7 +1,7 @@
 ---
 title: Default credentials and first sign-in
 audience: bundler, hosting, admin
-category: partnership
+category: bundling
 order: 370
 summary: Which administrator password a bundled installation ends up with for each installer, why no bundle may ship a fixed or shared password, how to hand a generated password to the recipient once, how to make the first sign-in lead to a password change, and the database seed password every bundler must know about.
 keywords: default password, administrator, admin, initial-admin-password, publish, generated password, MinPasswordLength, well-known passwords, WeakPasswordCheck, first sign-in, hand-over, exp:resetuserpassword, bundle

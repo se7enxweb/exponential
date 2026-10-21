@@ -1,7 +1,7 @@
 ---
 title: Working with 7x and the Foundation as a reseller
 audience: reseller, partner
-category: partnership
+category: reselling
 order: 60
 summary: Who a reseller deals with behind Exponential - 7x, the company that runs the partner program and leads development, and the Exponential Foundation, the nonprofit that operates the project - what to expect from each, the contacts, and how to give back so the product you sell keeps improving.
 keywords: 7x, Exponential Foundation, partner team, partners@exponential.earth, contacts, support, sponsor, contribute, roadmap, relationship

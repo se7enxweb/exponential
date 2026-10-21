@@ -1,7 +1,7 @@
 ---
 title: Service level design for resellers
 audience: reseller, partner, hosting
-category: partnership
+category: reselling
 order: 190
 summary: How a reseller designs service levels it can keep - why the response times of the partner plans are what 7x promises you and not what you may promise your customers, how to derive your own times from your staff, what the project itself commits to, and a service level statement to copy.
 keywords: service level, SLA, response time, first response, resolution, uptime, partner plan, 7x response time, business hours, on call, severity, credits, security fixes

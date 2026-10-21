@@ -1,7 +1,7 @@
 ---
 title: Platform distributions as the base of a bundle
 audience: bundler, developer
-category: partnership
+category: bundling
 order: 50
 summary: What bundlers need to know when they build on the Exponential Platform Legacy or Nexus distributions - which lines carry Exponential 6, how they install, the version traps on Packagist, the default account in the demo data, and how to keep a distribution-based bundle current.
 keywords: Legacy, Nexus, Exponential Platform, distribution, legacy bridge, Symfony, exponential:install, exponential-media, Packagist, versions, create-project, demo account

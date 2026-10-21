@@ -1,7 +1,7 @@
 ---
 title: "Resellers: start here"
 audience: reseller, partner, hosting, sales-marketing
-category: partnership
+category: reselling
 order: 1
 summary: The landing page for companies and freelancers who resell offers based on Exponential - hosting plans, managed sites, support contracts, white-label 7x services, OEM products, extension bundles and training - with the rules in one minute, a map of every reseller page, reading paths by role and who to ask.
 keywords: reseller, resellers, reselling, resell, start here, hosting reseller, managed service, white label, OEM, extension bundle, support contract, training, agency, referral, commission, GPL, partner program, 7x, Exponential Foundation

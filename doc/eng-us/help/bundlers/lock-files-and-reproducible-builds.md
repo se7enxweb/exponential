@@ -1,7 +1,7 @@
 ---
 title: Lock files and reproducible builds
 audience: bundler, developer
-category: partnership
+category: bundling
 order: 90
 summary: Why a bundle must carry its own composer.lock (the kernel repository has none), how to build the same bundle twice, what else must be pinned besides Composer, and a build record to keep with every release.
 keywords: composer.lock, reproducible build, lock file, composer install, composer update, build record, checksum, SHA256SUMS, image digest, pinning

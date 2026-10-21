@@ -1,7 +1,7 @@
 ---
 title: Bundler glossary
 audience: bundler, partner, hosting
-category: partnership
+category: bundling
 order: 530
 summary: The words of the bundler pages in one place - bundle, base, distribution, release tag, lock file, site package, package server, installer, kickstarter, exp:install, CreateSites, demo mode, manifest, Velocity, engine, OEM and more - each with the page that explains it.
 keywords: glossary, terms, bundle, distribution, tag, lock file, site package, ezpkg, package server, kickstarter, exp:install, CreateSites, demo mode, manifest, Velocity, OEM, GPL, GFDL
