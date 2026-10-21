@@ -38,7 +38,7 @@ The books describe older releases. Read them for concepts and keep this table at
 | PHP 4 and PHP 5 examples | PHP 8.0 to 8.5 | [Part 4](../part-4-upgrading/README.md) |
 | JavaScript in templates | Script files only, under a Content Security Policy | [Content Security Policy for extension authors](../part-3-extension-developer/content-security-policy-for-extensions.md) |
 
-The chapters of the Learning book, rewritten for Exponential 6, are in [Learning Exponential](../../book-learning/README.md).
+The chapters of the Learning book, rewritten for Exponential 6, are in [Learning Exponential](../../book-learning/README.md), and the tutorial *Building a site* is in [Building a site step by step](../../book-building-a-site/README.md).
 
 ## Reusing their text
 

@@ -51,7 +51,31 @@ explains how the books relate to this help and how to read the original against 
 5. [Overriding templates](overriding-templates.md)
 6. [Common template tasks](common-template-tasks.md)
 
-More chapters (the core, extending, deploying) follow.
+## Chapter 4: Inside the core
+
+1. [Inside the core: permissions and persistent objects](inside-the-core-permissions-and-persistence.md)
+2. [Inside the core: content classes, workflows, notifications, information collection, search](inside-the-core-classes-and-services.md)
+
+## Chapter 5: Extending
+
+1. [Extending: why, where and how](extending-why-where-how.md)
+2. [The building blocks of an extension](extension-building-blocks.md)
+
+## Chapter 6: Extension development
+
+1. [Extension development practices](extension-development-practices.md)
+
+## Chapter 7: Deploying
+
+1. [Deploying: planning the hosting and checking the server](deploying-planning-and-checking.md)
+
+## Chapter 9: A standards-compliant site
+
+1. [A standards-compliant site: markup, style and structure](a-standards-compliant-site.md)
+
+The tutorial that builds a complete small site is in [Building a site step by step](../book-building-a-site/README.md).
+
+Chapter 8 of the book is a case study of one client project and is not adapted; its lessons are in chapters 7 and 9 above.
 
 ## Source and license
 
