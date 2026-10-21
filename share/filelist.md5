@@ -3607,7 +3607,7 @@ d9151af9fa51426efaa3f0f867b73dd5  doc/eng-us/examples/demo-mode/apache-vhost-dem
 f63b1459bc018cd25380629340f6cf86  doc/eng-us/examples/demo-mode/crontab-demo
 8e8e4c7adc9953ba057eaec91c272a17  doc/eng-us/examples/demo-mode/docker-demo.env
 fe2338de7f116fb2d6461ca17a1d5460  doc/eng-us/examples/demo-mode/htaccess-setenv.conf
-1a64380ba1a7164ff63e75704ade8cab  doc/eng-us/examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh
+eec0794c1a3439cc9fae79ab0c0d57d9  doc/eng-us/examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh
 c3b16416aa018ac3a5588b9945d60b22  doc/eng-us/examples/demo-mode/install-demo-sqlite.sh
 cca5d7ab779676279104a95fbfe62288  doc/eng-us/examples/demo-mode/nginx-fastcgi-demo.conf
 85231412f69ddf5584dc88af3b27095c  doc/eng-us/examples/demo-mode/php-fpm-pool-demo.conf
@@ -7972,7 +7972,7 @@ f063100f7fa79e1d84a447e7461477af  doc/eng-us/help/e-commerce/e-commerce-faq.md
 67390daf594d3f339ad7abaed8420991  doc/eng-us/help/e-commerce/e-commerce-glossary.md
 d20cafdf9cc56aa8dbb21d93fdff011e  doc/eng-us/help/e-commerce/e-commerce-reading-path.md
 783d39f2a8c13c452fbb1c6d41106061  doc/eng-us/help/e-commerce/e-commerce-start-here.md
-c8debbb02c3ef8e789365e0cadbbfaa3  doc/eng-us/help/e-commerce/extending/README.md
+68daddb94e18591737841c14a0976f02  doc/eng-us/help/e-commerce/extending/README.md
 0adc8390c4aace0f583cb40f6122022c  doc/eng-us/help/e-commerce/extending/basket-info-and-confirm-order-handlers.md
 14136948c603c751574ca777f81a8b54  doc/eng-us/help/e-commerce/extending/custom-price-datatypes.md
 0d73470479d5eff55ca2907193f6e66d  doc/eng-us/help/e-commerce/extending/custom-shipping-handler.md

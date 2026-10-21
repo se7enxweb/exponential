@@ -46,6 +46,10 @@ calls it in place of its own. Everything on these pages goes into an extension o
 The RAD tool **Setup > RAD** has a handler wizard (`setup/handlerextension/<kind>`) with recipes for payment gateways,
 VAT, shipping, basket info and exchange rate handlers; it writes the class, the setting and an extension around them
 ([Extensions](../../../guides/extensions.md#63-the-handler-wizard-step-by-step)).
+A payment gateway made by the wizard is written to `extension/<name>/paymentgateways/<alias>/classes/<alias>gateway.php`,
+the path the gateway loader reads through `paymentgateways.ini [PaymentGatewaySettings] GatewaysDirectories[]`. A
+gateway generated before 6.0.15 sits one level higher and is not loaded: move it as the
+[RAD extension points note](../../../bc/6.0/rad-extension-points.md) explains.
 
 ## Packaging
 

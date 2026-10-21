@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
-# Exponential 6: the rebuild script of the public demo demo.exponential.earth (SQLite, demo mode, daily)
-#
-# Free documentation: GFDL 1.3 or later, see doc/eng-us/README-LICENSE.md.
-# A real variant of install-demo-sqlite.sh in this folder: one Plesk vhost with several names, the admin
-# siteaccess matched by its own host (edit.demo.exponential.earth), the other siteaccesses by host and URI, the
-# old names redirected, and a check that the settings name only the demo's hosts.
-#
 # Rebuilds the Exponential demo at demo.exponential.earth from the newest sources on GitHub, once a day:
 #   1. clones se7enxweb/exponential (main) into a fresh build folder next to the site,
 #   2. composer install,
 #   3. installs it on SQLite with exp:install (administrator: admin / publish, demo mode),
 #   4. sets the siteaccess matching (edit.demo.exponential.earth -> admin by host; demo.exponential.earth/<name> -> each
-#      other siteaccess by host and URI; demo.exponential.earth -> site) and checks it and every SiteURL,
+#      other siteaccess by host and URI; demo.exponential.earth and demo.exponential.earth/site -> site) and checks
+#      it and every SiteURL,
 #   5. swaps it in: the live public_html is moved to /tmp, the new build is moved into its place (instant, same
 #      filesystem), and the old copy in /tmp is removed.
 # The site keeps serving the old copy until the swap; a failed build is left aside and the live site is untouched.
@@ -20,7 +14,8 @@
 # aliases demo.exponential.earth, edit.demo.exponential.earth and edit.demo.ezpublish.one. Exponential matches the
 # siteaccess with MatchOrder=host_uri;host;uri: demo.exponential.earth/<name> is each siteaccess the installer made
 # except admin and site (bold, bold_ger, editor, adminui ...; SiteURL demo.exponential.earth/<name>), then by host
-# edit.demo.exponential.earth is the admin siteaccess (its SiteURL, no /admin) and demo.exponential.earth the site, so
+# edit.demo.exponential.earth is the admin siteaccess (its SiteURL, no /admin) and demo.exponential.earth the site
+# (also under demo.exponential.earth/site, which the admin's siteaccess list may link), so
 # demo.exponential.earth/admin is a 404: the admin answers only on its own host. The old names are
 # redirected (301) by rules this script puts at the top of .htaccess: demo.ezpublish.one/<path> to
 # demo.exponential.earth/<path>, edit.demo.ezpublish.one/<path> to edit.demo.exponential.earth/<path>.
@@ -116,7 +111,8 @@ fi
 
 # Siteaccess matching, set on every build (the installer writes MatchOrder=uri;host and an empty host map):
 #   MatchOrder=host_uri;host;uri
-#   HostUriMatchMapItems[]=demo.exponential.earth;<name>;<name>;strict  for every other siteaccess the installer made
+#   HostUriMatchMapItems[]=demo.exponential.earth;<name>;<name>;strict  for every other siteaccess the installer made,
+#   and =demo.exponential.earth;site;site;strict, so /site/ answers too (the bare host stays the site by the host map)
 #   HostMatchMapItems[]=edit.demo.exponential.earth;admin and =demo.exponential.earth;site, DefaultAccess=site,
 # the admin's SiteURL on its own host, the site's on the host root, the others' on demo.exponential.earth/<name>.
 echo "siteaccess matching"
@@ -126,7 +122,7 @@ grep -q '^MatchOrder=' "$SA" || fail "$SA: no MatchOrder line"
 # the URI siteaccesses: AvailableSiteAccessList without admin and site, longest name first (bold_ger before bold)
 URI_SAS=$(sed -n 's/^AvailableSiteAccessList\[\]=//p' "$SA" | grep -vxE 'admin|site' | awk '{ print length, $0 }' | sort -rn | cut -d' ' -f2-)
 [ -n "$URI_SAS" ] || fail "$SA: no siteaccesses besides admin and site in AvailableSiteAccessList"
-HOSTURI=$(for n in $URI_SAS; do printf '\\nHostUriMatchMapItems[]=%s;%s;%s;strict' "$HOST" "$n" "$n"; done)
+HOSTURI=$(for n in $URI_SAS site; do printf '\\nHostUriMatchMapItems[]=%s;%s;%s;strict' "$HOST" "$n" "$n"; done)
 sed -i -e 's#^MatchOrder=.*#MatchOrder=host_uri;host;uri#' \
        -e '/^HostMatchMapItems\[\]=/d' -e '/^HostUriMatchMapItems\[\]/d' \
        -e "s#^HostMatchMapItems\[\]\$#HostMatchMapItems[]\nHostMatchMapItems[]=$ADMIN_HOST;admin\nHostMatchMapItems[]=$HOST;site\nHostUriMatchMapItems[]$HOSTURI#" \
@@ -157,6 +153,7 @@ for n in $URI_SAS; do
 done
 grep -qx "HostMatchMapItems\[\]=$ADMIN_HOST;admin" "$SA" || fail "no host map for $ADMIN_HOST"
 grep -qx "HostMatchMapItems\[\]=$HOST;site" "$SA" || fail "no host map for $HOST"
+grep -qx "HostUriMatchMapItems\[\]=$HOST;site;site;strict" "$SA" || fail "no host_uri map for $HOST/site"
 grep -qx 'DefaultAccess=site' "$SA" || fail "DefaultAccess is not site"
 
 # web server rules of the release (Apache + PHP handler)
