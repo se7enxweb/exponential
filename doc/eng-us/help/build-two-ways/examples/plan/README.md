@@ -28,8 +28,8 @@ Decide page types, layouts, menus, languages and who changes what, before buildi
 15. [Plan how layouts are kept and versioned](layouts-under-version-control.md): Layouts live in the database; plan regular exports (exp:layouts export) so they can be compared, restored and moved.
 16. [Inventory layouts and settings from the console](inventory-from-the-console.md): exp:layouts list and exp:ini where give a complete, scriptable picture of an installation's layouts and menu settings.
 17. [Collect the node IDs the menus will use](node-ids-for-menus.md): Menus and manual collections refer to node IDs; collect them (and their remote IDs) when the tree is built.
-18. [Plan campaigns with start and end dates](campaign-calendar.md): A mapping can have a Time condition (from, to); plan campaign layouts with it, knowing the resolver remembers answers for up to an hour.
-19. [Plan A/B variants of a page](ab-variants.md): The Query parameter condition exists, but the resolver remembers its answer per path, so one address cannot show two layouts at once; plan variants on two addresses.
+18. [Plan campaigns with start and end dates](campaign-calendar.md): A mapping can have a Time condition (from, to); plan campaign layouts with it: since explayouts 1.4.42 the layout switches at the start and the end, without lag.
+19. [Plan A/B variants of a page](ab-variants.md): A Query parameter condition gives one address a second layout: since explayouts 1.4.42 /showcase and /showcase?variant=b each get their own layout on every request.
 20. [Plan accessibility into the blocks](accessibility-of-blocks.md): Use the fields the blocks have for it - Image alt text, Heading level, link texts - and keep one h1 per page.
 21. [Plan image sizes](image-sizes.md): Galleries take a thumbnail size alias, templates an image class; plan which sizes the design needs.
 22. [Plan the forms](forms-plan.md): Forms on Fit & Healthy are content (Contact form, Feedback form, Lead form classes), shown by their full views; layouts place them.

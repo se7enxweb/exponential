@@ -3,8 +3,8 @@ title: "Kampagnen mit Start- und Enddatum planen"
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 1017
-summary: Eine Zuordnung kann eine Zeit-Bedingung (from, to) haben; planen Sie Kampagnen-Layouts damit und wissen Sie, dass sich der Resolver Antworten bis zu einer Stunde merkt.
-keywords: Kampagne, Zeitbedingung, Startdatum, Enddatum, saisonal, Zuordnung, Resolver-Cache, CacheTTL, campaign, time condition, start date, end date, seasonal, mapping, resolver cache
+summary: Eine Zuordnung kann eine Zeit-Bedingung (from, to) haben; planen Sie Kampagnen-Layouts damit: Seit explayouts 1.4.42 wechselt das Layout zu Beginn und Ende, ohne Verzögerung.
+keywords: Kampagne, Zeitbedingung, Startdatum, Enddatum, saisonal, Zuordnung, Resolver-Cache, Seiten-Cache, MaxAge, campaign, time condition, start date, end date, seasonal, mapping, resolver cache, page cache
 type: help
 ---
 # Kampagnen mit Start- und Enddatum planen
@@ -23,7 +23,7 @@ Ein Kampagnen-Layout, das eine Seite von einem Datum bis zu einem anderen übern
 ## Im Layout-Editor
 
 1. **Neue Zuordnung** bietet die Bedingung **Zeit** neben Siteaccess, Klasse, Abfrageparameter und Routenparameter.
-2. Der Resolver prüft die Zeit gegen `from` und `to` und merkt sich die Antwort dann pro Pfad und Siteaccess für `[ResolverSettings] CacheTTL` (auf dieser Installation 3600 Sekunden).
+2. Der Resolver prüft die Zeit gegen `from` und `to`. Seit explayouts 1.4.42 merkt er sich diese Antwort nur bis zum nächsten Beginn oder Ende der Bedingung, nicht für `[ResolverSettings] CacheTTL`; liegt dieser Zeitpunkt innerhalb von `[HttpCacheSettings] MaxAge` des Seiten-Cache (3600 Sekunden), bleibt die Seite aus den Seiten-Caches (`Cache-Control: private, no-store`). Ein abgelaufener Zeitraum wird normal gecacht.
 
 ## Mit Templates
 
@@ -31,7 +31,7 @@ Ein Kampagnen-Layout, das eine Seite von einem Datum bis zu einem anderen übern
 
 ## Welchen Weg Sie wählen
 
-Planen Sie den Wechsel mit bis zu einer Stunde Überschneidung, oder schalten Sie zu dem Zeitpunkt, an dem es geschehen muss, von Hand um (die neue Zuordnung aktivieren, die alte deaktivieren).
+Planen Sie den Wechsel mit der Zeit-Bedingung: Sie schaltet zu Beginn und Ende um, ohne Verzögerung.
 
 ## Prüfen
 
