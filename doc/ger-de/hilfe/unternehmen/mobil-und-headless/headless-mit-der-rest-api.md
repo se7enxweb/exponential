@@ -55,9 +55,11 @@ Aus [REST API v1 und v2 für Anwendungen](../../ersteller/anwendungsentwickler/r
 - **Liest** einen Knoten, seine Unterelemente (seitenweise, mit Offset und Limit), die Zahl der Unterelemente und Felder,
   nach Knoten- oder Objekt-ID, in v1 und v2.
 - **Legt Inhalte an und entfernt sie** nur in v2.
-- Liefert Rich Text mit `OutputFormat=xhtml` als gerendertes XHTML, sodass die App das interne Format nicht parsen
-  muss.
-- Liefert Bilder mit ihrem Original und ihren Aliasen; definieren Sie Aliase für die Größen, die Ihre App braucht.
+- Liefert den Wert eines Rich-Text-Felds als reinen Text. `OutputFormat=xhtml` ergänzt den von Templates gerenderten
+  Knoten, der erst Markup liefert, wenn ein Entwickler die `rest`-View-Templates dafür geschrieben hat.
+- Liefert ein Bildfeld nur als Pfad seiner Originaldatei, ohne die verkleinerten Fassungen (Aliase). Die App fragt
+  die Adressen der Aliase über die entfernten Dienste ab (`expimage::url`, `expimage::urls`); definieren Sie Aliase
+  für die Größen, die Ihre App braucht.
 - **Prüft bei jedem Lese- und Schreibzugriff die Richtlinien des Benutzers**, welche Zugangsdaten auch immer verwendet
   wurden.
 - **Verlangt standardmäßig eine Authentifizierung**; öffentliche Frontends verwenden „a read-only integration user“
@@ -102,7 +104,7 @@ Nehmen Sie in das Briefing auf:
 - [ ] Wie Redakteure Inhalte vor dem Veröffentlichen in der App in der Vorschau sehen.
 - [ ] Wie die App erfährt, dass sich Inhalte geändert haben (Abfragen mit Grenzen oder ein Purge-Hook beim
       Veröffentlichen).
-- [ ] Bildgrößen, die die App braucht, damit passende Aliase definiert werden.
+- [ ] Bildgrößen, die die App braucht, damit passende Aliase definiert werden, und wie die App ihre Adressen abruft.
 - [ ] Was die App zeigt, wenn die API nicht antwortet ([Zuverlässigkeit des App-Backends](zuverlaessigkeit-des-app-backends.md)).
 - [ ] Dass jede Anfrage über HTTPS geht (`rest.ini [Authentication] RequireHTTPS` kann reines HTTP ablehnen).
 

@@ -6858,7 +6858,7 @@ f653fa0e490fb359623ea48f70adfa62  doc/eng-us/help/businesses/mobile-and-headless
 25010ebcc251aee809e7caef410d5312  doc/eng-us/help/businesses/mobile-and-headless/app-backend-reliability.md
 f2897e66f39ddc15ac5fe18d9b15abda  doc/eng-us/help/businesses/mobile-and-headless/apps-and-api-keys.md
 38ef1a9fb63e093294ec91e401edb226  doc/eng-us/help/businesses/mobile-and-headless/feeds-and-syndication.md
-18a704786799f88a43d716a1f317bd30  doc/eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md
+257eb5eacabbaa018a82d6a0aa181e81  doc/eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md
 f66132278f117d2683669d0161a6b128  doc/eng-us/help/businesses/mobile-and-headless/mobile-checklist.md
 b13e251588378ee8de46aa33d9f466c3  doc/eng-us/help/businesses/mobile-and-headless/mobile-strategy.md
 9376c9ee78d8196eb6b4040c07954975  doc/eng-us/help/businesses/mobile-and-headless/offline-and-repeat-visits.md
@@ -7005,7 +7005,7 @@ cb41b39b38102b539cff85e472bfa5a5  doc/eng-us/help/creators/app-creators/extendin
 627a840b5a00a8a953a71b7033bf083f  doc/eng-us/help/creators/app-creators/extension-anatomy.md
 c3329393cbdc5146b456c028d7730612  doc/eng-us/help/creators/app-creators/fetch-functions.md
 3aa8f9bb3addc7c770a7af4d07a75551  doc/eng-us/help/creators/app-creators/forms-csrf-and-http-input.md
-5e34f8d420091cf9a15b9fd772d3e17b  doc/eng-us/help/creators/app-creators/headless-exponential.md
+89228a749179bbf119ecc8c4ecf9fecf  doc/eng-us/help/creators/app-creators/headless-exponential.md
 9aba3db529ad513e6b654571355bdd8a  doc/eng-us/help/creators/app-creators/input-validation-and-escaping.md
 f8f71afd540d4d5ea6f537568ce208c1  doc/eng-us/help/creators/app-creators/json-endpoints-with-ezjscore.md
 9d3bac7d742c8e97e7d01ee4929379c4  doc/eng-us/help/creators/app-creators/module-definition-reference.md
@@ -14785,7 +14785,7 @@ c9438d97354f04b93c369d8371aa2eb4  doc/ger-de/hilfe/ersteller/anwendungsentwickle
 73e64f7ada63f0789fccbffbce9b91b8  doc/ger-de/hilfe/ersteller/anwendungsentwickler/fehlersuche-und-logs.md
 10221462eb8f991e00a83b06462c0a54  doc/ger-de/hilfe/ersteller/anwendungsentwickler/fetch-funktionen.md
 245e0168a7f85aaaac4e4ce3fd722ad6  doc/ger-de/hilfe/ersteller/anwendungsentwickler/formulare-csrf-und-http-eingaben.md
-75cc8807d2810ed83f83ea60b316389c  doc/ger-de/hilfe/ersteller/anwendungsentwickler/headless-exponential.md
+8777f6db0df43feb557413c459f6cba7  doc/ger-de/hilfe/ersteller/anwendungsentwickler/headless-exponential.md
 4d6878c1383e247fa2803f15a25b977b  doc/ger-de/hilfe/ersteller/anwendungsentwickler/ihre-erste-erweiterung.md
 8338e7a1eae7f8b9f3c3cd8522951637  doc/ger-de/hilfe/ersteller/anwendungsentwickler/inhalte-im-code-anlegen.md
 b94be3b7cd0423d3f38fc197db965e14  doc/ger-de/hilfe/ersteller/anwendungsentwickler/inhalts-jobs.md
@@ -16646,7 +16646,7 @@ f82d882788e0f26dcce81ad7d51ee3b6  doc/ger-de/hilfe/unternehmen/mobil-und-headles
 704c98995d311e53fde38a695fc34251  doc/ger-de/hilfe/unternehmen/mobil-und-headless/checkliste-mobil.md
 bef588e60f890a1b0b38c3d4493d26ba  doc/ger-de/hilfe/unternehmen/mobil-und-headless/entfernte-dienste.md
 44e5326440a6b276960993792e3bfbf9  doc/ger-de/hilfe/unternehmen/mobil-und-headless/feeds-und-syndication.md
-daa232769b8fe745b03ee28bcc9ec718  doc/ger-de/hilfe/unternehmen/mobil-und-headless/headless-mit-der-rest-api.md
+8ccde9879b41617cf3e7f705b649506c  doc/ger-de/hilfe/unternehmen/mobil-und-headless/headless-mit-der-rest-api.md
 9cb413a9d94a87114b6144ae6e542917  doc/ger-de/hilfe/unternehmen/mobil-und-headless/mobile-strategie.md
 e0ea2e7aae00f695b50be53082b09861  doc/ger-de/hilfe/unternehmen/mobil-und-headless/offline-und-wiederholte-besuche.md
 eb36da4ed2b4d26bb3fbf0d94b3f2a70  doc/ger-de/hilfe/unternehmen/mobil-und-headless/responsive-websites.md
