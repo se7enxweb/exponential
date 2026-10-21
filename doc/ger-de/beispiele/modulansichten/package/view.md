@@ -14,10 +14,12 @@ Eine Ansicht des Moduls `package`, definiert in `kernel/package/module.php` und 
 ## Adresse
 
 ```text
-/package/view/<ViewMode>/<PackageName>/<RepositoryID>
+/package/view/<ViewMode>/<PackageName>/<RepositoryID>/(type)/<Type>/(search)/<Search>/(limit)/<Limit>/(offset)/<Offset>/(file)/<File>/(as)/<As>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `ViewMode`, `PackageName`, `RepositoryID`.
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(type)` setzt `Type`, `(search)` setzt `Search`, `(limit)` setzt `Limit`, `(offset)` setzt `Offset`, `(file)` setzt `File`, `(as)` setzt `As`.
 
 ## Wer sie öffnen darf
 
@@ -40,6 +42,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/package/view/viewmode/packagename/1'|ezurl}>package/view</a>
+<a href={concat( '/package/view/viewmode/packagename/1/(type)/', 1 )|ezurl}>package/view</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

@@ -32,7 +32,7 @@ weiter ihre Aufgabe.
 | 5. Ein Event-Listener oder Filter | was vor oder nach Aktionen des Kernels geschieht | [Events, Listener und Filter](../teil-3-erweiterungsentwickler/ereignisse-und-filter.md) |
 | 6. Ein Handler, der über eine Einstellung benannt wird | ein ganzer Dienst (Mail-Transport, Bild-Handler, Suche) | [Handler, die über Einstellungen benannt werden](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) |
 | 7. Eine Unterklasse der ursprünglichen Klasse, registriert dort, wo das Original genannt wird | das Verhalten einer Klasse | siehe unten |
-| 8. Ein gleichnamiges Modul in Ihrer Erweiterung | ein ganzes Modul und seine Views | [Extension module override](../../../../eng-us/features/6.0/extension-module-override.md) (auf Englisch) |
+| 8. Ein gleichnamiges Modul in Ihrer Erweiterung | ein ganzes Modul und seine Views | [Extension module override](../../../funktionen/6.0/modulueberschreibung-durch-extensions.md) (auf Englisch) |
 | 9. Ein Kernel-Override | eine Kernel-Klasse | [Kernel-Overrides: das letzte Mittel](../teil-3-erweiterungsentwickler/kernel-overrides-der-letzte-ausweg.md) |
 
 Jeder Schritt weiter unten in der Liste bindet Sie enger an die Interna des Originals, sodass ein Update des Originals
@@ -126,8 +126,8 @@ Dann müssen Sie den Code des Originals ändern. Es gibt immer noch zwei Wege, d
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

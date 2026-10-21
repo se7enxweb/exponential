@@ -39,7 +39,7 @@ standardmäßig aus (der Wert ist `0`), also kommt das nur vor, wo sie eingescha
 
 3. Viele Fehlschläge von Adressen, die die Person nicht kennt, bedeuten einen Angriff, kein vergessenes Passwort: Ändern
    Sie das Passwort vor dem Entsperren und siehe
-   [Vermutete Kompromittierung eines Kontos](../../../../../eng-us/help/government/operations/incidents/suspected-account-compromise.md).
+   [Vermutete Kompromittierung eines Kontos](../../betrieb/vorfaelle/verdacht-auf-kompromittiertes-konto.md).
    Audit-Warnungen `brute_force_user` (10 Fehlschläge für ein Konto in 15 Minuten) haben vielleicht schon ausgelöst.
 
 Falsche Codes der zweistufigen Anmeldung zählen ebenfalls als fehlgeschlagene Anmeldungen des Kontos.
@@ -63,14 +63,15 @@ Wenn die Person auch das Passwort vergessen hat, folgen Sie
 
 ## Verwandte Seiten
 - [Die Kontosperre einschalten](die-kontosperre-einschalten.md)
-- [Pflege der Benutzerkonten](../../../../../eng-us/help/government/operations/people-and-permissions/user-account-hygiene.md)
-- [Audit-Warnungen](../../../../../eng-us/help/government/operations/monitoring/audit-alerts.md)
-- [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)
+- [Pflege der Benutzerkonten](../../betrieb/personen-und-berechtigungen/pflege-von-benutzerkonten.md)
+- [Audit-Warnungen](../../betrieb/ueberwachung/audit-warnungen.md)
+- [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -9,8 +9,8 @@ und jede Meldung unten wurde am Code geprüft (`kernel/private/classes/views/rss
 `kernel/classes/ezrssexport.php`, `kernel/classes/ezrssimport.php`, `kernel/private/classes/cronjobs/rssimport.php`
 und `kernel/private/classes/views/rss/feed.php`), und zwar am 6. Oktober 2026 auf dem Demonstrationsserver.
 
-[Anleitungen](README.md) · Siehe auch: [RSS: Feeds für Apple Podcasts, eine seitenweise Feed-Liste und sicherere Exporte](../../eng-us/features/6.0/rss-podcast-and-feed-list.md),
-[OPML-Exporte](../../eng-us/bc/6.0/opml.md), [Cronjobs](cronjobs.md)
+[Anleitungen](README.md) · Siehe auch: [RSS: Feeds für Apple Podcasts, eine seitenweise Feed-Liste und sicherere Exporte](../funktionen/6.0/rss-podcast-und-feed-liste.md),
+[OPML-Exporte](../bc/6.0/opml.md), [Cronjobs](cronjobs.md)
 
 ## Kurz gesagt
 
@@ -144,3 +144,11 @@ wie viele und wann das neueste kam.
   (dieselben Dateien in `design/admin/templates/rss/`); der gemeinsame Pager `design/standard/templates/rss/pagination.tpl`.
 - Der Cronjob-Teil: `Processlist::scriptCronjob()` in `kernel/private/classes/views/workflow/processlist.php`.
 - Tests: `tests/tests/kernel/classes/expAdminListsRedesignTest.php` (ohne Datenbank).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

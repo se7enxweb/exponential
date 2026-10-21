@@ -146,7 +146,7 @@ Ein PHP der Kommandozeile für Cron und Velocity hat meist eine eigene `php.ini`
 - Der Konfigurationsschritt des Setup-Assistenten kann auf MongoDB ein bis drei Minuten dauern; erhöhen Sie
   `request_terminate_timeout` für diese Installation oder nutzen Sie die Konsole ([MongoDB für Hoster](mongodb-fuer-hoster.md)).
 - Sitzungen: `site.ini [Session] SessionTimeout` (mitgeliefert `259200` Sekunden, drei Tage) überschreibt
-  `session.gc_maxlifetime` beim eigenen Sitzungs-Handler von PHP.
+  `session.gc_maxlifetime` beim eigenen Session-Handler von PHP.
 
 ## Velocity und FrankenPHP
 
@@ -187,3 +187,11 @@ das andere PHP liest.
 - [PHP-Auswahl und FPM-Pools](../control-panels/php-auswahl-und-fpm-pools.md)
 - [Kapitel 2.5: php.ini-Einstellungen](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -51,7 +51,7 @@ Wenn ein Entwurf veröffentlicht wird, wird die Version davor archiviert.
 4. Für einen Nachweis notieren Sie Versionsnummer und Daten und speichern Sie eine Kopie (Drucken als PDF aus der
    Versionsansicht).
 5. Wer sie veröffentlicht hat: der Ersteller der Version; für eine systemweite Aufzeichnung schalten Sie das
-   Audit-Ereignis `content.object.publish` ein (standardmäßig aus), damit das Veröffentlichen im Audit-Trail
+   Audit-Ereignis `content.object.publish` ein (standardmäßig aus), damit das Veröffentlichen im Prüfprotokoll
    protokolliert wird.
 
 ## Grenzen

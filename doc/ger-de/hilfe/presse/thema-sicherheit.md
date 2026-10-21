@@ -4,7 +4,7 @@ audience: press
 category: press-media
 order: 59
 summary: Ein Themenbeitrag darüber, wie Exponential mit Sicherheit umgeht - vertrauliche Meldungen mit einer ersten Antwort innerhalb eines Werktags, Korrekturen im nächsten Release, veröffentlichte Versionen, die sich nie ändern, und die Schutzmaßnahmen der Linie 6.0.15 - erzählt als Prozess und Beleg, mit Quellen und den Aussagen, die Sie nicht machen dürfen.
-keywords: Thema, Sicherheit, SECURITY.md, Melden von Sicherheitslücken, security@se7enx.com, Härtung, Content Security Policy, Audit-Trail, zweistufige Anmeldung, Passwörter, Zeta Components, Presse, story, security, vulnerability reporting, hardening, audit trail, two-step sign-in, passwords, press
+keywords: Thema, Sicherheit, SECURITY.md, Melden von Sicherheitslücken, security@se7enx.com, Härtung, Content Security Policy, Prüfprotokoll, zweistufige Anmeldung, Passwörter, Zeta Components, Presse, story, security, vulnerability reporting, hardening, audit trail, two-step sign-in, passwords, press
 type: help
 ---
 # Thema: Sicherheit
@@ -31,8 +31,8 @@ Die Sicherheitsrichtlinie von Exponential passt auf eine Seite. „Please report
 security@se7enx.com, not in the public issue tracker or the discussions. You can expect a first answer within one
 business day.“ Korrekturen entstehen auf `main` und werden „published with the next 6.0.x release“, und „A published
 tag is never changed“ ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). Rund um diesen Prozess ergänzt die Entwicklungslinie 6.0.15
-Schutzmaßnahmen, die ein Administrator sehen kann: eine Content Security Policy, einen manipulationssicheren
-Audit-Trail, die zweistufige Anmeldung, das Ablehnen allgemein bekannter Passwörter und eine Administration ohne
+Schutzmaßnahmen, die ein Administrator sehen kann: eine Content Security Policy, ein manipulationssicheres
+Prüfprotokoll, die zweistufige Anmeldung, das Ablehnen allgemein bekannter Passwörter und eine Administration ohne
 Inline-Scripts ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
 
 ## Was neu ist, und seit wann
@@ -42,7 +42,7 @@ Alles in der Linie 6.0.15, die in Entwicklung und nicht veröffentlicht ist.
 | Was | Wann | Quelle |
 |---|---|---|
 | Sicherheitsvorgaben: Header auf jeder Seite, das Sitzungscookie, einheitliche Antworten bei der Anmeldung | 16. bis 30. September 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
-| Der Audit-Trail, standardmäßig eingeschaltet | 2. Oktober 2026 | [Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md) |
+| Das Prüfprotokoll, standardmäßig eingeschaltet | 2. Oktober 2026 | [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
 | Die zweistufige Anmeldung im Changelog | 6. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
 | Härtung der Administration | 14. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#14-october-2026-administration-hardening) |
 | SVG-Bilder werden beim Hochladen bereinigt | 15. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-svg-images-sanitized-on-upload) |
@@ -98,14 +98,14 @@ auch für Reporter: [Sicherheitsmeldungen bleiben vertraulich](../fuersprecher/s
 
 - [Gesprächspunkte: Sicherheit](../fuersprecher/gespraechspunkte-sicherheit.md)
 - [Thema: die Content Security Policy](thema-content-security-policy.md)
-- [Thema: der Audit-Trail](thema-audit-trail.md)
+- [Thema: das Prüfprotokoll](thema-audit-trail.md)
 - [Thema: zweistufige Anmeldung](thema-zweistufige-anmeldung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

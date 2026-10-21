@@ -3,8 +3,8 @@ title: Bereitschaft für das Veröffentlichen in Wahlzeiten
 audience: government, editor, admin, project-manager
 category: public-sector
 order: 200
-summary: Gängige Praxis öffentlicher Stellen, die das Veröffentlichen in einer Wahlzeit einschränken oder prüfen, und wie Rollen, Sektionen, Objektzustände, Freigabe-Workflows und der Audit-Trail von Exponential diese Regeln unterstützen können - als Praxis, nicht als rechtliche Vorgabe.
-keywords: Wahlzeit, Vorwahlzeit, Neutralitätsgebot, Karenzzeit, Einschränkungen beim Veröffentlichen, Freigabe, Objektzustände, Workflows, Rollen, Audit-Trail, Neutralität, öffentlicher Sektor, election period, pre-election, purdah, caretaker period, publishing restrictions, approval, object states, roles, audit trail, neutrality, public sector
+summary: Gängige Praxis öffentlicher Stellen, die das Veröffentlichen in einer Wahlzeit einschränken oder prüfen, und wie Rollen, Sektionen, Objektzustände, Freigabe-Workflows und das Prüfprotokoll von Exponential diese Regeln unterstützen können - als Praxis, nicht als rechtliche Vorgabe.
+keywords: Wahlzeit, Vorwahlzeit, Neutralitätsgebot, Karenzzeit, Einschränkungen beim Veröffentlichen, Freigabe, Objektzustände, Workflows, Rollen, Prüfprotokoll, Neutralität, öffentlicher Sektor, election period, pre-election, purdah, caretaker period, publishing restrictions, approval, object states, roles, audit trail, neutrality, public sector
 type: help
 ---
 # Bereitschaft für das Veröffentlichen in Wahlzeiten
@@ -43,19 +43,19 @@ die Funktionen von Exponential Ihnen helfen können, sie einzuhalten. Sie beschr
 ## Prüfung vor dem Veröffentlichen
 
 - [ ] Ein Freigabe-Workflow für betroffene Sektionen: ein Workflow mit einem Ereignis Freigeben und einem Trigger vor dem Veröffentlichen ([Workflows](../../../anleitungen/workflows.md#3-durchgerechnetes-beispiel-freigabe-vor-dem-veröffentlichen)).
-- [ ] Freigebende benannt und darin geschult, die Regeln zu prüfen ([Redaktion 201, Modul 5](../../../../eng-us/help/trainers/editors-201/module-05-approvals-and-collaboration/README.md)).
+- [ ] Freigebende benannt und darin geschult, die Regeln zu prüfen ([Redaktion 201, Modul 5](../../trainer/redakteure-201/modul-05-freigaben-und-zusammenarbeit/README.md)).
 - [ ] Der Workflow-Cronjob läuft, damit freigegebene Einträge veröffentlicht werden ([Workflows](../../../anleitungen/workflows.md#34-sicherstellen-dass-der-workflow-cronjob-läuft)).
 - [ ] Notfallinformationen über einen eigenen Weg ausgenommen ([Bereitschaft für Notfallwarnungen](bereitschaft-fuer-notfallwarnungen.md)).
 
 ## Bestehende Inhalte
 
 - [ ] Inhalte festgestellt, die während der Wahlzeit verborgen werden müssen; verbergen statt löschen, damit sie unverändert zurückkehren können.
-- [ ] Newsletter und Feeds geprüft: geplante Versendungen pausiert, wenn sie betroffene Inhalte enthalten ([Newsletter versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md)).
-- [ ] Gemeinsame Blöcke (Kopfbereich, Startseite) geprüft ([Gemeinsamer Kopf- und Fußbereich](../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)).
+- [ ] Newsletter und Feeds geprüft: geplante Versendungen pausiert, wenn sie betroffene Inhalte enthalten ([Newsletter versenden](../../ersteller/website-ersteller/newsletter-versenden.md)).
+- [ ] Gemeinsame Blöcke (Kopfbereich, Startseite) geprüft ([Gemeinsamer Kopf- und Fußbereich](../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)).
 
 ## Aufzeichnungen dessen, was veröffentlicht wurde
 
-- [ ] Der Audit-Trail zeichnet Veröffentlichungen und Änderungen an Rechten auf; Sie wissen, wie Sie ihn durchsuchen ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
+- [ ] Das Prüfprotokoll zeichnet Veröffentlichungen und Änderungen an Rechten auf; Sie wissen, wie Sie es durchsuchen ([Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)).
 - [ ] Versionen zeigen, was jede Seite wann sagte ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - [ ] Entscheidungen in Grenzfällen werden außerhalb der Website festgehalten.
 
@@ -69,13 +69,14 @@ die Funktionen von Exponential Ihnen helfen können, sie einzuhalten. Sie beschr
 ## Verwandte Seiten
 
 - [Checklisten für Verwaltungen](README.md)
-- [Sektionen und Objektzustände](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md)
+- [Sektionen und Objektzustände](../../ersteller/website-ersteller/sektionen-und-objektzustaende.md)
 - [Vierteljährliche Zugriffsprüfung](vierteljaehrliche-zugriffspruefung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

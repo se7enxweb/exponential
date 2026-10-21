@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren und Sicherheitsverantwortliche bei ei
 manipulationssichtbare Aufzeichnung darüber, wer was getan hat: Anmeldungen und Fehlschläge, Änderungen an Rollen und Einstellungen,
 entfernte Inhalte, ausgeführte Befehle, Bestellungen. Es ist standardmäßig an und braucht keine Einrichtung, aber ein Hoster hat drei
 Aufgaben: seinen Cronjob am Laufen halten, seine Alarme zu einem Menschen bringen und eine Kopie außerhalb der Maschine halten. Die
-Kurzreferenz ist [Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md); die vollständige Anleitung ist [Audit](../../../../eng-us/bc/6.0/audit.md).
+Kurzreferenz ist [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md); die vollständige Anleitung ist [Audit](../../../bc/6.0/audit.md).
 
 ## Inhalt
 
@@ -62,14 +62,14 @@ Administrator. Der Reiter **Audit** der Administration ist `/audit/dashboard`.
 
 `exp:audit` hat außerdem `channels`, `show`, `checkpoint`, `search` (`--query=<text>`), `rotate`, `archive`, `restore`, `purge`,
 `reindex`, `pseudonymise`, `export`, `import`, `key`, `alerts` und `cron`
-([Von der Kommandozeile](../../../../eng-us/features/6.0/audit-trail.md#from-the-command-line)).
+([Von der Kommandozeile](../../../funktionen/6.0/pruefprotokoll.md#von-der-kommandozeile)).
 
 ## Der Cronjob
 
 Der Cronjob-Teil `audit` ist in der Gruppe `frequent` von `settings/cronjob.ini`. Jeder Lauf indiziert, liefert die Warteschlangen der
 Senken aus und wertet Alarmregeln aus; einmal am Tag (nach `RotateAfter`, 00:15 Ortszeit der Website) schließt er Tagesdateien, prüft
 jeden Kanal, archiviert, was älter als `LiveDays` ist, bereinigt, was älter als `ArchiveDays` ist, pseudonymisiert alte Indexzeilen und
-schreibt einen signierten Checkpoint ([4.1 Cron](../../../../eng-us/bc/6.0/audit.md#41-cron)).
+schreibt einen signierten Checkpoint ([4.1 Cron](../../../bc/6.0/audit.md#41-cron)).
 
 ```text
 */5 * * * * cd /var/www/vhosts/<domain>/<installation> && php runcronjobs.php -q frequent
@@ -90,7 +90,7 @@ warnt, wenn der Teil seit einer Stunde nicht gelaufen ist. Planung pro Kunde: [C
 
 Wenn eine Kette **BROKEN** ist: Bearbeiten oder entfernen Sie nichts. Notieren Sie Datei, Zeile und Art, kopieren Sie das Verzeichnis an
 einen sicheren Ort und vergleichen Sie mit dem, was den Server verlassen hat (syslog-Kopien, Empfänger des Webhooks, Checkpoints, Archive)
-([4.4 Prüfen und wiederherstellen](../../../../eng-us/bc/6.0/audit.md#44-verify-and-restore)). Folgen Sie dann
+([4.4 Prüfen und wiederherstellen](../../../bc/6.0/audit.md#44-prüfen-und-wiederherstellen)). Folgen Sie dann
 [Kompromittierte Website](../runbooks/kompromittierte-website.md).
 
 ## Alarme
@@ -98,7 +98,7 @@ einen sicheren Ort und vergleichen Sie mit dem, was den Server verlassen hat (sy
 Zu den mitgelieferten Regeln gehören `brute_force` (20 Fehlschläge aus einem Netz in 5 Minuten), `brute_force_user` (10 für ein Konto in
 15 Minuten) und `admin_role_granted`. Mail geht an die `Recipients[]` der Regel, sonst an `[AuditAlertSettings] Recipients[]`, sonst an
 `[AuditSink_mail] Receivers[]`, sonst an die `AdminEmail` der Website
-([4.5 Alarme](../../../../eng-us/bc/6.0/audit.md#45-alerts-and-their-recipients)).
+([4.5 Alarme](../../../bc/6.0/audit.md#45-alarme-und-ihre-empfänger)).
 
 Entscheiden Sie mit jedem Kunden, wer Alarme erhält: der Administrator des Kunden, das Sicherheitspostfach des Hosters oder beide.
 Empfänger können Adressen, benannte Gruppen, Benutzer, Benutzergruppen oder Rollen sein:
@@ -147,7 +147,7 @@ betreibt, kann das jedem Kunden anbieten; siehe [Sicherheitslog](../betrieb/sich
 Ereignis erzeugt (Modus `0640`, nie committet). Sichern Sie sie als Geheimnis mit dem Rest von `settings/override/`: Ohne die
 Signaturschlüssel lassen sich damit signierte Archive und Checkpoints nicht mehr prüfen. Erneuern Sie den Signaturschlüssel jährlich oder
 sofort, wenn er gelesen worden sein könnte (`exp:audit key rotate`; starten Sie danach Velocity neu, wenn ein Worker den alten behält)
-([4.6 Schlüssel](../../../../eng-us/bc/6.0/audit.md#46-keys)). Schlüssel aus einem Geheimnisspeicher: `[AuditKeySettings] GenerateKeys=disabled`
+([4.6 Schlüssel](../../../bc/6.0/audit.md#46-schlüssel)). Schlüssel aus einem Geheimnisspeicher: `[AuditKeySettings] GenerateKeys=disabled`
 und die Schlüssel selbst in settings/override bereitstellen.
 
 ## Festplatte, Schreibfehler und Cluster
@@ -158,11 +158,11 @@ und die Schlüssel selbst in settings/override bereitstellen.
 - **Schreibfehler.** `[AuditSettings] OnWriteFailure=continue` (Standard): Eine volle Festplatte nimmt die Website nicht vom Netz; der
   Fehler steht in `error.log` als `AUDIT-UNWRITTEN`. `refuse`: Sicherheitsrelevante Aktionen (POSTs der Administration an sensible
   Ansichten, geschriebene Einstellungen) werden mit 503 verweigert, solange ihr Kanal nicht geschrieben werden kann
-  ([Wenn das Audit nicht schreiben kann](../../../../eng-us/features/6.0/audit-trail.md#when-the-audit-cannot-write-onwritefailure)).
+  ([Wenn das Audit nicht schreiben kann](../../../funktionen/6.0/pruefprotokoll.md#wenn-das-audit-nicht-schreiben-kann-onwritefailure)).
   Beobachten Sie den Speicherplatz in beiden Fällen ([Festplatte voll](../runbooks/festplatte-voll.md)).
 - **Mehrere Webserver.** Ein gemeinsames `LogDir` auf einem Dateisystem mit POSIX-Sperren über Server hinweg (NFSv4, CephFS, GlusterFS),
   eine Schlüsseldatei, die jeder Server teilt, Schlüssel einmal erzeugt, bevor die anderen Server festhalten
-  ([6.3 Cluster](../../../../eng-us/bc/6.0/audit.md#63-cluster)).
+  ([6.3 Cluster](../../../bc/6.0/audit.md#63-cluster)).
 - **Bestehende Installationen**, die auf 6.0.15 aktualisiert wurden, legen die Indextabellen mit
   `php update/common/scripts/6.0/createaudittables.php` an.
 
@@ -181,8 +181,16 @@ und die Schlüssel selbst in settings/override bereitstellen.
 ## Verwandte Seiten
 
 - [Sicherheit für Hoster: Überblick](README.md)
-- [Das Prüfprotokoll (Funktion)](../../../../eng-us/features/6.0/audit-trail.md)
-- [Audit (vollständige Anleitung)](../../../../eng-us/bc/6.0/audit.md)
+- [Das Prüfprotokoll (Funktion)](../../../funktionen/6.0/pruefprotokoll.md)
+- [Audit (vollständige Anleitung)](../../../bc/6.0/audit.md)
 - [13.14 Das Audit-Log](../../../installation/13-sicherheitshaertung.md#1314-das-audit-protokoll)
 - [Sicherheitslog](../betrieb/sicherheitslog.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

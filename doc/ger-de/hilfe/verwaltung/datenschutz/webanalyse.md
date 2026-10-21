@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Projektleitungen, Kommunikationsteams und Datenschutzbeauftragte. Öffentliche Stellen
 müssen wissen, welche Dienste die Menschen nutzen und was sie nicht finden; zugleich müssen sie die Privatsphäre der
 Besucher achten. Exponential bietet einige eigene Statistiken; ein vollständiger Analysedienst ist eine Erweiterung
-und ein Drittanbieter ([Besucherstatistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)).
+und ein Drittanbieter ([Besucherstatistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -31,14 +31,14 @@ und ein Drittanbieter ([Besucherstatistiken und Webanalyse](../../../../eng-us/h
 | Suchstatistiken | Suchbegriffe, Anzahl, durchschnittliche Trefferzahl; **standardmäßig aus** (`LogSearchStats`) | Suchbegriffe können Namen enthalten |
 | Aufrufzähler | Seitenaufrufe pro Knoten, gezählt vom Cronjob-Teil `updateviewcount` aus dem Zugriffsprotokoll | nichts pro Besucher gespeichert |
 | Anfrageprotokolle | „Nicht gefunden“- und Angriffsanfragen, maskiert | maskierte Adressen |
-| Audit-Trail | Tätigkeiten in der Administration | Daten der Beschäftigten |
+| Prüfprotokoll | Tätigkeiten in der Administration | Daten der Beschäftigten |
 
 Diese Quellen beantworten betriebliche Fragen; sie sind kein Analysedienst.
 
 ## bcwebsitestatistics und Google Analytics
 
 Die Erweiterung fügt das Google-Analytics-Skript in die Seiten ein und kann Shop-Bestellungen über den Workflow-Typ
-`ezreceipt` melden ([bcwebsitestatistics](../../../../eng-us/features/6.0/extensions/bcwebsitestatistics.md)). Die Einstellungen
+`ezreceipt` melden ([bcwebsitestatistics](../../../funktionen/6.0/erweiterungen/bcwebsitestatistics.md)). Die Einstellungen
 stehen in `settings/override/bcwebsitestatistics.ini.append.php`; setzen Sie `Urchin` immer auf Ihre eigene Property.
 Laut der Datenschutzerklärung des Projekts hat sie **keine eigene Einwilligungsabfrage**.
 
@@ -59,14 +59,15 @@ Exponential (regelmäßig zurückgesetzt).
 
 ## Verwandte Seiten
 
-- [Besucherstatistiken und Webanalyse](../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)
+- [Besucherstatistiken und Webanalyse](../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)
 - [Erweiterungen von Drittanbietern und Datenschutz](erweiterungen-von-drittanbietern.md)
 - [Suchbegriffe](suchbegriffe.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

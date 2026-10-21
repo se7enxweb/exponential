@@ -272,6 +272,6 @@ und `X-Robots-Tag: noindex, nofollow` ausgeliefert. Jede Seite funktioniert ohne
 - [Die Rechts-Checkliste](mail-einstellungen-compliance.md)
 - [Die Befehle](mail-einstellungen-cli.md)
 - [Die Anleitung für Administratoren](../../anleitungen/mail-einstellungen-administrator.md), [die Anleitung für Entwickler](../../anleitungen/mail-einstellungen-entwickler.md)
-- [Die Anleitung für Benutzer](../../../eng-us/features/6.0/mail-preferences.md)
-- [Hinweise zum Upgrade](../../../eng-us/bc/6.0/mail-preferences.md)
+- [Die Anleitung für Benutzer](../../funktionen/6.0/e-mail-einstellungen.md)
+- [Hinweise zum Upgrade](../../bc/6.0/e-mail-einstellungen.md)
 - [Benachrichtigungen](benachrichtigungen.md)

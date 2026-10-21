@@ -42,9 +42,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Die Bestandteile](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-parts),
-[Einrichtung](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#setting-it-up) und
-[Der Newsletter-Baum einer neuen Installation](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-newsletter-tree-of-a-new-installation).
+Quellen: [Die Bestandteile](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-bestandteile),
+[Einrichtung](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#einrichten) und
+[Der Newsletter-Baum einer neuen Installation](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#der-newsletter-baum-einer-neuen-installation).
 
 1. **Die Wurzel** (4 Minuten). `cjw_newsletter.ini [NewsletterSettings] RootFolderNodeId` benennt den Knoten, dessen
    Kinder die Newsletter-Systeme sind. Der mitgelieferte Wert ist `1`, deshalb setzt jede Installation ihren eigenen
@@ -123,7 +123,7 @@ Ihren Vornamen.
 <details>
 <summary>Antworten</summary>
 
-1. Den Knoten, dessen Kinder die Newsletter-Systeme sind ([Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#settings-you-will-use)).
+1. Den Knoten, dessen Kinder die Newsletter-Systeme sind ([Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#einstellungen-die-sie-verwenden-werden)).
 2. **B.** **Title** ist das einzige Pflichtfeld von `CJW Newsletter System`.
 3. Damit Newsletter-Elemente den Navigationsteil und das linke Menü des Newsletters verwenden ([Sektionen](../../../../anleitungen/sektionen.md)).
 4. Den Baum anlegen (die Installer-Klasse der Erweiterung kann das) oder `RootFolderNodeId` auf den richtigen Knoten
@@ -134,9 +134,9 @@ Ihren Vornamen.
 
 ## Weiterführende Informationen
 
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-newsletter-tree-of-a-new-installation):
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#der-newsletter-baum-einer-neuen-installation):
   wie eine neue Installation zu ihrem Newsletter-Baum kommt.
-- [Newsletter mit cjw_newsletter](../../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md#setting-it-up):
+- [Newsletter mit cjw_newsletter](../../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md#einrichten):
   die Einrichtungsschritte für eine Website.
 - [Sektionen](../../../../anleitungen/sektionen.md): Sektionen und Navigationsteile.
 
@@ -144,13 +144,13 @@ Ihren Vornamen.
 
 - [Modul 2: Systeme, Listen und Ausgaben](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

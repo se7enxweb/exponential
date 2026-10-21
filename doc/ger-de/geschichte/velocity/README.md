@@ -8,7 +8,7 @@ So nutzen Sie diesen Abschnitt:
 
 - **Sie wollen wissen, was geschah und warum?** Lesen Sie die Monatsseiten der Reihe nach. Jede beginnt mit einem Absatz, einer Tabelle dessen, was ein Anwender danach tun konnte und vorher nicht, und der Geschichte des Monats; die letzte Tabelle führt *jede* Änderung des Zeitraums mit ihrer Einordnung auf.
 - **Sie wollen eine Funktion nutzen?** Gehen Sie zu den Funktionsseiten unten; jede hat Einstellungen mit Standardwerten, Befehle, die funktionieren, und Grenzen.
-- **Sie machen ein Upgrade?** Lesen Sie zuerst die [Upgrade-Hinweise](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md), dann das [Changelog](../../../changelogs/extensions/exponential-velocity.md).
+- **Sie machen ein Upgrade?** Lesen Sie zuerst die [Upgrade-Hinweise](../../bc/6.0/velocity-engine-upgrade-hinweise.md), dann das [Changelog](../../../changelogs/extensions/exponential-velocity.md).
 - **Sie suchen einen einzelnen Commit?** Die vollständige, maschinell erzeugte Liste steht im [Änderungsverzeichnis](../aenderungsverzeichnis/exponential-velocity.md) (und unter dem alten Namen im [Änderungsverzeichnis von qbix-webserver](../aenderungsverzeichnis/qbix-webserver.md)).
 
 ## Monatsseiten
@@ -29,17 +29,17 @@ So nutzen Sie diesen Abschnitt:
 
 | Seite | Was sie behandelt |
 |---|---|
-| [Webserver Velocity](../../../eng-us/features/6.0/velocity-web-server.md) | Was er ist, wie Sie ihn starten, Voreinstellungen, WebSockets, was er ausliefert |
-| [Control Panel und Dashboard](../../../eng-us/features/6.0/velocity-control-panel.md) | Anmeldung, Reiter, Domains, SSL, Cache, Protokolle, Passwörter, Zwei-Faktor-Authentifizierung |
-| [Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md) | Einschalten, Lebensdauern, stale-while-revalidate, die Generationsmarke, der eigene Cache der Anwendung |
-| [HTTPS und Zertifikate](../../../eng-us/features/6.0/velocity-https-certificates.md) | Selbst signiert, eigene Dateien, Let's Encrypt und andere ACME-Zertifizierungsstellen |
-| [Q-Shell](../../../eng-us/features/6.0/velocity-q-shell.md) | Die ausklappbare Konsole in jeder Ansicht des Servers |
-| [Pakete und Binärdateien](../../../eng-us/features/6.0/velocity-packages-and-binaries.md) | deb, rpm, Docker, statische Binärdateien und das Phar |
-| [uwebserver](../../../eng-us/features/6.0/velocity-uwebserver.md) | Der kleine Server für statische Dateien in C |
-| [Scheduler](../../../eng-us/features/6.0/velocity-scheduler.md) | Aufgaben wie bei Cron innerhalb des Servers |
-| [Statische Dateien und Bilder](../../../eng-us/features/6.0/velocity-static-files-and-images.md) | Cache-Lebensdauern, Kompression, Verzeichnislisten, verkleinerte und umgewandelte Bilder |
-| [WebSockets, Ereignisse und Räume](../../../eng-us/features/6.0/velocity-websockets-and-events.md) | socket.io, Räume, Server-Sent Events |
-| [Discovery, Föderation und Bereitstellung](../../../eng-us/features/6.0/velocity-discovery-federation-and-deploy.md) | Dokumente unter `/.well-known/`, Weiterleiten von Ereignissen, `--deploy`, das experimentelle Mesh |
+| [Webserver Velocity](../../funktionen/6.0/velocity-webserver.md) | Was er ist, wie Sie ihn starten, Voreinstellungen, WebSockets, was er ausliefert |
+| [Control Panel und Dashboard](../../funktionen/6.0/velocity-control-panel.md) | Anmeldung, Reiter, Domains, SSL, Cache, Protokolle, Passwörter, Zwei-Faktor-Authentifizierung |
+| [Antwort-Cache](../../funktionen/6.0/velocity-antwort-cache.md) | Einschalten, Lebensdauern, stale-while-revalidate, die Generationsmarke, der eigene Cache der Anwendung |
+| [HTTPS und Zertifikate](../../funktionen/6.0/velocity-https-zertifikate.md) | Selbst signiert, eigene Dateien, Let's Encrypt und andere ACME-Zertifizierungsstellen |
+| [Q-Shell](../../funktionen/6.0/velocity-q-shell.md) | Die ausklappbare Konsole in jeder Ansicht des Servers |
+| [Pakete und Binärdateien](../../funktionen/6.0/velocity-pakete-und-binaerdateien.md) | deb, rpm, Docker, statische Binärdateien und das Phar |
+| [uwebserver](../../funktionen/6.0/velocity-uwebserver.md) | Der kleine Server für statische Dateien in C |
+| [Scheduler](../../funktionen/6.0/velocity-zeitplaner.md) | Aufgaben wie bei Cron innerhalb des Servers |
+| [Statische Dateien und Bilder](../../funktionen/6.0/velocity-statische-dateien-und-bilder.md) | Cache-Lebensdauern, Kompression, Verzeichnislisten, verkleinerte und umgewandelte Bilder |
+| [WebSockets, Ereignisse und Räume](../../funktionen/6.0/velocity-websockets-und-ereignisse.md) | socket.io, Räume, Server-Sent Events |
+| [Discovery, Föderation und Bereitstellung](../../funktionen/6.0/velocity-erkennung-foederation-und-deployment.md) | Dokumente unter `/.well-known/`, Weiterleiten von Ereignissen, `--deploy`, das experimentelle Mesh |
 
 ## Referenzseiten
 
@@ -48,9 +48,9 @@ So nutzen Sie diesen Abschnitt:
 | [Worker-Pool](../../spezifikationen/6.0/velocity-worker-pool.md) | Worker, die Zygote, Speicher, Zurücksetzen zwischen Anfragen, die Kompatibilitätsschicht |
 | [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md) | Was der Server ablehnt und warum, Grenzen für Anfragen, Header |
 | [Einstellungen der Engine](../../spezifikationen/6.0/velocity-engine-einstellungen.md) | Jede Einstellung nach Bereich, mit Standardwert und Geltungsbereich: Protokollierung, Marke, Event-Loop, Cache zum Vorwärmen beim Start |
-| [Engines von Velocity](../../../eng-us/bc/6.0/velocity-engines.md) | Eine Engine aus Exponential wählen und betreiben |
-| [Velocity auf der Platte](../../../eng-us/bc/6.0/velocity-ondisk-layout.md) | Der Baum `/etc/vc` |
-| [Das Engine-Archiv](../../../eng-us/bc/6.0/phar.md) | Exponential aus einem Phar betreiben |
+| [Engines von Velocity](../../bc/6.0/velocity-engines.md) | Eine Engine aus Exponential wählen und betreiben |
+| [Velocity auf der Platte](../../bc/6.0/velocity-verzeichnisstruktur.md) | Der Baum `/etc/vc` |
+| [Das Engine-Archiv](../../bc/6.0/phar.md) | Exponential aus einem Phar betreiben |
 
 ## Ein Hinweis zu den Namen
 
@@ -59,7 +59,7 @@ Die Engine begann als Qbix-Webserver. Im Code sehen Sie weiterhin `Q_WebServer`,
 ## Verwandte Seiten
 
 - [Geschichte von Exponential](../README.md): die Monatschronik der Hauptinstallation
-- [Engines von Velocity](../../../eng-us/bc/6.0/velocity-engines.md): eine Engine aus Exponential wählen und betreiben
-- [Upgrade-Hinweise zur Engine von Velocity](../../../eng-us/bc/6.0/velocity-engine-upgrade-notes.md) und das [Changelog](../../../changelogs/extensions/exponential-velocity.md)
+- [Engines von Velocity](../../bc/6.0/velocity-engines.md): eine Engine aus Exponential wählen und betreiben
+- [Upgrade-Hinweise zur Engine von Velocity](../../bc/6.0/velocity-engine-upgrade-hinweise.md) und das [Changelog](../../../changelogs/extensions/exponential-velocity.md)
 - [Eine Website betreiben](../../anleitungen/betrieb-einer-website.md)
-- [Glossar](../../../eng-us/glossary.md)
+- [Glossar](../../glossar.md)

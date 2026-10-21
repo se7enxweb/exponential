@@ -6,9 +6,9 @@ Installation, die `sevenx_themes_admin_classic` verwendet. Sie führt die neue K
 Cache-Schlüssel, das Verhalten auf den persistenten Workern von Velocity und was die Kernel-Overrides von
 `sevenx_themes_admin_classic` ersetzt. Gültig seit dem 15. Oktober 2026.
 
-Die Seite für Benutzer ist [die Funktionsseite](../../../eng-us/features/6.0/ui-switch-design.md), die Einstellungen
+Die Seite für Benutzer ist [die Funktionsseite](../../funktionen/6.0/ui-umschalter-design.md), die Einstellungen
 stehen in [der Anleitung](../../anleitungen/ui-umschalter-design.md). Das Framework, auf dem dies aufbaut (Registry,
-Modul `uiswitch`, Richtlinien, Speicherung in der Session, Varianten-Schlüssel des Caches), ist in
+Modul `uiswitch`, Richtlinien, Speicherung in der Sitzung, Varianten-Schlüssel des Caches), ist in
 [UI-Umschaltung: Hinweise für Entwickler](ui-umschalter.md) beschrieben.
 
 ## Kurz gesagt
@@ -55,7 +55,7 @@ Die Design-Daten zu leeren heißt `eZTemplateDesignResource::clearInMemoryCache(
 namentlich angefragter Siteaccesses (`eZTemplateDesignResourceSiteAccessBases`) werden nicht angetastet: Sie folgen
 nie einer Umschaltung.
 
-Die Registry ruft `apply()` aus `ezpKernelWeb::requestInit()` auf, nach dem Start der Session und vor der
+Die Registry ruft `apply()` aus `ezpKernelWeb::requestInit()` auf, nach dem Start der Sitzung und vor der
 Login-Vorprüfung, dem Request/Input-Ereignis, `eZLocale` und jedem Template, sodass `$site.design` und jedes Template
 das gewählte Design sehen. Im Setup-Assistenten (`validity-check-required`) wird es nicht aufgerufen, und
 `eZTemplateDesignResource::designSetting( 'site' )` gibt weiterhin zuerst `site-design-override` zurück, wo das
@@ -91,7 +91,7 @@ Code, der den Dateinamen selbst gebildet hat (`DESIGN_BASE_CACHE_NAME . md5( $si
 Standarddatei; rufen Sie `designBaseCachePath()` auf, um die Datei der aktuellen Anfrage zu erhalten.
 
 Vor dieser Änderung setzte `sevenx_themes_admin_classic` für seinen Siteaccess `DesignLocationCache=disabled` im
-Speicher, weil eine Design-Liste pro Session sich nicht eine Cache-Datei pro Siteaccess teilen kann. Der Kernel lässt
+Speicher, weil eine Design-Liste pro Sitzung sich nicht eine Cache-Datei pro Siteaccess teilen kann. Der Kernel lässt
 den Cache eingeschaltet.
 
 ## Die anderen Caches
@@ -171,17 +171,17 @@ In einer Installation, die die Overrides verwendet hat:
 
 | Altes Verhalten der Erweiterung | Verhalten des Kernels jetzt |
 |---|---|
-| Design in `ezpKernelWeb::__construct()` umgeschaltet, mit Lesen der Session, bevor die Session gestartet war | `expUISwitch::applyRequest()` in `requestInit()`, nach dem Start der Session; startet nie eine Session |
+| Design in `ezpKernelWeb::__construct()` umgeschaltet, mit Lesen der Sitzung, bevor die Sitzung gestartet war | `expUISwitch::applyRequest()` in `requestInit()`, nach dem Start der Sitzung; startet nie eine Sitzung |
 | Nur ein Siteaccess (`SharedAdminSiteaccessName`) | Jeder Siteaccess der Umschaltung (`uiswitch.ini [UISwitchSettings] SiteAccessList[]`, leer: jeder Siteaccess mit einem Administrationsdesign) |
 | `SiteDesign=admin3` fest eingetragen | `SiteDesign` = das gewählte Design |
-| `AdditionalSiteDesignList` als Array aus der Session übernommen | Die Session enthält nur den Design-Namen; die Kette kommt immer aus `DesignChain[]` |
+| `AdditionalSiteDesignList` als Array aus der Sitzung übernommen | Die Sitzung enthält nur den Design-Namen; die Kette kommt immer aus `DesignChain[]` |
 | Erlaubte Werte fest in der View eingetragen (`admin_classic`, `admin3`) | `AllowedValues[]` (die Kernel-Standardwerte enthalten beide), gefiltert nach installierten Designs mit einer Kette |
 | Keine Berechtigungsprüfung beim Anwenden | `uiswitch/design` bei jeder Anfrage geprüft; eine Wahl, deren Richtlinie entfallen ist oder die aus der Liste verschwunden ist, wird verworfen |
 | `DesignLocationCache=disabled` für den Siteaccess | Cache bleibt; der Dateiname enthält den Varianten-Schlüssel, wenn eine Wahl angewendet wird |
 | `eZCache::clearByTag( 'template' )` und `( 'template-block' )` bei jeder Umschaltung | Kein Cache wird geleert; Caches pro Design geschlüsselt |
 | Modul `switchadmindesign/switch` (POST) und `reset` (GET, zustandsändernd) | `uiswitch/set` (nur POST, Formular-Token, seitenübergreifende Anfragen abgelehnt, 400/403/404/405); die Wahl des Standards setzt zurück |
 | Kein Audit-Eintrag | `access.uiswitch.change` (Provider `design`, vorher, nachher, Siteaccess) |
-| Nur Session | Session, oder mit `RememberPreference=enabled` auch die Einstellungen des Benutzers |
+| Nur Sitzung | Sitzung, oder mit `RememberPreference=enabled` auch die Einstellungen des Benutzers |
 | Werkzeug `admin_switch_design` in `Toolbar_admin_developer`; `toolbar.ini` der Erweiterung setzte `AvailableToolArray[]` und `Toolbar_admin_right` zurück | Kernel-Werkzeug `admin_ui_switch` in `Toolbar_admin_right`, in admin4 und im klassischen Design `admin`; keine Zurücksetzung der Werkzeugleiste |
 | Kopie von `global_functions.php` | Nichts: Die Kernel-Datei wird verwendet |
 
@@ -196,7 +196,7 @@ In einer Installation, die die Overrides verwendet hat:
 
 ## Verwandte Seiten
 
-- [Funktion: das Administrationsdesign wählen](../../../eng-us/features/6.0/ui-switch-design.md)
+- [Funktion: das Administrationsdesign wählen](../../funktionen/6.0/ui-umschalter-design.md)
 - [Anleitung: die Umschaltung des Administrationsdesigns](../../anleitungen/ui-umschalter-design.md)
 - [UI-Umschaltung: Hinweise für Entwickler](ui-umschalter.md)
 - [Velocity-Engines und das Bereitstellen einer PHP-Änderung](velocity-engines.md)

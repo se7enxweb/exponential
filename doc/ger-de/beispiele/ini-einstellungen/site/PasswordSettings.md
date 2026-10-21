@@ -125,7 +125,7 @@ ForbidCurrentPassword=disabled
 
 > Nach einer Passwortänderung: Die anderen Sitzungen des Benutzers werden bei ihrer nächsten  
 > Anfrage abgemeldet (eine Anmeldung behält einen Stempel des Passworts in der Sitzung, geprüft von  
-> eZUser::currentUser()); diese bleibt angemeldet, mit einer neuen Sitzungs-ID. Der Sitzungs-Handler  
+> eZUser::currentUser()); diese bleibt angemeldet, mit einer neuen Sitzungs-ID. Der Session-Handler  
 > der Datenbank löscht sie außerdem sofort. Sitzungen von vor dem Upgrade (kein Stempel)  
 > und Konten ohne eigenes Passwort (LDAP, SSO) werden nicht geprüft.  
 > disabled: kein Stempel, keine Prüfung, andere Sitzungen bleiben.  

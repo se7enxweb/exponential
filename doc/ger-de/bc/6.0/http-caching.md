@@ -83,7 +83,7 @@ curl -sI https://your-host/ | grep -i -E "cache-control|expires|pragma"
 
 Erwartet für einen anonymen Besucher mit den obigen Einstellungen: `Cache-Control: public, max-age=60`, ein
 `Expires`-Datum 60 Sekunden in der Zukunft und kein `Pragma: no-cache`. Wiederholen Sie die Anfrage mit dem
-Session-Cookie eines angemeldeten Benutzers (kopieren Sie es aus dem Browser): Die Antwort muss
+Sitzungs-Cookie eines angemeldeten Benutzers (kopieren Sie es aus dem Browser): Die Antwort muss
 `Cache-Control: no-cache, must-revalidate` zeigen.
 
 ### Die Änderung im Kernel dahinter
@@ -126,7 +126,7 @@ Website um 41 Hin-und-Zurück ärmer, was ein wiederkehrender Besucher so erlebt
 ## Was das nicht ist
 
 - **Nicht der Antwort-Cache des Servers**, der gerenderte Antworten im Elternprozess speichert; das ist eine eigene
-  Funktion, standardmäßig ausgeschaltet ([Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)).
+  Funktion, standardmäßig ausgeschaltet ([Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md)).
 - **Nicht der statische Cache des Kernels** (`StaticCache` in `site.ini`), der flache Dateien schreibt.
 - **Nicht der rollenabhängige HTTP-Cache**, der ganze Seiten auch für angemeldete Besucher behält und sie ausliefert,
   bevor der Kernel startet: siehe [HTTP-Cache](httpcache.md).
@@ -136,9 +136,9 @@ Website um 41 Hin-und-Zurück ärmer, was ein wiederkehrender Besucher so erlebt
 ## Verwandte Seiten
 
 - [HTTP-Cache (rollenabhängig)](httpcache.md)
-- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
-- [Antwort-Cache von Velocity](../../../eng-us/features/6.0/velocity-response-cache.md)
-- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../../eng-us/features/6.0/cache-clear-rename-aside.md)
+- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
+- [Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md)
+- [Cache-Leerungen, die Verzeichnisse beiseiteschieben](../../funktionen/6.0/cache-leeren-durch-umbenennen.md)
 - [Verhaltensänderungen vom 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)
-- [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
+- [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

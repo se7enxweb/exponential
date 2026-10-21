@@ -46,7 +46,7 @@ Gibt eine neue Liste aller seiner Parameter in ihrer Reihenfolge zurück. Nimmt 
 |---|---|---|---|
 | beliebig viele Werte | mixed | nein | keiner (ein leeres Array) |
 
-Generierte Referenz: [array](../../../eng-us/examples/template-operators/array.md).
+Generierte Referenz: [array](../../beispiele/template-operatoren/array.md).
 
 ### hash
 
@@ -58,7 +58,7 @@ Zeichenkette oder eine Zahl sein; jeder andere Schlüsseltyp protokolliert "Unkn
 |---|---|---|---|
 | Paare aus Schlüssel und Wert | Zeichenkette oder Zahl, mixed | nein | keiner (ein leeres Array) |
 
-Generierte Referenz: [hash](../../../eng-us/examples/template-operators/hash.md).
+Generierte Referenz: [hash](../../beispiele/template-operatoren/hash.md).
 
 ```tpl
 {def $list = array( 'red', 'green', 'blue' )
@@ -87,7 +87,7 @@ hash: name=Fit &amp; Healthy node_id=89
 |---|---|---|---|
 | Elemente | mixed | ja, mindestens eines | keiner |
 
-Generierte Referenz: [append](../../../eng-us/examples/template-operators/append.md).
+Generierte Referenz: [append](../../beispiele/template-operatoren/append.md).
 
 ### prepend
 
@@ -99,7 +99,7 @@ Generierte Referenz: [append](../../../eng-us/examples/template-operators/append
 |---|---|---|---|
 | `prepend_string` (Eingabe als Zeichenkette) oder Elemente (Eingabe als Array) | mixed | nein | `false` |
 
-Generierte Referenz: [prepend](../../../eng-us/examples/template-operators/prepend.md).
+Generierte Referenz: [prepend](../../beispiele/template-operatoren/prepend.md).
 
 ```tpl
 {def $list = array( 2, 3 )}
@@ -145,7 +145,7 @@ protokolliert es "merge works only with arrays.".
 |---|---|---|---|
 | Arrays | array | ja, mindestens eines | keiner |
 
-Generierte Referenz: [merge](../../../eng-us/examples/template-operators/merge.md).
+Generierte Referenz: [merge](../../beispiele/template-operatoren/merge.md).
 
 ```tpl
 {def $a = array( 1, 2 )
@@ -180,7 +180,7 @@ Verwenden Sie es mit der Pipe: Das Array oder die Zeichenkette muss die Eingabe 
 |---|---|---|---|
 | `match` | string | ja | `false` |
 
-Generierte Referenz: [contains](../../../eng-us/examples/template-operators/contains.md).
+Generierte Referenz: [contains](../../beispiele/template-operatoren/contains.md).
 
 ### compare
 
@@ -192,7 +192,7 @@ Generierte Referenz: [contains](../../../eng-us/examples/template-operators/cont
 |---|---|---|---|
 | `compare` | mixed | ja | `false` |
 
-Generierte Referenz: [compare](../../../eng-us/examples/template-operators/compare.md).
+Generierte Referenz: [compare](../../beispiele/template-operatoren/compare.md).
 
 ```tpl
 {def $list = array( 'news', 'blog', 'event' )}
@@ -222,7 +222,7 @@ $list|compare( array( 'event', 'news', 'blog' ) ) = true
 |---|---|---|---|
 | `match` (Zeichenkette) oder die zu prüfenden Elemente (Array) | mixed | ja | `false` |
 
-Generierte Referenz: [begins_with](../../../eng-us/examples/template-operators/begins_with.md).
+Generierte Referenz: [begins_with](../../beispiele/template-operatoren/begins_with.md).
 
 ### ends_with
 
@@ -233,7 +233,7 @@ Generierte Referenz: [begins_with](../../../eng-us/examples/template-operators/b
 |---|---|---|---|
 | `match` (Zeichenkette) oder die zu prüfenden Elemente (Array) | mixed | ja | `false` |
 
-Generierte Referenz: [ends_with](../../../eng-us/examples/template-operators/ends_with.md).
+Generierte Referenz: [ends_with](../../beispiele/template-operatoren/ends_with.md).
 
 ```tpl
 {def $list = array( 1, 2, 3, 4 )}
@@ -266,7 +266,7 @@ $list|ends_with( 2 ) = false
 | `extract_start` | integer | ja | `false` |
 | `extract_length` | integer | nein | `false` (bis zum Ende) |
 
-Generierte Referenz: [extract](../../../eng-us/examples/template-operators/extract.md).
+Generierte Referenz: [extract](../../beispiele/template-operatoren/extract.md).
 
 ### extract_left
 
@@ -276,7 +276,7 @@ Die ersten `length` Elemente oder Zeichen.
 |---|---|---|---|
 | `length` | integer | ja | `false` |
 
-Generierte Referenz: [extract_left](../../../eng-us/examples/template-operators/extract_left.md).
+Generierte Referenz: [extract_left](../../beispiele/template-operatoren/extract_left.md).
 
 ### extract_right
 
@@ -286,7 +286,7 @@ Die letzten `length` Elemente oder Zeichen.
 |---|---|---|---|
 | `length` | integer | ja | `false` |
 
-Generierte Referenz: [extract_right](../../../eng-us/examples/template-operators/extract_right.md).
+Generierte Referenz: [extract_right](../../beispiele/template-operatoren/extract_right.md).
 
 ```tpl
 {def $list = array( 'a', 'b', 'c', 'd', 'e' )}
@@ -322,7 +322,7 @@ Nur Arrays: PHP `implode( separator, input )`, eine Zeichenkette. Bei einer Zeic
 |---|---|---|---|
 | `separator` | string | ja | `false` |
 
-Generierte Referenz: [implode](../../../eng-us/examples/template-operators/implode.md).
+Generierte Referenz: [implode](../../beispiele/template-operatoren/implode.md).
 
 ### explode
 
@@ -335,7 +335,7 @@ Die beiden Zweige tun Verschiedenes:
 |---|---|---|---|
 | `explode_first` | mixed (Position oder Trennzeichen) | ja | `false` |
 
-Generierte Referenz: [explode](../../../eng-us/examples/template-operators/explode.md).
+Generierte Referenz: [explode](../../beispiele/template-operatoren/explode.md).
 
 ```tpl
 {def $list = array( 'a', 'b', 'c', 'd' )
@@ -364,19 +364,19 @@ $list|explode( 1 ) = [a] [b,c,d]
 |---|---|---|---|
 | `repeat_times` | integer | nein | `1` |
 
-Generierte Referenz: [repeat](../../../eng-us/examples/template-operators/repeat.md).
+Generierte Referenz: [repeat](../../beispiele/template-operatoren/repeat.md).
 
 ### reverse
 
 Array: `array_reverse()`. Zeichenkette: `strrev()`, das Bytes umdreht und daher Multibyte-Zeichen zerstört. Keine
 Parameter.
-Generierte Referenz: [reverse](../../../eng-us/examples/template-operators/reverse.md).
+Generierte Referenz: [reverse](../../beispiele/template-operatoren/reverse.md).
 
 ### unique
 
 Nur Arrays: `array_unique()`; die Schlüssel der ersten Vorkommen bleiben erhalten. Bei einer Zeichenkette protokolliert
 es "unique works only with arrays.". Keine Parameter.
-Generierte Referenz: [unique](../../../eng-us/examples/template-operators/unique.md).
+Generierte Referenz: [unique](../../beispiele/template-operatoren/unique.md).
 
 ```tpl
 array( 1, 2 )|repeat( 3 ) = {array( 1, 2 )|repeat( 3 )|implode( ',' )}
@@ -408,7 +408,7 @@ array( 'a', 'b', 'a', 'c', 'b' )|unique = a,b,c
 | `insert_position` | integer | ja | `false` |
 | `insert_string` (und bei Arrays weitere Elemente) | mixed | ja | `false` |
 
-Generierte Referenz: [insert](../../../eng-us/examples/template-operators/insert.md).
+Generierte Referenz: [insert](../../beispiele/template-operatoren/insert.md).
 
 ### remove
 
@@ -419,7 +419,7 @@ Entfernt `length` Elemente (oder Zeichen) ab `offset`.
 | `offset` | integer | ja | `false` |
 | `length` | integer | nein | `1` |
 
-Generierte Referenz: [remove](../../../eng-us/examples/template-operators/remove.md).
+Generierte Referenz: [remove](../../beispiele/template-operatoren/remove.md).
 
 ### replace
 
@@ -432,7 +432,7 @@ einer Zeichenkette diese Parameter aneinandergehängt).
 | `length` | integer | nein | `false` |
 | Ersatzelemente | mixed | nein | keiner |
 
-Generierte Referenz: [replace](../../../eng-us/examples/template-operators/replace.md).
+Generierte Referenz: [replace](../../beispiele/template-operatoren/replace.md).
 
 ```tpl
 {def $list = array( 'a', 'b', 'c', 'd' )}
@@ -463,7 +463,7 @@ $list|replace( 1, 2, 'X' ) = a,X,d
 
 PHP `array_sum()` des gepipten Arrays. Jede andere Eingabe protokolliert "Unknown input type, can only work with
 arrays". Keine Parameter.
-Generierte Referenz: [array_sum](../../../eng-us/examples/template-operators/array_sum.md).
+Generierte Referenz: [array_sum](../../beispiele/template-operatoren/array_sum.md).
 
 ```tpl
 array( 1, 2, 3.5 )|array_sum = {array( 1, 2, 3.5 )|array_sum}
@@ -544,15 +544,16 @@ Recipes (first three by name): Almond French Toast, Avocado Kale Pesto Grilled C
 
 ## Verwandte Seiten
 
-- [Array-Operatoren für Designer](../../../eng-us/help/designers/templates/array-operators.md): die alltäglichen Verwendungen
+- [Array-Operatoren für Designer](../designer/vorlagen/array-operatoren.md): die alltäglichen Verwendungen
 - [Arithmetische Operatoren](arithmetische-operatoren.md): `count` zählt Arrays
-- [Foreach-Schleifen](../../../eng-us/help/designers/templates/foreach-loops.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Foreach-Schleifen](../designer/vorlagen/foreach-schleifen.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

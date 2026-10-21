@@ -50,11 +50,11 @@ Antwort verwenden sollte, aus [Eine Website betreiben](../../../../anleitungen/b
 |---|---|---|
 | OPS-01 | Zustandsprüfungen unter **Setup > Systeminformationen** (`/setup/info`) | [Systeminformationen](../../../../anleitungen/systeminformationen.md), [Zustandsprüfungen und Verfügbarkeit](../../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md) |
 | OPS-02 | Fehlerreferenzen | [Einen Fehler anhand seiner Referenz finden](../../../../anleitungen/fehler-anhand-der-referenz-finden.md) |
-| OPS-03 | Cronjob-Konsole und Pause | [Cronjobs](../../../../anleitungen/cronjobs.md), [Cronjob-Konsole](../../../../../eng-us/features/6.0/cronjobs-console.md) |
+| OPS-03 | Cronjob-Konsole und Pause | [Cronjobs](../../../../anleitungen/cronjobs.md), [Cronjob-Konsole](../../../../funktionen/6.0/cronjobs-in-der-konsole.md) |
 | OPS-04 | **Setup > Wartung**, `php bin/php/maintenance.php on --message=... --until=...` | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) |
-| OPS-05 | **Setup > Upgrade-Prüfung** (`/setup/systemupgrade`) | [Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md), [Prüfung der Dateikonsistenz](../../../../../eng-us/features/6.0/file-consistency-check.md) |
+| OPS-05 | **Setup > Upgrade-Prüfung** (`/setup/systemupgrade`) | [Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md), [Prüfung der Dateikonsistenz](../../../../funktionen/6.0/dateikonsistenzpruefung.md) |
 | OPS-06 | Für Hoster geschriebene Runbooks | [Hosting-Runbooks](../../../hosting/runbooks/README.md) |
-| OPS-07 | **Setup > Logdateien**, Rotation der Logdateien, Anfrageprotokolle | [Log-Betrachter](../../../../../eng-us/features/6.0/log-viewer.md), [Rotation der Logdateien](../../../../../eng-us/features/6.0/log-rotation.md), [Anfrageprotokolle](../../../../../eng-us/features/6.0/request-logs.md) |
+| OPS-07 | **Setup > Logdateien**, Rotation der Logdateien, Anfrageprotokolle | [Log-Betrachter](../../../../funktionen/6.0/log-betrachter.md), [Rotation der Logdateien](../../../../funktionen/6.0/log-rotation.md), [Anfrageprotokolle](../../../../funktionen/6.0/anfrageprotokolle.md) |
 | OPS-08 | Checkliste für den monatlichen Betrieb für Hoster | [Monatlicher Betrieb](../../../hosting/checklisten/checkliste-fuer-den-monatlichen-betrieb.md) |
 
 Caches: **Setup > Cache-Verwaltung** (`/setup/cache`) und `php bin/php/ezcache.php --clear-all`
@@ -66,7 +66,7 @@ Caches: **Setup > Cache-Verwaltung** (`/setup/cache`) und `php bin/php/ezcache.p
 - Störungen mit Ursache, Dauer und Behebung.
 - Eingespielte Updates von Exponential, PHP und Betriebssystem, mit Datum.
 - Wiederherstellungstests mit Datum und Dauer.
-- Ausgelöste Audit-Alarme und wie sie behandelt wurden ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+- Ausgelöste Audit-Alarme und wie sie behandelt wurden ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Fallstricke
 
@@ -82,8 +82,9 @@ Caches: **Setup > Cache-Verwaltung** (`/setup/cache`) und `php bin/php/ezcache.p
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

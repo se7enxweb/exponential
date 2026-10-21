@@ -13,7 +13,7 @@ Diese Seite ist für Systemadministratoren und Support-Mitarbeitende bei einem H
 „Durchsetzung der CSP“ als Teil eines verwalteten Tarifs anzubieten. Eine Content Security Policy sagt dem Browser, welche Skripte,
 Styles, Bilder und Verbindungen eine Seite nutzen darf; mit einer strengen Richtlinie läuft ein Skript nicht, das über einen Wert
 eingeschleust wurde, den ein Template zu maskieren vergaß. Die Referenz ist
-[Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md).
+[Content Security Policy](../../../funktionen/6.0/content-security-policy.md).
 
 ## Inhalt
 
@@ -64,11 +64,11 @@ ReportEndpoint=enabled
 - Adressen werden wie in den Anfrage-Logs maskiert; die Fehlerübersicht gruppiert `csp.log` nach Direktive und blockierter Quelle.
 - `csp.log` wird wie die Anfrage-Logs rotiert: 5 Archive, komprimiert, 10 MB, nach 30 Tagen bereinigt.
 
-Siehe [Meldungen](../../../../eng-us/features/6.0/content-security-policy.md#reports).
+Siehe [Meldungen](../../../funktionen/6.0/content-security-policy.md#berichte).
 
 ## Einen Siteaccess auf Durchsetzung umstellen
 
-Die Schritte aus [Auf Durchsetzung umstellen, Schritt für Schritt](../../../../eng-us/features/6.0/content-security-policy.md#switching-to-enforce-step-by-step),
+Die Schritte aus [Auf Durchsetzung umstellen, Schritt für Schritt](../../../funktionen/6.0/content-security-policy.md#schritt-für-schritt-auf-enforce-umstellen),
 so wie ein Hoster sie für einen Kunden ausführt:
 
 1. **Prüfen Sie die Templates** der Installation, mit jeder Erweiterung, die sie nutzt:
@@ -99,7 +99,7 @@ sind vom Test nicht abgedeckt.
 > **Tipp**
 > `ReportOnlyDirectives[]` sendet eine strengere Richtlinie im Berichtsmodus neben einer durchgesetzten, sodass Sie den Weg zu
 > `style-src 'self'` messen können, während die durchgesetzte Richtlinie noch Styles mit `'unsafe-inline'` erlaubt
-> ([Durchsetzen: Nonce, mehr Quellen, eine strengere Begleiterin, Rückfall](../../../../eng-us/features/6.0/content-security-policy.md#enforcing-nonce-more-sources-a-stricter-companion-rollback)).
+> ([Durchsetzen: Nonce, mehr Quellen, eine strengere Begleiterin, Rückfall](../../../funktionen/6.0/content-security-policy.md#durchsetzen-nonce-weitere-quellen-ein-strengerer-begleiter-rückkehr)).
 
 ## Was meist mehr als self braucht
 
@@ -114,7 +114,7 @@ sind vom Test nicht abgedeckt.
 
 Die klassischen Designs der Administration bleiben unter `Mode=enforce` über `ReportOnlyDesigns[]` (admin, admin2, admin_classic) im
 Berichtsmodus, sodass ein Benutzer, der eines mit dem Umschalter der Oberfläche wählt, eine funktionierende Seite behält. Siehe
-[Bevor Sie auf der Administration durchsetzen](../../../../eng-us/features/6.0/content-security-policy.md#before-enforcing-on-the-administration).
+[Bevor Sie auf der Administration durchsetzen](../../../funktionen/6.0/content-security-policy.md#bevor-sie-die-policy-in-der-administration-durchsetzen).
 
 ## Rückfall
 
@@ -150,8 +150,16 @@ Ob und wie Sie dafür abrechnen, entscheidet der Hoster; siehe [Hosting-Tarife g
 ## Verwandte Seiten
 
 - [Sicherheit für Hoster: Überblick](README.md)
-- [Content Security Policy (Referenz der Funktion)](../../../../eng-us/features/6.0/content-security-policy.md)
+- [Content Security Policy (Referenz der Funktion)](../../../funktionen/6.0/content-security-policy.md)
 - [Sicherheitshärtung: Cross-Site-Scripting und die Content Security Policy](../../sicherheitshaertung.md#cross-site-scripting-xss-und-die-content-security-policy)
 - [Sicherheitslog](../betrieb/sicherheitslog.md)
 - [Härtung für Hoster](haertung-fuer-hoster.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

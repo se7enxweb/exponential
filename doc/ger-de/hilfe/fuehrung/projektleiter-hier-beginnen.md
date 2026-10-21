@@ -60,7 +60,7 @@ Der folgende Plan setzt voraus, dass Sie ein Konto in der Administration mit min
 Demonstrations- oder Testinstallation, die Sie verändern dürfen. Wenn Sie noch keine Installation haben, bitten Sie
 einen Administrator oder Entwickler darum: Eine vollständige Demonstrationssite wird mit einem einzigen Befehl
 installiert, `./console exp:install`, auf SQLite und ohne Datenbankserver
-([Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)).
+([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 ### Tag 1: das Produkt und die Menschen dahinter kennenlernen
 
@@ -95,7 +95,7 @@ installiert, `./console exp:install`, auf SQLite und ohne Datenbankserver
 - [ ] Lesen Sie [Hosting, Datenbank und Betriebssystem wählen](hosting-datenbank-und-betriebssystem-waehlen.md).
 - [ ] Fragen Sie Ihren Administrator, welche Datenbank, welchen Webserver und welche Installationsmethode Ihr Projekt
       verwendet, und tragen Sie es in Ihren Projektauftrag ein ([Projektvorlagen](projektvorlagen.md)).
-- [ ] Lesen Sie „Kurz gesagt“ in [Das Audit-Protokoll](../../../eng-us/features/6.0/audit-trail.md): Es ist Ihr Nachweis, wer
+- [ ] Lesen Sie „Kurz gesagt“ in [Das Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md): Es ist Ihr Nachweis, wer
       was getan hat.
 - [ ] Lesen Sie [Wenn etwas schiefgeht](../wenn-etwas-schiefgeht.md): Es beschreibt das Verfahren, mit dem Ihr
       Team Fehler meldet.
@@ -173,12 +173,12 @@ sind auch für Projektleiter nützlich: [Für wen Exponential gedacht ist](../ge
 | [Erweiterungen](../../anleitungen/extensions.md) | Wie Erweiterungen gefunden, installiert, gebaut und veröffentlicht werden |
 | [Templates und Design](../../anleitungen/templates-und-design.md) | Wie das Erscheinungsbild einer Site entsteht |
 | [REST API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) | Was Integrationen nutzen können |
-| [Das Glossar](../../../eng-us/glossary.md) | Alle Begriffe an einem Ort |
+| [Das Glossar](../../glossar.md) | Alle Begriffe an einem Ort |
 
 ## Wie die Hilfe selbst funktioniert
 
 Die Hilfe, die Sie gerade lesen, ist die in Git verwaltete Dokumentation des Repositorys, angezeigt in der
-Administration ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)):
+Administration ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)):
 
 - Das **Hilfe-Dashboard** (`/exphelp/dashboard`) enthält ein Suchfeld, die Seiten für jede Zielgruppe, die
   Kategorien, hervorgehobene Seiten und die neuesten Änderungen.
@@ -188,7 +188,7 @@ Administration ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)):
 - **Fehler melden** (`/exphelp/report`) erklärt, welcher Tracker zu verwenden ist, und bereitet ein Issue mit den
   Diagnosedaten vor, niemals mit Passwörtern, Schlüsseln oder personenbezogenen Daten.
 - Zum Lesen der Hilfe ist die Richtlinie `exphelp/read` nötig. Die Rolle Administrator hat sie, und eine neue
-  Installation gibt sie der Rolle Editor ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)). Kann ein Teammitglied
+  Installation gibt sie der Rolle Editor ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)). Kann ein Teammitglied
   die Hilfe nicht öffnen, ist das die Richtlinie, die es beantragen sollte.
 
 ## Grundregeln dieser Seiten
@@ -225,5 +225,13 @@ Leitung aus.
 - [Zusammenarbeiten](zusammenarbeiten.md)
 - [Wer ist 7x?](../wer-ist-7x.md)
 - [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
-- [Das Hilfesystem](../../../eng-us/features/6.0/help-system.md)
+- [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

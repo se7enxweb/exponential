@@ -38,7 +38,7 @@ bereits beantwortet, zitieren Sie die Dokumentation und nutzen Sie Ihre Zeit fü
 | Warum eine Codebasis am Leben halten, nachdem ihr Hersteller sie eingestellt hat? | „Exponential has made it beyond it's end of life in 2021 and survived“ (README, zitiert in [Wer ist 7x?](../wer-ist-7x.md#kurz-gesagt)). Die Gründe sind **offen** |
 | Was geschah in den drei Phasen, 2014, 2022 und Dezember 2023? | [Von Brookins Consulting zu 7x](../wer-ist-7x.md#von-brookins-consulting-zu-7x-in-drei-stufen); die Geschichte hinter jeder Phase ist **offen** |
 | Warum der Name Exponential? | Die Projektseite nennt eine Bitte von Ibexa, wirksam ab August 2025 ([Warum das Produkt Exponential heißt](../wer-ist-7x.md#warum-das-produkt-exponential-heißt)); wie der Name gewählt wurde, ist **offen** |
-| Was war am schwierigsten daran, den Code auf aktuelles PHP zu bringen? | Die Unterstützung für PHP 7 endete mit 6.0.7; PHP 8.5 kam im Dezember 2025 ([Geschichte](../../../eng-us/history/README.md#the-story-so-far)); die Erfahrung ist **offen** |
+| Was war am schwierigsten daran, den Code auf aktuelles PHP zu bringen? | Die Unterstützung für PHP 7 endete mit 6.0.7; PHP 8.5 kam im Dezember 2025 ([Geschichte](../../geschichte/README.md#die-geschichte-bisher)); die Erfahrung ist **offen** |
 
 ## Zwei Organisationen
 
@@ -73,7 +73,7 @@ bereits beantwortet, zitieren Sie die Dokumentation und nutzen Sie Ihre Zeit fü
 |---|---|
 | Wie werden Sicherheitsmeldungen behandelt? | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md): vertrauliche Meldungen, erste Antwort „innerhalb eines Werktags“ |
 | Veröffentlichen Sie Sicherheitshinweise oder CVE-Kennungen? | **Offen**; SECURITY.md erwähnt sie nicht |
-| Was haben die Härtungsrunden 2026 gefunden? | [Changelog 6.0.13](../../../changelogs/6.0/6.0.13.md), [August 2026](../../../eng-us/history/2026/2026-08.md) |
+| Was haben die Härtungsrunden 2026 gefunden? | [Changelog 6.0.13](../../../changelogs/6.0/6.0.13.md), [August 2026](../../geschichte/2026/2026-08.md) |
 
 ## Community, Finanzierung und Open Source
 
@@ -103,8 +103,8 @@ bereits beantwortet, zitieren Sie die Dokumentation und nutzen Sie Ihre Zeit fü
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

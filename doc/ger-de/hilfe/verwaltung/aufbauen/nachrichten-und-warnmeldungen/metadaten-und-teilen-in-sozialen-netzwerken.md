@@ -12,8 +12,8 @@ type: help
 Diese Seite richtet sich an Site-Ersteller und Redakteure, die möchten, dass Nachrichten und Bekanntmachungen in
 Suchergebnissen und beim Teilen von Links gut aussehen. Die Erweiterung `xrowmetadata`, die die Standardinstallation
 aktiviert, fügt ein Attribut Metadaten mit Seitentitel, Schlüsselwörtern, Beschreibung, kanonischem Link und (seit
-1.3.6) einem Open-Graph-Bild hinzu. Quellen: [xrowmetadata](../../../../../eng-us/features/6.0/extensions/xrowmetadata.md) und
-[Metadaten und Teilen in sozialen Netzwerken](../../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md).
+1.3.6) einem Open-Graph-Bild hinzu. Quellen: [xrowmetadata](../../../../funktionen/6.0/erweiterungen/xrowmetadata.md) und
+[Metadaten und Teilen in sozialen Netzwerken](../../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md).
 
 ## Inhalt
 
@@ -50,7 +50,7 @@ Ihr Pagelayout gibt die Metadaten des aktuellen Knotens aus, zum Beispiel:
 ```
 
 Fügen Sie Open-Graph-Tags (`og:title`, `og:description`, `og:image`, `og:url`) auf dieselbe Weise hinzu; das
-vollständige Beispiel steht in [xrowmetadata](../../../../../eng-us/features/6.0/extensions/xrowmetadata.md). Sind die Metadaten
+vollständige Beispiel steht in [xrowmetadata](../../../../funktionen/6.0/erweiterungen/xrowmetadata.md). Sind die Metadaten
 leer, greifen Sie auf den Namen des Objekts und seine Einleitung zurück.
 
 ## Teilen ohne Tracker
@@ -62,7 +62,7 @@ leer, greifen Sie auf den Namen des Objekts und seine Einleitung zurück.
 | Eingebettete Widgets sozialer Plattformen zum Teilen | sie laden Skripte von Drittanbietern und können Besucher auf jeder Seite verfolgen |
 
 Die Administration von Exponential lädt nichts von Drittanbietern, und das Produkt liefert kein Cookie-Banner mit
-([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)); öffentliche Seiten frei von Widgets Dritter zu halten,
+([Standards zum Datenschutz](../../../../standards/datenschutz.md)); öffentliche Seiten frei von Widgets Dritter zu halten,
 vermeidet Fragen der Einwilligung.
 
 ## Checkliste für Redakteure
@@ -76,13 +76,14 @@ vermeidet Fragen der Einwilligung.
 ## Verwandte Seiten
 
 - [Nachrichten und Warnmeldungen](README.md)
-- [SEO-Grundlagen](../../../../../eng-us/help/creators/website-creators/seo-basics.md)
-- [Sitemaps](../../../../../eng-us/help/creators/website-creators/sitemaps.md)
+- [SEO-Grundlagen](../../../ersteller/website-ersteller/seo-grundlagen.md)
+- [Sitemaps](../../../ersteller/website-ersteller/sitemaps.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

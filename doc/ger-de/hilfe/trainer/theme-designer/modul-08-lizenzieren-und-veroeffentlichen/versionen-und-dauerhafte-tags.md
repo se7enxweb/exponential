@@ -39,10 +39,10 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Ein übertragener Tag ist dauerhaft](../../../../../eng-us/help/designers/distribution/a-pushed-tag-is-permanent.md),
-[Nach .9 kommt .10](../../../../../eng-us/help/designers/distribution/only-the-last-position-counts.md),
-[Die Version vor dem Tag anheben](../../../../../eng-us/help/designers/distribution/bumping-versions-before-the-tag.md) und
-[Wenn ein Release schiefgeht](../../../../../eng-us/help/designers/distribution/when-a-release-goes-wrong.md).
+Quellen: [Ein übertragener Tag ist dauerhaft](../../../designer/veroeffentlichung/ein-gepushter-tag-ist-endgueltig.md),
+[Nach .9 kommt .10](../../../designer/veroeffentlichung/nur-die-letzte-stelle-zaehlt.md),
+[Die Version vor dem Tag anheben](../../../designer/veroeffentlichung/version-vor-dem-tag-erhoehen.md) und
+[Wenn ein Release schiefgeht](../../../designer/veroeffentlichung/wenn-ein-release-schiefgeht.md).
 
 1. **Warum dauerhaft** (5 Minuten). Packagist liest einen Tag einmal und speichert die gefundene Version im Cache; die
    Benutzer tragen sie in Lock-Dateien ein und spielen sie aus. Git erlaubt es, einen Tag zu verschieben, aber das
@@ -67,11 +67,11 @@ stehen. Das nächste Release kann sagen, was falsch war.
 
 **Wann ändert sich die erste oder zweite Stelle?** Wenn die Bedeutung des Releases es verlangt (zum Beispiel eine
 inkompatible Änderung), bewusst entschieden, nie weil die letzte Stelle neun erreicht hat
-([Eine Versionsnummer wählen](../../../../../eng-us/help/designers/distribution/choosing-a-version-number.md)).
+([Eine Versionsnummer wählen](../../../designer/veroeffentlichung/eine-versionsnummer-waehlen.md)).
 
 **Wo prüfe ich, was veröffentlicht ist?** Die Tags und Releases des Repositorys und die Packagist-Seite; ein Tag kann
 ohne Release existieren, und der lokale Klon hat womöglich nicht alle Tags abgerufen
-([Prüfen, was bereits veröffentlicht ist](../../../../../eng-us/help/designers/distribution/checking-what-is-already-published.md)).
+([Prüfen, was bereits veröffentlicht ist](../../../designer/veroeffentlichung/pruefen-was-schon-veroeffentlicht-ist.md)).
 
 ### Stolperfallen
 
@@ -120,10 +120,10 @@ Remote hinzu.
 <summary>Antworten</summary>
 
 1. **B.** Nur die letzte Stelle zählt
-   ([Nach .9 kommt .10](../../../../../eng-us/help/designers/distribution/only-the-last-position-counts.md)).
+   ([Nach .9 kommt .10](../../../designer/veroeffentlichung/nur-die-letzte-stelle-zaehlt.md)).
 2. Packagist und die Benutzer haben die Version, auf die er zeigte, bereits; ein verschobener Tag ergibt zwei Pakete
    mit einer Nummer
-   ([Ein übertragener Tag ist dauerhaft](../../../../../eng-us/help/designers/distribution/a-pushed-tag-is-permanent.md)).
+   ([Ein übertragener Tag ist dauerhaft](../../../designer/veroeffentlichung/ein-gepushter-tag-ist-endgueltig.md)).
 3. Der Commit, der die Version anhebt; danach der Tag auf diesem Commit.
 4. `git tag -l --sort=version:refname` (oder eine Liste, die durch `sort -V` geleitet wird).
 5. Das Release so lassen, wie es ist, und die nächste Version mit der Datei veröffentlichen, mit einem Hinweis in
@@ -133,10 +133,10 @@ Remote hinzu.
 
 ## Weiterführende Literatur
 
-- [Ein übertragener Tag ist dauerhaft](../../../../../eng-us/help/designers/distribution/a-pushed-tag-is-permanent.md).
-- [Tags richtig sortieren](../../../../../eng-us/help/designers/distribution/sorting-tags-correctly.md).
-- [Annotierte Tags](../../../../../eng-us/help/designers/distribution/annotated-tags.md).
-- [Alle Versionsfelder synchron halten](../../../../../eng-us/help/designers/extensions/keeping-version-fields-in-sync.md).
+- [Ein übertragener Tag ist dauerhaft](../../../designer/veroeffentlichung/ein-gepushter-tag-ist-endgueltig.md).
+- [Tags richtig sortieren](../../../designer/veroeffentlichung/tags-richtig-sortieren.md).
+- [Annotierte Tags](../../../designer/veroeffentlichung/annotierte-tags.md).
+- [Alle Versionsfelder synchron halten](../../../designer/erweiterungen/versionsfelder-synchron-halten.md).
 
 ## Verwandte Seiten
 
@@ -146,9 +146,9 @@ Remote hinzu.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

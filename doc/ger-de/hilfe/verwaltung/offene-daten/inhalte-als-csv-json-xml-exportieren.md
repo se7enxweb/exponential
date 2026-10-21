@@ -12,8 +12,8 @@ type: help
 Diese Seite richtet sich an Administratoren und Redaktionen, deren Daten bereits als Inhalt in Exponential liegen: eine
 Liste von Servicestellen, ein Beschlussregister, ein Verzeichnis von Einrichtungen. Statt eine eigene Tabelle zu
 pflegen, exportieren Sie die Inhalte selbst als Datensatzdatei. Die Werkzeuge sind die Erweiterung `xrowextract`
-([xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md)) und der Befehl des Kernels
-[exp:ezcsvexport](../../../../eng-us/examples/commands/ezcsvexport.md).
+([xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md)) und der Befehl des Kernels
+[exp:ezcsvexport](../../../beispiele/befehle/ezcsvexport.md).
 
 ## Inhalt
 
@@ -36,7 +36,7 @@ pflegen, exportieren Sie die Inhalte selbst als Datensatzdatei. Die Werkzeuge si
 
 `xrowextract` wird mit Exponential installiert, muss aber auf Ihrer Website aktiv sein (`ActiveExtensions[]`); fragen
 Sie Ihre Administration. Seine Seiten brauchen die Richtlinien der Erweiterung
-([Richtlinien von xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md#policies)).
+([Richtlinien von xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md#richtlinien)).
 
 ## Der Reiter Export von xrowextract
 
@@ -100,14 +100,15 @@ Distribution, damit die Seitenadresse gleich bleibt.
 
 ## Verwandte Seiten
 
-- [xrowextract](../../../../eng-us/features/6.0/extensions/xrowextract.md)
+- [xrowextract](../../../funktionen/6.0/erweiterungen/xrowextract.md)
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
-- [exp:ezcsvexport](../../../../eng-us/examples/commands/ezcsvexport.md)
+- [exp:ezcsvexport](../../../beispiele/befehle/ezcsvexport.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

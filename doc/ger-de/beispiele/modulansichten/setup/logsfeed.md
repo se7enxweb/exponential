@@ -14,8 +14,10 @@ Eine Ansicht des Moduls `setup`, definiert in `kernel/setup/module.php` und ausg
 ## Adresse
 
 ```text
-/setup/logsfeed
+/setup/logsfeed/(action)/<action>/(file)/<file>/(offset)/<offset>/(ino)/<ino>/(unmask)/<unmask>/(q)/<q>/(regex)/<regex>/(case)/<case>/(levels)/<levels>/(from)/<from>/(to)/<to>/(siteaccess)/<siteaccess>/(uri)/<uri>/(ip)/<ip>/(reference)/<reference>/(scope)/<scope>/(rotations)/<rotations>/(cursor)/<cursor>
 ```
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(action)` setzt `action`, `(file)` setzt `file`, `(offset)` setzt `offset`, `(ino)` setzt `ino`, `(unmask)` setzt `unmask`, `(q)` setzt `q`, `(regex)` setzt `regex`, `(case)` setzt `case`, `(levels)` setzt `levels`, `(from)` setzt `from`, `(to)` setzt `to`, `(siteaccess)` setzt `siteaccess`, `(uri)` setzt `uri`, `(ip)` setzt `ip`, `(reference)` setzt `reference`, `(scope)` setzt `scope`, `(rotations)` setzt `rotations`, `(cursor)` setzt `cursor`.
 
 ## Wer sie öffnen darf
 
@@ -38,6 +40,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/setup/logsfeed'|ezurl}>setup/logsfeed</a>
+<a href={concat( '/setup/logsfeed/(action)/', 1 )|ezurl}>setup/logsfeed</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

@@ -76,12 +76,12 @@ Der Fork enthält die vollständige Upstream-Geschichte. Die Tabelle zählt sie 
 
 ## Verwandte Seiten
 
-- [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md)
+- [Legacy Bridge](../../funktionen/6.0/legacy-bridge.md)
 - [Spezifikation der Legacy Bridge](../../spezifikationen/6.0/legacy-bridge-bundle.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/ibexa-legacy-bridge---7x.md)
 - [Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md)
-- [Site-Bundles](../../../eng-us/features/6.0/platform-site-bundles.md)
+- [Site-Bundles](../../funktionen/6.0/plattform-site-bundles.md)
 - Plattform-Ökosystem nach Monat: [2024-02](monate/2024-02.md), [2024-04](monate/2024-04.md), [2024-05](monate/2024-05.md), [2024-09](monate/2024-09.md), [2026-03](monate/2026-03.md), [2026-04](monate/2026-04.md)

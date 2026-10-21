@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratorinnen und Administratoren sowie Hosting
 dass ihre öffentlichen Websites ausschließlich über HTTPS ausgeliefert werden. HSTS (HTTP Strict Transport Security)
 lässt Browser sich das merken und unverschlüsseltes HTTP zu diesem Host verweigern. In Exponential ist HSTS
 **standardmäßig leer** und muss vom Betreiber gesetzt werden, sobald die gesamte Website nur noch über HTTPS läuft
-([Sicherheitsstandards: bekannte Lücken](../../../../eng-us/standards/security.md#known-gaps)).
+([Sicherheitsstandards: bekannte Lücken](../../../standards/sicherheit.md#bekannte-lücken)).
 
 ## Inhalt
 
@@ -82,13 +82,14 @@ jeder Seite ab.
 ## Verwandte Seiten
 
 - [13.9 Sicherheits-Header und HTTPS](../../../installation/13-sicherheitshaertung.md#139-sicherheits-header-und-https)
-- [HTTPS und Zertifikate in Velocity](../../../../eng-us/features/6.0/velocity-https-certificates.md)
-- [Live gehen: Hosts und HTTPS](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)
+- [HTTPS und Zertifikate in Velocity](../../../funktionen/6.0/velocity-https-zertifikate.md)
+- [Live gehen: Hosts und HTTPS](../../ersteller/website-ersteller/livegang-hosts-und-https.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

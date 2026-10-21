@@ -38,7 +38,7 @@ genau, was eine Rolle ihren Inhabern zu tun erlaubt und für wen sie gilt. Die S
    deren Benutzer oder Gruppe entfernt wurde, werden zuerst gelistet.
 
 Kopieren Sie die Sätze in Ihre Dokumentation der Rolle
-([Rollen, Richtlinien und Einschränkungen](../../../../../eng-us/help/government/operations/people-and-permissions/roles-policies-and-limitations.md#documenting-access-for-an-audit)).
+([Rollen, Richtlinien und Einschränkungen](../../betrieb/personen-und-berechtigungen/rollen-richtlinien-und-einschraenkungen.md#zugriff-für-ein-audit-dokumentieren)).
 
 ## Warnzeichen
 
@@ -65,14 +65,15 @@ sie hat.
 
 ## Verwandte Seiten
 - [Prüfen, wer Administratorrechte hat](pruefen-wer-administratorrechte-hat.md)
-- [Grundsätze der minimalen Rechte](../../../../../eng-us/help/government/operations/people-and-permissions/least-privilege-principles.md)
-- [Reihenfolge der Richtlinien einer Rolle](../../../../../eng-us/features/6.0/role-policy-order.md)
-- [Template-Operatoren für Rollen und Richtlinien](../../../../../eng-us/features/6.0/role-and-policy-template-operators.md)
+- [Grundsätze der minimalen Rechte](../../betrieb/personen-und-berechtigungen/prinzip-der-geringsten-rechte.md)
+- [Reihenfolge der Richtlinien einer Rolle](../../../../funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md)
+- [Template-Operatoren für Rollen und Richtlinien](../../../../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

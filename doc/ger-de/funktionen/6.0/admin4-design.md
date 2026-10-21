@@ -174,7 +174,7 @@ auf `admin4`, `admin3`, `admin2`, `admin` (`kernel/setup/steps/ezstep_create_sit
   Tastendruck gespeichert und nur, wenn sie sich geändert hat; sie wird außerhalb jedes cache-block auf `<html>`
   geschrieben (die Knotenansicht selbst wird im Ansichts-Cache gehalten und trägt keinen Wert des Benutzers) und
   angewendet, bevor die Seite gezeichnet wird. Eine anonyme Seite und eine Einstellung, die nicht gespeichert werden
-  kann (ein Netzwerkfehler, ein Fehlerstatus, die Anmeldeseite einer abgelaufenen Session), behalten sie im Browser;
+  kann (ein Netzwerkfehler, ein Fehlerstatus, die Anmeldeseite einer abgelaufenen Sitzung), behalten sie im Browser;
   die Einstellung hat Vorrang vor der Kopie im Browser. Ohne JavaScript behält der Bereich den eigenen
   Größengriff des Browsers. Die Ansicht des obersten Knotens hat dieselbe Steuerung.
   `tests/tests/design/AdminNodeTabsHeightTest.php` prüft das.
@@ -820,7 +820,7 @@ einer langen Auswahl kann dasselbe Layout mit `MegaMenuLayout=wide` in seinem `[
 - **Antworten für das Skript.** Die Ansicht antwortet ihrem Skript, nie einer Person, daher ist jede Antwort eine
   nackte Antwort mit
   einem Status und einem Header `X-Exp-Mega`, der das Urteil nennt: `200 ok` (das Fragment), `404 unknown` (ein Tab,
-  den sie nicht bedient), `403 signed-out` (kein angemeldeter Benutzer oder eine Session, die zur erneuten Anmeldung
+  den sie nicht bedient), `403 signed-out` (kein angemeldeter Benutzer oder eine Sitzung, die zur erneuten Anmeldung
   aufgefordert wurde) und `403 denied` (kein
   `user/login` für diesen Siteaccess, oder der Tab ist für den Benutzer nicht geöffnet). Nie die Anmeldeseite oder
   eine Fehlerseite mit dem Seitenlayout. Dafür nennt `site.ini` `user/megamenu` in
@@ -829,11 +829,11 @@ einer langen Auswahl kann dasselbe Layout mit `MegaMenuLayout=wide` in seinem `[
   seiner `SiteAccess`-Einschränkung, dann den Tab). Eine Site, die einen der beiden Einträge entfernt, erhält das alte
   Verhalten zurück: die Anmeldeseite
   oder die Fehlerseite, die das Skript ebenfalls als fehlgeschlagenes Laden behandelt.
-- **Die Session.** Die Ansicht liest die Session nur, daher schließt sie sie (`session_write_close()`), sobald das
+- **Die Sitzung.** Die Ansicht liest die Sitzung nur, daher schließt sie sie (`session_write_close()`), sobald das
   Urteil gefällt ist: Die anderen Anfragen der Seite warten nicht auf das Menü. Sie wartet trotzdem, wie jede Anfrage
   einer
-  Session, solange eine andere Anfrage derselben Session deren Sperre hält (der Datei-Handler und Velocity sperren
-  die Session für die gesamte Anfrage), sodass eine langsam ladende Seite in einem anderen Tab den Bereich um die Zeit
+  Sitzung, solange eine andere Anfrage derselben Sitzung deren Sperre hält (der Datei-Handler und Velocity sperren
+  die Sitzung für die gesamte Anfrage), sodass eine langsam ladende Seite in einem anderen Tab den Bereich um die Zeit
   dieser Seite verzögert.
 - **Aussehen:** eine admin4-Karte (`--a4-card`, `--a4-line`, `--a4-radius-s`, `--a4-shadow-m`), zentriert unter der
   Kopfzeile und so breit, wie ihre Gruppen es brauchen: bis zu drei Gruppen von 17rem nebeneinander, sodass eine kurze
@@ -1428,8 +1428,9 @@ Community“. Ein Template kann auch `$show_community_links` setzen.
 - Historie: [Oktober 2026](../../geschichte/2026/2026-10.md), [Juni 2026, zweite Hälfte](../../geschichte/2026/2026-06b.md), [Juni 2025](../../geschichte/2025/2025-06.md), [Januar 2025](../../geschichte/2025/2025-01.md), [November 2024](../../geschichte/2024/2024-11.md), [Oktober 2024](../../geschichte/2024/2024-10.md), [August 2024](../../geschichte/2024/2024-08.md)
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

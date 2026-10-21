@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Site-Ersteller und Projektleiter, die Anmeldungen zu einer Veranstaltung brauchen.
 Exponential hat kein Buchungssystem; der **Information Collector** kann einfache Anmeldungen annehmen. Diese Seite zeigt
 wie, und wo seine Grenzen liegen. Quellen:
-[Formulare mit dem Information Collector](../../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)
+[Formulare mit dem Information Collector](../../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)
 und [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
@@ -68,7 +68,7 @@ kein Formular, wenn das Feld Booking „freier Eintritt“ sagt.
 | Beschränken Sie `infocollector/read` | wer es hat, sieht die Anmeldungen aller Veranstaltungen |
 
 In der EU gilt die [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
-([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)).
+([Standards zum Datenschutz](../../../../standards/datenschutz.md)).
 
 ## Wann ein Buchungssystem sinnvoll ist
 
@@ -90,8 +90,9 @@ Verlinken Sie das Buchungssystem über das Attribut **Booking link** der Veranst
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

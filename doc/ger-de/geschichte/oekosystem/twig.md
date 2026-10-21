@@ -76,10 +76,10 @@ Der Fork enthält die vollständige Upstream-Geschichte. Die Tabelle zählt sie 
 
 ## Verwandte Seiten
 
-- [Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
+- [Framework-Forks](../../funktionen/6.0/plattform-php85-framework-forks.md)
 - [Release-Changelog](../../../changelogs/extensions/twig.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/twig.md)
 - Plattform-Ökosystem nach Monat: [2023-09](monate/2023-09.md), [2023-12](monate/2023-12.md), [2024-03](monate/2024-03.md), [2024-09](monate/2024-09.md), [2025-08](monate/2025-08.md), [2026-01](monate/2026-01.md), [2026-03](monate/2026-03.md), [2026-04](monate/2026-04.md), [2026-05](monate/2026-05.md)

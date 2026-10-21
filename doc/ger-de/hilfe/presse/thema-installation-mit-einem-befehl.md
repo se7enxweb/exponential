@@ -24,7 +24,7 @@ Juli 2026 installiert sich eine vollständige Website mit einem Befehl.
 
 „Diese Seite ist für alle, die in wenigen Minuten eine funktionierende Exponential-Website möchten, ohne eine
 `kickstart.ini` zu schreiben und ohne Datenbankserver“
-([Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md)). `./console exp:install`
+([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)). `./console exp:install`
 installiert das Multisite-Paket auf SQLite in amerikanischem Englisch, mit einer Website und einer Administration, und
 gibt die Anmeldeadressen und eine Zusammenfassung aus. Optionen wählen stattdessen MySQL, PostgreSQL, MongoDB oder
 Oracle.
@@ -33,18 +33,18 @@ Oracle.
 
 | Was | Wann | Quelle |
 |---|---|---|
-| `ezpm` in der Konsole, ein Installer mit einem Befehl und der Kickstarter | Juli 2026 | [Juli 2026](../../../eng-us/history/2026/2026-07.md) |
-| SQLite als Datenbank, die keinen Server braucht | 1. Januar 2024 (6.0.0) | [Januar 2024](../../../eng-us/history/2024/2024-01a.md) |
+| `ezpm` in der Konsole, ein Installer mit einem Befehl und der Kickstarter | Juli 2026 | [Juli 2026](../../geschichte/2026/2026-07.md) |
+| SQLite als Datenbank, die keinen Server braucht | 1. Januar 2024 (6.0.0) | [Januar 2024](../../geschichte/2024/2024-01a.md) |
 
 ## Fakten, die Sie drucken können
 
 | Fakt | Quelle |
 |---|---|
-| Ein Befehl: `./console exp:install`, gleichbedeutend mit `php bin/php/install.php` | [Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md) |
+| Ein Befehl: `./console exp:install`, gleichbedeutend mit `php bin/php/install.php` | [Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Standard: SQLite, `eng-US`, die Siteaccesses `site` und `admin` | ebenda |
-| Datenbankoptionen: `sqlite` (Standard), `mysql`/`mariadb`, `pgsql`, `mongodb`, `oracle` | [Eine Datenbank wählen](../../../eng-us/features/6.0/install-in-one-command.md#choose-a-database) |
-| Der Kickstarter installiert für automatisierte Einrichtungen aus einer Konfigurationsdatei | [Kickstarter-CLI](../../../eng-us/features/6.0/kickstarter-cli.md) |
-| `ezpm`, ein Paketmanager in der Konsole | [ezpm](../../../eng-us/features/6.0/ezpm-package-manager-cli.md) |
+| Datenbankoptionen: `sqlite` (Standard), `mysql`/`mariadb`, `pgsql`, `mongodb`, `oracle` | [Eine Datenbank wählen](../../funktionen/6.0/installation-mit-einem-befehl.md#eine-datenbank-wählen) |
+| Der Kickstarter installiert für automatisierte Einrichtungen aus einer Konfigurationsdatei | [Kickstarter-CLI](../../funktionen/6.0/kickstarter-cli.md) |
+| `ezpm`, ein Paketmanager in der Konsole | [ezpm](../../funktionen/6.0/ezpm-paketmanager-cli.md) |
 
 ## Was Sie nicht behaupten sollten
 
@@ -68,8 +68,8 @@ Oracle.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -11,7 +11,7 @@ type: help
 
 **Wer:** der Projektleiter mit den Fachleuten des Bewertungsteams. **Wann:** vor der Unterzeichnung, damit der Vertrag
 darauf verweisen kann; verfeinern Sie ihn während des Aufbaus. Klausel:
-[Klausel zu Abnahmetests](../../../../../eng-us/help/government/procurement/tender-templates/acceptance-testing-clause.md).
+[Klausel zu Abnahmetests](../../beschaffung/ausschreibungsvorlagen/klausel-abnahmetest.md).
 
 > **Hinweis** Diese Seite beschreibt gängige Praxis; sie ist keine Rechtsberatung. Lassen Sie die Bedingungen der
 > Abnahme von Ihrer Rechtsberatung prüfen.
@@ -27,7 +27,7 @@ darauf verweisen kann; verfeinern Sie ihn während des Aufbaus. Klausel:
 ## Bevor Sie beginnen
 
 - Die Anforderungen, jede mit einer Kennung
-  ([Wie man prüfbare Anforderungen schreibt](../../../../../eng-us/help/government/procurement/requirements/how-to-write-verifiable-requirements.md)).
+  ([Wie man prüfbare Anforderungen schreibt](../../beschaffung/anforderungen/pruefbare-anforderungen-schreiben.md)).
 - Eine Staging-Umgebung, die der Produktion entspricht.
 
 ## Schritte
@@ -70,12 +70,13 @@ Ein von beiden Parteien vereinbarter Plan, der „fertig“ in eine Liste bestan
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
 - [Checkliste für den Go-live einer öffentlichen Site](../../checklisten/checkliste-fuer-den-livegang.md)
-- [Anforderungen Nachweisen zuordnen](../../../../../eng-us/help/government/procurement/requirements/mapping-requirements-to-evidence.md)
+- [Anforderungen Nachweisen zuordnen](../../beschaffung/anforderungen/anforderungen-nachweisen-zuordnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

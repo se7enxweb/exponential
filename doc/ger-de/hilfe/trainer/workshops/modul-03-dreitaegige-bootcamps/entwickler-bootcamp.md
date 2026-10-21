@@ -38,9 +38,9 @@ Am Ende des Bootcamps können die Teilnehmenden:
 
 | Tag | Vormittag (3 Std.) | Nachmittag (3 Std.) |
 |---|---|---|
-| 1 | Git-Installation ([Mit Git entwickeln](../../../mit-git-entwickeln.md)); Kernkonzepte ([Die Kernkonzepte unterrichten](../../../../../eng-us/help/trainers/teaching-the-core-concepts.md)) | Inhaltsklassen und Inhalte ([Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md), [Klassengruppen](../../../../anleitungen/klassengruppen.md)) |
+| 1 | Git-Installation ([Mit Git entwickeln](../../../mit-git-entwickeln.md)); Kernkonzepte ([Die Kernkonzepte unterrichten](../../die-kernkonzepte-unterrichten.md)) | Inhaltsklassen und Inhalte ([Das Inhaltsmodell und das Bearbeiten von Inhalten](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md), [Klassengruppen](../../../../anleitungen/klassengruppen.md)) |
 | 2 | Die Template-Sprache ([Templates und Design, 6](../../../../anleitungen/templates-und-design.md#6-die-template-sprache-in-zehn-minuten)) | Overrides und Debugging ([Templates und Design, 4 und 7](../../../../anleitungen/templates-und-design.md#4-eine-änderung-mit-einem-override-vornehmen)) |
-| 3 | Erweiterungen und die RAD-Werkzeuge ([Erweiterungen](../../../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md)); INI ([exp:ini](../../../../../eng-us/features/6.0/exp-ini-command.md)) | Die Konsole; Velocity und Ausrollen ([Die Website ausliefern, 8.3.14](../../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy)); ein Pull-Request |
+| 3 | Erweiterungen und die RAD-Werkzeuge ([Erweiterungen](../../../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md)); INI ([exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md)) | Die Konsole; Velocity und Ausrollen ([Die Website ausliefern, 8.3.14](../../../../installation/08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy)); ein Pull-Request |
 
 Pausen: jeden Tag 15 Minuten am Vormittag und am Nachmittag, 45 Minuten Mittagspause.
 
@@ -90,7 +90,7 @@ Pausen: jeden Tag 15 Minuten am Vormittag und am Nachmittag, 45 Minuten Mittagsp
 
 ## Weiterführende Informationen
 
-- [Entwicklung von Erweiterungen](../../../../../eng-us/help/extension-development/README.md)
+- [Entwicklung von Erweiterungen](../../../erweiterungsentwicklung/README.md)
 - [Templates und Design](../../../../anleitungen/templates-und-design.md)
 - [REST-API v1 und v2](../../../../anleitungen/rest-api-v1-und-v2.md)
 
@@ -98,13 +98,13 @@ Pausen: jeden Tag 15 Minuten am Vormittag und am Nachmittag, 45 Minuten Mittagsp
 
 - [Modul 3: Dreitägige Bootcamps](README.md)
 - [Workshops und Bootcamps: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

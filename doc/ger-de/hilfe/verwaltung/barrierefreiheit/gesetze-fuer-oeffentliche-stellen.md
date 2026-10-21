@@ -13,7 +13,7 @@ Diese Seite richtet sich an Projektverantwortliche, Rechts- und Beschaffungsstel
 Barrierefreiheit einer öffentlichen Stelle. Sie gibt einen verständlichen Überblick über die Regeln zur
 Barrierefreiheit, die am häufigsten für eine öffentliche Website gelten, nennt die amtlichen Texte und verweist auf die
 Seiten dieses Bereichs, die jede Pflicht behandeln. Die Fakten zu Exponential stammen aus
-[Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md).
+[Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -54,16 +54,16 @@ In diesen Texten kehren dieselben praktischen Pflichten wieder. Jede hat eine Se
 ## Wo Exponential steht
 
 - **Das Bearbeitungswerkzeug.** Die Administration admin4 und admin4l ist gegen WCAG 2.2 AA entworfen und getestet,
-  und das Projekt bewertet sie mit **Partly complies**. EN 301 549 und Section 508 sind **Unverified**. Es gibt kein
-  VPAT und keinen ACR ([Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md#summary)).
+  und das Projekt bewertet sie mit **Teilweise erfüllt**. EN 301 549 und Section 508 sind **nicht geprüft**. Es gibt kein
+  VPAT und keinen ACR ([Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md#zusammenfassung)).
 - **Die öffentliche Website.** Die Designs, die Ihre öffentlichen Seiten darstellen, prüft das Projekt nicht
-  ([Bekannte Lücken](../../../../eng-us/standards/accessibility.md#known-gaps)). Ihre Barrierefreiheit liegt in der Verantwortung
+  ([Bekannte Lücken](../../../standards/barrierefreiheit.md#bekannte-lücken)). Ihre Barrierefreiheit liegt in der Verantwortung
   des Website-Erstellers, was in einer öffentlichen Stelle bedeutet: in Ihrer oder der Ihres Lieferanten.
 - **Die Erklärung.** Exponential liefert keine Vorlage für eine Erklärung zur Barrierefreiheit mit; das Projekt führt
   das als Lücke gegenüber der Richtlinie über barrierefreie Websites
-  ([EN 301 549](../../../../eng-us/standards/accessibility.md#en-301-549)).
+  ([EN 301 549](../../../standards/barrierefreiheit.md#en-301-549)).
 - **Unterstützung beim Erstellen.** EN 301 549 Abschnitt 11.8 (das Werkzeug hilft Autorinnen und Autoren,
-  barrierefreie Inhalte zu erstellen) wurde nicht überprüft. Hilfreiche Funktionen gibt es: ein Feld für Alternativtext
+  barrierefreie Inhalte zu erstellen) wurde nicht geprüft. Hilfreiche Funktionen gibt es: ein Feld für Alternativtext
   an Bildern, das eine Klasse verpflichtend machen kann (die Option „Alternativtext ist erforderlich“ an
   Bildattributen, seit 6.0.15), sowie Überschriften, Tabellenbeschriftungen und Tabellenköpfe im Rich Text.
 
@@ -80,15 +80,16 @@ In diesen Texten kehren dieselben praktischen Pflichten wieder. Jede hat eine Se
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - W3C WAI, [WCAG 2.2](https://www.w3.org/TR/WCAG22/) und [Erklärungen zur Barrierefreiheit](https://www.w3.org/WAI/planning/statements/)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

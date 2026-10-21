@@ -51,7 +51,7 @@ Exponential hat kein eingebautes Feld „zuständiger Fachbereich“. Möglichke
 |---|---|---|
 | Der Baum | die Seiten jedes Fachbereichs liegen in einem eigenen Ordner | die Verantwortung folgt dem Teilbaum; passt zu den Rollen der Fachbereichsredaktionen ([Rollenentwurf: Redaktionen der Fachbereiche](../personen-und-berechtigungen/rollenentwurf-fachredaktionen.md)) |
 | Ein Feld an der Klasse | fügen Sie Ihren Seitenklassen ein Attribut wie „Zuständige Einheit“ hinzu | wird den Redaktionen angezeigt; kann mit Fetches aufgelistet werden; eine Änderung durch die Website-Entwicklung |
-| Tags | die Extension eztags, falls aktiv, mit einem Tag je Einheit | durchsuchbar; siehe [Tags](../../../../../eng-us/features/6.0/extensions/eztags.md) |
+| Tags | die Extension eztags, falls aktiv, mit einem Tag je Einheit | durchsuchbar; siehe [Tags](../../../../funktionen/6.0/erweiterungen/eztags.md) |
 | Ein Objektzustand | eine Zustandsgruppe je verantwortlicher Stelle ist möglich, skaliert aber schlecht | bevorzugen Sie die obigen Möglichkeiten |
 
 Eine Funktion (zum Beispiel „Leitung Kommunikation, Fachbereich Beispiel“) ist eine bessere verantwortliche Stelle als der Name einer Person:
@@ -66,7 +66,7 @@ Sie überdauert personelle Wechsel und hält personenbezogene Daten von öffentl
 2. **Ein Fachbereich wird umorganisiert**: Verschieben Sie den Teilbaum unter den Ordner des neuen Fachbereichs und passen Sie dann die
    eingeschränkten Rollenzuweisungen an; das Verschieben ändert die Sektion nur bei Objekten, die die Sektion des alten übergeordneten Elements hatten
    ([Sektionen und Teilbaum-Einschränkungen](../personen-und-berechtigungen/sektionen-und-teilbaum-einschraenkungen.md#was-geschieht-wenn-inhalte-verschoben-werden)).
-3. **Halten Sie es fest**: Verschiebungen und Eigentümerwechsel stehen im Kanal `content` des Audit-Trails.
+3. **Halten Sie es fest**: Verschiebungen und Eigentümerwechsel stehen im Kanal `content` des Prüfprotokolls.
 
 ## Verwandte Seiten
 - [Prüftermine mit Objektzuständen](pruefdaten-mit-objektzustaenden.md)
@@ -76,8 +76,9 @@ Sie überdauert personelle Wechsel und hält personenbezogene Daten von öffentl
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

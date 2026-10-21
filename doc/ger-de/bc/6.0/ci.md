@@ -3,7 +3,7 @@
 Lesen Sie diese Seite, wenn eine Prüfung eines Commits oder Pull Requests von `se7enxweb/exponential` rot ist, wenn Sie
 einen der Workflows in `.github/workflows/` ändern oder wenn Sie wissen möchten, wie gesund die CI in letzter Zeit war.
 Die Prüfungen selbst (Git-Hooks, Dateimanifest, Code-Stil, PHPStan, die Tests einer Änderung) sind in
-[doc/eng-us/features/6.0/quality-checks.md](../../../eng-us/features/6.0/quality-checks.md) beschrieben; diese Seite
+[doc/eng-us/features/6.0/quality-checks.md](../../funktionen/6.0/qualitaetspruefungen.md) beschrieben; diese Seite
 ist die Karte drumherum.
 
 ## Kurz gesagt
@@ -163,7 +163,7 @@ Der Quality-Schritt **Commit messages** prüft die Commits des Pushs oder des Pu
   Projekts, für einen Beitragenden, der möchte, dass sein Branch dem Format folgt.
 
 `make hooks` installiert den Hook, der jede Nachricht bei `git commit` prüft. Die Details stehen in
-[quality-checks.md](../../../eng-us/features/6.0/quality-checks.md), „Pull requests“.
+[quality-checks.md](../../funktionen/6.0/qualitaetspruefungen.md), „Pull requests“.
 
 ## Wie gesund die CI ist: der Bericht
 

@@ -46,7 +46,7 @@ LIZENZ         Software: GNU GPL v2 oder später, kostenlos. Dokumentation: GNU 
 LÄUFT AUF *    PHP 8.0 - 8.5. SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL.
                Linux, BSD, macOS, Windows (dokumentierte Stufen). Apache, Nginx und andere, oder Velocity.
 NEU IN 6.0.15* Exponential Velocity (PHP-Webserver), Exponential Layouts (Seitenbaukasten), Exponential
-               Intelligence (schreibt nur Entwürfe), Design admin4, Audit-Trail, Hilfesystem.
+               Intelligence (schreibt nur Entwürfe), Design admin4, Prüfprotokoll, Hilfesystem.
 SICHERHEIT     Vertrauliche Meldungen an security@se7enx.com; "a first answer within one business day";
                Korrekturen erscheinen im nächsten 6.0.x-Release; veröffentlichte Versionen werden nie geändert.
 SPRACHEN *     268 Locale-Dateien (40 von rechts nach links); 33 Übersetzungen der Administration, 19 vollständig
@@ -71,7 +71,7 @@ PRESSE         info@se7enx.com   Pressekit: exponential.earth/about/press-kit
 | Läuft auf | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen); [Datenbankunterstützung](../datenbankunterstuetzung.md); [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Neu in 6.0.15 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
 | Sicherheit | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md); [Sicherheitskorrekturen](../wer-ist-die-exponential-foundation.md#sicherheitskorrekturen) |
-| Sprachen | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| Sprachen | [Sprachen in Exponential](../../sprachen.md) |
 | Nicht verbunden | README, „Exponential Project Notice : 2025.08.12“ |
 | Pressekontakt | Fußzeile von <https://exponential.earth/>; [Pressekontakte](pressekontakte.md) |
 
@@ -82,7 +82,7 @@ PRESSE         info@se7enx.com   Pressekit: exponential.earth/about/press-kit
 | Releases | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) oder den Tags auf GitHub |
 | Läuft auf | Dem README-Abschnitt „Requirements“ |
 | Neu in 6.0.15 | Dem Changelog; sobald 6.0.15 getaggt ist, ist es nicht mehr „in Entwicklung“ |
-| Sprachen | [Sprachen in Exponential](../../../eng-us/languages.md) |
+| Sprachen | [Sprachen in Exponential](../../sprachen.md) |
 
 ## Das Faktenblatt verwenden
 
@@ -102,8 +102,8 @@ PRESSE         info@se7enx.com   Pressekit: exponential.earth/about/press-kit
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -13,7 +13,7 @@ Diese Seite ist für Erweiterungsentwickler. `./console exp:expfetch` (sowie `ex
 Karte mit Fakten, die von **Providern** stammen, einer Klasse pro Gruppe von Fakten, die in `syscard.ini` aufgeführt
 sind. Ihre Erweiterung kann einen Provider für ihre eigenen Fakten und Hinweise, ein Farbschema und ein Logo
 hinzufügen, und zwar nur mit ihren eigenen Dateien. Referenz:
-[Die Systemkarte](../../../../eng-us/features/6.0/system-card.md).
+[Die Systemkarte](../../../funktionen/6.0/systemkarte.md).
 
 ## 1. Die Provider-Klasse
 
@@ -143,7 +143,7 @@ diese.
 
 ## Verwandte Seiten
 
-- [Die Systemkarte](../../../../eng-us/features/6.0/system-card.md)
+- [Die Systemkarte](../../../funktionen/6.0/systemkarte.md)
 - [CLI-Skripte und Konsolenbefehle](cli-skripte-und-console-befehle.md)
 - [Tests für Erweiterungen](tests-fuer-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

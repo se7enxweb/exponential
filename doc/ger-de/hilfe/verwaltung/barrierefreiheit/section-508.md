@@ -3,7 +3,7 @@ title: Section 508 und Exponential
 audience: government, project-manager, admin
 category: public-sector
 order: 60
-summary: Für US-Bundesbehörden und ihre Auftragnehmer - was Section 508 und die Revised 508 Standards allgemein von Webinhalten und Autorenwerkzeugen verlangen, der Status des Projekts (Unverified, kein VPAT) und wie Sie eine mit Exponential gebaute Website bewerten.
+summary: Für US-Bundesbehörden und ihre Auftragnehmer - was Section 508 und die Revised 508 Standards allgemein von Webinhalten und Autorenwerkzeugen verlangen, der Status des Projekts (Nicht geprüft, kein VPAT) und wie Sie eine mit Exponential gebaute Website bewerten.
 keywords: Section 508, Rehabilitation Act, Revised 508 Standards, US Access Board, VPAT, ACR, Konformitätsbericht, Bundesbehörden, Vereinigte Staaten, Beschaffung, Accessibility Conformance Report, WCAG 2.0 AA, federal, United States, procurement
 type: help
 ---
@@ -34,12 +34,12 @@ VPAT (Voluntary Product Accessibility Template), aus dem ein Accessibility Confo
 
 ## Der Status des Projekts
 
-Aus [Standards zur Barrierefreiheit: Section 508](../../../../eng-us/standards/accessibility.md#section-508):
+Aus [Standards zur Barrierefreiheit: Section 508](../../../standards/barrierefreiheit.md#section-508):
 
-- **Status: Unverified.** Es gibt kein VPAT und keinen Accessibility Conformance Report für Exponential.
+- **Status: Nicht geprüft.** Es gibt kein VPAT und keinen Accessibility Conformance Report für Exponential.
 - **Inhaltlich** deckt die Arbeit an WCAG es ab: WCAG 2.0 AA ist eine Teilmenge dessen, wogegen die Administration admin4
-  getestet wird (WCAG 2.2 AA, bewertet mit **Partly complies**).
-- Nicht überprüft: der Online-Editor (Integrationen von TinyMCE, **Unverified**), Designs öffentlicher Websites (nicht
+  getestet wird (WCAG 2.2 AA, bewertet mit **Teilweise erfüllt**).
+- Nicht geprüft: der Online-Editor (Integrationen von TinyMCE, **Nicht geprüft**), Designs öffentlicher Websites (nicht
   geprüft), als eigene Pakete ausgelieferte Erweiterungen (keine Gesamterklärung).
 
 ## Was zu bewerten ist
@@ -72,14 +72,15 @@ Eine Ausschreibung kann vom Bieter ein VPAT verlangen. Mit Exponential:
 
 ## Verwandte Seiten
 
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
-- [Das Design admin4](../../../../eng-us/features/6.0/admin4-design.md)
-- [Die Barrierefreiheit Ihrer Website testen](../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
+- [Das Design admin4](../../../funktionen/6.0/admin4-design.md)
+- [Die Barrierefreiheit Ihrer Website testen](../../ersteller/website-ersteller/barrierefreiheit-testen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

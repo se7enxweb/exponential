@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Entwickler und Designer, die ein Seitenpaket veröffentlichen, und für Prüfende, die eines prüfen. Ein Paket, das nicht
 sagt, unter welcher Lizenz es veröffentlicht wird, gibt niemandem das Recht, es zu nutzen, zu ändern oder weiterzugeben. Diese Seite erklärt
 die zwei Stellen, an denen ein Paket seine Lizenz angibt, wie Exponential sie zeigt und was die ausgelieferten Pakete tun. Sie ist keine
-Rechtsberatung; zur Wahl einer Lizenz siehe [Lizenzwahl: ein Überblick](../../../../eng-us/help/designers/distribution/licensing-choices-overview.md).
+Rechtsberatung; zur Wahl einer Lizenz siehe [Lizenzwahl: ein Überblick](../../designer/veroeffentlichung/lizenzwahl-ueberblick.md).
 
 ## Inhalt
 
@@ -75,7 +75,7 @@ AliasList[GPL]=GPL-2.0-or-later
 
 Der Kommentar darüber erklärt warum: Pakete, die erstellt wurden, bevor die Lizenz eine Wahl wurde, speichern `GPL`, was immer die GNU GPL
 Version 2 oder (nach Ihrer Wahl) jede spätere Version bedeutete, die Lizenz von Exponential selbst. Wie Sie der Liste eine eigene Lizenz
-hinzufügen, ist in [Paketlizenzen und Semantic Versioning](../../../../eng-us/features/6.0/package-licenses-and-versions.md) beschrieben.
+hinzufügen, ist in [Paketlizenzen und Semantic Versioning](../../../funktionen/6.0/paketlizenzen-und-versionen.md) beschrieben.
 
 ## Das Element documents und documents/LICENCE
 
@@ -122,7 +122,7 @@ In den zwei Quell-Repositorys am 18.10.2026 geprüft:
 > **Tipp**
 > Wenn Sie ein Paket forken, ändern Sie die erste Zeile von `documents/LICENCE` auf den neuen Paketnamen und fügen Sie eine eigene
 > Copyright-Zeile hinzu, wenn Ihre Änderungen erheblich sind
-> ([Copyright- und Autorenzeilen](../../../../eng-us/help/designers/extensions/copyright-and-author-lines.md)).
+> ([Copyright- und Autorenzeilen](../../designer/erweiterungen/copyright-und-autorenzeilen.md)).
 
 ## Checkliste
 
@@ -138,8 +138,8 @@ In den zwei Quell-Repositorys am 18.10.2026 geprüft:
 
 - [Anforderungen an die Dokumentation von Seitenpaketen](README.md)
 - [Die Checkliste der Anforderungen](die-checkliste-der-anforderungen.md)
-- [Paketlizenzen und Semantic Versioning](../../../../eng-us/features/6.0/package-licenses-and-versions.md)
-- [Die Datei LICENSE eines Themes](../../../../eng-us/help/designers/extensions/license-file.md)
-- [Eine Lizenz im Paketassistenten wählen](../../../../eng-us/help/designers/extensions/package-licenses-in-the-wizard.md)
+- [Paketlizenzen und Semantic Versioning](../../../funktionen/6.0/paketlizenzen-und-versionen.md)
+- [Die Datei LICENSE eines Themes](../../designer/erweiterungen/die-license-datei.md)
+- [Eine Lizenz im Paketassistenten wählen](../../designer/erweiterungen/paketlizenzen-im-assistenten.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

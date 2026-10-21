@@ -11,7 +11,7 @@ type: help
 
 Für Administratoren und Hosting-Teams mit einem zentralen Log-Sammler. Einträge, die den Server sofort verlassen, kann
 ein Angreifer, der den Server übernimmt, nicht unbemerkt umschreiben
-([Das Audit-Protokoll an ein SIEM weiterleiten](../../../../../eng-us/help/government/security/forwarding-audit-to-a-siem.md)).
+([Das Audit-Protokoll an ein SIEM weiterleiten](../../sicherheit/audit-an-ein-siem-weiterleiten.md)).
 
 ## Inhalt
 
@@ -64,14 +64,15 @@ werden Einträge zwischengespeichert und vom Teil der Cronjobs gesendet;
 
 ## Verwandte Seiten
 
-- [Das Audit-Protokoll an ein SIEM weiterleiten](../../../../../eng-us/help/government/security/forwarding-audit-to-a-siem.md)
+- [Das Audit-Protokoll an ein SIEM weiterleiten](../../sicherheit/audit-an-ein-siem-weiterleiten.md)
 - [Anleitung zum Audit, 6.5 Weiterleitung an ein SIEM](../../../../bc/6.0/audit.md#65-weiterleitung-an-ein-siem)
 - [Das Audit-Protokoll verifizieren](das-audit-protokoll-verifizieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

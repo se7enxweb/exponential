@@ -25,19 +25,19 @@ Parameter entgegen.
 
 ### md5
 
-PHP `md5()`: 32 Hexadezimalziffern. Generierte Referenz: [md5](../../../eng-us/examples/template-operators/md5.md).
+PHP `md5()`: 32 Hexadezimalziffern. Generierte Referenz: [md5](../../beispiele/template-operatoren/md5.md).
 
 ### crc32
 
 `eZSys::ezcrc32()` (`lib/ezutils/classes/ezsys.php`): PHP `crc32()`, als vorzeichenlose Zahl ausgegeben, wenn in
 `site.ini` `[SiteSettings] 64bitCompatibilityMode=enabled` gesetzt ist, sodass der Wert auf 32-Bit- und 64-Bit-PHP
-gleich ist. Generierte Referenz: [crc32](../../../eng-us/examples/template-operators/crc32.md).
+gleich ist. Generierte Referenz: [crc32](../../beispiele/template-operatoren/crc32.md).
 
 ### rot13
 
 PHP `str_rot13()`: Jeder Buchstabe wird um 13 Stellen verschoben, andere Zeichen bleiben erhalten. Es verbirgt nichts;
 es verhindert nur, dass Text auf einen Blick gelesen wird. Generierte Referenz:
-[rot13](../../../eng-us/examples/template-operators/rot13.md).
+[rot13](../../beispiele/template-operatoren/rot13.md).
 
 ### sha1
 
@@ -113,13 +113,14 @@ Die Beispiele lieferten auf alpha interpretiert und kompiliert dieselbe Ausgabe.
 ## Verwandte Seiten
 
 - [Text-Operatoren](text-operatoren.md): `concat`, um die zu hashende Zeichenkette zu bilden
-- [Cache-Blöcke](../../../eng-us/help/designers/templates/cache-block.md): Schlüssel für cache-block
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Cache-Blöcke](../designer/vorlagen/cache-block.md): Schlüssel für cache-block
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

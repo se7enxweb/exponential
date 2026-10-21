@@ -104,7 +104,7 @@ Angemeldete Kunden (Mitglieder, Shop-Kunden mit Konto, Redakteure) sehen Seiten,
 Antwortcache von Velocity bedient sie nie: „Angemeldete Besucher werden nie aus dem Cache bedient“
 (`settings/velocity.ini`, `[CacheSettings]`). Der Content-View-Cache hilft ihnen trotzdem, weil er je Rolle und
 Einschränkungen gehalten wird
-([View-Cache und Cache-Blöcke](../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md#the-content-view-cache)),
+([View-Cache und Cache-Blöcke](../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md#der-view-cache-für-inhalte)),
 und der rollenbewusste HTTP-Cache kann angemeldete Besucher je Berechtigungskontext bedienen, wenn er eingeschaltet ist.
 
 Wenn der größte Teil Ihres Verkehrs angemeldet ist (ein Intranet, eine Mitgliederwebsite, ein Shop an der Kasse),
@@ -124,7 +124,7 @@ Caches machen nur Ärger, wenn sie unbedacht geleert werden. Drei Regeln:
    ([Unterbrechungsfreie Deployments](unterbrechungsfreie-deployments.md)).
 
 Große Caches werden zur Seite verschoben und danach gelöscht, „damit ein Leeren Anfragen nicht warten lässt“
-([Cache-Leerungen, die Verzeichnisse zur Seite verschieben](../../../../eng-us/features/6.0/cache-clear-rename-aside.md)).
+([Cache-Leerungen, die Verzeichnisse zur Seite verschieben](../../../funktionen/6.0/cache-leeren-durch-umbenennen.md)).
 
 ## Vorwärmen nach dem Leeren
 
@@ -150,13 +150,13 @@ Verwenden Sie den Namen Ihres eigenen öffentlichen Siteaccess. Dasselbe steht i
 
 - [Statischer Cache und Antwortcache](statischer-cache-und-antwortcache.md)
 - [Lastspitzen planen](lastspitzen-planen.md)
-- [Leistung und Caching für Websites](../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
+- [Leistung und Caching für Websites](../../ersteller/website-ersteller/leistung-und-caching.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

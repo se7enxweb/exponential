@@ -38,7 +38,7 @@ Die Ausgabe jedes Templates wird dann in Kommentare eingeschlossen wie
 Element-Inspektor des Browsers und lesen Sie den Kommentar um das Markup, das Sie interessiert. Es funktioniert mit ein- und
 ausgeschaltetem Template-Compiler. Die Einstellung fügt jedem Template Markup hinzu und muss daher in der Produktion aus bleiben,
 ebenso auf jedem Siteaccess, der JSON, XML oder RSS ausliefert (Kommentar in `settings/site.ini`). Einzelheiten:
-[Kommentare mit Template-Pfaden](../../../../eng-us/features/6.0/template-path-comments.md).
+[Kommentare mit Template-Pfaden](../../../funktionen/6.0/template-pfad-kommentare.md).
 
 ## Welche Templates wurden überhaupt verwendet?
 
@@ -137,8 +137,9 @@ dem Siteaccess nicht aktiv ist.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

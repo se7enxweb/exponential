@@ -4,7 +4,7 @@ Lesen Sie diese Seite, bevor Sie eine Website aktualisieren, die die Legacy-Erwe
 verwendet, die mit oder neben Exponential 6.0.15 ausgeliefert werden. Zwischen dem 22. September und dem 2. Oktober
 2026 wurden alle auf denselben Stand gebracht. Die meisten Änderungen sind unsichtbar; diese Seite führt die auf, die
 es nicht sind, in der Reihenfolge, in der Sie sie prüfen sollten, jeweils mit Prüfung und Lösung. Die eigene Seite
-jeder Erweiterung unter [Erweiterungen](../../../eng-us/features/6.0/extensions/README.md) führt ihre Releases auf.
+jeder Erweiterung unter [Erweiterungen](../../funktionen/6.0/erweiterungen/README.md) führt ihre Releases auf.
 
 ## Kurze Checkliste
 
@@ -178,7 +178,7 @@ Regeln folgen; die Korrekturen der Erweiterungen zeigen jede davon:
 
 ## 8. Die API des Layout-Editors: Tokens, Entwürfe und gesperrte Zonen
 
-- `explayouts_ui_api` 1.3.3 lehnt jede Anfrage außer GET, die das Formular-Token der Session nicht mitbringt (Header
+- `explayouts_ui_api` 1.3.3 lehnt jede Anfrage außer GET, die das Formular-Token der Sitzung nicht mitbringt (Header
   `X-CSRF-Token` oder Feld `ezxform_token`), mit HTTP 403 und dem JSON-Body
   `{"error":{"code":403,"reason":"form_token_missing"}}` ab.
 - 1.3.4 lehnt Schreibvorgänge an Blöcken ab, sofern der Block nicht zu einem Entwurf gehört.
@@ -248,8 +248,8 @@ stehen in [REST API v1 und v2: eine Erweiterung](../../anleitungen/rest-api-v1-u
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](cli-cronjob-und-view-abstraktionen.md)
 - [Unterstützung für PHP 8](php8.md), [Velocity-Engines](velocity-engines.md), [Sicherheitshärtung](haertung.md)
 - [Release Notes aller Erweiterungen](../../../changelogs/extensions/README.md)
-- [Geschichte der Erweiterungen](../../../eng-us/history/extensions/README.md)
-- [Eine Erweiterung kann ein Kernel-Modul ersetzen](../../../eng-us/features/6.0/extension-module-override.md)
-- [Erweiterungen in mehr als einem Ordner](../../../eng-us/features/6.0/additional-extension-directories.md)
-- Geschichte: [Januar 2024, 16. bis 31.](../../../eng-us/history/2024/2024-01b.md), [September 2024](../../../eng-us/history/2024/2024-09.md),
-  [Oktober 2024](../../../eng-us/history/2024/2024-10.md)
+- [Geschichte der Erweiterungen](../../geschichte/erweiterungen/README.md)
+- [Eine Erweiterung kann ein Kernel-Modul ersetzen](../../funktionen/6.0/modulueberschreibung-durch-extensions.md)
+- [Erweiterungen in mehr als einem Ordner](../../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md)
+- Geschichte: [Januar 2024, 16. bis 31.](../../geschichte/2024/2024-01b.md), [September 2024](../../geschichte/2024/2024-09.md),
+  [Oktober 2024](../../geschichte/2024/2024-10.md)

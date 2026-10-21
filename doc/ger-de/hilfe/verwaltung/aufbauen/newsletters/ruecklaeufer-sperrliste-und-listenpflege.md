@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren von Newsletter-Listen. Saubere Listen schützen den Ruf des Absenders und die
 Daten der Abonnenten
-([Newsletter-Listen und Abonnements](../../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md)).
+([Newsletter-Listen und Abonnements](../../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md)).
 
 ## Inhalt
 
@@ -30,7 +30,7 @@ Daten der Abonnenten
 
 **Newsletter > Bounces** (`newsletter/mailbox_item_list`) listet die Nachrichten. Seit 4.2.0 kommen harte Rückläufer und
 Beschwerden auf die Unterdrückungsliste, weiche Rückläufer werden erneut versucht
-([cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)).
+([cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)).
 
 ## Die Sperrliste
 
@@ -55,8 +55,8 @@ Entscheiden Sie, wie lange entfernte und zurückgewiesene Abonnenten aufbewahrt 
 Bestätigungen bleiben. Das Entfernen eines Benutzerkontos löscht die E-Mail-Einstellungen der Person und anonymisiert
 das Einwilligungsprotokoll; der Newsletter-Benutzer, die Interessen, die SMS-Daten und die personenbezogenen Statistiken
 einer gelöschten Person werden ebenfalls entfernt
-([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md#gdpr),
-[cjw_newsletter](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)).
+([Standards zum Datenschutz](../../../../standards/datenschutz.md#dsgvo),
+[cjw_newsletter](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)).
 
 ## Verwandte Seiten
 
@@ -65,8 +65,9 @@ einer gelöschten Person werden ebenfalls entfernt
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

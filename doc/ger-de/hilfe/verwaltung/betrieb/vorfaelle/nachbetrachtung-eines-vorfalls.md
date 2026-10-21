@@ -3,8 +3,8 @@ title: Nachbetrachtung eines Vorfalls
 audience: government, admin, project-manager
 category: public-sector
 order: 150
-summary: Eine Nachbetrachtung ohne Schuldzuweisung nach einem Vorfall auf einer öffentlichen Website durchführen - den Zeitablauf aus Audit-Trail und Logs rekonstruieren, Ursachen und begünstigende Faktoren finden, Maßnahmen vereinbaren und die Dokumentation erstellen, die Ihre Organisation und die Prüfenden erwarten.
-keywords: Nachbetrachtung, Postmortem, Lessons Learned, ohne Schuldzuweisung, Zeitablauf, Grundursache, begünstigende Faktoren, Maßnahmen, Audit-Trail, Beweise, kontinuierliche Verbesserung, post-incident review, postmortem, lessons learned, blameless, timeline, root cause, contributing factors, actions, audit trail, evidence, continuous improvement
+summary: Eine Nachbetrachtung ohne Schuldzuweisung nach einem Vorfall auf einer öffentlichen Website durchführen - den Zeitablauf aus Prüfprotokoll und Logs rekonstruieren, Ursachen und begünstigende Faktoren finden, Maßnahmen vereinbaren und die Dokumentation erstellen, die Ihre Organisation und die Prüfenden erwarten.
+keywords: Nachbetrachtung, Postmortem, Lessons Learned, ohne Schuldzuweisung, Zeitablauf, Grundursache, begünstigende Faktoren, Maßnahmen, Prüfprotokoll, Beweise, kontinuierliche Verbesserung, post-incident review, postmortem, lessons learned, blameless, timeline, root cause, contributing factors, actions, audit trail, evidence, continuous improvement
 type: help
 ---
 # Nachbetrachtung eines Vorfalls
@@ -32,7 +32,7 @@ Erinnerung frisch ist. Ohne Schuldzuweisung: Die Frage ist, warum System und Pro
 | Quelle | Liefert |
 |---|---|
 | Notizen zum Vorfall | was Personen gesehen und getan haben, mit Uhrzeiten |
-| Audit-Trail | Anmeldungen, Inhaltsänderungen, geschriebene Einstellungen, geleerte Caches, Bereitstellungen, Wartungsmodus an und aus, mit Uhrzeiten und Benutzern |
+| Prüfprotokoll | Anmeldungen, Inhaltsänderungen, geschriebene Einstellungen, geleerte Caches, Bereitstellungen, Wartungsmodus an und aus, mit Uhrzeiten und Benutzern |
 | `error.log`, `security.log`, `404.log` | wann Fehler und Angriffe begannen und endeten |
 | Überwachung | wann die Prüfung von außen fehlschlug und wieder erfolgreich war |
 | Logs von Webserver und Velocity | Anfragemengen und Statuscodes |
@@ -42,7 +42,7 @@ Erinnerung frisch ist. Ohne Schuldzuweisung: Die Frage ist, warum System und Pro
 ./console exp:logs --search=<keyword> --scope=all --from='<start>' --to='<end>'
 ```
 
-Exportieren Sie die Audit-Einträge für die Akte ([Audit-Einträge für eine Prüfung exportieren](../../../../../eng-us/help/government/tasks/operations/export-audit-records-for-an-auditor.md)).
+Exportieren Sie die Audit-Einträge für die Akte ([Audit-Einträge für eine Prüfung exportieren](../../aufgaben/betrieb/audit-eintraege-fuer-einen-pruefer-exportieren.md)).
 
 ## Ursachen und begünstigende Faktoren
 
@@ -79,8 +79,9 @@ veröffentlichen Sie eine kurze öffentliche Zusammenfassung, wenn Ihre Organisa
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

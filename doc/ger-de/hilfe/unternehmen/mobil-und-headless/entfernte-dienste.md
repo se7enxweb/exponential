@@ -34,12 +34,12 @@ Feeds, Medien, Tags, Layouts, das Audit und mehr), ausgeliefert über die Aufruf
 distribution“ (Teil der Standarddistribution) und braucht keinen Build-Schritt und keinen zusätzlichen Server.
 
 Die **Discovery** listet jeden Dienst mit seinen Parametern auf, sodass Programme den Katalog nicht fest einprogrammieren
-([Remote-Dienste mit expservices](../../../../eng-us/help/creators/app-creators/remote-services-expservices.md#calling-a-service)).
+([Remote-Dienste mit expservices](../../ersteller/anwendungsentwickler/entfernte-dienste-expservices.md#einen-dienst-aufrufen)).
 
 ## Was sich darüber erledigen lässt
 
 Die Gruppen der Dienste, aus
-[Remote-Dienste: die ganze Administration als HTTP-API](../../../../eng-us/features/6.0/remote-services-expservices.md#domains):
+[Remote-Dienste: die ganze Administration als HTTP-API](../../../funktionen/6.0/entfernte-dienste-expservices.md#domänen):
 
 | Gruppe | Beispiele |
 |---|---|
@@ -60,13 +60,13 @@ Aus den „Rules every service follows“ (Regeln, die jeder Dienst befolgt) und
 - Jeder Dienst erklärt seinen Zugriff: öffentlich, jeder angemeldete Benutzer oder eine bestimmte Richtlinie. „401
   without login, 403 without the policy“ (401 ohne Anmeldung, 403 ohne die Richtlinie).
 - **Schreibzugriffe** brauchen ein POST, das Formular-Token und die Richtlinie, und „every successful write records“
-  (jeder erfolgreiche Schreibzugriff zeichnet) ein Ereignis im Audit-Trail auf.
+  (jeder erfolgreiche Schreibzugriff zeichnet) ein Ereignis im Prüfprotokoll auf.
 - Große Vorgänge gehen in Inhaltsjobs im Hintergrund, statt eine Anfrage zu blockieren.
 - Ein **Hauptschalter** (`expservices.ini [Services] Enabled`): Wenn er ausgeschaltet ist, antwortet jeder Dienst mit
   403.
 - Listen werden seitenweise geliefert: standardmäßig 25 Einträge, höchstens 200.
 - **Persönliche Tokens** für Skripte und Apps werden einmal angezeigt, nur als Hash gespeichert, laufen nach 1 bis 365
-  Tagen ab und werden beim Anlegen, Widerrufen oder Ablehnen im Audit-Trail aufgezeichnet
+  Tagen ab und werden beim Anlegen, Widerrufen oder Ablehnen im Prüfprotokoll aufgezeichnet
   ([Apps und API-Schlüssel](apps-und-api-schluessel.md#tokens-für-expservices)).
 
 > **Hinweis**
@@ -79,13 +79,13 @@ Die Erweiterung liefert Beispiel-Frontends, die „news, shop, forums, media, fe
 without a build step“ (Neuigkeiten, Shop, Foren, Medien, Feeds, Suche und Anmeldung im Browser ohne Build-Schritt)
 rendern: `expportal_jquery` (eine Referenz mit jQuery 4) und `expportal_reactive` (React mit React Bootstrap), unter
 vier Designs in `extension/expservices/design/`
-([Darauf gebaute Portale](../../../../eng-us/features/6.0/remote-services-expservices.md#portals-built-on-it)). Sie rufen die
+([Darauf gebaute Portale](../../../funktionen/6.0/entfernte-dienste-expservices.md#darauf-gebaute-portale)). Sie rufen die
 Dienste beim Namen auf. Für ein Unternehmen sind sie ein Ausgangspunkt und eine Vorführung, kein fertiges Produkt: Ihre
 Entwickler passen sie an Ihre Marke und Ihre Regeln an.
 
 ## REST API oder Remote-Dienste
 
-Aus [Wann man es verwendet](../../../../eng-us/help/creators/app-creators/remote-services-expservices.md#when-to-use-it):
+Aus [Wann man es verwendet](../../ersteller/anwendungsentwickler/entfernte-dienste-expservices.md#wann-es-passt):
 
 | Bedarf | Verwenden |
 |---|---|
@@ -114,14 +114,14 @@ Bestellungen, Benutzer, Caches, Feeds, als angemeldete Person oder als Skript.
 - [Apps und API-Schlüssel](apps-und-api-schluessel.md)
 - [Verkaufen über Netzwerke und Partner](verkaufen-ueber-netzwerke-und-partner.md)
 - [Entfernte Dienste und Apps](../../../anleitungen/entfernte-dienste-und-apps.md)
-- [Remote-Dienste mit expservices](../../../../eng-us/help/creators/app-creators/remote-services-expservices.md)
-- [Remote-Dienste: die ganze Administration als HTTP-API](../../../../eng-us/features/6.0/remote-services-expservices.md)
+- [Remote-Dienste mit expservices](../../ersteller/anwendungsentwickler/entfernte-dienste-expservices.md)
+- [Remote-Dienste: die ganze Administration als HTTP-API](../../../funktionen/6.0/entfernte-dienste-expservices.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

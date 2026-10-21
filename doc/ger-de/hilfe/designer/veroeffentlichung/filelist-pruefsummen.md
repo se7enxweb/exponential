@@ -19,7 +19,7 @@ installierte Dateien mit ihren erfassten Prüfsummen und listet jede abweichende
 Erweiterung, die `share/filelist.md5` mitliefert, gehören deren Zeilen zu diesem Vergleich. So kann ein Administrator
 sehen, ob jemand die Dateien des Themes auf dem Server geändert hat.
 
-Die Prüfung ist in [Prüfung der Dateikonsistenz](../../../../eng-us/features/6.0/file-consistency-check.md) beschrieben.
+Die Prüfung ist in [Prüfung der Dateikonsistenz](../../../funktionen/6.0/dateikonsistenzpruefung.md) beschrieben.
 
 ## Die Regel
 
@@ -54,8 +54,9 @@ Liste mitliefern (lesen Sie zuerst `bash bin/shell/generatefilelist.sh --help` u
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

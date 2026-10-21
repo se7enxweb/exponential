@@ -126,11 +126,11 @@ Außerdem: 5 Merge- oder Finanzierungs-Commits des Teams (ohne Nutzen für Anwen
 
 ## Verwandte Seiten
 
-- [Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md)
-- [SQLite für die Plattform](../../../eng-us/features/6.0/platform-sqlite-install.md)
+- [Legacy Bridge](../../funktionen/6.0/legacy-bridge.md)
+- [SQLite für die Plattform](../../funktionen/6.0/plattform-sqlite-installation.md)
 - [Release-Changelog](../../../changelogs/extensions/exponential-platform-legacy.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/exponential-platform-legacy.md)
 - [Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md)

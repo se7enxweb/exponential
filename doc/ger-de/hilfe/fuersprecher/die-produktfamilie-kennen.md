@@ -35,7 +35,7 @@ Beschreibungen mit ihren Quellen stehen in [Wer ist die Exponential Foundation?,
 | **Exponential Intelligence** | Ein Schreibassistent in der Administration, der Entwürfe schreibt und nie selbst veröffentlicht | Redakteure und Inhaltsteams | [Exponential Intelligence](../wer-ist-die-exponential-foundation.md#exponential-intelligence) |
 | **Exponential Layouts** | Ein visueller Seitenbaukasten: Layouts, Zonen, Blöcke und Regeln | Redakteure und Designer | [Exponential Layouts](../wer-ist-die-exponential-foundation.md#exponential-layouts) |
 | **AdminUI** | Eine alternative Oberfläche der Administration, eine Portierung der Netgen AdminUI | Redakteure, die sie bevorzugen | [AdminUI](../wer-ist-die-exponential-foundation.md#adminui) |
-| **Das Hilfesystem** | Die Dokumentation in der Administration, durchsuchbar, mit kontextbezogener Hilfe | Alle Benutzer der Administration | [Hilfesystem](../../../eng-us/features/6.0/help-system.md) |
+| **Das Hilfesystem** | Die Dokumentation in der Administration, durchsuchbar, mit kontextbezogener Hilfe | Alle Benutzer der Administration | [Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
 | **Die Erweiterungen** | Pakete, die Funktionen hinzufügen; die `composer.json` des Kernels verlangt 66 Pakete von se7enxweb | Website-Ersteller | [Das Ökosystem der Erweiterungen](../wer-ist-die-exponential-foundation.md#das-ökosystem-der-erweiterungen) |
 
 ## Sätze, die Sie sagen können
@@ -60,9 +60,9 @@ Stellen Sie im Gespräch zuerst zwei Fragen:
 | Antworten | Verweisen Sie auf |
 |---|---|
 | Nur PHP, darauf aufbauen | Exponential 6 ([Erste Schritte](../erste-schritte.md)) |
-| Nur Symfony | Exponential Platform DXP ([DXP-Skeleton](../../../eng-us/features/6.0/platform-dxp-skeleton.md)) |
-| Symfony, eine Website mit Exponential 6 behalten | Exponential Platform Legacy ([Legacy Bridge](../../../eng-us/features/6.0/legacy-bridge.md)) |
-| Vollständige Demo-Website mit Layouts, Symfony | Exponential Platform Nexus ([Nexus-Starter](../../../eng-us/features/6.0/platform-nexus-starter.md)) |
+| Nur Symfony | Exponential Platform DXP ([DXP-Skeleton](../../funktionen/6.0/plattform-dxp-skeleton.md)) |
+| Symfony, eine Website mit Exponential 6 behalten | Exponential Platform Legacy ([Legacy Bridge](../../funktionen/6.0/legacy-bridge.md)) |
+| Vollständige Demo-Website mit Layouts, Symfony | Exponential Platform Nexus ([Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md)) |
 | Lernen, eine winzige Website | Exponential Basic ([basic.exponential.earth](https://basic.exponential.earth)) |
 
 ## Häufige Verwechslungen
@@ -72,7 +72,7 @@ Stellen Sie im Gespräch zuerst zwei Fragen:
 | „DXP hat einen Layouts-Editor.“ | Es liefert weder einen Layouts-Editor noch einen Freigabe-Workflow, einen Zeitplaner oder den Legacy-Kernel ([Exponential Platform DXP](../wer-ist-die-exponential-foundation.md#exponential-platform-dxp)). Für Exponential 6 neben Symfony wählen Sie Legacy oder Nexus. |
 | „Legacy bedeutet alt.“ | „Legacy“ ist der Kernel von Exponential 6, wenn er neben einer Symfony-Plattform läuft ([Glossar](../wer-ist-die-exponential-foundation.md#glossar)). Exponential 6 selbst ist die gepflegte Linie. |
 | „Velocity ist Qbix.“ | Velocity begann als Fork der Webserver-Engine Qbix; der Produktname ist Exponential Velocity ([Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#die-produktfamilie)). |
-| „Die KI veröffentlicht Inhalte.“ | Exponential Intelligence schreibt nur Entwürfe ([expai](../../../eng-us/features/6.0/extensions/expai.md#in-short)). |
+| „Die KI veröffentlicht Inhalte.“ | Exponential Intelligence schreibt nur Entwürfe ([expai](../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt)). |
 | „request-shield ist Teil von Exponential.“ | Es ist ein Projekt von CJW Network; Exponential dokumentiert, wie man es nutzt ([Begleitprojekte](../wer-ist-die-exponential-foundation.md#begleitprojekte)). |
 
 ## Prüfen Sie sich selbst
@@ -94,3 +94,11 @@ Antworten Sie, ohne nachzusehen, und prüfen Sie dann mit der Tabelle oben.
 - [Kurzkarte zu den Namensregeln](kurzkarte-namensregeln.md)
 - [Gesprächspunkte: das Grundset](gespraechspunkte-grundset.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

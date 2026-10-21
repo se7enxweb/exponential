@@ -3,7 +3,7 @@
 Zwischen dem 22. und 30. September 2026 wurde eine Reihe von Standardwerten geändert, damit eine **Standardinstallation**
 ohne zusätzlichen Aufwand sicher ist. Diese Seite führt jeden Standardwert auf, die Einstellung, die ihn steuert, was sich
 für eine bestehende Installation geändert hat und wie Sie es prüfen. Lesen Sie sie, bevor Sie eine Installation mit eigener
-`.htaccess`, einem cachenden Proxy oder Skripten, die das Session-Cookie lesen, aktualisieren; die
+`.htaccess`, einem cachenden Proxy oder Skripten, die das Sitzungs-Cookie lesen, aktualisieren; die
 [Upgrade-Checkliste](#upgrade-checkliste) am Ende ist die Kurzfassung. Die Eingabeverarbeitung einzelner Datentypen steht in
 [Härtung von Datentypen und Eingaben](datentyp-eingabehaertung.md).
 
@@ -68,11 +68,11 @@ Prüfen:
 curl -sI https://example.com/ | grep -i -E 'x-content-type|x-frame|referrer|permissions|content-security'
 ```
 
-## 2. Das Session-Cookie
+## 2. Das Sitzungs-Cookie
 
-Das Session-Cookie ist die Anmeldung, und dennoch wurde es ohne `HttpOnly`, `SameSite` oder
+Das Sitzungs-Cookie ist die Anmeldung, und dennoch wurde es ohne `HttpOnly`, `SameSite` oder
 `Secure` versendet, sofern die Site diese nicht gesetzt hatte, was eine Standardinstallation nie tat. Ein
-in eine beliebige Seite eingeschleustes Skript konnte die Session der Administration lesen; ein gefälschtes
+in eine beliebige Seite eingeschleustes Skript konnte die Sitzung der Administration lesen; ein gefälschtes
 Cross-Site-Formular nahm es mit; unter HTTPS wurde es trotzdem auch reinem HTTP angeboten.
 
 `settings/site.ini` `[Session]`:
@@ -84,7 +84,7 @@ Cross-Site-Formular nahm es mit; unter HTTPS wurde es trotzdem auch reinem HTTP 
 | `CookieSameSite` | `Lax` | `Lax`, `Strict`, `None` (wird nur zusammen mit `Secure` beachtet) oder leer, um kein Attribut zu senden. |
 
 `setCookieParams()` verwendet die Array-Form von `session_set_cookie_params()`;
-die Session-Schicht von Velocity beachtet sie bereits, sodass beide Server dasselbe
+die Sitzungsschicht von Velocity beachtet sie bereits, sodass beide Server dasselbe
 Cookie senden. Ausdrückliche Einstellungen haben weiterhin Vorrang. Braucht eine Integration Cross-Site-Cookies,
 setzen Sie `CookieSameSite=None` und `CookieSecure=true`.
 
@@ -96,7 +96,7 @@ setzen Sie `CookieSameSite=None` und `CookieSecure=true`.
 | Passwort vergessen | „Es gibt keinen registrierten Benutzer mit dieser E-Mail-Adresse“ (auch im Anmeldeformular der Administration) erlaubte es, Adressen eine nach der anderen zu testen. | Eine gültige, aber unbekannte Adresse erhält dieselbe Seite wie eine bekannte („eine Mail wurde gesendet, falls ein Konto registriert ist“); nur Eingaben, die überhaupt keine Adresse sind, werden abgelehnt. Templates maskieren (wash) jede Adresse, die sie ausgeben. |
 | Schlüssel im Link für „Passwort vergessen“ (`ezmbpaex` 6.0.3) | | Enthält einen Schlüssel, der sich nicht erraten lässt. |
 | Passwort oder Hash, der keine Zeichenkette ist | In eine Zeichenkette umgewandelt; `true` konnte zu einem gespeicherten `true` passen. | Authentifiziert nie. |
-| Erstes Administratorpasswort eines Kickstarts | Erratbarer Standardwert oder das eigene Passwort der Site-Daten, wenn keine E-Mail-Adresse angegeben war. | Zufällige 20 Zeichen, einmal ausgegeben und nach `var/log/initial-admin-password` geschrieben. Siehe [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md). |
+| Erstes Administratorpasswort eines Kickstarts | Erratbarer Standardwert oder das eigene Passwort der Site-Daten, wenn keine E-Mail-Adresse angegeben war. | Zufällige 20 Zeichen, einmal ausgegeben und nach `var/log/initial-admin-password` geschrieben. Siehe [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md). |
 
 ## 4. Dateien, die der Webserver ausliefert
 
@@ -132,9 +132,9 @@ Das mitgelieferte Beispiel liegt in `doc/eng-us/examples/`, dazu die Root-Dateie
 - Eine Seite, die ein Formular-Token trägt (Meta-Tag `csrf-token`, verstecktes Feld in jedem
   POST-Formular), wird mit `Cache-Control: private, no-cache, must-revalidate` gesendet. Vorher
   verlangte `no-cache` nur eine Revalidierung, und ein gemeinsam genutzter Cache, der das
-  Session-Cookie nicht kannte, konnte die Seite eines angemeldeten Benutzers mitsamt Token speichern und sie
+  Sitzungs-Cookie nicht kannte, konnte die Seite eines angemeldeten Benutzers mitsamt Token speichern und sie
   jedem anonymen Besucher ausliefern.
-- Velocity teilt seinem Antwort-Cache mit, welche Cookies „persönlich“ bedeuten: das Session-Cookie,
+- Velocity teilt seinem Antwort-Cache mit, welche Cookies „persönlich“ bedeuten: das Sitzungs-Cookie,
   wie der Handler es benennt (`session.name` beim Handler `default`,
   `[Session] SessionNamePrefix` als Präfix bei `custom`), dazu `is_logged_in`. Eine
   ausdrückliche Liste ersetzt die abgeleitete: `SkipCookies[]` in `velocity.ini`
@@ -150,7 +150,7 @@ Das mitgelieferte Beispiel liegt in `doc/eng-us/examples/`, dazu die Root-Dateie
   Header, den Ihr Purge-Proxy liest (`xkey` für Varnish, `Surrogate-Key` für Fastly,
   `Cache-Tag` für Cloudflare). `ProxyHeaders=enabled` in einem bestehenden Override
   bedeutet weiterhin `xkey`. Ein Name, der kein HTTP-Token oder ein Rahmungs-Header ist, wird
-  abgelehnt. Siehe [HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md).
+  abgelehnt. Siehe [HTTP-Cache](../../bc/6.0/httpcache.md).
 
 ## 6. Weitere Korrekturen mit Sicherheitswirkung
 
@@ -163,7 +163,7 @@ Das mitgelieferte Beispiel liegt in `doc/eng-us/examples/`, dazu die Root-Dateie
 | Mail-Header, Dateinamen von Downloads | Siehe [Härtung von Datentypen und Eingaben](datentyp-eingabehaertung.md). |
 | REST | Eine nicht authentifizierte Anfrage antwortet auf jedem Server mit 401 und `WWW-Authenticate` (bei fehlenden Zugangsdaten wurde früher `HTTP/1.1 500` angegeben); der OAuth-Header `Authorization` wird ohne Beachtung der Groß- und Kleinschreibung gelesen, mit `HTTP_AUTHORIZATION` als Ausweichlösung; ein unbekanntes Token antwortet auf SQLite-Sites und auf persistenten Workern mit 401. |
 | Sortierung von Knoten | `content/action` verlangt Bearbeitungsrechte sowie ein bekanntes Sortierfeld und eine bekannte Sortierreihenfolge. |
-| Ablehnungen wegen des Formular-Tokens | Eine 403-Seite ohne Token im Log. Siehe [Seite für abgelaufene Formulare](../../../eng-us/features/6.0/form-expired-page.md). |
+| Ablehnungen wegen des Formular-Tokens | Eine 403-Seite ohne Token im Log. Siehe [Seite für abgelaufene Formulare](../../funktionen/6.0/seite-abgelaufenes-formular.md). |
 | Velocity-Worker | `[ServerSettings] User`, `Group`, `AllowRootWorkers=disabled`: Worker geben nach dem Start die Root-Rechte ab, sodass Dateien, die sie schreiben, dem Benutzer der Site gehören. |
 | Anonyme Formulare | Abonnieren nicht mehr das gemeinsame anonyme Konto. |
 | Ausgehende Identität | Der Generator des statischen Caches, die Linkprüfung, der RSS-Import, Wechselkurs- und Paket-Downloads, ausgehende Mails und der REST-Realm geben sich als Exponential zu erkennen. Eine Webserver-Regel, die auf den früheren User-Agent des statischen Caches passt, muss geändert werden. |
@@ -175,7 +175,7 @@ Das mitgelieferte Beispiel liegt in `doc/eng-us/examples/`, dazu die Root-Dateie
    die `Content-Security-Policy` für einen vertrauenswürdigen Editor-Host lockern müssen.
 3. Wenn ein Proxy vor der Site über `xkey` oder `Surrogate-Key` geleert hat, setzen Sie
    `[HttpCacheSettings] TagHeader` in `settings/override/httpcache.ini.append.php`.
-4. Wenn eines Ihrer Skripte auf ein Session-Cookie ohne HttpOnly oder mit Cross-Site-Versand angewiesen war,
+4. Wenn eines Ihrer Skripte auf ein Sitzungs-Cookie ohne HttpOnly oder mit Cross-Site-Versand angewiesen war,
    setzen Sie `[Session] CookieHttponly` oder `CookieSameSite` ausdrücklich.
 5. Ändern Sie den User-Agent des statischen Caches in jeder Webserver-Regel, die auf den alten
    Namen passte.
@@ -184,6 +184,6 @@ Das mitgelieferte Beispiel liegt in `doc/eng-us/examples/`, dazu die Root-Dateie
 ## Verwandte Seiten
 
 - Spezifikationen: [Härtung von Datentypen und Eingaben](datentyp-eingabehaertung.md), [Sicherheitshärtung vom August 2026](sicherheitshaertung-2026-08.md) (das frühere Patch-Set), [Sicherheitshärtung 6.0.13](sicherheitshaertung-6.0.13.md), [Velocity – HTTP/2 und Sicherheit](velocity-http2-und-sicherheit.md)
-- Upgrade-Hinweise: [Härtungsleitfaden](../../../eng-us/bc/6.0/hardening.md), [HTTP-Cache](../../../eng-us/bc/6.0/httpcache.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md), [RAD-Werkzeuge – Sicherheit](../../../eng-us/bc/6.0/rad-security.md)
-- Funktionen: [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md), [Seite für abgelaufene Formulare](../../../eng-us/features/6.0/form-expired-page.md), [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Chroniken [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md) und [Februar 2026](../../../eng-us/history/2026/2026-02.md)
+- Upgrade-Hinweise: [Härtungsleitfaden](../../bc/6.0/haertung.md), [HTTP-Cache](../../bc/6.0/httpcache.md), [Verhaltensänderungen, 16. bis 30. September 2026](../../bc/6.0/verhaltensaenderungen-2026-09b.md), [RAD-Werkzeuge – Sicherheit](../../bc/6.0/rad-sicherheit.md)
+- Funktionen: [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md), [Seite für abgelaufene Formulare](../../funktionen/6.0/seite-abgelaufenes-formular.md), [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), Chroniken [16. bis 30. September 2026](../../geschichte/2026/2026-09b.md) und [Februar 2026](../../geschichte/2026/2026-02.md)

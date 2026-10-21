@@ -168,11 +168,11 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 
 ## Weiterführende Literatur
 
-- [Modul-Override durch Erweiterungen](../../../../../eng-us/features/6.0/extension-module-override.md): Views und Templates von
+- [Modul-Override durch Erweiterungen](../../../../funktionen/6.0/modulueberschreibung-durch-extensions.md): Views und Templates von
   Modulen in Erweiterungen.
 - [Befehle, Cronjob-Teile und Modul-Views als Klassen](../../../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md):
   die Klassenform einer View.
-- [RAD-Werkzeuge](../../../../../eng-us/features/6.0/rad-tools.md): Der Modul-Assistent schreibt Module mit Views.
+- [RAD-Werkzeuge](../../../../funktionen/6.0/rad-werkzeuge.md): Der Modul-Assistent schreibt Module mit Views.
 
 ## Verwandte Seiten
 
@@ -182,9 +182,9 @@ Auf der Entwicklungsinstallation, in `extension/mysite_hello`.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

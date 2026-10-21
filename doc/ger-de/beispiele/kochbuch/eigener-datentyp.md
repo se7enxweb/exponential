@@ -285,7 +285,7 @@ wurde für diese Seite nicht gegen eine Datenbank ausgeführt.
 - [Kochbuch](README.md)
 - [Datentypen](../datentypen/README.md): jeder Datentyp mit dem, was er speichert, und seinen Template-Attributen
 - [Eine Inhaltsklasse anlegen](inhaltsklasse.md)
-- [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md): `/setup/datatype` schreibt ein Gerüst für einen Datentyp
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md): `/setup/datatype` schreibt ein Gerüst für einen Datentyp
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

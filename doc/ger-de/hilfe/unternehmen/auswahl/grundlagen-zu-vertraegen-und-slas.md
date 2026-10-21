@@ -76,7 +76,7 @@ Stufe, die Sie nie brauchen, ist Geld für nichts.
 | Reaktionszeiten | das Ticketsystem des Lieferanten; verlangen Sie Berichte | |
 | RPO | Zeitstempel der Backups | [SLA-Optionen für Exponential-Hosting](../../hosting/geschaeft/sla-optionen-fuer-exponential-hosting.md#messen-was-sie-versprechen) |
 | RTO | die Dauer des letzten Wiederherstellungstests | [Wiederherstellung und Wiederherstellungstests](../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
-| Eingespielte Updates | die Version der Website und die Deployment-Einträge des Audit-Trails | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Eingespielte Updates | die Version der Website und die Deployment-Einträge des Prüfprotokolls | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 Verlangen Sie einen monatlichen oder vierteljährlichen Bericht mit diesen Werten.
 
@@ -106,7 +106,7 @@ Aus [Lizenzen für Käufer erklärt: GPL-Code, GFDL-Dokumentation](../../geschae
   für Sie erstellt werden. Beachten Sie, dass auf Exponential aufgebauter und verbreiteter Code unter die Bedingungen
   der GPL fällt; fragen Sie Ihren Berater, was das für Ihre Pläne bedeutet.
 - **Erweiterungen** tragen jeweils ihre eigene Lizenz, angezeigt unter **Info > Über**
-  ([Die Seiten „About“ und „Copyright“](../../../../eng-us/features/6.0/about-and-package-pages.md)).
+  ([Die Seiten „About“ und „Copyright“](../../../funktionen/6.0/info-und-paketseiten.md)).
 
 ## Datenschutz
 
@@ -153,8 +153,8 @@ Eine SLA-Vorlage mit Platzhaltern, geschrieben für Hoster, steht in
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

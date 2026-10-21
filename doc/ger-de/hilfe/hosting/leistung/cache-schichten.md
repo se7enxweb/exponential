@@ -54,7 +54,7 @@ die unten verlinkten Seiten.
 `no-cache` gesendet, es sei denn, `[HTTPHeaderSettings]` ist nur für anonyme Besucher eingeschaltet. Siehe
 [HTTP-Cache-Header](http-cache-header.md). Unter Velocity kann ein optionaler Navigations-Cache (ein Service Worker, `/index.js` und
 `sw.js`) wiederholte Besuche im eigenen Browser des Besuchers beantworten
-([Der Antwort-Cache, und dem Netzwerk aus dem Weg gehen](../../../../eng-us/bc/6.0/response-cache-and-navigation.md)).
+([Der Antwort-Cache, und dem Netzwerk aus dem Weg gehen](../../../bc/6.0/antwort-cache-und-navigation.md)).
 
 **CDN oder Proxy.** Exponential sendet keine Anfragen zum Leeren oder Sperren an einen Proxy; einem Proxy, der Seiten speichert, muss
 gesagt werden, was er speichern soll und wie lange. Siehe [Varnish und Reverse Proxys](varnish-und-reverse-proxys.md) und [CDN](cdn.md).
@@ -70,7 +70,7 @@ Rollenkontext, den Benutzer mit denselben Rollen teilen, oder ein privater Konte
 unter Apache oder PHP-FPM über einen frühen Ausstieg, der aus `config.php` eingebunden wird, unter Velocity aus dem Serverprozess. Er
 leert bei Änderungen an Inhalten (standardmäßig `ContentChangePurges=all`). Gemessen auf einer Referenzinstallation, eine Seite eines
 angemeldeten Benutzers unter Apache: 484 Anfragen pro Sekunde aus dem Cache gegenüber 4,3 gerenderten
-([HTTP-Cache](../../../../eng-us/bc/6.0/httpcache.md)).
+([HTTP-Cache](../../../bc/6.0/httpcache.md)).
 
 **Statischer Cache.** Standardmäßig aus, und das Installationsbuch sagt, ihn auszulassen: Wenn er an war, erzeugte jede Veröffentlichung
 jede betroffene Seite über HTTP innerhalb der Anfrage des Redakteurs neu. Siehe [Statischer Cache](statischer-cache.md).
@@ -97,7 +97,7 @@ in Redis oder Valkey liegen. Siehe [Valkey und Redis](valkey-und-redis.md).
 **SQL-Abfrage-Cache.** Standardmäßig aus. `Mode=request` entfernt wiederholte identische `SELECT`s innerhalb einer Anfrage;
 `Mode=shared` hält Ergebnisse über Anfragen hinweg in APCu oder Dateien. Gemessen auf einer Testinstallation unter Apache mit PHP-FPM
 ging eine gerenderte Startseite von etwa 0,6 s auf etwa 0,17 s, ohne dass eine Anweisung an die Datenbank ging
-([SQL-Abfrage-Cache](../../../../eng-us/bc/6.0/sql-query-cache.md)). Er funktioniert mit den SQL-Treibern (1. SQLite 3, 2. PostgreSQL,
+([SQL-Abfrage-Cache](../../../bc/6.0/sql-abfrage-cache.md)). Er funktioniert mit den SQL-Treibern (1. SQLite 3, 2. PostgreSQL,
 4. MariaDB, 5. Oracle über `ezoracle`, 6. MySQL); der Treiber für 3. MongoDB nutzt ihn nicht. Schreibvorgänge außerhalb von Exponential
 (eine Wiederherstellung, ein SQL-Client) sind für ihn unsichtbar: Leeren Sie ihn nach jeder Wiederherstellung.
 
@@ -127,7 +127,7 @@ curl -sI https://example.com/ | grep -iE 'x-cache|x-exp-cache|age|cache-control'
 ```
 
 Eine Seite, die der Antwort-Cache von Velocity beantwortet, trägt auch das mit ihr gespeicherte `X-Exp-Cache`, oft `MISS` aus dem
-Rendering, das beide Caches gefüllt hat ([HTTP-Cache, sehen, was er tut](../../../../eng-us/bc/6.0/httpcache.md#seeing-what-it-does)).
+Rendering, das beide Caches gefüllt hat ([HTTP-Cache, sehen, was er tut](../../../bc/6.0/httpcache.md#sehen-was-er-tut)).
 
 ## Was ein Tarif einschalten kann
 
@@ -154,5 +154,13 @@ Rendering, das beide Caches gefüllt hat ([HTTP-Cache, sehen, was er tut](../../
 - [HTTP-Cache-Header](http-cache-header.md)
 - [Caches leeren und vorwärmen](caches-leeren-und-vorwaermen.md)
 - [Caches](../../../anleitungen/caches.md)
-- [Cache-Steuerung aus der Konsole](../../../../eng-us/bc/6.0/cache-console.md)
+- [Cache-Steuerung aus der Konsole](../../../bc/6.0/cache-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

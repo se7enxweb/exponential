@@ -120,7 +120,7 @@ X-Content-Type-Options: nosniff
 Was ausgeliefert wird:
 
 - **`.htaccess_root`** setzt sie für Dateien `.svg` und `.svgz` (braucht `mod_headers`).
-- **Exponential Velocity** setzt sie für jedes `.svg` und `.svgz`, das es als statische Datei ausliefert, über
+- **Exponential Velocity** setzt sie für jedes `.svg` und `.svgz`, das er als statische Datei ausliefert, über
   HTTP/1.1 und HTTP/2 (ab v0.0.4.53; `Q.webserver.svgSandbox false` schaltet es aus).
 - **`content/download`** (`eZFile::downloadHeaders()`) und das Cluster-Gateway (`index_cluster.php`) senden sie für
   ein SVG.

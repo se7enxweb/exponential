@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren. In einer gemeinsamen Installation kann eine Administration alle Sites
 bedienen; nach Teilbaum eingeschränkte Rollen halten jedes Team im Ordner seiner Site
-([Mehrere Sites einrichten, Redakteure und die Administration](../../../../../eng-us/help/creators/website-creators/multisite-setup.md#editors-and-the-administration),
+([Mehrere Sites einrichten, Redakteure und die Administration](../../../ersteller/website-ersteller/multisite-einrichten.md#redaktion-und-administration),
 [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md)).
 
 ## Inhalt
@@ -55,9 +55,9 @@ eigenen Einstellungen; der Zugang wird dennoch von Rollen entschieden, also schr
 
 - Listen Sie zweimal im Jahr die Rollenzuweisungen je Gruppe auf (**Benutzer > Rollen und Richtlinien**).
 - Verwenden Sie **Benutzer > Benutzerkonten prüfen**, um lange nicht genutzte Konten zu finden
-  ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)).
+  ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)).
 - Rollenzuweisungen werden im Kanal `access` des Audit-Protokolls festgehalten
-  ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
+  ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Verwandte Seiten
 
@@ -66,8 +66,9 @@ eigenen Einstellungen; der Zugang wird dennoch von Rollen entschieden, also schr
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

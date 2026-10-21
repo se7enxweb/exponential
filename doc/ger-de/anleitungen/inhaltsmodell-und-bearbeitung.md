@@ -89,8 +89,8 @@ Im Editor: Die Werkzeugleiste bettet Objekte ein (Reiter Suche, Reiter Upload), 
 fügt Custom Tags, Tabellen und Listen ein; doppelklicken Sie auf eine Einbettung, um ihre Ansicht, Klasse, Größe und
 Ausrichtung zu bearbeiten. Uploads akzeptieren nur die Typen in `UploadFileExtensions[]` und lehnen Namen wie
 `shell.php.jpg` ab. Vertiefung:
-[Online-Editor TinyMCE 8](../../eng-us/features/6.0/online-editor-tinymce8.md),
-[Upgrade-Hinweise zu ezoe](../../eng-us/bc/6.0/ezoe-tinymce8.md).
+[Online-Editor TinyMCE 8](../funktionen/6.0/online-editor-tinymce8.md),
+[Upgrade-Hinweise zu ezoe](../bc/6.0/ezoe-tinymce8.md).
 
 ### Die Reihenfolge der Suchergebnisse in den Dialogen des Editors
 
@@ -188,8 +188,8 @@ Unterelemente.
 4. Verwenden Sie den CSV-Export, um die sichtbaren Spalten herunterzuladen. Ihre Auswahl wird pro Benutzer gespeichert.
 
 Erwartet: Die Tabelle lädt sofort mit den gewählten Spalten und Zeilen neu. Vertiefung:
-[Tabelle der Unterelemente](../../eng-us/features/6.0/subitems-table-options.md), [Katalog und wie Sie eine Spalte hinzufügen](../../eng-us/bc/6.0/subitems-table-options.md),
-[Einstellungen zum Blättern](../../eng-us/bc/6.0/pagination-settings.md).
+[Tabelle der Unterelemente](../funktionen/6.0/optionen-der-unterelementtabelle.md), [Katalog und wie Sie eine Spalte hinzufügen](../bc/6.0/tabellenoptionen-der-unterelemente.md),
+[Einstellungen zum Blättern](../bc/6.0/einstellungen-fuer-seitengroessen.md).
 
 ## 6. Viele Elemente in einem Formular bearbeiten (Mehrfachbearbeitung)
 
@@ -204,7 +204,7 @@ Erwartet: Die Tabelle lädt sofort mit den gewählten Spalten und Zeilen neu. Ve
 
 Um mehrere neue Elemente auf einmal anzulegen, verwenden Sie **Mehrere neu anlegen** neben **Neu erstellen** (bis zu
 50 auf einmal). Prüfen Sie nach dem Anlegen, ob die neuen Elemente unter ihrer Elternseite erscheinen. Vertiefung:
-[Mehrfachbearbeitung](../../eng-us/bc/6.0/multi-node-edit.md).
+[Mehrfachbearbeitung](../bc/6.0/mehrere-elemente-bearbeiten.md).
 
 ## 7. Der Papierkorb
 
@@ -217,7 +217,7 @@ Um mehrere neue Elemente auf einmal anzulegen, verwenden Sie **Mehrere neu anleg
    `./console exp:trashpurge --allow-root-user`: Das ist endgültig, führen Sie es also nicht auf einer Site aus, die
    Ihnen wichtig ist.
 
-Vertiefung: [Papierkorb: wer und wo](../../eng-us/features/6.0/trash-who-and-where.md), [Upgrade-Hinweise zum Papierkorb](../../eng-us/bc/6.0/trash.md).
+Vertiefung: [Papierkorb: wer und wo](../funktionen/6.0/papierkorb-wer-und-wo.md), [Upgrade-Hinweise zum Papierkorb](../bc/6.0/papierkorb.md).
 
 ## 8. Große Operationen als Inhaltsjobs
 
@@ -240,8 +240,8 @@ und nach einem Absturz fortgesetzt wird.
 
 Auf einer Installation ohne Jobs gibt `list` die Meldung `No active or failed content jobs (--all lists every job).`
 aus. Der Cronjob-Teil `contentjobs` startet einen Worker neu, dessen Prozess beendet wurde. Vertiefung:
-[Inhaltsjobs](../../eng-us/features/6.0/content-jobs.md),
-[Anleitung zu Inhaltsjobs](../../eng-us/bc/6.0/content-jobs.md), [Audit-Protokoll](../../eng-us/features/6.0/audit-trail.md) (jeder Job wird festgehalten).
+[Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md),
+[Anleitung zu Inhaltsjobs](../bc/6.0/inhaltsjobs.md), [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md) (jeder Job wird festgehalten).
 
 ## 9. Pflicht-Alternativtext, gekürzte Textzeilen und von PHP erzeugte Namen
 
@@ -360,6 +360,14 @@ Datei, und leeren Sie dann den INI-Cache: `php bin/php/ezcache.php --clear-tag=i
 ## Siehe auch
 
 - Ändern, wie Inhalte angezeigt werden: [Templates und Design](templates-und-design.md).
-- Was wann geschah: [Chronik Oktober 2026](../../eng-us/history/2026/2026-10.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
+- Was wann geschah: [Chronik Oktober 2026](../geschichte/2026/2026-10.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
 - Härtung dessen, was Redakteure eingeben können: [Härtung der Datentyp-Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md).
-- Hintergrund- und geplante Arbeiten ausführen: [Cronjob-Konsole](../../eng-us/features/6.0/cronjobs-console.md).
+- Hintergrund- und geplante Arbeiten ausführen: [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -44,9 +44,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Wenn etwas schiefgeht](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#when-something-goes-wrong),
-die Statistik-Anleitung der Erweiterung (verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420))
-und [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md).
+Quellen: [Wenn etwas schiefgeht](../../../ersteller/website-ersteller/newsletter-versenden.md#wenn-etwas-schiefgeht),
+die Statistik-Anleitung der Erweiterung (verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420))
+und [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md).
 
 1. **Abbrechen** (5 Minuten). Bei einer Ausgabe mit einem nicht beendeten Versand bietet **Newsletter
    Verarbeitungsinformation** den Abbruch an. Die Seite `newsletter/send_abort` zeigt die Statistiken des Versands
@@ -134,34 +134,34 @@ Verwenden Sie die Schulungsinstallation. Während der Schritte 1 bis 6 drückt n
 <details>
 <summary>Antworten</summary>
 
-1. Bevor die Warteschlange ihn verarbeitet ([Wenn etwas schiefgeht](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#when-something-goes-wrong)).
-2. **B.** Ein Newsletter lässt sich nicht zurückholen ([Newsletter sicher versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md)).
-3. Aus (Statistik-Anleitung, verlinkt von der [Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+1. Bevor die Warteschlange ihn verarbeitet ([Wenn etwas schiefgeht](../../../ersteller/website-ersteller/newsletter-versenden.md#wenn-etwas-schiefgeht)).
+2. **B.** Ein Newsletter lässt sich nicht zurückholen ([Newsletter sicher versenden](../../../ersteller/website-ersteller/newsletter-versenden.md)).
+3. Aus (Statistik-Anleitung, verlinkt von der [Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 4. Die Kategorie „Newsletter-Statistik“ der E-Mail-Einstellungen eingeschaltet haben (Statistik-Anleitung;
-   [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md)).
+   [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md)).
 5. Testversände und SMS-Versände (Statistik-Anleitung).
 
 </details>
 
 ## Weiterführende Informationen
 
-- [Newsletter sicher versenden](../../../../../eng-us/help/creators/website-creators/sending-newsletters.md#when-something-goes-wrong):
+- [Newsletter sicher versenden](../../../ersteller/website-ersteller/newsletter-versenden.md#wenn-etwas-schiefgeht):
   was zu tun ist, wenn etwas schiefgeht.
-- [E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md): Kategorien und Einwilligung.
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420):
+- [E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md): Kategorien und Einwilligung.
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420):
   die Statistik-Anleitung.
 
 ## Verwandte Seiten
 
 - [Modul 4: Versand](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

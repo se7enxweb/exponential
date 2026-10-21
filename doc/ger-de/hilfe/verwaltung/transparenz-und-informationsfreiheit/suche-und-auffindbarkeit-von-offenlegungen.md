@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Websiteersteller und Redaktionen, die möchten, dass Menschen Informationen finden, die die
 Stelle bereits veröffentlicht hat, sodass weniger Anträge nötig sind. Exponential hat eine eingebaute Suchmaschine und
-optional Solr über `ezfind` ([Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)).
+optional Solr über `ezfind` ([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)).
 
 ## Inhalt
 
@@ -41,7 +41,7 @@ erscheinen.
 (`[PDFHandlerSettings]`, `[WordHandlerSettings]`), mit externen Programmen, die Sie auf dem Server installieren. Ohne
 sie sind nur der Name der Datei und die Felder des Objekts durchsuchbar. Gescannte PDFs ohne Textebene liefern so oder
 so keinen Text. Mit Solr (`ezfind`) können auch Dateiinhalte indexiert werden
-([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#searching-inside-files)).
+([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md#in-dateien-suchen)).
 
 ## Aus dem lernen, wonach Menschen suchen
 
@@ -61,13 +61,13 @@ wenn Sie sie nicht mehr brauchen ([Suchstatistiken](../../../anleitungen/urls-un
 ## Adressen, Feeds und Sitemaps
 
 - Lesbare URL-Aliasse entstehen aus den Namen; wählen Sie klare Titel
-  ([URL-Aliasse und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)).
+  ([URL-Aliasse und sprechende URLs](../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md)).
 - Ein RSS-Export des Offenlegungsprotokolls lässt Menschen neuen Herausgaben folgen
   ([RSS-Feeds](../../../anleitungen/rss-feeds.md)).
 - XML-Sitemaps (`xrowmetadata`, `bcgooglesitemaps`) helfen Suchmaschinen, jeden Eintrag zu finden
-  ([Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)).
+  ([Sitemaps](../../ersteller/website-ersteller/sitemaps.md)).
 - Eine Meta-Beschreibung pro Seite hilft bei den Ergebnissen von Suchmaschinen
-  ([Metadaten und Teilen in sozialen Medien](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md)).
+  ([Metadaten und Teilen in sozialen Medien](../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md)).
 
 ## Wann der Wechsel zu Solr lohnt
 
@@ -79,18 +79,19 @@ wenn Sie sie nicht mehr brauchen ([Suchstatistiken](../../../anleitungen/urls-un
 | Sehr viele Dokumente | wird langsamer | dafür gebaut |
 
 Solr ist ein eigener Java-Server, der betrieben, überwacht und gesichert werden muss
-([Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)).
+([Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)).
 
 ## Verwandte Seiten
 
-- [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)
+- [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)
 - [Suchen (für Redaktionen)](../../suchen.md)
 - [Offenlegungsprotokolle](offenlegungsprotokolle.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

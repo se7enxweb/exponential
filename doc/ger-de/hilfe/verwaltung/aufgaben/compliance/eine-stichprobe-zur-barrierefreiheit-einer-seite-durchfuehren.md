@@ -12,7 +12,7 @@ type: help
 Für Redakteure, Designer und Koordinatoren für Barrierefreiheit: eine kurze Prüfung einer Seite, nachdem sie
 veröffentlicht oder geändert wurde. Exponential liefert kein Prüfwerkzeug für die Barrierefreiheit öffentlicher Seiten
 mit; die Prüfung nutzt verbreitete kostenlose Werkzeuge und folgt
-[Die Barrierefreiheit Ihrer Site testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md).
+[Die Barrierefreiheit Ihrer Site testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md).
 
 ## Inhalt
 
@@ -52,14 +52,15 @@ einmal für alle Seiten, die dieses Template verwenden.
 
 ## Verwandte Seiten
 
-- [Testen mit axe und der Tastatur](../../../../../eng-us/help/government/accessibility/testing-with-axe-and-the-keyboard.md)
-- [Die Barrierefreiheit Ihrer Site testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)
-- [Barrierefreie Inhalte für Redakteure](../../../../../eng-us/help/government/accessibility/accessible-content-for-editors.md)
+- [Testen mit axe und der Tastatur](../../barrierefreiheit/mit-axe-und-der-tastatur-testen.md)
+- [Die Barrierefreiheit Ihrer Site testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)
+- [Barrierefreie Inhalte für Redakteure](../../barrierefreiheit/barrierefreie-inhalte-fuer-die-redaktion.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

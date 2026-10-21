@@ -5,6 +5,24 @@ wählen oder PHP-Änderungen auf einer Website bereitstellen, die Velocity ausli
 Webservern mit denselben Verben (`start`, `stop`, `graceful`, `restart`, `kill`, `status`, `deploy`, `command`,
 `config`, `install`) und derselben `velocity.ini`.
 
+## Velocity ist seit 6.0.15 Teil von Exponential
+
+Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.54`; vorher
+schlug sie das Paket nur vor. Was sich dadurch für eine bestehende Installation ändert:
+
+| | |
+|---|---|
+| Was sich ändert | `composer install` installiert das Velocity-Paket mit dem Rest von Exponential, die Engine `qbix` ist also immer verfügbar; `exp:velocity start --engine=qbix` bricht auf einer frischen Installation nicht mehr mit `velocity: no server script at ...` ab. |
+| PHP | Velocity 0.0.4.54 läuft auf PHP 8.0 bis 8.5, demselben Bereich wie der Kernel; er braucht `ext-sockets` (`pcntl` und `openssl` empfohlen). |
+| Was sich nicht ändert | Die ausgelieferte Standard-Engine bleibt `php`; eine Website, die Apache, nginx oder FrankenPHP ausliefert, wird weiter so ausgeliefert. Nichts startet von sich aus einen Server. |
+| So prüfen Sie es | `php bin/php/console exp:velocity status` meldet das Engine-Paket und seine Version. |
+| Was zu tun ist | Nichts außer `composer install`. Um den Server zu verwenden, setzen Sie `Engine=qbix` und stellen mit `exp:velocity deploy` bereit. |
+
+Das ist der Wendepunkt der Linie 6.0: Der Internet- und Webanwendungsserver ist ein Eckpfeiler des Kernprodukts, und
+der ganze Weg von einer Anfrage bis zur fertig dargestellten Seite gehört zu einem Produkt. Velocitys eigener Server
+ist die empfohlene Engine für jede Stufe; FrankenPHP ist die produktionsreife Alternative. Die Geschichte für jeden
+Leser: [Velocity ist Teil von Exponential 6.0.15](../../hilfe/velocity-ist-teil-von-exponential-6-0-15.md).
+
 ## Kurz gesagt
 
 | | |
@@ -61,7 +79,7 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 | 4 | Caches template, template-override, translation und design_base | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, eine ID pro Aufruf |
 | 5 | Engine-Archiv, wenn Velocity aus einem läuft | `php bin/php/phar.php build`: nur neu gebaut, wenn sich eine Datei in `kernel/`, `lib/` oder `autoload/` geändert hat, jede Datei wird vorher geparst |
 | 6 | PHP-FPM: warten, bis sein OPcache die geänderten Dateien neu validiert hat (kein Neuladen), oder es neu laden, wenn darauf kein Verlass ist | `sleep <revalidate_freq + 1>`, oder `systemctl reload <[DeploySettings] PhpFpmService>` |
-| 7 | Velocity neu starten, wenn es läuft | `exp:velocity restart` |
+| 7 | Velocity neu starten, wenn er läuft | `exp:velocity restart` |
 | 8 | Caches content, exphttpcache, ezjscore-packer (nur mit `--packer`) und template-block | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=ezjscore-packer`, `--clear-id=template-block` |
 | 9 | der Antwort-Cache von Velocity | `exp:velocity cache clear` |
 | 10 | Vorwärmen: `[DeploySettings] WarmUpURL[]`, jede einmal von einem Hintergrundprozess angefragt | `curl URL...` |
@@ -172,12 +190,12 @@ Wurzelverzeichnis der Installation verankert) oder übergeben `--exclude=<dir>`.
 ### Ein abgeschnittener Neustart oder Deploy
 
 `exp:velocity restart` und der Neustart-Schritt von `deploy` führen Stopp und Start als eine abgekoppelte Einheit aus.
-Der Befehl startet sich selbst in einer eigenen Session neu (`setsid -f`) und, als root unter systemd, in einem
+Der Befehl startet sich selbst in einer eigenen Sitzung neu (`setsid -f`) und, als root unter systemd, in einem
 vorübergehenden Scope namens `vc-restart-<date>-<token>` (`systemctl list-units 'vc-restart-*'`), wartet dann darauf
 und gibt aus, was dieser ausgegeben hat, mit dessen Exit-Code. Ein Aufrufer, der zwischen Stopp und Start beendet wird
-(ein Timeout, ein Ausgabenlimit, ein geschlossenes Terminal, das Ende einer Login-Session), lässt den Server nicht mehr
+(ein Timeout, ein Ausgabenlimit, ein geschlossenes Terminal, das Ende einer Login-Sitzung), lässt den Server nicht mehr
 gestoppt zurück: Der Neustart wird von selbst zu Ende geführt. Der Server, den er startet, lebt in diesem Scope, nicht
-in der Session des Aufrufers.
+in der Sitzung des Aufrufers.
 
 Während er läuft, liegt `restart-in-progress.json` neben der PID-Datei (`var/vc/qbix/run/`), mit der PID des
 abgekoppelten Prozesses, seinem Scope und seinem Beginn; die Datei verschwindet, wenn der Start abgeschlossen ist.
@@ -518,7 +536,7 @@ bearbeitete und neu erzeugte PHP-Dateien übernommen.
 
 Jeder Wert erreicht PHP als INI-Text, in dem ein `;` einen Kommentar beginnt; ein Wert, der eines enthält
 (`session.save_path=0;0660;<dir>`), wird daher in Anführungszeichen in das Caddyfile geschrieben. Bevor das so war,
-kam der Session-Pfad als `0` an, keine Session wurde je gefunden, und niemand konnte auf dieser Engine angemeldet
+kam der Sitzungspfad als `0` an, keine Sitzung wurde je gefunden, und niemand konnte auf dieser Engine angemeldet
 bleiben.
 
 `[PHPSettings] IniOptions[]` setzt außerdem `apc.shm_size=256M` für beide Engines: Der Standard der Kommandozeile ist
@@ -776,8 +794,8 @@ was jedes ihrer Releases geändert hat, ist an anderer Stelle dokumentiert:
 |---|---|
 | Was sich in einem Release geändert hat | [Changelog der Velocity-Engine](../../../changelogs/extensions/exponential-velocity.md) |
 | Was Sie beim Upgrade der Engine ändern müssen (0.0.4.27 bis 0.0.4.42) | [Hinweise zum Upgrade der Velocity-Engine](velocity-engine-upgrade-hinweise.md) |
-| Die Geschichte Monat für Monat | [Velocity-Chronik](../../../eng-us/history/velocity/README.md) |
-| Webserver, Control Panel, Cache, HTTPS, Shell, Pakete | [Webserver](../../../eng-us/features/6.0/velocity-web-server.md), [Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md), [Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md), [HTTPS](../../../eng-us/features/6.0/velocity-https-certificates.md), [Q-Shell](../../../eng-us/features/6.0/velocity-q-shell.md), [Pakete und Binärdateien](../../../eng-us/features/6.0/velocity-packages-and-binaries.md) |
+| Die Geschichte Monat für Monat | [Velocity-Chronik](../../geschichte/velocity/README.md) |
+| Webserver, Control Panel, Cache, HTTPS, Shell, Pakete | [Webserver](../../funktionen/6.0/velocity-webserver.md), [Control Panel](../../funktionen/6.0/velocity-control-panel.md), [Antwort-Cache](../../funktionen/6.0/velocity-antwort-cache.md), [HTTPS](../../funktionen/6.0/velocity-https-zertifikate.md), [Q-Shell](../../funktionen/6.0/velocity-q-shell.md), [Pakete und Binärdateien](../../funktionen/6.0/velocity-pakete-und-binaerdateien.md) |
 | Jede Einstellung der Engine | [Einstellungen der Engine](../../spezifikationen/6.0/velocity-engine-einstellungen.md), [Worker-Pool](../../spezifikationen/6.0/velocity-worker-pool.md), [HTTP/2 und Sicherheit](../../spezifikationen/6.0/velocity-http2-und-sicherheit.md) |
 
 Die Zugriffsregeln unter „Ansichten und wer sie öffnen darf“ oben sind diejenigen, die `exp:velocity` in die
@@ -794,7 +812,7 @@ Datei. Die Datei kann `PATH`, `LD_*`, `PHPRC` und die anderen Variablen des Load
 
 ## Verwandte Seiten
 
-- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../../eng-us/features/6.0/velocity-persistent-worker-server.md)
+- [Velocity: Exponential in einem Webserver mit persistenten Workern betreiben](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)
 - [Hinweise zum Upgrade der Velocity-Engine](velocity-engine-upgrade-hinweise.md)
 - [Die Verzeichnisstruktur von Velocity](velocity-verzeichnisstruktur.md)
 - [HTTP/2 und das Vorwärmen von Caches](http2-und-cache-vorwaermen.md)

@@ -146,7 +146,7 @@ php ezpm.php import var/tmp/packages/sevenx_multisite.ezpkg
 
 `ezpm.php import` nimmt den Pfad einer `.ezpkg` in jedem der beiden Paketformate und führt dieselben Prüfungen des Archivs aus wie die Seite
 zum Hochladen. Es weist ein Paket ab, dessen Name bereits in einem Repository existiert (mit der Meldung, dass das Paket nicht importiert
-werden konnte, weil es bereits existiert). Siehe [ezpm, der Paketmanager auf der Kommandozeile](../../../../eng-us/features/6.0/ezpm-package-manager-cli.md).
+werden konnte, weil es bereits existiert). Siehe [ezpm, der Paketmanager auf der Kommandozeile](../../../funktionen/6.0/ezpm-paketmanager-cli.md).
 
 **In der Administration**: **Setup > Pakete**, **Neues Paket importieren**, die Datei wählen, **Importiere Paket**
 ([Ein Paket importieren](../admin-oberflaeche/ein-paket-importieren.md)).
@@ -170,3 +170,11 @@ in der Liste gezeigt ([Der Setup-Assistent, 5.3.8](../../../installation/05-setu
 - [Anleitung zu Paketen](../../../anleitungen/pakete.md)
 - [Ein Paket vor der Veröffentlichung prüfen](../anforderungen/ein-paket-vor-der-veroeffentlichung-pruefen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -96,7 +96,7 @@ Eine Rollenseite zeigt sie als Satz wie *Darf sich anmelden, in den Siteaccesses
   [Rollenentwurf für externe Dienstleister](../personen-und-berechtigungen/rollenentwurf-externe-dienstleister.md)).
 
 Exponential hat außerdem einen **Redaktions-Siteaccess**, eine vereinfachte Bearbeitungsoberfläche für die Redaktion
-([Einrichtungsassistent und Redaktions-Siteaccess](../../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md)). Er
+([Einrichtungsassistent und Redaktions-Siteaccess](../../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md)). Er
 verweigert das Rollenmodul, sodass Rollen immer im Siteaccess der Administration verwaltet werden. Geben Sie ihm
 dieselbe Netzwerkbeschränkung wie der Administration.
 
@@ -105,7 +105,7 @@ dieselbe Netzwerkbeschränkung wie der Administration.
 Wenn ein zentraler Reverse Proxy oder Load Balancer TLS terminiert, vertraut Exponential weitergeleiteten Headern nur
 von den Proxys, die in `site.ini [HTTPHeaderSettings] TrustedProxies[]` aufgeführt sind. Ohne diese Einstellung sehen
 HTTPS-Anfragen wie reines HTTP aus, und jeder Besucher hat die Adresse des Proxys, was netzwerkbasierte Regeln und die
-Adressen im Audit-Trail unbrauchbar macht. Siehe
+Adressen im Prüfprotokoll unbrauchbar macht. Siehe
 [Mehrere Webserver hinter einem Load Balancer](../verfuegbarkeit/mehrere-webserver-hinter-einem-load-balancer.md).
 
 ## Prüfen
@@ -135,8 +135,9 @@ Aus Ihrem Netzwerk heraus erwarten Sie vom Host der Administration eine Weiterle
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -41,7 +41,7 @@ Beide Projekte stammen vom selben Legacy-Kernel; ihre Geschichten trennen sich a
 |---|---|
 | Verglichene Änderungen von LoveStack | 272 Commits von Mugo Web und Mitwirkenden, 983 Dateien |
 | Vor der Portierung bereits in Exponential | viele davon, oft in anderer Form: Kompatibilität mit PHP 7 und 8, SameSite-Cookies, Passwort-Hashing, das Datum im Papierkorb, WebP, SQLite und mehr ([Liste](../lovestack.md#bereits-in-exponential)) |
-| Übernommene Funktionen | 36 (L01 bis L36), dazu der Name der Session-Einstellung `SameSite` von LoveStack und die PHP-8-Prüfung |
+| Übernommene Funktionen | 36 (L01 bis L36), dazu der Name der Sitzungseinstellung `SameSite` von LoveStack und die PHP-8-Prüfung |
 | Nicht übernommen | 14 Punkte, jeder mit seiner Begründung ([Liste](../lovestack.md#nicht-übernommen-und-warum)) |
 
 ## Über LoveStack

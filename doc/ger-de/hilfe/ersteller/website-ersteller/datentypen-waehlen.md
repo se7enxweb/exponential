@@ -67,11 +67,11 @@ Die Implementierungen liegen in `kernel/classes/datatypes/<name>/`.
 ## Datentypen aus Erweiterungen
 
 Erweiterungen fügen Datentypen hinzu; sie registrieren sie in ihren eigenen Einstellungen. Hier dokumentierte Beispiele:
-[eztags](../../../../eng-us/features/6.0/extensions/eztags.md) (ein Tag-Baum mit Autovervollständigung),
-[enhancedselection2](../../../../eng-us/features/6.0/extensions/enhancedselection2.md),
-[enhancedezbinaryfile](../../../../eng-us/features/6.0/extensions/enhancedezbinaryfile.md),
-[ezgmaplocation](../../../../eng-us/features/6.0/extensions/ezgmaplocation.md) (ein Kartenstandort),
-[ezstarrating](../../../../eng-us/features/6.0/extensions/ezstarrating.md). Ein eigener Datentyp ist eine Aufgabe für
+[eztags](../../../funktionen/6.0/erweiterungen/eztags.md) (ein Tag-Baum mit Autovervollständigung),
+[enhancedselection2](../../../funktionen/6.0/erweiterungen/enhancedselection2.md),
+[enhancedezbinaryfile](../../../funktionen/6.0/erweiterungen/enhancedezbinaryfile.md),
+[ezgmaplocation](../../../funktionen/6.0/erweiterungen/ezgmaplocation.md) (ein Kartenstandort),
+[ezstarrating](../../../funktionen/6.0/erweiterungen/ezstarrating.md). Ein eigener Datentyp ist eine Aufgabe für
 Anwendungsentwickler ([Einen eigenen Datentyp schreiben](../anwendungsentwickler/eigene-datentypen.md)).
 
 ## Ein Feld in einem Template anzeigen
@@ -110,8 +110,8 @@ einen reinen Wert lesen Sie `.content` oder prüfen `.has_content`:
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -12,7 +12,7 @@ type: help
 Diese Aufgabe ist für Administratoren bei einer wöchentlichen Prüfung oder auf der Suche nach „freigegebene Inhalte
 wurden nicht veröffentlicht“. Am Ende wissen Sie, dass jeder Teil planmäßig läuft. Referenz:
 [Cronjobs](../../../../anleitungen/cronjobs.md); Hintergrund:
-[Überwachung der Cronjobs](../../../../../eng-us/help/government/operations/monitoring/cronjob-monitoring.md).
+[Überwachung der Cronjobs](../../betrieb/ueberwachung/ueberwachung-der-cronjobs.md).
 
 ## Inhalt
 1. [Bevor Sie beginnen](#bevor-sie-beginnen)
@@ -53,7 +53,7 @@ Siteaccess):
 ```
 
 Öffnen Sie die Crontab mit `./console crontab:edit`. Unter Velocity kann stattdessen dessen Scheduler die Teile
-ausführen ([Scheduler von Velocity](../../../../../eng-us/features/6.0/velocity-scheduler.md)). Auf mehreren Webservern führen
+ausführen ([Scheduler von Velocity](../../../../funktionen/6.0/velocity-zeitplaner.md)). Auf mehreren Webservern führen
 Sie jeden Teil nur auf einem Server aus.
 
 Hinweis: `--allow-root-user` ist nur nötig, wenn die Zeile als root läuft; als Benutzer der Site lassen Sie es weg.
@@ -62,12 +62,13 @@ Hinweis: `--allow-root-user` ist nur nötig, wenn die Zeile als root läuft; als
 - [Einen Teil der Cronjobs von Hand ausführen](einen-teil-der-cronjobs-von-hand-ausfuehren.md)
 - [Cronjobs während der Wartung anhalten](cronjobs-waehrend-der-wartung-anhalten.md)
 - [Cronjobs (Hosting)](../../../hosting/betrieb/cronjobs.md)
-- [Konsole der Cronjobs](../../../../../eng-us/features/6.0/cronjobs-console.md)
+- [Konsole der Cronjobs](../../../../funktionen/6.0/cronjobs-in-der-konsole.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

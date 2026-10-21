@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller, die Besucher Inhalte nach Themen 
 `eztags` (in der Administration als **Tags** angezeigt) fügt einen Tag-Baum hinzu, den Sie verwalten, ein Tag-Feld für
 Klassen mit Autovervollständigung und eine Seite je Tag, die alles auflistet, was damit verschlagwortet ist. Sie leistet
 mehr als der Datentyp `ezkeyword` des Kernels: eine Hierarchie, Synonyme sowie geschlossene oder offene Vokabulare
-([eztags](../../../../eng-us/features/6.0/extensions/eztags.md)).
+([eztags](../../../funktionen/6.0/erweiterungen/eztags.md)).
 
 ![Das Tags-Dashboard: der Tag-Baum und die neuesten Tags](../../../../eng-us/help/images/creators/tags-dashboard.webp)
 
@@ -58,7 +58,7 @@ mehr als der Datentyp `ezkeyword` des Kernels: eine Hierarchie, Synonyme sowie g
 
 ## Einstellungen, auf die es ankommt
 
-Aus `eztags.ini` ([eztags, Einstellungen](../../../../eng-us/features/6.0/extensions/eztags.md#settings)):
+Aus `eztags.ini` ([eztags, Einstellungen](../../../funktionen/6.0/erweiterungen/eztags.md#einstellungen)):
 
 | Block | Schlüssel | Standard | Bedeutung |
 |---|---|---|---|
@@ -93,8 +93,8 @@ funktionieren; geben Sie der Redaktion `add` nur unterhalb der Tags, die sie pfl
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

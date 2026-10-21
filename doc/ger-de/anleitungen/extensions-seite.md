@@ -145,5 +145,13 @@ Millisekunde hält.
   `ExtensionAcknowledgeRisks` und `ExtensionDiscardButton`. Die Formularsendungen der Seite vor der Neugestaltung funktionieren weiterhin:
   `ActivateExtensionsButton` mit `ActiveExtensionList[]` (und `ShownExtensionList[]`) schreibt wie bisher sofort, und das
   JSON-Umordnen `ReorderExtensions` mit `ExtensionOrder[]` ändert nur die Reihenfolge.
-- Siehe auch: [Ladereihenfolge und sicheres Speichern](../../eng-us/features/6.0/extension-loading-order.md),
-  [die Extension-Liste und Downloads](../../eng-us/features/6.0/extension-list-and-downloads.md).
+- Siehe auch: [Ladereihenfolge und sicheres Speichern](../funktionen/6.0/ladereihenfolge-der-extensions.md),
+  [die Extension-Liste und Downloads](../funktionen/6.0/extension-liste-und-downloads.md).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

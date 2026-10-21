@@ -36,7 +36,7 @@ betreffen: [Die zweistufige Anmeldung für Mitarbeiter einschalten](../personen-
 |---|---|---|
 | Passwörter und Sitzungen | [Die Mindestlänge für Passwörter auf 12 setzen](die-mindestlaenge-fuer-passwoerter-auf-12-setzen.md) | die Mindestlänge für Passwörter in Exponential von den mitgelieferten 10 auf 12 (der Wert von OWASP ASVS 4.0.3 Stufe 1) oder mehr anheben, ohne jemanden auszusperren, und prüfen, dass neue Passwörter sie einhalten. |
 | Passwörter und Sitzungen | [Eigene Wörter zur Liste schwacher Passwörter hinzufügen](eigene-woerter-zur-liste-schwacher-passwoerter-hinzufuegen.md) | Exponential Passwörter ablehnen lassen, die aus eigenen Wörtern Ihrer Organisation gebildet sind (ihr Name, die Site, die Stadt), zusätzlich zur mitgelieferten Liste bekannter Passwörter, mit WeakPasswordList[] oder WeakPasswordFile. |
-| Passwörter und Sitzungen | [Jede Sitzung eines Benutzers beenden](jede-sitzung-eines-benutzers-beenden.md) | nach einer vermuteten Kontoübernahme oder einem verlorenen Gerät jede Sitzung eines Benutzers in Exponential beenden, indem Sie das Passwort ändern (EndOtherSessions), das Konto deaktivieren oder Sitzungen unter Setup > Sitzungen mit dem Datenbank-Sitzungshandler entfernen. |
+| Passwörter und Sitzungen | [Jede Sitzung eines Benutzers beenden](jede-sitzung-eines-benutzers-beenden.md) | nach einer vermuteten Kontoübernahme oder einem verlorenen Gerät jede Sitzung eines Benutzers in Exponential beenden, indem Sie das Passwort ändern (EndOtherSessions), das Konto deaktivieren oder Sitzungen unter Setup > Sitzungen mit dem Datenbank-Session-Handler entfernen. |
 | Passwörter und Sitzungen | [Die gemeinsame Admin-Anmeldung abschaffen](die-gemeinsame-admin-anmeldung-abschaffen.md) | das gemeinsame Konto admin durch persönliche Administratorkonten ersetzen, damit das Audit-Protokoll Personen nennt, dann admin deaktivieren (nach dem Verlegen von UserCreatorID) oder unbrauchbar machen und ein getestetes Notfallverfahren behalten. |
 | Passwörter und Sitzungen | [Getrennte Sitzungscookies für die Administration](getrennte-sitzungscookies-fuer-die-administration.md) | jedem Siteaccess in Exponential ein eigenes Sitzungscookie geben (SessionNameHandler=custom), sodass eine Anmeldung auf der öffentlichen Site keine Anmeldung in der Administration ist, und das Ergebnis prüfen. |
 | CSP, Header und Netzwerk | [Die CSP der Administration auf Durchsetzen umstellen](die-csp-der-administration-auf-durchsetzen-umstellen.md) | nach der Prüfung der Templates und einer Zeit sauberer Berichte die Content Security Policy des Siteaccess der Administration von report-only auf enforce umstellen, sie in jeden Prozess ausrollen und den Header prüfen. |
@@ -89,13 +89,14 @@ betreffen: [Die zweistufige Anmeldung für Mitarbeiter einschalten](../personen-
 ## Verwandte Seiten
 
 - [Behörden: hier beginnen](../../verwaltungen-hier-beginnen.md) und der Index der Aufgaben ([Aufgaben](../README.md))
-- [Barrierefreiheit für Behörden](../../../../../eng-us/help/government/accessibility/README.md), [Sicherheit für Behörden](../../../../../eng-us/help/government/security/README.md),
+- [Barrierefreiheit für Behörden](../../barrierefreiheit/README.md), [Sicherheit für Behörden](../../sicherheit/README.md),
   [Datenschutz für Behörden](../../datenschutz/README.md), [Schriftgut und Archivierung](../../schriftgut-und-archivierung/README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

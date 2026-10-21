@@ -32,18 +32,18 @@ sie es sehen werden.
 
 | Sagen Sie | Quelle |
 |---|---|
-| „Ein Befehl installiert eine vollständige Website auf SQLite, ohne Datenbankserver.“ | [Exponential mit einem Befehl installieren](../../../eng-us/features/6.0/install-in-one-command.md) |
+| „Ein Befehl installiert eine vollständige Website auf SQLite, ohne Datenbankserver.“ | [Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | „Sechs Datenbanken: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle und MySQL, in dieser offiziellen Reihenfolge.“ | [Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge) |
 | „PHP 8.0 ist die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 es ausführt.“ | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | „Betriebssysteme in vier dokumentierten Stufen, von getestet bis theoretisch.“ | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md#die-vier-stufen) |
-| „Velocity ist die empfohlene Engine; FrankenPHP ist die produktionsreife Alternative; Apache oder nginx mit PHP-FPM liefern es ebenfalls aus.“ | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it), [Webserver](../betriebssystemunterstuetzung.md#webserver) |
+| „Velocity ist die empfohlene Engine; FrankenPHP ist die produktionsreife Alternative; Apache oder nginx mit PHP-FPM liefern es ebenfalls aus.“ | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#wozu-sie-es-verwenden), [Webserver](../betriebssystemunterstuetzung.md#webserver) |
 | „Eine Anleitung zur Härtung, Bedrohung für Bedrohung, mit einer Checkliste.“ | [Sicherheitshärtung](../sicherheitshaertung.md#checkliste) |
 | „Eine neue Installation erzeugt ein zufälliges Administratorpasswort, wenn keines oder ein allgemein bekanntes angegeben wird.“ | [Das Standardpasswort des Administrators](../standard-administratorpasswort.md) |
-| „Sondierungen und Angriffe werden in ein Sicherheitslog eingeordnet, mit maskierten Adressen.“ | [Request-Logs](../../../eng-us/features/6.0/request-logs.md) |
-| „Ein manipulationssicheres Prüfprotokoll, standardmäßig eingeschaltet.“ | [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
-| „Ein Log-Viewer in der Administration und Fehlerreferenzen, die man nachschlagen kann.“ | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md), [Einen Fehler über seine Referenz finden](../../anleitungen/fehler-anhand-der-referenz-finden.md) |
+| „Sondierungen und Angriffe werden in ein Sicherheitslog eingeordnet, mit maskierten Adressen.“ | [Request-Logs](../../funktionen/6.0/anfrageprotokolle.md) |
+| „Ein manipulationssicheres Prüfprotokoll, standardmäßig eingeschaltet.“ | [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
+| „Ein Log-Viewer in der Administration und Fehlerreferenzen, die man nachschlagen kann.“ | [Log-Viewer](../../funktionen/6.0/log-betrachter.md), [Einen Fehler über seine Referenz finden](../../anleitungen/fehler-anhand-der-referenz-finden.md) |
 | „**Setup > Upgrade-Prüfung** vergleicht die Dateien mit dem Release-Manifest und die Datenbank mit dem Release-Schema.“ | [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
-| „Große Löschungen und Verschiebungen laufen als Hintergrundjobs, sodass sie nicht in eine Zeitüberschreitung laufen.“ | [Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md) |
+| „Große Löschungen und Verschiebungen laufen als Hintergrundjobs, sodass sie nicht in eine Zeitüberschreitung laufen.“ | [Inhaltsjobs](../../funktionen/6.0/inhaltsauftraege.md) |
 | „Standard-Dumps pro Datenbank und dokumentierte Wege, eine Website zwischen Datenbanken umzuziehen.“ | [Backup und Wiederherstellung](../datenbankunterstuetzung.md#backup-und-wiederherstellung), [Eine Website umziehen](../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen) |
 
 ## Befehle und Bildschirme zum Zeigen
@@ -58,8 +58,8 @@ Bildschirme: **Setup > Systeminformationen** (die Datenbank, PHP und die Engine)
 **Setup > Upgrade-Prüfung**, der Reiter **Audit**.
 
 Prüfen Sie die Befehlsnamen auf der Installation, die Sie verwenden; `--help` bei jedem Befehl listet seine Optionen
-([Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#start-check-stop),
-[Das Prüfprotokoll, Auf der Kommandozeile](../../../eng-us/features/6.0/audit-trail.md#from-the-command-line)).
+([Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#starten-prüfen-stoppen),
+[Das Prüfprotokoll, Auf der Kommandozeile](../../funktionen/6.0/pruefprotokoll.md#von-der-kommandozeile)).
 
 ## Fragen, die Administratoren stellen
 
@@ -84,3 +84,11 @@ Prüfen Sie die Befehlsnamen auf der Installation, die Sie verwenden; `--help` b
 - [Gesprächspunkte: Sicherheit](gespraechspunkte-sicherheit.md)
 - [Für Sicherheit eintreten](fuer-sicherheit-eintreten.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

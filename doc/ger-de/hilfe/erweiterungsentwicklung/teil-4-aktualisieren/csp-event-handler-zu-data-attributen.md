@@ -13,7 +13,7 @@ Teil 4, Kapitel 14. Ein `onclick="..."`-Attribut ist Inline-Code, genau wie ein 
 Security Policy ohne `'unsafe-inline'` verweigert seine Ausführung. Alte Templates haben weit mehr davon als
 Skriptblöcke: Eine Messung auf einer Installation mit vielen Erweiterungen im Oktober 2026 zählte 165 bis 167
 Event-Handler-Attribute pro Administrationsseite, bevor die eigenen Templates des Kernels umgestellt wurden
-([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)). Dieses Kapitel macht daraus
+([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)). Dieses Kapitel macht daraus
 data-Attribute, die von einer Skriptdatei verarbeitet werden.
 
 ## Sie finden
@@ -205,8 +205,8 @@ funktioniert ein Release der Erweiterung mit alten und neuen Kerneln.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

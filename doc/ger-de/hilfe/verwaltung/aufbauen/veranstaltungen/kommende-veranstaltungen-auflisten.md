@@ -71,7 +71,7 @@ Sie eine Möglichkeit:
 | Ein Ablauf für den Teilbaum des Kalenders | das Veröffentlichen einer Veranstaltung erneuert die Liste |
 | `cache_ttl` in der vollständigen Ansicht der Seite | die Seite wird nach so vielen Sekunden neu aufgebaut |
 
-[View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md) erklärt die
+[View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md) erklärt die
 Möglichkeiten; kombinieren Sie einen Ablauf (für die vergehende Zeit) mit einem Ablauf für den Teilbaum (für neue
 Veranstaltungen).
 
@@ -85,12 +85,13 @@ Datum der Veranstaltung; sagen Sie das dort, wo Sie ihn anbieten. Ein iCalendar-
 
 - [Veranstaltungen](README.md)
 - [Kalenderansichten](kalenderansichten.md)
-- [Beziehungen und Wiederverwendung](../../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)
+- [Beziehungen und Wiederverwendung](../../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

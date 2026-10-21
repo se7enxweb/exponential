@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren und Zuständige für Schriftgut. **Setup > PDF-Export** (`/pdf/list`,
 Richtlinie `pdf/edit`) erzeugt ein PDF-Dokument aus einem **Quellknoten** oder aus einem Baum von Knoten ausgewählter
-Klassen ([PDF-Exporte](../../../anleitungen/pdf-exporte.md), [PDF-Export](../../../../eng-us/features/6.0/pdf-export.md)).
+Klassen ([PDF-Exporte](../../../anleitungen/pdf-exporte.md), [PDF-Export](../../../funktionen/6.0/pdf-export.md)).
 
 ![PDF-Exporte: Exporte von Teilen des Inhaltsbaums, gespeichert oder für jeden Download erzeugt](../../../../eng-us/help/images/government/gov-pdf.webp)
 
@@ -42,7 +42,7 @@ Klassen ([PDF-Exporte](../../../anleitungen/pdf-exporte.md), [PDF-Export](../../
 
 Für Sprachen außerhalb der lateinischen Schrift muss in `settings/override/pdf.ini.append.php` eine TrueType-Schrift
 eingerichtet werden
-([PDF-Export: Jede Sprache drucken](../../../../eng-us/features/6.0/pdf-export.md#print-any-language-use-a-truetype-font)).
+([PDF-Export: Jede Sprache drucken](../../../funktionen/6.0/pdf-export.md#jede-sprache-drucken-eine-truetype-schrift-verwenden)).
 
 ## Öffentlich über die Adresse
 
@@ -71,8 +71,9 @@ erzeugten Export.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

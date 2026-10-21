@@ -83,7 +83,7 @@ Diese fünf sind älter als der Block und behalten eigene Einstellungen:
 |---|---|---|---|
 | Tab Orte eines Elements | `[LocationsSettings] LocationsPerPage` | `content.ini` | 25 |
 | Richtlinien auf `role/edit` und `role/view` | `[RoleSettings] PoliciesPerPage` | `site.ini` | 25 |
-| Benutzer und Gruppen einer Rolle auf `role/view` ([Blättern und Filter](../../../eng-us/features/6.0/role-assignment-paging.md)) | `[RoleSettings] AssignmentsPerPage` (0: alle) | `site.ini` | 50 |
+| Benutzer und Gruppen einer Rolle auf `role/view` ([Blättern und Filter](../../funktionen/6.0/seitenweise-rollenzuweisungen.md)) | `[RoleSettings] AssignmentsPerPage` (0: alle) | `site.ini` | 50 |
 | Vorschau der Richtlinien pro Rolle, bei einem Benutzer oder einer Benutzergruppe | `[RoleSettings] PolicyPreviewPerRole` | `site.ini` | 10 |
 | `role/list` | `[RoleSettings] RolesPerPageList[]` | `site.ini` | 10, 25, 50 |
 | `rss/list` (Exporte und Importe) | `[RSSListSettings] ItemsPerPageList[]` | `content.ini` | 25, 50, 250 |
@@ -197,7 +197,7 @@ Die ausgelieferten Werte lesen Sie mit `grep -n -A40 "^\[PaginationSettings\]" s
 
 ## Verwandte Seiten
 
-- [Blättern, Sortieren und Seitengrößen in der Administrationsoberfläche](../../../eng-us/features/6.0/admin-list-paging.md)
+- [Blättern, Sortieren und Seitengrößen in der Administrationsoberfläche](../../funktionen/6.0/seitenweise-listen-im-admin.md)
 - [Blättern in Rollen und Richtlinien](seitenweise-anzeige-von-rollen-und-richtlinien.md) und [Der Tab Orte: Blättern und Sortieren](tab-orte-blaettern-und-sortieren.md)
-- [September 2026, erste Hälfte: 15. September](../../../eng-us/history/2026/2026-09a.md#15-september-paging-everywhere)
+- [September 2026, erste Hälfte: 15. September](../../geschichte/2026/2026-09a.md#15-september-überall-seitenweise-anzeige)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

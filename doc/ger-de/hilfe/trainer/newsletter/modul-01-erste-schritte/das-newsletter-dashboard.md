@@ -42,7 +42,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Dashboard, Befehle und Hintergrundläufe](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#dashboard-commands-and-background-runs-4117)
+Quelle: [Dashboard, Befehle und Hintergrundläufe](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#dashboard-befehle-und-hintergrundläufe-4117)
 und [Probleme, die das Dashboard meldet](../../../../spezifikationen/6.0/cjw_newsletter.md#probleme-die-das-dashboard-meldet).
 
 1. **Der Weg dorthin** (2 Minuten). **Newsletter** im oberen Menü oder die Kachel **Newsletter** auf dem
@@ -127,7 +127,7 @@ die Administration. Sie lesen nur.
 <details>
 <summary>Antworten</summary>
 
-1. **B.** **Nur zählen** startet einen Probelauf der Warteschlange ([Funktionsseite](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#dashboard-commands-and-background-runs-4117)).
+1. **B.** **Nur zählen** startet einen Probelauf der Warteschlange ([Funktionsseite](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#dashboard-befehle-und-hintergrundläufe-4117)).
 2. `ext:cjw_newsletter:status` ([Spezifikation](../../../../spezifikationen/6.0/cjw_newsletter.md#konsolenbefehle)).
 3. Ob Cron den Teil `cjw_newsletter` ausführt ([Spezifikation](../../../../spezifikationen/6.0/cjw_newsletter.md#probleme-die-das-dashboard-meldet)).
 4. Abonnements, die noch nicht bestätigt oder angenommen sind.
@@ -138,7 +138,7 @@ die Administration. Sie lesen nur.
 
 ## Weiterführende Informationen
 
-- [cjw_newsletter: Newsletter in der Administration](../../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#dashboard-commands-and-background-runs-4117):
+- [cjw_newsletter: Newsletter in der Administration](../../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#dashboard-befehle-und-hintergrundläufe-4117):
   das Dashboard und Hintergrundläufe.
 - [Spezifikation: die Erweiterung cjw_newsletter](../../../../spezifikationen/6.0/cjw_newsletter.md#probleme-die-das-dashboard-meldet):
   jedes Problem, das das Dashboard meldet.
@@ -149,13 +149,13 @@ die Administration. Sie lesen nur.
 
 - [Modul 1: Erste Schritte](README.md)
 - [Newsletter mit CJW Newsletter: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

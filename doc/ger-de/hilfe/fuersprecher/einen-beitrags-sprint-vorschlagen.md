@@ -36,7 +36,7 @@ offizielle Veranstaltungen dokumentiert. Sein Ergebnis sind echte Pull Requests 
 
 - Eine Liste kleiner, echter Aufgaben, jede in unter einer Stunde machbar, mit einem Link (eine zu prüfende Hilfeseite,
   eine Gruppe von Texten, ein nachzustellendes Issue).
-- Eine Testinstallation pro teilnehmender Person oder eine Anleitung, eine anzulegen ([Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md)).
+- Eine Testinstallation pro teilnehmender Person oder eine Anleitung, eine anzulegen ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - GitHub-Konten bereit (mit Zwei-Faktor-Authentifizierung).
 - Eine gemeinsame, öffentliche Aufgabenliste (eine Forendiskussion genügt) ohne personenbezogene Daten.
 
@@ -71,3 +71,11 @@ CONTRIBUTION SPRINT: <theme>                <date>, <time>, <place | online>   (
 - [Einen ersten Beitrag begleiten](einen-ersten-beitrag-begleiten.md)
 - [Checklisten für Veranstaltungen](checklisten-fuer-veranstaltungen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

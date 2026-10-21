@@ -77,7 +77,7 @@ Auf der Startseite oder einer Themenseite listet ein Fetch die neuesten Artikel 
 
 Der Layout-Editor kann Listen von Inhalten auch ohne Template-Arbeit in Blöcken zeigen
 ([Der Layout-Editor](../../../layout-editor.md)). Listen in Cache-Blöcken brauchen einen Ablauf, damit neue Elemente
-erscheinen ([View-Cache und Cache-Blöcke](../../../../../eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md)).
+erscheinen ([View-Cache und Cache-Blöcke](../../../ersteller/website-ersteller/view-cache-und-cache-bloecke.md)).
 
 ## Daten
 
@@ -96,7 +96,7 @@ Um zu einem späteren Zeitpunkt zu veröffentlichen, siehe [Pressemitteilungen](
 - Schreiben Sie den Alternativtext für das, was das Bild im Zusammenhang des Artikels zeigt; ein dekoratives Bild
   braucht keinen, sollte dann aber nicht im Feld Image stehen.
 - Bildgrößen kommen aus Aliasen
-  ([Bilder und Bildvarianten](../../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)).
+  ([Bilder und Bildvarianten](../../../ersteller/website-ersteller/bilder-und-bildvarianten.md)).
 - Fotos von Personen brauchen deren Einwilligung, wo Ihre Regeln es verlangen.
 
 ## Verwandte Seiten
@@ -107,8 +107,9 @@ Um zu einem späteren Zeitpunkt zu veröffentlichen, siehe [Pressemitteilungen](
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

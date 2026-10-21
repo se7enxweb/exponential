@@ -13,7 +13,7 @@ Diese Seite ist für Betreiber, die Informationen von Besuchern sammeln: Kontakt
 Anmeldungen, Lead-Formulare. In Exponential ist ein Formular ein Element einer Klasse, deren Felder als **Information
 Collector** markiert sind; jedes Mal, wenn ein Besucher es absendet, wird eine **Sammlung** gespeichert
 ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)). Das Formular selbst baut Ihr Website-Ersteller
-([Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md));
+([Formulare mit dem Information Collector](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md));
 was mit den Einsendungen geschieht, ist Ihre Routine.
 
 ## Inhalt
@@ -32,7 +32,7 @@ was mit den Einsendungen geschieht, ist Ihre Routine.
   ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)).
 - Drei Formulartypen sind bekannt: Formular, Feedback und Umfrage; eine Umfrage kann pro Benutzer einmal beantwortet
   werden, und Umfragen senden standardmäßig keine E-Mail (`settings/collect.ini`, siehe
-  [Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+  [Formulare mit dem Information Collector](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 - Besucher, die nicht angemeldet sind, dürfen standardmäßig Formulare senden (`CollectAnonymousData=enabled`).
 
 ## Wer die Einsendungen liest
@@ -53,7 +53,7 @@ Geben Sie sie den Personen, die Formulare beantworten, nicht jedem Redakteur ([R
 Der Standardempfänger von Formular-E-Mails ist `site.ini [InformationCollectionSettings] EmailReceiver`.
 E-Mail-Templates können den Empfänger pro Formular festlegen; die ausgelieferten ezwebin-Templates übernehmen ihn aus
 einem Feld `recipient` des Formularelements, wenn es eines hat, sodass jedes Formular sein eigenes Team anschreiben
-kann ([Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md)).
+kann ([Formulare mit dem Information Collector](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).
 
 > **Tipp**
 > Verwenden Sie eine Team- oder Funktionsadresse als Empfänger, nicht die Adresse einer Person. Wenn jemand geht, geht
@@ -63,7 +63,7 @@ kann ([Formulare mit dem Information Collector](../../../../eng-us/help/creators
 
 Zwei Schichten schützen Formulare: Ein **Formular-Token** beweist, dass ein Absenden von Ihrer eigenen Seite kam (die
 Erweiterung `ezformtoken`), und ein **CAPTCHA** (reCAPTCHA oder hCaptcha) bittet den Besucher nachzuweisen, dass er ein
-Mensch ist. Kontakt- und Feedbackformulare sollten beides haben ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
+Mensch ist. Kontakt- und Feedbackformulare sollten beides haben ([Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md)).
 Ein CAPTCHA-Dienst lädt ein Skript von seinem Anbieter; erwähnen Sie das in Ihren Datenschutzhinweisen.
 Spam-Sammlungen lassen sich unter **Setup > Gesammelte Informationen** gesammelt entfernen.
 
@@ -90,12 +90,20 @@ Eine monatliche Routine:
 - [ ] Sagen Sie auf dem Formular, was Sie mit den Daten tun und wie lange Sie sie aufbewahren.
 - [ ] Legen Sie fest, wer die E-Mail erhält und wer antwortet.
 - [ ] Token und CAPTCHA an; abgemeldet getestet.
-- [ ] Beschriftungen sichtbar und Fehlermeldungen klar ([Barrierefreiheit für Website-Ersteller](../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)).
+- [ ] Beschriftungen sichtbar und Fehlermeldungen klar ([Barrierefreiheit für Website-Ersteller](../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)).
 - [ ] Das Formular steht in Ihrer Aufbewahrungsroutine.
 
 ## Verwandte Seiten
 
 - [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)
-- [Formulareinsendungen lesen und exportieren](../../../../eng-us/help/creators/website-creators/form-submissions.md)
+- [Formulareinsendungen lesen und exportieren](../../ersteller/website-ersteller/formulareinsendungen.md)
 - [Formulare und Feedback von Mitgliedern](../../unternehmen/vereine/formulare-und-rueckmeldungen-von-mitgliedern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

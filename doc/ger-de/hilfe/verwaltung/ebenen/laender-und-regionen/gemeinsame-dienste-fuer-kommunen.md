@@ -38,9 +38,9 @@ muss.
 | Betrieb | | Sicherungen, Upgrades, Überwachung durch die Region |
 
 Wie Siteaccesses, Designs und Einstellungen zusammenwirken, beschreiben
-[Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md) und
-[INI-Overrides bei Multisite](../../../../../eng-us/features/6.0/multi-site-ini-overrides.md). Jede Website kann eigene Protokoll-
-und Cache-Pfade haben ([Protokoll- und Cache-Pfade bei Multisite](../../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)).
+[Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md) und
+[INI-Overrides bei Multisite](../../../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md). Jede Website kann eigene Protokoll-
+und Cache-Pfade haben ([Protokoll- und Cache-Pfade bei Multisite](../../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)).
 
 ## Eine Kommune einrichten
 
@@ -65,7 +65,7 @@ und Cache-Pfade haben ([Protokoll- und Cache-Pfade bei Multisite](../../../../..
 | Regionale Dienstleistungen, auf die jede Kommune verlinkt | auf die eigenen Seiten der Region verlinken |
 | Gemeinsame rechtliche Seiten (Datenschutzerklärung für die gemeinsame Plattform, Erklärung zur Barrierefreiheit für das gemeinsame Design) | ein Objekt, ein Ort im Baum jeder Kommune, angepasster Text, wo jede Kommune Verantwortliche ist |
 | Gemeinsame Nachrichten der Region | ein RSS-Export der Nachrichten der Region, auf jeder Website angezeigt, oder ein gemeinsamer Ordner in jedem Baum |
-| Gemeinsame Tags | ein Tag-Baum für Dienstleistungen und Orte ([Verschlagworten mit eztags](../../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)) |
+| Gemeinsame Tags | ein Tag-Baum für Dienstleistungen und Orte ([Verschlagworten mit eztags](../../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)) |
 
 ## Zu treffende Vereinbarungen
 
@@ -92,12 +92,13 @@ und Cache-Pfade haben ([Protokoll- und Cache-Pfade bei Multisite](../../../../..
 
 - [Länder und Regionen](README.md)
 - [Kommunen](../kommunen/README.md)
-- [Gemeinsamer Kopf- und Fußbereich](../../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)
+- [Gemeinsamer Kopf- und Fußbereich](../../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

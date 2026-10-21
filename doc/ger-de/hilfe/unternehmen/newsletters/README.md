@@ -29,7 +29,7 @@ aus verlinkt, sodass hier nichts die Konfiguration im Detail wiederholt.
 Exponential installiert die Erweiterung `cjw_newsletter` mit dem Produkt: Sie steht im `require`-Block des
 `composer.json` der Installation (`se7enxweb/cjw_newsletter`), es gibt also kein separates Produkt, das Sie kaufen oder
 lizenzieren müssten. Die Erweiterung beschreibt sich selbst als „ein vollständiges Newsletter-System für Exponential“
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)):
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)):
 
 - Sie schreiben Newsletter-Ausgaben als Inhalte, mit Entwürfen und Vorschau wie bei jeder anderen Seite;
 - Besucher abonnieren Listen mit einem Double-Opt-in;
@@ -41,12 +41,12 @@ Release 4.2.0 (5. Oktober 2026) brachte Funktionen für die Zustellbarkeit (Sper
 Ratenbegrenzungen, Testgruppen), redaktionelle Funktionen (wiederkehrende Versände, Artikel-Pools, Freigabe von
 Ausgaben), einwilligungsbasierte Statistiken, SMS und einen CSV-Import mit Spaltenzuordnung. Die Erweiterung arbeitet
 mit den E-Mail-Einstellungen von Exponential 6.0.15, statt ein eigenes Einwilligungssystem zu führen
-([cjw_newsletter, Die Funktionen von 4.2.0](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-features-of-420)).
+([cjw_newsletter, Die Funktionen von 4.2.0](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-funktionen-von-420)).
 
 > **Hinweis**
 > Der Newsletter wird über **Newsletter** im oberen Menü der Administration geöffnet (`/newsletter/index`). Seit Release
 > 4.1.17 ist diese Startseite ein Dashboard mit den Listen, Ausgaben, letzten Versänden, dem Transport und einer Liste
-> von Problemen, die zu beheben sind ([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#dashboard-commands-and-background-runs-4117)).
+> von Problemen, die zu beheben sind ([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#dashboard-befehle-und-hintergrundläufe-4117)).
 
 ## Für wen dieser Bereich gedacht ist
 
@@ -85,11 +85,11 @@ mit den E-Mail-Einstellungen von Exponential 6.0.15, statt ein eigenes Einwillig
 ## Was dieser Bereich nicht abdeckt
 
 - Die schrittweise Konfiguration von Klassen, Cronjobs und Transporten: Sie steht in
-  [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md),
-  [Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md) und
-  [Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md).
+  [Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md),
+  [Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md) und
+  [Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md).
 - Die anderen E-Mails der Website (Benachrichtigungen, Konto-Mails): siehe
-  [E-Mail-Einstellungen: der Leitfaden für Benutzer](../../../../eng-us/features/6.0/mail-preferences.md) und
+  [E-Mail-Einstellungen: der Leitfaden für Benutzer](../../../funktionen/6.0/e-mail-einstellungen.md) und
   [den Leitfaden für Administratoren](../../../anleitungen/mail-einstellungen-administrator.md).
 - Rechtsberatung. Die Seiten zur Einwilligung beschreiben, was die Software aufzeichnet; was Ihr Recht verlangt, ist
   eine Frage für Ihren Anwalt oder Datenschutzbeauftragten.
@@ -101,19 +101,19 @@ mit den E-Mail-Einstellungen von Exponential 6.0.15, statt ein eigenes Einwillig
 - [Sicherheit und Datenschutz](../sicherheit/README.md): Grundlagen der DSGVO und Einwilligung bei Formularen.
 - [Gemeinnützige Organisationen](../gemeinnuetzige/README.md) und [Vereine und kleine Gruppen](../vereine/README.md):
   Newsletter für Unterstützer und Mitglieder.
-- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
-- [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)
-- [Funktionsseite cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md)
+- [Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)
+- [Funktionsseite cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

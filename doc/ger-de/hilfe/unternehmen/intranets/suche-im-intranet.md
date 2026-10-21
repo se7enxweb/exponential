@@ -12,8 +12,8 @@ type: help
 Diese Seite ist für Intranetverantwortliche, die möchten, dass Mitarbeiter die richtige Seite oder das richtige
 Dokument in Sekunden finden. Sie erklärt, was die mit Exponential gelieferte Suche tut, wann sich ein größerer
 Suchserver lohnt und wie Sie aus dem lernen, wonach Mitarbeiter suchen. Die technische Einrichtung steht auf den Seiten
-[Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md) und
-[Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md).
+[Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md) und
+[Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md).
 
 ![Suchstatistiken: wonach gesucht und was gefunden wurde](../../../../eng-us/help/images/help/bu-search-stats.webp)
 
@@ -32,10 +32,10 @@ Suchserver lohnt und wie Sie aus dem lernen, wonach Mitarbeiter suchen. Die tech
 ## Die Suche zeigt nur, was eine Person lesen darf
 
 Die wichtigste Eigenschaft für ein Intranet: Suchergebnisse folgen den Berechtigungen. Eine Person findet nur, was sie
-lesen darf ([Suche auf der Website, The built-in engine](../../../../eng-us/help/creators/website-creators/site-search.md#the-built-in-engine)).
+lesen darf ([Suche auf der Website, The built-in engine](../../ersteller/website-ersteller/suche-auf-der-website.md#die-eingebaute-suchmaschine)).
 Die vertraulichen Seiten der Personalabteilung erscheinen nicht in den Ergebnissen eines Vertriebsmitarbeiters, und die
 Suchseite braucht keine eigene zusätzliche Berechtigung
-([Was Besucher sehen dürfen, Giving visitors more](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#giving-visitors-more)).
+([Was Besucher sehen dürfen, Giving visitors more](../../ersteller/website-ersteller/rechte-fuer-besucher.md#besuchern-mehr-erlauben)).
 
 Für das Unternehmen bedeutet das, dass ein Suchfeld das ganze Unternehmen bedienen kann. Sie brauchen keine eigene Suche
 pro Abteilung, und Sie riskieren nicht, dass Titel eingeschränkter Dokumente über die Ergebnisse nach außen dringen.
@@ -71,9 +71,9 @@ bis es eingeschaltet wird. Der Vergleich von der ezfind-Seite:
 | Sehr viele Objekte | wird langsamer | dafür gebaut |
 
 Solr ist ein eigener Java-Server, der installiert, betrieben, überwacht und gesichert werden muss
-([Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md#when-solr-is-worth-it)).
+([Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md#wann-sich-solr-lohnt)).
 Der Konsolenbefehl `exp:solr` meldet seinen Status und startet oder stoppt ihn
-([Befehle zur Serversteuerung](../../../../eng-us/features/6.0/web-server-and-solr-commands.md)).
+([Befehle zur Serversteuerung](../../../funktionen/6.0/befehle-fuer-webserver-und-solr.md)).
 
 Eine praktische Regel für die Entscheidung: Beginnen Sie mit der eingebauten Suchmaschine. Wechseln Sie zu Solr, wenn
 Mitarbeiter Filter brauchen („nur PDF-Dateien der Personalabteilung aus 2026“), wenn die Zahl der Objekte groß wird oder
@@ -85,7 +85,7 @@ weiter).
 Text in PDF- und Word-Dateien kann in den Index aufgenommen werden. `settings/binaryfile.ini` ordnet PDF dem Handler
 `ezpdf` (externes Werkzeug `pstotext`) und Word dem Handler `ezword` (externes Werkzeug `wvWare`) zu; diese Programme
 müssen auf dem Server installiert sein
-([Dateien und Downloads, Searching inside files](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#searching-inside-files)).
+([Dateien und Downloads, Searching inside files](../../ersteller/website-ersteller/dateien-und-downloads.md#in-dateien-suchen)).
 Mit Solr lassen sich ebenfalls Dateiinhalte indizieren.
 
 ## Der Suche mit Struktur und Tags helfen
@@ -93,7 +93,7 @@ Mit Solr lassen sich ebenfalls Dateiinhalte indizieren.
 - Markieren Sie nur nützliche Felder als **Searchable**: Titel, Einleitungen, Haupttexte; keine internen Codes.
 - Geben Sie Dokumenten klare Titel; der Titel erscheint in den Ergebnissen.
 - Verwenden Sie Tags abteilungsübergreifend mit `eztags`; mit Solr lassen sich Tag-Wolken aus der Suche bauen
-  ([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)).
+  ([Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)).
 - Halten Sie ausgemusterte Dokumente aus den lesbaren Sektionen heraus, damit die Suche keine veralteten Versionen
   anbietet.
 
@@ -102,7 +102,7 @@ Mit Solr lassen sich ebenfalls Dateiinhalte indizieren.
 Mit `LogSearchStats=enabled` listet **Setup > Suchstatistiken** (`/search/stats`) jeden Suchbegriff auf, wie oft danach
 gesucht wurde und die durchschnittliche Zahl der Ergebnisse. Begriffe, die nichts gefunden haben, zeigen, welche
 Inhalte Mitarbeitern fehlen
-([Suche auf der Website, Search statistics](../../../../eng-us/help/creators/website-creators/site-search.md#search-statistics)).
+([Suche auf der Website, Search statistics](../../ersteller/website-ersteller/suche-auf-der-website.md#suchstatistiken)).
 
 > **Hinweis**
 > Suchbegriffe können personenbezogene Daten sein; deshalb ist ihre Aufzeichnung standardmäßig ausgeschaltet.
@@ -113,11 +113,11 @@ Inhalte Mitarbeitern fehlen
 
 Redakteure suchen auch in der Administration ([Suchen, für Redakteure](../../suchen.md)). Administratoren finden mit
 dem Inhaltsfinder das Objekt hinter einer Objekt-, Knoten- oder Versions-ID, einer Remote-ID oder einem URL-Alias
-([Der Inhaltsfinder](../../../../eng-us/features/6.0/content-finder.md)).
+([Der Inhaltsfinder](../../../funktionen/6.0/inhalts-finder.md)).
 
 Nach einer Migration oder einem Umzug der Datenbank wird der ganze Index mit
 `php bin/php/updatesearchindex.php --clean` neu aufgebaut
-([Suche auf der Website, Indexing](../../../../eng-us/help/creators/website-creators/site-search.md#indexing)).
+([Suche auf der Website, Indexing](../../ersteller/website-ersteller/suche-auf-der-website.md#indexierung)).
 
 ## Checkliste
 
@@ -130,16 +130,16 @@ Nach einer Migration oder einem Umzug der Datenbank wird der ganze Index mit
 
 ## Verwandte Seiten
 
-- [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)
-- [Suche mit ezfind und Solr](../../../../eng-us/help/creators/website-creators/search-with-ezfind-and-solr.md)
+- [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)
+- [Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md)
 - [Dokumente und Dateibibliotheken](dokumente-und-dateibibliotheken.md)
 - [Such-Backends beim Hosting](../../hosting/grundlagen/such-backends.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

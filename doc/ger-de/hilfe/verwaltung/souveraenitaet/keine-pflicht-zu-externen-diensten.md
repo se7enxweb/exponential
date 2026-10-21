@@ -25,7 +25,7 @@ oder aktivieren; sie sind unten aufgeführt, damit Sie sie erlauben, sperren ode
 ## Was ohne jeden fremden Dienst läuft
 
 Seiten ausliefern, bearbeiten und veröffentlichen, die Suche mit der eingebauten Suchmaschine, Rollen und Sektionen,
-Versionen, der Audit-Trail, Workflows, Caches und die Cronjobs, die sie pflegen, laufen alle auf Ihrem Server und mit
+Versionen, das Prüfprotokoll, Workflows, Caches und die Cronjobs, die sie pflegen, laufen alle auf Ihrem Server und mit
 Ihrer Datenbank. Es gibt keinen Lizenzschlüssel und keinen Lizenzserver: Die Software steht unter der GPL
 ([Lizenzen für Käufer erklärt](../../geschaeft/lizenzen-fuer-kaeufer.md)).
 
@@ -34,7 +34,7 @@ Ihrer Datenbank. Es gibt keinen Lizenzschlüssel und keinen Lizenzserver: Die So
 Der Datenschutzstandard hält fest: jQuery und die anderen Skripte der Administration werden lokal ausgeliefert
 (`extension/ezjscore/settings/ezjscore.ini [eZJSCore] LoadFromCDN=disabled`), und das Design admin4 lädt keine
 Webschriften oder Skripte von anderen Hosts (`design/admin4/templates/pagelayout.tpl`)
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md)). Die öffentlichen Designs sind Ihre eigenen; prüfen Sie die
+([Datenschutzstandards](../../../standards/datenschutz.md)). Die öffentlichen Designs sind Ihre eigenen; prüfen Sie die
 von Ihnen verwendeten auf Schriften, Skripte und Einbettungen von anderen Hosts.
 
 ## Funktionen, die bei Nutzung ins Internet gehen
@@ -52,7 +52,7 @@ von Ihnen verwendeten auf Schriften, Skripte und Einbettungen von anderen Hosts.
 
 Mit Exponential installiert, aber **nicht aktiv**, bis eine Website sie aktiviert; jede sendet Daten von Besuchern
 oder Inhalten an einen Drittanbieter
-([Datenschutzstandards](../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions)):
+([Datenschutzstandards](../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions)):
 
 | Erweiterung | Drittanbieter |
 |---|---|
@@ -60,7 +60,7 @@ oder Inhalten an einen Drittanbieter
 | `recaptcha`, `hcaptcha` | Google reCAPTCHA, hCaptcha |
 | Social-Login-Handler von `sevenx_authentication_2fa` | der gewählte Identitätsanbieter |
 | `ezgmaplocation` mit einem API-Schlüssel | Google Maps |
-| `expai` | der KI-Anbieter, den Sie einrichten; ein lokales Modell über Ollama ist ebenfalls möglich ([expai](../../../../eng-us/features/6.0/extensions/expai.md)) |
+| `expai` | der KI-Anbieter, den Sie einrichten; ein lokales Modell über Ollama ist ebenfalls möglich ([expai](../../../funktionen/6.0/erweiterungen/expai.md)) |
 
 Einen Prüfablauf finden Sie unter „Zu prüfende Dienste von Drittanbietern“.
 
@@ -73,18 +73,19 @@ Einen Prüfablauf finden Sie unter „Zu prüfende Dienste von Drittanbietern“
 - Beobachten Sie auf dem Server einen Tag normaler Nutzung lang die ausgehenden Verbindungen der PHP-Prozesse, mit
   Ihren üblichen Netzwerkwerkzeugen oder den Protokollen der Firewall.
 - Eine Content Security Policy lässt den Browser melden, was eine Seite lädt
-  ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+  ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
-- [Sicherheitsstandards](../../../../eng-us/standards/security.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
+- [Sicherheitsstandards](../../../standards/sicherheit.md)
 - [Links, URL-Aliase, Platzhalter und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

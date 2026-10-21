@@ -27,11 +27,11 @@ Website hat, bevor Sie ein Datum zusagen.
 
 | Bedarf | Werkzeug | Eingerichtet von |
 |---|---|---|
-| Einen Artikel zu einem künftigen Datum veröffentlichen | das Workflow-Ereignis *Bis Datum warten* beim Veröffentlichen | Administrator ([ezwaituntildate](../../../../eng-us/examples/workflow-events/ezwaituntildate.md)) |
+| Einen Artikel zu einem künftigen Datum veröffentlichen | das Workflow-Ereignis *Bis Datum warten* beim Veröffentlichen | Administrator ([ezwaituntildate](../../../beispiele/workflow-ereignisse/ezwaituntildate.md)) |
 | Ein Element zu einem Datum verbergen | der Cronjob `hide.php` mit einem Datumsfeld pro Klasse | Administrator (`settings/content.ini [HideSettings]`) |
 | Ein Element zu einem Datum entfernen | der Cronjob `unpublish.php` und ein Feld `unpublish_date` | Administrator (`settings/content.ini [UnpublishSettings]`) |
-| Ein Kampagnen-Layout für einen Zeitraum anzeigen | eine Layout-Regel mit einer Bedingung `time` | Layout-Redaktion ([Layout-Regeln](../../../../eng-us/help/creators/website-creators/layout-rules.md)) |
-| Einen Newsletter zu einer Uhrzeit oder jede Woche versenden | geplanter und wiederkehrender Versand | wer den Newsletter versendet ([Ausgaben schreiben und versenden](../../unternehmen/newsletter/ausgaben-schreiben-und-versenden.md)) |
+| Ein Kampagnen-Layout für einen Zeitraum anzeigen | eine Layout-Regel mit einer Bedingung `time` | Layout-Redaktion ([Layout-Regeln](../../ersteller/website-ersteller/layout-regeln.md)) |
+| Einen Newsletter zu einer Uhrzeit oder jede Woche versenden | geplanter und wiederkehrender Versand | wer den Newsletter versendet ([Ausgaben schreiben und versenden](../../unternehmen/newsletters/ausgaben-schreiben-und-versenden.md)) |
 
 ## Zu einem Datum veröffentlichen
 
@@ -71,7 +71,7 @@ sie füllt. Ziehen Sie das Verbergen vor, wenn die Inhalte zurückkommen könnte
 
 Ordnen Sie für eine Kampagne der Landingpage ein Layout mit einer Regel zu, deren Bedingung `time` die Werte `from` und
 `to` hat, mit höherer Priorität als die normale Regel der Seite. Ein leerer Zeitraum passt immer
-([Layout-Regeln](../../../../eng-us/help/creators/website-creators/layout-rules.md)). Vor und nach dem Zeitraum wird das normale Layout
+([Layout-Regeln](../../ersteller/website-ersteller/layout-regeln.md)). Vor und nach dem Zeitraum wird das normale Layout
 angezeigt. Siehe [Landingpages mit Layouts](../wachstum/landingpages-mit-layouts.md).
 
 ## Alles hängt von Cron ab
@@ -100,3 +100,11 @@ Ihren Hoster, wie oft der Teil frequent läuft.
 - [Redaktionskalender](redaktionskalender.md)
 - [Freigabe und Prüfung](freigabe-und-pruefung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

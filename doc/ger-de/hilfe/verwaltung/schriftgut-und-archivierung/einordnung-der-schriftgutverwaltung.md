@@ -4,7 +4,7 @@ audience: government, project-manager, editor, admin
 category: public-sector
 order: 20
 summary: Für Zuständige für Schriftgut öffentlicher Stellen - wie sich eine mit Exponential betriebene Website zur Praxis der Schriftgutverwaltung verhält (ISO 15489-1 allgemein eingeordnet), welche Website-Inhalte und Systemdaten Schriftgut sein können, was Exponential von sich aus aufbewahrt und was in Ihr Schriftgutsystem gehört.
-keywords: Schriftgutverwaltung, ISO 15489, Schriftgut, Records Management, Webschriftgut, Aktenführung, Archive, Aufbewahrung, Authentizität, Integrität, Zuverlässigkeit, Benutzbarkeit, Versionen, Audit-Trail, Schriftgutsystem, öffentlicher Sektor, records management, records, web records, record keeping, archives, retention, authenticity, integrity, reliability, usability, versions, audit trail, records system, public sector
+keywords: Schriftgutverwaltung, ISO 15489, Schriftgut, Records Management, Webschriftgut, Aktenführung, Archive, Aufbewahrung, Authentizität, Integrität, Zuverlässigkeit, Benutzbarkeit, Versionen, Prüfprotokoll, Schriftgutsystem, öffentlicher Sektor, records management, records, web records, record keeping, archives, retention, authenticity, integrity, reliability, usability, versions, audit trail, records system, public sector
 type: help
 ---
 # Schriftgutverwaltung und ein Web-CMS
@@ -43,7 +43,7 @@ Bezug zu einer Website.
 | Der Zustand einer Seite an einem Datum | was der Öffentlichkeit gesagt wurde, und wann | Versionen (innerhalb der Grenze der Versionsgeschichte) |
 | Formulareinsendungen (Anträge, Beschwerden) | der Beginn eines Vorgangs | Informationssammlungen |
 | Einwilligungsnachweise für E-Mails | Nachweis der Einwilligung | Einwilligungsprotokoll |
-| Wer was im System geändert hat | Rechenschaft | Audit-Trail |
+| Wer was im System geändert hat | Rechenschaft | Prüfprotokoll |
 
 Ihr Aufbewahrungsplan entscheidet; diese Liste hilft Ihnen, an den richtigen Stellen zu suchen.
 
@@ -51,7 +51,7 @@ Ihr Aufbewahrungsplan entscheidet; diese Liste hilft Ihnen, an den richtigen Ste
 
 | Merkmal (allgemein) | Funktion |
 |---|---|
-| Integrität der Systemaufzeichnungen | Audit-Trail mit Hash-Kette, signierte Prüfpunkte und Archivmanifeste |
+| Integrität der Systemaufzeichnungen | Prüfprotokoll mit Hash-Kette, signierte Prüfpunkte und Archivmanifeste |
 | Geschichte der Inhalte | Versionen mit Ersteller und Daten; Vergleichen; neue Entwürfe aus alten Versionen |
 | Kontext | Sektionen, Objektzustände, Orte im Baum; Metadatenfelder Ihrer Klassen |
 | Stabile Verweise | URL-Aliasse; alte Aliasse leiten nach Umbenennen oder Verschieben weiter |
@@ -72,13 +72,14 @@ exportieren“).
 ## Verwandte Seiten
 
 - [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)
-- [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)
+- [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)
 - [Objektzustände](../../../anleitungen/objektzustaende.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

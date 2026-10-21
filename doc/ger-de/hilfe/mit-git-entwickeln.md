@@ -137,7 +137,7 @@ eigene Repositories, nicht Teil des Kernel-Repositorys, und das ist so vorgesehe
 ## Schritt 3: eine bestehende Site auf Klone umstellen
 
 Eine aus Archiven installierte Site lässt sich umstellen, ohne sie neu zu installieren. **Erstellen Sie zuerst ein
-Backup** (mit dem Backup-Manager von [git_manager](../../eng-us/features/6.0/extensions/git_manager.md) oder einer Kopie des Ordners
+Backup** (mit dem Backup-Manager von [git_manager](../funktionen/6.0/erweiterungen/git_manager.md) oder einer Kopie des Ordners
 und der Datenbank), und probieren Sie es an einer Kopie der Site aus, bevor Sie die Live-Site umstellen.
 
 ### Der Kernel
@@ -192,7 +192,7 @@ php bin/php/ezpgenerateautoloads.php -e
 php bin/php/ezcache.php --clear-all
 ```
 
-Die Administration kann dasselbe ohne Shell: Mit der Erweiterung [ezupdate](../../eng-us/features/6.0/extensions/ezupdate.md)
+Die Administration kann dasselbe ohne Shell: Mit der Erweiterung [ezupdate](../funktionen/6.0/erweiterungen/ezupdate.md)
 (**Setup** > **Aktualisierungen und Pakete**) wählen Sie für jeden Installations- oder Update-Lauf „dist oder source“.
 
 ## Eine Änderung per Pull-Request beitragen
@@ -342,8 +342,8 @@ Drei weitere wissenswerte Dinge:
 - [Mit Git aktualisieren](mit-git-aktualisieren.md): im Rhythmus Ihrer Wahl mit GitHub synchron bleiben.
 - [Den Code beziehen](../installation/03-den-code-beschaffen.md): jeder Installationsweg, Versionen und Tags, Erweiterungen als
   Composer-Pakete.
-- [Erweiterungen](../anleitungen/extensions.md) und die [Seiten zu den Erweiterungen](../../eng-us/features/6.0/extensions/README.md).
-- [git_manager](../../eng-us/features/6.0/extensions/git_manager.md): den Zustand eines Git-Checkouts in der Administration
+- [Erweiterungen](../anleitungen/extensions.md) und die [Seiten zu den Erweiterungen](../funktionen/6.0/erweiterungen/README.md).
+- [git_manager](../funktionen/6.0/erweiterungen/git_manager.md): den Zustand eines Git-Checkouts in der Administration
   ansehen und ändern und Backups erstellen, bevor Sie etwas ändern.
 - [Wenn etwas schiefgeht](wenn-etwas-schiefgeht.md#einen-fehler-in-exponential-melden): welcher Issue-Tracker zu verwenden
   ist und wie Sie einen guten Bericht schreiben. Die Seite **Fehler melden** dieser Hilfe bereitet das Issue für Sie vor.
@@ -353,3 +353,11 @@ Drei weitere wissenswerte Dinge:
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seiten dürfen frei kopiert, übersetzt und verbessert werden.
 - Git selbst: das freie Buch [Pro Git](https://git-scm.com/book/en/v2) und die Anleitung von GitHub zu
   [Pull-Requests](https://docs.github.com/en/pull-requests).
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

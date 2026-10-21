@@ -113,7 +113,7 @@ zum Anmeldeformular.
 - Der QR-Code wird auf dem Server gezeichnet; der Schlüssel geht an keinen anderen Dienst. Seiten mit einem Schlüssel
   oder einer laufenden Anmeldung werden nicht gecacht.
 - Jede Adresse, an die die Anmeldung einen Besucher weiterleitet, durchläuft die
-  [Regeln für sichere Weiterleitungen](../../eng-us/features/6.0/safe-redirects.md).
+  [Regeln für sichere Weiterleitungen](../funktionen/6.0/sichere-weiterleitungen.md).
 - Der Social Login prüft einen einmaligen, an den Anbieter gebundenen State und lehnt Adressen ab, die der Anbieter
   nicht verifiziert hat.
 - Jeder Schritt wird in `var/log/auth.log` geschrieben (nie ein Code oder ein Geheimnis).
@@ -129,3 +129,11 @@ php vendor/bin/phpunit --no-configuration --bootstrap extension/sevenx_authentic
 Durch Benutzung: Melden Sie sich mit einem Testbenutzer an, richten Sie die App ein, melden Sie sich ab, melden Sie
 sich mit einem Code an, probieren Sie einen falschen Code und zweimal denselben Code, und schalten Sie die Funktion
 dann mit einem aktuellen Code aus. Registrieren Sie beim Ausprobieren niemals ein echtes Administratorkonto.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

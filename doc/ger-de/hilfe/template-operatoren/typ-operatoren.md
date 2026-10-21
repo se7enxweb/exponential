@@ -27,14 +27,14 @@ Acht Operatoren entsprechen eins zu eins einer PHP-Funktion (`$PHPNameMap` in de
 
 | Operator | PHP-Funktion | Generierte Referenz |
 |---|---|---|
-| `is_array` | `is_array()` | [is_array](../../../eng-us/examples/template-operators/is_array.md) |
-| `is_boolean` | `is_bool()` | [is_boolean](../../../eng-us/examples/template-operators/is_boolean.md) |
-| `is_integer` | `is_integer()` | [is_integer](../../../eng-us/examples/template-operators/is_integer.md) |
-| `is_float` | `is_float()` | [is_float](../../../eng-us/examples/template-operators/is_float.md) |
-| `is_numeric` | `is_numeric()` | [is_numeric](../../../eng-us/examples/template-operators/is_numeric.md) |
-| `is_string` | `is_string()` | [is_string](../../../eng-us/examples/template-operators/is_string.md) |
-| `is_object` | `is_object()` | [is_object](../../../eng-us/examples/template-operators/is_object.md) |
-| `is_null` | `is_null()` | [is_null](../../../eng-us/examples/template-operators/is_null.md) |
+| `is_array` | `is_array()` | [is_array](../../beispiele/template-operatoren/is_array.md) |
+| `is_boolean` | `is_bool()` | [is_boolean](../../beispiele/template-operatoren/is_boolean.md) |
+| `is_integer` | `is_integer()` | [is_integer](../../beispiele/template-operatoren/is_integer.md) |
+| `is_float` | `is_float()` | [is_float](../../beispiele/template-operatoren/is_float.md) |
+| `is_numeric` | `is_numeric()` | [is_numeric](../../beispiele/template-operatoren/is_numeric.md) |
+| `is_string` | `is_string()` | [is_string](../../beispiele/template-operatoren/is_string.md) |
+| `is_object` | `is_object()` | [is_object](../../beispiele/template-operatoren/is_object.md) |
+| `is_null` | `is_null()` | [is_null](../../beispiele/template-operatoren/is_null.md) |
 
 ### is_array, is_boolean, is_integer, is_float, is_numeric, is_string, is_object, is_null
 
@@ -113,7 +113,7 @@ Parameter. Ein Wert, der kein Objekt ist, gehört zu keiner Klasse, daher lautet
 | Klassenname | Zeichenkette | ja | keiner |
 | Wert | beliebig | nein | die Eingabe |
 
-Gibt einen booleschen Wert zurück. Generierte Referenz: [is_class](../../../eng-us/examples/template-operators/is_class.md).
+Gibt einen booleschen Wert zurück. Generierte Referenz: [is_class](../../beispiele/template-operatoren/is_class.md).
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 89 ) )}
@@ -154,7 +154,7 @@ fehlenden Parameter. Ein zweiter Parameter protokolliert eine Warnung „extra p
 |---|---|---|---|
 | Wert | beliebig | ja | keiner |
 
-Gibt einen booleschen Wert zurück. Generierte Referenz: [is_set](../../../eng-us/examples/template-operators/is_set.md).
+Gibt einen booleschen Wert zurück. Generierte Referenz: [is_set](../../beispiele/template-operatoren/is_set.md).
 
 ### is_unset
 
@@ -164,7 +164,7 @@ Das Gegenteil von `is_set`, mit denselben Regeln.
 |---|---|---|---|
 | Wert | beliebig | ja | keiner |
 
-Gibt einen booleschen Wert zurück. Generierte Referenz: [is_unset](../../../eng-us/examples/template-operators/is_unset.md).
+Gibt einen booleschen Wert zurück. Generierte Referenz: [is_unset](../../beispiele/template-operatoren/is_unset.md).
 
 ```tpl
 {def $settings = hash( 'title', 'Hello' )}
@@ -195,7 +195,7 @@ Nützlich bei der Fehlersuche in einem Template.
 |---|---|---|---|
 | Wert | beliebig | nein | die Eingabe |
 
-Gibt eine Zeichenkette zurück. Generierte Referenz: [get_type](../../../eng-us/examples/template-operators/get_type.md).
+Gibt eine Zeichenkette zurück. Generierte Referenz: [get_type](../../beispiele/template-operatoren/get_type.md).
 
 ### get_class
 
@@ -205,7 +205,7 @@ Der Klassenname eines Objekts, **in Kleinbuchstaben**; eine leere Zeichenkette f
 |---|---|---|---|
 | Wert | beliebig | nein | die Eingabe |
 
-Gibt eine Zeichenkette zurück. Generierte Referenz: [get_class](../../../eng-us/examples/template-operators/get_class.md).
+Gibt eine Zeichenkette zurück. Generierte Referenz: [get_class](../../beispiele/template-operatoren/get_class.md).
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 89 ) )
@@ -231,13 +231,14 @@ get_class( $node.object ) = ezcontentobject
 - [Logische Operatoren](logische-operatoren.md): `null` und `not`
 - [Steueroperatoren](steueroperatoren.md): `first_set` für Ersatzwerte
 - [Attribute- und Dump-Operatoren](attribute-und-dump-operatoren.md): in Objekte hineinsehen
-- [Fehlersuche in Templates](../../../eng-us/help/designers/templates/template-debugging.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Fehlersuche in Templates](../designer/vorlagen/template-debugging.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

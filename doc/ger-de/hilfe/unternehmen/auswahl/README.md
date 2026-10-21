@@ -77,7 +77,7 @@ darauf, dass Ihre Verträge diese Freiheit erhalten.
 - [Zuverlässigkeit](../zuverlaessigkeit/README.md): was Sie von einer gut betriebenen Website erwarten können.
 - [Sicherheit und Datenschutz](../sicherheit/README.md): was Sie einen Hoster und einen Partner zu Daten fragen sollten.
 - [Vorlagen](../vorlagen/README.md): Projektbeschreibung, Anforderungen, Bewertungsbogen.
-- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 
@@ -88,8 +88,8 @@ darauf, dass Ihre Verträge diese Freiheit erhalten.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

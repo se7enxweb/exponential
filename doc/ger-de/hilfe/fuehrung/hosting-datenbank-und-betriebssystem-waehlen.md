@@ -129,12 +129,12 @@ Migration auf denselben Dateien bestehen bleibt.
 Andere Server (LiteSpeed, Caddy mit PHP-FPM, IIS, lighttpd) gehören zu Stufe 3; der eingebaute Server von PHP ist nur
 für die Entwicklung gedacht ([Webserver](../betriebssystemunterstuetzung.md#webserver)).
 
-Mehr zu Velocity: [Der Server mit persistenten Workern](../../../eng-us/features/6.0/velocity-persistent-worker-server.md),
-[Der Webserver Velocity](../../../eng-us/features/6.0/velocity-web-server.md),
-[Der Antwort-Cache](../../../eng-us/features/6.0/velocity-response-cache.md),
-[Das Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md),
-[HTTPS-Zertifikate](../../../eng-us/features/6.0/velocity-https-certificates.md). Zu FrankenPHP:
-[FrankenPHP](../../../eng-us/bc/6.0/frankenphp.md).
+Mehr zu Velocity: [Der Server mit persistenten Workern](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md),
+[Der Webserver Velocity](../../funktionen/6.0/velocity-webserver.md),
+[Der Antwort-Cache](../../funktionen/6.0/velocity-antwort-cache.md),
+[Das Control Panel](../../funktionen/6.0/velocity-control-panel.md),
+[HTTPS-Zertifikate](../../funktionen/6.0/velocity-https-zertifikate.md). Zu FrankenPHP:
+[FrankenPHP](../../bc/6.0/frankenphp.md).
 
 ## Hosting-Modell
 
@@ -186,8 +186,8 @@ erfindet“. Was es angibt ([2.10 Arbeitsspeicher, CPU und Festplatte](../../ins
 | Eine MongoDB-Installation | RAM mindestens 512 MB, empfohlen 2 GB; Festplatte mindestens 2 GB, empfohlen 10 GB |
 
 Der Platzbedarf auf der Festplatte wächst mit Uploads und Bildvarianten (`var/storage`), Caches und Logs. Der Rat lautet,
-„eine laufende Site zu messen, statt zu raten“, mit dem Befehl [benchmark](../../../eng-us/features/6.0/benchmark.md) und dem
-[Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md) von Velocity. Planen Sie eine Messung auf der
+„eine laufende Site zu messen, statt zu raten“, mit dem Befehl [benchmark](../../funktionen/6.0/benchmark.md) und dem
+[Control Panel](../../funktionen/6.0/velocity-control-panel.md) von Velocity. Planen Sie eine Messung auf der
 Testinstallation mit echten Inhalten in den Zeitplan ein, bevor Sie sich auf eine Maschinengröße festlegen.
 
 Stellschrauben für die Performance je Datenbank sind unter
@@ -233,3 +233,11 @@ Risks accepted:     <for example a tier 3 system, MongoDB limits checked against
 - [Kapitel 8: Die Site ausliefern](../../installation/08-die-website-ausliefern.md)
 - [Risikomanagement für Exponential-Projekte](risikomanagement.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

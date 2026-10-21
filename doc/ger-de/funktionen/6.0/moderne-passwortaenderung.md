@@ -143,8 +143,9 @@ unverändert weiter. Die Variablen und die Hooks `data-exp-password-*` des gemei
 Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) verweigert die Seite die Änderung des Passworts eines Administrators: Sie zeigt „Diese Installation ist eine öffentliche Demo: Die Passwörter von Administratoren können nicht geändert oder zurückgesetzt werden.“ bereits vor jeder Eingabe (`demo_mode_locked`, `demo_mode_text`) und nach dem Absenden in der Fehlerzusammenfassung, und es wird nichts geändert. Ein Design, das `user/password.tpl` überschreibt, zeigt den Hinweis mit `first_set( $demo_mode_locked, false() )`. [Demo-Modus](../../bc/6.0/demomodus.md).
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

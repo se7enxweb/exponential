@@ -11,12 +11,12 @@ type: help
 
 Diese Aufgabe richtet sich an Administratoren und Entwickler. Hintergrund:
 [Eigene Locales für nicht gelistete Sprachen](../../sprachen/eigene-locales-fuer-nicht-gelistete-sprachen.md) und
-[Sprachen in Exponential, Abschnitt 7](../../../../../eng-us/languages.md#7-adding-a-locale).
+[Sprachen in Exponential, Abschnitt 7](../../../../sprachen.md#7-eine-locale-hinzufügen).
 
 ## Bevor Sie beginnen
 
 - Prüfen Sie, dass es für die Sprache wirklich keine Datei gibt: die Liste in
-  [Sprachen in Exponential](../../../../../eng-us/languages.md#3-every-locale) und deren Abschnitt 6 der fehlenden Sprachen.
+  [Sprachen in Exponential](../../../../sprachen.md#3-alle-locales) und deren Abschnitt 6 der fehlenden Sprachen.
 - Ein Sprecher, der die Namen der Tage und Monate liefern und die Formate prüfen kann.
 
 ## Schritte
@@ -48,8 +48,9 @@ Sprecher es erwartet; eine Testseite zeigt auf der öffentlichen Site das richti
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -70,10 +70,10 @@ Außerdem: 1 Merge- oder Finanzierungs-Commit des Teams (ohne Nutzen für Anwend
 
 ## Verwandte Seiten
 
-- [Site-Bundles](../../../eng-us/features/6.0/platform-site-bundles.md)
+- [Site-Bundles](../../funktionen/6.0/plattform-site-bundles.md)
 - [Release-Changelog](../../../changelogs/extensions/mediata-ezpage-fieldtype-bundle-main.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/mediata-ezpage-fieldtype-bundle-main.md)
 - Plattform-Ökosystem nach Monat: [2026-03](monate/2026-03.md)

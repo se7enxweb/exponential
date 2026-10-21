@@ -29,7 +29,7 @@ sie umsetzt, und verlinkt auf die Seite, die sie erklärt.
 ## Warum zuerst planen
 
 Ein Newsletter geht an viele Menschen gleichzeitig und lässt sich nicht zurückholen
-([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md)). Eine Liste, die ohne klare
+([Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md)). Eine Liste, die ohne klare
 Einwilligung aufgebaut wurde, lässt sich später nur schwer reparieren, und eine Absenderdomain, die in Spam-Ordnern
 landet, braucht Zeit, um sich zu erholen. Ein Plan von einer Seite, vor der Einrichtung abgestimmt, vermeidet die meisten
 dieser Probleme.
@@ -48,12 +48,12 @@ Typische Zwecke:
 
 Der Satz kommt auf das Anmeldeformular. Die Checkliste für Website-Ersteller verlangt genau das: „Das Anmeldeformular
 sagt, was Abonnenten bekommen und wie oft“
-([Newsletter-Listen und Abonnements](../../../../eng-us/help/creators/website-creators/newsletter-lists-and-subscriptions.md#consent)).
+([Newsletter-Listen und Abonnements](../../ersteller/website-ersteller/newsletter-listen-und-abonnements.md#einwilligung)).
 
 ## Entscheidung 2: Zielgruppen und Listen
 
 In `cjw_newsletter` gruppiert ein **Newsletter-System** **Listen**, und Besucher abonnieren Listen
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-parts)). Entscheiden Sie:
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#die-bestandteile)). Entscheiden Sie:
 
 - [ ] Wie viele Listen Sie brauchen. Beginnen Sie mit so wenigen wie möglich; eine Liste pro Versprechen ist eine gute
       Regel.
@@ -108,12 +108,12 @@ Entscheiden Sie, woher die Abonnenten kommen und wie Sie nachweisen, dass sie zu
 
 Es gibt drei Transporte pro Art von Mail: `file` (auf die Platte schreiben, nichts wird gesendet), `smtp` und
 `sendmail`
-([cjw_newsletter](../../../../eng-us/features/6.0/extensions/cjw_newsletter.md#rehearse-the-whole-thing-without-sending-a-single-mail)).
+([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md#den-gesamten-ablauf-erproben-ohne-eine-einzige-mail-zu-versenden)).
 Entscheiden Sie mit Ihrem Hosting-Partner:
 
 - [ ] Welcher Mail-Server oder Anbieter den Newsletter versendet.
 - [ ] Welche Absenderadresse und Domain, und wer SPF und DKIM dafür einrichtet
-      ([Newsletter sicher versenden](../../../../eng-us/help/creators/website-creators/sending-newsletters.md#from-rehearsal-to-real-mail)).
+      ([Newsletter sicher versenden](../../ersteller/website-ersteller/newsletter-versenden.md#von-der-probe-zur-echten-mail)).
 - [ ] Ob der Anbieter begrenzt, wie viele Mails pro Minute oder Stunde gesendet werden dürfen; die Erweiterung kann
       solche Grenzen mit ihren Ratenbegrenzungen einhalten (`[ThrottleSettings]`, in der mitgelieferten
       `cjw_newsletter.ini` standardmäßig ausgeschaltet).
@@ -151,14 +151,14 @@ First send date:            ... (after a full rehearsal with the file transport)
 - [Newsletter für Unternehmen](README.md)
 - [cjw_newsletter für Unternehmen](cjw-newsletter-fuer-unternehmen.md)
 - [Checkliste Newsletter](checkliste-newsletter.md)
-- [Newsletter mit cjw_newsletter](../../../../eng-us/help/creators/website-creators/newsletters-with-cjw-newsletter.md)
+- [Newsletter mit cjw_newsletter](../../ersteller/website-ersteller/newsletter-mit-cjw-newsletter.md)
 - [Ein Exponential-Projekt planen](../../fuehrung/ein-exponential-projekt-planen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

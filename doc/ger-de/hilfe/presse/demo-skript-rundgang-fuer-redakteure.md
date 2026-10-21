@@ -48,7 +48,7 @@ Ordner mit erfundenen Objekten, eine zweite Inhaltssprache und keine Entwürfe, 
 4. Tippen Sie in **Description**. Zeigen Sie auf die Werkzeugleiste und den Schalter **Editor** unter dem Feld. Sagen
    Sie, was Ihre Installation zeigt, zum Beispiel: „Der Schalter **Editor** wechselt den Editor dieses Felds; beim
    Wechseln bleibt erhalten, was ich getippt habe.“ Die Voreinstellungen unterscheiden sich: Eine frische Installation
-   behält TinyMCE 3.5.12 als Standard, mit TinyMCE 8 als zuschaltbarer Engine ([Der Online-Editor auf TinyMCE 8](../../../eng-us/features/6.0/online-editor-tinymce8.md)),
+   behält TinyMCE 3.5.12 als Standard, mit TinyMCE 8 als zuschaltbarer Engine ([Der Online-Editor auf TinyMCE 8](../../funktionen/6.0/online-editor-tinymce8.md)),
    während der Vorführserver im [Rundgang](../rundgang-durch-die-administration.md) TinyMCE 8 mit Tiptap als Alternative verwendet.
 5. Klicken Sie auf **Entwurf speichern und beenden**. Sagen Sie: „Der Entwurf wartet unter **Meine Entwürfe**; nur ich
    sehe ihn. Das Formular speichert außerdem alle paar Minuten von selbst.“
@@ -82,12 +82,12 @@ Version unter **Meine Warteliste**.“
    ([Ein Objekt übersetzen](../sprachen.md#ein-objekt-übersetzen))
 3. Verlassen Sie das Bearbeitungsformular. Wählen Sie in der rechten Spalte unter **Oberfläche** Arabisch oder Hebräisch
    und klicken Sie auf **Anwenden**. Sagen Sie: „Die Administration dreht sich um: Die Seitenspalten tauschen die Plätze,
-   und der Text beginnt rechts.“ ([Rechts nach links](../../../eng-us/features/6.0/right-to-left.md))
+   und der Text beginnt rechts.“ ([Rechts nach links](../../funktionen/6.0/rechts-nach-links.md))
 4. Schalten Sie zurück auf Englisch.
 
 Wenn Sie Zahlen nennen, verwenden Sie die dokumentierten mit ihrer Quelle: 268 Locale-Dateien, die als Inhaltssprachen
 verwendet werden können, 33 Übersetzungen der Administration, neunzehn davon vollständig (19. Oktober 2026)
-([Sprachen in Exponential](../../../eng-us/languages.md)).
+([Sprachen in Exponential](../../sprachen.md)).
 
 ![Teil 4: die Übersetzungen eines Objekts](../../../eng-us/help/images/help/pr-editor-translations.webp)
 
@@ -112,8 +112,8 @@ Mehr: [Demo-Drehbücher, Was schiefgehen kann](../geschaeft/demo-drehbuecher.md#
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -4,7 +4,7 @@ audience: businesses, project-manager, sales-marketing
 category: business-solutions
 order: 10
 summary: Die Gründe, jeder mit seiner Quelle, warum eine Organisation, die online Geld verdient, sich auf Exponential verlassen kann - eine langlebige Codebasis, veröffentlichte Versionen, die sich nie ändern, wenige bewegliche Teile, Geschwindigkeit unter Last, Belege, wenn etwas schiefgeht, und keine Lizenzgebühr. Und wie jeder von ihnen Umsatz schützt und das Geschäft für Kunden erreichbar hält.
-keywords: Stabilität, Zuverlässigkeit, warum Exponential, langlebig, Release-Richtlinie, Sicherheitskorrekturen, PHP-Versionen, SQLite, Velocity, Cache, Audit-Trail, keine Lizenzgebühr, GPL, Rendite, Verfügbarkeit, geringer Wartungsaufwand, stability, reliability, why Exponential, long-lived, release policy, security fixes, PHP versions, cache, audit trail, no license fee, return on investment, availability, uptime, low maintenance
+keywords: Stabilität, Zuverlässigkeit, warum Exponential, langlebig, Release-Richtlinie, Sicherheitskorrekturen, PHP-Versionen, SQLite, Velocity, Cache, Prüfprotokoll, keine Lizenzgebühr, GPL, Rendite, Verfügbarkeit, geringer Wartungsaufwand, stability, reliability, why Exponential, long-lived, release policy, security fixes, PHP versions, cache, audit trail, no license fee, return on investment, availability, uptime, low maintenance
 type: help
 ---
 # Warum Unternehmen sich auf Exponential verlassen
@@ -63,7 +63,7 @@ Upgrades.
 | Vertrauliche Meldungen von Schwachstellen gehen an security@se7enx.com, mit „einer ersten Antwort innerhalb eines Werktags“ | `SECURITY.md` |
 | „Ein veröffentlichter Tag wird nie geändert“: Eine Korrektur erreicht Sie als nächstes Release, nicht als berichtigte Kopie | `SECURITY.md` |
 | Die Continuous Integration führt die Testsuite bei jedem Push und Pull Request auf PHP 8.1 bis 8.5 aus und prüft, dass PHP 8.0 noch startet | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
-| Vor einem Upgrade prüft die Administration die Datenbank und die Dateien gegen das Release (**Setup > Upgrade-Prüfung**) | [Die Upgrade-Prüfung: Dateien und Datenbank vor einem Upgrade](../../anleitungen/upgrade-pruefung.md), [Prüfung der Dateikonsistenz](../../../eng-us/features/6.0/file-consistency-check.md) |
+| Vor einem Upgrade prüft die Administration die Datenbank und die Dateien gegen das Release (**Setup > Upgrade-Prüfung**) | [Die Upgrade-Prüfung: Dateien und Datenbank vor einem Upgrade](../../anleitungen/upgrade-pruefung.md), [Prüfung der Dateikonsistenz](../../funktionen/6.0/dateikonsistenzpruefung.md) |
 
 **Was das für ein Unternehmen bedeutet:** Sie wissen, welche Version Sie betreiben, Sie wissen, dass sich eine Version
 nie unter Ihnen ändert, und Sie können die nächste testen, bevor sie Kunden erreicht. Siehe
@@ -115,8 +115,8 @@ Ihren Seiten ab; messen Sie sie mit den Benchmark-Werkzeugen
 
 | Werkzeug | Was es Ihnen gibt | Quelle |
 |---|---|---|
-| Manipulationssicherer Audit-Trail | Wer was wann geändert hat, mit Konsole, Alarmen und Exporten | [Der Audit-Trail](../../../eng-us/features/6.0/audit-trail.md) |
-| Log-Viewer | Die Logs in der Administration, ohne Shell | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md) |
+| Manipulationssicheres Prüfprotokoll | Wer was wann geändert hat, mit Konsole, Alarmen und Exporten | [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
+| Log-Viewer | Die Logs in der Administration, ohne Shell | [Log-Viewer](../../funktionen/6.0/log-betrachter.md) |
 | Fehlerreferenzen | Eine dem Besucher angezeigte Referenz, die zum protokollierten Fehler führt | [Einen Fehler anhand seiner Referenz finden](../../anleitungen/fehler-anhand-der-referenz-finden.md) |
 | Systeminformationen | Versionen, PHP, Datenbank und Einstellungen auf einen Blick | [Systeminformationen: worauf die Site läuft und was Aufmerksamkeit braucht](../../anleitungen/systeminformationen.md) |
 | Wartungsmodus | Eine saubere Seite für Besucher, während gearbeitet wird | [Wartungsmodus: die Site vom Netz nehmen und zurückholen](../../anleitungen/wartungsmodus.md) |
@@ -173,8 +173,8 @@ Ehrliche Grenzen, damit später niemand überrascht ist:
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -36,23 +36,23 @@ Entwicklung oder verwenden Sie einen getrennten Katalog.
 
 ## Inhaltsmodell
 
-- [ ] Eine Inhaltsklasse für Datensätze, mit Feldern für Titel, Beschreibung, Herausgeber, Lizenz, Aktualisierungshäufigkeit, Abdeckung und die Datendateien ([Ihr Inhaltsmodell entwerfen](../../../../eng-us/help/creators/website-creators/designing-your-content-model.md), [Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)).
+- [ ] Eine Inhaltsklasse für Datensätze, mit Feldern für Titel, Beschreibung, Herausgeber, Lizenz, Aktualisierungshäufigkeit, Abdeckung und die Datendateien ([Ihr Inhaltsmodell entwerfen](../../ersteller/website-ersteller/ihr-inhaltsmodell-entwerfen.md), [Datentypen wählen](../../ersteller/website-ersteller/datentypen-waehlen.md)).
 - [ ] Feldnamen, die einem Katalogvokabular wie [DCAT 3](https://www.w3.org/TR/vocab-dcat-3/) entsprechen, damit ein späterer Export einfach ist.
-- [ ] Tags für Themen ([Verschlagworten mit eztags](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)).
+- [ ] Tags für Themen ([Verschlagworten mit eztags](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)).
 
 ## Dateien und Formate
 
-- [ ] Daten in offenen, maschinenlesbaren Formaten (CSV, JSON), nicht nur als PDF ([Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)).
-- [ ] Downloads über `content/download` ausgeliefert, das die Leserechte prüft ([Sicherheitsstandards](../../../../eng-us/standards/security.md)).
+- [ ] Daten in offenen, maschinenlesbaren Formaten (CSV, JSON), nicht nur als PDF ([Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md)).
+- [ ] Downloads über `content/download` ausgeliefert, das die Leserechte prüft ([Sicherheitsstandards](../../../standards/sicherheit.md)).
 - [ ] Dateigrößen innerhalb der Upload-Grenzen des Servers ([PHP-Einstellungen für Exponential](../../hosting/grundlagen/php-einstellungen-fuer-exponential.md)).
 - [ ] Ein Datenwörterbuch für jeden Datensatz, das Spalten und Einheiten erklärt.
 
 ## Auffindbarkeit
 
-- [ ] Eine Katalogseite, die jeden Datensatz auflistet ([Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md)).
-- [ ] Stabile, lesbare Adressen, die sich nicht ändern, wenn eine Datei aktualisiert wird ([URL-Aliasse und sprechende URLs](../../../../eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md)).
-- [ ] Sitemaps enthalten die Datensatzseiten ([Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md)).
-- [ ] Metadaten für Suchmaschinen und das Teilen ([Metadaten und Teilen in sozialen Medien](../../../../eng-us/help/creators/website-creators/metadata-and-social-sharing.md)).
+- [ ] Eine Katalogseite, die jeden Datensatz auflistet ([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)).
+- [ ] Stabile, lesbare Adressen, die sich nicht ändern, wenn eine Datei aktualisiert wird ([URL-Aliasse und sprechende URLs](../../ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md)).
+- [ ] Sitemaps enthalten die Datensatzseiten ([Sitemaps](../../ersteller/website-ersteller/sitemaps.md)).
+- [ ] Metadaten für Suchmaschinen und das Teilen ([Metadaten und Teilen in sozialen Medien](../../ersteller/website-ersteller/metadaten-und-teilen-in-sozialen-medien.md)).
 
 ## Zugriff für Maschinen
 
@@ -64,7 +64,7 @@ Entwicklung oder verwenden Sie einen getrennten Katalog.
 
 - [ ] Jeder Datensatz zeigt das Datum seiner letzten Aktualisierung.
 - [ ] Alte Versionen aufbewahrt oder archiviert, wie Ihre Regeln zu Schriftgut es sagen ([Checkliste Schriftgut](checkliste-schriftgut.md)).
-- [ ] Links regelmäßig geprüft ([Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)).
+- [ ] Links regelmäßig geprüft ([Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 - [ ] Rückmeldungen von Nachnutzern haben eine Kontaktstelle.
 
 ## Verwandte Seiten
@@ -75,8 +75,9 @@ Entwicklung oder verwenden Sie einen getrennten Katalog.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

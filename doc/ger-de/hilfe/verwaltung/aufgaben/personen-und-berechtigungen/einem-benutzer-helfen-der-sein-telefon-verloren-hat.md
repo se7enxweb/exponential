@@ -55,20 +55,21 @@ einrichten. Probieren Sie das zuerst.
 - Halten Sie fest: Datum, wer die Person wie geprüft hat, was umgestellt wurde.
 - Wenn das Telefon gestohlen statt verloren wurde, behandeln Sie es als mögliche Kompromittierung: Ändern Sie das
   Passwort und prüfen Sie die jüngsten Anmeldungen des Kontos
-  ([Vermutete Kompromittierung eines Kontos](../../../../../eng-us/help/government/operations/incidents/suspected-account-compromise.md)).
+  ([Vermutete Kompromittierung eines Kontos](../../betrieb/vorfaelle/verdacht-auf-kompromittiertes-konto.md)).
 - Prüfen Sie, dass die Person nicht auf *Deaktiviert* geblieben ist: Ihre Kontoseite zeigt einen Hinweis, wenn die
   zweistufige Anmeldung aus ist.
 
 ## Verwandte Seiten
 - [Die zweistufige Anmeldung für Mitarbeiter einschalten](die-zweistufige-anmeldung-fuer-mitarbeiter-einschalten.md)
 - [Das Passwort eines Mitarbeiters zurücksetzen](das-passwort-eines-mitarbeiters-zuruecksetzen.md)
-- [Zweistufige Anmeldung für Mitarbeiter](../../../../../eng-us/help/government/operations/people-and-permissions/two-factor-for-staff.md)
+- [Zweistufige Anmeldung für Mitarbeiter](../../betrieb/personen-und-berechtigungen/zwei-faktor-anmeldung-fuer-beschaeftigte.md)
 - [Anleitung zur zweistufigen Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

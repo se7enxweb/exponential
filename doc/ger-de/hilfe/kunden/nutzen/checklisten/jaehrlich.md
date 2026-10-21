@@ -71,7 +71,7 @@ NEXT YEAR
 | Verträge | [Grundlagen zu Verträgen und SLAs](../../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md), [Scorecard zur Bewertung von Anbietern](../../../unternehmen/vorlagen/bewertungsbogen-fuer-anbieter.md) |
 | Zugriff | [Zugriffsüberprüfungen](../../../unternehmen/sicherheit/zugriffspruefungen.md) |
 | Datenschutz | [DSGVO-Grundlagen](../../../unternehmen/sicherheit/dsgvo-grundlagen.md), [Datenaufbewahrung und Löschung](../../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md) |
-| Barrierefreiheit | [Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
+| Barrierefreiheit | [Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
 | Shop | [Mehrwertsteuer-Checkliste](../../handel/mehrwertsteuer-checkliste.md), [Kartenzahlungen und PCI](../../handel/kartenzahlungen-und-pci.md), [Ländergruppen und Regionen](../../../unternehmen/shops/laendergruppen-und-regionen.md) |
 | Budget | [Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md) |
 
@@ -95,3 +95,11 @@ NEXT YEAR
 - [Checkliste für die Jahresüberprüfung](../../../unternehmen/vorlagen/checkliste-jahresrueckblick.md)
 - [Checklisten für Betreiber](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

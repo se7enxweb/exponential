@@ -41,7 +41,7 @@ um sie zu prüfen.
 | `config.php`, `config.env.php` | Konfiguration auf PHP-Ebene, der Name der Umgebung | nein | ja, falls vorhanden |
 
 `config.env.php` nennt die Umgebung einer Maschine (`EXP_ENV`), und `.gitignore` hält sie aus der Versionsverwaltung heraus
-([Einstellungen je Umgebung](../../../../eng-us/features/6.0/environment-settings.md)).
+([Einstellungen je Umgebung](../../../funktionen/6.0/umgebungseinstellungen.md)).
 
 ## Das Verzeichnis var
 
@@ -114,7 +114,7 @@ Details für eine Hosting-Plattform stehen auf [Beschreibbare Verzeichnisse und 
 ## Mehrere Websites in einer Installation
 
 Eine Installation kann viele Websites ausliefern, jede mit eigenem `VarDir`. Sechs Einstellungen in `[FileSettings]` entscheiden,
-wohin ihre Logs und Caches gehen ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)):
+wohin ihre Logs und Caches gehen ([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)):
 
 | Einstellung | Mitgeliefert | Wirkung |
 |---|---|---|
@@ -156,3 +156,11 @@ erzeugt wurden, nicht wieder als aktuell gelten.
 - [Speicher, CPU und Festplatte dimensionieren](../grundlagen/speicher-cpu-und-festplatte-dimensionieren.md)
 - [8.7 Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -3,8 +3,8 @@ title: Sicherheitscheckliste für Shops
 audience: businesses, admin, hosting
 category: business-solutions
 order: 210
-summary: Die Sicherheitsaufgaben, die ein Shop-Inhaber prüfen sollte, in einfacher Sprache - Konten und zweistufige Anmeldung, Shop-Berechtigungen, Zahlungen, HTTPS, Updates, Backups, Logs und der Audit-Trail - mit Links zu den ausführlichen Seiten zur Härtung.
-keywords: Shop-Sicherheit, Sicherheit des Web-Shops, Checkliste, zweistufige Anmeldung, Rollen, Berechtigungen, HTTPS, Updates, Backups, Audit-Trail, Formular-Token, Content Security Policy, Meldung von Schwachstellen, store security, webshop security, checklist, two-factor, roles, permissions, updates, backups, audit trail, form tokens, vulnerability report
+summary: Die Sicherheitsaufgaben, die ein Shop-Inhaber prüfen sollte, in einfacher Sprache - Konten und zweistufige Anmeldung, Shop-Berechtigungen, Zahlungen, HTTPS, Updates, Backups, Logs und das Prüfprotokoll - mit Links zu den ausführlichen Seiten zur Härtung.
+keywords: Shop-Sicherheit, Sicherheit des Web-Shops, Checkliste, zweistufige Anmeldung, Rollen, Berechtigungen, HTTPS, Updates, Backups, Prüfprotokoll, Formular-Token, Content Security Policy, Meldung von Schwachstellen, store security, webshop security, checklist, two-factor, roles, permissions, updates, backups, audit trail, form tokens, vulnerability report
 type: help
 ---
 # Sicherheitscheckliste für Shops
@@ -44,7 +44,7 @@ Sicht des Projekts auf die Bedrohungen steht unter [Sicherheitshärtung](../../s
 |---|---|---|
 | Das anfängliche Administratorpasswort der Installation wurde geändert | Hoster oder Partner | [Das Administratorpasswort ändern](../../administratorpasswort-aendern.md) |
 | Jede Person hat ihr eigenes Konto; niemand teilt eines | Inhaber | [Sicherheitshärtung](../../sicherheitshaertung.md#checkliste) |
-| Für Administratoren und Shop-Mitarbeiter ist die zweistufige Anmeldung Pflicht | Hoster oder Partner | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md), [sevenx_authentication_2fa](../../../../eng-us/features/6.0/extensions/sevenx_authentication_2fa.md) |
+| Für Administratoren und Shop-Mitarbeiter ist die zweistufige Anmeldung Pflicht | Hoster oder Partner | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md), [sevenx_authentication_2fa](../../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md) |
 | Konten ausgeschiedener Personen werden am selben Tag deaktiviert | Inhaber | [Zugriffsprüfungen](../sicherheit/zugriffspruefungen.md) |
 | Die Administration läuft auf einem eigenen Host und ist eingeschränkt | Hoster | [Die Administration einschränken](../../hosting/sicherheit/die-administration-einschraenken.md) |
 
@@ -71,7 +71,7 @@ Die Funktionen des Shops sind `buy`, `administrate`, `setup`, `edit_status` und 
 - [ ] Testmodus und Sandbox-Adressen des Anbieters am Starttag entfernt.
 - [ ] Geheimnisse (Schlüssel der Zahlungsanbindung, das Beleg-Geheimnis) liegen in Override-Dateien, nie in
   ausgelieferten Dateien oder in der Versionsverwaltung
-  ([Umgebungseinstellungen und Geheimnisse](../../../../eng-us/help/creators/app-creators/environment-settings-and-secrets.md)).
+  ([Umgebungseinstellungen und Geheimnisse](../../ersteller/anwendungsentwickler/umgebungseinstellungen-und-geheimnisse.md)).
 
 ## Die Website und der Server
 
@@ -80,11 +80,11 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 - [ ] Überall HTTPS, mit HSTS und sicheren Cookies ([TLS und HTTPS](../../hosting/sicherheit/tls-und-https.md)).
 - [ ] `ezformtoken` aktiv, sodass Formulare ein Token pro Sitzung gegen Cross-Site-Request-Forgery tragen.
 - [ ] Content Security Policy durchgesetzt, zuerst in der Administration, dann auf den Websites
-  ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)).
+  ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)).
 - [ ] Debug-Ausgabe aus, und PHP-Fehler werden nicht angezeigt.
 - [ ] Der Installationsassistent kann auf der installierten Website nicht laufen.
 - [ ] Der Code ist für den Benutzer des Webservers nur lesbar.
-- [ ] Ein request-shield oder Request-Regeln davor ([Request-Regeln](../../../../eng-us/features/6.0/request-rules.md)).
+- [ ] Ein request-shield oder Request-Regeln davor ([Request-Regeln](../../../funktionen/6.0/anfrageregeln.md)).
 
 ## Updates
 
@@ -98,21 +98,21 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 - [ ] Die Datenbank wird mindestens täglich gesichert; dort liegen die Bestellungen.
 - [ ] Backups werden außerhalb des Servers und geschützt aufbewahrt, da sie Kundendaten enthalten.
 - [ ] Eine Wiederherstellung wurde getestet ([Backups, die sich wiederherstellen lassen](../zuverlaessigkeit/backups-die-sich-wiederherstellen-lassen.md),
-  [Backups und Wiederherstellungen](../../../../eng-us/help/creators/website-creators/backups-and-restores.md)).
+  [Backups und Wiederherstellungen](../../ersteller/website-ersteller/backups-und-wiederherstellungen.md)).
 
 ## Überwachen
 
-- [ ] Der Audit-Trail ist eingeschaltet (das ist er standardmäßig), und jemand liest ihn. Er zeichnet in seiner
-  Kategorie `commerce` Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen und Rabatte auf ([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
-- [ ] Audit-Warnungen erreichen eine Person, und der Trail wird von der Maschine weg weitergeleitet (Härtungs-Checkliste).
-- [ ] Die Logs werden wöchentlich gelesen ([Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md)).
+- [ ] Das Prüfprotokoll ist eingeschaltet (das ist es standardmäßig), und jemand liest es. Es zeichnet in seiner
+  Kategorie `commerce` Bestellungen, Zahlungen (nie Kartendaten), USt, Währungen und Rabatte auf ([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
+- [ ] Audit-Warnungen erreichen eine Person, und das Prüfprotokoll wird von der Maschine weg weitergeleitet (Härtungs-Checkliste).
+- [ ] Die Logs werden wöchentlich gelesen ([Log-Viewer](../../../funktionen/6.0/log-betrachter.md)).
 
 ## Kundendaten
 
 - [ ] Nur Mitarbeiter, die es brauchen, können die Kundenliste und die Bestellungen öffnen.
 - [ ] Bestellunterlagen werden so lange aufbewahrt, wie Ihre Buchhaltung es verlangt, und nicht länger
   ([Aufbewahrung und Löschung von Daten](../sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
-- [ ] Werbemails nur mit Einwilligung ([Opt-in und Einwilligung](../newsletter/opt-in-und-einwilligung.md)).
+- [ ] Werbemails nur mit Einwilligung ([Opt-in und Einwilligung](../newsletters/opt-in-und-einwilligung.md)).
 - [ ] Ihr Datenschutzhinweis beschreibt, was der Shop speichert ([DSGVO-Grundlagen](../sicherheit/dsgvo-grundlagen.md)).
 
 ## Wenn etwas passiert
@@ -132,8 +132,8 @@ Aus der Härtungs-Checkliste des Projekts ([Sicherheitshärtung](../../sicherhei
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -47,8 +47,8 @@ Datensatzklasse (siehe „Eine Datensatzklasse entwerfen“, deren Bezeichner DC
 3. Maskieren Sie jeden Wert für das Ausgabeformat, nicht mit der HTML-Maskierung.
 4. Prüfen Sie die Ausgabe mit dem Validator des Portals, bevor Sie die Adresse bekanntgeben.
 
-Grundlagen zu Templates: [Template-Overrides](../../../../eng-us/help/creators/website-creators/template-overrides.md) und
-[Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md); Inhalte in Templates holen:
+Grundlagen zu Templates: [Template-Overrides](../../ersteller/website-ersteller/template-overrides.md) und
+[Das Pagelayout](../../ersteller/website-ersteller/das-pagelayout.md); Inhalte in Templates holen:
 [die Hilfe zur Template-Sprache](../../template-sprache/README.md). Ein solches Template ist Ihr eigener Code, den Sie
 bei jeder Änderung der Klasse oder des Profils pflegen müssen.
 
@@ -81,12 +81,13 @@ alle drei.
 
 - [Was offene Daten für eine öffentliche Stelle bedeuten](was-offene-daten-bedeuten.md)
 - [Metadatenfelder für Datensätze](metadatenfelder-fuer-datensaetze.md)
-- [Das Pagelayout](../../../../eng-us/help/creators/website-creators/the-pagelayout.md)
+- [Das Pagelayout](../../ersteller/website-ersteller/das-pagelayout.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->
