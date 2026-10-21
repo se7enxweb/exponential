@@ -3,8 +3,8 @@
 Diese Seite ist die Referenz für die Extension `expservices` (Version 0.1.0, eingeführt am 2026-10-02): wie ein
 Remote-Dienst deklariert, aufgerufen, geschützt und im Audit erfasst wird, ihre Klassen, Einstellungen und
 Erweiterungspunkte. Lesen Sie sie, wenn Sie die Dienste aus einem Skript oder einem anderen System aufrufen oder eine
-eigene Dienstdomäne hinzufügen. Die Einführung für Anwender ist [Remote-Dienste](../../../eng-us/features/6.0/remote-services-expservices.md);
-die vollständigen Tabellen je Domäne stehen in [ezjscore-Backend-Dienste](../../../eng-us/bc/6.0/backend_ezjscore_services.md).
+eigene Dienstdomäne hinzufügen. Die Einführung für Anwender ist [Remote-Dienste](../../funktionen/6.0/entfernte-dienste-expservices.md);
+die vollständigen Tabellen je Domäne stehen in [ezjscore-Backend-Dienste](../../bc/6.0/backend-dienste-ueber-ezjscore.md).
 
 ## Kurz gesagt
 
@@ -100,6 +100,6 @@ Hilfsmethoden der Basisklasse: `arg()`, `post()`, `paging()`, `pageOf()`, `ok()`
 
 ## Verwandte Seiten
 
-- [Remote-Dienste](../../../eng-us/features/6.0/remote-services-expservices.md), [ezjscore-Backend-Dienste](../../../eng-us/bc/6.0/backend_ezjscore_services.md), [ezjscore](../../../eng-us/features/6.0/extensions/ezjscore.md)
-- [Audit-Ereignismodell](audit-ereignismodell.md), [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md)
-- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)
+- [Remote-Dienste](../../funktionen/6.0/entfernte-dienste-expservices.md), [ezjscore-Backend-Dienste](../../bc/6.0/backend-dienste-ueber-ezjscore.md), [ezjscore](../../funktionen/6.0/erweiterungen/ezjscore.md)
+- [Audit-Ereignismodell](audit-ereignismodell.md), [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md)
+- [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md), [Chronik Oktober 2026](../../geschichte/2026/2026-10.md)

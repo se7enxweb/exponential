@@ -39,7 +39,7 @@ seinem Datum auf, nach [doc/eng-us/release-overview](../../../eng-us/release-ove
 | 6.0.12 | 10. Februar 2026 | |
 | 6.0.13 | 18. April 2026 | |
 | 6.0.14 | 7. Juni 2026 | MongoDB 8 als Datenbank |
-| 6.0.15 | nicht veröffentlicht | In Entwicklung: Velocity, admin4, Audit-Trail, Exponential Layouts, Exponential Intelligence, das Hilfesystem und mehr |
+| 6.0.15 | nicht veröffentlicht | In Entwicklung: Velocity, admin4, Prüfprotokoll, Exponential Layouts, Exponential Intelligence, das Hilfesystem und mehr |
 
 Quelle: [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x). Eine leere Zelle beim Schwerpunkt bedeutet, dass die
 Geschichtsseiten für dieses Release keine einzelne Hauptnachricht nennen; lesen Sie seinen Changelog.
@@ -86,8 +86,8 @@ Sortieren Sie nach Version, nie nach Name: Eine einfache Sortierung nach Name se
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

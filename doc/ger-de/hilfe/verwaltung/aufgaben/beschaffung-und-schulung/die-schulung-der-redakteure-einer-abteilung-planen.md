@@ -11,7 +11,7 @@ type: help
 
 **Wer:** der Schulungskoordinator, mit der Redaktionsleitung der Abteilung. **Wann:** zwei bis vier Wochen, bevor die
 Abteilung mit dem Veröffentlichen beginnt. Kurse: [Redakteure 101](../../../trainer/redakteure-101/README.md) und der
-[Redaktionstag](../../../../../eng-us/help/trainers/workshops/module-02-one-day-agendas/editors-day.md).
+[Redaktionstag](../../../trainer/workshops/modul-02-eintaegige-programme/tag-fuer-redakteure.md).
 
 ## Inhalt
 
@@ -29,9 +29,9 @@ Abteilung mit dem Veröffentlichen beginnt. Kurse: [Redakteure 101](../../../tra
 ## Schritte
 
 1. **Listen Sie die Teilnehmer** und ihre künftige Rolle auf: Redakteur, Freigebender, Übersetzer
-   ([Rollen und Kurse](../../../../../eng-us/help/government/procurement/training/roles-to-courses.md)).
+   ([Rollen und Kurse](../../beschaffung/schulung/rollen-und-kurse.md)).
 2. **Fragen Sie** vertraulich **nach Bedürfnissen**: Vorkehrungen für Barrierefreiheit, Sprache
-   ([Barrierefreie und inklusive Schulung](../../../../../eng-us/help/government/procurement/training/accessible-and-inclusive-training.md)).
+   ([Barrierefreie und inklusive Schulung](../../beschaffung/schulung/barrierefreie-und-inklusive-schulung.md)).
 3. **Wählen Sie das Format**:
    - gelegentliche Redakteure: die eintägige Agenda für Redakteure oder die Module 1 bis 6 von Redakteure 101;
    - regelmäßige Redakteure: Redakteure 101 vollständig (27 Lektionen, etwa 19,5 Stunden);
@@ -63,13 +63,14 @@ geschult wurde.
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Ein Schulungsplan für eine Behörde](../../../../../eng-us/help/government/procurement/training/training-plan-for-a-public-body.md)
+- [Ein Schulungsplan für eine Behörde](../../beschaffung/schulung/schulungsplan-fuer-eine-oeffentliche-stelle.md)
 - [Checkliste zur redaktionellen Qualität](../../checklisten/redaktionelle-qualitaet.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

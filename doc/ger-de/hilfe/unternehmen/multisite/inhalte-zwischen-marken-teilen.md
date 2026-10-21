@@ -33,7 +33,7 @@ Geschäftsbedingungen und Kontaktdaten.
 ## Die Wege des Teilens
 
 Alle Marken einer Installation arbeiten auf demselben Inhaltsbaum. Die Dokumentation für Website-Ersteller nennt drei
-Wege, ein Objekt wiederzuverwenden ([Beziehungen und Wiederverwendung von Inhalten](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md#three-ways-to-reuse)):
+Wege, ein Objekt wiederzuverwenden ([Beziehungen und Wiederverwendung von Inhalten](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md#drei-wege-der-wiederverwendung)):
 
 | Weg | Verwenden, wenn | Ergebnis |
 |---|---|---|
@@ -46,7 +46,7 @@ Marke B platziert ist, erscheint auf beiden Websites, jeweils im Design der Webs
 eignen sich für Inhalte, die eine Marke von einer anderen zitiert oder anteasert.
 
 Die andere Form ist eine **gemeinsame Wurzel mit unterschiedlichen Designs**: Zwei Siteaccesses zeigen denselben
-Inhaltsbaum, jeder mit seinem eigenen Design ([Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md#shapes-of-a-multisite)).
+Inhaltsbaum, jeder mit seinem eigenen Design ([Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md#formen-einer-multisite)).
 Das passt zu einer Website für den Fachhandel und einer für Endkunden, die denselben Katalog unterschiedlich darstellen.
 
 > **Warnung**
@@ -58,7 +58,7 @@ Das passt zu einer Website für den Fachhandel und einer für Endkunden, die den
 
 Mit Exponential Layouts kann ein Seitenlayout seine Zonen mit den Zonen eines **gemeinsamen Layouts** verknüpfen: Die
 Fußzeile wird einmal definiert, und „eine neue Telefonnummer bedeutet“, eine Stelle zu bearbeiten statt jedes Layouts
-([Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)).
+([Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)).
 Wissenswerte Regeln:
 
 - Eine Zone verknüpft sich mit einer Zone eines **veröffentlichten** gemeinsamen Layouts, nie mit einem Entwurf.
@@ -74,9 +74,9 @@ Kontaktblock der Gruppe), während jede Marke ihre eigene Kopfzeile mit ihrem Lo
 
 | Gemeinsames Element | Warum es hilft | Hinweis |
 |---|---|---|
-| Medien-Bibliothek (Bilder, Dateien) | Ein Logo-Satz und ein Produktfoto pro Artikel | Ordnen Sie sie nach Marke und Verwendung ([Die Medien-Bibliothek ordnen](../../../../eng-us/help/creators/website-creators/organizing-the-media-library.md)) |
+| Medien-Bibliothek (Bilder, Dateien) | Ein Logo-Satz und ein Produktfoto pro Artikel | Ordnen Sie sie nach Marke und Verwendung ([Die Medien-Bibliothek ordnen](../../ersteller/website-ersteller/die-medienbibliothek-organisieren.md)) |
 | Benutzer und Gruppen | Ein Konto pro Person, eine Stelle, um jemanden zu sperren, der das Unternehmen verlässt | Rollen entscheiden, was jede Person in welcher Marke tun darf |
-| Tags (`eztags`) | Ein Vokabular für Produkte, Themen oder Regionen über alle Marken | [Inhalte mit eztags verschlagworten](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md) |
+| Tags (`eztags`) | Ein Vokabular für Produkte, Themen oder Regionen über alle Marken | [Inhalte mit eztags verschlagworten](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md) |
 
 Wenn Ihre Marken auch in mehreren Sprachen veröffentlichen, markieren Sie gemeinsame Ordner, Benutzer und Medien als
 **immer verfügbar**, damit sie auf einem Sprach-Siteaccess auch ohne Übersetzung erscheinen
@@ -89,7 +89,7 @@ Wenn Ihre Marken auch in mehreren Sprachen veröffentlichen, markieren Sie gemei
 - Ein gemeinsamer Ordner (Gruppennachrichten, Rechtliches) kann nur für ein zentrales Team bearbeitbar und für alle
   lesbar sein.
 - Mehrere Administrations-Siteaccesses sind möglich, wenn Teams die Marken der anderen überhaupt nicht sehen sollen
-  ([Redakteure und die Administration](../../../../eng-us/help/creators/website-creators/multisite-setup.md#editors-and-the-administration)).
+  ([Redakteure und die Administration](../../ersteller/website-ersteller/multisite-einrichten.md#redaktion-und-administration)).
 - Ein Freigabe-Workflow kann Änderungen an gemeinsamen Inhalten zurückhalten, bis der Verantwortliche der Inhalte sie
   freigibt ([Workflows](../../../anleitungen/workflows.md)).
 
@@ -113,15 +113,15 @@ worüber jede Marke mit ihrer eigenen Stimme spricht (Kampagnen, Geschichten, La
 
 - [Ein Design pro Marke](ein-design-pro-marke.md)
 - [Links zwischen Ihren Websites](links-zwischen-ihren-websites.md)
-- [Beziehungen und Wiederverwendung von Inhalten](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)
-- [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../../../eng-us/help/creators/website-creators/shared-header-and-footer.md)
-- [Den Inhaltsbaum strukturieren](../../../../eng-us/help/creators/website-creators/structuring-the-content-tree.md)
+- [Beziehungen und Wiederverwendung von Inhalten](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)
+- [Gemeinsame Layouts: Kopfzeile, Fußzeile und Prefooter](../../ersteller/website-ersteller/gemeinsamer-kopf-und-fussbereich.md)
+- [Den Inhaltsbaum strukturieren](../../ersteller/website-ersteller/den-inhaltsbaum-strukturieren.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -50,7 +50,7 @@ Plattform oder einem anderen System planen und einen vollständigen Migrationspl
 - Jede Person hat einen Kursordner im Inhaltsbaum und kennt dessen Knoten-ID.
 - Keine echten Kundendaten auf einer Schulungsinstallation. Testkonten verwenden Adressen unter `example.invalid`.
 - Modul 6 ist ein Planungsmodul: Es wird keine Installation von eZ Platform, Ibexa oder Nexus benötigt.
-- Die Hinweise für Trainer zu Übungsumgebungen: [Train the Trainer](../../../../eng-us/help/trainers/train-the-trainer/README.md), Modul 2.
+- Die Hinweise für Trainer zu Übungsumgebungen: [Train the Trainer](../train-the-trainer/README.md), Modul 2.
 
 ## Module
 
@@ -131,21 +131,21 @@ Planungsszenario (ohne den Nachweisschritt).
 
 Jede Lektion endet mit einem Quiz mit belegten Antworten, und Lektion 8.2 enthält ein Abschlussprojekt mit einem
 Bewertungsraster. Für einen schriftlichen Test und eine praktische Aufgabe zur Migration siehe
-[Prüfungen und praktische Übungen](../../../../eng-us/help/trainers/assessments/README.md).
+[Prüfungen und praktische Übungen](../pruefungen/README.md).
 Jede Prüfung, die Sie durchführen, ist Ihr eigenes Kursmaterial; das ist keine offizielle Zertifizierung; die Zertifizierungen des Partnerprogramms sind davon getrennt ([Zertifizierungen](../../partner/zertifizierungen.md)).
 
 ## Verwandte Seiten
 
-- [Trainer: hier beginnen](../../../../eng-us/help/trainers/trainers-start-here.md)
-- [Kurskatalog](../../../../eng-us/help/trainers/course-catalogue.md)
-- [Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)
+- [Trainer: hier beginnen](../trainer-hier-beginnen.md)
+- [Kurskatalog](../kurskatalog.md)
+- [Train the Trainer: Kursüberblick](../train-the-trainer/README.md)
 - [Migration zu und von Exponential](../../../installation/migration/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

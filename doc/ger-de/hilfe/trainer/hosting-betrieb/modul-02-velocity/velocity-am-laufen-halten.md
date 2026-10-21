@@ -3,7 +3,7 @@ title: "Lektion 2.2: Velocity am Laufen halten"
 audience: trainer, hosting, admin
 category: training
 order: 22
-summary: Die Teilnehmenden stoppen Velocity, starten es neu und laden es sanft neu, schreiben eine Unit für den Systemstart, die exp:velocity ausführt, lesen das Verhalten des Watchdogs und finden die Logs des Servers und seinen Konfigurationsbaum. 45 Minuten.
+summary: Die Teilnehmenden stoppen Velocity, starten ihn neu und laden ihn sanft neu, schreiben eine Unit für den Systemstart, die exp:velocity ausführt, lesen das Verhalten des Watchdogs und finden die Logs des Servers und seinen Konfigurationsbaum. 45 Minuten.
 keywords: hosting und betrieb, Velocity, restart, graceful, stop, kill, systemd, dienst für den systemstart, watchdog, console.log, zugriffslog, /etc/vc, layout, debian-stil, hosting and operations, boot service, access log, Debian style
 type: help
 ---
@@ -139,20 +139,20 @@ Verwenden Sie Ihre eigene Schulungsinstallation aus Lektion 2.1, ausgeliefert vo
 - [Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md): Dienst für den Systemstart, Watchdog und Logs.
 - [Velocity startet nicht](../../../hosting/runbooks/velocity-startet-nicht.md): was zu tun ist, wenn es nicht
   hochkommt.
-- [Velocity-Bedienfeld und Dashboard](../../../../../eng-us/features/6.0/velocity-control-panel.md): die `/Q/`-Seiten.
-- [Velocity-Scheduler](../../../../../eng-us/features/6.0/velocity-scheduler.md): Aufgaben, die der Server nach Zeitplan ausführt.
+- [Velocity-Bedienfeld und Dashboard](../../../../funktionen/6.0/velocity-control-panel.md): die `/Q/`-Seiten.
+- [Velocity-Scheduler](../../../../funktionen/6.0/velocity-zeitplaner.md): Aufgaben, die der Server nach Zeitplan ausführt.
 
 ## Verwandte Seiten
 
 - [Modul 2: Velocity](README.md)
 - [Hosting und Betrieb: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

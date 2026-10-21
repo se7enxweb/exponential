@@ -3,7 +3,7 @@ title: Zugriffskontrolle im Code
 audience: app-creator, developer
 category: app-creation
 order: 590
-summary: Die Rechte von Exponential in jeder Schicht einer Anwendung anwenden - der aktuelle Benutzer, Richtlinienprüfungen mit Einschränkungen, Prüfungen auf Inhaltsebene, Hintergrundarbeit als der richtige Benutzer, Integrationsbenutzer und das Festhalten von Zugriffsentscheidungen im Audit-Trail.
+summary: Die Rechte von Exponential in jeder Schicht einer Anwendung anwenden - der aktuelle Benutzer, Richtlinienprüfungen mit Einschränkungen, Prüfungen auf Inhaltsebene, Hintergrundarbeit als der richtige Benutzer, Integrationsbenutzer und das Festhalten von Zugriffsentscheidungen im Prüfprotokoll.
 keywords: Zugriffskontrolle, Rechte, Berechtigungen, Autorisierung, Einschränkungen, Hintergrundjobs, Integrationsbenutzer, Audit, Anwendungsentwickler, access control, permissions, authorization, eZUser, currentUser, hasAccessTo, limitations, canRead, canEdit, background jobs, integration user, audit, app creator
 type: help
 ---
@@ -59,21 +59,21 @@ oder OAuth-Client, damit er sich einzeln widerrufen lässt ([OAuth und API-Schl�
 
 ## Entscheidungen festhalten
 
-Schreiben Sie sicherheitsrelevante Aktionen und Ablehnungen in den Audit-Trail, mit IDs und niemals mit Geheimnissen
+Schreiben Sie sicherheitsrelevante Aktionen und Ablehnungen in das Prüfprotokoll, mit IDs und niemals mit Geheimnissen
 oder personenbezogenen Inhalten, damit Administratoren sie prüfen können
-([Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md), [Audit](../../../bc/6.0/audit.md)).
+([Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md), [Audit](../../../bc/6.0/audit.md)).
 
 ## Verwandte Seiten
 
 - [Richtlinienfunktionen und Einschränkungen](richtlinienfunktionen-und-einschraenkungen.md)
 - [Sicherheit für Anwendungen](sicherheit-fuer-anwendungen.md)
-- [Rechteprüfungen bei vielen Zuweisungen](../../../../eng-us/features/6.0/permission-checks-for-many-assignments.md)
+- [Rechteprüfungen bei vielen Zuweisungen](../../../funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

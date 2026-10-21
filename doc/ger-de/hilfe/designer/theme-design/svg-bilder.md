@@ -39,7 +39,7 @@ SanitizeSVG=enabled
 Ein SVG kann Skript enthalten, daher speichert der Kernel einen Upload nie so, wie er kam: `expSvgSanitizer` behält nur Elemente, Attribute
 und CSS aus einer Positivliste, und die gespeicherte Datei ist seine Ausgabe. Hochgeladene SVGs werden mit Headern ausgeliefert, die
 verhindern, dass sie beim direkten Öffnen etwas ausführen. `SanitizeSVG=disabled` lehnt SVG-Uploads ab; es gibt keinen Weg, eines
-unbereinigt zu speichern. Einzelheiten: [SVG-Bilder (Verhaltensänderung)](../../../../eng-us/bc/6.0/svg-images.md).
+unbereinigt zu speichern. Einzelheiten: [SVG-Bilder (Verhaltensänderung)](../../../bc/6.0/svg-bilder.md).
 
 ## Was das für Ihre Templates bedeutet
 
@@ -71,8 +71,9 @@ unbereinigt zu speichern. Einzelheiten: [SVG-Bilder (Verhaltensänderung)](../..
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

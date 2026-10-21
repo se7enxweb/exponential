@@ -1,8 +1,8 @@
 # ezmbpaex (Ablauf von Passwörtern): Chronik
 
-Der Ablauf von Passwörtern wechselte Anfang 2024 den Vendor. Am 27. und 29. September 2026 hörte seine Seite „Passwort vergessen“ auf zu verraten, zu welchen Adressen es Konten gibt, und seine Schlüssel zum Zurücksetzen wurden unvorhersagbar. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ezmbpaex.md).
+Der Ablauf von Passwörtern wechselte Anfang 2024 den Vendor. Am 27. und 29. September 2026 hörte seine Seite „Passwort vergessen“ auf zu verraten, zu welchen Adressen es Konten gibt, und seine Schlüssel zum Zurücksetzen wurden unvorhersagbar. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ezmbpaex.md).
 
-Diese Seite führt **jede der 13 Änderungen** des Repositorys `ezmbpaex` zwischen 2023-12-23 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezmbpaex.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezmbpaex.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ezmbpaex.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 13 Änderungen** des Repositorys `ezmbpaex` zwischen 2023-12-23 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezmbpaex.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezmbpaex.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ezmbpaex.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -65,7 +65,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ezmbpaex.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ezmbpaex.md)
 - [Release Notes](../../../changelogs/extensions/ezmbpaex.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ezmbpaex.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

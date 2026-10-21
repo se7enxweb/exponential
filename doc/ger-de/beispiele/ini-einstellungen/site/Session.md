@@ -37,8 +37,8 @@ RememberMeTimeout=
 
 ## Handler
 
-> Sitzungs-Handler von Exponential Legacy (Klassenname): nicht anwendbar mit dem Symfony-Stack  
-> Wenn leer, wird ezpSessionHandlerPHP verwendet, ein Sitzungs-Handler, der PHP die Kontrolle  
+> Session-Handler von Exponential Legacy (Klassenname): nicht anwendbar mit dem Symfony-Stack  
+> Wenn leer, wird ezpSessionHandlerPHP verwendet, ein Session-Handler, der PHP die Kontrolle  
 > über die Sitzungsverwaltung lässt (Standard: files, wie in session.save\_handler in php.ini festgelegt)  
 > Um das alte Verhalten für die Zählung angemeldeter/anonymer Benutzer und das Leeren von Sitzungen zurückzuerhalten, verwenden Sie ezpSessionHandlerDB  
 > und aktivieren Sie die Einstellung ForceStart.  

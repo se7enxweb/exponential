@@ -72,7 +72,7 @@ Eine Exponential-Website ist nicht fertig, wenn der Installer endet. Diese Dinge
 | Was | Warum | Wo es beschrieben ist |
 |---|---|---|
 | **Cronjobs** | Benachrichtigungen, Suchindizierung bei verzögerter Indizierung, Linkprüfungen, Bereinigung von Caches und Sitzungen | [Kapitel 10, Cronjobs](../../../installation/10-nach-der-installation.md#103-cronjobs) |
-| **Velocity**, wenn es die Website ausliefert | ein lang laufender PHP-Serverprozess mit einem Pool von Workern | [Velocity für Hoster](../server/velocity-fuer-hoster.md) |
+| **Velocity**, wenn er die Website ausliefert | ein lang laufender PHP-Serverprozess mit einem Pool von Workern | [Velocity für Hoster](../server/velocity-fuer-hoster.md) |
 | **PHP-FPM**, wenn Apache oder nginx die Website ausliefert | ein Pool pro Website ist üblich | [Abstimmung von PHP-FPM](../leistung/abstimmung-von-php-fpm.md) |
 | **Ein Datenbankserver**, außer bei SQLite | PostgreSQL, MongoDB, MariaDB, Oracle oder MySQL | die Seite der jeweiligen Datenbank |
 | **Logs** | `var/log/` und die eigenen Logs des Webservers wachsen und brauchen Rotation | [Log-Viewer und Log-Rotation](../betrieb/log-viewer-und-log-rotation.md) |
@@ -144,3 +144,11 @@ Möglichkeiten; wählen Sie pro Tarif, und schreiben Sie die Wahl in die Beschre
   [Kapitel 10: Nach der Installation](../../../installation/10-nach-der-installation.md)
 - [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

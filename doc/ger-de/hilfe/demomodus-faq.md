@@ -10,7 +10,7 @@ type: help
 # FAQ zum Demo-Modus
 
 Kurze Antworten zum **Demo-Modus**, für alle, die mit einer öffentlichen Demo von Exponential arbeiten, sie vorführen,
-verkaufen oder damit schulen. Die vollständige Referenz ist [Demo-Modus: der Upgrade-Hinweis](../../eng-us/bc/6.0/demo-mode.md);
+verkaufen oder damit schulen. Die vollständige Referenz ist [Demo-Modus: der Upgrade-Hinweis](../bc/6.0/demomodus.md);
 die Sicht des Administrators beschreibt [Demo-Modus](demomodus.md).
 
 ## Inhalt
@@ -56,9 +56,9 @@ mit allen üblichen Regeln. Die Anmeldung ist nie betroffen.
 
 Setzen Sie die Umgebungsvariable `EXP_DEMO_MODE=1` für jeden PHP-Prozess der Demo: das PHP des Webservers
 (`.htaccess` oder `SetEnv` des virtuellen Hosts, der PHP-FPM-Pool, `fastcgi_param` von nginx, die Umgebung von
-Exponential Velocity), die Cronjobs und die Konsole. Fertige Dateien: [Beispiele zum Demo-Modus](../../eng-us/examples/demo-mode/README.md);
+Exponential Velocity), die Cronjobs und die Konsole. Fertige Dateien: [Beispiele zum Demo-Modus](../beispiele/demomodus/README.md);
 eine vollständige Einrichtung:
-[Rezept: eine öffentliche Demo unter LiteSpeed und Plesk betreiben](../../eng-us/help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md).
+[Rezept: eine öffentliche Demo unter LiteSpeed und Plesk betreiben](hosting/server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
 
 ## Warum gibt es keine Einstellung dafür?
 
@@ -94,7 +94,7 @@ gilt ebenfalls als Administrator.
 Nein. Demo-Modus bedeutet, dass das Administratorpasswort bekannt sein soll und nicht geändert werden kann. Setzen Sie
 die Variable nie serverweit, in einem gemeinsamen Pool, einem Basis-Image oder einer Vorlage, aus der andere Sites
 gebaut werden. Erscheint der Hinweisbalken oder eine Zeile `demo/mode` jemals auf einer echten Site, entfernen Sie die
-Variable sofort: [Probleme mit dem Demo-Modus](../../eng-us/help/hosting/runbooks/demo-mode-problems.md).
+Variable sofort: [Probleme mit dem Demo-Modus](hosting/runbooks/probleme-mit-dem-demomodus.md).
 
 ## Wie schalte ich ihn aus?
 
@@ -104,10 +104,18 @@ Variable weg ist, lassen sich Passwörter wieder ändern, und der Hinweisbalken 
 
 ## Verwandte Seiten
 
-- [Demo-Modus](demomodus.md), [Demo-Modus: der Upgrade-Hinweis](../../eng-us/bc/6.0/demo-mode.md)
-- [Demo-Modus für Hoster](../../eng-us/help/hosting/security/demo-mode-for-hosts.md),
-  [Demo-Modus für Entwickler](../../eng-us/help/extension-development/part-8-reference/demo-mode-for-developers.md)
-- [Probleme mit dem Demo-Modus](../../eng-us/help/hosting/runbooks/demo-mode-problems.md)
+- [Demo-Modus](demomodus.md), [Demo-Modus: der Upgrade-Hinweis](../bc/6.0/demomodus.md)
+- [Demo-Modus für Hoster](hosting/sicherheit/demomodus-fuer-hoster.md),
+  [Demo-Modus für Entwickler](erweiterungsentwicklung/teil-8-referenz/demomodus-fuer-entwickler.md)
+- [Probleme mit dem Demo-Modus](hosting/runbooks/probleme-mit-dem-demomodus.md)
 - [Umgebungsvariablen](../anleitungen/umgebungsvariablen.md)
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und
   verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

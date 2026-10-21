@@ -2,7 +2,7 @@
 
 Eine Standardinstallation von Exponential 6.0 ist so gebaut, dass sie ohne zusätzlichen Aufwand sicher ist: Die
 Rewrite-Regeln liefern nur aufgelistete Dateien aus, Sicherheits-Header gehen mit jeder Seite hinaus, das
-Session-Cookie ist `HttpOnly` und `SameSite`, die Debug-Ausgabe ist ausgeschaltet, Formulare tragen ein Token gegen
+Sitzungs-Cookie ist `HttpOnly` und `SameSite`, die Debug-Ausgabe ist ausgeschaltet, Formulare tragen ein Token gegen
 Cross-Site Request Forgery, und ein Audit-Protokoll hält fest, wer was getan hat. Dieses Kapitel geht jede dieser
 Schichten durch, nennt die Einstellung, die sie steuert, und wie Sie sie prüfen, und listet auf, was ein Administrator
 noch entscheiden sollte, bevor eine Site live geht: Geheimnisse in `settings/override`, der Administrations-Siteaccess,
@@ -11,9 +11,9 @@ Installation. Es ist als Checkliste geschrieben, die Sie von oben nach unten aba
 Zusammenfassung steht am Ende.
 
 Für die Sicht des Angreifers, Bedrohung für Bedrohung, mit dem vorgeschalteten Request-Shield und dem, was Sie
-beobachten sollten, lesen Sie [Sicherheitshärtung](../../eng-us/help/security-hardening.md) in der Hilfe; für das
-Administratorkonto [Das Administratorpasswort ändern](../../eng-us/help/change-the-admin-password.md) und
-[Das Standard-Administratorpasswort](../../eng-us/help/default-administrator-password.md).
+beobachten sollten, lesen Sie [Sicherheitshärtung](../hilfe/sicherheitshaertung.md) in der Hilfe; für das
+Administratorkonto [Das Administratorpasswort ändern](../hilfe/administratorpasswort-aendern.md) und
+[Das Standard-Administratorpasswort](../hilfe/standard-administratorpasswort.md).
 
 [Inhalt](README.md) · Zurück: [12. Fehlerbehebung](12-fehlerbehebung.md) · Weiter: [14. Migration von der 4.x-Linie](14-migration-von-4x.md)
 
@@ -27,7 +27,7 @@ Administratorkonto [Das Administratorpasswort ändern](../../eng-us/help/change-
 4. [Debug-Ausgabe und Fehleranzeige](#134-debug-ausgabe-und-fehleranzeige)
 5. [Der Administrations-Siteaccess](#135-der-administrations-siteaccess)
 6. [Passwörter und Anmeldung](#136-passwörter-und-anmeldung)
-7. [Sessions und Cookies](#137-sessions-und-cookies)
+7. [Sitzungen und Cookies](#137-sitzungen-und-cookies)
 8. [Formular-Tokens gegen Cross-Site Request Forgery](#138-formular-tokens-gegen-cross-site-request-forgery)
 9. [Sicherheits-Header und HTTPS](#139-sicherheits-header-und-https)
 10. [Hinter einem Proxy: vertrauenswürdige Header](#1310-hinter-einem-proxy-vertrauenswürdige-header)
@@ -76,7 +76,7 @@ INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`), und starten Sie unter Vel
 | Debug-Ausgabe | aus | ausgeschaltet lassen oder nach IP beschränken |
 | Admin-Siteaccess | Anmeldung erforderlich | eigener Hostname, Netzwerkbeschränkung, Request-Regeln |
 | Passwörter | 10 Zeichen, bcrypt | Zeichenregeln, Sperre nach fehlgeschlagenen Anmeldungen |
-| Session-Cookie | `HttpOnly`, `SameSite=Lax`, `Secure` über HTTPS | `CookieSecure=true` auf einer reinen HTTPS-Site |
+| Sitzungs-Cookie | `HttpOnly`, `SameSite=Lax`, `Secure` über HTTPS | `CookieSecure=true` auf einer reinen HTTPS-Site |
 | Formular-Tokens | aktiv (Setup-Assistent) | `ezformtoken` aktiv lassen; eigenes AJAX anpassen |
 | Weitergeleitete Header | nur von `127.0.0.1` und `::1` geglaubt | Ihre Proxys in `TrustedProxies[]` eintragen, und nichts weiter |
 | Sicherheits-Header | fünf Header auf jeder Seite | HSTS, sobald nur noch HTTPS; frame-ancestors für Redakteure |
@@ -142,7 +142,7 @@ ersten Verwendung erzeugt:
 |---|---|---|
 | `site.ini.append.php` | Datenbankbenutzer und -passwort (`[DatabaseSettings]`) | Zugriff auf die Datenbank |
 | `audit.ini.append.php` | Audit-Signaturschlüssel und Pseudonymschlüssel | mit dem Schlüssel signierte Archive lassen sich nicht mehr verifizieren; Pseudonyme lassen sich umkehren |
-| `mailpreferences.ini.append.php` | das Site-Geheimnis (`[SecretSettings] TokenSecret`, bei der ersten Verwendung erzeugt) | jeder Abmelde- und Präferenzlink funktioniert nicht mehr, kein Eintrag der Sperrliste greift mehr, und jeder angemeldete Benutzer wird einmal abgemeldet, weil der Passwortstempel der Sessions (Abschnitt 13.6) mit ihm als Schlüssel gebildet wird |
+| `mailpreferences.ini.append.php` | das Site-Geheimnis (`[SecretSettings] TokenSecret`, bei der ersten Verwendung erzeugt) | jeder Abmelde- und Präferenzlink funktioniert nicht mehr, kein Eintrag der Sperrliste greift mehr, und jeder angemeldete Benutzer wird einmal abgemeldet, weil der Passwortstempel der Sitzungen (Abschnitt 13.6) mit ihm als Schlüssel gebildet wird |
 | `velocity.ini.append.php` | `[DashboardSettings] Token`, falls gesetzt | Fernzugriff auf die Kennzahlen des Servers und `/Q/phpinfo` |
 | `config.env.php` im Wurzelverzeichnis | Maschineneinstellungen wie der Name der Umgebung | (von Git ignoriert) |
 | `var/log/initial-admin-password` | das erzeugte erste Administratorpasswort einer Kickstart- oder Konsoleninstallation | das Administratorkonto |
@@ -200,7 +200,7 @@ DebugIPList[]=2001:db8::/48
 ```
 
 Einträge können einzelne Adressen oder CIDR-Bereiche beider Adressfamilien sein; eine einfache IPv6-Adresse bedeutet
-genau diese Adresse (siehe [die Debug-Leiste](../../eng-us/bc/6.0/debug-bar.md), wo auch Bezeichnungen und Ablaufdaten von
+genau diese Adresse (siehe [die Debug-Leiste](../bc/6.0/debug-leiste.md), wo auch Bezeichnungen und Ablaufdaten von
 Einträgen dokumentiert sind). Der Reiter **Einstellungen** der Debug-Leiste kann diese Werte ändern; er benötigt die
 Richtlinie `setup/setup`.
 
@@ -257,11 +257,11 @@ Härtung darüber hinaus, von der stärksten zur einfachsten:
 3. **Request-Regeln** (`settings/requestrules.ini`) entscheiden, bevor eine Modulansicht läuft: anonyme Besucher von
    System-URLs wie `/content/view/full/123` fernhalten, für eine Sektion eine Anmeldung verlangen, Anfragen aus einem
    Netzwerk ablehnen. Sie sind an Rollenrichtlinien gebunden, sodass Ausnahmen im Rolleneditor festgelegt werden.
-   Siehe [Request-Regeln](../../eng-us/bc/6.0/view_full_security.md).
+   Siehe [Request-Regeln](../bc/6.0/sicherheit-von-content-view-full.md).
 4. **Minimale Rechte.** Geben Sie Redakteuren die Rollen, die sie brauchen, nicht Administrator. Richtlinien, die für
    die Sicherheit wichtig sind: `setup/setup` (Einstellungen), `setup/managecache`, `audit/read` und `audit/manage`,
    `mailpreferences/administrate` und `mailpreferences/export`, `contentfinder/search` und `contentfinder/delete`
-   (der [Content Finder](../../eng-us/features/6.0/content-finder.md): Inhalte nach ID oder Pfad finden und von dort in den
+   (der [Content Finder](../funktionen/6.0/inhalts-finder.md): Inhalte nach ID oder Pfad finden und von dort in den
    Papierkorb verschieben oder löschen), `user/login` je Siteaccess.
 5. **Der Setup-Assistent muss geschlossen bleiben.** Nach der Installation enthält
    `settings/override/site.ini.append.php` den Eintrag `[SiteAccessSettings] CheckValidity=false`. Solange er `true`
@@ -332,27 +332,27 @@ Die Regeln gelten für jedes Formular, das ein Passwort setzt (`user/password`, 
 **`EndOtherSessions=enabled`** ist das, was eine Passwortänderung nach der Übernahme eines Kontos wirksam macht. So
 funktioniert es:
 
-- Bei jeder Anmeldung erhält die Session einen **Passwortstempel** (`eZUserPasswordStamp`): einen schlüsselbasierten
+- Bei jeder Anmeldung erhält die Sitzung einen **Passwortstempel** (`eZUserPasswordStamp`): einen schlüsselbasierten
   Hash (HMAC-SHA256) aus der Benutzer-ID und dem gespeicherten Passwort-Hash, gebildet mit einem Schlüssel, der aus
   dem Site-Geheimnis aus Abschnitt 13.3 abgeleitet ist. Er enthält weder das Passwort noch dessen Hash.
-- Bei jeder Anfrage vergleicht `eZUser::currentUser()` den Stempel der Session mit dem Stempel des aktuellen Hashs des
-  Benutzers. Eine Passwortänderung ändert den Hash, sodass jede andere Session dieses Benutzers (andere Browser,
-  andere Geräte, eine von einem Angreifer kopierte Session) nicht mehr passt und bei ihrer nächsten Anfrage abgemeldet
-  wird. Das funktioniert mit jedem Session-Handler, PHPs eigene Datei-Sessions eingeschlossen, weil es geprüft wird,
-  wenn die Session verwendet wird.
-- Die Session, in der das Passwort geändert wurde, bleibt angemeldet, erhält aber eine **neue Session-ID**, sodass
-  jemand, der die alte ID kannte, sie nicht behält. Mit dem Datenbank-Session-Handler werden die anderen Sessions
+- Bei jeder Anfrage vergleicht `eZUser::currentUser()` den Stempel der Sitzung mit dem Stempel des aktuellen Hashs des
+  Benutzers. Eine Passwortänderung ändert den Hash, sodass jede andere Sitzung dieses Benutzers (andere Browser,
+  andere Geräte, eine von einem Angreifer kopierte Sitzung) nicht mehr passt und bei ihrer nächsten Anfrage abgemeldet
+  wird. Das funktioniert mit jedem Session-Handler, PHPs eigene Datei-Sitzungen eingeschlossen, weil es geprüft wird,
+  wenn die Sitzung verwendet wird.
+- Die Sitzung, in der das Passwort geändert wurde, bleibt angemeldet, erhält aber eine **neue Sitzungs-ID**, sodass
+  jemand, der die alte ID kannte, sie nicht behält. Mit dem Datenbank-Session-Handler werden die anderen Sitzungen
   außerdem sofort gelöscht.
-- **Nicht geprüft:** Sessions, die vor dem Upgrade auf 6.0.15 begonnen haben (sie tragen noch keinen Stempel; sie
+- **Nicht geprüft:** Sitzungen, die vor dem Upgrade auf 6.0.15 begonnen haben (sie tragen noch keinen Stempel; sie
   werden ab ihrer nächsten Anmeldung geprüft), und Konten ohne eigenes Passwort (LDAP-, Textdatei- und
   Single-Sign-on-Benutzer).
 - **Was Sie überraschen kann:** Ein neues Site-Geheimnis (eine Kopie der Installation ohne
   `settings/override/mailpreferences.ini.append.php`) ändert jeden Stempel, sodass alle einmal abgemeldet werden.
   `EndOtherSessions=disabled` schaltet den Stempel und die Prüfung zusammen ab.
 
-Lassen Sie es eingeschaltet. Einzelheiten: [Das eigene Passwort ändern](../../eng-us/features/6.0/modern-password-change.md);
+Lassen Sie es eingeschaltet. Einzelheiten: [Das eigene Passwort ändern](../funktionen/6.0/moderne-passwortaenderung.md);
 jeder Weg, ein Administratorpasswort zu ändern oder zurückzusetzen, und was zu tun ist, wenn sich niemand anmelden
-kann: [Das Administratorpasswort ändern](../../eng-us/help/change-the-admin-password.md).
+kann: [Das Administratorpasswort ändern](../hilfe/administratorpasswort-aendern.md).
 
 **`ChangeNotificationMail=enabled`** schickt dem Konto die Mail „Ihr Passwort wurde geändert“ (Kategorie
 „Kontosicherheit“, die niemand abschalten kann; die Mail enthält nie das Passwort). So erfährt ein Benutzer von einer
@@ -372,7 +372,7 @@ niemand ändern kann, deshalb:
   damit startet, schreibt eine Zeile `demo/mode` in `var/log/security.log` und das Audit-Ereignis `system.demo.mode`.
   Lösen Sie bei beidem eine Warnung aus.
 - Er kann nicht aus Einstellungen kommen: Es gibt weder eine INI-Einstellung noch einen Anfrageparameter dafür, und
-  nur der exakte Wert `1` zählt. Einzelheiten und Risiken: [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
+  nur der exakte Wert `1` zählt. Einzelheiten und Risiken: [Demo-Modus](../bc/6.0/demomodus.md).
 
 ### Fehlgeschlagene Anmeldungen
 
@@ -394,7 +394,7 @@ bekannte.
 
 ---
 
-## 13.7 Sessions und Cookies
+## 13.7 Sitzungen und Cookies
 
 `settings/site.ini [Session]`; die drei Cookie-Schlüssel sind in der mitgelieferten Datei auskommentiert, und ihre
 Standardwerte gelten, solange sie nicht gesetzt sind:
@@ -402,11 +402,11 @@ Standardwerte gelten, solange sie nicht gesetzt sind:
 | Schlüssel | Standard | Bedeutung |
 |---|---|---|
 | `CookieSecure` | `auto` | `Secure`, sobald die Anfrage selbst über HTTPS kam; `true` erzwingt es |
-| `CookieHttponly` | `true` | Skripte können das Session-Cookie nicht lesen |
+| `CookieHttponly` | `true` | Skripte können das Sitzungs-Cookie nicht lesen |
 | `CookieSameSite` | `Lax` | `Lax`, `Strict`, `None` (nur mit `Secure`) oder leer |
-| `SessionTimeout` | `259200` | Sekunden, die eine Session dauert (3 Tage) |
+| `SessionTimeout` | `259200` | Sekunden, die eine Sitzung dauert (3 Tage) |
 | `RememberMeTimeout` | leer | die Gültigkeitsdauer von „Erinnerung“ (Remember me); leer schaltet sie ab |
-| `SessionNameHandler`, `SessionNamePerSiteAccess` | `default`, `enabled` | `custom` gibt jedem Siteaccess sein eigenes Session-Cookie, sodass eine Anmeldung auf der öffentlichen Site keine Anmeldung in der Administration ist |
+| `SessionNameHandler`, `SessionNamePerSiteAccess` | `default`, `enabled` | `custom` gibt jedem Siteaccess sein eigenes Sitzungs-Cookie, sodass eine Anmeldung auf der öffentlichen Site keine Anmeldung in der Administration ist |
 
 Für eine Site, die nur über HTTPS ausgeliefert wird:
 
@@ -421,10 +421,10 @@ SessionTimeout=28800
 
 `CookieSecure=true` stellt sicher, dass das Cookie nie über einfaches HTTP gesendet wird, auch nicht bei einer
 Anfrage, die fälschlicherweise ohne TLS ankommt. Verwenden Sie `Strict` nur, wenn keine andere Site auf Seiten
-verlinkt, die eine Anmeldung voraussetzen. Ein kürzerer `SessionTimeout` begrenzt, wie lange eine gestohlene Session
+verlinkt, die eine Anmeldung voraussetzen. Ein kürzerer `SessionTimeout` begrenzt, wie lange eine gestohlene Sitzung
 brauchbar bleibt.
 
-Getrennte Session-Cookies je Siteaccess:
+Getrennte Sitzungs-Cookies je Siteaccess:
 
 ```ini
 [Session]
@@ -436,7 +436,7 @@ SessionNamePerSiteAccess=enabled
 Mit `custom` leitet der Antwort-Cache von Velocity sein Cookie „persönlich, nicht cachen“ automatisch aus
 `SessionNamePrefix` ab.
 
-In der eigenen Konfiguration von PHP sorgt `session.use_strict_mode=1` dafür, dass PHP Session-IDs ablehnt, die es
+In der eigenen Konfiguration von PHP sorgt `session.use_strict_mode=1` dafür, dass PHP Sitzungs-IDs ablehnt, die es
 nicht selbst erzeugt hat.
 
 Was schiefgehen kann:
@@ -449,14 +449,14 @@ Was schiefgehen kann:
 - **`CookieSameSite=None` ohne `Secure`** wird von Browsern abgelehnt; der Kernel berücksichtigt `None` nur zusammen
   mit `Secure`. Sie brauchen `None` nur, wenn die Site innerhalb eines Frames oder über ein Cross-Site-Formular auf
   einer anderen Domain verwendet wird.
-- **`Strict`** verwirft die Session beim ersten Klick aus einer E-Mail oder von einer anderen Site auf eine Seite, die
+- **`Strict`** verwirft die Sitzung beim ersten Klick aus einer E-Mail oder von einer anderen Site auf eine Seite, die
   eine Anmeldung voraussetzt, was Benutzer als Abmeldung wahrnehmen.
 
 ---
 
 ## 13.8 Formular-Tokens gegen Cross-Site Request Forgery
 
-Die Extension `ezformtoken` fügt jedem HTML-Formular ein Token je Session hinzu und prüft es bei jedem POST
+Die Extension `ezformtoken` fügt jedem HTML-Formular ein Token je Sitzung hinzu und prüft es bei jedem POST
 (`extension/ezformtoken`, Event-Listener `request/input`, `response/output` und `session/regenerate`). Ein gefälschtes
 Formular auf einer anderen Site kann das Token nicht kennen. Der Setup-Assistent aktiviert sie bei jeder neuen
 Installation.
@@ -467,7 +467,7 @@ Installation.
 - **Eigener AJAX-Code**, der POST-Anfragen sendet, muss das Token ebenfalls senden; die Skripte des Kernels und
   ezjscore tun das. Die `README.rst` der Extension zeigt, wie.
 - Ein abgelehntes Token wird mit 403 und der Seite „Formular abgelaufen“ beantwortet, und es wird kein Token ins Log
-  geschrieben ([Seite „Formular abgelaufen“](../../eng-us/features/6.0/form-expired-page.md)).
+  geschrieben ([Seite „Formular abgelaufen“](../funktionen/6.0/seite-abgelaufenes-formular.md)).
 - Eine Seite, die ein Token trägt, wird mit `Cache-Control: private` gesendet, sodass kein gemeinsam genutzter Cache
   eine angemeldete Seite mit ihrem Token speichert. Ein Reverse Proxy darf das nicht überschreiben (Abschnitt 13.10).
 
@@ -499,7 +499,7 @@ SecurityHeaders[Content-Security-Policy]=frame-ancestors 'self' https://edit.exa
 
 Seiten, die aus dem HTTP-Cache des Kernels beantwortet werden, tragen dieselben Header.
 
-**Velocity** sendet vier davon (alle außer der Content Security Policy) bei dem, was es selbst beantwortet (statische
+**Velocity** sendet vier davon (alle außer der Content Security Policy) bei dem, was er selbst beantwortet (statische
 Dateien, skalierte Bilder, seine eigenen Fehlerseiten, Weiterleitungen, 304-Antworten), über
 `[ServerSettings] ResponseHeaders[]` und ergänzt sie bei Skriptantworten, denen sie fehlen
 (`ResponseHeadersOnScripts=enabled`). **Apache und nginx** senden von sich aus bei statischen Dateien nichts
@@ -509,7 +509,7 @@ zusätzlich; fügen Sie sie dort hinzu, wenn Sie sie haben möchten (Apache `mod
 Eine vollständige Content Security Policy (`script-src`, `style-src`) wird aus `site.ini [ContentSecurityPolicy]`
 gesendet: standardmäßig nur als Bericht (report-only) in der Administration, ausgeschaltet auf den Sites, deren
 Designs und Extensions Inline-Skripte verwenden können. Beobachten Sie die Berichte (Browserkonsole, `ReportURI`),
-bevor Sie sie durchsetzen, siehe [Content Security Policy](../../eng-us/features/6.0/content-security-policy.md).
+bevor Sie sie durchsetzen, siehe [Content Security Policy](../funktionen/6.0/content-security-policy.md).
 
 ### Überall HTTPS
 
@@ -654,7 +654,7 @@ curl -s -o /dev/null -w '%{redirect_url}\n' -H 'X-Forwarded-Proto: https' http:/
 Hinter einem Proxy zeigt die Prüfung „Ist meine Adresse eingetragen?“ der Debug-Leiste `REMOTE_ADDR`, die Adresse, die der
 Kernel verwendet, und ob der Proxy-Header gelesen wurde. Einzelheiten und weitere Beispiele (Apache `mod_proxy`,
 nginx, Cloud-Load-Balancer, Cloudflare):
-[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../eng-us/bc/6.0/trusted-proxies.md).
+[Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../bc/6.0/vertrauenswuerdige-proxys.md).
 
 ### Cachende Proxys
 
@@ -701,7 +701,7 @@ Grundsätze (die Vorgehensweise steht in
   Einstellungsdatei mit `0640` an (`EZP_INI_SAVE_FILE_PERMISSION` in `config.php`); vorher machte jedes Speichern die
   Datei zu `0666`. Prüfen Sie einmal, dass keine Einstellungsdatei für alle beschreibbar geblieben ist:
   `find settings extension/*/settings -perm -o+w` darf nichts ausgeben
-  ([Upgrade-Hinweis](../../eng-us/bc/6.0/ini-save-file-permissions.md)). INI-Cache-Dateien haben `0644`
+  ([Upgrade-Hinweis](../bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md)). INI-Cache-Dateien haben `0644`
   (`EZP_INI_FILE_PERMISSION`).
 - **Logs** nennen Besucher: Velocity schreibt seine eigenen mit `0640` in ein Verzeichnis mit `0750`
   (`[LogSettings] FileMode`, `DirMode`), der Antwort-Cache mit denselben Modi.
@@ -726,7 +726,7 @@ Grundsätze (die Vorgehensweise steht in
 | Kontrollpanel `/Q/panel` | nur lokal, passwortgeschützt; setzen Sie das Passwort sofort auf einem Rechner, der aus dem Internet erreichbar ist; sein Speicher darf nicht für Gruppe oder andere beschreibbar sein |
 | HTTPS | ein Zertifikat einer Zertifizierungsstelle, HSTS erst erhöht, wenn alles HTTPS ist (Abschnitt 13.9) |
 | Konfigurationsdateien | `/etc/vc/sites-available/<site>.conf` hat `0600` (Zertifikatspfade, Token); belassen Sie es so |
-| Antwort-Cache | persönliche Seiten werden nie gecacht; wenn Sie das Session-Cookie umbenennen, prüfen Sie, dass `[CacheSettings] SkipCookies` abgeleitet bleibt oder es aufführt |
+| Antwort-Cache | persönliche Seiten werden nie gecacht; wenn Sie das Sitzungs-Cookie umbenennen, prüfen Sie, dass `[CacheSettings] SkipCookies` abgeleitet bleibt oder es aufführt |
 | Updates | Engine-Releases beheben auch Sicherheitsprobleme (Abschnitt 13.15); `exp:velocity deploy` nach einem Update |
 
 ---
@@ -795,14 +795,14 @@ Für den Produktivbetrieb:
 4. **Geben Sie `audit/read` nur den Rollen, die es brauchen**; standardmäßig hat nur die Rolle Administrator
    `audit/read` und `audit/manage`.
 5. **Datenschutz.** `[AuditPrivacySettings]` legt je Feld fest, was aufbewahrt wird: Adressen auf /24 und /48
-   gekürzt, die Session gehasht, E-Mail-Adressen gehasht, Passwörter und Tokens nie aufgezeichnet, personenbezogene
+   gekürzt, die Sitzung gehasht, E-Mail-Adressen gehasht, Passwörter und Tokens nie aufgezeichnet, personenbezogene
    Felder nach `PseudonymiseAfterDays` (90) pseudonymisiert. Passen Sie diese Werte an Ihre Datenschutzanforderungen
    an; die Abschnitte 4.12 und 6.4 der Audit-Anleitung beschreiben ein strenges Profil.
 6. **Leiten Sie es weiter** an ein zentrales Log oder SIEM über eine Senke (`[AuditSink_syslog]`,
    `[AuditSink_webhook]`), damit ein kompromittierter Rechner seine eigene Geschichte nicht unbemerkt umschreiben
    kann. Führen Sie `exp:audit verify` regelmäßig aus.
 
-Vollständige Anleitung: [Audit](../../eng-us/bc/6.0/audit.md).
+Vollständige Anleitung: [Audit](../bc/6.0/audit.md).
 
 ---
 
@@ -822,8 +822,8 @@ Vollständige Anleitung: [Audit](../../eng-us/bc/6.0/audit.md).
   festgelegt; ändern Sie sie gemeinsam.
 - **Überprüfen Sie Ihre eigenen Extensions** auf die Muster, die im Kernel behoben wurden (SQL, das aus Anfragedaten
   ohne `escapeString()` oder Integer-Casts gebaut wird, Shell-Befehle ohne `escapeshellarg()`, Ausgaben ohne
-  Escaping); siehe [die Härtungshinweise zu 6.0.13](../../eng-us/bc/6.0/hardening.md). Extensions, die von den RAD-Assistenten
-  vor deren Korrektur erzeugt wurden, sollten neu erzeugt werden ([RAD-Werkzeuge: Sicherheit](../../eng-us/bc/6.0/rad-security.md)).
+  Escaping); siehe [die Härtungshinweise zu 6.0.13](../bc/6.0/haertung.md). Extensions, die von den RAD-Assistenten
+  vor deren Korrektur erzeugt wurden, sollten neu erzeugt werden ([RAD-Werkzeuge: Sicherheit](../bc/6.0/rad-sicherheit.md)).
 - **Melden Sie eine Sicherheitslücke** an `security@se7enx.com`, nicht im öffentlichen Issue-Tracker
   ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
 
@@ -836,7 +836,7 @@ Vollständige Anleitung: [Audit](../../eng-us/bc/6.0/audit.md).
 - [ ] `settings/override/` nicht in der Versionsverwaltung, als Geheimnis gesichert, Modus `0640` oder strenger.
 - [ ] Das erzeugte Administratorpasswort geändert; `var/log/initial-admin-password` gelöscht.
 - [ ] Ein persönliches Administratorkonto pro Person; `admin` als Anmeldung stillgelegt; ein getestetes
-      Notfallverfahren ([Kontohygiene](../../eng-us/help/change-the-admin-password.md#account-hygiene)).
+      Notfallverfahren ([Kontohygiene](../hilfe/administratorpasswort-aendern.md#kontenhygiene)).
 - [ ] `[DebugSettings] DebugOutput=disabled`; PHP `display_errors=Off`.
 - [ ] `[SiteAccessSettings] CheckValidity=false`; die Administration auf einem eigenen Host, beschränkt per Netzwerk
       oder durch eine zweite Authentifizierung; Rollen nach dem Prinzip minimaler Rechte.
@@ -866,23 +866,23 @@ Vollständige Anleitung: [Audit](../../eng-us/bc/6.0/audit.md).
 In diesem Repository:
 
 - [Sicherheitsstandards vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md): Header,
-  Session-Cookie, Anmeldung, ausgelieferte Dateien, Caching persönlicher Seiten
-- [Sicherheitshärtung von 6.0.13](../../eng-us/bc/6.0/hardening.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md),
-  [RAD-Werkzeuge: Sicherheit](../../eng-us/bc/6.0/rad-security.md)
-- [Request-Regeln](../../eng-us/bc/6.0/view_full_security.md)
-- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../eng-us/bc/6.0/trusted-proxies.md); Code in
+  Sitzungs-Cookie, Anmeldung, ausgelieferte Dateien, Caching persönlicher Seiten
+- [Sicherheitshärtung von 6.0.13](../bc/6.0/haertung.md), [Härtung von Datentypen und Eingaben](../spezifikationen/6.0/datentyp-eingabehaertung.md),
+  [RAD-Werkzeuge: Sicherheit](../bc/6.0/rad-sicherheit.md)
+- [Request-Regeln](../bc/6.0/sicherheit-von-content-view-full.md)
+- [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../bc/6.0/vertrauenswuerdige-proxys.md); Code in
   `lib/ezutils/classes/eztrustedproxy.php` und `lib/ezutils/classes/ezsys.php`
-- [Das eigene Passwort ändern](../../eng-us/features/6.0/modern-password-change.md), [Hinweise zur Passwortänderung von Benutzern](../../eng-us/bc/6.0/user-password-change.md),
-  [Seite „Formular abgelaufen“](../../eng-us/features/6.0/form-expired-page.md)
-- [Die Exp-Debug-Leiste](../../eng-us/bc/6.0/debug-bar.md)
-- [Audit](../../eng-us/bc/6.0/audit.md)
+- [Das eigene Passwort ändern](../funktionen/6.0/moderne-passwortaenderung.md), [Hinweise zur Passwortänderung von Benutzern](../bc/6.0/benutzerpasswort-aendern.md),
+  [Seite „Formular abgelaufen“](../funktionen/6.0/seite-abgelaufenes-formular.md)
+- [Die Exp-Debug-Leiste](../bc/6.0/debug-leiste.md)
+- [Audit](../bc/6.0/audit.md)
 - [E-Mail-Einstellungen: Anleitung für Administratoren](../anleitungen/mail-einstellungen-administrator.md),
-  [Upgrade-Hinweise](../../eng-us/bc/6.0/mail-preferences.md)
-- [HTTP-Cache](../../eng-us/bc/6.0/httpcache.md)
+  [Upgrade-Hinweise](../bc/6.0/e-mail-einstellungen.md)
+- [HTTP-Cache](../bc/6.0/httpcache.md)
 - Velocity: [HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md),
-  [HTTPS und Zertifikate](../../eng-us/features/6.0/velocity-https-certificates.md),
-  [Kontrollpanel](../../eng-us/features/6.0/velocity-control-panel.md), [Engines](../../eng-us/bc/6.0/velocity-engines.md)
-- [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md) (das erzeugte Administratorpasswort)
+  [HTTPS und Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md),
+  [Kontrollpanel](../funktionen/6.0/velocity-control-panel.md), [Engines](../bc/6.0/velocity-engines.md)
+- [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md) (das erzeugte Administratorpasswort)
 - Die Einstellungen: [`settings/site.ini`](../../../settings/site.ini), [`settings/velocity.ini`](../../../settings/velocity.ini),
   [`settings/audit.ini`](../../../settings/audit.ini), [`settings/requestrules.ini`](../../../settings/requestrules.ini);
   die Regeln: [`.htaccess_root`](../../../.htaccess_root)
@@ -900,7 +900,7 @@ Extern:
   [Secure Headers Project](https://owasp.org/projects/secure-headers-project)
 - NIST [SP 800-63B-4, Digital Identity Guidelines: Authentication and Authenticator Management](https://pages.nist.gov/800-63-4/sp800-63b.html) (Revision 4, die Revision 3 ablöst)
 - PHP: [Sicherheit](https://www.php.net/manual/en/security.php),
-  [Session-Konfiguration](https://www.php.net/manual/en/session.configuration.php),
+  [Sitzungskonfiguration](https://www.php.net/manual/en/session.configuration.php),
   [display_errors](https://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors),
   [password_hash](https://www.php.net/manual/en/function.password-hash.php)
 - MDN: [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie),
@@ -917,3 +917,11 @@ Extern:
   `docs/https.md`, `docs/panel.md`)
 
 [Inhalt](README.md) · Zurück: [12. Fehlerbehebung](12-fehlerbehebung.md) · Weiter: [14. Migration von der 4.x-Linie](14-migration-von-4x.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

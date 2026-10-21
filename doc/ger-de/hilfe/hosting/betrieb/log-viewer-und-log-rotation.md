@@ -14,8 +14,8 @@ Logdateien Festplatten füllen. Sie beantwortet: wo die Logs einer Website geles
 wird, wie Sie die Zeilen einer gescheiterten Anfrage finden und wie Rotation, Komprimierung und Bereinigung auf einem Host
 funktionieren, auf dem mehrere Benutzer dieselben Logs schreiben.
 
-Die vollständigen Referenzen sind [Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md) und
-[Log-Rotation und Bereinigung](../../../../eng-us/features/6.0/log-rotation.md).
+Die vollständigen Referenzen sind [Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md) und
+[Log-Rotation und Bereinigung](../../../funktionen/6.0/log-rotation.md).
 
 ## Inhalt
 
@@ -185,5 +185,13 @@ zusätzlich rotiert, und nutzen Sie dort `copytruncate` oder `create <mode> <own
 - [Überblick über die Überwachung](ueberblick-ueber-die-ueberwachung.md)
 - [Festplatte voll](../runbooks/festplatte-voll.md) (Runbook)
 - [Aufbewahrung von Logs und Daten](../sicherheit/aufbewahrung-von-logs-und-daten.md)
-- [Der Log-Viewer](../../../../eng-us/features/6.0/log-viewer.md) (Referenz der Funktion)
+- [Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md) (Referenz der Funktion)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

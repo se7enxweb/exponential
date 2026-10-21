@@ -175,7 +175,7 @@ Eine PHP-Änderung braucht die Autoloads, die INI- und Template-Caches, das Engi
 ./console exp:velocity deploy --kernel      # a kernel class was added or renamed
 ```
 
-Die Tabelle der Schritte, die Gründe für die Reihenfolge, jede Option und ein Beispiellauf stehen unter [Velocity-Engines: eine PHP-Änderung ausrollen](../../bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy).
+Die Tabelle der Schritte, die Gründe für die Reihenfolge, jede Option und ein Beispiellauf stehen unter [Velocity-Engines: eine PHP-Änderung ausrollen](../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy).
 
 ## Weitere Befehle
 
@@ -241,7 +241,7 @@ bei jeder Anfrage aufgerufen werden: Derselbe Handler wird nur einmal behalten.
 
 Ab Exponential Velocity 0.0.4.51 beendet die Engine außerdem die Anfrage des Warm-ups, bevor
 sie ihre Worker abspaltet: Die Shutdown-Funktionen, die das Rendern des Warm-ups registriert hat, werden
-verworfen, ohne zu laufen, und die Header, Fehler- und Exception-Handler, die Session,
+verworfen, ohne zu laufen, und die Header, Fehler- und Exception-Handler, die Sitzung,
 die ini- und Umgebungsänderungen und die Ausgabepuffer, die es hinterließ, werden zurückgesetzt. Das gilt
 für jede Anwendung auf der Engine; `eZExecution::runForRequest()` bleibt die
 eigene Absicherung des Kernels, für eine ältere Engine. Auch das `$_SESSION` einer Anfrage endet mit
@@ -265,8 +265,9 @@ der Anfrage, wie unter PHP-FPM.
 - [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -77,15 +77,15 @@ X.8 Defects. A failure of the Standard on a page in scope is a defect under
 
 ## Was ein auf Exponential beruhendes Angebot zeigen kann
 
-Aus [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md):
+Aus [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md):
 
 - **X.3**: Die Administration admin4 und admin4l ist gegen Kriterien von WCAG 2.2 AA gebaut und durch Regressionstests
-  abgesichert; Status **Partly complies**. Die klassische Administration, admin3 und der Online-Editor sind nicht
+  abgesichert; Status **Teilweise erfüllt**. Die klassische Administration, admin3 und der Online-Editor sind nicht
   vollständig abgedeckt.
 - **X.2**: Öffentliche Designs sind **nicht geprüft**; die Bewertung ist die Arbeit des Bieters an dem Design, das er
-  liefert ([Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)).
+  liefert ([Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)).
 - **X.5**: Es gibt **kein VPAT und keinen Accessibility Conformance Report**; EN 301 549 und Section 508 sind
-  **Unverified**.
+  **Nicht geprüft**.
 - **X.6**: Im Produkt gibt es keine Vorlage für eine Erklärung zur Barrierefreiheit; der Bieter schreibt sie.
 - **X.7**: Design-Tests in `tests/tests/design/` laufen für admin4 in der CI; Läufe mit axe erfolgen manuell.
 
@@ -100,5 +100,5 @@ Aus [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibili
 - [Ausschreibungsvorlagen](README.md)
 - [Anforderungen an die Barrierefreiheit](../anforderungen/anforderungen-an-die-barrierefreiheit.md)
 - [Klausel zum Abnahmetest](klausel-abnahmetest.md)
-- [Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md)
+- [Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

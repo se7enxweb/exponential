@@ -29,16 +29,16 @@ die dokumentierten Zahlen mit ihrem Datum und zeigt, wo zwei Quellen unterschied
 Exponential trennt die Sprache der **Inhalte** von der Sprache der **Administration**. „268 Locale-Dateien (261
 Sprachen und Länder, [eine Testsprache] und 6 Varianten, in 32 Schriften, 40 davon von rechts nach links geschrieben)
 lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt 33 Übersetzungen der Administration, neunzehn
-davon vollständig“ ([Sprachen in Exponential](../../../eng-us/languages.md)). Wenn ein Redakteur eine Oberflächensprache mit
+davon vollständig“ ([Sprachen in Exponential](../../sprachen.md)). Wenn ein Redakteur eine Oberflächensprache mit
 Schreibrichtung von rechts nach links wählt, „dreht sich die Administration um“: Die Seite sagt `dir="rtl"`, die
-Seitenspalten tauschen die Plätze, und Text beginnt rechts ([Rechts nach links](../../../eng-us/features/6.0/right-to-left.md)).
+Seitenspalten tauschen die Plätze, und Text beginnt rechts ([Rechts nach links](../../funktionen/6.0/rechts-nach-links.md)).
 Das meiste davon kam im Oktober 2026, in der Entwicklungslinie 6.0.15, die nicht veröffentlicht ist.
 
 ## Was neu ist, und seit wann
 
 | Was | Wann | Quelle |
 |---|---|---|
-| Vollständige englische und deutsche Kataloge, ein Übersetzungsstring für fast jeden sichtbaren Text | 27. und 28. September 2026 | [Übersetzungen und Sprachen](../../../eng-us/features/6.0/translations-and-languages.md) |
+| Vollständige englische und deutsche Kataloge, ein Übersetzungsstring für fast jeden sichtbaren Text | 27. und 28. September 2026 | [Übersetzungen und Sprachen](../../funktionen/6.0/uebersetzungen-und-sprachen.md) |
 | 89 neue Locales und eine Seite für jede Sprache | 15. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-89-new-locales-and-one-page-for-every-language) |
 | Sprachen mit Schreibrichtung von rechts nach links, Hebräisch, Latein, Klingonisch und 81 weitere Locales | 16. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#16-october-2026-right-to-left-languages-hebrew-latin-klingon-and-81-more-locales) |
 | Die Administration auf Arabisch, maschinell unterstützt und noch von einem Muttersprachler zu prüfen | 18. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#18-october-2026-the-administration-in-arabic-and-hebrew-for-the-newest-strings) |
@@ -47,19 +47,19 @@ Das meiste davon kam im Oktober 2026, in der Entwicklungslinie 6.0.15, die nicht
 
 | Fakt | Quelle |
 |---|---|
-| 268 Locale-Dateien, 40 von rechts nach links geschrieben, in 32 Schriften (Stand 15. Oktober 2026). | [Sprachen in Exponential](../../../eng-us/languages.md) |
-| 33 Übersetzungen der Administration, neunzehn vollständig (19. Oktober 2026): `eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko, Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien), Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Latein und Klingonisch. Alle außer `eng-US` und `ger-DE` entstanden zumindest teilweise maschinell unterstützt. | [Sprachen in Exponential, Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels) |
+| 268 Locale-Dateien, 40 von rechts nach links geschrieben, in 32 Schriften (Stand 15. Oktober 2026). | [Sprachen in Exponential](../../sprachen.md) |
+| 33 Übersetzungen der Administration, neunzehn vollständig (19. Oktober 2026): `eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko, Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien), Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Latein und Klingonisch. Alle außer `eng-US` und `ger-DE` entstanden zumindest teilweise maschinell unterstützt. | [Sprachen in Exponential, Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
 | Jede Übersetzung eines Elements wird für sich veröffentlicht; Kennzeichen zeigen, was vorhanden ist und was fehlt. | [Sprachen](../sprachen.md) |
-| Ein Land ohne eigene Übersetzung fällt auf eine verwandte zurück, zum Beispiel jedes deutschsprachige Land auf Deutsch. | [Sprachen in Exponential, Unterstützungsstufen](../../../eng-us/languages.md#2-support-levels) |
-| Eine Seite mit Schreibrichtung von links nach rechts bleibt nach der Arbeit an rechts nach links „Byte für Byte dasselbe Markup“. | [Rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
-| Für die Sprachen ist zur Laufzeit keine PHP-Erweiterung nötig. | [Sprachen in Exponential, Abschnitt 10](../../../eng-us/languages.md#10-no-php-extension-at-run-time) |
-| Eine Installation kann auf 64-Bit-PHP höchstens 62 Inhaltssprachen enthalten. | [Sprachen in Exponential, Abschnitt 11](../../../eng-us/languages.md#11-the-limit-of-62-content-languages) |
-| Mehrere vollständige Übersetzungen entstanden maschinell unterstützt; eine Prüfung durch Muttersprachler ist erwünscht. | [Sprachen in Exponential, Abschnitt 8](../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation) |
+| Ein Land ohne eigene Übersetzung fällt auf eine verwandte zurück, zum Beispiel jedes deutschsprachige Land auf Deutsch. | [Sprachen in Exponential, Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
+| Eine Seite mit Schreibrichtung von links nach rechts bleibt nach der Arbeit an rechts nach links „Byte für Byte dasselbe Markup“. | [Rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
+| Für die Sprachen ist zur Laufzeit keine PHP-Erweiterung nötig. | [Sprachen in Exponential, Abschnitt 10](../../sprachen.md#10-keine-php-extension-zur-laufzeit) |
+| Eine Installation kann auf 64-Bit-PHP höchstens 62 Inhaltssprachen enthalten. | [Sprachen in Exponential, Abschnitt 11](../../sprachen.md#11-die-grenze-von-62-inhaltssprachen) |
+| Mehrere vollständige Übersetzungen entstanden maschinell unterstützt; eine Prüfung durch Muttersprachler ist erwünscht. | [Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen) |
 
 ## Wo die Quellen voneinander abweichen
 
 Das README zählt „219 locales, 170 of them new“ ([README, Recent improvements](https://github.com/se7enxweb/exponential/blob/main/README.md#recent-improvements-to-exponential)),
-während [Sprachen in Exponential](../../../eng-us/languages.md) am 15. Oktober 2026 268 Locale-Dateien zählt. Locales kamen im
+während [Sprachen in Exponential](../../sprachen.md) am 15. Oktober 2026 268 Locale-Dateien zählt. Locales kamen im
 Oktober in mehreren Schritten hinzu; verwenden Sie also die datierte Zahl der Sprachenseite und nennen Sie ihr Datum.
 
 ## Was Sie nicht behaupten sollten
@@ -99,8 +99,8 @@ Oktober in mehreren Schritten hinzu; verwenden Sie also die datierte Zahl der Sp
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

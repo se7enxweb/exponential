@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Eigentümer und die Shop-Leitung. Sie hilft Ihnen zu entscheiden, welche Bestellstatus Ihr Team
 verwendet, sie aufzuschreiben, damit alle sie gleich setzen, und sie zu überprüfen, wenn sich Ihr Ablauf ändert. Die
 vollständige Tabelle der Status, mit der Bedeutung von „abgeschlossen“, „kein Umsatz“ und „wartet auf den Kunden“ für
-das Dashboard, steht unter [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md).
+das Dashboard, steht unter [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md).
 
 ## Die ausgelieferten Status in einfachen Worten
 
@@ -88,7 +88,7 @@ Status ist dann richtig, wenn Ihr Ablauf einen Schritt hat, den die ausgeliefert
 > **Hinweis**
 > Wenn Ihr Shop vor 6.0.15 eigene Status mit den Nummern 4 bis 17 angelegt hat, prüfen Sie nach dem Update die
 > Statusliste. Das Update fügt jeden ausgelieferten Status nur hinzu, wenn noch kein Status diese Nummer hat
-> ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+> ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ## Festlegen, wer welchen Status setzt
 
@@ -108,6 +108,14 @@ Rolle nur die Wechsel erlauben kann, die zur Aufgabe der Person passen. Die Vors
 
 - [Bestellungen im Alltag](bestellungen-im-alltag.md)
 - [Retouren und Erstattungen](retouren-und-erstattungen.md)
-- [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
+- [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)
 - [Bestellungen und Bestellstatus für Unternehmen](../../unternehmen/shops/bestellungen-und-bestellstatus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

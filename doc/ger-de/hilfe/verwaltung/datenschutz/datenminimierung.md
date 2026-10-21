@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Datenschutzbeauftragte, Administratoren und Entwickler. Erheben Sie nur, was Sie brauchen,
 bewahren Sie nur auf, was Sie müssen, und maskieren Sie, was Sie anzeigen. Exponential minimiert mehrere seiner
 eigenen Aufzeichnungen standardmäßig; der Rest ist eine Frage von Konfiguration und Gestaltung
-([Datenschutzstandards: DSGVO](../../../../eng-us/standards/privacy.md#gdpr)).
+([Datenschutzstandards: DSGVO](../../../standards/datenschutz.md#dsgvo)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -28,7 +28,7 @@ eigenen Aufzeichnungen standardmäßig; der Rest ist eine Frage von Konfiguratio
 
 | Aufzeichnung | Minimierung in der Voreinstellung |
 |---|---|
-| Audit-Trail | Adressen auf /24 gekürzt (IPv6 /48); Sitzungskennungen gehasht; User-Agents auf Browser- und Betriebssystemfamilie reduziert; E-Mail-Adressen und Anmeldeversuche unbekannter Benutzer gehasht; keine Inhaltswerte, Passwörter, Token oder POST-Inhalte; Lesezugriffe aus; Index nach 90 Tagen pseudonymisiert |
+| Prüfprotokoll | Adressen auf /24 gekürzt (IPv6 /48); Sitzungskennungen gehasht; User-Agents auf Browser- und Betriebssystemfamilie reduziert; E-Mail-Adressen und Anmeldeversuche unbekannter Benutzer gehasht; keine Inhaltswerte, Passwörter, Token oder POST-Inhalte; Lesezugriffe aus; Index nach 90 Tagen pseudonymisiert |
 | `404.log`, `security.log` | Client-Adressen maskiert (`MaskIP=enabled`); jeder Abfragewert in 404.log `***`; User-Agent gehasht und gekürzt |
 | Protokollbetrachter | E-Mail-Adressen, IP-Adressen und Geheimnisse auf dem Bildschirm und in Downloads maskiert |
 | E-Mail-Sperrliste | nur ein gesalzener Hash jeder Adresse |
@@ -66,14 +66,15 @@ eigenen Aufzeichnungen standardmäßig; der Rest ist eine Frage von Konfiguratio
 
 ## Verwandte Seiten
 
-- [Datenschutzstandards](../../../../eng-us/standards/privacy.md)
+- [Datenschutzstandards](../../../standards/datenschutz.md)
 - [Wo personenbezogene Daten in Exponential liegen](bestandsaufnahme-personenbezogener-daten.md)
 - [Checkliste Datenschutz durch Technikgestaltung](checkliste-datenschutz-durch-technikgestaltung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

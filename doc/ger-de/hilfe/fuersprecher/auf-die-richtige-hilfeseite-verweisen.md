@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Fürsprecher, die Fragen mit Links beantworten. Suchen Sie die Frage links und schicken Sie die
 Seite rechts. In der Administration lässt sich die Hilfe auch durchsuchen: Drücken Sie `/` im Hilfe-Center oder nutzen
-Sie das Menü „?“ ([Das Hilfesystem, Eine Seite finden](../../../eng-us/features/6.0/help-system.md#finding-a-page)).
+Sie das Menü „?“ ([Das Hilfesystem, Eine Seite finden](../../funktionen/6.0/hilfesystem.md#eine-seite-finden)).
 
 ## Inhalt
 
@@ -40,26 +40,26 @@ Sie das Menü „?“ ([Das Hilfesystem, Eine Seite finden](../../../eng-us/feat
 
 | Frage | Seite |
 |---|---|
-| „Wie installiere ich es?“ | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md), [Inhalt des Installationsbuchs](../../installation/README.md) |
+| „Wie installiere ich es?“ | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md), [Inhalt des Installationsbuchs](../../installation/README.md) |
 | „Welche Datenbank?“ | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | „Welches Betriebssystem?“ | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md) |
 | „Wie sichere ich es ab?“ | [Sicherheitshärtung](../sicherheitshaertung.md) |
 | „Wie lautet das Standardpasswort des Administrators?“ | [Das Standardpasswort des Administrators](../standard-administratorpasswort.md) |
 | „Wie aktualisiere ich?“ | [Upgrade](../../installation/11-aktualisieren.md), [Die Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
-| „Wo sind die Logs?“ | [Log-Viewer](../../../eng-us/features/6.0/log-viewer.md) |
-| „Wer hat was getan?“ | [Das Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) |
-| „Wie betreibe ich Velocity?“ | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md) |
+| „Wo sind die Logs?“ | [Log-Viewer](../../funktionen/6.0/log-betrachter.md) |
+| „Wer hat was getan?“ | [Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) |
+| „Wie betreibe ich Velocity?“ | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
 
 ## Entwickler
 
 | Frage | Seite |
 |---|---|
 | „Wie installiere ich mit Git und trage bei?“ | [Mit Git entwickeln](../mit-git-entwickeln.md) |
-| „Wie baue ich eine Erweiterung?“ | [Erweiterungen](../../anleitungen/extensions.md), [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md) |
+| „Wie baue ich eine Erweiterung?“ | [Erweiterungen](../../anleitungen/extensions.md), [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md) |
 | „Wie ändere ich Templates?“ | [Templates und Design](../../anleitungen/templates-und-design.md) |
 | „Gibt es eine API?“ | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
-| „Was bedeutet dieser Begriff?“ | [Das Glossar](../../../eng-us/glossary.md) |
-| „Was hat sich in einem Release geändert?“ | [Änderungsprotokolle](../../../changelogs/README.md), [Die Geschichte](../../../eng-us/history/README.md) |
+| „Was bedeutet dieser Begriff?“ | [Das Glossar](../../glossar.md) |
+| „Was hat sich in einem Release geändert?“ | [Änderungsprotokolle](../../../changelogs/README.md), [Die Geschichte](../../geschichte/README.md) |
 
 ## Zum Projekt
 
@@ -76,3 +76,11 @@ Sie das Menü „?“ ([Das Hilfesystem, Eine Seite finden](../../../eng-us/feat
 - [Häufige Fragen von Neuen](faq-fuer-neue.md)
 - [Hilfe für Redakteure und Benutzer](../README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

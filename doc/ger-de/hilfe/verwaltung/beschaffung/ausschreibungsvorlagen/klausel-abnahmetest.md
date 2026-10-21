@@ -57,19 +57,19 @@ A.7 Warranty period. Acceptance does not end the Supplier's obligation to
 | Bereich | Was zu testen ist | Prüfungen und Seiten des Produkts |
 |---|---|---|
 | Funktionen | jede funktionale Anforderung, je Rolle | [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md), [Workflows](../../../../anleitungen/workflows.md) |
-| Barrierefreiheit | Bewertung der öffentlichen Seiten im Umfang nach WCAG-EM; Nutzung des Editors mit Tastatur und Screenreader | [Klausel zur Barrierefreiheit](klausel-barrierefreiheit.md), [Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
+| Barrierefreiheit | Bewertung der öffentlichen Seiten im Umfang nach WCAG-EM; Nutzung des Editors mit Tastatur und Screenreader | [Klausel zur Barrierefreiheit](klausel-barrierefreiheit.md), [Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
 | Sicherheitskonfiguration | jede Einstellung in der Anlage zur sicheren Konfiguration; Header; HTTPS | [Klausel zur Sicherheit](klausel-sicherheit.md), [13.16 Checkliste zum Livegang](../../../../installation/13-sicherheitshaertung.md#1316-checkliste-für-den-livegang) |
 | Systemzustand | Zustandsprüfungen unter **Setup > Systeminformationen** ohne Fehler | [Systeminformationen](../../../../anleitungen/systeminformationen.md) |
 | Integrität der Dateien | **Setup > Upgrade-Prüfung** listet Abweichungen vom Release | [Die Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) |
-| Integrität der Inhalte | defekte Beziehungen, fehlende Dateien | [Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md), [Fehlende Dateien](../../../../anleitungen/fehlende-dateien.md) |
+| Integrität der Inhalte | defekte Beziehungen, fehlende Dateien | [Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md), [Fehlende Dateien](../../../../anleitungen/fehlende-dateien.md) |
 | Sprachen | jede Sprache und Schreibrichtung | [Klausel zur Mehrsprachigkeit](klausel-mehrsprachigkeit.md) |
 | Leistung | Seitenzeiten unter der erwarteten Last | [Benchmarking](../../../../anleitungen/benchmarking.md) |
-| Audit | Anmeldung, Veröffentlichen und Entfernen erscheinen im Audit-Protokoll; `./console exp:audit verify` besteht | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Audit | Anmeldung, Veröffentlichen und Entfernen erscheinen im Audit-Protokoll; `./console exp:audit verify` besteht | [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | Sicherung und Wiederherstellung | eine vollständige Wiederherstellung in einer separaten Umgebung | [Wiederherstellung und Wiederherstellungstests](../../../hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md) |
 | Ausstieg | ein vollständiger Export, gegen die Zahlen geprüft | [Klausel zu Ausstieg und Datenrückgabe](klausel-ausstieg-und-datenrueckgabe.md) |
 | Dokumentation | ein Dritter folgt der Installationsdokumentation | [Klausel zur Dokumentation](klausel-dokumentation.md) |
 
-Eine Liste zum Start für Website-Ersteller steht in [Checkliste zum Start](../../../../../eng-us/help/creators/website-creators/launch-checklist.md);
+Eine Liste zum Start für Website-Ersteller steht in [Checkliste zum Start](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md);
 die Version für Hoster in [Livegang einer neuen Kundenwebsite](../../../hosting/checklisten/checkliste-fuer-den-start-einer-kunden-website.md).
 
 ## Mängelklassen

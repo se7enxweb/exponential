@@ -17,8 +17,8 @@ mitgelieferten Erweiterungen können Ihre Templates betreffen; früh davon zu wi
 | Quelle | Was sie enthält |
 |---|---|
 | `doc/changelogs/6.0/<version>.md` im Repository | Das Changelog jedes Releases; das in Entwicklung (6.0.15) wird fortgeschrieben, sobald Arbeit hinzukommt |
-| `doc/eng-us/bc/6.0/` | Upgrade-Hinweise zu Änderungen, die Handeln verlangen, zum Beispiel [Entfernung von YUI](../../../../eng-us/bc/6.0/yui-removal.md) |
-| `doc/eng-us/features/6.0/` | Was eine neue Funktion tut, zum Beispiel [jQuery 4 in der Administration, und YUI ist weg](../../../../eng-us/features/6.0/jquery4-and-yui-removal.md) |
+| `doc/eng-us/bc/6.0/` | Upgrade-Hinweise zu Änderungen, die Handeln verlangen, zum Beispiel [Entfernung von YUI](../../../bc/6.0/yui-entfernung.md) |
+| `doc/eng-us/features/6.0/` | Was eine neue Funktion tut, zum Beispiel [jQuery 4 in der Administration, und YUI ist weg](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md) |
 | Releases und Tags von `se7enxweb/exponential` und der Erweiterungen, die Sie verwenden | Versionen, wie veröffentlicht |
 | Neuigkeiten und RSS von [projects.exponential.earth](https://projects.exponential.earth/) (`/rss/feed/projects-news`, `/rss/feed/git`) | Ankündigungen und neueste Git-Änderungen |
 | Blogs auf [share.exponential.earth](https://share.exponential.earth/) | Release-Ankündigungen |
@@ -40,8 +40,9 @@ mitgelieferten Erweiterungen können Ihre Templates betreffen; früh davon zu wi
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für
-Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen früher
-bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

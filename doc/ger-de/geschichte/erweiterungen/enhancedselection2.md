@@ -1,8 +1,8 @@
 # enhancedselection2 (Datentyp Auswahl): Chronik
 
-Der Auswahl-Datentyp, der Bezeichner speichert, wechselte 2024 den Vendor und erhielt Ende September und im Oktober 2026 eine Korrektur für PostgreSQL, Übersetzungen und eine Reparatur seiner Templates für die Mehrfachauswahl. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/enhancedselection2.md).
+Der Auswahl-Datentyp, der Bezeichner speichert, wechselte 2024 den Vendor und erhielt Ende September und im Oktober 2026 eine Korrektur für PostgreSQL, Übersetzungen und eine Reparatur seiner Templates für die Mehrfachauswahl. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/enhancedselection2.md).
 
-Diese Seite führt **jede der 15 Änderungen** des Repositorys `enhancedselection2` zwischen 2024-03-06 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/enhancedselection2.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/enhancedselection2.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/enhancedselection2.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 15 Änderungen** des Repositorys `enhancedselection2` zwischen 2024-03-06 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/enhancedselection2.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/enhancedselection2.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/enhancedselection2.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -64,7 +64,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/enhancedselection2.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/enhancedselection2.md)
 - [Release Notes](../../../changelogs/extensions/enhancedselection2.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/enhancedselection2.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

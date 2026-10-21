@@ -28,7 +28,7 @@ Diese Seite richtet sich an Projektverantwortliche und Administratorinnen und Ad
 | Anforderung | Exponential | Lesen |
 |---|---|---|
 | Freigabe vor dem Veröffentlichen | Ereignis *Freigeben* mit medizinischen Freigebenden | [Workflows](../../../../anleitungen/workflows.md) |
-| Wer was wann freigegeben hat | Elemente der Zusammenarbeit und das Audit-Protokoll | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Wer was wann freigegeben hat | Elemente der Zusammenarbeit und das Audit-Protokoll | [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | Was sich zwischen Versionen geändert hat | **Vergleichen** auf der Versionsseite | [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md) |
 | Hinweise nach Plan überprüft | ein Attribut für das Überprüfungsdatum; eine Template-Liste überfälliger Themen | [Inhaltsmodell für den öffentlichen Gesundheitsdienst](inhaltsmodell.md) |
 | Veraltete Hinweise aus der Ansicht entfernt | verbergen; `hide.php` für datierte Inhalte | [Cronjobs](../../../../anleitungen/cronjobs.md) |
@@ -43,9 +43,9 @@ Gesundheitsinformationen müssen alle erreichen. In der EU gilt die
 Staaten gilt [Section 508](https://www.section508.gov/) für Bundesbehörden und die
 [Leitlinie zum Plain Writing Act](https://www.plainlanguage.gov/) für Texte der Bundesverwaltung.
 
-Status von Exponential: Administration admin4 **Partly complies** mit WCAG 2.2 AA; EN 301 549 und Section 508
-**Unverified**; öffentliche Designs nicht geprüft; kein VPAT
-([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)). Für Gesundheitsinhalte:
+Status von Exponential: Administration admin4 erfüllt WCAG 2.2 AA **teilweise**; EN 301 549 und Section 508
+**Nicht geprüft**; öffentliche Designs nicht geprüft; kein VPAT
+([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)). Für Gesundheitsinhalte:
 
 | Praxis | Warum |
 |---|---|
@@ -60,7 +60,7 @@ Status von Exponential: Administration admin4 **Partly complies** mit WCAG 2.2 A
 |---|---|
 | Warnungen in mehreren Sprachen innerhalb von Stunden | Übersetzungen je Objekt; Übersetzende mit einer Einschränkung nach Sprache |
 | Eine Seite angezeigt, auch wenn sie noch nicht übersetzt ist | „Immer verfügbar“ entscheidet, ob die Hauptsprache in anderen Siteaccesses angezeigt wird |
-| Sprachen von rechts nach links | unterstützt ([Sprachen von rechts nach links](../../../../../eng-us/features/6.0/right-to-left.md)) |
+| Sprachen von rechts nach links | unterstützt ([Sprachen von rechts nach links](../../../../funktionen/6.0/rechts-nach-links.md)) |
 | Welche Seiten es in welcher Sprache gibt | der Reiter **Übersetzungen** eines Objekts; `/content/translations` listet die Sprachen |
 
 Siehe [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) und
@@ -73,9 +73,9 @@ Ein Ausbruch kann den Verkehr plötzlich vervielfachen. Die Werkzeuge von Expone
 | Werkzeug | Wirkung | Lesen |
 |---|---|---|
 | Ansichts-Cache | dargestellte Seiten wiederverwendet | [Caches](../../../../anleitungen/caches.md) |
-| Statischer Cache | Seiten als einfache Dateien, vom Webserver ausgeliefert | [Generator für den statischen Cache](../../../../../eng-us/features/6.0/static-cache-generator.md) |
-| Antwort-Cache von Velocity | Antworten aus dem Speicher ausgeliefert | [Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md) |
-| Ein vorgeschaltetes CDN | Verkehr anderswo aufgefangen | [HTTP-Caching und CDNs](../../../../../eng-us/help/creators/website-creators/http-caching-and-cdns.md) |
+| Statischer Cache | Seiten als einfache Dateien, vom Webserver ausgeliefert | [Generator für den statischen Cache](../../../../funktionen/6.0/generator-fuer-den-statischen-cache.md) |
+| Antwort-Cache von Velocity | Antworten aus dem Speicher ausgeliefert | [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md) |
+| Ein vorgeschaltetes CDN | Verkehr anderswo aufgefangen | [HTTP-Caching und CDNs](../../../ersteller/website-ersteller/http-caching-und-cdns.md) |
 
 Statische Seiten und Caches müssen aufgefrischt werden, wenn sich eine Warnung ändert: Das Veröffentlichen leert den
 Ansichts-Cache des Objekts und verwandter Seiten; ein statischer Cache oder ein CDN braucht seine eigene Auffrischung.
@@ -86,20 +86,21 @@ Proben Sie das.
 Gesundheitsdaten sind in der EU eine besondere Kategorie im Sinne der
 [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj). Halten Sie sie aus Formularen der Website heraus; verwenden Sie
 klinische und Buchungssysteme. Exponential maskiert IP-Adressen in Protokollen und pseudonymisiert Audit-Einträge
-([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)); es hat kein Cookie-Banner, und Analysedienste Dritter auf
+([Datenschutzstandards](../../../../standards/datenschutz.md)); es hat kein Cookie-Banner, und Analysedienste Dritter auf
 Gesundheitsseiten verraten, was Menschen nachschlagen, wählen Sie Statistiken also mit Sorgfalt
-([Statistik und Analyse](../../../../../eng-us/help/creators/website-creators/statistics-and-analytics.md)).
+([Statistik und Analyse](../../../ersteller/website-ersteller/besucherstatistik-und-analyse.md)).
 
 ## Verwandte Seiten
 
 - [Öffentliche Gesundheit](README.md)
 - [Die ersten 90 Tage für den öffentlichen Gesundheitsdienst](die-ersten-90-tage.md)
-- [Leistung und Caching](../../../../../eng-us/help/creators/website-creators/performance-and-caching.md)
+- [Leistung und Caching](../../../ersteller/website-ersteller/leistung-und-caching.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

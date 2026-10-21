@@ -37,8 +37,8 @@ veröffentlicht und unter Last ausgeliefert werden können. Der Plan setzt vorau
 | Schritt | Lesen |
 |---|---|
 | Normale Last und Spitzenlast aus vergangenen Einsätzen messen | Ihre Statistiken |
-| Den statischen Cache und die Auslagerungsregeln konfigurieren; ihn erzeugen | [Generator für den statischen Cache](../../../../../eng-us/features/6.0/static-cache-generator.md) |
-| Über den Antwort-Cache von Velocity und ein CDN entscheiden | [Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md), [HTTP-Caching und CDNs](../../../../../eng-us/help/creators/website-creators/http-caching-and-cdns.md) |
+| Den statischen Cache und die Auslagerungsregeln konfigurieren; ihn erzeugen | [Generator für den statischen Cache](../../../../funktionen/6.0/generator-fuer-den-statischen-cache.md) |
+| Über den Antwort-Cache von Velocity und ein CDN entscheiden | [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md), [HTTP-Caching und CDNs](../../../ersteller/website-ersteller/http-caching-und-cdns.md) |
 | Lasttest mit eingeschalteten Caches | ein gemessenes Ergebnis über der erwarteten Spitze |
 | Test: auf einer Testinstallation PHP oder die Datenbank anhalten; antworten statische Seiten weiterhin? | [Warnungen, Verfügbarkeit](warnungen-verfuegbarkeit-wartung-und-statischer-cache.md) |
 | Den Wartungsmodus proben | [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) |
@@ -51,8 +51,8 @@ veröffentlicht und unter Last ausgeliefert werden können. Der Plan setzt vorau
 | Vorsorge- und Vorbeugungsratgeber in einfacher Sprache schreiben | [Schwerpunkte der Anforderungen](schwerpunkte-der-anforderungen.md) |
 | Wichtige Anweisungen in die Hauptsprachen des Gebiets übersetzen | [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md) |
 | Vollständiger Einsatzprobelauf in der Nacht mit dem Bereitschaftsteam | das Verfahren |
-| Test der Barrierefreiheit auf einem Telefon mit einem Screenreader | [Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
-| Start | [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md) |
+| Test der Barrierefreiheit auf einem Telefon mit einem Screenreader | [Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md) |
+| Start | [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md) |
 
 Prüfungen beim Start:
 
@@ -73,12 +73,13 @@ Prüfungen beim Start:
 
 - [Rettungsdienste](README.md)
 - [Warnungen, Verfügbarkeit, Wartungsmodus und statischer Cache](warnungen-verfuegbarkeit-wartung-und-statischer-cache.md)
-- [Start-Checkliste](../../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Start-Checkliste](../../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

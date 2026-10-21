@@ -25,7 +25,7 @@ ist oft ja, und die Details zählen: Exponential dokumentiert seine Unterstützu
 | Sagen Sie | Quelle |
 |---|---|
 | „Sechs Datenbanken werden unterstützt, in dieser offiziellen Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL.“ | [Datenbankunterstützung](../datenbankunterstuetzung.md#die-unterstützten-datenbanken-in-ihrer-reihenfolge) |
-| „SQLite ist der Standard: eine vollständige Website ohne Datenbankserver.“ | [Datenbankunterstützung, SQLite 3](../datenbankunterstuetzung.md#1-sqlite-3-der-standard), [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| „SQLite ist der Standard: eine vollständige Website ohne Datenbankserver.“ | [Datenbankunterstützung, SQLite 3](../datenbankunterstuetzung.md#1-sqlite-3-der-standard), [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | „Betriebssysteme sind in vier Stufen dokumentiert, von getestet bis theoretisch.“ | [Betriebssystemunterstützung, Die vier Stufen](../betriebssystemunterstuetzung.md#die-vier-stufen) |
 | „PHP 8.0 oder später auf fast jedem Betriebssystem, mit vielen Webservern.“ | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md#webserver) |
 | „Container, Cloud-Maschinen und Hosting-Panels sind abgedeckt.“ | [Container, Cloud und Hosting-Panels](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |
@@ -83,3 +83,11 @@ nur „es läuft auf X“.
 - [Hosting, Datenbank und Betriebssystem wählen](../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
 - [Exponential sachlich vergleichen, Keine Bindung](../geschaeft/exponential-sachlich-vergleichen.md#keine-herstellerbindung-punkt-für-punkt)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

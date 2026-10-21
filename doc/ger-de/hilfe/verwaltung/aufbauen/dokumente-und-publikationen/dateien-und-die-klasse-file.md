@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Site-Ersteller und Redakteure, die Dokumente auf eine Site des öffentlichen Sektors
 stellen. Ein Dokument ist ein Objekt **File**, das die Datei in einem Attribut `ezbinaryfile` enthält; Seiten verlinken
-oder verknüpfen es. Quellen: [Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md) und
+oder verknüpfen es. Quellen: [Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md) und
 [Medien und Uploads](../../../medien-und-uploads.md).
 
 ## Inhalt
@@ -41,7 +41,7 @@ File-Objekte sind „immer verfügbar“ und erscheinen daher in jedem Sprach-Si
 | Die Upload-Seite: viele Dateien per Schaltfläche, Ziehen oder Einfügen, mit einem Titel je Datei und **Keep as drafts** | **Hochladen** an einem Ordner, **Dateien hochladen** im Dashboard ([Medien und Uploads](../../../medien-und-uploads.md#dateien-hochladen)) |
 | Aus einem Bearbeitungsformular: **Neu hochladen** in einem Beziehungsfeld | legt ein File-Objekt an und verknüpft es |
 | Ein File-Objekt von Hand anlegen | **Neu erstellen** > **File** |
-| ezmultiupload | **Mehrere Dateien hochladen** ([ezmultiupload](../../../../../eng-us/features/6.0/extensions/ezmultiupload.md)) |
+| ezmultiupload | **Mehrere Dateien hochladen** ([ezmultiupload](../../../../funktionen/6.0/erweiterungen/ezmultiupload.md)) |
 
 Dateien, die keine Bilder sind, werden zu File-Objekten (`settings/upload.ini`, `DefaultClass=file`). Geben Sie jedem
 einen echten Titel; voreingestellt ist der Dateiname.
@@ -65,7 +65,7 @@ darf. Das View-Template des Dateiattributs erzeugt einen Link mit Name und Grö�
 
 Sagen Sie Besuchern Format und Größe, bevor sie klicken („Jahresbericht 2025 (PDF, 2,4 MB)“). Für Ihr eigenes Markup
 enthält der Inhalt des Attributs den ursprünglichen Dateinamen, die Größe und den MIME-Typ
-([Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md#download-links-in-templates)).
+([Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md#download-links-in-templates)).
 
 ## In Dateien suchen
 
@@ -78,12 +78,13 @@ gute Beschreibung.
 
 - [Dokumente und Publikationen](README.md)
 - [Aufbau einer Dokumentenbibliothek](aufbau-einer-dokumentenbibliothek.md)
-- [Die Medienbibliothek ordnen](../../../../../eng-us/help/creators/website-creators/organizing-the-media-library.md)
+- [Die Medienbibliothek ordnen](../../../ersteller/website-ersteller/die-medienbibliothek-organisieren.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

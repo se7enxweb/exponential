@@ -139,7 +139,7 @@ und Exponential UI, mit dem gewohnten Aussehen.
 
 ## Verwandte Seiten
 
-- [jQuery 4 in der Administration, und YUI ist weg](../../../eng-us/features/6.0/jquery4-and-yui-removal.md)
-- [ezjscore: JavaScript- und CSS-Packer, Serveraufrufe, jQuery](../../../eng-us/features/6.0/extensions/ezjscore.md)
+- [jQuery 4 in der Administration, und YUI ist weg](../../funktionen/6.0/jquery4-und-entfernung-von-yui.md)
+- [ezjscore: JavaScript- und CSS-Packer, Serveraufrufe, jQuery](../../funktionen/6.0/erweiterungen/ezjscore.md)
 - [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)
-- [März 2024](../../../eng-us/history/2024/2024-03.md)
+- [März 2024](../../geschichte/2024/2024-03.md)

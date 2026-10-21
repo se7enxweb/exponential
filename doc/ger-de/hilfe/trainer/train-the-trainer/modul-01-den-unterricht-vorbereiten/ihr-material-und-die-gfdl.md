@@ -67,7 +67,7 @@ und Ihnen als Herausgeber sowie bei Kopien in einem schwer bearbeitbaren Format 
 Angabe, wo man eine bekommt. Abschnitt 3 der Lizenz enthält die Einzelheiten.
 
 **Manche alten Seiten haben andere Bedingungen.** Seiten, die aus früheren Versionen übernommen wurden, behalten ihren
-eigenen Vermerk. Prüfen Sie [Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md), bevor Sie sie kopieren.
+eigenen Vermerk. Prüfen Sie [Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md), bevor Sie sie kopieren.
 
 ### Stolperfallen
 
@@ -128,7 +128,7 @@ Bauen Sie den Lizenzteil eines Kursordners für eine zweistündige Einheit für 
 
 - [Freie Dokumentation](../../../freie-dokumentation.md): die Zusammenfassung in einfachen Worten, auf der diese
   Lektion aufbaut.
-- [Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md): Urheberrechtsinhaber und Seiten mit anderen
+- [Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md): Urheberrechtsinhaber und Seiten mit anderen
   Bedingungen.
 - [Quellen zitieren und die eigenen Texte lizenzieren](../../../fuersprecher/quellen-zitieren-und-texte-lizenzieren.md):
   wie Fürsprecher zitieren und lizenzieren, was sie schreiben.

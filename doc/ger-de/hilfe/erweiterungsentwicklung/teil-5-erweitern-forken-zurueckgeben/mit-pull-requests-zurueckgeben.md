@@ -58,7 +58,7 @@ ein Problem mit dem einen hält den anderen nicht auf.
 ## 3. Prüfen Sie es
 
 Führen Sie die Prüfungen des Projekts aus, bevor Sie pushen. Für den Kernel listen `CONTRIBUTING.md` und
-[Qualitätsprüfungen](../../../../eng-us/features/6.0/quality-checks.md) (auf Englisch) sie auf; bei einer Erweiterung
+[Qualitätsprüfungen](../../../funktionen/6.0/qualitaetspruefungen.md) (auf Englisch) sie auf; bei einer Erweiterung
 zeigen ihr Verzeichnis `tests/` oder ihr CI-Workflow, was sie ausführt. Verwenden Sie die Funktion danach von Hand.
 
 ## 4. Schreiben Sie die Beschreibung
@@ -122,8 +122,8 @@ Beschreibung ein. Eröffnen Sie ihn als **Draft**, wenn Sie noch etwas ändern m
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

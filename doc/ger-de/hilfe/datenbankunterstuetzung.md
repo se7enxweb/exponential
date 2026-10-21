@@ -111,7 +111,7 @@ Für jede Datenbank gibt es drei verschiedene Zahlen, die man leicht verwechselt
 |---|---|---|---|
 | SQLite 3 | 3.0.1 | **3.33** (der Treiber schreibt MySQLs `UPDATE ... JOIN` in `UPDATE ... FROM` um, das SQLite ab 3.33 kennt; `eZSQLite3DB::rewriteJoinedUpdate()`) | Bibliothek 3.34.1 in PHP 8.5 auf dem Entwicklungsserver; die SQLite-Bibliothek der CI-Images (Version nicht festgelegt) |
 | PostgreSQL | 8.0 | **13** (der Installer legt `pgcrypto` an, ab PostgreSQL 13 eine vertrauenswürdige Erweiterung); ab 15 muss der Benutzer der Site Eigentümer der Datenbank sein | 13.23 auf dem Entwicklungsserver; 15 in der CI |
-| MongoDB | 4.0 | Server **6.0**, PHP **8.2** oder neuer, PHP-Erweiterung `mongodb` **1.18** oder neuer ([MongoDB als Datenbank](../../eng-us/features/6.0/mongodb-database-support.md)) | Server 8.3.13 mit Erweiterung 2.3.3 auf PHP 8.5 auf dem Entwicklungsserver |
+| MongoDB | 4.0 | Server **6.0**, PHP **8.2** oder neuer, PHP-Erweiterung `mongodb` **1.18** oder neuer ([MongoDB als Datenbank](../funktionen/6.0/mongodb-datenbankunterstuetzung.md)) | Server 8.3.13 mit Erweiterung 2.3.3 auf PHP 8.5 auf dem Entwicklungsserver |
 | MariaDB | 4.1.1 (die MySQL-Nummer) | ein Release, das Ihr Anbieter noch unterstützt; `utf8mb4` und InnoDB | 10.5.29 auf dem Entwicklungsserver |
 | Oracle | 19.0 | **19c** (der Treiber verwendet `STANDARD_HASH` und `OFFSET`/`FETCH`; 11g und älter werden nicht unterstützt) | Oracle AI Database 26ai Free (23.26) mit oci8 3.4.1 und Instant Client 23.26 auf PHP 8.5 |
 | MySQL | 4.1.1 | ein Release, das Ihr Anbieter noch unterstützt; `utf8mb4` und InnoDB | 8.0 in der CI |
@@ -269,7 +269,7 @@ Exponential hat drei Installer im Kernel. Alle drei unterstützen alle sechs Dat
 - **Demo-Installationen.** Dieses Repository hat keinen eigenen Demo-Installer; Demonstrations-Sites werden mit
   denselben Befehlen installiert (`exp:install` oder der Kickstarter), meist auf SQLite.
 - **Exponential Platform** (das auf Symfony basierende Schwesterprodukt, nicht der 6.0.x-Kernel) hat einen eigenen
-  SQLite-Installer, der `pdo_sqlite` verwendet; siehe [SQLite für Exponential Platform](../../eng-us/features/6.0/platform-sqlite-install.md).
+  SQLite-Installer, der `pdo_sqlite` verwendet; siehe [SQLite für Exponential Platform](../funktionen/6.0/plattform-sqlite-installation.md).
 
 Die Installer sind in [Kapitel 5, der Setup-Assistent](../installation/05-setup-assistent.md),
 [Kapitel 6, der Kickstarter](../installation/06-kickstarter.md) und [Kapitel 7, die Installation über die Konsole](../installation/07-installation-ueber-die-konsole.md) beschrieben.
@@ -286,7 +286,7 @@ die Aggregate `BIT_OR` und `BIT_AND`, mit denen die Content-Engine Sprachmasken 
 `UPDATE ... JOIN`; und seit 6.0.15 eine **Schreibwarteschlange**: Jede Transaktion nimmt eine exklusive Sperre auf
 `<database>.writer-lock` und führt dann `BEGIN IMMEDIATE` aus, sodass gleichzeitige Veröffentlichungen warten, bis sie
 an der Reihe sind (bis zu `SQLiteTransactionWait` Sekunden, Standard 25), statt mit „database is locked“
-fehlzuschlagen. Session-Anweisungen, die es nur in MySQL gibt (`SET NAMES`, `SET FOREIGN_KEY_CHECKS` und ähnliche),
+fehlzuschlagen. Sitzungsanweisungen, die es nur in MySQL gibt (`SET NAMES`, `SET FOREIGN_KEY_CHECKS` und ähnliche),
 werden angenommen und ignoriert.
 
 **Wann es passt.** Ein Rechner, beliebig viele Leser, ein Redaktionsteam. In den Lasttests des Projekts skalierten
@@ -307,7 +307,7 @@ Zugriffskontrolle ist die des Dateisystems.
 
 Die vollständige Behandlung mit jedem PRAGMA, dem Verhalten der Warteschlange unter Last, Überwachung und Wartung
 (`ANALYZE`, `VACUUM`, die WAL-Datei) finden Sie in [9.2 SQLite 3: eine Produktionsdatenbank in einer Datei](../installation/09-datenbanken.md#92-sqlite-3-eine-produktionsdatenbank-in-einer-datei).
-Die aufgabenorientierte Einführung ist [SQLite-Datenbankunterstützung](../../eng-us/features/6.0/sqlite-database.md), die
+Die aufgabenorientierte Einführung ist [SQLite-Datenbankunterstützung](../funktionen/6.0/sqlite-datenbank.md), die
 Treiberspezifikation [Der SQLite3-Datenbanktreiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md).
 
 ## 2. PostgreSQL
@@ -363,8 +363,8 @@ die Cronjobs einmal aus, um den Suchindex aufzubauen.
 
 ### Grenzen von MongoDB
 
-Aus [MongoDB als Datenbank](../../eng-us/features/6.0/mongodb-database-support.md) und Abschnitt 26 der
-[Portierungsreferenz](../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md):
+Aus [MongoDB als Datenbank](../funktionen/6.0/mongodb-datenbankunterstuetzung.md) und Abschnitt 26 der
+[Portierungsreferenz](../bc/6.0/mongodb-kernel-unterstuetzung.md):
 
 - Der Adapter führt nie echtes SQL aus. Handgeschriebenes SQL, das er nicht übersetzen kann, liefert ein leeres
   Ergebnis und protokolliert eine Warnung (suchen Sie in den Logs nach `MONGO TODO`). Erweiterungen mit eigenem SQL
@@ -400,13 +400,13 @@ Treiber `eZOracleDB`, den Schema-Handler `eZOracleSchema`, Konsolenbefehle (`ext
 für Sites, die Oracle verwenden.
 
 **Voraussetzungen.** Oracle Database 19c oder neuer mit dem Zeichensatz `AL32UTF8`; PHP mit `oci8`, gebaut gegen einen
-Oracle-Client (der Instant Client genügt; `ORACLE_HOME` wird mit ihm nicht gebraucht); ein Benutzer, der Sessions,
+Oracle-Client (der Instant Client genügt; `ORACLE_HOME` wird mit ihm nicht gebraucht); ein Benutzer, der Sitzungen,
 Tabellen, Views, Trigger, Sequenzen und Prozeduren anlegen darf. `php extension/ezoracle/bin/php/ora-grant.php` gibt
 die Berechtigungen aus, die ein DBA vergeben muss.
 
 **Verbindungen.** `ezoracle.ini [ConnectionSettings]` bietet persistente Verbindungen, Database Resident Connection
 Pooling (DRCP, damit sich Hunderte von PHP-Workern einen Pool von Serverprozessen teilen), Wiederholungen, Failover,
-Timeouts für Aufrufe und Session-Tracing. Jede dieser Funktionen ist standardmäßig ausgeschaltet. Kommen die
+Timeouts für Aufrufe und Sitzungs-Tracing. Jede dieser Funktionen ist standardmäßig ausgeschaltet. Kommen die
 Einstellungen aus einer Site-Erweiterung statt aus `settings/override/`, führen Sie diese Erweiterung in
 `ActiveExtensions[]` **vor** `ezoracle` auf.
 
@@ -474,7 +474,7 @@ und nichts auf dieser Seite ist als Versprechen eines Releases zu verstehen, das
   extension“.
 - **Werkzeuge, die SQL Server bereits lesen.** Der Datenbankmanager der Erweiterung `sevenx_dse` (AdminNeo, ein Fork
   von Adminer) bringt einen MS-SQL-Treiber zum Durchsehen und Bearbeiten von Tabellen mit, und der generische
-  SQLAlchemy-Exporter in Abschnitt 18.6 der [MongoDB-Portierungsreferenz](../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md)
+  SQLAlchemy-Exporter in Abschnitt 18.6 der [MongoDB-Portierungsreferenz](../bc/6.0/mongodb-kernel-unterstuetzung.md)
   kann SQL Server über `pyodbc` lesen. Keines von beiden ist ein Weg, eine Site auf SQL Server zu betreiben.
 - **PHP-Treiber.** Microsoft veröffentlicht die Erweiterungen `sqlsrv` und `pdo_sqlsrv` für PHP unter Linux und
   Windows. Prüfen Sie in Microsofts Support-Matrix, welche PHP-Versionen ein Release abdeckt; mit Exponential wurde das
@@ -522,7 +522,7 @@ dass das Verzeichnis der Erweiterung `extension/mssql` heißt.
 | `UPDATE ... JOIN` | Nicht vorhanden | Noch zu tun (`UPDATE t SET ... FROM t JOIN ...`) |
 | Ein Schema-Handler | `eZMssqlSchema`, in beide Richtungen | Konstruktor für PHP 8; `NVARCHAR(MAX)` statt des veralteten `ntext`; eine Überprüfung der Spaltenübersetzungen anhand der heutigen `share/db_schema.dba` |
 | SQL-Dateien, Installer-Einträge, Erweiterungen, Tests und CI | Nur Installationshinweise | Alles noch zu tun |
-| Session-Anweisungen, Groß- und Kleinschreibung und Kollation | Nicht behandelt | Noch zu tun |
+| Sitzungsanweisungen, Groß- und Kleinschreibung und Kollation | Nicht behandelt | Noch zu tun |
 
 Zusammengenommen zeigt xrowmssql, wie jedes Teil für SQL Server schon einmal gelöst wurde, und liefert einen
 Schema-Handler und ein Treibergerüst als Ausgangspunkt; damit es auf Exponential 6 läuft, muss es auf PHP 8 und
@@ -539,7 +539,7 @@ hat.
 | Ein Schema-Handler | `lib/ezdbschema/classes/` und `settings/dbschema.ini` | `.dba` in `CREATE TABLE` mit den Typen von SQL Server umsetzen (`NVARCHAR`, `NVARCHAR(MAX)`, `INT IDENTITY`), Indizes (innerhalb der Größengrenzen von SQL Server für Indexschlüssel) und wieder zurück für die Upgrade-Prüfung |
 | SQL-Dateien | `kernel/sql/<engine>/`, `update/database/<engine>/` | das erzeugte Schema und die Update-Dateien jedes späteren Releases |
 | Installer-Einträge | `eZSetupDatabaseMap()` in `kernel/setup/ezsetupcommon.php`, `settings/setup.ini [database_extensions]`, `bin/php/install.php` | die Auswahl im Assistenten, die Prüfung der Erweiterung, der Alias für `--db` |
-| Session-Anweisungen | der Treiber | `SET`-Anweisungen, die es nur in MySQL gibt, ignorieren, wie es der SQLite-Treiber tut |
+| Sitzungsanweisungen | der Treiber | `SET`-Anweisungen, die es nur in MySQL gibt, ignorieren, wie es der SQLite-Treiber tut |
 | Groß- und Kleinschreibung und Kollation | die Datenbank | Die Standardkollationen von SQL Server vergleichen wie die von MySQL ohne Beachtung der Groß- und Kleinschreibung; wählen Sie eine UTF-8-Kollation (SQL Server 2019 und neuer) oder `NVARCHAR`-Spalten |
 | Erweiterungen | jede Erweiterung mit eigenem SQL | dieselbe Überprüfung, die die Portierungen auf PostgreSQL und Oracle brauchten: Backticks, `LIMIT`, MySQL-Funktionen |
 | Tests und CI | `tests/`, `.github/workflows/` | ein CI-Job mit einem SQL-Server-Container, wie ihn die Jobs für MySQL und PostgreSQL haben |
@@ -592,7 +592,7 @@ ist.
 - **MongoDB**: Die Performance hängt von der Anzahl der Anweisungen pro Seite ab; legen Sie die Indizes aus
   `bin/mongodb/create_indexes.js` an, ohne die Abfragen auf Teilbäume und Suchen nach URL-Aliasen ganze Collections
   durchlaufen.
-- **Oracle**: Eine neue dedizierte Session kostet einige zehn Millisekunden; verwenden Sie `Persistent=enabled` und
+- **Oracle**: Eine neue dedizierte Sitzung kostet einige zehn Millisekunden; verwenden Sie `Persistent=enabled` und
   DRCP (`ezoracle.ini [ConnectionSettings]`) sowie die `Prefetch`-Einstellungen von `[PerformanceSettings]`.
 - **Langsame Anweisungen**: `[DatabaseSettings] SlowQueriesOutput=<milliseconds>` mit `SQLOutput=enabled` listet auf
   jeder Engine die langsameren Anweisungen in der Debug-Ausgabe auf; auf MySQL und MariaDB ergänzt
@@ -659,7 +659,7 @@ Wegwerf-Datenbank pro Test laufen.
 | 2. PostgreSQL | ja, Datenbanktests | der Job „Database tests (postgresql, PHP 8.3)“ mit einem `postgres:15`-Service und `pgcrypto`, `tests/runtests.php --dsn postgresql://... --db-per-test` |
 | 3. MongoDB | Unit-Tests des Adapters | der PHPUnit-Job lädt `mongodb` und installiert `mongodb/mongodb`; die Suite `mongodb` (Adaptertests ohne Server) läuft; die Gruppe `mongodb-live` braucht laufende MongoDB- und MySQL-Server und ist von der CI ausgenommen |
 | 4. MariaDB | nein | indirekt durch den MySQL-Job abgedeckt (derselbe Treiber) |
-| 5. Oracle | nein | Oracle-spezifische Kernel-Tests werden auf anderen Engines übersprungen; die Erweiterung `ezoracle` hat in der installierten Kopie keinen eigenen Workflow (upstream nicht überprüft) |
+| 5. Oracle | nein | Oracle-spezifische Kernel-Tests werden auf anderen Engines übersprungen; die Erweiterung `ezoracle` hat in der installierten Kopie keinen eigenen Workflow (upstream nicht geprüft) |
 | 6. MySQL | ja, Datenbanktests | der Job „Database tests (mysql, PHP 8.3)“ mit einem `mysql:8.0`-Service |
 
 PHP 8.0, die älteste unterstützte Version, prüft der Quality-Workflow mit einer Syntaxprüfung jeder PHP-Datei und einem
@@ -684,13 +684,21 @@ Boot-Smoke-Test ohne Datenbank. Die Testsuiten und wie man sie lokal ausführt, 
 
 - [Kapitel 9, Datenbanken](../installation/09-datenbanken.md): die Referenz für den Betrieb jeder Engine.
 - [Kapitel 2, Anforderungen](../installation/02-voraussetzungen.md#26-datenbanken) und [Unterstützte Betriebssysteme](betriebssystemunterstuetzung.md).
-- [SQLite-Datenbankunterstützung](../../eng-us/features/6.0/sqlite-database.md),
-  [SQLite: Transaktionen warten in einer Warteschlange auf die Schreibsperre](../../eng-us/bc/6.0/sqlite-transactions.md),
+- [SQLite-Datenbankunterstützung](../funktionen/6.0/sqlite-datenbank.md),
+  [SQLite: Transaktionen warten in einer Warteschlange auf die Schreibsperre](../bc/6.0/sqlite-transaktionen.md),
   [Der SQLite3-Datenbanktreiber](../spezifikationen/6.0/sqlite3-datenbanktreiber.md).
-- [MongoDB als Datenbank](../../eng-us/features/6.0/mongodb-database-support.md) und die
-  [Portierungsreferenz zur MongoDB-Unterstützung im Kernel](../../eng-us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md).
+- [MongoDB als Datenbank](../funktionen/6.0/mongodb-datenbankunterstuetzung.md) und die
+  [Portierungsreferenz zur MongoDB-Unterstützung im Kernel](../bc/6.0/mongodb-kernel-unterstuetzung.md).
 - [Die Treiber für SQLite und Oracle](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md),
   [Datenbanktreiber und Installer, September 2026](../spezifikationen/6.0/datenbanktreiber-2026-09.md).
-- [SQL-Abfrage-Cache](../../eng-us/bc/6.0/sql-query-cache.md), [Installation mit einem Befehl](../../eng-us/features/6.0/install-in-one-command.md),
-  [Kickstarter](../../eng-us/features/6.0/kickstarter-cli.md), [Systeminformationen](../anleitungen/systeminformationen.md).
+- [SQL-Abfrage-Cache](../bc/6.0/sql-abfrage-cache.md), [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md),
+  [Kickstarter](../funktionen/6.0/kickstarter-cli.md), [Systeminformationen](../anleitungen/systeminformationen.md).
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seiten dürfen frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

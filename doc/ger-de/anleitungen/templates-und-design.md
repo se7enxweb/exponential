@@ -39,7 +39,7 @@ Die letzte Zeile ist Ihr Design. Seine Dateien liegen in `design/media/` oder in
 ./console exp:ini get site/DesignSettings/AdditionalSiteDesignList eng --allow-root-user
 ```
 
-Referenz: [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md), [Zusätzliche Extension-Verzeichnisse](../../eng-us/features/6.0/additional-extension-directories.md).
+Referenz: [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md), [Zusätzliche Extension-Verzeichnisse](../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md).
 
 ## 3. Sehen, welches Template welches Markup geschrieben hat
 
@@ -60,7 +60,7 @@ Laden Sie eine Seite der Site neu, öffnen Sie „Quelltext anzeigen“ und such
 
 Hat ein Override geantwortet, folgt der ursprüngliche Name in Klammern: `<!-- START .../full/article.tpl (node/view/full.tpl) -->` bedeutet „die Datei `article.tpl` hat die Anfrage `node/view/full.tpl` beantwortet“. Schalten Sie die Kommentare mit demselben Befehl und `disabled` wieder aus, und leeren Sie erneut den Template-Cache.
 
-Wenn Sie sich lieber durchklicken, finden Sie denselben Schalter in der Debug-Leiste: [Exp-Debug-Leiste](../../eng-us/features/6.0/exp-debug-bar.md), Reiter Einstellungen, Gruppe templates. Details: [Template-Pfad-Kommentare](../../eng-us/features/6.0/template-path-comments.md).
+Wenn Sie sich lieber durchklicken, finden Sie denselben Schalter in der Debug-Leiste: [Exp-Debug-Leiste](../funktionen/6.0/exp-debug-leiste.md), Reiter Einstellungen, Gruppe templates. Details: [Template-Pfad-Kommentare](../funktionen/6.0/template-pfad-kommentare.md).
 
 ## 4. Eine Änderung mit einem Override vornehmen
 
@@ -75,7 +75,7 @@ Sie gestalten einen Artikel (ein Objekt) um, ohne irgendetwas anderes anzurühre
 5. Laden Sie den Artikel auf der Site neu. Die Zeile ist da, und bei eingeschalteten Pfad-Kommentaren sehen Sie dafür `START ... (node/view/full.tpl)`.
 6. Um die Änderung rückgängig zu machen, kreuzen Sie das Override in der Liste an und drücken Sie **Ausgewählte entfernen**: Die Regel und die Datei werden gelöscht.
 
-Der Editor schreibt `settings/siteaccess/<siteaccess>/override.ini.append.php` für Sie, ordnet Overrides per Drag-and-drop und bewahrt vor dem Schreiben eine Kopie der Datei auf. Siehe [Template-Editor](../../eng-us/features/6.0/template-editor-overrides.md).
+Der Editor schreibt `settings/siteaccess/<siteaccess>/override.ini.append.php` für Sie, ordnet Overrides per Drag-and-drop und bewahrt vor dem Schreiben eine Kopie der Datei auf. Siehe [Template-Editor](../funktionen/6.0/template-editor-ueberschreibungen.md).
 
 ### Über Dateien (was Sie in der Versionsverwaltung halten)
 
@@ -113,7 +113,7 @@ Der Editor schreibt `settings/siteaccess/<siteaccess>/override.ini.append.php` f
    Erwartet: Jeder Befehl endet mit `PASS`.
 4. Laden Sie den Artikel neu; der Pfad-Kommentar zeigt Ihre Datei.
 
-Spätere Änderungen an derselben Datei erfordern kein Leeren, solange der Template-Cache ausgeschaltet ist; ist er eingeschaltet, führen Sie die Zeile mit `--tag=template` erneut aus. Welches von mehreren passenden Overrides gewinnt und wie die Overrides einer Extension eingeordnet werden: [Template-Editor](../../eng-us/features/6.0/template-editor-overrides.md#reorder-by-drag-and-drop-september-2026) und [Ladereihenfolge der Extensions](../../eng-us/features/6.0/extension-loading-order.md). Eine Extension kann auch die Templates eines Moduls überschreiben: [Modul-Override durch Extensions](../../eng-us/features/6.0/extension-module-override.md).
+Spätere Änderungen an derselben Datei erfordern kein Leeren, solange der Template-Cache ausgeschaltet ist; ist er eingeschaltet, führen Sie die Zeile mit `--tag=template` erneut aus. Welches von mehreren passenden Overrides gewinnt und wie die Overrides einer Extension eingeordnet werden: [Template-Editor](../funktionen/6.0/template-editor-ueberschreibungen.md#per-drag-and-drop-umsortieren-september-2026) und [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md). Eine Extension kann auch die Templates eines Moduls überschreiben: [Modul-Override durch Extensions](../funktionen/6.0/modulueberschreibung-durch-extensions.md).
 
 ## 5. Die Syntax prüfen, bevor Sie in den Browser schauen
 
@@ -154,7 +154,7 @@ Ein vollständiges, kleines Template zum Ausprobieren im Override aus Teil 4 (es
 {undef $siblings}
 ```
 
-Erwartet: die Überschrift, gefolgt von einer Liste von Links. Referenzlisten aller Operatoren: [Template-Operatoren für Zeichenketten](../../eng-us/features/6.0/string-template-operators.md), [Template-Operatoren für Rollen und Richtlinien](../../eng-us/features/6.0/role-and-policy-template-operators.md).
+Erwartet: die Überschrift, gefolgt von einer Liste von Links. Referenzlisten aller Operatoren: [Template-Operatoren für Zeichenketten](../funktionen/6.0/template-operatoren-fuer-zeichenketten.md), [Template-Operatoren für Rollen und Richtlinien](../funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md).
 
 ## 7. Templates debuggen
 
@@ -165,7 +165,7 @@ Wenn eine Seite falsch ist, arbeiten Sie diese Liste von oben nach unten ab:
 | Welche Datei hat es geschrieben? | Template-Pfad-Kommentare (Teil 3). |
 | Warum diese Datei und nicht meine? | Prüfen Sie die Regel: `Source`, `MatchFile` und `Match[...]`, und leeren Sie dann `template-override` und `template`. `./console exp:ini where override/<block>/MatchFile eng --allow-root-user` listet die Dateien auf, die Ihren Block definieren. |
 | Stimmt die Syntax? | `eztemplatecheck.php` (Teil 5). |
-| Welche Templates, wie lange, wie viele Abfragen? | Die [Exp-Debug-Leiste](../../eng-us/features/6.0/exp-debug-bar.md): Reiter Templates, Zeiten, SQL. Die Debug-Ausgabe selbst schalten Sie für sich mit `[DebugSettings] DebugOutput=enabled` und `DebugByUser`/`DebugByIP` ein; siehe [Verbesserungen der Debug-Ausgabe](../../eng-us/features/6.0/debug-output-improvements.md). |
+| Welche Templates, wie lange, wie viele Abfragen? | Die [Exp-Debug-Leiste](../funktionen/6.0/exp-debug-leiste.md): Reiter Templates, Zeiten, SQL. Die Debug-Ausgabe selbst schalten Sie für sich mit `[DebugSettings] DebugOutput=enabled` und `DebugByUser`/`DebugByIP` ein; siehe [Verbesserungen der Debug-Ausgabe](../funktionen/6.0/verbesserte-debug-ausgabe.md). |
 | Die Seite ändert sich nach einer Bearbeitung nicht | Leeren Sie je nachdem, was Sie geändert haben: [Betrieb einer Site, Teil 2](betrieb-einer-website.md). Ein geändertes Stylesheet erfordert zusätzlich das Leeren des Template-Block-Caches; siehe diese Anleitung. |
 | Eine Zeit lang veraltete Seiten | Inhalts-View-Cache: `php bin/php/cache.php clear --tag=content --allow-root-user`. |
 
@@ -223,7 +223,7 @@ Dies folgt dem LoveStack-Commit fb20bee0d2 von Mugo Web, mit Dank.
 php bin/php/cache.php clear --all --allow-root-user
 ```
 
-Erwartet: Beide Befehle enden mit `PASS`; laden Sie die Administrationsoberfläche neu, und die Kopfzeile trägt nach dem Suchfeld einen Hell/Dunkel-Umschalter. Um zurückzukehren, setzen Sie `SiteDesign` auf `admin3` und leeren Sie erneut die Caches. Um es zuerst auszuprobieren, ohne etwas zu ändern, öffnen Sie den Siteaccess `admintest_admin4`. Alles darüber, einschließlich der Frage, wie Sie eigene Styles darauf aufsetzen (`design/admin4/stylesheets/admin4.css`, keine Cascade Layers): [Das Design admin4](../../eng-us/features/6.0/admin4-design.md); das frühere responsive Design: [admin3](../../eng-us/features/6.0/admin3-responsive-admin.md).
+Erwartet: Beide Befehle enden mit `PASS`; laden Sie die Administrationsoberfläche neu, und die Kopfzeile trägt nach dem Suchfeld einen Hell/Dunkel-Umschalter. Um zurückzukehren, setzen Sie `SiteDesign` auf `admin3` und leeren Sie erneut die Caches. Um es zuerst auszuprobieren, ohne etwas zu ändern, öffnen Sie den Siteaccess `admintest_admin4`. Alles darüber, einschließlich der Frage, wie Sie eigene Styles darauf aufsetzen (`design/admin4/stylesheets/admin4.css`, keine Cascade Layers): [Das Design admin4](../funktionen/6.0/admin4-design.md); das frühere responsive Design: [admin3](../funktionen/6.0/admin3-responsives-admin.md).
 
 ## 9. Site-Daten in Templates
 
@@ -317,6 +317,14 @@ sich nichts ändert, bis Sie einen Eintrag hinzufügen. Mit Dank an Mugo Web
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](inhaltsmodell-und-bearbeitung.md): die Klassen und Attribute, die Ihre Templates anzeigen.
 - [Betrieb einer Site](betrieb-einer-website.md): Caches, Cronjobs und Reparaturen.
 - [Bereitstellung](bereitstellung.md): Ihr Design auf einen Server bringen.
-- Funktionsseiten: [Template-Editor](../../eng-us/features/6.0/template-editor-overrides.md), [Template-Pfad-Kommentare](../../eng-us/features/6.0/template-path-comments.md), [Icon-Themes in Extensions](../../eng-us/features/6.0/icon-themes-in-extensions.md), [Ausgeblendete Admin-Reiter](../../eng-us/features/6.0/hidden-admin-tabs.md).
-- Upgrade-Hinweise: [Debug-Leiste](../../eng-us/bc/6.0/debug-bar.md), [Einstellungen für die seitenweise Anzeige](../../eng-us/bc/6.0/pagination-settings.md).
+- Funktionsseiten: [Template-Editor](../funktionen/6.0/template-editor-ueberschreibungen.md), [Template-Pfad-Kommentare](../funktionen/6.0/template-pfad-kommentare.md), [Icon-Themes in Extensions](../funktionen/6.0/icon-themes-in-extensions.md), [Ausgeblendete Admin-Reiter](../funktionen/6.0/ausgeblendete-admin-reiter.md).
+- Upgrade-Hinweise: [Debug-Leiste](../bc/6.0/debug-leiste.md), [Einstellungen für die seitenweise Anzeige](../bc/6.0/einstellungen-fuer-seitengroessen.md).
 - [Extensions](extensions.md): Ihr Design in einer eigenen Extension mitbringen.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

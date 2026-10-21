@@ -86,7 +86,7 @@ Regeln für neuen Code:
 - Ein Argument, das eine Funktion später erhalten hat (`$eol` von `fputcsv()` in 8.1), ist unter 8.0 ein fataler
   Fehler: Verzweigen Sie anhand von `PHP_VERSION_ID`.
 - `phpcs.xml.dist` führt PHPCompatibility mit `testVersion` `8.0-` aus, und der Job `php80` des Quality-Workflows
-  lintet jede Datei und startet den Kernel unter PHP 8.0 ([Qualitätsprüfungen](../../../eng-us/features/6.0/quality-checks.md)).
+  lintet jede Datei und startet den Kernel unter PHP 8.0 ([Qualitätsprüfungen](../../funktionen/6.0/qualitaetspruefungen.md)).
 
 ## Exponential Velocity unter PHP 8.0
 

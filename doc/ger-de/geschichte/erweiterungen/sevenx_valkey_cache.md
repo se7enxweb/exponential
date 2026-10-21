@@ -1,8 +1,8 @@
 # sevenx_valkey_cache (Cache mit Redis und Valkey): Chronik
 
-Das Cache-Backend für Redis und Valkey wurde am 20. Juli 2026 veröffentlicht, mit einem Script zum Leeren des Caches, der Vorbereitung des Releases für Exponential 6.0.15 und, am 30. Juli, einem einzigen Hash für den kompilierten INI-Cache. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md).
+Das Cache-Backend für Redis und Valkey wurde am 20. Juli 2026 veröffentlicht, mit einem Script zum Leeren des Caches, der Vorbereitung des Releases für Exponential 6.0.15 und, am 30. Juli, einem einzigen Hash für den kompilierten INI-Cache. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md).
 
-Diese Seite führt **jede der 4 Änderungen** des Repositorys `sevenx_valkey_cache` zwischen 2026-07-20 und 2026-07-30 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx_valkey_cache.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/sevenx_valkey_cache.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 4 Änderungen** des Repositorys `sevenx_valkey_cache` zwischen 2026-07-20 und 2026-07-30 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx_valkey_cache.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/sevenx_valkey_cache.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -30,7 +30,7 @@ Der Monat über alle Erweiterungen: [Juli 2026](monate/2026-07.md). [Änderungsv
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md)
 - [Release Notes](../../../changelogs/extensions/sevenx_valkey_cache.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx_valkey_cache.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

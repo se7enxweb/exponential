@@ -55,7 +55,7 @@ Prüfen Sie diese Angaben am Tag der Veröffentlichung erneut; bis dahin kann ei
 2. **Lesen Sie das Changelog dieser Version.** Jede 6.0.x-Version hat eine Seite in `doc/changelogs/6.0/`, zum Beispiel
    [6.0.14](../../../changelogs/6.0/6.0.14.md). Lesen Sie zuerst „In short“, dann „Upgrading“
    ([Ein Changelog lesen](ein-changelog-lesen.md)).
-3. **Lesen Sie die Geschichte für den Zusammenhang.** Die [Geschichte](../../../eng-us/history/README.md) erzählt Monat für Monat,
+3. **Lesen Sie die Geschichte für den Zusammenhang.** Die [Geschichte](../../geschichte/README.md) erzählt Monat für Monat,
    was jede Änderung möglich macht, mit dem Commit dahinter ([Die Geschichtsseiten als Quelle](die-geschichtsseiten-als-quelle.md)).
 4. **Öffnen Sie die Funktionsseite** jedes Punkts, den Sie beschreiben wollen. Das Changelog verlinkt sie.
 5. **Bitten Sie um eine Stellungnahme, wenn Sie ein Zitat wollen.** Zitate kommen nur von 7x oder der Exponential
@@ -95,8 +95,8 @@ Gehen Sie vor der Veröffentlichung die [Checkliste für die Release-Berichterst
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

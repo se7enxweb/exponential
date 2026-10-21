@@ -43,7 +43,7 @@ oder einen Standard behalten haben. Der Commit vom 11.10.2026 ließ die Startinh
 in den Seiteninformationen auf Englisch und Deutsch, den Titel und Meta-Titel der Startseite, den Footer, das Impressum und den Titel der
 Cookie-Richtlinie.
 
-Ein laufendes Beispiel für das Ergebnis ist auf [Demo-Websites](../../../../eng-us/help/designers/distribution/demo-sites.md) aufgeführt.
+Ein laufendes Beispiel für das Ergebnis ist auf [Demo-Websites](../../designer/veroeffentlichung/demo-websites.md) aufgeführt.
 
 ## Der Inhaltsbaum
 
@@ -93,7 +93,7 @@ Die Rollen des Installers von 7x sind ausführlich in
 
 | Datei | Enthält |
 |---|---|
-| `settings/override/site.ini.append.php` | Listen der Siteaccesses, `MatchOrder`, `ForceVirtualHost=true`, `ActiveExtensions[]`, die Datenbankeinstellungen, Cache-Header für anonyme Besucher, Sitzungs-Handler |
+| `settings/override/site.ini.append.php` | Listen der Siteaccesses, `MatchOrder`, `ForceVirtualHost=true`, `ActiveExtensions[]`, die Datenbankeinstellungen, Cache-Header für anonyme Besucher, Session-Handler |
 | `settings/override/ezurlmultisite.ini.append.php` | die öffentlichen Siteaccesses und ihre Wurzelknoten, für Links zwischen Websites |
 | `settings/siteaccess/site/` | `site.ini`, `content.ini` (`RootNode`), `menu.ini`, `override.ini` und die anderen Dateien von `siteINISettings()` |
 | `settings/siteaccess/ger/` | die Kopie für Deutsch |
@@ -142,6 +142,14 @@ die Layouts der Administration aus ihrem eigenen Fragment.
 - [Siteaccesses und Sprachen](siteaccesses-und-sprachen-von-cjw-multisite.md)
 - [Die Installerskripte](die-installerskripte-von-cjw-multisite.md)
 - [Was Sie nach der Installation von sevenx_multisite haben](../sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md)
-- [Links auf Inhalte einer anderen Website](../../../../eng-us/features/6.0/multisite-cross-site-links.md)
+- [Links auf Inhalte einer anderen Website](../../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

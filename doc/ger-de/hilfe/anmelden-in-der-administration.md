@@ -88,7 +88,7 @@ Die rechte Spalte enthält den Kasten **Oberfläche**:
 - **Administrationsdesign**: für Rollen mit der entsprechenden Berechtigung das Design, in dem Sie arbeiten, zum
   Beispiel **Admin 4 (layouts)** (`admin4l`), **Admin 4** (`admin4`), **AdminUI**, **Admin 3** oder **Classic**
   (`admin`). Die Wahl gilt nur für Sie und für die Dauer der Sitzung. Siehe
-  [Das Design der Administration wählen](../../eng-us/features/6.0/ui-switch-design.md).
+  [Das Design der Administration wählen](../funktionen/6.0/ui-umschalter-design.md).
 
 ## Fehlgeschlagene Anmeldungen und Sperre
 
@@ -169,3 +169,11 @@ Mehr dazu: [Sicherheitshärtung](sicherheitshaertung.md).
 - [Anmelden im Editor](anmelden-im-editor.md)
 - [Ihr Konto und die Anmeldung](konten-und-anmeldung.md)
 - [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

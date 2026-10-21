@@ -12,8 +12,8 @@ type: help
 Diese Seite richtet sich an Administratoren und Projektleiter, die Konten beenden: Mitarbeiter, die ausscheiden,
 öffentliche Benutzer, die die Löschung verlangen, Konten, die niemand nutzt. Exponential bietet drei Schritte mit
 zunehmender Endgültigkeit. Quellen:
-[Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move) und
-[Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md).
+[Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben) und
+[Standards zum Datenschutz](../../../../standards/datenschutz.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -49,9 +49,9 @@ Verwenden Sie es für ausscheidende Mitarbeiter und für öffentliche Konten wä
 
 | Was beim Entfernen geschieht | Quelle |
 |---|---|
-| Das Benutzerobjekt und das Konto werden endgültig gelöscht | [Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md) |
-| E-Mail-Einstellungen und ausstehende Bestätigungen werden entfernt; das Einwilligungsprotokoll wird anonymisiert (`expMailPreferences::eraseForRemovedAccount()`) | [Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md) |
-| Audit-Einträge über den Benutzer werden für ihre Aufbewahrungsfrist behalten und pseudonymisiert | [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Das Benutzerobjekt und das Konto werden endgültig gelöscht | [Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md) |
+| E-Mail-Einstellungen und ausstehende Bestätigungen werden entfernt; das Einwilligungsprotokoll wird anonymisiert (`expMailPreferences::eraseForRemovedAccount()`) | [Standards zum Datenschutz](../../../../standards/datenschutz.md) |
+| Audit-Einträge über den Benutzer werden für ihre Aufbewahrungsfrist behalten und pseudonymisiert | [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | Vom Benutzer gesendete Formulareinsendungen bleiben unter **Setup > Gesammelte Informationen** (sie tragen eine Benutzer-ID) | [Gesammelte Informationen](../../../../anleitungen/gesammelte-informationen.md) |
 | Vom Benutzer angelegte Inhalte bleiben | das Inhaltsmodell |
 
@@ -65,7 +65,7 @@ E-Mail-Einstellungen können auf Antrag auch mit `./console exp:mail:preferences
 2. Exportieren Sie, was Sie herausgeben müssen, wenn die Person auch ihre Daten verlangt hat: E-Mail-Einstellungen und
    Einwilligungsverlauf (`mailpreferences/export` durch die Person selbst, oder `./console exp:mail:preferences export`),
    Audit-Einträge über sie (`./console exp:audit export --subject-user=<id>`)
-   ([Standards zum Datenschutz](../../../../../eng-us/standards/privacy.md)).
+   ([Standards zum Datenschutz](../../../../standards/datenschutz.md)).
 3. Prüfen Sie, was ihre Daten sonst noch enthält: Formulareinsendungen, Kommentare oder andere von ihr geschriebene
    Inhalte, Newsletter-Abonnements in cjw_newsletter.
 4. Entfernen Sie das Konto (das **Entfernen** des Benutzerobjekts); entfernen oder anonymisieren Sie die anderen
@@ -94,8 +94,9 @@ entscheidet.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

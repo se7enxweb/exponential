@@ -27,7 +27,7 @@ verlinkt die Seite mit den Einzelheiten. Wenn Ihre Frage hier nicht steht, behan
 **Kann das ganze Intranet eine Anmeldung verlangen?**
 Ja. Ein Siteaccess mit `site.ini [SiteAccessSettings] RequireUserLogin=true` schickt jeden Besucher, der nicht
 angemeldet ist, auf die Anmeldeseite; nur die Ansichten in `AnonymousAccessList[]` bleiben offen
-([Was Besucher sehen dürfen](../../../../eng-us/help/creators/website-creators/visitor-permissions.md#siteaccess-settings)).
+([Was Besucher sehen dürfen](../../ersteller/website-ersteller/rechte-fuer-besucher.md#einstellungen-des-siteaccess)).
 
 **Können Abteilungen Seiten haben, die andere Abteilungen nicht sehen?**
 Ja. Legen Sie die Inhalte jeder Abteilung in ihre eigene Sektion und geben Sie `content/read` für diese Sektion nur den
@@ -40,7 +40,7 @@ Ja. Ordnen Sie der Gruppe jeder Abteilung eine Rolle Redakteur mit einer Sektion
 **Können das Intranet und unsere öffentliche Website in einer Installation laufen?**
 Ja, als getrennte Siteaccesses, die sich Inhalte, Benutzer und Betrieb teilen. Halten Sie Intranetinhalte in Sektionen,
 die die öffentliche Rolle Anonymous nicht lesen kann, und testen Sie abgemeldet
-([Mehrere Websites in einer Installation einrichten](../../../../eng-us/help/creators/website-creators/multisite-setup.md)).
+([Mehrere Websites in einer Installation einrichten](../../ersteller/website-ersteller/multisite-einrichten.md)).
 
 **Können wir den Zugriff nur aus dem Büro erlauben?**
 Netzwerkbeschränkungen werden im Webserver oder in einem VPN vor der Website eingerichtet, nicht in Exponential
@@ -108,8 +108,8 @@ Ja, mit *Ohne Benachrichtigung veröffentlichen* für Redakteure, die die Richtl
 ## Betrieb und Nachweise
 
 **Können wir sehen, wer etwas geändert oder entfernt hat?**
-Ja. Der Audit-Trail zeichnet Inhalts-, Zugriffs- und Systemereignisse in einem manipulationssicheren Log auf, das
-standardmäßig eingeschaltet ist ([Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)).
+Ja. Das Prüfprotokoll zeichnet Inhalts-, Zugriffs- und Systemereignisse in einem manipulationssicheren Log auf, das
+standardmäßig eingeschaltet ist ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 **Was muss im Hintergrund laufen?**
 Cronjobs, vor allem die Gruppe `frequent` mit den Teilen für Workflow, Benachrichtigungen und Audit
@@ -118,7 +118,7 @@ Cronjobs, vor allem die Gruppe `frequent` mit den Teilen für Workflow, Benachri
 **Wie entfernen wir Personen, die gegangen sind?**
 Deaktivieren Sie ihre Konten unter **Benutzer > Benutzerkonten prüfen**, oder deaktivieren und verschieben Sie sie; das
 Entfernen eines Kontos ist endgültig, daher ist das Deaktivieren der sicherere erste Schritt
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 **Was kostet der Betrieb eines Intranets?**
 Siehe das [durchgerechnete Beispiel für ein Intranet](../kosten/durchgerechnetes-beispiel-intranet.md), dessen Eingabewerte
@@ -138,8 +138,8 @@ zweistufige Anmeldung mit App-Codes verwendet wird ([Mobil und headless](../mobi
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

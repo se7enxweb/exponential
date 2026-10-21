@@ -1,18 +1,18 @@
 ---
-title: Datenschutz im Audit-Trail
+title: Datenschutz im Prüfprotokoll
 audience: government, admin, project-manager
 category: public-sector
 order: 60
-summary: Für öffentliche Stellen, die Rechenschaft und Datenschutz gegeneinander abwägen - welche personenbezogenen Daten der Audit-Trail von Exponential standardmäßig aufbewahrt, wie sie minimiert und pseudonymisiert werden, welche Rechtsgrundlage der Audit-Leitfaden vorschlägt, und die Konfiguration für strengen Datenschutz für Websites, die weniger aufbewahren müssen.
-keywords: Datenschutz im Audit-Trail, Pseudonymisierung, AuditPrivacySettings, Field, truncate, hash, PseudonymiseAfterDays, BeforeAfter, strenger Datenschutz, Rechtsgrundlage, berechtigtes Interesse, rechtliche Verpflichtung, DSGVO, Beschäftigte, Betriebsrat, Personalrat, öffentlicher Sektor, audit trail privacy, pseudonymization, lawful basis, GDPR
+summary: Für öffentliche Stellen, die Rechenschaft und Datenschutz gegeneinander abwägen - welche personenbezogenen Daten das Prüfprotokoll von Exponential standardmäßig aufbewahrt, wie sie minimiert und pseudonymisiert werden, welche Rechtsgrundlage der Audit-Leitfaden vorschlägt, und die Konfiguration für strengen Datenschutz für Websites, die weniger aufbewahren müssen.
+keywords: Datenschutz im Prüfprotokoll, Pseudonymisierung, AuditPrivacySettings, Field, truncate, hash, PseudonymiseAfterDays, BeforeAfter, strenger Datenschutz, Rechtsgrundlage, berechtigtes Interesse, rechtliche Verpflichtung, DSGVO, Beschäftigte, Betriebsrat, Personalrat, öffentlicher Sektor, audit trail privacy, pseudonymization, lawful basis, GDPR
 type: help
 ---
-# Datenschutz im Audit-Trail
+# Datenschutz im Prüfprotokoll
 
-Diese Seite richtet sich an Datenschutzbeauftragte und Administratoren. Der Audit-Trail zeichnet auf, was Beschäftigte
-und Besucher tun; das sind personenbezogene Daten über sie, häufig über Beschäftigte. Exponential gestaltet ihn
-datenschutzfreundlich voreingestellt und lässt Sie ihn verschärfen
-([4.12 Datenschutz- und DSGVO-Aufgaben](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)).
+Diese Seite richtet sich an Datenschutzbeauftragte und Administratoren. Das Prüfprotokoll zeichnet auf, was Beschäftigte
+und Besucher tun; das sind personenbezogene Daten über sie, häufig über Beschäftigte. Exponential gestaltet es
+datenschutzfreundlich voreingestellt und lässt Sie es verschärfen
+([4.12 Datenschutz- und DSGVO-Aufgaben](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -67,7 +67,7 @@ Datenschutzbeauftragten und dokumentieren Sie es.
 ## Ein strengeres Profil
 
 Die Referenzkonfiguration des Leitfadens für strengen Datenschutz
-([6.4 Strenger Datenschutz](../../../../eng-us/bc/6.0/audit.md#64-strict-privacy)) in
+([6.4 Strenger Datenschutz](../../../bc/6.0/audit.md#64-strenger-datenschutz)) in
 `settings/override/audit.ini.append.php`:
 
 ```ini
@@ -100,14 +100,15 @@ aufgezeichnet (`system.audit.read`).
 
 ## Verwandte Seiten
 
-- [Audit-Leitfaden, 4.12](../../../../eng-us/bc/6.0/audit.md#412-privacy-and-gdpr-tasks)
-- [Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md)
+- [Audit-Leitfaden, 4.12](../../../bc/6.0/audit.md#412-datenschutz-und-dsgvo-aufgaben)
+- [Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)
 - [Aufbewahrung von Audit-Einträgen](aufbewahrung-von-audit-eintraegen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

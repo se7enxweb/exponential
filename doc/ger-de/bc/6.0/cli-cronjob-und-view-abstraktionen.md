@@ -179,7 +179,7 @@ Argumente unverändert an `eZScript` und `eZCLI` weiter, sodass `--help`, `-q`/`
 | `$this->cli()` | das Terminal, `eZCLI::instance()` |
 | `$this->script( array $settings )` | erzeugt das Skript, `eZScript::instance( $settings )` (description, `use-session`, `use-modules`, `use-extensions`, `site-access`, ...); ohne Einstellungen gibt sie das Skript zurück |
 | `$this->options( $config, $argumentConfig, $optionHelp, ... )` | parst die Kommandozeile, `eZScript::getOptions()`: zeigt `--help` und beendet, wendet die Standardoptionen an |
-| `$this->startup( $config, $argumentConfig, $optionHelp, ... )` | die drei Schritte nach `script()`: das `startup()` des Skripts, `options()` und das `initialize()` des Skripts (Siteaccess, Erweiterungen, Session, Datenbank) |
+| `$this->startup( $config, $argumentConfig, $optionHelp, ... )` | die drei Schritte nach `script()`: das `startup()` des Skripts, `options()` und das `initialize()` des Skripts (Siteaccess, Erweiterungen, Sitzung, Datenbank) |
 | `$this->start( $settings, $config, ... )` | `script( $settings )` und `startup()` in einem Aufruf |
 | `$this->output()`, `error()`, `warning()` | schreiben eine Zeile, einen Fehler, eine Warnung; `output()` schreibt mit `-q` nichts |
 | `$this->isQuiet()` | `-q` wurde angegeben |
@@ -217,7 +217,7 @@ auf.
 | Arbeit | Dienst | Aufgerufen von |
 |---|---|---|
 | Den Papierkorb leeren | `Exponential\Service\Trash` (`kernel/private/classes/services/trash.php`) | `content/trash`, `bin/php/trashpurge.php`, `cronjobs/trashpurge.php` |
-| Abgelaufene Sessions entfernen | `Exponential\Service\SessionGarbageCollector` (`kernel/private/classes/services/sessiongarbagecollector.php`) | `setup/session`, `bin/php/ezsessiongc.php`, `cronjobs/session_gc.php` |
+| Abgelaufene Sitzungen entfernen | `Exponential\Service\SessionGarbageCollector` (`kernel/private/classes/services/sessiongarbagecollector.php`) | `setup/session`, `bin/php/ezsessiongc.php`, `cronjobs/session_gc.php` |
 | Caches leeren | `expCacheManager` (`kernel/classes/expcachemanager.php`) | `setup/cache`, `bin/php/cache.php` (`exp:cache`), `setup/cachetoolbar` (die Werkzeugleiste zum Leeren des Caches) |
 | Alte Entwürfe entfernen | `Exponential\Service\DraftsCleanup` (`kernel/private/classes/services/draftscleanup.php`) | `cronjobs/old_drafts_cleanup.php` (Entwürfe der Benutzer), `cronjobs/internal_drafts_cleanup.php` (interne Entwürfe) |
 | Der statische Cache | `expStaticCacheRunner`, `expCacheManager::regenerateStaticCache()` | `setup/cache`, `setup/staticcachestream`, `bin/php/makestaticcache.php` |
@@ -243,7 +243,7 @@ Die Schaltfläche zum Leeren in der Ansicht des Papierkorbs und der Befehl lösc
 `purgeInBatches()`, jede Gruppe von 100 in einer eigenen Transaktion, mit Leeren des Inhalts-Caches und einer Pause von
 einer Sekunde zwischen den Gruppen (`eZScriptTrashPurge`, hinter dem Befehl und dem Cronjob-Teil, führt seine Gruppen
 ebenfalls über den Dienst aus). Nach den Gruppen löscht die Schaltfläche außerdem jedes archivierte Objekt ohne Eintrag
-im Papierkorb, sodass der Papierkorb danach leer ist. Das Entfernen abgelaufener Sessions in `setup/session` entfernt
+im Papierkorb, sodass der Papierkorb danach leer ist. Das Entfernen abgelaufener Sitzungen in `setup/session` entfernt
 die Warenkörbe, die sie hinterlassen, wie es der Befehl und der Cronjob-Teil tun. Der Befehl `bin/php/ezcache.php`
 behält `eZCacheHelper`, das die Fortschrittsausgabe schreibt, die es immer geschrieben hat.
 
@@ -376,7 +376,7 @@ run()-Methoden (Stufe 6, siehe unten).
     false oder dem einzubindenden Front-Controller antwortet.
 - Absichtlich nicht umgezogen: `bin/php/exprepair.php`, weil es ohne die Composer-Bibliotheken läuft.
 - Das Aufräumen entfernte, was die Umzüge hinterlassen hatten: Der Beginn von 40 Befehlen wurde zu `$this->startup()`,
-  der Hook für die Warenkörbe der Sessions, den zwei Klassendateien als dieselbe globale Funktion deklarierten
+  der Hook für die Warenkörbe der Sitzungen, den zwei Klassendateien als dieselbe globale Funktion deklarierten
   (`eZSessionBasketGarbageCollector`, eine Neudeklaration, die nur darauf wartete), ist jetzt
   `SessionGarbageCollector::cleanupBaskets()`, und Variablen, die kein Code mehr verwendete, verließen die globalen
   Bindungen.
@@ -478,7 +478,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/runnable/
 | `RunnableTest` | die Basisklassen: `main()` jeder Art, `create()`, die Skriptdatei, die Regel für das Ergebnis einer View |
 | `MovedEntryPointsTest` | jeden umgezogenen Einstiegspunkt: Die Klasse, die er aufruft, existiert, ist in den Autoload-Arrays zugeordnet, lässt sich parsen und erweitert die richtige Basisklasse; die Form des Routers |
 | `CommandHelpersTest` | die gemeinsamen Hilfsmethoden, und dass kein Kernel-Befehl `eZScript` oder `eZCLI` selbst erzeugt |
-| `ServicesTest` | die Dienste für Papierkorb und Sessions, den Dienst zum Aufräumen von Entwürfen und dass ihre Aufrufer (auch die Cache-Werkzeugleiste) sie verwenden |
+| `ServicesTest` | die Dienste für Papierkorb und Sitzungen, den Dienst zum Aufräumen von Entwürfen und dass ihre Aufrufer (auch die Cache-Werkzeugleiste) sie verwenden |
 | `ExtractedRunMethodsTest` | die aufgeteilten run()-Methoden: geschützt, als Referenz, einmal aufgerufen, frühe Rückgaben weitergegeben, die globalen Bindungen eines Befehls, wie lang run() sein darf |
 | `RunnableExtensionPointsTest` | die Ereignisse jeder Art, die Neuimplementierung jeder Art über die Einstellungen, die Listener von `[RunnableSettings]`, das eigene Lesen der Einstellungen durch einen Befehl |
 | `RadSurveyRunnablesTest` | die Runnables in der Übersicht der Erweiterungspunkte und ihre Zählungen |
@@ -486,8 +486,8 @@ php vendor/bin/phpunit tests/tests/kernel/classes/runnable/
 ## Verwandte Seiten
 
 - [Exponential-Konsole — `bin/php/console`](konsole.md)
-- [Konsole für Cronjobs](../../../eng-us/features/6.0/cronjobs-console.md)
-- [Juni 2026, erste Hälfte (1. bis 15. Juni)](../../../eng-us/history/2026/2026-06a.md)
+- [Konsole für Cronjobs](../../funktionen/6.0/cronjobs-in-der-konsole.md)
+- [Juni 2026, erste Hälfte (1. bis 15. Juni)](../../geschichte/2026/2026-06a.md)
 - [Spezifikation: Befehle, Cronjob-Teile und Views](../../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md)
 - [RAD-Erweiterungspunkte](rad-erweiterungspunkte.md)
 - [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)

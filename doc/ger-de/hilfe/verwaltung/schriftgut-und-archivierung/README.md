@@ -12,7 +12,7 @@ type: help
 Dieser Bereich richtet sich an Zuständige für Schriftgut, Archivarinnen und Archivare, Projektleitungen, Redaktionen
 und Administratoren öffentlicher Stellen, die mit Exponential veröffentlichen. Exponential ist ein
 Veröffentlichungssystem, kein System zur Schriftgutverwaltung: Es bewahrt Versionen auf, zeichnet in einem
-manipulationssicheren Audit-Trail auf, wer was geändert hat, hält URLs bei Umbenennungen und Verschiebungen stabil und
+manipulationssicheren Prüfprotokoll auf, wer was geändert hat, hält URLs bei Umbenennungen und Verschiebungen stabil und
 exportiert Inhalte auf mehreren Wegen. Es hat keine Funktion zur Erklärung von Schriftgut, keinen Aussonderungsplan und
 keine Aufbewahrungssperre; die Seiten sagen, wie Sie diese Abläufe mit den vorhandenen Werkzeugen aufbauen.
 
@@ -64,18 +64,19 @@ keine Aufbewahrungssperre; die Seiten sagen, wie Sie diese Abläufe mit den vorh
 
 Schritt-für-Schritt-Aufgaben (die Bekanntmachungen des Vorjahres archivieren, eine archivierte Seite wiederherstellen,
 einen Eintrag aus dem Papierkorb wiederherstellen, eine frühere Version zurückholen) stehen in den Compliance-Aufgaben
-dieser Hilfe ([Compliance-Aufgaben](../../../../eng-us/help/government/tasks/compliance/README.md)).
+dieser Hilfe ([Compliance-Aufgaben](../aufgaben/compliance/README.md)).
 
 ## Verwandte Seiten
 
 - Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md)
 - [Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)
-- [Audit](../../../../eng-us/bc/6.0/audit.md)
+- [Audit](../../../bc/6.0/audit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

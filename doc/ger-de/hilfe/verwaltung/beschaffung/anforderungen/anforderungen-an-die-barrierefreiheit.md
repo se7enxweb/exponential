@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Beschaffungsteams und Verantwortliche für Barrierefreiheit, die den Teil zur
 Barrierefreiheit einer Ausschreibung für ein CMS schreiben müssen. Sie erklärt, welche Teile eines CMS eine Anforderung
 an die Barrierefreiheit abdecken muss, bietet Formulierungen für Anforderungen und gibt an, was Exponential zu jedem
-dokumentiert, ausschließlich mit den Statusangaben der [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md).
+dokumentiert, ausschließlich mit den Statusangaben der [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -68,22 +68,22 @@ ACC-06 (Should) Accessibility is regression-tested; describe the tests and how o
 
 ## Der dokumentierte Status von Exponential
 
-Aus [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md):
+Aus [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md):
 
 | Standard | Status | Was das für Ihre Ausschreibung bedeutet |
 |---|---|---|
-| WCAG 2.2 AA | **Partly complies** | Die Administrationsdesigns admin4 und admin4l sind gegen AA-Kriterien gebaut und durch Regressionstests abgesichert (Beschriftungen, Landmarks, Kontrast im hellen und dunklen Modus, Tastatur, Zielgröße). Öffentliche Designs sind **nicht geprüft**; die klassische Administration, admin3 und der Online-Editor sind nicht vollständig abgedeckt. |
-| WAI-ARIA 1.2 | **Partly complies** | Muster für Tabs, Aufklappbereiche und Menüs in admin4, anhand der Template-Quellen geprüft. |
-| EN 301 549 v3.2.1 | **Unverified** | Keine Bewertung gegen die Norm; Klausel 11.8 (Autorenwerkzeuge) nicht geprüft. |
-| Section 508 | **Unverified** | Es gibt kein VPAT und keinen Accessibility Conformance Report. |
+| WCAG 2.2 AA | **Teilweise erfüllt** | Die Administrationsdesigns admin4 und admin4l sind gegen AA-Kriterien gebaut und durch Regressionstests abgesichert (Beschriftungen, Landmarks, Kontrast im hellen und dunklen Modus, Tastatur, Zielgröße). Öffentliche Designs sind **nicht geprüft**; die klassische Administration, admin3 und der Online-Editor sind nicht vollständig abgedeckt. |
+| WAI-ARIA 1.2 | **Teilweise erfüllt** | Muster für Tabs, Aufklappbereiche und Menüs in admin4, anhand der Template-Quellen geprüft. |
+| EN 301 549 v3.2.1 | **Nicht geprüft** | Keine Bewertung gegen die Norm; Klausel 11.8 (Autorenwerkzeuge) nicht geprüft. |
+| Section 508 | **Nicht geprüft** | Es gibt kein VPAT und keinen Accessibility Conformance Report. |
 
 Weitere dokumentierte Lücken: keine Vorlage für eine Erklärung zur Barrierefreiheit für Websites; keine automatisierte
 Prüfung der Barrierefreiheit in der CI (axe wird von Hand ausgeführt); Alternativtext hängt von der Redaktion ab, und
 nichts zwingt sie, ihn auszufüllen.
 
 Für Exponential lässt sich ACC-02 also für admin4 und admin4l mit Nachweisen beantworten, ACC-01 ist die Arbeit dessen,
-der das öffentliche Design baut ([Barrierefreiheit für Website-Ersteller](../../../../../eng-us/help/creators/website-creators/accessibility-for-site-builders.md),
-[Die Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md)), und ACC-04 wird mit „es gibt
+der das öffentliche Design baut ([Barrierefreiheit für Website-Ersteller](../../../ersteller/website-ersteller/barrierefreiheit-fuer-website-ersteller.md),
+[Die Barrierefreiheit testen](../../../ersteller/website-ersteller/barrierefreiheit-testen.md)), und ACC-04 wird mit „es gibt
 keinen“ beantwortet.
 
 ## Nachweise, nach denen Sie fragen sollten
@@ -100,20 +100,21 @@ keinen“ beantwortet.
   eines hat; machen Sie es zu einem bewerteten Kriterium und fragen Sie stattdessen nach einer gleichwertigen
   Bewertung.
 - Die Inhalte vergessen: Keine Software bringt die Redaktion dazu, guten Alternativtext zu schreiben. Planen Sie
-  Schulungen ([Editors 201, Qualität und Barrierefreiheit](../../../../../eng-us/help/trainers/editors-201/module-08-quality-and-accessibility/README.md)).
-- Dokumente vergessen: Von der Software erzeugte PDFs sind nicht getaggt (PDF/UA **Does not comply** in
-  [Standards zu Dokumentation und Veröffentlichung](../../../../../eng-us/standards/documentation-and-publishing.md)).
+  Schulungen ([Editors 201, Qualität und Barrierefreiheit](../../../trainer/redakteure-201/modul-08-qualitaet-und-barrierefreiheit/README.md)).
+- Dokumente vergessen: Von der Software erzeugte PDFs sind nicht getaggt (PDF/UA **Nicht erfüllt** in
+  [Standards zu Dokumentation und Veröffentlichung](../../../../standards/dokumentation-und-veroeffentlichung.md)).
 
 ## Verwandte Seiten
 - [Anforderungen an ein CMS für den öffentlichen Sektor](README.md)
 - [Was Exponential nachweisen kann und was nicht](was-exponential-nachweisen-kann-und-was-nicht.md)
 - [Ausschreibungsvorlage: Klausel zur Barrierefreiheit](../ausschreibungsvorlagen/klausel-barrierefreiheit.md)
-- [Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md)
+- [Das Design admin4](../../../../funktionen/6.0/admin4-design.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

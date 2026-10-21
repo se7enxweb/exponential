@@ -14,7 +14,7 @@ Entwicklung, Test oder Abnahme und Produktion (in der IT des öffentlichen Sekto
 beantwortet, wie Exponential jeder Maschine eigene Einstellungen erlaubt, ohne nach jeder Kopie Dateien zu bearbeiten,
 wie Sie verhindern, dass sich eine Testkopie wie die Live-Website verhält, und wie Redakteurinnen und Redakteure sehen,
 in welcher Umgebung sie arbeiten. Die Funktionsseite ist
-[Einstellungen pro Umgebung](../../../../../eng-us/features/6.0/environment-settings.md).
+[Einstellungen pro Umgebung](../../../../funktionen/6.0/umgebungseinstellungen.md).
 
 ## Inhalt
 
@@ -46,7 +46,7 @@ define( 'EXP_ENV', 'test' );
 `.gitignore` hält die Datei aus der Versionsverwaltung heraus. Ein Name besteht aus Kleinbuchstaben, Ziffern, `-` oder
 `_`, beginnt mit einem Buchstaben und hat höchstens 32 Zeichen. Mit `dev` oder `test` zeigt `index.php` PHP-Fehler im
 Browser an; mit `prod`, einem anderen Namen oder keinem bleibt `display_errors` so, wie `php.ini` es setzt
-([Einstellungen pro Umgebung](../../../../../eng-us/features/6.0/environment-settings.md)).
+([Einstellungen pro Umgebung](../../../../funktionen/6.0/umgebungseinstellungen.md)).
 
 ## Einstellungen, die sich je Umgebung unterscheiden
 
@@ -94,7 +94,7 @@ E-Mail-Adressen. Verhindern Sie, dass sie sich wie die Live-Website verhält
 
 Die Designs admin4 und admin4l können die Umgebung als Abzeichen im Kopfbereich, auf der Anmeldeseite und vor dem
 Seitentitel anzeigen. `site.ini [AdminEnvironment] Level=auto` übernimmt die Stufe aus `EXP_ENV`
-([Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md)). Templates lesen den Namen mit
+([Das Design admin4](../../../../funktionen/6.0/admin4-design.md)). Templates lesen den Namen mit
 `{exp_environment()}`, sodass eine öffentliche Test-Website ein Banner „Test site“ anzeigen kann:
 
 ```
@@ -127,8 +127,9 @@ dürfen, erstellen Sie Testinhalte separat, statt die Produktion zu kopieren.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

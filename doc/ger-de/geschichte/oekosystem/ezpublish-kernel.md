@@ -114,10 +114,10 @@ Der Fork enthält die vollständige Upstream-Geschichte. Die Tabelle zählt sie 
 ## Verwandte Seiten
 
 - [Spezifikation des SQLite-Installers](../../spezifikationen/6.0/platform-sqlite-installer.md)
-- [Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
+- [Framework-Forks](../../funktionen/6.0/plattform-php85-framework-forks.md)
 - [Release-Changelog](../../../changelogs/extensions/ezpublish-kernel.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
-- [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Upgrade-Hinweise](../../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)
 - [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/ezpublish-kernel.md)
 - [Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md)

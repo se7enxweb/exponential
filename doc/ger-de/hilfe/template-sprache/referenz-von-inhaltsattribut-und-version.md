@@ -137,16 +137,16 @@ ezmatrix: object ezmatrix (product.specifications)
 
 | Datentyp | `content` auf alpha | Seite des Datentyps |
 |---|---|---|
-| `ezstring`, `eztext`, `ezemail`, `ezurl` | Zeichenkette (bei `ezurl` die URL) | [ezstring](../../../eng-us/examples/datatypes/ezstring.md), [eztext](../../../eng-us/examples/datatypes/eztext.md), [ezemail](../../../eng-us/examples/datatypes/ezemail.md), [ezurl](../../../eng-us/examples/datatypes/ezurl.md) |
-| `ezinteger`, `ezboolean` | ganze Zahl | [ezinteger](../../../eng-us/examples/datatypes/ezinteger.md), [ezboolean](../../../eng-us/examples/datatypes/ezboolean.md) |
-| `ezxmltext` | Objekt `eZXMLText`; `.output.output_text` ist das gerenderte HTML | [ezxmltext](../../../eng-us/examples/datatypes/ezxmltext.md) |
-| `ezimage` | `eZImageAliasHandler`; `.original`, `[alias name]` | [ezimage](../../../eng-us/examples/datatypes/ezimage.md) |
-| `ezobjectrelationlist` | Array mit dem Schlüssel `relation_list` | [ezobjectrelationlist](../../../eng-us/examples/datatypes/ezobjectrelationlist.md) |
-| `ezdatetime` | Objekt `eZDateTime` | [ezdatetime](../../../eng-us/examples/datatypes/ezdatetime.md) |
-| `ezbinaryfile` | Objekt `eZBinaryFile` | [ezbinaryfile](../../../eng-us/examples/datatypes/ezbinaryfile.md) |
-| `ezmedia` | Objekt `eZMedia` | [ezmedia](../../../eng-us/examples/datatypes/ezmedia.md) |
-| `ezprice` | Objekt `eZPrice` | [ezprice](../../../eng-us/examples/datatypes/ezprice.md) |
-| `ezmatrix` | Objekt `eZMatrix` | [ezmatrix](../../../eng-us/examples/datatypes/ezmatrix.md) |
+| `ezstring`, `eztext`, `ezemail`, `ezurl` | Zeichenkette (bei `ezurl` die URL) | [ezstring](../../beispiele/datentypen/ezstring.md), [eztext](../../beispiele/datentypen/eztext.md), [ezemail](../../beispiele/datentypen/ezemail.md), [ezurl](../../beispiele/datentypen/ezurl.md) |
+| `ezinteger`, `ezboolean` | ganze Zahl | [ezinteger](../../beispiele/datentypen/ezinteger.md), [ezboolean](../../beispiele/datentypen/ezboolean.md) |
+| `ezxmltext` | Objekt `eZXMLText`; `.output.output_text` ist das gerenderte HTML | [ezxmltext](../../beispiele/datentypen/ezxmltext.md) |
+| `ezimage` | `eZImageAliasHandler`; `.original`, `[alias name]` | [ezimage](../../beispiele/datentypen/ezimage.md) |
+| `ezobjectrelationlist` | Array mit dem Schlüssel `relation_list` | [ezobjectrelationlist](../../beispiele/datentypen/ezobjectrelationlist.md) |
+| `ezdatetime` | Objekt `eZDateTime` | [ezdatetime](../../beispiele/datentypen/ezdatetime.md) |
+| `ezbinaryfile` | Objekt `eZBinaryFile` | [ezbinaryfile](../../beispiele/datentypen/ezbinaryfile.md) |
+| `ezmedia` | Objekt `eZMedia` | [ezmedia](../../beispiele/datentypen/ezmedia.md) |
+| `ezprice` | Objekt `eZPrice` | [ezprice](../../beispiele/datentypen/ezprice.md) |
+| `ezmatrix` | Objekt `eZMatrix` | [ezmatrix](../../beispiele/datentypen/ezmatrix.md) |
 | `eztags` | Objekt `eZTags` (Erweiterung eztags) | |
 | `xrowmetadata` | Objekt `xrowMetaData` (Erweiterung xrowmetadata) | |
 | `ngenhancedlink` | Objekt `ngEnhancedLinkValue` (Erweiterung exp_enhanced_link) | |
@@ -238,6 +238,14 @@ creator object id: 14
 - [Data Map und Inhalt](data-map-und-inhalt.md)
 - [Referenz der Knotenattribute](referenz-der-knotenattribute.md)
 - [Referenz der Attribute von Inhaltsobjekten](referenz-der-objektattribute.md)
-- [Ansichts-Templates von Datentypen](../../../eng-us/help/designers/templates/datatype-view-templates.md)
-- [Datentypen mit Beispielen](../../../eng-us/examples/datatypes/README.md)
+- [Ansichts-Templates von Datentypen](../designer/vorlagen/datentyp-ansichtstemplates.md)
+- [Datentypen mit Beispielen](../../beispiele/datentypen/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

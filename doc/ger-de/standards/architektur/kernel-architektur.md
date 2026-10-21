@@ -62,7 +62,7 @@ Was `index.php` der Reihe nach tut (alle Pfade sind relativ zum Wurzelverzeichni
    wechselt zu ihm (`eZSiteAccess::change()`), aktiviert dann die Extensions des Siteaccess
    (`eZExtension::activateExtensions( 'access' )`) und setzt die INI-Instanzen zurück, damit die Einstellungen des
    Siteaccess gelten.
-5. **`run()` und `dispatchLoop()`.** Initialisierung von Session und Anfrage (`sessionInit()`, `requestInit()`), die
+5. **`run()` und `dispatchLoop()`.** Initialisierung von Sitzung und Anfrage (`sessionInit()`, `requestInit()`), die
    Ereignisse `request/preinput` und `request/input`, Übersetzung von URL-Aliassen und Wildcards (`eZURLAliasML`,
    `eZURLWildcard`), die Modulprüfung (`eZModule::accessAllowed()`), `fetchModule()`, die Anmeldeprüfung des
    Siteaccess (Richtlinie `user/login`), die Zugriffsprüfung der Ansicht (`eZUser::hasAccessToView()`) und schließlich

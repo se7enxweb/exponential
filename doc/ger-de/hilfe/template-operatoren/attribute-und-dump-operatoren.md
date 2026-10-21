@@ -49,7 +49,7 @@ Listet die Schlüssel des gepipten Arrays oder Objekts auf, standardmäßig **oh
 
 Eingabe: der zu untersuchende Wert, über die Pipe. Gibt die formatierte Auflistung zurück; ein Skalar oder ein leeres
 Array wird so zurückgegeben, wie der Formatierer es exportiert. Generierte Referenz:
-[attribute](../../../eng-us/examples/template-operators/attribute.md).
+[attribute](../../beispiele/template-operatoren/attribute.md).
 
 Die Felder der Startseite von Fit & Healthy (Knoten 89), eine Ebene, als Text:
 
@@ -98,7 +98,7 @@ Derselbe Durchlauf mit anderen Standardwerten: Werte werden **angezeigt**, eine 
 | `max_val` | Zahl: Anzahl der Ebenen, in die abgestiegen wird | nein | `1` |
 | `format` | `html` oder `text` | nein | `[AttributeOperator] DefaultFormatter` |
 
-Generierte Referenz: [dump](../../../eng-us/examples/template-operators/dump.md).
+Generierte Referenz: [dump](../../beispiele/template-operatoren/dump.md).
 
 ```tpl
 {def $hash = hash( 'title', 'Fit & Healthy', 'tags', array( 'fit', 'healthy' ) )}
@@ -166,15 +166,16 @@ dieselbe Ausgabe.
 
 ## Verwandte Seiten
 
-- [Fehlersuche in Templates](../../../eng-us/help/designers/templates/template-debugging.md)
-- [Knoten, Objekte und Attribute](../../../eng-us/help/designers/templates/nodes-objects-attributes.md)
+- [Fehlersuche in Templates](../designer/vorlagen/template-debugging.md)
+- [Knoten, Objekte und Attribute](../designer/vorlagen/knoten-objekte-und-attribute.md)
 - [Typ-Operatoren](typ-operatoren.md): `get_type` und `get_class` für einen Wert
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

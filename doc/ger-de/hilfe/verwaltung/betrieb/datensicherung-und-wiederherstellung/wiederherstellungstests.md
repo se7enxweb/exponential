@@ -55,7 +55,7 @@ einen Rhythmus, der zu Ihren Pflichten zur Aufrechterhaltung des Betriebs passt,
 | Die Administration | `/user/login` der Administration öffnen, anmelden | das Dashboard |
 | Version | **Setup > Systeminformationen** oder `./console exp:system:info` | das erwartete Release, keine fehlgeschlagene Zustandsprüfung |
 | Caches | `php bin/php/cache.php status --allow-root-user` | endet mit `PASS` |
-| Audit-Trail | `./console exp:audit verify --allow-root-user` | Exit-Status 0 |
+| Prüfprotokoll | `./console exp:audit verify --allow-root-user` | Exit-Status 0 |
 | Inhalte | aktuelle Seiten und Bilder öffnen; ein Testelement veröffentlichen | Bilder laden, Veröffentlichen funktioniert |
 | SQLite | `sqlite3 <db file> "PRAGMA integrity_check"` | `ok` |
 | Fehler | `tail -n 50 var/log/error.log` | nichts Unerklärtes |
@@ -83,7 +83,7 @@ Signal, vor einem Vorfall zu handeln.
 ## Was üblicherweise schiefgeht
 
 - Als root wiederhergestellte Dateien, die der Webserver nicht beschreiben kann.
-- Eine fehlende Schlüsseldatei, sodass sich der Audit-Trail nicht prüfen lässt.
+- Eine fehlende Schlüsseldatei, sodass sich das Prüfprotokoll nicht prüfen lässt.
 - Eine SQLite-Datei, die im laufenden Betrieb kopiert statt mit `.backup` erstellt wurde.
 - Eine Testkopie, die echte E-Mails versendet oder echte Cronjobs ausführt: siehe
   [Wiederherstellung auf einem Testserver](wiederherstellung-auf-einem-testserver.md).
@@ -105,8 +105,9 @@ Signal, vor einem Vorfall zu handeln.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

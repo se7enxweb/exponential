@@ -67,7 +67,7 @@ L.7 Contributions. [The Supplier shall offer fixes of general interest to the
 | L.2 | Keine Lizenzgebühr; Entgelte gibt es für Kopien, Installation, Support und Updates | [Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md) |
 | L.3 | Der Code ist öffentlich auf GitHub unter `se7enxweb` und wird mit Composer oder Git-Klonen mit vollständiger Historie installiert | [Den Code holen](../../../../installation/03-den-code-beschaffen.md), [Mit Git entwickeln](../../../mit-git-entwickeln.md) |
 | L.3 | Bei JavaScript und CSS bedeutet „Quellcode“ die nicht minimierte Datei oder das Original, aus dem sie gebaut wurde | [Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md) |
-| L.5 | Erweiterungen geben Version und Lizenz in `ezinfo.php` und `extension.xml` an; die About-Seite listet sie auf | [About- und Paketseiten](../../../../../eng-us/features/6.0/about-and-package-pages.md) |
+| L.5 | Erweiterungen geben Version und Lizenz in `ezinfo.php` und `extension.xml` an; die About-Seite listet sie auf | [About- und Paketseiten](../../../../funktionen/6.0/info-und-paketseiten.md) |
 | L.7 | Wie Sie eine Erweiterung zurückgeben | [Erweiterungen zurückgeben](../../../erweiterungen-zurueckgeben.md) |
 
 ## Die Komponentenliste
@@ -92,5 +92,5 @@ und Versionen der Erweiterungen.
 - [Ausschreibungsvorlagen](README.md)
 - [Klausel zu Rechten an individuellen Entwicklungen](klausel-rechte-an-individuellen-entwicklungen.md)
 - [Klausel zur Zusicherung ohne Lock-in](klausel-zusicherung-ohne-lock-in.md)
-- [Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md)
+- [Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

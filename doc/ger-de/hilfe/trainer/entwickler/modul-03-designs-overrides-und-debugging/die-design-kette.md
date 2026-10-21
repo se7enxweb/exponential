@@ -41,7 +41,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### So präsentieren Sie es
 
 Quellen: [Templates und Design, Teile 1 und 2](../../../../anleitungen/templates-und-design.md#1-wie-ein-template-gefunden-wird)
-und [Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md).
+und [Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md).
 
 1. **Die Suche** (4 Minuten). Für ein Template wie `node/view/full.tpl` gewinnt die erste gefundene Datei:
    1. Override-Templates, deren Regeln in `override.ini` passen (Lektion 3.2);
@@ -151,9 +151,9 @@ Siteaccess (bei einem `exp:install` mit Standardwerten `site`).
 ## Weiterführende Literatur
 
 - [Templates und Design](../../../../anleitungen/templates-und-design.md): das Design finden, Overrides, Fehlersuche.
-- [Ladereihenfolge der Erweiterungen](../../../../../eng-us/features/6.0/extension-loading-order.md): welche Erweiterung gewinnt.
-- [Das Design registrieren](../../../../../eng-us/help/designers/extensions/registering-the-design.md): dieselben Schritte für ein Theme.
-- [Zusätzliche Erweiterungsverzeichnisse](../../../../../eng-us/features/6.0/additional-extension-directories.md): Erweiterungen
+- [Ladereihenfolge der Erweiterungen](../../../../funktionen/6.0/ladereihenfolge-der-extensions.md): welche Erweiterung gewinnt.
+- [Das Design registrieren](../../../designer/erweiterungen/das-design-registrieren.md): dieselben Schritte für ein Theme.
+- [Zusätzliche Erweiterungsverzeichnisse](../../../../funktionen/6.0/zusaetzliche-extension-verzeichnisse.md): Erweiterungen
   außerhalb von `extension/`.
 
 ## Verwandte Seiten
@@ -164,9 +164,9 @@ Siteaccess (bei einem `exp:install` mit Standardwerten `site`).
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

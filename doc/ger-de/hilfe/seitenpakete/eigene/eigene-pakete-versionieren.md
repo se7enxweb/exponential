@@ -100,8 +100,8 @@ beide Lesarten überein.
 Sobald ein Archiv auf einem Server liegt, haben Installationen es vielleicht unter seiner Version importiert. Ersetzen Sie nie ein
 veröffentlichtes Archiv mit anderem Inhalt unter derselben Version: Veröffentlichen Sie eine neue Version und sagen Sie in ihrem Changelog,
 was an der vorigen falsch war. Eine Version, deren letzte Stelle 9 erreicht, geht weiter auf 10 (auf `1.0.9` folgt `1.0.10`); nur die letzte
-Stelle zählt weiter. Die Begründung steht auf [Ein gepushtes Tag ist dauerhaft](../../../../eng-us/help/designers/distribution/a-pushed-tag-is-permanent.md)
-und [Nur die letzte Stelle zählt](../../../../eng-us/help/designers/distribution/only-the-last-position-counts.md).
+Stelle zählt weiter. Die Begründung steht auf [Ein gepushtes Tag ist dauerhaft](../../designer/veroeffentlichung/ein-gepushter-tag-ist-endgueltig.md)
+und [Nur die letzte Stelle zählt](../../designer/veroeffentlichung/nur-die-letzte-stelle-zaehlt.md).
 
 ## Verwandte Seiten
 
@@ -109,7 +109,15 @@ und [Nur die letzte Stelle zählt](../../../../eng-us/help/designers/distributio
 - [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md)
 - [Versionsnummern](../anforderungen/versionsnummern.md)
 - [Abhängigkeiten und die Installationsreihenfolge](../grundlagen/abhaengigkeiten-und-die-installationsreihenfolge.md)
-- [Paketlizenzen und Versionen](../../../../eng-us/features/6.0/package-licenses-and-versions.md)
-- [Eine Versionsnummer wählen](../../../../eng-us/help/designers/distribution/choosing-a-version-number.md)
+- [Paketlizenzen und Versionen](../../../funktionen/6.0/paketlizenzen-und-versionen.md)
+- [Eine Versionsnummer wählen](../../designer/veroeffentlichung/eine-versionsnummer-waehlen.md)
 - [Seitenpakete: hier beginnen](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

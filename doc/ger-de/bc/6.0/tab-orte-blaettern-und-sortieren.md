@@ -247,7 +247,7 @@ Prüfung ohne Schreibzugriff, dass die API vorhanden ist:
 
 ## Verwandte Seiten
 
-- [Blättern, Sortieren und Seitengrößen](../../../eng-us/features/6.0/admin-list-paging.md) und [Wo die Seitengrößen stehen](einstellungen-fuer-seitengroessen.md)
-- [RSS: Die Liste der Feeds sortiert mit denselben Überschriften](../../../eng-us/features/6.0/rss-podcast-and-feed-list.md)
-- [September 2026, erste Hälfte: 14. September](../../../eng-us/history/2026/2026-09a.md#14-september-pdf-rss-and-the-rad-tools)
+- [Blättern, Sortieren und Seitengrößen](../../funktionen/6.0/seitenweise-listen-im-admin.md) und [Wo die Seitengrößen stehen](einstellungen-fuer-seitengroessen.md)
+- [RSS: Die Liste der Feeds sortiert mit denselben Überschriften](../../funktionen/6.0/rss-podcast-und-feed-liste.md)
+- [September 2026, erste Hälfte: 14. September](../../geschichte/2026/2026-09a.md#14-september-pdf-rss-und-die-rad-werkzeuge)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

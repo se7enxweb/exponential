@@ -61,7 +61,7 @@ Stellen haben eigene Stilleitfäden; folgen Sie Ihrem, wo er abweicht.
 - [ ] Daten und Uhrzeiten vollständig geschrieben, mit der Zeitzone, wo es darauf ankommt.
 - [ ] Beträge mit Einheiten und Währung.
 - [ ] Fristen klar und früh genannt.
-- [ ] Beschriftungen und Fehlermeldungen von Formularen sagen, was zu tun ist ([Ein Kontaktformular bauen](../../../../eng-us/help/creators/website-creators/building-a-contact-form.md)).
+- [ ] Beschriftungen und Fehlermeldungen von Formularen sagen, was zu tun ist ([Ein Kontaktformular bauen](../../ersteller/website-ersteller/ein-kontaktformular-bauen.md)).
 
 ## Testen Sie es
 
@@ -74,8 +74,8 @@ Stellen haben eigene Stilleitfäden; folgen Sie Ihrem, wo er abweicht.
 
 - [ ] Verwenden Sie für die Struktur die Schaltflächen des Editors für Überschriften und Listen statt fettem Text ([Inhalte bearbeiten](../../inhalte-bearbeiten.md)).
 - [ ] Verwenden Sie für die Kurzfassung das Feld für Zusammenfassung oder Einleitung, das Ihre Inhaltsklasse bietet.
-- [ ] Verwenden Sie eine Erklärung über Relationen wieder, statt sie auf viele Seiten zu kopieren ([Relationen und Wiederverwendung](../../../../eng-us/help/creators/website-creators/relations-and-reuse.md)).
-- [ ] Wenn Sie Exponential Intelligence nutzen, um einfachere Formulierungen vorzuschlagen: Es schreibt nur Entwürfe; ein Mensch prüft und veröffentlicht ([das Glossar von Exponential](../../../../eng-us/glossary.md#e)).
+- [ ] Verwenden Sie eine Erklärung über Relationen wieder, statt sie auf viele Seiten zu kopieren ([Relationen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md)).
+- [ ] Wenn Sie Exponential Intelligence nutzen, um einfachere Formulierungen vorzuschlagen: Es schreibt nur Entwürfe; ein Mensch prüft und veröffentlicht ([das Glossar von Exponential](../../../glossar.md#e)).
 
 ## Verwandte Seiten
 
@@ -85,8 +85,9 @@ Stellen haben eigene Stilleitfäden; folgen Sie Ihrem, wo er abweicht.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -31,15 +31,15 @@ Die Bausteine gehören alle zum Kernel, den jede Installation hat:
 
 | Baustein | Was er einem Intranet gibt | Quelle |
 |---|---|---|
-| Ein Siteaccess mit `RequireUserLogin=true` | jede Seite verlangt zuerst eine Anmeldung | [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md#a-members-only-area) |
+| Ein Siteaccess mit `RequireUserLogin=true` | jede Seite verlangt zuerst eine Anmeldung | [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../ersteller/website-ersteller/mitgliederregistrierung-und-mitgliederbereiche.md#ein-bereich-nur-für-mitglieder) |
 | Benutzergruppen, Rollen und Richtlinien | Abteilungen, Redakteure, Leser und wer was tun darf | [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md) |
 | Sektionen | Inhaltsbereiche, die nur manche Gruppen lesen oder bearbeiten dürfen | [Sektionen](../../../anleitungen/sektionen.md#132-ein-intranet-mit-abteilungen) |
 | Objektzustände | Stadien wie Entwurf, In Prüfung, Freigegeben | [Objektzustände](../../../anleitungen/objektzustaende.md) |
 | Workflows | Freigabe vor dem Veröffentlichen | [Workflows](../../../anleitungen/workflows.md) |
-| Dateien und `content/download` | eine Dokumentenbibliothek, deren Downloads die Berechtigungen beachten | [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
-| Suche | Mitarbeiter finden nur, was sie lesen dürfen | [Suche auf der Website](../../../../eng-us/help/creators/website-creators/site-search.md) |
-| Benachrichtigungen | eine Mail, wenn unterhalb eines Elements, dem ein Benutzer folgt, etwas veröffentlicht wird | [Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md) |
-| Der Audit-Trail | wer was getan hat, mit einer manipulationssicheren Aufzeichnung | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |
+| Dateien und `content/download` | eine Dokumentenbibliothek, deren Downloads die Berechtigungen beachten | [Dateien und Downloads](../../ersteller/website-ersteller/dateien-und-downloads.md) |
+| Suche | Mitarbeiter finden nur, was sie lesen dürfen | [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md) |
+| Benachrichtigungen | eine Mail, wenn unterhalb eines Elements, dem ein Benutzer folgt, etwas veröffentlicht wird | [Benachrichtigungen: die Anleitung für Benutzer](../../../funktionen/6.0/benachrichtigungen.md) |
+| Das Prüfprotokoll | wer was getan hat, mit einer manipulationssicheren Aufzeichnung | [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md) |
 
 Zwei weitere Bausteine gibt es als Erweiterungen oder Einstellungen: die zweistufige Anmeldung (die Erweiterung
 `sevenx_authentication_2fa`, in `composer.json` aufgeführt) und die Anmeldung gegen ein Firmenverzeichnis (die
@@ -83,7 +83,7 @@ Login-Handler des Kernels für LDAP und Textdateien, eingestellt in `settings/ld
 - [ ] Eine Exponential-Installation oder einen Partner oder Hoster, der eine bereitstellt
   ([Hosting auswählen](../auswahl/hosting-auswaehlen.md)).
 - [ ] Einen Hostnamen für das Intranet und ein HTTPS-Zertifikat
-  ([Live gehen: Hosts und HTTPS](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+  ([Live gehen: Hosts und HTTPS](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - [ ] Eine benannte verantwortliche Person für das Intranet und eine für jeden Abteilungsbereich.
 - [ ] Eine Liste der Mitarbeitergruppen und was jede Gruppe lesen und bearbeiten darf.
 - [ ] Eine Entscheidung zur Anmeldung: lokale Konten, ein Verzeichnis, zweistufige Anmeldung.
@@ -98,7 +98,7 @@ Login-Handler des Kernels für LDAP und Textdateien, eingestellt in `settings/ld
 - [Sicherheit](../sicherheit/README.md): Zugriffsprüfungen, Konten und Passwörter, DSGVO-Grundlagen.
 - [Zuverlässigkeit](../zuverlaessigkeit/README.md): das Intranet an jedem Arbeitstag verfügbar halten.
 - [Kosten](../kosten/README.md), einschließlich des [durchgerechneten Beispiels für ein Intranet](../kosten/durchgerechnetes-beispiel-intranet.md).
-- Öffentliche Stellen: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
+- Öffentliche Stellen: [Behörden: hier beginnen](../../verwaltung/verwaltungen-hier-beginnen.md).
 
 ## Verwandte Seiten
 
@@ -109,8 +109,8 @@ Login-Handler des Kernels für LDAP und Textdateien, eingestellt in `settings/ld
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

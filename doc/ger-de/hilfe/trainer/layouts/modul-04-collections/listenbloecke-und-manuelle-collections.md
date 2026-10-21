@@ -38,8 +38,8 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Collections: einem Block seinen Inhalt geben](../../../../../eng-us/bc/6.0/LAYOUTS.md#collections-giving-a-block-its-content)
-und [Blockkatalog](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-catalogue).
+Quellen: [Collections: einem Block seinen Inhalt geben](../../../../bc/6.0/layouts.md#collections-einem-block-seine-inhalte-geben)
+und [Blockkatalog](../../../../bc/6.0/layouts.md#blockkatalog).
 
 1. **Listenblöcke** (3 Minuten). In der Gruppe **Listing**: **List**, **Grid**, **Zig-Zag (List)**, **Accordion
    (List)**, **Sushi bar**, **Single content**; Galerien in **Gallery**. **List** ist das Arbeitspferd mit sechs
@@ -111,7 +111,7 @@ Auswählen genannt.
 <summary>Antworten</summary>
 
 1. Drei beliebige aus `list`, `grid`, `list_numbered`, `list_zigzag`, `list_accordion`, `grid_featured`
-   ([Exponential Layouts](../../../../../eng-us/bc/6.0/LAYOUTS.md#block-catalogue)).
+   ([Exponential Layouts](../../../../bc/6.0/layouts.md#blockkatalog)).
 2. **+ Add items**.
 3. **B.**
 4. Das Element ist im Inhaltsbaum verborgen; Besucher sehen es nicht.
@@ -121,20 +121,20 @@ Auswählen genannt.
 
 ## Weiterführende Informationen
 
-- [Exponential Layouts: Collections](../../../../../eng-us/bc/6.0/LAYOUTS.md#collections-giving-a-block-its-content)
-- [Layout-Typen, Zonen und Blöcke: Collections](../../../../../eng-us/help/creators/website-creators/layout-types-zones-and-blocks.md#collections)
+- [Exponential Layouts: Collections](../../../../bc/6.0/layouts.md#collections-einem-block-seine-inhalte-geben)
+- [Layout-Typen, Zonen und Blöcke: Collections](../../../ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md#collections)
 
 ## Verwandte Seiten
 
 - [Modul 4: Collections](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

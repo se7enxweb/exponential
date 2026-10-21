@@ -12,7 +12,7 @@ type: reference
 Diese Seite richtet sich an Leserinnen und Leser in einer öffentlichen Stelle, die auf einen unbekannten Begriff
 stoßen. Jeder Eintrag hat ein bis drei Sätze und einen Link auf die Seite, die ihn erklärt. Die Einträge sind nach dem
 englischen Fachbegriff geordnet, der in Klammern steht. Das vollständige Produktglossar ist das
-[Exponential-Glossar](../../../../eng-us/glossary.md).
+[Exponential-Glossar](../../../glossar.md).
 
 > **Hinweis** Die Definitionen von Rechtsbegriffen sind Beschreibungen in einfacher Sprache, keine Legaldefinitionen.
 > Prüfen Sie das für Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -35,7 +35,7 @@ kostet keine Gebühr und erlaubt Ihnen, den Code auszuführen, zu untersuchen, z
 
 **Livegang (Go-live).** Der Moment, in dem eine Website für die Öffentlichkeit freigeschaltet wird. Eine Checkliste für
 den Livegang umfasst Inhalte, Barrierefreiheit, Sicherheit, Datensicherungen und Überwachung
-([Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md)).
+([Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)).
 
 **Härtung (Hardening).** Einstellungen und Server so ändern, dass eine Website Angriffen besser widersteht als mit den
 Voreinstellungen ([Sicherheitshärtung](../../sicherheitshaertung.md),
@@ -46,7 +46,7 @@ Server, Container oder ein verwalteter Dienst ([Ein Hostingmodell wählen](../..
 
 **HSTS.** HTTP Strict Transport Security, ein Header, der Browser anweist, nur HTTPS zu verwenden. In Exponential ist
 er standardmäßig leer und wird vom Betreiber gesetzt, sobald die gesamte Website über HTTPS läuft
-([Sicherheitsstandards](../../../../eng-us/standards/security.md#known-gaps)).
+([Sicherheitsstandards](../../../standards/sicherheit.md#bekannte-lücken)).
 
 ## I
 
@@ -76,7 +76,7 @@ liest, `kickstart.ini` ([6. Der Kickstarter](../../../installation/06-kickstarte
 
 **Rechtsgrundlage (Legal basis).** Nach der DSGVO der Grund, der die Verarbeitung personenbezogener Daten rechtmäßig
 macht, etwa eine Einwilligung oder eine öffentliche Aufgabe. Sie zu wählen ist die Entscheidung des Verantwortlichen,
-nicht der Software ([Datenschutzstandards](../../../../eng-us/standards/privacy.md)).
+nicht der Software ([Datenschutzstandards](../../../standards/datenschutz.md)).
 
 **Beschränkung (Limitation).** Eine Einschränkung innerhalb eines Rechts, zum Beispiel „nur in dieser Sektion“ oder
 „nur Inhalte dieser Klasse“ ([Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)).
@@ -87,15 +87,15 @@ fehlende Dokumentation, nicht durch die Lizenz
 ([Von Exponential weg migrieren](../../../installation/migration/exponential-verlassen.md)).
 
 **Ort (Location).** Ein anderes Wort für einen Knoten: eine Stelle eines Inhaltsobjekts im Inhaltsbaum. Ein Objekt kann
-mehrere haben ([das Exponential-Glossar](../../../../eng-us/glossary.md#l)).
+mehrere haben ([das Exponential-Glossar](../../../glossar.md#l)).
 
 **Protokoll (Log).** Eine Datei, in der das System Ereignisse und Fehler aufzeichnet. **Setup > Logdateien** listet sie
-mit einer Fehlerübersicht auf ([Protokollanzeige](../../../../eng-us/features/6.0/log-viewer.md),
-[Protokollrotation](../../../../eng-us/features/6.0/log-rotation.md)).
+mit einer Fehlerübersicht auf ([Protokollanzeige](../../../funktionen/6.0/log-betrachter.md),
+[Protokollrotation](../../../funktionen/6.0/log-rotation.md)).
 
-**Aufbewahrung von Protokollen (Log retention).** Wie lange Protokolle aufbewahrt werden. In Exponential bewahrt der
-Audit-Trail pro Kanal 90 Tage aktiv und zwei Jahre archiviert auf; einige andere Protokolle haben Altersgrenzen, die in
-`logviewer.ini` festgelegt sind ([Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)).
+**Aufbewahrung von Protokollen (Log retention).** Wie lange Protokolle aufbewahrt werden. In Exponential bewahrt das
+Prüfprotokoll pro Kanal 90 Tage aktiv und zwei Jahre archiviert auf; einige andere Protokolle haben Altersgrenzen, die in
+`logviewer.ini` festgelegt sind ([Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)).
 
 ## Verwandte Seiten
 
@@ -105,8 +105,9 @@ Audit-Trail pro Kanal 90 Tage aktiv und zwei Jahre archiviert auf; einige andere
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -37,7 +37,7 @@ dass sie später wiederkommen sollen, statt Ihre Seiten aus dem Index zu werfen.
 
 Der Wartungsmodus ist Teil jeder Installation. Die Installer verwenden denselben Mechanismus, „damit eine Website, die
 gerade installiert wird, nie eine halb aufgebaute Seite ausliefert“
-([Funktion Wartungsmodus](../../../../eng-us/features/6.0/maintenance-mode.md)).
+([Funktion Wartungsmodus](../../../funktionen/6.0/wartungsmodus.md)).
 
 ## Was Kunden und Suchmaschinen sehen
 
@@ -96,7 +96,7 @@ Ohne `--allow-admin` ist auch die Administration offline
 ([Anleitung zum Wartungsmodus, von der Kommandozeile](../../../anleitungen/wartungsmodus.md#6-über-die-kommandozeile)).
 `--allow-root-user` ist nur nötig, wenn Sie als root arbeiten.
 
-Jedes Ein- und Ausschalten wird im Audit-Trail als `system.maintenance.change` aufgezeichnet, und die Seite listet die
+Jedes Ein- und Ausschalten wird im Prüfprotokoll als `system.maintenance.change` aufgezeichnet, und die Seite listet die
 letzten acht auf ([Anleitung zum Wartungsmodus, das Audit](../../../anleitungen/wartungsmodus.md#13-letzte-änderungen-und-das-audit)).
 
 ## Wer trotzdem hineinkommt
@@ -133,7 +133,7 @@ der Weg zurück hinein, wenn sonst nichts funktioniert“
   während Sie die Website ändern“
   ([Anleitung zum Wartungsmodus, Cronjobs](../../../anleitungen/wartungsmodus.md#10-installationen-cronjobs-und-bereitstellungen)).
   Cronjob-Teile lassen sich auch unter **Setup > Cronjobs** anhalten
-  ([Cronjob-Teile anhalten](../../../../eng-us/features/6.0/cronjob-pause.md)).
+  ([Cronjob-Teile anhalten](../../../funktionen/6.0/cronjobs-pausieren.md)).
 - **Deployments** (`exp:velocity deploy`) schalten die Wartung weder ein noch aus; öffnen Sie das Fenster zuerst selbst.
 - **Ein CDN oder Reverse Proxy** hält möglicherweise noch Seiten von vor dem Fenster; leeren Sie es, wenn sich Inhalte
   geändert haben.
@@ -167,14 +167,14 @@ Nach dem Ausschalten:
 ## Verwandte Seiten
 
 - [Aktualisierungen ohne Überraschungen](aktualisierungen-ohne-ueberraschungen.md)
-- [Wartungsmodus für Website-Ersteller](../../../../eng-us/help/creators/website-creators/maintenance-mode.md)
+- [Wartungsmodus für Website-Ersteller](../../ersteller/website-ersteller/wartungsmodus.md)
 - [Wartungsmodus (Hosting)](../../hosting/betrieb/wartungsmodus.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

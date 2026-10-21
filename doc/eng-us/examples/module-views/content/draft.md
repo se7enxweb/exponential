@@ -14,10 +14,10 @@ A view of the `content` module, defined in `kernel/content/module.php` and run b
 ## Address
 
 ```text
-/content/draft/(offset)/<Offset>
+/content/draft/(offset)/<Offset>/(q)/<Query>
 ```
 
-Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`.
+Unordered parameters, in any order as `/(name)/value`: `(offset)` sets `Offset`, `(q)` sets `Query`.
 
 ## Who may open it
 

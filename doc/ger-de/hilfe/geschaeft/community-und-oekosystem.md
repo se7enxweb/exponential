@@ -42,7 +42,7 @@ beantwortet jede dieser Sorgen mit etwas, das der Käufer selbst prüfen kann.
 
 | Sorge des Käufers | Was das Ökosystem bietet | Wo der Beleg ist |
 |---|---|---|
-| „Gibt es das in fünf Jahren noch?“ | Eine Codebasis mit Historie bis 2002, am Leben gehalten nach dem Ende durch den ursprünglichen Hersteller 2021, eine gepflegte Linie 6.0 mit Releases seit dem 1. Januar 2024 | [Wer ist 7x?](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste), [Die Geschichte von Exponential](../../../eng-us/history/README.md) |
+| „Gibt es das in fünf Jahren noch?“ | Eine Codebasis mit Historie bis 2002, am Leben gehalten nach dem Ende durch den ursprünglichen Hersteller 2021, eine gepflegte Linie 6.0 mit Releases seit dem 1. Januar 2024 | [Wer ist 7x?](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste), [Die Geschichte von Exponential](../../geschichte/README.md) |
 | „Wer ist dafür verantwortlich?“ | Ein Unternehmen (7x), das die Entwicklung leitet, und eine gemeinnützige Organisation (die Exponential Foundation), die das Projekt betreibt und finanziert | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#die-foundation-und-7x) |
 | „Wo bekommen wir Hilfe?“ | Öffentliche Foren, ein Community-Chat, eine Enzyklopädie, Dokumentation und öffentliche Issue-Tracker | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#orte-der-community) |
 | „Können wir es ohne den Hersteller erweitern?“ | Jedes Paket ist ein öffentliches GitHub-Repository und ein Composer-Paket; der Code steht unter der GPL v2 oder höher | [Lizenzen für Käufer erklärt](lizenzen-fuer-kaeufer.md) |
@@ -123,7 +123,7 @@ Quellen: [Wer ist 7x?](../wer-ist-7x.md#die-community), [Wer ist die Exponential
 
 Die Hilfe, die Sie gerade lesen, ist Teil des Arguments für das Ökosystem. Sie wird mit der Software ausgeliefert,
 ist durchsuchbar und nach Zielgruppen gefiltert, jede Seite lässt sich drucken oder als PDF herunterladen, und sie ist
-freie Dokumentation unter der GNU FDL 1.3 ([Das Hilfesystem](../../../eng-us/features/6.0/help-system.md), [Freie Dokumentation](../freie-dokumentation.md)).
+freie Dokumentation unter der GNU FDL 1.3 ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md), [Freie Dokumentation](../freie-dokumentation.md)).
 Das Team eines Käufers kann sie vor dem Kauf lesen, übersetzen und verbessern.
 
 ## Säule 3: ein offenes Paket-Ökosystem
@@ -131,7 +131,7 @@ Das Team eines Käufers kann sie vor dem Kauf lesen, übersetzen und verbessern.
 | Fakt | Quelle |
 |---|---|
 | Der Kernel ist das Composer-Paket `se7enxweb/exponential`, Lizenz `GPL-2.0-or-later` | `composer.json` |
-| `composer.json` setzt 66 Pakete `se7enxweb/*` voraus, viele davon inaktiv, bis sie eingeschaltet werden | [Wer ist 7x?](../wer-ist-7x.md#das-ökosystem-der-erweiterungen), [Die Standardverteilung der Erweiterungen](../../../eng-us/features/6.0/default-extension-distribution.md) |
+| `composer.json` setzt 66 Pakete `se7enxweb/*` voraus, viele davon inaktiv, bis sie eingeschaltet werden | [Wer ist 7x?](../wer-ist-7x.md#das-ökosystem-der-erweiterungen), [Die Standardverteilung der Erweiterungen](../../funktionen/6.0/standard-extension-auslieferung.md) |
 | Jede Erweiterung hat ihr eigenes Repository unter `github.com/se7enxweb`, eigene Releases und ein eigenes Changelog | [Wer ist 7x?](../wer-ist-7x.md#das-ökosystem-der-erweiterungen) |
 | Die Produktfamilie: Exponential 6, Exponential Basic, Exponential Platform 3.2.9, Exponential Platform Legacy, Exponential Platform Nexus, Exponential Platform DXP, Exponential Velocity, Exponential Intelligence, Exponential Layouts, AdminUI und das Hilfesystem | [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#die-produktfamilie-im-überblick) |
 | Arbeit anderer Open-Source-Unternehmen ist eingebaut und genannt: Netgen (Konzept der Layouts), Mugo Web (Funktionen von LoveStack), CJW Network (Newsletter) | [Wer ist 7x?](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) |
@@ -152,7 +152,7 @@ Ihres Termins ein.
 
 | Beleg | Was Sie öffnen | Was der Käufer sieht |
 |---|---|---|
-| Die Geschichte ist öffentlich | Die Hilfeseite [Die Geschichte von Exponential](../../../eng-us/history/README.md) | Jede Änderung seit Dezember 2023, Monat für Monat |
+| Die Geschichte ist öffentlich | Die Hilfeseite [Die Geschichte von Exponential](../../geschichte/README.md) | Jede Änderung seit Dezember 2023, Monat für Monat |
 | Der Code ist öffentlich | [github.com/se7enxweb/exponential](https://github.com/se7enxweb/exponential) | Das Repository, seine Issues und Pull-Requests |
 | Die Pakete sind öffentlich | [packagist.org/packages/se7enxweb/exponential](https://packagist.org/packages/se7enxweb/exponential) | Das Kernel-Paket und seine Versionen |
 | Sicherheit hat einen Ablauf | `SECURITY.md` im Repository | Vertrauliche Meldung, die unterstützte Linie, „a published tag is never changed“ (ein veröffentlichter Tag wird nie geändert) |
@@ -209,7 +209,7 @@ Verwenden Sie diese Fragen in der Bedarfsanalyse. Die Antworten zeigen Ihnen, we
 3. Arbeiten Ihre Entwickler bereits mit Git, Composer und GitHub?
 4. Möchten Sie Korrekturen zurückgeben oder nur Releases nutzen?
 5. In welchen Sprachen braucht Ihr Team Hilfe? (Die Hilfe und die Übersetzungen der Administration sind unter
-   [Sprachen](../../../eng-us/languages.md) aufgeführt.)
+   [Sprachen](../../sprachen.md) aufgeführt.)
 6. Brauchen Sie kommerziellen Support oder Hosting? (Verweisen Sie auf die Dienstleistungen von 7x, ohne Preise zu
    nennen.)
 
@@ -256,3 +256,11 @@ Füllen Sie die Platzhalter aus den aktuellen Quellen aus, bevor Sie das Blatt v
 - [Mit der Community arbeiten und etwas zurückgeben](../fuehrung/mit-der-community-arbeiten.md)
 - [Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

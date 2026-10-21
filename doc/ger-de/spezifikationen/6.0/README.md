@@ -3,7 +3,7 @@
 Die Spezifikationen sind die Referenzseiten von Exponential 6.0: Datenmodelle, Klassen und Schnittstellen, jede
 Einstellung mit ihrem Standardwert und Geltungsbereich, Erweiterungspunkte, Ereignisse, APIs und Befehle. Verwenden Sie
 sie, wenn Sie eine genaue Antwort brauchen. Für einen ersten Rundgang durch das Produkt beginnen Sie mit
-[den Anleitungen](../../anleitungen/README.md); für Begriffe verwenden Sie [das Glossar](../../../eng-us/glossary.md).
+[den Anleitungen](../../anleitungen/README.md); für Begriffe verwenden Sie [das Glossar](../../glossar.md).
 
 Jede Seite beginnt damit, wofür sie gedacht ist und wer sie lesen sollte, gibt ihre Einstellungen als Tabellen an (Datei,
 Block, Schlüssel, Standard, Geltungsbereich) und endet mit „Verwandte Seiten“.
@@ -74,5 +74,5 @@ Block, Schlüssel, Standard, Geltungsbereich) und endet mit „Verwandte Seiten�
 
 ## Verwandte Seiten
 
-- [Glossar](../../../eng-us/glossary.md), [Anleitungen](../../anleitungen/README.md), [Geschichte](../../../eng-us/history/README.md)
+- [Glossar](../../glossar.md), [Anleitungen](../../anleitungen/README.md), [Geschichte](../../geschichte/README.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

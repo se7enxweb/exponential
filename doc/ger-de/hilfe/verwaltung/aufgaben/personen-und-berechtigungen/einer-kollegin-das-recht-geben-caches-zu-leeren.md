@@ -29,7 +29,7 @@ ohne irgendein anderes Setup-Recht. **Setup > Cache-Verwaltung** (`/setup/cache`
 
 1. **Benutzer > Rollen und Richtlinien > Neue Rolle**, nennen Sie sie „Cache operator“ (oder fügen Sie die Richtlinie
    Ihrer bestehenden Rolle „Web team“ hinzu:
-   [Rollengestaltung: das zentrale Web-Team](../../../../../eng-us/help/government/operations/people-and-permissions/role-design-web-team.md)).
+   [Rollengestaltung: das zentrale Web-Team](../../betrieb/personen-und-berechtigungen/rollenentwurf-webteam.md)).
 2. **Neue Richtlinie**: Modul `setup`, Funktion `managecache`, **Vollen Zugriff gewähren** für diese Funktion.
 3. Optional `setup` / `system_info`, damit sie **Setup > Systeminformationen** lesen können; deren Schaltflächen für
    HTTP-Cache, Abfrage-Cache und SQL-Profil brauchen ebenfalls `setup/managecache`.
@@ -51,15 +51,16 @@ ohne irgendein anderes Setup-Recht. **Setup > Cache-Verwaltung** (`/setup/cache`
 - Andere Setup-Seiten (Wartung, Cronjobs, Ini Einstellungen) werden nicht angeboten.
 
 ## Verwandte Seiten
-- [Veralteter Cache](../../../../../eng-us/help/government/operations/incidents/stale-cache.md)
-- [Grundsätze der minimalen Rechte](../../../../../eng-us/help/government/operations/people-and-permissions/least-privilege-principles.md)
+- [Veralteter Cache](../../betrieb/vorfaelle/veralteter-cache.md)
+- [Grundsätze der minimalen Rechte](../../betrieb/personen-und-berechtigungen/prinzip-der-geringsten-rechte.md)
 - [Caches leeren und vorwärmen (Hosting)](../../../hosting/leistung/caches-leeren-und-vorwaermen.md)
 - [Anleitung zu den Caches](../../../../anleitungen/caches.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

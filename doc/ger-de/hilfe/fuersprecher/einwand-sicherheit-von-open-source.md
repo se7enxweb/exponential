@@ -52,8 +52,8 @@ Die meisten Vorfälle bei jedem CMS entstehen durch die Art, wie eine Website be
 Administratoren:
 
 - eine [Anleitung zur Härtung](../sicherheitshaertung.md) Bedrohung für Bedrohung, mit einer [Checkliste](../sicherheitshaertung.md#checkliste);
-- die [Content Security Policy](../../../eng-us/features/6.0/content-security-policy.md);
-- das [Prüfprotokoll](../../../eng-us/features/6.0/audit-trail.md) und die [Request-Logs](../../../eng-us/features/6.0/request-logs.md);
+- die [Content Security Policy](../../funktionen/6.0/content-security-policy.md);
+- das [Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md) und die [Request-Logs](../../funktionen/6.0/anfrageprotokolle.md);
 - die [zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md);
 - erzeugte Administratorpasswörter bei neuen Installationen ([Das Standardpasswort des Administrators](../standard-administratorpasswort.md)).
 
@@ -86,3 +86,11 @@ checklist are the place to start. (links)
 - [Für Sicherheit eintreten](fuer-sicherheit-eintreten.md)
 - [Mit Einwänden umgehen, Sicherheit](../geschaeft/einwandbehandlung.md#sicherheit)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

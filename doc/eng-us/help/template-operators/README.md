@@ -11,7 +11,7 @@ type: help
 
 An operator takes a value and returns one: `{$node.name|wash}`, `{sum( 2, 3 )}`, `{fetch( 'content', 'node', hash( 'node_id', 89 ) )}`.
 Operators come from the template library (`lib/eztemplate/`), the kernel (`kernel/common/` and friends) and the
-active extensions; on alpha the engine registers 400 of them. This section has 47 pages:
+active extensions; on alpha the engine registers 401 of them. This section has 47 pages:
 
 - the [operator index](operator-index.md), A to Z, which leads to the section of each operator;
 - one page per operator family, with every operator's parameters, input, return value and at least one example
@@ -26,7 +26,7 @@ operator with its parameter list from the code and its first use in a shipped te
 
 ## Indexes
 
-- [Operator index](operator-index.md): All 400 template operators registered on alpha's site and admin siteaccesses, A to Z, each with the family page that documents its parameters, return value and examples, the class that serves it and where that class comes from.
+- [Operator index](operator-index.md): All 401 template operators registered on alpha's site and admin siteaccesses, A to Z, each with the family page that documents its parameters, return value and examples, the class that serves it and where that class comes from.
 
 ## Template library operators
 
@@ -59,7 +59,7 @@ operator with its parameter list from the code and its first use in a shipped te
 - [Text helper operators of the kernel](kernel-text-helper-operators.md): Five small kernel operators - alphabet, autolink, simpletags, eztoc and month_overview - with their parameters, the settings they read, what they escape and what they do not, and examples rendered on alpha.
 - [Preference, module, package and PDF operators](kernel-misc-operators.md): The kernel operators ezpreference, ezmodule, module_params and ezpackage and the library operator pdf - what each reads, its parameters, what it returns, which of them have side effects - with examples rendered on alpha.
 - [Siteaccess operators](siteaccess-operators.md): The kernel operators that know the siteaccesses of an installation - siteaccess_url, siteaccess_menu, siteaccess_menu_key and language_switcher - with their parameters, the settings behind them, what they return, how they compile, and examples rendered on alpha with three different siteaccesses.
-- [Installation, environment, audit and CSP operators](exponential-kernel-operators.md): Six operators the Exponential kernel added - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label and csp_nonce - with the settings they read, what they return, the caching rule for csp_nonce, and examples rendered on alpha.
+- [Installation, environment, audit and CSP operators](exponential-kernel-operators.md): Seven operators the Exponential kernel added - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce and view_parameter - with the settings they read, what they return, the caching rule for csp_nonce, and examples rendered on alpha.
 
 ## Extension operators
 

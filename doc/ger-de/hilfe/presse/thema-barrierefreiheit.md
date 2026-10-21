@@ -53,13 +53,13 @@ Alles in der Entwicklungslinie 6.0.15, die nicht erschienen ist.
 | Fakt | Quelle |
 |---|---|
 | Bedienflächen sind mindestens 24 mal 24 Pixel groß (WCAG 2.5.8), und jedes Formularfeld hat einen Namen. | [Gesprächspunkte: Barrierefreiheit](../fuersprecher/gespraechspunkte-barrierefreiheit.md#die-punkte) |
-| Ein Sprunglink ist der erste Tab-Halt, mit Landmarks für Kopfbereich, Menüs, Brotkrümelnavigation und Hauptinhalt. | [Das Design admin4, Landmarks und Namen](../../../eng-us/features/6.0/admin4-design.md#landmarks-and-names) |
+| Ein Sprunglink ist der erste Tab-Halt, mit Landmarks für Kopfbereich, Menüs, Brotkrümelnavigation und Hauptinhalt. | [Das Design admin4, Landmarks und Namen](../../funktionen/6.0/admin4-design.md#landmarks-und-namen) |
 | Die Administration und die Hilfe lassen sich allein mit der Tastatur bedienen. | [Tastenkürzel](../tastenkuerzel.md) |
 | Helles und dunkles Theme, der Hochkontrastmodus von Windows (erzwungene Farben) und reduzierte Bewegung werden unterstützt. | [Gesprächspunkte: Barrierefreiheit](../fuersprecher/gespraechspunkte-barrierefreiheit.md#die-punkte) |
-| Auf dem Dashboard wird eine Veränderung als Zahl, Pfeil und Worte gezeigt, nie allein durch Farbe. | [Das Design admin4, Was Sie bekommen](../../../eng-us/features/6.0/admin4-design.md#what-you-get) |
+| Auf dem Dashboard wird eine Veränderung als Zahl, Pfeil und Worte gezeigt, nie allein durch Farbe. | [Das Design admin4, Was Sie bekommen](../../funktionen/6.0/admin4-design.md#was-sie-erhalten) |
 | Bildfelder können pro Klasse einen Alternativtext verlangen; das ist ausgeschaltet, bis es eingeschaltet wird. | [Gesprächspunkte: Barrierefreiheit](../fuersprecher/gespraechspunkte-barrierefreiheit.md#die-punkte) |
-| Exponential Intelligence kann Alternativtext vorschlagen und Bilder melden, denen er fehlt. | [expai, Für Redakteure](../../../eng-us/features/6.0/extensions/expai.md#for-editors) |
-| Sprachen, die von rechts nach links geschrieben werden, drehen die Administration um. | [Von rechts nach links](../../../eng-us/features/6.0/right-to-left.md) |
+| Exponential Intelligence kann Alternativtext vorschlagen und Bilder melden, denen er fehlt. | [expai, Für Redakteure](../../funktionen/6.0/erweiterungen/expai.md#für-redakteure) |
+| Sprachen, die von rechts nach links geschrieben werden, drehen die Administration um. | [Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
 
 ## Was Sie nicht behaupten sollten
 
@@ -107,8 +107,8 @@ die Regeln befolgen: Barrierefreiheit in CONTRIBUTING.md festgeschrieben“.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

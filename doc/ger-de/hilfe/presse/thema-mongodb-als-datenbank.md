@@ -25,7 +25,7 @@ Dokumentdatenbank läuft, ist ungewöhnlich; Exponential 6.0.14 hat es hinzugef�
 
 „Exponential 6.0.14 (Juni 2026) kann das gesamte Content-Repository statt in MySQL, PostgreSQL oder SQLite in MongoDB
 speichern, und der Einrichtungsassistent bietet MongoDB neben den anderen Datenbanksystemen an“
-([MongoDB als Datenbank](../../../eng-us/features/6.0/mongodb-database-support.md)). Ein Adapter verwandelt die SQL-artigen
+([MongoDB als Datenbank](../../funktionen/6.0/mongodb-datenbankunterstuetzung.md)). Ein Adapter verwandelt die SQL-artigen
 Aufrufe des Kernels in MongoDB-Operationen. Das Projekt listet auf, was funktioniert und was nicht, und rät Lesern, die
 Grenzen zu lesen, bevor sie es für eine produktive Website wählen.
 
@@ -33,7 +33,7 @@ Grenzen zu lesen, bevor sie es für eine produktive Website wählen.
 
 | Was | Wann | Quelle |
 |---|---|---|
-| MongoDB 8 als Datenbank | 1. Juni 2026 | [Juni 2026](../../../eng-us/history/2026/2026-06a.md) |
+| MongoDB 8 als Datenbank | 1. Juni 2026 | [Juni 2026](../../geschichte/2026/2026-06a.md) |
 | Erstes Release damit, 6.0.14 | 7. Juni 2026 | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) |
 
 ## Fakten, die Sie drucken können
@@ -41,8 +41,8 @@ Grenzen zu lesen, bevor sie es für eine produktive Website wählen.
 | Fakt | Quelle |
 |---|---|
 | MongoDB steht an dritter Stelle der Rangfolge: SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../datenbankunterstuetzung.md) |
-| Funktioniert: Bearbeiten und Veröffentlichen von Inhalten, der Inhaltsbaum, URL-Aliase, Rollen, die Administration, die öffentliche Website, der Einrichtungsassistent | [Was funktioniert und was nicht](../../../eng-us/features/6.0/mongodb-database-support.md#what-works-and-what-does-not-june-2026) |
-| Eine vollständige Portierungsreferenz dokumentiert jede berührte Kernel-Klasse | [MongoDB als Datenbank](../../../eng-us/features/6.0/mongodb-database-support.md) |
+| Funktioniert: Bearbeiten und Veröffentlichen von Inhalten, der Inhaltsbaum, URL-Aliase, Rollen, die Administration, die öffentliche Website, der Einrichtungsassistent | [Was funktioniert und was nicht](../../funktionen/6.0/mongodb-datenbankunterstuetzung.md#was-funktioniert-und-was-nicht-juni-2026) |
+| Eine vollständige Portierungsreferenz dokumentiert jede berührte Kernel-Klasse | [MongoDB als Datenbank](../../funktionen/6.0/mongodb-datenbankunterstuetzung.md) |
 
 ## Die dokumentierten Grenzen
 
@@ -74,8 +74,8 @@ liefert nichts zurück.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

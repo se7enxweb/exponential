@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren. Manchmal müssen Daten erhalten bleiben, ihre Nutzung aber aufhören: ein
 strittiges Konto, eine laufende Untersuchung, ausscheidende Beschäftigte, deren Inhalte und Verlauf aufbewahrt werden
 müssen. Exponential bietet das Deaktivieren und, als Opt-in, **Deaktivieren und verschieben**
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md), [Datenschutzstandards](../../../../eng-us/standards/privacy.md#gdpr)).
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md), [Datenschutzstandards](../../../standards/datenschutz.md#dsgvo)).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -64,14 +64,15 @@ anonyme Benutzer, der Ersteller der Benutzer, das Administratorkonto und Ihr eig
 
 ## Verwandte Seiten
 
-- [Benutzerkonten prüfen: Deaktivieren und verschieben](../../../../eng-us/features/6.0/user-hygiene.md#deactivate-and-move)
+- [Benutzerkonten prüfen: Deaktivieren und verschieben](../../../funktionen/6.0/benutzerpflege.md#deaktivieren-und-verschieben)
 - [Das Recht auf Löschung](recht-auf-loeschung.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

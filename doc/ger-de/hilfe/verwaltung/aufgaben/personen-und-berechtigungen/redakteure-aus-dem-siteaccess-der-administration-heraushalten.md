@@ -26,7 +26,7 @@ nimmt eine Einschränkung `SiteAccess` (`kernel/user/module.php`); die Seite der
 ## Bevor Sie beginnen
 
 - Ihre Installation hat einen eigenen Siteaccess zum Bearbeiten, oder Redakteure arbeiten auf dem öffentlichen
-  Siteaccess; siehe [Siteaccesses der Administration und der Öffentlichkeit trennen](../../../../../eng-us/help/government/operations/hosting/separating-admin-and-public-siteaccesses.md).
+  Siteaccess; siehe [Siteaccesses der Administration und der Öffentlichkeit trennen](../../betrieb/hosting/administrations-und-oeffentliche-siteaccesses-trennen.md).
   Die Namen stehen unter **Setup > Systeminformationen**, Teil *Siteaccesses*.
 - Ein Konto mit dem Modul `role`.
 
@@ -62,15 +62,16 @@ einschließt.
   ([Die Administration beschränken](../../../hosting/sicherheit/die-administration-einschraenken.md)).
 
 ## Verwandte Seiten
-- [Grundsätze der minimalen Rechte](../../../../../eng-us/help/government/operations/people-and-permissions/least-privilege-principles.md)
+- [Grundsätze der minimalen Rechte](../../betrieb/personen-und-berechtigungen/prinzip-der-geringsten-rechte.md)
 - [Prüfen, was eine Rolle erlaubt](pruefen-was-eine-rolle-erlaubt.md)
-- [Setup-Assistent und Siteaccess der Redakteure](../../../../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md)
+- [Setup-Assistent und Siteaccess der Redakteure](../../../../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md)
 - [Sicherheitshärtung, Kapitel 13.5](../../../../installation/13-sicherheitshaertung.md#135-der-administrations-siteaccess)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

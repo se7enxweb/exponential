@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Stylesheets und Skripte für Ihre Website](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md).
+Quelle: [Stylesheets und Skripte für Ihre Website](../../../ersteller/website-ersteller/stylesheets-und-skripte.md).
 
 1. **Die Listen** (5 Minuten). `settings/design.ini`:
 
@@ -145,7 +145,7 @@ Auf Ihrer Schulungsinstallation. `D` steht für `extension/training_theme/design
 <summary>Antworten</summary>
 
 1. **B.** Die Backend-Liste ist für Administrationsdesigns
-   ([Stylesheets und Skripte für Ihre Website](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md)).
+   ([Stylesheets und Skripte für Ihre Website](../../../ersteller/website-ersteller/stylesheets-und-skripte.md)).
 2. In `javascript/` der Designs entlang der Kette.
 3. Das View-Template läuft vor dem Pagelayout, und seine angeforderten Dateien werden gesammelt; `ezcss_load` nimmt
    sie dann mit auf.
@@ -157,11 +157,11 @@ Auf Ihrer Schulungsinstallation. `D` steht für `extension/training_theme/design
 
 ## Weiterführende Literatur
 
-- [Stylesheets und Skripte für Ihre Website](../../../../../eng-us/help/creators/website-creators/stylesheets-and-scripts.md): die
+- [Stylesheets und Skripte für Ihre Website](../../../ersteller/website-ersteller/stylesheets-und-skripte.md): die
   Listen, der Packer und die Checkliste.
-- [jQuery 4 und die Entfernung von YUI](../../../../../eng-us/features/6.0/jquery4-and-yui-removal.md): welches jQuery ezjscore
+- [jQuery 4 und die Entfernung von YUI](../../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md): welches jQuery ezjscore
   bereitstellt.
-- [Die Design-Einstellungen, die ein Theme mitliefert](../../../../../eng-us/help/designers/extensions/design-settings-a-theme-ships.md):
+- [Die Design-Einstellungen, die ein Theme mitliefert](../../../designer/erweiterungen/design-einstellungen-eines-themes.md):
   welche Listen ins Theme gehören.
 
 ## Verwandte Seiten
@@ -172,9 +172,9 @@ Auf Ihrer Schulungsinstallation. `D` steht für `extension/training_theme/design
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

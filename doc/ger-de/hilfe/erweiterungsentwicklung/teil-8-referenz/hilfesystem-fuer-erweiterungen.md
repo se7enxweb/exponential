@@ -13,7 +13,7 @@ Teil 8, Referenz 32. Das Hilfezentrum der Administration zeigt die Dokumentation
 Installation dafür entscheidet, die von Erweiterungen. Diese Seite fasst die Einstellungen und Dateikonventionen an
 einer Stelle zusammen. Die Erklärung steht in [Ihre Erweiterung dokumentieren](../teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md),
 das Tutorial in [Hilfeseiten für Ihre Erweiterung, von Hand](../teil-3-erweiterungsentwickler/tutorials/von-hand-hilfeseiten-fuer-ihre-erweiterung.md)
-und die vollständige Beschreibung in [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md) und seiner
+und die vollständige Beschreibung in [Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md) und seiner
 [Spezifikation](../../../spezifikationen/6.0/hilfesystem.md).
 
 ## Ihren doc-Ordner ausliefern
@@ -97,13 +97,13 @@ Release Ihrer Dokumentation aus.
 
 - Zurück: [admin4-Komponenten und -Tokens](admin4-komponenten-und-tokens.md)
 - Weiter: [expservices: entfernte Dienste für Erweiterungen](expservices.md)
-- [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md)
+- [Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

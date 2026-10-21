@@ -43,11 +43,11 @@ git tag -l 'v*' --sort=version:refname | tail -5
 ```
 
 - Veröffentlichte Tags `v6.0.0` bis `v6.0.14` existieren; 6.0.15 ist in Entwicklung
-  ([Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md#the-kernels-versions)).
+  ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#die-versionen-des-kernels)).
 - Die Veröffentlichungsdaten der jüngsten Tags stehen in
   [Die Roadmap](../../../projekt/roadmap.md#was-bereits-geliefert-wurde).
 - Veröffentlichte Tags werden nie geändert; eine Korrektur kommt als nächste Version
-  ([Tags sind dauerhaft](../../../../../eng-us/standards/source-control-and-releases.md#tags-are-permanent)). Für Sie bedeutet das:
+  ([Tags sind dauerhaft](../../../../standards/versionsverwaltung-und-releases.md#tags-sind-dauerhaft)). Für Sie bedeutet das:
   Eine Versionsnummer bezeichnet immer denselben Code.
 
 ## Changelogs und Geschichte
@@ -64,23 +64,23 @@ lesen Sie eine Stichprobe von Einträgen, statt sie zu zählen.
 
 `SECURITY.md` im Wurzelverzeichnis des Repositorys nennt die unterstützte Linie (6.0.x), eine Adresse für vertrauliche
 Meldungen und eine erste Antwort „within one business day“ (innerhalb eines Werktags). Ältere Linien (5.x und früher)
-werden nicht unterstützt. Die Seite [Sicherheitsstandards](../../../../../eng-us/standards/security.md) dokumentiert drei
+werden nicht unterstützt. Die Seite [Sicherheitsstandards](../../../../standards/sicherheit.md) dokumentiert drei
 Härtungsdurchgänge und nennt ihre Lücken.
 
 ## Tests und kontinuierliche Integration
 
 - Die Testsuiten laufen bei jedem Push und Pull Request auf PHP 8.1 bis 8.5, und für PHP 8.0 wird geprüft, dass es
   startet ([Wer ist die Exponential Foundation?](../../../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung),
-  [Tests und CI](../../../../../eng-us/standards/testing-and-ci.md)).
+  [Tests und CI](../../../../standards/tests-und-ci.md)).
 - Designtests sichern Regeln zur Barrierefreiheit des Designs admin4 ab
-  ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md)).
+  ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md)).
 
 ## Dokumentation
 
 - Die Dokumentation liegt im Repository, unter der GNU Free Documentation License 1.3, und wird in der Administration als
-  Hilfe angezeigt ([Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md)).
-- Die Seiten zu den Standards geben die Konformität ehrlich an, mit „Partly complies“ und „Unverified“, wo das die
-  Wahrheit ist ([Standards](../../../../../eng-us/standards/README.md)).
+  Hilfe angezeigt ([Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md)).
+- Die Seiten zu den Standards geben die Konformität ehrlich an, mit „Teilweise erfüllt“ und „Nicht geprüft“, wo das die
+  Wahrheit ist ([Standards](../../../../standards/README.md)).
 
 ## Community und Roadmap
 
@@ -121,8 +121,9 @@ Die Dokumentation nennt diese selbst; wägen Sie sie gegen Ihre Risikobereitscha
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

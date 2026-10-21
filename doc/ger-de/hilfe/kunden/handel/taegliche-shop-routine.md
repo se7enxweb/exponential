@@ -36,7 +36,7 @@ dann nicht mehr sagen, wer was getan hat.
 | 6 | Das Konto beim Zahlungsanbieter | Zahlungen ohne Bestellung, wartende Erstattungen | Eigentümer oder wer erstatten darf |
 | 7 | Statusänderungen | Jede Bestellung in den Status gesetzt, der der tatsächlichen Arbeit entspricht | Wer die Arbeit erledigt hat |
 
-Was das Dashboard zeigt, ist unter [Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)
+Was das Dashboard zeigt, ist unter [Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)
 beschrieben: Bestellungen heute sowie in 7 und 30 Tagen, offene Bestellungen, zu lange wartende Bestellungen,
 abgebrochene Warenkörbe, Bestseller und die Liste „Nächste Schritte“, die aus Ihren Daten und Einstellungen ermittelt wird.
 
@@ -53,11 +53,11 @@ Zahlungsanbieter nicht funktioniert.
 Die Liste „Work to do“ stellt die Bestellungen, die am längsten warten, an den Anfang. Öffnen Sie jede, prüfen Sie
 Artikel, Optionen, Adresse und einen eventuellen Kommentar des Kunden, und setzen Sie sie weiter. Bestellungen, die auf
 den Kunden warten (Pending, Awaiting payment, Payment failed, Ready for pickup), werden nach einer kürzeren Frist
-hervorgehoben als die anderen ([Shop-Dashboard und Bestellstatus](../../../../eng-us/features/6.0/store-dashboard.md)).
+hervorgehoben als die anderen ([Shop-Dashboard und Bestellstatus](../../../funktionen/6.0/shop-dashboard.md)).
 
 ### 3. Fehlgeschlagene Zahlungen ansehen
 
-Sortieren Sie die Bestellliste nach Status ([Sortierung der Bestellliste](../../../../eng-us/features/6.0/order-list-sorting.md)). Eine
+Sortieren Sie die Bestellliste nach Status ([Sortierung der Bestellliste](../../../funktionen/6.0/sortierung-der-bestellliste.md)). Eine
 fehlgeschlagene Zahlung liegt meist an der Karte eines Kunden. Mehrere an einem Vormittag deuten auf den
 Zahlungsschritt oder den Anbieter hin; siehe [Zahlungsanbieter](zahlungsanbieter.md).
 
@@ -109,3 +109,11 @@ und Zahlungsanbieter. Eine Übergabeliste finden Sie unter
 - [Shop-Berichte](shop-berichte.md)
 - [Einen Shop im Alltag betreiben (für Unternehmen)](../../unternehmen/shops/einen-shop-im-alltag-betreiben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

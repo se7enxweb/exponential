@@ -63,11 +63,11 @@ Lizenz fest, unter der Sie den Code erhalten ([Fragen zur Lizenzierung](../../..
 ## Erweiterungen und Dienste Dritter
 
 - Vom Projekt veröffentlichte Erweiterungen sind freie Software; prüfen Sie die Lizenz jeder einzelnen auf ihrer Seite
-  ([Lizenzen und Versionen der Pakete](../../../../../eng-us/features/6.0/package-licenses-and-versions.md)).
+  ([Lizenzen und Versionen der Pakete](../../../../funktionen/6.0/paketlizenzen-und-versionen.md)).
 - Manche Erweiterungen rufen bei Aktivierung Dienste Dritter auf (Analyse, Captcha, Anmeldung über soziale Netzwerke,
-  Karten). Die Erweiterung ist kostenlos; der Dienst kann eigene Bedingungen und Kosten haben ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md#third-party-services-in-shipped-extensions)).
+  Karten). Die Erweiterung ist kostenlos; der Dienst kann eigene Bedingungen und Kosten haben ([Datenschutzstandards](../../../../standards/datenschutz.md#drittanbieterdienste-in-mitgelieferten-extensions)).
 - Ein KI-Schreibassistent braucht ein Konto bei einem Anbieter; seine Nutzung wird an den Anbieter bezahlt (siehe den
-  Kurs Exponential Intelligence, [Exponential Intelligence](../../../../../eng-us/help/trainers/exponential-intelligence/README.md)).
+  Kurs Exponential Intelligence, [Exponential Intelligence](../../../trainer/exponential-intelligence/README.md)).
 
 ## Was Ihnen die Lizenz gibt
 
@@ -83,7 +83,7 @@ Diese Rechte senken das langfristige Kostenrisiko: Kein Lieferant kann die Lizen
 
 Die Dokumentation, einschließlich dieser Hilfe, ist freie Dokumentation unter der
 [GNU FDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html) oder neuer: Sie dürfen sie in Ihre eigenen Handbücher und
-Schulungsmaterialien kopieren ([Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md)).
+Schulungsmaterialien kopieren ([Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md)).
 
 ## Verwandte Seiten
 - [Gesamtbetriebskosten: Übersicht](README.md)

@@ -36,7 +36,7 @@ mitzureißen.
 | Datenbank | geteilt | ein Datenbankserver, den alle Knoten erreichen |
 | Hochgeladene Dateien (`var/storage`) | geteilt | der DFS-Cluster-Datei-Handler und ein NFS-Mount |
 | Einstellungen, Code, Erweiterungen, Designs | auf jedem Knoten gleich | dasselbe Ausrollen auf jedem Knoten |
-| Sitzungen | geteilt, oder der Benutzer bleibt auf einem Knoten | der Sitzungs-Handler für die Datenbank oder Sticky Sessions |
+| Sitzungen | geteilt, oder der Benutzer bleibt auf einem Knoten | der Session-Handler für die Datenbank oder Sticky Sessions |
 | Caches (`var/cache`, View-Cache, HTTP-Cache) | lokal pro Knoten, im Gleichschritt gehalten | der Cluster-Handler oder ein gemeinsames Cache-Backend |
 | Logs (`var/log`) | lokal pro Knoten | sammeln Sie sie zentral, wenn Sie eine Gesamtsicht brauchen |
 | Cronjobs | ein Knoten | führen Sie die Crontab nur auf einem Knoten aus |
@@ -90,13 +90,13 @@ Caches beantworten die meisten Anfragen, also hat jeder Knoten seine eigenen. Wa
 Caches auf einem Knoten die anderen erreicht:
 
 - **Mit dem DFS-Cluster** sind Cache-Dateien und `expiry.php` (die Zeitstempel, die Caches ungültig machen) Cluster-Dateien, sodass
-  ein Leeren auf einem Knoten von allen gesehen wird ([Cluster (DFS)](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md#cluster-dfs)).
+  ein Leeren auf einem Knoten von allen gesehen wird ([Cluster (DFS)](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md#cluster-dfs)).
 - **Die Caches vor PHP** sind lokal: der HTTP-Cache in `var/<site>/cache/exphttpcache` und der Antwort-Cache von Velocity. Leeren
   Sie sie nach einer Änderung auf jedem Knoten (`./console exp:velocity cache clear` für Velocity;
   [Caches](../../../anleitungen/caches.md)).
 - **Ein gemeinsames Cache-Backend.** Die Erweiterung `sevenx_valkey_cache` hält Template-Blöcke, den Content-View-Cache und den
   kompilierten INI-Cache in Redis oder Valkey, was INI-Caches für Cluster sicher macht
-  ([sevenx_valkey_cache](../../../../eng-us/features/6.0/extensions/sevenx_valkey_cache.md)). Siehe
+  ([sevenx_valkey_cache](../../../funktionen/6.0/erweiterungen/sevenx_valkey_cache.md)). Siehe
   [Valkey und Redis](../leistung/valkey-und-redis.md).
 
 Ein Reverse Proxy oder CDN vor allen Knoten ist eine weitere, gemeinsame Cache-Schicht; siehe
@@ -106,7 +106,7 @@ Ein Reverse Proxy oder CDN vor allen Knoten ist eine weitere, gemeinsame Cache-S
 
 Hinter einem Load Balancer kommt jede Anfrage von der Adresse des Balancers. Exponential glaubt weitergeleiteten Headern nur von
 den Proxys, denen es vertrauen soll ([8.8 Hinter einem Reverse Proxy](../../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy),
-[Vertrauenswürdige Proxys](../../../../eng-us/bc/6.0/trusted-proxies.md)):
+[Vertrauenswürdige Proxys](../../../bc/6.0/vertrauenswuerdige-proxys.md)):
 
 ```ini
 # settings/override/site.ini.append.php
@@ -131,7 +131,7 @@ Die Adresse `192.0.2.10` oben ist eine Adresse für Dokumentation; verwenden Sie
 - **Cron von einem Knoten.** Richten Sie die Crontab nur auf einem Knoten ein, sonst führen mehrere Knoten dieselben Jobs aus. Jedes
   Skript nimmt eine Sperre (`eZMutex`), aber diese Sperre ist eine gesperrte Datei im eigenen Cache-Verzeichnis des Knotens und hält
   daher keinen anderen Knoten auf. Um Teile für alle Knoten anzuhalten, richten Sie `cronjob.ini [PauseSettings] Directory` auf ein
-  gemeinsames Verzeichnis ([Cronjob-Teile anhalten](../../../../eng-us/features/6.0/cronjob-pause.md)).
+  gemeinsames Verzeichnis ([Cronjob-Teile anhalten](../../../funktionen/6.0/cronjobs-pausieren.md)).
 - **Ausrollen auf jedem Knoten.** Führen Sie das Ausrollen (`./console exp:velocity deploy`, siehe
   [Änderungen ausrollen](aenderungen-ausrollen.md)) auf jedem Knoten aus, damit alle den neuen Code ausführen und ihre Caches neu
   aufbauen. Nehmen Sie einen Knoten aus dem Balancer, während auf ihn ausgerollt wird, wenn die Änderung nicht halb ausgeliefert
@@ -163,3 +163,11 @@ Die Adresse `192.0.2.10` oben ist eine Adresse für Dokumentation; verwenden Sie
 - [Cache-Schichten](../leistung/cache-schichten.md)
 - [Datenbankunterstützung](../../datenbankunterstuetzung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

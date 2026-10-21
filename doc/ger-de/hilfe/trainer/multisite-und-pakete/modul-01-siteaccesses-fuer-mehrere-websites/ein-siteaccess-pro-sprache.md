@@ -37,7 +37,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Eine mehrsprachige Website aufbauen](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md) und
+Quellen: [Eine mehrsprachige Website aufbauen](../../../ersteller/website-ersteller/mehrsprachige-websites.md) und
 [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md).
 
 1. **Drei Regeln** (5 Minuten), von der Seite für Website-Ersteller:
@@ -116,7 +116,7 @@ Verwenden Sie Ihre Schulungsinstallation mit dem Siteaccess `site_b` aus Lektion
 4. Geben Sie ihm einen deutschen Namen: `exp:ini set site.ini/SiteSettings/SiteName "Seite B" siteaccess:site_b_ger`.
 5. Registrieren Sie ihn in `AvailableSiteAccessList[]` und `RelatedSiteAccessList[]` mit `exp:ini add ... global`, wie
    in Lektion 1.3, Schritt 7.
-6. Leeren Sie den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini` (und starten Sie Velocity neu, wenn es die
+6. Leeren Sie den INI-Cache: `php bin/php/ezcache.php --clear-tag=ini` (und starten Sie Velocity neu, wenn er die
    Übungsumgebung ausliefert).
 7. Öffnen Sie `/site_b_ger` im Browser. Der Ordner *Site B* wird angezeigt, auf Englisch, weil er noch keine deutsche
    Übersetzung hat und `eng-US` der Fallback ist.
@@ -148,7 +148,7 @@ Verwenden Sie Ihre Schulungsinstallation mit dem Siteaccess `site_b` aus Lektion
 <summary>Antworten</summary>
 
 1. Keiner: Das Hinzufügen einer Inhaltssprache ändert keinen Siteaccess
-   ([Eine mehrsprachige Website aufbauen](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md#how-languages-work)).
+   ([Eine mehrsprachige Website aufbauen](../../../ersteller/website-ersteller/mehrsprachige-websites.md#wie-sprachen-funktionieren)).
 2. **B.** `eng-US` ist der Fallback; der Artikel wird auf Englisch angezeigt.
 3. Sie setzt das Array zurück, sodass die Werte, die die Datei von früheren Dateien geerbt hat, wegfallen und nur die
    folgenden Zeilen zählen.
@@ -160,23 +160,23 @@ Verwenden Sie Ihre Schulungsinstallation mit dem Siteaccess `site_b` aus Lektion
 
 ## Weiterführende Informationen
 
-- [Eine mehrsprachige Website aufbauen](../../../../../eng-us/help/creators/website-creators/multilingual-sites.md): Fallbacks,
+- [Eine mehrsprachige Website aufbauen](../../../ersteller/website-ersteller/mehrsprachige-websites.md): Fallbacks,
   Übersetzer, Oberflächentexte.
 - [Inhaltssprachen](../../../../anleitungen/inhaltssprachen.md): die vollständige Referenz.
-- [Sprachumschalter und Adressen pro Sprache](../../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md).
-- [Übersetzungen und Sprachen](../../../../../eng-us/features/6.0/translations-and-languages.md).
+- [Sprachumschalter und Adressen pro Sprache](../../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md).
+- [Übersetzungen und Sprachen](../../../../funktionen/6.0/uebersetzungen-und-sprachen.md).
 
 ## Verwandte Seiten
 
 - [Modul 1: Siteaccesses für mehrere Websites](README.md)
 - [Multisite und Seitenpakete: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

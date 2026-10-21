@@ -1,8 +1,8 @@
 # sevenx-recipes (Symfony-Flex-Rezepte): Chronik
 
-`sevenx-recipes` ist das Repository der Symfony-Flex-Rezepte für die Plattform-Pakete. Seine 74 Änderungen stammen alle aus März und April 2026, als der Plattform-Stack (Ibexa DXP 4.6 und 5.x mit und ohne Legacy Bridge) mit `composer require` installierbar wurde: die Rezept-Slots `1.0` bis `1.4`, der Web-Build, Sicherheit, der Legacy-Siteaccess und Installationsscripts sowie 23 getaggte Releases von 1.2.0 bis 1.3.23. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx-recipes.md).
+`sevenx-recipes` ist das Repository der Symfony-Flex-Rezepte für die Plattform-Pakete. Seine 74 Änderungen stammen alle aus März und April 2026, als der Plattform-Stack (Ibexa DXP 4.6 und 5.x mit und ohne Legacy Bridge) mit `composer require` installierbar wurde: die Rezept-Slots `1.0` bis `1.4`, der Web-Build, Sicherheit, der Legacy-Siteaccess und Installationsscripts sowie 23 getaggte Releases von 1.2.0 bis 1.3.23. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx-recipes.md).
 
-Diese Seite führt **jede der 74 Änderungen** des Repositorys `sevenx-recipes` zwischen 2026-03-12 und 2026-04-17 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx-recipes.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/sevenx-recipes.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx-recipes.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 74 Änderungen** des Repositorys `sevenx-recipes` zwischen 2026-03-12 und 2026-04-17 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx-recipes.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/sevenx-recipes.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx-recipes.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -130,7 +130,7 @@ Der Monat über alle Erweiterungen: [April 2026](monate/2026-04.md). [Änderungs
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/sevenx-recipes.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/sevenx-recipes.md)
 - [Release Notes](../../../changelogs/extensions/sevenx-recipes.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/sevenx-recipes.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

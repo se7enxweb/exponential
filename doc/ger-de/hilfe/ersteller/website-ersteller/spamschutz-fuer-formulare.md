@@ -27,7 +27,7 @@ was gefälschte Cross-Site-Einsendungen (CSRF) verhindert. Eine abgelehnte Einse
 `var/log/warning.log` (`site.ini [HTMLForms]`, `RefusalLogCollapseSeconds` fasst Wiederholungen zusammen). Setzen Sie
 Ihr eigenes `[HTMLForms] Secret` in `settings/override/site.ini.append.php`; der mitgelieferte Wert fordert dazu auf, ihn
 zu ändern. Wenn das Formular eines Besuchers abgelaufen ist, sieht er statt eines Fehlers eine freundliche Seite
-([Seite für abgelaufene Formulare](../../../../eng-us/features/6.0/form-expired-page.md)).
+([Seite für abgelaufene Formulare](../../../funktionen/6.0/seite-abgelaufenes-formular.md)).
 
 ## CAPTCHA: reCAPTCHA oder hCaptcha
 
@@ -36,7 +36,7 @@ zu ändern. Wenn das Formular eines Besuchers abgelaufen ist, sieht er statt ein
 | Anbieter | Google reCAPTCHA (v2; ein v3-Template für das Feedbackformular) | hCaptcha |
 | Zusätzliches Composer-Paket | `google/recaptcha` | keines |
 | Einstellungen | `settings/override/recaptcha.ini.append.php` | `settings/override/hcaptcha.ini.append.php` |
-| Dokumentation | [recaptcha](../../../../eng-us/features/6.0/extensions/recaptcha.md) | [hcaptcha](../../../../eng-us/features/6.0/extensions/hcaptcha.md) |
+| Dokumentation | [recaptcha](../../../funktionen/6.0/erweiterungen/recaptcha.md) | [hcaptcha](../../../funktionen/6.0/erweiterungen/hcaptcha.md) |
 
 Beide funktionieren auf dieselbe Weise:
 
@@ -59,7 +59,7 @@ Beide funktionieren auf dieselbe Weise:
 `NewObjectsOnly=true` prüft nur neue Objekte (Registrierung ja, Bearbeiten eines Profils nein).
 
 Das CAPTCHA-Widget lädt ein Skript vom Anbieter: Erlauben Sie dessen Host in der Content Security Policy der Website,
-wenn Sie eine durchsetzen ([Content Security Policy](../../../../eng-us/features/6.0/content-security-policy.md)), und nennen Sie
+wenn Sie eine durchsetzen ([Content Security Policy](../../../funktionen/6.0/content-security-policy.md)), und nennen Sie
 den Anbieter in Ihrem Datenschutzhinweis.
 
 ## Welche Formulare Sie schützen sollten
@@ -87,8 +87,8 @@ den Anbieter in Ihrem Datenschutzhinweis.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -42,10 +42,10 @@ Schreiben Sie „in der Entwicklungslinie“, nie „erschienen am“.
 
 | Was | Wann es hinzugefügt wurde | Quelle |
 |---|---|---|
-| Lesezeichenordner, auf der Lesezeichenseite, im Auswahldialog und im Online-Editor | 1. und 2. Oktober 2026 | [Changelog von 6.0.15, 1. und 2. Oktober](../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026), [Lesezeichenordner](../../../eng-us/features/6.0/bookmark-folders.md) |
-| Inhaltsjobs: große Lösch-, Kopier- und Verschiebevorgänge im Hintergrund, fortsetzbar | 2. Oktober 2026 | [Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md) |
-| Die Liste der Unterelemente mit 129 registrierten Spalten, Voreinstellungen und CSV-Export | 1. und 2. Oktober 2026 | [Die Liste der Unterelemente](../../../eng-us/features/6.0/subitems-table-options.md) |
-| Das Design admin4, hell und dunkel | 2. Oktober 2026 | [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md) |
+| Lesezeichenordner, auf der Lesezeichenseite, im Auswahldialog und im Online-Editor | 1. und 2. Oktober 2026 | [Changelog von 6.0.15, 1. und 2. Oktober](../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026), [Lesezeichenordner](../../funktionen/6.0/lesezeichenordner.md) |
+| Inhaltsjobs: große Lösch-, Kopier- und Verschiebevorgänge im Hintergrund, fortsetzbar | 2. Oktober 2026 | [Inhaltsjobs](../../funktionen/6.0/inhaltsauftraege.md) |
+| Die Liste der Unterelemente mit 129 registrierten Spalten, Voreinstellungen und CSV-Export | 1. und 2. Oktober 2026 | [Die Liste der Unterelemente](../../funktionen/6.0/optionen-der-unterelementtabelle.md) |
+| Das Design admin4, hell und dunkel | 2. Oktober 2026 | [Das Design admin4](../../funktionen/6.0/admin4-design.md) |
 | Die Versionsvorschau in der Breite eines Geräts | 15. Oktober 2026 | [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-the-version-preview-in-the-width-of-a-device) |
 | Unterelemente per Drag and Drop umsortiert | 15. Oktober 2026 | [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-sub-items-reordered-by-drag-and-drop) |
 
@@ -56,9 +56,9 @@ Schreiben Sie „in der Entwicklungslinie“, nie „erschienen am“.
 | Jede Bearbeitung beginnt als Entwurf; die veröffentlichte Version bleibt sichtbar, bis der Entwurf veröffentlicht wird. | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
 | Entwürfe werden während der Arbeit alle paar Minuten automatisch gespeichert. | [Inhalte anlegen und bearbeiten](../inhalte-bearbeiten.md#das-bearbeitungsformular) |
 | Entfernte Elemente kommen zuerst in den Papierkorb und lassen sich wiederherstellen. | [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md#entfernen-und-wiederherstellen) |
-| Die Vorschau zeigt einen Entwurf in den Größen iPhone (390 x 844), iPad (820 x 1180), Desktop (1280 x 800) und Large Desktop (1920 x 1080). | [Das Design admin4, Was Sie bekommen](../../../eng-us/features/6.0/admin4-design.md#what-you-get) |
+| Die Vorschau zeigt einen Entwurf in den Größen iPhone (390 x 844), iPad (820 x 1180), Desktop (1280 x 800) und Large Desktop (1920 x 1080). | [Das Design admin4, Was Sie bekommen](../../funktionen/6.0/admin4-design.md#was-sie-erhalten) |
 | Zwei Redakteure können ihre Entwürfe nicht gegenseitig überschreiben: Eine Seite „Möglicher Bearbeitungs-Konflikt“ listet zuerst die bestehenden Entwürfe auf. | [Inhalte anlegen und bearbeiten](../inhalte-bearbeiten.md#wenn-jemand-anderes-bearbeitet) |
-| Große Lösch-, Kopier- und Verschiebevorgänge können als Hintergrundjob laufen, der dort weitermacht, wo er aufgehört hat. | [Inhaltsjobs](../../../eng-us/features/6.0/content-jobs.md) |
+| Große Lösch-, Kopier- und Verschiebevorgänge können als Hintergrundjob laufen, der dort weitermacht, wo er aufgehört hat. | [Inhaltsjobs](../../funktionen/6.0/inhaltsauftraege.md) |
 | Freigabe von Inhalten und zeitgesteuerte Veröffentlichung gehören zu den wichtigsten Funktionen. | [README, Main Exponential features](https://github.com/se7enxweb/exponential/blob/main/README.md#main-exponential-features) |
 | Ein Pflicht-Alternativtext für Bilder lässt sich pro Klasse einschalten. | [Gesprächspunkte: Barrierefreiheit](../fuersprecher/gespraechspunkte-barrierefreiheit.md#die-punkte) |
 
@@ -107,8 +107,8 @@ Um es selbst auszuprobieren, installieren Sie Ihre eigene Kopie mit einem Befehl
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

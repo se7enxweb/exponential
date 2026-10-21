@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Anwendungsentwickler, die funktionierende Gerüste wollen, statt Boilerplate abzutippen.
 **Setup > RAD** (`/setup/rad`) listet jede Stelle auf, an der Exponential erweitert werden kann, und wie sie
 registriert wird, und bietet Assistenten an, die eine vollständige Erweiterung schreiben
-([RAD-Werkzeuge](../../../../eng-us/features/6.0/rad-tools.md), [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md)).
+([RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md), [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md)).
 
 ![Setup, RAD: die Assistenten, die das Gerüst eines Template-Operators oder eines Datentyps erstellen](../../../../eng-us/help/images/creators/rad-tools.webp)
 
@@ -78,7 +78,7 @@ Assistent erzeugt hat, braucht diese Änderungen von Hand:
 
 Die Korrekturen für den Assistenten der Design-Extension selbst (der Composer-Ordnername, die Autoload-Datei der
 Operatoren, die Stylesheet- und Skriptlisten des Frontends, der Seitenkopf) stehen in
-[Die Bestandteile des Design-Assistenten](../../../../eng-us/help/designers/extensions/design-wizard-parts-reference.md).
+[Die Bestandteile des Design-Assistenten](../../designer/erweiterungen/die-teile-des-design-assistenten.md).
 
 ## Übersicht und Zustandsprüfung
 
@@ -99,13 +99,13 @@ funktionierendes Beispiel zu sehen, und lesen Sie dann die passende Seite
 
 - [Ihre erste Erweiterung](ihre-erste-erweiterung.md)
 - [Aufbau einer Erweiterung](aufbau-einer-erweiterung.md)
-- [Muster für Erweiterungspunkte: INI-Plug-in-Punkte](../../../../eng-us/standards/patterns/ini-plugin-point.md)
+- [Muster für Erweiterungspunkte: INI-Plug-in-Punkte](../../../standards/muster/ini-plugin-punkt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

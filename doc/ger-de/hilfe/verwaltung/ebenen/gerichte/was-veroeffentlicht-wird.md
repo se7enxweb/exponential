@@ -37,11 +37,11 @@ Umfang einer Website festlegen. Sie listet auf, was Gerichte typischerweise ver�
 | Bedarf | Exponential | Lesen |
 |---|---|---|
 | Entscheidungen in einem eingeschränkten Veröffentlichungsablauf | eine eigene Sektion, eine kleine Rolle, ein Ereignis *Freigeben* | [Struktur, Sektionen und Rollen für Gerichte](struktur-sektionen-und-rollen.md) |
-| Genauer Text, keine stillschweigende Änderung | Versionen und das Audit-Protokoll | [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md), [Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md) |
+| Genauer Text, keine stillschweigende Änderung | Versionen und das Audit-Protokoll | [Versionen eines Objekts](../../../../anleitungen/inhaltsverlauf.md), [Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md) |
 | Eine Entscheidung schnell zurückziehen | verbergen oder in den Papierkorb verschieben und Versionen entfernen | [Entscheidungen mit Sorgfalt veröffentlichen](entscheidungen-mit-sorgfalt-fuer-personenbezogene-daten-veroeffentlichen.md) |
 | Vorschriften, die ab einem Datum gelten | ein Attribut für das Geltungsdatum; ein Workflow-Ereignis *Bis Datum warten*, wenn die Veröffentlichung warten muss | [Workflows](../../../../anleitungen/workflows.md) |
 | Schnelle Änderungen und Schließungen von Verhandlungen | ein Ordner für Hinweise, den die Startseite zeigt; dringendes Veröffentlichen ohne Freigabe für das diensthabende Team | [Der Layout-Editor](../../../layout-editor.md) |
-| Formulare zum Herunterladen | Objekte der Klasse File | [Dateien und Downloads](../../../../../eng-us/help/creators/website-creators/files-and-downloads.md) |
+| Formulare zum Herunterladen | Objekte der Klasse File | [Dateien und Downloads](../../../ersteller/website-ersteller/dateien-und-downloads.md) |
 | Hinweise in einfacher Sprache | eine Klasse Ratgeber mit einer kurzen Zusammenfassung | [Inhaltsmodell für Gerichte](inhaltsmodell.md) |
 
 ## Was nicht auf die Website gehört
@@ -64,12 +64,13 @@ Umfang einer Website festlegen. Sie listet auf, was Gerichte typischerweise ver�
 
 - [Gerichte](README.md)
 - [Inhaltsmodell für Gerichte](inhaltsmodell.md)
-- [Ihre Website planen](../../../../../eng-us/help/creators/website-creators/planning-your-website.md)
+- [Ihre Website planen](../../../ersteller/website-ersteller/ihre-website-planen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -16,7 +16,7 @@ Diese Seite ist für Partner, die beeinflussen möchten, was als Nächstes gebau
 - Die Community-Roadmap auf <https://exponential.earth/about/roadmap> (gelesen am 18. Oktober 2026) beschreibt die
   Community-Kanäle (Telegram, Foren, GitHub, Slack, Discord) und lädt dazu ein, „den Fortschritt der Entwicklung zu verfolgen, Probleme zu melden, Funktionen zu wünschen und beizutragen“. Datierte Produktfunktionen führt sie nicht auf.
 - Was gebaut wurde, ist ausführlich veröffentlicht: die Änderungsprotokolle in `doc/changelogs/` und die Geschichte in
-  `doc/eng-us/history/` ([Die Geschichte von Exponential](../../../eng-us/history/README.md)).
+  `doc/eng-us/history/` ([Die Geschichte von Exponential](../../geschichte/README.md)).
 - Eine datierte Produkt-Roadmap mit Zusagen ist nicht veröffentlicht: von der Foundation noch festzulegen.
 
 ## Wie Partner sie beeinflussen können

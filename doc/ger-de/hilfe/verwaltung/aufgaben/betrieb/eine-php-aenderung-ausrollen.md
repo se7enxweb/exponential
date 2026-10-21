@@ -23,7 +23,7 @@ bringen. Ein Befehl führt jeden Schritt in der richtigen Reihenfolge aus und h�
 ## Bevor Sie beginnen
 
 - Die Änderung ist genehmigt und auf Staging getestet
-  ([Staging und Genehmigung](../../../../../eng-us/help/government/operations/upgrades-and-change/staging-and-approval.md)).
+  ([Staging und Genehmigung](../../betrieb/aktualisierungen-und-aenderungen/staging-und-freigabe.md)).
 - Der neue Code liegt auf dem Server (Ihr Deployment des genehmigten Commits).
 - Shell-Zugang im Installationsverzeichnis.
 
@@ -66,7 +66,7 @@ Hostnamen der Installation benannt ist): `./console exp:velocity config get Depl
 
 - Jeder Schritt PASS; bewahren Sie die Ausgabe mit dem Änderungsnachweis auf.
 - Das geänderte Verhalten ist sichtbar; `./console exp:logs --tail=var/log/error.log --lines=20` zeigt nichts Neues.
-- Wenn etwas kaputtgegangen ist: [Ein fehlerhaftes Deployment zurückrollen](../../../../../eng-us/help/government/operations/incidents/broken-deploy-rollback.md).
+- Wenn etwas kaputtgegangen ist: [Ein fehlerhaftes Deployment zurückrollen](../../betrieb/vorfaelle/fehlerhafte-bereitstellung-zuruecknehmen.md).
 
 ## Verwandte Seiten
 - [Die Caches nach einem Deployment vorwärmen](die-caches-nach-einem-deployment-vorwaermen.md)
@@ -76,8 +76,9 @@ Hostnamen der Installation benannt ist): `./console exp:velocity config get Depl
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

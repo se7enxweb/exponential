@@ -426,8 +426,8 @@ Die Höhe wird einmal am Ende eines Ziehens gespeichert oder 0,6 s nach dem letz
   `data-exp-debug-panel-height` aus; das erste Skript des Berichts (`expdebugbar-head.js`) setzt `--exp-debug-panel-h`
   daraus, bevor sich das Panel öffnet, sodass es ohne Sprung in dieser Höhe öffnet.
 - **Anonym** (die Leiste über die IP angezeigt): Es wird keine Benutzereinstellung gelesen oder gespeichert und keine
-  Anfrage gesendet, da eZPreferences die Werte eines anonymen Benutzers in der Session halten und die Debug-Leiste nie
-  eine Session starten darf (`savedPanelHeight()` gibt 0 zurück, ohne zu fragen, und `expdebugbar::panelheight` lehnt
+  Anfrage gesendet, da eZPreferences die Werte eines anonymen Benutzers in der Sitzung halten und die Debug-Leiste nie
+  eine Sitzung starten darf (`savedPanelHeight()` gibt 0 zurück, ohne zu fragen, und `expdebugbar::panelheight` lehnt
   einen anonymen Besucher vor der Prüfung des Tokens ab). Die Höhe wird stattdessen im Browser gehalten:
   `localStorage`-Schlüssel `exp-debug-panel-height`, jeder Zugriff in `try`/`catch` (gesperrter Speicher bedeutet die
   Standardhöhe), von `expdebugbar-head.js` vor dem Öffnen des Panels zurückgelesen und zwischen 120 und 4000 px
@@ -441,7 +441,7 @@ Die Benutzereinstellung eines angemeldeten Benutzers ist maßgeblich: localStora
 nicht beachtet. Das Panel sagt in `data-exp-debug-panel-store` (`preference` oder `browser`), was gilt.
 
 Eine Seite, die den Debug-Bericht trägt, wird nie vom Seiten-Cache behalten (`X-Exp-Cache: BYPASS (debug report)`,
-siehe [What is never cached](../../../eng-us/bc/6.0/httpcache.md#what-is-never-cached)): Der Bericht und die
+siehe [What is never cached](httpcache.md#was-nie-gecacht-wird)): Der Bericht und die
 gespeicherte Höhe werden für jede Anfrage gerendert. Vor dem 2026-10-14 kam die Startseite eines angemeldeten Benutzers
 mit dem Bericht einer früheren Anfrage aus diesem Cache, sodass ein Neuladen die Höhe von vor der letzten
 Größenänderung zeigte.
@@ -479,7 +479,7 @@ Speicher gehalten oder in der Registerkarte Nachrichten aufgeführt. Sie gehöre
 Seite (der Kasten „Some general warnings occurred“ von `DisplayDebugWarnings`). Die Registerkarte Einstellungen schaltet
 `DeprecatedLog` („Deprecations to deprecated.log“); ausgeschaltet sind Veraltungswarnungen wieder Warnungen, einzeln
 aufgeführt. Siehe
-[Veraltungswarnungen und Größen der Logdateien](../../../eng-us/guides/operating-a-site.md#php-deprecations-and-log-file-sizes).
+[Veraltungswarnungen und Größen der Logdateien](../../anleitungen/betrieb-einer-website.md#php-deprecations-und-größe-der-logdateien).
 
 Die Stufen kommen aus `expDebugBarSummary`, wenn es geladen ist, sodass die Schwellen in `debugbar.ini` gelten; sonst
 die eigenen Standardwerte des Berichts.
@@ -717,8 +717,8 @@ dass jede Zeichenkette der Leiste übersetzt ist.
 
 ## Verwandte Seiten
 
-- [Die Debug-Leiste von Exponential (Funktion)](../../../eng-us/features/6.0/exp-debug-bar.md)
+- [Die Debug-Leiste von Exponential (Funktion)](../../funktionen/6.0/exp-debug-leiste.md)
 - [exp:ini, die INI-Engine, über die die Leiste schreibt](console-exp-ini.md)
 - [Cache-Konsole (`exp:cache`)](cache-konsole.md)
 - [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)
-- [August 2024](../../../eng-us/history/2024/2024-08.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md), [August 2025](../../../eng-us/history/2025/2025-08.md)
+- [August 2024](../../geschichte/2024/2024-08.md), [Januar 2025](../../geschichte/2025/2025-01.md), [August 2025](../../geschichte/2025/2025-08.md)

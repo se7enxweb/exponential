@@ -128,8 +128,8 @@ Auf der Entwicklungsinstallation.
 ## Weiterführende Literatur
 
 - [Velocity-Engines](../../../../bc/6.0/velocity-engines.md): Engines, Deploy, Neustart und der Watchdog.
-- [Der Velocity-Server mit persistenten Workern](../../../../../eng-us/features/6.0/velocity-persistent-worker-server.md).
-- [Der Antwort-Cache von Velocity](../../../../../eng-us/features/6.0/velocity-response-cache.md).
+- [Der Velocity-Server mit persistenten Workern](../../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md).
+- [Der Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md).
 
 ## Verwandte Seiten
 
@@ -139,9 +139,9 @@ Auf der Entwicklungsinstallation.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

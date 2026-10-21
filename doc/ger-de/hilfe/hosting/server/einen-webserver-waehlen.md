@@ -57,7 +57,7 @@ mit PHP-FPM, IIS und lighttpd in Stufe 3 ein: sollte funktionieren.
 |---|---|---|
 | Darf die Website eines Kunden in diesem Tarif einen langlebigen Prozess betreiben? | nein (typisches Shared Hosting) | Apache oder LiteSpeed mit `.htaccess`. Shared Hosting erlaubt das meist nicht (`README.md`) |
 | Hat die Maschine PHP 8.0? | ja (das Standard-PHP von Red Hat Enterprise Linux 9 und seinen Nachbauten) | jede Engine; Velocity läuft ab seinem Release 0.0.4.54 auf 8.0, mit dem el9-RPM oder mit Composer ([Kapitel 2](../../../installation/02-voraussetzungen.md#php-80-und-red-hat-enterprise-linux)) |
-| Müssen Kunden auf einer Maschine durch das Betriebssystem voneinander getrennt sein? | ja | eine Velocity pro Website, jede als eigener Benutzer, oder ein PHP-FPM-Pool pro Website |
+| Müssen Kunden auf einer Maschine durch das Betriebssystem voneinander getrennt sein? | ja | ein Velocity-Server pro Website, jeder als eigener Benutzer, oder ein PHP-FPM-Pool pro Website |
 | Betreiben Sie bereits ein abgestimmtes Apache oder nginx, das Sie behalten wollen? | ja | behalten Sie es; Velocity kann dahinter oder daneben stehen |
 | Wollen Sie die schnellste Antwort für wiederholte Seiten, ohne einen Cache-Server hinzuzufügen? | ja | Velocity mit seinem Antwort-Cache |
 
@@ -72,7 +72,7 @@ auf einer Maschine durch das Betriebssystem voneinander getrennt sein müssen.
 | Shared Hosting mit einem Control Panel | Apache (oder LiteSpeed) mit PHP-FPM und `.htaccess` | keine langlebigen Prozesse von Kunden; die Regeln werden als `.htaccess_root` ausgeliefert |
 | VPS oder dedizierter Server pro Kunde | Velocity | eine Website pro Maschine, root für die Ports 80 und 443 verfügbar |
 | Mehrere Kunden auf einem VPS oder dedizierten Server | Velocity pro Website (eigener Benutzer, eigene Ports, ein Proxy davor) oder PHP-FPM-Pool pro Website | Trennung durch das Betriebssystem |
-| Container | Velocity oder FrankenPHP im Container | ein Prozessbaum pro Website; für Velocity gibt es Images ([Pakete und Binärdateien von Velocity](../../../../eng-us/features/6.0/velocity-packages-and-binaries.md)) |
+| Container | Velocity oder FrankenPHP im Container | ein Prozessbaum pro Website; für Velocity gibt es Images ([Pakete und Binärdateien von Velocity](../../../funktionen/6.0/velocity-pakete-und-binaerdateien.md)) |
 | Windows-Hosting | IIS oder Apache mit FastCGI-PHP | `pcntl` und `posix` gibt es unter Windows nicht ([Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md#windows)) |
 
 Die Modelle selbst werden auf [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md) verglichen.
@@ -83,7 +83,7 @@ Das README ist ausdrücklich: Ein einziger Serverprozess, der mehrere Websites a
 Sicherheitsgrenze; der Prozess, der eine Website ausliefert, kann jede Datei lesen, die die anderen halten. Für einen Tarif, der mehrere
 Kunden auf eine Maschine legt:
 
-- **Velocity**: Betreiben Sie eine Velocity pro Website, jede mit `[ServerSettings] User` und `Group` auf den Benutzer dieses Kunden
+- **Velocity**: Betreiben Sie einen Velocity-Server pro Website, jeden mit `[ServerSettings] User` und `Group` auf den Benutzer dieses Kunden
   gesetzt, auf eigenen Ports, hinter einem Proxy. Siehe [Velocity neben Apache oder nginx](velocity-neben-apache-oder-nginx.md).
 - **PHP-FPM**: Geben Sie jeder Website einen eigenen Pool, der als Benutzer der Website läuft. Siehe
   [Apache mit PHP-FPM](apache-mit-php-fpm.md) und [Benutzer und Pools pro Kunde](../sicherheit/benutzer-und-pools-pro-kunde.md).
@@ -143,3 +143,11 @@ Tested on staging on:           <date>, by <role>
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
 - [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

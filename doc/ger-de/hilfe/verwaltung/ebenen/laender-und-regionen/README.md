@@ -60,19 +60,20 @@ Nach oben: [Verwaltungsebenen](../README.md). Die Einstiegsseite des Bereichs f�
 
 Exponential hat kein geografisches Informationssystem. Für Orte bietet es einen Datentyp für Kartenorte
 (`ezgmaplocation`, der Google Maps verwendet, einen Dienst eines Dritten) und einfache Anschriften in Textfeldern
-([ezgmaplocation](../../../../../eng-us/features/6.0/extensions/ezgmaplocation.md)). Verlinken Sie für alles über einen Punkt
+([ezgmaplocation](../../../../funktionen/6.0/erweiterungen/ezgmaplocation.md)). Verlinken Sie für alles über einen Punkt
 auf einer Karte hinaus Ihr bestehendes GIS oder Kartenportal.
 
 ## Verwandte Seiten
 
 - [Verwaltungsebenen](../README.md)
 - [Kommunen](../kommunen/README.md)
-- [Multisite einrichten](../../../../../eng-us/help/creators/website-creators/multisite-setup.md)
+- [Multisite einrichten](../../../ersteller/website-ersteller/multisite-einrichten.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

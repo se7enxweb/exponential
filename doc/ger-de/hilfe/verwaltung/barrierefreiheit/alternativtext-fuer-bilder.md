@@ -75,7 +75,7 @@ dekorativ kennzeichnet.
   **Missing alt text** (Fehlender Alternativtext; `/expai/alttext`, Richtlinie `expai/write`) listet Bilder ohne
   Alternativtext unterhalb eines Knotens auf; **Queue suggestions as drafts** (Vorschläge als Entwürfe einreihen)
   schreibt Vorschläge in neue Entwürfe, nie veröffentlicht, zur Prüfung durch die Redaktion
-  ([Exponential Intelligence](../../../../eng-us/features/6.0/extensions/expai.md)). Bilder werden an einen KI-Anbieter gesendet,
+  ([Exponential Intelligence](../../../funktionen/6.0/erweiterungen/expai.md)). Bilder werden an einen KI-Anbieter gesendet,
   nach der Datenrichtlinie der Erweiterung; entscheiden Sie das vor dem Einschalten mit Ihrer oder Ihrem
   Datenschutzbeauftragten.
 - Im Kernel listet nichts die Bilder ohne Alternativtext über die gesamte Website auf.
@@ -83,13 +83,14 @@ dekorativ kennzeichnet.
 ## Verwandte Seiten
 
 - [Bilder, Medien und Uploads](../../medien-und-uploads.md)
-- [Bilder und Bildvarianten](../../../../eng-us/help/creators/website-creators/images-and-image-variations.md)
-- [Standards zur Barrierefreiheit](../../../../eng-us/standards/accessibility.md)
+- [Bilder und Bildvarianten](../../ersteller/website-ersteller/bilder-und-bildvarianten.md)
+- [Standards zur Barrierefreiheit](../../../standards/barrierefreiheit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

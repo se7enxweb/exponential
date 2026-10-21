@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Administratorinnen und -Administratoren in �
 Änderung eine Datensicherung brauchen, aber keine Shell auf dem Server haben, zum Beispiel weil eine zentrale
 IT-Abteilung die Maschinen betreibt. Sie beantwortet, was die Sicherungsseite der Extension `git_manager` tut, wie Sie
 sie verwenden und warum sie das Sicherungssystem der Organisation ergänzt, aber nicht ersetzt. Die Funktionsseite ist
-[git_manager](../../../../../eng-us/features/6.0/extensions/git_manager.md).
+[git_manager](../../../../funktionen/6.0/erweiterungen/git_manager.md).
 
 ## Inhalt
 
@@ -107,8 +107,9 @@ bei ([Sicherungspläne und Aufbewahrung](sicherungsplaene-und-aufbewahrung.md)).
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

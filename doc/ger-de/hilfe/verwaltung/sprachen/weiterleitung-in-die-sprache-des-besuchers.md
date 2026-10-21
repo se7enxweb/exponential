@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Administratoren und Websiteersteller, deren Website ihre Sprachen unter eigenen Pfaden
 führt (`/fr`, `/en`) und die möchten, dass `www.example.gov/` jeden Besucher zu einer Sprache führt. Exponential tut
 das mit `site.ini [SiteAccessSettings] DefaultHostUriMatchMapItems[]`
-([Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md)).
+([Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md)).
 
 ## Inhalt
 
@@ -72,12 +72,13 @@ Der erste Befehl sollte auf `/fr` zeigen, der zweite auf `/en`.
 ## Verwandte Seiten
 
 - [Sprachadressen: Pfad oder Host](sprachadressen-pfad-oder-host.md)
-- [Sprachumschalter und Adressen pro Sprache](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md)
+- [Sprachumschalter und Adressen pro Sprache](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

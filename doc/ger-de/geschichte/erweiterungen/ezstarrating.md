@@ -1,8 +1,8 @@
 # ezstarrating (Sternebewertungen): Chronik
 
-Die Sternebewertung wechselte Anfang 2024 den Vendor und wurde am 27. September 2026 für PHP 8 und dauerhaft laufende Worker korrigiert; im Oktober zog sie auf jQuery 4 um und verlor ihr YUI-Script. Siehe die [Funktionsseite](../../../eng-us/features/6.0/extensions/ezstarrating.md).
+Die Sternebewertung wechselte Anfang 2024 den Vendor und wurde am 27. September 2026 für PHP 8 und dauerhaft laufende Worker korrigiert; im Oktober zog sie auf jQuery 4 um und verlor ihr YUI-Script. Siehe die [Funktionsseite](../../funktionen/6.0/erweiterungen/ezstarrating.md).
 
-Diese Seite führt **jede der 18 Änderungen** des Repositorys `ezstarrating` zwischen 2023-12-23 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezstarrating.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezstarrating.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../../eng-us/features/6.0/extensions/ezstarrating.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
+Diese Seite führt **jede der 18 Änderungen** des Repositorys `ezstarrating` zwischen 2023-12-23 und 2026-10-02 auf, nach Monat, jeweils mit der Art der Änderung. Lesen Sie sie, um herauszufinden, wann ein Verhalten hinzukam und welches Release Sie dafür brauchen. Die vollständige, maschinell erzeugte Aufzeichnung mit Größen ist das [Änderungsverzeichnis](../aenderungsverzeichnis/ezstarrating.md); was jedes Release enthält, steht in den [Release Notes](../../../changelogs/extensions/ezstarrating.md); wie Sie die Erweiterung verwenden, steht auf ihrer [Funktionsseite](../../funktionen/6.0/erweiterungen/ezstarrating.md). Die Commit-Nachrichten stehen so, wie sie im Repository festgehalten sind, also meist auf Englisch.
 
 | Art | Änderungen |
 |---|---|
@@ -74,7 +74,7 @@ Der Monat über alle Erweiterungen: [Oktober 2026](monate/2026-10.md). [Änderun
 
 ## Verwandte Seiten
 
-- [Funktionsseite](../../../eng-us/features/6.0/extensions/ezstarrating.md)
+- [Funktionsseite](../../funktionen/6.0/erweiterungen/ezstarrating.md)
 - [Release Notes](../../../changelogs/extensions/ezstarrating.md)
 - [Änderungsverzeichnis](../aenderungsverzeichnis/ezstarrating.md)
-- [Verhaltensänderungen der Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- [Verhaltensänderungen der Erweiterungen](../../bc/6.0/verhaltensaenderungen-von-erweiterungen.md)

@@ -4,14 +4,14 @@ audience: government, project-manager, admin
 category: public-sector
 order: 280
 summary: Für öffentliche Stellen, die ein Verzeichnis von Verarbeitungstätigkeiten führen - Exponential führt es nicht für Sie; diese Seite nennt die typischen Verarbeitungstätigkeiten einer Exponential-Website mit den Fakten, die jeder Eintrag braucht (Daten, Empfänger, Aufbewahrung, Sicherheitsmaßnahmen), entnommen aus dem Produkt.
-keywords: Verzeichnis von Verarbeitungstätigkeiten, VVT, DSGVO Artikel 30, Verarbeitungstätigkeiten, Website, Benutzerkonten, Formulare, Newsletter, Audit-Trail, Protokolle, Aufbewahrung, Empfänger, Sicherheitsmaßnahmen, Dokumentation, öffentlicher Sektor, record of processing activities, ROPA, GDPR
+keywords: Verzeichnis von Verarbeitungstätigkeiten, VVT, DSGVO Artikel 30, Verarbeitungstätigkeiten, Website, Benutzerkonten, Formulare, Newsletter, Prüfprotokoll, Protokolle, Aufbewahrung, Empfänger, Sicherheitsmaßnahmen, Dokumentation, öffentlicher Sektor, record of processing activities, ROPA, GDPR
 type: help
 ---
 # Verzeichnis von Verarbeitungstätigkeiten für eine Website
 
 Diese Seite richtet sich an Datenschutzbeauftragte und Projektleitungen. Das Verzeichnis von Verarbeitungstätigkeiten
 (Art. 30 DSGVO) zu führen, ist Aufgabe des Betreibers; die Aussage des Projekts sagt das ausdrücklich
-([Datenschutzstandards: Status](../../../../eng-us/standards/privacy.md#status)). Exponential kann Ihr Verzeichnis nicht
+([Datenschutzstandards: Status](../../../standards/datenschutz.md#status)). Exponential kann Ihr Verzeichnis nicht
 schreiben, aber es kann die Fakten dafür liefern. Unten finden Sie die Verarbeitungstätigkeiten einer typischen
 öffentlichen Website mit den Fakten aus dem Produkt.
 
@@ -54,7 +54,7 @@ Zweck und Rechtsgrundlage tragen Sie selbst ein; sie hängen von Ihren Aufgaben 
 
 Aus dem Sicherheitsbereich dieser Hilfe: Passwort-Hashing (bcrypt), optionale zweistufige Anmeldung, Rollen nach dem
 Prinzip der geringsten Rechte, CSRF-Formular-Token, Flags des Sitzungscookies, Sicherheits-Header, Content Security
-Policy, manipulationssicherer Audit-Trail mit Warnungen, maskierte Protokolle, HTTPS und HSTS, Datensicherungen. Nennen
+Policy, manipulationssicheres Prüfprotokoll mit Warnungen, maskierte Protokolle, HTTPS und HSTS, Datensicherungen. Nennen
 Sie nur, was Sie tatsächlich konfiguriert haben.
 
 ## Verwandte Seiten
@@ -65,8 +65,9 @@ Sie nur, was Sie tatsächlich konfiguriert haben.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

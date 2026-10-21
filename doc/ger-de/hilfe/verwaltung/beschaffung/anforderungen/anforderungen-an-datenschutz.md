@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Datenschutzbeauftragte, Beschaffungsteams und Projektleitungen, die den Datenschutzteil
 einer Ausschreibung für ein CMS schreiben. Sie gibt Formulierungen für Anforderungen und ordnet jede Anforderung dem zu,
-was die [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) für Exponential dokumentieren. Software stellt Funktionen
+was die [Datenschutzstandards](../../../../standards/datenschutz.md) für Exponential dokumentieren. Software stellt Funktionen
 bereit; Ihre Organisation bleibt Verantwortliche und ist weiterhin für Zwecke, Rechtsgrundlagen, Hinweise und Anfragen
 zuständig.
 
@@ -53,11 +53,11 @@ zuständig.
 
 | Id | Dokumentierte Funktion | Lücke |
 |---|---|---|
-| PRI-01 | Audit: Adressen gekürzt (/24, IPv6 /48), Sitzungs-IDs gehasht, keine Passwörter oder POST-Inhalte; Anfrageprotokolle `MaskIP=enabled`; der Log-Betrachter maskiert IPs, E-Mail-Adressen und Geheimnisse ([Log-Betrachter](../../../../../eng-us/features/6.0/log-viewer.md)) | Zugriffsprotokolle des Webservers liegen außerhalb von Exponential |
-| PRI-02 | Audit je Kanal 90 Tage live und 2 Jahre archiviert, nach einer festgelegten Zeit pseudonymisiert; 404-, Sicherheits- und CSP-Protokolle haben `MaxAgeDays` ([Rotation der Logdateien](../../../../../eng-us/features/6.0/log-rotation.md)) | Kernel-Protokolle wie `error.log` rotieren nach Größe, standardmäßig ohne Altersgrenze |
-| PRI-03 | E-Mail-Kategorien aus, bis sie eingeschaltet werden, Einwilligungsprotokoll in der Tabelle `expmail_consent_log`, Abmeldung mit einem Klick ([E-Mail-Einstellungen](../../../../../eng-us/features/6.0/mail-preferences.md)) | Ohne Kategorie versandte Werbe-E-Mails erhalten keine Fußzeile |
+| PRI-01 | Audit: Adressen gekürzt (/24, IPv6 /48), Sitzungs-IDs gehasht, keine Passwörter oder POST-Inhalte; Anfrageprotokolle `MaskIP=enabled`; der Log-Betrachter maskiert IPs, E-Mail-Adressen und Geheimnisse ([Log-Betrachter](../../../../funktionen/6.0/log-betrachter.md)) | Zugriffsprotokolle des Webservers liegen außerhalb von Exponential |
+| PRI-02 | Audit je Kanal 90 Tage live und 2 Jahre archiviert, nach einer festgelegten Zeit pseudonymisiert; 404-, Sicherheits- und CSP-Protokolle haben `MaxAgeDays` ([Rotation der Logdateien](../../../../funktionen/6.0/log-rotation.md)) | Kernel-Protokolle wie `error.log` rotieren nach Größe, standardmäßig ohne Altersgrenze |
+| PRI-03 | E-Mail-Kategorien aus, bis sie eingeschaltet werden, Einwilligungsprotokoll in der Tabelle `expmail_consent_log`, Abmeldung mit einem Klick ([E-Mail-Einstellungen](../../../../funktionen/6.0/e-mail-einstellungen.md)) | Ohne Kategorie versandte Werbe-E-Mails erhalten keine Fußzeile |
 | PRI-04 | E-Mail-Einstellungen und Einwilligungsverlauf als JSON oder CSV; Audit-Einträge über einen Benutzer mit `./console exp:audit export --subject-user=<id>` | **Keine einzelne Funktion „alle meine Daten exportieren“** |
-| PRI-05 | Das Entfernen eines Benutzers löscht die E-Mail-Einstellungen und anonymisiert das Einwilligungsprotokoll; „Deaktivieren und verschieben“ zur Einschränkung; **Benutzerkonten prüfen** findet unbenutzte Konten ([Benutzerkonten prüfen](../../../../../eng-us/features/6.0/user-hygiene.md)) | Das Entfernen erfolgt manuell, ein Konto nach dem anderen; Formulareingaben werden gesondert erreicht |
+| PRI-05 | Das Entfernen eines Benutzers löscht die E-Mail-Einstellungen und anonymisiert das Einwilligungsprotokoll; „Deaktivieren und verschieben“ zur Einschränkung; **Benutzerkonten prüfen** findet unbenutzte Konten ([Benutzerkonten prüfen](../../../../funktionen/6.0/benutzerpflege.md)) | Das Entfernen erfolgt manuell, ein Konto nach dem anderen; Formulareingaben werden gesondert erreicht |
 | PRI-06 | Skripte der Administration werden lokal ausgeliefert; admin4 lädt keine externen Schriften oder Skripte | - |
 | PRI-07 | Der Kernel setzt nur funktionale Cookies (Sitzung, `is_logged_in`, Zustand der Oberfläche in der Administration) | **Kein Cookie-Einwilligungsbanner** im Kernel oder in mitgelieferten Designs |
 | PRI-08 | Erweiterungen, die Dritte kontaktieren (Analyse, reCAPTCHA, hCaptcha, Social Login), sind installiert, aber standardmäßig nicht aktiv | Ob ein Website-Paket eine davon aktiviert: `ActiveExtensions[]` prüfen |
@@ -81,7 +81,7 @@ zuständig.
 - Die Erweiterungen Dritter vergessen, die ein Lieferant beim Bau hinzufügt. Verlangen Sie die endgültige Liste
   `ActiveExtensions[]` als Lieferung.
 - Newsletter-Statistiken für harmlos halten: Das Zählen von Öffnungen und Klicks je Person braucht eine vorherige
-  Einwilligung ([Datenschutzstandards](../../../../../eng-us/standards/privacy.md)).
+  Einwilligung ([Datenschutzstandards](../../../../standards/datenschutz.md)).
 
 ## Verwandte Seiten
 - [Anforderungen an ein CMS für den öffentlichen Sektor](README.md)
@@ -91,8 +91,9 @@ zuständig.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an Administratoren und Projektleitungen, die eine Installation mit vielen Sprachen planen,
 zum Beispiel ein nationales Portal oder viele Websites, die sich eine Installation teilen. Die Fakten stammen aus
-[Sprachen in Exponential, Abschnitt 11](../../../../eng-us/languages.md#11-the-limit-of-62-content-languages).
+[Sprachen in Exponential, Abschnitt 11](../../../sprachen.md#11-die-grenze-von-62-inhaltssprachen).
 
 ![Der Zähler der Inhaltssprachen: wie viele genutzt werden und wie viele noch hinzugefügt werden können](../../../../eng-us/help/images/government/gov-languages-limit.webp)
 
@@ -60,14 +60,15 @@ Formate eines Landes können ohne eigene Inhaltssprache aus der `Locale` des Sit
 
 ## Verwandte Seiten
 
-- [Sprachen in Exponential](../../../../eng-us/languages.md#11-the-limit-of-62-content-languages)
+- [Sprachen in Exponential](../../../sprachen.md#11-die-grenze-von-62-inhaltssprachen)
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
 - [Eine Inhaltssprache hinzufügen](eine-inhaltssprache-hinzufuegen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -31,7 +31,7 @@ API-Referenz: Das sind der Quelltext des Kernels und die Seiten, auf die jedes K
 | [eZContentClass](ezcontentclass.md) | Inhaltsklassen und ihre Attribute |
 | [eZUser und Zugriffsprüfungen](ezuser-und-zugriff.md) | der aktuelle Benutzer und Richtlinien |
 | [Demomodus für Entwickler](demomodus-fuer-entwickler.md) | `EXP_DEMO_MODE`, Passwortänderungen auf einer öffentlichen Demo |
-| [eZHTTPTool](ezhttptool.md) | Request-Variablen, Sessions, Weiterleitungen |
+| [eZHTTPTool](ezhttptool.md) | Request-Variablen, Sitzungen, Weiterleitungen |
 | [eZSys und eZExtension](ezsys-und-ezextension.md) | Pfade, die Umgebung, Erweiterungen |
 | [eZTemplate](eztemplate.md) | Templates aus PHP |
 | [eZModule](ezmodule.md) | Module und View-Ergebnisse |
@@ -83,8 +83,8 @@ API-Referenz: Das sind der Quelltext des Kernels und die Seiten, auf die jedes K
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

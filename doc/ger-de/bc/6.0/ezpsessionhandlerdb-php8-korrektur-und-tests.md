@@ -1,9 +1,9 @@
 # `ezpSessionHandlerDB`: Korrekturen für die Kompatibilität mit PHP 8 und eine Testsuite für PHPUnit 13
 
-Lesen Sie diese Seite, wenn Ihre Installation Sessions in der Datenbank speichert (`ezpSessionHandlerDB`) und unter
+Lesen Sie diese Seite, wenn Ihre Installation Sitzungen in der Datenbank speichert (`ezpSessionHandlerDB`) und unter
 PHP 8 läuft, wenn Ihre Tabelle `ezsession` immer weiter wächst oder wenn Sie leere Seiten mit „Cannot call session
 save handler in a recursive manner“ gesehen haben. Drei Fehler in `ezpSessionHandlerDB` verursachten unter PHP 8
-stille Fehler bei Sessions und verhinderten, dass die Garbage Collection abgelaufene Sessions je entfernte. Alle drei
+stille Fehler bei Sitzungen und verhinderten, dass die Garbage Collection abgelaufene Sitzungen je entfernte. Alle drei
 sind behoben (6.0.x, 2026-04-08; veröffentlicht in 6.0.13) und durch eine Testsuite für PHPUnit 13 abgedeckt, die ohne
 laufende Datenbank und ohne den Kernel von Exponential läuft.
 
@@ -12,7 +12,7 @@ laufende Datenbank und ohne den Kernel von Exponential läuft.
 | | |
 |---|---|
 | Was sich geändert hat | `read()` gibt `''` statt `false` zurück; `gc()` vergleicht mit `time()`; der Timeout-Schutz von `gc()` misst die tatsächlich vergangene Zeit; `setSaveHandler()` ruft `session_module_name( 'user' )` nicht mehr auf (6.0.15). |
-| Wer betroffen ist | Jede Installation mit Sessions in der Datenbank unter PHP 8.0 oder neuer. |
+| Wer betroffen ist | Jede Installation mit Sitzungen in der Datenbank unter PHP 8.0 oder neuer. |
 | Wie Sie es prüfen | Zählen Sie abgelaufene Zeilen: `SELECT COUNT(*) FROM ezsession WHERE expiration_time < UNIX_TIMESTAMP();` (MySQL). Vor der Korrektur wuchs diese Zahl nur. |
 | Wie Sie es beheben | Aktualisieren. Von früher übrig gebliebene abgelaufene Zeilen entfernt der nächste Lauf der Garbage Collection. |
 
@@ -24,21 +24,21 @@ PHPUnit 13.0.0.
 ### Was kaputtging
 
 `SessionHandlerInterface::read()` muss auf jedem Codepfad eine **Zeichenkette** zurückgeben — eine leere Zeichenkette
-`''` bedeutet „keine Session-Daten“, während `false` einen fatalen Fehler des Handlers bedeutet. Unter PHP 7 wurde die
+`''` bedeutet „keine Sitzungsdaten“, während `false` einen fatalen Fehler des Handlers bedeutet. Unter PHP 7 wurde die
 Unterscheidung nicht durchgesetzt. PHP 8 ist darin streng: Die Rückgabe von `false` lässt PHP Folgendes ausgeben:
 
 ```
 Cannot call session save handler in a recursive manner
 ```
 
-und dann sofort versuchen, die Session neu zu starten, was zu einer Endlosschleife oder einer leeren Seite führt.
+und dann sofort versuchen, die Sitzung neu zu starten, was zu einer Endlosschleife oder einer leeren Seite führt.
 
 ### Betroffene Pfade
 
 | Pfad | Alte Rückgabe | Korrigierte Rückgabe |
 |------|-----------|--------------|
 | Datenbank nicht verbunden | `return false` | `return ''` |
-| Keine passende Session-Zeile | `return false` | `return ''` |
+| Keine passende Sitzungszeile | `return false` | `return ''` |
 
 ### Was sich geändert hat
 
@@ -67,7 +67,7 @@ typischerweise `~1744000000`). Die Abfrage:
 DELETE FROM ezsession WHERE expiration_time < 1440
 ```
 
-trifft nie auf eine Zeile, daher wurden **abgelaufene Sessions nie gelöscht**.
+trifft nie auf eine Zeile, daher wurden **abgelaufene Sitzungen nie gelöscht**.
 
 ### Was sich geändert hat
 
@@ -162,7 +162,7 @@ session_set_save_handler(): Providing individual callbacks instead of an object 
   Methoden; darin muss sich nichts ändern. Der Adapter steht jedem Code zur Verfügung, der einen Handler selbst
   registriert: `session_set_save_handler( new ezpSessionHandlerAdapter( $handler ), false )`.
 - **Es wird keine Shutdown-Funktion registriert** (`false`), genau wie zuvor mit den Callbacks: eZSession und die
-  persistenten Worker von Exponential Velocity schreiben und schließen die Session selbst.
+  persistenten Worker von Exponential Velocity schreiben und schließen die Sitzung selbst.
 - **PHP 8.0 bis 8.5:** Die Objektform funktioniert in jeder unterstützten Version. Die Methoden des Adapters tragen
   `#[\ReturnTypeWillChange]` statt Rückgabetypen (die Schnittstelle hat seit PHP 8.1 vorläufige Rückgabetypen, und der
   Codestil von Exponential kennt keine Rückgabetypen).
@@ -227,7 +227,7 @@ OK (13 tests, 30 assertions)
 - [Unterstützung für PHP 8](php8.md)
 - [Upgrade auf PHPUnit 10](phpunitv10.md), [Upgrade auf PHPUnit 13](phpunitv13.md)
   und [PHPUnit 13 unter PHP 8.4](phpunitv13-fuer-php841.md)
-- [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
-- Geschichte: [April 2025](../../../eng-us/history/2025/2025-04.md), [September 2025](../../../eng-us/history/2025/2025-09.md),
-  [Dezember 2025](../../../eng-us/history/2025/2025-12.md), [Februar 2026](../../../eng-us/history/2026/2026-02.md),
-  [März 2026](../../../eng-us/history/2026/2026-03.md)
+- [PHP 8.4 und 8.5 für den älteren Symfony-Stack: die Framework-Forks](../../funktionen/6.0/plattform-php85-framework-forks.md)
+- Geschichte: [April 2025](../../geschichte/2025/2025-04.md), [September 2025](../../geschichte/2025/2025-09.md),
+  [Dezember 2025](../../geschichte/2025/2025-12.md), [Februar 2026](../../geschichte/2026/2026-02.md),
+  [März 2026](../../geschichte/2026/2026-03.md)

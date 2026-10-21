@@ -3,7 +3,7 @@
 Lesen Sie diese Seite, wenn Sie den Admin-Siteaccess mit `admin4l` betreiben, wenn Sie das `pagelayout.tpl` oder die
 Seitenteile von admin4 überschreiben oder wenn Sie Admin-Layouts bearbeiten. Die Admin-Seite ist kein einzelnes
 Template mehr: Mit `SiteDesign=admin4l` wird die Seite auf ein Admin-Layout aufgelöst und aus dessen Zonen und Blöcken
-gezeichnet. Wie Sie es verwenden, steht auf [der Funktionsseite](../../../eng-us/features/6.0/admin4l.md).
+gezeichnet. Wie Sie es verwenden, steht auf [der Funktionsseite](../../funktionen/6.0/admin4l.md).
 
 ## Kurz gesagt
 

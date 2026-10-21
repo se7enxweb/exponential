@@ -80,7 +80,7 @@ nichts.
 ## Verwandte Seiten
 
 - [Persönliche API-Schlüssel](../../anleitungen/api-schluessel.md), die Anleitung
-- [Audit](../../../eng-us/bc/6.0/audit.md#8-event-reference): die Ereignisse `access.apikey.*`
-- [ezprestapi](../../../eng-us/features/6.0/extensions/ezprestapi.md): die Inhaltsrouten
+- [Audit](audit.md#8-referenz-der-ereignisse): die Ereignisse `access.apikey.*`
+- [ezprestapi](../../funktionen/6.0/erweiterungen/ezprestapi.md): die Inhaltsrouten
 - [Vertrauenswürdige Proxys](vertrauenswuerdige-proxys.md): die Adresse, die als letzte Verwendung eines Schlüssels
   festgehalten wird

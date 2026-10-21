@@ -65,14 +65,14 @@ Ihr Hoster und Ihr Partner haben möglicherweise Administratorkonten auf Ihrer W
 
 **Benutzer > Benutzerkonten prüfen** listet Konten, die sich nie angemeldet haben, seit Monaten nicht gesehen wurden,
 deaktiviert oder gesperrt sind oder sich einen Benutzernamen oder eine E-Mail-Adresse teilen
-([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)). Bitten Sie Ihren Administrator, die Liste jedes
+([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)). Bitten Sie Ihren Administrator, die Liste jedes
 Quartal durchzugehen, zusammen mit den Zuweisungen der Rolle Administrator, und Ihnen die vorgenommenen Änderungen zu
 schicken. Eine jährliche, gründlichere Fassung mit einem Protokoll zum Aufbewahren steht unter
 [Zugriffsüberprüfungen](../../unternehmen/sicherheit/zugriffspruefungen.md).
 
 > **Tipp**
 > Um zu sehen, was sich bei Zugriffen geändert hat: Das Prüfprotokoll hält Rollenzuweisungen fest und schlägt bei einer
-> neuen Zuweisung der Rolle Administrator Alarm ([Das Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md)).
+> neuen Zuweisung der Rolle Administrator Alarm ([Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)).
 
 ## Verwandte Seiten
 
@@ -81,3 +81,11 @@ schicken. Eine jährliche, gründlichere Fassung mit einem Protokoll zum Aufbewa
 - [Konten und Anmeldung](../../konten-und-anmeldung.md)
 - [Das Standard-Administratorpasswort](../../standard-administratorpasswort.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

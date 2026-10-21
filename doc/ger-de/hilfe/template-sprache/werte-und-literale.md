@@ -201,7 +201,15 @@ Ausgabe auf alpha:
 
 - Zurück: [Lexikalische Struktur](lexikalische-struktur.md)
 - Weiter: [Variablen im Detail](variablen-im-detail.md)
-- [Grundlagen der TPL-Syntax](../../../eng-us/help/designers/templates/tpl-syntax-basics.md)
-- [Array-Operatoren](../../../eng-us/help/designers/templates/array-operators.md)
-- [Die Typ-Operatoren](../../../eng-us/examples/template-operators/get_type.md)
+- [Grundlagen der TPL-Syntax](../designer/vorlagen/tpl-syntax-grundlagen.md)
+- [Array-Operatoren](../designer/vorlagen/array-operatoren.md)
+- [Die Typ-Operatoren](../../beispiele/template-operatoren/get_type.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -133,6 +133,13 @@ sie auflöst.
 Höchstens `ResultLimit` Objekte (25) werden für eine Suche beschrieben, und höchstens `FileRowLimit` Dateizeilen (50)
 werden für einen Pfad oder ein Präfix gelesen; die Seite sagt, wenn es mehr gab.
 
+## Die Adresse einer Suche
+
+Eine Suche ist eine Adresse mit View-Parametern, `contentfinder/search/(type)/object/(text)/58`: `(text)` ist der
+Text (unverändert, wenn er aus Buchstaben, Ziffern, Leerzeichen und `. _ : @ , + = -` besteht, sonst `~` und sein
+base64url, wie bei einem Pfad oder einer URL), und `(type)` ist der Typ (keiner für *auto*). Das Formular wird per
+POST gesendet und mit einem 303 auf diese Adresse beantwortet; ein Query-String wie `?SearchText=` wird nicht gelesen.
+
 ## Wer ihn verwenden darf
 
 | Richtlinie | Was sie erlaubt |
@@ -266,8 +273,9 @@ einer Kopie der Inhalte einer echten Installation:
 | MongoDB | 8.3.11 | über den Treiber: `LIKE … ESCAPE`, `LOWER( column )` (das Laden der Benutzer) und URL-Alias-Pfade (`eZURLAliasML::fetchByPath()`, ein Element nach dem anderen statt des Joins) werden übersetzt; jede Abfrage des Finders betrifft nur eine Tabelle |
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt
-bei und entwickeln die Produkte mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein Dashboard
-sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue Funktionen
-früher bereitstehen. Beginnen Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../hilfe/partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

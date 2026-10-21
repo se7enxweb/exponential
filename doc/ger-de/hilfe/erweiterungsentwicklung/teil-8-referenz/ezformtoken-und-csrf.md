@@ -11,7 +11,7 @@ type: help
 
 Teil 8, Referenz 20. Cross-Site Request Forgery (CSRF) bedeutet, dass eine andere Website den Browser eines
 angemeldeten Benutzers dazu bringt, einen POST an Ihre Website zu senden. Die mit dem Kernel ausgelieferte Erweiterung
-`ezformtoken` verhindert das mit einem geheimen Token je Session. Meist funktioniert das, ohne dass Ihre Erweiterung
+`ezformtoken` verhindert das mit einem geheimen Token je Sitzung. Meist funktioniert das, ohne dass Ihre Erweiterung
 etwas tun muss; diese Seite sagt, wann nicht, und was dann zu tun ist.
 
 ## Wie es funktioniert
@@ -22,9 +22,9 @@ Die Erweiterung registriert drei Listener (in ihrer `settings/site.ini.append.ph
 |---|---|---|
 | `response/output` | `ezxFormToken::output()` | fügt jedem `<form>` einer HTML-Seite ein verstecktes Feld `ezxform_token` hinzu und dem `<head>` die Meta-Tags `csrf-param` und `csrf-token` (mit der ID `ezxform_token_js`) |
 | `request/input` | `ezxFormToken::input()` | lehnt einen POST ohne das richtige Token ab |
-| `session/regenerate` | `ezxFormToken::reset()` | ein neues Token mit einer neuen Session |
+| `session/regenerate` | `ezxFormToken::reset()` | ein neues Token mit einer neuen Sitzung |
 
-Geschützt sind nur angemeldete Benutzer mit einer Session (bei anonymen Besuchern gibt es nichts zu stehlen), und
+Geschützt sind nur angemeldete Benutzer mit einer Sitzung (bei anonymen Besuchern gibt es nichts zu stehlen), und
 geprüft werden nur POST-Requests.
 
 ## Wo das Token gesucht wird
@@ -48,7 +48,7 @@ JSON-Requests).
 | Eine View, die bei GET Daten ändert | auf POST umstellen: GET wird nie geprüft |
 | Eine JSON-Seite, die Ihre View ausliefert | das Token wird nur HTML-Seiten hinzugefügt; lesen Sie es aus der Seite, die den Aufruf macht |
 
-In PHP gibt `ezxFormToken::getToken()` das Token der aktuellen Session zurück, für Templates, die Sie außerhalb der
+In PHP gibt `ezxFormToken::getToken()` das Token der aktuellen Sitzung zurück, für Templates, die Sie außerhalb der
 normalen Ausgabe rendern (zum Beispiel einen per Ajax geladenen Dialog):
 
 ```php
@@ -86,8 +86,8 @@ stattdessen das Formular.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website mit Dashboard
-ist für Mitte 2027 geplant: Bitte werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen
-früher kommen. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

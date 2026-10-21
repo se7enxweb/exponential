@@ -87,11 +87,11 @@ Aus [Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md
 
 ## Start
 
-- [ ] Die [Checkliste für den Start](../../../../eng-us/help/creators/website-creators/launch-checklist.md) des Website-Erstellers
+- [ ] Die [Checkliste für den Start](../../ersteller/website-ersteller/checkliste-fuer-den-start.md) des Website-Erstellers
   bestanden.
 - [ ] HTTPS auf jedem Host.
 - [ ] Redakteure mit einem kurzen Leitfaden für Redakteure eingewiesen
-      ([Die Website an Redakteure übergeben](../../../../eng-us/help/creators/website-creators/handing-over-to-editors.md)).
+      ([Die Website an Redakteure übergeben](../../ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md)).
 
 ## Jeden Monat
 
@@ -99,7 +99,7 @@ Aus [Betrieb mit kleinem Budget](../gemeinnuetzige/betrieb-mit-kleinem-budget.md
 - [ ] Formulareinsendungen beantwortet; alte nach Plan entfernt.
 - [ ] Logs angesehen; Backups überprüft.
 - [ ] Konten, die lange nicht gesehen wurden, unter **Benutzerkonten > Benutzerkonten prüfen** geprüft
-      ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
+      ([Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md)).
 
 ## Jedes Jahr und bei jeder Übergabe
 
@@ -134,8 +134,8 @@ Aus [Übergabe bei Wechsel der Ehrenamtlichen](uebergabe-bei-wechsel-der-ehrenam
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

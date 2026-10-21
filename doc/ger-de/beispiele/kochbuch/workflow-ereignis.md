@@ -184,7 +184,7 @@ als gültig (Syntax); die Basisklasse, die Statuswerte und die Suche nach Templa
 - [Workflows: Freigaben, Auslöser und die Prozesse, die warten](../../anleitungen/workflows.md)
 - [Workflow-Ereignisse](../workflow-ereignisse/README.md): die Ereignistypen des Kernels
 - [Ein Cronjob](cronjob.md): Der Workflow-Cronjob setzt zurückgestellte Ereignisse fort
-- [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md): `/setup/workflowevent` schreibt ein Ereignisgerüst
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md): `/setup/workflowevent` schreibt ein Ereignisgerüst
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.

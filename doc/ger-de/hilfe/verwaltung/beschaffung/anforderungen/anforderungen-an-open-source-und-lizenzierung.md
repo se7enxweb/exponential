@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Beschaffungsteams und Rechtsberatung, die Open-Source-Software wollen und das prüfbar in
 eine Ausschreibung schreiben müssen. Sie gibt Formulierungen für Anforderungen und die Fakten zur Lizenzierung von
 Exponential, aus [Fragen zur Lizenzierung: die GPL und Exponential](../../../projekt/lizenz-faq.md) und
-[Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md).
+[Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.
@@ -55,10 +55,10 @@ verlangen Sie eine Lizenz, die sie erfüllt, statt „Open Source“ als Etikett
 | Lizenzgebühr | keine; Sie dürfen für Kopien, Installation, Support und Updates Geld verlangen | [Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md) |
 | Nutzung über ein Netzwerk | Der Besuch einer Website ist keine Weitergabe; nichts verpflichtet den Betreiber, den Code zu veröffentlichen, den er betreibt | [Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md) |
 | Quellcode | Öffentliche Repositorys auf GitHub unter `se7enxweb`, installierbar mit Composer | [Den Code holen](../../../../installation/03-den-code-beschaffen.md) |
-| Dokumentation | GNU Free Documentation License 1.3 oder neuer | [Die Lizenz dieser Dokumentation](../../../../../eng-us/README-LICENSE.md), [GFDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html) |
+| Dokumentation | GNU Free Documentation License 1.3 oder neuer | [Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md), [GFDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html) |
 | Urheberrecht | „7x & Exponential Foundation“ und eZ Systems AS für 1999 bis 2014, dazu Mitwirkende; Mitwirkende am Kernel übertragen das Urheberrecht an ihren Beiträgen unter dem CLA an 7x ([CONTRIBUTING.md](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)) | [Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md) |
-| Lizenzen der Erweiterungen | Jede Erweiterung gibt ihre Lizenz in `ezinfo.php` und `extension.xml` an | [Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md), [Lizenzen und Versionen der Pakete](../../../../../eng-us/features/6.0/package-licenses-and-versions.md) |
-| Dienste Dritter | Manche Erweiterungen rufen bei Aktivierung externe Dienste auf (Analyse, CAPTCHA, Anmeldung über soziale Netzwerke) | [Datenschutzstandards](../../../../../eng-us/standards/privacy.md) |
+| Lizenzen der Erweiterungen | Jede Erweiterung gibt ihre Lizenz in `ezinfo.php` und `extension.xml` an | [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md), [Lizenzen und Versionen der Pakete](../../../../funktionen/6.0/paketlizenzen-und-versionen.md) |
+| Dienste Dritter | Manche Erweiterungen rufen bei Aktivierung externe Dienste auf (Analyse, CAPTCHA, Anmeldung über soziale Netzwerke) | [Datenschutzstandards](../../../../standards/datenschutz.md) |
 
 ## Eigens entwickelte Arbeit unter der GPL
 

@@ -86,7 +86,7 @@ Woraus es besteht:
   in der Seitenleiste, einen Tab Audit an jedem Knoten und Audit-Links an Inhaltsaufträgen. Jedes davon wird nur
   Benutzern angezeigt, die die Richtlinie besitzen.
 - **Der Befehl `exp:audit`** mit 19 Aktionen und ein **Cronjob-Teil**, der die tägliche Arbeit erledigt.
-- **Datenschutz als Standard.** Adressen werden gekürzt, Sessions gehasht und User-Agents verkürzt. Inhaltswerte,
+- **Datenschutz als Standard.** Adressen werden gekürzt, Sitzungen gehasht und User-Agents verkürzt. Inhaltswerte,
   Passwörter, Tokens und Geheimnisse werden nie aufgezeichnet. Lesezugriffe sind aus. Der Index pseudonymisiert
   personenbezogene Felder nach 90 Tagen.
 
@@ -167,7 +167,7 @@ aus). Mit `ReauthForManage=enabled` zeigt „Jetzt prüfen“ (Dashboard, Konsol
 Formular, das nach dem Passwort des angemeldeten Benutzers fragt. Das Formular sendet an dieselbe View mit derselben
 Schaltfläche und dem Formular-Token, sodass ein richtiges Passwort die Aktion sofort ausführt. Das Passwort wird gegen
 den gespeicherten Hash geprüft, so wie die Anmeldung es prüft (`eZUser::authenticateHash()`), ohne erneute Anmeldung
-und ohne den Benutzer der Session zu ändern. Ein richtiges Passwort gilt `ReauthMinutes` (10) lang in dieser Session
+und ohne den Benutzer der Sitzung zu ändern. Ein richtiges Passwort gilt `ReauthMinutes` (10) lang in dieser Sitzung
 und nur für diesen Benutzer. Jeder Versuch wird aufgezeichnet: `access.session.reauth` (after: action, minutes) oder
 `access.session.reauth.failed` (result failed, reason credentials; nie das Passwort). Abbrechen kehrt zur Seite zurück
 und tut nichts. Die Kommandozeile fragt nie: Wer `exp:audit` ausführt, hat den Server bereits in der Hand. Die
@@ -882,7 +882,7 @@ Bridge[myext/vote]=content.myext_poll.vote
 Pro Eintrag wird ein Listener angehängt, wenn `ezpEvent::registerEventListeners()` läuft (Web) oder einmal pro
 ezpEvent-Instanz (Befehle). In einem Velocity-Worker wird er nur einmal angehängt. Der Listener zeichnet `after.args`
 auf, die Argumente des Ereignisses in skalarer Form (Objekte als `class#id`; Argumente von Ereignissen `session/*`
-sind Session-IDs und werden nur gehasht aufgezeichnet). Der Wert eines Filter-Ereignisses wird unverändert
+sind Sitzungs-IDs und werden nur gehasht aufgezeichnet). Der Wert eines Filter-Ereignisses wird unverändert
 durchgereicht. Ausgeliefert: `session/regenerate` → `access.session.regenerate` sowie `session/destroy` und
 `session/gc` → `access.session.expire`. Beide sind standardmäßig aus.
 
@@ -1349,7 +1349,7 @@ aufgezeichnet (`system.audit.setting.write`), und das Ausschalten des Audits lö
 | `search --q=…` sagt "invalid option `--q'" | `-q` ist die Standardoption für stille Ausgabe | `--query=…` |
 | `--from` scheint Einträge zu verfehlen | ein bloßes `--from`/`--to` ist UTC, wie ausgegeben (die bloßen Zeiten der Konsole sind Zeit der Website) | UTC angeben oder den Offset hinzufügen: `--from=2026-10-03T01:30+02:00` |
 | Ein Formular der Administration antwortet mit 503 „Nicht ausgeführt: Das Audit kann es nicht protokollieren“; `AUDIT-REFUSED` in error.log | `OnWriteFailure=refuse`, und LogDir ist nicht beschreibbar | LogDir wie oben korrigieren; siehe [4.13](#413-wenn-das-audit-nicht-schreiben-kann) |
-| „Jetzt prüfen“ fragt nach dem Passwort | `ReauthForManage=enabled` | es eingeben; es gilt `ReauthMinutes` lang in dieser Session |
+| „Jetzt prüfen“ fragt nach dem Passwort | `ReauthForManage=enabled` | es eingeben; es gilt `ReauthMinutes` lang in dieser Sitzung |
 | Eine Änderung der Einstellungen wirkt nicht | INI-Cache | `php bin/php/ezcache.php --clear-tag=ini` (exp:ini tut das selbst) |
 | Das Log-Verzeichnis wächst schnell | Lesezugriffe eingeschaltet, oder ein gesprächiger Name einer Erweiterung eingeschaltet | `exp:audit status` (die heutigen Zählungen pro Kanal), `search --channel=… --limit=…`; den Namen in `Disabled[]` ausschalten; `SampleRate` senken |
 
@@ -1388,7 +1388,7 @@ großer Filter sofort mit dem Herunterladen beginnt und nie die ganze Datei im S
   `X-Content-Type-Options: nosniff`, kein `Content-Length` und `X-Accel-Buffering: no`: Exponential Velocity (0.0.4.49
   und neuer) streamt eine Antwort mit diesem Header aus seinen Pool-Workern, statt sie zu sammeln, und auch ein
   vorgeschalteter Proxy hält sie nicht zurück. Die Ausgabepuffer werden beendet, und das erste Stück (die Kopfzeile
-  der CSV) wird sofort gesendet, danach alle 64 KB. Die Session wird zuerst geschlossen (`eZSession::stop()`), sodass
+  der CSV) wird sofort gesendet, danach alle 64 KB. Die Sitzung wird zuerst geschlossen (`eZSession::stop()`), sodass
   die anderen Seiten des Benutzers nicht warten.
 - **Im Hintergrund.** Oberhalb von `MaxExportRecords`, oder wann immer eine Datei später gewünscht wird, startet „Im
   Hintergrund exportieren“ den Inhaltsauftrag `auditexport` (`expContentJobAuditExport`, content.ini
@@ -1420,7 +1420,7 @@ von Verarbeitungstätigkeiten.)
 - **Rechtsgrundlage**: berechtigtes Interesse an der Sicherheit und Nachvollziehbarkeit des Systems (Art. 6 Abs. 1
   lit. f) und eine rechtliche Verpflichtung, wo ein Gesetz die Protokollierung von Zugriffen verlangt (Art. 6 Abs. 1
   lit. c). Art. 32 nennt die Protokollierung als Sicherheitsmaßnahme.
-- **Datenminimierung als Standard**: Adressen auf /24 gekürzt (IPv6 /48), Sessions gehasht (die Session-ID wird nie
+- **Datenminimierung als Standard**: Adressen auf /24 gekürzt (IPv6 /48), Sitzungen gehasht (die Sitzungs-ID wird nie
   aufgezeichnet), User-Agents auf die Familie von Browser und Betriebssystem reduziert, E-Mail-Adressen und versuchte
   Logins unbekannter Benutzer gehasht, keine Inhaltswerte, nie Passwörter, Hashes, Tokens, Reset-Schlüssel oder
   Geheimnisse, keine POST-Bodies, Lesezugriffe aus.
@@ -1751,7 +1751,7 @@ Die Worker von Velocity sind persistent, daher funktionieren einige Dinge anders
 | Wer | Kann | Die Antwort |
 |---|---|---|
 | Ein Redakteur ohne Audit-Richtlinien | nichts sehen | Richtlinien an jeder Ansicht, jedem Link, Block und Fetch; Abweisungen aufgezeichnet |
-| Jemand, der eine offen gelassene angemeldete Session benutzt | Verwaltungsaktionen des Audits ausführen | `ReauthForManage=enabled` fragt zuerst nach dem Passwort; die Versuche werden aufgezeichnet |
+| Jemand, der eine offen gelassene angemeldete Sitzung benutzt | Verwaltungsaktionen des Audits ausführen | `ReauthForManage=enabled` fragt zuerst nach dem Passwort; die Versuche werden aufgezeichnet |
 | Ein Benutzer mit `audit/read` | die Kanäle lesen, die die Einschränkung erlaubt, und sie exportieren | Lesezugriffe und Exporte werden aufgezeichnet; personenbezogene Felder standardmäßig gekürzt oder gehasht |
 | Ein Administrator mit `audit/manage` | Einstellungen ändern, das Audit ausschalten, Schlüssel rotieren | jedes davon wird aufgezeichnet, bevor es wirkt; Alarm `audit_disabled` an syslog und E-Mail; der Eintrag verlässt den Server über die Sinks |
 | Code, der als Benutzer des Webservers läuft | das Aufzeichnen stoppen, den Schlüssel lesen, Live-Dateien neu schreiben und die Kette neu berechnen | er kann nicht neu schreiben, was den Server bereits verlassen hat (syslog, Webhook, E-Mail, Prüfpunkte); Archive auf einem Pfad, den er nicht ändern kann; vor der Kompromittierung signierte Prüfpunkte decken das Neuschreiben auf (`rewritten`) |
@@ -2257,14 +2257,14 @@ Hier ein (yes/no) und Geschrieben (immediate/buffered) sind die Werte des Genera
 | `content.file.orphan.delete` | Dateien in der Quarantäne gelöscht werden (nach eigener Bestätigung) | – → Anzahl, Bytes, fehlgeschlagen, Dateien, via | `contentcheck/expcontentcheckquarantine.php:audit` | remove | warning | on | yes | content | buffered |
 | `content.file.orphan.refused` | eine Aktion auf Speicherdateien wegen einer fehlenden Richtlinie abgewiesen wird | – → Aktion (Grund: policy) | `views/contentcheck/storageaction.php:run` | access | notice | on | yes | content | buffered |
 | `content.file.permissions.fix` | der erwartete Besitzer und Modus auf verwendeten Speicherdateien gesetzt werden | – → Anzahl, Bytes, fehlgeschlagen, Dateien, via | `contentcheck/expcontentcheckquarantine.php:audit` | change | notice | on | yes | content | buffered |
-| `access.session.login` | sich ein Benutzer anmeldet `[user-login]` | – → Session (gehasht), Handler (standard, ldap, …) (nie das Passwort) | `datatypes/ezuser/ezuser.php:loginSucceeded` | login | info | on | yes | access | at once |
+| `access.session.login` | sich ein Benutzer anmeldet `[user-login]` | – → Sitzung (gehasht), Handler (standard, ldap, …) (nie das Passwort) | `datatypes/ezuser/ezuser.php:loginSucceeded` | login | info | on | yes | access | at once |
 | `access.session.login.failed` | ein Anmeldeversuch fehlschlägt `[user-failed-login]` | – → Versuche, Grund (nie das Passwort; der versuchte Login eines **unbekannten** Benutzers wird immer gehasht, da er oft ein in das falsche Feld eingegebenes Passwort ist) | `datatypes/ezuser/ezuser.php:loginFailed` | login | notice | on | yes | access | at once |
-| `access.session.logout` | sich ein Benutzer abmeldet | Session → – | `datatypes/ezuser/ezuser.php:logoutCurrent` | logout | info | on | yes | access | at once |
-| `access.session.regenerate` | die Session-ID erneuert wird | alter Hash → neuer Hash | `ezpEvent session/regenerate (bridge)` | regenerate | info | off | no | access | at once |
-| `access.session.expire` | eine Session zerstört oder eingesammelt wird | – → Anzahl | `ezpEvent session/destroy, session/gc (bridge)` | expire | info | off | no | access | at once |
+| `access.session.logout` | sich ein Benutzer abmeldet | Sitzung → – | `datatypes/ezuser/ezuser.php:logoutCurrent` | logout | info | on | yes | access | at once |
+| `access.session.regenerate` | die Sitzungs-ID erneuert wird | alter Hash → neuer Hash | `ezpEvent session/regenerate (bridge)` | regenerate | info | off | no | access | at once |
+| `access.session.expire` | eine Sitzung zerstört oder eingesammelt wird | – → Anzahl | `ezpEvent session/destroy, session/gc (bridge)` | expire | info | off | no | access | at once |
 | `access.session.reauth` | ein Benutzer vor einer Aktion von audit/manage das Passwort erneut eingibt (Q9) | – | `audit/console/expauditreauth.php:confirm` | reauth | info | on | yes | access | at once |
 | `access.session.reauth.failed` | diese erneute Eingabe fehlschlägt | – (nie das Passwort) | `audit/console/expauditreauth.php:confirm` | reauth | notice | on | yes | access | at once |
-| `access.session.revoke` | die anderen Sessions eines Benutzers nach einer Passwortänderung enden (`[PasswordSettings] EndOtherSessions`): vom Datenbank-Session-Handler sofort gelöscht, oder eine Session bei ihrer nächsten Anfrage abgemeldet, weil ihr Passwortstempel veraltet ist | – → Anzahl; Grund password_change oder password_changed | `classes/exppasswordpolicy.php:endOtherSessions`, `classes/exppasswordpolicy.php:endStaleSession` | revoke | notice | on | yes | access | at once |
+| `access.session.revoke` | die anderen Sitzungen eines Benutzers nach einer Passwortänderung enden (`[PasswordSettings] EndOtherSessions`): vom Datenbank-Session-Handler sofort gelöscht, oder eine Sitzung bei ihrer nächsten Anfrage abgemeldet, weil ihr Passwortstempel veraltet ist | – → Anzahl; Grund password_change oder password_changed | `classes/exppasswordpolicy.php:endOtherSessions`, `classes/exppasswordpolicy.php:endStaleSession` | revoke | notice | on | yes | access | at once |
 | `access.user.lock` | fehlgeschlagene Anmeldungen `[UserSettings] MaxNumberOfFailedLogin` erreichen | Versuche → Versuche, aktiviert | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | lock | warning | on | yes | access | at once |
 | `access.user.unlock` | der Zähler fehlgeschlagener Anmeldungen von einem Administrator zurückgesetzt wird | Versuche → 0 | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | unlock | notice | on | yes | access | at once |
 | `access.permission.refused` | eine View eines Moduls durch eine Richtlinie abgewiesen wird | – → die erfragte Richtlinie (Modul/Funktion), die nicht erfüllte Einschränkung | `lib/ezutils/classes/ezmodule.php:handleError` | access | notice | on | yes | access | at once |
@@ -2309,7 +2309,7 @@ Hier ein (yes/no) und Geschrieben (immediate/buffered) sind die Werte des Genera
 | `system.cronjob.fail` | ein Teil eine Ausnahme wirft oder mit einem Code ungleich null endet | – → Fehler | `ezruncronjobs.php:auditPart` | run | warning | on | yes | system | buffered |
 | `system.cronjob.pause` | ein Cronjob-Teil oder jeder Teil („all“) unter Setup > Cronjobs pausiert wird | – → pausiert | `expcronjobpause.php:audit` | pause | notice | on | yes | system | buffered |
 | `system.cronjob.resume` | ein pausierter Teil oder jeder Teil fortgesetzt wird | – → pausiert | `expcronjobpause.php:audit` | resume | notice | on | yes | system | buffered |
-| `system.log.read` | eine Log-Datei unter Setup > Logdateien geöffnet wird (einmal pro Datei und Session pro `logviewer.ini [ViewerAuditSettings] ReadInterval`) oder von `exp:logs` gelesen wird (einmal pro Lauf) | – → Größe, unmaskiert (cli, Dateien) | `expLogViewer::auditRead`, `views/setup/logs.php`, `views/setup/logsfeed.php`, `commands/explogs.php` | read | info | on | yes | system | buffered |
+| `system.log.read` | eine Log-Datei unter Setup > Logdateien geöffnet wird (einmal pro Datei und Sitzung pro `logviewer.ini [ViewerAuditSettings] ReadInterval`) oder von `exp:logs` gelesen wird (einmal pro Lauf) | – → Größe, unmaskiert (cli, Dateien) | `expLogViewer::auditRead`, `views/setup/logs.php`, `views/setup/logsfeed.php`, `commands/explogs.php` | read | info | on | yes | system | buffered |
 | `system.log.download` | ein Bereich einer Log-Datei heruntergeladen wird | – → Größe, von, bis, unmaskiert | `expLogViewer::audit`, `views/setup/logsaction.php` | download | notice | on | yes | system | buffered |
 | `system.log.rotate` | eine Log-Datei sofort rotiert wird | – → Größe, ok, umbenannt (Fehler) | `expLogViewer::audit`, `views/setup/logsaction.php` | rotate | notice | on | yes | system | buffered |
 | `system.log.truncate` | eine Log-Datei geleert wird | – → Größe, ok (Fehler) | `expLogViewer::audit`, `views/setup/logsaction.php` | truncate | warning | on | yes | system | buffered |
@@ -2517,7 +2517,7 @@ Referenz der Ereignisse: `PASS 135 names, every one described`.
 | # | Frage | Entscheidung |
 |---|---|---|
 | Q1 | Speicherung | **Beides**: Dateien in JSON Lines sind der Nachweis; ein Index in der Datenbank der Website bedient die Konsole (F4) |
-| Q2 | Felder | **Kontext der Anfrage** (Ereignis-ID, Anfrage-ID, Siteaccess, URL/Methode, Modul/View, Engine Apache/Velocity/CLI, Host, pid, Dauer, HTTP-Status), **Akteur** (Benutzer-ID, Login, Rollen zum Zeitpunkt, Session-Hash, IP v4/v6, User-Agent, Identitätsübernahme, CLI-Benutzer + Befehl), **Werte vorher/nachher** (konfigurierbar, nie Passwörter/Tokens), **Ergebnis + Grund** (success/refused/failed, Grund aus Richtlinie/Token/Sperre, Fehler) |
+| Q2 | Felder | **Kontext der Anfrage** (Ereignis-ID, Anfrage-ID, Siteaccess, URL/Methode, Modul/View, Engine Apache/Velocity/CLI, Host, pid, Dauer, HTTP-Status), **Akteur** (Benutzer-ID, Login, Rollen zum Zeitpunkt, Sitzungs-Hash, IP v4/v6, User-Agent, Identitätsübernahme, CLI-Benutzer + Befehl), **Werte vorher/nachher** (konfigurierbar, nie Passwörter/Tokens), **Ergebnis + Grund** (success/refused/failed, Grund aus Richtlinie/Token/Sperre, Fehler) |
 | Q3 | Datenschutz | **Konfigurierbar, sicherer Standard**: pro Feld vollständig / gekürzte IP (/24, /48) / gehasht / aus; User-Agent ein/aus; nie Passwörter oder Tokens; personenbezogene Felder nach der Aufbewahrungsfrist pseudonymisiert |
 | Q4 | Integrität | **Hash-Kette + signierte Archive**: Jedes Ereignis trägt pro Datei den Hash des vorherigen; Archive erhalten ein Prüfsummen-Manifest und einen HMAC; die Konsole zeigt, ob eine Kette intakt ist oder wo sie bricht |
 | Q5 | Familien | **Inhaltslebenszyklus, Benutzer + Zugriff, System + Konfiguration, Handel + Daten**, und die Einteilung muss allgemein und wiederverwendbar sein („fast alles erfassen, wie in der Zoologie“) |
@@ -2527,7 +2527,7 @@ Referenz der Ereignisse: `PASS 135 names, every one described`.
 | Q9 | Zugriff | Neue Richtlinien **audit/read** und **audit/manage**; jeder Zugriff auf die Konsole wird selbst auditiert; optional erneute Passworteingabe vor Verwaltungsaktionen |
 | Q10 | Konsole | **Zeitleiste + Filter + Suche, Ereignisdetail + Links, Diagramme + Ansicht der Alarme, Export** |
 | F1 | Taxonomie | **Beides**: hierarchische Namen mit Punkten für Konfiguration und Routing, und jeder Eintrag trägt außerdem Akteur / Verb / Objekt / Ziel / Ergebnis (ähnlich ActivityStreams) |
-| F2 | Korrelation | **Anfrage-ID** (auch ein Antwort-Header), **Session- und Auftrags-IDs**, **übergeordnete/untergeordnete Ereignisse** (Tiefe konfigurierbar) |
+| F2 | Korrelation | **Anfrage-ID** (auch ein Antwort-Header), **Sitzungs- und Auftrags-IDs**, **übergeordnete/untergeordnete Ereignisse** (Tiefe konfigurierbar) |
 | F3 | Geschwindigkeit | **Gepuffert**, am Ende der Anfrage mit einem Anhängen geschrieben (auch bei fatalen Fehlern); Sicherheitsereignisse sofort geschrieben; Zustand pro Anfrage für die persistenten Worker von Velocity zurückgesetzt |
 | F4 | Index | **Die Hauptdatenbank der Website** (Schema auf jeder Engine: Z1) |
 | F5 | Alarme | **Eingebaute Regeln** (Brute Force, Administratorrolle vergeben, Einstellungen außerhalb der Arbeitszeit geschrieben, Massenlöschung, Audit ausgeschaltet oder Kette gebrochen), **INI-Regeln**, **Regelklassen** in einer Registry |
@@ -2645,7 +2645,7 @@ Beim Schreiben dieses Handbuchs gefunden. Jedes wurde auf der Referenzinstallati
 
 ## Verwandte Seiten
 
-- [Audit-Protokoll (Funktion)](../../../eng-us/features/6.0/audit-trail.md)
+- [Audit-Protokoll (Funktion)](../../funktionen/6.0/pruefprotokoll.md)
 - [Verhaltensänderungen vom 1. und 2. Oktober 2026](verhaltensaenderungen-2026-10.md)
 - [exp:ini](console-exp-ini.md), verwendet zum Ändern der Audit-Einstellungen
 - [Handbuch zu Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md)

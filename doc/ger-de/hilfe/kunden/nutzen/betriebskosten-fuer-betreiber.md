@@ -54,7 +54,7 @@ TOTAL                       |          |                   |           |        
 
 | Kosten | Wie sie wachsen | Was zu tun ist |
 |---|---|---|
-| Hosting | Die Festplatte füllt sich mit Medien, Logs und Backups | Bitten Sie den Hoster jedes Quartal um die Nutzung; räumen Sie ungenutzte Medien auf ([Die Inhaltsprüfungen](../../../../eng-us/features/6.0/content-checks.md)) |
+| Hosting | Die Festplatte füllt sich mit Medien, Logs und Backups | Bitten Sie den Hoster jedes Quartal um die Nutzung; räumen Sie ungenutzte Medien auf ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)) |
 | KI-Anbieter | Redakteure nutzen den Assistenten mehr | Exponential Intelligence hat ein Nutzungsprotokoll mit den geschätzten Kosten jeder Anfrage und Grenzen pro Benutzer, Tag, Monat und Website (`README.md`, „Exponential Intelligence“) |
 | Zahlungsgebühren | Wachsen mit den Verkäufen und mit Preisänderungen des Anbieters | Vergleichen Sie die Abrechnungen jährlich |
 | Änderungsanfragen | Viele kleine Anfragen, jede einzeln abgerechnet | Sammeln Sie sie und bitten Sie um ein Angebot pro Quartal |
@@ -89,3 +89,11 @@ An Ihren Hoster:
 - [Budget für Upgrades und Wartung](../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md)
 - [Den ROI messen](den-roi-messen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

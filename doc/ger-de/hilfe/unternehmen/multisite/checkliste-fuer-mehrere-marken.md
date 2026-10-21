@@ -39,7 +39,7 @@ Jeder Punkt verlinkt auf die Seite, die ihn erklärt. Die Checkliste setzt vorau
 
 - [ ] Unter der Inhaltswurzel gibt es einen Ordner für die Marke.
 - [ ] Der oder die Siteaccesses der Marke existieren, mit Website-Name, Adresse, Startseite, Wurzelknoten und Design
-      ([Schritt für Schritt: eine zweite Website](../../../../eng-us/help/creators/website-creators/multisite-setup.md#step-by-step-a-second-site)).
+      ([Schritt für Schritt: eine zweite Website](../../ersteller/website-ersteller/multisite-einrichten.md#schritt-für-schritt-eine-zweite-website)).
 - [ ] Der Siteaccess ist registriert und wird erkannt (Host-Zuordnung oder Pfad).
 - [ ] Das Design der Marke liegt in einer eigenen Erweiterung, ohne dass Theme-Dateien direkt bearbeitet wurden
       ([Ein Design pro Marke](ein-design-pro-marke.md)).
@@ -65,13 +65,13 @@ Jeder Punkt verlinkt auf die Seite, die ihn erklärt. Die Checkliste setzt vorau
 - [ ] Links von anderen Marken in die neue und zurück öffnen die richtige Website (Tag-Seiten, Suche, verwandte
       Elemente).
 - [ ] Wenn die Marke mehrere Sprachen hat: Der Sprachumschalter verlinkt jede Seite auf dieselbe Seite in der anderen
-      Sprache ([Sprachumschalter und Adressen pro Sprache](../../../../eng-us/help/creators/website-creators/language-switcher-and-language-urls.md)).
+      Sprache ([Sprachumschalter und Adressen pro Sprache](../../ersteller/website-ersteller/sprachumschalter-und-sprach-urls.md)).
 
 ## Betrieb
 
 - [ ] Das DNS für die Hostnamen der Marke zeigt auf den Server.
 - [ ] Die Zertifikate decken jeden Hostnamen ab
-      ([Online gehen: Hosts, HTTPS und Siteaccesses](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
+      ([Online gehen: Hosts, HTTPS und Siteaccesses](../../ersteller/website-ersteller/livegang-hosts-und-https.md)).
 - [ ] Logs und Caches der Marke landen dort, wo der Administrator sie erwartet; die Aufbewahrung ist abgestimmt.
 - [ ] Das Monitoring prüft die Adresse der Marke, nicht nur die der Hauptmarke
       ([Zustandsprüfungen und Verfügbarkeit](../../hosting/betrieb/zustandspruefungen-und-verfuegbarkeit.md)).
@@ -86,13 +86,13 @@ Jeder Punkt verlinkt auf die Seite, die ihn erklärt. Die Checkliste setzt vorau
 - [ ] Eine Testbestellung, ein Formular oder eine Anmeldung funktioniert, falls die Marke so etwas hat.
 - [ ] Die anderen Marken sehen genauso aus und verhalten sich genauso wie vorher.
 - [ ] Sitemaps und Feeds der Marke zeigen auf ihre eigene Adresse
-      ([Sitemaps](../../../../eng-us/help/creators/website-creators/sitemaps.md),
+      ([Sitemaps](../../ersteller/website-ersteller/sitemaps.md),
       [Feeds und Syndikation](../mobil-und-headless/feeds-und-syndication.md)).
 
 ## Der erste Monat
 
 - [ ] Das Fehlerlog der Marke wird wöchentlich gelesen ([Logs ohne Shell-Zugang lesen](einstellungen-logs-und-caches-pro-website.md#logs-ohne-shell-zugang-lesen)).
-- [ ] Fehlerhafte Links werden geprüft ([Fehlerhafte Links und Inhaltsprüfungen](../../../../eng-us/help/creators/website-creators/link-and-content-checks.md)).
+- [ ] Fehlerhafte Links werden geprüft ([Fehlerhafte Links und Inhaltsprüfungen](../../ersteller/website-ersteller/link-und-inhaltspruefungen.md)).
 - [ ] Der Markenverantwortliche bestätigt, dass die Redakteure ohne Hilfe arbeiten können.
 - [ ] Die gewonnenen Erkenntnisse werden für die nächste Marke in diese Checkliste aufgenommen.
 
@@ -105,13 +105,13 @@ Jeder Punkt verlinkt auf die Seite, die ihn erklärt. Die Checkliste setzt vorau
 - [Mehrere Marken in einer Installation](README.md)
 - [Mehrere Marken planen](mehrere-marken-planen.md)
 - [Multisite- und mehrsprachige Projekte planen: Checklisten](../../fuehrung/multisite-und-mehrsprachigkeit-planen.md#checklisten)
-- [Start-Checkliste für Websites](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
+- [Start-Checkliste für Websites](../../ersteller/website-ersteller/checkliste-fuer-den-start.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

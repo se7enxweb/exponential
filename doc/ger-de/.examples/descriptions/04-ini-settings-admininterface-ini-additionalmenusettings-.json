@@ -93,7 +93,7 @@
     },
     "ini:settings/admininterface.ini [WindowControlsSettings] AdditionalTabs": {
         "en": "List of additional tab identifiers\nAdditionalTabs[]=customtab\nThe audit trail of a node (doc/eng-us/bc/6.0/audit.md, \"Placement\"), only with audit/read",
-        "de": "Liste der Bezeichner zusätzlicher Reiter\nAdditionalTabs[]=customtab\nDer Audit-Trail eines Knotens (doc/eng-us/bc/6.0/audit.md, \"Placement\"), nur mit audit/read"
+        "de": "Liste der Bezeichner zusätzlicher Reiter\nAdditionalTabs[]=customtab\nDas Audit-Protokoll eines Knotens (doc/eng-us/bc/6.0/audit.md, \"Placement\"), nur mit audit/read"
     },
     "ini:settings/admininterface.ini [WindowControlsSettings] HiddenTabs": {
         "en": "Additional tabs the node view leaves out, whatever AdditionalTabs[] says: a\nsiteaccess cannot take a tab out of AdditionalTabs[] that an extension appends\n(extension settings are read after the siteaccess's). The editor siteaccess\nhides the Layouts tab with it.",

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite richtet sich an die Informationssicherheitsbeauftragten in einem Bewertungsgremium. Sie zeigt, was die
 Dokumentation von Exponential belegt, welche Standardwerte eine öffentliche Website ändern sollte, was fehlt und was Sie
-vom Bieter und vom Hoster verlangen. Die Fakten stammen aus [Sicherheitsstandards](../../../../../eng-us/standards/security.md),
+vom Bieter und vom Hoster verlangen. Die Fakten stammen aus [Sicherheitsstandards](../../../../standards/sicherheit.md),
 [Sicherheitshärtung](../../../sicherheitshaertung.md) und `SECURITY.md` im Wurzelverzeichnis des Repositorys.
 
 ## Inhalt
@@ -26,7 +26,7 @@ vom Bieter und vom Hoster verlangen. Die Fakten stammen aus [Sicherheitsstandard
 
 | Schicht | Verantwortlich | Nachweis |
 |---|---|---|
-| Die Software | das Projekt, über Releases | [Sicherheitsstandards](../../../../../eng-us/standards/security.md) |
+| Die Software | das Projekt, über Releases | [Sicherheitsstandards](../../../../standards/sicherheit.md) |
 | Die Konfiguration und eigener Code | der Bieter | sein Härtungsplan und Code-Review |
 | Das Hosting | der Hoster (intern oder extern) | seine Betriebsverfahren ([Sicherheit im Hosting](../../../hosting/sicherheit/README.md)) |
 
@@ -34,16 +34,16 @@ vom Bieter und vom Hoster verlangen. Die Fakten stammen aus [Sicherheitsstandard
 
 | Bereich | Status | Kurz gesagt |
 |---|---|---|
-| OWASP Top 10 (2021) | **Partly complies** | Gegenmaßnahmen je Kategorie genannt, drei dokumentierte Härtungsdurchgänge |
-| OWASP ASVS 4.0.3 | **Unverified** | keine Bewertung; viele Kontrollen der Stufe 1 vorhanden |
-| Content Security Policy Level 3 | **Partly complies** | Nonces je Anfrage und Berichte; standardmäßig Report-only in der Administration, keine auf Websites |
-| Protokollierung und Überwachung (A09) | **Complies** | manipulationssicheres Audit-Protokoll standardmäßig an, Alarmregeln, Sicherheitsprotokoll ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)) |
-| Koordinierte Offenlegung | **Partly complies** | vertrauliche Meldung in `SECURITY.md`; keine mitgelieferte `security.txt` |
+| OWASP Top 10 (2021) | **Teilweise erfüllt** | Gegenmaßnahmen je Kategorie genannt, drei dokumentierte Härtungsdurchgänge |
+| OWASP ASVS 4.0.3 | **Nicht geprüft** | keine Bewertung; viele Kontrollen der Stufe 1 vorhanden |
+| Content Security Policy Level 3 | **Teilweise erfüllt** | Nonces je Anfrage und Berichte; standardmäßig Report-only in der Administration, keine auf Websites |
+| Protokollierung und Überwachung (A09) | **Erfüllt** | manipulationssicheres Audit-Protokoll standardmäßig an, Alarmregeln, Sicherheitsprotokoll ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)) |
+| Koordinierte Offenlegung | **Teilweise erfüllt** | vertrauliche Meldung in `SECURITY.md`; keine mitgelieferte `security.txt` |
 
 Weitere Fakten, auf die sich Bewertende verlassen können: Passwörter werden mit `password_hash()` von PHP gespeichert,
 jedes Formular trägt ein CSRF-Token, Sicherheits-Header werden auf jeder Seite gesendet, und veröffentlichte
 Release-Tags werden nie geändert
-([Quellcodeverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md#tags-are-permanent)).
+([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#tags-sind-dauerhaft)).
 
 ## Im Angebot zu prüfende Standardwerte
 
@@ -53,7 +53,7 @@ Release-Tags werden nie geändert
 | Zweistufige Anmeldung | Erweiterung, auf Wunsch | für jede Administratorin, jeden Administrator und jede Redaktion an ([Zweistufige Anmeldung](../../../../anleitungen/zwei-faktor-anmeldung.md)) |
 | Mindestlänge des Passworts | 10 | 12 oder mehr, wenn Sie ASVS Stufe 1 folgen (V2.1.1) |
 | HSTS | leer | setzen, sobald die ganze Website nur noch über HTTPS läuft |
-| Content Security Policy | Report-only in der Administration, keine auf Websites | durchsetzen, wo das Design es erlaubt ([Content Security Policy](../../../../../eng-us/features/6.0/content-security-policy.md)) |
+| Content Security Policy | Report-only in der Administration, keine auf Websites | durchsetzen, wo das Design es erlaubt ([Content Security Policy](../../../../funktionen/6.0/content-security-policy.md)) |
 | `security.txt` | nicht mitgeliefert | eine nach [RFC 9116](https://www.rfc-editor.org/rfc/rfc9116) veröffentlichen |
 
 Bitten Sie den Bieter, jede dieser Einstellungen für Ihre Website im Angebot anzugeben.
@@ -99,13 +99,14 @@ Bitten Sie den Bieter, jede dieser Einstellungen für Ihre Website im Angebot an
 ## Verwandte Seiten
 - [Bewertung: Übersicht](README.md)
 - [Beschaffung: Übersicht](../README.md)
-- [Sicherheitsstandards](../../../../../eng-us/standards/security.md)
+- [Sicherheitsstandards](../../../../standards/sicherheit.md)
 - [Leitfaden zu Sicherheit und Audit](../../../../anleitungen/sicherheit-und-audit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

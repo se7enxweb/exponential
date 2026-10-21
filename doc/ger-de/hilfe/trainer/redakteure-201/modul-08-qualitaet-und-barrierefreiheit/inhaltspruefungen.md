@@ -39,7 +39,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md).
+Quelle: [Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md).
 
 1. **Wo** (2 Minuten). Im Menü des Elements: **Fortgeschritten** > **Ungültige Relationen im Teilbaum** und **Nicht
    verknüpfte Objekte im Teilbaum**; auch im Setup-Menü. Sie funktionieren nur in den Administrations-Siteaccesses, und
@@ -124,7 +124,7 @@ Papierkorb liegt, und ein Bild, das niemand verwendet.
 <summary>Antworten</summary>
 
 1. Drei beliebige aus: gelöscht, im Papierkorb, verborgen, nie veröffentlicht, ohne Ort, für Sie nicht verfügbar,
-   fehlende Dateien ([Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md#in-short)).
+   fehlende Dateien ([Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md#kurz-gefasst)).
 2. **Falsch.** Die Seite liest nur.
 3. **C.**
 4. Die Prüfung kann Verwendungen von außerhalb der Website nicht kennen; der Papierkorb erlaubt die Wiederherstellung.
@@ -134,22 +134,22 @@ Papierkorb liegt, und ein Bild, das niemand verwendet.
 
 ## Weiterführende Informationen
 
-- [Die Inhaltsprüfungen](../../../../../eng-us/features/6.0/content-checks.md): jede Prüfung, was als Verweis zählt, und fehlende
+- [Die Inhaltsprüfungen](../../../../funktionen/6.0/inhaltspruefungen.md): jede Prüfung, was als Verweis zählt, und fehlende
   Dateien.
-- [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../../eng-us/features/6.0/reverse-relation-check.md):
+- [Entfernen und Verbergen: die Prüfung umgekehrter Verknüpfungen](../../../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md):
   defekte Verweise verhindern.
 
 ## Verwandte Seiten
 
 - [Modul 8: Qualität und Barrierefreiheit](README.md)
 - [Redakteure 201: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

@@ -40,7 +40,7 @@ Velocity-Instanz pro Website hinter einem Proxy, jede als eigener Benutzer des B
 ausliefert, kann jede Datei lesen, die die anderen halten.
 
 Und aus [Kapitel 8](../../../installation/08-die-website-ausliefern.md#81-die-wahl-in-einer-tabelle): wenn mehrere Kunden auf einer Maschine voneinander
-auf Ebene des Betriebssystems getrennt sein müssen (eine Velocity pro Website, jede als eigener Benutzer, oder ein klassischer Server mit
+auf Ebene des Betriebssystems getrennt sein müssen (ein Velocity-Server pro Website, jeder als eigener Benutzer, oder ein klassischer Server mit
 einem PHP-FPM-Pool pro Website).
 
 ## Die Einrichtungen und ihre Grenzen
@@ -66,7 +66,7 @@ getrennte Instanzen tun es.
 
 Exponential kann viele Websites aus einer Installation ausliefern: jede Website ein Siteaccess oder eine Website-Erweiterung mit eigenem
 `VarDir`, eigenen Logs (`UseGlobalLogDir=disabled`, `LogVarDir`), Caches (`CacheVarDir`) und INI-Cache (`INICacheDir=site`)
-([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md)). Das hält die Daten der
+([Logs, INI-Cache und Ablaufzeitstempel pro Website](../../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md)). Das hält die Daten der
 Websites für den Betrieb auseinander, nicht für die Sicherheit: Ein PHP-Benutzer schreibt sie alle, und ein Administrator mit Richtlinien
 `setup/*` auf einem Siteaccess arbeitet an der geteilten Installation. Nutzen Sie es für die Websites eines Kunden oder einer
 Organisation, nicht, um Kunden ohne Bezug zueinander zu trennen. Einrichtung:
@@ -80,7 +80,7 @@ Selbst mit einem Benutzer pro Website zeigen einige Standards auf Orte, die jede
 |---|---|---|
 | `site.ini [FileSettings] TemporaryDir` | `/tmp/` | ein eigenes Verzeichnis der Website unter `var/` ([13.11](../../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)) |
 | Berechtigungen in `[FileSettings]` | `0777` für Verzeichnisse, `0666` für Dateien | `0770` / `0660` mit der Gruppe der Website |
-| Sitzungsspeicher von PHP | `session.save_handler` der `php.ini` (files), wenn `[Session] Handler` leer ist | ein Sitzungsverzeichnis pro Pool oder der Sitzungs-Handler der Datenbank |
+| Sitzungsspeicher von PHP | `session.save_handler` der `php.ini` (files), wenn `[Session] Handler` leer ist | ein Sitzungsverzeichnis pro Pool oder der Session-Handler der Datenbank |
 | `upload_tmp_dir` von PHP | der Standard des Systems | pro Pool, im Bereich der Website |
 | Log- und Cache-Verzeichnisse von Velocity | `var/vc/qbix/log` (Dateien `0640`, Verzeichnis `0750`) | bereits in jeder Installation |
 | Konfiguration von Velocity | `/etc/vc/sites-available/<site>.conf`, Modus `0600`, eine pro Installation | den Modus behalten; sie enthält Pfade zu Zertifikaten und Tokens |
@@ -139,3 +139,11 @@ Das sind Möglichkeiten; der Hoster wählt und nennt das Modell in seinen Tarife
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Kapitel 8: Dateiberechtigungen und Eigentum](../../../installation/08-die-website-ausliefern.md#87-dateiberechtigungen-und-eigentümer)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

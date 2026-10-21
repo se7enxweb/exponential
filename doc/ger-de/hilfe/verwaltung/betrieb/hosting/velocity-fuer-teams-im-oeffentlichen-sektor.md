@@ -11,11 +11,11 @@ type: help
 
 Diese Seite richtet sich an das Betriebsteam einer öffentlichen Stelle, das Exponential auf Velocity betreibt, dem
 PHP-Anwendungsserver, der mit Exponential ausgeliefert wird und dessen empfohlene Engine ist. Sie beantwortet, wie
-Velocity startet, wie es nach einem Absturz zurückkommt, wie eine Änderung es erreicht, wo es protokolliert, wie Sie es
+Velocity startet, wie er nach einem Absturz zurückkommt, wie eine Änderung ihn erreicht, wo er protokolliert, wie Sie ihn
 beobachten und welche seiner Teile eine Sicherheitsbewertung betrachten wird. Die vollständige Seite für den Betrieb
 ist [Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md); die Funktionsseiten sind
-[Velocity-Webserver](../../../../../eng-us/features/6.0/velocity-web-server.md) und
-[Velocity-Server mit dauerhaften Workern](../../../../../eng-us/features/6.0/velocity-persistent-worker-server.md).
+[Velocity-Webserver](../../../../funktionen/6.0/velocity-webserver.md) und
+[Velocity-Server mit dauerhaften Workern](../../../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md).
 
 ## Inhalt
 
@@ -66,7 +66,7 @@ er installiert wird:
 ./console exp:velocity watchdog status --allow-root-user
 ```
 
-Jeder Start und jedes Zurückweichen wird in `var/log/velocity-watchdog.log` geschrieben und im Audit-Trail als
+Jeder Start und jedes Zurückweichen wird in `var/log/velocity-watchdog.log` geschrieben und im Prüfprotokoll als
 `system.velocity.watchdog.*` aufgezeichnet. Für die Kontinuitätsplanung ist das wichtig: Ein automatischer Neustart
 wird protokolliert und kann einer Prüferin oder einem Prüfer nachträglich gezeigt werden.
 
@@ -102,12 +102,12 @@ eignet sich für eine externe Verfügbarkeitsprüfung ([Velocity für Hoster](..
 | Thema | Was die Quellen sagen |
 |---|---|
 | Benutzer der Worker | `[ServerSettings] User` und `Group`; Worker dürfen niemals als root laufen ([Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md)) |
-| Bedienfeld `/Q/panel` | nur diese Maschine, danach ein Passwort mit mindestens 16 Zeichen; aus der Ferne über einen SSH-Tunnel erreichbar ([Velocity-Bedienfeld](../../../../../eng-us/features/6.0/velocity-control-panel.md)) |
+| Bedienfeld `/Q/panel` | nur diese Maschine, danach ein Passwort mit mindestens 16 Zeichen; aus der Ferne über einen SSH-Tunnel erreichbar ([Velocity-Bedienfeld](../../../../funktionen/6.0/velocity-control-panel.md)) |
 | Dashboard `/Q/dashboard` | diese Maschine, anderswo nur mit `[DashboardSettings] Token`; lassen Sie `Remote` ausgeschaltet, sofern keine Firewall den Port beschränkt |
 | Dateimodi der Logs | ausgeliefert `0640` und `0750`, weil ein Zugriffs-Log Besucher nennt |
 | Antwort-Cache | liefert niemals an angemeldete Besucher aus; braucht Engine 0.0.4.26 oder neuer ([Antwort-Cache von Velocity](../../../hosting/leistung/antwort-cache-von-velocity.md)) |
-| HTTPS | Zertifikate werden vor der Verwendung geprüft; ein selbstsignierter Platzhalter, bis ein echtes nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../../../eng-us/features/6.0/velocity-https-certificates.md)) |
-| Trennung von Websites | ein Server für mehrere Websites „ist eine Bequemlichkeit beim Routing, keine Sicherheitsgrenze“; betreiben Sie ein Velocity pro getrennter Organisation ([Isolation von Mandanten](../../../hosting/sicherheit/trennung-von-mandanten.md)) |
+| HTTPS | Zertifikate werden vor der Verwendung geprüft; ein selbstsignierter Platzhalter, bis ein echtes nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../../funktionen/6.0/velocity-https-zertifikate.md)) |
+| Trennung von Websites | ein Server für mehrere Websites „ist eine Bequemlichkeit beim Routing, keine Sicherheitsgrenze“; betreiben Sie einen Velocity-Server pro getrennter Organisation ([Isolation von Mandanten](../../../hosting/sicherheit/trennung-von-mandanten.md)) |
 
 ## Checkliste
 
@@ -127,8 +127,9 @@ eignet sich für eine externe Verfügbarkeitsprüfung ([Velocity für Hoster](..
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

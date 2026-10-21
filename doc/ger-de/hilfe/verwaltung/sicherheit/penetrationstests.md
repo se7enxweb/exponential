@@ -45,7 +45,7 @@ meldet Befunde im Produkt an das Projekt.
 | Aktivierte Erweiterungen | Setup > Extensions |
 | Siteaccesses und Hostnamen | Ihre Konfiguration |
 | Testkonten, eines je Rolle (anonym, Mitglied, Redaktion, Veröffentlichende, Administration) | für den Test angelegt, danach deaktiviert |
-| Bekannte Lücken und akzeptierte Risiken | [Sicherheitsstandards: bekannte Lücken](../../../../eng-us/standards/security.md#known-gaps) und Ihr Risikoregister |
+| Bekannte Lücken und akzeptierte Risiken | [Sicherheitsstandards: bekannte Lücken](../../../standards/sicherheit.md#bekannte-lücken) und Ihr Risikoregister |
 | Die geltenden Sicherheitseinstellungen | Passwortrichtlinie, Kontosperre, CSP-Modus, HSTS |
 
 Wenn Sie den Testenden die bekannten Lücken mitteilen (zum Beispiel „Kontosperre bewusst aus, Entscheidung
@@ -88,8 +88,9 @@ Durchsetzen und bewahren Sie den Bericht bei Ihrer Sicherheitsdokumentation auf.
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

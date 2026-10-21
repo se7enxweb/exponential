@@ -91,7 +91,7 @@ Administration über jeden Server, den Sie betreiben, um die Prüfungen des PHP 
 ## Velocity: Zustandsendpunkt und Watchdog
 
 Eine Website, die Exponential Velocity ausliefert, hat einen Zustandsendpunkt des Servers selbst
-([Kontrollzentrum von Velocity](../../../../eng-us/features/6.0/velocity-control-panel.md)):
+([Kontrollzentrum von Velocity](../../../funktionen/6.0/velocity-control-panel.md)):
 
 ```bash
 curl -s http://127.0.0.1:8088/Q/health
@@ -113,7 +113,7 @@ Absturz, ein Abbruch wegen Speichermangels, ein Neustart, dessen Aufrufer beende
 
 Er prüft alle `[WatchdogSettings] Interval` Sekunden (mitgeliefert `45`), rührt nie einen laufenden Server an, ob er antwortet
 oder nicht, und hält sich nach drei gescheiterten Starts in Folge zurück. Er schreibt `var/log/velocity-watchdog.log` und
-Audit-Ereignisse ([Der Watchdog](../../../../eng-us/bc/6.0/velocity-engines.md#the-watchdog-expvelocity-watchdog)). Einen Server, der läuft,
+Audit-Ereignisse ([Der Watchdog](../../../bc/6.0/velocity-engines.md#der-watchdog-expvelocity-watchdog)). Einen Server, der läuft,
 aber nicht antwortet, muss Ihre Überwachung erkennen.
 
 ## Zustandsprüfungen des Load Balancers
@@ -160,3 +160,11 @@ Siehe [SLA-Optionen](../geschaeft/sla-optionen-fuer-exponential-hosting.md), wie
   [Ablauf von Zertifikaten](../runbooks/ablauf-von-zertifikaten.md) (Runbooks)
 - [SLA-Optionen](../geschaeft/sla-optionen-fuer-exponential-hosting.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

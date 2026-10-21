@@ -11,7 +11,7 @@ type: help
 
 **Wer:** die Beschaffungsverantwortlichen oder der Projektleiter, mit den Verantwortlichen für Barrierefreiheit.
 **Wann:** beim Entwurf der Anforderungen, bevor die Ausschreibung veröffentlicht wird. Die Fakten stammen aus den
-[Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md).
+[Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md).
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht zur Barrierefreiheit mit Ihrer Rechtsberatung.
@@ -30,8 +30,8 @@ type: help
   [Richtlinie über den barrierefreien Zugang zu Websites](https://eur-lex.europa.eu/eli/dir/2016/2102/oj) mit
   [EN 301 549](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf); in der
   US-Bundesverwaltung [Section 508](https://www.section508.gov/).
-- Lesen Sie die Übersichtstabelle der [Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#summary):
-  admin4 **Partly complies** mit WCAG 2.2 AA; EN 301 549 und Section 508 **Unverified**; kein VPAT.
+- Lesen Sie die Übersichtstabelle der [Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md#zusammenfassung):
+  admin4 erfüllt WCAG 2.2 AA **teilweise**; EN 301 549 und Section 508 **Nicht geprüft**; kein VPAT.
 
 ## Schritte
 
@@ -42,10 +42,10 @@ type: help
    - die **Administration**, die Ihre Mitarbeiter nutzen.
 3. **Machen Sie für die öffentliche Site den Lieferanten verantwortlich**: Die öffentlichen Designs des Projekts sind
    nicht geprüft, also muss das gelieferte Design vom Lieferanten getestet und korrigiert werden
-   ([Standards zur Barrierefreiheit](../../../../../eng-us/standards/accessibility.md#known-gaps)).
+   ([Standards zur Barrierefreiheit](../../../../standards/barrierefreiheit.md#bekannte-lücken)).
 4. **Fragen Sie für die Administration, was es gibt**: welches Design er vorschlägt (admin4 ist das getestete) und wie
    er mit den bekannten Lücken umgeht, etwa dem Online-Editor
-   ([Das Design admin4](../../../../../eng-us/features/6.0/admin4-design.md)).
+   ([Das Design admin4](../../../../funktionen/6.0/admin4-design.md)).
 5. **Fragen Sie nach Nachweisen, die Sie prüfen können**: ein Prüfbericht nach einer benannten Methode (zum Beispiel
    [WCAG-EM](https://www.w3.org/TR/WCAG-EM/)), keine Absichtserklärung. Verlangen Sie kein VPAT für das Produkt, sofern
    Sie nicht akzeptieren, dass es keines gibt; bitten Sie den Bieter stattdessen um eine Bewertung der gelieferten Site.
@@ -67,7 +67,7 @@ ACC-03  The Supplier shall draft the accessibility statement of the website for 
 ```
 
 Der Teil mit den Vorlagen für Ausschreibungen im Bereich Beschaffung hat die vollständige Klausel
-([Klausel zur Barrierefreiheit](../../../../../eng-us/help/government/procurement/tender-templates/accessibility-clause.md)).
+([Klausel zur Barrierefreiheit](../../beschaffung/ausschreibungsvorlagen/klausel-barrierefreiheit.md)).
 
 ## Ergebnis
 
@@ -82,13 +82,14 @@ Eine Anforderung, die ein Bieter ehrlich beantworten kann und die Sie bei der Ab
 ## Verwandte Seiten
 
 - [Aufgaben zu Beschaffung und Schulung](README.md)
-- [Anforderungen an die Barrierefreiheit](../../../../../eng-us/help/government/procurement/requirements/accessibility-requirements.md)
+- [Anforderungen an die Barrierefreiheit](../../beschaffung/anforderungen/anforderungen-an-die-barrierefreiheit.md)
 - [Checkliste zur Barrierefreiheit](../../checklisten/checkliste-barrierefreiheit.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

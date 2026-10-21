@@ -26,10 +26,10 @@ bewerten müssen. Sie zeigt, wo die Hinweise stehen und wie Sie sie effizient le
 | Verhaltensänderungen nach Zeitraum | `doc/eng-us/bc/6.0/`, zum Beispiel [Juli und August 2026](../../../../bc/6.0/verhaltensaenderungen-2026-07-08.md), [16. bis 30. September 2026](../../../../bc/6.0/verhaltensaenderungen-2026-09b.md), [1. bis 2. Oktober 2026](../../../../bc/6.0/verhaltensaenderungen-2026-10.md) | was brechen kann und was zu tun ist, mit einer Checkliste |
 | Die Tabelle im Leitfaden zum Aktualisieren | [Aktualisieren, C3](../../../../anleitungen/aktualisieren.md#c3-die-checkliste-jedes-durchlaufenen-zeitraums-lesen) | welche Hinweise Sie für Ihre Ausgangsversion lesen sollten |
 | Erweiterungen | [Changelogs der Erweiterungen](../../../../../changelogs/extensions/README.md) | die Releases jeder Erweiterung |
-| Sicherheit | [Sicherheitsstandard](../../../../../eng-us/standards/security.md), der Changelog | sicherheitsrelevante Änderungen und bekannte Lücken |
+| Sicherheit | [Sicherheitsstandard](../../../../standards/sicherheit.md), der Changelog | sicherheitsrelevante Änderungen und bekannte Lücken |
 
 Commit-Nachrichten und Changelog-Einträge verwenden die Präfixe **Added**, **Updated**, **Removed** und **Renamed**
-([Versionsverwaltung und Releases](../../../../../eng-us/standards/source-control-and-releases.md)), was das Überfliegen
+([Versionsverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md)), was das Überfliegen
 erleichtert.
 
 ## Wie Sie sie lesen
@@ -64,8 +64,9 @@ Risiko fließt in den Änderungsdatensatz ein ([Änderungsmanagement und Änderu
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

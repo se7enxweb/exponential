@@ -119,7 +119,7 @@ Prüfpunkt die zugehörigen Lektionen zur Wiederholung.
 1. Erst das Layout veröffentlichen, dann zuordnen (oder die Zuordnung aktivieren): Eine Zuordnung zu einem
    unveröffentlichten Layout zeigt nichts Neues.
 2. Die Zuordnungen (Priorität, aktiviert), den Veröffentlichungsstatus des Layouts, dann die Caches
-   ([Layout-Regeln](../../../../../eng-us/help/creators/website-creators/layout-rules.md#troubleshooting)).
+   ([Layout-Regeln](../../../ersteller/website-ersteller/layout-regeln.md#fehlersuche)).
 3. Verwenden Sie einen Offset, wenn beide dieselbe Abfrage verwenden, oder wählen Sie eine Abfrage, die die
    hervorgehobenen Elemente ausschließt.
 4. Damit der nächste Redakteur weiß, warum sich diese Position nie ändert.
@@ -129,7 +129,7 @@ Prüfpunkt die zugehörigen Lektionen zur Wiederholung.
 
 ## Weiterführende Informationen
 
-- [Exponential Layouts: Durchgang B](../../../../../eng-us/bc/6.0/LAYOUTS.md#walkthrough-b-building-a-new-layout-from-scratch):
+- [Exponential Layouts: Durchgang B](../../../../bc/6.0/layouts.md#durchgang-b-ein-neues-layout-von-grund-auf-bauen):
   dieselbe Aufgabe in der Referenz.
 - [Der Layout-Editor](../../../layout-editor.md): der Editor in Kürze, zum Aufbewahren für die Teilnehmenden.
 
@@ -137,13 +137,13 @@ Prüfpunkt die zugehörigen Lektionen zur Wiederholung.
 
 - [Modul 8: Abschlussprojekt](README.md)
 - [Exponential Layouts: Kursüberblick](../README.md)
-- [Trainer: hier beginnen](../../../../../eng-us/help/trainers/trainers-start-here.md)
+- [Trainer: hier beginnen](../../trainer-hier-beginnen.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

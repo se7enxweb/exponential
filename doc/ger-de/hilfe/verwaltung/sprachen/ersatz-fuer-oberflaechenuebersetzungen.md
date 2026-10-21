@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren, die die Administration oder ein öf
 Locale betreiben, etwa kanadischem Französisch oder dem Spanisch eines lateinamerikanischen Landes. Eine Locale ohne
 eigene Übersetzung fällt nicht sofort auf Englisch zurück: Der Übersetzer probiert der Reihe nach die Übersetzungen,
 auf die sie zurückfällt
-([Sprachen in Exponential, Abschnitt 13](../../../../eng-us/languages.md#13-translation-fallbacks)).
+([Sprachen in Exponential, Abschnitt 13](../../../sprachen.md#13-übersetzungs-fallbacks)).
 
 ## Inhalt
 
@@ -80,13 +80,14 @@ Einstellungen).
 ## Verwandte Seiten
 
 - [Sprachen der Administrationsoberfläche](sprachen-der-administrationsoberflaeche.md)
-- [Liste der Oberflächensprachen](../../../../eng-us/features/6.0/ui-switch-languages.md)
-- [Sprachen in Exponential](../../../../eng-us/languages.md#13-translation-fallbacks)
+- [Liste der Oberflächensprachen](../../../funktionen/6.0/ui-umschalter-sprachen.md)
+- [Sprachen in Exponential](../../../sprachen.md#13-übersetzungs-fallbacks)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

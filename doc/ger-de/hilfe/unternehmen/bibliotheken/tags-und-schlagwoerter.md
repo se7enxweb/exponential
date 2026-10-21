@@ -13,7 +13,7 @@ Diese Seite ist für die Person, die das Vokabular einer Bibliothek oder eines A
 Katalogisierenden, die es anwenden. Sie zeigt, wie die Erweiterung `eztags`, die mit Exponential ausgeliefert wird,
 Ihnen kontrollierte Schlagwörter gibt: eine Hierarchie von Begriffen, Synonyme, eine Seite pro Thema und Listen von
 Einträgen nach Thema. Die Schritte zur Einrichtung stehen unter
-[Inhalte mit eztags verschlagworten](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md).
+[Inhalte mit eztags verschlagworten](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md).
 
 ![Das Tags-Dashboard mit dem Tag-Baum](../../../../eng-us/help/images/help/bu-classes.webp)
 
@@ -31,7 +31,7 @@ Einträgen nach Thema. Die Schritte zur Einrichtung stehen unter
 
 ## Was eztags einem Katalog gibt
 
-Aus der [Funktionsseite zu eztags](../../../../eng-us/features/6.0/extensions/eztags.md), in Begriffen eines Katalogs:
+Aus der [Funktionsseite zu eztags](../../../funktionen/6.0/erweiterungen/eztags.md), in Begriffen eines Katalogs:
 
 | Funktion von eztags | Bedeutung für den Katalog |
 |---|---|
@@ -61,7 +61,7 @@ Ihren Entwickler vor dem Import, wie sie dargestellt werden.
 Der Rat für Website-Ersteller gilt auch für Kataloge: „Keep the tree shallow; three levels are plenty for most sites“
 (halten Sie den Baum flach; drei Ebenen reichen für die meisten Websites) und „Merge duplicates and use synonyms rather
 than near-identical tags“ (führen Sie Duplikate zusammen und verwenden Sie Synonyme statt fast gleicher Tags,
-[Good tagging practice](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md#good-tagging-practice)). Eine
+[Good tagging practice](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md#gute-praxis-beim-verschlagworten)). Eine
 Bibliotheksklassifikation mit vielen Ebenen bleibt oft besser im Bibliothekssystem, und nur die Ebenen, in denen Leser
 stöbern, kommen in den Tag-Baum.
 
@@ -72,7 +72,7 @@ stöbern, kommen in den Tag-Baum.
   für freie Schlüsselwörter.
 - **Beides**: ein geschlossenes Feld für Themen und ein offenes Feld für Schlüsselwörter in derselben Klasse.
 
-Die Wahl lässt sich später ändern ([eztags](../../../../eng-us/features/6.0/extensions/eztags.md)). Beginnen Sie für einen
+Die Wahl lässt sich später ändern ([eztags](../../../funktionen/6.0/erweiterungen/eztags.md)). Beginnen Sie für einen
 Katalog geschlossen: Ein offenes Vokabular bekommt schnell fast gleiche Einträge.
 
 ## Schlagwörter auf Einträge anwenden
@@ -83,7 +83,7 @@ Katalog geschlossen: Ein offenes Vokabular bekommt schnell fast gleiche Einträg
 3. Katalogisierende tippen oder wählen Schlagwörter; die Autovervollständigung findet standardmäßig den Anfang eines
    Tags (`AutoCompleteType=start`) und zeigt bis zu 24 Ergebnisse (`MaxResults`).
 
-Quelle: [Verschlagworten mit eztags, Set it up](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md#set-it-up).
+Quelle: [Verschlagworten mit eztags, Set it up](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md#einrichten).
 
 ## Themenseiten und Listen nach Thema
 
@@ -91,9 +91,9 @@ Quelle: [Verschlagworten mit eztags, Set it up](../../../../eng-us/help/creators
   Design wie jedes andere überschreiben, sodass sie eine Einleitung, Unterbegriffe und die Einträge zeigen kann.
 - **Listen nach Thema**: Der erweiterte Attributfilter lässt einen Ordner oder Block zum Beispiel „die neuesten fünf
   mit X verschlagworteten Einträge“ zeigen
-  ([Tags auf einer Website zeigen](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md#showing-tags-on-a-site)).
+  ([Tags auf einer Website zeigen](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md#tags-auf-einer-website-anzeigen)).
 - **Layouts**: Eine dynamische Sammlung eines Layout-Blocks kann Inhalte per Abfrage auflisten, zum Beispiel „alles,
-  was mit“ einem Tag verschlagwortet ist ([Referenz zu Layouts](../../../../eng-us/bc/6.0/LAYOUTS.md)); der Query-Handler für
+  was mit“ einem Tag verschlagwortet ist ([Referenz zu Layouts](../../../bc/6.0/layouts.md)); der Query-Handler für
   Tag-Sammlungen `explayouts_tags_query` (Paket `se7enxweb/explayouts-tags-query` in `composer.json`) ist dafür da.
 - **Tag-Wolke**: aus Solr gebaut, wenn es verfügbar ist (`TagCloudOverSolr=enabled`).
 
@@ -105,7 +105,7 @@ Quelle: [Verschlagworten mit eztags, Set it up](../../../../eng-us/help/creators
 ## Schlagwörter in der Suche
 
 `eztags.ini [SearchSettings]` entscheidet, was in den Suchindex kommt: `IndexSynonyms` ist standardmäßig eingeschaltet
-und `IndexParentTags` ausgeschaltet ([eztags, Settings](../../../../eng-us/features/6.0/extensions/eztags.md#settings)). Mit
+und `IndexParentTags` ausgeschaltet ([eztags, Settings](../../../funktionen/6.0/erweiterungen/eztags.md#einstellungen)). Mit
 indizierten Synonymen findet ein Leser, der einen nicht bevorzugten Begriff eintippt, trotzdem die Einträge unter dem
 bevorzugten Schlagwort. Mit `IndexParentTags` findet eine Suche nach einem Oberbegriff Einträge, die mit Unterbegriffen
 verschlagwortet sind; besprechen Sie das mit Ihren Katalogisierenden, denn es verbreitert auch jede Ergebnisliste. Siehe
@@ -117,14 +117,14 @@ Tags lassen sich übersetzen; das Übersetzen von Tags steht auf der Praxisliste
 `DefaultAlwaysAvailable` (Standard `false`) entscheidet, ob neue Tags in jeder Sprache verfügbar sind. Das Lesen von
 Tags folgt den Übersetzungsregeln, die mit der Datenbankkorrektur 2.3.4 beschrieben wurden: die Hauptsprache, wenn
 danach gefragt wird, sonst eine ausdrückliche Locale, sonst die Sprachpriorität der Website
-([eztags](../../../../eng-us/features/6.0/extensions/eztags.md#works-on-every-database)).
+([eztags](../../../funktionen/6.0/erweiterungen/eztags.md#funktioniert-auf-jeder-datenbank)).
 
 ## Wer das Vokabular ändern darf
 
 Das Modul `tags` hat eigene Richtlinien: `read`, `dashboard`, `view`, `add` (nach Tag eingeschränkt), `addsynonym`,
 `edit`, `editsynonym`, `delete`, `deletesynonym` und weitere. Geben Sie Besuchern `tags/read` und `tags/view`, damit
 Themenseiten für sie funktionieren; geben Sie Katalogisierenden `add` nur unterhalb der Tags, die sie betreuen
-([Verschlagworten mit eztags, Permissions](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md#permissions)). Lassen
+([Verschlagworten mit eztags, Permissions](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md#rechte)). Lassen
 Sie `edit`, `delete` und das Zusammenführen bei der verantwortlichen Person für das Vokabular.
 
 ## Das Vokabular pflegen
@@ -140,13 +140,13 @@ Sie `edit`, `delete` und das Zusammenführen bei der verantwortlichen Person fü
 - [Bibliotheken und Kataloge](README.md)
 - [Katalogeinträge modellieren](katalogeintraege-modellieren.md)
 - [Katalogsuche](katalogsuche.md)
-- [Inhalte mit eztags verschlagworten](../../../../eng-us/help/creators/website-creators/tagging-with-eztags.md)
+- [Inhalte mit eztags verschlagworten](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

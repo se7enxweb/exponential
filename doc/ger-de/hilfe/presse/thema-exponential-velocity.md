@@ -32,17 +32,17 @@ server written in PHP, bundled with Exponential, that keeps the application load
 server engine, and the two projects have since drifted far apart“ (das README des Pakets, zitiert auf
 [Wer ist 7x?, Exponential Velocity](../wer-ist-7x.md#exponential-velocity)). Er liefert HTTPS vom ersten Start an,
 spricht HTTP/2, hat einen Antwort-Cache und ein Control Panel im Browser und ist die Engine, die Exponential „for every
-stage, from development to production“ empfiehlt ([Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it)).
+stage, from development to production“ empfiehlt ([Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#wozu-sie-es-verwenden)).
 Er ist außerdem sehr jung, und auch das gehört zur Geschichte.
 
 ## Was neu ist, und seit wann
 
 | Was | Wann | Quelle |
 |---|---|---|
-| Erste Commits des Servers | 20. Juli 2026 | [Chronik von Velocity](../../../eng-us/history/velocity/README.md) |
+| Erste Commits des Servers | 20. Juli 2026 | [Chronik von Velocity](../../geschichte/velocity/README.md) |
 | Erstes Release, `v0.0.1` | September 2026 (Zeitraum 7. bis 21. September) | ebenda |
 | Velocity kommt zu Exponential und wird innerhalb von zwei Tagen die empfohlene Engine | 22. September 2026 | [Wer ist 7x?, Zeitleiste](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
-| Worker bleiben zwischen den Anfragen erhalten (`ForkPerRequest=disabled`) | 30. September 2026 | [Velocity, Einstellungen, die Sie zuerst kennen sollten](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#settings-to-know-first) |
+| Worker bleiben zwischen den Anfragen erhalten (`ForkPerRequest=disabled`) | 30. September 2026 | [Velocity, Einstellungen, die Sie zuerst kennen sollten](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#einstellungen-die-sie-zuerst-kennen-sollten) |
 | Streams, Deployments ohne unnötiges Neuladen, jeder Worker startet sauber | 11. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#11-october-2026-exponential-velocity-streams-deploys-without-a-needless-reload-and-starts-each-worker-clean) |
 | Ein abgebrochener Neustart oder ein abgebrochenes Deployment lässt Velocity nicht mehr ausgefallen zurück | 17. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#17-october-2026-a-restart-or-deploy-that-is-cut-off-no-longer-leaves-velocity-down) |
 
@@ -55,11 +55,11 @@ Velocity in Exponential gehört zur Entwicklungslinie 6.0.15, die nicht veröffe
 | Velocity ist ein in PHP geschriebener Webserver, der die Anwendung zwischen den Anfragen geladen hält. | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#how-exponential-is-served) |
 | Er steht unter der MIT-Lizenz (Exponential selbst unter der GPL). | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen) |
 | Er läuft ab seinem Release 0.0.4.54 auf PHP 8.0 oder später (bis dahin 8.1). | [README, What version of PHP is required](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
-| HTTPS vom ersten Start an mit einem selbst signierten Zertifikat; eigene Zertifikate oder Let's Encrypt sind möglich. | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it), [README](https://github.com/se7enxweb/exponential/blob/main/README.md#how-exponential-is-served) |
-| HTTP/2 ist in den mitgelieferten Server eingebaut. | [Velocity](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#why-you-would-use-it) |
-| Ein Befehl bringt eine PHP-Änderung in Betrieb: `./console exp:velocity deploy`. | [Velocity, Eine PHP-Änderung in Betrieb nehmen](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#deploy-a-php-change-in-one-command) |
-| Das Behalten der Worker zwischen den Anfragen hat angemeldete Seiten der Administration von 256 bis 284 ms auf 73 bis 80 ms verkürzt, „in the measurement that led to the change“. | [Velocity, Einstellungen, die Sie zuerst kennen sollten](../../../eng-us/features/6.0/velocity-persistent-worker-server.md#settings-to-know-first) |
-| Ein Dashboard (`/Q/dashboard`) und ein passwortgeschütztes Control Panel (`/Q/panel`) sind eingebaut. | [Velocity Control Panel](../../../eng-us/features/6.0/velocity-control-panel.md) |
+| HTTPS vom ersten Start an mit einem selbst signierten Zertifikat; eigene Zertifikate oder Let's Encrypt sind möglich. | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#wozu-sie-es-verwenden), [README](https://github.com/se7enxweb/exponential/blob/main/README.md#how-exponential-is-served) |
+| HTTP/2 ist in den mitgelieferten Server eingebaut. | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#wozu-sie-es-verwenden) |
+| Ein Befehl bringt eine PHP-Änderung in Betrieb: `./console exp:velocity deploy`. | [Velocity, Eine PHP-Änderung in Betrieb nehmen](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#eine-php-änderung-mit-einem-befehl-ausrollen) |
+| Das Behalten der Worker zwischen den Anfragen hat angemeldete Seiten der Administration von 256 bis 284 ms auf 73 bis 80 ms verkürzt, „in the measurement that led to the change“. | [Velocity, Einstellungen, die Sie zuerst kennen sollten](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#einstellungen-die-sie-zuerst-kennen-sollten) |
+| Ein Dashboard (`/Q/dashboard`) und ein passwortgeschütztes Control Panel (`/Q/panel`) sind eingebaut. | [Velocity Control Panel](../../funktionen/6.0/velocity-control-panel.md) |
 | Das README nennt ihn als erforderlich in `~0.0.4.54`. | [Exponential Velocity](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
 
 ## Was Sie nicht behaupten sollten
@@ -104,8 +104,8 @@ Velocity in Exponential gehört zur Entwicklungslinie 6.0.15, die nicht veröffe
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

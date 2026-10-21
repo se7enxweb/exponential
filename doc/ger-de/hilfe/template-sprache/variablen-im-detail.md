@@ -9,7 +9,7 @@ type: help
 ---
 # Variablen im Detail
 
-[Variablen und def](../../../eng-us/help/designers/templates/variables-and-def.md) zeigt, wie Sie Variablen nutzen. Diese Seite gibt die genauen Regeln, gelesen
+[Variablen und def](../designer/vorlagen/variablen-und-def.md) zeigt, wie Sie Variablen nutzen. Diese Seite gibt die genauen Regeln, gelesen
 aus `lib/eztemplate/classes/eztemplatedeffunction.php` und `lib/eztemplate/classes/eztemplatesetfunction.php`, und zeigt jeden Fall auf alpha,
 einschließlich der Warnungen, die die Engine schreibt.
 
@@ -217,13 +217,21 @@ part sees: [no $total]after include: [10] [inner not visible]
 ```
 
 Setzen Sie das sparsam ein: Ein Template, das die Variablen seines Aufrufers ändert, ist schwer nachzuvollziehen. Um Werte an das Pagelayout
-zu übergeben, gibt es die persistente Variable ([Die persistente Variable](../../../eng-us/help/designers/templates/persistent-variable.md)).
+zu übergeben, gibt es die persistente Variable ([Die persistente Variable](../designer/vorlagen/die-persistent-variable.md)).
 
 ## Verwandte Seiten
 
 - Zurück: [Werte und Literale](werte-und-literale.md)
 - Weiter: [Namensräume](namensraeume.md)
-- [Variablen und def](../../../eng-us/help/designers/templates/variables-and-def.md)
-- [cond und first_set](../../../eng-us/help/designers/templates/cond-and-first-set.md)
-- [def](../../../eng-us/examples/template-functions/def.md), [set](../../../eng-us/examples/template-functions/set.md), [undef](../../../eng-us/examples/template-functions/undef.md), [let](../../../eng-us/examples/template-functions/let.md), [default](../../../eng-us/examples/template-functions/default.md)
+- [Variablen und def](../designer/vorlagen/variablen-und-def.md)
+- [cond und first_set](../designer/vorlagen/cond-und-first-set.md)
+- [def](../../beispiele/template-funktionen/def.md), [set](../../beispiele/template-funktionen/set.md), [undef](../../beispiele/template-funktionen/undef.md), [let](../../beispiele/template-funktionen/let.md), [default](../../beispiele/template-funktionen/default.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -70,7 +70,7 @@ Y.9 Evidence. The Supplier shall state any external security assessment of the
 
 Führen Sie die Entscheidungen auf, damit sich Y.1 bei der Abnahme prüfen lässt. Für Exponential sind die Einstellungen in
 [Sicherheitshärtung für den Produktivbetrieb](../../../../installation/13-sicherheitshaertung.md) und den
-[Sicherheitsstandards](../../../../../eng-us/standards/security.md) dokumentiert:
+[Sicherheitsstandards](../../../../standards/sicherheit.md) dokumentiert:
 
 | Thema | Einstellung (Datei, Block, Schlüssel) | Mitgelieferter Standardwert | Ihre Entscheidung |
 |---|---|---|---|
@@ -80,7 +80,7 @@ Führen Sie die Entscheidungen auf, damit sich Y.1 bei der Abnahme prüfen läss
 | Content Security Policy | `site.ini [ContentSecurityPolicy] Mode` | `auto` (Report-only in der Administration, keine auf Websites) | <Modus je Siteaccess> |
 | HSTS | `site.ini [HTTPHeaderSettings] SecurityHeaders[Strict-Transport-Security]` | leer | <Wert> |
 | Audit-Protokoll | `audit.ini [AuditSettings] Audit` | `enabled` | beibehalten |
-| Im Produktivbetrieb gesperrte Einstellungen | [Vom Deployment verwaltete Konfiguration](../../../../../eng-us/features/6.0/managed-by-deployment.md) | aus | <Entscheidung> |
+| Im Produktivbetrieb gesperrte Einstellungen | [Vom Deployment verwaltete Konfiguration](../../../../funktionen/6.0/durch-deployment-verwaltet.md) | aus | <Entscheidung> |
 | Drosselung davor | request-shield ([Sicherheitshärtung](../../../sicherheitshaertung.md#ein-vorgeschalteter-schutzschild-request-shield)) | nicht installiert | <Entscheidung> |
 
 ## Was ein auf Exponential beruhendes Angebot zeigen kann
@@ -88,8 +88,8 @@ Führen Sie die Entscheidungen auf, damit sich Y.1 bei der Abnahme prüfen läss
 - Y.2: Die zweistufige Anmeldung gibt es als Erweiterung auf Wunsch; die Kontosperre gibt es, sie ist aber
   standardmäßig aus.
 - Y.4: Das Audit-Protokoll ist standardmäßig an und per Hash verkettet; `./console exp:audit verify` prüft es;
-  Audit-Senken können Ereignisse weiterleiten, auch über einen signierten Webhook ([Audit-Protokoll](../../../../../eng-us/features/6.0/audit-trail.md)).
-- Y.5: Velocity verwaltet Zertifikate ([HTTPS-Zertifikate von Velocity](../../../../../eng-us/features/6.0/velocity-https-certificates.md));
+  Audit-Senken können Ereignisse weiterleiten, auch über einen signierten Webhook ([Audit-Protokoll](../../../../funktionen/6.0/pruefprotokoll.md)).
+- Y.5: Velocity verwaltet Zertifikate ([HTTPS-Zertifikate von Velocity](../../../../funktionen/6.0/velocity-https-zertifikate.md));
   HSTS setzt der Betreiber.
 - Y.9: Für die Software sind weder eine ASVS-Bewertung noch eine externe Bewertung dokumentiert.
 

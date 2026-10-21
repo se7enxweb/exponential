@@ -29,7 +29,7 @@ Zeichenkette `true` ist, wird die Anfrage an das Modul `setup`, View `init`, üb
 
 - dem Pagelayout aus `[SetupSettings] PageLayout` (`setup_pagelayout.tpl`) und dem Design aus `[SetupSettings]
   OverrideSiteDesign` (`standard`);
-- keiner Session, keinem Benutzerobjekt und keiner Datenbankverbindung;
+- keiner Sitzung, keinem Benutzerobjekt und keiner Datenbankverbindung;
 - einem vorübergehenden Siteaccess namens `setup`.
 
 `CreateSites`, der letzte arbeitende Schritt, schreibt `CheckValidity=false` in
@@ -53,7 +53,7 @@ Site), und ein Fortschrittsbalken mit der Anzeige „N% abgeschlossen“.
 
 ### Wie sich der Assistent Ihre Antworten merkt
 
-Der Assistent führt keine serverseitige Session. Jede bisher gesammelte Antwort wird als verstecktes Formularfeld mit
+Der Assistent führt keine serverseitige Sitzung. Jede bisher gesammelte Antwort wird als verstecktes Formularfeld mit
 dem Namen `P_<group>-<key>` von Seite zu Seite weitergereicht (`design/standard/templates/setup/persistence.tpl`).
 Daraus folgt zweierlei:
 
@@ -116,7 +116,7 @@ Eine Site gilt als installiert, wenn:
 
 Für die Entwicklung lässt `settings/site.ini [SetupSettings] AllowWizardOnInstalledSite=enabled` (Standard ist
 `disabled`) den Assistenten auf einer installierten Site laufen, und zwar erst nach einer Bestätigungsseite: Der
-Wartungsmodus beginnt, wenn das Formular dieser Seite mit seinem Einmal-Token (das in der Session liegt)
+Wartungsmodus beginnt, wenn das Formular dieser Seite mit seinem Einmal-Token (das in der Sitzung liegt)
 zurückgeschickt wird, niemals durch ein GET. Ein abgeschickter Schritt, dessen Frist abgelaufen ist, kehrt zur
 Bestätigungsseite zurück.
 
@@ -253,7 +253,7 @@ oder `Transport=SMTP` mit `TransportServer`, `TransportUser` und `TransportPassw
 
 > **Unterstützte Datenbanken (Exponential 6.0.x), in der Reihenfolge der Empfehlung:** 1. SQLite 3 (der Standard) ·
 > 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server ist derzeit bekanntermaßen mit
-> zusätzlichem Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../../eng-us/help/database-support.md).
+> zusätzlichem Aufwand möglich. Einzelheiten: [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md).
 
 **Zweck.** Welches Datenbanksystem die Site verwendet. Die Liste enthält die Systeme, deren PHP-Extension der
 Systemtest gefunden hat, beschränkt auf diejenigen, die der Installer kennt (`eZSetupDatabaseMap()` in
@@ -433,7 +433,7 @@ Sprache um, ohne sie zu übersetzen.“
 
 **Zweck.** Wie eine Anfrage einem Siteaccess zugeordnet wird. Jede Installation erhält drei Siteaccesses, `site`,
 `admin` und `editor`; diese Seite entscheidet, woran sie unterschieden werden. Ein vierter, `adminui` (die
-[Exponential Admin UI](../../eng-us/features/6.0/exp-adminui.md)), kommt hinzu, wenn die Extension `exp_adminui` in der
+[Exponential Admin UI](../funktionen/6.0/exp-adminui.md)), kommt hinzu, wenn die Extension `exp_adminui` in der
 Installation vorhanden ist; er wird immer über seinen Pfad `/adminui` erreicht, und diese Seite ändert daran nichts.
 
 **Bildschirm.** „Konfiguration der Siteaccesses“, „Bitte wählen Sie eine Zugriffmethode, die Sie für Ihre Seite
@@ -565,7 +565,7 @@ leeren oder bekannten Passworts gilt für `kickstart.ini`, [Kapitel 6](06-kickst
 6.0.15), weist die Seite in einem Hinweis darauf hin, und ein bekanntes oder kurzes Passwort wird akzeptiert (`publish`, `publishing`), damit eine öffentliche Demo das Passwort installieren kann,
 das sie veröffentlicht; ein leeres wird weiterhin abgelehnt. Nach der Installation kann niemand ein
 Administratorpasswort ändern oder zurücksetzen, solange die Variable gesetzt ist. Setzen Sie sie niemals für eine echte
-Site: [Demo-Modus](../../eng-us/bc/6.0/demo-mode.md).
+Site: [Demo-Modus](../bc/6.0/demomodus.md).
 
 **Geschrieben.** Die E-Mail-Adresse des Administrators wird zu `[MailSettings] AdminEmail`.
 
@@ -667,7 +667,7 @@ Im Assistenten gibt es zwei verschiedene Sprachauswahlen:
   TranslationList` für die zusätzlichen Sprachen. Die mitgelieferten Inhalte bleiben in `eng-US` und werden zur
   Rückfallsprache am Ende von `SiteLanguageList`.
 
-Mehr dazu: [Übersetzungen und Sprachen](../../eng-us/features/6.0/translations-and-languages.md).
+Mehr dazu: [Übersetzungen und Sprachen](../funktionen/6.0/uebersetzungen-und-sprachen.md).
 
 ## 5.6 Wie kickstart.ini Seiten vorbelegt und überspringt
 
@@ -738,7 +738,7 @@ der immer wieder fehlschlägt. Was zu tun ist, hängt davon ab, wie weit er geko
 
    zeigt, woher der Wert kommt; bearbeiten Sie diese Datei und setzen Sie `CheckValidity=true`.
 3. Leeren Sie den INI-Cache, damit die Änderung gelesen wird: `php bin/php/ezcache.php --clear-tag=ini`. Wenn Velocity
-   die Site ausliefert, starten Sie es neu ([Kapitel 8](08-die-website-ausliefern.md)).
+   die Site ausliefert, starten Sie ihn neu ([Kapitel 8](08-die-website-ausliefern.md)).
 4. Öffnen Sie die Site. Der Assistent beginnt bei „Willkommen“. Wählen Sie auf der Seite „Seitendetails“, was mit den
    vorhandenen Daten geschehen soll.
 
@@ -752,16 +752,16 @@ aus, oder führen Sie `php bin/php/maintenance.php off` aus.
 
 In diesem Repository:
 
-- [Exponential 6.0 installieren](../../eng-us/INSTALL.md), Abschnitt 5
-- [Das neue Aussehen des Setup-Assistenten und der Redaktions-Siteaccess](../../eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md)
-- [Standardwerte einer sauberen Installation](../../eng-us/features/6.0/clean-install-defaults.md)
-- [Wartungsmodus](../../eng-us/features/6.0/maintenance-mode.md)
+- [Exponential 6.0 installieren](../INSTALL.md), Abschnitt 5
+- [Das neue Aussehen des Setup-Assistenten und der Redaktions-Siteaccess](../funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md)
+- [Standardwerte einer sauberen Installation](../funktionen/6.0/standardwerte-einer-sauberen-installation.md)
+- [Wartungsmodus](../funktionen/6.0/wartungsmodus.md)
 - [Installer-Logs und Startdaten](../spezifikationen/6.0/installer-protokolle-und-startdaten.md)
-- [SQLite-Datenbank](../../eng-us/features/6.0/sqlite-database.md), [SQLite-Installation](../../eng-us/features/6.0/platform-sqlite-install.md),
+- [SQLite-Datenbank](../funktionen/6.0/sqlite-datenbank.md), [SQLite-Installation](../funktionen/6.0/plattform-sqlite-installation.md),
   [Datenbanktreiber](../spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md)
-- [Übersetzungen und Sprachen](../../eng-us/features/6.0/translations-and-languages.md)
-- [Die Konsole: `exp:ini`](../../eng-us/bc/6.0/console-exp-ini.md)
-- [Verhaltensänderungen, 16. bis 30. September 2026](../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
+- [Übersetzungen und Sprachen](../funktionen/6.0/uebersetzungen-und-sprachen.md)
+- [Die Konsole: `exp:ini`](../bc/6.0/console-exp-ini.md)
+- [Verhaltensänderungen, 16. bis 30. September 2026](../bc/6.0/verhaltensaenderungen-2026-09b.md)
 - Code: `kernel/setup/steps/`, `kernel/setup/ezsetupcommon.php`, `kernel/setup/ezsetuptests.php`,
   `kernel/private/classes/views/setup/ezsetup.php`, `kernel/classes/expmaintenance.php`,
   `kernel/classes/expsetuplog.php`; Templates in `design/standard/templates/setup/init/` und
@@ -782,3 +782,11 @@ Extern:
 - Exponential auf GitHub: <https://github.com/se7enxweb/exponential>
 
 [Inhalt](README.md) · Zurück: [4. Eine Installationsmethode wählen](04-installationsweg-waehlen.md) · Weiter: [6. Der Kickstarter](06-kickstarter.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

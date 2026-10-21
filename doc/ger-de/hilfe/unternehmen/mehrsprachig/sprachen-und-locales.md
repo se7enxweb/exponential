@@ -12,7 +12,7 @@ type: help
 Diese Seite richtet sich an Führungskräfte, die wissen müssen, ob und in welcher Stufe Exponential die Sprachen ihrer
 Märkte unterstützt, bevor sie einen Start zusagen. Sie erklärt vier Begriffe, die leicht verwechselt werden, die drei
 Unterstützungsstufen, die Grenze für die Zahl der Inhaltssprachen und wie Sie eine bestimmte Sprache prüfen. Alle
-Zahlen stammen aus [Sprachen in Exponential](../../../../eng-us/languages.md), der Referenzseite zu Sprachen.
+Zahlen stammen aus [Sprachen in Exponential](../../../sprachen.md), der Referenzseite zu Sprachen.
 
 ## Inhalt
 
@@ -32,7 +32,7 @@ Zahlen stammen aus [Sprachen in Exponential](../../../../eng-us/languages.md), d
 | **Übersetzung der Administration** | Die Wörter der Bearbeitungsoberfläche: Schaltflächen, Menüs, Meldungen | `share/translations/<code>/` |
 | **Website-Locale** | Die Locale, mit der eine Website-Adresse formatiert, und die Übersetzung der Oberfläche, die sie verwendet | `site.ini [RegionalSettings] Locale` |
 
-Quelle: [Sprachen, Abschnitt 1](../../../../eng-us/languages.md#1-locales-translations-content-languages-and-siteaccesses).
+Quelle: [Sprachen, Abschnitt 1](../../../sprachen.md#1-locales-übersetzungen-inhaltssprachen-und-siteaccesses).
 Verwenden Sie genau diese Begriffe in Plänen und Verträgen; das vermeidet die meisten Missverständnisse mit dem
 technischen Team.
 
@@ -41,7 +41,7 @@ fügt keine Inhaltssprache hinzu, ändert keine Website und belegt keinen der Pl
 
 ## Was verfügbar ist
 
-Gezählt in [Sprachen in Exponential](../../../../eng-us/languages.md) (Exponential 6.0.15, Oktober 2026):
+Gezählt in [Sprachen in Exponential](../../../sprachen.md) (Exponential 6.0.15, Oktober 2026):
 
 - **268 Locale-Dateien**: 261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten.
 - **32 Schriftsysteme**, von Lateinisch, Kyrillisch und Griechisch bis Arabisch, Hebräisch, Devanagari, Chinesisch und
@@ -51,7 +51,7 @@ Gezählt in [Sprachen in Exponential](../../../../eng-us/languages.md) (Exponent
   Mexiko, Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien),
   Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Latein und, zum Spaß, Klingonisch.
 - **Zur Laufzeit ist keine PHP-Erweiterung nötig**: Locales sind einfache INI-Dateien
-  ([Sprachen, Abschnitt 10](../../../../eng-us/languages.md#10-no-php-extension-at-run-time)).
+  ([Sprachen, Abschnitt 10](../../../sprachen.md#10-keine-php-extension-zur-laufzeit)).
 
 > **Hinweis**
 > Alle vollständigen Übersetzungen außer `eng-US` und `ger-DE` sind zumindest teilweise maschinell unterstützt
@@ -60,7 +60,7 @@ Gezählt in [Sprachen in Exponential](../../../../eng-us/languages.md) (Exponent
 
 ## Die drei Unterstützungsstufen
 
-Aus [Sprachen, Abschnitt 2](../../../../eng-us/languages.md#2-support-levels):
+Aus [Sprachen, Abschnitt 2](../../../sprachen.md#2-unterstützungsstufen):
 
 | Stufe | Was funktioniert | Planen Sie ein |
 |---|---|---|
@@ -77,7 +77,7 @@ Sprache?“.
 Eine Locale ohne eigene Übersetzung weicht auf eine andere derselben Sprache aus, wo es eine gibt: jedes deutsch-,
 französisch- und spanischsprachige Land auf `ger-DE`, `fre-FR` und `esl-ES`, die arabischen Länder auf `ara-SA` und so
 weiter. Ketten von Ausweichsprachen sind möglich, und neue Länder-Locales einer übersetzten Sprache weichen
-automatisch aus ([Sprachen, Abschnitt 13](../../../../eng-us/languages.md#13-translation-fallbacks)).
+automatisch aus ([Sprachen, Abschnitt 13](../../../sprachen.md#13-übersetzungs-fallbacks)).
 
 Für ein Unternehmen heißt das: Ein österreichisches oder Schweizer Team bekommt die deutsche Administration ohne
 zusätzlichen Aufwand.
@@ -87,7 +87,7 @@ zusätzlichen Aufwand.
 Eine Installation enthält höchstens **62 Inhaltssprachen unter 64-Bit-PHP** (30 unter 32-Bit-PHP). Jede Inhaltssprache
 ist ein Bit einer Zahl, die jedes Objekt speichert. Setup > Sprachen zeigt, wie viele belegt sind und wie viele noch
 hinzugefügt werden können, und lehnt eine Sprache über der Grenze ab
-([Sprachen, Abschnitt 11](../../../../eng-us/languages.md#11-the-limit-of-62-content-languages)).
+([Sprachen, Abschnitt 11](../../../sprachen.md#11-die-grenze-von-62-inhaltssprachen)).
 
 Die Referenzseite erklärt, warum die Grenze beibehalten wird: Sie anzuheben würde das Datenbankschema jeder
 Installation ändern, „für einen Fall, den keine bekannte Website erreicht hat“. Zwei Folgen für die Planung:
@@ -98,15 +98,15 @@ Installation ändern, „für einen Fall, den keine bekannte Website erreicht ha
 
 ## Eine Sprache prüfen, bevor Sie sich festlegen
 
-- [ ] Suchen Sie die Locale in [Sprachen, Abschnitt 3](../../../../eng-us/languages.md#3-every-locale) und notieren Sie ihren
+- [ ] Suchen Sie die Locale in [Sprachen, Abschnitt 3](../../../sprachen.md#3-alle-locales) und notieren Sie ihren
       Code.
-- [ ] Prüfen Sie ihre Unterstützungsstufe in [Abschnitt 2](../../../../eng-us/languages.md#2-support-levels).
+- [ ] Prüfen Sie ihre Unterstützungsstufe in [Abschnitt 2](../../../sprachen.md#2-unterstützungsstufen).
 - [ ] Wenn Redakteure die Oberfläche in dieser Sprache brauchen und sie nicht vollständig ist, entscheiden Sie: auf
       Englisch arbeiten oder eine Übersetzung finanzieren
-      ([Abschnitt 8](../../../../eng-us/languages.md#8-adding-or-completing-an-administration-translation)).
+      ([Abschnitt 8](../../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
 - [ ] Wenn die Sprache von rechts nach links geschrieben wird, lesen Sie [Märkte mit Rechts-nach-links-Schrift](maerkte-mit-rechts-nach-links-schrift.md).
-- [ ] Wenn Ihre Sprache nicht aufgeführt ist, nennt [Abschnitt 6](../../../../eng-us/languages.md#6-common-languages-still-missing)
-      die verbreiteten Sprachen, die noch fehlen, und [Abschnitt 7](../../../../eng-us/languages.md#7-adding-a-locale), wie eine
+- [ ] Wenn Ihre Sprache nicht aufgeführt ist, nennt [Abschnitt 6](../../../sprachen.md#6-verbreitete-sprachen-die-noch-fehlen)
+      die verbreiteten Sprachen, die noch fehlen, und [Abschnitt 7](../../../sprachen.md#7-eine-locale-hinzufügen), wie eine
       Locale hinzugefügt wird.
 - [ ] Stellen Sie die Inhaltssprachen, die Sie in den nächsten Jahren brauchen werden, der Grenze gegenüber.
 
@@ -114,16 +114,16 @@ Installation ändern, „für einen Fall, den keine bekannte Website erreicht ha
 
 - [Mehrsprachigkeit planen](mehrsprachigkeit-planen.md)
 - [Währungen, Datumsangaben und Formate](waehrungen-datumsangaben-und-formate.md)
-- [Sprachen in Exponential](../../../../eng-us/languages.md)
-- [Übersetzungen und Sprachen](../../../../eng-us/features/6.0/translations-and-languages.md)
+- [Sprachen in Exponential](../../../sprachen.md)
+- [Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md)
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
 - [Sprachen](../../sprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

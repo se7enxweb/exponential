@@ -40,15 +40,15 @@ Wiederherstellen braucht `content/restore`. Administratoren haben beides.
 
 ## Verwandte Seiten
 
-- [Der Papierkorb zeigt, wer ein Element hineingelegt hat und wo es war](../../../eng-us/features/6.0/trash-who-and-where.md)
+- [Der Papierkorb zeigt, wer ein Element hineingelegt hat und wo es war](../../funktionen/6.0/papierkorb-wer-und-wo.md)
 - [Archivieren und der Papierkorb](../kunden/alltag/archivieren-und-der-papierkorb.md)
-- [Entfernen und Verbergen: die Prüfung umgekehrter Relationen](../../../eng-us/features/6.0/reverse-relation-check.md)
+- [Entfernen und Verbergen: die Prüfung umgekehrter Relationen](../../funktionen/6.0/pruefung-umgekehrter-beziehungen.md)
 - [Benutzerhandbuch](README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und ein
-Dashboard sind für Mitte 2027 geplant: Werden Sie bitte schon heute Partner, damit wir schneller wachsen und neue
-Funktionen früher liefern können. Beginnen Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

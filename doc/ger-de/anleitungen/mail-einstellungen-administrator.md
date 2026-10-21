@@ -4,7 +4,7 @@ Diese Anleitung richtet sich an den Administrator einer Installation. Am Ende si
 eingerichtet (Tabellen, Fußzeile, Links, Site-Geheimnis), Sie können die Statusseite lesen, der Aufbewahrungs-Cronjob
 läuft, und Sie wissen, wie Sie mit einer Bitte, keine E-Mails mehr zu senden, einem Bounce, einem Export und einer
 Löschung umgehen. Was die Personen auf Ihrer Site sehen, steht in
-[der Anleitung für Benutzer](../../eng-us/features/6.0/mail-preferences.md); wie Code E-Mails über die Schranke sendet, steht in
+[der Anleitung für Benutzer](../funktionen/6.0/e-mail-einstellungen.md); wie Code E-Mails über die Schranke sendet, steht in
 [der Anleitung für Entwickler](mail-einstellungen-entwickler.md).
 
 Jeder Befehl unten wurde am 2026-10-04 auf einer Testinstallation mit Adressen der reservierten Domain `.invalid`
@@ -29,7 +29,7 @@ genauen Text, den die Person gesehen hat, in das **Einwilligungsprotokoll** gesc
 Die fünf Tabellen `expmail_category`, `expmail_preference`, `expmail_consent_log`, `expmail_suppression` und
 `expmail_pending` sind im Kernel-Schema einer neuen Installation enthalten. Eine aktualisierte Installation erhält sie
 über das Datenbank-Update der Versionslinie, `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` (siehe
-[die Upgrade-Hinweise](../../eng-us/bc/6.0/mail-preferences.md)). Solange sie nicht existieren, melden die Statusseite und
+[die Upgrade-Hinweise](../bc/6.0/e-mail-einstellungen.md)). Solange sie nicht existieren, melden die Statusseite und
 `exp:mail:status` die fehlende Tabelle, die Schranke kann niemandes Einstellungen lesen, und optionale E-Mails werden
 zurückgehalten; E-Mails ohne Kategorie und notwendige E-Mails gehen wie bisher hinaus.
 
@@ -397,9 +397,17 @@ Sitzung.
 
 ## Siehe auch
 
-- [E-Mail-Einstellungen: die Anleitung für Benutzer](../../eng-us/features/6.0/mail-preferences.md)
+- [E-Mail-Einstellungen: die Anleitung für Benutzer](../funktionen/6.0/e-mail-einstellungen.md)
 - [E-Mail-Einstellungen: die Anleitung für Entwickler](mail-einstellungen-entwickler.md)
 - [Die Spezifikation](../spezifikationen/6.0/mail-einstellungen.md) und [die Befehle](../spezifikationen/6.0/mail-einstellungen-cli.md)
-- [Upgrade-Hinweise](../../eng-us/bc/6.0/mail-preferences.md)
+- [Upgrade-Hinweise](../bc/6.0/e-mail-einstellungen.md)
 - [Benachrichtigungen: betreiben und Probleme beheben](benachrichtigungen-administrator.md)
 - [Betrieb einer Site](betrieb-einer-website.md)
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../hilfe/partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../hilfe/partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

@@ -24,7 +24,7 @@ Funktion, mit der PHP-Code übersetzt.
 
 ### i18n
 
-Generierte Seite: [i18n](../../../eng-us/examples/template-operators/i18n.md).
+Generierte Seite: [i18n](../../beispiele/template-operatoren/i18n.md).
 
 | Parameter | Typ | Erforderlich | Standardwert |
 |---|---|---|---|
@@ -45,7 +45,7 @@ erstellen; deshalb sollte der Text ein Literal sein.
 
 ### d18n
 
-Generierte Seite: [d18n](../../../eng-us/examples/template-operators/d18n.md).
+Generierte Seite: [d18n](../../beispiele/template-operatoren/d18n.md).
 
 Dieselben Parameter und derselbe Code wie bei `i18n`. Der Kommentar im Konstruktor sagt, warum es ihn gibt: Er ist ein
 Alias "for use with dynamic variables as input where you don't want ezlupdate to pick up the string", also für
@@ -55,7 +55,7 @@ aus Einstellungen. Die Admin-Designs verwenden ihn so für die Menüeinträge au
 
 ### x18n
 
-Generierte Seite: [x18n](../../../eng-us/examples/template-operators/x18n.md).
+Generierte Seite: [x18n](../../beispiele/template-operatoren/x18n.md).
 
 | Parameter | Typ | Erforderlich | Standardwert |
 |---|---|---|---|
@@ -135,14 +135,15 @@ einer `translation.ts` den Übersetzungs-Cache und die kompilierten Templates
 
 ## Verwandte Seiten
 
-- [Der Operator i18n für Designer](../../../eng-us/help/designers/templates/i18n-operator.md)
-- [Zeichenketten in Templates übersetzen](../../../eng-us/help/designers/templates/translating-template-strings.md)
-- [Alle Template-Operatoren (generiert)](../../../eng-us/examples/template-operators/README.md)
+- [Der Operator i18n für Designer](../designer/vorlagen/der-i18n-operator.md)
+- [Zeichenketten in Templates übersetzen](../designer/vorlagen/template-texte-uebersetzen.md)
+- [Alle Template-Operatoren (generiert)](../../beispiele/template-operatoren/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück und
-entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte 2027
-geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen Sie mit
-[Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

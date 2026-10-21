@@ -19,7 +19,7 @@ Einstiegspunkt `cronjobs/explogrotate.php`, Code in `kernel/private/classes/cron
 >
 > Jeder Lauf, über expLogManager: rotiert jedes Log über seiner MaxSize (logviewer.ini \[RotationSettings\] MaxSize\[<key>\],  
 > sonst site.ini \[FileSettings\] LogFileMaxSize), bereinigt die Archive über Keep und MaxAgeDays hinaus und komprimiert die  
-> unkomprimierten Archive ab .2 der Logs, deren Compress aktiviert ist. Jede Änderung wird im Audit-Trail festgehalten.  
+> unkomprimierten Archive ab .2 der Logs, deren Compress aktiviert ist. Jede Änderung wird im Prüfprotokoll festgehalten.  
 
 ## Wann er läuft
 

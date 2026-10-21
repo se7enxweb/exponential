@@ -44,7 +44,7 @@ letzte Übung. Prüfen Sie die PHP-Anforderung unter [Betriebssystemunterstützu
 | Zeit | Übung | Kontrollpunkt | Folgt |
 |---|---|---|---|
 | 0:00 | Begrüßung, was Exponential ist (5 Min.) | | [Die Geschichte in zwei Minuten](die-geschichte-in-zwei-minuten.md) |
-| 0:05 | Mit einem Befehl auf SQLite installieren | Die Administration öffnet sich; Passwort geändert | [Installation mit einem Befehl](../../../eng-us/features/6.0/install-in-one-command.md) |
+| 0:05 | Mit einem Befehl auf SQLite installieren | Die Administration öffnet sich; Passwort geändert | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | 0:25 | Rundgang durch die Administration | Alle haben die Hilfe-Schaltfläche „?“ gefunden | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
 | 0:35 | Einen Artikel erstellen, bearbeiten, in der Vorschau ansehen und veröffentlichen; Versionen vergleichen | Zwei Versionen sichtbar unter **Versionen verwalten** | [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md), [Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md) |
 | 0:55 | Eine Sprache hinzufügen und den Artikel übersetzen | Der Artikel hat zwei Sprachkennzeichen | [Sprachen](../sprachen.md) |
@@ -60,7 +60,7 @@ Die ersten drei Übungen aus Format A, dann:
 | 0:40 | Eine Inhaltsklasse „Event“ mit Titel, Datum und Text definieren | Ein Event lässt sich anlegen | [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
 | 1:10 | Herausfinden, welches Template eine Seite zeichnet; mit einem Override, das sich rückgängig machen lässt, etwas ändern | Die Seite zeigt die Änderung | [Templates und Design](../../anleitungen/templates-und-design.md) |
 | 1:50 | Pause | | |
-| 2:00 | Eine erste Erweiterung mit den RAD-Werkzeugen schreiben, aktivieren, in der Übersicht sehen | Die Erweiterung erscheint unter **Setup > RAD** | [RAD-Werkzeuge](../../../eng-us/features/6.0/rad-tools.md), [Erweiterungen, Abschnitt 6](../../anleitungen/extensions.md#6-eine-eigene-extension-bauen) |
+| 2:00 | Eine erste Erweiterung mit den RAD-Werkzeugen schreiben, aktivieren, in der Übersicht sehen | Die Erweiterung erscheint unter **Setup > RAD** | [RAD-Werkzeuge](../../funktionen/6.0/rad-werkzeuge.md), [Erweiterungen, Abschnitt 6](../../anleitungen/extensions.md#6-eine-eigene-extension-bauen) |
 | 2:50 | Als Git-Klone installieren; eine kleine Korrektur an der Dokumentation machen; einen Pull Request an den eigenen Fork oder das Projekt eröffnen | Ein Link zum Pull Request | [Mit Git entwickeln](../mit-git-entwickeln.md), [Die Hilfe verbessern](die-hilfe-verbessern.md) |
 | 3:30 | Abschluss: was die Teilnehmenden gebaut haben; nächste Schritte | | [Die Stufen der Fürsprache](die-stufen-der-fuersprache.md) |
 
@@ -102,3 +102,11 @@ Security problems  privately, as SECURITY.md describes
 - [Ein Tutorial schreiben, das funktioniert](ein-tutorial-schreiben.md)
 - [Checklisten für Veranstaltungen](checklisten-fuer-veranstaltungen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+<!-- exp-partner-block:start -->
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
+[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
+<!-- exp-partner-block:end -->

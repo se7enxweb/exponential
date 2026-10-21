@@ -39,9 +39,9 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quellen: [Ein Theme unter Git stellen](../../../../../eng-us/help/designers/extensions/putting-a-theme-under-git.md),
-[Eine .gitignore für Themes](../../../../../eng-us/help/designers/extensions/gitignore-for-themes.md) und
-[composer.json für ein Theme](../../../../../eng-us/help/designers/extensions/composer-json-for-a-theme.md).
+Quellen: [Ein Theme unter Git stellen](../../../designer/erweiterungen/ein-theme-unter-git-stellen.md),
+[Eine .gitignore für Themes](../../../designer/erweiterungen/gitignore-fuer-themes.md) und
+[composer.json für ein Theme](../../../designer/erweiterungen/composer-json-fuer-ein-theme.md).
 
 1. **Ein Repository pro Theme** (4 Minuten). Eigene Historie und eigene Releases; mit Composer von jeder Website
    installierbar; Mitwirkende sehen nur das Theme; es kann öffentlich sein, während die Website privat bleibt.
@@ -134,7 +134,7 @@ Auf Ihrer eigenen Schulungsinstallation. Nichts wird irgendwohin übertragen.
 
 1. Zwei beliebige: eigene Historie und eigene Releases, mit Composer von jeder Website installierbar, Mitwirkende sehen
    nur das Theme, es kann öffentlich sein, während die Website privat bleibt
-   ([Ein Theme unter Git stellen](../../../../../eng-us/help/designers/extensions/putting-a-theme-under-git.md)).
+   ([Ein Theme unter Git stellen](../../../designer/erweiterungen/ein-theme-unter-git-stellen.md)).
 2. **B.**
 3. `extra.ezpublish-legacy-extension-name`.
 4. Packagist liest die Version aus dem Git-Tag; ein Feld in der Datei müsste von Hand synchron gehalten werden.
@@ -144,9 +144,9 @@ Auf Ihrer eigenen Schulungsinstallation. Nichts wird irgendwohin übertragen.
 
 ## Weiterführende Literatur
 
-- [Von der Ausgabe des Assistenten zum ersten Commit](../../../../../eng-us/help/designers/extensions/from-wizard-output-to-first-commit.md).
-- [Das Composer-Installationsprogramm und der Ordnername](../../../../../eng-us/help/designers/extensions/composer-installer-and-extension-name.md).
-- [Eine Composer-Installation vor dem Veröffentlichen testen](../../../../../eng-us/help/designers/extensions/testing-a-composer-install-locally.md).
+- [Von der Ausgabe des Assistenten zum ersten Commit](../../../designer/erweiterungen/vom-assistenten-zum-ersten-commit.md).
+- [Das Composer-Installationsprogramm und der Ordnername](../../../designer/erweiterungen/composer-installer-und-erweiterungsname.md).
+- [Eine Composer-Installation vor dem Veröffentlichen testen](../../../designer/erweiterungen/composer-installation-lokal-testen.md).
 - [Mit Git entwickeln](../../../mit-git-entwickeln.md): an Erweiterungen innerhalb einer Installation arbeiten.
 
 ## Verwandte Seiten
@@ -157,9 +157,9 @@ Auf Ihrer eigenen Schulungsinstallation. Nichts wird irgendwohin übertragen.
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge
-zurück und entwickeln die Produkte gemeinsam mit uns weiter, und so wächst Exponential. Eine Partner-Website und
-ein Partner-Dashboard sind für Mitte 2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und
-neue Funktionen früher bereitstellen können. Beginnen Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
+**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
+und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
+2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
+Sie mit [Partner: hier beginnen](../../../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../../../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->

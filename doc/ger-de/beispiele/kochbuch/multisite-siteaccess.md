@@ -62,7 +62,7 @@ HostMatchMapItems[]=admin.example.com;admin
 - Passt nichts, antwortet `DefaultAccess`.
 - `HostMatchMethod=start` (oder `;start` als viertes Feld eines Eintrags) passt auch auf Testhosts, die mit dem Namen
   beginnen, etwa `www.example.com.test.local`; siehe
-  [Siteaccess nach Host-Präfix](../../../eng-us/features/6.0/siteaccess-host-and-language-matching.md).
+  [Siteaccess nach Host-Präfix](../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md).
 
 ## 2. Die Einstellungen jedes Siteaccess
 
@@ -130,13 +130,13 @@ SiteLanguageList[]=eng-US
 
 **VarDir je Website** hält die Caches und den Speicher jeder Website getrennt. Um alle ihre Logs und Caches mit je
 einer Zeile in eigene Verzeichnisbäume zu legen, verwenden Sie `LogVarDir`, `CacheVarDir` und `INICacheDir=site` im
-globalen Override: [Logs, INI-Cache und Ablaufzeitstempel je Website](../../../eng-us/features/6.0/multi-site-log-and-cache-paths.md).
+globalen Override: [Logs, INI-Cache und Ablaufzeitstempel je Website](../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md).
 Mit `CacheVarDir` muss der Webserver auch die öffentlichen Caches darunter ausliefern: Aktivieren Sie die
 auskommentierte Regel `var_cache` in `.htaccess_root` (oder die entsprechende Regel im Beispiel für Ihren Server).
 
 **Einstellungen in einer Erweiterung.** Eine Website-Erweiterung kann stattdessen
 `extension/<ext>/settings/siteaccess/<name>/` mitbringen, sodass die Einstellungen unter Versionskontrolle stehen;
-siehe [Einstellungen je Website in Erweiterungen](../../../eng-us/features/6.0/multi-site-ini-overrides.md).
+siehe [Einstellungen je Website in Erweiterungen](../../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md).
 
 ## 3. Leeren und prüfen
 
@@ -179,9 +179,9 @@ eine Website angewendet.
 
 - [Kochbuch](README.md)
 - [Platzierungen von Einstellungs-Overrides](../../spezifikationen/6.0/ini-override-platzierungen.md),
-  [Einstellungen auf der Kommandozeile ändern](../../../eng-us/features/6.0/exp-ini-command.md)
+  [Einstellungen auf der Kommandozeile ändern](../../funktionen/6.0/exp-ini-befehl.md)
 - [INI-Einstellungen](../ini-einstellungen/README.md): `site.ini` Block für Block, mit Standardwerten
 - [Übersetzungen](uebersetzungen.md), [Caching](caching.md)
-- Die Programmierregeln und der Musterkatalog: [die Standards](../../../eng-us/standards/README.md)
+- Die Programmierregeln und der Musterkatalog: [die Standards](../../standards/README.md)
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert
   werden.
