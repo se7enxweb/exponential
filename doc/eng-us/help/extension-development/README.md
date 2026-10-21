@@ -21,6 +21,26 @@ Every command and code sample in the book was checked against the kernel it desc
 settings it names exist, the PHP samples pass `php -l`, and the template samples were rendered by the template engine.
 When a page states a fact, it names the file or the page where the fact comes from.
 
+## Developing on the whole stack: Velocity is part of Exponential 6.0.15
+
+As of 6.0.15 the Velocity Internet / Web Application Server is part of Exponential: the root `composer.json` requires
+`se7enxweb/exponential-velocity ~0.0.4.54`, so your development installation has the same server production runs, on
+PHP 8.0 and later. For an extension developer that changes three things:
+
+- **You develop against the engine that serves the site.** Velocity's own server is the recommended engine for every
+  stage, from your laptop to production (FrankenPHP is the production-ready alternative). Start it with
+  `./console exp:velocity start` after `[ServerSettings] Engine=qbix`.
+- **Workers keep your code loaded.** A changed class or setting reaches the site after
+  `./console exp:velocity deploy` (or `restart`), which regenerates the autoloads, clears the caches and restarts the
+  workers in the right order; `./console exp:velocity cache clear` empties the response cache. Write code that keeps
+  no per-request state in statics or globals, so it behaves the same under persistent workers and under PHP-FPM.
+- **More is in the box.** The RAD tools write a working extension in minutes, and Velocity adds WebSockets and
+  Server-Sent Events, a scheduler and a response cache without another package. Exponential is one working stack
+  (server, RAD platform, CMS, digital experience, e-commerce), not just a framework you complete yourself.
+
+The story: [Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md). The engines:
+[Velocity engines](../../bc/6.0/velocity-engines.md). The RAD tools: [RAD tools](../../features/6.0/rad-tools.md).
+
 ## The parts
 
 | Part | For | What you learn |

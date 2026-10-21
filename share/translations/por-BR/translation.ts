@@ -75369,5 +75369,77 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>Help Start</source>
         <translation>Início da ajuda</translation>
     </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Esta página ainda não foi traduzida para %reader. Ela é exibida em %original.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Inglês</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Alemão</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Idioma de leitura:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Escolher um idioma muda o idioma de toda a administração.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count de %total páginas</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>A ajuda em outros idiomas</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Abrir o original em %language</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Você está lendo o original em %language desta página.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Voltar à página em %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Esta página é uma tradução.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Ler o original em %language</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>A documentação que as extensões ativas trazem consigo: seus guias, README, changelog e licença.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>Pesquisar na documentação de %extension</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Nenhuma extensão ativa traz documentação própria.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Somente a documentação da extensão %extension.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Suas páginas</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>Pesquisar em toda a ajuda</translation>
+    </message>
 </context>
 </TS>

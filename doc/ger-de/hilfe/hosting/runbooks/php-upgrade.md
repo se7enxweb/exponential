@@ -25,7 +25,7 @@ kaputtmacht; behandeln Sie es mit einem Runbook.
 
 | PHP | Exponential 6.0 | Quelle |
 |---|---|---|
-| 8.0 | die älteste unterstützte; Velocity läuft darauf nicht | [Kapitel 2](../../../installation/02-voraussetzungen.md) |
+| 8.0 | die älteste unterstützte; Velocity läuft darauf ab seinem Release 0.0.4.54 | [Kapitel 2](../../../installation/02-voraussetzungen.md) |
 | 8.1 bis 8.4 | unterstützt, einschließlich Velocity | Kapitel 2 |
 | 8.5 | unterstützt | Kapitel 2 |
 

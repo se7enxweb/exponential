@@ -25,7 +25,7 @@ php -v | head -1
 ./console exp:velocity ext check --allow-root-user
 ```
 
-Die erste Zeile zeigt die PHP-Version (8.1 oder neuer). Die zweite listet jede PHP-Extension auf, die die Installation benötigt, markiert, was fehlt, und gibt den Installationsbefehl für Ihr System aus, zum Beispiel `sudo dnf install -y php-odbc`. Installieren Sie, was sie für die von Ihnen genutzten Funktionen meldet, und starten Sie dann PHP-FPM oder den Server neu, damit die Extensions geladen werden. Fehlende optionale Extensions halten die Site nicht an.
+Die erste Zeile zeigt die PHP-Version (8.0 oder neuer, auch für Velocity). Die zweite listet jede PHP-Extension auf, die die Installation benötigt, markiert, was fehlt, und gibt den Installationsbefehl für Ihr System aus, zum Beispiel `sudo dnf install -y php-odbc`. Installieren Sie, was sie für die von Ihnen genutzten Funktionen meldet, und starten Sie dann PHP-FPM oder den Server neu, damit die Extensions geladen werden. Fehlende optionale Extensions halten die Site nicht an.
 
 ## 3. Option A: Apache mit PHP-FPM
 

@@ -317,7 +317,7 @@ beschrieben. Die Betriebssysteme sind unter [Unterstützte Betriebssysteme](betr
 
 | Schicht | Was Exponential verwendet | Quelle |
 |---|---|---|
-| Sprache | PHP 8.0 bis 8.5 (die `php`-Anforderung in `composer.json` erlaubt bis 8.8); Velocity braucht 8.1 oder neuer | README, „What version of PHP is required“; [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) |
+| Sprache | PHP 8.0 bis 8.5 (die `php`-Anforderung in `composer.json` erlaubt bis 8.8); Velocity läuft ab seinem Release 0.0.4.54 ebenfalls unter 8.0 bis 8.5 | README, „What version of PHP is required“; [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) |
 | Pakete | Composer: Der Kernel `se7enxweb/exponential` und seine Erweiterungen sind Composer-Pakete auf Packagist | README, „Important Notice“ |
 | Bibliotheken | Zeta Components (Archive, Cache, Datenbank, Feeds, Bildkonvertierung und mehr) | composer.json |
 | Installer | `se7enxweb/exponential-legacy-installer`, ein Composer-Plugin, das Erweiterungen in `extension/` ablegt | [Ökosystem](../../eng-us/history/ecosystem.md) |

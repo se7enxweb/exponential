@@ -29,7 +29,7 @@ umgekehrter Richtung. Jeder seiner Punkte ist hier aufgeführt, zusammen mit der
 | Punkt des Herstellers | Für Exponential | Abschnitt |
 |---|---|---|
 | Stufenweise aktualisieren: 5.4 oder 2014.11 auf eZ Platform 1.7, dann 1.13, dann 2.x | Ein einziger Weg: die 5.4-Datenbank auf 6.0.0 und dann auf 6.0.15, an Ort und Stelle | [15.7](#157-die-datenbank-schritt-für-schritt) |
-| Voraussetzungen: PHP 7.1, MySQL 5.5 oder MariaDB, ein Browser von 2017 | PHP 8.0 bis 8.5 (Velocity benötigt 8.1); MySQL, MariaDB, PostgreSQL, SQLite, Oracle, MongoDB | [15.4](#154-planung-und-zeitplan) |
+| Voraussetzungen: PHP 7.1, MySQL 5.5 oder MariaDB, ein Browser von 2017 | PHP 8.0 bis 8.5 (auch für Velocity); MySQL, MariaDB, PostgreSQL, SQLite, Oracle, MongoDB | [15.4](#154-planung-und-zeitplan) |
 | Sichern; die Site vom Netz nehmen | Ebenso, mit `maintenance.php` | [15.7](#157-die-datenbank-schritt-für-schritt) |
 | Inhalte der 4. und 5. Generation bleiben kompatibel | Ja, und ohne Konvertierung: Es ist dasselbe Schema | [15.3](#153-was-übernommen-wird-die-gemeinsame-datenbank) |
 | XmlText wird durch RichText ersetzt; Konvertierung mit `ezxmltext:convert-to-richtext` (Probelauf, Export der fehlschlagenden Felder, Korrektur von Hand, `ezxmltext:import-xml`), nachdem das XmlText-Feldtyp-Bundle registriert wurde | **Widerlegt.** XmlText (`ezxmltext`) ist der Rich-Text-Datentyp des Kernels. Es wird nichts konvertiert. | [15.8](#158-feldtypen-und-datentypen) |
@@ -138,7 +138,7 @@ Site, die weiter gegangen ist und auf eZ Platform oder Ibexa läuft, behandelt [
 
 ## 15.4 Planung und Zeitplan
 
-**Voraussetzungen des Ziels.** PHP 8.0 bis 8.5 (`composer.json`: `^8.0`), für Velocity 8.1 oder höher; die alte Site lief
+**Voraussetzungen des Ziels.** PHP 8.0 bis 8.5 (`composer.json`: `^8.0`), auch für Velocity (ab seinem Release 0.0.4.54); die alte Site lief
 auf PHP 5.3.17 oder höher (das Minimum des Community-Projekts), daher durchläuft jede PHP-Datei Ihrer eigenen Extensions
 den Sprung über PHP 7 und 8. Siehe [Kapitel 2](02-voraussetzungen.md), [PHP-8-Unterstützung](../../eng-us/bc/6.0/php8.md) und die
 PHP-Migrationsanleitungen in den Referenzen. Datenbanken: [Kapitel 9](09-datenbanken.md).
