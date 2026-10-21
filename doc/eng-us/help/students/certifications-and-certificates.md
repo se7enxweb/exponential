@@ -3,8 +3,8 @@ title: Certifications and certificates
 audience: student
 category: learning
 order: 37
-summary: The plain facts for learners - there is no official Exponential certification for students today; the partner program names certifications for partner teams whose syllabus, exams and prices are not published; trainers may issue certificates of attendance or completion in their own name, which are not official; what you can show instead, and wording you must not use.
-keywords: certification, certificate, certified, official, exam, Exponential certified, Developer certification, Design certification, Solution certification, Sales certification, certificate of completion, certificate of attendance, trainer, learner
+summary: The plain facts for learners - official Exponential certifications are planned, part of the project's future plans for the community, partners, Exponential developers and students, and are not available yet; until then trainers issue certificates of attendance or completion in their own name; what exists today, what is planned, how to prepare with a portfolio, study projects and the Student partner level, and wording you must not use.
+keywords: certification, certificate, certified, official, planned, future plans, community, partners, developers, students, exam, Exponential certified, Developer certification, Design certification, Solution certification, Sales certification, certificate of completion, certificate of attendance, trainer, learner, portfolio, Student partner
 type: help
 ---
 # Certifications and certificates
@@ -12,19 +12,38 @@ type: help
 Many learners ask: "Can I get certified in Exponential?" This page answers it plainly, with the sources.
 
 > **In short**
-> There is **no official Exponential certification for students or individual learners** documented today. The
-> Exponential Partner Program names certifications for partner teams, but their syllabus, exam, price and examiners are
-> not published. A trainer may give you a certificate of attendance or completion **in the trainer's own name**; it is
-> not an official certification.
+> Official Exponential certifications are **planned**. They are part of the project's future plans for the
+> community, for partners, for Exponential developers and for students. They are **not available yet**: you cannot
+> take an official exam or earn an official certification today. Until then, a trainer may give you a certificate of
+> attendance or completion **in the trainer's own name**; it is not an official certification.
 
 ## Contents
 
-1. [What the partner program publishes](#what-the-partner-program-publishes)
-2. [What is not published](#what-is-not-published)
-3. [Certificates from trainers](#certificates-from-trainers)
-4. [What you can show instead](#what-you-can-show-instead)
-5. [Words you must not use](#words-you-must-not-use)
-6. [Preparing anyway](#preparing-anyway)
+1. [What exists today](#what-exists-today)
+2. [What is planned](#what-is-planned)
+3. [What the partner program publishes](#what-the-partner-program-publishes)
+4. [What is not published yet](#what-is-not-published-yet)
+5. [Certificates from trainers](#certificates-from-trainers)
+6. [What you can show instead](#what-you-can-show-instead)
+7. [Words you must not use](#words-you-must-not-use)
+8. [How to prepare](#how-to-prepare)
+
+## What exists today
+
+| Exists today | Is it official? | Page |
+|---|---|---|
+| Certificates of attendance or completion from a trainer, in the trainer's own name | No | [Certificates from trainers](#certificates-from-trainers) |
+| Study projects graded by you, your study group or your teacher against published rubrics | No | [Study projects: overview](study-projects-overview.md) |
+| The Student level of the partner program, a paid subscription | No, it is a purchase of services, not a certification | [The Student partner level](the-student-partner-level.md) |
+| Official Exponential certifications | Not available yet | [What is planned](#what-is-planned) |
+
+## What is planned
+
+Official Exponential certifications are planned as part of the project's future plans for the community, for
+partners, for Exponential developers and for students. The partner program already names the certifications it will
+require of partner teams (below). Nothing more is published yet: this help does not give dates, prices, exam formats
+or levels for them, and you should not rely on any that are not published by the project itself. When certifications
+are published, this page and [Certifications](../partners/certifications.md) will say so.
 
 ## What the partner program publishes
 
@@ -42,7 +61,7 @@ From [Certifications](../partners/certifications.md#what-is-published), quoting 
 These are certifications for **partner companies** at Silver level and above. The Student partner level has none
 ([Partner requirements](../partners/partner-requirements.md)).
 
-## What is not published
+## What is not published yet
 
 [Certifications](../partners/certifications.md#what-is-not-published) lists what is "to be defined by the Foundation
 (or by 7x, which runs the program)":
@@ -54,7 +73,7 @@ These are certifications for **partner companies** at Silver level and above. Th
 - how long a certification stays valid;
 - who may examine, and whether the Foundation endorses the certificates.
 
-So you cannot book an exam today from what is documented. The partner team's contact form is
+So you cannot book an exam today: the certifications are planned, not available yet. The partner team's contact form is
 <https://exponential.earth/partner/contact-us>.
 
 ## Certificates from trainers
@@ -65,6 +84,9 @@ they are:
 
 > "Everything in this course is the trainer's own assessment, not an official certification; the partner program's
 > certifications are separate and their details are not published."
+
+Until official certifications are available, this is how certificates work: the trainer issues them in their own
+name.
 
 A trainer may give you:
 
@@ -92,8 +114,8 @@ If a certificate you receive claims more, for example "Official" or "Certified b
 
 ## Words you must not use
 
-About yourself, on a CV, a profile or a portfolio, unless an official certification is one day published and you
-have passed it:
+About yourself, on a CV, a profile or a portfolio, until official certifications are available and you have passed
+one:
 
 - "Exponential Certified" or "Certified Exponential Developer";
 - "Certified by 7x", "Exponential Foundation certified", "official certification";
@@ -103,17 +125,31 @@ Instead, write what is true: "Completed *Editors 101: editing with Exponential* 
 release 6.0.15)" or "Built and documented a multilingual site with Exponential 6.0.15 (capstone project)". The same
 care is asked of everyone who speaks about Exponential ([Claims you must not make](../advocates/claims-you-must-not-make.md)).
 
-## Preparing anyway
+## How to prepare
 
-If certifications are published later, the documentation will still be the basis.
-[Certifications](../partners/certifications.md#preparing-with-the-existing-documentation) maps each named certification
-to existing pages, and the learning paths of this folder cover the same ground:
+You do not have to wait. The work that prepares you for a certification is the same work that convinces an employer
+today:
 
-| Named certification | Learning path |
-|---|---|
-| Developer | [Developer](learning-path-developer.md) |
-| Design | [Designer](learning-path-designer.md) |
-| Solution (WCMS) | [Editor](learning-path-editor.md) and [administrator](learning-path-administrator.md) |
+1. **Build a portfolio.** Collect your projects, contributions and certificates in one place, with honest wording
+   ([Building a portfolio](building-a-portfolio.md)).
+2. **Do the study projects.** Ten graded projects, ending with a capstone, on a named release
+   ([Study projects: overview](study-projects-overview.md), [Grading your own work](grading-your-own-work.md)).
+3. **Follow a learning path.** [Certifications](../partners/certifications.md#preparing-with-the-existing-documentation)
+   maps each named certification to existing pages, and the learning paths of this folder cover the same ground:
+
+   | Named certification | Learning path |
+   |---|---|
+   | Developer | [Developer](learning-path-developer.md) |
+   | Design | [Designer](learning-path-designer.md) |
+   | Solution (WCMS) | [Editor](learning-path-editor.md) and [administrator](learning-path-administrator.md) |
+
+4. **Consider the Student partner level, as documented.** It is $25 a month and gives quarterly partner meetings, a
+   dedicated page on share.exponential.earth and 20% plus the Kick-Off Package on knowledge products; its
+   requirements list no certifications. It is not a certification itself
+   ([The Student partner level](the-student-partner-level.md),
+   [Student level or free community: what to choose](student-level-or-free-community.md)).
+5. **Take a course with a trainer** if you want someone else to check your work
+   ([Taking a course with a trainer](taking-a-course-with-a-trainer.md)).
 
 ## Related pages
 

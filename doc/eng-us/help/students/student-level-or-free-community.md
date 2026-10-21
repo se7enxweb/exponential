@@ -57,7 +57,7 @@ From [The Student partner level](the-student-partner-level.md):
 | A conversation with the program | No | 1 guidance meeting a quarter, quarterly partner meetings |
 | Visibility | Your own portfolio and public contributions | A dedicated page on share.exponential.earth |
 | Discounts on books, training and certifications | No | 20% + K.O.P. on knowledge products |
-| An official certification | No | No; certifications are named for higher levels and not yet published ([Certifications and certificates](certifications-and-certificates.md)) |
+| An official certification | No | No; official certifications are planned and not available yet ([Certifications and certificates](certifications-and-certificates.md)) |
 
 ## Questions to ask yourself
 

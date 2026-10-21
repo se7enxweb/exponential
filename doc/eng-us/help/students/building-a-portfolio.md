@@ -59,7 +59,7 @@ Short and verifiable beats long and vague. Name the release ("Exponential 6.0.15
 | "Two merged pull requests to the Exponential kernel" | "Exponential core developer" |
 | "Wrote an Exponential extension, published on GitHub" | "Official Exponential extension" |
 
-There is no official certification for learners today ([Certifications and certificates](certifications-and-certificates.md)).
+Official Exponential certifications are planned but not available yet ([Certifications and certificates](certifications-and-certificates.md)).
 Use the product names correctly: Exponential, 7x, the Exponential Foundation
 ([Names and history for learners](names-and-history-for-learners.md)). Do not use logos of 7x, the Foundation or the
 partner program.

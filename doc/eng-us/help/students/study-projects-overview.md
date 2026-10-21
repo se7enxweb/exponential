@@ -15,8 +15,8 @@ Do them alone, in a study group, or as assignments from a teacher.
 
 > **Note**
 > These projects and their grades are practice for you, your study group or your teacher. They are not an official
-> certification and are not issued or endorsed by 7x or the Exponential Foundation
-> ([Certifications and certificates](certifications-and-certificates.md)).
+> certification and are not issued or endorsed by 7x or the Exponential Foundation; official certifications are
+> planned but not available yet ([Certifications and certificates](certifications-and-certificates.md)).
 
 ## Contents
 

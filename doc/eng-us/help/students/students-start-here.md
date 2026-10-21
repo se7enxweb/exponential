@@ -3,7 +3,7 @@ title: "Students and learners: start here"
 audience: student
 category: learning
 order: 1
-summary: Where students, apprentices and self-taught learners start with Exponential. Learning paths for editors, administrators, developers and designers, a first site of your own, ten graded study projects, the Student partner level as published, the plain facts about certification, contributing as a student, Git, a glossary, a FAQ, checklists and a reading path.
+summary: Where students, apprentices and self-taught learners start with Exponential. Learning paths for editors, administrators, developers and designers, a first site of your own, ten graded study projects, the Student partner level as published, the plain facts about the planned certifications, contributing as a student, Git, a glossary, a FAQ, checklists and a reading path.
 keywords: student, students, learner, learning, study, school, university, course, learning path, study projects, first site, Student partner, certification, contribute, git, start here, overview, index
 featured: true
 type: help
@@ -20,9 +20,10 @@ help is free documentation under the GNU FDL 1.3. Every fact on these pages come
 settings, and the pages say plainly where something is not documented.
 
 > **Note**
-> There is no official Exponential certification for learners documented today. The study projects here are graded
-> by you, your study group or your teacher, and trainers may issue certificates in their own name; neither is an
-> official certification ([Certifications and certificates](certifications-and-certificates.md)).
+> Official Exponential certifications are planned, part of the project's future plans for the community, partners,
+> Exponential developers and students, but they are not available yet. The study projects here are graded by you, your
+> study group or your teacher, and trainers issue certificates in their own name; neither is an official certification
+> ([Certifications and certificates](certifications-and-certificates.md)).
 
 ## Contents
 
@@ -116,7 +117,7 @@ settings, and the pages say plainly where something is not documented.
 | Page | What it helps you do |
 |---|---|
 | [Taking a course with a trainer](taking-a-course-with-a-trainer.md) | Get the most out of a course built from the trainers' material |
-| [Certifications and certificates](certifications-and-certificates.md) | Know what exists, what does not, and what you may claim |
+| [Certifications and certificates](certifications-and-certificates.md) | Know what exists today, what is planned, and what you may claim |
 | [The Student partner level](the-student-partner-level.md) | Read the $25-a-month level exactly as published |
 | [Student level or free community: what to choose](student-level-or-free-community.md) | Compare what is free with what the level adds |
 

@@ -73,8 +73,8 @@ Each lesson has a duration that includes its exercise, and ends with a quiz and 
 Many courses end with a written test and a practical task, and longer programs with a capstone
 ([Assessments and practical exercises](../trainers/assessments/README.md)). They are the trainer's own assessment.
 If you pass, the trainer may give you a certificate of completion in their own name; if you attended, a certificate
-of attendance. Neither is an official certification by 7x or the Exponential Foundation
-([Certifications and certificates](certifications-and-certificates.md)).
+of attendance. Neither is an official certification by 7x or the Exponential Foundation; official certifications are
+planned but not available yet ([Certifications and certificates](certifications-and-certificates.md)).
 
 You have a right to fair treatment: the assessment lessons ask trainers to give accommodations where needed and to
 give feedback on results ([Accommodations in assessment](../trainers/assessments/module-01-designing-assessments/accommodations-in-assessment.md),

@@ -82,8 +82,8 @@ Improvements you make are welcome back as pull requests ([Improving the help as 
 You may give your learners a certificate of attendance or completion in your own or your institution's name, with a
 statement that it is not an official certification by 7x or the Exponential Foundation
 ([Lesson 1.7: Completion certificates you issue in your own name](../trainers/assessments/module-01-designing-assessments/completion-certificates-you-issue.md)).
-Do not describe your course as "official" training: what makes a course official is not published
-([Training partners](../partners/training-partners.md#training-in-the-program),
+Do not describe your course as "official" training: what makes a course official is not published, and official
+certifications are planned but not available yet ([Training partners](../partners/training-partners.md#training-in-the-program),
 [Certifications and certificates](certifications-and-certificates.md)).
 
 ## Your institution and the partner program

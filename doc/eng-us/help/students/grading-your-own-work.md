@@ -95,8 +95,8 @@ explains how rubrics like these are designed.
 A grade from these projects says that you, a fellow learner or your teacher checked your work against a published
 rubric on a named release. It is evidence for your portfolio ([Building a portfolio](building-a-portfolio.md)).
 
-It is **not** an official certification. The Exponential Partner Program names certifications for partner teams,
-but their syllabus, exams and examiners are not published, and they are not issued for these projects
+It is **not** an official certification. Official Exponential certifications are planned, for the community,
+partners, Exponential developers and students, but they are not available yet, and a project grade is not one of them
 ([Certifications and certificates](certifications-and-certificates.md)). Do not describe a project grade as
 "Exponential certified" or as issued or endorsed by 7x or the Exponential Foundation.
 

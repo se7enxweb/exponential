@@ -82,7 +82,7 @@ Copy the list you need into your notes and tick it off.
 - [ ] I compared it with what is free ([Student level or free community: what to choose](student-level-or-free-community.md)).
 - [ ] I asked the partner team what "sandbox access" includes.
 - [ ] I understand the order: apply, review, pay, then sign ([How to apply](../partners/how-to-apply.md)).
-- [ ] I know it is not a certification ([Certifications and certificates](certifications-and-certificates.md)).
+- [ ] I know it is not a certification, and that official certifications are planned but not available yet ([Certifications and certificates](certifications-and-certificates.md)).
 
 ## Related pages
 

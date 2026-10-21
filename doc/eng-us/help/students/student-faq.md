@@ -65,9 +65,9 @@ Often, because Exponential continues that code base; check against the current r
 ## Certification and the Student level
 
 **Can I get certified?**
-There is no official Exponential certification for learners documented today. The partner program names
-certifications for partner teams whose details are not published; trainers may issue certificates in their own name
-([Certifications and certificates](certifications-and-certificates.md)).
+Not yet. Official Exponential certifications are planned, part of the project's future plans for the community,
+partners, Exponential developers and students, but they are not available yet. Until then, trainers issue certificates
+in their own name ([Certifications and certificates](certifications-and-certificates.md)).
 
 **What is the Student partner level?**
 The first level of the Exponential Partner Program, $25 a month, "For students, universities, or learning institutions"

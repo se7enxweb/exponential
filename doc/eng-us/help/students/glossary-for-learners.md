@@ -70,7 +70,7 @@ The words you meet first, in plain language, with the page that teaches each. Th
 | **Capstone** | The final project that joins the others | [project 10](project-10-capstone-a-complete-small-site.md) |
 | **Study journal** | Your notes, one entry per session | [Keeping a study journal](keeping-a-study-journal.md) |
 | **Student level** | The $25-a-month level of the Exponential Partner Program | [The Student partner level](the-student-partner-level.md) |
-| **Certificate of completion** | A trainer's statement that you passed their assessment; not an official certification | [Certifications and certificates](certifications-and-certificates.md) |
+| **Certificate of completion** | A trainer's statement that you passed their assessment; not an official certification (those are planned, not available yet) | [Certifications and certificates](certifications-and-certificates.md) |
 | **Demo mode** | A server setting for public demos in which administrator passwords cannot be changed | [Demo mode FAQ](../demo-mode-faq.md) |
 
 ## Related pages

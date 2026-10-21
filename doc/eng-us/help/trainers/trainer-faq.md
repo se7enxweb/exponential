@@ -14,10 +14,11 @@ Short answers, each with a link to the full explanation.
 ## About the material
 
 **Is there an official Exponential certification?**
-The Exponential Partner Program names certifications for partner teams (Developer, Design, Solution, Sales), but
-their syllabus, exam format and examiners are not published ([Certifications](../partners/certifications.md)). The
-courses here are not those certifications. Assessments and certificates you issue are your own; say so on them
-([Certificates of attendance in your own name](train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md)).
+Not yet. Official Exponential certifications are planned, part of the project's future plans for the community,
+partners, Exponential developers and students; they are not available yet ([Certifications and
+certificates](../students/certifications-and-certificates.md)). The courses here are not those certifications.
+Assessments and certificates you issue are your own; say so on them ([Certificates of attendance in your own
+name](train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md)).
 
 **May I use these pages in a paid course?**
 Yes. The documentation is free documentation under the GNU FDL 1.3 or later; copies may be given for free or for a
