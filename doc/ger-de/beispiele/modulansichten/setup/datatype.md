@@ -51,7 +51,7 @@ return $Module->redirectTo( '/setup/datatype' );
 
 - [Alle Ansichten von setup](README.md)
 - [Die Richtlinien von setup](../../richtlinien/setup.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

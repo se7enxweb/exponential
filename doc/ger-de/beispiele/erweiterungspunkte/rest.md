@@ -112,7 +112,7 @@ Filters[]=expExampleFilter    # Ihre Klasse oder Ihr Wert, zur Liste hinzugefüg
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von rest.ini](../ini-einstellungen/rest/README.md)
 
 ---

@@ -89,13 +89,13 @@ Das ausgelieferte Template, das ihn bearbeitet (`attribute_edit_gui`), `design/s
         <input id="{$id_base}_login" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="text" name="{$attribute_base}_data_user_login_{$attribute.id}" size="16" value="{$attribute.content.login|wash()}" />
 ```
 
-Überschreiben Sie sie für ein Klassenattribut in einer `override.ini.append.php` mit `Source=content/datatype/view/ezuser.tpl` und einer Bedingung auf `attribute_identifier` (siehe [Ein Template-Override](../../../eng-us/examples/cookbook/template-override.md)).
+Überschreiben Sie sie für ein Klassenattribut in einer `override.ini.append.php` mit `Source=content/datatype/view/ezuser.tpl` und einer Bedingung auf `attribute_identifier` (siehe [Ein Template-Override](../kochbuch/template-override.md)).
 
 ## Siehe auch
 
 - [Alle Datentypen](README.md)
-- [Ein eigener Datentyp](../../../eng-us/examples/cookbook/custom-datatype.md)
-- [Eine Inhaltsklasse](../../../eng-us/examples/cookbook/content-class.md)
+- [Ein eigener Datentyp](../kochbuch/eigener-datentyp.md)
+- [Eine Inhaltsklasse](../kochbuch/inhaltsklasse.md)
 
 ---
 

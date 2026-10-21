@@ -55,7 +55,7 @@ return $Module->redirectTo( '/section/view/1' );
 
 - [Alle Ansichten von section](README.md)
 - [Die Richtlinien von section](../../richtlinien/section.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

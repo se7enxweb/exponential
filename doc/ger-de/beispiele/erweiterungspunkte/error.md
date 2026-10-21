@@ -52,7 +52,7 @@ ErrorHandler[]=expExampleErrorHandler    # Ihre Klasse oder Ihr Wert, zur Liste 
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von error.ini](../ini-einstellungen/error/README.md)
 
 ---

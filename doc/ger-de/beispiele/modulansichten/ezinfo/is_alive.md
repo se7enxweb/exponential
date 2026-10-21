@@ -44,7 +44,7 @@ return $Module->redirectTo( '/ezinfo/is_alive' );
 
 - [Alle Ansichten von ezinfo](README.md)
 - [Die Richtlinien von ezinfo](../../richtlinien/ezinfo.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

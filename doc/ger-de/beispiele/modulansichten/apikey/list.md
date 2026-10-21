@@ -48,7 +48,7 @@ return $Module->redirectTo( '/apikey/list' );
 
 - [Alle Ansichten von apikey](README.md)
 - [Die Richtlinien von apikey](../../richtlinien/apikey.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

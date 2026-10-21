@@ -51,7 +51,7 @@ return $Module->redirectTo( '/ezoe/relations/1/1/contenttype/1/embedinline/embed
 
 - [Alle Ansichten von ezoe](README.md)
 - [Die Richtlinien von ezoe](../../richtlinien/ezoe.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

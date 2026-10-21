@@ -53,7 +53,7 @@ return $Module->redirectTo( '/state/group/groupidentifier/language' );
 
 - [Alle Ansichten von state](README.md)
 - [Die Richtlinien von state](../../richtlinien/state.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

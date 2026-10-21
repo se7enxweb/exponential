@@ -49,7 +49,7 @@ return $Module->redirectTo( '/uiswitch/state' );
 
 - [Alle Ansichten von uiswitch](README.md)
 - [Die Richtlinien von uiswitch](../../richtlinien/uiswitch.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

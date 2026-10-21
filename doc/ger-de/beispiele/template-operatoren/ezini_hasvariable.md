@@ -41,7 +41,7 @@ subitemsServer: {if ezini_hasvariable( 'ezjscServer_expsubitems', 'Class', 'ezjs
 
 - [Alle Template-Operatoren](README.md)
 - [Templates und Design](../../anleitungen/templates-und-design.md)
-- [Ein eigener Template-Operator](../../../eng-us/examples/cookbook/custom-template-operator.md)
+- [Ein eigener Template-Operator](../kochbuch/eigener-template-operator.md)
 
 ---
 

@@ -57,7 +57,7 @@ return $Module->redirectTo( '/pdf/edit/1/pdfgenerate' );
 
 - [Alle Ansichten von pdf](README.md)
 - [Die Richtlinien von pdf](../../richtlinien/pdf.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

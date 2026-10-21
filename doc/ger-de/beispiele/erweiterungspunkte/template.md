@@ -40,7 +40,7 @@ OutputFormatter[expexample]=expExampleOutputFormatter    # Schlüssel und Wert w
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von template.ini](../ini-einstellungen/template/README.md)
 
 ---

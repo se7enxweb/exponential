@@ -28,7 +28,7 @@ Providers[]=expExampleProvider    # Ihre Klasse oder Ihr Wert, zur Liste hinzuge
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von exphelp.ini](../ini-einstellungen/exphelp/README.md)
 
 ---

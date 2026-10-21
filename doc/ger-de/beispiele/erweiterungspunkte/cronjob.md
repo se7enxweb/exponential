@@ -28,7 +28,7 @@ ExtensionDirectories[]=expExampleExtensionDirectorie    # Ihre Klasse oder Ihr W
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von cronjob.ini](../ini-einstellungen/cronjob/README.md)
 
 ---

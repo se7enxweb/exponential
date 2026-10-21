@@ -45,7 +45,7 @@ return $Module->redirectTo( '/workflow/grouplist' );
 
 - [Alle Ansichten von workflow](README.md)
 - [Die Richtlinien von workflow](../../richtlinien/workflow.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

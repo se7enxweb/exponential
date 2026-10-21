@@ -40,7 +40,7 @@ ExtensionRepositories[]=expExampleExtensionRepositorie    # Ihre Klasse oder Ihr
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von binaryfile.ini](../ini-einstellungen/binaryfile/README.md)
 
 ---

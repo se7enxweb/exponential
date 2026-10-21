@@ -48,7 +48,7 @@ return $Module->redirectTo( '/settings/edit/siteaccess/inifile/block/setting/pla
 
 - [Alle Ansichten von settings](README.md)
 - [Die Richtlinien von settings](../../richtlinien/settings.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

@@ -45,7 +45,7 @@ return $Module->redirectTo( '/class/grouplist' );
 
 - [Alle Ansichten von class](README.md)
 - [Die Richtlinien von class](../../richtlinien/class.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

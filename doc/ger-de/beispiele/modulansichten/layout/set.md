@@ -42,7 +42,7 @@ return $Module->redirectTo( '/layout/set/layoutstyle' );
 
 - [Alle Ansichten von layout](README.md)
 - [Die Richtlinien von layout](../../richtlinien/layout.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

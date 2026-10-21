@@ -28,7 +28,7 @@ SchemaHandlerClasses[expexample]=expExampleSchemaHandlerClasse    # Schlüssel u
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von dbschema.ini](../ini-einstellungen/dbschema/README.md)
 
 ---

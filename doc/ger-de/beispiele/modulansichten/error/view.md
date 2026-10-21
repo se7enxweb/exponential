@@ -41,7 +41,7 @@ return $Module->redirectTo( '/error/view/type/1/extraparameters' );
 
 - [Alle Ansichten von error](README.md)
 - [Die Richtlinien von error](../../richtlinien/error.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

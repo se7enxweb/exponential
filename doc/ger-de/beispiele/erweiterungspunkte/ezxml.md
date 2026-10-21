@@ -64,7 +64,7 @@ AliasClasses[expexample]=expExampleAliasClasse    # Schlüssel und Wert wählen 
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von ezxml.ini](../ini-einstellungen/ezxml/README.md)
 
 ---

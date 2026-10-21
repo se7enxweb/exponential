@@ -45,7 +45,7 @@ return $Module->redirectTo( '/user/preferences/function/key/value' );
 
 - [Alle Ansichten von user](README.md)
 - [Die Richtlinien von user](../../richtlinien/user.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

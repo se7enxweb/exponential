@@ -47,7 +47,7 @@ return $Module->redirectTo( '/oauthadmin/keyaction' );
 
 - [Alle Ansichten von oauthadmin](README.md)
 - [Die Richtlinien von oauthadmin](../../richtlinien/oauthadmin.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

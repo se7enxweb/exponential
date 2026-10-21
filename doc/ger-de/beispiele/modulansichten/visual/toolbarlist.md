@@ -47,7 +47,7 @@ return $Module->redirectTo( '/visual/toolbarlist/siteaccess' );
 
 - [Alle Ansichten von visual](README.md)
 - [Die Richtlinien von visual](../../richtlinien/visual.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

@@ -35,7 +35,7 @@ Seine Templates: `design/standard/templates/workflow/eventtype/edit/event_ezfini
 
 - [Alle Workflow-Ereignistypen](README.md)
 - [Auslöser](ausloeser.md)
-- [Ein eigenes Workflow-Ereignis](../../../eng-us/examples/cookbook/workflow-event.md)
+- [Ein eigenes Workflow-Ereignis](../kochbuch/workflow-ereignis.md)
 - [Workflows](../../anleitungen/workflows.md)
 
 ---

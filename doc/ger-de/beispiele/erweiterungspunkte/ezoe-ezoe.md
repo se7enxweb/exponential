@@ -52,7 +52,7 @@ ExternalPlugins[expexample]=expExampleExternalPlugin    # Schlüssel und Wert w�
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von ezoe.ini](../ini-einstellungen/ezoe-ezoe/README.md)
 
 ---

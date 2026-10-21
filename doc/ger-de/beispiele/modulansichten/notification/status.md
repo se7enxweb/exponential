@@ -50,7 +50,7 @@ return $Module->redirectTo( '/notification/status' );
 
 - [Alle Ansichten von notification](README.md)
 - [Die Richtlinien von notification](../../richtlinien/notification.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

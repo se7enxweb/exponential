@@ -89,13 +89,13 @@ Das ausgelieferte Template, das ihn bearbeitet (`attribute_edit_gui`), `design/s
 {else}
 ```
 
-Überschreiben Sie sie für ein Klassenattribut in einer `override.ini.append.php` mit `Source=content/datatype/view/ezimage.tpl` und einer Bedingung auf `attribute_identifier` (siehe [Ein Template-Override](../../../eng-us/examples/cookbook/template-override.md)).
+Überschreiben Sie sie für ein Klassenattribut in einer `override.ini.append.php` mit `Source=content/datatype/view/ezimage.tpl` und einer Bedingung auf `attribute_identifier` (siehe [Ein Template-Override](../kochbuch/template-override.md)).
 
 ## Siehe auch
 
 - [Alle Datentypen](README.md)
-- [Ein eigener Datentyp](../../../eng-us/examples/cookbook/custom-datatype.md)
-- [Eine Inhaltsklasse](../../../eng-us/examples/cookbook/content-class.md)
+- [Ein eigener Datentyp](../kochbuch/eigener-datentyp.md)
+- [Eine Inhaltsklasse](../kochbuch/inhaltsklasse.md)
 
 ---
 

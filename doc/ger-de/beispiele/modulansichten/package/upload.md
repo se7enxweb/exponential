@@ -50,7 +50,7 @@ return $Module->redirectTo( '/package/upload' );
 
 - [Alle Ansichten von package](README.md)
 - [Die Richtlinien von package](../../richtlinien/package.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

@@ -57,7 +57,7 @@ return $Module->redirectTo( '/content/versionview/1/1/languagecode/fromlanguage'
 
 - [Alle Ansichten von content](README.md)
 - [Die Richtlinien von content](../../richtlinien/content.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

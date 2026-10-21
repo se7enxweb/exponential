@@ -38,7 +38,7 @@ $:item.url )|ezurl}{if gt( $:item.text|count_chars, 20 )} title="{$:item.text|wa
 
 - [Alle Template-Operatoren](README.md)
 - [Templates und Design](../../anleitungen/templates-und-design.md)
-- [Ein eigener Template-Operator](../../../eng-us/examples/cookbook/custom-template-operator.md)
+- [Ein eigener Template-Operator](../kochbuch/eigener-template-operator.md)
 
 ---
 

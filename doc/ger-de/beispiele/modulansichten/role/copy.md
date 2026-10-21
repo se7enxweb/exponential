@@ -48,7 +48,7 @@ return $Module->redirectTo( '/role/copy/1' );
 
 - [Alle Ansichten von role](README.md)
 - [Die Richtlinien von role](../../richtlinien/role.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

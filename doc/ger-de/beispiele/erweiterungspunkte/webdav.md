@@ -40,7 +40,7 @@ FolderClass=1    # durch Ihre Klasse oder Ihren Wert ersetzen
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von webdav.ini](../ini-einstellungen/webdav/README.md)
 
 ---

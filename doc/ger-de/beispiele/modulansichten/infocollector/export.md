@@ -51,7 +51,7 @@ return $Module->redirectTo( '/infocollector/export/1' );
 
 - [Alle Ansichten von infocollector](README.md)
 - [Die Richtlinien von infocollector](../../richtlinien/infocollector.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

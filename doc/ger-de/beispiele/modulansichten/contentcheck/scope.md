@@ -47,7 +47,7 @@ return $Module->redirectTo( '/contentcheck/scope/view/1/1' );
 
 - [Alle Ansichten von contentcheck](README.md)
 - [Die Richtlinien von contentcheck](../../richtlinien/contentcheck.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

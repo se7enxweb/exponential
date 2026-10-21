@@ -52,7 +52,7 @@ return $Module->redirectTo( '/shop/basket' );
 
 - [Alle Ansichten von shop](README.md)
 - [Die Richtlinien von shop](../../richtlinien/shop.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

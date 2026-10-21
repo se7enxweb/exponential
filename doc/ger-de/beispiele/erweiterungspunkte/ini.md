@@ -28,7 +28,7 @@ ScopeProviders[]=expExampleScopeProvider    # Ihre Klasse oder Ihr Wert, zur Lis
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von ini.ini](../ini-einstellungen/ini/README.md)
 
 ---

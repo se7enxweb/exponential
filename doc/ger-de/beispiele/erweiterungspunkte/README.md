@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # Erweiterungspunkte
 
-Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einstellungen, die Handler-Klassen, Filter, Provider, Listener, Repositorys oder Erweiterungsverzeichnisse nennen. Sie werden **am Namen der Einstellung erkannt (eine Heuristik)**, eine Seite pro INI-Datei, jede mit einem Override, das eine Erweiterung mitliefern kann. Andere Wege zu erweitern: [Template-Operatoren](../template-operatoren/README.md), [Module](../modulansichten/README.md), [Datentypen](../datentypen/README.md), [Workflow-Ereignisse](../workflow-ereignisse/README.md), [Cronjobs](../cronjobs/README.md) und [Design-Overrides](../../../eng-us/examples/cookbook/template-override.md).
+Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einstellungen, die Handler-Klassen, Filter, Provider, Listener, Repositorys oder Erweiterungsverzeichnisse nennen. Sie werden **am Namen der Einstellung erkannt (eine Heuristik)**, eine Seite pro INI-Datei, jede mit einem Override, das eine Erweiterung mitliefern kann. Andere Wege zu erweitern: [Template-Operatoren](../template-operatoren/README.md), [Module](../modulansichten/README.md), [Datentypen](../datentypen/README.md), [Workflow-Ereignisse](../workflow-ereignisse/README.md), [Cronjobs](../cronjobs/README.md) und [Design-Overrides](../kochbuch/template-override.md).
 
 | INI-Datei | Aus | Einstellungen | Beispiele |
 |---|---|---|---|

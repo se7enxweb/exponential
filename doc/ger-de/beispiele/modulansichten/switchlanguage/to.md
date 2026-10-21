@@ -42,7 +42,7 @@ return $Module->redirectTo( '/switchlanguage/to/siteaccess' );
 
 - [Alle Ansichten von switchlanguage](README.md)
 - [Die Richtlinien von switchlanguage](../../richtlinien/switchlanguage.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

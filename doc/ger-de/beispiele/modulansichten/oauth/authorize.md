@@ -40,7 +40,7 @@ return $Module->redirectTo( '/oauth/authorize' );
 
 - [Alle Ansichten von oauth](README.md)
 - [Die Richtlinien von oauth](../../richtlinien/oauth.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

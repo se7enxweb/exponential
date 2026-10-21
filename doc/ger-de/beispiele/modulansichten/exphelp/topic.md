@@ -49,7 +49,7 @@ return $Module->redirectTo( '/exphelp/topic' );
 
 - [Alle Ansichten von exphelp](README.md)
 - [Die Richtlinien von exphelp](../../richtlinien/exphelp.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

@@ -148,7 +148,7 @@ MessageListeners[]=expExampleMessageListener    # Ihre Klasse oder Ihr Wert, zur
 ## Siehe auch
 
 - [Alle Erweiterungspunkte](README.md)
-- [Ein Erweiterungsgerüst](../../../eng-us/examples/cookbook/extension-skeleton.md)
+- [Ein Erweiterungsgerüst](../kochbuch/erweiterungsgeruest.md)
 - [Die Blöcke von mailpreferences.ini](../ini-einstellungen/mailpreferences/README.md)
 
 ---

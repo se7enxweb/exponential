@@ -46,7 +46,7 @@ Scripts[]=contentcheck.php
 
 - [Alle Cronjobs und Teile](README.md)
 - [Cronjobs](../../anleitungen/cronjobs.md)
-- [Ein eigener Cronjob](../../../eng-us/examples/cookbook/cronjob.md)
+- [Ein eigener Cronjob](../kochbuch/cronjob.md)
 
 ---
 

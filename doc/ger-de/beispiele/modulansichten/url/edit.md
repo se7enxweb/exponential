@@ -49,7 +49,7 @@ return $Module->redirectTo( '/url/edit/1' );
 
 - [Alle Ansichten von url](README.md)
 - [Die Richtlinien von url](../../richtlinien/url.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 

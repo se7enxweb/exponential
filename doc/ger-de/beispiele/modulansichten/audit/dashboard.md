@@ -49,7 +49,7 @@ return $Module->redirectTo( '/audit/dashboard' );
 
 - [Alle Ansichten von audit](README.md)
 - [Die Richtlinien von audit](../../richtlinien/audit.md)
-- [Ein eigenes Modul mit Ansicht](../../../../eng-us/examples/cookbook/custom-module-view.md)
+- [Ein eigenes Modul mit Ansicht](../../kochbuch/eigenes-modul-mit-ansicht.md)
 
 ---
 
